@@ -133,6 +133,8 @@ import com.huaweicloud.sdk.swr.v2.model.ListInstanceAccessoriesRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceAccessoriesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceAllArtifactsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceAllArtifactsResponse;
+import com.huaweicloud.sdk.swr.v2.model.ListInstanceArtifactVulnerabilitiesRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListInstanceArtifactVulnerabilitiesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceArtifactsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceArtifactsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceInternalEndpointsRequest;
@@ -277,6 +279,8 @@ import com.huaweicloud.sdk.swr.v2.model.ShowTriggerRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowTriggerResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowUserRepositoryAuthRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowUserRepositoryAuthResponse;
+import com.huaweicloud.sdk.swr.v2.model.StartManualScanningRequest;
+import com.huaweicloud.sdk.swr.v2.model.StartManualScanningResponse;
 import com.huaweicloud.sdk.swr.v2.model.StopInstanceReplicationPolicyExecutionRequest;
 import com.huaweicloud.sdk.swr.v2.model.StopInstanceReplicationPolicyExecutionResponse;
 import com.huaweicloud.sdk.swr.v2.model.UpdateDomainNameRequest;
@@ -3136,6 +3140,36 @@ public class SwrClient {
     }
 
     /**
+     * 获取制品扫描的漏洞信息
+     *
+     * 获取制品扫描的漏洞信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceArtifactVulnerabilitiesRequest 请求对象
+     * @return ListInstanceArtifactVulnerabilitiesResponse
+     */
+    public ListInstanceArtifactVulnerabilitiesResponse listInstanceArtifactVulnerabilities(
+        ListInstanceArtifactVulnerabilitiesRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.listInstanceArtifactVulnerabilities);
+    }
+
+    /**
+     * 获取制品扫描的漏洞信息
+     *
+     * 获取制品扫描的漏洞信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceArtifactVulnerabilitiesRequest 请求对象
+     * @return SyncInvoker<ListInstanceArtifactVulnerabilitiesRequest, ListInstanceArtifactVulnerabilitiesResponse>
+     */
+    public SyncInvoker<ListInstanceArtifactVulnerabilitiesRequest, ListInstanceArtifactVulnerabilitiesResponse> listInstanceArtifactVulnerabilitiesInvoker(
+        ListInstanceArtifactVulnerabilitiesRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.listInstanceArtifactVulnerabilities, hcClient);
+    }
+
+    /**
      * 获取制品版本列表
      *
      * 获取制品版本列表
@@ -4484,6 +4518,35 @@ public class SwrClient {
     public SyncInvoker<ShowSubResourceInstancesCountRequest, ShowSubResourceInstancesCountResponse> showSubResourceInstancesCountInvoker(
         ShowSubResourceInstancesCountRequest request) {
         return new SyncInvoker<>(request, SwrMeta.showSubResourceInstancesCount, hcClient);
+    }
+
+    /**
+     * 手动启动制品扫描
+     *
+     * 手动启动制品扫描
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartManualScanningRequest 请求对象
+     * @return StartManualScanningResponse
+     */
+    public StartManualScanningResponse startManualScanning(StartManualScanningRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.startManualScanning);
+    }
+
+    /**
+     * 手动启动制品扫描
+     *
+     * 手动启动制品扫描
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartManualScanningRequest 请求对象
+     * @return SyncInvoker<StartManualScanningRequest, StartManualScanningResponse>
+     */
+    public SyncInvoker<StartManualScanningRequest, StartManualScanningResponse> startManualScanningInvoker(
+        StartManualScanningRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.startManualScanning, hcClient);
     }
 
     /**

@@ -41,7 +41,7 @@ public class ShowInstanceExtendProductInfoRespDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "io")
 
-    private List<ListProductsRespIo> io = null;
+    private List<ShowInstanceExtendProductInfoRespIo> io = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth")
@@ -158,12 +158,12 @@ public class ShowInstanceExtendProductInfoRespDetail {
         this.specCode = specCode;
     }
 
-    public ShowInstanceExtendProductInfoRespDetail withIo(List<ListProductsRespIo> io) {
+    public ShowInstanceExtendProductInfoRespDetail withIo(List<ShowInstanceExtendProductInfoRespIo> io) {
         this.io = io;
         return this;
     }
 
-    public ShowInstanceExtendProductInfoRespDetail addIoItem(ListProductsRespIo ioItem) {
+    public ShowInstanceExtendProductInfoRespDetail addIoItem(ShowInstanceExtendProductInfoRespIo ioItem) {
         if (this.io == null) {
             this.io = new ArrayList<>();
         }
@@ -171,7 +171,8 @@ public class ShowInstanceExtendProductInfoRespDetail {
         return this;
     }
 
-    public ShowInstanceExtendProductInfoRespDetail withIo(Consumer<List<ListProductsRespIo>> ioSetter) {
+    public ShowInstanceExtendProductInfoRespDetail withIo(
+        Consumer<List<ShowInstanceExtendProductInfoRespIo>> ioSetter) {
         if (this.io == null) {
             this.io = new ArrayList<>();
         }
@@ -183,11 +184,11 @@ public class ShowInstanceExtendProductInfoRespDetail {
      * IO信息。
      * @return io
      */
-    public List<ListProductsRespIo> getIo() {
+    public List<ShowInstanceExtendProductInfoRespIo> getIo() {
         return io;
     }
 
-    public void setIo(List<ListProductsRespIo> io) {
+    public void setIo(List<ShowInstanceExtendProductInfoRespIo> io) {
         this.io = io;
     }
 

@@ -67,6 +67,8 @@ import com.huaweicloud.sdk.oms.v2.model.StopTaskRequest;
 import com.huaweicloud.sdk.oms.v2.model.StopTaskResponse;
 import com.huaweicloud.sdk.oms.v2.model.UpdateBandwidthPolicyRequest;
 import com.huaweicloud.sdk.oms.v2.model.UpdateBandwidthPolicyResponse;
+import com.huaweicloud.sdk.oms.v2.model.UpdatePrivacyAgreementRecordRequest;
+import com.huaweicloud.sdk.oms.v2.model.UpdatePrivacyAgreementRecordResponse;
 import com.huaweicloud.sdk.oms.v2.model.UpdateTaskGroupRequest;
 import com.huaweicloud.sdk.oms.v2.model.UpdateTaskGroupResponse;
 
@@ -633,9 +635,9 @@ public class OmsClient {
     }
 
     /**
-     * 查询云厂商支持的reigon
+     * 查询云厂商支持的region
      *
-     * 查询云厂商支持的reigon
+     * 查询云厂商支持的region
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -647,9 +649,9 @@ public class OmsClient {
     }
 
     /**
-     * 查询云厂商支持的reigon
+     * 查询云厂商支持的region
      *
-     * 查询云厂商支持的reigon
+     * 查询云厂商支持的region
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -941,6 +943,36 @@ public class OmsClient {
     public SyncInvoker<UpdateBandwidthPolicyRequest, UpdateBandwidthPolicyResponse> updateBandwidthPolicyInvoker(
         UpdateBandwidthPolicyRequest request) {
         return new SyncInvoker<>(request, OmsMeta.updateBandwidthPolicy, hcClient);
+    }
+
+    /**
+     * 同意隐私协议
+     *
+     * 创建迁移任务、任务组、评估任务时，记录用户同意隐私协议。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePrivacyAgreementRecordRequest 请求对象
+     * @return UpdatePrivacyAgreementRecordResponse
+     */
+    public UpdatePrivacyAgreementRecordResponse updatePrivacyAgreementRecord(
+        UpdatePrivacyAgreementRecordRequest request) {
+        return hcClient.syncInvokeHttp(request, OmsMeta.updatePrivacyAgreementRecord);
+    }
+
+    /**
+     * 同意隐私协议
+     *
+     * 创建迁移任务、任务组、评估任务时，记录用户同意隐私协议。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePrivacyAgreementRecordRequest 请求对象
+     * @return SyncInvoker<UpdatePrivacyAgreementRecordRequest, UpdatePrivacyAgreementRecordResponse>
+     */
+    public SyncInvoker<UpdatePrivacyAgreementRecordRequest, UpdatePrivacyAgreementRecordResponse> updatePrivacyAgreementRecordInvoker(
+        UpdatePrivacyAgreementRecordRequest request) {
+        return new SyncInvoker<>(request, OmsMeta.updatePrivacyAgreementRecord, hcClient);
     }
 
     /**

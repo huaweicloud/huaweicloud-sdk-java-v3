@@ -127,7 +127,7 @@ public class TriggerCondition {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "promql_expr")
 
-    private List<String> promqlExpr = null;
+    private String promqlExpr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_times")
@@ -573,24 +573,8 @@ public class TriggerCondition {
         this.promql = promql;
     }
 
-    public TriggerCondition withPromqlExpr(List<String> promqlExpr) {
+    public TriggerCondition withPromqlExpr(String promqlExpr) {
         this.promqlExpr = promqlExpr;
-        return this;
-    }
-
-    public TriggerCondition addPromqlExprItem(String promqlExprItem) {
-        if (this.promqlExpr == null) {
-            this.promqlExpr = new ArrayList<>();
-        }
-        this.promqlExpr.add(promqlExprItem);
-        return this;
-    }
-
-    public TriggerCondition withPromqlExpr(Consumer<List<String>> promqlExprSetter) {
-        if (this.promqlExpr == null) {
-            this.promqlExpr = new ArrayList<>();
-        }
-        promqlExprSetter.accept(this.promqlExpr);
         return this;
     }
 
@@ -598,11 +582,11 @@ public class TriggerCondition {
      * Prometheus语句模板。
      * @return promqlExpr
      */
-    public List<String> getPromqlExpr() {
+    public String getPromqlExpr() {
         return promqlExpr;
     }
 
-    public void setPromqlExpr(List<String> promqlExpr) {
+    public void setPromqlExpr(String promqlExpr) {
         this.promqlExpr = promqlExpr;
     }
 

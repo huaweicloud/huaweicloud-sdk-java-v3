@@ -61,7 +61,7 @@ public class ShowCesHierarchyResponse extends SdkResponse {
     }
 
     /**
-     * 监控维度。
+     * **参数解释**： 监控维度。
      * @return dimensions
      */
     public List<ShowCeshierarchyRespDimensions> getDimensions() {
@@ -94,7 +94,7 @@ public class ShowCesHierarchyResponse extends SdkResponse {
     }
 
     /**
-     * 实例信息。
+     * **参数解释**： 实例信息。
      * @return instanceIds
      */
     public List<ShowCeshierarchyRespInstanceIds> getInstanceIds() {
@@ -127,7 +127,7 @@ public class ShowCesHierarchyResponse extends SdkResponse {
     }
 
     /**
-     * 节点信息。
+     * **参数解释**： 节点信息。
      * @return nodes
      */
     public List<ShowCeshierarchyRespNodes> getNodes() {
@@ -160,7 +160,7 @@ public class ShowCesHierarchyResponse extends SdkResponse {
     }
 
     /**
-     * 队列信息。
+     * **参数解释**： 队列信息。
      * @return queues
      */
     public List<ShowCeshierarchyRespQueues> getQueues() {
@@ -193,7 +193,7 @@ public class ShowCesHierarchyResponse extends SdkResponse {
     }
 
     /**
-     * 消费组信息。
+     * **参数解释**： 消费组信息。
      * @return groups
      */
     public List<ShowCeshierarchyRespGroups> getGroups() {

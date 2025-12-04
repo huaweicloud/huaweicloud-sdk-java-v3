@@ -43,20 +43,20 @@ import com.huaweicloud.sdk.ucs.v1.model.DeleteRepoRequest;
 import com.huaweicloud.sdk.ucs.v1.model.DeleteRepoResponse;
 import com.huaweicloud.sdk.ucs.v1.model.DeleteRuleRequest;
 import com.huaweicloud.sdk.ucs.v1.model.DeleteRuleResponse;
+import com.huaweicloud.sdk.ucs.v1.model.DisableClusterGroupPolicyRequest;
+import com.huaweicloud.sdk.ucs.v1.model.DisableClusterGroupPolicyResponse;
 import com.huaweicloud.sdk.ucs.v1.model.DisableClusterPolicyRequest;
 import com.huaweicloud.sdk.ucs.v1.model.DisableClusterPolicyResponse;
-import com.huaweicloud.sdk.ucs.v1.model.DisableClustergroupPolicyRequest;
-import com.huaweicloud.sdk.ucs.v1.model.DisableClustergroupPolicyResponse;
 import com.huaweicloud.sdk.ucs.v1.model.DisableFederationRequest;
 import com.huaweicloud.sdk.ucs.v1.model.DisableFederationResponse;
 import com.huaweicloud.sdk.ucs.v1.model.DisableGitOpsRequest;
 import com.huaweicloud.sdk.ucs.v1.model.DisableGitOpsResponse;
 import com.huaweicloud.sdk.ucs.v1.model.DownloadFederationKubeconfigRequest;
 import com.huaweicloud.sdk.ucs.v1.model.DownloadFederationKubeconfigResponse;
+import com.huaweicloud.sdk.ucs.v1.model.EnableClusterGroupPolicyRequest;
+import com.huaweicloud.sdk.ucs.v1.model.EnableClusterGroupPolicyResponse;
 import com.huaweicloud.sdk.ucs.v1.model.EnableClusterPolicyRequest;
 import com.huaweicloud.sdk.ucs.v1.model.EnableClusterPolicyResponse;
-import com.huaweicloud.sdk.ucs.v1.model.EnableClustergroupPolicyRequest;
-import com.huaweicloud.sdk.ucs.v1.model.EnableClustergroupPolicyResponse;
 import com.huaweicloud.sdk.ucs.v1.model.EnableFederationRequest;
 import com.huaweicloud.sdk.ucs.v1.model.EnableFederationResponse;
 import com.huaweicloud.sdk.ucs.v1.model.EnableGitOpsRequest;
@@ -635,11 +635,11 @@ public class UcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request DisableClustergroupPolicyRequest 请求对象
-     * @return DisableClustergroupPolicyResponse
+     * @param request DisableClusterGroupPolicyRequest 请求对象
+     * @return DisableClusterGroupPolicyResponse
      */
-    public DisableClustergroupPolicyResponse disableClustergroupPolicy(DisableClustergroupPolicyRequest request) {
-        return hcClient.syncInvokeHttp(request, UcsMeta.disableClustergroupPolicy);
+    public DisableClusterGroupPolicyResponse disableClusterGroupPolicy(DisableClusterGroupPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, UcsMeta.disableClusterGroupPolicy);
     }
 
     /**
@@ -649,12 +649,12 @@ public class UcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request DisableClustergroupPolicyRequest 请求对象
-     * @return SyncInvoker<DisableClustergroupPolicyRequest, DisableClustergroupPolicyResponse>
+     * @param request DisableClusterGroupPolicyRequest 请求对象
+     * @return SyncInvoker<DisableClusterGroupPolicyRequest, DisableClusterGroupPolicyResponse>
      */
-    public SyncInvoker<DisableClustergroupPolicyRequest, DisableClustergroupPolicyResponse> disableClustergroupPolicyInvoker(
-        DisableClustergroupPolicyRequest request) {
-        return new SyncInvoker<>(request, UcsMeta.disableClustergroupPolicy, hcClient);
+    public SyncInvoker<DisableClusterGroupPolicyRequest, DisableClusterGroupPolicyResponse> disableClusterGroupPolicyInvoker(
+        DisableClusterGroupPolicyRequest request) {
+        return new SyncInvoker<>(request, UcsMeta.disableClusterGroupPolicy, hcClient);
     }
 
     /**
@@ -723,11 +723,11 @@ public class UcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request EnableClustergroupPolicyRequest 请求对象
-     * @return EnableClustergroupPolicyResponse
+     * @param request EnableClusterGroupPolicyRequest 请求对象
+     * @return EnableClusterGroupPolicyResponse
      */
-    public EnableClustergroupPolicyResponse enableClustergroupPolicy(EnableClustergroupPolicyRequest request) {
-        return hcClient.syncInvokeHttp(request, UcsMeta.enableClustergroupPolicy);
+    public EnableClusterGroupPolicyResponse enableClusterGroupPolicy(EnableClusterGroupPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, UcsMeta.enableClusterGroupPolicy);
     }
 
     /**
@@ -737,12 +737,12 @@ public class UcsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request EnableClustergroupPolicyRequest 请求对象
-     * @return SyncInvoker<EnableClustergroupPolicyRequest, EnableClustergroupPolicyResponse>
+     * @param request EnableClusterGroupPolicyRequest 请求对象
+     * @return SyncInvoker<EnableClusterGroupPolicyRequest, EnableClusterGroupPolicyResponse>
      */
-    public SyncInvoker<EnableClustergroupPolicyRequest, EnableClustergroupPolicyResponse> enableClustergroupPolicyInvoker(
-        EnableClustergroupPolicyRequest request) {
-        return new SyncInvoker<>(request, UcsMeta.enableClustergroupPolicy, hcClient);
+    public SyncInvoker<EnableClusterGroupPolicyRequest, EnableClusterGroupPolicyResponse> enableClusterGroupPolicyInvoker(
+        EnableClusterGroupPolicyRequest request) {
+        return new SyncInvoker<>(request, UcsMeta.enableClusterGroupPolicy, hcClient);
     }
 
     /**
@@ -1871,9 +1871,9 @@ public class UcsClient {
     }
 
     /**
-     * 创建集群建策略实例
+     * 创建集群策略实例
      *
-     * 创建集群建策略实例
+     * 创建集群策略实例
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1885,9 +1885,9 @@ public class UcsClient {
     }
 
     /**
-     * 创建集群建策略实例
+     * 创建集群策略实例
      *
-     * 创建集群建策略实例
+     * 创建集群策略实例
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

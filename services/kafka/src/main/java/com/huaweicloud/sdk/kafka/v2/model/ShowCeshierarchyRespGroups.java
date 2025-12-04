@@ -29,7 +29,7 @@ public class ShowCeshierarchyRespGroups {
     }
 
     /**
-     * 消费组名称。
+     * **参数解释**： 消费组名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -62,7 +62,7 @@ public class ShowCeshierarchyRespGroups {
     }
 
     /**
-     * Topic信息。
+     * **参数解释**： Topic信息。
      * @return queues
      */
     public List<ShowCeshierarchyRespQueues1> getQueues() {

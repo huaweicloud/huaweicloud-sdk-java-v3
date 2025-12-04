@@ -31,7 +31,7 @@ public class InstanceConfig {
     private String defaultValue;
 
     /**
-     * 配置类型：static/dynamic。
+     * **参数解释**： 配置类型。 **取值范围**： - dynamic：动态。 - static：静态。
      */
     public static final class ConfigTypeEnum {
 
@@ -172,7 +172,7 @@ public class InstanceConfig {
     }
 
     /**
-     * 配置类型：static/dynamic。
+     * **参数解释**： 配置类型。 **取值范围**： - dynamic：动态。 - static：静态。
      * @return configType
      */
     public ConfigTypeEnum getConfigType() {
@@ -206,7 +206,7 @@ public class InstanceConfig {
     }
 
     /**
-     * 值类型。
+     * **参数解释**： 值类型。 **取值范围**： - string：字符串类型。 - integer：整数类型。 - enum：枚举值类型。
      * @return valueType
      */
     public String getValueType() {

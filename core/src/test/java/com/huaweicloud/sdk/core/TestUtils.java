@@ -77,7 +77,7 @@ public class TestUtils {
                 while ((len = inputStream.read(bytes)) != -1) {
                     totalLen += len;
                 }
-                Assert.assertEquals(totalLen, 1024 * 1024 * 5);
+                Assert.assertEquals(1024 * 1024 * 5, totalLen);
             } catch (IOException e) {
                 logger.error("Download file error ", e);
             }

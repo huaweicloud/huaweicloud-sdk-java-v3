@@ -21,6 +21,11 @@ public class ListFeatureGatesResponse extends SdkResponse {
 
     private Boolean enableCombinationRetention;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enableArtifactScanning")
+
+    private Boolean enableArtifactScanning;
+
     public ListFeatureGatesResponse withEnableDomainName(Boolean enableDomainName) {
         this.enableDomainName = enableDomainName;
         return this;
@@ -55,6 +60,23 @@ public class ListFeatureGatesResponse extends SdkResponse {
         this.enableCombinationRetention = enableCombinationRetention;
     }
 
+    public ListFeatureGatesResponse withEnableArtifactScanning(Boolean enableArtifactScanning) {
+        this.enableArtifactScanning = enableArtifactScanning;
+        return this;
+    }
+
+    /**
+     * 是否支持制品扫描
+     * @return enableArtifactScanning
+     */
+    public Boolean getEnableArtifactScanning() {
+        return enableArtifactScanning;
+    }
+
+    public void setEnableArtifactScanning(Boolean enableArtifactScanning) {
+        this.enableArtifactScanning = enableArtifactScanning;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -65,12 +87,13 @@ public class ListFeatureGatesResponse extends SdkResponse {
         }
         ListFeatureGatesResponse that = (ListFeatureGatesResponse) obj;
         return Objects.equals(this.enableDomainName, that.enableDomainName)
-            && Objects.equals(this.enableCombinationRetention, that.enableCombinationRetention);
+            && Objects.equals(this.enableCombinationRetention, that.enableCombinationRetention)
+            && Objects.equals(this.enableArtifactScanning, that.enableArtifactScanning);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enableDomainName, enableCombinationRetention);
+        return Objects.hash(enableDomainName, enableCombinationRetention, enableArtifactScanning);
     }
 
     @Override
@@ -79,6 +102,7 @@ public class ListFeatureGatesResponse extends SdkResponse {
         sb.append("class ListFeatureGatesResponse {\n");
         sb.append("    enableDomainName: ").append(toIndentedString(enableDomainName)).append("\n");
         sb.append("    enableCombinationRetention: ").append(toIndentedString(enableCombinationRetention)).append("\n");
+        sb.append("    enableArtifactScanning: ").append(toIndentedString(enableArtifactScanning)).append("\n");
         sb.append("}");
         return sb.toString();
     }

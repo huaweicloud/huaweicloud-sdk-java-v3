@@ -5,6 +5,7 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.kafka.v2.model.AlterAutoVolumeExpandConfig;
 import com.huaweicloud.sdk.kafka.v2.model.BatchCreateOrDeleteKafkaTagRequest;
 import com.huaweicloud.sdk.kafka.v2.model.BatchCreateOrDeleteKafkaTagResponse;
 import com.huaweicloud.sdk.kafka.v2.model.BatchCreateOrDeleteTagReq;
@@ -20,10 +21,11 @@ import com.huaweicloud.sdk.kafka.v2.model.BatchDeleteInstanceUsersResponse;
 import com.huaweicloud.sdk.kafka.v2.model.BatchDeleteMessageDiagnosisReportsReq;
 import com.huaweicloud.sdk.kafka.v2.model.BatchDeleteMessageDiagnosisReportsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.BatchDeleteMessageDiagnosisReportsResponse;
-import com.huaweicloud.sdk.kafka.v2.model.BatchModifyGroupDescriptionReq;
+import com.huaweicloud.sdk.kafka.v2.model.BatchModiftGroupDescriptionReq;
 import com.huaweicloud.sdk.kafka.v2.model.BatchRestartOrDeleteInstanceReq;
 import com.huaweicloud.sdk.kafka.v2.model.BatchRestartOrDeleteInstancesRequest;
 import com.huaweicloud.sdk.kafka.v2.model.BatchRestartOrDeleteInstancesResponse;
+import com.huaweicloud.sdk.kafka.v2.model.BatchResumeInstanceReq;
 import com.huaweicloud.sdk.kafka.v2.model.CloseKafkaManagerRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CloseKafkaManagerResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateConnectorReq;
@@ -72,6 +74,8 @@ import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteConsumerGroupOffsetsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteConsumerGroupOffsetsRequestBody;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteConsumerGroupOffsetsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceConsumerGroupRequest;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceConsumerGroupResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaMessageRequest;
@@ -82,6 +86,10 @@ import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaTopicQuotaResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskReq;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteScheduledTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteScheduledTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteUserRequest;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteUserResponse;
 import com.huaweicloud.sdk.kafka.v2.model.GroupCreateReq;
 import com.huaweicloud.sdk.kafka.v2.model.KafkaDiagnosisCheckEntity;
 import com.huaweicloud.sdk.kafka.v2.model.KafkaTopicQuota;
@@ -89,6 +97,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListAvailableZonesResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListBackgroundTasksRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListBackgroundTasksResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListConfigFeaturesRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListConfigFeaturesResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListConnectorTasksRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListConnectorTasksResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListEngineProductsRequest;
@@ -109,19 +119,32 @@ import com.huaweicloud.sdk.kafka.v2.model.ListInstancesRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListInstancesResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListMessageDiagnosisReportsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListMessageDiagnosisReportsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListObsBucketsRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListObsBucketsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListObsBucketsResponseBody;
 import com.huaweicloud.sdk.kafka.v2.model.ListProductsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListProductsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListScheduledTasksRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListScheduledTasksResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicPartitionsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicPartitionsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicProducersRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicProducersResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListUserPoliciesRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListUserPoliciesResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyConnectorTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyInstanceConfigsReq;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyInstanceConfigsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyInstanceConfigsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ModifyKafkaPublicIPAccessSwitchReq;
+import com.huaweicloud.sdk.kafka.v2.model.ModifyKafkaPublicIpAccessSwitchRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ModifyKafkaPublicIpAccessSwitchResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyKafkaTopicQuotaRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyKafkaTopicQuotaResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ModifyRecyclePolicyReq;
+import com.huaweicloud.sdk.kafka.v2.model.ModifyRecyclePolicyRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ModifyRecyclePolicyResponse;
 import com.huaweicloud.sdk.kafka.v2.model.PartitionReassignRequest;
 import com.huaweicloud.sdk.kafka.v2.model.PauseConnectorTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.PauseConnectorTaskResponse;
@@ -138,7 +161,7 @@ import com.huaweicloud.sdk.kafka.v2.model.ResetPasswordReq;
 import com.huaweicloud.sdk.kafka.v2.model.ResetPasswordRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResetPasswordResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ResetReplicaReq;
-import com.huaweicloud.sdk.kafka.v2.model.ResetUserPasswrodReq;
+import com.huaweicloud.sdk.kafka.v2.model.ResetUserPasswordReq;
 import com.huaweicloud.sdk.kafka.v2.model.ResetUserPasswrodRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResetUserPasswrodResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ResizeEngineInstanceReq;
@@ -155,17 +178,26 @@ import com.huaweicloud.sdk.kafka.v2.model.RestartManagerRequest;
 import com.huaweicloud.sdk.kafka.v2.model.RestartManagerResponse;
 import com.huaweicloud.sdk.kafka.v2.model.RestartSmartConnectorTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.RestartSmartConnectorTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.RestoreRecycleInstanceRequest;
+import com.huaweicloud.sdk.kafka.v2.model.RestoreRecycleInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ResumeConnectorTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResumeConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.SendKafkaMessageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.SendKafkaMessageRequestBody;
 import com.huaweicloud.sdk.kafka.v2.model.SendKafkaMessageResponse;
+import com.huaweicloud.sdk.kafka.v2.model.SetUserPoliciesReq;
+import com.huaweicloud.sdk.kafka.v2.model.SetUserPoliciesRequest;
+import com.huaweicloud.sdk.kafka.v2.model.SetUserPoliciesResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowBackgroundTaskProgressRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowBackgroundTaskProgressResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowBackgroundTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowBackgroundTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowCesHierarchyRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowCesHierarchyResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowClusterRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowClusterResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowConnectorResourceInfoRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowConnectorResourceInfoResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowConnectorTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowCoordinatorsRequest;
@@ -188,14 +220,24 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceTopicDetailRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceTopicDetailResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceUsersRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceUsersResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaClusterRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaClusterResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaInstanceExtendProductInfoRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaInstanceExtendProductInfoResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaProductCoresRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaProductCoresResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaProjectTagsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaProjectTagsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaRebalanceLogRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaRebalanceLogResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaScalePreCheckInfoRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaScalePreCheckInfoResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaScalePreCheckInfoResponseBody;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTagsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTagsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTopicDetailRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTopicDetailResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTopicDetailResponseBody;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTopicPartitionDiskusageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTopicPartitionDiskusageResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTopicQuotaRequest;
@@ -216,8 +258,16 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowRecycleInstancesRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowRecycleInstancesResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowSpecConvertProductRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowSpecConvertProductResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowUpgradeInstanceVersionRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowUpgradeInstanceVersionResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowVolumeExpandConfigRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowVolumeExpandConfigResponse;
 import com.huaweicloud.sdk.kafka.v2.model.SmartConnectTaskEntity;
 import com.huaweicloud.sdk.kafka.v2.model.SmartConnectValidateEntity;
 import com.huaweicloud.sdk.kafka.v2.model.StopKafkaRebalanceLogTaskRequest;
@@ -245,12 +295,19 @@ import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaPortProtocolResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaUserClientQuotaTaskReq;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaUserClientQuotaTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaUserClientQuotaTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateScheduledTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateScheduledTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyReq;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicReplicaRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicReplicaResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateUserReq;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateVolumeExpansionConfigRequest;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateVolumeExpansionConfigResponse;
+import com.huaweicloud.sdk.kafka.v2.model.UpgradeInstanceReq;
+import com.huaweicloud.sdk.kafka.v2.model.UpgradeInstanceRequest;
+import com.huaweicloud.sdk.kafka.v2.model.UpgradeInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ValidateConnectorConnectivityRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ValidateConnectorConnectivityResponse;
 
@@ -909,6 +966,45 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteInstanceConsumerGroupRequest, DeleteInstanceConsumerGroupResponse> deleteInstanceConsumerGroup =
+        genForDeleteInstanceConsumerGroup();
+
+    private static HttpRequestDef<DeleteInstanceConsumerGroupRequest, DeleteInstanceConsumerGroupResponse> genForDeleteInstanceConsumerGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteInstanceConsumerGroupRequest, DeleteInstanceConsumerGroupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteInstanceConsumerGroupRequest.class,
+                    DeleteInstanceConsumerGroupResponse.class)
+                .withName("DeleteInstanceConsumerGroup")
+                .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInstanceConsumerGroupRequest::getEngine,
+                DeleteInstanceConsumerGroupRequest::setEngine));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInstanceConsumerGroupRequest::getInstanceId,
+                DeleteInstanceConsumerGroupRequest::setInstanceId));
+        builder.<String>withRequestField("group",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInstanceConsumerGroupRequest::getGroup,
+                DeleteInstanceConsumerGroupRequest::setGroup));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteKafkaMessageRequest, DeleteKafkaMessageResponse> deleteKafkaMessage =
         genForDeleteKafkaMessage();
 
@@ -1004,6 +1100,62 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteScheduledTaskRequest, DeleteScheduledTaskResponse> deleteScheduledTask =
+        genForDeleteScheduledTask();
+
+    private static HttpRequestDef<DeleteScheduledTaskRequest, DeleteScheduledTaskResponse> genForDeleteScheduledTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteScheduledTaskRequest, DeleteScheduledTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteScheduledTaskRequest.class, DeleteScheduledTaskResponse.class)
+            .withName("DeleteScheduledTask")
+            .withUri("/v2/{project_id}/instances/{instance_id}/scheduled-tasks/{task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteScheduledTaskRequest::getInstanceId,
+                DeleteScheduledTaskRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteScheduledTaskRequest::getTaskId, DeleteScheduledTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteUserRequest, DeleteUserResponse> deleteUser = genForDeleteUser();
+
+    private static HttpRequestDef<DeleteUserRequest, DeleteUserResponse> genForDeleteUser() {
+        // basic
+        HttpRequestDef.Builder<DeleteUserRequest, DeleteUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteUserRequest.class, DeleteUserResponse.class)
+                .withName("DeleteUser")
+                .withUri("/v2/{project_id}/instances/{instance_id}/users/{user_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteUserRequest::getInstanceId, DeleteUserRequest::setInstanceId));
+        builder.<String>withRequestField("user_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteUserRequest::getUserName, DeleteUserRequest::setUserName));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZones =
         genForListAvailableZones();
 
@@ -1040,11 +1192,11 @@ public class KafkaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBackgroundTasksRequest::getInstanceId,
                 ListBackgroundTasksRequest::setInstanceId));
-        builder.<Integer>withRequestField("start",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBackgroundTasksRequest::getStart, ListBackgroundTasksRequest::setStart));
+            f -> f.withMarshaller(ListBackgroundTasksRequest::getOffset, ListBackgroundTasksRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1060,6 +1212,24 @@ public class KafkaMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBackgroundTasksRequest::getEndTime, ListBackgroundTasksRequest::setEndTime));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListConfigFeaturesRequest, ListConfigFeaturesResponse> listConfigFeatures =
+        genForListConfigFeatures();
+
+    private static HttpRequestDef<ListConfigFeaturesRequest, ListConfigFeaturesResponse> genForListConfigFeatures() {
+        // basic
+        HttpRequestDef.Builder<ListConfigFeaturesRequest, ListConfigFeaturesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListConfigFeaturesRequest.class, ListConfigFeaturesResponse.class)
+                .withName("ListConfigFeatures")
+                .withUri("/v2/config/features")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -1531,6 +1701,49 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListScheduledTasksRequest, ListScheduledTasksResponse> listScheduledTasks =
+        genForListScheduledTasks();
+
+    private static HttpRequestDef<ListScheduledTasksRequest, ListScheduledTasksResponse> genForListScheduledTasks() {
+        // basic
+        HttpRequestDef.Builder<ListScheduledTasksRequest, ListScheduledTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListScheduledTasksRequest.class, ListScheduledTasksResponse.class)
+                .withName("ListScheduledTasks")
+                .withUri("/v2/{project_id}/instances/{instance_id}/scheduled-tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getInstanceId, ListScheduledTasksRequest::setInstanceId));
+        builder.<String>withRequestField("start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getStart, ListScheduledTasksRequest::setStart));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getLimit, ListScheduledTasksRequest::setLimit));
+        builder.<String>withRequestField("begin_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getBeginTime, ListScheduledTasksRequest::setBeginTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getEndTime, ListScheduledTasksRequest::setEndTime));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListTopicPartitionsRequest, ListTopicPartitionsResponse> listTopicPartitions =
         genForListTopicPartitions();
 
@@ -1608,6 +1821,39 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListUserPoliciesRequest, ListUserPoliciesResponse> listUserPolicies =
+        genForListUserPolicies();
+
+    private static HttpRequestDef<ListUserPoliciesRequest, ListUserPoliciesResponse> genForListUserPolicies() {
+        // basic
+        HttpRequestDef.Builder<ListUserPoliciesRequest, ListUserPoliciesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUserPoliciesRequest.class, ListUserPoliciesResponse.class)
+                .withName("ListUserPolicies")
+                .withUri("/v2/{project_id}/{engine}/instances/{instance_id}/users/{user_name}/access-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListUserPoliciesRequest.EngineEnum>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListUserPoliciesRequest.EngineEnum.class),
+            f -> f.withMarshaller(ListUserPoliciesRequest::getEngine, ListUserPoliciesRequest::setEngine));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserPoliciesRequest::getInstanceId, ListUserPoliciesRequest::setInstanceId));
+        builder.<String>withRequestField("user_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserPoliciesRequest::getUserName, ListUserPoliciesRequest::setUserName));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ModifyInstanceConfigsRequest, ModifyInstanceConfigsResponse> modifyInstanceConfigs =
         genForModifyInstanceConfigs();
 
@@ -1637,6 +1883,39 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ModifyKafkaPublicIpAccessSwitchRequest, ModifyKafkaPublicIpAccessSwitchResponse> modifyKafkaPublicIpAccessSwitch =
+        genForModifyKafkaPublicIpAccessSwitch();
+
+    private static HttpRequestDef<ModifyKafkaPublicIpAccessSwitchRequest, ModifyKafkaPublicIpAccessSwitchResponse> genForModifyKafkaPublicIpAccessSwitch() {
+        // basic
+        HttpRequestDef.Builder<ModifyKafkaPublicIpAccessSwitchRequest, ModifyKafkaPublicIpAccessSwitchResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ModifyKafkaPublicIpAccessSwitchRequest.class,
+                    ModifyKafkaPublicIpAccessSwitchResponse.class)
+                .withName("ModifyKafkaPublicIpAccessSwitch")
+                .withUri("/v1/{project_id}/instances/{instance_id}/public-boundwidth")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyKafkaPublicIpAccessSwitchRequest::getInstanceId,
+                ModifyKafkaPublicIpAccessSwitchRequest::setInstanceId));
+        builder.<ModifyKafkaPublicIPAccessSwitchReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyKafkaPublicIPAccessSwitchReq.class),
+            f -> f.withMarshaller(ModifyKafkaPublicIpAccessSwitchRequest::getBody,
+                ModifyKafkaPublicIpAccessSwitchRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ModifyKafkaTopicQuotaRequest, ModifyKafkaTopicQuotaResponse> modifyKafkaTopicQuota =
         genForModifyKafkaTopicQuota();
 
@@ -1660,6 +1939,29 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(KafkaTopicQuota.class),
             f -> f.withMarshaller(ModifyKafkaTopicQuotaRequest::getBody, ModifyKafkaTopicQuotaRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyRecyclePolicyRequest, ModifyRecyclePolicyResponse> modifyRecyclePolicy =
+        genForModifyRecyclePolicy();
+
+    private static HttpRequestDef<ModifyRecyclePolicyRequest, ModifyRecyclePolicyResponse> genForModifyRecyclePolicy() {
+        // basic
+        HttpRequestDef.Builder<ModifyRecyclePolicyRequest, ModifyRecyclePolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyRecyclePolicyRequest.class, ModifyRecyclePolicyResponse.class)
+                .withName("ModifyRecyclePolicy")
+                .withUri("/v2/{project_id}/recycle")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ModifyRecyclePolicyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ModifyRecyclePolicyReq.class),
+            f -> f.withMarshaller(ModifyRecyclePolicyRequest::getBody, ModifyRecyclePolicyRequest::setBody));
 
         // response
 
@@ -1817,10 +2119,10 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResetUserPasswrodRequest::getUserName, ResetUserPasswrodRequest::setUserName));
-        builder.<ResetUserPasswrodReq>withRequestField("body",
+        builder.<ResetUserPasswordReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ResetUserPasswrodReq.class),
+            TypeCasts.uncheckedConversion(ResetUserPasswordReq.class),
             f -> f.withMarshaller(ResetUserPasswrodRequest::getBody, ResetUserPasswrodRequest::setBody));
 
         // response
@@ -1942,6 +2244,29 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RestoreRecycleInstanceRequest, RestoreRecycleInstanceResponse> restoreRecycleInstance =
+        genForRestoreRecycleInstance();
+
+    private static HttpRequestDef<RestoreRecycleInstanceRequest, RestoreRecycleInstanceResponse> genForRestoreRecycleInstance() {
+        // basic
+        HttpRequestDef.Builder<RestoreRecycleInstanceRequest, RestoreRecycleInstanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RestoreRecycleInstanceRequest.class, RestoreRecycleInstanceResponse.class)
+            .withName("RestoreRecycleInstance")
+            .withUri("/v2/{project_id}/recycle")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BatchResumeInstanceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchResumeInstanceReq.class),
+            f -> f.withMarshaller(RestoreRecycleInstanceRequest::getBody, RestoreRecycleInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SendKafkaMessageRequest, SendKafkaMessageResponse> sendKafkaMessage =
         genForSendKafkaMessage();
 
@@ -1975,6 +2300,44 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetUserPoliciesRequest, SetUserPoliciesResponse> setUserPolicies =
+        genForSetUserPolicies();
+
+    private static HttpRequestDef<SetUserPoliciesRequest, SetUserPoliciesResponse> genForSetUserPolicies() {
+        // basic
+        HttpRequestDef.Builder<SetUserPoliciesRequest, SetUserPoliciesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SetUserPoliciesRequest.class, SetUserPoliciesResponse.class)
+                .withName("SetUserPolicies")
+                .withUri("/v2/{project_id}/{engine}/instances/{instance_id}/users/{user_name}/access-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<SetUserPoliciesRequest.EngineEnum>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetUserPoliciesRequest.EngineEnum.class),
+            f -> f.withMarshaller(SetUserPoliciesRequest::getEngine, SetUserPoliciesRequest::setEngine));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetUserPoliciesRequest::getInstanceId, SetUserPoliciesRequest::setInstanceId));
+        builder.<String>withRequestField("user_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetUserPoliciesRequest::getUserName, SetUserPoliciesRequest::setUserName));
+        builder.<SetUserPoliciesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetUserPoliciesReq.class),
+            f -> f.withMarshaller(SetUserPoliciesRequest::getBody, SetUserPoliciesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> showBackgroundTask =
         genForShowBackgroundTask();
 
@@ -1997,6 +2360,39 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBackgroundTaskRequest::getTaskId, ShowBackgroundTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBackgroundTaskProgressRequest, ShowBackgroundTaskProgressResponse> showBackgroundTaskProgress =
+        genForShowBackgroundTaskProgress();
+
+    private static HttpRequestDef<ShowBackgroundTaskProgressRequest, ShowBackgroundTaskProgressResponse> genForShowBackgroundTaskProgress() {
+        // basic
+        HttpRequestDef.Builder<ShowBackgroundTaskProgressRequest, ShowBackgroundTaskProgressResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowBackgroundTaskProgressRequest.class,
+                    ShowBackgroundTaskProgressResponse.class)
+                .withName("ShowBackgroundTaskProgress")
+                .withUri("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}/progress")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackgroundTaskProgressRequest::getInstanceId,
+                ShowBackgroundTaskProgressRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackgroundTaskProgressRequest::getTaskId,
+                ShowBackgroundTaskProgressRequest::setTaskId));
 
         // response
 
@@ -2333,6 +2729,21 @@ public class KafkaMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceMessagesRequest::getKeyword, ShowInstanceMessagesRequest::setKeyword));
+        builder.<String>withRequestField("key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getKey, ShowInstanceMessagesRequest::setKey));
+        builder.<String>withRequestField("include",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getInclude, ShowInstanceMessagesRequest::setInclude));
+        builder.<String>withRequestField("exclude",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceMessagesRequest::getExclude, ShowInstanceMessagesRequest::setExclude));
 
         // response
 
@@ -2391,6 +2802,29 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowKafkaClusterRequest, ShowKafkaClusterResponse> showKafkaCluster =
+        genForShowKafkaCluster();
+
+    private static HttpRequestDef<ShowKafkaClusterRequest, ShowKafkaClusterResponse> genForShowKafkaCluster() {
+        // basic
+        HttpRequestDef.Builder<ShowKafkaClusterRequest, ShowKafkaClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowKafkaClusterRequest.class, ShowKafkaClusterResponse.class)
+                .withName("ShowKafkaCluster")
+                .withUri("/v2/{project_id}/instances/{instance_id}/manage/cluster")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKafkaClusterRequest::getInstanceId, ShowKafkaClusterRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowKafkaInstanceExtendProductInfoRequest, ShowKafkaInstanceExtendProductInfoResponse> showKafkaInstanceExtendProductInfo =
         genForShowKafkaInstanceExtendProductInfo();
 
@@ -2418,6 +2852,42 @@ public class KafkaMeta {
             TypeCasts.uncheckedConversion(ShowKafkaInstanceExtendProductInfoRequest.TypeEnum.class),
             f -> f.withMarshaller(ShowKafkaInstanceExtendProductInfoRequest::getType,
                 ShowKafkaInstanceExtendProductInfoRequest::setType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowKafkaProductCoresRequest, ShowKafkaProductCoresResponse> showKafkaProductCores =
+        genForShowKafkaProductCores();
+
+    private static HttpRequestDef<ShowKafkaProductCoresRequest, ShowKafkaProductCoresResponse> genForShowKafkaProductCores() {
+        // basic
+        HttpRequestDef.Builder<ShowKafkaProductCoresRequest, ShowKafkaProductCoresResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowKafkaProductCoresRequest.class, ShowKafkaProductCoresResponse.class)
+            .withName("ShowKafkaProductCores")
+            .withUri("/v2/kafka/products/cores")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKafkaProductCoresRequest::getInstanceId,
+                ShowKafkaProductCoresRequest::setInstanceId));
+        builder.<String>withRequestField("product_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKafkaProductCoresRequest::getProductId,
+                ShowKafkaProductCoresRequest::setProductId));
+        builder.<String>withRequestField("broker_num",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKafkaProductCoresRequest::getBrokerNum,
+                ShowKafkaProductCoresRequest::setBrokerNum));
 
         // response
 
@@ -2466,6 +2936,41 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowKafkaScalePreCheckInfoRequest, ShowKafkaScalePreCheckInfoResponse> showKafkaScalePreCheckInfo =
+        genForShowKafkaScalePreCheckInfo();
+
+    private static HttpRequestDef<ShowKafkaScalePreCheckInfoRequest, ShowKafkaScalePreCheckInfoResponse> genForShowKafkaScalePreCheckInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowKafkaScalePreCheckInfoRequest, ShowKafkaScalePreCheckInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowKafkaScalePreCheckInfoRequest.class,
+                    ShowKafkaScalePreCheckInfoResponse.class)
+                .withName("ShowKafkaScalePreCheckInfo")
+                .withUri("/v2/{project_id}/kafka/instances/{instance_id}/extend-check")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKafkaScalePreCheckInfoRequest::getInstanceId,
+                ShowKafkaScalePreCheckInfoRequest::setInstanceId));
+
+        // response
+        builder.<List<ShowKafkaScalePreCheckInfoResponseBody>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(ShowKafkaScalePreCheckInfoResponse::getBody,
+                    ShowKafkaScalePreCheckInfoResponse::setBody)
+                .withInnerContainerType(ShowKafkaScalePreCheckInfoResponseBody.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowKafkaTagsRequest, ShowKafkaTagsResponse> showKafkaTags =
         genForShowKafkaTags();
 
@@ -2485,6 +2990,41 @@ public class KafkaMeta {
             f -> f.withMarshaller(ShowKafkaTagsRequest::getInstanceId, ShowKafkaTagsRequest::setInstanceId));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowKafkaTopicDetailRequest, ShowKafkaTopicDetailResponse> showKafkaTopicDetail =
+        genForShowKafkaTopicDetail();
+
+    private static HttpRequestDef<ShowKafkaTopicDetailRequest, ShowKafkaTopicDetailResponse> genForShowKafkaTopicDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowKafkaTopicDetailRequest, ShowKafkaTopicDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowKafkaTopicDetailRequest.class, ShowKafkaTopicDetailResponse.class)
+            .withName("ShowKafkaTopicDetail")
+            .withUri("/v2/kafka/{project_id}/instances/{instance_id}/topics-detail/{topic}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKafkaTopicDetailRequest::getInstanceId,
+                ShowKafkaTopicDetailRequest::setInstanceId));
+        builder.<String>withRequestField("topic",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKafkaTopicDetailRequest::getTopic, ShowKafkaTopicDetailRequest::setTopic));
+
+        // response
+        builder.<List<ShowKafkaTopicDetailResponseBody>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowKafkaTopicDetailResponse::getBody, ShowKafkaTopicDetailResponse::setBody)
+                .withInnerContainerType(ShowKafkaTopicDetailResponseBody.class));
 
         return builder.build();
     }
@@ -2858,6 +3398,48 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowRecycleInstancesRequest, ShowRecycleInstancesResponse> showRecycleInstances =
+        genForShowRecycleInstances();
+
+    private static HttpRequestDef<ShowRecycleInstancesRequest, ShowRecycleInstancesResponse> genForShowRecycleInstances() {
+        // basic
+        HttpRequestDef.Builder<ShowRecycleInstancesRequest, ShowRecycleInstancesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowRecycleInstancesRequest.class, ShowRecycleInstancesResponse.class)
+            .withName("ShowRecycleInstances")
+            .withUri("/v2/{project_id}/recycle")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSpecConvertProductRequest, ShowSpecConvertProductResponse> showSpecConvertProduct =
+        genForShowSpecConvertProduct();
+
+    private static HttpRequestDef<ShowSpecConvertProductRequest, ShowSpecConvertProductResponse> genForShowSpecConvertProduct() {
+        // basic
+        HttpRequestDef.Builder<ShowSpecConvertProductRequest, ShowSpecConvertProductResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowSpecConvertProductRequest.class, ShowSpecConvertProductResponse.class)
+            .withName("ShowSpecConvertProduct")
+            .withUri("/v2/{project_id}/instances/{instance_id}/spec-convert")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSpecConvertProductRequest::getInstanceId,
+                ShowSpecConvertProductRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse> showTopicAccessPolicy =
         genForShowTopicAccessPolicy();
 
@@ -2882,6 +3464,57 @@ public class KafkaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTopicAccessPolicyRequest::getTopicName,
                 ShowTopicAccessPolicyRequest::setTopicName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowUpgradeInstanceVersionRequest, ShowUpgradeInstanceVersionResponse> showUpgradeInstanceVersion =
+        genForShowUpgradeInstanceVersion();
+
+    private static HttpRequestDef<ShowUpgradeInstanceVersionRequest, ShowUpgradeInstanceVersionResponse> genForShowUpgradeInstanceVersion() {
+        // basic
+        HttpRequestDef.Builder<ShowUpgradeInstanceVersionRequest, ShowUpgradeInstanceVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowUpgradeInstanceVersionRequest.class,
+                    ShowUpgradeInstanceVersionResponse.class)
+                .withName("ShowUpgradeInstanceVersion")
+                .withUri("/v2/{project_id}/kafka/instances/{instance_id}/upgrade")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUpgradeInstanceVersionRequest::getInstanceId,
+                ShowUpgradeInstanceVersionRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowVolumeExpandConfigRequest, ShowVolumeExpandConfigResponse> showVolumeExpandConfig =
+        genForShowVolumeExpandConfig();
+
+    private static HttpRequestDef<ShowVolumeExpandConfigRequest, ShowVolumeExpandConfigResponse> genForShowVolumeExpandConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowVolumeExpandConfigRequest, ShowVolumeExpandConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowVolumeExpandConfigRequest.class, ShowVolumeExpandConfigResponse.class)
+            .withName("ShowVolumeExpandConfig")
+            .withUri("/v2/{project_id}/instances/{instance_id}/auto-volume-expand")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVolumeExpandConfigRequest::getInstanceId,
+                ShowVolumeExpandConfigRequest::setInstanceId));
 
         // response
 
@@ -3074,10 +3707,10 @@ public class KafkaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateInstanceGroupRequest::getInstanceId,
                 UpdateInstanceGroupRequest::setInstanceId));
-        builder.<BatchModifyGroupDescriptionReq>withRequestField("body",
+        builder.<BatchModiftGroupDescriptionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchModifyGroupDescriptionReq.class),
+            TypeCasts.uncheckedConversion(BatchModiftGroupDescriptionReq.class),
             f -> f.withMarshaller(UpdateInstanceGroupRequest::getBody, UpdateInstanceGroupRequest::setBody));
 
         // response
@@ -3220,6 +3853,45 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateScheduledTaskRequest, UpdateScheduledTaskResponse> updateScheduledTask =
+        genForUpdateScheduledTask();
+
+    private static HttpRequestDef<UpdateScheduledTaskRequest, UpdateScheduledTaskResponse> genForUpdateScheduledTask() {
+        // basic
+        HttpRequestDef.Builder<UpdateScheduledTaskRequest, UpdateScheduledTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateScheduledTaskRequest.class, UpdateScheduledTaskResponse.class)
+                .withName("UpdateScheduledTask")
+                .withUri("/v2/{project_id}/instances/{instance_id}/scheduled-tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScheduledTaskRequest::getInstanceId,
+                UpdateScheduledTaskRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScheduledTaskRequest::getTaskId, UpdateScheduledTaskRequest::setTaskId));
+        builder.<String>withRequestField("execute_at",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScheduledTaskRequest::getExecuteAt, UpdateScheduledTaskRequest::setExecuteAt));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScheduledTaskRequest::getStatus, UpdateScheduledTaskRequest::setStatus));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> updateTopicAccessPolicy =
         genForUpdateTopicAccessPolicy();
 
@@ -3278,6 +3950,78 @@ public class KafkaMeta {
             f -> f.withMarshaller(UpdateTopicReplicaRequest::getBody, UpdateTopicReplicaRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateVolumeExpansionConfigRequest, UpdateVolumeExpansionConfigResponse> updateVolumeExpansionConfig =
+        genForUpdateVolumeExpansionConfig();
+
+    private static HttpRequestDef<UpdateVolumeExpansionConfigRequest, UpdateVolumeExpansionConfigResponse> genForUpdateVolumeExpansionConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateVolumeExpansionConfigRequest, UpdateVolumeExpansionConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateVolumeExpansionConfigRequest.class,
+                    UpdateVolumeExpansionConfigResponse.class)
+                .withName("UpdateVolumeExpansionConfig")
+                .withUri("/v2/{project_id}/instances/{instance_id}/auto-volume-expand")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateVolumeExpansionConfigRequest::getInstanceId,
+                UpdateVolumeExpansionConfigRequest::setInstanceId));
+        builder.<AlterAutoVolumeExpandConfig>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AlterAutoVolumeExpandConfig.class),
+            f -> f.withMarshaller(UpdateVolumeExpansionConfigRequest::getBody,
+                UpdateVolumeExpansionConfigRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateVolumeExpansionConfigResponse::getBody,
+                UpdateVolumeExpansionConfigResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeInstanceRequest, UpgradeInstanceResponse> upgradeInstance =
+        genForUpgradeInstance();
+
+    private static HttpRequestDef<UpgradeInstanceRequest, UpgradeInstanceResponse> genForUpgradeInstance() {
+        // basic
+        HttpRequestDef.Builder<UpgradeInstanceRequest, UpgradeInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpgradeInstanceRequest.class, UpgradeInstanceResponse.class)
+                .withName("UpgradeInstance")
+                .withUri("/v2/{project_id}/kafka/instances/{instance_id}/upgrade")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeInstanceRequest::getInstanceId, UpgradeInstanceRequest::setInstanceId));
+        builder.<UpgradeInstanceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpgradeInstanceReq.class),
+            f -> f.withMarshaller(UpgradeInstanceRequest::getBody, UpgradeInstanceRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpgradeInstanceResponse::getBody, UpgradeInstanceResponse::setBody));
 
         return builder.build();
     }
@@ -3420,6 +4164,30 @@ public class KafkaMeta {
             f -> f.withMarshaller(ListConnectorTasksRequest::getLimit, ListConnectorTasksRequest::setLimit));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListObsBucketsRequest, ListObsBucketsResponse> listObsBuckets =
+        genForListObsBuckets();
+
+    private static HttpRequestDef<ListObsBucketsRequest, ListObsBucketsResponse> genForListObsBuckets() {
+        // basic
+        HttpRequestDef.Builder<ListObsBucketsRequest, ListObsBucketsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListObsBucketsRequest.class, ListObsBucketsResponse.class)
+                .withName("ListObsBuckets")
+                .withUri("/v1.0/dms/obs/buckets")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        builder.<List<ListObsBucketsResponseBody>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListObsBucketsResponse::getBody, ListObsBucketsResponse::setBody)
+                .withInnerContainerType(ListObsBucketsResponseBody.class));
 
         return builder.build();
     }
@@ -3571,6 +4339,33 @@ public class KafkaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResumeConnectorTaskRequest::getTaskId, ResumeConnectorTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowConnectorResourceInfoRequest, ShowConnectorResourceInfoResponse> showConnectorResourceInfo =
+        genForShowConnectorResourceInfo();
+
+    private static HttpRequestDef<ShowConnectorResourceInfoRequest, ShowConnectorResourceInfoResponse> genForShowConnectorResourceInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowConnectorResourceInfoRequest, ShowConnectorResourceInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowConnectorResourceInfoRequest.class,
+                    ShowConnectorResourceInfoResponse.class)
+                .withName("ShowConnectorResourceInfo")
+                .withUri("/v2/{project_id}/instances/{instance_id}/connector")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConnectorResourceInfoRequest::getInstanceId,
+                ShowConnectorResourceInfoRequest::setInstanceId));
 
         // response
 

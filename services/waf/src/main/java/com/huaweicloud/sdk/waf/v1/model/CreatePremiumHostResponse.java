@@ -30,7 +30,7 @@ public class CreatePremiumHostResponse extends SdkResponse {
     private String hostname;
 
     /**
-     * 对外协议，客户端（例如浏览器）请求访问网站的协议类型
+     * **参数解释：** 对外协议，客户端（例如浏览器）请求访问网站的协议类型 **约束限制：** 不涉及 **取值范围：**  - HTTP: HTTP协议  - HTTPS: HTTPS协议  - HTTP&HTTPS: 同事  **默认取值：** 不涉及
      */
     public static final class ProtocolEnum {
 
@@ -431,7 +431,7 @@ public class CreatePremiumHostResponse extends SdkResponse {
     }
 
     /**
-     * 对外协议，客户端（例如浏览器）请求访问网站的协议类型
+     * **参数解释：** 对外协议，客户端（例如浏览器）请求访问网站的协议类型 **约束限制：** 不涉及 **取值范围：**  - HTTP: HTTP协议  - HTTPS: HTTPS协议  - HTTP&HTTPS: 同事  **默认取值：** 不涉及
      * @return protocol
      */
     public ProtocolEnum getProtocol() {
@@ -778,7 +778,7 @@ public class CreatePremiumHostResponse extends SdkResponse {
     }
 
     /**
-     * 域名防护状态：  - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测  - 1：开启防护，WAF根据您配置的策略进行攻击检测
+     * **参数解释：** 域名防护状态标识，用于指定域名在WAF中的防护运行状态 **约束限制：** 不涉及 **取值范围：**  - -1：bypass，该域名的请求直接到达其后端服务器，不再经过WAF  - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测  - 1：开启防护，WAF根据您配置的策略进行攻击检测  **默认取值：** 不涉及
      * @return protectStatus
      */
     public Integer getProtectStatus() {
@@ -795,7 +795,7 @@ public class CreatePremiumHostResponse extends SdkResponse {
     }
 
     /**
-     * 域名接入状态，0表示未接入，1表示已接入
+     * **参数解释：** 域名接入状态 **约束限制：** 不涉及 **取值范围：**  - 0: 未接入  - 1: 已接入  **默认取值：** 不涉及
      * @return accessStatus
      */
     public Integer getAccessStatus() {

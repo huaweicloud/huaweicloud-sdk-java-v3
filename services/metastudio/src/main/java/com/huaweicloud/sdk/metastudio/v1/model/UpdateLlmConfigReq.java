@@ -25,6 +25,11 @@ public class UpdateLlmConfigReq {
 
     private String apiKey;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "model")
+
+    private String model;
+
     public UpdateLlmConfigReq withName(String name) {
         this.name = name;
         return this;
@@ -76,6 +81,23 @@ public class UpdateLlmConfigReq {
         this.apiKey = apiKey;
     }
 
+    public UpdateLlmConfigReq withModel(String model) {
+        this.model = model;
+        return this;
+    }
+
+    /**
+     * model参数
+     * @return model
+     */
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +108,12 @@ public class UpdateLlmConfigReq {
         }
         UpdateLlmConfigReq that = (UpdateLlmConfigReq) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.llmUrl, that.llmUrl)
-            && Objects.equals(this.apiKey, that.apiKey);
+            && Objects.equals(this.apiKey, that.apiKey) && Objects.equals(this.model, that.model);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, llmUrl, apiKey);
+        return Objects.hash(name, llmUrl, apiKey, model);
     }
 
     @Override
@@ -101,6 +123,7 @@ public class UpdateLlmConfigReq {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    llmUrl: ").append(toIndentedString(llmUrl)).append("\n");
         sb.append("    apiKey: ").append(toIndentedString(apiKey)).append("\n");
+        sb.append("    model: ").append(toIndentedString(model)).append("\n");
         sb.append("}");
         return sb.toString();
     }

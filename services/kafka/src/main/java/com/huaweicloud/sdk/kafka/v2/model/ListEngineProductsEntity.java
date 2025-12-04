@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 产品规格的详细信息。
+ * **参数解释**： 产品规格的详细信息。
  */
 public class ListEngineProductsEntity {
 
@@ -64,7 +64,7 @@ public class ListEngineProductsEntity {
     }
 
     /**
-     * 产品类型。当前产品类型有单机和集群。
+     * **参数解释**： 产品类型。 **取值范围**： - single    - cluster
      * @return type
      */
     public String getType() {
@@ -81,7 +81,7 @@ public class ListEngineProductsEntity {
     }
 
     /**
-     * 产品ID。
+     * **参数解释**： 产品ID。 **取值范围**： 不涉及。
      * @return productId
      */
     public String getProductId() {
@@ -98,7 +98,7 @@ public class ListEngineProductsEntity {
     }
 
     /**
-     * 底层资源类型。
+     * **参数解释**： 底层资源类型。 **取值范围**： 不涉及。
      * @return ecsFlavorId
      */
     public String getEcsFlavorId() {
@@ -115,7 +115,7 @@ public class ListEngineProductsEntity {
     }
 
     /**
-     * 账单计费类型。
+     * **参数解释**： 账单计费类型。 **取值范围**： 不涉及。
      * @return billingCode
      */
     public String getBillingCode() {
@@ -148,7 +148,7 @@ public class ListEngineProductsEntity {
     }
 
     /**
-     * CPU架构。
+     * **参数解释**： CPU架构。
      * @return archTypes
      */
     public List<String> getArchTypes() {
@@ -181,7 +181,7 @@ public class ListEngineProductsEntity {
     }
 
     /**
-     * [计费模式。monthly：包年/包月类型。hourly：按需类型。](tag:hws,hws_hk,ctc,cmcc)[暂未使用。](tag:hws_ocb,ocb,hcs,fcs)[计费模式。hourly：按需类型。](tag:dt,g42,tm,hk_g42,hk_tm,sbc,hk_sbc,hws_eu)
+     * **参数解释**： 计费模式。
      * @return chargingMode
      */
     public List<String> getChargingMode() {
@@ -214,7 +214,7 @@ public class ListEngineProductsEntity {
     }
 
     /**
-     * 支持的磁盘IO类型列表。
+     * **参数解释**： 支持的磁盘IO类型列表。
      * @return ios
      */
     public List<ListEngineIosEntity> getIos() {
@@ -248,7 +248,7 @@ public class ListEngineProductsEntity {
     }
 
     /**
-     * 当前规格实例支持的功能特性列表。
+     * **参数解释**： 当前规格实例支持的功能特性列表。
      * @return supportFeatures
      */
     public List<ListEngineSupportFeaturesEntity> getSupportFeatures() {

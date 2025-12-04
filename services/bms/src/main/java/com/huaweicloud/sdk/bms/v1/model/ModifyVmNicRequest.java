@@ -19,7 +19,7 @@ public class ModifyVmNicRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private BareMetalModifyPortRequest body;
+    private BareMetalModifyPortRequestBody body;
 
     public ModifyVmNicRequest withNicId(String nicId) {
         this.nicId = nicId;
@@ -38,14 +38,14 @@ public class ModifyVmNicRequest {
         this.nicId = nicId;
     }
 
-    public ModifyVmNicRequest withBody(BareMetalModifyPortRequest body) {
+    public ModifyVmNicRequest withBody(BareMetalModifyPortRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public ModifyVmNicRequest withBody(Consumer<BareMetalModifyPortRequest> bodySetter) {
+    public ModifyVmNicRequest withBody(Consumer<BareMetalModifyPortRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new BareMetalModifyPortRequest();
+            this.body = new BareMetalModifyPortRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class ModifyVmNicRequest {
      * Get body
      * @return body
      */
-    public BareMetalModifyPortRequest getBody() {
+    public BareMetalModifyPortRequestBody getBody() {
         return body;
     }
 
-    public void setBody(BareMetalModifyPortRequest body) {
+    public void setBody(BareMetalModifyPortRequestBody body) {
         this.body = body;
     }
 

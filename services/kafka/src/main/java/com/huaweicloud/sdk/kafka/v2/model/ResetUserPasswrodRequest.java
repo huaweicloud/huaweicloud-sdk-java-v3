@@ -24,7 +24,7 @@ public class ResetUserPasswrodRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ResetUserPasswrodReq body;
+    private ResetUserPasswordReq body;
 
     public ResetUserPasswrodRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -60,14 +60,14 @@ public class ResetUserPasswrodRequest {
         this.userName = userName;
     }
 
-    public ResetUserPasswrodRequest withBody(ResetUserPasswrodReq body) {
+    public ResetUserPasswrodRequest withBody(ResetUserPasswordReq body) {
         this.body = body;
         return this;
     }
 
-    public ResetUserPasswrodRequest withBody(Consumer<ResetUserPasswrodReq> bodySetter) {
+    public ResetUserPasswrodRequest withBody(Consumer<ResetUserPasswordReq> bodySetter) {
         if (this.body == null) {
-            this.body = new ResetUserPasswrodReq();
+            this.body = new ResetUserPasswordReq();
             bodySetter.accept(this.body);
         }
 
@@ -78,11 +78,11 @@ public class ResetUserPasswrodRequest {
      * Get body
      * @return body
      */
-    public ResetUserPasswrodReq getBody() {
+    public ResetUserPasswordReq getBody() {
         return body;
     }
 
-    public void setBody(ResetUserPasswrodReq body) {
+    public void setBody(ResetUserPasswordReq body) {
         this.body = body;
     }
 

@@ -16,7 +16,7 @@ import java.util.Objects;
 public class CreatePunishmentRuleRequestBody {
 
     /**
-     * 攻击惩罚类别
+     * **参数解释：** 攻击惩罚类别 **约束限制：** 不涉及 **取值范围：**  - long_ip_block  - long_cookie_block  - long_params_block  - short_ip_block  - short_cookie_block  - short_params_block  **默认取值：** 不涉及
      */
     public static final class CategoryEnum {
 
@@ -130,7 +130,7 @@ public class CreatePunishmentRuleRequestBody {
     }
 
     /**
-     * 攻击惩罚类别
+     * **参数解释：** 攻击惩罚类别 **约束限制：** 不涉及 **取值范围：**  - long_ip_block  - long_cookie_block  - long_params_block  - short_ip_block  - short_cookie_block  - short_params_block  **默认取值：** 不涉及
      * @return category
      */
     public CategoryEnum getCategory() {

@@ -46,7 +46,7 @@ public class CreateNet2CloudPhoneServerRequestBodyExtendParam {
     }
 
     /**
-     * 计费类型。  [- 0：包周期](tag:hws,hws_hk,cmcc) [- 1：按需](tag:fcs)
+     * 计费类型。  [- 0：包周期](tag:hws,hws_hk,cmcc,ctc) [- 1：按需](tag:fcs)
      * minimum: -128
      * maximum: 128
      * @return chargingMode

@@ -121,8 +121,6 @@ import com.huaweicloud.sdk.iam.v5.model.ShowLoginProfileV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ShowLoginProfileV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ShowPasswordPolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ShowPasswordPolicyV5Response;
-import com.huaweicloud.sdk.iam.v5.model.ShowTokenPolicyV5Request;
-import com.huaweicloud.sdk.iam.v5.model.ShowTokenPolicyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ShowUserLastLoginV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ShowUserLastLoginV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ShowUserV5Request;
@@ -141,8 +139,6 @@ import com.huaweicloud.sdk.iam.v5.model.UpdateLoginProfileV5Request;
 import com.huaweicloud.sdk.iam.v5.model.UpdateLoginProfileV5Response;
 import com.huaweicloud.sdk.iam.v5.model.UpdatePasswordPolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.UpdatePasswordPolicyV5Response;
-import com.huaweicloud.sdk.iam.v5.model.UpdateTokenPolicyV5Request;
-import com.huaweicloud.sdk.iam.v5.model.UpdateTokenPolicyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.UpdateTrustPolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.UpdateTrustPolicyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.UpdateUserV5Request;
@@ -1697,35 +1693,6 @@ public class IamAsyncClient {
     }
 
     /**
-     * 查询账号的Token策略
-     *
-     * 查询账号的Token策略，Token策略控制账号下的所有身份类型（IAM用户、委托、联邦用户）是否允许获取Token（联邦认证获取的unscoped token不受Token策略影响）。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowTokenPolicyV5Request 请求对象
-     * @return CompletableFuture<ShowTokenPolicyV5Response>
-     */
-    public CompletableFuture<ShowTokenPolicyV5Response> showTokenPolicyV5Async(ShowTokenPolicyV5Request request) {
-        return hcClient.asyncInvokeHttp(request, IamMeta.showTokenPolicyV5);
-    }
-
-    /**
-     * 查询账号的Token策略
-     *
-     * 查询账号的Token策略，Token策略控制账号下的所有身份类型（IAM用户、委托、联邦用户）是否允许获取Token（联邦认证获取的unscoped token不受Token策略影响）。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowTokenPolicyV5Request 请求对象
-     * @return AsyncInvoker<ShowTokenPolicyV5Request, ShowTokenPolicyV5Response>
-     */
-    public AsyncInvoker<ShowTokenPolicyV5Request, ShowTokenPolicyV5Response> showTokenPolicyV5AsyncInvoker(
-        ShowTokenPolicyV5Request request) {
-        return new AsyncInvoker<>(request, IamMeta.showTokenPolicyV5, hcClient);
-    }
-
-    /**
      * 修改账号登录策略
      *
      * 该接口可以用于修改账号登录策略。
@@ -1782,35 +1749,6 @@ public class IamAsyncClient {
     public AsyncInvoker<UpdatePasswordPolicyV5Request, UpdatePasswordPolicyV5Response> updatePasswordPolicyV5AsyncInvoker(
         UpdatePasswordPolicyV5Request request) {
         return new AsyncInvoker<>(request, IamMeta.updatePasswordPolicyV5, hcClient);
-    }
-
-    /**
-     * 修改账号的Token策略
-     *
-     * 修改账号的Token策略，Token策略控制账号下的所有身份类型（IAM用户、委托、联邦用户）是否允许获取Token（联邦认证获取的unscoped token不受Token策略影响）。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateTokenPolicyV5Request 请求对象
-     * @return CompletableFuture<UpdateTokenPolicyV5Response>
-     */
-    public CompletableFuture<UpdateTokenPolicyV5Response> updateTokenPolicyV5Async(UpdateTokenPolicyV5Request request) {
-        return hcClient.asyncInvokeHttp(request, IamMeta.updateTokenPolicyV5);
-    }
-
-    /**
-     * 修改账号的Token策略
-     *
-     * 修改账号的Token策略，Token策略控制账号下的所有身份类型（IAM用户、委托、联邦用户）是否允许获取Token（联邦认证获取的unscoped token不受Token策略影响）。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateTokenPolicyV5Request 请求对象
-     * @return AsyncInvoker<UpdateTokenPolicyV5Request, UpdateTokenPolicyV5Response>
-     */
-    public AsyncInvoker<UpdateTokenPolicyV5Request, UpdateTokenPolicyV5Response> updateTokenPolicyV5AsyncInvoker(
-        UpdateTokenPolicyV5Request request) {
-        return new AsyncInvoker<>(request, IamMeta.updateTokenPolicyV5, hcClient);
     }
 
     /**

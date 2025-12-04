@@ -5,6 +5,7 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.smn.v2.model.AddKmsKeyRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.AddSubscriptionFromSubscriptionUserRequest;
 import com.huaweicloud.sdk.smn.v2.model.AddSubscriptionFromSubscriptionUserRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.AddSubscriptionFromSubscriptionUserResponse;
@@ -37,6 +38,8 @@ import com.huaweicloud.sdk.smn.v2.model.CreateApplicationEndpointResponse;
 import com.huaweicloud.sdk.smn.v2.model.CreateApplicationRequest;
 import com.huaweicloud.sdk.smn.v2.model.CreateApplicationRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.CreateApplicationResponse;
+import com.huaweicloud.sdk.smn.v2.model.CreateKmsKeyRequest;
+import com.huaweicloud.sdk.smn.v2.model.CreateKmsKeyResponse;
 import com.huaweicloud.sdk.smn.v2.model.CreateLogtankRequest;
 import com.huaweicloud.sdk.smn.v2.model.CreateLogtankRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.CreateLogtankResponse;
@@ -55,6 +58,8 @@ import com.huaweicloud.sdk.smn.v2.model.DeleteApplicationEndpointRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteApplicationEndpointResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteApplicationRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteApplicationResponse;
+import com.huaweicloud.sdk.smn.v2.model.DeleteKmsKeyRequest;
+import com.huaweicloud.sdk.smn.v2.model.DeleteKmsKeyResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteLogtankRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteLogtankResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteMessageTemplateRequest;
@@ -73,6 +78,8 @@ import com.huaweicloud.sdk.smn.v2.model.DeleteTopicRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicResponse;
 import com.huaweicloud.sdk.smn.v2.model.DownloadHttpCertRequest;
 import com.huaweicloud.sdk.smn.v2.model.DownloadHttpCertResponse;
+import com.huaweicloud.sdk.smn.v2.model.DownloadHttpSignCertRequest;
+import com.huaweicloud.sdk.smn.v2.model.DownloadHttpSignCertResponse;
 import com.huaweicloud.sdk.smn.v2.model.HttpDetectRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationAttributesRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationAttributesResponse;
@@ -84,6 +91,8 @@ import com.huaweicloud.sdk.smn.v2.model.ListApplicationsRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationsResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListCloudServiceRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListCloudServiceResponse;
+import com.huaweicloud.sdk.smn.v2.model.ListCloudServicesRequest;
+import com.huaweicloud.sdk.smn.v2.model.ListCloudServicesResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListInstanceRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.ListLogtankRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListLogtankResponse;
@@ -111,6 +120,8 @@ import com.huaweicloud.sdk.smn.v2.model.ListTopicMessageStatisticsRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListTopicMessageStatisticsResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListTopicsRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListTopicsResponse;
+import com.huaweicloud.sdk.smn.v2.model.ListTopicsWithAssociatedResourcesRequest;
+import com.huaweicloud.sdk.smn.v2.model.ListTopicsWithAssociatedResourcesResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListVersionRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListVersionResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListVersionsRequest;
@@ -126,16 +137,25 @@ import com.huaweicloud.sdk.smn.v2.model.PublishMessageRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.PublishMessageResponse;
 import com.huaweicloud.sdk.smn.v2.model.ShowHttpDetectResultRequest;
 import com.huaweicloud.sdk.smn.v2.model.ShowHttpDetectResultResponse;
+import com.huaweicloud.sdk.smn.v2.model.ShowKmsKeyRequest;
+import com.huaweicloud.sdk.smn.v2.model.ShowKmsKeyResponse;
 import com.huaweicloud.sdk.smn.v2.model.ShowNotifyPolicyRequest;
 import com.huaweicloud.sdk.smn.v2.model.ShowNotifyPolicyResponse;
+import com.huaweicloud.sdk.smn.v2.model.SubscribeTopicRequest;
+import com.huaweicloud.sdk.smn.v2.model.SubscribeTopicResponse;
 import com.huaweicloud.sdk.smn.v2.model.UnsubscribeSubscriptionRequest;
 import com.huaweicloud.sdk.smn.v2.model.UnsubscribeSubscriptionResponse;
+import com.huaweicloud.sdk.smn.v2.model.UnsubscribeTopicRequest;
+import com.huaweicloud.sdk.smn.v2.model.UnsubscribeTopicResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointRequest;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationRequest;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationResponse;
+import com.huaweicloud.sdk.smn.v2.model.UpdateKmsKeyRequest;
+import com.huaweicloud.sdk.smn.v2.model.UpdateKmsKeyRequestBody;
+import com.huaweicloud.sdk.smn.v2.model.UpdateKmsKeyResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateLogtankRequest;
 import com.huaweicloud.sdk.smn.v2.model.UpdateLogtankRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.UpdateLogtankResponse;
@@ -454,6 +474,33 @@ public class SmnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateKmsKeyRequest, CreateKmsKeyResponse> createKmsKey = genForCreateKmsKey();
+
+    private static HttpRequestDef<CreateKmsKeyRequest, CreateKmsKeyResponse> genForCreateKmsKey() {
+        // basic
+        HttpRequestDef.Builder<CreateKmsKeyRequest, CreateKmsKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateKmsKeyRequest.class, CreateKmsKeyResponse.class)
+                .withName("CreateKmsKey")
+                .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/kms")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("topic_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateKmsKeyRequest::getTopicUrn, CreateKmsKeyRequest::setTopicUrn));
+        builder.<AddKmsKeyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddKmsKeyRequestBody.class),
+            f -> f.withMarshaller(CreateKmsKeyRequest::getBody, CreateKmsKeyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateLogtankRequest, CreateLogtankResponse> createLogtank =
         genForCreateLogtank();
 
@@ -583,6 +630,33 @@ public class SmnMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTopicRequestBody.class),
             f -> f.withMarshaller(CreateTopicRequest::getBody, CreateTopicRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteKmsKeyRequest, DeleteKmsKeyResponse> deleteKmsKey = genForDeleteKmsKey();
+
+    private static HttpRequestDef<DeleteKmsKeyRequest, DeleteKmsKeyResponse> genForDeleteKmsKey() {
+        // basic
+        HttpRequestDef.Builder<DeleteKmsKeyRequest, DeleteKmsKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteKmsKeyRequest.class, DeleteKmsKeyResponse.class)
+                .withName("DeleteKmsKey")
+                .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/kms/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("topic_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteKmsKeyRequest::getTopicUrn, DeleteKmsKeyRequest::setTopicUrn));
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteKmsKeyRequest::getId, DeleteKmsKeyRequest::setId));
 
         // response
 
@@ -836,17 +910,42 @@ public class SmnMeta {
                 DownloadHttpCertRequest::setCertificateId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DownloadHttpCertResponse::getBody, DownloadHttpCertResponse::setBody));
 
         builder.<String>withResponseField("content-type",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(DownloadHttpCertResponse::getContentType, DownloadHttpCertResponse::setContentType));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadHttpSignCertRequest, DownloadHttpSignCertResponse> downloadHttpSignCert =
+        genForDownloadHttpSignCert();
+
+    private static HttpRequestDef<DownloadHttpSignCertRequest, DownloadHttpSignCertResponse> genForDownloadHttpSignCert() {
+        // basic
+        HttpRequestDef.Builder<DownloadHttpSignCertRequest, DownloadHttpSignCertResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, DownloadHttpSignCertRequest.class, DownloadHttpSignCertResponse.class)
+            .withName("DownloadHttpSignCert")
+            .withUri("/v2/notifications/certifications/download/{certificate_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("certificate_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadHttpSignCertRequest::getCertificateId,
+                DownloadHttpSignCertRequest::setCertificateId));
+
+        // response
+
+        builder.<String>withResponseField("content-type",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DownloadHttpSignCertResponse::getContentType,
+                DownloadHttpSignCertResponse::setContentType));
         return builder.build();
     }
 
@@ -859,6 +958,24 @@ public class SmnMeta {
             HttpRequestDef.builder(HttpMethod.GET, ListCloudServiceRequest.class, ListCloudServiceResponse.class)
                 .withName("ListCloudService")
                 .withUri("/v2/notifications/cloud_service")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCloudServicesRequest, ListCloudServicesResponse> listCloudServices =
+        genForListCloudServices();
+
+    private static HttpRequestDef<ListCloudServicesRequest, ListCloudServicesResponse> genForListCloudServices() {
+        // basic
+        HttpRequestDef.Builder<ListCloudServicesRequest, ListCloudServicesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCloudServicesRequest.class, ListCloudServicesResponse.class)
+                .withName("ListCloudServices")
+                .withUri("/v2/notifications/cloud-services")
                 .withContentType("application/json");
 
         // requests
@@ -1288,6 +1405,69 @@ public class SmnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTopicsWithAssociatedResourcesRequest, ListTopicsWithAssociatedResourcesResponse> listTopicsWithAssociatedResources =
+        genForListTopicsWithAssociatedResources();
+
+    private static HttpRequestDef<ListTopicsWithAssociatedResourcesRequest, ListTopicsWithAssociatedResourcesResponse> genForListTopicsWithAssociatedResources() {
+        // basic
+        HttpRequestDef.Builder<ListTopicsWithAssociatedResourcesRequest, ListTopicsWithAssociatedResourcesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListTopicsWithAssociatedResourcesRequest.class,
+                    ListTopicsWithAssociatedResourcesResponse.class)
+                .withName("ListTopicsWithAssociatedResources")
+                .withUri("/v2/{project_id}/notifications/topics-with-associated-resources")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTopicsWithAssociatedResourcesRequest::getOffset,
+                ListTopicsWithAssociatedResourcesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTopicsWithAssociatedResourcesRequest::getLimit,
+                ListTopicsWithAssociatedResourcesRequest::setLimit));
+        builder.<String>withRequestField("topic_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopicsWithAssociatedResourcesRequest::getTopicId,
+                ListTopicsWithAssociatedResourcesRequest::setTopicId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopicsWithAssociatedResourcesRequest::getEnterpriseProjectId,
+                ListTopicsWithAssociatedResourcesRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopicsWithAssociatedResourcesRequest::getName,
+                ListTopicsWithAssociatedResourcesRequest::setName));
+        builder.<String>withRequestField("fuzzy_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopicsWithAssociatedResourcesRequest::getFuzzyName,
+                ListTopicsWithAssociatedResourcesRequest::setFuzzyName));
+        builder.<String>withRequestField("fuzzy_display_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTopicsWithAssociatedResourcesRequest::getFuzzyDisplayName,
+                ListTopicsWithAssociatedResourcesRequest::setFuzzyDisplayName));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListVersionRequest, ListVersionResponse> listVersion = genForListVersion();
 
     private static HttpRequestDef<ListVersionRequest, ListVersionResponse> genForListVersion() {
@@ -1406,6 +1586,28 @@ public class SmnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowKmsKeyRequest, ShowKmsKeyResponse> showKmsKey = genForShowKmsKey();
+
+    private static HttpRequestDef<ShowKmsKeyRequest, ShowKmsKeyResponse> genForShowKmsKey() {
+        // basic
+        HttpRequestDef.Builder<ShowKmsKeyRequest, ShowKmsKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowKmsKeyRequest.class, ShowKmsKeyResponse.class)
+                .withName("ShowKmsKey")
+                .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/kms")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("topic_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKmsKeyRequest::getTopicUrn, ShowKmsKeyRequest::setTopicUrn));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowNotifyPolicyRequest, ShowNotifyPolicyResponse> showNotifyPolicy =
         genForShowNotifyPolicy();
 
@@ -1423,6 +1625,39 @@ public class SmnMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowNotifyPolicyRequest::getTopicUrn, ShowNotifyPolicyRequest::setTopicUrn));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SubscribeTopicRequest, SubscribeTopicResponse> subscribeTopic =
+        genForSubscribeTopic();
+
+    private static HttpRequestDef<SubscribeTopicRequest, SubscribeTopicResponse> genForSubscribeTopic() {
+        // basic
+        HttpRequestDef.Builder<SubscribeTopicRequest, SubscribeTopicResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, SubscribeTopicRequest.class, SubscribeTopicResponse.class)
+                .withName("SubscribeTopic")
+                .withUri("/v2/notifications/subscriptions/subscribe")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("topic_urn",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SubscribeTopicRequest::getTopicUrn, SubscribeTopicRequest::setTopicUrn));
+        builder.<String>withRequestField("endpoint",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SubscribeTopicRequest::getEndpoint, SubscribeTopicRequest::setEndpoint));
+        builder.<String>withRequestField("token",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SubscribeTopicRequest::getToken, SubscribeTopicRequest::setToken));
 
         // response
 
@@ -1447,6 +1682,62 @@ public class SmnMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UnsubscribeSubscriptionRequest::getSubscriptionUrn,
                 UnsubscribeSubscriptionRequest::setSubscriptionUrn));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UnsubscribeTopicRequest, UnsubscribeTopicResponse> unsubscribeTopic =
+        genForUnsubscribeTopic();
+
+    private static HttpRequestDef<UnsubscribeTopicRequest, UnsubscribeTopicResponse> genForUnsubscribeTopic() {
+        // basic
+        HttpRequestDef.Builder<UnsubscribeTopicRequest, UnsubscribeTopicResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, UnsubscribeTopicRequest.class, UnsubscribeTopicResponse.class)
+                .withName("UnsubscribeTopic")
+                .withUri("/v2/notifications/subscriptions/unsubscribe")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("subscription_urn",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnsubscribeTopicRequest::getSubscriptionUrn,
+                UnsubscribeTopicRequest::setSubscriptionUrn));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateKmsKeyRequest, UpdateKmsKeyResponse> updateKmsKey = genForUpdateKmsKey();
+
+    private static HttpRequestDef<UpdateKmsKeyRequest, UpdateKmsKeyResponse> genForUpdateKmsKey() {
+        // basic
+        HttpRequestDef.Builder<UpdateKmsKeyRequest, UpdateKmsKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateKmsKeyRequest.class, UpdateKmsKeyResponse.class)
+                .withName("UpdateKmsKey")
+                .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/kms/{id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("topic_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateKmsKeyRequest::getTopicUrn, UpdateKmsKeyRequest::setTopicUrn));
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateKmsKeyRequest::getId, UpdateKmsKeyRequest::setId));
+        builder.<UpdateKmsKeyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateKmsKeyRequestBody.class),
+            f -> f.withMarshaller(UpdateKmsKeyRequest::getBody, UpdateKmsKeyRequest::setBody));
 
         // response
 

@@ -29,6 +29,11 @@ public class ChangeCloudPhoneServerRequestBody {
     private String keypairName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone")
+
+    private String availabilityZone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ports")
 
     private List<Port> ports = null;
@@ -127,6 +132,23 @@ public class ChangeCloudPhoneServerRequestBody {
 
     public void setKeypairName(String keypairName) {
         this.keypairName = keypairName;
+    }
+
+    public ChangeCloudPhoneServerRequestBody withAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    /**
+     * 云手机服务器所在的可用区，不填则维持原可用区不变。[如上海一可用区1为cn-east-3a。](tag:hws,hws_hk,cmcc,ctc)
+     * @return availabilityZone
+     */
+    public String getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
     }
 
     public ChangeCloudPhoneServerRequestBody withPorts(List<Port> ports) {
@@ -395,7 +417,8 @@ public class ChangeCloudPhoneServerRequestBody {
         }
         ChangeCloudPhoneServerRequestBody that = (ChangeCloudPhoneServerRequestBody) obj;
         return Objects.equals(this.phoneModelName, that.phoneModelName) && Objects.equals(this.imageId, that.imageId)
-            && Objects.equals(this.keypairName, that.keypairName) && Objects.equals(this.ports, that.ports)
+            && Objects.equals(this.keypairName, that.keypairName)
+            && Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.ports, that.ports)
             && Objects.equals(this.extendParam, that.extendParam) && Objects.equals(this.tenantVpcId, that.tenantVpcId)
             && Objects.equals(this.nics, that.nics) && Objects.equals(this.publicIp, that.publicIp)
             && Objects.equals(this.phoneCountPerIp, that.phoneCountPerIp)
@@ -409,6 +432,7 @@ public class ChangeCloudPhoneServerRequestBody {
         return Objects.hash(phoneModelName,
             imageId,
             keypairName,
+            availabilityZone,
             ports,
             extendParam,
             tenantVpcId,
@@ -428,6 +452,7 @@ public class ChangeCloudPhoneServerRequestBody {
         sb.append("    phoneModelName: ").append(toIndentedString(phoneModelName)).append("\n");
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("    keypairName: ").append(toIndentedString(keypairName)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    ports: ").append(toIndentedString(ports)).append("\n");
         sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
         sb.append("    tenantVpcId: ").append(toIndentedString(tenantVpcId)).append("\n");

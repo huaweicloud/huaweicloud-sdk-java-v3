@@ -127,6 +127,8 @@ import com.huaweicloud.sdk.waf.v1.model.CreateWhiteblackipRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateWhiteblackipRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAgencyRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAgencyResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeleteAlertNoticeConfigRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeleteAlertNoticeConfigResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAnticrawlerRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAnticrawlerRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeleteAntileakageRuleRequest;
@@ -247,8 +249,12 @@ import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSendingRecordsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSendingRecordsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSubscriptionsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListSecurityReportSubscriptionsResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListSourceIpTop5Request;
+import com.huaweicloud.sdk.waf.v1.model.ListSourceIpTop5Response;
 import com.huaweicloud.sdk.waf.v1.model.ListStatisticsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListStatisticsResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListThreatsRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListThreatsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListTopAbnormalRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListTopAbnormalResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListTopDomainsRequest;
@@ -257,6 +263,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListTopIpRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListTopIpResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListTopUrlRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListTopUrlResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListUrlRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListUrlResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListValueListRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListValueListResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListWebBasicProtectionRulesRequest;
@@ -1093,9 +1101,9 @@ public class WafAsyncClient {
      * 变更包周期云模式waf规格
      *
      * 变更包周期云模式waf规格。注：
-     *  - 1.变更某产品规格的前提是必须已购买该产品 
-     *  - 2.waf版本只支持升配，不支持降配；扩展包数量可以增加或者减少，但不支持数量减少为0 
-     *  - 3.不支持同时升降配，如增加域名扩展包数量，同时减少规则扩展包数量
+     *  - 变更某产品规格的前提是必须已购买该产品 
+     *  - 云模式支持版本降配，扩展包支持减少数量，最少可以到0 
+     *  - 不支持同时升降配，如增加域名扩展包数量，同时减少规则扩展包数量
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1111,9 +1119,9 @@ public class WafAsyncClient {
      * 变更包周期云模式waf规格
      *
      * 变更包周期云模式waf规格。注：
-     *  - 1.变更某产品规格的前提是必须已购买该产品 
-     *  - 2.waf版本只支持升配，不支持降配；扩展包数量可以增加或者减少，但不支持数量减少为0 
-     *  - 3.不支持同时升降配，如增加域名扩展包数量，同时减少规则扩展包数量
+     *  - 变更某产品规格的前提是必须已购买该产品 
+     *  - 云模式支持版本降配，扩展包支持减少数量，最少可以到0 
+     *  - 不支持同时升降配，如增加域名扩展包数量，同时减少规则扩展包数量
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2182,6 +2190,36 @@ public class WafAsyncClient {
     public AsyncInvoker<DeleteAgencyRequest, DeleteAgencyResponse> deleteAgencyAsyncInvoker(
         DeleteAgencyRequest request) {
         return new AsyncInvoker<>(request, WafMeta.deleteAgency, hcClient);
+    }
+
+    /**
+     * 删除告警通知配置
+     *
+     * 删除告警通知配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAlertNoticeConfigRequest 请求对象
+     * @return CompletableFuture<DeleteAlertNoticeConfigResponse>
+     */
+    public CompletableFuture<DeleteAlertNoticeConfigResponse> deleteAlertNoticeConfigAsync(
+        DeleteAlertNoticeConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.deleteAlertNoticeConfig);
+    }
+
+    /**
+     * 删除告警通知配置
+     *
+     * 删除告警通知配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAlertNoticeConfigRequest 请求对象
+     * @return AsyncInvoker<DeleteAlertNoticeConfigRequest, DeleteAlertNoticeConfigResponse>
+     */
+    public AsyncInvoker<DeleteAlertNoticeConfigRequest, DeleteAlertNoticeConfigResponse> deleteAlertNoticeConfigAsyncInvoker(
+        DeleteAlertNoticeConfigRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.deleteAlertNoticeConfig, hcClient);
     }
 
     /**
@@ -3945,6 +3983,35 @@ public class WafAsyncClient {
     }
 
     /**
+     * 查询攻击源ip
+     *
+     * 查询攻击源ip
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSourceIpTop5Request 请求对象
+     * @return CompletableFuture<ListSourceIpTop5Response>
+     */
+    public CompletableFuture<ListSourceIpTop5Response> listSourceIpTop5Async(ListSourceIpTop5Request request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listSourceIpTop5);
+    }
+
+    /**
+     * 查询攻击源ip
+     *
+     * 查询攻击源ip
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSourceIpTop5Request 请求对象
+     * @return AsyncInvoker<ListSourceIpTop5Request, ListSourceIpTop5Response>
+     */
+    public AsyncInvoker<ListSourceIpTop5Request, ListSourceIpTop5Response> listSourceIpTop5AsyncInvoker(
+        ListSourceIpTop5Request request) {
+        return new AsyncInvoker<>(request, WafMeta.listSourceIpTop5, hcClient);
+    }
+
+    /**
      * 查询安全总览请求与攻击数量
      *
      * 查询安全总览请求与攻击数量。
@@ -3971,6 +4038,34 @@ public class WafAsyncClient {
     public AsyncInvoker<ListStatisticsRequest, ListStatisticsResponse> listStatisticsAsyncInvoker(
         ListStatisticsRequest request) {
         return new AsyncInvoker<>(request, WafMeta.listStatistics, hcClient);
+    }
+
+    /**
+     * 查询攻击事件分布类型
+     *
+     * 查询攻击事件分布类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListThreatsRequest 请求对象
+     * @return CompletableFuture<ListThreatsResponse>
+     */
+    public CompletableFuture<ListThreatsResponse> listThreatsAsync(ListThreatsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listThreats);
+    }
+
+    /**
+     * 查询攻击事件分布类型
+     *
+     * 查询攻击事件分布类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListThreatsRequest 请求对象
+     * @return AsyncInvoker<ListThreatsRequest, ListThreatsResponse>
+     */
+    public AsyncInvoker<ListThreatsRequest, ListThreatsResponse> listThreatsAsyncInvoker(ListThreatsRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.listThreats, hcClient);
     }
 
     /**
@@ -4085,6 +4180,34 @@ public class WafAsyncClient {
      */
     public AsyncInvoker<ListTopUrlRequest, ListTopUrlResponse> listTopUrlAsyncInvoker(ListTopUrlRequest request) {
         return new AsyncInvoker<>(request, WafMeta.listTopUrl, hcClient);
+    }
+
+    /**
+     * 查询事件日志中的url
+     *
+     * 查询QPS。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUrlRequest 请求对象
+     * @return CompletableFuture<ListUrlResponse>
+     */
+    public CompletableFuture<ListUrlResponse> listUrlAsync(ListUrlRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.listUrl);
+    }
+
+    /**
+     * 查询事件日志中的url
+     *
+     * 查询QPS。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUrlRequest 请求对象
+     * @return AsyncInvoker<ListUrlRequest, ListUrlResponse>
+     */
+    public AsyncInvoker<ListUrlRequest, ListUrlResponse> listUrlAsyncInvoker(ListUrlRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.listUrl, hcClient);
     }
 
     /**

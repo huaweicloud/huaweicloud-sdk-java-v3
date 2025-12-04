@@ -21,22 +21,22 @@ public class UpdateKafkaUserClientQuotaTaskReq {
     private String client;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "user-default")
+    @JsonProperty(value = "user_default")
 
     private Boolean userDefault;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "client-default")
+    @JsonProperty(value = "client_default")
 
     private Boolean clientDefault;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "producer-byte-rate")
+    @JsonProperty(value = "producer_byte_rate")
 
     private Long producerByteRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "consumer-byte-rate")
+    @JsonProperty(value = "consumer_byte_rate")
 
     private Long consumerByteRate;
 
@@ -80,7 +80,7 @@ public class UpdateKafkaUserClientQuotaTaskReq {
     }
 
     /**
-     * 是否使用用户默认设置。   - 是，表示对全部用户限流。此时不能同时设置用户名。   - 否，表示对特定用户限流。此时需要设置用户名。
+     * 是否使用用户默认设置。   - 是：表示对全部用户限流。此时不能同时设置用户名。   - 否：表示对特定用户限流。此时需要设置用户名。
      * @return userDefault
      */
     public Boolean getUserDefault() {
@@ -97,7 +97,7 @@ public class UpdateKafkaUserClientQuotaTaskReq {
     }
 
     /**
-     * 是否使用客户端默认设置。   - 是，表示对全部客户端限流。此时不能设置客户端ID。   - 否，表示对特定客户端限流。此时需要设置客户端ID。
+     * 是否使用客户端默认设置。   - 是：表示对全部客户端限流。此时不能设置客户端ID。   - 否：表示对特定客户端限流。此时需要设置客户端ID。
      * @return clientDefault
      */
     public Boolean getClientDefault() {

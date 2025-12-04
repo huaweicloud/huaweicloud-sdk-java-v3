@@ -145,7 +145,7 @@ public class ShowCertificateResponse extends SdkResponse {
     }
 
     /**
-     * 证书过期状态，0-未过期，1-已过期，2-即将过期
+     * **参数解释：** 证书过期状态 **约束限制：** 不涉及 **取值范围：**  - 0:未过期  - 1:已过期  - 2:即将过期（证书将在一个月内过期）  **默认取值：** 不涉及
      * @return expStatus
      */
     public Integer getExpStatus() {

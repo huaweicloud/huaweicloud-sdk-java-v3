@@ -29,6 +29,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class TestClientBuilder {
+    @SuppressWarnings("unchecked")
     @Test
     public void testBuildClient() throws NoSuchFieldException, IllegalAccessException {
         BasicCredentials credentials = new BasicCredentials().withAk("ak").withSk("sk").withProjectId("projectId");
@@ -42,6 +43,7 @@ public class TestClientBuilder {
         Assert.assertEquals("https://endpoint", ((List<String>)endpintsField.get(client)).get(0));
     }
 
+    @SuppressWarnings("unchecked")
     @Test
     public void testBuildClient2() throws NoSuchFieldException, IllegalAccessException {
         BasicCredentials credentials = new BasicCredentials().withAk("ak").withSk("sk").withProjectId("projectId");

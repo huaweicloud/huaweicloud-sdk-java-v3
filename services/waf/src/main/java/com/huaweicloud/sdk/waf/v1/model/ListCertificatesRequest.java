@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -35,10 +40,86 @@ public class ListCertificatesRequest {
 
     private Boolean host;
 
+    /**
+     * **参数解释：** 证书过期状态 **约束限制：** 不涉及 **取值范围：**  - 0:未过期  - 1:已过期  - 2:即将过期（证书将在一个月内过期）  **默认取值：** 不涉及
+     */
+    public static final class ExpStatusEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final ExpStatusEnum NUMBER_0 = new ExpStatusEnum(0);
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final ExpStatusEnum NUMBER_1 = new ExpStatusEnum(1);
+
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final ExpStatusEnum NUMBER_2 = new ExpStatusEnum(2);
+
+        private static final Map<Integer, ExpStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, ExpStatusEnum> createStaticFields() {
+            Map<Integer, ExpStatusEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        ExpStatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ExpStatusEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ExpStatusEnum(value));
+        }
+
+        public static ExpStatusEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ExpStatusEnum) {
+                return this.value.equals(((ExpStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exp_status")
 
-    private Integer expStatus;
+    private ExpStatusEnum expStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "query_scm")
@@ -130,20 +211,20 @@ public class ListCertificatesRequest {
         this.host = host;
     }
 
-    public ListCertificatesRequest withExpStatus(Integer expStatus) {
+    public ListCertificatesRequest withExpStatus(ExpStatusEnum expStatus) {
         this.expStatus = expStatus;
         return this;
     }
 
     /**
-     * 证书过期状态，0-未过期，1-已过期，2-即将过期（证书将在一个月内过期）
+     * **参数解释：** 证书过期状态 **约束限制：** 不涉及 **取值范围：**  - 0:未过期  - 1:已过期  - 2:即将过期（证书将在一个月内过期）  **默认取值：** 不涉及
      * @return expStatus
      */
-    public Integer getExpStatus() {
+    public ExpStatusEnum getExpStatus() {
         return expStatus;
     }
 
-    public void setExpStatus(Integer expStatus) {
+    public void setExpStatus(ExpStatusEnum expStatus) {
         this.expStatus = expStatus;
     }
 

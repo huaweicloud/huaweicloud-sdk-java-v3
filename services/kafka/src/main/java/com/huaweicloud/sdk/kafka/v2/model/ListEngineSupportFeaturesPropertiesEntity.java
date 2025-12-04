@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 实例支持的功能属性描述。
+ * **参数解释**： 实例支持的功能属性描述。
  */
 public class ListEngineSupportFeaturesPropertiesEntity {
 
@@ -36,7 +36,7 @@ public class ListEngineSupportFeaturesPropertiesEntity {
     }
 
     /**
-     * 转储功能的最大任务数。
+     * **参数解释**： Smart Connect的最大任务数。 **取值范围**： 不涉及。
      * @return maxTask
      */
     public String getMaxTask() {
@@ -53,7 +53,7 @@ public class ListEngineSupportFeaturesPropertiesEntity {
     }
 
     /**
-     * 转储功能的最小任务数。
+     * **参数解释**： Smart Connect的最小任务数。 **取值范围**： 不涉及。
      * @return minTask
      */
     public String getMinTask() {
@@ -70,7 +70,7 @@ public class ListEngineSupportFeaturesPropertiesEntity {
     }
 
     /**
-     * 转储功能的最大节点数。
+     * **参数解释**： Smart Connect的最大节点数。 **取值范围**： 不涉及。
      * @return maxNode
      */
     public String getMaxNode() {
@@ -87,7 +87,7 @@ public class ListEngineSupportFeaturesPropertiesEntity {
     }
 
     /**
-     * 转储功能的最小节点数。
+     * **参数解释**： Smart Connect的最小节点数。 **取值范围**： 不涉及。
      * @return minNode
      */
     public String getMinNode() {

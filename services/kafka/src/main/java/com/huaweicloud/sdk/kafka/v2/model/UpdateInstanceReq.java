@@ -194,7 +194,7 @@ public class UpdateInstanceReq {
     }
 
     /**
-     * 安全组ID。  获取方法如下：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。
+     * 安全组ID。  获取方法如下：参考《虚拟私有云 API参考》，调用“查询安全组列表”接口，从响应体中获取安全组ID。
      * @return securityGroupId
      */
     public String getSecurityGroupId() {

@@ -9,6 +9,8 @@ import com.huaweicloud.sdk.live.v2.model.ListAreaDetailRequest;
 import com.huaweicloud.sdk.live.v2.model.ListAreaDetailResponse;
 import com.huaweicloud.sdk.live.v2.model.ListBandwidthDetailRequest;
 import com.huaweicloud.sdk.live.v2.model.ListBandwidthDetailResponse;
+import com.huaweicloud.sdk.live.v2.model.ListCarouselTaskDetailRequest;
+import com.huaweicloud.sdk.live.v2.model.ListCarouselTaskDetailResponse;
 import com.huaweicloud.sdk.live.v2.model.ListDomainBandwidthPeakRequest;
 import com.huaweicloud.sdk.live.v2.model.ListDomainBandwidthPeakResponse;
 import com.huaweicloud.sdk.live.v2.model.ListDomainTrafficDetailRequest;
@@ -1038,6 +1040,48 @@ public class LiveMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ShowUpBandwidthResponse::getXRequestId, ShowUpBandwidthResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCarouselTaskDetailRequest, ListCarouselTaskDetailResponse> listCarouselTaskDetail =
+        genForListCarouselTaskDetail();
+
+    private static HttpRequestDef<ListCarouselTaskDetailRequest, ListCarouselTaskDetailResponse> genForListCarouselTaskDetail() {
+        // basic
+        HttpRequestDef.Builder<ListCarouselTaskDetailRequest, ListCarouselTaskDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListCarouselTaskDetailRequest.class, ListCarouselTaskDetailResponse.class)
+            .withName("ListCarouselTaskDetail")
+            .withUri("/v2/{project_id}/stats/carousel-task/detail")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("carousel_task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCarouselTaskDetailRequest::getCarouselTaskId,
+                ListCarouselTaskDetailRequest::setCarouselTaskId));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCarouselTaskDetailRequest::getStartTime,
+                ListCarouselTaskDetailRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCarouselTaskDetailRequest::getEndTime,
+                ListCarouselTaskDetailRequest::setEndTime));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListCarouselTaskDetailResponse::getXRequestId,
+                ListCarouselTaskDetailResponse::setXRequestId));
         return builder.build();
     }
 

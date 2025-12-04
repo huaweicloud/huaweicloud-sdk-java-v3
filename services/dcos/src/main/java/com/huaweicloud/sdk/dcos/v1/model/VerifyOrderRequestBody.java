@@ -11,31 +11,9 @@ import java.util.Objects;
 public class VerifyOrderRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "meet_expectation")
-
-    private Boolean meetExpectation;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "comments")
 
     private String comments;
-
-    public VerifyOrderRequestBody withMeetExpectation(Boolean meetExpectation) {
-        this.meetExpectation = meetExpectation;
-        return this;
-    }
-
-    /**
-     * 是否符合预期
-     * @return meetExpectation
-     */
-    public Boolean getMeetExpectation() {
-        return meetExpectation;
-    }
-
-    public void setMeetExpectation(Boolean meetExpectation) {
-        this.meetExpectation = meetExpectation;
-    }
 
     public VerifyOrderRequestBody withComments(String comments) {
         this.comments = comments;
@@ -63,20 +41,18 @@ public class VerifyOrderRequestBody {
             return false;
         }
         VerifyOrderRequestBody that = (VerifyOrderRequestBody) obj;
-        return Objects.equals(this.meetExpectation, that.meetExpectation)
-            && Objects.equals(this.comments, that.comments);
+        return Objects.equals(this.comments, that.comments);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(meetExpectation, comments);
+        return Objects.hash(comments);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class VerifyOrderRequestBody {\n");
-        sb.append("    meetExpectation: ").append(toIndentedString(meetExpectation)).append("\n");
         sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
         sb.append("}");
         return sb.toString();

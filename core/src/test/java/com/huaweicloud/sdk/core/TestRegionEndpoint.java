@@ -170,7 +170,7 @@ public class TestRegionEndpoint {
                     .withRegion(TestRegion.valueOf(""))
                     .build();
         } catch (IllegalArgumentException e) {
-            Assert.assertEquals(e.getMessage(), "Unexpected empty parameter: regionId.");
+            Assert.assertEquals("Unexpected empty parameter: regionId.", e.getMessage());
         }
     }
 
@@ -183,7 +183,7 @@ public class TestRegionEndpoint {
                     .withRegion(TestRegion.valueOf("cn-north-6"))
                     .build();
         } catch (IllegalArgumentException e) {
-            Assert.assertEquals(e.getMessage(), "Unexpected regionId: cn-north-6");
+            Assert.assertEquals("Unexpected regionId: cn-north-6", e.getMessage());
         }
     }
 }

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 修改的Topic。
+ * UpdateInstanceTopicReqTopics
  */
 public class UpdateInstanceTopicReqTopics {
 
@@ -59,7 +59,7 @@ public class UpdateInstanceTopicReqTopics {
     }
 
     /**
-     * Topic名称，不支持修改。
+     * **参数解释**： Topic名称，不支持修改。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -76,7 +76,7 @@ public class UpdateInstanceTopicReqTopics {
     }
 
     /**
-     * 老化时间，单位小时。
+     * **参数解释**： 老化时间，单位小时。 **约束限制**： 不涉及。 **取值范围**： 0-720。 **默认取值**： 不涉及。
      * @return retentionTime
      */
     public Integer getRetentionTime() {
@@ -93,7 +93,7 @@ public class UpdateInstanceTopicReqTopics {
     }
 
     /**
-     * 是否同步复制。
+     * **参数解释**： 是否同步复制。 **约束限制**： 不涉及。 **取值范围**： - true：开启同步复制。 - false：不开启同步复制。 **默认取值**： 不涉及。
      * @return syncReplication
      */
     public Boolean getSyncReplication() {
@@ -110,7 +110,7 @@ public class UpdateInstanceTopicReqTopics {
     }
 
     /**
-     * 是否同步落盘。
+     * **参数解释**： 是否同步落盘。 **约束限制**： 不涉及。 **取值范围**： - true：开启同步落盘。 - false：不开启同步落盘。 **默认取值**： 不涉及。
      * @return syncMessageFlush
      */
     public Boolean getSyncMessageFlush() {
@@ -127,7 +127,7 @@ public class UpdateInstanceTopicReqTopics {
     }
 
     /**
-     * 分区数。
+     * **参数解释**： 分区数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return newPartitionNumbers
      */
     public Integer getNewPartitionNumbers() {
@@ -160,7 +160,7 @@ public class UpdateInstanceTopicReqTopics {
     }
 
     /**
-     * 增加分区时指定broker列表
+     * **参数解释**： 增加分区时指定broker列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return newPartitionBrokers
      */
     public List<Integer> getNewPartitionBrokers() {
@@ -196,7 +196,7 @@ public class UpdateInstanceTopicReqTopics {
     }
 
     /**
-     * Topic配置
+     * **参数解释**： Topic配置。 **约束限制**： 不涉及。
      * @return topicOtherConfigs
      */
     public List<UpdateInstanceTopicReqTopicOtherConfigs> getTopicOtherConfigs() {
@@ -213,7 +213,7 @@ public class UpdateInstanceTopicReqTopics {
     }
 
     /**
-     * Topic描述
+     * **参数解释**： Topic描述。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return topicDesc
      */
     public String getTopicDesc() {

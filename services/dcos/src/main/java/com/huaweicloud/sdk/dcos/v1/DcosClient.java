@@ -29,7 +29,8 @@ public class DcosClient {
     }
 
     public static ClientBuilder<DcosClient> newBuilder() {
-        ClientBuilder<DcosClient> clientBuilder = new ClientBuilder<>(DcosClient::new);
+        ClientBuilder<DcosClient> clientBuilder =
+            new ClientBuilder<>(DcosClient::new, "GlobalCredentials,BasicCredentials");
         return clientBuilder;
     }
 

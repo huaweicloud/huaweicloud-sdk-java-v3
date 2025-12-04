@@ -16,6 +16,11 @@ public class UpdateNamespaceRequestBody {
 
     private NamespaceMetadata metadata;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cve_allowlist")
+
+    private UpdateCVEAllowlistRequest cveAllowlist;
+
     public UpdateNamespaceRequestBody withMetadata(NamespaceMetadata metadata) {
         this.metadata = metadata;
         return this;
@@ -42,6 +47,32 @@ public class UpdateNamespaceRequestBody {
         this.metadata = metadata;
     }
 
+    public UpdateNamespaceRequestBody withCveAllowlist(UpdateCVEAllowlistRequest cveAllowlist) {
+        this.cveAllowlist = cveAllowlist;
+        return this;
+    }
+
+    public UpdateNamespaceRequestBody withCveAllowlist(Consumer<UpdateCVEAllowlistRequest> cveAllowlistSetter) {
+        if (this.cveAllowlist == null) {
+            this.cveAllowlist = new UpdateCVEAllowlistRequest();
+            cveAllowlistSetter.accept(this.cveAllowlist);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get cveAllowlist
+     * @return cveAllowlist
+     */
+    public UpdateCVEAllowlistRequest getCveAllowlist() {
+        return cveAllowlist;
+    }
+
+    public void setCveAllowlist(UpdateCVEAllowlistRequest cveAllowlist) {
+        this.cveAllowlist = cveAllowlist;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -51,12 +82,12 @@ public class UpdateNamespaceRequestBody {
             return false;
         }
         UpdateNamespaceRequestBody that = (UpdateNamespaceRequestBody) obj;
-        return Objects.equals(this.metadata, that.metadata);
+        return Objects.equals(this.metadata, that.metadata) && Objects.equals(this.cveAllowlist, that.cveAllowlist);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(metadata);
+        return Objects.hash(metadata, cveAllowlist);
     }
 
     @Override
@@ -64,6 +95,7 @@ public class UpdateNamespaceRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateNamespaceRequestBody {\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    cveAllowlist: ").append(toIndentedString(cveAllowlist)).append("\n");
         sb.append("}");
         return sb.toString();
     }

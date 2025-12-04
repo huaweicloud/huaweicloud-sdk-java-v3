@@ -6,6 +6,11 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.ddm.v1.model.AdminUserInfoReq;
+import com.huaweicloud.sdk.ddm.v1.model.BatchDeleteNodesRequest;
+import com.huaweicloud.sdk.ddm.v1.model.BatchDeleteNodesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.BindEipOpenRequest;
+import com.huaweicloud.sdk.ddm.v1.model.BindEipRequest;
+import com.huaweicloud.sdk.ddm.v1.model.BindEipResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CancelMigrationRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CancelMigrationResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ChangeDatabaseVersionRequest;
@@ -27,6 +32,9 @@ import com.huaweicloud.sdk.ddm.v1.model.CreateDdmConfigurationsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDdmDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDdmDatabaseRequestBody;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDdmDatabaseResponse;
+import com.huaweicloud.sdk.ddm.v1.model.CreateDdmInstanceReq;
+import com.huaweicloud.sdk.ddm.v1.model.CreateDdmInstanceRequest;
+import com.huaweicloud.sdk.ddm.v1.model.CreateDdmInstanceResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateGroupRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateGroupRequestBody;
 import com.huaweicloud.sdk.ddm.v1.model.CreateGroupResponse;
@@ -47,8 +55,12 @@ import com.huaweicloud.sdk.ddm.v1.model.DeleteDdmDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteDdmDatabaseResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteDdmInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteDdmInstanceResponse;
+import com.huaweicloud.sdk.ddm.v1.model.DeleteGroupRequest;
+import com.huaweicloud.sdk.ddm.v1.model.DeleteGroupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteInstanceResponse;
+import com.huaweicloud.sdk.ddm.v1.model.DeleteNodesRequest;
+import com.huaweicloud.sdk.ddm.v1.model.DeleteNodesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteUserRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteUserResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DownloadSchemaMetadataRequest;
@@ -100,6 +112,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListTasksRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListTasksResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListUsersRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListUsersResponse;
 import com.huaweicloud.sdk.ddm.v1.model.LoadSchemaMetadataReq;
@@ -111,12 +125,16 @@ import com.huaweicloud.sdk.ddm.v1.model.MigrateResultsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.MigrateRouteSwitchReqVO;
 import com.huaweicloud.sdk.ddm.v1.model.ModifyConfigurationRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ModifyConfigurationResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ModifyEipRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ModifyEipResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ModifyElbVipOpenReq;
 import com.huaweicloud.sdk.ddm.v1.model.ModifyInstanceNameReq;
 import com.huaweicloud.sdk.ddm.v1.model.ModifyInstanceSecurityGroupReq;
 import com.huaweicloud.sdk.ddm.v1.model.ModifyReadAndWriteStrategyReq;
 import com.huaweicloud.sdk.ddm.v1.model.ParaGroupUpdate;
 import com.huaweicloud.sdk.ddm.v1.model.RebuildConfigRequest;
 import com.huaweicloud.sdk.ddm.v1.model.RebuildConfigResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ReduceNodeOpenRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ReduceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ResetAdministratorRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ResetAdministratorResponse;
@@ -126,9 +144,13 @@ import com.huaweicloud.sdk.ddm.v1.model.ResetUserPasswordResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ResizeFlavorReq;
 import com.huaweicloud.sdk.ddm.v1.model.ResizeFlavorRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ResizeFlavorResponse;
+import com.huaweicloud.sdk.ddm.v1.model.RestartDdmInstanceRequest;
+import com.huaweicloud.sdk.ddm.v1.model.RestartDdmInstanceResponse;
 import com.huaweicloud.sdk.ddm.v1.model.RestartInstanceReq;
 import com.huaweicloud.sdk.ddm.v1.model.RestartInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.RestartInstanceResponse;
+import com.huaweicloud.sdk.ddm.v1.model.RestartNodeRequest;
+import com.huaweicloud.sdk.ddm.v1.model.RestartNodeResponse;
 import com.huaweicloud.sdk.ddm.v1.model.Restore2ExistRequest;
 import com.huaweicloud.sdk.ddm.v1.model.Restore2ExistResponse;
 import com.huaweicloud.sdk.ddm.v1.model.RestoreInst2ExistReq;
@@ -155,6 +177,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ShowDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowDatabaseResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowDdmJobResultRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowDdmJobResultResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowDdmNodeDetailRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowDdmNodeDetailResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceDatabaseResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceParamRequest;
@@ -169,6 +193,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ShowPhysicalProcessesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowPhysicalProcessesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowProcessesAuditLogRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowProcessesAuditLogResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowPublicIpRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowPublicIpResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowRelatedDnsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowRelatedDnsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowRiskInfoRequest;
@@ -180,6 +206,10 @@ import com.huaweicloud.sdk.ddm.v1.model.SwitchRouteResponse;
 import com.huaweicloud.sdk.ddm.v1.model.SwitchSslOpenRequest;
 import com.huaweicloud.sdk.ddm.v1.model.SwitchSslRequest;
 import com.huaweicloud.sdk.ddm.v1.model.SwitchSslResponse;
+import com.huaweicloud.sdk.ddm.v1.model.SyncDnInformationRequest;
+import com.huaweicloud.sdk.ddm.v1.model.SyncDnInformationResponse;
+import com.huaweicloud.sdk.ddm.v1.model.UnbindEipRequest;
+import com.huaweicloud.sdk.ddm.v1.model.UnbindEipResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDatabaseInfoRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDatabaseInfoResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateInstanceNameRequest;
@@ -202,6 +232,8 @@ import com.huaweicloud.sdk.ddm.v1.model.UploadSchemaMetadataResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ValidateWeakPasswordRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ValidateWeakPasswordResponse;
 import com.huaweicloud.sdk.ddm.v1.model.WeakPasswordReq;
+
+import java.math.BigDecimal;
 
 @SuppressWarnings("unchecked")
 public class DdmMeta {
@@ -452,6 +484,61 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchDeleteNodesRequest, BatchDeleteNodesResponse> batchDeleteNodes =
+        genForBatchDeleteNodes();
+
+    private static HttpRequestDef<BatchDeleteNodesRequest, BatchDeleteNodesResponse> genForBatchDeleteNodes() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteNodesRequest, BatchDeleteNodesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteNodesRequest.class, BatchDeleteNodesResponse.class)
+                .withName("BatchDeleteNodes")
+                .withUri("/v3/{project_id}/instances/{instance_id}/nodes/batch-delete")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteNodesRequest::getInstanceId, BatchDeleteNodesRequest::setInstanceId));
+        builder.<ReduceNodeOpenRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ReduceNodeOpenRequest.class),
+            f -> f.withMarshaller(BatchDeleteNodesRequest::getBody, BatchDeleteNodesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BindEipRequest, BindEipResponse> bindEip = genForBindEip();
+
+    private static HttpRequestDef<BindEipRequest, BindEipResponse> genForBindEip() {
+        // basic
+        HttpRequestDef.Builder<BindEipRequest, BindEipResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BindEipRequest.class, BindEipResponse.class)
+                .withName("BindEip")
+                .withUri("/v3/{project_id}/instances/{instance_id}/eip")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BindEipRequest::getInstanceId, BindEipRequest::setInstanceId));
+        builder.<BindEipOpenRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BindEipOpenRequest.class),
+            f -> f.withMarshaller(BindEipRequest::getBody, BindEipRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CancelMigrationRequest, CancelMigrationResponse> cancelMigration =
         genForCancelMigration();
 
@@ -682,6 +769,29 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateDdmInstanceRequest, CreateDdmInstanceResponse> createDdmInstance =
+        genForCreateDdmInstance();
+
+    private static HttpRequestDef<CreateDdmInstanceRequest, CreateDdmInstanceResponse> genForCreateDdmInstance() {
+        // basic
+        HttpRequestDef.Builder<CreateDdmInstanceRequest, CreateDdmInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDdmInstanceRequest.class, CreateDdmInstanceResponse.class)
+                .withName("CreateDdmInstance")
+                .withUri("/v3/{project_id}/instances")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateDdmInstanceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDdmInstanceReq.class),
+            f -> f.withMarshaller(CreateDdmInstanceRequest::getBody, CreateDdmInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateGroupRequest, CreateGroupResponse> createGroup = genForCreateGroup();
 
     private static HttpRequestDef<CreateGroupRequest, CreateGroupResponse> genForCreateGroup() {
@@ -888,6 +998,33 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteGroupRequest, DeleteGroupResponse> deleteGroup = genForDeleteGroup();
+
+    private static HttpRequestDef<DeleteGroupRequest, DeleteGroupResponse> genForDeleteGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteGroupRequest, DeleteGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteGroupRequest.class, DeleteGroupResponse.class)
+                .withName("DeleteGroup")
+                .withUri("/v3/{project_id}/instances/{instance_id}/groups/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGroupRequest::getInstanceId, DeleteGroupRequest::setInstanceId));
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGroupRequest::getGroupId, DeleteGroupRequest::setGroupId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstance =
         genForDeleteInstance();
 
@@ -910,6 +1047,33 @@ public class DdmMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteInstanceRequest.DeleteRdsDataEnum.class),
             f -> f.withMarshaller(DeleteInstanceRequest::getDeleteRdsData, DeleteInstanceRequest::setDeleteRdsData));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteNodesRequest, DeleteNodesResponse> deleteNodes = genForDeleteNodes();
+
+    private static HttpRequestDef<DeleteNodesRequest, DeleteNodesResponse> genForDeleteNodes() {
+        // basic
+        HttpRequestDef.Builder<DeleteNodesRequest, DeleteNodesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteNodesRequest.class, DeleteNodesResponse.class)
+                .withName("DeleteNodes")
+                .withUri("/v3/{project_id}/instances/{instance_id}/nodes")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteNodesRequest::getInstanceId, DeleteNodesRequest::setInstanceId));
+        builder.<ReduceNodeOpenRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ReduceNodeOpenRequest.class),
+            f -> f.withMarshaller(DeleteNodesRequest::getBody, DeleteNodesRequest::setBody));
 
         // response
 
@@ -1580,6 +1744,33 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTasksRequest, ListTasksResponse> listTasks = genForListTasks();
+
+    private static HttpRequestDef<ListTasksRequest, ListTasksResponse> genForListTasks() {
+        // basic
+        HttpRequestDef.Builder<ListTasksRequest, ListTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTasksRequest.class, ListTasksResponse.class)
+                .withName("ListTasks")
+                .withUri("/v3/{project_id}/jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BigDecimal>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BigDecimal.class),
+            f -> f.withMarshaller(ListTasksRequest::getStartTime, ListTasksRequest::setStartTime));
+        builder.<BigDecimal>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BigDecimal.class),
+            f -> f.withMarshaller(ListTasksRequest::getEndTime, ListTasksRequest::setEndTime));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListUsersRequest, ListUsersResponse> listUsers = genForListUsers();
 
     private static HttpRequestDef<ListUsersRequest, ListUsersResponse> genForListUsers() {
@@ -1672,6 +1863,33 @@ public class DdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(MigrateResultsRequest::getJobId, MigrateResultsRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyEipRequest, ModifyEipResponse> modifyEip = genForModifyEip();
+
+    private static HttpRequestDef<ModifyEipRequest, ModifyEipResponse> genForModifyEip() {
+        // basic
+        HttpRequestDef.Builder<ModifyEipRequest, ModifyEipResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyEipRequest.class, ModifyEipResponse.class)
+                .withName("ModifyEip")
+                .withUri("/v3/{project_id}/instances/{instance_id}/elb/ip")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyEipRequest::getInstanceId, ModifyEipRequest::setInstanceId));
+        builder.<ModifyElbVipOpenReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyElbVipOpenReq.class),
+            f -> f.withMarshaller(ModifyEipRequest::getBody, ModifyEipRequest::setBody));
 
         // response
 
@@ -1794,6 +2012,29 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RestartDdmInstanceRequest, RestartDdmInstanceResponse> restartDdmInstance =
+        genForRestartDdmInstance();
+
+    private static HttpRequestDef<RestartDdmInstanceRequest, RestartDdmInstanceResponse> genForRestartDdmInstance() {
+        // basic
+        HttpRequestDef.Builder<RestartDdmInstanceRequest, RestartDdmInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RestartDdmInstanceRequest.class, RestartDdmInstanceResponse.class)
+                .withName("RestartDdmInstance")
+                .withUri("/v3/{project_id}/instances/{instance_id}/restart")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestartDdmInstanceRequest::getInstanceId, RestartDdmInstanceRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RestartInstanceRequest, RestartInstanceResponse> restartInstance =
         genForRestartInstance();
 
@@ -1816,6 +2057,33 @@ public class DdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestartInstanceReq.class),
             f -> f.withMarshaller(RestartInstanceRequest::getBody, RestartInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RestartNodeRequest, RestartNodeResponse> restartNode = genForRestartNode();
+
+    private static HttpRequestDef<RestartNodeRequest, RestartNodeResponse> genForRestartNode() {
+        // basic
+        HttpRequestDef.Builder<RestartNodeRequest, RestartNodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RestartNodeRequest.class, RestartNodeResponse.class)
+                .withName("RestartNode")
+                .withUri("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/restart")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestartNodeRequest::getInstanceId, RestartNodeRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestartNodeRequest::getNodeId, RestartNodeRequest::setNodeId));
 
         // response
 
@@ -2108,6 +2376,34 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDdmNodeDetailRequest, ShowDdmNodeDetailResponse> showDdmNodeDetail =
+        genForShowDdmNodeDetail();
+
+    private static HttpRequestDef<ShowDdmNodeDetailRequest, ShowDdmNodeDetailResponse> genForShowDdmNodeDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowDdmNodeDetailRequest, ShowDdmNodeDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDdmNodeDetailRequest.class, ShowDdmNodeDetailResponse.class)
+                .withName("ShowDdmNodeDetail")
+                .withUri("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDdmNodeDetailRequest::getInstanceId, ShowDdmNodeDetailRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDdmNodeDetailRequest::getNodeId, ShowDdmNodeDetailRequest::setNodeId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> showInstance = genForShowInstance();
 
     private static HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> genForShowInstance() {
@@ -2348,6 +2644,38 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowPublicIpRequest, ShowPublicIpResponse> showPublicIp = genForShowPublicIp();
+
+    private static HttpRequestDef<ShowPublicIpRequest, ShowPublicIpResponse> genForShowPublicIp() {
+        // basic
+        HttpRequestDef.Builder<ShowPublicIpRequest, ShowPublicIpResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPublicIpRequest.class, ShowPublicIpResponse.class)
+                .withName("ShowPublicIp")
+                .withUri("/v3/{project_id}/instances/{instance_id}/public-ips")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPublicIpRequest::getInstanceId, ShowPublicIpRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowPublicIpRequest::getOffset, ShowPublicIpRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowPublicIpRequest::getLimit, ShowPublicIpRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowRelatedDnsRequest, ShowRelatedDnsResponse> showRelatedDns =
         genForShowRelatedDns();
 
@@ -2466,6 +2794,51 @@ public class DdmMeta {
             FieldExistence.NULL_IGNORE,
             Object.class,
             f -> f.withMarshaller(SwitchSslResponse::getBody, SwitchSslResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SyncDnInformationRequest, SyncDnInformationResponse> syncDnInformation =
+        genForSyncDnInformation();
+
+    private static HttpRequestDef<SyncDnInformationRequest, SyncDnInformationResponse> genForSyncDnInformation() {
+        // basic
+        HttpRequestDef.Builder<SyncDnInformationRequest, SyncDnInformationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SyncDnInformationRequest.class, SyncDnInformationResponse.class)
+                .withName("SyncDnInformation")
+                .withUri("/v3/{project_id}/instances/{instance_id}/data-nodes/sync")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SyncDnInformationRequest::getInstanceId, SyncDnInformationRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UnbindEipRequest, UnbindEipResponse> unbindEip = genForUnbindEip();
+
+    private static HttpRequestDef<UnbindEipRequest, UnbindEipResponse> genForUnbindEip() {
+        // basic
+        HttpRequestDef.Builder<UnbindEipRequest, UnbindEipResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, UnbindEipRequest.class, UnbindEipResponse.class)
+                .withName("UnbindEip")
+                .withUri("/v3/{project_id}/instances/{instance_id}/eip")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnbindEipRequest::getInstanceId, UnbindEipRequest::setInstanceId));
+
+        // response
 
         return builder.build();
     }

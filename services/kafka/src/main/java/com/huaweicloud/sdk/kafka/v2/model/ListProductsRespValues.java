@@ -55,7 +55,7 @@ public class ListProductsRespValues {
     }
 
     /**
-     * 规格详情。
+     * **参数解释**： 规格详情。
      * @return detail
      */
     public List<ListProductsRespDetail> getDetail() {
@@ -72,7 +72,7 @@ public class ListProductsRespValues {
     }
 
     /**
-     * 实例类型。
+     * **参数解释**： 实例类型。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -105,7 +105,7 @@ public class ListProductsRespValues {
     }
 
     /**
-     * 资源售罄的可用区列表。
+     * **参数解释**： 资源售罄的可用区列表。 **取值范围**： 不涉及。
      * @return unavailableZones
      */
     public List<String> getUnavailableZones() {
@@ -138,7 +138,7 @@ public class ListProductsRespValues {
     }
 
     /**
-     * 有可用资源的可用区列表。
+     * **参数解释**： 有可用资源的可用区列表。 **取值范围**： 不涉及。
      * @return availableZones
      */
     public List<String> getAvailableZones() {

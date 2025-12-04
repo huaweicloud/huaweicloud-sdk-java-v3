@@ -84,6 +84,16 @@ public class ListProjectTagsRequest {
 
     private ResourceTypeEnum resourceType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
     public ListProjectTagsRequest withResourceType(ResourceTypeEnum resourceType) {
         this.resourceType = resourceType;
         return this;
@@ -101,6 +111,43 @@ public class ListProjectTagsRequest {
         this.resourceType = resourceType;
     }
 
+    public ListProjectTagsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 每页返回的资源个数。取值范围：1~100（默认值为100），一般设置为10、20、50。
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListProjectTagsRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 索引位置，从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询）,必须为数字，不能为负数
+     * minimum: 0
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -110,12 +157,13 @@ public class ListProjectTagsRequest {
             return false;
         }
         ListProjectTagsRequest that = (ListProjectTagsRequest) obj;
-        return Objects.equals(this.resourceType, that.resourceType);
+        return Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceType);
+        return Objects.hash(resourceType, limit, offset);
     }
 
     @Override
@@ -123,6 +171,8 @@ public class ListProjectTagsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListProjectTagsRequest {\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

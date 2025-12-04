@@ -117,7 +117,7 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
                 projectId = projects.get(0).getId();
             } else if (projects.isEmpty()) {
                 throw new SdkException(String.format(Locale.US,
-                        "Failed to get project id of region '%s' automatically, X-IAM-Trace-Id=%s."
+                        "failed to get project id of region '%s' automatically, X-IAM-Trace-Id=%s."
                         , regionId, response.getTraceId()) +
                         " Confirm that the project exists in your account," +
                         " or set project id manually:" +
@@ -125,12 +125,12 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
             } else {
                 String projectIds = projects.stream().map(Project::getId).collect(Collectors.joining(","));
                 throw new SdkException(String.format(Locale.US,
-                        "Multiple project ids found: [%s], X-IAM-Trace-Id=%s. ",
+                        "multiple project ids found: [%s], X-IAM-Trace-Id=%s. ",
                         projectIds, response.getTraceId()) +
                         "Please select one when initializing the credentials: " +
                         "new BasicCredentials().withAk(ak).withSk(sk).withProjectId(projectId);");
             }
-            logger.info("Success to get project id of region '{}': {}", regionId, StringUtils.mask(projectId));
+            logger.info("success to get project id of region '{}': {}", regionId, StringUtils.mask(projectId));
             if (StringUtils.isNotEmpty(cacheName)) {
                 cache.put(cacheName, projectId);
             }

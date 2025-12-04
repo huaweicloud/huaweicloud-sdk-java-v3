@@ -38,6 +38,11 @@ public class UpdateResourceViewsRequestBody {
 
     private String name;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_ids")
+
+    private List<String> domainIds = null;
+
     public UpdateResourceViewsRequestBody withOrganizationUnitIds(List<String> organizationUnitIds) {
         this.organizationUnitIds = organizationUnitIds;
         return this;
@@ -155,6 +160,39 @@ public class UpdateResourceViewsRequestBody {
         this.name = name;
     }
 
+    public UpdateResourceViewsRequestBody withDomainIds(List<String> domainIds) {
+        this.domainIds = domainIds;
+        return this;
+    }
+
+    public UpdateResourceViewsRequestBody addDomainIdsItem(String domainIdsItem) {
+        if (this.domainIds == null) {
+            this.domainIds = new ArrayList<>();
+        }
+        this.domainIds.add(domainIdsItem);
+        return this;
+    }
+
+    public UpdateResourceViewsRequestBody withDomainIds(Consumer<List<String>> domainIdsSetter) {
+        if (this.domainIds == null) {
+            this.domainIds = new ArrayList<>();
+        }
+        domainIdsSetter.accept(this.domainIds);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 视图包含的租户账号id值组成列表。 **取值范围：** 不涉及。 example:   - id1   - id2
+     * @return domainIds
+     */
+    public List<String> getDomainIds() {
+        return domainIds;
+    }
+
+    public void setDomainIds(List<String> domainIds) {
+        this.domainIds = domainIds;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -167,12 +205,12 @@ public class UpdateResourceViewsRequestBody {
         return Objects.equals(this.organizationUnitIds, that.organizationUnitIds)
             && Objects.equals(this.resourceTypes, that.resourceTypes)
             && Objects.equals(this.organizationId, that.organizationId) && Objects.equals(this.viewType, that.viewType)
-            && Objects.equals(this.name, that.name);
+            && Objects.equals(this.name, that.name) && Objects.equals(this.domainIds, that.domainIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(organizationUnitIds, resourceTypes, organizationId, viewType, name);
+        return Objects.hash(organizationUnitIds, resourceTypes, organizationId, viewType, name, domainIds);
     }
 
     @Override
@@ -184,6 +222,7 @@ public class UpdateResourceViewsRequestBody {
         sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
         sb.append("    viewType: ").append(toIndentedString(viewType)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    domainIds: ").append(toIndentedString(domainIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

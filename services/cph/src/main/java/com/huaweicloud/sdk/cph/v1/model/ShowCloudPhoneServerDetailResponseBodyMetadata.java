@@ -31,7 +31,7 @@ public class ShowCloudPhoneServerDetailResponseBodyMetadata {
     }
 
     /**
-     * 计费类型。 [- 0：包周期](tag:hws,hws_hk,cmcc)
+     * 计费类型。 [- 0：包周期](tag:hws,hws_hk,cmcc,ctc)
      * minimum: 0
      * maximum: 128
      * @return chargingMode

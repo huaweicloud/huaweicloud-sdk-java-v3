@@ -19,6 +19,11 @@ public class ListProjectTagsResponse extends SdkResponse {
 
     private List<Tags> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_count")
+
+    private Integer totalCount;
+
     public ListProjectTagsResponse withTags(List<Tags> tags) {
         this.tags = tags;
         return this;
@@ -52,6 +57,23 @@ public class ListProjectTagsResponse extends SdkResponse {
         this.tags = tags;
     }
 
+    public ListProjectTagsResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+
+    /**
+     * 标签总数。
+     * @return totalCount
+     */
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +83,12 @@ public class ListProjectTagsResponse extends SdkResponse {
             return false;
         }
         ListProjectTagsResponse that = (ListProjectTagsResponse) obj;
-        return Objects.equals(this.tags, that.tags);
+        return Objects.equals(this.tags, that.tags) && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tags);
+        return Objects.hash(tags, totalCount);
     }
 
     @Override
@@ -74,6 +96,7 @@ public class ListProjectTagsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListProjectTagsResponse {\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

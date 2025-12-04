@@ -133,6 +133,8 @@ import com.huaweicloud.sdk.swr.v2.model.ListInstanceAccessoriesRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceAccessoriesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceAllArtifactsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceAllArtifactsResponse;
+import com.huaweicloud.sdk.swr.v2.model.ListInstanceArtifactVulnerabilitiesRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListInstanceArtifactVulnerabilitiesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceArtifactsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceArtifactsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceInternalEndpointsRequest;
@@ -277,6 +279,8 @@ import com.huaweicloud.sdk.swr.v2.model.ShowTriggerRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowTriggerResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowUserRepositoryAuthRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowUserRepositoryAuthResponse;
+import com.huaweicloud.sdk.swr.v2.model.StartManualScanningRequest;
+import com.huaweicloud.sdk.swr.v2.model.StartManualScanningResponse;
 import com.huaweicloud.sdk.swr.v2.model.StopInstanceReplicationPolicyExecutionRequest;
 import com.huaweicloud.sdk.swr.v2.model.StopInstanceReplicationPolicyExecutionResponse;
 import com.huaweicloud.sdk.swr.v2.model.UpdateDomainNameRequest;
@@ -3180,6 +3184,36 @@ public class SwrAsyncClient {
     }
 
     /**
+     * 获取制品扫描的漏洞信息
+     *
+     * 获取制品扫描的漏洞信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceArtifactVulnerabilitiesRequest 请求对象
+     * @return CompletableFuture<ListInstanceArtifactVulnerabilitiesResponse>
+     */
+    public CompletableFuture<ListInstanceArtifactVulnerabilitiesResponse> listInstanceArtifactVulnerabilitiesAsync(
+        ListInstanceArtifactVulnerabilitiesRequest request) {
+        return hcClient.asyncInvokeHttp(request, SwrMeta.listInstanceArtifactVulnerabilities);
+    }
+
+    /**
+     * 获取制品扫描的漏洞信息
+     *
+     * 获取制品扫描的漏洞信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceArtifactVulnerabilitiesRequest 请求对象
+     * @return AsyncInvoker<ListInstanceArtifactVulnerabilitiesRequest, ListInstanceArtifactVulnerabilitiesResponse>
+     */
+    public AsyncInvoker<ListInstanceArtifactVulnerabilitiesRequest, ListInstanceArtifactVulnerabilitiesResponse> listInstanceArtifactVulnerabilitiesAsyncInvoker(
+        ListInstanceArtifactVulnerabilitiesRequest request) {
+        return new AsyncInvoker<>(request, SwrMeta.listInstanceArtifactVulnerabilities, hcClient);
+    }
+
+    /**
      * 获取制品版本列表
      *
      * 获取制品版本列表
@@ -4550,6 +4584,35 @@ public class SwrAsyncClient {
     public AsyncInvoker<ShowSubResourceInstancesCountRequest, ShowSubResourceInstancesCountResponse> showSubResourceInstancesCountAsyncInvoker(
         ShowSubResourceInstancesCountRequest request) {
         return new AsyncInvoker<>(request, SwrMeta.showSubResourceInstancesCount, hcClient);
+    }
+
+    /**
+     * 手动启动制品扫描
+     *
+     * 手动启动制品扫描
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartManualScanningRequest 请求对象
+     * @return CompletableFuture<StartManualScanningResponse>
+     */
+    public CompletableFuture<StartManualScanningResponse> startManualScanningAsync(StartManualScanningRequest request) {
+        return hcClient.asyncInvokeHttp(request, SwrMeta.startManualScanning);
+    }
+
+    /**
+     * 手动启动制品扫描
+     *
+     * 手动启动制品扫描
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartManualScanningRequest 请求对象
+     * @return AsyncInvoker<StartManualScanningRequest, StartManualScanningResponse>
+     */
+    public AsyncInvoker<StartManualScanningRequest, StartManualScanningResponse> startManualScanningAsyncInvoker(
+        StartManualScanningRequest request) {
+        return new AsyncInvoker<>(request, SwrMeta.startManualScanning, hcClient);
     }
 
     /**

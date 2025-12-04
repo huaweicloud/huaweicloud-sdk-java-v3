@@ -44,6 +44,21 @@ public class UpdateFlinkJarJobRequestBody {
     private Integer parallelNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "checkpoint_enabled")
+
+    private Boolean checkpointEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "checkpoint_mode")
+
+    private Integer checkpointMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "checkpoint_interval")
+
+    private Integer checkpointInterval;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_enabled")
 
     private Boolean logEnabled;
@@ -253,6 +268,57 @@ public class UpdateFlinkJarJobRequestBody {
 
     public void setParallelNumber(Integer parallelNumber) {
         this.parallelNumber = parallelNumber;
+    }
+
+    public UpdateFlinkJarJobRequestBody withCheckpointEnabled(Boolean checkpointEnabled) {
+        this.checkpointEnabled = checkpointEnabled;
+        return this;
+    }
+
+    /**
+     * 是否开启作业自动快照功能。 开启：true； 关闭：false； 默认：false
+     * @return checkpointEnabled
+     */
+    public Boolean getCheckpointEnabled() {
+        return checkpointEnabled;
+    }
+
+    public void setCheckpointEnabled(Boolean checkpointEnabled) {
+        this.checkpointEnabled = checkpointEnabled;
+    }
+
+    public UpdateFlinkJarJobRequestBody withCheckpointMode(Integer checkpointMode) {
+        this.checkpointMode = checkpointMode;
+        return this;
+    }
+
+    /**
+     * 快照模式。 1：exactly_once（精确一次） 2：at_least_once（至少一次） 默认：1
+     * @return checkpointMode
+     */
+    public Integer getCheckpointMode() {
+        return checkpointMode;
+    }
+
+    public void setCheckpointMode(Integer checkpointMode) {
+        this.checkpointMode = checkpointMode;
+    }
+
+    public UpdateFlinkJarJobRequestBody withCheckpointInterval(Integer checkpointInterval) {
+        this.checkpointInterval = checkpointInterval;
+        return this;
+    }
+
+    /**
+     * 快照间隔，单位为秒。 默认：10 取值范围：1-3600
+     * @return checkpointInterval
+     */
+    public Integer getCheckpointInterval() {
+        return checkpointInterval;
+    }
+
+    public void setCheckpointInterval(Integer checkpointInterval) {
+        this.checkpointInterval = checkpointInterval;
     }
 
     public UpdateFlinkJarJobRequestBody withLogEnabled(Boolean logEnabled) {
@@ -683,6 +749,9 @@ public class UpdateFlinkJarJobRequestBody {
             && Objects.equals(this.queueName, that.queueName) && Objects.equals(this.cuNumber, that.cuNumber)
             && Objects.equals(this.managerCuNumber, that.managerCuNumber)
             && Objects.equals(this.parallelNumber, that.parallelNumber)
+            && Objects.equals(this.checkpointEnabled, that.checkpointEnabled)
+            && Objects.equals(this.checkpointMode, that.checkpointMode)
+            && Objects.equals(this.checkpointInterval, that.checkpointInterval)
             && Objects.equals(this.logEnabled, that.logEnabled) && Objects.equals(this.obsBucket, that.obsBucket)
             && Objects.equals(this.smnTopic, that.smnTopic) && Objects.equals(this.mainClass, that.mainClass)
             && Objects.equals(this.entrypointArgs, that.entrypointArgs)
@@ -709,6 +778,9 @@ public class UpdateFlinkJarJobRequestBody {
             cuNumber,
             managerCuNumber,
             parallelNumber,
+            checkpointEnabled,
+            checkpointMode,
+            checkpointInterval,
             logEnabled,
             obsBucket,
             smnTopic,
@@ -743,6 +815,9 @@ public class UpdateFlinkJarJobRequestBody {
         sb.append("    cuNumber: ").append(toIndentedString(cuNumber)).append("\n");
         sb.append("    managerCuNumber: ").append(toIndentedString(managerCuNumber)).append("\n");
         sb.append("    parallelNumber: ").append(toIndentedString(parallelNumber)).append("\n");
+        sb.append("    checkpointEnabled: ").append(toIndentedString(checkpointEnabled)).append("\n");
+        sb.append("    checkpointMode: ").append(toIndentedString(checkpointMode)).append("\n");
+        sb.append("    checkpointInterval: ").append(toIndentedString(checkpointInterval)).append("\n");
         sb.append("    logEnabled: ").append(toIndentedString(logEnabled)).append("\n");
         sb.append("    obsBucket: ").append(toIndentedString(obsBucket)).append("\n");
         sb.append("    smnTopic: ").append(toIndentedString(smnTopic)).append("\n");

@@ -24,7 +24,7 @@ public class CreateValueListRequestBody {
     private String name;
 
     /**
-     * 引用表类型，参见枚举列表
+     * **参数解释：** 引用表类型 **约束限制：** 不涉及 **取值范围：**  - url  - params  - ip  - cookie  - referer  - user-agent  - header  - response_code  - response_header  - response_body  **默认取值：** 不涉及
      */
     public static final class TypeEnum {
 
@@ -179,7 +179,7 @@ public class CreateValueListRequestBody {
     }
 
     /**
-     * 引用表类型，参见枚举列表
+     * **参数解释：** 引用表类型 **约束限制：** 不涉及 **取值范围：**  - url  - params  - ip  - cookie  - referer  - user-agent  - header  - response_code  - response_header  - response_body  **默认取值：** 不涉及
      * @return type
      */
     public TypeEnum getType() {

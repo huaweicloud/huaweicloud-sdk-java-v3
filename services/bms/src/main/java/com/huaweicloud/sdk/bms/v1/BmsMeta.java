@@ -6,7 +6,7 @@ import com.huaweicloud.sdk.bms.v1.model.AddServerNicsResponse;
 import com.huaweicloud.sdk.bms.v1.model.AttachBaremetalServerVolumeRequest;
 import com.huaweicloud.sdk.bms.v1.model.AttachBaremetalServerVolumeResponse;
 import com.huaweicloud.sdk.bms.v1.model.AttachVolumeBody;
-import com.huaweicloud.sdk.bms.v1.model.BareMetalModifyPortRequest;
+import com.huaweicloud.sdk.bms.v1.model.BareMetalModifyPortRequestBody;
 import com.huaweicloud.sdk.bms.v1.model.BatchCreateBaremetalServerTagsRequest;
 import com.huaweicloud.sdk.bms.v1.model.BatchCreateBaremetalServerTagsRequestBody;
 import com.huaweicloud.sdk.bms.v1.model.BatchCreateBaremetalServerTagsResponse;
@@ -694,10 +694,10 @@ public class BmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ModifyVmNicRequest::getNicId, ModifyVmNicRequest::setNicId));
-        builder.<BareMetalModifyPortRequest>withRequestField("body",
+        builder.<BareMetalModifyPortRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BareMetalModifyPortRequest.class),
+            TypeCasts.uncheckedConversion(BareMetalModifyPortRequestBody.class),
             f -> f.withMarshaller(ModifyVmNicRequest::getBody, ModifyVmNicRequest::setBody));
 
         // response

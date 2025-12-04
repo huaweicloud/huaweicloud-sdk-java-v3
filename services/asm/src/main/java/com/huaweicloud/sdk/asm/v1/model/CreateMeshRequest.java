@@ -12,33 +12,9 @@ import java.util.function.Consumer;
 public class CreateMeshRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Apply-ProjectID")
-
-    private String xApplyProjectID;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private Mesh body;
-
-    public CreateMeshRequest withXApplyProjectID(String xApplyProjectID) {
-        this.xApplyProjectID = xApplyProjectID;
-        return this;
-    }
-
-    /**
-     * 网格所属ProjectID
-     * @return xApplyProjectID
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Apply-ProjectID")
-    public String getXApplyProjectID() {
-        return xApplyProjectID;
-    }
-
-    public void setXApplyProjectID(String xApplyProjectID) {
-        this.xApplyProjectID = xApplyProjectID;
-    }
 
     public CreateMeshRequest withBody(Mesh body) {
         this.body = body;
@@ -75,19 +51,18 @@ public class CreateMeshRequest {
             return false;
         }
         CreateMeshRequest that = (CreateMeshRequest) obj;
-        return Objects.equals(this.xApplyProjectID, that.xApplyProjectID) && Objects.equals(this.body, that.body);
+        return Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xApplyProjectID, body);
+        return Objects.hash(body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateMeshRequest {\n");
-        sb.append("    xApplyProjectID: ").append(toIndentedString(xApplyProjectID)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

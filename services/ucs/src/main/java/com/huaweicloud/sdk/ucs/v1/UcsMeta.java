@@ -54,10 +54,10 @@ import com.huaweicloud.sdk.ucs.v1.model.DeleteRepoRequest;
 import com.huaweicloud.sdk.ucs.v1.model.DeleteRepoResponse;
 import com.huaweicloud.sdk.ucs.v1.model.DeleteRuleRequest;
 import com.huaweicloud.sdk.ucs.v1.model.DeleteRuleResponse;
+import com.huaweicloud.sdk.ucs.v1.model.DisableClusterGroupPolicyRequest;
+import com.huaweicloud.sdk.ucs.v1.model.DisableClusterGroupPolicyResponse;
 import com.huaweicloud.sdk.ucs.v1.model.DisableClusterPolicyRequest;
 import com.huaweicloud.sdk.ucs.v1.model.DisableClusterPolicyResponse;
-import com.huaweicloud.sdk.ucs.v1.model.DisableClustergroupPolicyRequest;
-import com.huaweicloud.sdk.ucs.v1.model.DisableClustergroupPolicyResponse;
 import com.huaweicloud.sdk.ucs.v1.model.DisableFederationRequest;
 import com.huaweicloud.sdk.ucs.v1.model.DisableFederationResponse;
 import com.huaweicloud.sdk.ucs.v1.model.DisableGitOpsRequest;
@@ -65,10 +65,10 @@ import com.huaweicloud.sdk.ucs.v1.model.DisableGitOpsResponse;
 import com.huaweicloud.sdk.ucs.v1.model.DownloadFederationKubeconfigRequest;
 import com.huaweicloud.sdk.ucs.v1.model.DownloadFederationKubeconfigRequestBody;
 import com.huaweicloud.sdk.ucs.v1.model.DownloadFederationKubeconfigResponse;
+import com.huaweicloud.sdk.ucs.v1.model.EnableClusterGroupPolicyRequest;
+import com.huaweicloud.sdk.ucs.v1.model.EnableClusterGroupPolicyResponse;
 import com.huaweicloud.sdk.ucs.v1.model.EnableClusterPolicyRequest;
 import com.huaweicloud.sdk.ucs.v1.model.EnableClusterPolicyResponse;
-import com.huaweicloud.sdk.ucs.v1.model.EnableClustergroupPolicyRequest;
-import com.huaweicloud.sdk.ucs.v1.model.EnableClustergroupPolicyResponse;
 import com.huaweicloud.sdk.ucs.v1.model.EnableFederationRequest;
 import com.huaweicloud.sdk.ucs.v1.model.EnableFederationResponse;
 import com.huaweicloud.sdk.ucs.v1.model.EnableGitOpsRequest;
@@ -660,17 +660,17 @@ public class UcsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DisableClustergroupPolicyRequest, DisableClustergroupPolicyResponse> disableClustergroupPolicy =
-        genForDisableClustergroupPolicy();
+    public static final HttpRequestDef<DisableClusterGroupPolicyRequest, DisableClusterGroupPolicyResponse> disableClusterGroupPolicy =
+        genForDisableClusterGroupPolicy();
 
-    private static HttpRequestDef<DisableClustergroupPolicyRequest, DisableClustergroupPolicyResponse> genForDisableClustergroupPolicy() {
+    private static HttpRequestDef<DisableClusterGroupPolicyRequest, DisableClusterGroupPolicyResponse> genForDisableClusterGroupPolicy() {
         // basic
-        HttpRequestDef.Builder<DisableClustergroupPolicyRequest, DisableClustergroupPolicyResponse> builder =
+        HttpRequestDef.Builder<DisableClusterGroupPolicyRequest, DisableClusterGroupPolicyResponse> builder =
             HttpRequestDef
                 .builder(HttpMethod.DELETE,
-                    DisableClustergroupPolicyRequest.class,
-                    DisableClustergroupPolicyResponse.class)
-                .withName("DisableClustergroupPolicy")
+                    DisableClusterGroupPolicyRequest.class,
+                    DisableClusterGroupPolicyResponse.class)
+                .withName("DisableClusterGroupPolicy")
                 .withUri("/v1/clustergroups/{clustergroupid}/policy")
                 .withContentType("application/json");
 
@@ -679,8 +679,8 @@ public class UcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisableClustergroupPolicyRequest::getClustergroupid,
-                DisableClustergroupPolicyRequest::setClustergroupid));
+            f -> f.withMarshaller(DisableClusterGroupPolicyRequest::getClustergroupid,
+                DisableClusterGroupPolicyRequest::setClustergroupid));
 
         // response
 
@@ -749,15 +749,15 @@ public class UcsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<EnableClustergroupPolicyRequest, EnableClustergroupPolicyResponse> enableClustergroupPolicy =
-        genForEnableClustergroupPolicy();
+    public static final HttpRequestDef<EnableClusterGroupPolicyRequest, EnableClusterGroupPolicyResponse> enableClusterGroupPolicy =
+        genForEnableClusterGroupPolicy();
 
-    private static HttpRequestDef<EnableClustergroupPolicyRequest, EnableClustergroupPolicyResponse> genForEnableClustergroupPolicy() {
+    private static HttpRequestDef<EnableClusterGroupPolicyRequest, EnableClusterGroupPolicyResponse> genForEnableClusterGroupPolicy() {
         // basic
-        HttpRequestDef.Builder<EnableClustergroupPolicyRequest, EnableClustergroupPolicyResponse> builder =
+        HttpRequestDef.Builder<EnableClusterGroupPolicyRequest, EnableClusterGroupPolicyResponse> builder =
             HttpRequestDef
-                .builder(HttpMethod.POST, EnableClustergroupPolicyRequest.class, EnableClustergroupPolicyResponse.class)
-                .withName("EnableClustergroupPolicy")
+                .builder(HttpMethod.POST, EnableClusterGroupPolicyRequest.class, EnableClusterGroupPolicyResponse.class)
+                .withName("EnableClusterGroupPolicy")
                 .withUri("/v1/clustergroups/{clustergroupid}/policy")
                 .withContentType("application/json");
 
@@ -766,14 +766,14 @@ public class UcsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnableClustergroupPolicyRequest::getClustergroupid,
-                EnableClustergroupPolicyRequest::setClustergroupid));
+            f -> f.withMarshaller(EnableClusterGroupPolicyRequest::getClustergroupid,
+                EnableClusterGroupPolicyRequest::setClustergroupid));
         builder.<String>withRequestField("retry",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnableClustergroupPolicyRequest::getRetry,
-                EnableClustergroupPolicyRequest::setRetry));
+            f -> f.withMarshaller(EnableClusterGroupPolicyRequest::getRetry,
+                EnableClusterGroupPolicyRequest::setRetry));
 
         // response
 

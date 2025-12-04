@@ -25,15 +25,10 @@ public class AsmMeta {
         HttpRequestDef.Builder<CreateMeshRequest, CreateMeshResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMeshRequest.class, CreateMeshResponse.class)
                 .withName("CreateMesh")
-                .withUri("/v1/meshes")
+                .withUri("/v1/{project_id}/meshes")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("X-Apply-ProjectID",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateMeshRequest::getXApplyProjectID, CreateMeshRequest::setXApplyProjectID));
         builder.<Mesh>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -52,7 +47,7 @@ public class AsmMeta {
         HttpRequestDef.Builder<DeleteMeshRequest, DeleteMeshResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteMeshRequest.class, DeleteMeshResponse.class)
                 .withName("DeleteMesh")
-                .withUri("/v1/meshes/{mesh_id}")
+                .withUri("/v1/{project_id}/meshes/{mesh_id}")
                 .withContentType("application/json");
 
         // requests
@@ -61,11 +56,6 @@ public class AsmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteMeshRequest::getMeshId, DeleteMeshRequest::setMeshId));
-        builder.<String>withRequestField("X-Apply-ProjectID",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMeshRequest::getXApplyProjectID, DeleteMeshRequest::setXApplyProjectID));
 
         // response
 
@@ -79,15 +69,10 @@ public class AsmMeta {
         HttpRequestDef.Builder<ListMeshesRequest, ListMeshesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListMeshesRequest.class, ListMeshesResponse.class)
                 .withName("ListMeshes")
-                .withUri("/v1/meshes")
+                .withUri("/v1/{project_id}/meshes")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("X-Apply-ProjectID",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMeshesRequest::getXApplyProjectID, ListMeshesRequest::setXApplyProjectID));
 
         // response
 
@@ -101,7 +86,7 @@ public class AsmMeta {
         HttpRequestDef.Builder<ShowMeshRequest, ShowMeshResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowMeshRequest.class, ShowMeshResponse.class)
                 .withName("ShowMesh")
-                .withUri("/v1/meshes/{mesh_id}")
+                .withUri("/v1/{project_id}/meshes/{mesh_id}")
                 .withContentType("application/json");
 
         // requests
@@ -110,11 +95,6 @@ public class AsmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMeshRequest::getMeshId, ShowMeshRequest::setMeshId));
-        builder.<String>withRequestField("X-Apply-ProjectID",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowMeshRequest::getXApplyProjectID, ShowMeshRequest::setXApplyProjectID));
 
         // response
 

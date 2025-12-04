@@ -143,8 +143,6 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateTtscVocabularyGroupsRequest
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtscVocabularyGroupsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateUserQuotasRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateUserQuotasResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateWelcomeSpeechRequest;
@@ -239,8 +237,6 @@ import com.huaweicloud.sdk.metastudio.v1.model.ExecuteSmartLiveCommandRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteSmartLiveCommandResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteTransferAssetActionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteTransferAssetActionResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ExportKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ExportKnowledgeSkillResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ExportResourceRequest;
@@ -335,8 +331,6 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListTtscVocabularyGroupsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtscVocabularyGroupsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListUserQuotasRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListUserQuotasResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.ListVideoMotionCaptureJobsRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.ListVideoMotionCaptureJobsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoScriptsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoScriptsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVoiceTrainingJobRequest;
@@ -495,8 +489,6 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowUsageDataRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowUsageDataResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowUserReviewAttachmentUploadingAddressRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowUserReviewAttachmentUploadingAddressResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoScriptRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoScriptResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVocabularySwitchConfigsRequest;
@@ -523,8 +515,6 @@ import com.huaweicloud.sdk.metastudio.v1.model.StopSmartChatJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StopSmartChatJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StopSmartLiveRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StopSmartLiveResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.StopVideoMotionCaptureJobRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.StopVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.TransferAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.TransferAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Update2dModelTrainingJobRequest;
@@ -8979,152 +8969,6 @@ public class MetaStudioClient {
     public SyncInvoker<UpdateTtscVocabularyGroupsRequest, UpdateTtscVocabularyGroupsResponse> updateTtscVocabularyGroupsInvoker(
         UpdateTtscVocabularyGroupsRequest request) {
         return new SyncInvoker<>(request, MetaStudioMeta.updateTtscVocabularyGroups, hcClient);
-    }
-
-    /**
-     * 创建视频驱动任务
-     *
-     * 该接口用于创建视频驱动任务。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateVideoMotionCaptureJobRequest 请求对象
-     * @return CreateVideoMotionCaptureJobResponse
-     */
-    public CreateVideoMotionCaptureJobResponse createVideoMotionCaptureJob(CreateVideoMotionCaptureJobRequest request) {
-        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createVideoMotionCaptureJob);
-    }
-
-    /**
-     * 创建视频驱动任务
-     *
-     * 该接口用于创建视频驱动任务。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateVideoMotionCaptureJobRequest 请求对象
-     * @return SyncInvoker<CreateVideoMotionCaptureJobRequest, CreateVideoMotionCaptureJobResponse>
-     */
-    public SyncInvoker<CreateVideoMotionCaptureJobRequest, CreateVideoMotionCaptureJobResponse> createVideoMotionCaptureJobInvoker(
-        CreateVideoMotionCaptureJobRequest request) {
-        return new SyncInvoker<>(request, MetaStudioMeta.createVideoMotionCaptureJob, hcClient);
-    }
-
-    /**
-     * 控制数字人驱动
-     *
-     * 该接口用于控制数字人驱动。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ExecuteVideoMotionCaptureCommandRequest 请求对象
-     * @return ExecuteVideoMotionCaptureCommandResponse
-     */
-    public ExecuteVideoMotionCaptureCommandResponse executeVideoMotionCaptureCommand(
-        ExecuteVideoMotionCaptureCommandRequest request) {
-        return hcClient.syncInvokeHttp(request, MetaStudioMeta.executeVideoMotionCaptureCommand);
-    }
-
-    /**
-     * 控制数字人驱动
-     *
-     * 该接口用于控制数字人驱动。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ExecuteVideoMotionCaptureCommandRequest 请求对象
-     * @return SyncInvoker<ExecuteVideoMotionCaptureCommandRequest, ExecuteVideoMotionCaptureCommandResponse>
-     */
-    public SyncInvoker<ExecuteVideoMotionCaptureCommandRequest, ExecuteVideoMotionCaptureCommandResponse> executeVideoMotionCaptureCommandInvoker(
-        ExecuteVideoMotionCaptureCommandRequest request) {
-        return new SyncInvoker<>(request, MetaStudioMeta.executeVideoMotionCaptureCommand, hcClient);
-    }
-
-    /**
-     * 查询视频驱动任务列表
-     *
-     * 该接口用于查询视频驱动任务列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListVideoMotionCaptureJobsRequest 请求对象
-     * @return ListVideoMotionCaptureJobsResponse
-     */
-    public ListVideoMotionCaptureJobsResponse listVideoMotionCaptureJobs(ListVideoMotionCaptureJobsRequest request) {
-        return hcClient.syncInvokeHttp(request, MetaStudioMeta.listVideoMotionCaptureJobs);
-    }
-
-    /**
-     * 查询视频驱动任务列表
-     *
-     * 该接口用于查询视频驱动任务列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListVideoMotionCaptureJobsRequest 请求对象
-     * @return SyncInvoker<ListVideoMotionCaptureJobsRequest, ListVideoMotionCaptureJobsResponse>
-     */
-    public SyncInvoker<ListVideoMotionCaptureJobsRequest, ListVideoMotionCaptureJobsResponse> listVideoMotionCaptureJobsInvoker(
-        ListVideoMotionCaptureJobsRequest request) {
-        return new SyncInvoker<>(request, MetaStudioMeta.listVideoMotionCaptureJobs, hcClient);
-    }
-
-    /**
-     * 查询视频驱动任务详情
-     *
-     * 该接口用于查询视频驱动任务详情。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowVideoMotionCaptureJobRequest 请求对象
-     * @return ShowVideoMotionCaptureJobResponse
-     */
-    public ShowVideoMotionCaptureJobResponse showVideoMotionCaptureJob(ShowVideoMotionCaptureJobRequest request) {
-        return hcClient.syncInvokeHttp(request, MetaStudioMeta.showVideoMotionCaptureJob);
-    }
-
-    /**
-     * 查询视频驱动任务详情
-     *
-     * 该接口用于查询视频驱动任务详情。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowVideoMotionCaptureJobRequest 请求对象
-     * @return SyncInvoker<ShowVideoMotionCaptureJobRequest, ShowVideoMotionCaptureJobResponse>
-     */
-    public SyncInvoker<ShowVideoMotionCaptureJobRequest, ShowVideoMotionCaptureJobResponse> showVideoMotionCaptureJobInvoker(
-        ShowVideoMotionCaptureJobRequest request) {
-        return new SyncInvoker<>(request, MetaStudioMeta.showVideoMotionCaptureJob, hcClient);
-    }
-
-    /**
-     * 停止视频驱动任务
-     *
-     * 该接口用于停止视频驱动任务。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request StopVideoMotionCaptureJobRequest 请求对象
-     * @return StopVideoMotionCaptureJobResponse
-     */
-    public StopVideoMotionCaptureJobResponse stopVideoMotionCaptureJob(StopVideoMotionCaptureJobRequest request) {
-        return hcClient.syncInvokeHttp(request, MetaStudioMeta.stopVideoMotionCaptureJob);
-    }
-
-    /**
-     * 停止视频驱动任务
-     *
-     * 该接口用于停止视频驱动任务。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request StopVideoMotionCaptureJobRequest 请求对象
-     * @return SyncInvoker<StopVideoMotionCaptureJobRequest, StopVideoMotionCaptureJobResponse>
-     */
-    public SyncInvoker<StopVideoMotionCaptureJobRequest, StopVideoMotionCaptureJobResponse> stopVideoMotionCaptureJobInvoker(
-        StopVideoMotionCaptureJobRequest request) {
-        return new SyncInvoker<>(request, MetaStudioMeta.stopVideoMotionCaptureJob, hcClient);
     }
 
     /**

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 集群基本信息。
+ * **参数解释**： 集群基本信息。
  */
 public class ShowClusterRespCluster {
 
@@ -59,7 +59,7 @@ public class ShowClusterRespCluster {
     }
 
     /**
-     * 控制器ID。
+     * **参数解释**： 控制器ID。 **取值范围**： 不涉及。
      * @return controller
      */
     public String getController() {
@@ -92,7 +92,7 @@ public class ShowClusterRespCluster {
     }
 
     /**
-     * 节点列表。
+     * **参数解释**： 节点列表。
      * @return brokers
      */
     public List<ShowClusterRespClusterBrokers> getBrokers() {
@@ -109,7 +109,7 @@ public class ShowClusterRespCluster {
     }
 
     /**
-     * 主题数量。
+     * **参数解释**： 主题数量。 **取值范围**： 不涉及。
      * @return topicsCount
      */
     public Integer getTopicsCount() {
@@ -126,7 +126,7 @@ public class ShowClusterRespCluster {
     }
 
     /**
-     * 分区数量。
+     * **参数解释**： 分区数量。 **取值范围**： 不涉及。
      * @return partitionsCount
      */
     public Integer getPartitionsCount() {
@@ -143,7 +143,7 @@ public class ShowClusterRespCluster {
     }
 
     /**
-     * 在线分区数量。
+     * **参数解释**： 在线分区数量。 **取值范围**： 不涉及。
      * @return onlinePartitionsCount
      */
     public Integer getOnlinePartitionsCount() {
@@ -160,7 +160,7 @@ public class ShowClusterRespCluster {
     }
 
     /**
-     * 副本数量。
+     * **参数解释**： 副本数量。 **取值范围**： 不涉及。
      * @return replicasCount
      */
     public Integer getReplicasCount() {
@@ -177,7 +177,7 @@ public class ShowClusterRespCluster {
     }
 
     /**
-     * ISR（In-Sync Replicas） 副本总数。
+     * **参数解释**： ISR（In-Sync Replicas） 副本总数。 **取值范围**： 不涉及。
      * @return isrReplicasCount
      */
     public Integer getIsrReplicasCount() {
@@ -194,7 +194,7 @@ public class ShowClusterRespCluster {
     }
 
     /**
-     * 消费组数量。
+     * **参数解释**： 消费组数量。 **取值范围**： 不涉及。
      * @return consumersCount
      */
     public Integer getConsumersCount() {

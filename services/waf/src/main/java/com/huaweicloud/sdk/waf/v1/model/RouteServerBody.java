@@ -16,7 +16,7 @@ import java.util.Objects;
 public class RouteServerBody {
 
     /**
-     * WAF转发客户端请求到防护域名源站服务器的协议
+     * **参数解释：** WAF转发客户端请求到防护域名源站服务器的协议 **约束限制：** 不涉及 **取值范围：**  - HTTP: HTTP协议  - HTTPS: HTTPS协议  **默认取值：** 不涉及
      */
     public static final class BackProtocolEnum {
 
@@ -106,7 +106,7 @@ public class RouteServerBody {
     }
 
     /**
-     * WAF转发客户端请求到防护域名源站服务器的协议
+     * **参数解释：** WAF转发客户端请求到防护域名源站服务器的协议 **约束限制：** 不涉及 **取值范围：**  - HTTP: HTTP协议  - HTTPS: HTTPS协议  **默认取值：** 不涉及
      * @return backProtocol
      */
     public BackProtocolEnum getBackProtocol() {

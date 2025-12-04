@@ -133,7 +133,6 @@ public class TestMapQueryParameters {
     public static class TestResponse {
     }
 
-    @SuppressWarnings(value = {"unchecked", "rawtypes"})
     private static HttpRequestDef<TestRequest, TestResponse> genFortest() {
         // basic
         HttpRequestDef.Builder<TestRequest, TestResponse> builder =

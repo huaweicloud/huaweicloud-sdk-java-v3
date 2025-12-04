@@ -34,7 +34,7 @@ public class SupportVersion {
     }
 
     /**
-     * 支持的集群类型（CCE，thirdParty等）
+     * 支持的集群类型
      * @return category
      */
     public String getCategory() {

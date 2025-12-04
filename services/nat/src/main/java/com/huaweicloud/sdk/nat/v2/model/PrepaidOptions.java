@@ -16,7 +16,7 @@ import java.util.Objects;
 public class PrepaidOptions {
 
     /**
-     * month: 包月 year: 包年
+     * 订购周期类型，当前支持包月和包年: month: 包月 year: 包年
      */
     public static final class PeriodTypeEnum {
 
@@ -111,7 +111,7 @@ public class PrepaidOptions {
     }
 
     /**
-     * month: 包月 year: 包年
+     * 订购周期类型，当前支持包月和包年: month: 包月 year: 包年
      * @return periodType
      */
     public PeriodTypeEnum getPeriodType() {
@@ -128,7 +128,7 @@ public class PrepaidOptions {
     }
 
     /**
-     * 周期大小
+     * 订购周期数，取值会随运营策略变化。 period_type为month时，为[1,9]， period_type为year时，为[1,3]
      * minimum: 1
      * maximum: 11
      * @return periodNum
@@ -147,7 +147,7 @@ public class PrepaidOptions {
     }
 
     /**
-     * 是否自动续费
+     * 是否自动续订； true：自动续订 false：不自动续订
      * @return isAutoRenew
      */
     public Boolean getIsAutoRenew() {
@@ -164,7 +164,7 @@ public class PrepaidOptions {
     }
 
     /**
-     * 是否自动支付
+     * 下单订购后，是否自动从客户的账户中支付; true：自动支付 false：不自动支付。
      * @return isAutoPay
      */
     public Boolean getIsAutoPay() {

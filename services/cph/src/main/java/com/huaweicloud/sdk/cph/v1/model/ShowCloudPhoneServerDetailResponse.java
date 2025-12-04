@@ -174,7 +174,7 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器所在的可用区。[如上海一可用区1为cn-east-3a。](tag:hws,hws_hk,cmcc)
+     * 云手机服务器所在的可用区。[如上海一可用区1为cn-east-3a。](tag:hws,hws_hk,cmcc,ctc)
      * @return availabilityZone
      */
     public String getAvailabilityZone() {

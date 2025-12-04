@@ -117,7 +117,7 @@ public class AbstractCredentialsTest {
     }
 
     @Test
-    public void testNeedUpdateFederalAuthTokenExpire() throws Exception {
+    public void testNeedUpdateFederalAuthTokenExpire() {
         TestAbstractCredentials credentials = new TestAbstractCredentials();
         credentials.setIdpId("id");
         credentials.setIdTokenFile("file");

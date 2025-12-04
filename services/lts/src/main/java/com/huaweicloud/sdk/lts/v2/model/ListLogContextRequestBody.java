@@ -30,6 +30,11 @@ public class ListLogContextRequestBody {
 
     private Integer forwardsSize;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scroll_id")
+
+    private String scrollId;
+
     public ListLogContextRequestBody withLineNum(String lineNum) {
         this.lineNum = lineNum;
         return this;
@@ -104,6 +109,23 @@ public class ListLogContextRequestBody {
         this.forwardsSize = forwardsSize;
     }
 
+    public ListLogContextRequestBody withScrollId(String scrollId) {
+        this.scrollId = scrollId;
+        return this;
+    }
+
+    /**
+     * 分页查询时，若上次查询的返回结果中包含该字段，需要增加该字段参与分页查询。
+     * @return scrollId
+     */
+    public String getScrollId() {
+        return scrollId;
+    }
+
+    public void setScrollId(String scrollId) {
+        this.scrollId = scrollId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -115,12 +137,12 @@ public class ListLogContextRequestBody {
         ListLogContextRequestBody that = (ListLogContextRequestBody) obj;
         return Objects.equals(this.lineNum, that.lineNum) && Objects.equals(this.time, that.time)
             && Objects.equals(this.backwardsSize, that.backwardsSize)
-            && Objects.equals(this.forwardsSize, that.forwardsSize);
+            && Objects.equals(this.forwardsSize, that.forwardsSize) && Objects.equals(this.scrollId, that.scrollId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(lineNum, time, backwardsSize, forwardsSize);
+        return Objects.hash(lineNum, time, backwardsSize, forwardsSize, scrollId);
     }
 
     @Override
@@ -131,6 +153,7 @@ public class ListLogContextRequestBody {
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("    backwardsSize: ").append(toIndentedString(backwardsSize)).append("\n");
         sb.append("    forwardsSize: ").append(toIndentedString(forwardsSize)).append("\n");
+        sb.append("    scrollId: ").append(toIndentedString(scrollId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

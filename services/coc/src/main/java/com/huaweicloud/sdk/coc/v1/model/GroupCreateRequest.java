@@ -53,6 +53,11 @@ public class GroupCreateRequest {
 
     private List<GroupRelationConfiguration> relationConfigurations = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "related_domain_id")
+
+    private String relatedDomainId;
+
     public GroupCreateRequest withName(String name) {
         this.name = name;
         return this;
@@ -222,6 +227,23 @@ public class GroupCreateRequest {
         this.relationConfigurations = relationConfigurations;
     }
 
+    public GroupCreateRequest withRelatedDomainId(String relatedDomainId) {
+        this.relatedDomainId = relatedDomainId;
+        return this;
+    }
+
+    /**
+     * 关联帐号id。
+     * @return relatedDomainId
+     */
+    public String getRelatedDomainId() {
+        return relatedDomainId;
+    }
+
+    public void setRelatedDomainId(String relatedDomainId) {
+        this.relatedDomainId = relatedDomainId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -235,13 +257,21 @@ public class GroupCreateRequest {
             && Objects.equals(this.vendor, that.vendor) && Objects.equals(this.regionId, that.regionId)
             && Objects.equals(this.applicationId, that.applicationId) && Objects.equals(this.syncMode, that.syncMode)
             && Objects.equals(this.syncRules, that.syncRules)
-            && Objects.equals(this.relationConfigurations, that.relationConfigurations);
+            && Objects.equals(this.relationConfigurations, that.relationConfigurations)
+            && Objects.equals(this.relatedDomainId, that.relatedDomainId);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(name, componentId, vendor, regionId, applicationId, syncMode, syncRules, relationConfigurations);
+        return Objects.hash(name,
+            componentId,
+            vendor,
+            regionId,
+            applicationId,
+            syncMode,
+            syncRules,
+            relationConfigurations,
+            relatedDomainId);
     }
 
     @Override
@@ -256,6 +286,7 @@ public class GroupCreateRequest {
         sb.append("    syncMode: ").append(toIndentedString(syncMode)).append("\n");
         sb.append("    syncRules: ").append(toIndentedString(syncRules)).append("\n");
         sb.append("    relationConfigurations: ").append(toIndentedString(relationConfigurations)).append("\n");
+        sb.append("    relatedDomainId: ").append(toIndentedString(relatedDomainId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

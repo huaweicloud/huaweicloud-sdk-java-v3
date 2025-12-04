@@ -17,11 +17,6 @@ public class MeshCluster {
     private String clusterID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "projectID")
-
-    private String projectID;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "injection")
 
     private InjectionConfig injection;
@@ -46,23 +41,6 @@ public class MeshCluster {
 
     public void setClusterID(String clusterID) {
         this.clusterID = clusterID;
-    }
-
-    public MeshCluster withProjectID(String projectID) {
-        this.projectID = projectID;
-        return this;
-    }
-
-    /**
-     * 集群所属的projectID
-     * @return projectID
-     */
-    public String getProjectID() {
-        return projectID;
-    }
-
-    public void setProjectID(String projectID) {
-        this.projectID = projectID;
     }
 
     public MeshCluster withInjection(InjectionConfig injection) {
@@ -126,13 +104,13 @@ public class MeshCluster {
             return false;
         }
         MeshCluster that = (MeshCluster) obj;
-        return Objects.equals(this.clusterID, that.clusterID) && Objects.equals(this.projectID, that.projectID)
-            && Objects.equals(this.injection, that.injection) && Objects.equals(this.installation, that.installation);
+        return Objects.equals(this.clusterID, that.clusterID) && Objects.equals(this.injection, that.injection)
+            && Objects.equals(this.installation, that.installation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterID, projectID, injection, installation);
+        return Objects.hash(clusterID, injection, installation);
     }
 
     @Override
@@ -140,7 +118,6 @@ public class MeshCluster {
         StringBuilder sb = new StringBuilder();
         sb.append("class MeshCluster {\n");
         sb.append("    clusterID: ").append(toIndentedString(clusterID)).append("\n");
-        sb.append("    projectID: ").append(toIndentedString(projectID)).append("\n");
         sb.append("    injection: ").append(toIndentedString(injection)).append("\n");
         sb.append("    installation: ").append(toIndentedString(installation)).append("\n");
         sb.append("}");

@@ -51,7 +51,7 @@ public class ShowInstanceMessagesResponse extends SdkResponse {
     }
 
     /**
-     * 消息列表。
+     * **参数解释**： 消息列表。
      * @return messages
      */
     public List<MessagesEntity> getMessages() {
@@ -68,7 +68,7 @@ public class ShowInstanceMessagesResponse extends SdkResponse {
     }
 
     /**
-     * 消息总条数。
+     * **参数解释**： 消息总条数。 **取值范围**： 不涉及。
      * @return total
      */
     public Long getTotal() {
@@ -85,7 +85,7 @@ public class ShowInstanceMessagesResponse extends SdkResponse {
     }
 
     /**
-     * 每页消息条数。
+     * **参数解释**： 每页消息条数。 **取值范围**： 不涉及。
      * @return size
      */
     public Long getSize() {

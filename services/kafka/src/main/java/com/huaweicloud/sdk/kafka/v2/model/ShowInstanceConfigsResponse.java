@@ -41,7 +41,7 @@ public class ShowInstanceConfigsResponse extends SdkResponse {
     }
 
     /**
-     * kafka配置列表。
+     * Kafka配置列表。
      * @return kafkaConfigs
      */
     public List<InstanceConfig> getKafkaConfigs() {

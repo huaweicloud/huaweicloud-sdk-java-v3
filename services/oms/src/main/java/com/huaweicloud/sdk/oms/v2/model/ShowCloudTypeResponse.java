@@ -41,7 +41,7 @@ public class ShowCloudTypeResponse extends SdkResponse {
     }
 
     /**
-     * Get body
+     * 支持的云服务类型
      * @return body
      */
     public List<String> getBody() {

@@ -41,6 +41,11 @@ public class Namespace {
 
     private Integer repoCount;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cve_allowlist")
+
+    private CVEAllowlist cveAllowlist;
+
     public Namespace withName(String name) {
         this.name = name;
         return this;
@@ -152,6 +157,32 @@ public class Namespace {
         this.repoCount = repoCount;
     }
 
+    public Namespace withCveAllowlist(CVEAllowlist cveAllowlist) {
+        this.cveAllowlist = cveAllowlist;
+        return this;
+    }
+
+    public Namespace withCveAllowlist(Consumer<CVEAllowlist> cveAllowlistSetter) {
+        if (this.cveAllowlist == null) {
+            this.cveAllowlist = new CVEAllowlist();
+            cveAllowlistSetter.accept(this.cveAllowlist);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get cveAllowlist
+     * @return cveAllowlist
+     */
+    public CVEAllowlist getCveAllowlist() {
+        return cveAllowlist;
+    }
+
+    public void setCveAllowlist(CVEAllowlist cveAllowlist) {
+        this.cveAllowlist = cveAllowlist;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -163,12 +194,13 @@ public class Namespace {
         Namespace that = (Namespace) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.metadata, that.metadata)
             && Objects.equals(this.namespaceId, that.namespaceId) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.repoCount, that.repoCount);
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.repoCount, that.repoCount)
+            && Objects.equals(this.cveAllowlist, that.cveAllowlist);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, metadata, namespaceId, createdAt, updatedAt, repoCount);
+        return Objects.hash(name, metadata, namespaceId, createdAt, updatedAt, repoCount, cveAllowlist);
     }
 
     @Override
@@ -181,6 +213,7 @@ public class Namespace {
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    repoCount: ").append(toIndentedString(repoCount)).append("\n");
+        sb.append("    cveAllowlist: ").append(toIndentedString(cveAllowlist)).append("\n");
         sb.append("}");
         return sb.toString();
     }

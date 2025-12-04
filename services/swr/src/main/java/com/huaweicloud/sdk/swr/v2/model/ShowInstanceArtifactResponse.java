@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -73,6 +75,11 @@ public class ShowInstanceArtifactResponse extends SdkResponse {
     @JsonProperty(value = "tags")
 
     private List<ArtifactTag> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scan_overview")
+
+    private Map<String, NativeReportSummary> scanOverview = null;
 
     public ShowInstanceArtifactResponse withDigest(String digest) {
         this.digest = digest;
@@ -294,6 +301,40 @@ public class ShowInstanceArtifactResponse extends SdkResponse {
         this.tags = tags;
     }
 
+    public ShowInstanceArtifactResponse withScanOverview(Map<String, NativeReportSummary> scanOverview) {
+        this.scanOverview = scanOverview;
+        return this;
+    }
+
+    public ShowInstanceArtifactResponse putScanOverviewItem(String key, NativeReportSummary scanOverviewItem) {
+        if (this.scanOverview == null) {
+            this.scanOverview = new HashMap<>();
+        }
+        this.scanOverview.put(key, scanOverviewItem);
+        return this;
+    }
+
+    public ShowInstanceArtifactResponse withScanOverview(
+        Consumer<Map<String, NativeReportSummary>> scanOverviewSetter) {
+        if (this.scanOverview == null) {
+            this.scanOverview = new HashMap<>();
+        }
+        scanOverviewSetter.accept(this.scanOverview);
+        return this;
+    }
+
+    /**
+     * 制品扫描摘要,支持制品扫描报告类型为application/vnd.security.vulnerability.report; version=1.1的制品扫描摘要
+     * @return scanOverview
+     */
+    public Map<String, NativeReportSummary> getScanOverview() {
+        return scanOverview;
+    }
+
+    public void setScanOverview(Map<String, NativeReportSummary> scanOverview) {
+        this.scanOverview = scanOverview;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -309,7 +350,8 @@ public class ShowInstanceArtifactResponse extends SdkResponse {
             && Objects.equals(this.namespaceId, that.namespaceId) && Objects.equals(this.mediaType, that.mediaType)
             && Objects.equals(this.manifestMediaType, that.manifestMediaType)
             && Objects.equals(this.pullTime, that.pullTime) && Objects.equals(this.pushTime, that.pushTime)
-            && Objects.equals(this.size, that.size) && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.size, that.size) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.scanOverview, that.scanOverview);
     }
 
     @Override
@@ -325,7 +367,8 @@ public class ShowInstanceArtifactResponse extends SdkResponse {
             pullTime,
             pushTime,
             size,
-            tags);
+            tags,
+            scanOverview);
     }
 
     @Override
@@ -344,6 +387,7 @@ public class ShowInstanceArtifactResponse extends SdkResponse {
         sb.append("    pushTime: ").append(toIndentedString(pushTime)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    scanOverview: ").append(toIndentedString(scanOverview)).append("\n");
         sb.append("}");
         return sb.toString();
     }

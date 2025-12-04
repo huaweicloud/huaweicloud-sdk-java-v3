@@ -22,6 +22,11 @@ public class UpdateInstanceNamespaceResponse extends SdkResponse {
 
     private NamespaceMetadata metadata;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cve_allowlist")
+
+    private UpdateCVEAllowlistRequest cveAllowlist;
+
     public UpdateInstanceNamespaceResponse withNamespaceName(String namespaceName) {
         this.namespaceName = namespaceName;
         return this;
@@ -65,6 +70,32 @@ public class UpdateInstanceNamespaceResponse extends SdkResponse {
         this.metadata = metadata;
     }
 
+    public UpdateInstanceNamespaceResponse withCveAllowlist(UpdateCVEAllowlistRequest cveAllowlist) {
+        this.cveAllowlist = cveAllowlist;
+        return this;
+    }
+
+    public UpdateInstanceNamespaceResponse withCveAllowlist(Consumer<UpdateCVEAllowlistRequest> cveAllowlistSetter) {
+        if (this.cveAllowlist == null) {
+            this.cveAllowlist = new UpdateCVEAllowlistRequest();
+            cveAllowlistSetter.accept(this.cveAllowlist);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get cveAllowlist
+     * @return cveAllowlist
+     */
+    public UpdateCVEAllowlistRequest getCveAllowlist() {
+        return cveAllowlist;
+    }
+
+    public void setCveAllowlist(UpdateCVEAllowlistRequest cveAllowlist) {
+        this.cveAllowlist = cveAllowlist;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -74,12 +105,13 @@ public class UpdateInstanceNamespaceResponse extends SdkResponse {
             return false;
         }
         UpdateInstanceNamespaceResponse that = (UpdateInstanceNamespaceResponse) obj;
-        return Objects.equals(this.namespaceName, that.namespaceName) && Objects.equals(this.metadata, that.metadata);
+        return Objects.equals(this.namespaceName, that.namespaceName) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.cveAllowlist, that.cveAllowlist);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(namespaceName, metadata);
+        return Objects.hash(namespaceName, metadata, cveAllowlist);
     }
 
     @Override
@@ -88,6 +120,7 @@ public class UpdateInstanceNamespaceResponse extends SdkResponse {
         sb.append("class UpdateInstanceNamespaceResponse {\n");
         sb.append("    namespaceName: ").append(toIndentedString(namespaceName)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    cveAllowlist: ").append(toIndentedString(cveAllowlist)).append("\n");
         sb.append("}");
         return sb.toString();
     }

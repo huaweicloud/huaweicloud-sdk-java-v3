@@ -42,7 +42,7 @@ public class ShowCoordinatorsResponse extends SdkResponse {
     }
 
     /**
-     * 所有消费组对应的协调器列表。
+     * **参数解释**： 所有消费组对应的协调器列表。
      * @return coordinators
      */
     public List<ShowCoordinatorsRespCoordinators> getCoordinators() {

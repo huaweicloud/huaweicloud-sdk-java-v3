@@ -30,6 +30,7 @@ import org.junit.Test;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class TestEnumClass {
     public static final class VolumetypeEnum {
@@ -39,7 +40,7 @@ public class TestEnumClass {
 
         public static final VolumetypeEnum SSD = new VolumetypeEnum("SSD");
 
-        private String value;
+        private final String value;
 
         private static final Map<String, VolumetypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -87,7 +88,7 @@ public class TestEnumClass {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj != null && obj instanceof VolumetypeEnum) {
+            if (obj instanceof VolumetypeEnum) {
                 return this.value.equals(((VolumetypeEnum) obj).value);
             }
             return false;
@@ -118,13 +119,9 @@ public class TestEnumClass {
         String strJsonA = "{ \"volumetypeEnum\": \"SATA\"}";
         String strJsonB = "{ \"volumetypeEnum\": \"SASC\"}";
         String strJsonC = "{ }";
-        EnumClass enumClassA = JsonUtils.toObject(strJsonA, EnumClass.class);
-        EnumClass enumClassB = JsonUtils.toObject(strJsonB, EnumClass.class);
-        EnumClass enumClassC = JsonUtils.toObject(strJsonC, EnumClass.class);
-        enumClassC.getVolumetypeEnum();
-        System.out.println(enumClassA.getVolumetypeEnum());
-        System.out.println(enumClassB.getVolumetypeEnum());
-        System.out.println(enumClassC.getVolumetypeEnum());
+        EnumClass enumClassA = Objects.requireNonNull(JsonUtils.toObject(strJsonA, EnumClass.class));
+        EnumClass enumClassB = Objects.requireNonNull(JsonUtils.toObject(strJsonB, EnumClass.class));
+        EnumClass enumClassC = Objects.requireNonNull(JsonUtils.toObject(strJsonC, EnumClass.class));
         Assert.assertEquals(atype, enumClassA.getVolumetypeEnum());
         Assert.assertEquals(btype, enumClassB.getVolumetypeEnum());
         Assert.assertEquals(atype.hashCode(), "SATA".hashCode());

@@ -26,7 +26,7 @@ public class PolicyEntity {
     private String userName;
 
     /**
-     * 权限类型。 - all：拥有发布、订阅权限; - pub：拥有发布权限; - sub：拥有订阅权限。
+     * 权限类型。 - all：拥有发布、订阅权限。 - pub：拥有发布权限。 - sub：拥有订阅权限。
      */
     public static final class AccessPolicyEnum {
 
@@ -146,7 +146,7 @@ public class PolicyEntity {
     }
 
     /**
-     * 权限类型。 - all：拥有发布、订阅权限; - pub：拥有发布权限; - sub：拥有订阅权限。
+     * 权限类型。 - all：拥有发布、订阅权限。 - pub：拥有发布权限。 - sub：拥有订阅权限。
      * @return accessPolicy
      */
     public AccessPolicyEnum getAccessPolicy() {

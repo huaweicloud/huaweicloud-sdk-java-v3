@@ -161,6 +161,8 @@ import com.huaweicloud.sdk.swr.v2.model.ListInstanceAccessoriesRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceAccessoriesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceAllArtifactsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceAllArtifactsResponse;
+import com.huaweicloud.sdk.swr.v2.model.ListInstanceArtifactVulnerabilitiesRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListInstanceArtifactVulnerabilitiesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceArtifactsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceArtifactsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListInstanceInternalEndpointsRequest;
@@ -311,6 +313,8 @@ import com.huaweicloud.sdk.swr.v2.model.ShowTriggerRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowTriggerResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowUserRepositoryAuthRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowUserRepositoryAuthResponse;
+import com.huaweicloud.sdk.swr.v2.model.StartManualScanningRequest;
+import com.huaweicloud.sdk.swr.v2.model.StartManualScanningResponse;
 import com.huaweicloud.sdk.swr.v2.model.StopInstanceReplicationPolicyExecutionRequest;
 import com.huaweicloud.sdk.swr.v2.model.StopInstanceReplicationPolicyExecutionResponse;
 import com.huaweicloud.sdk.swr.v2.model.SyncJob;
@@ -369,8 +373,10 @@ import com.huaweicloud.sdk.swr.v2.model.UpdateUserRepositoryAuthResponse;
 import com.huaweicloud.sdk.swr.v2.model.UpdateWebhookPolicyRequestBody;
 import com.huaweicloud.sdk.swr.v2.model.UpdateWhiteListRequestBody;
 import com.huaweicloud.sdk.swr.v2.model.UserAuth;
+import com.huaweicloud.sdk.swr.v2.model.VulnerabilityReports;
 
 import java.util.List;
+import java.util.Map;
 
 @SuppressWarnings("unchecked")
 public class SwrMeta {
@@ -688,6 +694,11 @@ public class SwrMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(CreateSecretResponse::getXSwrDockerlogin, CreateSecretResponse::setXSwrDockerlogin));
+        builder.<String>withResponseField("X-Swr-Expireat",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateSecretResponse::getXSwrExpireat, CreateSecretResponse::setXSwrExpireat));
         return builder.build();
     }
 
@@ -1321,6 +1332,16 @@ public class SwrMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRepositoryTagRequest::getTag, ListRepositoryTagRequest::setTag));
+        builder.<String>withRequestField("order_column",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRepositoryTagRequest::getOrderColumn, ListRepositoryTagRequest::setOrderColumn));
+        builder.<String>withRequestField("order_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRepositoryTagRequest::getOrderType, ListRepositoryTagRequest::setOrderType));
         builder.<Boolean>withRequestField("with_manifest",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -3761,6 +3782,60 @@ public class SwrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListInstanceArtifactVulnerabilitiesRequest, ListInstanceArtifactVulnerabilitiesResponse> listInstanceArtifactVulnerabilities =
+        genForListInstanceArtifactVulnerabilities();
+
+    private static HttpRequestDef<ListInstanceArtifactVulnerabilitiesRequest, ListInstanceArtifactVulnerabilitiesResponse> genForListInstanceArtifactVulnerabilities() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceArtifactVulnerabilitiesRequest, ListInstanceArtifactVulnerabilitiesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInstanceArtifactVulnerabilitiesRequest.class,
+                    ListInstanceArtifactVulnerabilitiesResponse.class)
+                .withName("ListInstanceArtifactVulnerabilities")
+                .withUri(
+                    "/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}/vulnerabilities")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceArtifactVulnerabilitiesRequest::getInstanceId,
+                ListInstanceArtifactVulnerabilitiesRequest::setInstanceId));
+        builder.<String>withRequestField("namespace_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceArtifactVulnerabilitiesRequest::getNamespaceName,
+                ListInstanceArtifactVulnerabilitiesRequest::setNamespaceName));
+        builder.<String>withRequestField("repository_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceArtifactVulnerabilitiesRequest::getRepositoryName,
+                ListInstanceArtifactVulnerabilitiesRequest::setRepositoryName));
+        builder.<String>withRequestField("reference",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceArtifactVulnerabilitiesRequest::getReference,
+                ListInstanceArtifactVulnerabilitiesRequest::setReference));
+
+        // response
+        builder.<Map<String, VulnerabilityReports>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Map.class),
+            f -> f
+                .withMarshaller(ListInstanceArtifactVulnerabilitiesResponse::getBody,
+                    ListInstanceArtifactVulnerabilitiesResponse::setBody)
+                .withInnerContainerType(VulnerabilityReports.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListInstanceArtifactsRequest, ListInstanceArtifactsResponse> listInstanceArtifacts =
         genForListInstanceArtifacts();
 
@@ -5275,6 +5350,12 @@ public class SwrMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceArtifactRequest::getReference,
                 ShowInstanceArtifactRequest::setReference));
+        builder.<Boolean>withRequestField("with_scan_overview",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowInstanceArtifactRequest::getWithScanOverview,
+                ShowInstanceArtifactRequest::setWithScanOverview));
 
         // response
 
@@ -5758,6 +5839,48 @@ public class SwrMeta {
             TypeCasts.uncheckedConversion(ListResourceInstancesRequestBody.class),
             f -> f.withMarshaller(ShowSubResourceInstancesCountRequest::getBody,
                 ShowSubResourceInstancesCountRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartManualScanningRequest, StartManualScanningResponse> startManualScanning =
+        genForStartManualScanning();
+
+    private static HttpRequestDef<StartManualScanningRequest, StartManualScanningResponse> genForStartManualScanning() {
+        // basic
+        HttpRequestDef.Builder<StartManualScanningRequest, StartManualScanningResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, StartManualScanningRequest.class, StartManualScanningResponse.class)
+            .withName("StartManualScanning")
+            .withUri(
+                "/v2/{project_id}/instances/{instance_id}/namespaces/{namespace_name}/repositories/{repository_name}/artifacts/{reference}/scan")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartManualScanningRequest::getInstanceId,
+                StartManualScanningRequest::setInstanceId));
+        builder.<String>withRequestField("namespace_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartManualScanningRequest::getNamespaceName,
+                StartManualScanningRequest::setNamespaceName));
+        builder.<String>withRequestField("repository_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartManualScanningRequest::getRepositoryName,
+                StartManualScanningRequest::setRepositoryName));
+        builder.<String>withRequestField("reference",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartManualScanningRequest::getReference, StartManualScanningRequest::setReference));
 
         // response
 

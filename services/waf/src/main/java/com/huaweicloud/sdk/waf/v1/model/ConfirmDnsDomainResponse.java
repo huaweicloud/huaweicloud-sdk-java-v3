@@ -30,7 +30,7 @@ public class ConfirmDnsDomainResponse extends SdkResponse {
     }
 
     /**
-     * Get nextMarker
+     * dns标识
      * @return nextMarker
      */
     public String getNextMarker() {
@@ -63,7 +63,7 @@ public class ConfirmDnsDomainResponse extends SdkResponse {
     }
 
     /**
-     * Get items
+     * dns域名列表
      * @return items
      */
     public List<DnsDomain> getItems() {

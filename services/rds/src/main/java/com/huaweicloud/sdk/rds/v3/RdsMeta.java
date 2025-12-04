@@ -24,8 +24,12 @@ import com.huaweicloud.sdk.rds.v3.model.AttachEipResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchAddMsdtcsRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchAddMsdtcsResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchDeleteBackupRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.BatchDeleteInstanceRequest;
+import com.huaweicloud.sdk.rds.v3.model.BatchDeleteInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchDeleteManualBackupRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchDeleteManualBackupResponse;
+import com.huaweicloud.sdk.rds.v3.model.BatchExecuteEventsRequest;
+import com.huaweicloud.sdk.rds.v3.model.BatchExecuteEventsResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchModifyPublicationRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchModifyPublicationResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchModifyPublicationsRequestBody;
@@ -66,6 +70,9 @@ import com.huaweicloud.sdk.rds.v3.model.CollectPublicationMonitorRequest;
 import com.huaweicloud.sdk.rds.v3.model.CollectPublicationMonitorResponse;
 import com.huaweicloud.sdk.rds.v3.model.CollectSubscriptionMonitorRequest;
 import com.huaweicloud.sdk.rds.v3.model.CollectSubscriptionMonitorResponse;
+import com.huaweicloud.sdk.rds.v3.model.CompareConfigurationRequest;
+import com.huaweicloud.sdk.rds.v3.model.CompareConfigurationRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.CompareConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.ConfigurationCopyRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ConfigurationForCreation;
 import com.huaweicloud.sdk.rds.v3.model.ConfigurationForUpdate;
@@ -108,6 +115,8 @@ import com.huaweicloud.sdk.rds.v3.model.CreatePublicationResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreatePublicationsRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.CreateRdSforMySqlProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateRdSforMySqlProxyResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateRebuildSlaveRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateRebuildSlaveResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateRestoreInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateRestoreInstanceRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.CreateRestoreInstanceResponse;
@@ -305,6 +314,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListOffSiteInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListOffSiteInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListOffSiteRestoreTimesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListOffSiteRestoreTimesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListPackLogInfosRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListPackLogInfosResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlDatabaseSchemasRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlDatabaseSchemasResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListPostgresqlDatabasesRequest;
@@ -345,6 +356,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListReplicationProfilesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListReplicationProfilesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListRestoreTimesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListRestoreTimesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListScheduleEventsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListScheduleEventsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListScheduleTasksRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListScheduleTasksResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListShareBackupsRequest;
@@ -415,10 +428,12 @@ import com.huaweicloud.sdk.rds.v3.model.ModifyPublicationsRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ModifyRdSforMySqlProxyRouteModeRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyRdSforMySqlProxyRouteModeResponse;
 import com.huaweicloud.sdk.rds.v3.model.ModifySubscriptionsRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.MultipleDeleteInsReq;
 import com.huaweicloud.sdk.rds.v3.model.MysqlReadOnlySwitch;
 import com.huaweicloud.sdk.rds.v3.model.NotifyReplaceNodeRequest;
 import com.huaweicloud.sdk.rds.v3.model.NotifyReplaceNodeResponse;
 import com.huaweicloud.sdk.rds.v3.model.OpenProxyRequest;
+import com.huaweicloud.sdk.rds.v3.model.OperateEventReq;
 import com.huaweicloud.sdk.rds.v3.model.OpsWindowRequest;
 import com.huaweicloud.sdk.rds.v3.model.PostgreSQLHistoryDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.PostgreSQLHistoryTableRequest;
@@ -441,6 +456,8 @@ import com.huaweicloud.sdk.rds.v3.model.RefreshPublicationSnapshotResponse;
 import com.huaweicloud.sdk.rds.v3.model.RefreshSubscriptionRequest;
 import com.huaweicloud.sdk.rds.v3.model.RefreshSubscriptionResponse;
 import com.huaweicloud.sdk.rds.v3.model.ReplaceNodeRequest;
+import com.huaweicloud.sdk.rds.v3.model.ResetConfigurationRequest;
+import com.huaweicloud.sdk.rds.v3.model.ResetConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdResponse;
 import com.huaweicloud.sdk.rds.v3.model.ResetViewSqlStatisticsRequest;
@@ -525,6 +542,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowAuditlogDownloadLinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAuditlogDownloadLinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAuditlogPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAuditlogPolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowAutoCesAlarmRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowAutoCesAlarmResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAutoEnlargePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAutoEnlargePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAutoUpgradePolicyRequest;
@@ -555,6 +574,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowInstanceConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowInstanceConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowIntelligentKillSessionHistoryRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowIntelligentKillSessionHistoryResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowIntelligentKillSessionStatisticRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowIntelligentKillSessionStatisticResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowOffSiteBackupPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowOffSiteBackupPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowPostgresqlParamValueRequest;
@@ -563,6 +584,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowPrecheckResultRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowPrecheckResultResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowRebuildSlaveStatusRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowRebuildSlaveStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowRecoveryTimeWindowRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowRecoveryTimeWindowResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowRecyclePolicyRequest;
@@ -815,6 +838,34 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchDeleteInstanceRequest, BatchDeleteInstanceResponse> batchDeleteInstance =
+        genForBatchDeleteInstance();
+
+    private static HttpRequestDef<BatchDeleteInstanceRequest, BatchDeleteInstanceResponse> genForBatchDeleteInstance() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteInstanceRequest, BatchDeleteInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteInstanceRequest.class, BatchDeleteInstanceResponse.class)
+                .withName("BatchDeleteInstance")
+                .withUri("/v3/{project_id}/instances/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteInstanceRequest::getXLanguage, BatchDeleteInstanceRequest::setXLanguage));
+        builder.<MultipleDeleteInsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MultipleDeleteInsReq.class),
+            f -> f.withMarshaller(BatchDeleteInstanceRequest::getBody, BatchDeleteInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteManualBackupRequest, BatchDeleteManualBackupResponse> batchDeleteManualBackup =
         genForBatchDeleteManualBackup();
 
@@ -838,6 +889,34 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteBackupRequestBody.class),
             f -> f.withMarshaller(BatchDeleteManualBackupRequest::getBody, BatchDeleteManualBackupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchExecuteEventsRequest, BatchExecuteEventsResponse> batchExecuteEvents =
+        genForBatchExecuteEvents();
+
+    private static HttpRequestDef<BatchExecuteEventsRequest, BatchExecuteEventsResponse> genForBatchExecuteEvents() {
+        // basic
+        HttpRequestDef.Builder<BatchExecuteEventsRequest, BatchExecuteEventsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchExecuteEventsRequest.class, BatchExecuteEventsResponse.class)
+                .withName("BatchExecuteEvents")
+                .withUri("/v3/{project_id}/schedule-events")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchExecuteEventsRequest::getXLanguage, BatchExecuteEventsRequest::setXLanguage));
+        builder.<OperateEventReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OperateEventReq.class),
+            f -> f.withMarshaller(BatchExecuteEventsRequest::getBody, BatchExecuteEventsRequest::setBody));
 
         // response
 
@@ -1157,6 +1236,35 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CompareConfigurationRequest, CompareConfigurationResponse> compareConfiguration =
+        genForCompareConfiguration();
+
+    private static HttpRequestDef<CompareConfigurationRequest, CompareConfigurationResponse> genForCompareConfiguration() {
+        // basic
+        HttpRequestDef.Builder<CompareConfigurationRequest, CompareConfigurationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, CompareConfigurationRequest.class, CompareConfigurationResponse.class)
+            .withName("CompareConfiguration")
+            .withUri("/v3/{project_id}/configurations/difference")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CompareConfigurationRequest::getXLanguage,
+                CompareConfigurationRequest::setXLanguage));
+        builder.<CompareConfigurationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CompareConfigurationRequestBody.class),
+            f -> f.withMarshaller(CompareConfigurationRequest::getBody, CompareConfigurationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CopyConfigurationRequest, CopyConfigurationResponse> copyConfiguration =
         genForCopyConfiguration();
 
@@ -1370,6 +1478,29 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateMysqlMultiProxyRequest.class),
             f -> f.withMarshaller(CreateRdSforMySqlProxyRequest::getBody, CreateRdSforMySqlProxyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRebuildSlaveRequest, CreateRebuildSlaveResponse> createRebuildSlave =
+        genForCreateRebuildSlave();
+
+    private static HttpRequestDef<CreateRebuildSlaveRequest, CreateRebuildSlaveResponse> genForCreateRebuildSlave() {
+        // basic
+        HttpRequestDef.Builder<CreateRebuildSlaveRequest, CreateRebuildSlaveResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, CreateRebuildSlaveRequest.class, CreateRebuildSlaveResponse.class)
+                .withName("CreateRebuildSlave")
+                .withUri("/v3/{project_id}/instances/{instance_id}/rebuild")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRebuildSlaveRequest::getInstanceId, CreateRebuildSlaveRequest::setInstanceId));
 
         // response
 
@@ -3186,6 +3317,44 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListPackLogInfosRequest, ListPackLogInfosResponse> listPackLogInfos =
+        genForListPackLogInfos();
+
+    private static HttpRequestDef<ListPackLogInfosRequest, ListPackLogInfosResponse> genForListPackLogInfos() {
+        // basic
+        HttpRequestDef.Builder<ListPackLogInfosRequest, ListPackLogInfosResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPackLogInfosRequest.class, ListPackLogInfosResponse.class)
+                .withName("ListPackLogInfos")
+                .withUri("/v3/{project_id}/instances/{instance_id}/packlog/infos")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPackLogInfosRequest::getInstanceId, ListPackLogInfosRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPackLogInfosRequest::getOffset, ListPackLogInfosRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPackLogInfosRequest::getLimit, ListPackLogInfosRequest::setLimit));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPackLogInfosRequest::getXLanguage, ListPackLogInfosRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListPostgresqlHbaInfoRequest, ListPostgresqlHbaInfoResponse> listPostgresqlHbaInfo =
         genForListPostgresqlHbaInfo();
 
@@ -3511,6 +3680,69 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRestoreTimesRequest::getXLanguage, ListRestoreTimesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListScheduleEventsRequest, ListScheduleEventsResponse> listScheduleEvents =
+        genForListScheduleEvents();
+
+    private static HttpRequestDef<ListScheduleEventsRequest, ListScheduleEventsResponse> genForListScheduleEvents() {
+        // basic
+        HttpRequestDef.Builder<ListScheduleEventsRequest, ListScheduleEventsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListScheduleEventsRequest.class, ListScheduleEventsResponse.class)
+                .withName("ListScheduleEvents")
+                .withUri("/v3/{project_id}/schedule-events")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduleEventsRequest::getId, ListScheduleEventsRequest::setId));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduleEventsRequest::getInstanceId, ListScheduleEventsRequest::setInstanceId));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduleEventsRequest::getStatus, ListScheduleEventsRequest::setStatus));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduleEventsRequest::getType, ListScheduleEventsRequest::setType));
+        builder.<String>withRequestField("level",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduleEventsRequest::getLevel, ListScheduleEventsRequest::setLevel));
+        builder.<String>withRequestField("sort_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduleEventsRequest::getSortField, ListScheduleEventsRequest::setSortField));
+        builder.<String>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduleEventsRequest::getOrder, ListScheduleEventsRequest::setOrder));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduleEventsRequest::getOffset, ListScheduleEventsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduleEventsRequest::getLimit, ListScheduleEventsRequest::setLimit));
 
         // response
 
@@ -4461,6 +4693,34 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReplaceNodeRequest.class),
             f -> f.withMarshaller(NotifyReplaceNodeRequest::getBody, NotifyReplaceNodeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResetConfigurationRequest, ResetConfigurationResponse> resetConfiguration =
+        genForResetConfiguration();
+
+    private static HttpRequestDef<ResetConfigurationRequest, ResetConfigurationResponse> genForResetConfiguration() {
+        // basic
+        HttpRequestDef.Builder<ResetConfigurationRequest, ResetConfigurationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ResetConfigurationRequest.class, ResetConfigurationResponse.class)
+                .withName("ResetConfiguration")
+                .withUri("/v3/{project_id}/configurations/{config_id}/reset")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetConfigurationRequest::getConfigId, ResetConfigurationRequest::setConfigId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetConfigurationRequest::getXLanguage, ResetConfigurationRequest::setXLanguage));
 
         // response
 
@@ -5592,6 +5852,30 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowQuotasRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowQuotasRequest::getXLanguage, ShowQuotasRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRebuildSlaveStatusRequest, ShowRebuildSlaveStatusResponse> showRebuildSlaveStatus =
+        genForShowRebuildSlaveStatus();
+
+    private static HttpRequestDef<ShowRebuildSlaveStatusRequest, ShowRebuildSlaveStatusResponse> genForShowRebuildSlaveStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowRebuildSlaveStatusRequest, ShowRebuildSlaveStatusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowRebuildSlaveStatusRequest.class, ShowRebuildSlaveStatusResponse.class)
+            .withName("ShowRebuildSlaveStatus")
+            .withUri("/v3/{project_id}/instances/{instance_id}/rebuild")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRebuildSlaveStatusRequest::getInstanceId,
+                ShowRebuildSlaveStatusRequest::setInstanceId));
 
         // response
 
@@ -8907,6 +9191,34 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAutoCesAlarmRequest, ShowAutoCesAlarmResponse> showAutoCesAlarm =
+        genForShowAutoCesAlarm();
+
+    private static HttpRequestDef<ShowAutoCesAlarmRequest, ShowAutoCesAlarmResponse> genForShowAutoCesAlarm() {
+        // basic
+        HttpRequestDef.Builder<ShowAutoCesAlarmRequest, ShowAutoCesAlarmResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAutoCesAlarmRequest.class, ShowAutoCesAlarmResponse.class)
+                .withName("ShowAutoCesAlarm")
+                .withUri("/v3/{project_id}/auto-ces-alarm")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoCesAlarmRequest::getEngine, ShowAutoCesAlarmRequest::setEngine));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoCesAlarmRequest::getXLanguage, ShowAutoCesAlarmRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowIntelligentKillSessionHistoryRequest, ShowIntelligentKillSessionHistoryResponse> showIntelligentKillSessionHistory =
         genForShowIntelligentKillSessionHistory();
 
@@ -8952,6 +9264,45 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowIntelligentKillSessionHistoryRequest::getPageSize,
                 ShowIntelligentKillSessionHistoryRequest::setPageSize));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowIntelligentKillSessionStatisticRequest, ShowIntelligentKillSessionStatisticResponse> showIntelligentKillSessionStatistic =
+        genForShowIntelligentKillSessionStatistic();
+
+    private static HttpRequestDef<ShowIntelligentKillSessionStatisticRequest, ShowIntelligentKillSessionStatisticResponse> genForShowIntelligentKillSessionStatistic() {
+        // basic
+        HttpRequestDef.Builder<ShowIntelligentKillSessionStatisticRequest, ShowIntelligentKillSessionStatisticResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowIntelligentKillSessionStatisticRequest.class,
+                    ShowIntelligentKillSessionStatisticResponse.class)
+                .withName("ShowIntelligentKillSessionStatistic")
+                .withUri("/v3/{project_id}/instances/{instance_id}/ops/intelligent-kill-session/statistic")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIntelligentKillSessionStatisticRequest::getInstanceId,
+                ShowIntelligentKillSessionStatisticRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIntelligentKillSessionStatisticRequest::getNodeId,
+                ShowIntelligentKillSessionStatisticRequest::setNodeId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIntelligentKillSessionStatisticRequest::getXLanguage,
+                ShowIntelligentKillSessionStatisticRequest::setXLanguage));
 
         // response
 

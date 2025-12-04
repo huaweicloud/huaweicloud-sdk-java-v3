@@ -53,6 +53,9 @@ import com.huaweicloud.sdk.dds.v3.model.CreateDatabaseRoleResponse;
 import com.huaweicloud.sdk.dds.v3.model.CreateDatabaseUserRequest;
 import com.huaweicloud.sdk.dds.v3.model.CreateDatabaseUserRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.CreateDatabaseUserResponse;
+import com.huaweicloud.sdk.dds.v3.model.CreateInstanceRequest;
+import com.huaweicloud.sdk.dds.v3.model.CreateInstanceRequestBody;
+import com.huaweicloud.sdk.dds.v3.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.dds.v3.model.CreateIpRequest;
 import com.huaweicloud.sdk.dds.v3.model.CreateIpRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.CreateIpResponse;
@@ -141,6 +144,8 @@ import com.huaweicloud.sdk.dds.v3.model.ListInstanceTagsResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListInstancesByTagsRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListInstancesByTagsRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.ListInstancesByTagsResponse;
+import com.huaweicloud.sdk.dds.v3.model.ListInstancesRequest;
+import com.huaweicloud.sdk.dds.v3.model.ListInstancesResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListLtsConfigsRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListLtsConfigsResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListLtsErrorLogsRequest;
@@ -777,6 +782,29 @@ public class DdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDatabaseUserRequestBody.class),
             f -> f.withMarshaller(CreateDatabaseUserRequest::getBody, CreateDatabaseUserRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> createInstance =
+        genForCreateInstance();
+
+    private static HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> genForCreateInstance() {
+        // basic
+        HttpRequestDef.Builder<CreateInstanceRequest, CreateInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateInstanceRequest.class, CreateInstanceResponse.class)
+                .withName("CreateInstance")
+                .withUri("/v3/{project_id}/instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateInstanceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateInstanceRequestBody.class),
+            f -> f.withMarshaller(CreateInstanceRequest::getBody, CreateInstanceRequest::setBody));
 
         // response
 
@@ -1786,6 +1814,69 @@ public class DdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstanceTagsRequest::getInstanceId, ListInstanceTagsRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstancesRequest, ListInstancesResponse> listInstances =
+        genForListInstances();
+
+    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForListInstances() {
+        // basic
+        HttpRequestDef.Builder<ListInstancesRequest, ListInstancesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListInstancesRequest.class, ListInstancesResponse.class)
+                .withName("ListInstances")
+                .withUri("/v3/{project_id}/instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getId, ListInstancesRequest::setId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getName, ListInstancesRequest::setName));
+        builder.<ListInstancesRequest.ModeEnum>withRequestField("mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListInstancesRequest.ModeEnum.class),
+            f -> f.withMarshaller(ListInstancesRequest::getMode, ListInstancesRequest::setMode));
+        builder.<ListInstancesRequest.DatastoreTypeEnum>withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListInstancesRequest.DatastoreTypeEnum.class),
+            f -> f.withMarshaller(ListInstancesRequest::getDatastoreType, ListInstancesRequest::setDatastoreType));
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getVpcId, ListInstancesRequest::setVpcId));
+        builder.<String>withRequestField("subnet_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getSubnetId, ListInstancesRequest::setSubnetId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstancesRequest::getOffset, ListInstancesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstancesRequest::getLimit, ListInstancesRequest::setLimit));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getTags, ListInstancesRequest::setTags));
 
         // response
 

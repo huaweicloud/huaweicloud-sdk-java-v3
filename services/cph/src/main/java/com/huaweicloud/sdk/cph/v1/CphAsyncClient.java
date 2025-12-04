@@ -127,7 +127,7 @@ public class CphAsyncClient {
      * 共享镜像给指定账号
      *
      * 镜像共享,共享镜像给指定账号。
-     * - 镜像只能共享给同region下的其他华为云账号(project_id)。
+     * - 镜像只能共享给同region下的其他[华为云](tag:hws,hws_hk)账号(project_id)。
      * - 同一镜像最多只能共享给10个其他账号。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -143,7 +143,7 @@ public class CphAsyncClient {
      * 共享镜像给指定账号
      *
      * 镜像共享,共享镜像给指定账号。
-     * - 镜像只能共享给同region下的其他华为云账号(project_id)。
+     * - 镜像只能共享给同region下的其他[华为云](tag:hws,hws_hk)账号(project_id)。
      * - 同一镜像最多只能共享给10个其他账号。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -315,7 +315,7 @@ public class CphAsyncClient {
     /**
      * 切换云手机服务器
      *
-     * 切换云手机服务器, 支持您换一台新的云手机服务器。切换后服务器名称、服务器ID和服务器所在AZ与原服务器相同, 服务器计费保持不变。服务器切换的同时服务器上的手机重新创建，不保留用户数据。切换需要额外的资源和资源配额。
+     * 切换云手机服务器, 支持您换一台新的云手机服务器。切换后服务器名称、服务器ID与原服务器相同, 服务器计费保持不变。服务器切换的同时服务器上的手机重新创建，不保留用户数据。切换需要额外的资源和资源配额。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -330,7 +330,7 @@ public class CphAsyncClient {
     /**
      * 切换云手机服务器
      *
-     * 切换云手机服务器, 支持您换一台新的云手机服务器。切换后服务器名称、服务器ID和服务器所在AZ与原服务器相同, 服务器计费保持不变。服务器切换的同时服务器上的手机重新创建，不保留用户数据。切换需要额外的资源和资源配额。
+     * 切换云手机服务器, 支持您换一台新的云手机服务器。切换后服务器名称、服务器ID与原服务器相同, 服务器计费保持不变。服务器切换的同时服务器上的手机重新创建，不保留用户数据。切换需要额外的资源和资源配额。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -403,9 +403,9 @@ public class CphAsyncClient {
     }
 
     /**
-     * [创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc)云手机服务器
+     * [创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc,ctc)云手机服务器
      *
-     * [创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc)云手机服务器，支持您复用已有的VPC网络管理云手机服务器，支持云手机服务器复用您已[创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc)的共享带宽等资源。
+     * [创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc,ctc)云手机服务器，支持您复用已有的VPC网络管理云手机服务器，支持云手机服务器复用您已[创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc,ctc)的共享带宽等资源。
      * - 请确保您使用的账号具有CPH AgencyDependencyAccess权限。
      * - 请确保您有足够的服务器及网络配额，配额校验不通过将导致创建失败。
      * [- 当前只支持按需创建。](tag:fcs)
@@ -421,9 +421,9 @@ public class CphAsyncClient {
     }
 
     /**
-     * [创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc)云手机服务器
+     * [创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc,ctc)云手机服务器
      *
-     * [创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc)云手机服务器，支持您复用已有的VPC网络管理云手机服务器，支持云手机服务器复用您已[创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc)的共享带宽等资源。
+     * [创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc,ctc)云手机服务器，支持您复用已有的VPC网络管理云手机服务器，支持云手机服务器复用您已[创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc,ctc)的共享带宽等资源。
      * - 请确保您使用的账号具有CPH AgencyDependencyAccess权限。
      * - 请确保您有足够的服务器及网络配额，配额校验不通过将导致创建失败。
      * [- 当前只支持按需创建。](tag:fcs)
@@ -587,7 +587,7 @@ public class CphAsyncClient {
      * 扩容云手机数据盘大小
      *
      * 扩容云手机数据盘大小
-     * - 注意: 本接口会产生扩容新增容量的费用，新增容量不算入服务器免费存储额度内。
+     * [- 注意: 本接口会产生扩容新增容量的费用，新增容量不算入服务器免费存储额度内。](tag:hc,hk,cmcc,ctc)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -603,7 +603,7 @@ public class CphAsyncClient {
      * 扩容云手机数据盘大小
      *
      * 扩容云手机数据盘大小
-     * - 注意: 本接口会产生扩容新增容量的费用，新增容量不算入服务器免费存储额度内。
+     * [- 注意: 本接口会产生扩容新增容量的费用，新增容量不算入服务器免费存储额度内。](tag:hc,hk,cmcc,ctc)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

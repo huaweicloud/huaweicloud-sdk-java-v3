@@ -87,6 +87,8 @@ import com.huaweicloud.sdk.vod.v1.model.ListAssetDailySummaryLogRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetDailySummaryLogResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetListRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetListResponse;
+import com.huaweicloud.sdk.vod.v1.model.ListCdnStatisticsRequest;
+import com.huaweicloud.sdk.vod.v1.model.ListCdnStatisticsResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListDomainLogsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListDomainLogsResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListTakeOverTaskRequest;
@@ -1230,6 +1232,54 @@ public class VodMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAssetListRequest::getXSdkDate, ListAssetListRequest::setXSdkDate));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCdnStatisticsRequest, ListCdnStatisticsResponse> listCdnStatistics =
+        genForListCdnStatistics();
+
+    private static HttpRequestDef<ListCdnStatisticsRequest, ListCdnStatisticsResponse> genForListCdnStatistics() {
+        // basic
+        HttpRequestDef.Builder<ListCdnStatisticsRequest, ListCdnStatisticsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCdnStatisticsRequest.class, ListCdnStatisticsResponse.class)
+                .withName("ListCdnStatistics")
+                .withUri("/v2/{project_id}/asset/cdn-statistics")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCdnStatisticsRequest::getStartTime, ListCdnStatisticsRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCdnStatisticsRequest::getEndTime, ListCdnStatisticsRequest::setEndTime));
+        builder.<String>withRequestField("stat_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCdnStatisticsRequest::getStatType, ListCdnStatisticsRequest::setStatType));
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCdnStatisticsRequest::getDomain, ListCdnStatisticsRequest::setDomain));
+        builder.<Integer>withRequestField("interval",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCdnStatisticsRequest::getInterval, ListCdnStatisticsRequest::setInterval));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCdnStatisticsRequest::getXSdkDate, ListCdnStatisticsRequest::setXSdkDate));
 
         // response
 

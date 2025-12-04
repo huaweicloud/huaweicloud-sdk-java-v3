@@ -33,6 +33,8 @@ import com.huaweicloud.sdk.as.v1.model.BatchUnprotectScalingInstancesResponse;
 import com.huaweicloud.sdk.as.v1.model.BatchUnsetScalingInstancesStantbyRequest;
 import com.huaweicloud.sdk.as.v1.model.BatchUnsetScalingInstancesStantbyResponse;
 import com.huaweicloud.sdk.as.v1.model.CallbackLifeCycleHookOption;
+import com.huaweicloud.sdk.as.v1.model.CloseWarmPoolNewRequest;
+import com.huaweicloud.sdk.as.v1.model.CloseWarmPoolNewResponse;
 import com.huaweicloud.sdk.as.v1.model.CloseWarmPoolRequest;
 import com.huaweicloud.sdk.as.v1.model.CloseWarmPoolResponse;
 import com.huaweicloud.sdk.as.v1.model.CreateGroupScheduledTaskRequest;
@@ -113,6 +115,8 @@ import com.huaweicloud.sdk.as.v1.model.ListScalingTagInfosByTenantIdRequest;
 import com.huaweicloud.sdk.as.v1.model.ListScalingTagInfosByTenantIdResponse;
 import com.huaweicloud.sdk.as.v1.model.ListScalingV2PoliciesRequest;
 import com.huaweicloud.sdk.as.v1.model.ListScalingV2PoliciesResponse;
+import com.huaweicloud.sdk.as.v1.model.ListWarmPoolInstancesNewRequest;
+import com.huaweicloud.sdk.as.v1.model.ListWarmPoolInstancesNewResponse;
 import com.huaweicloud.sdk.as.v1.model.ListWarmPoolInstancesRequest;
 import com.huaweicloud.sdk.as.v1.model.ListWarmPoolInstancesResponse;
 import com.huaweicloud.sdk.as.v1.model.PauseScalingGroupOption;
@@ -121,6 +125,8 @@ import com.huaweicloud.sdk.as.v1.model.PauseScalingGroupResponse;
 import com.huaweicloud.sdk.as.v1.model.PauseScalingPolicyOption;
 import com.huaweicloud.sdk.as.v1.model.PauseScalingPolicyRequest;
 import com.huaweicloud.sdk.as.v1.model.PauseScalingPolicyResponse;
+import com.huaweicloud.sdk.as.v1.model.PutWarmPoolNewRequest;
+import com.huaweicloud.sdk.as.v1.model.PutWarmPoolNewResponse;
 import com.huaweicloud.sdk.as.v1.model.PutWarmPoolOption;
 import com.huaweicloud.sdk.as.v1.model.PutWarmPoolRequest;
 import com.huaweicloud.sdk.as.v1.model.PutWarmPoolResponse;
@@ -147,6 +153,8 @@ import com.huaweicloud.sdk.as.v1.model.ShowScalingPolicyRequest;
 import com.huaweicloud.sdk.as.v1.model.ShowScalingPolicyResponse;
 import com.huaweicloud.sdk.as.v1.model.ShowScalingV2PolicyRequest;
 import com.huaweicloud.sdk.as.v1.model.ShowScalingV2PolicyResponse;
+import com.huaweicloud.sdk.as.v1.model.ShowWarmPoolNewRequest;
+import com.huaweicloud.sdk.as.v1.model.ShowWarmPoolNewResponse;
 import com.huaweicloud.sdk.as.v1.model.ShowWarmPoolRequest;
 import com.huaweicloud.sdk.as.v1.model.ShowWarmPoolResponse;
 import com.huaweicloud.sdk.as.v1.model.UpdateGroupScheduledTaskRequest;
@@ -529,6 +537,30 @@ public class AsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CloseWarmPoolRequest::getScalingGroupId, CloseWarmPoolRequest::setScalingGroupId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CloseWarmPoolNewRequest, CloseWarmPoolNewResponse> closeWarmPoolNew =
+        genForCloseWarmPoolNew();
+
+    private static HttpRequestDef<CloseWarmPoolNewRequest, CloseWarmPoolNewResponse> genForCloseWarmPoolNew() {
+        // basic
+        HttpRequestDef.Builder<CloseWarmPoolNewRequest, CloseWarmPoolNewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, CloseWarmPoolNewRequest.class, CloseWarmPoolNewResponse.class)
+                .withName("CloseWarmPoolNew")
+                .withUri("/v2/{project_id}/scaling-groups/{scaling_group_id}/warm-pool")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("scaling_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CloseWarmPoolNewRequest::getScalingGroupId,
+                CloseWarmPoolNewRequest::setScalingGroupId));
 
         // response
 
@@ -1625,6 +1657,43 @@ public class AsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListWarmPoolInstancesNewRequest, ListWarmPoolInstancesNewResponse> listWarmPoolInstancesNew =
+        genForListWarmPoolInstancesNew();
+
+    private static HttpRequestDef<ListWarmPoolInstancesNewRequest, ListWarmPoolInstancesNewResponse> genForListWarmPoolInstancesNew() {
+        // basic
+        HttpRequestDef.Builder<ListWarmPoolInstancesNewRequest, ListWarmPoolInstancesNewResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListWarmPoolInstancesNewRequest.class, ListWarmPoolInstancesNewResponse.class)
+                .withName("ListWarmPoolInstancesNew")
+                .withUri("/v2/{project_id}/scaling-groups/{scaling_group_id}/warm-pool-instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("scaling_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWarmPoolInstancesNewRequest::getScalingGroupId,
+                ListWarmPoolInstancesNewRequest::setScalingGroupId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWarmPoolInstancesNewRequest::getLimit,
+                ListWarmPoolInstancesNewRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWarmPoolInstancesNewRequest::getMarker,
+                ListWarmPoolInstancesNewRequest::setMarker));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<PauseScalingGroupRequest, PauseScalingGroupResponse> pauseScalingGroup =
         genForPauseScalingGroup();
 
@@ -1704,6 +1773,34 @@ public class AsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PutWarmPoolOption.class),
             f -> f.withMarshaller(PutWarmPoolRequest::getBody, PutWarmPoolRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<PutWarmPoolNewRequest, PutWarmPoolNewResponse> putWarmPoolNew =
+        genForPutWarmPoolNew();
+
+    private static HttpRequestDef<PutWarmPoolNewRequest, PutWarmPoolNewResponse> genForPutWarmPoolNew() {
+        // basic
+        HttpRequestDef.Builder<PutWarmPoolNewRequest, PutWarmPoolNewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, PutWarmPoolNewRequest.class, PutWarmPoolNewResponse.class)
+                .withName("PutWarmPoolNew")
+                .withUri("/v2/{project_id}/scaling-groups/{scaling_group_id}/warm-pool")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("scaling_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PutWarmPoolNewRequest::getScalingGroupId, PutWarmPoolNewRequest::setScalingGroupId));
+        builder.<PutWarmPoolOption>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PutWarmPoolOption.class),
+            f -> f.withMarshaller(PutWarmPoolNewRequest::getBody, PutWarmPoolNewRequest::setBody));
 
         // response
 
@@ -1932,6 +2029,30 @@ public class AsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowWarmPoolRequest::getScalingGroupId, ShowWarmPoolRequest::setScalingGroupId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowWarmPoolNewRequest, ShowWarmPoolNewResponse> showWarmPoolNew =
+        genForShowWarmPoolNew();
+
+    private static HttpRequestDef<ShowWarmPoolNewRequest, ShowWarmPoolNewResponse> genForShowWarmPoolNew() {
+        // basic
+        HttpRequestDef.Builder<ShowWarmPoolNewRequest, ShowWarmPoolNewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowWarmPoolNewRequest.class, ShowWarmPoolNewResponse.class)
+                .withName("ShowWarmPoolNew")
+                .withUri("/v2/{project_id}/scaling-groups/{scaling_group_id}/warm-pool")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("scaling_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWarmPoolNewRequest::getScalingGroupId,
+                ShowWarmPoolNewRequest::setScalingGroupId));
 
         // response
 

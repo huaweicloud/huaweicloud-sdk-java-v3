@@ -12,25 +12,25 @@ import java.util.Objects;
 public class DeleteStarrocksInstanceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "job_id")
+    @JsonProperty(value = "workflow_id")
 
-    private String jobId;
+    private String workflowId;
 
-    public DeleteStarrocksInstanceResponse withJobId(String jobId) {
-        this.jobId = jobId;
+    public DeleteStarrocksInstanceResponse withWorkflowId(String workflowId) {
+        this.workflowId = workflowId;
         return this;
     }
 
     /**
      * 工作流ID。
-     * @return jobId
+     * @return workflowId
      */
-    public String getJobId() {
-        return jobId;
+    public String getWorkflowId() {
+        return workflowId;
     }
 
-    public void setJobId(String jobId) {
-        this.jobId = jobId;
+    public void setWorkflowId(String workflowId) {
+        this.workflowId = workflowId;
     }
 
     @Override
@@ -42,19 +42,19 @@ public class DeleteStarrocksInstanceResponse extends SdkResponse {
             return false;
         }
         DeleteStarrocksInstanceResponse that = (DeleteStarrocksInstanceResponse) obj;
-        return Objects.equals(this.jobId, that.jobId);
+        return Objects.equals(this.workflowId, that.workflowId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId);
+        return Objects.hash(workflowId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteStarrocksInstanceResponse {\n");
-        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    workflowId: ").append(toIndentedString(workflowId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

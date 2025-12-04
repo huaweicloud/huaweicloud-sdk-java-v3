@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.live.v2.model.ListAreaDetailRequest;
 import com.huaweicloud.sdk.live.v2.model.ListAreaDetailResponse;
 import com.huaweicloud.sdk.live.v2.model.ListBandwidthDetailRequest;
 import com.huaweicloud.sdk.live.v2.model.ListBandwidthDetailResponse;
+import com.huaweicloud.sdk.live.v2.model.ListCarouselTaskDetailRequest;
+import com.huaweicloud.sdk.live.v2.model.ListCarouselTaskDetailResponse;
 import com.huaweicloud.sdk.live.v2.model.ListDomainBandwidthPeakRequest;
 import com.huaweicloud.sdk.live.v2.model.ListDomainBandwidthPeakResponse;
 import com.huaweicloud.sdk.live.v2.model.ListDomainTrafficDetailRequest;
@@ -640,6 +642,44 @@ public class LiveAsyncClient {
     public AsyncInvoker<ShowUpBandwidthRequest, ShowUpBandwidthResponse> showUpBandwidthAsyncInvoker(
         ShowUpBandwidthRequest request) {
         return new AsyncInvoker<>(request, LiveMeta.showUpBandwidth, hcClient);
+    }
+
+    /**
+     * 查询轮播任务监控数据接口
+     *
+     * 查询轮播任务监控数据接口，包括轮播任务帧率码率情况。
+     * 
+     * 最大查询跨度3小时，最大查询周期7天。
+     * 
+     * 返回的帧率码率数据列表粒度为1秒钟。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCarouselTaskDetailRequest 请求对象
+     * @return CompletableFuture<ListCarouselTaskDetailResponse>
+     */
+    public CompletableFuture<ListCarouselTaskDetailResponse> listCarouselTaskDetailAsync(
+        ListCarouselTaskDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.listCarouselTaskDetail);
+    }
+
+    /**
+     * 查询轮播任务监控数据接口
+     *
+     * 查询轮播任务监控数据接口，包括轮播任务帧率码率情况。
+     * 
+     * 最大查询跨度3小时，最大查询周期7天。
+     * 
+     * 返回的帧率码率数据列表粒度为1秒钟。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCarouselTaskDetailRequest 请求对象
+     * @return AsyncInvoker<ListCarouselTaskDetailRequest, ListCarouselTaskDetailResponse>
+     */
+    public AsyncInvoker<ListCarouselTaskDetailRequest, ListCarouselTaskDetailResponse> listCarouselTaskDetailAsyncInvoker(
+        ListCarouselTaskDetailRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.listCarouselTaskDetail, hcClient);
     }
 
     /**

@@ -109,7 +109,7 @@ public class StartSyncTaskReq {
     }
 
     /**
-     * CDN鉴权秘钥。
+     * CDN鉴权密钥。
      * @return sourceCdnAuthenticationKey
      */
     public String getSourceCdnAuthenticationKey() {

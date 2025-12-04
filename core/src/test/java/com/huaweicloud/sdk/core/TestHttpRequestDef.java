@@ -148,7 +148,6 @@ public class TestHttpRequestDef {
         }
     }
 
-    @SuppressWarnings(value = {"unchecked", "rawtypes"})
     public static HttpRequestDef<TestRequest, TestResponse> buildHttpRequestDef() {
         HttpRequestDef.Builder<TestRequest, TestResponse> builder = HttpRequestDef.builder(HttpMethod.GET,
                         TestRequest.class, TestResponse.class)
@@ -344,7 +343,6 @@ public class TestHttpRequestDef {
         return builder.build();
     }
 
-    @SuppressWarnings(value = {"unchecked", "rawtypes"})
     public static HttpRequestDef<TestNoBodyRequest, TestResponse> buildHttpRequestNoRequestBodyDef() {
         HttpRequestDef.Builder<TestNoBodyRequest, TestResponse> builder =
                 HttpRequestDef.builder(HttpMethod.PUT, TestNoBodyRequest.class, TestResponse.class)
@@ -431,7 +429,7 @@ public class TestHttpRequestDef {
             TestResponse response = requestDef.getResponseType().newInstance();
 
             responseField.writeValueSafe(response, obj, responseField.getFieldType());
-            Assert.assertEquals(response.getBody().size(), 2);
+            Assert.assertEquals(2, response.getBody().size());
         }
     }
 }

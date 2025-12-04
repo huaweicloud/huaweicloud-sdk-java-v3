@@ -41,7 +41,7 @@ public class PrivacyResponseBody {
     private String url;
 
     /**
-     * 屏蔽字段   - Params：请求参数   - Cookie：根据Cookie区分的Web访问者   - Header：自定义HTTP首部   - Form：表单参数
+     * **参数解释：** 屏蔽字段 **约束限制：** 不涉及 **取值范围：**  - params: 请求参数  - cookie: 根据Cookie区分的Web访问者  - header: 自定义HTTP首部  - form: 表单参数  **默认取值：** 不涉及
      */
     public static final class CategoryEnum {
 
@@ -194,7 +194,7 @@ public class PrivacyResponseBody {
     }
 
     /**
-     * 规则状态，0：关闭，1：开启
+     * **参数解释：** 规则状态标识，用于指定规则的启用或关闭状态 **约束限制：** 不涉及 **取值范围：**  - 0：关闭  - 1：开启 **默认取值：** 不涉及
      * @return status
      */
     public Integer getStatus() {
@@ -228,7 +228,7 @@ public class PrivacyResponseBody {
     }
 
     /**
-     * 屏蔽字段   - Params：请求参数   - Cookie：根据Cookie区分的Web访问者   - Header：自定义HTTP首部   - Form：表单参数
+     * **参数解释：** 屏蔽字段 **约束限制：** 不涉及 **取值范围：**  - params: 请求参数  - cookie: 根据Cookie区分的Web访问者  - header: 自定义HTTP首部  - form: 表单参数  **默认取值：** 不涉及
      * @return category
      */
     public CategoryEnum getCategory() {

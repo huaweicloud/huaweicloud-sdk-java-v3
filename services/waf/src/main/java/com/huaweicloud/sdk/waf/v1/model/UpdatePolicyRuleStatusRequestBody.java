@@ -21,7 +21,7 @@ public class UpdatePolicyRuleStatusRequestBody {
     }
 
     /**
-     * 状态（开启：1，关闭：0）
+     * **参数解释：** 功能状态标识，用于指定对应功能的启用或关闭状态 **约束限制：** 不涉及 **取值范围：**  - 0：关闭  - 1：开启 **默认取值：** 不涉及
      * @return status
      */
     public Integer getStatus() {

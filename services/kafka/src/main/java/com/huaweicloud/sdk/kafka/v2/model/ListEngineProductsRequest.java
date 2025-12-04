@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ListEngineProductsRequest {
 
     /**
-     * 消息引擎的类型。
+     * **参数解释**： 消息引擎的类型。 **约束限制**： 不涉及。 **取值范围**： kafka **默认取值**： 不涉及。
      */
     public static final class EngineEnum {
 
@@ -95,7 +95,7 @@ public class ListEngineProductsRequest {
     }
 
     /**
-     * 消息引擎的类型。
+     * **参数解释**： 消息引擎的类型。 **约束限制**： 不涉及。 **取值范围**： kafka **默认取值**： 不涉及。
      * @return engine
      */
     public EngineEnum getEngine() {
@@ -112,7 +112,7 @@ public class ListEngineProductsRequest {
     }
 
     /**
-     * 产品ID。
+     * **参数解释**： 产品ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return productId
      */
     public String getProductId() {

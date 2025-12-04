@@ -37,6 +37,8 @@ import com.huaweicloud.sdk.dds.v3.model.CreateDatabaseRoleRequest;
 import com.huaweicloud.sdk.dds.v3.model.CreateDatabaseRoleResponse;
 import com.huaweicloud.sdk.dds.v3.model.CreateDatabaseUserRequest;
 import com.huaweicloud.sdk.dds.v3.model.CreateDatabaseUserResponse;
+import com.huaweicloud.sdk.dds.v3.model.CreateInstanceRequest;
+import com.huaweicloud.sdk.dds.v3.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.dds.v3.model.CreateIpRequest;
 import com.huaweicloud.sdk.dds.v3.model.CreateIpResponse;
 import com.huaweicloud.sdk.dds.v3.model.CreateKillOpRuleRequest;
@@ -107,6 +109,8 @@ import com.huaweicloud.sdk.dds.v3.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListInstanceTagsResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListInstancesByTagsRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListInstancesByTagsResponse;
+import com.huaweicloud.sdk.dds.v3.model.ListInstancesRequest;
+import com.huaweicloud.sdk.dds.v3.model.ListInstancesResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListLtsConfigsRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListLtsConfigsResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListLtsErrorLogsRequest;
@@ -755,6 +759,35 @@ public class DdsClient {
     public SyncInvoker<CreateDatabaseUserRequest, CreateDatabaseUserResponse> createDatabaseUserInvoker(
         CreateDatabaseUserRequest request) {
         return new SyncInvoker<>(request, DdsMeta.createDatabaseUser, hcClient);
+    }
+
+    /**
+     * 创建实例
+     *
+     * 创建文档数据库实例，包括集群实例、副本集实例、以及单节点实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInstanceRequest 请求对象
+     * @return CreateInstanceResponse
+     */
+    public CreateInstanceResponse createInstance(CreateInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.createInstance);
+    }
+
+    /**
+     * 创建实例
+     *
+     * 创建文档数据库实例，包括集群实例、副本集实例、以及单节点实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInstanceRequest 请求对象
+     * @return SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
+     */
+    public SyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceInvoker(
+        CreateInstanceRequest request) {
+        return new SyncInvoker<>(request, DdsMeta.createInstance, hcClient);
     }
 
     /**
@@ -1704,6 +1737,34 @@ public class DdsClient {
     public SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTagsInvoker(
         ListInstanceTagsRequest request) {
         return new SyncInvoker<>(request, DdsMeta.listInstanceTags, hcClient);
+    }
+
+    /**
+     * 查询实例列表和详情
+     *
+     * 根据指定条件查询实例列表和详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesRequest 请求对象
+     * @return ListInstancesResponse
+     */
+    public ListInstancesResponse listInstances(ListInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.listInstances);
+    }
+
+    /**
+     * 查询实例列表和详情
+     *
+     * 根据指定条件查询实例列表和详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesRequest 请求对象
+     * @return SyncInvoker<ListInstancesRequest, ListInstancesResponse>
+     */
+    public SyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesInvoker(ListInstancesRequest request) {
+        return new SyncInvoker<>(request, DdsMeta.listInstances, hcClient);
     }
 
     /**

@@ -30,6 +30,11 @@ public class ShowInstanceArtifactRequest {
 
     private String reference;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "with_scan_overview")
+
+    private Boolean withScanOverview;
+
     public ShowInstanceArtifactRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -98,6 +103,23 @@ public class ShowInstanceArtifactRequest {
         this.reference = reference;
     }
 
+    public ShowInstanceArtifactRequest withWithScanOverview(Boolean withScanOverview) {
+        this.withScanOverview = withScanOverview;
+        return this;
+    }
+
+    /**
+     * 是否返回制品扫描摘要
+     * @return withScanOverview
+     */
+    public Boolean getWithScanOverview() {
+        return withScanOverview;
+    }
+
+    public void setWithScanOverview(Boolean withScanOverview) {
+        this.withScanOverview = withScanOverview;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -110,12 +132,13 @@ public class ShowInstanceArtifactRequest {
         return Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.namespaceName, that.namespaceName)
             && Objects.equals(this.repositoryName, that.repositoryName)
-            && Objects.equals(this.reference, that.reference);
+            && Objects.equals(this.reference, that.reference)
+            && Objects.equals(this.withScanOverview, that.withScanOverview);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, namespaceName, repositoryName, reference);
+        return Objects.hash(instanceId, namespaceName, repositoryName, reference, withScanOverview);
     }
 
     @Override
@@ -126,6 +149,7 @@ public class ShowInstanceArtifactRequest {
         sb.append("    namespaceName: ").append(toIndentedString(namespaceName)).append("\n");
         sb.append("    repositoryName: ").append(toIndentedString(repositoryName)).append("\n");
         sb.append("    reference: ").append(toIndentedString(reference)).append("\n");
+        sb.append("    withScanOverview: ").append(toIndentedString(withScanOverview)).append("\n");
         sb.append("}");
         return sb.toString();
     }

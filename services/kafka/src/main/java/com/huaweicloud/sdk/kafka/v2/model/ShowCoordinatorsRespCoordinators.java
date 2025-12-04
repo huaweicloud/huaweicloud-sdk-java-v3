@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 协调器信息。
+ * **参数解释**： 协调器信息。
  */
 public class ShowCoordinatorsRespCoordinators {
 
@@ -36,7 +36,7 @@ public class ShowCoordinatorsRespCoordinators {
     }
 
     /**
-     * 消费组ID。
+     * **参数解释**： 消费组ID。 **取值范围**： 不涉及。
      * @return groupId
      */
     public String getGroupId() {
@@ -53,7 +53,7 @@ public class ShowCoordinatorsRespCoordinators {
     }
 
     /**
-     * 对应协调器的broker id。
+     * **参数解释**： 对应协调器的broker id。 **取值范围**： 不涉及。
      * @return id
      */
     public Integer getId() {
@@ -70,7 +70,7 @@ public class ShowCoordinatorsRespCoordinators {
     }
 
     /**
-     * 对应协调器的地址。
+     * **参数解释**： 对应协调器的地址。 **取值范围**： 不涉及。
      * @return host
      */
     public String getHost() {
@@ -87,7 +87,7 @@ public class ShowCoordinatorsRespCoordinators {
     }
 
     /**
-     * 端口号。
+     * **参数解释**： 端口号。 **取值范围**： 不涉及。
      * @return port
      */
     public Integer getPort() {

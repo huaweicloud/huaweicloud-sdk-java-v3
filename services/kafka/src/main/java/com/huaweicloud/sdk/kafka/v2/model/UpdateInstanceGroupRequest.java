@@ -24,7 +24,7 @@ public class UpdateInstanceGroupRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private BatchModifyGroupDescriptionReq body;
+    private BatchModiftGroupDescriptionReq body;
 
     public UpdateInstanceGroupRequest withEngine(String engine) {
         this.engine = engine;
@@ -60,14 +60,14 @@ public class UpdateInstanceGroupRequest {
         this.instanceId = instanceId;
     }
 
-    public UpdateInstanceGroupRequest withBody(BatchModifyGroupDescriptionReq body) {
+    public UpdateInstanceGroupRequest withBody(BatchModiftGroupDescriptionReq body) {
         this.body = body;
         return this;
     }
 
-    public UpdateInstanceGroupRequest withBody(Consumer<BatchModifyGroupDescriptionReq> bodySetter) {
+    public UpdateInstanceGroupRequest withBody(Consumer<BatchModiftGroupDescriptionReq> bodySetter) {
         if (this.body == null) {
-            this.body = new BatchModifyGroupDescriptionReq();
+            this.body = new BatchModiftGroupDescriptionReq();
             bodySetter.accept(this.body);
         }
 
@@ -78,11 +78,11 @@ public class UpdateInstanceGroupRequest {
      * Get body
      * @return body
      */
-    public BatchModifyGroupDescriptionReq getBody() {
+    public BatchModiftGroupDescriptionReq getBody() {
         return body;
     }
 
-    public void setBody(BatchModifyGroupDescriptionReq body) {
+    public void setBody(BatchModiftGroupDescriptionReq body) {
         this.body = body;
     }
 

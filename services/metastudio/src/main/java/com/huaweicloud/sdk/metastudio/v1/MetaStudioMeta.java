@@ -37,7 +37,6 @@ import com.huaweicloud.sdk.metastudio.v1.model.ConfirmSmarLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmSmarLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmTrainingSegmentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmTrainingSegmentResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.ControlDigitalHumanLiveReq;
 import com.huaweicloud.sdk.metastudio.v1.model.ControlSmartLiveReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CopyVideoScriptsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CopyVideoScriptsResponse;
@@ -195,8 +194,6 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateTtscVocabularyGroupsRespons
 import com.huaweicloud.sdk.metastudio.v1.model.CreateUserQuotaInfo;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateUserQuotasRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateUserQuotasResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsResponse;
@@ -298,8 +295,6 @@ import com.huaweicloud.sdk.metastudio.v1.model.ExecuteSmartLiveCommandRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteSmartLiveCommandResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteTransferAssetActionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ExecuteTransferAssetActionResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.ExecuteVideoMotionCaptureCommandResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ExportKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ExportKnowledgeSkillResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ExportResourceRequest;
@@ -399,8 +394,6 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListTtscVocabularyGroupsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtscVocabularyGroupsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListUserQuotasRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListUserQuotasResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.ListVideoMotionCaptureJobsRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.ListVideoMotionCaptureJobsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoScriptsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoScriptsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVoiceTrainingJobRequest;
@@ -573,8 +566,6 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowUsageDataRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowUsageDataResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowUserReviewAttachmentUploadingAddressRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowUserReviewAttachmentUploadingAddressResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoScriptRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoScriptResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVocabularySwitchConfigsRequest;
@@ -605,8 +596,6 @@ import com.huaweicloud.sdk.metastudio.v1.model.StopSmartChatJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StopSmartChatJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StopSmartLiveRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StopSmartLiveResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.StopVideoMotionCaptureJobRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.StopVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.TransJobRejectBody;
 import com.huaweicloud.sdk.metastudio.v1.model.TransferAssetReq;
 import com.huaweicloud.sdk.metastudio.v1.model.TransferAssetRequest;
@@ -730,7 +719,6 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateWelcomeSpeechSwitchResponse
 import com.huaweicloud.sdk.metastudio.v1.model.ValidateRobotReq;
 import com.huaweicloud.sdk.metastudio.v1.model.ValidateRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ValidateRobotResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.VideoMotionCaptureJobReq;
 
 import java.util.List;
 
@@ -16501,309 +16489,6 @@ public class MetaStudioMeta {
 
         // response
 
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateVideoMotionCaptureJobRequest, CreateVideoMotionCaptureJobResponse> createVideoMotionCaptureJob =
-        genForCreateVideoMotionCaptureJob();
-
-    private static HttpRequestDef<CreateVideoMotionCaptureJobRequest, CreateVideoMotionCaptureJobResponse> genForCreateVideoMotionCaptureJob() {
-        // basic
-        HttpRequestDef.Builder<CreateVideoMotionCaptureJobRequest, CreateVideoMotionCaptureJobResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    CreateVideoMotionCaptureJobRequest.class,
-                    CreateVideoMotionCaptureJobResponse.class)
-                .withName("CreateVideoMotionCaptureJob")
-                .withUri("/v1/{project_id}/video-motion-capture-jobs")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateVideoMotionCaptureJobRequest::getAuthorization,
-                CreateVideoMotionCaptureJobRequest::setAuthorization));
-        builder.<String>withRequestField("X-Sdk-Date",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateVideoMotionCaptureJobRequest::getXSdkDate,
-                CreateVideoMotionCaptureJobRequest::setXSdkDate));
-        builder.<String>withRequestField("X-Project-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateVideoMotionCaptureJobRequest::getXProjectId,
-                CreateVideoMotionCaptureJobRequest::setXProjectId));
-        builder.<String>withRequestField("X-App-UserId",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateVideoMotionCaptureJobRequest::getXAppUserId,
-                CreateVideoMotionCaptureJobRequest::setXAppUserId));
-        builder.<String>withRequestField("X-User-Privilege",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateVideoMotionCaptureJobRequest::getXUserPrivilege,
-                CreateVideoMotionCaptureJobRequest::setXUserPrivilege));
-        builder.<VideoMotionCaptureJobReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(VideoMotionCaptureJobReq.class),
-            f -> f.withMarshaller(CreateVideoMotionCaptureJobRequest::getBody,
-                CreateVideoMotionCaptureJobRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-Request-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateVideoMotionCaptureJobResponse::getXRequestId,
-                CreateVideoMotionCaptureJobResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ExecuteVideoMotionCaptureCommandRequest, ExecuteVideoMotionCaptureCommandResponse> executeVideoMotionCaptureCommand =
-        genForExecuteVideoMotionCaptureCommand();
-
-    private static HttpRequestDef<ExecuteVideoMotionCaptureCommandRequest, ExecuteVideoMotionCaptureCommandResponse> genForExecuteVideoMotionCaptureCommand() {
-        // basic
-        HttpRequestDef.Builder<ExecuteVideoMotionCaptureCommandRequest, ExecuteVideoMotionCaptureCommandResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    ExecuteVideoMotionCaptureCommandRequest.class,
-                    ExecuteVideoMotionCaptureCommandResponse.class)
-                .withName("ExecuteVideoMotionCaptureCommand")
-                .withUri("/v1/{project_id}/video-motion-capture-jobs/{job_id}/command")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("job_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteVideoMotionCaptureCommandRequest::getJobId,
-                ExecuteVideoMotionCaptureCommandRequest::setJobId));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteVideoMotionCaptureCommandRequest::getAuthorization,
-                ExecuteVideoMotionCaptureCommandRequest::setAuthorization));
-        builder.<String>withRequestField("X-Sdk-Date",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteVideoMotionCaptureCommandRequest::getXSdkDate,
-                ExecuteVideoMotionCaptureCommandRequest::setXSdkDate));
-        builder.<String>withRequestField("X-Project-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteVideoMotionCaptureCommandRequest::getXProjectId,
-                ExecuteVideoMotionCaptureCommandRequest::setXProjectId));
-        builder.<String>withRequestField("X-App-UserId",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExecuteVideoMotionCaptureCommandRequest::getXAppUserId,
-                ExecuteVideoMotionCaptureCommandRequest::setXAppUserId));
-        builder.<ControlDigitalHumanLiveReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ControlDigitalHumanLiveReq.class),
-            f -> f.withMarshaller(ExecuteVideoMotionCaptureCommandRequest::getBody,
-                ExecuteVideoMotionCaptureCommandRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-Request-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ExecuteVideoMotionCaptureCommandResponse::getXRequestId,
-                ExecuteVideoMotionCaptureCommandResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListVideoMotionCaptureJobsRequest, ListVideoMotionCaptureJobsResponse> listVideoMotionCaptureJobs =
-        genForListVideoMotionCaptureJobs();
-
-    private static HttpRequestDef<ListVideoMotionCaptureJobsRequest, ListVideoMotionCaptureJobsResponse> genForListVideoMotionCaptureJobs() {
-        // basic
-        HttpRequestDef.Builder<ListVideoMotionCaptureJobsRequest, ListVideoMotionCaptureJobsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ListVideoMotionCaptureJobsRequest.class,
-                    ListVideoMotionCaptureJobsResponse.class)
-                .withName("ListVideoMotionCaptureJobs")
-                .withUri("/v1/{project_id}/video-motion-capture-jobs")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListVideoMotionCaptureJobsRequest::getOffset,
-                ListVideoMotionCaptureJobsRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListVideoMotionCaptureJobsRequest::getLimit,
-                ListVideoMotionCaptureJobsRequest::setLimit));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVideoMotionCaptureJobsRequest::getAuthorization,
-                ListVideoMotionCaptureJobsRequest::setAuthorization));
-        builder.<String>withRequestField("X-Sdk-Date",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVideoMotionCaptureJobsRequest::getXSdkDate,
-                ListVideoMotionCaptureJobsRequest::setXSdkDate));
-        builder.<String>withRequestField("X-Project-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVideoMotionCaptureJobsRequest::getXProjectId,
-                ListVideoMotionCaptureJobsRequest::setXProjectId));
-        builder.<String>withRequestField("X-App-UserId",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVideoMotionCaptureJobsRequest::getXAppUserId,
-                ListVideoMotionCaptureJobsRequest::setXAppUserId));
-
-        // response
-
-        builder.<String>withResponseField("X-Request-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListVideoMotionCaptureJobsResponse::getXRequestId,
-                ListVideoMotionCaptureJobsResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowVideoMotionCaptureJobRequest, ShowVideoMotionCaptureJobResponse> showVideoMotionCaptureJob =
-        genForShowVideoMotionCaptureJob();
-
-    private static HttpRequestDef<ShowVideoMotionCaptureJobRequest, ShowVideoMotionCaptureJobResponse> genForShowVideoMotionCaptureJob() {
-        // basic
-        HttpRequestDef.Builder<ShowVideoMotionCaptureJobRequest, ShowVideoMotionCaptureJobResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ShowVideoMotionCaptureJobRequest.class,
-                    ShowVideoMotionCaptureJobResponse.class)
-                .withName("ShowVideoMotionCaptureJob")
-                .withUri("/v1/{project_id}/video-motion-capture-jobs/{job_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("job_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVideoMotionCaptureJobRequest::getJobId,
-                ShowVideoMotionCaptureJobRequest::setJobId));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVideoMotionCaptureJobRequest::getAuthorization,
-                ShowVideoMotionCaptureJobRequest::setAuthorization));
-        builder.<String>withRequestField("X-Sdk-Date",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVideoMotionCaptureJobRequest::getXSdkDate,
-                ShowVideoMotionCaptureJobRequest::setXSdkDate));
-        builder.<String>withRequestField("X-Project-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVideoMotionCaptureJobRequest::getXProjectId,
-                ShowVideoMotionCaptureJobRequest::setXProjectId));
-        builder.<String>withRequestField("X-App-UserId",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowVideoMotionCaptureJobRequest::getXAppUserId,
-                ShowVideoMotionCaptureJobRequest::setXAppUserId));
-
-        // response
-
-        builder.<String>withResponseField("X-Request-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowVideoMotionCaptureJobResponse::getXRequestId,
-                ShowVideoMotionCaptureJobResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<StopVideoMotionCaptureJobRequest, StopVideoMotionCaptureJobResponse> stopVideoMotionCaptureJob =
-        genForStopVideoMotionCaptureJob();
-
-    private static HttpRequestDef<StopVideoMotionCaptureJobRequest, StopVideoMotionCaptureJobResponse> genForStopVideoMotionCaptureJob() {
-        // basic
-        HttpRequestDef.Builder<StopVideoMotionCaptureJobRequest, StopVideoMotionCaptureJobResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    StopVideoMotionCaptureJobRequest.class,
-                    StopVideoMotionCaptureJobResponse.class)
-                .withName("StopVideoMotionCaptureJob")
-                .withUri("/v1/{project_id}/video-motion-capture-jobs/{job_id}/finish")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("job_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopVideoMotionCaptureJobRequest::getJobId,
-                StopVideoMotionCaptureJobRequest::setJobId));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopVideoMotionCaptureJobRequest::getAuthorization,
-                StopVideoMotionCaptureJobRequest::setAuthorization));
-        builder.<String>withRequestField("X-Sdk-Date",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopVideoMotionCaptureJobRequest::getXSdkDate,
-                StopVideoMotionCaptureJobRequest::setXSdkDate));
-        builder.<String>withRequestField("X-Project-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopVideoMotionCaptureJobRequest::getXProjectId,
-                StopVideoMotionCaptureJobRequest::setXProjectId));
-        builder.<String>withRequestField("X-App-UserId",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopVideoMotionCaptureJobRequest::getXAppUserId,
-                StopVideoMotionCaptureJobRequest::setXAppUserId));
-
-        // response
-
-        builder.<String>withResponseField("X-Request-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(StopVideoMotionCaptureJobResponse::getXRequestId,
-                StopVideoMotionCaptureJobResponse::setXRequestId));
         return builder.build();
     }
 

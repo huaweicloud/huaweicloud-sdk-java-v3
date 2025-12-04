@@ -27,6 +27,8 @@ import com.huaweicloud.sdk.core.utils.JsonUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Objects;
+
 public class TestStrictCheck {
     public static class TestBean {
         @JsonProperty("value_boolean")
@@ -105,17 +107,17 @@ public class TestStrictCheck {
     @Test
     public void testBoolean() {
         String jsonNormal = "{\"value_boolean\":true}";
-        TestBean testBean = JsonUtils.toObject(jsonNormal, TestBean.class);
+        TestBean testBean = Objects.requireNonNull(JsonUtils.toObject(jsonNormal, TestBean.class));
         Assert.assertEquals(true, testBean.getValueBoolean());
         String jsonNormalFalse = "{\"value_boolean\":false}";
-        TestBean testBeanFalse = JsonUtils.toObject(jsonNormalFalse, TestBean.class);
+        TestBean testBeanFalse = Objects.requireNonNull(JsonUtils.toObject(jsonNormalFalse, TestBean.class));
         Assert.assertEquals(false, testBeanFalse.getValueBoolean());
         String jsonNormalNull = "{\"value_boolean\":null}";
-        TestBean testBeanNull = JsonUtils.toObject(jsonNormalNull, TestBean.class);
-        Assert.assertEquals(null, testBeanNull.getValueBoolean());
+        TestBean testBeanNull = Objects.requireNonNull(JsonUtils.toObject(jsonNormalNull, TestBean.class));
+        Assert.assertNull(testBeanNull.getValueBoolean());
         String jsonNormalNull2 = "{\"value_integer\":123}";
-        TestBean testBeanNull2 = JsonUtils.toObject(jsonNormalNull2, TestBean.class);
-        Assert.assertEquals(null, testBeanNull2.getValueBoolean());
+        TestBean testBeanNull2 = Objects.requireNonNull(JsonUtils.toObject(jsonNormalNull2, TestBean.class));
+        Assert.assertNull(testBeanNull2.getValueBoolean());
     }
 
     @Test(expected = SdkException.class)
@@ -127,11 +129,11 @@ public class TestStrictCheck {
     @Test
     public void testInteger() {
         String jsonNormal = "{\"value_integer\":123}";
-        TestBean testBean = JsonUtils.toObject(jsonNormal, TestBean.class);
+        TestBean testBean = Objects.requireNonNull(JsonUtils.toObject(jsonNormal, TestBean.class));
         Assert.assertEquals(Integer.valueOf(123), testBean.getValueInteger());
         String jsonNormalNull = "{\"value_integer\":null}";
-        TestBean testBeanNull = JsonUtils.toObject(jsonNormalNull, TestBean.class);
-        Assert.assertEquals(null, testBeanNull.getValueInteger());
+        TestBean testBeanNull = Objects.requireNonNull(JsonUtils.toObject(jsonNormalNull, TestBean.class));
+        Assert.assertNull(testBeanNull.getValueInteger());
     }
 
     @Test(expected = SdkException.class)
@@ -143,11 +145,11 @@ public class TestStrictCheck {
     @Test
     public void testLong() {
         String jsonNormal = "{\"value_long\":1234567890}";
-        TestBean testBean = JsonUtils.toObject(jsonNormal, TestBean.class);
+        TestBean testBean = Objects.requireNonNull(JsonUtils.toObject(jsonNormal, TestBean.class));
         Assert.assertEquals(Long.valueOf(1234567890), testBean.getValueLong());
         String jsonNormalNull = "{\"value_long\":null}";
-        TestBean testBeanNull = JsonUtils.toObject(jsonNormalNull, TestBean.class);
-        Assert.assertEquals(null, testBeanNull.getValueLong());
+        TestBean testBeanNull = Objects.requireNonNull(JsonUtils.toObject(jsonNormalNull, TestBean.class));
+        Assert.assertNull(testBeanNull.getValueLong());
     }
 
     @Test(expected = SdkException.class)
@@ -159,11 +161,11 @@ public class TestStrictCheck {
     @Test
     public void testDouble() {
         String jsonNormal = "{\"value_double\":12345.6789}";
-        TestBean testBean = JsonUtils.toObject(jsonNormal, TestBean.class);
+        TestBean testBean = Objects.requireNonNull(JsonUtils.toObject(jsonNormal, TestBean.class));
         Assert.assertEquals(Double.valueOf(12345.6789), testBean.getValueDouble());
         String jsonNormalNull = "{\"value_double\":null}";
-        TestBean testBeanNull = JsonUtils.toObject(jsonNormalNull, TestBean.class);
-        Assert.assertEquals(null, testBeanNull.getValueDouble());
+        TestBean testBeanNull = Objects.requireNonNull(JsonUtils.toObject(jsonNormalNull, TestBean.class));
+        Assert.assertNull(testBeanNull.getValueDouble());
     }
 
     @Test(expected = SdkException.class)
@@ -175,11 +177,11 @@ public class TestStrictCheck {
     @Test
     public void testFloat() {
         String jsonNormal = "{\"value_float\":12.67}";
-        TestBean testBean = JsonUtils.toObject(jsonNormal, TestBean.class);
+        TestBean testBean = Objects.requireNonNull(JsonUtils.toObject(jsonNormal, TestBean.class));
         Assert.assertEquals(Float.valueOf((float) 12.67), testBean.getValueFloat());
         String jsonNormalNull = "{\"value_float\":null}";
-        TestBean testBeanNull = JsonUtils.toObject(jsonNormalNull, TestBean.class);
-        Assert.assertEquals(null, testBeanNull.getValueFloat());
+        TestBean testBeanNull = Objects.requireNonNull(JsonUtils.toObject(jsonNormalNull, TestBean.class));
+        Assert.assertNull(testBeanNull.getValueFloat());
     }
 
     @Test(expected = SdkException.class)
@@ -191,13 +193,13 @@ public class TestStrictCheck {
     @Test
     public void testString() {
         String jsonNormal = "{\"value_string\":\"true\"}";
-        TestBean testBean = JsonUtils.toObject(jsonNormal, TestBean.class);
+        TestBean testBean = Objects.requireNonNull(JsonUtils.toObject(jsonNormal, TestBean.class));
         Assert.assertEquals("true", testBean.getValueString());
         String jsonNormalNull = "{\"value_string\":null}";
-        TestBean testBeanNull = JsonUtils.toObject(jsonNormalNull, TestBean.class);
-        Assert.assertEquals(null, testBeanNull.getValueString());
+        TestBean testBeanNull = Objects.requireNonNull(JsonUtils.toObject(jsonNormalNull, TestBean.class));
+        Assert.assertNull(testBeanNull.getValueString());
         String jsonNormalEmpty = "{\"value_string\":\"\"}";
-        TestBean testBeanEmpty = JsonUtils.toObject(jsonNormalEmpty, TestBean.class);
+        TestBean testBeanEmpty = Objects.requireNonNull(JsonUtils.toObject(jsonNormalEmpty, TestBean.class));
         Assert.assertEquals("", testBeanEmpty.getValueString());
     }
 

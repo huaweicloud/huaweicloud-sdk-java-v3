@@ -26,7 +26,7 @@ public class GroupCreateReq {
     }
 
     /**
-     * 消费组名称
+     * **参数解释**： 消费组名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及
      * @return groupName
      */
     public String getGroupName() {
@@ -43,7 +43,7 @@ public class GroupCreateReq {
     }
 
     /**
-     * 消费组描述
+     * **参数解释**： 消费组描述。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及
      * @return groupDesc
      */
     public String getGroupDesc() {

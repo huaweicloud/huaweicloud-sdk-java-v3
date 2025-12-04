@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class AnticrawlerCondition {
 
     /**
-     * 字段类型
+     * **参数解释：** 字段类型 **约束限制：** 不涉及 **取值范围：**  - url  - user-agent  **默认取值：** 不涉及
      */
     public static final class CategoryEnum {
 
@@ -114,7 +114,7 @@ public class AnticrawlerCondition {
     }
 
     /**
-     * 字段类型
+     * **参数解释：** 字段类型 **约束限制：** 不涉及 **取值范围：**  - url  - user-agent  **默认取值：** 不涉及
      * @return category
      */
     public CategoryEnum getCategory() {

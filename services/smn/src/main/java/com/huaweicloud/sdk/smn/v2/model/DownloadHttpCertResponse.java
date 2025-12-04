@@ -12,31 +12,9 @@ import java.util.Objects;
 public class DownloadHttpCertResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
-
-    private String body;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content-type")
 
     private String contentType;
-
-    public DownloadHttpCertResponse withBody(String body) {
-        this.body = body;
-        return this;
-    }
-
-    /**
-     * Get body
-     * @return body
-     */
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
-    }
 
     public DownloadHttpCertResponse withContentType(String contentType) {
         this.contentType = contentType;
@@ -64,19 +42,18 @@ public class DownloadHttpCertResponse extends SdkResponse {
             return false;
         }
         DownloadHttpCertResponse that = (DownloadHttpCertResponse) obj;
-        return Objects.equals(this.body, that.body) && Objects.equals(this.contentType, that.contentType);
+        return Objects.equals(this.contentType, that.contentType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body, contentType);
+        return Objects.hash(contentType);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DownloadHttpCertResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
         sb.append("}");
         return sb.toString();

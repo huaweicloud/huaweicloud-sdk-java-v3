@@ -356,7 +356,7 @@ public class SmartConnectTaskReqSourceConfig {
     }
 
     /**
-     * 复制消息所使用的压缩算法。（仅源端类型为Kafka时需要填写） - none - gzip - snappy - lz4 - zstd 
+     * **参数解释**： 压缩算法。（仅源端类型为Kafka时会显示） **约束限制**： 不涉及。 **取值范围**： - none - gzip - snappy - lz4 - zstd **默认取值**： 不涉及。
      * @return compressionType
      */
     public String getCompressionType() {

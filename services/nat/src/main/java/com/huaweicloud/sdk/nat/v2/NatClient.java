@@ -127,6 +127,8 @@ import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewayRequest;
 import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewayResponse;
 import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewaySnatRuleRequest;
 import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewaySnatRuleResponse;
+import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewayToPeriodRequest;
+import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewayToPeriodResponse;
 import com.huaweicloud.sdk.nat.v2.model.UpdatePrivateDnatRequest;
 import com.huaweicloud.sdk.nat.v2.model.UpdatePrivateDnatResponse;
 import com.huaweicloud.sdk.nat.v2.model.UpdatePrivateNatRequest;
@@ -1692,6 +1694,35 @@ public class NatClient {
     public SyncInvoker<UpdateNatGatewayRequest, UpdateNatGatewayResponse> updateNatGatewayInvoker(
         UpdateNatGatewayRequest request) {
         return new SyncInvoker<>(request, NatMeta.updateNatGateway, hcClient);
+    }
+
+    /**
+     * 公网NAT网关按需转包
+     *
+     * 公网NAT网关按需转包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateNatGatewayToPeriodRequest 请求对象
+     * @return UpdateNatGatewayToPeriodResponse
+     */
+    public UpdateNatGatewayToPeriodResponse updateNatGatewayToPeriod(UpdateNatGatewayToPeriodRequest request) {
+        return hcClient.syncInvokeHttp(request, NatMeta.updateNatGatewayToPeriod);
+    }
+
+    /**
+     * 公网NAT网关按需转包
+     *
+     * 公网NAT网关按需转包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateNatGatewayToPeriodRequest 请求对象
+     * @return SyncInvoker<UpdateNatGatewayToPeriodRequest, UpdateNatGatewayToPeriodResponse>
+     */
+    public SyncInvoker<UpdateNatGatewayToPeriodRequest, UpdateNatGatewayToPeriodResponse> updateNatGatewayToPeriodInvoker(
+        UpdateNatGatewayToPeriodRequest request) {
+        return new SyncInvoker<>(request, NatMeta.updateNatGatewayToPeriod, hcClient);
     }
 
     /**

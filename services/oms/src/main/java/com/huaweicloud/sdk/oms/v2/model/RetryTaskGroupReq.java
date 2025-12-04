@@ -158,7 +158,7 @@ public class RetryTaskGroupReq {
     }
 
     /**
-     * cdn鉴权秘钥
+     * cdn鉴权密钥
      * @return sourceCdnAuthenticationKey
      */
     public String getSourceCdnAuthenticationKey() {

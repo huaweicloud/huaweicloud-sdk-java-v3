@@ -31,7 +31,8 @@ public class DcosAsyncClient {
     }
 
     public static ClientBuilder<DcosAsyncClient> newBuilder() {
-        ClientBuilder<DcosAsyncClient> clientBuilder = new ClientBuilder<>(DcosAsyncClient::new);
+        ClientBuilder<DcosAsyncClient> clientBuilder =
+            new ClientBuilder<>(DcosAsyncClient::new, "GlobalCredentials,BasicCredentials");
         return clientBuilder;
     }
 

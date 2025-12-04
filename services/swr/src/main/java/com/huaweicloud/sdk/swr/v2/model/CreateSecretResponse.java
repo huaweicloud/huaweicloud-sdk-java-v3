@@ -24,6 +24,11 @@ public class CreateSecretResponse extends SdkResponse {
 
     private String xSwrDockerlogin;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Swr-Expireat")
+
+    private String xSwrExpireat;
+
     public CreateSecretResponse withAuths(Map<String, AuthInfo> auths) {
         this.auths = auths;
         return this;
@@ -76,6 +81,25 @@ public class CreateSecretResponse extends SdkResponse {
         this.xSwrDockerlogin = xSwrDockerlogin;
     }
 
+    public CreateSecretResponse withXSwrExpireat(String xSwrExpireat) {
+        this.xSwrExpireat = xSwrExpireat;
+        return this;
+    }
+
+    /**
+     * Get xSwrExpireat
+     * @return xSwrExpireat
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Swr-Expireat")
+    public String getXSwrExpireat() {
+        return xSwrExpireat;
+    }
+
+    public void setXSwrExpireat(String xSwrExpireat) {
+        this.xSwrExpireat = xSwrExpireat;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -85,12 +109,13 @@ public class CreateSecretResponse extends SdkResponse {
             return false;
         }
         CreateSecretResponse that = (CreateSecretResponse) obj;
-        return Objects.equals(this.auths, that.auths) && Objects.equals(this.xSwrDockerlogin, that.xSwrDockerlogin);
+        return Objects.equals(this.auths, that.auths) && Objects.equals(this.xSwrDockerlogin, that.xSwrDockerlogin)
+            && Objects.equals(this.xSwrExpireat, that.xSwrExpireat);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(auths, xSwrDockerlogin);
+        return Objects.hash(auths, xSwrDockerlogin, xSwrExpireat);
     }
 
     @Override
@@ -99,6 +124,7 @@ public class CreateSecretResponse extends SdkResponse {
         sb.append("class CreateSecretResponse {\n");
         sb.append("    auths: ").append(toIndentedString(auths)).append("\n");
         sb.append("    xSwrDockerlogin: ").append(toIndentedString(xSwrDockerlogin)).append("\n");
+        sb.append("    xSwrExpireat: ").append(toIndentedString(xSwrExpireat)).append("\n");
         sb.append("}");
         return sb.toString();
     }

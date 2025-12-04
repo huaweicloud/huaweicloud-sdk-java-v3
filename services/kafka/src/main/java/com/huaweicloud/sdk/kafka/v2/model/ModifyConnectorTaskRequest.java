@@ -32,7 +32,7 @@ public class ModifyConnectorTaskRequest {
     }
 
     /**
-     * **参数解释**： 实例ID。获取方法如下：登录Kafka控制台，在Kafka实例详情页面查找实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -49,7 +49,7 @@ public class ModifyConnectorTaskRequest {
     }
 
     /**
-     * **参数解释**： 任务ID。获取方法如下：登录Kafka控制台，在Smart Connect页面查找任务ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 任务ID。获取方法如下：调用“查询Smart Connect任务列表”接口，从响应体中获取Smart Connect任务ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return taskId
      */
     public String getTaskId() {

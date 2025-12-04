@@ -201,6 +201,16 @@ public class ScriptInfo {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "owner")
+
+    private String owner;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private Integer version;
+
     public ScriptInfo withName(String name) {
         this.name = name;
         return this;
@@ -371,6 +381,40 @@ public class ScriptInfo {
         this.description = description;
     }
 
+    public ScriptInfo withOwner(String owner) {
+        this.owner = owner;
+        return this;
+    }
+
+    /**
+     * 责任人名称。
+     * @return owner
+     */
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public ScriptInfo withVersion(Integer version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * 脚本最新提交版本。
+     * @return version
+     */
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -386,7 +430,8 @@ public class ScriptInfo {
             && Objects.equals(this.connectionName, that.connectionName) && Objects.equals(this.database, that.database)
             && Objects.equals(this.queueName, that.queueName)
             && Objects.equals(this._configuration, that._configuration)
-            && Objects.equals(this.description, that.description);
+            && Objects.equals(this.description, that.description) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override
@@ -400,7 +445,9 @@ public class ScriptInfo {
             database,
             queueName,
             _configuration,
-            description);
+            description,
+            owner,
+            version);
     }
 
     @Override
@@ -417,6 +464,8 @@ public class ScriptInfo {
         sb.append("    queueName: ").append(toIndentedString(queueName)).append("\n");
         sb.append("    _configuration: ").append(toIndentedString(_configuration)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -40,6 +40,16 @@ public class ListTopicsItem {
 
     private String topicId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private String createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time")
+
+    private String updateTime;
+
     public ListTopicsItem withTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
         return this;
@@ -142,6 +152,40 @@ public class ListTopicsItem {
         this.topicId = topicId;
     }
 
+    public ListTopicsItem withCreateTime(String createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    /**
+     * 创建时间。时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
+     * @return createTime
+     */
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public ListTopicsItem withUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    /**
+     * 更新时间。时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
+     * @return updateTime
+     */
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -154,12 +198,14 @@ public class ListTopicsItem {
         return Objects.equals(this.topicUrn, that.topicUrn) && Objects.equals(this.name, that.name)
             && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.pushPolicy, that.pushPolicy)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.topicId, that.topicId);
+            && Objects.equals(this.topicId, that.topicId) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(topicUrn, name, displayName, pushPolicy, enterpriseProjectId, topicId);
+        return Objects
+            .hash(topicUrn, name, displayName, pushPolicy, enterpriseProjectId, topicId, createTime, updateTime);
     }
 
     @Override
@@ -172,6 +218,8 @@ public class ListTopicsItem {
         sb.append("    pushPolicy: ").append(toIndentedString(pushPolicy)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    topicId: ").append(toIndentedString(topicId)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

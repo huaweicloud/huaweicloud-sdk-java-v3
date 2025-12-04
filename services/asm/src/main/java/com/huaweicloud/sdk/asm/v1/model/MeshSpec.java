@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class MeshSpec {
 
     /**
-     * 网格类型： InCluster: 集群内控制平面形态，基础版网格取值为InCluster
+     * 网格类型。 取值范围： - InCluster: 集群内控制平面形态，基础版网格取值为InCluster。目前仅支持该类型。
      */
     public static final class TypeEnum {
 
@@ -98,9 +98,19 @@ public class MeshSpec {
     private MeshExtendParams extendParams;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6Enable")
+
+    private Boolean ipv6Enable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<MeshTags> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "config")
+
+    private MeshConfig config;
 
     public MeshSpec withType(TypeEnum type) {
         this.type = type;
@@ -108,7 +118,7 @@ public class MeshSpec {
     }
 
     /**
-     * 网格类型： InCluster: 集群内控制平面形态，基础版网格取值为InCluster
+     * 网格类型。 取值范围： - InCluster: 集群内控制平面形态，基础版网格取值为InCluster。目前仅支持该类型。
      * @return type
      */
     public TypeEnum getType() {
@@ -125,7 +135,7 @@ public class MeshSpec {
     }
 
     /**
-     * 网格版本
+     * 网格版本。
      * @return version
      */
     public String getVersion() {
@@ -162,6 +172,23 @@ public class MeshSpec {
         this.extendParams = extendParams;
     }
 
+    public MeshSpec withIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+        return this;
+    }
+
+    /**
+     * 网格是否支持IPV6
+     * @return ipv6Enable
+     */
+    public Boolean getIpv6Enable() {
+        return ipv6Enable;
+    }
+
+    public void setIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+    }
+
     public MeshSpec withTags(List<MeshTags> tags) {
         this.tags = tags;
         return this;
@@ -184,7 +211,7 @@ public class MeshSpec {
     }
 
     /**
-     * 网格资源标签
+     * 网格资源标签。如果需要配置资源标签，请确认当前region的TMS服务已上线。
      * @return tags
      */
     public List<MeshTags> getTags() {
@@ -193,6 +220,32 @@ public class MeshSpec {
 
     public void setTags(List<MeshTags> tags) {
         this.tags = tags;
+    }
+
+    public MeshSpec withConfig(MeshConfig config) {
+        this.config = config;
+        return this;
+    }
+
+    public MeshSpec withConfig(Consumer<MeshConfig> configSetter) {
+        if (this.config == null) {
+            this.config = new MeshConfig();
+            configSetter.accept(this.config);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get config
+     * @return config
+     */
+    public MeshConfig getConfig() {
+        return config;
+    }
+
+    public void setConfig(MeshConfig config) {
+        this.config = config;
     }
 
     @Override
@@ -205,12 +258,13 @@ public class MeshSpec {
         }
         MeshSpec that = (MeshSpec) obj;
         return Objects.equals(this.type, that.type) && Objects.equals(this.version, that.version)
-            && Objects.equals(this.extendParams, that.extendParams) && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.extendParams, that.extendParams) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.config, that.config);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, version, extendParams, tags);
+        return Objects.hash(type, version, extendParams, ipv6Enable, tags, config);
     }
 
     @Override
@@ -220,7 +274,9 @@ public class MeshSpec {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    extendParams: ").append(toIndentedString(extendParams)).append("\n");
+        sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    config: ").append(toIndentedString(config)).append("\n");
         sb.append("}");
         return sb.toString();
     }

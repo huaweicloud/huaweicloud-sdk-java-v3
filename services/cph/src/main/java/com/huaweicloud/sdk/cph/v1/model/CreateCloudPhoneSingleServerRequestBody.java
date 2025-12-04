@@ -216,7 +216,7 @@ public class CreateCloudPhoneSingleServerRequestBody {
     }
 
     /**
-     * 待创建云手机裸服务器所在的可用区（AZ）的名称。如上海一可用区1为cn-east-3a。
+     * 待创建云手机裸服务器所在的可用区（AZ）的名称。[如上海一可用区1为cn-east-3a。](tag:hws,hws_hk,cmcc,ctc)
      * @return availabilityZone
      */
     public String getAvailabilityZone() {

@@ -176,7 +176,7 @@ public class TestRegionWithoutId {
             String errMessage =
                     "Failed to get project id, Incorrect IAM authentication information: "
                             + "verify aksk signature fail";
-            Assert.assertEquals(e.getMessage(), errMessage);
+            Assert.assertEquals(errMessage, e.getMessage());
         }
     }
 }

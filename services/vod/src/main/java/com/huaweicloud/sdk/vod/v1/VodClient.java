@@ -69,6 +69,8 @@ import com.huaweicloud.sdk.vod.v1.model.ListAssetDailySummaryLogRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetDailySummaryLogResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetListRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetListResponse;
+import com.huaweicloud.sdk.vod.v1.model.ListCdnStatisticsRequest;
+import com.huaweicloud.sdk.vod.v1.model.ListCdnStatisticsResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListDomainLogsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListDomainLogsResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListTakeOverTaskRequest;
@@ -1155,6 +1157,35 @@ public class VodClient {
      */
     public SyncInvoker<ListAssetListRequest, ListAssetListResponse> listAssetListInvoker(ListAssetListRequest request) {
         return new SyncInvoker<>(request, VodMeta.listAssetList, hcClient);
+    }
+
+    /**
+     * 查询CDN统计信息
+     *
+     * 查询CDN的统计数据，包括流量、峰值带宽、请求总数、请求命中率、流量命中率。查询存在1小时误差。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCdnStatisticsRequest 请求对象
+     * @return ListCdnStatisticsResponse
+     */
+    public ListCdnStatisticsResponse listCdnStatistics(ListCdnStatisticsRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.listCdnStatistics);
+    }
+
+    /**
+     * 查询CDN统计信息
+     *
+     * 查询CDN的统计数据，包括流量、峰值带宽、请求总数、请求命中率、流量命中率。查询存在1小时误差。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCdnStatisticsRequest 请求对象
+     * @return SyncInvoker<ListCdnStatisticsRequest, ListCdnStatisticsResponse>
+     */
+    public SyncInvoker<ListCdnStatisticsRequest, ListCdnStatisticsResponse> listCdnStatisticsInvoker(
+        ListCdnStatisticsRequest request) {
+        return new SyncInvoker<>(request, VodMeta.listCdnStatistics, hcClient);
     }
 
     /**

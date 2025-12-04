@@ -315,7 +315,7 @@ public class UpdatePolicyRequestBody {
     }
 
     /**
-     * 扩展字段，用于存放Web基础防护中一些开关配置等信息
+     * 扩展字段，用于存放Web基础防护中一些开关配置等信息，当修改字段为 shiro_rememberMe_enable,deep_decode,check_all_headers 时，需要额外增加一层extend字段嵌套.示例 key为 extend，value为 {\"shiro_rememberMe_enable\":true}
      * @return extend
      */
     public Map<String, String> getExtend() {

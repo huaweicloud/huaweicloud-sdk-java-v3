@@ -69,7 +69,7 @@ public class ExtendProductInfoEntity {
     }
 
     /**
-     * 实例类型。
+     * **参数解释**： 实例类型。 **取值范围**： - single：单机。 - cluster：集群。
      * @return type
      */
     public String getType() {

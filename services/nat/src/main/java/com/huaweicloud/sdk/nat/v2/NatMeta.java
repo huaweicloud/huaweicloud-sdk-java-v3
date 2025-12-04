@@ -147,6 +147,9 @@ import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewayResponse;
 import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewaySnatRuleRequest;
 import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewaySnatRuleRequestOption;
 import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewaySnatRuleResponse;
+import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewayToPeriodRequest;
+import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewayToPeriodRequestBody;
+import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewayToPeriodResponse;
 import com.huaweicloud.sdk.nat.v2.model.UpdatePrivateDnatRequest;
 import com.huaweicloud.sdk.nat.v2.model.UpdatePrivateDnatRequestBody;
 import com.huaweicloud.sdk.nat.v2.model.UpdatePrivateDnatResponse;
@@ -1787,6 +1790,36 @@ public class NatMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateNatGatewayRequestBody.class),
             f -> f.withMarshaller(UpdateNatGatewayRequest::getBody, UpdateNatGatewayRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateNatGatewayToPeriodRequest, UpdateNatGatewayToPeriodResponse> updateNatGatewayToPeriod =
+        genForUpdateNatGatewayToPeriod();
+
+    private static HttpRequestDef<UpdateNatGatewayToPeriodRequest, UpdateNatGatewayToPeriodResponse> genForUpdateNatGatewayToPeriod() {
+        // basic
+        HttpRequestDef.Builder<UpdateNatGatewayToPeriodRequest, UpdateNatGatewayToPeriodResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, UpdateNatGatewayToPeriodRequest.class, UpdateNatGatewayToPeriodResponse.class)
+                .withName("UpdateNatGatewayToPeriod")
+                .withUri("/v2/{project_id}/nat_gateways/{nat_gateway_id}/change_to_period")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("nat_gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateNatGatewayToPeriodRequest::getNatGatewayId,
+                UpdateNatGatewayToPeriodRequest::setNatGatewayId));
+        builder.<UpdateNatGatewayToPeriodRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateNatGatewayToPeriodRequestBody.class),
+            f -> f.withMarshaller(UpdateNatGatewayToPeriodRequest::getBody, UpdateNatGatewayToPeriodRequest::setBody));
 
         // response
 

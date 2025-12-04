@@ -46,7 +46,7 @@ public class ListInstanceConsumerGroupsResponse extends SdkResponse {
     }
 
     /**
-     * 所有的消费组。
+     * **参数解释**： 所有消费组的信息。
      * @return groups
      */
     public List<GroupInfoSimple> getGroups() {
@@ -63,7 +63,7 @@ public class ListInstanceConsumerGroupsResponse extends SdkResponse {
     }
 
     /**
-     * 所有的消费组总数。
+     * **参数解释**： 消费组总数。 **取值范围**： 不涉及。
      * @return total
      */
     public Integer getTotal() {

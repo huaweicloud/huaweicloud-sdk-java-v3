@@ -16,7 +16,7 @@ import java.util.Objects;
 public class WafServer {
 
     /**
-     * 客户端请求访问防护域名源站服务器的协议
+     * **参数解释：** 客户端请求访问防护域名源站服务器的协议 **约束限制：** 不涉及 **取值范围：**  - HTTP: HTTP协议  - HTTPS: HTTPS协议  **默认取值：** 不涉及
      */
     public static final class FrontProtocolEnum {
 
@@ -91,7 +91,7 @@ public class WafServer {
     private FrontProtocolEnum frontProtocol;
 
     /**
-     * WAF转发客户端请求到防护域名源站服务器的协议
+     * **参数解释：** WAF转发客户端请求到防护域名源站服务器的协议 **约束限制：** 不涉及 **取值范围：**  - HTTP: HTTP协议  - HTTPS: HTTPS协议  **默认取值：** 不涉及
      */
     public static final class BackProtocolEnum {
 
@@ -181,7 +181,7 @@ public class WafServer {
     private Integer port;
 
     /**
-     * 源站地址为ipv4或ipv6
+     * **参数解释：** 源站地址类型，为ipv4或ipv6 **约束限制：** 不涉及 **取值范围：** - ipv4  - ipv6  **默认取值：** 不涉及
      */
     public static final class TypeEnum {
 
@@ -266,7 +266,7 @@ public class WafServer {
     }
 
     /**
-     * 客户端请求访问防护域名源站服务器的协议
+     * **参数解释：** 客户端请求访问防护域名源站服务器的协议 **约束限制：** 不涉及 **取值范围：**  - HTTP: HTTP协议  - HTTPS: HTTPS协议  **默认取值：** 不涉及
      * @return frontProtocol
      */
     public FrontProtocolEnum getFrontProtocol() {
@@ -283,7 +283,7 @@ public class WafServer {
     }
 
     /**
-     * WAF转发客户端请求到防护域名源站服务器的协议
+     * **参数解释：** WAF转发客户端请求到防护域名源站服务器的协议 **约束限制：** 不涉及 **取值范围：**  - HTTP: HTTP协议  - HTTPS: HTTPS协议  **默认取值：** 不涉及
      * @return backProtocol
      */
     public BackProtocolEnum getBackProtocol() {
@@ -351,7 +351,7 @@ public class WafServer {
     }
 
     /**
-     * 源站地址为ipv4或ipv6
+     * **参数解释：** 源站地址类型，为ipv4或ipv6 **约束限制：** 不涉及 **取值范围：** - ipv4  - ipv6  **默认取值：** 不涉及
      * @return type
      */
     public TypeEnum getType() {

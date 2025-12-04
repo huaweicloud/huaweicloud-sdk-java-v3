@@ -26,7 +26,7 @@ public class Server {
     }
 
     /**
-     * Get type
+     * 类型
      * @return type
      */
     public String getType() {
@@ -43,7 +43,7 @@ public class Server {
     }
 
     /**
-     * Get address
+     * 地址
      * @return address
      */
     public String getAddress() {

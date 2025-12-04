@@ -37,7 +37,7 @@ public class CreateSmartConnectTaskReq {
     private String topicsRegex;
 
     /**
-     * SmartConnect任务的源端类型。
+     * **参数解释**： SmartConnect任务的源端类型。 **约束限制**： 不涉及。 **取值范围**： - KAFKA_REPLICATOR_SOURCE：Kafka数据复制。 - NONE：不配置。 **默认取值**： 不涉及。
      */
     public static final class SourceTypeEnum {
 
@@ -117,7 +117,7 @@ public class CreateSmartConnectTaskReq {
     private SmartConnectTaskReqSourceConfig sourceTask;
 
     /**
-     * SmartConnect任务的目标端类型。
+     * **参数解释**： SmartConnect任务的目标端类型。 **约束限制**： 不涉及。 **取值范围**： - OBS_SINK：转储。 - NONE：不配置。 **默认取值**： 不涉及。
      */
     public static final class SinkTypeEnum {
 
@@ -270,7 +270,7 @@ public class CreateSmartConnectTaskReq {
     }
 
     /**
-     * SmartConnect任务的源端类型。
+     * **参数解释**： SmartConnect任务的源端类型。 **约束限制**： 不涉及。 **取值范围**： - KAFKA_REPLICATOR_SOURCE：Kafka数据复制。 - NONE：不配置。 **默认取值**： 不涉及。
      * @return sourceType
      */
     public SourceTypeEnum getSourceType() {
@@ -313,7 +313,7 @@ public class CreateSmartConnectTaskReq {
     }
 
     /**
-     * SmartConnect任务的目标端类型。
+     * **参数解释**： SmartConnect任务的目标端类型。 **约束限制**： 不涉及。 **取值范围**： - OBS_SINK：转储。 - NONE：不配置。 **默认取值**： 不涉及。
      * @return sinkType
      */
     public SinkTypeEnum getSinkType() {

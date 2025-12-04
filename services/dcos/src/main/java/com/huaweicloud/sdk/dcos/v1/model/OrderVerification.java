@@ -29,11 +29,6 @@ public class OrderVerification {
     private List<UploadFileInfo> attachments = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "meet_expectation")
-
-    private Boolean meetExpectation;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "comments")
 
     private String comments;
@@ -114,23 +109,6 @@ public class OrderVerification {
         this.attachments = attachments;
     }
 
-    public OrderVerification withMeetExpectation(Boolean meetExpectation) {
-        this.meetExpectation = meetExpectation;
-        return this;
-    }
-
-    /**
-     * 是否符合预期
-     * @return meetExpectation
-     */
-    public Boolean getMeetExpectation() {
-        return meetExpectation;
-    }
-
-    public void setMeetExpectation(Boolean meetExpectation) {
-        this.meetExpectation = meetExpectation;
-    }
-
     public OrderVerification withComments(String comments) {
         this.comments = comments;
         return this;
@@ -158,14 +136,12 @@ public class OrderVerification {
         }
         OrderVerification that = (OrderVerification) obj;
         return Objects.equals(this.result, that.result) && Objects.equals(this.details, that.details)
-            && Objects.equals(this.attachments, that.attachments)
-            && Objects.equals(this.meetExpectation, that.meetExpectation)
-            && Objects.equals(this.comments, that.comments);
+            && Objects.equals(this.attachments, that.attachments) && Objects.equals(this.comments, that.comments);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(result, details, attachments, meetExpectation, comments);
+        return Objects.hash(result, details, attachments, comments);
     }
 
     @Override
@@ -175,7 +151,6 @@ public class OrderVerification {
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("    details: ").append(toIndentedString(details)).append("\n");
         sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
-        sb.append("    meetExpectation: ").append(toIndentedString(meetExpectation)).append("\n");
         sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
         sb.append("}");
         return sb.toString();

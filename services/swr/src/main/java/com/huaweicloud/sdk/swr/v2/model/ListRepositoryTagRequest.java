@@ -36,6 +36,16 @@ public class ListRepositoryTagRequest {
     private String tag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_column")
+
+    private String orderColumn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_type")
+
+    private String orderType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "with_manifest")
 
     private Boolean withManifest;
@@ -127,6 +137,40 @@ public class ListRepositoryTagRequest {
         this.tag = tag;
     }
 
+    public ListRepositoryTagRequest withOrderColumn(String orderColumn) {
+        this.orderColumn = orderColumn;
+        return this;
+    }
+
+    /**
+     * 按列排序，可设置为updated_at（按更新时间排序）或者tag（按照镜像版本排序）。注意：order_column和order_type参数需要配套使用。
+     * @return orderColumn
+     */
+    public String getOrderColumn() {
+        return orderColumn;
+    }
+
+    public void setOrderColumn(String orderColumn) {
+        this.orderColumn = orderColumn;
+    }
+
+    public ListRepositoryTagRequest withOrderType(String orderType) {
+        this.orderType = orderType;
+        return this;
+    }
+
+    /**
+     * 排序类型，可设置为desc（降序）、asc（升序）。注意：order_column和order_type参数需要配套使用。
+     * @return orderType
+     */
+    public String getOrderType() {
+        return orderType;
+    }
+
+    public void setOrderType(String orderType) {
+        this.orderType = orderType;
+    }
+
     public ListRepositoryTagRequest withWithManifest(Boolean withManifest) {
         this.withManifest = withManifest;
         return this;
@@ -155,12 +199,13 @@ public class ListRepositoryTagRequest {
         ListRepositoryTagRequest that = (ListRepositoryTagRequest) obj;
         return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
-            && Objects.equals(this.tag, that.tag) && Objects.equals(this.withManifest, that.withManifest);
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.orderColumn, that.orderColumn)
+            && Objects.equals(this.orderType, that.orderType) && Objects.equals(this.withManifest, that.withManifest);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(namespace, repository, limit, marker, tag, withManifest);
+        return Objects.hash(namespace, repository, limit, marker, tag, orderColumn, orderType, withManifest);
     }
 
     @Override
@@ -172,6 +217,8 @@ public class ListRepositoryTagRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    orderColumn: ").append(toIndentedString(orderColumn)).append("\n");
+        sb.append("    orderType: ").append(toIndentedString(orderType)).append("\n");
         sb.append("    withManifest: ").append(toIndentedString(withManifest)).append("\n");
         sb.append("}");
         return sb.toString();

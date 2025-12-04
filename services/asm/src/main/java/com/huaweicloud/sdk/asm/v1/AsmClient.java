@@ -28,7 +28,7 @@ public class AsmClient {
     /**
      * 创建网格
      *
-     * 该API用于创建一个网格
+     * 该API用于创建一个网格。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -42,7 +42,7 @@ public class AsmClient {
     /**
      * 创建网格
      *
-     * 该API用于创建一个网格
+     * 该API用于创建一个网格。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

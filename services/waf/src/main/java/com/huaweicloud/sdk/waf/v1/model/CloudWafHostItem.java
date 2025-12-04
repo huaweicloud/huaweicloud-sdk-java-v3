@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -83,10 +88,80 @@ public class CloudWafHostItem {
 
     private Boolean exclusiveIp;
 
+    /**
+     * **参数解释：** 套餐付费模式标识，用于指定套餐的计费方式 **约束限制：** 不涉及 **取值范围：**  - prePaid:包周期模式  - postPaid:按需模式  **默认取值：** prePaid
+     */
+    public static final class PaidTypeEnum {
+
+        /**
+         * Enum PREPAID for value: "prePaid"
+         */
+        public static final PaidTypeEnum PREPAID = new PaidTypeEnum("prePaid");
+
+        /**
+         * Enum POSTPAID for value: "postPaid"
+         */
+        public static final PaidTypeEnum POSTPAID = new PaidTypeEnum("postPaid");
+
+        private static final Map<String, PaidTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PaidTypeEnum> createStaticFields() {
+            Map<String, PaidTypeEnum> map = new HashMap<>();
+            map.put("prePaid", PREPAID);
+            map.put("postPaid", POSTPAID);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        PaidTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PaidTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PaidTypeEnum(value));
+        }
+
+        public static PaidTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PaidTypeEnum) {
+                return this.value.equals(((PaidTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "paid_type")
 
-    private String paidType;
+    private PaidTypeEnum paidType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "web_tag")
@@ -312,7 +387,7 @@ public class CloudWafHostItem {
     }
 
     /**
-     * 域名防护状态：  - -1：bypass，该域名的请求直接到达其后端服务器，不再经过WAF  - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测  - 1：开启防护，WAF根据您配置的策略进行攻击检测
+     * **参数解释：** 域名防护状态标识，用于指定域名在WAF中的防护运行状态 **约束限制：** 不涉及 **取值范围：**  - -1：bypass，该域名的请求直接到达其后端服务器，不再经过WAF  - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测  - 1：开启防护，WAF根据您配置的策略进行攻击检测  **默认取值：** 不涉及
      * @return protectStatus
      */
     public Integer getProtectStatus() {
@@ -329,7 +404,7 @@ public class CloudWafHostItem {
     }
 
     /**
-     * 域名接入状态，0表示未接入，1表示已接入
+     * **参数解释：** 域名接入状态 **约束限制：** 不涉及 **取值范围：**  - 0: 未接入  - 1: 已接入  **默认取值：** 不涉及
      * @return accessStatus
      */
     public Integer getAccessStatus() {
@@ -357,20 +432,20 @@ public class CloudWafHostItem {
         this.exclusiveIp = exclusiveIp;
     }
 
-    public CloudWafHostItem withPaidType(String paidType) {
+    public CloudWafHostItem withPaidType(PaidTypeEnum paidType) {
         this.paidType = paidType;
         return this;
     }
 
     /**
-     * 套餐付费模式，默认值为prePaid。prePaid：包周期模式；postPaid：按需模式。
+     * **参数解释：** 套餐付费模式标识，用于指定套餐的计费方式 **约束限制：** 不涉及 **取值范围：**  - prePaid:包周期模式  - postPaid:按需模式  **默认取值：** prePaid
      * @return paidType
      */
-    public String getPaidType() {
+    public PaidTypeEnum getPaidType() {
         return paidType;
     }
 
-    public void setPaidType(String paidType) {
+    public void setPaidType(PaidTypeEnum paidType) {
         this.paidType = paidType;
     }
 

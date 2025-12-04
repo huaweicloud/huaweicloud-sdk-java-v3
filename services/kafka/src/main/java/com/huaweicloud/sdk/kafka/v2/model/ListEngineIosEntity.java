@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 支持的磁盘IO类型信息。
+ * **参数解释**： 支持的磁盘IO类型信息。 **取值范围**： 不涉及。
  */
 public class ListEngineIosEntity {
 
@@ -39,7 +39,7 @@ public class ListEngineIosEntity {
     }
 
     /**
-     * 磁盘IO编码。
+     * **参数解释**： 磁盘IO编码。 **取值范围**： 不涉及。
      * @return ioSpec
      */
     public String getIoSpec() {
@@ -56,7 +56,7 @@ public class ListEngineIosEntity {
     }
 
     /**
-     * 磁盘类型。
+     * **参数解释**： 磁盘类型。 **取值范围**： 不涉及。
      * @return type
      */
     public String getType() {
@@ -89,7 +89,7 @@ public class ListEngineIosEntity {
     }
 
     /**
-     * 可用区。
+     * **参数解释**： 可用区。
      * @return availableZones
      */
     public List<String> getAvailableZones() {
@@ -122,7 +122,7 @@ public class ListEngineIosEntity {
     }
 
     /**
-     * 不可用区。
+     * **参数解释**： 不可用区。
      * @return unavailableZones
      */
     public List<String> getUnavailableZones() {

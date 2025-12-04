@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 共享存储磁盘结构体，2.0规格可选。
+ * 共享存储磁盘结构体，2.0规格可选。注：rx7服务器+AOSP11镜像当前不支持共享应用。
  */
 public class ChangeCloudPhoneServerRequestBodyServerShareDataVolume {
 

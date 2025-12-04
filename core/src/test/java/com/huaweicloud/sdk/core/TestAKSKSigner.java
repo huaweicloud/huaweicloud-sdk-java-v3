@@ -83,7 +83,7 @@ public class TestAKSKSigner {
                         + "SignedHeaders=host;x-sdk-date, "
                         + "Signature=fd95e7da6f695cfb4cabbb9d6b0968aec155bc576b064835282473539ae9ea1d",
                 header.get("Authorization"));
-        Assert.assertEquals(header.get("Host"), "service.region.example.com");
+        Assert.assertEquals("service.region.example.com", header.get("Host"));
     }
 
     @Test
@@ -109,7 +109,7 @@ public class TestAKSKSigner {
                         + "SignedHeaders=host;x-sdk-date, "
                         + "Signature=b5649aa774f6cac7437631662f08815fc65c70e40e486df6db2436ce68902771",
                 header.get("Authorization"));
-        Assert.assertEquals(header.get("Host"), "service.region.example.com");
+        Assert.assertEquals("service.region.example.com", header.get("Host"));
     }
 
     @Test
@@ -133,7 +133,7 @@ public class TestAKSKSigner {
                         + "SignedHeaders=host;x-sdk-date, "
                         + "Signature=919ad8b75d4ad49da0d377e63ee21c4a7a54b752f6bf2878b4adbe9c19927da6",
                 header.get("Authorization"));
-        Assert.assertEquals(header.get("Host"), "example.com");
+        Assert.assertEquals("example.com", header.get("Host"));
     }
 
     @Test
@@ -328,7 +328,7 @@ public class TestAKSKSigner {
 
         Map<String, String> header = P256SHA256Signer.getInstance().sign(httpRequest, credentials);
         Assert.assertTrue(header.get("Authorization").startsWith("SDK-ECDSA-P256-SHA256"));
-        Assert.assertEquals(header.get("Host"), "service.region.example.com");
+        Assert.assertEquals("service.region.example.com", header.get("Host"));
     }
 
     @Test
@@ -350,7 +350,7 @@ public class TestAKSKSigner {
 
         Map<String, String> header = P256SHA256Signer.getInstance().sign(httpRequest, credentials);
         Assert.assertTrue(header.get("Authorization").startsWith("SDK-ECDSA-P256-SHA256"));
-        Assert.assertEquals(header.get("Host"), "service.region.example.com");
+        Assert.assertEquals("service.region.example.com", header.get("Host"));
     }
 
     @Test
@@ -382,7 +382,7 @@ public class TestAKSKSigner {
 
         Map<String, String> header = SM2SM3Signer.getInstance().sign(httpRequest, credentials);
         Assert.assertTrue(header.get("Authorization").startsWith("SDK-SM2-SM3"));
-        Assert.assertEquals(header.get("Host"), "service.region.example.com");
+        Assert.assertEquals("service.region.example.com", header.get("Host"));
     }
 
     @Test
@@ -404,7 +404,7 @@ public class TestAKSKSigner {
 
         Map<String, String> header = SM2SM3Signer.getInstance().sign(httpRequest, credentials);
         Assert.assertTrue(header.get("Authorization").startsWith("SDK-SM2-SM3"));
-        Assert.assertEquals(header.get("Host"), "service.region.example.com");
+        Assert.assertEquals("service.region.example.com", header.get("Host"));
     }
 
     private static <T extends AbstractCredentials<T>> Map<String, String>

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 租户自定义的弹性公网IP结构体。  配置云服务器的弹性IP信息的方式，  自动分配，需要指定新创建弹性IP的信息； 使用已有，需要指定已经[创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc)的EIP ID。
+ * 租户自定义的弹性公网IP结构体。  配置云服务器的弹性IP信息的方式，  自动分配，需要指定新创建弹性IP的信息； 使用已有，需要指定已经[创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc,ctc)的EIP ID。
  */
 public class CreateNet2CloudPhoneServerRequestBodyPublicIp {
 

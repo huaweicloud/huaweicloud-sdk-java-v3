@@ -56,6 +56,11 @@ public class QueryLtsLogParams {
 
     private Boolean isDesc;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scroll_id")
+
+    private String scrollId;
+
     /**
      * 首次查询为 “init”, 分页查询时为 “forwards”或者“backwards”, 默认为首次查询“init”, 与 is_desc 参数配合进行分页查询。
      */
@@ -310,6 +315,23 @@ public class QueryLtsLogParams {
         this.isDesc = isDesc;
     }
 
+    public QueryLtsLogParams withScrollId(String scrollId) {
+        this.scrollId = scrollId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 分页查询时，若上次查询的返回结果中包含该字段，需要增加该字段参与分页查询。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @return scrollId
+     */
+    public String getScrollId() {
+        return scrollId;
+    }
+
+    public void setScrollId(String scrollId) {
+        this.scrollId = scrollId;
+    }
+
     public QueryLtsLogParams withSearchType(SearchTypeEnum searchType) {
         this.searchType = searchType;
         return this;
@@ -427,9 +449,10 @@ public class QueryLtsLogParams {
             && Objects.equals(this.labels, that.labels) && Objects.equals(this.isCount, that.isCount)
             && Objects.equals(this.keywords, that.keywords) && Objects.equals(this.lineNum, that.lineNum)
             && Objects.equals(this.time, that.time) && Objects.equals(this.isDesc, that.isDesc)
-            && Objects.equals(this.searchType, that.searchType) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.highlight, that.highlight) && Objects.equals(this.isIterative, that.isIterative)
-            && Objects.equals(this.query, that.query) && Objects.equals(this.isAnalysisQuery, that.isAnalysisQuery);
+            && Objects.equals(this.scrollId, that.scrollId) && Objects.equals(this.searchType, that.searchType)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.highlight, that.highlight)
+            && Objects.equals(this.isIterative, that.isIterative) && Objects.equals(this.query, that.query)
+            && Objects.equals(this.isAnalysisQuery, that.isAnalysisQuery);
     }
 
     @Override
@@ -442,6 +465,7 @@ public class QueryLtsLogParams {
             lineNum,
             time,
             isDesc,
+            scrollId,
             searchType,
             limit,
             highlight,
@@ -462,6 +486,7 @@ public class QueryLtsLogParams {
         sb.append("    lineNum: ").append(toIndentedString(lineNum)).append("\n");
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("    isDesc: ").append(toIndentedString(isDesc)).append("\n");
+        sb.append("    scrollId: ").append(toIndentedString(scrollId)).append("\n");
         sb.append("    searchType: ").append(toIndentedString(searchType)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    highlight: ").append(toIndentedString(highlight)).append("\n");

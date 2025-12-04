@@ -27,6 +27,11 @@ public class ShowLlmConfigResponse extends SdkResponse {
     private String llmUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "model")
+
+    private String model;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private String createTime;
@@ -92,6 +97,23 @@ public class ShowLlmConfigResponse extends SdkResponse {
         this.llmUrl = llmUrl;
     }
 
+    public ShowLlmConfigResponse withModel(String model) {
+        this.model = model;
+        return this;
+    }
+
+    /**
+     * model参数
+     * @return model
+     */
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
     public ShowLlmConfigResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -155,13 +177,14 @@ public class ShowLlmConfigResponse extends SdkResponse {
         }
         ShowLlmConfigResponse that = (ShowLlmConfigResponse) obj;
         return Objects.equals(this.llmConfigId, that.llmConfigId) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.llmUrl, that.llmUrl) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.xRequestId, that.xRequestId);
+            && Objects.equals(this.llmUrl, that.llmUrl) && Objects.equals(this.model, that.model)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(llmConfigId, name, llmUrl, createTime, updateTime, xRequestId);
+        return Objects.hash(llmConfigId, name, llmUrl, model, createTime, updateTime, xRequestId);
     }
 
     @Override
@@ -171,6 +194,7 @@ public class ShowLlmConfigResponse extends SdkResponse {
         sb.append("    llmConfigId: ").append(toIndentedString(llmConfigId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    llmUrl: ").append(toIndentedString(llmUrl)).append("\n");
+        sb.append("    model: ").append(toIndentedString(model)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");

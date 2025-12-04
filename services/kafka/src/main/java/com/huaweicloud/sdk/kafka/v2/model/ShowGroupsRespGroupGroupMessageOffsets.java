@@ -41,7 +41,7 @@ public class ShowGroupsRespGroupGroupMessageOffsets {
     }
 
     /**
-     * 分区编号。
+     * **参数解释**： 分区编号。 **取值范围**： 不涉及。
      * @return partition
      */
     public Integer getPartition() {
@@ -58,7 +58,7 @@ public class ShowGroupsRespGroupGroupMessageOffsets {
     }
 
     /**
-     * 剩余可消费消息数，即消息堆积数。
+     * **参数解释**： 剩余可消费消息数，即消息堆积数。 **取值范围**： 不涉及。
      * @return lag
      */
     public Long getLag() {
@@ -75,7 +75,7 @@ public class ShowGroupsRespGroupGroupMessageOffsets {
     }
 
     /**
-     * Topic名称。
+     * **参数解释**： Topic名称。 **取值范围**： 不涉及。
      * @return topic
      */
     public String getTopic() {
@@ -92,7 +92,7 @@ public class ShowGroupsRespGroupGroupMessageOffsets {
     }
 
     /**
-     * 当前消费进度。
+     * **参数解释**： 当前消费进度。 **取值范围**： 不涉及。
      * @return messageCurrentOffset
      */
     public Long getMessageCurrentOffset() {
@@ -109,7 +109,7 @@ public class ShowGroupsRespGroupGroupMessageOffsets {
     }
 
     /**
-     * 最大消息位置（LEO）。
+     * **参数解释**： 最大消息位置（LEO）。 **取值范围**： 不涉及。
      * @return messageLogEndOffset
      */
     public Long getMessageLogEndOffset() {

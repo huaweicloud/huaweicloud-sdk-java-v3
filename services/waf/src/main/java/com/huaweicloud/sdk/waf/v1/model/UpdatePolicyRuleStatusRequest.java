@@ -27,7 +27,7 @@ public class UpdatePolicyRuleStatusRequest {
     private String policyId;
 
     /**
-     * 策略类型
+     * **参数解释：** 策略类型 **约束限制：** 不涉及 **取值范围：**  - custom：精准防护   - cc: cc攻击   - whiteblackip: 黑白名单  - geoip: 地理位置  - privacy: 私屏蔽防护  - antitamper: 防篡改规则  - ignore: 全局白名单  **默认取值：** 不涉及
      */
     public static final class RuletypeEnum {
 
@@ -181,7 +181,7 @@ public class UpdatePolicyRuleStatusRequest {
     }
 
     /**
-     * 策略类型
+     * **参数解释：** 策略类型 **约束限制：** 不涉及 **取值范围：**  - custom：精准防护   - cc: cc攻击   - whiteblackip: 黑白名单  - geoip: 地理位置  - privacy: 私屏蔽防护  - antitamper: 防篡改规则  - ignore: 全局白名单  **默认取值：** 不涉及
      * @return ruletype
      */
     public RuletypeEnum getRuletype() {

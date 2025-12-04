@@ -29,7 +29,7 @@ public class ShowCeshierarchyRespQueues1 {
     }
 
     /**
-     * Topic名称。
+     * **参数解释**： Topic名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -62,7 +62,7 @@ public class ShowCeshierarchyRespQueues1 {
     }
 
     /**
-     * 分区信息。
+     * **参数解释**：  分区信息。
      * @return partitions
      */
     public List<ShowCeshierarchyRespPartitions> getPartitions() {

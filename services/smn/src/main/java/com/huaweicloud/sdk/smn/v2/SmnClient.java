@@ -27,6 +27,8 @@ import com.huaweicloud.sdk.smn.v2.model.CreateApplicationEndpointRequest;
 import com.huaweicloud.sdk.smn.v2.model.CreateApplicationEndpointResponse;
 import com.huaweicloud.sdk.smn.v2.model.CreateApplicationRequest;
 import com.huaweicloud.sdk.smn.v2.model.CreateApplicationResponse;
+import com.huaweicloud.sdk.smn.v2.model.CreateKmsKeyRequest;
+import com.huaweicloud.sdk.smn.v2.model.CreateKmsKeyResponse;
 import com.huaweicloud.sdk.smn.v2.model.CreateLogtankRequest;
 import com.huaweicloud.sdk.smn.v2.model.CreateLogtankResponse;
 import com.huaweicloud.sdk.smn.v2.model.CreateMessageTemplateRequest;
@@ -41,6 +43,8 @@ import com.huaweicloud.sdk.smn.v2.model.DeleteApplicationEndpointRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteApplicationEndpointResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteApplicationRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteApplicationResponse;
+import com.huaweicloud.sdk.smn.v2.model.DeleteKmsKeyRequest;
+import com.huaweicloud.sdk.smn.v2.model.DeleteKmsKeyResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteLogtankRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteLogtankResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteMessageTemplateRequest;
@@ -59,6 +63,8 @@ import com.huaweicloud.sdk.smn.v2.model.DeleteTopicRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicResponse;
 import com.huaweicloud.sdk.smn.v2.model.DownloadHttpCertRequest;
 import com.huaweicloud.sdk.smn.v2.model.DownloadHttpCertResponse;
+import com.huaweicloud.sdk.smn.v2.model.DownloadHttpSignCertRequest;
+import com.huaweicloud.sdk.smn.v2.model.DownloadHttpSignCertResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationAttributesRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationAttributesResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationEndpointAttributesRequest;
@@ -69,6 +75,8 @@ import com.huaweicloud.sdk.smn.v2.model.ListApplicationsRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListApplicationsResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListCloudServiceRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListCloudServiceResponse;
+import com.huaweicloud.sdk.smn.v2.model.ListCloudServicesRequest;
+import com.huaweicloud.sdk.smn.v2.model.ListCloudServicesResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListLogtankRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListLogtankResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListMessageTemplateDetailsRequest;
@@ -95,6 +103,8 @@ import com.huaweicloud.sdk.smn.v2.model.ListTopicMessageStatisticsRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListTopicMessageStatisticsResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListTopicsRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListTopicsResponse;
+import com.huaweicloud.sdk.smn.v2.model.ListTopicsWithAssociatedResourcesRequest;
+import com.huaweicloud.sdk.smn.v2.model.ListTopicsWithAssociatedResourcesResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListVersionRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListVersionResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListVersionsRequest;
@@ -107,14 +117,22 @@ import com.huaweicloud.sdk.smn.v2.model.PublishMessageRequest;
 import com.huaweicloud.sdk.smn.v2.model.PublishMessageResponse;
 import com.huaweicloud.sdk.smn.v2.model.ShowHttpDetectResultRequest;
 import com.huaweicloud.sdk.smn.v2.model.ShowHttpDetectResultResponse;
+import com.huaweicloud.sdk.smn.v2.model.ShowKmsKeyRequest;
+import com.huaweicloud.sdk.smn.v2.model.ShowKmsKeyResponse;
 import com.huaweicloud.sdk.smn.v2.model.ShowNotifyPolicyRequest;
 import com.huaweicloud.sdk.smn.v2.model.ShowNotifyPolicyResponse;
+import com.huaweicloud.sdk.smn.v2.model.SubscribeTopicRequest;
+import com.huaweicloud.sdk.smn.v2.model.SubscribeTopicResponse;
 import com.huaweicloud.sdk.smn.v2.model.UnsubscribeSubscriptionRequest;
 import com.huaweicloud.sdk.smn.v2.model.UnsubscribeSubscriptionResponse;
+import com.huaweicloud.sdk.smn.v2.model.UnsubscribeTopicRequest;
+import com.huaweicloud.sdk.smn.v2.model.UnsubscribeTopicResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointRequest;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationRequest;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationResponse;
+import com.huaweicloud.sdk.smn.v2.model.UpdateKmsKeyRequest;
+import com.huaweicloud.sdk.smn.v2.model.UpdateKmsKeyResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateLogtankRequest;
 import com.huaweicloud.sdk.smn.v2.model.UpdateLogtankResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateMessageTemplateRequest;
@@ -444,6 +462,34 @@ public class SmnClient {
     }
 
     /**
+     * 主题绑定KMS密钥
+     *
+     * 为主题绑定KMS密钥。KMS密钥于绑定后五分钟生效，生效后该主题下发布的消息（确认订阅消息、取消订阅消息、主题消息）均使用指定密钥的数据密钥进行加解密，并将消息内容在SMN服务内部加密传输。执行绑定KMS密钥时，用户需要先在IAM处创建名为smn_kms_agency的委托，并将资源操作权限授权给SMN服务。SMN会使用该委托进行创建数据密钥操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateKmsKeyRequest 请求对象
+     * @return CreateKmsKeyResponse
+     */
+    public CreateKmsKeyResponse createKmsKey(CreateKmsKeyRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.createKmsKey);
+    }
+
+    /**
+     * 主题绑定KMS密钥
+     *
+     * 为主题绑定KMS密钥。KMS密钥于绑定后五分钟生效，生效后该主题下发布的消息（确认订阅消息、取消订阅消息、主题消息）均使用指定密钥的数据密钥进行加解密，并将消息内容在SMN服务内部加密传输。执行绑定KMS密钥时，用户需要先在IAM处创建名为smn_kms_agency的委托，并将资源操作权限授权给SMN服务。SMN会使用该委托进行创建数据密钥操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateKmsKeyRequest 请求对象
+     * @return SyncInvoker<CreateKmsKeyRequest, CreateKmsKeyResponse>
+     */
+    public SyncInvoker<CreateKmsKeyRequest, CreateKmsKeyResponse> createKmsKeyInvoker(CreateKmsKeyRequest request) {
+        return new SyncInvoker<>(request, SmnMeta.createKmsKey, hcClient);
+    }
+
+    /**
      * 绑定云日志
      *
      * 为指定Topic绑定一个云日志，用于记录主题消息发送状态等信息。
@@ -588,6 +634,34 @@ public class SmnClient {
      */
     public SyncInvoker<CreateTopicRequest, CreateTopicResponse> createTopicInvoker(CreateTopicRequest request) {
         return new SyncInvoker<>(request, SmnMeta.createTopic, hcClient);
+    }
+
+    /**
+     * 删除主题下KMS密钥
+     *
+     * 删除主题绑定的密钥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteKmsKeyRequest 请求对象
+     * @return DeleteKmsKeyResponse
+     */
+    public DeleteKmsKeyResponse deleteKmsKey(DeleteKmsKeyRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.deleteKmsKey);
+    }
+
+    /**
+     * 删除主题下KMS密钥
+     *
+     * 删除主题绑定的密钥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteKmsKeyRequest 请求对象
+     * @return SyncInvoker<DeleteKmsKeyRequest, DeleteKmsKeyResponse>
+     */
+    public SyncInvoker<DeleteKmsKeyRequest, DeleteKmsKeyResponse> deleteKmsKeyInvoker(DeleteKmsKeyRequest request) {
+        return new SyncInvoker<>(request, SmnMeta.deleteKmsKey, hcClient);
     }
 
     /**
@@ -850,6 +924,35 @@ public class SmnClient {
     }
 
     /**
+     * 下载HTTP签名证书
+     *
+     * 下载HTTP签名证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadHttpSignCertRequest 请求对象
+     * @return DownloadHttpSignCertResponse
+     */
+    public DownloadHttpSignCertResponse downloadHttpSignCert(DownloadHttpSignCertRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.downloadHttpSignCert);
+    }
+
+    /**
+     * 下载HTTP签名证书
+     *
+     * 下载HTTP签名证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadHttpSignCertRequest 请求对象
+     * @return SyncInvoker<DownloadHttpSignCertRequest, DownloadHttpSignCertResponse>
+     */
+    public SyncInvoker<DownloadHttpSignCertRequest, DownloadHttpSignCertResponse> downloadHttpSignCertInvoker(
+        DownloadHttpSignCertRequest request) {
+        return new SyncInvoker<>(request, SmnMeta.downloadHttpSignCert, hcClient);
+    }
+
+    /**
      * 查询授权云服务列表
      *
      * 查询授权云服务列表。
@@ -876,6 +979,35 @@ public class SmnClient {
     public SyncInvoker<ListCloudServiceRequest, ListCloudServiceResponse> listCloudServiceInvoker(
         ListCloudServiceRequest request) {
         return new SyncInvoker<>(request, SmnMeta.listCloudService, hcClient);
+    }
+
+    /**
+     * 查询授权服务列表
+     *
+     * 查询授权服务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCloudServicesRequest 请求对象
+     * @return ListCloudServicesResponse
+     */
+    public ListCloudServicesResponse listCloudServices(ListCloudServicesRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.listCloudServices);
+    }
+
+    /**
+     * 查询授权服务列表
+     *
+     * 查询授权服务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCloudServicesRequest 请求对象
+     * @return SyncInvoker<ListCloudServicesRequest, ListCloudServicesResponse>
+     */
+    public SyncInvoker<ListCloudServicesRequest, ListCloudServicesResponse> listCloudServicesInvoker(
+        ListCloudServicesRequest request) {
+        return new SyncInvoker<>(request, SmnMeta.listCloudServices, hcClient);
     }
 
     /**
@@ -1253,6 +1385,36 @@ public class SmnClient {
     }
 
     /**
+     * 查询主题列表及主题关联资源信息
+     *
+     * 查询Topic及Topic关联资源信息列表，关联资源信息随业务演进会持续扩展。Topic列表默认按照创建时间进行降序排列。分页查询可以指定offset以及limit。如果不存在Topic，则返回空列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTopicsWithAssociatedResourcesRequest 请求对象
+     * @return ListTopicsWithAssociatedResourcesResponse
+     */
+    public ListTopicsWithAssociatedResourcesResponse listTopicsWithAssociatedResources(
+        ListTopicsWithAssociatedResourcesRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.listTopicsWithAssociatedResources);
+    }
+
+    /**
+     * 查询主题列表及主题关联资源信息
+     *
+     * 查询Topic及Topic关联资源信息列表，关联资源信息随业务演进会持续扩展。Topic列表默认按照创建时间进行降序排列。分页查询可以指定offset以及limit。如果不存在Topic，则返回空列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTopicsWithAssociatedResourcesRequest 请求对象
+     * @return SyncInvoker<ListTopicsWithAssociatedResourcesRequest, ListTopicsWithAssociatedResourcesResponse>
+     */
+    public SyncInvoker<ListTopicsWithAssociatedResourcesRequest, ListTopicsWithAssociatedResourcesResponse> listTopicsWithAssociatedResourcesInvoker(
+        ListTopicsWithAssociatedResourcesRequest request) {
+        return new SyncInvoker<>(request, SmnMeta.listTopicsWithAssociatedResources, hcClient);
+    }
+
+    /**
      * 查询SMN API V2版本信息
      *
      * 查询SMN API V2版本信息。
@@ -1351,6 +1513,7 @@ public class SmnClient {
      * 
      * 只需要设置其中一个，如果同时设置，生效的优先级为
      * message_structure &gt; message_template_name &gt; message。
+     * 若发布消息的主题下绑定了KMS密钥，请确保发布消息前，用户需要先在IAM处创建名为smn_kms_agency的委托，并将资源操作权限授权给SMN服务。当发布消息时，SMN会使用该委托进行创建数据密钥和解密数据密钥操作。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1375,6 +1538,7 @@ public class SmnClient {
      * 
      * 只需要设置其中一个，如果同时设置，生效的优先级为
      * message_structure &gt; message_template_name &gt; message。
+     * 若发布消息的主题下绑定了KMS密钥，请确保发布消息前，用户需要先在IAM处创建名为smn_kms_agency的委托，并将资源操作权限授权给SMN服务。当发布消息时，SMN会使用该委托进行创建数据密钥和解密数据密钥操作。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1416,6 +1580,34 @@ public class SmnClient {
     }
 
     /**
+     * 查询主题下KMS密钥
+     *
+     * 查询主题下密钥ID。执行绑定KMS密钥时，用户需要先在IAM处创建名为smn_kms_agency的委托，并将资源操作权限授权给SMN服务。SMN会使用该委托进行查询密钥信息操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKmsKeyRequest 请求对象
+     * @return ShowKmsKeyResponse
+     */
+    public ShowKmsKeyResponse showKmsKey(ShowKmsKeyRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.showKmsKey);
+    }
+
+    /**
+     * 查询主题下KMS密钥
+     *
+     * 查询主题下密钥ID。执行绑定KMS密钥时，用户需要先在IAM处创建名为smn_kms_agency的委托，并将资源操作权限授权给SMN服务。SMN会使用该委托进行查询密钥信息操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKmsKeyRequest 请求对象
+     * @return SyncInvoker<ShowKmsKeyRequest, ShowKmsKeyResponse>
+     */
+    public SyncInvoker<ShowKmsKeyRequest, ShowKmsKeyResponse> showKmsKeyInvoker(ShowKmsKeyRequest request) {
+        return new SyncInvoker<>(request, SmnMeta.showKmsKey, hcClient);
+    }
+
+    /**
      * 查询通知策略
      *
      * 查询通知策略
@@ -1445,6 +1637,35 @@ public class SmnClient {
     }
 
     /**
+     * 订阅主题
+     *
+     * 订阅终端确认订阅主题消息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SubscribeTopicRequest 请求对象
+     * @return SubscribeTopicResponse
+     */
+    public SubscribeTopicResponse subscribeTopic(SubscribeTopicRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.subscribeTopic);
+    }
+
+    /**
+     * 订阅主题
+     *
+     * 订阅终端确认订阅主题消息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SubscribeTopicRequest 请求对象
+     * @return SyncInvoker<SubscribeTopicRequest, SubscribeTopicResponse>
+     */
+    public SyncInvoker<SubscribeTopicRequest, SubscribeTopicResponse> subscribeTopicInvoker(
+        SubscribeTopicRequest request) {
+        return new SyncInvoker<>(request, SmnMeta.subscribeTopic, hcClient);
+    }
+
+    /**
      * 取消订阅
      *
      * 取消订阅主题
@@ -1471,6 +1692,63 @@ public class SmnClient {
     public SyncInvoker<UnsubscribeSubscriptionRequest, UnsubscribeSubscriptionResponse> unsubscribeSubscriptionInvoker(
         UnsubscribeSubscriptionRequest request) {
         return new SyncInvoker<>(request, SmnMeta.unsubscribeSubscription, hcClient);
+    }
+
+    /**
+     * 取消订阅主题
+     *
+     * 订阅终端取消订阅主题消息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnsubscribeTopicRequest 请求对象
+     * @return UnsubscribeTopicResponse
+     */
+    public UnsubscribeTopicResponse unsubscribeTopic(UnsubscribeTopicRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.unsubscribeTopic);
+    }
+
+    /**
+     * 取消订阅主题
+     *
+     * 订阅终端取消订阅主题消息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnsubscribeTopicRequest 请求对象
+     * @return SyncInvoker<UnsubscribeTopicRequest, UnsubscribeTopicResponse>
+     */
+    public SyncInvoker<UnsubscribeTopicRequest, UnsubscribeTopicResponse> unsubscribeTopicInvoker(
+        UnsubscribeTopicRequest request) {
+        return new SyncInvoker<>(request, SmnMeta.unsubscribeTopic, hcClient);
+    }
+
+    /**
+     * 更新主题下KMS密钥
+     *
+     * 更新密钥ID。执行更新KMS密钥时，用户需要先在IAM处创建名为smn_kms_agency的委托，并将对应的资源操作权限授权给SMN服务。SMN会使用该委托进行查询密钥状态和创建数据密钥操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateKmsKeyRequest 请求对象
+     * @return UpdateKmsKeyResponse
+     */
+    public UpdateKmsKeyResponse updateKmsKey(UpdateKmsKeyRequest request) {
+        return hcClient.syncInvokeHttp(request, SmnMeta.updateKmsKey);
+    }
+
+    /**
+     * 更新主题下KMS密钥
+     *
+     * 更新密钥ID。执行更新KMS密钥时，用户需要先在IAM处创建名为smn_kms_agency的委托，并将对应的资源操作权限授权给SMN服务。SMN会使用该委托进行查询密钥状态和创建数据密钥操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateKmsKeyRequest 请求对象
+     * @return SyncInvoker<UpdateKmsKeyRequest, UpdateKmsKeyResponse>
+     */
+    public SyncInvoker<UpdateKmsKeyRequest, UpdateKmsKeyResponse> updateKmsKeyInvoker(UpdateKmsKeyRequest request) {
+        return new SyncInvoker<>(request, SmnMeta.updateKmsKey, hcClient);
     }
 
     /**

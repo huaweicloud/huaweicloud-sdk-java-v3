@@ -143,8 +143,6 @@ import com.huaweicloud.sdk.iam.v5.model.ShowLoginProfileV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ShowLoginProfileV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ShowPasswordPolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ShowPasswordPolicyV5Response;
-import com.huaweicloud.sdk.iam.v5.model.ShowTokenPolicyV5Request;
-import com.huaweicloud.sdk.iam.v5.model.ShowTokenPolicyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ShowUserLastLoginV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ShowUserLastLoginV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ShowUserV5Request;
@@ -170,9 +168,6 @@ import com.huaweicloud.sdk.iam.v5.model.UpdateLoginProfileV5Response;
 import com.huaweicloud.sdk.iam.v5.model.UpdatePasswordPolicyReqBody;
 import com.huaweicloud.sdk.iam.v5.model.UpdatePasswordPolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.UpdatePasswordPolicyV5Response;
-import com.huaweicloud.sdk.iam.v5.model.UpdateTokenPolicyReqBody;
-import com.huaweicloud.sdk.iam.v5.model.UpdateTokenPolicyV5Request;
-import com.huaweicloud.sdk.iam.v5.model.UpdateTokenPolicyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.UpdateTrustPolicyReqBody;
 import com.huaweicloud.sdk.iam.v5.model.UpdateTrustPolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.UpdateTrustPolicyV5Response;
@@ -1660,24 +1655,6 @@ public class IamMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTokenPolicyV5Request, ShowTokenPolicyV5Response> showTokenPolicyV5 =
-        genForShowTokenPolicyV5();
-
-    private static HttpRequestDef<ShowTokenPolicyV5Request, ShowTokenPolicyV5Response> genForShowTokenPolicyV5() {
-        // basic
-        HttpRequestDef.Builder<ShowTokenPolicyV5Request, ShowTokenPolicyV5Response> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowTokenPolicyV5Request.class, ShowTokenPolicyV5Response.class)
-                .withName("ShowTokenPolicyV5")
-                .withUri("/v5/token-policy")
-                .withContentType("application/json");
-
-        // requests
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<UpdateLoginPolicyV5Request, UpdateLoginPolicyV5Response> updateLoginPolicyV5 =
         genForUpdateLoginPolicyV5();
 
@@ -1718,29 +1695,6 @@ public class IamMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePasswordPolicyReqBody.class),
             f -> f.withMarshaller(UpdatePasswordPolicyV5Request::getBody, UpdatePasswordPolicyV5Request::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateTokenPolicyV5Request, UpdateTokenPolicyV5Response> updateTokenPolicyV5 =
-        genForUpdateTokenPolicyV5();
-
-    private static HttpRequestDef<UpdateTokenPolicyV5Request, UpdateTokenPolicyV5Response> genForUpdateTokenPolicyV5() {
-        // basic
-        HttpRequestDef.Builder<UpdateTokenPolicyV5Request, UpdateTokenPolicyV5Response> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateTokenPolicyV5Request.class, UpdateTokenPolicyV5Response.class)
-                .withName("UpdateTokenPolicyV5")
-                .withUri("/v5/token-policy")
-                .withContentType("application/json");
-
-        // requests
-        builder.<UpdateTokenPolicyReqBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateTokenPolicyReqBody.class),
-            f -> f.withMarshaller(UpdateTokenPolicyV5Request::getBody, UpdateTokenPolicyV5Request::setBody));
 
         // response
 

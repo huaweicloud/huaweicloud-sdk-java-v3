@@ -14,27 +14,29 @@ public class UpdateBandwidthPolicyRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
 
-    private String taskId;
+    private Long taskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private UpdateBandwidthPolicyReq body;
 
-    public UpdateBandwidthPolicyRequest withTaskId(String taskId) {
+    public UpdateBandwidthPolicyRequest withTaskId(Long taskId) {
         this.taskId = taskId;
         return this;
     }
 
     /**
      * 任务ID。
+     * minimum: 0
+     * maximum: 999999999999999
      * @return taskId
      */
-    public String getTaskId() {
+    public Long getTaskId() {
         return taskId;
     }
 
-    public void setTaskId(String taskId) {
+    public void setTaskId(Long taskId) {
         this.taskId = taskId;
     }
 

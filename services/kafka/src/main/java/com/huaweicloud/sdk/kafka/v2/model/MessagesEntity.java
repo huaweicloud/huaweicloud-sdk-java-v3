@@ -71,7 +71,7 @@ public class MessagesEntity {
     }
 
     /**
-     * Topic名称。
+     * **参数解释**： Topic名称。 **取值范围**： 不涉及。
      * @return topic
      */
     public String getTopic() {
@@ -88,7 +88,7 @@ public class MessagesEntity {
     }
 
     /**
-     * 消息所在的分区。
+     * **参数解释**： 消息所在的分区。 **取值范围**： 不涉及。
      * @return partition
      */
     public Integer getPartition() {
@@ -105,7 +105,7 @@ public class MessagesEntity {
     }
 
     /**
-     * 消息key。
+     * **参数解释**： 消息key。 **取值范围**： 不涉及。
      * @return key
      */
     public String getKey() {
@@ -122,7 +122,7 @@ public class MessagesEntity {
     }
 
     /**
-     * 消息内容。
+     * **参数解释**： 消息内容。 **取值范围**： 不涉及。
      * @return value
      */
     public String getValue() {
@@ -139,7 +139,7 @@ public class MessagesEntity {
     }
 
     /**
-     * 消息大小。
+     * **参数解释**： 消息大小。 **取值范围**： 不涉及。
      * @return size
      */
     public Integer getSize() {
@@ -156,7 +156,7 @@ public class MessagesEntity {
     }
 
     /**
-     * 生产消息的时间。 格式为Unix时间戳。单位为毫秒。
+     * **参数解释**： 生产消息的时间。 格式为Unix时间戳。单位为毫秒。 **取值范围**： 不涉及。
      * @return timestamp
      */
     public Long getTimestamp() {
@@ -173,7 +173,7 @@ public class MessagesEntity {
     }
 
     /**
-     * 大数据标识。
+     * **参数解释**： 大数据标识。 **取值范围**： 不涉及。
      * @return hugeMessage
      */
     public Boolean getHugeMessage() {
@@ -190,7 +190,7 @@ public class MessagesEntity {
     }
 
     /**
-     * 消息偏移量。
+     * **参数解释**： 消息偏移量。 **取值范围**： 不涉及。
      * @return messageOffset
      */
     public Long getMessageOffset() {
@@ -207,7 +207,7 @@ public class MessagesEntity {
     }
 
     /**
-     * 消息ID。
+     * **参数解释**： 消息ID。 **取值范围**： 不涉及。
      * @return messageId
      */
     public String getMessageId() {
@@ -224,7 +224,7 @@ public class MessagesEntity {
     }
 
     /**
-     * 应用ID。
+     * **参数解释**： 应用ID。 **取值范围**： 不涉及。
      * @return appId
      */
     public String getAppId() {
@@ -241,7 +241,7 @@ public class MessagesEntity {
     }
 
     /**
-     * 消息标签。
+     * **参数解释**： 消息标签。 **取值范围**： 不涉及。
      * @return tag
      */
     public String getTag() {

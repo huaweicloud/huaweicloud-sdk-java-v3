@@ -83,7 +83,7 @@ public class SmartConnectTaskReqSinkConfig {
     }
 
     /**
-     * 转储文件格式。当前只支持TEXT。（仅目标端类型为OBS时需要填写）
+     * **参数解释**： 转储文件格式。当前只支持TEXT。（仅目标端类型为OBS时会显示） **取值范围**： TEXT。
      * @return destinationFileType
      */
     public String getDestinationFileType() {

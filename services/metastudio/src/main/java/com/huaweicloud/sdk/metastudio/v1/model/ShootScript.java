@@ -295,7 +295,7 @@ public class ShootScript {
     }
 
     /**
-     * 图层配置。
+     * 图层配置。 > * 视频编码格式采用VP8且数字人模型和输出视频的分辨率不一致时，该参数必须携带
      * @return layerConfig
      */
     public List<LayerConfig> getLayerConfig() {

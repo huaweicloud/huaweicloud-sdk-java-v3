@@ -59,7 +59,7 @@ public class CreateInstanceTopicReq {
     }
 
     /**
-     * **参数解释**： Topic名称。 **约束限制**： 长度为3-200，以字母开头且只支持大小写字母、中横线、下划线、点以及数字。 **取值范围**： 不涉及 **默认取值**： 不涉及。 
+     * **参数解释**： Topic名称。 **约束限制**： 长度为3-200，以字母开头且只支持大小写字母、中横线、下划线、点以及数字。 **取值范围**： 不涉及 **默认取值**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -76,7 +76,7 @@ public class CreateInstanceTopicReq {
     }
 
     /**
-     * **参数解释**： 副本数，配置数据的可靠性。副本数和代理数有关，如果有3个代理，最大副本数是3。 **约束限制**： 不涉及。 **取值范围**： 不涉及 **默认取值**： 不涉及。 
+     * **参数解释**： 副本数，配置数据的可靠性。 **约束限制**： 副本数和代理数有关，如果有3个代理，最大副本数是3。 **取值范围**： 不涉及 **默认取值**： 不涉及。
      * minimum: 1
      * maximum: 3
      * @return replication
@@ -112,7 +112,7 @@ public class CreateInstanceTopicReq {
     }
 
     /**
-     * **参数解释**： Topic分区数，设置消费的并发数。 **约束限制**： 不涉及。 **取值范围**： 1-200。 **默认取值**： 不涉及。 
+     * **参数解释**： Topic分区数，设置消费的并发数。 **约束限制**： 不涉及。 **取值范围**： 1-200。 **默认取值**： 不涉及。
      * @return partition
      */
     public Integer getPartition() {
@@ -129,7 +129,7 @@ public class CreateInstanceTopicReq {
     }
 
     /**
-     * **参数解释**： 是否开启同步复制。 **约束限制**： 不涉及。 **取值范围**： - true：开启。开启后，客户端生产消息时相应的也要设置acks=-1，否则不生效。 - false：不开启。 **默认取值**： false。 
+     * **参数解释**： 是否开启同步复制。 **约束限制**： 不涉及。 **取值范围**： - true：开启。开启后，客户端生产消息时相应的也要设置acks=-1，否则不生效。 - false：不开启。 **默认取值**： false。
      * @return syncReplication
      */
     public Boolean getSyncReplication() {
@@ -199,7 +199,7 @@ public class CreateInstanceTopicReq {
     }
 
     /**
-     * **参数解释**： Topic描述。 **约束限制**： 不涉及。 **取值范围**： 0-200个字符。 **默认取值**： 不涉及。  
+     * **参数解释**： Topic描述。 **约束限制**： 不涉及。 **取值范围**： 0-200个字符。 **默认取值**： 不涉及。
      * @return topicDesc
      */
     public String getTopicDesc() {

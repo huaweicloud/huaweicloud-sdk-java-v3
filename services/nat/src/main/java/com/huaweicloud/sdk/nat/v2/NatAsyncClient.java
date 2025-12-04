@@ -127,6 +127,8 @@ import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewayRequest;
 import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewayResponse;
 import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewaySnatRuleRequest;
 import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewaySnatRuleResponse;
+import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewayToPeriodRequest;
+import com.huaweicloud.sdk.nat.v2.model.UpdateNatGatewayToPeriodResponse;
 import com.huaweicloud.sdk.nat.v2.model.UpdatePrivateDnatRequest;
 import com.huaweicloud.sdk.nat.v2.model.UpdatePrivateDnatResponse;
 import com.huaweicloud.sdk.nat.v2.model.UpdatePrivateNatRequest;
@@ -1706,6 +1708,36 @@ public class NatAsyncClient {
     public AsyncInvoker<UpdateNatGatewayRequest, UpdateNatGatewayResponse> updateNatGatewayAsyncInvoker(
         UpdateNatGatewayRequest request) {
         return new AsyncInvoker<>(request, NatMeta.updateNatGateway, hcClient);
+    }
+
+    /**
+     * 公网NAT网关按需转包
+     *
+     * 公网NAT网关按需转包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateNatGatewayToPeriodRequest 请求对象
+     * @return CompletableFuture<UpdateNatGatewayToPeriodResponse>
+     */
+    public CompletableFuture<UpdateNatGatewayToPeriodResponse> updateNatGatewayToPeriodAsync(
+        UpdateNatGatewayToPeriodRequest request) {
+        return hcClient.asyncInvokeHttp(request, NatMeta.updateNatGatewayToPeriod);
+    }
+
+    /**
+     * 公网NAT网关按需转包
+     *
+     * 公网NAT网关按需转包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateNatGatewayToPeriodRequest 请求对象
+     * @return AsyncInvoker<UpdateNatGatewayToPeriodRequest, UpdateNatGatewayToPeriodResponse>
+     */
+    public AsyncInvoker<UpdateNatGatewayToPeriodRequest, UpdateNatGatewayToPeriodResponse> updateNatGatewayToPeriodAsyncInvoker(
+        UpdateNatGatewayToPeriodRequest request) {
+        return new AsyncInvoker<>(request, NatMeta.updateNatGatewayToPeriod, hcClient);
     }
 
     /**

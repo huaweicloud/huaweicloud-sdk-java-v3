@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 实例支持的连接方式及其连接地址。
+ * PortProtocolsEntity
  */
 public class PortProtocolsEntity {
 
@@ -106,7 +106,7 @@ public class PortProtocolsEntity {
     }
 
     /**
-     * 实例是否支持内网PLAINTEXT访问接入方式。  - true：实例支持内网PLAINTEXT访问方式接入方式。  - false：实例不支持内网PLAINTEXT访问接入方式。
+     * **参数解释**： 实例是否支持内网PLAINTEXT访问接入方式。 **取值范围**： - true：实例支持内网PLAINTEXT访问方式接入方式。 - false：实例不支持内网PLAINTEXT访问接入方式。
      * @return privatePlainEnable
      */
     public Boolean getPrivatePlainEnable() {
@@ -123,7 +123,7 @@ public class PortProtocolsEntity {
     }
 
     /**
-     * kafka内网PLAINTEXT接入方式连接地址。
+     * **参数解释**： Kafka内网PLAINTEXT接入方式连接地址。 **取值范围**： 不涉及
      * @return privatePlainAddress
      */
     public String getPrivatePlainAddress() {
@@ -140,7 +140,7 @@ public class PortProtocolsEntity {
     }
 
     /**
-     * 内网明文连接域名
+     * **参数解释**： 内网明文连接域名。 **取值范围**： 不涉及
      * @return privatePlainDomainName
      */
     public String getPrivatePlainDomainName() {
@@ -157,7 +157,7 @@ public class PortProtocolsEntity {
     }
 
     /**
-     * 实例是否支持内网SASL_SSL访问接入方式。  - true：实例支持内网SASL_SSL访问方式接入方式。  - false：实例不支持内网SASL_SSL访问接入方式。
+     * **参数解释**： 实例是否支持内网SASL_SSL访问接入方式。 **取值范围**： - true：实例支持内网SASL_SSL访问方式接入方式。 - false：实例不支持内网SASL_SSL访问接入方式。
      * @return privateSaslSslEnable
      */
     public Boolean getPrivateSaslSslEnable() {
@@ -174,7 +174,7 @@ public class PortProtocolsEntity {
     }
 
     /**
-     * kafka内网SASL_SSL接入方式连接地址。
+     * **参数解释**： Kafka内网SASL_SSL接入方式连接地址。 **取值范围**： 不涉及
      * @return privateSaslSslAddress
      */
     public String getPrivateSaslSslAddress() {
@@ -191,7 +191,7 @@ public class PortProtocolsEntity {
     }
 
     /**
-     * 内网SASL_SSL连接域名
+     * **参数解释**： 内网SASL_SSL连接域名。 **取值范围**： 不涉及
      * @return privateSaslSslDomainName
      */
     public String getPrivateSaslSslDomainName() {
@@ -208,7 +208,7 @@ public class PortProtocolsEntity {
     }
 
     /**
-     * 实例是否支持内网SASL_PLAINTEXT访问接入方式。  - true，实例支持内网SASL_PLAINTEXT访问方式接入方式。  - false，实例不支持内网SASL_PLAINTEXT访问接入方式。
+     * **参数解释**： 实例是否支持内网SASL_PLAINTEXT访问接入方式。 **取值范围**： - true：实例支持内网SASL_PLAINTEXT访问方式接入方式。 - false：实例不支持内网SASL_PLAINTEXT访问接入方式。
      * @return privateSaslPlaintextEnable
      */
     public Boolean getPrivateSaslPlaintextEnable() {
@@ -225,7 +225,7 @@ public class PortProtocolsEntity {
     }
 
     /**
-     * kafka内网SASL_PLAINTEXT接入方式连接地址。
+     * **参数解释**： Kafka内网SASL_PLAINTEXT接入方式连接地址。 **取值范围**： 不涉及
      * @return privateSaslPlaintextAddress
      */
     public String getPrivateSaslPlaintextAddress() {
@@ -242,7 +242,7 @@ public class PortProtocolsEntity {
     }
 
     /**
-     * 内网SASL_PLAINTEXT连接域名
+     * **参数解释**： 内网SASL_PLAINTEXT连接域名。 **取值范围**： 不涉及
      * @return privateSaslPlaintextDomainName
      */
     public String getPrivateSaslPlaintextDomainName() {
@@ -259,7 +259,7 @@ public class PortProtocolsEntity {
     }
 
     /**
-     * 实例是否支持公网PLAINTEXT访问接入方式。  - true，实例支持公网PLAINTEXT访问方式接入方式。  - false，实例不支持公网PLAINTEXT访问接入方式。
+     * **参数解释**： 实例是否支持公网PLAINTEXT访问接入方式。 **取值范围**： - true：实例支持公网PLAINTEXT访问方式接入方式。 - false：实例不支持公网PLAINTEXT访问接入方式。
      * @return publicPlainEnable
      */
     public Boolean getPublicPlainEnable() {
@@ -276,7 +276,7 @@ public class PortProtocolsEntity {
     }
 
     /**
-     * kafka公网PLAINTEXT接入方式连接地址。
+     * **参数解释**： Kafka公网PLAINTEXT接入方式连接地址。 **取值范围**： 不涉及
      * @return publicPlainAddress
      */
     public String getPublicPlainAddress() {
@@ -293,7 +293,7 @@ public class PortProtocolsEntity {
     }
 
     /**
-     * 公网明文连接域名
+     * **参数解释**： 公网明文连接域名。 **取值范围**： 不涉及
      * @return publicPlainDomainName
      */
     public String getPublicPlainDomainName() {
@@ -310,7 +310,7 @@ public class PortProtocolsEntity {
     }
 
     /**
-     * 实例是否支持公网SASL_SSL访问接入方式。  - true，实例支持内网SASL_SSL访问方式接入方式。  - false，实例不支持公网SASL_SSL访问接入方式。
+     * **参数解释**： 实例是否支持公网SASL_SSL访问接入方式。 **取值范围**： - true：实例支持内网SASL_SSL访问方式接入方式。 - false：实例不支持公网SASL_SSL访问接入方式。
      * @return publicSaslSslEnable
      */
     public Boolean getPublicSaslSslEnable() {
@@ -327,7 +327,7 @@ public class PortProtocolsEntity {
     }
 
     /**
-     * kafka公网SASL_SSL接入方式连接地址。
+     * **参数解释**： Kafka公网SASL_SSL接入方式连接地址。 **取值范围**： 不涉及
      * @return publicSaslSslAddress
      */
     public String getPublicSaslSslAddress() {
@@ -344,7 +344,7 @@ public class PortProtocolsEntity {
     }
 
     /**
-     * 公网SASL_SSL连接域名
+     * **参数解释**： 公网SASL_SSL连接域名。 **取值范围**： 不涉及
      * @return publicSaslSslDomainName
      */
     public String getPublicSaslSslDomainName() {
@@ -361,7 +361,7 @@ public class PortProtocolsEntity {
     }
 
     /**
-     * 实例是否支持公网SASL_PLAINTEXT访问接入方式。  - true，实例支持公网SASL_PLAINTEXT访问方式接入方式。  - false，实例不支持公网SASL_PLAINTEXT访问接入方式。
+     * **参数解释**： 实例是否支持公网SASL_PLAINTEXT访问接入方式。 **取值范围**： - true：实例支持公网SASL_PLAINTEXT访问方式接入方式。 - false：实例不支持公网SASL_PLAINTEXT访问接入方式。
      * @return publicSaslPlaintextEnable
      */
     public Boolean getPublicSaslPlaintextEnable() {
@@ -378,7 +378,7 @@ public class PortProtocolsEntity {
     }
 
     /**
-     * kafka公网SASL_PLAINTEXT接入方式连接地址。
+     * **参数解释**： Kafka公网SASL_PLAINTEXT接入方式连接地址。 **取值范围**： 不涉及
      * @return publicSaslPlaintextAddress
      */
     public String getPublicSaslPlaintextAddress() {
@@ -395,7 +395,7 @@ public class PortProtocolsEntity {
     }
 
     /**
-     * 公网SASL_PLAINTEXT连接域名
+     * **参数解释**： 公网SASL_PLAINTEXT连接域名。 **取值范围**： 不涉及
      * @return publicSaslPlaintextDomainName
      */
     public String getPublicSaslPlaintextDomainName() {

@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.asm.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
@@ -14,6 +15,11 @@ public class MeshStatus {
     @JsonProperty(value = "phase")
 
     private String phase;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "updateTimestamp")
+
+    private OffsetDateTime updateTimestamp;
 
     public MeshStatus withPhase(String phase) {
         this.phase = phase;
@@ -32,6 +38,23 @@ public class MeshStatus {
         this.phase = phase;
     }
 
+    public MeshStatus withUpdateTimestamp(OffsetDateTime updateTimestamp) {
+        this.updateTimestamp = updateTimestamp;
+        return this;
+    }
+
+    /**
+     * 网格更新时间
+     * @return updateTimestamp
+     */
+    public OffsetDateTime getUpdateTimestamp() {
+        return updateTimestamp;
+    }
+
+    public void setUpdateTimestamp(OffsetDateTime updateTimestamp) {
+        this.updateTimestamp = updateTimestamp;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +64,12 @@ public class MeshStatus {
             return false;
         }
         MeshStatus that = (MeshStatus) obj;
-        return Objects.equals(this.phase, that.phase);
+        return Objects.equals(this.phase, that.phase) && Objects.equals(this.updateTimestamp, that.updateTimestamp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(phase);
+        return Objects.hash(phase, updateTimestamp);
     }
 
     @Override
@@ -54,6 +77,7 @@ public class MeshStatus {
         StringBuilder sb = new StringBuilder();
         sb.append("class MeshStatus {\n");
         sb.append("    phase: ").append(toIndentedString(phase)).append("\n");
+        sb.append("    updateTimestamp: ").append(toIndentedString(updateTimestamp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

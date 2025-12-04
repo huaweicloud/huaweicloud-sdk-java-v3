@@ -149,7 +149,7 @@ public class TestCredentials {
             credentials.processAuthParams(hcClient, "region-id-2").get();
             throw new AssertionFailedError("expected exception: Failed to get project id");
         } catch (ExecutionException exception) {
-            Assert.assertEquals("Failed to get project id of region 'region-id-2' automatically," +
+            Assert.assertEquals("failed to get project id of region 'region-id-2' automatically," +
                             " X-IAM-Trace-Id=trace-id." +
                             " Confirm that the project exists in your account, or set project id manually:" +
                             " new BasicCredentials().withAk(ak).withSk(sk).withProjectId(projectId);",
@@ -174,7 +174,7 @@ public class TestCredentials {
             credentials.processAuthParams(hcClient, "region-id-3").get();
             throw new AssertionFailedError("expected exception: Failed to get project id");
         } catch (ExecutionException exception) {
-            Assert.assertEquals("Multiple project ids found: [project_id1,project_id2]," +
+            Assert.assertEquals("multiple project ids found: [project_id1,project_id2]," +
                             " X-IAM-Trace-Id=trace-id." +
                             " Please select one when initializing the credentials:" +
                             " new BasicCredentials().withAk(ak).withSk(sk).withProjectId(projectId);",
@@ -183,7 +183,7 @@ public class TestCredentials {
     }
 
     @Test
-    public void testAutoGetDomainId() throws ExecutionException, InterruptedException {
+    public void testV3AutoGetDomainId() throws ExecutionException, InterruptedException {
         wireMockRule.stubFor(WireMock.get("/v3/auth/domains")
                 .willReturn(WireMock.aResponse()
                         .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
@@ -200,7 +200,7 @@ public class TestCredentials {
     }
 
     @Test
-    public void testEmptyDomainId() throws InterruptedException {
+    public void testEmptyDomainId() throws Throwable {
         wireMockRule.stubFor(WireMock.get("/v3/auth/domains")
                 .willReturn(WireMock.aResponse()
                         .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
@@ -209,18 +209,76 @@ public class TestCredentials {
                         .withStatus(200)));
         wireMockRule.start();
 
-        String iamEndpoint = String.format(Locale.US, "https://127.0.0.1:%d", wireMockRule.httpsPort());
-        GlobalCredentials credentials = new GlobalCredentials().withAk("ak2").withSk("sk2").withIamEndpoint(iamEndpoint);
-        HcClient hcClient = TestUtils.createHcClient(LOGGER, iamEndpoint, credentials);
+        String endpoint = String.format(Locale.US, "https://127.0.0.1:%d", wireMockRule.httpsPort());
+        GlobalCredentials credentials = new GlobalCredentials().withAk("ak2").withSk("sk2").withIamEndpoint(endpoint);
+        HcClient hcClient = TestUtils.createHcClient(LOGGER, endpoint, credentials);
         try {
             credentials.processAuthParams(hcClient, "region-id").get();
-            throw new AssertionFailedError("expected exception: Failed to get domain id");
-        } catch (ExecutionException exception) {
-            Assert.assertEquals("Failed to get domain id automatically, " +
-                            "please confirm that you have 'iam:users:getUser' permission, " +
-                            "or set domain id manually: " +
-                            "new GlobalCredentials().withAk(ak).withSk(sk).withDomainId(domainId);",
-                    exception.getCause().getMessage());
+            Assert.fail("should throw SdkException");
+        } catch (ExecutionException e) {
+            Assert.assertTrue(e.getCause().getMessage().contains("Failed to get domain id"));
+        }
+    }
+
+    @Test
+    public void testV5AutoGetDomainId() throws ExecutionException, InterruptedException {
+        wireMockRule.stubFor(WireMock.get("/v3/auth/domains")
+                .willReturn(WireMock.aResponse()
+                        .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
+                        .withHeader("X-IAM-Trace-Id", "trace-id")
+                        .withBody("{\"domains\":[]}")
+                        .withStatus(200)));
+        wireMockRule.stubFor(WireMock.get("/v5/caller-identity")
+                .willReturn(WireMock.aResponse()
+                        .withStatus(200)
+                        .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
+                        .withBody("{\"account_id\":\"domain_id\",\"principal_urn\":\"xxx\",\"principal_id\": \"xxx\"}")
+                ));
+        wireMockRule.start();
+
+        String endpoint = String.format(Locale.US, "https://127.0.0.1:%d", wireMockRule.httpsPort());
+        System.setProperty(Constants.STS_ENDPOINT_PROPERTY_NAME, endpoint);
+        GlobalCredentials credentials = new GlobalCredentials().withAk("ak1124").withSk("sk1124")
+                .withIamEndpoint(endpoint);
+        HcClient hcClient = TestUtils.createHcClient(LOGGER, endpoint, credentials);
+        try {
+            credentials.processAuthParams(hcClient, "region-id").get();
+        } finally {
+            System.clearProperty(Constants.STS_ENDPOINT_PROPERTY_NAME);
+        }
+        Assert.assertEquals("domain_id", credentials.getDomainId());
+    }
+
+    @Test
+    public void testV5AutoGetDomainIdWithStatus404() throws InterruptedException {
+        wireMockRule.stubFor(WireMock.get("/v3/auth/domains")
+                .willReturn(WireMock.aResponse()
+                        .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
+                        .withHeader("X-IAM-Trace-Id", "trace-id")
+                        .withBody("{\"domains\":[]}")
+                        .withStatus(200)));
+        wireMockRule.stubFor(WireMock.get("/v5/caller-identity")
+                .willReturn(WireMock.aResponse()
+                        .withStatus(404)
+                        .withHeader("Content-Type", Constants.MEDIATYPE.APPLICATION_JSON)
+                        .withHeader("x-request-id", "request-id")
+                        .withBody("{\"error_code\":\"XXX.001\",\"error_msg\":\"api not exist\"}")
+                ));
+        wireMockRule.start();
+
+        String endpoint = String.format(Locale.US, "https://127.0.0.1:%d", wireMockRule.httpsPort());
+        System.setProperty(Constants.STS_ENDPOINT_PROPERTY_NAME, endpoint);
+        GlobalCredentials credentials = new GlobalCredentials().withAk("ak404").withSk("sk404")
+                .withIamEndpoint(endpoint);
+        HcClient hcClient = TestUtils.createHcClient(LOGGER, endpoint, credentials);
+        try {
+            credentials.processAuthParams(hcClient, "region-id").get();
+            Assert.fail("should throw SdkException");
+        } catch (ExecutionException e) {
+            Assert.assertEquals("failed to get domain id automatically, 404, requestId: request-id",
+                    e.getCause().getMessage());
+        } finally {
+            System.clearProperty(Constants.STS_ENDPOINT_PROPERTY_NAME);
         }
     }
 

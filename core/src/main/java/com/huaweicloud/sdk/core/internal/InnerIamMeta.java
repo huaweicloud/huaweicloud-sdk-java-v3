@@ -26,10 +26,6 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.core.internal.model.IamResponse;
-import com.huaweicloud.sdk.core.internal.model.KeystoneCreateProjectRequest;
-import com.huaweicloud.sdk.core.internal.model.KeystoneCreateProjectRequestBody;
-import com.huaweicloud.sdk.core.internal.model.KeystoneCreateProjectResponse;
-import com.huaweicloud.sdk.core.internal.model.KeystoneListAuthDomainsRequest;
 import com.huaweicloud.sdk.core.internal.model.KeystoneListAuthDomainsResponse;
 import com.huaweicloud.sdk.core.internal.model.KeystoneListProjectsRequest;
 import com.huaweicloud.sdk.core.internal.model.KeystoneListProjectsResponse;
@@ -43,7 +39,7 @@ public final class InnerIamMeta {
     public static final HttpRequestDef<KeystoneListProjectsRequest, KeystoneListProjectsResponse> KEYSTONE_LIST_PROJECTS
         = genForKeystoneListProjects();
 
-    public static final HttpRequestDef<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse>
+    public static final HttpRequestDef<Object, KeystoneListAuthDomainsResponse>
         KEYSTONE_LIST_AUTH_DOMAINS = genForKeystoneListAuthDomains();
 
     /**
@@ -79,27 +75,6 @@ public final class InnerIamMeta {
         return builder.build();
     }
 
-    private static HttpRequestDef<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse>
-        genForKeystoneCreateProject() {
-        // basic
-        HttpRequestDef.Builder<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse> builder
-            = HttpRequestDef.builder(HttpMethod.POST, KeystoneCreateProjectRequest.class,
-            KeystoneCreateProjectResponse.class)
-            .withUri("/v3/projects")
-            .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.withRequestField("body", LocationType.Body, FieldExistence.NON_NULL_NON_EMPTY,
-            KeystoneCreateProjectRequestBody.class,
-            f -> f.withMarshaller(KeystoneCreateProjectRequest::getBody, KeystoneCreateProjectRequest::setBody));
-
-        // response
-        builder.withResponseField("X-IAM-Trace-Id", LocationType.Header, FieldExistence.NULL_IGNORE, String.class,
-                f -> f.withMarshaller(IamResponse::getTraceId, IamResponse::setTraceId));
-
-        return builder.build();
-    }
-
     private static HttpRequestDef<KeystoneListRegionsRequest, KeystoneListRegionsResponse> genForKeystoneListRegions() {
         // basic
         HttpRequestDef.Builder<KeystoneListRegionsRequest, KeystoneListRegionsResponse> builder
@@ -113,11 +88,11 @@ public final class InnerIamMeta {
         return builder.build();
     }
 
-    private static HttpRequestDef<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse>
+    private static HttpRequestDef<Object, KeystoneListAuthDomainsResponse>
         genForKeystoneListAuthDomains() {
         // basic
-        HttpRequestDef.Builder<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, KeystoneListAuthDomainsRequest.class, KeystoneListAuthDomainsResponse.class)
+        HttpRequestDef.Builder<Object, KeystoneListAuthDomainsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, Object.class, KeystoneListAuthDomainsResponse.class)
             .withUri("/v3/auth/domains")
             .withContentType("application/json");
 

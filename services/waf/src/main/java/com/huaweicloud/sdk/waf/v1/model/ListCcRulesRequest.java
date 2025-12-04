@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -45,10 +50,110 @@ public class ListCcRulesRequest {
 
     private String category;
 
+    /**
+     * **参数解释：** 限速模式标识，用于指定区分单个Web访问者的判断依据 **约束限制：** 不涉及 **取值范围：**  - ip：IP限速，根据IP区分单个Web访问者  - cookie：用户限速，根据Cookie键值区分单个Web访问者  - header：用户限速，根据Header区分单个Web访问者  - other：根据Referer（自定义请求访问的来源）字段区分单个Web访问者  - policy：策略限速  - domain：域名限速  - url：url限速 **默认取值：** 不涉及
+     */
+    public static final class TagTypeEnum {
+
+        /**
+         * Enum IP for value: "ip"
+         */
+        public static final TagTypeEnum IP = new TagTypeEnum("ip");
+
+        /**
+         * Enum COOKIE for value: "cookie"
+         */
+        public static final TagTypeEnum COOKIE = new TagTypeEnum("cookie");
+
+        /**
+         * Enum HEADER for value: "header"
+         */
+        public static final TagTypeEnum HEADER = new TagTypeEnum("header");
+
+        /**
+         * Enum OTHER for value: "other"
+         */
+        public static final TagTypeEnum OTHER = new TagTypeEnum("other");
+
+        /**
+         * Enum POLICY for value: "policy"
+         */
+        public static final TagTypeEnum POLICY = new TagTypeEnum("policy");
+
+        /**
+         * Enum DOMAIN for value: "domain"
+         */
+        public static final TagTypeEnum DOMAIN = new TagTypeEnum("domain");
+
+        /**
+         * Enum URL for value: "url"
+         */
+        public static final TagTypeEnum URL = new TagTypeEnum("url");
+
+        private static final Map<String, TagTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TagTypeEnum> createStaticFields() {
+            Map<String, TagTypeEnum> map = new HashMap<>();
+            map.put("ip", IP);
+            map.put("cookie", COOKIE);
+            map.put("header", HEADER);
+            map.put("other", OTHER);
+            map.put("policy", POLICY);
+            map.put("domain", DOMAIN);
+            map.put("url", URL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TagTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TagTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TagTypeEnum(value));
+        }
+
+        public static TagTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TagTypeEnum) {
+                return this.value.equals(((TagTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_type")
 
-    private String tagType;
+    private TagTypeEnum tagType;
 
     public ListCcRulesRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -169,20 +274,20 @@ public class ListCcRulesRequest {
         this.category = category;
     }
 
-    public ListCcRulesRequest withTagType(String tagType) {
+    public ListCcRulesRequest withTagType(TagTypeEnum tagType) {
         this.tagType = tagType;
         return this;
     }
 
     /**
-     * 限速模式：   - ip：IP限速，根据IP区分单个Web访问者。   - cookie：用户限速，根据Cookie键值区分单个Web访问者。   - header：用户限速，根据Header区分单个Web访问者。   - other：根据Referer（自定义请求访问的来源）字段区分单个Web访问者。   - policy: 策略限速   - domain: 域名限速     - url: url限速
+     * **参数解释：** 限速模式标识，用于指定区分单个Web访问者的判断依据 **约束限制：** 不涉及 **取值范围：**  - ip：IP限速，根据IP区分单个Web访问者  - cookie：用户限速，根据Cookie键值区分单个Web访问者  - header：用户限速，根据Header区分单个Web访问者  - other：根据Referer（自定义请求访问的来源）字段区分单个Web访问者  - policy：策略限速  - domain：域名限速  - url：url限速 **默认取值：** 不涉及
      * @return tagType
      */
-    public String getTagType() {
+    public TagTypeEnum getTagType() {
         return tagType;
     }
 
-    public void setTagType(String tagType) {
+    public void setTagType(TagTypeEnum tagType) {
         this.tagType = tagType;
     }
 

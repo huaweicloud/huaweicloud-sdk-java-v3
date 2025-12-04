@@ -39,7 +39,7 @@ public class ShowGroupsRespGroupMembers {
     }
 
     /**
-     * 消费组consumer地址。
+     * **参数解释**： 消费组consumer地址。 **取值范围**： 不涉及。
      * @return host
      */
     public String getHost() {
@@ -72,7 +72,7 @@ public class ShowGroupsRespGroupMembers {
     }
 
     /**
-     * consumer分配到的分区信息。
+     * **参数解释**： consumer分配到的分区信息。
      * @return assignment
      */
     public List<ShowGroupsRespGroupAssignment> getAssignment() {
@@ -89,7 +89,7 @@ public class ShowGroupsRespGroupMembers {
     }
 
     /**
-     * 消费组consumer的ID。
+     * **参数解释**： 消费组consumer的ID。 **取值范围**： 不涉及。
      * @return memberId
      */
     public String getMemberId() {
@@ -106,7 +106,7 @@ public class ShowGroupsRespGroupMembers {
     }
 
     /**
-     * 客户端ID。
+     * **参数解释**： 客户端ID。 **取值范围**： 不涉及。
      * @return clientId
      */
     public String getClientId() {

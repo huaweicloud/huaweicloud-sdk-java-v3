@@ -222,7 +222,7 @@ public class ModifyConnectorTaskResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： Smart Connect任务的状态。 **取值范围**： 不涉及。
+     * **参数解释**： Smart Connect任务的状态。 **取值范围**： - PAUSED：暂停。 - RUNNING：运行中。 - WAITING：等待中。 - RESTARTING：重启中。
      * @return status
      */
     public String getStatus() {

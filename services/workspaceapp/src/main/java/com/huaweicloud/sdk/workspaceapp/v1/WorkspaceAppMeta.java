@@ -1832,11 +1832,11 @@ public class WorkspaceAppMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFoldersAndFilesRequest::getMarker, ListFoldersAndFilesRequest::setMarker));
-        builder.<Integer>withRequestField("max_keys",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListFoldersAndFilesRequest::getMaxKeys, ListFoldersAndFilesRequest::setMaxKeys));
+            f -> f.withMarshaller(ListFoldersAndFilesRequest::getLimit, ListFoldersAndFilesRequest::setLimit));
 
         // response
 

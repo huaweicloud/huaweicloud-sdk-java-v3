@@ -169,6 +169,36 @@ public class DeHMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("flavor",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDedicatedHostAllTypesRequest::getFlavor,
+                ListDedicatedHostAllTypesRequest::setFlavor));
+        builder.<String>withRequestField("availability_zone",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDedicatedHostAllTypesRequest::getAvailabilityZone,
+                ListDedicatedHostAllTypesRequest::setAvailabilityZone));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDedicatedHostAllTypesRequest::getLimit,
+                ListDedicatedHostAllTypesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDedicatedHostAllTypesRequest::getMarker,
+                ListDedicatedHostAllTypesRequest::setMarker));
+        builder.<String>withRequestField("host_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDedicatedHostAllTypesRequest::getHostType,
+                ListDedicatedHostAllTypesRequest::setHostType));
 
         // response
 

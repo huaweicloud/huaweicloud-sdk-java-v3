@@ -43,8 +43,8 @@ public class CreateNet2CloudPhoneServerRequestBodyPhoneDataVolume {
     }
 
     /**
-     * 手机磁盘大小，单位GiB，取值范围[10，32768]。
-     * minimum: 10
+     * 手机磁盘大小，单位GiB，取值范围[1，32768]。
+     * minimum: 1
      * maximum: 32768
      * @return size
      */

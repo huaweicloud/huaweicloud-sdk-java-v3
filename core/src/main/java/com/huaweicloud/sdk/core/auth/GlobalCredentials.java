@@ -23,11 +23,12 @@ package com.huaweicloud.sdk.core.auth;
 
 import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.HcClient;
+import com.huaweicloud.sdk.core.exception.HostUnreachableException;
 import com.huaweicloud.sdk.core.exception.SdkException;
+import com.huaweicloud.sdk.core.exception.ServiceResponseException;
 import com.huaweicloud.sdk.core.http.HttpClient;
 import com.huaweicloud.sdk.core.http.HttpRequest;
 import com.huaweicloud.sdk.core.internal.InnerIamMeta;
-import com.huaweicloud.sdk.core.internal.model.KeystoneListAuthDomainsRequest;
 import com.huaweicloud.sdk.core.internal.model.KeystoneListAuthDomainsResponse;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 import org.slf4j.Logger;
@@ -35,6 +36,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.LinkedHashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
@@ -93,25 +95,10 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
                 return this;
             }
 
-            String iamEndpoint = getUsedIamEndpoint(regionId);
-            HcClient inner = hcClient.overrideEndpoints(Collections.singletonList(iamEndpoint));
-
             Function<HttpRequest, Boolean> derivedPredicate = getDerivedPredicate();
             setDerivedPredicate(null);
 
-            Logger logger = LoggerFactory.getLogger(hcClient.getClass());
-            logger.info("domain id not found in GlobalCredentials," +
-                    " trying to get domain id from IAM service automatically: " + iamEndpoint);
-            KeystoneListAuthDomainsRequest request = new KeystoneListAuthDomainsRequest();
-            KeystoneListAuthDomainsResponse response = inner.syncInvokeHttp(request,
-                    InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
-            if (Objects.isNull(response)
-                    || Objects.isNull(response.getDomains())
-                    || response.getDomains().isEmpty()) {
-                throw new SdkException(Constants.ErrorMessage.NO_DOMAIN_ID_FOUND);
-            }
-            domainId = response.getDomains().get(0).getId();
-            logger.info("Success to get domain id: {}", StringUtils.mask(domainId));
+            domainId = autoGetDomainId(hcClient, regionId);
             if (StringUtils.isNotEmpty(cacheName)) {
                 cache.put(cacheName, domainId);
             }
@@ -120,6 +107,48 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
 
             return this;
         }, hcClient.getHttpConfig().getExecutorService());
+    }
+
+    private String autoGetDomainId(HcClient hcClient, String regionId) {
+        String iamEndpoint = getUsedIamEndpoint(regionId);
+        HcClient inner = hcClient.overrideEndpoints(Collections.singletonList(iamEndpoint));
+
+        Logger logger = LoggerFactory.getLogger(hcClient.getClass());
+        logger.info("domain id not found in GlobalCredentials," +
+                " trying to get domain id from {}", iamEndpoint);
+        KeystoneListAuthDomainsResponse response = inner.syncInvokeHttp(new Object(),
+                InnerIamMeta.KEYSTONE_LIST_AUTH_DOMAINS);
+
+        if (response != null && response.getDomains() != null && !response.getDomains().isEmpty()) {
+            String id = response.getDomains().get(0).getId();
+            logger.info("success to get domain id: {}", StringUtils.mask(id));
+            return id;
+        }
+
+        String stsEndpoint = StsHelper.getEndpoint(regionId);
+        if (StringUtils.isNotEmpty(stsEndpoint)) {
+            logger.info("domain id is empty, trying to get domain id from {}", stsEndpoint);
+            inner = hcClient.overrideEndpoints(Collections.singletonList(stsEndpoint));
+            try {
+                StsHelper.GetCallerIdentityResponse stsResp = inner.syncInvokeHttp(
+                        new Object(), StsHelper.GET_CALLER_IDENTITY);
+                if (stsResp != null && StringUtils.isNotEmpty(stsResp.getAccountId())) {
+                    logger.info("success to get domain id: {}", StringUtils.mask(stsResp.getAccountId()));
+                    return stsResp.getAccountId();
+                }
+            } catch (HostUnreachableException hue) {
+                throw new SdkException("failed to get domain id automatically, " + hue, hue);
+            } catch (ServiceResponseException sre) {
+                if (sre.getHttpStatusCode() == 404) {
+                    String msg = "failed to get domain id automatically, "
+                            + String.format(Locale.ENGLISH, "%d, requestId: %s",
+                            sre.getHttpStatusCode(), sre.getRequestId());
+                    throw new SdkException(msg, sre);
+                }
+                throw new SdkException("failed to get domain id automatically, " + sre, sre);
+            }
+        }
+        throw new SdkException(Constants.ErrorMessage.NO_DOMAIN_ID_FOUND);
     }
 
     @Override

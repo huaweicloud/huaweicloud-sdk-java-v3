@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -15,10 +20,86 @@ public class CustomPage {
 
     private String statusCode;
 
+    /**
+     * **参数解释：** “自定义”告警页面内容类型 **约束限制：** 不涉及 **取值范围：**  - text/html  - text/xml  - application/json  **默认取值：** 不涉及
+     */
+    public static final class ContentTypeEnum {
+
+        /**
+         * Enum TEXT_HTML for value: "text/html"
+         */
+        public static final ContentTypeEnum TEXT_HTML = new ContentTypeEnum("text/html");
+
+        /**
+         * Enum TEXT_XML for value: "text/xml"
+         */
+        public static final ContentTypeEnum TEXT_XML = new ContentTypeEnum("text/xml");
+
+        /**
+         * Enum APPLICATION_JSON for value: "application/json"
+         */
+        public static final ContentTypeEnum APPLICATION_JSON = new ContentTypeEnum("application/json");
+
+        private static final Map<String, ContentTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ContentTypeEnum> createStaticFields() {
+            Map<String, ContentTypeEnum> map = new HashMap<>();
+            map.put("text/html", TEXT_HTML);
+            map.put("text/xml", TEXT_XML);
+            map.put("application/json", APPLICATION_JSON);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ContentTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ContentTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ContentTypeEnum(value));
+        }
+
+        public static ContentTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ContentTypeEnum) {
+                return this.value.equals(((ContentTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content_type")
 
-    private String contentType;
+    private ContentTypeEnum contentType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "content")
@@ -42,20 +123,20 @@ public class CustomPage {
         this.statusCode = statusCode;
     }
 
-    public CustomPage withContentType(String contentType) {
+    public CustomPage withContentType(ContentTypeEnum contentType) {
         this.contentType = contentType;
         return this;
     }
 
     /**
-     * “自定义”告警页面内容类型，可选择text/html、text/xml和application/json三种类型
+     * **参数解释：** “自定义”告警页面内容类型 **约束限制：** 不涉及 **取值范围：**  - text/html  - text/xml  - application/json  **默认取值：** 不涉及
      * @return contentType
      */
-    public String getContentType() {
+    public ContentTypeEnum getContentType() {
         return contentType;
     }
 
-    public void setContentType(String contentType) {
+    public void setContentType(ContentTypeEnum contentType) {
         this.contentType = contentType;
     }
 

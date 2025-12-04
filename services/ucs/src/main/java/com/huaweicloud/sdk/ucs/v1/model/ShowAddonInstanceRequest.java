@@ -31,7 +31,7 @@ public class ShowAddonInstanceRequest {
     }
 
     /**
-     * 插件示例id
+     * 插件实例id
      * @return id
      */
     public String getId() {

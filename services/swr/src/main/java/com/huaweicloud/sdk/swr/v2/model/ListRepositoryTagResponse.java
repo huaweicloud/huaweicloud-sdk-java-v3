@@ -24,6 +24,11 @@ public class ListRepositoryTagResponse extends SdkResponse {
 
     private String nextMarker;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "has_more")
+
+    private Boolean hasMore;
+
     public ListRepositoryTagResponse withTags(List<ShowReposTagRespV3> tags) {
         this.tags = tags;
         return this;
@@ -74,6 +79,23 @@ public class ListRepositoryTagResponse extends SdkResponse {
         this.nextMarker = nextMarker;
     }
 
+    public ListRepositoryTagResponse withHasMore(Boolean hasMore) {
+        this.hasMore = hasMore;
+        return this;
+    }
+
+    /**
+     * 表示分页查询时是否还有下一页
+     * @return hasMore
+     */
+    public Boolean getHasMore() {
+        return hasMore;
+    }
+
+    public void setHasMore(Boolean hasMore) {
+        this.hasMore = hasMore;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,12 +105,13 @@ public class ListRepositoryTagResponse extends SdkResponse {
             return false;
         }
         ListRepositoryTagResponse that = (ListRepositoryTagResponse) obj;
-        return Objects.equals(this.tags, that.tags) && Objects.equals(this.nextMarker, that.nextMarker);
+        return Objects.equals(this.tags, that.tags) && Objects.equals(this.nextMarker, that.nextMarker)
+            && Objects.equals(this.hasMore, that.hasMore);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tags, nextMarker);
+        return Objects.hash(tags, nextMarker, hasMore);
     }
 
     @Override
@@ -97,6 +120,7 @@ public class ListRepositoryTagResponse extends SdkResponse {
         sb.append("class ListRepositoryTagResponse {\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    nextMarker: ").append(toIndentedString(nextMarker)).append("\n");
+        sb.append("    hasMore: ").append(toIndentedString(hasMore)).append("\n");
         sb.append("}");
         return sb.toString();
     }

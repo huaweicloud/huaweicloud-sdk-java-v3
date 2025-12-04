@@ -21,7 +21,7 @@ public class ShowCeshierarchyRespInstanceIds {
     }
 
     /**
-     * 实例ID。
+     * **参数解释**： 实例ID。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {

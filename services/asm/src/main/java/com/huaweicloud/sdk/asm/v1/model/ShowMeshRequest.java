@@ -15,18 +15,13 @@ public class ShowMeshRequest {
 
     private String meshId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Apply-ProjectID")
-
-    private String xApplyProjectID;
-
     public ShowMeshRequest withMeshId(String meshId) {
         this.meshId = meshId;
         return this;
     }
 
     /**
-     * 网格ID
+     * 网格ID。
      * @return meshId
      */
     public String getMeshId() {
@@ -35,25 +30,6 @@ public class ShowMeshRequest {
 
     public void setMeshId(String meshId) {
         this.meshId = meshId;
-    }
-
-    public ShowMeshRequest withXApplyProjectID(String xApplyProjectID) {
-        this.xApplyProjectID = xApplyProjectID;
-        return this;
-    }
-
-    /**
-     * 网格所属ProjectID
-     * @return xApplyProjectID
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Apply-ProjectID")
-    public String getXApplyProjectID() {
-        return xApplyProjectID;
-    }
-
-    public void setXApplyProjectID(String xApplyProjectID) {
-        this.xApplyProjectID = xApplyProjectID;
     }
 
     @Override
@@ -65,12 +41,12 @@ public class ShowMeshRequest {
             return false;
         }
         ShowMeshRequest that = (ShowMeshRequest) obj;
-        return Objects.equals(this.meshId, that.meshId) && Objects.equals(this.xApplyProjectID, that.xApplyProjectID);
+        return Objects.equals(this.meshId, that.meshId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(meshId, xApplyProjectID);
+        return Objects.hash(meshId);
     }
 
     @Override
@@ -78,7 +54,6 @@ public class ShowMeshRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowMeshRequest {\n");
         sb.append("    meshId: ").append(toIndentedString(meshId)).append("\n");
-        sb.append("    xApplyProjectID: ").append(toIndentedString(xApplyProjectID)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 子维度信息。
+ * **参数解释**： 子维度信息。 **取值范围**： 不涉及。
  */
 public class ShowCeshierarchyRespChildren {
 
@@ -39,7 +39,7 @@ public class ShowCeshierarchyRespChildren {
     }
 
     /**
-     * 子维度名称。
+     * **参数解释**： 子维度名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -72,7 +72,7 @@ public class ShowCeshierarchyRespChildren {
     }
 
     /**
-     * 监控指标名称列表。
+     * **参数解释**： 监控指标名称列表。 **取值范围**： 不涉及。
      * @return metrics
      */
     public List<String> getMetrics() {
@@ -105,7 +105,7 @@ public class ShowCeshierarchyRespChildren {
     }
 
     /**
-     * 监控查询使用的key。
+     * **参数解释**： 监控查询使用的key。
      * @return keyName
      */
     public List<String> getKeyName() {
@@ -138,7 +138,7 @@ public class ShowCeshierarchyRespChildren {
     }
 
     /**
-     * 监控维度路由。
+     * **参数解释**： 监控维度路由。
      * @return dimRouter
      */
     public List<String> getDimRouter() {

@@ -305,15 +305,161 @@ public class UpdatePremiumHostResponse extends SdkResponse {
 
     private String certificatename;
 
+    /**
+     * **参数解释：** 域名防护状态标识，用于指定域名在WAF中的防护运行状态 **约束限制：** 不涉及 **取值范围：**  - -1：bypass，该域名的请求直接到达其后端服务器，不再经过WAF  - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测  - 1：开启防护，WAF根据您配置的策略进行攻击检测  **默认取值：** 不涉及
+     */
+    public static final class ProtectStatusEnum {
+
+        /**
+         * Enum NUMBER_MINUS_1 for value: -1
+         */
+        public static final ProtectStatusEnum NUMBER_MINUS_1 = new ProtectStatusEnum(-1);
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final ProtectStatusEnum NUMBER_0 = new ProtectStatusEnum(0);
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final ProtectStatusEnum NUMBER_1 = new ProtectStatusEnum(1);
+
+        private static final Map<Integer, ProtectStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, ProtectStatusEnum> createStaticFields() {
+            Map<Integer, ProtectStatusEnum> map = new HashMap<>();
+            map.put(-1, NUMBER_MINUS_1);
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        ProtectStatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ProtectStatusEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtectStatusEnum(value));
+        }
+
+        public static ProtectStatusEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ProtectStatusEnum) {
+                return this.value.equals(((ProtectStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_status")
 
-    private Integer protectStatus;
+    private ProtectStatusEnum protectStatus;
+
+    /**
+     * **参数解释：** 域名接入状态 **约束限制：** 不涉及 **取值范围：**  - 0: 未接入  - 1: 已接入  **默认取值：** 不涉及
+     */
+    public static final class AccessStatusEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final AccessStatusEnum NUMBER_0 = new AccessStatusEnum(0);
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final AccessStatusEnum NUMBER_1 = new AccessStatusEnum(1);
+
+        private static final Map<Integer, AccessStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, AccessStatusEnum> createStaticFields() {
+            Map<Integer, AccessStatusEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        AccessStatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AccessStatusEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AccessStatusEnum(value));
+        }
+
+        public static AccessStatusEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AccessStatusEnum) {
+                return this.value.equals(((AccessStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_status")
 
-    private Integer accessStatus;
+    private AccessStatusEnum accessStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "web_tag")
@@ -765,37 +911,37 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.certificatename = certificatename;
     }
 
-    public UpdatePremiumHostResponse withProtectStatus(Integer protectStatus) {
+    public UpdatePremiumHostResponse withProtectStatus(ProtectStatusEnum protectStatus) {
         this.protectStatus = protectStatus;
         return this;
     }
 
     /**
-     * 域名防护状态：  - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测  - 1：开启防护，WAF根据您配置的策略进行攻击检测
+     * **参数解释：** 域名防护状态标识，用于指定域名在WAF中的防护运行状态 **约束限制：** 不涉及 **取值范围：**  - -1：bypass，该域名的请求直接到达其后端服务器，不再经过WAF  - 0：暂停防护，WAF只转发该域名的请求，不做攻击检测  - 1：开启防护，WAF根据您配置的策略进行攻击检测  **默认取值：** 不涉及
      * @return protectStatus
      */
-    public Integer getProtectStatus() {
+    public ProtectStatusEnum getProtectStatus() {
         return protectStatus;
     }
 
-    public void setProtectStatus(Integer protectStatus) {
+    public void setProtectStatus(ProtectStatusEnum protectStatus) {
         this.protectStatus = protectStatus;
     }
 
-    public UpdatePremiumHostResponse withAccessStatus(Integer accessStatus) {
+    public UpdatePremiumHostResponse withAccessStatus(AccessStatusEnum accessStatus) {
         this.accessStatus = accessStatus;
         return this;
     }
 
     /**
-     * 域名接入状态，0表示未接入，1表示已接入
+     * **参数解释：** 域名接入状态 **约束限制：** 不涉及 **取值范围：**  - 0: 未接入  - 1: 已接入  **默认取值：** 不涉及
      * @return accessStatus
      */
-    public Integer getAccessStatus() {
+    public AccessStatusEnum getAccessStatus() {
         return accessStatus;
     }
 
-    public void setAccessStatus(Integer accessStatus) {
+    public void setAccessStatus(AccessStatusEnum accessStatus) {
         this.accessStatus = accessStatus;
     }
 

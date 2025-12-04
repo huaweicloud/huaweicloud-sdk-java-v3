@@ -1145,7 +1145,7 @@ public class AadMeta {
         // requests
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateLtsConfigRequest::getEnterpriseProjectId,
                 UpdateLtsConfigRequest::setEnterpriseProjectId));

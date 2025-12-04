@@ -48,8 +48,8 @@ public class TestDefaultUserAgent {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(uuid.getBytes(StandardCharsets.UTF_8))))) {
 
             try (MockedStatic<Files> mockedStatic = org.mockito.Mockito.mockStatic(Files.class);
-                 MockedStatic<PathUtils> pathUtils = org.mockito.Mockito.mockStatic(PathUtils.class);) {
-                pathUtils.when(() -> PathUtils.getUserHomePath()).thenReturn(System.getProperty("user.home"));
+                 MockedStatic<PathUtils> pathUtils = org.mockito.Mockito.mockStatic(PathUtils.class)) {
+                pathUtils.when(PathUtils::getUserHomePath).thenReturn(System.getProperty("user.home"));
                 pathUtils.when(() -> PathUtils.isValidFile(any(File.class))).thenReturn(true);
                 mockedStatic.when(() -> Files.newBufferedReader(any(), any())).thenReturn(reader);
 
@@ -66,7 +66,7 @@ public class TestDefaultUserAgent {
         String uuid = "0e2250f9-8d6c-443c-be2d-1f1202fa32ca00000000000";
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(uuid.getBytes(StandardCharsets.UTF_8))))) {
 
-            try (MockedStatic<Files> mockedStatic = org.mockito.Mockito.mockStatic(Files.class);) {
+            try (MockedStatic<Files> mockedStatic = org.mockito.Mockito.mockStatic(Files.class)) {
                 mockedStatic.when(() -> Files.newBufferedReader(any(), any())).thenReturn(reader);
 
                 String userAgent = DefaultUserAgent.userAgentString();
@@ -80,7 +80,7 @@ public class TestDefaultUserAgent {
 
     @Test
     public void test_generate_user_agent_when_file_not_exist() {
-        try (MockedStatic<Files> mockedStatic = org.mockito.Mockito.mockStatic(Files.class);) {
+        try (MockedStatic<Files> mockedStatic = org.mockito.Mockito.mockStatic(Files.class)) {
             mockedStatic.when(() -> Files.newBufferedReader(any(), any())).thenThrow(new IOException("File not exist."));
             String userAgent = DefaultUserAgent.userAgentString();
             System.out.println(userAgent);
@@ -90,7 +90,7 @@ public class TestDefaultUserAgent {
 
     @Test
     public void test_generate_user_agent_when_file_not_exist_and_no_permission() {
-        try (MockedStatic<Files> mockedStatic = org.mockito.Mockito.mockStatic(Files.class);) {
+        try (MockedStatic<Files> mockedStatic = org.mockito.Mockito.mockStatic(Files.class)) {
             mockedStatic.when(() -> Files.newBufferedReader(any(), any())).thenThrow(new IOException("File not exist."));
             mockedStatic.when(() -> Files.write(any(), (byte[]) any())).thenThrow(new IOException("No permission."));
             String userAgent = DefaultUserAgent.userAgentString();

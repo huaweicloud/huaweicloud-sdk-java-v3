@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 实例支持的功能特性。
+ * **参数解释**： 实例支持的功能特性。 **取值范围**： 不涉及。
  */
 public class ListEngineSupportFeaturesEntity {
 
@@ -27,7 +27,7 @@ public class ListEngineSupportFeaturesEntity {
     }
 
     /**
-     * 功能名称。
+     * **参数解释**： 功能名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {

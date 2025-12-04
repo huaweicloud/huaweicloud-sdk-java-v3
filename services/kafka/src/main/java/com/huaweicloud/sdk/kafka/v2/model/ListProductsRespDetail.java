@@ -74,7 +74,7 @@ public class ListProductsRespDetail {
     }
 
     /**
-     * 单位时间内的消息量最大值。
+     * **参数解释**： 单位时间内的消息量最大值。 **取值范围**： 不涉及。
      * @return tps
      */
     public String getTps() {
@@ -91,7 +91,7 @@ public class ListProductsRespDetail {
     }
 
     /**
-     * 消息存储空间。
+     * **参数解释**： 消息存储空间。 **取值范围**： 不涉及。
      * @return storage
      */
     public String getStorage() {
@@ -108,7 +108,7 @@ public class ListProductsRespDetail {
     }
 
     /**
-     * Kafka实例的分区数量。
+     * **参数解释**： Kafka实例的分区数量。 **取值范围**： 不涉及。
      * @return partitionNum
      */
     public String getPartitionNum() {
@@ -125,7 +125,7 @@ public class ListProductsRespDetail {
     }
 
     /**
-     * 产品ID。
+     * **参数解释**： 产品ID。 **取值范围**： 不涉及。
      * @return productId
      */
     public String getProductId() {
@@ -142,7 +142,7 @@ public class ListProductsRespDetail {
     }
 
     /**
-     * 规格ID。
+     * **参数解释**： 规格ID。 **取值范围**： 不涉及。
      * @return specCode
      */
     public String getSpecCode() {
@@ -175,7 +175,7 @@ public class ListProductsRespDetail {
     }
 
     /**
-     * IO信息。
+     * **参数解释**： IO信息。
      * @return io
      */
     public List<ListProductsRespIo> getIo() {
@@ -192,7 +192,7 @@ public class ListProductsRespDetail {
     }
 
     /**
-     * Kafka实例的基准带宽。
+     * **参数解释**： Kafka实例的基准带宽。 **取值范围**： 不涉及。
      * @return bandwidth
      */
     public String getBandwidth() {
@@ -225,7 +225,7 @@ public class ListProductsRespDetail {
     }
 
     /**
-     * 资源售罄的可用区列表。
+     * **参数解释**： 资源售罄的可用区列表。 **取值范围**： 不涉及。
      * @return unavailableZones
      */
     public List<String> getUnavailableZones() {
@@ -258,7 +258,7 @@ public class ListProductsRespDetail {
     }
 
     /**
-     * 有可用资源的可用区列表。
+     * **参数解释**： 有可用资源的可用区列表。 **取值范围**： 不涉及。
      * @return availableZones
      */
     public List<String> getAvailableZones() {
@@ -275,7 +275,7 @@ public class ListProductsRespDetail {
     }
 
     /**
-     * 该产品规格对应的虚拟机规格。
+     * **参数解释**： 该产品规格对应的虚拟机规格。 **取值范围**： 不涉及。
      * @return ecsFlavorId
      */
     public String getEcsFlavorId() {
@@ -292,7 +292,7 @@ public class ListProductsRespDetail {
     }
 
     /**
-     * 实例规格架构类型。当前仅支持X86。
+     * **参数解释**： 实例规格架构类型。当前仅支持X86。 **取值范围**： 不涉及。
      * @return archType
      */
     public String getArchType() {

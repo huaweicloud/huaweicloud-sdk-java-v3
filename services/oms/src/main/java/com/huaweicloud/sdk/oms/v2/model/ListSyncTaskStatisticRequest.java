@@ -21,7 +21,7 @@ public class ListSyncTaskStatisticRequest {
     private String syncTaskId;
 
     /**
-     * 统计数据类型： 多类型查询用‘,’分割； REQUEST：接收同步请求对象数 SUCCESS：同步成功对象数 FAILURE：同步失败对象数 SKIP：同步跳过对象数 SIZE：同步成功对象容量(Byte)
+     * 统计数据类型： 多类型查询用‘,’分隔； REQUEST：接收同步请求对象数 SUCCESS：同步成功对象数 FAILURE：同步失败对象数 SKIP：同步跳过对象数 SIZE：同步成功对象容量(Byte)
      */
     public static final class DataTypeEnum {
 
@@ -146,7 +146,7 @@ public class ListSyncTaskStatisticRequest {
     }
 
     /**
-     * 统计数据类型： 多类型查询用‘,’分割； REQUEST：接收同步请求对象数 SUCCESS：同步成功对象数 FAILURE：同步失败对象数 SKIP：同步跳过对象数 SIZE：同步成功对象容量(Byte)
+     * 统计数据类型： 多类型查询用‘,’分隔； REQUEST：接收同步请求对象数 SUCCESS：同步成功对象数 FAILURE：同步失败对象数 SKIP：同步跳过对象数 SIZE：同步成功对象容量(Byte)
      * @return dataType
      */
     public DataTypeEnum getDataType() {
@@ -180,7 +180,7 @@ public class ListSyncTaskStatisticRequest {
     }
 
     /**
-     * 查询开始时间
+     * 查询结束时间
      * @return endTime
      */
     public String getEndTime() {

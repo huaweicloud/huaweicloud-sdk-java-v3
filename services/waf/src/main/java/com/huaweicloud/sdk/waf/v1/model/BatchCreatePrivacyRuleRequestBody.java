@@ -24,7 +24,7 @@ public class BatchCreatePrivacyRuleRequestBody {
     private String url;
 
     /**
-     * 屏蔽字段   - Params：请求参数   - Cookie：根据Cookie区分的Web访问者   - Header：自定义HTTP首部   - Form：表单参数
+     * **参数解释：** 屏蔽字段 **约束限制：** 不涉及 **取值范围：**  - params: 请求参数  - cookie: 根据Cookie区分的Web访问者  - header: 自定义HTTP首部  - form: 表单参数  **默认取值：** 不涉及
      */
     public static final class CategoryEnum {
 
@@ -148,7 +148,7 @@ public class BatchCreatePrivacyRuleRequestBody {
     }
 
     /**
-     * 屏蔽字段   - Params：请求参数   - Cookie：根据Cookie区分的Web访问者   - Header：自定义HTTP首部   - Form：表单参数
+     * **参数解释：** 屏蔽字段 **约束限制：** 不涉及 **取值范围：**  - params: 请求参数  - cookie: 根据Cookie区分的Web访问者  - header: 自定义HTTP首部  - form: 表单参数  **默认取值：** 不涉及
      * @return category
      */
     public CategoryEnum getCategory() {

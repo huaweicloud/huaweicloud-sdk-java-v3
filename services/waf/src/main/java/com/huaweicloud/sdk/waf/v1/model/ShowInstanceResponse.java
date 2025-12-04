@@ -1,11 +1,16 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -64,20 +69,278 @@ public class ShowInstanceResponse extends SdkResponse {
 
     private List<String> securityGroupIds = null;
 
+    /**
+     * **参数解释：** 独享引擎计费状态标识，用于指示独享引擎当前的计费使用状态 **约束限制：** 不涉及 **取值范围：**  - 0：正常计费  - 1：冻结，资源和数据会保留，但租户无法再正常使用云服务  - 2：终止，资源和数据将清除 **默认取值：** 不涉及
+     */
+    public static final class StatusEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final StatusEnum NUMBER_0 = new StatusEnum(0);
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final StatusEnum NUMBER_1 = new StatusEnum(1);
+
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final StatusEnum NUMBER_2 = new StatusEnum(2);
+
+        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, StatusEnum> createStaticFields() {
+            Map<Integer, StatusEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        StatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
+        }
+
+        public static StatusEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private Integer status;
+    private StatusEnum status;
+
+    /**
+     * **参数解释：** 独享引擎运行状态标识，用于反映独享引擎当前的运行生命周期状态 **约束限制：** 不涉及 **取值范围：**  - 0：创建中  - 1：运行中  - 2：删除中  - 3：已删除  - 4：创建失败  - 5：已冻结  - 6：异常  - 7：更新中  - 8：更新失败 **默认取值：** 不涉及
+     */
+    public static final class RunStatusEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final RunStatusEnum NUMBER_0 = new RunStatusEnum(0);
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final RunStatusEnum NUMBER_1 = new RunStatusEnum(1);
+
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final RunStatusEnum NUMBER_2 = new RunStatusEnum(2);
+
+        /**
+         * Enum NUMBER_3 for value: 3
+         */
+        public static final RunStatusEnum NUMBER_3 = new RunStatusEnum(3);
+
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
+        public static final RunStatusEnum NUMBER_4 = new RunStatusEnum(4);
+
+        /**
+         * Enum NUMBER_5 for value: 5
+         */
+        public static final RunStatusEnum NUMBER_5 = new RunStatusEnum(5);
+
+        /**
+         * Enum NUMBER_6 for value: 6
+         */
+        public static final RunStatusEnum NUMBER_6 = new RunStatusEnum(6);
+
+        /**
+         * Enum NUMBER_7 for value: 7
+         */
+        public static final RunStatusEnum NUMBER_7 = new RunStatusEnum(7);
+
+        /**
+         * Enum NUMBER_8 for value: 8
+         */
+        public static final RunStatusEnum NUMBER_8 = new RunStatusEnum(8);
+
+        private static final Map<Integer, RunStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, RunStatusEnum> createStaticFields() {
+            Map<Integer, RunStatusEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            map.put(3, NUMBER_3);
+            map.put(4, NUMBER_4);
+            map.put(5, NUMBER_5);
+            map.put(6, NUMBER_6);
+            map.put(7, NUMBER_7);
+            map.put(8, NUMBER_8);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        RunStatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static RunStatusEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RunStatusEnum(value));
+        }
+
+        public static RunStatusEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof RunStatusEnum) {
+                return this.value.equals(((RunStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "run_status")
 
-    private Integer runStatus;
+    private RunStatusEnum runStatus;
+
+    /**
+     * **参数解释：** 独享引擎接入状态 **约束限制：** 不涉及 **取值范围：**  - 0: 未接入  - 1: 已接入  **默认取值：** 不涉及
+     */
+    public static final class AccessStatusEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final AccessStatusEnum NUMBER_0 = new AccessStatusEnum(0);
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final AccessStatusEnum NUMBER_1 = new AccessStatusEnum(1);
+
+        private static final Map<Integer, AccessStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, AccessStatusEnum> createStaticFields() {
+            Map<Integer, AccessStatusEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        AccessStatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AccessStatusEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AccessStatusEnum(value));
+        }
+
+        public static AccessStatusEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AccessStatusEnum) {
+                return this.value.equals(((AccessStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_status")
 
-    private Integer accessStatus;
+    private AccessStatusEnum accessStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "upgradable")
@@ -300,54 +563,54 @@ public class ShowInstanceResponse extends SdkResponse {
         this.securityGroupIds = securityGroupIds;
     }
 
-    public ShowInstanceResponse withStatus(Integer status) {
+    public ShowInstanceResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 独享引擎计费状态   - 0：正常计费   - 1：冻结,资源和数据会保留，但租户无法再正常使用云服务   - 2：终止，资源和数据将清除
+     * **参数解释：** 独享引擎计费状态标识，用于指示独享引擎当前的计费使用状态 **约束限制：** 不涉及 **取值范围：**  - 0：正常计费  - 1：冻结，资源和数据会保留，但租户无法再正常使用云服务  - 2：终止，资源和数据将清除 **默认取值：** 不涉及
      * @return status
      */
-    public Integer getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 
-    public ShowInstanceResponse withRunStatus(Integer runStatus) {
+    public ShowInstanceResponse withRunStatus(RunStatusEnum runStatus) {
         this.runStatus = runStatus;
         return this;
     }
 
     /**
-     * 独享引擎运行状态   - 0：创建中   - 1：运行中   - 2：删除中   - 3：已删除   - 4：创建失败   - 5：已冻结   - 6：异常   - 7：更新中   - 8：更新失败
+     * **参数解释：** 独享引擎运行状态标识，用于反映独享引擎当前的运行生命周期状态 **约束限制：** 不涉及 **取值范围：**  - 0：创建中  - 1：运行中  - 2：删除中  - 3：已删除  - 4：创建失败  - 5：已冻结  - 6：异常  - 7：更新中  - 8：更新失败 **默认取值：** 不涉及
      * @return runStatus
      */
-    public Integer getRunStatus() {
+    public RunStatusEnum getRunStatus() {
         return runStatus;
     }
 
-    public void setRunStatus(Integer runStatus) {
+    public void setRunStatus(RunStatusEnum runStatus) {
         this.runStatus = runStatus;
     }
 
-    public ShowInstanceResponse withAccessStatus(Integer accessStatus) {
+    public ShowInstanceResponse withAccessStatus(AccessStatusEnum accessStatus) {
         this.accessStatus = accessStatus;
         return this;
     }
 
     /**
-     * 独享引擎接入状态（0：未接入，1：已接入）
+     * **参数解释：** 独享引擎接入状态 **约束限制：** 不涉及 **取值范围：**  - 0: 未接入  - 1: 已接入  **默认取值：** 不涉及
      * @return accessStatus
      */
-    public Integer getAccessStatus() {
+    public AccessStatusEnum getAccessStatus() {
         return accessStatus;
     }
 
-    public void setAccessStatus(Integer accessStatus) {
+    public void setAccessStatus(AccessStatusEnum accessStatus) {
         this.accessStatus = accessStatus;
     }
 

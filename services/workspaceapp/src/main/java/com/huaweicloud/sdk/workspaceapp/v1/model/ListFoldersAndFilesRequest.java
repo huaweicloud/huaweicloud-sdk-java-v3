@@ -31,9 +31,9 @@ public class ListFoldersAndFilesRequest {
     private String marker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "max_keys")
+    @JsonProperty(value = "limit")
 
-    private Integer maxKeys;
+    private Integer limit;
 
     public ListFoldersAndFilesRequest withUserName(String userName) {
         this.userName = userName;
@@ -103,23 +103,23 @@ public class ListFoldersAndFilesRequest {
         this.marker = marker;
     }
 
-    public ListFoldersAndFilesRequest withMaxKeys(Integer maxKeys) {
-        this.maxKeys = maxKeys;
+    public ListFoldersAndFilesRequest withLimit(Integer limit) {
+        this.limit = limit;
         return this;
     }
 
     /**
-     * 列举文件系统的最大数目，返回的文件系统列表将是按照字典顺序的最多前 maxKeys 个，默认取值为1000。
+     * 列举文件系统的最大数目，返回的文件系统列表将是按照字典顺序的最多前 limit 个，默认取值为1000。
      * minimum: 0
      * maximum: 1000000
-     * @return maxKeys
+     * @return limit
      */
-    public Integer getMaxKeys() {
-        return maxKeys;
+    public Integer getLimit() {
+        return limit;
     }
 
-    public void setMaxKeys(Integer maxKeys) {
-        this.maxKeys = maxKeys;
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
     @Override
@@ -134,12 +134,12 @@ public class ListFoldersAndFilesRequest {
         return Objects.equals(this.userName, that.userName)
             && Objects.equals(this.cloudStorageAssignmentId, that.cloudStorageAssignmentId)
             && Objects.equals(this.folderUrl, that.folderUrl) && Objects.equals(this.marker, that.marker)
-            && Objects.equals(this.maxKeys, that.maxKeys);
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, cloudStorageAssignmentId, folderUrl, marker, maxKeys);
+        return Objects.hash(userName, cloudStorageAssignmentId, folderUrl, marker, limit);
     }
 
     @Override
@@ -150,7 +150,7 @@ public class ListFoldersAndFilesRequest {
         sb.append("    cloudStorageAssignmentId: ").append(toIndentedString(cloudStorageAssignmentId)).append("\n");
         sb.append("    folderUrl: ").append(toIndentedString(folderUrl)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
-        sb.append("    maxKeys: ").append(toIndentedString(maxKeys)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

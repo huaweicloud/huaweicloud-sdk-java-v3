@@ -53,10 +53,80 @@ public class CreateHostRequestBody {
 
     private Boolean exclusiveIp;
 
+    /**
+     * **参数解释：** 套餐付费模式标识，用于指定套餐的计费方式 **约束限制：** 不涉及 **取值范围：**  - prePaid:包周期模式  - postPaid:按需模式  **默认取值：** prePaid
+     */
+    public static final class PaidTypeEnum {
+
+        /**
+         * Enum PREPAID for value: "prePaid"
+         */
+        public static final PaidTypeEnum PREPAID = new PaidTypeEnum("prePaid");
+
+        /**
+         * Enum POSTPAID for value: "postPaid"
+         */
+        public static final PaidTypeEnum POSTPAID = new PaidTypeEnum("postPaid");
+
+        private static final Map<String, PaidTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PaidTypeEnum> createStaticFields() {
+            Map<String, PaidTypeEnum> map = new HashMap<>();
+            map.put("prePaid", PREPAID);
+            map.put("postPaid", POSTPAID);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        PaidTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PaidTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PaidTypeEnum(value));
+        }
+
+        public static PaidTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PaidTypeEnum) {
+                return this.value.equals(((PaidTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "paid_type")
 
-    private String paidType;
+    private PaidTypeEnum paidType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "proxy")
@@ -64,7 +134,7 @@ public class CreateHostRequestBody {
     private Boolean proxy;
 
     /**
-     * LB负载均衡，仅专业版和企业版支持配置负载均衡算法   - 源IP Hash：将某个IP的请求定向到同一个服务器   - 加权轮询：所有请求将按权重轮流分配给源站服务器   - Session Hash：将某个Session标识的请求定向到同一个源站服务器，请确保在域名添加完毕后配置攻击惩罚的流量标识，否则Session Hash配置不生效
+     * **参数解释：** LB负载均衡，仅专业版和企业版支持配置负载均衡算法 **约束限制：** 不涉及 **取值范围：**  - ip_hash: 源IP Hash,将某个IP的请求定向到同一个服务器  - round_robin: 加权轮询,所有请求将按权重轮流分配给源站服务器  - session_hash: 将某个Session标识的请求定向到同一个源站服务器，请确保在域名添加完毕后配置攻击惩罚的流量标识，否则Session Hash配置不生效  **默认取值：** 不涉及
      */
     public static final class LbAlgorithmEnum {
 
@@ -289,20 +359,20 @@ public class CreateHostRequestBody {
         this.exclusiveIp = exclusiveIp;
     }
 
-    public CreateHostRequestBody withPaidType(String paidType) {
+    public CreateHostRequestBody withPaidType(PaidTypeEnum paidType) {
         this.paidType = paidType;
         return this;
     }
 
     /**
-     * 套餐付费模式，默认值为prePaid。prePaid：包周期模式；postPaid：按需模式。
+     * **参数解释：** 套餐付费模式标识，用于指定套餐的计费方式 **约束限制：** 不涉及 **取值范围：**  - prePaid:包周期模式  - postPaid:按需模式  **默认取值：** prePaid
      * @return paidType
      */
-    public String getPaidType() {
+    public PaidTypeEnum getPaidType() {
         return paidType;
     }
 
-    public void setPaidType(String paidType) {
+    public void setPaidType(PaidTypeEnum paidType) {
         this.paidType = paidType;
     }
 
@@ -329,7 +399,7 @@ public class CreateHostRequestBody {
     }
 
     /**
-     * LB负载均衡，仅专业版和企业版支持配置负载均衡算法   - 源IP Hash：将某个IP的请求定向到同一个服务器   - 加权轮询：所有请求将按权重轮流分配给源站服务器   - Session Hash：将某个Session标识的请求定向到同一个源站服务器，请确保在域名添加完毕后配置攻击惩罚的流量标识，否则Session Hash配置不生效
+     * **参数解释：** LB负载均衡，仅专业版和企业版支持配置负载均衡算法 **约束限制：** 不涉及 **取值范围：**  - ip_hash: 源IP Hash,将某个IP的请求定向到同一个服务器  - round_robin: 加权轮询,所有请求将按权重轮流分配给源站服务器  - session_hash: 将某个Session标识的请求定向到同一个源站服务器，请确保在域名添加完毕后配置攻击惩罚的流量标识，否则Session Hash配置不生效  **默认取值：** 不涉及
      * @return lbAlgorithm
      */
     public LbAlgorithmEnum getLbAlgorithm() {

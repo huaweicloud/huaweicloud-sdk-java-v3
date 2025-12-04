@@ -14,27 +14,29 @@ public class StartTaskRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
 
-    private String taskId;
+    private Long taskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private StartTaskReq body;
 
-    public StartTaskRequest withTaskId(String taskId) {
+    public StartTaskRequest withTaskId(Long taskId) {
         this.taskId = taskId;
         return this;
     }
 
     /**
      * 迁移任务ID。
+     * minimum: 0
+     * maximum: 999999999999999
      * @return taskId
      */
-    public String getTaskId() {
+    public Long getTaskId() {
         return taskId;
     }
 
-    public void setTaskId(String taskId) {
+    public void setTaskId(Long taskId) {
         this.taskId = taskId;
     }
 

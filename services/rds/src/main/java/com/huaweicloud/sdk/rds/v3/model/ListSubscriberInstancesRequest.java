@@ -82,7 +82,7 @@ public class ListSubscriberInstancesRequest {
     }
 
     /**
-     * 实例ID
+     * 订阅实例ID
      * @return subscriberInstanceId
      */
     public String getSubscriberInstanceId() {
@@ -99,7 +99,7 @@ public class ListSubscriberInstancesRequest {
     }
 
     /**
-     * 实例名
+     * 订阅实例名
      * @return subscriberInstanceName
      */
     public String getSubscriberInstanceName() {

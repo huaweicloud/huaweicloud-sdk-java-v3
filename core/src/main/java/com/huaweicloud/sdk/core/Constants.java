@@ -142,6 +142,10 @@ public final class Constants {
 
     public static final String IAM_ENDPOINT_ENV_NAME = "HUAWEICLOUD_SDK_IAM_ENDPOINT";
 
+    public static final String STS_ENDPOINT_ENV_NAME = "HUAWEICLOUD_SDK_STS_ENDPOINT";
+
+    public static final String STS_ENDPOINT_PROPERTY_NAME = "com.huaweicloud.sdk.sts.endpoint";
+
     public static final String DEFAULT_ENDPOINT_REG =
             "^[a-z][a-z0-9-]+(\\.[a-z]{2,}-[a-z]+-\\d{1,2})?\\.(my)?(huaweicloud|myhwclouds).(com|cn)";
 
@@ -151,8 +155,7 @@ public final class Constants {
 
     public static class ErrorMessage {
         public static final String NO_DOMAIN_ID_FOUND = "Failed to get domain id automatically," +
-                " please confirm that you have 'iam:users:getUser' permission," +
-                " or set domain id manually:" +
+                " please set domain id manually:" +
                 " new GlobalCredentials().withAk(ak).withSk(sk).withDomainId(domainId);";
 
         public static final String NO_PROJECT_ID_FOUND = "Failed to get project id automatically," +

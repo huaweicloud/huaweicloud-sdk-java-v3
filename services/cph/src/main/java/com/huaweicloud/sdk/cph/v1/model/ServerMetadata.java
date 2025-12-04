@@ -31,7 +31,7 @@ public class ServerMetadata {
     }
 
     /**
-     * 订单ID，不超过64个字节。
+     * 产品ID，不超过64个字节。
      * @return productId
      */
     public String getProductId() {
@@ -48,7 +48,7 @@ public class ServerMetadata {
     }
 
     /**
-     * 产品ID，不超过64个字节。
+     * 订单ID，不超过64个字节。
      * @return orderId
      */
     public String getOrderId() {
@@ -65,7 +65,7 @@ public class ServerMetadata {
     }
 
     /**
-     * 计费类型。 [- 0：包周期](tag:hws,hws_hk,cmcc) [- 1：按需](tag:fcs)
+     * 计费类型。 [- 0：包周期](tag:hws,hws_hk,cmcc,ctc) [- 1：按需](tag:fcs)
      * minimum: 0
      * maximum: 1
      * @return chargingMode

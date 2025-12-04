@@ -1,13 +1,13 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-import com.huaweicloud.sdk.core.SdkResponse;
+import com.huaweicloud.sdk.core.SdkStreamResponse;
 
 import java.util.Objects;
 
 /**
  * Response Object
  */
-public class DownloadAuditAgentNewResponse extends SdkResponse {
+public class DownloadAuditAgentNewResponse extends SdkStreamResponse {
 
     @Override
     public boolean equals(java.lang.Object obj) {

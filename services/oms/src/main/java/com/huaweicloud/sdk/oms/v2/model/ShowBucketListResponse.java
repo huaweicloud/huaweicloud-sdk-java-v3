@@ -41,7 +41,7 @@ public class ShowBucketListResponse extends SdkResponse {
     }
 
     /**
-     * Get body
+     * 桶名列表
      * @return body
      */
     public List<String> getBody() {

@@ -39,7 +39,7 @@ public class DnsDomain {
     }
 
     /**
-     * Get id
+     * dns-id
      * @return id
      */
     public String getId() {
@@ -56,7 +56,7 @@ public class DnsDomain {
     }
 
     /**
-     * Get domain
+     * 域名
      * @return domain
      */
     public String getDomain() {
@@ -89,7 +89,7 @@ public class DnsDomain {
     }
 
     /**
-     * Get servers
+     * dns服务信息
      * @return servers
      */
     public List<Server> getServers() {
@@ -106,7 +106,7 @@ public class DnsDomain {
     }
 
     /**
-     * Get protectPort
+     * 防护端口
      * @return protectPort
      */
     public String getProtectPort() {

@@ -53,6 +53,8 @@ import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteConsumerGroupOffsetsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteConsumerGroupOffsetsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceConsumerGroupRequest;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceConsumerGroupResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaMessageRequest;
@@ -61,10 +63,16 @@ import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaTopicQuotaRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaTopicQuotaResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteScheduledTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteScheduledTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteUserRequest;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteUserResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListAvailableZonesResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListBackgroundTasksRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListBackgroundTasksResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListConfigFeaturesRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListConfigFeaturesResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListConnectorTasksRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListConnectorTasksResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListEngineProductsRequest;
@@ -85,18 +93,28 @@ import com.huaweicloud.sdk.kafka.v2.model.ListInstancesRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListInstancesResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListMessageDiagnosisReportsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListMessageDiagnosisReportsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListObsBucketsRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListObsBucketsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListProductsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListProductsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListScheduledTasksRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListScheduledTasksResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicPartitionsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicPartitionsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicProducersRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicProducersResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListUserPoliciesRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListUserPoliciesResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyConnectorTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyInstanceConfigsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyInstanceConfigsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ModifyKafkaPublicIpAccessSwitchRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ModifyKafkaPublicIpAccessSwitchResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyKafkaTopicQuotaRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyKafkaTopicQuotaResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ModifyRecyclePolicyRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ModifyRecyclePolicyResponse;
 import com.huaweicloud.sdk.kafka.v2.model.PauseConnectorTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.PauseConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ResetManagerPasswordRequest;
@@ -121,16 +139,24 @@ import com.huaweicloud.sdk.kafka.v2.model.RestartManagerRequest;
 import com.huaweicloud.sdk.kafka.v2.model.RestartManagerResponse;
 import com.huaweicloud.sdk.kafka.v2.model.RestartSmartConnectorTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.RestartSmartConnectorTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.RestoreRecycleInstanceRequest;
+import com.huaweicloud.sdk.kafka.v2.model.RestoreRecycleInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ResumeConnectorTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResumeConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.SendKafkaMessageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.SendKafkaMessageResponse;
+import com.huaweicloud.sdk.kafka.v2.model.SetUserPoliciesRequest;
+import com.huaweicloud.sdk.kafka.v2.model.SetUserPoliciesResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowBackgroundTaskProgressRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowBackgroundTaskProgressResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowBackgroundTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowBackgroundTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowCesHierarchyRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowCesHierarchyResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowClusterRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowClusterResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowConnectorResourceInfoRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowConnectorResourceInfoResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowConnectorTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowCoordinatorsRequest;
@@ -153,14 +179,22 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceTopicDetailRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceTopicDetailResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceUsersRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceUsersResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaClusterRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaClusterResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaInstanceExtendProductInfoRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaInstanceExtendProductInfoResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaProductCoresRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaProductCoresResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaProjectTagsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaProjectTagsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaRebalanceLogRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaRebalanceLogResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaScalePreCheckInfoRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaScalePreCheckInfoResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTagsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTagsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTopicDetailRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTopicDetailResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTopicPartitionDiskusageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTopicPartitionDiskusageResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTopicQuotaRequest;
@@ -181,8 +215,16 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowRecycleInstancesRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowRecycleInstancesResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowSpecConvertProductRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowSpecConvertProductResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowUpgradeInstanceVersionRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowUpgradeInstanceVersionResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowVolumeExpandConfigRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowVolumeExpandConfigResponse;
 import com.huaweicloud.sdk.kafka.v2.model.StopKafkaRebalanceLogTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.StopKafkaRebalanceLogTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceAutoCreateTopicRequest;
@@ -203,10 +245,16 @@ import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaPortProtocolRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaPortProtocolResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaUserClientQuotaTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaUserClientQuotaTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateScheduledTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateScheduledTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicReplicaRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicReplicaResponse;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateVolumeExpansionConfigRequest;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateVolumeExpansionConfigResponse;
+import com.huaweicloud.sdk.kafka.v2.model.UpgradeInstanceRequest;
+import com.huaweicloud.sdk.kafka.v2.model.UpgradeInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ValidateConnectorConnectivityRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ValidateConnectorConnectivityResponse;
 
@@ -507,7 +555,7 @@ public class KafkaAsyncClient {
     /**
      * 创建用户
      *
-     * 创建Kafka实例的用户，用户可连接开启SASL的Kafka实例。 [ 2023年7月15日前创建的Kafka实例，一个实例最多创建20个用户。2023年7月15日及以后创建的Kafka实例，一个实例最多创建500个用户。](tag:hws,hws_hk)
+     * 创建Kafka实例的用户，用户可连接开启SASL的Kafka实例。 [ 2023年7月15日前创建的Kafka实例，一个实例最多创建20个用户。2023年7月15日及以后创建的Kafka实例，一个实例最多创建500个用户。](tag:hws,hws_hk) [一个实例最多创建500个用户。](tag:fcs,ax,hcs)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -521,7 +569,7 @@ public class KafkaAsyncClient {
     /**
      * 创建用户
      *
-     * 创建Kafka实例的用户，用户可连接开启SASL的Kafka实例。 [ 2023年7月15日前创建的Kafka实例，一个实例最多创建20个用户。2023年7月15日及以后创建的Kafka实例，一个实例最多创建500个用户。](tag:hws,hws_hk)
+     * 创建Kafka实例的用户，用户可连接开启SASL的Kafka实例。 [ 2023年7月15日前创建的Kafka实例，一个实例最多创建20个用户。2023年7月15日及以后创建的Kafka实例，一个实例最多创建500个用户。](tag:hws,hws_hk) [一个实例最多创建500个用户。](tag:fcs,ax,hcs)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -748,7 +796,7 @@ public class KafkaAsyncClient {
      *
      * 创建实例。
      * 
-     * [该接口支持创建按需和包周期两种计费方式的实例。](tag:hws,hws_eu,hws_hk,ctc,cmcc)
+     * [该接口支持创建按需和包周期两种计费方式的实例。](tag:hws,hws_eu,hws_hk,ctc,cmcc,ax)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -765,7 +813,7 @@ public class KafkaAsyncClient {
      *
      * 创建实例。
      * 
-     * [该接口支持创建按需和包周期两种计费方式的实例。](tag:hws,hws_eu,hws_hk,ctc,cmcc)
+     * [该接口支持创建按需和包周期两种计费方式的实例。](tag:hws,hws_eu,hws_hk,ctc,cmcc,ax)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -897,6 +945,36 @@ public class KafkaAsyncClient {
     }
 
     /**
+     * 删除指定消费组
+     *
+     * 删除指定消费组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInstanceConsumerGroupRequest 请求对象
+     * @return CompletableFuture<DeleteInstanceConsumerGroupResponse>
+     */
+    public CompletableFuture<DeleteInstanceConsumerGroupResponse> deleteInstanceConsumerGroupAsync(
+        DeleteInstanceConsumerGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.deleteInstanceConsumerGroup);
+    }
+
+    /**
+     * 删除指定消费组
+     *
+     * 删除指定消费组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInstanceConsumerGroupRequest 请求对象
+     * @return AsyncInvoker<DeleteInstanceConsumerGroupRequest, DeleteInstanceConsumerGroupResponse>
+     */
+    public AsyncInvoker<DeleteInstanceConsumerGroupRequest, DeleteInstanceConsumerGroupResponse> deleteInstanceConsumerGroupAsyncInvoker(
+        DeleteInstanceConsumerGroupRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.deleteInstanceConsumerGroup, hcClient);
+    }
+
+    /**
      * Kafka删除消息
      *
      * Kafka删除消息。
@@ -986,6 +1064,63 @@ public class KafkaAsyncClient {
     }
 
     /**
+     * 删除指定的定时任务
+     *
+     * 删除指定的定时任务。仅当定时任务处于执行成功或已取消状态时，方可执行删除操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteScheduledTaskRequest 请求对象
+     * @return CompletableFuture<DeleteScheduledTaskResponse>
+     */
+    public CompletableFuture<DeleteScheduledTaskResponse> deleteScheduledTaskAsync(DeleteScheduledTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.deleteScheduledTask);
+    }
+
+    /**
+     * 删除指定的定时任务
+     *
+     * 删除指定的定时任务。仅当定时任务处于执行成功或已取消状态时，方可执行删除操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteScheduledTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteScheduledTaskRequest, DeleteScheduledTaskResponse>
+     */
+    public AsyncInvoker<DeleteScheduledTaskRequest, DeleteScheduledTaskResponse> deleteScheduledTaskAsyncInvoker(
+        DeleteScheduledTaskRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.deleteScheduledTask, hcClient);
+    }
+
+    /**
+     * 删除指定用户
+     *
+     * 删除指定用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteUserRequest 请求对象
+     * @return CompletableFuture<DeleteUserResponse>
+     */
+    public CompletableFuture<DeleteUserResponse> deleteUserAsync(DeleteUserRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.deleteUser);
+    }
+
+    /**
+     * 删除指定用户
+     *
+     * 删除指定用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteUserRequest 请求对象
+     * @return AsyncInvoker<DeleteUserRequest, DeleteUserResponse>
+     */
+    public AsyncInvoker<DeleteUserRequest, DeleteUserResponse> deleteUserAsyncInvoker(DeleteUserRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.deleteUser, hcClient);
+    }
+
+    /**
      * 查询可用区信息
      *
      * 在创建实例时，需要配置实例所在的可用区ID，可通过该接口查询可用区的ID。
@@ -1041,6 +1176,35 @@ public class KafkaAsyncClient {
     public AsyncInvoker<ListBackgroundTasksRequest, ListBackgroundTasksResponse> listBackgroundTasksAsyncInvoker(
         ListBackgroundTasksRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.listBackgroundTasks, hcClient);
+    }
+
+    /**
+     * 查询特性开关列表
+     *
+     * 获取特性开关列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConfigFeaturesRequest 请求对象
+     * @return CompletableFuture<ListConfigFeaturesResponse>
+     */
+    public CompletableFuture<ListConfigFeaturesResponse> listConfigFeaturesAsync(ListConfigFeaturesRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.listConfigFeatures);
+    }
+
+    /**
+     * 查询特性开关列表
+     *
+     * 获取特性开关列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConfigFeaturesRequest 请求对象
+     * @return AsyncInvoker<ListConfigFeaturesRequest, ListConfigFeaturesResponse>
+     */
+    public AsyncInvoker<ListConfigFeaturesRequest, ListConfigFeaturesResponse> listConfigFeaturesAsyncInvoker(
+        ListConfigFeaturesRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.listConfigFeatures, hcClient);
     }
 
     /**
@@ -1352,6 +1516,35 @@ public class KafkaAsyncClient {
     }
 
     /**
+     * 查询实例的定时任务列表
+     *
+     * 查询实例的定时任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduledTasksRequest 请求对象
+     * @return CompletableFuture<ListScheduledTasksResponse>
+     */
+    public CompletableFuture<ListScheduledTasksResponse> listScheduledTasksAsync(ListScheduledTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.listScheduledTasks);
+    }
+
+    /**
+     * 查询实例的定时任务列表
+     *
+     * 查询实例的定时任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduledTasksRequest 请求对象
+     * @return AsyncInvoker<ListScheduledTasksRequest, ListScheduledTasksResponse>
+     */
+    public AsyncInvoker<ListScheduledTasksRequest, ListScheduledTasksResponse> listScheduledTasksAsyncInvoker(
+        ListScheduledTasksRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.listScheduledTasks, hcClient);
+    }
+
+    /**
      * 查询Topic的分区列表
      *
      * 查询Topic的分区列表
@@ -1410,6 +1603,39 @@ public class KafkaAsyncClient {
     }
 
     /**
+     * 查询用户策略
+     *
+     * 查询用户策略。
+     * 
+     * Kafka实例开启SASL功能后，才支持查询用户策略功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserPoliciesRequest 请求对象
+     * @return CompletableFuture<ListUserPoliciesResponse>
+     */
+    public CompletableFuture<ListUserPoliciesResponse> listUserPoliciesAsync(ListUserPoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.listUserPolicies);
+    }
+
+    /**
+     * 查询用户策略
+     *
+     * 查询用户策略。
+     * 
+     * Kafka实例开启SASL功能后，才支持查询用户策略功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserPoliciesRequest 请求对象
+     * @return AsyncInvoker<ListUserPoliciesRequest, ListUserPoliciesResponse>
+     */
+    public AsyncInvoker<ListUserPoliciesRequest, ListUserPoliciesResponse> listUserPoliciesAsyncInvoker(
+        ListUserPoliciesRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.listUserPolicies, hcClient);
+    }
+
+    /**
      * 修改实例配置
      *
      * 修改实例配置。
@@ -1440,6 +1666,36 @@ public class KafkaAsyncClient {
     }
 
     /**
+     * 开启或者关闭Kafka实例公网访问功能
+     *
+     * 开启或者关闭Kafka实例公网访问功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyKafkaPublicIpAccessSwitchRequest 请求对象
+     * @return CompletableFuture<ModifyKafkaPublicIpAccessSwitchResponse>
+     */
+    public CompletableFuture<ModifyKafkaPublicIpAccessSwitchResponse> modifyKafkaPublicIpAccessSwitchAsync(
+        ModifyKafkaPublicIpAccessSwitchRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.modifyKafkaPublicIpAccessSwitch);
+    }
+
+    /**
+     * 开启或者关闭Kafka实例公网访问功能
+     *
+     * 开启或者关闭Kafka实例公网访问功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyKafkaPublicIpAccessSwitchRequest 请求对象
+     * @return AsyncInvoker<ModifyKafkaPublicIpAccessSwitchRequest, ModifyKafkaPublicIpAccessSwitchResponse>
+     */
+    public AsyncInvoker<ModifyKafkaPublicIpAccessSwitchRequest, ModifyKafkaPublicIpAccessSwitchResponse> modifyKafkaPublicIpAccessSwitchAsyncInvoker(
+        ModifyKafkaPublicIpAccessSwitchRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.modifyKafkaPublicIpAccessSwitch, hcClient);
+    }
+
+    /**
      * 修改Topic流控配置
      *
      * 该接口用于向Kafka实例提交修改Topic级别的流控任务，若成功则返回流控任务的job_id。
@@ -1467,6 +1723,35 @@ public class KafkaAsyncClient {
     public AsyncInvoker<ModifyKafkaTopicQuotaRequest, ModifyKafkaTopicQuotaResponse> modifyKafkaTopicQuotaAsyncInvoker(
         ModifyKafkaTopicQuotaRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.modifyKafkaTopicQuota, hcClient);
+    }
+
+    /**
+     * 更新回收站策略
+     *
+     * 更新回收站策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyRecyclePolicyRequest 请求对象
+     * @return CompletableFuture<ModifyRecyclePolicyResponse>
+     */
+    public CompletableFuture<ModifyRecyclePolicyResponse> modifyRecyclePolicyAsync(ModifyRecyclePolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.modifyRecyclePolicy);
+    }
+
+    /**
+     * 更新回收站策略
+     *
+     * 更新回收站策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyRecyclePolicyRequest 请求对象
+     * @return AsyncInvoker<ModifyRecyclePolicyRequest, ModifyRecyclePolicyResponse>
+     */
+    public AsyncInvoker<ModifyRecyclePolicyRequest, ModifyRecyclePolicyResponse> modifyRecyclePolicyAsyncInvoker(
+        ModifyRecyclePolicyRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.modifyRecyclePolicy, hcClient);
     }
 
     /**
@@ -1686,7 +1971,7 @@ public class KafkaAsyncClient {
     /**
      * 实例扩容
      *
-     * 实例规格变更。[当前通过调用API，只支持按需实例进行实例扩容。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
+     * 实例规格变更。[当前通过调用API，只支持按需实例进行实例扩容。](tag:hws,hws_hk,ctc,cmcc,hws_eu,ax)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1700,7 +1985,7 @@ public class KafkaAsyncClient {
     /**
      * 实例扩容
      *
-     * 实例规格变更。[当前通过调用API，只支持按需实例进行实例扩容。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
+     * 实例规格变更。[当前通过调用API，只支持按需实例进行实例扩容。](tag:hws,hws_hk,ctc,cmcc,hws_eu,ax)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1742,9 +2027,39 @@ public class KafkaAsyncClient {
     }
 
     /**
+     * 恢复回收站实例
+     *
+     * 恢复回收站实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreRecycleInstanceRequest 请求对象
+     * @return CompletableFuture<RestoreRecycleInstanceResponse>
+     */
+    public CompletableFuture<RestoreRecycleInstanceResponse> restoreRecycleInstanceAsync(
+        RestoreRecycleInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.restoreRecycleInstance);
+    }
+
+    /**
+     * 恢复回收站实例
+     *
+     * 恢复回收站实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreRecycleInstanceRequest 请求对象
+     * @return AsyncInvoker<RestoreRecycleInstanceRequest, RestoreRecycleInstanceResponse>
+     */
+    public AsyncInvoker<RestoreRecycleInstanceRequest, RestoreRecycleInstanceResponse> restoreRecycleInstanceAsyncInvoker(
+        RestoreRecycleInstanceRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.restoreRecycleInstance, hcClient);
+    }
+
+    /**
      * Kafka生产消息
      *
-     * 在控制台发送指定消息到Kafka实例
+     * 在控制台发送指定消息到Kafka实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1758,7 +2073,7 @@ public class KafkaAsyncClient {
     /**
      * Kafka生产消息
      *
-     * 在控制台发送指定消息到Kafka实例
+     * 在控制台发送指定消息到Kafka实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1768,6 +2083,39 @@ public class KafkaAsyncClient {
     public AsyncInvoker<SendKafkaMessageRequest, SendKafkaMessageResponse> sendKafkaMessageAsyncInvoker(
         SendKafkaMessageRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.sendKafkaMessage, hcClient);
+    }
+
+    /**
+     * 创建/删除用户策略
+     *
+     * 创建/删除用户策略。
+     * 
+     * Kafka实例开启SASL功能后，才支持创建/删除用户策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetUserPoliciesRequest 请求对象
+     * @return CompletableFuture<SetUserPoliciesResponse>
+     */
+    public CompletableFuture<SetUserPoliciesResponse> setUserPoliciesAsync(SetUserPoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.setUserPolicies);
+    }
+
+    /**
+     * 创建/删除用户策略
+     *
+     * 创建/删除用户策略。
+     * 
+     * Kafka实例开启SASL功能后，才支持创建/删除用户策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetUserPoliciesRequest 请求对象
+     * @return AsyncInvoker<SetUserPoliciesRequest, SetUserPoliciesResponse>
+     */
+    public AsyncInvoker<SetUserPoliciesRequest, SetUserPoliciesResponse> setUserPoliciesAsyncInvoker(
+        SetUserPoliciesRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.setUserPolicies, hcClient);
     }
 
     /**
@@ -1797,6 +2145,36 @@ public class KafkaAsyncClient {
     public AsyncInvoker<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> showBackgroundTaskAsyncInvoker(
         ShowBackgroundTaskRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.showBackgroundTask, hcClient);
+    }
+
+    /**
+     * 查询后台任务中的指定实例的变更进度
+     *
+     * 查询后台任务中的指定实例的变更进度。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBackgroundTaskProgressRequest 请求对象
+     * @return CompletableFuture<ShowBackgroundTaskProgressResponse>
+     */
+    public CompletableFuture<ShowBackgroundTaskProgressResponse> showBackgroundTaskProgressAsync(
+        ShowBackgroundTaskProgressRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.showBackgroundTaskProgress);
+    }
+
+    /**
+     * 查询后台任务中的指定实例的变更进度
+     *
+     * 查询后台任务中的指定实例的变更进度。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBackgroundTaskProgressRequest 请求对象
+     * @return AsyncInvoker<ShowBackgroundTaskProgressRequest, ShowBackgroundTaskProgressResponse>
+     */
+    public AsyncInvoker<ShowBackgroundTaskProgressRequest, ShowBackgroundTaskProgressResponse> showBackgroundTaskProgressAsyncInvoker(
+        ShowBackgroundTaskProgressRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.showBackgroundTaskProgress, hcClient);
     }
 
     /**
@@ -2157,6 +2535,35 @@ public class KafkaAsyncClient {
     }
 
     /**
+     * 查询Kafka集群信息
+     *
+     * 查询Kafka集群信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKafkaClusterRequest 请求对象
+     * @return CompletableFuture<ShowKafkaClusterResponse>
+     */
+    public CompletableFuture<ShowKafkaClusterResponse> showKafkaClusterAsync(ShowKafkaClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.showKafkaCluster);
+    }
+
+    /**
+     * 查询Kafka集群信息
+     *
+     * 查询Kafka集群信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKafkaClusterRequest 请求对象
+     * @return AsyncInvoker<ShowKafkaClusterRequest, ShowKafkaClusterResponse>
+     */
+    public AsyncInvoker<ShowKafkaClusterRequest, ShowKafkaClusterResponse> showKafkaClusterAsyncInvoker(
+        ShowKafkaClusterRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.showKafkaCluster, hcClient);
+    }
+
+    /**
      * 查询实例的扩容规格列表
      *
      * 查询实例的扩容规格列表。
@@ -2184,6 +2591,36 @@ public class KafkaAsyncClient {
     public AsyncInvoker<ShowKafkaInstanceExtendProductInfoRequest, ShowKafkaInstanceExtendProductInfoResponse> showKafkaInstanceExtendProductInfoAsyncInvoker(
         ShowKafkaInstanceExtendProductInfoRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.showKafkaInstanceExtendProductInfo, hcClient);
+    }
+
+    /**
+     * 查询Kafka产品规格核数
+     *
+     * 查询Kafka产品规格核数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKafkaProductCoresRequest 请求对象
+     * @return CompletableFuture<ShowKafkaProductCoresResponse>
+     */
+    public CompletableFuture<ShowKafkaProductCoresResponse> showKafkaProductCoresAsync(
+        ShowKafkaProductCoresRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.showKafkaProductCores);
+    }
+
+    /**
+     * 查询Kafka产品规格核数
+     *
+     * 查询Kafka产品规格核数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKafkaProductCoresRequest 请求对象
+     * @return AsyncInvoker<ShowKafkaProductCoresRequest, ShowKafkaProductCoresResponse>
+     */
+    public AsyncInvoker<ShowKafkaProductCoresRequest, ShowKafkaProductCoresResponse> showKafkaProductCoresAsyncInvoker(
+        ShowKafkaProductCoresRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.showKafkaProductCores, hcClient);
     }
 
     /**
@@ -2247,6 +2684,36 @@ public class KafkaAsyncClient {
     }
 
     /**
+     * 获取Kafka实例扩容前置检查信息
+     *
+     * 获取Kafka实例扩容前置检查信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKafkaScalePreCheckInfoRequest 请求对象
+     * @return CompletableFuture<ShowKafkaScalePreCheckInfoResponse>
+     */
+    public CompletableFuture<ShowKafkaScalePreCheckInfoResponse> showKafkaScalePreCheckInfoAsync(
+        ShowKafkaScalePreCheckInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.showKafkaScalePreCheckInfo);
+    }
+
+    /**
+     * 获取Kafka实例扩容前置检查信息
+     *
+     * 获取Kafka实例扩容前置检查信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKafkaScalePreCheckInfoRequest 请求对象
+     * @return AsyncInvoker<ShowKafkaScalePreCheckInfoRequest, ShowKafkaScalePreCheckInfoResponse>
+     */
+    public AsyncInvoker<ShowKafkaScalePreCheckInfoRequest, ShowKafkaScalePreCheckInfoResponse> showKafkaScalePreCheckInfoAsyncInvoker(
+        ShowKafkaScalePreCheckInfoRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.showKafkaScalePreCheckInfo, hcClient);
+    }
+
+    /**
      * 查询实例标签
      *
      * 查询实例标签。
@@ -2276,9 +2743,39 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 查询topic的磁盘存储情况
+     * 获取Kafka Topic详细信息
      *
-     * 查询topic在Broker上磁盘占用情况。
+     * 获取Kafka Topic详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKafkaTopicDetailRequest 请求对象
+     * @return CompletableFuture<ShowKafkaTopicDetailResponse>
+     */
+    public CompletableFuture<ShowKafkaTopicDetailResponse> showKafkaTopicDetailAsync(
+        ShowKafkaTopicDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.showKafkaTopicDetail);
+    }
+
+    /**
+     * 获取Kafka Topic详细信息
+     *
+     * 获取Kafka Topic详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKafkaTopicDetailRequest 请求对象
+     * @return AsyncInvoker<ShowKafkaTopicDetailRequest, ShowKafkaTopicDetailResponse>
+     */
+    public AsyncInvoker<ShowKafkaTopicDetailRequest, ShowKafkaTopicDetailResponse> showKafkaTopicDetailAsyncInvoker(
+        ShowKafkaTopicDetailRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.showKafkaTopicDetail, hcClient);
+    }
+
+    /**
+     * 查询Topic的磁盘存储情况
+     *
+     * 查询Topic在Broker上磁盘占用情况。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2291,9 +2788,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 查询topic的磁盘存储情况
+     * 查询Topic的磁盘存储情况
      *
-     * 查询topic在Broker上磁盘占用情况。
+     * 查询Topic在Broker上磁盘占用情况。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2571,6 +3068,66 @@ public class KafkaAsyncClient {
     }
 
     /**
+     * 查询回收站实例列表
+     *
+     * 查询回收站实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecycleInstancesRequest 请求对象
+     * @return CompletableFuture<ShowRecycleInstancesResponse>
+     */
+    public CompletableFuture<ShowRecycleInstancesResponse> showRecycleInstancesAsync(
+        ShowRecycleInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.showRecycleInstances);
+    }
+
+    /**
+     * 查询回收站实例列表
+     *
+     * 查询回收站实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecycleInstancesRequest 请求对象
+     * @return AsyncInvoker<ShowRecycleInstancesRequest, ShowRecycleInstancesResponse>
+     */
+    public AsyncInvoker<ShowRecycleInstancesRequest, ShowRecycleInstancesResponse> showRecycleInstancesAsyncInvoker(
+        ShowRecycleInstancesRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.showRecycleInstances, hcClient);
+    }
+
+    /**
+     * 查询旧规格升级新规格映射
+     *
+     * 查询旧规格实例可升级的新规格信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSpecConvertProductRequest 请求对象
+     * @return CompletableFuture<ShowSpecConvertProductResponse>
+     */
+    public CompletableFuture<ShowSpecConvertProductResponse> showSpecConvertProductAsync(
+        ShowSpecConvertProductRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.showSpecConvertProduct);
+    }
+
+    /**
+     * 查询旧规格升级新规格映射
+     *
+     * 查询旧规格实例可升级的新规格信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSpecConvertProductRequest 请求对象
+     * @return AsyncInvoker<ShowSpecConvertProductRequest, ShowSpecConvertProductResponse>
+     */
+    public AsyncInvoker<ShowSpecConvertProductRequest, ShowSpecConvertProductResponse> showSpecConvertProductAsyncInvoker(
+        ShowSpecConvertProductRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.showSpecConvertProduct, hcClient);
+    }
+
+    /**
      * 查询用户权限
      *
      * 查询用户权限。
@@ -2602,6 +3159,66 @@ public class KafkaAsyncClient {
     public AsyncInvoker<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse> showTopicAccessPolicyAsyncInvoker(
         ShowTopicAccessPolicyRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.showTopicAccessPolicy, hcClient);
+    }
+
+    /**
+     * 查询Kafka实例版本信息
+     *
+     * 查询Kafka实例版本信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowUpgradeInstanceVersionRequest 请求对象
+     * @return CompletableFuture<ShowUpgradeInstanceVersionResponse>
+     */
+    public CompletableFuture<ShowUpgradeInstanceVersionResponse> showUpgradeInstanceVersionAsync(
+        ShowUpgradeInstanceVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.showUpgradeInstanceVersion);
+    }
+
+    /**
+     * 查询Kafka实例版本信息
+     *
+     * 查询Kafka实例版本信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowUpgradeInstanceVersionRequest 请求对象
+     * @return AsyncInvoker<ShowUpgradeInstanceVersionRequest, ShowUpgradeInstanceVersionResponse>
+     */
+    public AsyncInvoker<ShowUpgradeInstanceVersionRequest, ShowUpgradeInstanceVersionResponse> showUpgradeInstanceVersionAsyncInvoker(
+        ShowUpgradeInstanceVersionRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.showUpgradeInstanceVersion, hcClient);
+    }
+
+    /**
+     * 查询磁盘自动扩容配置
+     *
+     * 查询磁盘自动扩容配置，包括磁盘自动扩容是否开启，以及开启后的扩容阈值、扩容步长、扩容上限信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVolumeExpandConfigRequest 请求对象
+     * @return CompletableFuture<ShowVolumeExpandConfigResponse>
+     */
+    public CompletableFuture<ShowVolumeExpandConfigResponse> showVolumeExpandConfigAsync(
+        ShowVolumeExpandConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.showVolumeExpandConfig);
+    }
+
+    /**
+     * 查询磁盘自动扩容配置
+     *
+     * 查询磁盘自动扩容配置，包括磁盘自动扩容是否开启，以及开启后的扩容阈值、扩容步长、扩容上限信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVolumeExpandConfigRequest 请求对象
+     * @return AsyncInvoker<ShowVolumeExpandConfigRequest, ShowVolumeExpandConfigResponse>
+     */
+    public AsyncInvoker<ShowVolumeExpandConfigRequest, ShowVolumeExpandConfigResponse> showVolumeExpandConfigAsyncInvoker(
+        ShowVolumeExpandConfigRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.showVolumeExpandConfig, hcClient);
     }
 
     /**
@@ -2901,6 +3518,35 @@ public class KafkaAsyncClient {
     }
 
     /**
+     * 修改指定的定时任务
+     *
+     * 修改指定的定时任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateScheduledTaskRequest 请求对象
+     * @return CompletableFuture<UpdateScheduledTaskResponse>
+     */
+    public CompletableFuture<UpdateScheduledTaskResponse> updateScheduledTaskAsync(UpdateScheduledTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.updateScheduledTask);
+    }
+
+    /**
+     * 修改指定的定时任务
+     *
+     * 修改指定的定时任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateScheduledTaskRequest 请求对象
+     * @return AsyncInvoker<UpdateScheduledTaskRequest, UpdateScheduledTaskResponse>
+     */
+    public AsyncInvoker<UpdateScheduledTaskRequest, UpdateScheduledTaskResponse> updateScheduledTaskAsyncInvoker(
+        UpdateScheduledTaskRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.updateScheduledTask, hcClient);
+    }
+
+    /**
      * 设置用户权限
      *
      * 设置用户权限。
@@ -2964,11 +3610,70 @@ public class KafkaAsyncClient {
     }
 
     /**
+     * 修改磁盘自动扩容配置
+     *
+     * 该接口用于修改磁盘自动扩容配置，包含磁盘自动扩容是否开启、扩容阈值、扩容步长，以及扩容上限的配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateVolumeExpansionConfigRequest 请求对象
+     * @return CompletableFuture<UpdateVolumeExpansionConfigResponse>
+     */
+    public CompletableFuture<UpdateVolumeExpansionConfigResponse> updateVolumeExpansionConfigAsync(
+        UpdateVolumeExpansionConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.updateVolumeExpansionConfig);
+    }
+
+    /**
+     * 修改磁盘自动扩容配置
+     *
+     * 该接口用于修改磁盘自动扩容配置，包含磁盘自动扩容是否开启、扩容阈值、扩容步长，以及扩容上限的配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateVolumeExpansionConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateVolumeExpansionConfigRequest, UpdateVolumeExpansionConfigResponse>
+     */
+    public AsyncInvoker<UpdateVolumeExpansionConfigRequest, UpdateVolumeExpansionConfigResponse> updateVolumeExpansionConfigAsyncInvoker(
+        UpdateVolumeExpansionConfigRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.updateVolumeExpansionConfig, hcClient);
+    }
+
+    /**
+     * 实例升级
+     *
+     * 实例内核升级。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeInstanceRequest 请求对象
+     * @return CompletableFuture<UpgradeInstanceResponse>
+     */
+    public CompletableFuture<UpgradeInstanceResponse> upgradeInstanceAsync(UpgradeInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.upgradeInstance);
+    }
+
+    /**
+     * 实例升级
+     *
+     * 实例内核升级。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeInstanceRequest 请求对象
+     * @return AsyncInvoker<UpgradeInstanceRequest, UpgradeInstanceResponse>
+     */
+    public AsyncInvoker<UpgradeInstanceRequest, UpgradeInstanceResponse> upgradeInstanceAsyncInvoker(
+        UpgradeInstanceRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.upgradeInstance, hcClient);
+    }
+
+    /**
      * 开启Smart Connect（按需实例）
      *
      * 开启Smart Connect，提交创建Smart Connect节点任务。
      * 
-     * [**当前通过调用API，只支持按需实例创建Smart Connect节点。**](tag:hws,hws_hk,g42,hk_g42,ctc)
+     * [**当前通过调用API，只支持按需实例创建Smart Connect节点。**](tag:hws,hws_hk,g42,hk_g42,ctc,cmcc)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2984,7 +3689,7 @@ public class KafkaAsyncClient {
      *
      * 开启Smart Connect，提交创建Smart Connect节点任务。
      * 
-     * [**当前通过调用API，只支持按需实例创建Smart Connect节点。**](tag:hws,hws_hk,g42,hk_g42,ctc)
+     * [**当前通过调用API，只支持按需实例创建Smart Connect节点。**](tag:hws,hws_hk,g42,hk_g42,ctc,cmcc)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3113,7 +3818,36 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 修改Smart Connect任务配置。
+     * 查询OBS桶列表
+     *
+     * 查询OBS桶列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListObsBucketsRequest 请求对象
+     * @return CompletableFuture<ListObsBucketsResponse>
+     */
+    public CompletableFuture<ListObsBucketsResponse> listObsBucketsAsync(ListObsBucketsRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.listObsBuckets);
+    }
+
+    /**
+     * 查询OBS桶列表
+     *
+     * 查询OBS桶列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListObsBucketsRequest 请求对象
+     * @return AsyncInvoker<ListObsBucketsRequest, ListObsBucketsResponse>
+     */
+    public AsyncInvoker<ListObsBucketsRequest, ListObsBucketsResponse> listObsBucketsAsyncInvoker(
+        ListObsBucketsRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.listObsBuckets, hcClient);
+    }
+
+    /**
+     * 修改Smart Connect任务配置
      *
      * 修改Smart Connect任务配置。
      * 
@@ -3127,7 +3861,7 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 修改Smart Connect任务配置。
+     * 修改Smart Connect任务配置
      *
      * 修改Smart Connect任务配置。
      * 
@@ -3257,6 +3991,36 @@ public class KafkaAsyncClient {
     public AsyncInvoker<ResumeConnectorTaskRequest, ResumeConnectorTaskResponse> resumeConnectorTaskAsyncInvoker(
         ResumeConnectorTaskRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.resumeConnectorTask, hcClient);
+    }
+
+    /**
+     * 查询开启Smart Connector功能所需资源信息
+     *
+     * 查询开启Smart Connector功能所需要使用的资源的情况
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowConnectorResourceInfoRequest 请求对象
+     * @return CompletableFuture<ShowConnectorResourceInfoResponse>
+     */
+    public CompletableFuture<ShowConnectorResourceInfoResponse> showConnectorResourceInfoAsync(
+        ShowConnectorResourceInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.showConnectorResourceInfo);
+    }
+
+    /**
+     * 查询开启Smart Connector功能所需资源信息
+     *
+     * 查询开启Smart Connector功能所需要使用的资源的情况
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowConnectorResourceInfoRequest 请求对象
+     * @return AsyncInvoker<ShowConnectorResourceInfoRequest, ShowConnectorResourceInfoResponse>
+     */
+    public AsyncInvoker<ShowConnectorResourceInfoRequest, ShowConnectorResourceInfoResponse> showConnectorResourceInfoAsyncInvoker(
+        ShowConnectorResourceInfoRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.showConnectorResourceInfo, hcClient);
     }
 
     /**

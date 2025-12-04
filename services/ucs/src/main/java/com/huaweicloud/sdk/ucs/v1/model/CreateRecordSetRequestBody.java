@@ -99,7 +99,7 @@ public class CreateRecordSetRequestBody {
     }
 
     /**
-     * 解析记录的值，不同类型解析记录对应的值的规则不同，必须是合法IP信息
+     * 解析记录的值，不同类型解析记录对应的值的规则不同
      * @return records
      */
     public List<String> getRecords() {

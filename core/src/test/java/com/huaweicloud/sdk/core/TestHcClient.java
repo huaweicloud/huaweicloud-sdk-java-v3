@@ -262,9 +262,10 @@ public class TestHcClient {
         CompletableFuture<TestHttpRequestDef.TestCustomAuthorizationResponse> future = callCustomAuthorizationAsync(
                 new TestHttpRequestDef.TestCustomAuthorizationRequest().withAuthorization("test"));
         TestHttpRequestDef.TestCustomAuthorizationResponse response = future.get();
-        Assert.assertEquals(response.getToken(), "success");
+        Assert.assertEquals("success", response.getToken());
     }
 
+    @SuppressWarnings("rawtypes,unchecked")
     @Test
     public void testUserAgentHeader() {
         HttpRequestDef reqDef = new HttpRequestDef.Builder(HttpMethod.GET, Object.class, SdkResponse.class)
@@ -275,6 +276,7 @@ public class TestHcClient {
         Assert.assertEquals(200, response.getHttpStatusCode());
     }
 
+    @SuppressWarnings("rawtypes,unchecked")
     @Test
     public void testCustomeUserAgentHeader() {
         HttpRequestDef reqDef = new HttpRequestDef.Builder(HttpMethod.GET, Object.class, SdkResponse.class)
@@ -287,6 +289,7 @@ public class TestHcClient {
         Assert.assertEquals(200, response.getHttpStatusCode());
     }
 
+    @SuppressWarnings("rawtypes,unchecked")
     @Test
     public void testHostHeader() {
         HttpRequestDef reqDef = new HttpRequestDef.Builder(HttpMethod.GET, Object.class, SdkResponse.class)
@@ -295,10 +298,11 @@ public class TestHcClient {
                 .withContentType("application/json").build();
         Map<String, String> map = new HashMap<>();
         map.put("Host", "www.example.com");
-        SdkResponse response = (SdkResponse) hcClient.preInvoke(map).syncInvokeHttp(new Object(), reqDef);
+        SdkResponse response = (SdkResponse) hcClient.withExtraHeaders(map).syncInvokeHttp(new Object(), reqDef);
         Assert.assertEquals(200, response.getHttpStatusCode());
     }
 
+    @SuppressWarnings("rawtypes,unchecked")
     @Test
     public void testExtraHeaders() {
         String endpoint = String.format(Locale.US, "https://127.0.0.1:%d", wireMockRule.httpsPort());
@@ -330,6 +334,7 @@ public class TestHcClient {
         Assert.assertEquals(200, response.getHttpStatusCode());
     }
 
+    @SuppressWarnings("rawtypes,unchecked")
     @Test
     public void testMultipleClients() {
         for (int i = 0; i < 100; i++) {
@@ -353,9 +358,8 @@ public class TestHcClient {
 
         @Override
         public void progressChanged(ProgressStatus status) {
-            LOGGER.info(String.format(Locale.US,
-                    "AverageSpeed: %f, TransferPercentage: %d%%",
-                    status.getAverageSpeed(), status.getTransferPercentage()));
+            LOGGER.info("AverageSpeed: {}, TransferPercentage: {}%",
+                    status.getAverageSpeed(), status.getTransferPercentage());
 
             transferredBytes = status.getTransferredBytes();
             transferPercentage = status.getTransferPercentage();

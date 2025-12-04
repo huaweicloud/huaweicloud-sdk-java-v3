@@ -40,7 +40,7 @@ public class ModifyInstanceConfigsReq {
     }
 
     /**
-     * kafka待修改配置列表。
+     * Kafka待修改配置列表。
      * @return kafkaConfigs
      */
     public List<ModifyInstanceConfig> getKafkaConfigs() {

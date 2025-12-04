@@ -85,6 +85,8 @@ import com.huaweicloud.sdk.oms.v2.model.SyncObjectReq;
 import com.huaweicloud.sdk.oms.v2.model.UpdateBandwidthPolicyReq;
 import com.huaweicloud.sdk.oms.v2.model.UpdateBandwidthPolicyRequest;
 import com.huaweicloud.sdk.oms.v2.model.UpdateBandwidthPolicyResponse;
+import com.huaweicloud.sdk.oms.v2.model.UpdatePrivacyAgreementRecordRequest;
+import com.huaweicloud.sdk.oms.v2.model.UpdatePrivacyAgreementRecordResponse;
 import com.huaweicloud.sdk.oms.v2.model.UpdateTaskGroupRequest;
 import com.huaweicloud.sdk.oms.v2.model.UpdateTaskGroupResponse;
 
@@ -268,10 +270,10 @@ public class OmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("task_id",
+        builder.<Long>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(DeleteTaskRequest::getTaskId, DeleteTaskRequest::setTaskId));
 
         // response
@@ -662,10 +664,10 @@ public class OmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("task_id",
+        builder.<Long>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ShowTaskRequest::getTaskId, ShowTaskRequest::setTaskId));
 
         // response
@@ -735,10 +737,10 @@ public class OmsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.<String>withRequestField("task_id",
+        builder.<Long>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(StartTaskRequest::getTaskId, StartTaskRequest::setTaskId));
         builder.<StartTaskReq>withRequestField("body",
             LocationType.Body,
@@ -812,10 +814,10 @@ public class OmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("task_id",
+        builder.<Long>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(StopTaskRequest::getTaskId, StopTaskRequest::setTaskId));
 
         // response
@@ -858,16 +860,37 @@ public class OmsMeta {
             .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.<String>withRequestField("task_id",
+        builder.<Long>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(UpdateBandwidthPolicyRequest::getTaskId, UpdateBandwidthPolicyRequest::setTaskId));
         builder.<UpdateBandwidthPolicyReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateBandwidthPolicyReq.class),
             f -> f.withMarshaller(UpdateBandwidthPolicyRequest::getBody, UpdateBandwidthPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePrivacyAgreementRecordRequest, UpdatePrivacyAgreementRecordResponse> updatePrivacyAgreementRecord =
+        genForUpdatePrivacyAgreementRecord();
+
+    private static HttpRequestDef<UpdatePrivacyAgreementRecordRequest, UpdatePrivacyAgreementRecordResponse> genForUpdatePrivacyAgreementRecord() {
+        // basic
+        HttpRequestDef.Builder<UpdatePrivacyAgreementRecordRequest, UpdatePrivacyAgreementRecordResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpdatePrivacyAgreementRecordRequest.class,
+                    UpdatePrivacyAgreementRecordResponse.class)
+                .withName("UpdatePrivacyAgreementRecord")
+                .withUri("/v2/{project_id}/privacy-agreements")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

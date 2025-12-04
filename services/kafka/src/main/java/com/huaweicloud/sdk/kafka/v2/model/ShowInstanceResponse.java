@@ -285,7 +285,7 @@ public class ShowInstanceResponse extends SdkResponse {
     private Boolean enableAutoTopic;
 
     /**
-     * 实例类型：集群，cluster。
+     * **参数解释**： 实例类型。 **取值范围**： - single：单机。 - cluster：集群。
      */
     public static final class TypeEnum {
 
@@ -425,7 +425,7 @@ public class ShowInstanceResponse extends SdkResponse {
     private String storageType;
 
     /**
-     * 消息老化策略。
+     * **参数解释**： 消息老化策略。 **取值范围**： - time_base：表示自动删除最老消息。 - produce_reject：表示拒绝消息写入。
      */
     public static final class RetentionPolicyEnum {
 
@@ -665,7 +665,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例名称。
+     * **参数解释**： 实例名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -682,7 +682,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 引擎。
+     * **参数解释**： 引擎。 **取值范围**： kafka
      * @return engine
      */
     public String getEngine() {
@@ -699,7 +699,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 版本。
+     * **参数解释**： Kafka的版本。 **取值范围**： [- 1.1.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,sbc,cmcc,ax) [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm,dt,sbc,cmcc) - 2.7 [- 3.x](tag:hws,hws_hk,dt,sbc,hcs,fcs,ctc,tm,hk_tm,hws_eu,ax)
      * @return engineVersion
      */
     public String getEngineVersion() {
@@ -716,7 +716,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例描述。
+     * **参数解释**： 实例描述。 **取值范围**： 不涉及。
      * @return description
      */
     public String getDescription() {
@@ -733,7 +733,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例规格。
+     * **参数解释**： 实例规格。 **取值范围**： 不涉及。
      * @return specification
      */
     public String getSpecification() {
@@ -750,7 +750,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 消息存储空间，单位：GB。
+     * **参数解释**： 消息存储空间，单位：GB。 **取值范围**： [- Kafka实例规格为c6.2u4g.cluster时，存储空间取值范围300GB ~ 300000GB。 - Kafka实例规格为c6.4u8g.cluster时，存储空间取值范围300GB ~ 600000GB。 - Kafka实例规格为c6.8u16g.cluster时，存储空间取值范围300GB ~ 1500000GB。 - Kafka实例规格为c6.12u24g.cluster时，存储空间取值范围300GB ~ 1500000GB。 - Kafka实例规格为c6.16u32g.cluster时，存储空间取值范围300GB ~ 1500000GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,ax) [- Kafka实例规格为kafka.2u4g.cluster.small时，存储空间取值范围300GB~300000GB。](tag:hws,hws_hk,hws_eu,dt,ax) [- Kafka实例规格为kafka.2u8g.cluster时，存储空间取值范围300GB~300000GB。](tag:fcs) [- Kafka实例规格为kafka.4u16g.cluster时，存储空间取值范围300GB~600000GB。 - Kafka实例规格为kafka.8u32g.cluster时，存储空间取值范围300GB~1500000GB。 - Kafka实例规格为kafka.16u64g.cluster时，存储空间取值范围300GB~1500000GB。 - Kafka实例规格为kafka.32u128g.cluster时，存储空间取值范围300GB~1500000GB。](tag:hcs,fcs)
      * @return storageSpace
      */
     public Integer getStorageSpace() {
@@ -767,7 +767,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * Kafka实例的分区数量。
+     * **参数解释**： Kafka实例的分区数量。 **取值范围**： 不涉及。
      * @return partitionNum
      */
     public String getPartitionNum() {
@@ -784,7 +784,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 已使用的消息存储空间，单位：GB。
+     * **参数解释**： 已使用的消息存储空间，单位：GB。 **取值范围**： 不涉及。
      * @return usedStorageSpace
      */
     public Integer getUsedStorageSpace() {
@@ -801,7 +801,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例是否开启域名访问功能。 - true：开启 - false：未开启
+     * **参数解释**： 实例是否开启域名访问功能。 **取值范围**： - true：开启 - false：未开启
      * @return dnsEnable
      */
     public Boolean getDnsEnable() {
@@ -818,7 +818,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例连接IP地址。
+     * **参数解释**： 实例连接IP地址。 **取值范围**： 不涉及。
      * @return connectAddress
      */
     public String getConnectAddress() {
@@ -835,7 +835,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例连接端口。
+     * **参数解释**： 实例连接端口。 **取值范围**： 不涉及。
      * @return port
      */
     public Integer getPort() {
@@ -852,7 +852,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例的状态。详细状态说明请参考[实例状态说明](kafka-api-180514012.xml)。
+     * **参数解释**： 实例的状态。详细状态说明请参考[实例状态说明](kafka-api-180514012.xml)。 **取值范围**： 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -869,7 +869,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例ID。
+     * **参数解释**： 实例ID。 **取值范围**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -886,7 +886,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 资源规格标识。   [- dms.instance.kafka.cluster.c3.mini：Kafka实例的基准带宽为100MByte/秒。   - dms.instance.kafka.cluster.c3.small.2：Kafka实例的基准带宽为300MByte/秒。   - dms.instance.kafka.cluster.c3.middle.2：Kafka实例的基准带宽为600MByte/秒。   - dms.instance.kafka.cluster.c3.high.2：Kafka实例的基准带宽为1200MByte/秒。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt)
+     * **参数解释**： 资源规格标识。 **取值范围**： [- dms.instance.kafka.cluster.c3.mini：Kafka实例的基准带宽为100MByte/秒。 - dms.instance.kafka.cluster.c3.small.2：Kafka实例的基准带宽为300MByte/秒。 - dms.instance.kafka.cluster.c3.middle.2：Kafka实例的基准带宽为600MByte/秒。 - dms.instance.kafka.cluster.c3.high.2：Kafka实例的基准带宽为1200MByte/秒。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,ax)
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {
@@ -903,7 +903,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * [付费模式，1表示按需计费，0表示包年/包月计费。](tag:hws,hws_hk,ctc,cmcc)[付费模式，暂未使用。](tag:hws_ocb,ocb) [付费模式，1表示按需计费。](tag:dt,g42,tm,hk_g42,hk_tm,hcs,fcs,sbc,hk_sbc,hws_eu)
+     * **参数解释**： 付费模式。 **取值范围**： [- 1表示按需计费。 - 0表示包年/包月计费。](tag:hws,hws_hk,ctc,cmcc,ax)[付费模式，暂未使用。](tag:hws_ocb,ocb) [- 1表示按需计费。](tag:dt,g42,tm,hk_g42,hk_tm,hcs,fcs,sbc,hk_sbc,hws_eu)
      * @return chargingMode
      */
     public Integer getChargingMode() {
@@ -920,7 +920,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * VPC ID。
+     * **参数解释**： VPC ID。 **取值范围**： 不涉及。
      * @return vpcId
      */
     public String getVpcId() {
@@ -937,7 +937,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * VPC的名称。
+     * **参数解释**： VPC的名称。 **取值范围**： 不涉及。
      * @return vpcName
      */
     public String getVpcName() {
@@ -954,7 +954,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 完成创建时间。  格式为时间戳，指从格林威治时间 1970年01月01日00时00分00秒起至指定时间的偏差总毫秒数。
+     * **参数解释**： 完成创建时间。  格式为时间戳，指从格林威治时间 1970年01月01日00时00分00秒起至指定时间的偏差总毫秒数。 **取值范围**： 不涉及。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -971,7 +971,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 子网名称。
+     * **参数解释**： 子网名称。 **取值范围**： 不涉及。
      * @return subnetName
      */
     public String getSubnetName() {
@@ -988,7 +988,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 子网网段。
+     * **参数解释**： 子网网段。 **取值范围**： 不涉及。
      * @return subnetCidr
      */
     public String getSubnetCidr() {
@@ -1005,7 +1005,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 用户ID。
+     * **参数解释**： 用户ID。 **取值范围**： 不涉及。
      * @return userId
      */
     public String getUserId() {
@@ -1022,7 +1022,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 用户名。
+     * **参数解释**： 用户名。 **取值范围**： 不涉及。
      * @return userName
      */
     public String getUserName() {
@@ -1039,7 +1039,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例访问用户名。
+     * **参数解释**： 实例访问用户名。 **取值范围**： 不涉及。
      * @return accessUser
      */
     public String getAccessUser() {
@@ -1056,7 +1056,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 订单ID，只有在包周期计费时才会有order_id值，其他计费方式order_id值为空。
+     * **参数解释**： 订单ID，只有在包周期计费时才会有order_id值，其他计费方式order_id值为空。 **取值范围**： 不涉及。
      * @return orderId
      */
     public String getOrderId() {
@@ -1073,7 +1073,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 维护时间窗开始时间，格式为HH:mm:ss。
+     * **参数解释**： 维护时间窗开始时间，格式为HH:mm:ss。 **取值范围**： 不涉及。
      * @return maintainBegin
      */
     public String getMaintainBegin() {
@@ -1090,7 +1090,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 维护时间窗结束时间，格式为HH:mm:ss。
+     * **参数解释**： 维护时间窗结束时间，格式为HH:mm:ss。 **取值范围**： 不涉及。
      * @return maintainEnd
      */
     public String getMaintainEnd() {
@@ -1107,7 +1107,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例是否开启公网访问功能。 - true：开启 - false：未开启
+     * **参数解释**： 实例是否开启公网访问功能。 **取值范围**： - true：开启 - false：未开启
      * @return enablePublicip
      */
     public Boolean getEnablePublicip() {
@@ -1124,7 +1124,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * Kafka实例的Kafka Manager连接地址。
+     * **参数解释**： Kafka实例的Kafka Manager连接地址。 **取值范围**： 不涉及。
      * @return managementConnectAddress
      */
     public String getManagementConnectAddress() {
@@ -1141,7 +1141,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启安全认证。 - true：开启 - false：未开启
+     * **参数解释**： 是否开启安全认证。 **取值范围**： - true：开启 - false：未开启
      * @return sslEnable
      */
     public Boolean getSslEnable() {
@@ -1158,7 +1158,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启broker间副本加密传输。 - true：开启 - false：未开启
+     * **参数解释**： 是否开启broker间副本加密传输。 **取值范围**： - true：开启 - false：未开启
      * @return brokerSslEnable
      */
     public Boolean getBrokerSslEnable() {
@@ -1175,7 +1175,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * Kafka使用的安全协议。 若实例详情中不存在port_protocols返回参数，则kafka_security_protocol同时代表内网访问、公网访问以及跨VPC访问的安全协议。 若实例详情中存在port_protocols返回参数，则kafka_security_protocol仅代表跨VPC访问的安全协议。内网访问公网访问的安全协议请参考port_protocols参数。  - PLAINTEXT: 既未采用SSL证书进行加密传输，也不支持账号密码认证。性能更好，安全性较低，建议在生产环境下公网访问不使用此方式。 - SASL_SSL: 采用SSL证书进行加密传输，支持账号密码认证，安全性更高。 - SASL_PLAINTEXT: 明文传输，支持账号密码认证，性能更好，建议使用SCRAM-SHA-512机制。
+     * **参数解释**： Kafka使用的安全协议。 若实例详情中不存在port_protocols返回参数，则kafka_security_protocol同时代表内网访问、公网访问以及跨VPC访问的安全协议。 若实例详情中存在port_protocols返回参数，则kafka_security_protocol仅代表跨VPC访问的安全协议。内网访问公网访问的安全协议请参考port_protocols参数。 **取值范围**： - PLAINTEXT：既未采用SSL证书进行加密传输，也不支持账号密码认证。性能更好，安全性较低，建议在生产环境下公网访问不使用此方式。 - SASL_SSL：采用SSL证书进行加密传输，支持账号密码认证，安全性更高。 - SASL_PLAINTEXT：明文传输，支持账号密码认证，性能更好，建议使用SCRAM-SHA-512机制。
      * @return kafkaSecurityProtocol
      */
     public String getKafkaSecurityProtocol() {
@@ -1209,7 +1209,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 开启SASL后使用的认证机制。 - PLAIN: 简单的用户名密码校验。 - SCRAM-SHA-512: 用户凭证校验，安全性比PLAIN机制更高。
+     * **参数解释**： 开启SASL后使用的认证机制。
      * @return saslEnabledMechanisms
      */
     public List<SaslEnabledMechanismsEnum> getSaslEnabledMechanisms() {
@@ -1226,7 +1226,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启双向认证。
+     * **参数解释**： 是否开启双向认证。 **取值范围**： - true：开启 - false：未开启
      * @return sslTwoWayEnable
      */
     public Boolean getSslTwoWayEnable() {
@@ -1243,7 +1243,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否能够证书替换。
+     * **参数解释**： 是否开启证书替换。 **取值范围**： - true：开启 - false：未开启
      * @return certReplaced
      */
     public Boolean getCertReplaced() {
@@ -1260,7 +1260,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 公网访问Kafka Manager连接地址。
+     * **参数解释**： 公网访问Kafka Manager连接地址。 **取值范围**： 不涉及。
      * @return publicManagementConnectAddress
      */
     public String getPublicManagementConnectAddress() {
@@ -1277,7 +1277,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 企业项目ID。
+     * **参数解释**： 企业项目ID。 **取值范围**： 不涉及。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -1294,7 +1294,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例扩容时用于区分老实例与新实例。 - true：新创建的实例，允许磁盘动态扩容不需要重启。 - false：老实例
+     * **参数解释**： 实例扩容时用于区分老实例与新实例。 **取值范围**： - true：新创建的实例，允许磁盘动态扩容不需要重启。 - false：老实例。
      * @return isLogicalVolume
      */
     public Boolean getIsLogicalVolume() {
@@ -1311,7 +1311,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例扩容磁盘次数，如果超过20次则无法扩容磁盘。
+     * **参数解释**： 实例扩容磁盘次数。 **取值范围**： 不涉及。
      * @return extendTimes
      */
     public Integer getExtendTimes() {
@@ -1328,7 +1328,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否打开kafka自动创建Topic功能。   - true：开启   - false：关闭
+     * **参数解释**： 是否开启自动创建Topic。 **取值范围**： - true：开启 - false：关闭
      * @return enableAutoTopic
      */
     public Boolean getEnableAutoTopic() {
@@ -1345,7 +1345,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例类型：集群，cluster。
+     * **参数解释**： 实例类型。 **取值范围**： - single：单机。 - cluster：集群。
      * @return type
      */
     public TypeEnum getType() {
@@ -1362,7 +1362,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 产品标识。
+     * **参数解释**： 产品标识。 **取值范围**： 不涉及。
      * @return productId
      */
     public String getProductId() {
@@ -1379,7 +1379,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 安全组ID。
+     * **参数解释**： 安全组ID。 **取值范围**： 不涉及。
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -1396,7 +1396,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 租户安全组名称。
+     * **参数解释**： 安全组名称。 **取值范围**： 不涉及。
      * @return securityGroupName
      */
     public String getSecurityGroupName() {
@@ -1413,7 +1413,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 子网ID。
+     * **参数解释**： 子网ID。 **取值范围**： 不涉及。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -1446,7 +1446,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例节点所在的可用区，返回“可用区ID”。
+     * **参数解释**： 实例节点所在的可用区，返回“可用区ID”。
      * @return availableZones
      */
     public List<String> getAvailableZones() {
@@ -1479,7 +1479,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例节点所在的可用区名称，返回“可用区名称”。
+     * **参数解释**： 实例节点所在的可用区名称，返回“可用区名称”。
      * @return availableZoneNames
      */
     public List<String> getAvailableZoneNames() {
@@ -1496,7 +1496,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 总共消息存储空间，单位：GB。
+     * **参数解释**： 总共消息存储空间，单位：GB。 **取值范围**： 不涉及。
      * @return totalStorageSpace
      */
     public Integer getTotalStorageSpace() {
@@ -1513,7 +1513,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例公网连接IP地址。当实例开启了公网访问，实例才包含该参数。
+     * **参数解释**： 实例公网连接IP地址。当实例开启了公网访问，实例才包含该参数。 **取值范围**： 不涉及。
      * @return publicConnectAddress
      */
     public String getPublicConnectAddress() {
@@ -1530,7 +1530,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例公网连接域名。当实例开启了公网访问，实例才包含该参数。
+     * **参数解释**： 实例公网连接域名。当实例开启了公网访问，实例才包含该参数。 **取值范围**： 不涉及。
      * @return publicConnectDomainName
      */
     public String getPublicConnectDomainName() {
@@ -1547,7 +1547,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 存储资源ID。
+     * **参数解释**： 存储资源ID。 **取值范围**： 不涉及。
      * @return storageResourceId
      */
     public String getStorageResourceId() {
@@ -1564,7 +1564,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * IO规格。
+     * **参数解释**： IO规格。 **取值范围**： 不涉及。
      * @return storageSpecCode
      */
     public String getStorageSpecCode() {
@@ -1581,7 +1581,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 服务类型。
+     * **参数解释**： 服务类型。 **取值范围**： advanced。
      * @return serviceType
      */
     public String getServiceType() {
@@ -1598,7 +1598,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 存储类型。
+     * **参数解释**： 存储类型。 **取值范围**： hec
      * @return storageType
      */
     public String getStorageType() {
@@ -1615,7 +1615,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 消息老化策略。
+     * **参数解释**： 消息老化策略。 **取值范围**： - time_base：表示自动删除最老消息。 - produce_reject：表示拒绝消息写入。
      * @return retentionPolicy
      */
     public RetentionPolicyEnum getRetentionPolicy() {
@@ -1632,7 +1632,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * Kafka公网开启状态。
+     * **参数解释**： Kafka公网开启状态。 **取值范围**： - true：开启公网。 - closed：关闭公网。 - false：未使用公网。 - freezed：公网冻结。 - actived：公网解冻。
      * @return kafkaPublicStatus
      */
     public String getKafkaPublicStatus() {
@@ -1649,7 +1649,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * kafka公网访问带宽。
+     * **参数解释**： kafka公网访问带宽。 **取值范围**： 不涉及。
      * @return publicBandwidth
      */
     public Integer getPublicBandwidth() {
@@ -1666,7 +1666,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启消息收集功能。
+     * **参数解释**： 是否开启消息收集功能。 **取值范围**： - true：开启 - false：不开启
      * @return enableLogCollection
      */
     public Boolean getEnableLogCollection() {
@@ -1683,7 +1683,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启新证书。
+     * **参数解释**： 是否开启新证书。 **取值范围**： - true：开启 - false：不开启
      * @return newAuthCert
      */
     public Boolean getNewAuthCert() {
@@ -1700,7 +1700,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 跨VPC访问信息。
+     * **参数解释**： 跨VPC访问信息。 **取值范围**： 不涉及。
      * @return crossVpcInfo
      */
     public String getCrossVpcInfo() {
@@ -1717,7 +1717,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启ipv6。
+     * **参数解释**： 是否开启IPv6。 **取值范围**： - true：开启 - false：不开启
      * @return ipv6Enable
      */
     public Boolean getIpv6Enable() {
@@ -1750,7 +1750,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * IPv6的连接地址。
+     * **参数解释**： IPv6的连接地址。
      * @return ipv6ConnectAddresses
      */
     public List<String> getIpv6ConnectAddresses() {
@@ -1767,7 +1767,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启转储。新规格产品暂不支持开启转储。
+     * **参数解释**： 是否开启转储。 **取值范围**： - true：开启 - false：不开启
      * @return connectorEnable
      */
     public Boolean getConnectorEnable() {
@@ -1784,7 +1784,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * connector节点数量。
+     * **参数解释**： connector节点数量。 **取值范围**： 2-16。
      * @return connectorNodeNum
      */
     public Integer getConnectorNodeNum() {
@@ -1801,7 +1801,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 转储任务ID。
+     * **参数解释**： 转储任务ID。 **取值范围**： 不涉及。
      * @return connectorId
      */
     public String getConnectorId() {
@@ -1818,7 +1818,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启Kafka rest功能。
+     * **参数解释**： 是否开启Kafka rest功能。 **取值范围**： - true：开启 - false：不开启
      * @return restEnable
      */
     public Boolean getRestEnable() {
@@ -1835,7 +1835,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * Kafka rest连接地址。
+     * **参数解释**：  Kafka rest连接地址。 **取值范围**： 不涉及。
      * @return restConnectAddress
      */
     public String getRestConnectAddress() {
@@ -1852,7 +1852,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * kafka公网访问带宽。待删除版本。
+     * **参数解释**： Kafka公网访问带宽。待删除版本。 **取值范围**： 不涉及。
      * @return publicBoundwidth
      */
     public Integer getPublicBoundwidth() {
@@ -1869,7 +1869,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启消息查询功能。
+     * **参数解释**： 是否开启消息查询功能。 **取值范围**： - true：开启 - false：不开启
      * @return messageQueryInstEnable
      */
     public Boolean getMessageQueryInstEnable() {
@@ -1886,7 +1886,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启VPC明文访问。
+     * **参数解释**： 是否开启VPC明文访问。 **取值范围**： - true：开启 - false：不开启
      * @return vpcClientPlain
      */
     public Boolean getVpcClientPlain() {
@@ -1903,7 +1903,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * Kafka实例支持的特性功能。
+     * **参数解释**： Kafka实例支持的特性功能。 **取值范围**： 不涉及。
      * @return supportFeatures
      */
     public String getSupportFeatures() {
@@ -1920,7 +1920,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启消息轨迹功能。
+     * **参数解释**： 是否开启消息轨迹功能。 **取值范围**： - true：开启 - false：不开启
      * @return traceEnable
      */
     public Boolean getTraceEnable() {
@@ -1937,7 +1937,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启代理。
+     * **参数解释**： 是否开启代理。 **取值范围**： - true：开启 - false：不开启
      * @return agentEnable
      */
     public Boolean getAgentEnable() {
@@ -1954,7 +1954,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 租户侧连接地址。
+     * **参数解释**： 租户侧连接地址。 **取值范围**： 不涉及。
      * @return podConnectAddress
      */
     public String getPodConnectAddress() {
@@ -1971,7 +1971,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启磁盘加密。
+     * **参数解释**： 是否开启磁盘加密。 **取值范围**： - true：开启 - false：不开启
      * @return diskEncrypted
      */
     public Boolean getDiskEncrypted() {
@@ -1988,7 +1988,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 磁盘加密key，未开启磁盘加密时为空。
+     * **参数解释**： 磁盘加密key，未开启磁盘加密时为空。 **取值范围**： 不涉及。
      * @return diskEncryptedKey
      */
     public String getDiskEncryptedKey() {
@@ -2005,7 +2005,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * Kafka实例内网连接地址。
+     * **参数解释**： Kafka实例内网连接地址。 **取值范围**： 不涉及。
      * @return kafkaPrivateConnectAddress
      */
     public String getKafkaPrivateConnectAddress() {
@@ -2022,7 +2022,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * Kafka实例内网连接域名。
+     * **参数解释**： Kafka实例内网连接域名。 **取值范围**： 不涉及。
      * @return kafkaPrivateConnectDomainName
      */
     public String getKafkaPrivateConnectDomainName() {
@@ -2039,7 +2039,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 云监控版本。
+     * **参数解释**： 云监控版本。 **取值范围**： 不涉及。
      * @return cesVersion
      */
     public String getCesVersion() {
@@ -2056,7 +2056,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     *  区分实例什么时候开启的公网访问  取值范围：   - true：已开启公网访问   - actived：已开启公网访问   - closed：已关闭公网访问   - false：已关闭公网访问 
+     * **参数解释**： 区分实例什么时候开启的公网访问 **取值范围**： - true：已开启公网访问 - actived：已开启公网访问 - closed：已关闭公网访问 - false：已关闭公网访问
      * @return publicAccessEnabled
      */
     public String getPublicAccessEnabled() {
@@ -2073,7 +2073,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 节点数。
+     * **参数解释**： 节点数。 **取值范围**： - [1：Kafka单机实例的节点数。](tag:hws,hws_hk,hws_eu,dt,hcs,ax) - 3~50：Kafka集群实例的节点数。
      * @return nodeNum
      */
     public Integer getNodeNum() {
@@ -2116,7 +2116,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启访问控制。
+     * **参数解释**： 是否开启访问控制。 **取值范围**： - true：开启 - false：不开启
      * @return enableAcl
      */
     public Boolean getEnableAcl() {
@@ -2133,7 +2133,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否启用新规格计费。
+     * **参数解释**： 是否启用新规格计费。 **取值范围**： - true：开启 - false：不开启
      * @return newSpecBillingEnable
      */
     public Boolean getNewSpecBillingEnable() {
@@ -2150,7 +2150,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 节点数量。
+     * **参数解释**： 节点数量。 **取值范围**： 不涉及。
      * @return brokerNum
      */
     public Integer getBrokerNum() {
@@ -2183,7 +2183,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 标签列表。
+     * **参数解释**： 标签列表。
      * @return tags
      */
     public List<TagEntity> getTags() {
@@ -2200,7 +2200,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否为容灾实例。
+     * **参数解释**：  是否为容灾实例。 **取值范围**： - true：是容灾实例。 - false：不是容灾实例。
      * @return drEnable
      */
     public Boolean getDrEnable() {
