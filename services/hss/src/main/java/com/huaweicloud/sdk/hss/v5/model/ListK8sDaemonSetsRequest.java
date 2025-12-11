@@ -82,7 +82,7 @@ public class ListK8sDaemonSetsRequest {
     }
 
     /**
-     * daemonset名称
+     * **参数解释**: daemonset名称，用作查询参数。 **约束限制**: 不涉及 **取值范围**: 字符长度0-256位 **默认取值**: 无 
      * @return daemonsetName
      */
     public String getDaemonsetName() {
@@ -99,7 +99,7 @@ public class ListK8sDaemonSetsRequest {
     }
 
     /**
-     * 命名空间名称
+     * **参数解释**: 命名空间名称，用作查询参数。 **约束限制**: 不涉及 **取值范围**: 字符长度0-256位 **默认取值**: 无 
      * @return namespaceName
      */
     public String getNamespaceName() {
@@ -116,7 +116,7 @@ public class ListK8sDaemonSetsRequest {
     }
 
     /**
-     * 所属集群名称
+     * **参数解释**: 所属集群名称，用作查询参数。 **约束限制**: 不涉及 **取值范围**: 字符长度0-256位 **默认取值**: 无 
      * @return clusterName
      */
     public String getClusterName() {

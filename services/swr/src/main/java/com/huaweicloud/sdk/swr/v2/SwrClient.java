@@ -5,6 +5,10 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.swr.v2.model.AddDomainNameRequest;
 import com.huaweicloud.sdk.swr.v2.model.AddDomainNameResponse;
+import com.huaweicloud.sdk.swr.v2.model.CheckAgencyRequest;
+import com.huaweicloud.sdk.swr.v2.model.CheckAgencyResponse;
+import com.huaweicloud.sdk.swr.v2.model.CreateAgencyRequest;
+import com.huaweicloud.sdk.swr.v2.model.CreateAgencyResponse;
 import com.huaweicloud.sdk.swr.v2.model.CreateAuthorizationTokenRequest;
 import com.huaweicloud.sdk.swr.v2.model.CreateAuthorizationTokenResponse;
 import com.huaweicloud.sdk.swr.v2.model.CreateImageSyncRepoRequest;
@@ -219,6 +223,8 @@ import com.huaweicloud.sdk.swr.v2.model.ListSubResourceInstancesRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListSubResourceInstancesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListSubResourceTagsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListSubResourceTagsResponse;
+import com.huaweicloud.sdk.swr.v2.model.ListSyncRegionsRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListSyncRegionsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListTriggersDetailsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListTriggersDetailsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowAccessDomainRequest;
@@ -331,6 +337,62 @@ public class SwrClient {
     public static ClientBuilder<SwrClient> newBuilder() {
         ClientBuilder<SwrClient> clientBuilder = new ClientBuilder<>(SwrClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 查询委托是否存在
+     *
+     * 检查租户是否已委托SWR服务通过触发器功能调用CCE、CCI服务，一般由前端控制台自动调用，用户无需手动调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckAgencyRequest 请求对象
+     * @return CheckAgencyResponse
+     */
+    public CheckAgencyResponse checkAgency(CheckAgencyRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.checkAgency);
+    }
+
+    /**
+     * 查询委托是否存在
+     *
+     * 检查租户是否已委托SWR服务通过触发器功能调用CCE、CCI服务，一般由前端控制台自动调用，用户无需手动调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckAgencyRequest 请求对象
+     * @return SyncInvoker<CheckAgencyRequest, CheckAgencyResponse>
+     */
+    public SyncInvoker<CheckAgencyRequest, CheckAgencyResponse> checkAgencyInvoker(CheckAgencyRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.checkAgency, hcClient);
+    }
+
+    /**
+     * 创建委托
+     *
+     * 租户首次使用SWR服务时创建SWR服务内部委托，一般由前端控制台自动调用，用户无需手动调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAgencyRequest 请求对象
+     * @return CreateAgencyResponse
+     */
+    public CreateAgencyResponse createAgency(CreateAgencyRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.createAgency);
+    }
+
+    /**
+     * 创建委托
+     *
+     * 租户首次使用SWR服务时创建SWR服务内部委托，一般由前端控制台自动调用，用户无需手动调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAgencyRequest 请求对象
+     * @return SyncInvoker<CreateAgencyRequest, CreateAgencyResponse>
+     */
+    public SyncInvoker<CreateAgencyRequest, CreateAgencyResponse> createAgencyInvoker(CreateAgencyRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.createAgency, hcClient);
     }
 
     /**
@@ -1281,6 +1343,35 @@ public class SwrClient {
     public SyncInvoker<ListSharedReposDetailsRequest, ListSharedReposDetailsResponse> listSharedReposDetailsInvoker(
         ListSharedReposDetailsRequest request) {
         return new SyncInvoker<>(request, SwrMeta.listSharedReposDetails, hcClient);
+    }
+
+    /**
+     * 获取可进行镜像同步的区域列表
+     *
+     * 获取可进行镜像同步的区域列表，用户可以将镜像手动或自动同步到此接口返回的区域。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSyncRegionsRequest 请求对象
+     * @return ListSyncRegionsResponse
+     */
+    public ListSyncRegionsResponse listSyncRegions(ListSyncRegionsRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.listSyncRegions);
+    }
+
+    /**
+     * 获取可进行镜像同步的区域列表
+     *
+     * 获取可进行镜像同步的区域列表，用户可以将镜像手动或自动同步到此接口返回的区域。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSyncRegionsRequest 请求对象
+     * @return SyncInvoker<ListSyncRegionsRequest, ListSyncRegionsResponse>
+     */
+    public SyncInvoker<ListSyncRegionsRequest, ListSyncRegionsResponse> listSyncRegionsInvoker(
+        ListSyncRegionsRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.listSyncRegions, hcClient);
     }
 
     /**

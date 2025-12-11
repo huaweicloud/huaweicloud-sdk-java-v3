@@ -100,6 +100,21 @@ public class ShowDeploymentFormRequest {
 
     private String instanceId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "consistency")
+
+    private String consistency;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "consistency_protocol")
+
+    private String consistencyProtocol;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "engine_version")
+
+    private String engineVersion;
+
     public ShowDeploymentFormRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -153,6 +168,57 @@ public class ShowDeploymentFormRequest {
         this.instanceId = instanceId;
     }
 
+    public ShowDeploymentFormRequest withConsistency(String consistency) {
+        this.consistency = consistency;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 事务一致性类型。 **约束限制**: 不涉及。 **取值范围**: - strong - eventual **默认取值**: 不涉及。
+     * @return consistency
+     */
+    public String getConsistency() {
+        return consistency;
+    }
+
+    public void setConsistency(String consistency) {
+        this.consistency = consistency;
+    }
+
+    public ShowDeploymentFormRequest withConsistencyProtocol(String consistencyProtocol) {
+        this.consistencyProtocol = consistencyProtocol;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 副本一致性协议类型。 **约束限制**: 不涉及。 **取值范围**: - quorum - paxos **默认取值**: 不涉及。
+     * @return consistencyProtocol
+     */
+    public String getConsistencyProtocol() {
+        return consistencyProtocol;
+    }
+
+    public void setConsistencyProtocol(String consistencyProtocol) {
+        this.consistencyProtocol = consistencyProtocol;
+    }
+
+    public ShowDeploymentFormRequest withEngineVersion(String engineVersion) {
+        this.engineVersion = engineVersion;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 引擎版本号。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
+     * @return engineVersion
+     */
+    public String getEngineVersion() {
+        return engineVersion;
+    }
+
+    public void setEngineVersion(String engineVersion) {
+        this.engineVersion = engineVersion;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -163,12 +229,14 @@ public class ShowDeploymentFormRequest {
         }
         ShowDeploymentFormRequest that = (ShowDeploymentFormRequest) obj;
         return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.solution, that.solution)
-            && Objects.equals(this.instanceId, that.instanceId);
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.consistency, that.consistency)
+            && Objects.equals(this.consistencyProtocol, that.consistencyProtocol)
+            && Objects.equals(this.engineVersion, that.engineVersion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, solution, instanceId);
+        return Objects.hash(xLanguage, solution, instanceId, consistency, consistencyProtocol, engineVersion);
     }
 
     @Override
@@ -178,6 +246,9 @@ public class ShowDeploymentFormRequest {
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    solution: ").append(toIndentedString(solution)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    consistency: ").append(toIndentedString(consistency)).append("\n");
+        sb.append("    consistencyProtocol: ").append(toIndentedString(consistencyProtocol)).append("\n");
+        sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

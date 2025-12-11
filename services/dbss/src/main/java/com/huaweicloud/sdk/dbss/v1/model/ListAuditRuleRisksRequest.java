@@ -26,7 +26,7 @@ public class ListAuditRuleRisksRequest {
     private String name;
 
     /**
-     * 风险级别 - LOW - MEDIUM - HIGH - NO_RISK
+     * 风险级别 - LOW：低 - MEDIUM：中 - HIGH：高 - NO_RISK：无风险
      */
     public static final class RiskLevelsEnum {
 
@@ -152,7 +152,7 @@ public class ListAuditRuleRisksRequest {
     }
 
     /**
-     * 风险级别 - LOW - MEDIUM - HIGH - NO_RISK
+     * 风险级别 - LOW：低 - MEDIUM：中 - HIGH：高 - NO_RISK：无风险
      * @return riskLevels
      */
     public RiskLevelsEnum getRiskLevels() {

@@ -65,7 +65,7 @@ public class ListAntivirusHandleHistoryResponse extends SdkResponse {
     }
 
     /**
-     * 病毒查杀历史处置记录
+     * **参数解释**: 病毒查杀历史处置记录 **取值范围**: 最小值0，最大值100 
      * @return dataList
      */
     public List<AntiVirusHandleHistory> getDataList() {

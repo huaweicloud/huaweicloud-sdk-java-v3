@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 事件类型
+ * **参数解释**: 病毒查杀结果对应的事件类型标识 **取值范围**: 0-10（具体含义：0&#x3D;文件病毒事件、1&#x3D;内存病毒事件...，详见产品错误码/枚举文档） 
  */
 public class AntivirusEventType {
 

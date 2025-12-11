@@ -39,7 +39,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -108,7 +107,7 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
                     "trying to get project id from IAM service automatically: {}", regionId, iamEndpoint);
             KeystoneListProjectsRequest request = new KeystoneListProjectsRequest().withName(regionId);
             KeystoneListProjectsResponse response = inner.syncInvokeHttp(request, InnerIamMeta.KEYSTONE_LIST_PROJECTS);
-            if (Objects.isNull(response)) {
+            if (response == null) {
                 throw new SdkException(Constants.ErrorMessage.NO_PROJECT_ID_FOUND);
             }
 
@@ -164,7 +163,7 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
             builder.addHeader(Constants.X_SECURITY_TOKEN, getSecurityToken());
         }
 
-        if (Objects.nonNull(httpRequest.getContentType())
+        if (httpRequest.getContentType() != null
                 && !httpRequest.getContentType().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)
                 && !httpRequest.getContentType().startsWith(Constants.MEDIATYPE.APPLICATION_BSON)) {
             builder.addHeader(Constants.X_SDK_CONTENT_SHA256, Constants.UNSIGNED_PAYLOAD);

@@ -42,7 +42,7 @@ public class ApplyHistoryRsp {
     }
 
     /**
-     * 实例ID。
+     * **参数解释：** 实例ID。 **取值范围：** 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -59,7 +59,7 @@ public class ApplyHistoryRsp {
     }
 
     /**
-     * 实例名称
+     * **参数解释：** 实例名称。 **取值范围：** 不涉及。
      * @return instanceName
      */
     public String getInstanceName() {
@@ -76,7 +76,7 @@ public class ApplyHistoryRsp {
     }
 
     /**
-     * 生效时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。  [其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。](tag:hc)  [其中，T指某个时间的开始；Z指时区偏移量。](tag:hk)
+     * **参数解释：** 生效时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。 其中，T指某个时间的开始；Z指时区偏移量。 **取值范围：** 不涉及。
      * @return appliedAt
      */
     public OffsetDateTime getAppliedAt() {
@@ -93,7 +93,7 @@ public class ApplyHistoryRsp {
     }
 
     /**
-     * - SUCCESS：应用成功。 - FAILED:应用失败。
+     * **参数解释：** 应用结果。 **取值范围：** - SUCCESS：应用成功。 - FAILED:应用失败。 - APPLYING: 应用中。
      * @return applyResult
      */
     public String getApplyResult() {
@@ -110,7 +110,7 @@ public class ApplyHistoryRsp {
     }
 
     /**
-     * 失败原因
+     * **参数解释：** 失败原因。 **取值范围：** 不涉及。
      * @return failureReason
      */
     public String getFailureReason() {

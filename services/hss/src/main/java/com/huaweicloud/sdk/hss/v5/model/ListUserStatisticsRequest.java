@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ListUserStatisticsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "user_name")
-
-    private String userName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -31,26 +26,14 @@ public class ListUserStatisticsRequest {
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_name")
+
+    private String userName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
 
     private String category;
-
-    public ListUserStatisticsRequest withUserName(String userName) {
-        this.userName = userName;
-        return this;
-    }
-
-    /**
-     * 账号名称，参考windows文件命名规则，支持字母、数字、下划线、中文，特殊字符!@.-等，不包括中文标点符号
-     * @return userName
-     */
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
 
     public ListUserStatisticsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -58,7 +41,7 @@ public class ListUserStatisticsRequest {
     }
 
     /**
-     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
+     * **参数解释**: 企业项目ID，用于过滤不同企业项目下的资产。获取方式请参见[获取企业项目ID](hss_02_0027.xml)。 如需查询所有企业项目下的资产请传参“all_granted_eps”。 **约束限制**: 开通企业项目功能后才需要配置企业项目ID参数。 **取值范围**: 字符长度1-256位 **默认取值**: 0，表示默认企业项目（default）。 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -75,7 +58,7 @@ public class ListUserStatisticsRequest {
     }
 
     /**
-     * 每页显示数量
+     * **参数解释**: 每页显示个数 **约束限制**: 不涉及 **取值范围**: 取值10-200 **默认取值**: 10 
      * minimum: 10
      * maximum: 200
      * @return limit
@@ -94,7 +77,7 @@ public class ListUserStatisticsRequest {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置
+     * **参数解释**: 偏移量：指定返回记录的开始位置 **约束限制**: 不涉及 **取值范围**: 最小值0，最大值2000000 **默认取值**: 默认为0 
      * minimum: 0
      * maximum: 2000000
      * @return offset
@@ -105,6 +88,23 @@ public class ListUserStatisticsRequest {
 
     public void setOffset(Integer offset) {
         this.offset = offset;
+    }
+
+    public ListUserStatisticsRequest withUserName(String userName) {
+        this.userName = userName;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 用于筛选指定名称的账号统计数据（支持模糊匹配） **约束限制**: 符合Windows文件命名规则，不包含中文标点符号 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
+     * @return userName
+     */
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public ListUserStatisticsRequest withCategory(String category) {
@@ -133,25 +133,24 @@ public class ListUserStatisticsRequest {
             return false;
         }
         ListUserStatisticsRequest that = (ListUserStatisticsRequest) obj;
-        return Objects.equals(this.userName, that.userName)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.category, that.category);
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.category, that.category);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, enterpriseProjectId, limit, offset, category);
+        return Objects.hash(enterpriseProjectId, limit, offset, userName, category);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListUserStatisticsRequest {\n");
-        sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("}");
         return sb.toString();

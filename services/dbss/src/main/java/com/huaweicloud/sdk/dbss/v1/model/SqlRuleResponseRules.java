@@ -90,7 +90,7 @@ public class SqlRuleResponseRules {
     }
 
     /**
-     * 规则的状态： - ON - OFF
+     * 规则的状态： - ON： 启用 - OFF： 禁用
      * @return status
      */
     public String getStatus() {
@@ -107,7 +107,7 @@ public class SqlRuleResponseRules {
     }
 
     /**
-     * 风险级别 - HIGH - MEDIUM - LOW
+     * 风险级别 - HIGH： 高 - MEDIUM：中 - LOW：低
      * @return riskLevel
      */
     public String getRiskLevel() {
@@ -124,7 +124,7 @@ public class SqlRuleResponseRules {
     }
 
     /**
-     * 风险类型
+     * 风险类型 - SYSTEM: 系统  - CUSTOMIZE：自定义
      * @return type
      */
     public String getType() {

@@ -32,7 +32,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * @author HuaweiCloud_SDK
@@ -56,25 +55,24 @@ public final class ExceptionUtils {
     public static SdkErrorMessage extractErrorMessage(HttpResponse httpResponse) {
         String strBody = httpResponse.getBodyAsString();
         SdkErrorMessage sdkErrorMessage = new SdkErrorMessage(httpResponse.getStatusCode());
-        if (Objects.isNull(strBody)) {
+        if (strBody == null) {
             return sdkErrorMessage;
         }
         try {
             Map<?, ?> errResult = JsonUtils.toObject(strBody, Map.class);
 
-            if (Objects.isNull(errResult)) {
+            if (errResult == null) {
                 return sdkErrorMessage;
             }
             processErrorMessage(sdkErrorMessage, errResult);
-            if (Objects.isNull(sdkErrorMessage.getErrorMsg())) {
+            if (sdkErrorMessage.getErrorMsg() == null) {
                 sdkErrorMessage.setErrorMsg(strBody);
             }
         } catch (SdkException e) {
             sdkErrorMessage.setErrorMsg(httpResponse.getBodyAsString());
         }
 
-        if (Objects.isNull(sdkErrorMessage.getRequestId()) && Objects.nonNull(
-                httpResponse.getHeader(Constants.X_REQUEST_ID))) {
+        if (sdkErrorMessage.getRequestId() == null) {
             sdkErrorMessage.setRequestId(httpResponse.getHeader(Constants.X_REQUEST_ID));
         }
 
@@ -100,12 +98,12 @@ public final class ExceptionUtils {
 
     private static void processErrorMessage(SdkErrorMessage sdkErrorMessage, Map<?, ?> errResult) {
         Object encodedAuthMsg = errResult.get(Constants.ENCODED_AUTHORIZATION_MESSAGE);
-        if (Objects.nonNull(encodedAuthMsg)) {
+        if (encodedAuthMsg != null) {
             sdkErrorMessage.setEncodedAuthorizationMessage(encodedAuthMsg.toString());
         }
 
         Object details = errResult.get(Constants.DETAILS);
-        if (Objects.nonNull(details)) {
+        if (details != null) {
             sdkErrorMessage.setDetails(extractDetails(details));
         }
 

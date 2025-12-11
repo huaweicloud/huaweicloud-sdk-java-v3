@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 用户名
+ * **参数解释**: 用户名 **取值范围**: 字符长度1-64位 
  */
 public class UserName {
 

@@ -76,7 +76,7 @@ public class PortHostResponseInfo {
     }
 
     /**
-     * 镜像id
+     * **参数解释**: 容器ID **取值范围**: 字符长度1-128位 
      * @return containerId
      */
     public String getContainerId() {
@@ -93,7 +93,7 @@ public class PortHostResponseInfo {
     }
 
     /**
-     * 主机id
+     * **参数解释**： 服务器（主机）的唯一标识ID **取值范围**： 字符长度1-64位 
      * @return hostId
      */
     public String getHostId() {
@@ -110,7 +110,7 @@ public class PortHostResponseInfo {
     }
 
     /**
-     * 主机ip
+     * **参数解释**: 服务器IP **取值范围**: 字符长度1-128位 
      * @return hostIp
      */
     public String getHostIp() {
@@ -127,7 +127,7 @@ public class PortHostResponseInfo {
     }
 
     /**
-     * 主机名称
+     * **参数解释**: 服务器名称 **取值范围**: 字符长度1-256位 
      * @return hostName
      */
     public String getHostName() {
@@ -144,7 +144,7 @@ public class PortHostResponseInfo {
     }
 
     /**
-     * 监听ip
+     * **参数解释**: 端口的监听IP地址（0.0.0.0表示监听所有网卡） **取值范围**: 支持IPv4或IPv6格式，IPv4长度7-15位，IPv6长度15-39位 
      * @return laddr
      */
     public String getLaddr() {
@@ -161,7 +161,7 @@ public class PortHostResponseInfo {
     }
 
     /**
-     * 进程可执行文件路径
+     * **参数解释**: 占用当前端口的进程对应的可执行文件绝对路径 **取值范围**: 字符长度0-512位 
      * @return path
      */
     public String getPath() {
@@ -178,7 +178,7 @@ public class PortHostResponseInfo {
     }
 
     /**
-     * pid
+     * **参数解释**: 占用当前端口的进程ID **取值范围**: 非负整数，最小值0（无对应进程时为0）；单位：个 
      * minimum: 0
      * maximum: 100000
      * @return pid
@@ -197,7 +197,7 @@ public class PortHostResponseInfo {
     }
 
     /**
-     * 端口
+     * **参数解释**: 端口的具体编号 **取值范围**: 1-65535（TCP/UDP标准端口范围） 
      * minimum: 0
      * maximum: 65535
      * @return port
@@ -233,7 +233,7 @@ public class PortHostResponseInfo {
     }
 
     /**
-     * 端口类型：目前包括TCP，UDP两种
+     * **参数解释**: 端口类型 **取值范围**: 目前包括TCP，UDP两种 
      * @return type
      */
     public String getType() {
@@ -250,7 +250,7 @@ public class PortHostResponseInfo {
     }
 
     /**
-     * 容器名称
+     * **参数解释**： 容器实例名称，只有容器类型的告警有 **取值范围**： 字符长度1-256位 
      * @return containerName
      */
     public String getContainerName() {
@@ -267,7 +267,7 @@ public class PortHostResponseInfo {
     }
 
     /**
-     * agent id
+     * **参数解释**: 主机上安装的杀毒Agent的唯一标识ID，用于关联主机与杀毒服务 **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return agentId
      */
     public String getAgentId() {

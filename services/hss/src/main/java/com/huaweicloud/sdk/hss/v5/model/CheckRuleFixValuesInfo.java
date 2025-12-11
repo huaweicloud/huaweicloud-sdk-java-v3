@@ -26,9 +26,9 @@ public class CheckRuleFixValuesInfo {
     }
 
     /**
-     * 检查项的参数ID
+     * **参数解释**: 检查项的参数ID **约束限制**: 不涉及 **取值范围**: 字符串大小范围1-128 **默认取值**: 不涉及 
      * minimum: 0
-     * maximum: 2147483647
+     * maximum: 128
      * @return ruleParamId
      */
     public Integer getRuleParamId() {
@@ -45,9 +45,9 @@ public class CheckRuleFixValuesInfo {
     }
 
     /**
-     * 检查项的参数值
+     * **参数解释**: 修复检查项参数具体值 **约束限制**: 不涉及 **取值范围**: 字符串大小范围0-512 **默认取值**: 不涉及 
      * minimum: 0
-     * maximum: 2147483647
+     * maximum: 512
      * @return fixValue
      */
     public Integer getFixValue() {

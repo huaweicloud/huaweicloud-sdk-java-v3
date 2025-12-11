@@ -22,6 +22,9 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AttachEipResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AuthorizeBackupDownloadRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AuthorizeBackupDownloadResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BaseOpsKeyViewRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchDeleteInstanceTagRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchDeleteInstanceTagRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchDeleteInstanceTagResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchSetBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchSetBackupPolicyRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchSetBackupPolicyResponse;
@@ -777,6 +780,41 @@ public class GaussDBforopenGaussMeta {
             TypeCasts.uncheckedConversion(AuthorizeBackupDownloadRequest.XLanguageEnum.class),
             f -> f.withMarshaller(AuthorizeBackupDownloadRequest::getXLanguage,
                 AuthorizeBackupDownloadRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteInstanceTagRequest, BatchDeleteInstanceTagResponse> batchDeleteInstanceTag =
+        genForBatchDeleteInstanceTag();
+
+    private static HttpRequestDef<BatchDeleteInstanceTagRequest, BatchDeleteInstanceTagResponse> genForBatchDeleteInstanceTag() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteInstanceTagRequest, BatchDeleteInstanceTagResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, BatchDeleteInstanceTagRequest.class, BatchDeleteInstanceTagResponse.class)
+            .withName("BatchDeleteInstanceTag")
+            .withUri("/v3/{project_id}/instances/{instance_id}/tags")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteInstanceTagRequest::getInstanceId,
+                BatchDeleteInstanceTagRequest::setInstanceId));
+        builder.<BatchDeleteInstanceTagRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchDeleteInstanceTagRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(BatchDeleteInstanceTagRequest::getXLanguage,
+                BatchDeleteInstanceTagRequest::setXLanguage));
+        builder.<BatchDeleteInstanceTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteInstanceTagRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteInstanceTagRequest::getBody, BatchDeleteInstanceTagRequest::setBody));
 
         // response
 
@@ -4446,6 +4484,30 @@ public class GaussDBforopenGaussMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRestorableInstancesDetailsRequest::getLimit,
                 ListRestorableInstancesDetailsRequest::setLimit));
+        builder.<String>withRequestField("backup_restore_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRestorableInstancesDetailsRequest::getBackupRestoreType,
+                ListRestorableInstancesDetailsRequest::setBackupRestoreType));
+        builder.<String>withRequestField("source_backup_schema",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRestorableInstancesDetailsRequest::getSourceBackupSchema,
+                ListRestorableInstancesDetailsRequest::setSourceBackupSchema));
+        builder.<String>withRequestField("target_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRestorableInstancesDetailsRequest::getTargetInstanceId,
+                ListRestorableInstancesDetailsRequest::setTargetInstanceId));
+        builder.<String>withRequestField("instance_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRestorableInstancesDetailsRequest::getInstanceName,
+                ListRestorableInstancesDetailsRequest::setInstanceName));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -6041,6 +6103,24 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDeploymentFormRequest::getInstanceId, ShowDeploymentFormRequest::setInstanceId));
+        builder.<String>withRequestField("consistency",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeploymentFormRequest::getConsistency,
+                ShowDeploymentFormRequest::setConsistency));
+        builder.<String>withRequestField("consistency_protocol",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeploymentFormRequest::getConsistencyProtocol,
+                ShowDeploymentFormRequest::setConsistencyProtocol));
+        builder.<String>withRequestField("engine_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeploymentFormRequest::getEngineVersion,
+                ShowDeploymentFormRequest::setEngineVersion));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

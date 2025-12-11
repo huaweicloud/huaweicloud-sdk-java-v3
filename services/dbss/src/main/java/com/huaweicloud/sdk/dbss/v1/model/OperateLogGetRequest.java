@@ -32,7 +32,7 @@ public class OperateLogGetRequest {
     private String action;
 
     /**
-     * 执行结果 - success - fail
+     * 执行结果 - success：成功 - fail：失败
      */
     public static final class ResultEnum {
 
@@ -165,7 +165,7 @@ public class OperateLogGetRequest {
     }
 
     /**
-     * 动作名称 - CREATE - DELETE - DOWNLOAD - UPDATE
+     * 动作名称 - CREATE：创建 - DELETE：删除 - DOWNLOAD：下载 - UPDATE：更新
      * @return action
      */
     public String getAction() {
@@ -182,7 +182,7 @@ public class OperateLogGetRequest {
     }
 
     /**
-     * 执行结果 - success - fail
+     * 执行结果 - success：成功 - fail：失败
      * @return result
      */
     public ResultEnum getResult() {

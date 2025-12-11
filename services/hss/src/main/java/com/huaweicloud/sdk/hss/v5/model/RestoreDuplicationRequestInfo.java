@@ -84,7 +84,7 @@ public class RestoreDuplicationRequestInfo {
     }
 
     /**
-     * **参数解释**： 恢复的映射关系(整机恢复时必填，卷恢复时可选但是不会用到填写的值） **取值范围**: 不涉及 
+     * **参数解释**： 恢复的映射关系（整机恢复时必填，卷恢复时可选但是不会用到填写的值） **取值范围**: 不涉及 
      * @return mappings
      */
     public List<BackupRestoreServerMappingInfo> getMappings() {

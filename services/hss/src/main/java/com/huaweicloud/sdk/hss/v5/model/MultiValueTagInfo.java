@@ -29,7 +29,7 @@ public class MultiValueTagInfo {
     }
 
     /**
-     * 键。最大长度128个unicode字符。 key不能为空
+     * **参数解释**: 标签键。 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位。 **默认取值**: 不涉及 
      * @return key
      */
     public String getKey() {
@@ -62,7 +62,7 @@ public class MultiValueTagInfo {
     }
 
     /**
-     * 值列表。每个值最大长度255个unicode字符
+     * **参数解释**: 标签值列表。 **约束限制**: 不涉及 **取值范围**: 每个值字符长度1-256位。 **默认取值**: 不涉及 
      * @return values
      */
     public List<String> getValues() {

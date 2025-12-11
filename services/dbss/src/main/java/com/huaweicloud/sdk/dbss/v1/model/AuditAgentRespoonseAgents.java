@@ -98,7 +98,7 @@ public class AuditAgentRespoonseAgents {
     }
 
     /**
-     * agent 类型
+     * agent 类型 - DB: 数据库端 - APP: 应用端
      * @return agentType
      */
     public String getAgentType() {
@@ -183,7 +183,7 @@ public class AuditAgentRespoonseAgents {
     }
 
     /**
-     * agent状态
+     * agent状态 - 1：开启 - 0：关闭
      * @return status
      */
     public Integer getStatus() {
@@ -234,7 +234,7 @@ public class AuditAgentRespoonseAgents {
     }
 
     /**
-     * 数据流量抓取状态
+     * 数据流量抓取状态 - 1：运行中 - 2：休眠中 - 3：已停止 - 4：异常
      * @return datacapStatus
      */
     public Integer getDatacapStatus() {

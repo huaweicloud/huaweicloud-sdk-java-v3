@@ -26,7 +26,7 @@ public class ResultDetailResponseInfo {
     }
 
     /**
-     * 告警事件关键字，仅用于告警白名单
+     * **参数解释**： 告警事件关键字，仅用于告警白名单 **取值范围**： 字符长度0-128位 
      * @return keyword
      */
     public String getKeyword() {
@@ -43,7 +43,7 @@ public class ResultDetailResponseInfo {
     }
 
     /**
-     * 告警事件hash，仅用于告警白名单
+     * **参数解释**： 告警事件hash，仅用于告警白名单 **取值范围**： 字符长度64位（SHA256哈希） 
      * @return hash
      */
     public String getHash() {

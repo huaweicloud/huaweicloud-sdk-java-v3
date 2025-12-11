@@ -61,7 +61,7 @@ public class AccountResponseInfo {
     }
 
     /**
-     * 账号名称
+     * **参数解释**: 账号的唯一名称，用于标识账号身份； **取值范围**: 字符长度1-64位，支持字母、数字、连字符、下划线，不能以特殊字符开头或结尾 
      * @return accountName
      */
     public String getAccountName() {
@@ -78,7 +78,7 @@ public class AccountResponseInfo {
     }
 
     /**
-     * 账号Id
+     * **参数解释**: 账号的唯一标识ID，用于唯一确定某个账号； **取值范围**: 字符长度1-64位，符合平台账号ID命名规范（如UUID或数字组合） 
      * @return accountId
      */
     public String getAccountId() {
@@ -95,7 +95,7 @@ public class AccountResponseInfo {
     }
 
     /**
-     * 组织Id
+     * **参数解释**: 账号所属组织的唯一标识ID； **取值范围**: 字符长度1-64位，符合平台组织ID命名规范 
      * @return organizationId
      */
     public String getOrganizationId() {
@@ -112,7 +112,7 @@ public class AccountResponseInfo {
     }
 
     /**
-     * 项目Id
+     * **参数解释**: 账号所属项目的唯一标识ID； **取值范围**: 字符长度1-64位，符合平台项目ID命名规范； 
      * @return projectId
      */
     public String getProjectId() {
@@ -129,7 +129,7 @@ public class AccountResponseInfo {
     }
 
     /**
-     * 项目名称
+     * **参数解释**: 账号所属项目的名称，用于直观标识项目； **取值范围**: 字符长度1-64位，支持字母、数字、连字符、下划线及中文，无复杂度额外要求 
      * @return projectName
      */
     public String getProjectName() {
@@ -146,7 +146,7 @@ public class AccountResponseInfo {
     }
 
     /**
-     * 主机数量
+     * **参数解释**: 当前账号下已关联的主机总数量； **取值范围**: 非负整数，最小值0，最大值取决于平台资源配额；单位：台 
      * minimum: 0
      * maximum: 2147483647
      * @return hostNum
@@ -165,7 +165,7 @@ public class AccountResponseInfo {
     }
 
     /**
-     * 漏洞风险数量
+     * **参数解释**: 当前账号下主机存在的漏洞风险总数量； **取值范围**: 非负整数，取值范围0-2147483647；单位：个 
      * minimum: 0
      * maximum: 2147483647
      * @return vulnerabilityNum
@@ -184,7 +184,7 @@ public class AccountResponseInfo {
     }
 
     /**
-     * 基线检测风险数量
+     * **参数解释**: 当前账号下主机基线检测未通过的风险总数量； **取值范围**: 非负整数，取值范围0-2147483647；单位：个 
      * minimum: 0
      * maximum: 2147483647
      * @return baselineNum
@@ -203,7 +203,7 @@ public class AccountResponseInfo {
     }
 
     /**
-     * 安全告警风险数量
+     * **参数解释**: 当前账号下主机发生的安全入侵告警总数量； **取值范围**: 非负整数，取值范围0-2147483647；单位：条 
      * minimum: 0
      * maximum: 2147483647
      * @return intrusionNum

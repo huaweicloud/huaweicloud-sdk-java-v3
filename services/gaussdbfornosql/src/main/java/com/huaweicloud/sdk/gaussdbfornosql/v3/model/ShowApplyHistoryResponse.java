@@ -15,9 +15,31 @@ import java.util.function.Consumer;
 public class ShowApplyHistoryResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_count")
+
+    private Integer totalCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "histories")
 
     private List<ApplyHistoryRsp> histories = null;
+
+    public ShowApplyHistoryResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 总记录数。 **取值范围：** 不涉及。
+     * @return totalCount
+     */
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
 
     public ShowApplyHistoryResponse withHistories(List<ApplyHistoryRsp> histories) {
         this.histories = histories;
@@ -41,7 +63,7 @@ public class ShowApplyHistoryResponse extends SdkResponse {
     }
 
     /**
-     * 参数组模板应用历史列表
+     * **参数解释：** 参数组模板应用历史列表。 **取值范围：** 不涉及。
      * @return histories
      */
     public List<ApplyHistoryRsp> getHistories() {
@@ -61,18 +83,19 @@ public class ShowApplyHistoryResponse extends SdkResponse {
             return false;
         }
         ShowApplyHistoryResponse that = (ShowApplyHistoryResponse) obj;
-        return Objects.equals(this.histories, that.histories);
+        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.histories, that.histories);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(histories);
+        return Objects.hash(totalCount, histories);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowApplyHistoryResponse {\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("    histories: ").append(toIndentedString(histories)).append("\n");
         sb.append("}");
         return sb.toString();

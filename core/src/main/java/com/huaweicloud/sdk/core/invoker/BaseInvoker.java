@@ -32,7 +32,6 @@ import com.huaweicloud.sdk.core.retry.backoff.SdkBackoffStrategy;
 import com.huaweicloud.sdk.core.utils.ValidationUtils;
 
 import java.util.Map;
-import java.util.Objects;
 import java.util.TreeMap;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
@@ -105,7 +104,7 @@ public class BaseInvoker<R, S, D extends BaseInvoker<R, S, D>> {
      * @return DerivedT
      */
     public D addHeader(String headerKey, String headerValue) {
-        if (Objects.isNull(extraHeaders)) {
+        if (extraHeaders == null) {
             extraHeaders = new TreeMap<>();
         }
         extraHeaders.put(headerKey, headerValue);
@@ -119,7 +118,7 @@ public class BaseInvoker<R, S, D extends BaseInvoker<R, S, D>> {
      * @return DerivedT
      */
     public D withExchange(Consumer<SdkExchange> func) {
-        if (Objects.nonNull(func)) {
+        if (func != null) {
             func.accept(exchange);
         }
         return toDerivedT();
@@ -193,7 +192,7 @@ public class BaseInvoker<R, S, D extends BaseInvoker<R, S, D>> {
      */
     public static <S> BiFunction<S, SdkException, Boolean> defaultRetryCondition() {
         return (resp, exception) -> {
-            if (Objects.nonNull(exception)) {
+            if (exception != null) {
                 return ConnectionException.class.isAssignableFrom(exception.getClass());
             }
             return false;
@@ -201,8 +200,8 @@ public class BaseInvoker<R, S, D extends BaseInvoker<R, S, D>> {
     }
 
     public void initBackoffStrategy(BackoffStrategy backoffStrategy) {
-        if (Objects.isNull(backoffStrategy)) {
-            if (Objects.nonNull(func)) {
+        if (backoffStrategy == null) {
+            if (func != null) {
                 this.backoffStrategy = SdkBackoffStrategy.getDefaultBackoffStrategy();
             } else {
                 this.backoffStrategy = BackoffStrategy.NO_BACKOFF;

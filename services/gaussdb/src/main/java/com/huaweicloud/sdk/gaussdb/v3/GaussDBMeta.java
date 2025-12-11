@@ -10,6 +10,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.AddDatabasePermissionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ApplyConfigurationRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.AuditLogDownloadLinkRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.BackupEncryptRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.BatchDeleteBackupRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.BatchDeleteBackupRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.BatchDeleteBackupResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.BatchOperateInstanceTagRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.BatchTagActionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.BatchTagActionResponse;
@@ -350,6 +353,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ServerlessScalingPolicy;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetAuditLogPolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetAuditLogPolicyRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetAuditLogPolicyResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.SetAutoSqlLimitingReq;
+import com.huaweicloud.sdk.gaussdb.v3.model.SetAutoSqlLimitingRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.SetAutoSqlLimitingResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetGaussMySqlProxyWeightRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetGaussMySqlProxyWeightResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetGaussMySqlQuotasRequest;
@@ -374,6 +380,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoScalingHistoryRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoScalingHistoryResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoScalingPolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoScalingPolicyResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoSqlLimitingLogRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoSqlLimitingLogResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowBackupRestoreTimeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowBackupRestoreTimeResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseDatabaseUserRequest;
@@ -414,6 +422,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlProxyListRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlProxyListResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlQuotasRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlQuotasResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowHistoricalSqlFilterRuleRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowHistoricalSqlFilterRuleResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowHtapErrorLogDetailRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowHtapErrorLogDetailResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowHtapLtsConfigRequest;
@@ -463,6 +473,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogStatisticsRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogStatisticsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowlogSensitiveStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowlogSensitiveStatusResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlAutoSqlLimitingReq;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlAutoSqlLimitingRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlAutoSqlLimitingResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterControlRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterControlResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterRuleRequest;
@@ -652,6 +665,34 @@ public class GaussDBMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GrantDatabasePermissionRequestBody.class),
             f -> f.withMarshaller(AddDatabasePermissionRequest::getBody, AddDatabasePermissionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteBackupRequest, BatchDeleteBackupResponse> batchDeleteBackup =
+        genForBatchDeleteBackup();
+
+    private static HttpRequestDef<BatchDeleteBackupRequest, BatchDeleteBackupResponse> genForBatchDeleteBackup() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteBackupRequest, BatchDeleteBackupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteBackupRequest.class, BatchDeleteBackupResponse.class)
+                .withName("BatchDeleteBackup")
+                .withUri("/v3/{project_id}/backups")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteBackupRequest::getXLanguage, BatchDeleteBackupRequest::setXLanguage));
+        builder.<BatchDeleteBackupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteBackupRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteBackupRequest::getBody, BatchDeleteBackupRequest::setBody));
 
         // response
 
@@ -3144,6 +3185,11 @@ public class GaussDBMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListScheduleJobsRequest::getJobName, ListScheduleJobsRequest::setJobName));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduleJobsRequest::getInstanceId, ListScheduleJobsRequest::setInstanceId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -3679,6 +3725,39 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetAutoSqlLimitingRequest, SetAutoSqlLimitingResponse> setAutoSqlLimiting =
+        genForSetAutoSqlLimiting();
+
+    private static HttpRequestDef<SetAutoSqlLimitingRequest, SetAutoSqlLimitingResponse> genForSetAutoSqlLimiting() {
+        // basic
+        HttpRequestDef.Builder<SetAutoSqlLimitingRequest, SetAutoSqlLimitingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetAutoSqlLimitingRequest.class, SetAutoSqlLimitingResponse.class)
+                .withName("SetAutoSqlLimiting")
+                .withUri("/v3/{project_id}/instances/{instance_id}/auto-sql-limiting")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetAutoSqlLimitingRequest::getInstanceId, SetAutoSqlLimitingRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetAutoSqlLimitingRequest::getXLanguage, SetAutoSqlLimitingRequest::setXLanguage));
+        builder.<SetAutoSqlLimitingReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetAutoSqlLimitingReq.class),
+            f -> f.withMarshaller(SetAutoSqlLimitingRequest::getBody, SetAutoSqlLimitingRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetGaussMySqlProxyWeightRequest, SetGaussMySqlProxyWeightResponse> setGaussMySqlProxyWeight =
         genForSetGaussMySqlProxyWeight();
 
@@ -4001,6 +4080,41 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAutoSqlLimitingLogRequest, ShowAutoSqlLimitingLogResponse> showAutoSqlLimitingLog =
+        genForShowAutoSqlLimitingLog();
+
+    private static HttpRequestDef<ShowAutoSqlLimitingLogRequest, ShowAutoSqlLimitingLogResponse> genForShowAutoSqlLimitingLog() {
+        // basic
+        HttpRequestDef.Builder<ShowAutoSqlLimitingLogRequest, ShowAutoSqlLimitingLogResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAutoSqlLimitingLogRequest.class, ShowAutoSqlLimitingLogResponse.class)
+            .withName("ShowAutoSqlLimitingLog")
+            .withUri("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/auto-sql-limiting/log")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoSqlLimitingLogRequest::getInstanceId,
+                ShowAutoSqlLimitingLogRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoSqlLimitingLogRequest::getNodeId, ShowAutoSqlLimitingLogRequest::setNodeId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoSqlLimitingLogRequest::getXLanguage,
+                ShowAutoSqlLimitingLogRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse> showBackupRestoreTime =
         genForShowBackupRestoreTime();
 
@@ -4024,6 +4138,17 @@ public class GaussDBMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBackupRestoreTimeRequest::getDate, ShowBackupRestoreTimeRequest::setDate));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackupRestoreTimeRequest::getStartTime,
+                ShowBackupRestoreTimeRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackupRestoreTimeRequest::getEndTime, ShowBackupRestoreTimeRequest::setEndTime));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -4376,6 +4501,12 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowGaussMySqlIncrementalBackupListRequest::getEndTime,
                 ShowGaussMySqlIncrementalBackupListRequest::setEndTime));
+        builder.<Boolean>withRequestField("display_offsite_backup",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowGaussMySqlIncrementalBackupListRequest::getDisplayOffsiteBackup,
+                ShowGaussMySqlIncrementalBackupListRequest::setDisplayOffsiteBackup));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -4537,6 +4668,18 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowGaussMySqlProxyFlavorsRequest::getInstanceId,
                 ShowGaussMySqlProxyFlavorsRequest::setInstanceId));
+        builder.<ShowGaussMySqlProxyFlavorsRequest.QueryTypeEnum>withRequestField("query_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowGaussMySqlProxyFlavorsRequest.QueryTypeEnum.class),
+            f -> f.withMarshaller(ShowGaussMySqlProxyFlavorsRequest::getQueryType,
+                ShowGaussMySqlProxyFlavorsRequest::setQueryType));
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowGaussMySqlProxyFlavorsRequest::getProxyId,
+                ShowGaussMySqlProxyFlavorsRequest::setProxyId));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -4624,6 +4767,51 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowGaussMySqlQuotasRequest::getXLanguage,
                 ShowGaussMySqlQuotasRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowHistoricalSqlFilterRuleRequest, ShowHistoricalSqlFilterRuleResponse> showHistoricalSqlFilterRule =
+        genForShowHistoricalSqlFilterRule();
+
+    private static HttpRequestDef<ShowHistoricalSqlFilterRuleRequest, ShowHistoricalSqlFilterRuleResponse> genForShowHistoricalSqlFilterRule() {
+        // basic
+        HttpRequestDef.Builder<ShowHistoricalSqlFilterRuleRequest, ShowHistoricalSqlFilterRuleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowHistoricalSqlFilterRuleRequest.class,
+                    ShowHistoricalSqlFilterRuleResponse.class)
+                .withName("ShowHistoricalSqlFilterRule")
+                .withUri("/v3/{project_id}/instances/{instance_id}/sql-filter/history-rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHistoricalSqlFilterRuleRequest::getInstanceId,
+                ShowHistoricalSqlFilterRuleRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHistoricalSqlFilterRuleRequest::getNodeId,
+                ShowHistoricalSqlFilterRuleRequest::setNodeId));
+        builder.<String>withRequestField("sql_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHistoricalSqlFilterRuleRequest::getSqlType,
+                ShowHistoricalSqlFilterRuleRequest::setSqlType));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHistoricalSqlFilterRuleRequest::getXLanguage,
+                ShowHistoricalSqlFilterRuleRequest::setXLanguage));
 
         // response
 
@@ -5324,6 +5512,41 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSlowlogSensitiveStatusRequest::getXLanguage,
                 ShowSlowlogSensitiveStatusRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSqlAutoSqlLimitingRequest, ShowSqlAutoSqlLimitingResponse> showSqlAutoSqlLimiting =
+        genForShowSqlAutoSqlLimiting();
+
+    private static HttpRequestDef<ShowSqlAutoSqlLimitingRequest, ShowSqlAutoSqlLimitingResponse> genForShowSqlAutoSqlLimiting() {
+        // basic
+        HttpRequestDef.Builder<ShowSqlAutoSqlLimitingRequest, ShowSqlAutoSqlLimitingResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ShowSqlAutoSqlLimitingRequest.class, ShowSqlAutoSqlLimitingResponse.class)
+            .withName("ShowSqlAutoSqlLimiting")
+            .withUri("/v3/{project_id}/instances/{instance_id}/auto-sql-limiting")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlAutoSqlLimitingRequest::getInstanceId,
+                ShowSqlAutoSqlLimitingRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlAutoSqlLimitingRequest::getXLanguage,
+                ShowSqlAutoSqlLimitingRequest::setXLanguage));
+        builder.<ShowSqlAutoSqlLimitingReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowSqlAutoSqlLimitingReq.class),
+            f -> f.withMarshaller(ShowSqlAutoSqlLimitingRequest::getBody, ShowSqlAutoSqlLimitingRequest::setBody));
 
         // response
 

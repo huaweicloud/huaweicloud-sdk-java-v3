@@ -22,7 +22,7 @@ public class CreateQuotasOrderResponse extends SdkResponse {
     }
 
     /**
-     * 订单ID
+     * **参数解释**： 订单ID **约束限制**: 不涉及 **取值范围**： 字符长度1-256 **默认取值**: 不涉及
      * @return orderId
      */
     public String getOrderId() {

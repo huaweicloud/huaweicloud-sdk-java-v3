@@ -68,7 +68,7 @@ public class ListAllRiskConfigCheckRulesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "statistics_flag")
 
-    private String statisticsFlag;
+    private Boolean statisticsFlag;
 
     public ListAllRiskConfigCheckRulesRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -261,7 +261,7 @@ public class ListAllRiskConfigCheckRulesRequest {
         this.policyGroupId = policyGroupId;
     }
 
-    public ListAllRiskConfigCheckRulesRequest withStatisticsFlag(String statisticsFlag) {
+    public ListAllRiskConfigCheckRulesRequest withStatisticsFlag(Boolean statisticsFlag) {
         this.statisticsFlag = statisticsFlag;
         return this;
     }
@@ -270,11 +270,11 @@ public class ListAllRiskConfigCheckRulesRequest {
      * **参数解释** 是否从统计维度展示数据 **约束限制** 不涉及 **取值范围** - false : 不从统计维度展示 - true  : 从统计维度展示  **默认取值** false
      * @return statisticsFlag
      */
-    public String getStatisticsFlag() {
+    public Boolean getStatisticsFlag() {
         return statisticsFlag;
     }
 
-    public void setStatisticsFlag(String statisticsFlag) {
+    public void setStatisticsFlag(Boolean statisticsFlag) {
         this.statisticsFlag = statisticsFlag;
     }
 

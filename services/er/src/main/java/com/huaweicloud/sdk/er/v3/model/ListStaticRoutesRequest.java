@@ -387,7 +387,7 @@ public class ListStaticRoutesRequest {
     }
 
     /**
-     * - vpc：虚拟私有云 - vpn：vpn网关 - vgw：云专线的虚拟网关 - peering：对等连接，通过云连接CC加载不同区域的企业路由器来创建“对等连接（Peering）”连接 -  -  -  -
+     * - vpc：虚拟私有云 - vpn：vpn网关 - vgw：云专线的虚拟网关 - peering：对等连接，通过云连接CC加载不同区域的企业路由器来创建“对等连接（Peering）”连接
      * @return resourceType
      */
     public List<ResourceTypeEnum> getResourceType() {

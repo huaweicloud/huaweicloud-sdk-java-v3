@@ -20,6 +20,11 @@ public class ShowVulReportDataResponse extends SdkResponse {
     private ShowVulReportDataResponseInfoSumary sumary;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "summary")
+
+    private ShowVulReportDataResponseInfoSummary summary;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosts")
 
     private List<ShowVulReportDataResponseInfoHosts> hosts = null;
@@ -68,6 +73,32 @@ public class ShowVulReportDataResponse extends SdkResponse {
 
     public void setSumary(ShowVulReportDataResponseInfoSumary sumary) {
         this.sumary = sumary;
+    }
+
+    public ShowVulReportDataResponse withSummary(ShowVulReportDataResponseInfoSummary summary) {
+        this.summary = summary;
+        return this;
+    }
+
+    public ShowVulReportDataResponse withSummary(Consumer<ShowVulReportDataResponseInfoSummary> summarySetter) {
+        if (this.summary == null) {
+            this.summary = new ShowVulReportDataResponseInfoSummary();
+            summarySetter.accept(this.summary);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get summary
+     * @return summary
+     */
+    public ShowVulReportDataResponseInfoSummary getSummary() {
+        return summary;
+    }
+
+    public void setSummary(ShowVulReportDataResponseInfoSummary summary) {
+        this.summary = summary;
     }
 
     public ShowVulReportDataResponse withHosts(List<ShowVulReportDataResponseInfoHosts> hosts) {
@@ -205,8 +236,8 @@ public class ShowVulReportDataResponse extends SdkResponse {
             return false;
         }
         ShowVulReportDataResponse that = (ShowVulReportDataResponse) obj;
-        return Objects.equals(this.sumary, that.sumary) && Objects.equals(this.hosts, that.hosts)
-            && Objects.equals(this.vulnerabilities, that.vulnerabilities)
+        return Objects.equals(this.sumary, that.sumary) && Objects.equals(this.summary, that.summary)
+            && Objects.equals(this.hosts, that.hosts) && Objects.equals(this.vulnerabilities, that.vulnerabilities)
             && Objects.equals(this.reportCreateTime, that.reportCreateTime)
             && Objects.equals(this.vulnerabilityTotalCount, that.vulnerabilityTotalCount)
             && Objects.equals(this.hostTotalCount, that.hostTotalCount);
@@ -214,7 +245,8 @@ public class ShowVulReportDataResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(sumary, hosts, vulnerabilities, reportCreateTime, vulnerabilityTotalCount, hostTotalCount);
+        return Objects
+            .hash(sumary, summary, hosts, vulnerabilities, reportCreateTime, vulnerabilityTotalCount, hostTotalCount);
     }
 
     @Override
@@ -222,6 +254,7 @@ public class ShowVulReportDataResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowVulReportDataResponse {\n");
         sb.append("    sumary: ").append(toIndentedString(sumary)).append("\n");
+        sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
         sb.append("    hosts: ").append(toIndentedString(hosts)).append("\n");
         sb.append("    vulnerabilities: ").append(toIndentedString(vulnerabilities)).append("\n");
         sb.append("    reportCreateTime: ").append(toIndentedString(reportCreateTime)).append("\n");

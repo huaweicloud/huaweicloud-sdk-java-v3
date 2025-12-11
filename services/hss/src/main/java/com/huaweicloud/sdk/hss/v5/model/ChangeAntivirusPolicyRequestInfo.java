@@ -133,7 +133,7 @@ public class ChangeAntivirusPolicyRequestInfo {
     }
 
     /**
-     * 启动类型，包含如下:   - now : 立即启动   - later : 稍后启动   - period : 周期启动
+     * **参数解释**： 启动类型 **取值范围**： 包含如下   - now：立即启动   - later：稍后启动   - period：周期启动 
      * @return startType
      */
     public String getStartType() {
@@ -150,7 +150,7 @@ public class ChangeAntivirusPolicyRequestInfo {
     }
 
     /**
-     * 任务类型，包含如下:   - quick ：快速扫描   - full : 全盘扫描   - custom : 自定义扫描
+     * **参数解释**： 任务类型 **取值范围**： 包含如下:   - quick ：快速扫描   - full : 全盘扫描   - custom : 自定义扫描 
      * @return scanType
      */
     public String getScanType() {
@@ -346,7 +346,7 @@ public class ChangeAntivirusPolicyRequestInfo {
     }
 
     /**
-     * 处置动作，包含如下:   - auto：自动处置   - manual：人工处置
+     * **参数解释**: 处置动作 **取值范围**: - auto：自动处置 - manual：人工处置 
      * @return action
      */
     public String getAction() {

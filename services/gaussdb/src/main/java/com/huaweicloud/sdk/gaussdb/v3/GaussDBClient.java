@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.gaussdb.v3.model.AddDatabasePermissionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.AddDatabasePermissionResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.BatchDeleteBackupRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.BatchDeleteBackupResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.BatchTagActionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.BatchTagActionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.BatchUpgradeDatabasesRequest;
@@ -257,6 +259,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ResumeStarRocksDataReplicationReques
 import com.huaweicloud.sdk.gaussdb.v3.model.ResumeStarRocksDataReplicationResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetAuditLogPolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetAuditLogPolicyResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.SetAutoSqlLimitingRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.SetAutoSqlLimitingResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetGaussMySqlProxyWeightRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetGaussMySqlProxyWeightResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetGaussMySqlQuotasRequest;
@@ -279,6 +283,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoScalingHistoryRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoScalingHistoryResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoScalingPolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoScalingPolicyResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoSqlLimitingLogRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoSqlLimitingLogResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowBackupRestoreTimeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowBackupRestoreTimeResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseDatabaseUserRequest;
@@ -319,6 +325,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlProxyListRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlProxyListResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlQuotasRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlQuotasResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowHistoricalSqlFilterRuleRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowHistoricalSqlFilterRuleResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowHtapErrorLogDetailRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowHtapErrorLogDetailResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowHtapLtsConfigRequest;
@@ -367,6 +375,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogStatisticsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogStatisticsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowlogSensitiveStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowlogSensitiveStatusResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlAutoSqlLimitingRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlAutoSqlLimitingResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterControlRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterControlResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterRuleRequest;
@@ -528,6 +538,35 @@ public class GaussDBClient {
     public SyncInvoker<AddDatabasePermissionRequest, AddDatabasePermissionResponse> addDatabasePermissionInvoker(
         AddDatabasePermissionRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.addDatabasePermission, hcClient);
+    }
+
+    /**
+     * 批量删除手动备份
+     *
+     * 批量删除手动备份。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteBackupRequest 请求对象
+     * @return BatchDeleteBackupResponse
+     */
+    public BatchDeleteBackupResponse batchDeleteBackup(BatchDeleteBackupRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.batchDeleteBackup);
+    }
+
+    /**
+     * 批量删除手动备份
+     *
+     * 批量删除手动备份。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteBackupRequest 请求对象
+     * @return SyncInvoker<BatchDeleteBackupRequest, BatchDeleteBackupResponse>
+     */
+    public SyncInvoker<BatchDeleteBackupRequest, BatchDeleteBackupResponse> batchDeleteBackupInvoker(
+        BatchDeleteBackupRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.batchDeleteBackup, hcClient);
     }
 
     /**
@@ -2813,6 +2852,35 @@ public class GaussDBClient {
     }
 
     /**
+     * 开启自治限流
+     *
+     * 开启自治限流。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetAutoSqlLimitingRequest 请求对象
+     * @return SetAutoSqlLimitingResponse
+     */
+    public SetAutoSqlLimitingResponse setAutoSqlLimiting(SetAutoSqlLimitingRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.setAutoSqlLimiting);
+    }
+
+    /**
+     * 开启自治限流
+     *
+     * 开启自治限流。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetAutoSqlLimitingRequest 请求对象
+     * @return SyncInvoker<SetAutoSqlLimitingRequest, SetAutoSqlLimitingResponse>
+     */
+    public SyncInvoker<SetAutoSqlLimitingRequest, SetAutoSqlLimitingResponse> setAutoSqlLimitingInvoker(
+        SetAutoSqlLimitingRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.setAutoSqlLimiting, hcClient);
+    }
+
+    /**
      * 设置读写分离权重
      *
      * 设置读写分离权重。
@@ -3099,6 +3167,35 @@ public class GaussDBClient {
     public SyncInvoker<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse> showAutoScalingPolicyInvoker(
         ShowAutoScalingPolicyRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.showAutoScalingPolicy, hcClient);
+    }
+
+    /**
+     * 查询自治限流执行记录
+     *
+     * 查询自治限流执行记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoSqlLimitingLogRequest 请求对象
+     * @return ShowAutoSqlLimitingLogResponse
+     */
+    public ShowAutoSqlLimitingLogResponse showAutoSqlLimitingLog(ShowAutoSqlLimitingLogRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showAutoSqlLimitingLog);
+    }
+
+    /**
+     * 查询自治限流执行记录
+     *
+     * 查询自治限流执行记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoSqlLimitingLogRequest 请求对象
+     * @return SyncInvoker<ShowAutoSqlLimitingLogRequest, ShowAutoSqlLimitingLogResponse>
+     */
+    public SyncInvoker<ShowAutoSqlLimitingLogRequest, ShowAutoSqlLimitingLogResponse> showAutoSqlLimitingLogInvoker(
+        ShowAutoSqlLimitingLogRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.showAutoSqlLimitingLog, hcClient);
     }
 
     /**
@@ -3565,6 +3662,35 @@ public class GaussDBClient {
     public SyncInvoker<ShowGaussMySqlQuotasRequest, ShowGaussMySqlQuotasResponse> showGaussMySqlQuotasInvoker(
         ShowGaussMySqlQuotasRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.showGaussMySqlQuotas, hcClient);
+    }
+
+    /**
+     * 查询历史SQL限流规则
+     *
+     * 查询历史SQL限流规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHistoricalSqlFilterRuleRequest 请求对象
+     * @return ShowHistoricalSqlFilterRuleResponse
+     */
+    public ShowHistoricalSqlFilterRuleResponse showHistoricalSqlFilterRule(ShowHistoricalSqlFilterRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showHistoricalSqlFilterRule);
+    }
+
+    /**
+     * 查询历史SQL限流规则
+     *
+     * 查询历史SQL限流规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHistoricalSqlFilterRuleRequest 请求对象
+     * @return SyncInvoker<ShowHistoricalSqlFilterRuleRequest, ShowHistoricalSqlFilterRuleResponse>
+     */
+    public SyncInvoker<ShowHistoricalSqlFilterRuleRequest, ShowHistoricalSqlFilterRuleResponse> showHistoricalSqlFilterRuleInvoker(
+        ShowHistoricalSqlFilterRuleRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.showHistoricalSqlFilterRule, hcClient);
     }
 
     /**
@@ -4119,6 +4245,35 @@ public class GaussDBClient {
     public SyncInvoker<ShowSlowlogSensitiveStatusRequest, ShowSlowlogSensitiveStatusResponse> showSlowlogSensitiveStatusInvoker(
         ShowSlowlogSensitiveStatusRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.showSlowlogSensitiveStatus, hcClient);
+    }
+
+    /**
+     * 查询自治限流规则
+     *
+     * 查询自治限流规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSqlAutoSqlLimitingRequest 请求对象
+     * @return ShowSqlAutoSqlLimitingResponse
+     */
+    public ShowSqlAutoSqlLimitingResponse showSqlAutoSqlLimiting(ShowSqlAutoSqlLimitingRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showSqlAutoSqlLimiting);
+    }
+
+    /**
+     * 查询自治限流规则
+     *
+     * 查询自治限流规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSqlAutoSqlLimitingRequest 请求对象
+     * @return SyncInvoker<ShowSqlAutoSqlLimitingRequest, ShowSqlAutoSqlLimitingResponse>
+     */
+    public SyncInvoker<ShowSqlAutoSqlLimitingRequest, ShowSqlAutoSqlLimitingResponse> showSqlAutoSqlLimitingInvoker(
+        ShowSqlAutoSqlLimitingRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.showSqlAutoSqlLimiting, hcClient);
     }
 
     /**

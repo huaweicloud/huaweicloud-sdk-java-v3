@@ -28,6 +28,11 @@ public class MysqlShowProxyResponseV3 {
 
     private List<MysqlProxyNodeV3> readonlyNodes = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "htap_nodes")
+
+    private List<MysqlProxyNodeV3> htapNodes = null;
+
     public MysqlShowProxyResponseV3 withProxy(MysqlProxyV3 proxy) {
         this.proxy = proxy;
         return this;
@@ -113,6 +118,39 @@ public class MysqlShowProxyResponseV3 {
         this.readonlyNodes = readonlyNodes;
     }
 
+    public MysqlShowProxyResponseV3 withHtapNodes(List<MysqlProxyNodeV3> htapNodes) {
+        this.htapNodes = htapNodes;
+        return this;
+    }
+
+    public MysqlShowProxyResponseV3 addHtapNodesItem(MysqlProxyNodeV3 htapNodesItem) {
+        if (this.htapNodes == null) {
+            this.htapNodes = new ArrayList<>();
+        }
+        this.htapNodes.add(htapNodesItem);
+        return this;
+    }
+
+    public MysqlShowProxyResponseV3 withHtapNodes(Consumer<List<MysqlProxyNodeV3>> htapNodesSetter) {
+        if (this.htapNodes == null) {
+            this.htapNodes = new ArrayList<>();
+        }
+        htapNodesSetter.accept(this.htapNodes);
+        return this;
+    }
+
+    /**
+     * **参数解释**：  HTAP节点信息。 
+     * @return htapNodes
+     */
+    public List<MysqlProxyNodeV3> getHtapNodes() {
+        return htapNodes;
+    }
+
+    public void setHtapNodes(List<MysqlProxyNodeV3> htapNodes) {
+        this.htapNodes = htapNodes;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -123,12 +161,12 @@ public class MysqlShowProxyResponseV3 {
         }
         MysqlShowProxyResponseV3 that = (MysqlShowProxyResponseV3) obj;
         return Objects.equals(this.proxy, that.proxy) && Objects.equals(this.masterNode, that.masterNode)
-            && Objects.equals(this.readonlyNodes, that.readonlyNodes);
+            && Objects.equals(this.readonlyNodes, that.readonlyNodes) && Objects.equals(this.htapNodes, that.htapNodes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(proxy, masterNode, readonlyNodes);
+        return Objects.hash(proxy, masterNode, readonlyNodes, htapNodes);
     }
 
     @Override
@@ -138,6 +176,7 @@ public class MysqlShowProxyResponseV3 {
         sb.append("    proxy: ").append(toIndentedString(proxy)).append("\n");
         sb.append("    masterNode: ").append(toIndentedString(masterNode)).append("\n");
         sb.append("    readonlyNodes: ").append(toIndentedString(readonlyNodes)).append("\n");
+        sb.append("    htapNodes: ").append(toIndentedString(htapNodes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

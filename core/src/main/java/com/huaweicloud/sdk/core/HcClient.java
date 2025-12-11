@@ -66,7 +66,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.Stack;
 import java.util.concurrent.CompletableFuture;
@@ -190,7 +189,7 @@ public class HcClient implements CustomizationConfigure {
 
     public <R, S> S syncInvokeHttp(R request, HttpRequestDef<R, S> reqDef, SdkExchange exchange,
                                    Map<String, String> extraHeaders) throws ServiceResponseException {
-        if (Objects.isNull(exchange)) {
+        if (exchange == null) {
             throw new IllegalArgumentException("SdkExchange is null");
         }
 
@@ -206,8 +205,7 @@ public class HcClient implements CustomizationConfigure {
             while (true) {
                 try {
                     httpRequest = buildRequest(request, reqDef, extraHeaders);
-                    if (StringUtils.isEmpty(httpRequest.getHeader(Constants.AUTHORIZATION))
-                            && Objects.nonNull(credential)) {
+                    if (StringUtils.isEmpty(httpRequest.getHeader(Constants.AUTHORIZATION)) && credential != null) {
                         // 鉴权，处理project_id，domain_id信息
                         httpRequest = credential.syncProcessAuthRequest(httpRequest, httpClient);
                     }
@@ -250,7 +248,7 @@ public class HcClient implements CustomizationConfigure {
 
     public <R, S> CompletableFuture<S> asyncInvokeHttp(R request, HttpRequestDef<R, S> reqDef,
                                                        SdkExchange exchange, Map<String, String> extraHeaders) {
-        if (Objects.isNull(exchange)) {
+        if (exchange == null) {
             return CompletableFuture.supplyAsync(() -> {
                 throw new IllegalArgumentException("SdkExchange is null");
             }, httpConfig.getExecutorService());
@@ -272,7 +270,7 @@ public class HcClient implements CustomizationConfigure {
         HttpRequest finalHttpRequest = httpRequest;
         CompletableFuture<HttpRequest> validHttpRequestStage = CompletableFuture.supplyAsync(
                 () -> finalHttpRequest, httpConfig.getExecutorService());
-        if (StringUtils.isEmpty(httpRequest.getHeader(Constants.AUTHORIZATION)) && Objects.nonNull(credential)) {
+        if (StringUtils.isEmpty(httpRequest.getHeader(Constants.AUTHORIZATION)) && credential != null) {
             validHttpRequestStage = credential.processAuthRequest(httpRequest, this.httpClient);
         }
         return validHttpRequestStage.thenComposeAsync(validHttpRequest -> {
@@ -342,7 +340,7 @@ public class HcClient implements CustomizationConfigure {
         processExtraHeaders(httpRequestBuilder, extraHeaders);
 
         // sign algorithm
-        if (Objects.nonNull(httpConfig.getSigningAlgorithm())) {
+        if (httpConfig.getSigningAlgorithm() != null) {
             httpRequestBuilder.withSigningAlgorithm(httpConfig.getSigningAlgorithm());
         }
 
@@ -366,11 +364,11 @@ public class HcClient implements CustomizationConfigure {
     private void processExtraHeaders(HttpRequest.HttpRequestBuilder builder, Map<String, String> extraHeaders) {
         Map<String, String> headers = new HashMap<>();
         // client-level extra headers
-        if (Objects.nonNull(this.extraHeaders)) {
+        if (this.extraHeaders != null) {
             headers.putAll(this.extraHeaders);
         }
         // request-level extra headers
-        if (Objects.nonNull(extraHeaders)) {
+        if (extraHeaders != null) {
             headers.putAll(extraHeaders);
         }
         // user-agent
@@ -479,7 +477,7 @@ public class HcClient implements CustomizationConfigure {
         } else if (!reqDef.hasResponseField(Constants.BODY)) {
             // process response without body
             response = JsonUtils.toObjectIgnoreUnknown(stringResult, reqDef.getResponseType());
-            if (Objects.isNull(response)) {
+            if (response == null) {
                 response = reqDef.getResponseType().newInstance();
             }
 
@@ -511,14 +509,14 @@ public class HcClient implements CustomizationConfigure {
 
         S response = reqDef.getResponseType().newInstance();
         if (response instanceof SdkStreamResponse) {
-            if (Objects.nonNull(httpRequest.getProgressListener())) {
+            if (httpRequest.getProgressListener() != null) {
                 SimpleProgressManager progressManager = new SimpleProgressManager(
                         httpResponse.getContentLength(), 0,
                         httpRequest.getProgressListener(), httpRequest.getProgressInterval());
                 ((SdkStreamResponse) response).parseBody(new BufferedInputStream(
                         new ProgressInputStream(httpResponse.getBody(), progressManager),
                         Constants.DEFAULT_READ_BUFFER_STREAM));
-            } else if (Objects.nonNull(httpResponse.getContentType())
+            } else if (httpResponse.getContentType() != null
                     && HttpUtils.isBsonContentType(httpResponse.getContentType())) {
                 response = CastUtils.cast(((SdkStreamResponse) response).parseBody(httpResponse.getBodyAsBytes()));
             } else {
@@ -578,7 +576,7 @@ public class HcClient implements CustomizationConfigure {
 
     private <S> void fillHeaderField(HttpResponse httpResponse, S wrapperResponse, Field<S, ?> field) {
         List<String> infos = httpResponse.getHeaders().get(field.getName());
-        if (Objects.nonNull(infos) && infos.size() > 0) {
+        if (infos != null && !infos.isEmpty()) {
             if (field.getFieldType().isAssignableFrom(List.class)) {
                 field.writeValueSafe(wrapperResponse, infos, List.class);
             } else {
@@ -606,13 +604,15 @@ public class HcClient implements CustomizationConfigure {
      * @param exchange     sdk exchange
      */
     public void printAccessLog(HttpRequest httpRequest, HttpResponse httpResponse, SdkExchange exchange) {
-        String requestId = Objects.isNull(httpResponse.getHeader(Constants.X_REQUEST_ID))
-                ? "null"
-                : httpResponse.getHeader(Constants.X_REQUEST_ID);
-        AccessLog.get()
-                .info("\"{} {}\" {} {} {} {}", httpRequest.getMethod(), httpRequest.getUrl(), httpResponse.getStatusCode(),
-                        httpResponse.getContentLength(), requestId,
-                        Objects.nonNull(exchange) && Objects.nonNull(exchange.getApiTimer()) ? exchange.getApiTimer()
-                                .getDurationMs() : "");
+        AccessLog.get().info(
+                "\"{} {}\" {} {} {} {}",
+                httpRequest.getMethod(),
+                httpRequest.getUrl(),
+                httpResponse.getStatusCode(),
+                httpResponse.getContentLength(),
+                httpResponse.getHeader(Constants.X_REQUEST_ID),
+                exchange != null && exchange.getApiTimer() != null ? exchange.getApiTimer()
+                        .getDurationMs() : ""
+        );
     }
 }

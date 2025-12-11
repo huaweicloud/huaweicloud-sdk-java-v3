@@ -77,7 +77,7 @@ public class SecurityConfigPortInfo {
     }
 
     /**
-     * **参数解释**： 端口危险程度 **取值范围**： - normal：正常端口 - danger：危险端口 - unknow：未知端口 
+     * **参数解释**： 端口危险程度 **取值范围**： - normal：正常端口 - danger：危险端口 - unknown：未知端口 
      * @return status
      */
     public String getStatus() {

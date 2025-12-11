@@ -46,7 +46,7 @@ public class ListInstancesByTagsResponse extends SdkResponse {
     }
 
     /**
-     * 实例列表。
+     * **参数解释：** 实例列表。 **取值范围：** 不涉及。
      * @return instances
      */
     public List<InstanceItem> getInstances() {
@@ -63,7 +63,7 @@ public class ListInstancesByTagsResponse extends SdkResponse {
     }
 
     /**
-     * 总记录数。
+     * **参数解释：** 总记录数。 **取值范围：** 不涉及。
      * @return totalCount
      */
     public Integer getTotalCount() {

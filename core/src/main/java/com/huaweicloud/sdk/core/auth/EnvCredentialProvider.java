@@ -26,7 +26,6 @@ import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import java.util.Locale;
-import java.util.Objects;
 
 public class EnvCredentialProvider implements ICredentialProvider {
 
@@ -64,7 +63,7 @@ public class EnvCredentialProvider implements ICredentialProvider {
         } else if (credentialType.startsWith(Constants.Credentials.GLOBAL)) {
             credentials = new GlobalCredentials().withDomainId(System.getenv(DOMAIN_ID_ENV_NAME));
         }
-        if (Objects.isNull(credentials)) {
+        if (credentials == null) {
             throw new SdkException("unsupported credential type: " + credentialType);
         }
 

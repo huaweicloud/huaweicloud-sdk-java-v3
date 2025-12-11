@@ -22,7 +22,7 @@ public class RestartInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 工作流ID。
+     * **参数解释：** 任务ID。 **取值范围：** 不涉及。
      * @return jobId
      */
     public String getJobId() {

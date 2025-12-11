@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 失败原因
+ * **参数解释**: 失败原因 **取值范围**: 字符长度0-512位 
  */
 public class FailReason {
 

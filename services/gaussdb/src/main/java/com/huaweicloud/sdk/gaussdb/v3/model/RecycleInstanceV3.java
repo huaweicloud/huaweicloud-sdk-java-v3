@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.gaussdb.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * RecycleInstanceV3
@@ -43,12 +46,12 @@ public class RecycleInstanceV3 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_at")
 
-    private Integer createAt;
+    private Long createAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deleted_at")
 
-    private Integer deletedAt;
+    private Long deletedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_type")
@@ -94,6 +97,11 @@ public class RecycleInstanceV3 {
     @JsonProperty(value = "recycle_status")
 
     private String recycleStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "recycle_bakcups")
+
+    private List<RecycleBackupV3> recycleBakcups = null;
 
     public RecycleInstanceV3 withId(String id) {
         this.id = id;
@@ -197,7 +205,7 @@ public class RecycleInstanceV3 {
         this.payModel = payModel;
     }
 
-    public RecycleInstanceV3 withCreateAt(Integer createAt) {
+    public RecycleInstanceV3 withCreateAt(Long createAt) {
         this.createAt = createAt;
         return this;
     }
@@ -206,15 +214,15 @@ public class RecycleInstanceV3 {
      * 创建时间。
      * @return createAt
      */
-    public Integer getCreateAt() {
+    public Long getCreateAt() {
         return createAt;
     }
 
-    public void setCreateAt(Integer createAt) {
+    public void setCreateAt(Long createAt) {
         this.createAt = createAt;
     }
 
-    public RecycleInstanceV3 withDeletedAt(Integer deletedAt) {
+    public RecycleInstanceV3 withDeletedAt(Long deletedAt) {
         this.deletedAt = deletedAt;
         return this;
     }
@@ -223,11 +231,11 @@ public class RecycleInstanceV3 {
      * 删除时间。
      * @return deletedAt
      */
-    public Integer getDeletedAt() {
+    public Long getDeletedAt() {
         return deletedAt;
     }
 
-    public void setDeletedAt(Integer deletedAt) {
+    public void setDeletedAt(Long deletedAt) {
         this.deletedAt = deletedAt;
     }
 
@@ -384,6 +392,39 @@ public class RecycleInstanceV3 {
         this.recycleStatus = recycleStatus;
     }
 
+    public RecycleInstanceV3 withRecycleBakcups(List<RecycleBackupV3> recycleBakcups) {
+        this.recycleBakcups = recycleBakcups;
+        return this;
+    }
+
+    public RecycleInstanceV3 addRecycleBakcupsItem(RecycleBackupV3 recycleBakcupsItem) {
+        if (this.recycleBakcups == null) {
+            this.recycleBakcups = new ArrayList<>();
+        }
+        this.recycleBakcups.add(recycleBakcupsItem);
+        return this;
+    }
+
+    public RecycleInstanceV3 withRecycleBakcups(Consumer<List<RecycleBackupV3>> recycleBakcupsSetter) {
+        if (this.recycleBakcups == null) {
+            this.recycleBakcups = new ArrayList<>();
+        }
+        recycleBakcupsSetter.accept(this.recycleBakcups);
+        return this;
+    }
+
+    /**
+     * **参数解释**：  实例所有的回收站备份列表。
+     * @return recycleBakcups
+     */
+    public List<RecycleBackupV3> getRecycleBakcups() {
+        return recycleBakcups;
+    }
+
+    public void setRecycleBakcups(List<RecycleBackupV3> recycleBakcups) {
+        this.recycleBakcups = recycleBakcups;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -403,7 +444,8 @@ public class RecycleInstanceV3 {
             && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
             && Objects.equals(this.backupLevel, that.backupLevel)
             && Objects.equals(this.recycleBackupId, that.recycleBackupId)
-            && Objects.equals(this.recycleStatus, that.recycleStatus);
+            && Objects.equals(this.recycleStatus, that.recycleStatus)
+            && Objects.equals(this.recycleBakcups, that.recycleBakcups);
     }
 
     @Override
@@ -424,7 +466,8 @@ public class RecycleInstanceV3 {
             enterpriseProjectName,
             backupLevel,
             recycleBackupId,
-            recycleStatus);
+            recycleStatus,
+            recycleBakcups);
     }
 
     @Override
@@ -448,6 +491,7 @@ public class RecycleInstanceV3 {
         sb.append("    backupLevel: ").append(toIndentedString(backupLevel)).append("\n");
         sb.append("    recycleBackupId: ").append(toIndentedString(recycleBackupId)).append("\n");
         sb.append("    recycleStatus: ").append(toIndentedString(recycleStatus)).append("\n");
+        sb.append("    recycleBakcups: ").append(toIndentedString(recycleBakcups)).append("\n");
         sb.append("}");
         return sb.toString();
     }

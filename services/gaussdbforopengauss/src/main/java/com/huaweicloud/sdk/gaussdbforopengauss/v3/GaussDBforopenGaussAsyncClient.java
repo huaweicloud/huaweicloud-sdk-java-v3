@@ -15,6 +15,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AttachEipRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AttachEipResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AuthorizeBackupDownloadRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AuthorizeBackupDownloadResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchDeleteInstanceTagRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchDeleteInstanceTagResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchSetBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchSetBackupPolicyResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchShowUpgradeCandidateVersionsRequest;
@@ -660,6 +662,36 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<AuthorizeBackupDownloadRequest, AuthorizeBackupDownloadResponse> authorizeBackupDownloadAsyncInvoker(
         AuthorizeBackupDownloadRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.authorizeBackupDownload, hcClient);
+    }
+
+    /**
+     * 批量删除实例标签
+     *
+     * 批量删除实例标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteInstanceTagRequest 请求对象
+     * @return CompletableFuture<BatchDeleteInstanceTagResponse>
+     */
+    public CompletableFuture<BatchDeleteInstanceTagResponse> batchDeleteInstanceTagAsync(
+        BatchDeleteInstanceTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.batchDeleteInstanceTag);
+    }
+
+    /**
+     * 批量删除实例标签
+     *
+     * 批量删除实例标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteInstanceTagRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteInstanceTagRequest, BatchDeleteInstanceTagResponse>
+     */
+    public AsyncInvoker<BatchDeleteInstanceTagRequest, BatchDeleteInstanceTagResponse> batchDeleteInstanceTagAsyncInvoker(
+        BatchDeleteInstanceTagRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.batchDeleteInstanceTag, hcClient);
     }
 
     /**

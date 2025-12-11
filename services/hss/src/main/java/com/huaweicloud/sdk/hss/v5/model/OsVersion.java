@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 系统版本
+ * **参数解释**： 系统版本号 **取值范围**： 字符长度0-64位 
  */
 public class OsVersion {
 

@@ -46,7 +46,7 @@ public class OrganizationNodeResponseInfo {
     }
 
     /**
-     * 父节点Id
+     * **参数解释** 当前组织节点的父节点唯一标识ID，用于标识组织树层级关系（根节点父ID通常为“0”或空）； **取值范围** 字符长度1-64位，符合平台组织节点ID命名规范 
      * @return parentId
      */
     public String getParentId() {
@@ -63,7 +63,7 @@ public class OrganizationNodeResponseInfo {
     }
 
     /**
-     * 节点Id
+     * **参数解释** 组织树节点的唯一标识ID，用于唯一确定某个组织节点； **取值范围** 字符长度1-64位，符合平台组织节点ID命名规范（如UUID或数字组合） 
      * @return id
      */
     public String getId() {
@@ -80,7 +80,7 @@ public class OrganizationNodeResponseInfo {
     }
 
     /**
-     * 组织的统一资源名称，格式：organizations::{management_account_id}:xxxxx:{org_id}/xxxxxxxx。
+     * **参数解释** 组织节点的统一资源名称（URN），用于跨服务唯一标识组织资源； **取值范围** 字符长度1-256位，格式为organizations::{management_account_id}:xxxxx:{org_id}/xxxxxxxx，符合平台URN命名规范 
      * @return urn
      */
     public String getUrn() {
@@ -97,7 +97,7 @@ public class OrganizationNodeResponseInfo {
     }
 
     /**
-     * 名称
+     * **参数解释** 组织节点的名称（可能是组织单元名称或账号名称，与org_type对应）； **取值范围** 字符长度1-64位，支持字母、数字、连字符、下划线及中文，不能以特殊字符开头或结尾 
      * @return name
      */
     public String getName() {
@@ -114,7 +114,7 @@ public class OrganizationNodeResponseInfo {
     }
 
     /**
-     * **参数解释**: 节点类型 **约束限制**: 不涉及 **取值范围**: - unit：组织单元 - account：账号  **默认取值**: 不涉及 
+     * **参数解释**: 节点（组织单元或账号）的类型； **取值范围**: unit（组织单元）、account（账号） 
      * @return orgType
      */
     public String getOrgType() {
@@ -131,7 +131,7 @@ public class OrganizationNodeResponseInfo {
     }
 
     /**
-     * 组织或账号是否已授权。   - true: 已授权（无需授权）。   - false: 未授权。
+     * **参数解释**: 标识组织节点（组织单元或账号）是否已完成授权； **取值范围**: true（已授权，无需重复授权）、false（未授权，需完成授权后使用） 
      * @return delegated
      */
     public Boolean getDelegated() {

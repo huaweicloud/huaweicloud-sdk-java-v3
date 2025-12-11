@@ -56,7 +56,7 @@ public class OperateAntiVirusResultRequestInfo {
     }
 
     /**
-     * 备注信息
+     * **参数解释** 备注信息 **取值范围** 字符长度0-512位 
      * @return memo
      */
     public String getMemo() {

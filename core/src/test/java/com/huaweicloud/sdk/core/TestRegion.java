@@ -29,7 +29,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * TestRegion 为基础类，被 TestRegionEndpoint 和 TestRegionWithoutId 用例使用
@@ -60,7 +59,7 @@ public class TestRegion {
             throw new IllegalArgumentException("Unexpected empty parameter: regionId.");
         }
         Region result = STATIC_FIELDS.get(regionId);
-        if (Objects.nonNull(result)) {
+        if (result != null) {
             return result;
         }
         throw new IllegalArgumentException("Unexpected regionId: " + regionId);

@@ -40,6 +40,26 @@ public class ListRestorableInstancesDetailsRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_restore_type")
+
+    private String backupRestoreType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source_backup_schema")
+
+    private String sourceBackupSchema;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "target_instance_id")
+
+    private String targetInstanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_name")
+
+    private String instanceName;
+
     public ListRestorableInstancesDetailsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -144,6 +164,74 @@ public class ListRestorableInstancesDetailsRequest {
         this.limit = limit;
     }
 
+    public ListRestorableInstancesDetailsRequest withBackupRestoreType(String backupRestoreType) {
+        this.backupRestoreType = backupRestoreType;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 查备份恢复的粒度。 **约束限制**: 不涉及。 **取值范围**:   - INSTANCE   - DATABASE_TABLE   - DATABASE **默认取值**: INSTANCE
+     * @return backupRestoreType
+     */
+    public String getBackupRestoreType() {
+        return backupRestoreType;
+    }
+
+    public void setBackupRestoreType(String backupRestoreType) {
+        this.backupRestoreType = backupRestoreType;
+    }
+
+    public ListRestorableInstancesDetailsRequest withSourceBackupSchema(String sourceBackupSchema) {
+        this.sourceBackupSchema = sourceBackupSchema;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 源实例的备份类型。 **约束限制**: 不涉及。 **取值范围**:   - INSTANCE   - DATABASE_TABLE **默认取值**: INSTANCE
+     * @return sourceBackupSchema
+     */
+    public String getSourceBackupSchema() {
+        return sourceBackupSchema;
+    }
+
+    public void setSourceBackupSchema(String sourceBackupSchema) {
+        this.sourceBackupSchema = sourceBackupSchema;
+    }
+
+    public ListRestorableInstancesDetailsRequest withTargetInstanceId(String targetInstanceId) {
+        this.targetInstanceId = targetInstanceId;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 目标实例ID，通过此参数过滤实例列表。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
+     * @return targetInstanceId
+     */
+    public String getTargetInstanceId() {
+        return targetInstanceId;
+    }
+
+    public void setTargetInstanceId(String targetInstanceId) {
+        this.targetInstanceId = targetInstanceId;
+    }
+
+    public ListRestorableInstancesDetailsRequest withInstanceName(String instanceName) {
+        this.instanceName = instanceName;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 目标实例名称，通过此参数过滤实例列表。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
+     * @return instanceName
+     */
+    public String getInstanceName() {
+        return instanceName;
+    }
+
+    public void setInstanceName(String instanceName) {
+        this.instanceName = instanceName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -156,12 +244,25 @@ public class ListRestorableInstancesDetailsRequest {
         return Objects.equals(this.xLanguage, that.xLanguage)
             && Objects.equals(this.sourceInstanceId, that.sourceInstanceId)
             && Objects.equals(this.backupId, that.backupId) && Objects.equals(this.restoreTime, that.restoreTime)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.backupRestoreType, that.backupRestoreType)
+            && Objects.equals(this.sourceBackupSchema, that.sourceBackupSchema)
+            && Objects.equals(this.targetInstanceId, that.targetInstanceId)
+            && Objects.equals(this.instanceName, that.instanceName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, sourceInstanceId, backupId, restoreTime, offset, limit);
+        return Objects.hash(xLanguage,
+            sourceInstanceId,
+            backupId,
+            restoreTime,
+            offset,
+            limit,
+            backupRestoreType,
+            sourceBackupSchema,
+            targetInstanceId,
+            instanceName);
     }
 
     @Override
@@ -174,6 +275,10 @@ public class ListRestorableInstancesDetailsRequest {
         sb.append("    restoreTime: ").append(toIndentedString(restoreTime)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    backupRestoreType: ").append(toIndentedString(backupRestoreType)).append("\n");
+        sb.append("    sourceBackupSchema: ").append(toIndentedString(sourceBackupSchema)).append("\n");
+        sb.append("    targetInstanceId: ").append(toIndentedString(targetInstanceId)).append("\n");
+        sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

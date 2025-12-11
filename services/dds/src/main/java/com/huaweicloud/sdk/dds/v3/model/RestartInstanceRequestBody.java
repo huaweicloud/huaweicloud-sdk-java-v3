@@ -16,7 +16,7 @@ import java.util.Objects;
 public class RestartInstanceRequestBody {
 
     /**
-     * 待重启对象的类型。 - 重启集群实例下的节点时，该参数必选。取值为“mongos”、“shard”、或“config”。 - 重启整个实例时，不传该参数。
+     * **参数解释：** 待重启对象的类型。 **约束限制：** 重启集群实例下的节点或组时，该参数必选。 - 重启mongos节点时，取值为“mongos”。 - 重启shard组时，取值为“shard”。 - 重启config组时，取值为“config”。 - 重启实例（集群、副本集、单节点）时，不传该参数。 **取值范围：** - mongos - shard - config **默认取值：** 不涉及。
      */
     public static final class TargetTypeEnum {
 
@@ -101,13 +101,23 @@ public class RestartInstanceRequestBody {
 
     private String targetId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_serial")
+
+    private Boolean isSerial;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_force")
+
+    private Boolean isForce;
+
     public RestartInstanceRequestBody withTargetType(TargetTypeEnum targetType) {
         this.targetType = targetType;
         return this;
     }
 
     /**
-     * 待重启对象的类型。 - 重启集群实例下的节点时，该参数必选。取值为“mongos”、“shard”、或“config”。 - 重启整个实例时，不传该参数。
+     * **参数解释：** 待重启对象的类型。 **约束限制：** 重启集群实例下的节点或组时，该参数必选。 - 重启mongos节点时，取值为“mongos”。 - 重启shard组时，取值为“shard”。 - 重启config组时，取值为“config”。 - 重启实例（集群、副本集、单节点）时，不传该参数。 **取值范围：** - mongos - shard - config **默认取值：** 不涉及。
      * @return targetType
      */
     public TargetTypeEnum getTargetType() {
@@ -124,7 +134,7 @@ public class RestartInstanceRequestBody {
     }
 
     /**
-     * 待重启对象的ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 - 重启集群实例下的节点时，对于mongos节点，取值为mongos节点ID，对于shard和config组，取值为shard和config组ID。 - 重启整个实例时，取值为实例ID。
+     * **参数解释：** 待重启对象的ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 **约束限制：** 节点状态为正常时，不允许重启主节点。 **取值范围：** - 重启整个实例时，取值为实例ID。 - 重启集群实例shard或config组时取值为shard或config的组ID。 - 重启单个节点时，取值为对应节点的节点ID。 **默认取值：** 不涉及。
      * @return targetId
      */
     public String getTargetId() {
@@ -133,6 +143,40 @@ public class RestartInstanceRequestBody {
 
     public void setTargetId(String targetId) {
         this.targetId = targetId;
+    }
+
+    public RestartInstanceRequestBody withIsSerial(Boolean isSerial) {
+        this.isSerial = isSerial;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否选择节点串行重启。 **约束限制：** 只支持副本集实例。 **取值范围：** - true：表示节点串行重启。 - false：表示节点并行重启。 **默认取值：** false。
+     * @return isSerial
+     */
+    public Boolean getIsSerial() {
+        return isSerial;
+    }
+
+    public void setIsSerial(Boolean isSerial) {
+        this.isSerial = isSerial;
+    }
+
+    public RestartInstanceRequestBody withIsForce(Boolean isForce) {
+        this.isForce = isForce;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否强制重启。 **约束限制：** 仅支持节点状态为异常时进行强制重启。只读节点暂不支持强制重启。 **取值范围：** - true：表示异常节点进行强制重启。 - false：表示进行正常重启。 **默认取值：** false。
+     * @return isForce
+     */
+    public Boolean getIsForce() {
+        return isForce;
+    }
+
+    public void setIsForce(Boolean isForce) {
+        this.isForce = isForce;
     }
 
     @Override
@@ -144,12 +188,13 @@ public class RestartInstanceRequestBody {
             return false;
         }
         RestartInstanceRequestBody that = (RestartInstanceRequestBody) obj;
-        return Objects.equals(this.targetType, that.targetType) && Objects.equals(this.targetId, that.targetId);
+        return Objects.equals(this.targetType, that.targetType) && Objects.equals(this.targetId, that.targetId)
+            && Objects.equals(this.isSerial, that.isSerial) && Objects.equals(this.isForce, that.isForce);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(targetType, targetId);
+        return Objects.hash(targetType, targetId, isSerial, isForce);
     }
 
     @Override
@@ -158,6 +203,8 @@ public class RestartInstanceRequestBody {
         sb.append("class RestartInstanceRequestBody {\n");
         sb.append("    targetType: ").append(toIndentedString(targetType)).append("\n");
         sb.append("    targetId: ").append(toIndentedString(targetId)).append("\n");
+        sb.append("    isSerial: ").append(toIndentedString(isSerial)).append("\n");
+        sb.append("    isForce: ").append(toIndentedString(isForce)).append("\n");
         sb.append("}");
         return sb.toString();
     }

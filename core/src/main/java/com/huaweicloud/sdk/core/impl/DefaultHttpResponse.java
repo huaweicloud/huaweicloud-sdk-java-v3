@@ -24,6 +24,7 @@ package com.huaweicloud.sdk.core.impl;
 import com.huaweicloud.sdk.core.http.HttpResponse;
 import com.huaweicloud.sdk.core.utils.HttpUtils;
 import okhttp3.Response;
+import okhttp3.ResponseBody;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,7 +32,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * @author HuaweiCloud_SDK
@@ -60,27 +60,28 @@ public class DefaultHttpResponse implements HttpResponse {
     }
 
     private boolean shouldReadBody() {
-        if (Objects.isNull(response.body())) {
+        ResponseBody body = response.body();
+        if (body == null) {
             return false;
         }
 
-        if (Objects.isNull(response.body().contentType()) && response.body().contentLength() <= 0) {
+        if (body.contentType() == null && body.contentLength() <= 0) {
             return false;
-        } else {
-            return HttpUtils.isTextBasedContentType(response.body().contentType().toString());
         }
+
+        return HttpUtils.isTextBasedContentType(body.contentType().toString());
     }
 
     private boolean shouldReadBodyAsByte() {
-        if (Objects.isNull(response.body())) {
+        if (response.body() == null) {
             return false;
         }
 
-        if (Objects.isNull(response.body().contentType()) && response.body().contentLength() <= 0) {
+        if (response.body().contentType() == null && response.body().contentLength() <= 0) {
             return false;
-        } else {
-            return HttpUtils.isBsonContentType(response.body().contentType().toString());
         }
+
+        return HttpUtils.isBsonContentType(response.body().contentType().toString());
     }
 
     static DefaultHttpResponse wrap(Response response) {
@@ -94,16 +95,14 @@ public class DefaultHttpResponse implements HttpResponse {
 
     @Override
     public String getContentType() {
-        return Objects.isNull(response.body()) || Objects.isNull(response.body().contentType())
-                ? null
-                : response.body().contentType().toString();
+        return response.body() == null || response.body().contentType() == null ?
+                null : response.body().contentType().toString();
     }
 
     @Override
     public long getContentLength() {
-        return Objects.isNull(this.response.body()) || this.response.body().contentLength() < 0
-                ? 0
-                : this.response.body().contentLength();
+        return this.response.body() == null || this.response.body().contentLength() < 0 ?
+                0 : this.response.body().contentLength();
     }
 
     @Override

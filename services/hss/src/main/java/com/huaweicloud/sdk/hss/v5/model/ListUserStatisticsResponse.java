@@ -30,7 +30,7 @@ public class ListUserStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * 账号总数
+     * **参数解释**: 账号总数 **取值范围**: 最小值0，最大值10000000 
      * minimum: 0
      * maximum: 10000
      * @return totalNum
@@ -65,7 +65,7 @@ public class ListUserStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * 账户统计信息列表
+     * **参数解释**: 账号历史变账户统计信息列表动记录列表 **取值范围**: 最小值0，最大值10000 
      * @return dataList
      */
     public List<UserStatisticInfoResponseInfo> getDataList() {

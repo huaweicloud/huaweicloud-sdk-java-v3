@@ -26,7 +26,7 @@ public class AclPolicyOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "allow_vpc_endpoints")
 
-    private List<AllowVpcEndpointsResult> allowVpcEndpoints = null;
+    private List<AllowVpcEndpointsOption> allowVpcEndpoints = null;
 
     public AclPolicyOption withAllowAddressNetmasks(List<AllowAddressNetmasksOption> allowAddressNetmasks) {
         this.allowAddressNetmasks = allowAddressNetmasks;
@@ -95,12 +95,12 @@ public class AclPolicyOption {
         this.allowIpRanges = allowIpRanges;
     }
 
-    public AclPolicyOption withAllowVpcEndpoints(List<AllowVpcEndpointsResult> allowVpcEndpoints) {
+    public AclPolicyOption withAllowVpcEndpoints(List<AllowVpcEndpointsOption> allowVpcEndpoints) {
         this.allowVpcEndpoints = allowVpcEndpoints;
         return this;
     }
 
-    public AclPolicyOption addAllowVpcEndpointsItem(AllowVpcEndpointsResult allowVpcEndpointsItem) {
+    public AclPolicyOption addAllowVpcEndpointsItem(AllowVpcEndpointsOption allowVpcEndpointsItem) {
         if (this.allowVpcEndpoints == null) {
             this.allowVpcEndpoints = new ArrayList<>();
         }
@@ -108,7 +108,7 @@ public class AclPolicyOption {
         return this;
     }
 
-    public AclPolicyOption withAllowVpcEndpoints(Consumer<List<AllowVpcEndpointsResult>> allowVpcEndpointsSetter) {
+    public AclPolicyOption withAllowVpcEndpoints(Consumer<List<AllowVpcEndpointsOption>> allowVpcEndpointsSetter) {
         if (this.allowVpcEndpoints == null) {
             this.allowVpcEndpoints = new ArrayList<>();
         }
@@ -120,11 +120,11 @@ public class AclPolicyOption {
      * 允许访问的VPC端点。
      * @return allowVpcEndpoints
      */
-    public List<AllowVpcEndpointsResult> getAllowVpcEndpoints() {
+    public List<AllowVpcEndpointsOption> getAllowVpcEndpoints() {
         return allowVpcEndpoints;
     }
 
-    public void setAllowVpcEndpoints(List<AllowVpcEndpointsResult> allowVpcEndpoints) {
+    public void setAllowVpcEndpoints(List<AllowVpcEndpointsOption> allowVpcEndpoints) {
         this.allowVpcEndpoints = allowVpcEndpoints;
     }
 

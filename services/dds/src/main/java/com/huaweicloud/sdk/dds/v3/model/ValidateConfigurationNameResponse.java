@@ -22,7 +22,7 @@ public class ValidateConfigurationNameResponse extends SdkResponse {
     }
 
     /**
-     * 参数组名称是否存在。 - true：参数组名称存在 - false：参数组名称不存在
+     * **参数解释：** 参数组名称是否存在。 **取值范围：** - true：参数组名称存在。 - false：参数组名称不存在。
      * @return isExisted
      */
     public Boolean getIsExisted() {

@@ -121,7 +121,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * **参数解释**： 主机ID **取值范围**： 字符长度1-64位 
+     * **参数解释**： 服务器（主机）的唯一标识ID **取值范围**： 字符长度1-64位 
      * @return hostId
      */
     public String getHostId() {
@@ -172,7 +172,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * **参数解释**： 弹性公网IP地址 **取值范围**： 字符长度1-256位 
+     * **参数解释**： 弹性公网IP地址 **取值范围**： 字符长度1-256位，支持IPv4或IPv6格式（IPv4长度7-15位，IPv6长度15-39位） 
      * @return publicIp
      */
     public String getPublicIp() {
@@ -206,7 +206,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * 启动时间，毫秒
+     * **参数解释**： 启动时间 **取值范围**： 最小值0，最大值9223372036854775807；时间格式：毫秒级时间戳（UTC时区，从1970-01-01 00:00:00开始计算）；单位：ms 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return startTime
@@ -225,7 +225,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * 运行时长，秒
+     * **参数解释**: 运行时长 **取值范围**: 非负整数，最小值0；单位：s（秒） 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return runDuration
@@ -244,7 +244,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * 扫描进度
+     * **参数解释**： 扫描进度 **取值范围**： 字符串格式，支持百分比（如“50%”）或0-100的数值字符串 
      * @return scanProgress
      */
     public String getScanProgress() {
@@ -261,7 +261,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * 新发现病毒数量
+     * **参数解释** 新发现病毒数量 **取值范围** 非负整数，最小值0；单位：个 
      * minimum: 0
      * maximum: 2147483647
      * @return virusNum
@@ -280,7 +280,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * 已扫描的文件数量
+     * **参数解释**: 已扫描的文件数量 **取值范围**: 非负整数，最小值0；单位：个 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return scanFileNum
@@ -299,7 +299,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * 服务器扫描状态，包含如下4种   - scanning ：扫描中   - success ：扫描成功   - fail ：扫描失败   - cancel ：取消扫描
+     * **参数解释**: 服务器扫描状态 **取值范围**: - scanning ：扫描中 - success ：扫描成功 - fail ：扫描失败 - cancel ：取消扫描 
      * @return hostTaskStatus
      */
     public String getHostTaskStatus() {
@@ -316,7 +316,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * 失败原因
+     * **参数解释**: 失败原因 **取值范围**: 字符长度0-512位 
      * @return failReason
      */
     public String getFailReason() {
@@ -333,7 +333,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * 是否删除，包含如下:   - true ：已删除   - false : 未删除
+     * **参数解释**： 是否删除 **取值范围**： 包含如下:   - true ：已删除   - false : 未删除 
      * @return deleted
      */
     public Boolean getDeleted() {
@@ -350,7 +350,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * 是否使用病毒查杀按次计费配额
+     * **参数解释**： 是否使用病毒查杀按次计费配额 **取值范围**： 0（未使用）、1（已使用） 
      * @return whetherUsingQuota
      */
     public Integer getWhetherUsingQuota() {
@@ -367,7 +367,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * **参数解释**: Agent ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
+     * **参数解释**: 主机上安装的杀毒Agent的唯一标识ID，用于关联主机与杀毒服务 **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return agentId
      */
     public String getAgentId() {
@@ -384,7 +384,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * **参数解释**： 操作系统类型 **取值范围**： - Linux：Linux。 - Windows：Windows。 
+     * **参数解释**： 操作系统类型 **取值范围**： - Linux：Linux - Windows：Windows 
      * @return osType
      */
     public String getOsType() {
@@ -401,7 +401,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * **参数解释**： 主机状态 **取值范围**: - ACTIVE：正在运行。 - SHUTOFF：关机。 - BUILDING：创建中。 - ERROR：故障。 
+     * **参数解释**： 主机状态 **取值范围**: - ACTIVE：正在运行 - SHUTOFF：关机 - BUILDING：创建中 - ERROR：故障 
      * @return hostStatus
      */
     public String getHostStatus() {
@@ -418,7 +418,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * **参数解释**： Agent状态 **取值范围**: - installed：已安装。 - not_installed：未安装。 - online：在线。 - offline：离线。 - install_failed：安装失败。 - installing：安装中。 - not_online：不在线的（除了在线以外的所有状态，仅作为查询条件）。 
+     * **参数解释**： Agent状态 **取值范围**: - installed：已安装 - not_installed：未安 - online：在线 - offline：离线 - install_failed：安装失败 - installing：安装中 - not_online：不在线的（除了在线以外的所有状态，仅作为查询条件） 
      * @return agentStatus
      */
     public String getAgentStatus() {
@@ -435,7 +435,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * 防护状态，包含如下2种。   - closed ：关闭。   - opened ：开启。
+     * **参数解释**: 防护状态 **取值范围**:  - closed ：关闭  - opened ：开启 
      * @return protectStatus
      */
     public String getProtectStatus() {
@@ -452,7 +452,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * 操作系统名称
+     * **参数解释**: 操作系统名称 **取值范围**: 字符长度0-128位 
      * @return osName
      */
     public String getOsName() {
@@ -469,7 +469,7 @@ public class AntiVirusTaskHostResponseInfo {
     }
 
     /**
-     * 系统版本
+     * **参数解释**： 系统版本号 **取值范围**： 字符长度0-64位 
      * @return osVersion
      */
     public String getOsVersion() {

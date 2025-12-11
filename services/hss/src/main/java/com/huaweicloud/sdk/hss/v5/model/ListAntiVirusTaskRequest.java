@@ -101,7 +101,7 @@ public class ListAntiVirusTaskRequest {
     }
 
     /**
-     * 任务名称
+     * **参数解释**: 任务名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及 
      * @return taskName
      */
     public String getTaskName() {
@@ -156,7 +156,7 @@ public class ListAntiVirusTaskRequest {
     }
 
     /**
-     * 查询时间范围天数，与自定义查询时间begin_time，end_time互斥
+     * **参数解释**: 查询时间范围天数 **约束限制**: 与begin_time、end_time互斥，不可同时传参，优先按last_days筛选 **取值范围**: 最小值1，最大值90（支持查询近90天内任务） **默认取值**: 不涉及 
      * minimum: 1
      * maximum: 30
      * @return lastDays
@@ -175,7 +175,7 @@ public class ListAntiVirusTaskRequest {
     }
 
     /**
-     * 自定义查询时间，开始时间
+     * **参数解释**： 自定义筛选任务的开始时间（任务启动时间≥该时间） **约束限制**： 与last_days互斥，需与end_time同时传参，格式需合法 **取值范围**： UTC时区，格式为YYYY-MM-DD HH:MM:SS **默认取值**： 不涉及 
      * @return beginTime
      */
     public String getBeginTime() {
@@ -192,7 +192,7 @@ public class ListAntiVirusTaskRequest {
     }
 
     /**
-     * 自定义查询时间，结束时间
+     * **参数解释**： 自定义筛选任务的结束时间（任务启动时间≤该时间） **约束限制**： 与last_days互斥，需与begin_time同时传参，且需大于等于begin_time **取值范围**： UTC时区，格式为YYYY-MM-DD HH:MM:SS **默认取值**： 不涉及 
      * @return endTime
      */
     public String getEndTime() {
@@ -209,7 +209,7 @@ public class ListAntiVirusTaskRequest {
     }
 
     /**
-     * 任务状态，包含如下4种   - scanning ：扫描中   - cancel ：已取消   - fail ：扫描失败   - finish ：已完成
+     * **参数解释**: 任务状态 **约束限制**: 不涉及 **取值范围**: 包含如下4种   - scanning：扫描中   - cancel：已取消   - fail：扫描失败   - finish：已完成 **默认取值**: 不涉及 
      * @return taskStatus
      */
     public String getTaskStatus() {
@@ -260,7 +260,7 @@ public class ListAntiVirusTaskRequest {
     }
 
     /**
-     * **参数解释**: 服务器弹性IP地址。 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 无 
+     * **参数解释**: 服务器弹性IP地址 **约束限制**: 不涉及 **取值范围**: IPv4格式（长度7-15位）、IPv6格式（长度15-39位） **默认取值**: 无 
      * @return publicIp
      */
     public String getPublicIp() {
@@ -277,7 +277,7 @@ public class ListAntiVirusTaskRequest {
     }
 
     /**
-     * 此次扫描任务是否付费
+     * **参数解释**: 此次扫描任务是否付费 **约束限制**: 必选参数，仅支持指定布尔值 **取值范围**: true（付费任务）、false（免费任务） **默认取值**: 不涉及 
      * @return whetherPaidTask
      */
     public Boolean getWhetherPaidTask() {
@@ -310,7 +310,7 @@ public class ListAntiVirusTaskRequest {
     }
 
     /**
-     * 服务器扫描状态，包含如下4种   - scanning ：扫描中   - success ：扫描成功   - fail ：扫描失败   - cancel ：取消扫描
+     * 服务器扫描状态， **参数解释**： 服务器扫描状态 **约束限制**: 不涉及 **取值范围**: 包含如下4种   - scanning ：扫描中   - success ：扫描成功   - fail ：扫描失败   - cancel ：取消扫描 **默认取值**: 不涉及 
      * @return hostTaskStatus
      */
     public List<String> getHostTaskStatus() {

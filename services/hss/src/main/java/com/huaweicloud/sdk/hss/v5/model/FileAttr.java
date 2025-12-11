@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * **参数解释**： 文件属性 **取值范围**： 字符长度1-256位 
+ * **参数解释**： 文件的系统属性（如读写权限、隐藏属性、执行权限等） **取值范围**： 字符长度1-256位 
  */
 public class FileAttr {
 

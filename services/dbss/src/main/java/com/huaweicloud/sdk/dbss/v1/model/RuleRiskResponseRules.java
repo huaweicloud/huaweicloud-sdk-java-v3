@@ -90,7 +90,7 @@ public class RuleRiskResponseRules {
     }
 
     /**
-     * 风险规则类型
+     * 风险规则类型 - LOGIN：登录  - OPERATE：操作
      * @return type
      */
     public String getType() {
@@ -158,7 +158,7 @@ public class RuleRiskResponseRules {
     }
 
     /**
-     * 风险级别 - LOW - MEDIUM - HIGH - NO_RISK
+     * 风险级别 - LOW：低 - MEDIUM：中 - HIGH：高 - NO_RISK：无风险
      * @return riskLevel
      */
     public String getRiskLevel() {
@@ -175,7 +175,7 @@ public class RuleRiskResponseRules {
     }
 
     /**
-     * 规则类型
+     * 规则类型 - SYSTEM: 系统  - CUSTOMIZE: 自定义
      * @return ruleType
      */
     public String getRuleType() {

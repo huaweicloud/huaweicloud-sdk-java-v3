@@ -98,7 +98,7 @@ public class ListAutoLaunchChangeHistoriesRequest {
     }
 
     /**
-     * **参数解释**: 服务器ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
+     * **参数解释**: 服务器的唯一标识ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return hostId
      */
     public String getHostId() {
@@ -293,7 +293,7 @@ public class ListAutoLaunchChangeHistoriesRequest {
     }
 
     /**
-     * **参数解释**: 结束时间，13位时间戳 **约束限制**: 不涉及 **取值范围**: 最小值0，最大值9223372036854775807 **默认取值**: 不涉及 
+     * **参数解释**: 结束时间，13位时间戳 **约束限制**: 需大于等于begin_time，未传begin_time时默认从时间戳0开始查询 **取值范围**: 最小值0，最大值9223372036854775807（UTC时区，从1970-01-01 00:00:00开始计算） **默认取值**: 不涉及 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return endTime

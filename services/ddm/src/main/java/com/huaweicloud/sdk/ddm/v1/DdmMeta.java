@@ -1272,6 +1272,16 @@ public class DdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAvailableRdsRequest::getInstanceId, ListAvailableRdsRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAvailableRdsRequest::getOffset, ListAvailableRdsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAvailableRdsRequest::getLimit, ListAvailableRdsRequest::setLimit));
 
         // response
 
@@ -1305,6 +1315,18 @@ public class DdmMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAvailableRdsForMigrateRequest::getDbName,
                 ListAvailableRdsForMigrateRequest::setDbName));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAvailableRdsForMigrateRequest::getOffset,
+                ListAvailableRdsForMigrateRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAvailableRdsForMigrateRequest::getLimit,
+                ListAvailableRdsForMigrateRequest::setLimit));
 
         // response
 
@@ -1356,6 +1378,31 @@ public class DdmMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackupsRequest::getInstanceId, ListBackupsRequest::setInstanceId));
+        builder.<String>withRequestField("instance_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackupsRequest::getInstanceName, ListBackupsRequest::setInstanceName));
+        builder.<String>withRequestField("backup_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackupsRequest::getBackupName, ListBackupsRequest::setBackupName));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBackupsRequest::getOffset, ListBackupsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBackupsRequest::getLimit, ListBackupsRequest::setLimit));
 
         // response
 
@@ -1765,6 +1812,16 @@ public class DdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BigDecimal.class),
             f -> f.withMarshaller(ListTasksRequest::getEndTime, ListTasksRequest::setEndTime));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTasksRequest::getOffset, ListTasksRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTasksRequest::getLimit, ListTasksRequest::setLimit));
 
         // response
 
@@ -2230,6 +2287,16 @@ public class DdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAvalibleDdmsRequest::getInstanceId, ShowAvalibleDdmsRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowAvalibleDdmsRequest::getOffset, ShowAvalibleDdmsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowAvalibleDdmsRequest::getLimit, ShowAvalibleDdmsRequest::setLimit));
 
         // response
 

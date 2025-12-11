@@ -169,7 +169,7 @@ public class RegistryImagesInfo {
     }
 
     /**
-     * **参数解释**: id **取值范围**: 最小值0，最大值9223372036854775807 
+     * **参数解释**: 镜像记录的唯一标识ID **取值范围**: 最小值0，最大值9223372036854775807 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return id
@@ -222,7 +222,7 @@ public class RegistryImagesInfo {
     }
 
     /**
-     * **参数解释**: 镜像id **取值范围**: 字符长度0-64位 
+     * **参数解释**: 镜像的唯一标识ID **取值范围**: 字符长度0-64位 
      * @return imageId
      */
     public String getImageId() {
@@ -290,7 +290,7 @@ public class RegistryImagesInfo {
     }
 
     /**
-     * **参数解释**: 镜像仓id **取值范围**: 字符长度1-64位 
+     * **参数解释**: 镜像所属仓库的唯一标识ID **取值范围**: 字符长度1-64位 
      * @return registryId
      */
     public String getRegistryId() {
@@ -324,7 +324,7 @@ public class RegistryImagesInfo {
     }
 
     /**
-     * **参数解释**： 镜像仓库类型 **取值范围**： - SwrPrivate：swr私有。 - SwrShared：swr共享。 - SwrEnterprise：swr企业。 - Harbor：harbor仓库。 - Jfrog：jfrog仓库。 - Other：其他仓库。 
+     * **参数解释**： 镜像仓库类型 **取值范围**： - SwrPrivate：SWR私有。 - SwrShared：SWR共享。 - SwrEnterprise：SWR企业。 - Harbor：Harbor仓库。 - Jfrog：Jfrog仓库。 - Other：其他仓库。 
      * @return registryType
      */
     public String getRegistryType() {
@@ -409,7 +409,7 @@ public class RegistryImagesInfo {
     }
 
     /**
-     * **参数解释**: 镜像大小 **取值范围**: 取值0-2147483547 
+     * **参数解释**: 镜像大小 **取值范围**: 取值0-2147483547，单位为字节（bytes） 
      * minimum: 0
      * maximum: 2147483547
      * @return imageSize
@@ -428,7 +428,7 @@ public class RegistryImagesInfo {
     }
 
     /**
-     * **参数解释**: 镜像版本最后更新时间，时间单位 毫秒（ms） **取值范围**: 取值0-9223372036854775807 
+     * **参数解释**: 镜像版本最后更新时间，时间单位 毫秒（ms） **取值范围**: 取值0-9223372036854775807 ms（UTC时区，1970-01-01 00:00:00起） 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return latestUpdateTime
@@ -447,7 +447,7 @@ public class RegistryImagesInfo {
     }
 
     /**
-     * **参数解释**: 最近扫描时间，时间单位 毫秒（ms） **取值范围**: 取值0-9223372036854775807 
+     * **参数解释**: 最近扫描时间，时间单位 毫秒（ms） **取值范围**: 取值0-9223372036854775807 ms（UTC时区，1970-01-01 00:00:00起） 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return latestScanTime
@@ -466,7 +466,7 @@ public class RegistryImagesInfo {
     }
 
     /**
-     * **参数解释**: 最近同步时间，时间单位 毫秒（ms） **取值范围**: 取值0-9223372036854775807 
+     * **参数解释**: 最近同步时间，时间单位 毫秒（ms） **取值范围**: 取值0-9223372036854775807 ms（UTC时区，1970-01-01 00:00:00起） 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return latestSyncTime
@@ -485,7 +485,7 @@ public class RegistryImagesInfo {
     }
 
     /**
-     * **参数解释**: 漏洞个数 **取值范围**: 取值0-2147483647 
+     * **参数解释**: 镜像扫描出的漏洞总数量 **取值范围**: 取值0-2147483647；单位：个 
      * minimum: 0
      * maximum: 2147483647
      * @return vulNum
@@ -504,7 +504,7 @@ public class RegistryImagesInfo {
     }
 
     /**
-     * **参数解释**: 基线扫描未通过数 **取值范围**: 取值0-2147483647 
+     * **参数解释**: 基线扫描未通过数 **取值范围**: 取值0-2147483647；单位：项 
      * minimum: 0
      * maximum: 2147483647
      * @return unsafeSettingNum
@@ -523,7 +523,7 @@ public class RegistryImagesInfo {
     }
 
     /**
-     * **参数解释**: 恶意文件数 **取值范围**: 取值0-2147483647 
+     * **参数解释**: 镜像扫描出的恶意文件数 **取值范围**: 取值0-2147483647；单位：个 
      * minimum: 0
      * maximum: 2147483647
      * @return maliciousFileNum
@@ -610,7 +610,7 @@ public class RegistryImagesInfo {
     }
 
     /**
-     * **参数解释**: 企业版镜像实例名称 **取值范围**: 字符长度0-128 
+     * **参数解释**: SWR企业版镜像所属仓库实例名称 **取值范围**: 字符长度0-128 
      * @return instanceName
      */
     public String getInstanceName() {
@@ -627,7 +627,7 @@ public class RegistryImagesInfo {
     }
 
     /**
-     * **参数解释**: 企业版镜像实例ID **取值范围**: 字符长度0-64 
+     * **参数解释**: SWR企业版镜像所属仓库实例的唯一标识ID **取值范围**: 字符长度0-64 
      * @return instanceId
      */
     public String getInstanceId() {

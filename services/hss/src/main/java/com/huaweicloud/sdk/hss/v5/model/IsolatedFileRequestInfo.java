@@ -36,7 +36,7 @@ public class IsolatedFileRequestInfo {
     }
 
     /**
-     * **参数解释**： 主机ID **取值范围**： 字符长度1-64位 
+     * **参数解释**： 服务器（主机）的唯一标识ID **取值范围**： 字符长度1-64位 
      * @return hostId
      */
     public String getHostId() {
@@ -87,7 +87,7 @@ public class IsolatedFileRequestInfo {
     }
 
     /**
-     * **参数解释**： 文件属性 **取值范围**： 字符长度1-256位 
+     * **参数解释**： 文件的系统属性（如读写权限、隐藏属性、执行权限等） **取值范围**： 字符长度1-256位 
      * @return fileAttr
      */
     public String getFileAttr() {

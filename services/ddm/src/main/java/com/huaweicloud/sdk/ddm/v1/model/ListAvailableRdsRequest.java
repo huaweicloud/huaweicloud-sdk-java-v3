@@ -15,6 +15,16 @@ public class ListAvailableRdsRequest {
 
     private String instanceId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
     public ListAvailableRdsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -32,6 +42,44 @@ public class ListAvailableRdsRequest {
         this.instanceId = instanceId;
     }
 
+    public ListAvailableRdsRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0。取值必须为数字，且不能为负数。
+     * minimum: 0
+     * maximum: 1024
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ListAvailableRdsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 分页参数：每页多少条。
+     * minimum: 0
+     * maximum: 1024
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +89,13 @@ public class ListAvailableRdsRequest {
             return false;
         }
         ListAvailableRdsRequest that = (ListAvailableRdsRequest) obj;
-        return Objects.equals(this.instanceId, that.instanceId);
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId);
+        return Objects.hash(instanceId, offset, limit);
     }
 
     @Override
@@ -54,6 +103,8 @@ public class ListAvailableRdsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAvailableRdsRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

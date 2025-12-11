@@ -194,7 +194,7 @@ public class ProductInfoBeanNew {
     }
 
     /**
-     * 资源类型
+     * 资源类型: - hws.resource.type.dbss：数据库审计
      * @return resourceType
      */
     public String getResourceType() {

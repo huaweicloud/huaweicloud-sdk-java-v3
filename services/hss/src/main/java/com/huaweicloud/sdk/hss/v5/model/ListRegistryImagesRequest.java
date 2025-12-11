@@ -185,7 +185,7 @@ public class ListRegistryImagesRequest {
     }
 
     /**
-     * **参数解释**: 镜像名称 **取值范围**: 字符长度1-128位 
+     * **参数解释**: 镜像名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及 
      * @return imageName
      */
     public String getImageName() {
@@ -202,7 +202,7 @@ public class ListRegistryImagesRequest {
     }
 
     /**
-     * **参数解释**: 镜像版本 **取值范围**: 字符长度1-64位 
+     * **参数解释**: 镜像版本 **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return imageVersion
      */
     public String getImageVersion() {
@@ -219,7 +219,7 @@ public class ListRegistryImagesRequest {
     }
 
     /**
-     * **参数解释**: 仓库名称 **取值范围**: 字符长度1-128位 
+     * **参数解释**: 仓库名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及 
      * @return registryName
      */
     public String getRegistryName() {
@@ -325,7 +325,7 @@ public class ListRegistryImagesRequest {
     }
 
     /**
-     * 仅关注最新版本镜像
+     * **参数解释**: 仅关注最新版本镜像 **约束限制**: 不涉及 **取值范围**: - true：是。 - false：否。  **默认取值**: false 
      * @return latestVersion
      */
     public Boolean getLatestVersion() {
@@ -342,7 +342,7 @@ public class ListRegistryImagesRequest {
     }
 
     /**
-     * **参数解释**: 镜像大小 **约束限制**: 不涉及 **取值范围**: 取值0-2147483547 **默认取值**: 不涉及 
+     * **参数解释**: 镜像大小 **约束限制**: 取值为非负整数，单位为字节（bytes） **取值范围**: 取值0-2147483547 **默认取值**: 不涉及 
      * minimum: 0
      * maximum: 2147483547
      * @return imageSize
@@ -378,7 +378,7 @@ public class ListRegistryImagesRequest {
     }
 
     /**
-     * **参数解释**: 创建时间开始日期，时间单位 毫秒（ms） **约束限制**: 不涉及 **取值范围**: 取值0-9223372036854775807 **默认取值**: 不涉及 
+     * **参数解释**: 最后更新时间的查询起始值，时间单位 毫秒（ms） **约束限制**: 需≤end_latest_update_time，未传end参数时默认查询至当前时间 **取值范围**: 取值0-9223372036854775807 ms（UTC时区，1970-01-01 00:00:00起） **默认取值**: 不涉及 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return startLatestUpdateTime
@@ -397,7 +397,7 @@ public class ListRegistryImagesRequest {
     }
 
     /**
-     * **参数解释**: 创建时间结束日期，时间单位 毫秒（ms） **约束限制**: 不涉及 **取值范围**: 取值0-9223372036854775807 **默认取值**: 不涉及 
+     * **参数解释**: 最后更新时间的查询结束值，时间单位 毫秒（ms） **约束限制**: 需≥start_latest_update_time，未传start参数时默认从0开始 **取值范围**: 取值0-9223372036854775807 ms（UTC时区，1970-01-01 00:00:00起） **默认取值**: 不涉及 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return endLatestUpdateTime
@@ -416,7 +416,7 @@ public class ListRegistryImagesRequest {
     }
 
     /**
-     * **参数解释**: 最近一次扫描完成时间开始日期，时间单位 毫秒（ms） **约束限制**: 不涉及 **取值范围**: 取值0-9223372036854775807 **默认取值**: 不涉及 
+     * **参数解释**: 最近一次扫描完成时间的查询起始值，时间单位 毫秒（ms） **约束限制**: 需≤end_latest_scan_time，未传end参数时默认查询至当前时间 **取值范围**: 取值0-9223372036854775807 ms（UTC时区，1970-01-01 00:00:00起） **默认取值**: 不涉及 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return startLatestScanTime
@@ -435,7 +435,7 @@ public class ListRegistryImagesRequest {
     }
 
     /**
-     * **参数解释**: 最近一次扫描完成时间结束日期，时间单位 毫秒（ms） **约束限制**: 不涉及 **取值范围**: 取值0-9223372036854775807 **默认取值**: 不涉及 
+     * **参数解释**: 最近一次扫描完成时间的查询结束值，时间单位 毫秒（ms） **约束限制**: 需≥start_latest_scan_time，未传start参数时默认从0开始 **取值范围**: 取值0-9223372036854775807 ms（UTC时区，1970-01-01 00:00:00起） **默认取值**: 不涉及 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return endLatestScanTime
@@ -454,7 +454,7 @@ public class ListRegistryImagesRequest {
     }
 
     /**
-     * **参数解释**: 最近一次同步完成时间开始日期，时间单位 毫秒（ms） **约束限制**: 不涉及 **取值范围**: 取值0-9223372036854775807 **默认取值**: 不涉及 
+     * **参数解释**: 最近一次同步完成时间的查询起始值，时间单位 毫秒（ms） **约束限制**: 需≤end_latest_sync_time，未传end参数时默认查询至当前时间 **取值范围**: 取值0-9223372036854775807 ms（UTC时区，1970-01-01 00:00:00起） **默认取值**: 不涉及 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return startLatestSyncTime
@@ -473,7 +473,7 @@ public class ListRegistryImagesRequest {
     }
 
     /**
-     * **参数解释**: 最近一次同步完成时间结束日期，时间单位 毫秒（ms） **约束限制**: 不涉及 **取值范围**: 取值0-9223372036854775807 **默认取值**: 不涉及 
+     * **参数解释**: 最近一次同步完成时间的查询结束值，时间单位 毫秒（ms） **约束限制**: 需≥start_latest_sync_time，未传start参数时默认从0开始 **取值范围**: 取值0-9223372036854775807 ms（UTC时区，1970-01-01 00:00:00起） **默认取值**: 不涉及 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return endLatestSyncTime
@@ -492,7 +492,7 @@ public class ListRegistryImagesRequest {
     }
 
     /**
-     * 是否存在恶意文件
+     * **参数解释**: 是否存在恶意文件 **约束限制**: 不涉及 **取值范围**: - true：是。 - false：否。  **默认取值**: 不涉及 
      * @return hasMaliciousFile
      */
     public Boolean getHasMaliciousFile() {
@@ -509,7 +509,7 @@ public class ListRegistryImagesRequest {
     }
 
     /**
-     * 是否存在基线检查风险
+     * **参数解释**： 是否存在基线检查风险 **约束限制**: 不涉及 **取值范围**： - true：是。 - false：否。  **默认取值**: 不涉及 
      * @return hasUnsafeSetting
      */
     public Boolean getHasUnsafeSetting() {
@@ -526,7 +526,7 @@ public class ListRegistryImagesRequest {
     }
 
     /**
-     * 是否存在软件漏洞
+     * **参数解释**： 是否存在软件漏洞 **约束限制**: 不涉及 **取值范围**： - true：是。 - false：否。  **默认取值**: 不涉及 
      * @return hasVul
      */
     public Boolean getHasVul() {
@@ -543,7 +543,7 @@ public class ListRegistryImagesRequest {
     }
 
     /**
-     * 有安全风险
+     * **参数解释**: 有安全风险 **约束限制**: 不涉及 **取值范围**: - true：是。 - false：否。  **默认取值**: 不涉及 
      * @return risky
      */
     public Boolean getRisky() {
@@ -560,7 +560,7 @@ public class ListRegistryImagesRequest {
     }
 
     /**
-     * **参数解释**： 企业仓库实例ID，SWR企业版可以使用该参数 **约束限制**： 不涉及 **取值范围**： 字符长度0-128位 **默认取值**： 不涉及 
+     * **参数解释**： 企业仓库实例ID，SWR企业版可以使用该参数，需要到SWR企业版服务中获取 **约束限制**： 仅SWR企业版镜像查询有效 **取值范围**： 字符长度0-128位 **默认取值**： 不涉及 
      * @return instanceId
      */
     public String getInstanceId() {
@@ -577,7 +577,7 @@ public class ListRegistryImagesRequest {
     }
 
     /**
-     * **参数解释**： 企业镜像实例名称，SWR企业版可以使用该参数 **约束限制**： 不涉及 **取值范围**： 字符长度0-128位 **默认取值**： 不涉及 
+     * **参数解释**： 企业仓库实例名称，SWR企业版可以使用该参数，需要到SWR企业版服务中获取 **约束限制**： 仅SWR企业版镜像查询有效 **取值范围**： 字符长度0-128位 **默认取值**： 不涉及 
      * @return instanceName
      */
     public String getInstanceName() {
@@ -594,7 +594,7 @@ public class ListRegistryImagesRequest {
     }
 
     /**
-     * 是否是多架构镜像
+     * **参数解释**: 是否是多架构镜像 **约束限制**: 不涉及 **取值范围**: - true：是。 - false：否。  **默认取值**: 不涉及 
      * @return isMultarch
      */
     public Boolean getIsMultarch() {

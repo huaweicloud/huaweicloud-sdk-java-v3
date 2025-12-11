@@ -156,7 +156,7 @@ public class WtpProtectHostResponseInfo {
     }
 
     /**
-     * **参数解释**： 主机ID **取值范围**： 字符长度1-64位 
+     * **参数解释**： 服务器（主机）的唯一标识ID **取值范围**： 字符长度1-64位 
      * @return hostId
      */
     public String getHostId() {
@@ -173,7 +173,7 @@ public class WtpProtectHostResponseInfo {
     }
 
     /**
-     * **参数解释**： 弹性公网IP地址 **取值范围**： 字符长度1-256位 
+     * **参数解释**： 弹性公网IP地址 **取值范围**： 字符长度1-256位，支持IPv4或IPv6格式（IPv4长度7-15位，IPv6长度15-39位） 
      * @return publicIp
      */
     public String getPublicIp() {
@@ -275,7 +275,7 @@ public class WtpProtectHostResponseInfo {
     }
 
     /**
-     * **参数解释**： 操作系统类型 **取值范围**： - Linux：Linux。 - Windows：Windows。 
+     * **参数解释**： 操作系统类型 **取值范围**： - Linux：Linux - Windows：Windows 
      * @return osType
      */
     public String getOsType() {

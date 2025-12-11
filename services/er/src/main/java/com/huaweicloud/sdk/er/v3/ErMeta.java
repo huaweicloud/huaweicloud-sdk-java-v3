@@ -10,9 +10,12 @@ import com.huaweicloud.sdk.er.v3.model.AcceptAttachmentResponse;
 import com.huaweicloud.sdk.er.v3.model.AssociateRouteTableRequest;
 import com.huaweicloud.sdk.er.v3.model.AssociateRouteTableResponse;
 import com.huaweicloud.sdk.er.v3.model.AssociationRequestBody;
+import com.huaweicloud.sdk.er.v3.model.AssociationRoutePolicyRequestBody;
 import com.huaweicloud.sdk.er.v3.model.BatchCreateResourceTagsRequest;
 import com.huaweicloud.sdk.er.v3.model.BatchCreateResourceTagsResponse;
 import com.huaweicloud.sdk.er.v3.model.BatchOperateResourceTagsRequestBody;
+import com.huaweicloud.sdk.er.v3.model.ChangeAssociationRoutePolicyRequest;
+import com.huaweicloud.sdk.er.v3.model.ChangeAssociationRoutePolicyResponse;
 import com.huaweicloud.sdk.er.v3.model.ChangeAvailabilityZoneRequest;
 import com.huaweicloud.sdk.er.v3.model.ChangeAvailabilityZoneResponse;
 import com.huaweicloud.sdk.er.v3.model.CreateEnterpriseRouterRequest;
@@ -106,6 +109,9 @@ import com.huaweicloud.sdk.er.v3.model.UpdateEnterpriseRouterResponse;
 import com.huaweicloud.sdk.er.v3.model.UpdateFlowLogRequest;
 import com.huaweicloud.sdk.er.v3.model.UpdateFlowLogRequestBody;
 import com.huaweicloud.sdk.er.v3.model.UpdateFlowLogResponse;
+import com.huaweicloud.sdk.er.v3.model.UpdatePropagationRequestBody;
+import com.huaweicloud.sdk.er.v3.model.UpdatePropagationRoutePolicyRequest;
+import com.huaweicloud.sdk.er.v3.model.UpdatePropagationRoutePolicyResponse;
 import com.huaweicloud.sdk.er.v3.model.UpdateRouteRequestBody;
 import com.huaweicloud.sdk.er.v3.model.UpdateRouteTableRequest;
 import com.huaweicloud.sdk.er.v3.model.UpdateRouteTableRequestBody;
@@ -164,6 +170,52 @@ public class ErMeta {
             String.class,
             f -> f.withMarshaller(AssociateRouteTableResponse::getXClientToken,
                 AssociateRouteTableResponse::setXClientToken));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeAssociationRoutePolicyRequest, ChangeAssociationRoutePolicyResponse> changeAssociationRoutePolicy =
+        genForChangeAssociationRoutePolicy();
+
+    private static HttpRequestDef<ChangeAssociationRoutePolicyRequest, ChangeAssociationRoutePolicyResponse> genForChangeAssociationRoutePolicy() {
+        // basic
+        HttpRequestDef.Builder<ChangeAssociationRoutePolicyRequest, ChangeAssociationRoutePolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ChangeAssociationRoutePolicyRequest.class,
+                    ChangeAssociationRoutePolicyResponse.class)
+                .withName("ChangeAssociationRoutePolicy")
+                .withUri(
+                    "/v3/{project_id}/enterprise-router/{er_id}/route-tables/{route_table_id}/associations/{association_id}/change-route-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("er_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeAssociationRoutePolicyRequest::getErId,
+                ChangeAssociationRoutePolicyRequest::setErId));
+        builder.<String>withRequestField("route_table_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeAssociationRoutePolicyRequest::getRouteTableId,
+                ChangeAssociationRoutePolicyRequest::setRouteTableId));
+        builder.<String>withRequestField("association_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeAssociationRoutePolicyRequest::getAssociationId,
+                ChangeAssociationRoutePolicyRequest::setAssociationId));
+        builder.<AssociationRoutePolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociationRoutePolicyRequestBody.class),
+            f -> f.withMarshaller(ChangeAssociationRoutePolicyRequest::getBody,
+                ChangeAssociationRoutePolicyRequest::setBody));
+
+        // response
+
         return builder.build();
     }
 
@@ -1038,6 +1090,52 @@ public class ErMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPropagationsRequest::getSortDir, ListPropagationsRequest::setSortDir));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePropagationRoutePolicyRequest, UpdatePropagationRoutePolicyResponse> updatePropagationRoutePolicy =
+        genForUpdatePropagationRoutePolicy();
+
+    private static HttpRequestDef<UpdatePropagationRoutePolicyRequest, UpdatePropagationRoutePolicyResponse> genForUpdatePropagationRoutePolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdatePropagationRoutePolicyRequest, UpdatePropagationRoutePolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpdatePropagationRoutePolicyRequest.class,
+                    UpdatePropagationRoutePolicyResponse.class)
+                .withName("UpdatePropagationRoutePolicy")
+                .withUri(
+                    "/v3/{project_id}/enterprise-router/{er_id}/route-tables/{route_table_id}/propagations/{propagation_id}/change-route-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("er_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePropagationRoutePolicyRequest::getErId,
+                UpdatePropagationRoutePolicyRequest::setErId));
+        builder.<String>withRequestField("route_table_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePropagationRoutePolicyRequest::getRouteTableId,
+                UpdatePropagationRoutePolicyRequest::setRouteTableId));
+        builder.<String>withRequestField("propagation_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePropagationRoutePolicyRequest::getPropagationId,
+                UpdatePropagationRoutePolicyRequest::setPropagationId));
+        builder.<UpdatePropagationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePropagationRequestBody.class),
+            f -> f.withMarshaller(UpdatePropagationRoutePolicyRequest::getBody,
+                UpdatePropagationRoutePolicyRequest::setBody));
 
         // response
 

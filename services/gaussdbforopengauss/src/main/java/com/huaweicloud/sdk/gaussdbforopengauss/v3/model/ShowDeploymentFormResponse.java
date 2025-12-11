@@ -31,6 +31,21 @@ public class ShowDeploymentFormResponse extends SdkResponse {
 
     private Integer replicaNum;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "each_expand_nodes")
+
+    private Integer eachExpandNodes;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_shard_count")
+
+    private Integer maxShardCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "each_shard_num")
+
+    private Integer eachShardNum;
+
     public ShowDeploymentFormResponse withInitialNodeNum(Integer initialNodeNum) {
         this.initialNodeNum = initialNodeNum;
         return this;
@@ -99,6 +114,57 @@ public class ShowDeploymentFormResponse extends SdkResponse {
         this.replicaNum = replicaNum;
     }
 
+    public ShowDeploymentFormResponse withEachExpandNodes(Integer eachExpandNodes) {
+        this.eachExpandNodes = eachExpandNodes;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 每次扩容的最小节点数。 **取值范围**: 不涉及。
+     * @return eachExpandNodes
+     */
+    public Integer getEachExpandNodes() {
+        return eachExpandNodes;
+    }
+
+    public void setEachExpandNodes(Integer eachExpandNodes) {
+        this.eachExpandNodes = eachExpandNodes;
+    }
+
+    public ShowDeploymentFormResponse withMaxShardCount(Integer maxShardCount) {
+        this.maxShardCount = maxShardCount;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 最大分片数。 **取值范围**: 不涉及。
+     * @return maxShardCount
+     */
+    public Integer getMaxShardCount() {
+        return maxShardCount;
+    }
+
+    public void setMaxShardCount(Integer maxShardCount) {
+        this.maxShardCount = maxShardCount;
+    }
+
+    public ShowDeploymentFormResponse withEachShardNum(Integer eachShardNum) {
+        this.eachShardNum = eachShardNum;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 每分片节点数。 **取值范围**: 不涉及。
+     * @return eachShardNum
+     */
+    public Integer getEachShardNum() {
+        return eachShardNum;
+    }
+
+    public void setEachShardNum(Integer eachShardNum) {
+        this.eachShardNum = eachShardNum;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -109,12 +175,16 @@ public class ShowDeploymentFormResponse extends SdkResponse {
         }
         ShowDeploymentFormResponse that = (ShowDeploymentFormResponse) obj;
         return Objects.equals(this.initialNodeNum, that.initialNodeNum) && Objects.equals(this.solution, that.solution)
-            && Objects.equals(this.shardNum, that.shardNum) && Objects.equals(this.replicaNum, that.replicaNum);
+            && Objects.equals(this.shardNum, that.shardNum) && Objects.equals(this.replicaNum, that.replicaNum)
+            && Objects.equals(this.eachExpandNodes, that.eachExpandNodes)
+            && Objects.equals(this.maxShardCount, that.maxShardCount)
+            && Objects.equals(this.eachShardNum, that.eachShardNum);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(initialNodeNum, solution, shardNum, replicaNum);
+        return Objects
+            .hash(initialNodeNum, solution, shardNum, replicaNum, eachExpandNodes, maxShardCount, eachShardNum);
     }
 
     @Override
@@ -125,6 +195,9 @@ public class ShowDeploymentFormResponse extends SdkResponse {
         sb.append("    solution: ").append(toIndentedString(solution)).append("\n");
         sb.append("    shardNum: ").append(toIndentedString(shardNum)).append("\n");
         sb.append("    replicaNum: ").append(toIndentedString(replicaNum)).append("\n");
+        sb.append("    eachExpandNodes: ").append(toIndentedString(eachExpandNodes)).append("\n");
+        sb.append("    maxShardCount: ").append(toIndentedString(maxShardCount)).append("\n");
+        sb.append("    eachShardNum: ").append(toIndentedString(eachShardNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

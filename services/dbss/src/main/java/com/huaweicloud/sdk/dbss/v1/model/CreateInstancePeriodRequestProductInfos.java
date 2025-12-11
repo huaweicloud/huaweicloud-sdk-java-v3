@@ -58,7 +58,7 @@ public class CreateInstancePeriodRequestProductInfos {
     }
 
     /**
-     * 服务类型： - hws.service.type.dbss
+     * 服务类型： - hws.service.type.dbss: 数据库审计
      * @return cloudServiceType
      */
     public String getCloudServiceType() {
@@ -75,7 +75,7 @@ public class CreateInstancePeriodRequestProductInfos {
     }
 
     /**
-     * 资源类型: - hws.resource.type.dbss
+     * 资源类型: - hws.resource.type.dbss：数据库审计
      * @return resourceType
      */
     public String getResourceType() {
@@ -92,7 +92,7 @@ public class CreateInstancePeriodRequestProductInfos {
     }
 
     /**
-     * 资源规格： - dbss.bypassaudit.low - dbss.bypassaudit.medium - dbss.bypassaudit.high
+     * 资源规格： - dbss.bypassaudit.low：基础版 - dbss.bypassaudit.medium：高级版 - dbss.bypassaudit.high：专业版
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {

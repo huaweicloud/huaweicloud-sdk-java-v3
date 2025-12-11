@@ -30,7 +30,7 @@ public class ListPortHostResponse extends SdkResponse {
     }
 
     /**
-     * 机器总数
+     * **参数解释**: 机器总数 **取值范围**: 最小值0， 最大值10000 
      * minimum: 0
      * maximum: 10000
      * @return totalNum
@@ -65,7 +65,7 @@ public class ListPortHostResponse extends SdkResponse {
     }
 
     /**
-     * 机器信息列表
+     * **参数解释**: 机器信息列表 **取值范围**: 最小值0， 最大值10000 
      * @return dataList
      */
     public List<PortHostResponseInfo> getDataList() {

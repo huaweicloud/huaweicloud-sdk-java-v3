@@ -36,7 +36,7 @@ public class CreateDatabaseRequestDatabase {
     private String version;
 
     /**
-     * 字符集。 - GBK - UTF8
+     * 字符集。 - GBK： GBK - UTF8：UTF8
      */
     public static final class CharsetEnum {
 
@@ -136,7 +136,7 @@ public class CreateDatabaseRequestDatabase {
     }
 
     /**
-     * 数据库分类 - RDS: RDS数据库 - ECS:自建数据库
+     * 数据库分类 - RDS: RDS数据库 - ECS: 自建数据库
      * @return dbClassification
      */
     public String getDbClassification() {
@@ -170,7 +170,7 @@ public class CreateDatabaseRequestDatabase {
     }
 
     /**
-     * 数据库类型 - MYSQL - ORACLE - POSTGRESQL - SQLSERVER - DAMENG - TAURUS - DWS - KINGBASE - GAUSSDBOPENGAUSS - GREENPLUM - HIGHGO - SHENTONG - GBASE8A - GBASE8S - GBASEXDM - MONGODB - DDS
+     * 数据库类型 - MYSQL: MySQL - ORACLE: Oracle - POSTGRESQL: PostgreSQL - SQLSERVER: SQL Server - DAMENG： DAMENG - TAURUS: Taurus DB - DWS: GaussDB(DWS) - KINGBASE: Kingbase - GAUSSDBOPENGAUSS：GaussDB/openGauss - GREENPLUM： Greenplum - HIGHGO: HIGHGO - SHENTONG： ShenTong - GBASE8A: GBase 8a - GBASE8S： GBase 8s - GBASEXDM： GBase XDM - MONGODB: MongoDB - DDS： DDS(MongoDB)
      * @return type
      */
     public String getType() {
@@ -204,7 +204,7 @@ public class CreateDatabaseRequestDatabase {
     }
 
     /**
-     * 字符集。 - GBK - UTF8
+     * 字符集。 - GBK： GBK - UTF8：UTF8
      * @return charset
      */
     public CharsetEnum getCharset() {
@@ -255,7 +255,7 @@ public class CreateDatabaseRequestDatabase {
     }
 
     /**
-     * 数据库操作系统 - LINUX64 - WINDOWS64 - UNIX
+     * 数据库操作系统 - LINUX64：LINUX64 - WINDOWS64：WINDOWS64 - UNIX：UNIX
      * @return os
      */
     public String getOs() {

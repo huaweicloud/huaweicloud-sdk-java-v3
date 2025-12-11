@@ -24,6 +24,11 @@ public class ListIRacksResponse extends SdkResponse {
 
     private PageInfo pageInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Integer count;
+
     public ListIRacksResponse withIracks(List<IRack> iracks) {
         this.iracks = iracks;
         return this;
@@ -83,6 +88,23 @@ public class ListIRacksResponse extends SdkResponse {
         this.pageInfo = pageInfo;
     }
 
+    public ListIRacksResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /**
+     * 机柜总数
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -92,12 +114,13 @@ public class ListIRacksResponse extends SdkResponse {
             return false;
         }
         ListIRacksResponse that = (ListIRacksResponse) obj;
-        return Objects.equals(this.iracks, that.iracks) && Objects.equals(this.pageInfo, that.pageInfo);
+        return Objects.equals(this.iracks, that.iracks) && Objects.equals(this.pageInfo, that.pageInfo)
+            && Objects.equals(this.count, that.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(iracks, pageInfo);
+        return Objects.hash(iracks, pageInfo, count);
     }
 
     @Override
@@ -106,6 +129,7 @@ public class ListIRacksResponse extends SdkResponse {
         sb.append("class ListIRacksResponse {\n");
         sb.append("    iracks: ").append(toIndentedString(iracks)).append("\n");
         sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

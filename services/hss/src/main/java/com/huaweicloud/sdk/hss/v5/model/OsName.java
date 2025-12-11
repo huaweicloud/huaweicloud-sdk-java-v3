@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 操作系统名称
+ * **参数解释**: 操作系统名称 **取值范围**: 字符长度0-128位 
  */
 public class OsName {
 

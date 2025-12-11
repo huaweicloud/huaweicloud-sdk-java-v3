@@ -29,7 +29,7 @@ public class AddHostsGroupRequestInfo {
     }
 
     /**
-     * 服务器组名称
+     * **参数解释**: 服务器组名称 **取值范围**: 字符长度1-128位 
      * @return groupName
      */
     public String getGroupName() {
@@ -62,7 +62,7 @@ public class AddHostsGroupRequestInfo {
     }
 
     /**
-     * 服务器ID列表
+     * **参数解释**： 服务器ID列表 **取值范围**: 不涉及 
      * @return hostIdList
      */
     public List<String> getHostIdList() {

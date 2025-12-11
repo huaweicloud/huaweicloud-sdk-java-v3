@@ -414,7 +414,7 @@ public class ListDiagnosisTasksRequest {
 
     /**
      * 分页查询页索引
-     * minimum: 1
+     * minimum: 0
      * maximum: 10000
      * @return offset
      */

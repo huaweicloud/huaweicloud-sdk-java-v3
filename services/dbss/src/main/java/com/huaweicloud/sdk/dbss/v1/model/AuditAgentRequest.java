@@ -36,7 +36,7 @@ public class AuditAgentRequest {
     private String agentType;
 
     /**
-     * agent OS类型: - LINUX64_X86 - LINUX64_ARM - WINDOWS64
+     * agent OS类型: - LINUX64_X86：LINUX64_X86 - LINUX64_ARM：LINUX64_ARM - WINDOWS64：WINDOWS64
      */
     public static final class AgentOsEnum {
 
@@ -210,7 +210,7 @@ public class AuditAgentRequest {
     }
 
     /**
-     * agent OS类型: - LINUX64_X86 - LINUX64_ARM - WINDOWS64
+     * agent OS类型: - LINUX64_X86：LINUX64_X86 - LINUX64_ARM：LINUX64_ARM - WINDOWS64：WINDOWS64
      * @return agentOs
      */
     public AgentOsEnum getAgentOs() {

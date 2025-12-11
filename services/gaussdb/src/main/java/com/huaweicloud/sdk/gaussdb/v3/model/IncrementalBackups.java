@@ -37,6 +37,11 @@ public class IncrementalBackups {
     private BigDecimal size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_type")
+
+    private String backupType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
     private String instanceId;
@@ -126,6 +131,23 @@ public class IncrementalBackups {
         this.size = size;
     }
 
+    public IncrementalBackups withBackupType(String backupType) {
+        this.backupType = backupType;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  增量备份类型。  **取值范围**：  - Log: 同区域增量备份。 - OffSiteLog：跨区域增量备份。
+     * @return backupType
+     */
+    public String getBackupType() {
+        return backupType;
+    }
+
+    public void setBackupType(String backupType) {
+        this.backupType = backupType;
+    }
+
     public IncrementalBackups withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -154,12 +176,13 @@ public class IncrementalBackups {
         IncrementalBackups that = (IncrementalBackups) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.size, that.size) && Objects.equals(this.instanceId, that.instanceId);
+            && Objects.equals(this.size, that.size) && Objects.equals(this.backupType, that.backupType)
+            && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, beginTime, endTime, size, instanceId);
+        return Objects.hash(id, name, beginTime, endTime, size, backupType, instanceId);
     }
 
     @Override
@@ -171,6 +194,7 @@ public class IncrementalBackups {
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    backupType: ").append(toIndentedString(backupType)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("}");
         return sb.toString();

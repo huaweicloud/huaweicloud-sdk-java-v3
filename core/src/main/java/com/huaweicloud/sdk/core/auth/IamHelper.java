@@ -177,18 +177,18 @@ public class IamHelper {
 
         CreateTokenWithIdTokenResponse response =
                 JsonUtils.toObject(httpResponse.getBodyAsString(), CreateTokenWithIdTokenResponse.class);
-        if (Objects.isNull(response)) {
+        if (response == null) {
             throw new SdkException("failed to get token with idpId and idToken");
         }
         response.setHttpStatusCode(httpResponse.getStatusCode());
 
         String token = httpResponse.getHeader(Constants.X_SUBJECT_TOKEN);
-        if (Objects.isNull(token)) {
+        if (token == null) {
             throw new SdkException("failed to get X-Subject-Token");
         }
         response.setSubjectToken(token);
 
-        if (Objects.isNull(response.getToken()) || Objects.isNull(response.getToken().getExpiresAt())) {
+        if (response.getToken() == null || response.getToken().getExpiresAt() == null) {
             throw new SdkException("failed to get expired time");
         }
 

@@ -34,7 +34,6 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 import java.io.IOException;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class MetadataAccessor {
@@ -108,7 +107,7 @@ public class MetadataAccessor {
         CreateTemporaryAccessKeyInEcsResponse resp =
                 JsonUtils.toObject(response.body, CreateTemporaryAccessKeyInEcsResponse.class);
 
-        if (Objects.isNull(resp) || Objects.isNull(resp.getCredential())) {
+        if (resp == null || resp.getCredential() == null) {
             throw new SdkException("failed to get credentials in metadata");
         }
 

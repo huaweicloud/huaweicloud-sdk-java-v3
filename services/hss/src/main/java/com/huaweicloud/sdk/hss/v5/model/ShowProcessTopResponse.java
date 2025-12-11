@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 /**
  * Response Object
  */
-public class ShowPorcessTopResponse extends SdkResponse {
+public class ShowProcessTopResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_num")
@@ -24,7 +24,7 @@ public class ShowPorcessTopResponse extends SdkResponse {
 
     private List<CommonTopResponseInfo> dataList = null;
 
-    public ShowPorcessTopResponse withTotalNum(Integer totalNum) {
+    public ShowProcessTopResponse withTotalNum(Integer totalNum) {
         this.totalNum = totalNum;
         return this;
     }
@@ -43,12 +43,12 @@ public class ShowPorcessTopResponse extends SdkResponse {
         this.totalNum = totalNum;
     }
 
-    public ShowPorcessTopResponse withDataList(List<CommonTopResponseInfo> dataList) {
+    public ShowProcessTopResponse withDataList(List<CommonTopResponseInfo> dataList) {
         this.dataList = dataList;
         return this;
     }
 
-    public ShowPorcessTopResponse addDataListItem(CommonTopResponseInfo dataListItem) {
+    public ShowProcessTopResponse addDataListItem(CommonTopResponseInfo dataListItem) {
         if (this.dataList == null) {
             this.dataList = new ArrayList<>();
         }
@@ -56,7 +56,7 @@ public class ShowPorcessTopResponse extends SdkResponse {
         return this;
     }
 
-    public ShowPorcessTopResponse withDataList(Consumer<List<CommonTopResponseInfo>> dataListSetter) {
+    public ShowProcessTopResponse withDataList(Consumer<List<CommonTopResponseInfo>> dataListSetter) {
         if (this.dataList == null) {
             this.dataList = new ArrayList<>();
         }
@@ -84,7 +84,7 @@ public class ShowPorcessTopResponse extends SdkResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPorcessTopResponse that = (ShowPorcessTopResponse) obj;
+        ShowProcessTopResponse that = (ShowProcessTopResponse) obj;
         return Objects.equals(this.totalNum, that.totalNum) && Objects.equals(this.dataList, that.dataList);
     }
 
@@ -96,7 +96,7 @@ public class ShowPorcessTopResponse extends SdkResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ShowPorcessTopResponse {\n");
+        sb.append("class ShowProcessTopResponse {\n");
         sb.append("    totalNum: ").append(toIndentedString(totalNum)).append("\n");
         sb.append("    dataList: ").append(toIndentedString(dataList)).append("\n");
         sb.append("}");

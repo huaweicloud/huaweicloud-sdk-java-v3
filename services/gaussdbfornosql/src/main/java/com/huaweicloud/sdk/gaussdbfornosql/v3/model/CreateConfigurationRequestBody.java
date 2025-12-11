@@ -33,13 +33,18 @@ public class CreateConfigurationRequestBody {
 
     private Map<String, String> values = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
     public CreateConfigurationRequestBody withName(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * 参数模板名称。最长64个字符，只允许大写字母、小写字母、数字、和“-_.”特殊字符。
+     * **参数解释：** 参数模板名称。 **约束限制：** 最长64个字符，只允许大写字母、小写字母、数字、和“-_.”特殊字符。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return name
      */
     public String getName() {
@@ -56,7 +61,7 @@ public class CreateConfigurationRequestBody {
     }
 
     /**
-     * 参数模板描述。最长256个字符，不支持>!<\"&'=特殊字符。默认为空。
+     * **参数解释：** 参数模板描述。 **约束限制：** 最长256个字符，不支持>!<\"&'=特殊字符。 **取值范围：** 不涉及。 **默认取值：** 空。
      * @return description
      */
     public String getDescription() {
@@ -115,7 +120,7 @@ public class CreateConfigurationRequestBody {
     }
 
     /**
-     * 参数值对象，用户基于默认参数模板自定义的参数值。默认不修改参数值。
+     * **参数解释：** 参数值对象，用户基于默认参数模板自定义的参数值。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 默认不修改参数值。
      * @return values
      */
     public Map<String, String> getValues() {
@@ -124,6 +129,23 @@ public class CreateConfigurationRequestBody {
 
     public void setValues(Map<String, String> values) {
         this.values = values;
+    }
+
+    public CreateConfigurationRequestBody withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 实例ID。 **约束限制：** 实例ID可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 若传入此参数，则会基于此实例的参数信息创建参数模板。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
     }
 
     @Override
@@ -136,12 +158,13 @@ public class CreateConfigurationRequestBody {
         }
         CreateConfigurationRequestBody that = (CreateConfigurationRequestBody) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.datastore, that.datastore) && Objects.equals(this.values, that.values);
+            && Objects.equals(this.datastore, that.datastore) && Objects.equals(this.values, that.values)
+            && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, datastore, values);
+        return Objects.hash(name, description, datastore, values, instanceId);
     }
 
     @Override
@@ -152,6 +175,7 @@ public class CreateConfigurationRequestBody {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
         sb.append("    values: ").append(toIndentedString(values)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

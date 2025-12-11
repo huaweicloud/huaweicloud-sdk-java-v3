@@ -21,6 +21,11 @@ public class ShowInstanceMonitorExtendResponse extends SdkResponse {
 
     private Integer period;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allow")
+
+    private Boolean allow;
+
     public ShowInstanceMonitorExtendResponse withMonitorSwitch(Boolean monitorSwitch) {
         this.monitorSwitch = monitorSwitch;
         return this;
@@ -55,6 +60,23 @@ public class ShowInstanceMonitorExtendResponse extends SdkResponse {
         this.period = period;
     }
 
+    public ShowInstanceMonitorExtendResponse withAllow(Boolean allow) {
+        this.allow = allow;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  能否开启秒级监控。  **取值范围**： - true: 可以开启。 - false：不能开启，8vcpu以下规格不允许开启秒级监控。
+     * @return allow
+     */
+    public Boolean getAllow() {
+        return allow;
+    }
+
+    public void setAllow(Boolean allow) {
+        this.allow = allow;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +86,13 @@ public class ShowInstanceMonitorExtendResponse extends SdkResponse {
             return false;
         }
         ShowInstanceMonitorExtendResponse that = (ShowInstanceMonitorExtendResponse) obj;
-        return Objects.equals(this.monitorSwitch, that.monitorSwitch) && Objects.equals(this.period, that.period);
+        return Objects.equals(this.monitorSwitch, that.monitorSwitch) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.allow, that.allow);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(monitorSwitch, period);
+        return Objects.hash(monitorSwitch, period, allow);
     }
 
     @Override
@@ -78,6 +101,7 @@ public class ShowInstanceMonitorExtendResponse extends SdkResponse {
         sb.append("class ShowInstanceMonitorExtendResponse {\n");
         sb.append("    monitorSwitch: ").append(toIndentedString(monitorSwitch)).append("\n");
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
+        sb.append("    allow: ").append(toIndentedString(allow)).append("\n");
         sb.append("}");
         return sb.toString();
     }

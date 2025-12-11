@@ -23,6 +23,11 @@ public class SmartDocumentRecognizerFormulaBlock {
 
     private List<List<Integer>> location = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
     public SmartDocumentRecognizerFormulaBlock withFormula(String formula) {
         this.formula = formula;
         return this;
@@ -73,6 +78,23 @@ public class SmartDocumentRecognizerFormulaBlock {
         this.location = location;
     }
 
+    public SmartDocumentRecognizerFormulaBlock withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 公式类别，取值包含formula、embedded_formula。 formula: 独立公式 embedded_formula: 行内公式 
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -82,12 +104,13 @@ public class SmartDocumentRecognizerFormulaBlock {
             return false;
         }
         SmartDocumentRecognizerFormulaBlock that = (SmartDocumentRecognizerFormulaBlock) obj;
-        return Objects.equals(this.formula, that.formula) && Objects.equals(this.location, that.location);
+        return Objects.equals(this.formula, that.formula) && Objects.equals(this.location, that.location)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(formula, location);
+        return Objects.hash(formula, location, type);
     }
 
     @Override
@@ -96,6 +119,7 @@ public class SmartDocumentRecognizerFormulaBlock {
         sb.append("class SmartDocumentRecognizerFormulaBlock {\n");
         sb.append("    formula: ").append(toIndentedString(formula)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

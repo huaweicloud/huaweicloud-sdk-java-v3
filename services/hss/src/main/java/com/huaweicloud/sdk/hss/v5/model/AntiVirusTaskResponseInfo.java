@@ -89,7 +89,7 @@ public class AntiVirusTaskResponseInfo {
     }
 
     /**
-     * 任务ID
+     * **参数解释**： 任务ID **取值范围**: 字符长度1-64位 
      * @return taskId
      */
     public String getTaskId() {
@@ -106,7 +106,7 @@ public class AntiVirusTaskResponseInfo {
     }
 
     /**
-     * 任务名称
+     * **参数解释**: 任务名称 **取值范围**: 最大长度255个unicode字符。 
      * @return taskName
      */
     public String getTaskName() {
@@ -123,7 +123,7 @@ public class AntiVirusTaskResponseInfo {
     }
 
     /**
-     * 任务类型，包含如下:   - quick ：快速扫描   - full : 全盘扫描   - custom : 自定义扫描
+     * **参数解释**： 任务类型 **取值范围**： 包含如下:   - quick ：快速扫描   - full : 全盘扫描   - custom : 自定义扫描 
      * @return scanType
      */
     public String getScanType() {
@@ -140,7 +140,7 @@ public class AntiVirusTaskResponseInfo {
     }
 
     /**
-     * 启动类型，包含如下:   - now : 立即启动   - later : 稍后启动   - period : 周期启动
+     * **参数解释**： 启动类型 **取值范围**： 包含如下   - now：立即启动   - later：稍后启动   - period：周期启动 
      * @return startType
      */
     public String getStartType() {
@@ -157,7 +157,7 @@ public class AntiVirusTaskResponseInfo {
     }
 
     /**
-     * 处置动作，包含如下:   - auto：自动处置   - manual：人工处置
+     * **参数解释**: 处置动作 **取值范围**: - auto：自动处置 - manual：人工处置 
      * @return action
      */
     public String getAction() {
@@ -174,7 +174,7 @@ public class AntiVirusTaskResponseInfo {
     }
 
     /**
-     * 启动时间，毫秒
+     * **参数解释**： 启动时间 **取值范围**： 最小值0，最大值9223372036854775807；时间格式：毫秒级时间戳（UTC时区，从1970-01-01 00:00:00开始计算）；单位：ms 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return startTime
@@ -193,7 +193,7 @@ public class AntiVirusTaskResponseInfo {
     }
 
     /**
-     * 任务状态，包含如下2种   - scanning ：扫描中   - finish ：扫描完成
+     * **参数解释**: 任务状态 **取值范围**: 包含如下2种   - scanning：扫描中   - finish：扫描完成 
      * @return taskStatus
      */
     public String getTaskStatus() {
@@ -210,7 +210,7 @@ public class AntiVirusTaskResponseInfo {
     }
 
     /**
-     * 关联服务器数
+     * **参数解释**: 关联服务器数 **取值范围**: 非负整数，最小值0；单位：台 
      * minimum: 0
      * maximum: 2147483647
      * @return hostNum
@@ -229,7 +229,7 @@ public class AntiVirusTaskResponseInfo {
     }
 
     /**
-     * 扫描成功服务器数
+     * **参数解释**: 扫描成功服务器数 **取值范围**: 非负整数，最小值0；单位：台 
      * minimum: 0
      * maximum: 2147483647
      * @return successHostNum
@@ -248,7 +248,7 @@ public class AntiVirusTaskResponseInfo {
     }
 
     /**
-     * 扫描失败服务器数
+     * **参数解释**: 扫描失败服务器数 **取值范围**: 非负整数，最小值0；单位：台 
      * minimum: 0
      * maximum: 2147483647
      * @return failHostNum
@@ -267,7 +267,7 @@ public class AntiVirusTaskResponseInfo {
     }
 
     /**
-     * 已取消服务器数
+     * **参数解释**: 已取消服务器数 **取值范围**: 非负整数，最小值0；单位：台 
      * minimum: 0
      * maximum: 2147483647
      * @return cancelHostNum
@@ -303,7 +303,7 @@ public class AntiVirusTaskResponseInfo {
     }
 
     /**
-     * 主机信息
+     * **参数解释**: 关联的服务器详细信息列表 **取值范围**: 数组个数0-10000 
      * @return hostInfoList
      */
     public List<AntiVirusTaskHostResponseInfo> getHostInfoList() {

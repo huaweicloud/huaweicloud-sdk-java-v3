@@ -23,7 +23,7 @@ public class Statistic {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "query_id")
 
-    private Long queryId;
+    private String queryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "calls")
@@ -41,7 +41,7 @@ public class Statistic {
     private Long rows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "can_use")
+    @JsonProperty(value = "canUse")
 
     private Double canUse;
 
@@ -79,7 +79,7 @@ public class Statistic {
         this.database = database;
     }
 
-    public Statistic withQueryId(Long queryId) {
+    public Statistic withQueryId(String queryId) {
         this.queryId = queryId;
         return this;
     }
@@ -88,11 +88,11 @@ public class Statistic {
      * 由SQL的语法解析树计算出的内部哈希码。
      * @return queryId
      */
-    public Long getQueryId() {
+    public String getQueryId() {
         return queryId;
     }
 
-    public void setQueryId(Long queryId) {
+    public void setQueryId(String queryId) {
         this.queryId = queryId;
     }
 

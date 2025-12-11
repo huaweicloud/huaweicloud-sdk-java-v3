@@ -40,6 +40,11 @@ public class ShowGaussMySqlIncrementalBackupListRequest {
 
     private String endTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "display_offsite_backup")
+
+    private Boolean displayOffsiteBackup;
+
     public ShowGaussMySqlIncrementalBackupListRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -144,6 +149,23 @@ public class ShowGaussMySqlIncrementalBackupListRequest {
         this.endTime = endTime;
     }
 
+    public ShowGaussMySqlIncrementalBackupListRequest withDisplayOffsiteBackup(Boolean displayOffsiteBackup) {
+        this.displayOffsiteBackup = displayOffsiteBackup;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  是否展示跨区域增量备份。  **约束限制**：  不涉及。  **取值范围**：  - true：展示同区域和跨区域增量备份。 - false：仅展示同区域增量备份。  **默认取值**：  false。
+     * @return displayOffsiteBackup
+     */
+    public Boolean getDisplayOffsiteBackup() {
+        return displayOffsiteBackup;
+    }
+
+    public void setDisplayOffsiteBackup(Boolean displayOffsiteBackup) {
+        this.displayOffsiteBackup = displayOffsiteBackup;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -155,12 +177,13 @@ public class ShowGaussMySqlIncrementalBackupListRequest {
         ShowGaussMySqlIncrementalBackupListRequest that = (ShowGaussMySqlIncrementalBackupListRequest) obj;
         return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime);
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.displayOffsiteBackup, that.displayOffsiteBackup);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, instanceId, offset, limit, beginTime, endTime);
+        return Objects.hash(xLanguage, instanceId, offset, limit, beginTime, endTime, displayOffsiteBackup);
     }
 
     @Override
@@ -173,6 +196,7 @@ public class ShowGaussMySqlIncrementalBackupListRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    displayOffsiteBackup: ").append(toIndentedString(displayOffsiteBackup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

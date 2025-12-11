@@ -71,7 +71,7 @@ public class AntivirusResultDetailInfo {
     }
 
     /**
-     * 病毒查杀结果ID
+     * **参数解释**： 病毒查杀结果ID **取值范围**： 字符长度1-64位 
      * @return resultId
      */
     public String getResultId() {
@@ -88,7 +88,7 @@ public class AntivirusResultDetailInfo {
     }
 
     /**
-     * 病毒名称
+     * **参数解释**： 病毒名称 **取值范围**： 字符长度1-128位 
      * @return malwareName
      */
     public String getMalwareName() {
@@ -158,7 +158,7 @@ public class AntivirusResultDetailInfo {
     }
 
     /**
-     * 文件属性
+     * **参数解释**： 文件属性 **取值范围**： 字符长度0-64位 
      * @return fileOwner
      */
     public String getFileOwner() {
@@ -175,7 +175,7 @@ public class AntivirusResultDetailInfo {
     }
 
     /**
-     * **参数解释**： 文件属性 **取值范围**： 字符长度1-256位 
+     * **参数解释**： 文件的系统属性（如读写权限、隐藏属性、执行权限等） **取值范围**： 字符长度1-256位 
      * @return fileAttr
      */
     public String getFileAttr() {
@@ -192,7 +192,7 @@ public class AntivirusResultDetailInfo {
     }
 
     /**
-     * 文件创建时间
+     * **参数解释**： 文件创建时间 **取值范围**： 非负长整数，时间格式：毫秒级时间戳（UTC时区，从1970-01-01 00:00:00开始计算），单位：ms 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return fileCtime
@@ -211,7 +211,7 @@ public class AntivirusResultDetailInfo {
     }
 
     /**
-     * 文件更新时间
+     * **参数解释**： 文件更新时间 **取值范围**： 非负长整数，时间格式：毫秒级时间戳（UTC时区，从1970-01-01 00:00:00开始计算），单位：ms 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return fileMtime
@@ -249,7 +249,7 @@ public class AntivirusResultDetailInfo {
     }
 
     /**
-     * **参数解释**: Agent ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
+     * **参数解释**: 主机上安装的杀毒Agent的唯一标识ID，用于关联主机与杀毒服务 **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return agentId
      */
     public String getAgentId() {

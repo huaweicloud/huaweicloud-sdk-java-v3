@@ -275,7 +275,7 @@ public class CheckRuleRiskInfoResponseInfo {
     }
 
     /**
-     * **参数解释** 不可点击的原因 **取值范围**  字符长度0-512位
+     * **参数解释** 不可点击的原因 **取值范围** 字符长度0-512位
      * @return notEnableClickDescription
      */
     public String getNotEnableClickDescription() {

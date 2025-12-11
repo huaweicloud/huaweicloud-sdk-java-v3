@@ -246,7 +246,7 @@ public class AppWhitelistPolicyProcessResponseInfo {
     }
 
     /**
-     * **参数解释**： 操作系统类型 **取值范围**： - Linux：Linux。 - Windows：Windows。 
+     * **参数解释**： 操作系统类型 **取值范围**： - Linux：Linux - Windows：Windows 
      * @return osType
      */
     public String getOsType() {

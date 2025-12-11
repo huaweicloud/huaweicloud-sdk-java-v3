@@ -27,7 +27,7 @@ public class RunImageSynchronizeResponse extends SdkResponse {
     }
 
     /**
-     * 错误编码
+     * **参数解释**: 错误编码 **取值范围**: 0（成功）、非0（失败） 
      * minimum: 0
      * maximum: 10
      * @return errorCode
@@ -46,7 +46,7 @@ public class RunImageSynchronizeResponse extends SdkResponse {
     }
 
     /**
-     * 错误描述
+     * **参数解释**: 错误描述 **取值范围**: 字符长度0-512位 
      * @return errorDescription
      */
     public String getErrorDescription() {

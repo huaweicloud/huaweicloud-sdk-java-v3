@@ -66,6 +66,11 @@ public class ShowShareFeatureGatesResponse extends SdkResponse {
 
     private Boolean enableListV3;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_image_quota")
+
+    private Boolean enableImageQuota;
+
     public ShowShareFeatureGatesResponse withEnableExperience(Boolean enableExperience) {
         this.enableExperience = enableExperience;
         return this;
@@ -253,6 +258,23 @@ public class ShowShareFeatureGatesResponse extends SdkResponse {
         this.enableListV3 = enableListV3;
     }
 
+    public ShowShareFeatureGatesResponse withEnableImageQuota(Boolean enableImageQuota) {
+        this.enableImageQuota = enableImageQuota;
+        return this;
+    }
+
+    /**
+     * 是否启用镜像配额
+     * @return enableImageQuota
+     */
+    public Boolean getEnableImageQuota() {
+        return enableImageQuota;
+    }
+
+    public void setEnableImageQuota(Boolean enableImageQuota) {
+        this.enableImageQuota = enableImageQuota;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -272,7 +294,8 @@ public class ShowShareFeatureGatesResponse extends SdkResponse {
             && Objects.equals(this.enablePipeline, that.enablePipeline)
             && Objects.equals(this.enableAuthorizationToken, that.enableAuthorizationToken)
             && Objects.equals(this.enableResource, that.enableResource)
-            && Objects.equals(this.enableListV3, that.enableListV3);
+            && Objects.equals(this.enableListV3, that.enableListV3)
+            && Objects.equals(this.enableImageQuota, that.enableImageQuota);
     }
 
     @Override
@@ -287,7 +310,8 @@ public class ShowShareFeatureGatesResponse extends SdkResponse {
             enablePipeline,
             enableAuthorizationToken,
             enableResource,
-            enableListV3);
+            enableListV3,
+            enableImageQuota);
     }
 
     @Override
@@ -305,6 +329,7 @@ public class ShowShareFeatureGatesResponse extends SdkResponse {
         sb.append("    enableAuthorizationToken: ").append(toIndentedString(enableAuthorizationToken)).append("\n");
         sb.append("    enableResource: ").append(toIndentedString(enableResource)).append("\n");
         sb.append("    enableListV3: ").append(toIndentedString(enableListV3)).append("\n");
+        sb.append("    enableImageQuota: ").append(toIndentedString(enableImageQuota)).append("\n");
         sb.append("}");
         return sb.toString();
     }

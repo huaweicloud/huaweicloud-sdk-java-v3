@@ -50,6 +50,11 @@ public class ListScheduleJobsRequest {
 
     private String jobName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
     public ListScheduleJobsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -188,6 +193,23 @@ public class ListScheduleJobsRequest {
         this.jobName = jobName;
     }
 
+    public ListScheduleJobsRequest withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 实例ID，此参数是实例的唯一标识。
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -200,12 +222,13 @@ public class ListScheduleJobsRequest {
         return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.status, that.status)
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobName, that.jobName);
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, offset, limit, status, startTime, endTime, jobId, jobName);
+        return Objects.hash(xLanguage, offset, limit, status, startTime, endTime, jobId, jobName, instanceId);
     }
 
     @Override
@@ -220,6 +243,7 @@ public class ListScheduleJobsRequest {
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    jobName: ").append(toIndentedString(jobName)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

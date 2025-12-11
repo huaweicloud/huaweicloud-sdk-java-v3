@@ -20,6 +20,11 @@ public class ListAuditlogsResponse extends SdkResponse {
     private Integer totalRecord;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_size")
+
+    private Long totalSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audit_logs")
 
     private List<ListAuditlogsResult> auditLogs = null;
@@ -39,6 +44,23 @@ public class ListAuditlogsResponse extends SdkResponse {
 
     public void setTotalRecord(Integer totalRecord) {
         this.totalRecord = totalRecord;
+    }
+
+    public ListAuditlogsResponse withTotalSize(Long totalSize) {
+        this.totalSize = totalSize;
+        return this;
+    }
+
+    /**
+     * 当前实例审计日志使用总量，单位：byte。
+     * @return totalSize
+     */
+    public Long getTotalSize() {
+        return totalSize;
+    }
+
+    public void setTotalSize(Long totalSize) {
+        this.totalSize = totalSize;
     }
 
     public ListAuditlogsResponse withAuditLogs(List<ListAuditlogsResult> auditLogs) {
@@ -83,12 +105,13 @@ public class ListAuditlogsResponse extends SdkResponse {
             return false;
         }
         ListAuditlogsResponse that = (ListAuditlogsResponse) obj;
-        return Objects.equals(this.totalRecord, that.totalRecord) && Objects.equals(this.auditLogs, that.auditLogs);
+        return Objects.equals(this.totalRecord, that.totalRecord) && Objects.equals(this.totalSize, that.totalSize)
+            && Objects.equals(this.auditLogs, that.auditLogs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(totalRecord, auditLogs);
+        return Objects.hash(totalRecord, totalSize, auditLogs);
     }
 
     @Override
@@ -96,6 +119,7 @@ public class ListAuditlogsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAuditlogsResponse {\n");
         sb.append("    totalRecord: ").append(toIndentedString(totalRecord)).append("\n");
+        sb.append("    totalSize: ").append(toIndentedString(totalSize)).append("\n");
         sb.append("    auditLogs: ").append(toIndentedString(auditLogs)).append("\n");
         sb.append("}");
         return sb.toString();

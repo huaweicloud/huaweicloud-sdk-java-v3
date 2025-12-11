@@ -65,7 +65,7 @@ public class ListAntiVirusPaidHostsResponse extends SdkResponse {
     }
 
     /**
-     * data list
+     * **参数解释**: 查询到的按量杀毒服务器详细信息列表 **取值范围**: 最小值0，最大值100 
      * @return dataList
      */
     public List<AntiVirusPaidHostResponseInfo> getDataList() {

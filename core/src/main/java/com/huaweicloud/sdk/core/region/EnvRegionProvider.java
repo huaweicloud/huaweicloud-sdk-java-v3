@@ -24,7 +24,6 @@ package com.huaweicloud.sdk.core.region;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import java.util.Locale;
-import java.util.Objects;
 
 public class EnvRegionProvider implements IRegionProvider {
 
@@ -39,7 +38,7 @@ public class EnvRegionProvider implements IRegionProvider {
     @Override
     public Region getRegion(String regionId) {
         Region region = EnvRegionCache.getInstance().value.get(serviceName + regionId);
-        if (Objects.nonNull(region)) {
+        if (region != null) {
             return region;
         }
         String envName = String.format("%s_%s_%s", ENV_REGION_PREFIX, serviceName,

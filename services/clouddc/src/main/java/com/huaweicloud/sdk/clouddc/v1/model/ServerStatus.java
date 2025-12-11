@@ -19,32 +19,37 @@ public class ServerStatus {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ok")
 
-    private Object ok;
+    private ServerState ok;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "warning")
 
-    private Object warning;
+    private ServerState warning;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "unknown")
+
+    private ServerState unknown;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "critical")
 
-    private Object critical;
+    private ServerState critical;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "health")
 
-    private Object health;
+    private ServerState health;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unhealth")
 
-    private Object unhealth;
+    private ServerState unhealth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isolation")
 
-    private Object isolation;
+    private ServerState isolation;
 
     public ServerStatus withTotal(ServerState total) {
         this.total = total;
@@ -72,105 +77,185 @@ public class ServerStatus {
         this.total = total;
     }
 
-    public ServerStatus withOk(Object ok) {
+    public ServerStatus withOk(ServerState ok) {
         this.ok = ok;
         return this;
     }
 
+    public ServerStatus withOk(Consumer<ServerState> okSetter) {
+        if (this.ok == null) {
+            this.ok = new ServerState();
+            okSetter.accept(this.ok);
+        }
+
+        return this;
+    }
+
     /**
-     * 服务器运行OK状态所有对象
+     * Get ok
      * @return ok
      */
-    public Object getOk() {
+    public ServerState getOk() {
         return ok;
     }
 
-    public void setOk(Object ok) {
+    public void setOk(ServerState ok) {
         this.ok = ok;
     }
 
-    public ServerStatus withWarning(Object warning) {
+    public ServerStatus withWarning(ServerState warning) {
         this.warning = warning;
         return this;
     }
 
+    public ServerStatus withWarning(Consumer<ServerState> warningSetter) {
+        if (this.warning == null) {
+            this.warning = new ServerState();
+            warningSetter.accept(this.warning);
+        }
+
+        return this;
+    }
+
     /**
-     * 服务器运行Warning状态所有对象
+     * Get warning
      * @return warning
      */
-    public Object getWarning() {
+    public ServerState getWarning() {
         return warning;
     }
 
-    public void setWarning(Object warning) {
+    public void setWarning(ServerState warning) {
         this.warning = warning;
     }
 
-    public ServerStatus withCritical(Object critical) {
-        this.critical = critical;
+    public ServerStatus withUnknown(ServerState unknown) {
+        this.unknown = unknown;
+        return this;
+    }
+
+    public ServerStatus withUnknown(Consumer<ServerState> unknownSetter) {
+        if (this.unknown == null) {
+            this.unknown = new ServerState();
+            unknownSetter.accept(this.unknown);
+        }
+
         return this;
     }
 
     /**
-     * 服务器运行Critical状态所有对象
+     * Get unknown
+     * @return unknown
+     */
+    public ServerState getUnknown() {
+        return unknown;
+    }
+
+    public void setUnknown(ServerState unknown) {
+        this.unknown = unknown;
+    }
+
+    public ServerStatus withCritical(ServerState critical) {
+        this.critical = critical;
+        return this;
+    }
+
+    public ServerStatus withCritical(Consumer<ServerState> criticalSetter) {
+        if (this.critical == null) {
+            this.critical = new ServerState();
+            criticalSetter.accept(this.critical);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get critical
      * @return critical
      */
-    public Object getCritical() {
+    public ServerState getCritical() {
         return critical;
     }
 
-    public void setCritical(Object critical) {
+    public void setCritical(ServerState critical) {
         this.critical = critical;
     }
 
-    public ServerStatus withHealth(Object health) {
+    public ServerStatus withHealth(ServerState health) {
         this.health = health;
         return this;
     }
 
+    public ServerStatus withHealth(Consumer<ServerState> healthSetter) {
+        if (this.health == null) {
+            this.health = new ServerState();
+            healthSetter.accept(this.health);
+        }
+
+        return this;
+    }
+
     /**
-     * 服务器运行Health状态所有对象
+     * Get health
      * @return health
      */
-    public Object getHealth() {
+    public ServerState getHealth() {
         return health;
     }
 
-    public void setHealth(Object health) {
+    public void setHealth(ServerState health) {
         this.health = health;
     }
 
-    public ServerStatus withUnhealth(Object unhealth) {
+    public ServerStatus withUnhealth(ServerState unhealth) {
         this.unhealth = unhealth;
         return this;
     }
 
+    public ServerStatus withUnhealth(Consumer<ServerState> unhealthSetter) {
+        if (this.unhealth == null) {
+            this.unhealth = new ServerState();
+            unhealthSetter.accept(this.unhealth);
+        }
+
+        return this;
+    }
+
     /**
-     * 服务器运行UnHealth状态所有对象
+     * Get unhealth
      * @return unhealth
      */
-    public Object getUnhealth() {
+    public ServerState getUnhealth() {
         return unhealth;
     }
 
-    public void setUnhealth(Object unhealth) {
+    public void setUnhealth(ServerState unhealth) {
         this.unhealth = unhealth;
     }
 
-    public ServerStatus withIsolation(Object isolation) {
+    public ServerStatus withIsolation(ServerState isolation) {
         this.isolation = isolation;
         return this;
     }
 
+    public ServerStatus withIsolation(Consumer<ServerState> isolationSetter) {
+        if (this.isolation == null) {
+            this.isolation = new ServerState();
+            isolationSetter.accept(this.isolation);
+        }
+
+        return this;
+    }
+
     /**
-     * 服务器运行Isolation状态所有对象
+     * Get isolation
      * @return isolation
      */
-    public Object getIsolation() {
+    public ServerState getIsolation() {
         return isolation;
     }
 
-    public void setIsolation(Object isolation) {
+    public void setIsolation(ServerState isolation) {
         this.isolation = isolation;
     }
 
@@ -184,14 +269,14 @@ public class ServerStatus {
         }
         ServerStatus that = (ServerStatus) obj;
         return Objects.equals(this.total, that.total) && Objects.equals(this.ok, that.ok)
-            && Objects.equals(this.warning, that.warning) && Objects.equals(this.critical, that.critical)
-            && Objects.equals(this.health, that.health) && Objects.equals(this.unhealth, that.unhealth)
-            && Objects.equals(this.isolation, that.isolation);
+            && Objects.equals(this.warning, that.warning) && Objects.equals(this.unknown, that.unknown)
+            && Objects.equals(this.critical, that.critical) && Objects.equals(this.health, that.health)
+            && Objects.equals(this.unhealth, that.unhealth) && Objects.equals(this.isolation, that.isolation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, ok, warning, critical, health, unhealth, isolation);
+        return Objects.hash(total, ok, warning, unknown, critical, health, unhealth, isolation);
     }
 
     @Override
@@ -201,6 +286,7 @@ public class ServerStatus {
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    ok: ").append(toIndentedString(ok)).append("\n");
         sb.append("    warning: ").append(toIndentedString(warning)).append("\n");
+        sb.append("    unknown: ").append(toIndentedString(unknown)).append("\n");
         sb.append("    critical: ").append(toIndentedString(critical)).append("\n");
         sb.append("    health: ").append(toIndentedString(health)).append("\n");
         sb.append("    unhealth: ").append(toIndentedString(unhealth)).append("\n");

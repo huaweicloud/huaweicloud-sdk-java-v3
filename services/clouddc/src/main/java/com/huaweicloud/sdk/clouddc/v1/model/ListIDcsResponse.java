@@ -24,6 +24,11 @@ public class ListIDcsResponse extends SdkResponse {
 
     private PageInfo pageInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Integer count;
+
     public ListIDcsResponse withIdcs(List<IDc> idcs) {
         this.idcs = idcs;
         return this;
@@ -83,6 +88,23 @@ public class ListIDcsResponse extends SdkResponse {
         this.pageInfo = pageInfo;
     }
 
+    public ListIDcsResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /**
+     * 机房总数
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -92,12 +114,13 @@ public class ListIDcsResponse extends SdkResponse {
             return false;
         }
         ListIDcsResponse that = (ListIDcsResponse) obj;
-        return Objects.equals(this.idcs, that.idcs) && Objects.equals(this.pageInfo, that.pageInfo);
+        return Objects.equals(this.idcs, that.idcs) && Objects.equals(this.pageInfo, that.pageInfo)
+            && Objects.equals(this.count, that.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idcs, pageInfo);
+        return Objects.hash(idcs, pageInfo, count);
     }
 
     @Override
@@ -106,6 +129,7 @@ public class ListIDcsResponse extends SdkResponse {
         sb.append("class ListIDcsResponse {\n");
         sb.append("    idcs: ").append(toIndentedString(idcs)).append("\n");
         sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

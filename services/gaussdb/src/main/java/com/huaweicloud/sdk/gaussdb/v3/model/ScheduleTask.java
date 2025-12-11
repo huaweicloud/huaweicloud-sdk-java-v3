@@ -70,6 +70,16 @@ public class ScheduleTask {
 
     private Object targetConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "proxy_id")
+
+    private String proxyId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "proxy_name")
+
+    private String proxyName;
+
     public ScheduleTask withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -161,7 +171,7 @@ public class ScheduleTask {
     }
 
     /**
-     * 任务名称。取值有：    - \"CreateGaussDBforMySQLInstance\"表示创建实例。    - \"RestoreGaussDBforMySQLNewInstance\"表示恢复新实例。    - \"AddGaussDBforMySQLNodes\"表示添加节点。    - \"DeleteGaussDBforMySQLNode\"表示删除节点。    - \"RebootGaussDBforMySQLInstance\"表示重启实例。    - \"ModifyGaussDBforMySQLPort\"表示修改实例端口。    - \"ModifyGaussDBforMySQLSecurityGroup\"表示修改实例安全组。    - \"ResizeGaussDBforMySQLFlavor\"表示实例规格变更。    - \"SwitchoverGaussDBforMySQLMasterNode\"表示只读升主。    - \"GaussDBforMySQLBindEIP\"表示绑定弹性公网IP。    - \"GaussDBforMySQLUnbindEIP\"表示解绑弹性公网IP。    - \"RenameGaussDBforMySQLInstance\"表示修改实例名称。    - \"DeleteGaussDBforMySQLInstance\"表示删除实例集群。    - \"UpgradeGaussDBforMySQLDatabaseVersion\"表示版本升级。    - \"EnlargeGaussDBforMySQLProxy\"表示实例的数据库代理节点扩容。    - \"ReduceGaussDBforMySQLProxy\"表示实例的数据库代理节点缩容。    - \"OpenGaussDBforMySQLProxy\"表示开启实例的数据库代理。    - \"CloseGaussDBforMySQLProxy\"表示关闭实例的数据库代理。    - \"GaussdbforMySQLModifyProxyIp\"表示修改数据库代理ip。    - \"ScaleGaussDBforMySQLProxy\"表示实例的数据库代理节点规格变更。    - \"GaussDBforMySQLModifyInstanceMetricExtend\"表示实例秒级监控。    - \"GaussDBforMySQLModifyInstanceDataVip\"表示修改实例数据Vip。    - \"GaussDBforMySQLSwitchSSL\"表示切换实例SSL开关。    - \"GaussDBforMySQLModifyProxyConsist\"表示修改代理一致性。    - \"GaussDBforMySQLModifyProxyWeight\"表示修改代理权重。
+     * **参数解释**： 任务名称。  **取值范围**：   - PROXY_VERSION_UPGRADE：表示数据库代理版本升级。   - VERSION_UPGRADE：表示实例版本升级。   - RESIZE_FLAVOR：表示实例规格变更。   - REBOOT_NODE：表示重启节点。   - REBOOT_INSTANCE：表示重启实例。
      * @return jobName
      */
     public String getJobName() {
@@ -274,6 +284,40 @@ public class ScheduleTask {
         this.targetConfig = targetConfig;
     }
 
+    public ScheduleTask withProxyId(String proxyId) {
+        this.proxyId = proxyId;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  数据库代理ID，严格匹配UUID规则。  **取值范围**：  只能由英文字母、数字组成，后缀为po01，长度为36个字符。
+     * @return proxyId
+     */
+    public String getProxyId() {
+        return proxyId;
+    }
+
+    public void setProxyId(String proxyId) {
+        this.proxyId = proxyId;
+    }
+
+    public ScheduleTask withProxyName(String proxyName) {
+        this.proxyName = proxyName;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  数据库代理名称。  **取值范围**：  不涉及。
+     * @return proxyName
+     */
+    public String getProxyName() {
+        return proxyName;
+    }
+
+    public void setProxyName(String proxyName) {
+        this.proxyName = proxyName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -290,7 +334,8 @@ public class ScheduleTask {
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.jobStatus, that.jobStatus)
             && Objects.equals(this.datastoreType, that.datastoreType)
-            && Objects.equals(this.targetConfig, that.targetConfig);
+            && Objects.equals(this.targetConfig, that.targetConfig) && Objects.equals(this.proxyId, that.proxyId)
+            && Objects.equals(this.proxyName, that.proxyName);
     }
 
     @Override
@@ -306,7 +351,9 @@ public class ScheduleTask {
             endTime,
             jobStatus,
             datastoreType,
-            targetConfig);
+            targetConfig,
+            proxyId,
+            proxyName);
     }
 
     @Override
@@ -325,6 +372,8 @@ public class ScheduleTask {
         sb.append("    jobStatus: ").append(toIndentedString(jobStatus)).append("\n");
         sb.append("    datastoreType: ").append(toIndentedString(datastoreType)).append("\n");
         sb.append("    targetConfig: ").append(toIndentedString(targetConfig)).append("\n");
+        sb.append("    proxyId: ").append(toIndentedString(proxyId)).append("\n");
+        sb.append("    proxyName: ").append(toIndentedString(proxyName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

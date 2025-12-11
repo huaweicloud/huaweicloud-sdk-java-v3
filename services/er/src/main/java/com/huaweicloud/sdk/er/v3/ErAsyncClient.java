@@ -9,6 +9,8 @@ import com.huaweicloud.sdk.er.v3.model.AssociateRouteTableRequest;
 import com.huaweicloud.sdk.er.v3.model.AssociateRouteTableResponse;
 import com.huaweicloud.sdk.er.v3.model.BatchCreateResourceTagsRequest;
 import com.huaweicloud.sdk.er.v3.model.BatchCreateResourceTagsResponse;
+import com.huaweicloud.sdk.er.v3.model.ChangeAssociationRoutePolicyRequest;
+import com.huaweicloud.sdk.er.v3.model.ChangeAssociationRoutePolicyResponse;
 import com.huaweicloud.sdk.er.v3.model.ChangeAvailabilityZoneRequest;
 import com.huaweicloud.sdk.er.v3.model.ChangeAvailabilityZoneResponse;
 import com.huaweicloud.sdk.er.v3.model.CreateEnterpriseRouterRequest;
@@ -91,6 +93,8 @@ import com.huaweicloud.sdk.er.v3.model.UpdateEnterpriseRouterRequest;
 import com.huaweicloud.sdk.er.v3.model.UpdateEnterpriseRouterResponse;
 import com.huaweicloud.sdk.er.v3.model.UpdateFlowLogRequest;
 import com.huaweicloud.sdk.er.v3.model.UpdateFlowLogResponse;
+import com.huaweicloud.sdk.er.v3.model.UpdatePropagationRoutePolicyRequest;
+import com.huaweicloud.sdk.er.v3.model.UpdatePropagationRoutePolicyResponse;
 import com.huaweicloud.sdk.er.v3.model.UpdateRouteTableRequest;
 import com.huaweicloud.sdk.er.v3.model.UpdateRouteTableResponse;
 import com.huaweicloud.sdk.er.v3.model.UpdateStaticRouteRequest;
@@ -140,6 +144,36 @@ public class ErAsyncClient {
     public AsyncInvoker<AssociateRouteTableRequest, AssociateRouteTableResponse> associateRouteTableAsyncInvoker(
         AssociateRouteTableRequest request) {
         return new AsyncInvoker<>(request, ErMeta.associateRouteTable, hcClient);
+    }
+
+    /**
+     * 修改关联的路由策略
+     *
+     * 修改关联的路由策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeAssociationRoutePolicyRequest 请求对象
+     * @return CompletableFuture<ChangeAssociationRoutePolicyResponse>
+     */
+    public CompletableFuture<ChangeAssociationRoutePolicyResponse> changeAssociationRoutePolicyAsync(
+        ChangeAssociationRoutePolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, ErMeta.changeAssociationRoutePolicy);
+    }
+
+    /**
+     * 修改关联的路由策略
+     *
+     * 修改关联的路由策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeAssociationRoutePolicyRequest 请求对象
+     * @return AsyncInvoker<ChangeAssociationRoutePolicyRequest, ChangeAssociationRoutePolicyResponse>
+     */
+    public AsyncInvoker<ChangeAssociationRoutePolicyRequest, ChangeAssociationRoutePolicyResponse> changeAssociationRoutePolicyAsyncInvoker(
+        ChangeAssociationRoutePolicyRequest request) {
+        return new AsyncInvoker<>(request, ErMeta.changeAssociationRoutePolicy, hcClient);
     }
 
     /**
@@ -843,6 +877,36 @@ public class ErAsyncClient {
     public AsyncInvoker<ListPropagationsRequest, ListPropagationsResponse> listPropagationsAsyncInvoker(
         ListPropagationsRequest request) {
         return new AsyncInvoker<>(request, ErMeta.listPropagations, hcClient);
+    }
+
+    /**
+     * 修改路由策略
+     *
+     * 修改路由策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePropagationRoutePolicyRequest 请求对象
+     * @return CompletableFuture<UpdatePropagationRoutePolicyResponse>
+     */
+    public CompletableFuture<UpdatePropagationRoutePolicyResponse> updatePropagationRoutePolicyAsync(
+        UpdatePropagationRoutePolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, ErMeta.updatePropagationRoutePolicy);
+    }
+
+    /**
+     * 修改路由策略
+     *
+     * 修改路由策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePropagationRoutePolicyRequest 请求对象
+     * @return AsyncInvoker<UpdatePropagationRoutePolicyRequest, UpdatePropagationRoutePolicyResponse>
+     */
+    public AsyncInvoker<UpdatePropagationRoutePolicyRequest, UpdatePropagationRoutePolicyResponse> updatePropagationRoutePolicyAsyncInvoker(
+        UpdatePropagationRoutePolicyRequest request) {
+        return new AsyncInvoker<>(request, ErMeta.updatePropagationRoutePolicy, hcClient);
     }
 
     /**

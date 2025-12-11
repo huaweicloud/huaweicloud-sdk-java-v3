@@ -77,7 +77,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 主机账号数量 **取值范围**： 最小值0，最大值2147483647 
+     * **参数解释**： 满足查询条件的资产（主机/容器）下的主机账号总数量 **取值范围**： 最小值0，最大值2147483647，单位：个 
      * minimum: 0
      * maximum: 2147483647
      * @return accountNum
@@ -96,7 +96,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 开放端口数量 **取值范围**： 最小值0，最大值2147483647 
+     * **参数解释**： 满足查询条件的资产（主机/容器）下的开放端口总数量 **取值范围**： 最小值0，最大值2147483647，单位：个 
      * minimum: 0
      * maximum: 2147483647
      * @return portNum
@@ -115,7 +115,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 进程数量 **取值范围**： 最小值0，最大值2147483647 
+     * **参数解释**： 满足查询条件的资产（主机/容器）下的进程总数量 **取值范围**： 最小值0，最大值2147483647，单位：个 
      * minimum: 0
      * maximum: 2147483647
      * @return processNum
@@ -134,7 +134,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 软件数量 **取值范围**： 最小值0，最大值2147483647 
+     * **参数解释**： 满足查询条件的资产（主机/容器）下已安装的软件总数量 **取值范围**： 最小值0，最大值2147483647，单位：个 
      * minimum: 0
      * maximum: 2147483647
      * @return appNum
@@ -153,7 +153,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 自启动进程数量 **取值范围**： 最小值0，最大值2147483647 
+     * **参数解释**： 满足查询条件的资产（主机/容器）下的自启动进程总数量 **取值范围**： 最小值0，最大值2147483647，单位：个 
      * minimum: 0
      * maximum: 2147483647
      * @return autoLaunchNum
@@ -172,7 +172,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： web框架数量 **取值范围**： 最小值0，最大值2147483647 
+     * **参数解释**： 满足查询条件的资产（主机/容器）下已部署的Web框架总数量 **取值范围**： 最小值0，最大值2147483647，单位：个 
      * minimum: 0
      * maximum: 2147483647
      * @return webFrameworkNum
@@ -191,7 +191,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： Web站点数量 **取值范围**： 最小值0，最大值2147483647 
+     * **参数解释**： 满足查询条件的资产（主机/容器）下已部署的Web站点总数量 **取值范围**： 最小值0，最大值2147483647，单位：个 
      * minimum: 0
      * maximum: 2147483647
      * @return webSiteNum
@@ -210,7 +210,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： Jar包数量 **取值范围**： 最小值0，最大值2147483647 
+     * **参数解释**： 满足查询条件的资产（主机/容器）下的JAR包总数量 **取值范围**： 最小值0，最大值2147483647，单位：个 
      * minimum: 0
      * maximum: 2147483647
      * @return jarPackageNum
@@ -229,7 +229,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 内核模块数量 **取值范围**： 最小值0，最大值2147483647 
+     * **参数解释**： 满足查询条件的资产（主机/容器）下已加载的内核模块总数量 **取值范围**： 最小值0，最大值2147483647，单位：个 
      * minimum: 0
      * maximum: 2147483647
      * @return kernelModuleNum
@@ -248,7 +248,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： web服务数量 **取值范围**： 最小值0，最大值2147483647 
+     * **参数解释**： 满足查询条件的资产（主机/容器）下已部署的Web服务总数量 **取值范围**： 最小值0，最大值2147483647，单位：个 
      * minimum: 0
      * maximum: 2147483647
      * @return webServiceNum
@@ -267,7 +267,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： web应用数量 **取值范围**： 最小值0，最大值2147483647 
+     * **参数解释**： 满足查询条件的资产（主机/容器）下已部署的Web应用总数量 **取值范围**： 最小值0，最大值2147483647，单位：个 
      * minimum: 0
      * maximum: 2147483647
      * @return webAppNum
@@ -286,7 +286,7 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 数据库数量 **取值范围**： 最小值0，最大值2147483647 
+     * **参数解释**： 满足查询条件的资产（主机/容器）下已部署的数据库总数量 **取值范围**： 最小值0，最大值2147483647，单位：个 
      * minimum: 0
      * maximum: 2147483647
      * @return databaseNum

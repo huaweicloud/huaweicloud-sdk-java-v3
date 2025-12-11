@@ -28,6 +28,11 @@ public class SmartDocumentRecognizerWordsBlockList {
 
     private Float confidence;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "char_list")
+
+    private List<SmartDocumentRecognizerCharList> charList = null;
+
     public SmartDocumentRecognizerWordsBlockList withWords(String words) {
         this.words = words;
         return this;
@@ -84,7 +89,7 @@ public class SmartDocumentRecognizerWordsBlockList {
     }
 
     /**
-     * 文字块识别结果的置信度。  
+     * 文字块识别结果的置信度。 
      * @return confidence
      */
     public Float getConfidence() {
@@ -93,6 +98,40 @@ public class SmartDocumentRecognizerWordsBlockList {
 
     public void setConfidence(Float confidence) {
         this.confidence = confidence;
+    }
+
+    public SmartDocumentRecognizerWordsBlockList withCharList(List<SmartDocumentRecognizerCharList> charList) {
+        this.charList = charList;
+        return this;
+    }
+
+    public SmartDocumentRecognizerWordsBlockList addCharListItem(SmartDocumentRecognizerCharList charListItem) {
+        if (this.charList == null) {
+            this.charList = new ArrayList<>();
+        }
+        this.charList.add(charListItem);
+        return this;
+    }
+
+    public SmartDocumentRecognizerWordsBlockList withCharList(
+        Consumer<List<SmartDocumentRecognizerCharList>> charListSetter) {
+        if (this.charList == null) {
+            this.charList = new ArrayList<>();
+        }
+        charListSetter.accept(this.charList);
+        return this;
+    }
+
+    /**
+     * 当入参character_mode为True时返回该字段，表示当前文字块对应的单字符识别列表，输出顺序从左到右，先上后下。 
+     * @return charList
+     */
+    public List<SmartDocumentRecognizerCharList> getCharList() {
+        return charList;
+    }
+
+    public void setCharList(List<SmartDocumentRecognizerCharList> charList) {
+        this.charList = charList;
     }
 
     @Override
@@ -105,12 +144,12 @@ public class SmartDocumentRecognizerWordsBlockList {
         }
         SmartDocumentRecognizerWordsBlockList that = (SmartDocumentRecognizerWordsBlockList) obj;
         return Objects.equals(this.words, that.words) && Objects.equals(this.location, that.location)
-            && Objects.equals(this.confidence, that.confidence);
+            && Objects.equals(this.confidence, that.confidence) && Objects.equals(this.charList, that.charList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(words, location, confidence);
+        return Objects.hash(words, location, confidence, charList);
     }
 
     @Override
@@ -120,6 +159,7 @@ public class SmartDocumentRecognizerWordsBlockList {
         sb.append("    words: ").append(toIndentedString(words)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
+        sb.append("    charList: ").append(toIndentedString(charList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

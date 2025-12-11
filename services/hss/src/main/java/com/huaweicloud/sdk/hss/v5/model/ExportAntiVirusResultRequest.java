@@ -188,7 +188,7 @@ public class ExportAntiVirusResultRequest {
     }
 
     /**
-     * **参数解释**: 服务器弹性IP地址。 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 无 
+     * **参数解释**: 服务器弹性IP地址 **约束限制**: 不涉及 **取值范围**: IPv4格式（长度7-15位）、IPv6格式（长度15-39位） **默认取值**: 无 
      * @return publicIp
      */
     public String getPublicIp() {
@@ -205,7 +205,7 @@ public class ExportAntiVirusResultRequest {
     }
 
     /**
-     * 处置状态，包含如下:   - unhandled：未处理   - handled：已处理
+     * **参数解释**: 处置状态 **约束限制**: 不涉及 **取值范围**: 包含如下:   - unhandled：未处理   - handled：已处理 **默认取值**: 不涉及 
      * @return handleStatus
      */
     public String getHandleStatus() {
@@ -238,7 +238,7 @@ public class ExportAntiVirusResultRequest {
     }
 
     /**
-     * 威胁等级，包含如下:   - Low：低危   - Medium：中危   - High：高危   - Critical：致命
+     * **参数解释**: 威胁等级 **约束限制**: 不涉及 **取值范围**: 威胁等级，包含如下:   - Low：低危   - Medium：中危   - High：高危   - Critical：致命 **默认取值**: 不涉及 
      * @return severityList
      */
     public List<String> getSeverityList() {
@@ -255,7 +255,7 @@ public class ExportAntiVirusResultRequest {
     }
 
     /**
-     * **参数解释**： 资产重要性 **约束限制**： 不涉及 **取值范围**： - important：重要资产。 - common：一般资产。 - test：测试资产。  **默认取值**： 无 
+     * **参数解释**： 资产重要性 **约束限制**： 不涉及 **取值范围**： - important：重要资产 - common：一般资产 - test：测试资产  **默认取值**： 无 
      * @return assetValue
      */
     public String getAssetValue() {
@@ -272,7 +272,7 @@ public class ExportAntiVirusResultRequest {
     }
 
     /**
-     * 病毒名称
+     * **参数解释**: 病毒名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及 
      * @return malwareName
      */
     public String getMalwareName() {
@@ -289,7 +289,7 @@ public class ExportAntiVirusResultRequest {
     }
 
     /**
-     * 文件路径
+     * **参数解释**： 文件路径 **约束限制**： 不涉及 **取值范围**： 字符数1-512位 **默认取值**： 不涉及 
      * @return filePath
      */
     public String getFilePath() {
@@ -325,7 +325,7 @@ public class ExportAntiVirusResultRequest {
     }
 
     /**
-     * 文件hash，当前为sha256
+     * **参数解释**： 文件hash，当前为sha256 **约束限制**： 需为合法的SHA256哈希值 **取值范围**： 字符长度64位 **默认取值**： 不涉及 
      * @return fileHash
      */
     public String getFileHash() {
@@ -342,7 +342,7 @@ public class ExportAntiVirusResultRequest {
     }
 
     /**
-     * 任务名称
+     * **参数解释**: 任务名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及 
      * @return taskName
      */
     public String getTaskName() {
@@ -359,7 +359,7 @@ public class ExportAntiVirusResultRequest {
     }
 
     /**
-     * 是否使用手动隔离按钮
+     * **参数解释**: 是否使用手动隔离按钮 **约束限制**: 不涉及 **取值范围**: true（已使用手动隔离）、false（未使用手动隔离） **默认取值**: 不涉及 
      * @return manualIsolate
      */
     public Boolean getManualIsolate() {

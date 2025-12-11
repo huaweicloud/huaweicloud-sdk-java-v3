@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * 云手机属性信息。
  */
-public class Property {
+public class PropertyToUpdate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone_id")
@@ -20,7 +20,7 @@ public class Property {
 
     private String property;
 
-    public Property withPhoneId(String phoneId) {
+    public PropertyToUpdate withPhoneId(String phoneId) {
         this.phoneId = phoneId;
         return this;
     }
@@ -37,7 +37,7 @@ public class Property {
         this.phoneId = phoneId;
     }
 
-    public Property withProperty(String property) {
+    public PropertyToUpdate withProperty(String property) {
         this.property = property;
         return this;
     }
@@ -62,7 +62,7 @@ public class Property {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Property that = (Property) obj;
+        PropertyToUpdate that = (PropertyToUpdate) obj;
         return Objects.equals(this.phoneId, that.phoneId) && Objects.equals(this.property, that.property);
     }
 
@@ -74,7 +74,7 @@ public class Property {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Property {\n");
+        sb.append("class PropertyToUpdate {\n");
         sb.append("    phoneId: ").append(toIndentedString(phoneId)).append("\n");
         sb.append("    property: ").append(toIndentedString(property)).append("\n");
         sb.append("}");

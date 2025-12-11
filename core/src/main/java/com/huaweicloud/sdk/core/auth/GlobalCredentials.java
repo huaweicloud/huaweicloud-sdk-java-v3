@@ -38,7 +38,6 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 
@@ -174,7 +173,7 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
             builder.addHeader(Constants.X_SECURITY_TOKEN, getSecurityToken());
         }
 
-        if (Objects.nonNull(httpRequest.getContentType())
+        if (httpRequest.getContentType() != null
                 && !httpRequest.getContentType().startsWith(Constants.MEDIATYPE.APPLICATION_JSON)) {
             builder.addHeader(Constants.X_SDK_CONTENT_SHA256, Constants.UNSIGNED_PAYLOAD);
         }

@@ -40,7 +40,7 @@ public class ChangeFilePathWhiteDetailRequestInfo {
     }
 
     /**
-     * 自定义路径，选填，可编辑
+     * **参数解释**: 自定义路径，选填，可编辑 **取值范围**: 不涉及 
      * @return customizedPath
      */
     public List<String> getCustomizedPath() {

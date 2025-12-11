@@ -46,7 +46,7 @@ public class ShowFilePathWhiteDetailResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**: \"默认路径，不可编辑\" **取值范围**: 最小值0，最大值20000 
+     * **参数解释**: 默认路径，不可编辑 **取值范围**: 最小值0，最大值20000 
      * @return defaultPath
      */
     public List<String> getDefaultPath() {
@@ -79,7 +79,7 @@ public class ShowFilePathWhiteDetailResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**: \"自定义路径，选填，可编辑\" **取值范围**: 最小值0，最大值20000 
+     * **参数解释**: 自定义路径，选填，可编辑 **取值范围**: 最小值0，最大值20000 
      * @return customizedPath
      */
     public List<String> getCustomizedPath() {

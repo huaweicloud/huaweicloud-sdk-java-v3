@@ -43,6 +43,11 @@ public class SmartDocumentRecognizerLayoutBlock {
 
     private Integer formId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "formula_id")
+
+    private Integer formulaId;
+
     public SmartDocumentRecognizerLayoutBlock withLocation(List<List<Integer>> location) {
         this.location = location;
         return this;
@@ -82,7 +87,7 @@ public class SmartDocumentRecognizerLayoutBlock {
     }
 
     /**
-     * 文档区域类别，包含text、title、sub_title、image、image_caption、form、table、table_caption、header、footer、page_number、reference、formula、stamp、directory共15个类别。     
+     * 文档区域类别，包含text、title、sub_title、image、image_caption、form、table、table_caption、header、footer、page_number、reference、formula、stamp、directory、footnote共16个类别。 
      * @return type
      */
     public String getType() {
@@ -177,6 +182,23 @@ public class SmartDocumentRecognizerLayoutBlock {
         this.formId = formId;
     }
 
+    public SmartDocumentRecognizerLayoutBlock withFormulaId(Integer formulaId) {
+        this.formulaId = formulaId;
+        return this;
+    }
+
+    /**
+     * 仅当type为\"formula\"且入参formula为True时返回该字段，表示当前公式识别区域对应formula_result中哪一项识别结果。 
+     * @return formulaId
+     */
+    public Integer getFormulaId() {
+        return formulaId;
+    }
+
+    public void setFormulaId(Integer formulaId) {
+        this.formulaId = formulaId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -188,12 +210,13 @@ public class SmartDocumentRecognizerLayoutBlock {
         SmartDocumentRecognizerLayoutBlock that = (SmartDocumentRecognizerLayoutBlock) obj;
         return Objects.equals(this.location, that.location) && Objects.equals(this.type, that.type)
             && Objects.equals(this.text, that.text) && Objects.equals(this.wordsIds, that.wordsIds)
-            && Objects.equals(this.tableId, that.tableId) && Objects.equals(this.formId, that.formId);
+            && Objects.equals(this.tableId, that.tableId) && Objects.equals(this.formId, that.formId)
+            && Objects.equals(this.formulaId, that.formulaId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(location, type, text, wordsIds, tableId, formId);
+        return Objects.hash(location, type, text, wordsIds, tableId, formId, formulaId);
     }
 
     @Override
@@ -206,6 +229,7 @@ public class SmartDocumentRecognizerLayoutBlock {
         sb.append("    wordsIds: ").append(toIndentedString(wordsIds)).append("\n");
         sb.append("    tableId: ").append(toIndentedString(tableId)).append("\n");
         sb.append("    formId: ").append(toIndentedString(formId)).append("\n");
+        sb.append("    formulaId: ").append(toIndentedString(formulaId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -47,7 +47,7 @@ public class ShowAntivirusStatisticResponse extends SdkResponse {
     }
 
     /**
-     * 病毒总数
+     * **参数解释**： 病毒总数 **取值范围**： 最小值0，最大值2147483647，单位：个 
      * minimum: 0
      * maximum: 2147483647
      * @return totalMalwareNum
@@ -85,7 +85,7 @@ public class ShowAntivirusStatisticResponse extends SdkResponse {
     }
 
     /**
-     * 累计扫描任务数
+     * **参数解释**： 累计扫描任务数 **取值范围**： 最小值0，最大值2147483647，单位：个 
      * minimum: 0
      * maximum: 2147483647
      * @return totalTaskNum
@@ -104,7 +104,7 @@ public class ShowAntivirusStatisticResponse extends SdkResponse {
     }
 
     /**
-     * 运行中任务数
+     * **参数解释**： 运行中任务数 **取值范围**： 最小值0，最大值2147483647，单位：个 
      * minimum: 0
      * maximum: 2147483647
      * @return scanningTaskNum
@@ -123,7 +123,7 @@ public class ShowAntivirusStatisticResponse extends SdkResponse {
     }
 
     /**
-     * 启动时间，毫秒
+     * **参数解释**： 启动时间 **取值范围**： 最小值0，最大值9223372036854775807；时间格式：毫秒级时间戳（UTC时区，从1970-01-01 00:00:00开始计算）；单位：ms 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return latestScanTime
@@ -142,7 +142,7 @@ public class ShowAntivirusStatisticResponse extends SdkResponse {
     }
 
     /**
-     * 任务类型，包含如下:   - quick ：快速扫描   - full : 全盘扫描   - custom : 自定义扫描
+     * **参数解释**： 任务类型 **取值范围**： 包含如下:   - quick ：快速扫描   - full : 全盘扫描   - custom : 自定义扫描 
      * @return scanType
      */
     public String getScanType() {

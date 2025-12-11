@@ -172,7 +172,7 @@ public class BackupInfo {
     }
 
     /**
-     * 文件大小单位 - Byte - KB - MB - GB
+     * 文件大小单位 - Byte：Byte - KB：kb - MB: mb - GB: gb
      * @return fileSizeUnit
      */
     public String getFileSizeUnit() {

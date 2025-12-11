@@ -17,14 +17,14 @@ public class ListRecycleInstancesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
-    private String totalCount;
+    private Integer totalCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
 
     private List<RecycleInstanceV3> instances = null;
 
-    public ListRecycleInstancesResponse withTotalCount(String totalCount) {
+    public ListRecycleInstancesResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
@@ -33,11 +33,11 @@ public class ListRecycleInstancesResponse extends SdkResponse {
      * 数据总数
      * @return totalCount
      */
-    public String getTotalCount() {
+    public Integer getTotalCount() {
         return totalCount;
     }
 
-    public void setTotalCount(String totalCount) {
+    public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
 

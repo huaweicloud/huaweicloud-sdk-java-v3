@@ -16,14 +16,14 @@ public class UpdateCloudPhonePropertyRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phones")
 
-    private List<Property> phones = null;
+    private List<PropertyToUpdate> phones = null;
 
-    public UpdateCloudPhonePropertyRequestBody withPhones(List<Property> phones) {
+    public UpdateCloudPhonePropertyRequestBody withPhones(List<PropertyToUpdate> phones) {
         this.phones = phones;
         return this;
     }
 
-    public UpdateCloudPhonePropertyRequestBody addPhonesItem(Property phonesItem) {
+    public UpdateCloudPhonePropertyRequestBody addPhonesItem(PropertyToUpdate phonesItem) {
         if (this.phones == null) {
             this.phones = new ArrayList<>();
         }
@@ -31,7 +31,7 @@ public class UpdateCloudPhonePropertyRequestBody {
         return this;
     }
 
-    public UpdateCloudPhonePropertyRequestBody withPhones(Consumer<List<Property>> phonesSetter) {
+    public UpdateCloudPhonePropertyRequestBody withPhones(Consumer<List<PropertyToUpdate>> phonesSetter) {
         if (this.phones == null) {
             this.phones = new ArrayList<>();
         }
@@ -43,11 +43,11 @@ public class UpdateCloudPhonePropertyRequestBody {
      * 手机列表。
      * @return phones
      */
-    public List<Property> getPhones() {
+    public List<PropertyToUpdate> getPhones() {
         return phones;
     }
 
-    public void setPhones(List<Property> phones) {
+    public void setPhones(List<PropertyToUpdate> phones) {
         this.phones = phones;
     }
 

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -25,6 +26,11 @@ public class ShowProxyVersionResponse extends SdkResponse {
     @JsonProperty(value = "can_upgrade")
 
     private Boolean canUpgrade;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "risk")
+
+    private ProxyEngineRisk risk;
 
     public ShowProxyVersionResponse withCurrentVersion(String currentVersion) {
         this.currentVersion = currentVersion;
@@ -77,6 +83,32 @@ public class ShowProxyVersionResponse extends SdkResponse {
         this.canUpgrade = canUpgrade;
     }
 
+    public ShowProxyVersionResponse withRisk(ProxyEngineRisk risk) {
+        this.risk = risk;
+        return this;
+    }
+
+    public ShowProxyVersionResponse withRisk(Consumer<ProxyEngineRisk> riskSetter) {
+        if (this.risk == null) {
+            this.risk = new ProxyEngineRisk();
+            riskSetter.accept(this.risk);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get risk
+     * @return risk
+     */
+    public ProxyEngineRisk getRisk() {
+        return risk;
+    }
+
+    public void setRisk(ProxyEngineRisk risk) {
+        this.risk = risk;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -88,12 +120,12 @@ public class ShowProxyVersionResponse extends SdkResponse {
         ShowProxyVersionResponse that = (ShowProxyVersionResponse) obj;
         return Objects.equals(this.currentVersion, that.currentVersion)
             && Objects.equals(this.latestVersion, that.latestVersion)
-            && Objects.equals(this.canUpgrade, that.canUpgrade);
+            && Objects.equals(this.canUpgrade, that.canUpgrade) && Objects.equals(this.risk, that.risk);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(currentVersion, latestVersion, canUpgrade);
+        return Objects.hash(currentVersion, latestVersion, canUpgrade, risk);
     }
 
     @Override
@@ -103,6 +135,7 @@ public class ShowProxyVersionResponse extends SdkResponse {
         sb.append("    currentVersion: ").append(toIndentedString(currentVersion)).append("\n");
         sb.append("    latestVersion: ").append(toIndentedString(latestVersion)).append("\n");
         sb.append("    canUpgrade: ").append(toIndentedString(canUpgrade)).append("\n");
+        sb.append("    risk: ").append(toIndentedString(risk)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -8,6 +8,10 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.swr.v2.model.AddDomainNameRequest;
 import com.huaweicloud.sdk.swr.v2.model.AddDomainNameRequestBody;
 import com.huaweicloud.sdk.swr.v2.model.AddDomainNameResponse;
+import com.huaweicloud.sdk.swr.v2.model.CheckAgencyRequest;
+import com.huaweicloud.sdk.swr.v2.model.CheckAgencyResponse;
+import com.huaweicloud.sdk.swr.v2.model.CreateAgencyRequest;
+import com.huaweicloud.sdk.swr.v2.model.CreateAgencyResponse;
 import com.huaweicloud.sdk.swr.v2.model.CreateAuthorizationTokenRequest;
 import com.huaweicloud.sdk.swr.v2.model.CreateAuthorizationTokenResponse;
 import com.huaweicloud.sdk.swr.v2.model.CreateEndpointPolicyRequestBody;
@@ -248,8 +252,11 @@ import com.huaweicloud.sdk.swr.v2.model.ListSubResourceInstancesRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListSubResourceInstancesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListSubResourceTagsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListSubResourceTagsResponse;
+import com.huaweicloud.sdk.swr.v2.model.ListSyncRegionsRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListSyncRegionsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListTriggersDetailsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListTriggersDetailsResponse;
+import com.huaweicloud.sdk.swr.v2.model.RegionInfo;
 import com.huaweicloud.sdk.swr.v2.model.ReportData;
 import com.huaweicloud.sdk.swr.v2.model.Retention;
 import com.huaweicloud.sdk.swr.v2.model.ShowAccessDomainRequest;
@@ -380,6 +387,40 @@ import java.util.Map;
 
 @SuppressWarnings("unchecked")
 public class SwrMeta {
+
+    public static final HttpRequestDef<CheckAgencyRequest, CheckAgencyResponse> checkAgency = genForCheckAgency();
+
+    private static HttpRequestDef<CheckAgencyRequest, CheckAgencyResponse> genForCheckAgency() {
+        // basic
+        HttpRequestDef.Builder<CheckAgencyRequest, CheckAgencyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CheckAgencyRequest.class, CheckAgencyResponse.class)
+                .withName("CheckAgency")
+                .withUri("/v2/manage/agency")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> createAgency = genForCreateAgency();
+
+    private static HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> genForCreateAgency() {
+        // basic
+        HttpRequestDef.Builder<CreateAgencyRequest, CreateAgencyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAgencyRequest.class, CreateAgencyResponse.class)
+                .withName("CreateAgency")
+                .withUri("/v2/manage/agency")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<CreateAuthorizationTokenRequest, CreateAuthorizationTokenResponse> createAuthorizationToken =
         genForCreateAuthorizationToken();
@@ -1630,6 +1671,30 @@ public class SwrMeta {
             String.class,
             f -> f.withMarshaller(ListSharedReposDetailsResponse::getContentRange,
                 ListSharedReposDetailsResponse::setContentRange));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSyncRegionsRequest, ListSyncRegionsResponse> listSyncRegions =
+        genForListSyncRegions();
+
+    private static HttpRequestDef<ListSyncRegionsRequest, ListSyncRegionsResponse> genForListSyncRegions() {
+        // basic
+        HttpRequestDef.Builder<ListSyncRegionsRequest, ListSyncRegionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSyncRegionsRequest.class, ListSyncRegionsResponse.class)
+                .withName("ListSyncRegions")
+                .withUri("/v2/manage/regions")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        builder.<List<RegionInfo>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSyncRegionsResponse::getBody, ListSyncRegionsResponse::setBody)
+                .withInnerContainerType(RegionInfo.class));
+
         return builder.build();
     }
 

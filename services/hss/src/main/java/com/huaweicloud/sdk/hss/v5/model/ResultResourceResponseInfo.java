@@ -93,7 +93,7 @@ public class ResultResourceResponseInfo {
     }
 
     /**
-     * **参数解释**： 主机ID **取值范围**： 字符长度1-64位 
+     * **参数解释**： 服务器（主机）的唯一标识ID **取值范围**： 字符长度1-64位 
      * @return hostId
      */
     public String getHostId() {
@@ -110,7 +110,7 @@ public class ResultResourceResponseInfo {
     }
 
     /**
-     * **参数解释**: Agent ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
+     * **参数解释**: 主机上安装的杀毒Agent的唯一标识ID，用于关联主机与杀毒服务 **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return agentId
      */
     public String getAgentId() {
@@ -144,7 +144,7 @@ public class ResultResourceResponseInfo {
     }
 
     /**
-     * **参数解释**： 弹性公网IP地址 **取值范围**： 字符长度1-256位 
+     * **参数解释**： 弹性公网IP地址 **取值范围**： 字符长度1-256位，支持IPv4或IPv6格式（IPv4长度7-15位，IPv6长度15-39位） 
      * @return publicIp
      */
     public String getPublicIp() {
@@ -161,7 +161,7 @@ public class ResultResourceResponseInfo {
     }
 
     /**
-     * **参数解释**： 操作系统类型 **取值范围**： - Linux：Linux。 - Windows：Windows。 
+     * **参数解释**： 操作系统类型 **取值范围**： - Linux：Linux - Windows：Windows 
      * @return osType
      */
     public String getOsType() {
@@ -178,7 +178,7 @@ public class ResultResourceResponseInfo {
     }
 
     /**
-     * 服务器状态，包含如下4种。   - ACTIVE ：运行中。   - SHUTOFF ：关机。   - BUILDING ：创建中。   - ERROR ：故障。
+     * **参数解释**: 服务器状态 **取值范围**: 包含如下4种   - ACTIVE：运行中   - SHUTOFF：关机   - BUILDING：创建中   - ERROR：故障 
      * @return hostStatus
      */
     public String getHostStatus() {
@@ -195,7 +195,7 @@ public class ResultResourceResponseInfo {
     }
 
     /**
-     * Agent状态，包含如下5种。   - installed ：已安装。   - not_installed ：未安装。   - online ：在线。   - offline ：离线。   - install_failed ：安装失败。   - installing ：安装中。
+     * **参数解释**: Agent的运行状态 **取值范围**: 包含如下5种   - installed：已安装   - not_installed：未安装   - online：在线   - offline：离线   - install_failed：安装失败   - installing：安装中 
      * @return agentStatus
      */
     public String getAgentStatus() {
@@ -212,7 +212,7 @@ public class ResultResourceResponseInfo {
     }
 
     /**
-     * 防护状态，包含如下2种。 - closed ：未防护。 - opened ：防护中。
+     * **参数解释**: 防护状态 **取值范围**: 包含如下2种 - closed：未防护 - opened：防护中 
      * @return protectStatus
      */
     public String getProtectStatus() {
@@ -246,7 +246,7 @@ public class ResultResourceResponseInfo {
     }
 
     /**
-     * 操作系统名称
+     * **参数解释**: 操作系统名称 **取值范围**: 字符长度0-128位 
      * @return osName
      */
     public String getOsName() {
@@ -263,7 +263,7 @@ public class ResultResourceResponseInfo {
     }
 
     /**
-     * 操作系统版本
+     * **参数解释**: 操作系统版本 **取值范围**: 字符长度0-64位 
      * @return osVersion
      */
     public String getOsVersion() {

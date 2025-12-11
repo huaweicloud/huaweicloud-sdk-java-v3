@@ -68,6 +68,11 @@ public class ListFirewallDetail {
 
     private List<FirewallAssociation> associations = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
     public ListFirewallDetail withId(String id) {
         this.id = id;
         return this;
@@ -287,6 +292,23 @@ public class ListFirewallDetail {
         this.associations = associations;
     }
 
+    public ListFirewallDetail withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 参数解释： 网络ACL支持绑定的子网类型。 取值范围： normal：默认值，表示网络ACL支持绑定普通子网。 CloudDCN：表示网络ACL支持绑定CloudDCN子网。
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -301,7 +323,8 @@ public class ListFirewallDetail {
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
             && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.status, that.status)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.associations, that.associations);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.associations, that.associations)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override
@@ -316,7 +339,8 @@ public class ListFirewallDetail {
             status,
             enterpriseProjectId,
             tags,
-            associations);
+            associations,
+            type);
     }
 
     @Override
@@ -334,6 +358,7 @@ public class ListFirewallDetail {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    associations: ").append(toIndentedString(associations)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

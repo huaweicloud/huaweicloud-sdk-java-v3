@@ -122,7 +122,7 @@ public class RuleScopeInfo {
     }
 
     /**
-     * 审计范围规则状态
+     * 审计范围规则状态 - OFF：禁用  - ON: 启用
      * @return status
      */
     public String getStatus() {

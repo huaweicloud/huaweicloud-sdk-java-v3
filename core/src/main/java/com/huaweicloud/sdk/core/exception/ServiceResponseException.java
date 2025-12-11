@@ -25,7 +25,6 @@ import com.huaweicloud.sdk.core.Constants.StatusCode;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Base Exception for HTTP Errors during Rest Operations
@@ -40,9 +39,9 @@ public class ServiceResponseException extends SdkException {
     private final SdkErrorMessage sdkErrorMessage;
 
     public ServiceResponseException(int httpStatusCode, SdkErrorMessage sdkErrorMessage) {
-        super(Objects.nonNull(sdkErrorMessage) ? sdkErrorMessage.getErrorMsg() : "ServiceResponseException");
+        super(sdkErrorMessage != null ? sdkErrorMessage.getErrorMsg() : "ServiceResponseException");
         this.httpStatusCode = httpStatusCode;
-        this.sdkErrorMessage = Objects.nonNull(sdkErrorMessage) ? sdkErrorMessage : new SdkErrorMessage();
+        this.sdkErrorMessage = sdkErrorMessage != null ? sdkErrorMessage : new SdkErrorMessage();
     }
 
     public ServiceResponseException(int httpStatusCode, String errorCode, String errorMsg, String requestId) {
@@ -63,7 +62,7 @@ public class ServiceResponseException extends SdkException {
      * @return the response exception
      */
     public static ServiceResponseException mapException(int httpStatusCode, SdkErrorMessage sdkErrorMessage) {
-        if (Objects.isNull(sdkErrorMessage)) {
+        if (sdkErrorMessage == null) {
             sdkErrorMessage = new SdkErrorMessage();
         }
 
@@ -134,7 +133,7 @@ public class ServiceResponseException extends SdkException {
         if (StringUtils.isNotEmpty(getEncodedAuthorizationMessage())) {
             sb.append("    encodedAuthorizationMessage: ").append(toIndentedString(getEncodedAuthorizationMessage())).append("\n");
         }
-        if (Objects.nonNull(getDetails())) {
+        if (getDetails() != null) {
             sb.append("    details: ").append("[").append("\n");
             for (SdkErrorMessage detail : getDetails()) {
                 sb.append("        {").append("\n");

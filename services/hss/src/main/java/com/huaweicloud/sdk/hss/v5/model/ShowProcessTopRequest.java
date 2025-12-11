@@ -8,14 +8,14 @@ import java.util.Objects;
 /**
  * Request Object
  */
-public class ShowPorcessTopRequest {
+public class ShowProcessTopRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
-    public ShowPorcessTopRequest withEnterpriseProjectId(String enterpriseProjectId) {
+    public ShowProcessTopRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
@@ -40,7 +40,7 @@ public class ShowPorcessTopRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPorcessTopRequest that = (ShowPorcessTopRequest) obj;
+        ShowProcessTopRequest that = (ShowProcessTopRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
@@ -52,7 +52,7 @@ public class ShowPorcessTopRequest {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ShowPorcessTopRequest {\n");
+        sb.append("class ShowProcessTopRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -165,7 +165,7 @@ public class ListCicdImagesRequest {
     }
 
     /**
-     * **参数解释**: 镜像名称 **取值范围**: 字符长度1-128位 
+     * **参数解释**: 镜像名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及 
      * @return imageName
      */
     public String getImageName() {
@@ -182,7 +182,7 @@ public class ListCicdImagesRequest {
     }
 
     /**
-     * **参数解释**: 镜像版本 **取值范围**: 字符长度1-64位 
+     * **参数解释**: 镜像版本 **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return imageVersion
      */
     public String getImageVersion() {

@@ -34,7 +34,7 @@ public class InstanceItem {
     }
 
     /**
-     * 实例ID。
+     * **参数解释：** 实例ID。 **取值范围：** 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -51,7 +51,7 @@ public class InstanceItem {
     }
 
     /**
-     * 实例名称
+     * **参数解释：** 实例名称 **取值范围：** 不涉及。
      * @return instanceName
      */
     public String getInstanceName() {
@@ -84,7 +84,7 @@ public class InstanceItem {
     }
 
     /**
-     * 标签列表。如果没有标签，默认为空数组。
+     * **参数解释：** 标签列表。如果没有标签，默认为空数组。 **取值范围：** 不涉及。
      * @return tags
      */
     public List<InstanceItemTagItem> getTags() {

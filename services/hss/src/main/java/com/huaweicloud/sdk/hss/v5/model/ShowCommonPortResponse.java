@@ -78,7 +78,7 @@ public class ShowCommonPortResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释** 状态 **取值范围** - normal：正常 - danger：危险 - unknow：未知 
+     * **参数解释** 状态 **取值范围** - normal：正常 - danger：危险 - unknown：未知 
      * @return status
      */
     public String getStatus() {

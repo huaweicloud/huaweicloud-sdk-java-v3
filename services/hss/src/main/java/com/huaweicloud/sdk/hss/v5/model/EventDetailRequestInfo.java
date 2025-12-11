@@ -76,7 +76,7 @@ public class EventDetailRequestInfo {
     }
 
     /**
-     * **参数解释**: Agent ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
+     * **参数解释**: 主机上安装的杀毒Agent的唯一标识ID，用于关联主机与杀毒服务 **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return agentId
      */
     public String getAgentId() {
@@ -146,7 +146,7 @@ public class EventDetailRequestInfo {
     }
 
     /**
-     * **参数解释**： 文件属性 **取值范围**： 字符长度1-256位 
+     * **参数解释**： 文件的系统属性（如读写权限、隐藏属性、执行权限等） **取值范围**： 字符长度1-256位 
      * @return fileAttr
      */
     public String getFileAttr() {

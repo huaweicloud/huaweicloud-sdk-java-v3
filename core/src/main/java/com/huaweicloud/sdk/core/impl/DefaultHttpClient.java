@@ -71,7 +71,6 @@ import java.net.UnknownHostException;
 import java.security.SecureRandom;
 import java.util.Collections;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
@@ -106,34 +105,36 @@ public class DefaultHttpClient implements HttpClient {
     public DefaultHttpClient withHttpConfig(HttpConfig httpConfig) {
         this.httpConfig = httpConfig;
         OkHttpClient.Builder clientBuilder = new OkHttpClient.Builder().followRedirects(httpConfig.isAllowRedirects());
-        if (Objects.nonNull(httpConfig.getConnectionPool())) {
+        if (httpConfig.getConnectionPool() != null) {
             clientBuilder.connectionPool(httpConfig.getConnectionPool());
         }
-        if (Objects.nonNull(httpConfig.getDispatcher())) {
+        if (httpConfig.getDispatcher() != null) {
             clientBuilder.dispatcher(httpConfig.getDispatcher());
         }
 
-        if (Objects.nonNull(httpConfig.getDns())) {
+        if (httpConfig.getDns() != null) {
             clientBuilder.dns(httpConfig.getDns());
         }
 
-        if (Objects.nonNull(httpConfig.getEventListener())) {
+        if (httpConfig.getEventListener() != null) {
             clientBuilder.eventListener(httpConfig.getEventListener());
         }
 
         clientBuilder.connectTimeout(httpConfig.getConnectionTimeout(), TimeUnit.SECONDS)
                 .readTimeout(httpConfig.getReadTimeout(), TimeUnit.SECONDS);
 
-        if (Objects.nonNull(httpConfig.getSSLSocketFactory()) && Objects.nonNull(httpConfig.getX509TrustManager())) {
+        if (httpConfig.getSSLSocketFactory() != null && httpConfig.getX509TrustManager() != null) {
             clientBuilder.sslSocketFactory(httpConfig.getSSLSocketFactory(), httpConfig.getX509TrustManager());
         }
-        if (Objects.nonNull(httpConfig.getHostnameVerifier())) {
+        if (httpConfig.getHostnameVerifier() != null) {
             clientBuilder.hostnameVerifier(httpConfig.getHostnameVerifier());
         }
 
         if (httpConfig.isIgnoreSSLVerification()) {
-            SecureRandom secureRandom = Objects.nonNull(httpConfig.getSecureRandom())
-                    ? httpConfig.getSecureRandom() : RandomUtils.getDefaultSecureRandom();
+            SecureRandom secureRandom = httpConfig.getSecureRandom();
+            if (secureRandom == null) {
+                secureRandom = RandomUtils.getDefaultSecureRandom();
+            }
             clientBuilder.hostnameVerifier(IgnoreSSLVerificationFactory.getHostnameVerifier())
                     .sslSocketFactory(
                             IgnoreSSLVerificationFactory.getSSLContext(secureRandom).getSocketFactory(),
@@ -185,7 +186,7 @@ public class DefaultHttpClient implements HttpClient {
 
         httpRequest.getHeaders().forEach((key, values) -> values.forEach(value -> requestBuilder.header(key, value)));
 
-        if (Objects.nonNull(httpRequest.getBodyAsString())) {
+        if (httpRequest.getBodyAsString() != null) {
             return buildOkHttpRequestWithTextBody(httpRequest, requestBuilder);
         }
         if (httpRequest.getContentType().startsWith(Constants.MEDIATYPE.MULTIPART_FORM_DATA)) {
@@ -218,9 +219,7 @@ public class DefaultHttpClient implements HttpClient {
 
                     @Override
                     public MediaType contentType() {
-                        return Objects.isNull(filePart.getContentType())
-                                ? null
-                                : MediaType.parse(filePart.getContentType());
+                        return filePart.getContentType() == null ? null : MediaType.parse(filePart.getContentType());
                     }
 
                     @Override
@@ -248,13 +247,11 @@ public class DefaultHttpClient implements HttpClient {
     }
 
     private Request buildOkHttpRequestWithoutTextBody(HttpRequest httpRequest, Request.Builder requestBuilder) {
-        if (Objects.isNull(httpRequest.getBody())) {
-            if (HttpMethod.requiresRequestBody(httpRequest.getMethod().toString())) {
-                requestBuilder.method(
-                        httpRequest.getMethod().toString(), createRequestBody(new byte[0], null));
-            } else {
-                requestBuilder.method(httpRequest.getMethod().toString(), null);
-            }
+        if (httpRequest.getBody() == null) {
+            String method = httpRequest.getMethod().toString();
+            RequestBody body = HttpMethod.requiresRequestBody(method) ?
+                    createRequestBody(new byte[0], null) : null;
+            requestBuilder.method(method, body);
         } else {
             buildStreamRequestBody(httpRequest, requestBuilder);
         }
@@ -283,7 +280,7 @@ public class DefaultHttpClient implements HttpClient {
 
     private void buildStreamRequestBody(HttpRequest httpRequest, Request.Builder requestBuilder) {
         RequestBody requestBody;
-        if (Objects.isNull(httpRequest.getProgressListener())) {
+        if (httpRequest.getProgressListener() == null) {
             requestBody = new RequestBody() {
                 @Override
                 public MediaType contentType() {
@@ -338,7 +335,7 @@ public class DefaultHttpClient implements HttpClient {
         CompletableFuture<Response> asyncHttpResponse = new CompletableFuture<>();
         client.newCall(request).enqueue(toCallback(asyncHttpResponse));
         return asyncHttpResponse.handleAsync((response, throwable) -> {
-            if (Objects.nonNull(request.body()) && request.body() instanceof Closeable) {
+            if (request.body() != null && request.body() instanceof Closeable) {
                 closeStream((Closeable) request.body());
             }
 
@@ -380,7 +377,7 @@ public class DefaultHttpClient implements HttpClient {
             logger.error("DefaultHttpClient ConnectionException", e);
             throw new ConnectionException("DefaultHttpClient ConnectionException", e);
         } finally {
-            if (Objects.nonNull(request.body()) && request.body() instanceof Closeable) {
+            if (request.body() != null && request.body() instanceof Closeable) {
                 closeStream((Closeable) request.body());
             }
         }

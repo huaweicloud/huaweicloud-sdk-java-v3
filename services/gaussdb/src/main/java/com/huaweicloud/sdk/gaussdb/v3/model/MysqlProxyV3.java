@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -67,6 +72,96 @@ public class MysqlProxyV3 {
     @JsonProperty(value = "node_num")
 
     private Integer nodeNum;
+
+    /**
+     * **参数解释**：  数据库代理读写模式。  **取值范围**：  - readwrite：读写模式 - readonly：只读模式 
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum READWRITE for value: "readwrite"
+         */
+        public static final TypeEnum READWRITE = new TypeEnum("readwrite");
+
+        /**
+         * Enum READONLY for value: "readonly"
+         */
+        public static final TypeEnum READONLY = new TypeEnum("readonly");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("readwrite", READWRITE);
+            map.put("readonly", READONLY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private TypeEnum type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private String createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "updated_at")
+
+    private String updatedAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_ap_node")
+
+    private Boolean supportApNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mode")
@@ -323,6 +418,74 @@ public class MysqlProxyV3 {
 
     public void setNodeNum(Integer nodeNum) {
         this.nodeNum = nodeNum;
+    }
+
+    public MysqlProxyV3 withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  数据库代理读写模式。  **取值范围**：  - readwrite：读写模式 - readonly：只读模式 
+     * @return type
+     */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
+    public MysqlProxyV3 withCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /**
+     * 数据库代理创建时间。
+     * @return createdAt
+     */
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public MysqlProxyV3 withUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+        return this;
+    }
+
+    /**
+     * 数据库代更新时间。
+     * @return updatedAt
+     */
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public MysqlProxyV3 withSupportApNode(Boolean supportApNode) {
+        this.supportApNode = supportApNode;
+        return this;
+    }
+
+    /**
+     * 是否支持HTAP节点。
+     * @return supportApNode
+     */
+    public Boolean getSupportApNode() {
+        return supportApNode;
+    }
+
+    public void setSupportApNode(Boolean supportApNode) {
+        this.supportApNode = supportApNode;
     }
 
     public MysqlProxyV3 withMode(String mode) {
@@ -594,7 +757,9 @@ public class MysqlProxyV3 {
             && Objects.equals(this.delayThresholdInSeconds, that.delayThresholdInSeconds)
             && Objects.equals(this.elbVip, that.elbVip) && Objects.equals(this.eip, that.eip)
             && Objects.equals(this.vcpus, that.vcpus) && Objects.equals(this.ram, that.ram)
-            && Objects.equals(this.nodeNum, that.nodeNum) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.nodeNum, that.nodeNum) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.supportApNode, that.supportApNode) && Objects.equals(this.mode, that.mode)
             && Objects.equals(this.nodes, that.nodes) && Objects.equals(this.flavorRef, that.flavorRef)
             && Objects.equals(this.name, that.name) && Objects.equals(this.transactionSplit, that.transactionSplit)
             && Objects.equals(this.connectionPoolType, that.connectionPoolType)
@@ -620,6 +785,10 @@ public class MysqlProxyV3 {
             vcpus,
             ram,
             nodeNum,
+            type,
+            createdAt,
+            updatedAt,
+            supportApNode,
             mode,
             nodes,
             flavorRef,
@@ -651,6 +820,10 @@ public class MysqlProxyV3 {
         sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");
         sb.append("    ram: ").append(toIndentedString(ram)).append("\n");
         sb.append("    nodeNum: ").append(toIndentedString(nodeNum)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    supportApNode: ").append(toIndentedString(supportApNode)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
         sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");

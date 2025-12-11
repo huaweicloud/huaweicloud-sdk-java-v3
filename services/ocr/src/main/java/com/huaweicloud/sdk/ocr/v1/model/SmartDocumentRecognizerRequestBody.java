@@ -61,6 +61,11 @@ public class SmartDocumentRecognizerRequestBody {
     private Boolean formula;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_layout")
+
+    private Boolean imageLayout;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kv_map")
 
     private String kvMap;
@@ -74,6 +79,11 @@ public class SmartDocumentRecognizerRequestBody {
     @JsonProperty(value = "pdf_page_number")
 
     private Integer pdfPageNumber;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "character_mode")
+
+    private Boolean characterMode;
 
     public SmartDocumentRecognizerRequestBody withData(String data) {
         this.data = data;
@@ -245,6 +255,23 @@ public class SmartDocumentRecognizerRequestBody {
         this.formula = formula;
     }
 
+    public SmartDocumentRecognizerRequestBody withImageLayout(Boolean imageLayout) {
+        this.imageLayout = imageLayout;
+        return this;
+    }
+
+    /**
+     * 是否对文档中的图片进行二次版面分析。若是，结果会在“layout_result”中返回，并带有“image_layout”的关键字。 
+     * @return imageLayout
+     */
+    public Boolean getImageLayout() {
+        return imageLayout;
+    }
+
+    public void setImageLayout(Boolean imageLayout) {
+        this.imageLayout = imageLayout;
+    }
+
     public SmartDocumentRecognizerRequestBody withKvMap(String kvMap) {
         this.kvMap = kvMap;
         return this;
@@ -296,6 +323,23 @@ public class SmartDocumentRecognizerRequestBody {
         this.pdfPageNumber = pdfPageNumber;
     }
 
+    public SmartDocumentRecognizerRequestBody withCharacterMode(Boolean characterMode) {
+        this.characterMode = characterMode;
+        return this;
+    }
+
+    /**
+     * 是否返回单字符信息。开启后，单字符识别结果将会在“ocr_result”中的“char_list”返回单字符信息。如果不传入该参数，则默认不返回单字符信息。 
+     * @return characterMode
+     */
+    public Boolean getCharacterMode() {
+        return characterMode;
+    }
+
+    public void setCharacterMode(Boolean characterMode) {
+        this.characterMode = characterMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -310,8 +354,10 @@ public class SmartDocumentRecognizerRequestBody {
             && Objects.equals(this.language, that.language) && Objects.equals(this.kv, that.kv)
             && Objects.equals(this.table, that.table) && Objects.equals(this.layout, that.layout)
             && Objects.equals(this.returnExcel, that.returnExcel) && Objects.equals(this.form, that.form)
-            && Objects.equals(this.formula, that.formula) && Objects.equals(this.kvMap, that.kvMap)
-            && Objects.equals(this.eraseSeal, that.eraseSeal) && Objects.equals(this.pdfPageNumber, that.pdfPageNumber);
+            && Objects.equals(this.formula, that.formula) && Objects.equals(this.imageLayout, that.imageLayout)
+            && Objects.equals(this.kvMap, that.kvMap) && Objects.equals(this.eraseSeal, that.eraseSeal)
+            && Objects.equals(this.pdfPageNumber, that.pdfPageNumber)
+            && Objects.equals(this.characterMode, that.characterMode);
     }
 
     @Override
@@ -326,9 +372,11 @@ public class SmartDocumentRecognizerRequestBody {
             returnExcel,
             form,
             formula,
+            imageLayout,
             kvMap,
             eraseSeal,
-            pdfPageNumber);
+            pdfPageNumber,
+            characterMode);
     }
 
     @Override
@@ -345,9 +393,11 @@ public class SmartDocumentRecognizerRequestBody {
         sb.append("    returnExcel: ").append(toIndentedString(returnExcel)).append("\n");
         sb.append("    form: ").append(toIndentedString(form)).append("\n");
         sb.append("    formula: ").append(toIndentedString(formula)).append("\n");
+        sb.append("    imageLayout: ").append(toIndentedString(imageLayout)).append("\n");
         sb.append("    kvMap: ").append(toIndentedString(kvMap)).append("\n");
         sb.append("    eraseSeal: ").append(toIndentedString(eraseSeal)).append("\n");
         sb.append("    pdfPageNumber: ").append(toIndentedString(pdfPageNumber)).append("\n");
+        sb.append("    characterMode: ").append(toIndentedString(characterMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

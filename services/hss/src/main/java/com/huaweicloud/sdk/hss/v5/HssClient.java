@@ -103,6 +103,8 @@ import com.huaweicloud.sdk.hss.v5.model.ChangeExtendedWeakPasswordRequest;
 import com.huaweicloud.sdk.hss.v5.model.ChangeExtendedWeakPasswordResponse;
 import com.huaweicloud.sdk.hss.v5.model.ChangeFilePathWhiteDetailRequest;
 import com.huaweicloud.sdk.hss.v5.model.ChangeFilePathWhiteDetailResponse;
+import com.huaweicloud.sdk.hss.v5.model.ChangeFilePathWhiteListsRequest;
+import com.huaweicloud.sdk.hss.v5.model.ChangeFilePathWhiteListsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ChangeHostIgnoreStatusRequest;
 import com.huaweicloud.sdk.hss.v5.model.ChangeHostIgnoreStatusResponse;
 import com.huaweicloud.sdk.hss.v5.model.ChangeHostsGroupRequest;
@@ -881,6 +883,8 @@ import com.huaweicloud.sdk.hss.v5.model.ShowExtendedWeakPasswordRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowExtendedWeakPasswordResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowFilePathWhiteDetailRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowFilePathWhiteDetailResponse;
+import com.huaweicloud.sdk.hss.v5.model.ShowFilePathWhiteListsRequest;
+import com.huaweicloud.sdk.hss.v5.model.ShowFilePathWhiteListsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowFileStatisticRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowFileStatisticResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowHostAssetManualCollectStatusRequest;
@@ -945,10 +949,10 @@ import com.huaweicloud.sdk.hss.v5.model.ShowPageNoticesRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowPageNoticesResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowPolicySwitchStatusRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowPolicySwitchStatusResponse;
-import com.huaweicloud.sdk.hss.v5.model.ShowPorcessTopRequest;
-import com.huaweicloud.sdk.hss.v5.model.ShowPorcessTopResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowPortTopRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowPortTopResponse;
+import com.huaweicloud.sdk.hss.v5.model.ShowProcessTopRequest;
+import com.huaweicloud.sdk.hss.v5.model.ShowProcessTopResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowProductdataOfferingInfosRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowProductdataOfferingInfosResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowProtectStatisticsRequest;
@@ -5888,35 +5892,6 @@ public class HssClient {
     }
 
     /**
-     * 资产管理-概览-进程Top
-     *
-     * 资产管理-概览-进程Top
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowPorcessTopRequest 请求对象
-     * @return ShowPorcessTopResponse
-     */
-    public ShowPorcessTopResponse showPorcessTop(ShowPorcessTopRequest request) {
-        return hcClient.syncInvokeHttp(request, HssMeta.showPorcessTop);
-    }
-
-    /**
-     * 资产管理-概览-进程Top
-     *
-     * 资产管理-概览-进程Top
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowPorcessTopRequest 请求对象
-     * @return SyncInvoker<ShowPorcessTopRequest, ShowPorcessTopResponse>
-     */
-    public SyncInvoker<ShowPorcessTopRequest, ShowPorcessTopResponse> showPorcessTopInvoker(
-        ShowPorcessTopRequest request) {
-        return new SyncInvoker<>(request, HssMeta.showPorcessTop, hcClient);
-    }
-
-    /**
      * 资产管理-概览-端口Top
      *
      * 资产管理-概览-端口Top
@@ -5942,6 +5917,35 @@ public class HssClient {
      */
     public SyncInvoker<ShowPortTopRequest, ShowPortTopResponse> showPortTopInvoker(ShowPortTopRequest request) {
         return new SyncInvoker<>(request, HssMeta.showPortTop, hcClient);
+    }
+
+    /**
+     * 资产管理-概览-进程Top
+     *
+     * 资产管理-概览-进程Top
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProcessTopRequest 请求对象
+     * @return ShowProcessTopResponse
+     */
+    public ShowProcessTopResponse showProcessTop(ShowProcessTopRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.showProcessTop);
+    }
+
+    /**
+     * 资产管理-概览-进程Top
+     *
+     * 资产管理-概览-进程Top
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProcessTopRequest 请求对象
+     * @return SyncInvoker<ShowProcessTopRequest, ShowProcessTopResponse>
+     */
+    public SyncInvoker<ShowProcessTopRequest, ShowProcessTopResponse> showProcessTopInvoker(
+        ShowProcessTopRequest request) {
+        return new SyncInvoker<>(request, HssMeta.showProcessTop, hcClient);
     }
 
     /**
@@ -10863,9 +10867,9 @@ public class HssClient {
     }
 
     /**
-     * 修改镜像的敏感信息文件路径白名单
+     * 修改镜像的敏感信息文件路径白名单--接口已废弃
      *
-     * 修改镜像的敏感信息文件路径白名单
+     * 修改镜像的敏感信息文件路径白名单--接口已废弃
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -10877,9 +10881,9 @@ public class HssClient {
     }
 
     /**
-     * 修改镜像的敏感信息文件路径白名单
+     * 修改镜像的敏感信息文件路径白名单--接口已废弃
      *
-     * 修改镜像的敏感信息文件路径白名单
+     * 修改镜像的敏感信息文件路径白名单--接口已废弃
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -10889,6 +10893,35 @@ public class HssClient {
     public SyncInvoker<ChangeFilePathWhiteDetailRequest, ChangeFilePathWhiteDetailResponse> changeFilePathWhiteDetailInvoker(
         ChangeFilePathWhiteDetailRequest request) {
         return new SyncInvoker<>(request, HssMeta.changeFilePathWhiteDetail, hcClient);
+    }
+
+    /**
+     * 修改镜像的敏感信息文件路径白名单
+     *
+     * 修改镜像的敏感信息文件路径白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeFilePathWhiteListsRequest 请求对象
+     * @return ChangeFilePathWhiteListsResponse
+     */
+    public ChangeFilePathWhiteListsResponse changeFilePathWhiteLists(ChangeFilePathWhiteListsRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.changeFilePathWhiteLists);
+    }
+
+    /**
+     * 修改镜像的敏感信息文件路径白名单
+     *
+     * 修改镜像的敏感信息文件路径白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeFilePathWhiteListsRequest 请求对象
+     * @return SyncInvoker<ChangeFilePathWhiteListsRequest, ChangeFilePathWhiteListsResponse>
+     */
+    public SyncInvoker<ChangeFilePathWhiteListsRequest, ChangeFilePathWhiteListsResponse> changeFilePathWhiteListsInvoker(
+        ChangeFilePathWhiteListsRequest request) {
+        return new SyncInvoker<>(request, HssMeta.changeFilePathWhiteLists, hcClient);
     }
 
     /**
@@ -11996,9 +12029,9 @@ public class HssClient {
     }
 
     /**
-     * 从SWR服务同步镜像列表
+     * 从SWR服务同步镜像列表--接口已废弃
      *
-     * 从SWR服务同步镜像列表
+     * 从SWR服务同步镜像列表--接口已废弃
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -12010,9 +12043,9 @@ public class HssClient {
     }
 
     /**
-     * 从SWR服务同步镜像列表
+     * 从SWR服务同步镜像列表--接口已废弃
      *
-     * 从SWR服务同步镜像列表
+     * 从SWR服务同步镜像列表--接口已废弃
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -12054,9 +12087,9 @@ public class HssClient {
     }
 
     /**
-     * 查询镜像的敏感信息文件路径白名单
+     * 查询镜像的敏感信息文件路径白名单--接口已废弃
      *
-     * 查询镜像的敏感信息文件路径白名单
+     * 查询镜像的敏感信息文件路径白名单--接口已废弃
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -12068,9 +12101,9 @@ public class HssClient {
     }
 
     /**
-     * 查询镜像的敏感信息文件路径白名单
+     * 查询镜像的敏感信息文件路径白名单--接口已废弃
      *
-     * 查询镜像的敏感信息文件路径白名单
+     * 查询镜像的敏感信息文件路径白名单--接口已废弃
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -12080,6 +12113,35 @@ public class HssClient {
     public SyncInvoker<ShowFilePathWhiteDetailRequest, ShowFilePathWhiteDetailResponse> showFilePathWhiteDetailInvoker(
         ShowFilePathWhiteDetailRequest request) {
         return new SyncInvoker<>(request, HssMeta.showFilePathWhiteDetail, hcClient);
+    }
+
+    /**
+     * 查询镜像的敏感信息文件路径白名单
+     *
+     * 查询镜像的敏感信息文件路径白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFilePathWhiteListsRequest 请求对象
+     * @return ShowFilePathWhiteListsResponse
+     */
+    public ShowFilePathWhiteListsResponse showFilePathWhiteLists(ShowFilePathWhiteListsRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.showFilePathWhiteLists);
+    }
+
+    /**
+     * 查询镜像的敏感信息文件路径白名单
+     *
+     * 查询镜像的敏感信息文件路径白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFilePathWhiteListsRequest 请求对象
+     * @return SyncInvoker<ShowFilePathWhiteListsRequest, ShowFilePathWhiteListsResponse>
+     */
+    public SyncInvoker<ShowFilePathWhiteListsRequest, ShowFilePathWhiteListsResponse> showFilePathWhiteListsInvoker(
+        ShowFilePathWhiteListsRequest request) {
+        return new SyncInvoker<>(request, HssMeta.showFilePathWhiteLists, hcClient);
     }
 
     /**

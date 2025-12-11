@@ -86,6 +86,9 @@ import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorFilterRuleResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorSessionRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorSessionRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorSessionResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreateVirsubnetCidrReservationRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreateVirsubnetCidrReservationRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.CreateVirsubnetCidrReservationResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateVpcRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.CreateVpcResponse;
@@ -115,6 +118,8 @@ import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorFilterRuleRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorFilterRuleResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorSessionRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorSessionResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteVirsubnetCidrReservationRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteVirsubnetCidrReservationResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteVpcResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DisassociateSubnetFirewallRequest;
@@ -155,6 +160,8 @@ import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorFiltersRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorFiltersResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorSessionsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorSessionsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListVirsubnetCidrReservationsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListVirsubnetCidrReservationsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListVpcsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListVpcsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.MigrateSubNetworkInterfaceRequest;
@@ -198,6 +205,8 @@ import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorFilterRuleRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorFilterRuleResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorSessionRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorSessionResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowVirsubnetCidrReservationRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowVirsubnetCidrReservationResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowVpcResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateAddressGroupRequest;
@@ -227,6 +236,9 @@ import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorFilterRuleResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorSessionRequest;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorSessionRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorSessionResponse;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateVirsubnetCidrReservationRequest;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateVirsubnetCidrReservationRequestBody;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateVirsubnetCidrReservationResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateVpcRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateVpcResponse;
@@ -618,6 +630,33 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateVirsubnetCidrReservationRequest, CreateVirsubnetCidrReservationResponse> createVirsubnetCidrReservation =
+        genForCreateVirsubnetCidrReservation();
+
+    private static HttpRequestDef<CreateVirsubnetCidrReservationRequest, CreateVirsubnetCidrReservationResponse> genForCreateVirsubnetCidrReservation() {
+        // basic
+        HttpRequestDef.Builder<CreateVirsubnetCidrReservationRequest, CreateVirsubnetCidrReservationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateVirsubnetCidrReservationRequest.class,
+                    CreateVirsubnetCidrReservationResponse.class)
+                .withName("CreateVirsubnetCidrReservation")
+                .withUri("/v3/{project_id}/vpc/virsubnet-cidr-reservations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateVirsubnetCidrReservationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateVirsubnetCidrReservationRequestBody.class),
+            f -> f.withMarshaller(CreateVirsubnetCidrReservationRequest::getBody,
+                CreateVirsubnetCidrReservationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeletePortTagRequest, DeletePortTagResponse> deletePortTag =
         genForDeletePortTag();
 
@@ -796,6 +835,33 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTrafficMirrorSessionRequest::getTrafficMirrorSessionId,
                 DeleteTrafficMirrorSessionRequest::setTrafficMirrorSessionId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteVirsubnetCidrReservationRequest, DeleteVirsubnetCidrReservationResponse> deleteVirsubnetCidrReservation =
+        genForDeleteVirsubnetCidrReservation();
+
+    private static HttpRequestDef<DeleteVirsubnetCidrReservationRequest, DeleteVirsubnetCidrReservationResponse> genForDeleteVirsubnetCidrReservation() {
+        // basic
+        HttpRequestDef.Builder<DeleteVirsubnetCidrReservationRequest, DeleteVirsubnetCidrReservationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteVirsubnetCidrReservationRequest.class,
+                    DeleteVirsubnetCidrReservationResponse.class)
+                .withName("DeleteVirsubnetCidrReservation")
+                .withUri("/v3/{project_id}/vpc/virsubnet-cidr-reservations/{virsubnet_cidr_reservation_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("virsubnet_cidr_reservation_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVirsubnetCidrReservationRequest::getVirsubnetCidrReservationId,
+                DeleteVirsubnetCidrReservationRequest::setVirsubnetCidrReservationId));
 
         // response
 
@@ -1350,6 +1416,81 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListVirsubnetCidrReservationsRequest, ListVirsubnetCidrReservationsResponse> listVirsubnetCidrReservations =
+        genForListVirsubnetCidrReservations();
+
+    private static HttpRequestDef<ListVirsubnetCidrReservationsRequest, ListVirsubnetCidrReservationsResponse> genForListVirsubnetCidrReservations() {
+        // basic
+        HttpRequestDef.Builder<ListVirsubnetCidrReservationsRequest, ListVirsubnetCidrReservationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListVirsubnetCidrReservationsRequest.class,
+                    ListVirsubnetCidrReservationsResponse.class)
+                .withName("ListVirsubnetCidrReservations")
+                .withUri("/v3/{project_id}/vpc/virsubnet-cidr-reservations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVirsubnetCidrReservationsRequest::getLimit,
+                ListVirsubnetCidrReservationsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVirsubnetCidrReservationsRequest::getMarker,
+                ListVirsubnetCidrReservationsRequest::setMarker));
+        builder.<List<String>>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListVirsubnetCidrReservationsRequest::getId,
+                ListVirsubnetCidrReservationsRequest::setId));
+        builder.<List<String>>withRequestField("virsubnet_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListVirsubnetCidrReservationsRequest::getVirsubnetId,
+                ListVirsubnetCidrReservationsRequest::setVirsubnetId));
+        builder.<List<String>>withRequestField("cidr",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListVirsubnetCidrReservationsRequest::getCidr,
+                ListVirsubnetCidrReservationsRequest::setCidr));
+        builder.<List<Integer>>withRequestField("ip_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListVirsubnetCidrReservationsRequest::getIpVersion,
+                ListVirsubnetCidrReservationsRequest::setIpVersion));
+        builder.<List<String>>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListVirsubnetCidrReservationsRequest::getName,
+                ListVirsubnetCidrReservationsRequest::setName));
+        builder.<List<String>>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListVirsubnetCidrReservationsRequest::getDescription,
+                ListVirsubnetCidrReservationsRequest::setDescription));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVirsubnetCidrReservationsRequest::getEnterpriseProjectId,
+                ListVirsubnetCidrReservationsRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<MigrateSubNetworkInterfaceRequest, MigrateSubNetworkInterfaceResponse> migrateSubNetworkInterface =
         genForMigrateSubNetworkInterface();
 
@@ -1629,6 +1770,33 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowVirsubnetCidrReservationRequest, ShowVirsubnetCidrReservationResponse> showVirsubnetCidrReservation =
+        genForShowVirsubnetCidrReservation();
+
+    private static HttpRequestDef<ShowVirsubnetCidrReservationRequest, ShowVirsubnetCidrReservationResponse> genForShowVirsubnetCidrReservation() {
+        // basic
+        HttpRequestDef.Builder<ShowVirsubnetCidrReservationRequest, ShowVirsubnetCidrReservationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowVirsubnetCidrReservationRequest.class,
+                    ShowVirsubnetCidrReservationResponse.class)
+                .withName("ShowVirsubnetCidrReservation")
+                .withUri("/v3/{project_id}/vpc/virsubnet-cidr-reservations/{virsubnet_cidr_reservation_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("virsubnet_cidr_reservation_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVirsubnetCidrReservationRequest::getVirsubnetCidrReservationId,
+                ShowVirsubnetCidrReservationRequest::setVirsubnetCidrReservationId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse> updateSecurityGroup =
         genForUpdateSecurityGroup();
 
@@ -1784,6 +1952,39 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(UpdateTrafficMirrorSessionRequestBody.class),
             f -> f.withMarshaller(UpdateTrafficMirrorSessionRequest::getBody,
                 UpdateTrafficMirrorSessionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateVirsubnetCidrReservationRequest, UpdateVirsubnetCidrReservationResponse> updateVirsubnetCidrReservation =
+        genForUpdateVirsubnetCidrReservation();
+
+    private static HttpRequestDef<UpdateVirsubnetCidrReservationRequest, UpdateVirsubnetCidrReservationResponse> genForUpdateVirsubnetCidrReservation() {
+        // basic
+        HttpRequestDef.Builder<UpdateVirsubnetCidrReservationRequest, UpdateVirsubnetCidrReservationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateVirsubnetCidrReservationRequest.class,
+                    UpdateVirsubnetCidrReservationResponse.class)
+                .withName("UpdateVirsubnetCidrReservation")
+                .withUri("/v3/{project_id}/vpc/virsubnet-cidr-reservations/{virsubnet_cidr_reservation_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("virsubnet_cidr_reservation_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateVirsubnetCidrReservationRequest::getVirsubnetCidrReservationId,
+                UpdateVirsubnetCidrReservationRequest::setVirsubnetCidrReservationId));
+        builder.<UpdateVirsubnetCidrReservationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateVirsubnetCidrReservationRequestBody.class),
+            f -> f.withMarshaller(UpdateVirsubnetCidrReservationRequest::getBody,
+                UpdateVirsubnetCidrReservationRequest::setBody));
 
         // response
 

@@ -40,7 +40,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
 import java.util.SimpleTimeZone;
 import java.util.SortedMap;
 import java.util.TreeMap;
@@ -66,7 +65,7 @@ public class AKSKSigner implements IAKSKSigner {
     }
 
     protected <T extends AbstractCredentials<T>> void checkRequired(T credential) {
-        if (Objects.isNull(credential)) {
+        if (credential == null) {
             throw new SdkException("credentials is required");
         }
 
@@ -230,10 +229,10 @@ public class AKSKSigner implements IAKSKSigner {
         if (request.haveHeader(contentHeader)) {
             return request.getHeader(contentHeader);
         }
-        if (Objects.nonNull(request.getBodyAsString()) && !request.getBodyAsString().isEmpty()) {
+        if (request.getBodyAsString() != null && !request.getBodyAsString().isEmpty()) {
             return hasher.hashHexString(request.getBodyAsString().getBytes(StandardCharsets.UTF_8));
         }
-        if (Objects.nonNull(request.getBody())) {
+        if (request.getBody() != null) {
             try {
                 int len = request.getBody().available();
                 byte[] body = new byte[len];

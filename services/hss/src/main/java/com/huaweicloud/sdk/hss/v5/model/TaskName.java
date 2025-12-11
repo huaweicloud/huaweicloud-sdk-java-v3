@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 任务名称
+ * **参数解释**: 任务名称 **取值范围**: 最大长度255个unicode字符。 
  */
 public class TaskName {
 

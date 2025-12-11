@@ -349,7 +349,7 @@ public class SchedulerConfigBase {
     private String startTime;
 
     /**
-     * 模板状态
+     * 模板状态 - ON: 开启 - OFF：关闭
      */
     public static final class StatusEnum {
 
@@ -553,7 +553,7 @@ public class SchedulerConfigBase {
     }
 
     /**
-     * 模板状态
+     * 模板状态 - ON: 开启 - OFF：关闭
      * @return status
      */
     public StatusEnum getStatus() {

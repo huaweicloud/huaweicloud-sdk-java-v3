@@ -297,7 +297,7 @@ public class CreateInstancePeriodRequest {
     }
 
     /**
-     * 服务类型： - hws.service.type.dbss
+     * 服务类型： - hws.service.type.dbss: 数据库审计
      * @return cloudServiceType
      */
     public String getCloudServiceType() {

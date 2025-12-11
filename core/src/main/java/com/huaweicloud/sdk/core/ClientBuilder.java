@@ -37,7 +37,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 import java.util.function.Function;
 
@@ -110,20 +109,20 @@ public class ClientBuilder<T> {
     }
 
     public T build() {
-        if (Objects.isNull(httpConfig)) {
+        if (httpConfig == null) {
             httpConfig = HttpConfig.getDefaultHttpConfig();
         }
 
         HttpClient httpClient = new DefaultHttpClient(httpConfig);
         HcClient hcClient = new HcClient(httpConfig, httpClient);
 
-        if (Objects.isNull(credential)) {
+        if (credential == null) {
             CredentialProviderChain providerChain = CredentialProviderChain.getDefaultCredentialProviderChain(
                     credentialType.get(0));
             credential = providerChain.getCredentials();
         }
 
-        if (Objects.isNull(credential)) {
+        if (credential == null) {
             throw new SdkException(
                     "credential can not be null, " + credentialType.toString() + "credential objects are required");
         }
@@ -132,7 +131,7 @@ public class ClientBuilder<T> {
             throw new SdkException("credential type error, supported credential type is " + credentialType);
         }
 
-        if (Objects.nonNull(region)) {
+        if (region != null) {
             if (region.getEndpoints() != null) {
                 endpoints = region.getEndpoints();
             }
@@ -166,7 +165,7 @@ public class ClientBuilder<T> {
         }
 
         hcClient.withEndpoints(endpoints).withCredential(credential);
-        if (Objects.nonNull(exceptionHandler)) {
+        if (exceptionHandler != null) {
             hcClient.withExceptionHandler(exceptionHandler);
         }
 
@@ -176,7 +175,7 @@ public class ClientBuilder<T> {
 
         T t = creator.apply(hcClient);
         ClientCustomization clientCustomization = loadClientCustomization(t);
-        if (Objects.nonNull(clientCustomization)) {
+        if (clientCustomization != null) {
             clientCustomization.customize(hcClient);
         }
 

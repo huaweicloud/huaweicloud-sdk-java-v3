@@ -121,7 +121,7 @@ public class ListAntiVirusPaidHostsRequest {
     }
 
     /**
-     * **参数解释**: 服务器ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
+     * **参数解释**: 服务器的唯一标识ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return hostId
      */
     public String getHostId() {
@@ -172,7 +172,7 @@ public class ListAntiVirusPaidHostsRequest {
     }
 
     /**
-     * **参数解释**: 服务器弹性IP地址。 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 无 
+     * **参数解释**: 服务器弹性IP地址 **约束限制**: 不涉及 **取值范围**: IPv4格式（长度7-15位）、IPv6格式（长度15-39位） **默认取值**: 无 
      * @return publicIp
      */
     public String getPublicIp() {
@@ -189,7 +189,7 @@ public class ListAntiVirusPaidHostsRequest {
     }
 
     /**
-     * **参数解释**: 服务器组ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
+     * **参数解释**: 服务器组的唯一标识ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return groupId
      */
     public String getGroupId() {
@@ -206,7 +206,7 @@ public class ListAntiVirusPaidHostsRequest {
     }
 
     /**
-     * 任务类型，包含如下:   - quick ：快速扫描   - full：全盘扫描   - custom : 自定义扫描
+     * **参数解释**: 任务类型 **约束限制**: 不涉及 **取值范围**:   - quick ：快速扫描   - full：全盘扫描   - custom : 自定义扫描 **默认取值**: 不涉及 
      * @return scanType
      */
     public String getScanType() {
@@ -223,7 +223,7 @@ public class ListAntiVirusPaidHostsRequest {
     }
 
     /**
-     * 启动类型，包含如下:   - now ：立即启动   - period : 周期启动
+     * **参数解释**: 启动类型 **约束限制**: 不涉及 **取值范围**: - now ：立即启动 - period : 周期启动 **默认取值**: 不涉及 
      * @return startType
      */
     public String getStartType() {

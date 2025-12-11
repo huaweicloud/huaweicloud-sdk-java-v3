@@ -140,7 +140,7 @@ public class SwitchAuditDbRequest {
     }
 
     /**
-     * 是否关闭LTS审计,DWS数据库场景使用。若用户未选择关闭LTS审计,则不做操作。 - 1 :是 - 0 或 其它:保持原状
+     * 是否关闭LTS审计,DWS数据库场景使用。若用户未选择关闭LTS审计,则不做操作。 - 1 : 是 - 0 或 其它: 保持原状
      * @return ltsAuditSwitch
      */
     public Integer getLtsAuditSwitch() {

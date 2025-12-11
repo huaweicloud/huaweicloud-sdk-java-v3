@@ -44,7 +44,7 @@ public class SwitchHostsProtectStatusRequestInfo {
     }
 
     /**
-     * 主机开通的版本，包含如下:   - hss.version.null ：无，代表关闭防护。   - hss.version.basic ：基础版。   - hss.version.advanced ：专业版。   - hss.version.enterprise ：企业版。   - hss.version.premium ：旗舰版。   - hss.version.wtp ：网页防篡改版。
+     * **参数解释**： 主机开通的版本 **约束限制**: 不涉及 **取值范围**： 包含如下7种输入。 - hss.version.null ：无。 - hss.version.basic ：基础版。 - hss.version.advanced ：专业版。 - hss.version.enterprise ：企业版。 - hss.version.premium ：旗舰版。 - hss.version.wtp ：网页防篡改版。 - hss.version.container.enterprise：容器版。 **默认取值**: 不涉及
      * @return version
      */
     public String getVersion() {
@@ -61,7 +61,7 @@ public class SwitchHostsProtectStatusRequestInfo {
     }
 
     /**
-     * 付费模式，当version不为“hss.version.null”时，则需必填该参数   - packet_cycle : 包周期   - on_demand : 按需
+     * **参数解释**： 计费模式 **约束限制**: 不涉及 **取值范围**： - packet_cycle ：包年/包月。 - on_demand ：按需计费。 **默认取值**: 不涉及
      * @return chargingMode
      */
     public String getChargingMode() {
@@ -78,7 +78,7 @@ public class SwitchHostsProtectStatusRequestInfo {
     }
 
     /**
-     * HSS配额ID，不填该参数时，则随机选择对应版本配额
+     * **参数解释**: 资源ID **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及 
      * @return resourceId
      */
     public String getResourceId() {
@@ -111,7 +111,7 @@ public class SwitchHostsProtectStatusRequestInfo {
     }
 
     /**
-     * 服务器列表
+     * **参数解释**： 服务器ID列表 **约束限制**: 不涉及 **取值范围**: 不涉及 **默认取值**: 不涉及 
      * @return hostIdList
      */
     public List<String> getHostIdList() {
@@ -144,7 +144,7 @@ public class SwitchHostsProtectStatusRequestInfo {
     }
 
     /**
-     * 资源标签列表
+     * **参数解释**： 资源标签列表 **约束限制**: 不涉及 **取值范围**: 不涉及 **默认取值**: 不涉及
      * @return tags
      */
     public List<TagInfo> getTags() {

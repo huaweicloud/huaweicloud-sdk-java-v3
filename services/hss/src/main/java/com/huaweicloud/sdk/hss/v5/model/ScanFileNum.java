@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 已扫描的文件数量
+ * **参数解释**: 已扫描的文件数量 **取值范围**: 非负整数，最小值0；单位：个 
  */
 public class ScanFileNum {
 

@@ -39,7 +39,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 
@@ -267,10 +266,10 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
     }
 
     protected boolean needUpdateSecurityTokenFromMetadata() {
-        if (Objects.isNull(ak) && Objects.isNull(sk)) {
+        if (ak == null && sk == null) {
             return true;
         }
-        if (Objects.isNull(expiredAt) || Objects.isNull(securityToken)) {
+        if (expiredAt == null || securityToken == null) {
             return false;
         }
         return expiredAt - TimeUtils.getTimeInMillis() < getExpirationThresholdMillis();
@@ -284,10 +283,10 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
     }
 
     protected boolean needUpdateFederalAuthToken() {
-        if (Objects.isNull(idpId) || Objects.isNull(idTokenFile)) {
+        if (idpId == null || idTokenFile == null) {
             return false;
         }
-        if (Objects.isNull(securityToken) || Objects.isNull(expiredAt)) {
+        if (securityToken == null || expiredAt == null) {
             return true;
         }
         return expiredAt - TimeUtils.getTimeInMillis() < getExpirationThresholdMillis();
@@ -321,7 +320,7 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
     }
 
     private void updateTempCredentials(Credential credential) {
-        if (Objects.isNull(credential)) {
+        if (credential == null) {
             throw new SdkException("update temp credential failed, credential is null");
         }
         ak = credential.getAccess();

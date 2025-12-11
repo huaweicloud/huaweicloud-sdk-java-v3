@@ -142,7 +142,7 @@ public class ListWtpProtectHostRequest {
     }
 
     /**
-     * **参数解释**: 服务器ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
+     * **参数解释**: 服务器的唯一标识ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return hostId
      */
     public String getHostId() {
@@ -159,7 +159,7 @@ public class ListWtpProtectHostRequest {
     }
 
     /**
-     * **参数解释**: 服务器弹性IP地址。 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 无 
+     * **参数解释**: 服务器弹性IP地址 **约束限制**: 不涉及 **取值范围**: IPv4格式（长度7-15位）、IPv6格式（长度15-39位） **默认取值**: 无 
      * @return publicIp
      */
     public String getPublicIp() {
@@ -227,7 +227,7 @@ public class ListWtpProtectHostRequest {
     }
 
     /**
-     * **参数解释**： 资产重要性 **约束限制**： 不涉及 **取值范围**： - important：重要资产。 - common：一般资产。 - test：测试资产。  **默认取值**： 无 
+     * **参数解释**： 资产重要性 **约束限制**： 不涉及 **取值范围**： - important：重要资产 - common：一般资产 - test：测试资产  **默认取值**： 无 
      * @return assetValue
      */
     public String getAssetValue() {

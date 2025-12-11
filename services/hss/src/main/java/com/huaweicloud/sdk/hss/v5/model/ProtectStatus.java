@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 防护状态，包含如下2种。   - closed ：关闭。   - opened ：开启。
+ * **参数解释**: 防护状态 **取值范围**:  - closed ：关闭  - opened ：开启 
  */
 public class ProtectStatus {
 

@@ -21,6 +21,16 @@ public class ListTasksRequest {
 
     private BigDecimal endTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
     public ListTasksRequest withStartTime(BigDecimal startTime) {
         this.startTime = startTime;
         return this;
@@ -59,6 +69,43 @@ public class ListTasksRequest {
         this.endTime = endTime;
     }
 
+    public ListTasksRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * offset
+     * minimum: 0
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ListTasksRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * query
+     * minimum: 1
+     * maximum: 128
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -68,12 +115,13 @@ public class ListTasksRequest {
             return false;
         }
         ListTasksRequest that = (ListTasksRequest) obj;
-        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(startTime, endTime);
+        return Objects.hash(startTime, endTime, offset, limit);
     }
 
     @Override
@@ -82,6 +130,8 @@ public class ListTasksRequest {
         sb.append("class ListTasksRequest {\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

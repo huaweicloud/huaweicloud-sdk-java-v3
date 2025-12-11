@@ -34,7 +34,7 @@ public class SwitchAntivirusTaskRequestInfo {
     }
 
     /**
-     * 任务ID
+     * **参数解释**： 任务ID **取值范围**: 字符长度1-64位 
      * @return taskId
      */
     public String getTaskId() {
@@ -51,7 +51,7 @@ public class SwitchAntivirusTaskRequestInfo {
     }
 
     /**
-     * 任务名称
+     * **参数解释**: 任务名称 **取值范围**: 最大长度255个unicode字符。 
      * @return taskName
      */
     public String getTaskName() {

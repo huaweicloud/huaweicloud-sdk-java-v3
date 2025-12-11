@@ -21,14 +21,14 @@ public class ListOrganizationTreeRequest {
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_refresh")
-
-    private Boolean isRefresh;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_refresh")
+
+    private Boolean isRefresh;
 
     public ListOrganizationTreeRequest withXSecurityToken(String xSecurityToken) {
         this.xSecurityToken = xSecurityToken;
@@ -36,7 +36,7 @@ public class ListOrganizationTreeRequest {
     }
 
     /**
-     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * **参数解释**: 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。 **约束限制**: 不涉及 **取值范围**: 字符长度1-2048位 **默认取值**: 不涉及 
      * @return xSecurityToken
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -55,7 +55,7 @@ public class ListOrganizationTreeRequest {
     }
 
     /**
-     * Region ID
+     * **参数解释**: 区域ID，用于查询目的区域内的资产。获取方式请参见[获取区域ID](hss_02_0026.xml)。 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及 
      * @return region
      */
     public String getRegion() {
@@ -66,30 +66,13 @@ public class ListOrganizationTreeRequest {
         this.region = region;
     }
 
-    public ListOrganizationTreeRequest withIsRefresh(Boolean isRefresh) {
-        this.isRefresh = isRefresh;
-        return this;
-    }
-
-    /**
-     * 是否强制从organization同步组织信息
-     * @return isRefresh
-     */
-    public Boolean getIsRefresh() {
-        return isRefresh;
-    }
-
-    public void setIsRefresh(Boolean isRefresh) {
-        this.isRefresh = isRefresh;
-    }
-
     public ListOrganizationTreeRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
-     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
+     * **参数解释**: 企业项目ID，用于过滤不同企业项目下的资产。获取方式请参见[获取企业项目ID](hss_02_0027.xml)。 如需查询所有企业项目下的资产请传参“all_granted_eps”。 **约束限制**: 开通企业项目功能后才需要配置企业项目ID参数。 **取值范围**: 字符长度1-256位 **默认取值**: 0，表示默认企业项目（default）。 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -98,6 +81,23 @@ public class ListOrganizationTreeRequest {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ListOrganizationTreeRequest withIsRefresh(Boolean isRefresh) {
+        this.isRefresh = isRefresh;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 控制是否忽略本地缓存，强制从组织服务同步最新的组织树信息； **约束限制**: 无特殊约束，按需选择是否强制同步； **取值范围**: true（强制同步）、false（使用本地缓存，默认） **默认取值**: false 
+     * @return isRefresh
+     */
+    public Boolean getIsRefresh() {
+        return isRefresh;
+    }
+
+    public void setIsRefresh(Boolean isRefresh) {
+        this.isRefresh = isRefresh;
     }
 
     @Override
@@ -110,13 +110,13 @@ public class ListOrganizationTreeRequest {
         }
         ListOrganizationTreeRequest that = (ListOrganizationTreeRequest) obj;
         return Objects.equals(this.xSecurityToken, that.xSecurityToken) && Objects.equals(this.region, that.region)
-            && Objects.equals(this.isRefresh, that.isRefresh)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.isRefresh, that.isRefresh);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xSecurityToken, region, isRefresh, enterpriseProjectId);
+        return Objects.hash(xSecurityToken, region, enterpriseProjectId, isRefresh);
     }
 
     @Override
@@ -125,8 +125,8 @@ public class ListOrganizationTreeRequest {
         sb.append("class ListOrganizationTreeRequest {\n");
         sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
-        sb.append("    isRefresh: ").append(toIndentedString(isRefresh)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    isRefresh: ").append(toIndentedString(isRefresh)).append("\n");
         sb.append("}");
         return sb.toString();
     }

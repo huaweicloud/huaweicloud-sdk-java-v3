@@ -26,7 +26,6 @@ import com.huaweicloud.sdk.core.exception.SdkException;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class CredentialProviderChain implements ICredentialProvider {
 
@@ -59,7 +58,7 @@ public class CredentialProviderChain implements ICredentialProvider {
         for (ICredentialProvider provider : providers) {
             try {
                 ICredential credentials = provider.getCredentials();
-                if (Objects.nonNull(credentials)) {
+                if (credentials != null) {
                     return credentials;
                 }
             } catch (SdkException e) {

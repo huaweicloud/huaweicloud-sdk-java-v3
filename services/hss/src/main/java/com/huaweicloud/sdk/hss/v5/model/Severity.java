@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * **参数解释**： 威胁等级 **取值范围**： - Security：安全 - Low：低危 - Medium：中危 - High：高危 - Critical：危急 
+ * **参数解释**： 威胁等级 **取值范围**： Security（安全）、Low（低危）、Medium（中危）、High（高危）、Critical（致命） 
  */
 public class Severity {
 

@@ -40,7 +40,6 @@ import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Optional;
 
 import static com.huaweicloud.sdk.core.Constants.SDK_EXCHANGE;
@@ -61,19 +60,21 @@ public class DefaultHttpListener implements Interceptor {
 
         Request request = chain.request();
         SdkExchange exchange = SdkExchangeCache.getExchange(request.header(SDK_EXCHANGE));
-        exchange = Objects.isNull(exchange) ? new SdkExchange() : exchange;
+        if (exchange == null) {
+            exchange = new SdkExchange();
+        }
         request = request.newBuilder().removeHeader(SDK_EXCHANGE).build();
 
         exchange.withApiTimer(ApiTimer::start);
 
-        if (Objects.nonNull(httpListeners)) {
+        if (httpListeners != null) {
             preRequest(request, exchange);
         }
         Response response = chain.proceed(request.newBuilder().removeHeader(SDK_EXCHANGE).build());
 
         exchange.withApiTimer(ApiTimer::end);
 
-        if (Objects.nonNull(httpListeners)) {
+        if (httpListeners != null) {
             return postResponse(response, exchange);
         }
 
@@ -83,7 +84,7 @@ public class DefaultHttpListener implements Interceptor {
     public void preRequest(Request request, SdkExchange sdkExchange) throws IOException {
         String reqBody = null;
         RequestBody body = request.body();
-        if (Objects.nonNull(body)) {
+        if (body != null) {
             String contentType = Optional.of(body)
                     .map(RequestBody::contentType)
                     .map(MediaType::toString)
@@ -134,7 +135,7 @@ public class DefaultHttpListener implements Interceptor {
         Response.Builder responseBuilder = response.newBuilder();
         String respBody = null;
         ResponseBody body = response.body();
-        if (Objects.nonNull(body)) {
+        if (body != null) {
             if (body.contentLength() == 0) {
                 respBody = body.string();
                 responseBuilder.body(createResponseBody(respBody, body.contentType()));

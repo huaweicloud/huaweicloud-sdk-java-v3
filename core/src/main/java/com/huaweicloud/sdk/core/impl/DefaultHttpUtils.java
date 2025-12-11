@@ -26,7 +26,6 @@ import okhttp3.Headers;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * @author HuaweiCloud_SDK
@@ -46,7 +45,7 @@ public final class DefaultHttpUtils {
      * @return Map
      */
     public static Map<String, List<String>> headersToMap(Headers headers) {
-        if (Objects.isNull(headers)) {
+        if (headers == null) {
             return null;
         }
         Map<String, List<String>> result = new LinkedHashMap<>();

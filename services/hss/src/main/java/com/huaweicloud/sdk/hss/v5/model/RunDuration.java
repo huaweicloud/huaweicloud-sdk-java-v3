@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 运行时长，秒
+ * **参数解释**: 运行时长 **取值范围**: 非负整数，最小值0；单位：s（秒） 
  */
 public class RunDuration {
 

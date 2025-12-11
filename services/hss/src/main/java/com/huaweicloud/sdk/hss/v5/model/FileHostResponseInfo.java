@@ -46,7 +46,7 @@ public class FileHostResponseInfo {
     }
 
     /**
-     * 服务器名称
+     * **参数解释**: 服务器名称 **取值范围**: 字符长度1-256位 
      * @return hostName
      */
     public String getHostName() {
@@ -63,7 +63,7 @@ public class FileHostResponseInfo {
     }
 
     /**
-     * 服务器ID
+     * **参数解释**： 服务器（主机）的唯一标识ID **取值范围**： 字符长度1-64位 
      * @return hostId
      */
     public String getHostId() {
@@ -80,7 +80,7 @@ public class FileHostResponseInfo {
     }
 
     /**
-     * 变更总数
+     * **参数解释**： 文件变更与注册表变更总数量 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return changeTotalNum
@@ -99,7 +99,7 @@ public class FileHostResponseInfo {
     }
 
     /**
-     * 变更文件
+     * **参数解释**： 文件变更总数量 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return changeFileNum
@@ -118,7 +118,7 @@ public class FileHostResponseInfo {
     }
 
     /**
-     * 变更注册表
+     * **参数解释**： 注册表变更总数量 **取值范围**： 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return changeRegistryNum
@@ -137,7 +137,7 @@ public class FileHostResponseInfo {
     }
 
     /**
-     * 最后变更时间
+     * **参数解释**： 最后一次文件/注册表变更时间 **取值范围**： 非负长整数，时间格式：13位毫秒级时间戳（UTC时区，从1970-01-01 00:00:00开始计算），单位：ms 
      * minimum: 1609430400000
      * maximum: 4765104000000
      * @return latestTime

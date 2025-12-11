@@ -65,7 +65,7 @@ public class ListAntiVirusResultResponse extends SdkResponse {
     }
 
     /**
-     * 结果列表详情
+     * **参数解释**: 病毒查杀结果详细信息列表 **取值范围**: 最小值0，最大值1000 
      * @return dataList
      */
     public List<AntiVirusResultResponseInfo> getDataList() {

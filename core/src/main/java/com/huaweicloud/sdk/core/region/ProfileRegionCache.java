@@ -40,7 +40,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
 
 public class ProfileRegionCache {
     private static final String REGIONS_FILE_REG = "^[a-zA-Z0-9._ -]+\\.(yml|yaml)$";
@@ -65,7 +64,7 @@ public class ProfileRegionCache {
 
     private static ProfileRegionCache createInstance() {
         String regionsFilePath = getRegionsFilePath();
-        if (Objects.isNull(regionsFilePath) || !PathUtils.isPathExist(regionsFilePath)) {
+        if (regionsFilePath == null || !PathUtils.isPathExist(regionsFilePath)) {
             return new ProfileRegionCache(Collections.unmodifiableMap(new LinkedHashMap<>()));
         }
 
@@ -139,7 +138,7 @@ public class ProfileRegionCache {
     private static List<String> processEndpoints(Map<String, ?> regionMap) {
         String endpoint = (String) regionMap.get("endpoint");
         List<String> endpoints = (List<String>) regionMap.get("endpoints");
-        if (Objects.isNull(endpoints)) {
+        if (endpoints == null) {
             endpoints = new ArrayList<>();
         }
         if (StringUtils.isNotEmpty(endpoint)) {

@@ -229,7 +229,7 @@ public class ReportBean {
     }
 
     /**
-     * 报表类型 - PDF - ZIP
+     * 报表类型 - PDF: pdf - ZIP: zip
      * @return templateType
      */
     public String getTemplateType() {

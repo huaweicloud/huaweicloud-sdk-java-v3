@@ -15,6 +15,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AttachEipRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AttachEipResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AuthorizeBackupDownloadRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AuthorizeBackupDownloadResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchDeleteInstanceTagRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchDeleteInstanceTagResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchSetBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchSetBackupPolicyResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchShowUpgradeCandidateVersionsRequest;
@@ -655,6 +657,35 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<AuthorizeBackupDownloadRequest, AuthorizeBackupDownloadResponse> authorizeBackupDownloadInvoker(
         AuthorizeBackupDownloadRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.authorizeBackupDownload, hcClient);
+    }
+
+    /**
+     * 批量删除实例标签
+     *
+     * 批量删除实例标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteInstanceTagRequest 请求对象
+     * @return BatchDeleteInstanceTagResponse
+     */
+    public BatchDeleteInstanceTagResponse batchDeleteInstanceTag(BatchDeleteInstanceTagRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.batchDeleteInstanceTag);
+    }
+
+    /**
+     * 批量删除实例标签
+     *
+     * 批量删除实例标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteInstanceTagRequest 请求对象
+     * @return SyncInvoker<BatchDeleteInstanceTagRequest, BatchDeleteInstanceTagResponse>
+     */
+    public SyncInvoker<BatchDeleteInstanceTagRequest, BatchDeleteInstanceTagResponse> batchDeleteInstanceTagInvoker(
+        BatchDeleteInstanceTagRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.batchDeleteInstanceTag, hcClient);
     }
 
     /**

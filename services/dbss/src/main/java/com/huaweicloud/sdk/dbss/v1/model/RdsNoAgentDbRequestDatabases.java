@@ -100,7 +100,7 @@ public class RdsNoAgentDbRequestDatabases {
     }
 
     /**
-     * 数据库状态
+     * 数据库状态 - ON：启用 - OFF：关闭
      * @return status
      */
     public String getStatus() {
@@ -185,7 +185,7 @@ public class RdsNoAgentDbRequestDatabases {
     }
 
     /**
-     * 数据库类型
+     * 数据库类型 - MYSQL: MySQL - ORACLE: Oracle - POSTGRESQL: PostgreSQL - TAURUS: Taurus DB - DWS: GaussDB(DWS) - GAUSSDBOPENGAUSS：GaussDB/openGauss - DDS： DDS(MongoDB)
      * @return type
      */
     public String getType() {

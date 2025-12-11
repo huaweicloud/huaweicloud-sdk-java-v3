@@ -65,7 +65,7 @@ public class SqlRuleRequest {
     }
 
     /**
-     * 风险级别 - HIGH - MEDIUM - LOW - NO_RISK
+     * 风险级别 - HIGH：高 - MEDIUM：中 - LOW：低 - NO_RISK：无风险
      * @return riskLevels
      */
     public String getRiskLevels() {

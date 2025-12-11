@@ -25,7 +25,6 @@ import com.huaweicloud.sdk.core.TypeCasts;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
@@ -43,7 +42,7 @@ public class SdkExchange {
     }
 
     public SdkExchange withApiReference(Consumer<ApiReference> consumer) {
-        if (Objects.isNull(this.apiReference)) {
+        if (this.apiReference == null) {
             this.apiReference = new ApiReference();
         }
         consumer.accept(this.apiReference);
@@ -64,7 +63,7 @@ public class SdkExchange {
     }
 
     public SdkExchange withApiTimer(Consumer<ApiTimer> consumer) {
-        if (Objects.isNull(this.apiTimer)) {
+        if (this.apiTimer == null) {
             this.apiTimer = new ApiTimer();
         }
         consumer.accept(this.apiTimer);
@@ -81,11 +80,11 @@ public class SdkExchange {
     }
 
     public <T> T getAttribute(String name) {
-        return Objects.isNull(attributes) ? null : TypeCasts.uncheckedConversion(attributes.get(name));
+        return attributes == null ? null : TypeCasts.uncheckedConversion(attributes.get(name));
     }
 
     public <T> SdkExchange addAttribute(String name, T t) {
-        if (Objects.isNull(attributes)) {
+        if (attributes == null) {
             attributes = new HashMap<>();
         }
         this.attributes.put(name, t);

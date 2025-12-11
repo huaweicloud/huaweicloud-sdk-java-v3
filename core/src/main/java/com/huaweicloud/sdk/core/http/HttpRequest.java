@@ -38,7 +38,6 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.TreeMap;
 
 /**
@@ -73,7 +72,7 @@ public interface HttpRequest {
 
         public HttpRequestBuilder withContentType(String contentType) {
             httpRequest.contentType = contentType;
-            if (Objects.nonNull(contentType)) {
+            if (contentType != null) {
                 addHeader(Constants.CONTENT_TYPE, contentType);
             }
             return this;
@@ -106,7 +105,7 @@ public interface HttpRequest {
                 });
             } else {
                 List<String> values = httpRequest.headers.get(key);
-                if (Objects.isNull(values)) {
+                if (values == null) {
                     values = new ArrayList<>();
                 }
                 if (!values.contains(value)) {
@@ -249,7 +248,7 @@ public interface HttpRequest {
 
         @Override
         public Boolean haveHeader(String name) {
-            if (Objects.isNull(headers)) {
+            if (headers == null) {
                 return false;
             }
             return headers.containsKey(name);
@@ -257,11 +256,11 @@ public interface HttpRequest {
 
         @Override
         public String getHeader(String name) {
-            if (Objects.isNull(headers)) {
+            if (headers == null) {
                 return null;
             }
             List<String> values = headers.get(name);
-            return Objects.isNull(values) || values.isEmpty() ? null : values.get(0);
+            return values == null || values.isEmpty() ? null : values.get(0);
         }
 
         @Override
@@ -333,7 +332,7 @@ public interface HttpRequest {
         }
 
         private Impl buildPathParamsString() {
-            this.pathParamsString = Objects.isNull(path) ? "" : path;
+            this.pathParamsString = path == null ? "" : path;
             pathParams.forEach((key, value) -> pathParamsString = pathParamsString.replace(String.format("{%s}", key),
                     value.toString()));
             autoFilledPathParams.forEach(

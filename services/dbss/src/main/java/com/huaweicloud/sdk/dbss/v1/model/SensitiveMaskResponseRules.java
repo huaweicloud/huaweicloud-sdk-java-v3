@@ -85,7 +85,7 @@ public class SensitiveMaskResponseRules {
     }
 
     /**
-     * 规则类型
+     * 规则类型 - BUILD_IN：系统内置 - USER_DEFINE：自定义
      * @return type
      */
     public String getType() {
@@ -136,7 +136,7 @@ public class SensitiveMaskResponseRules {
     }
 
     /**
-     * 规则状态
+     * 规则状态 - ON：启用 - OFF：禁用
      * @return status
      */
     public String getStatus() {

@@ -57,6 +57,8 @@ import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorFilterRuleRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorFilterRuleResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorSessionRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateTrafficMirrorSessionResponse;
+import com.huaweicloud.sdk.vpc.v3.model.CreateVirsubnetCidrReservationRequest;
+import com.huaweicloud.sdk.vpc.v3.model.CreateVirsubnetCidrReservationResponse;
 import com.huaweicloud.sdk.vpc.v3.model.CreateVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.CreateVpcResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteAddressGroupRequest;
@@ -85,6 +87,8 @@ import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorFilterRuleRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorFilterRuleResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorSessionRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteTrafficMirrorSessionResponse;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteVirsubnetCidrReservationRequest;
+import com.huaweicloud.sdk.vpc.v3.model.DeleteVirsubnetCidrReservationResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DeleteVpcResponse;
 import com.huaweicloud.sdk.vpc.v3.model.DisassociateSubnetFirewallRequest;
@@ -121,6 +125,8 @@ import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorFiltersRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorFiltersResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorSessionsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorSessionsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListVirsubnetCidrReservationsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListVirsubnetCidrReservationsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListVpcsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListVpcsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.MigrateSubNetworkInterfaceRequest;
@@ -159,6 +165,8 @@ import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorFilterRuleRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorFilterRuleResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorSessionRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorSessionResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowVirsubnetCidrReservationRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowVirsubnetCidrReservationResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowVpcResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateAddressGroupRequest;
@@ -179,6 +187,8 @@ import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorFilterRuleRequest;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorFilterRuleResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorSessionRequest;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateTrafficMirrorSessionResponse;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateVirsubnetCidrReservationRequest;
+import com.huaweicloud.sdk.vpc.v3.model.UpdateVirsubnetCidrReservationResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateVpcResponse;
 
@@ -619,6 +629,36 @@ public class VpcClient {
     }
 
     /**
+     * 创建子网预留网段
+     *
+     * 子网预留网段是子网网段范围的IP网段，此IP网段内的IP不会被子网内的实例占用。用户可以通过创建子网预留网段来预留某个IP网段，用于后续的特殊场景使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateVirsubnetCidrReservationRequest 请求对象
+     * @return CreateVirsubnetCidrReservationResponse
+     */
+    public CreateVirsubnetCidrReservationResponse createVirsubnetCidrReservation(
+        CreateVirsubnetCidrReservationRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.createVirsubnetCidrReservation);
+    }
+
+    /**
+     * 创建子网预留网段
+     *
+     * 子网预留网段是子网网段范围的IP网段，此IP网段内的IP不会被子网内的实例占用。用户可以通过创建子网预留网段来预留某个IP网段，用于后续的特殊场景使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateVirsubnetCidrReservationRequest 请求对象
+     * @return SyncInvoker<CreateVirsubnetCidrReservationRequest, CreateVirsubnetCidrReservationResponse>
+     */
+    public SyncInvoker<CreateVirsubnetCidrReservationRequest, CreateVirsubnetCidrReservationResponse> createVirsubnetCidrReservationInvoker(
+        CreateVirsubnetCidrReservationRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.createVirsubnetCidrReservation, hcClient);
+    }
+
+    /**
      * 删除端口资源标签
      *
      * 删除指定端口的标签信息
@@ -823,6 +863,36 @@ public class VpcClient {
     public SyncInvoker<DeleteTrafficMirrorSessionRequest, DeleteTrafficMirrorSessionResponse> deleteTrafficMirrorSessionInvoker(
         DeleteTrafficMirrorSessionRequest request) {
         return new SyncInvoker<>(request, VpcMeta.deleteTrafficMirrorSession, hcClient);
+    }
+
+    /**
+     * 删除子网预留网段
+     *
+     * 当您已创建的子网预留网段不再使用时，您可以通过调用该接口删除子网预留网段资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteVirsubnetCidrReservationRequest 请求对象
+     * @return DeleteVirsubnetCidrReservationResponse
+     */
+    public DeleteVirsubnetCidrReservationResponse deleteVirsubnetCidrReservation(
+        DeleteVirsubnetCidrReservationRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.deleteVirsubnetCidrReservation);
+    }
+
+    /**
+     * 删除子网预留网段
+     *
+     * 当您已创建的子网预留网段不再使用时，您可以通过调用该接口删除子网预留网段资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteVirsubnetCidrReservationRequest 请求对象
+     * @return SyncInvoker<DeleteVirsubnetCidrReservationRequest, DeleteVirsubnetCidrReservationResponse>
+     */
+    public SyncInvoker<DeleteVirsubnetCidrReservationRequest, DeleteVirsubnetCidrReservationResponse> deleteVirsubnetCidrReservationInvoker(
+        DeleteVirsubnetCidrReservationRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.deleteVirsubnetCidrReservation, hcClient);
     }
 
     /**
@@ -1059,6 +1129,36 @@ public class VpcClient {
     public SyncInvoker<ListTrafficMirrorSessionsRequest, ListTrafficMirrorSessionsResponse> listTrafficMirrorSessionsInvoker(
         ListTrafficMirrorSessionsRequest request) {
         return new SyncInvoker<>(request, VpcMeta.listTrafficMirrorSessions, hcClient);
+    }
+
+    /**
+     * 查询子网预留网段列表
+     *
+     * 当您的子网预留网段创建成功后，您可以通过调用该接口查询所有子网预留网段信息，包括子网预留网段名称、IP网段等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVirsubnetCidrReservationsRequest 请求对象
+     * @return ListVirsubnetCidrReservationsResponse
+     */
+    public ListVirsubnetCidrReservationsResponse listVirsubnetCidrReservations(
+        ListVirsubnetCidrReservationsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.listVirsubnetCidrReservations);
+    }
+
+    /**
+     * 查询子网预留网段列表
+     *
+     * 当您的子网预留网段创建成功后，您可以通过调用该接口查询所有子网预留网段信息，包括子网预留网段名称、IP网段等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVirsubnetCidrReservationsRequest 请求对象
+     * @return SyncInvoker<ListVirsubnetCidrReservationsRequest, ListVirsubnetCidrReservationsResponse>
+     */
+    public SyncInvoker<ListVirsubnetCidrReservationsRequest, ListVirsubnetCidrReservationsResponse> listVirsubnetCidrReservationsInvoker(
+        ListVirsubnetCidrReservationsRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.listVirsubnetCidrReservations, hcClient);
     }
 
     /**
@@ -1384,6 +1484,36 @@ public class VpcClient {
     }
 
     /**
+     * 查询子网预留网段
+     *
+     * 当您的子网预留网段创建成功后，您可以通过调用该接口查询单个子网预留网段的详细信息，包括子网预留网段的名称、IP网段等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVirsubnetCidrReservationRequest 请求对象
+     * @return ShowVirsubnetCidrReservationResponse
+     */
+    public ShowVirsubnetCidrReservationResponse showVirsubnetCidrReservation(
+        ShowVirsubnetCidrReservationRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.showVirsubnetCidrReservation);
+    }
+
+    /**
+     * 查询子网预留网段
+     *
+     * 当您的子网预留网段创建成功后，您可以通过调用该接口查询单个子网预留网段的详细信息，包括子网预留网段的名称、IP网段等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVirsubnetCidrReservationRequest 请求对象
+     * @return SyncInvoker<ShowVirsubnetCidrReservationRequest, ShowVirsubnetCidrReservationResponse>
+     */
+    public SyncInvoker<ShowVirsubnetCidrReservationRequest, ShowVirsubnetCidrReservationResponse> showVirsubnetCidrReservationInvoker(
+        ShowVirsubnetCidrReservationRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.showVirsubnetCidrReservation, hcClient);
+    }
+
+    /**
      * 更新安全组
      *
      * 更新安全组
@@ -1527,6 +1657,36 @@ public class VpcClient {
     public SyncInvoker<UpdateTrafficMirrorSessionRequest, UpdateTrafficMirrorSessionResponse> updateTrafficMirrorSessionInvoker(
         UpdateTrafficMirrorSessionRequest request) {
         return new SyncInvoker<>(request, VpcMeta.updateTrafficMirrorSession, hcClient);
+    }
+
+    /**
+     * 更新子网预留网段
+     *
+     * 当您的子网预留网段创建成功后，您可以通过调用该接口更新子网预留网段的基本信息，包括子网预留网段的名称、描述信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateVirsubnetCidrReservationRequest 请求对象
+     * @return UpdateVirsubnetCidrReservationResponse
+     */
+    public UpdateVirsubnetCidrReservationResponse updateVirsubnetCidrReservation(
+        UpdateVirsubnetCidrReservationRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.updateVirsubnetCidrReservation);
+    }
+
+    /**
+     * 更新子网预留网段
+     *
+     * 当您的子网预留网段创建成功后，您可以通过调用该接口更新子网预留网段的基本信息，包括子网预留网段的名称、描述信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateVirsubnetCidrReservationRequest 请求对象
+     * @return SyncInvoker<UpdateVirsubnetCidrReservationRequest, UpdateVirsubnetCidrReservationResponse>
+     */
+    public SyncInvoker<UpdateVirsubnetCidrReservationRequest, UpdateVirsubnetCidrReservationResponse> updateVirsubnetCidrReservationInvoker(
+        UpdateVirsubnetCidrReservationRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.updateVirsubnetCidrReservation, hcClient);
     }
 
     /**

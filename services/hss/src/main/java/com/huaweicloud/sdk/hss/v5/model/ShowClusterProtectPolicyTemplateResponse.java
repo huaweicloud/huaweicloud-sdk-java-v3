@@ -125,7 +125,7 @@ public class ShowClusterProtectPolicyTemplateResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**: 策略模板应用资源类型，多个资源类型通过分号份隔连接 **取值范围**: 字符长度1-255 
+     * **参数解释**: 策略模板应用资源类型，多个资源类型通过分号分隔连接 **取值范围**: 字符长度1-255 
      * @return targetKind
      */
     public String getTargetKind() {

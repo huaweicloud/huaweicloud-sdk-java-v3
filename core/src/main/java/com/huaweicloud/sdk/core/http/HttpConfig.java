@@ -34,7 +34,6 @@ import javax.net.ssl.X509TrustManager;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ForkJoinPool;
 
@@ -173,7 +172,7 @@ public class HttpConfig {
     }
 
     public ExecutorService getExecutorService() {
-        return Objects.nonNull(executorService) ? executorService : DefaultExecutorHolder.INSTANCE;
+        return executorService != null ? executorService : DefaultExecutorHolder.INSTANCE;
     }
 
     public void setExecutorService(ExecutorService executorService) {
@@ -362,7 +361,7 @@ public class HttpConfig {
     }
 
     public HttpConfig addHttpListener(HttpListener httpListener) {
-        if (Objects.nonNull(httpListener)) {
+        if (httpListener != null) {
             httpListeners.add(httpListener);
         }
         return this;

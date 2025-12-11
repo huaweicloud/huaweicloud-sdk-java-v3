@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * **参数解释**: 导出的报告参数数据 
+ * **参数解释**: 导出的报告参数数据 **约束限制**: 不涉及 
  */
 public class ExportTaskInfoRequestBodyOperationalReportData {
 

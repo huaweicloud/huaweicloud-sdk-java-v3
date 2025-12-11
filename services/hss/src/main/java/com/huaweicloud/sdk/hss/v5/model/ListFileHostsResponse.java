@@ -30,7 +30,7 @@ public class ListFileHostsResponse extends SdkResponse {
     }
 
     /**
-     * 变更云服务器数量
+     * **参数解释**： 变更云服务器数量 **取值范围**： 最小值0，最大值2147483647，单位：台 
      * minimum: 0
      * maximum: 2147483647
      * @return totalNum
@@ -65,7 +65,7 @@ public class ListFileHostsResponse extends SdkResponse {
     }
 
     /**
-     * 变更云服务器信息列表
+     * **参数解释**： 变更云服务器信息列表 **取值范围**： 最小值0，最大值100000 
      * @return dataList
      */
     public List<FileHostResponseInfo> getDataList() {

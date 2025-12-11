@@ -30,7 +30,6 @@ import com.huaweicloud.sdk.core.retry.backoff.BackoffStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
 import java.util.concurrent.ScheduledExecutorService;
@@ -100,20 +99,20 @@ public class RetryRecord<S> {
     public void perform(ScheduledExecutorService executor) {
         int currRetriesAttempted = retriesAttempted.incrementAndGet();
         workSupplier.get().whenComplete((resp, throwable) -> {
-            if (Objects.isNull(resp) && Objects.isNull(throwable)) {
+            if (resp == null && throwable == null) {
                 future.completeExceptionally(new IllegalArgumentException("The response and exception of the "
                     + "request are both Null, please check the request or contact customer service"));
             }
             handleThrowable(throwable);
 
-            shouldRetry = Objects.nonNull(func) && func.apply(resp, currException);
+            shouldRetry = func != null && func.apply(resp, currException);
             if (shouldRetry && currRetriesAttempted <= retryTimes) {
                 int statusCode = getStatusCodeFromResult(resp, currException);
                 RetryContext<S> context = buildContext(resp, currException, statusCode, currRetriesAttempted);
                 long delayBeforeNextRetry = backoffStrategy.computeDelayBeforeNextRetry(context);
                 printRetryLog(currRetriesAttempted, delayBeforeNextRetry);
                 reschedule(executor, delayBeforeNextRetry);
-            } else if (Objects.nonNull(currException)) {
+            } else if (currException != null) {
                 future.completeExceptionally(currException);
             } else {
                 future.complete(resp);
@@ -122,7 +121,7 @@ public class RetryRecord<S> {
     }
 
     private void handleThrowable(Throwable throwable) {
-        if (Objects.isNull(throwable)) {
+        if (throwable == null) {
             currException = null;
             return;
         }
@@ -139,7 +138,7 @@ public class RetryRecord<S> {
             handleSdkException((SdkException) throwable);
         }
 
-        if (Objects.isNull(currException)) {
+        if (currException == null) {
             currException = new SdkException(throwable.getCause());
         }
     }

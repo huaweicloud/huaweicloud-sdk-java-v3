@@ -124,7 +124,7 @@ public class ShowAuditRuleRiskNewResponse extends SdkResponse {
     }
 
     /**
-     * 风险规则状态 - OFF - ON
+     * 风险规则状态 - OFF：禁用 - ON：启用
      * @return status
      */
     public String getStatus() {
@@ -225,7 +225,7 @@ public class ShowAuditRuleRiskNewResponse extends SdkResponse {
     }
 
     /**
-     * 风险级别 - LOW - MEDIUM - HIGH - NO_RISK
+     * 风险级别 - LOW：低 - MEDIUM：中 - HIGH：高 - NO_RISK：无风险
      * @return riskLevel
      */
     public String getRiskLevel() {
@@ -259,7 +259,7 @@ public class ShowAuditRuleRiskNewResponse extends SdkResponse {
     }
 
     /**
-     * 执行时长对执行时长阈值的关系 - GREATER - EQUAL - LESS - GREATER_EQUAL - LESS_EQUAL - NO_MATCH
+     * 执行时长对执行时长阈值的关系 - GREATER：大于 - EQUAL：等于 - LESS：小于 - GREATER_EQUAL：大于等于 - LESS_EQUAL：小于等于 - NO_MATCH：不匹配
      * @return executionSymbol
      */
     public String getExecutionSymbol() {
@@ -293,7 +293,7 @@ public class ShowAuditRuleRiskNewResponse extends SdkResponse {
     }
 
     /**
-     * 影响行数对行数阈值的关系：  - GREATER - EQUAL - LESS - GREATER_EQUAL - LESS_EQUAL - NO_MATCH
+     * 影响行数对行数阈值的关系：  - GREATER：大于 - EQUAL：等于 - LESS：小于 - GREATER_EQUAL：大于等于 - LESS_EQUAL：小于等于 - NO_MATCH：不匹配
      * @return affectSymbol
      */
     public String getAffectSymbol() {

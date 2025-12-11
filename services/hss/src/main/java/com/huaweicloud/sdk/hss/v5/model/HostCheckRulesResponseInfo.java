@@ -318,7 +318,7 @@ public class HostCheckRulesResponseInfo {
     }
 
     /**
-     * **参数解释** 该检查项是否可验证，要求为Linux且agent版本>=3.2.24 **取值范围**  - true  : 可验证 - false : 不可验证
+     * **参数解释** 该检查项是否可验证，要求为Linux且agent版本>=3.2.24 **取值范围** - true  : 可验证 - false : 不可验证
      * @return enableVerify
      */
     public Boolean getEnableVerify() {

@@ -21,8 +21,6 @@
 
 package com.huaweicloud.sdk.core.region;
 
-import java.util.Objects;
-
 public class RegionProviderChain implements IRegionProvider {
 
     private final IRegionProvider[] providers;
@@ -43,7 +41,7 @@ public class RegionProviderChain implements IRegionProvider {
     public Region getRegion(String regionId) {
         for (IRegionProvider provider : providers) {
             Region region = provider.getRegion(regionId);
-            if (Objects.nonNull(region)) {
+            if (region != null) {
                 return region;
             }
         }
