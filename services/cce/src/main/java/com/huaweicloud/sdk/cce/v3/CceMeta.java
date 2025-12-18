@@ -7,11 +7,14 @@ import com.huaweicloud.sdk.cce.v3.model.AddNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.AddNodesToNodePoolList;
 import com.huaweicloud.sdk.cce.v3.model.AddNodesToNodePoolRequest;
 import com.huaweicloud.sdk.cce.v3.model.AddNodesToNodePoolResponse;
+import com.huaweicloud.sdk.cce.v3.model.AddonCheckRequest;
 import com.huaweicloud.sdk.cce.v3.model.AddonInstanceRollbackRequest;
 import com.huaweicloud.sdk.cce.v3.model.AutopilotCluster;
 import com.huaweicloud.sdk.cce.v3.model.AutopilotClusterInformation;
 import com.huaweicloud.sdk.cce.v3.model.AwakeClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.AwakeClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.BatchCreateAddonPrecheckRequest;
+import com.huaweicloud.sdk.cce.v3.model.BatchCreateAddonPrecheckResponse;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateAutopilotClusterTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateAutopilotClusterTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateClusterTagsRequest;
@@ -91,6 +94,8 @@ import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotChartRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotChartResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotJobRequest;
+import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotJobResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotMaintenanceWindowRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotMaintenanceWindowResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotReleaseRequest;
@@ -113,17 +118,23 @@ import com.huaweicloud.sdk.cce.v3.model.DownloadChartRequest;
 import com.huaweicloud.sdk.cce.v3.model.DownloadChartResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetAccessPolicyRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetAccessPolicyResponse;
+import com.huaweicloud.sdk.cce.v3.model.GetAutopilotOneJobRequest;
+import com.huaweicloud.sdk.cce.v3.model.GetAutopilotOneJobResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetAvailableZoneResponseBody;
 import com.huaweicloud.sdk.cce.v3.model.GetAvaliableZoneRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetAvaliableZoneResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetClusterFlavorSpecsRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetClusterFlavorSpecsResponse;
+import com.huaweicloud.sdk.cce.v3.model.GetClusterLongAkskConfigRequest;
+import com.huaweicloud.sdk.cce.v3.model.GetClusterLongAkskConfigResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetClusterQuotaRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetClusterQuotaResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetCustomizeTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetCustomizeTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetLabelsRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetLabelsResponse;
+import com.huaweicloud.sdk.cce.v3.model.GetLongAkskConfigRequest;
+import com.huaweicloud.sdk.cce.v3.model.GetLongAkskConfigResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetResourceTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetResourceTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.HibernateClusterRequest;
@@ -151,6 +162,8 @@ import com.huaweicloud.sdk.cce.v3.model.ListAutopilotClusterUpgradePathsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotClusterUpgradePathsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotClustersRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotClustersResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotJobsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotJobsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotPreCheckTasksRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotPreCheckTasksResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotReleasesRequest;
@@ -195,6 +208,9 @@ import com.huaweicloud.sdk.cce.v3.model.MasterEIPRequest;
 import com.huaweicloud.sdk.cce.v3.model.MigrateNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.MigrateNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.MigrateNodesTask;
+import com.huaweicloud.sdk.cce.v3.model.MigrateNodesToNodePoolList;
+import com.huaweicloud.sdk.cce.v3.model.MigrateToNodePoolRequest;
+import com.huaweicloud.sdk.cce.v3.model.MigrateToNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.NodeCreateRequest;
 import com.huaweicloud.sdk.cce.v3.model.NodePool;
 import com.huaweicloud.sdk.cce.v3.model.NodePoolUpdate;
@@ -236,12 +252,16 @@ import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotChartRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotChartResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotChartValuesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotChartValuesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterConfigRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterConfigResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterEndpointsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterEndpointsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterUpgradeInfoRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterUpgradeInfoResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotFeatureGatesRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotFeatureGatesResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotJobRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotJobResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotMaintenanceWindowRequest;
@@ -338,8 +358,14 @@ import com.huaweicloud.sdk.cce.v3.model.UpdateClusterEipRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateClusterEipResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateClusterLogConfigRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateClusterLogConfigResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateClusterLongAKSKConfigRequestBody;
+import com.huaweicloud.sdk.cce.v3.model.UpdateClusterLongAkskConfigRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateClusterLongAkskConfigResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateLongAKSKConfigRequestBody;
+import com.huaweicloud.sdk.cce.v3.model.UpdateLongAkskConfigRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateLongAkskConfigResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateNodePoolConfigurationRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateNodePoolConfigurationResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateNodePoolRequest;
@@ -370,6 +396,7 @@ import com.huaweicloud.sdk.cce.v3.model.UploadAutopilotChartResponse;
 import com.huaweicloud.sdk.cce.v3.model.UploadChartRequest;
 import com.huaweicloud.sdk.cce.v3.model.UploadChartRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.UploadChartResponse;
+import com.huaweicloud.sdk.cce.v3.model.V2Job;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
@@ -458,6 +485,36 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AwakeClusterRequest::getClusterId, AwakeClusterRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateAddonPrecheckRequest, BatchCreateAddonPrecheckResponse> batchCreateAddonPrecheck =
+        genForBatchCreateAddonPrecheck();
+
+    private static HttpRequestDef<BatchCreateAddonPrecheckRequest, BatchCreateAddonPrecheckResponse> genForBatchCreateAddonPrecheck() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateAddonPrecheckRequest, BatchCreateAddonPrecheckResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, BatchCreateAddonPrecheckRequest.class, BatchCreateAddonPrecheckResponse.class)
+                .withName("BatchCreateAddonPrecheck")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/addons/precheck")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateAddonPrecheckRequest::getClusterId,
+                BatchCreateAddonPrecheckRequest::setClusterId));
+        builder.<AddonCheckRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddonCheckRequest.class),
+            f -> f.withMarshaller(BatchCreateAddonPrecheckRequest::getBody, BatchCreateAddonPrecheckRequest::setBody));
 
         // response
 
@@ -999,11 +1056,6 @@ public class CceMeta {
             f -> f.withMarshaller(DeleteAddonInstanceRequest::getClusterId, DeleteAddonInstanceRequest::setClusterId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteAddonInstanceResponse::getBody, DeleteAddonInstanceResponse::setBody));
 
         return builder.build();
     }
@@ -1026,11 +1078,6 @@ public class CceMeta {
             f -> f.withMarshaller(DeleteChartRequest::getChartId, DeleteChartRequest::setChartId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteChartResponse::getBody, DeleteChartResponse::setBody));
 
         return builder.build();
     }
@@ -1261,11 +1308,6 @@ public class CceMeta {
             f -> f.withMarshaller(DeleteReleaseRequest::getShowResources, DeleteReleaseRequest::setShowResources));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteReleaseResponse::getBody, DeleteReleaseResponse::setBody));
 
         return builder.build();
     }
@@ -1369,6 +1411,31 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<GetClusterLongAkskConfigRequest, GetClusterLongAkskConfigResponse> getClusterLongAkskConfig =
+        genForGetClusterLongAkskConfig();
+
+    private static HttpRequestDef<GetClusterLongAkskConfigRequest, GetClusterLongAkskConfigResponse> genForGetClusterLongAkskConfig() {
+        // basic
+        HttpRequestDef.Builder<GetClusterLongAkskConfigRequest, GetClusterLongAkskConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, GetClusterLongAkskConfigRequest.class, GetClusterLongAkskConfigResponse.class)
+                .withName("GetClusterLongAkskConfig")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/longaksk/config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetClusterLongAkskConfigRequest::getClusterId,
+                GetClusterLongAkskConfigRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<GetClusterQuotaRequest, GetClusterQuotaResponse> getClusterQuota =
         genForGetClusterQuota();
 
@@ -1426,6 +1493,24 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(GetLabelsRequest::getClusterId, GetLabelsRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetLongAkskConfigRequest, GetLongAkskConfigResponse> getLongAkskConfig =
+        genForGetLongAkskConfig();
+
+    private static HttpRequestDef<GetLongAkskConfigRequest, GetLongAkskConfigResponse> genForGetLongAkskConfig() {
+        // basic
+        HttpRequestDef.Builder<GetLongAkskConfigRequest, GetLongAkskConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetLongAkskConfigRequest.class, GetLongAkskConfigResponse.class)
+                .withName("GetLongAkskConfig")
+                .withUri("/api/v3/projects/{project_id}/longaksk/config")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -1995,6 +2080,39 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MigrateNodesTask.class),
             f -> f.withMarshaller(MigrateNodeRequest::getBody, MigrateNodeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<MigrateToNodePoolRequest, MigrateToNodePoolResponse> migrateToNodePool =
+        genForMigrateToNodePool();
+
+    private static HttpRequestDef<MigrateToNodePoolRequest, MigrateToNodePoolResponse> genForMigrateToNodePool() {
+        // basic
+        HttpRequestDef.Builder<MigrateToNodePoolRequest, MigrateToNodePoolResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, MigrateToNodePoolRequest.class, MigrateToNodePoolResponse.class)
+                .withName("MigrateToNodePool")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/nodes/migrate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(MigrateToNodePoolRequest::getClusterId, MigrateToNodePoolRequest::setClusterId));
+        builder.<String>withRequestField("nodepool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(MigrateToNodePoolRequest::getNodepoolId, MigrateToNodePoolRequest::setNodepoolId));
+        builder.<MigrateNodesToNodePoolList>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MigrateNodesToNodePoolList.class),
+            f -> f.withMarshaller(MigrateToNodePoolRequest::getBody, MigrateToNodePoolRequest::setBody));
 
         // response
 
@@ -3110,6 +3228,62 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ClusterLogConfig.class),
             f -> f.withMarshaller(UpdateClusterLogConfigRequest::getBody, UpdateClusterLogConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateClusterLongAkskConfigRequest, UpdateClusterLongAkskConfigResponse> updateClusterLongAkskConfig =
+        genForUpdateClusterLongAkskConfig();
+
+    private static HttpRequestDef<UpdateClusterLongAkskConfigRequest, UpdateClusterLongAkskConfigResponse> genForUpdateClusterLongAkskConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateClusterLongAkskConfigRequest, UpdateClusterLongAkskConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateClusterLongAkskConfigRequest.class,
+                    UpdateClusterLongAkskConfigResponse.class)
+                .withName("UpdateClusterLongAkskConfig")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/longaksk/config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClusterLongAkskConfigRequest::getClusterId,
+                UpdateClusterLongAkskConfigRequest::setClusterId));
+        builder.<UpdateClusterLongAKSKConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateClusterLongAKSKConfigRequestBody.class),
+            f -> f.withMarshaller(UpdateClusterLongAkskConfigRequest::getBody,
+                UpdateClusterLongAkskConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateLongAkskConfigRequest, UpdateLongAkskConfigResponse> updateLongAkskConfig =
+        genForUpdateLongAkskConfig();
+
+    private static HttpRequestDef<UpdateLongAkskConfigRequest, UpdateLongAkskConfigResponse> genForUpdateLongAkskConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateLongAkskConfigRequest, UpdateLongAkskConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateLongAkskConfigRequest.class, UpdateLongAkskConfigResponse.class)
+            .withName("UpdateLongAkskConfig")
+            .withUri("/api/v3/projects/{project_id}/longaksk/config")
+            .withContentType("application/json");
+
+        // requests
+        builder.<UpdateLongAKSKConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateLongAKSKConfigRequestBody.class),
+            f -> f.withMarshaller(UpdateLongAkskConfigRequest::getBody, UpdateLongAkskConfigRequest::setBody));
 
         // response
 
@@ -4490,6 +4664,39 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAutopilotClusterConfigRequest, ShowAutopilotClusterConfigResponse> showAutopilotClusterConfig =
+        genForShowAutopilotClusterConfig();
+
+    private static HttpRequestDef<ShowAutopilotClusterConfigRequest, ShowAutopilotClusterConfigResponse> genForShowAutopilotClusterConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowAutopilotClusterConfigRequest, ShowAutopilotClusterConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAutopilotClusterConfigRequest.class,
+                    ShowAutopilotClusterConfigResponse.class)
+                .withName("ShowAutopilotClusterConfig")
+                .withUri("/autopilot/v3/projects/{project_id}/cluster/{cluster_id}/log-configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotClusterConfigRequest::getClusterId,
+                ShowAutopilotClusterConfigRequest::setClusterId));
+        builder.<ShowAutopilotClusterConfigRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowAutopilotClusterConfigRequest.TypeEnum.class),
+            f -> f.withMarshaller(ShowAutopilotClusterConfigRequest::getType,
+                ShowAutopilotClusterConfigRequest::setType));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAutopilotClusterEndpointsRequest, ShowAutopilotClusterEndpointsResponse> showAutopilotClusterEndpoints =
         genForShowAutopilotClusterEndpoints();
 
@@ -4538,6 +4745,27 @@ public class CceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAutopilotClusterUpgradeInfoRequest::getClusterId,
                 ShowAutopilotClusterUpgradeInfoRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutopilotFeatureGatesRequest, ShowAutopilotFeatureGatesResponse> showAutopilotFeatureGates =
+        genForShowAutopilotFeatureGates();
+
+    private static HttpRequestDef<ShowAutopilotFeatureGatesRequest, ShowAutopilotFeatureGatesResponse> genForShowAutopilotFeatureGates() {
+        // basic
+        HttpRequestDef.Builder<ShowAutopilotFeatureGatesRequest, ShowAutopilotFeatureGatesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAutopilotFeatureGatesRequest.class,
+                    ShowAutopilotFeatureGatesResponse.class)
+                .withName("ShowAutopilotFeatureGates")
+                .withUri("/autopilot/v3.1/feature-gates")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -5134,6 +5362,76 @@ public class CceMeta {
             f -> f.withMarshaller(UploadAutopilotChartRequest::getBody, UploadAutopilotChartRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAutopilotJobRequest, DeleteAutopilotJobResponse> deleteAutopilotJob =
+        genForDeleteAutopilotJob();
+
+    private static HttpRequestDef<DeleteAutopilotJobRequest, DeleteAutopilotJobResponse> genForDeleteAutopilotJob() {
+        // basic
+        HttpRequestDef.Builder<DeleteAutopilotJobRequest, DeleteAutopilotJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAutopilotJobRequest.class, DeleteAutopilotJobResponse.class)
+                .withName("DeleteAutopilotJob")
+                .withUri("/autopilot/v2/projects/{project_id}/jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAutopilotJobRequest::getJobId, DeleteAutopilotJobRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetAutopilotOneJobRequest, GetAutopilotOneJobResponse> getAutopilotOneJob =
+        genForGetAutopilotOneJob();
+
+    private static HttpRequestDef<GetAutopilotOneJobRequest, GetAutopilotOneJobResponse> genForGetAutopilotOneJob() {
+        // basic
+        HttpRequestDef.Builder<GetAutopilotOneJobRequest, GetAutopilotOneJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetAutopilotOneJobRequest.class, GetAutopilotOneJobResponse.class)
+                .withName("GetAutopilotOneJob")
+                .withUri("/autopilot/v2/projects/{project_id}/jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetAutopilotOneJobRequest::getJobId, GetAutopilotOneJobRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAutopilotJobsRequest, ListAutopilotJobsResponse> listAutopilotJobs =
+        genForListAutopilotJobs();
+
+    private static HttpRequestDef<ListAutopilotJobsRequest, ListAutopilotJobsResponse> genForListAutopilotJobs() {
+        // basic
+        HttpRequestDef.Builder<ListAutopilotJobsRequest, ListAutopilotJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAutopilotJobsRequest.class, ListAutopilotJobsResponse.class)
+                .withName("ListAutopilotJobs")
+                .withUri("/autopilot/v2/projects/{project_id}/jobs")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+        builder.<List<V2Job>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAutopilotJobsResponse::getBody, ListAutopilotJobsResponse::setBody)
+                .withInnerContainerType(V2Job.class));
 
         return builder.build();
     }

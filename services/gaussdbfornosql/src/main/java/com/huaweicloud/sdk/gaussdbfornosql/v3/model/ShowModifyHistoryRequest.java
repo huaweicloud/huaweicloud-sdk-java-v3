@@ -16,14 +16,19 @@ public class ShowModifyHistoryRequest {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "parameter_name")
+
+    private String parameterName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    private Integer offset;
+    private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    private Integer limit;
+    private String limit;
 
     public ShowModifyHistoryRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -31,7 +36,7 @@ public class ShowModifyHistoryRequest {
     }
 
     /**
-     * 实例id
+     * **参数解释：** 实例ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -42,37 +47,54 @@ public class ShowModifyHistoryRequest {
         this.instanceId = instanceId;
     }
 
-    public ShowModifyHistoryRequest withOffset(Integer offset) {
+    public ShowModifyHistoryRequest withParameterName(String parameterName) {
+        this.parameterName = parameterName;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 参数名称，支持模糊查询。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @return parameterName
+     */
+    public String getParameterName() {
+        return parameterName;
+    }
+
+    public void setParameterName(String parameterName) {
+        this.parameterName = parameterName;
+    }
+
+    public ShowModifyHistoryRequest withOffset(String offset) {
         this.offset = offset;
         return this;
     }
 
     /**
-     * 索引位置，偏移量。  从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询）。  取值必须为数字，不能为负数。
+     * **参数解释：** 索引位置，偏移量。 从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询）。 **约束限制：** 取值必须为数字，不能为负数。 **取值范围：** 非负整数。 **默认取值：** 0
      * @return offset
      */
-    public Integer getOffset() {
+    public String getOffset() {
         return offset;
     }
 
-    public void setOffset(Integer offset) {
+    public void setOffset(String offset) {
         this.offset = offset;
     }
 
-    public ShowModifyHistoryRequest withLimit(Integer limit) {
+    public ShowModifyHistoryRequest withLimit(String limit) {
         this.limit = limit;
         return this;
     }
 
     /**
-     * 查询个数上限值。   - 取值范围: 1~100。   - 不传该参数时，默认查询前100条信息。
+     * **参数解释：** 查询个数上限值。 **约束限制：** 不涉及。 **取值范围：** 1~100。 **默认取值：** 100。不传该参数时，默认查询前100条信息。
      * @return limit
      */
-    public Integer getLimit() {
+    public String getLimit() {
         return limit;
     }
 
-    public void setLimit(Integer limit) {
+    public void setLimit(String limit) {
         this.limit = limit;
     }
 
@@ -85,13 +107,14 @@ public class ShowModifyHistoryRequest {
             return false;
         }
         ShowModifyHistoryRequest that = (ShowModifyHistoryRequest) obj;
-        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+        return Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.parameterName, that.parameterName) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, offset, limit);
+        return Objects.hash(instanceId, parameterName, offset, limit);
     }
 
     @Override
@@ -99,6 +122,7 @@ public class ShowModifyHistoryRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowModifyHistoryRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    parameterName: ").append(toIndentedString(parameterName)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

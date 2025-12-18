@@ -40,7 +40,7 @@ public class BatchDeleteInstanceTagRequestBody {
     }
 
     /**
-     * 需要删除的标签列表
+     * **参数解释**: 需要删除的标签列表。
      * @return keys
      */
     public List<String> getKeys() {

@@ -30,6 +30,16 @@ public class GetBackupDownloadLinkResponseBodyFiles {
 
     private String linkExpiredTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_name")
+
+    private String groupName;
+
     public GetBackupDownloadLinkResponseBodyFiles withName(String name) {
         this.name = name;
         return this;
@@ -98,6 +108,40 @@ public class GetBackupDownloadLinkResponseBodyFiles {
         this.linkExpiredTime = linkExpiredTime;
     }
 
+    public GetBackupDownloadLinkResponseBodyFiles withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 组ID。
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    public GetBackupDownloadLinkResponseBodyFiles withGroupName(String groupName) {
+        this.groupName = groupName;
+        return this;
+    }
+
+    /**
+     * 组名。
+     * @return groupName
+     */
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -109,12 +153,13 @@ public class GetBackupDownloadLinkResponseBodyFiles {
         GetBackupDownloadLinkResponseBodyFiles that = (GetBackupDownloadLinkResponseBodyFiles) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.size, that.size)
             && Objects.equals(this.downloadLink, that.downloadLink)
-            && Objects.equals(this.linkExpiredTime, that.linkExpiredTime);
+            && Objects.equals(this.linkExpiredTime, that.linkExpiredTime) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.groupName, that.groupName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, size, downloadLink, linkExpiredTime);
+        return Objects.hash(name, size, downloadLink, linkExpiredTime, groupId, groupName);
     }
 
     @Override
@@ -125,6 +170,8 @@ public class GetBackupDownloadLinkResponseBodyFiles {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    downloadLink: ").append(toIndentedString(downloadLink)).append("\n");
         sb.append("    linkExpiredTime: ").append(toIndentedString(linkExpiredTime)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

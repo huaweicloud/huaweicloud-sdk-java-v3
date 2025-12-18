@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * **参数解释**： 属主对象。 **约束限制**： - 创建成功后自动生成，填写无效。 - 创建节点接口返回内容中无该参数  **取值范围**： 不涉及 **默认取值**： 不涉及
  */
-public class NodeMetadataOwnerReference {
+public class NodeMetadataOwnerReferences {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodepoolName")
@@ -30,7 +30,7 @@ public class NodeMetadataOwnerReference {
 
     private String hyperNodeID;
 
-    public NodeMetadataOwnerReference withNodepoolName(String nodepoolName) {
+    public NodeMetadataOwnerReferences withNodepoolName(String nodepoolName) {
         this.nodepoolName = nodepoolName;
         return this;
     }
@@ -47,7 +47,7 @@ public class NodeMetadataOwnerReference {
         this.nodepoolName = nodepoolName;
     }
 
-    public NodeMetadataOwnerReference withNodepoolID(String nodepoolID) {
+    public NodeMetadataOwnerReferences withNodepoolID(String nodepoolID) {
         this.nodepoolID = nodepoolID;
         return this;
     }
@@ -64,7 +64,7 @@ public class NodeMetadataOwnerReference {
         this.nodepoolID = nodepoolID;
     }
 
-    public NodeMetadataOwnerReference withHyperNodeName(String hyperNodeName) {
+    public NodeMetadataOwnerReferences withHyperNodeName(String hyperNodeName) {
         this.hyperNodeName = hyperNodeName;
         return this;
     }
@@ -81,7 +81,7 @@ public class NodeMetadataOwnerReference {
         this.hyperNodeName = hyperNodeName;
     }
 
-    public NodeMetadataOwnerReference withHyperNodeID(String hyperNodeID) {
+    public NodeMetadataOwnerReferences withHyperNodeID(String hyperNodeID) {
         this.hyperNodeID = hyperNodeID;
         return this;
     }
@@ -106,7 +106,7 @@ public class NodeMetadataOwnerReference {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeMetadataOwnerReference that = (NodeMetadataOwnerReference) obj;
+        NodeMetadataOwnerReferences that = (NodeMetadataOwnerReferences) obj;
         return Objects.equals(this.nodepoolName, that.nodepoolName) && Objects.equals(this.nodepoolID, that.nodepoolID)
             && Objects.equals(this.hyperNodeName, that.hyperNodeName)
             && Objects.equals(this.hyperNodeID, that.hyperNodeID);
@@ -120,7 +120,7 @@ public class NodeMetadataOwnerReference {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class NodeMetadataOwnerReference {\n");
+        sb.append("class NodeMetadataOwnerReferences {\n");
         sb.append("    nodepoolName: ").append(toIndentedString(nodepoolName)).append("\n");
         sb.append("    nodepoolID: ").append(toIndentedString(nodepoolID)).append("\n");
         sb.append("    hyperNodeName: ").append(toIndentedString(hyperNodeName)).append("\n");

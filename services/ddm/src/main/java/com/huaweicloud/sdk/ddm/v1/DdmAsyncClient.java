@@ -13,12 +13,18 @@ import com.huaweicloud.sdk.ddm.v1.model.ChangeDatabaseVersionRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ChangeDatabaseVersionResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ChangeStrategyRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ChangeStrategyResponse;
+import com.huaweicloud.sdk.ddm.v1.model.CheckDataNodeConnectionV0V3Request;
+import com.huaweicloud.sdk.ddm.v1.model.CheckDataNodeConnectionV0V3Response;
 import com.huaweicloud.sdk.ddm.v1.model.CheckMigrateLogicDbRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CheckMigrateLogicDbResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CheckPreliminaryResultsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CheckPreliminaryResultsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CleanMigrationRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CleanMigrationResponse;
+import com.huaweicloud.sdk.ddm.v1.model.CompareParameterGroupsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.CompareParameterGroupsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.CopyParameterGroupRequest;
+import com.huaweicloud.sdk.ddm.v1.model.CopyParameterGroupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDdmConfigurationsRequest;
@@ -87,10 +93,14 @@ import com.huaweicloud.sdk.ddm.v1.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListFlavorsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListGroupRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListGroupResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListInstancesAppliedParameterGroupV0V3Request;
+import com.huaweicloud.sdk.ddm.v1.model.ListInstancesAppliedParameterGroupV0V3Response;
 import com.huaweicloud.sdk.ddm.v1.model.ListInstancesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListInstancesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListNodesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListNodesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListParameterGroupApplyHistoryV0V3Request;
+import com.huaweicloud.sdk.ddm.v1.model.ListParameterGroupApplyHistoryV0V3Response;
 import com.huaweicloud.sdk.ddm.v1.model.ListReadWriteRatioRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListReadWriteRatioResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogRequest;
@@ -113,6 +123,8 @@ import com.huaweicloud.sdk.ddm.v1.model.RebuildConfigRequest;
 import com.huaweicloud.sdk.ddm.v1.model.RebuildConfigResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ResetAdministratorRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ResetAdministratorResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ResetParameterGroupRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ResetParameterGroupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ResetUserPasswordRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ResetUserPasswordResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ResizeFlavorRequest;
@@ -145,6 +157,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ShowConfigurationRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowConfigurationResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowDatabaseResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowDdmDetailRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowDdmDetailResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowDdmJobResultRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowDdmJobResultResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowDdmNodeDetailRequest;
@@ -3026,6 +3040,213 @@ public class DdmAsyncClient {
     public AsyncInvoker<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse> validateWeakPasswordAsyncInvoker(
         ValidateWeakPasswordRequest request) {
         return new AsyncInvoker<>(request, DdmMeta.validateWeakPassword, hcClient);
+    }
+
+    /**
+     * rds连通性检查V3
+     *
+     * rds连通性检查V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckDataNodeConnectionV0V3Request 请求对象
+     * @return CompletableFuture<CheckDataNodeConnectionV0V3Response>
+     */
+    public CompletableFuture<CheckDataNodeConnectionV0V3Response> checkDataNodeConnectionV0V3Async(
+        CheckDataNodeConnectionV0V3Request request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.checkDataNodeConnectionV0V3);
+    }
+
+    /**
+     * rds连通性检查V3
+     *
+     * rds连通性检查V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckDataNodeConnectionV0V3Request 请求对象
+     * @return AsyncInvoker<CheckDataNodeConnectionV0V3Request, CheckDataNodeConnectionV0V3Response>
+     */
+    public AsyncInvoker<CheckDataNodeConnectionV0V3Request, CheckDataNodeConnectionV0V3Response> checkDataNodeConnectionV0V3AsyncInvoker(
+        CheckDataNodeConnectionV0V3Request request) {
+        return new AsyncInvoker<>(request, DdmMeta.checkDataNodeConnectionV0V3, hcClient);
+    }
+
+    /**
+     * 比较参数组V3
+     *
+     * 比较参数组V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CompareParameterGroupsRequest 请求对象
+     * @return CompletableFuture<CompareParameterGroupsResponse>
+     */
+    public CompletableFuture<CompareParameterGroupsResponse> compareParameterGroupsAsync(
+        CompareParameterGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.compareParameterGroups);
+    }
+
+    /**
+     * 比较参数组V3
+     *
+     * 比较参数组V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CompareParameterGroupsRequest 请求对象
+     * @return AsyncInvoker<CompareParameterGroupsRequest, CompareParameterGroupsResponse>
+     */
+    public AsyncInvoker<CompareParameterGroupsRequest, CompareParameterGroupsResponse> compareParameterGroupsAsyncInvoker(
+        CompareParameterGroupsRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.compareParameterGroups, hcClient);
+    }
+
+    /**
+     * 复制参数组V3
+     *
+     * 复制参数组V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CopyParameterGroupRequest 请求对象
+     * @return CompletableFuture<CopyParameterGroupResponse>
+     */
+    public CompletableFuture<CopyParameterGroupResponse> copyParameterGroupAsync(CopyParameterGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.copyParameterGroup);
+    }
+
+    /**
+     * 复制参数组V3
+     *
+     * 复制参数组V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CopyParameterGroupRequest 请求对象
+     * @return AsyncInvoker<CopyParameterGroupRequest, CopyParameterGroupResponse>
+     */
+    public AsyncInvoker<CopyParameterGroupRequest, CopyParameterGroupResponse> copyParameterGroupAsyncInvoker(
+        CopyParameterGroupRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.copyParameterGroup, hcClient);
+    }
+
+    /**
+     * 查询可应用的实例列表V3
+     *
+     * 查询可应用的实例列表V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesAppliedParameterGroupV0V3Request 请求对象
+     * @return CompletableFuture<ListInstancesAppliedParameterGroupV0V3Response>
+     */
+    public CompletableFuture<ListInstancesAppliedParameterGroupV0V3Response> listInstancesAppliedParameterGroupV0V3Async(
+        ListInstancesAppliedParameterGroupV0V3Request request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.listInstancesAppliedParameterGroupV0V3);
+    }
+
+    /**
+     * 查询可应用的实例列表V3
+     *
+     * 查询可应用的实例列表V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesAppliedParameterGroupV0V3Request 请求对象
+     * @return AsyncInvoker<ListInstancesAppliedParameterGroupV0V3Request, ListInstancesAppliedParameterGroupV0V3Response>
+     */
+    public AsyncInvoker<ListInstancesAppliedParameterGroupV0V3Request, ListInstancesAppliedParameterGroupV0V3Response> listInstancesAppliedParameterGroupV0V3AsyncInvoker(
+        ListInstancesAppliedParameterGroupV0V3Request request) {
+        return new AsyncInvoker<>(request, DdmMeta.listInstancesAppliedParameterGroupV0V3, hcClient);
+    }
+
+    /**
+     * 参数组应用记录V3
+     *
+     * 参数组应用记录V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListParameterGroupApplyHistoryV0V3Request 请求对象
+     * @return CompletableFuture<ListParameterGroupApplyHistoryV0V3Response>
+     */
+    public CompletableFuture<ListParameterGroupApplyHistoryV0V3Response> listParameterGroupApplyHistoryV0V3Async(
+        ListParameterGroupApplyHistoryV0V3Request request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.listParameterGroupApplyHistoryV0V3);
+    }
+
+    /**
+     * 参数组应用记录V3
+     *
+     * 参数组应用记录V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListParameterGroupApplyHistoryV0V3Request 请求对象
+     * @return AsyncInvoker<ListParameterGroupApplyHistoryV0V3Request, ListParameterGroupApplyHistoryV0V3Response>
+     */
+    public AsyncInvoker<ListParameterGroupApplyHistoryV0V3Request, ListParameterGroupApplyHistoryV0V3Response> listParameterGroupApplyHistoryV0V3AsyncInvoker(
+        ListParameterGroupApplyHistoryV0V3Request request) {
+        return new AsyncInvoker<>(request, DdmMeta.listParameterGroupApplyHistoryV0V3, hcClient);
+    }
+
+    /**
+     * 更新参数组V3
+     *
+     * 更新参数组V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResetParameterGroupRequest 请求对象
+     * @return CompletableFuture<ResetParameterGroupResponse>
+     */
+    public CompletableFuture<ResetParameterGroupResponse> resetParameterGroupAsync(ResetParameterGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.resetParameterGroup);
+    }
+
+    /**
+     * 更新参数组V3
+     *
+     * 更新参数组V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResetParameterGroupRequest 请求对象
+     * @return AsyncInvoker<ResetParameterGroupRequest, ResetParameterGroupResponse>
+     */
+    public AsyncInvoker<ResetParameterGroupRequest, ResetParameterGroupResponse> resetParameterGroupAsyncInvoker(
+        ResetParameterGroupRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.resetParameterGroup, hcClient);
+    }
+
+    /**
+     * 查询实例详情V3
+     *
+     * 查询实例详情V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDdmDetailRequest 请求对象
+     * @return CompletableFuture<ShowDdmDetailResponse>
+     */
+    public CompletableFuture<ShowDdmDetailResponse> showDdmDetailAsync(ShowDdmDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.showDdmDetail);
+    }
+
+    /**
+     * 查询实例详情V3
+     *
+     * 查询实例详情V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDdmDetailRequest 请求对象
+     * @return AsyncInvoker<ShowDdmDetailRequest, ShowDdmDetailResponse>
+     */
+    public AsyncInvoker<ShowDdmDetailRequest, ShowDdmDetailResponse> showDdmDetailAsyncInvoker(
+        ShowDdmDetailRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.showDdmDetail, hcClient);
     }
 
 }

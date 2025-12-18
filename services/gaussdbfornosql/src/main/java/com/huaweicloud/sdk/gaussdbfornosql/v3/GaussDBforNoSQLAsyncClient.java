@@ -295,6 +295,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationR
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceLbRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceLbResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceNameRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceNameResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdatePasswordlessConfigRequest;
@@ -3713,9 +3715,9 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
-     * 查询实例参数的修改历史
+     * 查询参数组修改历史。
      *
-     * 查询实例参数的修改历史
+     * 查询指定实例的参数组修改历史记录，支持分页查询，支持参数搜索。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3727,9 +3729,9 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
-     * 查询实例参数的修改历史
+     * 查询参数组修改历史。
      *
-     * 查询实例参数的修改历史
+     * 查询指定实例的参数组修改历史记录，支持分页查询，支持参数搜索。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4557,6 +4559,35 @@ public class GaussDBforNoSQLAsyncClient {
     public AsyncInvoker<UpdateInstanceConfigurationsRequest, UpdateInstanceConfigurationsResponse> updateInstanceConfigurationsAsyncInvoker(
         UpdateInstanceConfigurationsRequest request) {
         return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.updateInstanceConfigurations, hcClient);
+    }
+
+    /**
+     * 修改负载均衡地址
+     *
+     * 修改负载均衡地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInstanceLbRequest 请求对象
+     * @return CompletableFuture<UpdateInstanceLbResponse>
+     */
+    public CompletableFuture<UpdateInstanceLbResponse> updateInstanceLbAsync(UpdateInstanceLbRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.updateInstanceLb);
+    }
+
+    /**
+     * 修改负载均衡地址
+     *
+     * 修改负载均衡地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInstanceLbRequest 请求对象
+     * @return AsyncInvoker<UpdateInstanceLbRequest, UpdateInstanceLbResponse>
+     */
+    public AsyncInvoker<UpdateInstanceLbRequest, UpdateInstanceLbResponse> updateInstanceLbAsyncInvoker(
+        UpdateInstanceLbRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.updateInstanceLb, hcClient);
     }
 
     /**

@@ -39,9 +39,9 @@ public class NodeMetadata {
     private String updateTimestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ownerReference")
+    @JsonProperty(value = "ownerReferences")
 
-    private NodeMetadataOwnerReference ownerReference;
+    private NodeMetadataOwnerReferences ownerReferences;
 
     public NodeMetadata withName(String name) {
         this.name = name;
@@ -144,30 +144,30 @@ public class NodeMetadata {
         this.updateTimestamp = updateTimestamp;
     }
 
-    public NodeMetadata withOwnerReference(NodeMetadataOwnerReference ownerReference) {
-        this.ownerReference = ownerReference;
+    public NodeMetadata withOwnerReferences(NodeMetadataOwnerReferences ownerReferences) {
+        this.ownerReferences = ownerReferences;
         return this;
     }
 
-    public NodeMetadata withOwnerReference(Consumer<NodeMetadataOwnerReference> ownerReferenceSetter) {
-        if (this.ownerReference == null) {
-            this.ownerReference = new NodeMetadataOwnerReference();
-            ownerReferenceSetter.accept(this.ownerReference);
+    public NodeMetadata withOwnerReferences(Consumer<NodeMetadataOwnerReferences> ownerReferencesSetter) {
+        if (this.ownerReferences == null) {
+            this.ownerReferences = new NodeMetadataOwnerReferences();
+            ownerReferencesSetter.accept(this.ownerReferences);
         }
 
         return this;
     }
 
     /**
-     * Get ownerReference
-     * @return ownerReference
+     * Get ownerReferences
+     * @return ownerReferences
      */
-    public NodeMetadataOwnerReference getOwnerReference() {
-        return ownerReference;
+    public NodeMetadataOwnerReferences getOwnerReferences() {
+        return ownerReferences;
     }
 
-    public void setOwnerReference(NodeMetadataOwnerReference ownerReference) {
-        this.ownerReference = ownerReference;
+    public void setOwnerReferences(NodeMetadataOwnerReferences ownerReferences) {
+        this.ownerReferences = ownerReferences;
     }
 
     @Override
@@ -183,12 +183,12 @@ public class NodeMetadata {
             && Objects.equals(this.annotations, that.annotations)
             && Objects.equals(this.creationTimestamp, that.creationTimestamp)
             && Objects.equals(this.updateTimestamp, that.updateTimestamp)
-            && Objects.equals(this.ownerReference, that.ownerReference);
+            && Objects.equals(this.ownerReferences, that.ownerReferences);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, uid, annotations, creationTimestamp, updateTimestamp, ownerReference);
+        return Objects.hash(name, uid, annotations, creationTimestamp, updateTimestamp, ownerReferences);
     }
 
     @Override
@@ -200,7 +200,7 @@ public class NodeMetadata {
         sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
         sb.append("    creationTimestamp: ").append(toIndentedString(creationTimestamp)).append("\n");
         sb.append("    updateTimestamp: ").append(toIndentedString(updateTimestamp)).append("\n");
-        sb.append("    ownerReference: ").append(toIndentedString(ownerReference)).append("\n");
+        sb.append("    ownerReferences: ").append(toIndentedString(ownerReferences)).append("\n");
         sb.append("}");
         return sb.toString();
     }

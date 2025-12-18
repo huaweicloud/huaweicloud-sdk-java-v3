@@ -12,25 +12,355 @@ import java.util.Objects;
 public class DeleteReleaseResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "chart_name")
 
-    private String body;
+    private String chartName;
 
-    public DeleteReleaseResponse withBody(String body) {
-        this.body = body;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "chart_public")
+
+    private Boolean chartPublic;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "chart_version")
+
+    private String chartVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_id")
+
+    private String clusterId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_name")
+
+    private String clusterName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_at")
+
+    private String createAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "namespace")
+
+    private String namespace;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "parameters")
+
+    private String parameters;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resources")
+
+    private String resources;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status_description")
+
+    private String statusDescription;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_at")
+
+    private String updateAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "values")
+
+    private String values;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private Integer version;
+
+    public DeleteReleaseResponse withChartName(String chartName) {
+        this.chartName = chartName;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 模板名称
+     * @return chartName
      */
-    public String getBody() {
-        return body;
+    public String getChartName() {
+        return chartName;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setChartName(String chartName) {
+        this.chartName = chartName;
+    }
+
+    public DeleteReleaseResponse withChartPublic(Boolean chartPublic) {
+        this.chartPublic = chartPublic;
+        return this;
+    }
+
+    /**
+     * 是否公开模板
+     * @return chartPublic
+     */
+    public Boolean getChartPublic() {
+        return chartPublic;
+    }
+
+    public void setChartPublic(Boolean chartPublic) {
+        this.chartPublic = chartPublic;
+    }
+
+    public DeleteReleaseResponse withChartVersion(String chartVersion) {
+        this.chartVersion = chartVersion;
+        return this;
+    }
+
+    /**
+     * 模板版本
+     * @return chartVersion
+     */
+    public String getChartVersion() {
+        return chartVersion;
+    }
+
+    public void setChartVersion(String chartVersion) {
+        this.chartVersion = chartVersion;
+    }
+
+    public DeleteReleaseResponse withClusterId(String clusterId) {
+        this.clusterId = clusterId;
+        return this;
+    }
+
+    /**
+     * 集群ID
+     * @return clusterId
+     */
+    public String getClusterId() {
+        return clusterId;
+    }
+
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
+    }
+
+    public DeleteReleaseResponse withClusterName(String clusterName) {
+        this.clusterName = clusterName;
+        return this;
+    }
+
+    /**
+     * 集群名称
+     * @return clusterName
+     */
+    public String getClusterName() {
+        return clusterName;
+    }
+
+    public void setClusterName(String clusterName) {
+        this.clusterName = clusterName;
+    }
+
+    public DeleteReleaseResponse withCreateAt(String createAt) {
+        this.createAt = createAt;
+        return this;
+    }
+
+    /**
+     * 创建时间
+     * @return createAt
+     */
+    public String getCreateAt() {
+        return createAt;
+    }
+
+    public void setCreateAt(String createAt) {
+        this.createAt = createAt;
+    }
+
+    public DeleteReleaseResponse withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 模板实例描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public DeleteReleaseResponse withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 模板实例名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public DeleteReleaseResponse withNamespace(String namespace) {
+        this.namespace = namespace;
+        return this;
+    }
+
+    /**
+     * 模板实例所在的命名空间
+     * @return namespace
+     */
+    public String getNamespace() {
+        return namespace;
+    }
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    public DeleteReleaseResponse withParameters(String parameters) {
+        this.parameters = parameters;
+        return this;
+    }
+
+    /**
+     * 模板实例参数
+     * @return parameters
+     */
+    public String getParameters() {
+        return parameters;
+    }
+
+    public void setParameters(String parameters) {
+        this.parameters = parameters;
+    }
+
+    public DeleteReleaseResponse withResources(String resources) {
+        this.resources = resources;
+        return this;
+    }
+
+    /**
+     * 模板实例需要的资源
+     * @return resources
+     */
+    public String getResources() {
+        return resources;
+    }
+
+    public void setResources(String resources) {
+        this.resources = resources;
+    }
+
+    public DeleteReleaseResponse withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 模板实例状态 - DEPLOYED：已部署，表示模板实例处于正常状态。 - DELETED：已删除，表示模板实例已经被删除。 - FAILED：失败，表示模板实例部署失败。 - DELETING：删除中，表示模板实例正处于删除过程中。 - PENDING_INSTALL：待安装，表示模板正在等待安装。 - PENDING_UPGRADE：待升级，表示模板正在等待升级。 - PENDING_ROLLBACK：待回滚，表示模板正在等待回滚。 - UNKNOWN：未知，表示模板状态异常，可尝试手动删除后重新安装。
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public DeleteReleaseResponse withStatusDescription(String statusDescription) {
+        this.statusDescription = statusDescription;
+        return this;
+    }
+
+    /**
+     * 模板实例状态描述
+     * @return statusDescription
+     */
+    public String getStatusDescription() {
+        return statusDescription;
+    }
+
+    public void setStatusDescription(String statusDescription) {
+        this.statusDescription = statusDescription;
+    }
+
+    public DeleteReleaseResponse withUpdateAt(String updateAt) {
+        this.updateAt = updateAt;
+        return this;
+    }
+
+    /**
+     * 更新时间
+     * @return updateAt
+     */
+    public String getUpdateAt() {
+        return updateAt;
+    }
+
+    public void setUpdateAt(String updateAt) {
+        this.updateAt = updateAt;
+    }
+
+    public DeleteReleaseResponse withValues(String values) {
+        this.values = values;
+        return this;
+    }
+
+    /**
+     * 模板实例的值
+     * @return values
+     */
+    public String getValues() {
+        return values;
+    }
+
+    public void setValues(String values) {
+        this.values = values;
+    }
+
+    public DeleteReleaseResponse withVersion(Integer version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * 模板实例版本
+     * @return version
+     */
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
     }
 
     @Override
@@ -42,19 +372,57 @@ public class DeleteReleaseResponse extends SdkResponse {
             return false;
         }
         DeleteReleaseResponse that = (DeleteReleaseResponse) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.chartName, that.chartName) && Objects.equals(this.chartPublic, that.chartPublic)
+            && Objects.equals(this.chartVersion, that.chartVersion) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.clusterName, that.clusterName) && Objects.equals(this.createAt, that.createAt)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.parameters, that.parameters)
+            && Objects.equals(this.resources, that.resources) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.statusDescription, that.statusDescription)
+            && Objects.equals(this.updateAt, that.updateAt) && Objects.equals(this.values, that.values)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(chartName,
+            chartPublic,
+            chartVersion,
+            clusterId,
+            clusterName,
+            createAt,
+            description,
+            name,
+            namespace,
+            parameters,
+            resources,
+            status,
+            statusDescription,
+            updateAt,
+            values,
+            version);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteReleaseResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    chartName: ").append(toIndentedString(chartName)).append("\n");
+        sb.append("    chartPublic: ").append(toIndentedString(chartPublic)).append("\n");
+        sb.append("    chartVersion: ").append(toIndentedString(chartVersion)).append("\n");
+        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
+        sb.append("    createAt: ").append(toIndentedString(createAt)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+        sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
+        sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    statusDescription: ").append(toIndentedString(statusDescription)).append("\n");
+        sb.append("    updateAt: ").append(toIndentedString(updateAt)).append("\n");
+        sb.append("    values: ").append(toIndentedString(values)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();
     }

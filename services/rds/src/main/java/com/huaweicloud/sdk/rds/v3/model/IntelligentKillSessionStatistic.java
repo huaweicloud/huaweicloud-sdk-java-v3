@@ -19,9 +19,9 @@ public class IntelligentKillSessionStatistic {
     private String keyword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "raw_sql")
+    @JsonProperty(value = "raw_sql_text")
 
-    private String rawSql;
+    private String rawSqlText;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ids")
@@ -80,21 +80,21 @@ public class IntelligentKillSessionStatistic {
         this.keyword = keyword;
     }
 
-    public IntelligentKillSessionStatistic withRawSql(String rawSql) {
-        this.rawSql = rawSql;
+    public IntelligentKillSessionStatistic withRawSqlText(String rawSqlText) {
+        this.rawSqlText = rawSqlText;
         return this;
     }
 
     /**
      * **参数解释**：  随机选取符合sql限流关键字的用户某条sql样例。  **约束限制**：  不涉及。
-     * @return rawSql
+     * @return rawSqlText
      */
-    public String getRawSql() {
-        return rawSql;
+    public String getRawSqlText() {
+        return rawSqlText;
     }
 
-    public void setRawSql(String rawSql) {
-        this.rawSql = rawSql;
+    public void setRawSqlText(String rawSqlText) {
+        this.rawSqlText = rawSqlText;
     }
 
     public IntelligentKillSessionStatistic withIds(List<Long> ids) {
@@ -268,7 +268,7 @@ public class IntelligentKillSessionStatistic {
             return false;
         }
         IntelligentKillSessionStatistic that = (IntelligentKillSessionStatistic) obj;
-        return Objects.equals(this.keyword, that.keyword) && Objects.equals(this.rawSql, that.rawSql)
+        return Objects.equals(this.keyword, that.keyword) && Objects.equals(this.rawSqlText, that.rawSqlText)
             && Objects.equals(this.ids, that.ids) && Objects.equals(this.count, that.count)
             && Objects.equals(this.totalTime, that.totalTime) && Objects.equals(this.avgTime, that.avgTime)
             && Objects.equals(this.maxTime, that.maxTime) && Objects.equals(this.strategy, that.strategy)
@@ -278,7 +278,7 @@ public class IntelligentKillSessionStatistic {
     @Override
     public int hashCode() {
         return Objects
-            .hash(keyword, rawSql, ids, count, totalTime, avgTime, maxTime, strategy, adviceConcurrency, type);
+            .hash(keyword, rawSqlText, ids, count, totalTime, avgTime, maxTime, strategy, adviceConcurrency, type);
     }
 
     @Override
@@ -286,7 +286,7 @@ public class IntelligentKillSessionStatistic {
         StringBuilder sb = new StringBuilder();
         sb.append("class IntelligentKillSessionStatistic {\n");
         sb.append("    keyword: ").append(toIndentedString(keyword)).append("\n");
-        sb.append("    rawSql: ").append(toIndentedString(rawSql)).append("\n");
+        sb.append("    rawSqlText: ").append(toIndentedString(rawSqlText)).append("\n");
         sb.append("    ids: ").append(toIndentedString(ids)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    totalTime: ").append(toIndentedString(totalTime)).append("\n");

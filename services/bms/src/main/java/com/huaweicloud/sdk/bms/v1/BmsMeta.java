@@ -95,6 +95,8 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 
+import java.util.List;
+
 @SuppressWarnings("unchecked")
 public class BmsMeta {
 
@@ -778,6 +780,42 @@ public class BmsMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<List<String>>withRequestField("availability_zone",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowAvailableResourceRequest::getAvailabilityZone,
+                ShowAvailableResourceRequest::setAvailabilityZone));
+        builder.<List<String>>withRequestField("flavor_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowAvailableResourceRequest::getFlavorId,
+                ShowAvailableResourceRequest::setFlavorId));
+        builder.<List<String>>withRequestField("dec_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowAvailableResourceRequest::getDecProjectId,
+                ShowAvailableResourceRequest::setDecProjectId));
+        builder.<List<String>>withRequestField("check_limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowAvailableResourceRequest::getCheckLimit,
+                ShowAvailableResourceRequest::setCheckLimit));
+        builder.<List<String>>withRequestField("expectation",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowAvailableResourceRequest::getExpectation,
+                ShowAvailableResourceRequest::setExpectation));
+        builder.<List<String>>withRequestField("resource_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowAvailableResourceRequest::getResourceType,
+                ShowAvailableResourceRequest::setResourceType));
 
         // response
 

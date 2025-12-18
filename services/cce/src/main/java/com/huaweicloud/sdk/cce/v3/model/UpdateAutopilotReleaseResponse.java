@@ -284,7 +284,7 @@ public class UpdateAutopilotReleaseResponse extends SdkResponse {
     }
 
     /**
-     * 模板实例状态
+     * 模板实例状态 - DEPLOYED：已部署，表示模板实例处于正常状态。 - DELETED：已删除，表示模板实例已经被删除。 - FAILED：失败，表示模板实例部署失败。 - DELETING：删除中，表示模板实例正处于删除过程中。 - PENDING_INSTALL：待安装，表示模板正在等待安装。 - PENDING_UPGRADE：待升级，表示模板正在等待升级。 - PENDING_ROLLBACK：待回滚，表示模板正在等待回滚。 - UNKNOWN：未知，表示模板状态异常，可尝试手动删除后重新安装。
      * @return status
      */
     public String getStatus() {

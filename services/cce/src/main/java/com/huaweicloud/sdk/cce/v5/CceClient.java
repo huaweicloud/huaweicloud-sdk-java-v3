@@ -6,8 +6,12 @@ import com.huaweicloud.sdk.cce.v5.model.DeleteImageCacheRequest;
 import com.huaweicloud.sdk.cce.v5.model.DeleteImageCacheResponse;
 import com.huaweicloud.sdk.cce.v5.model.ListImageCachesRequest;
 import com.huaweicloud.sdk.cce.v5.model.ListImageCachesResponse;
+import com.huaweicloud.sdk.cce.v5.model.ListPackageProductsRequest;
+import com.huaweicloud.sdk.cce.v5.model.ListPackageProductsResponse;
 import com.huaweicloud.sdk.cce.v5.model.ShowImageCacheRequest;
 import com.huaweicloud.sdk.cce.v5.model.ShowImageCacheResponse;
+import com.huaweicloud.sdk.cce.v5.model.SubscribePackageProductsRequest;
+import com.huaweicloud.sdk.cce.v5.model.SubscribePackageProductsResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -121,6 +125,35 @@ public class CceClient {
     }
 
     /**
+     * 查询套餐包列表
+     *
+     * 查询套餐包列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPackageProductsRequest 请求对象
+     * @return ListPackageProductsResponse
+     */
+    public ListPackageProductsResponse listPackageProducts(ListPackageProductsRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.listPackageProducts);
+    }
+
+    /**
+     * 查询套餐包列表
+     *
+     * 查询套餐包列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPackageProductsRequest 请求对象
+     * @return SyncInvoker<ListPackageProductsRequest, ListPackageProductsResponse>
+     */
+    public SyncInvoker<ListPackageProductsRequest, ListPackageProductsResponse> listPackageProductsInvoker(
+        ListPackageProductsRequest request) {
+        return new SyncInvoker<>(request, CceMeta.listPackageProducts, hcClient);
+    }
+
+    /**
      * 查询镜像缓存详情
      *
      * 查询镜像缓存详情
@@ -147,6 +180,35 @@ public class CceClient {
     public SyncInvoker<ShowImageCacheRequest, ShowImageCacheResponse> showImageCacheInvoker(
         ShowImageCacheRequest request) {
         return new SyncInvoker<>(request, CceMeta.showImageCache, hcClient);
+    }
+
+    /**
+     * 订购套餐包
+     *
+     * 订购套餐包
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SubscribePackageProductsRequest 请求对象
+     * @return SubscribePackageProductsResponse
+     */
+    public SubscribePackageProductsResponse subscribePackageProducts(SubscribePackageProductsRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.subscribePackageProducts);
+    }
+
+    /**
+     * 订购套餐包
+     *
+     * 订购套餐包
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SubscribePackageProductsRequest 请求对象
+     * @return SyncInvoker<SubscribePackageProductsRequest, SubscribePackageProductsResponse>
+     */
+    public SyncInvoker<SubscribePackageProductsRequest, SubscribePackageProductsResponse> subscribePackageProductsInvoker(
+        SubscribePackageProductsRequest request) {
+        return new SyncInvoker<>(request, CceMeta.subscribePackageProducts, hcClient);
     }
 
 }

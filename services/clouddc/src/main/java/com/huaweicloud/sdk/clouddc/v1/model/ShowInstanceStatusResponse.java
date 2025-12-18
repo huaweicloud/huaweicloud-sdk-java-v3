@@ -18,6 +18,11 @@ public class ShowInstanceStatusResponse extends SdkResponse {
     private InstanceState state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "operation_state")
+
+    private InstanceOperationStatus operationState;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error")
 
     private ErrorStatus error;
@@ -37,6 +42,23 @@ public class ShowInstanceStatusResponse extends SdkResponse {
 
     public void setState(InstanceState state) {
         this.state = state;
+    }
+
+    public ShowInstanceStatusResponse withOperationState(InstanceOperationStatus operationState) {
+        this.operationState = operationState;
+        return this;
+    }
+
+    /**
+     * Get operationState
+     * @return operationState
+     */
+    public InstanceOperationStatus getOperationState() {
+        return operationState;
+    }
+
+    public void setOperationState(InstanceOperationStatus operationState) {
+        this.operationState = operationState;
     }
 
     public ShowInstanceStatusResponse withError(ErrorStatus error) {
@@ -74,12 +96,13 @@ public class ShowInstanceStatusResponse extends SdkResponse {
             return false;
         }
         ShowInstanceStatusResponse that = (ShowInstanceStatusResponse) obj;
-        return Objects.equals(this.state, that.state) && Objects.equals(this.error, that.error);
+        return Objects.equals(this.state, that.state) && Objects.equals(this.operationState, that.operationState)
+            && Objects.equals(this.error, that.error);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(state, error);
+        return Objects.hash(state, operationState, error);
     }
 
     @Override
@@ -87,6 +110,7 @@ public class ShowInstanceStatusResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowInstanceStatusResponse {\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    operationState: ").append(toIndentedString(operationState)).append("\n");
         sb.append("    error: ").append(toIndentedString(error)).append("\n");
         sb.append("}");
         return sb.toString();

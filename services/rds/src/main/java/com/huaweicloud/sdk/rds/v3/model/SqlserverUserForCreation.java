@@ -20,6 +20,11 @@ public class SqlserverUserForCreation {
 
     private String password;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_readonly")
+
+    private Boolean instanceReadonly;
+
     public SqlserverUserForCreation withName(String name) {
         this.name = name;
         return this;
@@ -54,6 +59,23 @@ public class SqlserverUserForCreation {
         this.password = password;
     }
 
+    public SqlserverUserForCreation withInstanceReadonly(Boolean instanceReadonly) {
+        this.instanceReadonly = instanceReadonly;
+        return this;
+    }
+
+    /**
+     * 是否创建实例级只读账号。
+     * @return instanceReadonly
+     */
+    public Boolean getInstanceReadonly() {
+        return instanceReadonly;
+    }
+
+    public void setInstanceReadonly(Boolean instanceReadonly) {
+        this.instanceReadonly = instanceReadonly;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class SqlserverUserForCreation {
             return false;
         }
         SqlserverUserForCreation that = (SqlserverUserForCreation) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.password, that.password);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.instanceReadonly, that.instanceReadonly);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, password);
+        return Objects.hash(name, password, instanceReadonly);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class SqlserverUserForCreation {
         sb.append("class SqlserverUserForCreation {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
+        sb.append("    instanceReadonly: ").append(toIndentedString(instanceReadonly)).append("\n");
         sb.append("}");
         return sb.toString();
     }

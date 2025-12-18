@@ -15,7 +15,7 @@ import java.util.function.Consumer;
 public class ListProfilesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "applicationProfiles")
+    @JsonProperty(value = "application_profiles")
 
     private List<ApplicationProfileDto> applicationProfiles = null;
 

@@ -234,6 +234,11 @@ public class ClusterSpec {
     private Authentication authentication;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publicAccess")
+
+    private PublicAccess publicAccess;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "billingMode")
 
     private Integer billingMode;
@@ -689,6 +694,32 @@ public class ClusterSpec {
         this.authentication = authentication;
     }
 
+    public ClusterSpec withPublicAccess(PublicAccess publicAccess) {
+        this.publicAccess = publicAccess;
+        return this;
+    }
+
+    public ClusterSpec withPublicAccess(Consumer<PublicAccess> publicAccessSetter) {
+        if (this.publicAccess == null) {
+            this.publicAccess = new PublicAccess();
+            publicAccessSetter.accept(this.publicAccess);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get publicAccess
+     * @return publicAccess
+     */
+    public PublicAccess getPublicAccess() {
+        return publicAccess;
+    }
+
+    public void setPublicAccess(PublicAccess publicAccess) {
+        this.publicAccess = publicAccess;
+    }
+
     public ClusterSpec withBillingMode(Integer billingMode) {
         this.billingMode = billingMode;
         return this;
@@ -1021,6 +1052,7 @@ public class ClusterSpec {
             && Objects.equals(this.eniNetwork, that.eniNetwork)
             && Objects.equals(this.serviceNetwork, that.serviceNetwork)
             && Objects.equals(this.authentication, that.authentication)
+            && Objects.equals(this.publicAccess, that.publicAccess)
             && Objects.equals(this.billingMode, that.billingMode) && Objects.equals(this.masters, that.masters)
             && Objects.equals(this.kubernetesSvcIpRange, that.kubernetesSvcIpRange)
             && Objects.equals(this.clusterTags, that.clusterTags)
@@ -1052,6 +1084,7 @@ public class ClusterSpec {
             eniNetwork,
             serviceNetwork,
             authentication,
+            publicAccess,
             billingMode,
             masters,
             kubernetesSvcIpRange,
@@ -1087,6 +1120,7 @@ public class ClusterSpec {
         sb.append("    eniNetwork: ").append(toIndentedString(eniNetwork)).append("\n");
         sb.append("    serviceNetwork: ").append(toIndentedString(serviceNetwork)).append("\n");
         sb.append("    authentication: ").append(toIndentedString(authentication)).append("\n");
+        sb.append("    publicAccess: ").append(toIndentedString(publicAccess)).append("\n");
         sb.append("    billingMode: ").append(toIndentedString(billingMode)).append("\n");
         sb.append("    masters: ").append(toIndentedString(masters)).append("\n");
         sb.append("    kubernetesSvcIpRange: ").append(toIndentedString(kubernetesSvcIpRange)).append("\n");

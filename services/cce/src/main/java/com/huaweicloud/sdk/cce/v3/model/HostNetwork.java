@@ -25,6 +25,11 @@ public class HostNetwork {
 
     private String securityGroup;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "controlPlaneSecurityGroup")
+
+    private String controlPlaneSecurityGroup;
+
     public HostNetwork withVpc(String vpc) {
         this.vpc = vpc;
         return this;
@@ -76,6 +81,23 @@ public class HostNetwork {
         this.securityGroup = securityGroup;
     }
 
+    public HostNetwork withControlPlaneSecurityGroup(String controlPlaneSecurityGroup) {
+        this.controlPlaneSecurityGroup = controlPlaneSecurityGroup;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 集群控制面节点安全组ID。 **约束限制：** 创建成功后自动生成，填写无效。 **取值范围：** 不涉及 **默认取值：** 不涉及 
+     * @return controlPlaneSecurityGroup
+     */
+    public String getControlPlaneSecurityGroup() {
+        return controlPlaneSecurityGroup;
+    }
+
+    public void setControlPlaneSecurityGroup(String controlPlaneSecurityGroup) {
+        this.controlPlaneSecurityGroup = controlPlaneSecurityGroup;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +108,13 @@ public class HostNetwork {
         }
         HostNetwork that = (HostNetwork) obj;
         return Objects.equals(this.vpc, that.vpc) && Objects.equals(this.subnet, that.subnet)
-            && Objects.equals(this.securityGroup, that.securityGroup);
+            && Objects.equals(this.securityGroup, that.securityGroup)
+            && Objects.equals(this.controlPlaneSecurityGroup, that.controlPlaneSecurityGroup);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(vpc, subnet, securityGroup);
+        return Objects.hash(vpc, subnet, securityGroup, controlPlaneSecurityGroup);
     }
 
     @Override
@@ -101,6 +124,7 @@ public class HostNetwork {
         sb.append("    vpc: ").append(toIndentedString(vpc)).append("\n");
         sb.append("    subnet: ").append(toIndentedString(subnet)).append("\n");
         sb.append("    securityGroup: ").append(toIndentedString(securityGroup)).append("\n");
+        sb.append("    controlPlaneSecurityGroup: ").append(toIndentedString(controlPlaneSecurityGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

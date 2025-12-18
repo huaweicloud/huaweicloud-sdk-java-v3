@@ -20,6 +20,8 @@ public class DccRegion {
 
     public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://dcc.cn-north-4.myhuaweicloud.com");
 
+    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://dcc.eu-west-101.myhuaweicloud.com");
+
     public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://dcc.cn-south-1.myhuaweicloud.com");
 
     public static final Region CN_EAST_2 = new Region("cn-east-2", "https://dcc.cn-east-2.myhuaweicloud.com");
@@ -47,6 +49,7 @@ public class DccRegion {
         map.put("cn-north-1", CN_NORTH_1);
         map.put("cn-north-2", CN_NORTH_2);
         map.put("cn-north-4", CN_NORTH_4);
+        map.put("eu-west-101", EU_WEST_101);
         map.put("cn-south-1", CN_SOUTH_1);
         map.put("cn-east-2", CN_EAST_2);
         map.put("cn-east-3", CN_EAST_3);

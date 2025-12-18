@@ -19,6 +19,11 @@ public class ShowModifyHistoryResponse extends SdkResponse {
 
     private List<ConfigurationHistoryRsp> histories = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_count")
+
+    private Integer totalCount;
+
     public ShowModifyHistoryResponse withHistories(List<ConfigurationHistoryRsp> histories) {
         this.histories = histories;
         return this;
@@ -41,7 +46,7 @@ public class ShowModifyHistoryResponse extends SdkResponse {
     }
 
     /**
-     * 实例参数的修改历史列表
+     * 实例参数的修改历史列表。
      * @return histories
      */
     public List<ConfigurationHistoryRsp> getHistories() {
@@ -50,6 +55,23 @@ public class ShowModifyHistoryResponse extends SdkResponse {
 
     public void setHistories(List<ConfigurationHistoryRsp> histories) {
         this.histories = histories;
+    }
+
+    public ShowModifyHistoryResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 参数修改历史记录总条数。 **约束限制：** 默认返回参数历史修改记录总条数。若为参数名搜索，返回符合要求的记录总条数。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @return totalCount
+     */
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
     }
 
     @Override
@@ -61,12 +83,12 @@ public class ShowModifyHistoryResponse extends SdkResponse {
             return false;
         }
         ShowModifyHistoryResponse that = (ShowModifyHistoryResponse) obj;
-        return Objects.equals(this.histories, that.histories);
+        return Objects.equals(this.histories, that.histories) && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(histories);
+        return Objects.hash(histories, totalCount);
     }
 
     @Override
@@ -74,6 +96,7 @@ public class ShowModifyHistoryResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowModifyHistoryResponse {\n");
         sb.append("    histories: ").append(toIndentedString(histories)).append("\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

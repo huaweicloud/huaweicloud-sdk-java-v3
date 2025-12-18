@@ -8,6 +8,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.vpcep.v1.model.AcceptOrRejectEndpointRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.AcceptOrRejectEndpointRequestBody;
 import com.huaweicloud.sdk.vpcep.v1.model.AcceptOrRejectEndpointResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.AddEndpointServiceServerResourceRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.AddEndpointServiceServerResourceRequestBody;
+import com.huaweicloud.sdk.vpcep.v1.model.AddEndpointServiceServerResourceResponse;
 import com.huaweicloud.sdk.vpcep.v1.model.AddOrRemoveServicePermissionsRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.AddOrRemoveServicePermissionsRequestBody;
 import com.huaweicloud.sdk.vpcep.v1.model.AddOrRemoveServicePermissionsResponse;
@@ -80,6 +83,9 @@ import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServiceResponse;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointWhiteRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointWhiteRequestBody;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointWhiteResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.UpgradeEndpointRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.UpgradeEndpointRequestBody;
+import com.huaweicloud.sdk.vpcep.v1.model.UpgradeEndpointResponse;
 import com.huaweicloud.sdk.vpcep.v1.model.UpgradeEndpointServiceRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.UpgradeEndpointServiceResponse;
 
@@ -109,6 +115,39 @@ public class VpcepMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AcceptOrRejectEndpointRequestBody.class),
             f -> f.withMarshaller(AcceptOrRejectEndpointRequest::getBody, AcceptOrRejectEndpointRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddEndpointServiceServerResourceRequest, AddEndpointServiceServerResourceResponse> addEndpointServiceServerResource =
+        genForAddEndpointServiceServerResource();
+
+    private static HttpRequestDef<AddEndpointServiceServerResourceRequest, AddEndpointServiceServerResourceResponse> genForAddEndpointServiceServerResource() {
+        // basic
+        HttpRequestDef.Builder<AddEndpointServiceServerResourceRequest, AddEndpointServiceServerResourceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AddEndpointServiceServerResourceRequest.class,
+                    AddEndpointServiceServerResourceResponse.class)
+                .withName("AddEndpointServiceServerResource")
+                .withUri("/v2/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/add-server-resources")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("vpc_endpoint_service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddEndpointServiceServerResourceRequest::getVpcEndpointServiceId,
+                AddEndpointServiceServerResourceRequest::setVpcEndpointServiceId));
+        builder.<AddEndpointServiceServerResourceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddEndpointServiceServerResourceRequestBody.class),
+            f -> f.withMarshaller(AddEndpointServiceServerResourceRequest::getBody,
+                AddEndpointServiceServerResourceRequest::setBody));
 
         // response
 
@@ -1011,6 +1050,34 @@ public class VpcepMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpgradeEndpointServiceRequest::getVpcEndpointServiceId,
                 UpgradeEndpointServiceRequest::setVpcEndpointServiceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeEndpointRequest, UpgradeEndpointResponse> upgradeEndpoint =
+        genForUpgradeEndpoint();
+
+    private static HttpRequestDef<UpgradeEndpointRequest, UpgradeEndpointResponse> genForUpgradeEndpoint() {
+        // basic
+        HttpRequestDef.Builder<UpgradeEndpointRequest, UpgradeEndpointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpgradeEndpointRequest.class, UpgradeEndpointResponse.class)
+                .withName("UpgradeEndpoint")
+                .withUri("/v2/{project_id}/vpc-endpoints/{vpc_endpoint_id}/upgrade")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("vpc_endpoint_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeEndpointRequest::getVpcEndpointId, UpgradeEndpointRequest::setVpcEndpointId));
+        builder.<UpgradeEndpointRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpgradeEndpointRequestBody.class),
+            f -> f.withMarshaller(UpgradeEndpointRequest::getBody, UpgradeEndpointRequest::setBody));
 
         // response
 

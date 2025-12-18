@@ -33,7 +33,7 @@ public class ConfigurationHistoryRsp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "applied")
 
-    private Boolean applied;
+    private String applied;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
@@ -51,7 +51,7 @@ public class ConfigurationHistoryRsp {
     }
 
     /**
-     * 参数名称。
+     * **参数解释：** 参数名称。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return parameterName
      */
     public String getParameterName() {
@@ -68,7 +68,7 @@ public class ConfigurationHistoryRsp {
     }
 
     /**
-     * 参数旧值
+     * **参数解释：** 参数旧值。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return oldValue
      */
     public String getOldValue() {
@@ -85,7 +85,7 @@ public class ConfigurationHistoryRsp {
     }
 
     /**
-     * 参数新值
+     * **参数解释：** 参数新值。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return newValue
      */
     public String getNewValue() {
@@ -102,7 +102,7 @@ public class ConfigurationHistoryRsp {
     }
 
     /**
-     * 更新结果
+     * **参数解释：** 更新结果。 **约束限制：** 不涉及。 **取值范围：** - SUCCESS：成功。 - FAILED：失败。 **默认取值：** 不涉及。
      * @return updateResult
      */
     public String getUpdateResult() {
@@ -113,20 +113,20 @@ public class ConfigurationHistoryRsp {
         this.updateResult = updateResult;
     }
 
-    public ConfigurationHistoryRsp withApplied(Boolean applied) {
+    public ConfigurationHistoryRsp withApplied(String applied) {
         this.applied = applied;
         return this;
     }
 
     /**
-     * - true:已生效 - false:未生效
+     * **参数解释：** 是否生效。 **约束限制：** 不涉及。 **取值范围：** - true:已生效。 - false:未生效。 **默认取值：** 不涉及。
      * @return applied
      */
-    public Boolean getApplied() {
+    public String getApplied() {
         return applied;
     }
 
-    public void setApplied(Boolean applied) {
+    public void setApplied(String applied) {
         this.applied = applied;
     }
 
@@ -136,7 +136,7 @@ public class ConfigurationHistoryRsp {
     }
 
     /**
-     * 更新时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。  [其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。](tag:hc)  [其中，T指某个时间的开始；Z指时区偏移量。](tag:hk)
+     * **参数解释：** 更新时间。 **约束限制：** 不涉及。 **取值范围：** 格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。 **默认取值：** 不涉及。
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -153,7 +153,7 @@ public class ConfigurationHistoryRsp {
     }
 
     /**
-     * 生效时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。  [其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。](tag:hc)  [其中，T指某个时间的开始；Z指时区偏移量。](tag:hk)
+     * **参数解释：** 生效时间。 **约束限制：** 不涉及。 **取值范围：** 格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。 **默认取值：** 不涉及。
      * @return appliedAt
      */
     public String getAppliedAt() {

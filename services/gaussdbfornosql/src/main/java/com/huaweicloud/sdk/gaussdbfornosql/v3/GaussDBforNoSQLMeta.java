@@ -370,6 +370,9 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationR
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationsRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceLBRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceLbRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceLbResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceNameRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceNameRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceNameResponse;
@@ -4036,15 +4039,21 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowModifyHistoryRequest::getInstanceId, ShowModifyHistoryRequest::setInstanceId));
-        builder.<Integer>withRequestField("offset",
+        builder.<String>withRequestField("parameter_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowModifyHistoryRequest::getParameterName,
+                ShowModifyHistoryRequest::setParameterName));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowModifyHistoryRequest::getOffset, ShowModifyHistoryRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
+        builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowModifyHistoryRequest::getLimit, ShowModifyHistoryRequest::setLimit));
 
         // response
@@ -4851,6 +4860,34 @@ public class GaussDBforNoSQLMeta {
             TypeCasts.uncheckedConversion(UpdateInstanceConfigurationsRequestBody.class),
             f -> f.withMarshaller(UpdateInstanceConfigurationsRequest::getBody,
                 UpdateInstanceConfigurationsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInstanceLbRequest, UpdateInstanceLbResponse> updateInstanceLb =
+        genForUpdateInstanceLb();
+
+    private static HttpRequestDef<UpdateInstanceLbRequest, UpdateInstanceLbResponse> genForUpdateInstanceLb() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstanceLbRequest, UpdateInstanceLbResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceLbRequest.class, UpdateInstanceLbResponse.class)
+                .withName("UpdateInstanceLb")
+                .withUri("/v3/{project_id}/instances/{instance_id}/lb")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceLbRequest::getInstanceId, UpdateInstanceLbRequest::setInstanceId));
+        builder.<UpdateInstanceLBRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateInstanceLBRequestBody.class),
+            f -> f.withMarshaller(UpdateInstanceLbRequest::getBody, UpdateInstanceLbRequest::setBody));
 
         // response
 

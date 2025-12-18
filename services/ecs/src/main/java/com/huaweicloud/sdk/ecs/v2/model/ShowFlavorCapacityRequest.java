@@ -15,6 +15,16 @@ public class ShowFlavorCapacityRequest {
 
     private String flavorId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private String count;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region_ids")
+
+    private String regionIds;
+
     public ShowFlavorCapacityRequest withFlavorId(String flavorId) {
         this.flavorId = flavorId;
         return this;
@@ -32,6 +42,40 @@ public class ShowFlavorCapacityRequest {
         this.flavorId = flavorId;
     }
 
+    public ShowFlavorCapacityRequest withCount(String count) {
+        this.count = count;
+        return this;
+    }
+
+    /**
+     * Get count
+     * @return count
+     */
+    public String getCount() {
+        return count;
+    }
+
+    public void setCount(String count) {
+        this.count = count;
+    }
+
+    public ShowFlavorCapacityRequest withRegionIds(String regionIds) {
+        this.regionIds = regionIds;
+        return this;
+    }
+
+    /**
+     * Get regionIds
+     * @return regionIds
+     */
+    public String getRegionIds() {
+        return regionIds;
+    }
+
+    public void setRegionIds(String regionIds) {
+        this.regionIds = regionIds;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +85,13 @@ public class ShowFlavorCapacityRequest {
             return false;
         }
         ShowFlavorCapacityRequest that = (ShowFlavorCapacityRequest) obj;
-        return Objects.equals(this.flavorId, that.flavorId);
+        return Objects.equals(this.flavorId, that.flavorId) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.regionIds, that.regionIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(flavorId);
+        return Objects.hash(flavorId, count, regionIds);
     }
 
     @Override
@@ -54,6 +99,8 @@ public class ShowFlavorCapacityRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowFlavorCapacityRequest {\n");
         sb.append("    flavorId: ").append(toIndentedString(flavorId)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    regionIds: ").append(toIndentedString(regionIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -26,11 +26,6 @@ public class ListEnginePropertiesEntity {
     private String maxConnectionPerBroker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "max_partition_per_broker")
-
-    private String maxPartitionPerBroker;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_broker")
 
     private String maxBroker;
@@ -119,23 +114,6 @@ public class ListEnginePropertiesEntity {
 
     public void setMaxConnectionPerBroker(String maxConnectionPerBroker) {
         this.maxConnectionPerBroker = maxConnectionPerBroker;
-    }
-
-    public ListEnginePropertiesEntity withMaxPartitionPerBroker(String maxPartitionPerBroker) {
-        this.maxPartitionPerBroker = maxPartitionPerBroker;
-        return this;
-    }
-
-    /**
-     * 每个Broker的最大分区数。
-     * @return maxPartitionPerBroker
-     */
-    public String getMaxPartitionPerBroker() {
-        return maxPartitionPerBroker;
-    }
-
-    public void setMaxPartitionPerBroker(String maxPartitionPerBroker) {
-        this.maxPartitionPerBroker = maxPartitionPerBroker;
     }
 
     public ListEnginePropertiesEntity withMaxBroker(String maxBroker) {
@@ -286,7 +264,6 @@ public class ListEnginePropertiesEntity {
         return Objects.equals(this.stepLength, that.stepLength)
             && Objects.equals(this.maxQueuePerBroker, that.maxQueuePerBroker)
             && Objects.equals(this.maxConnectionPerBroker, that.maxConnectionPerBroker)
-            && Objects.equals(this.maxPartitionPerBroker, that.maxPartitionPerBroker)
             && Objects.equals(this.maxBroker, that.maxBroker)
             && Objects.equals(this.maxStoragePerNode, that.maxStoragePerNode)
             && Objects.equals(this.maxConsumerPerBroker, that.maxConsumerPerBroker)
@@ -302,7 +279,6 @@ public class ListEnginePropertiesEntity {
         return Objects.hash(stepLength,
             maxQueuePerBroker,
             maxConnectionPerBroker,
-            maxPartitionPerBroker,
             maxBroker,
             maxStoragePerNode,
             maxConsumerPerBroker,
@@ -320,7 +296,6 @@ public class ListEnginePropertiesEntity {
         sb.append("    stepLength: ").append(toIndentedString(stepLength)).append("\n");
         sb.append("    maxQueuePerBroker: ").append(toIndentedString(maxQueuePerBroker)).append("\n");
         sb.append("    maxConnectionPerBroker: ").append(toIndentedString(maxConnectionPerBroker)).append("\n");
-        sb.append("    maxPartitionPerBroker: ").append(toIndentedString(maxPartitionPerBroker)).append("\n");
         sb.append("    maxBroker: ").append(toIndentedString(maxBroker)).append("\n");
         sb.append("    maxStoragePerNode: ").append(toIndentedString(maxStoragePerNode)).append("\n");
         sb.append("    maxConsumerPerBroker: ").append(toIndentedString(maxConsumerPerBroker)).append("\n");

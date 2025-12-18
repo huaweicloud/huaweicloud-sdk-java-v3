@@ -105,6 +105,11 @@ public class ListEpsQuotasRequest {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_name")
+
+    private String enterpriseProjectName;
+
     public ListEpsQuotasRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -175,6 +180,23 @@ public class ListEpsQuotasRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public ListEpsQuotasRequest withEnterpriseProjectName(String enterpriseProjectName) {
+        this.enterpriseProjectName = enterpriseProjectName;
+        return this;
+    }
+
+    /**
+     * 企业项目名称。
+     * @return enterpriseProjectName
+     */
+    public String getEnterpriseProjectName() {
+        return enterpriseProjectName;
+    }
+
+    public void setEnterpriseProjectName(String enterpriseProjectName) {
+        this.enterpriseProjectName = enterpriseProjectName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -186,12 +208,13 @@ public class ListEpsQuotasRequest {
         ListEpsQuotasRequest that = (ListEpsQuotasRequest) obj;
         return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, offset, limit, enterpriseProjectId);
+        return Objects.hash(xLanguage, offset, limit, enterpriseProjectId, enterpriseProjectName);
     }
 
     @Override
@@ -202,6 +225,7 @@ public class ListEpsQuotasRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

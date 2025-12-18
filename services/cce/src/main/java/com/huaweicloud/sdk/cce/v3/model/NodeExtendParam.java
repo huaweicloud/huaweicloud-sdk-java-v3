@@ -90,6 +90,80 @@ public class NodeExtendParam {
 
     private Integer chargingMode;
 
+    /**
+     * **参数解释**： 创建竞价实例时，需指定该参数的值为“spot”。 **约束限制**： 仅当billingMode=0时此参数生效 **取值范围**： 不涉及 **默认取值**： 不涉及
+     */
+    public static final class MarketTypeEnum {
+
+        /**
+         * Enum SPOT for value: "spot"
+         */
+        public static final MarketTypeEnum SPOT = new MarketTypeEnum("spot");
+
+        private static final Map<String, MarketTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, MarketTypeEnum> createStaticFields() {
+            Map<String, MarketTypeEnum> map = new HashMap<>();
+            map.put("spot", SPOT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        MarketTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static MarketTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MarketTypeEnum(value));
+        }
+
+        public static MarketTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof MarketTypeEnum) {
+                return this.value.equals(((MarketTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marketType")
+
+    private MarketTypeEnum marketType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "spotPrice")
+
+    private String spotPrice;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agency_name")
 
@@ -444,6 +518,40 @@ public class NodeExtendParam {
         this.chargingMode = chargingMode;
     }
 
+    public NodeExtendParam withMarketType(MarketTypeEnum marketType) {
+        this.marketType = marketType;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 创建竞价实例时，需指定该参数的值为“spot”。 **约束限制**： 仅当billingMode=0时此参数生效 **取值范围**： 不涉及 **默认取值**： 不涉及
+     * @return marketType
+     */
+    public MarketTypeEnum getMarketType() {
+        return marketType;
+    }
+
+    public void setMarketType(MarketTypeEnum marketType) {
+        this.marketType = marketType;
+    }
+
+    public NodeExtendParam withSpotPrice(String spotPrice) {
+        this.spotPrice = spotPrice;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 用户愿意为竞价实例每小时支付的最高价格。 **约束限制**： - 仅当billingMode=0且marketType=spot时，该参数设置后生效。 - 当billingMode=0且marketType=spot时，如果不传递spotPrice，默认使用按需购买的价格作为竞价。 - spotPrice需要小于等于按需价格并大于等于云服务器市场价格。  **取值范围**： 不涉及 **默认取值**： 不涉及
+     * @return spotPrice
+     */
+    public String getSpotPrice() {
+        return spotPrice;
+    }
+
+    public void setSpotPrice(String spotPrice) {
+        this.spotPrice = spotPrice;
+    }
+
     public NodeExtendParam withAgencyName(String agencyName) {
         this.agencyName = agencyName;
         return this;
@@ -549,7 +657,8 @@ public class NodeExtendParam {
             && Objects.equals(this.alphaCcePreInstall, that.alphaCcePreInstall)
             && Objects.equals(this.alphaCcePostInstall, that.alphaCcePostInstall)
             && Objects.equals(this.alphaCceNodeImageID, that.alphaCceNodeImageID)
-            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.agencyName, that.agencyName)
+            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.marketType, that.marketType)
+            && Objects.equals(this.spotPrice, that.spotPrice) && Objects.equals(this.agencyName, that.agencyName)
             && Objects.equals(this.kubeReservedMem, that.kubeReservedMem)
             && Objects.equals(this.systemReservedMem, that.systemReservedMem)
             && Objects.equals(this.initNodePassword, that.initNodePassword)
@@ -573,6 +682,8 @@ public class NodeExtendParam {
             alphaCcePostInstall,
             alphaCceNodeImageID,
             chargingMode,
+            marketType,
+            spotPrice,
             agencyName,
             kubeReservedMem,
             systemReservedMem,
@@ -599,6 +710,8 @@ public class NodeExtendParam {
         sb.append("    alphaCcePostInstall: ").append(toIndentedString(alphaCcePostInstall)).append("\n");
         sb.append("    alphaCceNodeImageID: ").append(toIndentedString(alphaCceNodeImageID)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
+        sb.append("    marketType: ").append(toIndentedString(marketType)).append("\n");
+        sb.append("    spotPrice: ").append(toIndentedString(spotPrice)).append("\n");
         sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
         sb.append("    kubeReservedMem: ").append(toIndentedString(kubeReservedMem)).append("\n");
         sb.append("    systemReservedMem: ").append(toIndentedString(systemReservedMem)).append("\n");

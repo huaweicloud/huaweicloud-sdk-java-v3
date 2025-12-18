@@ -6,8 +6,12 @@ import com.huaweicloud.sdk.cce.v5.model.DeleteImageCacheRequest;
 import com.huaweicloud.sdk.cce.v5.model.DeleteImageCacheResponse;
 import com.huaweicloud.sdk.cce.v5.model.ListImageCachesRequest;
 import com.huaweicloud.sdk.cce.v5.model.ListImageCachesResponse;
+import com.huaweicloud.sdk.cce.v5.model.ListPackageProductsRequest;
+import com.huaweicloud.sdk.cce.v5.model.ListPackageProductsResponse;
 import com.huaweicloud.sdk.cce.v5.model.ShowImageCacheRequest;
 import com.huaweicloud.sdk.cce.v5.model.ShowImageCacheResponse;
+import com.huaweicloud.sdk.cce.v5.model.SubscribePackageProductsRequest;
+import com.huaweicloud.sdk.cce.v5.model.SubscribePackageProductsResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
@@ -123,6 +127,35 @@ public class CceAsyncClient {
     }
 
     /**
+     * 查询套餐包列表
+     *
+     * 查询套餐包列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPackageProductsRequest 请求对象
+     * @return CompletableFuture<ListPackageProductsResponse>
+     */
+    public CompletableFuture<ListPackageProductsResponse> listPackageProductsAsync(ListPackageProductsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.listPackageProducts);
+    }
+
+    /**
+     * 查询套餐包列表
+     *
+     * 查询套餐包列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPackageProductsRequest 请求对象
+     * @return AsyncInvoker<ListPackageProductsRequest, ListPackageProductsResponse>
+     */
+    public AsyncInvoker<ListPackageProductsRequest, ListPackageProductsResponse> listPackageProductsAsyncInvoker(
+        ListPackageProductsRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.listPackageProducts, hcClient);
+    }
+
+    /**
      * 查询镜像缓存详情
      *
      * 查询镜像缓存详情
@@ -149,6 +182,36 @@ public class CceAsyncClient {
     public AsyncInvoker<ShowImageCacheRequest, ShowImageCacheResponse> showImageCacheAsyncInvoker(
         ShowImageCacheRequest request) {
         return new AsyncInvoker<>(request, CceMeta.showImageCache, hcClient);
+    }
+
+    /**
+     * 订购套餐包
+     *
+     * 订购套餐包
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SubscribePackageProductsRequest 请求对象
+     * @return CompletableFuture<SubscribePackageProductsResponse>
+     */
+    public CompletableFuture<SubscribePackageProductsResponse> subscribePackageProductsAsync(
+        SubscribePackageProductsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.subscribePackageProducts);
+    }
+
+    /**
+     * 订购套餐包
+     *
+     * 订购套餐包
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SubscribePackageProductsRequest 请求对象
+     * @return AsyncInvoker<SubscribePackageProductsRequest, SubscribePackageProductsResponse>
+     */
+    public AsyncInvoker<SubscribePackageProductsRequest, SubscribePackageProductsResponse> subscribePackageProductsAsyncInvoker(
+        SubscribePackageProductsRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.subscribePackageProducts, hcClient);
     }
 
 }

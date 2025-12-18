@@ -17,19 +17,19 @@ public class ShowKafkaTopicQuotaResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quotas")
 
-    private List<KafkaTopicQuota> quotas = null;
+    private List<KafkaTopicQuotaResp> quotas = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
     private Integer count;
 
-    public ShowKafkaTopicQuotaResponse withQuotas(List<KafkaTopicQuota> quotas) {
+    public ShowKafkaTopicQuotaResponse withQuotas(List<KafkaTopicQuotaResp> quotas) {
         this.quotas = quotas;
         return this;
     }
 
-    public ShowKafkaTopicQuotaResponse addQuotasItem(KafkaTopicQuota quotasItem) {
+    public ShowKafkaTopicQuotaResponse addQuotasItem(KafkaTopicQuotaResp quotasItem) {
         if (this.quotas == null) {
             this.quotas = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class ShowKafkaTopicQuotaResponse extends SdkResponse {
         return this;
     }
 
-    public ShowKafkaTopicQuotaResponse withQuotas(Consumer<List<KafkaTopicQuota>> quotasSetter) {
+    public ShowKafkaTopicQuotaResponse withQuotas(Consumer<List<KafkaTopicQuotaResp>> quotasSetter) {
         if (this.quotas == null) {
             this.quotas = new ArrayList<>();
         }
@@ -49,11 +49,11 @@ public class ShowKafkaTopicQuotaResponse extends SdkResponse {
      * Topic流控配置
      * @return quotas
      */
-    public List<KafkaTopicQuota> getQuotas() {
+    public List<KafkaTopicQuotaResp> getQuotas() {
         return quotas;
     }
 
-    public void setQuotas(List<KafkaTopicQuota> quotas) {
+    public void setQuotas(List<KafkaTopicQuotaResp> quotas) {
         this.quotas = quotas;
     }
 

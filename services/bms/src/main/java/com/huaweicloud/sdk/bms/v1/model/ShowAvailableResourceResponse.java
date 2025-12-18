@@ -15,63 +15,42 @@ import java.util.function.Consumer;
 public class ShowAvailableResourceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "availability_zone")
+    @JsonProperty(value = "available_resource")
 
-    private String availabilityZone;
+    private List<AvailableResourceResp> availableResource = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "flavors")
+    public ShowAvailableResourceResponse withAvailableResource(List<AvailableResourceResp> availableResource) {
+        this.availableResource = availableResource;
+        return this;
+    }
 
-    private List<FlavorResource> flavors = null;
+    public ShowAvailableResourceResponse addAvailableResourceItem(AvailableResourceResp availableResourceItem) {
+        if (this.availableResource == null) {
+            this.availableResource = new ArrayList<>();
+        }
+        this.availableResource.add(availableResourceItem);
+        return this;
+    }
 
-    public ShowAvailableResourceResponse withAvailabilityZone(String availabilityZone) {
-        this.availabilityZone = availabilityZone;
+    public ShowAvailableResourceResponse withAvailableResource(
+        Consumer<List<AvailableResourceResp>> availableResourceSetter) {
+        if (this.availableResource == null) {
+            this.availableResource = new ArrayList<>();
+        }
+        availableResourceSetter.accept(this.availableResource);
         return this;
     }
 
     /**
-     * Get availabilityZone
-     * @return availabilityZone
+     * Get availableResource
+     * @return availableResource
      */
-    public String getAvailabilityZone() {
-        return availabilityZone;
+    public List<AvailableResourceResp> getAvailableResource() {
+        return availableResource;
     }
 
-    public void setAvailabilityZone(String availabilityZone) {
-        this.availabilityZone = availabilityZone;
-    }
-
-    public ShowAvailableResourceResponse withFlavors(List<FlavorResource> flavors) {
-        this.flavors = flavors;
-        return this;
-    }
-
-    public ShowAvailableResourceResponse addFlavorsItem(FlavorResource flavorsItem) {
-        if (this.flavors == null) {
-            this.flavors = new ArrayList<>();
-        }
-        this.flavors.add(flavorsItem);
-        return this;
-    }
-
-    public ShowAvailableResourceResponse withFlavors(Consumer<List<FlavorResource>> flavorsSetter) {
-        if (this.flavors == null) {
-            this.flavors = new ArrayList<>();
-        }
-        flavorsSetter.accept(this.flavors);
-        return this;
-    }
-
-    /**
-     * Get flavors
-     * @return flavors
-     */
-    public List<FlavorResource> getFlavors() {
-        return flavors;
-    }
-
-    public void setFlavors(List<FlavorResource> flavors) {
-        this.flavors = flavors;
+    public void setAvailableResource(List<AvailableResourceResp> availableResource) {
+        this.availableResource = availableResource;
     }
 
     @Override
@@ -83,21 +62,19 @@ public class ShowAvailableResourceResponse extends SdkResponse {
             return false;
         }
         ShowAvailableResourceResponse that = (ShowAvailableResourceResponse) obj;
-        return Objects.equals(this.availabilityZone, that.availabilityZone)
-            && Objects.equals(this.flavors, that.flavors);
+        return Objects.equals(this.availableResource, that.availableResource);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(availabilityZone, flavors);
+        return Objects.hash(availableResource);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowAvailableResourceResponse {\n");
-        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
-        sb.append("    flavors: ").append(toIndentedString(flavors)).append("\n");
+        sb.append("    availableResource: ").append(toIndentedString(availableResource)).append("\n");
         sb.append("}");
         return sb.toString();
     }

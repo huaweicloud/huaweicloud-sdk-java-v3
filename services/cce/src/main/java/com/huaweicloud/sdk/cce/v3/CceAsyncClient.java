@@ -6,6 +6,8 @@ import com.huaweicloud.sdk.cce.v3.model.AddNodesToNodePoolRequest;
 import com.huaweicloud.sdk.cce.v3.model.AddNodesToNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.AwakeClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.AwakeClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.BatchCreateAddonPrecheckRequest;
+import com.huaweicloud.sdk.cce.v3.model.BatchCreateAddonPrecheckResponse;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateAutopilotClusterTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateAutopilotClusterTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateClusterTagsRequest;
@@ -72,6 +74,8 @@ import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotChartRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotChartResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotJobRequest;
+import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotJobResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotMaintenanceWindowRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotMaintenanceWindowResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotReleaseRequest;
@@ -94,16 +98,22 @@ import com.huaweicloud.sdk.cce.v3.model.DownloadChartRequest;
 import com.huaweicloud.sdk.cce.v3.model.DownloadChartResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetAccessPolicyRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetAccessPolicyResponse;
+import com.huaweicloud.sdk.cce.v3.model.GetAutopilotOneJobRequest;
+import com.huaweicloud.sdk.cce.v3.model.GetAutopilotOneJobResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetAvaliableZoneRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetAvaliableZoneResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetClusterFlavorSpecsRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetClusterFlavorSpecsResponse;
+import com.huaweicloud.sdk.cce.v3.model.GetClusterLongAkskConfigRequest;
+import com.huaweicloud.sdk.cce.v3.model.GetClusterLongAkskConfigResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetClusterQuotaRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetClusterQuotaResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetCustomizeTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetCustomizeTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetLabelsRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetLabelsResponse;
+import com.huaweicloud.sdk.cce.v3.model.GetLongAkskConfigRequest;
+import com.huaweicloud.sdk.cce.v3.model.GetLongAkskConfigResponse;
 import com.huaweicloud.sdk.cce.v3.model.GetResourceTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetResourceTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.HibernateClusterRequest;
@@ -130,6 +140,8 @@ import com.huaweicloud.sdk.cce.v3.model.ListAutopilotClusterUpgradePathsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotClusterUpgradePathsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotClustersRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotClustersResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotJobsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotJobsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotPreCheckTasksRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotPreCheckTasksResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotReleasesRequest;
@@ -170,6 +182,8 @@ import com.huaweicloud.sdk.cce.v3.model.LockNodepoolNodeScaleDownRequest;
 import com.huaweicloud.sdk.cce.v3.model.LockNodepoolNodeScaleDownResponse;
 import com.huaweicloud.sdk.cce.v3.model.MigrateNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.MigrateNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.MigrateToNodePoolRequest;
+import com.huaweicloud.sdk.cce.v3.model.MigrateToNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.PauseUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.PauseUpgradeClusterTaskResponse;
 import com.huaweicloud.sdk.cce.v3.model.RemoveNodeRequest;
@@ -198,12 +212,16 @@ import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotChartRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotChartResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotChartValuesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotChartValuesResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterConfigRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterConfigResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterEndpointsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterEndpointsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterUpgradeInfoRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterUpgradeInfoResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotFeatureGatesRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotFeatureGatesResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotJobRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotJobResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotMaintenanceWindowRequest;
@@ -296,8 +314,12 @@ import com.huaweicloud.sdk.cce.v3.model.UpdateClusterEipRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateClusterEipResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateClusterLogConfigRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateClusterLogConfigResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateClusterLongAkskConfigRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateClusterLongAkskConfigResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateLongAkskConfigRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateLongAkskConfigResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateNodePoolConfigurationRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateNodePoolConfigurationResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateNodePoolRequest;
@@ -437,6 +459,36 @@ public class CceAsyncClient {
     public AsyncInvoker<AwakeClusterRequest, AwakeClusterResponse> awakeClusterAsyncInvoker(
         AwakeClusterRequest request) {
         return new AsyncInvoker<>(request, CceMeta.awakeCluster, hcClient);
+    }
+
+    /**
+     * 批量创建插件检查任务
+     *
+     * 该API用于在指定集群下批量创建插件检查任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateAddonPrecheckRequest 请求对象
+     * @return CompletableFuture<BatchCreateAddonPrecheckResponse>
+     */
+    public CompletableFuture<BatchCreateAddonPrecheckResponse> batchCreateAddonPrecheckAsync(
+        BatchCreateAddonPrecheckRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.batchCreateAddonPrecheck);
+    }
+
+    /**
+     * 批量创建插件检查任务
+     *
+     * 该API用于在指定集群下批量创建插件检查任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateAddonPrecheckRequest 请求对象
+     * @return AsyncInvoker<BatchCreateAddonPrecheckRequest, BatchCreateAddonPrecheckResponse>
+     */
+    public AsyncInvoker<BatchCreateAddonPrecheckRequest, BatchCreateAddonPrecheckResponse> batchCreateAddonPrecheckAsyncInvoker(
+        BatchCreateAddonPrecheckRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.batchCreateAddonPrecheck, hcClient);
     }
 
     /**
@@ -1341,6 +1393,36 @@ public class CceAsyncClient {
     }
 
     /**
+     * 获取集群LongAKSK配置
+     *
+     * 该API用于获取集群longaksk的配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetClusterLongAkskConfigRequest 请求对象
+     * @return CompletableFuture<GetClusterLongAkskConfigResponse>
+     */
+    public CompletableFuture<GetClusterLongAkskConfigResponse> getClusterLongAkskConfigAsync(
+        GetClusterLongAkskConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.getClusterLongAkskConfig);
+    }
+
+    /**
+     * 获取集群LongAKSK配置
+     *
+     * 该API用于获取集群longaksk的配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetClusterLongAkskConfigRequest 请求对象
+     * @return AsyncInvoker<GetClusterLongAkskConfigRequest, GetClusterLongAkskConfigResponse>
+     */
+    public AsyncInvoker<GetClusterLongAkskConfigRequest, GetClusterLongAkskConfigResponse> getClusterLongAkskConfigAsyncInvoker(
+        GetClusterLongAkskConfigRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.getClusterLongAkskConfig, hcClient);
+    }
+
+    /**
      * 获取集群配额
      *
      * 该API用于获取集群配额
@@ -1424,6 +1506,35 @@ public class CceAsyncClient {
      */
     public AsyncInvoker<GetLabelsRequest, GetLabelsResponse> getLabelsAsyncInvoker(GetLabelsRequest request) {
         return new AsyncInvoker<>(request, CceMeta.getLabels, hcClient);
+    }
+
+    /**
+     * 获取项目LongAKSK配置
+     *
+     * 该API用于获取项目LongAKSK的配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetLongAkskConfigRequest 请求对象
+     * @return CompletableFuture<GetLongAkskConfigResponse>
+     */
+    public CompletableFuture<GetLongAkskConfigResponse> getLongAkskConfigAsync(GetLongAkskConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.getLongAkskConfig);
+    }
+
+    /**
+     * 获取项目LongAKSK配置
+     *
+     * 该API用于获取项目LongAKSK的配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetLongAkskConfigRequest 请求对象
+     * @return AsyncInvoker<GetLongAkskConfigRequest, GetLongAkskConfigResponse>
+     */
+    public AsyncInvoker<GetLongAkskConfigRequest, GetLongAkskConfigResponse> getLongAkskConfigAsyncInvoker(
+        GetLongAkskConfigRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.getLongAkskConfig, hcClient);
     }
 
     /**
@@ -2047,6 +2158,37 @@ public class CceAsyncClient {
      */
     public AsyncInvoker<MigrateNodeRequest, MigrateNodeResponse> migrateNodeAsyncInvoker(MigrateNodeRequest request) {
         return new AsyncInvoker<>(request, CceMeta.migrateNode, hcClient);
+    }
+
+    /**
+     * 节点迁移到自定义节点池。
+     *
+     * 该API用于将节点迁移到自定义节点池，仅default节点池下节点支持迁移。迁移过程节点无重置无重启，原节点密码将保留。
+     * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request MigrateToNodePoolRequest 请求对象
+     * @return CompletableFuture<MigrateToNodePoolResponse>
+     */
+    public CompletableFuture<MigrateToNodePoolResponse> migrateToNodePoolAsync(MigrateToNodePoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.migrateToNodePool);
+    }
+
+    /**
+     * 节点迁移到自定义节点池。
+     *
+     * 该API用于将节点迁移到自定义节点池，仅default节点池下节点支持迁移。迁移过程节点无重置无重启，原节点密码将保留。
+     * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request MigrateToNodePoolRequest 请求对象
+     * @return AsyncInvoker<MigrateToNodePoolRequest, MigrateToNodePoolResponse>
+     */
+    public AsyncInvoker<MigrateToNodePoolRequest, MigrateToNodePoolResponse> migrateToNodePoolAsyncInvoker(
+        MigrateToNodePoolRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.migrateToNodePool, hcClient);
     }
 
     /**
@@ -3237,6 +3379,66 @@ public class CceAsyncClient {
     }
 
     /**
+     * 更新集群LongAKSK配置
+     *
+     * 该API用于更新集群LongAKSK的配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateClusterLongAkskConfigRequest 请求对象
+     * @return CompletableFuture<UpdateClusterLongAkskConfigResponse>
+     */
+    public CompletableFuture<UpdateClusterLongAkskConfigResponse> updateClusterLongAkskConfigAsync(
+        UpdateClusterLongAkskConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.updateClusterLongAkskConfig);
+    }
+
+    /**
+     * 更新集群LongAKSK配置
+     *
+     * 该API用于更新集群LongAKSK的配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateClusterLongAkskConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateClusterLongAkskConfigRequest, UpdateClusterLongAkskConfigResponse>
+     */
+    public AsyncInvoker<UpdateClusterLongAkskConfigRequest, UpdateClusterLongAkskConfigResponse> updateClusterLongAkskConfigAsyncInvoker(
+        UpdateClusterLongAkskConfigRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.updateClusterLongAkskConfig, hcClient);
+    }
+
+    /**
+     * 更新项目LongAKSK配置
+     *
+     * 该API用于更新项目longaksk的配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateLongAkskConfigRequest 请求对象
+     * @return CompletableFuture<UpdateLongAkskConfigResponse>
+     */
+    public CompletableFuture<UpdateLongAkskConfigResponse> updateLongAkskConfigAsync(
+        UpdateLongAkskConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.updateLongAkskConfig);
+    }
+
+    /**
+     * 更新项目LongAKSK配置
+     *
+     * 该API用于更新项目longaksk的配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateLongAkskConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateLongAkskConfigRequest, UpdateLongAkskConfigResponse>
+     */
+    public AsyncInvoker<UpdateLongAkskConfigRequest, UpdateLongAkskConfigResponse> updateLongAkskConfigAsyncInvoker(
+        UpdateLongAkskConfigRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.updateLongAkskConfig, hcClient);
+    }
+
+    /**
      * 更新指定的节点
      *
      * 该API用于更新指定的节点。
@@ -3432,6 +3634,7 @@ public class CceAsyncClient {
      * 同步节点池
      *
      * 该API用于同步节点池中已有节点的配置
+     * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3446,6 +3649,7 @@ public class CceAsyncClient {
      * 同步节点池
      *
      * 该API用于同步节点池中已有节点的配置
+     * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4618,6 +4822,36 @@ public class CceAsyncClient {
     }
 
     /**
+     * 查询集群日志配置信息
+     *
+     * 获取集群组件上报的LTS的配置信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutopilotClusterConfigRequest 请求对象
+     * @return CompletableFuture<ShowAutopilotClusterConfigResponse>
+     */
+    public CompletableFuture<ShowAutopilotClusterConfigResponse> showAutopilotClusterConfigAsync(
+        ShowAutopilotClusterConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.showAutopilotClusterConfig);
+    }
+
+    /**
+     * 查询集群日志配置信息
+     *
+     * 获取集群组件上报的LTS的配置信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutopilotClusterConfigRequest 请求对象
+     * @return AsyncInvoker<ShowAutopilotClusterConfigRequest, ShowAutopilotClusterConfigResponse>
+     */
+    public AsyncInvoker<ShowAutopilotClusterConfigRequest, ShowAutopilotClusterConfigResponse> showAutopilotClusterConfigAsyncInvoker(
+        ShowAutopilotClusterConfigRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.showAutopilotClusterConfig, hcClient);
+    }
+
+    /**
      * 获取集群访问的地址
      *
      * 该API用于通过集群ID获取集群访问的地址，包括PrivateIP(HA集群返回VIP)与PublicIP
@@ -4677,6 +4911,38 @@ public class CceAsyncClient {
     public AsyncInvoker<ShowAutopilotClusterUpgradeInfoRequest, ShowAutopilotClusterUpgradeInfoResponse> showAutopilotClusterUpgradeInfoAsyncInvoker(
         ShowAutopilotClusterUpgradeInfoRequest request) {
         return new AsyncInvoker<>(request, CceMeta.showAutopilotClusterUpgradeInfo, hcClient);
+    }
+
+    /**
+     * 查询特性开关状态
+     *
+     * 该API用于查询特性开关状态
+     * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutopilotFeatureGatesRequest 请求对象
+     * @return CompletableFuture<ShowAutopilotFeatureGatesResponse>
+     */
+    public CompletableFuture<ShowAutopilotFeatureGatesResponse> showAutopilotFeatureGatesAsync(
+        ShowAutopilotFeatureGatesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.showAutopilotFeatureGates);
+    }
+
+    /**
+     * 查询特性开关状态
+     *
+     * 该API用于查询特性开关状态
+     * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutopilotFeatureGatesRequest 请求对象
+     * @return AsyncInvoker<ShowAutopilotFeatureGatesRequest, ShowAutopilotFeatureGatesResponse>
+     */
+    public AsyncInvoker<ShowAutopilotFeatureGatesRequest, ShowAutopilotFeatureGatesResponse> showAutopilotFeatureGatesAsyncInvoker(
+        ShowAutopilotFeatureGatesRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.showAutopilotFeatureGates, hcClient);
     }
 
     /**
@@ -5267,6 +5533,93 @@ public class CceAsyncClient {
     public AsyncInvoker<UploadAutopilotChartRequest, UploadAutopilotChartResponse> uploadAutopilotChartAsyncInvoker(
         UploadAutopilotChartRequest request) {
         return new AsyncInvoker<>(request, CceMeta.uploadAutopilotChart, hcClient);
+    }
+
+    /**
+     * 删除Job
+     *
+     * 该API用于删除指定项目下的Job。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAutopilotJobRequest 请求对象
+     * @return CompletableFuture<DeleteAutopilotJobResponse>
+     */
+    public CompletableFuture<DeleteAutopilotJobResponse> deleteAutopilotJobAsync(DeleteAutopilotJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.deleteAutopilotJob);
+    }
+
+    /**
+     * 删除Job
+     *
+     * 该API用于删除指定项目下的Job。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAutopilotJobRequest 请求对象
+     * @return AsyncInvoker<DeleteAutopilotJobRequest, DeleteAutopilotJobResponse>
+     */
+    public AsyncInvoker<DeleteAutopilotJobRequest, DeleteAutopilotJobResponse> deleteAutopilotJobAsyncInvoker(
+        DeleteAutopilotJobRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.deleteAutopilotJob, hcClient);
+    }
+
+    /**
+     * 获取Job详情
+     *
+     * 该API用于获取指定项目下的Job详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetAutopilotOneJobRequest 请求对象
+     * @return CompletableFuture<GetAutopilotOneJobResponse>
+     */
+    public CompletableFuture<GetAutopilotOneJobResponse> getAutopilotOneJobAsync(GetAutopilotOneJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.getAutopilotOneJob);
+    }
+
+    /**
+     * 获取Job详情
+     *
+     * 该API用于获取指定项目下的Job详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetAutopilotOneJobRequest 请求对象
+     * @return AsyncInvoker<GetAutopilotOneJobRequest, GetAutopilotOneJobResponse>
+     */
+    public AsyncInvoker<GetAutopilotOneJobRequest, GetAutopilotOneJobResponse> getAutopilotOneJobAsyncInvoker(
+        GetAutopilotOneJobRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.getAutopilotOneJob, hcClient);
+    }
+
+    /**
+     * 获取Job列表
+     *
+     * 该API用于获取指定项目下的所有jobs。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAutopilotJobsRequest 请求对象
+     * @return CompletableFuture<ListAutopilotJobsResponse>
+     */
+    public CompletableFuture<ListAutopilotJobsResponse> listAutopilotJobsAsync(ListAutopilotJobsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.listAutopilotJobs);
+    }
+
+    /**
+     * 获取Job列表
+     *
+     * 该API用于获取指定项目下的所有jobs。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAutopilotJobsRequest 请求对象
+     * @return AsyncInvoker<ListAutopilotJobsRequest, ListAutopilotJobsResponse>
+     */
+    public AsyncInvoker<ListAutopilotJobsRequest, ListAutopilotJobsResponse> listAutopilotJobsAsyncInvoker(
+        ListAutopilotJobsRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.listAutopilotJobs, hcClient);
     }
 
 }

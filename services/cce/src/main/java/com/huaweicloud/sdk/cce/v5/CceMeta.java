@@ -7,8 +7,13 @@ import com.huaweicloud.sdk.cce.v5.model.DeleteImageCacheRequest;
 import com.huaweicloud.sdk.cce.v5.model.DeleteImageCacheResponse;
 import com.huaweicloud.sdk.cce.v5.model.ListImageCachesRequest;
 import com.huaweicloud.sdk.cce.v5.model.ListImageCachesResponse;
+import com.huaweicloud.sdk.cce.v5.model.ListPackageProductsRequest;
+import com.huaweicloud.sdk.cce.v5.model.ListPackageProductsResponse;
 import com.huaweicloud.sdk.cce.v5.model.ShowImageCacheRequest;
 import com.huaweicloud.sdk.cce.v5.model.ShowImageCacheResponse;
+import com.huaweicloud.sdk.cce.v5.model.SubscribePackageProductsRequest;
+import com.huaweicloud.sdk.cce.v5.model.SubscribePackageProductsRequestBody;
+import com.huaweicloud.sdk.cce.v5.model.SubscribePackageProductsResponse;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
@@ -87,6 +92,29 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListPackageProductsRequest, ListPackageProductsResponse> listPackageProducts =
+        genForListPackageProducts();
+
+    private static HttpRequestDef<ListPackageProductsRequest, ListPackageProductsResponse> genForListPackageProducts() {
+        // basic
+        HttpRequestDef.Builder<ListPackageProductsRequest, ListPackageProductsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPackageProductsRequest.class, ListPackageProductsResponse.class)
+                .withName("ListPackageProducts")
+                .withUri("/v5/package-products")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListPackageProductsRequest.LocaleEnum>withRequestField("locale",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPackageProductsRequest.LocaleEnum.class),
+            f -> f.withMarshaller(ListPackageProductsRequest::getLocale, ListPackageProductsRequest::setLocale));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowImageCacheRequest, ShowImageCacheResponse> showImageCache =
         genForShowImageCache();
 
@@ -104,6 +132,30 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowImageCacheRequest::getImageCacheId, ShowImageCacheRequest::setImageCacheId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SubscribePackageProductsRequest, SubscribePackageProductsResponse> subscribePackageProducts =
+        genForSubscribePackageProducts();
+
+    private static HttpRequestDef<SubscribePackageProductsRequest, SubscribePackageProductsResponse> genForSubscribePackageProducts() {
+        // basic
+        HttpRequestDef.Builder<SubscribePackageProductsRequest, SubscribePackageProductsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, SubscribePackageProductsRequest.class, SubscribePackageProductsResponse.class)
+                .withName("SubscribePackageProducts")
+                .withUri("/v5/package-products/subscribe")
+                .withContentType("application/json");
+
+        // requests
+        builder.<SubscribePackageProductsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SubscribePackageProductsRequestBody.class),
+            f -> f.withMarshaller(SubscribePackageProductsRequest::getBody, SubscribePackageProductsRequest::setBody));
 
         // response
 

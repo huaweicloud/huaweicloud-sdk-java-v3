@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.vpcep.v1.model.AcceptOrRejectEndpointRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.AcceptOrRejectEndpointResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.AddEndpointServiceServerResourceRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.AddEndpointServiceServerResourceResponse;
 import com.huaweicloud.sdk.vpcep.v1.model.AddOrRemoveServicePermissionsRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.AddOrRemoveServicePermissionsResponse;
 import com.huaweicloud.sdk.vpcep.v1.model.BatchAddEndpointServicePermissionsRequest;
@@ -63,6 +65,8 @@ import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServiceRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServiceResponse;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointWhiteRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointWhiteResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.UpgradeEndpointRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.UpgradeEndpointResponse;
 import com.huaweicloud.sdk.vpcep.v1.model.UpgradeEndpointServiceRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.UpgradeEndpointServiceResponse;
 
@@ -106,6 +110,36 @@ public class VpcepClient {
     public SyncInvoker<AcceptOrRejectEndpointRequest, AcceptOrRejectEndpointResponse> acceptOrRejectEndpointInvoker(
         AcceptOrRejectEndpointRequest request) {
         return new SyncInvoker<>(request, VpcepMeta.acceptOrRejectEndpoint, hcClient);
+    }
+
+    /**
+     * 添加终端节点服务后端服务资源
+     *
+     * 添加终端节点服务后端服务资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddEndpointServiceServerResourceRequest 请求对象
+     * @return AddEndpointServiceServerResourceResponse
+     */
+    public AddEndpointServiceServerResourceResponse addEndpointServiceServerResource(
+        AddEndpointServiceServerResourceRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcepMeta.addEndpointServiceServerResource);
+    }
+
+    /**
+     * 添加终端节点服务后端服务资源
+     *
+     * 添加终端节点服务后端服务资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddEndpointServiceServerResourceRequest 请求对象
+     * @return SyncInvoker<AddEndpointServiceServerResourceRequest, AddEndpointServiceServerResourceResponse>
+     */
+    public SyncInvoker<AddEndpointServiceServerResourceRequest, AddEndpointServiceServerResourceResponse> addEndpointServiceServerResourceInvoker(
+        AddEndpointServiceServerResourceRequest request) {
+        return new SyncInvoker<>(request, VpcepMeta.addEndpointServiceServerResource, hcClient);
     }
 
     /**
@@ -934,6 +968,35 @@ public class VpcepClient {
     public SyncInvoker<UpgradeEndpointServiceRequest, UpgradeEndpointServiceResponse> upgradeEndpointServiceInvoker(
         UpgradeEndpointServiceRequest request) {
         return new SyncInvoker<>(request, VpcepMeta.upgradeEndpointService, hcClient);
+    }
+
+    /**
+     * 升级终端节点
+     *
+     * 升级终端节点，由基础型升级为专业型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeEndpointRequest 请求对象
+     * @return UpgradeEndpointResponse
+     */
+    public UpgradeEndpointResponse upgradeEndpoint(UpgradeEndpointRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcepMeta.upgradeEndpoint);
+    }
+
+    /**
+     * 升级终端节点
+     *
+     * 升级终端节点，由基础型升级为专业型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeEndpointRequest 请求对象
+     * @return SyncInvoker<UpgradeEndpointRequest, UpgradeEndpointResponse>
+     */
+    public SyncInvoker<UpgradeEndpointRequest, UpgradeEndpointResponse> upgradeEndpointInvoker(
+        UpgradeEndpointRequest request) {
+        return new SyncInvoker<>(request, VpcepMeta.upgradeEndpoint, hcClient);
     }
 
     /**

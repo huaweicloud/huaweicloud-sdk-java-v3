@@ -28,6 +28,16 @@ public class CreateInstanceReq {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disk_encrypted_enable")
+
+    private Boolean diskEncryptedEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disk_encrypted_key")
+
+    private String diskEncryptedKey;
+
     /**
      * 消息引擎：rabbitmq。
      */
@@ -397,6 +407,40 @@ public class CreateInstanceReq {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public CreateInstanceReq withDiskEncryptedEnable(Boolean diskEncryptedEnable) {
+        this.diskEncryptedEnable = diskEncryptedEnable;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否开启磁盘加密。 **约束限制**： 不涉及。 **取值范围**： - true：开启。 - false：不开启。 **默认取值**： false。
+     * @return diskEncryptedEnable
+     */
+    public Boolean getDiskEncryptedEnable() {
+        return diskEncryptedEnable;
+    }
+
+    public void setDiskEncryptedEnable(Boolean diskEncryptedEnable) {
+        this.diskEncryptedEnable = diskEncryptedEnable;
+    }
+
+    public CreateInstanceReq withDiskEncryptedKey(String diskEncryptedKey) {
+        this.diskEncryptedKey = diskEncryptedKey;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 磁盘加密key，未开启磁盘加密时为空。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return diskEncryptedKey
+     */
+    public String getDiskEncryptedKey() {
+        return diskEncryptedKey;
+    }
+
+    public void setDiskEncryptedKey(String diskEncryptedKey) {
+        this.diskEncryptedKey = diskEncryptedKey;
     }
 
     public CreateInstanceReq withEngine(EngineEnum engine) {
@@ -807,10 +851,12 @@ public class CreateInstanceReq {
         }
         CreateInstanceReq that = (CreateInstanceReq) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.engine, that.engine) && Objects.equals(this.engineVersion, that.engineVersion)
-            && Objects.equals(this.enableAcl, that.enableAcl) && Objects.equals(this.storageSpace, that.storageSpace)
-            && Objects.equals(this.accessUser, that.accessUser) && Objects.equals(this.password, that.password)
-            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.diskEncryptedEnable, that.diskEncryptedEnable)
+            && Objects.equals(this.diskEncryptedKey, that.diskEncryptedKey) && Objects.equals(this.engine, that.engine)
+            && Objects.equals(this.engineVersion, that.engineVersion) && Objects.equals(this.enableAcl, that.enableAcl)
+            && Objects.equals(this.storageSpace, that.storageSpace) && Objects.equals(this.accessUser, that.accessUser)
+            && Objects.equals(this.password, that.password) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
             && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.availableZones, that.availableZones)
             && Objects.equals(this.productId, that.productId) && Objects.equals(this.brokerNum, that.brokerNum)
             && Objects.equals(this.maintainBegin, that.maintainBegin)
@@ -826,6 +872,8 @@ public class CreateInstanceReq {
     public int hashCode() {
         return Objects.hash(name,
             description,
+            diskEncryptedEnable,
+            diskEncryptedKey,
             engine,
             engineVersion,
             enableAcl,
@@ -855,6 +903,8 @@ public class CreateInstanceReq {
         sb.append("class CreateInstanceReq {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    diskEncryptedEnable: ").append(toIndentedString(diskEncryptedEnable)).append("\n");
+        sb.append("    diskEncryptedKey: ").append(toIndentedString(diskEncryptedKey)).append("\n");
         sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
         sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
         sb.append("    enableAcl: ").append(toIndentedString(enableAcl)).append("\n");

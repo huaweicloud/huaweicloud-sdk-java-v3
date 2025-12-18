@@ -9,34 +9,19 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * NodePoolUpgradeSpec
+ * 同步点池请求详细参数
  */
 public class NodePoolUpgradeSpec {
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "nodePoolID")
-
-    private String nodePoolID;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "nodeIDs")
-
-    private List<String> nodeIDs = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "force")
-
-    private Boolean force;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "nodeTemplate")
-
-    private NodeTemplate nodeTemplate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maxUnavailable")
 
     private Integer maxUnavailable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "force")
+
+    private Boolean force;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retryTimes")
@@ -48,54 +33,38 @@ public class NodePoolUpgradeSpec {
 
     private List<String> skippedNodes = null;
 
-    public NodePoolUpgradeSpec withNodePoolID(String nodePoolID) {
-        this.nodePoolID = nodePoolID;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nodeIDs")
+
+    private List<String> nodeIDs = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nodePoolID")
+
+    private String nodePoolID;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nodeTemplate")
+
+    private NodeTemplate nodeTemplate;
+
+    public NodePoolUpgradeSpec withMaxUnavailable(Integer maxUnavailable) {
+        this.maxUnavailable = maxUnavailable;
         return this;
     }
 
     /**
-     * 节点池id。
-     * @return nodePoolID
+     * **参数解释**： 每批最大同步节点。节点升级时，允许节点不可用的最大数量。节点重置方式进行同步时节点将不可用，请合理设置该参数，尽量避免出现集群节点不可用数量过多导致Pod无法调度的情况。 **约束限制**： 不涉及 **取值范围**： 取值范围[1-20] **默认取值**： 不涉及 
+     * minimum: 1
+     * maximum: 20
+     * @return maxUnavailable
      */
-    public String getNodePoolID() {
-        return nodePoolID;
+    public Integer getMaxUnavailable() {
+        return maxUnavailable;
     }
 
-    public void setNodePoolID(String nodePoolID) {
-        this.nodePoolID = nodePoolID;
-    }
-
-    public NodePoolUpgradeSpec withNodeIDs(List<String> nodeIDs) {
-        this.nodeIDs = nodeIDs;
-        return this;
-    }
-
-    public NodePoolUpgradeSpec addNodeIDsItem(String nodeIDsItem) {
-        if (this.nodeIDs == null) {
-            this.nodeIDs = new ArrayList<>();
-        }
-        this.nodeIDs.add(nodeIDsItem);
-        return this;
-    }
-
-    public NodePoolUpgradeSpec withNodeIDs(Consumer<List<String>> nodeIDsSetter) {
-        if (this.nodeIDs == null) {
-            this.nodeIDs = new ArrayList<>();
-        }
-        nodeIDsSetter.accept(this.nodeIDs);
-        return this;
-    }
-
-    /**
-     * Get nodeIDs
-     * @return nodeIDs
-     */
-    public List<String> getNodeIDs() {
-        return nodeIDs;
-    }
-
-    public void setNodeIDs(List<String> nodeIDs) {
-        this.nodeIDs = nodeIDs;
+    public void setMaxUnavailable(Integer maxUnavailable) {
+        this.maxUnavailable = maxUnavailable;
     }
 
     public NodePoolUpgradeSpec withForce(Boolean force) {
@@ -113,49 +82,6 @@ public class NodePoolUpgradeSpec {
 
     public void setForce(Boolean force) {
         this.force = force;
-    }
-
-    public NodePoolUpgradeSpec withNodeTemplate(NodeTemplate nodeTemplate) {
-        this.nodeTemplate = nodeTemplate;
-        return this;
-    }
-
-    public NodePoolUpgradeSpec withNodeTemplate(Consumer<NodeTemplate> nodeTemplateSetter) {
-        if (this.nodeTemplate == null) {
-            this.nodeTemplate = new NodeTemplate();
-            nodeTemplateSetter.accept(this.nodeTemplate);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get nodeTemplate
-     * @return nodeTemplate
-     */
-    public NodeTemplate getNodeTemplate() {
-        return nodeTemplate;
-    }
-
-    public void setNodeTemplate(NodeTemplate nodeTemplate) {
-        this.nodeTemplate = nodeTemplate;
-    }
-
-    public NodePoolUpgradeSpec withMaxUnavailable(Integer maxUnavailable) {
-        this.maxUnavailable = maxUnavailable;
-        return this;
-    }
-
-    /**
-     * Get maxUnavailable
-     * @return maxUnavailable
-     */
-    public Integer getMaxUnavailable() {
-        return maxUnavailable;
-    }
-
-    public void setMaxUnavailable(Integer maxUnavailable) {
-        this.maxUnavailable = maxUnavailable;
     }
 
     public NodePoolUpgradeSpec withRetryTimes(Integer retryTimes) {
@@ -208,6 +134,82 @@ public class NodePoolUpgradeSpec {
         this.skippedNodes = skippedNodes;
     }
 
+    public NodePoolUpgradeSpec withNodeIDs(List<String> nodeIDs) {
+        this.nodeIDs = nodeIDs;
+        return this;
+    }
+
+    public NodePoolUpgradeSpec addNodeIDsItem(String nodeIDsItem) {
+        if (this.nodeIDs == null) {
+            this.nodeIDs = new ArrayList<>();
+        }
+        this.nodeIDs.add(nodeIDsItem);
+        return this;
+    }
+
+    public NodePoolUpgradeSpec withNodeIDs(Consumer<List<String>> nodeIDsSetter) {
+        if (this.nodeIDs == null) {
+            this.nodeIDs = new ArrayList<>();
+        }
+        nodeIDsSetter.accept(this.nodeIDs);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 本次操作同步的节点池中选择的节点ID列表，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return nodeIDs
+     */
+    public List<String> getNodeIDs() {
+        return nodeIDs;
+    }
+
+    public void setNodeIDs(List<String> nodeIDs) {
+        this.nodeIDs = nodeIDs;
+    }
+
+    public NodePoolUpgradeSpec withNodePoolID(String nodePoolID) {
+        this.nodePoolID = nodePoolID;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 节点池ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return nodePoolID
+     */
+    public String getNodePoolID() {
+        return nodePoolID;
+    }
+
+    public void setNodePoolID(String nodePoolID) {
+        this.nodePoolID = nodePoolID;
+    }
+
+    public NodePoolUpgradeSpec withNodeTemplate(NodeTemplate nodeTemplate) {
+        this.nodeTemplate = nodeTemplate;
+        return this;
+    }
+
+    public NodePoolUpgradeSpec withNodeTemplate(Consumer<NodeTemplate> nodeTemplateSetter) {
+        if (this.nodeTemplate == null) {
+            this.nodeTemplate = new NodeTemplate();
+            nodeTemplateSetter.accept(this.nodeTemplate);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get nodeTemplate
+     * @return nodeTemplate
+     */
+    public NodeTemplate getNodeTemplate() {
+        return nodeTemplate;
+    }
+
+    public void setNodeTemplate(NodeTemplate nodeTemplate) {
+        this.nodeTemplate = nodeTemplate;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -217,28 +219,28 @@ public class NodePoolUpgradeSpec {
             return false;
         }
         NodePoolUpgradeSpec that = (NodePoolUpgradeSpec) obj;
-        return Objects.equals(this.nodePoolID, that.nodePoolID) && Objects.equals(this.nodeIDs, that.nodeIDs)
-            && Objects.equals(this.force, that.force) && Objects.equals(this.nodeTemplate, that.nodeTemplate)
-            && Objects.equals(this.maxUnavailable, that.maxUnavailable)
-            && Objects.equals(this.retryTimes, that.retryTimes) && Objects.equals(this.skippedNodes, that.skippedNodes);
+        return Objects.equals(this.maxUnavailable, that.maxUnavailable) && Objects.equals(this.force, that.force)
+            && Objects.equals(this.retryTimes, that.retryTimes) && Objects.equals(this.skippedNodes, that.skippedNodes)
+            && Objects.equals(this.nodeIDs, that.nodeIDs) && Objects.equals(this.nodePoolID, that.nodePoolID)
+            && Objects.equals(this.nodeTemplate, that.nodeTemplate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nodePoolID, nodeIDs, force, nodeTemplate, maxUnavailable, retryTimes, skippedNodes);
+        return Objects.hash(maxUnavailable, force, retryTimes, skippedNodes, nodeIDs, nodePoolID, nodeTemplate);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class NodePoolUpgradeSpec {\n");
-        sb.append("    nodePoolID: ").append(toIndentedString(nodePoolID)).append("\n");
-        sb.append("    nodeIDs: ").append(toIndentedString(nodeIDs)).append("\n");
-        sb.append("    force: ").append(toIndentedString(force)).append("\n");
-        sb.append("    nodeTemplate: ").append(toIndentedString(nodeTemplate)).append("\n");
         sb.append("    maxUnavailable: ").append(toIndentedString(maxUnavailable)).append("\n");
+        sb.append("    force: ").append(toIndentedString(force)).append("\n");
         sb.append("    retryTimes: ").append(toIndentedString(retryTimes)).append("\n");
         sb.append("    skippedNodes: ").append(toIndentedString(skippedNodes)).append("\n");
+        sb.append("    nodeIDs: ").append(toIndentedString(nodeIDs)).append("\n");
+        sb.append("    nodePoolID: ").append(toIndentedString(nodePoolID)).append("\n");
+        sb.append("    nodeTemplate: ").append(toIndentedString(nodeTemplate)).append("\n");
         sb.append("}");
         return sb.toString();
     }

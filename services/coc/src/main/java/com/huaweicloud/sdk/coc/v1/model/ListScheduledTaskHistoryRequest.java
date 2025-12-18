@@ -387,7 +387,7 @@ public class ListScheduledTaskHistoryRequest {
     /**
      * 分页指针
      * minimum: 0
-     * maximum: 1000
+     * maximum: 2147483647
      * @return offset
      */
     public Integer getOffset() {

@@ -212,7 +212,7 @@ public class CreateUserOption {
     }
 
     /**
-     * IAM用户首次登录是否重置密码，默认需要重置。
+     * IAM用户首次登录是否重置密码，当password参数不为空时生效，默认需要重置。
      * @return pwdStatus
      */
     public Boolean getPwdStatus() {

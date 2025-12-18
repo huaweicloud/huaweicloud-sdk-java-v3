@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.vpcep.v1.model.AcceptOrRejectEndpointRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.AcceptOrRejectEndpointResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.AddEndpointServiceServerResourceRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.AddEndpointServiceServerResourceResponse;
 import com.huaweicloud.sdk.vpcep.v1.model.AddOrRemoveServicePermissionsRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.AddOrRemoveServicePermissionsResponse;
 import com.huaweicloud.sdk.vpcep.v1.model.BatchAddEndpointServicePermissionsRequest;
@@ -63,6 +65,8 @@ import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServiceRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServiceResponse;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointWhiteRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointWhiteResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.UpgradeEndpointRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.UpgradeEndpointResponse;
 import com.huaweicloud.sdk.vpcep.v1.model.UpgradeEndpointServiceRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.UpgradeEndpointServiceResponse;
 
@@ -109,6 +113,36 @@ public class VpcepAsyncClient {
     public AsyncInvoker<AcceptOrRejectEndpointRequest, AcceptOrRejectEndpointResponse> acceptOrRejectEndpointAsyncInvoker(
         AcceptOrRejectEndpointRequest request) {
         return new AsyncInvoker<>(request, VpcepMeta.acceptOrRejectEndpoint, hcClient);
+    }
+
+    /**
+     * 添加终端节点服务后端服务资源
+     *
+     * 添加终端节点服务后端服务资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddEndpointServiceServerResourceRequest 请求对象
+     * @return CompletableFuture<AddEndpointServiceServerResourceResponse>
+     */
+    public CompletableFuture<AddEndpointServiceServerResourceResponse> addEndpointServiceServerResourceAsync(
+        AddEndpointServiceServerResourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcepMeta.addEndpointServiceServerResource);
+    }
+
+    /**
+     * 添加终端节点服务后端服务资源
+     *
+     * 添加终端节点服务后端服务资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddEndpointServiceServerResourceRequest 请求对象
+     * @return AsyncInvoker<AddEndpointServiceServerResourceRequest, AddEndpointServiceServerResourceResponse>
+     */
+    public AsyncInvoker<AddEndpointServiceServerResourceRequest, AddEndpointServiceServerResourceResponse> addEndpointServiceServerResourceAsyncInvoker(
+        AddEndpointServiceServerResourceRequest request) {
+        return new AsyncInvoker<>(request, VpcepMeta.addEndpointServiceServerResource, hcClient);
     }
 
     /**
@@ -951,6 +985,35 @@ public class VpcepAsyncClient {
     public AsyncInvoker<UpgradeEndpointServiceRequest, UpgradeEndpointServiceResponse> upgradeEndpointServiceAsyncInvoker(
         UpgradeEndpointServiceRequest request) {
         return new AsyncInvoker<>(request, VpcepMeta.upgradeEndpointService, hcClient);
+    }
+
+    /**
+     * 升级终端节点
+     *
+     * 升级终端节点，由基础型升级为专业型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeEndpointRequest 请求对象
+     * @return CompletableFuture<UpgradeEndpointResponse>
+     */
+    public CompletableFuture<UpgradeEndpointResponse> upgradeEndpointAsync(UpgradeEndpointRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcepMeta.upgradeEndpoint);
+    }
+
+    /**
+     * 升级终端节点
+     *
+     * 升级终端节点，由基础型升级为专业型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeEndpointRequest 请求对象
+     * @return AsyncInvoker<UpgradeEndpointRequest, UpgradeEndpointResponse>
+     */
+    public AsyncInvoker<UpgradeEndpointRequest, UpgradeEndpointResponse> upgradeEndpointAsyncInvoker(
+        UpgradeEndpointRequest request) {
+        return new AsyncInvoker<>(request, VpcepMeta.upgradeEndpoint, hcClient);
     }
 
     /**

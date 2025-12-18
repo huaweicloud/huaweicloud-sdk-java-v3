@@ -15,6 +15,11 @@ public class InPlaceRollingUpdate {
 
     private Integer userDefinedStep;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scope")
+
+    private String scope;
+
     public InPlaceRollingUpdate withUserDefinedStep(Integer userDefinedStep) {
         this.userDefinedStep = userDefinedStep;
         return this;
@@ -32,6 +37,23 @@ public class InPlaceRollingUpdate {
         this.userDefinedStep = userDefinedStep;
     }
 
+    public InPlaceRollingUpdate withScope(String scope) {
+        this.scope = scope;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 节点升级批次作用域 **约束限制：** 不涉及 **取值范围：** \"Cluster\"：节点升级批次配置应用到整个集群，整个升级过程不重置升级批次 \"NodePool\"：节点升级批次配置应用到节点池，升级每个节点池都会重置升级批次 **默认取值：** \"Cluster\" 
+     * @return scope
+     */
+    public String getScope() {
+        return scope;
+    }
+
+    public void setScope(String scope) {
+        this.scope = scope;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,12 @@ public class InPlaceRollingUpdate {
             return false;
         }
         InPlaceRollingUpdate that = (InPlaceRollingUpdate) obj;
-        return Objects.equals(this.userDefinedStep, that.userDefinedStep);
+        return Objects.equals(this.userDefinedStep, that.userDefinedStep) && Objects.equals(this.scope, that.scope);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userDefinedStep);
+        return Objects.hash(userDefinedStep, scope);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class InPlaceRollingUpdate {
         StringBuilder sb = new StringBuilder();
         sb.append("class InPlaceRollingUpdate {\n");
         sb.append("    userDefinedStep: ").append(toIndentedString(userDefinedStep)).append("\n");
+        sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
         sb.append("}");
         return sb.toString();
     }

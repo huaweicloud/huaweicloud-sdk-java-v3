@@ -2965,6 +2965,16 @@ public class EcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowFlavorCapacityRequest::getFlavorId, ShowFlavorCapacityRequest::setFlavorId));
+        builder.<String>withRequestField("count",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlavorCapacityRequest::getCount, ShowFlavorCapacityRequest::setCount));
+        builder.<String>withRequestField("region_ids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlavorCapacityRequest::getRegionIds, ShowFlavorCapacityRequest::setRegionIds));
 
         // response
 

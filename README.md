@@ -26,6 +26,24 @@ This document introduces how to obtain and use Huawei Cloud Java SDK.
 
 - Huawei Cloud Java SDK requires **Java JDK 1.8** or later.
 
+## Privacy Statement
+- Purpose: This SDK provides Java developers with official integration capabilities for programmatic access to and management of Huawei Cloud resources and services.
+
+- Collected information:
+To complete the required verification for calling Huawei Cloud open APIs, the SDK needs to use the access key (AK) you downloaded from the Huawei Cloud console to generate signatures. This process does not upload your secret access key (SK).
+
+- By default, this SDK adds additional information to the User-Agent request header. The additional information includes the SDK language used by the client to call services, client library version, operating system, time zone, language information, and a random identifier. This information helps protect your Huawei Cloud account and IAM users. You can customize User-Agent to disable this default behavior.
+
+- Data processing method: When you use service open APIs provided by this SDK, your related data (such as uploaded files and submitted text file content) will be transmitted securely via an encrypted connection (HTTPS) to the Huawei Cloud server side for processing.
+
+- All data processing, storage, and analysis are performed on the server side. No data is processed or persistently stored on the local client of this SDK.
+
+- Huawei Cloud will independently process the data as a data processor in accordance with its service agreement and privacy policy. We only initiate API requests as a controller. The data processing results will be returned to this SDK for your use.
+
+- Huawei Cloud official privacy statement: https://www.huaweicloud.com/intl/en-us/declaration-sg/sa_prp.html
+
+
+
 ## Install Java SDK
 
 It is recommended to use Maven to declare dependencies to use our Java SDK.

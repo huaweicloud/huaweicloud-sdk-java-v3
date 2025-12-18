@@ -461,7 +461,7 @@ public class CreateMergeRequestDiscussionResponseResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 评论类型。 **取值范围：** - DiscussionNote: 需要解决的关联代码行的评论。 - DiffNote: 一般。
+     * **参数解释：** 评论类型。 **取值范围：** - DiscussionNote: 需要解决的关联代码行的评论。 - DiffNote: 一般。 - null: 普通评论。
      * @return type
      */
     public String getType() {
