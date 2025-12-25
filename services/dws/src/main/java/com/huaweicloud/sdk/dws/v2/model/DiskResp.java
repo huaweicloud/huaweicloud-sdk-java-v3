@@ -154,7 +154,7 @@ public class DiskResp {
     }
 
     /**
-     * **参数解释**： 磁盘类型(系统盘、数据盘、日志盘)。 **取值范围**： 不涉及。
+     * **参数解释**： 磁盘类型。 **取值范围**： - system:：系统盘。 - data：数据盘。 - log：日志盘。
      * @return diskType
      */
     public String getDiskType() {

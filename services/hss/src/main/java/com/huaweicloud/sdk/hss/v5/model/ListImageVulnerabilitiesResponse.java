@@ -30,7 +30,7 @@ public class ListImageVulnerabilitiesResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释**: 记录总数 **取值范围**: 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483547
      * @return totalNum
@@ -65,7 +65,7 @@ public class ListImageVulnerabilitiesResponse extends SdkResponse {
     }
 
     /**
-     * 镜像的漏洞列表
+     * **参数解释**: 镜像的漏洞列表 **取值范围**: 最小值0，最大值200 
      * @return dataList
      */
     public List<ImageVulInfo> getDataList() {

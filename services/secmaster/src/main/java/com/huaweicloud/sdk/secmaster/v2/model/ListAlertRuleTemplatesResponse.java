@@ -24,20 +24,15 @@ public class ListAlertRuleTemplatesResponse extends SdkResponse {
 
     private List<AlertRuleTemplate> records = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-request-id")
-
-    private String xRequestId;
-
     public ListAlertRuleTemplatesResponse withCount(Long count) {
         this.count = count;
         return this;
     }
 
     /**
-     * 总数量。Total count.
+     * 计数
      * minimum: 0
-     * maximum: 9223372036854775807
+     * maximum: 500
      * @return count
      */
     public Long getCount() {
@@ -70,7 +65,7 @@ public class ListAlertRuleTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * 告警规则模板。Alert rule templates.
+     * 记录
      * @return records
      */
     public List<AlertRuleTemplate> getRecords() {
@@ -79,25 +74,6 @@ public class ListAlertRuleTemplatesResponse extends SdkResponse {
 
     public void setRecords(List<AlertRuleTemplate> records) {
         this.records = records;
-    }
-
-    public ListAlertRuleTemplatesResponse withXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
-        return this;
-    }
-
-    /**
-     * Get xRequestId
-     * @return xRequestId
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-request-id")
-    public String getXRequestId() {
-        return xRequestId;
-    }
-
-    public void setXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
     }
 
     @Override
@@ -109,13 +85,12 @@ public class ListAlertRuleTemplatesResponse extends SdkResponse {
             return false;
         }
         ListAlertRuleTemplatesResponse that = (ListAlertRuleTemplatesResponse) obj;
-        return Objects.equals(this.count, that.count) && Objects.equals(this.records, that.records)
-            && Objects.equals(this.xRequestId, that.xRequestId);
+        return Objects.equals(this.count, that.count) && Objects.equals(this.records, that.records);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, records, xRequestId);
+        return Objects.hash(count, records);
     }
 
     @Override
@@ -124,7 +99,6 @@ public class ListAlertRuleTemplatesResponse extends SdkResponse {
         sb.append("class ListAlertRuleTemplatesResponse {\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    records: ").append(toIndentedString(records)).append("\n");
-        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -125,7 +125,7 @@ public class EventSubscriptionResponse {
     }
 
     /**
-     * **参数解释**： 事件源类型。 **取值范围**： 不涉及。
+     * **参数解释**： 事件源类型。 **取值范围**： - cluster：集群。 - backup：快照。 - disaster-recovery：容灾。 - data.migration：数据迁移。 - dws.ingestion：DwsIngestion。
      * @return sourceType
      */
     public String getSourceType() {
@@ -159,7 +159,7 @@ public class EventSubscriptionResponse {
     }
 
     /**
-     * **参数解释**： 事件类别。 **取值范围**： 不涉及。
+     * **参数解释**： 事件类别。 **取值范围**： - management：管理。 - monitor：监控。 - security：安全。
      * @return category
      */
     public String getCategory() {
@@ -295,7 +295,7 @@ public class EventSubscriptionResponse {
     }
 
     /**
-     * **参数解释**： 消息通知类型。 **取值范围**： 不涉及。
+     * **参数解释**： 消息主题类型。 **取值范围**： - SMN：SMN类型
      * @return notificationTargetType
      */
     public String getNotificationTargetType() {

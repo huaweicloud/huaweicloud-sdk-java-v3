@@ -36,12 +36,17 @@ public class ShowResourceGroupResponse extends SdkResponse {
     private OffsetDateTime createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time")
+
+    private OffsetDateTime updateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     /**
-     * 资源添加/匹配方式，取值只能为EPS（匹配企业项目）,TAG（匹配标签）,NAME（匹配实例名称）, COMB（组合匹配）,Manual（手动添加）
+     * **参数解释** 资源添加/匹配方式。 **取值范围** 枚举值。 - EPS: 匹配企业项目 - TAG: 匹配标签 - NAME: 匹配实例名称 - COMB: 组合匹配 - Manual: 手动添加 
      */
     public static final class TypeEnum {
 
@@ -164,7 +169,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
     private List<EnterpriseProjectIdAndTags> enterpriseProjectIdAndTags = null;
 
     /**
-     * 指标告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+     * **参数解释** 指标告警状态。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
      */
     public static final class StatusEnum {
 
@@ -245,7 +250,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
     private StatusEnum status;
 
     /**
-     * 事件告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+     * **参数解释** 事件告警状态。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
      */
     public static final class EventStatusEnum {
 
@@ -328,10 +333,10 @@ public class ShowResourceGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_statistics")
 
-    private OneResourceGroupRespResourceStatistics resourceStatistics;
+    private GetResourceGroupRespResourceStatistics resourceStatistics;
 
     /**
-     * dimension: 子维度,product: 云产品
+     * **参数解释** 资源等级。 **取值范围** 枚举值。 - product: 云产品 - dimension: 子维度 
      */
     public static final class ResourceLevelEnum {
 
@@ -415,13 +420,18 @@ public class ShowResourceGroupResponse extends SdkResponse {
 
     private List<EpResourceStatistics> epResourceStatistics = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "association_alarm_templates")
+
+    private List<AssociationAlarmTemplate> associationAlarmTemplates = null;
+
     public ShowResourceGroupResponse withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
     }
 
     /**
-     * 资源分组的名称
+     * **参数解释** 资源分组的名称。 **取值范围** 只能为字母、数字、汉字、-或_，长度为[1,128]个字符。 
      * @return groupName
      */
     public String getGroupName() {
@@ -438,7 +448,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
     }
 
     /**
-     * 资源分组ID，以rg开头，后跟22位由字母或数字组成的字符串
+     * **参数解释**： 资源分组ID。 **取值范围**： 以rg开头，后跟22位由字母或数字组成的字符串。长度为[2,24]个字符。 
      * @return groupId
      */
     public String getGroupId() {
@@ -455,7 +465,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
     }
 
     /**
-     * 资源分组的创建时间
+     * **参数解释**： 资源分组的创建时间 **取值范围**： 不涉及。 
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -466,13 +476,30 @@ public class ShowResourceGroupResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    public ShowResourceGroupResponse withUpdateTime(OffsetDateTime updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 资源分组的修改时间 **取值范围**： 不涉及。 
+     * @return updateTime
+     */
+    public OffsetDateTime getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(OffsetDateTime updateTime) {
+        this.updateTime = updateTime;
+    }
+
     public ShowResourceGroupResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
-     * 资源分组归属企业项目ID
+     * **参数解释** 资源分组归属企业项目ID。 **取值范围** 由数字、字母和-组成，或者为0（默认企业项目ID）。 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -489,7 +516,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
     }
 
     /**
-     * 资源添加/匹配方式，取值只能为EPS（匹配企业项目）,TAG（匹配标签）,NAME（匹配实例名称）, COMB（组合匹配）,Manual（手动添加）
+     * **参数解释** 资源添加/匹配方式。 **取值范围** 枚举值。 - EPS: 匹配企业项目 - TAG: 匹配标签 - NAME: 匹配实例名称 - COMB: 组合匹配 - Manual: 手动添加 
      * @return type
      */
     public TypeEnum getType() {
@@ -700,7 +727,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
     }
 
     /**
-     * 指标告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+     * **参数解释** 指标告警状态。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
      * @return status
      */
     public StatusEnum getStatus() {
@@ -717,7 +744,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
     }
 
     /**
-     * 事件告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+     * **参数解释** 事件告警状态。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
      * @return eventStatus
      */
     public EventStatusEnum getEventStatus() {
@@ -728,15 +755,15 @@ public class ShowResourceGroupResponse extends SdkResponse {
         this.eventStatus = eventStatus;
     }
 
-    public ShowResourceGroupResponse withResourceStatistics(OneResourceGroupRespResourceStatistics resourceStatistics) {
+    public ShowResourceGroupResponse withResourceStatistics(GetResourceGroupRespResourceStatistics resourceStatistics) {
         this.resourceStatistics = resourceStatistics;
         return this;
     }
 
     public ShowResourceGroupResponse withResourceStatistics(
-        Consumer<OneResourceGroupRespResourceStatistics> resourceStatisticsSetter) {
+        Consumer<GetResourceGroupRespResourceStatistics> resourceStatisticsSetter) {
         if (this.resourceStatistics == null) {
-            this.resourceStatistics = new OneResourceGroupRespResourceStatistics();
+            this.resourceStatistics = new GetResourceGroupRespResourceStatistics();
             resourceStatisticsSetter.accept(this.resourceStatistics);
         }
 
@@ -747,11 +774,11 @@ public class ShowResourceGroupResponse extends SdkResponse {
      * Get resourceStatistics
      * @return resourceStatistics
      */
-    public OneResourceGroupRespResourceStatistics getResourceStatistics() {
+    public GetResourceGroupRespResourceStatistics getResourceStatistics() {
         return resourceStatistics;
     }
 
-    public void setResourceStatistics(OneResourceGroupRespResourceStatistics resourceStatistics) {
+    public void setResourceStatistics(GetResourceGroupRespResourceStatistics resourceStatistics) {
         this.resourceStatistics = resourceStatistics;
     }
 
@@ -761,7 +788,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
     }
 
     /**
-     * dimension: 子维度,product: 云产品
+     * **参数解释** 资源等级。 **取值范围** 枚举值。 - product: 云产品 - dimension: 子维度 
      * @return resourceLevel
      */
     public ResourceLevelEnum getResourceLevel() {
@@ -778,7 +805,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
     }
 
     /**
-     * 创建资源层级为云产品时的云产品的取值，一般由\"服务命名空间,服务首层维度名称\"组成，如\"SYS.ECS,instance_id\"。多个云产品则用“;”隔开，如\"SERVICE.BMS,instance_id;SYS.ECS,instance_id\"。
+     * **参数解释** 创建资源层级为云产品时的云产品名称，一般由\"服务命名空间,服务首层维度名称\"组成，如\"SYS.ECS,instance_id\"。多个云产品则用“;”隔开，如\"SERVICE.BMS,instance_id;SYS.ECS,instance_id\"。 **取值范围** 长度[0,10240]个字符 
      * @return productNames
      */
     public String getProductNames() {
@@ -823,6 +850,42 @@ public class ShowResourceGroupResponse extends SdkResponse {
         this.epResourceStatistics = epResourceStatistics;
     }
 
+    public ShowResourceGroupResponse withAssociationAlarmTemplates(
+        List<AssociationAlarmTemplate> associationAlarmTemplates) {
+        this.associationAlarmTemplates = associationAlarmTemplates;
+        return this;
+    }
+
+    public ShowResourceGroupResponse addAssociationAlarmTemplatesItem(
+        AssociationAlarmTemplate associationAlarmTemplatesItem) {
+        if (this.associationAlarmTemplates == null) {
+            this.associationAlarmTemplates = new ArrayList<>();
+        }
+        this.associationAlarmTemplates.add(associationAlarmTemplatesItem);
+        return this;
+    }
+
+    public ShowResourceGroupResponse withAssociationAlarmTemplates(
+        Consumer<List<AssociationAlarmTemplate>> associationAlarmTemplatesSetter) {
+        if (this.associationAlarmTemplates == null) {
+            this.associationAlarmTemplates = new ArrayList<>();
+        }
+        associationAlarmTemplatesSetter.accept(this.associationAlarmTemplates);
+        return this;
+    }
+
+    /**
+     * 关联的告警模板列表
+     * @return associationAlarmTemplates
+     */
+    public List<AssociationAlarmTemplate> getAssociationAlarmTemplates() {
+        return associationAlarmTemplates;
+    }
+
+    public void setAssociationAlarmTemplates(List<AssociationAlarmTemplate> associationAlarmTemplates) {
+        this.associationAlarmTemplates = associationAlarmTemplates;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -833,7 +896,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
         }
         ShowResourceGroupResponse that = (ShowResourceGroupResponse) obj;
         return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.groupId, that.groupId)
-            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.type, that.type) && Objects.equals(this.associationEpIds, that.associationEpIds)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.instances, that.instances)
@@ -844,7 +907,8 @@ public class ShowResourceGroupResponse extends SdkResponse {
             && Objects.equals(this.resourceStatistics, that.resourceStatistics)
             && Objects.equals(this.resourceLevel, that.resourceLevel)
             && Objects.equals(this.productNames, that.productNames)
-            && Objects.equals(this.epResourceStatistics, that.epResourceStatistics);
+            && Objects.equals(this.epResourceStatistics, that.epResourceStatistics)
+            && Objects.equals(this.associationAlarmTemplates, that.associationAlarmTemplates);
     }
 
     @Override
@@ -852,6 +916,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
         return Objects.hash(groupName,
             groupId,
             createTime,
+            updateTime,
             enterpriseProjectId,
             type,
             associationEpIds,
@@ -865,7 +930,8 @@ public class ShowResourceGroupResponse extends SdkResponse {
             resourceStatistics,
             resourceLevel,
             productNames,
-            epResourceStatistics);
+            epResourceStatistics,
+            associationAlarmTemplates);
     }
 
     @Override
@@ -875,6 +941,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    associationEpIds: ").append(toIndentedString(associationEpIds)).append("\n");
@@ -889,6 +956,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
         sb.append("    resourceLevel: ").append(toIndentedString(resourceLevel)).append("\n");
         sb.append("    productNames: ").append(toIndentedString(productNames)).append("\n");
         sb.append("    epResourceStatistics: ").append(toIndentedString(epResourceStatistics)).append("\n");
+        sb.append("    associationAlarmTemplates: ").append(toIndentedString(associationAlarmTemplates)).append("\n");
         sb.append("}");
         return sb.toString();
     }

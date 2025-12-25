@@ -21,7 +21,7 @@ public class ListAlertRuleMetricsRequest {
     }
 
     /**
-     * 工作空间 ID。Workspace ID.
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {

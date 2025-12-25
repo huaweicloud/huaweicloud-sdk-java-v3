@@ -61,7 +61,7 @@ public class IDERepositoryDO {
     }
 
     /**
-     * 仓库名称
+     * **参数解释**: 仓库名称。 **约束限制**: 长度1-50。 **取值范围**: 不涉及。 **默认取值**: 无。 
      * @return repositoryName
      */
     public String getRepositoryName() {
@@ -78,7 +78,7 @@ public class IDERepositoryDO {
     }
 
     /**
-     * 仓库类型
+     * **参数解释**: 制品类型。 **约束限制**: 不涉及。 **取值范围**: maven2。 **默认取值**: 无。 
      * @return format
      */
     public String getFormat() {
@@ -95,7 +95,7 @@ public class IDERepositoryDO {
     }
 
     /**
-     * 仓库描述
+     * **参数解释**: 仓库描述。 **约束限制**: 最大长度200。 **取值范围**: 不涉及。 **默认取值**: 无。 
      * @return description
      */
     public String getDescription() {
@@ -112,7 +112,7 @@ public class IDERepositoryDO {
     }
 
     /**
-     * release仓库名称
+     * **参数解释**: release仓库名称。 **约束限制**: 长度1-50。 **取值范围**: 不涉及。 **默认取值**: 无。 
      * @return release
      */
     public String getRelease() {
@@ -129,7 +129,7 @@ public class IDERepositoryDO {
     }
 
     /**
-     * snapshot仓库名称
+     * **参数解释**: snapshot仓库名称。 **约束限制**: 长度1-50。 **取值范围**: 不涉及。 **默认取值**: 无。 
      * @return snapshot
      */
     public String getSnapshot() {
@@ -146,7 +146,7 @@ public class IDERepositoryDO {
     }
 
     /**
-     * 路径
+     * **参数解释**: 路径包含规则。 **约束限制**: 最大长度512。 **取值范围**: 不涉及。 **默认取值**: 无。 
      * @return includesPattern
      */
     public String getIncludesPattern() {
@@ -163,7 +163,7 @@ public class IDERepositoryDO {
     }
 
     /**
-     * 共享权限级别
+     * **参数解释**: 共享权限级别。 **约束限制**: 不涉及。 **取值范围**: PROJECT。 **默认取值**: 无。 
      * @return shareRight
      */
     public String getShareRight() {
@@ -180,7 +180,7 @@ public class IDERepositoryDO {
     }
 
     /**
-     * 项目ID
+     * **参数解释**: 项目ID，可以从调用API处获取，也可以从控制台获取。获取方式请参考[获取项目ID](CloudArtifact_api_0015.xml)。 **约束限制**: 只能由英文字母、数字组成，且长度为32个字符。 **取值范围**: 不涉及。 **默认取值**: 无。
      * @return projectId
      */
     public String getProjectId() {
@@ -197,7 +197,7 @@ public class IDERepositoryDO {
     }
 
     /**
-     * 仓库类别，本地仓或聚合仓
+     * **参数解释**: 仓库类型。 **约束限制**: 不涉及。 **取值范围**: hosted：本地仓库。 **默认取值**: 无。 
      * @return type
      */
     public String getType() {

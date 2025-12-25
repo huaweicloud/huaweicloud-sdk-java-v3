@@ -151,7 +151,7 @@ public class LogicalClusterInfo {
     }
 
     /**
-     * **参数解释**： 逻辑集群状态。 **取值范围**： 不涉及。
+     * **参数解释**： 逻辑集群状态。 **取值范围**： - Failed：失败。 - Normal: 正常。 - Unavailable：不可用。 - Redistributing：重分布中。 - Redistribute_failed：重分布失败。 - Deleted：已删除。
      * @return status
      */
     public String getStatus() {
@@ -313,7 +313,7 @@ public class LogicalClusterInfo {
     }
 
     /**
-     * **参数解释**： 集群类型。 **取值范围**： 不涉及。
+     * **参数解释**： 逻辑集群类型。 **取值范围**： - createFromPlan：计划弹性。 - createFromElastic：自动弹性。
      * @return clusterType
      */
     public String getClusterType() {

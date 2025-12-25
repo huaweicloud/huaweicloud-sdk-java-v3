@@ -1,15 +1,10 @@
 package com.huaweicloud.sdk.ces.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -23,80 +18,10 @@ public class UpdateAlarmTemplateRequestBody {
 
     private String templateName;
 
-    /**
-     * 自定义告警模板类型 0：指标 2： 事件
-     */
-    public static final class TemplateTypeEnum {
-
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final TemplateTypeEnum NUMBER_0 = new TemplateTypeEnum(0);
-
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final TemplateTypeEnum NUMBER_2 = new TemplateTypeEnum(2);
-
-        private static final Map<Integer, TemplateTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, TemplateTypeEnum> createStaticFields() {
-            Map<Integer, TemplateTypeEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(2, NUMBER_2);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        TemplateTypeEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static TemplateTypeEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TemplateTypeEnum(value));
-        }
-
-        public static TemplateTypeEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof TemplateTypeEnum) {
-                return this.value.equals(((TemplateTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_type")
 
-    private TemplateTypeEnum templateType;
+    private TemplateTypeUpdate templateType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_description")
@@ -106,7 +31,7 @@ public class UpdateAlarmTemplateRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policies")
 
-    private List<Policies> policies = null;
+    private List<UpdateAlarmTemplatePolicies> policies = null;
 
     public UpdateAlarmTemplateRequestBody withTemplateName(String templateName) {
         this.templateName = templateName;
@@ -125,20 +50,20 @@ public class UpdateAlarmTemplateRequestBody {
         this.templateName = templateName;
     }
 
-    public UpdateAlarmTemplateRequestBody withTemplateType(TemplateTypeEnum templateType) {
+    public UpdateAlarmTemplateRequestBody withTemplateType(TemplateTypeUpdate templateType) {
         this.templateType = templateType;
         return this;
     }
 
     /**
-     * 自定义告警模板类型 0：指标 2： 事件
+     * Get templateType
      * @return templateType
      */
-    public TemplateTypeEnum getTemplateType() {
+    public TemplateTypeUpdate getTemplateType() {
         return templateType;
     }
 
-    public void setTemplateType(TemplateTypeEnum templateType) {
+    public void setTemplateType(TemplateTypeUpdate templateType) {
         this.templateType = templateType;
     }
 
@@ -159,12 +84,12 @@ public class UpdateAlarmTemplateRequestBody {
         this.templateDescription = templateDescription;
     }
 
-    public UpdateAlarmTemplateRequestBody withPolicies(List<Policies> policies) {
+    public UpdateAlarmTemplateRequestBody withPolicies(List<UpdateAlarmTemplatePolicies> policies) {
         this.policies = policies;
         return this;
     }
 
-    public UpdateAlarmTemplateRequestBody addPoliciesItem(Policies policiesItem) {
+    public UpdateAlarmTemplateRequestBody addPoliciesItem(UpdateAlarmTemplatePolicies policiesItem) {
         if (this.policies == null) {
             this.policies = new ArrayList<>();
         }
@@ -172,7 +97,7 @@ public class UpdateAlarmTemplateRequestBody {
         return this;
     }
 
-    public UpdateAlarmTemplateRequestBody withPolicies(Consumer<List<Policies>> policiesSetter) {
+    public UpdateAlarmTemplateRequestBody withPolicies(Consumer<List<UpdateAlarmTemplatePolicies>> policiesSetter) {
         if (this.policies == null) {
             this.policies = new ArrayList<>();
         }
@@ -184,11 +109,11 @@ public class UpdateAlarmTemplateRequestBody {
      * 告警模板策略列表
      * @return policies
      */
-    public List<Policies> getPolicies() {
+    public List<UpdateAlarmTemplatePolicies> getPolicies() {
         return policies;
     }
 
-    public void setPolicies(List<Policies> policies) {
+    public void setPolicies(List<UpdateAlarmTemplatePolicies> policies) {
         this.policies = policies;
     }
 

@@ -24,6 +24,11 @@ public class GlanceListImageMembersResponse extends SdkResponse {
 
     private String schema;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private GlancePageInfo pageInfo;
+
     public GlanceListImageMembersResponse withMembers(List<GlanceImageMembers> members) {
         this.members = members;
         return this;
@@ -74,6 +79,32 @@ public class GlanceListImageMembersResponse extends SdkResponse {
         this.schema = schema;
     }
 
+    public GlanceListImageMembersResponse withPageInfo(GlancePageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public GlanceListImageMembersResponse withPageInfo(Consumer<GlancePageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new GlancePageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public GlancePageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(GlancePageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,12 +114,13 @@ public class GlanceListImageMembersResponse extends SdkResponse {
             return false;
         }
         GlanceListImageMembersResponse that = (GlanceListImageMembersResponse) obj;
-        return Objects.equals(this.members, that.members) && Objects.equals(this.schema, that.schema);
+        return Objects.equals(this.members, that.members) && Objects.equals(this.schema, that.schema)
+            && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(members, schema);
+        return Objects.hash(members, schema, pageInfo);
     }
 
     @Override
@@ -97,6 +129,7 @@ public class GlanceListImageMembersResponse extends SdkResponse {
         sb.append("class GlanceListImageMembersResponse {\n");
         sb.append("    members: ").append(toIndentedString(members)).append("\n");
         sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

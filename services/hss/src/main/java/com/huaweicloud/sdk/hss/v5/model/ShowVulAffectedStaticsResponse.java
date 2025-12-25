@@ -225,7 +225,7 @@ public class ShowVulAffectedStaticsResponse extends SdkResponse {
     }
 
     /**
-     * Get extendTips
+     * **参数解释**: 提示 
      * @return extendTips
      */
     public List<String> getExtendTips() {
@@ -258,7 +258,7 @@ public class ShowVulAffectedStaticsResponse extends SdkResponse {
     }
 
     /**
-     * Get extendTextTips
+     * **参数解释**: 漏洞修复提示 **取值范围**: 最小值1，最大值500 
      * @return extendTextTips
      */
     public List<String> getExtendTextTips() {

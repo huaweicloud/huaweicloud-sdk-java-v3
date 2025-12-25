@@ -46,7 +46,7 @@ public class ListAlarmHistoriesResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： alarmHistories列表。 
+     * **参数解释**： 告警记录列表。 
      * @return alarmHistories
      */
     public List<AlarmHistoryItemV2> getAlarmHistories() {
@@ -63,7 +63,7 @@ public class ListAlarmHistoriesResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 告警记录列表总数。 **取值范围**： 不涉及。 
+     * **参数解释**： 告警记录总数。 **取值范围**： [0,2147483647] 
      * minimum: 0
      * maximum: 2147483647
      * @return count

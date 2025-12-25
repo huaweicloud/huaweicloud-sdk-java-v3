@@ -18,6 +18,11 @@ public class BatchDeleteOneClickAlarmsRequestBody {
 
     private List<String> oneClickAlarmIds = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action_type")
+
+    private String actionType;
+
     public BatchDeleteOneClickAlarmsRequestBody withOneClickAlarmIds(List<String> oneClickAlarmIds) {
         this.oneClickAlarmIds = oneClickAlarmIds;
         return this;
@@ -51,6 +56,23 @@ public class BatchDeleteOneClickAlarmsRequestBody {
         this.oneClickAlarmIds = oneClickAlarmIds;
     }
 
+    public BatchDeleteOneClickAlarmsRequestBody withActionType(String actionType) {
+        this.actionType = actionType;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 操作类型。 **约束限制**： 不涉及。 **取值范围**： 枚举值。取值为disable - disable: 关闭一键告警 **默认取值**： 不涉及。 
+     * @return actionType
+     */
+    public String getActionType() {
+        return actionType;
+    }
+
+    public void setActionType(String actionType) {
+        this.actionType = actionType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -60,12 +82,13 @@ public class BatchDeleteOneClickAlarmsRequestBody {
             return false;
         }
         BatchDeleteOneClickAlarmsRequestBody that = (BatchDeleteOneClickAlarmsRequestBody) obj;
-        return Objects.equals(this.oneClickAlarmIds, that.oneClickAlarmIds);
+        return Objects.equals(this.oneClickAlarmIds, that.oneClickAlarmIds)
+            && Objects.equals(this.actionType, that.actionType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(oneClickAlarmIds);
+        return Objects.hash(oneClickAlarmIds, actionType);
     }
 
     @Override
@@ -73,6 +96,7 @@ public class BatchDeleteOneClickAlarmsRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchDeleteOneClickAlarmsRequestBody {\n");
         sb.append("    oneClickAlarmIds: ").append(toIndentedString(oneClickAlarmIds)).append("\n");
+        sb.append("    actionType: ").append(toIndentedString(actionType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

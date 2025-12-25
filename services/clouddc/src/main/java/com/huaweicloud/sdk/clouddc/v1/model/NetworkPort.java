@@ -130,6 +130,11 @@ public class NetworkPort {
 
     private String autoNeg;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "permanent_mac_address")
+
+    private String permanentMacAddress;
+
     public NetworkPort withPhysicalPortNumber(String physicalPortNumber) {
         this.physicalPortNumber = physicalPortNumber;
         return this;
@@ -283,6 +288,23 @@ public class NetworkPort {
         this.autoNeg = autoNeg;
     }
 
+    public NetworkPort withPermanentMacAddress(String permanentMacAddress) {
+        this.permanentMacAddress = permanentMacAddress;
+        return this;
+    }
+
+    /**
+     * 永久物理地址
+     * @return permanentMacAddress
+     */
+    public String getPermanentMacAddress() {
+        return permanentMacAddress;
+    }
+
+    public void setPermanentMacAddress(String permanentMacAddress) {
+        this.permanentMacAddress = permanentMacAddress;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -298,7 +320,8 @@ public class NetworkPort {
             && Objects.equals(this.activeLinkTechnology, that.activeLinkTechnology)
             && Objects.equals(this.portType, that.portType) && Objects.equals(this.portMaxSpeed, that.portMaxSpeed)
             && Objects.equals(this.firmwarePackageVersion, that.firmwarePackageVersion)
-            && Objects.equals(this.bdf, that.bdf) && Objects.equals(this.autoNeg, that.autoNeg);
+            && Objects.equals(this.bdf, that.bdf) && Objects.equals(this.autoNeg, that.autoNeg)
+            && Objects.equals(this.permanentMacAddress, that.permanentMacAddress);
     }
 
     @Override
@@ -311,7 +334,8 @@ public class NetworkPort {
             portMaxSpeed,
             firmwarePackageVersion,
             bdf,
-            autoNeg);
+            autoNeg,
+            permanentMacAddress);
     }
 
     @Override
@@ -327,6 +351,7 @@ public class NetworkPort {
         sb.append("    firmwarePackageVersion: ").append(toIndentedString(firmwarePackageVersion)).append("\n");
         sb.append("    bdf: ").append(toIndentedString(bdf)).append("\n");
         sb.append("    autoNeg: ").append(toIndentedString(autoNeg)).append("\n");
+        sb.append("    permanentMacAddress: ").append(toIndentedString(permanentMacAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

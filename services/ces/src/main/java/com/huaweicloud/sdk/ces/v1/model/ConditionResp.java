@@ -51,7 +51,7 @@ public class ConditionResp {
     }
 
     /**
-     * **参数解释**： 告警阈值的比较条件。 **取值范围**： 只能是>、=、<、>=、<=、!=。 
+     * **参数解释**： 阈值符号。     **取值范围**： 支持的值为(>|<|>=|<=|=|!=|cycle_decrease|cycle_increase|cycle_wave);cycle_decrease为环比下降,cycle_increase为环比上升,cycle_wave为环比波动。 
      * @return comparisonOperator
      */
     public String getComparisonOperator() {
@@ -68,7 +68,7 @@ public class ConditionResp {
     }
 
     /**
-     * **参数解释**： 触发告警的连续发生次数。 **取值范围**： 取值范围[1, 5]。告警类型为事件告警时，取值范围为[1, 100]。 
+     * **参数解释**： 触发告警的连续发生次数。 **取值范围**： 整数，取值范围[1, 5]。 
      * minimum: 1
      * maximum: 100
      * @return count

@@ -1260,6 +1260,12 @@ public class BssintlMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListServiceTypesRequest::getLimit, ListServiceTypesRequest::setLimit));
+        builder.<String>withRequestField("service_type_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServiceTypesRequest::getServiceTypeName,
+                ListServiceTypesRequest::setServiceTypeName));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

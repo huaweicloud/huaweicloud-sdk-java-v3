@@ -19,7 +19,7 @@ public class BatchUpdateOneClickAlarmsEnabledStateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private BatchEnableAlarmsRequestBody body;
+    private BatchUpdateOneClickAlarmsEnabledStateRequestBody body;
 
     public BatchUpdateOneClickAlarmsEnabledStateRequest withOneClickAlarmId(String oneClickAlarmId) {
         this.oneClickAlarmId = oneClickAlarmId;
@@ -38,14 +38,16 @@ public class BatchUpdateOneClickAlarmsEnabledStateRequest {
         this.oneClickAlarmId = oneClickAlarmId;
     }
 
-    public BatchUpdateOneClickAlarmsEnabledStateRequest withBody(BatchEnableAlarmsRequestBody body) {
+    public BatchUpdateOneClickAlarmsEnabledStateRequest withBody(
+        BatchUpdateOneClickAlarmsEnabledStateRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public BatchUpdateOneClickAlarmsEnabledStateRequest withBody(Consumer<BatchEnableAlarmsRequestBody> bodySetter) {
+    public BatchUpdateOneClickAlarmsEnabledStateRequest withBody(
+        Consumer<BatchUpdateOneClickAlarmsEnabledStateRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new BatchEnableAlarmsRequestBody();
+            this.body = new BatchUpdateOneClickAlarmsEnabledStateRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +58,11 @@ public class BatchUpdateOneClickAlarmsEnabledStateRequest {
      * Get body
      * @return body
      */
-    public BatchEnableAlarmsRequestBody getBody() {
+    public BatchUpdateOneClickAlarmsEnabledStateRequestBody getBody() {
         return body;
     }
 
-    public void setBody(BatchEnableAlarmsRequestBody body) {
+    public void setBody(BatchUpdateOneClickAlarmsEnabledStateRequestBody body) {
         this.body = body;
     }
 

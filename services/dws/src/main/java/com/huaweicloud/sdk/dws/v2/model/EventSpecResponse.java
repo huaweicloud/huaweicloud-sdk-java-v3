@@ -146,7 +146,7 @@ public class EventSpecResponse {
     }
 
     /**
-     * **参数解释**： 事件类别。 **取值范围**： 不涉及。
+     * **参数解释**： 事件类别。 **取值范围**： - management：管理。 - monitor：监控。 - security：安全。
      * @return category
      */
     public String getCategory() {
@@ -180,7 +180,7 @@ public class EventSpecResponse {
     }
 
     /**
-     * **参数解释**： 事件源类型。 **取值范围**： 不涉及。
+     * **参数解释**： 事件源类型。 **取值范围**： - cluster：集群。 - backup：快照。 - disaster-recovery：容灾。 - data.migration：数据迁移。 - dws.ingestion：DwsIngestion。
      * @return sourceType
      */
     public String getSourceType() {

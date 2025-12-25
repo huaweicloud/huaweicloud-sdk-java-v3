@@ -44,6 +44,11 @@ public class PhysicalServer {
     private PowerState powerState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "operation_state")
+
+    private PhysicalServerOperationStatus operationState;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "health_state")
 
     private Health healthState;
@@ -173,6 +178,23 @@ public class PhysicalServer {
 
     public void setPowerState(PowerState powerState) {
         this.powerState = powerState;
+    }
+
+    public PhysicalServer withOperationState(PhysicalServerOperationStatus operationState) {
+        this.operationState = operationState;
+        return this;
+    }
+
+    /**
+     * Get operationState
+     * @return operationState
+     */
+    public PhysicalServerOperationStatus getOperationState() {
+        return operationState;
+    }
+
+    public void setOperationState(PhysicalServerOperationStatus operationState) {
+        this.operationState = operationState;
     }
 
     public PhysicalServer withHealthState(Health healthState) {
@@ -332,6 +354,7 @@ public class PhysicalServer {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.domainId, that.domainId)
             && Objects.equals(this.manageState, that.manageState) && Objects.equals(this.powerState, that.powerState)
+            && Objects.equals(this.operationState, that.operationState)
             && Objects.equals(this.healthState, that.healthState) && Objects.equals(this.onboardTime, that.onboardTime)
             && Objects.equals(this.location, that.location)
             && Objects.equals(this.hardwareAttributes, that.hardwareAttributes) && Objects.equals(this.tags, that.tags)
@@ -346,6 +369,7 @@ public class PhysicalServer {
             domainId,
             manageState,
             powerState,
+            operationState,
             healthState,
             onboardTime,
             location,
@@ -364,6 +388,7 @@ public class PhysicalServer {
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    manageState: ").append(toIndentedString(manageState)).append("\n");
         sb.append("    powerState: ").append(toIndentedString(powerState)).append("\n");
+        sb.append("    operationState: ").append(toIndentedString(operationState)).append("\n");
         sb.append("    healthState: ").append(toIndentedString(healthState)).append("\n");
         sb.append("    onboardTime: ").append(toIndentedString(onboardTime)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");

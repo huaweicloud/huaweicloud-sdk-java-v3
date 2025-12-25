@@ -62,7 +62,7 @@ public class Resource {
     }
 
     /**
-     * **参数解释** 资源的维度信息 **约束限制** 不超过4个维度 
+     * **参数解释** 资源的维度信息。value为 * 时，代表所有资源 **约束限制** 包含的维度数量为[1,4] 
      * @return dimensions
      */
     public List<ResourceDimension> getDimensions() {

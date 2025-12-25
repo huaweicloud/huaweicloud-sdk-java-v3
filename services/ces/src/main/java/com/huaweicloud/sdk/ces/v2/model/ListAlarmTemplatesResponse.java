@@ -63,7 +63,7 @@ public class ListAlarmTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * 告警模板记录总数
+     * **参数解释**： 告警模板记录总数。 **取值范围**： 字符串长度在 10 到 9999999 之间。 
      * minimum: 0
      * maximum: 9999999
      * @return count

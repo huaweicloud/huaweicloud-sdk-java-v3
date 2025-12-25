@@ -27,7 +27,7 @@ public class UpdateOneClickAlarmNotificationsRequest {
     }
 
     /**
-     * **参数解释**： 一键告警ID **约束限制**： 不涉及。 **取值范围**： 长度为[1,64]个字符。 **默认取值**： 不涉及。 
+     * **参数解释**： 一键告警ID **约束限制**： 不涉及。 **取值范围**： 长度为[1,64]个字符。只能包含字母和数字。 **默认取值**： 不涉及。 
      * @return oneClickAlarmId
      */
     public String getOneClickAlarmId() {

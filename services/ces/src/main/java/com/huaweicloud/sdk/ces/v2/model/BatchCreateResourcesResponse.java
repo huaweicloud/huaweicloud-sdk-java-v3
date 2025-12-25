@@ -22,7 +22,7 @@ public class BatchCreateResourcesResponse extends SdkResponse {
     }
 
     /**
-     * 成功添加的资源数目
+     * **参数解释**： 成功添加的资源数目。     **取值范围**： 取值范围为0-1000。 
      * minimum: 0
      * maximum: 1000
      * @return succeedCount

@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.live.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -24,6 +29,81 @@ public class ListSingleStreamBitrateRequest {
     @JsonProperty(value = "stream")
 
     private String stream;
+
+    /**
+     * 数据类型，取值如下：  - VIDEO ：视频码率  - AUDIO ：音频码率   不填写默认查询视频码率的数据。 
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum VIDEO for value: "VIDEO"
+         */
+        public static final TypeEnum VIDEO = new TypeEnum("VIDEO");
+
+        /**
+         * Enum AUDIO for value: "AUDIO"
+         */
+        public static final TypeEnum AUDIO = new TypeEnum("AUDIO");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("VIDEO", VIDEO);
+            map.put("AUDIO", AUDIO);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
@@ -86,6 +166,23 @@ public class ListSingleStreamBitrateRequest {
         this.stream = stream;
     }
 
+    public ListSingleStreamBitrateRequest withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 数据类型，取值如下：  - VIDEO ：视频码率  - AUDIO ：音频码率   不填写默认查询视频码率的数据。 
+     * @return type
+     */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
     public ListSingleStreamBitrateRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -130,13 +227,13 @@ public class ListSingleStreamBitrateRequest {
         }
         ListSingleStreamBitrateRequest that = (ListSingleStreamBitrateRequest) obj;
         return Objects.equals(this.domain, that.domain) && Objects.equals(this.app, that.app)
-            && Objects.equals(this.stream, that.stream) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime);
+            && Objects.equals(this.stream, that.stream) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domain, app, stream, startTime, endTime);
+        return Objects.hash(domain, app, stream, type, startTime, endTime);
     }
 
     @Override
@@ -146,6 +243,7 @@ public class ListSingleStreamBitrateRequest {
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    app: ").append(toIndentedString(app)).append("\n");
         sb.append("    stream: ").append(toIndentedString(stream)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("}");

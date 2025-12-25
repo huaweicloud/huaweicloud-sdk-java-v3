@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * BaselineSearchRequestBody
@@ -43,7 +44,7 @@ public class BaselineSearchRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition")
 
-    private Object condition;
+    private BaselineSearchRequestBodyCondition condition;
 
     public BaselineSearchRequestBody withLimit(Integer limit) {
         this.limit = limit;
@@ -72,7 +73,7 @@ public class BaselineSearchRequestBody {
     /**
      * 偏移量，表示查询该偏移量后面的记录
      * minimum: 0
-     * maximum: 1000
+     * maximum: 10000
      * @return offset
      */
     public Integer getOffset() {
@@ -106,7 +107,7 @@ public class BaselineSearchRequestBody {
     }
 
     /**
-     * 降序或升序, DESC|ESC
+     * 降序或升序, DESC|ASC
      * @return order
      */
     public String getOrder() {
@@ -151,20 +152,29 @@ public class BaselineSearchRequestBody {
         this.toDate = toDate;
     }
 
-    public BaselineSearchRequestBody withCondition(Object condition) {
+    public BaselineSearchRequestBody withCondition(BaselineSearchRequestBodyCondition condition) {
         this.condition = condition;
         return this;
     }
 
+    public BaselineSearchRequestBody withCondition(Consumer<BaselineSearchRequestBodyCondition> conditionSetter) {
+        if (this.condition == null) {
+            this.condition = new BaselineSearchRequestBodyCondition();
+            conditionSetter.accept(this.condition);
+        }
+
+        return this;
+    }
+
     /**
-     * 搜索条件表达式
+     * Get condition
      * @return condition
      */
-    public Object getCondition() {
+    public BaselineSearchRequestBodyCondition getCondition() {
         return condition;
     }
 
-    public void setCondition(Object condition) {
+    public void setCondition(BaselineSearchRequestBodyCondition condition) {
         this.condition = condition;
     }
 

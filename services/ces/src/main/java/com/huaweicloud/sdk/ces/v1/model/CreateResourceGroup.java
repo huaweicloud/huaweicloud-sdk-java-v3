@@ -23,6 +23,11 @@ public class CreateResourceGroup {
 
     private List<MetricsDimension> dimensions = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "relation_id")
+
+    private String relationId;
+
     public CreateResourceGroup withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
@@ -73,6 +78,23 @@ public class CreateResourceGroup {
         this.dimensions = dimensions;
     }
 
+    public CreateResourceGroup withRelationId(String relationId) {
+        this.relationId = relationId;
+        return this;
+    }
+
+    /**
+     * **参数解释** 关联id **约束限制** 不涉及 **取值范围** 由数字、字母,_和-组成长度[1,128] **默认取值** 不涉及 
+     * @return relationId
+     */
+    public String getRelationId() {
+        return relationId;
+    }
+
+    public void setRelationId(String relationId) {
+        this.relationId = relationId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -82,12 +104,13 @@ public class CreateResourceGroup {
             return false;
         }
         CreateResourceGroup that = (CreateResourceGroup) obj;
-        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.dimensions, that.dimensions);
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.dimensions, that.dimensions)
+            && Objects.equals(this.relationId, that.relationId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(namespace, dimensions);
+        return Objects.hash(namespace, dimensions, relationId);
     }
 
     @Override
@@ -96,6 +119,7 @@ public class CreateResourceGroup {
         sb.append("class CreateResourceGroup {\n");
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
         sb.append("    dimensions: ").append(toIndentedString(dimensions)).append("\n");
+        sb.append("    relationId: ").append(toIndentedString(relationId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

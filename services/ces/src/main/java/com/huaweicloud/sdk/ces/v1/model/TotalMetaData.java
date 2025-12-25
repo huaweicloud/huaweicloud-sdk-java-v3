@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 查询结果元数据统计个数。
+ * **参数解释**： 查询结果元数据统计个数。
  */
 public class TotalMetaData {
 
@@ -21,7 +21,7 @@ public class TotalMetaData {
     }
 
     /**
-     * 总条数。
+     * **参数解释**： 总条数。 **取值范围**： 在[0,2147483647]区间内。
      * minimum: 0
      * maximum: 2147483647
      * @return total

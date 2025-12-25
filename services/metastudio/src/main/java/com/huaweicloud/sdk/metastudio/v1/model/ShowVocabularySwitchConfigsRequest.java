@@ -187,7 +187,7 @@ public class ShowVocabularySwitchConfigsRequest {
     }
 
     /**
-     * 类型 租户级自定义读法全局开关:vocabulary
+     * 类型。 * 租户级自定义读法全局开关，示例vocabulary。
      * @return key
      */
     public String getKey() {

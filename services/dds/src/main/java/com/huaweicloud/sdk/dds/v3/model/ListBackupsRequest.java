@@ -26,7 +26,7 @@ public class ListBackupsRequest {
     private String backupId;
 
     /**
-     * 备份类型。 - 取值为“Auto”，表示自动全量备份。 - 取值为“Manual”，表示手动全量备份。 - 取值为“Incremental”，表示自动增量备份。 - 当该字段未传入值时，默认只查询所有的全量备份，包括自动全备备份和手动全量备份。当该字段取值为“Incremental”时，实例ID必传。
+     * **参数解释：** 备份类型。 **约束限制：** 当该字段取值为“Incremental”时，实例ID必传。 **取值范围：** - 取值为“Auto”，表示自动全量备份。 - 取值为“Manual”，表示手动全量备份。 - 取值为“Incremental”，表示自动增量备份。 - 当该字段未传入值时，默认只查询所有的全量备份，包括自动全备备份和手动全量备份。当该字段取值为“Incremental”时，实例ID必传。  **默认取值：** 不涉及。
      */
     public static final class BackupTypeEnum {
 
@@ -127,7 +127,7 @@ public class ListBackupsRequest {
     private String endTime;
 
     /**
-     * 实例模式。 取值： - Sharding - ReplicaSet - Single
+     * **参数解释：** 实例模式。 **约束限制：** 不涉及。 **取值范围：** - Sharding - ReplicaSet - Single  **默认取值：** 不涉及。
      */
     public static final class ModeEnum {
 
@@ -207,13 +207,43 @@ public class ListBackupsRequest {
 
     private ModeEnum mode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_field")
+
+    private String orderField;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_rule")
+
+    private String orderRule;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_status")
+
+    private String backupStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_name")
+
+    private String backupName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_description")
+
+    private String backupDescription;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_name")
+
+    private String instanceName;
+
     public ListBackupsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
     /**
-     * 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
+     * **参数解释：** 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。如果instance_id以“”起始，表示按照“”后面的值模糊匹配，否则，按照实际填写的instance_id精确匹配查询。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -230,7 +260,7 @@ public class ListBackupsRequest {
     }
 
     /**
-     * 备份ID。 - 当该字段传入的备份ID归属为自动增量备份时，实例ID必传。
+     * **参数解释：** 备份ID。如果backup_id以“”起始，表示按照“”后面的值模糊匹配，否则，按照实际填写的backup_id精确匹配查询。 **约束限制：** 当该字段传入的备份ID归属为自动增量备份时，实例ID必传，且实例ID必须为精确匹配。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return backupId
      */
     public String getBackupId() {
@@ -247,7 +277,7 @@ public class ListBackupsRequest {
     }
 
     /**
-     * 备份类型。 - 取值为“Auto”，表示自动全量备份。 - 取值为“Manual”，表示手动全量备份。 - 取值为“Incremental”，表示自动增量备份。 - 当该字段未传入值时，默认只查询所有的全量备份，包括自动全备备份和手动全量备份。当该字段取值为“Incremental”时，实例ID必传。
+     * **参数解释：** 备份类型。 **约束限制：** 当该字段取值为“Incremental”时，实例ID必传。 **取值范围：** - 取值为“Auto”，表示自动全量备份。 - 取值为“Manual”，表示手动全量备份。 - 取值为“Incremental”，表示自动增量备份。 - 当该字段未传入值时，默认只查询所有的全量备份，包括自动全备备份和手动全量备份。当该字段取值为“Incremental”时，实例ID必传。  **默认取值：** 不涉及。
      * @return backupType
      */
     public BackupTypeEnum getBackupType() {
@@ -264,7 +294,7 @@ public class ListBackupsRequest {
     }
 
     /**
-     * 索引位置偏移量，表示从指定project ID下最新的实例创建时间开始，按时间的先后顺序偏移offset条数据后查询对应的实例信息。 取值大于或等于0。不传该参数时，查询偏移量默认为0，表示从最新的实例创建时间对应的实例开始查询。
+     * **参数解释：** 索引位置偏移量，表示从指定project ID下最新的备份创建时间开始，按时间的先后顺序偏移offset条数据后查询对应的备份信息。 **约束限制：** 不涉及。 **取值范围：** 大于或等于0。 **默认取值：** 0，表示从最新的备份创建时间对应的备份开始查询。
      * minimum: 0
      * @return offset
      */
@@ -282,7 +312,7 @@ public class ListBackupsRequest {
     }
 
     /**
-     * 查询备份个数上限值。 取值范围：1~100。不传该参数时，默认查询前100条实例信息。
+     * **参数解释：** 查询备份个数上限值。 **约束限制：** 不涉及。 **取值范围：** 1~100。 **默认取值：** 100。不传该参数时，默认查询前100条备份信息。
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -301,7 +331,7 @@ public class ListBackupsRequest {
     }
 
     /**
-     * 查询开始时间，格式为“yyyy-mm-dd hh:mm:ss”。该时间为UTC时间。 “end_time”有值时，“begin_time”必选。
+     * **参数解释：** 查询备份开始的时间，格式为“yyyy-mm-dd hh:mm:ss”。该时间为UTC时间。 **约束限制：** “end_time”有值时，“begin_time”必选。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return beginTime
      */
     public String getBeginTime() {
@@ -318,7 +348,7 @@ public class ListBackupsRequest {
     }
 
     /**
-     * 查询结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”，且大于查询开始时间。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。 “begin_time”有值时，“end_time”必选。
+     * **参数解释：** 查询备份开始的结束时间，格式为“yyyy-mm-dd hh:mm:ss”。该时间为UTC时间。 **约束限制：** “begin_time”有值时，“end_time”必选。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return endTime
      */
     public String getEndTime() {
@@ -335,7 +365,7 @@ public class ListBackupsRequest {
     }
 
     /**
-     * 实例模式。 取值： - Sharding - ReplicaSet - Single
+     * **参数解释：** 实例模式。 **约束限制：** 不涉及。 **取值范围：** - Sharding - ReplicaSet - Single  **默认取值：** 不涉及。
      * @return mode
      */
     public ModeEnum getMode() {
@@ -344,6 +374,108 @@ public class ListBackupsRequest {
 
     public void setMode(ModeEnum mode) {
         this.mode = mode;
+    }
+
+    public ListBackupsRequest withOrderField(String orderField) {
+        this.orderField = orderField;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 排序字段。 **约束限制：** “order_rule”有值时，“order_field”必选。 **取值范围：** - name，备份名称。 - instanceName，实例名称。 - type，备份类型。 - datastoreType，引擎类型。 - beginTime，开始时间。 - status，备份状态。  **默认取值：** 如果不传值，则默认根据备份开始时间，即响应参数的begin_time，倒序排序。
+     * @return orderField
+     */
+    public String getOrderField() {
+        return orderField;
+    }
+
+    public void setOrderField(String orderField) {
+        this.orderField = orderField;
+    }
+
+    public ListBackupsRequest withOrderRule(String orderRule) {
+        this.orderRule = orderRule;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 排序规则。 **约束限制：** “order_field”有值时，“order_rule”必选。 **取值范围：** - asc: 升序排序。 - desc: 降序排序。  **默认取值：** 如果不传值，则默认根据备份开始时间，即响应参数的begin_time，倒序排序。
+     * @return orderRule
+     */
+    public String getOrderRule() {
+        return orderRule;
+    }
+
+    public void setOrderRule(String orderRule) {
+        this.orderRule = orderRule;
+    }
+
+    public ListBackupsRequest withBackupStatus(String backupStatus) {
+        this.backupStatus = backupStatus;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 备份状态。 **约束限制：** 不涉及。 **取值范围：** - COMPLETED - BUILDING - FAILED  **默认取值：** 不涉及。
+     * @return backupStatus
+     */
+    public String getBackupStatus() {
+        return backupStatus;
+    }
+
+    public void setBackupStatus(String backupStatus) {
+        this.backupStatus = backupStatus;
+    }
+
+    public ListBackupsRequest withBackupName(String backupName) {
+        this.backupName = backupName;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 备份名称，支持模糊匹配。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @return backupName
+     */
+    public String getBackupName() {
+        return backupName;
+    }
+
+    public void setBackupName(String backupName) {
+        this.backupName = backupName;
+    }
+
+    public ListBackupsRequest withBackupDescription(String backupDescription) {
+        this.backupDescription = backupDescription;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 备份描述，支持模糊匹配。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @return backupDescription
+     */
+    public String getBackupDescription() {
+        return backupDescription;
+    }
+
+    public void setBackupDescription(String backupDescription) {
+        this.backupDescription = backupDescription;
+    }
+
+    public ListBackupsRequest withInstanceName(String instanceName) {
+        this.instanceName = instanceName;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 实例名称，支持模糊匹配。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @return instanceName
+     */
+    public String getInstanceName() {
+        return instanceName;
+    }
+
+    public void setInstanceName(String instanceName) {
+        this.instanceName = instanceName;
     }
 
     @Override
@@ -358,12 +490,29 @@ public class ListBackupsRequest {
         return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.backupId, that.backupId)
             && Objects.equals(this.backupType, that.backupType) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.beginTime, that.beginTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.mode, that.mode);
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.orderField, that.orderField) && Objects.equals(this.orderRule, that.orderRule)
+            && Objects.equals(this.backupStatus, that.backupStatus) && Objects.equals(this.backupName, that.backupName)
+            && Objects.equals(this.backupDescription, that.backupDescription)
+            && Objects.equals(this.instanceName, that.instanceName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, backupId, backupType, offset, limit, beginTime, endTime, mode);
+        return Objects.hash(instanceId,
+            backupId,
+            backupType,
+            offset,
+            limit,
+            beginTime,
+            endTime,
+            mode,
+            orderField,
+            orderRule,
+            backupStatus,
+            backupName,
+            backupDescription,
+            instanceName);
     }
 
     @Override
@@ -378,6 +527,12 @@ public class ListBackupsRequest {
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    orderField: ").append(toIndentedString(orderField)).append("\n");
+        sb.append("    orderRule: ").append(toIndentedString(orderRule)).append("\n");
+        sb.append("    backupStatus: ").append(toIndentedString(backupStatus)).append("\n");
+        sb.append("    backupName: ").append(toIndentedString(backupName)).append("\n");
+        sb.append("    backupDescription: ").append(toIndentedString(backupDescription)).append("\n");
+        sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -15,125 +12,71 @@ import java.util.function.Consumer;
 public class DeleteAlertRuleResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "deleted")
+    @JsonProperty(value = "alert_rule_id")
 
-    private Boolean deleted;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "fail_list")
-
-    private List<AlertRule> failList = null;
+    private String alertRuleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "success_list")
+    @JsonProperty(value = "delete_time")
 
-    private List<AlertRule> successList = null;
+    private Long deleteTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-request-id")
+    @JsonProperty(value = "process_status")
 
-    private String xRequestId;
+    private JobProcessStatus processStatus;
 
-    public DeleteAlertRuleResponse withDeleted(Boolean deleted) {
-        this.deleted = deleted;
+    public DeleteAlertRuleResponse withAlertRuleId(String alertRuleId) {
+        this.alertRuleId = alertRuleId;
         return this;
     }
 
     /**
-     * 是否删除.
-     * @return deleted
+     * UUID
+     * @return alertRuleId
      */
-    public Boolean getDeleted() {
-        return deleted;
+    public String getAlertRuleId() {
+        return alertRuleId;
     }
 
-    public void setDeleted(Boolean deleted) {
-        this.deleted = deleted;
+    public void setAlertRuleId(String alertRuleId) {
+        this.alertRuleId = alertRuleId;
     }
 
-    public DeleteAlertRuleResponse withFailList(List<AlertRule> failList) {
-        this.failList = failList;
-        return this;
-    }
-
-    public DeleteAlertRuleResponse addFailListItem(AlertRule failListItem) {
-        if (this.failList == null) {
-            this.failList = new ArrayList<>();
-        }
-        this.failList.add(failListItem);
-        return this;
-    }
-
-    public DeleteAlertRuleResponse withFailList(Consumer<List<AlertRule>> failListSetter) {
-        if (this.failList == null) {
-            this.failList = new ArrayList<>();
-        }
-        failListSetter.accept(this.failList);
+    public DeleteAlertRuleResponse withDeleteTime(Long deleteTime) {
+        this.deleteTime = deleteTime;
         return this;
     }
 
     /**
-     * Alert rule ID.
-     * @return failList
+     * 毫秒时间戳
+     * minimum: 0
+     * maximum: 2366841600000
+     * @return deleteTime
      */
-    public List<AlertRule> getFailList() {
-        return failList;
+    public Long getDeleteTime() {
+        return deleteTime;
     }
 
-    public void setFailList(List<AlertRule> failList) {
-        this.failList = failList;
+    public void setDeleteTime(Long deleteTime) {
+        this.deleteTime = deleteTime;
     }
 
-    public DeleteAlertRuleResponse withSuccessList(List<AlertRule> successList) {
-        this.successList = successList;
-        return this;
-    }
-
-    public DeleteAlertRuleResponse addSuccessListItem(AlertRule successListItem) {
-        if (this.successList == null) {
-            this.successList = new ArrayList<>();
-        }
-        this.successList.add(successListItem);
-        return this;
-    }
-
-    public DeleteAlertRuleResponse withSuccessList(Consumer<List<AlertRule>> successListSetter) {
-        if (this.successList == null) {
-            this.successList = new ArrayList<>();
-        }
-        successListSetter.accept(this.successList);
+    public DeleteAlertRuleResponse withProcessStatus(JobProcessStatus processStatus) {
+        this.processStatus = processStatus;
         return this;
     }
 
     /**
-     * Alert rule ID.
-     * @return successList
+     * Get processStatus
+     * @return processStatus
      */
-    public List<AlertRule> getSuccessList() {
-        return successList;
+    public JobProcessStatus getProcessStatus() {
+        return processStatus;
     }
 
-    public void setSuccessList(List<AlertRule> successList) {
-        this.successList = successList;
-    }
-
-    public DeleteAlertRuleResponse withXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
-        return this;
-    }
-
-    /**
-     * Get xRequestId
-     * @return xRequestId
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-request-id")
-    public String getXRequestId() {
-        return xRequestId;
-    }
-
-    public void setXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
+    public void setProcessStatus(JobProcessStatus processStatus) {
+        this.processStatus = processStatus;
     }
 
     @Override
@@ -145,23 +88,22 @@ public class DeleteAlertRuleResponse extends SdkResponse {
             return false;
         }
         DeleteAlertRuleResponse that = (DeleteAlertRuleResponse) obj;
-        return Objects.equals(this.deleted, that.deleted) && Objects.equals(this.failList, that.failList)
-            && Objects.equals(this.successList, that.successList) && Objects.equals(this.xRequestId, that.xRequestId);
+        return Objects.equals(this.alertRuleId, that.alertRuleId) && Objects.equals(this.deleteTime, that.deleteTime)
+            && Objects.equals(this.processStatus, that.processStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(deleted, failList, successList, xRequestId);
+        return Objects.hash(alertRuleId, deleteTime, processStatus);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteAlertRuleResponse {\n");
-        sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
-        sb.append("    failList: ").append(toIndentedString(failList)).append("\n");
-        sb.append("    successList: ").append(toIndentedString(successList)).append("\n");
-        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
+        sb.append("    alertRuleId: ").append(toIndentedString(alertRuleId)).append("\n");
+        sb.append("    deleteTime: ").append(toIndentedString(deleteTime)).append("\n");
+        sb.append("    processStatus: ").append(toIndentedString(processStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

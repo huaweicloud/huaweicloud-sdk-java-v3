@@ -66,6 +66,11 @@ public class NodeExtendParam {
     private Integer dockerBaseSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "containerBaseSize")
+
+    private Integer containerBaseSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicKey")
 
     private String publicKey;
@@ -178,6 +183,36 @@ public class NodeExtendParam {
     @JsonProperty(value = "systemReservedMem")
 
     private Integer systemReservedMem;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kubeReservedCpu")
+
+    private Integer kubeReservedCpu;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "systemReservedCpu")
+
+    private Integer systemReservedCpu;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kubeReservedPid")
+
+    private Integer kubeReservedPid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "systemReservedPid")
+
+    private Integer systemReservedPid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kubeReservedStorage")
+
+    private Integer kubeReservedStorage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "systemReservedStorage")
+
+    private Integer systemReservedStorage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "init-node-password")
@@ -433,6 +468,25 @@ public class NodeExtendParam {
         this.dockerBaseSize = dockerBaseSize;
     }
 
+    public NodeExtendParam withContainerBaseSize(Integer containerBaseSize) {
+        this.containerBaseSize = containerBaseSize;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 节点上单容器的可用磁盘空间大小，单位G。 CCE节点容器运行时空间配置请参考[数据盘空间分配说明](cce_01_0341.xml)。 **约束限制**： - Devicemapper模式下建议containerBaseSize配置不超过80G，设置过大时可能会导致容器运行时初始化时间过长而启动失败，若对容器磁盘大小有特殊要求，可考虑使用挂载外部或本地存储方式代替；Devicemapper模式在新版中仅有共池裸机使用，已逐步废弃。 - containerBaseSize设置仅在新版本集群（v1.23.14-r0/v1.25.9-r0/v1.27.6-r0/v1.28.4-r0及以上）的EulerOS[/HCEOS2.0](tag:hws,hws_hk,ctc,cmcc)节点上生效。 - 更新节点池时，不支持更新此参数。  **取值范围**： 10-500。 **默认取值**： 不配置该值或值为0时将使用默认值： - Devicemapper模式下默认值为10； - OverlayFS模式默认不限制单容器可用空间大小。
+     * minimum: 10
+     * maximum: 500
+     * @return containerBaseSize
+     */
+    public Integer getContainerBaseSize() {
+        return containerBaseSize;
+    }
+
+    public void setContainerBaseSize(Integer containerBaseSize) {
+        this.containerBaseSize = containerBaseSize;
+    }
+
     public NodeExtendParam withPublicKey(String publicKey) {
         this.publicKey = publicKey;
         return this;
@@ -603,6 +657,108 @@ public class NodeExtendParam {
         this.systemReservedMem = systemReservedMem;
     }
 
+    public NodeExtendParam withKubeReservedCpu(Integer kubeReservedCpu) {
+        this.kubeReservedCpu = kubeReservedCpu;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 节点CPU预留，Kubernetes相关组件预留值。单位为mcore。[随节点规格变动，具体请参见[节点预留资源策略说明](https://support.huaweicloud.com/usermanual-cce/cce_10_0178.html)。](tag:hws) **约束限制**： kubeReservedCpu，systemReservedCpu之和小于节点池中节点最小CPU规格的50%。 **取值范围**： 不涉及 **默认取值**： 不涉及
+     * @return kubeReservedCpu
+     */
+    public Integer getKubeReservedCpu() {
+        return kubeReservedCpu;
+    }
+
+    public void setKubeReservedCpu(Integer kubeReservedCpu) {
+        this.kubeReservedCpu = kubeReservedCpu;
+    }
+
+    public NodeExtendParam withSystemReservedCpu(Integer systemReservedCpu) {
+        this.systemReservedCpu = systemReservedCpu;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 节点CPU预留，系统组件预留值。单位为mcore。[随节点规格变动，具体请参见[节点预留资源策略说明](https://support.huaweicloud.com/usermanual-cce/cce_10_0178.html)。](tag:hws) **约束限制**： kubeReservedCpu，systemReservedCpu之和小于节点池中节点最小CPU规格的50%。 **取值范围**： 不涉及 **默认取值**： 不涉及
+     * @return systemReservedCpu
+     */
+    public Integer getSystemReservedCpu() {
+        return systemReservedCpu;
+    }
+
+    public void setSystemReservedCpu(Integer systemReservedCpu) {
+        this.systemReservedCpu = systemReservedCpu;
+    }
+
+    public NodeExtendParam withKubeReservedPid(Integer kubeReservedPid) {
+        this.kubeReservedPid = kubeReservedPid;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 节点PID预留，Kubernetes相关组件预留值。目的是为Kubernetes系统守护进程（如kubelet、container runtime等）预留指定数量的进程ID。 **约束限制**： kubeReservedPid，systemReservedPid之和小于linux PID数量上限的50%。[不同OS的kernel.pid_max可能并不相同，具体请参见[修改节点进程 ID数量上限kernel.pid_max](https://support.huaweicloud.com/usermanual-cce/cce_10_0401.html#section1)](tag:hws) **取值范围**： [0,2097152] 注：CCE仅校验kernel.pid_max为4194304的场景，2022年1月30日及之前创建的节点和部分OS的kernel.pid_max会有所不同，若您更新过kernel.pid_max也需要保证kubeReservedPid，systemReservedPid之和小于linux PID数量上限。 **默认取值**： 不涉及
+     * @return kubeReservedPid
+     */
+    public Integer getKubeReservedPid() {
+        return kubeReservedPid;
+    }
+
+    public void setKubeReservedPid(Integer kubeReservedPid) {
+        this.kubeReservedPid = kubeReservedPid;
+    }
+
+    public NodeExtendParam withSystemReservedPid(Integer systemReservedPid) {
+        this.systemReservedPid = systemReservedPid;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 节点PID预留，系统组件预留值。目的是为OS系统守护进程（如 sshd、udev 等）预留指定数量的进程ID。 **约束限制**： kubeReservedPid，systemReservedPid之和小于linux PID数量上限的50%。[不同OS的kernel.pid_max可能并不相同，具体请参见[修改节点进程 ID数量上限kernel.pid_max](https://support.huaweicloud.com/usermanual-cce/cce_10_0401.html#section1)](tag:hws) **取值范围**： [0,2097152] 注：CCE仅校验kernel.pid_max为4194304的场景，2022年1月30日及之前创建的节点和部分OS的kernel.pid_max会有所不同，若您更新过kernel.pid_max也需要保证kubeReservedPid，systemReservedPid之和小于linux PID数量上限。 **默认取值**： 不涉及
+     * @return systemReservedPid
+     */
+    public Integer getSystemReservedPid() {
+        return systemReservedPid;
+    }
+
+    public void setSystemReservedPid(Integer systemReservedPid) {
+        this.systemReservedPid = systemReservedPid;
+    }
+
+    public NodeExtendParam withKubeReservedStorage(Integer kubeReservedStorage) {
+        this.kubeReservedStorage = kubeReservedStorage;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 节点临时存储空间预留，Kubernetes组件预留值。目的是为Kubernetes系统守护进程（如kubelet、container runtime等）预留临时存储。单位为Gi。 **约束限制**： kubeReservedStorage，systemReservedStorage之和小于容器组件所使用硬盘空间的50%。 **取值范围**： 不涉及 **默认取值**： 不涉及
+     * @return kubeReservedStorage
+     */
+    public Integer getKubeReservedStorage() {
+        return kubeReservedStorage;
+    }
+
+    public void setKubeReservedStorage(Integer kubeReservedStorage) {
+        this.kubeReservedStorage = kubeReservedStorage;
+    }
+
+    public NodeExtendParam withSystemReservedStorage(Integer systemReservedStorage) {
+        this.systemReservedStorage = systemReservedStorage;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 节点临时存储空间预留，系统组件预留值。目的是为OS系统守护进程（如 sshd、udev 等）预留临时存储。单位为Gi。 **约束限制**： kubeReservedStorage，systemReservedStorage之和小于容器组件所使用硬盘空间的50%。 **取值范围**： 不涉及 **默认取值**： 不涉及
+     * @return systemReservedStorage
+     */
+    public Integer getSystemReservedStorage() {
+        return systemReservedStorage;
+    }
+
+    public void setSystemReservedStorage(Integer systemReservedStorage) {
+        this.systemReservedStorage = systemReservedStorage;
+    }
+
     public NodeExtendParam withInitNodePassword(String initNodePassword) {
         this.initNodePassword = initNodePassword;
         return this;
@@ -653,6 +809,7 @@ public class NodeExtendParam {
             && Objects.equals(this.isAutoPay, that.isAutoPay)
             && Objects.equals(this.dockerLVMConfigOverride, that.dockerLVMConfigOverride)
             && Objects.equals(this.dockerBaseSize, that.dockerBaseSize)
+            && Objects.equals(this.containerBaseSize, that.containerBaseSize)
             && Objects.equals(this.publicKey, that.publicKey)
             && Objects.equals(this.alphaCcePreInstall, that.alphaCcePreInstall)
             && Objects.equals(this.alphaCcePostInstall, that.alphaCcePostInstall)
@@ -661,6 +818,12 @@ public class NodeExtendParam {
             && Objects.equals(this.spotPrice, that.spotPrice) && Objects.equals(this.agencyName, that.agencyName)
             && Objects.equals(this.kubeReservedMem, that.kubeReservedMem)
             && Objects.equals(this.systemReservedMem, that.systemReservedMem)
+            && Objects.equals(this.kubeReservedCpu, that.kubeReservedCpu)
+            && Objects.equals(this.systemReservedCpu, that.systemReservedCpu)
+            && Objects.equals(this.kubeReservedPid, that.kubeReservedPid)
+            && Objects.equals(this.systemReservedPid, that.systemReservedPid)
+            && Objects.equals(this.kubeReservedStorage, that.kubeReservedStorage)
+            && Objects.equals(this.systemReservedStorage, that.systemReservedStorage)
             && Objects.equals(this.initNodePassword, that.initNodePassword)
             && Objects.equals(this.securityReinforcementType, that.securityReinforcementType);
     }
@@ -677,6 +840,7 @@ public class NodeExtendParam {
             isAutoPay,
             dockerLVMConfigOverride,
             dockerBaseSize,
+            containerBaseSize,
             publicKey,
             alphaCcePreInstall,
             alphaCcePostInstall,
@@ -687,6 +851,12 @@ public class NodeExtendParam {
             agencyName,
             kubeReservedMem,
             systemReservedMem,
+            kubeReservedCpu,
+            systemReservedCpu,
+            kubeReservedPid,
+            systemReservedPid,
+            kubeReservedStorage,
+            systemReservedStorage,
             initNodePassword,
             securityReinforcementType);
     }
@@ -705,6 +875,7 @@ public class NodeExtendParam {
         sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
         sb.append("    dockerLVMConfigOverride: ").append(toIndentedString(dockerLVMConfigOverride)).append("\n");
         sb.append("    dockerBaseSize: ").append(toIndentedString(dockerBaseSize)).append("\n");
+        sb.append("    containerBaseSize: ").append(toIndentedString(containerBaseSize)).append("\n");
         sb.append("    publicKey: ").append(toIndentedString(publicKey)).append("\n");
         sb.append("    alphaCcePreInstall: ").append(toIndentedString(alphaCcePreInstall)).append("\n");
         sb.append("    alphaCcePostInstall: ").append(toIndentedString(alphaCcePostInstall)).append("\n");
@@ -715,6 +886,12 @@ public class NodeExtendParam {
         sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
         sb.append("    kubeReservedMem: ").append(toIndentedString(kubeReservedMem)).append("\n");
         sb.append("    systemReservedMem: ").append(toIndentedString(systemReservedMem)).append("\n");
+        sb.append("    kubeReservedCpu: ").append(toIndentedString(kubeReservedCpu)).append("\n");
+        sb.append("    systemReservedCpu: ").append(toIndentedString(systemReservedCpu)).append("\n");
+        sb.append("    kubeReservedPid: ").append(toIndentedString(kubeReservedPid)).append("\n");
+        sb.append("    systemReservedPid: ").append(toIndentedString(systemReservedPid)).append("\n");
+        sb.append("    kubeReservedStorage: ").append(toIndentedString(kubeReservedStorage)).append("\n");
+        sb.append("    systemReservedStorage: ").append(toIndentedString(systemReservedStorage)).append("\n");
         sb.append("    initNodePassword: ").append(toIndentedString(initNodePassword)).append("\n");
         sb.append("    securityReinforcementType: ").append(toIndentedString(securityReinforcementType)).append("\n");
         sb.append("}");

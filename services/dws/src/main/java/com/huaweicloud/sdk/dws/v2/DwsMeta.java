@@ -8,9 +8,6 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.dws.v2.model.AddExceptRuleReq;
 import com.huaweicloud.sdk.dws.v2.model.AddQueueUserListRequest;
 import com.huaweicloud.sdk.dws.v2.model.AddQueueUserListResponse;
-import com.huaweicloud.sdk.dws.v2.model.AddSnapshotCrossRegionPolicyRequest;
-import com.huaweicloud.sdk.dws.v2.model.AddSnapshotCrossRegionPolicyRequestBody;
-import com.huaweicloud.sdk.dws.v2.model.AddSnapshotCrossRegionPolicyResponse;
 import com.huaweicloud.sdk.dws.v2.model.AddWorkloadPlanStageRequest;
 import com.huaweicloud.sdk.dws.v2.model.AddWorkloadPlanStageResponse;
 import com.huaweicloud.sdk.dws.v2.model.AddWorkloadQueueRequest;
@@ -124,8 +121,6 @@ import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteQueueUserListRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteQueueUserListResponse;
-import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotCrossRegionPolicyRequest;
-import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotCrossRegionPolicyResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotPolicyRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotPolicyResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotRequest;
@@ -281,10 +276,6 @@ import com.huaweicloud.sdk.dws.v2.model.ListRedistributionSchemaRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListRedistributionSchemaResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListSchemasRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListSchemasResponse;
-import com.huaweicloud.sdk.dws.v2.model.ListSnapshotCrossRegionPolicyRequest;
-import com.huaweicloud.sdk.dws.v2.model.ListSnapshotCrossRegionPolicyResponse;
-import com.huaweicloud.sdk.dws.v2.model.ListSnapshotCrossRegionRequest;
-import com.huaweicloud.sdk.dws.v2.model.ListSnapshotCrossRegionResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListSnapshotDetailsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListSnapshotDetailsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListSnapshotFlavorInfoRequest;
@@ -511,33 +502,6 @@ public class DwsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(WorkloadQueueUserReq.class),
             f -> f.withMarshaller(AddQueueUserListRequest::getBody, AddQueueUserListRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<AddSnapshotCrossRegionPolicyRequest, AddSnapshotCrossRegionPolicyResponse> addSnapshotCrossRegionPolicy =
-        genForAddSnapshotCrossRegionPolicy();
-
-    private static HttpRequestDef<AddSnapshotCrossRegionPolicyRequest, AddSnapshotCrossRegionPolicyResponse> genForAddSnapshotCrossRegionPolicy() {
-        // basic
-        HttpRequestDef.Builder<AddSnapshotCrossRegionPolicyRequest, AddSnapshotCrossRegionPolicyResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    AddSnapshotCrossRegionPolicyRequest.class,
-                    AddSnapshotCrossRegionPolicyResponse.class)
-                .withName("AddSnapshotCrossRegionPolicy")
-                .withUri("/v1/{project_id}/snapshots/cross-region-policies")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<AddSnapshotCrossRegionPolicyRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AddSnapshotCrossRegionPolicyRequestBody.class),
-            f -> f.withMarshaller(AddSnapshotCrossRegionPolicyRequest::getBody,
-                AddSnapshotCrossRegionPolicyRequest::setBody));
 
         // response
 
@@ -1801,33 +1765,6 @@ public class DwsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSnapshotRequest::getSnapshotId, DeleteSnapshotRequest::setSnapshotId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteSnapshotCrossRegionPolicyRequest, DeleteSnapshotCrossRegionPolicyResponse> deleteSnapshotCrossRegionPolicy =
-        genForDeleteSnapshotCrossRegionPolicy();
-
-    private static HttpRequestDef<DeleteSnapshotCrossRegionPolicyRequest, DeleteSnapshotCrossRegionPolicyResponse> genForDeleteSnapshotCrossRegionPolicy() {
-        // basic
-        HttpRequestDef.Builder<DeleteSnapshotCrossRegionPolicyRequest, DeleteSnapshotCrossRegionPolicyResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.DELETE,
-                    DeleteSnapshotCrossRegionPolicyRequest.class,
-                    DeleteSnapshotCrossRegionPolicyResponse.class)
-                .withName("DeleteSnapshotCrossRegionPolicy")
-                .withUri("/v1/{project_id}/snapshots/cross-region-policies")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("cluster_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSnapshotCrossRegionPolicyRequest::getClusterId,
-                DeleteSnapshotCrossRegionPolicyRequest::setClusterId));
 
         // response
 
@@ -4207,74 +4144,6 @@ public class DwsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSchemasRequest::getOffset, ListSchemasRequest::setOffset));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListSnapshotCrossRegionRequest, ListSnapshotCrossRegionResponse> listSnapshotCrossRegion =
-        genForListSnapshotCrossRegion();
-
-    private static HttpRequestDef<ListSnapshotCrossRegionRequest, ListSnapshotCrossRegionResponse> genForListSnapshotCrossRegion() {
-        // basic
-        HttpRequestDef.Builder<ListSnapshotCrossRegionRequest, ListSnapshotCrossRegionResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListSnapshotCrossRegionRequest.class, ListSnapshotCrossRegionResponse.class)
-            .withName("ListSnapshotCrossRegion")
-            .withUri("/v1/{project_id}/snapshots/cross-regions")
-            .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSnapshotCrossRegionRequest::getOffset,
-                ListSnapshotCrossRegionRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSnapshotCrossRegionRequest::getLimit, ListSnapshotCrossRegionRequest::setLimit));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListSnapshotCrossRegionPolicyRequest, ListSnapshotCrossRegionPolicyResponse> listSnapshotCrossRegionPolicy =
-        genForListSnapshotCrossRegionPolicy();
-
-    private static HttpRequestDef<ListSnapshotCrossRegionPolicyRequest, ListSnapshotCrossRegionPolicyResponse> genForListSnapshotCrossRegionPolicy() {
-        // basic
-        HttpRequestDef.Builder<ListSnapshotCrossRegionPolicyRequest, ListSnapshotCrossRegionPolicyResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ListSnapshotCrossRegionPolicyRequest.class,
-                    ListSnapshotCrossRegionPolicyResponse.class)
-                .withName("ListSnapshotCrossRegionPolicy")
-                .withUri("/v1/{project_id}/snapshots/cross-region-policies")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("cluster_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListSnapshotCrossRegionPolicyRequest::getClusterId,
-                ListSnapshotCrossRegionPolicyRequest::setClusterId));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSnapshotCrossRegionPolicyRequest::getOffset,
-                ListSnapshotCrossRegionPolicyRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListSnapshotCrossRegionPolicyRequest::getLimit,
-                ListSnapshotCrossRegionPolicyRequest::setLimit));
 
         // response
 

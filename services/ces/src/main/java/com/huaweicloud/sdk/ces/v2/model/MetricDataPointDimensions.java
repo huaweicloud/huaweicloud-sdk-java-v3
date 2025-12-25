@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * **参数解释**： 指标维度 
+ * **参数解释**： 资源维度 
  */
 public class MetricDataPointDimensions {
 
@@ -26,7 +26,7 @@ public class MetricDataPointDimensions {
     }
 
     /**
-     * **参数解释**： 指标维度值 **取值范围**： 最小长度1，最大长度32 
+     * **参数解释**： 资源维度名称 **取值范围**： 最小长度1，最大长度32 
      * @return name
      */
     public String getName() {
@@ -43,7 +43,7 @@ public class MetricDataPointDimensions {
     }
 
     /**
-     * **参数解释**： 指标维度值 **取值范围**： 最小长度1，最大长度256 
+     * **参数解释**： 资源维度值 **取值范围**： 最小长度1，最大长度256 
      * @return value
      */
     public String getValue() {

@@ -32,11 +32,6 @@ public class CreateClusterResponse extends SdkResponse {
 
     private ClusterSpec spec;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status")
-
-    private ClusterStatus status;
-
     public CreateClusterResponse withKind(String kind) {
         this.kind = kind;
         return this;
@@ -123,32 +118,6 @@ public class CreateClusterResponse extends SdkResponse {
         this.spec = spec;
     }
 
-    public CreateClusterResponse withStatus(ClusterStatus status) {
-        this.status = status;
-        return this;
-    }
-
-    public CreateClusterResponse withStatus(Consumer<ClusterStatus> statusSetter) {
-        if (this.status == null) {
-            this.status = new ClusterStatus();
-            statusSetter.accept(this.status);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get status
-     * @return status
-     */
-    public ClusterStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(ClusterStatus status) {
-        this.status = status;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -159,13 +128,12 @@ public class CreateClusterResponse extends SdkResponse {
         }
         CreateClusterResponse that = (CreateClusterResponse) obj;
         return Objects.equals(this.kind, that.kind) && Objects.equals(this.apiVersion, that.apiVersion)
-            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec)
-            && Objects.equals(this.status, that.status);
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(kind, apiVersion, metadata, spec, status);
+        return Objects.hash(kind, apiVersion, metadata, spec);
     }
 
     @Override
@@ -176,7 +144,6 @@ public class CreateClusterResponse extends SdkResponse {
         sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

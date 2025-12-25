@@ -17,9 +17,9 @@ public class UpdateAlertRuleRequest {
     private String workspaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "rule_id")
+    @JsonProperty(value = "alert_rule_id")
 
-    private String ruleId;
+    private String alertRuleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
@@ -32,7 +32,7 @@ public class UpdateAlertRuleRequest {
     }
 
     /**
-     * 工作空间 ID。Workspace ID.
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -43,21 +43,21 @@ public class UpdateAlertRuleRequest {
         this.workspaceId = workspaceId;
     }
 
-    public UpdateAlertRuleRequest withRuleId(String ruleId) {
-        this.ruleId = ruleId;
+    public UpdateAlertRuleRequest withAlertRuleId(String alertRuleId) {
+        this.alertRuleId = alertRuleId;
         return this;
     }
 
     /**
-     * 告警规则 ID。Alert rule ID.
-     * @return ruleId
+     * 告警规则 ID
+     * @return alertRuleId
      */
-    public String getRuleId() {
-        return ruleId;
+    public String getAlertRuleId() {
+        return alertRuleId;
     }
 
-    public void setRuleId(String ruleId) {
-        this.ruleId = ruleId;
+    public void setAlertRuleId(String alertRuleId) {
+        this.alertRuleId = alertRuleId;
     }
 
     public UpdateAlertRuleRequest withBody(UpdateAlertRuleRequestBody body) {
@@ -95,13 +95,13 @@ public class UpdateAlertRuleRequest {
             return false;
         }
         UpdateAlertRuleRequest that = (UpdateAlertRuleRequest) obj;
-        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.ruleId, that.ruleId)
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.alertRuleId, that.alertRuleId)
             && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspaceId, ruleId, body);
+        return Objects.hash(workspaceId, alertRuleId, body);
     }
 
     @Override
@@ -109,7 +109,7 @@ public class UpdateAlertRuleRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateAlertRuleRequest {\n");
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
-        sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
+        sb.append("    alertRuleId: ").append(toIndentedString(alertRuleId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

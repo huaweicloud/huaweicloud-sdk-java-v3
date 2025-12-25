@@ -35,7 +35,7 @@ public class ListLtsLogsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 日志开启状态。 **取值范围**： 不涉及。
+     * **参数解释**： 日志开启状态。 **取值范围**： - OPEN：开启。 - CLOSE：关闭。 - DELETE：集群已删除。
      * @return accessStatus
      */
     public String getAccessStatus() {

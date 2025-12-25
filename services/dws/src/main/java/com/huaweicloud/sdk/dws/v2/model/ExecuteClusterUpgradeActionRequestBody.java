@@ -26,7 +26,7 @@ public class ExecuteClusterUpgradeActionRequestBody {
     }
 
     /**
-     * **参数解释**： 当前集群要做的操作。 **取值范围**： 不涉及。
+     * **参数解释**： 当前集群要做的操作。 **约束限制**： 不涉及。 **取值范围**： - update: 下发升级 - rollback: 下发回滚 - commit: 下发提交集群 - retry: 下发重试 **默认取值**： 不涉及。
      * @return action
      */
     public String getAction() {
@@ -43,7 +43,7 @@ public class ExecuteClusterUpgradeActionRequestBody {
     }
 
     /**
-     * **参数解释**： 升级项ID。 **取值范围**： 不涉及。
+     * **参数解释**： 升级项ID。 **约束限制**： 填写的升级项ID应属于当前集群。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return itemId
      */
     public String getItemId() {

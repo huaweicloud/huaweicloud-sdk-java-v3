@@ -166,7 +166,7 @@ public class DisasterRecoveryCluster {
     }
 
     /**
-     * **参数解释**： 容灾集群状态。 **取值范围**： 不涉及。
+     * **参数解释**： 容灾集群状态。 **取值范围**： - backuping，备份运行中。 - restoring，恢复运行中。 - stopped，集群已停止。 - waiting，容灾运行中。 - abnormal，容灾异常。 - drDeleted，容灾已删除。
      * @return status
      */
     public String getStatus() {

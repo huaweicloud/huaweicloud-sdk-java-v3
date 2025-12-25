@@ -42,9 +42,7 @@ public class ClusterJoinGroupRequestBody implements SdkFormDataBody {
 
             private static final long serialVersionUID = 1L;
             {
-                if (clusterGroupID != null) {
-                    put("clusterGroupID", new FormDataPart<>(clusterGroupID));
-                }
+                put("clusterGroupID", new FormDataPart<>(clusterGroupID));
             }
         };
     }

@@ -35,12 +35,17 @@ public class OneResourceGroupResp {
     private OffsetDateTime createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time")
+
+    private OffsetDateTime updateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     /**
-     * 资源添加/匹配方式，取值只能为EPS（匹配企业项目）,TAG（匹配标签）,NAME（匹配实例名称）, COMB（组合匹配）,Manual（手动添加）
+     * **参数解释** 资源分组添加资源方式。 **取值范围** - EPS: 表示匹配企业项目 - TAG: 表示匹配标签 - Manual: 表示手动添加 - COMB: 表示组合匹配 - NAME: 表示匹配实例名称
      */
     public static final class TypeEnum {
 
@@ -55,9 +60,9 @@ public class OneResourceGroupResp {
         public static final TypeEnum TAG = new TypeEnum("TAG");
 
         /**
-         * Enum NAME for value: "NAME"
+         * Enum MANUAL for value: "Manual"
          */
-        public static final TypeEnum NAME = new TypeEnum("NAME");
+        public static final TypeEnum MANUAL = new TypeEnum("Manual");
 
         /**
          * Enum COMB for value: "COMB"
@@ -65,9 +70,9 @@ public class OneResourceGroupResp {
         public static final TypeEnum COMB = new TypeEnum("COMB");
 
         /**
-         * Enum MANUAL for value: "Manual"
+         * Enum NAME for value: "NAME"
          */
-        public static final TypeEnum MANUAL = new TypeEnum("Manual");
+        public static final TypeEnum NAME = new TypeEnum("NAME");
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -75,9 +80,9 @@ public class OneResourceGroupResp {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("EPS", EPS);
             map.put("TAG", TAG);
-            map.put("NAME", NAME);
-            map.put("COMB", COMB);
             map.put("Manual", MANUAL);
+            map.put("COMB", COMB);
+            map.put("NAME", NAME);
             return Collections.unmodifiableMap(map);
         }
 
@@ -133,7 +138,7 @@ public class OneResourceGroupResp {
     private TypeEnum type;
 
     /**
-     * 指标告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+     * **参数解释** 资源分组指标告警状态。 **取值范围** - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未配置告警规则
      */
     public static final class StatusEnum {
 
@@ -214,7 +219,7 @@ public class OneResourceGroupResp {
     private StatusEnum status;
 
     /**
-     * 事件告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+     * **参数解释** 资源分组事件告警状态。 **取值范围** - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未配置告警规则
      */
     public static final class EventStatusEnum {
 
@@ -309,13 +314,88 @@ public class OneResourceGroupResp {
 
     private List<AssociationAlarmTemplate> associationAlarmTemplates = null;
 
+    /**
+     * **参数解释** 资源层级，资源生效范围。 **取值范围** - product: 云产品 - dimension: 子维度
+     */
+    public static final class ResourceLevelEnum {
+
+        /**
+         * Enum PRODUCT for value: "product"
+         */
+        public static final ResourceLevelEnum PRODUCT = new ResourceLevelEnum("product");
+
+        /**
+         * Enum DIMENSION for value: "dimension"
+         */
+        public static final ResourceLevelEnum DIMENSION = new ResourceLevelEnum("dimension");
+
+        private static final Map<String, ResourceLevelEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ResourceLevelEnum> createStaticFields() {
+            Map<String, ResourceLevelEnum> map = new HashMap<>();
+            map.put("product", PRODUCT);
+            map.put("dimension", DIMENSION);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ResourceLevelEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ResourceLevelEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceLevelEnum(value));
+        }
+
+        public static ResourceLevelEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ResourceLevelEnum) {
+                return this.value.equals(((ResourceLevelEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_level")
+
+    private ResourceLevelEnum resourceLevel;
+
     public OneResourceGroupResp withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
     }
 
     /**
-     * 资源分组的名称
+     * **参数解释** 资源分组的名称。 **取值范围** 只能为字母、数字、汉字、-或_，长度为[1,128]个字符。
      * @return groupName
      */
     public String getGroupName() {
@@ -332,7 +412,7 @@ public class OneResourceGroupResp {
     }
 
     /**
-     * 资源分组ID，以rg开头，后跟22位由字母或数字组成的字符串
+     * **参数解释** 资源分组ID。 **取值范围** 以rg开头，后跟22位由字母或数字组成的字符串。
      * @return groupId
      */
     public String getGroupId() {
@@ -349,7 +429,7 @@ public class OneResourceGroupResp {
     }
 
     /**
-     * 资源分组的创建时间
+     * **参数解释** 资源分组的创建时间，UNIX时间戳，单位毫秒；如：1603819753000。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -360,13 +440,30 @@ public class OneResourceGroupResp {
         this.createTime = createTime;
     }
 
+    public OneResourceGroupResp withUpdateTime(OffsetDateTime updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    /**
+     * **参数解释** 资源分组的修改时间，UNIX时间戳，单位毫秒；如：1603819753000。
+     * @return updateTime
+     */
+    public OffsetDateTime getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(OffsetDateTime updateTime) {
+        this.updateTime = updateTime;
+    }
+
     public OneResourceGroupResp withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
-     * 资源分组归属企业项目ID
+     * **参数解释** 资源分组归属企业项目ID。 **取值范围** 只能包含小写字母、数字或-，长度为36个字符。或者为0，代表默认企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -383,7 +480,7 @@ public class OneResourceGroupResp {
     }
 
     /**
-     * 资源添加/匹配方式，取值只能为EPS（匹配企业项目）,TAG（匹配标签）,NAME（匹配实例名称）, COMB（组合匹配）,Manual（手动添加）
+     * **参数解释** 资源分组添加资源方式。 **取值范围** - EPS: 表示匹配企业项目 - TAG: 表示匹配标签 - Manual: 表示手动添加 - COMB: 表示组合匹配 - NAME: 表示匹配实例名称
      * @return type
      */
     public TypeEnum getType() {
@@ -400,7 +497,7 @@ public class OneResourceGroupResp {
     }
 
     /**
-     * 指标告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+     * **参数解释** 资源分组指标告警状态。 **取值范围** - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未配置告警规则
      * @return status
      */
     public StatusEnum getStatus() {
@@ -417,7 +514,7 @@ public class OneResourceGroupResp {
     }
 
     /**
-     * 事件告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+     * **参数解释** 资源分组事件告警状态。 **取值范围** - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未配置告警规则
      * @return eventStatus
      */
     public EventStatusEnum getEventStatus() {
@@ -477,7 +574,7 @@ public class OneResourceGroupResp {
     }
 
     /**
-     * 当资源匹配规则为匹配企业项目时，指定的企业项目列表
+     * **参数解释** 当资源匹配规则为匹配企业项目时，指定的企业项目列表。
      * @return relatedEpIds
      */
     public List<String> getRelatedEpIds() {
@@ -513,7 +610,7 @@ public class OneResourceGroupResp {
     }
 
     /**
-     * 关联的告警模板列表
+     * **参数解释** 关联的告警模板列表。
      * @return associationAlarmTemplates
      */
     public List<AssociationAlarmTemplate> getAssociationAlarmTemplates() {
@@ -522,6 +619,23 @@ public class OneResourceGroupResp {
 
     public void setAssociationAlarmTemplates(List<AssociationAlarmTemplate> associationAlarmTemplates) {
         this.associationAlarmTemplates = associationAlarmTemplates;
+    }
+
+    public OneResourceGroupResp withResourceLevel(ResourceLevelEnum resourceLevel) {
+        this.resourceLevel = resourceLevel;
+        return this;
+    }
+
+    /**
+     * **参数解释** 资源层级，资源生效范围。 **取值范围** - product: 云产品 - dimension: 子维度
+     * @return resourceLevel
+     */
+    public ResourceLevelEnum getResourceLevel() {
+        return resourceLevel;
+    }
+
+    public void setResourceLevel(ResourceLevelEnum resourceLevel) {
+        this.resourceLevel = resourceLevel;
     }
 
     @Override
@@ -534,13 +648,14 @@ public class OneResourceGroupResp {
         }
         OneResourceGroupResp that = (OneResourceGroupResp) obj;
         return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.groupId, that.groupId)
-            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.type, that.type) && Objects.equals(this.status, that.status)
             && Objects.equals(this.eventStatus, that.eventStatus)
             && Objects.equals(this.resourceStatistics, that.resourceStatistics)
             && Objects.equals(this.relatedEpIds, that.relatedEpIds)
-            && Objects.equals(this.associationAlarmTemplates, that.associationAlarmTemplates);
+            && Objects.equals(this.associationAlarmTemplates, that.associationAlarmTemplates)
+            && Objects.equals(this.resourceLevel, that.resourceLevel);
     }
 
     @Override
@@ -548,13 +663,15 @@ public class OneResourceGroupResp {
         return Objects.hash(groupName,
             groupId,
             createTime,
+            updateTime,
             enterpriseProjectId,
             type,
             status,
             eventStatus,
             resourceStatistics,
             relatedEpIds,
-            associationAlarmTemplates);
+            associationAlarmTemplates,
+            resourceLevel);
     }
 
     @Override
@@ -564,6 +681,7 @@ public class OneResourceGroupResp {
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
@@ -571,6 +689,7 @@ public class OneResourceGroupResp {
         sb.append("    resourceStatistics: ").append(toIndentedString(resourceStatistics)).append("\n");
         sb.append("    relatedEpIds: ").append(toIndentedString(relatedEpIds)).append("\n");
         sb.append("    associationAlarmTemplates: ").append(toIndentedString(associationAlarmTemplates)).append("\n");
+        sb.append("    resourceLevel: ").append(toIndentedString(resourceLevel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

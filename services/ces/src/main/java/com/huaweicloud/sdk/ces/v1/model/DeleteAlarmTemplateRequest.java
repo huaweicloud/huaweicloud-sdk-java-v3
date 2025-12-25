@@ -21,7 +21,7 @@ public class DeleteAlarmTemplateRequest {
     }
 
     /**
-     * 需要删除的自定义告警模板ID。
+     * **参数解释**： 自定义告警模版的ID，如：at1603330892378wkDm77y6B **约束限制**： 不涉及 **取值范围**： 以at开头，后跟字母、数字，长度最长为64 **默认取值**： 不涉及 
      * @return templateId
      */
     public String getTemplateId() {

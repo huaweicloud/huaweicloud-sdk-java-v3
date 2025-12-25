@@ -49,7 +49,7 @@ public class ListNotificationMasksResponse extends SdkResponse {
     }
 
     /**
-     * 通知屏蔽列表
+     * **参数解释**： 通知屏蔽列表 
      * @return notificationMasks
      */
     public List<ListNotificationMaskRespNotificationMasks> getNotificationMasks() {
@@ -66,7 +66,7 @@ public class ListNotificationMasksResponse extends SdkResponse {
     }
 
     /**
-     * 通知屏蔽列表总数
+     * **参数解释**： 通知屏蔽列表总数 **取值范围**： [0,99999] 
      * minimum: 0
      * maximum: 99999
      * @return count

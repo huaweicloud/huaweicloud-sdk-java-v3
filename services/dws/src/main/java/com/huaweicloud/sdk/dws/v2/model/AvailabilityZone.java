@@ -70,7 +70,7 @@ public class AvailabilityZone {
     }
 
     /**
-     * **参数解释**： 可用区状态。 **取值范围**： available：可用。 unavailable：不可用。
+     * **参数解释**： 可用区状态。 **取值范围**： - available：可用。 - unavailable：不可用。
      * @return status
      */
     public String getStatus() {

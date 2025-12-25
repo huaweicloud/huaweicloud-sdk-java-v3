@@ -125,7 +125,7 @@ public class ListJobDetailsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 任务当前状态。 **取值范围**： 不涉及。
+     * **参数解释**： 任务当前状态。 **取值范围**： - INIT：初始化。 - WAITING：等待中。 - RUNNING：运行中。 - DELAY_SCHEDULED：延迟调度。 - FAIL：失败。 - SUCCESS：成功。 - STOP：停止。
      * @return status
      */
     public String getStatus() {

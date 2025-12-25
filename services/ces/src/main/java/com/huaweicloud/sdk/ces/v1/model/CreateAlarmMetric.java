@@ -26,7 +26,7 @@ public class CreateAlarmMetric {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dimensions")
 
-    private List<Dimension> dimensions = null;
+    private List<CreateMetricDimension> dimensions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_group_id")
@@ -67,12 +67,12 @@ public class CreateAlarmMetric {
         this.metricName = metricName;
     }
 
-    public CreateAlarmMetric withDimensions(List<Dimension> dimensions) {
+    public CreateAlarmMetric withDimensions(List<CreateMetricDimension> dimensions) {
         this.dimensions = dimensions;
         return this;
     }
 
-    public CreateAlarmMetric addDimensionsItem(Dimension dimensionsItem) {
+    public CreateAlarmMetric addDimensionsItem(CreateMetricDimension dimensionsItem) {
         if (this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
@@ -80,7 +80,7 @@ public class CreateAlarmMetric {
         return this;
     }
 
-    public CreateAlarmMetric withDimensions(Consumer<List<Dimension>> dimensionsSetter) {
+    public CreateAlarmMetric withDimensions(Consumer<List<CreateMetricDimension>> dimensionsSetter) {
         if (this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
@@ -92,11 +92,11 @@ public class CreateAlarmMetric {
      * **参数解释**： 指标维度。 **约束限制**： 目前最大可添加4个维度。如果不使用resource_group_id，则dimensions值必填。 
      * @return dimensions
      */
-    public List<Dimension> getDimensions() {
+    public List<CreateMetricDimension> getDimensions() {
         return dimensions;
     }
 
-    public void setDimensions(List<Dimension> dimensions) {
+    public void setDimensions(List<CreateMetricDimension> dimensions) {
         this.dimensions = dimensions;
     }
 

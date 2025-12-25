@@ -1,15 +1,10 @@
 package com.huaweicloud.sdk.secmaster.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -19,9 +14,9 @@ import java.util.function.Consumer;
 public class UpdateAlertRuleRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "rule_name")
+    @JsonProperty(value = "alert_rule_name")
 
-    private String ruleName;
+    private String alertRuleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -29,297 +24,70 @@ public class UpdateAlertRuleRequestBody {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "query")
+    @JsonProperty(value = "directory")
 
-    private String query;
-
-    /**
-     * 查询语法，SQL。Query type. SQL.
-     */
-    public static final class QueryTypeEnum {
-
-        /**
-         * Enum SQL for value: "SQL"
-         */
-        public static final QueryTypeEnum SQL = new QueryTypeEnum("SQL");
-
-        private static final Map<String, QueryTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, QueryTypeEnum> createStaticFields() {
-            Map<String, QueryTypeEnum> map = new HashMap<>();
-            map.put("SQL", SQL);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        QueryTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static QueryTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new QueryTypeEnum(value));
-        }
-
-        public static QueryTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof QueryTypeEnum) {
-                return this.value.equals(((QueryTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String directory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "query_type")
+    @JsonProperty(value = "script")
 
-    private QueryTypeEnum queryType;
-
-    /**
-     * 启用状态，启用、停用。Status, enabled, disabled.
-     */
-    public static final class StatusEnum {
-
-        /**
-         * Enum ENABLED for value: "ENABLED"
-         */
-        public static final StatusEnum ENABLED = new StatusEnum("ENABLED");
-
-        /**
-         * Enum DISABLED for value: "DISABLED"
-         */
-        public static final StatusEnum DISABLED = new StatusEnum("DISABLED");
-
-        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, StatusEnum> createStaticFields() {
-            Map<String, StatusEnum> map = new HashMap<>();
-            map.put("ENABLED", ENABLED);
-            map.put("DISABLED", DISABLED);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        StatusEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StatusEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
-        }
-
-        public static StatusEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof StatusEnum) {
-                return this.value.equals(((StatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String script;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private StatusEnum status;
-
-    /**
-     * 严重程度，提示、低危、中危、高危、致命。Severity. TIPS, LOW, MEDIUM, HIGH, FATAL
-     */
-    public static final class SeverityEnum {
-
-        /**
-         * Enum TIPS for value: "TIPS"
-         */
-        public static final SeverityEnum TIPS = new SeverityEnum("TIPS");
-
-        /**
-         * Enum LOW for value: "LOW"
-         */
-        public static final SeverityEnum LOW = new SeverityEnum("LOW");
-
-        /**
-         * Enum MEDIUM for value: "MEDIUM"
-         */
-        public static final SeverityEnum MEDIUM = new SeverityEnum("MEDIUM");
-
-        /**
-         * Enum HIGH for value: "HIGH"
-         */
-        public static final SeverityEnum HIGH = new SeverityEnum("HIGH");
-
-        /**
-         * Enum FATAL for value: "FATAL"
-         */
-        public static final SeverityEnum FATAL = new SeverityEnum("FATAL");
-
-        private static final Map<String, SeverityEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, SeverityEnum> createStaticFields() {
-            Map<String, SeverityEnum> map = new HashMap<>();
-            map.put("TIPS", TIPS);
-            map.put("LOW", LOW);
-            map.put("MEDIUM", MEDIUM);
-            map.put("HIGH", HIGH);
-            map.put("FATAL", FATAL);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        SeverityEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static SeverityEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SeverityEnum(value));
-        }
-
-        public static SeverityEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof SeverityEnum) {
-                return this.value.equals(((SeverityEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private JobStatus status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "severity")
+    @JsonProperty(value = "job_mode_setting")
 
-    private SeverityEnum severity;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "custom_properties")
-
-    private Map<String, String> customProperties = null;
+    private IsapJobModeSettingDto jobModeSetting;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "alert_type")
+    @JsonProperty(value = "job_output_setting")
 
-    private Map<String, String> alertType = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "event_grouping")
-
-    private Boolean eventGrouping;
+    private IsapJobOutputSetting jobOutputSetting;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "suppression")
+    @JsonProperty(value = "environment")
 
-    private Boolean suppression;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "simulation")
-
-    private Boolean simulation;
+    private JobEnvironment environment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "schedule")
+    @JsonProperty(value = "output_table_id")
 
-    private Schedule schedule;
+    private String outputTableId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "triggers")
+    @JsonProperty(value = "output_table_ids")
 
-    private List<AlertRuleTrigger> triggers = null;
+    private List<String> outputTableIds = null;
 
-    public UpdateAlertRuleRequestBody withRuleName(String ruleName) {
-        this.ruleName = ruleName;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "output_table_names")
+
+    private List<String> outputTableNames = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publish_status")
+
+    private String publishStatus;
+
+    public UpdateAlertRuleRequestBody withAlertRuleName(String alertRuleName) {
+        this.alertRuleName = alertRuleName;
         return this;
     }
 
     /**
-     * 告警规则名称。Alert rule name.
-     * @return ruleName
+     * Alert rule name 告警规则名称
+     * @return alertRuleName
      */
-    public String getRuleName() {
-        return ruleName;
+    public String getAlertRuleName() {
+        return alertRuleName;
     }
 
-    public void setRuleName(String ruleName) {
-        this.ruleName = ruleName;
+    public void setAlertRuleName(String alertRuleName) {
+        this.alertRuleName = alertRuleName;
     }
 
     public UpdateAlertRuleRequestBody withDescription(String description) {
@@ -328,7 +96,7 @@ public class UpdateAlertRuleRequestBody {
     }
 
     /**
-     * 描述。Description.
+     * Alert rule description 告警规则描述
      * @return description
      */
     public String getDescription() {
@@ -339,248 +107,224 @@ public class UpdateAlertRuleRequestBody {
         this.description = description;
     }
 
-    public UpdateAlertRuleRequestBody withQuery(String query) {
-        this.query = query;
+    public UpdateAlertRuleRequestBody withDirectory(String directory) {
+        this.directory = directory;
         return this;
     }
 
     /**
-     * 查询语句。Query.
-     * @return query
+     * directory 目录分组
+     * @return directory
      */
-    public String getQuery() {
-        return query;
+    public String getDirectory() {
+        return directory;
     }
 
-    public void setQuery(String query) {
-        this.query = query;
+    public void setDirectory(String directory) {
+        this.directory = directory;
     }
 
-    public UpdateAlertRuleRequestBody withQueryType(QueryTypeEnum queryType) {
-        this.queryType = queryType;
+    public UpdateAlertRuleRequestBody withScript(String script) {
+        this.script = script;
         return this;
     }
 
     /**
-     * 查询语法，SQL。Query type. SQL.
-     * @return queryType
+     * Job Script 作业脚本
+     * @return script
      */
-    public QueryTypeEnum getQueryType() {
-        return queryType;
+    public String getScript() {
+        return script;
     }
 
-    public void setQueryType(QueryTypeEnum queryType) {
-        this.queryType = queryType;
+    public void setScript(String script) {
+        this.script = script;
     }
 
-    public UpdateAlertRuleRequestBody withStatus(StatusEnum status) {
+    public UpdateAlertRuleRequestBody withStatus(JobStatus status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 启用状态，启用、停用。Status, enabled, disabled.
+     * Get status
      * @return status
      */
-    public StatusEnum getStatus() {
+    public JobStatus getStatus() {
         return status;
     }
 
-    public void setStatus(StatusEnum status) {
+    public void setStatus(JobStatus status) {
         this.status = status;
     }
 
-    public UpdateAlertRuleRequestBody withSeverity(SeverityEnum severity) {
-        this.severity = severity;
+    public UpdateAlertRuleRequestBody withJobModeSetting(IsapJobModeSettingDto jobModeSetting) {
+        this.jobModeSetting = jobModeSetting;
         return this;
     }
 
-    /**
-     * 严重程度，提示、低危、中危、高危、致命。Severity. TIPS, LOW, MEDIUM, HIGH, FATAL
-     * @return severity
-     */
-    public SeverityEnum getSeverity() {
-        return severity;
-    }
-
-    public void setSeverity(SeverityEnum severity) {
-        this.severity = severity;
-    }
-
-    public UpdateAlertRuleRequestBody withCustomProperties(Map<String, String> customProperties) {
-        this.customProperties = customProperties;
-        return this;
-    }
-
-    public UpdateAlertRuleRequestBody putCustomPropertiesItem(String key, String customPropertiesItem) {
-        if (this.customProperties == null) {
-            this.customProperties = new HashMap<>();
-        }
-        this.customProperties.put(key, customPropertiesItem);
-        return this;
-    }
-
-    public UpdateAlertRuleRequestBody withCustomProperties(Consumer<Map<String, String>> customPropertiesSetter) {
-        if (this.customProperties == null) {
-            this.customProperties = new HashMap<>();
-        }
-        customPropertiesSetter.accept(this.customProperties);
-        return this;
-    }
-
-    /**
-     * 自定义扩展信息。Custom properties.
-     * @return customProperties
-     */
-    public Map<String, String> getCustomProperties() {
-        return customProperties;
-    }
-
-    public void setCustomProperties(Map<String, String> customProperties) {
-        this.customProperties = customProperties;
-    }
-
-    public UpdateAlertRuleRequestBody withAlertType(Map<String, String> alertType) {
-        this.alertType = alertType;
-        return this;
-    }
-
-    public UpdateAlertRuleRequestBody putAlertTypeItem(String key, String alertTypeItem) {
-        if (this.alertType == null) {
-            this.alertType = new HashMap<>();
-        }
-        this.alertType.put(key, alertTypeItem);
-        return this;
-    }
-
-    public UpdateAlertRuleRequestBody withAlertType(Consumer<Map<String, String>> alertTypeSetter) {
-        if (this.alertType == null) {
-            this.alertType = new HashMap<>();
-        }
-        alertTypeSetter.accept(this.alertType);
-        return this;
-    }
-
-    /**
-     * 告警类型。Alert type.
-     * @return alertType
-     */
-    public Map<String, String> getAlertType() {
-        return alertType;
-    }
-
-    public void setAlertType(Map<String, String> alertType) {
-        this.alertType = alertType;
-    }
-
-    public UpdateAlertRuleRequestBody withEventGrouping(Boolean eventGrouping) {
-        this.eventGrouping = eventGrouping;
-        return this;
-    }
-
-    /**
-     * 告警分组。Event grouping.
-     * @return eventGrouping
-     */
-    public Boolean getEventGrouping() {
-        return eventGrouping;
-    }
-
-    public void setEventGrouping(Boolean eventGrouping) {
-        this.eventGrouping = eventGrouping;
-    }
-
-    public UpdateAlertRuleRequestBody withSuppression(Boolean suppression) {
-        this.suppression = suppression;
-        return this;
-    }
-
-    /**
-     * 告警抑制。Suppression
-     * @return suppression
-     */
-    public Boolean getSuppression() {
-        return suppression;
-    }
-
-    public void setSuppression(Boolean suppression) {
-        this.suppression = suppression;
-    }
-
-    public UpdateAlertRuleRequestBody withSimulation(Boolean simulation) {
-        this.simulation = simulation;
-        return this;
-    }
-
-    /**
-     * 模拟告警。Simulation.
-     * @return simulation
-     */
-    public Boolean getSimulation() {
-        return simulation;
-    }
-
-    public void setSimulation(Boolean simulation) {
-        this.simulation = simulation;
-    }
-
-    public UpdateAlertRuleRequestBody withSchedule(Schedule schedule) {
-        this.schedule = schedule;
-        return this;
-    }
-
-    public UpdateAlertRuleRequestBody withSchedule(Consumer<Schedule> scheduleSetter) {
-        if (this.schedule == null) {
-            this.schedule = new Schedule();
-            scheduleSetter.accept(this.schedule);
+    public UpdateAlertRuleRequestBody withJobModeSetting(Consumer<IsapJobModeSettingDto> jobModeSettingSetter) {
+        if (this.jobModeSetting == null) {
+            this.jobModeSetting = new IsapJobModeSettingDto();
+            jobModeSettingSetter.accept(this.jobModeSetting);
         }
 
         return this;
     }
 
     /**
-     * Get schedule
-     * @return schedule
+     * Get jobModeSetting
+     * @return jobModeSetting
      */
-    public Schedule getSchedule() {
-        return schedule;
+    public IsapJobModeSettingDto getJobModeSetting() {
+        return jobModeSetting;
     }
 
-    public void setSchedule(Schedule schedule) {
-        this.schedule = schedule;
+    public void setJobModeSetting(IsapJobModeSettingDto jobModeSetting) {
+        this.jobModeSetting = jobModeSetting;
     }
 
-    public UpdateAlertRuleRequestBody withTriggers(List<AlertRuleTrigger> triggers) {
-        this.triggers = triggers;
+    public UpdateAlertRuleRequestBody withJobOutputSetting(IsapJobOutputSetting jobOutputSetting) {
+        this.jobOutputSetting = jobOutputSetting;
         return this;
     }
 
-    public UpdateAlertRuleRequestBody addTriggersItem(AlertRuleTrigger triggersItem) {
-        if (this.triggers == null) {
-            this.triggers = new ArrayList<>();
+    public UpdateAlertRuleRequestBody withJobOutputSetting(Consumer<IsapJobOutputSetting> jobOutputSettingSetter) {
+        if (this.jobOutputSetting == null) {
+            this.jobOutputSetting = new IsapJobOutputSetting();
+            jobOutputSettingSetter.accept(this.jobOutputSetting);
         }
-        this.triggers.add(triggersItem);
-        return this;
-    }
 
-    public UpdateAlertRuleRequestBody withTriggers(Consumer<List<AlertRuleTrigger>> triggersSetter) {
-        if (this.triggers == null) {
-            this.triggers = new ArrayList<>();
-        }
-        triggersSetter.accept(this.triggers);
         return this;
     }
 
     /**
-     * 告警触发规则。Alert triggers.
-     * @return triggers
+     * Get jobOutputSetting
+     * @return jobOutputSetting
      */
-    public List<AlertRuleTrigger> getTriggers() {
-        return triggers;
+    public IsapJobOutputSetting getJobOutputSetting() {
+        return jobOutputSetting;
     }
 
-    public void setTriggers(List<AlertRuleTrigger> triggers) {
-        this.triggers = triggers;
+    public void setJobOutputSetting(IsapJobOutputSetting jobOutputSetting) {
+        this.jobOutputSetting = jobOutputSetting;
+    }
+
+    public UpdateAlertRuleRequestBody withEnvironment(JobEnvironment environment) {
+        this.environment = environment;
+        return this;
+    }
+
+    /**
+     * Get environment
+     * @return environment
+     */
+    public JobEnvironment getEnvironment() {
+        return environment;
+    }
+
+    public void setEnvironment(JobEnvironment environment) {
+        this.environment = environment;
+    }
+
+    public UpdateAlertRuleRequestBody withOutputTableId(String outputTableId) {
+        this.outputTableId = outputTableId;
+        return this;
+    }
+
+    /**
+     * UUID
+     * @return outputTableId
+     */
+    public String getOutputTableId() {
+        return outputTableId;
+    }
+
+    public void setOutputTableId(String outputTableId) {
+        this.outputTableId = outputTableId;
+    }
+
+    public UpdateAlertRuleRequestBody withOutputTableIds(List<String> outputTableIds) {
+        this.outputTableIds = outputTableIds;
+        return this;
+    }
+
+    public UpdateAlertRuleRequestBody addOutputTableIdsItem(String outputTableIdsItem) {
+        if (this.outputTableIds == null) {
+            this.outputTableIds = new ArrayList<>();
+        }
+        this.outputTableIds.add(outputTableIdsItem);
+        return this;
+    }
+
+    public UpdateAlertRuleRequestBody withOutputTableIds(Consumer<List<String>> outputTableIdsSetter) {
+        if (this.outputTableIds == null) {
+            this.outputTableIds = new ArrayList<>();
+        }
+        outputTableIdsSetter.accept(this.outputTableIds);
+        return this;
+    }
+
+    /**
+     * 输出表ID列表
+     * @return outputTableIds
+     */
+    public List<String> getOutputTableIds() {
+        return outputTableIds;
+    }
+
+    public void setOutputTableIds(List<String> outputTableIds) {
+        this.outputTableIds = outputTableIds;
+    }
+
+    public UpdateAlertRuleRequestBody withOutputTableNames(List<String> outputTableNames) {
+        this.outputTableNames = outputTableNames;
+        return this;
+    }
+
+    public UpdateAlertRuleRequestBody addOutputTableNamesItem(String outputTableNamesItem) {
+        if (this.outputTableNames == null) {
+            this.outputTableNames = new ArrayList<>();
+        }
+        this.outputTableNames.add(outputTableNamesItem);
+        return this;
+    }
+
+    public UpdateAlertRuleRequestBody withOutputTableNames(Consumer<List<String>> outputTableNamesSetter) {
+        if (this.outputTableNames == null) {
+            this.outputTableNames = new ArrayList<>();
+        }
+        outputTableNamesSetter.accept(this.outputTableNames);
+        return this;
+    }
+
+    /**
+     * 输出表名称列表
+     * @return outputTableNames
+     */
+    public List<String> getOutputTableNames() {
+        return outputTableNames;
+    }
+
+    public void setOutputTableNames(List<String> outputTableNames) {
+        this.outputTableNames = outputTableNames;
+    }
+
+    public UpdateAlertRuleRequestBody withPublishStatus(String publishStatus) {
+        this.publishStatus = publishStatus;
+        return this;
+    }
+
+    /**
+     * 发布状态: 只适用行管租户，不对外暴露参数
+     * @return publishStatus
+     */
+    public String getPublishStatus() {
+        return publishStatus;
+    }
+
+    public void setPublishStatus(String publishStatus) {
+        this.publishStatus = publishStatus;
     }
 
     @Override
@@ -592,49 +336,50 @@ public class UpdateAlertRuleRequestBody {
             return false;
         }
         UpdateAlertRuleRequestBody that = (UpdateAlertRuleRequestBody) obj;
-        return Objects.equals(this.ruleName, that.ruleName) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.query, that.query) && Objects.equals(this.queryType, that.queryType)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.severity, that.severity)
-            && Objects.equals(this.customProperties, that.customProperties)
-            && Objects.equals(this.alertType, that.alertType) && Objects.equals(this.eventGrouping, that.eventGrouping)
-            && Objects.equals(this.suppression, that.suppression) && Objects.equals(this.simulation, that.simulation)
-            && Objects.equals(this.schedule, that.schedule) && Objects.equals(this.triggers, that.triggers);
+        return Objects.equals(this.alertRuleName, that.alertRuleName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.directory, that.directory)
+            && Objects.equals(this.script, that.script) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.jobModeSetting, that.jobModeSetting)
+            && Objects.equals(this.jobOutputSetting, that.jobOutputSetting)
+            && Objects.equals(this.environment, that.environment)
+            && Objects.equals(this.outputTableId, that.outputTableId)
+            && Objects.equals(this.outputTableIds, that.outputTableIds)
+            && Objects.equals(this.outputTableNames, that.outputTableNames)
+            && Objects.equals(this.publishStatus, that.publishStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ruleName,
+        return Objects.hash(alertRuleName,
             description,
-            query,
-            queryType,
+            directory,
+            script,
             status,
-            severity,
-            customProperties,
-            alertType,
-            eventGrouping,
-            suppression,
-            simulation,
-            schedule,
-            triggers);
+            jobModeSetting,
+            jobOutputSetting,
+            environment,
+            outputTableId,
+            outputTableIds,
+            outputTableNames,
+            publishStatus);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateAlertRuleRequestBody {\n");
-        sb.append("    ruleName: ").append(toIndentedString(ruleName)).append("\n");
+        sb.append("    alertRuleName: ").append(toIndentedString(alertRuleName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    query: ").append(toIndentedString(query)).append("\n");
-        sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
+        sb.append("    directory: ").append(toIndentedString(directory)).append("\n");
+        sb.append("    script: ").append(toIndentedString(script)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
-        sb.append("    customProperties: ").append(toIndentedString(customProperties)).append("\n");
-        sb.append("    alertType: ").append(toIndentedString(alertType)).append("\n");
-        sb.append("    eventGrouping: ").append(toIndentedString(eventGrouping)).append("\n");
-        sb.append("    suppression: ").append(toIndentedString(suppression)).append("\n");
-        sb.append("    simulation: ").append(toIndentedString(simulation)).append("\n");
-        sb.append("    schedule: ").append(toIndentedString(schedule)).append("\n");
-        sb.append("    triggers: ").append(toIndentedString(triggers)).append("\n");
+        sb.append("    jobModeSetting: ").append(toIndentedString(jobModeSetting)).append("\n");
+        sb.append("    jobOutputSetting: ").append(toIndentedString(jobOutputSetting)).append("\n");
+        sb.append("    environment: ").append(toIndentedString(environment)).append("\n");
+        sb.append("    outputTableId: ").append(toIndentedString(outputTableId)).append("\n");
+        sb.append("    outputTableIds: ").append(toIndentedString(outputTableIds)).append("\n");
+        sb.append("    outputTableNames: ").append(toIndentedString(outputTableNames)).append("\n");
+        sb.append("    publishStatus: ").append(toIndentedString(publishStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -30,7 +30,7 @@ public class ListResourceGroupsResponse extends SdkResponse {
     }
 
     /**
-     * 资源分组总数
+     * **参数解释** 资源分组总数。 **取值范围** 在[0,1000]区间内。
      * minimum: 0
      * maximum: 1000
      * @return count
@@ -65,7 +65,7 @@ public class ListResourceGroupsResponse extends SdkResponse {
     }
 
     /**
-     * 资源分组列表
+     * **参数解释** 资源分组列表。
      * @return resourceGroups
      */
     public List<OneResourceGroupResp> getResourceGroups() {

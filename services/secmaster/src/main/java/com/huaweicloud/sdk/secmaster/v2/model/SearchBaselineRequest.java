@@ -32,7 +32,7 @@ public class SearchBaselineRequest {
     }
 
     /**
-     * 工作空间id
+     * **参数解释：** 工作空间id。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -49,7 +49,7 @@ public class SearchBaselineRequest {
     }
 
     /**
-     * 语言，参考值：zh-CN、en-US
+     * **参数解释：** 语言，参考值：zh-cn、en-us **约束限制：** 不涉及 **取值范围：** zh-cn：中文环境 en-us：英文环境 **默认取值：** 不涉及
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

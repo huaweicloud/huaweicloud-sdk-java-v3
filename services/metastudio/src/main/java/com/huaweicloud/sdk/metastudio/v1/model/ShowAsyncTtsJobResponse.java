@@ -17,6 +17,16 @@ public class ShowAsyncTtsJobResponse extends SdkResponse {
     private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "code")
+
+    private String code;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "message")
+
+    private String message;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_file_url")
 
     private String audioFileUrl;
@@ -51,6 +61,40 @@ public class ShowAsyncTtsJobResponse extends SdkResponse {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public ShowAsyncTtsJobResponse withCode(String code) {
+        this.code = code;
+        return this;
+    }
+
+    /**
+     * 返回码。
+     * @return code
+     */
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public ShowAsyncTtsJobResponse withMessage(String message) {
+        this.message = message;
+        return this;
+    }
+
+    /**
+     * 异常信息。
+     * @return message
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public ShowAsyncTtsJobResponse withAudioFileUrl(String audioFileUrl) {
@@ -130,7 +174,8 @@ public class ShowAsyncTtsJobResponse extends SdkResponse {
             return false;
         }
         ShowAsyncTtsJobResponse that = (ShowAsyncTtsJobResponse) obj;
-        return Objects.equals(this.state, that.state) && Objects.equals(this.audioFileUrl, that.audioFileUrl)
+        return Objects.equals(this.state, that.state) && Objects.equals(this.code, that.code)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.audioFileUrl, that.audioFileUrl)
             && Objects.equals(this.audioInfoFileUrl, that.audioInfoFileUrl)
             && Objects.equals(this.audioSrtFileUrl, that.audioSrtFileUrl)
             && Objects.equals(this.audioActionFileUrl, that.audioActionFileUrl);
@@ -138,7 +183,7 @@ public class ShowAsyncTtsJobResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(state, audioFileUrl, audioInfoFileUrl, audioSrtFileUrl, audioActionFileUrl);
+        return Objects.hash(state, code, message, audioFileUrl, audioInfoFileUrl, audioSrtFileUrl, audioActionFileUrl);
     }
 
     @Override
@@ -146,6 +191,8 @@ public class ShowAsyncTtsJobResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowAsyncTtsJobResponse {\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    code: ").append(toIndentedString(code)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    audioFileUrl: ").append(toIndentedString(audioFileUrl)).append("\n");
         sb.append("    audioInfoFileUrl: ").append(toIndentedString(audioInfoFileUrl)).append("\n");
         sb.append("    audioSrtFileUrl: ").append(toIndentedString(audioSrtFileUrl)).append("\n");

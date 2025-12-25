@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -12,24 +15,14 @@ import java.util.Objects;
 public class CreatePipeResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "domain_id")
-
-    private String domainId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dataspace_id")
+    @JsonProperty(value = "workspace_id")
 
-    private String dataspaceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dataspace_name")
-
-    private String dataspaceName;
+    private String workspaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pipe_id")
@@ -42,9 +35,19 @@ public class CreatePipeResponse extends SdkResponse {
     private String pipeName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "pipe_type")
+    @JsonProperty(value = "pipe_alias")
 
-    private String pipeType;
+    private String pipeAlias;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "category")
+
+    private PipeCategory category;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "directory")
+
+    private String directory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -52,51 +55,44 @@ public class CreatePipeResponse extends SdkResponse {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "storage_period")
+    @JsonProperty(value = "process_status")
 
-    private Integer storagePeriod;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "shards")
-
-    private Integer shards;
+    private PipeProcessStatus processStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_by")
+    @JsonProperty(value = "process_error")
 
-    private String createBy;
+    private PipeProcessError processError;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "owner_type")
+
+    private PipeOwnerType ownerType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resources")
+
+    private List<PipeResource> resources = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "schema")
+
+    private PipeSchema schema;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private Integer createTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_by")
-
-    private String updateBy;
+    private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    private Integer updateTime;
+    private Long updateTime;
 
-    public CreatePipeResponse withDomainId(String domainId) {
-        this.domainId = domainId;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "delete_time")
 
-    /**
-     * 用户domainId
-     * @return domainId
-     */
-    public String getDomainId() {
-        return domainId;
-    }
-
-    public void setDomainId(String domainId) {
-        this.domainId = domainId;
-    }
+    private Long deleteTime;
 
     public CreatePipeResponse withProjectId(String projectId) {
         this.projectId = projectId;
@@ -104,7 +100,7 @@ public class CreatePipeResponse extends SdkResponse {
     }
 
     /**
-     * 项目id
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -115,38 +111,21 @@ public class CreatePipeResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
-    public CreatePipeResponse withDataspaceId(String dataspaceId) {
-        this.dataspaceId = dataspaceId;
+    public CreatePipeResponse withWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
         return this;
     }
 
     /**
-     * 数据空间id
-     * @return dataspaceId
+     * UUID
+     * @return workspaceId
      */
-    public String getDataspaceId() {
-        return dataspaceId;
+    public String getWorkspaceId() {
+        return workspaceId;
     }
 
-    public void setDataspaceId(String dataspaceId) {
-        this.dataspaceId = dataspaceId;
-    }
-
-    public CreatePipeResponse withDataspaceName(String dataspaceName) {
-        this.dataspaceName = dataspaceName;
-        return this;
-    }
-
-    /**
-     * 数据空间名称
-     * @return dataspaceName
-     */
-    public String getDataspaceName() {
-        return dataspaceName;
-    }
-
-    public void setDataspaceName(String dataspaceName) {
-        this.dataspaceName = dataspaceName;
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
     }
 
     public CreatePipeResponse withPipeId(String pipeId) {
@@ -155,7 +134,7 @@ public class CreatePipeResponse extends SdkResponse {
     }
 
     /**
-     * 管道id
+     * UUID
      * @return pipeId
      */
     public String getPipeId() {
@@ -183,21 +162,55 @@ public class CreatePipeResponse extends SdkResponse {
         this.pipeName = pipeName;
     }
 
-    public CreatePipeResponse withPipeType(String pipeType) {
-        this.pipeType = pipeType;
+    public CreatePipeResponse withPipeAlias(String pipeAlias) {
+        this.pipeAlias = pipeAlias;
         return this;
     }
 
     /**
-     * 管道类型（system-defined，系统预定义)、1（user-defined，用户自定义)
-     * @return pipeType
+     * 管道别名
+     * @return pipeAlias
      */
-    public String getPipeType() {
-        return pipeType;
+    public String getPipeAlias() {
+        return pipeAlias;
     }
 
-    public void setPipeType(String pipeType) {
-        this.pipeType = pipeType;
+    public void setPipeAlias(String pipeAlias) {
+        this.pipeAlias = pipeAlias;
+    }
+
+    public CreatePipeResponse withCategory(PipeCategory category) {
+        this.category = category;
+        return this;
+    }
+
+    /**
+     * Get category
+     * @return category
+     */
+    public PipeCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(PipeCategory category) {
+        this.category = category;
+    }
+
+    public CreatePipeResponse withDirectory(String directory) {
+        this.directory = directory;
+        return this;
+    }
+
+    /**
+     * directory 目录分组
+     * @return directory
+     */
+    public String getDirectory() {
+        return directory;
+    }
+
+    public void setDirectory(String directory) {
+        this.directory = directory;
     }
 
     public CreatePipeResponse withDescription(String description) {
@@ -206,7 +219,7 @@ public class CreatePipeResponse extends SdkResponse {
     }
 
     /**
-     * 描述信息
+     * 管道描述
      * @return description
      */
     public String getDescription() {
@@ -217,114 +230,171 @@ public class CreatePipeResponse extends SdkResponse {
         this.description = description;
     }
 
-    public CreatePipeResponse withStoragePeriod(Integer storagePeriod) {
-        this.storagePeriod = storagePeriod;
+    public CreatePipeResponse withProcessStatus(PipeProcessStatus processStatus) {
+        this.processStatus = processStatus;
         return this;
     }
 
     /**
-     * 索引存储天数
-     * minimum: 1
-     * maximum: 100000
-     * @return storagePeriod
+     * Get processStatus
+     * @return processStatus
      */
-    public Integer getStoragePeriod() {
-        return storagePeriod;
+    public PipeProcessStatus getProcessStatus() {
+        return processStatus;
     }
 
-    public void setStoragePeriod(Integer storagePeriod) {
-        this.storagePeriod = storagePeriod;
+    public void setProcessStatus(PipeProcessStatus processStatus) {
+        this.processStatus = processStatus;
     }
 
-    public CreatePipeResponse withShards(Integer shards) {
-        this.shards = shards;
+    public CreatePipeResponse withProcessError(PipeProcessError processError) {
+        this.processError = processError;
         return this;
     }
 
     /**
-     * 索引分片数量
-     * minimum: 1
-     * maximum: 128
-     * @return shards
+     * Get processError
+     * @return processError
      */
-    public Integer getShards() {
-        return shards;
+    public PipeProcessError getProcessError() {
+        return processError;
     }
 
-    public void setShards(Integer shards) {
-        this.shards = shards;
+    public void setProcessError(PipeProcessError processError) {
+        this.processError = processError;
     }
 
-    public CreatePipeResponse withCreateBy(String createBy) {
-        this.createBy = createBy;
+    public CreatePipeResponse withOwnerType(PipeOwnerType ownerType) {
+        this.ownerType = ownerType;
         return this;
     }
 
     /**
-     * 创建者
-     * @return createBy
+     * Get ownerType
+     * @return ownerType
      */
-    public String getCreateBy() {
-        return createBy;
+    public PipeOwnerType getOwnerType() {
+        return ownerType;
     }
 
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy;
+    public void setOwnerType(PipeOwnerType ownerType) {
+        this.ownerType = ownerType;
     }
 
-    public CreatePipeResponse withCreateTime(Integer createTime) {
+    public CreatePipeResponse withResources(List<PipeResource> resources) {
+        this.resources = resources;
+        return this;
+    }
+
+    public CreatePipeResponse addResourcesItem(PipeResource resourcesItem) {
+        if (this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
+        this.resources.add(resourcesItem);
+        return this;
+    }
+
+    public CreatePipeResponse withResources(Consumer<List<PipeResource>> resourcesSetter) {
+        if (this.resources == null) {
+            this.resources = new ArrayList<>();
+        }
+        resourcesSetter.accept(this.resources);
+        return this;
+    }
+
+    /**
+     * 管道资源
+     * @return resources
+     */
+    public List<PipeResource> getResources() {
+        return resources;
+    }
+
+    public void setResources(List<PipeResource> resources) {
+        this.resources = resources;
+    }
+
+    public CreatePipeResponse withSchema(PipeSchema schema) {
+        this.schema = schema;
+        return this;
+    }
+
+    public CreatePipeResponse withSchema(Consumer<PipeSchema> schemaSetter) {
+        if (this.schema == null) {
+            this.schema = new PipeSchema();
+            schemaSetter.accept(this.schema);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get schema
+     * @return schema
+     */
+    public PipeSchema getSchema() {
+        return schema;
+    }
+
+    public void setSchema(PipeSchema schema) {
+        this.schema = schema;
+    }
+
+    public CreatePipeResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
 
     /**
-     * 创建时间
+     * 毫秒时间戳
      * minimum: 0
-     * maximum: 1010000000
+     * maximum: 2366841600000
      * @return createTime
      */
-    public Integer getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Integer createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 
-    public CreatePipeResponse withUpdateBy(String updateBy) {
-        this.updateBy = updateBy;
-        return this;
-    }
-
-    /**
-     * 更新者
-     * @return updateBy
-     */
-    public String getUpdateBy() {
-        return updateBy;
-    }
-
-    public void setUpdateBy(String updateBy) {
-        this.updateBy = updateBy;
-    }
-
-    public CreatePipeResponse withUpdateTime(Integer updateTime) {
+    public CreatePipeResponse withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
     /**
-     * 更新时间
+     * 毫秒时间戳
      * minimum: 0
-     * maximum: 10000000000
+     * maximum: 2366841600000
      * @return updateTime
      */
-    public Integer getUpdateTime() {
+    public Long getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Integer updateTime) {
+    public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public CreatePipeResponse withDeleteTime(Long deleteTime) {
+        this.deleteTime = deleteTime;
+        return this;
+    }
+
+    /**
+     * 毫秒时间戳
+     * minimum: 0
+     * maximum: 2366841600000
+     * @return deleteTime
+     */
+    public Long getDeleteTime() {
+        return deleteTime;
+    }
+
+    public void setDeleteTime(Long deleteTime) {
+        this.deleteTime = deleteTime;
     }
 
     @Override
@@ -336,52 +406,57 @@ public class CreatePipeResponse extends SdkResponse {
             return false;
         }
         CreatePipeResponse that = (CreatePipeResponse) obj;
-        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.dataspaceId, that.dataspaceId)
-            && Objects.equals(this.dataspaceName, that.dataspaceName) && Objects.equals(this.pipeId, that.pipeId)
-            && Objects.equals(this.pipeName, that.pipeName) && Objects.equals(this.pipeType, that.pipeType)
-            && Objects.equals(this.description, that.description)
-            && Objects.equals(this.storagePeriod, that.storagePeriod) && Objects.equals(this.shards, that.shards)
-            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.updateBy, that.updateBy) && Objects.equals(this.updateTime, that.updateTime);
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.pipeId, that.pipeId) && Objects.equals(this.pipeName, that.pipeName)
+            && Objects.equals(this.pipeAlias, that.pipeAlias) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.directory, that.directory) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.processStatus, that.processStatus)
+            && Objects.equals(this.processError, that.processError) && Objects.equals(this.ownerType, that.ownerType)
+            && Objects.equals(this.resources, that.resources) && Objects.equals(this.schema, that.schema)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.deleteTime, that.deleteTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domainId,
-            projectId,
-            dataspaceId,
-            dataspaceName,
+        return Objects.hash(projectId,
+            workspaceId,
             pipeId,
             pipeName,
-            pipeType,
+            pipeAlias,
+            category,
+            directory,
             description,
-            storagePeriod,
-            shards,
-            createBy,
+            processStatus,
+            processError,
+            ownerType,
+            resources,
+            schema,
             createTime,
-            updateBy,
-            updateTime);
+            updateTime,
+            deleteTime);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreatePipeResponse {\n");
-        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    dataspaceId: ").append(toIndentedString(dataspaceId)).append("\n");
-        sb.append("    dataspaceName: ").append(toIndentedString(dataspaceName)).append("\n");
+        sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("    pipeId: ").append(toIndentedString(pipeId)).append("\n");
         sb.append("    pipeName: ").append(toIndentedString(pipeName)).append("\n");
-        sb.append("    pipeType: ").append(toIndentedString(pipeType)).append("\n");
+        sb.append("    pipeAlias: ").append(toIndentedString(pipeAlias)).append("\n");
+        sb.append("    category: ").append(toIndentedString(category)).append("\n");
+        sb.append("    directory: ").append(toIndentedString(directory)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    storagePeriod: ").append(toIndentedString(storagePeriod)).append("\n");
-        sb.append("    shards: ").append(toIndentedString(shards)).append("\n");
-        sb.append("    createBy: ").append(toIndentedString(createBy)).append("\n");
+        sb.append("    processStatus: ").append(toIndentedString(processStatus)).append("\n");
+        sb.append("    processError: ").append(toIndentedString(processError)).append("\n");
+        sb.append("    ownerType: ").append(toIndentedString(ownerType)).append("\n");
+        sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
+        sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    updateBy: ").append(toIndentedString(updateBy)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    deleteTime: ").append(toIndentedString(deleteTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

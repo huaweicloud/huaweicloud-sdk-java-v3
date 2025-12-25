@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.dc.v3.model.CreatePeerLinkRequest;
 import com.huaweicloud.sdk.dc.v3.model.CreatePeerLinkResponse;
 import com.huaweicloud.sdk.dc.v3.model.CreateResourceTagRequest;
 import com.huaweicloud.sdk.dc.v3.model.CreateResourceTagResponse;
+import com.huaweicloud.sdk.dc.v3.model.CreateVifPeerDetectionRequest;
+import com.huaweicloud.sdk.dc.v3.model.CreateVifPeerDetectionResponse;
 import com.huaweicloud.sdk.dc.v3.model.CreateVifPeerRequest;
 import com.huaweicloud.sdk.dc.v3.model.CreateVifPeerResponse;
 import com.huaweicloud.sdk.dc.v3.model.CreateVirtualGatewayRequest;
@@ -35,6 +37,8 @@ import com.huaweicloud.sdk.dc.v3.model.DeletePeerLinkRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeletePeerLinkResponse;
 import com.huaweicloud.sdk.dc.v3.model.DeleteResourceTagRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeleteResourceTagResponse;
+import com.huaweicloud.sdk.dc.v3.model.DeleteVifPeerDetectionRequest;
+import com.huaweicloud.sdk.dc.v3.model.DeleteVifPeerDetectionResponse;
 import com.huaweicloud.sdk.dc.v3.model.DeleteVifPeerRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeleteVifPeerResponse;
 import com.huaweicloud.sdk.dc.v3.model.DeleteVirtualGatewayRequest;
@@ -63,6 +67,8 @@ import com.huaweicloud.sdk.dc.v3.model.ListSwitchoverTestRecordsRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListSwitchoverTestRecordsResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListTagResourceInstancesRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListTagResourceInstancesResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListVifPeerDetectionsRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListVifPeerDetectionsResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListVirtualGatewaysRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListVirtualGatewaysResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListVirtualInterfacesRequest;
@@ -83,6 +89,8 @@ import com.huaweicloud.sdk.dc.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowResourceTagRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowResourceTagResponse;
+import com.huaweicloud.sdk.dc.v3.model.ShowVifPeerDetectionRequest;
+import com.huaweicloud.sdk.dc.v3.model.ShowVifPeerDetectionResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualGatewayRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualInterfaceRequest;
@@ -95,6 +103,8 @@ import com.huaweicloud.sdk.dc.v3.model.UpdateConnectGatewayRequest;
 import com.huaweicloud.sdk.dc.v3.model.UpdateConnectGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.UpdateDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.UpdateDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.UpdateExtendAttributeRequest;
+import com.huaweicloud.sdk.dc.v3.model.UpdateExtendAttributeResponse;
 import com.huaweicloud.sdk.dc.v3.model.UpdateGdgwRouteTableRequest;
 import com.huaweicloud.sdk.dc.v3.model.UpdateGdgwRouteTableResponse;
 import com.huaweicloud.sdk.dc.v3.model.UpdateGlobalDcGatewayRequest;
@@ -1256,6 +1266,126 @@ public class DcAsyncClient {
     }
 
     /**
+     * 创建虚拟接口对等体连通性探测实例
+     *
+     * 当您想对虚拟接口对等体的远端网关的连通性进行探测时，可以通过调用此接口创建一个虚拟接口对等体连通性探测实例来实现。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateVifPeerDetectionRequest 请求对象
+     * @return CompletableFuture<CreateVifPeerDetectionResponse>
+     */
+    public CompletableFuture<CreateVifPeerDetectionResponse> createVifPeerDetectionAsync(
+        CreateVifPeerDetectionRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcMeta.createVifPeerDetection);
+    }
+
+    /**
+     * 创建虚拟接口对等体连通性探测实例
+     *
+     * 当您想对虚拟接口对等体的远端网关的连通性进行探测时，可以通过调用此接口创建一个虚拟接口对等体连通性探测实例来实现。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateVifPeerDetectionRequest 请求对象
+     * @return AsyncInvoker<CreateVifPeerDetectionRequest, CreateVifPeerDetectionResponse>
+     */
+    public AsyncInvoker<CreateVifPeerDetectionRequest, CreateVifPeerDetectionResponse> createVifPeerDetectionAsyncInvoker(
+        CreateVifPeerDetectionRequest request) {
+        return new AsyncInvoker<>(request, DcMeta.createVifPeerDetection, hcClient);
+    }
+
+    /**
+     * 删除虚拟接口对等体连通性探测实例
+     *
+     * 当您想不再保留虚拟接口对等体连通性探测实例时，您可以通过调用此接口将其删除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteVifPeerDetectionRequest 请求对象
+     * @return CompletableFuture<DeleteVifPeerDetectionResponse>
+     */
+    public CompletableFuture<DeleteVifPeerDetectionResponse> deleteVifPeerDetectionAsync(
+        DeleteVifPeerDetectionRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcMeta.deleteVifPeerDetection);
+    }
+
+    /**
+     * 删除虚拟接口对等体连通性探测实例
+     *
+     * 当您想不再保留虚拟接口对等体连通性探测实例时，您可以通过调用此接口将其删除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteVifPeerDetectionRequest 请求对象
+     * @return AsyncInvoker<DeleteVifPeerDetectionRequest, DeleteVifPeerDetectionResponse>
+     */
+    public AsyncInvoker<DeleteVifPeerDetectionRequest, DeleteVifPeerDetectionResponse> deleteVifPeerDetectionAsyncInvoker(
+        DeleteVifPeerDetectionRequest request) {
+        return new AsyncInvoker<>(request, DcMeta.deleteVifPeerDetection, hcClient);
+    }
+
+    /**
+     * 查询虚拟接口对等体连通性探测实例列表
+     *
+     * 当您的对虚拟接口对等体发起连通性探测后，您可以通过此接口查询多次探测的信息，包括ID、探测开始时间、探测结束时间、探测状态、丢包率等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVifPeerDetectionsRequest 请求对象
+     * @return CompletableFuture<ListVifPeerDetectionsResponse>
+     */
+    public CompletableFuture<ListVifPeerDetectionsResponse> listVifPeerDetectionsAsync(
+        ListVifPeerDetectionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcMeta.listVifPeerDetections);
+    }
+
+    /**
+     * 查询虚拟接口对等体连通性探测实例列表
+     *
+     * 当您的对虚拟接口对等体发起连通性探测后，您可以通过此接口查询多次探测的信息，包括ID、探测开始时间、探测结束时间、探测状态、丢包率等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVifPeerDetectionsRequest 请求对象
+     * @return AsyncInvoker<ListVifPeerDetectionsRequest, ListVifPeerDetectionsResponse>
+     */
+    public AsyncInvoker<ListVifPeerDetectionsRequest, ListVifPeerDetectionsResponse> listVifPeerDetectionsAsyncInvoker(
+        ListVifPeerDetectionsRequest request) {
+        return new AsyncInvoker<>(request, DcMeta.listVifPeerDetections, hcClient);
+    }
+
+    /**
+     * 查询虚拟接口对等体连通性探测实例
+     *
+     * 当您的对虚拟接口对等体发起连通性探测后，您可以通过此接口查询单次探测的信息，包括ID、探测开始时间、探测结束时间、探测状态、丢包率等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVifPeerDetectionRequest 请求对象
+     * @return CompletableFuture<ShowVifPeerDetectionResponse>
+     */
+    public CompletableFuture<ShowVifPeerDetectionResponse> showVifPeerDetectionAsync(
+        ShowVifPeerDetectionRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcMeta.showVifPeerDetection);
+    }
+
+    /**
+     * 查询虚拟接口对等体连通性探测实例
+     *
+     * 当您的对虚拟接口对等体发起连通性探测后，您可以通过此接口查询单次探测的信息，包括ID、探测开始时间、探测结束时间、探测状态、丢包率等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVifPeerDetectionRequest 请求对象
+     * @return AsyncInvoker<ShowVifPeerDetectionRequest, ShowVifPeerDetectionResponse>
+     */
+    public AsyncInvoker<ShowVifPeerDetectionRequest, ShowVifPeerDetectionResponse> showVifPeerDetectionAsyncInvoker(
+        ShowVifPeerDetectionRequest request) {
+        return new AsyncInvoker<>(request, DcMeta.showVifPeerDetection, hcClient);
+    }
+
+    /**
      * 创建虚拟网关
      *
      * 创建虚拟网关
@@ -1638,6 +1768,36 @@ public class DcAsyncClient {
     public AsyncInvoker<SwitchoverTestRequest, SwitchoverTestResponse> switchoverTestAsyncInvoker(
         SwitchoverTestRequest request) {
         return new AsyncInvoker<>(request, DcMeta.switchoverTest, hcClient);
+    }
+
+    /**
+     * 修改虚拟接口可靠性检测的扩展参数
+     *
+     * 虚拟接口有bfd与nqa两种可靠性检测方式，您可以通过调用此接口修改可靠性检测的参数，例如检测报文最小发送间隔、检测报文最大发送间隔、检测周期等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateExtendAttributeRequest 请求对象
+     * @return CompletableFuture<UpdateExtendAttributeResponse>
+     */
+    public CompletableFuture<UpdateExtendAttributeResponse> updateExtendAttributeAsync(
+        UpdateExtendAttributeRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcMeta.updateExtendAttribute);
+    }
+
+    /**
+     * 修改虚拟接口可靠性检测的扩展参数
+     *
+     * 虚拟接口有bfd与nqa两种可靠性检测方式，您可以通过调用此接口修改可靠性检测的参数，例如检测报文最小发送间隔、检测报文最大发送间隔、检测周期等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateExtendAttributeRequest 请求对象
+     * @return AsyncInvoker<UpdateExtendAttributeRequest, UpdateExtendAttributeResponse>
+     */
+    public AsyncInvoker<UpdateExtendAttributeRequest, UpdateExtendAttributeResponse> updateExtendAttributeAsyncInvoker(
+        UpdateExtendAttributeRequest request) {
+        return new AsyncInvoker<>(request, DcMeta.updateExtendAttribute, hcClient);
     }
 
     /**

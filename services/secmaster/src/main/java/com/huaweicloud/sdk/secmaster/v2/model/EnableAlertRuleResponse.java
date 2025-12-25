@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -15,103 +12,69 @@ import java.util.function.Consumer;
 public class EnableAlertRuleResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "fail_list")
+    @JsonProperty(value = "alert_rule_id")
 
-    private List<AlertRule> failList = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "success_list")
-
-    private List<AlertRule> successList = null;
+    private String alertRuleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-request-id")
+    @JsonProperty(value = "status")
 
-    private String xRequestId;
+    private JobStatus status;
 
-    public EnableAlertRuleResponse withFailList(List<AlertRule> failList) {
-        this.failList = failList;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "process_status")
 
-    public EnableAlertRuleResponse addFailListItem(AlertRule failListItem) {
-        if (this.failList == null) {
-            this.failList = new ArrayList<>();
-        }
-        this.failList.add(failListItem);
-        return this;
-    }
+    private JobProcessStatus processStatus;
 
-    public EnableAlertRuleResponse withFailList(Consumer<List<AlertRule>> failListSetter) {
-        if (this.failList == null) {
-            this.failList = new ArrayList<>();
-        }
-        failListSetter.accept(this.failList);
+    public EnableAlertRuleResponse withAlertRuleId(String alertRuleId) {
+        this.alertRuleId = alertRuleId;
         return this;
     }
 
     /**
-     * Alert rule ID.
-     * @return failList
+     * UUID
+     * @return alertRuleId
      */
-    public List<AlertRule> getFailList() {
-        return failList;
+    public String getAlertRuleId() {
+        return alertRuleId;
     }
 
-    public void setFailList(List<AlertRule> failList) {
-        this.failList = failList;
+    public void setAlertRuleId(String alertRuleId) {
+        this.alertRuleId = alertRuleId;
     }
 
-    public EnableAlertRuleResponse withSuccessList(List<AlertRule> successList) {
-        this.successList = successList;
-        return this;
-    }
-
-    public EnableAlertRuleResponse addSuccessListItem(AlertRule successListItem) {
-        if (this.successList == null) {
-            this.successList = new ArrayList<>();
-        }
-        this.successList.add(successListItem);
-        return this;
-    }
-
-    public EnableAlertRuleResponse withSuccessList(Consumer<List<AlertRule>> successListSetter) {
-        if (this.successList == null) {
-            this.successList = new ArrayList<>();
-        }
-        successListSetter.accept(this.successList);
+    public EnableAlertRuleResponse withStatus(JobStatus status) {
+        this.status = status;
         return this;
     }
 
     /**
-     * Alert rule ID.
-     * @return successList
+     * Get status
+     * @return status
      */
-    public List<AlertRule> getSuccessList() {
-        return successList;
+    public JobStatus getStatus() {
+        return status;
     }
 
-    public void setSuccessList(List<AlertRule> successList) {
-        this.successList = successList;
+    public void setStatus(JobStatus status) {
+        this.status = status;
     }
 
-    public EnableAlertRuleResponse withXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
+    public EnableAlertRuleResponse withProcessStatus(JobProcessStatus processStatus) {
+        this.processStatus = processStatus;
         return this;
     }
 
     /**
-     * Get xRequestId
-     * @return xRequestId
+     * Get processStatus
+     * @return processStatus
      */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-request-id")
-    public String getXRequestId() {
-        return xRequestId;
+    public JobProcessStatus getProcessStatus() {
+        return processStatus;
     }
 
-    public void setXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
+    public void setProcessStatus(JobProcessStatus processStatus) {
+        this.processStatus = processStatus;
     }
 
     @Override
@@ -123,22 +86,22 @@ public class EnableAlertRuleResponse extends SdkResponse {
             return false;
         }
         EnableAlertRuleResponse that = (EnableAlertRuleResponse) obj;
-        return Objects.equals(this.failList, that.failList) && Objects.equals(this.successList, that.successList)
-            && Objects.equals(this.xRequestId, that.xRequestId);
+        return Objects.equals(this.alertRuleId, that.alertRuleId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.processStatus, that.processStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(failList, successList, xRequestId);
+        return Objects.hash(alertRuleId, status, processStatus);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class EnableAlertRuleResponse {\n");
-        sb.append("    failList: ").append(toIndentedString(failList)).append("\n");
-        sb.append("    successList: ").append(toIndentedString(successList)).append("\n");
-        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
+        sb.append("    alertRuleId: ").append(toIndentedString(alertRuleId)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    processStatus: ").append(toIndentedString(processStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -24,6 +24,11 @@ public class MetricAlarmsResp {
     private String alarmDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "relation_id")
+
+    private String relationId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric")
 
     private ListAlarmMetricResp metric;
@@ -31,7 +36,7 @@ public class MetricAlarmsResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "condition")
 
-    private ConditionResp condition;
+    private AlarmRuleConditionResp condition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_enabled")
@@ -52,6 +57,11 @@ public class MetricAlarmsResp {
     @JsonProperty(value = "alarm_action_enabled")
 
     private Boolean alarmActionEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ignore_insufficient_data")
+
+    private Boolean ignoreInsufficientData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_actions")
@@ -137,6 +147,23 @@ public class MetricAlarmsResp {
         this.alarmDescription = alarmDescription;
     }
 
+    public MetricAlarmsResp withRelationId(String relationId) {
+        this.relationId = relationId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 告警规则的ID或者资源分组ID。 **取值范围**： 不涉及 
+     * @return relationId
+     */
+    public String getRelationId() {
+        return relationId;
+    }
+
+    public void setRelationId(String relationId) {
+        this.relationId = relationId;
+    }
+
     public MetricAlarmsResp withMetric(ListAlarmMetricResp metric) {
         this.metric = metric;
         return this;
@@ -163,14 +190,14 @@ public class MetricAlarmsResp {
         this.metric = metric;
     }
 
-    public MetricAlarmsResp withCondition(ConditionResp condition) {
+    public MetricAlarmsResp withCondition(AlarmRuleConditionResp condition) {
         this.condition = condition;
         return this;
     }
 
-    public MetricAlarmsResp withCondition(Consumer<ConditionResp> conditionSetter) {
+    public MetricAlarmsResp withCondition(Consumer<AlarmRuleConditionResp> conditionSetter) {
         if (this.condition == null) {
-            this.condition = new ConditionResp();
+            this.condition = new AlarmRuleConditionResp();
             conditionSetter.accept(this.condition);
         }
 
@@ -181,11 +208,11 @@ public class MetricAlarmsResp {
      * Get condition
      * @return condition
      */
-    public ConditionResp getCondition() {
+    public AlarmRuleConditionResp getCondition() {
         return condition;
     }
 
-    public void setCondition(ConditionResp condition) {
+    public void setCondition(AlarmRuleConditionResp condition) {
         this.condition = condition;
     }
 
@@ -195,7 +222,7 @@ public class MetricAlarmsResp {
     }
 
     /**
-     * **参数解释**： 是否启用该条告警。 **取值范围**： 布尔值。 true:开启。 false:关闭。 
+     * **参数解释**： 是否启用该条告警。 **取值范围**： 布尔值。 - true:开启。 - false:关闭。 
      * @return alarmEnabled
      */
     public Boolean getAlarmEnabled() {
@@ -212,7 +239,7 @@ public class MetricAlarmsResp {
     }
 
     /**
-     * **参数解释**： 告警级别。 **取值范围**： 级别为1、2、3、4。分别对应紧急、重要、次要、提示。 
+     * **参数解释**： 告警级别。 **取值范围**： 取值为1、2、3、4 - 1：紧急 - 2：重要 - 3：次要 - 4：提示 
      * minimum: 1
      * maximum: 4
      * @return alarmLevel
@@ -257,6 +284,23 @@ public class MetricAlarmsResp {
 
     public void setAlarmActionEnabled(Boolean alarmActionEnabled) {
         this.alarmActionEnabled = alarmActionEnabled;
+    }
+
+    public MetricAlarmsResp withIgnoreInsufficientData(Boolean ignoreInsufficientData) {
+        this.ignoreInsufficientData = ignoreInsufficientData;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 数据不足时，是否产生告警记录(不会发送通知)。 **取值范围**： 值为true或者false - true：数据不足时，产生告警记录 - false：数据不足时，不产生告警记录 
+     * @return ignoreInsufficientData
+     */
+    public Boolean getIgnoreInsufficientData() {
+        return ignoreInsufficientData;
+    }
+
+    public void setIgnoreInsufficientData(Boolean ignoreInsufficientData) {
+        this.ignoreInsufficientData = ignoreInsufficientData;
     }
 
     public MetricAlarmsResp withAlarmActions(List<NotificationResp> alarmActions) {
@@ -452,7 +496,7 @@ public class MetricAlarmsResp {
     }
 
     /**
-     * **参数解释**： 告警状态。 **取值范围**： 只能为ok、alarm、insufficient_data。字符长度为[0,17] - ok：正常 - alarm：告警 - insufficient_data：数据不足 
+     * **参数解释**： 告警状态。 **取值范围**： 只能为ok、alarm、insufficient_data。 - ok：正常 - alarm：告警 - insufficient_data：数据不足 
      * @return alarmState
      */
     public String getAlarmState() {
@@ -490,10 +534,12 @@ public class MetricAlarmsResp {
         }
         MetricAlarmsResp that = (MetricAlarmsResp) obj;
         return Objects.equals(this.alarmName, that.alarmName)
-            && Objects.equals(this.alarmDescription, that.alarmDescription) && Objects.equals(this.metric, that.metric)
+            && Objects.equals(this.alarmDescription, that.alarmDescription)
+            && Objects.equals(this.relationId, that.relationId) && Objects.equals(this.metric, that.metric)
             && Objects.equals(this.condition, that.condition) && Objects.equals(this.alarmEnabled, that.alarmEnabled)
             && Objects.equals(this.alarmLevel, that.alarmLevel) && Objects.equals(this.alarmType, that.alarmType)
             && Objects.equals(this.alarmActionEnabled, that.alarmActionEnabled)
+            && Objects.equals(this.ignoreInsufficientData, that.ignoreInsufficientData)
             && Objects.equals(this.alarmActions, that.alarmActions) && Objects.equals(this.okActions, that.okActions)
             && Objects.equals(this.insufficientdataActions, that.insufficientdataActions)
             && Objects.equals(this.alarmActionBeginTime, that.alarmActionBeginTime)
@@ -508,12 +554,14 @@ public class MetricAlarmsResp {
     public int hashCode() {
         return Objects.hash(alarmName,
             alarmDescription,
+            relationId,
             metric,
             condition,
             alarmEnabled,
             alarmLevel,
             alarmType,
             alarmActionEnabled,
+            ignoreInsufficientData,
             alarmActions,
             okActions,
             insufficientdataActions,
@@ -532,12 +580,14 @@ public class MetricAlarmsResp {
         sb.append("class MetricAlarmsResp {\n");
         sb.append("    alarmName: ").append(toIndentedString(alarmName)).append("\n");
         sb.append("    alarmDescription: ").append(toIndentedString(alarmDescription)).append("\n");
+        sb.append("    relationId: ").append(toIndentedString(relationId)).append("\n");
         sb.append("    metric: ").append(toIndentedString(metric)).append("\n");
         sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
         sb.append("    alarmEnabled: ").append(toIndentedString(alarmEnabled)).append("\n");
         sb.append("    alarmLevel: ").append(toIndentedString(alarmLevel)).append("\n");
         sb.append("    alarmType: ").append(toIndentedString(alarmType)).append("\n");
         sb.append("    alarmActionEnabled: ").append(toIndentedString(alarmActionEnabled)).append("\n");
+        sb.append("    ignoreInsufficientData: ").append(toIndentedString(ignoreInsufficientData)).append("\n");
         sb.append("    alarmActions: ").append(toIndentedString(alarmActions)).append("\n");
         sb.append("    okActions: ").append(toIndentedString(okActions)).append("\n");
         sb.append("    insufficientdataActions: ").append(toIndentedString(insufficientdataActions)).append("\n");

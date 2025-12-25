@@ -56,6 +56,11 @@ public class QueryInstanceResponseBody {
     private InstanceState state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "operation_state")
+
+    private InstanceOperationStatus operationState;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
     private Map<String, String> metadata = null;
@@ -267,6 +272,23 @@ public class QueryInstanceResponseBody {
         this.state = state;
     }
 
+    public QueryInstanceResponseBody withOperationState(InstanceOperationStatus operationState) {
+        this.operationState = operationState;
+        return this;
+    }
+
+    /**
+     * Get operationState
+     * @return operationState
+     */
+    public InstanceOperationStatus getOperationState() {
+        return operationState;
+    }
+
+    public void setOperationState(InstanceOperationStatus operationState) {
+        this.operationState = operationState;
+    }
+
     public QueryInstanceResponseBody withMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
         return this;
@@ -424,10 +446,10 @@ public class QueryInstanceResponseBody {
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.networkInterfaces, that.networkInterfaces)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.image, that.image)
             && Objects.equals(this.description, that.description) && Objects.equals(this.state, that.state)
-            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.userData, that.userData)
-            && Objects.equals(this.serverId, that.serverId) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.launchedAt, that.launchedAt)
-            && Objects.equals(this.error, that.error);
+            && Objects.equals(this.operationState, that.operationState) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.userData, that.userData) && Objects.equals(this.serverId, that.serverId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.launchedAt, that.launchedAt) && Objects.equals(this.error, that.error);
     }
 
     @Override
@@ -440,6 +462,7 @@ public class QueryInstanceResponseBody {
             image,
             description,
             state,
+            operationState,
             metadata,
             userData,
             serverId,
@@ -461,6 +484,7 @@ public class QueryInstanceResponseBody {
         sb.append("    image: ").append(toIndentedString(image)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    operationState: ").append(toIndentedString(operationState)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");

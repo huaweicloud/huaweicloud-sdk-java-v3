@@ -68,7 +68,7 @@ public class RepositoryTag {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    private Integer size;
+    private Long size;
 
     public RepositoryTag withName(String name) {
         this.name = name;
@@ -257,7 +257,7 @@ public class RepositoryTag {
         this.pushTime = pushTime;
     }
 
-    public RepositoryTag withSize(Integer size) {
+    public RepositoryTag withSize(Long size) {
         this.size = size;
         return this;
     }
@@ -266,11 +266,11 @@ public class RepositoryTag {
      * 制品大小，单位：Byte
      * @return size
      */
-    public Integer getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(Long size) {
         this.size = size;
     }
 

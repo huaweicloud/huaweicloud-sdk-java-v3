@@ -30,7 +30,7 @@ public class ListResourceGroupsServicesResourcesResponse extends SdkResponse {
     }
 
     /**
-     * 资源总数
+     * **参数解释** 资源总数。 **取值范围** 0-10000 
      * minimum: 0
      * maximum: 10000
      * @return count

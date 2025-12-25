@@ -78,7 +78,7 @@ public class ScheduleConf {
     }
 
     /**
-     * **参数解释**： 调度类型。 **取值范围**： 不涉及。
+     * **参数解释**： 调度类型。 **取值范围**： - timeRange：时间范围。
      * @return scheduleType
      */
     public String getScheduleType() {

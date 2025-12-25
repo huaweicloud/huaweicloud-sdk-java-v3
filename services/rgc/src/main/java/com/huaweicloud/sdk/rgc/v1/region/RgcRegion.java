@@ -40,6 +40,13 @@ public class RgcRegion {
 
     public static final Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://rgc.sa-brazil-1.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_5 =
+        new Region("ap-southeast-5", "https://rgc.ap-southeast-5.myhuaweicloud.com");
+
+    public static final Region ME_EAST_1 = new Region("me-east-1", "https://rgc.me-east-1.myhuaweicloud.com");
+
+    public static final Region TR_WEST_1 = new Region("tr-west-1", "https://rgc.tr-west-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("RGC");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -57,6 +64,9 @@ public class RgcRegion {
         map.put("la-south-2", LA_SOUTH_2);
         map.put("la-north-2", LA_NORTH_2);
         map.put("sa-brazil-1", SA_BRAZIL_1);
+        map.put("ap-southeast-5", AP_SOUTHEAST_5);
+        map.put("me-east-1", ME_EAST_1);
+        map.put("tr-west-1", TR_WEST_1);
         return Collections.unmodifiableMap(map);
     }
 

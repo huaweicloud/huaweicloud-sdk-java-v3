@@ -91,7 +91,7 @@ public class PortStatisticResponseInfo {
     }
 
     /**
-     * **参数解释**: 危险类型 **取值范围**: - danger: 危险端口 - normal: 正常端口 - unknow: 无已知危险的端口 
+     * **参数解释**: 危险类型 **取值范围**: - danger: 危险端口 - normal: 正常端口 - unknown: 无已知危险的端口 
      * @return status
      */
     public String getStatus() {

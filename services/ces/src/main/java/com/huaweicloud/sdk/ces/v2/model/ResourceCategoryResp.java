@@ -1,0 +1,115 @@
+package com.huaweicloud.sdk.ces.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * ResourceCategoryResp
+ */
+public class ResourceCategoryResp {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "namespace")
+
+    private String namespace;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dimension_names")
+
+    private List<String> dimensionNames = null;
+
+    public ResourceCategoryResp withNamespace(String namespace) {
+        this.namespace = namespace;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”。 **约束限制**： 不涉及。 **取值范围**： 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度必须在 3 到 32个字符之间。 **默认取值**： 不涉及。 
+     * @return namespace
+     */
+    public String getNamespace() {
+        return namespace;
+    }
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    public ResourceCategoryResp withDimensionNames(List<String> dimensionNames) {
+        this.dimensionNames = dimensionNames;
+        return this;
+    }
+
+    public ResourceCategoryResp addDimensionNamesItem(String dimensionNamesItem) {
+        if (this.dimensionNames == null) {
+            this.dimensionNames = new ArrayList<>();
+        }
+        this.dimensionNames.add(dimensionNamesItem);
+        return this;
+    }
+
+    public ResourceCategoryResp withDimensionNames(Consumer<List<String>> dimensionNamesSetter) {
+        if (this.dimensionNames == null) {
+            this.dimensionNames = new ArrayList<>();
+        }
+        dimensionNamesSetter.accept(this.dimensionNames);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 资源的维度信息列表 
+     * @return dimensionNames
+     */
+    public List<String> getDimensionNames() {
+        return dimensionNames;
+    }
+
+    public void setDimensionNames(List<String> dimensionNames) {
+        this.dimensionNames = dimensionNames;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        ResourceCategoryResp that = (ResourceCategoryResp) obj;
+        return Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.dimensionNames, that.dimensionNames);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(namespace, dimensionNames);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ResourceCategoryResp {\n");
+        sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+        sb.append("    dimensionNames: ").append(toIndentedString(dimensionNames)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

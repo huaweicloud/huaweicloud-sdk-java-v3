@@ -31,7 +31,7 @@ public class CompatibleInstanceVolumeResp {
     }
 
     /**
-     * **参数解释**： 类型。 **取值范围**： 不涉及。
+     * **参数解释**： 磁盘类型。 **取值范围**： - SATA：普通IO - SAS：高IO - SSD：超高IO - ESSD：极速型SSD - GPSSD：通用型SSD
      * @return type
      */
     public String getType() {

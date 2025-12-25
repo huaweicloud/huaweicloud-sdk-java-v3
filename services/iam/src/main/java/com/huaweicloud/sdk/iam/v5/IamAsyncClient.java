@@ -113,6 +113,8 @@ import com.huaweicloud.sdk.iam.v5.model.SetDefaultPolicyVersionV5Request;
 import com.huaweicloud.sdk.iam.v5.model.SetDefaultPolicyVersionV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ShowAccessKeyLastUsedV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ShowAccessKeyLastUsedV5Response;
+import com.huaweicloud.sdk.iam.v5.model.ShowGroupSummaryRequest;
+import com.huaweicloud.sdk.iam.v5.model.ShowGroupSummaryResponse;
 import com.huaweicloud.sdk.iam.v5.model.ShowGroupV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ShowGroupV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ShowLoginPolicyV5Request;
@@ -779,6 +781,35 @@ public class IamAsyncClient {
     public AsyncInvoker<RemoveUserFromGroupV5Request, RemoveUserFromGroupV5Response> removeUserFromGroupV5AsyncInvoker(
         RemoveUserFromGroupV5Request request) {
         return new AsyncInvoker<>(request, IamMeta.removeUserFromGroupV5, hcClient);
+    }
+
+    /**
+     * 查询用户组相关属性
+     *
+     * 该接口可以用于查询用户组相关属性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowGroupSummaryRequest 请求对象
+     * @return CompletableFuture<ShowGroupSummaryResponse>
+     */
+    public CompletableFuture<ShowGroupSummaryResponse> showGroupSummaryAsync(ShowGroupSummaryRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.showGroupSummary);
+    }
+
+    /**
+     * 查询用户组相关属性
+     *
+     * 该接口可以用于查询用户组相关属性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowGroupSummaryRequest 请求对象
+     * @return AsyncInvoker<ShowGroupSummaryRequest, ShowGroupSummaryResponse>
+     */
+    public AsyncInvoker<ShowGroupSummaryRequest, ShowGroupSummaryResponse> showGroupSummaryAsyncInvoker(
+        ShowGroupSummaryRequest request) {
+        return new AsyncInvoker<>(request, IamMeta.showGroupSummary, hcClient);
     }
 
     /**

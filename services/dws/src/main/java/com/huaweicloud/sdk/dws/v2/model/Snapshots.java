@@ -441,7 +441,7 @@ public class Snapshots {
     }
 
     /**
-     * **参数解释**： 快照创建类型。 **取值范围**： 不涉及。
+     * **参数解释**： 快照创建类型。 **取值范围**： - AUTO: 自动。 - MANUAL: 手动。
      * @return type
      */
     public String getType() {

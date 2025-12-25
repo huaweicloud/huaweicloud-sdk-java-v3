@@ -135,6 +135,8 @@ import com.huaweicloud.sdk.iam.v5.model.SetDefaultPolicyVersionV5Request;
 import com.huaweicloud.sdk.iam.v5.model.SetDefaultPolicyVersionV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ShowAccessKeyLastUsedV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ShowAccessKeyLastUsedV5Response;
+import com.huaweicloud.sdk.iam.v5.model.ShowGroupSummaryRequest;
+import com.huaweicloud.sdk.iam.v5.model.ShowGroupSummaryResponse;
 import com.huaweicloud.sdk.iam.v5.model.ShowGroupV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ShowGroupV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ShowLoginPolicyV5Request;
@@ -729,6 +731,39 @@ public class IamMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RemoveUserFromGroupReqBody.class),
             f -> f.withMarshaller(RemoveUserFromGroupV5Request::getBody, RemoveUserFromGroupV5Request::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowGroupSummaryRequest, ShowGroupSummaryResponse> showGroupSummary =
+        genForShowGroupSummary();
+
+    private static HttpRequestDef<ShowGroupSummaryRequest, ShowGroupSummaryResponse> genForShowGroupSummary() {
+        // basic
+        HttpRequestDef.Builder<ShowGroupSummaryRequest, ShowGroupSummaryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowGroupSummaryRequest.class, ShowGroupSummaryResponse.class)
+                .withName("ShowGroupSummary")
+                .withUri("/v5/groups-summary")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowGroupSummaryRequest::getLimit, ShowGroupSummaryRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowGroupSummaryRequest::getMarker, ShowGroupSummaryRequest::setMarker));
+        builder.<String>withRequestField("user_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowGroupSummaryRequest::getUserId, ShowGroupSummaryRequest::setUserId));
 
         // response
 

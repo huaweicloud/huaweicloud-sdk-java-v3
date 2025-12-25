@@ -137,7 +137,7 @@ public class LogicalClusterPlanVo {
     }
 
     /**
-     * **参数解释**： 逻辑集群增删计划状态。 **取值范围**： running：运行中 waiting：等待中 deleted：已删除 finished：已完成 disabled：已禁用 failed：失败
+     * **参数解释**： 逻辑集群增删计划状态。 **取值范围**： - running：运行中。 - waiting：等待中。 - deleted：已删除。 - finished：已完成。 - disabled：已禁用。 - failed：失败。
      * @return status
      */
     public String getStatus() {

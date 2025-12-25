@@ -163,7 +163,7 @@ public class ListAvailableDisasterClustersRequest {
     }
 
     /**
-     * **参数解释**： 容灾类型。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 容灾类型。 **约束限制**： 不涉及。 **取值范围**： - az，跨az容灾。 - region，跨region容灾。 **默认取值**： 不涉及。
      * @return drType
      */
     public String getDrType() {
@@ -180,7 +180,7 @@ public class ListAvailableDisasterClustersRequest {
     }
 
     /**
-     * **参数解释**： 数仓类型。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 数仓类型。 **约束限制**： 不涉及。 **取值范围**： - dws，dws存算一体。 - dws3.0，dws存算分离。 - hybrid，dws实时数仓。 **默认取值**： 不涉及。
      * @return datastoreType
      */
     public String getDatastoreType() {

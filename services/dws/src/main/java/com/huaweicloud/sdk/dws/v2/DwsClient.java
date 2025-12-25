@@ -5,8 +5,6 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.dws.v2.model.AddQueueUserListRequest;
 import com.huaweicloud.sdk.dws.v2.model.AddQueueUserListResponse;
-import com.huaweicloud.sdk.dws.v2.model.AddSnapshotCrossRegionPolicyRequest;
-import com.huaweicloud.sdk.dws.v2.model.AddSnapshotCrossRegionPolicyResponse;
 import com.huaweicloud.sdk.dws.v2.model.AddWorkloadPlanStageRequest;
 import com.huaweicloud.sdk.dws.v2.model.AddWorkloadPlanStageResponse;
 import com.huaweicloud.sdk.dws.v2.model.AddWorkloadQueueRequest;
@@ -95,8 +93,6 @@ import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteQueueUserListRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteQueueUserListResponse;
-import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotCrossRegionPolicyRequest;
-import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotCrossRegionPolicyResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotPolicyRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotPolicyResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteSnapshotRequest;
@@ -239,10 +235,6 @@ import com.huaweicloud.sdk.dws.v2.model.ListRedistributionSchemaRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListRedistributionSchemaResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListSchemasRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListSchemasResponse;
-import com.huaweicloud.sdk.dws.v2.model.ListSnapshotCrossRegionPolicyRequest;
-import com.huaweicloud.sdk.dws.v2.model.ListSnapshotCrossRegionPolicyResponse;
-import com.huaweicloud.sdk.dws.v2.model.ListSnapshotCrossRegionRequest;
-import com.huaweicloud.sdk.dws.v2.model.ListSnapshotCrossRegionResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListSnapshotDetailsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListSnapshotDetailsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListSnapshotFlavorInfoRequest;
@@ -446,36 +438,6 @@ public class DwsClient {
     public SyncInvoker<AddQueueUserListRequest, AddQueueUserListResponse> addQueueUserListInvoker(
         AddQueueUserListRequest request) {
         return new SyncInvoker<>(request, DwsMeta.addQueueUserList, hcClient);
-    }
-
-    /**
-     * 设置跨区域备份配置
-     *
-     * 该接口用于设置跨区域备份配置。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AddSnapshotCrossRegionPolicyRequest 请求对象
-     * @return AddSnapshotCrossRegionPolicyResponse
-     */
-    public AddSnapshotCrossRegionPolicyResponse addSnapshotCrossRegionPolicy(
-        AddSnapshotCrossRegionPolicyRequest request) {
-        return hcClient.syncInvokeHttp(request, DwsMeta.addSnapshotCrossRegionPolicy);
-    }
-
-    /**
-     * 设置跨区域备份配置
-     *
-     * 该接口用于设置跨区域备份配置。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AddSnapshotCrossRegionPolicyRequest 请求对象
-     * @return SyncInvoker<AddSnapshotCrossRegionPolicyRequest, AddSnapshotCrossRegionPolicyResponse>
-     */
-    public SyncInvoker<AddSnapshotCrossRegionPolicyRequest, AddSnapshotCrossRegionPolicyResponse> addSnapshotCrossRegionPolicyInvoker(
-        AddSnapshotCrossRegionPolicyRequest request) {
-        return new SyncInvoker<>(request, DwsMeta.addSnapshotCrossRegionPolicy, hcClient);
     }
 
     /**
@@ -1809,36 +1771,6 @@ public class DwsClient {
     public SyncInvoker<DeleteSnapshotRequest, DeleteSnapshotResponse> deleteSnapshotInvoker(
         DeleteSnapshotRequest request) {
         return new SyncInvoker<>(request, DwsMeta.deleteSnapshot, hcClient);
-    }
-
-    /**
-     * 删除跨区域备份配置
-     *
-     * 该接口用于删除跨区域备份配置。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteSnapshotCrossRegionPolicyRequest 请求对象
-     * @return DeleteSnapshotCrossRegionPolicyResponse
-     */
-    public DeleteSnapshotCrossRegionPolicyResponse deleteSnapshotCrossRegionPolicy(
-        DeleteSnapshotCrossRegionPolicyRequest request) {
-        return hcClient.syncInvokeHttp(request, DwsMeta.deleteSnapshotCrossRegionPolicy);
-    }
-
-    /**
-     * 删除跨区域备份配置
-     *
-     * 该接口用于删除跨区域备份配置。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteSnapshotCrossRegionPolicyRequest 请求对象
-     * @return SyncInvoker<DeleteSnapshotCrossRegionPolicyRequest, DeleteSnapshotCrossRegionPolicyResponse>
-     */
-    public SyncInvoker<DeleteSnapshotCrossRegionPolicyRequest, DeleteSnapshotCrossRegionPolicyResponse> deleteSnapshotCrossRegionPolicyInvoker(
-        DeleteSnapshotCrossRegionPolicyRequest request) {
-        return new SyncInvoker<>(request, DwsMeta.deleteSnapshotCrossRegionPolicy, hcClient);
     }
 
     /**
@@ -3890,65 +3822,6 @@ public class DwsClient {
      */
     public SyncInvoker<ListSchemasRequest, ListSchemasResponse> listSchemasInvoker(ListSchemasRequest request) {
         return new SyncInvoker<>(request, DwsMeta.listSchemas, hcClient);
-    }
-
-    /**
-     * 获取跨区域快照可用region
-     *
-     * 该接口用于获取跨区域快照可用局点。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListSnapshotCrossRegionRequest 请求对象
-     * @return ListSnapshotCrossRegionResponse
-     */
-    public ListSnapshotCrossRegionResponse listSnapshotCrossRegion(ListSnapshotCrossRegionRequest request) {
-        return hcClient.syncInvokeHttp(request, DwsMeta.listSnapshotCrossRegion);
-    }
-
-    /**
-     * 获取跨区域快照可用region
-     *
-     * 该接口用于获取跨区域快照可用局点。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListSnapshotCrossRegionRequest 请求对象
-     * @return SyncInvoker<ListSnapshotCrossRegionRequest, ListSnapshotCrossRegionResponse>
-     */
-    public SyncInvoker<ListSnapshotCrossRegionRequest, ListSnapshotCrossRegionResponse> listSnapshotCrossRegionInvoker(
-        ListSnapshotCrossRegionRequest request) {
-        return new SyncInvoker<>(request, DwsMeta.listSnapshotCrossRegion, hcClient);
-    }
-
-    /**
-     * 查询所有跨区域快照配置
-     *
-     * 该接口用于查询所有跨区域快照配置。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListSnapshotCrossRegionPolicyRequest 请求对象
-     * @return ListSnapshotCrossRegionPolicyResponse
-     */
-    public ListSnapshotCrossRegionPolicyResponse listSnapshotCrossRegionPolicy(
-        ListSnapshotCrossRegionPolicyRequest request) {
-        return hcClient.syncInvokeHttp(request, DwsMeta.listSnapshotCrossRegionPolicy);
-    }
-
-    /**
-     * 查询所有跨区域快照配置
-     *
-     * 该接口用于查询所有跨区域快照配置。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListSnapshotCrossRegionPolicyRequest 请求对象
-     * @return SyncInvoker<ListSnapshotCrossRegionPolicyRequest, ListSnapshotCrossRegionPolicyResponse>
-     */
-    public SyncInvoker<ListSnapshotCrossRegionPolicyRequest, ListSnapshotCrossRegionPolicyResponse> listSnapshotCrossRegionPolicyInvoker(
-        ListSnapshotCrossRegionPolicyRequest request) {
-        return new SyncInvoker<>(request, DwsMeta.listSnapshotCrossRegionPolicy, hcClient);
     }
 
     /**

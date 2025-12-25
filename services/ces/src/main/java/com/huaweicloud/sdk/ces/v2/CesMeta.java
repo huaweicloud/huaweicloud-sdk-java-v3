@@ -41,6 +41,7 @@ import com.huaweicloud.sdk.ces.v2.model.BatchUpdateNotificationMasksResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchUpdateOneClickAlarmPoliciesEnabledStateRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchUpdateOneClickAlarmPoliciesEnabledStateResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchUpdateOneClickAlarmsEnabledStateRequest;
+import com.huaweicloud.sdk.ces.v2.model.BatchUpdateOneClickAlarmsEnabledStateRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.BatchUpdateOneClickAlarmsEnabledStateResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchUpdateWidgetsRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchUpdateWidgetsResponse;
@@ -522,10 +523,10 @@ public class CesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchUpdateOneClickAlarmsEnabledStateRequest::getOneClickAlarmId,
                 BatchUpdateOneClickAlarmsEnabledStateRequest::setOneClickAlarmId));
-        builder.<BatchEnableAlarmsRequestBody>withRequestField("body",
+        builder.<BatchUpdateOneClickAlarmsEnabledStateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchEnableAlarmsRequestBody.class),
+            TypeCasts.uncheckedConversion(BatchUpdateOneClickAlarmsEnabledStateRequestBody.class),
             f -> f.withMarshaller(BatchUpdateOneClickAlarmsEnabledStateRequest::getBody,
                 BatchUpdateOneClickAlarmsEnabledStateRequest::setBody));
 
@@ -1414,6 +1415,11 @@ public class CesMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListResourceGroupsRequest.TypeEnum.class),
             f -> f.withMarshaller(ListResourceGroupsRequest::getType, ListResourceGroupsRequest::setType));
+        builder.<ListResourceGroupsRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListResourceGroupsRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListResourceGroupsRequest::getStatus, ListResourceGroupsRequest::setStatus));
 
         // response
 
@@ -1447,24 +1453,24 @@ public class CesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourceGroupsServicesResourcesRequest::getService,
                 ListResourceGroupsServicesResourcesRequest::setService));
-        builder.<String>withRequestField("dim_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceGroupsServicesResourcesRequest::getDimName,
-                ListResourceGroupsServicesResourcesRequest::setDimName));
-        builder.<String>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListResourceGroupsServicesResourcesRequest::getLimit,
-                ListResourceGroupsServicesResourcesRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListResourceGroupsServicesResourcesRequest::getOffset,
                 ListResourceGroupsServicesResourcesRequest::setOffset));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceGroupsServicesResourcesRequest::getLimit,
+                ListResourceGroupsServicesResourcesRequest::setLimit));
+        builder.<String>withRequestField("dim_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceGroupsServicesResourcesRequest::getDimName,
+                ListResourceGroupsServicesResourcesRequest::setDimName));
         builder.<ListResourceGroupsServicesResourcesRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

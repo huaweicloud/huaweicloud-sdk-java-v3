@@ -3,10 +3,7 @@ package com.huaweicloud.sdk.secmaster.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -19,9 +16,9 @@ public class EnableAlertRuleRequest {
     private String workspaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "alert_rule_id")
 
-    private List<String> body = null;
+    private String alertRuleId;
 
     public EnableAlertRuleRequest withWorkspaceId(String workspaceId) {
         this.workspaceId = workspaceId;
@@ -29,7 +26,7 @@ public class EnableAlertRuleRequest {
     }
 
     /**
-     * 工作空间 ID。Workspace ID.
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -40,37 +37,21 @@ public class EnableAlertRuleRequest {
         this.workspaceId = workspaceId;
     }
 
-    public EnableAlertRuleRequest withBody(List<String> body) {
-        this.body = body;
-        return this;
-    }
-
-    public EnableAlertRuleRequest addBodyItem(String bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
-        this.body.add(bodyItem);
-        return this;
-    }
-
-    public EnableAlertRuleRequest withBody(Consumer<List<String>> bodySetter) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
-        bodySetter.accept(this.body);
+    public EnableAlertRuleRequest withAlertRuleId(String alertRuleId) {
+        this.alertRuleId = alertRuleId;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 告警规则 ID
+     * @return alertRuleId
      */
-    public List<String> getBody() {
-        return body;
+    public String getAlertRuleId() {
+        return alertRuleId;
     }
 
-    public void setBody(List<String> body) {
-        this.body = body;
+    public void setAlertRuleId(String alertRuleId) {
+        this.alertRuleId = alertRuleId;
     }
 
     @Override
@@ -82,12 +63,12 @@ public class EnableAlertRuleRequest {
             return false;
         }
         EnableAlertRuleRequest that = (EnableAlertRuleRequest) obj;
-        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.body, that.body);
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.alertRuleId, that.alertRuleId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspaceId, body);
+        return Objects.hash(workspaceId, alertRuleId);
     }
 
     @Override
@@ -95,7 +76,7 @@ public class EnableAlertRuleRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class EnableAlertRuleRequest {\n");
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    alertRuleId: ").append(toIndentedString(alertRuleId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

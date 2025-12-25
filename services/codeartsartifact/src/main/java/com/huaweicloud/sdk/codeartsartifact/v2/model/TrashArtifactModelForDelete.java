@@ -16,9 +16,9 @@ public class TrashArtifactModelForDelete {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "fomat")
+    @JsonProperty(value = "format")
 
-    private String fomat;
+    private String format;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "uri")
@@ -52,21 +52,21 @@ public class TrashArtifactModelForDelete {
         this.id = id;
     }
 
-    public TrashArtifactModelForDelete withFomat(String fomat) {
-        this.fomat = fomat;
+    public TrashArtifactModelForDelete withFormat(String format) {
+        this.format = format;
         return this;
     }
 
     /**
      * 仓库类型
-     * @return fomat
+     * @return format
      */
-    public String getFomat() {
-        return fomat;
+    public String getFormat() {
+        return format;
     }
 
-    public void setFomat(String fomat) {
-        this.fomat = fomat;
+    public void setFormat(String format) {
+        this.format = format;
     }
 
     public TrashArtifactModelForDelete withUri(String uri) {
@@ -129,14 +129,14 @@ public class TrashArtifactModelForDelete {
             return false;
         }
         TrashArtifactModelForDelete that = (TrashArtifactModelForDelete) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.fomat, that.fomat)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.format, that.format)
             && Objects.equals(this.uri, that.uri) && Objects.equals(this.status, that.status)
             && Objects.equals(this.includePattern, that.includePattern);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, fomat, uri, status, includePattern);
+        return Objects.hash(id, format, uri, status, includePattern);
     }
 
     @Override
@@ -144,7 +144,7 @@ public class TrashArtifactModelForDelete {
         StringBuilder sb = new StringBuilder();
         sb.append("class TrashArtifactModelForDelete {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    fomat: ").append(toIndentedString(fomat)).append("\n");
+        sb.append("    format: ").append(toIndentedString(format)).append("\n");
         sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    includePattern: ").append(toIndentedString(includePattern)).append("\n");

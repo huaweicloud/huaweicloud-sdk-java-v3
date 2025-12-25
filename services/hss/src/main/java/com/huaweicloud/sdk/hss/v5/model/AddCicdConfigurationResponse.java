@@ -14,9 +14,9 @@ public class AddCicdConfigurationResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cicd_id")
 
-    private Object cicdId;
+    private String cicdId;
 
-    public AddCicdConfigurationResponse withCicdId(Object cicdId) {
+    public AddCicdConfigurationResponse withCicdId(String cicdId) {
         this.cicdId = cicdId;
         return this;
     }
@@ -25,11 +25,11 @@ public class AddCicdConfigurationResponse extends SdkResponse {
      * **参数解释**： cicd标识 **取值范围**： 字符长度1-128位 
      * @return cicdId
      */
-    public Object getCicdId() {
+    public String getCicdId() {
         return cicdId;
     }
 
-    public void setCicdId(Object cicdId) {
+    public void setCicdId(String cicdId) {
         this.cicdId = cicdId;
     }
 

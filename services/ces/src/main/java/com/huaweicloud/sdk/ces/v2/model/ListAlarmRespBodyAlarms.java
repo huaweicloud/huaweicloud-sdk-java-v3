@@ -41,7 +41,7 @@ public class ListAlarmRespBodyAlarms {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policies")
 
-    private List<Policy> policies = null;
+    private List<PolicyResp> policies = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
@@ -104,7 +104,7 @@ public class ListAlarmRespBodyAlarms {
     private String productName;
 
     /**
-     * **参数解释**： 产品层级跨维规则需要指明为产品层级规则，resource_level取值为product即为云产品类型，不填或者取值为dimension则为子维度类型。 **取值范围**: 枚举值。 - product：云产品。 - dimension：子维度。 
+     * **参数解释**： 资源层级。 **取值范围**: 枚举值。 - product：云产品。 - dimension：子维度。 
      */
     public static final class ResourceLevelEnum {
 
@@ -181,7 +181,7 @@ public class ListAlarmRespBodyAlarms {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<ResourceTag> tags = null;
+    private List<ResourceTagResp> tags = null;
 
     public ListAlarmRespBodyAlarms withAlarmId(String alarmId) {
         this.alarmId = alarmId;
@@ -206,7 +206,7 @@ public class ListAlarmRespBodyAlarms {
     }
 
     /**
-     * **参数解释**： 告警名称。     **取值范围**： 只能包含0-9/a-z/A-Z/_/-或汉字，长度[1，128]个字符。 
+     * **参数解释**： 告警规则名称。     **取值范围**： 只能包含0-9/a-z/A-Z/_/-或汉字，长度[1，128]个字符。 
      * @return name
      */
     public String getName() {
@@ -251,12 +251,12 @@ public class ListAlarmRespBodyAlarms {
         this.namespace = namespace;
     }
 
-    public ListAlarmRespBodyAlarms withPolicies(List<Policy> policies) {
+    public ListAlarmRespBodyAlarms withPolicies(List<PolicyResp> policies) {
         this.policies = policies;
         return this;
     }
 
-    public ListAlarmRespBodyAlarms addPoliciesItem(Policy policiesItem) {
+    public ListAlarmRespBodyAlarms addPoliciesItem(PolicyResp policiesItem) {
         if (this.policies == null) {
             this.policies = new ArrayList<>();
         }
@@ -264,7 +264,7 @@ public class ListAlarmRespBodyAlarms {
         return this;
     }
 
-    public ListAlarmRespBodyAlarms withPolicies(Consumer<List<Policy>> policiesSetter) {
+    public ListAlarmRespBodyAlarms withPolicies(Consumer<List<PolicyResp>> policiesSetter) {
         if (this.policies == null) {
             this.policies = new ArrayList<>();
         }
@@ -276,11 +276,11 @@ public class ListAlarmRespBodyAlarms {
      * **参数解释**： 告警策略 **取值范围**： 最多包含100个策略。 
      * @return policies
      */
-    public List<Policy> getPolicies() {
+    public List<PolicyResp> getPolicies() {
         return policies;
     }
 
-    public void setPolicies(List<Policy> policies) {
+    public void setPolicies(List<PolicyResp> policies) {
         this.policies = policies;
     }
 
@@ -306,7 +306,7 @@ public class ListAlarmRespBodyAlarms {
     }
 
     /**
-     * **参数解释**： 资源列表，关联资源需要使用查询告警规则资源接口获取。 **取值范围**： 最多支持3000个资源。 
+     * **参数解释**： 资源列表，关联资源需要使用查询“[告警规则资源接口](.xml)”获取。 **取值范围**： 最多支持3000个资源。 
      * @return resources
      */
     public List<ResourcesInListResp> getResources() {
@@ -440,7 +440,7 @@ public class ListAlarmRespBodyAlarms {
     }
 
     /**
-     * **参数解释**： 告警通知开启时间。    **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。 
+     * **参数解释**： 告警通知开启时间。如 00:00    **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。 
      * @return notificationBeginTime
      */
     public String getNotificationBeginTime() {
@@ -457,7 +457,7 @@ public class ListAlarmRespBodyAlarms {
     }
 
     /**
-     * **参数解释**： 告警通知关闭时间。    **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。 
+     * **参数解释**： 告警通知关闭时间。如 08:00   **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。 
      * @return notificationEndTime
      */
     public String getNotificationEndTime() {
@@ -491,7 +491,7 @@ public class ListAlarmRespBodyAlarms {
     }
 
     /**
-     * **参数解释**： 企业项目ID。     **取值范围**： 只能包含小写字母、数字、“-”。 
+     * **参数解释**： 企业项目ID。     **取值范围**： 只能包含小写字母、数字、“-”。0 代表默认企业项目ID 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -508,7 +508,7 @@ public class ListAlarmRespBodyAlarms {
     }
 
     /**
-     * **参数解释**： 告警规则关联告警模板ID，如果传了，告警规则关联的策略会和告警模板策略联动变化。     **取值范围**： 以at开头，只包含字母、数字，长度为[2,64]个字符。 
+     * **参数解释**： 告警规则关联告警模板ID     **取值范围**： 以at开头，只包含字母、数字，长度为[2,64]个字符。 
      * @return alarmTemplateId
      */
     public String getAlarmTemplateId() {
@@ -525,7 +525,7 @@ public class ListAlarmRespBodyAlarms {
     }
 
     /**
-     * **参数解释**： 产品层级跨维规则需要指明的规则产品名称，一般由\"服务命名空间,服务首层维度名称\"组成，如\"SYS.ECS,instance_id\"。 **取值范围**: 长度为[0,128]个字符。 
+     * **参数解释**： 当资源层级为云产品时的云产品名称，一般由\"服务命名空间,服务首层维度名称\"组成，如\"SYS.ECS,instance_id\"。 **取值范围**: 长度为[0,128]个字符。 
      * @return productName
      */
     public String getProductName() {
@@ -542,7 +542,7 @@ public class ListAlarmRespBodyAlarms {
     }
 
     /**
-     * **参数解释**： 产品层级跨维规则需要指明为产品层级规则，resource_level取值为product即为云产品类型，不填或者取值为dimension则为子维度类型。 **取值范围**: 枚举值。 - product：云产品。 - dimension：子维度。 
+     * **参数解释**： 资源层级。 **取值范围**: 枚举值。 - product：云产品。 - dimension：子维度。 
      * @return resourceLevel
      */
     public ResourceLevelEnum getResourceLevel() {
@@ -553,12 +553,12 @@ public class ListAlarmRespBodyAlarms {
         this.resourceLevel = resourceLevel;
     }
 
-    public ListAlarmRespBodyAlarms withTags(List<ResourceTag> tags) {
+    public ListAlarmRespBodyAlarms withTags(List<ResourceTagResp> tags) {
         this.tags = tags;
         return this;
     }
 
-    public ListAlarmRespBodyAlarms addTagsItem(ResourceTag tagsItem) {
+    public ListAlarmRespBodyAlarms addTagsItem(ResourceTagResp tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -566,7 +566,7 @@ public class ListAlarmRespBodyAlarms {
         return this;
     }
 
-    public ListAlarmRespBodyAlarms withTags(Consumer<List<ResourceTag>> tagsSetter) {
+    public ListAlarmRespBodyAlarms withTags(Consumer<List<ResourceTagResp>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -578,11 +578,11 @@ public class ListAlarmRespBodyAlarms {
      * **参数解释**： 租户标签列表 **取值范围**: 最多支持20个标签。 
      * @return tags
      */
-    public List<ResourceTag> getTags() {
+    public List<ResourceTagResp> getTags() {
         return tags;
     }
 
-    public void setTags(List<ResourceTag> tags) {
+    public void setTags(List<ResourceTagResp> tags) {
         this.tags = tags;
     }
 

@@ -763,217 +763,6 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class CodeArtsRepoMeta {
 
-    public static final HttpRequestDef<BatchDeleteBranchRequest, BatchDeleteBranchResponse> batchDeleteBranch =
-        genForBatchDeleteBranch();
-
-    private static HttpRequestDef<BatchDeleteBranchRequest, BatchDeleteBranchResponse> genForBatchDeleteBranch() {
-        // basic
-        HttpRequestDef.Builder<BatchDeleteBranchRequest, BatchDeleteBranchResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteBranchRequest.class, BatchDeleteBranchResponse.class)
-                .withName("BatchDeleteBranch")
-                .withUri("/v4/repositories/{repository_id}/branches/batch-delete")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchDeleteBranchRequest::getRepositoryId,
-                BatchDeleteBranchRequest::setRepositoryId));
-        builder.<BatchDeleteBranchDto>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchDeleteBranchDto.class),
-            f -> f.withMarshaller(BatchDeleteBranchRequest::getBody, BatchDeleteBranchRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateBranchRequest, CreateBranchResponse> createBranch = genForCreateBranch();
-
-    private static HttpRequestDef<CreateBranchRequest, CreateBranchResponse> genForCreateBranch() {
-        // basic
-        HttpRequestDef.Builder<CreateBranchRequest, CreateBranchResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateBranchRequest.class, CreateBranchResponse.class)
-                .withName("CreateBranch")
-                .withUri("/v4/repositories/{repository_id}/repository/branches")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateBranchRequest::getRepositoryId, CreateBranchRequest::setRepositoryId));
-        builder.<CreateBranchDto>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateBranchDto.class),
-            f -> f.withMarshaller(CreateBranchRequest::getBody, CreateBranchRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteBranchRequest, DeleteBranchResponse> deleteBranch = genForDeleteBranch();
-
-    private static HttpRequestDef<DeleteBranchRequest, DeleteBranchResponse> genForDeleteBranch() {
-        // basic
-        HttpRequestDef.Builder<DeleteBranchRequest, DeleteBranchResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteBranchRequest.class, DeleteBranchResponse.class)
-                .withName("DeleteBranch")
-                .withUri("/v4/repositories/{repository_id}/repository/branch")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteBranchRequest::getRepositoryId, DeleteBranchRequest::setRepositoryId));
-        builder.<String>withRequestField("branch_name",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteBranchRequest::getBranchName, DeleteBranchRequest::setBranchName));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListBranchesRequest, ListBranchesResponse> listBranches = genForListBranches();
-
-    private static HttpRequestDef<ListBranchesRequest, ListBranchesResponse> genForListBranches() {
-        // basic
-        HttpRequestDef.Builder<ListBranchesRequest, ListBranchesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListBranchesRequest.class, ListBranchesResponse.class)
-                .withName("ListBranches")
-                .withUri("/v4/repositories/{repository_id}/repository/branches")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBranchesRequest::getRepositoryId, ListBranchesRequest::setRepositoryId));
-        builder.<ListBranchesRequest.BranchTypeEnum>withRequestField("branch_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListBranchesRequest.BranchTypeEnum.class),
-            f -> f.withMarshaller(ListBranchesRequest::getBranchType, ListBranchesRequest::setBranchType));
-        builder.<String>withRequestField("creator",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListBranchesRequest::getCreator, ListBranchesRequest::setCreator));
-        builder.<ListBranchesRequest.SortEnum>withRequestField("sort",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListBranchesRequest.SortEnum.class),
-            f -> f.withMarshaller(ListBranchesRequest::getSort, ListBranchesRequest::setSort));
-        builder.<ListBranchesRequest.QueryViewEnum>withRequestField("query_view",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListBranchesRequest.QueryViewEnum.class),
-            f -> f.withMarshaller(ListBranchesRequest::getQueryView, ListBranchesRequest::setQueryView));
-        builder.<ListBranchesRequest.ViewEnum>withRequestField("view",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListBranchesRequest.ViewEnum.class),
-            f -> f.withMarshaller(ListBranchesRequest::getView, ListBranchesRequest::setView));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBranchesRequest::getOffset, ListBranchesRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBranchesRequest::getLimit, ListBranchesRequest::setLimit));
-
-        // response
-        builder.<List<BranchSimpleDto>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListBranchesResponse::getBody, ListBranchesResponse::setBody)
-                .withInnerContainerType(BranchSimpleDto.class));
-
-        builder.<String>withResponseField("X-Total",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListBranchesResponse::getXTotal, ListBranchesResponse::setXTotal));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowBranchRequest, ShowBranchResponse> showBranch = genForShowBranch();
-
-    private static HttpRequestDef<ShowBranchRequest, ShowBranchResponse> genForShowBranch() {
-        // basic
-        HttpRequestDef.Builder<ShowBranchRequest, ShowBranchResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowBranchRequest.class, ShowBranchResponse.class)
-                .withName("ShowBranch")
-                .withUri("/v4/repositories/{repository_id}/repository/branch")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowBranchRequest::getRepositoryId, ShowBranchRequest::setRepositoryId));
-        builder.<String>withRequestField("branch_name",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowBranchRequest::getBranchName, ShowBranchRequest::setBranchName));
-
-        // response
-
-        builder.<String>withResponseField("X-Total",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowBranchResponse::getXTotal, ShowBranchResponse::setXTotal));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateBranchNameRequest, UpdateBranchNameResponse> updateBranchName =
-        genForUpdateBranchName();
-
-    private static HttpRequestDef<UpdateBranchNameRequest, UpdateBranchNameResponse> genForUpdateBranchName() {
-        // basic
-        HttpRequestDef.Builder<UpdateBranchNameRequest, UpdateBranchNameResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateBranchNameRequest.class, UpdateBranchNameResponse.class)
-                .withName("UpdateBranchName")
-                .withUri("/v4/repositories/{repository_id}/repository/branch")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateBranchNameRequest::getRepositoryId, UpdateBranchNameRequest::setRepositoryId));
-        builder.<UpdateBranchDto>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateBranchDto.class),
-            f -> f.withMarshaller(UpdateBranchNameRequest::getBody, UpdateBranchNameRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateCommitRequest, CreateCommitResponse> createCommit = genForCreateCommit();
 
     private static HttpRequestDef<CreateCommitRequest, CreateCommitResponse> genForCreateCommit() {
@@ -2585,6 +2374,134 @@ public class CodeArtsRepoMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListLogsTreeRequest, ListLogsTreeResponse> listLogsTree = genForListLogsTree();
+
+    private static HttpRequestDef<ListLogsTreeRequest, ListLogsTreeResponse> genForListLogsTree() {
+        // basic
+        HttpRequestDef.Builder<ListLogsTreeRequest, ListLogsTreeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLogsTreeRequest.class, ListLogsTreeResponse.class)
+                .withName("ListLogsTree")
+                .withUri("/v4/repositories/{repository_id}/repository/logs-tree")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLogsTreeRequest::getRepositoryId, ListLogsTreeRequest::setRepositoryId));
+        builder.<String>withRequestField("ref",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogsTreeRequest::getRef, ListLogsTreeRequest::setRef));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLogsTreeRequest::getOffset, ListLogsTreeRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLogsTreeRequest::getLimit, ListLogsTreeRequest::setLimit));
+
+        // response
+        builder.<List<LogTreeDto>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListLogsTreeResponse::getBody, ListLogsTreeResponse::setBody)
+                .withInnerContainerType(LogTreeDto.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTreesRequest, ListTreesResponse> listTrees = genForListTrees();
+
+    private static HttpRequestDef<ListTreesRequest, ListTreesResponse> genForListTrees() {
+        // basic
+        HttpRequestDef.Builder<ListTreesRequest, ListTreesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTreesRequest.class, ListTreesResponse.class)
+                .withName("ListTrees")
+                .withUri("/v4/repositories/{repository_id}/repository/trees")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTreesRequest::getRepositoryId, ListTreesRequest::setRepositoryId));
+        builder.<String>withRequestField("ref",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTreesRequest::getRef, ListTreesRequest::setRef));
+        builder.<String>withRequestField("path",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTreesRequest::getPath, ListTreesRequest::setPath));
+        builder.<Boolean>withRequestField("recursive",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListTreesRequest::getRecursive, ListTreesRequest::setRecursive));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTreesRequest::getOffset, ListTreesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTreesRequest::getLimit, ListTreesRequest::setLimit));
+
+        // response
+        builder.<List<TreeObjectDto>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListTreesResponse::getBody, ListTreesResponse::setBody)
+                .withInnerContainerType(TreeObjectDto.class));
+
+        builder.<String>withResponseField("X-Total",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListTreesResponse::getXTotal, ListTreesResponse::setXTotal));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RenameFileRequest, RenameFileResponse> renameFile = genForRenameFile();
+
+    private static HttpRequestDef<RenameFileRequest, RenameFileResponse> genForRenameFile() {
+        // basic
+        HttpRequestDef.Builder<RenameFileRequest, RenameFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, RenameFileRequest.class, RenameFileResponse.class)
+                .withName("RenameFile")
+                .withUri("/v4/repositories/{repository_id}/repository/rename-file")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(RenameFileRequest::getRepositoryId, RenameFileRequest::setRepositoryId));
+        builder.<RenameFileBodyDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RenameFileBodyDto.class),
+            f -> f.withMarshaller(RenameFileRequest::getBody, RenameFileRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowFileRequest, ShowFileResponse> showFile = genForShowFile();
 
     private static HttpRequestDef<ShowFileRequest, ShowFileResponse> genForShowFile() {
@@ -2655,6 +2572,38 @@ public class CodeArtsRepoMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowFileRawRequest, ShowFileRawResponse> showFileRaw = genForShowFileRaw();
+
+    private static HttpRequestDef<ShowFileRawRequest, ShowFileRawResponse> genForShowFileRaw() {
+        // basic
+        HttpRequestDef.Builder<ShowFileRawRequest, ShowFileRawResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFileRawRequest.class, ShowFileRawResponse.class)
+                .withName("ShowFileRaw")
+                .withUri("/v4/repositories/{repository_id}/repository/files/raw")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowFileRawRequest::getRepositoryId, ShowFileRawRequest::setRepositoryId));
+        builder.<String>withRequestField("file_path",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFileRawRequest::getFilePath, ShowFileRawRequest::setFilePath));
+        builder.<String>withRequestField("ref",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFileRawRequest::getRef, ShowFileRawRequest::setRef));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowReadmeFileRequest, ShowReadmeFileResponse> showReadmeFile =
         genForShowReadmeFile();
 
@@ -2711,163 +2660,6 @@ public class CodeArtsRepoMeta {
             f -> f.withMarshaller(UpdateFileRequest::getBody, UpdateFileRequest::setBody));
 
         // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<BatchDeleteRepositoryFilePushPermissionsRequest, BatchDeleteRepositoryFilePushPermissionsResponse> batchDeleteRepositoryFilePushPermissions =
-        genForBatchDeleteRepositoryFilePushPermissions();
-
-    private static HttpRequestDef<BatchDeleteRepositoryFilePushPermissionsRequest, BatchDeleteRepositoryFilePushPermissionsResponse> genForBatchDeleteRepositoryFilePushPermissions() {
-        // basic
-        HttpRequestDef.Builder<BatchDeleteRepositoryFilePushPermissionsRequest, BatchDeleteRepositoryFilePushPermissionsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    BatchDeleteRepositoryFilePushPermissionsRequest.class,
-                    BatchDeleteRepositoryFilePushPermissionsResponse.class)
-                .withName("BatchDeleteRepositoryFilePushPermissions")
-                .withUri("/v4/repositories/{repository_id}/file-push-permissions/batch-delete")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchDeleteRepositoryFilePushPermissionsRequest::getRepositoryId,
-                BatchDeleteRepositoryFilePushPermissionsRequest::setRepositoryId));
-        builder.<BatchDeleteFilePushPermissionDto>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchDeleteFilePushPermissionDto.class),
-            f -> f.withMarshaller(BatchDeleteRepositoryFilePushPermissionsRequest::getBody,
-                BatchDeleteRepositoryFilePushPermissionsRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<BatchUpdateRepositoryFilePushPermissionsRequest, BatchUpdateRepositoryFilePushPermissionsResponse> batchUpdateRepositoryFilePushPermissions =
-        genForBatchUpdateRepositoryFilePushPermissions();
-
-    private static HttpRequestDef<BatchUpdateRepositoryFilePushPermissionsRequest, BatchUpdateRepositoryFilePushPermissionsResponse> genForBatchUpdateRepositoryFilePushPermissions() {
-        // basic
-        HttpRequestDef.Builder<BatchUpdateRepositoryFilePushPermissionsRequest, BatchUpdateRepositoryFilePushPermissionsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.PUT,
-                    BatchUpdateRepositoryFilePushPermissionsRequest.class,
-                    BatchUpdateRepositoryFilePushPermissionsResponse.class)
-                .withName("BatchUpdateRepositoryFilePushPermissions")
-                .withUri("/v4/repositories/{repository_id}/file-push-permissions")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchUpdateRepositoryFilePushPermissionsRequest::getRepositoryId,
-                BatchUpdateRepositoryFilePushPermissionsRequest::setRepositoryId));
-        builder.<BatchUpdateFilePushPermissionBodyDto>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchUpdateFilePushPermissionBodyDto.class),
-            f -> f.withMarshaller(BatchUpdateRepositoryFilePushPermissionsRequest::getBody,
-                BatchUpdateRepositoryFilePushPermissionsRequest::setBody));
-
-        // response
-        builder.<List<RepositoryFilePushPermissionDto>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f
-                .withMarshaller(BatchUpdateRepositoryFilePushPermissionsResponse::getBody,
-                    BatchUpdateRepositoryFilePushPermissionsResponse::setBody)
-                .withInnerContainerType(RepositoryFilePushPermissionDto.class));
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateFilePushPermissionRequest, CreateFilePushPermissionResponse> createFilePushPermission =
-        genForCreateFilePushPermission();
-
-    private static HttpRequestDef<CreateFilePushPermissionRequest, CreateFilePushPermissionResponse> genForCreateFilePushPermission() {
-        // basic
-        HttpRequestDef.Builder<CreateFilePushPermissionRequest, CreateFilePushPermissionResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST, CreateFilePushPermissionRequest.class, CreateFilePushPermissionResponse.class)
-                .withName("CreateFilePushPermission")
-                .withUri("/v4/repositories/{repository_id}/file-push-permissions")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateFilePushPermissionRequest::getRepositoryId,
-                CreateFilePushPermissionRequest::setRepositoryId));
-        builder.<CreateRepositoryFilePushPermissionDto>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateRepositoryFilePushPermissionDto.class),
-            f -> f.withMarshaller(CreateFilePushPermissionRequest::getBody, CreateFilePushPermissionRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListRepositoryFilePushPermissionsRequest, ListRepositoryFilePushPermissionsResponse> listRepositoryFilePushPermissions =
-        genForListRepositoryFilePushPermissions();
-
-    private static HttpRequestDef<ListRepositoryFilePushPermissionsRequest, ListRepositoryFilePushPermissionsResponse> genForListRepositoryFilePushPermissions() {
-        // basic
-        HttpRequestDef.Builder<ListRepositoryFilePushPermissionsRequest, ListRepositoryFilePushPermissionsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ListRepositoryFilePushPermissionsRequest.class,
-                    ListRepositoryFilePushPermissionsResponse.class)
-                .withName("ListRepositoryFilePushPermissions")
-                .withUri("/v4/repositories/{repository_id}/file-push-permissions")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRepositoryFilePushPermissionsRequest::getRepositoryId,
-                ListRepositoryFilePushPermissionsRequest::setRepositoryId));
-        builder.<String>withRequestField("search",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRepositoryFilePushPermissionsRequest::getSearch,
-                ListRepositoryFilePushPermissionsRequest::setSearch));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRepositoryFilePushPermissionsRequest::getOffset,
-                ListRepositoryFilePushPermissionsRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRepositoryFilePushPermissionsRequest::getLimit,
-                ListRepositoryFilePushPermissionsRequest::setLimit));
-
-        // response
-        builder.<List<RepositoryFilePushPermissionDto>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f
-                .withMarshaller(ListRepositoryFilePushPermissionsResponse::getBody,
-                    ListRepositoryFilePushPermissionsResponse::setBody)
-                .withInnerContainerType(RepositoryFilePushPermissionDto.class));
 
         return builder.build();
     }
@@ -3337,178 +3129,47 @@ public class CodeArtsRepoMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListImpersonationTokensRequest, ListImpersonationTokensResponse> listImpersonationTokens =
-        genForListImpersonationTokens();
+    public static final HttpRequestDef<ListManageableGroupsRequest, ListManageableGroupsResponse> listManageableGroups =
+        genForListManageableGroups();
 
-    private static HttpRequestDef<ListImpersonationTokensRequest, ListImpersonationTokensResponse> genForListImpersonationTokens() {
+    private static HttpRequestDef<ListManageableGroupsRequest, ListManageableGroupsResponse> genForListManageableGroups() {
         // basic
-        HttpRequestDef.Builder<ListImpersonationTokensRequest, ListImpersonationTokensResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListImpersonationTokensRequest.class, ListImpersonationTokensResponse.class)
-            .withName("ListImpersonationTokens")
-            .withUri("/v4/users/impersonation-tokens")
+        HttpRequestDef.Builder<ListManageableGroupsRequest, ListManageableGroupsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListManageableGroupsRequest.class, ListManageableGroupsResponse.class)
+            .withName("ListManageableGroups")
+            .withUri("/v4/{project_id}/manageable-groups")
             .withContentType("application/json");
 
         // requests
-        builder.<Integer>withRequestField("group_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListImpersonationTokensRequest::getGroupId,
-                ListImpersonationTokensRequest::setGroupId));
-        builder.<ListImpersonationTokensRequest.StateEnum>withRequestField("state",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListImpersonationTokensRequest.StateEnum.class),
-            f -> f.withMarshaller(ListImpersonationTokensRequest::getState, ListImpersonationTokensRequest::setState));
-        builder.<String>withRequestField("search",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListImpersonationTokensRequest::getSearch,
-                ListImpersonationTokensRequest::setSearch));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListImpersonationTokensRequest::getOffset,
-                ListImpersonationTokensRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListImpersonationTokensRequest::getLimit, ListImpersonationTokensRequest::setLimit));
-
-        // response
-        builder.<List<ImpersonationToken>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListImpersonationTokensResponse::getBody, ListImpersonationTokensResponse::setBody)
-                .withInnerContainerType(ImpersonationToken.class));
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListProductPermissionResourcesGrantedUsersRequest, ListProductPermissionResourcesGrantedUsersResponse> listProductPermissionResourcesGrantedUsers =
-        genForListProductPermissionResourcesGrantedUsers();
-
-    private static HttpRequestDef<ListProductPermissionResourcesGrantedUsersRequest, ListProductPermissionResourcesGrantedUsersResponse> genForListProductPermissionResourcesGrantedUsers() {
-        // basic
-        HttpRequestDef.Builder<ListProductPermissionResourcesGrantedUsersRequest, ListProductPermissionResourcesGrantedUsersResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ListProductPermissionResourcesGrantedUsersRequest.class,
-                    ListProductPermissionResourcesGrantedUsersResponse.class)
-                .withName("ListProductPermissionResourcesGrantedUsers")
-                .withUri("/v4/projects/{project_id}/members")
-                .withContentType("application/json");
-
-        // requests
         builder.<String>withRequestField("project_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductPermissionResourcesGrantedUsersRequest::getProjectId,
-                ListProductPermissionResourcesGrantedUsersRequest::setProjectId));
-        builder.<String>withRequestField("query",
+            f -> f.withMarshaller(ListManageableGroupsRequest::getProjectId,
+                ListManageableGroupsRequest::setProjectId));
+        builder.<ListManageableGroupsRequest.ScopeEnum>withRequestField("scope",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProductPermissionResourcesGrantedUsersRequest::getQuery,
-                ListProductPermissionResourcesGrantedUsersRequest::setQuery));
+            TypeCasts.uncheckedConversion(ListManageableGroupsRequest.ScopeEnum.class),
+            f -> f.withMarshaller(ListManageableGroupsRequest::getScope, ListManageableGroupsRequest::setScope));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProductPermissionResourcesGrantedUsersRequest::getOffset,
-                ListProductPermissionResourcesGrantedUsersRequest::setOffset));
+            f -> f.withMarshaller(ListManageableGroupsRequest::getOffset, ListManageableGroupsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProductPermissionResourcesGrantedUsersRequest::getLimit,
-                ListProductPermissionResourcesGrantedUsersRequest::setLimit));
+            f -> f.withMarshaller(ListManageableGroupsRequest::getLimit, ListManageableGroupsRequest::setLimit));
 
         // response
-        builder.<List<GrantedUsersDto>>withResponseField("body",
+        builder.<List<ManageableGroupDto>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f
-                .withMarshaller(ListProductPermissionResourcesGrantedUsersResponse::getBody,
-                    ListProductPermissionResourcesGrantedUsersResponse::setBody)
-                .withInnerContainerType(GrantedUsersDto.class));
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListProjectSubgroupsAndRepositoriesRequest, ListProjectSubgroupsAndRepositoriesResponse> listProjectSubgroupsAndRepositories =
-        genForListProjectSubgroupsAndRepositories();
-
-    private static HttpRequestDef<ListProjectSubgroupsAndRepositoriesRequest, ListProjectSubgroupsAndRepositoriesResponse> genForListProjectSubgroupsAndRepositories() {
-        // basic
-        HttpRequestDef.Builder<ListProjectSubgroupsAndRepositoriesRequest, ListProjectSubgroupsAndRepositoriesResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ListProjectSubgroupsAndRepositoriesRequest.class,
-                    ListProjectSubgroupsAndRepositoriesResponse.class)
-                .withName("ListProjectSubgroupsAndRepositories")
-                .withUri("/v4/projects/{project_id}/subgroups-and-repositories")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectSubgroupsAndRepositoriesRequest::getProjectId,
-                ListProjectSubgroupsAndRepositoriesRequest::setProjectId));
-        builder.<Integer>withRequestField("filter",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProjectSubgroupsAndRepositoriesRequest::getFilter,
-                ListProjectSubgroupsAndRepositoriesRequest::setFilter));
-        builder.<ListProjectSubgroupsAndRepositoriesRequest.OrderByEnum>withRequestField("order_by",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListProjectSubgroupsAndRepositoriesRequest.OrderByEnum.class),
-            f -> f.withMarshaller(ListProjectSubgroupsAndRepositoriesRequest::getOrderBy,
-                ListProjectSubgroupsAndRepositoriesRequest::setOrderBy));
-        builder.<ListProjectSubgroupsAndRepositoriesRequest.SortEnum>withRequestField("sort",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListProjectSubgroupsAndRepositoriesRequest.SortEnum.class),
-            f -> f.withMarshaller(ListProjectSubgroupsAndRepositoriesRequest::getSort,
-                ListProjectSubgroupsAndRepositoriesRequest::setSort));
-        builder.<Boolean>withRequestField("archived",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListProjectSubgroupsAndRepositoriesRequest::getArchived,
-                ListProjectSubgroupsAndRepositoriesRequest::setArchived));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProjectSubgroupsAndRepositoriesRequest::getOffset,
-                ListProjectSubgroupsAndRepositoriesRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListProjectSubgroupsAndRepositoriesRequest::getLimit,
-                ListProjectSubgroupsAndRepositoriesRequest::setLimit));
-
-        // response
-        builder.<List<SubgroupAndProjectBaseDto>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f
-                .withMarshaller(ListProjectSubgroupsAndRepositoriesResponse::getBody,
-                    ListProjectSubgroupsAndRepositoriesResponse::setBody)
-                .withInnerContainerType(SubgroupAndProjectBaseDto.class));
+            f -> f.withMarshaller(ListManageableGroupsResponse::getBody, ListManageableGroupsResponse::setBody)
+                .withInnerContainerType(ManageableGroupDto.class));
 
         return builder.build();
     }
@@ -3723,103 +3384,6 @@ public class CodeArtsRepoMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowProjectGeneralPolicyRequest, ShowProjectGeneralPolicyResponse> showProjectGeneralPolicy =
-        genForShowProjectGeneralPolicy();
-
-    private static HttpRequestDef<ShowProjectGeneralPolicyRequest, ShowProjectGeneralPolicyResponse> genForShowProjectGeneralPolicy() {
-        // basic
-        HttpRequestDef.Builder<ShowProjectGeneralPolicyRequest, ShowProjectGeneralPolicyResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET, ShowProjectGeneralPolicyRequest.class, ShowProjectGeneralPolicyResponse.class)
-                .withName("ShowProjectGeneralPolicy")
-                .withUri("/v4/projects/{project_id}/policies/general")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProjectGeneralPolicyRequest::getProjectId,
-                ShowProjectGeneralPolicyRequest::setProjectId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowProjectMemberSettingRequest, ShowProjectMemberSettingResponse> showProjectMemberSetting =
-        genForShowProjectMemberSetting();
-
-    private static HttpRequestDef<ShowProjectMemberSettingRequest, ShowProjectMemberSettingResponse> genForShowProjectMemberSetting() {
-        // basic
-        HttpRequestDef.Builder<ShowProjectMemberSettingRequest, ShowProjectMemberSettingResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET, ShowProjectMemberSettingRequest.class, ShowProjectMemberSettingResponse.class)
-                .withName("ShowProjectMemberSetting")
-                .withUri("/v4/projects/{project_id}/member-setting")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProjectMemberSettingRequest::getProjectId,
-                ShowProjectMemberSettingRequest::setProjectId));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowProjectMemberSettingRequest::getOffset,
-                ShowProjectMemberSettingRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowProjectMemberSettingRequest::getLimit,
-                ShowProjectMemberSettingRequest::setLimit));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowProjectSettingsInheritCfgRequest, ShowProjectSettingsInheritCfgResponse> showProjectSettingsInheritCfg =
-        genForShowProjectSettingsInheritCfg();
-
-    private static HttpRequestDef<ShowProjectSettingsInheritCfgRequest, ShowProjectSettingsInheritCfgResponse> genForShowProjectSettingsInheritCfg() {
-        // basic
-        HttpRequestDef.Builder<ShowProjectSettingsInheritCfgRequest, ShowProjectSettingsInheritCfgResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ShowProjectSettingsInheritCfgRequest.class,
-                    ShowProjectSettingsInheritCfgResponse.class)
-                .withName("ShowProjectSettingsInheritCfg")
-                .withUri("/v4/projects/{project_id}/settings-inherit-cfg")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProjectSettingsInheritCfgRequest::getProjectId,
-                ShowProjectSettingsInheritCfgRequest::setProjectId));
-
-        // response
-        builder.<List<ProjectSettingsInheritCfgDto>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f
-                .withMarshaller(ShowProjectSettingsInheritCfgResponse::getBody,
-                    ShowProjectSettingsInheritCfgResponse::setBody)
-                .withInnerContainerType(ProjectSettingsInheritCfgDto.class));
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<TransferGroupRequest, TransferGroupResponse> transferGroup =
         genForTransferGroup();
 
@@ -3900,230 +3464,6 @@ public class CodeArtsRepoMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateWatermarkDto.class),
             f -> f.withMarshaller(UpdateGroupWatermarkRequest::getBody, UpdateGroupWatermarkRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateProjectSettingsInheritCfgRequest, UpdateProjectSettingsInheritCfgResponse> updateProjectSettingsInheritCfg =
-        genForUpdateProjectSettingsInheritCfg();
-
-    private static HttpRequestDef<UpdateProjectSettingsInheritCfgRequest, UpdateProjectSettingsInheritCfgResponse> genForUpdateProjectSettingsInheritCfg() {
-        // basic
-        HttpRequestDef.Builder<UpdateProjectSettingsInheritCfgRequest, UpdateProjectSettingsInheritCfgResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.PUT,
-                    UpdateProjectSettingsInheritCfgRequest.class,
-                    UpdateProjectSettingsInheritCfgResponse.class)
-                .withName("UpdateProjectSettingsInheritCfg")
-                .withUri("/v4/projects/{project_id}/settings-inherit-cfg")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProjectSettingsInheritCfgRequest::getProjectId,
-                UpdateProjectSettingsInheritCfgRequest::setProjectId));
-        builder.<SettingsInheritCfgBodyApiDto>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SettingsInheritCfgBodyApiDto.class),
-            f -> f.withMarshaller(UpdateProjectSettingsInheritCfgRequest::getBody,
-                UpdateProjectSettingsInheritCfgRequest::setBody));
-
-        // response
-        builder.<List<ProjectSettingsInheritCfgDto>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f
-                .withMarshaller(UpdateProjectSettingsInheritCfgResponse::getBody,
-                    UpdateProjectSettingsInheritCfgResponse::setBody)
-                .withInnerContainerType(ProjectSettingsInheritCfgDto.class));
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateRepositoryLabelRequest, CreateRepositoryLabelResponse> createRepositoryLabel =
-        genForCreateRepositoryLabel();
-
-    private static HttpRequestDef<CreateRepositoryLabelRequest, CreateRepositoryLabelResponse> genForCreateRepositoryLabel() {
-        // basic
-        HttpRequestDef.Builder<CreateRepositoryLabelRequest, CreateRepositoryLabelResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, CreateRepositoryLabelRequest.class, CreateRepositoryLabelResponse.class)
-            .withName("CreateRepositoryLabel")
-            .withUri("/v4/repositories/{repository_id}/labels")
-            .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateRepositoryLabelRequest::getRepositoryId,
-                CreateRepositoryLabelRequest::setRepositoryId));
-        builder.<LabelCreateDto>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(LabelCreateDto.class),
-            f -> f.withMarshaller(CreateRepositoryLabelRequest::getBody, CreateRepositoryLabelRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateRepositorySystemLabelsRequest, CreateRepositorySystemLabelsResponse> createRepositorySystemLabels =
-        genForCreateRepositorySystemLabels();
-
-    private static HttpRequestDef<CreateRepositorySystemLabelsRequest, CreateRepositorySystemLabelsResponse> genForCreateRepositorySystemLabels() {
-        // basic
-        HttpRequestDef.Builder<CreateRepositorySystemLabelsRequest, CreateRepositorySystemLabelsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    CreateRepositorySystemLabelsRequest.class,
-                    CreateRepositorySystemLabelsResponse.class)
-                .withName("CreateRepositorySystemLabels")
-                .withUri("/v4/repositories/{repository_id}/system-labels")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateRepositorySystemLabelsRequest::getRepositoryId,
-                CreateRepositorySystemLabelsRequest::setRepositoryId));
-
-        // response
-        builder.<List<LabelDetailDto>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f
-                .withMarshaller(CreateRepositorySystemLabelsResponse::getBody,
-                    CreateRepositorySystemLabelsResponse::setBody)
-                .withInnerContainerType(LabelDetailDto.class));
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteRepositoryLabelRequest, DeleteRepositoryLabelResponse> deleteRepositoryLabel =
-        genForDeleteRepositoryLabel();
-
-    private static HttpRequestDef<DeleteRepositoryLabelRequest, DeleteRepositoryLabelResponse> genForDeleteRepositoryLabel() {
-        // basic
-        HttpRequestDef.Builder<DeleteRepositoryLabelRequest, DeleteRepositoryLabelResponse> builder = HttpRequestDef
-            .builder(HttpMethod.DELETE, DeleteRepositoryLabelRequest.class, DeleteRepositoryLabelResponse.class)
-            .withName("DeleteRepositoryLabel")
-            .withUri("/v4/repositories/{repository_id}/label")
-            .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteRepositoryLabelRequest::getRepositoryId,
-                DeleteRepositoryLabelRequest::setRepositoryId));
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRepositoryLabelRequest::getName, DeleteRepositoryLabelRequest::setName));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListRepositoryLabelsRequest, ListRepositoryLabelsResponse> listRepositoryLabels =
-        genForListRepositoryLabels();
-
-    private static HttpRequestDef<ListRepositoryLabelsRequest, ListRepositoryLabelsResponse> genForListRepositoryLabels() {
-        // basic
-        HttpRequestDef.Builder<ListRepositoryLabelsRequest, ListRepositoryLabelsResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListRepositoryLabelsRequest.class, ListRepositoryLabelsResponse.class)
-            .withName("ListRepositoryLabels")
-            .withUri("/v4/repositories/{repository_id}/labels")
-            .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRepositoryLabelsRequest::getRepositoryId,
-                ListRepositoryLabelsRequest::setRepositoryId));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRepositoryLabelsRequest::getOffset, ListRepositoryLabelsRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRepositoryLabelsRequest::getLimit, ListRepositoryLabelsRequest::setLimit));
-        builder.<String>withRequestField("search",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRepositoryLabelsRequest::getSearch, ListRepositoryLabelsRequest::setSearch));
-        builder.<ListRepositoryLabelsRequest.SortEnum>withRequestField("sort",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListRepositoryLabelsRequest.SortEnum.class),
-            f -> f.withMarshaller(ListRepositoryLabelsRequest::getSort, ListRepositoryLabelsRequest::setSort));
-        builder.<Boolean>withRequestField("include_expired",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListRepositoryLabelsRequest::getIncludeExpired,
-                ListRepositoryLabelsRequest::setIncludeExpired));
-        builder.<ListRepositoryLabelsRequest.ViewEnum>withRequestField("view",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListRepositoryLabelsRequest.ViewEnum.class),
-            f -> f.withMarshaller(ListRepositoryLabelsRequest::getView, ListRepositoryLabelsRequest::setView));
-
-        // response
-        builder.<List<LabelBasicDto>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListRepositoryLabelsResponse::getBody, ListRepositoryLabelsResponse::setBody)
-                .withInnerContainerType(LabelBasicDto.class));
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateRepositoryLabelRequest, UpdateRepositoryLabelResponse> updateRepositoryLabel =
-        genForUpdateRepositoryLabel();
-
-    private static HttpRequestDef<UpdateRepositoryLabelRequest, UpdateRepositoryLabelResponse> genForUpdateRepositoryLabel() {
-        // basic
-        HttpRequestDef.Builder<UpdateRepositoryLabelRequest, UpdateRepositoryLabelResponse> builder = HttpRequestDef
-            .builder(HttpMethod.PUT, UpdateRepositoryLabelRequest.class, UpdateRepositoryLabelResponse.class)
-            .withName("UpdateRepositoryLabel")
-            .withUri("/v4/repositories/{repository_id}/label")
-            .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateRepositoryLabelRequest::getRepositoryId,
-                UpdateRepositoryLabelRequest::setRepositoryId));
-        builder.<BodyPutLabelDto>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BodyPutLabelDto.class),
-            f -> f.withMarshaller(UpdateRepositoryLabelRequest::getBody, UpdateRepositoryLabelRequest::setBody));
 
         // response
 
@@ -4279,6 +3619,59 @@ public class CodeArtsRepoMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListMembersResponse::getXTotal, ListMembersResponse::setXTotal));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProductPermissionResourcesGrantedUsersRequest, ListProductPermissionResourcesGrantedUsersResponse> listProductPermissionResourcesGrantedUsers =
+        genForListProductPermissionResourcesGrantedUsers();
+
+    private static HttpRequestDef<ListProductPermissionResourcesGrantedUsersRequest, ListProductPermissionResourcesGrantedUsersResponse> genForListProductPermissionResourcesGrantedUsers() {
+        // basic
+        HttpRequestDef.Builder<ListProductPermissionResourcesGrantedUsersRequest, ListProductPermissionResourcesGrantedUsersResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListProductPermissionResourcesGrantedUsersRequest.class,
+                    ListProductPermissionResourcesGrantedUsersResponse.class)
+                .withName("ListProductPermissionResourcesGrantedUsers")
+                .withUri("/v4/projects/{project_id}/members")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProductPermissionResourcesGrantedUsersRequest::getProjectId,
+                ListProductPermissionResourcesGrantedUsersRequest::setProjectId));
+        builder.<String>withRequestField("query",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProductPermissionResourcesGrantedUsersRequest::getQuery,
+                ListProductPermissionResourcesGrantedUsersRequest::setQuery));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProductPermissionResourcesGrantedUsersRequest::getOffset,
+                ListProductPermissionResourcesGrantedUsersRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProductPermissionResourcesGrantedUsersRequest::getLimit,
+                ListProductPermissionResourcesGrantedUsersRequest::setLimit));
+
+        // response
+        builder.<List<GrantedUsersDto>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(ListProductPermissionResourcesGrantedUsersResponse::getBody,
+                    ListProductPermissionResourcesGrantedUsersResponse::setBody)
+                .withInnerContainerType(GrantedUsersDto.class));
+
         return builder.build();
     }
 
@@ -5019,6 +4412,59 @@ public class CodeArtsRepoMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCommitAssociatedMergeRequestsRequest, ListCommitAssociatedMergeRequestsResponse> listCommitAssociatedMergeRequests =
+        genForListCommitAssociatedMergeRequests();
+
+    private static HttpRequestDef<ListCommitAssociatedMergeRequestsRequest, ListCommitAssociatedMergeRequestsResponse> genForListCommitAssociatedMergeRequests() {
+        // basic
+        HttpRequestDef.Builder<ListCommitAssociatedMergeRequestsRequest, ListCommitAssociatedMergeRequestsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListCommitAssociatedMergeRequestsRequest.class,
+                    ListCommitAssociatedMergeRequestsResponse.class)
+                .withName("ListCommitAssociatedMergeRequests")
+                .withUri("/v4/repositories/{repository_id}/commits/{sha}/merge-requests")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCommitAssociatedMergeRequestsRequest::getRepositoryId,
+                ListCommitAssociatedMergeRequestsRequest::setRepositoryId));
+        builder.<String>withRequestField("sha",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCommitAssociatedMergeRequestsRequest::getSha,
+                ListCommitAssociatedMergeRequestsRequest::setSha));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCommitAssociatedMergeRequestsRequest::getOffset,
+                ListCommitAssociatedMergeRequestsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCommitAssociatedMergeRequestsRequest::getLimit,
+                ListCommitAssociatedMergeRequestsRequest::setLimit));
+
+        // response
+        builder.<List<CommitMergeRequestDto>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(ListCommitAssociatedMergeRequestsResponse::getBody,
+                    ListCommitAssociatedMergeRequestsResponse::setBody)
+                .withInnerContainerType(CommitMergeRequestDto.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListDiscussionTemplatesRequest, ListDiscussionTemplatesResponse> listDiscussionTemplates =
         genForListDiscussionTemplates();
 
@@ -5690,6 +5136,59 @@ public class CodeArtsRepoMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListMergeRequestParticipantsRequest, ListMergeRequestParticipantsResponse> listMergeRequestParticipants =
+        genForListMergeRequestParticipants();
+
+    private static HttpRequestDef<ListMergeRequestParticipantsRequest, ListMergeRequestParticipantsResponse> genForListMergeRequestParticipants() {
+        // basic
+        HttpRequestDef.Builder<ListMergeRequestParticipantsRequest, ListMergeRequestParticipantsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListMergeRequestParticipantsRequest.class,
+                    ListMergeRequestParticipantsResponse.class)
+                .withName("ListMergeRequestParticipants")
+                .withUri("/v4/repositories/{repository_id}/merge-requests/{merge_request_iid}/participants")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMergeRequestParticipantsRequest::getRepositoryId,
+                ListMergeRequestParticipantsRequest::setRepositoryId));
+        builder.<Integer>withRequestField("merge_request_iid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMergeRequestParticipantsRequest::getMergeRequestIid,
+                ListMergeRequestParticipantsRequest::setMergeRequestIid));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMergeRequestParticipantsRequest::getOffset,
+                ListMergeRequestParticipantsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMergeRequestParticipantsRequest::getLimit,
+                ListMergeRequestParticipantsRequest::setLimit));
+
+        // response
+        builder.<List<UserBasicDto>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(ListMergeRequestParticipantsResponse::getBody,
+                    ListMergeRequestParticipantsResponse::setBody)
+                .withInnerContainerType(UserBasicDto.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListMergeRequestReviewersRequest, ListMergeRequestReviewersResponse> listMergeRequestReviewers =
         genForListMergeRequestReviewers();
 
@@ -5957,6 +5456,159 @@ public class CodeArtsRepoMeta {
                 ListMergeRequestVersionsRequest::setLimit));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPersonalMergeRequestsRequest, ListPersonalMergeRequestsResponse> listPersonalMergeRequests =
+        genForListPersonalMergeRequests();
+
+    private static HttpRequestDef<ListPersonalMergeRequestsRequest, ListPersonalMergeRequestsResponse> genForListPersonalMergeRequests() {
+        // basic
+        HttpRequestDef.Builder<ListPersonalMergeRequestsRequest, ListPersonalMergeRequestsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListPersonalMergeRequestsRequest.class,
+                    ListPersonalMergeRequestsResponse.class)
+                .withName("ListPersonalMergeRequests")
+                .withUri("/v4/merge-requests")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListPersonalMergeRequestsRequest.StateEnum>withRequestField("state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPersonalMergeRequestsRequest.StateEnum.class),
+            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getState,
+                ListPersonalMergeRequestsRequest::setState));
+        builder.<ListPersonalMergeRequestsRequest.OrderByEnum>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPersonalMergeRequestsRequest.OrderByEnum.class),
+            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getOrderBy,
+                ListPersonalMergeRequestsRequest::setOrderBy));
+        builder.<ListPersonalMergeRequestsRequest.SortEnum>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPersonalMergeRequestsRequest.SortEnum.class),
+            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getSort,
+                ListPersonalMergeRequestsRequest::setSort));
+        builder.<String>withRequestField("labels",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getLabels,
+                ListPersonalMergeRequestsRequest::setLabels));
+        builder.<OffsetDateTime>withRequestField("created_before",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getCreatedBefore,
+                ListPersonalMergeRequestsRequest::setCreatedBefore));
+        builder.<OffsetDateTime>withRequestField("created_after",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getCreatedAfter,
+                ListPersonalMergeRequestsRequest::setCreatedAfter));
+        builder.<OffsetDateTime>withRequestField("updated_after",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getUpdatedAfter,
+                ListPersonalMergeRequestsRequest::setUpdatedAfter));
+        builder.<OffsetDateTime>withRequestField("updated_before",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getUpdatedBefore,
+                ListPersonalMergeRequestsRequest::setUpdatedBefore));
+        builder.<ListPersonalMergeRequestsRequest.ViewEnum>withRequestField("view",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPersonalMergeRequestsRequest.ViewEnum.class),
+            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getView,
+                ListPersonalMergeRequestsRequest::setView));
+        builder.<String>withRequestField("author_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getAuthorId,
+                ListPersonalMergeRequestsRequest::setAuthorId));
+        builder.<ListPersonalMergeRequestsRequest.ScopeEnum>withRequestField("scope",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPersonalMergeRequestsRequest.ScopeEnum.class),
+            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getScope,
+                ListPersonalMergeRequestsRequest::setScope));
+        builder.<String>withRequestField("source_branch",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getSourceBranch,
+                ListPersonalMergeRequestsRequest::setSourceBranch));
+        builder.<String>withRequestField("target_branch",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getTargetBranch,
+                ListPersonalMergeRequestsRequest::setTargetBranch));
+        builder.<String>withRequestField("search",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getSearch,
+                ListPersonalMergeRequestsRequest::setSearch));
+        builder.<ListPersonalMergeRequestsRequest.WipEnum>withRequestField("wip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPersonalMergeRequestsRequest.WipEnum.class),
+            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getWip, ListPersonalMergeRequestsRequest::setWip));
+        builder.<String>withRequestField("merged_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getMergedBy,
+                ListPersonalMergeRequestsRequest::setMergedBy));
+        builder.<OffsetDateTime>withRequestField("merged_after",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getMergedAfter,
+                ListPersonalMergeRequestsRequest::setMergedAfter));
+        builder.<OffsetDateTime>withRequestField("merged_before",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getMergedBefore,
+                ListPersonalMergeRequestsRequest::setMergedBefore));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getOffset,
+                ListPersonalMergeRequestsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getLimit,
+                ListPersonalMergeRequestsRequest::setLimit));
+        builder.<Boolean>withRequestField("only_count",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getOnlyCount,
+                ListPersonalMergeRequestsRequest::setOnlyCount));
+
+        // response
+        builder.<List<MergeRequestListBasicDto>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(ListPersonalMergeRequestsResponse::getBody, ListPersonalMergeRequestsResponse::setBody)
+                .withInnerContainerType(MergeRequestListBasicDto.class));
 
         return builder.build();
     }
@@ -6845,6 +6497,53 @@ public class CodeArtsRepoMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowRepositoryMergeRequestsStatisticRequest, ShowRepositoryMergeRequestsStatisticResponse> showRepositoryMergeRequestsStatistic =
+        genForShowRepositoryMergeRequestsStatistic();
+
+    private static HttpRequestDef<ShowRepositoryMergeRequestsStatisticRequest, ShowRepositoryMergeRequestsStatisticResponse> genForShowRepositoryMergeRequestsStatistic() {
+        // basic
+        HttpRequestDef.Builder<ShowRepositoryMergeRequestsStatisticRequest, ShowRepositoryMergeRequestsStatisticResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowRepositoryMergeRequestsStatisticRequest.class,
+                    ShowRepositoryMergeRequestsStatisticResponse.class)
+                .withName("ShowRepositoryMergeRequestsStatistic")
+                .withUri("/v4/repositories/{repository_id}/merge-requests/statistic")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowRepositoryMergeRequestsStatisticRequest::getRepositoryId,
+                ShowRepositoryMergeRequestsStatisticRequest::setRepositoryId));
+        builder.<String>withRequestField("iids",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRepositoryMergeRequestsStatisticRequest::getIids,
+                ShowRepositoryMergeRequestsStatisticRequest::setIids));
+        builder.<ShowRepositoryMergeRequestsStatisticRequest.FieldsEnum>withRequestField("fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowRepositoryMergeRequestsStatisticRequest.FieldsEnum.class),
+            f -> f.withMarshaller(ShowRepositoryMergeRequestsStatisticRequest::getFields,
+                ShowRepositoryMergeRequestsStatisticRequest::setFields));
+
+        // response
+        builder.<List<MergeRequestStatisticDto>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(ShowRepositoryMergeRequestsStatisticResponse::getBody,
+                    ShowRepositoryMergeRequestsStatisticResponse::setBody)
+                .withInnerContainerType(MergeRequestStatisticDto.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateGroupMergeRequestApproverSettingRequest, UpdateGroupMergeRequestApproverSettingResponse> updateGroupMergeRequestApproverSetting =
         genForUpdateGroupMergeRequestApproverSetting();
 
@@ -7276,18 +6975,18 @@ public class CodeArtsRepoMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListCommitAssociatedMergeRequestsRequest, ListCommitAssociatedMergeRequestsResponse> listCommitAssociatedMergeRequests =
-        genForListCommitAssociatedMergeRequests();
+    public static final HttpRequestDef<BatchDeleteRepositoryFilePushPermissionsRequest, BatchDeleteRepositoryFilePushPermissionsResponse> batchDeleteRepositoryFilePushPermissions =
+        genForBatchDeleteRepositoryFilePushPermissions();
 
-    private static HttpRequestDef<ListCommitAssociatedMergeRequestsRequest, ListCommitAssociatedMergeRequestsResponse> genForListCommitAssociatedMergeRequests() {
+    private static HttpRequestDef<BatchDeleteRepositoryFilePushPermissionsRequest, BatchDeleteRepositoryFilePushPermissionsResponse> genForBatchDeleteRepositoryFilePushPermissions() {
         // basic
-        HttpRequestDef.Builder<ListCommitAssociatedMergeRequestsRequest, ListCommitAssociatedMergeRequestsResponse> builder =
+        HttpRequestDef.Builder<BatchDeleteRepositoryFilePushPermissionsRequest, BatchDeleteRepositoryFilePushPermissionsResponse> builder =
             HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ListCommitAssociatedMergeRequestsRequest.class,
-                    ListCommitAssociatedMergeRequestsResponse.class)
-                .withName("ListCommitAssociatedMergeRequests")
-                .withUri("/v4/repositories/{repository_id}/commits/{sha}/merge-requests")
+                .builder(HttpMethod.POST,
+                    BatchDeleteRepositoryFilePushPermissionsRequest.class,
+                    BatchDeleteRepositoryFilePushPermissionsResponse.class)
+                .withName("BatchDeleteRepositoryFilePushPermissions")
+                .withUri("/v4/repositories/{repository_id}/file-push-permissions/batch-delete")
                 .withContentType("application/json");
 
         // requests
@@ -7295,289 +6994,140 @@ public class CodeArtsRepoMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCommitAssociatedMergeRequestsRequest::getRepositoryId,
-                ListCommitAssociatedMergeRequestsRequest::setRepositoryId));
-        builder.<String>withRequestField("sha",
-            LocationType.Path,
+            f -> f.withMarshaller(BatchDeleteRepositoryFilePushPermissionsRequest::getRepositoryId,
+                BatchDeleteRepositoryFilePushPermissionsRequest::setRepositoryId));
+        builder.<BatchDeleteFilePushPermissionDto>withRequestField("body",
+            LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCommitAssociatedMergeRequestsRequest::getSha,
-                ListCommitAssociatedMergeRequestsRequest::setSha));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCommitAssociatedMergeRequestsRequest::getOffset,
-                ListCommitAssociatedMergeRequestsRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCommitAssociatedMergeRequestsRequest::getLimit,
-                ListCommitAssociatedMergeRequestsRequest::setLimit));
+            TypeCasts.uncheckedConversion(BatchDeleteFilePushPermissionDto.class),
+            f -> f.withMarshaller(BatchDeleteRepositoryFilePushPermissionsRequest::getBody,
+                BatchDeleteRepositoryFilePushPermissionsRequest::setBody));
 
         // response
-        builder.<List<CommitMergeRequestDto>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f
-                .withMarshaller(ListCommitAssociatedMergeRequestsResponse::getBody,
-                    ListCommitAssociatedMergeRequestsResponse::setBody)
-                .withInnerContainerType(CommitMergeRequestDto.class));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPersonalMergeRequestsRequest, ListPersonalMergeRequestsResponse> listPersonalMergeRequests =
-        genForListPersonalMergeRequests();
+    public static final HttpRequestDef<BatchUpdateRepositoryFilePushPermissionsRequest, BatchUpdateRepositoryFilePushPermissionsResponse> batchUpdateRepositoryFilePushPermissions =
+        genForBatchUpdateRepositoryFilePushPermissions();
 
-    private static HttpRequestDef<ListPersonalMergeRequestsRequest, ListPersonalMergeRequestsResponse> genForListPersonalMergeRequests() {
+    private static HttpRequestDef<BatchUpdateRepositoryFilePushPermissionsRequest, BatchUpdateRepositoryFilePushPermissionsResponse> genForBatchUpdateRepositoryFilePushPermissions() {
         // basic
-        HttpRequestDef.Builder<ListPersonalMergeRequestsRequest, ListPersonalMergeRequestsResponse> builder =
+        HttpRequestDef.Builder<BatchUpdateRepositoryFilePushPermissionsRequest, BatchUpdateRepositoryFilePushPermissionsResponse> builder =
             HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ListPersonalMergeRequestsRequest.class,
-                    ListPersonalMergeRequestsResponse.class)
-                .withName("ListPersonalMergeRequests")
-                .withUri("/v4/merge-requests")
+                .builder(HttpMethod.PUT,
+                    BatchUpdateRepositoryFilePushPermissionsRequest.class,
+                    BatchUpdateRepositoryFilePushPermissionsResponse.class)
+                .withName("BatchUpdateRepositoryFilePushPermissions")
+                .withUri("/v4/repositories/{repository_id}/file-push-permissions")
                 .withContentType("application/json");
 
         // requests
-        builder.<ListPersonalMergeRequestsRequest.StateEnum>withRequestField("state",
-            LocationType.Query,
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchUpdateRepositoryFilePushPermissionsRequest::getRepositoryId,
+                BatchUpdateRepositoryFilePushPermissionsRequest::setRepositoryId));
+        builder.<BatchUpdateFilePushPermissionBodyDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdateFilePushPermissionBodyDto.class),
+            f -> f.withMarshaller(BatchUpdateRepositoryFilePushPermissionsRequest::getBody,
+                BatchUpdateRepositoryFilePushPermissionsRequest::setBody));
+
+        // response
+        builder.<List<RepositoryFilePushPermissionDto>>withResponseField("body",
+            LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListPersonalMergeRequestsRequest.StateEnum.class),
-            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getState,
-                ListPersonalMergeRequestsRequest::setState));
-        builder.<ListPersonalMergeRequestsRequest.OrderByEnum>withRequestField("order_by",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListPersonalMergeRequestsRequest.OrderByEnum.class),
-            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getOrderBy,
-                ListPersonalMergeRequestsRequest::setOrderBy));
-        builder.<ListPersonalMergeRequestsRequest.SortEnum>withRequestField("sort",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListPersonalMergeRequestsRequest.SortEnum.class),
-            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getSort,
-                ListPersonalMergeRequestsRequest::setSort));
-        builder.<String>withRequestField("labels",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getLabels,
-                ListPersonalMergeRequestsRequest::setLabels));
-        builder.<OffsetDateTime>withRequestField("created_before",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(OffsetDateTime.class),
-            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getCreatedBefore,
-                ListPersonalMergeRequestsRequest::setCreatedBefore));
-        builder.<OffsetDateTime>withRequestField("created_after",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(OffsetDateTime.class),
-            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getCreatedAfter,
-                ListPersonalMergeRequestsRequest::setCreatedAfter));
-        builder.<OffsetDateTime>withRequestField("updated_after",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(OffsetDateTime.class),
-            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getUpdatedAfter,
-                ListPersonalMergeRequestsRequest::setUpdatedAfter));
-        builder.<OffsetDateTime>withRequestField("updated_before",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(OffsetDateTime.class),
-            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getUpdatedBefore,
-                ListPersonalMergeRequestsRequest::setUpdatedBefore));
-        builder.<ListPersonalMergeRequestsRequest.ViewEnum>withRequestField("view",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListPersonalMergeRequestsRequest.ViewEnum.class),
-            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getView,
-                ListPersonalMergeRequestsRequest::setView));
-        builder.<String>withRequestField("author_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getAuthorId,
-                ListPersonalMergeRequestsRequest::setAuthorId));
-        builder.<ListPersonalMergeRequestsRequest.ScopeEnum>withRequestField("scope",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListPersonalMergeRequestsRequest.ScopeEnum.class),
-            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getScope,
-                ListPersonalMergeRequestsRequest::setScope));
-        builder.<String>withRequestField("source_branch",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getSourceBranch,
-                ListPersonalMergeRequestsRequest::setSourceBranch));
-        builder.<String>withRequestField("target_branch",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getTargetBranch,
-                ListPersonalMergeRequestsRequest::setTargetBranch));
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(BatchUpdateRepositoryFilePushPermissionsResponse::getBody,
+                    BatchUpdateRepositoryFilePushPermissionsResponse::setBody)
+                .withInnerContainerType(RepositoryFilePushPermissionDto.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateFilePushPermissionRequest, CreateFilePushPermissionResponse> createFilePushPermission =
+        genForCreateFilePushPermission();
+
+    private static HttpRequestDef<CreateFilePushPermissionRequest, CreateFilePushPermissionResponse> genForCreateFilePushPermission() {
+        // basic
+        HttpRequestDef.Builder<CreateFilePushPermissionRequest, CreateFilePushPermissionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateFilePushPermissionRequest.class, CreateFilePushPermissionResponse.class)
+                .withName("CreateFilePushPermission")
+                .withUri("/v4/repositories/{repository_id}/file-push-permissions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CreateFilePushPermissionRequest::getRepositoryId,
+                CreateFilePushPermissionRequest::setRepositoryId));
+        builder.<CreateRepositoryFilePushPermissionDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateRepositoryFilePushPermissionDto.class),
+            f -> f.withMarshaller(CreateFilePushPermissionRequest::getBody, CreateFilePushPermissionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRepositoryFilePushPermissionsRequest, ListRepositoryFilePushPermissionsResponse> listRepositoryFilePushPermissions =
+        genForListRepositoryFilePushPermissions();
+
+    private static HttpRequestDef<ListRepositoryFilePushPermissionsRequest, ListRepositoryFilePushPermissionsResponse> genForListRepositoryFilePushPermissions() {
+        // basic
+        HttpRequestDef.Builder<ListRepositoryFilePushPermissionsRequest, ListRepositoryFilePushPermissionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListRepositoryFilePushPermissionsRequest.class,
+                    ListRepositoryFilePushPermissionsResponse.class)
+                .withName("ListRepositoryFilePushPermissions")
+                .withUri("/v4/repositories/{repository_id}/file-push-permissions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRepositoryFilePushPermissionsRequest::getRepositoryId,
+                ListRepositoryFilePushPermissionsRequest::setRepositoryId));
         builder.<String>withRequestField("search",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getSearch,
-                ListPersonalMergeRequestsRequest::setSearch));
-        builder.<ListPersonalMergeRequestsRequest.WipEnum>withRequestField("wip",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListPersonalMergeRequestsRequest.WipEnum.class),
-            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getWip, ListPersonalMergeRequestsRequest::setWip));
-        builder.<String>withRequestField("merged_by",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getMergedBy,
-                ListPersonalMergeRequestsRequest::setMergedBy));
-        builder.<OffsetDateTime>withRequestField("merged_after",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(OffsetDateTime.class),
-            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getMergedAfter,
-                ListPersonalMergeRequestsRequest::setMergedAfter));
-        builder.<OffsetDateTime>withRequestField("merged_before",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(OffsetDateTime.class),
-            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getMergedBefore,
-                ListPersonalMergeRequestsRequest::setMergedBefore));
+            f -> f.withMarshaller(ListRepositoryFilePushPermissionsRequest::getSearch,
+                ListRepositoryFilePushPermissionsRequest::setSearch));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getOffset,
-                ListPersonalMergeRequestsRequest::setOffset));
+            f -> f.withMarshaller(ListRepositoryFilePushPermissionsRequest::getOffset,
+                ListRepositoryFilePushPermissionsRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getLimit,
-                ListPersonalMergeRequestsRequest::setLimit));
-        builder.<Boolean>withRequestField("only_count",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListPersonalMergeRequestsRequest::getOnlyCount,
-                ListPersonalMergeRequestsRequest::setOnlyCount));
+            f -> f.withMarshaller(ListRepositoryFilePushPermissionsRequest::getLimit,
+                ListRepositoryFilePushPermissionsRequest::setLimit));
 
         // response
-        builder.<List<MergeRequestListBasicDto>>withResponseField("body",
+        builder.<List<RepositoryFilePushPermissionDto>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f
-                .withMarshaller(ListPersonalMergeRequestsResponse::getBody, ListPersonalMergeRequestsResponse::setBody)
-                .withInnerContainerType(MergeRequestListBasicDto.class));
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowRepositoryMergeRequestsStatisticRequest, ShowRepositoryMergeRequestsStatisticResponse> showRepositoryMergeRequestsStatistic =
-        genForShowRepositoryMergeRequestsStatistic();
-
-    private static HttpRequestDef<ShowRepositoryMergeRequestsStatisticRequest, ShowRepositoryMergeRequestsStatisticResponse> genForShowRepositoryMergeRequestsStatistic() {
-        // basic
-        HttpRequestDef.Builder<ShowRepositoryMergeRequestsStatisticRequest, ShowRepositoryMergeRequestsStatisticResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ShowRepositoryMergeRequestsStatisticRequest.class,
-                    ShowRepositoryMergeRequestsStatisticResponse.class)
-                .withName("ShowRepositoryMergeRequestsStatistic")
-                .withUri("/v4/repositories/{repository_id}/merge-requests/statistic")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowRepositoryMergeRequestsStatisticRequest::getRepositoryId,
-                ShowRepositoryMergeRequestsStatisticRequest::setRepositoryId));
-        builder.<String>withRequestField("iids",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowRepositoryMergeRequestsStatisticRequest::getIids,
-                ShowRepositoryMergeRequestsStatisticRequest::setIids));
-        builder.<ShowRepositoryMergeRequestsStatisticRequest.FieldsEnum>withRequestField("fields",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ShowRepositoryMergeRequestsStatisticRequest.FieldsEnum.class),
-            f -> f.withMarshaller(ShowRepositoryMergeRequestsStatisticRequest::getFields,
-                ShowRepositoryMergeRequestsStatisticRequest::setFields));
-
-        // response
-        builder.<List<MergeRequestStatisticDto>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f
-                .withMarshaller(ShowRepositoryMergeRequestsStatisticResponse::getBody,
-                    ShowRepositoryMergeRequestsStatisticResponse::setBody)
-                .withInnerContainerType(MergeRequestStatisticDto.class));
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListMergeRequestParticipantsRequest, ListMergeRequestParticipantsResponse> listMergeRequestParticipants =
-        genForListMergeRequestParticipants();
-
-    private static HttpRequestDef<ListMergeRequestParticipantsRequest, ListMergeRequestParticipantsResponse> genForListMergeRequestParticipants() {
-        // basic
-        HttpRequestDef.Builder<ListMergeRequestParticipantsRequest, ListMergeRequestParticipantsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ListMergeRequestParticipantsRequest.class,
-                    ListMergeRequestParticipantsResponse.class)
-                .withName("ListMergeRequestParticipants")
-                .withUri("/v4/repositories/{repository_id}/merge-requests/{merge_request_iid}/participants")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMergeRequestParticipantsRequest::getRepositoryId,
-                ListMergeRequestParticipantsRequest::setRepositoryId));
-        builder.<Integer>withRequestField("merge_request_iid",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMergeRequestParticipantsRequest::getMergeRequestIid,
-                ListMergeRequestParticipantsRequest::setMergeRequestIid));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMergeRequestParticipantsRequest::getOffset,
-                ListMergeRequestParticipantsRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMergeRequestParticipantsRequest::getLimit,
-                ListMergeRequestParticipantsRequest::setLimit));
-
-        // response
-        builder.<List<UserBasicDto>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f
-                .withMarshaller(ListMergeRequestParticipantsResponse::getBody,
-                    ListMergeRequestParticipantsResponse::setBody)
-                .withInnerContainerType(UserBasicDto.class));
+                .withMarshaller(ListRepositoryFilePushPermissionsResponse::getBody,
+                    ListRepositoryFilePushPermissionsResponse::setBody)
+                .withInnerContainerType(RepositoryFilePushPermissionDto.class));
 
         return builder.build();
     }
@@ -7867,6 +7417,174 @@ public class CodeArtsRepoMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListProjectSubgroupsAndRepositoriesRequest, ListProjectSubgroupsAndRepositoriesResponse> listProjectSubgroupsAndRepositories =
+        genForListProjectSubgroupsAndRepositories();
+
+    private static HttpRequestDef<ListProjectSubgroupsAndRepositoriesRequest, ListProjectSubgroupsAndRepositoriesResponse> genForListProjectSubgroupsAndRepositories() {
+        // basic
+        HttpRequestDef.Builder<ListProjectSubgroupsAndRepositoriesRequest, ListProjectSubgroupsAndRepositoriesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListProjectSubgroupsAndRepositoriesRequest.class,
+                    ListProjectSubgroupsAndRepositoriesResponse.class)
+                .withName("ListProjectSubgroupsAndRepositories")
+                .withUri("/v4/projects/{project_id}/subgroups-and-repositories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectSubgroupsAndRepositoriesRequest::getProjectId,
+                ListProjectSubgroupsAndRepositoriesRequest::setProjectId));
+        builder.<Integer>withRequestField("filter",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectSubgroupsAndRepositoriesRequest::getFilter,
+                ListProjectSubgroupsAndRepositoriesRequest::setFilter));
+        builder.<ListProjectSubgroupsAndRepositoriesRequest.OrderByEnum>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListProjectSubgroupsAndRepositoriesRequest.OrderByEnum.class),
+            f -> f.withMarshaller(ListProjectSubgroupsAndRepositoriesRequest::getOrderBy,
+                ListProjectSubgroupsAndRepositoriesRequest::setOrderBy));
+        builder.<ListProjectSubgroupsAndRepositoriesRequest.SortEnum>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListProjectSubgroupsAndRepositoriesRequest.SortEnum.class),
+            f -> f.withMarshaller(ListProjectSubgroupsAndRepositoriesRequest::getSort,
+                ListProjectSubgroupsAndRepositoriesRequest::setSort));
+        builder.<Boolean>withRequestField("archived",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListProjectSubgroupsAndRepositoriesRequest::getArchived,
+                ListProjectSubgroupsAndRepositoriesRequest::setArchived));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectSubgroupsAndRepositoriesRequest::getOffset,
+                ListProjectSubgroupsAndRepositoriesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectSubgroupsAndRepositoriesRequest::getLimit,
+                ListProjectSubgroupsAndRepositoriesRequest::setLimit));
+
+        // response
+        builder.<List<SubgroupAndProjectBaseDto>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(ListProjectSubgroupsAndRepositoriesResponse::getBody,
+                    ListProjectSubgroupsAndRepositoriesResponse::setBody)
+                .withInnerContainerType(SubgroupAndProjectBaseDto.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowProjectGeneralPolicyRequest, ShowProjectGeneralPolicyResponse> showProjectGeneralPolicy =
+        genForShowProjectGeneralPolicy();
+
+    private static HttpRequestDef<ShowProjectGeneralPolicyRequest, ShowProjectGeneralPolicyResponse> genForShowProjectGeneralPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowProjectGeneralPolicyRequest, ShowProjectGeneralPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowProjectGeneralPolicyRequest.class, ShowProjectGeneralPolicyResponse.class)
+                .withName("ShowProjectGeneralPolicy")
+                .withUri("/v4/projects/{project_id}/policies/general")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProjectGeneralPolicyRequest::getProjectId,
+                ShowProjectGeneralPolicyRequest::setProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowProjectMemberSettingRequest, ShowProjectMemberSettingResponse> showProjectMemberSetting =
+        genForShowProjectMemberSetting();
+
+    private static HttpRequestDef<ShowProjectMemberSettingRequest, ShowProjectMemberSettingResponse> genForShowProjectMemberSetting() {
+        // basic
+        HttpRequestDef.Builder<ShowProjectMemberSettingRequest, ShowProjectMemberSettingResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowProjectMemberSettingRequest.class, ShowProjectMemberSettingResponse.class)
+                .withName("ShowProjectMemberSetting")
+                .withUri("/v4/projects/{project_id}/member-setting")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProjectMemberSettingRequest::getProjectId,
+                ShowProjectMemberSettingRequest::setProjectId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowProjectMemberSettingRequest::getOffset,
+                ShowProjectMemberSettingRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowProjectMemberSettingRequest::getLimit,
+                ShowProjectMemberSettingRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowProjectSettingsInheritCfgRequest, ShowProjectSettingsInheritCfgResponse> showProjectSettingsInheritCfg =
+        genForShowProjectSettingsInheritCfg();
+
+    private static HttpRequestDef<ShowProjectSettingsInheritCfgRequest, ShowProjectSettingsInheritCfgResponse> genForShowProjectSettingsInheritCfg() {
+        // basic
+        HttpRequestDef.Builder<ShowProjectSettingsInheritCfgRequest, ShowProjectSettingsInheritCfgResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowProjectSettingsInheritCfgRequest.class,
+                    ShowProjectSettingsInheritCfgResponse.class)
+                .withName("ShowProjectSettingsInheritCfg")
+                .withUri("/v4/projects/{project_id}/settings-inherit-cfg")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProjectSettingsInheritCfgRequest::getProjectId,
+                ShowProjectSettingsInheritCfgRequest::setProjectId));
+
+        // response
+        builder.<List<ProjectSettingsInheritCfgDto>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(ShowProjectSettingsInheritCfgResponse::getBody,
+                    ShowProjectSettingsInheritCfgResponse::setBody)
+                .withInnerContainerType(ProjectSettingsInheritCfgDto.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowProjectWatermarkRequest, ShowProjectWatermarkResponse> showProjectWatermark =
         genForShowProjectWatermark();
 
@@ -7998,6 +7716,47 @@ public class CodeArtsRepoMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateProjectSettingsInheritCfgRequest, UpdateProjectSettingsInheritCfgResponse> updateProjectSettingsInheritCfg =
+        genForUpdateProjectSettingsInheritCfg();
+
+    private static HttpRequestDef<UpdateProjectSettingsInheritCfgRequest, UpdateProjectSettingsInheritCfgResponse> genForUpdateProjectSettingsInheritCfg() {
+        // basic
+        HttpRequestDef.Builder<UpdateProjectSettingsInheritCfgRequest, UpdateProjectSettingsInheritCfgResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateProjectSettingsInheritCfgRequest.class,
+                    UpdateProjectSettingsInheritCfgResponse.class)
+                .withName("UpdateProjectSettingsInheritCfg")
+                .withUri("/v4/projects/{project_id}/settings-inherit-cfg")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProjectSettingsInheritCfgRequest::getProjectId,
+                UpdateProjectSettingsInheritCfgRequest::setProjectId));
+        builder.<SettingsInheritCfgBodyApiDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SettingsInheritCfgBodyApiDto.class),
+            f -> f.withMarshaller(UpdateProjectSettingsInheritCfgRequest::getBody,
+                UpdateProjectSettingsInheritCfgRequest::setBody));
+
+        // response
+        builder.<List<ProjectSettingsInheritCfgDto>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(UpdateProjectSettingsInheritCfgResponse::getBody,
+                    UpdateProjectSettingsInheritCfgResponse::setBody)
+                .withInnerContainerType(ProjectSettingsInheritCfgDto.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateProjectWatermarkRequest, UpdateProjectWatermarkResponse> updateProjectWatermark =
         genForUpdateProjectWatermark();
 
@@ -8068,6 +7827,42 @@ public class CodeArtsRepoMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchCreateProtectedTagsRequest, BatchCreateProtectedTagsResponse> batchCreateProtectedTags =
+        genForBatchCreateProtectedTags();
+
+    private static HttpRequestDef<BatchCreateProtectedTagsRequest, BatchCreateProtectedTagsResponse> genForBatchCreateProtectedTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateProtectedTagsRequest, BatchCreateProtectedTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, BatchCreateProtectedTagsRequest.class, BatchCreateProtectedTagsResponse.class)
+                .withName("BatchCreateProtectedTags")
+                .withUri("/v4/repositories/{repository_id}/protected-tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchCreateProtectedTagsRequest::getRepositoryId,
+                BatchCreateProtectedTagsRequest::setRepositoryId));
+        builder.<RepositoryProtectedTagBodyDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RepositoryProtectedTagBodyDto.class),
+            f -> f.withMarshaller(BatchCreateProtectedTagsRequest::getBody, BatchCreateProtectedTagsRequest::setBody));
+
+        // response
+        builder.<List<RepositoryProtectedTagDto>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchCreateProtectedTagsResponse::getBody, BatchCreateProtectedTagsResponse::setBody)
+                .withInnerContainerType(RepositoryProtectedTagDto.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteProtectedBranchesRequest, BatchDeleteProtectedBranchesResponse> batchDeleteProtectedBranches =
         genForBatchDeleteProtectedBranches();
 
@@ -8095,6 +7890,36 @@ public class CodeArtsRepoMeta {
             TypeCasts.uncheckedConversion(BatchDeleteProtectedBranchesBodyDto.class),
             f -> f.withMarshaller(BatchDeleteProtectedBranchesRequest::getBody,
                 BatchDeleteProtectedBranchesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteProtectedTagsRequest, BatchDeleteProtectedTagsResponse> batchDeleteProtectedTags =
+        genForBatchDeleteProtectedTags();
+
+    private static HttpRequestDef<BatchDeleteProtectedTagsRequest, BatchDeleteProtectedTagsResponse> genForBatchDeleteProtectedTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteProtectedTagsRequest, BatchDeleteProtectedTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, BatchDeleteProtectedTagsRequest.class, BatchDeleteProtectedTagsResponse.class)
+                .withName("BatchDeleteProtectedTags")
+                .withUri("/v4/repositories/{repository_id}/protected-tags/bulk-deletion")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchDeleteProtectedTagsRequest::getRepositoryId,
+                BatchDeleteProtectedTagsRequest::setRepositoryId));
+        builder.<BatchDeleteProtectedTagsBodyDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteProtectedTagsBodyDto.class),
+            f -> f.withMarshaller(BatchDeleteProtectedTagsRequest::getBody, BatchDeleteProtectedTagsRequest::setBody));
 
         // response
 
@@ -8142,6 +7967,42 @@ public class CodeArtsRepoMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchUpdateProtectedTagsRequest, BatchUpdateProtectedTagsResponse> batchUpdateProtectedTags =
+        genForBatchUpdateProtectedTags();
+
+    private static HttpRequestDef<BatchUpdateProtectedTagsRequest, BatchUpdateProtectedTagsResponse> genForBatchUpdateProtectedTags() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateProtectedTagsRequest, BatchUpdateProtectedTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, BatchUpdateProtectedTagsRequest.class, BatchUpdateProtectedTagsResponse.class)
+                .withName("BatchUpdateProtectedTags")
+                .withUri("/v4/repositories/{repository_id}/protected-tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchUpdateProtectedTagsRequest::getRepositoryId,
+                BatchUpdateProtectedTagsRequest::setRepositoryId));
+        builder.<BatchUpdateProtectedTagsBodyDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdateProtectedTagsBodyDto.class),
+            f -> f.withMarshaller(BatchUpdateProtectedTagsRequest::getBody, BatchUpdateProtectedTagsRequest::setBody));
+
+        // response
+        builder.<List<RepositoryProtectedTagDto>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchUpdateProtectedTagsResponse::getBody, BatchUpdateProtectedTagsResponse::setBody)
+                .withInnerContainerType(RepositoryProtectedTagDto.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateProjectProtectedBranchesRequest, CreateProjectProtectedBranchesResponse> createProjectProtectedBranches =
         genForCreateProjectProtectedBranches();
 
@@ -8175,6 +8036,39 @@ public class CodeArtsRepoMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateProjectProtectedTagsRequest, CreateProjectProtectedTagsResponse> createProjectProtectedTags =
+        genForCreateProjectProtectedTags();
+
+    private static HttpRequestDef<CreateProjectProtectedTagsRequest, CreateProjectProtectedTagsResponse> genForCreateProjectProtectedTags() {
+        // basic
+        HttpRequestDef.Builder<CreateProjectProtectedTagsRequest, CreateProjectProtectedTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateProjectProtectedTagsRequest.class,
+                    CreateProjectProtectedTagsResponse.class)
+                .withName("CreateProjectProtectedTags")
+                .withUri("/v4/projects/{project_id}/protected-tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateProjectProtectedTagsRequest::getProjectId,
+                CreateProjectProtectedTagsRequest::setProjectId));
+        builder.<ProjectProtectedTagDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ProjectProtectedTagDto.class),
+            f -> f.withMarshaller(CreateProjectProtectedTagsRequest::getBody,
+                CreateProjectProtectedTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteProtectedBranchRequest, DeleteProtectedBranchResponse> deleteProtectedBranch =
         genForDeleteProtectedBranch();
 
@@ -8199,6 +8093,35 @@ public class CodeArtsRepoMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteProtectedBranchRequest::getBranchName,
                 DeleteProtectedBranchRequest::setBranchName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteProtectedTagRequest, DeleteProtectedTagResponse> deleteProtectedTag =
+        genForDeleteProtectedTag();
+
+    private static HttpRequestDef<DeleteProtectedTagRequest, DeleteProtectedTagResponse> genForDeleteProtectedTag() {
+        // basic
+        HttpRequestDef.Builder<DeleteProtectedTagRequest, DeleteProtectedTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteProtectedTagRequest.class, DeleteProtectedTagResponse.class)
+                .withName("DeleteProtectedTag")
+                .withUri("/v4/repositories/{repository_id}/protected-tag")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(DeleteProtectedTagRequest::getRepositoryId,
+                DeleteProtectedTagRequest::setRepositoryId));
+        builder.<String>withRequestField("tag_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteProtectedTagRequest::getTagName, DeleteProtectedTagRequest::setTagName));
 
         // response
 
@@ -8270,6 +8193,37 @@ public class CodeArtsRepoMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListProjectProtectedTagsRequest, ListProjectProtectedTagsResponse> listProjectProtectedTags =
+        genForListProjectProtectedTags();
+
+    private static HttpRequestDef<ListProjectProtectedTagsRequest, ListProjectProtectedTagsResponse> genForListProjectProtectedTags() {
+        // basic
+        HttpRequestDef.Builder<ListProjectProtectedTagsRequest, ListProjectProtectedTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListProjectProtectedTagsRequest.class, ListProjectProtectedTagsResponse.class)
+                .withName("ListProjectProtectedTags")
+                .withUri("/v4/projects/{project_id}/protected-tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectProtectedTagsRequest::getProjectId,
+                ListProjectProtectedTagsRequest::setProjectId));
+
+        // response
+        builder.<List<ProjectProtectedTagPo>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListProjectProtectedTagsResponse::getBody, ListProjectProtectedTagsResponse::setBody)
+                .withInnerContainerType(ProjectProtectedTagPo.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListProtectedBranchesRequest, ListProtectedBranchesResponse> listProtectedBranches =
         genForListProtectedBranches();
 
@@ -8311,267 +8265,6 @@ public class CodeArtsRepoMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListProtectedBranchesResponse::getBody, ListProtectedBranchesResponse::setBody)
                 .withInnerContainerType(RepositoryProtectedBranchDto.class));
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowProtectedBranchRequest, ShowProtectedBranchResponse> showProtectedBranch =
-        genForShowProtectedBranch();
-
-    private static HttpRequestDef<ShowProtectedBranchRequest, ShowProtectedBranchResponse> genForShowProtectedBranch() {
-        // basic
-        HttpRequestDef.Builder<ShowProtectedBranchRequest, ShowProtectedBranchResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowProtectedBranchRequest.class, ShowProtectedBranchResponse.class)
-                .withName("ShowProtectedBranch")
-                .withUri("/v4/repositories/{repository_id}/protected-branch")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowProtectedBranchRequest::getRepositoryId,
-                ShowProtectedBranchRequest::setRepositoryId));
-        builder.<String>withRequestField("branch_name",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowProtectedBranchRequest::getBranchName,
-                ShowProtectedBranchRequest::setBranchName));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateProtectedBranchRequest, UpdateProtectedBranchResponse> updateProtectedBranch =
-        genForUpdateProtectedBranch();
-
-    private static HttpRequestDef<UpdateProtectedBranchRequest, UpdateProtectedBranchResponse> genForUpdateProtectedBranch() {
-        // basic
-        HttpRequestDef.Builder<UpdateProtectedBranchRequest, UpdateProtectedBranchResponse> builder = HttpRequestDef
-            .builder(HttpMethod.PUT, UpdateProtectedBranchRequest.class, UpdateProtectedBranchResponse.class)
-            .withName("UpdateProtectedBranch")
-            .withUri("/v4/repositories/{repository_id}/protected-branch")
-            .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(UpdateProtectedBranchRequest::getRepositoryId,
-                UpdateProtectedBranchRequest::setRepositoryId));
-        builder.<String>withRequestField("branch_name",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateProtectedBranchRequest::getBranchName,
-                UpdateProtectedBranchRequest::setBranchName));
-        builder.<List<ProtectedBranchProtectedActionBodyDto>>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(UpdateProtectedBranchRequest::getBody, UpdateProtectedBranchRequest::setBody)
-                .withInnerContainerType(ProtectedBranchProtectedActionBodyDto.class));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<BatchCreateProtectedTagsRequest, BatchCreateProtectedTagsResponse> batchCreateProtectedTags =
-        genForBatchCreateProtectedTags();
-
-    private static HttpRequestDef<BatchCreateProtectedTagsRequest, BatchCreateProtectedTagsResponse> genForBatchCreateProtectedTags() {
-        // basic
-        HttpRequestDef.Builder<BatchCreateProtectedTagsRequest, BatchCreateProtectedTagsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST, BatchCreateProtectedTagsRequest.class, BatchCreateProtectedTagsResponse.class)
-                .withName("BatchCreateProtectedTags")
-                .withUri("/v4/repositories/{repository_id}/protected-tags")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchCreateProtectedTagsRequest::getRepositoryId,
-                BatchCreateProtectedTagsRequest::setRepositoryId));
-        builder.<RepositoryProtectedTagBodyDto>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(RepositoryProtectedTagBodyDto.class),
-            f -> f.withMarshaller(BatchCreateProtectedTagsRequest::getBody, BatchCreateProtectedTagsRequest::setBody));
-
-        // response
-        builder.<List<RepositoryProtectedTagDto>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchCreateProtectedTagsResponse::getBody, BatchCreateProtectedTagsResponse::setBody)
-                .withInnerContainerType(RepositoryProtectedTagDto.class));
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<BatchDeleteProtectedTagsRequest, BatchDeleteProtectedTagsResponse> batchDeleteProtectedTags =
-        genForBatchDeleteProtectedTags();
-
-    private static HttpRequestDef<BatchDeleteProtectedTagsRequest, BatchDeleteProtectedTagsResponse> genForBatchDeleteProtectedTags() {
-        // basic
-        HttpRequestDef.Builder<BatchDeleteProtectedTagsRequest, BatchDeleteProtectedTagsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST, BatchDeleteProtectedTagsRequest.class, BatchDeleteProtectedTagsResponse.class)
-                .withName("BatchDeleteProtectedTags")
-                .withUri("/v4/repositories/{repository_id}/protected-tags/bulk-deletion")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchDeleteProtectedTagsRequest::getRepositoryId,
-                BatchDeleteProtectedTagsRequest::setRepositoryId));
-        builder.<BatchDeleteProtectedTagsBodyDto>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchDeleteProtectedTagsBodyDto.class),
-            f -> f.withMarshaller(BatchDeleteProtectedTagsRequest::getBody, BatchDeleteProtectedTagsRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<BatchUpdateProtectedTagsRequest, BatchUpdateProtectedTagsResponse> batchUpdateProtectedTags =
-        genForBatchUpdateProtectedTags();
-
-    private static HttpRequestDef<BatchUpdateProtectedTagsRequest, BatchUpdateProtectedTagsResponse> genForBatchUpdateProtectedTags() {
-        // basic
-        HttpRequestDef.Builder<BatchUpdateProtectedTagsRequest, BatchUpdateProtectedTagsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.PUT, BatchUpdateProtectedTagsRequest.class, BatchUpdateProtectedTagsResponse.class)
-                .withName("BatchUpdateProtectedTags")
-                .withUri("/v4/repositories/{repository_id}/protected-tags")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(BatchUpdateProtectedTagsRequest::getRepositoryId,
-                BatchUpdateProtectedTagsRequest::setRepositoryId));
-        builder.<BatchUpdateProtectedTagsBodyDto>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchUpdateProtectedTagsBodyDto.class),
-            f -> f.withMarshaller(BatchUpdateProtectedTagsRequest::getBody, BatchUpdateProtectedTagsRequest::setBody));
-
-        // response
-        builder.<List<RepositoryProtectedTagDto>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchUpdateProtectedTagsResponse::getBody, BatchUpdateProtectedTagsResponse::setBody)
-                .withInnerContainerType(RepositoryProtectedTagDto.class));
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateProjectProtectedTagsRequest, CreateProjectProtectedTagsResponse> createProjectProtectedTags =
-        genForCreateProjectProtectedTags();
-
-    private static HttpRequestDef<CreateProjectProtectedTagsRequest, CreateProjectProtectedTagsResponse> genForCreateProjectProtectedTags() {
-        // basic
-        HttpRequestDef.Builder<CreateProjectProtectedTagsRequest, CreateProjectProtectedTagsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    CreateProjectProtectedTagsRequest.class,
-                    CreateProjectProtectedTagsResponse.class)
-                .withName("CreateProjectProtectedTags")
-                .withUri("/v4/projects/{project_id}/protected-tags")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateProjectProtectedTagsRequest::getProjectId,
-                CreateProjectProtectedTagsRequest::setProjectId));
-        builder.<ProjectProtectedTagDto>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ProjectProtectedTagDto.class),
-            f -> f.withMarshaller(CreateProjectProtectedTagsRequest::getBody,
-                CreateProjectProtectedTagsRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteProtectedTagRequest, DeleteProtectedTagResponse> deleteProtectedTag =
-        genForDeleteProtectedTag();
-
-    private static HttpRequestDef<DeleteProtectedTagRequest, DeleteProtectedTagResponse> genForDeleteProtectedTag() {
-        // basic
-        HttpRequestDef.Builder<DeleteProtectedTagRequest, DeleteProtectedTagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteProtectedTagRequest.class, DeleteProtectedTagResponse.class)
-                .withName("DeleteProtectedTag")
-                .withUri("/v4/repositories/{repository_id}/protected-tag")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteProtectedTagRequest::getRepositoryId,
-                DeleteProtectedTagRequest::setRepositoryId));
-        builder.<String>withRequestField("tag_name",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteProtectedTagRequest::getTagName, DeleteProtectedTagRequest::setTagName));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListProjectProtectedTagsRequest, ListProjectProtectedTagsResponse> listProjectProtectedTags =
-        genForListProjectProtectedTags();
-
-    private static HttpRequestDef<ListProjectProtectedTagsRequest, ListProjectProtectedTagsResponse> genForListProjectProtectedTags() {
-        // basic
-        HttpRequestDef.Builder<ListProjectProtectedTagsRequest, ListProjectProtectedTagsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET, ListProjectProtectedTagsRequest.class, ListProjectProtectedTagsResponse.class)
-                .withName("ListProjectProtectedTags")
-                .withUri("/v4/projects/{project_id}/protected-tags")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListProjectProtectedTagsRequest::getProjectId,
-                ListProjectProtectedTagsRequest::setProjectId));
-
-        // response
-        builder.<List<ProjectProtectedTagPo>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListProjectProtectedTagsResponse::getBody, ListProjectProtectedTagsResponse::setBody)
-                .withInnerContainerType(ProjectProtectedTagPo.class));
 
         return builder.build();
     }
@@ -8621,6 +8314,36 @@ public class CodeArtsRepoMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowProtectedBranchRequest, ShowProtectedBranchResponse> showProtectedBranch =
+        genForShowProtectedBranch();
+
+    private static HttpRequestDef<ShowProtectedBranchRequest, ShowProtectedBranchResponse> genForShowProtectedBranch() {
+        // basic
+        HttpRequestDef.Builder<ShowProtectedBranchRequest, ShowProtectedBranchResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowProtectedBranchRequest.class, ShowProtectedBranchResponse.class)
+                .withName("ShowProtectedBranch")
+                .withUri("/v4/repositories/{repository_id}/protected-branch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowProtectedBranchRequest::getRepositoryId,
+                ShowProtectedBranchRequest::setRepositoryId));
+        builder.<String>withRequestField("branch_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProtectedBranchRequest::getBranchName,
+                ShowProtectedBranchRequest::setBranchName));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowProtectedTagRequest, ShowProtectedTagResponse> showProtectedTag =
         genForShowProtectedTag();
 
@@ -8643,6 +8366,42 @@ public class CodeArtsRepoMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowProtectedTagRequest::getTagName, ShowProtectedTagRequest::setTagName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateProtectedBranchRequest, UpdateProtectedBranchResponse> updateProtectedBranch =
+        genForUpdateProtectedBranch();
+
+    private static HttpRequestDef<UpdateProtectedBranchRequest, UpdateProtectedBranchResponse> genForUpdateProtectedBranch() {
+        // basic
+        HttpRequestDef.Builder<UpdateProtectedBranchRequest, UpdateProtectedBranchResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateProtectedBranchRequest.class, UpdateProtectedBranchResponse.class)
+            .withName("UpdateProtectedBranch")
+            .withUri("/v4/repositories/{repository_id}/protected-branch")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(UpdateProtectedBranchRequest::getRepositoryId,
+                UpdateProtectedBranchRequest::setRepositoryId));
+        builder.<String>withRequestField("branch_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateProtectedBranchRequest::getBranchName,
+                UpdateProtectedBranchRequest::setBranchName));
+        builder.<List<ProtectedBranchProtectedActionBodyDto>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(UpdateProtectedBranchRequest::getBody, UpdateProtectedBranchRequest::setBody)
+                .withInnerContainerType(ProtectedBranchProtectedActionBodyDto.class));
 
         // response
 
@@ -8680,49 +8439,6 @@ public class CodeArtsRepoMeta {
                 .withInnerContainerType(RepositoryProtectedTagActionBodyDto.class));
 
         // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListLogsTreeRequest, ListLogsTreeResponse> listLogsTree = genForListLogsTree();
-
-    private static HttpRequestDef<ListLogsTreeRequest, ListLogsTreeResponse> genForListLogsTree() {
-        // basic
-        HttpRequestDef.Builder<ListLogsTreeRequest, ListLogsTreeResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListLogsTreeRequest.class, ListLogsTreeResponse.class)
-                .withName("ListLogsTree")
-                .withUri("/v4/repositories/{repository_id}/repository/logs-tree")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLogsTreeRequest::getRepositoryId, ListLogsTreeRequest::setRepositoryId));
-        builder.<String>withRequestField("ref",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLogsTreeRequest::getRef, ListLogsTreeRequest::setRef));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLogsTreeRequest::getOffset, ListLogsTreeRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLogsTreeRequest::getLimit, ListLogsTreeRequest::setLimit));
-
-        // response
-        builder.<List<LogTreeDto>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListLogsTreeResponse::getBody, ListLogsTreeResponse::setBody)
-                .withInnerContainerType(LogTreeDto.class));
 
         return builder.build();
     }
@@ -8775,14 +8491,15 @@ public class CodeArtsRepoMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<RenameFileRequest, RenameFileResponse> renameFile = genForRenameFile();
+    public static final HttpRequestDef<BatchDeleteBranchRequest, BatchDeleteBranchResponse> batchDeleteBranch =
+        genForBatchDeleteBranch();
 
-    private static HttpRequestDef<RenameFileRequest, RenameFileResponse> genForRenameFile() {
+    private static HttpRequestDef<BatchDeleteBranchRequest, BatchDeleteBranchResponse> genForBatchDeleteBranch() {
         // basic
-        HttpRequestDef.Builder<RenameFileRequest, RenameFileResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, RenameFileRequest.class, RenameFileResponse.class)
-                .withName("RenameFile")
-                .withUri("/v4/repositories/{repository_id}/repository/rename-file")
+        HttpRequestDef.Builder<BatchDeleteBranchRequest, BatchDeleteBranchResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteBranchRequest.class, BatchDeleteBranchResponse.class)
+                .withName("BatchDeleteBranch")
+                .withUri("/v4/repositories/{repository_id}/branches/batch-delete")
                 .withContentType("application/json");
 
         // requests
@@ -8790,26 +8507,27 @@ public class CodeArtsRepoMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(RenameFileRequest::getRepositoryId, RenameFileRequest::setRepositoryId));
-        builder.<RenameFileBodyDto>withRequestField("body",
+            f -> f.withMarshaller(BatchDeleteBranchRequest::getRepositoryId,
+                BatchDeleteBranchRequest::setRepositoryId));
+        builder.<BatchDeleteBranchDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(RenameFileBodyDto.class),
-            f -> f.withMarshaller(RenameFileRequest::getBody, RenameFileRequest::setBody));
+            TypeCasts.uncheckedConversion(BatchDeleteBranchDto.class),
+            f -> f.withMarshaller(BatchDeleteBranchRequest::getBody, BatchDeleteBranchRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowFileRawRequest, ShowFileRawResponse> showFileRaw = genForShowFileRaw();
+    public static final HttpRequestDef<CreateBranchRequest, CreateBranchResponse> createBranch = genForCreateBranch();
 
-    private static HttpRequestDef<ShowFileRawRequest, ShowFileRawResponse> genForShowFileRaw() {
+    private static HttpRequestDef<CreateBranchRequest, CreateBranchResponse> genForCreateBranch() {
         // basic
-        HttpRequestDef.Builder<ShowFileRawRequest, ShowFileRawResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowFileRawRequest.class, ShowFileRawResponse.class)
-                .withName("ShowFileRaw")
-                .withUri("/v4/repositories/{repository_id}/repository/files/raw")
+        HttpRequestDef.Builder<CreateBranchRequest, CreateBranchResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateBranchRequest.class, CreateBranchResponse.class)
+                .withName("CreateBranch")
+                .withUri("/v4/repositories/{repository_id}/repository/branches")
                 .withContentType("application/json");
 
         // requests
@@ -8817,35 +8535,175 @@ public class CodeArtsRepoMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowFileRawRequest::getRepositoryId, ShowFileRawRequest::setRepositoryId));
-        builder.<String>withRequestField("file_path",
+            f -> f.withMarshaller(CreateBranchRequest::getRepositoryId, CreateBranchRequest::setRepositoryId));
+        builder.<CreateBranchDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateBranchDto.class),
+            f -> f.withMarshaller(CreateBranchRequest::getBody, CreateBranchRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTagRequest, CreateTagResponse> createTag = genForCreateTag();
+
+    private static HttpRequestDef<CreateTagRequest, CreateTagResponse> genForCreateTag() {
+        // basic
+        HttpRequestDef.Builder<CreateTagRequest, CreateTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTagRequest.class, CreateTagResponse.class)
+                .withName("CreateTag")
+                .withUri("/v4/repositories/{repository_id}/repository/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CreateTagRequest::getRepositoryId, CreateTagRequest::setRepositoryId));
+        builder.<CreateTagDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTagDto.class),
+            f -> f.withMarshaller(CreateTagRequest::getBody, CreateTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteBranchRequest, DeleteBranchResponse> deleteBranch = genForDeleteBranch();
+
+    private static HttpRequestDef<DeleteBranchRequest, DeleteBranchResponse> genForDeleteBranch() {
+        // basic
+        HttpRequestDef.Builder<DeleteBranchRequest, DeleteBranchResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteBranchRequest.class, DeleteBranchResponse.class)
+                .withName("DeleteBranch")
+                .withUri("/v4/repositories/{repository_id}/repository/branch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(DeleteBranchRequest::getRepositoryId, DeleteBranchRequest::setRepositoryId));
+        builder.<String>withRequestField("branch_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFileRawRequest::getFilePath, ShowFileRawRequest::setFilePath));
-        builder.<String>withRequestField("ref",
+            f -> f.withMarshaller(DeleteBranchRequest::getBranchName, DeleteBranchRequest::setBranchName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTagRequest, DeleteTagResponse> deleteTag = genForDeleteTag();
+
+    private static HttpRequestDef<DeleteTagRequest, DeleteTagResponse> genForDeleteTag() {
+        // basic
+        HttpRequestDef.Builder<DeleteTagRequest, DeleteTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTagRequest.class, DeleteTagResponse.class)
+                .withName("DeleteTag")
+                .withUri("/v4/repositories/{repository_id}/repository/tag")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(DeleteTagRequest::getRepositoryId, DeleteTagRequest::setRepositoryId));
+        builder.<String>withRequestField("tag_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTagRequest::getTagName, DeleteTagRequest::setTagName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBranchesRequest, ListBranchesResponse> listBranches = genForListBranches();
+
+    private static HttpRequestDef<ListBranchesRequest, ListBranchesResponse> genForListBranches() {
+        // basic
+        HttpRequestDef.Builder<ListBranchesRequest, ListBranchesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListBranchesRequest.class, ListBranchesResponse.class)
+                .withName("ListBranches")
+                .withUri("/v4/repositories/{repository_id}/repository/branches")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBranchesRequest::getRepositoryId, ListBranchesRequest::setRepositoryId));
+        builder.<ListBranchesRequest.BranchTypeEnum>withRequestField("branch_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListBranchesRequest.BranchTypeEnum.class),
+            f -> f.withMarshaller(ListBranchesRequest::getBranchType, ListBranchesRequest::setBranchType));
+        builder.<String>withRequestField("creator",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFileRawRequest::getRef, ShowFileRawRequest::setRef));
+            f -> f.withMarshaller(ListBranchesRequest::getCreator, ListBranchesRequest::setCreator));
+        builder.<ListBranchesRequest.SortEnum>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListBranchesRequest.SortEnum.class),
+            f -> f.withMarshaller(ListBranchesRequest::getSort, ListBranchesRequest::setSort));
+        builder.<ListBranchesRequest.QueryViewEnum>withRequestField("query_view",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListBranchesRequest.QueryViewEnum.class),
+            f -> f.withMarshaller(ListBranchesRequest::getQueryView, ListBranchesRequest::setQueryView));
+        builder.<ListBranchesRequest.ViewEnum>withRequestField("view",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListBranchesRequest.ViewEnum.class),
+            f -> f.withMarshaller(ListBranchesRequest::getView, ListBranchesRequest::setView));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBranchesRequest::getOffset, ListBranchesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBranchesRequest::getLimit, ListBranchesRequest::setLimit));
 
         // response
+        builder.<List<BranchSimpleDto>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListBranchesResponse::getBody, ListBranchesResponse::setBody)
+                .withInnerContainerType(BranchSimpleDto.class));
 
+        builder.<String>withResponseField("X-Total",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListBranchesResponse::getXTotal, ListBranchesResponse::setXTotal));
         return builder.build();
     }
 
-    public static final HttpRequestDef<ExecuteRepositoryStatisticsRequest, ExecuteRepositoryStatisticsResponse> executeRepositoryStatistics =
-        genForExecuteRepositoryStatistics();
+    public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForListTags();
 
-    private static HttpRequestDef<ExecuteRepositoryStatisticsRequest, ExecuteRepositoryStatisticsResponse> genForExecuteRepositoryStatistics() {
+    private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForListTags() {
         // basic
-        HttpRequestDef.Builder<ExecuteRepositoryStatisticsRequest, ExecuteRepositoryStatisticsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    ExecuteRepositoryStatisticsRequest.class,
-                    ExecuteRepositoryStatisticsResponse.class)
-                .withName("ExecuteRepositoryStatistics")
-                .withUri("/v4/repositories/{repository_id}/repository/statistics")
+        HttpRequestDef.Builder<ListTagsRequest, ListTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTagsRequest.class, ListTagsResponse.class)
+                .withName("ListTags")
+                .withUri("/v4/repositories/{repository_id}/repository/tags")
                 .withContentType("application/json");
 
         // requests
@@ -8853,14 +8711,145 @@ public class CodeArtsRepoMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ExecuteRepositoryStatisticsRequest::getRepositoryId,
-                ExecuteRepositoryStatisticsRequest::setRepositoryId));
-        builder.<StatisticsParamsDto>withRequestField("body",
+            f -> f.withMarshaller(ListTagsRequest::getRepositoryId, ListTagsRequest::setRepositoryId));
+        builder.<String>withRequestField("creator",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTagsRequest::getCreator, ListTagsRequest::setCreator));
+        builder.<ListTagsRequest.SortEnum>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTagsRequest.SortEnum.class),
+            f -> f.withMarshaller(ListTagsRequest::getSort, ListTagsRequest::setSort));
+        builder.<String>withRequestField("search",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTagsRequest::getSearch, ListTagsRequest::setSearch));
+        builder.<ListTagsRequest.OrderByEnum>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTagsRequest.OrderByEnum.class),
+            f -> f.withMarshaller(ListTagsRequest::getOrderBy, ListTagsRequest::setOrderBy));
+        builder.<ListTagsRequest.ViewEnum>withRequestField("view",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTagsRequest.ViewEnum.class),
+            f -> f.withMarshaller(ListTagsRequest::getView, ListTagsRequest::setView));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTagsRequest::getOffset, ListTagsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTagsRequest::getLimit, ListTagsRequest::setLimit));
+
+        // response
+        builder.<List<SimpleTagDto>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListTagsResponse::getBody, ListTagsResponse::setBody)
+                .withInnerContainerType(SimpleTagDto.class));
+
+        builder.<String>withResponseField("X-Total",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListTagsResponse::getXTotal, ListTagsResponse::setXTotal));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBranchRequest, ShowBranchResponse> showBranch = genForShowBranch();
+
+    private static HttpRequestDef<ShowBranchRequest, ShowBranchResponse> genForShowBranch() {
+        // basic
+        HttpRequestDef.Builder<ShowBranchRequest, ShowBranchResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowBranchRequest.class, ShowBranchResponse.class)
+                .withName("ShowBranch")
+                .withUri("/v4/repositories/{repository_id}/repository/branch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowBranchRequest::getRepositoryId, ShowBranchRequest::setRepositoryId));
+        builder.<String>withRequestField("branch_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBranchRequest::getBranchName, ShowBranchRequest::setBranchName));
+
+        // response
+
+        builder.<String>withResponseField("X-Total",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowBranchResponse::getXTotal, ShowBranchResponse::setXTotal));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTagRequest, ShowTagResponse> showTag = genForShowTag();
+
+    private static HttpRequestDef<ShowTagRequest, ShowTagResponse> genForShowTag() {
+        // basic
+        HttpRequestDef.Builder<ShowTagRequest, ShowTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTagRequest.class, ShowTagResponse.class)
+                .withName("ShowTag")
+                .withUri("/v4/repositories/{repository_id}/repository/tag")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTagRequest::getRepositoryId, ShowTagRequest::setRepositoryId));
+        builder.<String>withRequestField("tag_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTagRequest::getTagName, ShowTagRequest::setTagName));
+
+        // response
+
+        builder.<String>withResponseField("X-Total",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowTagResponse::getXTotal, ShowTagResponse::setXTotal));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateBranchNameRequest, UpdateBranchNameResponse> updateBranchName =
+        genForUpdateBranchName();
+
+    private static HttpRequestDef<UpdateBranchNameRequest, UpdateBranchNameResponse> genForUpdateBranchName() {
+        // basic
+        HttpRequestDef.Builder<UpdateBranchNameRequest, UpdateBranchNameResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateBranchNameRequest.class, UpdateBranchNameResponse.class)
+                .withName("UpdateBranchName")
+                .withUri("/v4/repositories/{repository_id}/repository/branch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(UpdateBranchNameRequest::getRepositoryId, UpdateBranchNameRequest::setRepositoryId));
+        builder.<UpdateBranchDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(StatisticsParamsDto.class),
-            f -> f.withMarshaller(ExecuteRepositoryStatisticsRequest::getBody,
-                ExecuteRepositoryStatisticsRequest::setBody));
+            TypeCasts.uncheckedConversion(UpdateBranchDto.class),
+            f -> f.withMarshaller(UpdateBranchNameRequest::getBody, UpdateBranchNameRequest::setBody));
 
         // response
 
@@ -9084,6 +9073,99 @@ public class CodeArtsRepoMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateRepositoryLabelRequest, CreateRepositoryLabelResponse> createRepositoryLabel =
+        genForCreateRepositoryLabel();
+
+    private static HttpRequestDef<CreateRepositoryLabelRequest, CreateRepositoryLabelResponse> genForCreateRepositoryLabel() {
+        // basic
+        HttpRequestDef.Builder<CreateRepositoryLabelRequest, CreateRepositoryLabelResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateRepositoryLabelRequest.class, CreateRepositoryLabelResponse.class)
+            .withName("CreateRepositoryLabel")
+            .withUri("/v4/repositories/{repository_id}/labels")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CreateRepositoryLabelRequest::getRepositoryId,
+                CreateRepositoryLabelRequest::setRepositoryId));
+        builder.<LabelCreateDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LabelCreateDto.class),
+            f -> f.withMarshaller(CreateRepositoryLabelRequest::getBody, CreateRepositoryLabelRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRepositorySystemLabelsRequest, CreateRepositorySystemLabelsResponse> createRepositorySystemLabels =
+        genForCreateRepositorySystemLabels();
+
+    private static HttpRequestDef<CreateRepositorySystemLabelsRequest, CreateRepositorySystemLabelsResponse> genForCreateRepositorySystemLabels() {
+        // basic
+        HttpRequestDef.Builder<CreateRepositorySystemLabelsRequest, CreateRepositorySystemLabelsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateRepositorySystemLabelsRequest.class,
+                    CreateRepositorySystemLabelsResponse.class)
+                .withName("CreateRepositorySystemLabels")
+                .withUri("/v4/repositories/{repository_id}/system-labels")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CreateRepositorySystemLabelsRequest::getRepositoryId,
+                CreateRepositorySystemLabelsRequest::setRepositoryId));
+
+        // response
+        builder.<List<LabelDetailDto>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(CreateRepositorySystemLabelsResponse::getBody,
+                    CreateRepositorySystemLabelsResponse::setBody)
+                .withInnerContainerType(LabelDetailDto.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteRepositoryLabelRequest, DeleteRepositoryLabelResponse> deleteRepositoryLabel =
+        genForDeleteRepositoryLabel();
+
+    private static HttpRequestDef<DeleteRepositoryLabelRequest, DeleteRepositoryLabelResponse> genForDeleteRepositoryLabel() {
+        // basic
+        HttpRequestDef.Builder<DeleteRepositoryLabelRequest, DeleteRepositoryLabelResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteRepositoryLabelRequest.class, DeleteRepositoryLabelResponse.class)
+            .withName("DeleteRepositoryLabel")
+            .withUri("/v4/repositories/{repository_id}/label")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(DeleteRepositoryLabelRequest::getRepositoryId,
+                DeleteRepositoryLabelRequest::setRepositoryId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRepositoryLabelRequest::getName, DeleteRepositoryLabelRequest::setName));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteTrustedIpAddressRequest, DeleteTrustedIpAddressResponse> deleteTrustedIpAddress =
         genForDeleteTrustedIpAddress();
 
@@ -9144,6 +9226,39 @@ public class CodeArtsRepoMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DownloadArchiveRequest::getArchiveFormat, DownloadArchiveRequest::setArchiveFormat));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteRepositoryStatisticsRequest, ExecuteRepositoryStatisticsResponse> executeRepositoryStatistics =
+        genForExecuteRepositoryStatistics();
+
+    private static HttpRequestDef<ExecuteRepositoryStatisticsRequest, ExecuteRepositoryStatisticsResponse> genForExecuteRepositoryStatistics() {
+        // basic
+        HttpRequestDef.Builder<ExecuteRepositoryStatisticsRequest, ExecuteRepositoryStatisticsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ExecuteRepositoryStatisticsRequest.class,
+                    ExecuteRepositoryStatisticsResponse.class)
+                .withName("ExecuteRepositoryStatistics")
+                .withUri("/v4/repositories/{repository_id}/repository/statistics")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ExecuteRepositoryStatisticsRequest::getRepositoryId,
+                ExecuteRepositoryStatisticsRequest::setRepositoryId));
+        builder.<StatisticsParamsDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StatisticsParamsDto.class),
+            f -> f.withMarshaller(ExecuteRepositoryStatisticsRequest::getBody,
+                ExecuteRepositoryStatisticsRequest::setBody));
 
         // response
 
@@ -9289,51 +9404,6 @@ public class CodeArtsRepoMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListGroupRepositoriesResponse::getBody, ListGroupRepositoriesResponse::setBody)
                 .withInnerContainerType(BasicRepositoryDto.class));
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListManageableGroupsRequest, ListManageableGroupsResponse> listManageableGroups =
-        genForListManageableGroups();
-
-    private static HttpRequestDef<ListManageableGroupsRequest, ListManageableGroupsResponse> genForListManageableGroups() {
-        // basic
-        HttpRequestDef.Builder<ListManageableGroupsRequest, ListManageableGroupsResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListManageableGroupsRequest.class, ListManageableGroupsResponse.class)
-            .withName("ListManageableGroups")
-            .withUri("/v4/{project_id}/manageable-groups")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("project_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListManageableGroupsRequest::getProjectId,
-                ListManageableGroupsRequest::setProjectId));
-        builder.<ListManageableGroupsRequest.ScopeEnum>withRequestField("scope",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListManageableGroupsRequest.ScopeEnum.class),
-            f -> f.withMarshaller(ListManageableGroupsRequest::getScope, ListManageableGroupsRequest::setScope));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListManageableGroupsRequest::getOffset, ListManageableGroupsRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListManageableGroupsRequest::getLimit, ListManageableGroupsRequest::setLimit));
-
-        // response
-        builder.<List<ManageableGroupDto>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListManageableGroupsResponse::getBody, ListManageableGroupsResponse::setBody)
-                .withInnerContainerType(ManageableGroupDto.class));
 
         return builder.build();
     }
@@ -9793,6 +9863,67 @@ public class CodeArtsRepoMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListRepositoryLabelsRequest, ListRepositoryLabelsResponse> listRepositoryLabels =
+        genForListRepositoryLabels();
+
+    private static HttpRequestDef<ListRepositoryLabelsRequest, ListRepositoryLabelsResponse> genForListRepositoryLabels() {
+        // basic
+        HttpRequestDef.Builder<ListRepositoryLabelsRequest, ListRepositoryLabelsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListRepositoryLabelsRequest.class, ListRepositoryLabelsResponse.class)
+            .withName("ListRepositoryLabels")
+            .withUri("/v4/repositories/{repository_id}/labels")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRepositoryLabelsRequest::getRepositoryId,
+                ListRepositoryLabelsRequest::setRepositoryId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRepositoryLabelsRequest::getOffset, ListRepositoryLabelsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRepositoryLabelsRequest::getLimit, ListRepositoryLabelsRequest::setLimit));
+        builder.<String>withRequestField("search",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRepositoryLabelsRequest::getSearch, ListRepositoryLabelsRequest::setSearch));
+        builder.<ListRepositoryLabelsRequest.SortEnum>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListRepositoryLabelsRequest.SortEnum.class),
+            f -> f.withMarshaller(ListRepositoryLabelsRequest::getSort, ListRepositoryLabelsRequest::setSort));
+        builder.<Boolean>withRequestField("include_expired",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListRepositoryLabelsRequest::getIncludeExpired,
+                ListRepositoryLabelsRequest::setIncludeExpired));
+        builder.<ListRepositoryLabelsRequest.ViewEnum>withRequestField("view",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListRepositoryLabelsRequest.ViewEnum.class),
+            f -> f.withMarshaller(ListRepositoryLabelsRequest::getView, ListRepositoryLabelsRequest::setView));
+
+        // response
+        builder.<List<LabelBasicDto>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRepositoryLabelsResponse::getBody, ListRepositoryLabelsResponse::setBody)
+                .withInnerContainerType(LabelBasicDto.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListRepositoryLanguagesRequest, ListRepositoryLanguagesResponse> listRepositoryLanguages =
         genForListRepositoryLanguages();
 
@@ -9957,64 +10088,6 @@ public class CodeArtsRepoMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListSubmodulesResponse::getXTotal, ListSubmodulesResponse::setXTotal));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListTreesRequest, ListTreesResponse> listTrees = genForListTrees();
-
-    private static HttpRequestDef<ListTreesRequest, ListTreesResponse> genForListTrees() {
-        // basic
-        HttpRequestDef.Builder<ListTreesRequest, ListTreesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListTreesRequest.class, ListTreesResponse.class)
-                .withName("ListTrees")
-                .withUri("/v4/repositories/{repository_id}/repository/trees")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTreesRequest::getRepositoryId, ListTreesRequest::setRepositoryId));
-        builder.<String>withRequestField("ref",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTreesRequest::getRef, ListTreesRequest::setRef));
-        builder.<String>withRequestField("path",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTreesRequest::getPath, ListTreesRequest::setPath));
-        builder.<Boolean>withRequestField("recursive",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListTreesRequest::getRecursive, ListTreesRequest::setRecursive));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTreesRequest::getOffset, ListTreesRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTreesRequest::getLimit, ListTreesRequest::setLimit));
-
-        // response
-        builder.<List<TreeObjectDto>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTreesResponse::getBody, ListTreesResponse::setBody)
-                .withInnerContainerType(TreeObjectDto.class));
-
-        builder.<String>withResponseField("X-Total",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListTreesResponse::getXTotal, ListTreesResponse::setXTotal));
         return builder.build();
     }
 
@@ -11035,6 +11108,35 @@ public class CodeArtsRepoMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateRepositoryLabelRequest, UpdateRepositoryLabelResponse> updateRepositoryLabel =
+        genForUpdateRepositoryLabel();
+
+    private static HttpRequestDef<UpdateRepositoryLabelRequest, UpdateRepositoryLabelResponse> genForUpdateRepositoryLabel() {
+        // basic
+        HttpRequestDef.Builder<UpdateRepositoryLabelRequest, UpdateRepositoryLabelResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateRepositoryLabelRequest.class, UpdateRepositoryLabelResponse.class)
+            .withName("UpdateRepositoryLabel")
+            .withUri("/v4/repositories/{repository_id}/label")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(UpdateRepositoryLabelRequest::getRepositoryId,
+                UpdateRepositoryLabelRequest::setRepositoryId));
+        builder.<BodyPutLabelDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BodyPutLabelDto.class),
+            f -> f.withMarshaller(UpdateRepositoryLabelRequest::getBody, UpdateRepositoryLabelRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateRepositoryRemoteMirrorRequest, UpdateRepositoryRemoteMirrorResponse> updateRepositoryRemoteMirror =
         genForUpdateRepositoryRemoteMirror();
 
@@ -11131,160 +11233,6 @@ public class CodeArtsRepoMeta {
 
         // response
 
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateTagRequest, CreateTagResponse> createTag = genForCreateTag();
-
-    private static HttpRequestDef<CreateTagRequest, CreateTagResponse> genForCreateTag() {
-        // basic
-        HttpRequestDef.Builder<CreateTagRequest, CreateTagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateTagRequest.class, CreateTagResponse.class)
-                .withName("CreateTag")
-                .withUri("/v4/repositories/{repository_id}/repository/tags")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateTagRequest::getRepositoryId, CreateTagRequest::setRepositoryId));
-        builder.<CreateTagDto>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateTagDto.class),
-            f -> f.withMarshaller(CreateTagRequest::getBody, CreateTagRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteTagRequest, DeleteTagResponse> deleteTag = genForDeleteTag();
-
-    private static HttpRequestDef<DeleteTagRequest, DeleteTagResponse> genForDeleteTag() {
-        // basic
-        HttpRequestDef.Builder<DeleteTagRequest, DeleteTagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTagRequest.class, DeleteTagResponse.class)
-                .withName("DeleteTag")
-                .withUri("/v4/repositories/{repository_id}/repository/tag")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(DeleteTagRequest::getRepositoryId, DeleteTagRequest::setRepositoryId));
-        builder.<String>withRequestField("tag_name",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTagRequest::getTagName, DeleteTagRequest::setTagName));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForListTags();
-
-    private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForListTags() {
-        // basic
-        HttpRequestDef.Builder<ListTagsRequest, ListTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListTagsRequest.class, ListTagsResponse.class)
-                .withName("ListTags")
-                .withUri("/v4/repositories/{repository_id}/repository/tags")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTagsRequest::getRepositoryId, ListTagsRequest::setRepositoryId));
-        builder.<String>withRequestField("creator",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagsRequest::getCreator, ListTagsRequest::setCreator));
-        builder.<ListTagsRequest.SortEnum>withRequestField("sort",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListTagsRequest.SortEnum.class),
-            f -> f.withMarshaller(ListTagsRequest::getSort, ListTagsRequest::setSort));
-        builder.<String>withRequestField("search",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagsRequest::getSearch, ListTagsRequest::setSearch));
-        builder.<ListTagsRequest.OrderByEnum>withRequestField("order_by",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListTagsRequest.OrderByEnum.class),
-            f -> f.withMarshaller(ListTagsRequest::getOrderBy, ListTagsRequest::setOrderBy));
-        builder.<ListTagsRequest.ViewEnum>withRequestField("view",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListTagsRequest.ViewEnum.class),
-            f -> f.withMarshaller(ListTagsRequest::getView, ListTagsRequest::setView));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTagsRequest::getOffset, ListTagsRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTagsRequest::getLimit, ListTagsRequest::setLimit));
-
-        // response
-        builder.<List<SimpleTagDto>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListTagsResponse::getBody, ListTagsResponse::setBody)
-                .withInnerContainerType(SimpleTagDto.class));
-
-        builder.<String>withResponseField("X-Total",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListTagsResponse::getXTotal, ListTagsResponse::setXTotal));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowTagRequest, ShowTagResponse> showTag = genForShowTag();
-
-    private static HttpRequestDef<ShowTagRequest, ShowTagResponse> genForShowTag() {
-        // basic
-        HttpRequestDef.Builder<ShowTagRequest, ShowTagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowTagRequest.class, ShowTagResponse.class)
-                .withName("ShowTag")
-                .withUri("/v4/repositories/{repository_id}/repository/tag")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("repository_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowTagRequest::getRepositoryId, ShowTagRequest::setRepositoryId));
-        builder.<String>withRequestField("tag_name",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTagRequest::getTagName, ShowTagRequest::setTagName));
-
-        // response
-
-        builder.<String>withResponseField("X-Total",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowTagResponse::getXTotal, ShowTagResponse::setXTotal));
         return builder.build();
     }
 
@@ -11991,6 +11939,58 @@ public class CodeArtsRepoMeta {
             f -> f.withMarshaller(DeleteSshKeyRequest::getKeyId, DeleteSshKeyRequest::setKeyId));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListImpersonationTokensRequest, ListImpersonationTokensResponse> listImpersonationTokens =
+        genForListImpersonationTokens();
+
+    private static HttpRequestDef<ListImpersonationTokensRequest, ListImpersonationTokensResponse> genForListImpersonationTokens() {
+        // basic
+        HttpRequestDef.Builder<ListImpersonationTokensRequest, ListImpersonationTokensResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListImpersonationTokensRequest.class, ListImpersonationTokensResponse.class)
+            .withName("ListImpersonationTokens")
+            .withUri("/v4/users/impersonation-tokens")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImpersonationTokensRequest::getGroupId,
+                ListImpersonationTokensRequest::setGroupId));
+        builder.<ListImpersonationTokensRequest.StateEnum>withRequestField("state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListImpersonationTokensRequest.StateEnum.class),
+            f -> f.withMarshaller(ListImpersonationTokensRequest::getState, ListImpersonationTokensRequest::setState));
+        builder.<String>withRequestField("search",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImpersonationTokensRequest::getSearch,
+                ListImpersonationTokensRequest::setSearch));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImpersonationTokensRequest::getOffset,
+                ListImpersonationTokensRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImpersonationTokensRequest::getLimit, ListImpersonationTokensRequest::setLimit));
+
+        // response
+        builder.<List<ImpersonationToken>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListImpersonationTokensResponse::getBody, ListImpersonationTokensResponse::setBody)
+                .withInnerContainerType(ImpersonationToken.class));
 
         return builder.build();
     }

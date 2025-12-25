@@ -34,7 +34,7 @@ public class ProductResource {
     }
 
     /**
-     * **参数解释** 资源所属的云产品，一般由\"服务命名空间,服务首层维度名称\"组成，如\"SYS.ECS,instance_id\" **约束限制** 不涉及 **取值范围** 长度[0,128]个字符 **默认取值** 不涉及 
+     * **参数解释** 资源所属的云产品名称，一般由\"服务命名空间,服务首层维度名称\"组成，如\"SYS.ECS,instance_id\" **约束限制** 不涉及 **取值范围** 长度[0,128]个字符 **默认取值** 不涉及 
      * @return productName
      */
     public String getProductName() {

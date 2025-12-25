@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 屏蔽状态。UN_MASKED：未屏蔽，MASK_EFFECTIVE：已生效，MASK_INEFFECTIVE：未生效。
+ * **参数解释**： 屏蔽状态。 **约束限制**： 不涉及。 **取值范围**： - UN_MASKED：未屏蔽 - MASK_EFFECTIVE：已生效 - MASK_INEFFECTIVE：未生效 **默认取值**： 不涉及。 
  */
 public class MaskStatus {
 

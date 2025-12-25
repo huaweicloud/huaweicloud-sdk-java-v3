@@ -61,7 +61,7 @@ public class ImageVulInfo {
     }
 
     /**
-     * 漏洞id
+     * **参数解释**: 漏洞ID **取值范围**: 字符长度0-128 
      * @return vulId
      */
     public String getVulId() {
@@ -78,7 +78,7 @@ public class ImageVulInfo {
     }
 
     /**
-     * 修复紧急度，包含如下3种。   - immediate_repair ：高危。   - delay_repair ：中危。   - not_needed_repair ：低危。
+     * **参数解释**: 危险程度 **取值范围**: - immediate_repair：高危 - delay_repair：中危 - not_needed_repair：低危 
      * @return repairNecessity
      */
     public String getRepairNecessity() {
@@ -95,7 +95,7 @@ public class ImageVulInfo {
     }
 
     /**
-     * 漏洞描述
+     * **参数解释**: 漏洞描述 **取值范围** : 字符长度0-128 
      * @return description
      */
     public String getDescription() {
@@ -112,7 +112,7 @@ public class ImageVulInfo {
     }
 
     /**
-     * 漏洞所在镜像层
+     * **参数解释**: 漏洞所在镜像层 **取值范围** : 字符长度0-128 
      * @return position
      */
     public String getPosition() {
@@ -129,7 +129,7 @@ public class ImageVulInfo {
     }
 
     /**
-     * 漏洞的软件名称
+     * **参数解释**: 漏洞的软件名称 **取值范围** : 字符长度0-128 
      * @return appName
      */
     public String getAppName() {
@@ -146,7 +146,7 @@ public class ImageVulInfo {
     }
 
     /**
-     * 应用软件的路径（只有应用漏洞有该字段）
+     * **参数解释**: 应用软件的路径（只有应用漏洞有该字段） **取值范围** : 字符长度1-512 
      * @return appPath
      */
     public String getAppPath() {
@@ -163,7 +163,7 @@ public class ImageVulInfo {
     }
 
     /**
-     * 软件版本
+     * **参数解释**: 软件版本 **取值范围** : 字符长度0-128 
      * @return version
      */
     public String getVersion() {
@@ -180,7 +180,7 @@ public class ImageVulInfo {
     }
 
     /**
-     * 解决方案
+     * **参数解释**: 解决方案 **取值范围** : 字符长度0-256 
      * @return solution
      */
     public String getSolution() {
@@ -197,7 +197,7 @@ public class ImageVulInfo {
     }
 
     /**
-     * 补丁地址
+     * **参数解释**: 补丁地址 **取值范围** : 字符长度0-128 
      * @return url
      */
     public String getUrl() {

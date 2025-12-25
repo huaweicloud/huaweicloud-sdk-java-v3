@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * PoliciesInListResp
+ * **参数解释**： 告警策略列表。 
  */
 public class PoliciesInListResp {
 
@@ -24,7 +24,7 @@ public class PoliciesInListResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extra_info")
 
-    private MetricExtraInfo extraInfo;
+    private MetricExtraInfoResp extraInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
@@ -49,7 +49,7 @@ public class PoliciesInListResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hierarchical_value")
 
-    private HierarchicalValue hierarchicalValue;
+    private HierarchicalValueResp hierarchicalValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unit")
@@ -77,6 +77,16 @@ public class PoliciesInListResp {
     private Integer alarmLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "namespace")
+
+    private String namespace;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dimension_name")
+
+    private String dimensionName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "selected_unit")
 
     private String selectedUnit;
@@ -87,7 +97,7 @@ public class PoliciesInListResp {
     }
 
     /**
-     * 告警策略ID。
+     * **参数解释**： 告警策略ID。 **约束限制**： 不涉及。 **取值范围**： 长度为[1,64]个字符，只能包含字母、数字、- **默认取值**： 不涉及。 
      * @return alarmPolicyId
      */
     public String getAlarmPolicyId() {
@@ -115,14 +125,14 @@ public class PoliciesInListResp {
         this.metricName = metricName;
     }
 
-    public PoliciesInListResp withExtraInfo(MetricExtraInfo extraInfo) {
+    public PoliciesInListResp withExtraInfo(MetricExtraInfoResp extraInfo) {
         this.extraInfo = extraInfo;
         return this;
     }
 
-    public PoliciesInListResp withExtraInfo(Consumer<MetricExtraInfo> extraInfoSetter) {
+    public PoliciesInListResp withExtraInfo(Consumer<MetricExtraInfoResp> extraInfoSetter) {
         if (this.extraInfo == null) {
-            this.extraInfo = new MetricExtraInfo();
+            this.extraInfo = new MetricExtraInfoResp();
             extraInfoSetter.accept(this.extraInfo);
         }
 
@@ -133,11 +143,11 @@ public class PoliciesInListResp {
      * Get extraInfo
      * @return extraInfo
      */
-    public MetricExtraInfo getExtraInfo() {
+    public MetricExtraInfoResp getExtraInfo() {
         return extraInfo;
     }
 
-    public void setExtraInfo(MetricExtraInfo extraInfo) {
+    public void setExtraInfo(MetricExtraInfoResp extraInfo) {
         this.extraInfo = extraInfo;
     }
 
@@ -164,7 +174,7 @@ public class PoliciesInListResp {
     }
 
     /**
-     * **参数解释**： 聚合方式。         **约束限制**： 不涉及。 **取值范围**： average： 平均值，variance：方差，min：最小值，max：最大值，sum：求和。           **默认取值**： 不涉及。 
+     * **参数解释**： 聚合方式。         **约束限制**： period为1（原始值）时filter字段不生效，默认为average。period大于1时filter才起作用。 **取值范围**： - average：平均值 - variance：方差 - min：最小值 - max：最大值 - sum：求和 **默认取值**： 不涉及。 
      * @return filter
      */
     public String getFilter() {
@@ -181,7 +191,7 @@ public class PoliciesInListResp {
     }
 
     /**
-     * **参数解释**： 阈值符号。     **约束限制**： 指标告警可以使用的阈值符号有>、>=、<、<=、=、!=、cycle_decrease、cycle_increase、cycle_wave； 事件告警可以使用的阈值符号为>、>=、<、<=、=、!=。 **取值范围**： 支持的值为(>|<|>=|<=|=|!=|cycle_decrease|cycle_increase|cycle_wave);cycle_decrease为环比下降,cycle_increase为环比上升,cycle_wave为环比波动。           **默认取值**： 不涉及。 
+     * **参数解释**： 阈值符号。 **约束限制**： 指标告警可以使用的阈值符号有>、>=、<、<=、=、!=、cycle_decrease、cycle_increase、cycle_wave； 事件告警可以使用的阈值符号为>、>=、<、<=、=、!=。 **取值范围**： 支持的值为(>|<|>=|<=|=|!=|cycle_decrease|cycle_increase|cycle_wave);cycle_decrease为环比下降,cycle_increase为环比上升,cycle_wave为环比波动。 **默认取值**： 不涉及。 
      * @return comparisonOperator
      */
     public String getComparisonOperator() {
@@ -198,7 +208,7 @@ public class PoliciesInListResp {
     }
 
     /**
-     * **参数解释**： 告警阈值。具体阈值取值请参见附录中各服务监控指标中取值范围。    **约束限制**： 单一阈值时value和alarm_level配对使用，当hierarchical_value和value同时使用时以hierarchical_value为准。 **取值范围**： 最小值为-1.7976931348623157e+108，最大值为1.7976931348623157e+108。           **默认取值**： 不涉及。 
+     * **参数解释**： 告警阈值。具体阈值取值请参见“[支持服务列表](ces_03_0059.xml)”。    **约束限制**： 单一阈值时value和alarm_level配对使用，当hierarchical_value和value同时使用时以hierarchical_value为准。 **取值范围**： 最小值为-1.7976931348623157e+108，最大值为1.7976931348623157e+108。           **默认取值**： 不涉及。 
      * minimum: -1.7976931348623156E+108
      * maximum: 1.7976931348623156E+108
      * @return value
@@ -211,14 +221,14 @@ public class PoliciesInListResp {
         this.value = value;
     }
 
-    public PoliciesInListResp withHierarchicalValue(HierarchicalValue hierarchicalValue) {
+    public PoliciesInListResp withHierarchicalValue(HierarchicalValueResp hierarchicalValue) {
         this.hierarchicalValue = hierarchicalValue;
         return this;
     }
 
-    public PoliciesInListResp withHierarchicalValue(Consumer<HierarchicalValue> hierarchicalValueSetter) {
+    public PoliciesInListResp withHierarchicalValue(Consumer<HierarchicalValueResp> hierarchicalValueSetter) {
         if (this.hierarchicalValue == null) {
-            this.hierarchicalValue = new HierarchicalValue();
+            this.hierarchicalValue = new HierarchicalValueResp();
             hierarchicalValueSetter.accept(this.hierarchicalValue);
         }
 
@@ -229,11 +239,11 @@ public class PoliciesInListResp {
      * Get hierarchicalValue
      * @return hierarchicalValue
      */
-    public HierarchicalValue getHierarchicalValue() {
+    public HierarchicalValueResp getHierarchicalValue() {
         return hierarchicalValue;
     }
 
-    public void setHierarchicalValue(HierarchicalValue hierarchicalValue) {
+    public void setHierarchicalValue(HierarchicalValueResp hierarchicalValue) {
         this.hierarchicalValue = hierarchicalValue;
     }
 
@@ -279,7 +289,7 @@ public class PoliciesInListResp {
     }
 
     /**
-     * 告警策略类型，已废弃，不推荐使用。
+     * **参数解释**： 告警策略类型，已废弃，不推荐使用。    **取值范围**： 长度为[0,32]个字符。 
      * @return type
      */
     public String getType() {
@@ -326,13 +336,47 @@ public class PoliciesInListResp {
         this.alarmLevel = alarmLevel;
     }
 
+    public PoliciesInListResp withNamespace(String namespace) {
+        this.namespace = namespace;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”。 **约束限制**： 不涉及。 **取值范围**： 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度必须在 3 到 32个字符之间。 **默认取值**： 不涉及。 
+     * @return namespace
+     */
+    public String getNamespace() {
+        return namespace;
+    }
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    public PoliciesInListResp withDimensionName(String dimensionName) {
+        this.dimensionName = dimensionName;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 按云产品维度屏蔽时的资源维度信息，有多个时用\",\"连接。 **取值范围**： 长度为[0,128]个字符。 
+     * @return dimensionName
+     */
+    public String getDimensionName() {
+        return dimensionName;
+    }
+
+    public void setDimensionName(String dimensionName) {
+        this.dimensionName = dimensionName;
+    }
+
     public PoliciesInListResp withSelectedUnit(String selectedUnit) {
         this.selectedUnit = selectedUnit;
         return this;
     }
 
     /**
-     * **参数解释**： 用户在页面中选择的指标单位， 用于后续指标数据回显和计算。     **约束限制**： 不涉及。 **取值范围**： 长度为[0,64]个字符。        **默认取值**： 不涉及。 
+     * **参数解释**： 用户在页面中选择的指标单位， 用于后续指标数据回显和计算。字符串最大长度为64。    **约束限制**： 不涉及。 **取值范围**： 长度为[0,64]个字符。        **默认取值**： 不涉及。 
      * @return selectedUnit
      */
     public String getSelectedUnit() {
@@ -359,7 +403,9 @@ public class PoliciesInListResp {
             && Objects.equals(this.value, that.value) && Objects.equals(this.hierarchicalValue, that.hierarchicalValue)
             && Objects.equals(this.unit, that.unit) && Objects.equals(this.count, that.count)
             && Objects.equals(this.type, that.type) && Objects.equals(this.suppressDuration, that.suppressDuration)
-            && Objects.equals(this.alarmLevel, that.alarmLevel) && Objects.equals(this.selectedUnit, that.selectedUnit);
+            && Objects.equals(this.alarmLevel, that.alarmLevel) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.dimensionName, that.dimensionName)
+            && Objects.equals(this.selectedUnit, that.selectedUnit);
     }
 
     @Override
@@ -377,6 +423,8 @@ public class PoliciesInListResp {
             type,
             suppressDuration,
             alarmLevel,
+            namespace,
+            dimensionName,
             selectedUnit);
     }
 
@@ -397,6 +445,8 @@ public class PoliciesInListResp {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    suppressDuration: ").append(toIndentedString(suppressDuration)).append("\n");
         sb.append("    alarmLevel: ").append(toIndentedString(alarmLevel)).append("\n");
+        sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+        sb.append("    dimensionName: ").append(toIndentedString(dimensionName)).append("\n");
         sb.append("    selectedUnit: ").append(toIndentedString(selectedUnit)).append("\n");
         sb.append("}");
         return sb.toString();

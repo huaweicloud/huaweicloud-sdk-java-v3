@@ -114,7 +114,7 @@ public class ConfigurationRecordResp {
     }
 
     /**
-     * **参数解释**： 状态。 **取值范围**： 不涉及。
+     * **参数解释**： 状态。 **取值范围**： - Applying：应用中； - In-Sync：已同步； - Pending-Reboot：待重启；
      * @return status
      */
     public String getStatus() {

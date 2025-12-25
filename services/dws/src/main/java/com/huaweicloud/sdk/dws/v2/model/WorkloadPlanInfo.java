@@ -59,7 +59,7 @@ public class WorkloadPlanInfo {
     }
 
     /**
-     * **参数解释**： 计划状态。 **取值范围**： 不涉及。
+     * **参数解释**： 计划状态。 **取值范围**： - 0：表示计划未执行 - 1：表示计划执行中
      * @return status
      */
     public Integer getStatus() {

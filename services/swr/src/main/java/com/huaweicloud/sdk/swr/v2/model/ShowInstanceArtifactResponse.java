@@ -69,7 +69,7 @@ public class ShowInstanceArtifactResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    private Integer size;
+    private Long size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -251,7 +251,7 @@ public class ShowInstanceArtifactResponse extends SdkResponse {
         this.pushTime = pushTime;
     }
 
-    public ShowInstanceArtifactResponse withSize(Integer size) {
+    public ShowInstanceArtifactResponse withSize(Long size) {
         this.size = size;
         return this;
     }
@@ -260,11 +260,11 @@ public class ShowInstanceArtifactResponse extends SdkResponse {
      * 制品大小，单位：Byte
      * @return size
      */
-    public Integer getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(Long size) {
         this.size = size;
     }
 

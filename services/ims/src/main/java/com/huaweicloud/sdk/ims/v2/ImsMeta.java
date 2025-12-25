@@ -690,6 +690,16 @@ public class ImsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImageMembersRequest::getImageId, ListImageMembersRequest::setImageId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImageMembersRequest::getLimit, ListImageMembersRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageMembersRequest::getMarker, ListImageMembersRequest::setMarker));
 
         // response
 
@@ -1458,6 +1468,16 @@ public class ImsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(GlanceListImageMembersRequest::getImageId,
                 GlanceListImageMembersRequest::setImageId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(GlanceListImageMembersRequest::getLimit, GlanceListImageMembersRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GlanceListImageMembersRequest::getMarker, GlanceListImageMembersRequest::setMarker));
 
         // response
 

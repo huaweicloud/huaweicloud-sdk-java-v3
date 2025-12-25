@@ -5,245 +5,204 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.secmaster.v2.model.ApprovePlaybookInfo;
-import com.huaweicloud.sdk.secmaster.v2.model.AuditLogInfo;
 import com.huaweicloud.sdk.secmaster.v2.model.BaselineSearchRequestBody;
-import com.huaweicloud.sdk.secmaster.v2.model.BatchSearchMetricHitsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.BatchSearchMetricHitsRequestBody;
-import com.huaweicloud.sdk.secmaster.v2.model.BatchSearchMetricHitsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ChangeAlertRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ChangeAlertRequestBody;
-import com.huaweicloud.sdk.secmaster.v2.model.ChangeAlertResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ChangeIncidentRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ChangeIncidentRequestBody;
-import com.huaweicloud.sdk.secmaster.v2.model.ChangeIncidentResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ChangePlaybookInstanceRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ChangePlaybookInstanceResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CopyPlaybookInfo;
-import com.huaweicloud.sdk.secmaster.v2.model.CopyPlaybookVersionRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CopyPlaybookVersionResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateAction;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateAlertRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateAlertRequestBody;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateAlertResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CheckitemModel;
+import com.huaweicloud.sdk.secmaster.v2.model.CompliancePackageModel;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateAdhocQueryRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateAdhocQueryRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateAdhocQueryResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateAlertRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateAlertRuleRequestBody;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateAlertRuleResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateAlertRuleSimulationRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateAlertRuleSimulationRequestBody;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateAlertRuleSimulationResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateBatchOrderAlertsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateBatchOrderAlertsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateDataobjectRelationsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateDataobjectRelationsRequestBody;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateDataobjectRelationsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateDataspaceRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateDataspaceRequestBody;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateDataspaceResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateIncidentRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateIncidentRequestBody;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateIncidentResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateIndicatorRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateIndicatorResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateAnalysisScriptRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateAnalysisScriptRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateAnalysisScriptResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateCodeSegmentRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateCodeSegmentRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateCodeSegmentResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateCustomizedCheckitemRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateCustomizedCheckitemResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateCustomizedCompliancePackageRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateCustomizedCompliancePackageResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateDataTransformationRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateDataTransformationRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateDataTransformationResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateLayoutFieldRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateLayoutFieldRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateLayoutFieldResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreatePipeRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreatePipeRequestBody;
 import com.huaweicloud.sdk.secmaster.v2.model.CreatePipeResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookActionRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookActionResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookApproveRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookApproveResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookInfo;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookRuleRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookRuleResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookVersionInfo;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookVersionRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookVersionResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePostPaidOrderRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePostPaidOrderResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateRuleInfo;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateWorkspaceRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateWorkspaceRequestBody;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateWorkspaceResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.DataobjectSearch;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertRequestBody;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateRetrieveScriptRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateRetrieveScriptRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateRetrieveScriptResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateSqlValidationRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateSqlValidationRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateSqlValidationResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateTableAnalysisRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateTableAnalysisResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateTableRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateTableRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateTableResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteAdhocQueryRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteAdhocQueryResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertRuleResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteDataobjectRelationsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteDataobjectRelationsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteIncidentRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteIncidentRequestBody;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteIncidentResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteIndicatorRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteIndicatorRequestBody;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteIndicatorResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookActionRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookActionResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookRuleRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookRuleResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookVersionRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookVersionResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteWorkspaceRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteWorkspaceResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteAnalysisScriptRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteAnalysisScriptResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteCodeSegmentRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteCodeSegmentResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteCustomizedCheckitemsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteCustomizedCheckitemsRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteCustomizedCheckitemsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteCustomizedCompliancePackagesRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteCustomizedCompliancePackagesResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteDataTransformationRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteDataTransformationResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteLayoutFieldRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteLayoutFieldResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeletePipeRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeletePipeResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteRetrieveScriptRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteRetrieveScriptResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteTableRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteTableResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.DisableAlertRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.DisableAlertRuleResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DisableConsumptionV2RequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.DisableDataConsumptionRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DisableDataConsumptionResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DisableDataTransformationRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DisableDataTransformationResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.EnableAlertRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.EnableAlertRuleResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.IndicatorCreateRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.IndicatorListSearchRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.EnableDataConsumptionRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.EnableDataConsumptionResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.EnableDataTransformationRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.EnableDataTransformationResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.LayoutFieldResponseBody;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRuleMetricsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRuleMetricsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRuleTemplateMetricsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRuleTemplateMetricsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRuleTemplatesRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRuleTemplatesResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRulesRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRulesResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListAlertsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListAlertsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListDataclassFieldsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListDataclassFieldsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListDataclassRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListDataclassResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListDataobjectRelationsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListDataobjectRelationsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListIncidentsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListIncidentsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListIndicatorsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListIndicatorsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookActionsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookActionsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookApprovesRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookApprovesResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookAuditLogsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookAuditLogsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookInstancesRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookInstancesResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookVersionsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookVersionsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybooksRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybooksResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListWorkflowsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListWorkflowsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListWorkspacesRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListWorkspacesResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ModifyActionInfo;
-import com.huaweicloud.sdk.secmaster.v2.model.ModifyPlaybookInfo;
-import com.huaweicloud.sdk.secmaster.v2.model.ModifyPlaybookVersionInfo;
-import com.huaweicloud.sdk.secmaster.v2.model.ModifyRuleInfo;
-import com.huaweicloud.sdk.secmaster.v2.model.OperationPlaybookInfo;
-import com.huaweicloud.sdk.secmaster.v2.model.OrderAlert;
-import com.huaweicloud.sdk.secmaster.v2.model.PostPaidParam;
+import com.huaweicloud.sdk.secmaster.v2.model.ListAnalysisScriptsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListAnalysisScriptsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListCodeSegmentsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListCodeSegmentsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDataTransformationMetricsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDataTransformationMetricsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDataTransformationsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDataTransformationsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDirectoriesRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDirectoriesResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListLayoutFieldAllRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListLayoutFieldAllResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListPipesRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListPipesResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListRetrieveScriptsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListRetrieveScriptsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListTableHistogramsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListTableHistogramsRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.ListTableHistogramsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListTableLogsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListTableLogsRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.ListTableLogsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListTablesRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListTablesResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.PipeSchema;
 import com.huaweicloud.sdk.secmaster.v2.model.SearchBaselineRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.SearchBaselineResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowAlertRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowAlertResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.SearchCheckitemsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.SearchCheckitemsRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.SearchCheckitemsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.SearchCompliancePackagesRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.SearchCompliancePackagesRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.SearchCompliancePackagesResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowAdhocResultRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowAdhocResultResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowAlertRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowAlertRuleResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowAlertRuleTemplateRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowAlertRuleTemplateResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowIncidentRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowIncidentResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowIndicatorDetailRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowIndicatorDetailResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowMetricResultResponseBody;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookInstanceRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookInstanceResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookMonitorsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookMonitorsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookRuleRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookRuleResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookStatisticsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookStatisticsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookTopologyRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookTopologyResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookVersionRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookVersionResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowWorkspaceRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowWorkspaceResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowAnalysisScriptRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowAnalysisScriptResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowCheckitemDetailRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowCheckitemDetailResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowCodeSegmentRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowCodeSegmentResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowCompliancePackageDetailRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowCompliancePackageDetailResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowDataConsumptionRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowDataConsumptionResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowDataTransformationRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowDataTransformationResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowLayoutFieldInfoRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowLayoutFieldInfoResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowMonitorStatsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowMonitorStatsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowPipeRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowPipeResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowPulsarMonitorStatsBody;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowRetrieveScriptRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowRetrieveScriptResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowSubscriptionResourcesRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowSubscriptionResourcesResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowTableRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowTableResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowVersionRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowVersionResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.TableSchemaDto;
 import com.huaweicloud.sdk.secmaster.v2.model.UpdateAlertRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.UpdateAlertRuleRequestBody;
 import com.huaweicloud.sdk.secmaster.v2.model.UpdateAlertRuleResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdateIndicatorRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdateIndicatorRequestBody;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdateIndicatorResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookActionRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookActionResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookRuleRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookRuleResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookVersionRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookVersionResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdateWorkspaceRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdateWorkspaceRequestBody;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdateWorkspaceResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateAnalysisScriptRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateAnalysisScriptRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateAnalysisScriptResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateCheckitemRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateCheckitemResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateCodeSegmentRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateCodeSegmentRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateCodeSegmentResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateCompliancePackageRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateCompliancePackageResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateDataTransformationRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateDataTransformationRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateDataTransformationResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateLayoutFieldRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateLayoutFieldRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateLayoutFieldResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdatePipeRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdatePipeRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdatePipeResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdatePipeSchemaRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdatePipeSchemaResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateRetrieveScriptRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateRetrieveScriptRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateRetrieveScriptResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateTableRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateTableRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateTableResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateTableSchemaRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateTableSchemaResponse;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class SecMasterMeta {
 
-    public static final HttpRequestDef<BatchSearchMetricHitsRequest, BatchSearchMetricHitsResponse> batchSearchMetricHits =
-        genForBatchSearchMetricHits();
+    public static final HttpRequestDef<CreateAdhocQueryRequest, CreateAdhocQueryResponse> createAdhocQuery =
+        genForCreateAdhocQuery();
 
-    private static HttpRequestDef<BatchSearchMetricHitsRequest, BatchSearchMetricHitsResponse> genForBatchSearchMetricHits() {
+    private static HttpRequestDef<CreateAdhocQueryRequest, CreateAdhocQueryResponse> genForCreateAdhocQuery() {
         // basic
-        HttpRequestDef.Builder<BatchSearchMetricHitsRequest, BatchSearchMetricHitsResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, BatchSearchMetricHitsRequest.class, BatchSearchMetricHitsResponse.class)
-            .withName("BatchSearchMetricHits")
-            .withUri("/v1/{project_id}/workspaces/{workspace_id}/sa/metrics/hits")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchSearchMetricHitsRequest::getWorkspaceId,
-                BatchSearchMetricHitsRequest::setWorkspaceId));
-        builder.<String>withRequestField("timespan",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchSearchMetricHitsRequest::getTimespan,
-                BatchSearchMetricHitsRequest::setTimespan));
-        builder.<Boolean>withRequestField("cache",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(BatchSearchMetricHitsRequest::getCache, BatchSearchMetricHitsRequest::setCache));
-        builder.<BatchSearchMetricHitsRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchSearchMetricHitsRequestBody.class),
-            f -> f.withMarshaller(BatchSearchMetricHitsRequest::getBody, BatchSearchMetricHitsRequest::setBody));
-
-        // response
-        builder.<List<ShowMetricResultResponseBody>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchSearchMetricHitsResponse::getBody, BatchSearchMetricHitsResponse::setBody)
-                .withInnerContainerType(ShowMetricResultResponseBody.class));
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ChangeAlertRequest, ChangeAlertResponse> changeAlert = genForChangeAlert();
-
-    private static HttpRequestDef<ChangeAlertRequest, ChangeAlertResponse> genForChangeAlert() {
-        // basic
-        HttpRequestDef.Builder<ChangeAlertRequest, ChangeAlertResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, ChangeAlertRequest.class, ChangeAlertResponse.class)
-                .withName("ChangeAlert")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/alerts/{alert_id}")
+        HttpRequestDef.Builder<CreateAdhocQueryRequest, CreateAdhocQueryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAdhocQueryRequest.class, CreateAdhocQueryResponse.class)
+                .withName("CreateAdhocQuery")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/ad-hoc-queries")
                 .withContentType("application/json");
 
         // requests
@@ -251,176 +210,15 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeAlertRequest::getWorkspaceId, ChangeAlertRequest::setWorkspaceId));
-        builder.<String>withRequestField("alert_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeAlertRequest::getAlertId, ChangeAlertRequest::setAlertId));
-        builder.<ChangeAlertRequestBody>withRequestField("body",
+            f -> f.withMarshaller(CreateAdhocQueryRequest::getWorkspaceId, CreateAdhocQueryRequest::setWorkspaceId));
+        builder.<CreateAdhocQueryRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ChangeAlertRequestBody.class),
-            f -> f.withMarshaller(ChangeAlertRequest::getBody, ChangeAlertRequest::setBody));
+            TypeCasts.uncheckedConversion(CreateAdhocQueryRequestBody.class),
+            f -> f.withMarshaller(CreateAdhocQueryRequest::getBody, CreateAdhocQueryRequest::setBody));
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ChangeAlertResponse::getXRequestId, ChangeAlertResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ChangeIncidentRequest, ChangeIncidentResponse> changeIncident =
-        genForChangeIncident();
-
-    private static HttpRequestDef<ChangeIncidentRequest, ChangeIncidentResponse> genForChangeIncident() {
-        // basic
-        HttpRequestDef.Builder<ChangeIncidentRequest, ChangeIncidentResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, ChangeIncidentRequest.class, ChangeIncidentResponse.class)
-                .withName("ChangeIncident")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/incidents/{incident_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeIncidentRequest::getWorkspaceId, ChangeIncidentRequest::setWorkspaceId));
-        builder.<String>withRequestField("incident_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeIncidentRequest::getIncidentId, ChangeIncidentRequest::setIncidentId));
-        builder.<ChangeIncidentRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ChangeIncidentRequestBody.class),
-            f -> f.withMarshaller(ChangeIncidentRequest::getBody, ChangeIncidentRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ChangeIncidentResponse::getXRequestId, ChangeIncidentResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ChangePlaybookInstanceRequest, ChangePlaybookInstanceResponse> changePlaybookInstance =
-        genForChangePlaybookInstance();
-
-    private static HttpRequestDef<ChangePlaybookInstanceRequest, ChangePlaybookInstanceResponse> genForChangePlaybookInstance() {
-        // basic
-        HttpRequestDef.Builder<ChangePlaybookInstanceRequest, ChangePlaybookInstanceResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, ChangePlaybookInstanceRequest.class, ChangePlaybookInstanceResponse.class)
-            .withName("ChangePlaybookInstance")
-            .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/instances/{instance_id}/operation")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangePlaybookInstanceRequest::getWorkspaceId,
-                ChangePlaybookInstanceRequest::setWorkspaceId));
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangePlaybookInstanceRequest::getInstanceId,
-                ChangePlaybookInstanceRequest::setInstanceId));
-        builder.<OperationPlaybookInfo>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(OperationPlaybookInfo.class),
-            f -> f.withMarshaller(ChangePlaybookInstanceRequest::getBody, ChangePlaybookInstanceRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ChangePlaybookInstanceResponse::getXRequestId,
-                ChangePlaybookInstanceResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CopyPlaybookVersionRequest, CopyPlaybookVersionResponse> copyPlaybookVersion =
-        genForCopyPlaybookVersion();
-
-    private static HttpRequestDef<CopyPlaybookVersionRequest, CopyPlaybookVersionResponse> genForCopyPlaybookVersion() {
-        // basic
-        HttpRequestDef.Builder<CopyPlaybookVersionRequest, CopyPlaybookVersionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CopyPlaybookVersionRequest.class, CopyPlaybookVersionResponse.class)
-                .withName("CopyPlaybookVersion")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/versions/{version_id}/clone")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CopyPlaybookVersionRequest::getWorkspaceId,
-                CopyPlaybookVersionRequest::setWorkspaceId));
-        builder.<String>withRequestField("version_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CopyPlaybookVersionRequest::getVersionId, CopyPlaybookVersionRequest::setVersionId));
-        builder.<CopyPlaybookInfo>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CopyPlaybookInfo.class),
-            f -> f.withMarshaller(CopyPlaybookVersionRequest::getBody, CopyPlaybookVersionRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CopyPlaybookVersionResponse::getXRequestId,
-                CopyPlaybookVersionResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateAlertRequest, CreateAlertResponse> createAlert = genForCreateAlert();
-
-    private static HttpRequestDef<CreateAlertRequest, CreateAlertResponse> genForCreateAlert() {
-        // basic
-        HttpRequestDef.Builder<CreateAlertRequest, CreateAlertResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateAlertRequest.class, CreateAlertResponse.class)
-                .withName("CreateAlert")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/alerts")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAlertRequest::getWorkspaceId, CreateAlertRequest::setWorkspaceId));
-        builder.<CreateAlertRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateAlertRequestBody.class),
-            f -> f.withMarshaller(CreateAlertRequest::getBody, CreateAlertRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateAlertResponse::getXRequestId, CreateAlertResponse::setXRequestId));
         return builder.build();
     }
 
@@ -432,7 +230,7 @@ public class SecMasterMeta {
         HttpRequestDef.Builder<CreateAlertRuleRequest, CreateAlertRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateAlertRuleRequest.class, CreateAlertRuleResponse.class)
                 .withName("CreateAlertRule")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/siem/alert-rules")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/alert-rules")
                 .withContentType("application/json");
 
         // requests
@@ -449,62 +247,18 @@ public class SecMasterMeta {
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateAlertRuleResponse::getXRequestId, CreateAlertRuleResponse::setXRequestId));
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateAlertRuleSimulationRequest, CreateAlertRuleSimulationResponse> createAlertRuleSimulation =
-        genForCreateAlertRuleSimulation();
+    public static final HttpRequestDef<CreateAnalysisScriptRequest, CreateAnalysisScriptResponse> createAnalysisScript =
+        genForCreateAnalysisScript();
 
-    private static HttpRequestDef<CreateAlertRuleSimulationRequest, CreateAlertRuleSimulationResponse> genForCreateAlertRuleSimulation() {
+    private static HttpRequestDef<CreateAnalysisScriptRequest, CreateAnalysisScriptResponse> genForCreateAnalysisScript() {
         // basic
-        HttpRequestDef.Builder<CreateAlertRuleSimulationRequest, CreateAlertRuleSimulationResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    CreateAlertRuleSimulationRequest.class,
-                    CreateAlertRuleSimulationResponse.class)
-                .withName("CreateAlertRuleSimulation")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/siem/alert-rules/simulation")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateAlertRuleSimulationRequest::getWorkspaceId,
-                CreateAlertRuleSimulationRequest::setWorkspaceId));
-        builder.<CreateAlertRuleSimulationRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateAlertRuleSimulationRequestBody.class),
-            f -> f.withMarshaller(CreateAlertRuleSimulationRequest::getBody,
-                CreateAlertRuleSimulationRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateAlertRuleSimulationResponse::getXRequestId,
-                CreateAlertRuleSimulationResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateBatchOrderAlertsRequest, CreateBatchOrderAlertsResponse> createBatchOrderAlerts =
-        genForCreateBatchOrderAlerts();
-
-    private static HttpRequestDef<CreateBatchOrderAlertsRequest, CreateBatchOrderAlertsResponse> genForCreateBatchOrderAlerts() {
-        // basic
-        HttpRequestDef.Builder<CreateBatchOrderAlertsRequest, CreateBatchOrderAlertsResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, CreateBatchOrderAlertsRequest.class, CreateBatchOrderAlertsResponse.class)
-            .withName("CreateBatchOrderAlerts")
-            .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/alerts/batch-order")
+        HttpRequestDef.Builder<CreateAnalysisScriptRequest, CreateAnalysisScriptResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateAnalysisScriptRequest.class, CreateAnalysisScriptResponse.class)
+            .withName("CreateAnalysisScript")
+            .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/analysis-scripts")
             .withContentType("application/json");
 
         // requests
@@ -512,38 +266,59 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateBatchOrderAlertsRequest::getWorkspaceId,
-                CreateBatchOrderAlertsRequest::setWorkspaceId));
-        builder.<OrderAlert>withRequestField("body",
+            f -> f.withMarshaller(CreateAnalysisScriptRequest::getWorkspaceId,
+                CreateAnalysisScriptRequest::setWorkspaceId));
+        builder.<CreateAnalysisScriptRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(OrderAlert.class),
-            f -> f.withMarshaller(CreateBatchOrderAlertsRequest::getBody, CreateBatchOrderAlertsRequest::setBody));
+            TypeCasts.uncheckedConversion(CreateAnalysisScriptRequestBody.class),
+            f -> f.withMarshaller(CreateAnalysisScriptRequest::getBody, CreateAnalysisScriptRequest::setBody));
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateBatchOrderAlertsResponse::getXRequestId,
-                CreateBatchOrderAlertsResponse::setXRequestId));
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateDataobjectRelationsRequest, CreateDataobjectRelationsResponse> createDataobjectRelations =
-        genForCreateDataobjectRelations();
+    public static final HttpRequestDef<CreateCodeSegmentRequest, CreateCodeSegmentResponse> createCodeSegment =
+        genForCreateCodeSegment();
 
-    private static HttpRequestDef<CreateDataobjectRelationsRequest, CreateDataobjectRelationsResponse> genForCreateDataobjectRelations() {
+    private static HttpRequestDef<CreateCodeSegmentRequest, CreateCodeSegmentResponse> genForCreateCodeSegment() {
         // basic
-        HttpRequestDef.Builder<CreateDataobjectRelationsRequest, CreateDataobjectRelationsResponse> builder =
+        HttpRequestDef.Builder<CreateCodeSegmentRequest, CreateCodeSegmentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateCodeSegmentRequest.class, CreateCodeSegmentResponse.class)
+                .withName("CreateCodeSegment")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/code-segments")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCodeSegmentRequest::getWorkspaceId, CreateCodeSegmentRequest::setWorkspaceId));
+        builder.<CreateCodeSegmentRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateCodeSegmentRequestBody.class),
+            f -> f.withMarshaller(CreateCodeSegmentRequest::getBody, CreateCodeSegmentRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCustomizedCheckitemRequest, CreateCustomizedCheckitemResponse> createCustomizedCheckitem =
+        genForCreateCustomizedCheckitem();
+
+    private static HttpRequestDef<CreateCustomizedCheckitemRequest, CreateCustomizedCheckitemResponse> genForCreateCustomizedCheckitem() {
+        // basic
+        HttpRequestDef.Builder<CreateCustomizedCheckitemRequest, CreateCustomizedCheckitemResponse> builder =
             HttpRequestDef
                 .builder(HttpMethod.POST,
-                    CreateDataobjectRelationsRequest.class,
-                    CreateDataobjectRelationsResponse.class)
-                .withName("CreateDataobjectRelations")
-                .withUri(
-                    "/v1/{project_id}/workspaces/{workspace_id}/soc/{dataclass_type}/{data_object_id}/{related_dataclass_type}")
+                    CreateCustomizedCheckitemRequest.class,
+                    CreateCustomizedCheckitemResponse.class)
+                .withName("CreateCustomizedCheckitem")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/sa/baseline/checkitems")
                 .withContentType("application/json");
 
         // requests
@@ -551,32 +326,117 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDataobjectRelationsRequest::getWorkspaceId,
-                CreateDataobjectRelationsRequest::setWorkspaceId));
-        builder.<String>withRequestField("dataclass_type",
-            LocationType.Path,
+            f -> f.withMarshaller(CreateCustomizedCheckitemRequest::getWorkspaceId,
+                CreateCustomizedCheckitemRequest::setWorkspaceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDataobjectRelationsRequest::getDataclassType,
-                CreateDataobjectRelationsRequest::setDataclassType));
-        builder.<String>withRequestField("data_object_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDataobjectRelationsRequest::getDataObjectId,
-                CreateDataobjectRelationsRequest::setDataObjectId));
-        builder.<String>withRequestField("related_dataclass_type",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDataobjectRelationsRequest::getRelatedDataclassType,
-                CreateDataobjectRelationsRequest::setRelatedDataclassType));
-        builder.<CreateDataobjectRelationsRequestBody>withRequestField("body",
+            f -> f.withMarshaller(CreateCustomizedCheckitemRequest::getXLanguage,
+                CreateCustomizedCheckitemRequest::setXLanguage));
+        builder.<CheckitemModel>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(CreateDataobjectRelationsRequestBody.class),
-            f -> f.withMarshaller(CreateDataobjectRelationsRequest::getBody,
-                CreateDataobjectRelationsRequest::setBody));
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CheckitemModel.class),
+            f -> f.withMarshaller(CreateCustomizedCheckitemRequest::getBody,
+                CreateCustomizedCheckitemRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCustomizedCompliancePackageRequest, CreateCustomizedCompliancePackageResponse> createCustomizedCompliancePackage =
+        genForCreateCustomizedCompliancePackage();
+
+    private static HttpRequestDef<CreateCustomizedCompliancePackageRequest, CreateCustomizedCompliancePackageResponse> genForCreateCustomizedCompliancePackage() {
+        // basic
+        HttpRequestDef.Builder<CreateCustomizedCompliancePackageRequest, CreateCustomizedCompliancePackageResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateCustomizedCompliancePackageRequest.class,
+                    CreateCustomizedCompliancePackageResponse.class)
+                .withName("CreateCustomizedCompliancePackage")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/sa/baseline/compliance-packages")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCustomizedCompliancePackageRequest::getWorkspaceId,
+                CreateCustomizedCompliancePackageRequest::setWorkspaceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCustomizedCompliancePackageRequest::getXLanguage,
+                CreateCustomizedCompliancePackageRequest::setXLanguage));
+        builder.<CompliancePackageModel>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CompliancePackageModel.class),
+            f -> f.withMarshaller(CreateCustomizedCompliancePackageRequest::getBody,
+                CreateCustomizedCompliancePackageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDataTransformationRequest, CreateDataTransformationResponse> createDataTransformation =
+        genForCreateDataTransformation();
+
+    private static HttpRequestDef<CreateDataTransformationRequest, CreateDataTransformationResponse> genForCreateDataTransformation() {
+        // basic
+        HttpRequestDef.Builder<CreateDataTransformationRequest, CreateDataTransformationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateDataTransformationRequest.class, CreateDataTransformationResponse.class)
+                .withName("CreateDataTransformation")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/data-transformations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDataTransformationRequest::getWorkspaceId,
+                CreateDataTransformationRequest::setWorkspaceId));
+        builder.<CreateDataTransformationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDataTransformationRequestBody.class),
+            f -> f.withMarshaller(CreateDataTransformationRequest::getBody, CreateDataTransformationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateLayoutFieldRequest, CreateLayoutFieldResponse> createLayoutField =
+        genForCreateLayoutField();
+
+    private static HttpRequestDef<CreateLayoutFieldRequest, CreateLayoutFieldResponse> genForCreateLayoutField() {
+        // basic
+        HttpRequestDef.Builder<CreateLayoutFieldRequest, CreateLayoutFieldResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateLayoutFieldRequest.class, CreateLayoutFieldResponse.class)
+                .withName("CreateLayoutField")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/soc/layouts/fields")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateLayoutFieldRequest::getWorkspaceId, CreateLayoutFieldRequest::setWorkspaceId));
+        builder.<CreateLayoutFieldRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateLayoutFieldRequestBody.class),
+            f -> f.withMarshaller(CreateLayoutFieldRequest::getBody, CreateLayoutFieldRequest::setBody));
 
         // response
 
@@ -584,102 +444,7 @@ public class SecMasterMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreateDataobjectRelationsResponse::getXRequestId,
-                CreateDataobjectRelationsResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateDataspaceRequest, CreateDataspaceResponse> createDataspace =
-        genForCreateDataspace();
-
-    private static HttpRequestDef<CreateDataspaceRequest, CreateDataspaceResponse> genForCreateDataspace() {
-        // basic
-        HttpRequestDef.Builder<CreateDataspaceRequest, CreateDataspaceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateDataspaceRequest.class, CreateDataspaceResponse.class)
-                .withName("CreateDataspace")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/siem/dataspaces")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDataspaceRequest::getWorkspaceId, CreateDataspaceRequest::setWorkspaceId));
-        builder.<CreateDataspaceRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateDataspaceRequestBody.class),
-            f -> f.withMarshaller(CreateDataspaceRequest::getBody, CreateDataspaceRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateIncidentRequest, CreateIncidentResponse> createIncident =
-        genForCreateIncident();
-
-    private static HttpRequestDef<CreateIncidentRequest, CreateIncidentResponse> genForCreateIncident() {
-        // basic
-        HttpRequestDef.Builder<CreateIncidentRequest, CreateIncidentResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateIncidentRequest.class, CreateIncidentResponse.class)
-                .withName("CreateIncident")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/incidents")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateIncidentRequest::getWorkspaceId, CreateIncidentRequest::setWorkspaceId));
-        builder.<CreateIncidentRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateIncidentRequestBody.class),
-            f -> f.withMarshaller(CreateIncidentRequest::getBody, CreateIncidentRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateIncidentResponse::getXRequestId, CreateIncidentResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateIndicatorRequest, CreateIndicatorResponse> createIndicator =
-        genForCreateIndicator();
-
-    private static HttpRequestDef<CreateIndicatorRequest, CreateIndicatorResponse> genForCreateIndicator() {
-        // basic
-        HttpRequestDef.Builder<CreateIndicatorRequest, CreateIndicatorResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateIndicatorRequest.class, CreateIndicatorResponse.class)
-                .withName("CreateIndicator")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/indicators")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateIndicatorRequest::getWorkspaceId, CreateIndicatorRequest::setWorkspaceId));
-        builder.<IndicatorCreateRequest>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(IndicatorCreateRequest.class),
-            f -> f.withMarshaller(CreateIndicatorRequest::getBody, CreateIndicatorRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateIndicatorResponse::getXRequestId, CreateIndicatorResponse::setXRequestId));
+            f -> f.withMarshaller(CreateLayoutFieldResponse::getXRequestId, CreateLayoutFieldResponse::setXRequestId));
         return builder.build();
     }
 
@@ -690,7 +455,7 @@ public class SecMasterMeta {
         HttpRequestDef.Builder<CreatePipeRequest, CreatePipeResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreatePipeRequest.class, CreatePipeResponse.class)
                 .withName("CreatePipe")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/siem/pipes")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/pipes")
                 .withContentType("application/json");
 
         // requests
@@ -710,48 +475,15 @@ public class SecMasterMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreatePlaybookRequest, CreatePlaybookResponse> createPlaybook =
-        genForCreatePlaybook();
+    public static final HttpRequestDef<CreateRetrieveScriptRequest, CreateRetrieveScriptResponse> createRetrieveScript =
+        genForCreateRetrieveScript();
 
-    private static HttpRequestDef<CreatePlaybookRequest, CreatePlaybookResponse> genForCreatePlaybook() {
+    private static HttpRequestDef<CreateRetrieveScriptRequest, CreateRetrieveScriptResponse> genForCreateRetrieveScript() {
         // basic
-        HttpRequestDef.Builder<CreatePlaybookRequest, CreatePlaybookResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreatePlaybookRequest.class, CreatePlaybookResponse.class)
-                .withName("CreatePlaybook")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePlaybookRequest::getWorkspaceId, CreatePlaybookRequest::setWorkspaceId));
-        builder.<CreatePlaybookInfo>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreatePlaybookInfo.class),
-            f -> f.withMarshaller(CreatePlaybookRequest::getBody, CreatePlaybookRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreatePlaybookResponse::getXRequestId, CreatePlaybookResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreatePlaybookActionRequest, CreatePlaybookActionResponse> createPlaybookAction =
-        genForCreatePlaybookAction();
-
-    private static HttpRequestDef<CreatePlaybookActionRequest, CreatePlaybookActionResponse> genForCreatePlaybookAction() {
-        // basic
-        HttpRequestDef.Builder<CreatePlaybookActionRequest, CreatePlaybookActionResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, CreatePlaybookActionRequest.class, CreatePlaybookActionResponse.class)
-            .withName("CreatePlaybookAction")
-            .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/versions/{version_id}/actions")
+        HttpRequestDef.Builder<CreateRetrieveScriptRequest, CreateRetrieveScriptResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateRetrieveScriptRequest.class, CreateRetrieveScriptResponse.class)
+            .withName("CreateRetrieveScript")
+            .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/retrieve-scripts")
             .withContentType("application/json");
 
         // requests
@@ -759,82 +491,27 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePlaybookActionRequest::getWorkspaceId,
-                CreatePlaybookActionRequest::setWorkspaceId));
-        builder.<String>withRequestField("version_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePlaybookActionRequest::getVersionId,
-                CreatePlaybookActionRequest::setVersionId));
-        builder.<List<CreateAction>>withRequestField("body",
+            f -> f.withMarshaller(CreateRetrieveScriptRequest::getWorkspaceId,
+                CreateRetrieveScriptRequest::setWorkspaceId));
+        builder.<CreateRetrieveScriptRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CreatePlaybookActionRequest::getBody, CreatePlaybookActionRequest::setBody)
-                .withInnerContainerType(CreateAction.class));
+            TypeCasts.uncheckedConversion(CreateRetrieveScriptRequestBody.class),
+            f -> f.withMarshaller(CreateRetrieveScriptRequest::getBody, CreateRetrieveScriptRequest::setBody));
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreatePlaybookActionResponse::getXRequestId,
-                CreatePlaybookActionResponse::setXRequestId));
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreatePlaybookApproveRequest, CreatePlaybookApproveResponse> createPlaybookApprove =
-        genForCreatePlaybookApprove();
+    public static final HttpRequestDef<CreateTableRequest, CreateTableResponse> createTable = genForCreateTable();
 
-    private static HttpRequestDef<CreatePlaybookApproveRequest, CreatePlaybookApproveResponse> genForCreatePlaybookApprove() {
+    private static HttpRequestDef<CreateTableRequest, CreateTableResponse> genForCreateTable() {
         // basic
-        HttpRequestDef.Builder<CreatePlaybookApproveRequest, CreatePlaybookApproveResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, CreatePlaybookApproveRequest.class, CreatePlaybookApproveResponse.class)
-            .withName("CreatePlaybookApprove")
-            .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/versions/{version_id}/approval")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePlaybookApproveRequest::getWorkspaceId,
-                CreatePlaybookApproveRequest::setWorkspaceId));
-        builder.<String>withRequestField("version_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePlaybookApproveRequest::getVersionId,
-                CreatePlaybookApproveRequest::setVersionId));
-        builder.<ApprovePlaybookInfo>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ApprovePlaybookInfo.class),
-            f -> f.withMarshaller(CreatePlaybookApproveRequest::getBody, CreatePlaybookApproveRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreatePlaybookApproveResponse::getXRequestId,
-                CreatePlaybookApproveResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreatePlaybookRuleRequest, CreatePlaybookRuleResponse> createPlaybookRule =
-        genForCreatePlaybookRule();
-
-    private static HttpRequestDef<CreatePlaybookRuleRequest, CreatePlaybookRuleResponse> genForCreatePlaybookRule() {
-        // basic
-        HttpRequestDef.Builder<CreatePlaybookRuleRequest, CreatePlaybookRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreatePlaybookRuleRequest.class, CreatePlaybookRuleResponse.class)
-                .withName("CreatePlaybookRule")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/versions/{version_id}/rules")
+        HttpRequestDef.Builder<CreateTableRequest, CreateTableResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTableRequest.class, CreateTableResponse.class)
+                .withName("CreateTable")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/tables")
                 .withContentType("application/json");
 
         // requests
@@ -842,130 +519,27 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePlaybookRuleRequest::getWorkspaceId,
-                CreatePlaybookRuleRequest::setWorkspaceId));
-        builder.<String>withRequestField("version_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePlaybookRuleRequest::getVersionId, CreatePlaybookRuleRequest::setVersionId));
-        builder.<CreateRuleInfo>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(CreateRuleInfo.class),
-            f -> f.withMarshaller(CreatePlaybookRuleRequest::getBody, CreatePlaybookRuleRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreatePlaybookRuleResponse::getXRequestId,
-                CreatePlaybookRuleResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreatePlaybookVersionRequest, CreatePlaybookVersionResponse> createPlaybookVersion =
-        genForCreatePlaybookVersion();
-
-    private static HttpRequestDef<CreatePlaybookVersionRequest, CreatePlaybookVersionResponse> genForCreatePlaybookVersion() {
-        // basic
-        HttpRequestDef.Builder<CreatePlaybookVersionRequest, CreatePlaybookVersionResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, CreatePlaybookVersionRequest.class, CreatePlaybookVersionResponse.class)
-            .withName("CreatePlaybookVersion")
-            .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/{playbook_id}/versions")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePlaybookVersionRequest::getWorkspaceId,
-                CreatePlaybookVersionRequest::setWorkspaceId));
-        builder.<String>withRequestField("playbook_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreatePlaybookVersionRequest::getPlaybookId,
-                CreatePlaybookVersionRequest::setPlaybookId));
-        builder.<CreatePlaybookVersionInfo>withRequestField("body",
+            f -> f.withMarshaller(CreateTableRequest::getWorkspaceId, CreateTableRequest::setWorkspaceId));
+        builder.<CreateTableRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreatePlaybookVersionInfo.class),
-            f -> f.withMarshaller(CreatePlaybookVersionRequest::getBody, CreatePlaybookVersionRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreatePlaybookVersionResponse::getXRequestId,
-                CreatePlaybookVersionResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreatePostPaidOrderRequest, CreatePostPaidOrderResponse> createPostPaidOrder =
-        genForCreatePostPaidOrder();
-
-    private static HttpRequestDef<CreatePostPaidOrderRequest, CreatePostPaidOrderResponse> genForCreatePostPaidOrder() {
-        // basic
-        HttpRequestDef.Builder<CreatePostPaidOrderRequest, CreatePostPaidOrderResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreatePostPaidOrderRequest.class, CreatePostPaidOrderResponse.class)
-                .withName("CreatePostPaidOrder")
-                .withUri("/v1/{project_id}/subscriptions/orders")
-                .withContentType("application/json");
-
-        // requests
-        builder.<CreatePostPaidOrderRequest.XLanguageEnum>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreatePostPaidOrderRequest.XLanguageEnum.class),
-            f -> f.withMarshaller(CreatePostPaidOrderRequest::getXLanguage, CreatePostPaidOrderRequest::setXLanguage));
-        builder.<PostPaidParam>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(PostPaidParam.class),
-            f -> f.withMarshaller(CreatePostPaidOrderRequest::getBody, CreatePostPaidOrderRequest::setBody));
+            TypeCasts.uncheckedConversion(CreateTableRequestBody.class),
+            f -> f.withMarshaller(CreateTableRequest::getBody, CreateTableRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateWorkspaceRequest, CreateWorkspaceResponse> createWorkspace =
-        genForCreateWorkspace();
+    public static final HttpRequestDef<CreateTableAnalysisRequest, CreateTableAnalysisResponse> createTableAnalysis =
+        genForCreateTableAnalysis();
 
-    private static HttpRequestDef<CreateWorkspaceRequest, CreateWorkspaceResponse> genForCreateWorkspace() {
+    private static HttpRequestDef<CreateTableAnalysisRequest, CreateTableAnalysisResponse> genForCreateTableAnalysis() {
         // basic
-        HttpRequestDef.Builder<CreateWorkspaceRequest, CreateWorkspaceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateWorkspaceRequest.class, CreateWorkspaceResponse.class)
-                .withName("CreateWorkspace")
-                .withUri("/v1/{project_id}/workspaces")
-                .withContentType("application/json");
-
-        // requests
-        builder.<CreateWorkspaceRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateWorkspaceRequestBody.class),
-            f -> f.withMarshaller(CreateWorkspaceRequest::getBody, CreateWorkspaceRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteAlertRequest, DeleteAlertResponse> deleteAlert = genForDeleteAlert();
-
-    private static HttpRequestDef<DeleteAlertRequest, DeleteAlertResponse> genForDeleteAlert() {
-        // basic
-        HttpRequestDef.Builder<DeleteAlertRequest, DeleteAlertResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAlertRequest.class, DeleteAlertResponse.class)
-                .withName("DeleteAlert")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/alerts")
+        HttpRequestDef.Builder<CreateTableAnalysisRequest, CreateTableAnalysisResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTableAnalysisRequest.class, CreateTableAnalysisResponse.class)
+                .withName("CreateTableAnalysis")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/tables/{table_id}/analysis")
                 .withContentType("application/json");
 
         // requests
@@ -973,20 +547,49 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAlertRequest::getWorkspaceId, DeleteAlertRequest::setWorkspaceId));
-        builder.<DeleteAlertRequestBody>withRequestField("body",
+            f -> f.withMarshaller(CreateTableAnalysisRequest::getWorkspaceId,
+                CreateTableAnalysisRequest::setWorkspaceId));
+        builder.<String>withRequestField("table_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTableAnalysisRequest::getTableId, CreateTableAnalysisRequest::setTableId));
+        builder.<ListTableLogsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(DeleteAlertRequestBody.class),
-            f -> f.withMarshaller(DeleteAlertRequest::getBody, DeleteAlertRequest::setBody));
+            TypeCasts.uncheckedConversion(ListTableLogsRequestBody.class),
+            f -> f.withMarshaller(CreateTableAnalysisRequest::getBody, CreateTableAnalysisRequest::setBody));
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteAlertResponse::getXRequestId, DeleteAlertResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAdhocQueryRequest, DeleteAdhocQueryResponse> deleteAdhocQuery =
+        genForDeleteAdhocQuery();
+
+    private static HttpRequestDef<DeleteAdhocQueryRequest, DeleteAdhocQueryResponse> genForDeleteAdhocQuery() {
+        // basic
+        HttpRequestDef.Builder<DeleteAdhocQueryRequest, DeleteAdhocQueryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAdhocQueryRequest.class, DeleteAdhocQueryResponse.class)
+                .withName("DeleteAdhocQuery")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/ad-hoc-queries/{query_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAdhocQueryRequest::getWorkspaceId, DeleteAdhocQueryRequest::setWorkspaceId));
+        builder.<String>withRequestField("query_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAdhocQueryRequest::getQueryId, DeleteAdhocQueryRequest::setQueryId));
+
+        // response
+
         return builder.build();
     }
 
@@ -998,7 +601,7 @@ public class SecMasterMeta {
         HttpRequestDef.Builder<DeleteAlertRuleRequest, DeleteAlertRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteAlertRuleRequest.class, DeleteAlertRuleResponse.class)
                 .withName("DeleteAlertRule")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/siem/alert-rules")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/alert-rules/{alert_rule_id}")
                 .withContentType("application/json");
 
         // requests
@@ -1007,11 +610,212 @@ public class SecMasterMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAlertRuleRequest::getWorkspaceId, DeleteAlertRuleRequest::setWorkspaceId));
+        builder.<String>withRequestField("alert_rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAlertRuleRequest::getAlertRuleId, DeleteAlertRuleRequest::setAlertRuleId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAnalysisScriptRequest, DeleteAnalysisScriptResponse> deleteAnalysisScript =
+        genForDeleteAnalysisScript();
+
+    private static HttpRequestDef<DeleteAnalysisScriptRequest, DeleteAnalysisScriptResponse> genForDeleteAnalysisScript() {
+        // basic
+        HttpRequestDef.Builder<DeleteAnalysisScriptRequest, DeleteAnalysisScriptResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteAnalysisScriptRequest.class, DeleteAnalysisScriptResponse.class)
+            .withName("DeleteAnalysisScript")
+            .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/analysis-scripts/{analysis_script_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAnalysisScriptRequest::getWorkspaceId,
+                DeleteAnalysisScriptRequest::setWorkspaceId));
+        builder.<String>withRequestField("analysis_script_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAnalysisScriptRequest::getAnalysisScriptId,
+                DeleteAnalysisScriptRequest::setAnalysisScriptId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteCodeSegmentRequest, DeleteCodeSegmentResponse> deleteCodeSegment =
+        genForDeleteCodeSegment();
+
+    private static HttpRequestDef<DeleteCodeSegmentRequest, DeleteCodeSegmentResponse> genForDeleteCodeSegment() {
+        // basic
+        HttpRequestDef.Builder<DeleteCodeSegmentRequest, DeleteCodeSegmentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteCodeSegmentRequest.class, DeleteCodeSegmentResponse.class)
+                .withName("DeleteCodeSegment")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/code-segments/{code_segment_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCodeSegmentRequest::getWorkspaceId, DeleteCodeSegmentRequest::setWorkspaceId));
+        builder.<String>withRequestField("code_segment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCodeSegmentRequest::getCodeSegmentId,
+                DeleteCodeSegmentRequest::setCodeSegmentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteCustomizedCheckitemsRequest, DeleteCustomizedCheckitemsResponse> deleteCustomizedCheckitems =
+        genForDeleteCustomizedCheckitems();
+
+    private static HttpRequestDef<DeleteCustomizedCheckitemsRequest, DeleteCustomizedCheckitemsResponse> genForDeleteCustomizedCheckitems() {
+        // basic
+        HttpRequestDef.Builder<DeleteCustomizedCheckitemsRequest, DeleteCustomizedCheckitemsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteCustomizedCheckitemsRequest.class,
+                    DeleteCustomizedCheckitemsResponse.class)
+                .withName("DeleteCustomizedCheckitems")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/sa/baseline/checkitems")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCustomizedCheckitemsRequest::getWorkspaceId,
+                DeleteCustomizedCheckitemsRequest::setWorkspaceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCustomizedCheckitemsRequest::getXLanguage,
+                DeleteCustomizedCheckitemsRequest::setXLanguage));
+        builder.<DeleteCustomizedCheckitemsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteCustomizedCheckitemsRequestBody.class),
+            f -> f.withMarshaller(DeleteCustomizedCheckitemsRequest::getBody,
+                DeleteCustomizedCheckitemsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteCustomizedCompliancePackagesRequest, DeleteCustomizedCompliancePackagesResponse> deleteCustomizedCompliancePackages =
+        genForDeleteCustomizedCompliancePackages();
+
+    private static HttpRequestDef<DeleteCustomizedCompliancePackagesRequest, DeleteCustomizedCompliancePackagesResponse> genForDeleteCustomizedCompliancePackages() {
+        // basic
+        HttpRequestDef.Builder<DeleteCustomizedCompliancePackagesRequest, DeleteCustomizedCompliancePackagesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteCustomizedCompliancePackagesRequest.class,
+                    DeleteCustomizedCompliancePackagesResponse.class)
+                .withName("DeleteCustomizedCompliancePackages")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/sa/baseline/compliance-packages")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCustomizedCompliancePackagesRequest::getWorkspaceId,
+                DeleteCustomizedCompliancePackagesRequest::setWorkspaceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCustomizedCompliancePackagesRequest::getXLanguage,
+                DeleteCustomizedCompliancePackagesRequest::setXLanguage));
         builder.<List<String>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(DeleteAlertRuleRequest::getBody, DeleteAlertRuleRequest::setBody)
+            f -> f
+                .withMarshaller(DeleteCustomizedCompliancePackagesRequest::getBody,
+                    DeleteCustomizedCompliancePackagesRequest::setBody)
+                .withInnerContainerType(String.class));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDataTransformationRequest, DeleteDataTransformationResponse> deleteDataTransformation =
+        genForDeleteDataTransformation();
+
+    private static HttpRequestDef<DeleteDataTransformationRequest, DeleteDataTransformationResponse> genForDeleteDataTransformation() {
+        // basic
+        HttpRequestDef.Builder<DeleteDataTransformationRequest, DeleteDataTransformationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteDataTransformationRequest.class,
+                    DeleteDataTransformationResponse.class)
+                .withName("DeleteDataTransformation")
+                .withUri(
+                    "/v2/{project_id}/workspaces/{workspace_id}/siem/data-transformations/{data_transformation_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDataTransformationRequest::getWorkspaceId,
+                DeleteDataTransformationRequest::setWorkspaceId));
+        builder.<String>withRequestField("data_transformation_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDataTransformationRequest::getDataTransformationId,
+                DeleteDataTransformationRequest::setDataTransformationId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteLayoutFieldRequest, DeleteLayoutFieldResponse> deleteLayoutField =
+        genForDeleteLayoutField();
+
+    private static HttpRequestDef<DeleteLayoutFieldRequest, DeleteLayoutFieldResponse> genForDeleteLayoutField() {
+        // basic
+        HttpRequestDef.Builder<DeleteLayoutFieldRequest, DeleteLayoutFieldResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteLayoutFieldRequest.class, DeleteLayoutFieldResponse.class)
+                .withName("DeleteLayoutField")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/soc/layouts/fields")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLayoutFieldRequest::getWorkspaceId, DeleteLayoutFieldRequest::setWorkspaceId));
+        builder.<List<String>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(DeleteLayoutFieldRequest::getBody, DeleteLayoutFieldRequest::setBody)
                 .withInnerContainerType(String.class));
 
         // response
@@ -1020,23 +824,18 @@ public class SecMasterMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteAlertRuleResponse::getXRequestId, DeleteAlertRuleResponse::setXRequestId));
+            f -> f.withMarshaller(DeleteLayoutFieldResponse::getXRequestId, DeleteLayoutFieldResponse::setXRequestId));
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteDataobjectRelationsRequest, DeleteDataobjectRelationsResponse> deleteDataobjectRelations =
-        genForDeleteDataobjectRelations();
+    public static final HttpRequestDef<DeletePipeRequest, DeletePipeResponse> deletePipe = genForDeletePipe();
 
-    private static HttpRequestDef<DeleteDataobjectRelationsRequest, DeleteDataobjectRelationsResponse> genForDeleteDataobjectRelations() {
+    private static HttpRequestDef<DeletePipeRequest, DeletePipeResponse> genForDeletePipe() {
         // basic
-        HttpRequestDef.Builder<DeleteDataobjectRelationsRequest, DeleteDataobjectRelationsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.DELETE,
-                    DeleteDataobjectRelationsRequest.class,
-                    DeleteDataobjectRelationsResponse.class)
-                .withName("DeleteDataobjectRelations")
-                .withUri(
-                    "/v1/{project_id}/workspaces/{workspace_id}/soc/{dataclass_type}/{data_object_id}/{related_dataclass_type}")
+        HttpRequestDef.Builder<DeletePipeRequest, DeletePipeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePipeRequest.class, DeletePipeResponse.class)
+                .withName("DeletePipe")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/pipes/{pipe_id}")
                 .withContentType("application/json");
 
         // requests
@@ -1044,153 +843,27 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDataobjectRelationsRequest::getWorkspaceId,
-                DeleteDataobjectRelationsRequest::setWorkspaceId));
-        builder.<String>withRequestField("dataclass_type",
+            f -> f.withMarshaller(DeletePipeRequest::getWorkspaceId, DeletePipeRequest::setWorkspaceId));
+        builder.<String>withRequestField("pipe_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDataobjectRelationsRequest::getDataclassType,
-                DeleteDataobjectRelationsRequest::setDataclassType));
-        builder.<String>withRequestField("data_object_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDataobjectRelationsRequest::getDataObjectId,
-                DeleteDataobjectRelationsRequest::setDataObjectId));
-        builder.<String>withRequestField("related_dataclass_type",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteDataobjectRelationsRequest::getRelatedDataclassType,
-                DeleteDataobjectRelationsRequest::setRelatedDataclassType));
-        builder.<CreateDataobjectRelationsRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(CreateDataobjectRelationsRequestBody.class),
-            f -> f.withMarshaller(DeleteDataobjectRelationsRequest::getBody,
-                DeleteDataobjectRelationsRequest::setBody));
+            f -> f.withMarshaller(DeletePipeRequest::getPipeId, DeletePipeRequest::setPipeId));
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteDataobjectRelationsResponse::getXRequestId,
-                DeleteDataobjectRelationsResponse::setXRequestId));
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteIncidentRequest, DeleteIncidentResponse> deleteIncident =
-        genForDeleteIncident();
+    public static final HttpRequestDef<DeleteRetrieveScriptRequest, DeleteRetrieveScriptResponse> deleteRetrieveScript =
+        genForDeleteRetrieveScript();
 
-    private static HttpRequestDef<DeleteIncidentRequest, DeleteIncidentResponse> genForDeleteIncident() {
+    private static HttpRequestDef<DeleteRetrieveScriptRequest, DeleteRetrieveScriptResponse> genForDeleteRetrieveScript() {
         // basic
-        HttpRequestDef.Builder<DeleteIncidentRequest, DeleteIncidentResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteIncidentRequest.class, DeleteIncidentResponse.class)
-                .withName("DeleteIncident")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/incidents")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteIncidentRequest::getWorkspaceId, DeleteIncidentRequest::setWorkspaceId));
-        builder.<DeleteIncidentRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(DeleteIncidentRequestBody.class),
-            f -> f.withMarshaller(DeleteIncidentRequest::getBody, DeleteIncidentRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteIncidentResponse::getXRequestId, DeleteIncidentResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteIndicatorRequest, DeleteIndicatorResponse> deleteIndicator =
-        genForDeleteIndicator();
-
-    private static HttpRequestDef<DeleteIndicatorRequest, DeleteIndicatorResponse> genForDeleteIndicator() {
-        // basic
-        HttpRequestDef.Builder<DeleteIndicatorRequest, DeleteIndicatorResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteIndicatorRequest.class, DeleteIndicatorResponse.class)
-                .withName("DeleteIndicator")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/indicators")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteIndicatorRequest::getWorkspaceId, DeleteIndicatorRequest::setWorkspaceId));
-        builder.<DeleteIndicatorRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(DeleteIndicatorRequestBody.class),
-            f -> f.withMarshaller(DeleteIndicatorRequest::getBody, DeleteIndicatorRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteIndicatorResponse::getXRequestId, DeleteIndicatorResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeletePlaybookRequest, DeletePlaybookResponse> deletePlaybook =
-        genForDeletePlaybook();
-
-    private static HttpRequestDef<DeletePlaybookRequest, DeletePlaybookResponse> genForDeletePlaybook() {
-        // basic
-        HttpRequestDef.Builder<DeletePlaybookRequest, DeletePlaybookResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeletePlaybookRequest.class, DeletePlaybookResponse.class)
-                .withName("DeletePlaybook")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/{playbook_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePlaybookRequest::getWorkspaceId, DeletePlaybookRequest::setWorkspaceId));
-        builder.<String>withRequestField("playbook_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePlaybookRequest::getPlaybookId, DeletePlaybookRequest::setPlaybookId));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeletePlaybookResponse::getXRequestId, DeletePlaybookResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeletePlaybookActionRequest, DeletePlaybookActionResponse> deletePlaybookAction =
-        genForDeletePlaybookAction();
-
-    private static HttpRequestDef<DeletePlaybookActionRequest, DeletePlaybookActionResponse> genForDeletePlaybookAction() {
-        // basic
-        HttpRequestDef.Builder<DeletePlaybookActionRequest, DeletePlaybookActionResponse> builder = HttpRequestDef
-            .builder(HttpMethod.DELETE, DeletePlaybookActionRequest.class, DeletePlaybookActionResponse.class)
-            .withName("DeletePlaybookAction")
-            .withUri(
-                "/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/versions/{version_id}/actions/{action_id}")
+        HttpRequestDef.Builder<DeleteRetrieveScriptRequest, DeleteRetrieveScriptResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteRetrieveScriptRequest.class, DeleteRetrieveScriptResponse.class)
+            .withName("DeleteRetrieveScript")
+            .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/retrieve-scripts/{retrieve_script_id}")
             .withContentType("application/json");
 
         // requests
@@ -1198,41 +871,28 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePlaybookActionRequest::getWorkspaceId,
-                DeletePlaybookActionRequest::setWorkspaceId));
-        builder.<String>withRequestField("version_id",
+            f -> f.withMarshaller(DeleteRetrieveScriptRequest::getWorkspaceId,
+                DeleteRetrieveScriptRequest::setWorkspaceId));
+        builder.<String>withRequestField("retrieve_script_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePlaybookActionRequest::getVersionId,
-                DeletePlaybookActionRequest::setVersionId));
-        builder.<String>withRequestField("action_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePlaybookActionRequest::getActionId, DeletePlaybookActionRequest::setActionId));
+            f -> f.withMarshaller(DeleteRetrieveScriptRequest::getRetrieveScriptId,
+                DeleteRetrieveScriptRequest::setRetrieveScriptId));
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeletePlaybookActionResponse::getXRequestId,
-                DeletePlaybookActionResponse::setXRequestId));
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeletePlaybookRuleRequest, DeletePlaybookRuleResponse> deletePlaybookRule =
-        genForDeletePlaybookRule();
+    public static final HttpRequestDef<DeleteTableRequest, DeleteTableResponse> deleteTable = genForDeleteTable();
 
-    private static HttpRequestDef<DeletePlaybookRuleRequest, DeletePlaybookRuleResponse> genForDeletePlaybookRule() {
+    private static HttpRequestDef<DeleteTableRequest, DeleteTableResponse> genForDeleteTable() {
         // basic
-        HttpRequestDef.Builder<DeletePlaybookRuleRequest, DeletePlaybookRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeletePlaybookRuleRequest.class, DeletePlaybookRuleResponse.class)
-                .withName("DeletePlaybookRule")
-                .withUri(
-                    "/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/versions/{version_id}/rules/{rule_id}")
+        HttpRequestDef.Builder<DeleteTableRequest, DeleteTableResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTableRequest.class, DeleteTableResponse.class)
+                .withName("DeleteTable")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/tables/{table_id}")
                 .withContentType("application/json");
 
         // requests
@@ -1240,89 +900,12 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePlaybookRuleRequest::getWorkspaceId,
-                DeletePlaybookRuleRequest::setWorkspaceId));
-        builder.<String>withRequestField("version_id",
+            f -> f.withMarshaller(DeleteTableRequest::getWorkspaceId, DeleteTableRequest::setWorkspaceId));
+        builder.<String>withRequestField("table_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePlaybookRuleRequest::getVersionId, DeletePlaybookRuleRequest::setVersionId));
-        builder.<String>withRequestField("rule_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePlaybookRuleRequest::getRuleId, DeletePlaybookRuleRequest::setRuleId));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeletePlaybookRuleResponse::getXRequestId,
-                DeletePlaybookRuleResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeletePlaybookVersionRequest, DeletePlaybookVersionResponse> deletePlaybookVersion =
-        genForDeletePlaybookVersion();
-
-    private static HttpRequestDef<DeletePlaybookVersionRequest, DeletePlaybookVersionResponse> genForDeletePlaybookVersion() {
-        // basic
-        HttpRequestDef.Builder<DeletePlaybookVersionRequest, DeletePlaybookVersionResponse> builder = HttpRequestDef
-            .builder(HttpMethod.DELETE, DeletePlaybookVersionRequest.class, DeletePlaybookVersionResponse.class)
-            .withName("DeletePlaybookVersion")
-            .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/versions/{version_id}")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePlaybookVersionRequest::getWorkspaceId,
-                DeletePlaybookVersionRequest::setWorkspaceId));
-        builder.<String>withRequestField("version_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePlaybookVersionRequest::getVersionId,
-                DeletePlaybookVersionRequest::setVersionId));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeletePlaybookVersionResponse::getXRequestId,
-                DeletePlaybookVersionResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteWorkspaceRequest, DeleteWorkspaceResponse> deleteWorkspace =
-        genForDeleteWorkspace();
-
-    private static HttpRequestDef<DeleteWorkspaceRequest, DeleteWorkspaceResponse> genForDeleteWorkspace() {
-        // basic
-        HttpRequestDef.Builder<DeleteWorkspaceRequest, DeleteWorkspaceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteWorkspaceRequest.class, DeleteWorkspaceResponse.class)
-                .withName("DeleteWorkspace")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteWorkspaceRequest::getWorkspaceId, DeleteWorkspaceRequest::setWorkspaceId));
-        builder.<Boolean>withRequestField("permanent_delete",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(DeleteWorkspaceRequest::getPermanentDelete,
-                DeleteWorkspaceRequest::setPermanentDelete));
+            f -> f.withMarshaller(DeleteTableRequest::getTableId, DeleteTableRequest::setTableId));
 
         // response
 
@@ -1337,7 +920,7 @@ public class SecMasterMeta {
         HttpRequestDef.Builder<DisableAlertRuleRequest, DisableAlertRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DisableAlertRuleRequest.class, DisableAlertRuleResponse.class)
                 .withName("DisableAlertRule")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/siem/alert-rules/disable")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/alert-rules/{alert_rule_id}/disable")
                 .withContentType("application/json");
 
         // requests
@@ -1346,20 +929,83 @@ public class SecMasterMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DisableAlertRuleRequest::getWorkspaceId, DisableAlertRuleRequest::setWorkspaceId));
-        builder.<List<String>>withRequestField("body",
-            LocationType.Body,
+        builder.<String>withRequestField("alert_rule_id",
+            LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(DisableAlertRuleRequest::getBody, DisableAlertRuleRequest::setBody)
-                .withInnerContainerType(String.class));
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisableAlertRuleRequest::getAlertRuleId, DisableAlertRuleRequest::setAlertRuleId));
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DisableAlertRuleResponse::getXRequestId, DisableAlertRuleResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisableDataConsumptionRequest, DisableDataConsumptionResponse> disableDataConsumption =
+        genForDisableDataConsumption();
+
+    private static HttpRequestDef<DisableDataConsumptionRequest, DisableDataConsumptionResponse> genForDisableDataConsumption() {
+        // basic
+        HttpRequestDef.Builder<DisableDataConsumptionRequest, DisableDataConsumptionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DisableDataConsumptionRequest.class, DisableDataConsumptionResponse.class)
+            .withName("DisableDataConsumption")
+            .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/tables/{table_id}/consumption")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisableDataConsumptionRequest::getWorkspaceId,
+                DisableDataConsumptionRequest::setWorkspaceId));
+        builder.<String>withRequestField("table_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisableDataConsumptionRequest::getTableId,
+                DisableDataConsumptionRequest::setTableId));
+        builder.<DisableConsumptionV2RequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DisableConsumptionV2RequestBody.class),
+            f -> f.withMarshaller(DisableDataConsumptionRequest::getBody, DisableDataConsumptionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisableDataTransformationRequest, DisableDataTransformationResponse> disableDataTransformation =
+        genForDisableDataTransformation();
+
+    private static HttpRequestDef<DisableDataTransformationRequest, DisableDataTransformationResponse> genForDisableDataTransformation() {
+        // basic
+        HttpRequestDef.Builder<DisableDataTransformationRequest, DisableDataTransformationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DisableDataTransformationRequest.class,
+                    DisableDataTransformationResponse.class)
+                .withName("DisableDataTransformation")
+                .withUri(
+                    "/v2/{project_id}/workspaces/{workspace_id}/siem/data-transformations/{data_transformation_id}/disable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisableDataTransformationRequest::getWorkspaceId,
+                DisableDataTransformationRequest::setWorkspaceId));
+        builder.<String>withRequestField("data_transformation_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisableDataTransformationRequest::getDataTransformationId,
+                DisableDataTransformationRequest::setDataTransformationId));
+
+        // response
+
         return builder.build();
     }
 
@@ -1371,7 +1017,7 @@ public class SecMasterMeta {
         HttpRequestDef.Builder<EnableAlertRuleRequest, EnableAlertRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EnableAlertRuleRequest.class, EnableAlertRuleResponse.class)
                 .withName("EnableAlertRule")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/siem/alert-rules/enable")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/alert-rules/{alert_rule_id}/enable")
                 .withContentType("application/json");
 
         // requests
@@ -1380,20 +1026,75 @@ public class SecMasterMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(EnableAlertRuleRequest::getWorkspaceId, EnableAlertRuleRequest::setWorkspaceId));
-        builder.<List<String>>withRequestField("body",
-            LocationType.Body,
+        builder.<String>withRequestField("alert_rule_id",
+            LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(EnableAlertRuleRequest::getBody, EnableAlertRuleRequest::setBody)
-                .withInnerContainerType(String.class));
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableAlertRuleRequest::getAlertRuleId, EnableAlertRuleRequest::setAlertRuleId));
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(EnableAlertRuleResponse::getXRequestId, EnableAlertRuleResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<EnableDataConsumptionRequest, EnableDataConsumptionResponse> enableDataConsumption =
+        genForEnableDataConsumption();
+
+    private static HttpRequestDef<EnableDataConsumptionRequest, EnableDataConsumptionResponse> genForEnableDataConsumption() {
+        // basic
+        HttpRequestDef.Builder<EnableDataConsumptionRequest, EnableDataConsumptionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, EnableDataConsumptionRequest.class, EnableDataConsumptionResponse.class)
+            .withName("EnableDataConsumption")
+            .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/tables/{table_id}/consumption")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableDataConsumptionRequest::getWorkspaceId,
+                EnableDataConsumptionRequest::setWorkspaceId));
+        builder.<String>withRequestField("table_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableDataConsumptionRequest::getTableId, EnableDataConsumptionRequest::setTableId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<EnableDataTransformationRequest, EnableDataTransformationResponse> enableDataTransformation =
+        genForEnableDataTransformation();
+
+    private static HttpRequestDef<EnableDataTransformationRequest, EnableDataTransformationResponse> genForEnableDataTransformation() {
+        // basic
+        HttpRequestDef.Builder<EnableDataTransformationRequest, EnableDataTransformationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, EnableDataTransformationRequest.class, EnableDataTransformationResponse.class)
+                .withName("EnableDataTransformation")
+                .withUri(
+                    "/v2/{project_id}/workspaces/{workspace_id}/siem/data-transformations/{data_transformation_id}/enable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableDataTransformationRequest::getWorkspaceId,
+                EnableDataTransformationRequest::setWorkspaceId));
+        builder.<String>withRequestField("data_transformation_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableDataTransformationRequest::getDataTransformationId,
+                EnableDataTransformationRequest::setDataTransformationId));
+
+        // response
+
         return builder.build();
     }
 
@@ -1405,7 +1106,7 @@ public class SecMasterMeta {
         HttpRequestDef.Builder<ListAlertRuleMetricsRequest, ListAlertRuleMetricsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAlertRuleMetricsRequest.class, ListAlertRuleMetricsResponse.class)
             .withName("ListAlertRuleMetrics")
-            .withUri("/v1/{project_id}/workspaces/{workspace_id}/siem/alert-rules/metrics")
+            .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/alert-rules/metrics")
             .withContentType("application/json");
 
         // requests
@@ -1418,12 +1119,33 @@ public class SecMasterMeta {
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAlertRuleMetricsResponse::getXRequestId,
-                ListAlertRuleMetricsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAlertRuleTemplateMetricsRequest, ListAlertRuleTemplateMetricsResponse> listAlertRuleTemplateMetrics =
+        genForListAlertRuleTemplateMetrics();
+
+    private static HttpRequestDef<ListAlertRuleTemplateMetricsRequest, ListAlertRuleTemplateMetricsResponse> genForListAlertRuleTemplateMetrics() {
+        // basic
+        HttpRequestDef.Builder<ListAlertRuleTemplateMetricsRequest, ListAlertRuleTemplateMetricsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAlertRuleTemplateMetricsRequest.class,
+                    ListAlertRuleTemplateMetricsResponse.class)
+                .withName("ListAlertRuleTemplateMetrics")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/alert-rules/templates/metrics")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlertRuleTemplateMetricsRequest::getWorkspaceId,
+                ListAlertRuleTemplateMetricsRequest::setWorkspaceId));
+
+        // response
+
         return builder.build();
     }
 
@@ -1435,7 +1157,7 @@ public class SecMasterMeta {
         HttpRequestDef.Builder<ListAlertRuleTemplatesRequest, ListAlertRuleTemplatesResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListAlertRuleTemplatesRequest.class, ListAlertRuleTemplatesResponse.class)
             .withName("ListAlertRuleTemplates")
-            .withUri("/v1/{project_id}/workspaces/{workspace_id}/siem/alert-rules/templates")
+            .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/alert-rules/templates")
             .withContentType("application/json");
 
         // requests
@@ -1445,14 +1167,31 @@ public class SecMasterMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlertRuleTemplatesRequest::getWorkspaceId,
                 ListAlertRuleTemplatesRequest::setWorkspaceId));
+        builder.<String>withRequestField("template_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlertRuleTemplatesRequest::getTemplateName,
+                ListAlertRuleTemplatesRequest::setTemplateName));
+        builder.<ListAlertRuleTemplatesRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAlertRuleTemplatesRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListAlertRuleTemplatesRequest::getStatus, ListAlertRuleTemplatesRequest::setStatus));
+        builder.<ListAlertRuleTemplatesRequest.SeverityEnum>withRequestField("severity",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAlertRuleTemplatesRequest.SeverityEnum.class),
+            f -> f.withMarshaller(ListAlertRuleTemplatesRequest::getSeverity,
+                ListAlertRuleTemplatesRequest::setSeverity));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListAlertRuleTemplatesRequest::getOffset, ListAlertRuleTemplatesRequest::setOffset));
         builder.<Long>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListAlertRuleTemplatesRequest::getLimit, ListAlertRuleTemplatesRequest::setLimit));
         builder.<String>withRequestField("sort_key",
@@ -1461,27 +1200,15 @@ public class SecMasterMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlertRuleTemplatesRequest::getSortKey,
                 ListAlertRuleTemplatesRequest::setSortKey));
-        builder.<ListAlertRuleTemplatesRequest.SortDirEnum>withRequestField("sort_dir",
+        builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListAlertRuleTemplatesRequest.SortDirEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlertRuleTemplatesRequest::getSortDir,
                 ListAlertRuleTemplatesRequest::setSortDir));
-        builder.<List<ListAlertRuleTemplatesRequest.SeverityEnum>>withRequestField("severity",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAlertRuleTemplatesRequest::getSeverity,
-                ListAlertRuleTemplatesRequest::setSeverity));
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAlertRuleTemplatesResponse::getXRequestId,
-                ListAlertRuleTemplatesResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1493,7 +1220,7 @@ public class SecMasterMeta {
         HttpRequestDef.Builder<ListAlertRulesRequest, ListAlertRulesResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListAlertRulesRequest.class, ListAlertRulesResponse.class)
                 .withName("ListAlertRules")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/siem/alert-rules")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/alert-rules")
                 .withContentType("application/json");
 
         // requests
@@ -1504,12 +1231,12 @@ public class SecMasterMeta {
             f -> f.withMarshaller(ListAlertRulesRequest::getWorkspaceId, ListAlertRulesRequest::setWorkspaceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListAlertRulesRequest::getOffset, ListAlertRulesRequest::setOffset));
         builder.<Long>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListAlertRulesRequest::getLimit, ListAlertRulesRequest::setLimit));
         builder.<String>withRequestField("sort_key",
@@ -1517,55 +1244,41 @@ public class SecMasterMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlertRulesRequest::getSortKey, ListAlertRulesRequest::setSortKey));
-        builder.<ListAlertRulesRequest.SortDirEnum>withRequestField("sort_dir",
+        builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListAlertRulesRequest.SortDirEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlertRulesRequest::getSortDir, ListAlertRulesRequest::setSortDir));
-        builder.<String>withRequestField("pipe_id",
+        builder.<String>withRequestField("output_table_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAlertRulesRequest::getPipeId, ListAlertRulesRequest::setPipeId));
-        builder.<String>withRequestField("rule_name",
+            f -> f.withMarshaller(ListAlertRulesRequest::getOutputTableId, ListAlertRulesRequest::setOutputTableId));
+        builder.<String>withRequestField("alert_rule_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAlertRulesRequest::getRuleName, ListAlertRulesRequest::setRuleName));
-        builder.<String>withRequestField("rule_id",
+            f -> f.withMarshaller(ListAlertRulesRequest::getAlertRuleName, ListAlertRulesRequest::setAlertRuleName));
+        builder.<String>withRequestField("alert_rule_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAlertRulesRequest::getRuleId, ListAlertRulesRequest::setRuleId));
-        builder.<List<ListAlertRulesRequest.StatusEnum>>withRequestField("status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAlertRulesRequest::getStatus, ListAlertRulesRequest::setStatus));
-        builder.<List<ListAlertRulesRequest.SeverityEnum>>withRequestField("severity",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAlertRulesRequest::getSeverity, ListAlertRulesRequest::setSeverity));
+            f -> f.withMarshaller(ListAlertRulesRequest::getAlertRuleId, ListAlertRulesRequest::setAlertRuleId));
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAlertRulesResponse::getXRequestId, ListAlertRulesResponse::setXRequestId));
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAlertsRequest, ListAlertsResponse> listAlerts = genForListAlerts();
+    public static final HttpRequestDef<ListAnalysisScriptsRequest, ListAnalysisScriptsResponse> listAnalysisScripts =
+        genForListAnalysisScripts();
 
-    private static HttpRequestDef<ListAlertsRequest, ListAlertsResponse> genForListAlerts() {
+    private static HttpRequestDef<ListAnalysisScriptsRequest, ListAnalysisScriptsResponse> genForListAnalysisScripts() {
         // basic
-        HttpRequestDef.Builder<ListAlertsRequest, ListAlertsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ListAlertsRequest.class, ListAlertsResponse.class)
-                .withName("ListAlerts")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/alerts/search")
+        HttpRequestDef.Builder<ListAnalysisScriptsRequest, ListAnalysisScriptsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAnalysisScriptsRequest.class, ListAnalysisScriptsResponse.class)
+                .withName("ListAnalysisScripts")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/analysis-scripts")
                 .withContentType("application/json");
 
         // requests
@@ -1573,566 +1286,274 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAlertsRequest::getWorkspaceId, ListAlertsRequest::setWorkspaceId));
-        builder.<DataobjectSearch>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(DataobjectSearch.class),
-            f -> f.withMarshaller(ListAlertsRequest::getBody, ListAlertsRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAlertsResponse::getXRequestId, ListAlertsResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListDataclassRequest, ListDataclassResponse> listDataclass =
-        genForListDataclass();
-
-    private static HttpRequestDef<ListDataclassRequest, ListDataclassResponse> genForListDataclass() {
-        // basic
-        HttpRequestDef.Builder<ListDataclassRequest, ListDataclassResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListDataclassRequest.class, ListDataclassResponse.class)
-                .withName("ListDataclass")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/dataclasses")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataclassRequest::getWorkspaceId, ListDataclassRequest::setWorkspaceId));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDataclassRequest::getOffset, ListDataclassRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDataclassRequest::getLimit, ListDataclassRequest::setLimit));
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataclassRequest::getName, ListDataclassRequest::setName));
-        builder.<String>withRequestField("business_code",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataclassRequest::getBusinessCode, ListDataclassRequest::setBusinessCode));
-        builder.<String>withRequestField("description",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataclassRequest::getDescription, ListDataclassRequest::setDescription));
-        builder.<Boolean>withRequestField("is_built_in",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListDataclassRequest::getIsBuiltIn, ListDataclassRequest::setIsBuiltIn));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListDataclassResponse::getXRequestId, ListDataclassResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListDataclassFieldsRequest, ListDataclassFieldsResponse> listDataclassFields =
-        genForListDataclassFields();
-
-    private static HttpRequestDef<ListDataclassFieldsRequest, ListDataclassFieldsResponse> genForListDataclassFields() {
-        // basic
-        HttpRequestDef.Builder<ListDataclassFieldsRequest, ListDataclassFieldsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListDataclassFieldsRequest.class, ListDataclassFieldsResponse.class)
-                .withName("ListDataclassFields")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/dataclasses/{dataclass_id}/fields")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataclassFieldsRequest::getWorkspaceId,
-                ListDataclassFieldsRequest::setWorkspaceId));
-        builder.<String>withRequestField("dataclass_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataclassFieldsRequest::getDataclassId,
-                ListDataclassFieldsRequest::setDataclassId));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDataclassFieldsRequest::getOffset, ListDataclassFieldsRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListDataclassFieldsRequest::getLimit, ListDataclassFieldsRequest::setLimit));
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataclassFieldsRequest::getName, ListDataclassFieldsRequest::setName));
-        builder.<Boolean>withRequestField("is_built_in",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListDataclassFieldsRequest::getIsBuiltIn, ListDataclassFieldsRequest::setIsBuiltIn));
-        builder.<String>withRequestField("field_category",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataclassFieldsRequest::getFieldCategory,
-                ListDataclassFieldsRequest::setFieldCategory));
-        builder.<Boolean>withRequestField("mapping",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListDataclassFieldsRequest::getMapping, ListDataclassFieldsRequest::setMapping));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListDataclassFieldsResponse::getXRequestId,
-                ListDataclassFieldsResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListDataobjectRelationsRequest, ListDataobjectRelationsResponse> listDataobjectRelations =
-        genForListDataobjectRelations();
-
-    private static HttpRequestDef<ListDataobjectRelationsRequest, ListDataobjectRelationsResponse> genForListDataobjectRelations() {
-        // basic
-        HttpRequestDef.Builder<ListDataobjectRelationsRequest, ListDataobjectRelationsResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, ListDataobjectRelationsRequest.class, ListDataobjectRelationsResponse.class)
-            .withName("ListDataobjectRelations")
-            .withUri(
-                "/v1/{project_id}/workspaces/{workspace_id}/soc/{dataclass_type}/{data_object_id}/{related_dataclass_type}/search")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataobjectRelationsRequest::getWorkspaceId,
-                ListDataobjectRelationsRequest::setWorkspaceId));
-        builder.<String>withRequestField("dataclass_type",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataobjectRelationsRequest::getDataclassType,
-                ListDataobjectRelationsRequest::setDataclassType));
-        builder.<String>withRequestField("data_object_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataobjectRelationsRequest::getDataObjectId,
-                ListDataobjectRelationsRequest::setDataObjectId));
-        builder.<String>withRequestField("related_dataclass_type",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDataobjectRelationsRequest::getRelatedDataclassType,
-                ListDataobjectRelationsRequest::setRelatedDataclassType));
-        builder.<DataobjectSearch>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(DataobjectSearch.class),
-            f -> f.withMarshaller(ListDataobjectRelationsRequest::getBody, ListDataobjectRelationsRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListDataobjectRelationsResponse::getXRequestId,
-                ListDataobjectRelationsResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListIncidentsRequest, ListIncidentsResponse> listIncidents =
-        genForListIncidents();
-
-    private static HttpRequestDef<ListIncidentsRequest, ListIncidentsResponse> genForListIncidents() {
-        // basic
-        HttpRequestDef.Builder<ListIncidentsRequest, ListIncidentsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ListIncidentsRequest.class, ListIncidentsResponse.class)
-                .withName("ListIncidents")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/incidents/search")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIncidentsRequest::getWorkspaceId, ListIncidentsRequest::setWorkspaceId));
-        builder.<DataobjectSearch>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(DataobjectSearch.class),
-            f -> f.withMarshaller(ListIncidentsRequest::getBody, ListIncidentsRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListIncidentsResponse::getXRequestId, ListIncidentsResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListIndicatorsRequest, ListIndicatorsResponse> listIndicators =
-        genForListIndicators();
-
-    private static HttpRequestDef<ListIndicatorsRequest, ListIndicatorsResponse> genForListIndicators() {
-        // basic
-        HttpRequestDef.Builder<ListIndicatorsRequest, ListIndicatorsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ListIndicatorsRequest.class, ListIndicatorsResponse.class)
-                .withName("ListIndicators")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/indicators/search")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListIndicatorsRequest::getWorkspaceId, ListIndicatorsRequest::setWorkspaceId));
-        builder.<IndicatorListSearchRequest>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(IndicatorListSearchRequest.class),
-            f -> f.withMarshaller(ListIndicatorsRequest::getBody, ListIndicatorsRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListIndicatorsResponse::getXRequestId, ListIndicatorsResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListPlaybookActionsRequest, ListPlaybookActionsResponse> listPlaybookActions =
-        genForListPlaybookActions();
-
-    private static HttpRequestDef<ListPlaybookActionsRequest, ListPlaybookActionsResponse> genForListPlaybookActions() {
-        // basic
-        HttpRequestDef.Builder<ListPlaybookActionsRequest, ListPlaybookActionsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListPlaybookActionsRequest.class, ListPlaybookActionsResponse.class)
-                .withName("ListPlaybookActions")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/versions/{version_id}/actions")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybookActionsRequest::getWorkspaceId,
-                ListPlaybookActionsRequest::setWorkspaceId));
-        builder.<String>withRequestField("version_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybookActionsRequest::getVersionId, ListPlaybookActionsRequest::setVersionId));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPlaybookActionsRequest::getLimit, ListPlaybookActionsRequest::setLimit));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPlaybookActionsRequest::getOffset, ListPlaybookActionsRequest::setOffset));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListPlaybookActionsResponse::getXRequestId,
-                ListPlaybookActionsResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListPlaybookApprovesRequest, ListPlaybookApprovesResponse> listPlaybookApproves =
-        genForListPlaybookApproves();
-
-    private static HttpRequestDef<ListPlaybookApprovesRequest, ListPlaybookApprovesResponse> genForListPlaybookApproves() {
-        // basic
-        HttpRequestDef.Builder<ListPlaybookApprovesRequest, ListPlaybookApprovesResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListPlaybookApprovesRequest.class, ListPlaybookApprovesResponse.class)
-            .withName("ListPlaybookApproves")
-            .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/versions/approval")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybookApprovesRequest::getWorkspaceId,
-                ListPlaybookApprovesRequest::setWorkspaceId));
-        builder.<String>withRequestField("resource_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybookApprovesRequest::getResourceId,
-                ListPlaybookApprovesRequest::setResourceId));
-        builder.<String>withRequestField("approve_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybookApprovesRequest::getApproveType,
-                ListPlaybookApprovesRequest::setApproveType));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListPlaybookApprovesResponse::getXRequestId,
-                ListPlaybookApprovesResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListPlaybookAuditLogsRequest, ListPlaybookAuditLogsResponse> listPlaybookAuditLogs =
-        genForListPlaybookAuditLogs();
-
-    private static HttpRequestDef<ListPlaybookAuditLogsRequest, ListPlaybookAuditLogsResponse> genForListPlaybookAuditLogs() {
-        // basic
-        HttpRequestDef.Builder<ListPlaybookAuditLogsRequest, ListPlaybookAuditLogsResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, ListPlaybookAuditLogsRequest.class, ListPlaybookAuditLogsResponse.class)
-            .withName("ListPlaybookAuditLogs")
-            .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/instances/auditlogs")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybookAuditLogsRequest::getWorkspaceId,
-                ListPlaybookAuditLogsRequest::setWorkspaceId));
+            f -> f.withMarshaller(ListAnalysisScriptsRequest::getWorkspaceId,
+                ListAnalysisScriptsRequest::setWorkspaceId));
         builder.<Long>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListPlaybookAuditLogsRequest::getOffset, ListPlaybookAuditLogsRequest::setOffset));
+            f -> f.withMarshaller(ListAnalysisScriptsRequest::getOffset, ListAnalysisScriptsRequest::setOffset));
         builder.<Long>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListPlaybookAuditLogsRequest::getLimit, ListPlaybookAuditLogsRequest::setLimit));
+            f -> f.withMarshaller(ListAnalysisScriptsRequest::getLimit, ListAnalysisScriptsRequest::setLimit));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybookAuditLogsRequest::getSortKey, ListPlaybookAuditLogsRequest::setSortKey));
-        builder.<ListPlaybookAuditLogsRequest.SortDirEnum>withRequestField("sort_dir",
+            f -> f.withMarshaller(ListAnalysisScriptsRequest::getSortKey, ListAnalysisScriptsRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListPlaybookAuditLogsRequest.SortDirEnum.class),
-            f -> f.withMarshaller(ListPlaybookAuditLogsRequest::getSortDir, ListPlaybookAuditLogsRequest::setSortDir));
-        builder.<AuditLogInfo>withRequestField("body",
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAnalysisScriptsRequest::getSortDir, ListAnalysisScriptsRequest::setSortDir));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCodeSegmentsRequest, ListCodeSegmentsResponse> listCodeSegments =
+        genForListCodeSegments();
+
+    private static HttpRequestDef<ListCodeSegmentsRequest, ListCodeSegmentsResponse> genForListCodeSegments() {
+        // basic
+        HttpRequestDef.Builder<ListCodeSegmentsRequest, ListCodeSegmentsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCodeSegmentsRequest.class, ListCodeSegmentsResponse.class)
+                .withName("ListCodeSegments")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/code-segments")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCodeSegmentsRequest::getWorkspaceId, ListCodeSegmentsRequest::setWorkspaceId));
+        builder.<String>withRequestField("code_segment_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCodeSegmentsRequest::getCodeSegmentId,
+                ListCodeSegmentsRequest::setCodeSegmentId));
+        builder.<String>withRequestField("code_segment_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCodeSegmentsRequest::getCodeSegmentName,
+                ListCodeSegmentsRequest::setCodeSegmentName));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListCodeSegmentsRequest::getOffset, ListCodeSegmentsRequest::setOffset));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListCodeSegmentsRequest::getLimit, ListCodeSegmentsRequest::setLimit));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCodeSegmentsRequest::getSortKey, ListCodeSegmentsRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCodeSegmentsRequest::getSortDir, ListCodeSegmentsRequest::setSortDir));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDataTransformationMetricsRequest, ListDataTransformationMetricsResponse> listDataTransformationMetrics =
+        genForListDataTransformationMetrics();
+
+    private static HttpRequestDef<ListDataTransformationMetricsRequest, ListDataTransformationMetricsResponse> genForListDataTransformationMetrics() {
+        // basic
+        HttpRequestDef.Builder<ListDataTransformationMetricsRequest, ListDataTransformationMetricsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListDataTransformationMetricsRequest.class,
+                    ListDataTransformationMetricsResponse.class)
+                .withName("ListDataTransformationMetrics")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/data-transformations/metrics")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDataTransformationMetricsRequest::getWorkspaceId,
+                ListDataTransformationMetricsRequest::setWorkspaceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDataTransformationsRequest, ListDataTransformationsResponse> listDataTransformations =
+        genForListDataTransformations();
+
+    private static HttpRequestDef<ListDataTransformationsRequest, ListDataTransformationsResponse> genForListDataTransformations() {
+        // basic
+        HttpRequestDef.Builder<ListDataTransformationsRequest, ListDataTransformationsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDataTransformationsRequest.class, ListDataTransformationsResponse.class)
+            .withName("ListDataTransformations")
+            .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/data-transformations")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDataTransformationsRequest::getWorkspaceId,
+                ListDataTransformationsRequest::setWorkspaceId));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListDataTransformationsRequest::getOffset,
+                ListDataTransformationsRequest::setOffset));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListDataTransformationsRequest::getLimit, ListDataTransformationsRequest::setLimit));
+        builder.<String>withRequestField("output_table_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDataTransformationsRequest::getOutputTableId,
+                ListDataTransformationsRequest::setOutputTableId));
+        builder.<String>withRequestField("data_transformation_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDataTransformationsRequest::getDataTransformationName,
+                ListDataTransformationsRequest::setDataTransformationName));
+        builder.<String>withRequestField("data_transformation_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDataTransformationsRequest::getDataTransformationId,
+                ListDataTransformationsRequest::setDataTransformationId));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDataTransformationsRequest::getSortKey,
+                ListDataTransformationsRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDataTransformationsRequest::getSortDir,
+                ListDataTransformationsRequest::setSortDir));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDirectoriesRequest, ListDirectoriesResponse> listDirectories =
+        genForListDirectories();
+
+    private static HttpRequestDef<ListDirectoriesRequest, ListDirectoriesResponse> genForListDirectories() {
+        // basic
+        HttpRequestDef.Builder<ListDirectoriesRequest, ListDirectoriesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDirectoriesRequest.class, ListDirectoriesResponse.class)
+                .withName("ListDirectories")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/directories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDirectoriesRequest::getWorkspaceId, ListDirectoriesRequest::setWorkspaceId));
+        builder.<ListDirectoriesRequest.CategoryEnum>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListDirectoriesRequest.CategoryEnum.class),
+            f -> f.withMarshaller(ListDirectoriesRequest::getCategory, ListDirectoriesRequest::setCategory));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLayoutFieldAllRequest, ListLayoutFieldAllResponse> listLayoutFieldAll =
+        genForListLayoutFieldAll();
+
+    private static HttpRequestDef<ListLayoutFieldAllRequest, ListLayoutFieldAllResponse> genForListLayoutFieldAll() {
+        // basic
+        HttpRequestDef.Builder<ListLayoutFieldAllRequest, ListLayoutFieldAllResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLayoutFieldAllRequest.class, ListLayoutFieldAllResponse.class)
+                .withName("ListLayoutFieldAll")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/soc/layouts/fields")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLayoutFieldAllRequest::getWorkspaceId,
+                ListLayoutFieldAllRequest::setWorkspaceId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLayoutFieldAllRequest::getName, ListLayoutFieldAllRequest::setName));
+        builder.<Boolean>withRequestField("is_built_in",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListLayoutFieldAllRequest::getIsBuiltIn, ListLayoutFieldAllRequest::setIsBuiltIn));
+        builder.<String>withRequestField("business_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLayoutFieldAllRequest::getBusinessCode,
+                ListLayoutFieldAllRequest::setBusinessCode));
+        builder.<String>withRequestField("layout_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLayoutFieldAllRequest::getLayoutId, ListLayoutFieldAllRequest::setLayoutId));
+
+        // response
+        builder.<List<LayoutFieldResponseBody>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(AuditLogInfo.class),
-            f -> f.withMarshaller(ListPlaybookAuditLogsRequest::getBody, ListPlaybookAuditLogsRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListPlaybookAuditLogsResponse::getXRequestId,
-                ListPlaybookAuditLogsResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListPlaybookInstancesRequest, ListPlaybookInstancesResponse> listPlaybookInstances =
-        genForListPlaybookInstances();
-
-    private static HttpRequestDef<ListPlaybookInstancesRequest, ListPlaybookInstancesResponse> genForListPlaybookInstances() {
-        // basic
-        HttpRequestDef.Builder<ListPlaybookInstancesRequest, ListPlaybookInstancesResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListPlaybookInstancesRequest.class, ListPlaybookInstancesResponse.class)
-            .withName("ListPlaybookInstances")
-            .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/instances")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybookInstancesRequest::getWorkspaceId,
-                ListPlaybookInstancesRequest::setWorkspaceId));
-        builder.<String>withRequestField("status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybookInstancesRequest::getStatus, ListPlaybookInstancesRequest::setStatus));
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybookInstancesRequest::getName, ListPlaybookInstancesRequest::setName));
-        builder.<String>withRequestField("playbook_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybookInstancesRequest::getPlaybookName,
-                ListPlaybookInstancesRequest::setPlaybookName));
-        builder.<String>withRequestField("dataclass_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybookInstancesRequest::getDataclassName,
-                ListPlaybookInstancesRequest::setDataclassName));
-        builder.<String>withRequestField("dataobject_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybookInstancesRequest::getDataobjectName,
-                ListPlaybookInstancesRequest::setDataobjectName));
-        builder.<String>withRequestField("trigger_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybookInstancesRequest::getTriggerType,
-                ListPlaybookInstancesRequest::setTriggerType));
-        builder.<String>withRequestField("from_date",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybookInstancesRequest::getFromDate,
-                ListPlaybookInstancesRequest::setFromDate));
-        builder.<String>withRequestField("to_date",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybookInstancesRequest::getToDate, ListPlaybookInstancesRequest::setToDate));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPlaybookInstancesRequest::getLimit, ListPlaybookInstancesRequest::setLimit));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPlaybookInstancesRequest::getOffset, ListPlaybookInstancesRequest::setOffset));
-
-        // response
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListLayoutFieldAllResponse::getBody, ListLayoutFieldAllResponse::setBody)
+                .withInnerContainerType(LayoutFieldResponseBody.class));
 
         builder.<String>withResponseField("X-request-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ListPlaybookInstancesResponse::getXRequestId,
-                ListPlaybookInstancesResponse::setXRequestId));
+            f -> f.withMarshaller(ListLayoutFieldAllResponse::getXRequestId,
+                ListLayoutFieldAllResponse::setXRequestId));
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPlaybookVersionsRequest, ListPlaybookVersionsResponse> listPlaybookVersions =
-        genForListPlaybookVersions();
+    public static final HttpRequestDef<ListPipesRequest, ListPipesResponse> listPipes = genForListPipes();
 
-    private static HttpRequestDef<ListPlaybookVersionsRequest, ListPlaybookVersionsResponse> genForListPlaybookVersions() {
+    private static HttpRequestDef<ListPipesRequest, ListPipesResponse> genForListPipes() {
         // basic
-        HttpRequestDef.Builder<ListPlaybookVersionsRequest, ListPlaybookVersionsResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListPlaybookVersionsRequest.class, ListPlaybookVersionsResponse.class)
-            .withName("ListPlaybookVersions")
-            .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/{playbook_id}/versions")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybookVersionsRequest::getWorkspaceId,
-                ListPlaybookVersionsRequest::setWorkspaceId));
-        builder.<String>withRequestField("playbook_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybookVersionsRequest::getPlaybookId,
-                ListPlaybookVersionsRequest::setPlaybookId));
-        builder.<String>withRequestField("status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybookVersionsRequest::getStatus, ListPlaybookVersionsRequest::setStatus));
-        builder.<Integer>withRequestField("enabled",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPlaybookVersionsRequest::getEnabled, ListPlaybookVersionsRequest::setEnabled));
-        builder.<Integer>withRequestField("version_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPlaybookVersionsRequest::getVersionType,
-                ListPlaybookVersionsRequest::setVersionType));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPlaybookVersionsRequest::getOffset, ListPlaybookVersionsRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPlaybookVersionsRequest::getLimit, ListPlaybookVersionsRequest::setLimit));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListPlaybookVersionsResponse::getXRequestId,
-                ListPlaybookVersionsResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListPlaybooksRequest, ListPlaybooksResponse> listPlaybooks =
-        genForListPlaybooks();
-
-    private static HttpRequestDef<ListPlaybooksRequest, ListPlaybooksResponse> genForListPlaybooks() {
-        // basic
-        HttpRequestDef.Builder<ListPlaybooksRequest, ListPlaybooksResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListPlaybooksRequest.class, ListPlaybooksResponse.class)
-                .withName("ListPlaybooks")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks")
+        HttpRequestDef.Builder<ListPipesRequest, ListPipesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPipesRequest.class, ListPipesResponse.class)
+                .withName("ListPipes")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/pipes")
                 .withContentType("application/json");
 
         // requests
@@ -2140,62 +1561,52 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybooksRequest::getWorkspaceId, ListPlaybooksRequest::setWorkspaceId));
-        builder.<String>withRequestField("search_txt",
+            f -> f.withMarshaller(ListPipesRequest::getWorkspaceId, ListPipesRequest::setWorkspaceId));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListPipesRequest::getOffset, ListPipesRequest::setOffset));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListPipesRequest::getLimit, ListPipesRequest::setLimit));
+        builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybooksRequest::getSearchTxt, ListPlaybooksRequest::setSearchTxt));
-        builder.<Boolean>withRequestField("enabled",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListPlaybooksRequest::getEnabled, ListPlaybooksRequest::setEnabled));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPlaybooksRequest::getOffset, ListPlaybooksRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPlaybooksRequest::getLimit, ListPlaybooksRequest::setLimit));
-        builder.<String>withRequestField("description",
+            f -> f.withMarshaller(ListPipesRequest::getSortKey, ListPipesRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybooksRequest::getDescription, ListPlaybooksRequest::setDescription));
-        builder.<String>withRequestField("dataclass_name",
+            f -> f.withMarshaller(ListPipesRequest::getSortDir, ListPipesRequest::setSortDir));
+        builder.<String>withRequestField("pipe_name_in_query",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybooksRequest::getDataclassName, ListPlaybooksRequest::setDataclassName));
-        builder.<String>withRequestField("name",
+            f -> f.withMarshaller(ListPipesRequest::getPipeNameInQuery, ListPipesRequest::setPipeNameInQuery));
+        builder.<String>withRequestField("pipe_id_in_query",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPlaybooksRequest::getName, ListPlaybooksRequest::setName));
+            f -> f.withMarshaller(ListPipesRequest::getPipeIdInQuery, ListPipesRequest::setPipeIdInQuery));
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListPlaybooksResponse::getXRequestId, ListPlaybooksResponse::setXRequestId));
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflows =
-        genForListWorkflows();
+    public static final HttpRequestDef<ListRetrieveScriptsRequest, ListRetrieveScriptsResponse> listRetrieveScripts =
+        genForListRetrieveScripts();
 
-    private static HttpRequestDef<ListWorkflowsRequest, ListWorkflowsResponse> genForListWorkflows() {
+    private static HttpRequestDef<ListRetrieveScriptsRequest, ListRetrieveScriptsResponse> genForListRetrieveScripts() {
         // basic
-        HttpRequestDef.Builder<ListWorkflowsRequest, ListWorkflowsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListWorkflowsRequest.class, ListWorkflowsResponse.class)
-                .withName("ListWorkflows")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/workflows")
+        HttpRequestDef.Builder<ListRetrieveScriptsRequest, ListRetrieveScriptsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRetrieveScriptsRequest.class, ListRetrieveScriptsResponse.class)
+                .withName("ListRetrieveScripts")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/retrieve-scripts")
                 .withContentType("application/json");
 
         // requests
@@ -2203,153 +1614,173 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkflowsRequest::getWorkspaceId, ListWorkflowsRequest::setWorkspaceId));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWorkflowsRequest::getOffset, ListWorkflowsRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListWorkflowsRequest::getLimit, ListWorkflowsRequest::setLimit));
-        builder.<ListWorkflowsRequest.OrderEnum>withRequestField("order",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListWorkflowsRequest.OrderEnum.class),
-            f -> f.withMarshaller(ListWorkflowsRequest::getOrder, ListWorkflowsRequest::setOrder));
-        builder.<ListWorkflowsRequest.SortbyEnum>withRequestField("sortby",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListWorkflowsRequest.SortbyEnum.class),
-            f -> f.withMarshaller(ListWorkflowsRequest::getSortby, ListWorkflowsRequest::setSortby));
-        builder.<Boolean>withRequestField("enabled",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListWorkflowsRequest::getEnabled, ListWorkflowsRequest::setEnabled));
-        builder.<Boolean>withRequestField("last_version",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListWorkflowsRequest::getLastVersion, ListWorkflowsRequest::setLastVersion));
-        builder.<String>withRequestField("name",
+            f -> f.withMarshaller(ListRetrieveScriptsRequest::getWorkspaceId,
+                ListRetrieveScriptsRequest::setWorkspaceId));
+        builder.<String>withRequestField("table_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkflowsRequest::getName, ListWorkflowsRequest::setName));
-        builder.<String>withRequestField("description",
+            f -> f.withMarshaller(ListRetrieveScriptsRequest::getTableId, ListRetrieveScriptsRequest::setTableId));
+        builder.<String>withRequestField("script_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkflowsRequest::getDescription, ListWorkflowsRequest::setDescription));
-        builder.<String>withRequestField("dataclass_id",
+            f -> f.withMarshaller(ListRetrieveScriptsRequest::getScriptName,
+                ListRetrieveScriptsRequest::setScriptName));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListRetrieveScriptsRequest::getOffset, ListRetrieveScriptsRequest::setOffset));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListRetrieveScriptsRequest::getLimit, ListRetrieveScriptsRequest::setLimit));
+        builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkflowsRequest::getDataclassId, ListWorkflowsRequest::setDataclassId));
-        builder.<String>withRequestField("dataclass_name",
+            f -> f.withMarshaller(ListRetrieveScriptsRequest::getSortKey, ListRetrieveScriptsRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkflowsRequest::getDataclassName, ListWorkflowsRequest::setDataclassName));
-        builder.<String>withRequestField("aop_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkflowsRequest::getAopType, ListWorkflowsRequest::setAopType));
+            f -> f.withMarshaller(ListRetrieveScriptsRequest::getSortDir, ListRetrieveScriptsRequest::setSortDir));
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListWorkflowsResponse::getXRequestId, ListWorkflowsResponse::setXRequestId));
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListWorkspacesRequest, ListWorkspacesResponse> listWorkspaces =
-        genForListWorkspaces();
+    public static final HttpRequestDef<ListTableHistogramsRequest, ListTableHistogramsResponse> listTableHistograms =
+        genForListTableHistograms();
 
-    private static HttpRequestDef<ListWorkspacesRequest, ListWorkspacesResponse> genForListWorkspaces() {
+    private static HttpRequestDef<ListTableHistogramsRequest, ListTableHistogramsResponse> genForListTableHistograms() {
         // basic
-        HttpRequestDef.Builder<ListWorkspacesRequest, ListWorkspacesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListWorkspacesRequest.class, ListWorkspacesResponse.class)
-                .withName("ListWorkspaces")
-                .withUri("/v1/{project_id}/workspaces")
+        HttpRequestDef.Builder<ListTableHistogramsRequest, ListTableHistogramsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListTableHistogramsRequest.class, ListTableHistogramsResponse.class)
+                .withName("ListTableHistograms")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/tables/{table_id}/histograms")
                 .withContentType("application/json");
 
         // requests
-        builder.<BigDecimal>withRequestField("offset",
-            LocationType.Query,
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BigDecimal.class),
-            f -> f.withMarshaller(ListWorkspacesRequest::getOffset, ListWorkspacesRequest::setOffset));
-        builder.<BigDecimal>withRequestField("limit",
-            LocationType.Query,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTableHistogramsRequest::getWorkspaceId,
+                ListTableHistogramsRequest::setWorkspaceId));
+        builder.<String>withRequestField("table_id",
+            LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BigDecimal.class),
-            f -> f.withMarshaller(ListWorkspacesRequest::getLimit, ListWorkspacesRequest::setLimit));
-        builder.<String>withRequestField("region_id",
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTableHistogramsRequest::getTableId, ListTableHistogramsRequest::setTableId));
+        builder.<ListTableHistogramsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListTableHistogramsRequestBody.class),
+            f -> f.withMarshaller(ListTableHistogramsRequest::getBody, ListTableHistogramsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTableLogsRequest, ListTableLogsResponse> listTableLogs =
+        genForListTableLogs();
+
+    private static HttpRequestDef<ListTableLogsRequest, ListTableLogsResponse> genForListTableLogs() {
+        // basic
+        HttpRequestDef.Builder<ListTableLogsRequest, ListTableLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListTableLogsRequest.class, ListTableLogsResponse.class)
+                .withName("ListTableLogs")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/tables/{table_id}/logs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTableLogsRequest::getWorkspaceId, ListTableLogsRequest::setWorkspaceId));
+        builder.<String>withRequestField("table_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTableLogsRequest::getTableId, ListTableLogsRequest::setTableId));
+        builder.<ListTableLogsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListTableLogsRequestBody.class),
+            f -> f.withMarshaller(ListTableLogsRequest::getBody, ListTableLogsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTablesRequest, ListTablesResponse> listTables = genForListTables();
+
+    private static HttpRequestDef<ListTablesRequest, ListTablesResponse> genForListTables() {
+        // basic
+        HttpRequestDef.Builder<ListTablesRequest, ListTablesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTablesRequest.class, ListTablesResponse.class)
+                .withName("ListTables")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/tables")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTablesRequest::getWorkspaceId, ListTablesRequest::setWorkspaceId));
+        builder.<ListTablesRequest.CategoryEnum>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTablesRequest.CategoryEnum.class),
+            f -> f.withMarshaller(ListTablesRequest::getCategory, ListTablesRequest::setCategory));
+        builder.<String>withRequestField("table_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkspacesRequest::getRegionId, ListWorkspacesRequest::setRegionId));
-        builder.<String>withRequestField("name",
+            f -> f.withMarshaller(ListTablesRequest::getTableId, ListTablesRequest::setTableId));
+        builder.<String>withRequestField("table_alias",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkspacesRequest::getName, ListWorkspacesRequest::setName));
-        builder.<String>withRequestField("description",
+            f -> f.withMarshaller(ListTablesRequest::getTableAlias, ListTablesRequest::setTableAlias));
+        builder.<String>withRequestField("table_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkspacesRequest::getDescription, ListWorkspacesRequest::setDescription));
-        builder.<String>withRequestField("view_bind_id",
+            f -> f.withMarshaller(ListTablesRequest::getTableName, ListTablesRequest::setTableName));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListTablesRequest::getOffset, ListTablesRequest::setOffset));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListTablesRequest::getLimit, ListTablesRequest::setLimit));
+        builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkspacesRequest::getViewBindId, ListWorkspacesRequest::setViewBindId));
-        builder.<String>withRequestField("view_bind_name",
+            f -> f.withMarshaller(ListTablesRequest::getSortKey, ListTablesRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkspacesRequest::getViewBindName, ListWorkspacesRequest::setViewBindName));
-        builder.<String>withRequestField("create_time_start",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkspacesRequest::getCreateTimeStart,
-                ListWorkspacesRequest::setCreateTimeStart));
-        builder.<String>withRequestField("create_time_end",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkspacesRequest::getCreateTimeEnd, ListWorkspacesRequest::setCreateTimeEnd));
-        builder.<Boolean>withRequestField("is_view",
+            f -> f.withMarshaller(ListTablesRequest::getSortDir, ListTablesRequest::setSortDir));
+        builder.<Boolean>withRequestField("exists",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListWorkspacesRequest::getIsView, ListWorkspacesRequest::setIsView));
-        builder.<String>withRequestField("ids",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkspacesRequest::getIds, ListWorkspacesRequest::setIds));
-        builder.<String>withRequestField("normal_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkspacesRequest::getNormalProjectId,
-                ListWorkspacesRequest::setNormalProjectId));
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListWorkspacesRequest::getEnterpriseProjectId,
-                ListWorkspacesRequest::setEnterpriseProjectId));
+            f -> f.withMarshaller(ListTablesRequest::getExists, ListTablesRequest::setExists));
 
         // response
 
@@ -2389,14 +1820,15 @@ public class SecMasterMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAlertRequest, ShowAlertResponse> showAlert = genForShowAlert();
+    public static final HttpRequestDef<SearchCheckitemsRequest, SearchCheckitemsResponse> searchCheckitems =
+        genForSearchCheckitems();
 
-    private static HttpRequestDef<ShowAlertRequest, ShowAlertResponse> genForShowAlert() {
+    private static HttpRequestDef<SearchCheckitemsRequest, SearchCheckitemsResponse> genForSearchCheckitems() {
         // basic
-        HttpRequestDef.Builder<ShowAlertRequest, ShowAlertResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowAlertRequest.class, ShowAlertResponse.class)
-                .withName("ShowAlert")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/alerts/{alert_id}")
+        HttpRequestDef.Builder<SearchCheckitemsRequest, SearchCheckitemsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SearchCheckitemsRequest.class, SearchCheckitemsResponse.class)
+                .withName("SearchCheckitems")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/sa/baseline/checkitems/search")
                 .withContentType("application/json");
 
         // requests
@@ -2404,20 +1836,89 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAlertRequest::getWorkspaceId, ShowAlertRequest::setWorkspaceId));
-        builder.<String>withRequestField("alert_id",
-            LocationType.Path,
+            f -> f.withMarshaller(SearchCheckitemsRequest::getWorkspaceId, SearchCheckitemsRequest::setWorkspaceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAlertRequest::getAlertId, ShowAlertRequest::setAlertId));
+            f -> f.withMarshaller(SearchCheckitemsRequest::getXLanguage, SearchCheckitemsRequest::setXLanguage));
+        builder.<SearchCheckitemsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SearchCheckitemsRequestBody.class),
+            f -> f.withMarshaller(SearchCheckitemsRequest::getBody, SearchCheckitemsRequest::setBody));
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchCompliancePackagesRequest, SearchCompliancePackagesResponse> searchCompliancePackages =
+        genForSearchCompliancePackages();
+
+    private static HttpRequestDef<SearchCompliancePackagesRequest, SearchCompliancePackagesResponse> genForSearchCompliancePackages() {
+        // basic
+        HttpRequestDef.Builder<SearchCompliancePackagesRequest, SearchCompliancePackagesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, SearchCompliancePackagesRequest.class, SearchCompliancePackagesResponse.class)
+                .withName("SearchCompliancePackages")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/sa/baseline/compliance-packages/search")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchCompliancePackagesRequest::getWorkspaceId,
+                SearchCompliancePackagesRequest::setWorkspaceId));
+        builder.<String>withRequestField("X-Language",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowAlertResponse::getXRequestId, ShowAlertResponse::setXRequestId));
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchCompliancePackagesRequest::getXLanguage,
+                SearchCompliancePackagesRequest::setXLanguage));
+        builder.<SearchCompliancePackagesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SearchCompliancePackagesRequestBody.class),
+            f -> f.withMarshaller(SearchCompliancePackagesRequest::getBody, SearchCompliancePackagesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAdhocResultRequest, ShowAdhocResultResponse> showAdhocResult =
+        genForShowAdhocResult();
+
+    private static HttpRequestDef<ShowAdhocResultRequest, ShowAdhocResultResponse> genForShowAdhocResult() {
+        // basic
+        HttpRequestDef.Builder<ShowAdhocResultRequest, ShowAdhocResultResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAdhocResultRequest.class, ShowAdhocResultResponse.class)
+                .withName("ShowAdhocResult")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/ad-hoc-queries/{query_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAdhocResultRequest::getWorkspaceId, ShowAdhocResultRequest::setWorkspaceId));
+        builder.<String>withRequestField("query_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAdhocResultRequest::getQueryId, ShowAdhocResultRequest::setQueryId));
+        builder.<Integer>withRequestField("batch",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowAdhocResultRequest::getBatch, ShowAdhocResultRequest::setBatch));
+
+        // response
+
         return builder.build();
     }
 
@@ -2429,7 +1930,7 @@ public class SecMasterMeta {
         HttpRequestDef.Builder<ShowAlertRuleRequest, ShowAlertRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowAlertRuleRequest.class, ShowAlertRuleResponse.class)
                 .withName("ShowAlertRule")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/siem/alert-rules/{rule_id}")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/alert-rules/{alert_rule_id}")
                 .withContentType("application/json");
 
         // requests
@@ -2438,19 +1939,14 @@ public class SecMasterMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAlertRuleRequest::getWorkspaceId, ShowAlertRuleRequest::setWorkspaceId));
-        builder.<String>withRequestField("rule_id",
+        builder.<String>withRequestField("alert_rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAlertRuleRequest::getRuleId, ShowAlertRuleRequest::setRuleId));
+            f -> f.withMarshaller(ShowAlertRuleRequest::getAlertRuleId, ShowAlertRuleRequest::setAlertRuleId));
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowAlertRuleResponse::getXRequestId, ShowAlertRuleResponse::setXRequestId));
         return builder.build();
     }
 
@@ -2462,7 +1958,7 @@ public class SecMasterMeta {
         HttpRequestDef.Builder<ShowAlertRuleTemplateRequest, ShowAlertRuleTemplateResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowAlertRuleTemplateRequest.class, ShowAlertRuleTemplateResponse.class)
             .withName("ShowAlertRuleTemplate")
-            .withUri("/v1/{project_id}/workspaces/{workspace_id}/siem/alert-rules/templates/{template_id}")
+            .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/alert-rules/templates/{template_id}")
             .withContentType("application/json");
 
         // requests
@@ -2481,23 +1977,18 @@ public class SecMasterMeta {
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowAlertRuleTemplateResponse::getXRequestId,
-                ShowAlertRuleTemplateResponse::setXRequestId));
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowIncidentRequest, ShowIncidentResponse> showIncident = genForShowIncident();
+    public static final HttpRequestDef<ShowAnalysisScriptRequest, ShowAnalysisScriptResponse> showAnalysisScript =
+        genForShowAnalysisScript();
 
-    private static HttpRequestDef<ShowIncidentRequest, ShowIncidentResponse> genForShowIncident() {
+    private static HttpRequestDef<ShowAnalysisScriptRequest, ShowAnalysisScriptResponse> genForShowAnalysisScript() {
         // basic
-        HttpRequestDef.Builder<ShowIncidentRequest, ShowIncidentResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowIncidentRequest.class, ShowIncidentResponse.class)
-                .withName("ShowIncident")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/incidents/{incident_id}")
+        HttpRequestDef.Builder<ShowAnalysisScriptRequest, ShowAnalysisScriptResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAnalysisScriptRequest.class, ShowAnalysisScriptResponse.class)
+                .withName("ShowAnalysisScript")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/analysis-scripts/{analysis_script_id}")
                 .withContentType("application/json");
 
         // requests
@@ -2505,27 +1996,29 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIncidentRequest::getWorkspaceId, ShowIncidentRequest::setWorkspaceId));
-        builder.<String>withRequestField("incident_id",
+            f -> f.withMarshaller(ShowAnalysisScriptRequest::getWorkspaceId,
+                ShowAnalysisScriptRequest::setWorkspaceId));
+        builder.<String>withRequestField("analysis_script_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIncidentRequest::getIncidentId, ShowIncidentRequest::setIncidentId));
+            f -> f.withMarshaller(ShowAnalysisScriptRequest::getAnalysisScriptId,
+                ShowAnalysisScriptRequest::setAnalysisScriptId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowIndicatorDetailRequest, ShowIndicatorDetailResponse> showIndicatorDetail =
-        genForShowIndicatorDetail();
+    public static final HttpRequestDef<ShowCheckitemDetailRequest, ShowCheckitemDetailResponse> showCheckitemDetail =
+        genForShowCheckitemDetail();
 
-    private static HttpRequestDef<ShowIndicatorDetailRequest, ShowIndicatorDetailResponse> genForShowIndicatorDetail() {
+    private static HttpRequestDef<ShowCheckitemDetailRequest, ShowCheckitemDetailResponse> genForShowCheckitemDetail() {
         // basic
-        HttpRequestDef.Builder<ShowIndicatorDetailRequest, ShowIndicatorDetailResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowIndicatorDetailRequest.class, ShowIndicatorDetailResponse.class)
-                .withName("ShowIndicatorDetail")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/indicators/{indicator_id}")
+        HttpRequestDef.Builder<ShowCheckitemDetailRequest, ShowCheckitemDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCheckitemDetailRequest.class, ShowCheckitemDetailResponse.class)
+                .withName("ShowCheckitemDetail")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/sa/baseline/checkitems/{checkitem_id}")
                 .withContentType("application/json");
 
         // requests
@@ -2533,34 +2026,34 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIndicatorDetailRequest::getWorkspaceId,
-                ShowIndicatorDetailRequest::setWorkspaceId));
-        builder.<String>withRequestField("indicator_id",
+            f -> f.withMarshaller(ShowCheckitemDetailRequest::getWorkspaceId,
+                ShowCheckitemDetailRequest::setWorkspaceId));
+        builder.<String>withRequestField("checkitem_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowIndicatorDetailRequest::getIndicatorId,
-                ShowIndicatorDetailRequest::setIndicatorId));
+            f -> f.withMarshaller(ShowCheckitemDetailRequest::getCheckitemId,
+                ShowCheckitemDetailRequest::setCheckitemId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCheckitemDetailRequest::getXLanguage, ShowCheckitemDetailRequest::setXLanguage));
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowIndicatorDetailResponse::getXRequestId,
-                ShowIndicatorDetailResponse::setXRequestId));
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPlaybookRequest, ShowPlaybookResponse> showPlaybook = genForShowPlaybook();
+    public static final HttpRequestDef<ShowCodeSegmentRequest, ShowCodeSegmentResponse> showCodeSegment =
+        genForShowCodeSegment();
 
-    private static HttpRequestDef<ShowPlaybookRequest, ShowPlaybookResponse> genForShowPlaybook() {
+    private static HttpRequestDef<ShowCodeSegmentRequest, ShowCodeSegmentResponse> genForShowCodeSegment() {
         // basic
-        HttpRequestDef.Builder<ShowPlaybookRequest, ShowPlaybookResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowPlaybookRequest.class, ShowPlaybookResponse.class)
-                .withName("ShowPlaybook")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/{playbook_id}")
+        HttpRequestDef.Builder<ShowCodeSegmentRequest, ShowCodeSegmentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCodeSegmentRequest.class, ShowCodeSegmentResponse.class)
+                .withName("ShowCodeSegment")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/code-segments/{code_segment_id}")
                 .withContentType("application/json");
 
         // requests
@@ -2568,122 +2061,67 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPlaybookRequest::getWorkspaceId, ShowPlaybookRequest::setWorkspaceId));
-        builder.<String>withRequestField("playbook_id",
+            f -> f.withMarshaller(ShowCodeSegmentRequest::getWorkspaceId, ShowCodeSegmentRequest::setWorkspaceId));
+        builder.<String>withRequestField("code_segment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPlaybookRequest::getPlaybookId, ShowPlaybookRequest::setPlaybookId));
+            f -> f.withMarshaller(ShowCodeSegmentRequest::getCodeSegmentId, ShowCodeSegmentRequest::setCodeSegmentId));
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowPlaybookResponse::getXRequestId, ShowPlaybookResponse::setXRequestId));
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPlaybookInstanceRequest, ShowPlaybookInstanceResponse> showPlaybookInstance =
-        genForShowPlaybookInstance();
+    public static final HttpRequestDef<ShowCompliancePackageDetailRequest, ShowCompliancePackageDetailResponse> showCompliancePackageDetail =
+        genForShowCompliancePackageDetail();
 
-    private static HttpRequestDef<ShowPlaybookInstanceRequest, ShowPlaybookInstanceResponse> genForShowPlaybookInstance() {
+    private static HttpRequestDef<ShowCompliancePackageDetailRequest, ShowCompliancePackageDetailResponse> genForShowCompliancePackageDetail() {
         // basic
-        HttpRequestDef.Builder<ShowPlaybookInstanceRequest, ShowPlaybookInstanceResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowPlaybookInstanceRequest.class, ShowPlaybookInstanceResponse.class)
-            .withName("ShowPlaybookInstance")
-            .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/instances/{instance_id}")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPlaybookInstanceRequest::getWorkspaceId,
-                ShowPlaybookInstanceRequest::setWorkspaceId));
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPlaybookInstanceRequest::getInstanceId,
-                ShowPlaybookInstanceRequest::setInstanceId));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowPlaybookInstanceResponse::getXRequestId,
-                ShowPlaybookInstanceResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowPlaybookMonitorsRequest, ShowPlaybookMonitorsResponse> showPlaybookMonitors =
-        genForShowPlaybookMonitors();
-
-    private static HttpRequestDef<ShowPlaybookMonitorsRequest, ShowPlaybookMonitorsResponse> genForShowPlaybookMonitors() {
-        // basic
-        HttpRequestDef.Builder<ShowPlaybookMonitorsRequest, ShowPlaybookMonitorsResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowPlaybookMonitorsRequest.class, ShowPlaybookMonitorsResponse.class)
-            .withName("ShowPlaybookMonitors")
-            .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/{playbook_id}/monitor")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPlaybookMonitorsRequest::getWorkspaceId,
-                ShowPlaybookMonitorsRequest::setWorkspaceId));
-        builder.<String>withRequestField("playbook_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPlaybookMonitorsRequest::getPlaybookId,
-                ShowPlaybookMonitorsRequest::setPlaybookId));
-        builder.<String>withRequestField("start_time",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPlaybookMonitorsRequest::getStartTime,
-                ShowPlaybookMonitorsRequest::setStartTime));
-        builder.<ShowPlaybookMonitorsRequest.VersionQueryTypeEnum>withRequestField("version_query_type",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ShowPlaybookMonitorsRequest.VersionQueryTypeEnum.class),
-            f -> f.withMarshaller(ShowPlaybookMonitorsRequest::getVersionQueryType,
-                ShowPlaybookMonitorsRequest::setVersionQueryType));
-        builder.<String>withRequestField("end_time",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPlaybookMonitorsRequest::getEndTime, ShowPlaybookMonitorsRequest::setEndTime));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowPlaybookMonitorsResponse::getXRequestId,
-                ShowPlaybookMonitorsResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowPlaybookRuleRequest, ShowPlaybookRuleResponse> showPlaybookRule =
-        genForShowPlaybookRule();
-
-    private static HttpRequestDef<ShowPlaybookRuleRequest, ShowPlaybookRuleResponse> genForShowPlaybookRule() {
-        // basic
-        HttpRequestDef.Builder<ShowPlaybookRuleRequest, ShowPlaybookRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowPlaybookRuleRequest.class, ShowPlaybookRuleResponse.class)
-                .withName("ShowPlaybookRule")
+        HttpRequestDef.Builder<ShowCompliancePackageDetailRequest, ShowCompliancePackageDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowCompliancePackageDetailRequest.class,
+                    ShowCompliancePackageDetailResponse.class)
+                .withName("ShowCompliancePackageDetail")
                 .withUri(
-                    "/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/versions/{version_id}/rules/{rule_id}")
+                    "/v2/{project_id}/workspaces/{workspace_id}/sa/baseline/compliance-packages/{compliance_packages_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("compliance_packages_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCompliancePackageDetailRequest::getCompliancePackagesId,
+                ShowCompliancePackageDetailRequest::setCompliancePackagesId));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCompliancePackageDetailRequest::getWorkspaceId,
+                ShowCompliancePackageDetailRequest::setWorkspaceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCompliancePackageDetailRequest::getXLanguage,
+                ShowCompliancePackageDetailRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDataConsumptionRequest, ShowDataConsumptionResponse> showDataConsumption =
+        genForShowDataConsumption();
+
+    private static HttpRequestDef<ShowDataConsumptionRequest, ShowDataConsumptionResponse> genForShowDataConsumption() {
+        // basic
+        HttpRequestDef.Builder<ShowDataConsumptionRequest, ShowDataConsumptionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDataConsumptionRequest.class, ShowDataConsumptionResponse.class)
+                .withName("ShowDataConsumption")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/tables/{table_id}/consumption")
                 .withContentType("application/json");
 
         // requests
@@ -2691,37 +2129,28 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPlaybookRuleRequest::getWorkspaceId, ShowPlaybookRuleRequest::setWorkspaceId));
-        builder.<String>withRequestField("version_id",
+            f -> f.withMarshaller(ShowDataConsumptionRequest::getWorkspaceId,
+                ShowDataConsumptionRequest::setWorkspaceId));
+        builder.<String>withRequestField("table_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPlaybookRuleRequest::getVersionId, ShowPlaybookRuleRequest::setVersionId));
-        builder.<String>withRequestField("rule_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPlaybookRuleRequest::getRuleId, ShowPlaybookRuleRequest::setRuleId));
+            f -> f.withMarshaller(ShowDataConsumptionRequest::getTableId, ShowDataConsumptionRequest::setTableId));
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowPlaybookRuleResponse::getXRequestId, ShowPlaybookRuleResponse::setXRequestId));
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPlaybookStatisticsRequest, ShowPlaybookStatisticsResponse> showPlaybookStatistics =
-        genForShowPlaybookStatistics();
+    public static final HttpRequestDef<ShowDataTransformationRequest, ShowDataTransformationResponse> showDataTransformation =
+        genForShowDataTransformation();
 
-    private static HttpRequestDef<ShowPlaybookStatisticsRequest, ShowPlaybookStatisticsResponse> genForShowPlaybookStatistics() {
+    private static HttpRequestDef<ShowDataTransformationRequest, ShowDataTransformationResponse> genForShowDataTransformation() {
         // basic
-        HttpRequestDef.Builder<ShowPlaybookStatisticsRequest, ShowPlaybookStatisticsResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowPlaybookStatisticsRequest.class, ShowPlaybookStatisticsResponse.class)
-            .withName("ShowPlaybookStatistics")
-            .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/statistics")
+        HttpRequestDef.Builder<ShowDataTransformationRequest, ShowDataTransformationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDataTransformationRequest.class, ShowDataTransformationResponse.class)
+            .withName("ShowDataTransformation")
+            .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/data-transformations/{data_transformation_id}")
             .withContentType("application/json");
 
         // requests
@@ -2729,65 +2158,29 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPlaybookStatisticsRequest::getWorkspaceId,
-                ShowPlaybookStatisticsRequest::setWorkspaceId));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowPlaybookStatisticsResponse::getXRequestId,
-                ShowPlaybookStatisticsResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowPlaybookTopologyRequest, ShowPlaybookTopologyResponse> showPlaybookTopology =
-        genForShowPlaybookTopology();
-
-    private static HttpRequestDef<ShowPlaybookTopologyRequest, ShowPlaybookTopologyResponse> genForShowPlaybookTopology() {
-        // basic
-        HttpRequestDef.Builder<ShowPlaybookTopologyRequest, ShowPlaybookTopologyResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowPlaybookTopologyRequest.class, ShowPlaybookTopologyResponse.class)
-            .withName("ShowPlaybookTopology")
-            .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/instances/{instance_id}/topology")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("workspace_id",
+            f -> f.withMarshaller(ShowDataTransformationRequest::getWorkspaceId,
+                ShowDataTransformationRequest::setWorkspaceId));
+        builder.<String>withRequestField("data_transformation_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPlaybookTopologyRequest::getWorkspaceId,
-                ShowPlaybookTopologyRequest::setWorkspaceId));
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPlaybookTopologyRequest::getInstanceId,
-                ShowPlaybookTopologyRequest::setInstanceId));
+            f -> f.withMarshaller(ShowDataTransformationRequest::getDataTransformationId,
+                ShowDataTransformationRequest::setDataTransformationId));
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowPlaybookTopologyResponse::getXRequestId,
-                ShowPlaybookTopologyResponse::setXRequestId));
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPlaybookVersionRequest, ShowPlaybookVersionResponse> showPlaybookVersion =
-        genForShowPlaybookVersion();
+    public static final HttpRequestDef<ShowLayoutFieldInfoRequest, ShowLayoutFieldInfoResponse> showLayoutFieldInfo =
+        genForShowLayoutFieldInfo();
 
-    private static HttpRequestDef<ShowPlaybookVersionRequest, ShowPlaybookVersionResponse> genForShowPlaybookVersion() {
+    private static HttpRequestDef<ShowLayoutFieldInfoRequest, ShowLayoutFieldInfoResponse> genForShowLayoutFieldInfo() {
         // basic
-        HttpRequestDef.Builder<ShowPlaybookVersionRequest, ShowPlaybookVersionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowPlaybookVersionRequest.class, ShowPlaybookVersionResponse.class)
-                .withName("ShowPlaybookVersion")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/versions/{version_id}")
+        HttpRequestDef.Builder<ShowLayoutFieldInfoRequest, ShowLayoutFieldInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowLayoutFieldInfoRequest.class, ShowLayoutFieldInfoResponse.class)
+                .withName("ShowLayoutFieldInfo")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/soc/layouts/fields/{field_id}")
                 .withContentType("application/json");
 
         // requests
@@ -2795,13 +2188,18 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPlaybookVersionRequest::getWorkspaceId,
-                ShowPlaybookVersionRequest::setWorkspaceId));
-        builder.<String>withRequestField("version_id",
+            f -> f.withMarshaller(ShowLayoutFieldInfoRequest::getWorkspaceId,
+                ShowLayoutFieldInfoRequest::setWorkspaceId));
+        builder.<String>withRequestField("field_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPlaybookVersionRequest::getVersionId, ShowPlaybookVersionRequest::setVersionId));
+            f -> f.withMarshaller(ShowLayoutFieldInfoRequest::getFieldId, ShowLayoutFieldInfoRequest::setFieldId));
+        builder.<String>withRequestField("layout_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLayoutFieldInfoRequest::getLayoutId, ShowLayoutFieldInfoRequest::setLayoutId));
 
         // response
 
@@ -2809,20 +2207,20 @@ public class SecMasterMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ShowPlaybookVersionResponse::getXRequestId,
-                ShowPlaybookVersionResponse::setXRequestId));
+            f -> f.withMarshaller(ShowLayoutFieldInfoResponse::getXRequestId,
+                ShowLayoutFieldInfoResponse::setXRequestId));
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowWorkspaceRequest, ShowWorkspaceResponse> showWorkspace =
-        genForShowWorkspace();
+    public static final HttpRequestDef<ShowMonitorStatsRequest, ShowMonitorStatsResponse> showMonitorStats =
+        genForShowMonitorStats();
 
-    private static HttpRequestDef<ShowWorkspaceRequest, ShowWorkspaceResponse> genForShowWorkspace() {
+    private static HttpRequestDef<ShowMonitorStatsRequest, ShowMonitorStatsResponse> genForShowMonitorStats() {
         // basic
-        HttpRequestDef.Builder<ShowWorkspaceRequest, ShowWorkspaceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowWorkspaceRequest.class, ShowWorkspaceResponse.class)
-                .withName("ShowWorkspace")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}")
+        HttpRequestDef.Builder<ShowMonitorStatsRequest, ShowMonitorStatsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowMonitorStatsRequest.class, ShowMonitorStatsResponse.class)
+                .withName("ShowMonitorStats")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/tables/{table_id}/statistics")
                 .withContentType("application/json");
 
         // requests
@@ -2830,7 +2228,150 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowWorkspaceRequest::getWorkspaceId, ShowWorkspaceRequest::setWorkspaceId));
+            f -> f.withMarshaller(ShowMonitorStatsRequest::getWorkspaceId, ShowMonitorStatsRequest::setWorkspaceId));
+        builder.<String>withRequestField("table_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMonitorStatsRequest::getTableId, ShowMonitorStatsRequest::setTableId));
+        builder.<ShowPulsarMonitorStatsBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowPulsarMonitorStatsBody.class),
+            f -> f.withMarshaller(ShowMonitorStatsRequest::getBody, ShowMonitorStatsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPipeRequest, ShowPipeResponse> showPipe = genForShowPipe();
+
+    private static HttpRequestDef<ShowPipeRequest, ShowPipeResponse> genForShowPipe() {
+        // basic
+        HttpRequestDef.Builder<ShowPipeRequest, ShowPipeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPipeRequest.class, ShowPipeResponse.class)
+                .withName("ShowPipe")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/pipes/{pipe_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPipeRequest::getWorkspaceId, ShowPipeRequest::setWorkspaceId));
+        builder.<String>withRequestField("pipe_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPipeRequest::getPipeId, ShowPipeRequest::setPipeId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRetrieveScriptRequest, ShowRetrieveScriptResponse> showRetrieveScript =
+        genForShowRetrieveScript();
+
+    private static HttpRequestDef<ShowRetrieveScriptRequest, ShowRetrieveScriptResponse> genForShowRetrieveScript() {
+        // basic
+        HttpRequestDef.Builder<ShowRetrieveScriptRequest, ShowRetrieveScriptResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRetrieveScriptRequest.class, ShowRetrieveScriptResponse.class)
+                .withName("ShowRetrieveScript")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/retrieve-scripts/{retrieve_script_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRetrieveScriptRequest::getWorkspaceId,
+                ShowRetrieveScriptRequest::setWorkspaceId));
+        builder.<String>withRequestField("retrieve_script_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRetrieveScriptRequest::getRetrieveScriptId,
+                ShowRetrieveScriptRequest::setRetrieveScriptId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSubscriptionResourcesRequest, ShowSubscriptionResourcesResponse> showSubscriptionResources =
+        genForShowSubscriptionResources();
+
+    private static HttpRequestDef<ShowSubscriptionResourcesRequest, ShowSubscriptionResourcesResponse> genForShowSubscriptionResources() {
+        // basic
+        HttpRequestDef.Builder<ShowSubscriptionResourcesRequest, ShowSubscriptionResourcesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSubscriptionResourcesRequest.class,
+                    ShowSubscriptionResourcesResponse.class)
+                .withName("ShowSubscriptionResources")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/subscription/resource")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSubscriptionResourcesRequest::getWorkspaceId,
+                ShowSubscriptionResourcesRequest::setWorkspaceId));
+        builder.<ShowSubscriptionResourcesRequest.SkuEnum>withRequestField("sku",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowSubscriptionResourcesRequest.SkuEnum.class),
+            f -> f.withMarshaller(ShowSubscriptionResourcesRequest::getSku, ShowSubscriptionResourcesRequest::setSku));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTableRequest, ShowTableResponse> showTable = genForShowTable();
+
+    private static HttpRequestDef<ShowTableRequest, ShowTableResponse> genForShowTable() {
+        // basic
+        HttpRequestDef.Builder<ShowTableRequest, ShowTableResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTableRequest.class, ShowTableResponse.class)
+                .withName("ShowTable")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/tables/{table_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTableRequest::getWorkspaceId, ShowTableRequest::setWorkspaceId));
+        builder.<String>withRequestField("table_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTableRequest::getTableId, ShowTableRequest::setTableId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowVersionRequest, ShowVersionResponse> showVersion = genForShowVersion();
+
+    private static HttpRequestDef<ShowVersionRequest, ShowVersionResponse> genForShowVersion() {
+        // basic
+        HttpRequestDef.Builder<ShowVersionRequest, ShowVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowVersionRequest.class, ShowVersionResponse.class)
+                .withName("ShowVersion")
+                .withUri("/v2/{project_id}/siem/upgradation/version")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -2845,7 +2386,7 @@ public class SecMasterMeta {
         HttpRequestDef.Builder<UpdateAlertRuleRequest, UpdateAlertRuleResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, UpdateAlertRuleRequest.class, UpdateAlertRuleResponse.class)
                 .withName("UpdateAlertRule")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/siem/alert-rules/{rule_id}")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/alert-rules/{alert_rule_id}")
                 .withContentType("application/json");
 
         // requests
@@ -2854,11 +2395,11 @@ public class SecMasterMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateAlertRuleRequest::getWorkspaceId, UpdateAlertRuleRequest::setWorkspaceId));
-        builder.<String>withRequestField("rule_id",
+        builder.<String>withRequestField("alert_rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateAlertRuleRequest::getRuleId, UpdateAlertRuleRequest::setRuleId));
+            f -> f.withMarshaller(UpdateAlertRuleRequest::getAlertRuleId, UpdateAlertRuleRequest::setAlertRuleId));
         builder.<UpdateAlertRuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2867,23 +2408,53 @@ public class SecMasterMeta {
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdateAlertRuleResponse::getXRequestId, UpdateAlertRuleResponse::setXRequestId));
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateIndicatorRequest, UpdateIndicatorResponse> updateIndicator =
-        genForUpdateIndicator();
+    public static final HttpRequestDef<UpdateAnalysisScriptRequest, UpdateAnalysisScriptResponse> updateAnalysisScript =
+        genForUpdateAnalysisScript();
 
-    private static HttpRequestDef<UpdateIndicatorRequest, UpdateIndicatorResponse> genForUpdateIndicator() {
+    private static HttpRequestDef<UpdateAnalysisScriptRequest, UpdateAnalysisScriptResponse> genForUpdateAnalysisScript() {
         // basic
-        HttpRequestDef.Builder<UpdateIndicatorRequest, UpdateIndicatorResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateIndicatorRequest.class, UpdateIndicatorResponse.class)
-                .withName("UpdateIndicator")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/indicators/{indicator_id}")
+        HttpRequestDef.Builder<UpdateAnalysisScriptRequest, UpdateAnalysisScriptResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateAnalysisScriptRequest.class, UpdateAnalysisScriptResponse.class)
+            .withName("UpdateAnalysisScript")
+            .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/analysis-scripts/{analysis_script_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAnalysisScriptRequest::getWorkspaceId,
+                UpdateAnalysisScriptRequest::setWorkspaceId));
+        builder.<String>withRequestField("analysis_script_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAnalysisScriptRequest::getAnalysisScriptId,
+                UpdateAnalysisScriptRequest::setAnalysisScriptId));
+        builder.<UpdateAnalysisScriptRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAnalysisScriptRequestBody.class),
+            f -> f.withMarshaller(UpdateAnalysisScriptRequest::getBody, UpdateAnalysisScriptRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateCheckitemRequest, UpdateCheckitemResponse> updateCheckitem =
+        genForUpdateCheckitem();
+
+    private static HttpRequestDef<UpdateCheckitemRequest, UpdateCheckitemResponse> genForUpdateCheckitem() {
+        // basic
+        HttpRequestDef.Builder<UpdateCheckitemRequest, UpdateCheckitemResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateCheckitemRequest.class, UpdateCheckitemResponse.class)
+                .withName("UpdateCheckitem")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/sa/baseline/checkitems/{checkitem_id}")
                 .withContentType("application/json");
 
         // requests
@@ -2891,37 +2462,37 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateIndicatorRequest::getWorkspaceId, UpdateIndicatorRequest::setWorkspaceId));
-        builder.<String>withRequestField("indicator_id",
+            f -> f.withMarshaller(UpdateCheckitemRequest::getWorkspaceId, UpdateCheckitemRequest::setWorkspaceId));
+        builder.<String>withRequestField("checkitem_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateIndicatorRequest::getIndicatorId, UpdateIndicatorRequest::setIndicatorId));
-        builder.<UpdateIndicatorRequestBody>withRequestField("body",
+            f -> f.withMarshaller(UpdateCheckitemRequest::getCheckitemId, UpdateCheckitemRequest::setCheckitemId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCheckitemRequest::getXLanguage, UpdateCheckitemRequest::setXLanguage));
+        builder.<CheckitemModel>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateIndicatorRequestBody.class),
-            f -> f.withMarshaller(UpdateIndicatorRequest::getBody, UpdateIndicatorRequest::setBody));
+            TypeCasts.uncheckedConversion(CheckitemModel.class),
+            f -> f.withMarshaller(UpdateCheckitemRequest::getBody, UpdateCheckitemRequest::setBody));
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdateIndicatorResponse::getXRequestId, UpdateIndicatorResponse::setXRequestId));
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdatePlaybookRequest, UpdatePlaybookResponse> updatePlaybook =
-        genForUpdatePlaybook();
+    public static final HttpRequestDef<UpdateCodeSegmentRequest, UpdateCodeSegmentResponse> updateCodeSegment =
+        genForUpdateCodeSegment();
 
-    private static HttpRequestDef<UpdatePlaybookRequest, UpdatePlaybookResponse> genForUpdatePlaybook() {
+    private static HttpRequestDef<UpdateCodeSegmentRequest, UpdateCodeSegmentResponse> genForUpdateCodeSegment() {
         // basic
-        HttpRequestDef.Builder<UpdatePlaybookRequest, UpdatePlaybookResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdatePlaybookRequest.class, UpdatePlaybookResponse.class)
-                .withName("UpdatePlaybook")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/{playbook_id}")
+        HttpRequestDef.Builder<UpdateCodeSegmentRequest, UpdateCodeSegmentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateCodeSegmentRequest.class, UpdateCodeSegmentResponse.class)
+                .withName("UpdateCodeSegment")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/code-segments/{code_segment_id}")
                 .withContentType("application/json");
 
         // requests
@@ -2929,38 +2500,34 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePlaybookRequest::getWorkspaceId, UpdatePlaybookRequest::setWorkspaceId));
-        builder.<String>withRequestField("playbook_id",
+            f -> f.withMarshaller(UpdateCodeSegmentRequest::getWorkspaceId, UpdateCodeSegmentRequest::setWorkspaceId));
+        builder.<String>withRequestField("code_segment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePlaybookRequest::getPlaybookId, UpdatePlaybookRequest::setPlaybookId));
-        builder.<ModifyPlaybookInfo>withRequestField("body",
+            f -> f.withMarshaller(UpdateCodeSegmentRequest::getCodeSegmentId,
+                UpdateCodeSegmentRequest::setCodeSegmentId));
+        builder.<UpdateCodeSegmentRequestBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ModifyPlaybookInfo.class),
-            f -> f.withMarshaller(UpdatePlaybookRequest::getBody, UpdatePlaybookRequest::setBody));
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateCodeSegmentRequestBody.class),
+            f -> f.withMarshaller(UpdateCodeSegmentRequest::getBody, UpdateCodeSegmentRequest::setBody));
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdatePlaybookResponse::getXRequestId, UpdatePlaybookResponse::setXRequestId));
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdatePlaybookActionRequest, UpdatePlaybookActionResponse> updatePlaybookAction =
-        genForUpdatePlaybookAction();
+    public static final HttpRequestDef<UpdateCompliancePackageRequest, UpdateCompliancePackageResponse> updateCompliancePackage =
+        genForUpdateCompliancePackage();
 
-    private static HttpRequestDef<UpdatePlaybookActionRequest, UpdatePlaybookActionResponse> genForUpdatePlaybookAction() {
+    private static HttpRequestDef<UpdateCompliancePackageRequest, UpdateCompliancePackageResponse> genForUpdateCompliancePackage() {
         // basic
-        HttpRequestDef.Builder<UpdatePlaybookActionRequest, UpdatePlaybookActionResponse> builder = HttpRequestDef
-            .builder(HttpMethod.PUT, UpdatePlaybookActionRequest.class, UpdatePlaybookActionResponse.class)
-            .withName("UpdatePlaybookAction")
+        HttpRequestDef.Builder<UpdateCompliancePackageRequest, UpdateCompliancePackageResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateCompliancePackageRequest.class, UpdateCompliancePackageResponse.class)
+            .withName("UpdateCompliancePackage")
             .withUri(
-                "/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/versions/{version_id}/actions/{action_id}")
+                "/v2/{project_id}/workspaces/{workspace_id}/sa/baseline/compliance-packages/{compliance_packages_id}")
             .withContentType("application/json");
 
         // requests
@@ -2968,46 +2535,42 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePlaybookActionRequest::getWorkspaceId,
-                UpdatePlaybookActionRequest::setWorkspaceId));
-        builder.<String>withRequestField("version_id",
+            f -> f.withMarshaller(UpdateCompliancePackageRequest::getWorkspaceId,
+                UpdateCompliancePackageRequest::setWorkspaceId));
+        builder.<String>withRequestField("compliance_packages_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePlaybookActionRequest::getVersionId,
-                UpdatePlaybookActionRequest::setVersionId));
-        builder.<String>withRequestField("action_id",
-            LocationType.Path,
+            f -> f.withMarshaller(UpdateCompliancePackageRequest::getCompliancePackagesId,
+                UpdateCompliancePackageRequest::setCompliancePackagesId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePlaybookActionRequest::getActionId, UpdatePlaybookActionRequest::setActionId));
-        builder.<ModifyActionInfo>withRequestField("body",
+            f -> f.withMarshaller(UpdateCompliancePackageRequest::getXLanguage,
+                UpdateCompliancePackageRequest::setXLanguage));
+        builder.<CompliancePackageModel>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ModifyActionInfo.class),
-            f -> f.withMarshaller(UpdatePlaybookActionRequest::getBody, UpdatePlaybookActionRequest::setBody));
+            TypeCasts.uncheckedConversion(CompliancePackageModel.class),
+            f -> f.withMarshaller(UpdateCompliancePackageRequest::getBody, UpdateCompliancePackageRequest::setBody));
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdatePlaybookActionResponse::getXRequestId,
-                UpdatePlaybookActionResponse::setXRequestId));
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdatePlaybookRuleRequest, UpdatePlaybookRuleResponse> updatePlaybookRule =
-        genForUpdatePlaybookRule();
+    public static final HttpRequestDef<UpdateDataTransformationRequest, UpdateDataTransformationResponse> updateDataTransformation =
+        genForUpdateDataTransformation();
 
-    private static HttpRequestDef<UpdatePlaybookRuleRequest, UpdatePlaybookRuleResponse> genForUpdatePlaybookRule() {
+    private static HttpRequestDef<UpdateDataTransformationRequest, UpdateDataTransformationResponse> genForUpdateDataTransformation() {
         // basic
-        HttpRequestDef.Builder<UpdatePlaybookRuleRequest, UpdatePlaybookRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdatePlaybookRuleRequest.class, UpdatePlaybookRuleResponse.class)
-                .withName("UpdatePlaybookRule")
+        HttpRequestDef.Builder<UpdateDataTransformationRequest, UpdateDataTransformationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateDataTransformationRequest.class, UpdateDataTransformationResponse.class)
+                .withName("UpdateDataTransformation")
                 .withUri(
-                    "/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/versions/{version_id}/rules/{rule_id}")
+                    "/v2/{project_id}/workspaces/{workspace_id}/siem/data-transformations/{data_transformation_id}")
                 .withContentType("application/json");
 
         // requests
@@ -3015,23 +2578,52 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePlaybookRuleRequest::getWorkspaceId,
-                UpdatePlaybookRuleRequest::setWorkspaceId));
-        builder.<String>withRequestField("version_id",
+            f -> f.withMarshaller(UpdateDataTransformationRequest::getWorkspaceId,
+                UpdateDataTransformationRequest::setWorkspaceId));
+        builder.<String>withRequestField("data_transformation_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePlaybookRuleRequest::getVersionId, UpdatePlaybookRuleRequest::setVersionId));
-        builder.<String>withRequestField("rule_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePlaybookRuleRequest::getRuleId, UpdatePlaybookRuleRequest::setRuleId));
-        builder.<ModifyRuleInfo>withRequestField("body",
+            f -> f.withMarshaller(UpdateDataTransformationRequest::getDataTransformationId,
+                UpdateDataTransformationRequest::setDataTransformationId));
+        builder.<UpdateDataTransformationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ModifyRuleInfo.class),
-            f -> f.withMarshaller(UpdatePlaybookRuleRequest::getBody, UpdatePlaybookRuleRequest::setBody));
+            TypeCasts.uncheckedConversion(UpdateDataTransformationRequestBody.class),
+            f -> f.withMarshaller(UpdateDataTransformationRequest::getBody, UpdateDataTransformationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateLayoutFieldRequest, UpdateLayoutFieldResponse> updateLayoutField =
+        genForUpdateLayoutField();
+
+    private static HttpRequestDef<UpdateLayoutFieldRequest, UpdateLayoutFieldResponse> genForUpdateLayoutField() {
+        // basic
+        HttpRequestDef.Builder<UpdateLayoutFieldRequest, UpdateLayoutFieldResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateLayoutFieldRequest.class, UpdateLayoutFieldResponse.class)
+                .withName("UpdateLayoutField")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/soc/layouts/fields/{field_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLayoutFieldRequest::getWorkspaceId, UpdateLayoutFieldRequest::setWorkspaceId));
+        builder.<String>withRequestField("field_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLayoutFieldRequest::getFieldId, UpdateLayoutFieldRequest::setFieldId));
+        builder.<UpdateLayoutFieldRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateLayoutFieldRequestBody.class),
+            f -> f.withMarshaller(UpdateLayoutFieldRequest::getBody, UpdateLayoutFieldRequest::setBody));
 
         // response
 
@@ -3039,20 +2631,84 @@ public class SecMasterMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UpdatePlaybookRuleResponse::getXRequestId,
-                UpdatePlaybookRuleResponse::setXRequestId));
+            f -> f.withMarshaller(UpdateLayoutFieldResponse::getXRequestId, UpdateLayoutFieldResponse::setXRequestId));
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdatePlaybookVersionRequest, UpdatePlaybookVersionResponse> updatePlaybookVersion =
-        genForUpdatePlaybookVersion();
+    public static final HttpRequestDef<UpdatePipeRequest, UpdatePipeResponse> updatePipe = genForUpdatePipe();
 
-    private static HttpRequestDef<UpdatePlaybookVersionRequest, UpdatePlaybookVersionResponse> genForUpdatePlaybookVersion() {
+    private static HttpRequestDef<UpdatePipeRequest, UpdatePipeResponse> genForUpdatePipe() {
         // basic
-        HttpRequestDef.Builder<UpdatePlaybookVersionRequest, UpdatePlaybookVersionResponse> builder = HttpRequestDef
-            .builder(HttpMethod.PUT, UpdatePlaybookVersionRequest.class, UpdatePlaybookVersionResponse.class)
-            .withName("UpdatePlaybookVersion")
-            .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/playbooks/versions/{version_id}")
+        HttpRequestDef.Builder<UpdatePipeRequest, UpdatePipeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePipeRequest.class, UpdatePipeResponse.class)
+                .withName("UpdatePipe")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/pipes/{pipe_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePipeRequest::getWorkspaceId, UpdatePipeRequest::setWorkspaceId));
+        builder.<String>withRequestField("pipe_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePipeRequest::getPipeId, UpdatePipeRequest::setPipeId));
+        builder.<UpdatePipeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePipeRequestBody.class),
+            f -> f.withMarshaller(UpdatePipeRequest::getBody, UpdatePipeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePipeSchemaRequest, UpdatePipeSchemaResponse> updatePipeSchema =
+        genForUpdatePipeSchema();
+
+    private static HttpRequestDef<UpdatePipeSchemaRequest, UpdatePipeSchemaResponse> genForUpdatePipeSchema() {
+        // basic
+        HttpRequestDef.Builder<UpdatePipeSchemaRequest, UpdatePipeSchemaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePipeSchemaRequest.class, UpdatePipeSchemaResponse.class)
+                .withName("UpdatePipeSchema")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/pipes/{pipe_id}/schema")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePipeSchemaRequest::getWorkspaceId, UpdatePipeSchemaRequest::setWorkspaceId));
+        builder.<String>withRequestField("pipe_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePipeSchemaRequest::getPipeId, UpdatePipeSchemaRequest::setPipeId));
+        builder.<PipeSchema>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PipeSchema.class),
+            f -> f.withMarshaller(UpdatePipeSchemaRequest::getBody, UpdatePipeSchemaRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRetrieveScriptRequest, UpdateRetrieveScriptResponse> updateRetrieveScript =
+        genForUpdateRetrieveScript();
+
+    private static HttpRequestDef<UpdateRetrieveScriptRequest, UpdateRetrieveScriptResponse> genForUpdateRetrieveScript() {
+        // basic
+        HttpRequestDef.Builder<UpdateRetrieveScriptRequest, UpdateRetrieveScriptResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateRetrieveScriptRequest.class, UpdateRetrieveScriptResponse.class)
+            .withName("UpdateRetrieveScript")
+            .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/retrieve-scripts/{retrieve_script_id}")
             .withContentType("application/json");
 
         // requests
@@ -3060,40 +2716,33 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePlaybookVersionRequest::getWorkspaceId,
-                UpdatePlaybookVersionRequest::setWorkspaceId));
-        builder.<String>withRequestField("version_id",
+            f -> f.withMarshaller(UpdateRetrieveScriptRequest::getWorkspaceId,
+                UpdateRetrieveScriptRequest::setWorkspaceId));
+        builder.<String>withRequestField("retrieve_script_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePlaybookVersionRequest::getVersionId,
-                UpdatePlaybookVersionRequest::setVersionId));
-        builder.<ModifyPlaybookVersionInfo>withRequestField("body",
+            f -> f.withMarshaller(UpdateRetrieveScriptRequest::getRetrieveScriptId,
+                UpdateRetrieveScriptRequest::setRetrieveScriptId));
+        builder.<UpdateRetrieveScriptRequestBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ModifyPlaybookVersionInfo.class),
-            f -> f.withMarshaller(UpdatePlaybookVersionRequest::getBody, UpdatePlaybookVersionRequest::setBody));
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateRetrieveScriptRequestBody.class),
+            f -> f.withMarshaller(UpdateRetrieveScriptRequest::getBody, UpdateRetrieveScriptRequest::setBody));
 
         // response
 
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdatePlaybookVersionResponse::getXRequestId,
-                UpdatePlaybookVersionResponse::setXRequestId));
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateWorkspaceRequest, UpdateWorkspaceResponse> updateWorkspace =
-        genForUpdateWorkspace();
+    public static final HttpRequestDef<UpdateTableRequest, UpdateTableResponse> updateTable = genForUpdateTable();
 
-    private static HttpRequestDef<UpdateWorkspaceRequest, UpdateWorkspaceResponse> genForUpdateWorkspace() {
+    private static HttpRequestDef<UpdateTableRequest, UpdateTableResponse> genForUpdateTable() {
         // basic
-        HttpRequestDef.Builder<UpdateWorkspaceRequest, UpdateWorkspaceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateWorkspaceRequest.class, UpdateWorkspaceResponse.class)
-                .withName("UpdateWorkspace")
-                .withUri("/v1/{project_id}/workspaces/{workspace_id}")
+        HttpRequestDef.Builder<UpdateTableRequest, UpdateTableResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateTableRequest.class, UpdateTableResponse.class)
+                .withName("UpdateTable")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/tables/{table_id}")
                 .withContentType("application/json");
 
         // requests
@@ -3101,12 +2750,79 @@ public class SecMasterMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateWorkspaceRequest::getWorkspaceId, UpdateWorkspaceRequest::setWorkspaceId));
-        builder.<UpdateWorkspaceRequestBody>withRequestField("body",
+            f -> f.withMarshaller(UpdateTableRequest::getWorkspaceId, UpdateTableRequest::setWorkspaceId));
+        builder.<String>withRequestField("table_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTableRequest::getTableId, UpdateTableRequest::setTableId));
+        builder.<UpdateTableRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateWorkspaceRequestBody.class),
-            f -> f.withMarshaller(UpdateWorkspaceRequest::getBody, UpdateWorkspaceRequest::setBody));
+            TypeCasts.uncheckedConversion(UpdateTableRequestBody.class),
+            f -> f.withMarshaller(UpdateTableRequest::getBody, UpdateTableRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTableSchemaRequest, UpdateTableSchemaResponse> updateTableSchema =
+        genForUpdateTableSchema();
+
+    private static HttpRequestDef<UpdateTableSchemaRequest, UpdateTableSchemaResponse> genForUpdateTableSchema() {
+        // basic
+        HttpRequestDef.Builder<UpdateTableSchemaRequest, UpdateTableSchemaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateTableSchemaRequest.class, UpdateTableSchemaResponse.class)
+                .withName("UpdateTableSchema")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/tables/{table_id}/schema")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTableSchemaRequest::getWorkspaceId, UpdateTableSchemaRequest::setWorkspaceId));
+        builder.<String>withRequestField("table_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTableSchemaRequest::getTableId, UpdateTableSchemaRequest::setTableId));
+        builder.<TableSchemaDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TableSchemaDto.class),
+            f -> f.withMarshaller(UpdateTableSchemaRequest::getBody, UpdateTableSchemaRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSqlValidationRequest, CreateSqlValidationResponse> createSqlValidation =
+        genForCreateSqlValidation();
+
+    private static HttpRequestDef<CreateSqlValidationRequest, CreateSqlValidationResponse> genForCreateSqlValidation() {
+        // basic
+        HttpRequestDef.Builder<CreateSqlValidationRequest, CreateSqlValidationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSqlValidationRequest.class, CreateSqlValidationResponse.class)
+                .withName("CreateSqlValidation")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/sql/validation")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSqlValidationRequest::getWorkspaceId,
+                CreateSqlValidationRequest::setWorkspaceId));
+        builder.<CreateSqlValidationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSqlValidationRequestBody.class),
+            f -> f.withMarshaller(CreateSqlValidationRequest::getBody, CreateSqlValidationRequest::setBody));
 
         // response
 

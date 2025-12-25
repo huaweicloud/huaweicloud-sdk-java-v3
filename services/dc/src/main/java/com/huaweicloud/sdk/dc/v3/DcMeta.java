@@ -28,6 +28,9 @@ import com.huaweicloud.sdk.dc.v3.model.CreateResourceTagRequestBody;
 import com.huaweicloud.sdk.dc.v3.model.CreateResourceTagResponse;
 import com.huaweicloud.sdk.dc.v3.model.CreateSwitchoverTestRequestBody;
 import com.huaweicloud.sdk.dc.v3.model.CreateUnbindingGeipRequestBody;
+import com.huaweicloud.sdk.dc.v3.model.CreateVifPeerDetectionRequest;
+import com.huaweicloud.sdk.dc.v3.model.CreateVifPeerDetectionRequestBody;
+import com.huaweicloud.sdk.dc.v3.model.CreateVifPeerDetectionResponse;
 import com.huaweicloud.sdk.dc.v3.model.CreateVifPeerRequest;
 import com.huaweicloud.sdk.dc.v3.model.CreateVifPeerRequestBody;
 import com.huaweicloud.sdk.dc.v3.model.CreateVifPeerResponse;
@@ -49,6 +52,8 @@ import com.huaweicloud.sdk.dc.v3.model.DeletePeerLinkRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeletePeerLinkResponse;
 import com.huaweicloud.sdk.dc.v3.model.DeleteResourceTagRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeleteResourceTagResponse;
+import com.huaweicloud.sdk.dc.v3.model.DeleteVifPeerDetectionRequest;
+import com.huaweicloud.sdk.dc.v3.model.DeleteVifPeerDetectionResponse;
 import com.huaweicloud.sdk.dc.v3.model.DeleteVifPeerRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeleteVifPeerResponse;
 import com.huaweicloud.sdk.dc.v3.model.DeleteVirtualGatewayRequest;
@@ -78,6 +83,8 @@ import com.huaweicloud.sdk.dc.v3.model.ListSwitchoverTestRecordsResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListTagResourceInstancesRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListTagResourceInstancesRequestBody;
 import com.huaweicloud.sdk.dc.v3.model.ListTagResourceInstancesResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListVifPeerDetectionsRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListVifPeerDetectionsResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListVirtualGatewaysRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListVirtualGatewaysResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListVirtualInterfacesRequest;
@@ -98,6 +105,8 @@ import com.huaweicloud.sdk.dc.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowResourceTagRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowResourceTagResponse;
+import com.huaweicloud.sdk.dc.v3.model.ShowVifPeerDetectionRequest;
+import com.huaweicloud.sdk.dc.v3.model.ShowVifPeerDetectionResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualGatewayRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualInterfaceRequest;
@@ -112,6 +121,9 @@ import com.huaweicloud.sdk.dc.v3.model.UpdateConnectGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.UpdateDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.UpdateDirectConnectRequestBody;
 import com.huaweicloud.sdk.dc.v3.model.UpdateDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.UpdateExtendAttributeRequest;
+import com.huaweicloud.sdk.dc.v3.model.UpdateExtendAttributeRequestBody;
+import com.huaweicloud.sdk.dc.v3.model.UpdateExtendAttributeResponse;
 import com.huaweicloud.sdk.dc.v3.model.UpdateExternalPeerLinkRequestBody;
 import com.huaweicloud.sdk.dc.v3.model.UpdateGdgwRouteTableRequest;
 import com.huaweicloud.sdk.dc.v3.model.UpdateGdgwRouteTableResponse;
@@ -1598,6 +1610,132 @@ public class DcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateVifPeerDetectionRequest, CreateVifPeerDetectionResponse> createVifPeerDetection =
+        genForCreateVifPeerDetection();
+
+    private static HttpRequestDef<CreateVifPeerDetectionRequest, CreateVifPeerDetectionResponse> genForCreateVifPeerDetection() {
+        // basic
+        HttpRequestDef.Builder<CreateVifPeerDetectionRequest, CreateVifPeerDetectionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateVifPeerDetectionRequest.class, CreateVifPeerDetectionResponse.class)
+            .withName("CreateVifPeerDetection")
+            .withUri("/v3/{project_id}/dcaas/vif-peer-detections")
+            .withContentType("application/json; charset=utf-8");
+
+        // requests
+        builder.<CreateVifPeerDetectionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateVifPeerDetectionRequestBody.class),
+            f -> f.withMarshaller(CreateVifPeerDetectionRequest::getBody, CreateVifPeerDetectionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteVifPeerDetectionRequest, DeleteVifPeerDetectionResponse> deleteVifPeerDetection =
+        genForDeleteVifPeerDetection();
+
+    private static HttpRequestDef<DeleteVifPeerDetectionRequest, DeleteVifPeerDetectionResponse> genForDeleteVifPeerDetection() {
+        // basic
+        HttpRequestDef.Builder<DeleteVifPeerDetectionRequest, DeleteVifPeerDetectionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteVifPeerDetectionRequest.class, DeleteVifPeerDetectionResponse.class)
+            .withName("DeleteVifPeerDetection")
+            .withUri("/v3/{project_id}/dcaas/vif-peer-detections/{vif_peer_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vif_peer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVifPeerDetectionRequest::getVifPeerId,
+                DeleteVifPeerDetectionRequest::setVifPeerId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListVifPeerDetectionsRequest, ListVifPeerDetectionsResponse> listVifPeerDetections =
+        genForListVifPeerDetections();
+
+    private static HttpRequestDef<ListVifPeerDetectionsRequest, ListVifPeerDetectionsResponse> genForListVifPeerDetections() {
+        // basic
+        HttpRequestDef.Builder<ListVifPeerDetectionsRequest, ListVifPeerDetectionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListVifPeerDetectionsRequest.class, ListVifPeerDetectionsResponse.class)
+            .withName("ListVifPeerDetections")
+            .withUri("/v3/{project_id}/dcaas/vif-peer-detections")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vif_peer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVifPeerDetectionsRequest::getVifPeerId,
+                ListVifPeerDetectionsRequest::setVifPeerId));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVifPeerDetectionsRequest::getMarker, ListVifPeerDetectionsRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVifPeerDetectionsRequest::getLimit, ListVifPeerDetectionsRequest::setLimit));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVifPeerDetectionsRequest::getSortKey, ListVifPeerDetectionsRequest::setSortKey));
+        builder.<List<ListVifPeerDetectionsRequest.SortDirEnum>>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListVifPeerDetectionsRequest::getSortDir, ListVifPeerDetectionsRequest::setSortDir));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVifPeerDetectionsRequest::getOffset, ListVifPeerDetectionsRequest::setOffset));
+        builder.<Boolean>withRequestField("page_reverse",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListVifPeerDetectionsRequest::getPageReverse,
+                ListVifPeerDetectionsRequest::setPageReverse));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowVifPeerDetectionRequest, ShowVifPeerDetectionResponse> showVifPeerDetection =
+        genForShowVifPeerDetection();
+
+    private static HttpRequestDef<ShowVifPeerDetectionRequest, ShowVifPeerDetectionResponse> genForShowVifPeerDetection() {
+        // basic
+        HttpRequestDef.Builder<ShowVifPeerDetectionRequest, ShowVifPeerDetectionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowVifPeerDetectionRequest.class, ShowVifPeerDetectionResponse.class)
+            .withName("ShowVifPeerDetection")
+            .withUri("/v3/{project_id}/dcaas/vif-peer-detections/{vif_peer_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vif_peer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVifPeerDetectionRequest::getVifPeerId,
+                ShowVifPeerDetectionRequest::setVifPeerId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateVirtualGatewayRequest, CreateVirtualGatewayResponse> createVirtualGateway =
         genForCreateVirtualGateway();
 
@@ -2028,6 +2166,35 @@ public class DcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSwitchoverTestRequestBody.class),
             f -> f.withMarshaller(SwitchoverTestRequest::getBody, SwitchoverTestRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateExtendAttributeRequest, UpdateExtendAttributeResponse> updateExtendAttribute =
+        genForUpdateExtendAttribute();
+
+    private static HttpRequestDef<UpdateExtendAttributeRequest, UpdateExtendAttributeResponse> genForUpdateExtendAttribute() {
+        // basic
+        HttpRequestDef.Builder<UpdateExtendAttributeRequest, UpdateExtendAttributeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateExtendAttributeRequest.class, UpdateExtendAttributeResponse.class)
+            .withName("UpdateExtendAttribute")
+            .withUri("/v3/{project_id}/dcaas/virtual-interfaces/{virtual_interface_id}/extend-attributes")
+            .withContentType("application/json; charset=utf-8");
+
+        // requests
+        builder.<String>withRequestField("virtual_interface_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateExtendAttributeRequest::getVirtualInterfaceId,
+                UpdateExtendAttributeRequest::setVirtualInterfaceId));
+        builder.<UpdateExtendAttributeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateExtendAttributeRequestBody.class),
+            f -> f.withMarshaller(UpdateExtendAttributeRequest::getBody, UpdateExtendAttributeRequest::setBody));
 
         // response
 

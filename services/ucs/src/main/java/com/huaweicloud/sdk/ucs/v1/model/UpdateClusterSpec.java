@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * UpdateClusterSpec
@@ -20,11 +19,6 @@ public class UpdateClusterSpec {
     @JsonProperty(value = "city")
 
     private String city;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "workerConfig")
-
-    private WorkerConfig workerConfig;
 
     public UpdateClusterSpec withCountry(String country) {
         this.country = country;
@@ -60,32 +54,6 @@ public class UpdateClusterSpec {
         this.city = city;
     }
 
-    public UpdateClusterSpec withWorkerConfig(WorkerConfig workerConfig) {
-        this.workerConfig = workerConfig;
-        return this;
-    }
-
-    public UpdateClusterSpec withWorkerConfig(Consumer<WorkerConfig> workerConfigSetter) {
-        if (this.workerConfig == null) {
-            this.workerConfig = new WorkerConfig();
-            workerConfigSetter.accept(this.workerConfig);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get workerConfig
-     * @return workerConfig
-     */
-    public WorkerConfig getWorkerConfig() {
-        return workerConfig;
-    }
-
-    public void setWorkerConfig(WorkerConfig workerConfig) {
-        this.workerConfig = workerConfig;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -95,13 +63,12 @@ public class UpdateClusterSpec {
             return false;
         }
         UpdateClusterSpec that = (UpdateClusterSpec) obj;
-        return Objects.equals(this.country, that.country) && Objects.equals(this.city, that.city)
-            && Objects.equals(this.workerConfig, that.workerConfig);
+        return Objects.equals(this.country, that.country) && Objects.equals(this.city, that.city);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(country, city, workerConfig);
+        return Objects.hash(country, city);
     }
 
     @Override
@@ -110,7 +77,6 @@ public class UpdateClusterSpec {
         sb.append("class UpdateClusterSpec {\n");
         sb.append("    country: ").append(toIndentedString(country)).append("\n");
         sb.append("    city: ").append(toIndentedString(city)).append("\n");
-        sb.append("    workerConfig: ").append(toIndentedString(workerConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

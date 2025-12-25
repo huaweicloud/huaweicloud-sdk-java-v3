@@ -385,7 +385,7 @@ public class AlarmHistoryInfoResp {
     }
 
     /**
-     * **参数解释**： 告警触发的动作。结构如下：{  \"type\": \"notification\", \"notificationList\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  }  type取值：notification：通知。autoscaling：弹性伸缩。notificationList：告警状态发生变化时，被通知对象的列表。 
+     * **参数解释**： 告警触发时，通知组/主题订阅的信息。结构如下：{  \"type\": \"notification\", \"notificationList\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  } 
      * @return alarmActions
      */
     public List<List<NotificationResp>> getAlarmActions() {
@@ -418,7 +418,7 @@ public class AlarmHistoryInfoResp {
     }
 
     /**
-     * **参数解释**： 告警恢复触发的动作。结构如下：{  \"type\": \"notification\", \"notificationList\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  } type取值：notification：通知。notificationList：告警状态发生变化时，被通知对象的列表。 
+     * **参数解释**： 告警恢复时，通知组/主题订阅的信息。结构如下：{  \"type\": \"notification\", \"notificationList\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  } 
      * @return okActions
      */
     public List<List<NotificationResp>> getOkActions() {
@@ -452,7 +452,7 @@ public class AlarmHistoryInfoResp {
     }
 
     /**
-     * **参数解释**： 数据不足触发的动作。结构如下：{  \"type\": \"notification\", \"notificationList\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  } type取值：数据不足触发告警通知类型，取值为notification。notificationList：数据不足触发告警通知时，被通知对象的ID列表。 
+     * **参数解释**： 数据不足时触发告警时，通知组/主题订阅的信息。结构如下：{  \"type\": \"notification\", \"notificationList\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  } 
      * @return insufficientdataActions
      */
     public List<List<NotificationResp>> getInsufficientdataActions() {
@@ -520,7 +520,7 @@ public class AlarmHistoryInfoResp {
     }
 
     /**
-     * **参数解释**： 告警历史的状态 **取值范围**： 枚举值： - ok：正常 - alarm：告警 - insufficient_data：数据不足 - invalid：已失效 
+     * **参数解释**： 告警规则的状态 **取值范围**： 枚举值： - ok：正常 - alarm：告警 - insufficient_data：数据不足 - invalid：已失效 
      * @return alarmStatus
      */
     public String getAlarmStatus() {

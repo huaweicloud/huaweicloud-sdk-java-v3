@@ -6,19 +6,14 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.moderation.v3.model.AudioCreateRequest;
-import com.huaweicloud.sdk.moderation.v3.model.AudioStreamCreateRequest;
 import com.huaweicloud.sdk.moderation.v3.model.BatchCheckImageSyncRequest;
 import com.huaweicloud.sdk.moderation.v3.model.BatchCheckImageSyncResponse;
 import com.huaweicloud.sdk.moderation.v3.model.CheckImageModerationRequest;
 import com.huaweicloud.sdk.moderation.v3.model.CheckImageModerationResponse;
 import com.huaweicloud.sdk.moderation.v3.model.ImageBatchSyncReq;
 import com.huaweicloud.sdk.moderation.v3.model.ImageDetectionReq;
-import com.huaweicloud.sdk.moderation.v3.model.RunCloseAudioStreamModerationJobRequest;
-import com.huaweicloud.sdk.moderation.v3.model.RunCloseAudioStreamModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateAudioModerationJobRequest;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateAudioModerationJobResponse;
-import com.huaweicloud.sdk.moderation.v3.model.RunCreateAudioStreamModerationJobRequest;
-import com.huaweicloud.sdk.moderation.v3.model.RunCreateAudioStreamModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateVideoModerationJobRequest;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateVideoModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunQueryAudioModerationJobRequest;
@@ -85,33 +80,6 @@ public class ModerationMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<RunCloseAudioStreamModerationJobRequest, RunCloseAudioStreamModerationJobResponse> runCloseAudioStreamModerationJob =
-        genForRunCloseAudioStreamModerationJob();
-
-    private static HttpRequestDef<RunCloseAudioStreamModerationJobRequest, RunCloseAudioStreamModerationJobResponse> genForRunCloseAudioStreamModerationJob() {
-        // basic
-        HttpRequestDef.Builder<RunCloseAudioStreamModerationJobRequest, RunCloseAudioStreamModerationJobResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    RunCloseAudioStreamModerationJobRequest.class,
-                    RunCloseAudioStreamModerationJobResponse.class)
-                .withName("RunCloseAudioStreamModerationJob")
-                .withUri("/v3/{project_id}/moderation/audio-stream/jobs/stop/{job_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("job_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RunCloseAudioStreamModerationJobRequest::getJobId,
-                RunCloseAudioStreamModerationJobRequest::setJobId));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<RunCreateAudioModerationJobRequest, RunCreateAudioModerationJobResponse> runCreateAudioModerationJob =
         genForRunCreateAudioModerationJob();
 
@@ -133,33 +101,6 @@ public class ModerationMeta {
             TypeCasts.uncheckedConversion(AudioCreateRequest.class),
             f -> f.withMarshaller(RunCreateAudioModerationJobRequest::getBody,
                 RunCreateAudioModerationJobRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<RunCreateAudioStreamModerationJobRequest, RunCreateAudioStreamModerationJobResponse> runCreateAudioStreamModerationJob =
-        genForRunCreateAudioStreamModerationJob();
-
-    private static HttpRequestDef<RunCreateAudioStreamModerationJobRequest, RunCreateAudioStreamModerationJobResponse> genForRunCreateAudioStreamModerationJob() {
-        // basic
-        HttpRequestDef.Builder<RunCreateAudioStreamModerationJobRequest, RunCreateAudioStreamModerationJobResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    RunCreateAudioStreamModerationJobRequest.class,
-                    RunCreateAudioStreamModerationJobResponse.class)
-                .withName("RunCreateAudioStreamModerationJob")
-                .withUri("/v3/{project_id}/moderation/audio-stream/jobs")
-                .withContentType("application/json");
-
-        // requests
-        builder.<AudioStreamCreateRequest>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AudioStreamCreateRequest.class),
-            f -> f.withMarshaller(RunCreateAudioStreamModerationJobRequest::getBody,
-                RunCreateAudioStreamModerationJobRequest::setBody));
 
         // response
 

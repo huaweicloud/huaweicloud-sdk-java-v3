@@ -31,7 +31,7 @@ public class ChangeVulStatusRequestInfoCustomBackupHosts {
     }
 
     /**
-     * 主机id
+     * **参数解释**: 主机id **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及 
      * @return hostId
      */
     public String getHostId() {
@@ -48,7 +48,7 @@ public class ChangeVulStatusRequestInfoCustomBackupHosts {
     }
 
     /**
-     * 存储库id
+     * **参数解释**: 存储库id **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及 
      * @return vaultId
      */
     public String getVaultId() {
@@ -65,7 +65,7 @@ public class ChangeVulStatusRequestInfoCustomBackupHosts {
     }
 
     /**
-     * 备份名称
+     * **参数解释**: 备份名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
      * @return backupName
      */
     public String getBackupName() {

@@ -1,14 +1,8 @@
 package com.huaweicloud.sdk.ces.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.math.BigDecimal;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -32,110 +26,10 @@ public class AlarmTemplatePolicies {
 
     private String metricName;
 
-    /**
-     * 告警条件判断周期,单位为秒
-     */
-    public static final class PeriodEnum {
-
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final PeriodEnum NUMBER_0 = new PeriodEnum(0);
-
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final PeriodEnum NUMBER_1 = new PeriodEnum(1);
-
-        /**
-         * Enum NUMBER_300 for value: 300
-         */
-        public static final PeriodEnum NUMBER_300 = new PeriodEnum(300);
-
-        /**
-         * Enum NUMBER_1200 for value: 1200
-         */
-        public static final PeriodEnum NUMBER_1200 = new PeriodEnum(1200);
-
-        /**
-         * Enum NUMBER_3600 for value: 3600
-         */
-        public static final PeriodEnum NUMBER_3600 = new PeriodEnum(3600);
-
-        /**
-         * Enum NUMBER_14400 for value: 14400
-         */
-        public static final PeriodEnum NUMBER_14400 = new PeriodEnum(14400);
-
-        /**
-         * Enum NUMBER_86400 for value: 86400
-         */
-        public static final PeriodEnum NUMBER_86400 = new PeriodEnum(86400);
-
-        private static final Map<Integer, PeriodEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, PeriodEnum> createStaticFields() {
-            Map<Integer, PeriodEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            map.put(300, NUMBER_300);
-            map.put(1200, NUMBER_1200);
-            map.put(3600, NUMBER_3600);
-            map.put(14400, NUMBER_14400);
-            map.put(86400, NUMBER_86400);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        PeriodEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static PeriodEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodEnum(value));
-        }
-
-        public static PeriodEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof PeriodEnum) {
-                return this.value.equals(((PeriodEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
 
-    private PeriodEnum period;
+    private Period period;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filter")
@@ -150,7 +44,7 @@ public class AlarmTemplatePolicies {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
 
-    private BigDecimal value;
+    private Double value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hierarchical_value")
@@ -163,142 +57,24 @@ public class AlarmTemplatePolicies {
     private String unit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "selected_unit")
+
+    private String selectedUnit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "suppress_duration")
+
+    private SuppressDuration suppressDuration;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_level")
 
     private Integer alarmLevel;
-
-    /**
-     * 告警抑制周期，单位为秒，当告警抑制周期为0时，仅发送一次告警
-     */
-    public static final class SuppressDurationEnum {
-
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final SuppressDurationEnum NUMBER_0 = new SuppressDurationEnum(0);
-
-        /**
-         * Enum NUMBER_300 for value: 300
-         */
-        public static final SuppressDurationEnum NUMBER_300 = new SuppressDurationEnum(300);
-
-        /**
-         * Enum NUMBER_600 for value: 600
-         */
-        public static final SuppressDurationEnum NUMBER_600 = new SuppressDurationEnum(600);
-
-        /**
-         * Enum NUMBER_900 for value: 900
-         */
-        public static final SuppressDurationEnum NUMBER_900 = new SuppressDurationEnum(900);
-
-        /**
-         * Enum NUMBER_1800 for value: 1800
-         */
-        public static final SuppressDurationEnum NUMBER_1800 = new SuppressDurationEnum(1800);
-
-        /**
-         * Enum NUMBER_3600 for value: 3600
-         */
-        public static final SuppressDurationEnum NUMBER_3600 = new SuppressDurationEnum(3600);
-
-        /**
-         * Enum NUMBER_10800 for value: 10800
-         */
-        public static final SuppressDurationEnum NUMBER_10800 = new SuppressDurationEnum(10800);
-
-        /**
-         * Enum NUMBER_21600 for value: 21600
-         */
-        public static final SuppressDurationEnum NUMBER_21600 = new SuppressDurationEnum(21600);
-
-        /**
-         * Enum NUMBER_43200 for value: 43200
-         */
-        public static final SuppressDurationEnum NUMBER_43200 = new SuppressDurationEnum(43200);
-
-        /**
-         * Enum NUMBER_86400 for value: 86400
-         */
-        public static final SuppressDurationEnum NUMBER_86400 = new SuppressDurationEnum(86400);
-
-        private static final Map<Integer, SuppressDurationEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, SuppressDurationEnum> createStaticFields() {
-            Map<Integer, SuppressDurationEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(300, NUMBER_300);
-            map.put(600, NUMBER_600);
-            map.put(900, NUMBER_900);
-            map.put(1800, NUMBER_1800);
-            map.put(3600, NUMBER_3600);
-            map.put(10800, NUMBER_10800);
-            map.put(21600, NUMBER_21600);
-            map.put(43200, NUMBER_43200);
-            map.put(86400, NUMBER_86400);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        SuppressDurationEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static SuppressDurationEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SuppressDurationEnum(value));
-        }
-
-        public static SuppressDurationEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof SuppressDurationEnum) {
-                return this.value.equals(((SuppressDurationEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "suppress_duration")
-
-    private SuppressDurationEnum suppressDuration;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "selected_unit")
-
-    private String selectedUnit;
 
     public AlarmTemplatePolicies withNamespace(String namespace) {
         this.namespace = namespace;
@@ -323,7 +99,7 @@ public class AlarmTemplatePolicies {
     }
 
     /**
-     * **参数解释**： 资源维度。     **约束限制**： 事件告警模板DimensionName为空 **取值范围**： 必须以字母开头，多维度用\",\"分隔，只能包含0-9/a-z/A-Z/_/-，每个维度的最大长度为32。目前最大支持4个维度。举例：单维度场景：instance_id；多维度场景：instance_id,disk        **默认取值**： 不涉及。 
+     * **参数解释**： 资源维度。     **约束限制**： 事件告警模板DimensionName为空 **取值范围**： 必须以字母开头，多维度用\",\"分隔，只能包含0-9/a-z/A-Z/_/-，每个维度的最大长度为32。目前最大支持4个维度。字符串总最大长度为131。举例：单维度场景：instance_id；多维度场景：instance_id,disk        **默认取值**： 不涉及。 
      * @return dimensionName
      */
     public String getDimensionName() {
@@ -351,20 +127,20 @@ public class AlarmTemplatePolicies {
         this.metricName = metricName;
     }
 
-    public AlarmTemplatePolicies withPeriod(PeriodEnum period) {
+    public AlarmTemplatePolicies withPeriod(Period period) {
         this.period = period;
         return this;
     }
 
     /**
-     * 告警条件判断周期,单位为秒
+     * Get period
      * @return period
      */
-    public PeriodEnum getPeriod() {
+    public Period getPeriod() {
         return period;
     }
 
-    public void setPeriod(PeriodEnum period) {
+    public void setPeriod(Period period) {
         this.period = period;
     }
 
@@ -374,7 +150,7 @@ public class AlarmTemplatePolicies {
     }
 
     /**
-     * 数据聚合方式
+     * **参数解释**： 聚合方式。         **约束限制**： period为1（原始值）时filter字段不生效，默认为average。period大于1时filter才起作用。 **取值范围**： - average：平均值 - variance：方差 - min：最小值 - max：最大值 - sum：求和 **默认取值**： 不涉及。 
      * @return filter
      */
     public String getFilter() {
@@ -391,7 +167,7 @@ public class AlarmTemplatePolicies {
     }
 
     /**
-     * **参数解释**： 阈值符号。     **约束限制**： 指标告警可以使用的阈值符号有>、>=、<、<=、=、!=、cycle_decrease、cycle_increase、cycle_wave； 事件告警可以使用的阈值符号为>、>=、<、<=、=、!=。 **取值范围**： 支持的值为(>|<|>=|<=|=|!=|cycle_decrease|cycle_increase|cycle_wave);cycle_decrease为环比下降,cycle_increase为环比上升,cycle_wave为环比波动。           **默认取值**： 不涉及。 
+     * **参数解释**： 阈值符号。 **约束限制**： 指标告警可以使用的阈值符号有>、>=、<、<=、=、!=、cycle_decrease、cycle_increase、cycle_wave； 事件告警可以使用的阈值符号为>、>=、<、<=、=、!=。 **取值范围**： 支持的值为(>|<|>=|<=|=|!=|cycle_decrease|cycle_increase|cycle_wave);cycle_decrease为环比下降,cycle_increase为环比上升,cycle_wave为环比波动。 **默认取值**： 不涉及。 
      * @return comparisonOperator
      */
     public String getComparisonOperator() {
@@ -402,22 +178,22 @@ public class AlarmTemplatePolicies {
         this.comparisonOperator = comparisonOperator;
     }
 
-    public AlarmTemplatePolicies withValue(BigDecimal value) {
+    public AlarmTemplatePolicies withValue(Double value) {
         this.value = value;
         return this;
     }
 
     /**
-     * 告警阈值。单一阈值时value和alarm_level配对使用，当hierarchical_value和value同时使用时以hierarchical_value为准
-     * minimum: 0
-     * maximum: 2.34854258277383E+108
+     * **参数解释**： 告警阈值。具体阈值取值请参见“[支持服务列表](ces_03_0059.xml)”。    **约束限制**： 单一阈值时value和alarm_level配对使用，当hierarchical_value和value同时使用时以hierarchical_value为准。 **取值范围**： 最小值为-1.7976931348623157e+108，最大值为1.7976931348623157e+108。           **默认取值**： 不涉及。 
+     * minimum: -1.7976931348623156E+108
+     * maximum: 1.7976931348623156E+108
      * @return value
      */
-    public BigDecimal getValue() {
+    public Double getValue() {
         return value;
     }
 
-    public void setValue(BigDecimal value) {
+    public void setValue(Double value) {
         this.value = value;
     }
 
@@ -453,7 +229,7 @@ public class AlarmTemplatePolicies {
     }
 
     /**
-     * 数据的单位字符串，长度不超过32
+     * **参数解释**： 数据的单位。    **约束限制**： 不涉及。 **取值范围**： 长度为[0,32]个字符。         **默认取值**： 不涉及。 
      * @return unit
      */
     public String getUnit() {
@@ -462,6 +238,23 @@ public class AlarmTemplatePolicies {
 
     public void setUnit(String unit) {
         this.unit = unit;
+    }
+
+    public AlarmTemplatePolicies withSelectedUnit(String selectedUnit) {
+        this.selectedUnit = selectedUnit;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 用户在页面中选择的指标单位， 用于后续指标数据回显和计算。字符串最大长度为64。    **约束限制**： 不涉及。 **取值范围**： 长度为[0,64]个字符。        **默认取值**： 不涉及。 
+     * @return selectedUnit
+     */
+    public String getSelectedUnit() {
+        return selectedUnit;
+    }
+
+    public void setSelectedUnit(String selectedUnit) {
+        this.selectedUnit = selectedUnit;
     }
 
     public AlarmTemplatePolicies withCount(Integer count) {
@@ -483,6 +276,23 @@ public class AlarmTemplatePolicies {
         this.count = count;
     }
 
+    public AlarmTemplatePolicies withSuppressDuration(SuppressDuration suppressDuration) {
+        this.suppressDuration = suppressDuration;
+        return this;
+    }
+
+    /**
+     * Get suppressDuration
+     * @return suppressDuration
+     */
+    public SuppressDuration getSuppressDuration() {
+        return suppressDuration;
+    }
+
+    public void setSuppressDuration(SuppressDuration suppressDuration) {
+        this.suppressDuration = suppressDuration;
+    }
+
     public AlarmTemplatePolicies withAlarmLevel(Integer alarmLevel) {
         this.alarmLevel = alarmLevel;
         return this;
@@ -502,40 +312,6 @@ public class AlarmTemplatePolicies {
         this.alarmLevel = alarmLevel;
     }
 
-    public AlarmTemplatePolicies withSuppressDuration(SuppressDurationEnum suppressDuration) {
-        this.suppressDuration = suppressDuration;
-        return this;
-    }
-
-    /**
-     * 告警抑制周期，单位为秒，当告警抑制周期为0时，仅发送一次告警
-     * @return suppressDuration
-     */
-    public SuppressDurationEnum getSuppressDuration() {
-        return suppressDuration;
-    }
-
-    public void setSuppressDuration(SuppressDurationEnum suppressDuration) {
-        this.suppressDuration = suppressDuration;
-    }
-
-    public AlarmTemplatePolicies withSelectedUnit(String selectedUnit) {
-        this.selectedUnit = selectedUnit;
-        return this;
-    }
-
-    /**
-     * **参数解释**： 用户在页面中选择的指标单位， 用于后续指标数据回显和计算。     **约束限制**： 不涉及。 **取值范围**： 长度为[0,64]个字符。        **默认取值**： 不涉及。 
-     * @return selectedUnit
-     */
-    public String getSelectedUnit() {
-        return selectedUnit;
-    }
-
-    public void setSelectedUnit(String selectedUnit) {
-        this.selectedUnit = selectedUnit;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -550,10 +326,9 @@ public class AlarmTemplatePolicies {
             && Objects.equals(this.filter, that.filter)
             && Objects.equals(this.comparisonOperator, that.comparisonOperator)
             && Objects.equals(this.value, that.value) && Objects.equals(this.hierarchicalValue, that.hierarchicalValue)
-            && Objects.equals(this.unit, that.unit) && Objects.equals(this.count, that.count)
-            && Objects.equals(this.alarmLevel, that.alarmLevel)
-            && Objects.equals(this.suppressDuration, that.suppressDuration)
-            && Objects.equals(this.selectedUnit, that.selectedUnit);
+            && Objects.equals(this.unit, that.unit) && Objects.equals(this.selectedUnit, that.selectedUnit)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.suppressDuration, that.suppressDuration)
+            && Objects.equals(this.alarmLevel, that.alarmLevel);
     }
 
     @Override
@@ -567,10 +342,10 @@ public class AlarmTemplatePolicies {
             value,
             hierarchicalValue,
             unit,
+            selectedUnit,
             count,
-            alarmLevel,
             suppressDuration,
-            selectedUnit);
+            alarmLevel);
     }
 
     @Override
@@ -586,10 +361,10 @@ public class AlarmTemplatePolicies {
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
         sb.append("    hierarchicalValue: ").append(toIndentedString(hierarchicalValue)).append("\n");
         sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
-        sb.append("    count: ").append(toIndentedString(count)).append("\n");
-        sb.append("    alarmLevel: ").append(toIndentedString(alarmLevel)).append("\n");
-        sb.append("    suppressDuration: ").append(toIndentedString(suppressDuration)).append("\n");
         sb.append("    selectedUnit: ").append(toIndentedString(selectedUnit)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    suppressDuration: ").append(toIndentedString(suppressDuration)).append("\n");
+        sb.append("    alarmLevel: ").append(toIndentedString(alarmLevel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -335,7 +335,7 @@ public class ShowDatabaseUserResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 用户类型。 **取值范围**： 不涉及。
+     * **参数解释**： 用户类型。 **取值范围**： - COMMON：公共。
      * @return userType
      */
     public String getUserType() {

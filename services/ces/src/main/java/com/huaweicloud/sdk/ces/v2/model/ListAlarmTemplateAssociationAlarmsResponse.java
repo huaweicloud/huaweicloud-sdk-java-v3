@@ -64,7 +64,7 @@ public class ListAlarmTemplateAssociationAlarmsResponse extends SdkResponse {
     }
 
     /**
-     * 告警规则列表总数
+     * **参数解释**： 告警规则列表总数。     **取值范围**： 取值范围为0-1000. 
      * minimum: 0
      * maximum: 1000
      * @return count

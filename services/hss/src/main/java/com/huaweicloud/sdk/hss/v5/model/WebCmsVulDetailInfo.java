@@ -287,7 +287,7 @@ public class WebCmsVulDetailInfo {
     }
 
     /**
-     * **参数解释**: 漏洞标签中文名称 **取值范围**: 字符长度0-64 
+     * **参数解释**: 漏洞标签中文名称（已废弃，后续删除） **取值范围**: 字符长度0-64 
      * @return vulLabelZh
      */
     public String getVulLabelZh() {
@@ -304,7 +304,7 @@ public class WebCmsVulDetailInfo {
     }
 
     /**
-     * **参数解释**: 漏洞标签英文名称 **取值范围**: 字符长度0-64 
+     * **参数解释**: 漏洞标签英文名称（已废弃，后续删除） **取值范围**: 字符长度0-64 
      * @return vulLabelEn
      */
     public String getVulLabelEn() {

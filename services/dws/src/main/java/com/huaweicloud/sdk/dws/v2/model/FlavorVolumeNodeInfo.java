@@ -36,7 +36,7 @@ public class FlavorVolumeNodeInfo {
     }
 
     /**
-     * **参数解释**： 节点使用存储类型。 **取值范围**： 不涉及。
+     * **参数解释**： 节点使用存储类型。 **取值范围**： - SATA：普通IO。 - SAS：高IO。 - SSD：超高IO。 - ESSD：极速型SSD。 - GPSSD：通用型SSD。
      * @return volumeType
      */
     public String getVolumeType() {

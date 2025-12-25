@@ -46,7 +46,7 @@ public class ListBackupsResponse extends SdkResponse {
     }
 
     /**
-     * 备份列表。
+     * **参数解释：** 备份列表。 **取值范围：** 不涉及。
      * @return backups
      */
     public List<BackupForList> getBackups() {
@@ -63,7 +63,7 @@ public class ListBackupsResponse extends SdkResponse {
     }
 
     /**
-     * 总记录数。
+     * **参数解释：** 总记录数。 **取值范围：** 不涉及。
      * @return totalCount
      */
     public Integer getTotalCount() {

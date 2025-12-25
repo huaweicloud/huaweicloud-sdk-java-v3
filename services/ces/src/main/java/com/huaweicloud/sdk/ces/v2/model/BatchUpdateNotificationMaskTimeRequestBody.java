@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 修改通知屏蔽时间请求体
+ * **参数解释**： 修改通知屏蔽时间请求体。 **约束限制**： 不涉及。 
  */
 public class BatchUpdateNotificationMaskTimeRequestBody {
 
@@ -72,7 +72,7 @@ public class BatchUpdateNotificationMaskTimeRequestBody {
     }
 
     /**
-     * 关联编号
+     * **参数解释**： 告警屏蔽ID列表 **约束限制**： 包含的告警屏蔽ID数量为[1,100]个。 
      * @return notificationMaskIds
      */
     public List<String> getNotificationMaskIds() {

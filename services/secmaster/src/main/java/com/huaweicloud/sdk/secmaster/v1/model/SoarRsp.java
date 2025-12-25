@@ -1,0 +1,270 @@
+package com.huaweicloud.sdk.secmaster.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/**
+ * 请求的返回对象
+ */
+public class SoarRsp {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "code")
+
+    private String code;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "message")
+
+    private String message;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "success")
+
+    private Boolean success;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total")
+
+    private Integer total;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "size")
+
+    private Integer size;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page")
+
+    private Integer page;
+
+    public SoarRsp withCode(String code) {
+        this.code = code;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 错误码 **取值范围**: 不涉及
+     * @return code
+     */
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public SoarRsp withMessage(String message) {
+        this.message = message;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 错误描述 **取值范围**: 不涉及
+     * @return message
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public SoarRsp withSuccess(Boolean success) {
+        this.success = success;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 是否成功 **取值范围**: - true  成功 - false 失败
+     * @return success
+     */
+    public Boolean getSuccess() {
+        return success;
+    }
+
+    public void setSuccess(Boolean success) {
+        this.success = success;
+    }
+
+    public SoarRsp withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 请求的ID **约束限制**: 不涉及
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
+    public SoarRsp withTotal(Integer total) {
+        this.total = total;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 数据总条数 **约束限制**: 不涉及
+     * minimum: 0
+     * maximum: 1000
+     * @return total
+     */
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+
+    public SoarRsp withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 当前页大小 **约束限制**: 不涉及
+     * minimum: 0
+     * maximum: 1000
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public SoarRsp withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 当前页码 **约束限制**: 不涉及
+     * minimum: 0
+     * maximum: 100
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public SoarRsp withSize(Integer size) {
+        this.size = size;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 当前页大小 **约束限制**: 不涉及
+     * minimum: 0
+     * maximum: 50
+     * @return size
+     */
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
+    public SoarRsp withPage(Integer page) {
+        this.page = page;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 分页的页数 **约束限制**: 不涉及
+     * minimum: 0
+     * maximum: 1000
+     * @return page
+     */
+    public Integer getPage() {
+        return page;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        SoarRsp that = (SoarRsp) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.success, that.success) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.page, that.page);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(code, message, success, requestId, total, offset, limit, size, page);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class SoarRsp {\n");
+        sb.append("    code: ").append(toIndentedString(code)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    success: ").append(toIndentedString(success)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    page: ").append(toIndentedString(page)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

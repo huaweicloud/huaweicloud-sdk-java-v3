@@ -137,7 +137,7 @@ public class LogicalClusterPlanActions {
     }
 
     /**
-     * **参数解释**： 任务状态。 **取值范围**： running|waiting|deleted|finished|disabled|failed。
+     * **参数解释**： 任务状态。 **取值范围**： - running：运行中。 - waiting：等待中。 - deleted：已删除。 - finished：已完成。 - disabled：已禁用。 - failed：失败。
      * @return status
      */
     public String getStatus() {

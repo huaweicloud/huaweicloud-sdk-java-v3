@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.ces.v2.model;
 import java.util.Objects;
 
 /**
- * 告警模板的创建时间
+ * **参数解释**： 告警模板的创建时间 **取值范围**： 不涉及。 
  */
 public class CreateTime {
 

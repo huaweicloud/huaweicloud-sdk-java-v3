@@ -11,11 +11,6 @@ import java.util.Objects;
 public class ListAlarmTemplateAssociationAlarmsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "template_id")
-
-    private String templateId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -25,22 +20,10 @@ public class ListAlarmTemplateAssociationAlarmsRequest {
 
     private Integer limit;
 
-    public ListAlarmTemplateAssociationAlarmsRequest withTemplateId(String templateId) {
-        this.templateId = templateId;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "template_id")
 
-    /**
-     * 告警模板的ID，以at开头，后跟字母、数字，长度最长为64
-     * @return templateId
-     */
-    public String getTemplateId() {
-        return templateId;
-    }
-
-    public void setTemplateId(String templateId) {
-        this.templateId = templateId;
-    }
+    private String templateId;
 
     public ListAlarmTemplateAssociationAlarmsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -48,7 +31,7 @@ public class ListAlarmTemplateAssociationAlarmsRequest {
     }
 
     /**
-     * 分页查询时查询的起始位置，表示从第几条数据开始，默认为0
+     * **参数解释**： 分页偏移量 **约束限制**： 不涉及 **取值范围**： 整数，[0,10000] **默认取值**： 0 
      * minimum: 0
      * maximum: 10000
      * @return offset
@@ -67,7 +50,7 @@ public class ListAlarmTemplateAssociationAlarmsRequest {
     }
 
     /**
-     * 查询结果条数的限制值，取值范围为[1,100]，默认值为100
+     * **参数解释**： 分页大小 **约束限制**： 不涉及 **取值范围**： 整数，[1,100] **默认取值**： 100 
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -80,6 +63,23 @@ public class ListAlarmTemplateAssociationAlarmsRequest {
         this.limit = limit;
     }
 
+    public ListAlarmTemplateAssociationAlarmsRequest withTemplateId(String templateId) {
+        this.templateId = templateId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 告警模板的ID。     **约束限制**： 不涉及。 **取值范围**： 以at开头，后跟字母、数字，长度为[2,64]个字符。           **默认取值**： 不涉及。 
+     * @return templateId
+     */
+    public String getTemplateId() {
+        return templateId;
+    }
+
+    public void setTemplateId(String templateId) {
+        this.templateId = templateId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -89,22 +89,22 @@ public class ListAlarmTemplateAssociationAlarmsRequest {
             return false;
         }
         ListAlarmTemplateAssociationAlarmsRequest that = (ListAlarmTemplateAssociationAlarmsRequest) obj;
-        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.templateId, that.templateId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(templateId, offset, limit);
+        return Objects.hash(offset, limit, templateId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAlarmTemplateAssociationAlarmsRequest {\n");
-        sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

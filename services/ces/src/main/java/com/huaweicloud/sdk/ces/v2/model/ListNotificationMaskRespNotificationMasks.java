@@ -52,10 +52,10 @@ public class ListNotificationMaskRespNotificationMasks {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_metrics")
 
-    private List<ProductMetric> productMetrics = null;
+    private List<ProductMetricResp> productMetrics = null;
 
     /**
-     * dimension: 子维度,product: 云产品
+     * **参数解释**： 资源层级。 **取值范围**： 枚举值。 - product：资源层级为云产品 - dimension：资源层级为子维度 
      */
     public static final class ResourceLevelEnum {
 
@@ -137,7 +137,7 @@ public class ListNotificationMaskRespNotificationMasks {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
 
-    private List<ResourceCategory> resources = null;
+    private List<ResourceCategoryResp> resources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mask_status")
@@ -195,7 +195,7 @@ public class ListNotificationMaskRespNotificationMasks {
     }
 
     /**
-     * 屏蔽规则ID
+     * **参数解释**： 屏蔽规则ID **约束限制**： 不涉及 **取值范围**： 以nm开头，后跟[0,62]位字母或数字。 **默认取值**： 不涉及 
      * @return notificationMaskId
      */
     public String getNotificationMaskId() {
@@ -246,7 +246,7 @@ public class ListNotificationMaskRespNotificationMasks {
     }
 
     /**
-     * **参数解释**： 关联ID       **约束限制**： 不涉及。 **取值范围**： 取值为告警规则ID、告警策略ID。只能包含字母、数字、“-”，长度为[1,64]个字符。      **默认取值**： 不涉及。 
+     * **参数解释**： 关联ID，为告警规则ID或者告警策略ID **约束限制**： 不涉及。 **取值范围**： 只能包含字母、数字、“-”，长度为[1,64]个字符。      **默认取值**： 不涉及。 
      * @return relationId
      */
     public String getRelationId() {
@@ -296,7 +296,7 @@ public class ListNotificationMaskRespNotificationMasks {
     }
 
     /**
-     * 关联指标名称，relation_type为RESOURCE时存在该字段
+     * **参数解释**： 关联指标名称列表，relation_type为RESOURCE时存在该字段 
      * @return metricNames
      */
     public List<String> getMetricNames() {
@@ -307,12 +307,12 @@ public class ListNotificationMaskRespNotificationMasks {
         this.metricNames = metricNames;
     }
 
-    public ListNotificationMaskRespNotificationMasks withProductMetrics(List<ProductMetric> productMetrics) {
+    public ListNotificationMaskRespNotificationMasks withProductMetrics(List<ProductMetricResp> productMetrics) {
         this.productMetrics = productMetrics;
         return this;
     }
 
-    public ListNotificationMaskRespNotificationMasks addProductMetricsItem(ProductMetric productMetricsItem) {
+    public ListNotificationMaskRespNotificationMasks addProductMetricsItem(ProductMetricResp productMetricsItem) {
         if (this.productMetrics == null) {
             this.productMetrics = new ArrayList<>();
         }
@@ -321,7 +321,7 @@ public class ListNotificationMaskRespNotificationMasks {
     }
 
     public ListNotificationMaskRespNotificationMasks withProductMetrics(
-        Consumer<List<ProductMetric>> productMetricsSetter) {
+        Consumer<List<ProductMetricResp>> productMetricsSetter) {
         if (this.productMetrics == null) {
             this.productMetrics = new ArrayList<>();
         }
@@ -330,14 +330,14 @@ public class ListNotificationMaskRespNotificationMasks {
     }
 
     /**
-     * 按云产品维度屏蔽时的指标信息
+     * **参数解释**： 按云产品维度屏蔽时的指标信息 
      * @return productMetrics
      */
-    public List<ProductMetric> getProductMetrics() {
+    public List<ProductMetricResp> getProductMetrics() {
         return productMetrics;
     }
 
-    public void setProductMetrics(List<ProductMetric> productMetrics) {
+    public void setProductMetrics(List<ProductMetricResp> productMetrics) {
         this.productMetrics = productMetrics;
     }
 
@@ -347,7 +347,7 @@ public class ListNotificationMaskRespNotificationMasks {
     }
 
     /**
-     * dimension: 子维度,product: 云产品
+     * **参数解释**： 资源层级。 **取值范围**： 枚举值。 - product：资源层级为云产品 - dimension：资源层级为子维度 
      * @return resourceLevel
      */
     public ResourceLevelEnum getResourceLevel() {
@@ -364,7 +364,7 @@ public class ListNotificationMaskRespNotificationMasks {
     }
 
     /**
-     * 资源为云产品时的云产品名称
+     * **参数解释**： 资源为云产品时的云产品名称 **取值范围**： 长度为[0,128]个字符。 
      * @return productName
      */
     public String getProductName() {
@@ -375,12 +375,12 @@ public class ListNotificationMaskRespNotificationMasks {
         this.productName = productName;
     }
 
-    public ListNotificationMaskRespNotificationMasks withResources(List<ResourceCategory> resources) {
+    public ListNotificationMaskRespNotificationMasks withResources(List<ResourceCategoryResp> resources) {
         this.resources = resources;
         return this;
     }
 
-    public ListNotificationMaskRespNotificationMasks addResourcesItem(ResourceCategory resourcesItem) {
+    public ListNotificationMaskRespNotificationMasks addResourcesItem(ResourceCategoryResp resourcesItem) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -388,7 +388,8 @@ public class ListNotificationMaskRespNotificationMasks {
         return this;
     }
 
-    public ListNotificationMaskRespNotificationMasks withResources(Consumer<List<ResourceCategory>> resourcesSetter) {
+    public ListNotificationMaskRespNotificationMasks withResources(
+        Consumer<List<ResourceCategoryResp>> resourcesSetter) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -397,14 +398,14 @@ public class ListNotificationMaskRespNotificationMasks {
     }
 
     /**
-     * 关联资源类型，relation_type为RESOURCE时存在该字段,只需要查询出资源的namespace+维度名即可
+     * **参数解释**： 关联资源类型，relation_type为RESOURCE时存在该字段,只需要查询出资源的namespace+维度名即可 
      * @return resources
      */
-    public List<ResourceCategory> getResources() {
+    public List<ResourceCategoryResp> getResources() {
         return resources;
     }
 
-    public void setResources(List<ResourceCategory> resources) {
+    public void setResources(List<ResourceCategoryResp> resources) {
         this.resources = resources;
     }
 
@@ -448,7 +449,7 @@ public class ListNotificationMaskRespNotificationMasks {
     }
 
     /**
-     * 告警屏蔽的创建时间，UNIX时间戳，单位毫秒。
+     * **参数解释**： 告警屏蔽的创建时间，UNIX时间戳，单位毫秒。 **约束限制**： 不涉及。 **取值范围**: 不涉及。 **默认取值**： 不涉及。 
      * @return createTime
      */
     public Long getCreateTime() {
@@ -465,7 +466,7 @@ public class ListNotificationMaskRespNotificationMasks {
     }
 
     /**
-     * 告警屏蔽的更新时间，UNIX时间戳，单位毫秒。
+     * **参数解释**： 告警屏蔽的更新时间，UNIX时间戳，单位毫秒。 **约束限制**： 不涉及。 **取值范围**: 不涉及。 **默认取值**： 不涉及。 
      * @return updateTime
      */
     public Long getUpdateTime() {
@@ -583,7 +584,7 @@ public class ListNotificationMaskRespNotificationMasks {
     }
 
     /**
-     * 告警策略列表。
+     * **参数解释**： 告警策略列表。 
      * @return policies
      */
     public List<PoliciesInListResp> getPolicies() {

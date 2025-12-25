@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * 集群spec信息。
@@ -55,11 +54,6 @@ public class RegisterClusterSpec {
     @JsonProperty(value = "manageType")
 
     private String manageType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "network")
-
-    private NetworkConfig network;
 
     public RegisterClusterSpec withClusterGroupID(String clusterGroupID) {
         this.clusterGroupID = clusterGroupID;
@@ -214,32 +208,6 @@ public class RegisterClusterSpec {
         this.manageType = manageType;
     }
 
-    public RegisterClusterSpec withNetwork(NetworkConfig network) {
-        this.network = network;
-        return this;
-    }
-
-    public RegisterClusterSpec withNetwork(Consumer<NetworkConfig> networkSetter) {
-        if (this.network == null) {
-            this.network = new NetworkConfig();
-            networkSetter.accept(this.network);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get network
-     * @return network
-     */
-    public NetworkConfig getNetwork() {
-        return network;
-    }
-
-    public void setNetwork(NetworkConfig network) {
-        this.network = network;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -253,13 +221,12 @@ public class RegisterClusterSpec {
             && Objects.equals(this.type, that.type) && Objects.equals(this.provider, that.provider)
             && Objects.equals(this.country, that.country) && Objects.equals(this.city, that.city)
             && Objects.equals(this.region, that.region) && Objects.equals(this.projectID, that.projectID)
-            && Objects.equals(this.manageType, that.manageType) && Objects.equals(this.network, that.network);
+            && Objects.equals(this.manageType, that.manageType);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(clusterGroupID, category, type, provider, country, city, region, projectID, manageType, network);
+        return Objects.hash(clusterGroupID, category, type, provider, country, city, region, projectID, manageType);
     }
 
     @Override
@@ -275,7 +242,6 @@ public class RegisterClusterSpec {
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    projectID: ").append(toIndentedString(projectID)).append("\n");
         sb.append("    manageType: ").append(toIndentedString(manageType)).append("\n");
-        sb.append("    network: ").append(toIndentedString(network)).append("\n");
         sb.append("}");
         return sb.toString();
     }

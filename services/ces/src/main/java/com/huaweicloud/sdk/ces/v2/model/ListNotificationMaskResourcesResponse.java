@@ -17,19 +17,19 @@ public class ListNotificationMaskResourcesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
 
-    private List<Resource> resources = null;
+    private List<ResourceResp> resources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
     private Integer count;
 
-    public ListNotificationMaskResourcesResponse withResources(List<Resource> resources) {
+    public ListNotificationMaskResourcesResponse withResources(List<ResourceResp> resources) {
         this.resources = resources;
         return this;
     }
 
-    public ListNotificationMaskResourcesResponse addResourcesItem(Resource resourcesItem) {
+    public ListNotificationMaskResourcesResponse addResourcesItem(ResourceResp resourcesItem) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class ListNotificationMaskResourcesResponse extends SdkResponse {
         return this;
     }
 
-    public ListNotificationMaskResourcesResponse withResources(Consumer<List<Resource>> resourcesSetter) {
+    public ListNotificationMaskResourcesResponse withResources(Consumer<List<ResourceResp>> resourcesSetter) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -46,14 +46,14 @@ public class ListNotificationMaskResourcesResponse extends SdkResponse {
     }
 
     /**
-     * 通知屏蔽资源列表
+     * **参数解释**： 通知屏蔽资源列表 
      * @return resources
      */
-    public List<Resource> getResources() {
+    public List<ResourceResp> getResources() {
         return resources;
     }
 
-    public void setResources(List<Resource> resources) {
+    public void setResources(List<ResourceResp> resources) {
         this.resources = resources;
     }
 
@@ -63,7 +63,7 @@ public class ListNotificationMaskResourcesResponse extends SdkResponse {
     }
 
     /**
-     * 资源总数
+     * **参数解释**： 资源总数 **取值范围**： [0,100] 
      * minimum: 0
      * maximum: 100
      * @return count

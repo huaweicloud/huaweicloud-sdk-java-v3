@@ -22,12 +22,7 @@ public class ListAlertRulesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "records")
 
-    private List<AlertRule> records = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-request-id")
-
-    private String xRequestId;
+    private List<AlertRuleItem> records = null;
 
     public ListAlertRulesResponse withCount(Long count) {
         this.count = count;
@@ -35,9 +30,9 @@ public class ListAlertRulesResponse extends SdkResponse {
     }
 
     /**
-     * 总数量。Total count.
+     * 数量
      * minimum: 0
-     * maximum: 9223372036854775807
+     * maximum: 500
      * @return count
      */
     public Long getCount() {
@@ -48,12 +43,12 @@ public class ListAlertRulesResponse extends SdkResponse {
         this.count = count;
     }
 
-    public ListAlertRulesResponse withRecords(List<AlertRule> records) {
+    public ListAlertRulesResponse withRecords(List<AlertRuleItem> records) {
         this.records = records;
         return this;
     }
 
-    public ListAlertRulesResponse addRecordsItem(AlertRule recordsItem) {
+    public ListAlertRulesResponse addRecordsItem(AlertRuleItem recordsItem) {
         if (this.records == null) {
             this.records = new ArrayList<>();
         }
@@ -61,7 +56,7 @@ public class ListAlertRulesResponse extends SdkResponse {
         return this;
     }
 
-    public ListAlertRulesResponse withRecords(Consumer<List<AlertRule>> recordsSetter) {
+    public ListAlertRulesResponse withRecords(Consumer<List<AlertRuleItem>> recordsSetter) {
         if (this.records == null) {
             this.records = new ArrayList<>();
         }
@@ -70,34 +65,15 @@ public class ListAlertRulesResponse extends SdkResponse {
     }
 
     /**
-     * 告警模型。Alert rules.
+     * 模型记录
      * @return records
      */
-    public List<AlertRule> getRecords() {
+    public List<AlertRuleItem> getRecords() {
         return records;
     }
 
-    public void setRecords(List<AlertRule> records) {
+    public void setRecords(List<AlertRuleItem> records) {
         this.records = records;
-    }
-
-    public ListAlertRulesResponse withXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
-        return this;
-    }
-
-    /**
-     * Get xRequestId
-     * @return xRequestId
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-request-id")
-    public String getXRequestId() {
-        return xRequestId;
-    }
-
-    public void setXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
     }
 
     @Override
@@ -109,13 +85,12 @@ public class ListAlertRulesResponse extends SdkResponse {
             return false;
         }
         ListAlertRulesResponse that = (ListAlertRulesResponse) obj;
-        return Objects.equals(this.count, that.count) && Objects.equals(this.records, that.records)
-            && Objects.equals(this.xRequestId, that.xRequestId);
+        return Objects.equals(this.count, that.count) && Objects.equals(this.records, that.records);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, records, xRequestId);
+        return Objects.hash(count, records);
     }
 
     @Override
@@ -124,7 +99,6 @@ public class ListAlertRulesResponse extends SdkResponse {
         sb.append("class ListAlertRulesResponse {\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    records: ").append(toIndentedString(records)).append("\n");
-        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

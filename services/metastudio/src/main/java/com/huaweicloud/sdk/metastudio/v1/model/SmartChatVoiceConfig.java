@@ -41,7 +41,7 @@ public class SmartChatVoiceConfig {
     private String provider;
 
     /**
-     * 语言类型。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
+     * 语言类型。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持） * fr：法语（仅海外站点支持）
      */
     public static final class LanguageEnum {
 
@@ -75,6 +75,11 @@ public class SmartChatVoiceConfig {
          */
         public static final LanguageEnum THAI = new LanguageEnum("Thai");
 
+        /**
+         * Enum FR for value: "fr"
+         */
+        public static final LanguageEnum FR = new LanguageEnum("fr");
+
         private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, LanguageEnum> createStaticFields() {
@@ -85,6 +90,7 @@ public class SmartChatVoiceConfig {
             map.put("por", POR);
             map.put("Arabic", ARABIC);
             map.put("Thai", THAI);
+            map.put("fr", FR);
             return Collections.unmodifiableMap(map);
         }
 
@@ -241,7 +247,7 @@ public class SmartChatVoiceConfig {
     }
 
     /**
-     * 语言类型。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
+     * 语言类型。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持） * fr：法语（仅海外站点支持）
      * @return language
      */
     public LanguageEnum getLanguage() {

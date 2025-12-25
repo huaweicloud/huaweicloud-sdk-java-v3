@@ -1,0 +1,129 @@
+package com.huaweicloud.sdk.secmaster.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * Request Object
+ */
+public class UpdateNodeRequest {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workspace_id")
+
+    private String workspaceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_id")
+
+    private String nodeId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private NodeExpansionInfo body;
+
+    public UpdateNodeRequest withWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
+        return this;
+    }
+
+    /**
+     * 工作空间ID
+     * @return workspaceId
+     */
+    public String getWorkspaceId() {
+        return workspaceId;
+    }
+
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
+    }
+
+    public UpdateNodeRequest withNodeId(String nodeId) {
+        this.nodeId = nodeId;
+        return this;
+    }
+
+    /**
+     * 节点ID
+     * @return nodeId
+     */
+    public String getNodeId() {
+        return nodeId;
+    }
+
+    public void setNodeId(String nodeId) {
+        this.nodeId = nodeId;
+    }
+
+    public UpdateNodeRequest withBody(NodeExpansionInfo body) {
+        this.body = body;
+        return this;
+    }
+
+    public UpdateNodeRequest withBody(Consumer<NodeExpansionInfo> bodySetter) {
+        if (this.body == null) {
+            this.body = new NodeExpansionInfo();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public NodeExpansionInfo getBody() {
+        return body;
+    }
+
+    public void setBody(NodeExpansionInfo body) {
+        this.body = body;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        UpdateNodeRequest that = (UpdateNodeRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.body, that.body);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(workspaceId, nodeId, body);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class UpdateNodeRequest {\n");
+        sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
+        sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

@@ -145,128 +145,10 @@ public class AlarmTemplateCondition {
 
     private Double value;
 
-    /**
-     * **参数解释**： 告警抑制时间，单位为秒，对应页面上创建告警规则时告警策略最后一个字段，该字段主要为解决告警频繁的问题。 **约束限制**： 不涉及。 **取值范围**： 枚举值，只能为0、300、600、900、1800、3600、10800、21600、43200、86400。 - 0：对于指标类告警，0代表告警一次。对于事件类告警，在立即触发场景中，0代表不抑制；在累计触发场景，0代表只告警一次。 - 300代表满足告警触发条件后每5分钟告警一次。 - 600代表满足告警触发条件后每10分钟告警一次。 - 900代表满足告警触发条件后每15分钟告警一次。 - 1800代表满足告警触发条件后每30分钟告警一次。 - 3600代表满足告警触发条件后每60分钟告警一次。 - 10800代表满足告警触发条件后每3小时告警一次。 - 21600代表满足告警触发条件后每6小时告警一次。 - 43200代表满足告警触发条件后每12小时告警一次。 - 86000代表满足告警触发条件后每一天告警一次。 **默认取值**： 不涉及。 
-     */
-    public static final class SuppressDurationEnum {
-
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final SuppressDurationEnum NUMBER_0 = new SuppressDurationEnum(0);
-
-        /**
-         * Enum NUMBER_300 for value: 300
-         */
-        public static final SuppressDurationEnum NUMBER_300 = new SuppressDurationEnum(300);
-
-        /**
-         * Enum NUMBER_600 for value: 600
-         */
-        public static final SuppressDurationEnum NUMBER_600 = new SuppressDurationEnum(600);
-
-        /**
-         * Enum NUMBER_900 for value: 900
-         */
-        public static final SuppressDurationEnum NUMBER_900 = new SuppressDurationEnum(900);
-
-        /**
-         * Enum NUMBER_1800 for value: 1800
-         */
-        public static final SuppressDurationEnum NUMBER_1800 = new SuppressDurationEnum(1800);
-
-        /**
-         * Enum NUMBER_3600 for value: 3600
-         */
-        public static final SuppressDurationEnum NUMBER_3600 = new SuppressDurationEnum(3600);
-
-        /**
-         * Enum NUMBER_10800 for value: 10800
-         */
-        public static final SuppressDurationEnum NUMBER_10800 = new SuppressDurationEnum(10800);
-
-        /**
-         * Enum NUMBER_21600 for value: 21600
-         */
-        public static final SuppressDurationEnum NUMBER_21600 = new SuppressDurationEnum(21600);
-
-        /**
-         * Enum NUMBER_43200 for value: 43200
-         */
-        public static final SuppressDurationEnum NUMBER_43200 = new SuppressDurationEnum(43200);
-
-        /**
-         * Enum NUMBER_86400 for value: 86400
-         */
-        public static final SuppressDurationEnum NUMBER_86400 = new SuppressDurationEnum(86400);
-
-        private static final Map<Integer, SuppressDurationEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, SuppressDurationEnum> createStaticFields() {
-            Map<Integer, SuppressDurationEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(300, NUMBER_300);
-            map.put(600, NUMBER_600);
-            map.put(900, NUMBER_900);
-            map.put(1800, NUMBER_1800);
-            map.put(3600, NUMBER_3600);
-            map.put(10800, NUMBER_10800);
-            map.put(21600, NUMBER_21600);
-            map.put(43200, NUMBER_43200);
-            map.put(86400, NUMBER_86400);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        SuppressDurationEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static SuppressDurationEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SuppressDurationEnum(value));
-        }
-
-        public static SuppressDurationEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof SuppressDurationEnum) {
-                return this.value.equals(((SuppressDurationEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "suppress_duration")
 
-    private SuppressDurationEnum suppressDuration;
+    private SuppressDuration suppressDuration;
 
     public AlarmTemplateCondition withComparisonOperator(String comparisonOperator) {
         this.comparisonOperator = comparisonOperator;
@@ -274,7 +156,7 @@ public class AlarmTemplateCondition {
     }
 
     /**
-     * **参数解释**： 告警阈值的比较条件。 **约束限制**： 不涉及。 **取值范围**： 只能是>、=、<、>=、<=、!=。 **默认取值**： 不涉及。 
+     * **参数解释**： 阈值符号。 **约束限制**： 指标告警可以使用的阈值符号有>、>=、<、<=、=、!=、cycle_decrease、cycle_increase、cycle_wave； 事件告警可以使用的阈值符号为>、>=、<、<=、=、!=。 **取值范围**： 支持的值为(>|<|>=|<=|=|!=|cycle_decrease|cycle_increase|cycle_wave);cycle_decrease为环比下降,cycle_increase为环比上升,cycle_wave为环比波动。 
      * @return comparisonOperator
      */
     public String getComparisonOperator() {
@@ -291,7 +173,7 @@ public class AlarmTemplateCondition {
     }
 
     /**
-     * **参数解释**： 触发告警的连续发生次数。 **约束限制**： 不涉及。 **取值范围**： 取值范围[1, 5]。告警类型为事件告警时，取值范围为[1, 100]。 **默认取值**： 不涉及。 
+     * **参数解释**： 触发告警的连续发生次数。 **约束限制**： 不涉及。 **取值范围**： 整数，取值范围[1, 5]。 **默认取值**： 不涉及。 
      * minimum: 1
      * maximum: 100
      * @return count
@@ -374,20 +256,20 @@ public class AlarmTemplateCondition {
         this.value = value;
     }
 
-    public AlarmTemplateCondition withSuppressDuration(SuppressDurationEnum suppressDuration) {
+    public AlarmTemplateCondition withSuppressDuration(SuppressDuration suppressDuration) {
         this.suppressDuration = suppressDuration;
         return this;
     }
 
     /**
-     * **参数解释**： 告警抑制时间，单位为秒，对应页面上创建告警规则时告警策略最后一个字段，该字段主要为解决告警频繁的问题。 **约束限制**： 不涉及。 **取值范围**： 枚举值，只能为0、300、600、900、1800、3600、10800、21600、43200、86400。 - 0：对于指标类告警，0代表告警一次。对于事件类告警，在立即触发场景中，0代表不抑制；在累计触发场景，0代表只告警一次。 - 300代表满足告警触发条件后每5分钟告警一次。 - 600代表满足告警触发条件后每10分钟告警一次。 - 900代表满足告警触发条件后每15分钟告警一次。 - 1800代表满足告警触发条件后每30分钟告警一次。 - 3600代表满足告警触发条件后每60分钟告警一次。 - 10800代表满足告警触发条件后每3小时告警一次。 - 21600代表满足告警触发条件后每6小时告警一次。 - 43200代表满足告警触发条件后每12小时告警一次。 - 86000代表满足告警触发条件后每一天告警一次。 **默认取值**： 不涉及。 
+     * Get suppressDuration
      * @return suppressDuration
      */
-    public SuppressDurationEnum getSuppressDuration() {
+    public SuppressDuration getSuppressDuration() {
         return suppressDuration;
     }
 
-    public void setSuppressDuration(SuppressDurationEnum suppressDuration) {
+    public void setSuppressDuration(SuppressDuration suppressDuration) {
         this.suppressDuration = suppressDuration;
     }
 

@@ -16,14 +16,9 @@ public class ListJarPackageStatisticsRequest {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "file_name")
+    @JsonProperty(value = "offset")
 
-    private String fileName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "category")
-
-    private String category;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -31,9 +26,14 @@ public class ListJarPackageStatisticsRequest {
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "offset")
+    @JsonProperty(value = "category")
 
-    private Integer offset;
+    private String category;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "file_name")
+
+    private String fileName;
 
     public ListJarPackageStatisticsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -41,7 +41,7 @@ public class ListJarPackageStatisticsRequest {
     }
 
     /**
-     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
+     * **参数解释**: 企业项目ID，用于过滤不同企业项目下的资产。获取方式请参见[获取企业项目ID](hss_02_0027.xml)。 如需查询所有企业项目下的资产请传参“all_granted_eps”。 **约束限制**: 开通企业项目功能后才需要配置企业项目ID参数。 **取值范围**: 字符长度1-256位 **默认取值**: 0，表示默认企业项目（default）。 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -52,66 +52,13 @@ public class ListJarPackageStatisticsRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public ListJarPackageStatisticsRequest withFileName(String fileName) {
-        this.fileName = fileName;
-        return this;
-    }
-
-    /**
-     * jar包名称
-     * @return fileName
-     */
-    public String getFileName() {
-        return fileName;
-    }
-
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
-    }
-
-    public ListJarPackageStatisticsRequest withCategory(String category) {
-        this.category = category;
-        return this;
-    }
-
-    /**
-     * 类别，包含如下:   - host : 主机   - container : 容器
-     * @return category
-     */
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public ListJarPackageStatisticsRequest withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    /**
-     * 每页显示数量
-     * minimum: 10
-     * maximum: 200
-     * @return limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
     public ListJarPackageStatisticsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置
+     * **参数解释**: 偏移量：指定返回记录的开始位置 **约束限制**: 不涉及 **取值范围**: 最小值0，最大值2000000 **默认取值**: 默认为0 
      * minimum: 0
      * maximum: 2000000
      * @return offset
@@ -124,6 +71,59 @@ public class ListJarPackageStatisticsRequest {
         this.offset = offset;
     }
 
+    public ListJarPackageStatisticsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 每页显示个数 **约束限制**: 不涉及 **取值范围**: 取值10-200 **默认取值**: 10 
+     * minimum: 10
+     * maximum: 200
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListJarPackageStatisticsRequest withCategory(String category) {
+        this.category = category;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 资产类别 **约束限制**: 不涉及 **取值范围**: - host：主机资产 - container：容器资产  **默认取值**: host 
+     * @return category
+     */
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public ListJarPackageStatisticsRequest withFileName(String fileName) {
+        this.fileName = fileName;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 中间件文件名称 **约束限制**: 不涉及 **取值范围**: 字符长度0-256 **默认取值**: 不涉及 
+     * @return fileName
+     */
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -134,13 +134,13 @@ public class ListJarPackageStatisticsRequest {
         }
         ListJarPackageStatisticsRequest that = (ListJarPackageStatisticsRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.fileName, that.fileName) && Objects.equals(this.category, that.category)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.category, that.category) && Objects.equals(this.fileName, that.fileName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, fileName, category, limit, offset);
+        return Objects.hash(enterpriseProjectId, offset, limit, category, fileName);
     }
 
     @Override
@@ -148,10 +148,10 @@ public class ListJarPackageStatisticsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListJarPackageStatisticsRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
-        sb.append("    category: ").append(toIndentedString(category)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    category: ").append(toIndentedString(category)).append("\n");
+        sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

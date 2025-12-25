@@ -105,7 +105,7 @@ public class IdentitySourceSyncRecordVo {
     }
 
     /**
-     * **参数解释**： 身份源类型。 **取值范围**： 不涉及。
+     * **参数解释**： 身份源类型。 **取值范围**： - ldap：目录服务数据源。 - oneaccess：聚合型数据源
      * @return identitySourceType
      */
     public String getIdentitySourceType() {
@@ -224,7 +224,7 @@ public class IdentitySourceSyncRecordVo {
     }
 
     /**
-     * **参数解释**： 状态。 **取值范围**： 不涉及。
+     * **参数解释**： 状态。 **取值范围**： - RUNNING：运行中。 - FINISHED：已完成。 - FAILED：失败。
      * @return status
      */
     public String getStatus() {

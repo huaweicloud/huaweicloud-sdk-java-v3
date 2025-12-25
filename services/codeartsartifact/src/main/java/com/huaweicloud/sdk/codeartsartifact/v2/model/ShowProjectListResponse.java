@@ -1,20 +1,98 @@
 package com.huaweicloud.sdk.codeartsartifact.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ShowProjectListResponse extends SdkResponse {
 
+    /**
+     * **参数解释**： 请求成功或失败状态。 **取值范围**： - success：请求成功。 - error：请求失败。
+     */
+    public static final class StatusEnum {
+
+        /**
+         * Enum SUCCESS for value: "success"
+         */
+        public static final StatusEnum SUCCESS = new StatusEnum("success");
+
+        /**
+         * Enum ERROR for value: "error"
+         */
+        public static final StatusEnum ERROR = new StatusEnum("error");
+
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("success", SUCCESS);
+            map.put("error", ERROR);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
+        }
+
+        public static StatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private String status;
+    private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trace_id")
@@ -24,22 +102,22 @@ public class ShowProjectListResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    private Object result;
+    private List<ShowProjectListResult> result = null;
 
-    public ShowProjectListResponse withStatus(String status) {
+    public ShowProjectListResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 结果状态
+     * **参数解释**： 请求成功或失败状态。 **取值范围**： - success：请求成功。 - error：请求失败。
      * @return status
      */
-    public String getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 
@@ -49,7 +127,7 @@ public class ShowProjectListResponse extends SdkResponse {
     }
 
     /**
-     * 请求id
+     * **参数解释**： 请求ID，当前请求唯一标识。 **取值范围**： 数字及中划线（-）组成的字符串。
      * @return traceId
      */
     public String getTraceId() {
@@ -60,20 +138,36 @@ public class ShowProjectListResponse extends SdkResponse {
         this.traceId = traceId;
     }
 
-    public ShowProjectListResponse withResult(Object result) {
+    public ShowProjectListResponse withResult(List<ShowProjectListResult> result) {
         this.result = result;
         return this;
     }
 
+    public ShowProjectListResponse addResultItem(ShowProjectListResult resultItem) {
+        if (this.result == null) {
+            this.result = new ArrayList<>();
+        }
+        this.result.add(resultItem);
+        return this;
+    }
+
+    public ShowProjectListResponse withResult(Consumer<List<ShowProjectListResult>> resultSetter) {
+        if (this.result == null) {
+            this.result = new ArrayList<>();
+        }
+        resultSetter.accept(this.result);
+        return this;
+    }
+
     /**
-     * 请求返回结果，接口不同，返回不同
+     * **参数解释**： 仓库列表。 **取值范围**： 不涉及。 
      * @return result
      */
-    public Object getResult() {
+    public List<ShowProjectListResult> getResult() {
         return result;
     }
 
-    public void setResult(Object result) {
+    public void setResult(List<ShowProjectListResult> result) {
         this.result = result;
     }
 

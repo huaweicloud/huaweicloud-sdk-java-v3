@@ -5,13 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -24,47 +21,37 @@ public class ListAlertRuleTemplatesRequest {
     private String workspaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "offset")
+    @JsonProperty(value = "template_name")
 
-    private Long offset;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limit")
-
-    private Long limit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sort_key")
-
-    private String sortKey;
+    private String templateName;
 
     /**
-     * 排序顺序，顺序、逆序。Sort direction, asc, desc。
+     * **参数解释**: 状态 - ENABLED 启用 - DISABLED 禁用  **约束限制** 不涉及 **取值范围**: - ENABLED - DISABLED  **默认值** 不涉及           
      */
-    public static final class SortDirEnum {
+    public static final class StatusEnum {
 
         /**
-         * Enum ASC for value: "asc"
+         * Enum ENABLED for value: "ENABLED"
          */
-        public static final SortDirEnum ASC = new SortDirEnum("asc");
+        public static final StatusEnum ENABLED = new StatusEnum("ENABLED");
 
         /**
-         * Enum DESC for value: "desc"
+         * Enum DISABLED for value: "DISABLED"
          */
-        public static final SortDirEnum DESC = new SortDirEnum("desc");
+        public static final StatusEnum DISABLED = new StatusEnum("DISABLED");
 
-        private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
-        private static Map<String, SortDirEnum> createStaticFields() {
-            Map<String, SortDirEnum> map = new HashMap<>();
-            map.put("asc", ASC);
-            map.put("desc", DESC);
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("ENABLED", ENABLED);
+            map.put("DISABLED", DISABLED);
             return Collections.unmodifiableMap(map);
         }
 
         private String value;
 
-        SortDirEnum(String value) {
+        StatusEnum(String value) {
             this.value = value;
         }
 
@@ -79,14 +66,14 @@ public class ListAlertRuleTemplatesRequest {
         }
 
         @JsonCreator
-        public static SortDirEnum fromValue(String value) {
+        public static StatusEnum fromValue(String value) {
             if (value == null) {
                 return null;
             }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
-        public static SortDirEnum valueOf(String value) {
+        public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
@@ -96,8 +83,8 @@ public class ListAlertRuleTemplatesRequest {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj instanceof SortDirEnum) {
-                return this.value.equals(((SortDirEnum) obj).value);
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
             }
             return false;
         }
@@ -109,12 +96,12 @@ public class ListAlertRuleTemplatesRequest {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sort_dir")
+    @JsonProperty(value = "status")
 
-    private SortDirEnum sortDir;
+    private StatusEnum status;
 
     /**
-     * Gets or Sets severity
+     * **参数解释**: 告警等级 - TIPS 提示 - LOW 低危 - MEDIUM 中危 - HIGH 高危 - FATAL 致命  **约束限制** 不涉及 **取值范围**: - TIPS - LOW - MEDIUM - HIGH - FATAL  **默认值** 不涉及                 
      */
     public static final class SeverityEnum {
 
@@ -204,7 +191,27 @@ public class ListAlertRuleTemplatesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity")
 
-    private List<SeverityEnum> severity = null;
+    private SeverityEnum severity;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Long offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Long limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_key")
+
+    private String sortKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_dir")
+
+    private String sortDir;
 
     public ListAlertRuleTemplatesRequest withWorkspaceId(String workspaceId) {
         this.workspaceId = workspaceId;
@@ -212,7 +219,7 @@ public class ListAlertRuleTemplatesRequest {
     }
 
     /**
-     * 工作空间 ID。Workspace ID.
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -223,15 +230,66 @@ public class ListAlertRuleTemplatesRequest {
         this.workspaceId = workspaceId;
     }
 
+    public ListAlertRuleTemplatesRequest withTemplateName(String templateName) {
+        this.templateName = templateName;
+        return this;
+    }
+
+    /**
+     * 模板名称
+     * @return templateName
+     */
+    public String getTemplateName() {
+        return templateName;
+    }
+
+    public void setTemplateName(String templateName) {
+        this.templateName = templateName;
+    }
+
+    public ListAlertRuleTemplatesRequest withStatus(StatusEnum status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 状态 - ENABLED 启用 - DISABLED 禁用  **约束限制** 不涉及 **取值范围**: - ENABLED - DISABLED  **默认值** 不涉及           
+     * @return status
+     */
+    public StatusEnum getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusEnum status) {
+        this.status = status;
+    }
+
+    public ListAlertRuleTemplatesRequest withSeverity(SeverityEnum severity) {
+        this.severity = severity;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 告警等级 - TIPS 提示 - LOW 低危 - MEDIUM 中危 - HIGH 高危 - FATAL 致命  **约束限制** 不涉及 **取值范围**: - TIPS - LOW - MEDIUM - HIGH - FATAL  **默认值** 不涉及                 
+     * @return severity
+     */
+    public SeverityEnum getSeverity() {
+        return severity;
+    }
+
+    public void setSeverity(SeverityEnum severity) {
+        this.severity = severity;
+    }
+
     public ListAlertRuleTemplatesRequest withOffset(Long offset) {
         this.offset = offset;
         return this;
     }
 
     /**
-     * 偏移量。Offset.
+     * **参数解释：** 偏移量 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * minimum: 0
-     * maximum: 9223372036854775807
+     * maximum: 9223372036854775800
      * @return offset
      */
     public Long getOffset() {
@@ -248,9 +306,9 @@ public class ListAlertRuleTemplatesRequest {
     }
 
     /**
-     * 条数。Limit.
-     * minimum: 10
-     * maximum: 50
+     * **参数解释：** 查询数据限制 **取值范围：** 0-1000 **默认取值：** 不涉及
+     * minimum: 0
+     * maximum: 1000
      * @return limit
      */
     public Long getLimit() {
@@ -267,7 +325,7 @@ public class ListAlertRuleTemplatesRequest {
     }
 
     /**
-     * 排序字段。Sort key
+     * 按照属性排序。
      * @return sortKey
      */
     public String getSortKey() {
@@ -278,54 +336,21 @@ public class ListAlertRuleTemplatesRequest {
         this.sortKey = sortKey;
     }
 
-    public ListAlertRuleTemplatesRequest withSortDir(SortDirEnum sortDir) {
+    public ListAlertRuleTemplatesRequest withSortDir(String sortDir) {
         this.sortDir = sortDir;
         return this;
     }
 
     /**
-     * 排序顺序，顺序、逆序。Sort direction, asc, desc。
+     * 排序顺序，支持 `ASC` 或 `DESC`。
      * @return sortDir
      */
-    public SortDirEnum getSortDir() {
+    public String getSortDir() {
         return sortDir;
     }
 
-    public void setSortDir(SortDirEnum sortDir) {
+    public void setSortDir(String sortDir) {
         this.sortDir = sortDir;
-    }
-
-    public ListAlertRuleTemplatesRequest withSeverity(List<SeverityEnum> severity) {
-        this.severity = severity;
-        return this;
-    }
-
-    public ListAlertRuleTemplatesRequest addSeverityItem(SeverityEnum severityItem) {
-        if (this.severity == null) {
-            this.severity = new ArrayList<>();
-        }
-        this.severity.add(severityItem);
-        return this;
-    }
-
-    public ListAlertRuleTemplatesRequest withSeverity(Consumer<List<SeverityEnum>> severitySetter) {
-        if (this.severity == null) {
-            this.severity = new ArrayList<>();
-        }
-        severitySetter.accept(this.severity);
-        return this;
-    }
-
-    /**
-     * 严重程度，提示、低危、中危、高危、致命。Severity. TIPS, LOW, MEDIUM, HIGH, FATAL
-     * @return severity
-     */
-    public List<SeverityEnum> getSeverity() {
-        return severity;
-    }
-
-    public void setSeverity(List<SeverityEnum> severity) {
-        this.severity = severity;
     }
 
     @Override
@@ -337,14 +362,16 @@ public class ListAlertRuleTemplatesRequest {
             return false;
         }
         ListAlertRuleTemplatesRequest that = (ListAlertRuleTemplatesRequest) obj;
-        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.offset, that.offset)
+        return Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.templateName, that.templateName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.severity, that.severity) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.sortKey, that.sortKey)
-            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.severity, that.severity);
+            && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspaceId, offset, limit, sortKey, sortDir, severity);
+        return Objects.hash(workspaceId, templateName, status, severity, offset, limit, sortKey, sortDir);
     }
 
     @Override
@@ -352,11 +379,13 @@ public class ListAlertRuleTemplatesRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAlertRuleTemplatesRequest {\n");
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
+        sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
-        sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
         sb.append("}");
         return sb.toString();
     }

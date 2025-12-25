@@ -1502,6 +1502,36 @@ public class DdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListBackupsRequest.ModeEnum.class),
             f -> f.withMarshaller(ListBackupsRequest::getMode, ListBackupsRequest::setMode));
+        builder.<String>withRequestField("order_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackupsRequest::getOrderField, ListBackupsRequest::setOrderField));
+        builder.<String>withRequestField("order_rule",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackupsRequest::getOrderRule, ListBackupsRequest::setOrderRule));
+        builder.<String>withRequestField("backup_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackupsRequest::getBackupStatus, ListBackupsRequest::setBackupStatus));
+        builder.<String>withRequestField("backup_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackupsRequest::getBackupName, ListBackupsRequest::setBackupName));
+        builder.<String>withRequestField("backup_description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackupsRequest::getBackupDescription, ListBackupsRequest::setBackupDescription));
+        builder.<String>withRequestField("instance_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBackupsRequest::getInstanceName, ListBackupsRequest::setInstanceName));
 
         // response
 

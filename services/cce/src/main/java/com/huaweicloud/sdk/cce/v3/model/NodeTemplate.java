@@ -204,6 +204,11 @@ public class NodeTemplate {
     private String partition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "configurationsOverride")
+
+    private List<PackageConfiguration> configurationsOverride = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodeNameTemplate")
 
     private NodeSpecNodeNameTemplate nodeNameTemplate;
@@ -751,6 +756,39 @@ public class NodeTemplate {
         this.partition = partition;
     }
 
+    public NodeTemplate withConfigurationsOverride(List<PackageConfiguration> configurationsOverride) {
+        this.configurationsOverride = configurationsOverride;
+        return this;
+    }
+
+    public NodeTemplate addConfigurationsOverrideItem(PackageConfiguration configurationsOverrideItem) {
+        if (this.configurationsOverride == null) {
+            this.configurationsOverride = new ArrayList<>();
+        }
+        this.configurationsOverride.add(configurationsOverrideItem);
+        return this;
+    }
+
+    public NodeTemplate withConfigurationsOverride(Consumer<List<PackageConfiguration>> configurationsOverrideSetter) {
+        if (this.configurationsOverride == null) {
+            this.configurationsOverride = new ArrayList<>();
+        }
+        configurationsOverrideSetter.accept(this.configurationsOverride);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 覆盖节点默认组件配置。  [当前支持的可配置组件及其参数详见[配置管理](https://support.huaweicloud.com/usermanual-cce/cce_10_0652.htmll)。](tag:hws) [当前支持的可配置组件及其参数详见[配置管理](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_10_0652.html)。](tag:hws_hk) **约束限制：** 若指定了不支持的组件或组件不支持的参数，该配置项将被忽略。 
+     * @return configurationsOverride
+     */
+    public List<PackageConfiguration> getConfigurationsOverride() {
+        return configurationsOverride;
+    }
+
+    public void setConfigurationsOverride(List<PackageConfiguration> configurationsOverride) {
+        this.configurationsOverride = configurationsOverride;
+    }
+
     public NodeTemplate withNodeNameTemplate(NodeSpecNodeNameTemplate nodeNameTemplate) {
         this.nodeNameTemplate = nodeNameTemplate;
         return this;
@@ -801,6 +839,7 @@ public class NodeTemplate {
             && Objects.equals(this.hostnameConfig, that.hostnameConfig)
             && Objects.equals(this.serverEnterpriseProjectID, that.serverEnterpriseProjectID)
             && Objects.equals(this.partition, that.partition)
+            && Objects.equals(this.configurationsOverride, that.configurationsOverride)
             && Objects.equals(this.nodeNameTemplate, that.nodeNameTemplate);
     }
 
@@ -829,6 +868,7 @@ public class NodeTemplate {
             hostnameConfig,
             serverEnterpriseProjectID,
             partition,
+            configurationsOverride,
             nodeNameTemplate);
     }
 
@@ -859,6 +899,7 @@ public class NodeTemplate {
         sb.append("    hostnameConfig: ").append(toIndentedString(hostnameConfig)).append("\n");
         sb.append("    serverEnterpriseProjectID: ").append(toIndentedString(serverEnterpriseProjectID)).append("\n");
         sb.append("    partition: ").append(toIndentedString(partition)).append("\n");
+        sb.append("    configurationsOverride: ").append(toIndentedString(configurationsOverride)).append("\n");
         sb.append("    nodeNameTemplate: ").append(toIndentedString(nodeNameTemplate)).append("\n");
         sb.append("}");
         return sb.toString();

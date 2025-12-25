@@ -3,148 +3,158 @@ package com.huaweicloud.sdk.secmaster.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
-import com.huaweicloud.sdk.secmaster.v2.model.BatchSearchMetricHitsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.BatchSearchMetricHitsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ChangeAlertRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ChangeAlertResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ChangeIncidentRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ChangeIncidentResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ChangePlaybookInstanceRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ChangePlaybookInstanceResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CopyPlaybookVersionRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CopyPlaybookVersionResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateAlertRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateAlertResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateAdhocQueryRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateAdhocQueryResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateAlertRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateAlertRuleResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateAlertRuleSimulationRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateAlertRuleSimulationResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateBatchOrderAlertsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateBatchOrderAlertsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateDataobjectRelationsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateDataobjectRelationsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateDataspaceRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateDataspaceResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateIncidentRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateIncidentResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateIndicatorRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateIndicatorResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateAnalysisScriptRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateAnalysisScriptResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateCodeSegmentRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateCodeSegmentResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateCustomizedCheckitemRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateCustomizedCheckitemResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateCustomizedCompliancePackageRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateCustomizedCompliancePackageResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateDataTransformationRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateDataTransformationResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateLayoutFieldRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateLayoutFieldResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreatePipeRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreatePipeResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookActionRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookActionResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookApproveRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookApproveResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookRuleRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookRuleResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookVersionRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePlaybookVersionResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePostPaidOrderRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreatePostPaidOrderResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateWorkspaceRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.CreateWorkspaceResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateRetrieveScriptRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateRetrieveScriptResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateSqlValidationRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateSqlValidationResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateTableAnalysisRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateTableAnalysisResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateTableRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateTableResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteAdhocQueryRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteAdhocQueryResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.DeleteAlertRuleResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteDataobjectRelationsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteDataobjectRelationsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteIncidentRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteIncidentResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteIndicatorRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteIndicatorResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookActionRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookActionResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookRuleRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookRuleResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookVersionRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.DeletePlaybookVersionResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteWorkspaceRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.DeleteWorkspaceResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteAnalysisScriptRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteAnalysisScriptResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteCodeSegmentRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteCodeSegmentResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteCustomizedCheckitemsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteCustomizedCheckitemsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteCustomizedCompliancePackagesRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteCustomizedCompliancePackagesResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteDataTransformationRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteDataTransformationResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteLayoutFieldRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteLayoutFieldResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeletePipeRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeletePipeResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteRetrieveScriptRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteRetrieveScriptResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteTableRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DeleteTableResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.DisableAlertRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.DisableAlertRuleResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DisableDataConsumptionRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DisableDataConsumptionResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.DisableDataTransformationRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.DisableDataTransformationResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.EnableAlertRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.EnableAlertRuleResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.EnableDataConsumptionRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.EnableDataConsumptionResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.EnableDataTransformationRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.EnableDataTransformationResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRuleMetricsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRuleMetricsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRuleTemplateMetricsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRuleTemplateMetricsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRuleTemplatesRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRuleTemplatesResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRulesRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAlertRulesResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListAlertsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListAlertsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListDataclassFieldsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListDataclassFieldsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListDataclassRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListDataclassResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListDataobjectRelationsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListDataobjectRelationsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListIncidentsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListIncidentsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListIndicatorsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListIndicatorsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookActionsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookActionsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookApprovesRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookApprovesResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookAuditLogsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookAuditLogsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookInstancesRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookInstancesResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookVersionsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybookVersionsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybooksRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListPlaybooksResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListWorkflowsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListWorkflowsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ListWorkspacesRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ListWorkspacesResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListAnalysisScriptsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListAnalysisScriptsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListCodeSegmentsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListCodeSegmentsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDataTransformationMetricsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDataTransformationMetricsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDataTransformationsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDataTransformationsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDirectoriesRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListDirectoriesResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListLayoutFieldAllRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListLayoutFieldAllResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListPipesRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListPipesResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListRetrieveScriptsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListRetrieveScriptsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListTableHistogramsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListTableHistogramsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListTableLogsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListTableLogsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListTablesRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListTablesResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.SearchBaselineRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.SearchBaselineResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowAlertRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowAlertResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.SearchCheckitemsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.SearchCheckitemsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.SearchCompliancePackagesRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.SearchCompliancePackagesResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowAdhocResultRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowAdhocResultResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowAlertRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowAlertRuleResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowAlertRuleTemplateRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ShowAlertRuleTemplateResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowIncidentRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowIncidentResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowIndicatorDetailRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowIndicatorDetailResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookInstanceRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookInstanceResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookMonitorsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookMonitorsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookRuleRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookRuleResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookStatisticsRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookStatisticsResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookTopologyRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookTopologyResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookVersionRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowPlaybookVersionResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowWorkspaceRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.ShowWorkspaceResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowAnalysisScriptRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowAnalysisScriptResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowCheckitemDetailRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowCheckitemDetailResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowCodeSegmentRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowCodeSegmentResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowCompliancePackageDetailRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowCompliancePackageDetailResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowDataConsumptionRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowDataConsumptionResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowDataTransformationRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowDataTransformationResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowLayoutFieldInfoRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowLayoutFieldInfoResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowMonitorStatsRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowMonitorStatsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowPipeRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowPipeResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowRetrieveScriptRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowRetrieveScriptResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowSubscriptionResourcesRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowSubscriptionResourcesResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowTableRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowTableResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowVersionRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ShowVersionResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.UpdateAlertRuleRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.UpdateAlertRuleResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdateIndicatorRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdateIndicatorResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookActionRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookActionResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookRuleRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookRuleResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookVersionRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdatePlaybookVersionResponse;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdateWorkspaceRequest;
-import com.huaweicloud.sdk.secmaster.v2.model.UpdateWorkspaceResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateAnalysisScriptRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateAnalysisScriptResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateCheckitemRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateCheckitemResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateCodeSegmentRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateCodeSegmentResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateCompliancePackageRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateCompliancePackageResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateDataTransformationRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateDataTransformationResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateLayoutFieldRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateLayoutFieldResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdatePipeRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdatePipeResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdatePipeSchemaRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdatePipeSchemaResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateRetrieveScriptRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateRetrieveScriptResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateTableRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateTableResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateTableSchemaRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.UpdateTableSchemaResponse;
 
 public class SecMasterClient {
 
@@ -160,181 +170,38 @@ public class SecMasterClient {
     }
 
     /**
-     * 批量查询指标结果
+     * 创建adhoc查询
      *
-     * 批量查询指标结果
+     * 创建adhoc查询
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request BatchSearchMetricHitsRequest 请求对象
-     * @return BatchSearchMetricHitsResponse
+     * @param request CreateAdhocQueryRequest 请求对象
+     * @return CreateAdhocQueryResponse
      */
-    public BatchSearchMetricHitsResponse batchSearchMetricHits(BatchSearchMetricHitsRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.batchSearchMetricHits);
+    public CreateAdhocQueryResponse createAdhocQuery(CreateAdhocQueryRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.createAdhocQuery);
     }
 
     /**
-     * 批量查询指标结果
+     * 创建adhoc查询
      *
-     * 批量查询指标结果
+     * 创建adhoc查询
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request BatchSearchMetricHitsRequest 请求对象
-     * @return SyncInvoker<BatchSearchMetricHitsRequest, BatchSearchMetricHitsResponse>
+     * @param request CreateAdhocQueryRequest 请求对象
+     * @return SyncInvoker<CreateAdhocQueryRequest, CreateAdhocQueryResponse>
      */
-    public SyncInvoker<BatchSearchMetricHitsRequest, BatchSearchMetricHitsResponse> batchSearchMetricHitsInvoker(
-        BatchSearchMetricHitsRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.batchSearchMetricHits, hcClient);
-    }
-
-    /**
-     * 更新告警
-     *
-     * 编辑告警，根据实际修改的属性更新，未修改的列不更新
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ChangeAlertRequest 请求对象
-     * @return ChangeAlertResponse
-     */
-    public ChangeAlertResponse changeAlert(ChangeAlertRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.changeAlert);
-    }
-
-    /**
-     * 更新告警
-     *
-     * 编辑告警，根据实际修改的属性更新，未修改的列不更新
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ChangeAlertRequest 请求对象
-     * @return SyncInvoker<ChangeAlertRequest, ChangeAlertResponse>
-     */
-    public SyncInvoker<ChangeAlertRequest, ChangeAlertResponse> changeAlertInvoker(ChangeAlertRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.changeAlert, hcClient);
-    }
-
-    /**
-     * 更新事件
-     *
-     * 编辑事件，根据实际修改的属性更新，未修改的列不更新
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ChangeIncidentRequest 请求对象
-     * @return ChangeIncidentResponse
-     */
-    public ChangeIncidentResponse changeIncident(ChangeIncidentRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.changeIncident);
-    }
-
-    /**
-     * 更新事件
-     *
-     * 编辑事件，根据实际修改的属性更新，未修改的列不更新
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ChangeIncidentRequest 请求对象
-     * @return SyncInvoker<ChangeIncidentRequest, ChangeIncidentResponse>
-     */
-    public SyncInvoker<ChangeIncidentRequest, ChangeIncidentResponse> changeIncidentInvoker(
-        ChangeIncidentRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.changeIncident, hcClient);
-    }
-
-    /**
-     * 操作剧本实例
-     *
-     * 操作剧本实例
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ChangePlaybookInstanceRequest 请求对象
-     * @return ChangePlaybookInstanceResponse
-     */
-    public ChangePlaybookInstanceResponse changePlaybookInstance(ChangePlaybookInstanceRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.changePlaybookInstance);
-    }
-
-    /**
-     * 操作剧本实例
-     *
-     * 操作剧本实例
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ChangePlaybookInstanceRequest 请求对象
-     * @return SyncInvoker<ChangePlaybookInstanceRequest, ChangePlaybookInstanceResponse>
-     */
-    public SyncInvoker<ChangePlaybookInstanceRequest, ChangePlaybookInstanceResponse> changePlaybookInstanceInvoker(
-        ChangePlaybookInstanceRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.changePlaybookInstance, hcClient);
-    }
-
-    /**
-     * 克隆剧本及版本
-     *
-     * 克隆剧本及版本
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CopyPlaybookVersionRequest 请求对象
-     * @return CopyPlaybookVersionResponse
-     */
-    public CopyPlaybookVersionResponse copyPlaybookVersion(CopyPlaybookVersionRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.copyPlaybookVersion);
-    }
-
-    /**
-     * 克隆剧本及版本
-     *
-     * 克隆剧本及版本
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CopyPlaybookVersionRequest 请求对象
-     * @return SyncInvoker<CopyPlaybookVersionRequest, CopyPlaybookVersionResponse>
-     */
-    public SyncInvoker<CopyPlaybookVersionRequest, CopyPlaybookVersionResponse> copyPlaybookVersionInvoker(
-        CopyPlaybookVersionRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.copyPlaybookVersion, hcClient);
-    }
-
-    /**
-     * 创建告警
-     *
-     * 创建告警
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateAlertRequest 请求对象
-     * @return CreateAlertResponse
-     */
-    public CreateAlertResponse createAlert(CreateAlertRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.createAlert);
-    }
-
-    /**
-     * 创建告警
-     *
-     * 创建告警
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateAlertRequest 请求对象
-     * @return SyncInvoker<CreateAlertRequest, CreateAlertResponse>
-     */
-    public SyncInvoker<CreateAlertRequest, CreateAlertResponse> createAlertInvoker(CreateAlertRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.createAlert, hcClient);
+    public SyncInvoker<CreateAdhocQueryRequest, CreateAdhocQueryResponse> createAdhocQueryInvoker(
+        CreateAdhocQueryRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.createAdhocQuery, hcClient);
     }
 
     /**
      * 创建告警规则
      *
-     * Create alert rule
+     * 创建告警规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -348,7 +215,7 @@ public class SecMasterClient {
     /**
      * 创建告警规则
      *
-     * Create alert rule
+     * 创建告警规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -361,183 +228,184 @@ public class SecMasterClient {
     }
 
     /**
-     * 模拟告警规则
+     * 创建分析脚本
      *
-     * Simulate alert rule
+     * 创建分析脚本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreateAlertRuleSimulationRequest 请求对象
-     * @return CreateAlertRuleSimulationResponse
+     * @param request CreateAnalysisScriptRequest 请求对象
+     * @return CreateAnalysisScriptResponse
      */
-    public CreateAlertRuleSimulationResponse createAlertRuleSimulation(CreateAlertRuleSimulationRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.createAlertRuleSimulation);
+    public CreateAnalysisScriptResponse createAnalysisScript(CreateAnalysisScriptRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.createAnalysisScript);
     }
 
     /**
-     * 模拟告警规则
+     * 创建分析脚本
      *
-     * Simulate alert rule
+     * 创建分析脚本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreateAlertRuleSimulationRequest 请求对象
-     * @return SyncInvoker<CreateAlertRuleSimulationRequest, CreateAlertRuleSimulationResponse>
+     * @param request CreateAnalysisScriptRequest 请求对象
+     * @return SyncInvoker<CreateAnalysisScriptRequest, CreateAnalysisScriptResponse>
      */
-    public SyncInvoker<CreateAlertRuleSimulationRequest, CreateAlertRuleSimulationResponse> createAlertRuleSimulationInvoker(
-        CreateAlertRuleSimulationRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.createAlertRuleSimulation, hcClient);
+    public SyncInvoker<CreateAnalysisScriptRequest, CreateAnalysisScriptResponse> createAnalysisScriptInvoker(
+        CreateAnalysisScriptRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.createAnalysisScript, hcClient);
     }
 
     /**
-     * 告警转事件
+     * 创建代码片段
      *
-     * 告警转事件
+     * 创建代码片段
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreateBatchOrderAlertsRequest 请求对象
-     * @return CreateBatchOrderAlertsResponse
+     * @param request CreateCodeSegmentRequest 请求对象
+     * @return CreateCodeSegmentResponse
      */
-    public CreateBatchOrderAlertsResponse createBatchOrderAlerts(CreateBatchOrderAlertsRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.createBatchOrderAlerts);
+    public CreateCodeSegmentResponse createCodeSegment(CreateCodeSegmentRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.createCodeSegment);
     }
 
     /**
-     * 告警转事件
+     * 创建代码片段
      *
-     * 告警转事件
+     * 创建代码片段
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreateBatchOrderAlertsRequest 请求对象
-     * @return SyncInvoker<CreateBatchOrderAlertsRequest, CreateBatchOrderAlertsResponse>
+     * @param request CreateCodeSegmentRequest 请求对象
+     * @return SyncInvoker<CreateCodeSegmentRequest, CreateCodeSegmentResponse>
      */
-    public SyncInvoker<CreateBatchOrderAlertsRequest, CreateBatchOrderAlertsResponse> createBatchOrderAlertsInvoker(
-        CreateBatchOrderAlertsRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.createBatchOrderAlerts, hcClient);
+    public SyncInvoker<CreateCodeSegmentRequest, CreateCodeSegmentResponse> createCodeSegmentInvoker(
+        CreateCodeSegmentRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.createCodeSegment, hcClient);
     }
 
     /**
-     * 关联Dataobject
+     * 新增自定义检查项
      *
-     * 关联Dataobject
+     * 新增自定义检查项
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreateDataobjectRelationsRequest 请求对象
-     * @return CreateDataobjectRelationsResponse
+     * @param request CreateCustomizedCheckitemRequest 请求对象
+     * @return CreateCustomizedCheckitemResponse
      */
-    public CreateDataobjectRelationsResponse createDataobjectRelations(CreateDataobjectRelationsRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.createDataobjectRelations);
+    public CreateCustomizedCheckitemResponse createCustomizedCheckitem(CreateCustomizedCheckitemRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.createCustomizedCheckitem);
     }
 
     /**
-     * 关联Dataobject
+     * 新增自定义检查项
      *
-     * 关联Dataobject
+     * 新增自定义检查项
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreateDataobjectRelationsRequest 请求对象
-     * @return SyncInvoker<CreateDataobjectRelationsRequest, CreateDataobjectRelationsResponse>
+     * @param request CreateCustomizedCheckitemRequest 请求对象
+     * @return SyncInvoker<CreateCustomizedCheckitemRequest, CreateCustomizedCheckitemResponse>
      */
-    public SyncInvoker<CreateDataobjectRelationsRequest, CreateDataobjectRelationsResponse> createDataobjectRelationsInvoker(
-        CreateDataobjectRelationsRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.createDataobjectRelations, hcClient);
+    public SyncInvoker<CreateCustomizedCheckitemRequest, CreateCustomizedCheckitemResponse> createCustomizedCheckitemInvoker(
+        CreateCustomizedCheckitemRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.createCustomizedCheckitem, hcClient);
     }
 
     /**
-     * 创建数据空间
+     * 新增自定义遵从包
      *
-     * 创建数据空间
+     * 新增自定义遵从包
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreateDataspaceRequest 请求对象
-     * @return CreateDataspaceResponse
+     * @param request CreateCustomizedCompliancePackageRequest 请求对象
+     * @return CreateCustomizedCompliancePackageResponse
      */
-    public CreateDataspaceResponse createDataspace(CreateDataspaceRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.createDataspace);
+    public CreateCustomizedCompliancePackageResponse createCustomizedCompliancePackage(
+        CreateCustomizedCompliancePackageRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.createCustomizedCompliancePackage);
     }
 
     /**
-     * 创建数据空间
+     * 新增自定义遵从包
      *
-     * 创建数据空间
+     * 新增自定义遵从包
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreateDataspaceRequest 请求对象
-     * @return SyncInvoker<CreateDataspaceRequest, CreateDataspaceResponse>
+     * @param request CreateCustomizedCompliancePackageRequest 请求对象
+     * @return SyncInvoker<CreateCustomizedCompliancePackageRequest, CreateCustomizedCompliancePackageResponse>
      */
-    public SyncInvoker<CreateDataspaceRequest, CreateDataspaceResponse> createDataspaceInvoker(
-        CreateDataspaceRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.createDataspace, hcClient);
+    public SyncInvoker<CreateCustomizedCompliancePackageRequest, CreateCustomizedCompliancePackageResponse> createCustomizedCompliancePackageInvoker(
+        CreateCustomizedCompliancePackageRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.createCustomizedCompliancePackage, hcClient);
     }
 
     /**
-     * 创建事件
+     * 创建数据加工
      *
-     * 创建事件
+     * 创建数据加工
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreateIncidentRequest 请求对象
-     * @return CreateIncidentResponse
+     * @param request CreateDataTransformationRequest 请求对象
+     * @return CreateDataTransformationResponse
      */
-    public CreateIncidentResponse createIncident(CreateIncidentRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.createIncident);
+    public CreateDataTransformationResponse createDataTransformation(CreateDataTransformationRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.createDataTransformation);
     }
 
     /**
-     * 创建事件
+     * 创建数据加工
      *
-     * 创建事件
+     * 创建数据加工
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreateIncidentRequest 请求对象
-     * @return SyncInvoker<CreateIncidentRequest, CreateIncidentResponse>
+     * @param request CreateDataTransformationRequest 请求对象
+     * @return SyncInvoker<CreateDataTransformationRequest, CreateDataTransformationResponse>
      */
-    public SyncInvoker<CreateIncidentRequest, CreateIncidentResponse> createIncidentInvoker(
-        CreateIncidentRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.createIncident, hcClient);
+    public SyncInvoker<CreateDataTransformationRequest, CreateDataTransformationResponse> createDataTransformationInvoker(
+        CreateDataTransformationRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.createDataTransformation, hcClient);
     }
 
     /**
-     * 创建威胁情报
+     * 创建布局字段
      *
-     * 创建威胁情报
+     * 创建布局字段
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreateIndicatorRequest 请求对象
-     * @return CreateIndicatorResponse
+     * @param request CreateLayoutFieldRequest 请求对象
+     * @return CreateLayoutFieldResponse
      */
-    public CreateIndicatorResponse createIndicator(CreateIndicatorRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.createIndicator);
+    public CreateLayoutFieldResponse createLayoutField(CreateLayoutFieldRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.createLayoutField);
     }
 
     /**
-     * 创建威胁情报
+     * 创建布局字段
      *
-     * 创建威胁情报
+     * 创建布局字段
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreateIndicatorRequest 请求对象
-     * @return SyncInvoker<CreateIndicatorRequest, CreateIndicatorResponse>
+     * @param request CreateLayoutFieldRequest 请求对象
+     * @return SyncInvoker<CreateLayoutFieldRequest, CreateLayoutFieldResponse>
      */
-    public SyncInvoker<CreateIndicatorRequest, CreateIndicatorResponse> createIndicatorInvoker(
-        CreateIndicatorRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.createIndicator, hcClient);
+    public SyncInvoker<CreateLayoutFieldRequest, CreateLayoutFieldResponse> createLayoutFieldInvoker(
+        CreateLayoutFieldRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.createLayoutField, hcClient);
     }
 
     /**
-     * 创建数据管道
+     * 创建管道
      *
-     * 创建数据管道
+     * 创建管道
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -549,9 +417,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 创建数据管道
+     * 创建管道
      *
-     * 创建数据管道
+     * 创建管道
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -563,240 +431,124 @@ public class SecMasterClient {
     }
 
     /**
-     * 创建剧本
+     * 创建检索脚本
      *
-     * 创建剧本
+     * 创建检索脚本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreatePlaybookRequest 请求对象
-     * @return CreatePlaybookResponse
+     * @param request CreateRetrieveScriptRequest 请求对象
+     * @return CreateRetrieveScriptResponse
      */
-    public CreatePlaybookResponse createPlaybook(CreatePlaybookRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.createPlaybook);
+    public CreateRetrieveScriptResponse createRetrieveScript(CreateRetrieveScriptRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.createRetrieveScript);
     }
 
     /**
-     * 创建剧本
+     * 创建检索脚本
      *
-     * 创建剧本
+     * 创建检索脚本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreatePlaybookRequest 请求对象
-     * @return SyncInvoker<CreatePlaybookRequest, CreatePlaybookResponse>
+     * @param request CreateRetrieveScriptRequest 请求对象
+     * @return SyncInvoker<CreateRetrieveScriptRequest, CreateRetrieveScriptResponse>
      */
-    public SyncInvoker<CreatePlaybookRequest, CreatePlaybookResponse> createPlaybookInvoker(
-        CreatePlaybookRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.createPlaybook, hcClient);
+    public SyncInvoker<CreateRetrieveScriptRequest, CreateRetrieveScriptResponse> createRetrieveScriptInvoker(
+        CreateRetrieveScriptRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.createRetrieveScript, hcClient);
     }
 
     /**
-     * 创建剧本动作
+     * 创建表
      *
-     * 创建剧本动作
+     * 创建表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreatePlaybookActionRequest 请求对象
-     * @return CreatePlaybookActionResponse
+     * @param request CreateTableRequest 请求对象
+     * @return CreateTableResponse
      */
-    public CreatePlaybookActionResponse createPlaybookAction(CreatePlaybookActionRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.createPlaybookAction);
+    public CreateTableResponse createTable(CreateTableRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.createTable);
     }
 
     /**
-     * 创建剧本动作
+     * 创建表
      *
-     * 创建剧本动作
+     * 创建表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreatePlaybookActionRequest 请求对象
-     * @return SyncInvoker<CreatePlaybookActionRequest, CreatePlaybookActionResponse>
+     * @param request CreateTableRequest 请求对象
+     * @return SyncInvoker<CreateTableRequest, CreateTableResponse>
      */
-    public SyncInvoker<CreatePlaybookActionRequest, CreatePlaybookActionResponse> createPlaybookActionInvoker(
-        CreatePlaybookActionRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.createPlaybookAction, hcClient);
+    public SyncInvoker<CreateTableRequest, CreateTableResponse> createTableInvoker(CreateTableRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.createTable, hcClient);
     }
 
     /**
-     * 审核剧本
+     * 创建安全分析查询
      *
-     * 审核剧本
+     * 创建安全分析查询
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreatePlaybookApproveRequest 请求对象
-     * @return CreatePlaybookApproveResponse
+     * @param request CreateTableAnalysisRequest 请求对象
+     * @return CreateTableAnalysisResponse
      */
-    public CreatePlaybookApproveResponse createPlaybookApprove(CreatePlaybookApproveRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.createPlaybookApprove);
+    public CreateTableAnalysisResponse createTableAnalysis(CreateTableAnalysisRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.createTableAnalysis);
     }
 
     /**
-     * 审核剧本
+     * 创建安全分析查询
      *
-     * 审核剧本
+     * 创建安全分析查询
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreatePlaybookApproveRequest 请求对象
-     * @return SyncInvoker<CreatePlaybookApproveRequest, CreatePlaybookApproveResponse>
+     * @param request CreateTableAnalysisRequest 请求对象
+     * @return SyncInvoker<CreateTableAnalysisRequest, CreateTableAnalysisResponse>
      */
-    public SyncInvoker<CreatePlaybookApproveRequest, CreatePlaybookApproveResponse> createPlaybookApproveInvoker(
-        CreatePlaybookApproveRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.createPlaybookApprove, hcClient);
+    public SyncInvoker<CreateTableAnalysisRequest, CreateTableAnalysisResponse> createTableAnalysisInvoker(
+        CreateTableAnalysisRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.createTableAnalysis, hcClient);
     }
 
     /**
-     * 创建剧本规则
+     * 关闭查询操作
      *
-     * 创建剧本规则
+     * 关闭查询操作
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreatePlaybookRuleRequest 请求对象
-     * @return CreatePlaybookRuleResponse
+     * @param request DeleteAdhocQueryRequest 请求对象
+     * @return DeleteAdhocQueryResponse
      */
-    public CreatePlaybookRuleResponse createPlaybookRule(CreatePlaybookRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.createPlaybookRule);
+    public DeleteAdhocQueryResponse deleteAdhocQuery(DeleteAdhocQueryRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.deleteAdhocQuery);
     }
 
     /**
-     * 创建剧本规则
+     * 关闭查询操作
      *
-     * 创建剧本规则
+     * 关闭查询操作
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CreatePlaybookRuleRequest 请求对象
-     * @return SyncInvoker<CreatePlaybookRuleRequest, CreatePlaybookRuleResponse>
+     * @param request DeleteAdhocQueryRequest 请求对象
+     * @return SyncInvoker<DeleteAdhocQueryRequest, DeleteAdhocQueryResponse>
      */
-    public SyncInvoker<CreatePlaybookRuleRequest, CreatePlaybookRuleResponse> createPlaybookRuleInvoker(
-        CreatePlaybookRuleRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.createPlaybookRule, hcClient);
-    }
-
-    /**
-     * 创建剧本版本
-     *
-     * 创建剧本版本
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreatePlaybookVersionRequest 请求对象
-     * @return CreatePlaybookVersionResponse
-     */
-    public CreatePlaybookVersionResponse createPlaybookVersion(CreatePlaybookVersionRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.createPlaybookVersion);
-    }
-
-    /**
-     * 创建剧本版本
-     *
-     * 创建剧本版本
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreatePlaybookVersionRequest 请求对象
-     * @return SyncInvoker<CreatePlaybookVersionRequest, CreatePlaybookVersionResponse>
-     */
-    public SyncInvoker<CreatePlaybookVersionRequest, CreatePlaybookVersionResponse> createPlaybookVersionInvoker(
-        CreatePlaybookVersionRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.createPlaybookVersion, hcClient);
-    }
-
-    /**
-     * 安全云脑按需订购
-     *
-     * 开通安全云脑按需服务
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreatePostPaidOrderRequest 请求对象
-     * @return CreatePostPaidOrderResponse
-     */
-    public CreatePostPaidOrderResponse createPostPaidOrder(CreatePostPaidOrderRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.createPostPaidOrder);
-    }
-
-    /**
-     * 安全云脑按需订购
-     *
-     * 开通安全云脑按需服务
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreatePostPaidOrderRequest 请求对象
-     * @return SyncInvoker<CreatePostPaidOrderRequest, CreatePostPaidOrderResponse>
-     */
-    public SyncInvoker<CreatePostPaidOrderRequest, CreatePostPaidOrderResponse> createPostPaidOrderInvoker(
-        CreatePostPaidOrderRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.createPostPaidOrder, hcClient);
-    }
-
-    /**
-     * 新建工作空间
-     *
-     * 在使用安全云脑的基线检查、告警管理、安全分析、安全编排等功能前，需要创建工作空间，它可以将资源划分为各个不同的工作场景，避免资源冗余查找不便，影响日常使用。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateWorkspaceRequest 请求对象
-     * @return CreateWorkspaceResponse
-     */
-    public CreateWorkspaceResponse createWorkspace(CreateWorkspaceRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.createWorkspace);
-    }
-
-    /**
-     * 新建工作空间
-     *
-     * 在使用安全云脑的基线检查、告警管理、安全分析、安全编排等功能前，需要创建工作空间，它可以将资源划分为各个不同的工作场景，避免资源冗余查找不便，影响日常使用。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateWorkspaceRequest 请求对象
-     * @return SyncInvoker<CreateWorkspaceRequest, CreateWorkspaceResponse>
-     */
-    public SyncInvoker<CreateWorkspaceRequest, CreateWorkspaceResponse> createWorkspaceInvoker(
-        CreateWorkspaceRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.createWorkspace, hcClient);
-    }
-
-    /**
-     * 删除告警
-     *
-     * 删除告警
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteAlertRequest 请求对象
-     * @return DeleteAlertResponse
-     */
-    public DeleteAlertResponse deleteAlert(DeleteAlertRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.deleteAlert);
-    }
-
-    /**
-     * 删除告警
-     *
-     * 删除告警
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteAlertRequest 请求对象
-     * @return SyncInvoker<DeleteAlertRequest, DeleteAlertResponse>
-     */
-    public SyncInvoker<DeleteAlertRequest, DeleteAlertResponse> deleteAlertInvoker(DeleteAlertRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.deleteAlert, hcClient);
+    public SyncInvoker<DeleteAdhocQueryRequest, DeleteAdhocQueryResponse> deleteAdhocQueryInvoker(
+        DeleteAdhocQueryRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.deleteAdhocQuery, hcClient);
     }
 
     /**
      * 删除告警规则
      *
-     * Delete alert rule
+     * 删除告警规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -810,7 +562,7 @@ public class SecMasterClient {
     /**
      * 删除告警规则
      *
-     * Delete alert rule
+     * 删除告警规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -823,241 +575,269 @@ public class SecMasterClient {
     }
 
     /**
-     * 取消关联Dataobject
+     * 删除分析脚本
      *
-     * 取消关联Dataobject
+     * 删除分析脚本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request DeleteDataobjectRelationsRequest 请求对象
-     * @return DeleteDataobjectRelationsResponse
+     * @param request DeleteAnalysisScriptRequest 请求对象
+     * @return DeleteAnalysisScriptResponse
      */
-    public DeleteDataobjectRelationsResponse deleteDataobjectRelations(DeleteDataobjectRelationsRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.deleteDataobjectRelations);
+    public DeleteAnalysisScriptResponse deleteAnalysisScript(DeleteAnalysisScriptRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.deleteAnalysisScript);
     }
 
     /**
-     * 取消关联Dataobject
+     * 删除分析脚本
      *
-     * 取消关联Dataobject
+     * 删除分析脚本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request DeleteDataobjectRelationsRequest 请求对象
-     * @return SyncInvoker<DeleteDataobjectRelationsRequest, DeleteDataobjectRelationsResponse>
+     * @param request DeleteAnalysisScriptRequest 请求对象
+     * @return SyncInvoker<DeleteAnalysisScriptRequest, DeleteAnalysisScriptResponse>
      */
-    public SyncInvoker<DeleteDataobjectRelationsRequest, DeleteDataobjectRelationsResponse> deleteDataobjectRelationsInvoker(
-        DeleteDataobjectRelationsRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.deleteDataobjectRelations, hcClient);
+    public SyncInvoker<DeleteAnalysisScriptRequest, DeleteAnalysisScriptResponse> deleteAnalysisScriptInvoker(
+        DeleteAnalysisScriptRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.deleteAnalysisScript, hcClient);
     }
 
     /**
-     * 删除事件
+     * 删除代码片段
      *
-     * 删除事件
+     * 删除代码片段
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request DeleteIncidentRequest 请求对象
-     * @return DeleteIncidentResponse
+     * @param request DeleteCodeSegmentRequest 请求对象
+     * @return DeleteCodeSegmentResponse
      */
-    public DeleteIncidentResponse deleteIncident(DeleteIncidentRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.deleteIncident);
+    public DeleteCodeSegmentResponse deleteCodeSegment(DeleteCodeSegmentRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.deleteCodeSegment);
     }
 
     /**
-     * 删除事件
+     * 删除代码片段
      *
-     * 删除事件
+     * 删除代码片段
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request DeleteIncidentRequest 请求对象
-     * @return SyncInvoker<DeleteIncidentRequest, DeleteIncidentResponse>
+     * @param request DeleteCodeSegmentRequest 请求对象
+     * @return SyncInvoker<DeleteCodeSegmentRequest, DeleteCodeSegmentResponse>
      */
-    public SyncInvoker<DeleteIncidentRequest, DeleteIncidentResponse> deleteIncidentInvoker(
-        DeleteIncidentRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.deleteIncident, hcClient);
+    public SyncInvoker<DeleteCodeSegmentRequest, DeleteCodeSegmentResponse> deleteCodeSegmentInvoker(
+        DeleteCodeSegmentRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.deleteCodeSegment, hcClient);
     }
 
     /**
-     * 删除威胁情报
+     * 删除自定义检查项
      *
-     * 删除威胁情报
+     * 删除自定义检查项
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request DeleteIndicatorRequest 请求对象
-     * @return DeleteIndicatorResponse
+     * @param request DeleteCustomizedCheckitemsRequest 请求对象
+     * @return DeleteCustomizedCheckitemsResponse
      */
-    public DeleteIndicatorResponse deleteIndicator(DeleteIndicatorRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.deleteIndicator);
+    public DeleteCustomizedCheckitemsResponse deleteCustomizedCheckitems(DeleteCustomizedCheckitemsRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.deleteCustomizedCheckitems);
     }
 
     /**
-     * 删除威胁情报
+     * 删除自定义检查项
      *
-     * 删除威胁情报
+     * 删除自定义检查项
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request DeleteIndicatorRequest 请求对象
-     * @return SyncInvoker<DeleteIndicatorRequest, DeleteIndicatorResponse>
+     * @param request DeleteCustomizedCheckitemsRequest 请求对象
+     * @return SyncInvoker<DeleteCustomizedCheckitemsRequest, DeleteCustomizedCheckitemsResponse>
      */
-    public SyncInvoker<DeleteIndicatorRequest, DeleteIndicatorResponse> deleteIndicatorInvoker(
-        DeleteIndicatorRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.deleteIndicator, hcClient);
+    public SyncInvoker<DeleteCustomizedCheckitemsRequest, DeleteCustomizedCheckitemsResponse> deleteCustomizedCheckitemsInvoker(
+        DeleteCustomizedCheckitemsRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.deleteCustomizedCheckitems, hcClient);
     }
 
     /**
-     * 删除剧本
+     * 删除自定义遵从包
      *
-     * 删除剧本
+     * 删除自定义遵从包
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request DeletePlaybookRequest 请求对象
-     * @return DeletePlaybookResponse
+     * @param request DeleteCustomizedCompliancePackagesRequest 请求对象
+     * @return DeleteCustomizedCompliancePackagesResponse
      */
-    public DeletePlaybookResponse deletePlaybook(DeletePlaybookRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.deletePlaybook);
+    public DeleteCustomizedCompliancePackagesResponse deleteCustomizedCompliancePackages(
+        DeleteCustomizedCompliancePackagesRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.deleteCustomizedCompliancePackages);
     }
 
     /**
-     * 删除剧本
+     * 删除自定义遵从包
      *
-     * 删除剧本
+     * 删除自定义遵从包
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request DeletePlaybookRequest 请求对象
-     * @return SyncInvoker<DeletePlaybookRequest, DeletePlaybookResponse>
+     * @param request DeleteCustomizedCompliancePackagesRequest 请求对象
+     * @return SyncInvoker<DeleteCustomizedCompliancePackagesRequest, DeleteCustomizedCompliancePackagesResponse>
      */
-    public SyncInvoker<DeletePlaybookRequest, DeletePlaybookResponse> deletePlaybookInvoker(
-        DeletePlaybookRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.deletePlaybook, hcClient);
+    public SyncInvoker<DeleteCustomizedCompliancePackagesRequest, DeleteCustomizedCompliancePackagesResponse> deleteCustomizedCompliancePackagesInvoker(
+        DeleteCustomizedCompliancePackagesRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.deleteCustomizedCompliancePackages, hcClient);
     }
 
     /**
-     * 删除剧本动作
+     * 删除数据加工
      *
-     * 删除剧本动作
+     * 删除数据加工
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request DeletePlaybookActionRequest 请求对象
-     * @return DeletePlaybookActionResponse
+     * @param request DeleteDataTransformationRequest 请求对象
+     * @return DeleteDataTransformationResponse
      */
-    public DeletePlaybookActionResponse deletePlaybookAction(DeletePlaybookActionRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.deletePlaybookAction);
+    public DeleteDataTransformationResponse deleteDataTransformation(DeleteDataTransformationRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.deleteDataTransformation);
     }
 
     /**
-     * 删除剧本动作
+     * 删除数据加工
      *
-     * 删除剧本动作
+     * 删除数据加工
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request DeletePlaybookActionRequest 请求对象
-     * @return SyncInvoker<DeletePlaybookActionRequest, DeletePlaybookActionResponse>
+     * @param request DeleteDataTransformationRequest 请求对象
+     * @return SyncInvoker<DeleteDataTransformationRequest, DeleteDataTransformationResponse>
      */
-    public SyncInvoker<DeletePlaybookActionRequest, DeletePlaybookActionResponse> deletePlaybookActionInvoker(
-        DeletePlaybookActionRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.deletePlaybookAction, hcClient);
+    public SyncInvoker<DeleteDataTransformationRequest, DeleteDataTransformationResponse> deleteDataTransformationInvoker(
+        DeleteDataTransformationRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.deleteDataTransformation, hcClient);
     }
 
     /**
-     * 删除剧本规则
+     * 批量删除布局字段
      *
-     * 删除剧本规则
+     * 删除布局字段
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request DeletePlaybookRuleRequest 请求对象
-     * @return DeletePlaybookRuleResponse
+     * @param request DeleteLayoutFieldRequest 请求对象
+     * @return DeleteLayoutFieldResponse
      */
-    public DeletePlaybookRuleResponse deletePlaybookRule(DeletePlaybookRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.deletePlaybookRule);
+    public DeleteLayoutFieldResponse deleteLayoutField(DeleteLayoutFieldRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.deleteLayoutField);
     }
 
     /**
-     * 删除剧本规则
+     * 批量删除布局字段
      *
-     * 删除剧本规则
+     * 删除布局字段
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request DeletePlaybookRuleRequest 请求对象
-     * @return SyncInvoker<DeletePlaybookRuleRequest, DeletePlaybookRuleResponse>
+     * @param request DeleteLayoutFieldRequest 请求对象
+     * @return SyncInvoker<DeleteLayoutFieldRequest, DeleteLayoutFieldResponse>
      */
-    public SyncInvoker<DeletePlaybookRuleRequest, DeletePlaybookRuleResponse> deletePlaybookRuleInvoker(
-        DeletePlaybookRuleRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.deletePlaybookRule, hcClient);
+    public SyncInvoker<DeleteLayoutFieldRequest, DeleteLayoutFieldResponse> deleteLayoutFieldInvoker(
+        DeleteLayoutFieldRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.deleteLayoutField, hcClient);
     }
 
     /**
-     * 删除剧本版本
+     * 删除管道
      *
-     * 删除剧本版本
+     * 删除管道
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request DeletePlaybookVersionRequest 请求对象
-     * @return DeletePlaybookVersionResponse
+     * @param request DeletePipeRequest 请求对象
+     * @return DeletePipeResponse
      */
-    public DeletePlaybookVersionResponse deletePlaybookVersion(DeletePlaybookVersionRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.deletePlaybookVersion);
+    public DeletePipeResponse deletePipe(DeletePipeRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.deletePipe);
     }
 
     /**
-     * 删除剧本版本
+     * 删除管道
      *
-     * 删除剧本版本
+     * 删除管道
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request DeletePlaybookVersionRequest 请求对象
-     * @return SyncInvoker<DeletePlaybookVersionRequest, DeletePlaybookVersionResponse>
+     * @param request DeletePipeRequest 请求对象
+     * @return SyncInvoker<DeletePipeRequest, DeletePipeResponse>
      */
-    public SyncInvoker<DeletePlaybookVersionRequest, DeletePlaybookVersionResponse> deletePlaybookVersionInvoker(
-        DeletePlaybookVersionRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.deletePlaybookVersion, hcClient);
+    public SyncInvoker<DeletePipeRequest, DeletePipeResponse> deletePipeInvoker(DeletePipeRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.deletePipe, hcClient);
     }
 
     /**
-     * 删除工作空间
+     * 删除检索脚本
      *
-     * 删除工作空间
+     * 删除检索脚本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request DeleteWorkspaceRequest 请求对象
-     * @return DeleteWorkspaceResponse
+     * @param request DeleteRetrieveScriptRequest 请求对象
+     * @return DeleteRetrieveScriptResponse
      */
-    public DeleteWorkspaceResponse deleteWorkspace(DeleteWorkspaceRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.deleteWorkspace);
+    public DeleteRetrieveScriptResponse deleteRetrieveScript(DeleteRetrieveScriptRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.deleteRetrieveScript);
     }
 
     /**
-     * 删除工作空间
+     * 删除检索脚本
      *
-     * 删除工作空间
+     * 删除检索脚本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request DeleteWorkspaceRequest 请求对象
-     * @return SyncInvoker<DeleteWorkspaceRequest, DeleteWorkspaceResponse>
+     * @param request DeleteRetrieveScriptRequest 请求对象
+     * @return SyncInvoker<DeleteRetrieveScriptRequest, DeleteRetrieveScriptResponse>
      */
-    public SyncInvoker<DeleteWorkspaceRequest, DeleteWorkspaceResponse> deleteWorkspaceInvoker(
-        DeleteWorkspaceRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.deleteWorkspace, hcClient);
+    public SyncInvoker<DeleteRetrieveScriptRequest, DeleteRetrieveScriptResponse> deleteRetrieveScriptInvoker(
+        DeleteRetrieveScriptRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.deleteRetrieveScript, hcClient);
+    }
+
+    /**
+     * 删除表
+     *
+     * 删除表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTableRequest 请求对象
+     * @return DeleteTableResponse
+     */
+    public DeleteTableResponse deleteTable(DeleteTableRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.deleteTable);
+    }
+
+    /**
+     * 删除表
+     *
+     * 删除表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTableRequest 请求对象
+     * @return SyncInvoker<DeleteTableRequest, DeleteTableResponse>
+     */
+    public SyncInvoker<DeleteTableRequest, DeleteTableResponse> deleteTableInvoker(DeleteTableRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.deleteTable, hcClient);
     }
 
     /**
      * 停用告警规则
      *
-     * Disable alert rule
+     * 停用告警规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1071,7 +851,7 @@ public class SecMasterClient {
     /**
      * 停用告警规则
      *
-     * Disable alert rule
+     * 停用告警规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1084,9 +864,67 @@ public class SecMasterClient {
     }
 
     /**
+     * 关闭实时消费
+     *
+     * 关闭实时消费
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisableDataConsumptionRequest 请求对象
+     * @return DisableDataConsumptionResponse
+     */
+    public DisableDataConsumptionResponse disableDataConsumption(DisableDataConsumptionRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.disableDataConsumption);
+    }
+
+    /**
+     * 关闭实时消费
+     *
+     * 关闭实时消费
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisableDataConsumptionRequest 请求对象
+     * @return SyncInvoker<DisableDataConsumptionRequest, DisableDataConsumptionResponse>
+     */
+    public SyncInvoker<DisableDataConsumptionRequest, DisableDataConsumptionResponse> disableDataConsumptionInvoker(
+        DisableDataConsumptionRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.disableDataConsumption, hcClient);
+    }
+
+    /**
+     * 停用数据加工
+     *
+     * 停用数据加工
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisableDataTransformationRequest 请求对象
+     * @return DisableDataTransformationResponse
+     */
+    public DisableDataTransformationResponse disableDataTransformation(DisableDataTransformationRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.disableDataTransformation);
+    }
+
+    /**
+     * 停用数据加工
+     *
+     * 停用数据加工
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisableDataTransformationRequest 请求对象
+     * @return SyncInvoker<DisableDataTransformationRequest, DisableDataTransformationResponse>
+     */
+    public SyncInvoker<DisableDataTransformationRequest, DisableDataTransformationResponse> disableDataTransformationInvoker(
+        DisableDataTransformationRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.disableDataTransformation, hcClient);
+    }
+
+    /**
      * 启用告警规则
      *
-     * Enable alert rule
+     * 启用告警规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1100,7 +938,7 @@ public class SecMasterClient {
     /**
      * 启用告警规则
      *
-     * Enable alert rule
+     * 启用告警规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1113,9 +951,67 @@ public class SecMasterClient {
     }
 
     /**
+     * 开启实时消费
+     *
+     * 开启实时消费
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableDataConsumptionRequest 请求对象
+     * @return EnableDataConsumptionResponse
+     */
+    public EnableDataConsumptionResponse enableDataConsumption(EnableDataConsumptionRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.enableDataConsumption);
+    }
+
+    /**
+     * 开启实时消费
+     *
+     * 开启实时消费
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableDataConsumptionRequest 请求对象
+     * @return SyncInvoker<EnableDataConsumptionRequest, EnableDataConsumptionResponse>
+     */
+    public SyncInvoker<EnableDataConsumptionRequest, EnableDataConsumptionResponse> enableDataConsumptionInvoker(
+        EnableDataConsumptionRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.enableDataConsumption, hcClient);
+    }
+
+    /**
+     * 启用数据加工
+     *
+     * 启用数据加工
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableDataTransformationRequest 请求对象
+     * @return EnableDataTransformationResponse
+     */
+    public EnableDataTransformationResponse enableDataTransformation(EnableDataTransformationRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.enableDataTransformation);
+    }
+
+    /**
+     * 启用数据加工
+     *
+     * 启用数据加工
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableDataTransformationRequest 请求对象
+     * @return SyncInvoker<EnableDataTransformationRequest, EnableDataTransformationResponse>
+     */
+    public SyncInvoker<EnableDataTransformationRequest, EnableDataTransformationResponse> enableDataTransformationInvoker(
+        EnableDataTransformationRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.enableDataTransformation, hcClient);
+    }
+
+    /**
      * 告警规则总览
      *
-     * List alert rule metrics
+     * 告警规则总览
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1129,7 +1025,7 @@ public class SecMasterClient {
     /**
      * 告警规则总览
      *
-     * List alert rule metrics
+     * 告警规则总览
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1142,9 +1038,39 @@ public class SecMasterClient {
     }
 
     /**
+     * 列出告警规则模板总览
+     *
+     * 列出告警规则模板总览
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlertRuleTemplateMetricsRequest 请求对象
+     * @return ListAlertRuleTemplateMetricsResponse
+     */
+    public ListAlertRuleTemplateMetricsResponse listAlertRuleTemplateMetrics(
+        ListAlertRuleTemplateMetricsRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.listAlertRuleTemplateMetrics);
+    }
+
+    /**
+     * 列出告警规则模板总览
+     *
+     * 列出告警规则模板总览
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlertRuleTemplateMetricsRequest 请求对象
+     * @return SyncInvoker<ListAlertRuleTemplateMetricsRequest, ListAlertRuleTemplateMetricsResponse>
+     */
+    public SyncInvoker<ListAlertRuleTemplateMetricsRequest, ListAlertRuleTemplateMetricsResponse> listAlertRuleTemplateMetricsInvoker(
+        ListAlertRuleTemplateMetricsRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.listAlertRuleTemplateMetrics, hcClient);
+    }
+
+    /**
      * 列出告警规则模板
      *
-     * List alert rule templates
+     * 列出告警规则模板
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1158,7 +1084,7 @@ public class SecMasterClient {
     /**
      * 列出告警规则模板
      *
-     * List alert rule templates
+     * 列出告警规则模板
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1173,7 +1099,7 @@ public class SecMasterClient {
     /**
      * 列出告警规则
      *
-     * List alert rules
+     * 列出告警规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1187,7 +1113,7 @@ public class SecMasterClient {
     /**
      * 列出告警规则
      *
-     * List alert rules
+     * 列出告警规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1200,404 +1126,320 @@ public class SecMasterClient {
     }
 
     /**
-     * 搜索告警列表
+     * 列出分析脚本
      *
-     * 搜索告警列表
+     * 列出分析脚本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListAlertsRequest 请求对象
-     * @return ListAlertsResponse
+     * @param request ListAnalysisScriptsRequest 请求对象
+     * @return ListAnalysisScriptsResponse
      */
-    public ListAlertsResponse listAlerts(ListAlertsRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.listAlerts);
+    public ListAnalysisScriptsResponse listAnalysisScripts(ListAnalysisScriptsRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.listAnalysisScripts);
     }
 
     /**
-     * 搜索告警列表
+     * 列出分析脚本
      *
-     * 搜索告警列表
+     * 列出分析脚本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListAlertsRequest 请求对象
-     * @return SyncInvoker<ListAlertsRequest, ListAlertsResponse>
+     * @param request ListAnalysisScriptsRequest 请求对象
+     * @return SyncInvoker<ListAnalysisScriptsRequest, ListAnalysisScriptsResponse>
      */
-    public SyncInvoker<ListAlertsRequest, ListAlertsResponse> listAlertsInvoker(ListAlertsRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.listAlerts, hcClient);
+    public SyncInvoker<ListAnalysisScriptsRequest, ListAnalysisScriptsResponse> listAnalysisScriptsInvoker(
+        ListAnalysisScriptsRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.listAnalysisScripts, hcClient);
     }
 
     /**
-     * 查询数据类列表
+     * 列出代码片段
      *
-     * 查询数据类列表
+     * 列出代码片段
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListDataclassRequest 请求对象
-     * @return ListDataclassResponse
+     * @param request ListCodeSegmentsRequest 请求对象
+     * @return ListCodeSegmentsResponse
      */
-    public ListDataclassResponse listDataclass(ListDataclassRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.listDataclass);
+    public ListCodeSegmentsResponse listCodeSegments(ListCodeSegmentsRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.listCodeSegments);
     }
 
     /**
-     * 查询数据类列表
+     * 列出代码片段
      *
-     * 查询数据类列表
+     * 列出代码片段
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListDataclassRequest 请求对象
-     * @return SyncInvoker<ListDataclassRequest, ListDataclassResponse>
+     * @param request ListCodeSegmentsRequest 请求对象
+     * @return SyncInvoker<ListCodeSegmentsRequest, ListCodeSegmentsResponse>
      */
-    public SyncInvoker<ListDataclassRequest, ListDataclassResponse> listDataclassInvoker(ListDataclassRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.listDataclass, hcClient);
+    public SyncInvoker<ListCodeSegmentsRequest, ListCodeSegmentsResponse> listCodeSegmentsInvoker(
+        ListCodeSegmentsRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.listCodeSegments, hcClient);
     }
 
     /**
-     * 查询字段列表
+     * 数据加工总览
      *
-     * 查询字段列表
+     * 数据加工总览
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListDataclassFieldsRequest 请求对象
-     * @return ListDataclassFieldsResponse
+     * @param request ListDataTransformationMetricsRequest 请求对象
+     * @return ListDataTransformationMetricsResponse
      */
-    public ListDataclassFieldsResponse listDataclassFields(ListDataclassFieldsRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.listDataclassFields);
+    public ListDataTransformationMetricsResponse listDataTransformationMetrics(
+        ListDataTransformationMetricsRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.listDataTransformationMetrics);
     }
 
     /**
-     * 查询字段列表
+     * 数据加工总览
      *
-     * 查询字段列表
+     * 数据加工总览
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListDataclassFieldsRequest 请求对象
-     * @return SyncInvoker<ListDataclassFieldsRequest, ListDataclassFieldsResponse>
+     * @param request ListDataTransformationMetricsRequest 请求对象
+     * @return SyncInvoker<ListDataTransformationMetricsRequest, ListDataTransformationMetricsResponse>
      */
-    public SyncInvoker<ListDataclassFieldsRequest, ListDataclassFieldsResponse> listDataclassFieldsInvoker(
-        ListDataclassFieldsRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.listDataclassFields, hcClient);
+    public SyncInvoker<ListDataTransformationMetricsRequest, ListDataTransformationMetricsResponse> listDataTransformationMetricsInvoker(
+        ListDataTransformationMetricsRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.listDataTransformationMetrics, hcClient);
     }
 
     /**
-     * 查询关联Dataobject列表
+     * 列出数据加工
      *
-     * 查询关联Dataobject列表
+     * 列出数据加工
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListDataobjectRelationsRequest 请求对象
-     * @return ListDataobjectRelationsResponse
+     * @param request ListDataTransformationsRequest 请求对象
+     * @return ListDataTransformationsResponse
      */
-    public ListDataobjectRelationsResponse listDataobjectRelations(ListDataobjectRelationsRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.listDataobjectRelations);
+    public ListDataTransformationsResponse listDataTransformations(ListDataTransformationsRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.listDataTransformations);
     }
 
     /**
-     * 查询关联Dataobject列表
+     * 列出数据加工
      *
-     * 查询关联Dataobject列表
+     * 列出数据加工
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListDataobjectRelationsRequest 请求对象
-     * @return SyncInvoker<ListDataobjectRelationsRequest, ListDataobjectRelationsResponse>
+     * @param request ListDataTransformationsRequest 请求对象
+     * @return SyncInvoker<ListDataTransformationsRequest, ListDataTransformationsResponse>
      */
-    public SyncInvoker<ListDataobjectRelationsRequest, ListDataobjectRelationsResponse> listDataobjectRelationsInvoker(
-        ListDataobjectRelationsRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.listDataobjectRelations, hcClient);
+    public SyncInvoker<ListDataTransformationsRequest, ListDataTransformationsResponse> listDataTransformationsInvoker(
+        ListDataTransformationsRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.listDataTransformations, hcClient);
     }
 
     /**
-     * 搜索事件列表
+     * 列出目录分组
      *
-     * 搜索事件列表
+     * 列出目录分组
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListIncidentsRequest 请求对象
-     * @return ListIncidentsResponse
+     * @param request ListDirectoriesRequest 请求对象
+     * @return ListDirectoriesResponse
      */
-    public ListIncidentsResponse listIncidents(ListIncidentsRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.listIncidents);
+    public ListDirectoriesResponse listDirectories(ListDirectoriesRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.listDirectories);
     }
 
     /**
-     * 搜索事件列表
+     * 列出目录分组
      *
-     * 搜索事件列表
+     * 列出目录分组
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListIncidentsRequest 请求对象
-     * @return SyncInvoker<ListIncidentsRequest, ListIncidentsResponse>
+     * @param request ListDirectoriesRequest 请求对象
+     * @return SyncInvoker<ListDirectoriesRequest, ListDirectoriesResponse>
      */
-    public SyncInvoker<ListIncidentsRequest, ListIncidentsResponse> listIncidentsInvoker(ListIncidentsRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.listIncidents, hcClient);
+    public SyncInvoker<ListDirectoriesRequest, ListDirectoriesResponse> listDirectoriesInvoker(
+        ListDirectoriesRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.listDirectories, hcClient);
     }
 
     /**
-     * 查询威胁情报列表
+     * 全部布局字段
      *
-     * 查询威胁情报列表
+     * 查询布局字段列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListIndicatorsRequest 请求对象
-     * @return ListIndicatorsResponse
+     * @param request ListLayoutFieldAllRequest 请求对象
+     * @return ListLayoutFieldAllResponse
      */
-    public ListIndicatorsResponse listIndicators(ListIndicatorsRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.listIndicators);
+    public ListLayoutFieldAllResponse listLayoutFieldAll(ListLayoutFieldAllRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.listLayoutFieldAll);
     }
 
     /**
-     * 查询威胁情报列表
+     * 全部布局字段
      *
-     * 查询威胁情报列表
+     * 查询布局字段列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListIndicatorsRequest 请求对象
-     * @return SyncInvoker<ListIndicatorsRequest, ListIndicatorsResponse>
+     * @param request ListLayoutFieldAllRequest 请求对象
+     * @return SyncInvoker<ListLayoutFieldAllRequest, ListLayoutFieldAllResponse>
      */
-    public SyncInvoker<ListIndicatorsRequest, ListIndicatorsResponse> listIndicatorsInvoker(
-        ListIndicatorsRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.listIndicators, hcClient);
+    public SyncInvoker<ListLayoutFieldAllRequest, ListLayoutFieldAllResponse> listLayoutFieldAllInvoker(
+        ListLayoutFieldAllRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.listLayoutFieldAll, hcClient);
     }
 
     /**
-     * 查询剧本动作
+     * 获取管道列表
      *
-     * 查询剧本动作列表
+     * 获取管道列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListPlaybookActionsRequest 请求对象
-     * @return ListPlaybookActionsResponse
+     * @param request ListPipesRequest 请求对象
+     * @return ListPipesResponse
      */
-    public ListPlaybookActionsResponse listPlaybookActions(ListPlaybookActionsRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.listPlaybookActions);
+    public ListPipesResponse listPipes(ListPipesRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.listPipes);
     }
 
     /**
-     * 查询剧本动作
+     * 获取管道列表
      *
-     * 查询剧本动作列表
+     * 获取管道列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListPlaybookActionsRequest 请求对象
-     * @return SyncInvoker<ListPlaybookActionsRequest, ListPlaybookActionsResponse>
+     * @param request ListPipesRequest 请求对象
+     * @return SyncInvoker<ListPipesRequest, ListPipesResponse>
      */
-    public SyncInvoker<ListPlaybookActionsRequest, ListPlaybookActionsResponse> listPlaybookActionsInvoker(
-        ListPlaybookActionsRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.listPlaybookActions, hcClient);
+    public SyncInvoker<ListPipesRequest, ListPipesResponse> listPipesInvoker(ListPipesRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.listPipes, hcClient);
     }
 
     /**
-     * 查询剧本审核结果
+     * 列出检索脚本
      *
-     * 查询剧本审核结果
+     * 列出检索脚本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListPlaybookApprovesRequest 请求对象
-     * @return ListPlaybookApprovesResponse
+     * @param request ListRetrieveScriptsRequest 请求对象
+     * @return ListRetrieveScriptsResponse
      */
-    public ListPlaybookApprovesResponse listPlaybookApproves(ListPlaybookApprovesRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.listPlaybookApproves);
+    public ListRetrieveScriptsResponse listRetrieveScripts(ListRetrieveScriptsRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.listRetrieveScripts);
     }
 
     /**
-     * 查询剧本审核结果
+     * 列出检索脚本
      *
-     * 查询剧本审核结果
+     * 列出检索脚本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListPlaybookApprovesRequest 请求对象
-     * @return SyncInvoker<ListPlaybookApprovesRequest, ListPlaybookApprovesResponse>
+     * @param request ListRetrieveScriptsRequest 请求对象
+     * @return SyncInvoker<ListRetrieveScriptsRequest, ListRetrieveScriptsResponse>
      */
-    public SyncInvoker<ListPlaybookApprovesRequest, ListPlaybookApprovesResponse> listPlaybookApprovesInvoker(
-        ListPlaybookApprovesRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.listPlaybookApproves, hcClient);
+    public SyncInvoker<ListRetrieveScriptsRequest, ListRetrieveScriptsResponse> listRetrieveScriptsInvoker(
+        ListRetrieveScriptsRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.listRetrieveScripts, hcClient);
     }
 
     /**
-     * 查询剧本实例审计日志
+     * 检索表直方图
      *
-     * 查询剧本实例审计日志
+     * 检索表直方图
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListPlaybookAuditLogsRequest 请求对象
-     * @return ListPlaybookAuditLogsResponse
+     * @param request ListTableHistogramsRequest 请求对象
+     * @return ListTableHistogramsResponse
      */
-    public ListPlaybookAuditLogsResponse listPlaybookAuditLogs(ListPlaybookAuditLogsRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.listPlaybookAuditLogs);
+    public ListTableHistogramsResponse listTableHistograms(ListTableHistogramsRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.listTableHistograms);
     }
 
     /**
-     * 查询剧本实例审计日志
+     * 检索表直方图
      *
-     * 查询剧本实例审计日志
+     * 检索表直方图
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListPlaybookAuditLogsRequest 请求对象
-     * @return SyncInvoker<ListPlaybookAuditLogsRequest, ListPlaybookAuditLogsResponse>
+     * @param request ListTableHistogramsRequest 请求对象
+     * @return SyncInvoker<ListTableHistogramsRequest, ListTableHistogramsResponse>
      */
-    public SyncInvoker<ListPlaybookAuditLogsRequest, ListPlaybookAuditLogsResponse> listPlaybookAuditLogsInvoker(
-        ListPlaybookAuditLogsRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.listPlaybookAuditLogs, hcClient);
+    public SyncInvoker<ListTableHistogramsRequest, ListTableHistogramsResponse> listTableHistogramsInvoker(
+        ListTableHistogramsRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.listTableHistograms, hcClient);
     }
 
     /**
-     * 查询剧本实例列表
+     * 检索表日志
      *
-     * 查询剧本实例列表
+     * 检索表日志
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListPlaybookInstancesRequest 请求对象
-     * @return ListPlaybookInstancesResponse
+     * @param request ListTableLogsRequest 请求对象
+     * @return ListTableLogsResponse
      */
-    public ListPlaybookInstancesResponse listPlaybookInstances(ListPlaybookInstancesRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.listPlaybookInstances);
+    public ListTableLogsResponse listTableLogs(ListTableLogsRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.listTableLogs);
     }
 
     /**
-     * 查询剧本实例列表
+     * 检索表日志
      *
-     * 查询剧本实例列表
+     * 检索表日志
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListPlaybookInstancesRequest 请求对象
-     * @return SyncInvoker<ListPlaybookInstancesRequest, ListPlaybookInstancesResponse>
+     * @param request ListTableLogsRequest 请求对象
+     * @return SyncInvoker<ListTableLogsRequest, ListTableLogsResponse>
      */
-    public SyncInvoker<ListPlaybookInstancesRequest, ListPlaybookInstancesResponse> listPlaybookInstancesInvoker(
-        ListPlaybookInstancesRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.listPlaybookInstances, hcClient);
+    public SyncInvoker<ListTableLogsRequest, ListTableLogsResponse> listTableLogsInvoker(ListTableLogsRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.listTableLogs, hcClient);
     }
 
     /**
-     * 查询剧本版本列表
+     * 获取表列表
      *
-     * 查询剧本版本列表
+     * 获取表列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListPlaybookVersionsRequest 请求对象
-     * @return ListPlaybookVersionsResponse
+     * @param request ListTablesRequest 请求对象
+     * @return ListTablesResponse
      */
-    public ListPlaybookVersionsResponse listPlaybookVersions(ListPlaybookVersionsRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.listPlaybookVersions);
+    public ListTablesResponse listTables(ListTablesRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.listTables);
     }
 
     /**
-     * 查询剧本版本列表
+     * 获取表列表
      *
-     * 查询剧本版本列表
+     * 获取表列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListPlaybookVersionsRequest 请求对象
-     * @return SyncInvoker<ListPlaybookVersionsRequest, ListPlaybookVersionsResponse>
+     * @param request ListTablesRequest 请求对象
+     * @return SyncInvoker<ListTablesRequest, ListTablesResponse>
      */
-    public SyncInvoker<ListPlaybookVersionsRequest, ListPlaybookVersionsResponse> listPlaybookVersionsInvoker(
-        ListPlaybookVersionsRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.listPlaybookVersions, hcClient);
-    }
-
-    /**
-     * 查询剧本列表
-     *
-     * 查询剧本列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListPlaybooksRequest 请求对象
-     * @return ListPlaybooksResponse
-     */
-    public ListPlaybooksResponse listPlaybooks(ListPlaybooksRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.listPlaybooks);
-    }
-
-    /**
-     * 查询剧本列表
-     *
-     * 查询剧本列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListPlaybooksRequest 请求对象
-     * @return SyncInvoker<ListPlaybooksRequest, ListPlaybooksResponse>
-     */
-    public SyncInvoker<ListPlaybooksRequest, ListPlaybooksResponse> listPlaybooksInvoker(ListPlaybooksRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.listPlaybooks, hcClient);
-    }
-
-    /**
-     * 查询流程列表
-     *
-     * 查询流程列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListWorkflowsRequest 请求对象
-     * @return ListWorkflowsResponse
-     */
-    public ListWorkflowsResponse listWorkflows(ListWorkflowsRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.listWorkflows);
-    }
-
-    /**
-     * 查询流程列表
-     *
-     * 查询流程列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListWorkflowsRequest 请求对象
-     * @return SyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse>
-     */
-    public SyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflowsInvoker(ListWorkflowsRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.listWorkflows, hcClient);
-    }
-
-    /**
-     * 查询工作空间列表
-     *
-     * 可通过工作空间名称、工作空间描述、创建时间等条件对租户的工作空间进行筛选。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListWorkspacesRequest 请求对象
-     * @return ListWorkspacesResponse
-     */
-    public ListWorkspacesResponse listWorkspaces(ListWorkspacesRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.listWorkspaces);
-    }
-
-    /**
-     * 查询工作空间列表
-     *
-     * 可通过工作空间名称、工作空间描述、创建时间等条件对租户的工作空间进行筛选。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListWorkspacesRequest 请求对象
-     * @return SyncInvoker<ListWorkspacesRequest, ListWorkspacesResponse>
-     */
-    public SyncInvoker<ListWorkspacesRequest, ListWorkspacesResponse> listWorkspacesInvoker(
-        ListWorkspacesRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.listWorkspaces, hcClient);
+    public SyncInvoker<ListTablesRequest, ListTablesResponse> listTablesInvoker(ListTablesRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.listTables, hcClient);
     }
 
     /**
@@ -1630,37 +1472,96 @@ public class SecMasterClient {
     }
 
     /**
-     * 获取告警详情
+     * 查询检查项列表
      *
-     * 获取告警详情
+     * 查询检查项列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowAlertRequest 请求对象
-     * @return ShowAlertResponse
+     * @param request SearchCheckitemsRequest 请求对象
+     * @return SearchCheckitemsResponse
      */
-    public ShowAlertResponse showAlert(ShowAlertRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.showAlert);
+    public SearchCheckitemsResponse searchCheckitems(SearchCheckitemsRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.searchCheckitems);
     }
 
     /**
-     * 获取告警详情
+     * 查询检查项列表
      *
-     * 获取告警详情
+     * 查询检查项列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowAlertRequest 请求对象
-     * @return SyncInvoker<ShowAlertRequest, ShowAlertResponse>
+     * @param request SearchCheckitemsRequest 请求对象
+     * @return SyncInvoker<SearchCheckitemsRequest, SearchCheckitemsResponse>
      */
-    public SyncInvoker<ShowAlertRequest, ShowAlertResponse> showAlertInvoker(ShowAlertRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.showAlert, hcClient);
+    public SyncInvoker<SearchCheckitemsRequest, SearchCheckitemsResponse> searchCheckitemsInvoker(
+        SearchCheckitemsRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.searchCheckitems, hcClient);
+    }
+
+    /**
+     * 查询遵从包列表
+     *
+     * 查询遵从包列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchCompliancePackagesRequest 请求对象
+     * @return SearchCompliancePackagesResponse
+     */
+    public SearchCompliancePackagesResponse searchCompliancePackages(SearchCompliancePackagesRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.searchCompliancePackages);
+    }
+
+    /**
+     * 查询遵从包列表
+     *
+     * 查询遵从包列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchCompliancePackagesRequest 请求对象
+     * @return SyncInvoker<SearchCompliancePackagesRequest, SearchCompliancePackagesResponse>
+     */
+    public SyncInvoker<SearchCompliancePackagesRequest, SearchCompliancePackagesResponse> searchCompliancePackagesInvoker(
+        SearchCompliancePackagesRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.searchCompliancePackages, hcClient);
+    }
+
+    /**
+     * 获取adhoc查询结果
+     *
+     * 获取adhoc查询结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAdhocResultRequest 请求对象
+     * @return ShowAdhocResultResponse
+     */
+    public ShowAdhocResultResponse showAdhocResult(ShowAdhocResultRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.showAdhocResult);
+    }
+
+    /**
+     * 获取adhoc查询结果
+     *
+     * 获取adhoc查询结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAdhocResultRequest 请求对象
+     * @return SyncInvoker<ShowAdhocResultRequest, ShowAdhocResultResponse>
+     */
+    public SyncInvoker<ShowAdhocResultRequest, ShowAdhocResultResponse> showAdhocResultInvoker(
+        ShowAdhocResultRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.showAdhocResult, hcClient);
     }
 
     /**
      * 查看告警规则
      *
-     * 查看告警规则 Get alert rule
+     * 查看告警规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1674,7 +1575,7 @@ public class SecMasterClient {
     /**
      * 查看告警规则
      *
-     * 查看告警规则 Get alert rule
+     * 查看告警规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1688,7 +1589,7 @@ public class SecMasterClient {
     /**
      * 查看告警规则模板
      *
-     * List alert rule templates
+     * 查看告警规则模板
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1702,7 +1603,7 @@ public class SecMasterClient {
     /**
      * 查看告警规则模板
      *
-     * List alert rule templates
+     * 查看告警规则模板
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1715,296 +1616,383 @@ public class SecMasterClient {
     }
 
     /**
-     * 获取事件详情
+     * 查看分析脚本
      *
-     * 获取事件详情
+     * 查看分析脚本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowIncidentRequest 请求对象
-     * @return ShowIncidentResponse
+     * @param request ShowAnalysisScriptRequest 请求对象
+     * @return ShowAnalysisScriptResponse
      */
-    public ShowIncidentResponse showIncident(ShowIncidentRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.showIncident);
+    public ShowAnalysisScriptResponse showAnalysisScript(ShowAnalysisScriptRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.showAnalysisScript);
     }
 
     /**
-     * 获取事件详情
+     * 查看分析脚本
      *
-     * 获取事件详情
+     * 查看分析脚本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowIncidentRequest 请求对象
-     * @return SyncInvoker<ShowIncidentRequest, ShowIncidentResponse>
+     * @param request ShowAnalysisScriptRequest 请求对象
+     * @return SyncInvoker<ShowAnalysisScriptRequest, ShowAnalysisScriptResponse>
      */
-    public SyncInvoker<ShowIncidentRequest, ShowIncidentResponse> showIncidentInvoker(ShowIncidentRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.showIncident, hcClient);
+    public SyncInvoker<ShowAnalysisScriptRequest, ShowAnalysisScriptResponse> showAnalysisScriptInvoker(
+        ShowAnalysisScriptRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.showAnalysisScript, hcClient);
     }
 
     /**
-     * 查询威胁情报详情
+     * 查询检查项详情
      *
-     * 查询威胁情报详情
+     * 查询检查项详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowIndicatorDetailRequest 请求对象
-     * @return ShowIndicatorDetailResponse
+     * @param request ShowCheckitemDetailRequest 请求对象
+     * @return ShowCheckitemDetailResponse
      */
-    public ShowIndicatorDetailResponse showIndicatorDetail(ShowIndicatorDetailRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.showIndicatorDetail);
+    public ShowCheckitemDetailResponse showCheckitemDetail(ShowCheckitemDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.showCheckitemDetail);
     }
 
     /**
-     * 查询威胁情报详情
+     * 查询检查项详情
      *
-     * 查询威胁情报详情
+     * 查询检查项详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowIndicatorDetailRequest 请求对象
-     * @return SyncInvoker<ShowIndicatorDetailRequest, ShowIndicatorDetailResponse>
+     * @param request ShowCheckitemDetailRequest 请求对象
+     * @return SyncInvoker<ShowCheckitemDetailRequest, ShowCheckitemDetailResponse>
      */
-    public SyncInvoker<ShowIndicatorDetailRequest, ShowIndicatorDetailResponse> showIndicatorDetailInvoker(
-        ShowIndicatorDetailRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.showIndicatorDetail, hcClient);
+    public SyncInvoker<ShowCheckitemDetailRequest, ShowCheckitemDetailResponse> showCheckitemDetailInvoker(
+        ShowCheckitemDetailRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.showCheckitemDetail, hcClient);
     }
 
     /**
-     * 查询剧本详情
+     * 查看代码片段
      *
-     * 查询剧本详情
+     * 查看代码片段
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowPlaybookRequest 请求对象
-     * @return ShowPlaybookResponse
+     * @param request ShowCodeSegmentRequest 请求对象
+     * @return ShowCodeSegmentResponse
      */
-    public ShowPlaybookResponse showPlaybook(ShowPlaybookRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.showPlaybook);
+    public ShowCodeSegmentResponse showCodeSegment(ShowCodeSegmentRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.showCodeSegment);
     }
 
     /**
-     * 查询剧本详情
+     * 查看代码片段
      *
-     * 查询剧本详情
+     * 查看代码片段
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowPlaybookRequest 请求对象
-     * @return SyncInvoker<ShowPlaybookRequest, ShowPlaybookResponse>
+     * @param request ShowCodeSegmentRequest 请求对象
+     * @return SyncInvoker<ShowCodeSegmentRequest, ShowCodeSegmentResponse>
      */
-    public SyncInvoker<ShowPlaybookRequest, ShowPlaybookResponse> showPlaybookInvoker(ShowPlaybookRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.showPlaybook, hcClient);
+    public SyncInvoker<ShowCodeSegmentRequest, ShowCodeSegmentResponse> showCodeSegmentInvoker(
+        ShowCodeSegmentRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.showCodeSegment, hcClient);
     }
 
     /**
-     * 查询剧本实例详情
+     * 查询遵从包详情
      *
-     * Show playbook instance
+     * 查询遵从包详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowPlaybookInstanceRequest 请求对象
-     * @return ShowPlaybookInstanceResponse
+     * @param request ShowCompliancePackageDetailRequest 请求对象
+     * @return ShowCompliancePackageDetailResponse
      */
-    public ShowPlaybookInstanceResponse showPlaybookInstance(ShowPlaybookInstanceRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.showPlaybookInstance);
+    public ShowCompliancePackageDetailResponse showCompliancePackageDetail(ShowCompliancePackageDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.showCompliancePackageDetail);
     }
 
     /**
-     * 查询剧本实例详情
+     * 查询遵从包详情
      *
-     * Show playbook instance
+     * 查询遵从包详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowPlaybookInstanceRequest 请求对象
-     * @return SyncInvoker<ShowPlaybookInstanceRequest, ShowPlaybookInstanceResponse>
+     * @param request ShowCompliancePackageDetailRequest 请求对象
+     * @return SyncInvoker<ShowCompliancePackageDetailRequest, ShowCompliancePackageDetailResponse>
      */
-    public SyncInvoker<ShowPlaybookInstanceRequest, ShowPlaybookInstanceResponse> showPlaybookInstanceInvoker(
-        ShowPlaybookInstanceRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.showPlaybookInstance, hcClient);
+    public SyncInvoker<ShowCompliancePackageDetailRequest, ShowCompliancePackageDetailResponse> showCompliancePackageDetailInvoker(
+        ShowCompliancePackageDetailRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.showCompliancePackageDetail, hcClient);
     }
 
     /**
-     * 剧本运行监控
+     * 获取实时消费配置
      *
-     * 剧本运行监控
+     * 获取实时消费配置
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowPlaybookMonitorsRequest 请求对象
-     * @return ShowPlaybookMonitorsResponse
+     * @param request ShowDataConsumptionRequest 请求对象
+     * @return ShowDataConsumptionResponse
      */
-    public ShowPlaybookMonitorsResponse showPlaybookMonitors(ShowPlaybookMonitorsRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.showPlaybookMonitors);
+    public ShowDataConsumptionResponse showDataConsumption(ShowDataConsumptionRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.showDataConsumption);
     }
 
     /**
-     * 剧本运行监控
+     * 获取实时消费配置
      *
-     * 剧本运行监控
+     * 获取实时消费配置
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowPlaybookMonitorsRequest 请求对象
-     * @return SyncInvoker<ShowPlaybookMonitorsRequest, ShowPlaybookMonitorsResponse>
+     * @param request ShowDataConsumptionRequest 请求对象
+     * @return SyncInvoker<ShowDataConsumptionRequest, ShowDataConsumptionResponse>
      */
-    public SyncInvoker<ShowPlaybookMonitorsRequest, ShowPlaybookMonitorsResponse> showPlaybookMonitorsInvoker(
-        ShowPlaybookMonitorsRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.showPlaybookMonitors, hcClient);
+    public SyncInvoker<ShowDataConsumptionRequest, ShowDataConsumptionResponse> showDataConsumptionInvoker(
+        ShowDataConsumptionRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.showDataConsumption, hcClient);
     }
 
     /**
-     * 查询剧本规则详情
+     * 查看数据加工
      *
-     * 查询剧本规则详情
+     * 查看数据加工
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowPlaybookRuleRequest 请求对象
-     * @return ShowPlaybookRuleResponse
+     * @param request ShowDataTransformationRequest 请求对象
+     * @return ShowDataTransformationResponse
      */
-    public ShowPlaybookRuleResponse showPlaybookRule(ShowPlaybookRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.showPlaybookRule);
+    public ShowDataTransformationResponse showDataTransformation(ShowDataTransformationRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.showDataTransformation);
     }
 
     /**
-     * 查询剧本规则详情
+     * 查看数据加工
      *
-     * 查询剧本规则详情
+     * 查看数据加工
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowPlaybookRuleRequest 请求对象
-     * @return SyncInvoker<ShowPlaybookRuleRequest, ShowPlaybookRuleResponse>
+     * @param request ShowDataTransformationRequest 请求对象
+     * @return SyncInvoker<ShowDataTransformationRequest, ShowDataTransformationResponse>
      */
-    public SyncInvoker<ShowPlaybookRuleRequest, ShowPlaybookRuleResponse> showPlaybookRuleInvoker(
-        ShowPlaybookRuleRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.showPlaybookRule, hcClient);
+    public SyncInvoker<ShowDataTransformationRequest, ShowDataTransformationResponse> showDataTransformationInvoker(
+        ShowDataTransformationRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.showDataTransformation, hcClient);
     }
 
     /**
-     * 剧本数据统计
+     * 展示字段详情
      *
-     * 剧本统计数据
+     * 查询布局字段详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowPlaybookStatisticsRequest 请求对象
-     * @return ShowPlaybookStatisticsResponse
+     * @param request ShowLayoutFieldInfoRequest 请求对象
+     * @return ShowLayoutFieldInfoResponse
      */
-    public ShowPlaybookStatisticsResponse showPlaybookStatistics(ShowPlaybookStatisticsRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.showPlaybookStatistics);
+    public ShowLayoutFieldInfoResponse showLayoutFieldInfo(ShowLayoutFieldInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.showLayoutFieldInfo);
     }
 
     /**
-     * 剧本数据统计
+     * 展示字段详情
      *
-     * 剧本统计数据
+     * 查询布局字段详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowPlaybookStatisticsRequest 请求对象
-     * @return SyncInvoker<ShowPlaybookStatisticsRequest, ShowPlaybookStatisticsResponse>
+     * @param request ShowLayoutFieldInfoRequest 请求对象
+     * @return SyncInvoker<ShowLayoutFieldInfoRequest, ShowLayoutFieldInfoResponse>
      */
-    public SyncInvoker<ShowPlaybookStatisticsRequest, ShowPlaybookStatisticsResponse> showPlaybookStatisticsInvoker(
-        ShowPlaybookStatisticsRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.showPlaybookStatistics, hcClient);
+    public SyncInvoker<ShowLayoutFieldInfoRequest, ShowLayoutFieldInfoResponse> showLayoutFieldInfoInvoker(
+        ShowLayoutFieldInfoRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.showLayoutFieldInfo, hcClient);
     }
 
     /**
-     * 查询剧本拓扑关系
+     * 获取监控统计信息
      *
-     * 查询剧本拓扑关系
+     * 获取监控统计信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowPlaybookTopologyRequest 请求对象
-     * @return ShowPlaybookTopologyResponse
+     * @param request ShowMonitorStatsRequest 请求对象
+     * @return ShowMonitorStatsResponse
      */
-    public ShowPlaybookTopologyResponse showPlaybookTopology(ShowPlaybookTopologyRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.showPlaybookTopology);
+    public ShowMonitorStatsResponse showMonitorStats(ShowMonitorStatsRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.showMonitorStats);
     }
 
     /**
-     * 查询剧本拓扑关系
+     * 获取监控统计信息
      *
-     * 查询剧本拓扑关系
+     * 获取监控统计信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowPlaybookTopologyRequest 请求对象
-     * @return SyncInvoker<ShowPlaybookTopologyRequest, ShowPlaybookTopologyResponse>
+     * @param request ShowMonitorStatsRequest 请求对象
+     * @return SyncInvoker<ShowMonitorStatsRequest, ShowMonitorStatsResponse>
      */
-    public SyncInvoker<ShowPlaybookTopologyRequest, ShowPlaybookTopologyResponse> showPlaybookTopologyInvoker(
-        ShowPlaybookTopologyRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.showPlaybookTopology, hcClient);
+    public SyncInvoker<ShowMonitorStatsRequest, ShowMonitorStatsResponse> showMonitorStatsInvoker(
+        ShowMonitorStatsRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.showMonitorStats, hcClient);
     }
 
     /**
-     * 查询剧本版本详情
+     * 获取管道详情
      *
-     * Show playbook version version
+     * 获取管道详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowPlaybookVersionRequest 请求对象
-     * @return ShowPlaybookVersionResponse
+     * @param request ShowPipeRequest 请求对象
+     * @return ShowPipeResponse
      */
-    public ShowPlaybookVersionResponse showPlaybookVersion(ShowPlaybookVersionRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.showPlaybookVersion);
+    public ShowPipeResponse showPipe(ShowPipeRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.showPipe);
     }
 
     /**
-     * 查询剧本版本详情
+     * 获取管道详情
      *
-     * Show playbook version version
+     * 获取管道详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowPlaybookVersionRequest 请求对象
-     * @return SyncInvoker<ShowPlaybookVersionRequest, ShowPlaybookVersionResponse>
+     * @param request ShowPipeRequest 请求对象
+     * @return SyncInvoker<ShowPipeRequest, ShowPipeResponse>
      */
-    public SyncInvoker<ShowPlaybookVersionRequest, ShowPlaybookVersionResponse> showPlaybookVersionInvoker(
-        ShowPlaybookVersionRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.showPlaybookVersion, hcClient);
+    public SyncInvoker<ShowPipeRequest, ShowPipeResponse> showPipeInvoker(ShowPipeRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.showPipe, hcClient);
     }
 
     /**
-     * 查询工作空间详情
+     * 查看检索脚本
      *
-     * 查询工作空间名称、描述等详情信息
+     * 查看检索脚本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowWorkspaceRequest 请求对象
-     * @return ShowWorkspaceResponse
+     * @param request ShowRetrieveScriptRequest 请求对象
+     * @return ShowRetrieveScriptResponse
      */
-    public ShowWorkspaceResponse showWorkspace(ShowWorkspaceRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.showWorkspace);
+    public ShowRetrieveScriptResponse showRetrieveScript(ShowRetrieveScriptRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.showRetrieveScript);
     }
 
     /**
-     * 查询工作空间详情
+     * 查看检索脚本
      *
-     * 查询工作空间名称、描述等详情信息
+     * 查看检索脚本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowWorkspaceRequest 请求对象
-     * @return SyncInvoker<ShowWorkspaceRequest, ShowWorkspaceResponse>
+     * @param request ShowRetrieveScriptRequest 请求对象
+     * @return SyncInvoker<ShowRetrieveScriptRequest, ShowRetrieveScriptResponse>
      */
-    public SyncInvoker<ShowWorkspaceRequest, ShowWorkspaceResponse> showWorkspaceInvoker(ShowWorkspaceRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.showWorkspace, hcClient);
+    public SyncInvoker<ShowRetrieveScriptRequest, ShowRetrieveScriptResponse> showRetrieveScriptInvoker(
+        ShowRetrieveScriptRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.showRetrieveScript, hcClient);
+    }
+
+    /**
+     * 获取订阅资源信息
+     *
+     * 获取订阅资源信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSubscriptionResourcesRequest 请求对象
+     * @return ShowSubscriptionResourcesResponse
+     */
+    public ShowSubscriptionResourcesResponse showSubscriptionResources(ShowSubscriptionResourcesRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.showSubscriptionResources);
+    }
+
+    /**
+     * 获取订阅资源信息
+     *
+     * 获取订阅资源信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSubscriptionResourcesRequest 请求对象
+     * @return SyncInvoker<ShowSubscriptionResourcesRequest, ShowSubscriptionResourcesResponse>
+     */
+    public SyncInvoker<ShowSubscriptionResourcesRequest, ShowSubscriptionResourcesResponse> showSubscriptionResourcesInvoker(
+        ShowSubscriptionResourcesRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.showSubscriptionResources, hcClient);
+    }
+
+    /**
+     * 获取表详情
+     *
+     * 获取表详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTableRequest 请求对象
+     * @return ShowTableResponse
+     */
+    public ShowTableResponse showTable(ShowTableRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.showTable);
+    }
+
+    /**
+     * 获取表详情
+     *
+     * 获取表详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTableRequest 请求对象
+     * @return SyncInvoker<ShowTableRequest, ShowTableResponse>
+     */
+    public SyncInvoker<ShowTableRequest, ShowTableResponse> showTableInvoker(ShowTableRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.showTable, hcClient);
+    }
+
+    /**
+     * 获取当前可用版本
+     *
+     * 获取当前可用版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVersionRequest 请求对象
+     * @return ShowVersionResponse
+     */
+    public ShowVersionResponse showVersion(ShowVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.showVersion);
+    }
+
+    /**
+     * 获取当前可用版本
+     *
+     * 获取当前可用版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVersionRequest 请求对象
+     * @return SyncInvoker<ShowVersionRequest, ShowVersionResponse>
+     */
+    public SyncInvoker<ShowVersionRequest, ShowVersionResponse> showVersionInvoker(ShowVersionRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.showVersion, hcClient);
     }
 
     /**
      * 更新告警规则
      *
-     * Update alert rule
+     * 更新告警规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2018,7 +2006,7 @@ public class SecMasterClient {
     /**
      * 更新告警规则
      *
-     * Update alert rule
+     * 更新告警规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2031,177 +2019,349 @@ public class SecMasterClient {
     }
 
     /**
-     * 更新威胁情报
+     * 更新分析脚本
      *
-     * 更新威胁情报
+     * 更新分析脚本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request UpdateIndicatorRequest 请求对象
-     * @return UpdateIndicatorResponse
+     * @param request UpdateAnalysisScriptRequest 请求对象
+     * @return UpdateAnalysisScriptResponse
      */
-    public UpdateIndicatorResponse updateIndicator(UpdateIndicatorRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.updateIndicator);
+    public UpdateAnalysisScriptResponse updateAnalysisScript(UpdateAnalysisScriptRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.updateAnalysisScript);
     }
 
     /**
-     * 更新威胁情报
+     * 更新分析脚本
      *
-     * 更新威胁情报
+     * 更新分析脚本
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request UpdateIndicatorRequest 请求对象
-     * @return SyncInvoker<UpdateIndicatorRequest, UpdateIndicatorResponse>
+     * @param request UpdateAnalysisScriptRequest 请求对象
+     * @return SyncInvoker<UpdateAnalysisScriptRequest, UpdateAnalysisScriptResponse>
      */
-    public SyncInvoker<UpdateIndicatorRequest, UpdateIndicatorResponse> updateIndicatorInvoker(
-        UpdateIndicatorRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.updateIndicator, hcClient);
+    public SyncInvoker<UpdateAnalysisScriptRequest, UpdateAnalysisScriptResponse> updateAnalysisScriptInvoker(
+        UpdateAnalysisScriptRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.updateAnalysisScript, hcClient);
     }
 
     /**
-     * 修改剧本
+     * 更新检查项
      *
-     * 修改剧本
+     * 更新检查项
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request UpdatePlaybookRequest 请求对象
-     * @return UpdatePlaybookResponse
+     * @param request UpdateCheckitemRequest 请求对象
+     * @return UpdateCheckitemResponse
      */
-    public UpdatePlaybookResponse updatePlaybook(UpdatePlaybookRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.updatePlaybook);
+    public UpdateCheckitemResponse updateCheckitem(UpdateCheckitemRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.updateCheckitem);
     }
 
     /**
-     * 修改剧本
+     * 更新检查项
      *
-     * 修改剧本
+     * 更新检查项
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request UpdatePlaybookRequest 请求对象
-     * @return SyncInvoker<UpdatePlaybookRequest, UpdatePlaybookResponse>
+     * @param request UpdateCheckitemRequest 请求对象
+     * @return SyncInvoker<UpdateCheckitemRequest, UpdateCheckitemResponse>
      */
-    public SyncInvoker<UpdatePlaybookRequest, UpdatePlaybookResponse> updatePlaybookInvoker(
-        UpdatePlaybookRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.updatePlaybook, hcClient);
+    public SyncInvoker<UpdateCheckitemRequest, UpdateCheckitemResponse> updateCheckitemInvoker(
+        UpdateCheckitemRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.updateCheckitem, hcClient);
     }
 
     /**
-     * 更新剧本动作
+     * 更新代码片段
      *
-     * 更新剧本动作
+     * 更新代码片段
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request UpdatePlaybookActionRequest 请求对象
-     * @return UpdatePlaybookActionResponse
+     * @param request UpdateCodeSegmentRequest 请求对象
+     * @return UpdateCodeSegmentResponse
      */
-    public UpdatePlaybookActionResponse updatePlaybookAction(UpdatePlaybookActionRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.updatePlaybookAction);
+    public UpdateCodeSegmentResponse updateCodeSegment(UpdateCodeSegmentRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.updateCodeSegment);
     }
 
     /**
-     * 更新剧本动作
+     * 更新代码片段
      *
-     * 更新剧本动作
+     * 更新代码片段
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request UpdatePlaybookActionRequest 请求对象
-     * @return SyncInvoker<UpdatePlaybookActionRequest, UpdatePlaybookActionResponse>
+     * @param request UpdateCodeSegmentRequest 请求对象
+     * @return SyncInvoker<UpdateCodeSegmentRequest, UpdateCodeSegmentResponse>
      */
-    public SyncInvoker<UpdatePlaybookActionRequest, UpdatePlaybookActionResponse> updatePlaybookActionInvoker(
-        UpdatePlaybookActionRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.updatePlaybookAction, hcClient);
+    public SyncInvoker<UpdateCodeSegmentRequest, UpdateCodeSegmentResponse> updateCodeSegmentInvoker(
+        UpdateCodeSegmentRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.updateCodeSegment, hcClient);
     }
 
     /**
-     * 更新剧本规则
+     * 更新遵从包
      *
-     * 更新剧本规则
+     * 更新遵从包
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request UpdatePlaybookRuleRequest 请求对象
-     * @return UpdatePlaybookRuleResponse
+     * @param request UpdateCompliancePackageRequest 请求对象
+     * @return UpdateCompliancePackageResponse
      */
-    public UpdatePlaybookRuleResponse updatePlaybookRule(UpdatePlaybookRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.updatePlaybookRule);
+    public UpdateCompliancePackageResponse updateCompliancePackage(UpdateCompliancePackageRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.updateCompliancePackage);
     }
 
     /**
-     * 更新剧本规则
+     * 更新遵从包
      *
-     * 更新剧本规则
+     * 更新遵从包
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request UpdatePlaybookRuleRequest 请求对象
-     * @return SyncInvoker<UpdatePlaybookRuleRequest, UpdatePlaybookRuleResponse>
+     * @param request UpdateCompliancePackageRequest 请求对象
+     * @return SyncInvoker<UpdateCompliancePackageRequest, UpdateCompliancePackageResponse>
      */
-    public SyncInvoker<UpdatePlaybookRuleRequest, UpdatePlaybookRuleResponse> updatePlaybookRuleInvoker(
-        UpdatePlaybookRuleRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.updatePlaybookRule, hcClient);
+    public SyncInvoker<UpdateCompliancePackageRequest, UpdateCompliancePackageResponse> updateCompliancePackageInvoker(
+        UpdateCompliancePackageRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.updateCompliancePackage, hcClient);
     }
 
     /**
-     * 更新剧本版本
+     * 更新数据加工
      *
-     * 更新剧本版本
+     * 更新数据加工
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request UpdatePlaybookVersionRequest 请求对象
-     * @return UpdatePlaybookVersionResponse
+     * @param request UpdateDataTransformationRequest 请求对象
+     * @return UpdateDataTransformationResponse
      */
-    public UpdatePlaybookVersionResponse updatePlaybookVersion(UpdatePlaybookVersionRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.updatePlaybookVersion);
+    public UpdateDataTransformationResponse updateDataTransformation(UpdateDataTransformationRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.updateDataTransformation);
     }
 
     /**
-     * 更新剧本版本
+     * 更新数据加工
      *
-     * 更新剧本版本
+     * 更新数据加工
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request UpdatePlaybookVersionRequest 请求对象
-     * @return SyncInvoker<UpdatePlaybookVersionRequest, UpdatePlaybookVersionResponse>
+     * @param request UpdateDataTransformationRequest 请求对象
+     * @return SyncInvoker<UpdateDataTransformationRequest, UpdateDataTransformationResponse>
      */
-    public SyncInvoker<UpdatePlaybookVersionRequest, UpdatePlaybookVersionResponse> updatePlaybookVersionInvoker(
-        UpdatePlaybookVersionRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.updatePlaybookVersion, hcClient);
+    public SyncInvoker<UpdateDataTransformationRequest, UpdateDataTransformationResponse> updateDataTransformationInvoker(
+        UpdateDataTransformationRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.updateDataTransformation, hcClient);
     }
 
     /**
-     * 更新工作空间
+     * 更新字段
      *
-     * 更新工作空间名称、描述等信息
+     * 更新布局字段
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request UpdateWorkspaceRequest 请求对象
-     * @return UpdateWorkspaceResponse
+     * @param request UpdateLayoutFieldRequest 请求对象
+     * @return UpdateLayoutFieldResponse
      */
-    public UpdateWorkspaceResponse updateWorkspace(UpdateWorkspaceRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.updateWorkspace);
+    public UpdateLayoutFieldResponse updateLayoutField(UpdateLayoutFieldRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.updateLayoutField);
     }
 
     /**
-     * 更新工作空间
+     * 更新字段
      *
-     * 更新工作空间名称、描述等信息
+     * 更新布局字段
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request UpdateWorkspaceRequest 请求对象
-     * @return SyncInvoker<UpdateWorkspaceRequest, UpdateWorkspaceResponse>
+     * @param request UpdateLayoutFieldRequest 请求对象
+     * @return SyncInvoker<UpdateLayoutFieldRequest, UpdateLayoutFieldResponse>
      */
-    public SyncInvoker<UpdateWorkspaceRequest, UpdateWorkspaceResponse> updateWorkspaceInvoker(
-        UpdateWorkspaceRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.updateWorkspace, hcClient);
+    public SyncInvoker<UpdateLayoutFieldRequest, UpdateLayoutFieldResponse> updateLayoutFieldInvoker(
+        UpdateLayoutFieldRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.updateLayoutField, hcClient);
+    }
+
+    /**
+     * 更新管道
+     *
+     * 更新管道
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePipeRequest 请求对象
+     * @return UpdatePipeResponse
+     */
+    public UpdatePipeResponse updatePipe(UpdatePipeRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.updatePipe);
+    }
+
+    /**
+     * 更新管道
+     *
+     * 更新管道
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePipeRequest 请求对象
+     * @return SyncInvoker<UpdatePipeRequest, UpdatePipeResponse>
+     */
+    public SyncInvoker<UpdatePipeRequest, UpdatePipeResponse> updatePipeInvoker(UpdatePipeRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.updatePipe, hcClient);
+    }
+
+    /**
+     * 更新管道结构
+     *
+     * 更新管道结构
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePipeSchemaRequest 请求对象
+     * @return UpdatePipeSchemaResponse
+     */
+    public UpdatePipeSchemaResponse updatePipeSchema(UpdatePipeSchemaRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.updatePipeSchema);
+    }
+
+    /**
+     * 更新管道结构
+     *
+     * 更新管道结构
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePipeSchemaRequest 请求对象
+     * @return SyncInvoker<UpdatePipeSchemaRequest, UpdatePipeSchemaResponse>
+     */
+    public SyncInvoker<UpdatePipeSchemaRequest, UpdatePipeSchemaResponse> updatePipeSchemaInvoker(
+        UpdatePipeSchemaRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.updatePipeSchema, hcClient);
+    }
+
+    /**
+     * 更新检索脚本
+     *
+     * 更新检索脚本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRetrieveScriptRequest 请求对象
+     * @return UpdateRetrieveScriptResponse
+     */
+    public UpdateRetrieveScriptResponse updateRetrieveScript(UpdateRetrieveScriptRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.updateRetrieveScript);
+    }
+
+    /**
+     * 更新检索脚本
+     *
+     * 更新检索脚本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRetrieveScriptRequest 请求对象
+     * @return SyncInvoker<UpdateRetrieveScriptRequest, UpdateRetrieveScriptResponse>
+     */
+    public SyncInvoker<UpdateRetrieveScriptRequest, UpdateRetrieveScriptResponse> updateRetrieveScriptInvoker(
+        UpdateRetrieveScriptRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.updateRetrieveScript, hcClient);
+    }
+
+    /**
+     * 更改表详情
+     *
+     * 更改表详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTableRequest 请求对象
+     * @return UpdateTableResponse
+     */
+    public UpdateTableResponse updateTable(UpdateTableRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.updateTable);
+    }
+
+    /**
+     * 更改表详情
+     *
+     * 更改表详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTableRequest 请求对象
+     * @return SyncInvoker<UpdateTableRequest, UpdateTableResponse>
+     */
+    public SyncInvoker<UpdateTableRequest, UpdateTableResponse> updateTableInvoker(UpdateTableRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.updateTable, hcClient);
+    }
+
+    /**
+     * 更改表结构
+     *
+     * 更改表结构
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTableSchemaRequest 请求对象
+     * @return UpdateTableSchemaResponse
+     */
+    public UpdateTableSchemaResponse updateTableSchema(UpdateTableSchemaRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.updateTableSchema);
+    }
+
+    /**
+     * 更改表结构
+     *
+     * 更改表结构
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTableSchemaRequest 请求对象
+     * @return SyncInvoker<UpdateTableSchemaRequest, UpdateTableSchemaResponse>
+     */
+    public SyncInvoker<UpdateTableSchemaRequest, UpdateTableSchemaResponse> updateTableSchemaInvoker(
+        UpdateTableSchemaRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.updateTableSchema, hcClient);
+    }
+
+    /**
+     * 创建SQL校验
+     *
+     * 创建SQL校验
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSqlValidationRequest 请求对象
+     * @return CreateSqlValidationResponse
+     */
+    public CreateSqlValidationResponse createSqlValidation(CreateSqlValidationRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.createSqlValidation);
+    }
+
+    /**
+     * 创建SQL校验
+     *
+     * 创建SQL校验
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSqlValidationRequest 请求对象
+     * @return SyncInvoker<CreateSqlValidationRequest, CreateSqlValidationResponse>
+     */
+    public SyncInvoker<CreateSqlValidationRequest, CreateSqlValidationResponse> createSqlValidationInvoker(
+        CreateSqlValidationRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.createSqlValidation, hcClient);
     }
 
 }

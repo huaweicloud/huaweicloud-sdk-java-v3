@@ -151,7 +151,7 @@ public class StartSmartChatJobResponse extends SdkResponse {
     private Boolean isTransparent;
 
     /**
-     * 默认语言，智能交互接口使用。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
+     * 默认语言，智能交互接口使用。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持） * fr：法语（仅海外站点支持）
      */
     public static final class DefaultLanguageEnum {
 
@@ -185,6 +185,11 @@ public class StartSmartChatJobResponse extends SdkResponse {
          */
         public static final DefaultLanguageEnum THAI = new DefaultLanguageEnum("Thai");
 
+        /**
+         * Enum FR for value: "fr"
+         */
+        public static final DefaultLanguageEnum FR = new DefaultLanguageEnum("fr");
+
         private static final Map<String, DefaultLanguageEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DefaultLanguageEnum> createStaticFields() {
@@ -195,6 +200,7 @@ public class StartSmartChatJobResponse extends SdkResponse {
             map.put("por", POR);
             map.put("Arabic", ARABIC);
             map.put("Thai", THAI);
+            map.put("fr", FR);
             return Collections.unmodifiableMap(map);
         }
 
@@ -491,7 +497,7 @@ public class StartSmartChatJobResponse extends SdkResponse {
     }
 
     /**
-     * 默认语言，智能交互接口使用。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
+     * 默认语言，智能交互接口使用。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持） * fr：法语（仅海外站点支持）
      * @return defaultLanguage
      */
     public DefaultLanguageEnum getDefaultLanguage() {

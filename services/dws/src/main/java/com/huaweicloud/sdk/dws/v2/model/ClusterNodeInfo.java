@@ -90,7 +90,7 @@ public class ClusterNodeInfo {
     }
 
     /**
-     * **参数解释**： 节点状态。 **取值范围**： 不涉及。
+     * **参数解释**： 节点状态。 **取值范围**： - 100：创建中。 - 199：空闲。 - 200：正常。 - 300：不可用。 - 303：创建失败。 - 304：删除中。 - 400：已删除。 - 800：冻结。 - 900：关机。
      * @return status
      */
     public String getStatus() {
@@ -107,7 +107,7 @@ public class ClusterNodeInfo {
     }
 
     /**
-     * **参数解释**： 节点子状态。 **取值范围**： 不涉及。
+     * **参数解释**： 节点子状态。 **取值范围**： - 110：ECS已就绪。 - 120：软件已部署。 - 130：节点已正常。 - 140：节点已监控。
      * @return subStatus
      */
     public String getSubStatus() {

@@ -30,7 +30,7 @@ public class UpdateResourceGroupAssociationAlarmTemplateResponse extends SdkResp
     }
 
     /**
-     * 资源分组ID，以rg开头，后跟22位由字母或数字组成的字符串
+     * **参数解释** 资源分组ID。 **取值范围** 以\"rg\"开头，后面跟着22个字母或数字 
      * @return groupId
      */
     public String getGroupId() {

@@ -33,7 +33,7 @@ public class ConfigurationHistoryRsp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "applied")
 
-    private String applied;
+    private Boolean applied;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
@@ -113,7 +113,7 @@ public class ConfigurationHistoryRsp {
         this.updateResult = updateResult;
     }
 
-    public ConfigurationHistoryRsp withApplied(String applied) {
+    public ConfigurationHistoryRsp withApplied(Boolean applied) {
         this.applied = applied;
         return this;
     }
@@ -122,11 +122,11 @@ public class ConfigurationHistoryRsp {
      * **参数解释：** 是否生效。 **约束限制：** 不涉及。 **取值范围：** - true:已生效。 - false:未生效。 **默认取值：** 不涉及。
      * @return applied
      */
-    public String getApplied() {
+    public Boolean getApplied() {
         return applied;
     }
 
-    public void setApplied(String applied) {
+    public void setApplied(Boolean applied) {
         this.applied = applied;
     }
 

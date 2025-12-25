@@ -19,6 +19,11 @@ public class ShowConfigurationAppliedHistoryResponse extends SdkResponse {
 
     private List<ApplyHistoryInfo> histories = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_count")
+
+    private Integer totalCount;
+
     public ShowConfigurationAppliedHistoryResponse withHistories(List<ApplyHistoryInfo> histories) {
         this.histories = histories;
         return this;
@@ -41,7 +46,7 @@ public class ShowConfigurationAppliedHistoryResponse extends SdkResponse {
     }
 
     /**
-     * 参数模板应用历史列表
+     * 参数模板应用历史列表。
      * @return histories
      */
     public List<ApplyHistoryInfo> getHistories() {
@@ -50,6 +55,23 @@ public class ShowConfigurationAppliedHistoryResponse extends SdkResponse {
 
     public void setHistories(List<ApplyHistoryInfo> histories) {
         this.histories = histories;
+    }
+
+    public ShowConfigurationAppliedHistoryResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+
+    /**
+     * 总记录数。
+     * @return totalCount
+     */
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
     }
 
     @Override
@@ -61,12 +83,12 @@ public class ShowConfigurationAppliedHistoryResponse extends SdkResponse {
             return false;
         }
         ShowConfigurationAppliedHistoryResponse that = (ShowConfigurationAppliedHistoryResponse) obj;
-        return Objects.equals(this.histories, that.histories);
+        return Objects.equals(this.histories, that.histories) && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(histories);
+        return Objects.hash(histories, totalCount);
     }
 
     @Override
@@ -74,6 +96,7 @@ public class ShowConfigurationAppliedHistoryResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowConfigurationAppliedHistoryResponse {\n");
         sb.append("    histories: ").append(toIndentedString(histories)).append("\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

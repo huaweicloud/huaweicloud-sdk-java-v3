@@ -133,7 +133,7 @@ public class UpdateDisasterRecoveryReq {
     }
 
     /**
-     * **参数解释**： 容灾状态。 **取值范围**： 不涉及。
+     * **参数解释**： 容灾状态。 **取值范围**： - creating，容灾创建中。 - create_failed，容灾创建失败。 - unstart，容灾未启动。 - starting，容灾启动中。 - start_failed，容灾启动失败。 - running，容灾运行中。 - stopping，容灾停止中。 - stop_failed，容灾停止失败。 - switchovering，灾备切换中。 - abnormal，容灾异常。 - deleting，容灾删除中。 - deleted，容灾已删除。
      * @return drStatus
      */
     public String getDrStatus() {

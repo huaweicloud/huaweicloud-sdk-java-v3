@@ -104,7 +104,7 @@ public class CreateDisasterRecovery {
     }
 
     /**
-     * **参数解释**： 容灾类型。 **取值范围**： 不涉及。
+     * **参数解释**： 容灾类型。 **取值范围**： - az，跨az容灾。 - region，跨region容灾。
      * @return drType
      */
     public String getDrType() {

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * IP白名单 约束：只有企业版实例的APP_HTTPS协议支持配置IP白名单。 
+ * IP白名单 约束：只有企业版实例的APP_HTTPS/APP_AMQP/APP_MQTT协议支持配置IP白名单。 
  */
 public class IPWhiteList {
 

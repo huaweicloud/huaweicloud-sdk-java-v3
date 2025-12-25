@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Node network parameters.
@@ -29,6 +30,11 @@ public class HostNetwork {
     @JsonProperty(value = "controlPlaneSecurityGroup")
 
     private String controlPlaneSecurityGroup;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "autoGenerateSecurityGroupHardeningConfig")
+
+    private AutoGenerateSecurityGroupHardeningConfigSpec autoGenerateSecurityGroupHardeningConfig;
 
     public HostNetwork withVpc(String vpc) {
         this.vpc = vpc;
@@ -98,6 +104,35 @@ public class HostNetwork {
         this.controlPlaneSecurityGroup = controlPlaneSecurityGroup;
     }
 
+    public HostNetwork withAutoGenerateSecurityGroupHardeningConfig(
+        AutoGenerateSecurityGroupHardeningConfigSpec autoGenerateSecurityGroupHardeningConfig) {
+        this.autoGenerateSecurityGroupHardeningConfig = autoGenerateSecurityGroupHardeningConfig;
+        return this;
+    }
+
+    public HostNetwork withAutoGenerateSecurityGroupHardeningConfig(
+        Consumer<AutoGenerateSecurityGroupHardeningConfigSpec> autoGenerateSecurityGroupHardeningConfigSetter) {
+        if (this.autoGenerateSecurityGroupHardeningConfig == null) {
+            this.autoGenerateSecurityGroupHardeningConfig = new AutoGenerateSecurityGroupHardeningConfigSpec();
+            autoGenerateSecurityGroupHardeningConfigSetter.accept(this.autoGenerateSecurityGroupHardeningConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get autoGenerateSecurityGroupHardeningConfig
+     * @return autoGenerateSecurityGroupHardeningConfig
+     */
+    public AutoGenerateSecurityGroupHardeningConfigSpec getAutoGenerateSecurityGroupHardeningConfig() {
+        return autoGenerateSecurityGroupHardeningConfig;
+    }
+
+    public void setAutoGenerateSecurityGroupHardeningConfig(
+        AutoGenerateSecurityGroupHardeningConfigSpec autoGenerateSecurityGroupHardeningConfig) {
+        this.autoGenerateSecurityGroupHardeningConfig = autoGenerateSecurityGroupHardeningConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -109,12 +144,14 @@ public class HostNetwork {
         HostNetwork that = (HostNetwork) obj;
         return Objects.equals(this.vpc, that.vpc) && Objects.equals(this.subnet, that.subnet)
             && Objects.equals(this.securityGroup, that.securityGroup)
-            && Objects.equals(this.controlPlaneSecurityGroup, that.controlPlaneSecurityGroup);
+            && Objects.equals(this.controlPlaneSecurityGroup, that.controlPlaneSecurityGroup) && Objects
+                .equals(this.autoGenerateSecurityGroupHardeningConfig, that.autoGenerateSecurityGroupHardeningConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(vpc, subnet, securityGroup, controlPlaneSecurityGroup);
+        return Objects
+            .hash(vpc, subnet, securityGroup, controlPlaneSecurityGroup, autoGenerateSecurityGroupHardeningConfig);
     }
 
     @Override
@@ -125,6 +162,9 @@ public class HostNetwork {
         sb.append("    subnet: ").append(toIndentedString(subnet)).append("\n");
         sb.append("    securityGroup: ").append(toIndentedString(securityGroup)).append("\n");
         sb.append("    controlPlaneSecurityGroup: ").append(toIndentedString(controlPlaneSecurityGroup)).append("\n");
+        sb.append("    autoGenerateSecurityGroupHardeningConfig: ")
+            .append(toIndentedString(autoGenerateSecurityGroupHardeningConfig))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

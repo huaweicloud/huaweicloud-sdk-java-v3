@@ -26,7 +26,7 @@ public class ForwardingInfo {
     }
 
     /**
-     * **参数说明**：NAT网关绑定的EIP 
+     * **参数说明**：NAT网关绑定的EIP。 
      * @return eip
      */
     public String getEip() {

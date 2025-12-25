@@ -33,13 +33,18 @@ public class CreateConfigurationRequestBody {
 
     private DatastoreResult datastore;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "entity_id")
+
+    private String entityId;
+
     public CreateConfigurationRequestBody withName(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * 参数模板名称。 取值范围：长度1到64位之间，区分大小写字母，可包含字母、数字、中划线、下划线或句点，不能包含其他特殊字符。
+     * **参数解释：** 参数模板名称。 **约束限制：** 长度1到64位之间，区分大小写字母，可包含字母、数字、中划线、下划线或句点，不能包含其他特殊字符。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return name
      */
     public String getName() {
@@ -56,7 +61,7 @@ public class CreateConfigurationRequestBody {
     }
 
     /**
-     * 参数模板描述。 取值范围：长度不超过256位，且不能包含回车和>!<\"&'=特殊字符。默认为空
+     * **参数解释：** 参数模板描述。 **约束限制：** 长度不超过256位，且不能包含回车和>!<\"&'=特殊字符。 **取值范围：** 不涉及。 **默认取值：** 默认为空。
      * @return description
      */
     public String getDescription() {
@@ -89,7 +94,7 @@ public class CreateConfigurationRequestBody {
     }
 
     /**
-     * 参数名和参数值映射关系。用户可以基于默认参数模板的参数，自定义的参数值。
+     * **参数解释：** 参数名和参数值映射关系。用户可以基于默认参数模板的参数，自定义的参数值。 **约束限制：** 当未传入entity_id参数时，此参数必选。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return parameterValues
      */
     public Map<String, String> getParameterValues() {
@@ -126,6 +131,23 @@ public class CreateConfigurationRequestBody {
         this.datastore = datastore;
     }
 
+    public CreateConfigurationRequestBody withEntityId(String entityId) {
+        this.entityId = entityId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 实例ID或组ID或节点ID。可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 若传入此参数，则会基于此实例、组或节点的参数信息创建参数模板，将会忽略parameter_values和datastore传参。 **约束限制：** 不涉及。 **取值范围：** 当实例类型是集群，取值为shard组或config组的组ID、mongos节点的节点ID、只读节点的节点ID。 当实例类型是副本集，传值为实例ID或只读节点的节点ID。 当实例类型是单节点，传值为实例ID。 **默认取值：** 不涉及。
+     * @return entityId
+     */
+    public String getEntityId() {
+        return entityId;
+    }
+
+    public void setEntityId(String entityId) {
+        this.entityId = entityId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -137,12 +159,12 @@ public class CreateConfigurationRequestBody {
         CreateConfigurationRequestBody that = (CreateConfigurationRequestBody) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.parameterValues, that.parameterValues)
-            && Objects.equals(this.datastore, that.datastore);
+            && Objects.equals(this.datastore, that.datastore) && Objects.equals(this.entityId, that.entityId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, parameterValues, datastore);
+        return Objects.hash(name, description, parameterValues, datastore, entityId);
     }
 
     @Override
@@ -153,6 +175,7 @@ public class CreateConfigurationRequestBody {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    parameterValues: ").append(toIndentedString(parameterValues)).append("\n");
         sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
+        sb.append("    entityId: ").append(toIndentedString(entityId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

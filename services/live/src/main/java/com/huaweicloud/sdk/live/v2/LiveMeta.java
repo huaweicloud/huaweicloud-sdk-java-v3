@@ -456,10 +456,10 @@ public class LiveMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("domain",
+        builder.<List<String>>withRequestField("domain",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListHistoryStreamsRequest::getDomain, ListHistoryStreamsRequest::setDomain));
         builder.<String>withRequestField("app",
             LocationType.Query,
@@ -1114,6 +1114,11 @@ public class LiveMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSingleStreamBitrateRequest::getStream,
                 ListSingleStreamBitrateRequest::setStream));
+        builder.<ListSingleStreamBitrateRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSingleStreamBitrateRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListSingleStreamBitrateRequest::getType, ListSingleStreamBitrateRequest::setType));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

@@ -26,7 +26,7 @@ public class CompatibleDataStoreResp {
     }
 
     /**
-     * **参数解释**： 数据库类型。 **取值范围**： 不涉及。
+     * **参数解释**： 数据库类型。 **取值范围**： - dws：云数仓 - hybrid：实时数仓
      * @return type
      */
     public String getType() {

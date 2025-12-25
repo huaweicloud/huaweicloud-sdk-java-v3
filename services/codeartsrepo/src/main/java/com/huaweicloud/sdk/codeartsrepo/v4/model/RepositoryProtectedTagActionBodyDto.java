@@ -26,7 +26,7 @@ public class RepositoryProtectedTagActionBodyDto {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_ids")
 
-    private List<Object> userIds = null;
+    private List<Integer> userIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_team_ids")
@@ -124,12 +124,12 @@ public class RepositoryProtectedTagActionBodyDto {
         this.enable = enable;
     }
 
-    public RepositoryProtectedTagActionBodyDto withUserIds(List<Object> userIds) {
+    public RepositoryProtectedTagActionBodyDto withUserIds(List<Integer> userIds) {
         this.userIds = userIds;
         return this;
     }
 
-    public RepositoryProtectedTagActionBodyDto addUserIdsItem(Object userIdsItem) {
+    public RepositoryProtectedTagActionBodyDto addUserIdsItem(Integer userIdsItem) {
         if (this.userIds == null) {
             this.userIds = new ArrayList<>();
         }
@@ -137,7 +137,7 @@ public class RepositoryProtectedTagActionBodyDto {
         return this;
     }
 
-    public RepositoryProtectedTagActionBodyDto withUserIds(Consumer<List<Object>> userIdsSetter) {
+    public RepositoryProtectedTagActionBodyDto withUserIds(Consumer<List<Integer>> userIdsSetter) {
         if (this.userIds == null) {
             this.userIds = new ArrayList<>();
         }
@@ -149,11 +149,11 @@ public class RepositoryProtectedTagActionBodyDto {
      * **参数解释：** 用户ID列表。 **约束限制：** 不涉及。 **取值范围：** Integer **默认取值：** 不涉及。
      * @return userIds
      */
-    public List<Object> getUserIds() {
+    public List<Integer> getUserIds() {
         return userIds;
     }
 
-    public void setUserIds(List<Object> userIds) {
+    public void setUserIds(List<Integer> userIds) {
         this.userIds = userIds;
     }
 

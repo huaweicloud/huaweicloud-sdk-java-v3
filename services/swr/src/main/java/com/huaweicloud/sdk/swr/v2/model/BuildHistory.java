@@ -33,7 +33,7 @@ public class BuildHistory {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    private Integer size;
+    private Long size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "digest")
@@ -108,7 +108,7 @@ public class BuildHistory {
         this.mediaType = mediaType;
     }
 
-    public BuildHistory withSize(Integer size) {
+    public BuildHistory withSize(Long size) {
         this.size = size;
         return this;
     }
@@ -117,11 +117,11 @@ public class BuildHistory {
      * 镜像层大小
      * @return size
      */
-    public Integer getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(Long size) {
         this.size = size;
     }
 

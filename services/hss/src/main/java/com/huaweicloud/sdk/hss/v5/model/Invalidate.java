@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 失效，包含如下:   - true ：是   - fasle ：否
+ * 失效，包含如下:   - true ：是   - false ：否
  */
 public class Invalidate {
 

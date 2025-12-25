@@ -1,12 +1,9 @@
 package com.huaweicloud.sdk.secmaster.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,196 +16,39 @@ import java.util.function.Consumer;
 public class AlertRuleTemplate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "template_id")
+    @JsonProperty(value = "accumulated_times")
 
-    private String templateId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_time")
-
-    private Long updateTime;
+    private Integer accumulatedTimes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "template_name")
+    @JsonProperty(value = "alert_description")
 
-    private String templateName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "data_source")
-
-    private String dataSource;
+    private String alertDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "version")
+    @JsonProperty(value = "alert_name")
 
-    private String version;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "query")
-
-    private String query;
-
-    /**
-     * 查询语法，SQL。Query type. SQL.
-     */
-    public static final class QueryTypeEnum {
-
-        /**
-         * Enum SQL for value: "SQL"
-         */
-        public static final QueryTypeEnum SQL = new QueryTypeEnum("SQL");
-
-        private static final Map<String, QueryTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, QueryTypeEnum> createStaticFields() {
-            Map<String, QueryTypeEnum> map = new HashMap<>();
-            map.put("SQL", SQL);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        QueryTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static QueryTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new QueryTypeEnum(value));
-        }
-
-        public static QueryTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof QueryTypeEnum) {
-                return this.value.equals(((QueryTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String alertName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "query_type")
+    @JsonProperty(value = "alert_remediation")
 
-    private QueryTypeEnum queryType;
-
-    /**
-     * 严重程度，提示、低危、中危、高危、致命。Severity. TIPS, LOW, MEDIUM, HIGH, FATAL
-     */
-    public static final class SeverityEnum {
-
-        /**
-         * Enum TIPS for value: "TIPS"
-         */
-        public static final SeverityEnum TIPS = new SeverityEnum("TIPS");
-
-        /**
-         * Enum LOW for value: "LOW"
-         */
-        public static final SeverityEnum LOW = new SeverityEnum("LOW");
-
-        /**
-         * Enum MEDIUM for value: "MEDIUM"
-         */
-        public static final SeverityEnum MEDIUM = new SeverityEnum("MEDIUM");
-
-        /**
-         * Enum HIGH for value: "HIGH"
-         */
-        public static final SeverityEnum HIGH = new SeverityEnum("HIGH");
-
-        /**
-         * Enum FATAL for value: "FATAL"
-         */
-        public static final SeverityEnum FATAL = new SeverityEnum("FATAL");
-
-        private static final Map<String, SeverityEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, SeverityEnum> createStaticFields() {
-            Map<String, SeverityEnum> map = new HashMap<>();
-            map.put("TIPS", TIPS);
-            map.put("LOW", LOW);
-            map.put("MEDIUM", MEDIUM);
-            map.put("HIGH", HIGH);
-            map.put("FATAL", FATAL);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        SeverityEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static SeverityEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SeverityEnum(value));
-        }
-
-        public static SeverityEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof SeverityEnum) {
-                return this.value.equals(((SeverityEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String alertRemediation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "severity")
+    @JsonProperty(value = "alert_type")
 
-    private SeverityEnum severity;
+    private Map<String, String> alertType = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_by")
+
+    private String createBy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_properties")
@@ -216,156 +56,232 @@ public class AlertRuleTemplate {
     private Map<String, String> customProperties = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_grouping")
 
     private Boolean eventGrouping;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_mode")
+
+    private JobMode jobMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "process_status")
+
+    private ProcessStatus processStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "query")
+
+    private String query;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "query_type")
+
+    private QueryType queryType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schedule")
 
-    private Schedule schedule;
+    private AlertRuleSchedule schedule;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "severity")
+
+    private Serverity severity;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "simulation")
+
+    private Boolean simulation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private Status status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "suppresion")
+
+    private Boolean suppresion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "table_name")
+
+    private String tableName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "template_id")
+
+    private String templateId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "template_name")
+
+    private String templateName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "triggers")
 
-    private List<AlertRuleTrigger> triggers = null;
+    private List<Trigger> triggers = null;
 
-    public AlertRuleTemplate withTemplateId(String templateId) {
-        this.templateId = templateId;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_by")
+
+    private String updateBy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time")
+
+    private Long updateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time_by_user")
+
+    private Long updateTimeByUser;
+
+    public AlertRuleTemplate withAccumulatedTimes(Integer accumulatedTimes) {
+        this.accumulatedTimes = accumulatedTimes;
         return this;
     }
 
     /**
-     * 告警规则模板 ID。Alert rule template ID.
-     * @return templateId
-     */
-    public String getTemplateId() {
-        return templateId;
-    }
-
-    public void setTemplateId(String templateId) {
-        this.templateId = templateId;
-    }
-
-    public AlertRuleTemplate withUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
-        return this;
-    }
-
-    /**
-     * 更新时间。Update time.
+     * 累计次数
      * minimum: 0
-     * maximum: 9223372036854775807
-     * @return updateTime
+     * maximum: 500
+     * @return accumulatedTimes
      */
-    public Long getUpdateTime() {
-        return updateTime;
+    public Integer getAccumulatedTimes() {
+        return accumulatedTimes;
     }
 
-    public void setUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
+    public void setAccumulatedTimes(Integer accumulatedTimes) {
+        this.accumulatedTimes = accumulatedTimes;
     }
 
-    public AlertRuleTemplate withTemplateName(String templateName) {
-        this.templateName = templateName;
+    public AlertRuleTemplate withAlertDescription(String alertDescription) {
+        this.alertDescription = alertDescription;
         return this;
     }
 
     /**
-     * 告警规则模板名称。Alert rule template name.
-     * @return templateName
+     * 告警描述
+     * @return alertDescription
      */
-    public String getTemplateName() {
-        return templateName;
+    public String getAlertDescription() {
+        return alertDescription;
     }
 
-    public void setTemplateName(String templateName) {
-        this.templateName = templateName;
+    public void setAlertDescription(String alertDescription) {
+        this.alertDescription = alertDescription;
     }
 
-    public AlertRuleTemplate withDataSource(String dataSource) {
-        this.dataSource = dataSource;
+    public AlertRuleTemplate withAlertName(String alertName) {
+        this.alertName = alertName;
         return this;
     }
 
     /**
-     * 数据源。Data source.
-     * @return dataSource
+     * 告警名称
+     * @return alertName
      */
-    public String getDataSource() {
-        return dataSource;
+    public String getAlertName() {
+        return alertName;
     }
 
-    public void setDataSource(String dataSource) {
-        this.dataSource = dataSource;
+    public void setAlertName(String alertName) {
+        this.alertName = alertName;
     }
 
-    public AlertRuleTemplate withVersion(String version) {
-        this.version = version;
+    public AlertRuleTemplate withAlertRemediation(String alertRemediation) {
+        this.alertRemediation = alertRemediation;
         return this;
     }
 
     /**
-     * 版本。Version
-     * @return version
+     * 告警修复
+     * @return alertRemediation
      */
-    public String getVersion() {
-        return version;
+    public String getAlertRemediation() {
+        return alertRemediation;
     }
 
-    public void setVersion(String version) {
-        this.version = version;
+    public void setAlertRemediation(String alertRemediation) {
+        this.alertRemediation = alertRemediation;
     }
 
-    public AlertRuleTemplate withQuery(String query) {
-        this.query = query;
+    public AlertRuleTemplate withAlertType(Map<String, String> alertType) {
+        this.alertType = alertType;
+        return this;
+    }
+
+    public AlertRuleTemplate putAlertTypeItem(String key, String alertTypeItem) {
+        if (this.alertType == null) {
+            this.alertType = new HashMap<>();
+        }
+        this.alertType.put(key, alertTypeItem);
+        return this;
+    }
+
+    public AlertRuleTemplate withAlertType(Consumer<Map<String, String>> alertTypeSetter) {
+        if (this.alertType == null) {
+            this.alertType = new HashMap<>();
+        }
+        alertTypeSetter.accept(this.alertType);
         return this;
     }
 
     /**
-     * 查询语句。Query.
-     * @return query
+     * Map<String,String>
+     * @return alertType
      */
-    public String getQuery() {
-        return query;
+    public Map<String, String> getAlertType() {
+        return alertType;
     }
 
-    public void setQuery(String query) {
-        this.query = query;
+    public void setAlertType(Map<String, String> alertType) {
+        this.alertType = alertType;
     }
 
-    public AlertRuleTemplate withQueryType(QueryTypeEnum queryType) {
-        this.queryType = queryType;
+    public AlertRuleTemplate withCreateBy(String createBy) {
+        this.createBy = createBy;
         return this;
     }
 
     /**
-     * 查询语法，SQL。Query type. SQL.
-     * @return queryType
+     * Iam用户ID
+     * @return createBy
      */
-    public QueryTypeEnum getQueryType() {
-        return queryType;
+    public String getCreateBy() {
+        return createBy;
     }
 
-    public void setQueryType(QueryTypeEnum queryType) {
-        this.queryType = queryType;
+    public void setCreateBy(String createBy) {
+        this.createBy = createBy;
     }
 
-    public AlertRuleTemplate withSeverity(SeverityEnum severity) {
-        this.severity = severity;
+    public AlertRuleTemplate withCreateTime(Long createTime) {
+        this.createTime = createTime;
         return this;
     }
 
     /**
-     * 严重程度，提示、低危、中危、高危、致命。Severity. TIPS, LOW, MEDIUM, HIGH, FATAL
-     * @return severity
+     * 毫秒时间戳
+     * minimum: 0
+     * maximum: 2366841600000
+     * @return createTime
      */
-    public SeverityEnum getSeverity() {
-        return severity;
+    public Long getCreateTime() {
+        return createTime;
     }
 
-    public void setSeverity(SeverityEnum severity) {
-        this.severity = severity;
+    public void setCreateTime(Long createTime) {
+        this.createTime = createTime;
     }
 
     public AlertRuleTemplate withCustomProperties(Map<String, String> customProperties) {
@@ -390,7 +306,7 @@ public class AlertRuleTemplate {
     }
 
     /**
-     * 自定义扩展信息。Custom properties.
+     * Map<String,String>
      * @return customProperties
      */
     public Map<String, String> getCustomProperties() {
@@ -401,13 +317,30 @@ public class AlertRuleTemplate {
         this.customProperties = customProperties;
     }
 
+    public AlertRuleTemplate withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 告警规则模板描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public AlertRuleTemplate withEventGrouping(Boolean eventGrouping) {
         this.eventGrouping = eventGrouping;
         return this;
     }
 
     /**
-     * 告警分组。Event grouping.
+     * 告警组
      * @return eventGrouping
      */
     public Boolean getEventGrouping() {
@@ -418,14 +351,82 @@ public class AlertRuleTemplate {
         this.eventGrouping = eventGrouping;
     }
 
-    public AlertRuleTemplate withSchedule(Schedule schedule) {
+    public AlertRuleTemplate withJobMode(JobMode jobMode) {
+        this.jobMode = jobMode;
+        return this;
+    }
+
+    /**
+     * Get jobMode
+     * @return jobMode
+     */
+    public JobMode getJobMode() {
+        return jobMode;
+    }
+
+    public void setJobMode(JobMode jobMode) {
+        this.jobMode = jobMode;
+    }
+
+    public AlertRuleTemplate withProcessStatus(ProcessStatus processStatus) {
+        this.processStatus = processStatus;
+        return this;
+    }
+
+    /**
+     * Get processStatus
+     * @return processStatus
+     */
+    public ProcessStatus getProcessStatus() {
+        return processStatus;
+    }
+
+    public void setProcessStatus(ProcessStatus processStatus) {
+        this.processStatus = processStatus;
+    }
+
+    public AlertRuleTemplate withQuery(String query) {
+        this.query = query;
+        return this;
+    }
+
+    /**
+     * 查询语句
+     * @return query
+     */
+    public String getQuery() {
+        return query;
+    }
+
+    public void setQuery(String query) {
+        this.query = query;
+    }
+
+    public AlertRuleTemplate withQueryType(QueryType queryType) {
+        this.queryType = queryType;
+        return this;
+    }
+
+    /**
+     * Get queryType
+     * @return queryType
+     */
+    public QueryType getQueryType() {
+        return queryType;
+    }
+
+    public void setQueryType(QueryType queryType) {
+        this.queryType = queryType;
+    }
+
+    public AlertRuleTemplate withSchedule(AlertRuleSchedule schedule) {
         this.schedule = schedule;
         return this;
     }
 
-    public AlertRuleTemplate withSchedule(Consumer<Schedule> scheduleSetter) {
+    public AlertRuleTemplate withSchedule(Consumer<AlertRuleSchedule> scheduleSetter) {
         if (this.schedule == null) {
-            this.schedule = new Schedule();
+            this.schedule = new AlertRuleSchedule();
             scheduleSetter.accept(this.schedule);
         }
 
@@ -436,20 +437,139 @@ public class AlertRuleTemplate {
      * Get schedule
      * @return schedule
      */
-    public Schedule getSchedule() {
+    public AlertRuleSchedule getSchedule() {
         return schedule;
     }
 
-    public void setSchedule(Schedule schedule) {
+    public void setSchedule(AlertRuleSchedule schedule) {
         this.schedule = schedule;
     }
 
-    public AlertRuleTemplate withTriggers(List<AlertRuleTrigger> triggers) {
+    public AlertRuleTemplate withSeverity(Serverity severity) {
+        this.severity = severity;
+        return this;
+    }
+
+    /**
+     * Get severity
+     * @return severity
+     */
+    public Serverity getSeverity() {
+        return severity;
+    }
+
+    public void setSeverity(Serverity severity) {
+        this.severity = severity;
+    }
+
+    public AlertRuleTemplate withSimulation(Boolean simulation) {
+        this.simulation = simulation;
+        return this;
+    }
+
+    /**
+     * 是否仿真
+     * @return simulation
+     */
+    public Boolean getSimulation() {
+        return simulation;
+    }
+
+    public void setSimulation(Boolean simulation) {
+        this.simulation = simulation;
+    }
+
+    public AlertRuleTemplate withStatus(Status status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * Get status
+     * @return status
+     */
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public AlertRuleTemplate withSuppresion(Boolean suppresion) {
+        this.suppresion = suppresion;
+        return this;
+    }
+
+    /**
+     * 告警抑制
+     * @return suppresion
+     */
+    public Boolean getSuppresion() {
+        return suppresion;
+    }
+
+    public void setSuppresion(Boolean suppresion) {
+        this.suppresion = suppresion;
+    }
+
+    public AlertRuleTemplate withTableName(String tableName) {
+        this.tableName = tableName;
+        return this;
+    }
+
+    /**
+     * 表名称
+     * @return tableName
+     */
+    public String getTableName() {
+        return tableName;
+    }
+
+    public void setTableName(String tableName) {
+        this.tableName = tableName;
+    }
+
+    public AlertRuleTemplate withTemplateId(String templateId) {
+        this.templateId = templateId;
+        return this;
+    }
+
+    /**
+     * UUID
+     * @return templateId
+     */
+    public String getTemplateId() {
+        return templateId;
+    }
+
+    public void setTemplateId(String templateId) {
+        this.templateId = templateId;
+    }
+
+    public AlertRuleTemplate withTemplateName(String templateName) {
+        this.templateName = templateName;
+        return this;
+    }
+
+    /**
+     * 模板名称
+     * @return templateName
+     */
+    public String getTemplateName() {
+        return templateName;
+    }
+
+    public void setTemplateName(String templateName) {
+        this.templateName = templateName;
+    }
+
+    public AlertRuleTemplate withTriggers(List<Trigger> triggers) {
         this.triggers = triggers;
         return this;
     }
 
-    public AlertRuleTemplate addTriggersItem(AlertRuleTrigger triggersItem) {
+    public AlertRuleTemplate addTriggersItem(Trigger triggersItem) {
         if (this.triggers == null) {
             this.triggers = new ArrayList<>();
         }
@@ -457,7 +577,7 @@ public class AlertRuleTemplate {
         return this;
     }
 
-    public AlertRuleTemplate withTriggers(Consumer<List<AlertRuleTrigger>> triggersSetter) {
+    public AlertRuleTemplate withTriggers(Consumer<List<Trigger>> triggersSetter) {
         if (this.triggers == null) {
             this.triggers = new ArrayList<>();
         }
@@ -466,15 +586,70 @@ public class AlertRuleTemplate {
     }
 
     /**
-     * 告警触发规则。Alert triggers.
+     * 触发器数组
      * @return triggers
      */
-    public List<AlertRuleTrigger> getTriggers() {
+    public List<Trigger> getTriggers() {
         return triggers;
     }
 
-    public void setTriggers(List<AlertRuleTrigger> triggers) {
+    public void setTriggers(List<Trigger> triggers) {
         this.triggers = triggers;
+    }
+
+    public AlertRuleTemplate withUpdateBy(String updateBy) {
+        this.updateBy = updateBy;
+        return this;
+    }
+
+    /**
+     * Iam用户ID
+     * @return updateBy
+     */
+    public String getUpdateBy() {
+        return updateBy;
+    }
+
+    public void setUpdateBy(String updateBy) {
+        this.updateBy = updateBy;
+    }
+
+    public AlertRuleTemplate withUpdateTime(Long updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    /**
+     * 毫秒时间戳
+     * minimum: 0
+     * maximum: 2366841600000
+     * @return updateTime
+     */
+    public Long getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Long updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public AlertRuleTemplate withUpdateTimeByUser(Long updateTimeByUser) {
+        this.updateTimeByUser = updateTimeByUser;
+        return this;
+    }
+
+    /**
+     * 毫秒时间戳
+     * minimum: 0
+     * maximum: 2366841600000
+     * @return updateTimeByUser
+     */
+    public Long getUpdateTimeByUser() {
+        return updateTimeByUser;
+    }
+
+    public void setUpdateTimeByUser(Long updateTimeByUser) {
+        this.updateTimeByUser = updateTimeByUser;
     }
 
     @Override
@@ -486,47 +661,85 @@ public class AlertRuleTemplate {
             return false;
         }
         AlertRuleTemplate that = (AlertRuleTemplate) obj;
-        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.templateName, that.templateName) && Objects.equals(this.dataSource, that.dataSource)
-            && Objects.equals(this.version, that.version) && Objects.equals(this.query, that.query)
-            && Objects.equals(this.queryType, that.queryType) && Objects.equals(this.severity, that.severity)
+        return Objects.equals(this.accumulatedTimes, that.accumulatedTimes)
+            && Objects.equals(this.alertDescription, that.alertDescription)
+            && Objects.equals(this.alertName, that.alertName)
+            && Objects.equals(this.alertRemediation, that.alertRemediation)
+            && Objects.equals(this.alertType, that.alertType) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.customProperties, that.customProperties)
-            && Objects.equals(this.eventGrouping, that.eventGrouping) && Objects.equals(this.schedule, that.schedule)
-            && Objects.equals(this.triggers, that.triggers);
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.eventGrouping, that.eventGrouping) && Objects.equals(this.jobMode, that.jobMode)
+            && Objects.equals(this.processStatus, that.processStatus) && Objects.equals(this.query, that.query)
+            && Objects.equals(this.queryType, that.queryType) && Objects.equals(this.schedule, that.schedule)
+            && Objects.equals(this.severity, that.severity) && Objects.equals(this.simulation, that.simulation)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.suppresion, that.suppresion)
+            && Objects.equals(this.tableName, that.tableName) && Objects.equals(this.templateId, that.templateId)
+            && Objects.equals(this.templateName, that.templateName) && Objects.equals(this.triggers, that.triggers)
+            && Objects.equals(this.updateBy, that.updateBy) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.updateTimeByUser, that.updateTimeByUser);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(templateId,
-            updateTime,
-            templateName,
-            dataSource,
-            version,
+        return Objects.hash(accumulatedTimes,
+            alertDescription,
+            alertName,
+            alertRemediation,
+            alertType,
+            createBy,
+            createTime,
+            customProperties,
+            description,
+            eventGrouping,
+            jobMode,
+            processStatus,
             query,
             queryType,
-            severity,
-            customProperties,
-            eventGrouping,
             schedule,
-            triggers);
+            severity,
+            simulation,
+            status,
+            suppresion,
+            tableName,
+            templateId,
+            templateName,
+            triggers,
+            updateBy,
+            updateTime,
+            updateTimeByUser);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AlertRuleTemplate {\n");
-        sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
-        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
-        sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
-        sb.append("    dataSource: ").append(toIndentedString(dataSource)).append("\n");
-        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    accumulatedTimes: ").append(toIndentedString(accumulatedTimes)).append("\n");
+        sb.append("    alertDescription: ").append(toIndentedString(alertDescription)).append("\n");
+        sb.append("    alertName: ").append(toIndentedString(alertName)).append("\n");
+        sb.append("    alertRemediation: ").append(toIndentedString(alertRemediation)).append("\n");
+        sb.append("    alertType: ").append(toIndentedString(alertType)).append("\n");
+        sb.append("    createBy: ").append(toIndentedString(createBy)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    customProperties: ").append(toIndentedString(customProperties)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    eventGrouping: ").append(toIndentedString(eventGrouping)).append("\n");
+        sb.append("    jobMode: ").append(toIndentedString(jobMode)).append("\n");
+        sb.append("    processStatus: ").append(toIndentedString(processStatus)).append("\n");
         sb.append("    query: ").append(toIndentedString(query)).append("\n");
         sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
-        sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
-        sb.append("    customProperties: ").append(toIndentedString(customProperties)).append("\n");
-        sb.append("    eventGrouping: ").append(toIndentedString(eventGrouping)).append("\n");
         sb.append("    schedule: ").append(toIndentedString(schedule)).append("\n");
+        sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
+        sb.append("    simulation: ").append(toIndentedString(simulation)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    suppresion: ").append(toIndentedString(suppresion)).append("\n");
+        sb.append("    tableName: ").append(toIndentedString(tableName)).append("\n");
+        sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
+        sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
         sb.append("    triggers: ").append(toIndentedString(triggers)).append("\n");
+        sb.append("    updateBy: ").append(toIndentedString(updateBy)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    updateTimeByUser: ").append(toIndentedString(updateTimeByUser)).append("\n");
         sb.append("}");
         return sb.toString();
     }

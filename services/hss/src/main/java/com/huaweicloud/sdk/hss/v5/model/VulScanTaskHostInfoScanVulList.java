@@ -36,7 +36,7 @@ public class VulScanTaskHostInfoScanVulList {
     }
 
     /**
-     * 漏洞id
+     * **参数解释**: 漏洞id **取值范围**: 字符长度0-256位 
      * @return vulId
      */
     public String getVulId() {
@@ -53,7 +53,7 @@ public class VulScanTaskHostInfoScanVulList {
     }
 
     /**
-     * 漏洞名称
+     * **参数解释**: 漏洞名称 **取值范围**: 字符长度0-1024位 
      * @return vulName
      */
     public String getVulName() {
@@ -70,7 +70,7 @@ public class VulScanTaskHostInfoScanVulList {
     }
 
     /**
-     * 该漏洞的扫描状态，包含如下：   - scanning : 扫描中   - success : 扫描成功   - failed : 扫描失败
+     * **参数解释**: 该漏洞的扫描状态 **取值范围**: - scanning：扫描中 - success：扫描成功 - failed：扫描失败 
      * @return status
      */
     public String getStatus() {
@@ -87,7 +87,7 @@ public class VulScanTaskHostInfoScanVulList {
     }
 
     /**
-     * 该漏洞扫描失败的原因，只有扫描失败的漏洞有该字段
+     * **参数解释**: 该漏洞扫描失败的原因，只有扫描失败的漏洞有该字段 **取值范围**: 字符长度0-1024位 
      * @return failedReason
      */
     public String getFailedReason() {

@@ -24,6 +24,11 @@ public class ListNotificationMaskRequestBody {
     private ListRelationType relationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_ids")
+
+    private List<String> alarmIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "relation_ids")
 
     private List<String> relationIds = null;
@@ -34,7 +39,7 @@ public class ListNotificationMaskRequestBody {
     private String metricName;
 
     /**
-     * dimension: 子维度,product: 云产品
+     * **参数解释**： 资源层级。 **约束限制**： 不涉及。 **取值范围**： - product: 云产品   - dimension: 子维度 **默认取值**： 不涉及。 
      */
     public static final class ResourceLevelEnum {
 
@@ -119,7 +124,7 @@ public class ListNotificationMaskRequestBody {
     private String maskName;
 
     /**
-     * 屏蔽状态,可选。MASK_EFFECTIVE：已生效，MASK_INEFFECTIVE：未生效。
+     * **参数解释**： 屏蔽状态,可选。 **约束限制**： 不涉及。 **取值范围**： - MASK_EFFECTIVE：已生效。 - MASK_INEFFECTIVE：未生效。 **默认取值**： 不涉及。 
      */
     public static final class MaskStatusEnum {
 
@@ -225,6 +230,39 @@ public class ListNotificationMaskRequestBody {
         this.relationType = relationType;
     }
 
+    public ListNotificationMaskRequestBody withAlarmIds(List<String> alarmIds) {
+        this.alarmIds = alarmIds;
+        return this;
+    }
+
+    public ListNotificationMaskRequestBody addAlarmIdsItem(String alarmIdsItem) {
+        if (this.alarmIds == null) {
+            this.alarmIds = new ArrayList<>();
+        }
+        this.alarmIds.add(alarmIdsItem);
+        return this;
+    }
+
+    public ListNotificationMaskRequestBody withAlarmIds(Consumer<List<String>> alarmIdsSetter) {
+        if (this.alarmIds == null) {
+            this.alarmIds = new ArrayList<>();
+        }
+        alarmIdsSetter.accept(this.alarmIds);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 告警规则ID列表，用于查询对应的告警通知屏蔽。 **约束限制**： 当relation_type为ALARM_RULE、RESOURCE_POLICY_NOTIFICATION时，应通过alarm_ids查询。当relation_type为RESOURCE、EVENT.SYS时，不支持使用alarm_ids查询，此时alarm_ids为空或不选，表示查询所有的RESOURCE、EVENT.SYS类型的告警屏蔽。 **取值范围**： 包含的告警规则ID数量最多不超过100个，最少为0个。 **默认取值**： 不涉及 
+     * @return alarmIds
+     */
+    public List<String> getAlarmIds() {
+        return alarmIds;
+    }
+
+    public void setAlarmIds(List<String> alarmIds) {
+        this.alarmIds = alarmIds;
+    }
+
     public ListNotificationMaskRequestBody withRelationIds(List<String> relationIds) {
         this.relationIds = relationIds;
         return this;
@@ -247,7 +285,7 @@ public class ListNotificationMaskRequestBody {
     }
 
     /**
-     * 关联编号（目前是告警规则ID）
+     * （已废弃，不推荐使用）关联编号（目前是告警规则ID）
      * @return relationIds
      */
     public List<String> getRelationIds() {
@@ -281,7 +319,7 @@ public class ListNotificationMaskRequestBody {
     }
 
     /**
-     * dimension: 子维度,product: 云产品
+     * **参数解释**： 资源层级。 **约束限制**： 不涉及。 **取值范围**： - product: 云产品   - dimension: 子维度 **默认取值**： 不涉及。 
      * @return resourceLevel
      */
     public ResourceLevelEnum getResourceLevel() {
@@ -298,7 +336,7 @@ public class ListNotificationMaskRequestBody {
     }
 
     /**
-     * 屏蔽规则ID,可选
+     * **参数解释**： 屏蔽规则ID,可选。 **约束限制**： 不涉及。 **取值范围**： 以nm开头，后跟[0,62]个英文或数字。 **默认取值**： 不涉及。 
      * @return maskId
      */
     public String getMaskId() {
@@ -315,7 +353,7 @@ public class ListNotificationMaskRequestBody {
     }
 
     /**
-     * 屏蔽规则名称,可选，只能为字母、数字、汉字、-、_，最大长度为64
+     * **参数解释**： 屏蔽规则名称,可选。 **约束限制**： 不涉及。 **取值范围**： 只能为字母、数字、汉字、-、_，长度为[1,64]个字符。 **默认取值**： 不涉及。 
      * @return maskName
      */
     public String getMaskName() {
@@ -332,7 +370,7 @@ public class ListNotificationMaskRequestBody {
     }
 
     /**
-     * 屏蔽状态,可选。MASK_EFFECTIVE：已生效，MASK_INEFFECTIVE：未生效。
+     * **参数解释**： 屏蔽状态,可选。 **约束限制**： 不涉及。 **取值范围**： - MASK_EFFECTIVE：已生效。 - MASK_INEFFECTIVE：未生效。 **默认取值**： 不涉及。 
      * @return maskStatus
      */
     public MaskStatusEnum getMaskStatus() {
@@ -349,7 +387,7 @@ public class ListNotificationMaskRequestBody {
     }
 
     /**
-     * 资源维度值,提供一个维度的资源ID即可,可选
+     * **参数解释**： 资源维度值,提供一个维度的资源ID即可,可选 **约束限制**： 不涉及。 **取值范围**： 长度为[1,700]个字符。 **默认取值**： 不涉及。 
      * @return resourceId
      */
     public String getResourceId() {
@@ -399,7 +437,7 @@ public class ListNotificationMaskRequestBody {
     }
 
     /**
-     * 资源的维度信息
+     * **参数解释**： 资源的维度信息 **约束限制**： 包含的维度信息数量为[1,4]个。 
      * @return dimensions
      */
     public List<ResourceDimension> getDimensions() {
@@ -419,7 +457,7 @@ public class ListNotificationMaskRequestBody {
             return false;
         }
         ListNotificationMaskRequestBody that = (ListNotificationMaskRequestBody) obj;
-        return Objects.equals(this.relationType, that.relationType)
+        return Objects.equals(this.relationType, that.relationType) && Objects.equals(this.alarmIds, that.alarmIds)
             && Objects.equals(this.relationIds, that.relationIds) && Objects.equals(this.metricName, that.metricName)
             && Objects.equals(this.resourceLevel, that.resourceLevel) && Objects.equals(this.maskId, that.maskId)
             && Objects.equals(this.maskName, that.maskName) && Objects.equals(this.maskStatus, that.maskStatus)
@@ -430,6 +468,7 @@ public class ListNotificationMaskRequestBody {
     @Override
     public int hashCode() {
         return Objects.hash(relationType,
+            alarmIds,
             relationIds,
             metricName,
             resourceLevel,
@@ -446,6 +485,7 @@ public class ListNotificationMaskRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListNotificationMaskRequestBody {\n");
         sb.append("    relationType: ").append(toIndentedString(relationType)).append("\n");
+        sb.append("    alarmIds: ").append(toIndentedString(alarmIds)).append("\n");
         sb.append("    relationIds: ").append(toIndentedString(relationIds)).append("\n");
         sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
         sb.append("    resourceLevel: ").append(toIndentedString(resourceLevel)).append("\n");

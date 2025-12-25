@@ -19,6 +19,8 @@ import com.huaweicloud.sdk.codeartsartifact.v2.model.CreateProjectRelatedReposit
 import com.huaweicloud.sdk.codeartsartifact.v2.model.CreateProjectRelatedRepositoryResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.DeleteArtifactFileRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.DeleteArtifactFileResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.DeleteCompletelyUpdateFileStateRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.DeleteCompletelyUpdateFileStateResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.DeleteRepositoryRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.DeleteRepositoryResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.IDEPrivilageProjectInfo;
@@ -35,9 +37,34 @@ import com.huaweicloud.sdk.codeartsartifact.v2.model.ListArtifactoryStorageStati
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ListArtifactoryStorageStatisticResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ListAttentionsRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ListAttentionsResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListCapacityMessageSettingRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListCapacityMessageSettingResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListChildProxyRepositoriesListRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListChildProxyRepositoriesListResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListDomainIpConfigRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListDomainIpConfigResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListFileBuildArchivesRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListFileBuildArchivesResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListFilesRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListFilesResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListLatestVersionFilesRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListLatestVersionFilesResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListMavenListRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListMavenListResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListMavenUserRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListMavenUserResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListNetProxyRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListNetProxyResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListProjectRolePermissionsRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListProjectRolePermissionsResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListProjectUsersRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListProjectUsersResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListSecGuardListRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListSecGuardListResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ModifyRepositoryRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ModifyRepositoryResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.PathMap;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.RepoFileQueryDTOV5;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ResetUserPasswordRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ResetUserPasswordResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.SearchArtifactsRequest;
@@ -46,16 +73,38 @@ import com.huaweicloud.sdk.codeartsartifact.v2.model.SearchByChecksumRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.SearchByChecksumResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowAuditRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowAuditResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowAutoDeleteJobSettingsRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowAutoDeleteJobSettingsResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowDomainReleaseRepoStorageRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowDomainReleaseRepoStorageResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowFileDetailByFullNameRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowFileDetailByFullNameResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowFileDetailRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowFileDetailResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowFileTreeRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowFileTreeResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowLatestVersionFilesCountRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowLatestVersionFilesCountResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowMavenInfoRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowMavenInfoResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowMultiRolesUserPermissionsRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowMultiRolesUserPermissionsResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowOpenSourceEnabledRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowOpenSourceEnabledResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowPackageDataDetailRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowPackageDataDetailResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowPackageInfoRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowPackageInfoResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectListRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectListResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectReleaseFilesRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectReleaseFilesResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectStorageInfoRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectStorageInfoResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowReleaseProjectFilesRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowReleaseProjectFilesResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepoUserInfoRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepoUserInfoResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepositoryInfoRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepositoryInfoResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepositoryRequest;
@@ -64,6 +113,8 @@ import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowStorageRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowStorageResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowUserPrivilegesRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowUserPrivilegesResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowUserTicketRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowUserTicketResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.TrashArtifactModelForDelete;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.UpdateArtifactoryRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.UpdateArtifactoryResponse;
@@ -264,6 +315,35 @@ public class CodeArtsArtifactMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PathMap.class),
             f -> f.withMarshaller(DeleteArtifactFileRequest::getBody, DeleteArtifactFileRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteCompletelyUpdateFileStateRequest, DeleteCompletelyUpdateFileStateResponse> deleteCompletelyUpdateFileState =
+        genForDeleteCompletelyUpdateFileState();
+
+    private static HttpRequestDef<DeleteCompletelyUpdateFileStateRequest, DeleteCompletelyUpdateFileStateResponse> genForDeleteCompletelyUpdateFileState() {
+        // basic
+        HttpRequestDef.Builder<DeleteCompletelyUpdateFileStateRequest, DeleteCompletelyUpdateFileStateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteCompletelyUpdateFileStateRequest.class,
+                    DeleteCompletelyUpdateFileStateResponse.class)
+                .withName("DeleteCompletelyUpdateFileState")
+                .withUri("/devreposerver/v5/files/compeletion")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<String>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(DeleteCompletelyUpdateFileStateRequest::getBody,
+                    DeleteCompletelyUpdateFileStateRequest::setBody)
+                .withInnerContainerType(String.class));
 
         // response
 
@@ -523,6 +603,407 @@ public class CodeArtsArtifactMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCapacityMessageSettingRequest, ListCapacityMessageSettingResponse> listCapacityMessageSetting =
+        genForListCapacityMessageSetting();
+
+    private static HttpRequestDef<ListCapacityMessageSettingRequest, ListCapacityMessageSettingResponse> genForListCapacityMessageSetting() {
+        // basic
+        HttpRequestDef.Builder<ListCapacityMessageSettingRequest, ListCapacityMessageSettingResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListCapacityMessageSettingRequest.class,
+                    ListCapacityMessageSettingResponse.class)
+                .withName("ListCapacityMessageSetting")
+                .withUri("/devreposerver/v5/capacity-notice/settings")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListChildProxyRepositoriesListRequest, ListChildProxyRepositoriesListResponse> listChildProxyRepositoriesList =
+        genForListChildProxyRepositoriesList();
+
+    private static HttpRequestDef<ListChildProxyRepositoriesListRequest, ListChildProxyRepositoriesListResponse> genForListChildProxyRepositoriesList() {
+        // basic
+        HttpRequestDef.Builder<ListChildProxyRepositoriesListRequest, ListChildProxyRepositoriesListResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListChildProxyRepositoriesListRequest.class,
+                    ListChildProxyRepositoriesListResponse.class)
+                .withName("ListChildProxyRepositoriesList")
+                .withUri("/cloudartifact/v5/repositories/proxy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("repo_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListChildProxyRepositoriesListRequest::getRepoId,
+                ListChildProxyRepositoriesListRequest::setRepoId));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListChildProxyRepositoriesListRequest::getType,
+                ListChildProxyRepositoriesListRequest::setType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDomainIpConfigRequest, ListDomainIpConfigResponse> listDomainIpConfig =
+        genForListDomainIpConfig();
+
+    private static HttpRequestDef<ListDomainIpConfigRequest, ListDomainIpConfigResponse> genForListDomainIpConfig() {
+        // basic
+        HttpRequestDef.Builder<ListDomainIpConfigRequest, ListDomainIpConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDomainIpConfigRequest.class, ListDomainIpConfigResponse.class)
+                .withName("ListDomainIpConfig")
+                .withUri("/cloudartifact/v5/domain/ipconfig")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("page_no",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDomainIpConfigRequest::getPageNo, ListDomainIpConfigRequest::setPageNo));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDomainIpConfigRequest::getPageSize, ListDomainIpConfigRequest::setPageSize));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFileBuildArchivesRequest, ListFileBuildArchivesResponse> listFileBuildArchives =
+        genForListFileBuildArchives();
+
+    private static HttpRequestDef<ListFileBuildArchivesRequest, ListFileBuildArchivesResponse> genForListFileBuildArchives() {
+        // basic
+        HttpRequestDef.Builder<ListFileBuildArchivesRequest, ListFileBuildArchivesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListFileBuildArchivesRequest.class, ListFileBuildArchivesResponse.class)
+            .withName("ListFileBuildArchives")
+            .withUri("/devreposerver/v5/files/archives")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("parent_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFileBuildArchivesRequest::getParentId,
+                ListFileBuildArchivesRequest::setParentId));
+        builder.<String>withRequestField("build_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFileBuildArchivesRequest::getBuildId, ListFileBuildArchivesRequest::setBuildId));
+        builder.<String>withRequestField("build_no",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFileBuildArchivesRequest::getBuildNo, ListFileBuildArchivesRequest::setBuildNo));
+        builder.<Integer>withRequestField("page_no",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFileBuildArchivesRequest::getPageNo, ListFileBuildArchivesRequest::setPageNo));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFileBuildArchivesRequest::getPageSize,
+                ListFileBuildArchivesRequest::setPageSize));
+        builder.<String>withRequestField("repo_branch",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFileBuildArchivesRequest::getRepoBranch,
+                ListFileBuildArchivesRequest::setRepoBranch));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFilesRequest, ListFilesResponse> listFiles = genForListFiles();
+
+    private static HttpRequestDef<ListFilesRequest, ListFilesResponse> genForListFiles() {
+        // basic
+        HttpRequestDef.Builder<ListFilesRequest, ListFilesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListFilesRequest.class, ListFilesResponse.class)
+                .withName("ListFiles")
+                .withUri("/devreposerver/v5/files/list")
+                .withContentType("application/json");
+
+        // requests
+        builder.<RepoFileQueryDTOV5>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RepoFileQueryDTOV5.class),
+            f -> f.withMarshaller(ListFilesRequest::getBody, ListFilesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLatestVersionFilesRequest, ListLatestVersionFilesResponse> listLatestVersionFiles =
+        genForListLatestVersionFiles();
+
+    private static HttpRequestDef<ListLatestVersionFilesRequest, ListLatestVersionFilesResponse> genForListLatestVersionFiles() {
+        // basic
+        HttpRequestDef.Builder<ListLatestVersionFilesRequest, ListLatestVersionFilesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListLatestVersionFilesRequest.class, ListLatestVersionFilesResponse.class)
+            .withName("ListLatestVersionFiles")
+            .withUri("/devreposerver/v5/{project_id}/files/version")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLatestVersionFilesRequest::getProjectId,
+                ListLatestVersionFilesRequest::setProjectId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLatestVersionFilesRequest::getName, ListLatestVersionFilesRequest::setName));
+        builder.<String>withRequestField("sort_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLatestVersionFilesRequest::getSortBy, ListLatestVersionFilesRequest::setSortBy));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLatestVersionFilesRequest::getSortDir,
+                ListLatestVersionFilesRequest::setSortDir));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLatestVersionFilesRequest::getOffset, ListLatestVersionFilesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLatestVersionFilesRequest::getLimit, ListLatestVersionFilesRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMavenListRequest, ListMavenListResponse> listMavenList =
+        genForListMavenList();
+
+    private static HttpRequestDef<ListMavenListRequest, ListMavenListResponse> genForListMavenList() {
+        // basic
+        HttpRequestDef.Builder<ListMavenListRequest, ListMavenListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListMavenListRequest.class, ListMavenListResponse.class)
+                .withName("ListMavenList")
+                .withUri("/cloudartifact/v5/maven/list")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMavenListRequest::getProjectId, ListMavenListRequest::setProjectId));
+        builder.<Boolean>withRequestField("default",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListMavenListRequest::getDefault, ListMavenListRequest::setDefault));
+        builder.<String>withRequestField("policy",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMavenListRequest::getPolicy, ListMavenListRequest::setPolicy));
+        builder.<String>withRequestField("repo_ids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMavenListRequest::getRepoIds, ListMavenListRequest::setRepoIds));
+        builder.<String>withRequestField("access",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMavenListRequest::getAccess, ListMavenListRequest::setAccess));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMavenUserRequest, ListMavenUserResponse> listMavenUser =
+        genForListMavenUser();
+
+    private static HttpRequestDef<ListMavenUserRequest, ListMavenUserResponse> genForListMavenUser() {
+        // basic
+        HttpRequestDef.Builder<ListMavenUserRequest, ListMavenUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListMavenUserRequest.class, ListMavenUserResponse.class)
+                .withName("ListMavenUser")
+                .withUri("/cloudartifact/v5/repositories/users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("user_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMavenUserRequest::getUserName, ListMavenUserRequest::setUserName));
+        builder.<Integer>withRequestField("page_no",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMavenUserRequest::getPageNo, ListMavenUserRequest::setPageNo));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMavenUserRequest::getPageSize, ListMavenUserRequest::setPageSize));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNetProxyRequest, ListNetProxyResponse> listNetProxy = genForListNetProxy();
+
+    private static HttpRequestDef<ListNetProxyRequest, ListNetProxyResponse> genForListNetProxy() {
+        // basic
+        HttpRequestDef.Builder<ListNetProxyRequest, ListNetProxyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListNetProxyRequest.class, ListNetProxyResponse.class)
+                .withName("ListNetProxy")
+                .withUri("/cloudartifact/v5/tree/net/proxy")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProjectRolePermissionsRequest, ListProjectRolePermissionsResponse> listProjectRolePermissions =
+        genForListProjectRolePermissions();
+
+    private static HttpRequestDef<ListProjectRolePermissionsRequest, ListProjectRolePermissionsResponse> genForListProjectRolePermissions() {
+        // basic
+        HttpRequestDef.Builder<ListProjectRolePermissionsRequest, ListProjectRolePermissionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListProjectRolePermissionsRequest.class,
+                    ListProjectRolePermissionsResponse.class)
+                .withName("ListProjectRolePermissions")
+                .withUri("/devreposerver/v5/project-role/permissions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectRolePermissionsRequest::getProjectId,
+                ListProjectRolePermissionsRequest::setProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListProjectUsersRequest, ListProjectUsersResponse> listProjectUsers =
+        genForListProjectUsers();
+
+    private static HttpRequestDef<ListProjectUsersRequest, ListProjectUsersResponse> genForListProjectUsers() {
+        // basic
+        HttpRequestDef.Builder<ListProjectUsersRequest, ListProjectUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListProjectUsersRequest.class, ListProjectUsersResponse.class)
+                .withName("ListProjectUsers")
+                .withUri("/cloudartifact/v5/projects/{project_id}/users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectUsersRequest::getProjectId, ListProjectUsersRequest::setProjectId));
+        builder.<String>withRequestField("repo_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectUsersRequest::getRepoId, ListProjectUsersRequest::setRepoId));
+        builder.<String>withRequestField("scene",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListProjectUsersRequest::getScene, ListProjectUsersRequest::setScene));
+        builder.<Integer>withRequestField("page_no",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectUsersRequest::getPageNo, ListProjectUsersRequest::setPageNo));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListProjectUsersRequest::getPageSize, ListProjectUsersRequest::setPageSize));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecGuardListRequest, ListSecGuardListResponse> listSecGuardList =
+        genForListSecGuardList();
+
+    private static HttpRequestDef<ListSecGuardListRequest, ListSecGuardListResponse> genForListSecGuardList() {
+        // basic
+        HttpRequestDef.Builder<ListSecGuardListRequest, ListSecGuardListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSecGuardListRequest.class, ListSecGuardListResponse.class)
+                .withName("ListSecGuardList")
+                .withUri("/cloudartifact/v5/sec-guard/task/list")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("date",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecGuardListRequest::getDate, ListSecGuardListRequest::setDate));
+        builder.<Integer>withRequestField("page_no",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecGuardListRequest::getPageNo, ListSecGuardListRequest::setPageNo));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecGuardListRequest::getPageSize, ListSecGuardListRequest::setPageSize));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ModifyRepositoryRequest, ModifyRepositoryResponse> modifyRepository =
         genForModifyRepository();
 
@@ -697,6 +1178,102 @@ public class CodeArtsArtifactMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAutoDeleteJobSettingsRequest, ShowAutoDeleteJobSettingsResponse> showAutoDeleteJobSettings =
+        genForShowAutoDeleteJobSettings();
+
+    private static HttpRequestDef<ShowAutoDeleteJobSettingsRequest, ShowAutoDeleteJobSettingsResponse> genForShowAutoDeleteJobSettings() {
+        // basic
+        HttpRequestDef.Builder<ShowAutoDeleteJobSettingsRequest, ShowAutoDeleteJobSettingsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAutoDeleteJobSettingsRequest.class,
+                    ShowAutoDeleteJobSettingsResponse.class)
+                .withName("ShowAutoDeleteJobSettings")
+                .withUri("/devreposerver/v5/release/{project_id}/auto-deletion/settings")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoDeleteJobSettingsRequest::getProjectId,
+                ShowAutoDeleteJobSettingsRequest::setProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDomainReleaseRepoStorageRequest, ShowDomainReleaseRepoStorageResponse> showDomainReleaseRepoStorage =
+        genForShowDomainReleaseRepoStorage();
+
+    private static HttpRequestDef<ShowDomainReleaseRepoStorageRequest, ShowDomainReleaseRepoStorageResponse> genForShowDomainReleaseRepoStorage() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainReleaseRepoStorageRequest, ShowDomainReleaseRepoStorageResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDomainReleaseRepoStorageRequest.class,
+                    ShowDomainReleaseRepoStorageResponse.class)
+                .withName("ShowDomainReleaseRepoStorage")
+                .withUri("/devreposerver/v5/storage")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFileDetailRequest, ShowFileDetailResponse> showFileDetail =
+        genForShowFileDetail();
+
+    private static HttpRequestDef<ShowFileDetailRequest, ShowFileDetailResponse> genForShowFileDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowFileDetailRequest, ShowFileDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFileDetailRequest.class, ShowFileDetailResponse.class)
+                .withName("ShowFileDetail")
+                .withUri("/devreposerver/v5/files/{id}/info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFileDetailRequest::getId, ShowFileDetailRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFileDetailByFullNameRequest, ShowFileDetailByFullNameResponse> showFileDetailByFullName =
+        genForShowFileDetailByFullName();
+
+    private static HttpRequestDef<ShowFileDetailByFullNameRequest, ShowFileDetailByFullNameResponse> genForShowFileDetailByFullName() {
+        // basic
+        HttpRequestDef.Builder<ShowFileDetailByFullNameRequest, ShowFileDetailByFullNameResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowFileDetailByFullNameRequest.class, ShowFileDetailByFullNameResponse.class)
+                .withName("ShowFileDetailByFullName")
+                .withUri("/devreposerver/v5/files/info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("file_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFileDetailByFullNameRequest::getFileName,
+                ShowFileDetailByFullNameRequest::setFileName));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowFileTreeRequest, ShowFileTreeResponse> showFileTree = genForShowFileTree();
 
     private static HttpRequestDef<ShowFileTreeRequest, ShowFileTreeResponse> genForShowFileTree() {
@@ -744,6 +1321,39 @@ public class CodeArtsArtifactMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowLatestVersionFilesCountRequest, ShowLatestVersionFilesCountResponse> showLatestVersionFilesCount =
+        genForShowLatestVersionFilesCount();
+
+    private static HttpRequestDef<ShowLatestVersionFilesCountRequest, ShowLatestVersionFilesCountResponse> genForShowLatestVersionFilesCount() {
+        // basic
+        HttpRequestDef.Builder<ShowLatestVersionFilesCountRequest, ShowLatestVersionFilesCountResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowLatestVersionFilesCountRequest.class,
+                    ShowLatestVersionFilesCountResponse.class)
+                .withName("ShowLatestVersionFilesCount")
+                .withUri("/devreposerver/v5/{project_id}/files/version/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLatestVersionFilesCountRequest::getProjectId,
+                ShowLatestVersionFilesCountRequest::setProjectId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLatestVersionFilesCountRequest::getName,
+                ShowLatestVersionFilesCountRequest::setName));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowMavenInfoRequest, ShowMavenInfoResponse> showMavenInfo =
         genForShowMavenInfo();
 
@@ -781,6 +1391,98 @@ public class CodeArtsArtifactMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMavenInfoRequest::getIds, ShowMavenInfoRequest::setIds));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMultiRolesUserPermissionsRequest, ShowMultiRolesUserPermissionsResponse> showMultiRolesUserPermissions =
+        genForShowMultiRolesUserPermissions();
+
+    private static HttpRequestDef<ShowMultiRolesUserPermissionsRequest, ShowMultiRolesUserPermissionsResponse> genForShowMultiRolesUserPermissions() {
+        // basic
+        HttpRequestDef.Builder<ShowMultiRolesUserPermissionsRequest, ShowMultiRolesUserPermissionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowMultiRolesUserPermissionsRequest.class,
+                    ShowMultiRolesUserPermissionsResponse.class)
+                .withName("ShowMultiRolesUserPermissions")
+                .withUri("/devreposerver/v5/user/permissions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMultiRolesUserPermissionsRequest::getProjectId,
+                ShowMultiRolesUserPermissionsRequest::setProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowOpenSourceEnabledRequest, ShowOpenSourceEnabledResponse> showOpenSourceEnabled =
+        genForShowOpenSourceEnabled();
+
+    private static HttpRequestDef<ShowOpenSourceEnabledRequest, ShowOpenSourceEnabledResponse> genForShowOpenSourceEnabled() {
+        // basic
+        HttpRequestDef.Builder<ShowOpenSourceEnabledRequest, ShowOpenSourceEnabledResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowOpenSourceEnabledRequest.class, ShowOpenSourceEnabledResponse.class)
+            .withName("ShowOpenSourceEnabled")
+            .withUri("/cloudartifact/v5/opensource/enabled")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPackageDataDetailRequest, ShowPackageDataDetailResponse> showPackageDataDetail =
+        genForShowPackageDataDetail();
+
+    private static HttpRequestDef<ShowPackageDataDetailRequest, ShowPackageDataDetailResponse> genForShowPackageDataDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowPackageDataDetailRequest, ShowPackageDataDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowPackageDataDetailRequest.class, ShowPackageDataDetailResponse.class)
+            .withName("ShowPackageDataDetail")
+            .withUri("/devreposerver/v5/data/package")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPackageDataDetailRequest::getProjectId,
+                ShowPackageDataDetailRequest::setProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPackageInfoRequest, ShowPackageInfoResponse> showPackageInfo =
+        genForShowPackageInfo();
+
+    private static HttpRequestDef<ShowPackageInfoRequest, ShowPackageInfoResponse> genForShowPackageInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowPackageInfoRequest, ShowPackageInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPackageInfoRequest.class, ShowPackageInfoResponse.class)
+                .withName("ShowPackageInfo")
+                .withUri("/devreposerver/v5/data/package/info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPackageInfoRequest::getProjectId, ShowPackageInfoRequest::setProjectId));
 
         // response
 
@@ -851,6 +1553,36 @@ public class CodeArtsArtifactMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowProjectStorageInfoRequest, ShowProjectStorageInfoResponse> showProjectStorageInfo =
+        genForShowProjectStorageInfo();
+
+    private static HttpRequestDef<ShowProjectStorageInfoRequest, ShowProjectStorageInfoResponse> genForShowProjectStorageInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowProjectStorageInfoRequest, ShowProjectStorageInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowProjectStorageInfoRequest.class, ShowProjectStorageInfoResponse.class)
+            .withName("ShowProjectStorageInfo")
+            .withUri("/devreposerver/v5/{project_id}/storage")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProjectStorageInfoRequest::getProjectId,
+                ShowProjectStorageInfoRequest::setProjectId));
+        builder.<String>withRequestField("parent_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProjectStorageInfoRequest::getParentId,
+                ShowProjectStorageInfoRequest::setParentId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowReleaseProjectFilesRequest, ShowReleaseProjectFilesResponse> showReleaseProjectFiles =
         genForShowReleaseProjectFiles();
 
@@ -886,6 +1618,24 @@ public class CodeArtsArtifactMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowReleaseProjectFilesRequest::getOffset,
                 ShowReleaseProjectFilesRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRepoUserInfoRequest, ShowRepoUserInfoResponse> showRepoUserInfo =
+        genForShowRepoUserInfo();
+
+    private static HttpRequestDef<ShowRepoUserInfoRequest, ShowRepoUserInfoResponse> genForShowRepoUserInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowRepoUserInfoRequest, ShowRepoUserInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRepoUserInfoRequest.class, ShowRepoUserInfoResponse.class)
+                .withName("ShowRepoUserInfo")
+                .withUri("/cloudartifact/v5/repositories/user/info")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -997,6 +1747,24 @@ public class CodeArtsArtifactMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowUserPrivilegesRequest::getProjectId, ShowUserPrivilegesRequest::setProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowUserTicketRequest, ShowUserTicketResponse> showUserTicket =
+        genForShowUserTicket();
+
+    private static HttpRequestDef<ShowUserTicketRequest, ShowUserTicketResponse> genForShowUserTicket() {
+        // basic
+        HttpRequestDef.Builder<ShowUserTicketRequest, ShowUserTicketResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowUserTicketRequest.class, ShowUserTicketResponse.class)
+                .withName("ShowUserTicket")
+                .withUri("/cloudartifact/v5/ticket")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

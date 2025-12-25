@@ -41,7 +41,7 @@ public class EpResourceStatistics {
     }
 
     /**
-     * 企业项目ID
+     * **参数解释** 企业项目ID。 **取值范围** 长度[0,64]个字符. 
      * @return extendRelationId
      */
     public String getExtendRelationId() {
@@ -58,7 +58,7 @@ public class EpResourceStatistics {
     }
 
     /**
-     * 告警中的资源数
+     * **参数解释** 告警中的资源数。 **取值范围** 0-9999999 
      * minimum: 0
      * maximum: 9999999
      * @return unhealthy
@@ -77,7 +77,7 @@ public class EpResourceStatistics {
     }
 
     /**
-     * 资源总数
+     * **参数解释** 资源总数。 **取值范围** 0-9999999 
      * minimum: 0
      * maximum: 9999999
      * @return total
@@ -96,7 +96,7 @@ public class EpResourceStatistics {
     }
 
     /**
-     * 已触发的资源数
+     * **参数解释** 已触发的资源数。 **取值范围** 0-9999999 
      * minimum: 0
      * maximum: 9999999
      * @return eventUnhealthy
@@ -115,7 +115,7 @@ public class EpResourceStatistics {
     }
 
     /**
-     * 资源类型数
+     * **参数解释** 资源类型数。 **取值范围** 0-9999999 
      * minimum: 0
      * maximum: 9999999
      * @return namespaces

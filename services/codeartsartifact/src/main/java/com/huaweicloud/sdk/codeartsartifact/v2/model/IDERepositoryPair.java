@@ -46,7 +46,7 @@ public class IDERepositoryPair {
     }
 
     /**
-     * 仓库名称
+     * **参数解释**: 仓库名称。 **约束限制**: 长度1-20。 **取值范围**: 不涉及。 **默认取值**: 无。
      * @return repoName
      */
     public String getRepoName() {
@@ -63,7 +63,7 @@ public class IDERepositoryPair {
     }
 
     /**
-     * 路径
+     * **参数解释**: 路径包含规则。 **约束限制**: 最大长度512。 **取值范围**: 不涉及。 **默认取值**: 无。
      * @return includesPattern
      */
     public String getIncludesPattern() {
@@ -80,7 +80,7 @@ public class IDERepositoryPair {
     }
 
     /**
-     * 项目id
+     * **参数解释**: 项目ID，可以从调用API处获取，也可以从控制台获取。获取方式请参考[获取项目ID](CloudArtifact_api_0015.xml)。 **约束限制**: 只能由英文字母、数字组成，且长度为32个字符。 **取值范围**: 不涉及。 **默认取值**: 无。
      * @return projectId
      */
     public String getProjectId() {
@@ -97,7 +97,7 @@ public class IDERepositoryPair {
     }
 
     /**
-     * 描述
+     * **参数解释**: 仓库描述。 **约束限制**: 最大长度200。 **取值范围**: 不涉及。 **默认取值**: 无。
      * @return description
      */
     public String getDescription() {
@@ -114,7 +114,7 @@ public class IDERepositoryPair {
     }
 
     /**
-     * snapshot仓库名称
+     * **参数解释**: snapshot仓库名称。 **约束限制**: 长度1-20。 **取值范围**: 不涉及。 **默认取值**: 无。
      * @return snapshot
      */
     public String getSnapshot() {
@@ -131,7 +131,7 @@ public class IDERepositoryPair {
     }
 
     /**
-     * release仓库名称
+     * **参数解释**: release仓库名称。 **约束限制**: 长度1-20。 **取值范围**: 不涉及。 **默认取值**: 无。
      * @return release
      */
     public String getRelease() {

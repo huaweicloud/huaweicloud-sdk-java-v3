@@ -40,7 +40,7 @@ public class UpdateAlarmRulePoliciesReqBodyV2 {
     }
 
     /**
-     * **参数解释**： 策略信息。 **约束限制**： 策略信息数量最多为50个。 
+     * **参数解释**： 策略信息。 **约束限制**： 包含的策略信息数量最多为50个，最少为1个。 
      * @return policies
      */
     public List<UpdatePolicyReq> getPolicies() {

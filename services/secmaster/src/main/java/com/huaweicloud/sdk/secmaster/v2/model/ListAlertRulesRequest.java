@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.secmaster.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -38,263 +30,25 @@ public class ListAlertRulesRequest {
 
     private String sortKey;
 
-    /**
-     * 排序顺序，顺序、逆序。Sort direction, asc, desc。
-     */
-    public static final class SortDirEnum {
-
-        /**
-         * Enum ASC for value: "asc"
-         */
-        public static final SortDirEnum ASC = new SortDirEnum("asc");
-
-        /**
-         * Enum DESC for value: "desc"
-         */
-        public static final SortDirEnum DESC = new SortDirEnum("desc");
-
-        private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, SortDirEnum> createStaticFields() {
-            Map<String, SortDirEnum> map = new HashMap<>();
-            map.put("asc", ASC);
-            map.put("desc", DESC);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        SortDirEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static SortDirEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
-        }
-
-        public static SortDirEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof SortDirEnum) {
-                return this.value.equals(((SortDirEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_dir")
 
-    private SortDirEnum sortDir;
+    private String sortDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "pipe_id")
+    @JsonProperty(value = "output_table_id")
 
-    private String pipeId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "rule_name")
-
-    private String ruleName;
+    private String outputTableId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "rule_id")
+    @JsonProperty(value = "alert_rule_name")
 
-    private String ruleId;
-
-    /**
-     * Gets or Sets status
-     */
-    public static final class StatusEnum {
-
-        /**
-         * Enum ENABLED for value: "ENABLED"
-         */
-        public static final StatusEnum ENABLED = new StatusEnum("ENABLED");
-
-        /**
-         * Enum DISABLED for value: "DISABLED"
-         */
-        public static final StatusEnum DISABLED = new StatusEnum("DISABLED");
-
-        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, StatusEnum> createStaticFields() {
-            Map<String, StatusEnum> map = new HashMap<>();
-            map.put("ENABLED", ENABLED);
-            map.put("DISABLED", DISABLED);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        StatusEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StatusEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
-        }
-
-        public static StatusEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof StatusEnum) {
-                return this.value.equals(((StatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String alertRuleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status")
+    @JsonProperty(value = "alert_rule_id")
 
-    private List<StatusEnum> status = null;
-
-    /**
-     * Gets or Sets severity
-     */
-    public static final class SeverityEnum {
-
-        /**
-         * Enum TIPS for value: "TIPS"
-         */
-        public static final SeverityEnum TIPS = new SeverityEnum("TIPS");
-
-        /**
-         * Enum LOW for value: "LOW"
-         */
-        public static final SeverityEnum LOW = new SeverityEnum("LOW");
-
-        /**
-         * Enum MEDIUM for value: "MEDIUM"
-         */
-        public static final SeverityEnum MEDIUM = new SeverityEnum("MEDIUM");
-
-        /**
-         * Enum HIGH for value: "HIGH"
-         */
-        public static final SeverityEnum HIGH = new SeverityEnum("HIGH");
-
-        /**
-         * Enum FATAL for value: "FATAL"
-         */
-        public static final SeverityEnum FATAL = new SeverityEnum("FATAL");
-
-        private static final Map<String, SeverityEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, SeverityEnum> createStaticFields() {
-            Map<String, SeverityEnum> map = new HashMap<>();
-            map.put("TIPS", TIPS);
-            map.put("LOW", LOW);
-            map.put("MEDIUM", MEDIUM);
-            map.put("HIGH", HIGH);
-            map.put("FATAL", FATAL);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        SeverityEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static SeverityEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SeverityEnum(value));
-        }
-
-        public static SeverityEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof SeverityEnum) {
-                return this.value.equals(((SeverityEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "severity")
-
-    private List<SeverityEnum> severity = null;
+    private String alertRuleId;
 
     public ListAlertRulesRequest withWorkspaceId(String workspaceId) {
         this.workspaceId = workspaceId;
@@ -302,7 +56,7 @@ public class ListAlertRulesRequest {
     }
 
     /**
-     * 工作空间 ID。Workspace ID.
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -319,9 +73,9 @@ public class ListAlertRulesRequest {
     }
 
     /**
-     * 偏移量。Offset.
+     * **参数解释：** 偏移量 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * minimum: 0
-     * maximum: 9223372036854775807
+     * maximum: 9223372036854775800
      * @return offset
      */
     public Long getOffset() {
@@ -338,9 +92,9 @@ public class ListAlertRulesRequest {
     }
 
     /**
-     * 条数。Limit.
-     * minimum: 10
-     * maximum: 50
+     * **参数解释：** 查询数据限制 **取值范围：** 0-1000 **默认取值：** 不涉及
+     * minimum: 0
+     * maximum: 1000
      * @return limit
      */
     public Long getLimit() {
@@ -357,7 +111,7 @@ public class ListAlertRulesRequest {
     }
 
     /**
-     * 排序字段。Sort key
+     * 按照属性排序。
      * @return sortKey
      */
     public String getSortKey() {
@@ -368,138 +122,72 @@ public class ListAlertRulesRequest {
         this.sortKey = sortKey;
     }
 
-    public ListAlertRulesRequest withSortDir(SortDirEnum sortDir) {
+    public ListAlertRulesRequest withSortDir(String sortDir) {
         this.sortDir = sortDir;
         return this;
     }
 
     /**
-     * 排序顺序，顺序、逆序。Sort direction, asc, desc。
+     * 排序顺序，支持 `ASC` 或 `DESC`。
      * @return sortDir
      */
-    public SortDirEnum getSortDir() {
+    public String getSortDir() {
         return sortDir;
     }
 
-    public void setSortDir(SortDirEnum sortDir) {
+    public void setSortDir(String sortDir) {
         this.sortDir = sortDir;
     }
 
-    public ListAlertRulesRequest withPipeId(String pipeId) {
-        this.pipeId = pipeId;
+    public ListAlertRulesRequest withOutputTableId(String outputTableId) {
+        this.outputTableId = outputTableId;
         return this;
     }
 
     /**
-     * 数据管道 ID。Pipe ID.
-     * @return pipeId
+     * 输出表 ID
+     * @return outputTableId
      */
-    public String getPipeId() {
-        return pipeId;
+    public String getOutputTableId() {
+        return outputTableId;
     }
 
-    public void setPipeId(String pipeId) {
-        this.pipeId = pipeId;
+    public void setOutputTableId(String outputTableId) {
+        this.outputTableId = outputTableId;
     }
 
-    public ListAlertRulesRequest withRuleName(String ruleName) {
-        this.ruleName = ruleName;
+    public ListAlertRulesRequest withAlertRuleName(String alertRuleName) {
+        this.alertRuleName = alertRuleName;
         return this;
     }
 
     /**
-     * 告警规则名称。Alert rule name.
-     * @return ruleName
+     * 告警规则名称
+     * @return alertRuleName
      */
-    public String getRuleName() {
-        return ruleName;
+    public String getAlertRuleName() {
+        return alertRuleName;
     }
 
-    public void setRuleName(String ruleName) {
-        this.ruleName = ruleName;
+    public void setAlertRuleName(String alertRuleName) {
+        this.alertRuleName = alertRuleName;
     }
 
-    public ListAlertRulesRequest withRuleId(String ruleId) {
-        this.ruleId = ruleId;
+    public ListAlertRulesRequest withAlertRuleId(String alertRuleId) {
+        this.alertRuleId = alertRuleId;
         return this;
     }
 
     /**
-     * 告警规则 ID。Alert rule ID.
-     * @return ruleId
+     * 告警规则 ID
+     * @return alertRuleId
      */
-    public String getRuleId() {
-        return ruleId;
+    public String getAlertRuleId() {
+        return alertRuleId;
     }
 
-    public void setRuleId(String ruleId) {
-        this.ruleId = ruleId;
-    }
-
-    public ListAlertRulesRequest withStatus(List<StatusEnum> status) {
-        this.status = status;
-        return this;
-    }
-
-    public ListAlertRulesRequest addStatusItem(StatusEnum statusItem) {
-        if (this.status == null) {
-            this.status = new ArrayList<>();
-        }
-        this.status.add(statusItem);
-        return this;
-    }
-
-    public ListAlertRulesRequest withStatus(Consumer<List<StatusEnum>> statusSetter) {
-        if (this.status == null) {
-            this.status = new ArrayList<>();
-        }
-        statusSetter.accept(this.status);
-        return this;
-    }
-
-    /**
-     * 启用状态，启用、停用。Status, enabled, disabled.
-     * @return status
-     */
-    public List<StatusEnum> getStatus() {
-        return status;
-    }
-
-    public void setStatus(List<StatusEnum> status) {
-        this.status = status;
-    }
-
-    public ListAlertRulesRequest withSeverity(List<SeverityEnum> severity) {
-        this.severity = severity;
-        return this;
-    }
-
-    public ListAlertRulesRequest addSeverityItem(SeverityEnum severityItem) {
-        if (this.severity == null) {
-            this.severity = new ArrayList<>();
-        }
-        this.severity.add(severityItem);
-        return this;
-    }
-
-    public ListAlertRulesRequest withSeverity(Consumer<List<SeverityEnum>> severitySetter) {
-        if (this.severity == null) {
-            this.severity = new ArrayList<>();
-        }
-        severitySetter.accept(this.severity);
-        return this;
-    }
-
-    /**
-     * 严重程度，提示、低危、中危、高危、致命。Severity. TIPS, LOW, MEDIUM, HIGH, FATAL
-     * @return severity
-     */
-    public List<SeverityEnum> getSeverity() {
-        return severity;
-    }
-
-    public void setSeverity(List<SeverityEnum> severity) {
-        this.severity = severity;
+    public void setAlertRuleId(String alertRuleId) {
+        this.alertRuleId = alertRuleId;
     }
 
     @Override
@@ -513,14 +201,14 @@ public class ListAlertRulesRequest {
         ListAlertRulesRequest that = (ListAlertRulesRequest) obj;
         return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.sortKey, that.sortKey)
-            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.pipeId, that.pipeId)
-            && Objects.equals(this.ruleName, that.ruleName) && Objects.equals(this.ruleId, that.ruleId)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.severity, that.severity);
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.outputTableId, that.outputTableId)
+            && Objects.equals(this.alertRuleName, that.alertRuleName)
+            && Objects.equals(this.alertRuleId, that.alertRuleId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspaceId, offset, limit, sortKey, sortDir, pipeId, ruleName, ruleId, status, severity);
+        return Objects.hash(workspaceId, offset, limit, sortKey, sortDir, outputTableId, alertRuleName, alertRuleId);
     }
 
     @Override
@@ -532,11 +220,9 @@ public class ListAlertRulesRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
-        sb.append("    pipeId: ").append(toIndentedString(pipeId)).append("\n");
-        sb.append("    ruleName: ").append(toIndentedString(ruleName)).append("\n");
-        sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
+        sb.append("    outputTableId: ").append(toIndentedString(outputTableId)).append("\n");
+        sb.append("    alertRuleName: ").append(toIndentedString(alertRuleName)).append("\n");
+        sb.append("    alertRuleId: ").append(toIndentedString(alertRuleId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

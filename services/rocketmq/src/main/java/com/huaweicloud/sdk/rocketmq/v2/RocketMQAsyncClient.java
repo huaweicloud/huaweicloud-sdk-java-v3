@@ -9,6 +9,8 @@ import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisReportRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisReportResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteInstancesRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteInstancesResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteRocketMqMigrationTaskRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteRocketMqMigrationTaskResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchUpdateConsumerGroupRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchUpdateConsumerGroupResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateConsumerGroupOrBatchDeleteConsumerGroupRequest;
@@ -31,8 +33,6 @@ import com.huaweicloud.sdk.rocketmq.v2.model.DeleteConsumerGroupRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteConsumerGroupResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteInstanceResponse;
-import com.huaweicloud.sdk.rocketmq.v2.model.DeleteRocketMqMigrationTaskRequest;
-import com.huaweicloud.sdk.rocketmq.v2.model.DeleteRocketMqMigrationTaskResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteTopicRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteTopicResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteUserRequest;
@@ -225,6 +225,36 @@ public class RocketMQAsyncClient {
     public AsyncInvoker<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse> batchDeleteInstancesAsyncInvoker(
         BatchDeleteInstancesRequest request) {
         return new AsyncInvoker<>(request, RocketMQMeta.batchDeleteInstances, hcClient);
+    }
+
+    /**
+     * 批量删除元数据迁移任务
+     *
+     * 批量删除元数据迁移任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteRocketMqMigrationTaskRequest 请求对象
+     * @return CompletableFuture<BatchDeleteRocketMqMigrationTaskResponse>
+     */
+    public CompletableFuture<BatchDeleteRocketMqMigrationTaskResponse> batchDeleteRocketMqMigrationTaskAsync(
+        BatchDeleteRocketMqMigrationTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.batchDeleteRocketMqMigrationTask);
+    }
+
+    /**
+     * 批量删除元数据迁移任务
+     *
+     * 批量删除元数据迁移任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteRocketMqMigrationTaskRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteRocketMqMigrationTaskRequest, BatchDeleteRocketMqMigrationTaskResponse>
+     */
+    public AsyncInvoker<BatchDeleteRocketMqMigrationTaskRequest, BatchDeleteRocketMqMigrationTaskResponse> batchDeleteRocketMqMigrationTaskAsyncInvoker(
+        BatchDeleteRocketMqMigrationTaskRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.batchDeleteRocketMqMigrationTask, hcClient);
     }
 
     /**
@@ -520,36 +550,6 @@ public class RocketMQAsyncClient {
     public AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceAsyncInvoker(
         DeleteInstanceRequest request) {
         return new AsyncInvoker<>(request, RocketMQMeta.deleteInstance, hcClient);
-    }
-
-    /**
-     * 删除元数据迁移任务
-     *
-     * 删除元数据迁移任务。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteRocketMqMigrationTaskRequest 请求对象
-     * @return CompletableFuture<DeleteRocketMqMigrationTaskResponse>
-     */
-    public CompletableFuture<DeleteRocketMqMigrationTaskResponse> deleteRocketMqMigrationTaskAsync(
-        DeleteRocketMqMigrationTaskRequest request) {
-        return hcClient.asyncInvokeHttp(request, RocketMQMeta.deleteRocketMqMigrationTask);
-    }
-
-    /**
-     * 删除元数据迁移任务
-     *
-     * 删除元数据迁移任务。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteRocketMqMigrationTaskRequest 请求对象
-     * @return AsyncInvoker<DeleteRocketMqMigrationTaskRequest, DeleteRocketMqMigrationTaskResponse>
-     */
-    public AsyncInvoker<DeleteRocketMqMigrationTaskRequest, DeleteRocketMqMigrationTaskResponse> deleteRocketMqMigrationTaskAsyncInvoker(
-        DeleteRocketMqMigrationTaskRequest request) {
-        return new AsyncInvoker<>(request, RocketMQMeta.deleteRocketMqMigrationTask, hcClient);
     }
 
     /**

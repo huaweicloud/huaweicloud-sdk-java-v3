@@ -27,7 +27,7 @@ public class CreatePipeRequest {
     }
 
     /**
-     * 工作空间id
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {

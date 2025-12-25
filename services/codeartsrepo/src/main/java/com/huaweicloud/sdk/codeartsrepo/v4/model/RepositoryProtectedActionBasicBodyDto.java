@@ -21,7 +21,7 @@ public class RepositoryProtectedActionBasicBodyDto {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_ids")
 
-    private List<Object> userIds = null;
+    private List<Integer> userIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_team_ids")
@@ -50,12 +50,12 @@ public class RepositoryProtectedActionBasicBodyDto {
         this.enable = enable;
     }
 
-    public RepositoryProtectedActionBasicBodyDto withUserIds(List<Object> userIds) {
+    public RepositoryProtectedActionBasicBodyDto withUserIds(List<Integer> userIds) {
         this.userIds = userIds;
         return this;
     }
 
-    public RepositoryProtectedActionBasicBodyDto addUserIdsItem(Object userIdsItem) {
+    public RepositoryProtectedActionBasicBodyDto addUserIdsItem(Integer userIdsItem) {
         if (this.userIds == null) {
             this.userIds = new ArrayList<>();
         }
@@ -63,7 +63,7 @@ public class RepositoryProtectedActionBasicBodyDto {
         return this;
     }
 
-    public RepositoryProtectedActionBasicBodyDto withUserIds(Consumer<List<Object>> userIdsSetter) {
+    public RepositoryProtectedActionBasicBodyDto withUserIds(Consumer<List<Integer>> userIdsSetter) {
         if (this.userIds == null) {
             this.userIds = new ArrayList<>();
         }
@@ -75,11 +75,11 @@ public class RepositoryProtectedActionBasicBodyDto {
      * **参数解释：** 用户ID列表。 **约束限制：** 不涉及。 **取值范围：** Integer **默认取值：** 不涉及。
      * @return userIds
      */
-    public List<Object> getUserIds() {
+    public List<Integer> getUserIds() {
         return userIds;
     }
 
-    public void setUserIds(List<Object> userIds) {
+    public void setUserIds(List<Integer> userIds) {
         this.userIds = userIds;
     }
 

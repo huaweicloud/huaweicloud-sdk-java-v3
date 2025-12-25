@@ -239,7 +239,7 @@ public class ShowTtsJobRequest {
     }
 
     /**
-     * 任务类型。 * AUDITION:试听任务 * ASYNC_JOB：异步任务 * WEBSOCKET：websocket接口合成任务
+     * 任务类型。 * AUDITION：试听任务 * ASYNC_JOB：异步任务 * WEBSOCKET：websocket接口合成任务
      * @return jobType
      */
     public String getJobType() {

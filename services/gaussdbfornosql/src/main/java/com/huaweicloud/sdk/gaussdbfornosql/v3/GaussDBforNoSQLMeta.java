@@ -4045,15 +4045,15 @@ public class GaussDBforNoSQLMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowModifyHistoryRequest::getParameterName,
                 ShowModifyHistoryRequest::setParameterName));
-        builder.<String>withRequestField("offset",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowModifyHistoryRequest::getOffset, ShowModifyHistoryRequest::setOffset));
-        builder.<String>withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowModifyHistoryRequest::getLimit, ShowModifyHistoryRequest::setLimit));
 
         // response

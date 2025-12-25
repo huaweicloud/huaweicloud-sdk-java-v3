@@ -109,7 +109,7 @@ public class Instance {
     }
 
     /**
-     * **参数解释** 云产品名称 **约束限制** 不涉及 **取值范围** 长度为[1,16]个字符 **默认取值** 不涉及 
+     * **参数解释** 云产品名称 **约束限制** 不涉及 **取值范围** 长度为[0,128]个字符 **默认取值** 不涉及 
      * @return productName
      */
     public String getProductName() {

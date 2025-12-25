@@ -42,7 +42,7 @@ public class SearchBaselineResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private List<String> data = null;
+    private List<Object> data = null;
 
     public SearchBaselineResponse withCode(String code) {
         this.code = code;
@@ -135,12 +135,12 @@ public class SearchBaselineResponse extends SdkResponse {
         this.success = success;
     }
 
-    public SearchBaselineResponse withData(List<String> data) {
+    public SearchBaselineResponse withData(List<Object> data) {
         this.data = data;
         return this;
     }
 
-    public SearchBaselineResponse addDataItem(String dataItem) {
+    public SearchBaselineResponse addDataItem(Object dataItem) {
         if (this.data == null) {
             this.data = new ArrayList<>();
         }
@@ -148,7 +148,7 @@ public class SearchBaselineResponse extends SdkResponse {
         return this;
     }
 
-    public SearchBaselineResponse withData(Consumer<List<String>> dataSetter) {
+    public SearchBaselineResponse withData(Consumer<List<Object>> dataSetter) {
         if (this.data == null) {
             this.data = new ArrayList<>();
         }
@@ -160,11 +160,11 @@ public class SearchBaselineResponse extends SdkResponse {
      * 查询结果列表
      * @return data
      */
-    public List<String> getData() {
+    public List<Object> getData() {
         return data;
     }
 
-    public void setData(List<String> data) {
+    public void setData(List<Object> data) {
         this.data = data;
     }
 

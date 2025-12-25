@@ -59,7 +59,7 @@ public class AsyncAssociateRGAndTemplatesReq {
     private String enterpriseProjectId;
 
     /**
-     * NOTIFICATION_GROUP(通知组)/TOPIC_SUBSCRIPTION(主题订阅)/NOTIFICATION_POLICY(通知策略)
+     * **参数解释**： 通知方式。 **约束限制**： 不涉及。 **取值范围**： 枚举值。取值为NOTIFICATION_GROUP、TOPIC_SUBSCRIPTION、NOTIFICATION_POLICY - NOTIFICATION_GROUP: 通知组 - TOPIC_SUBSCRIPTION: 主题订阅 - NOTIFICATION_POLICY: 通知策略 **默认取值**： 不涉及。 
      */
     public static final class NotificationMannerEnum {
 
@@ -147,6 +147,11 @@ public class AsyncAssociateRGAndTemplatesReq {
 
     private List<String> notificationPolicyIds = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "notice_type_notification_template_list")
+
+    private List<NoticeTypeNotificationTemplateList> noticeTypeNotificationTemplateList = null;
+
     public AsyncAssociateRGAndTemplatesReq withTemplateIds(List<String> templateIds) {
         this.templateIds = templateIds;
         return this;
@@ -186,7 +191,7 @@ public class AsyncAssociateRGAndTemplatesReq {
     }
 
     /**
-     * **参数解释**： 是否开启告警通知。     **约束限制**： 不涉及。 **取值范围**： 布尔值。 - true:开启。 - false:关闭。 **默认取值**： true 
+     * **参数解释**： 是否开启告警通知。说明：若notification_enabled为true，对应的alarm_notifications、ok_notifications至少有一个不能为空。    **约束限制**： 不涉及。 **取值范围**： 布尔值。 - true:开启。 - false:关闭。 **默认取值**： true 
      * @return notificationEnabled
      */
     public Boolean getNotificationEnabled() {
@@ -270,7 +275,7 @@ public class AsyncAssociateRGAndTemplatesReq {
     }
 
     /**
-     * **参数解释**： 告警通知开启时间。    **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
+     * **参数解释**： 告警通知开启时间。如 00:00    **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
      * @return notificationBeginTime
      */
     public String getNotificationBeginTime() {
@@ -287,7 +292,7 @@ public class AsyncAssociateRGAndTemplatesReq {
     }
 
     /**
-     * **参数解释**： 告警通知关闭时间。    **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
+     * **参数解释**： 告警通知关闭时间。如 08:00  **约束限制**： 不涉及。 **取值范围**： 只能包含数字、“:”，长度为[1,64]个字符。           **默认取值**： 不涉及。 
      * @return notificationEndTime
      */
     public String getNotificationEndTime() {
@@ -321,7 +326,7 @@ public class AsyncAssociateRGAndTemplatesReq {
     }
 
     /**
-     * **参数解释**： 企业项目ID。     **约束限制**： 不涉及。 **取值范围**： 只能包含小写字母、数字、“-”。           **默认取值**： 不涉及。 
+     * **参数解释**： 企业项目ID。     **约束限制**： 不涉及。 **取值范围**： 只能包含小写字母、数字、“-”。0 代表默认企业项目ID         **默认取值**： 不涉及。 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -338,7 +343,7 @@ public class AsyncAssociateRGAndTemplatesReq {
     }
 
     /**
-     * NOTIFICATION_GROUP(通知组)/TOPIC_SUBSCRIPTION(主题订阅)/NOTIFICATION_POLICY(通知策略)
+     * **参数解释**： 通知方式。 **约束限制**： 不涉及。 **取值范围**： 枚举值。取值为NOTIFICATION_GROUP、TOPIC_SUBSCRIPTION、NOTIFICATION_POLICY - NOTIFICATION_GROUP: 通知组 - TOPIC_SUBSCRIPTION: 主题订阅 - NOTIFICATION_POLICY: 通知策略 **默认取值**： 不涉及。 
      * @return notificationManner
      */
     public NotificationMannerEnum getNotificationManner() {
@@ -383,6 +388,43 @@ public class AsyncAssociateRGAndTemplatesReq {
         this.notificationPolicyIds = notificationPolicyIds;
     }
 
+    public AsyncAssociateRGAndTemplatesReq withNoticeTypeNotificationTemplateList(
+        List<NoticeTypeNotificationTemplateList> noticeTypeNotificationTemplateList) {
+        this.noticeTypeNotificationTemplateList = noticeTypeNotificationTemplateList;
+        return this;
+    }
+
+    public AsyncAssociateRGAndTemplatesReq addNoticeTypeNotificationTemplateListItem(
+        NoticeTypeNotificationTemplateList noticeTypeNotificationTemplateListItem) {
+        if (this.noticeTypeNotificationTemplateList == null) {
+            this.noticeTypeNotificationTemplateList = new ArrayList<>();
+        }
+        this.noticeTypeNotificationTemplateList.add(noticeTypeNotificationTemplateListItem);
+        return this;
+    }
+
+    public AsyncAssociateRGAndTemplatesReq withNoticeTypeNotificationTemplateList(
+        Consumer<List<NoticeTypeNotificationTemplateList>> noticeTypeNotificationTemplateListSetter) {
+        if (this.noticeTypeNotificationTemplateList == null) {
+            this.noticeTypeNotificationTemplateList = new ArrayList<>();
+        }
+        noticeTypeNotificationTemplateListSetter.accept(this.noticeTypeNotificationTemplateList);
+        return this;
+    }
+
+    /**
+     * 告警通知模板列表
+     * @return noticeTypeNotificationTemplateList
+     */
+    public List<NoticeTypeNotificationTemplateList> getNoticeTypeNotificationTemplateList() {
+        return noticeTypeNotificationTemplateList;
+    }
+
+    public void setNoticeTypeNotificationTemplateList(
+        List<NoticeTypeNotificationTemplateList> noticeTypeNotificationTemplateList) {
+        this.noticeTypeNotificationTemplateList = noticeTypeNotificationTemplateList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -401,7 +443,8 @@ public class AsyncAssociateRGAndTemplatesReq {
             && Objects.equals(this.effectiveTimezone, that.effectiveTimezone)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.notificationManner, that.notificationManner)
-            && Objects.equals(this.notificationPolicyIds, that.notificationPolicyIds);
+            && Objects.equals(this.notificationPolicyIds, that.notificationPolicyIds)
+            && Objects.equals(this.noticeTypeNotificationTemplateList, that.noticeTypeNotificationTemplateList);
     }
 
     @Override
@@ -415,7 +458,8 @@ public class AsyncAssociateRGAndTemplatesReq {
             effectiveTimezone,
             enterpriseProjectId,
             notificationManner,
-            notificationPolicyIds);
+            notificationPolicyIds,
+            noticeTypeNotificationTemplateList);
     }
 
     @Override
@@ -432,6 +476,9 @@ public class AsyncAssociateRGAndTemplatesReq {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    notificationManner: ").append(toIndentedString(notificationManner)).append("\n");
         sb.append("    notificationPolicyIds: ").append(toIndentedString(notificationPolicyIds)).append("\n");
+        sb.append("    noticeTypeNotificationTemplateList: ")
+            .append(toIndentedString(noticeTypeNotificationTemplateList))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -46,7 +46,7 @@ public class ListAlarmRulesRequest {
     private String productName;
 
     /**
-     * **参数解释**： 产品层级跨维规则查询时支持规则所属类型查询，resource_level取值为product即为云产品类型，不填或者取值为dimension则为子维度类型。           **约束限制**： 不涉及。 **取值范围**： 枚举值。 - product：云产品。 - dimension：子维度。 **默认取值**： 不涉及。 
+     * **参数解释**： 创建告警规则，需要指定的资源层级。resource_level取值为product即为云产品类型，不填或者取值为dimension则为子维度类型。          **约束限制**： 不涉及。 **取值范围**： 枚举值。 - product：云产品。 - dimension：子维度。 **默认取值**： 不涉及。 
      */
     public static final class ResourceLevelEnum {
 
@@ -153,7 +153,7 @@ public class ListAlarmRulesRequest {
     }
 
     /**
-     * **参数解释**： 告警名称。 **约束限制**： 不涉及。 **取值范围**： 只能包含0-9/a-z/A-Z/_/-或汉字，长度为[1,128]个字符。          **默认取值**： 不涉及。 
+     * **参数解释**： 告警规则名称。 **约束限制**： 不涉及。 **取值范围**： 只能包含0-9/a-z/A-Z/_/-或汉字，长度为[1,128]个字符。          **默认取值**： 不涉及。 
      * @return name
      */
     public String getName() {
@@ -221,7 +221,7 @@ public class ListAlarmRulesRequest {
     }
 
     /**
-     * **参数解释**： 产品层级跨维规则查询时支持产品名称查询，一般由\"服务命名空间,服务首层维度名称\"组成，如\"SYS.ECS,instance_id\"。 **约束限制**： 不涉及。 **取值范围**： 长度为[0,128]个字符。        **默认取值**： 不涉及。 
+     * **参数解释**： 资源所属的云产品名称，一般由\"服务命名空间,服务首层维度名称\"组成，如\"SYS.ECS,instance_id\"。 **约束限制**： 不涉及。 **取值范围**： 长度为[0,128]个字符。        **默认取值**： 不涉及。 
      * @return productName
      */
     public String getProductName() {
@@ -238,7 +238,7 @@ public class ListAlarmRulesRequest {
     }
 
     /**
-     * **参数解释**： 产品层级跨维规则查询时支持规则所属类型查询，resource_level取值为product即为云产品类型，不填或者取值为dimension则为子维度类型。           **约束限制**： 不涉及。 **取值范围**： 枚举值。 - product：云产品。 - dimension：子维度。 **默认取值**： 不涉及。 
+     * **参数解释**： 创建告警规则，需要指定的资源层级。resource_level取值为product即为云产品类型，不填或者取值为dimension则为子维度类型。          **约束限制**： 不涉及。 **取值范围**： 枚举值。 - product：云产品。 - dimension：子维度。 **默认取值**： 不涉及。 
      * @return resourceLevel
      */
     public ResourceLevelEnum getResourceLevel() {

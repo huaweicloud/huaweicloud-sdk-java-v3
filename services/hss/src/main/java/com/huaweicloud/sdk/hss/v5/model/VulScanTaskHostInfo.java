@@ -59,7 +59,7 @@ public class VulScanTaskHostInfo {
     }
 
     /**
-     * 主机ID
+     * **参数解释**: 主机ID **取值范围**: 字符长度1-128位 
      * @return hostId
      */
     public String getHostId() {
@@ -76,7 +76,7 @@ public class VulScanTaskHostInfo {
     }
 
     /**
-     * 主机名称
+     * **参数解释**: 主机名称 **取值范围**: 字符长度0-128位 
      * @return hostName
      */
     public String getHostName() {
@@ -93,7 +93,7 @@ public class VulScanTaskHostInfo {
     }
 
     /**
-     * 弹性公网IP地址
+     * **参数解释**: 弹性公网IP地址 **取值范围**: 字符长度0-128位 
      * @return publicIp
      */
     public String getPublicIp() {
@@ -110,7 +110,7 @@ public class VulScanTaskHostInfo {
     }
 
     /**
-     * 私有IP地址
+     * **参数解释**: 私有IP地址 **取值范围**: 字符长度0-128位 
      * @return privateIp
      */
     public String getPrivateIp() {
@@ -127,7 +127,7 @@ public class VulScanTaskHostInfo {
     }
 
     /**
-     * 资产重要性，包含如下:   - important ：重要资产   - common ：一般资产   - test ：测试资产
+     * **参数解释**: 主机的资产重要性 **取值范围**: - important：重要资产 - common：一般资产 - test：测试资产 
      * @return assetValue
      */
     public String getAssetValue() {
@@ -144,7 +144,7 @@ public class VulScanTaskHostInfo {
     }
 
     /**
-     * 主机的扫描状态，包含如下：   -scanning : 扫描中   -success : 扫描成功   -failed : 扫描失败
+     * **参数解释**: 主机的扫描状态 **取值范围**: - scanning：扫描中 - success：扫描成功 - failed：扫描失败 
      * @return scanStatus
      */
     public String getScanStatus() {
@@ -177,7 +177,7 @@ public class VulScanTaskHostInfo {
     }
 
     /**
-     * 扫描失败的原因列表
+     * **参数解释**: 漏洞扫描失败的原因列表（即将废弃，建议使用“vul_scan_details”字段） **取值范围**: 最小值0，最大值2147483647 
      * @return failedReasons
      */
     public List<VulScanTaskHostInfoFailedReasons> getFailedReasons() {
@@ -211,7 +211,7 @@ public class VulScanTaskHostInfo {
     }
 
     /**
-     * 该主机的扫描详情信息
+     * **参数解释**: 该主机的扫描详情信息列表 **取值范围**: 最小值0，最大值2147483647 
      * @return vulScanDetails
      */
     public List<VulScanTaskHostInfoVulScanDetails> getVulScanDetails() {

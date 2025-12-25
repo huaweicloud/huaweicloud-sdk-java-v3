@@ -112,7 +112,7 @@ public class ListDataSourceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 数据源类型。 **取值范围**： 不涉及。
+     * **参数解释**： 数据源类型。 **取值范围**： - OBS: obs数据源。 - LAKE_FORMATION: lake_formation数据源。 - MRS: mrs数据源。
      * @return type
      */
     public String getType() {

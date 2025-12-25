@@ -53,7 +53,7 @@ public class CheckDisasterNameRequest {
     }
 
     /**
-     * **参数解释**： 容灾类型。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 容灾类型。 **约束限制**： 不涉及。 **取值范围**： - az，跨az容灾。 - region，跨region容灾。 **默认取值**： 不涉及。
      * @return type
      */
     public String getType() {

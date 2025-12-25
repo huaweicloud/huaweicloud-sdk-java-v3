@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.hss.v5.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -19,6 +14,16 @@ public class ListRaspEventsRequest {
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id")
@@ -36,83 +41,9 @@ public class ListRaspEventsRequest {
     private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limit")
-
-    private Integer limit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "offset")
-
-    private Integer offset;
-
-    /**
-     * 应用类型，包含如下1种。   - java ：java类型应用防护。
-     */
-    public static final class AppTypeEnum {
-
-        /**
-         * Enum JAVA for value: "java"
-         */
-        public static final AppTypeEnum JAVA = new AppTypeEnum("java");
-
-        private static final Map<String, AppTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, AppTypeEnum> createStaticFields() {
-            Map<String, AppTypeEnum> map = new HashMap<>();
-            map.put("java", JAVA);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        AppTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static AppTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AppTypeEnum(value));
-        }
-
-        public static AppTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof AppTypeEnum) {
-                return this.value.equals(((AppTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_type")
 
-    private AppTypeEnum appType;
+    private String appType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "severity")
@@ -124,80 +55,10 @@ public class ListRaspEventsRequest {
 
     private String attackTag;
 
-    /**
-     * 防护状态，包含如下2种。   - closed ：未开启。   - opened ：防护中。
-     */
-    public static final class ProtectStatusEnum {
-
-        /**
-         * Enum CLOSED for value: "closed"
-         */
-        public static final ProtectStatusEnum CLOSED = new ProtectStatusEnum("closed");
-
-        /**
-         * Enum OPENED for value: "opened"
-         */
-        public static final ProtectStatusEnum OPENED = new ProtectStatusEnum("opened");
-
-        private static final Map<String, ProtectStatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ProtectStatusEnum> createStaticFields() {
-            Map<String, ProtectStatusEnum> map = new HashMap<>();
-            map.put("closed", CLOSED);
-            map.put("opened", OPENED);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ProtectStatusEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ProtectStatusEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtectStatusEnum(value));
-        }
-
-        public static ProtectStatusEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ProtectStatusEnum) {
-                return this.value.equals(((ProtectStatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_status")
 
-    private ProtectStatusEnum protectStatus;
+    private String protectStatus;
 
     public ListRaspEventsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -214,6 +75,44 @@ public class ListRaspEventsRequest {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ListRaspEventsRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 偏移量：指定返回记录的开始位置 **约束限制**: 不涉及 **取值范围**: 最小值0，最大值2000000 **默认取值**: 默认为0 
+     * minimum: 0
+     * maximum: 2000000
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ListRaspEventsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 每页显示个数 **约束限制**: 不涉及 **取值范围**: 取值10-200 **默认取值**: 10 
+     * minimum: 10
+     * maximum: 200
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
     public ListRaspEventsRequest withHostId(String hostId) {
@@ -239,7 +138,7 @@ public class ListRaspEventsRequest {
     }
 
     /**
-     * 查询时间段的起始时间，毫秒级时间戳(ms)
+     * **参数解释**: 应用防护事件的查询起始时间（Unix时间戳），与end_time配合筛选指定时间段内的事件 **时间格式** Unix时间戳（精确到毫秒，如1736414463000表示2024-12-10 10:41:03） **约束限制**: 需小于end_time，否则返回空结果；时间戳需为有效时间（1970-01-01 00:00:00至今） **取值范围**: 取值0-9223372036854775807 **默认取值**: 无 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return startTime
@@ -258,7 +157,7 @@ public class ListRaspEventsRequest {
     }
 
     /**
-     * 查询时间段的终止时间，毫秒级时间戳(ms)
+     * **参数解释**: 查询时间段的终止时间，毫秒级时间戳(ms) **约束限制**: 不涉及 **取值范围**: 取值0-9223372036854775807 **默认取值**: 无 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return endTime
@@ -271,58 +170,20 @@ public class ListRaspEventsRequest {
         this.endTime = endTime;
     }
 
-    public ListRaspEventsRequest withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    /**
-     * 默认10
-     * minimum: 0
-     * maximum: 1000
-     * @return limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
-    public ListRaspEventsRequest withOffset(Integer offset) {
-        this.offset = offset;
-        return this;
-    }
-
-    /**
-     * 默认0
-     * minimum: 0
-     * maximum: 100000
-     * @return offset
-     */
-    public Integer getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Integer offset) {
-        this.offset = offset;
-    }
-
-    public ListRaspEventsRequest withAppType(AppTypeEnum appType) {
+    public ListRaspEventsRequest withAppType(String appType) {
         this.appType = appType;
         return this;
     }
 
     /**
-     * 应用类型，包含如下1种。   - java ：java类型应用防护。
+     * **参数解释** 应用防护的应用类型，用于筛选指定类型应用的防护事件 **约束限制** 当前仅支持java类型，传其他值返回空结果，区分大小写 **取值范围** - java：Java语言开发的应用防护事件 **默认取值** 无（查询所有支持的应用类型事件）
      * @return appType
      */
-    public AppTypeEnum getAppType() {
+    public String getAppType() {
         return appType;
     }
 
-    public void setAppType(AppTypeEnum appType) {
+    public void setAppType(String appType) {
         this.appType = appType;
     }
 
@@ -332,7 +193,7 @@ public class ListRaspEventsRequest {
     }
 
     /**
-     * 告警级别 |- 告警级别，包含如下1种。 - 0 ：Info级别告警 - 1 ：Low级别告警 - 2 ：Medium级别告警 - 3 ：High级别告警 - 4 ：Critical级别告警
+     * **参数解释** 应用防护事件的告警级别，用于筛选指定严重程度的事件 **约束限制** 取值必须在指定范围内，否则返回空结果 **取值范围** - Security：信息级 - Low：低危 - Medium：中危 - High：高危 - Critical：紧急 **默认取值** 无 
      * @return severity
      */
     public String getSeverity() {
@@ -349,7 +210,7 @@ public class ListRaspEventsRequest {
     }
 
     /**
-     * 攻击标识 |- 攻击标识，包含如下6种。 - Attack Success：攻击成功 - Attack Attempt：攻击尝试  - Attack Blocked：攻击被阻断 - Abnormal Behavior：异常行为 - Collapsible Host：主机失陷 - System Vulnerability：系统脆弱性
+     * **参数解释** 应用防护事件的攻击类型标识，用于筛选指定攻击类型的事件 **约束限制** 取值区分大小写，必须与指定格式一致，否则返回空结果 **取值范围** - Attack Success：攻击成功 - Attack Attempt：攻击尝试 - Attack Blocked：攻击被阻断 - Abnormal Behavior：异常行为 - Collapsible Host：主机失陷 - System Vulnerability：系统脆弱性 **默认取值** 无 
      * @return attackTag
      */
     public String getAttackTag() {
@@ -360,20 +221,20 @@ public class ListRaspEventsRequest {
         this.attackTag = attackTag;
     }
 
-    public ListRaspEventsRequest withProtectStatus(ProtectStatusEnum protectStatus) {
+    public ListRaspEventsRequest withProtectStatus(String protectStatus) {
         this.protectStatus = protectStatus;
         return this;
     }
 
     /**
-     * 防护状态，包含如下2种。   - closed ：未开启。   - opened ：防护中。
+     * **参数解释** 应用防护的启用状态，用于筛选指定防护状态下的事件 **约束限制** 取值区分大小写，必须在指定范围内，否则返回空结果 **取值范围** - closed：未开启防护 - opened：已开启防护 **默认取值** 无（查询所有防护状态的事件） 
      * @return protectStatus
      */
-    public ProtectStatusEnum getProtectStatus() {
+    public String getProtectStatus() {
         return protectStatus;
     }
 
-    public void setProtectStatus(ProtectStatusEnum protectStatus) {
+    public void setProtectStatus(String protectStatus) {
         this.protectStatus = protectStatus;
     }
 
@@ -387,9 +248,9 @@ public class ListRaspEventsRequest {
         }
         ListRaspEventsRequest that = (ListRaspEventsRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.appType, that.appType)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.appType, that.appType)
             && Objects.equals(this.severity, that.severity) && Objects.equals(this.attackTag, that.attackTag)
             && Objects.equals(this.protectStatus, that.protectStatus);
     }
@@ -397,11 +258,11 @@ public class ListRaspEventsRequest {
     @Override
     public int hashCode() {
         return Objects.hash(enterpriseProjectId,
+            offset,
+            limit,
             hostId,
             startTime,
             endTime,
-            limit,
-            offset,
             appType,
             severity,
             attackTag,
@@ -413,11 +274,11 @@ public class ListRaspEventsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListRaspEventsRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
         sb.append("    attackTag: ").append(toIndentedString(attackTag)).append("\n");

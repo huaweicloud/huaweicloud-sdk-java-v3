@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 指标维度
+ * 资源维度
  */
 public class ResourceDimension {
 
@@ -26,7 +26,7 @@ public class ResourceDimension {
     }
 
     /**
-     * **参数解释** 资源维度，如：弹性云服务器，则维度为instance_id；目前最大支持4个维度，各服务资源的指标维度名称可查看：“[服务指标维度](ces_03_0059.xml)”。 **约束限制** 不涉及 **取值范围** 由字母开头，后面可以包含字母、数字、_或-，长度为[1,32]个字符 **默认取值** 不涉及 
+     * **参数解释** 资源维度名称，如：弹性云服务器，则维度为instance_id；各服务资源的资源维度名称可查看：“[服务资源维度](ces_03_0059.xml)”。 **约束限制** 不涉及 **取值范围** 由字母开头，后面可以包含字母、数字、_或-，长度为[1,32]个字符 **默认取值** 不涉及 
      * @return name
      */
     public String getName() {

@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.live.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -13,7 +16,7 @@ public class ListHistoryStreamsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
 
-    private String domain;
+    private List<String> domain = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app")
@@ -45,20 +48,36 @@ public class ListHistoryStreamsRequest {
 
     private Integer limit;
 
-    public ListHistoryStreamsRequest withDomain(String domain) {
+    public ListHistoryStreamsRequest withDomain(List<String> domain) {
         this.domain = domain;
         return this;
     }
 
+    public ListHistoryStreamsRequest addDomainItem(String domainItem) {
+        if (this.domain == null) {
+            this.domain = new ArrayList<>();
+        }
+        this.domain.add(domainItem);
+        return this;
+    }
+
+    public ListHistoryStreamsRequest withDomain(Consumer<List<String>> domainSetter) {
+        if (this.domain == null) {
+            this.domain = new ArrayList<>();
+        }
+        domainSetter.accept(this.domain);
+        return this;
+    }
+
     /**
-     * 推流域名。 
+     * 推流域名列表，最多支持查询100个域名，多个域名以逗号分隔。  若查询多个域名，则返回的是多个域名合并数据。 
      * @return domain
      */
-    public String getDomain() {
+    public List<String> getDomain() {
         return domain;
     }
 
-    public void setDomain(String domain) {
+    public void setDomain(List<String> domain) {
         this.domain = domain;
     }
 

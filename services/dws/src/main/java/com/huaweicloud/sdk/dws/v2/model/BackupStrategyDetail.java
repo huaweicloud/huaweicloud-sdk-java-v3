@@ -122,7 +122,7 @@ public class BackupStrategyDetail {
     }
 
     /**
-     * **参数解释**： 备份类型。 **取值范围**： 不涉及。
+     * **参数解释**： 备份类型。 **取值范围**： - full: 全量。 - increment: 增量。
      * @return backupType
      */
     public String getBackupType() {

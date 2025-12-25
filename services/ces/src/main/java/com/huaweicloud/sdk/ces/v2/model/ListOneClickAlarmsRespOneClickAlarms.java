@@ -70,7 +70,7 @@ public class ListOneClickAlarmsRespOneClickAlarms {
     }
 
     /**
-     * 一键告警描述，长度范围[0,256]，该字段默认值为空字符串
+     * **参数解释** 一键告警描述 **约束限制** 不涉及 **取值范围** 字符长度在0到256之间 **默认取值** 空字符串 
      * @return description
      */
     public String getDescription() {
@@ -87,7 +87,7 @@ public class ListOneClickAlarmsRespOneClickAlarms {
     }
 
     /**
-     * 是否启用一键告警。true:开启，false：关闭。
+     * **参数解释** 是否启用一键告警 **约束限制** 不涉及 **取值范围** - true:开启 - false：关闭 **默认取值** true 
      * @return enabled
      */
     public Boolean getEnabled() {

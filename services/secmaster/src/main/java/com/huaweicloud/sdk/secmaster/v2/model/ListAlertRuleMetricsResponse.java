@@ -1,15 +1,9 @@
 package com.huaweicloud.sdk.secmaster.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.math.BigDecimal;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -18,152 +12,97 @@ import java.util.function.Consumer;
  */
 public class ListAlertRuleMetricsResponse extends SdkResponse {
 
-    /**
-     * 指标类型，分组数量。Metric category. GROUP_COUNT.
-     */
-    public static final class CategoryEnum {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cu_usage")
 
-        /**
-         * Enum GROUP_COUNT for value: "GROUP_COUNT"
-         */
-        public static final CategoryEnum GROUP_COUNT = new CategoryEnum("GROUP_COUNT");
+    private CuUsage cuUsage;
 
-        private static final Map<String, CategoryEnum> STATIC_FIELDS = createStaticFields();
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alert_severities")
 
-        private static Map<String, CategoryEnum> createStaticFields() {
-            Map<String, CategoryEnum> map = new HashMap<>();
-            map.put("GROUP_COUNT", GROUP_COUNT);
-            return Collections.unmodifiableMap(map);
-        }
+    private AlertSeverities alertSeverities;
 
-        private String value;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metrics_status")
 
-        CategoryEnum(String value) {
-            this.value = value;
-        }
+    private MetricsStatus metricsStatus;
 
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static CategoryEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CategoryEnum(value));
-        }
-
-        public static CategoryEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof CategoryEnum) {
-                return this.value.equals(((CategoryEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
+    public ListAlertRuleMetricsResponse withCuUsage(CuUsage cuUsage) {
+        this.cuUsage = cuUsage;
+        return this;
     }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "category")
+    public ListAlertRuleMetricsResponse withCuUsage(Consumer<CuUsage> cuUsageSetter) {
+        if (this.cuUsage == null) {
+            this.cuUsage = new CuUsage();
+            cuUsageSetter.accept(this.cuUsage);
+        }
 
-    private CategoryEnum category;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "metric")
-
-    private Map<String, BigDecimal> metric = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-request-id")
-
-    private String xRequestId;
-
-    public ListAlertRuleMetricsResponse withCategory(CategoryEnum category) {
-        this.category = category;
         return this;
     }
 
     /**
-     * 指标类型，分组数量。Metric category. GROUP_COUNT.
-     * @return category
+     * Get cuUsage
+     * @return cuUsage
      */
-    public CategoryEnum getCategory() {
-        return category;
+    public CuUsage getCuUsage() {
+        return cuUsage;
     }
 
-    public void setCategory(CategoryEnum category) {
-        this.category = category;
+    public void setCuUsage(CuUsage cuUsage) {
+        this.cuUsage = cuUsage;
     }
 
-    public ListAlertRuleMetricsResponse withMetric(Map<String, BigDecimal> metric) {
-        this.metric = metric;
+    public ListAlertRuleMetricsResponse withAlertSeverities(AlertSeverities alertSeverities) {
+        this.alertSeverities = alertSeverities;
         return this;
     }
 
-    public ListAlertRuleMetricsResponse putMetricItem(String key, BigDecimal metricItem) {
-        if (this.metric == null) {
-            this.metric = new HashMap<>();
+    public ListAlertRuleMetricsResponse withAlertSeverities(Consumer<AlertSeverities> alertSeveritiesSetter) {
+        if (this.alertSeverities == null) {
+            this.alertSeverities = new AlertSeverities();
+            alertSeveritiesSetter.accept(this.alertSeverities);
         }
-        this.metric.put(key, metricItem);
-        return this;
-    }
 
-    public ListAlertRuleMetricsResponse withMetric(Consumer<Map<String, BigDecimal>> metricSetter) {
-        if (this.metric == null) {
-            this.metric = new HashMap<>();
-        }
-        metricSetter.accept(this.metric);
         return this;
     }
 
     /**
-     * 指标值。Metric value.
-     * @return metric
+     * Get alertSeverities
+     * @return alertSeverities
      */
-    public Map<String, BigDecimal> getMetric() {
-        return metric;
+    public AlertSeverities getAlertSeverities() {
+        return alertSeverities;
     }
 
-    public void setMetric(Map<String, BigDecimal> metric) {
-        this.metric = metric;
+    public void setAlertSeverities(AlertSeverities alertSeverities) {
+        this.alertSeverities = alertSeverities;
     }
 
-    public ListAlertRuleMetricsResponse withXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
+    public ListAlertRuleMetricsResponse withMetricsStatus(MetricsStatus metricsStatus) {
+        this.metricsStatus = metricsStatus;
+        return this;
+    }
+
+    public ListAlertRuleMetricsResponse withMetricsStatus(Consumer<MetricsStatus> metricsStatusSetter) {
+        if (this.metricsStatus == null) {
+            this.metricsStatus = new MetricsStatus();
+            metricsStatusSetter.accept(this.metricsStatus);
+        }
+
         return this;
     }
 
     /**
-     * Get xRequestId
-     * @return xRequestId
+     * Get metricsStatus
+     * @return metricsStatus
      */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-request-id")
-    public String getXRequestId() {
-        return xRequestId;
+    public MetricsStatus getMetricsStatus() {
+        return metricsStatus;
     }
 
-    public void setXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
+    public void setMetricsStatus(MetricsStatus metricsStatus) {
+        this.metricsStatus = metricsStatus;
     }
 
     @Override
@@ -175,22 +114,22 @@ public class ListAlertRuleMetricsResponse extends SdkResponse {
             return false;
         }
         ListAlertRuleMetricsResponse that = (ListAlertRuleMetricsResponse) obj;
-        return Objects.equals(this.category, that.category) && Objects.equals(this.metric, that.metric)
-            && Objects.equals(this.xRequestId, that.xRequestId);
+        return Objects.equals(this.cuUsage, that.cuUsage) && Objects.equals(this.alertSeverities, that.alertSeverities)
+            && Objects.equals(this.metricsStatus, that.metricsStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(category, metric, xRequestId);
+        return Objects.hash(cuUsage, alertSeverities, metricsStatus);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAlertRuleMetricsResponse {\n");
-        sb.append("    category: ").append(toIndentedString(category)).append("\n");
-        sb.append("    metric: ").append(toIndentedString(metric)).append("\n");
-        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
+        sb.append("    cuUsage: ").append(toIndentedString(cuUsage)).append("\n");
+        sb.append("    alertSeverities: ").append(toIndentedString(alertSeverities)).append("\n");
+        sb.append("    metricsStatus: ").append(toIndentedString(metricsStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -48,7 +48,7 @@ public class ListNotificationMaskResourcesRequest {
     }
 
     /**
-     * 分页偏移量
+     * **参数解释**： 分页偏移量 **约束限制**： 不涉及 **取值范围**： 整数，[0,10000] **默认取值**： 0 
      * minimum: 0
      * maximum: 10000
      * @return offset
@@ -67,7 +67,7 @@ public class ListNotificationMaskResourcesRequest {
     }
 
     /**
-     * 分页大小
+     * **参数解释**： 分页大小 **约束限制**： 不涉及 **取值范围**： 整数，[1,100] **默认取值**： 100 
      * minimum: 1
      * maximum: 100
      * @return limit

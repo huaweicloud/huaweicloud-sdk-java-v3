@@ -25,6 +25,11 @@ public class ListServiceTypesRequest {
 
     private Integer offset;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_type_name")
+
+    private String serviceTypeName;
+
     public ListServiceTypesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -82,6 +87,23 @@ public class ListServiceTypesRequest {
         this.offset = offset;
     }
 
+    public ListServiceTypesRequest withServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
+        return this;
+    }
+
+    /**
+     * |参数名称：云服务类型的名称| |参数的约束及描述：该参数非必填，范围限制：1-128，支持模糊查询。仅支持前缀匹配、后缀匹配、中间匹配。|
+     * @return serviceTypeName
+     */
+    public String getServiceTypeName() {
+        return serviceTypeName;
+    }
+
+    public void setServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -92,12 +114,12 @@ public class ListServiceTypesRequest {
         }
         ListServiceTypesRequest that = (ListServiceTypesRequest) obj;
         return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.serviceTypeName, that.serviceTypeName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, limit, offset);
+        return Objects.hash(xLanguage, limit, offset, serviceTypeName);
     }
 
     @Override
@@ -107,6 +129,7 @@ public class ListServiceTypesRequest {
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    serviceTypeName: ").append(toIndentedString(serviceTypeName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

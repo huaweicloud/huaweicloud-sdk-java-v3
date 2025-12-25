@@ -219,7 +219,7 @@ public class AlarmDetailResponse {
     }
 
     /**
-     * **参数解释**： 告警状态。 **取值范围**： 不涉及。
+     * **参数解释**： 告警状态。 **取值范围**： - 0：未恢复。 - 1：已恢复。
      * @return alarmStatus
      */
     public String getAlarmStatus() {

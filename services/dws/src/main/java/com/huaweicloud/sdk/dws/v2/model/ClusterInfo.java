@@ -449,7 +449,7 @@ public class ClusterInfo {
     }
 
     /**
-     * **参数解释**： 集群规格ID。 **取值范围**： 不涉及。
+     * **参数解释**： 集群规格名称。 **取值范围**： 集群规格详情请参见[数据仓库规格](dws_01_00018.html)。
      * @return nodeType
      */
     public String getNodeType() {

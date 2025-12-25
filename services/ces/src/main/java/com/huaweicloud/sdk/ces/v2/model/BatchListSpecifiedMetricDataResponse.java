@@ -74,7 +74,7 @@ public class BatchListSpecifiedMetricDataResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**: 指标维度, 多维度逗号分隔。。 **取值范围**: 必须以字母开头，只能包含0-9/a-z/A-Z/_/-/,。每个维度必须以字母开头，每个维度长度最短1，最长32，多个维度直接用,分割。 
+     * **参数解释**: 资源维度, 多维度逗号分隔。 **取值范围**: 必须以字母开头，只能包含0-9/a-z/A-Z/_/-/,。每个维度必须以字母开头，每个维度长度最短1，最长32，多个维度直接用,分隔。 
      * @return metricDimension
      */
     public String getMetricDimension() {
@@ -107,7 +107,7 @@ public class BatchListSpecifiedMetricDataResponse extends SdkResponse {
     }
 
     /**
-     * ***参数解释*** 监控数据列表 
+     * **参数解释** 监控数据列表 
      * @return dataPoints
      */
     public List<MetricDataPoint> getDataPoints() {

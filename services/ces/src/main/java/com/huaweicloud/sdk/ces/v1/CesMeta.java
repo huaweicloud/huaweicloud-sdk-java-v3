@@ -12,7 +12,6 @@ import com.huaweicloud.sdk.ces.v1.model.CreateAlarmTemplateResponse;
 import com.huaweicloud.sdk.ces.v1.model.CreateEventsRequest;
 import com.huaweicloud.sdk.ces.v1.model.CreateEventsRequestBody;
 import com.huaweicloud.sdk.ces.v1.model.CreateEventsResponse;
-import com.huaweicloud.sdk.ces.v1.model.CreateEventsResponseBody;
 import com.huaweicloud.sdk.ces.v1.model.CreateMetricDataRequest;
 import com.huaweicloud.sdk.ces.v1.model.CreateMetricDataRequestBody;
 import com.huaweicloud.sdk.ces.v1.model.CreateMetricDataResponse;
@@ -25,6 +24,7 @@ import com.huaweicloud.sdk.ces.v1.model.DeleteAlarmTemplateRequest;
 import com.huaweicloud.sdk.ces.v1.model.DeleteAlarmTemplateResponse;
 import com.huaweicloud.sdk.ces.v1.model.DeleteResourceGroupRequest;
 import com.huaweicloud.sdk.ces.v1.model.DeleteResourceGroupResponse;
+import com.huaweicloud.sdk.ces.v1.model.Event;
 import com.huaweicloud.sdk.ces.v1.model.ListAlarmHistoriesRequest;
 import com.huaweicloud.sdk.ces.v1.model.ListAlarmHistoriesResponse;
 import com.huaweicloud.sdk.ces.v1.model.ListAlarmTemplatesRequest;
@@ -159,12 +159,12 @@ public class CesMeta {
                 .withInnerContainerType(CreateEventsRequestBody.class));
 
         // response
-        builder.<List<CreateEventsResponseBody>>withResponseField("body",
+        builder.<List<Event>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(CreateEventsResponse::getBody, CreateEventsResponse::setBody)
-                .withInnerContainerType(CreateEventsResponseBody.class));
+                .withInnerContainerType(Event.class));
 
         return builder.build();
     }

@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.codeartsrepo.v4.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -20,10 +25,98 @@ public class TenantRepositoryDto {
 
     private Double capacity;
 
+    /**
+     * **参数解释：** 仓库状态。 **取值范围：** - 0，正常。 - 3，冻结。 - 4，关闭。 - 5，清理中。 - 7，删除中。
+     */
+    public static final class StatusEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final StatusEnum NUMBER_0 = new StatusEnum(0);
+
+        /**
+         * Enum NUMBER_3 for value: 3
+         */
+        public static final StatusEnum NUMBER_3 = new StatusEnum(3);
+
+        /**
+         * Enum NUMBER_4 for value: 4
+         */
+        public static final StatusEnum NUMBER_4 = new StatusEnum(4);
+
+        /**
+         * Enum NUMBER_5 for value: 5
+         */
+        public static final StatusEnum NUMBER_5 = new StatusEnum(5);
+
+        /**
+         * Enum NUMBER_7 for value: 7
+         */
+        public static final StatusEnum NUMBER_7 = new StatusEnum(7);
+
+        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, StatusEnum> createStaticFields() {
+            Map<Integer, StatusEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(3, NUMBER_3);
+            map.put(4, NUMBER_4);
+            map.put(5, NUMBER_5);
+            map.put(7, NUMBER_7);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        StatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
+        }
+
+        public static StatusEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private Integer status;
+    private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "moderation_result")
@@ -84,6 +177,8 @@ public class TenantRepositoryDto {
 
     /**
      * **参数解释：** 仓库容量,单位:MB,保留2位小数。 **取值范围：** 不涉及。
+     * minimum: 0
+     * maximum: 30720
      * @return capacity
      */
     public Double getCapacity() {
@@ -94,7 +189,7 @@ public class TenantRepositoryDto {
         this.capacity = capacity;
     }
 
-    public TenantRepositoryDto withStatus(Integer status) {
+    public TenantRepositoryDto withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
@@ -103,11 +198,11 @@ public class TenantRepositoryDto {
      * **参数解释：** 仓库状态。 **取值范围：** - 0，正常。 - 3，冻结。 - 4，关闭。 - 5，清理中。 - 7，删除中。
      * @return status
      */
-    public Integer getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 
@@ -152,6 +247,8 @@ public class TenantRepositoryDto {
 
     /**
      * **参数解释：** 成员数量。 **取值范围：** 不涉及。
+     * minimum: 1
+     * maximum: 1000
      * @return memberNumber
      */
     public Integer getMemberNumber() {
@@ -169,6 +266,8 @@ public class TenantRepositoryDto {
 
     /**
      * **参数解释：** 仓库Id。 **取值范围：** 不涉及。
+     * minimum: 1
+     * maximum: 2147483647
      * @return repositoryId
      */
     public Integer getRepositoryId() {

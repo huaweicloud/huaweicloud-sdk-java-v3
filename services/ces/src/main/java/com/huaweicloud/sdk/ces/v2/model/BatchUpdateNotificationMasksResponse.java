@@ -46,7 +46,7 @@ public class BatchUpdateNotificationMasksResponse extends SdkResponse {
     }
 
     /**
-     * 创建成功的关联ID列表
+     * **参数解释**： 创建成功的关联ID列表 
      * @return relationIds
      */
     public List<String> getRelationIds() {
@@ -63,7 +63,7 @@ public class BatchUpdateNotificationMasksResponse extends SdkResponse {
     }
 
     /**
-     * 屏蔽规则ID
+     * **参数解释**： 屏蔽规则ID **取值范围**： 以nm开头，后跟[0,62]位字母或数字。 
      * @return notificationMaskId
      */
     public String getNotificationMaskId() {

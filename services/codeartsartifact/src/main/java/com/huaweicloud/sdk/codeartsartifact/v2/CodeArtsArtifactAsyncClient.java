@@ -16,6 +16,8 @@ import com.huaweicloud.sdk.codeartsartifact.v2.model.CreateProjectRelatedReposit
 import com.huaweicloud.sdk.codeartsartifact.v2.model.CreateProjectRelatedRepositoryResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.DeleteArtifactFileRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.DeleteArtifactFileResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.DeleteCompletelyUpdateFileStateRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.DeleteCompletelyUpdateFileStateResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.DeleteRepositoryRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.DeleteRepositoryResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ListAllRepositoriesRequest;
@@ -26,6 +28,30 @@ import com.huaweicloud.sdk.codeartsartifact.v2.model.ListArtifactoryStorageStati
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ListArtifactoryStorageStatisticResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ListAttentionsRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ListAttentionsResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListCapacityMessageSettingRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListCapacityMessageSettingResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListChildProxyRepositoriesListRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListChildProxyRepositoriesListResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListDomainIpConfigRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListDomainIpConfigResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListFileBuildArchivesRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListFileBuildArchivesResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListFilesRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListFilesResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListLatestVersionFilesRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListLatestVersionFilesResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListMavenListRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListMavenListResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListMavenUserRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListMavenUserResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListNetProxyRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListNetProxyResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListProjectRolePermissionsRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListProjectRolePermissionsResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListProjectUsersRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListProjectUsersResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListSecGuardListRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListSecGuardListResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ModifyRepositoryRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ModifyRepositoryResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ResetUserPasswordRequest;
@@ -36,16 +62,38 @@ import com.huaweicloud.sdk.codeartsartifact.v2.model.SearchByChecksumRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.SearchByChecksumResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowAuditRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowAuditResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowAutoDeleteJobSettingsRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowAutoDeleteJobSettingsResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowDomainReleaseRepoStorageRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowDomainReleaseRepoStorageResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowFileDetailByFullNameRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowFileDetailByFullNameResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowFileDetailRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowFileDetailResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowFileTreeRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowFileTreeResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowLatestVersionFilesCountRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowLatestVersionFilesCountResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowMavenInfoRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowMavenInfoResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowMultiRolesUserPermissionsRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowMultiRolesUserPermissionsResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowOpenSourceEnabledRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowOpenSourceEnabledResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowPackageDataDetailRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowPackageDataDetailResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowPackageInfoRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowPackageInfoResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectListRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectListResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectReleaseFilesRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectReleaseFilesResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectStorageInfoRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectStorageInfoResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowReleaseProjectFilesRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowReleaseProjectFilesResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepoUserInfoRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepoUserInfoResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepositoryInfoRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepositoryInfoResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepositoryRequest;
@@ -54,6 +102,8 @@ import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowStorageRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowStorageResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowUserPrivilegesRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowUserPrivilegesResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowUserTicketRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowUserTicketResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.UpdateArtifactoryRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.UpdateArtifactoryResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
@@ -311,6 +361,36 @@ public class CodeArtsArtifactAsyncClient {
     }
 
     /**
+     * 彻底删除文件/文件夹
+     *
+     * 根据文件ID彻底删除文件或文件夹，删除后不能恢复，支持批量删除。可使用该接口清理不再需要的文件或文件夹以释放存储空间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCompletelyUpdateFileStateRequest 请求对象
+     * @return CompletableFuture<DeleteCompletelyUpdateFileStateResponse>
+     */
+    public CompletableFuture<DeleteCompletelyUpdateFileStateResponse> deleteCompletelyUpdateFileStateAsync(
+        DeleteCompletelyUpdateFileStateRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.deleteCompletelyUpdateFileState);
+    }
+
+    /**
+     * 彻底删除文件/文件夹
+     *
+     * 根据文件ID彻底删除文件或文件夹，删除后不能恢复，支持批量删除。可使用该接口清理不再需要的文件或文件夹以释放存储空间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCompletelyUpdateFileStateRequest 请求对象
+     * @return AsyncInvoker<DeleteCompletelyUpdateFileStateRequest, DeleteCompletelyUpdateFileStateResponse>
+     */
+    public AsyncInvoker<DeleteCompletelyUpdateFileStateRequest, DeleteCompletelyUpdateFileStateResponse> deleteCompletelyUpdateFileStateAsyncInvoker(
+        DeleteCompletelyUpdateFileStateRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.deleteCompletelyUpdateFileState, hcClient);
+    }
+
+    /**
      * 删除仓库到回收站
      *
      * 删除仓库到回收站
@@ -458,6 +538,358 @@ public class CodeArtsArtifactAsyncClient {
     }
 
     /**
+     * 查询租户容量消息通知设置信息
+     *
+     * 查询租户容量消息通知设置，包含容量阈值和是否启用邮件通知等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCapacityMessageSettingRequest 请求对象
+     * @return CompletableFuture<ListCapacityMessageSettingResponse>
+     */
+    public CompletableFuture<ListCapacityMessageSettingResponse> listCapacityMessageSettingAsync(
+        ListCapacityMessageSettingRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.listCapacityMessageSetting);
+    }
+
+    /**
+     * 查询租户容量消息通知设置信息
+     *
+     * 查询租户容量消息通知设置，包含容量阈值和是否启用邮件通知等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCapacityMessageSettingRequest 请求对象
+     * @return AsyncInvoker<ListCapacityMessageSettingRequest, ListCapacityMessageSettingResponse>
+     */
+    public AsyncInvoker<ListCapacityMessageSettingRequest, ListCapacityMessageSettingResponse> listCapacityMessageSettingAsyncInvoker(
+        ListCapacityMessageSettingRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.listCapacityMessageSetting, hcClient);
+    }
+
+    /**
+     * 获取聚合仓下的仓库代理列表
+     *
+     * 根据仓库ID获取指定聚合仓的仓库代理列表，包含仓库状态、类型、地址和访问路径白名单等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListChildProxyRepositoriesListRequest 请求对象
+     * @return CompletableFuture<ListChildProxyRepositoriesListResponse>
+     */
+    public CompletableFuture<ListChildProxyRepositoriesListResponse> listChildProxyRepositoriesListAsync(
+        ListChildProxyRepositoriesListRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.listChildProxyRepositoriesList);
+    }
+
+    /**
+     * 获取聚合仓下的仓库代理列表
+     *
+     * 根据仓库ID获取指定聚合仓的仓库代理列表，包含仓库状态、类型、地址和访问路径白名单等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListChildProxyRepositoriesListRequest 请求对象
+     * @return AsyncInvoker<ListChildProxyRepositoriesListRequest, ListChildProxyRepositoriesListResponse>
+     */
+    public AsyncInvoker<ListChildProxyRepositoriesListRequest, ListChildProxyRepositoriesListResponse> listChildProxyRepositoriesListAsyncInvoker(
+        ListChildProxyRepositoriesListRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.listChildProxyRepositoriesList, hcClient);
+    }
+
+    /**
+     * 查询租户级IP白名单
+     *
+     * 查询租户级IP白名单列表。在IP白名单的IP才能访问制品仓库，未配置IP白名单时，默认所有IP都可访问。该功能可用于保障制品仓库的安全，对访问IP进行严格控制。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainIpConfigRequest 请求对象
+     * @return CompletableFuture<ListDomainIpConfigResponse>
+     */
+    public CompletableFuture<ListDomainIpConfigResponse> listDomainIpConfigAsync(ListDomainIpConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.listDomainIpConfig);
+    }
+
+    /**
+     * 查询租户级IP白名单
+     *
+     * 查询租户级IP白名单列表。在IP白名单的IP才能访问制品仓库，未配置IP白名单时，默认所有IP都可访问。该功能可用于保障制品仓库的安全，对访问IP进行严格控制。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainIpConfigRequest 请求对象
+     * @return AsyncInvoker<ListDomainIpConfigRequest, ListDomainIpConfigResponse>
+     */
+    public AsyncInvoker<ListDomainIpConfigRequest, ListDomainIpConfigResponse> listDomainIpConfigAsyncInvoker(
+        ListDomainIpConfigRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.listDomainIpConfig, hcClient);
+    }
+
+    /**
+     * 分页查询构建归档包列表
+     *
+     * 当归档包数量庞大时，分页查询构建归档包列表，包含文件名、文件大小、下载地址、MD5校验和、构建地址、构建代码分支等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFileBuildArchivesRequest 请求对象
+     * @return CompletableFuture<ListFileBuildArchivesResponse>
+     */
+    public CompletableFuture<ListFileBuildArchivesResponse> listFileBuildArchivesAsync(
+        ListFileBuildArchivesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.listFileBuildArchives);
+    }
+
+    /**
+     * 分页查询构建归档包列表
+     *
+     * 当归档包数量庞大时，分页查询构建归档包列表，包含文件名、文件大小、下载地址、MD5校验和、构建地址、构建代码分支等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFileBuildArchivesRequest 请求对象
+     * @return AsyncInvoker<ListFileBuildArchivesRequest, ListFileBuildArchivesResponse>
+     */
+    public AsyncInvoker<ListFileBuildArchivesRequest, ListFileBuildArchivesResponse> listFileBuildArchivesAsyncInvoker(
+        ListFileBuildArchivesRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.listFileBuildArchives, hcClient);
+    }
+
+    /**
+     * 查询文件/项目列表
+     *
+     * 当项目或文件数量庞大时，分页查询项目或文件列表。可根据文件名、文件状态和文件的发布状态等参数进行过滤，从而快速找到所需文件，包含文件名、文件大小和下载地址等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFilesRequest 请求对象
+     * @return CompletableFuture<ListFilesResponse>
+     */
+    public CompletableFuture<ListFilesResponse> listFilesAsync(ListFilesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.listFiles);
+    }
+
+    /**
+     * 查询文件/项目列表
+     *
+     * 当项目或文件数量庞大时，分页查询项目或文件列表。可根据文件名、文件状态和文件的发布状态等参数进行过滤，从而快速找到所需文件，包含文件名、文件大小和下载地址等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFilesRequest 请求对象
+     * @return AsyncInvoker<ListFilesRequest, ListFilesResponse>
+     */
+    public AsyncInvoker<ListFilesRequest, ListFilesResponse> listFilesAsyncInvoker(ListFilesRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.listFiles, hcClient);
+    }
+
+    /**
+     * 查询项目下所有文件的最新版本
+     *
+     * 当项目文件数量庞大时，通过该接口可以分页查询项目下所有文件的最新版本，包含文件名、文件大小、文件状态和发布状态等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLatestVersionFilesRequest 请求对象
+     * @return CompletableFuture<ListLatestVersionFilesResponse>
+     */
+    public CompletableFuture<ListLatestVersionFilesResponse> listLatestVersionFilesAsync(
+        ListLatestVersionFilesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.listLatestVersionFiles);
+    }
+
+    /**
+     * 查询项目下所有文件的最新版本
+     *
+     * 当项目文件数量庞大时，通过该接口可以分页查询项目下所有文件的最新版本，包含文件名、文件大小、文件状态和发布状态等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLatestVersionFilesRequest 请求对象
+     * @return AsyncInvoker<ListLatestVersionFilesRequest, ListLatestVersionFilesResponse>
+     */
+    public AsyncInvoker<ListLatestVersionFilesRequest, ListLatestVersionFilesResponse> listLatestVersionFilesAsyncInvoker(
+        ListLatestVersionFilesRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.listLatestVersionFiles, hcClient);
+    }
+
+    /**
+     * 查询Maven仓库列表
+     *
+     * 查询Maven仓库列表，包含仓库状态、类型、地址和访问路径白名单等信息。支持根据项目ID和仓库ID等参数进行过滤。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMavenListRequest 请求对象
+     * @return CompletableFuture<ListMavenListResponse>
+     */
+    public CompletableFuture<ListMavenListResponse> listMavenListAsync(ListMavenListRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.listMavenList);
+    }
+
+    /**
+     * 查询Maven仓库列表
+     *
+     * 查询Maven仓库列表，包含仓库状态、类型、地址和访问路径白名单等信息。支持根据项目ID和仓库ID等参数进行过滤。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMavenListRequest 请求对象
+     * @return AsyncInvoker<ListMavenListRequest, ListMavenListResponse>
+     */
+    public AsyncInvoker<ListMavenListRequest, ListMavenListResponse> listMavenListAsyncInvoker(
+        ListMavenListRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.listMavenList, hcClient);
+    }
+
+    /**
+     * 查询私有库用户列表
+     *
+     * 分页查询私有库用户列表，包含用户名和用户是否启用等信息。可根据用户名进行过滤。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMavenUserRequest 请求对象
+     * @return CompletableFuture<ListMavenUserResponse>
+     */
+    public CompletableFuture<ListMavenUserResponse> listMavenUserAsync(ListMavenUserRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.listMavenUser);
+    }
+
+    /**
+     * 查询私有库用户列表
+     *
+     * 分页查询私有库用户列表，包含用户名和用户是否启用等信息。可根据用户名进行过滤。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMavenUserRequest 请求对象
+     * @return AsyncInvoker<ListMavenUserRequest, ListMavenUserResponse>
+     */
+    public AsyncInvoker<ListMavenUserRequest, ListMavenUserResponse> listMavenUserAsyncInvoker(
+        ListMavenUserRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.listMavenUser, hcClient);
+    }
+
+    /**
+     * 查询网络代理列表
+     *
+     * 查询网络代理列表，返回代理源的访问地址及认证信息等，用于代理外部公开的制品资源。通过网络代理，开发人员可以安全、高效地访问所需的外部资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNetProxyRequest 请求对象
+     * @return CompletableFuture<ListNetProxyResponse>
+     */
+    public CompletableFuture<ListNetProxyResponse> listNetProxyAsync(ListNetProxyRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.listNetProxy);
+    }
+
+    /**
+     * 查询网络代理列表
+     *
+     * 查询网络代理列表，返回代理源的访问地址及认证信息等，用于代理外部公开的制品资源。通过网络代理，开发人员可以安全、高效地访问所需的外部资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNetProxyRequest 请求对象
+     * @return AsyncInvoker<ListNetProxyRequest, ListNetProxyResponse>
+     */
+    public AsyncInvoker<ListNetProxyRequest, ListNetProxyResponse> listNetProxyAsyncInvoker(
+        ListNetProxyRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.listNetProxy, hcClient);
+    }
+
+    /**
+     * 查看项目的角色权限设置
+     *
+     * 查看项目的角色权限设置，包含上传下载、创建文件夹、清空或者还原回收站和更改软件包状态等设置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProjectRolePermissionsRequest 请求对象
+     * @return CompletableFuture<ListProjectRolePermissionsResponse>
+     */
+    public CompletableFuture<ListProjectRolePermissionsResponse> listProjectRolePermissionsAsync(
+        ListProjectRolePermissionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.listProjectRolePermissions);
+    }
+
+    /**
+     * 查看项目的角色权限设置
+     *
+     * 查看项目的角色权限设置，包含上传下载、创建文件夹、清空或者还原回收站和更改软件包状态等设置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProjectRolePermissionsRequest 请求对象
+     * @return AsyncInvoker<ListProjectRolePermissionsRequest, ListProjectRolePermissionsResponse>
+     */
+    public AsyncInvoker<ListProjectRolePermissionsRequest, ListProjectRolePermissionsResponse> listProjectRolePermissionsAsyncInvoker(
+        ListProjectRolePermissionsRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.listProjectRolePermissions, hcClient);
+    }
+
+    /**
+     * 查询项目下的用户
+     *
+     * 当项目中的用户数量较多时，分页查询指定项目下的用户列表，包含用户名和角色等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProjectUsersRequest 请求对象
+     * @return CompletableFuture<ListProjectUsersResponse>
+     */
+    public CompletableFuture<ListProjectUsersResponse> listProjectUsersAsync(ListProjectUsersRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.listProjectUsers);
+    }
+
+    /**
+     * 查询项目下的用户
+     *
+     * 当项目中的用户数量较多时，分页查询指定项目下的用户列表，包含用户名和角色等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProjectUsersRequest 请求对象
+     * @return AsyncInvoker<ListProjectUsersRequest, ListProjectUsersResponse>
+     */
+    public AsyncInvoker<ListProjectUsersRequest, ListProjectUsersResponse> listProjectUsersAsyncInvoker(
+        ListProjectUsersRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.listProjectUsers, hcClient);
+    }
+
+    /**
+     * 查询制品安全扫描任务列表
+     *
+     * 分页查询制品安全扫描任务列表，包含扫描制品数量、漏洞数量、病毒文件数量和恶意代码文件数量等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecGuardListRequest 请求对象
+     * @return CompletableFuture<ListSecGuardListResponse>
+     */
+    public CompletableFuture<ListSecGuardListResponse> listSecGuardListAsync(ListSecGuardListRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.listSecGuardList);
+    }
+
+    /**
+     * 查询制品安全扫描任务列表
+     *
+     * 分页查询制品安全扫描任务列表，包含扫描制品数量、漏洞数量、病毒文件数量和恶意代码文件数量等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecGuardListRequest 请求对象
+     * @return AsyncInvoker<ListSecGuardListRequest, ListSecGuardListResponse>
+     */
+    public AsyncInvoker<ListSecGuardListRequest, ListSecGuardListResponse> listSecGuardListAsyncInvoker(
+        ListSecGuardListRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.listSecGuardList, hcClient);
+    }
+
+    /**
      * 编辑仓库
      *
      * 编辑仓库
@@ -602,6 +1034,125 @@ public class CodeArtsArtifactAsyncClient {
     }
 
     /**
+     * 查询项目自动删除任务设置
+     *
+     * 查询项目自动删除任务设置，包含文件的过期自动删除时间及删除规则。自动删除任务可以自动执行文件清理任务，减少管理员的工作负担，确保存储资源的有效利用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoDeleteJobSettingsRequest 请求对象
+     * @return CompletableFuture<ShowAutoDeleteJobSettingsResponse>
+     */
+    public CompletableFuture<ShowAutoDeleteJobSettingsResponse> showAutoDeleteJobSettingsAsync(
+        ShowAutoDeleteJobSettingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.showAutoDeleteJobSettings);
+    }
+
+    /**
+     * 查询项目自动删除任务设置
+     *
+     * 查询项目自动删除任务设置，包含文件的过期自动删除时间及删除规则。自动删除任务可以自动执行文件清理任务，减少管理员的工作负担，确保存储资源的有效利用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoDeleteJobSettingsRequest 请求对象
+     * @return AsyncInvoker<ShowAutoDeleteJobSettingsRequest, ShowAutoDeleteJobSettingsResponse>
+     */
+    public AsyncInvoker<ShowAutoDeleteJobSettingsRequest, ShowAutoDeleteJobSettingsResponse> showAutoDeleteJobSettingsAsyncInvoker(
+        ShowAutoDeleteJobSettingsRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.showAutoDeleteJobSettings, hcClient);
+    }
+
+    /**
+     * 查询租户发布库存储容量
+     *
+     * 查询租户发布库存储容量，包含已使用存储容量、最大存储容量、套餐类型和仓库数量等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainReleaseRepoStorageRequest 请求对象
+     * @return CompletableFuture<ShowDomainReleaseRepoStorageResponse>
+     */
+    public CompletableFuture<ShowDomainReleaseRepoStorageResponse> showDomainReleaseRepoStorageAsync(
+        ShowDomainReleaseRepoStorageRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.showDomainReleaseRepoStorage);
+    }
+
+    /**
+     * 查询租户发布库存储容量
+     *
+     * 查询租户发布库存储容量，包含已使用存储容量、最大存储容量、套餐类型和仓库数量等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainReleaseRepoStorageRequest 请求对象
+     * @return AsyncInvoker<ShowDomainReleaseRepoStorageRequest, ShowDomainReleaseRepoStorageResponse>
+     */
+    public AsyncInvoker<ShowDomainReleaseRepoStorageRequest, ShowDomainReleaseRepoStorageResponse> showDomainReleaseRepoStorageAsyncInvoker(
+        ShowDomainReleaseRepoStorageRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.showDomainReleaseRepoStorage, hcClient);
+    }
+
+    /**
+     * 根据文件ID查询文件详情
+     *
+     * 在日常数据管理工作中，根据文件ID查询指定文件详情，包含文件名、文件大小、下载地址、校验和、文件状态和发布状态等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFileDetailRequest 请求对象
+     * @return CompletableFuture<ShowFileDetailResponse>
+     */
+    public CompletableFuture<ShowFileDetailResponse> showFileDetailAsync(ShowFileDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.showFileDetail);
+    }
+
+    /**
+     * 根据文件ID查询文件详情
+     *
+     * 在日常数据管理工作中，根据文件ID查询指定文件详情，包含文件名、文件大小、下载地址、校验和、文件状态和发布状态等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFileDetailRequest 请求对象
+     * @return AsyncInvoker<ShowFileDetailRequest, ShowFileDetailResponse>
+     */
+    public AsyncInvoker<ShowFileDetailRequest, ShowFileDetailResponse> showFileDetailAsyncInvoker(
+        ShowFileDetailRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.showFileDetail, hcClient);
+    }
+
+    /**
+     * 根据文件完整路径查询文件详情
+     *
+     * 在日常数据管理工作中，根据文件完整路径查询指定文件详情，包含文件名、文件大小、下载地址、校验和、文件状态和发布状态等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFileDetailByFullNameRequest 请求对象
+     * @return CompletableFuture<ShowFileDetailByFullNameResponse>
+     */
+    public CompletableFuture<ShowFileDetailByFullNameResponse> showFileDetailByFullNameAsync(
+        ShowFileDetailByFullNameRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.showFileDetailByFullName);
+    }
+
+    /**
+     * 根据文件完整路径查询文件详情
+     *
+     * 在日常数据管理工作中，根据文件完整路径查询指定文件详情，包含文件名、文件大小、下载地址、校验和、文件状态和发布状态等信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFileDetailByFullNameRequest 请求对象
+     * @return AsyncInvoker<ShowFileDetailByFullNameRequest, ShowFileDetailByFullNameResponse>
+     */
+    public AsyncInvoker<ShowFileDetailByFullNameRequest, ShowFileDetailByFullNameResponse> showFileDetailByFullNameAsyncInvoker(
+        ShowFileDetailByFullNameRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.showFileDetailByFullName, hcClient);
+    }
+
+    /**
      * 查询仓库文件夹目录
      *
      * 查询仓库文件夹目录
@@ -631,6 +1182,36 @@ public class CodeArtsArtifactAsyncClient {
     }
 
     /**
+     * 查询项目下所有文件的数量
+     *
+     * 查询项目下所有文件的数量，该接口会识别所有文件的最新版本，从而提供准确的文件数量统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLatestVersionFilesCountRequest 请求对象
+     * @return CompletableFuture<ShowLatestVersionFilesCountResponse>
+     */
+    public CompletableFuture<ShowLatestVersionFilesCountResponse> showLatestVersionFilesCountAsync(
+        ShowLatestVersionFilesCountRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.showLatestVersionFilesCount);
+    }
+
+    /**
+     * 查询项目下所有文件的数量
+     *
+     * 查询项目下所有文件的数量，该接口会识别所有文件的最新版本，从而提供准确的文件数量统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLatestVersionFilesCountRequest 请求对象
+     * @return AsyncInvoker<ShowLatestVersionFilesCountRequest, ShowLatestVersionFilesCountResponse>
+     */
+    public AsyncInvoker<ShowLatestVersionFilesCountRequest, ShowLatestVersionFilesCountResponse> showLatestVersionFilesCountAsyncInvoker(
+        ShowLatestVersionFilesCountRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.showLatestVersionFilesCount, hcClient);
+    }
+
+    /**
      * 查询租户Maven仓库列表和账号密码
      *
      * 查询租户Maven仓库列表和账号密码，支持跨租户
@@ -657,6 +1238,125 @@ public class CodeArtsArtifactAsyncClient {
     public AsyncInvoker<ShowMavenInfoRequest, ShowMavenInfoResponse> showMavenInfoAsyncInvoker(
         ShowMavenInfoRequest request) {
         return new AsyncInvoker<>(request, CodeArtsArtifactMeta.showMavenInfo, hcClient);
+    }
+
+    /**
+     * 查询多角色用户权限
+     *
+     * 查询多角色用户权限，包含上传下载、创建文件夹、清空或者还原回收站和更改软件包状态等权限信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMultiRolesUserPermissionsRequest 请求对象
+     * @return CompletableFuture<ShowMultiRolesUserPermissionsResponse>
+     */
+    public CompletableFuture<ShowMultiRolesUserPermissionsResponse> showMultiRolesUserPermissionsAsync(
+        ShowMultiRolesUserPermissionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.showMultiRolesUserPermissions);
+    }
+
+    /**
+     * 查询多角色用户权限
+     *
+     * 查询多角色用户权限，包含上传下载、创建文件夹、清空或者还原回收站和更改软件包状态等权限信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMultiRolesUserPermissionsRequest 请求对象
+     * @return AsyncInvoker<ShowMultiRolesUserPermissionsRequest, ShowMultiRolesUserPermissionsResponse>
+     */
+    public AsyncInvoker<ShowMultiRolesUserPermissionsRequest, ShowMultiRolesUserPermissionsResponse> showMultiRolesUserPermissionsAsyncInvoker(
+        ShowMultiRolesUserPermissionsRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.showMultiRolesUserPermissions, hcClient);
+    }
+
+    /**
+     * 查询中心仓是否启用
+     *
+     * 查询中心仓是否启用，用于确定当前局点是否具备中心仓功能，从而确保业务流程的顺利进行。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOpenSourceEnabledRequest 请求对象
+     * @return CompletableFuture<ShowOpenSourceEnabledResponse>
+     */
+    public CompletableFuture<ShowOpenSourceEnabledResponse> showOpenSourceEnabledAsync(
+        ShowOpenSourceEnabledRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.showOpenSourceEnabled);
+    }
+
+    /**
+     * 查询中心仓是否启用
+     *
+     * 查询中心仓是否启用，用于确定当前局点是否具备中心仓功能，从而确保业务流程的顺利进行。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOpenSourceEnabledRequest 请求对象
+     * @return AsyncInvoker<ShowOpenSourceEnabledRequest, ShowOpenSourceEnabledResponse>
+     */
+    public AsyncInvoker<ShowOpenSourceEnabledRequest, ShowOpenSourceEnabledResponse> showOpenSourceEnabledAsyncInvoker(
+        ShowOpenSourceEnabledRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.showOpenSourceEnabled, hcClient);
+    }
+
+    /**
+     * 获取当前用户的套餐信息
+     *
+     * 获取当前用户的套餐信息，包含总存储容量和已使用存储容量等信息，以便合理规划资源使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPackageDataDetailRequest 请求对象
+     * @return CompletableFuture<ShowPackageDataDetailResponse>
+     */
+    public CompletableFuture<ShowPackageDataDetailResponse> showPackageDataDetailAsync(
+        ShowPackageDataDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.showPackageDataDetail);
+    }
+
+    /**
+     * 获取当前用户的套餐信息
+     *
+     * 获取当前用户的套餐信息，包含总存储容量和已使用存储容量等信息，以便合理规划资源使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPackageDataDetailRequest 请求对象
+     * @return AsyncInvoker<ShowPackageDataDetailRequest, ShowPackageDataDetailResponse>
+     */
+    public AsyncInvoker<ShowPackageDataDetailRequest, ShowPackageDataDetailResponse> showPackageDataDetailAsyncInvoker(
+        ShowPackageDataDetailRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.showPackageDataDetail, hcClient);
+    }
+
+    /**
+     * 获取当前用户的套餐状态
+     *
+     * 获取当前用户的套餐状态，包含套餐扩展包的容量和流量规格，如资源类型、套餐状态、剩余天数等信息，帮助用户高效管理云资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPackageInfoRequest 请求对象
+     * @return CompletableFuture<ShowPackageInfoResponse>
+     */
+    public CompletableFuture<ShowPackageInfoResponse> showPackageInfoAsync(ShowPackageInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.showPackageInfo);
+    }
+
+    /**
+     * 获取当前用户的套餐状态
+     *
+     * 获取当前用户的套餐状态，包含套餐扩展包的容量和流量规格，如资源类型、套餐状态、剩余天数等信息，帮助用户高效管理云资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPackageInfoRequest 请求对象
+     * @return AsyncInvoker<ShowPackageInfoRequest, ShowPackageInfoResponse>
+     */
+    public AsyncInvoker<ShowPackageInfoRequest, ShowPackageInfoResponse> showPackageInfoAsyncInvoker(
+        ShowPackageInfoRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.showPackageInfo, hcClient);
     }
 
     /**
@@ -719,6 +1419,36 @@ public class CodeArtsArtifactAsyncClient {
     }
 
     /**
+     * 查询项目下的制品存储容量信息
+     *
+     * 查询项目下的制品存储容量，包含已使用存储容量和文件数量等信息。在项目管理中，可以使用该接口监控项目下的制品存储情况，以确保资源的有效利用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProjectStorageInfoRequest 请求对象
+     * @return CompletableFuture<ShowProjectStorageInfoResponse>
+     */
+    public CompletableFuture<ShowProjectStorageInfoResponse> showProjectStorageInfoAsync(
+        ShowProjectStorageInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.showProjectStorageInfo);
+    }
+
+    /**
+     * 查询项目下的制品存储容量信息
+     *
+     * 查询项目下的制品存储容量，包含已使用存储容量和文件数量等信息。在项目管理中，可以使用该接口监控项目下的制品存储情况，以确保资源的有效利用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProjectStorageInfoRequest 请求对象
+     * @return AsyncInvoker<ShowProjectStorageInfoRequest, ShowProjectStorageInfoResponse>
+     */
+    public AsyncInvoker<ShowProjectStorageInfoRequest, ShowProjectStorageInfoResponse> showProjectStorageInfoAsyncInvoker(
+        ShowProjectStorageInfoRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.showProjectStorageInfo, hcClient);
+    }
+
+    /**
      * 获取项目下文件版本信息列表
      *
      * 获取项目下文件版本信息列表
@@ -748,6 +1478,35 @@ public class CodeArtsArtifactAsyncClient {
     public AsyncInvoker<ShowReleaseProjectFilesRequest, ShowReleaseProjectFilesResponse> showReleaseProjectFilesAsyncInvoker(
         ShowReleaseProjectFilesRequest request) {
         return new AsyncInvoker<>(request, CodeArtsArtifactMeta.showReleaseProjectFiles, hcClient);
+    }
+
+    /**
+     * 查询租户私有依赖库的账号密码
+     *
+     * 在自动化构建场景，用户可调用该接口查询租户私有依赖库的账号密码，以便进行后续的上传下载操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRepoUserInfoRequest 请求对象
+     * @return CompletableFuture<ShowRepoUserInfoResponse>
+     */
+    public CompletableFuture<ShowRepoUserInfoResponse> showRepoUserInfoAsync(ShowRepoUserInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.showRepoUserInfo);
+    }
+
+    /**
+     * 查询租户私有依赖库的账号密码
+     *
+     * 在自动化构建场景，用户可调用该接口查询租户私有依赖库的账号密码，以便进行后续的上传下载操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRepoUserInfoRequest 请求对象
+     * @return AsyncInvoker<ShowRepoUserInfoRequest, ShowRepoUserInfoResponse>
+     */
+    public AsyncInvoker<ShowRepoUserInfoRequest, ShowRepoUserInfoResponse> showRepoUserInfoAsyncInvoker(
+        ShowRepoUserInfoRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.showRepoUserInfo, hcClient);
     }
 
     /**
@@ -863,6 +1622,35 @@ public class CodeArtsArtifactAsyncClient {
     public AsyncInvoker<ShowUserPrivilegesRequest, ShowUserPrivilegesResponse> showUserPrivilegesAsyncInvoker(
         ShowUserPrivilegesRequest request) {
         return new AsyncInvoker<>(request, CodeArtsArtifactMeta.showUserPrivileges, hcClient);
+    }
+
+    /**
+     * 查询用户凭证
+     *
+     * 查询用户凭证，该凭证为IDC用户下载制品时使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowUserTicketRequest 请求对象
+     * @return CompletableFuture<ShowUserTicketResponse>
+     */
+    public CompletableFuture<ShowUserTicketResponse> showUserTicketAsync(ShowUserTicketRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.showUserTicket);
+    }
+
+    /**
+     * 查询用户凭证
+     *
+     * 查询用户凭证，该凭证为IDC用户下载制品时使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowUserTicketRequest 请求对象
+     * @return AsyncInvoker<ShowUserTicketRequest, ShowUserTicketResponse>
+     */
+    public AsyncInvoker<ShowUserTicketRequest, ShowUserTicketResponse> showUserTicketAsyncInvoker(
+        ShowUserTicketRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.showUserTicket, hcClient);
     }
 
     /**

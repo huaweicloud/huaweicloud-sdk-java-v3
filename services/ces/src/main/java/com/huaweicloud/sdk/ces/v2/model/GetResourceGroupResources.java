@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class GetResourceGroupResources {
 
     /**
-     * 指标告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+     * **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
      */
     public static final class StatusEnum {
 
@@ -115,7 +115,7 @@ public class GetResourceGroupResources {
     private String enterpriseProjectId;
 
     /**
-     * 事件告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+     * **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
      */
     public static final class EventStatusEnum {
 
@@ -206,7 +206,7 @@ public class GetResourceGroupResources {
     }
 
     /**
-     * 指标告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+     * **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
      * @return status
      */
     public StatusEnum getStatus() {
@@ -256,7 +256,7 @@ public class GetResourceGroupResources {
     }
 
     /**
-     * 资源的tag信息,格式为key/value的json字符串,样例为\"{\\\"sss\\\":\\\"aaa\\\"}\"
+     * **参数解释** 资源的tag信息,格式为key/value的json字符串,样例为\"{\\\"sss\\\":\\\"aaa\\\"}\"。 **取值范围** 枚举值。 字符串长度[0, 10240] 
      * @return tags
      */
     public String getTags() {
@@ -273,7 +273,7 @@ public class GetResourceGroupResources {
     }
 
     /**
-     * 企业项目ID
+     * **参数解释** 企业项目ID。 **取值范围** 由数字、字母和-组成，字符串长度范围[1,128] 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -290,7 +290,7 @@ public class GetResourceGroupResources {
     }
 
     /**
-     * 事件告警状态，取值为health（告警中）、unhealthy（已触发）、no_alarm_rule（未设置告警规则）
+     * **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
      * @return eventStatus
      */
     public EventStatusEnum getEventStatus() {
@@ -307,7 +307,7 @@ public class GetResourceGroupResources {
     }
 
     /**
-     * 资源名称
+     * **参数解释** 资源名称 **取值范围** 长度[0,128]个字符 
      * @return resourceName
      */
     public String getResourceName() {

@@ -7,12 +7,8 @@ import com.huaweicloud.sdk.moderation.v3.model.BatchCheckImageSyncRequest;
 import com.huaweicloud.sdk.moderation.v3.model.BatchCheckImageSyncResponse;
 import com.huaweicloud.sdk.moderation.v3.model.CheckImageModerationRequest;
 import com.huaweicloud.sdk.moderation.v3.model.CheckImageModerationResponse;
-import com.huaweicloud.sdk.moderation.v3.model.RunCloseAudioStreamModerationJobRequest;
-import com.huaweicloud.sdk.moderation.v3.model.RunCloseAudioStreamModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateAudioModerationJobRequest;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateAudioModerationJobResponse;
-import com.huaweicloud.sdk.moderation.v3.model.RunCreateAudioStreamModerationJobRequest;
-import com.huaweicloud.sdk.moderation.v3.model.RunCreateAudioStreamModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateVideoModerationJobRequest;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateVideoModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunQueryAudioModerationJobRequest;
@@ -97,36 +93,6 @@ public class ModerationAsyncClient {
     }
 
     /**
-     * 关闭音频流内容审核作业
-     *
-     * 关闭音频流内容审核作业
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RunCloseAudioStreamModerationJobRequest 请求对象
-     * @return CompletableFuture<RunCloseAudioStreamModerationJobResponse>
-     */
-    public CompletableFuture<RunCloseAudioStreamModerationJobResponse> runCloseAudioStreamModerationJobAsync(
-        RunCloseAudioStreamModerationJobRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModerationMeta.runCloseAudioStreamModerationJob);
-    }
-
-    /**
-     * 关闭音频流内容审核作业
-     *
-     * 关闭音频流内容审核作业
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RunCloseAudioStreamModerationJobRequest 请求对象
-     * @return AsyncInvoker<RunCloseAudioStreamModerationJobRequest, RunCloseAudioStreamModerationJobResponse>
-     */
-    public AsyncInvoker<RunCloseAudioStreamModerationJobRequest, RunCloseAudioStreamModerationJobResponse> runCloseAudioStreamModerationJobAsyncInvoker(
-        RunCloseAudioStreamModerationJobRequest request) {
-        return new AsyncInvoker<>(request, ModerationMeta.runCloseAudioStreamModerationJob, hcClient);
-    }
-
-    /**
      * 创建音频内容审核作业
      *
      * 分析并识别用户上传的音频内容是否有敏感内容（如色情、政治等），并将识别结果返回给用户
@@ -154,36 +120,6 @@ public class ModerationAsyncClient {
     public AsyncInvoker<RunCreateAudioModerationJobRequest, RunCreateAudioModerationJobResponse> runCreateAudioModerationJobAsyncInvoker(
         RunCreateAudioModerationJobRequest request) {
         return new AsyncInvoker<>(request, ModerationMeta.runCreateAudioModerationJob, hcClient);
-    }
-
-    /**
-     * 创建音频流内容审核作业
-     *
-     * 创建音频流内容审核作业，创建成功会将作业ID返回给用户
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RunCreateAudioStreamModerationJobRequest 请求对象
-     * @return CompletableFuture<RunCreateAudioStreamModerationJobResponse>
-     */
-    public CompletableFuture<RunCreateAudioStreamModerationJobResponse> runCreateAudioStreamModerationJobAsync(
-        RunCreateAudioStreamModerationJobRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModerationMeta.runCreateAudioStreamModerationJob);
-    }
-
-    /**
-     * 创建音频流内容审核作业
-     *
-     * 创建音频流内容审核作业，创建成功会将作业ID返回给用户
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RunCreateAudioStreamModerationJobRequest 请求对象
-     * @return AsyncInvoker<RunCreateAudioStreamModerationJobRequest, RunCreateAudioStreamModerationJobResponse>
-     */
-    public AsyncInvoker<RunCreateAudioStreamModerationJobRequest, RunCreateAudioStreamModerationJobResponse> runCreateAudioStreamModerationJobAsyncInvoker(
-        RunCreateAudioStreamModerationJobRequest request) {
-        return new AsyncInvoker<>(request, ModerationMeta.runCreateAudioStreamModerationJob, hcClient);
     }
 
     /**

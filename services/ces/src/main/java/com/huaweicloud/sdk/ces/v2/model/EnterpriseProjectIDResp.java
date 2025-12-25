@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.ces.v2.model;
 import java.util.Objects;
 
 /**
- * **参数解释**： 企业项目ID。     **取值范围**： 只能包含小写字母、数字、“-”。 
+ * **参数解释**： 企业项目ID。     **取值范围**： 只能包含小写字母、数字、“-”。0 代表默认企业项目ID 
  */
 public class EnterpriseProjectIDResp {
 

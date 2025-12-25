@@ -26,7 +26,7 @@ public class ShowAlertRuleTemplateRequest {
     }
 
     /**
-     * 工作空间 ID。Workspace ID.
+     * 工作空间ID
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -43,7 +43,7 @@ public class ShowAlertRuleTemplateRequest {
     }
 
     /**
-     * 告警规则模板 ID。Alert rule template ID.
+     * 告警规则模板Id
      * @return templateId
      */
     public String getTemplateId() {

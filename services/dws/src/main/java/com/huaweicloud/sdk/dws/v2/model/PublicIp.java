@@ -51,7 +51,7 @@ public class PublicIp {
     }
 
     /**
-     * **参数解释**： 弹性IP绑定类型。 **约束限制**： 不涉及。 **取值范围**： auto_assign：自动绑定。 not_use：暂未使用。 bind_existing ：使用已有。 **默认取值**： null
+     * **参数解释**： 弹性IP绑定类型。 **约束限制**： 不涉及。 **取值范围**： - auto_assign：自动绑定。 - not_use：暂未使用。 - bind_existing ：使用已有。  **默认取值**： null
      * @return publicBindType
      */
     public String getPublicBindType() {

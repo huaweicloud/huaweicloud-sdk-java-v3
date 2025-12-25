@@ -26,7 +26,7 @@ public class ResourceTag {
     }
 
     /**
-     * **参数解释**： 标签名。 **约束限制**： 不涉及。 **取值范围**： 最大长度128个unicode字符。           **默认取值**： 不涉及。 
+     * **参数解释**： 标签名。 **约束限制**： 不涉及。 **取值范围**： 长度[1,128]个unicode字符。           **默认取值**： 不涉及。 
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class ResourceTag {
     }
 
     /**
-     * **参数解释**： 标签值。 **约束限制**： 不涉及。 **取值范围**： 最大长度255个unicode字符。           **默认取值**： 不涉及。 
+     * **参数解释**： 标签值。 **约束限制**： 不涉及。 **取值范围**： 长度为[0,255]个unicode字符。           **默认取值**： 不涉及。 
      * @return value
      */
     public String getValue() {

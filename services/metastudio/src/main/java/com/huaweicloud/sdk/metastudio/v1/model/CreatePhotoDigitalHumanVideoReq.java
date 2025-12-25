@@ -58,6 +58,21 @@ public class CreatePhotoDigitalHumanVideoReq {
 
     private CallBackConfig callbackConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id_card_image1")
+
+    private String idCardImage1;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id_card_image2")
+
+    private String idCardImage2;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "authorize_use_human_image")
+
+    private Boolean authorizeUseHumanImage;
+
     public CreatePhotoDigitalHumanVideoReq withScriptId(String scriptId) {
         this.scriptId = scriptId;
         return this;
@@ -282,6 +297,57 @@ public class CreatePhotoDigitalHumanVideoReq {
         this.callbackConfig = callbackConfig;
     }
 
+    public CreatePhotoDigitalHumanVideoReq withIdCardImage1(String idCardImage1) {
+        this.idCardImage1 = idCardImage1;
+        return this;
+    }
+
+    /**
+     * 身份证国徽面照片，需要Base64编码。
+     * @return idCardImage1
+     */
+    public String getIdCardImage1() {
+        return idCardImage1;
+    }
+
+    public void setIdCardImage1(String idCardImage1) {
+        this.idCardImage1 = idCardImage1;
+    }
+
+    public CreatePhotoDigitalHumanVideoReq withIdCardImage2(String idCardImage2) {
+        this.idCardImage2 = idCardImage2;
+        return this;
+    }
+
+    /**
+     * 身份证人像面照片，需要Base64编码。
+     * @return idCardImage2
+     */
+    public String getIdCardImage2() {
+        return idCardImage2;
+    }
+
+    public void setIdCardImage2(String idCardImage2) {
+        this.idCardImage2 = idCardImage2;
+    }
+
+    public CreatePhotoDigitalHumanVideoReq withAuthorizeUseHumanImage(Boolean authorizeUseHumanImage) {
+        this.authorizeUseHumanImage = authorizeUseHumanImage;
+        return this;
+    }
+
+    /**
+     * 授权使用照片
+     * @return authorizeUseHumanImage
+     */
+    public Boolean getAuthorizeUseHumanImage() {
+        return authorizeUseHumanImage;
+    }
+
+    public void setAuthorizeUseHumanImage(Boolean authorizeUseHumanImage) {
+        this.authorizeUseHumanImage = authorizeUseHumanImage;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -297,7 +363,10 @@ public class CreatePhotoDigitalHumanVideoReq {
             && Objects.equals(this.outputAssetConfig, that.outputAssetConfig)
             && Objects.equals(this.backgroundMusicConfig, that.backgroundMusicConfig)
             && Objects.equals(this.reviewConfig, that.reviewConfig)
-            && Objects.equals(this.callbackConfig, that.callbackConfig);
+            && Objects.equals(this.callbackConfig, that.callbackConfig)
+            && Objects.equals(this.idCardImage1, that.idCardImage1)
+            && Objects.equals(this.idCardImage2, that.idCardImage2)
+            && Objects.equals(this.authorizeUseHumanImage, that.authorizeUseHumanImage);
     }
 
     @Override
@@ -310,7 +379,10 @@ public class CreatePhotoDigitalHumanVideoReq {
             outputAssetConfig,
             backgroundMusicConfig,
             reviewConfig,
-            callbackConfig);
+            callbackConfig,
+            idCardImage1,
+            idCardImage2,
+            authorizeUseHumanImage);
     }
 
     @Override
@@ -326,6 +398,9 @@ public class CreatePhotoDigitalHumanVideoReq {
         sb.append("    backgroundMusicConfig: ").append(toIndentedString(backgroundMusicConfig)).append("\n");
         sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
         sb.append("    callbackConfig: ").append(toIndentedString(callbackConfig)).append("\n");
+        sb.append("    idCardImage1: ").append(toIndentedString(idCardImage1)).append("\n");
+        sb.append("    idCardImage2: ").append(toIndentedString(idCardImage2)).append("\n");
+        sb.append("    authorizeUseHumanImage: ").append(toIndentedString(authorizeUseHumanImage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -90,7 +90,7 @@ public class DssPool {
     }
 
     /**
-     * **参数解释**： 专属分布式存储池的存储类型。 - SSD：超高IO专属分布式存储池。 **取值范围**： 不涉及。
+     * **参数解释**： 专属分布式存储池的存储类型。 **取值范围**： - SSD：超高IO专属分布式存储池。
      * @return type
      */
     public String getType() {
@@ -158,7 +158,7 @@ public class DssPool {
     }
 
     /**
-     * **参数解释**： 专属分布式存储池的状态。 **取值范围**： available：专属分布式存储池处于可用状态。 deploying：专属分布式存储池处于正在部署的过程中，不可使用。 extending：专属分布式存储池处于正在扩容的过程中，可使用。
+     * **参数解释**： 专属分布式存储池的状态。 **取值范围**： - available：专属分布式存储池处于可用状态。 - deploying：专属分布式存储池处于正在部署的过程中，不可使用。 - extending：专属分布式存储池处于正在扩容的过程中，可使用。
      * @return status
      */
     public String getStatus() {

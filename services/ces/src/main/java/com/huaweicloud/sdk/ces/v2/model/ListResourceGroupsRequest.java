@@ -41,7 +41,7 @@ public class ListResourceGroupsRequest {
     private Integer limit;
 
     /**
-     * 资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,Manual（手动添加），不传代表查询所有资源分组类型,COMB（智能添加-组合匹配）,NAME（资源名称模糊匹配）
+     * **参数解释** 资源分组添加资源方式，不传代表查询所有资源分组类型。 **约束限制** 不涉及。 **取值范围** - EPS: 表示匹配企业项目 - TAG: 表示匹配标签 - Manual: 表示手动添加 - COMB: 表示组合匹配 - NAME: 表示匹配实例名称 **默认取值** 不涉及。
      */
     public static final class TypeEnum {
 
@@ -133,13 +133,94 @@ public class ListResourceGroupsRequest {
 
     private TypeEnum type;
 
+    /**
+     * **参数解释** 资源分组健康状态。 **约束限制** 不涉及。 **取值范围** - health: 表示健康 - unhealthy: 表示不健康 - no_alarm_rule: 表示未配置告警规则 **默认取值** 不涉及。
+     */
+    public static final class StatusEnum {
+
+        /**
+         * Enum HEALTH for value: "health"
+         */
+        public static final StatusEnum HEALTH = new StatusEnum("health");
+
+        /**
+         * Enum UNHEALTHY for value: "unhealthy"
+         */
+        public static final StatusEnum UNHEALTHY = new StatusEnum("unhealthy");
+
+        /**
+         * Enum NO_ALARM_RULE for value: "no_alarm_rule"
+         */
+        public static final StatusEnum NO_ALARM_RULE = new StatusEnum("no_alarm_rule");
+
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("health", HEALTH);
+            map.put("unhealthy", UNHEALTHY);
+            map.put("no_alarm_rule", NO_ALARM_RULE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
+        }
+
+        public static StatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private StatusEnum status;
+
     public ListResourceGroupsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
-     * 归属企业项目ID
+     * **参数解释**: 归属企业项目ID。 **约束限制**: 不涉及。 **取值范围**: 只能包含小写字母、数字、“-”、“_”，长度为36个字符。或者为0（代表默认企业项目ID），或者为all_granted_eps（代表所有企业项目ID）。 **默认取值**: 不涉及。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -156,7 +237,7 @@ public class ListResourceGroupsRequest {
     }
 
     /**
-     * 资源分组名称，支持模糊查询
+     * **参数解释** 资源分组名称，支持模糊查询。 **约束限制** 不涉及。 **取值范围** 包含字母、数字、_、-或汉字，长度为[1,128]个字符。 **默认取值** 不涉及。
      * @return groupName
      */
     public String getGroupName() {
@@ -173,7 +254,7 @@ public class ListResourceGroupsRequest {
     }
 
     /**
-     * 资源分组ID，以rg开头，后跟22位由字母或数字组成的字符串
+     * **参数解释** 资源分组ID。 **约束限制** 不涉及。 **取值范围** 以\"rg\"开头，后跟22位由字母或数字组成的字符串。 **默认取值** 不涉及。
      * @return groupId
      */
     public String getGroupId() {
@@ -190,7 +271,7 @@ public class ListResourceGroupsRequest {
     }
 
     /**
-     * 分页查询时查询的起始位置，表示从第几条数据开始，默认为0
+     * **参数解释** 分页起始值。 **约束限制** 不涉及。 **取值范围** 在[0,10000]区间内。 **默认取值** 0
      * minimum: 0
      * maximum: 10000
      * @return offset
@@ -209,7 +290,7 @@ public class ListResourceGroupsRequest {
     }
 
     /**
-     * 分页查询时每页的条目数，取值[1,100]，默认值为100
+     * **参数解释** 分页查询时每页的条目数。 **约束限制** 不涉及。 **取值范围** 在[1,100]区间内。 **默认取值** 100
      * minimum: 1
      * maximum: 100
      * @return limit
@@ -228,7 +309,7 @@ public class ListResourceGroupsRequest {
     }
 
     /**
-     * 资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,Manual（手动添加），不传代表查询所有资源分组类型,COMB（智能添加-组合匹配）,NAME（资源名称模糊匹配）
+     * **参数解释** 资源分组添加资源方式，不传代表查询所有资源分组类型。 **约束限制** 不涉及。 **取值范围** - EPS: 表示匹配企业项目 - TAG: 表示匹配标签 - Manual: 表示手动添加 - COMB: 表示组合匹配 - NAME: 表示匹配实例名称 **默认取值** 不涉及。
      * @return type
      */
     public TypeEnum getType() {
@@ -237,6 +318,23 @@ public class ListResourceGroupsRequest {
 
     public void setType(TypeEnum type) {
         this.type = type;
+    }
+
+    public ListResourceGroupsRequest withStatus(StatusEnum status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * **参数解释** 资源分组健康状态。 **约束限制** 不涉及。 **取值范围** - health: 表示健康 - unhealthy: 表示不健康 - no_alarm_rule: 表示未配置告警规则 **默认取值** 不涉及。
+     * @return status
+     */
+    public StatusEnum getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusEnum status) {
+        this.status = status;
     }
 
     @Override
@@ -251,12 +349,12 @@ public class ListResourceGroupsRequest {
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.groupId, that.groupId)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.type, that.type);
+            && Objects.equals(this.type, that.type) && Objects.equals(this.status, that.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, groupName, groupId, offset, limit, type);
+        return Objects.hash(enterpriseProjectId, groupName, groupId, offset, limit, type, status);
     }
 
     @Override
@@ -269,6 +367,7 @@ public class ListResourceGroupsRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

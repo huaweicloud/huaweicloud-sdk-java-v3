@@ -202,7 +202,7 @@ public class TopoInstanceInfo {
     }
 
     /**
-     * **参数解释**： 实例状态。 **取值范围**： 不涉及。
+     * **参数解释**： 节点状态。 **取值范围**： - 100：创建中 - 200：可用 - 300：不可用 - 400：已删除 - 303：创建失败
      * @return status
      */
     public String getStatus() {

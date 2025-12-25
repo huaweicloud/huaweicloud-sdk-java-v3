@@ -58,7 +58,7 @@ public class ClusterRecoveryProgress {
     }
 
     /**
-     * **参数解释**： 动作类型。 **取值范围**： 不涉及。
+     * **参数解释**： - Backup，备份。 - Restore，恢复。 **取值范围**： 不涉及。
      * @return actionType
      */
     public String getActionType() {

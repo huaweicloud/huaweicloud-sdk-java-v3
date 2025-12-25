@@ -11,12 +11,12 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 接口BFD/NQA等可靠性检测信息,只有配置BFD和NQA的扩展参数才会显示扩展参数信息，扩展参数信息[（预留字段，暂不支持）](tag:dt)
+ * 虚拟接口BFD/NQA等可靠性检测的扩展信息
  */
 public class VifExtendAttribute {
 
     /**
-     * 虚拟接口的可用性检测类型
+     * 虚拟接口的可用性检测类型。取值范围： - nqa：网络质量分析 - bfd：双向转发检测
      */
     public static final class HaTypeEnum {
 
@@ -91,7 +91,7 @@ public class VifExtendAttribute {
     private HaTypeEnum haType;
 
     /**
-     * 检测的具体的配置模式
+     * 虚拟接口可用性检测的配置模式。取值范围： - auto_single：自动单跳bfd - auto_multi：自动多跳bfd - static_single：静态单跳bfd - static_multi：静态多跳bfd - enhance_nqa：增强型nqa
      */
     public static final class HaModeEnum {
 
@@ -208,13 +208,23 @@ public class VifExtendAttribute {
 
     private Integer localDisclaim;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_remote_disclaim")
+
+    private Integer ipv6RemoteDisclaim;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_local_disclaim")
+
+    private Integer ipv6LocalDisclaim;
+
     public VifExtendAttribute withHaType(HaTypeEnum haType) {
         this.haType = haType;
         return this;
     }
 
     /**
-     * 虚拟接口的可用性检测类型
+     * 虚拟接口的可用性检测类型。取值范围： - nqa：网络质量分析 - bfd：双向转发检测
      * @return haType
      */
     public HaTypeEnum getHaType() {
@@ -231,7 +241,7 @@ public class VifExtendAttribute {
     }
 
     /**
-     * 检测的具体的配置模式
+     * 虚拟接口可用性检测的配置模式。取值范围： - auto_single：自动单跳bfd - auto_multi：自动多跳bfd - static_single：静态单跳bfd - static_multi：静态多跳bfd - enhance_nqa：增强型nqa
      * @return haMode
      */
     public HaModeEnum getHaMode() {
@@ -249,6 +259,8 @@ public class VifExtendAttribute {
 
     /**
      * 检测的重试次数
+     * minimum: 3
+     * maximum: 20
      * @return detectMultiplier
      */
     public Integer getDetectMultiplier() {
@@ -265,7 +277,9 @@ public class VifExtendAttribute {
     }
 
     /**
-     * 检测的接收时长间隔
+     * 检测的接收时长间隔，单位为毫秒。   - 当ha_type为nqa时，实际生效的时间间隔为按秒为单位将输入的数值向上取整，例如输入1500毫秒，实际时间间隔为2秒；   - 当ha_type为bfd时，实际生效的时间间隔为按毫秒为单位的输入数值。最小值为200毫秒，最大值为1000毫秒。
+     * minimum: 200
+     * maximum: 5000
      * @return minRxInterval
      */
     public Integer getMinRxInterval() {
@@ -282,7 +296,9 @@ public class VifExtendAttribute {
     }
 
     /**
-     * 检测的发送时长间隔
+     * 检测的发送时长间隔，单位为毫秒。   - 当ha_type为nqa时，实际生效的时间间隔为按秒为单位将输入的数值向上取整，例如输入1500毫秒，实际时间间隔为2秒；   - 当ha_type为bfd时，实际生效的时间间隔为按毫秒为单位的输入数值。最小值为200毫秒，最大值为1000毫秒。
+     * minimum: 200
+     * maximum: 5000
      * @return minTxInterval
      */
     public Integer getMinTxInterval() {
@@ -300,6 +316,8 @@ public class VifExtendAttribute {
 
     /**
      * 检测的远端的标识，用于静态BFD
+     * minimum: 1
+     * maximum: 16384
      * @return remoteDisclaim
      */
     public Integer getRemoteDisclaim() {
@@ -317,6 +335,8 @@ public class VifExtendAttribute {
 
     /**
      * 检测的本端的标识，用于静态BFD
+     * minimum: 1
+     * maximum: 16384
      * @return localDisclaim
      */
     public Integer getLocalDisclaim() {
@@ -325,6 +345,44 @@ public class VifExtendAttribute {
 
     public void setLocalDisclaim(Integer localDisclaim) {
         this.localDisclaim = localDisclaim;
+    }
+
+    public VifExtendAttribute withIpv6RemoteDisclaim(Integer ipv6RemoteDisclaim) {
+        this.ipv6RemoteDisclaim = ipv6RemoteDisclaim;
+        return this;
+    }
+
+    /**
+     * 检测的远端的标识，用于静态ipv6 BFD
+     * minimum: 1
+     * maximum: 16384
+     * @return ipv6RemoteDisclaim
+     */
+    public Integer getIpv6RemoteDisclaim() {
+        return ipv6RemoteDisclaim;
+    }
+
+    public void setIpv6RemoteDisclaim(Integer ipv6RemoteDisclaim) {
+        this.ipv6RemoteDisclaim = ipv6RemoteDisclaim;
+    }
+
+    public VifExtendAttribute withIpv6LocalDisclaim(Integer ipv6LocalDisclaim) {
+        this.ipv6LocalDisclaim = ipv6LocalDisclaim;
+        return this;
+    }
+
+    /**
+     * 检测的本端的标识，用于静态ipv6 BFD
+     * minimum: 1
+     * maximum: 16384
+     * @return ipv6LocalDisclaim
+     */
+    public Integer getIpv6LocalDisclaim() {
+        return ipv6LocalDisclaim;
+    }
+
+    public void setIpv6LocalDisclaim(Integer ipv6LocalDisclaim) {
+        this.ipv6LocalDisclaim = ipv6LocalDisclaim;
     }
 
     @Override
@@ -341,13 +399,22 @@ public class VifExtendAttribute {
             && Objects.equals(this.minRxInterval, that.minRxInterval)
             && Objects.equals(this.minTxInterval, that.minTxInterval)
             && Objects.equals(this.remoteDisclaim, that.remoteDisclaim)
-            && Objects.equals(this.localDisclaim, that.localDisclaim);
+            && Objects.equals(this.localDisclaim, that.localDisclaim)
+            && Objects.equals(this.ipv6RemoteDisclaim, that.ipv6RemoteDisclaim)
+            && Objects.equals(this.ipv6LocalDisclaim, that.ipv6LocalDisclaim);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(haType, haMode, detectMultiplier, minRxInterval, minTxInterval, remoteDisclaim, localDisclaim);
+        return Objects.hash(haType,
+            haMode,
+            detectMultiplier,
+            minRxInterval,
+            minTxInterval,
+            remoteDisclaim,
+            localDisclaim,
+            ipv6RemoteDisclaim,
+            ipv6LocalDisclaim);
     }
 
     @Override
@@ -361,6 +428,8 @@ public class VifExtendAttribute {
         sb.append("    minTxInterval: ").append(toIndentedString(minTxInterval)).append("\n");
         sb.append("    remoteDisclaim: ").append(toIndentedString(remoteDisclaim)).append("\n");
         sb.append("    localDisclaim: ").append(toIndentedString(localDisclaim)).append("\n");
+        sb.append("    ipv6RemoteDisclaim: ").append(toIndentedString(ipv6RemoteDisclaim)).append("\n");
+        sb.append("    ipv6LocalDisclaim: ").append(toIndentedString(ipv6LocalDisclaim)).append("\n");
         sb.append("}");
         return sb.toString();
     }

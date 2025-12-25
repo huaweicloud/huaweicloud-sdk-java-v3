@@ -170,7 +170,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 配置状态。 **取值范围**： 不涉及。
+     * **参数解释**： 配置状态。 **取值范围**： - In-Sync：应用完成。 - Applying：应用中。 - Pending-Reboot：待重启生效。 - Sync-Failure：修改失败。
      * @return configurationStatus
      */
     public String getConfigurationStatus() {
@@ -204,7 +204,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 类型。 **取值范围**： 不涉及。
+     * **参数解释**： 类型。 **取值范围**： - dws-cn：cn节点。 - dws：dn节点。 - cms：cms节点。 - gtm：gtm节点。 - vw：vw节点。
      * @return type
      */
     public String getType() {
@@ -408,7 +408,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 状态。 **取值范围**： 不涉及。
+     * **参数解释**： 状态。 **取值范围**： - BUILD：创建中 - ACTIVE：可用 - FAILED：不可用 - DELETED：已删除 - REBOOTING：重启中 - ERROR：创建失败 - SHUTDOWN：关机
      * @return status
      */
     public String getStatus() {

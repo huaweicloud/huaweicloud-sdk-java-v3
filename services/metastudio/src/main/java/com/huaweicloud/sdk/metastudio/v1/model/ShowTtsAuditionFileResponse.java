@@ -20,6 +20,11 @@ public class ShowTtsAuditionFileResponse extends SdkResponse {
     private Boolean isFileComplete;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "code")
+
+    private String code;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
 
     private String message;
@@ -44,6 +49,23 @@ public class ShowTtsAuditionFileResponse extends SdkResponse {
 
     public void setIsFileComplete(Boolean isFileComplete) {
         this.isFileComplete = isFileComplete;
+    }
+
+    public ShowTtsAuditionFileResponse withCode(String code) {
+        this.code = code;
+        return this;
+    }
+
+    /**
+     * 返回码。
+     * @return code
+     */
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public ShowTtsAuditionFileResponse withMessage(String message) {
@@ -105,13 +127,13 @@ public class ShowTtsAuditionFileResponse extends SdkResponse {
             return false;
         }
         ShowTtsAuditionFileResponse that = (ShowTtsAuditionFileResponse) obj;
-        return Objects.equals(this.isFileComplete, that.isFileComplete) && Objects.equals(this.message, that.message)
-            && Objects.equals(this.files, that.files);
+        return Objects.equals(this.isFileComplete, that.isFileComplete) && Objects.equals(this.code, that.code)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.files, that.files);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(isFileComplete, message, files);
+        return Objects.hash(isFileComplete, code, message, files);
     }
 
     @Override
@@ -119,6 +141,7 @@ public class ShowTtsAuditionFileResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowTtsAuditionFileResponse {\n");
         sb.append("    isFileComplete: ").append(toIndentedString(isFileComplete)).append("\n");
+        sb.append("    code: ").append(toIndentedString(code)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    files: ").append(toIndentedString(files)).append("\n");
         sb.append("}");

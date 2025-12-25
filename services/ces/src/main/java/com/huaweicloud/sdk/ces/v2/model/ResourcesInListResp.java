@@ -34,7 +34,7 @@ public class ResourcesInListResp {
     }
 
     /**
-     * **参数解释**： 资源分组ID，监控范围为资源分组时存在该值。 **取值范围**： 以rg开头，后跟22个字母或数字。 
+     * **参数解释**： 资源分组ID，监控范围为资源分组时，存在该值。 **取值范围**： 以rg开头，后跟22个字母或数字。 
      * @return resourceGroupId
      */
     public String getResourceGroupId() {
@@ -51,7 +51,7 @@ public class ResourcesInListResp {
     }
 
     /**
-     * **参数解释**： 资源分组名称，监控范围为资源分组时存在该值。 **取值范围**： 长度为[1,128]个字符。 
+     * **参数解释**： 资源分组名称，监控范围为资源分组时，存在该值。 **取值范围**： 长度为[1,128]个字符。 
      * @return resourceGroupName
      */
     public String getResourceGroupName() {

@@ -15,7 +15,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 告警记录详细信息
+ * **参数解释**： 告警记录详细信息 
  */
 public class AlarmHistoryItemV2 {
 
@@ -35,7 +35,7 @@ public class AlarmHistoryItemV2 {
     private String name;
 
     /**
-     * **参数解释**： 告警记录的状态。 **取值范围**： 取值为ok，alarm，invalid, ok_manual； ok为正常，alarm为告警，invalid为已失效,ok_manual为手动恢复。 
+     * **参数解释**： 告警规则状态 **取值范围**： 枚举值。 - ok：正常 - alarm：告警 - invalid：已失效 - insufficient_data: 数据不足 - ok_manual: 手动恢复 
      */
     public static final class StatusEnum {
 
@@ -55,6 +55,11 @@ public class AlarmHistoryItemV2 {
         public static final StatusEnum INVALID = new StatusEnum("invalid");
 
         /**
+         * Enum INSUFFICIENT_DATA for value: "insufficient_data"
+         */
+        public static final StatusEnum INSUFFICIENT_DATA = new StatusEnum("insufficient_data");
+
+        /**
          * Enum OK_MANUAL for value: "ok_manual"
          */
         public static final StatusEnum OK_MANUAL = new StatusEnum("ok_manual");
@@ -66,6 +71,7 @@ public class AlarmHistoryItemV2 {
             map.put("ok", OK);
             map.put("alarm", ALARM);
             map.put("invalid", INVALID);
+            map.put("insufficient_data", INSUFFICIENT_DATA);
             map.put("ok_manual", OK_MANUAL);
             return Collections.unmodifiableMap(map);
         }
@@ -122,7 +128,7 @@ public class AlarmHistoryItemV2 {
     private StatusEnum status;
 
     /**
-     * **参数解释**： 告警记录的告警级别。 **取值范围**： 值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。 
+     * **参数解释**： 告警记录的告警级别。 **取值范围**： 值为1,2,3,4 - 1：紧急 - 2：重要 - 3：次要 - 4：提示 
      */
     public static final class LevelEnum {
 
@@ -209,7 +215,7 @@ public class AlarmHistoryItemV2 {
     private LevelEnum level;
 
     /**
-     * **参数解释**： 告警规则类型。 **取值范围**： 枚举值。ALL_INSTANCE为全部资源指标告警，RESOURCE_GROUP为资源分组指标告警，MULTI_INSTANCE为指定资源指标告警，EVENT.SYS为系统事件告警，EVENT.CUSTOM自定义事件告警，DNSHealthCheck为健康检查告警。 
+     * **参数解释**： 告警规则类型。 **取值范围**： 枚举值 - ALL_INSTANCE：全部资源指标告警 - RESOURCE_GROUP：资源分组指标告警 - MULTI_INSTANCE：指定资源指标告警 - EVENT.SYS：系统事件告警 - EVENT.CUSTOM：自定义事件告警 - DNSHealthCheck：健康检查告警 
      */
     public static final class TypeEnum {
 
@@ -367,13 +373,88 @@ public class AlarmHistoryItemV2 {
 
     private List<DataPointInfo> dataPoints = null;
 
+    /**
+     * **参数解释**： 告警屏蔽状态。 **取值范围**： - MASKED：已屏蔽 - UN_MASKED：未屏蔽 
+     */
+    public static final class MaskStatusEnum {
+
+        /**
+         * Enum MASKED for value: "MASKED"
+         */
+        public static final MaskStatusEnum MASKED = new MaskStatusEnum("MASKED");
+
+        /**
+         * Enum UN_MASKED for value: "UN_MASKED"
+         */
+        public static final MaskStatusEnum UN_MASKED = new MaskStatusEnum("UN_MASKED");
+
+        private static final Map<String, MaskStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, MaskStatusEnum> createStaticFields() {
+            Map<String, MaskStatusEnum> map = new HashMap<>();
+            map.put("MASKED", MASKED);
+            map.put("UN_MASKED", UN_MASKED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        MaskStatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static MaskStatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MaskStatusEnum(value));
+        }
+
+        public static MaskStatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof MaskStatusEnum) {
+                return this.value.equals(((MaskStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mask_status")
+
+    private MaskStatusEnum maskStatus;
+
     public AlarmHistoryItemV2 withRecordId(String recordId) {
         this.recordId = recordId;
         return this;
     }
 
     /**
-     * **参数解释**： 告警记录ID。 **取值范围**： 字符串长度为24。 
+     * **参数解释**： 告警记录ID。 **取值范围**： 以ah开头，后跟22位由字母或数字组成的字符串，字符串长度为24。 
      * @return recordId
      */
     public String getRecordId() {
@@ -390,7 +471,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * **参数解释**： 告警规则的ID，如：al1603131199286dzxpqK3Ez。 **取值范围**： 字符串长度为24 
+     * **参数解释**： 告警规则ID。 **取值范围**： 以al开头，后跟22位的字母或数字。 
      * @return alarmId
      */
     public String getAlarmId() {
@@ -407,7 +488,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * **参数解释**： 告警规则的名称，如：alarm-test01。 **取值范围**： 字符串长度在 1 到 128 之间。 
+     * **参数解释**： 告警名称。 **取值范围**： 只能包含0-9/a-z/A-Z/_/-或汉字，长度为[1,128]个字符。 
      * @return name
      */
     public String getName() {
@@ -424,7 +505,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * **参数解释**： 告警记录的状态。 **取值范围**： 取值为ok，alarm，invalid, ok_manual； ok为正常，alarm为告警，invalid为已失效,ok_manual为手动恢复。 
+     * **参数解释**： 告警规则状态 **取值范围**： 枚举值。 - ok：正常 - alarm：告警 - invalid：已失效 - insufficient_data: 数据不足 - ok_manual: 手动恢复 
      * @return status
      */
     public StatusEnum getStatus() {
@@ -441,7 +522,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * **参数解释**： 告警记录的告警级别。 **取值范围**： 值为1,2,3,4；1为紧急，2为重要，3为次要，4为提示。 
+     * **参数解释**： 告警记录的告警级别。 **取值范围**： 值为1,2,3,4 - 1：紧急 - 2：重要 - 3：次要 - 4：提示 
      * @return level
      */
     public LevelEnum getLevel() {
@@ -458,7 +539,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * **参数解释**： 告警规则类型。 **取值范围**： 枚举值。ALL_INSTANCE为全部资源指标告警，RESOURCE_GROUP为资源分组指标告警，MULTI_INSTANCE为指定资源指标告警，EVENT.SYS为系统事件告警，EVENT.CUSTOM自定义事件告警，DNSHealthCheck为健康检查告警。 
+     * **参数解释**： 告警规则类型。 **取值范围**： 枚举值 - ALL_INSTANCE：全部资源指标告警 - RESOURCE_GROUP：资源分组指标告警 - MULTI_INSTANCE：指定资源指标告警 - EVENT.SYS：系统事件告警 - EVENT.CUSTOM：自定义事件告警 - DNSHealthCheck：健康检查告警 
      * @return type
      */
     public TypeEnum getType() {
@@ -475,7 +556,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * **参数解释**： 是否发送通知 **取值范围**： true：发送通知 false：不发送通知 
+     * **参数解释**： 是否发送通知 **取值范围**： - true：发送通知 - false：不发送通知 
      * @return actionEnabled
      */
     public Boolean getActionEnabled() {
@@ -671,7 +752,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * **参数解释**： 告警触发的动作列表。  结构如下：  {  \"type\": \"notification\", \"notification_list\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  }  type取值： notification：通知。 autoscaling：弹性伸缩。 notification_list：告警状态发生变化时，被通知对象的列表。 
+     * **参数解释**： 告警触发时，通知组/主题订阅的信息。结构如下：  {  \"type\": \"notification\", \"notification_list\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  } 
      * @return alarmActions
      */
     public List<AlarmHistoryItemV2AlarmActions> getAlarmActions() {
@@ -704,7 +785,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * **参数解释**： 告警恢复触发的动作。  结构如下：  {  \"type\": \"notification\", \"notification_list\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  } type取值：  notification：通知。  notification_list：告警状态发生变化时，被通知对象的列表。 
+     * **参数解释**： 告警恢复时，通知组/主题订阅的信息。结构如下：  {  \"type\": \"notification\", \"notification_list\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"]  } 
      * @return okActions
      */
     public List<AlarmHistoryItemV2AlarmActions> getOkActions() {
@@ -748,6 +829,23 @@ public class AlarmHistoryItemV2 {
         this.dataPoints = dataPoints;
     }
 
+    public AlarmHistoryItemV2 withMaskStatus(MaskStatusEnum maskStatus) {
+        this.maskStatus = maskStatus;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 告警屏蔽状态。 **取值范围**： - MASKED：已屏蔽 - UN_MASKED：未屏蔽 
+     * @return maskStatus
+     */
+    public MaskStatusEnum getMaskStatus() {
+        return maskStatus;
+    }
+
+    public void setMaskStatus(MaskStatusEnum maskStatus) {
+        this.maskStatus = maskStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -767,7 +865,7 @@ public class AlarmHistoryItemV2 {
             && Objects.equals(this.metric, that.metric) && Objects.equals(this.condition, that.condition)
             && Objects.equals(this.additionalInfo, that.additionalInfo)
             && Objects.equals(this.alarmActions, that.alarmActions) && Objects.equals(this.okActions, that.okActions)
-            && Objects.equals(this.dataPoints, that.dataPoints);
+            && Objects.equals(this.dataPoints, that.dataPoints) && Objects.equals(this.maskStatus, that.maskStatus);
     }
 
     @Override
@@ -789,7 +887,8 @@ public class AlarmHistoryItemV2 {
             additionalInfo,
             alarmActions,
             okActions,
-            dataPoints);
+            dataPoints,
+            maskStatus);
     }
 
     @Override
@@ -814,6 +913,7 @@ public class AlarmHistoryItemV2 {
         sb.append("    alarmActions: ").append(toIndentedString(alarmActions)).append("\n");
         sb.append("    okActions: ").append(toIndentedString(okActions)).append("\n");
         sb.append("    dataPoints: ").append(toIndentedString(dataPoints)).append("\n");
+        sb.append("    maskStatus: ").append(toIndentedString(maskStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

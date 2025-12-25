@@ -26,7 +26,7 @@ public class Datastore {
     }
 
     /**
-     * **参数解释**： 集群类型。 **取值范围**： 不涉及。
+     * **参数解释**： 集群类型。 **取值范围**： - dws: dws存算一体。 - dws3.0: dws存算分离。 - hybrid: dws实时数仓。
      * @return type
      */
     public String getType() {

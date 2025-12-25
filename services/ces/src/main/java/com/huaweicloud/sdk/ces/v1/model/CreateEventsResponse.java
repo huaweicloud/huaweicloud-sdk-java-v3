@@ -17,14 +17,14 @@ public class CreateEventsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private List<CreateEventsResponseBody> body = null;
+    private List<Event> body = null;
 
-    public CreateEventsResponse withBody(List<CreateEventsResponseBody> body) {
+    public CreateEventsResponse withBody(List<Event> body) {
         this.body = body;
         return this;
     }
 
-    public CreateEventsResponse addBodyItem(CreateEventsResponseBody bodyItem) {
+    public CreateEventsResponse addBodyItem(Event bodyItem) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class CreateEventsResponse extends SdkResponse {
         return this;
     }
 
-    public CreateEventsResponse withBody(Consumer<List<CreateEventsResponseBody>> bodySetter) {
+    public CreateEventsResponse withBody(Consumer<List<Event>> bodySetter) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -44,11 +44,11 @@ public class CreateEventsResponse extends SdkResponse {
      * 事件响应体
      * @return body
      */
-    public List<CreateEventsResponseBody> getBody() {
+    public List<Event> getBody() {
         return body;
     }
 
-    public void setBody(List<CreateEventsResponseBody> body) {
+    public void setBody(List<Event> body) {
         this.body = body;
     }
 

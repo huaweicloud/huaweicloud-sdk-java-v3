@@ -5324,30 +5324,30 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListJarPackageStatisticsRequest::getEnterpriseProjectId,
                 ListJarPackageStatisticsRequest::setEnterpriseProjectId));
-        builder.<String>withRequestField("file_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJarPackageStatisticsRequest::getFileName,
-                ListJarPackageStatisticsRequest::setFileName));
-        builder.<String>withRequestField("category",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListJarPackageStatisticsRequest::getCategory,
-                ListJarPackageStatisticsRequest::setCategory));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListJarPackageStatisticsRequest::getLimit,
-                ListJarPackageStatisticsRequest::setLimit));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListJarPackageStatisticsRequest::getOffset,
                 ListJarPackageStatisticsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJarPackageStatisticsRequest::getLimit,
+                ListJarPackageStatisticsRequest::setLimit));
+        builder.<String>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJarPackageStatisticsRequest::getCategory,
+                ListJarPackageStatisticsRequest::setCategory));
+        builder.<String>withRequestField("file_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJarPackageStatisticsRequest::getFileName,
+                ListJarPackageStatisticsRequest::setFileName));
 
         // response
 
@@ -6598,6 +6598,16 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRaspEventsRequest::getEnterpriseProjectId,
                 ListRaspEventsRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRaspEventsRequest::getOffset, ListRaspEventsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRaspEventsRequest::getLimit, ListRaspEventsRequest::setLimit));
         builder.<String>withRequestField("host_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -6613,20 +6623,10 @@ public class HssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListRaspEventsRequest::getEndTime, ListRaspEventsRequest::setEndTime));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRaspEventsRequest::getLimit, ListRaspEventsRequest::setLimit));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListRaspEventsRequest::getOffset, ListRaspEventsRequest::setOffset));
-        builder.<ListRaspEventsRequest.AppTypeEnum>withRequestField("app_type",
+        builder.<String>withRequestField("app_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListRaspEventsRequest.AppTypeEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRaspEventsRequest::getAppType, ListRaspEventsRequest::setAppType));
         builder.<String>withRequestField("severity",
             LocationType.Query,
@@ -6638,10 +6638,10 @@ public class HssMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRaspEventsRequest::getAttackTag, ListRaspEventsRequest::setAttackTag));
-        builder.<ListRaspEventsRequest.ProtectStatusEnum>withRequestField("protect_status",
+        builder.<String>withRequestField("protect_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListRaspEventsRequest.ProtectStatusEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRaspEventsRequest::getProtectStatus, ListRaspEventsRequest::setProtectStatus));
 
         // response
@@ -17991,11 +17991,6 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImageRiskConfigsRequest::getInstanceId,
                 ListImageRiskConfigsRequest::setInstanceId));
-        builder.<String>withRequestField("region",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListImageRiskConfigsRequest::getRegion, ListImageRiskConfigsRequest::setRegion));
 
         // response
 
@@ -18153,12 +18148,6 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImageVulnerabilitiesRequest::getEnterpriseProjectId,
                 ListImageVulnerabilitiesRequest::setEnterpriseProjectId));
-        builder.<String>withRequestField("image_type",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListImageVulnerabilitiesRequest::getImageType,
-                ListImageVulnerabilitiesRequest::setImageType));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -18171,6 +18160,12 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListImageVulnerabilitiesRequest::getLimit,
                 ListImageVulnerabilitiesRequest::setLimit));
+        builder.<String>withRequestField("image_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageVulnerabilitiesRequest::getImageType,
+                ListImageVulnerabilitiesRequest::setImageType));
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -18218,12 +18213,12 @@ public class HssMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImageVulnerabilitiesRequest::getType, ListImageVulnerabilitiesRequest::setType));
-        builder.<String>withRequestField("region",
-            LocationType.Header,
+        builder.<String>withRequestField("handle_status",
+            LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListImageVulnerabilitiesRequest::getRegion,
-                ListImageVulnerabilitiesRequest::setRegion));
+            f -> f.withMarshaller(ListImageVulnerabilitiesRequest::getHandleStatus,
+                ListImageVulnerabilitiesRequest::setHandleStatus));
 
         // response
 

@@ -64,7 +64,7 @@ public class GrantAuthority {
     }
 
     /**
-     * **参数解释**： 权限类型。 **取值范围**： 不涉及。
+     * **参数解释**： 权限类型。 **取值范围**： - DATABASE：数据库。 - SCHEMA：模式。 - TABLE：表。 - VIEW：视图。 - COLUMN：列。 - FUNCTION：函数。 - SEQUENCE：序列。 - NODEGROUP：节点组。
      * @return type
      */
     public String getType() {

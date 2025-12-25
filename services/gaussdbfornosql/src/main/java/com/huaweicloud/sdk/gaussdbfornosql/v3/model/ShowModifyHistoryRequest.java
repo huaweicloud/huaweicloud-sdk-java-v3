@@ -23,12 +23,12 @@ public class ShowModifyHistoryRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    private String offset;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    private String limit;
+    private Integer limit;
 
     public ShowModifyHistoryRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -64,7 +64,7 @@ public class ShowModifyHistoryRequest {
         this.parameterName = parameterName;
     }
 
-    public ShowModifyHistoryRequest withOffset(String offset) {
+    public ShowModifyHistoryRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
@@ -73,15 +73,15 @@ public class ShowModifyHistoryRequest {
      * **参数解释：** 索引位置，偏移量。 从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询）。 **约束限制：** 取值必须为数字，不能为负数。 **取值范围：** 非负整数。 **默认取值：** 0
      * @return offset
      */
-    public String getOffset() {
+    public Integer getOffset() {
         return offset;
     }
 
-    public void setOffset(String offset) {
+    public void setOffset(Integer offset) {
         this.offset = offset;
     }
 
-    public ShowModifyHistoryRequest withLimit(String limit) {
+    public ShowModifyHistoryRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
@@ -90,11 +90,11 @@ public class ShowModifyHistoryRequest {
      * **参数解释：** 查询个数上限值。 **约束限制：** 不涉及。 **取值范围：** 1~100。 **默认取值：** 100。不传该参数时，默认查询前100条信息。
      * @return limit
      */
-    public String getLimit() {
+    public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(String limit) {
+    public void setLimit(Integer limit) {
         this.limit = limit;
     }
 

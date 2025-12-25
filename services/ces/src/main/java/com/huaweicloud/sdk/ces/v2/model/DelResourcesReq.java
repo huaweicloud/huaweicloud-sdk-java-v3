@@ -45,7 +45,7 @@ public class DelResourcesReq {
     }
 
     /**
-     * 当资源添加方式为手动创建、资源层级为子维度时，删除资源分组中的资源只需传递删除的资源信息
+     * **参数解释** 当资源添加方式为手动创建、资源层级为子维度时，删除资源分组中的资源只需传递删除的资源信息 **约束限制** 包含的资源对象个数为1到1000 
      * @return resources
      */
     public List<Resource> getResources() {
@@ -78,7 +78,7 @@ public class DelResourcesReq {
     }
 
     /**
-     * 当资源添加方式为手动创建、资源层级为云产品时，删除资源分组中的资源只需传递删除的资源信息
+     * **参数解释** 当资源添加方式为手动创建、资源层级为子维度时，删除资源分组中的资源只需传递删除的资源信息 **约束限制** 包含的资源个数为1到50个 
      * @return productResources
      */
     public List<ProductResource> getProductResources() {

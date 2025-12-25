@@ -32,7 +32,7 @@ public class BatchUpdateOneClickAlarmPoliciesEnabledStateRequest {
     }
 
     /**
-     * 一键告警ID
+     * **参数解释** 一键告警ID **约束限制** 不涉及 **取值范围** 长度为1到64字符，只能包含字母数字 **默认取值** 不涉及 
      * @return oneClickAlarmId
      */
     public String getOneClickAlarmId() {
@@ -49,7 +49,7 @@ public class BatchUpdateOneClickAlarmPoliciesEnabledStateRequest {
     }
 
     /**
-     * 告警规则ID
+     * **参数解释** 告警规则ID **约束限制** 不涉及 **取值范围** 以al开头，后跟22个数字或字母。 **默认取值** 不涉及 
      * @return alarmId
      */
     public String getAlarmId() {

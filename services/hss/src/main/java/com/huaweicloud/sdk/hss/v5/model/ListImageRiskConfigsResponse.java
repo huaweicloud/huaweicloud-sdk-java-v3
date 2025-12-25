@@ -30,7 +30,7 @@ public class ListImageRiskConfigsResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释** 符合筛选条件的镜像安全配置检测结果总记录数 **取值范围** 取值0-2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return totalNum
@@ -65,7 +65,7 @@ public class ListImageRiskConfigsResponse extends SdkResponse {
     }
 
     /**
-     * 配置检测列表
+     * **参数解释** 包含查询到的镜像安全配置检测结果详情，每个元素对应一个镜像的基线检测汇总信息 **取值范围** 数组长度0-limit（每页显示个数） 
      * @return dataList
      */
     public List<ImageRiskConfigsInfoResponseInfo> getDataList() {

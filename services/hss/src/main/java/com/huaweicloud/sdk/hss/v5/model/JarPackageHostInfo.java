@@ -194,7 +194,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * **参数解释** 中间件包名称 **取值范围**: 字符长度0-256位
+     * **参数解释** 文件名称 **取值范围**: 字符长度0-256位
      * @return fileName
      */
     public String getFileName() {
@@ -245,7 +245,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * **参数解释** 中间件包后缀 **取值范围**: 字符长度0-32位
+     * **参数解释** 文件类型 **取值范围**: 字符长度0-32位
      * @return fileType
      */
     public String getFileType() {

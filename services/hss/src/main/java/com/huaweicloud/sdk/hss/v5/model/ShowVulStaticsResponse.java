@@ -52,7 +52,7 @@ public class ShowVulStaticsResponse extends SdkResponse {
     }
 
     /**
-     * 需紧急修复的漏洞数
+     * **参数解释**: 需紧急修复的漏洞数 **取值范围**: 取值0-2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return needUrgentRepair
@@ -71,7 +71,7 @@ public class ShowVulStaticsResponse extends SdkResponse {
     }
 
     /**
-     * 未完成修复的漏洞数
+     * **参数解释**: 未完成修复的漏洞数 **取值范围**: 取值0-2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return unrepair
@@ -90,7 +90,7 @@ public class ShowVulStaticsResponse extends SdkResponse {
     }
 
     /**
-     * 存在漏洞的服务器数
+     * **参数解释**: 存在漏洞的服务器数 **取值范围**: 取值0-2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return existedVulHosts
@@ -109,7 +109,7 @@ public class ShowVulStaticsResponse extends SdkResponse {
     }
 
     /**
-     * 今日处理漏洞数
+     * **参数解释**: 今日处理漏洞数 **取值范围**: 取值0-2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return todayHandle
@@ -128,7 +128,7 @@ public class ShowVulStaticsResponse extends SdkResponse {
     }
 
     /**
-     * 累计处理漏洞数
+     * **参数解释**: 累计处理漏洞数 **取值范围**: 取值0-2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return allHandle
@@ -147,7 +147,7 @@ public class ShowVulStaticsResponse extends SdkResponse {
     }
 
     /**
-     * 已支持漏洞数
+     * **参数解释**: 已支持漏洞数 **取值范围**: 取值0-2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return supported
@@ -166,7 +166,7 @@ public class ShowVulStaticsResponse extends SdkResponse {
     }
 
     /**
-     * 漏洞库更新时间
+     * **参数解释**: 漏洞库更新时间（时间戳，单位为毫秒） **取值范围**: 取值0-9223372036854775807 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return vulLibraryUpdateTime

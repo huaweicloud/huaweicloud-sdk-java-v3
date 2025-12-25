@@ -109,6 +109,11 @@ public class ContainerNetwork {
 
     private List<ContainerCIDR> cidrs = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enableContainerCIDRsReservation")
+
+    private Boolean enableContainerCIDRsReservation;
+
     public ContainerNetwork withMode(ModeEnum mode) {
         this.mode = mode;
         return this;
@@ -176,6 +181,23 @@ public class ContainerNetwork {
         this.cidrs = cidrs;
     }
 
+    public ContainerNetwork withEnableContainerCIDRsReservation(Boolean enableContainerCIDRsReservation) {
+        this.enableContainerCIDRsReservation = enableContainerCIDRsReservation;
+        return this;
+    }
+
+    /**
+     * **参数解释**： VPC容器网段预留。在VPC的默认路由表中添加容器网段路由，避免创建与容器网段冲突的子网。支持的集群版本如下： - v1.28.15-r70及以上版本 - v1.29.15-r30及以上版本 - v1.30.14-r30及以上版本 - v1.31.10-r30及以上版本 - v1.32.6-r30及以上版本 - v1.33.5-r20及以上版本  **约束限制**： 仅支持VPC网络模型集群。不支持集群设置不生效。 **取值范围**： - false：不开启VPC容器网段预留 - true：开启VPC容器网段预留  **默认取值**： false
+     * @return enableContainerCIDRsReservation
+     */
+    public Boolean getEnableContainerCIDRsReservation() {
+        return enableContainerCIDRsReservation;
+    }
+
+    public void setEnableContainerCIDRsReservation(Boolean enableContainerCIDRsReservation) {
+        this.enableContainerCIDRsReservation = enableContainerCIDRsReservation;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -186,12 +208,13 @@ public class ContainerNetwork {
         }
         ContainerNetwork that = (ContainerNetwork) obj;
         return Objects.equals(this.mode, that.mode) && Objects.equals(this.cidr, that.cidr)
-            && Objects.equals(this.cidrs, that.cidrs);
+            && Objects.equals(this.cidrs, that.cidrs)
+            && Objects.equals(this.enableContainerCIDRsReservation, that.enableContainerCIDRsReservation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(mode, cidr, cidrs);
+        return Objects.hash(mode, cidr, cidrs, enableContainerCIDRsReservation);
     }
 
     @Override
@@ -201,6 +224,9 @@ public class ContainerNetwork {
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    cidr: ").append(toIndentedString(cidr)).append("\n");
         sb.append("    cidrs: ").append(toIndentedString(cidrs)).append("\n");
+        sb.append("    enableContainerCIDRsReservation: ")
+            .append(toIndentedString(enableContainerCIDRsReservation))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

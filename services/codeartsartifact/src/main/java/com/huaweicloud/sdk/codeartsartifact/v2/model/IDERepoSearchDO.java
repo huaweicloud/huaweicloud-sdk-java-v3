@@ -38,7 +38,7 @@ public class IDERepoSearchDO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "in_project")
 
-    private String inProject;
+    private Boolean inProject;
 
     public IDERepoSearchDO withArtifactName(String artifactName) {
         this.artifactName = artifactName;
@@ -125,7 +125,7 @@ public class IDERepoSearchDO {
         this.projectId = projectId;
     }
 
-    public IDERepoSearchDO withInProject(String inProject) {
+    public IDERepoSearchDO withInProject(Boolean inProject) {
         this.inProject = inProject;
         return this;
     }
@@ -134,11 +134,11 @@ public class IDERepoSearchDO {
      * 是否在项目中
      * @return inProject
      */
-    public String getInProject() {
+    public Boolean getInProject() {
         return inProject;
     }
 
-    public void setInProject(String inProject) {
+    public void setInProject(Boolean inProject) {
         this.inProject = inProject;
     }
 
