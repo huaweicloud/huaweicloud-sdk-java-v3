@@ -21,7 +21,7 @@ public class BatchCopyResultVo {
     private String reason;
 
     /**
-     * 批量操作结果。
+     * 批量操作结果。取值意义： - success：成功 - fail：失败
      */
     public static final class StatusEnum {
 
@@ -123,7 +123,7 @@ public class BatchCopyResultVo {
     }
 
     /**
-     * 批量操作结果。
+     * 批量操作结果。取值意义： - success：成功 - fail：失败
      * @return status
      */
     public StatusEnum getStatus() {

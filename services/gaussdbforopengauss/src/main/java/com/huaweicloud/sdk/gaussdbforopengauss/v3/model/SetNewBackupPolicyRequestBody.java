@@ -14,16 +14,16 @@ public class SetNewBackupPolicyRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_policy")
 
-    private BackupPolicyInfo backupPolicy;
+    private BackupPolicyInfoOption backupPolicy;
 
-    public SetNewBackupPolicyRequestBody withBackupPolicy(BackupPolicyInfo backupPolicy) {
+    public SetNewBackupPolicyRequestBody withBackupPolicy(BackupPolicyInfoOption backupPolicy) {
         this.backupPolicy = backupPolicy;
         return this;
     }
 
-    public SetNewBackupPolicyRequestBody withBackupPolicy(Consumer<BackupPolicyInfo> backupPolicySetter) {
+    public SetNewBackupPolicyRequestBody withBackupPolicy(Consumer<BackupPolicyInfoOption> backupPolicySetter) {
         if (this.backupPolicy == null) {
-            this.backupPolicy = new BackupPolicyInfo();
+            this.backupPolicy = new BackupPolicyInfoOption();
             backupPolicySetter.accept(this.backupPolicy);
         }
 
@@ -34,11 +34,11 @@ public class SetNewBackupPolicyRequestBody {
      * Get backupPolicy
      * @return backupPolicy
      */
-    public BackupPolicyInfo getBackupPolicy() {
+    public BackupPolicyInfoOption getBackupPolicy() {
         return backupPolicy;
     }
 
-    public void setBackupPolicy(BackupPolicyInfo backupPolicy) {
+    public void setBackupPolicy(BackupPolicyInfoOption backupPolicy) {
         this.backupPolicy = backupPolicy;
     }
 

@@ -40,7 +40,7 @@ public class InsertHeadersConfig {
     }
 
     /**
-     * **参数解释**：要添加请求头参数列表。  **约束限制**：不涉及
+     * **参数解释**：要添加请求头、响应头参数列表。  **约束限制**：不涉及
      * @return configs
      */
     public List<InsertHeaderConfig> getConfigs() {

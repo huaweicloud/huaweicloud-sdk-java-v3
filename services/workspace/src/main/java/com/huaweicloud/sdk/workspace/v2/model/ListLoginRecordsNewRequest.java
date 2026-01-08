@@ -55,6 +55,11 @@ public class ListLoginRecordsNewRequest {
 
     private Integer maxNetworkRtt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public ListLoginRecordsNewRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -216,6 +221,23 @@ public class ListLoginRecordsNewRequest {
         this.maxNetworkRtt = maxNetworkRtt;
     }
 
+    public ListLoginRecordsNewRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -229,7 +251,8 @@ public class ListLoginRecordsNewRequest {
             && Objects.equals(this.userName, that.userName) && Objects.equals(this.computerName, that.computerName)
             && Objects.equals(this.terminalType, that.terminalType) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.minNetworkRtt, that.minNetworkRtt)
-            && Objects.equals(this.maxNetworkRtt, that.maxNetworkRtt);
+            && Objects.equals(this.maxNetworkRtt, that.maxNetworkRtt)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
@@ -242,7 +265,8 @@ public class ListLoginRecordsNewRequest {
             offset,
             limit,
             minNetworkRtt,
-            maxNetworkRtt);
+            maxNetworkRtt,
+            enterpriseProjectId);
     }
 
     @Override
@@ -258,6 +282,7 @@ public class ListLoginRecordsNewRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    minNetworkRtt: ").append(toIndentedString(minNetworkRtt)).append("\n");
         sb.append("    maxNetworkRtt: ").append(toIndentedString(maxNetworkRtt)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

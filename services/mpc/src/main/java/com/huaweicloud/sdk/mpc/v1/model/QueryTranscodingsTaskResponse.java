@@ -204,6 +204,16 @@ public class QueryTranscodingsTaskResponse {
     private List<PicInfo> picInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "thumbnails_info")
+
+    private List<ThumbnailsInfo> thumbnailsInfo = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_sprite_info")
+
+    private List<ImageSpriteInfo> imageSpriteInfo = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "av_parameters")
 
     private List<AvParameters> avParameters = null;
@@ -593,6 +603,72 @@ public class QueryTranscodingsTaskResponse {
         this.picInfo = picInfo;
     }
 
+    public QueryTranscodingsTaskResponse withThumbnailsInfo(List<ThumbnailsInfo> thumbnailsInfo) {
+        this.thumbnailsInfo = thumbnailsInfo;
+        return this;
+    }
+
+    public QueryTranscodingsTaskResponse addThumbnailsInfoItem(ThumbnailsInfo thumbnailsInfoItem) {
+        if (this.thumbnailsInfo == null) {
+            this.thumbnailsInfo = new ArrayList<>();
+        }
+        this.thumbnailsInfo.add(thumbnailsInfoItem);
+        return this;
+    }
+
+    public QueryTranscodingsTaskResponse withThumbnailsInfo(Consumer<List<ThumbnailsInfo>> thumbnailsInfoSetter) {
+        if (this.thumbnailsInfo == null) {
+            this.thumbnailsInfo = new ArrayList<>();
+        }
+        thumbnailsInfoSetter.accept(this.thumbnailsInfo);
+        return this;
+    }
+
+    /**
+     * 截图文件信息。 
+     * @return thumbnailsInfo
+     */
+    public List<ThumbnailsInfo> getThumbnailsInfo() {
+        return thumbnailsInfo;
+    }
+
+    public void setThumbnailsInfo(List<ThumbnailsInfo> thumbnailsInfo) {
+        this.thumbnailsInfo = thumbnailsInfo;
+    }
+
+    public QueryTranscodingsTaskResponse withImageSpriteInfo(List<ImageSpriteInfo> imageSpriteInfo) {
+        this.imageSpriteInfo = imageSpriteInfo;
+        return this;
+    }
+
+    public QueryTranscodingsTaskResponse addImageSpriteInfoItem(ImageSpriteInfo imageSpriteInfoItem) {
+        if (this.imageSpriteInfo == null) {
+            this.imageSpriteInfo = new ArrayList<>();
+        }
+        this.imageSpriteInfo.add(imageSpriteInfoItem);
+        return this;
+    }
+
+    public QueryTranscodingsTaskResponse withImageSpriteInfo(Consumer<List<ImageSpriteInfo>> imageSpriteInfoSetter) {
+        if (this.imageSpriteInfo == null) {
+            this.imageSpriteInfo = new ArrayList<>();
+        }
+        imageSpriteInfoSetter.accept(this.imageSpriteInfo);
+        return this;
+    }
+
+    /**
+     * 雪碧图信息，数组，最多支持20个成员。 
+     * @return imageSpriteInfo
+     */
+    public List<ImageSpriteInfo> getImageSpriteInfo() {
+        return imageSpriteInfo;
+    }
+
+    public void setImageSpriteInfo(List<ImageSpriteInfo> imageSpriteInfo) {
+        this.imageSpriteInfo = imageSpriteInfo;
+    }
+
     public QueryTranscodingsTaskResponse withAvParameters(List<AvParameters> avParameters) {
         this.avParameters = avParameters;
         return this;
@@ -711,7 +787,9 @@ public class QueryTranscodingsTaskResponse {
             && Objects.equals(this.tips, that.tips) && Objects.equals(this.transcodeDetail, that.transcodeDetail)
             && Objects.equals(this.thumbnailOutput, that.thumbnailOutput)
             && Objects.equals(this.thumbnailOutputname, that.thumbnailOutputname)
-            && Objects.equals(this.picInfo, that.picInfo) && Objects.equals(this.avParameters, that.avParameters)
+            && Objects.equals(this.picInfo, that.picInfo) && Objects.equals(this.thumbnailsInfo, that.thumbnailsInfo)
+            && Objects.equals(this.imageSpriteInfo, that.imageSpriteInfo)
+            && Objects.equals(this.avParameters, that.avParameters)
             && Objects.equals(this.additionalManifests, that.additionalManifests)
             && Objects.equals(this.metadata, that.metadata);
     }
@@ -735,6 +813,8 @@ public class QueryTranscodingsTaskResponse {
             thumbnailOutput,
             thumbnailOutputname,
             picInfo,
+            thumbnailsInfo,
+            imageSpriteInfo,
             avParameters,
             additionalManifests,
             metadata);
@@ -761,6 +841,8 @@ public class QueryTranscodingsTaskResponse {
         sb.append("    thumbnailOutput: ").append(toIndentedString(thumbnailOutput)).append("\n");
         sb.append("    thumbnailOutputname: ").append(toIndentedString(thumbnailOutputname)).append("\n");
         sb.append("    picInfo: ").append(toIndentedString(picInfo)).append("\n");
+        sb.append("    thumbnailsInfo: ").append(toIndentedString(thumbnailsInfo)).append("\n");
+        sb.append("    imageSpriteInfo: ").append(toIndentedString(imageSpriteInfo)).append("\n");
         sb.append("    avParameters: ").append(toIndentedString(avParameters)).append("\n");
         sb.append("    additionalManifests: ").append(toIndentedString(additionalManifests)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");

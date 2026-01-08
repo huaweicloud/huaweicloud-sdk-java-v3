@@ -320,7 +320,7 @@ public class BatchMember {
     }
 
     /**
-     * **参数解释**：后端服务器的类型。  **取值范围**： - ip：跨VPC的member。 - instance：关联到ECS的member。
+     * **参数解释**：后端服务器的类型。  **取值范围**： - ip：IP类型的member。 - instance：关联到ECS的member。
      * @return memberType
      */
     public String getMemberType() {
@@ -337,7 +337,7 @@ public class BatchMember {
     }
 
     /**
-     * **参数解释**：member关联的实例ID，空表示跨VPC场景的member。  **取值范围**：不涉及
+     * **参数解释**：member关联的实例ID，空表示IP类型场景的member。  **取值范围**：不涉及
      * @return instanceId
      */
     public String getInstanceId() {

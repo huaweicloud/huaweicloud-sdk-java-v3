@@ -9,18 +9,36 @@ import com.huaweicloud.sdk.elb.v3.model.BatchCreateLoadBalancersRequest;
 import com.huaweicloud.sdk.elb.v3.model.BatchCreateLoadBalancersResponse;
 import com.huaweicloud.sdk.elb.v3.model.BatchCreateMembersRequest;
 import com.huaweicloud.sdk.elb.v3.model.BatchCreateMembersResponse;
+import com.huaweicloud.sdk.elb.v3.model.BatchDeleteCertificatesRequest;
+import com.huaweicloud.sdk.elb.v3.model.BatchDeleteCertificatesResponse;
 import com.huaweicloud.sdk.elb.v3.model.BatchDeleteIpListRequest;
 import com.huaweicloud.sdk.elb.v3.model.BatchDeleteIpListResponse;
+import com.huaweicloud.sdk.elb.v3.model.BatchDeleteListenersRequest;
+import com.huaweicloud.sdk.elb.v3.model.BatchDeleteListenersResponse;
+import com.huaweicloud.sdk.elb.v3.model.BatchDeleteLoadbalancersRequest;
+import com.huaweicloud.sdk.elb.v3.model.BatchDeleteLoadbalancersResponse;
 import com.huaweicloud.sdk.elb.v3.model.BatchDeleteMembersRequest;
 import com.huaweicloud.sdk.elb.v3.model.BatchDeleteMembersResponse;
+import com.huaweicloud.sdk.elb.v3.model.BatchDeletePoolsRequest;
+import com.huaweicloud.sdk.elb.v3.model.BatchDeletePoolsResponse;
+import com.huaweicloud.sdk.elb.v3.model.BatchDisableDomainIPsRequest;
+import com.huaweicloud.sdk.elb.v3.model.BatchDisableDomainIPsResponse;
+import com.huaweicloud.sdk.elb.v3.model.BatchEnableDomainIPsRequest;
+import com.huaweicloud.sdk.elb.v3.model.BatchEnableDomainIPsResponse;
 import com.huaweicloud.sdk.elb.v3.model.BatchRemoveAvailableZonesRequest;
 import com.huaweicloud.sdk.elb.v3.model.BatchRemoveAvailableZonesResponse;
 import com.huaweicloud.sdk.elb.v3.model.BatchUpdateMembersRequest;
 import com.huaweicloud.sdk.elb.v3.model.BatchUpdateMembersResponse;
 import com.huaweicloud.sdk.elb.v3.model.BatchUpdatePoliciesPriorityRequest;
 import com.huaweicloud.sdk.elb.v3.model.BatchUpdatePoliciesPriorityResponse;
+import com.huaweicloud.sdk.elb.v3.model.ChangeListenerTagsRequest;
+import com.huaweicloud.sdk.elb.v3.model.ChangeListenerTagsResponse;
 import com.huaweicloud.sdk.elb.v3.model.ChangeLoadbalancerChargeModeRequest;
 import com.huaweicloud.sdk.elb.v3.model.ChangeLoadbalancerChargeModeResponse;
+import com.huaweicloud.sdk.elb.v3.model.ChangeLoadbalancerTagsRequest;
+import com.huaweicloud.sdk.elb.v3.model.ChangeLoadbalancerTagsResponse;
+import com.huaweicloud.sdk.elb.v3.model.CloneListenerRequest;
+import com.huaweicloud.sdk.elb.v3.model.CloneListenerResponse;
 import com.huaweicloud.sdk.elb.v3.model.CloneLoadbalancerRequest;
 import com.huaweicloud.sdk.elb.v3.model.CloneLoadbalancerResponse;
 import com.huaweicloud.sdk.elb.v3.model.CountPreoccupyIpNumRequest;
@@ -87,6 +105,8 @@ import com.huaweicloud.sdk.elb.v3.model.DeleteRecycleLoadBalancerRequest;
 import com.huaweicloud.sdk.elb.v3.model.DeleteRecycleLoadBalancerResponse;
 import com.huaweicloud.sdk.elb.v3.model.DeleteSecurityPolicyRequest;
 import com.huaweicloud.sdk.elb.v3.model.DeleteSecurityPolicyResponse;
+import com.huaweicloud.sdk.elb.v3.model.ListAllL7RulesRequest;
+import com.huaweicloud.sdk.elb.v3.model.ListAllL7RulesResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListAllMembersRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListAllMembersResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListApiVersionsRequest;
@@ -95,6 +115,8 @@ import com.huaweicloud.sdk.elb.v3.model.ListAvailabilityZonesRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListAvailabilityZonesResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListCertificatesRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListCertificatesResponse;
+import com.huaweicloud.sdk.elb.v3.model.ListDomainIPsRequest;
+import com.huaweicloud.sdk.elb.v3.model.ListDomainIPsResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListFeatureConfigsRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListFeatureConfigsResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListFlavorsRequest;
@@ -109,12 +131,16 @@ import com.huaweicloud.sdk.elb.v3.model.ListL7PoliciesRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListL7PoliciesResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListL7RulesRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListL7RulesResponse;
+import com.huaweicloud.sdk.elb.v3.model.ListListenerTagsRequest;
+import com.huaweicloud.sdk.elb.v3.model.ListListenerTagsResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListListenersRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListListenersResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListLoadBalancersRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListLoadBalancersResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListLoadbalancerFeatureRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListLoadbalancerFeatureResponse;
+import com.huaweicloud.sdk.elb.v3.model.ListLoadbalancerTagsRequest;
+import com.huaweicloud.sdk.elb.v3.model.ListLoadbalancerTagsResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListLogtanksRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListLogtanksResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListMasterSlavePoolsRequest;
@@ -153,12 +179,18 @@ import com.huaweicloud.sdk.elb.v3.model.ShowL7RuleRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowL7RuleResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowListenerRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowListenerResponse;
+import com.huaweicloud.sdk.elb.v3.model.ShowListenerTagsRequest;
+import com.huaweicloud.sdk.elb.v3.model.ShowListenerTagsResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowLoadBalancerPortsRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowLoadBalancerPortsResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowLoadBalancerRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowLoadBalancerResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowLoadBalancerStatusRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowLoadBalancerStatusResponse;
+import com.huaweicloud.sdk.elb.v3.model.ShowLoadBalancerTopologyRequest;
+import com.huaweicloud.sdk.elb.v3.model.ShowLoadBalancerTopologyResponse;
+import com.huaweicloud.sdk.elb.v3.model.ShowLoadbalancerTagsRequest;
+import com.huaweicloud.sdk.elb.v3.model.ShowLoadbalancerTagsResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowLogtankRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowLogtankResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowMasterSlavePoolRequest;
@@ -203,6 +235,10 @@ import com.huaweicloud.sdk.elb.v3.model.UpdateRecycleBinPolicyRequest;
 import com.huaweicloud.sdk.elb.v3.model.UpdateRecycleBinPolicyResponse;
 import com.huaweicloud.sdk.elb.v3.model.UpdateSecurityPolicyRequest;
 import com.huaweicloud.sdk.elb.v3.model.UpdateSecurityPolicyResponse;
+import com.huaweicloud.sdk.elb.v3.model.UpdateSystemDefaultDomainConfigRequest;
+import com.huaweicloud.sdk.elb.v3.model.UpdateSystemDefaultDomainConfigResponse;
+import com.huaweicloud.sdk.elb.v3.model.UpdateUserDefinedDomainConfigRequest;
+import com.huaweicloud.sdk.elb.v3.model.UpdateUserDefinedDomainConfigResponse;
 import com.huaweicloud.sdk.elb.v3.model.UpgradeLoadbalancerRequest;
 import com.huaweicloud.sdk.elb.v3.model.UpgradeLoadbalancerResponse;
 
@@ -337,6 +373,96 @@ public class ElbAsyncClient {
     }
 
     /**
+     * 批量删除证书
+     *
+     * 批量删除证书。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteCertificatesRequest 请求对象
+     * @return CompletableFuture<BatchDeleteCertificatesResponse>
+     */
+    public CompletableFuture<BatchDeleteCertificatesResponse> batchDeleteCertificatesAsync(
+        BatchDeleteCertificatesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.batchDeleteCertificates);
+    }
+
+    /**
+     * 批量删除证书
+     *
+     * 批量删除证书。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteCertificatesRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteCertificatesRequest, BatchDeleteCertificatesResponse>
+     */
+    public AsyncInvoker<BatchDeleteCertificatesRequest, BatchDeleteCertificatesResponse> batchDeleteCertificatesAsyncInvoker(
+        BatchDeleteCertificatesRequest request) {
+        return new AsyncInvoker<>(request, ElbMeta.batchDeleteCertificates, hcClient);
+    }
+
+    /**
+     * 批量删监听器
+     *
+     * 批量删除监听器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteListenersRequest 请求对象
+     * @return CompletableFuture<BatchDeleteListenersResponse>
+     */
+    public CompletableFuture<BatchDeleteListenersResponse> batchDeleteListenersAsync(
+        BatchDeleteListenersRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.batchDeleteListeners);
+    }
+
+    /**
+     * 批量删监听器
+     *
+     * 批量删除监听器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteListenersRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteListenersRequest, BatchDeleteListenersResponse>
+     */
+    public AsyncInvoker<BatchDeleteListenersRequest, BatchDeleteListenersResponse> batchDeleteListenersAsyncInvoker(
+        BatchDeleteListenersRequest request) {
+        return new AsyncInvoker<>(request, ElbMeta.batchDeleteListeners, hcClient);
+    }
+
+    /**
+     * 批量删除负载均衡器
+     *
+     * 批量删除负载均衡器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteLoadbalancersRequest 请求对象
+     * @return CompletableFuture<BatchDeleteLoadbalancersResponse>
+     */
+    public CompletableFuture<BatchDeleteLoadbalancersResponse> batchDeleteLoadbalancersAsync(
+        BatchDeleteLoadbalancersRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.batchDeleteLoadbalancers);
+    }
+
+    /**
+     * 批量删除负载均衡器
+     *
+     * 批量删除负载均衡器。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteLoadbalancersRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteLoadbalancersRequest, BatchDeleteLoadbalancersResponse>
+     */
+    public AsyncInvoker<BatchDeleteLoadbalancersRequest, BatchDeleteLoadbalancersResponse> batchDeleteLoadbalancersAsyncInvoker(
+        BatchDeleteLoadbalancersRequest request) {
+        return new AsyncInvoker<>(request, ElbMeta.batchDeleteLoadbalancers, hcClient);
+    }
+
+    /**
      * 批量删除后端服务器
      *
      * 在指定pool下批量删除后端服务器。一次最多添加200个。
@@ -363,6 +489,95 @@ public class ElbAsyncClient {
     public AsyncInvoker<BatchDeleteMembersRequest, BatchDeleteMembersResponse> batchDeleteMembersAsyncInvoker(
         BatchDeleteMembersRequest request) {
         return new AsyncInvoker<>(request, ElbMeta.batchDeleteMembers, hcClient);
+    }
+
+    /**
+     * 批量删除后端服务器组
+     *
+     * 批量删除后端服务器组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeletePoolsRequest 请求对象
+     * @return CompletableFuture<BatchDeletePoolsResponse>
+     */
+    public CompletableFuture<BatchDeletePoolsResponse> batchDeletePoolsAsync(BatchDeletePoolsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.batchDeletePools);
+    }
+
+    /**
+     * 批量删除后端服务器组
+     *
+     * 批量删除后端服务器组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeletePoolsRequest 请求对象
+     * @return AsyncInvoker<BatchDeletePoolsRequest, BatchDeletePoolsResponse>
+     */
+    public AsyncInvoker<BatchDeletePoolsRequest, BatchDeletePoolsResponse> batchDeletePoolsAsyncInvoker(
+        BatchDeletePoolsRequest request) {
+        return new AsyncInvoker<>(request, ElbMeta.batchDeletePools, hcClient);
+    }
+
+    /**
+     * 批量将IP地址从LB实例域名解析中移除
+     *
+     * 批量将IP地址从LB实例域名解析中移除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDisableDomainIPsRequest 请求对象
+     * @return CompletableFuture<BatchDisableDomainIPsResponse>
+     */
+    public CompletableFuture<BatchDisableDomainIPsResponse> batchDisableDomainIPsAsync(
+        BatchDisableDomainIPsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.batchDisableDomainIPs);
+    }
+
+    /**
+     * 批量将IP地址从LB实例域名解析中移除
+     *
+     * 批量将IP地址从LB实例域名解析中移除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDisableDomainIPsRequest 请求对象
+     * @return AsyncInvoker<BatchDisableDomainIPsRequest, BatchDisableDomainIPsResponse>
+     */
+    public AsyncInvoker<BatchDisableDomainIPsRequest, BatchDisableDomainIPsResponse> batchDisableDomainIPsAsyncInvoker(
+        BatchDisableDomainIPsRequest request) {
+        return new AsyncInvoker<>(request, ElbMeta.batchDisableDomainIPs, hcClient);
+    }
+
+    /**
+     * 批量将IP地址加入LB实例域名解析中
+     *
+     * 批量将IP地址加入LB实例域名解析中。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchEnableDomainIPsRequest 请求对象
+     * @return CompletableFuture<BatchEnableDomainIPsResponse>
+     */
+    public CompletableFuture<BatchEnableDomainIPsResponse> batchEnableDomainIPsAsync(
+        BatchEnableDomainIPsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.batchEnableDomainIPs);
+    }
+
+    /**
+     * 批量将IP地址加入LB实例域名解析中
+     *
+     * 批量将IP地址加入LB实例域名解析中。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchEnableDomainIPsRequest 请求对象
+     * @return AsyncInvoker<BatchEnableDomainIPsRequest, BatchEnableDomainIPsResponse>
+     */
+    public AsyncInvoker<BatchEnableDomainIPsRequest, BatchEnableDomainIPsResponse> batchEnableDomainIPsAsyncInvoker(
+        BatchEnableDomainIPsRequest request) {
+        return new AsyncInvoker<>(request, ElbMeta.batchEnableDomainIPs, hcClient);
     }
 
     /**
@@ -457,6 +672,35 @@ public class ElbAsyncClient {
     }
 
     /**
+     * 变更监听器标签列表
+     *
+     * 批量添加或删除指定监听器器标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeListenerTagsRequest 请求对象
+     * @return CompletableFuture<ChangeListenerTagsResponse>
+     */
+    public CompletableFuture<ChangeListenerTagsResponse> changeListenerTagsAsync(ChangeListenerTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.changeListenerTags);
+    }
+
+    /**
+     * 变更监听器标签列表
+     *
+     * 批量添加或删除指定监听器器标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeListenerTagsRequest 请求对象
+     * @return AsyncInvoker<ChangeListenerTagsRequest, ChangeListenerTagsResponse>
+     */
+    public AsyncInvoker<ChangeListenerTagsRequest, ChangeListenerTagsResponse> changeListenerTagsAsyncInvoker(
+        ChangeListenerTagsRequest request) {
+        return new AsyncInvoker<>(request, ElbMeta.changeListenerTags, hcClient);
+    }
+
+    /**
      * 变更负载均衡器计费模式
      *
      * 负载均衡器计费模式变更，当前支持的计费模式变更为：
@@ -490,6 +734,79 @@ public class ElbAsyncClient {
     public AsyncInvoker<ChangeLoadbalancerChargeModeRequest, ChangeLoadbalancerChargeModeResponse> changeLoadbalancerChargeModeAsyncInvoker(
         ChangeLoadbalancerChargeModeRequest request) {
         return new AsyncInvoker<>(request, ElbMeta.changeLoadbalancerChargeMode, hcClient);
+    }
+
+    /**
+     * 变更负载均衡器标签列表
+     *
+     * 批量添加或删除指定负载均衡器标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeLoadbalancerTagsRequest 请求对象
+     * @return CompletableFuture<ChangeLoadbalancerTagsResponse>
+     */
+    public CompletableFuture<ChangeLoadbalancerTagsResponse> changeLoadbalancerTagsAsync(
+        ChangeLoadbalancerTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.changeLoadbalancerTags);
+    }
+
+    /**
+     * 变更负载均衡器标签列表
+     *
+     * 批量添加或删除指定负载均衡器标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeLoadbalancerTagsRequest 请求对象
+     * @return AsyncInvoker<ChangeLoadbalancerTagsRequest, ChangeLoadbalancerTagsResponse>
+     */
+    public AsyncInvoker<ChangeLoadbalancerTagsRequest, ChangeLoadbalancerTagsResponse> changeLoadbalancerTagsAsyncInvoker(
+        ChangeLoadbalancerTagsRequest request) {
+        return new AsyncInvoker<>(request, ElbMeta.changeLoadbalancerTags, hcClient);
+    }
+
+    /**
+     * 复制已有监听器
+     *
+     * 复制已有的监听器到同VPC内的负载均衡器。
+     * - 仅支持同VPC实例间使用监听器复制功能。
+     * - 不支持网关型LB下监听器进行复制，也不支持复制到网关型LB下。
+     * - 仅同类型实例之间可以使用监听器复制功能。
+     * - 对复制的源监听器有如下限制：后端服务器总数不能超过1000；转发策略总数不能超过100。
+     * - 源监听器所在负载均衡器和目的监听器所在负载均衡器不能处于冻结、迁移状态。
+     * - 源监听器中若配置quic_config，复制后为null。
+     * - 七层转发策略配置为重定向到监听器，该转发策略不会进行复制。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CloneListenerRequest 请求对象
+     * @return CompletableFuture<CloneListenerResponse>
+     */
+    public CompletableFuture<CloneListenerResponse> cloneListenerAsync(CloneListenerRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.cloneListener);
+    }
+
+    /**
+     * 复制已有监听器
+     *
+     * 复制已有的监听器到同VPC内的负载均衡器。
+     * - 仅支持同VPC实例间使用监听器复制功能。
+     * - 不支持网关型LB下监听器进行复制，也不支持复制到网关型LB下。
+     * - 仅同类型实例之间可以使用监听器复制功能。
+     * - 对复制的源监听器有如下限制：后端服务器总数不能超过1000；转发策略总数不能超过100。
+     * - 源监听器所在负载均衡器和目的监听器所在负载均衡器不能处于冻结、迁移状态。
+     * - 源监听器中若配置quic_config，复制后为null。
+     * - 七层转发策略配置为重定向到监听器，该转发策略不会进行复制。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CloneListenerRequest 请求对象
+     * @return AsyncInvoker<CloneListenerRequest, CloneListenerResponse>
+     */
+    public AsyncInvoker<CloneListenerRequest, CloneListenerResponse> cloneListenerAsyncInvoker(
+        CloneListenerRequest request) {
+        return new AsyncInvoker<>(request, ElbMeta.cloneListener, hcClient);
     }
 
     /**
@@ -711,11 +1028,12 @@ public class ElbAsyncClient {
      * - 若要创建网络型负载均衡器，则需要传入l4_flavor_id（网络型规格ID）；若要创建应用型负载均衡器，则需要传入l7_flavor_id（应用型规格ID）；若要创建网络型+应用型负载均衡器，则需要传入l4_flavor_id和l7_flavor_id。
      * [- 若要创建包周期负载均衡器，则需要传入prepaid_options，否则创建按需计费负载均衡器。](tag:hws)
      * - 按需计费分为固定规格计费和弹性规格计费，根据创建时所选规格的类型决定计费方式。具体规格说明见创建LB请求参数l4_flavor_id和l7_flavor_id。
-     * [- 若要创建gateway类型的负载均衡器，则需要：
+     * - 若要创建gateway类型的负载均衡器，则需要：
      *    - 指定loadbalancer_type&#x3D;\&quot;gateway\&quot;，且不支持指定vip_address，ipv6_vip_address。
-     *    - vip_subnet_cidr_id和ipv6_subnet_cidr_id两者不能都为空，如果两者都传入，则必须属于同一子网。 
+     *    - vip_subnet_cidr_id和ipv6_subnet_cidr_id两者不能都为空，如果两者都传入，则必须属于同一子网。
      *    - 不支持创建公网gateway类型LB。
-     *    - 如果要指定规格，则从请求参数gw_flavor_id传入。](tag:hws_eu)
+     *    - 不支持传入autoscaling字段，不支持l4_flavor_id和l7_flavor_id。
+     *    - 必须要指定网关型规格，通过参数gw_flavor_id传入。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -741,11 +1059,12 @@ public class ElbAsyncClient {
      * - 若要创建网络型负载均衡器，则需要传入l4_flavor_id（网络型规格ID）；若要创建应用型负载均衡器，则需要传入l7_flavor_id（应用型规格ID）；若要创建网络型+应用型负载均衡器，则需要传入l4_flavor_id和l7_flavor_id。
      * [- 若要创建包周期负载均衡器，则需要传入prepaid_options，否则创建按需计费负载均衡器。](tag:hws)
      * - 按需计费分为固定规格计费和弹性规格计费，根据创建时所选规格的类型决定计费方式。具体规格说明见创建LB请求参数l4_flavor_id和l7_flavor_id。
-     * [- 若要创建gateway类型的负载均衡器，则需要：
+     * - 若要创建gateway类型的负载均衡器，则需要：
      *    - 指定loadbalancer_type&#x3D;\&quot;gateway\&quot;，且不支持指定vip_address，ipv6_vip_address。
-     *    - vip_subnet_cidr_id和ipv6_subnet_cidr_id两者不能都为空，如果两者都传入，则必须属于同一子网。 
+     *    - vip_subnet_cidr_id和ipv6_subnet_cidr_id两者不能都为空，如果两者都传入，则必须属于同一子网。
      *    - 不支持创建公网gateway类型LB。
-     *    - 如果要指定规格，则从请求参数gw_flavor_id传入。](tag:hws_eu)
+     *    - 不支持传入autoscaling字段，不支持l4_flavor_id和l7_flavor_id。
+     *    - 必须要指定网关型规格，通过参数gw_flavor_id传入。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1175,8 +1494,11 @@ public class ElbAsyncClient {
      *
      * 删除负载均衡器且级联删除其下子资源（删除负载均衡器及其绑定的监听器、后端服务器组、后端服务器等一系列资源）。
      * - 若LB关联了EIP，则只解绑EIP，不会删除EIP。
+     * - 若LB已开启了误删保护开关，则级联删除失败。
+     * - 若LB下任意一个后端服务器组开启了误删保护开关，则级联删除失败。
+     * - 修改保护开关开启不影响级联删除，仍能正常删除。
      * [- 若已开启多挂特性，且关联了多个LB，则只做解绑；否则删除。
-     * - 若是共享型LB下的后端服务器组，无论是否多挂都只删除，不解绑。](tag:hc,hk)
+     * - 若是共享型LB下的后端服务器组，无论是否多挂都只删除，不解绑。](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1193,8 +1515,11 @@ public class ElbAsyncClient {
      *
      * 删除负载均衡器且级联删除其下子资源（删除负载均衡器及其绑定的监听器、后端服务器组、后端服务器等一系列资源）。
      * - 若LB关联了EIP，则只解绑EIP，不会删除EIP。
+     * - 若LB已开启了误删保护开关，则级联删除失败。
+     * - 若LB下任意一个后端服务器组开启了误删保护开关，则级联删除失败。
+     * - 修改保护开关开启不影响级联删除，仍能正常删除。
      * [- 若已开启多挂特性，且关联了多个LB，则只做解绑；否则删除。
-     * - 若是共享型LB下的后端服务器组，无论是否多挂都只删除，不解绑。](tag:hc,hk)
+     * - 若是共享型LB下的后端服务器组，无论是否多挂都只删除，不解绑。](tag:hws,hws_hk)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1412,6 +1737,35 @@ public class ElbAsyncClient {
     }
 
     /**
+     * 查询转发规则列表
+     *
+     * 查询当前项目下的转发规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllL7RulesRequest 请求对象
+     * @return CompletableFuture<ListAllL7RulesResponse>
+     */
+    public CompletableFuture<ListAllL7RulesResponse> listAllL7RulesAsync(ListAllL7RulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.listAllL7Rules);
+    }
+
+    /**
+     * 查询转发规则列表
+     *
+     * 查询当前项目下的转发规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllL7RulesRequest 请求对象
+     * @return AsyncInvoker<ListAllL7RulesRequest, ListAllL7RulesResponse>
+     */
+    public AsyncInvoker<ListAllL7RulesRequest, ListAllL7RulesResponse> listAllL7RulesAsyncInvoker(
+        ListAllL7RulesRequest request) {
+        return new AsyncInvoker<>(request, ElbMeta.listAllL7Rules, hcClient);
+    }
+
+    /**
      * 后端服务器全局列表
      *
      * 查询当前项目下的后端服务器列表。
@@ -1517,6 +1871,37 @@ public class ElbAsyncClient {
     public AsyncInvoker<ListCertificatesRequest, ListCertificatesResponse> listCertificatesAsyncInvoker(
         ListCertificatesRequest request) {
         return new AsyncInvoker<>(request, ElbMeta.listCertificates, hcClient);
+    }
+
+    /**
+     * 查询负载均衡器ip的域名配置信息
+     *
+     * 查询负载均衡器ip的域名配置信息，即负载均衡器的ip是否加入了域名解析。
+     * 注意：当负载均衡器的公网域名和私网域名都没有打开时，该接口返回空列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainIPsRequest 请求对象
+     * @return CompletableFuture<ListDomainIPsResponse>
+     */
+    public CompletableFuture<ListDomainIPsResponse> listDomainIPsAsync(ListDomainIPsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.listDomainIPs);
+    }
+
+    /**
+     * 查询负载均衡器ip的域名配置信息
+     *
+     * 查询负载均衡器ip的域名配置信息，即负载均衡器的ip是否加入了域名解析。
+     * 注意：当负载均衡器的公网域名和私网域名都没有打开时，该接口返回空列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainIPsRequest 请求对象
+     * @return AsyncInvoker<ListDomainIPsRequest, ListDomainIPsResponse>
+     */
+    public AsyncInvoker<ListDomainIPsRequest, ListDomainIPsResponse> listDomainIPsAsyncInvoker(
+        ListDomainIPsRequest request) {
+        return new AsyncInvoker<>(request, ElbMeta.listDomainIPs, hcClient);
     }
 
     /**
@@ -1691,6 +2076,35 @@ public class ElbAsyncClient {
     }
 
     /**
+     * 查询所有监听器的标签列表
+     *
+     * 查询指定项目下所有监听器的标签列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListListenerTagsRequest 请求对象
+     * @return CompletableFuture<ListListenerTagsResponse>
+     */
+    public CompletableFuture<ListListenerTagsResponse> listListenerTagsAsync(ListListenerTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.listListenerTags);
+    }
+
+    /**
+     * 查询所有监听器的标签列表
+     *
+     * 查询指定项目下所有监听器的标签列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListListenerTagsRequest 请求对象
+     * @return AsyncInvoker<ListListenerTagsRequest, ListListenerTagsResponse>
+     */
+    public AsyncInvoker<ListListenerTagsRequest, ListListenerTagsResponse> listListenerTagsAsyncInvoker(
+        ListListenerTagsRequest request) {
+        return new AsyncInvoker<>(request, ElbMeta.listListenerTags, hcClient);
+    }
+
+    /**
      * 查询监听器列表
      *
      * 查询监听器列表。
@@ -1776,6 +2190,36 @@ public class ElbAsyncClient {
     public AsyncInvoker<ListLoadbalancerFeatureRequest, ListLoadbalancerFeatureResponse> listLoadbalancerFeatureAsyncInvoker(
         ListLoadbalancerFeatureRequest request) {
         return new AsyncInvoker<>(request, ElbMeta.listLoadbalancerFeature, hcClient);
+    }
+
+    /**
+     * 查询所有负载均衡器的标签列表
+     *
+     * 查询指定项目下所有负载均衡器的标签列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLoadbalancerTagsRequest 请求对象
+     * @return CompletableFuture<ListLoadbalancerTagsResponse>
+     */
+    public CompletableFuture<ListLoadbalancerTagsResponse> listLoadbalancerTagsAsync(
+        ListLoadbalancerTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.listLoadbalancerTags);
+    }
+
+    /**
+     * 查询所有负载均衡器的标签列表
+     *
+     * 查询指定项目下所有负载均衡器的标签列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLoadbalancerTagsRequest 请求对象
+     * @return AsyncInvoker<ListLoadbalancerTagsRequest, ListLoadbalancerTagsResponse>
+     */
+    public AsyncInvoker<ListLoadbalancerTagsRequest, ListLoadbalancerTagsResponse> listLoadbalancerTagsAsyncInvoker(
+        ListLoadbalancerTagsRequest request) {
+        return new AsyncInvoker<>(request, ElbMeta.listLoadbalancerTags, hcClient);
     }
 
     /**
@@ -2276,6 +2720,35 @@ public class ElbAsyncClient {
     }
 
     /**
+     * 查询监听器的标签
+     *
+     * 查询指定监听器的所有标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowListenerTagsRequest 请求对象
+     * @return CompletableFuture<ShowListenerTagsResponse>
+     */
+    public CompletableFuture<ShowListenerTagsResponse> showListenerTagsAsync(ShowListenerTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.showListenerTags);
+    }
+
+    /**
+     * 查询监听器的标签
+     *
+     * 查询指定监听器的所有标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowListenerTagsRequest 请求对象
+     * @return AsyncInvoker<ShowListenerTagsRequest, ShowListenerTagsResponse>
+     */
+    public AsyncInvoker<ShowListenerTagsRequest, ShowListenerTagsResponse> showListenerTagsAsyncInvoker(
+        ShowListenerTagsRequest request) {
+        return new AsyncInvoker<>(request, ElbMeta.showListenerTags, hcClient);
+    }
+
+    /**
      * 查询负载均衡器详情
      *
      * 查询负载均衡器详情。
@@ -2305,9 +2778,9 @@ public class ElbAsyncClient {
     }
 
     /**
-     * 查询负载均衡器占用的下联面子网端口列表
+     * 查询负载均衡内部转发用的IP
      *
-     * 查询负载均衡器占用的下联面子网端口和IP地址信息。
+     * 查询负载均衡内部转发用的IP。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2320,9 +2793,9 @@ public class ElbAsyncClient {
     }
 
     /**
-     * 查询负载均衡器占用的下联面子网端口列表
+     * 查询负载均衡内部转发用的IP
      *
-     * 查询负载均衡器占用的下联面子网端口和IP地址信息。
+     * 查询负载均衡内部转发用的IP。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2368,6 +2841,66 @@ public class ElbAsyncClient {
     public AsyncInvoker<ShowLoadBalancerStatusRequest, ShowLoadBalancerStatusResponse> showLoadBalancerStatusAsyncInvoker(
         ShowLoadBalancerStatusRequest request) {
         return new AsyncInvoker<>(request, ElbMeta.showLoadBalancerStatus, hcClient);
+    }
+
+    /**
+     * 查询负载均衡器拓扑
+     *
+     * 查询负载均衡拓扑，将负载均衡器及其包含的监听器、后端服务器组以拓扑的形式展示。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLoadBalancerTopologyRequest 请求对象
+     * @return CompletableFuture<ShowLoadBalancerTopologyResponse>
+     */
+    public CompletableFuture<ShowLoadBalancerTopologyResponse> showLoadBalancerTopologyAsync(
+        ShowLoadBalancerTopologyRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.showLoadBalancerTopology);
+    }
+
+    /**
+     * 查询负载均衡器拓扑
+     *
+     * 查询负载均衡拓扑，将负载均衡器及其包含的监听器、后端服务器组以拓扑的形式展示。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLoadBalancerTopologyRequest 请求对象
+     * @return AsyncInvoker<ShowLoadBalancerTopologyRequest, ShowLoadBalancerTopologyResponse>
+     */
+    public AsyncInvoker<ShowLoadBalancerTopologyRequest, ShowLoadBalancerTopologyResponse> showLoadBalancerTopologyAsyncInvoker(
+        ShowLoadBalancerTopologyRequest request) {
+        return new AsyncInvoker<>(request, ElbMeta.showLoadBalancerTopology, hcClient);
+    }
+
+    /**
+     * 查询负载均衡器的标签
+     *
+     * 查询指定负载均衡器的所有标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLoadbalancerTagsRequest 请求对象
+     * @return CompletableFuture<ShowLoadbalancerTagsResponse>
+     */
+    public CompletableFuture<ShowLoadbalancerTagsResponse> showLoadbalancerTagsAsync(
+        ShowLoadbalancerTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.showLoadbalancerTags);
+    }
+
+    /**
+     * 查询负载均衡器的标签
+     *
+     * 查询指定负载均衡器的所有标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLoadbalancerTagsRequest 请求对象
+     * @return AsyncInvoker<ShowLoadbalancerTagsRequest, ShowLoadbalancerTagsResponse>
+     */
+    public AsyncInvoker<ShowLoadbalancerTagsRequest, ShowLoadbalancerTagsResponse> showLoadbalancerTagsAsyncInvoker(
+        ShowLoadbalancerTagsRequest request) {
+        return new AsyncInvoker<>(request, ElbMeta.showLoadbalancerTags, hcClient);
     }
 
     /**
@@ -2949,6 +3482,66 @@ public class ElbAsyncClient {
     public AsyncInvoker<UpdateSecurityPolicyRequest, UpdateSecurityPolicyResponse> updateSecurityPolicyAsyncInvoker(
         UpdateSecurityPolicyRequest request) {
         return new AsyncInvoker<>(request, ElbMeta.updateSecurityPolicy, hcClient);
+    }
+
+    /**
+     * 配置负载均衡器系统默认域名化
+     *
+     * 配置负载均衡器系统默认域名化。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSystemDefaultDomainConfigRequest 请求对象
+     * @return CompletableFuture<UpdateSystemDefaultDomainConfigResponse>
+     */
+    public CompletableFuture<UpdateSystemDefaultDomainConfigResponse> updateSystemDefaultDomainConfigAsync(
+        UpdateSystemDefaultDomainConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.updateSystemDefaultDomainConfig);
+    }
+
+    /**
+     * 配置负载均衡器系统默认域名化
+     *
+     * 配置负载均衡器系统默认域名化。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSystemDefaultDomainConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateSystemDefaultDomainConfigRequest, UpdateSystemDefaultDomainConfigResponse>
+     */
+    public AsyncInvoker<UpdateSystemDefaultDomainConfigRequest, UpdateSystemDefaultDomainConfigResponse> updateSystemDefaultDomainConfigAsyncInvoker(
+        UpdateSystemDefaultDomainConfigRequest request) {
+        return new AsyncInvoker<>(request, ElbMeta.updateSystemDefaultDomainConfig, hcClient);
+    }
+
+    /**
+     * 配置负载均衡器用户自定义域名化
+     *
+     * 配置负载均衡器用户自定义域名化。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateUserDefinedDomainConfigRequest 请求对象
+     * @return CompletableFuture<UpdateUserDefinedDomainConfigResponse>
+     */
+    public CompletableFuture<UpdateUserDefinedDomainConfigResponse> updateUserDefinedDomainConfigAsync(
+        UpdateUserDefinedDomainConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, ElbMeta.updateUserDefinedDomainConfig);
+    }
+
+    /**
+     * 配置负载均衡器用户自定义域名化
+     *
+     * 配置负载均衡器用户自定义域名化。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateUserDefinedDomainConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateUserDefinedDomainConfigRequest, UpdateUserDefinedDomainConfigResponse>
+     */
+    public AsyncInvoker<UpdateUserDefinedDomainConfigRequest, UpdateUserDefinedDomainConfigResponse> updateUserDefinedDomainConfigAsyncInvoker(
+        UpdateUserDefinedDomainConfigRequest request) {
+        return new AsyncInvoker<>(request, ElbMeta.updateUserDefinedDomainConfig, hcClient);
     }
 
     /**

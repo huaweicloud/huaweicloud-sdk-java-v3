@@ -24,6 +24,11 @@ public class AttachInstancesDesktopInfo {
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_id")
+
+    private String userId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_email")
 
     private String userEmail;
@@ -80,6 +85,23 @@ public class AttachInstancesDesktopInfo {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public AttachInstancesDesktopInfo withUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+
+    /**
+     * 用户id。
+     * @return userId
+     */
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public AttachInstancesDesktopInfo withUserEmail(String userEmail) {
@@ -194,15 +216,16 @@ public class AttachInstancesDesktopInfo {
         }
         AttachInstancesDesktopInfo that = (AttachInstancesDesktopInfo) obj;
         return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.userName, that.userName)
-            && Objects.equals(this.userEmail, that.userEmail) && Objects.equals(this.userGroup, that.userGroup)
-            && Objects.equals(this.computerName, that.computerName)
+            && Objects.equals(this.userId, that.userId) && Objects.equals(this.userEmail, that.userEmail)
+            && Objects.equals(this.userGroup, that.userGroup) && Objects.equals(this.computerName, that.computerName)
             && Objects.equals(this.isClearData, that.isClearData)
             && Objects.equals(this.attachUserInfos, that.attachUserInfos);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktopId, userName, userEmail, userGroup, computerName, isClearData, attachUserInfos);
+        return Objects
+            .hash(desktopId, userName, userId, userEmail, userGroup, computerName, isClearData, attachUserInfos);
     }
 
     @Override
@@ -211,6 +234,7 @@ public class AttachInstancesDesktopInfo {
         sb.append("class AttachInstancesDesktopInfo {\n");
         sb.append("    desktopId: ").append(toIndentedString(desktopId)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
         sb.append("    userEmail: ").append(toIndentedString(userEmail)).append("\n");
         sb.append("    userGroup: ").append(toIndentedString(userGroup)).append("\n");
         sb.append("    computerName: ").append(toIndentedString(computerName)).append("\n");

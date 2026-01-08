@@ -153,6 +153,11 @@ public class CreateUserRequest {
 
     private String userInfoMap;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain")
+
+    private String domain;
+
     public CreateUserRequest withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -261,7 +266,7 @@ public class CreateUserRequest {
     }
 
     /**
-     * 是否允许用户更改密码，缺省值为true，后续此字段无效，创建时都为true。
+     * 是否允许用户更改密码，缺省值为true。
      * @return enableChangePassword
      */
     public Boolean getEnableChangePassword() {
@@ -278,7 +283,7 @@ public class CreateUserRequest {
     }
 
     /**
-     * 下次登录是否必须更改密码，缺省值为true。后续此字段无效，创建时都为true。
+     * 下次登录是否必须更改密码，缺省值为true。该字段只在active_type为ADMIN_ACTIVATE时生效。
      * @return nextLoginChangePassword
      */
     public Boolean getNextLoginChangePassword() {
@@ -362,7 +367,7 @@ public class CreateUserRequest {
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -390,6 +395,23 @@ public class CreateUserRequest {
         this.userInfoMap = userInfoMap;
     }
 
+    public CreateUserRequest withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    /**
+     * 用户所属域，domain为空时，默认主域。
+     * @return domain
+     */
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -408,7 +430,7 @@ public class CreateUserRequest {
             && Objects.equals(this.groupIds, that.groupIds) && Objects.equals(this.description, that.description)
             && Objects.equals(this.aliasName, that.aliasName)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.userInfoMap, that.userInfoMap);
+            && Objects.equals(this.userInfoMap, that.userInfoMap) && Objects.equals(this.domain, that.domain);
     }
 
     @Override
@@ -425,7 +447,8 @@ public class CreateUserRequest {
             description,
             aliasName,
             enterpriseProjectId,
-            userInfoMap);
+            userInfoMap,
+            domain);
     }
 
     @Override
@@ -445,6 +468,7 @@ public class CreateUserRequest {
         sb.append("    aliasName: ").append(toIndentedString(aliasName)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    userInfoMap: ").append(toIndentedString(userInfoMap)).append("\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -169,7 +169,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
     private List<EnterpriseProjectIdAndTags> enterpriseProjectIdAndTags = null;
 
     /**
-     * **参数解释** 指标告警状态。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
+     * **参数解释** 指标告警状态。 **取值范围** 枚举值。 - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未设置告警规则 
      */
     public static final class StatusEnum {
 
@@ -250,7 +250,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
     private StatusEnum status;
 
     /**
-     * **参数解释** 事件告警状态。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
+     * **参数解释** 事件告警状态。 **取值范围** 枚举值。 - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未设置告警规则 
      */
     public static final class EventStatusEnum {
 
@@ -727,7 +727,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释** 指标告警状态。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
+     * **参数解释** 指标告警状态。 **取值范围** 枚举值。 - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未设置告警规则 
      * @return status
      */
     public StatusEnum getStatus() {
@@ -744,7 +744,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释** 事件告警状态。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
+     * **参数解释** 事件告警状态。 **取值范围** 枚举值。 - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未设置告警规则 
      * @return eventStatus
      */
     public EventStatusEnum getEventStatus() {

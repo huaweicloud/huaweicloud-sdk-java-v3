@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 认证类型。 RADIUS_GATEWAY：短信辅助认证 OAUTH2:OAUTH2认证 CLIENT_TOKEN:本地token认证 USER_PASSWORD:密码认证类型
+ * 认证类型。 RADIUS_GATEWAY：短信辅助认证 OAUTH2:OAUTH2认证 CLIENT_TOKEN:本地token认证 USER_PASSWORD:密码认证类型 SAML2:SAML 2.0 联邦认证
  */
 public class AuthTypeEnum {
 
@@ -42,6 +42,11 @@ public class AuthTypeEnum {
      */
     public static final AuthTypeEnum FINGER = new AuthTypeEnum("FINGER");
 
+    /**
+     * Enum SAML2 for value: "SAML2"
+     */
+    public static final AuthTypeEnum SAML2 = new AuthTypeEnum("SAML2");
+
     private static final Map<String, AuthTypeEnum> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, AuthTypeEnum> createStaticFields() {
@@ -52,6 +57,7 @@ public class AuthTypeEnum {
         map.put("CLIENT_TOKEN", CLIENT_TOKEN);
         map.put("USER_PASSWORD", USER_PASSWORD);
         map.put("FINGER", FINGER);
+        map.put("SAML2", SAML2);
         return Collections.unmodifiableMap(map);
     }
 

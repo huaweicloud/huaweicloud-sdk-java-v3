@@ -29,6 +29,11 @@ public class DesktopMetric {
     private String resourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric")
 
     private List<Metric> metric = null;
@@ -84,6 +89,23 @@ public class DesktopMetric {
         this.resourceName = resourceName;
     }
 
+    public DesktopMetric withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     public DesktopMetric withMetric(List<Metric> metric) {
         this.metric = metric;
         return this;
@@ -128,12 +150,14 @@ public class DesktopMetric {
         DesktopMetric that = (DesktopMetric) obj;
         return Objects.equals(this.resourceId, that.resourceId)
             && Objects.equals(this.resourcePoolId, that.resourcePoolId)
-            && Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.metric, that.metric);
+            && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.metric, that.metric);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceId, resourcePoolId, resourceName, metric);
+        return Objects.hash(resourceId, resourcePoolId, resourceName, enterpriseProjectId, metric);
     }
 
     @Override
@@ -143,6 +167,7 @@ public class DesktopMetric {
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    resourcePoolId: ").append(toIndentedString(resourcePoolId)).append("\n");
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    metric: ").append(toIndentedString(metric)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -26,7 +26,7 @@ public class UpdatePrivateNatOption {
     private String description;
 
     /**
-     * 私网NAT网关实例的规格。 取值为： \"Small\"：小型 \"Medium\"：中型 \"Large\"：大型 \"Extra-large\"：超大型 \"Extra-xlarge\"：企业型
+     * 私网NAT网关实例的规格。 取值为： - Small：小型 - Medium：中型 - Large：大型 - Extra-large：超大型 - Extra-xlarge：企业型
      */
     public static final class SpecEnum {
 
@@ -158,7 +158,7 @@ public class UpdatePrivateNatOption {
     }
 
     /**
-     * 私网NAT网关实例的规格。 取值为： \"Small\"：小型 \"Medium\"：中型 \"Large\"：大型 \"Extra-large\"：超大型 \"Extra-xlarge\"：企业型
+     * 私网NAT网关实例的规格。 取值为： - Small：小型 - Medium：中型 - Large：大型 - Extra-large：超大型 - Extra-xlarge：企业型
      * @return spec
      */
     public SpecEnum getSpec() {

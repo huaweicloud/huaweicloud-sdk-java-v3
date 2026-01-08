@@ -581,6 +581,8 @@ import com.huaweicloud.sdk.rds.v3.model.UpdateStatisticsRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateStatisticsResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateTdeStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateTdeStatusResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateTimeZoneRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateTimeZoneResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateToPeriodRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateToPeriodResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionPreCheckRequest;
@@ -5850,6 +5852,35 @@ public class RdsAsyncClient {
     public AsyncInvoker<UpdateTdeStatusRequest, UpdateTdeStatusResponse> updateTdeStatusAsyncInvoker(
         UpdateTdeStatusRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.updateTdeStatus, hcClient);
+    }
+
+    /**
+     * 修改时区
+     *
+     * 修改时区
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTimeZoneRequest 请求对象
+     * @return CompletableFuture<UpdateTimeZoneResponse>
+     */
+    public CompletableFuture<UpdateTimeZoneResponse> updateTimeZoneAsync(UpdateTimeZoneRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.updateTimeZone);
+    }
+
+    /**
+     * 修改时区
+     *
+     * 修改时区
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTimeZoneRequest 请求对象
+     * @return AsyncInvoker<UpdateTimeZoneRequest, UpdateTimeZoneResponse>
+     */
+    public AsyncInvoker<UpdateTimeZoneRequest, UpdateTimeZoneResponse> updateTimeZoneAsyncInvoker(
+        UpdateTimeZoneRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.updateTimeZone, hcClient);
     }
 
     /**

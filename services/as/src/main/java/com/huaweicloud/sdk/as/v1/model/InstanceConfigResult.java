@@ -103,6 +103,11 @@ public class InstanceConfigResult {
 
     private String multiFlavorPriorityPolicy;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cpu_options")
+
+    private CpuOptions cpuOptions;
+
     public InstanceConfigResult withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
@@ -475,6 +480,32 @@ public class InstanceConfigResult {
         this.multiFlavorPriorityPolicy = multiFlavorPriorityPolicy;
     }
 
+    public InstanceConfigResult withCpuOptions(CpuOptions cpuOptions) {
+        this.cpuOptions = cpuOptions;
+        return this;
+    }
+
+    public InstanceConfigResult withCpuOptions(Consumer<CpuOptions> cpuOptionsSetter) {
+        if (this.cpuOptions == null) {
+            this.cpuOptions = new CpuOptions();
+            cpuOptionsSetter.accept(this.cpuOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get cpuOptions
+     * @return cpuOptions
+     */
+    public CpuOptions getCpuOptions() {
+        return cpuOptions;
+    }
+
+    public void setCpuOptions(CpuOptions cpuOptions) {
+        this.cpuOptions = cpuOptions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -494,7 +525,8 @@ public class InstanceConfigResult {
             && Objects.equals(this.serverGroupId, that.serverGroupId) && Objects.equals(this.tenancy, that.tenancy)
             && Objects.equals(this.dedicatedHostId, that.dedicatedHostId)
             && Objects.equals(this.marketType, that.marketType)
-            && Objects.equals(this.multiFlavorPriorityPolicy, that.multiFlavorPriorityPolicy);
+            && Objects.equals(this.multiFlavorPriorityPolicy, that.multiFlavorPriorityPolicy)
+            && Objects.equals(this.cpuOptions, that.cpuOptions);
     }
 
     @Override
@@ -516,7 +548,8 @@ public class InstanceConfigResult {
             tenancy,
             dedicatedHostId,
             marketType,
-            multiFlavorPriorityPolicy);
+            multiFlavorPriorityPolicy,
+            cpuOptions);
     }
 
     @Override
@@ -541,6 +574,7 @@ public class InstanceConfigResult {
         sb.append("    dedicatedHostId: ").append(toIndentedString(dedicatedHostId)).append("\n");
         sb.append("    marketType: ").append(toIndentedString(marketType)).append("\n");
         sb.append("    multiFlavorPriorityPolicy: ").append(toIndentedString(multiFlavorPriorityPolicy)).append("\n");
+        sb.append("    cpuOptions: ").append(toIndentedString(cpuOptions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

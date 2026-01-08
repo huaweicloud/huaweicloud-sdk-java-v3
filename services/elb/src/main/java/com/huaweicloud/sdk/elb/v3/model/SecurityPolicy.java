@@ -49,6 +49,11 @@ public class SecurityPolicy {
     private List<String> ciphers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
     private String createdAt;
@@ -225,6 +230,23 @@ public class SecurityPolicy {
         this.ciphers = ciphers;
     }
 
+    public SecurityPolicy withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * **参数解释**：资源所属的企业项目ID。  **取值范围**： - \"0\"：表示资源属于default企业项目。 - UUID格式的字符串，表示非默认企业项目。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     public SecurityPolicy withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -271,13 +293,23 @@ public class SecurityPolicy {
         return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.listeners, that.listeners) && Objects.equals(this.protocols, that.protocols)
-            && Objects.equals(this.ciphers, that.ciphers) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.ciphers, that.ciphers)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, projectId, name, description, listeners, protocols, ciphers, createdAt, updatedAt);
+        return Objects.hash(id,
+            projectId,
+            name,
+            description,
+            listeners,
+            protocols,
+            ciphers,
+            enterpriseProjectId,
+            createdAt,
+            updatedAt);
     }
 
     @Override
@@ -291,6 +323,7 @@ public class SecurityPolicy {
         sb.append("    listeners: ").append(toIndentedString(listeners)).append("\n");
         sb.append("    protocols: ").append(toIndentedString(protocols)).append("\n");
         sb.append("    ciphers: ").append(toIndentedString(ciphers)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("}");

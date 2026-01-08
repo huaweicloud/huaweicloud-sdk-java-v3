@@ -81,8 +81,6 @@ import com.huaweicloud.sdk.secmaster.v1.model.CreateDataobjectRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateDataobjectResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateDataspaceRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateDataspaceResponse;
-import com.huaweicloud.sdk.secmaster.v1.model.CreateGenericActionRequest;
-import com.huaweicloud.sdk.secmaster.v1.model.CreateGenericActionResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateIncidentRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateIncidentResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateIndicatorRequest;
@@ -1763,35 +1761,6 @@ public class SecMasterClient {
     public SyncInvoker<CreateDataspaceRequest, CreateDataspaceResponse> createDataspaceInvoker(
         CreateDataspaceRequest request) {
         return new SyncInvoker<>(request, SecMasterMeta.createDataspace, hcClient);
-    }
-
-    /**
-     * agent-action接口
-     *
-     * 根据type字段执行不同的agent-action，例如回答质量人工反馈。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateGenericActionRequest 请求对象
-     * @return CreateGenericActionResponse
-     */
-    public CreateGenericActionResponse createGenericAction(CreateGenericActionRequest request) {
-        return hcClient.syncInvokeHttp(request, SecMasterMeta.createGenericAction);
-    }
-
-    /**
-     * agent-action接口
-     *
-     * 根据type字段执行不同的agent-action，例如回答质量人工反馈。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateGenericActionRequest 请求对象
-     * @return SyncInvoker<CreateGenericActionRequest, CreateGenericActionResponse>
-     */
-    public SyncInvoker<CreateGenericActionRequest, CreateGenericActionResponse> createGenericActionInvoker(
-        CreateGenericActionRequest request) {
-        return new SyncInvoker<>(request, SecMasterMeta.createGenericAction, hcClient);
     }
 
     /**

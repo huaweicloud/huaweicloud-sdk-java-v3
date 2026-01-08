@@ -65,6 +65,11 @@ public class ShowDesktopPoolDetailResponse extends SdkResponse {
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_ids")
+
+    private List<String> subnetIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product")
 
     private ProductInfo product;
@@ -148,6 +153,21 @@ public class ShowDesktopPoolDetailResponse extends SdkResponse {
     @JsonProperty(value = "desktop_name_policy_id")
 
     private String desktopNamePolicyId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<Tag> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ou_name")
+
+    private String ouName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpc_id")
+
+    private String vpcId;
 
     public ShowDesktopPoolDetailResponse withId(String id) {
         this.id = id;
@@ -308,7 +328,7 @@ public class ShowDesktopPoolDetailResponse extends SdkResponse {
     }
 
     /**
-     * 子网ID。
+     * 子网ID（已废弃，多个仅取第一个）。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -317,6 +337,39 @@ public class ShowDesktopPoolDetailResponse extends SdkResponse {
 
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
+    }
+
+    public ShowDesktopPoolDetailResponse withSubnetIds(List<String> subnetIds) {
+        this.subnetIds = subnetIds;
+        return this;
+    }
+
+    public ShowDesktopPoolDetailResponse addSubnetIdsItem(String subnetIdsItem) {
+        if (this.subnetIds == null) {
+            this.subnetIds = new ArrayList<>();
+        }
+        this.subnetIds.add(subnetIdsItem);
+        return this;
+    }
+
+    public ShowDesktopPoolDetailResponse withSubnetIds(Consumer<List<String>> subnetIdsSetter) {
+        if (this.subnetIds == null) {
+            this.subnetIds = new ArrayList<>();
+        }
+        subnetIdsSetter.accept(this.subnetIds);
+        return this;
+    }
+
+    /**
+     * 桌面池子网ID列表。
+     * @return subnetIds
+     */
+    public List<String> getSubnetIds() {
+        return subnetIds;
+    }
+
+    public void setSubnetIds(List<String> subnetIds) {
+        this.subnetIds = subnetIds;
     }
 
     public ShowDesktopPoolDetailResponse withProduct(ProductInfo product) {
@@ -667,6 +720,73 @@ public class ShowDesktopPoolDetailResponse extends SdkResponse {
         this.desktopNamePolicyId = desktopNamePolicyId;
     }
 
+    public ShowDesktopPoolDetailResponse withTags(List<Tag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public ShowDesktopPoolDetailResponse addTagsItem(Tag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ShowDesktopPoolDetailResponse withTags(Consumer<List<Tag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签列表
+     * @return tags
+     */
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
+
+    public ShowDesktopPoolDetailResponse withOuName(String ouName) {
+        this.ouName = ouName;
+        return this;
+    }
+
+    /**
+     * OU名称
+     * @return ouName
+     */
+    public String getOuName() {
+        return ouName;
+    }
+
+    public void setOuName(String ouName) {
+        this.ouName = ouName;
+    }
+
+    public ShowDesktopPoolDetailResponse withVpcId(String vpcId) {
+        this.vpcId = vpcId;
+        return this;
+    }
+
+    /**
+     * VPC ID。
+     * @return vpcId
+     */
+    public String getVpcId() {
+        return vpcId;
+    }
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -683,9 +803,9 @@ public class ShowDesktopPoolDetailResponse extends SdkResponse {
             && Objects.equals(this.desktopCount, that.desktopCount)
             && Objects.equals(this.desktopUsed, that.desktopUsed)
             && Objects.equals(this.availabilityZone, that.availabilityZone)
-            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.product, that.product)
-            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.imageName, that.imageName)
-            && Objects.equals(this.imageOsType, that.imageOsType)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.subnetIds, that.subnetIds)
+            && Objects.equals(this.product, that.product) && Objects.equals(this.imageId, that.imageId)
+            && Objects.equals(this.imageName, that.imageName) && Objects.equals(this.imageOsType, that.imageOsType)
             && Objects.equals(this.imageOsVersion, that.imageOsVersion)
             && Objects.equals(this.imageOsPlatform, that.imageOsPlatform)
             && Objects.equals(this.imageProductCode, that.imageProductCode)
@@ -696,7 +816,9 @@ public class ShowDesktopPoolDetailResponse extends SdkResponse {
             && Objects.equals(this.autoscalePolicy, that.autoscalePolicy) && Objects.equals(this.status, that.status)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.inMaintenanceMode, that.inMaintenanceMode)
-            && Objects.equals(this.desktopNamePolicyId, that.desktopNamePolicyId);
+            && Objects.equals(this.desktopNamePolicyId, that.desktopNamePolicyId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.ouName, that.ouName)
+            && Objects.equals(this.vpcId, that.vpcId);
     }
 
     @Override
@@ -711,6 +833,7 @@ public class ShowDesktopPoolDetailResponse extends SdkResponse {
             desktopUsed,
             availabilityZone,
             subnetId,
+            subnetIds,
             product,
             imageId,
             imageName,
@@ -727,7 +850,10 @@ public class ShowDesktopPoolDetailResponse extends SdkResponse {
             status,
             enterpriseProjectId,
             inMaintenanceMode,
-            desktopNamePolicyId);
+            desktopNamePolicyId,
+            tags,
+            ouName,
+            vpcId);
     }
 
     @Override
@@ -744,6 +870,7 @@ public class ShowDesktopPoolDetailResponse extends SdkResponse {
         sb.append("    desktopUsed: ").append(toIndentedString(desktopUsed)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    subnetIds: ").append(toIndentedString(subnetIds)).append("\n");
         sb.append("    product: ").append(toIndentedString(product)).append("\n");
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");
@@ -763,6 +890,9 @@ public class ShowDesktopPoolDetailResponse extends SdkResponse {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    inMaintenanceMode: ").append(toIndentedString(inMaintenanceMode)).append("\n");
         sb.append("    desktopNamePolicyId: ").append(toIndentedString(desktopNamePolicyId)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    ouName: ").append(toIndentedString(ouName)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -15,9 +15,9 @@ import java.util.function.Consumer;
 public class ShowEpsRemainingQuotaResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "eps_quota_remaining")
+    @JsonProperty(value = "eps_remaining_quotas")
 
-    private List<EpsRemainingQuotaResult> epsQuotaRemaining = null;
+    private List<EpsRemainingQuotaResult> epsRemainingQuotas = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
@@ -29,38 +29,38 @@ public class ShowEpsRemainingQuotaResponse extends SdkResponse {
 
     private Integer totalCount;
 
-    public ShowEpsRemainingQuotaResponse withEpsQuotaRemaining(List<EpsRemainingQuotaResult> epsQuotaRemaining) {
-        this.epsQuotaRemaining = epsQuotaRemaining;
+    public ShowEpsRemainingQuotaResponse withEpsRemainingQuotas(List<EpsRemainingQuotaResult> epsRemainingQuotas) {
+        this.epsRemainingQuotas = epsRemainingQuotas;
         return this;
     }
 
-    public ShowEpsRemainingQuotaResponse addEpsQuotaRemainingItem(EpsRemainingQuotaResult epsQuotaRemainingItem) {
-        if (this.epsQuotaRemaining == null) {
-            this.epsQuotaRemaining = new ArrayList<>();
+    public ShowEpsRemainingQuotaResponse addEpsRemainingQuotasItem(EpsRemainingQuotaResult epsRemainingQuotasItem) {
+        if (this.epsRemainingQuotas == null) {
+            this.epsRemainingQuotas = new ArrayList<>();
         }
-        this.epsQuotaRemaining.add(epsQuotaRemainingItem);
+        this.epsRemainingQuotas.add(epsRemainingQuotasItem);
         return this;
     }
 
-    public ShowEpsRemainingQuotaResponse withEpsQuotaRemaining(
-        Consumer<List<EpsRemainingQuotaResult>> epsQuotaRemainingSetter) {
-        if (this.epsQuotaRemaining == null) {
-            this.epsQuotaRemaining = new ArrayList<>();
+    public ShowEpsRemainingQuotaResponse withEpsRemainingQuotas(
+        Consumer<List<EpsRemainingQuotaResult>> epsRemainingQuotasSetter) {
+        if (this.epsRemainingQuotas == null) {
+            this.epsRemainingQuotas = new ArrayList<>();
         }
-        epsQuotaRemainingSetter.accept(this.epsQuotaRemaining);
+        epsRemainingQuotasSetter.accept(this.epsRemainingQuotas);
         return this;
     }
 
     /**
      * **参数解释**: 剩余企业项目配额组。
-     * @return epsQuotaRemaining
+     * @return epsRemainingQuotas
      */
-    public List<EpsRemainingQuotaResult> getEpsQuotaRemaining() {
-        return epsQuotaRemaining;
+    public List<EpsRemainingQuotaResult> getEpsRemainingQuotas() {
+        return epsRemainingQuotas;
     }
 
-    public void setEpsQuotaRemaining(List<EpsRemainingQuotaResult> epsQuotaRemaining) {
-        this.epsQuotaRemaining = epsQuotaRemaining;
+    public void setEpsRemainingQuotas(List<EpsRemainingQuotaResult> epsRemainingQuotas) {
+        this.epsRemainingQuotas = epsRemainingQuotas;
     }
 
     public ShowEpsRemainingQuotaResponse withJobId(String jobId) {
@@ -106,20 +106,20 @@ public class ShowEpsRemainingQuotaResponse extends SdkResponse {
             return false;
         }
         ShowEpsRemainingQuotaResponse that = (ShowEpsRemainingQuotaResponse) obj;
-        return Objects.equals(this.epsQuotaRemaining, that.epsQuotaRemaining) && Objects.equals(this.jobId, that.jobId)
-            && Objects.equals(this.totalCount, that.totalCount);
+        return Objects.equals(this.epsRemainingQuotas, that.epsRemainingQuotas)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(epsQuotaRemaining, jobId, totalCount);
+        return Objects.hash(epsRemainingQuotas, jobId, totalCount);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowEpsRemainingQuotaResponse {\n");
-        sb.append("    epsQuotaRemaining: ").append(toIndentedString(epsQuotaRemaining)).append("\n");
+        sb.append("    epsRemainingQuotas: ").append(toIndentedString(epsRemainingQuotas)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("}");

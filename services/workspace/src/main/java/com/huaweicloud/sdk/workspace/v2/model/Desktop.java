@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.workspace.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Desktop
@@ -14,6 +17,11 @@ public class Desktop {
     @JsonProperty(value = "user_name")
 
     private String userName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain")
+
+    private String domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_email")
@@ -45,6 +53,21 @@ public class Desktop {
 
     private String desktopNamePrefix;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "copy_volume_desktop_id")
+
+    private String copyVolumeDesktopId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "copy_volume_ids")
+
+    private List<String> copyVolumeIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "if_delete_old_desktop")
+
+    private Boolean ifDeleteOldDesktop;
+
     public Desktop withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -60,6 +83,23 @@ public class Desktop {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public Desktop withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    /**
+     * 用户所属域。
+     * @return domain
+     */
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
     }
 
     public Desktop withUserEmail(String userEmail) {
@@ -164,6 +204,73 @@ public class Desktop {
         this.desktopNamePrefix = desktopNamePrefix;
     }
 
+    public Desktop withCopyVolumeDesktopId(String copyVolumeDesktopId) {
+        this.copyVolumeDesktopId = copyVolumeDesktopId;
+        return this;
+    }
+
+    /**
+     * 需要拷贝数据盘的桌面ID，如果指定了该参数，那么copy_volume_ids不能为空。
+     * @return copyVolumeDesktopId
+     */
+    public String getCopyVolumeDesktopId() {
+        return copyVolumeDesktopId;
+    }
+
+    public void setCopyVolumeDesktopId(String copyVolumeDesktopId) {
+        this.copyVolumeDesktopId = copyVolumeDesktopId;
+    }
+
+    public Desktop withCopyVolumeIds(List<String> copyVolumeIds) {
+        this.copyVolumeIds = copyVolumeIds;
+        return this;
+    }
+
+    public Desktop addCopyVolumeIdsItem(String copyVolumeIdsItem) {
+        if (this.copyVolumeIds == null) {
+            this.copyVolumeIds = new ArrayList<>();
+        }
+        this.copyVolumeIds.add(copyVolumeIdsItem);
+        return this;
+    }
+
+    public Desktop withCopyVolumeIds(Consumer<List<String>> copyVolumeIdsSetter) {
+        if (this.copyVolumeIds == null) {
+            this.copyVolumeIds = new ArrayList<>();
+        }
+        copyVolumeIdsSetter.accept(this.copyVolumeIds);
+        return this;
+    }
+
+    /**
+     * 需要拷贝数据盘桌面的磁盘ID列表，如果指定了该参数，copy_volume_desktop_id不能为空，且磁盘必须属于该桌面。
+     * @return copyVolumeIds
+     */
+    public List<String> getCopyVolumeIds() {
+        return copyVolumeIds;
+    }
+
+    public void setCopyVolumeIds(List<String> copyVolumeIds) {
+        this.copyVolumeIds = copyVolumeIds;
+    }
+
+    public Desktop withIfDeleteOldDesktop(Boolean ifDeleteOldDesktop) {
+        this.ifDeleteOldDesktop = ifDeleteOldDesktop;
+        return this;
+    }
+
+    /**
+     * 是否删除按需旧桌面，值为true时，新发放桌面配置并拷贝磁盘后删除旧桌面
+     * @return ifDeleteOldDesktop
+     */
+    public Boolean getIfDeleteOldDesktop() {
+        return ifDeleteOldDesktop;
+    }
+
+    public void setIfDeleteOldDesktop(Boolean ifDeleteOldDesktop) {
+        this.ifDeleteOldDesktop = ifDeleteOldDesktop;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -173,15 +280,29 @@ public class Desktop {
             return false;
         }
         Desktop that = (Desktop) obj;
-        return Objects.equals(this.userName, that.userName) && Objects.equals(this.userEmail, that.userEmail)
-            && Objects.equals(this.userPhone, that.userPhone) && Objects.equals(this.userGroup, that.userGroup)
-            && Objects.equals(this.computerName, that.computerName) && Objects.equals(this.osHostName, that.osHostName)
-            && Objects.equals(this.desktopNamePrefix, that.desktopNamePrefix);
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.userEmail, that.userEmail) && Objects.equals(this.userPhone, that.userPhone)
+            && Objects.equals(this.userGroup, that.userGroup) && Objects.equals(this.computerName, that.computerName)
+            && Objects.equals(this.osHostName, that.osHostName)
+            && Objects.equals(this.desktopNamePrefix, that.desktopNamePrefix)
+            && Objects.equals(this.copyVolumeDesktopId, that.copyVolumeDesktopId)
+            && Objects.equals(this.copyVolumeIds, that.copyVolumeIds)
+            && Objects.equals(this.ifDeleteOldDesktop, that.ifDeleteOldDesktop);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, userEmail, userPhone, userGroup, computerName, osHostName, desktopNamePrefix);
+        return Objects.hash(userName,
+            domain,
+            userEmail,
+            userPhone,
+            userGroup,
+            computerName,
+            osHostName,
+            desktopNamePrefix,
+            copyVolumeDesktopId,
+            copyVolumeIds,
+            ifDeleteOldDesktop);
     }
 
     @Override
@@ -189,12 +310,16 @@ public class Desktop {
         StringBuilder sb = new StringBuilder();
         sb.append("class Desktop {\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    userEmail: ").append(toIndentedString(userEmail)).append("\n");
         sb.append("    userPhone: ").append(toIndentedString(userPhone)).append("\n");
         sb.append("    userGroup: ").append(toIndentedString(userGroup)).append("\n");
         sb.append("    computerName: ").append(toIndentedString(computerName)).append("\n");
         sb.append("    osHostName: ").append(toIndentedString(osHostName)).append("\n");
         sb.append("    desktopNamePrefix: ").append(toIndentedString(desktopNamePrefix)).append("\n");
+        sb.append("    copyVolumeDesktopId: ").append(toIndentedString(copyVolumeDesktopId)).append("\n");
+        sb.append("    copyVolumeIds: ").append(toIndentedString(copyVolumeIds)).append("\n");
+        sb.append("    ifDeleteOldDesktop: ").append(toIndentedString(ifDeleteOldDesktop)).append("\n");
         sb.append("}");
         return sb.toString();
     }

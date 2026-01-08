@@ -150,11 +150,6 @@ public class CreateResponseVpnConnection {
     private Boolean enableHub;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enable_health_check")
-
-    private Boolean enableHealthCheck;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_rules")
 
     private List<PolicyRule> policyRules = null;
@@ -405,23 +400,6 @@ public class CreateResponseVpnConnection {
 
     public void setEnableHub(Boolean enableHub) {
         this.enableHub = enableHub;
-    }
-
-    public CreateResponseVpnConnection withEnableHealthCheck(Boolean enableHealthCheck) {
-        this.enableHealthCheck = enableHealthCheck;
-        return this;
-    }
-
-    /**
-     * 开启健康检查
-     * @return enableHealthCheck
-     */
-    public Boolean getEnableHealthCheck() {
-        return enableHealthCheck;
-    }
-
-    public void setEnableHealthCheck(Boolean enableHealthCheck) {
-        this.enableHealthCheck = enableHealthCheck;
     }
 
     public CreateResponseVpnConnection withPolicyRules(List<PolicyRule> policyRules) {
@@ -692,7 +670,6 @@ public class CreateResponseVpnConnection {
             && Objects.equals(this.tunnelLocalAddress, that.tunnelLocalAddress)
             && Objects.equals(this.tunnelPeerAddress, that.tunnelPeerAddress)
             && Objects.equals(this.enableNqa, that.enableNqa) && Objects.equals(this.enableHub, that.enableHub)
-            && Objects.equals(this.enableHealthCheck, that.enableHealthCheck)
             && Objects.equals(this.policyRules, that.policyRules) && Objects.equals(this.ikepolicy, that.ikepolicy)
             && Objects.equals(this.ipsecpolicy, that.ipsecpolicy) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.updatedAt, that.updatedAt)
@@ -715,7 +692,6 @@ public class CreateResponseVpnConnection {
             tunnelPeerAddress,
             enableNqa,
             enableHub,
-            enableHealthCheck,
             policyRules,
             ikepolicy,
             ipsecpolicy,
@@ -743,7 +719,6 @@ public class CreateResponseVpnConnection {
         sb.append("    tunnelPeerAddress: ").append(toIndentedString(tunnelPeerAddress)).append("\n");
         sb.append("    enableNqa: ").append(toIndentedString(enableNqa)).append("\n");
         sb.append("    enableHub: ").append(toIndentedString(enableHub)).append("\n");
-        sb.append("    enableHealthCheck: ").append(toIndentedString(enableHealthCheck)).append("\n");
         sb.append("    policyRules: ").append(toIndentedString(policyRules)).append("\n");
         sb.append("    ikepolicy: ").append(toIndentedString(ikepolicy)).append("\n");
         sb.append("    ipsecpolicy: ").append(toIndentedString(ipsecpolicy)).append("\n");

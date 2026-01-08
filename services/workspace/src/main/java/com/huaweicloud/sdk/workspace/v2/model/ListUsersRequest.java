@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.workspace.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -14,6 +17,11 @@ public class ListUsersRequest {
     @JsonProperty(value = "user_name")
 
     private String userName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_names")
+
+    private List<String> userNames = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -60,6 +68,11 @@ public class ListUsersRequest {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain")
+
+    private String domain;
+
     public ListUsersRequest withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -75,6 +88,39 @@ public class ListUsersRequest {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public ListUsersRequest withUserNames(List<String> userNames) {
+        this.userNames = userNames;
+        return this;
+    }
+
+    public ListUsersRequest addUserNamesItem(String userNamesItem) {
+        if (this.userNames == null) {
+            this.userNames = new ArrayList<>();
+        }
+        this.userNames.add(userNamesItem);
+        return this;
+    }
+
+    public ListUsersRequest withUserNames(Consumer<List<String>> userNamesSetter) {
+        if (this.userNames == null) {
+            this.userNames = new ArrayList<>();
+        }
+        userNamesSetter.accept(this.userNames);
+        return this;
+    }
+
+    /**
+     * 桌面用户名列表。
+     * @return userNames
+     */
+    public List<String> getUserNames() {
+        return userNames;
+    }
+
+    public void setUserNames(List<String> userNames) {
+        this.userNames = userNames;
     }
 
     public ListUsersRequest withLimit(String limit) {
@@ -219,7 +265,7 @@ public class ListUsersRequest {
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -228,6 +274,23 @@ public class ListUsersRequest {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ListUsersRequest withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    /**
+     * 域。
+     * @return domain
+     */
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
     }
 
     @Override
@@ -239,18 +302,21 @@ public class ListUsersRequest {
             return false;
         }
         ListUsersRequest that = (ListUsersRequest) obj;
-        return Objects.equals(this.userName, that.userName) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.activeType, that.activeType) && Objects.equals(this.groupName, that.groupName)
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.userNames, that.userNames)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.activeType, that.activeType)
+            && Objects.equals(this.groupName, that.groupName)
             && Objects.equals(this.shareSpaceSubscription, that.shareSpaceSubscription)
             && Objects.equals(this.shareSpaceDesktops, that.shareSpaceDesktops)
             && Objects.equals(this.isQueryTotalDesktops, that.isQueryTotalDesktops)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.domain, that.domain);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(userName,
+            userNames,
             limit,
             offset,
             description,
@@ -259,7 +325,8 @@ public class ListUsersRequest {
             shareSpaceSubscription,
             shareSpaceDesktops,
             isQueryTotalDesktops,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            domain);
     }
 
     @Override
@@ -267,6 +334,7 @@ public class ListUsersRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListUsersRequest {\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    userNames: ").append(toIndentedString(userNames)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
@@ -276,6 +344,7 @@ public class ListUsersRequest {
         sb.append("    shareSpaceDesktops: ").append(toIndentedString(shareSpaceDesktops)).append("\n");
         sb.append("    isQueryTotalDesktops: ").append(toIndentedString(isQueryTotalDesktops)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("}");
         return sb.toString();
     }

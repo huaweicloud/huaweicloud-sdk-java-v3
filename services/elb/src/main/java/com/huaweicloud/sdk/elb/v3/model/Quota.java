@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Quota
+ * 负载均衡相关各类资源的配额信息。仅返回资源的总配额，不包括剩余可用配额。
  */
 public class Quota {
 
@@ -81,6 +81,11 @@ public class Quota {
     private Integer ipgroupMaxLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipgroups_per_listener")
+
+    private Integer ipgroupsPerListener;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_policy")
 
     private Integer securityPolicy;
@@ -89,11 +94,6 @@ public class Quota {
     @JsonProperty(value = "listeners_per_loadbalancer")
 
     private Integer listenersPerLoadbalancer;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ipgroups_per_listener")
-
-    private Integer ipgroupsPerListener;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pools_per_l7policy")
@@ -353,6 +353,23 @@ public class Quota {
         this.ipgroupMaxLength = ipgroupMaxLength;
     }
 
+    public Quota withIpgroupsPerListener(Integer ipgroupsPerListener) {
+        this.ipgroupsPerListener = ipgroupsPerListener;
+        return this;
+    }
+
+    /**
+     * **参数解释**：单个监听器下的IP地址组配额。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * @return ipgroupsPerListener
+     */
+    public Integer getIpgroupsPerListener() {
+        return ipgroupsPerListener;
+    }
+
+    public void setIpgroupsPerListener(Integer ipgroupsPerListener) {
+        this.ipgroupsPerListener = ipgroupsPerListener;
+    }
+
     public Quota withSecurityPolicy(Integer securityPolicy) {
         this.securityPolicy = securityPolicy;
         return this;
@@ -385,23 +402,6 @@ public class Quota {
 
     public void setListenersPerLoadbalancer(Integer listenersPerLoadbalancer) {
         this.listenersPerLoadbalancer = listenersPerLoadbalancer;
-    }
-
-    public Quota withIpgroupsPerListener(Integer ipgroupsPerListener) {
-        this.ipgroupsPerListener = ipgroupsPerListener;
-        return this;
-    }
-
-    /**
-     * **参数解释**：单个监听器下的IP地址组配额。  **取值范围**： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
-     * @return ipgroupsPerListener
-     */
-    public Integer getIpgroupsPerListener() {
-        return ipgroupsPerListener;
-    }
-
-    public void setIpgroupsPerListener(Integer ipgroupsPerListener) {
-        this.ipgroupsPerListener = ipgroupsPerListener;
     }
 
     public Quota withPoolsPerL7policy(Integer poolsPerL7policy) {
@@ -490,9 +490,9 @@ public class Quota {
             && Objects.equals(this.listenersPerPool, that.listenersPerPool)
             && Objects.equals(this.ipgroup, that.ipgroup) && Objects.equals(this.ipgroupBindings, that.ipgroupBindings)
             && Objects.equals(this.ipgroupMaxLength, that.ipgroupMaxLength)
+            && Objects.equals(this.ipgroupsPerListener, that.ipgroupsPerListener)
             && Objects.equals(this.securityPolicy, that.securityPolicy)
             && Objects.equals(this.listenersPerLoadbalancer, that.listenersPerLoadbalancer)
-            && Objects.equals(this.ipgroupsPerListener, that.ipgroupsPerListener)
             && Objects.equals(this.poolsPerL7policy, that.poolsPerL7policy)
             && Objects.equals(this.l7policiesPerListener, that.l7policiesPerListener)
             && Objects.equals(this.freeInstanceMembersPerPool, that.freeInstanceMembersPerPool)
@@ -515,9 +515,9 @@ public class Quota {
             ipgroup,
             ipgroupBindings,
             ipgroupMaxLength,
+            ipgroupsPerListener,
             securityPolicy,
             listenersPerLoadbalancer,
-            ipgroupsPerListener,
             poolsPerL7policy,
             l7policiesPerListener,
             freeInstanceMembersPerPool,
@@ -542,9 +542,9 @@ public class Quota {
         sb.append("    ipgroup: ").append(toIndentedString(ipgroup)).append("\n");
         sb.append("    ipgroupBindings: ").append(toIndentedString(ipgroupBindings)).append("\n");
         sb.append("    ipgroupMaxLength: ").append(toIndentedString(ipgroupMaxLength)).append("\n");
+        sb.append("    ipgroupsPerListener: ").append(toIndentedString(ipgroupsPerListener)).append("\n");
         sb.append("    securityPolicy: ").append(toIndentedString(securityPolicy)).append("\n");
         sb.append("    listenersPerLoadbalancer: ").append(toIndentedString(listenersPerLoadbalancer)).append("\n");
-        sb.append("    ipgroupsPerListener: ").append(toIndentedString(ipgroupsPerListener)).append("\n");
         sb.append("    poolsPerL7policy: ").append(toIndentedString(poolsPerL7policy)).append("\n");
         sb.append("    l7policiesPerListener: ").append(toIndentedString(l7policiesPerListener)).append("\n");
         sb.append("    freeInstanceMembersPerPool: ").append(toIndentedString(freeInstanceMembersPerPool)).append("\n");

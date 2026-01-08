@@ -99,6 +99,11 @@ public class SimpleDesktopInfo {
     private String desktopType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desktop_detail_type")
+
+    private String desktopDetailType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_id")
 
     private String subnetId;
@@ -117,6 +122,16 @@ public class SimpleDesktopInfo {
     @JsonProperty(value = "task_status")
 
     private String taskStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone")
+
+    private String availabilityZone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connect_status")
+
+    private String connectStatus;
 
     public SimpleDesktopInfo withDomainId(String domainId) {
         this.domainId = domainId;
@@ -439,6 +454,23 @@ public class SimpleDesktopInfo {
         this.desktopType = desktopType;
     }
 
+    public SimpleDesktopInfo withDesktopDetailType(String desktopDetailType) {
+        this.desktopDetailType = desktopDetailType;
+        return this;
+    }
+
+    /**
+     * 桌面详细类型
+     * @return desktopDetailType
+     */
+    public String getDesktopDetailType() {
+        return desktopDetailType;
+    }
+
+    public void setDesktopDetailType(String desktopDetailType) {
+        this.desktopDetailType = desktopDetailType;
+    }
+
     public SimpleDesktopInfo withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -507,6 +539,40 @@ public class SimpleDesktopInfo {
         this.taskStatus = taskStatus;
     }
 
+    public SimpleDesktopInfo withAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    /**
+     * 所属的可用区。
+     * @return availabilityZone
+     */
+    public String getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+
+    public SimpleDesktopInfo withConnectStatus(String connectStatus) {
+        this.connectStatus = connectStatus;
+        return this;
+    }
+
+    /**
+     * 桌面的连接状态
+     * @return connectStatus
+     */
+    public String getConnectStatus() {
+        return connectStatus;
+    }
+
+    public void setConnectStatus(String connectStatus) {
+        this.connectStatus = connectStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -526,9 +592,12 @@ public class SimpleDesktopInfo {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.inMaintenanceMode, that.inMaintenanceMode)
             && Objects.equals(this.shareResourceSku, that.shareResourceSku)
-            && Objects.equals(this.desktopType, that.desktopType) && Objects.equals(this.subnetId, that.subnetId)
-            && Objects.equals(this.billResourceId, that.billResourceId) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.taskStatus, that.taskStatus);
+            && Objects.equals(this.desktopType, that.desktopType)
+            && Objects.equals(this.desktopDetailType, that.desktopDetailType)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.billResourceId, that.billResourceId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.taskStatus, that.taskStatus)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.connectStatus, that.connectStatus);
     }
 
     @Override
@@ -550,10 +619,13 @@ public class SimpleDesktopInfo {
             inMaintenanceMode,
             shareResourceSku,
             desktopType,
+            desktopDetailType,
             subnetId,
             billResourceId,
             status,
-            taskStatus);
+            taskStatus,
+            availabilityZone,
+            connectStatus);
     }
 
     @Override
@@ -577,10 +649,13 @@ public class SimpleDesktopInfo {
         sb.append("    inMaintenanceMode: ").append(toIndentedString(inMaintenanceMode)).append("\n");
         sb.append("    shareResourceSku: ").append(toIndentedString(shareResourceSku)).append("\n");
         sb.append("    desktopType: ").append(toIndentedString(desktopType)).append("\n");
+        sb.append("    desktopDetailType: ").append(toIndentedString(desktopDetailType)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    billResourceId: ").append(toIndentedString(billResourceId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    taskStatus: ").append(toIndentedString(taskStatus)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    connectStatus: ").append(toIndentedString(connectStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

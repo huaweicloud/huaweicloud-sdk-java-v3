@@ -26,6 +26,16 @@ public class AvParameters {
 
     private Common common;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "output")
+
+    private ObsObjInfo output;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "output_filename")
+
+    private String outputFilename;
+
     public AvParameters withVideo(VideoParameters video) {
         this.video = video;
         return this;
@@ -104,6 +114,49 @@ public class AvParameters {
         this.common = common;
     }
 
+    public AvParameters withOutput(ObsObjInfo output) {
+        this.output = output;
+        return this;
+    }
+
+    public AvParameters withOutput(Consumer<ObsObjInfo> outputSetter) {
+        if (this.output == null) {
+            this.output = new ObsObjInfo();
+            outputSetter.accept(this.output);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get output
+     * @return output
+     */
+    public ObsObjInfo getOutput() {
+        return output;
+    }
+
+    public void setOutput(ObsObjInfo output) {
+        this.output = output;
+    }
+
+    public AvParameters withOutputFilename(String outputFilename) {
+        this.outputFilename = outputFilename;
+        return this;
+    }
+
+    /**
+     * 输出文件名 
+     * @return outputFilename
+     */
+    public String getOutputFilename() {
+        return outputFilename;
+    }
+
+    public void setOutputFilename(String outputFilename) {
+        this.outputFilename = outputFilename;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -114,12 +167,13 @@ public class AvParameters {
         }
         AvParameters that = (AvParameters) obj;
         return Objects.equals(this.video, that.video) && Objects.equals(this.audio, that.audio)
-            && Objects.equals(this.common, that.common);
+            && Objects.equals(this.common, that.common) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.outputFilename, that.outputFilename);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(video, audio, common);
+        return Objects.hash(video, audio, common, output, outputFilename);
     }
 
     @Override
@@ -129,6 +183,8 @@ public class AvParameters {
         sb.append("    video: ").append(toIndentedString(video)).append("\n");
         sb.append("    audio: ").append(toIndentedString(audio)).append("\n");
         sb.append("    common: ").append(toIndentedString(common)).append("\n");
+        sb.append("    output: ").append(toIndentedString(output)).append("\n");
+        sb.append("    outputFilename: ").append(toIndentedString(outputFilename)).append("\n");
         sb.append("}");
         return sb.toString();
     }

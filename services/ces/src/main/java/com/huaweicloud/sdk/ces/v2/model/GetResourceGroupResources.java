@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class GetResourceGroupResources {
 
     /**
-     * **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
+     * **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未设置告警规则 
      */
     public static final class StatusEnum {
 
@@ -115,7 +115,7 @@ public class GetResourceGroupResources {
     private String enterpriseProjectId;
 
     /**
-     * **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
+     * **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未设置告警规则 
      */
     public static final class EventStatusEnum {
 
@@ -206,7 +206,7 @@ public class GetResourceGroupResources {
     }
 
     /**
-     * **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
+     * **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未设置告警规则 
      * @return status
      */
     public StatusEnum getStatus() {
@@ -290,7 +290,7 @@ public class GetResourceGroupResources {
     }
 
     /**
-     * **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 告警中 - unhealthy: 已触发 - no_alarm_rule: 未设置告警规则 
+     * **参数解释** 按事件告警状态信息进行过滤。 **取值范围** 枚举值。 - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未设置告警规则 
      * @return eventStatus
      */
     public EventStatusEnum getEventStatus() {

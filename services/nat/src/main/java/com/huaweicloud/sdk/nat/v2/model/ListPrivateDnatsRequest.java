@@ -83,11 +83,6 @@ public class ListPrivateDnatsRequest {
 
     private List<String> transitServicePort = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "transit_ip_address")
-
-    private List<String> transitIpAddress = null;
-
     public ListPrivateDnatsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -361,7 +356,7 @@ public class ListPrivateDnatsRequest {
     }
 
     /**
-     * DNAT规则后端的类型。 取值：     COMPUTE：后端为计算实例。     VIP：后端为VIP的实例。     ELB：后端为ELBv2的实例。     ELBv3：后端为ELBv3的实例。     CUSTOMIZE：后端为自定义IP。
+     * DNAT规则后端的类型。 取值： - COMPUTE：后端为计算实例。 - VIP：后端为VIP的实例。 - ELB：后端为ELBv2的实例。 - ELBv3：后端为ELBv3的实例。 - CUSTOMIZE：后端为自定义IP。
      * @return type
      */
     public List<String> getType() {
@@ -504,39 +499,6 @@ public class ListPrivateDnatsRequest {
         this.transitServicePort = transitServicePort;
     }
 
-    public ListPrivateDnatsRequest withTransitIpAddress(List<String> transitIpAddress) {
-        this.transitIpAddress = transitIpAddress;
-        return this;
-    }
-
-    public ListPrivateDnatsRequest addTransitIpAddressItem(String transitIpAddressItem) {
-        if (this.transitIpAddress == null) {
-            this.transitIpAddress = new ArrayList<>();
-        }
-        this.transitIpAddress.add(transitIpAddressItem);
-        return this;
-    }
-
-    public ListPrivateDnatsRequest withTransitIpAddress(Consumer<List<String>> transitIpAddressSetter) {
-        if (this.transitIpAddress == null) {
-            this.transitIpAddress = new ArrayList<>();
-        }
-        transitIpAddressSetter.accept(this.transitIpAddress);
-        return this;
-    }
-
-    /**
-     * 中转IP的地址。
-     * @return transitIpAddress
-     */
-    public List<String> getTransitIpAddress() {
-        return transitIpAddress;
-    }
-
-    public void setTransitIpAddress(List<String> transitIpAddress) {
-        this.transitIpAddress = transitIpAddress;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -555,8 +517,7 @@ public class ListPrivateDnatsRequest {
             && Objects.equals(this.privateIpAddress, that.privateIpAddress)
             && Objects.equals(this.protocol, that.protocol)
             && Objects.equals(this.internalServicePort, that.internalServicePort)
-            && Objects.equals(this.transitServicePort, that.transitServicePort)
-            && Objects.equals(this.transitIpAddress, that.transitIpAddress);
+            && Objects.equals(this.transitServicePort, that.transitServicePort);
     }
 
     @Override
@@ -574,8 +535,7 @@ public class ListPrivateDnatsRequest {
             privateIpAddress,
             protocol,
             internalServicePort,
-            transitServicePort,
-            transitIpAddress);
+            transitServicePort);
     }
 
     @Override
@@ -596,7 +556,6 @@ public class ListPrivateDnatsRequest {
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    internalServicePort: ").append(toIndentedString(internalServicePort)).append("\n");
         sb.append("    transitServicePort: ").append(toIndentedString(transitServicePort)).append("\n");
-        sb.append("    transitIpAddress: ").append(toIndentedString(transitIpAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

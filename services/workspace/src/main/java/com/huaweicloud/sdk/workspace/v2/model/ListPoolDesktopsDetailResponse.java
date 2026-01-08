@@ -34,6 +34,11 @@ public class ListPoolDesktopsDetailResponse extends SdkResponse {
 
     private Integer periodDesktopsNum;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "inconsistent_type")
+
+    private InconsistentTypeEnum inconsistentType;
+
     public ListPoolDesktopsDetailResponse withPoolDesktops(List<PoolDesktopsDetailInfo> poolDesktops) {
         this.poolDesktops = poolDesktops;
         return this;
@@ -118,6 +123,23 @@ public class ListPoolDesktopsDetailResponse extends SdkResponse {
         this.periodDesktopsNum = periodDesktopsNum;
     }
 
+    public ListPoolDesktopsDetailResponse withInconsistentType(InconsistentTypeEnum inconsistentType) {
+        this.inconsistentType = inconsistentType;
+        return this;
+    }
+
+    /**
+     * Get inconsistentType
+     * @return inconsistentType
+     */
+    public InconsistentTypeEnum getInconsistentType() {
+        return inconsistentType;
+    }
+
+    public void setInconsistentType(InconsistentTypeEnum inconsistentType) {
+        this.inconsistentType = inconsistentType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -129,12 +151,13 @@ public class ListPoolDesktopsDetailResponse extends SdkResponse {
         ListPoolDesktopsDetailResponse that = (ListPoolDesktopsDetailResponse) obj;
         return Objects.equals(this.poolDesktops, that.poolDesktops) && Objects.equals(this.totalCount, that.totalCount)
             && Objects.equals(this.onDemandDesktopsNum, that.onDemandDesktopsNum)
-            && Objects.equals(this.periodDesktopsNum, that.periodDesktopsNum);
+            && Objects.equals(this.periodDesktopsNum, that.periodDesktopsNum)
+            && Objects.equals(this.inconsistentType, that.inconsistentType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(poolDesktops, totalCount, onDemandDesktopsNum, periodDesktopsNum);
+        return Objects.hash(poolDesktops, totalCount, onDemandDesktopsNum, periodDesktopsNum, inconsistentType);
     }
 
     @Override
@@ -145,6 +168,7 @@ public class ListPoolDesktopsDetailResponse extends SdkResponse {
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("    onDemandDesktopsNum: ").append(toIndentedString(onDemandDesktopsNum)).append("\n");
         sb.append("    periodDesktopsNum: ").append(toIndentedString(periodDesktopsNum)).append("\n");
+        sb.append("    inconsistentType: ").append(toIndentedString(inconsistentType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -124,7 +124,7 @@ public class PoliciesRecordAudit {
     }
 
     /**
-     * obs 桶名
+     * obs 桶名。
      * @return obsBucketName
      */
     public String getObsBucketName() {

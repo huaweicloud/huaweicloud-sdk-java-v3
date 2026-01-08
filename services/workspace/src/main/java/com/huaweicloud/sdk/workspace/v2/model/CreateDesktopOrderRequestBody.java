@@ -19,6 +19,11 @@ public class CreateDesktopOrderRequestBody {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agency_urn")
+
+    private String agencyUrn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hour_package_resources")
 
     private List<HourPackageResource> hourPackageResources = null;
@@ -43,6 +48,23 @@ public class CreateDesktopOrderRequestBody {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public CreateDesktopOrderRequestBody withAgencyUrn(String agencyUrn) {
+        this.agencyUrn = agencyUrn;
+        return this;
+    }
+
+    /**
+     * 授权给Billing服务的委托URN。使用RAM共享密钥创建包周期云桌面或添加包周期磁盘时，需要传入该字段。
+     * @return agencyUrn
+     */
+    public String getAgencyUrn() {
+        return agencyUrn;
+    }
+
+    public void setAgencyUrn(String agencyUrn) {
+        this.agencyUrn = agencyUrn;
     }
 
     public CreateDesktopOrderRequestBody withHourPackageResources(List<HourPackageResource> hourPackageResources) {
@@ -115,13 +137,14 @@ public class CreateDesktopOrderRequestBody {
         }
         CreateDesktopOrderRequestBody that = (CreateDesktopOrderRequestBody) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.agencyUrn, that.agencyUrn)
             && Objects.equals(this.hourPackageResources, that.hourPackageResources)
             && Objects.equals(this.extendParam, that.extendParam);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, hourPackageResources, extendParam);
+        return Objects.hash(enterpriseProjectId, agencyUrn, hourPackageResources, extendParam);
     }
 
     @Override
@@ -129,6 +152,7 @@ public class CreateDesktopOrderRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateDesktopOrderRequestBody {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    agencyUrn: ").append(toIndentedString(agencyUrn)).append("\n");
         sb.append("    hourPackageResources: ").append(toIndentedString(hourPackageResources)).append("\n");
         sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
         sb.append("}");

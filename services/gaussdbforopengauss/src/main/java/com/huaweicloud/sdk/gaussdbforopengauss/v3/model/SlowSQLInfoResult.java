@@ -11,6 +11,16 @@ import java.util.Objects;
 public class SlowSQLInfoResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "db_name")
+
+    private String dbName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "schema_name")
+
+    private String schemaName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sql")
 
     private String sql;
@@ -84,6 +94,40 @@ public class SlowSQLInfoResult {
     @JsonProperty(value = "node_name")
 
     private String nodeName;
+
+    public SlowSQLInfoResult withDbName(String dbName) {
+        this.dbName = dbName;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 数据库名称。 **取值范围**: 不涉及。
+     * @return dbName
+     */
+    public String getDbName() {
+        return dbName;
+    }
+
+    public void setDbName(String dbName) {
+        this.dbName = dbName;
+    }
+
+    public SlowSQLInfoResult withSchemaName(String schemaName) {
+        this.schemaName = schemaName;
+        return this;
+    }
+
+    /**
+     * **参数解释**: SCHEMA名称。 **取值范围**: 不涉及。
+     * @return schemaName
+     */
+    public String getSchemaName() {
+        return schemaName;
+    }
+
+    public void setSchemaName(String schemaName) {
+        this.schemaName = schemaName;
+    }
 
     public SlowSQLInfoResult withSql(String sql) {
         this.sql = sql;
@@ -349,7 +393,8 @@ public class SlowSQLInfoResult {
             return false;
         }
         SlowSQLInfoResult that = (SlowSQLInfoResult) obj;
-        return Objects.equals(this.sql, that.sql) && Objects.equals(this.sqlId, that.sqlId)
+        return Objects.equals(this.dbName, that.dbName) && Objects.equals(this.schemaName, that.schemaName)
+            && Objects.equals(this.sql, that.sql) && Objects.equals(this.sqlId, that.sqlId)
             && Objects.equals(this.userName, that.userName) && Objects.equals(this.sqlText, that.sqlText)
             && Objects.equals(this.queryPlan, that.queryPlan) && Objects.equals(this.calls, that.calls)
             && Objects.equals(this.avgExecTime, that.avgExecTime) && Objects.equals(this.avgCpuTime, that.avgCpuTime)
@@ -363,7 +408,9 @@ public class SlowSQLInfoResult {
 
     @Override
     public int hashCode() {
-        return Objects.hash(sql,
+        return Objects.hash(dbName,
+            schemaName,
+            sql,
             sqlId,
             userName,
             sqlText,
@@ -384,6 +431,8 @@ public class SlowSQLInfoResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SlowSQLInfoResult {\n");
+        sb.append("    dbName: ").append(toIndentedString(dbName)).append("\n");
+        sb.append("    schemaName: ").append(toIndentedString(schemaName)).append("\n");
         sb.append("    sql: ").append(toIndentedString(sql)).append("\n");
         sb.append("    sqlId: ").append(toIndentedString(sqlId)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");

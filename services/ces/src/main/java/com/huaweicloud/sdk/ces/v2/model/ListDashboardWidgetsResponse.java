@@ -41,7 +41,7 @@ public class ListDashboardWidgetsResponse extends SdkResponse {
     }
 
     /**
-     * 监控视图列表
+     * **参数解释** 监控视图列表 
      * @return widgets
      */
     public List<WidgetInfoWithId> getWidgets() {

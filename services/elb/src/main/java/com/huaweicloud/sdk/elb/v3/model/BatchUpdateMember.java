@@ -320,7 +320,7 @@ public class BatchUpdateMember {
     }
 
     /**
-     * **参数解释**：后端服务器的类型。  **取值范围**： - ip：跨VPC的member。 - instance：关联到ECS的member。
+     * **参数解释**：后端服务器的类型。  **取值范围**： - ip：IP类型的member。 - instance：关联到ECS的member。
      * @return memberType
      */
     public String getMemberType() {

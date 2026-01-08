@@ -119,7 +119,7 @@ public class ApplyInternetReq {
     }
 
     /**
-     * EIP的类型，5_bgp（全动态BGP），5_sbgp（静态BGP），默认值：5_bgp。
+     * EIP的类型。
      * @return eipType
      */
     public String getEipType() {

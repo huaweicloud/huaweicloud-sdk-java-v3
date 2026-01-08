@@ -213,7 +213,7 @@ public class UpdateDomainMultiCertificatesResponseBodyContent {
     }
 
     /**
-     * 证书类型（0为自有证书 ， 1为托管证书）。
+     * 证书类型。取值意义： - 0：自有证书 - 2：SCM证书
      * @return certificateType
      */
     public Integer getCertificateType() {

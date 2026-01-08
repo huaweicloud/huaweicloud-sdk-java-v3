@@ -29,6 +29,11 @@ public class CreateTranscodingReq {
     private List<Integer> transTemplateId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trans_template_list")
+
+    private List<TransIdTemplate> transTemplateList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "av_parameters")
 
     private List<AvParameters> avParameters = null;
@@ -57,6 +62,21 @@ public class CreateTranscodingReq {
     @JsonProperty(value = "thumbnail")
 
     private Thumbnail thumbnail;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "thumbnails")
+
+    private List<Thumbnail> thumbnails = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_sprites")
+
+    private List<ImageSprite> imageSprites = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pipeline_id")
+
+    private String pipelineId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority")
@@ -186,6 +206,39 @@ public class CreateTranscodingReq {
 
     public void setTransTemplateId(List<Integer> transTemplateId) {
         this.transTemplateId = transTemplateId;
+    }
+
+    public CreateTranscodingReq withTransTemplateList(List<TransIdTemplate> transTemplateList) {
+        this.transTemplateList = transTemplateList;
+        return this;
+    }
+
+    public CreateTranscodingReq addTransTemplateListItem(TransIdTemplate transTemplateListItem) {
+        if (this.transTemplateList == null) {
+            this.transTemplateList = new ArrayList<>();
+        }
+        this.transTemplateList.add(transTemplateListItem);
+        return this;
+    }
+
+    public CreateTranscodingReq withTransTemplateList(Consumer<List<TransIdTemplate>> transTemplateListSetter) {
+        if (this.transTemplateList == null) {
+            this.transTemplateList = new ArrayList<>();
+        }
+        transTemplateListSetter.accept(this.transTemplateList);
+        return this;
+    }
+
+    /**
+     * 转码模板数组 
+     * @return transTemplateList
+     */
+    public List<TransIdTemplate> getTransTemplateList() {
+        return transTemplateList;
+    }
+
+    public void setTransTemplateList(List<TransIdTemplate> transTemplateList) {
+        this.transTemplateList = transTemplateList;
     }
 
     public CreateTranscodingReq withAvParameters(List<AvParameters> avParameters) {
@@ -361,6 +414,89 @@ public class CreateTranscodingReq {
 
     public void setThumbnail(Thumbnail thumbnail) {
         this.thumbnail = thumbnail;
+    }
+
+    public CreateTranscodingReq withThumbnails(List<Thumbnail> thumbnails) {
+        this.thumbnails = thumbnails;
+        return this;
+    }
+
+    public CreateTranscodingReq addThumbnailsItem(Thumbnail thumbnailsItem) {
+        if (this.thumbnails == null) {
+            this.thumbnails = new ArrayList<>();
+        }
+        this.thumbnails.add(thumbnailsItem);
+        return this;
+    }
+
+    public CreateTranscodingReq withThumbnails(Consumer<List<Thumbnail>> thumbnailsSetter) {
+        if (this.thumbnails == null) {
+            this.thumbnails = new ArrayList<>();
+        }
+        thumbnailsSetter.accept(this.thumbnails);
+        return this;
+    }
+
+    /**
+     * 多截图任务，数组，最多支持20个成员。 
+     * @return thumbnails
+     */
+    public List<Thumbnail> getThumbnails() {
+        return thumbnails;
+    }
+
+    public void setThumbnails(List<Thumbnail> thumbnails) {
+        this.thumbnails = thumbnails;
+    }
+
+    public CreateTranscodingReq withImageSprites(List<ImageSprite> imageSprites) {
+        this.imageSprites = imageSprites;
+        return this;
+    }
+
+    public CreateTranscodingReq addImageSpritesItem(ImageSprite imageSpritesItem) {
+        if (this.imageSprites == null) {
+            this.imageSprites = new ArrayList<>();
+        }
+        this.imageSprites.add(imageSpritesItem);
+        return this;
+    }
+
+    public CreateTranscodingReq withImageSprites(Consumer<List<ImageSprite>> imageSpritesSetter) {
+        if (this.imageSprites == null) {
+            this.imageSprites = new ArrayList<>();
+        }
+        imageSpritesSetter.accept(this.imageSprites);
+        return this;
+    }
+
+    /**
+     * 雪碧图参数，数组，最多支持20个成员。 
+     * @return imageSprites
+     */
+    public List<ImageSprite> getImageSprites() {
+        return imageSprites;
+    }
+
+    public void setImageSprites(List<ImageSprite> imageSprites) {
+        this.imageSprites = imageSprites;
+    }
+
+    public CreateTranscodingReq withPipelineId(String pipelineId) {
+        this.pipelineId = pipelineId;
+        return this;
+    }
+
+    /**
+     * 
+     * @return pipelineId
+     */
+    public String getPipelineId() {
+        return pipelineId;
+    }
+
+    public void setPipelineId(String pipelineId) {
+        this.pipelineId = pipelineId;
     }
 
     public CreateTranscodingReq withPriority(Integer priority) {
@@ -608,14 +744,17 @@ public class CreateTranscodingReq {
         CreateTranscodingReq that = (CreateTranscodingReq) obj;
         return Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
             && Objects.equals(this.transTemplateId, that.transTemplateId)
+            && Objects.equals(this.transTemplateList, that.transTemplateList)
             && Objects.equals(this.avParameters, that.avParameters)
             && Objects.equals(this.additionalManifests, that.additionalManifests)
             && Objects.equals(this.outputFilenames, that.outputFilenames)
             && Objects.equals(this.userData, that.userData) && Objects.equals(this.watermarks, that.watermarks)
-            && Objects.equals(this.thumbnail, that.thumbnail) && Objects.equals(this.priority, that.priority)
-            && Objects.equals(this.subtitle, that.subtitle) && Objects.equals(this.encryption, that.encryption)
-            && Objects.equals(this.crop, that.crop) && Objects.equals(this.audioTrack, that.audioTrack)
-            && Objects.equals(this.multiAudio, that.multiAudio) && Objects.equals(this.videoProcess, that.videoProcess)
+            && Objects.equals(this.thumbnail, that.thumbnail) && Objects.equals(this.thumbnails, that.thumbnails)
+            && Objects.equals(this.imageSprites, that.imageSprites) && Objects.equals(this.pipelineId, that.pipelineId)
+            && Objects.equals(this.priority, that.priority) && Objects.equals(this.subtitle, that.subtitle)
+            && Objects.equals(this.encryption, that.encryption) && Objects.equals(this.crop, that.crop)
+            && Objects.equals(this.audioTrack, that.audioTrack) && Objects.equals(this.multiAudio, that.multiAudio)
+            && Objects.equals(this.videoProcess, that.videoProcess)
             && Objects.equals(this.audioProcess, that.audioProcess) && Objects.equals(this.metadata, that.metadata);
     }
 
@@ -624,12 +763,16 @@ public class CreateTranscodingReq {
         return Objects.hash(input,
             output,
             transTemplateId,
+            transTemplateList,
             avParameters,
             additionalManifests,
             outputFilenames,
             userData,
             watermarks,
             thumbnail,
+            thumbnails,
+            imageSprites,
+            pipelineId,
             priority,
             subtitle,
             encryption,
@@ -648,12 +791,16 @@ public class CreateTranscodingReq {
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
         sb.append("    transTemplateId: ").append(toIndentedString(transTemplateId)).append("\n");
+        sb.append("    transTemplateList: ").append(toIndentedString(transTemplateList)).append("\n");
         sb.append("    avParameters: ").append(toIndentedString(avParameters)).append("\n");
         sb.append("    additionalManifests: ").append(toIndentedString(additionalManifests)).append("\n");
         sb.append("    outputFilenames: ").append(toIndentedString(outputFilenames)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    watermarks: ").append(toIndentedString(watermarks)).append("\n");
         sb.append("    thumbnail: ").append(toIndentedString(thumbnail)).append("\n");
+        sb.append("    thumbnails: ").append(toIndentedString(thumbnails)).append("\n");
+        sb.append("    imageSprites: ").append(toIndentedString(imageSprites)).append("\n");
+        sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    subtitle: ").append(toIndentedString(subtitle)).append("\n");
         sb.append("    encryption: ").append(toIndentedString(encryption)).append("\n");

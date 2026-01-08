@@ -1069,9 +1069,9 @@ public class CdnClient {
     }
 
     /**
-     * 查询 TOP Path明细
+     * 查询TOP100 Path访问明细
      *
-     * 查询 TOP Path明细
+     * 查询TOP100 Path访问明细
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1083,9 +1083,9 @@ public class CdnClient {
     }
 
     /**
-     * 查询 TOP Path明细
+     * 查询TOP100 Path访问明细
      *
-     * 查询 TOP Path明细
+     * 查询TOP100 Path访问明细
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1676,9 +1676,9 @@ public class CdnClient {
     }
 
     /**
-     * CDN查询域名的国家统计数据
+     * CDN查询域名国家统计数据明细
      *
-     * CDN查询域名的国家统计数据
+     * CDN查询域名国家统计数据明细
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1690,9 +1690,9 @@ public class CdnClient {
     }
 
     /**
-     * CDN查询域名的国家统计数据
+     * CDN查询域名国家统计数据明细
      *
-     * CDN查询域名的国家统计数据
+     * CDN查询域名国家统计数据明细
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

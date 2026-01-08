@@ -65,7 +65,7 @@ public class ShowVerifyDomainOwnerInfoResponse extends SdkResponse {
     }
 
     /**
-     * DNS解析类型。
+     * DNS解析类型。取值意义： - TXT：TXT记录
      * @return dnsVerifyType
      */
     public String getDnsVerifyType() {

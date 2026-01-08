@@ -103,7 +103,7 @@ public class RecordAuditRule {
     }
 
     /**
-     * 间隔录制开始时间，仅录制类型为interval时有效 \"hh:mm\"
+     * 间隔录制开始时间，仅录制类型为interval时有效 \"hh:mm\"。
      * @return intervalRecordStartTime
      */
     public String getIntervalRecordStartTime() {
@@ -120,7 +120,7 @@ public class RecordAuditRule {
     }
 
     /**
-     * 间隔录制结束时间，仅录制类型为interval时有效格式 \"hh:mm\"
+     * 间隔录制结束时间，仅录制类型为interval时有效格式 \"hh:mm\"。
      * @return intervalRecordEndTime
      */
     public String getIntervalRecordEndTime() {
@@ -171,7 +171,7 @@ public class RecordAuditRule {
     }
 
     /**
-     * 录制帧率。取值为：2/5/10/15
+     * 录制帧率。取值为：2/5/10/15。
      * @return fps
      */
     public String getFps() {
@@ -188,7 +188,7 @@ public class RecordAuditRule {
     }
 
     /**
-     * 录制视频单文件时长（分钟）。取值为：10/20/30/60
+     * 录制视频单文件时长（分钟）。取值为：10/20/30/60。
      * @return duration
      */
     public String getDuration() {
@@ -205,7 +205,7 @@ public class RecordAuditRule {
     }
 
     /**
-     * 分辨率设置。取值为：720P/1080P/original
+     * 分辨率设置。取值为：720P/1080P/original。
      * @return resolution
      */
     public String getResolution() {
@@ -239,7 +239,7 @@ public class RecordAuditRule {
     }
 
     /**
-     * 文件后缀，多个用\"|\"分隔
+     * 文件后缀，多个用\"|\"分隔。
      * @return fileSuffix
      */
     public String getFileSuffix() {
@@ -256,7 +256,7 @@ public class RecordAuditRule {
     }
 
     /**
-     * 注册表路径，多个用\"|\"分隔
+     * 注册表路径，多个用\"|\"分隔。
      * @return regitPaths
      */
     public String getRegitPaths() {
@@ -273,7 +273,7 @@ public class RecordAuditRule {
     }
 
     /**
-     * 应用过滤类型，black（黑名单）或者white（白名单）二选一
+     * 应用过滤类型，black（黑名单）或者white（白名单）二选一。
      * @return appFilterType
      */
     public String getAppFilterType() {
@@ -290,7 +290,7 @@ public class RecordAuditRule {
     }
 
     /**
-     * APP开启/关闭白名单，仅监控配置的白名单应用列表
+     * APP开启/关闭白名单，仅监控配置的白名单应用列表。
      * @return appWhiteList
      */
     public String getAppWhiteList() {
@@ -307,7 +307,7 @@ public class RecordAuditRule {
     }
 
     /**
-     * APP开启/关闭黑名单，忽略黑名单里面的应用列表
+     * APP开启/关闭黑名单，忽略黑名单里面的应用列表。
      * @return appBlackList
      */
     public String getAppBlackList() {

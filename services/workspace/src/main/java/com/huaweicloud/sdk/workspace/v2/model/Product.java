@@ -56,6 +56,11 @@ public class Product {
     private Boolean isGpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vram")
+
+    private String vram;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "system_disk_type")
 
     private String systemDiskType;
@@ -274,6 +279,23 @@ public class Product {
 
     public void setIsGpu(Boolean isGpu) {
         this.isGpu = isGpu;
+    }
+
+    public Product withVram(String vram) {
+        this.vram = vram;
+        return this;
+    }
+
+    /**
+     * 显存大小，单位GB。
+     * @return vram
+     */
+    public String getVram() {
+        return vram;
+    }
+
+    public void setVram(String vram) {
+        this.vram = vram;
     }
 
     public Product withSystemDiskType(String systemDiskType) {
@@ -628,7 +650,7 @@ public class Product {
             && Objects.equals(this.type, that.type) && Objects.equals(this.architecture, that.architecture)
             && Objects.equals(this.cpu, that.cpu) && Objects.equals(this.cpuDesc, that.cpuDesc)
             && Objects.equals(this.memory, that.memory) && Objects.equals(this.isGpu, that.isGpu)
-            && Objects.equals(this.systemDiskType, that.systemDiskType)
+            && Objects.equals(this.vram, that.vram) && Objects.equals(this.systemDiskType, that.systemDiskType)
             && Objects.equals(this.systemDiskSize, that.systemDiskSize)
             && Objects.equals(this.dataDiskSize, that.dataDiskSize) && Objects.equals(this.gpuDesc, that.gpuDesc)
             && Objects.equals(this.billSwitch, that.billSwitch) && Objects.equals(this.descriptions, that.descriptions)
@@ -652,6 +674,7 @@ public class Product {
             cpuDesc,
             memory,
             isGpu,
+            vram,
             systemDiskType,
             systemDiskSize,
             dataDiskSize,
@@ -683,6 +706,7 @@ public class Product {
         sb.append("    cpuDesc: ").append(toIndentedString(cpuDesc)).append("\n");
         sb.append("    memory: ").append(toIndentedString(memory)).append("\n");
         sb.append("    isGpu: ").append(toIndentedString(isGpu)).append("\n");
+        sb.append("    vram: ").append(toIndentedString(vram)).append("\n");
         sb.append("    systemDiskType: ").append(toIndentedString(systemDiskType)).append("\n");
         sb.append("    systemDiskSize: ").append(toIndentedString(systemDiskSize)).append("\n");
         sb.append("    dataDiskSize: ").append(toIndentedString(dataDiskSize)).append("\n");

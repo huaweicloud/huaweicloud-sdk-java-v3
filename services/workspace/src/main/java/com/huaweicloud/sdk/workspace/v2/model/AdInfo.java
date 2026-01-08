@@ -146,6 +146,16 @@ public class AdInfo {
 
     private TlsConfig tlsConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cba_enabled")
+
+    private Boolean cbaEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "certificate_id")
+
+    private String certificateId;
+
     public AdInfo withDomainType(DomainTypeEnum domainType) {
         this.domainType = domainType;
         return this;
@@ -359,6 +369,40 @@ public class AdInfo {
         this.tlsConfig = tlsConfig;
     }
 
+    public AdInfo withCbaEnabled(Boolean cbaEnabled) {
+        this.cbaEnabled = cbaEnabled;
+        return this;
+    }
+
+    /**
+     * 是否开启智能卡认证。
+     * @return cbaEnabled
+     */
+    public Boolean getCbaEnabled() {
+        return cbaEnabled;
+    }
+
+    public void setCbaEnabled(Boolean cbaEnabled) {
+        this.cbaEnabled = cbaEnabled;
+    }
+
+    public AdInfo withCertificateId(String certificateId) {
+        this.certificateId = certificateId;
+        return this;
+    }
+
+    /**
+     * 智能卡证书id。
+     * @return certificateId
+     */
+    public String getCertificateId() {
+        return certificateId;
+    }
+
+    public void setCertificateId(String certificateId) {
+        this.certificateId = certificateId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -377,7 +421,9 @@ public class AdInfo {
             && Objects.equals(this.activeDnsIp, that.activeDnsIp)
             && Objects.equals(this.standbyDnsIp, that.standbyDnsIp)
             && Objects.equals(this.deleteComputerObject, that.deleteComputerObject)
-            && Objects.equals(this.useLdaps, that.useLdaps) && Objects.equals(this.tlsConfig, that.tlsConfig);
+            && Objects.equals(this.useLdaps, that.useLdaps) && Objects.equals(this.tlsConfig, that.tlsConfig)
+            && Objects.equals(this.cbaEnabled, that.cbaEnabled)
+            && Objects.equals(this.certificateId, that.certificateId);
     }
 
     @Override
@@ -393,7 +439,9 @@ public class AdInfo {
             standbyDnsIp,
             deleteComputerObject,
             useLdaps,
-            tlsConfig);
+            tlsConfig,
+            cbaEnabled,
+            certificateId);
     }
 
     @Override
@@ -412,6 +460,8 @@ public class AdInfo {
         sb.append("    deleteComputerObject: ").append(toIndentedString(deleteComputerObject)).append("\n");
         sb.append("    useLdaps: ").append(toIndentedString(useLdaps)).append("\n");
         sb.append("    tlsConfig: ").append(toIndentedString(tlsConfig)).append("\n");
+        sb.append("    cbaEnabled: ").append(toIndentedString(cbaEnabled)).append("\n");
+        sb.append("    certificateId: ").append(toIndentedString(certificateId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

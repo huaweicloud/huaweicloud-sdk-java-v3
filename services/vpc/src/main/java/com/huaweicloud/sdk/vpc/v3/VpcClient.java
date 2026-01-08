@@ -95,6 +95,8 @@ import com.huaweicloud.sdk.vpc.v3.model.DisassociateSubnetFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.DisassociateSubnetFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListAddressGroupsDependencyRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListAddressGroupsDependencyResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsCountFilterTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsCountFilterTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsFilterTagsRequest;
@@ -113,6 +115,8 @@ import com.huaweicloud.sdk.vpc.v3.model.ListPortTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListPortTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListPortsByTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListPortsByTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListPortsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListPortsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupsRequest;
@@ -127,6 +131,8 @@ import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorSessionsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorSessionsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListVirsubnetCidrReservationsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListVirsubnetCidrReservationsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListVirsubnetsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListVirsubnetsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListVpcsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListVpcsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.MigrateSubNetworkInterfaceRequest;
@@ -149,8 +155,12 @@ import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowPortRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowPortResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowPortTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowPortTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowQuotaRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowQuotaResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRuleRequest;
@@ -167,6 +177,8 @@ import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorSessionRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorSessionResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowVirsubnetCidrReservationRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowVirsubnetCidrReservationResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowVirsubnetRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowVirsubnetResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowVpcResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateAddressGroupRequest;
@@ -269,7 +281,6 @@ public class VpcClient {
      *
      * 为指定的端口批量添加标签。
      * 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
-     * 该接口在华南-深圳上线。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -285,7 +296,6 @@ public class VpcClient {
      *
      * 为指定的端口批量添加标签。
      * 此接口为幂等接口：创建时如果请求体中存在重复key则报错。创建时，不允许设置重复key数据，如果数据库已存在该key，就覆盖value的值。
-     * 该接口在华南-深圳上线。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -362,7 +372,6 @@ public class VpcClient {
      *
      * 为指定的端口资源实例批量删除标签。
      * 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
-     * 该接口在华南-深圳上线。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -378,7 +387,6 @@ public class VpcClient {
      *
      * 为指定的端口资源实例批量删除标签。
      * 此接口为幂等接口：删除时，如果删除的标签不存在，默认处理成功；删除时不对标签字符集范围做校验。删除时tags结构体不能缺失，key不能为空，或者空字符串。
-     * 该接口在华南-深圳上线。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -394,7 +402,6 @@ public class VpcClient {
      * 查询端口资源实例数量
      *
      * 使用标签过滤查询端口实例数量。
-     * 该接口在华南-深圳上线。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -409,7 +416,6 @@ public class VpcClient {
      * 查询端口资源实例数量
      *
      * 使用标签过滤查询端口实例数量。
-     * 该接口在华南-深圳上线。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -424,9 +430,8 @@ public class VpcClient {
     /**
      * 添加端口资源标签
      *
-     * 给指定端口资源实例增加标签信息
+     * 给指定端口资源实例增加标签信息。
      * 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
-     * 该接口在华南-深圳上线。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -440,9 +445,8 @@ public class VpcClient {
     /**
      * 添加端口资源标签
      *
-     * 给指定端口资源实例增加标签信息
+     * 给指定端口资源实例增加标签信息。
      * 此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
-     * 该接口在华南-深圳上线。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -661,9 +665,8 @@ public class VpcClient {
     /**
      * 删除端口资源标签
      *
-     * 删除指定端口的标签信息
+     * 删除指定端口的标签信息。
      * 该接口为幂等接口：删除的key不存在报404，key不能为空或者空字符串。
-     * 该接口在华南-深圳上线。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -677,9 +680,8 @@ public class VpcClient {
     /**
      * 删除端口资源标签
      *
-     * 删除指定端口的标签信息
+     * 删除指定端口的标签信息。
      * 该接口为幂等接口：删除的key不存在报404，key不能为空或者空字符串。
-     * 该接口在华南-深圳上线。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -899,7 +901,6 @@ public class VpcClient {
      * 查询端口项目标签
      *
      * 查询租户在指定Project中实例类型的所有资源标签集合。
-     * 该接口在华南-深圳上线。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -914,7 +915,6 @@ public class VpcClient {
      * 查询端口项目标签
      *
      * 查询租户在指定Project中实例类型的所有资源标签集合。
-     * 该接口在华南-深圳上线。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -926,10 +926,37 @@ public class VpcClient {
     }
 
     /**
+     * 查询端口列表
+     *
+     * 当您的端口创建成功后，您可以通过调用该接口查询所有端口信息，包括端口ID、IP地址、所属云服务实例等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPortsRequest 请求对象
+     * @return ListPortsResponse
+     */
+    public ListPortsResponse listPorts(ListPortsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.listPorts);
+    }
+
+    /**
+     * 查询端口列表
+     *
+     * 当您的端口创建成功后，您可以通过调用该接口查询所有端口信息，包括端口ID、IP地址、所属云服务实例等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPortsRequest 请求对象
+     * @return SyncInvoker<ListPortsRequest, ListPortsResponse>
+     */
+    public SyncInvoker<ListPortsRequest, ListPortsResponse> listPortsInvoker(ListPortsRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.listPorts, hcClient);
+    }
+
+    /**
      * 查询端口资源实例列表
      *
      * 使用标签过滤查询端口。
-     * 该接口在华南-深圳上线。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -944,7 +971,6 @@ public class VpcClient {
      * 查询端口资源实例列表
      *
      * 使用标签过滤查询端口。
-     * 该接口在华南-深圳上线。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1162,6 +1188,35 @@ public class VpcClient {
     }
 
     /**
+     * 查询虚拟子网列表
+     *
+     * 当您的子网创建成功后，您可以通过调用该接口查询所有子网信息，包括子网的名称、ID等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVirsubnetsRequest 请求对象
+     * @return ListVirsubnetsResponse
+     */
+    public ListVirsubnetsResponse listVirsubnets(ListVirsubnetsRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.listVirsubnets);
+    }
+
+    /**
+     * 查询虚拟子网列表
+     *
+     * 当您的子网创建成功后，您可以通过调用该接口查询所有子网信息，包括子网的名称、ID等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVirsubnetsRequest 请求对象
+     * @return SyncInvoker<ListVirsubnetsRequest, ListVirsubnetsResponse>
+     */
+    public SyncInvoker<ListVirsubnetsRequest, ListVirsubnetsResponse> listVirsubnetsInvoker(
+        ListVirsubnetsRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.listVirsubnets, hcClient);
+    }
+
+    /**
      * 迁移辅助弹性网卡
      *
      * 批量迁移辅助弹性网卡
@@ -1250,10 +1305,37 @@ public class VpcClient {
     }
 
     /**
+     * 查询端口详情
+     *
+     * 当您的端口创建成功后，您可以通过调用该接口查询单个端口的详细信息，包括端口ID、IP地址、所属云服务实例等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPortRequest 请求对象
+     * @return ShowPortResponse
+     */
+    public ShowPortResponse showPort(ShowPortRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.showPort);
+    }
+
+    /**
+     * 查询端口详情
+     *
+     * 当您的端口创建成功后，您可以通过调用该接口查询单个端口的详细信息，包括端口ID、IP地址、所属云服务实例等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPortRequest 请求对象
+     * @return SyncInvoker<ShowPortRequest, ShowPortResponse>
+     */
+    public SyncInvoker<ShowPortRequest, ShowPortResponse> showPortInvoker(ShowPortRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.showPort, hcClient);
+    }
+
+    /**
      * 查询端口资源标签
      *
      * 查询指定端口的标签信息。
-     * 该接口在华南-深圳上线。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1268,7 +1350,6 @@ public class VpcClient {
      * 查询端口资源标签
      *
      * 查询指定端口的标签信息。
-     * 该接口在华南-深圳上线。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1277,6 +1358,34 @@ public class VpcClient {
      */
     public SyncInvoker<ShowPortTagsRequest, ShowPortTagsResponse> showPortTagsInvoker(ShowPortTagsRequest request) {
         return new SyncInvoker<>(request, VpcMeta.showPortTags, hcClient);
+    }
+
+    /**
+     * 查询配额
+     *
+     * 您可以通过此接口查询VPC服务相关资源的配额，包括安全组配额、安全组规则配额等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowQuotaRequest 请求对象
+     * @return ShowQuotaResponse
+     */
+    public ShowQuotaResponse showQuota(ShowQuotaRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.showQuota);
+    }
+
+    /**
+     * 查询配额
+     *
+     * 您可以通过此接口查询VPC服务相关资源的配额，包括安全组配额、安全组规则配额等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowQuotaRequest 请求对象
+     * @return SyncInvoker<ShowQuotaRequest, ShowQuotaResponse>
+     */
+    public SyncInvoker<ShowQuotaRequest, ShowQuotaResponse> showQuotaInvoker(ShowQuotaRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.showQuota, hcClient);
     }
 
     /**
@@ -1481,6 +1590,34 @@ public class VpcClient {
     public SyncInvoker<ShowTrafficMirrorSessionRequest, ShowTrafficMirrorSessionResponse> showTrafficMirrorSessionInvoker(
         ShowTrafficMirrorSessionRequest request) {
         return new SyncInvoker<>(request, VpcMeta.showTrafficMirrorSession, hcClient);
+    }
+
+    /**
+     * 查询虚拟子网详情
+     *
+     * 当您的子网创建成功后，您可以通过调用该接口查询单个子网的详细信息，包括子网的名称、ID、状态等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVirsubnetRequest 请求对象
+     * @return ShowVirsubnetResponse
+     */
+    public ShowVirsubnetResponse showVirsubnet(ShowVirsubnetRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.showVirsubnet);
+    }
+
+    /**
+     * 查询虚拟子网详情
+     *
+     * 当您的子网创建成功后，您可以通过调用该接口查询单个子网的详细信息，包括子网的名称、ID、状态等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVirsubnetRequest 请求对象
+     * @return SyncInvoker<ShowVirsubnetRequest, ShowVirsubnetResponse>
+     */
+    public SyncInvoker<ShowVirsubnetRequest, ShowVirsubnetResponse> showVirsubnetInvoker(ShowVirsubnetRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.showVirsubnet, hcClient);
     }
 
     /**
@@ -2712,6 +2849,35 @@ public class VpcClient {
     public SyncInvoker<ListAddressGroupRequest, ListAddressGroupResponse> listAddressGroupInvoker(
         ListAddressGroupRequest request) {
         return new SyncInvoker<>(request, VpcMeta.listAddressGroup, hcClient);
+    }
+
+    /**
+     * 查询IP地址组的关联资源
+     *
+     * 当您的IP地址组被网络ACL和安全组资源关联时，您可以通过调用该接口查询IP地址组关联的网络ACL或安全组的资源ID和名称。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAddressGroupsDependencyRequest 请求对象
+     * @return ListAddressGroupsDependencyResponse
+     */
+    public ListAddressGroupsDependencyResponse listAddressGroupsDependency(ListAddressGroupsDependencyRequest request) {
+        return hcClient.syncInvokeHttp(request, VpcMeta.listAddressGroupsDependency);
+    }
+
+    /**
+     * 查询IP地址组的关联资源
+     *
+     * 当您的IP地址组被网络ACL和安全组资源关联时，您可以通过调用该接口查询IP地址组关联的网络ACL或安全组的资源ID和名称。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAddressGroupsDependencyRequest 请求对象
+     * @return SyncInvoker<ListAddressGroupsDependencyRequest, ListAddressGroupsDependencyResponse>
+     */
+    public SyncInvoker<ListAddressGroupsDependencyRequest, ListAddressGroupsDependencyResponse> listAddressGroupsDependencyInvoker(
+        ListAddressGroupsDependencyRequest request) {
+        return new SyncInvoker<>(request, VpcMeta.listAddressGroupsDependency, hcClient);
     }
 
     /**

@@ -20,9 +20,9 @@ public class ListTransactionResponse extends SdkResponse {
     private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "rows_info")
+    @JsonProperty(value = "rows")
 
-    private List<ListTransactionResponseBodyRowsInfo> rowsInfo = null;
+    private List<ListTransactionResponseBodyRows> rows = null;
 
     public ListTransactionResponse withTotal(Integer total) {
         this.total = total;
@@ -41,37 +41,37 @@ public class ListTransactionResponse extends SdkResponse {
         this.total = total;
     }
 
-    public ListTransactionResponse withRowsInfo(List<ListTransactionResponseBodyRowsInfo> rowsInfo) {
-        this.rowsInfo = rowsInfo;
+    public ListTransactionResponse withRows(List<ListTransactionResponseBodyRows> rows) {
+        this.rows = rows;
         return this;
     }
 
-    public ListTransactionResponse addRowsInfoItem(ListTransactionResponseBodyRowsInfo rowsInfoItem) {
-        if (this.rowsInfo == null) {
-            this.rowsInfo = new ArrayList<>();
+    public ListTransactionResponse addRowsItem(ListTransactionResponseBodyRows rowsItem) {
+        if (this.rows == null) {
+            this.rows = new ArrayList<>();
         }
-        this.rowsInfo.add(rowsInfoItem);
+        this.rows.add(rowsItem);
         return this;
     }
 
-    public ListTransactionResponse withRowsInfo(Consumer<List<ListTransactionResponseBodyRowsInfo>> rowsInfoSetter) {
-        if (this.rowsInfo == null) {
-            this.rowsInfo = new ArrayList<>();
+    public ListTransactionResponse withRows(Consumer<List<ListTransactionResponseBodyRows>> rowsSetter) {
+        if (this.rows == null) {
+            this.rows = new ArrayList<>();
         }
-        rowsInfoSetter.accept(this.rowsInfo);
+        rowsSetter.accept(this.rows);
         return this;
     }
 
     /**
      * **参数解释**: 事务信息列表。
-     * @return rowsInfo
+     * @return rows
      */
-    public List<ListTransactionResponseBodyRowsInfo> getRowsInfo() {
-        return rowsInfo;
+    public List<ListTransactionResponseBodyRows> getRows() {
+        return rows;
     }
 
-    public void setRowsInfo(List<ListTransactionResponseBodyRowsInfo> rowsInfo) {
-        this.rowsInfo = rowsInfo;
+    public void setRows(List<ListTransactionResponseBodyRows> rows) {
+        this.rows = rows;
     }
 
     @Override
@@ -83,12 +83,12 @@ public class ListTransactionResponse extends SdkResponse {
             return false;
         }
         ListTransactionResponse that = (ListTransactionResponse) obj;
-        return Objects.equals(this.total, that.total) && Objects.equals(this.rowsInfo, that.rowsInfo);
+        return Objects.equals(this.total, that.total) && Objects.equals(this.rows, that.rows);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, rowsInfo);
+        return Objects.hash(total, rows);
     }
 
     @Override
@@ -96,7 +96,7 @@ public class ListTransactionResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTransactionResponse {\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
-        sb.append("    rowsInfo: ").append(toIndentedString(rowsInfo)).append("\n");
+        sb.append("    rows: ").append(toIndentedString(rows)).append("\n");
         sb.append("}");
         return sb.toString();
     }

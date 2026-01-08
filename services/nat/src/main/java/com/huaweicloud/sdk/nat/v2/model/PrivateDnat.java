@@ -37,11 +37,6 @@ public class PrivateDnat {
     private String transitIpId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "transit_ip_address")
-
-    private String transitIpAddress;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gateway_id")
 
     private String gatewayId;
@@ -168,7 +163,7 @@ public class PrivateDnat {
     private OffsetDateTime updatedAt;
 
     /**
-     * 私网NAT的DNAT规则状态。 取值为： \"ACTIVE\"：正常运行 \"FROZEN\"：冻结 \"INACTIVE\"：不可用
+     * 私网NAT的DNAT规则状态。 取值为： - ACTIVE：正常运行 - FROZEN：冻结 - INACTIVE：不可用
      */
     public static final class StatusEnum {
 
@@ -316,23 +311,6 @@ public class PrivateDnat {
         this.transitIpId = transitIpId;
     }
 
-    public PrivateDnat withTransitIpAddress(String transitIpAddress) {
-        this.transitIpAddress = transitIpAddress;
-        return this;
-    }
-
-    /**
-     * 中转IP的地址。
-     * @return transitIpAddress
-     */
-    public String getTransitIpAddress() {
-        return transitIpAddress;
-    }
-
-    public void setTransitIpAddress(String transitIpAddress) {
-        this.transitIpAddress = transitIpAddress;
-    }
-
     public PrivateDnat withGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
         return this;
@@ -373,7 +351,7 @@ public class PrivateDnat {
     }
 
     /**
-     * DNAT规则后端的类型。 取值：     COMPUTE：后端为计算实例。     VIP：后端为VIP的实例。     ELB：后端为ELBv2的实例。     ELBv3：后端为ELBv3的实例。     CUSTOMIZE：后端为自定义IP。
+     * DNAT规则后端的类型。 取值： - COMPUTE：后端为计算实例。 - VIP：后端为VIP的实例。 - ELB：后端为ELBv2的实例。 - ELBv3：后端为ELBv3的实例。 - CUSTOMIZE：后端为自定义IP。
      * @return type
      */
     public String getType() {
@@ -509,7 +487,7 @@ public class PrivateDnat {
     }
 
     /**
-     * 私网NAT的DNAT规则状态。 取值为： \"ACTIVE\"：正常运行 \"FROZEN\"：冻结 \"INACTIVE\"：不可用
+     * 私网NAT的DNAT规则状态。 取值为： - ACTIVE：正常运行 - FROZEN：冻结 - INACTIVE：不可用
      * @return status
      */
     public StatusEnum getStatus() {
@@ -531,7 +509,6 @@ public class PrivateDnat {
         PrivateDnat that = (PrivateDnat) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.description, that.description) && Objects.equals(this.transitIpId, that.transitIpId)
-            && Objects.equals(this.transitIpAddress, that.transitIpAddress)
             && Objects.equals(this.gatewayId, that.gatewayId)
             && Objects.equals(this.networkInterfaceId, that.networkInterfaceId) && Objects.equals(this.type, that.type)
             && Objects.equals(this.protocol, that.protocol)
@@ -549,7 +526,6 @@ public class PrivateDnat {
             projectId,
             description,
             transitIpId,
-            transitIpAddress,
             gatewayId,
             networkInterfaceId,
             type,
@@ -571,7 +547,6 @@ public class PrivateDnat {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    transitIpId: ").append(toIndentedString(transitIpId)).append("\n");
-        sb.append("    transitIpAddress: ").append(toIndentedString(transitIpAddress)).append("\n");
         sb.append("    gatewayId: ").append(toIndentedString(gatewayId)).append("\n");
         sb.append("    networkInterfaceId: ").append(toIndentedString(networkInterfaceId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

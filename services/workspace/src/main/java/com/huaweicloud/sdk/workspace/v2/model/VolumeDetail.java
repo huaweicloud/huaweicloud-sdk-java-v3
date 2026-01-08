@@ -11,6 +11,11 @@ import java.util.Objects;
 public class VolumeDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kms_id")
+
+    private String kmsId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
     private String type;
@@ -19,6 +24,16 @@ public class VolumeDetail {
     @JsonProperty(value = "size")
 
     private Integer size;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iops")
+
+    private Integer iops;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "throughput")
+
+    private Integer throughput;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device")
@@ -55,6 +70,23 @@ public class VolumeDetail {
 
     private String resourceSpecCode;
 
+    public VolumeDetail withKmsId(String kmsId) {
+        this.kmsId = kmsId;
+        return this;
+    }
+
+    /**
+     * 如果磁盘加密，传递的密钥。
+     * @return kmsId
+     */
+    public String getKmsId() {
+        return kmsId;
+    }
+
+    public void setKmsId(String kmsId) {
+        this.kmsId = kmsId;
+    }
+
     public VolumeDetail withType(String type) {
         this.type = type;
         return this;
@@ -89,6 +121,44 @@ public class VolumeDetail {
 
     public void setSize(Integer size) {
         this.size = size;
+    }
+
+    public VolumeDetail withIops(Integer iops) {
+        this.iops = iops;
+        return this;
+    }
+
+    /**
+     * iops，云硬盘每秒进行读写的操作次数。
+     * minimum: 0
+     * maximum: 16380000
+     * @return iops
+     */
+    public Integer getIops() {
+        return iops;
+    }
+
+    public void setIops(Integer iops) {
+        this.iops = iops;
+    }
+
+    public VolumeDetail withThroughput(Integer throughput) {
+        this.throughput = throughput;
+        return this;
+    }
+
+    /**
+     * 吞吐量，云硬盘每秒成功传送的数据量，即读取和写入的数据量。
+     * minimum: 0
+     * maximum: 4095000
+     * @return throughput
+     */
+    public Integer getThroughput() {
+        return throughput;
+    }
+
+    public void setThroughput(Integer throughput) {
+        this.throughput = throughput;
     }
 
     public VolumeDetail withDevice(String device) {
@@ -219,25 +289,40 @@ public class VolumeDetail {
             return false;
         }
         VolumeDetail that = (VolumeDetail) obj;
-        return Objects.equals(this.type, that.type) && Objects.equals(this.size, that.size)
-            && Objects.equals(this.device, that.device) && Objects.equals(this.id, that.id)
-            && Objects.equals(this.volumeId, that.volumeId) && Objects.equals(this.billResourceId, that.billResourceId)
+        return Objects.equals(this.kmsId, that.kmsId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.iops, that.iops)
+            && Objects.equals(this.throughput, that.throughput) && Objects.equals(this.device, that.device)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.volumeId, that.volumeId)
+            && Objects.equals(this.billResourceId, that.billResourceId)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.displayName, that.displayName)
             && Objects.equals(this.resourceSpecCode, that.resourceSpecCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(type, size, device, id, volumeId, billResourceId, createTime, displayName, resourceSpecCode);
+        return Objects.hash(kmsId,
+            type,
+            size,
+            iops,
+            throughput,
+            device,
+            id,
+            volumeId,
+            billResourceId,
+            createTime,
+            displayName,
+            resourceSpecCode);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class VolumeDetail {\n");
+        sb.append("    kmsId: ").append(toIndentedString(kmsId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    iops: ").append(toIndentedString(iops)).append("\n");
+        sb.append("    throughput: ").append(toIndentedString(throughput)).append("\n");
         sb.append("    device: ").append(toIndentedString(device)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    volumeId: ").append(toIndentedString(volumeId)).append("\n");

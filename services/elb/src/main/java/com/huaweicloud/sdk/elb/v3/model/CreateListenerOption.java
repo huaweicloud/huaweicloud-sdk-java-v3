@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CreateListenerOption
+ * 创建监听器的请求参数。
  */
 public class CreateListenerOption {
 
@@ -443,7 +443,7 @@ public class CreateListenerOption {
     }
 
     /**
-     * **参数解释**：监听器的监听协议。  [**约束限制**： - 共享型LB上的HTTPS监听器只支持设置为TERMINATED_HTTPS。传入HTTPS将会自动转为TERMINATED_HTTPS。 - 独享型LB上的HTTPS监听器只支持设置为HTTPS，传入TERMINATED_HTTPS将会自动转为HTTPS。  **取值范围**：TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS、QUIC、TLS。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt) [**约束限制**：不涉及  **取值范围**：TCP、UDP、HTTP、HTTPS。](tag:hcso_dt) [**约束限制**：不涉及  **取值范围**：TCP、UDP、IP、HTTP、HTTPS。IP为网关型LB上的监听器独有的协议。](tag:hws_eu)  **默认取值**：不涉及  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt)
+     * **参数解释**：监听器的监听协议。  [**约束限制**： - 共享型LB上的HTTPS监听器只支持设置为TERMINATED_HTTPS。传入HTTPS将会自动转为TERMINATED_HTTPS。 - 独享型LB上的HTTPS监听器只支持设置为HTTPS，传入TERMINATED_HTTPS将会自动转为HTTPS。  **取值范围**：TCP、UDP、HTTP、HTTPS、TERMINATED_HTTPS、QUIC、TLS、IP。IP为网关型LB上的监听器独有的协议。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt) [**约束限制**：不涉及  **取值范围**：TCP、UDP、HTTP、HTTPS。](tag:hcso_dt) [**约束限制**：不涉及  **取值范围**：TCP、UDP、IP、HTTP、HTTPS。IP为网关型LB上的监听器独有的协议。](tag:hws_eu)  **默认取值**：不涉及  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt,dt)
      * @return protocol
      */
     public String getProtocol() {
@@ -613,7 +613,7 @@ public class CreateListenerOption {
     }
 
     /**
-     * **参数解释**：客户端连接空闲超时时间。在超过keepalive_timeout时长一直没有请求，负载均衡会暂时中断当前连接，直到下一次请求时重新建立新的连接。  **约束限制**：共享型实例的UDP监听器不支持此字段。  **取值范围**： - TCP监听器[和IP监听器](tag:hws_eu)：10-4000s，默认值为300s。 - 若为HTTP/HTTPS/TERMINATED_HTTPS监听器，取值范围为（0-4000s）默认值为60s。  **默认取值**：不涉及
+     * **参数解释**：客户端连接空闲超时时间。在超过keepalive_timeout时长一直没有请求，负载均衡会暂时中断当前连接，直到下一次请求时重新建立新的连接。  **约束限制**：共享型实例的UDP监听器不支持此字段。  **取值范围**： - TCP、UDP和IP监听器：10-4000s，默认值为300s。 - HTTP、HTTPS和TERMINATED_HTTPS监听器：0-4000s，默认值为60s。  **默认取值**：不涉及
      * @return keepaliveTimeout
      */
     public Integer getKeepaliveTimeout() {

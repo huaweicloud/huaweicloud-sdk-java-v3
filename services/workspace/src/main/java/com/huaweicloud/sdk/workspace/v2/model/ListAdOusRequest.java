@@ -11,6 +11,11 @@ import java.util.Objects;
 public class ListAdOusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain")
+
+    private String domain;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -19,6 +24,23 @@ public class ListAdOusRequest {
     @JsonProperty(value = "offset")
 
     private Integer offset;
+
+    public ListAdOusRequest withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    /**
+     * 域。
+     * @return domain
+     */
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
 
     public ListAdOusRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -67,18 +89,20 @@ public class ListAdOusRequest {
             return false;
         }
         ListAdOusRequest that = (ListAdOusRequest) obj;
-        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, offset);
+        return Objects.hash(domain, limit, offset);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAdOusRequest {\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");

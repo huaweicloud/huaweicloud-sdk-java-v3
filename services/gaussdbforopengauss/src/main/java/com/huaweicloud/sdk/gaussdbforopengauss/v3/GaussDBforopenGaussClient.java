@@ -6699,7 +6699,7 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
-     * 查询asp采集结果
+     * 查询ASP采集结果
      *
      * 查询ASP采集结果。
      * 
@@ -6713,7 +6713,7 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
-     * 查询asp采集结果
+     * 查询ASP采集结果
      *
      * 查询ASP采集结果。
      * 

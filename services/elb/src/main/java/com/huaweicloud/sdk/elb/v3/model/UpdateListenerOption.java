@@ -480,7 +480,7 @@ public class UpdateListenerOption {
     }
 
     /**
-     * **参数解释**：等待后端服务器响应超时时间。请求转发后端服务器后，在等待超时member_timeout时长没有响应，负载均衡将终止等待，并返回HTTP504错误码。  **约束限制**：仅支持协议为HTTP/HTTPS的监听器。  **取值范围**：1-300s。  **默认取值**：60s
+     * **参数解释**：等待后端服务器响应超时时间。请求转发后端服务器后，在等待超时member_timeout时长没有响应，负载均衡将终止等待，并返回HTTP504错误码。  **约束限制**：仅支持协议为HTTP/HTTPS的监听器。  **取值范围**：1-300s。  **默认取值**：不涉及
      * @return memberTimeout
      */
     public Integer getMemberTimeout() {
@@ -497,7 +497,7 @@ public class UpdateListenerOption {
     }
 
     /**
-     * **参数解释**：等待客户端请求超时时间，仅限协议为HTTP，HTTPS的监听器配置。  **约束限制**：TCP，UDP协议的监听器不支持此字段。  **取值范围**：1-300s  **默认取值**：60s
+     * **参数解释**：等待客户端请求超时时间，仅限协议为HTTP，HTTPS的监听器配置。  **约束限制**：TCP，UDP协议的监听器不支持此字段。  **取值范围**：1-300s  **默认取值**：不涉及
      * @return clientTimeout
      */
     public Integer getClientTimeout() {
@@ -514,7 +514,7 @@ public class UpdateListenerOption {
     }
 
     /**
-     * **参数解释**：客户端连接空闲超时时间。在超过keepalive_timeout时长一直没有请求，负载均衡会暂时中断当前连接，直到下一次请求时重新建立新的连接。  **约束限制**：共享型实例的UDP监听器不支持此字段。  **取值范围**： - TCP监听器[和IP监听器](tag:hws_eu)：10-4000s。 - 若为HTTP/HTTPS/TERMINATED_HTTPS监听器，取值范围为（0-4000s）  **默认取值**：60s。
+     * **参数解释**：客户端连接空闲超时时间。在超过keepalive_timeout时长一直没有请求，负载均衡会暂时中断当前连接，直到下一次请求时重新建立新的连接。  **约束限制**：共享型实例的UDP监听器不支持此字段。  **取值范围**： - TCP、UDP和IP监听器：10-4000s。 - HTTP、HTTPS和TERMINATED_HTTPS监听器：0-4000s。  **默认取值**：不涉及
      * @return keepaliveTimeout
      */
     public Integer getKeepaliveTimeout() {
@@ -574,7 +574,7 @@ public class UpdateListenerOption {
     }
 
     /**
-     * **参数解释**：是否开启proxy_protocol。  **约束限制**：仅TLS监听器可指定，其他协议的监听器该字段不生效，proxy_protocol不开启。  **取值范围**：true 开启，false 不开启。  **默认取值**：false
+     * **参数解释**：是否开启proxy_protocol。 **约束限制**：仅TLS和TCP协议监听器可指定，其他协议的监听器该字段不生效，proxy_protocol不开启。 **取值范围**：true 开启，false 不开启。 **默认取值**：false
      * @return proxyProtocolEnable
      */
     public Boolean getProxyProtocolEnable() {

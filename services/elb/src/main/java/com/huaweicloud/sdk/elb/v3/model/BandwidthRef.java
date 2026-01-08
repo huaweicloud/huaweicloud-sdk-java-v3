@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * BandwidthRef
+ * **参数解释**：共享带宽的ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
  */
 public class BandwidthRef {
 
@@ -21,7 +21,7 @@ public class BandwidthRef {
     }
 
     /**
-     * **参数解释**：共享带宽的ID。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * **参数解释**：共享带宽的ID。
      * @return id
      */
     public String getId() {

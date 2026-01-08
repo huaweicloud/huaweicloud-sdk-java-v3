@@ -16,6 +16,11 @@ import java.util.function.Consumer;
  */
 public class AdDomain {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
     /**
      * 域类型。 - LITE_AS：本地认证。 - LOCAL_AD：本地AD。 说明：域类型为“LOCAL_AD”时，请确保所选VPC网络与AD所属网络可连通。
      */
@@ -150,6 +155,33 @@ public class AdDomain {
     @JsonProperty(value = "tls_config")
 
     private TlsConfig tlsConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cba_enabled")
+
+    private Boolean cbaEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "certificate_id")
+
+    private String certificateId;
+
+    public AdDomain withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 域id。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public AdDomain withDomainType(DomainTypeEnum domainType) {
         this.domainType = domainType;
@@ -383,6 +415,40 @@ public class AdDomain {
         this.tlsConfig = tlsConfig;
     }
 
+    public AdDomain withCbaEnabled(Boolean cbaEnabled) {
+        this.cbaEnabled = cbaEnabled;
+        return this;
+    }
+
+    /**
+     * 是否开启智能卡认证。
+     * @return cbaEnabled
+     */
+    public Boolean getCbaEnabled() {
+        return cbaEnabled;
+    }
+
+    public void setCbaEnabled(Boolean cbaEnabled) {
+        this.cbaEnabled = cbaEnabled;
+    }
+
+    public AdDomain withCertificateId(String certificateId) {
+        this.certificateId = certificateId;
+        return this;
+    }
+
+    /**
+     * 智能卡证书id。
+     * @return certificateId
+     */
+    public String getCertificateId() {
+        return certificateId;
+    }
+
+    public void setCertificateId(String certificateId) {
+        this.certificateId = certificateId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -392,7 +458,8 @@ public class AdDomain {
             return false;
         }
         AdDomain that = (AdDomain) obj;
-        return Objects.equals(this.domainType, that.domainType) && Objects.equals(this.domainName, that.domainName)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.domainType, that.domainType)
+            && Objects.equals(this.domainName, that.domainName)
             && Objects.equals(this.domainAdminAccount, that.domainAdminAccount)
             && Objects.equals(this.domainPassword, that.domainPassword)
             && Objects.equals(this.activeDomainIp, that.activeDomainIp)
@@ -402,12 +469,15 @@ public class AdDomain {
             && Objects.equals(this.activeDnsIp, that.activeDnsIp)
             && Objects.equals(this.standbyDnsIp, that.standbyDnsIp)
             && Objects.equals(this.deleteComputerObject, that.deleteComputerObject)
-            && Objects.equals(this.useLdaps, that.useLdaps) && Objects.equals(this.tlsConfig, that.tlsConfig);
+            && Objects.equals(this.useLdaps, that.useLdaps) && Objects.equals(this.tlsConfig, that.tlsConfig)
+            && Objects.equals(this.cbaEnabled, that.cbaEnabled)
+            && Objects.equals(this.certificateId, that.certificateId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domainType,
+        return Objects.hash(id,
+            domainType,
             domainName,
             domainAdminAccount,
             domainPassword,
@@ -419,13 +489,16 @@ public class AdDomain {
             standbyDnsIp,
             deleteComputerObject,
             useLdaps,
-            tlsConfig);
+            tlsConfig,
+            cbaEnabled,
+            certificateId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AdDomain {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    domainType: ").append(toIndentedString(domainType)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    domainAdminAccount: ").append(toIndentedString(domainAdminAccount)).append("\n");
@@ -439,6 +512,8 @@ public class AdDomain {
         sb.append("    deleteComputerObject: ").append(toIndentedString(deleteComputerObject)).append("\n");
         sb.append("    useLdaps: ").append(toIndentedString(useLdaps)).append("\n");
         sb.append("    tlsConfig: ").append(toIndentedString(tlsConfig)).append("\n");
+        sb.append("    cbaEnabled: ").append(toIndentedString(cbaEnabled)).append("\n");
+        sb.append("    certificateId: ").append(toIndentedString(certificateId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

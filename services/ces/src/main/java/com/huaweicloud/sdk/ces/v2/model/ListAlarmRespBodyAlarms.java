@@ -240,7 +240,7 @@ public class ListAlarmRespBodyAlarms {
     }
 
     /**
-     * **参数解释**： 查询服务的命名空间，各服务命名空间请参考“[服务命名名称](ces_03_0059.xml)”。    **取值范围**： 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度为[0,32]个字符。 
+     * **参数解释**： 查询服务的命名空间，各服务命名空间请参阅[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)。    **取值范围**： 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度为[0,32]个字符。 
      * @return namespace
      */
     public String getNamespace() {
@@ -306,7 +306,7 @@ public class ListAlarmRespBodyAlarms {
     }
 
     /**
-     * **参数解释**： 资源列表，关联资源需要使用查询“[告警规则资源接口](.xml)”获取。 **取值范围**： 最多支持3000个资源。 
+     * **参数解释**： 资源列表，关联资源需要使用[[查询告警规则资源列表](https://support.huaweicloud.com/api-ces/ListAlarmRuleResources.html)](tag:hc)[[查询告警规则资源列表](https://support.huaweicloud.com/intl/en-us/api-ces/ListAlarmRuleResources.html)](tag:hk)[[查询告警规则资源列表](https://support.huaweicloud.com/eu/en-us/api-ces/ListAlarmRuleResources.html)](tag:hws_eu)[[查询告警规则资源列表](ListAlarmRuleResources.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)获取。 **取值范围**： 最多支持3000个资源。 
      * @return resources
      */
     public List<ResourcesInListResp> getResources() {

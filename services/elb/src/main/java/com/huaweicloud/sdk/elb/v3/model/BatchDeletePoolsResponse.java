@@ -1,0 +1,92 @@
+package com.huaweicloud.sdk.elb.v3.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * Response Object
+ */
+public class BatchDeletePoolsResponse extends SdkResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pools")
+
+    private List<BatchDeletePoolsResp> pools = null;
+
+    public BatchDeletePoolsResponse withPools(List<BatchDeletePoolsResp> pools) {
+        this.pools = pools;
+        return this;
+    }
+
+    public BatchDeletePoolsResponse addPoolsItem(BatchDeletePoolsResp poolsItem) {
+        if (this.pools == null) {
+            this.pools = new ArrayList<>();
+        }
+        this.pools.add(poolsItem);
+        return this;
+    }
+
+    public BatchDeletePoolsResponse withPools(Consumer<List<BatchDeletePoolsResp>> poolsSetter) {
+        if (this.pools == null) {
+            this.pools = new ArrayList<>();
+        }
+        poolsSetter.accept(this.pools);
+        return this;
+    }
+
+    /**
+     * 后端服务器组批量删除后的响应结果。
+     * @return pools
+     */
+    public List<BatchDeletePoolsResp> getPools() {
+        return pools;
+    }
+
+    public void setPools(List<BatchDeletePoolsResp> pools) {
+        this.pools = pools;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        BatchDeletePoolsResponse that = (BatchDeletePoolsResponse) obj;
+        return Objects.equals(this.pools, that.pools);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(pools);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class BatchDeletePoolsResponse {\n");
+        sb.append("    pools: ").append(toIndentedString(pools)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

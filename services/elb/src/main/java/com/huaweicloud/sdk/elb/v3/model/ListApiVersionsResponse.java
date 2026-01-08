@@ -41,7 +41,7 @@ public class ListApiVersionsResponse extends SdkResponse {
     }
 
     /**
-     * Get versions
+     * **参数解释**：可用API版本列表。
      * @return versions
      */
     public List<ApiVersionInfo> getVersions() {

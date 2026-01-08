@@ -93,6 +93,11 @@ public class CreateMasterSlavePoolOption {
 
     private QuicCidHashStrategy quicCidHashStrategy;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public CreateMasterSlavePoolOption withDescription(String description) {
         this.description = description;
         return this;
@@ -245,7 +250,7 @@ public class CreateMasterSlavePoolOption {
     }
 
     /**
-     * **参数解释**：后端服务器组关联的虚拟私有云的ID。  **约束限制**： - 只能挂载到该虚拟私有云下。 - 只能添加该虚拟私有云下的后端服务器或跨VPC的后端服务器。 - type必须指定为instance。 [- pool的protocol为IP时，必须指定vpc_id，且与LB的vpc_id相同。](tag:hws_eu) - 若未指定vpc_id，则后续添加后端服务器时，vpc_id由后端服务器所在的虚拟私有云确定。  **取值范围**：不涉及  **默认取值**：不涉及
+     * **参数解释**：后端服务器组关联的虚拟私有云的ID。  **约束限制**： - 只能挂载到该虚拟私有云下。 - 只能添加该虚拟私有云下的后端服务器或跨VPC的后端服务器。 - type必须指定为instance。 - pool的protocol为IP时，必须指定vpc_id，且与LB的vpc_id相同。 - 若未指定vpc_id，则后续添加后端服务器时，vpc_id由后端服务器所在的虚拟私有云确定。  **取值范围**：不涉及  **默认取值**：不涉及
      * @return vpcId
      */
     public String getVpcId() {
@@ -420,6 +425,23 @@ public class CreateMasterSlavePoolOption {
         this.quicCidHashStrategy = quicCidHashStrategy;
     }
 
+    public CreateMasterSlavePoolOption withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * **参数解释**：资源所属的企业项目ID。创建时不传则资源属于default企业项目，返回enterprise_project_id=\"0\"。  **约束限制**：不能传入空字符串\"\"、\"0\"或不存在的企业项目ID。  **取值范围**：不涉及  **默认取值**：\"0\"  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -439,7 +461,8 @@ public class CreateMasterSlavePoolOption {
             && Objects.equals(this.healthmonitor, that.healthmonitor)
             && Objects.equals(this.anyPortEnable, that.anyPortEnable)
             && Objects.equals(this.connectionDrain, that.connectionDrain)
-            && Objects.equals(this.quicCidHashStrategy, that.quicCidHashStrategy);
+            && Objects.equals(this.quicCidHashStrategy, that.quicCidHashStrategy)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
@@ -459,7 +482,8 @@ public class CreateMasterSlavePoolOption {
             healthmonitor,
             anyPortEnable,
             connectionDrain,
-            quicCidHashStrategy);
+            quicCidHashStrategy,
+            enterpriseProjectId);
     }
 
     @Override
@@ -482,6 +506,7 @@ public class CreateMasterSlavePoolOption {
         sb.append("    anyPortEnable: ").append(toIndentedString(anyPortEnable)).append("\n");
         sb.append("    connectionDrain: ").append(toIndentedString(connectionDrain)).append("\n");
         sb.append("    quicCidHashStrategy: ").append(toIndentedString(quicCidHashStrategy)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

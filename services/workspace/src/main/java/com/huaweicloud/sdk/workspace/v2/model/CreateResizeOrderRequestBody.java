@@ -29,6 +29,11 @@ public class CreateResizeOrderRequestBody {
     private String promotionPlanId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "handle_type")
+
+    private String handleType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
 
     private String productId;
@@ -77,7 +82,7 @@ public class CreateResizeOrderRequestBody {
     }
 
     /**
-     * 包周期桌面ID列表。 不可同时存在普通桌面和池桌面ID。
+     * 桌面id
      * @return desktopIds
      */
     public List<String> getDesktopIds() {
@@ -103,6 +108,23 @@ public class CreateResizeOrderRequestBody {
 
     public void setPromotionPlanId(String promotionPlanId) {
         this.promotionPlanId = promotionPlanId;
+    }
+
+    public CreateResizeOrderRequestBody withHandleType(String handleType) {
+        this.handleType = handleType;
+        return this;
+    }
+
+    /**
+     * 处理类型 - ONLY_FOR_EXPAND：仅对新扩容桌面生效 - FOR_EXPAND_AND_IDLE：对新扩容桌面与空闲桌面生效 - FOR_EXPAND_AND_ALL：对新扩容桌面与已有全部桌面生效
+     * @return handleType
+     */
+    public String getHandleType() {
+        return handleType;
+    }
+
+    public void setHandleType(String handleType) {
+        this.handleType = handleType;
     }
 
     public CreateResizeOrderRequestBody withProductId(String productId) {
@@ -151,12 +173,13 @@ public class CreateResizeOrderRequestBody {
         return Objects.equals(this.desktopPoolId, that.desktopPoolId)
             && Objects.equals(this.desktopIds, that.desktopIds)
             && Objects.equals(this.promotionPlanId, that.promotionPlanId)
-            && Objects.equals(this.productId, that.productId) && Objects.equals(this.mode, that.mode);
+            && Objects.equals(this.handleType, that.handleType) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.mode, that.mode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktopPoolId, desktopIds, promotionPlanId, productId, mode);
+        return Objects.hash(desktopPoolId, desktopIds, promotionPlanId, handleType, productId, mode);
     }
 
     @Override
@@ -166,6 +189,7 @@ public class CreateResizeOrderRequestBody {
         sb.append("    desktopPoolId: ").append(toIndentedString(desktopPoolId)).append("\n");
         sb.append("    desktopIds: ").append(toIndentedString(desktopIds)).append("\n");
         sb.append("    promotionPlanId: ").append(toIndentedString(promotionPlanId)).append("\n");
+        sb.append("    handleType: ").append(toIndentedString(handleType)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("}");

@@ -33,6 +33,11 @@ public class ResizeDesktopReq {
 
     private String autoPlacement;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desktop_pool_id")
+
+    private String desktopPoolId;
+
     public ResizeDesktopReq withDesktops(List<ResizeDesktopData> desktops) {
         this.desktops = desktops;
         return this;
@@ -55,7 +60,7 @@ public class ResizeDesktopReq {
     }
 
     /**
-     * 桌面数据。支持批量按需类型桌面变更为同一规格。
+     * 桌面数据。支持批量将桌面变更为同一规格。
      * @return desktops
      */
     public List<ResizeDesktopData> getDesktops() {
@@ -117,6 +122,23 @@ public class ResizeDesktopReq {
         this.autoPlacement = autoPlacement;
     }
 
+    public ResizeDesktopReq withDesktopPoolId(String desktopPoolId) {
+        this.desktopPoolId = desktopPoolId;
+        return this;
+    }
+
+    /**
+     * 桌面池id。
+     * @return desktopPoolId
+     */
+    public String getDesktopPoolId() {
+        return desktopPoolId;
+    }
+
+    public void setDesktopPoolId(String desktopPoolId) {
+        this.desktopPoolId = desktopPoolId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -127,12 +149,13 @@ public class ResizeDesktopReq {
         }
         ResizeDesktopReq that = (ResizeDesktopReq) obj;
         return Objects.equals(this.desktops, that.desktops) && Objects.equals(this.productId, that.productId)
-            && Objects.equals(this.mode, that.mode) && Objects.equals(this.autoPlacement, that.autoPlacement);
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.autoPlacement, that.autoPlacement)
+            && Objects.equals(this.desktopPoolId, that.desktopPoolId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktops, productId, mode, autoPlacement);
+        return Objects.hash(desktops, productId, mode, autoPlacement, desktopPoolId);
     }
 
     @Override
@@ -143,6 +166,7 @@ public class ResizeDesktopReq {
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    autoPlacement: ").append(toIndentedString(autoPlacement)).append("\n");
+        sb.append("    desktopPoolId: ").append(toIndentedString(desktopPoolId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

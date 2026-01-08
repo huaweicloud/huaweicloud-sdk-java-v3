@@ -24,6 +24,11 @@ public class InstancesNodesResult {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "role")
+
+    private String role;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "component_ids")
 
     private List<String> componentIds = null;
@@ -60,6 +65,23 @@ public class InstancesNodesResult {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public InstancesNodesResult withRole(String role) {
+        this.role = role;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 节点角色。 **取值范围**： - master：主节点。 - slave：备节点。 - secondary：日志节点。 - readreplica：只读节点。
+     * @return role
+     */
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public InstancesNodesResult withComponentIds(List<String> componentIds) {
@@ -105,12 +127,12 @@ public class InstancesNodesResult {
         }
         InstancesNodesResult that = (InstancesNodesResult) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.componentIds, that.componentIds);
+            && Objects.equals(this.role, that.role) && Objects.equals(this.componentIds, that.componentIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, componentIds);
+        return Objects.hash(id, name, role, componentIds);
     }
 
     @Override
@@ -119,6 +141,7 @@ public class InstancesNodesResult {
         sb.append("class InstancesNodesResult {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    role: ").append(toIndentedString(role)).append("\n");
         sb.append("    componentIds: ").append(toIndentedString(componentIds)).append("\n");
         sb.append("}");
         return sb.toString();

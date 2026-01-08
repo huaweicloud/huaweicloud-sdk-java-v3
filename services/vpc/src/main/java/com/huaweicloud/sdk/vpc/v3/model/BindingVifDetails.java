@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 
+ * BindingVifDetails
  */
 public class BindingVifDetails {
 
@@ -31,7 +31,7 @@ public class BindingVifDetails {
     }
 
     /**
-     * 参数解释：表示该网卡是否为云服务器的主网卡。取值范围：true，主网卡；false，非主网卡。
+     * **参数解释**： 表示该网卡是否为云服务器的主网卡。 **取值范围**： - true：该网卡是云服务器的主网卡。 - false：该网卡不是云服务器的主网卡。
      * @return primaryInterface
      */
     public Boolean getPrimaryInterface() {
@@ -48,7 +48,7 @@ public class BindingVifDetails {
     }
 
     /**
-     * 参数解释：表示该网络服务提供端口过滤特性，如安全组和反MAC/IP欺骗。取值范围：true，提供端口过滤特性；false，未提供端口过滤特性。
+     * **参数解释**： 表示该网络服务提供端口过滤特性，如安全组和反MAC/IP欺骗。 **取值范围**： - true：提供端口过滤特性。 - false：未提供端口过滤特性。
      * @return portFilter
      */
     public Boolean getPortFilter() {
@@ -65,7 +65,7 @@ public class BindingVifDetails {
     }
 
     /**
-     * 参数解释：是否为ovs/bridge混合模式。取值范围：true，ovs/bridge混合模式；false，非ovs/bridge混合模式。
+     * **参数解释**： 是否为ovs/bridge混合模式。 **取值范围**： - true：ovs/bridge混合模式。 - false：非ovs/bridge混合模式。
      * @return ovsHybridPlug
      */
     public Boolean getOvsHybridPlug() {

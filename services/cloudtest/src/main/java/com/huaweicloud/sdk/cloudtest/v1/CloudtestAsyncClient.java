@@ -88,6 +88,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestReportCustomDetailByUriR
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestReportCustomDetailByUriResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DownloadAssetTemplateRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DownloadAssetTemplateResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.DownloadStepImageNewRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DownloadStepImageNewResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ExportFactorRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ExportFactorResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ImportAssetRequest;
@@ -1273,6 +1275,36 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<DeleteTestReportCustomDetailByUriRequest, DeleteTestReportCustomDetailByUriResponse> deleteTestReportCustomDetailByUriAsyncInvoker(
         DeleteTestReportCustomDetailByUriRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.deleteTestReportCustomDetailByUri, hcClient);
+    }
+
+    /**
+     * 下载图片
+     *
+     * 下载图片
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadStepImageNewRequest 请求对象
+     * @return CompletableFuture<DownloadStepImageNewResponse>
+     */
+    public CompletableFuture<DownloadStepImageNewResponse> downloadStepImageNewAsync(
+        DownloadStepImageNewRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.downloadStepImageNew);
+    }
+
+    /**
+     * 下载图片
+     *
+     * 下载图片
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadStepImageNewRequest 请求对象
+     * @return AsyncInvoker<DownloadStepImageNewRequest, DownloadStepImageNewResponse>
+     */
+    public AsyncInvoker<DownloadStepImageNewRequest, DownloadStepImageNewResponse> downloadStepImageNewAsyncInvoker(
+        DownloadStepImageNewRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.downloadStepImageNew, hcClient);
     }
 
     /**

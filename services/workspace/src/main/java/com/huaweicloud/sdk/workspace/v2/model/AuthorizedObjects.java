@@ -101,6 +101,11 @@ public class AuthorizedObjects {
     private String objectName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain")
+
+    private String domain;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_group")
 
     private String userGroup;
@@ -161,6 +166,23 @@ public class AuthorizedObjects {
         this.objectName = objectName;
     }
 
+    public AuthorizedObjects withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    /**
+     * 用户/用户组所属域名。
+     * @return domain
+     */
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
     public AuthorizedObjects withUserGroup(String userGroup) {
         this.userGroup = userGroup;
         return this;
@@ -184,7 +206,7 @@ public class AuthorizedObjects {
     }
 
     /**
-     * 创建时间。格式为：UTC格式，例如“2022-05-11T11:45:42.000Z”。
+     * 创建时间。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -205,13 +227,13 @@ public class AuthorizedObjects {
         }
         AuthorizedObjects that = (AuthorizedObjects) obj;
         return Objects.equals(this.objectType, that.objectType) && Objects.equals(this.objectId, that.objectId)
-            && Objects.equals(this.objectName, that.objectName) && Objects.equals(this.userGroup, that.userGroup)
-            && Objects.equals(this.createdAt, that.createdAt);
+            && Objects.equals(this.objectName, that.objectName) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.userGroup, that.userGroup) && Objects.equals(this.createdAt, that.createdAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(objectType, objectId, objectName, userGroup, createdAt);
+        return Objects.hash(objectType, objectId, objectName, domain, userGroup, createdAt);
     }
 
     @Override
@@ -221,6 +243,7 @@ public class AuthorizedObjects {
         sb.append("    objectType: ").append(toIndentedString(objectType)).append("\n");
         sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
         sb.append("    objectName: ").append(toIndentedString(objectName)).append("\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    userGroup: ").append(toIndentedString(userGroup)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("}");

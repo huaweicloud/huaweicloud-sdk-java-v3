@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * UpdateHealthMonitorOption
+ * 更新健康检查请求参数。
  */
 public class UpdateHealthMonitorOption {
 
@@ -282,7 +282,7 @@ public class UpdateHealthMonitorOption {
     }
 
     /**
-     * **参数解释**：健康检查端口号。  [**约束限制**：不涉及](tag:hws,hws_hk,hws_eu_wb,hws_test,fcs,dt,hcso_dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,srg,g42,hk_g42) [**约束限制**：当pool协议为IP时，monitor_port必须指定为非0值。](tag:hws_eu)  **取值范围**：1-65535和null，传null表示使用后端服务器端口号。  **默认取值**：不涉及
+     * **参数解释**：健康检查端口号。  **约束限制**： - 当pool协议为IP时，monitor_port必须指定为非0值。  **取值范围**：1-65535和null，传null表示使用后端服务器端口号。  **默认取值**：不涉及
      * minimum: 1
      * maximum: 65535
      * @return monitorPort
@@ -354,7 +354,7 @@ public class UpdateHealthMonitorOption {
     }
 
     /**
-     * **参数解释**：健康检查请求协议。  **约束限制**： - 若pool的protocol为QUIC，则type只能是UDP_CONNECT。 - 若pool的protocol为UDP，则type只能UDP_CONNECT。 - 若pool的protocol为TCP，则type可以是TCP、HTTP、HTTPS。 [- 若pool的protocol为IP，则type可以是TCP、HTTP、HTTPS。](tag:hws_eu) - 若pool的protocol为HTTP，则type可以是TCP、HTTP、HTTPS、TLS、GRPC。 - 若pool的protocol为HTTPS，则type可以是TCP、HTTP、HTTPS、TLS、GRPC。 - 若pool的protocol为GRPC，则type可以是TCP、HTTP、HTTPS、TLS、GRPC。 - 若pool的protocol为TLS，则type可以是TCP、HTTP、HTTPS、TLS、GRPC。 [- 不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt) [- 荷兰region不支持QUIC。](tag:dt)  **取值范围**：TCP、UDP_CONNECT、HTTP、HTTPS、TLS和GRPC。  **默认取值**：不涉及
+     * **参数解释**：健康检查请求协议。  **约束限制**： - 若pool的protocol为QUIC，则type只能是UDP_CONNECT。 - 若pool的protocol为UDP，则type只能UDP_CONNECT。 - 若pool的protocol为TCP，则type可以是TCP、HTTP、HTTPS。 - 若pool的protocol为IP，则type可以是TCP、HTTP、HTTPS。 - 若pool的protocol为HTTP，则type可以是TCP、HTTP、HTTPS、TLS、GRPC[、GRPCS](tag:not_open)。 - 若pool的protocol为HTTPS，则type可以是TCP、HTTP、HTTPS、TLS、GRPC[、GRPCS](tag:not_open)。 - 若pool的protocol为GRPC，则type可以是TCP、HTTP、HTTPS、TLS、GRPC[、GRPCS](tag:not_open)。 [- 若pool的protocol为GRPCS，则type可以是TCP、HTTP、HTTPS、TLS、GRPC、GRPCS。](tag:not_open) - 若pool的protocol为TLS，则type可以是TCP、HTTP、HTTPS、TLS、GRPC[、GRPCS](tag:not_open)。 [- 不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt) [- 荷兰region不支持QUIC。](tag:dt)  **取值范围**：TCP、UDP_CONNECT、HTTP、HTTPS、TLS、GRPC[和GRPCS](tag:not_open)。  **默认取值**：不涉及
      * @return type
      */
     public String getType() {

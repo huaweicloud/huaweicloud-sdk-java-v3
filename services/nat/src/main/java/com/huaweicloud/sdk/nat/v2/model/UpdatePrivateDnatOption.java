@@ -26,11 +26,6 @@ public class UpdatePrivateDnatOption {
     private String transitIpId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "transit_ip_address")
-
-    private String transitIpAddress;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_interface_id")
 
     private String networkInterfaceId;
@@ -165,23 +160,6 @@ public class UpdatePrivateDnatOption {
         this.transitIpId = transitIpId;
     }
 
-    public UpdatePrivateDnatOption withTransitIpAddress(String transitIpAddress) {
-        this.transitIpAddress = transitIpAddress;
-        return this;
-    }
-
-    /**
-     * 中转IP的地址。
-     * @return transitIpAddress
-     */
-    public String getTransitIpAddress() {
-        return transitIpAddress;
-    }
-
-    public void setTransitIpAddress(String transitIpAddress) {
-        this.transitIpAddress = transitIpAddress;
-    }
-
     public UpdatePrivateDnatOption withNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
         return this;
@@ -277,7 +255,6 @@ public class UpdatePrivateDnatOption {
         }
         UpdatePrivateDnatOption that = (UpdatePrivateDnatOption) obj;
         return Objects.equals(this.description, that.description) && Objects.equals(this.transitIpId, that.transitIpId)
-            && Objects.equals(this.transitIpAddress, that.transitIpAddress)
             && Objects.equals(this.networkInterfaceId, that.networkInterfaceId)
             && Objects.equals(this.privateIpAddress, that.privateIpAddress)
             && Objects.equals(this.protocol, that.protocol)
@@ -289,7 +266,6 @@ public class UpdatePrivateDnatOption {
     public int hashCode() {
         return Objects.hash(description,
             transitIpId,
-            transitIpAddress,
             networkInterfaceId,
             privateIpAddress,
             protocol,
@@ -303,7 +279,6 @@ public class UpdatePrivateDnatOption {
         sb.append("class UpdatePrivateDnatOption {\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    transitIpId: ").append(toIndentedString(transitIpId)).append("\n");
-        sb.append("    transitIpAddress: ").append(toIndentedString(transitIpAddress)).append("\n");
         sb.append("    networkInterfaceId: ").append(toIndentedString(networkInterfaceId)).append("\n");
         sb.append("    privateIpAddress: ").append(toIndentedString(privateIpAddress)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");

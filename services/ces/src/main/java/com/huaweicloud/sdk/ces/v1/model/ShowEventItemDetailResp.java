@@ -216,6 +216,87 @@ public class ShowEventItemDetailResp {
 
     private String eventType;
 
+    /**
+     * **参数解释**： 事件子类。 **取值范围**： 枚举类型。 当事件类型为系统事件时，参数值为SUB_EVENT.OPS或SUB_EVENT.PLAN。 当事件类型为自定义事件时，参数值为SUB_EVENT.CUSTOM。 - SUB_EVENT.OPS：运维事件。 - SUB_EVENT.PLAN：计划事件。 - SUB_EVENT.CUSTOM：自定义事件。 
+     */
+    public static final class SubEventTypeEnum {
+
+        /**
+         * Enum SUB_EVENT_OPS for value: "SUB_EVENT.OPS"
+         */
+        public static final SubEventTypeEnum SUB_EVENT_OPS = new SubEventTypeEnum("SUB_EVENT.OPS");
+
+        /**
+         * Enum SUB_EVENT_PLAN for value: "SUB_EVENT.PLAN"
+         */
+        public static final SubEventTypeEnum SUB_EVENT_PLAN = new SubEventTypeEnum("SUB_EVENT.PLAN");
+
+        /**
+         * Enum SUB_EVENT_CUSTOM for value: "SUB_EVENT.CUSTOM"
+         */
+        public static final SubEventTypeEnum SUB_EVENT_CUSTOM = new SubEventTypeEnum("SUB_EVENT.CUSTOM");
+
+        private static final Map<String, SubEventTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SubEventTypeEnum> createStaticFields() {
+            Map<String, SubEventTypeEnum> map = new HashMap<>();
+            map.put("SUB_EVENT.OPS", SUB_EVENT_OPS);
+            map.put("SUB_EVENT.PLAN", SUB_EVENT_PLAN);
+            map.put("SUB_EVENT.CUSTOM", SUB_EVENT_CUSTOM);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SubEventTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SubEventTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SubEventTypeEnum(value));
+        }
+
+        public static SubEventTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SubEventTypeEnum) {
+                return this.value.equals(((SubEventTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_event_type")
+
+    private SubEventTypeEnum subEventType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dimensions")
 
@@ -357,6 +438,23 @@ public class ShowEventItemDetailResp {
         this.eventType = eventType;
     }
 
+    public ShowEventItemDetailResp withSubEventType(SubEventTypeEnum subEventType) {
+        this.subEventType = subEventType;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 事件子类。 **取值范围**： 枚举类型。 当事件类型为系统事件时，参数值为SUB_EVENT.OPS或SUB_EVENT.PLAN。 当事件类型为自定义事件时，参数值为SUB_EVENT.CUSTOM。 - SUB_EVENT.OPS：运维事件。 - SUB_EVENT.PLAN：计划事件。 - SUB_EVENT.CUSTOM：自定义事件。 
+     * @return subEventType
+     */
+    public SubEventTypeEnum getSubEventType() {
+        return subEventType;
+    }
+
+    public void setSubEventType(SubEventTypeEnum subEventType) {
+        this.subEventType = subEventType;
+    }
+
     public ShowEventItemDetailResp withDimensions(List<MetricsDimensionResp> dimensions) {
         this.dimensions = dimensions;
         return this;
@@ -403,13 +501,21 @@ public class ShowEventItemDetailResp {
             && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
             && Objects.equals(this.eventState, that.eventState) && Objects.equals(this.eventLevel, that.eventLevel)
             && Objects.equals(this.eventUser, that.eventUser) && Objects.equals(this.eventType, that.eventType)
-            && Objects.equals(this.dimensions, that.dimensions);
+            && Objects.equals(this.subEventType, that.subEventType) && Objects.equals(this.dimensions, that.dimensions);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(content, groupId, resourceId, resourceName, eventState, eventLevel, eventUser, eventType, dimensions);
+        return Objects.hash(content,
+            groupId,
+            resourceId,
+            resourceName,
+            eventState,
+            eventLevel,
+            eventUser,
+            eventType,
+            subEventType,
+            dimensions);
     }
 
     @Override
@@ -424,6 +530,7 @@ public class ShowEventItemDetailResp {
         sb.append("    eventLevel: ").append(toIndentedString(eventLevel)).append("\n");
         sb.append("    eventUser: ").append(toIndentedString(eventUser)).append("\n");
         sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
+        sb.append("    subEventType: ").append(toIndentedString(subEventType)).append("\n");
         sb.append("    dimensions: ").append(toIndentedString(dimensions)).append("\n");
         sb.append("}");
         return sb.toString();

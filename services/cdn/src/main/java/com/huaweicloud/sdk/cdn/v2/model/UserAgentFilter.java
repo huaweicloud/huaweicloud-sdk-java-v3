@@ -56,7 +56,7 @@ public class UserAgentFilter {
     }
 
     /**
-     * 配置UA黑白名单，当type=off时，非必传。最多配置10条规则，单条规则不超过100个字符，多条规则用“,”分割。
+     * 配置UA黑白名单，当type=off时，非必传。最多配置50条规则，单条规则不超过100个字符，多条规则用“,”分割。
      * @return value
      */
     public String getValue() {

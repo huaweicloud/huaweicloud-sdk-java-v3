@@ -53,7 +53,7 @@ public class ListSqlLimitTaskResponseResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
 
-    private Object instanceId;
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_name")
@@ -221,7 +221,7 @@ public class ListSqlLimitTaskResponseResult {
         this.status = status;
     }
 
-    public ListSqlLimitTaskResponseResult withInstanceId(Object instanceId) {
+    public ListSqlLimitTaskResponseResult withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
@@ -230,11 +230,11 @@ public class ListSqlLimitTaskResponseResult {
      * **参数解释**: 实例ID。 **取值范围**: 不涉及。
      * @return instanceId
      */
-    public Object getInstanceId() {
+    public String getInstanceId() {
         return instanceId;
     }
 
-    public void setInstanceId(Object instanceId) {
+    public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
 

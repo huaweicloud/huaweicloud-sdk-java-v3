@@ -6795,7 +6795,7 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
-     * 查询asp采集结果
+     * 查询ASP采集结果
      *
      * 查询ASP采集结果。
      * 
@@ -6809,7 +6809,7 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
-     * 查询asp采集结果
+     * 查询ASP采集结果
      *
      * 查询ASP采集结果。
      * 

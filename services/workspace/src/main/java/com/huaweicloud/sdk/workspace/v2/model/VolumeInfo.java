@@ -26,6 +26,16 @@ public class VolumeInfo {
     private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iops")
+
+    private Integer iops;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "throughput")
+
+    private Integer throughput;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_spec_code")
 
     private String resourceSpecCode;
@@ -83,6 +93,44 @@ public class VolumeInfo {
         this.size = size;
     }
 
+    public VolumeInfo withIops(Integer iops) {
+        this.iops = iops;
+        return this;
+    }
+
+    /**
+     * iops，云硬盘每秒进行读写的操作次数。
+     * minimum: 0
+     * maximum: 16380000
+     * @return iops
+     */
+    public Integer getIops() {
+        return iops;
+    }
+
+    public void setIops(Integer iops) {
+        this.iops = iops;
+    }
+
+    public VolumeInfo withThroughput(Integer throughput) {
+        this.throughput = throughput;
+        return this;
+    }
+
+    /**
+     * 吞吐量，云硬盘每秒成功传送的数据量，即读取和写入的数据量。
+     * minimum: 0
+     * maximum: 4095000
+     * @return throughput
+     */
+    public Integer getThroughput() {
+        return throughput;
+    }
+
+    public void setThroughput(Integer throughput) {
+        this.throughput = throughput;
+    }
+
     public VolumeInfo withResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
         return this;
@@ -110,12 +158,14 @@ public class VolumeInfo {
         }
         VolumeInfo that = (VolumeInfo) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.size, that.size) && Objects.equals(this.resourceSpecCode, that.resourceSpecCode);
+            && Objects.equals(this.size, that.size) && Objects.equals(this.iops, that.iops)
+            && Objects.equals(this.throughput, that.throughput)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, type, size, resourceSpecCode);
+        return Objects.hash(id, type, size, iops, throughput, resourceSpecCode);
     }
 
     @Override
@@ -125,6 +175,8 @@ public class VolumeInfo {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    iops: ").append(toIndentedString(iops)).append("\n");
+        sb.append("    throughput: ").append(toIndentedString(throughput)).append("\n");
         sb.append("    resourceSpecCode: ").append(toIndentedString(resourceSpecCode)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -41,6 +41,16 @@ public class TextWatermark {
     private String timelineDuration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "random_time_min")
+
+    private String randomTimeMin;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "random_time_max")
+
+    private String randomTimeMax;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "font_name")
 
     private String fontName;
@@ -215,6 +225,40 @@ public class TextWatermark {
         this.timelineDuration = timelineDuration;
     }
 
+    public TextWatermark withRandomTimeMin(String randomTimeMin) {
+        this.randomTimeMin = randomTimeMin;
+        return this;
+    }
+
+    /**
+     * 轮转间隔时间最小值，单位：秒 
+     * @return randomTimeMin
+     */
+    public String getRandomTimeMin() {
+        return randomTimeMin;
+    }
+
+    public void setRandomTimeMin(String randomTimeMin) {
+        this.randomTimeMin = randomTimeMin;
+    }
+
+    public TextWatermark withRandomTimeMax(String randomTimeMax) {
+        this.randomTimeMax = randomTimeMax;
+        return this;
+    }
+
+    /**
+     * 轮转间隔时间最大值，单位：秒 
+     * @return randomTimeMax
+     */
+    public String getRandomTimeMax() {
+        return randomTimeMax;
+    }
+
+    public void setRandomTimeMax(String randomTimeMax) {
+        this.randomTimeMax = randomTimeMax;
+    }
+
     public TextWatermark withFontName(String fontName) {
         this.fontName = fontName;
         return this;
@@ -297,13 +341,25 @@ public class TextWatermark {
         return Objects.equals(this.dx, that.dx) && Objects.equals(this.dy, that.dy)
             && Objects.equals(this.referpos, that.referpos) && Objects.equals(this.timelineStart, that.timelineStart)
             && Objects.equals(this.timelineDuration, that.timelineDuration)
-            && Objects.equals(this.fontName, that.fontName) && Objects.equals(this.fontSize, that.fontSize)
-            && Objects.equals(this.fontColor, that.fontColor) && Objects.equals(this.base, that.base);
+            && Objects.equals(this.randomTimeMin, that.randomTimeMin)
+            && Objects.equals(this.randomTimeMax, that.randomTimeMax) && Objects.equals(this.fontName, that.fontName)
+            && Objects.equals(this.fontSize, that.fontSize) && Objects.equals(this.fontColor, that.fontColor)
+            && Objects.equals(this.base, that.base);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dx, dy, referpos, timelineStart, timelineDuration, fontName, fontSize, fontColor, base);
+        return Objects.hash(dx,
+            dy,
+            referpos,
+            timelineStart,
+            timelineDuration,
+            randomTimeMin,
+            randomTimeMax,
+            fontName,
+            fontSize,
+            fontColor,
+            base);
     }
 
     @Override
@@ -315,6 +371,8 @@ public class TextWatermark {
         sb.append("    referpos: ").append(toIndentedString(referpos)).append("\n");
         sb.append("    timelineStart: ").append(toIndentedString(timelineStart)).append("\n");
         sb.append("    timelineDuration: ").append(toIndentedString(timelineDuration)).append("\n");
+        sb.append("    randomTimeMin: ").append(toIndentedString(randomTimeMin)).append("\n");
+        sb.append("    randomTimeMax: ").append(toIndentedString(randomTimeMax)).append("\n");
         sb.append("    fontName: ").append(toIndentedString(fontName)).append("\n");
         sb.append("    fontSize: ").append(toIndentedString(fontSize)).append("\n");
         sb.append("    fontColor: ").append(toIndentedString(fontColor)).append("\n");

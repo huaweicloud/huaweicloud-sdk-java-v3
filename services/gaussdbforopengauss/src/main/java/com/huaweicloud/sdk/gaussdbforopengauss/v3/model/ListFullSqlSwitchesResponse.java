@@ -20,9 +20,9 @@ public class ListFullSqlSwitchesResponse extends SdkResponse {
     private Long totalCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "full_sql_switchs")
+    @JsonProperty(value = "full_sql_switches")
 
-    private List<FullSqlSwitchResult> fullSqlSwitchs = null;
+    private List<FullSqlSwitchResult> fullSqlSwitches = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "allowed_sql_types")
@@ -46,37 +46,37 @@ public class ListFullSqlSwitchesResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
-    public ListFullSqlSwitchesResponse withFullSqlSwitchs(List<FullSqlSwitchResult> fullSqlSwitchs) {
-        this.fullSqlSwitchs = fullSqlSwitchs;
+    public ListFullSqlSwitchesResponse withFullSqlSwitches(List<FullSqlSwitchResult> fullSqlSwitches) {
+        this.fullSqlSwitches = fullSqlSwitches;
         return this;
     }
 
-    public ListFullSqlSwitchesResponse addFullSqlSwitchsItem(FullSqlSwitchResult fullSqlSwitchsItem) {
-        if (this.fullSqlSwitchs == null) {
-            this.fullSqlSwitchs = new ArrayList<>();
+    public ListFullSqlSwitchesResponse addFullSqlSwitchesItem(FullSqlSwitchResult fullSqlSwitchesItem) {
+        if (this.fullSqlSwitches == null) {
+            this.fullSqlSwitches = new ArrayList<>();
         }
-        this.fullSqlSwitchs.add(fullSqlSwitchsItem);
+        this.fullSqlSwitches.add(fullSqlSwitchesItem);
         return this;
     }
 
-    public ListFullSqlSwitchesResponse withFullSqlSwitchs(Consumer<List<FullSqlSwitchResult>> fullSqlSwitchsSetter) {
-        if (this.fullSqlSwitchs == null) {
-            this.fullSqlSwitchs = new ArrayList<>();
+    public ListFullSqlSwitchesResponse withFullSqlSwitches(Consumer<List<FullSqlSwitchResult>> fullSqlSwitchesSetter) {
+        if (this.fullSqlSwitches == null) {
+            this.fullSqlSwitches = new ArrayList<>();
         }
-        fullSqlSwitchsSetter.accept(this.fullSqlSwitchs);
+        fullSqlSwitchesSetter.accept(this.fullSqlSwitches);
         return this;
     }
 
     /**
      * **参数解释**: 开关记录列表。
-     * @return fullSqlSwitchs
+     * @return fullSqlSwitches
      */
-    public List<FullSqlSwitchResult> getFullSqlSwitchs() {
-        return fullSqlSwitchs;
+    public List<FullSqlSwitchResult> getFullSqlSwitches() {
+        return fullSqlSwitches;
     }
 
-    public void setFullSqlSwitchs(List<FullSqlSwitchResult> fullSqlSwitchs) {
-        this.fullSqlSwitchs = fullSqlSwitchs;
+    public void setFullSqlSwitches(List<FullSqlSwitchResult> fullSqlSwitches) {
+        this.fullSqlSwitches = fullSqlSwitches;
     }
 
     public ListFullSqlSwitchesResponse withAllowedSqlTypes(List<SqlTypeRangeConfigResult> allowedSqlTypes) {
@@ -123,13 +123,13 @@ public class ListFullSqlSwitchesResponse extends SdkResponse {
         }
         ListFullSqlSwitchesResponse that = (ListFullSqlSwitchesResponse) obj;
         return Objects.equals(this.totalCount, that.totalCount)
-            && Objects.equals(this.fullSqlSwitchs, that.fullSqlSwitchs)
+            && Objects.equals(this.fullSqlSwitches, that.fullSqlSwitches)
             && Objects.equals(this.allowedSqlTypes, that.allowedSqlTypes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(totalCount, fullSqlSwitchs, allowedSqlTypes);
+        return Objects.hash(totalCount, fullSqlSwitches, allowedSqlTypes);
     }
 
     @Override
@@ -137,7 +137,7 @@ public class ListFullSqlSwitchesResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListFullSqlSwitchesResponse {\n");
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
-        sb.append("    fullSqlSwitchs: ").append(toIndentedString(fullSqlSwitchs)).append("\n");
+        sb.append("    fullSqlSwitches: ").append(toIndentedString(fullSqlSwitches)).append("\n");
         sb.append("    allowedSqlTypes: ").append(toIndentedString(allowedSqlTypes)).append("\n");
         sb.append("}");
         return sb.toString();

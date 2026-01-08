@@ -29,6 +29,11 @@ public class CreateChangeImageOrderRequestBody {
     private String promotionPlanId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "handle_type")
+
+    private String handleType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_spec_code")
 
     private String imageSpecCode;
@@ -37,6 +42,11 @@ public class CreateChangeImageOrderRequestBody {
     @JsonProperty(value = "image_id")
 
     private String imageId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_type")
+
+    private String imageType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delay_time")
@@ -87,7 +97,7 @@ public class CreateChangeImageOrderRequestBody {
     }
 
     /**
-     * 包周期桌面ID列表。 不可同时存在普通桌面和池桌面ID。
+     * 桌面id
      * @return desktopIds
      */
     public List<String> getDesktopIds() {
@@ -113,6 +123,23 @@ public class CreateChangeImageOrderRequestBody {
 
     public void setPromotionPlanId(String promotionPlanId) {
         this.promotionPlanId = promotionPlanId;
+    }
+
+    public CreateChangeImageOrderRequestBody withHandleType(String handleType) {
+        this.handleType = handleType;
+        return this;
+    }
+
+    /**
+     * 处理类型 - ONLY_FOR_EXPAND：仅对新扩容桌面生效 - FOR_EXPAND_AND_IDLE：对新扩容桌面与空闲桌面生效 - FOR_EXPAND_AND_ALL：对新扩容桌面与已有全部桌面生效
+     * @return handleType
+     */
+    public String getHandleType() {
+        return handleType;
+    }
+
+    public void setHandleType(String handleType) {
+        this.handleType = handleType;
     }
 
     public CreateChangeImageOrderRequestBody withImageSpecCode(String imageSpecCode) {
@@ -147,6 +174,23 @@ public class CreateChangeImageOrderRequestBody {
 
     public void setImageId(String imageId) {
         this.imageId = imageId;
+    }
+
+    public CreateChangeImageOrderRequestBody withImageType(String imageType) {
+        this.imageType = imageType;
+        return this;
+    }
+
+    /**
+     * 镜像类型。仅重建系统盘/更换镜像使用  - private：私有镜像。 - gold：公共镜像。
+     * @return imageType
+     */
+    public String getImageType() {
+        return imageType;
+    }
+
+    public void setImageType(String imageType) {
+        this.imageType = imageType;
     }
 
     public CreateChangeImageOrderRequestBody withDelayTime(Integer delayTime) {
@@ -197,13 +241,23 @@ public class CreateChangeImageOrderRequestBody {
         return Objects.equals(this.desktopPoolId, that.desktopPoolId)
             && Objects.equals(this.desktopIds, that.desktopIds)
             && Objects.equals(this.promotionPlanId, that.promotionPlanId)
+            && Objects.equals(this.handleType, that.handleType)
             && Objects.equals(this.imageSpecCode, that.imageSpecCode) && Objects.equals(this.imageId, that.imageId)
-            && Objects.equals(this.delayTime, that.delayTime) && Objects.equals(this.message, that.message);
+            && Objects.equals(this.imageType, that.imageType) && Objects.equals(this.delayTime, that.delayTime)
+            && Objects.equals(this.message, that.message);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktopPoolId, desktopIds, promotionPlanId, imageSpecCode, imageId, delayTime, message);
+        return Objects.hash(desktopPoolId,
+            desktopIds,
+            promotionPlanId,
+            handleType,
+            imageSpecCode,
+            imageId,
+            imageType,
+            delayTime,
+            message);
     }
 
     @Override
@@ -213,8 +267,10 @@ public class CreateChangeImageOrderRequestBody {
         sb.append("    desktopPoolId: ").append(toIndentedString(desktopPoolId)).append("\n");
         sb.append("    desktopIds: ").append(toIndentedString(desktopIds)).append("\n");
         sb.append("    promotionPlanId: ").append(toIndentedString(promotionPlanId)).append("\n");
+        sb.append("    handleType: ").append(toIndentedString(handleType)).append("\n");
         sb.append("    imageSpecCode: ").append(toIndentedString(imageSpecCode)).append("\n");
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
+        sb.append("    imageType: ").append(toIndentedString(imageType)).append("\n");
         sb.append("    delayTime: ").append(toIndentedString(delayTime)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("}");

@@ -48,7 +48,7 @@ public class ResizeDesktopPoolReq {
     }
 
     /**
-     * 产品规格ID。可用区是边缘可用区时，必填此参数。
+     * 产品规格ID。
      * @return flavorId
      */
     public String getFlavorId() {

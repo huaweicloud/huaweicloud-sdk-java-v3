@@ -190,7 +190,7 @@ public class UpdateUserOption {
     }
 
     /**
-     * IAM用户密码状态。true：需要修改密码，false：正常。
+     * IAM用户密码状态。true：需要修改密码，false：不需要修改密码。
      * @return pwdStatus
      */
     public Boolean getPwdStatus() {

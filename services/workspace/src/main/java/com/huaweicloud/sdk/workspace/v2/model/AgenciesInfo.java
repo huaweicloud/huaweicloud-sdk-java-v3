@@ -19,6 +19,16 @@ public class AgenciesInfo {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scene")
+
+    private String scene;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permissions")
 
     private List<AgenciesPermissionInfo> permissions = null;
@@ -38,6 +48,40 @@ public class AgenciesInfo {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public AgenciesInfo withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 委托ID。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public AgenciesInfo withScene(String scene) {
+        this.scene = scene;
+        return this;
+    }
+
+    /**
+     * 委托场景。
+     * @return scene
+     */
+    public String getScene() {
+        return scene;
+    }
+
+    public void setScene(String scene) {
+        this.scene = scene;
     }
 
     public AgenciesInfo withPermissions(List<AgenciesPermissionInfo> permissions) {
@@ -82,12 +126,13 @@ public class AgenciesInfo {
             return false;
         }
         AgenciesInfo that = (AgenciesInfo) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.permissions, that.permissions);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.scene, that.scene) && Objects.equals(this.permissions, that.permissions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, permissions);
+        return Objects.hash(name, id, scene, permissions);
     }
 
     @Override
@@ -95,6 +140,8 @@ public class AgenciesInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class AgenciesInfo {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    scene: ").append(toIndentedString(scene)).append("\n");
         sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
         sb.append("}");
         return sb.toString();

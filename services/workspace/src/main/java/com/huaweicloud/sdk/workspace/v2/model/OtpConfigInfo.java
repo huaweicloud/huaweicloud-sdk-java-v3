@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.workspace.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -10,6 +12,11 @@ import java.util.function.Consumer;
  * OTP辅助认证方式配置。
  */
 public class OtpConfigInfo {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable")
@@ -50,6 +57,28 @@ public class OtpConfigInfo {
     @JsonProperty(value = "apply_rule")
 
     private ApplyRuleInfo applyRule;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "apply_objects")
+
+    private List<ApplyObjects> applyObjects = null;
+
+    public OtpConfigInfo withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 认证id。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public OtpConfigInfo withEnable(Boolean enable) {
         this.enable = enable;
@@ -196,6 +225,39 @@ public class OtpConfigInfo {
         this.applyRule = applyRule;
     }
 
+    public OtpConfigInfo withApplyObjects(List<ApplyObjects> applyObjects) {
+        this.applyObjects = applyObjects;
+        return this;
+    }
+
+    public OtpConfigInfo addApplyObjectsItem(ApplyObjects applyObjectsItem) {
+        if (this.applyObjects == null) {
+            this.applyObjects = new ArrayList<>();
+        }
+        this.applyObjects.add(applyObjectsItem);
+        return this;
+    }
+
+    public OtpConfigInfo withApplyObjects(Consumer<List<ApplyObjects>> applyObjectsSetter) {
+        if (this.applyObjects == null) {
+            this.applyObjects = new ArrayList<>();
+        }
+        applyObjectsSetter.accept(this.applyObjects);
+        return this;
+    }
+
+    /**
+     * 要应用的用户/用户组列表。
+     * @return applyObjects
+     */
+    public List<ApplyObjects> getApplyObjects() {
+        return applyObjects;
+    }
+
+    public void setApplyObjects(List<ApplyObjects> applyObjects) {
+        this.applyObjects = applyObjects;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -205,23 +267,33 @@ public class OtpConfigInfo {
             return false;
         }
         OtpConfigInfo that = (OtpConfigInfo) obj;
-        return Objects.equals(this.enable, that.enable) && Objects.equals(this.receiveMode, that.receiveMode)
-            && Objects.equals(this.authUrl, that.authUrl) && Objects.equals(this.appId, that.appId)
-            && Objects.equals(this.appSecret, that.appSecret)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.enable, that.enable)
+            && Objects.equals(this.receiveMode, that.receiveMode) && Objects.equals(this.authUrl, that.authUrl)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.appSecret, that.appSecret)
             && Objects.equals(this.authServerAccessMode, that.authServerAccessMode)
-            && Objects.equals(this.certContent, that.certContent) && Objects.equals(this.applyRule, that.applyRule);
+            && Objects.equals(this.certContent, that.certContent) && Objects.equals(this.applyRule, that.applyRule)
+            && Objects.equals(this.applyObjects, that.applyObjects);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(enable, receiveMode, authUrl, appId, appSecret, authServerAccessMode, certContent, applyRule);
+        return Objects.hash(id,
+            enable,
+            receiveMode,
+            authUrl,
+            appId,
+            appSecret,
+            authServerAccessMode,
+            certContent,
+            applyRule,
+            applyObjects);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class OtpConfigInfo {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
         sb.append("    receiveMode: ").append(toIndentedString(receiveMode)).append("\n");
         sb.append("    authUrl: ").append(toIndentedString(authUrl)).append("\n");
@@ -230,6 +302,7 @@ public class OtpConfigInfo {
         sb.append("    authServerAccessMode: ").append(toIndentedString(authServerAccessMode)).append("\n");
         sb.append("    certContent: ").append(toIndentedString(certContent)).append("\n");
         sb.append("    applyRule: ").append(toIndentedString(applyRule)).append("\n");
+        sb.append("    applyObjects: ").append(toIndentedString(applyObjects)).append("\n");
         sb.append("}");
         return sb.toString();
     }

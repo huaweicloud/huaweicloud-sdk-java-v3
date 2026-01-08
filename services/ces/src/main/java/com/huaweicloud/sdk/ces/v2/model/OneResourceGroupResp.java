@@ -138,7 +138,7 @@ public class OneResourceGroupResp {
     private TypeEnum type;
 
     /**
-     * **参数解释** 资源分组指标告警状态。 **取值范围** - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未配置告警规则
+     * **参数解释** 资源分组指标告警状态。 **取值范围** - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未设置告警规则
      */
     public static final class StatusEnum {
 
@@ -219,7 +219,7 @@ public class OneResourceGroupResp {
     private StatusEnum status;
 
     /**
-     * **参数解释** 资源分组事件告警状态。 **取值范围** - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未配置告警规则
+     * **参数解释** 资源分组事件告警状态。 **取值范围** - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未设置告警规则
      */
     public static final class EventStatusEnum {
 
@@ -497,7 +497,7 @@ public class OneResourceGroupResp {
     }
 
     /**
-     * **参数解释** 资源分组指标告警状态。 **取值范围** - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未配置告警规则
+     * **参数解释** 资源分组指标告警状态。 **取值范围** - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未设置告警规则
      * @return status
      */
     public StatusEnum getStatus() {
@@ -514,7 +514,7 @@ public class OneResourceGroupResp {
     }
 
     /**
-     * **参数解释** 资源分组事件告警状态。 **取值范围** - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未配置告警规则
+     * **参数解释** 资源分组事件告警状态。 **取值范围** - health: 表示无告警 - unhealthy: 表示告警中 - no_alarm_rule: 表示未设置告警规则
      * @return eventStatus
      */
     public EventStatusEnum getEventStatus() {

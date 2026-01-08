@@ -53,6 +53,16 @@ public class VolumeProductInfo {
 
     private String status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iops")
+
+    private Iops iops;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "throughput")
+
+    private Throughput throughput;
+
     public VolumeProductInfo withResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
         return this;
@@ -221,6 +231,58 @@ public class VolumeProductInfo {
         this.status = status;
     }
 
+    public VolumeProductInfo withIops(Iops iops) {
+        this.iops = iops;
+        return this;
+    }
+
+    public VolumeProductInfo withIops(Consumer<Iops> iopsSetter) {
+        if (this.iops == null) {
+            this.iops = new Iops();
+            iopsSetter.accept(this.iops);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get iops
+     * @return iops
+     */
+    public Iops getIops() {
+        return iops;
+    }
+
+    public void setIops(Iops iops) {
+        this.iops = iops;
+    }
+
+    public VolumeProductInfo withThroughput(Throughput throughput) {
+        this.throughput = throughput;
+        return this;
+    }
+
+    public VolumeProductInfo withThroughput(Consumer<Throughput> throughputSetter) {
+        if (this.throughput == null) {
+            this.throughput = new Throughput();
+            throughputSetter.accept(this.throughput);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get throughput
+     * @return throughput
+     */
+    public Throughput getThroughput() {
+        return throughput;
+    }
+
+    public void setThroughput(Throughput throughput) {
+        this.throughput = throughput;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -236,7 +298,8 @@ public class VolumeProductInfo {
             && Objects.equals(this.resourceType, that.resourceType)
             && Objects.equals(this.cloudServiceType, that.cloudServiceType)
             && Objects.equals(this.domainIds, that.domainIds) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.status, that.status);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.iops, that.iops)
+            && Objects.equals(this.throughput, that.throughput);
     }
 
     @Override
@@ -248,7 +311,9 @@ public class VolumeProductInfo {
             cloudServiceType,
             domainIds,
             name,
-            status);
+            status,
+            iops,
+            throughput);
     }
 
     @Override
@@ -263,6 +328,8 @@ public class VolumeProductInfo {
         sb.append("    domainIds: ").append(toIndentedString(domainIds)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    iops: ").append(toIndentedString(iops)).append("\n");
+        sb.append("    throughput: ").append(toIndentedString(throughput)).append("\n");
         sb.append("}");
         return sb.toString();
     }

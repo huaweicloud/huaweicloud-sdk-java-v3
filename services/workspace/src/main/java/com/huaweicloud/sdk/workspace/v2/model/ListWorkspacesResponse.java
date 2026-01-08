@@ -330,7 +330,7 @@ public class ListWorkspacesResponse extends SdkResponse {
     }
 
     /**
-     * 开通服务是否是全局服务
+     * 开通服务是否是全局服务。
      * @return isGlobal
      */
     public Boolean getIsGlobal() {

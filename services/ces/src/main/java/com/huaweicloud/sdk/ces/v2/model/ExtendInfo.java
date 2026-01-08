@@ -11,12 +11,12 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 看板相关拓展信息
+ * **参数解释** 看板相关拓展信息 **约束限制** 不涉及 
  */
 public class ExtendInfo {
 
     /**
-     * 表示指标聚合方式，average表示平均值，min表示最小值，max表示最大值，sum表示求合
+     * **参数解释** 表示指标聚合方式 **约束限制** 不涉及 **取值范围** 枚举值： - average 平均值 - min 最小值 - max 最大值 - sum 求和值 **默认取值** 不涉及 
      */
     public static final class FilterEnum {
 
@@ -108,7 +108,7 @@ public class ExtendInfo {
     private String period;
 
     /**
-     * 展示时间，0表示使用自定义时间展示， 5分钟，15分钟，30分钟，1小时，2小时，3小时，12小时，24小时，7天，30天
+     * **参数解释** 展示时间 **约束限制** 不涉及 **取值范围** 枚举值： - 0 自定义时间 - 5 5分钟 - 15 15分钟 - 30 30分钟 - 60 1小时 - 120 2小时 - 180 3小时 - 720 12小时 - 1440 24小时 - 10080 7天 - 43200 30天 **默认取值** 不涉及 
      */
     public static final class DisplayTimeEnum {
 
@@ -237,7 +237,7 @@ public class ExtendInfo {
     private DisplayTimeEnum displayTime;
 
     /**
-     * 刷新时间 0秒表示不刷新,10秒，1分钟，5分钟，20分钟
+     * **参数解释** 刷新时间 **约束限制** 不涉及 **取值范围** 枚举值： - 0 不刷新 - 10 10秒 - 60 1分钟 - 300 5分钟 - 1200 20分钟 **默认取值** 不涉及 
      */
     public static final class RefreshTimeEnum {
 
@@ -350,7 +350,7 @@ public class ExtendInfo {
     private Boolean enableScreenAutoPlay;
 
     /**
-     * 监控大屏自动切换时间间隔，10000代表10s，30000代表30s，60000代表1min
+     * **参数解释**  监控大屏自动切换时间间隔  **约束限制**  不涉及  **取值范围**  枚举值：  - 10000 10秒  - 30000 30秒  - 60000 1分钟  **默认取值**  不涉及 
      */
     public static final class TimeIntervalEnum {
 
@@ -446,7 +446,7 @@ public class ExtendInfo {
     }
 
     /**
-     * 表示指标聚合方式，average表示平均值，min表示最小值，max表示最大值，sum表示求合
+     * **参数解释** 表示指标聚合方式 **约束限制** 不涉及 **取值范围** 枚举值： - average 平均值 - min 最小值 - max 最大值 - sum 求和值 **默认取值** 不涉及 
      * @return filter
      */
     public FilterEnum getFilter() {
@@ -463,7 +463,7 @@ public class ExtendInfo {
     }
 
     /**
-     * '表示指标聚合周期，{1:表示原始值，60:表示一分钟，300:表示5分钟，1200:表示20分钟，3600:表示1小时，14400:表示4小时，86400:表示1天}'' 
+     * **参数解释** 表示指标聚合周期 **约束限制** 不涉及 **取值范围** - 1 原始值 - 60 一分钟 - 300 5分钟 - 1200 20分钟 - 3600 1小时 - 14400 4小时 - 86400 1天 **默认取值** 不涉及 
      * @return period
      */
     public String getPeriod() {
@@ -480,7 +480,7 @@ public class ExtendInfo {
     }
 
     /**
-     * 展示时间，0表示使用自定义时间展示， 5分钟，15分钟，30分钟，1小时，2小时，3小时，12小时，24小时，7天，30天
+     * **参数解释** 展示时间 **约束限制** 不涉及 **取值范围** 枚举值： - 0 自定义时间 - 5 5分钟 - 15 15分钟 - 30 30分钟 - 60 1小时 - 120 2小时 - 180 3小时 - 720 12小时 - 1440 24小时 - 10080 7天 - 43200 30天 **默认取值** 不涉及 
      * @return displayTime
      */
     public DisplayTimeEnum getDisplayTime() {
@@ -497,7 +497,7 @@ public class ExtendInfo {
     }
 
     /**
-     * 刷新时间 0秒表示不刷新,10秒，1分钟，5分钟，20分钟
+     * **参数解释** 刷新时间 **约束限制** 不涉及 **取值范围** 枚举值： - 0 不刷新 - 10 10秒 - 60 1分钟 - 300 5分钟 - 1200 20分钟 **默认取值** 不涉及 
      * @return refreshTime
      */
     public RefreshTimeEnum getRefreshTime() {
@@ -514,7 +514,7 @@ public class ExtendInfo {
     }
 
     /**
-     * 开始时间
+     * **参数解释** 开始时间 **约束限制** 不涉及 **取值范围** 时间戳取值为[0,9999999999999] **默认取值** 不涉及 
      * minimum: 0
      * maximum: 9999999999999
      * @return from
@@ -533,7 +533,7 @@ public class ExtendInfo {
     }
 
     /**
-     * 结束时间
+     * **参数解释** 结束时间 **约束限制** 不涉及 **取值范围** 时间戳取值为[0,9999999999999] **默认取值** 不涉及 
      * minimum: 0
      * maximum: 9999999999999
      * @return to
@@ -552,7 +552,7 @@ public class ExtendInfo {
     }
 
     /**
-     * 监控大屏背景颜色
+     * **参数解释** 监控大屏背景颜色 **约束限制** 不涉及 **取值范围** 背景颜色长度为[1,100]个字符 **默认取值** 不涉及 
      * @return screenColor
      */
     public String getScreenColor() {
@@ -569,7 +569,7 @@ public class ExtendInfo {
     }
 
     /**
-     * 监控大屏是否自动切换
+     * **参数解释** 监控大屏是否自动切换 **约束限制** 不涉及 **取值范围** - true 是 - false 否 **默认取值** 不涉及 
      * @return enableScreenAutoPlay
      */
     public Boolean getEnableScreenAutoPlay() {
@@ -586,7 +586,7 @@ public class ExtendInfo {
     }
 
     /**
-     * 监控大屏自动切换时间间隔，10000代表10s，30000代表30s，60000代表1min
+     * **参数解释**  监控大屏自动切换时间间隔  **约束限制**  不涉及  **取值范围**  枚举值：  - 10000 10秒  - 30000 30秒  - 60000 1分钟  **默认取值**  不涉及 
      * @return timeInterval
      */
     public TimeIntervalEnum getTimeInterval() {
@@ -603,7 +603,7 @@ public class ExtendInfo {
     }
 
     /**
-     * 是否开启图例
+     * **参数解释** 是否开启图例 **约束限制** 不涉及 **取值范围** - true 是 - false 否 **默认取值** 不涉及 
      * @return enableLegend
      */
     public Boolean getEnableLegend() {
@@ -620,7 +620,7 @@ public class ExtendInfo {
     }
 
     /**
-     * 大屏展示视图数量, 可以取的值必须与console页面可选值保持一致
+     * **参数解释** 大屏展示视图数量 **约束限制** 可以取的值必须与console页面可选值保持一致 **取值范围** 视图数量为[0,65535] **默认取值** 不涉及 
      * minimum: 0
      * maximum: 65535
      * @return fullScreenWidgetNum

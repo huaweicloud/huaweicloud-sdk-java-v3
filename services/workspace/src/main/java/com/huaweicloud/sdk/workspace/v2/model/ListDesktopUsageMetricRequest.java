@@ -46,6 +46,11 @@ public class ListDesktopUsageMetricRequest {
     private Integer usageMaxHours;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_field")
 
     private String sortField;
@@ -192,6 +197,23 @@ public class ListDesktopUsageMetricRequest {
         this.usageMaxHours = usageMaxHours;
     }
 
+    public ListDesktopUsageMetricRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     public ListDesktopUsageMetricRequest withSortField(String sortField) {
         this.sortField = sortField;
         return this;
@@ -277,9 +299,10 @@ public class ListDesktopUsageMetricRequest {
             && Objects.equals(this.resourceName, that.resourceName)
             && Objects.equals(this.minIdleDays, that.minIdleDays) && Objects.equals(this.maxIdleDays, that.maxIdleDays)
             && Objects.equals(this.usageMinHours, that.usageMinHours)
-            && Objects.equals(this.usageMaxHours, that.usageMaxHours) && Objects.equals(this.sortField, that.sortField)
-            && Objects.equals(this.sortType, that.sortType) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.usageMaxHours, that.usageMaxHours)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.sortField, that.sortField) && Objects.equals(this.sortType, that.sortType)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override
@@ -291,6 +314,7 @@ public class ListDesktopUsageMetricRequest {
             maxIdleDays,
             usageMinHours,
             usageMaxHours,
+            enterpriseProjectId,
             sortField,
             sortType,
             offset,
@@ -308,6 +332,7 @@ public class ListDesktopUsageMetricRequest {
         sb.append("    maxIdleDays: ").append(toIndentedString(maxIdleDays)).append("\n");
         sb.append("    usageMinHours: ").append(toIndentedString(usageMinHours)).append("\n");
         sb.append("    usageMaxHours: ").append(toIndentedString(usageMaxHours)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    sortField: ").append(toIndentedString(sortField)).append("\n");
         sb.append("    sortType: ").append(toIndentedString(sortType)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

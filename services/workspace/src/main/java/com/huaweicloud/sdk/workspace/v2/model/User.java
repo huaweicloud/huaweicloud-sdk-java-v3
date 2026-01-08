@@ -193,6 +193,16 @@ public class User {
 
     private String userInfoMap;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain")
+
+    private String domain;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "certificate_status")
+
+    private Boolean certificateStatus;
+
     public User withId(String id) {
         this.id = id;
         return this;
@@ -542,7 +552,7 @@ public class User {
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -570,6 +580,40 @@ public class User {
         this.userInfoMap = userInfoMap;
     }
 
+    public User withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    /**
+     * 域。
+     * @return domain
+     */
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    public User withCertificateStatus(Boolean certificateStatus) {
+        this.certificateStatus = certificateStatus;
+        return this;
+    }
+
+    /**
+     * 当前用户是否存在用户证书。
+     * @return certificateStatus
+     */
+    public Boolean getCertificateStatus() {
+        return certificateStatus;
+    }
+
+    public void setCertificateStatus(Boolean certificateStatus) {
+        this.certificateStatus = certificateStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -594,7 +638,8 @@ public class User {
             && Objects.equals(this.shareSpaceDesktops, that.shareSpaceDesktops)
             && Objects.equals(this.groupNames, that.groupNames)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.userInfoMap, that.userInfoMap);
+            && Objects.equals(this.userInfoMap, that.userInfoMap) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.certificateStatus, that.certificateStatus);
     }
 
     @Override
@@ -619,7 +664,9 @@ public class User {
             shareSpaceDesktops,
             groupNames,
             enterpriseProjectId,
-            userInfoMap);
+            userInfoMap,
+            domain,
+            certificateStatus);
     }
 
     @Override
@@ -647,6 +694,8 @@ public class User {
         sb.append("    groupNames: ").append(toIndentedString(groupNames)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    userInfoMap: ").append(toIndentedString(userInfoMap)).append("\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
+        sb.append("    certificateStatus: ").append(toIndentedString(certificateStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

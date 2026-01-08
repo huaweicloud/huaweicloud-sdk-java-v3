@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 待修改的监控视图对象
+ * **参数解释** 待修改的监控视图对象 **约束限制** 不涉及 
  */
 public class UpdateWidgetInfo {
 
@@ -49,7 +49,7 @@ public class UpdateWidgetInfo {
     private Boolean thresholdEnabled;
 
     /**
-     * 监控视图图表类型, bar条形图，line折线图，bar_chart柱状图，table表格，circular_bar环形柱状图，area_chart面积图
+     * **参数解释** 监控视图图表类型 **约束限制** 不涉及 **取值范围** 枚举值： - bar 条形图 - line 折线图 - bar_chart 柱状图 - table 表格 - circular_bar 环形柱状图 - area_chart 面积图 **默认取值** 不涉及 
      */
     public static final class ViewEnum {
 
@@ -148,7 +148,7 @@ public class UpdateWidgetInfo {
     private ViewEnum view;
 
     /**
-     * 指标展示类型，single 单指标展示，multiple 多指标展示
+     * **参数解释** 指标展示类型 **约束限制** 不涉及 **取值范围** 枚举值： - single 单指标展示 - multiple 多指标展示 **默认取值** 不涉及 
      */
     public static final class MetricDisplayModeEnum {
 
@@ -243,7 +243,7 @@ public class UpdateWidgetInfo {
     }
 
     /**
-     * 视图分区id
+     * **参数解释** 视图分区id **约束限制** 不涉及 **取值范围** 字符串必须以dg开头，后跟22个字母和数字，总长度为24个字符或者为default，default代表不分组 **默认取值** 不涉及 
      * @return groupId
      */
     public String getGroupId() {
@@ -260,7 +260,7 @@ public class UpdateWidgetInfo {
     }
 
     /**
-     * 视图id
+     * **参数解释** 视图id **约束限制** 不涉及 **取值范围** 字符串必须以wg开头，后跟22个字母和数字，总长度为24个字符 **默认取值** 不涉及 
      * @return widgetId
      */
     public String getWidgetId() {
@@ -293,7 +293,7 @@ public class UpdateWidgetInfo {
     }
 
     /**
-     * 指标列表
+     * **参数解释** 指标列表 **约束限制** 包含的指标对象个数为[1,200] 
      * @return metrics
      */
     public List<WidgetMetric> getMetrics() {
@@ -310,7 +310,7 @@ public class UpdateWidgetInfo {
     }
 
     /**
-     * 监控视图标题
+     * **参数解释** 监控视图标题 **约束限制** 不涉及 **取值范围** 字符串可以包含中文字符，字母，数字，下划线（_），横线（-），冒号（:），分号（;），左圆括号（(），右圆括号（)），句号（.），波浪线（~）， 中文左括号（（），中文右括号（））长度为[1,128]个字符 **默认取值** 不涉及 
      * @return title
      */
     public String getTitle() {
@@ -327,7 +327,7 @@ public class UpdateWidgetInfo {
     }
 
     /**
-     * 监控视图指标的阈值
+     * **参数解释** 监控视图指标的阈值 **约束限制** 不涉及 **取值范围** 阈值为[0,1.7976931348623157e+308] **默认取值** 不涉及 
      * minimum: 0
      * maximum: 1.7976931348623157E+308
      * @return threshold
@@ -346,7 +346,7 @@ public class UpdateWidgetInfo {
     }
 
     /**
-     * 阈值是否展示，true:展示，false:不展示
+     * **参数解释** 阈值是否展示 **约束限制** 不涉及 **取值范围** - true 展示 - false 不展示 **默认取值** 不涉及 
      * @return thresholdEnabled
      */
     public Boolean getThresholdEnabled() {
@@ -363,7 +363,7 @@ public class UpdateWidgetInfo {
     }
 
     /**
-     * 监控视图图表类型, bar条形图，line折线图，bar_chart柱状图，table表格，circular_bar环形柱状图，area_chart面积图
+     * **参数解释** 监控视图图表类型 **约束限制** 不涉及 **取值范围** 枚举值： - bar 条形图 - line 折线图 - bar_chart 柱状图 - table 表格 - circular_bar 环形柱状图 - area_chart 面积图 **默认取值** 不涉及 
      * @return view
      */
     public ViewEnum getView() {
@@ -380,7 +380,7 @@ public class UpdateWidgetInfo {
     }
 
     /**
-     * 指标展示类型，single 单指标展示，multiple 多指标展示
+     * **参数解释** 指标展示类型 **约束限制** 不涉及 **取值范围** 枚举值： - single 单指标展示 - multiple 多指标展示 **默认取值** 不涉及 
      * @return metricDisplayMode
      */
     public MetricDisplayModeEnum getMetricDisplayMode() {

@@ -36,6 +36,11 @@ public class ListUserUsageMetricRequest {
     private Integer usageMaxHours;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_field")
 
     private String sortField;
@@ -144,6 +149,23 @@ public class ListUserUsageMetricRequest {
         this.usageMaxHours = usageMaxHours;
     }
 
+    public ListUserUsageMetricRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     public ListUserUsageMetricRequest withSortField(String sortField) {
         this.sortField = sortField;
         return this;
@@ -227,15 +249,24 @@ public class ListUserUsageMetricRequest {
         ListUserUsageMetricRequest that = (ListUserUsageMetricRequest) obj;
         return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
             && Objects.equals(this.username, that.username) && Objects.equals(this.usageMinHours, that.usageMinHours)
-            && Objects.equals(this.usageMaxHours, that.usageMaxHours) && Objects.equals(this.sortField, that.sortField)
-            && Objects.equals(this.sortType, that.sortType) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.usageMaxHours, that.usageMaxHours)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.sortField, that.sortField) && Objects.equals(this.sortType, that.sortType)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(startTime, endTime, username, usageMinHours, usageMaxHours, sortField, sortType, offset, limit);
+        return Objects.hash(startTime,
+            endTime,
+            username,
+            usageMinHours,
+            usageMaxHours,
+            enterpriseProjectId,
+            sortField,
+            sortType,
+            offset,
+            limit);
     }
 
     @Override
@@ -247,6 +278,7 @@ public class ListUserUsageMetricRequest {
         sb.append("    username: ").append(toIndentedString(username)).append("\n");
         sb.append("    usageMinHours: ").append(toIndentedString(usageMinHours)).append("\n");
         sb.append("    usageMaxHours: ").append(toIndentedString(usageMaxHours)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    sortField: ").append(toIndentedString(sortField)).append("\n");
         sb.append("    sortType: ").append(toIndentedString(sortType)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

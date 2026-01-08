@@ -296,6 +296,11 @@ public class NodeExtendParam {
 
     private SecurityReinforcementTypeEnum securityReinforcementType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "serverMetadataHttpTokens")
+
+    private String serverMetadataHttpTokens;
+
     public NodeExtendParam withEcsPerformancetype(String ecsPerformancetype) {
         this.ecsPerformancetype = ecsPerformancetype;
         return this;
@@ -793,6 +798,23 @@ public class NodeExtendParam {
         this.securityReinforcementType = securityReinforcementType;
     }
 
+    public NodeExtendParam withServerMetadataHttpTokens(String serverMetadataHttpTokens) {
+        this.serverMetadataHttpTokens = serverMetadataHttpTokens;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否要求携带token，默认optional。 **约束限制**： 不涉及 **取值范围**： - optional：不要求携带token。 - required：要求必须携带token，即IMDS服务禁用v1版本，启用v2版本。  **默认取值**： optional
+     * @return serverMetadataHttpTokens
+     */
+    public String getServerMetadataHttpTokens() {
+        return serverMetadataHttpTokens;
+    }
+
+    public void setServerMetadataHttpTokens(String serverMetadataHttpTokens) {
+        this.serverMetadataHttpTokens = serverMetadataHttpTokens;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -825,7 +847,8 @@ public class NodeExtendParam {
             && Objects.equals(this.kubeReservedStorage, that.kubeReservedStorage)
             && Objects.equals(this.systemReservedStorage, that.systemReservedStorage)
             && Objects.equals(this.initNodePassword, that.initNodePassword)
-            && Objects.equals(this.securityReinforcementType, that.securityReinforcementType);
+            && Objects.equals(this.securityReinforcementType, that.securityReinforcementType)
+            && Objects.equals(this.serverMetadataHttpTokens, that.serverMetadataHttpTokens);
     }
 
     @Override
@@ -858,7 +881,8 @@ public class NodeExtendParam {
             kubeReservedStorage,
             systemReservedStorage,
             initNodePassword,
-            securityReinforcementType);
+            securityReinforcementType,
+            serverMetadataHttpTokens);
     }
 
     @Override
@@ -894,6 +918,7 @@ public class NodeExtendParam {
         sb.append("    systemReservedStorage: ").append(toIndentedString(systemReservedStorage)).append("\n");
         sb.append("    initNodePassword: ").append(toIndentedString(initNodePassword)).append("\n");
         sb.append("    securityReinforcementType: ").append(toIndentedString(securityReinforcementType)).append("\n");
+        sb.append("    serverMetadataHttpTokens: ").append(toIndentedString(serverMetadataHttpTokens)).append("\n");
         sb.append("}");
         return sb.toString();
     }

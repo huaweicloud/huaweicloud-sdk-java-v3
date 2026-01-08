@@ -292,6 +292,11 @@ public class InstanceConfig {
 
     private MarketTypeEnum marketType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cpu_options")
+
+    private CpuOptions cpuOptions;
+
     public InstanceConfig withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -613,6 +618,32 @@ public class InstanceConfig {
         this.marketType = marketType;
     }
 
+    public InstanceConfig withCpuOptions(CpuOptions cpuOptions) {
+        this.cpuOptions = cpuOptions;
+        return this;
+    }
+
+    public InstanceConfig withCpuOptions(Consumer<CpuOptions> cpuOptionsSetter) {
+        if (this.cpuOptions == null) {
+            this.cpuOptions = new CpuOptions();
+            cpuOptionsSetter.accept(this.cpuOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get cpuOptions
+     * @return cpuOptions
+     */
+    public CpuOptions getCpuOptions() {
+        return cpuOptions;
+    }
+
+    public void setCpuOptions(CpuOptions cpuOptions) {
+        this.cpuOptions = cpuOptions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -630,7 +661,7 @@ public class InstanceConfig {
             && Objects.equals(this.serverGroupId, that.serverGroupId) && Objects.equals(this.tenancy, that.tenancy)
             && Objects.equals(this.dedicatedHostId, that.dedicatedHostId)
             && Objects.equals(this.multiFlavorPriorityPolicy, that.multiFlavorPriorityPolicy)
-            && Objects.equals(this.marketType, that.marketType);
+            && Objects.equals(this.marketType, that.marketType) && Objects.equals(this.cpuOptions, that.cpuOptions);
     }
 
     @Override
@@ -649,7 +680,8 @@ public class InstanceConfig {
             tenancy,
             dedicatedHostId,
             multiFlavorPriorityPolicy,
-            marketType);
+            marketType,
+            cpuOptions);
     }
 
     @Override
@@ -671,6 +703,7 @@ public class InstanceConfig {
         sb.append("    dedicatedHostId: ").append(toIndentedString(dedicatedHostId)).append("\n");
         sb.append("    multiFlavorPriorityPolicy: ").append(toIndentedString(multiFlavorPriorityPolicy)).append("\n");
         sb.append("    marketType: ").append(toIndentedString(marketType)).append("\n");
+        sb.append("    cpuOptions: ").append(toIndentedString(cpuOptions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

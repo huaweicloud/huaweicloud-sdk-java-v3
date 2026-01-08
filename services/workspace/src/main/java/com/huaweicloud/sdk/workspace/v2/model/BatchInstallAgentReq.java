@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 批量为桌面安装agent。
+ * 批量为桌面安装监控插件。
  */
 public class BatchInstallAgentReq {
 

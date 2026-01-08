@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 批量更新监控视图结果
+ * **参数解释** 批量更新监控视图结果 
  */
 public class BatchUpdateWidgetInfo {
 
@@ -21,7 +21,7 @@ public class BatchUpdateWidgetInfo {
     private String widgetId;
 
     /**
-     * 修改结果；成功: successful, 失败: error 
+     * **参数解释** 修改结果 **取值范围** 枚举值： - successful 成功 - error 失败 
      */
     public static final class RetStatusEnum {
 
@@ -106,7 +106,7 @@ public class BatchUpdateWidgetInfo {
     }
 
     /**
-     * 视图id
+     * **参数解释** 视图id **取值范围** 字符串必须以wg开头，后跟22个字母和数字，总长度为24个字符 
      * @return widgetId
      */
     public String getWidgetId() {
@@ -123,7 +123,7 @@ public class BatchUpdateWidgetInfo {
     }
 
     /**
-     * 修改结果；成功: successful, 失败: error 
+     * **参数解释** 修改结果 **取值范围** 枚举值： - successful 成功 - error 失败 
      * @return retStatus
      */
     public RetStatusEnum getRetStatus() {
@@ -140,7 +140,7 @@ public class BatchUpdateWidgetInfo {
     }
 
     /**
-     * 如果失败则返回失败信息
+     * **参数解释** 如果失败则返回失败信息 **取值范围** 长度为[1,2048]个字符 
      * @return errorMsg
      */
     public String getErrorMsg() {

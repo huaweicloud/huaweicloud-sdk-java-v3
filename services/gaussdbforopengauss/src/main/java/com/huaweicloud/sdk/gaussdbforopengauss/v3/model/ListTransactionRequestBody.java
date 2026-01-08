@@ -32,9 +32,9 @@ public class ListTransactionRequestBody {
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "transaction_query_option")
+    @JsonProperty(value = "transaction_query_info")
 
-    private ListTransactionRequestBodyTransactionQueryOption transactionQueryOption;
+    private ListTransactionRequestBodyTransactionQueryInfo transactionQueryInfo;
 
     public ListTransactionRequestBody withNodeId(String nodeId) {
         this.nodeId = nodeId;
@@ -104,32 +104,32 @@ public class ListTransactionRequestBody {
         this.offset = offset;
     }
 
-    public ListTransactionRequestBody withTransactionQueryOption(
-        ListTransactionRequestBodyTransactionQueryOption transactionQueryOption) {
-        this.transactionQueryOption = transactionQueryOption;
+    public ListTransactionRequestBody withTransactionQueryInfo(
+        ListTransactionRequestBodyTransactionQueryInfo transactionQueryInfo) {
+        this.transactionQueryInfo = transactionQueryInfo;
         return this;
     }
 
-    public ListTransactionRequestBody withTransactionQueryOption(
-        Consumer<ListTransactionRequestBodyTransactionQueryOption> transactionQueryOptionSetter) {
-        if (this.transactionQueryOption == null) {
-            this.transactionQueryOption = new ListTransactionRequestBodyTransactionQueryOption();
-            transactionQueryOptionSetter.accept(this.transactionQueryOption);
+    public ListTransactionRequestBody withTransactionQueryInfo(
+        Consumer<ListTransactionRequestBodyTransactionQueryInfo> transactionQueryInfoSetter) {
+        if (this.transactionQueryInfo == null) {
+            this.transactionQueryInfo = new ListTransactionRequestBodyTransactionQueryInfo();
+            transactionQueryInfoSetter.accept(this.transactionQueryInfo);
         }
 
         return this;
     }
 
     /**
-     * Get transactionQueryOption
-     * @return transactionQueryOption
+     * Get transactionQueryInfo
+     * @return transactionQueryInfo
      */
-    public ListTransactionRequestBodyTransactionQueryOption getTransactionQueryOption() {
-        return transactionQueryOption;
+    public ListTransactionRequestBodyTransactionQueryInfo getTransactionQueryInfo() {
+        return transactionQueryInfo;
     }
 
-    public void setTransactionQueryOption(ListTransactionRequestBodyTransactionQueryOption transactionQueryOption) {
-        this.transactionQueryOption = transactionQueryOption;
+    public void setTransactionQueryInfo(ListTransactionRequestBodyTransactionQueryInfo transactionQueryInfo) {
+        this.transactionQueryInfo = transactionQueryInfo;
     }
 
     @Override
@@ -143,12 +143,12 @@ public class ListTransactionRequestBody {
         ListTransactionRequestBody that = (ListTransactionRequestBody) obj;
         return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.componentId, that.componentId)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.transactionQueryOption, that.transactionQueryOption);
+            && Objects.equals(this.transactionQueryInfo, that.transactionQueryInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nodeId, componentId, limit, offset, transactionQueryOption);
+        return Objects.hash(nodeId, componentId, limit, offset, transactionQueryInfo);
     }
 
     @Override
@@ -159,7 +159,7 @@ public class ListTransactionRequestBody {
         sb.append("    componentId: ").append(toIndentedString(componentId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    transactionQueryOption: ").append(toIndentedString(transactionQueryOption)).append("\n");
+        sb.append("    transactionQueryInfo: ").append(toIndentedString(transactionQueryInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

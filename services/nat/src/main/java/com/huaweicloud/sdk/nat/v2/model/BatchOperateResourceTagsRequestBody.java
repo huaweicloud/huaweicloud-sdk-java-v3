@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class BatchOperateResourceTagsRequestBody {
 
     /**
-     * 功能说明：操作标识。 取值范围： create（创建） delete（删除）
+     * 功能说明：操作标识。 取值范围： - create：创建 - delete：删除
      */
     public static final class ActionEnum {
 
@@ -104,7 +104,7 @@ public class BatchOperateResourceTagsRequestBody {
     }
 
     /**
-     * 功能说明：操作标识。 取值范围： create（创建） delete（删除）
+     * 功能说明：操作标识。 取值范围： - create：创建 - delete：删除
      * @return action
      */
     public ActionEnum getAction() {

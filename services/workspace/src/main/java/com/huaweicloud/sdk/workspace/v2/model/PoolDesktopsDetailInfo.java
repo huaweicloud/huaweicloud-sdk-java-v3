@@ -69,11 +69,6 @@ public class PoolDesktopsDetailInfo {
     private String desktopType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resource_type")
-
-    private String resourceType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
     private Map<String, String> metadata = null;
@@ -672,7 +667,7 @@ public class PoolDesktopsDetailInfo {
     }
 
     /**
-     * 桌面类型。  - DEDICATED：专属桌面。
+     * 桌面类型。  - DEDICATED：专属桌面。 - SHARED: 多用户桌面 - POOLED: 池桌面
      * @return desktopType
      */
     public String getDesktopType() {
@@ -681,23 +676,6 @@ public class PoolDesktopsDetailInfo {
 
     public void setDesktopType(String desktopType) {
         this.desktopType = desktopType;
-    }
-
-    public PoolDesktopsDetailInfo withResourceType(String resourceType) {
-        this.resourceType = resourceType;
-        return this;
-    }
-
-    /**
-     * resource_type字段，分别表示：专属桌面（DEDICATED_DESKTOP）、池桌面（POOLED_DESKTOP）、渲染桌面（RENDER_DESKTOP）、专享主机（EXCLUSIVE_HOST）、多用户桌面(SHARED_DESKTOP)。
-     * @return resourceType
-     */
-    public String getResourceType() {
-        return resourceType;
-    }
-
-    public void setResourceType(String resourceType) {
-        this.resourceType = resourceType;
     }
 
     public PoolDesktopsDetailInfo withMetadata(Map<String, String> metadata) {
@@ -722,7 +700,7 @@ public class PoolDesktopsDetailInfo {
     }
 
     /**
-     * 桌面元数据。  - charging_mode 周期套餐标识，1表示包周期，0表示按需。 - image_name 创建桌面的镜像名称。 - bill_resource_id 镜像计费资源ID。 - metering.image_id 镜像ID。 - metering.resourcespeccode 桌面资源编码。 - metering.resourcetype 桌面资源类型。 - os_bit 操作系统位数：32或64。 - os_type 操作系统类型：Linux、Windows或Others。 - desktop_os_version 操作系统版本。
+     * 桌面元数据。   - image_name 创建桌面的镜像名称。 - bill_resource_id 镜像计费资源ID。 - metering.image_id 镜像ID。 - metering.resourcespeccode 桌面资源编码。 - metering.resourcetype 桌面资源类型。 - os_bit 操作系统位数：32或64。 - os_type 操作系统类型：Linux、Windows或Others。 - desktop_os_version 操作系统版本。
      * @return metadata
      */
     public Map<String, String> getMetadata() {
@@ -849,7 +827,7 @@ public class PoolDesktopsDetailInfo {
     }
 
     /**
-     * 桌面安全组。
+     * 桌面安全组。 仅适用于查询单个桌面详情接口。
      * @return securityGroups
      */
     public List<SecurityGroupInfo> getSecurityGroups() {
@@ -1271,7 +1249,7 @@ public class PoolDesktopsDetailInfo {
     }
 
     /**
-     * 桌面使用的上网方式列表。
+     * 桌面使用的上网方式列表。 - NAT：表示NAT上网方式。 - EIP：表示EIP上网方式。
      * @return internetModeList
      */
     public List<String> getInternetModeList() {
@@ -1474,8 +1452,7 @@ public class PoolDesktopsDetailInfo {
             && Objects.equals(this.ipAddresses, that.ipAddresses) && Objects.equals(this.ipv4, that.ipv4)
             && Objects.equals(this.ipv6, that.ipv6) && Objects.equals(this.userList, that.userList)
             && Objects.equals(this.userGroupList, that.userGroupList)
-            && Objects.equals(this.desktopType, that.desktopType)
-            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.desktopType, that.desktopType) && Objects.equals(this.metadata, that.metadata)
             && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.status, that.status)
             && Objects.equals(this.taskStatus, that.taskStatus)
             && Objects.equals(this.inMaintenanceMode, that.inMaintenanceMode)
@@ -1515,7 +1492,6 @@ public class PoolDesktopsDetailInfo {
             userList,
             userGroupList,
             desktopType,
-            resourceType,
             metadata,
             flavor,
             status,
@@ -1568,7 +1544,6 @@ public class PoolDesktopsDetailInfo {
         sb.append("    userList: ").append(toIndentedString(userList)).append("\n");
         sb.append("    userGroupList: ").append(toIndentedString(userGroupList)).append("\n");
         sb.append("    desktopType: ").append(toIndentedString(desktopType)).append("\n");
-        sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

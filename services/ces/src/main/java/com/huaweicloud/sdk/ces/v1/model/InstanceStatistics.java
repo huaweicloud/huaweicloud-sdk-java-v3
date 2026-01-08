@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * **参数解释**： 资源分组中的资源信息统计。
+ * **参数解释**： 资源分组中的资源信息统计。 
  */
 public class InstanceStatistics {
 
@@ -31,7 +31,7 @@ public class InstanceStatistics {
     }
 
     /**
-     * **参数解释**： 该资源分组中当前处在告警状态的资源个数。  **取值范围**： 在[0,2147483647]区间内。
+     * **参数解释**： 该资源分组中当前处在告警状态的资源个数。  **取值范围**： 在[0,2147483647]区间内。 
      * minimum: 0
      * maximum: 2147483647
      * @return unhealth
@@ -50,7 +50,7 @@ public class InstanceStatistics {
     }
 
     /**
-     * **参数解释**： 该资源分组中资源的总个数。  **取值范围**： 在[0,2147483647]区间内。
+     * **参数解释**： 该资源分组中资源的总个数。  **取值范围**： 在[0,2147483647]区间内。 
      * minimum: 0
      * maximum: 2147483647
      * @return total
@@ -69,7 +69,7 @@ public class InstanceStatistics {
     }
 
     /**
-     * **参数解释**： 该资源分组中选择的资源类型个数，如资源分组添加了弹性云服务、弹性公网IP和带宽则值为2。 **取值范围**： 在[0,2147483647]区间内。
+     * **参数解释**： 该资源分组中选择的资源类型个数，如资源分组添加了弹性云服务、弹性公网IP和带宽则值为2。 **取值范围**： 在[0,2147483647]区间内。 
      * minimum: 0
      * maximum: 2147483647
      * @return typeStatistics

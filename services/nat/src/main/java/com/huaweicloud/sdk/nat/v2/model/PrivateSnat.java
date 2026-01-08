@@ -70,7 +70,7 @@ public class PrivateSnat {
     private String enterpriseProjectId;
 
     /**
-     * 私网NAT的SNAT规则状态。 取值为： \"ACTIVE\"：正常运行 \"FROZEN\"：冻结 \"INACTIVE\"：不可用
+     * 私网NAT的SNAT规则状态。 取值为： - ACTIVE：正常运行 - FROZEN：冻结 - INACTIVE：不可用
      */
     public static final class StatusEnum {
 
@@ -342,7 +342,7 @@ public class PrivateSnat {
     }
 
     /**
-     * 私网NAT的SNAT规则状态。 取值为： \"ACTIVE\"：正常运行 \"FROZEN\"：冻结 \"INACTIVE\"：不可用
+     * 私网NAT的SNAT规则状态。 取值为： - ACTIVE：正常运行 - FROZEN：冻结 - INACTIVE：不可用
      * @return status
      */
     public StatusEnum getStatus() {

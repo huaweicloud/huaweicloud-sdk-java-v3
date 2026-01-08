@@ -114,6 +114,11 @@ public class ListUsedDesktopInfoReq {
     private String desktopUsername;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desktop_user_domain")
+
+    private String desktopUserDomain;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -224,6 +229,23 @@ public class ListUsedDesktopInfoReq {
         this.desktopUsername = desktopUsername;
     }
 
+    public ListUsedDesktopInfoReq withDesktopUserDomain(String desktopUserDomain) {
+        this.desktopUserDomain = desktopUserDomain;
+        return this;
+    }
+
+    /**
+     * 桌面的用户所属域。默认为主域。
+     * @return desktopUserDomain
+     */
+    public String getDesktopUserDomain() {
+        return desktopUserDomain;
+    }
+
+    public void setDesktopUserDomain(String desktopUserDomain) {
+        this.desktopUserDomain = desktopUserDomain;
+    }
+
     public ListUsedDesktopInfoReq withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -273,13 +295,15 @@ public class ListUsedDesktopInfoReq {
         ListUsedDesktopInfoReq that = (ListUsedDesktopInfoReq) obj;
         return Objects.equals(this.desktopIds, that.desktopIds) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.groupByType, that.groupByType)
-            && Objects.equals(this.desktopUsername, that.desktopUsername) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.desktopUsername, that.desktopUsername)
+            && Objects.equals(this.desktopUserDomain, that.desktopUserDomain)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktopIds, startTime, endTime, groupByType, desktopUsername, offset, limit);
+        return Objects
+            .hash(desktopIds, startTime, endTime, groupByType, desktopUsername, desktopUserDomain, offset, limit);
     }
 
     @Override
@@ -291,6 +315,7 @@ public class ListUsedDesktopInfoReq {
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    groupByType: ").append(toIndentedString(groupByType)).append("\n");
         sb.append("    desktopUsername: ").append(toIndentedString(desktopUsername)).append("\n");
+        sb.append("    desktopUserDomain: ").append(toIndentedString(desktopUserDomain)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

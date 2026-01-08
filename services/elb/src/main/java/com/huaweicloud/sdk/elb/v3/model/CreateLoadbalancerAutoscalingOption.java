@@ -26,7 +26,7 @@ public class CreateLoadbalancerAutoscalingOption {
     }
 
     /**
-     * **参数解释**：负载均衡器实例弹性扩缩容开关。  **约束限制**：不涉及  **取值范围**： - true：开启。 - false：关闭。   **默认取值**：不涉及  [网关型LB不支持该字段。](tag:hws_eu)
+     * **参数解释**：负载均衡器实例弹性扩缩容开关。  **约束限制**：网关型LB不支持该字段。  **取值范围**： - true：开启。 - false：关闭。   **默认取值**：不涉及
      * @return enable
      */
     public Boolean getEnable() {

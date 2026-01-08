@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -20,7 +22,7 @@ public class ListWaitEventResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rows")
 
-    private WaitEventResult rows;
+    private List<WaitEventResult> rows = null;
 
     public ListWaitEventResponse withTotal(Integer total) {
         this.total = total;
@@ -39,29 +41,36 @@ public class ListWaitEventResponse extends SdkResponse {
         this.total = total;
     }
 
-    public ListWaitEventResponse withRows(WaitEventResult rows) {
+    public ListWaitEventResponse withRows(List<WaitEventResult> rows) {
         this.rows = rows;
         return this;
     }
 
-    public ListWaitEventResponse withRows(Consumer<WaitEventResult> rowsSetter) {
+    public ListWaitEventResponse addRowsItem(WaitEventResult rowsItem) {
         if (this.rows == null) {
-            this.rows = new WaitEventResult();
-            rowsSetter.accept(this.rows);
+            this.rows = new ArrayList<>();
         }
+        this.rows.add(rowsItem);
+        return this;
+    }
 
+    public ListWaitEventResponse withRows(Consumer<List<WaitEventResult>> rowsSetter) {
+        if (this.rows == null) {
+            this.rows = new ArrayList<>();
+        }
+        rowsSetter.accept(this.rows);
         return this;
     }
 
     /**
-     * Get rows
+     * **参数解释**: 数据库实例的等待事件列表。
      * @return rows
      */
-    public WaitEventResult getRows() {
+    public List<WaitEventResult> getRows() {
         return rows;
     }
 
-    public void setRows(WaitEventResult rows) {
+    public void setRows(List<WaitEventResult> rows) {
         this.rows = rows;
     }
 

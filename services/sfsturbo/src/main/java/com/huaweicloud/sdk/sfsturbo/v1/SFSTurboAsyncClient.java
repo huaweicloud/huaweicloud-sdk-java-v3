@@ -93,6 +93,8 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.ShowLdapConfigRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowLdapConfigResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowPermRuleRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowPermRuleResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowQuotaRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowQuotaResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowShareRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowShareResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowSharedTagsRequest;
@@ -1440,6 +1442,34 @@ public class SFSTurboAsyncClient {
     public AsyncInvoker<ShowPermRuleRequest, ShowPermRuleResponse> showPermRuleAsyncInvoker(
         ShowPermRuleRequest request) {
         return new AsyncInvoker<>(request, SFSTurboMeta.showPermRule, hcClient);
+    }
+
+    /**
+     * 查询租户配额
+     *
+     * 查询租户配额
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowQuotaRequest 请求对象
+     * @return CompletableFuture<ShowQuotaResponse>
+     */
+    public CompletableFuture<ShowQuotaResponse> showQuotaAsync(ShowQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.showQuota);
+    }
+
+    /**
+     * 查询租户配额
+     *
+     * 查询租户配额
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowQuotaRequest 请求对象
+     * @return AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse>
+     */
+    public AsyncInvoker<ShowQuotaRequest, ShowQuotaResponse> showQuotaAsyncInvoker(ShowQuotaRequest request) {
+        return new AsyncInvoker<>(request, SFSTurboMeta.showQuota, hcClient);
     }
 
     /**

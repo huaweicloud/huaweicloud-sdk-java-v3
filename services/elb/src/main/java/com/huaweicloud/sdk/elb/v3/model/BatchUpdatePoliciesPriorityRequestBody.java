@@ -41,7 +41,7 @@ public class BatchUpdatePoliciesPriorityRequestBody {
     }
 
     /**
-     * Get l7policies
+     * **参数解释**：批量更新转发策略优先级的请求参数。  **约束限制**：不涉及
      * @return l7policies
      */
     public List<BatchUpdatePriorityRequestBody> getL7policies() {

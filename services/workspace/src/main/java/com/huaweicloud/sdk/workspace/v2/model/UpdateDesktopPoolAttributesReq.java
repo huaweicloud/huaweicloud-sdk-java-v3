@@ -63,6 +63,36 @@ public class UpdateDesktopPoolAttributesReq {
 
     private String availabilityZone;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "root_volume")
+
+    private DesktopPoolVolumeInfo rootVolume;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data_volumes")
+
+    private List<DesktopPoolVolumeInfo> dataVolumes = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpc_id")
+
+    private String vpcId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_ids")
+
+    private List<String> subnetIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "security_groups")
+
+    private List<SecurityGroup> securityGroups = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public UpdateDesktopPoolAttributesReq withName(String name) {
         this.name = name;
         return this;
@@ -249,7 +279,7 @@ public class UpdateDesktopPoolAttributesReq {
     }
 
     /**
-     * 桌面池的可用区。桌面池的可用区是边缘可用区时，不支持修改。
+     * 桌面池的可用区。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -258,6 +288,165 @@ public class UpdateDesktopPoolAttributesReq {
 
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
+    }
+
+    public UpdateDesktopPoolAttributesReq withRootVolume(DesktopPoolVolumeInfo rootVolume) {
+        this.rootVolume = rootVolume;
+        return this;
+    }
+
+    public UpdateDesktopPoolAttributesReq withRootVolume(Consumer<DesktopPoolVolumeInfo> rootVolumeSetter) {
+        if (this.rootVolume == null) {
+            this.rootVolume = new DesktopPoolVolumeInfo();
+            rootVolumeSetter.accept(this.rootVolume);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get rootVolume
+     * @return rootVolume
+     */
+    public DesktopPoolVolumeInfo getRootVolume() {
+        return rootVolume;
+    }
+
+    public void setRootVolume(DesktopPoolVolumeInfo rootVolume) {
+        this.rootVolume = rootVolume;
+    }
+
+    public UpdateDesktopPoolAttributesReq withDataVolumes(List<DesktopPoolVolumeInfo> dataVolumes) {
+        this.dataVolumes = dataVolumes;
+        return this;
+    }
+
+    public UpdateDesktopPoolAttributesReq addDataVolumesItem(DesktopPoolVolumeInfo dataVolumesItem) {
+        if (this.dataVolumes == null) {
+            this.dataVolumes = new ArrayList<>();
+        }
+        this.dataVolumes.add(dataVolumesItem);
+        return this;
+    }
+
+    public UpdateDesktopPoolAttributesReq withDataVolumes(Consumer<List<DesktopPoolVolumeInfo>> dataVolumesSetter) {
+        if (this.dataVolumes == null) {
+            this.dataVolumes = new ArrayList<>();
+        }
+        dataVolumesSetter.accept(this.dataVolumes);
+        return this;
+    }
+
+    /**
+     * 数据盘列表。
+     * @return dataVolumes
+     */
+    public List<DesktopPoolVolumeInfo> getDataVolumes() {
+        return dataVolumes;
+    }
+
+    public void setDataVolumes(List<DesktopPoolVolumeInfo> dataVolumes) {
+        this.dataVolumes = dataVolumes;
+    }
+
+    public UpdateDesktopPoolAttributesReq withVpcId(String vpcId) {
+        this.vpcId = vpcId;
+        return this;
+    }
+
+    /**
+     * VPC ID
+     * @return vpcId
+     */
+    public String getVpcId() {
+        return vpcId;
+    }
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    public UpdateDesktopPoolAttributesReq withSubnetIds(List<String> subnetIds) {
+        this.subnetIds = subnetIds;
+        return this;
+    }
+
+    public UpdateDesktopPoolAttributesReq addSubnetIdsItem(String subnetIdsItem) {
+        if (this.subnetIds == null) {
+            this.subnetIds = new ArrayList<>();
+        }
+        this.subnetIds.add(subnetIdsItem);
+        return this;
+    }
+
+    public UpdateDesktopPoolAttributesReq withSubnetIds(Consumer<List<String>> subnetIdsSetter) {
+        if (this.subnetIds == null) {
+            this.subnetIds = new ArrayList<>();
+        }
+        subnetIdsSetter.accept(this.subnetIds);
+        return this;
+    }
+
+    /**
+     * 桌面池子网ID列表
+     * @return subnetIds
+     */
+    public List<String> getSubnetIds() {
+        return subnetIds;
+    }
+
+    public void setSubnetIds(List<String> subnetIds) {
+        this.subnetIds = subnetIds;
+    }
+
+    public UpdateDesktopPoolAttributesReq withSecurityGroups(List<SecurityGroup> securityGroups) {
+        this.securityGroups = securityGroups;
+        return this;
+    }
+
+    public UpdateDesktopPoolAttributesReq addSecurityGroupsItem(SecurityGroup securityGroupsItem) {
+        if (this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
+        this.securityGroups.add(securityGroupsItem);
+        return this;
+    }
+
+    public UpdateDesktopPoolAttributesReq withSecurityGroups(Consumer<List<SecurityGroup>> securityGroupsSetter) {
+        if (this.securityGroups == null) {
+            this.securityGroups = new ArrayList<>();
+        }
+        securityGroupsSetter.accept(this.securityGroups);
+        return this;
+    }
+
+    /**
+     * 桌面使用的安全组，如果不指定则默认使用桌面代理中指定的安全组
+     * @return securityGroups
+     */
+    public List<SecurityGroup> getSecurityGroups() {
+        return securityGroups;
+    }
+
+    public void setSecurityGroups(List<SecurityGroup> securityGroups) {
+        this.securityGroups = securityGroups;
+    }
+
+    public UpdateDesktopPoolAttributesReq withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     @Override
@@ -276,7 +465,11 @@ public class UpdateDesktopPoolAttributesReq {
             && Objects.equals(this.autoscalePolicy, that.autoscalePolicy)
             && Objects.equals(this.inMaintenanceMode, that.inMaintenanceMode)
             && Objects.equals(this.desktopNamePolicyId, that.desktopNamePolicyId)
-            && Objects.equals(this.availabilityZone, that.availabilityZone);
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.rootVolume, that.rootVolume) && Objects.equals(this.dataVolumes, that.dataVolumes)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetIds, that.subnetIds)
+            && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
@@ -290,7 +483,13 @@ public class UpdateDesktopPoolAttributesReq {
             autoscalePolicy,
             inMaintenanceMode,
             desktopNamePolicyId,
-            availabilityZone);
+            availabilityZone,
+            rootVolume,
+            dataVolumes,
+            vpcId,
+            subnetIds,
+            securityGroups,
+            enterpriseProjectId);
     }
 
     @Override
@@ -309,6 +508,12 @@ public class UpdateDesktopPoolAttributesReq {
         sb.append("    inMaintenanceMode: ").append(toIndentedString(inMaintenanceMode)).append("\n");
         sb.append("    desktopNamePolicyId: ").append(toIndentedString(desktopNamePolicyId)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    rootVolume: ").append(toIndentedString(rootVolume)).append("\n");
+        sb.append("    dataVolumes: ").append(toIndentedString(dataVolumes)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    subnetIds: ").append(toIndentedString(subnetIds)).append("\n");
+        sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

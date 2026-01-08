@@ -830,12 +830,6 @@ public class NatMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPrivateDnatsRequest::getTransitServicePort,
                 ListPrivateDnatsRequest::setTransitServicePort));
-        builder.<List<String>>withRequestField("transit_ip_address",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListPrivateDnatsRequest::getTransitIpAddress,
-                ListPrivateDnatsRequest::setTransitIpAddress));
 
         // response
 

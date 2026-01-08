@@ -81,8 +81,6 @@ import com.huaweicloud.sdk.secmaster.v1.model.CreateDataobjectRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateDataobjectResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateDataspaceRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateDataspaceResponse;
-import com.huaweicloud.sdk.secmaster.v1.model.CreateGenericActionRequest;
-import com.huaweicloud.sdk.secmaster.v1.model.CreateGenericActionResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateIncidentRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateIncidentResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateIndicatorRequest;
@@ -1781,35 +1779,6 @@ public class SecMasterAsyncClient {
     public AsyncInvoker<CreateDataspaceRequest, CreateDataspaceResponse> createDataspaceAsyncInvoker(
         CreateDataspaceRequest request) {
         return new AsyncInvoker<>(request, SecMasterMeta.createDataspace, hcClient);
-    }
-
-    /**
-     * agent-action接口
-     *
-     * 根据type字段执行不同的agent-action，例如回答质量人工反馈。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateGenericActionRequest 请求对象
-     * @return CompletableFuture<CreateGenericActionResponse>
-     */
-    public CompletableFuture<CreateGenericActionResponse> createGenericActionAsync(CreateGenericActionRequest request) {
-        return hcClient.asyncInvokeHttp(request, SecMasterMeta.createGenericAction);
-    }
-
-    /**
-     * agent-action接口
-     *
-     * 根据type字段执行不同的agent-action，例如回答质量人工反馈。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateGenericActionRequest 请求对象
-     * @return AsyncInvoker<CreateGenericActionRequest, CreateGenericActionResponse>
-     */
-    public AsyncInvoker<CreateGenericActionRequest, CreateGenericActionResponse> createGenericActionAsyncInvoker(
-        CreateGenericActionRequest request) {
-        return new AsyncInvoker<>(request, SecMasterMeta.createGenericAction, hcClient);
     }
 
     /**

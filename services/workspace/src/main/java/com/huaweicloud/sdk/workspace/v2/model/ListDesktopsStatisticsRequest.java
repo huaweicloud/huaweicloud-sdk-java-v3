@@ -104,6 +104,11 @@ public class ListDesktopsStatisticsRequest {
 
     private List<StatisticsTypeEnum> statisticsType = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desktop_pool_ids")
+
+    private List<String> desktopPoolIds = null;
+
     public ListDesktopsStatisticsRequest withDesktopType(List<String> desktopType) {
         this.desktopType = desktopType;
         return this;
@@ -170,6 +175,39 @@ public class ListDesktopsStatisticsRequest {
         this.statisticsType = statisticsType;
     }
 
+    public ListDesktopsStatisticsRequest withDesktopPoolIds(List<String> desktopPoolIds) {
+        this.desktopPoolIds = desktopPoolIds;
+        return this;
+    }
+
+    public ListDesktopsStatisticsRequest addDesktopPoolIdsItem(String desktopPoolIdsItem) {
+        if (this.desktopPoolIds == null) {
+            this.desktopPoolIds = new ArrayList<>();
+        }
+        this.desktopPoolIds.add(desktopPoolIdsItem);
+        return this;
+    }
+
+    public ListDesktopsStatisticsRequest withDesktopPoolIds(Consumer<List<String>> desktopPoolIdsSetter) {
+        if (this.desktopPoolIds == null) {
+            this.desktopPoolIds = new ArrayList<>();
+        }
+        desktopPoolIdsSetter.accept(this.desktopPoolIds);
+        return this;
+    }
+
+    /**
+     * 待查询的桌面池ID列表
+     * @return desktopPoolIds
+     */
+    public List<String> getDesktopPoolIds() {
+        return desktopPoolIds;
+    }
+
+    public void setDesktopPoolIds(List<String> desktopPoolIds) {
+        this.desktopPoolIds = desktopPoolIds;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -180,12 +218,13 @@ public class ListDesktopsStatisticsRequest {
         }
         ListDesktopsStatisticsRequest that = (ListDesktopsStatisticsRequest) obj;
         return Objects.equals(this.desktopType, that.desktopType)
-            && Objects.equals(this.statisticsType, that.statisticsType);
+            && Objects.equals(this.statisticsType, that.statisticsType)
+            && Objects.equals(this.desktopPoolIds, that.desktopPoolIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktopType, statisticsType);
+        return Objects.hash(desktopType, statisticsType, desktopPoolIds);
     }
 
     @Override
@@ -194,6 +233,7 @@ public class ListDesktopsStatisticsRequest {
         sb.append("class ListDesktopsStatisticsRequest {\n");
         sb.append("    desktopType: ").append(toIndentedString(desktopType)).append("\n");
         sb.append("    statisticsType: ").append(toIndentedString(statisticsType)).append("\n");
+        sb.append("    desktopPoolIds: ").append(toIndentedString(desktopPoolIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

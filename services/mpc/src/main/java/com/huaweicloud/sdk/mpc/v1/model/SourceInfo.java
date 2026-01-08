@@ -39,6 +39,11 @@ public class SourceInfo {
     private String manifestName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "md5")
+
+    private String md5;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_info")
 
     private VideoInfo videoInfo;
@@ -139,6 +144,23 @@ public class SourceInfo {
         this.manifestName = manifestName;
     }
 
+    public SourceInfo withMd5(String md5) {
+        this.md5 = md5;
+        return this;
+    }
+
+    /**
+     * 视频的 md5 值。 
+     * @return md5
+     */
+    public String getMd5() {
+        return md5;
+    }
+
+    public void setMd5(String md5) {
+        this.md5 = md5;
+    }
+
     public SourceInfo withVideoInfo(VideoInfo videoInfo) {
         this.videoInfo = videoInfo;
         return this;
@@ -209,13 +231,13 @@ public class SourceInfo {
         SourceInfo that = (SourceInfo) obj;
         return Objects.equals(this.duration, that.duration) && Objects.equals(this.durationMs, that.durationMs)
             && Objects.equals(this.format, that.format) && Objects.equals(this.size, that.size)
-            && Objects.equals(this.manifestName, that.manifestName) && Objects.equals(this.videoInfo, that.videoInfo)
-            && Objects.equals(this.audioInfo, that.audioInfo);
+            && Objects.equals(this.manifestName, that.manifestName) && Objects.equals(this.md5, that.md5)
+            && Objects.equals(this.videoInfo, that.videoInfo) && Objects.equals(this.audioInfo, that.audioInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(duration, durationMs, format, size, manifestName, videoInfo, audioInfo);
+        return Objects.hash(duration, durationMs, format, size, manifestName, md5, videoInfo, audioInfo);
     }
 
     @Override
@@ -227,6 +249,7 @@ public class SourceInfo {
         sb.append("    format: ").append(toIndentedString(format)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    manifestName: ").append(toIndentedString(manifestName)).append("\n");
+        sb.append("    md5: ").append(toIndentedString(md5)).append("\n");
         sb.append("    videoInfo: ").append(toIndentedString(videoInfo)).append("\n");
         sb.append("    audioInfo: ").append(toIndentedString(audioInfo)).append("\n");
         sb.append("}");

@@ -41,7 +41,7 @@ public class BatchUpdateWidgetsResponse extends SdkResponse {
     }
 
     /**
-     * 更新结果列表
+     * **参数解释** 更新结果列表 
      * @return widgets
      */
     public List<BatchUpdateWidgetInfo> getWidgets() {

@@ -125,8 +125,6 @@ import com.huaweicloud.sdk.secmaster.v1.model.CreateDataspaceResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateDictionaryRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateDpeClassifyRequestBody;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateDpeMappingRequestBody;
-import com.huaweicloud.sdk.secmaster.v1.model.CreateGenericActionRequest;
-import com.huaweicloud.sdk.secmaster.v1.model.CreateGenericActionResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateIncidentRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateIncidentRequestBody;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateIncidentResponse;
@@ -345,7 +343,6 @@ import com.huaweicloud.sdk.secmaster.v1.model.ExportResourcesResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.ExportVulnerabilitiesRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.ExportVulnerabilitiesRequestBody;
 import com.huaweicloud.sdk.secmaster.v1.model.ExportVulnerabilitiesResponse;
-import com.huaweicloud.sdk.secmaster.v1.model.GenericActionRequestBody;
 import com.huaweicloud.sdk.secmaster.v1.model.Group;
 import com.huaweicloud.sdk.secmaster.v1.model.GroupDto;
 import com.huaweicloud.sdk.secmaster.v1.model.HandleShipperAuthorizationRequest;
@@ -2151,29 +2148,6 @@ public class SecMasterMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDataspaceRequestBody.class),
             f -> f.withMarshaller(CreateDataspaceRequest::getBody, CreateDataspaceRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateGenericActionRequest, CreateGenericActionResponse> createGenericAction =
-        genForCreateGenericAction();
-
-    private static HttpRequestDef<CreateGenericActionRequest, CreateGenericActionResponse> genForCreateGenericAction() {
-        // basic
-        HttpRequestDef.Builder<CreateGenericActionRequest, CreateGenericActionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateGenericActionRequest.class, CreateGenericActionResponse.class)
-                .withName("CreateGenericAction")
-                .withUri("/v1/{project_id}/security-llm-conductor/agent/actions")
-                .withContentType("application/json");
-
-        // requests
-        builder.<GenericActionRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(GenericActionRequestBody.class),
-            f -> f.withMarshaller(CreateGenericActionRequest::getBody, CreateGenericActionRequest::setBody));
 
         // response
 

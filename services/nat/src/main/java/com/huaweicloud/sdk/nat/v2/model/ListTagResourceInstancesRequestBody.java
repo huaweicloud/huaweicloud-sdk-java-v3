@@ -29,7 +29,7 @@ public class ListTagResourceInstancesRequestBody {
     private String limit;
 
     /**
-     * 操作标识（仅限于filter，count）：filter（过滤），count(查询总条数) 如果是filter就是分页查询，如果是count只需按照条件将总条数返回即可。
+     * 操作标识： - filter：过滤。 - count：查询总条数。
      */
     public static final class ActionEnum {
 
@@ -168,7 +168,7 @@ public class ListTagResourceInstancesRequestBody {
     }
 
     /**
-     * 操作标识（仅限于filter，count）：filter（过滤），count(查询总条数) 如果是filter就是分页查询，如果是count只需按照条件将总条数返回即可。
+     * 操作标识： - filter：过滤。 - count：查询总条数。
      * @return action
      */
     public ActionEnum getAction() {

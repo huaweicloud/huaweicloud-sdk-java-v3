@@ -116,6 +116,8 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.ShowLdapConfigRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowLdapConfigResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowPermRuleRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowPermRuleResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowQuotaRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ShowQuotaResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowShareRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowShareResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ShowSharedTagsRequest;
@@ -1570,6 +1572,28 @@ public class SFSTurboMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> showQuota = genForShowQuota();
+
+    private static HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> genForShowQuota() {
+        // basic
+        HttpRequestDef.Builder<ShowQuotaRequest, ShowQuotaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowQuotaRequest.class, ShowQuotaResponse.class)
+                .withName("ShowQuota")
+                .withUri("/v1/{project_id}/sfs-turbo/quotas")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowQuotaResponse::getXRequestId, ShowQuotaResponse::setXRequestId));
         return builder.build();
     }
 

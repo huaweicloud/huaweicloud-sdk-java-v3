@@ -26,6 +26,11 @@ public class RemoveNodesTask {
 
     private RemoveNodesSpec spec;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private TaskStatus status;
+
     public RemoveNodesTask withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
         return this;
@@ -86,6 +91,32 @@ public class RemoveNodesTask {
         this.spec = spec;
     }
 
+    public RemoveNodesTask withStatus(TaskStatus status) {
+        this.status = status;
+        return this;
+    }
+
+    public RemoveNodesTask withStatus(Consumer<TaskStatus> statusSetter) {
+        if (this.status == null) {
+            this.status = new TaskStatus();
+            statusSetter.accept(this.status);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get status
+     * @return status
+     */
+    public TaskStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(TaskStatus status) {
+        this.status = status;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -96,12 +127,12 @@ public class RemoveNodesTask {
         }
         RemoveNodesTask that = (RemoveNodesTask) obj;
         return Objects.equals(this.apiVersion, that.apiVersion) && Objects.equals(this.kind, that.kind)
-            && Objects.equals(this.spec, that.spec);
+            && Objects.equals(this.spec, that.spec) && Objects.equals(this.status, that.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(apiVersion, kind, spec);
+        return Objects.hash(apiVersion, kind, spec, status);
     }
 
     @Override
@@ -111,6 +142,7 @@ public class RemoveNodesTask {
         sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
         sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
         sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -19,6 +19,11 @@ import java.util.function.Consumer;
 public class ListEnhanceFullSqlsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_id")
+
+    private String nodeId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -241,6 +246,23 @@ public class ListEnhanceFullSqlsRequestBody {
     @JsonProperty(value = "compare_conditions")
 
     private List<CompareConditionOption> compareConditions = null;
+
+    public ListEnhanceFullSqlsRequestBody withNodeId(String nodeId) {
+        this.nodeId = nodeId;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 节点ID。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
+     * @return nodeId
+     */
+    public String getNodeId() {
+        return nodeId;
+    }
+
+    public void setNodeId(String nodeId) {
+        this.nodeId = nodeId;
+    }
 
     public ListEnhanceFullSqlsRequestBody withLimit(Integer limit) {
         this.limit = limit;
@@ -591,21 +613,22 @@ public class ListEnhanceFullSqlsRequestBody {
             return false;
         }
         ListEnhanceFullSqlsRequestBody that = (ListEnhanceFullSqlsRequestBody) obj;
-        return Objects.equals(this.limit, that.limit) && Objects.equals(this.beginTime, that.beginTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.query, that.query)
-            && Objects.equals(this.sqlId, that.sqlId) && Objects.equals(this.sqlExecId, that.sqlExecId)
-            && Objects.equals(this.transactionId, that.transactionId) && Objects.equals(this.traceId, that.traceId)
-            && Objects.equals(this.dbName, that.dbName) && Objects.equals(this.schemaName, that.schemaName)
-            && Objects.equals(this.username, that.username) && Objects.equals(this.clientAddr, that.clientAddr)
-            && Objects.equals(this.clientPort, that.clientPort) && Objects.equals(this.orderBy, that.orderBy)
-            && Objects.equals(this.isSlowSql, that.isSlowSql) && Objects.equals(this.order, that.order)
-            && Objects.equals(this.multiQueries, that.multiQueries)
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.query, that.query) && Objects.equals(this.sqlId, that.sqlId)
+            && Objects.equals(this.sqlExecId, that.sqlExecId) && Objects.equals(this.transactionId, that.transactionId)
+            && Objects.equals(this.traceId, that.traceId) && Objects.equals(this.dbName, that.dbName)
+            && Objects.equals(this.schemaName, that.schemaName) && Objects.equals(this.username, that.username)
+            && Objects.equals(this.clientAddr, that.clientAddr) && Objects.equals(this.clientPort, that.clientPort)
+            && Objects.equals(this.orderBy, that.orderBy) && Objects.equals(this.isSlowSql, that.isSlowSql)
+            && Objects.equals(this.order, that.order) && Objects.equals(this.multiQueries, that.multiQueries)
             && Objects.equals(this.compareConditions, that.compareConditions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit,
+        return Objects.hash(nodeId,
+            limit,
             beginTime,
             endTime,
             query,
@@ -629,6 +652,7 @@ public class ListEnhanceFullSqlsRequestBody {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListEnhanceFullSqlsRequestBody {\n");
+        sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");

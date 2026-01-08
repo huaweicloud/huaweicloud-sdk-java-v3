@@ -34,6 +34,11 @@ public class ExecuteDesktopPoolScriptsReq {
     private List<String> grayDesktopIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desktop_ids")
+
+    private List<String> desktopIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gray_fail_threshold")
 
     private Integer grayFailThreshold;
@@ -224,6 +229,39 @@ public class ExecuteDesktopPoolScriptsReq {
         this.grayDesktopIds = grayDesktopIds;
     }
 
+    public ExecuteDesktopPoolScriptsReq withDesktopIds(List<String> desktopIds) {
+        this.desktopIds = desktopIds;
+        return this;
+    }
+
+    public ExecuteDesktopPoolScriptsReq addDesktopIdsItem(String desktopIdsItem) {
+        if (this.desktopIds == null) {
+            this.desktopIds = new ArrayList<>();
+        }
+        this.desktopIds.add(desktopIdsItem);
+        return this;
+    }
+
+    public ExecuteDesktopPoolScriptsReq withDesktopIds(Consumer<List<String>> desktopIdsSetter) {
+        if (this.desktopIds == null) {
+            this.desktopIds = new ArrayList<>();
+        }
+        desktopIdsSetter.accept(this.desktopIds);
+        return this;
+    }
+
+    /**
+     * 桌面id列表，支持桌面池部分桌面执行脚本。
+     * @return desktopIds
+     */
+    public List<String> getDesktopIds() {
+        return desktopIds;
+    }
+
+    public void setDesktopIds(List<String> desktopIds) {
+        this.desktopIds = desktopIds;
+    }
+
     public ExecuteDesktopPoolScriptsReq withGrayFailThreshold(Integer grayFailThreshold) {
         this.grayFailThreshold = grayFailThreshold;
         return this;
@@ -341,6 +379,7 @@ public class ExecuteDesktopPoolScriptsReq {
         ExecuteDesktopPoolScriptsReq that = (ExecuteDesktopPoolScriptsReq) obj;
         return Objects.equals(this.scriptIds, that.scriptIds) && Objects.equals(this.grayCount, that.grayCount)
             && Objects.equals(this.grayDesktopIds, that.grayDesktopIds)
+            && Objects.equals(this.desktopIds, that.desktopIds)
             && Objects.equals(this.grayFailThreshold, that.grayFailThreshold)
             && Objects.equals(this.preStart, that.preStart) && Objects.equals(this.postFinish, that.postFinish)
             && Objects.equals(this.commandContent, that.commandContent)
@@ -353,6 +392,7 @@ public class ExecuteDesktopPoolScriptsReq {
         return Objects.hash(scriptIds,
             grayCount,
             grayDesktopIds,
+            desktopIds,
             grayFailThreshold,
             preStart,
             postFinish,
@@ -368,6 +408,7 @@ public class ExecuteDesktopPoolScriptsReq {
         sb.append("    scriptIds: ").append(toIndentedString(scriptIds)).append("\n");
         sb.append("    grayCount: ").append(toIndentedString(grayCount)).append("\n");
         sb.append("    grayDesktopIds: ").append(toIndentedString(grayDesktopIds)).append("\n");
+        sb.append("    desktopIds: ").append(toIndentedString(desktopIds)).append("\n");
         sb.append("    grayFailThreshold: ").append(toIndentedString(grayFailThreshold)).append("\n");
         sb.append("    preStart: ").append(toIndentedString(preStart)).append("\n");
         sb.append("    postFinish: ").append(toIndentedString(postFinish)).append("\n");

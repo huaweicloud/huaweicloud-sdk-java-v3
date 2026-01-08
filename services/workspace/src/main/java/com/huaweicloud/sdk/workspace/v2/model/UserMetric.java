@@ -19,6 +19,11 @@ public class UserMetric {
     private String username;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric")
 
     private List<Metric> metric = null;
@@ -38,6 +43,23 @@ public class UserMetric {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public UserMetric withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     public UserMetric withMetric(List<Metric> metric) {
@@ -82,12 +104,14 @@ public class UserMetric {
             return false;
         }
         UserMetric that = (UserMetric) obj;
-        return Objects.equals(this.username, that.username) && Objects.equals(this.metric, that.metric);
+        return Objects.equals(this.username, that.username)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.metric, that.metric);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, metric);
+        return Objects.hash(username, enterpriseProjectId, metric);
     }
 
     @Override
@@ -95,6 +119,7 @@ public class UserMetric {
         StringBuilder sb = new StringBuilder();
         sb.append("class UserMetric {\n");
         sb.append("    username: ").append(toIndentedString(username)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    metric: ").append(toIndentedString(metric)).append("\n");
         sb.append("}");
         return sb.toString();

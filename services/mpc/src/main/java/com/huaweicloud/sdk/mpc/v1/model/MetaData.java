@@ -34,6 +34,11 @@ public class MetaData {
     private String format;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "md5")
+
+    private String md5;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bitrate")
 
     private Long bitrate;
@@ -120,6 +125,23 @@ public class MetaData {
 
     public void setFormat(String format) {
         this.format = format;
+    }
+
+    public MetaData withMd5(String md5) {
+        this.md5 = md5;
+        return this;
+    }
+
+    /**
+     * 视频的 md5 值。 
+     * @return md5
+     */
+    public String getMd5() {
+        return md5;
+    }
+
+    public void setMd5(String md5) {
+        this.md5 = md5;
     }
 
     public MetaData withBitrate(Long bitrate) {
@@ -218,13 +240,13 @@ public class MetaData {
         MetaData that = (MetaData) obj;
         return Objects.equals(this.size, that.size) && Objects.equals(this.durationMs, that.durationMs)
             && Objects.equals(this.duration, that.duration) && Objects.equals(this.format, that.format)
-            && Objects.equals(this.bitrate, that.bitrate) && Objects.equals(this.video, that.video)
-            && Objects.equals(this.audio, that.audio);
+            && Objects.equals(this.md5, that.md5) && Objects.equals(this.bitrate, that.bitrate)
+            && Objects.equals(this.video, that.video) && Objects.equals(this.audio, that.audio);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(size, durationMs, duration, format, bitrate, video, audio);
+        return Objects.hash(size, durationMs, duration, format, md5, bitrate, video, audio);
     }
 
     @Override
@@ -235,6 +257,7 @@ public class MetaData {
         sb.append("    durationMs: ").append(toIndentedString(durationMs)).append("\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
         sb.append("    format: ").append(toIndentedString(format)).append("\n");
+        sb.append("    md5: ").append(toIndentedString(md5)).append("\n");
         sb.append("    bitrate: ").append(toIndentedString(bitrate)).append("\n");
         sb.append("    video: ").append(toIndentedString(video)).append("\n");
         sb.append("    audio: ").append(toIndentedString(audio)).append("\n");

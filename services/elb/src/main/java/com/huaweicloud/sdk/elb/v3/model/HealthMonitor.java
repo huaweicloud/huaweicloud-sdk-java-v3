@@ -351,7 +351,7 @@ public class HealthMonitor {
     }
 
     /**
-     * **参数解释**： 健康检查请求协议。  **取值范围**：TCP、UDP_CONNECT、HTTP、HTTPS、TLS和GRPC。
+     * **参数解释**： 健康检查请求协议。  **取值范围**：TCP、UDP_CONNECT、HTTP、HTTPS、TLS、GRPC[和GRPCS](tag:not_open)。
      * @return type
      */
     public String getType() {

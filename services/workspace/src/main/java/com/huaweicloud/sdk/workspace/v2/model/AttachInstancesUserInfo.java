@@ -26,6 +26,11 @@ public class AttachInstancesUserInfo {
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain")
+
+    private String domain;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_group")
 
     private String userGroup;
@@ -139,6 +144,23 @@ public class AttachInstancesUserInfo {
         this.userName = userName;
     }
 
+    public AttachInstancesUserInfo withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    /**
+     * 用户所属域。
+     * @return domain
+     */
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
     public AttachInstancesUserInfo withUserGroup(String userGroup) {
         this.userGroup = userGroup;
         return this;
@@ -183,12 +205,13 @@ public class AttachInstancesUserInfo {
         }
         AttachInstancesUserInfo that = (AttachInstancesUserInfo) obj;
         return Objects.equals(this.userId, that.userId) && Objects.equals(this.userName, that.userName)
-            && Objects.equals(this.userGroup, that.userGroup) && Objects.equals(this.type, that.type);
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.userGroup, that.userGroup)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userId, userName, userGroup, type);
+        return Objects.hash(userId, userName, domain, userGroup, type);
     }
 
     @Override
@@ -197,6 +220,7 @@ public class AttachInstancesUserInfo {
         sb.append("class AttachInstancesUserInfo {\n");
         sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    userGroup: ").append(toIndentedString(userGroup)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");

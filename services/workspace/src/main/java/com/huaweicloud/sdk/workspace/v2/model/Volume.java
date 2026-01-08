@@ -18,7 +18,7 @@ public class Volume {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    private Integer size;
+    private Long size;
 
     public Volume withType(String type) {
         this.type = type;
@@ -26,7 +26,7 @@ public class Volume {
     }
 
     /**
-     * 桌面数据盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。  -SAS：高IO。 -SSD：超高IO。 -GPSSD：通用型SSD。
+     * 磁盘类型。
      * @return type
      */
     public String getType() {
@@ -37,22 +37,20 @@ public class Volume {
         this.type = type;
     }
 
-    public Volume withSize(Integer size) {
+    public Volume withSize(Long size) {
         this.size = size;
         return this;
     }
 
     /**
-     * 磁盘容量，单位GB。系统盘大小范围[80-32760]，数据盘范围[10-32760]，大小为10的倍数。
-     * minimum: 10
-     * maximum: 32760
+     * 磁盘大小，单位GB。
      * @return size
      */
-    public Integer getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(Long size) {
         this.size = size;
     }
 

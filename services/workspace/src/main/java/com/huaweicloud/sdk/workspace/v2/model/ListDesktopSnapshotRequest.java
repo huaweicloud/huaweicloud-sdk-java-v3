@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -21,14 +24,29 @@ public class ListDesktopSnapshotRequest {
     private String desktopId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desktop_ids")
+
+    private List<String> desktopIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desktop_name")
 
     private String desktopName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desktop_names")
+
+    private List<String> desktopNames = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snapshot_name")
 
     private String snapshotName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "snapshot_names")
+
+    private List<String> snapshotNames = null;
 
     /**
      * 快照类型。 - SYSTEM_DISK 系统盘。 - DATA_DISKS 数据盘。 - ALL 系统盘和数据盘。
@@ -368,6 +386,39 @@ public class ListDesktopSnapshotRequest {
         this.desktopId = desktopId;
     }
 
+    public ListDesktopSnapshotRequest withDesktopIds(List<String> desktopIds) {
+        this.desktopIds = desktopIds;
+        return this;
+    }
+
+    public ListDesktopSnapshotRequest addDesktopIdsItem(String desktopIdsItem) {
+        if (this.desktopIds == null) {
+            this.desktopIds = new ArrayList<>();
+        }
+        this.desktopIds.add(desktopIdsItem);
+        return this;
+    }
+
+    public ListDesktopSnapshotRequest withDesktopIds(Consumer<List<String>> desktopIdsSetter) {
+        if (this.desktopIds == null) {
+            this.desktopIds = new ArrayList<>();
+        }
+        desktopIdsSetter.accept(this.desktopIds);
+        return this;
+    }
+
+    /**
+     * 桌面id列表
+     * @return desktopIds
+     */
+    public List<String> getDesktopIds() {
+        return desktopIds;
+    }
+
+    public void setDesktopIds(List<String> desktopIds) {
+        this.desktopIds = desktopIds;
+    }
+
     public ListDesktopSnapshotRequest withDesktopName(String desktopName) {
         this.desktopName = desktopName;
         return this;
@@ -385,6 +436,39 @@ public class ListDesktopSnapshotRequest {
         this.desktopName = desktopName;
     }
 
+    public ListDesktopSnapshotRequest withDesktopNames(List<String> desktopNames) {
+        this.desktopNames = desktopNames;
+        return this;
+    }
+
+    public ListDesktopSnapshotRequest addDesktopNamesItem(String desktopNamesItem) {
+        if (this.desktopNames == null) {
+            this.desktopNames = new ArrayList<>();
+        }
+        this.desktopNames.add(desktopNamesItem);
+        return this;
+    }
+
+    public ListDesktopSnapshotRequest withDesktopNames(Consumer<List<String>> desktopNamesSetter) {
+        if (this.desktopNames == null) {
+            this.desktopNames = new ArrayList<>();
+        }
+        desktopNamesSetter.accept(this.desktopNames);
+        return this;
+    }
+
+    /**
+     * 桌面名称列表
+     * @return desktopNames
+     */
+    public List<String> getDesktopNames() {
+        return desktopNames;
+    }
+
+    public void setDesktopNames(List<String> desktopNames) {
+        this.desktopNames = desktopNames;
+    }
+
     public ListDesktopSnapshotRequest withSnapshotName(String snapshotName) {
         this.snapshotName = snapshotName;
         return this;
@@ -400,6 +484,39 @@ public class ListDesktopSnapshotRequest {
 
     public void setSnapshotName(String snapshotName) {
         this.snapshotName = snapshotName;
+    }
+
+    public ListDesktopSnapshotRequest withSnapshotNames(List<String> snapshotNames) {
+        this.snapshotNames = snapshotNames;
+        return this;
+    }
+
+    public ListDesktopSnapshotRequest addSnapshotNamesItem(String snapshotNamesItem) {
+        if (this.snapshotNames == null) {
+            this.snapshotNames = new ArrayList<>();
+        }
+        this.snapshotNames.add(snapshotNamesItem);
+        return this;
+    }
+
+    public ListDesktopSnapshotRequest withSnapshotNames(Consumer<List<String>> snapshotNamesSetter) {
+        if (this.snapshotNames == null) {
+            this.snapshotNames = new ArrayList<>();
+        }
+        snapshotNamesSetter.accept(this.snapshotNames);
+        return this;
+    }
+
+    /**
+     * 快照名称列表
+     * @return snapshotNames
+     */
+    public List<String> getSnapshotNames() {
+        return snapshotNames;
+    }
+
+    public void setSnapshotNames(List<String> snapshotNames) {
+        this.snapshotNames = snapshotNames;
     }
 
     public ListDesktopSnapshotRequest withDiskType(DiskTypeEnum diskType) {
@@ -534,8 +651,11 @@ public class ListDesktopSnapshotRequest {
             return false;
         }
         ListDesktopSnapshotRequest that = (ListDesktopSnapshotRequest) obj;
-        return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.desktopName, that.desktopName)
-            && Objects.equals(this.snapshotName, that.snapshotName) && Objects.equals(this.diskType, that.diskType)
+        return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.desktopIds, that.desktopIds)
+            && Objects.equals(this.desktopName, that.desktopName)
+            && Objects.equals(this.desktopNames, that.desktopNames)
+            && Objects.equals(this.snapshotName, that.snapshotName)
+            && Objects.equals(this.snapshotNames, that.snapshotNames) && Objects.equals(this.diskType, that.diskType)
             && Objects.equals(this.createType, that.createType) && Objects.equals(this.status, that.status)
             && Objects.equals(this.sortField, that.sortField) && Objects.equals(this.sortType, that.sortType)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
@@ -544,8 +664,11 @@ public class ListDesktopSnapshotRequest {
     @Override
     public int hashCode() {
         return Objects.hash(desktopId,
+            desktopIds,
             desktopName,
+            desktopNames,
             snapshotName,
+            snapshotNames,
             diskType,
             createType,
             status,
@@ -560,8 +683,11 @@ public class ListDesktopSnapshotRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListDesktopSnapshotRequest {\n");
         sb.append("    desktopId: ").append(toIndentedString(desktopId)).append("\n");
+        sb.append("    desktopIds: ").append(toIndentedString(desktopIds)).append("\n");
         sb.append("    desktopName: ").append(toIndentedString(desktopName)).append("\n");
+        sb.append("    desktopNames: ").append(toIndentedString(desktopNames)).append("\n");
         sb.append("    snapshotName: ").append(toIndentedString(snapshotName)).append("\n");
+        sb.append("    snapshotNames: ").append(toIndentedString(snapshotNames)).append("\n");
         sb.append("    diskType: ").append(toIndentedString(diskType)).append("\n");
         sb.append("    createType: ").append(toIndentedString(createType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

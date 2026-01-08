@@ -42,9 +42,9 @@ public class Submission {
     private Long lastUpdateDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "last-udpate-user")
+    @JsonProperty(value = "last-update-user")
 
-    private String lastUdpateUser;
+    private String lastUpdateUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isDeleteJob")
@@ -222,21 +222,21 @@ public class Submission {
         this.lastUpdateDate = lastUpdateDate;
     }
 
-    public Submission withLastUdpateUser(String lastUdpateUser) {
-        this.lastUdpateUser = lastUdpateUser;
+    public Submission withLastUpdateUser(String lastUpdateUser) {
+        this.lastUpdateUser = lastUpdateUser;
         return this;
     }
 
     /**
      * 最后更新作业状态的用户
-     * @return lastUdpateUser
+     * @return lastUpdateUser
      */
-    public String getLastUdpateUser() {
-        return lastUdpateUser;
+    public String getLastUpdateUser() {
+        return lastUpdateUser;
     }
 
-    public void setLastUdpateUser(String lastUdpateUser) {
-        this.lastUdpateUser = lastUdpateUser;
+    public void setLastUpdateUser(String lastUpdateUser) {
+        this.lastUpdateUser = lastUpdateUser;
     }
 
     public Submission withIsDeleteJob(Boolean isDeleteJob) {
@@ -474,7 +474,7 @@ public class Submission {
             && Objects.equals(this.isStopingIncrement, that.isStopingIncrement)
             && Objects.equals(this.isExecuteAuto, that.isExecuteAuto)
             && Objects.equals(this.lastUpdateDate, that.lastUpdateDate)
-            && Objects.equals(this.lastUdpateUser, that.lastUdpateUser)
+            && Objects.equals(this.lastUpdateUser, that.lastUpdateUser)
             && Objects.equals(this.isDeleteJob, that.isDeleteJob)
             && Objects.equals(this.creationUser, that.creationUser)
             && Objects.equals(this.creationDate, that.creationDate) && Objects.equals(this.externalId, that.externalId)
@@ -493,7 +493,7 @@ public class Submission {
             isStopingIncrement,
             isExecuteAuto,
             lastUpdateDate,
-            lastUdpateUser,
+            lastUpdateUser,
             isDeleteJob,
             creationUser,
             creationDate,
@@ -519,7 +519,7 @@ public class Submission {
         sb.append("    isStopingIncrement: ").append(toIndentedString(isStopingIncrement)).append("\n");
         sb.append("    isExecuteAuto: ").append(toIndentedString(isExecuteAuto)).append("\n");
         sb.append("    lastUpdateDate: ").append(toIndentedString(lastUpdateDate)).append("\n");
-        sb.append("    lastUdpateUser: ").append(toIndentedString(lastUdpateUser)).append("\n");
+        sb.append("    lastUpdateUser: ").append(toIndentedString(lastUpdateUser)).append("\n");
         sb.append("    isDeleteJob: ").append(toIndentedString(isDeleteJob)).append("\n");
         sb.append("    creationUser: ").append(toIndentedString(creationUser)).append("\n");
         sb.append("    creationDate: ").append(toIndentedString(creationDate)).append("\n");

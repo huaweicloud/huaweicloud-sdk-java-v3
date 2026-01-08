@@ -20,6 +20,11 @@ public class MetricDataPointDimensions {
 
     private String value;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "origin_value")
+
+    private String originValue;
+
     public MetricDataPointDimensions withName(String name) {
         this.name = name;
         return this;
@@ -54,6 +59,23 @@ public class MetricDataPointDimensions {
         this.value = value;
     }
 
+    public MetricDataPointDimensions withOriginValue(String originValue) {
+        this.originValue = originValue;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 实际维度信息。 **取值范围**： 字符串长度在 1 到 1024 之间。 
+     * @return originValue
+     */
+    public String getOriginValue() {
+        return originValue;
+    }
+
+    public void setOriginValue(String originValue) {
+        this.originValue = originValue;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class MetricDataPointDimensions {
             return false;
         }
         MetricDataPointDimensions that = (MetricDataPointDimensions) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.originValue, that.originValue);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, value);
+        return Objects.hash(name, value, originValue);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class MetricDataPointDimensions {
         sb.append("class MetricDataPointDimensions {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    originValue: ").append(toIndentedString(originValue)).append("\n");
         sb.append("}");
         return sb.toString();
     }

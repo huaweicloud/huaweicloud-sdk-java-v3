@@ -24,7 +24,7 @@ public class CreateDesktopPoolAuthorizedObjectsRequestBody {
     private List<AuthorizedObjects> objects = null;
 
     /**
-     * 执行动作，ADD：增加授权用户/用户组，REMOVE：移除已授权用户/用户组。
+     * 执行动作，ADD：增加授权用户/用户组，REMOVE：移除已授权用户/用户组，CHANGE_PRIVILEGE：修改授权用户/用户组的权限组。
      */
     public static final class ActionEnum {
 
@@ -38,12 +38,18 @@ public class CreateDesktopPoolAuthorizedObjectsRequestBody {
          */
         public static final ActionEnum REMOVE = new ActionEnum("REMOVE");
 
+        /**
+         * Enum CHANGE_PRIVILEGE for value: "CHANGE_PRIVILEGE"
+         */
+        public static final ActionEnum CHANGE_PRIVILEGE = new ActionEnum("CHANGE_PRIVILEGE");
+
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ActionEnum> createStaticFields() {
             Map<String, ActionEnum> map = new HashMap<>();
             map.put("ADD", ADD);
             map.put("REMOVE", REMOVE);
+            map.put("CHANGE_PRIVILEGE", CHANGE_PRIVILEGE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -137,7 +143,7 @@ public class CreateDesktopPoolAuthorizedObjectsRequestBody {
     }
 
     /**
-     * 执行动作，ADD：增加授权用户/用户组，REMOVE：移除已授权用户/用户组。
+     * 执行动作，ADD：增加授权用户/用户组，REMOVE：移除已授权用户/用户组，CHANGE_PRIVILEGE：修改授权用户/用户组的权限组。
      * @return action
      */
     public ActionEnum getAction() {

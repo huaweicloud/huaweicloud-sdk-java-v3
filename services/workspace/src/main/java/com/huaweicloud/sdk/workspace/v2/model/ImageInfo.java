@@ -65,6 +65,11 @@ public class ImageInfo {
 
     private String createdAt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kms_id")
+
+    private String kmsId;
+
     public ImageInfo withId(String id) {
         this.id = id;
         return this;
@@ -256,6 +261,23 @@ public class ImageInfo {
         this.createdAt = createdAt;
     }
 
+    public ImageInfo withKmsId(String kmsId) {
+        this.kmsId = kmsId;
+        return this;
+    }
+
+    /**
+     * 镜像kmsId。
+     * @return kmsId
+     */
+    public String getKmsId() {
+        return kmsId;
+    }
+
+    public void setKmsId(String kmsId) {
+        this.kmsId = kmsId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -270,7 +292,7 @@ public class ImageInfo {
             && Objects.equals(this.osVersion, that.osVersion) && Objects.equals(this.diskFormat, that.diskFormat)
             && Objects.equals(this.name, that.name) && Objects.equals(this.minRam, that.minRam)
             && Objects.equals(this.minDisk, that.minDisk) && Objects.equals(this.productCode, that.productCode)
-            && Objects.equals(this.createdAt, that.createdAt);
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.kmsId, that.kmsId);
     }
 
     @Override
@@ -285,7 +307,8 @@ public class ImageInfo {
             minRam,
             minDisk,
             productCode,
-            createdAt);
+            createdAt,
+            kmsId);
     }
 
     @Override
@@ -303,6 +326,7 @@ public class ImageInfo {
         sb.append("    minDisk: ").append(toIndentedString(minDisk)).append("\n");
         sb.append("    productCode: ").append(toIndentedString(productCode)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    kmsId: ").append(toIndentedString(kmsId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

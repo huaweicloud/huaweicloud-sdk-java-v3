@@ -16,7 +16,7 @@ import java.util.Objects;
 public class PrepaidOptions {
 
     /**
-     * 订购周期类型，当前支持包月和包年: month: 包月 year: 包年
+     * 订购周期类型，当前支持包月和包年: - month: 包月 - year: 包年
      */
     public static final class PeriodTypeEnum {
 
@@ -111,7 +111,7 @@ public class PrepaidOptions {
     }
 
     /**
-     * 订购周期类型，当前支持包月和包年: month: 包月 year: 包年
+     * 订购周期类型，当前支持包月和包年: - month: 包月 - year: 包年
      * @return periodType
      */
     public PeriodTypeEnum getPeriodType() {

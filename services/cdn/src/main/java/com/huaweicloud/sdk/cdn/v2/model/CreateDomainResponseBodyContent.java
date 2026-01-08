@@ -287,7 +287,7 @@ public class CreateDomainResponseBodyContent {
     }
 
     /**
-     * 是否开启HTTPS加速。
+     * 是否开启HTTPS加速。取值意义： - 0：未开启 - 1：开启
      * @return httpsStatus
      */
     public Integer getHttpsStatus() {
@@ -372,7 +372,7 @@ public class CreateDomainResponseBodyContent {
     }
 
     /**
-     * range状态，off：关闭，on：开启。
+     * range状态。取值意义： - on：开启 - off：关闭
      * @return rangeStatus
      */
     public String getRangeStatus() {
@@ -389,7 +389,7 @@ public class CreateDomainResponseBodyContent {
     }
 
     /**
-     * follow302状态，off：关闭，on：开启。
+     * follow302状态。取值意义： - on：开启 - off：关闭
      * @return followStatus
      */
     public String getFollowStatus() {
@@ -406,7 +406,7 @@ public class CreateDomainResponseBodyContent {
     }
 
     /**
-     * 是否暂停源站回源（off代表关闭 on代表开启）。
+     * 是否暂停源站回。取值意义： - on：开启 - off：关闭
      * @return originStatus
      */
     public String getOriginStatus() {

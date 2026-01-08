@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.workspace.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 重建系统盘的请求。
@@ -36,14 +39,19 @@ public class RebuildDesktopPoolReq {
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
-
-    private String orderId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_fix")
 
     private Boolean isFix;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "handle_type")
+
+    private String handleType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desktop_ids")
+
+    private List<String> desktopIds = null;
 
     public RebuildDesktopPoolReq withImageType(String imageType) {
         this.imageType = imageType;
@@ -132,23 +140,6 @@ public class RebuildDesktopPoolReq {
         this.message = message;
     }
 
-    public RebuildDesktopPoolReq withOrderId(String orderId) {
-        this.orderId = orderId;
-        return this;
-    }
-
-    /**
-     * 订单ID，包周期桌面重建系统盘，涉及收费镜像时需传。
-     * @return orderId
-     */
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
-
     public RebuildDesktopPoolReq withIsFix(Boolean isFix) {
         this.isFix = isFix;
         return this;
@@ -166,6 +157,56 @@ public class RebuildDesktopPoolReq {
         this.isFix = isFix;
     }
 
+    public RebuildDesktopPoolReq withHandleType(String handleType) {
+        this.handleType = handleType;
+        return this;
+    }
+
+    /**
+     * 处理类型 - ONLY_FOR_EXPAND：仅对新扩容桌面生效 - FOR_EXPAND_AND_IDLE：对新扩容桌面与空闲桌面生效 - FOR_EXPAND_AND_ALL：对新扩容桌面与已有全部桌面生效
+     * @return handleType
+     */
+    public String getHandleType() {
+        return handleType;
+    }
+
+    public void setHandleType(String handleType) {
+        this.handleType = handleType;
+    }
+
+    public RebuildDesktopPoolReq withDesktopIds(List<String> desktopIds) {
+        this.desktopIds = desktopIds;
+        return this;
+    }
+
+    public RebuildDesktopPoolReq addDesktopIdsItem(String desktopIdsItem) {
+        if (this.desktopIds == null) {
+            this.desktopIds = new ArrayList<>();
+        }
+        this.desktopIds.add(desktopIdsItem);
+        return this;
+    }
+
+    public RebuildDesktopPoolReq withDesktopIds(Consumer<List<String>> desktopIdsSetter) {
+        if (this.desktopIds == null) {
+            this.desktopIds = new ArrayList<>();
+        }
+        desktopIdsSetter.accept(this.desktopIds);
+        return this;
+    }
+
+    /**
+     * 桌面id
+     * @return desktopIds
+     */
+    public List<String> getDesktopIds() {
+        return desktopIds;
+    }
+
+    public void setDesktopIds(List<String> desktopIds) {
+        this.desktopIds = desktopIds;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -177,13 +218,13 @@ public class RebuildDesktopPoolReq {
         RebuildDesktopPoolReq that = (RebuildDesktopPoolReq) obj;
         return Objects.equals(this.imageType, that.imageType) && Objects.equals(this.imageId, that.imageId)
             && Objects.equals(this.osType, that.osType) && Objects.equals(this.delayTime, that.delayTime)
-            && Objects.equals(this.message, that.message) && Objects.equals(this.orderId, that.orderId)
-            && Objects.equals(this.isFix, that.isFix);
+            && Objects.equals(this.message, that.message) && Objects.equals(this.isFix, that.isFix)
+            && Objects.equals(this.handleType, that.handleType) && Objects.equals(this.desktopIds, that.desktopIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(imageType, imageId, osType, delayTime, message, orderId, isFix);
+        return Objects.hash(imageType, imageId, osType, delayTime, message, isFix, handleType, desktopIds);
     }
 
     @Override
@@ -195,8 +236,9 @@ public class RebuildDesktopPoolReq {
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("    delayTime: ").append(toIndentedString(delayTime)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
-        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    isFix: ").append(toIndentedString(isFix)).append("\n");
+        sb.append("    handleType: ").append(toIndentedString(handleType)).append("\n");
+        sb.append("    desktopIds: ").append(toIndentedString(desktopIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

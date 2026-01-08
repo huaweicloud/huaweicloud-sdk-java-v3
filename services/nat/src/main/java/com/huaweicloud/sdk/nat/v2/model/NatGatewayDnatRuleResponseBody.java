@@ -66,7 +66,7 @@ public class NatGatewayDnatRuleResponseBody {
     private Integer externalServicePort;
 
     /**
-     * DNAT规则的状态。 取值为： \"ACTIVE\": 可用 \"PENDING_CREATE\"：创建中 \"PENDING_UPDATE\"：更新中 \"PENDING_DELETE\"：删除中 \"EIP_FREEZED\"：EIP冻结 \"INACTIVE\"：不可用
+     * DNAT规则的状态。 取值为： - ACTIVE: 可用 - PENDING_CREATE: 创建中 - PENDING_UPDATE: 更新中 - PENDING_DELETE: 删除中 - EIP_FREEZED: EIP冻结 - INACTIVE: 不可用
      */
     public static final class StatusEnum {
 
@@ -453,7 +453,7 @@ public class NatGatewayDnatRuleResponseBody {
     }
 
     /**
-     * DNAT规则的状态。 取值为： \"ACTIVE\": 可用 \"PENDING_CREATE\"：创建中 \"PENDING_UPDATE\"：更新中 \"PENDING_DELETE\"：删除中 \"EIP_FREEZED\"：EIP冻结 \"INACTIVE\"：不可用
+     * DNAT规则的状态。 取值为： - ACTIVE: 可用 - PENDING_CREATE: 创建中 - PENDING_UPDATE: 更新中 - PENDING_DELETE: 删除中 - EIP_FREEZED: EIP冻结 - INACTIVE: 不可用
      * @return status
      */
     public StatusEnum getStatus() {
@@ -470,7 +470,7 @@ public class NatGatewayDnatRuleResponseBody {
     }
 
     /**
-     * 解冻/冻结状态。 取值范围： − “true”： 解冻 − “false”： 冻结 
+     * 解冻/冻结状态。 取值范围：  - true: 解冻 - false: 冻结 
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {

@@ -127,6 +127,8 @@ import com.huaweicloud.sdk.vpc.v3.model.DisassociateSubnetFirewallRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.DisassociateSubnetFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListAddressGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListAddressGroupResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListAddressGroupsDependencyRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListAddressGroupsDependencyResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsCountFilterTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsCountFilterTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListClouddcnSubnetsFilterTagsRequest;
@@ -147,6 +149,8 @@ import com.huaweicloud.sdk.vpc.v3.model.ListPortTagsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListPortsByTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListPortsByTagsRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.ListPortsByTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListPortsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListPortsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListResourcesByTagsRequestBody;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListSecurityGroupRulesResponse;
@@ -162,6 +166,8 @@ import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorSessionsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListTrafficMirrorSessionsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListVirsubnetCidrReservationsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListVirsubnetCidrReservationsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ListVirsubnetsRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ListVirsubnetsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ListVpcsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ListVpcsResponse;
 import com.huaweicloud.sdk.vpc.v3.model.MigrateSubNetworkInterfaceRequest;
@@ -189,8 +195,12 @@ import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowFirewallTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowPortRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowPortResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowPortTagsRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowPortTagsResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowQuotaRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowQuotaResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowSecurityGroupRuleRequest;
@@ -207,6 +217,8 @@ import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorSessionRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowTrafficMirrorSessionResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowVirsubnetCidrReservationRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowVirsubnetCidrReservationResponse;
+import com.huaweicloud.sdk.vpc.v3.model.ShowVirsubnetRequest;
+import com.huaweicloud.sdk.vpc.v3.model.ShowVirsubnetResponse;
 import com.huaweicloud.sdk.vpc.v3.model.ShowVpcRequest;
 import com.huaweicloud.sdk.vpc.v3.model.ShowVpcResponse;
 import com.huaweicloud.sdk.vpc.v3.model.UpdateAddressGroupRequest;
@@ -895,6 +907,109 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListPortsRequest, ListPortsResponse> listPorts = genForListPorts();
+
+    private static HttpRequestDef<ListPortsRequest, ListPortsResponse> genForListPorts() {
+        // basic
+        HttpRequestDef.Builder<ListPortsRequest, ListPortsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPortsRequest.class, ListPortsResponse.class)
+                .withName("ListPorts")
+                .withUri("/v3/{project_id}/ports")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<String>>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPortsRequest::getId, ListPortsRequest::setId));
+        builder.<List<String>>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPortsRequest::getName, ListPortsRequest::setName));
+        builder.<Boolean>withRequestField("admin_state_up",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListPortsRequest::getAdminStateUp, ListPortsRequest::setAdminStateUp));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPortsRequest::getStatus, ListPortsRequest::setStatus));
+        builder.<List<String>>withRequestField("virsubnet_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPortsRequest::getVirsubnetId, ListPortsRequest::setVirsubnetId));
+        builder.<List<String>>withRequestField("device_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPortsRequest::getDeviceId, ListPortsRequest::setDeviceId));
+        builder.<List<String>>withRequestField("mac_address",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPortsRequest::getMacAddress, ListPortsRequest::setMacAddress));
+        builder.<List<String>>withRequestField("device_owner",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPortsRequest::getDeviceOwner, ListPortsRequest::setDeviceOwner));
+        builder.<String>withRequestField("device_owner_prefixlike",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPortsRequest::getDeviceOwnerPrefixlike,
+                ListPortsRequest::setDeviceOwnerPrefixlike));
+        builder.<List<String>>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPortsRequest::getDescription, ListPortsRequest::setDescription));
+        builder.<List<String>>withRequestField("binding:host_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPortsRequest::getBindingHostId, ListPortsRequest::setBindingHostId));
+        builder.<List<String>>withRequestField("private_ips",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPortsRequest::getPrivateIps, ListPortsRequest::setPrivateIps));
+        builder.<List<String>>withRequestField("security_groups",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPortsRequest::getSecurityGroups, ListPortsRequest::setSecurityGroups));
+        builder.<List<String>>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPortsRequest::getVpcId, ListPortsRequest::setVpcId));
+        builder.<List<String>>withRequestField("allowed_address_pairs",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPortsRequest::getAllowedAddressPairs, ListPortsRequest::setAllowedAddressPairs));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPortsRequest::getInstanceId, ListPortsRequest::setInstanceId));
+        builder.<String>withRequestField("instance_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPortsRequest::getInstanceType, ListPortsRequest::setInstanceType));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListPortsByTagsRequest, ListPortsByTagsResponse> listPortsByTags =
         genForListPortsByTags();
 
@@ -1491,6 +1606,69 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListVirsubnetsRequest, ListVirsubnetsResponse> listVirsubnets =
+        genForListVirsubnets();
+
+    private static HttpRequestDef<ListVirsubnetsRequest, ListVirsubnetsResponse> genForListVirsubnets() {
+        // basic
+        HttpRequestDef.Builder<ListVirsubnetsRequest, ListVirsubnetsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListVirsubnetsRequest.class, ListVirsubnetsResponse.class)
+                .withName("ListVirsubnets")
+                .withUri("/v3/{project_id}/vpc/virsubnets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVirsubnetsRequest::getLimit, ListVirsubnetsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVirsubnetsRequest::getMarker, ListVirsubnetsRequest::setMarker));
+        builder.<List<String>>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListVirsubnetsRequest::getId, ListVirsubnetsRequest::setId));
+        builder.<List<String>>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListVirsubnetsRequest::getName, ListVirsubnetsRequest::setName));
+        builder.<List<String>>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListVirsubnetsRequest::getVpcId, ListVirsubnetsRequest::setVpcId));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVirsubnetsRequest::getStatus, ListVirsubnetsRequest::setStatus));
+        builder.<List<String>>withRequestField("scope",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListVirsubnetsRequest::getScope, ListVirsubnetsRequest::setScope));
+        builder.<List<String>>withRequestField("zone_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListVirsubnetsRequest::getZoneId, ListVirsubnetsRequest::setZoneId));
+        builder.<List<String>>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListVirsubnetsRequest::getDescription, ListVirsubnetsRequest::setDescription));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<MigrateSubNetworkInterfaceRequest, MigrateSubNetworkInterfaceResponse> migrateSubNetworkInterface =
         genForMigrateSubNetworkInterface();
 
@@ -1579,6 +1757,28 @@ public class VpcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowPortRequest, ShowPortResponse> showPort = genForShowPort();
+
+    private static HttpRequestDef<ShowPortRequest, ShowPortResponse> genForShowPort() {
+        // basic
+        HttpRequestDef.Builder<ShowPortRequest, ShowPortResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPortRequest.class, ShowPortResponse.class)
+                .withName("ShowPort")
+                .withUri("/v3/{project_id}/ports/{port_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("port_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPortRequest::getPortId, ShowPortRequest::setPortId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowPortTagsRequest, ShowPortTagsResponse> showPortTags = genForShowPortTags();
 
     private static HttpRequestDef<ShowPortTagsRequest, ShowPortTagsResponse> genForShowPortTags() {
@@ -1595,6 +1795,23 @@ public class VpcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPortTagsRequest::getPortId, ShowPortTagsRequest::setPortId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> showQuota = genForShowQuota();
+
+    private static HttpRequestDef<ShowQuotaRequest, ShowQuotaResponse> genForShowQuota() {
+        // basic
+        HttpRequestDef.Builder<ShowQuotaRequest, ShowQuotaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowQuotaRequest.class, ShowQuotaResponse.class)
+                .withName("ShowQuota")
+                .withUri("/v3/{project_id}/vpc/quotas")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -1764,6 +1981,29 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTrafficMirrorSessionRequest::getTrafficMirrorSessionId,
                 ShowTrafficMirrorSessionRequest::setTrafficMirrorSessionId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowVirsubnetRequest, ShowVirsubnetResponse> showVirsubnet =
+        genForShowVirsubnet();
+
+    private static HttpRequestDef<ShowVirsubnetRequest, ShowVirsubnetResponse> genForShowVirsubnet() {
+        // basic
+        HttpRequestDef.Builder<ShowVirsubnetRequest, ShowVirsubnetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowVirsubnetRequest.class, ShowVirsubnetResponse.class)
+                .withName("ShowVirsubnet")
+                .withUri("/v3/{project_id}/vpc/virsubnets/{virsubnet_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("virsubnet_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVirsubnetRequest::getVirsubnetId, ShowVirsubnetRequest::setVirsubnetId));
 
         // response
 
@@ -3000,6 +3240,39 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAddressGroupRequest::getEnterpriseProjectId,
                 ListAddressGroupRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAddressGroupsDependencyRequest, ListAddressGroupsDependencyResponse> listAddressGroupsDependency =
+        genForListAddressGroupsDependency();
+
+    private static HttpRequestDef<ListAddressGroupsDependencyRequest, ListAddressGroupsDependencyResponse> genForListAddressGroupsDependency() {
+        // basic
+        HttpRequestDef.Builder<ListAddressGroupsDependencyRequest, ListAddressGroupsDependencyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAddressGroupsDependencyRequest.class,
+                    ListAddressGroupsDependencyResponse.class)
+                .withName("ListAddressGroupsDependency")
+                .withUri("/v3/{project_id}/vpc/list-address-groups-dependency")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAddressGroupsDependencyRequest::getId,
+                ListAddressGroupsDependencyRequest::setId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAddressGroupsDependencyRequest::getEnterpriseProjectId,
+                ListAddressGroupsDependencyRequest::setEnterpriseProjectId));
 
         // response
 

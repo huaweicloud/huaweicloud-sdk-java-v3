@@ -28,6 +28,11 @@ public class EstimateResizeRequestBody {
 
     private String promotionPlanId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "handle_type")
+
+    private String handleType;
+
     public EstimateResizeRequestBody withDesktopPoolId(String desktopPoolId) {
         this.desktopPoolId = desktopPoolId;
         return this;
@@ -95,6 +100,23 @@ public class EstimateResizeRequestBody {
         this.promotionPlanId = promotionPlanId;
     }
 
+    public EstimateResizeRequestBody withHandleType(String handleType) {
+        this.handleType = handleType;
+        return this;
+    }
+
+    /**
+     * 处理类型 - ONLY_FOR_EXPAND：仅对新扩容桌面生效 - FOR_EXPAND_AND_IDLE：对新扩容桌面与空闲桌面生效 - FOR_EXPAND_AND_ALL：对新扩容桌面与已有全部桌面生效
+     * @return handleType
+     */
+    public String getHandleType() {
+        return handleType;
+    }
+
+    public void setHandleType(String handleType) {
+        this.handleType = handleType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -106,12 +128,13 @@ public class EstimateResizeRequestBody {
         EstimateResizeRequestBody that = (EstimateResizeRequestBody) obj;
         return Objects.equals(this.desktopPoolId, that.desktopPoolId)
             && Objects.equals(this.desktopIds, that.desktopIds)
-            && Objects.equals(this.promotionPlanId, that.promotionPlanId);
+            && Objects.equals(this.promotionPlanId, that.promotionPlanId)
+            && Objects.equals(this.handleType, that.handleType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktopPoolId, desktopIds, promotionPlanId);
+        return Objects.hash(desktopPoolId, desktopIds, promotionPlanId, handleType);
     }
 
     @Override
@@ -121,6 +144,7 @@ public class EstimateResizeRequestBody {
         sb.append("    desktopPoolId: ").append(toIndentedString(desktopPoolId)).append("\n");
         sb.append("    desktopIds: ").append(toIndentedString(desktopIds)).append("\n");
         sb.append("    promotionPlanId: ").append(toIndentedString(promotionPlanId)).append("\n");
+        sb.append("    handleType: ").append(toIndentedString(handleType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

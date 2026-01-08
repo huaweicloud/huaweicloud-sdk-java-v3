@@ -344,6 +344,11 @@ public class ClusterSpec {
     private ClusterExtendParam extendParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "supportIstio")
+
+    private Boolean supportIstio;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enableMasterVolumeEncryption")
 
     private Boolean enableMasterVolumeEncryption;
@@ -875,6 +880,23 @@ public class ClusterSpec {
         this.extendParam = extendParam;
     }
 
+    public ClusterSpec withSupportIstio(Boolean supportIstio) {
+        this.supportIstio = supportIstio;
+        return this;
+    }
+
+    /**
+     * 支持Istio
+     * @return supportIstio
+     */
+    public Boolean getSupportIstio() {
+        return supportIstio;
+    }
+
+    public void setSupportIstio(Boolean supportIstio) {
+        this.supportIstio = supportIstio;
+    }
+
     public ClusterSpec withEnableMasterVolumeEncryption(Boolean enableMasterVolumeEncryption) {
         this.enableMasterVolumeEncryption = enableMasterVolumeEncryption;
         return this;
@@ -1036,6 +1058,7 @@ public class ClusterSpec {
             && Objects.equals(this.clusterTags, that.clusterTags)
             && Objects.equals(this.kubeProxyMode, that.kubeProxyMode) && Objects.equals(this.az, that.az)
             && Objects.equals(this.extendParam, that.extendParam)
+            && Objects.equals(this.supportIstio, that.supportIstio)
             && Objects.equals(this.enableMasterVolumeEncryption, that.enableMasterVolumeEncryption)
             && Objects.equals(this.enableDistMgt, that.enableDistMgt)
             && Objects.equals(this.deletionProtection, that.deletionProtection)
@@ -1069,6 +1092,7 @@ public class ClusterSpec {
             kubeProxyMode,
             az,
             extendParam,
+            supportIstio,
             enableMasterVolumeEncryption,
             enableDistMgt,
             deletionProtection,
@@ -1104,6 +1128,7 @@ public class ClusterSpec {
         sb.append("    kubeProxyMode: ").append(toIndentedString(kubeProxyMode)).append("\n");
         sb.append("    az: ").append(toIndentedString(az)).append("\n");
         sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
+        sb.append("    supportIstio: ").append(toIndentedString(supportIstio)).append("\n");
         sb.append("    enableMasterVolumeEncryption: ")
             .append(toIndentedString(enableMasterVolumeEncryption))
             .append("\n");

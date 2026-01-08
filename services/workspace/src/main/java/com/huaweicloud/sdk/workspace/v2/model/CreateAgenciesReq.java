@@ -102,6 +102,81 @@ public class CreateAgenciesReq {
 
     private SceneEnum scene;
 
+    /**
+     * 操作类型。 - CREATE 创建 - FIX 修复
+     */
+    public static final class ActionEnum {
+
+        /**
+         * Enum CREATE for value: "CREATE"
+         */
+        public static final ActionEnum CREATE = new ActionEnum("CREATE");
+
+        /**
+         * Enum FIX for value: "FIX"
+         */
+        public static final ActionEnum FIX = new ActionEnum("FIX");
+
+        private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ActionEnum> createStaticFields() {
+            Map<String, ActionEnum> map = new HashMap<>();
+            map.put("CREATE", CREATE);
+            map.put("FIX", FIX);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ActionEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ActionEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
+        }
+
+        public static ActionEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ActionEnum) {
+                return this.value.equals(((ActionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action")
+
+    private ActionEnum action;
+
     public CreateAgenciesReq withScene(SceneEnum scene) {
         this.scene = scene;
         return this;
@@ -119,6 +194,23 @@ public class CreateAgenciesReq {
         this.scene = scene;
     }
 
+    public CreateAgenciesReq withAction(ActionEnum action) {
+        this.action = action;
+        return this;
+    }
+
+    /**
+     * 操作类型。 - CREATE 创建 - FIX 修复
+     * @return action
+     */
+    public ActionEnum getAction() {
+        return action;
+    }
+
+    public void setAction(ActionEnum action) {
+        this.action = action;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -128,12 +220,12 @@ public class CreateAgenciesReq {
             return false;
         }
         CreateAgenciesReq that = (CreateAgenciesReq) obj;
-        return Objects.equals(this.scene, that.scene);
+        return Objects.equals(this.scene, that.scene) && Objects.equals(this.action, that.action);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(scene);
+        return Objects.hash(scene, action);
     }
 
     @Override
@@ -141,6 +233,7 @@ public class CreateAgenciesReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateAgenciesReq {\n");
         sb.append("    scene: ").append(toIndentedString(scene)).append("\n");
+        sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -349,7 +349,7 @@ public class Domains {
     }
 
     /**
-     * 是否开启HTTPS加速。
+     * 是否开启HTTPS加速。取值意义： - 0：未开启 - 1：开启
      * @return httpsStatus
      */
     public Integer getHttpsStatus() {
@@ -468,7 +468,7 @@ public class Domains {
     }
 
     /**
-     * Range回源状态。
+     * Range回源状态。取值意义： - on：开启 - off：关闭
      * @return rangeStatus
      */
     public String getRangeStatus() {
@@ -485,7 +485,7 @@ public class Domains {
     }
 
     /**
-     * 回源跟随状态。
+     * 回源跟随状态。取值意义： - on：开启 - off：关闭
      * @return followStatus
      */
     public String getFollowStatus() {
@@ -502,7 +502,7 @@ public class Domains {
     }
 
     /**
-     * 是否暂停源站回源（off代表关闭 on代表开启）。
+     * 是否暂停源站回源。取值意义： - on：开启 - off：关闭
      * @return originStatus
      */
     public String getOriginStatus() {

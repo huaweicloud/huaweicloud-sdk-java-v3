@@ -67,7 +67,7 @@ public class MemberCheckJobResultGroup {
     }
 
     /**
-     * Get checkItems
+     * **参数解释**：分组检查项汇总。
      * @return checkItems
      */
     public List<MemberCheckJobResultItem> getCheckItems() {

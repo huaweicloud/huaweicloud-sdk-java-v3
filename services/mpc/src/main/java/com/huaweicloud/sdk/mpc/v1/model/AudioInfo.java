@@ -35,6 +35,16 @@ public class AudioInfo {
 
     private Long bitrateBps;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "duration")
+
+    private String duration;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "duration_ms")
+
+    private String durationMs;
+
     public AudioInfo withCodec(String codec) {
         this.codec = codec;
         return this;
@@ -128,6 +138,40 @@ public class AudioInfo {
         this.bitrateBps = bitrateBps;
     }
 
+    public AudioInfo withDuration(String duration) {
+        this.duration = duration;
+        return this;
+    }
+
+    /**
+     * 音频流时长，单位：秒
+     * @return duration
+     */
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public AudioInfo withDurationMs(String durationMs) {
+        this.durationMs = durationMs;
+        return this;
+    }
+
+    /**
+     * 音频流时长，单位：毫秒
+     * @return durationMs
+     */
+    public String getDurationMs() {
+        return durationMs;
+    }
+
+    public void setDurationMs(String durationMs) {
+        this.durationMs = durationMs;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -139,12 +183,13 @@ public class AudioInfo {
         AudioInfo that = (AudioInfo) obj;
         return Objects.equals(this.codec, that.codec) && Objects.equals(this.sample, that.sample)
             && Objects.equals(this.channels, that.channels) && Objects.equals(this.bitrate, that.bitrate)
-            && Objects.equals(this.bitrateBps, that.bitrateBps);
+            && Objects.equals(this.bitrateBps, that.bitrateBps) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.durationMs, that.durationMs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(codec, sample, channels, bitrate, bitrateBps);
+        return Objects.hash(codec, sample, channels, bitrate, bitrateBps, duration, durationMs);
     }
 
     @Override
@@ -156,6 +201,8 @@ public class AudioInfo {
         sb.append("    channels: ").append(toIndentedString(channels)).append("\n");
         sb.append("    bitrate: ").append(toIndentedString(bitrate)).append("\n");
         sb.append("    bitrateBps: ").append(toIndentedString(bitrateBps)).append("\n");
+        sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+        sb.append("    durationMs: ").append(toIndentedString(durationMs)).append("\n");
         sb.append("}");
         return sb.toString();
     }

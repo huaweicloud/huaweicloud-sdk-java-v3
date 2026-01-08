@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.workspace.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -29,6 +32,11 @@ public class ListPolicyGroupInfoRequest {
     @JsonProperty(value = "policy_group_name")
 
     private String policyGroupName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_group_names")
+
+    private List<String> policyGroupNames = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority")
@@ -117,6 +125,39 @@ public class ListPolicyGroupInfoRequest {
         this.policyGroupName = policyGroupName;
     }
 
+    public ListPolicyGroupInfoRequest withPolicyGroupNames(List<String> policyGroupNames) {
+        this.policyGroupNames = policyGroupNames;
+        return this;
+    }
+
+    public ListPolicyGroupInfoRequest addPolicyGroupNamesItem(String policyGroupNamesItem) {
+        if (this.policyGroupNames == null) {
+            this.policyGroupNames = new ArrayList<>();
+        }
+        this.policyGroupNames.add(policyGroupNamesItem);
+        return this;
+    }
+
+    public ListPolicyGroupInfoRequest withPolicyGroupNames(Consumer<List<String>> policyGroupNamesSetter) {
+        if (this.policyGroupNames == null) {
+            this.policyGroupNames = new ArrayList<>();
+        }
+        policyGroupNamesSetter.accept(this.policyGroupNames);
+        return this;
+    }
+
+    /**
+     * 根据批量策略组名字过滤结果。
+     * @return policyGroupNames
+     */
+    public List<String> getPolicyGroupNames() {
+        return policyGroupNames;
+    }
+
+    public void setPolicyGroupNames(List<String> policyGroupNames) {
+        this.policyGroupNames = policyGroupNames;
+    }
+
     public ListPolicyGroupInfoRequest withPriority(Integer priority) {
         this.priority = priority;
         return this;
@@ -182,13 +223,15 @@ public class ListPolicyGroupInfoRequest {
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.policyGroupId, that.policyGroupId)
             && Objects.equals(this.policyGroupName, that.policyGroupName)
+            && Objects.equals(this.policyGroupNames, that.policyGroupNames)
             && Objects.equals(this.priority, that.priority) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, offset, policyGroupId, policyGroupName, priority, updateTime, description);
+        return Objects
+            .hash(limit, offset, policyGroupId, policyGroupName, policyGroupNames, priority, updateTime, description);
     }
 
     @Override
@@ -199,6 +242,7 @@ public class ListPolicyGroupInfoRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    policyGroupId: ").append(toIndentedString(policyGroupId)).append("\n");
         sb.append("    policyGroupName: ").append(toIndentedString(policyGroupName)).append("\n");
+        sb.append("    policyGroupNames: ").append(toIndentedString(policyGroupNames)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

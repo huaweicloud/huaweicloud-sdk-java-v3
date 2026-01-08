@@ -15,6 +15,11 @@ import java.util.function.Consumer;
 public class HbaHistoryResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
@@ -38,6 +43,23 @@ public class HbaHistoryResult {
     @JsonProperty(value = "after_confs")
 
     private List<HbaConfResult> afterConfs = null;
+
+    public HbaHistoryResult withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 客户端接入认证修改记录的ID。 **取值范围**: 不涉及。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public HbaHistoryResult withStatus(String status) {
         this.status = status;
@@ -165,20 +187,21 @@ public class HbaHistoryResult {
             return false;
         }
         HbaHistoryResult that = (HbaHistoryResult) obj;
-        return Objects.equals(this.status, that.status) && Objects.equals(this.time, that.time)
-            && Objects.equals(this.failReason, that.failReason) && Objects.equals(this.beforeConfs, that.beforeConfs)
-            && Objects.equals(this.afterConfs, that.afterConfs);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.time, that.time) && Objects.equals(this.failReason, that.failReason)
+            && Objects.equals(this.beforeConfs, that.beforeConfs) && Objects.equals(this.afterConfs, that.afterConfs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, time, failReason, beforeConfs, afterConfs);
+        return Objects.hash(id, status, time, failReason, beforeConfs, afterConfs);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class HbaHistoryResult {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("    failReason: ").append(toIndentedString(failReason)).append("\n");

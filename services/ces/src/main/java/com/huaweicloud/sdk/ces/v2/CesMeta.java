@@ -915,6 +915,11 @@ public class CesMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAlarmHistoriesRequest.OrderByEnum.class),
             f -> f.withMarshaller(ListAlarmHistoriesRequest::getOrderBy, ListAlarmHistoriesRequest::setOrderBy));
+        builder.<String>withRequestField("mask_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmHistoriesRequest::getMaskStatus, ListAlarmHistoriesRequest::setMaskStatus));
 
         // response
 

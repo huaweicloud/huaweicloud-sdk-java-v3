@@ -94,7 +94,7 @@ public class ListDesktopNamePolicyRequest {
     /**
      * 用于分页查询，查询的起始记录序号，从0开始。
      * minimum: 0
-     * maximum: 50
+     * maximum: 2147483647
      * @return offset
      */
     public Integer getOffset() {
@@ -111,9 +111,9 @@ public class ListDesktopNamePolicyRequest {
     }
 
     /**
-     * 用于分页查询，取值范围0-50，默认值50。
+     * 用于分页查询，取值范围0-100，默认值100。
      * minimum: 0
-     * maximum: 50
+     * maximum: 100
      * @return limit
      */
     public Integer getLimit() {

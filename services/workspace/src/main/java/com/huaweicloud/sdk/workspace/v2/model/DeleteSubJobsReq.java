@@ -45,7 +45,7 @@ public class DeleteSubJobsReq {
     }
 
     /**
-     * 任务ID列表，只能删除SUCCESS、FAILED两种状态。job_ids和delete_by_status必传一个。
+     * 子任务ID列表，非任务ID，只能删除SUCCESS、FAILED两种状态。job_ids和delete_by_status必传一个。
      * @return jobIds
      */
     public List<String> getJobIds() {

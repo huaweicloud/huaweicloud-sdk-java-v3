@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * UpdatePoolSessionPersistenceOption
+ * **参数解释**：会话持久性对象。  **约束限制**：慢启动与会话保持不能同时开启。若都开启则会导致会话保持失效。 [荷兰region不支持该字段，请勿使用。](tag:dt)
  */
 public class UpdatePoolSessionPersistenceOption {
 
@@ -112,7 +112,7 @@ public class UpdatePoolSessionPersistenceOption {
     }
 
     /**
-     * **参数解释**：cookie名称。  **约束限制**： - 只有当type为APP_COOKIE时才有效。其他情况下传该字段会报错。 [- 网关型LB，不支持该特性，请勿使用。](tag:hws_eu)  **取值范围**：最大长度1024个字符。  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:hws_eu,hcso_dt)
+     * **参数解释**：cookie名称。  **约束限制**： - 只有当type为APP_COOKIE时才有效。其他情况下传该字段会报错。 - 网关型LB，不支持该特性，请勿使用。  **取值范围**：最大长度1024个字符。  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:hws_eu,hcso_dt)
      * @return cookieName
      */
     public String getCookieName() {

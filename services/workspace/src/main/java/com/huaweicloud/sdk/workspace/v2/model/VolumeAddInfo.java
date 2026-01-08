@@ -25,6 +25,16 @@ public class VolumeAddInfo {
 
     private Integer size;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iops")
+
+    private Integer iops;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "throughput")
+
+    private Integer throughput;
+
     public VolumeAddInfo withId(String id) {
         this.id = id;
         return this;
@@ -78,6 +88,44 @@ public class VolumeAddInfo {
         this.size = size;
     }
 
+    public VolumeAddInfo withIops(Integer iops) {
+        this.iops = iops;
+        return this;
+    }
+
+    /**
+     * iops，云硬盘每秒进行读写的操作次数。
+     * minimum: 0
+     * maximum: 16380000
+     * @return iops
+     */
+    public Integer getIops() {
+        return iops;
+    }
+
+    public void setIops(Integer iops) {
+        this.iops = iops;
+    }
+
+    public VolumeAddInfo withThroughput(Integer throughput) {
+        this.throughput = throughput;
+        return this;
+    }
+
+    /**
+     * 吞吐量，云硬盘每秒成功传送的数据量，即读取和写入的数据量。
+     * minimum: 0
+     * maximum: 4095000
+     * @return throughput
+     */
+    public Integer getThroughput() {
+        return throughput;
+    }
+
+    public void setThroughput(Integer throughput) {
+        this.throughput = throughput;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -88,12 +136,13 @@ public class VolumeAddInfo {
         }
         VolumeAddInfo that = (VolumeAddInfo) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.size, that.size);
+            && Objects.equals(this.size, that.size) && Objects.equals(this.iops, that.iops)
+            && Objects.equals(this.throughput, that.throughput);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, type, size);
+        return Objects.hash(id, type, size, iops, throughput);
     }
 
     @Override
@@ -103,6 +152,8 @@ public class VolumeAddInfo {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    iops: ").append(toIndentedString(iops)).append("\n");
+        sb.append("    throughput: ").append(toIndentedString(throughput)).append("\n");
         sb.append("}");
         return sb.toString();
     }

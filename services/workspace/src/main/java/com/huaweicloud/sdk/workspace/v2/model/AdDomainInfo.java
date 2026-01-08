@@ -100,6 +100,16 @@ public class AdDomainInfo {
 
     private String domainPassword;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cba_enabled")
+
+    private Boolean cbaEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "certificate_id")
+
+    private String certificateId;
+
     public AdDomainInfo withDomainType(DomainTypeEnum domainType) {
         this.domainType = domainType;
         return this;
@@ -151,6 +161,40 @@ public class AdDomainInfo {
         this.domainPassword = domainPassword;
     }
 
+    public AdDomainInfo withCbaEnabled(Boolean cbaEnabled) {
+        this.cbaEnabled = cbaEnabled;
+        return this;
+    }
+
+    /**
+     * 是否开启智能卡认证。
+     * @return cbaEnabled
+     */
+    public Boolean getCbaEnabled() {
+        return cbaEnabled;
+    }
+
+    public void setCbaEnabled(Boolean cbaEnabled) {
+        this.cbaEnabled = cbaEnabled;
+    }
+
+    public AdDomainInfo withCertificateId(String certificateId) {
+        this.certificateId = certificateId;
+        return this;
+    }
+
+    /**
+     * 智能卡证书id。
+     * @return certificateId
+     */
+    public String getCertificateId() {
+        return certificateId;
+    }
+
+    public void setCertificateId(String certificateId) {
+        this.certificateId = certificateId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -162,12 +206,14 @@ public class AdDomainInfo {
         AdDomainInfo that = (AdDomainInfo) obj;
         return Objects.equals(this.domainType, that.domainType)
             && Objects.equals(this.domainAdminAccount, that.domainAdminAccount)
-            && Objects.equals(this.domainPassword, that.domainPassword);
+            && Objects.equals(this.domainPassword, that.domainPassword)
+            && Objects.equals(this.cbaEnabled, that.cbaEnabled)
+            && Objects.equals(this.certificateId, that.certificateId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domainType, domainAdminAccount, domainPassword);
+        return Objects.hash(domainType, domainAdminAccount, domainPassword, cbaEnabled, certificateId);
     }
 
     @Override
@@ -177,6 +223,8 @@ public class AdDomainInfo {
         sb.append("    domainType: ").append(toIndentedString(domainType)).append("\n");
         sb.append("    domainAdminAccount: ").append(toIndentedString(domainAdminAccount)).append("\n");
         sb.append("    domainPassword: ").append(toIndentedString(domainPassword)).append("\n");
+        sb.append("    cbaEnabled: ").append(toIndentedString(cbaEnabled)).append("\n");
+        sb.append("    certificateId: ").append(toIndentedString(certificateId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

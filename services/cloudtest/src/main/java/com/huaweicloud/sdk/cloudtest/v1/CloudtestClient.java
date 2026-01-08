@@ -88,6 +88,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestReportCustomDetailByUriR
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestReportCustomDetailByUriResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DownloadAssetTemplateRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DownloadAssetTemplateResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.DownloadStepImageNewRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DownloadStepImageNewResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ExportFactorRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ExportFactorResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ImportAssetRequest;
@@ -1256,6 +1258,35 @@ public class CloudtestClient {
     public SyncInvoker<DeleteTestReportCustomDetailByUriRequest, DeleteTestReportCustomDetailByUriResponse> deleteTestReportCustomDetailByUriInvoker(
         DeleteTestReportCustomDetailByUriRequest request) {
         return new SyncInvoker<>(request, CloudtestMeta.deleteTestReportCustomDetailByUri, hcClient);
+    }
+
+    /**
+     * 下载图片
+     *
+     * 下载图片
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadStepImageNewRequest 请求对象
+     * @return DownloadStepImageNewResponse
+     */
+    public DownloadStepImageNewResponse downloadStepImageNew(DownloadStepImageNewRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.downloadStepImageNew);
+    }
+
+    /**
+     * 下载图片
+     *
+     * 下载图片
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadStepImageNewRequest 请求对象
+     * @return SyncInvoker<DownloadStepImageNewRequest, DownloadStepImageNewResponse>
+     */
+    public SyncInvoker<DownloadStepImageNewRequest, DownloadStepImageNewResponse> downloadStepImageNewInvoker(
+        DownloadStepImageNewRequest request) {
+        return new SyncInvoker<>(request, CloudtestMeta.downloadStepImageNew, hcClient);
     }
 
     /**

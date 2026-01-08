@@ -38,6 +38,11 @@ public class CreateCondition {
 
     private String index;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "value_list_id")
+
+    private String valueListId;
+
     public CreateCondition withCategory(String category) {
         this.category = category;
         return this;
@@ -139,6 +144,23 @@ public class CreateCondition {
         this.index = index;
     }
 
+    public CreateCondition withValueListId(String valueListId) {
+        this.valueListId = valueListId;
+        return this;
+    }
+
+    /**
+     * 引用表id。当logic_operation参数以any或者all结尾时，需要传该参数。此外，引用表类型要与category类型保持一致。
+     * @return valueListId
+     */
+    public String getValueListId() {
+        return valueListId;
+    }
+
+    public void setValueListId(String valueListId) {
+        this.valueListId = valueListId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -151,12 +173,12 @@ public class CreateCondition {
         return Objects.equals(this.category, that.category) && Objects.equals(this.contents, that.contents)
             && Objects.equals(this.logicOperation, that.logicOperation)
             && Objects.equals(this.checkAllIndexesLogic, that.checkAllIndexesLogic)
-            && Objects.equals(this.index, that.index);
+            && Objects.equals(this.index, that.index) && Objects.equals(this.valueListId, that.valueListId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(category, contents, logicOperation, checkAllIndexesLogic, index);
+        return Objects.hash(category, contents, logicOperation, checkAllIndexesLogic, index, valueListId);
     }
 
     @Override
@@ -168,6 +190,7 @@ public class CreateCondition {
         sb.append("    logicOperation: ").append(toIndentedString(logicOperation)).append("\n");
         sb.append("    checkAllIndexesLogic: ").append(toIndentedString(checkAllIndexesLogic)).append("\n");
         sb.append("    index: ").append(toIndentedString(index)).append("\n");
+        sb.append("    valueListId: ").append(toIndentedString(valueListId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -12,9 +12,84 @@ import java.util.function.Consumer;
 public class UpgradeNodePool {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kind")
+
+    private String kind;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "apiVersion")
+
+    private String apiVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metadata")
+
+    private NodePoolMetadata metadata;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec")
 
     private NodePoolUpgradeSpec spec;
+
+    public UpgradeNodePool withKind(String kind) {
+        this.kind = kind;
+        return this;
+    }
+
+    /**
+     * API类型，固定值“NodePool”。
+     * @return kind
+     */
+    public String getKind() {
+        return kind;
+    }
+
+    public void setKind(String kind) {
+        this.kind = kind;
+    }
+
+    public UpgradeNodePool withApiVersion(String apiVersion) {
+        this.apiVersion = apiVersion;
+        return this;
+    }
+
+    /**
+     * API版本，固定值“v3”。
+     * @return apiVersion
+     */
+    public String getApiVersion() {
+        return apiVersion;
+    }
+
+    public void setApiVersion(String apiVersion) {
+        this.apiVersion = apiVersion;
+    }
+
+    public UpgradeNodePool withMetadata(NodePoolMetadata metadata) {
+        this.metadata = metadata;
+        return this;
+    }
+
+    public UpgradeNodePool withMetadata(Consumer<NodePoolMetadata> metadataSetter) {
+        if (this.metadata == null) {
+            this.metadata = new NodePoolMetadata();
+            metadataSetter.accept(this.metadata);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get metadata
+     * @return metadata
+     */
+    public NodePoolMetadata getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(NodePoolMetadata metadata) {
+        this.metadata = metadata;
+    }
 
     public UpgradeNodePool withSpec(NodePoolUpgradeSpec spec) {
         this.spec = spec;
@@ -51,18 +126,22 @@ public class UpgradeNodePool {
             return false;
         }
         UpgradeNodePool that = (UpgradeNodePool) obj;
-        return Objects.equals(this.spec, that.spec);
+        return Objects.equals(this.kind, that.kind) && Objects.equals(this.apiVersion, that.apiVersion)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(spec);
+        return Objects.hash(kind, apiVersion, metadata, spec);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpgradeNodePool {\n");
+        sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
+        sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
         sb.append("}");
         return sb.toString();

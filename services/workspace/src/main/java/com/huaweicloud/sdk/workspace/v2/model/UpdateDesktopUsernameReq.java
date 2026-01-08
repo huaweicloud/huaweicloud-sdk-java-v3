@@ -16,9 +16,19 @@ public class UpdateDesktopUsernameReq {
     private String oldUsername;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "old_user_domain")
+
+    private String oldUserDomain;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_username")
 
     private String newUsername;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "new_user_domain")
+
+    private String newUserDomain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_reboot")
@@ -42,6 +52,23 @@ public class UpdateDesktopUsernameReq {
         this.oldUsername = oldUsername;
     }
 
+    public UpdateDesktopUsernameReq withOldUserDomain(String oldUserDomain) {
+        this.oldUserDomain = oldUserDomain;
+        return this;
+    }
+
+    /**
+     * 桌面关联原用户名的域。
+     * @return oldUserDomain
+     */
+    public String getOldUserDomain() {
+        return oldUserDomain;
+    }
+
+    public void setOldUserDomain(String oldUserDomain) {
+        this.oldUserDomain = oldUserDomain;
+    }
+
     public UpdateDesktopUsernameReq withNewUsername(String newUsername) {
         this.newUsername = newUsername;
         return this;
@@ -57,6 +84,23 @@ public class UpdateDesktopUsernameReq {
 
     public void setNewUsername(String newUsername) {
         this.newUsername = newUsername;
+    }
+
+    public UpdateDesktopUsernameReq withNewUserDomain(String newUserDomain) {
+        this.newUserDomain = newUserDomain;
+        return this;
+    }
+
+    /**
+     * 桌面关联新用户名的域。
+     * @return newUserDomain
+     */
+    public String getNewUserDomain() {
+        return newUserDomain;
+    }
+
+    public void setNewUserDomain(String newUserDomain) {
+        this.newUserDomain = newUserDomain;
     }
 
     public UpdateDesktopUsernameReq withIsReboot(Boolean isReboot) {
@@ -85,13 +129,15 @@ public class UpdateDesktopUsernameReq {
             return false;
         }
         UpdateDesktopUsernameReq that = (UpdateDesktopUsernameReq) obj;
-        return Objects.equals(this.oldUsername, that.oldUsername) && Objects.equals(this.newUsername, that.newUsername)
-            && Objects.equals(this.isReboot, that.isReboot);
+        return Objects.equals(this.oldUsername, that.oldUsername)
+            && Objects.equals(this.oldUserDomain, that.oldUserDomain)
+            && Objects.equals(this.newUsername, that.newUsername)
+            && Objects.equals(this.newUserDomain, that.newUserDomain) && Objects.equals(this.isReboot, that.isReboot);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(oldUsername, newUsername, isReboot);
+        return Objects.hash(oldUsername, oldUserDomain, newUsername, newUserDomain, isReboot);
     }
 
     @Override
@@ -99,7 +145,9 @@ public class UpdateDesktopUsernameReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateDesktopUsernameReq {\n");
         sb.append("    oldUsername: ").append(toIndentedString(oldUsername)).append("\n");
+        sb.append("    oldUserDomain: ").append(toIndentedString(oldUserDomain)).append("\n");
         sb.append("    newUsername: ").append(toIndentedString(newUsername)).append("\n");
+        sb.append("    newUserDomain: ").append(toIndentedString(newUserDomain)).append("\n");
         sb.append("    isReboot: ").append(toIndentedString(isReboot)).append("\n");
         sb.append("}");
         return sb.toString();

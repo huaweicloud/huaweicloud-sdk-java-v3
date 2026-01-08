@@ -283,7 +283,7 @@ public class ListTransitSubnetRequest {
     }
 
     /**
-     * 中转子网状态。 取值范围： ACTIVE： 当前资源状态正常。 INACTIVE： 不可用。
+     * 中转子网状态。 取值范围： - ACTIVE： 当前资源状态正常。 - INACTIVE： 不可用。
      * @return status
      */
     public List<String> getStatus() {

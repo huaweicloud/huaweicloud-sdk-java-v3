@@ -21,6 +21,11 @@ public class ChangeUserPrivilegeGroupUserInfo {
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain")
+
+    private String domain;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_privilege_group")
 
     private String userPrivilegeGroup;
@@ -117,6 +122,23 @@ public class ChangeUserPrivilegeGroupUserInfo {
         this.userName = userName;
     }
 
+    public ChangeUserPrivilegeGroupUserInfo withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    /**
+     * 用户所属域。
+     * @return domain
+     */
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
     public ChangeUserPrivilegeGroupUserInfo withUserPrivilegeGroup(String userPrivilegeGroup) {
         this.userPrivilegeGroup = userPrivilegeGroup;
         return this;
@@ -160,13 +182,13 @@ public class ChangeUserPrivilegeGroupUserInfo {
             return false;
         }
         ChangeUserPrivilegeGroupUserInfo that = (ChangeUserPrivilegeGroupUserInfo) obj;
-        return Objects.equals(this.userName, that.userName)
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.domain, that.domain)
             && Objects.equals(this.userPrivilegeGroup, that.userPrivilegeGroup) && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, userPrivilegeGroup, type);
+        return Objects.hash(userName, domain, userPrivilegeGroup, type);
     }
 
     @Override
@@ -174,6 +196,7 @@ public class ChangeUserPrivilegeGroupUserInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class ChangeUserPrivilegeGroupUserInfo {\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    userPrivilegeGroup: ").append(toIndentedString(userPrivilegeGroup)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");

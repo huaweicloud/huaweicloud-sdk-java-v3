@@ -21,6 +21,11 @@ public class UserInGroup {
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain")
+
+    private String domain;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_email")
 
     private String userEmail;
@@ -77,6 +82,23 @@ public class UserInGroup {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public UserInGroup withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    /**
+     * 用户所属域名。
+     * @return domain
+     */
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
     }
 
     public UserInGroup withUserEmail(String userEmail) {
@@ -174,15 +196,16 @@ public class UserInGroup {
         }
         UserInGroup that = (UserInGroup) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.userName, that.userName)
-            && Objects.equals(this.userEmail, that.userEmail) && Objects.equals(this.userPhone, that.userPhone)
-            && Objects.equals(this.totalDesktops, that.totalDesktops)
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.userEmail, that.userEmail)
+            && Objects.equals(this.userPhone, that.userPhone) && Objects.equals(this.totalDesktops, that.totalDesktops)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, userName, userEmail, userPhone, totalDesktops, enterpriseProjectId, description);
+        return Objects
+            .hash(id, userName, domain, userEmail, userPhone, totalDesktops, enterpriseProjectId, description);
     }
 
     @Override
@@ -191,6 +214,7 @@ public class UserInGroup {
         sb.append("class UserInGroup {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    userEmail: ").append(toIndentedString(userEmail)).append("\n");
         sb.append("    userPhone: ").append(toIndentedString(userPhone)).append("\n");
         sb.append("    totalDesktops: ").append(toIndentedString(totalDesktops)).append("\n");

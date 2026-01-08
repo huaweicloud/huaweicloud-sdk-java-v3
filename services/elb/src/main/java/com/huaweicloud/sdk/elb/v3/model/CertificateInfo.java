@@ -114,7 +114,7 @@ public class CertificateInfo {
     private String source;
 
     /**
-     * **参数解释**：修改保护状态。  **取值范围**：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护，即禁止通过控制台修改。
+     * **参数解释**：修改保护状态。  **取值范围**：  - nonProtection: 不保护 - consoleProtection: 控制台修改保护，即禁止通过控制台修改。
      */
     public static final class ProtectionStatusEnum {
 
@@ -192,6 +192,11 @@ public class CertificateInfo {
     @JsonProperty(value = "protection_reason")
 
     private String protectionReason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
 
     public CertificateInfo withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
@@ -538,7 +543,7 @@ public class CertificateInfo {
     }
 
     /**
-     * **参数解释**：修改保护状态。  **取值范围**：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护，即禁止通过控制台修改。
+     * **参数解释**：修改保护状态。  **取值范围**：  - nonProtection: 不保护 - consoleProtection: 控制台修改保护，即禁止通过控制台修改。
      * @return protectionStatus
      */
     public ProtectionStatusEnum getProtectionStatus() {
@@ -566,6 +571,23 @@ public class CertificateInfo {
         this.protectionReason = protectionReason;
     }
 
+    public CertificateInfo withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * **参数解释**：资源所属的企业项目ID。  **取值范围**： - \"0\"：表示资源属于default企业项目。 - UUID格式的字符串，表示非默认企业项目。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -588,7 +610,8 @@ public class CertificateInfo {
             && Objects.equals(this.commonName, that.commonName) && Objects.equals(this.fingerprint, that.fingerprint)
             && Objects.equals(this.subjectAlternativeNames, that.subjectAlternativeNames)
             && Objects.equals(this.source, that.source) && Objects.equals(this.protectionStatus, that.protectionStatus)
-            && Objects.equals(this.protectionReason, that.protectionReason);
+            && Objects.equals(this.protectionReason, that.protectionReason)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
@@ -613,7 +636,8 @@ public class CertificateInfo {
             subjectAlternativeNames,
             source,
             protectionStatus,
-            protectionReason);
+            protectionReason,
+            enterpriseProjectId);
     }
 
     @Override
@@ -641,6 +665,7 @@ public class CertificateInfo {
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    protectionStatus: ").append(toIndentedString(protectionStatus)).append("\n");
         sb.append("    protectionReason: ").append(toIndentedString(protectionReason)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

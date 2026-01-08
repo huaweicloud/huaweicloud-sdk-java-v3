@@ -268,6 +268,16 @@ public class FlinkJobConfig {
 
     private Integer realCuNumber;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_config")
+
+    private ResourceConfig resourceConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_config_version")
+
+    private String resourceConfigVersion;
+
     public FlinkJobConfig withCheckpointEnabled(Boolean checkpointEnabled) {
         this.checkpointEnabled = checkpointEnabled;
         return this;
@@ -932,6 +942,49 @@ public class FlinkJobConfig {
         this.realCuNumber = realCuNumber;
     }
 
+    public FlinkJobConfig withResourceConfig(ResourceConfig resourceConfig) {
+        this.resourceConfig = resourceConfig;
+        return this;
+    }
+
+    public FlinkJobConfig withResourceConfig(Consumer<ResourceConfig> resourceConfigSetter) {
+        if (this.resourceConfig == null) {
+            this.resourceConfig = new ResourceConfig();
+            resourceConfigSetter.accept(this.resourceConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get resourceConfig
+     * @return resourceConfig
+     */
+    public ResourceConfig getResourceConfig() {
+        return resourceConfig;
+    }
+
+    public void setResourceConfig(ResourceConfig resourceConfig) {
+        this.resourceConfig = resourceConfig;
+    }
+
+    public FlinkJobConfig withResourceConfigVersion(String resourceConfigVersion) {
+        this.resourceConfigVersion = resourceConfigVersion;
+        return this;
+    }
+
+    /**
+     * 资源配置版本。可选值 \"v1\" ,\"v2\".默认为“v1”。
+     * @return resourceConfigVersion
+     */
+    public String getResourceConfigVersion() {
+        return resourceConfigVersion;
+    }
+
+    public void setResourceConfigVersion(String resourceConfigVersion) {
+        this.resourceConfigVersion = resourceConfigVersion;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -969,7 +1022,9 @@ public class FlinkJobConfig {
             && Objects.equals(this.feature, that.feature) && Objects.equals(this.flinkVersion, that.flinkVersion)
             && Objects.equals(this.operatorConfig, that.operatorConfig)
             && Objects.equals(this.staticEstimatorConfig, that.staticEstimatorConfig)
-            && Objects.equals(this.realCuNumber, that.realCuNumber);
+            && Objects.equals(this.realCuNumber, that.realCuNumber)
+            && Objects.equals(this.resourceConfig, that.resourceConfig)
+            && Objects.equals(this.resourceConfigVersion, that.resourceConfigVersion);
     }
 
     @Override
@@ -1009,7 +1064,9 @@ public class FlinkJobConfig {
             flinkVersion,
             operatorConfig,
             staticEstimatorConfig,
-            realCuNumber);
+            realCuNumber,
+            resourceConfig,
+            resourceConfigVersion);
     }
 
     @Override
@@ -1052,6 +1109,8 @@ public class FlinkJobConfig {
         sb.append("    operatorConfig: ").append(toIndentedString(operatorConfig)).append("\n");
         sb.append("    staticEstimatorConfig: ").append(toIndentedString(staticEstimatorConfig)).append("\n");
         sb.append("    realCuNumber: ").append(toIndentedString(realCuNumber)).append("\n");
+        sb.append("    resourceConfig: ").append(toIndentedString(resourceConfig)).append("\n");
+        sb.append("    resourceConfigVersion: ").append(toIndentedString(resourceConfigVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -717,6 +717,9 @@ import com.huaweicloud.sdk.rds.v3.model.UpdateStatisticsResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateTdeStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateTdeStatusRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.UpdateTdeStatusResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateTimeZoneRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateTimeZoneRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.UpdateTimeZoneResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateToPeriodRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateToPeriodResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionPreCheckRequest;
@@ -6961,6 +6964,39 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateTdeStatusRequestBody.class),
             f -> f.withMarshaller(UpdateTdeStatusRequest::getBody, UpdateTdeStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTimeZoneRequest, UpdateTimeZoneResponse> updateTimeZone =
+        genForUpdateTimeZone();
+
+    private static HttpRequestDef<UpdateTimeZoneRequest, UpdateTimeZoneResponse> genForUpdateTimeZone() {
+        // basic
+        HttpRequestDef.Builder<UpdateTimeZoneRequest, UpdateTimeZoneResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateTimeZoneRequest.class, UpdateTimeZoneResponse.class)
+                .withName("UpdateTimeZone")
+                .withUri("/v3/{project_id}/instances/{instance_id}/timezone/modify")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTimeZoneRequest::getInstanceId, UpdateTimeZoneRequest::setInstanceId));
+        builder.<UpdateTimeZoneRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateTimeZoneRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(UpdateTimeZoneRequest::getXLanguage, UpdateTimeZoneRequest::setXLanguage));
+        builder.<UpdateTimeZoneRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateTimeZoneRequestBody.class),
+            f -> f.withMarshaller(UpdateTimeZoneRequest::getBody, UpdateTimeZoneRequest::setBody));
 
         // response
 

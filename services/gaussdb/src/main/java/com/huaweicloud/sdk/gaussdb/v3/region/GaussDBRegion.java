@@ -55,6 +55,11 @@ public class GaussDBRegion {
     public static final Region CN_NORTH_11 =
         new Region("cn-north-11", "https://gaussdbformysql.cn-north-11.myhuaweicloud.com");
 
+    public static final Region CN_EAST_5 = new Region("cn-east-5", "https://gaussdb-mysql.cn-east-5.myhuaweicloud.com");
+
+    public static final Region LA_NORTH_2 =
+        new Region("la-north-2", "https://gaussdb-mysql.la-north-2.myhuaweicloud.com");
+
     public static final Region ME_EAST_1 =
         new Region("me-east-1", "https://gaussdbformysql.me-east-1.myhuaweicloud.com");
 
@@ -80,6 +85,8 @@ public class GaussDBRegion {
         map.put("af-south-1", AF_SOUTH_1);
         map.put("cn-south-4", CN_SOUTH_4);
         map.put("cn-north-11", CN_NORTH_11);
+        map.put("cn-east-5", CN_EAST_5);
+        map.put("la-north-2", LA_NORTH_2);
         map.put("me-east-1", ME_EAST_1);
         return Collections.unmodifiableMap(map);
     }

@@ -61,7 +61,7 @@ public class UpdateCertificateOption {
     private String source;
 
     /**
-     * **参数解释**：修改保护状态   **约束限制**：不涉及   **取值范围**：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护   **默认取值**：不涉及
+     * **参数解释**：修改保护状态  **约束限制**：不涉及   **取值范围**：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护   **默认取值**：不涉及
      */
     public static final class ProtectionStatusEnum {
 
@@ -299,7 +299,7 @@ public class UpdateCertificateOption {
     }
 
     /**
-     * **参数解释**：修改保护状态   **约束限制**：不涉及   **取值范围**：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护   **默认取值**：不涉及
+     * **参数解释**：修改保护状态  **约束限制**：不涉及   **取值范围**：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护   **默认取值**：不涉及
      * @return protectionStatus
      */
     public ProtectionStatusEnum getProtectionStatus() {

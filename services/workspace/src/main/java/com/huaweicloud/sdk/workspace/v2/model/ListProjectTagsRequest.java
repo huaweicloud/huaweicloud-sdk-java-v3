@@ -25,6 +25,11 @@ public class ListProjectTagsRequest {
 
     private String key;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "value")
+
+    private String value;
+
     public ListProjectTagsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -69,7 +74,7 @@ public class ListProjectTagsRequest {
     }
 
     /**
-     * 查询指定标签。
+     * 查询指定标签key查询，key与value同时传入时，满足其中一个也能查询。
      * @return key
      */
     public String getKey() {
@@ -78,6 +83,23 @@ public class ListProjectTagsRequest {
 
     public void setKey(String key) {
         this.key = key;
+    }
+
+    public ListProjectTagsRequest withValue(String value) {
+        this.value = value;
+        return this;
+    }
+
+    /**
+     * 查询指定标签value查询，key与value同时传入时，满足其中一个也能查询。
+     * @return value
+     */
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 
     @Override
@@ -90,12 +112,12 @@ public class ListProjectTagsRequest {
         }
         ListProjectTagsRequest that = (ListProjectTagsRequest) obj;
         return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.key, that.key);
+            && Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, key);
+        return Objects.hash(offset, limit, key, value);
     }
 
     @Override
@@ -105,6 +127,7 @@ public class ListProjectTagsRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
+        sb.append("    value: ").append(toIndentedString(value)).append("\n");
         sb.append("}");
         return sb.toString();
     }

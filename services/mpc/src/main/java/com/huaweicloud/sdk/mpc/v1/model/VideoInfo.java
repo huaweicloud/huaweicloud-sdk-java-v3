@@ -40,6 +40,21 @@ public class VideoInfo {
 
     private String codec;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "duration")
+
+    private String duration;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "duration_ms")
+
+    private String durationMs;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rotate")
+
+    private Float rotate;
+
     public VideoInfo withWidth(Integer width) {
         this.width = width;
         return this;
@@ -152,6 +167,59 @@ public class VideoInfo {
         this.codec = codec;
     }
 
+    public VideoInfo withDuration(String duration) {
+        this.duration = duration;
+        return this;
+    }
+
+    /**
+     * 视频流时长，单位：秒
+     * @return duration
+     */
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public VideoInfo withDurationMs(String durationMs) {
+        this.durationMs = durationMs;
+        return this;
+    }
+
+    /**
+     * 视频流时长，单位：毫秒
+     * @return durationMs
+     */
+    public String getDurationMs() {
+        return durationMs;
+    }
+
+    public void setDurationMs(String durationMs) {
+        this.durationMs = durationMs;
+    }
+
+    public VideoInfo withRotate(Float rotate) {
+        this.rotate = rotate;
+        return this;
+    }
+
+    /**
+     * 视频拍摄时的选择角度，单位：度。 
+     * minimum: 0
+     * maximum: 3.6E+2
+     * @return rotate
+     */
+    public Float getRotate() {
+        return rotate;
+    }
+
+    public void setRotate(Float rotate) {
+        this.rotate = rotate;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -163,12 +231,14 @@ public class VideoInfo {
         VideoInfo that = (VideoInfo) obj;
         return Objects.equals(this.width, that.width) && Objects.equals(this.height, that.height)
             && Objects.equals(this.bitrate, that.bitrate) && Objects.equals(this.bitrateBps, that.bitrateBps)
-            && Objects.equals(this.frameRate, that.frameRate) && Objects.equals(this.codec, that.codec);
+            && Objects.equals(this.frameRate, that.frameRate) && Objects.equals(this.codec, that.codec)
+            && Objects.equals(this.duration, that.duration) && Objects.equals(this.durationMs, that.durationMs)
+            && Objects.equals(this.rotate, that.rotate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(width, height, bitrate, bitrateBps, frameRate, codec);
+        return Objects.hash(width, height, bitrate, bitrateBps, frameRate, codec, duration, durationMs, rotate);
     }
 
     @Override
@@ -181,6 +251,9 @@ public class VideoInfo {
         sb.append("    bitrateBps: ").append(toIndentedString(bitrateBps)).append("\n");
         sb.append("    frameRate: ").append(toIndentedString(frameRate)).append("\n");
         sb.append("    codec: ").append(toIndentedString(codec)).append("\n");
+        sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+        sb.append("    durationMs: ").append(toIndentedString(durationMs)).append("\n");
+        sb.append("    rotate: ").append(toIndentedString(rotate)).append("\n");
         sb.append("}");
         return sb.toString();
     }

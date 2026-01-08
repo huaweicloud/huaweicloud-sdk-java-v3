@@ -41,6 +41,16 @@ public class ImageWatermark {
     private String timelineDuration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "random_time_min")
+
+    private String randomTimeMin;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "random_time_max")
+
+    private String randomTimeMax;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_process")
 
     private String imageProcess;
@@ -215,6 +225,40 @@ public class ImageWatermark {
         this.timelineDuration = timelineDuration;
     }
 
+    public ImageWatermark withRandomTimeMin(String randomTimeMin) {
+        this.randomTimeMin = randomTimeMin;
+        return this;
+    }
+
+    /**
+     * 轮转间隔时间最小值，单位：秒 
+     * @return randomTimeMin
+     */
+    public String getRandomTimeMin() {
+        return randomTimeMin;
+    }
+
+    public void setRandomTimeMin(String randomTimeMin) {
+        this.randomTimeMin = randomTimeMin;
+    }
+
+    public ImageWatermark withRandomTimeMax(String randomTimeMax) {
+        this.randomTimeMax = randomTimeMax;
+        return this;
+    }
+
+    /**
+     * 轮转间隔时间最大值，单位：秒 
+     * @return randomTimeMax
+     */
+    public String getRandomTimeMax() {
+        return randomTimeMax;
+    }
+
+    public void setRandomTimeMax(String randomTimeMax) {
+        this.randomTimeMax = randomTimeMax;
+    }
+
     public ImageWatermark withImageProcess(String imageProcess) {
         this.imageProcess = imageProcess;
         return this;
@@ -295,13 +339,25 @@ public class ImageWatermark {
         return Objects.equals(this.dx, that.dx) && Objects.equals(this.dy, that.dy)
             && Objects.equals(this.referpos, that.referpos) && Objects.equals(this.timelineStart, that.timelineStart)
             && Objects.equals(this.timelineDuration, that.timelineDuration)
+            && Objects.equals(this.randomTimeMin, that.randomTimeMin)
+            && Objects.equals(this.randomTimeMax, that.randomTimeMax)
             && Objects.equals(this.imageProcess, that.imageProcess) && Objects.equals(this.width, that.width)
             && Objects.equals(this.height, that.height) && Objects.equals(this.base, that.base);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dx, dy, referpos, timelineStart, timelineDuration, imageProcess, width, height, base);
+        return Objects.hash(dx,
+            dy,
+            referpos,
+            timelineStart,
+            timelineDuration,
+            randomTimeMin,
+            randomTimeMax,
+            imageProcess,
+            width,
+            height,
+            base);
     }
 
     @Override
@@ -313,6 +369,8 @@ public class ImageWatermark {
         sb.append("    referpos: ").append(toIndentedString(referpos)).append("\n");
         sb.append("    timelineStart: ").append(toIndentedString(timelineStart)).append("\n");
         sb.append("    timelineDuration: ").append(toIndentedString(timelineDuration)).append("\n");
+        sb.append("    randomTimeMin: ").append(toIndentedString(randomTimeMin)).append("\n");
+        sb.append("    randomTimeMax: ").append(toIndentedString(randomTimeMax)).append("\n");
         sb.append("    imageProcess: ").append(toIndentedString(imageProcess)).append("\n");
         sb.append("    width: ").append(toIndentedString(width)).append("\n");
         sb.append("    height: ").append(toIndentedString(height)).append("\n");

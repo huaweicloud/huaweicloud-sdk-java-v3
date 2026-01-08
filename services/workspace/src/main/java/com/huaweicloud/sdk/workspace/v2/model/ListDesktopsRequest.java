@@ -100,7 +100,7 @@ public class ListDesktopsRequest {
     }
 
     /**
-     * 桌面所属用户。
+     * 桌面所属用户，支持根据用户名模糊查询。
      * @return userName
      */
     public List<String> getUserName() {

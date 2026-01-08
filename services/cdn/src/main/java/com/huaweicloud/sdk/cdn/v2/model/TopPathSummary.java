@@ -26,7 +26,7 @@ public class TopPathSummary {
     }
 
     /**
-     * path值。
+     * top100 path访问路径
      * @return path
      */
     public String getPath() {
@@ -43,7 +43,7 @@ public class TopPathSummary {
     }
 
     /**
-     * 对应查询类型的值。（流量单位：Byte）
+     * top100path访问次数
      * @return value
      */
     public Long getValue() {

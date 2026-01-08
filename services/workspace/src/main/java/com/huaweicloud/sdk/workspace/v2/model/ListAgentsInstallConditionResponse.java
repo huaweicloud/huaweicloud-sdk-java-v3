@@ -47,7 +47,7 @@ public class ListAgentsInstallConditionResponse extends SdkResponse {
     }
 
     /**
-     * 桌面agent安装情况。
+     * 桌面监控插件安装情况。
      * @return agentsCondition
      */
     public List<AgentsCondition> getAgentsCondition() {

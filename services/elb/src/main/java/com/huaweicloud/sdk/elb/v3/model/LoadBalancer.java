@@ -1357,7 +1357,7 @@ public class LoadBalancer {
     }
 
     /**
-     * **参数解释**：标识实例绑定内部服务的实例ID。  **取值范围**：不涉及  不支持该字段，请勿使用。
+     * **参数解释**：标识实例绑定内部服务的实例id。  **取值范围**：不涉及  不支持该字段，请勿使用。
      * @return instanceId
      */
     public String getInstanceId() {

@@ -35,6 +35,16 @@ public class BasicWatermark {
 
     private String timelineDuration;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "random_time_min")
+
+    private String randomTimeMin;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "random_time_max")
+
+    private String randomTimeMax;
+
     public BasicWatermark withDx(String dx) {
         this.dx = dx;
         return this;
@@ -120,6 +130,40 @@ public class BasicWatermark {
         this.timelineDuration = timelineDuration;
     }
 
+    public BasicWatermark withRandomTimeMin(String randomTimeMin) {
+        this.randomTimeMin = randomTimeMin;
+        return this;
+    }
+
+    /**
+     * 轮转间隔时间最小值，单位：秒 
+     * @return randomTimeMin
+     */
+    public String getRandomTimeMin() {
+        return randomTimeMin;
+    }
+
+    public void setRandomTimeMin(String randomTimeMin) {
+        this.randomTimeMin = randomTimeMin;
+    }
+
+    public BasicWatermark withRandomTimeMax(String randomTimeMax) {
+        this.randomTimeMax = randomTimeMax;
+        return this;
+    }
+
+    /**
+     * 轮转间隔时间最大值，单位：秒 
+     * @return randomTimeMax
+     */
+    public String getRandomTimeMax() {
+        return randomTimeMax;
+    }
+
+    public void setRandomTimeMax(String randomTimeMax) {
+        this.randomTimeMax = randomTimeMax;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +175,14 @@ public class BasicWatermark {
         BasicWatermark that = (BasicWatermark) obj;
         return Objects.equals(this.dx, that.dx) && Objects.equals(this.dy, that.dy)
             && Objects.equals(this.referpos, that.referpos) && Objects.equals(this.timelineStart, that.timelineStart)
-            && Objects.equals(this.timelineDuration, that.timelineDuration);
+            && Objects.equals(this.timelineDuration, that.timelineDuration)
+            && Objects.equals(this.randomTimeMin, that.randomTimeMin)
+            && Objects.equals(this.randomTimeMax, that.randomTimeMax);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dx, dy, referpos, timelineStart, timelineDuration);
+        return Objects.hash(dx, dy, referpos, timelineStart, timelineDuration, randomTimeMin, randomTimeMax);
     }
 
     @Override
@@ -148,6 +194,8 @@ public class BasicWatermark {
         sb.append("    referpos: ").append(toIndentedString(referpos)).append("\n");
         sb.append("    timelineStart: ").append(toIndentedString(timelineStart)).append("\n");
         sb.append("    timelineDuration: ").append(toIndentedString(timelineDuration)).append("\n");
+        sb.append("    randomTimeMin: ").append(toIndentedString(randomTimeMin)).append("\n");
+        sb.append("    randomTimeMax: ").append(toIndentedString(randomTimeMax)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -69,6 +69,10 @@ import com.huaweicloud.sdk.vod.v1.model.ListAssetDailySummaryLogRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetDailySummaryLogResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetListRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetListResponse;
+import com.huaweicloud.sdk.vod.v1.model.ListAssetTaskInfoRequest;
+import com.huaweicloud.sdk.vod.v1.model.ListAssetTaskInfoResponse;
+import com.huaweicloud.sdk.vod.v1.model.ListCategoryInfoRequest;
+import com.huaweicloud.sdk.vod.v1.model.ListCategoryInfoResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListCdnStatisticsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListCdnStatisticsResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListDomainLogsRequest;
@@ -1178,6 +1182,68 @@ public class VodAsyncClient {
     public AsyncInvoker<ListAssetListRequest, ListAssetListResponse> listAssetListAsyncInvoker(
         ListAssetListRequest request) {
         return new AsyncInvoker<>(request, VodMeta.listAssetList, hcClient);
+    }
+
+    /**
+     * 查询媒资任务信息
+     *
+     * ## 典型场景 ##
+     *   查询媒资任务信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAssetTaskInfoRequest 请求对象
+     * @return CompletableFuture<ListAssetTaskInfoResponse>
+     */
+    public CompletableFuture<ListAssetTaskInfoResponse> listAssetTaskInfoAsync(ListAssetTaskInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, VodMeta.listAssetTaskInfo);
+    }
+
+    /**
+     * 查询媒资任务信息
+     *
+     * ## 典型场景 ##
+     *   查询媒资任务信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAssetTaskInfoRequest 请求对象
+     * @return AsyncInvoker<ListAssetTaskInfoRequest, ListAssetTaskInfoResponse>
+     */
+    public AsyncInvoker<ListAssetTaskInfoRequest, ListAssetTaskInfoResponse> listAssetTaskInfoAsyncInvoker(
+        ListAssetTaskInfoRequest request) {
+        return new AsyncInvoker<>(request, VodMeta.listAssetTaskInfo, hcClient);
+    }
+
+    /**
+     * 查询指定分类信息
+     *
+     * ## 典型场景 ##
+     *   查询指定分类信息，及其子分类（即下一级分类）的列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCategoryInfoRequest 请求对象
+     * @return CompletableFuture<ListCategoryInfoResponse>
+     */
+    public CompletableFuture<ListCategoryInfoResponse> listCategoryInfoAsync(ListCategoryInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, VodMeta.listCategoryInfo);
+    }
+
+    /**
+     * 查询指定分类信息
+     *
+     * ## 典型场景 ##
+     *   查询指定分类信息，及其子分类（即下一级分类）的列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCategoryInfoRequest 请求对象
+     * @return AsyncInvoker<ListCategoryInfoRequest, ListCategoryInfoResponse>
+     */
+    public AsyncInvoker<ListCategoryInfoRequest, ListCategoryInfoResponse> listCategoryInfoAsyncInvoker(
+        ListCategoryInfoRequest request) {
+        return new AsyncInvoker<>(request, VodMeta.listCategoryInfo, hcClient);
     }
 
     /**

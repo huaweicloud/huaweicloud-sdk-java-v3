@@ -43,7 +43,7 @@ public class DataPointForAlarmHistoryResp {
     }
 
     /**
-     * **参数解释** 计算出该条告警历史的资源监控数据在该时间点的监控数值，如：7.019。 **取值范围**： 具体阈值取值请参见附录中各服务监控指标中取值范围，如“[支持监控的服务列表](ces_03_0059.xml)”中ECS的CPU使用率cpu_util取值范围可配置80。最小值为0，最大值为1.7976931348623157e+108。 
+     * **参数解释** 计算出该条告警历史的资源监控数据在该时间点的监控数值，如：7.019。 **取值范围**： 具体阈值取值请参见附录中各服务监控指标中取值范围，如“[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)”中ECS的CPU使用率cpu_util取值范围可配置80。最小值为0，最大值为1.7976931348623157e+108。 
      * @return value
      */
     public Double getValue() {

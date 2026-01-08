@@ -87,6 +87,10 @@ import com.huaweicloud.sdk.vod.v1.model.ListAssetDailySummaryLogRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetDailySummaryLogResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetListRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetListResponse;
+import com.huaweicloud.sdk.vod.v1.model.ListAssetTaskInfoRequest;
+import com.huaweicloud.sdk.vod.v1.model.ListAssetTaskInfoResponse;
+import com.huaweicloud.sdk.vod.v1.model.ListCategoryInfoRequest;
+import com.huaweicloud.sdk.vod.v1.model.ListCategoryInfoResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListCdnStatisticsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListCdnStatisticsResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListDomainLogsRequest;
@@ -115,6 +119,7 @@ import com.huaweicloud.sdk.vod.v1.model.PublishAssetFromObsResponse;
 import com.huaweicloud.sdk.vod.v1.model.PublishAssetReq;
 import com.huaweicloud.sdk.vod.v1.model.PublishAssetsRequest;
 import com.huaweicloud.sdk.vod.v1.model.PublishAssetsResponse;
+import com.huaweicloud.sdk.vod.v1.model.QueryCategoryInfoRsp;
 import com.huaweicloud.sdk.vod.v1.model.QueryCategoryRsp;
 import com.huaweicloud.sdk.vod.v1.model.RefreshAssetRequest;
 import com.huaweicloud.sdk.vod.v1.model.RefreshAssetResponse;
@@ -1234,6 +1239,112 @@ public class VodMeta {
             f -> f.withMarshaller(ListAssetListRequest::getXSdkDate, ListAssetListRequest::setXSdkDate));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAssetTaskInfoRequest, ListAssetTaskInfoResponse> listAssetTaskInfo =
+        genForListAssetTaskInfo();
+
+    private static HttpRequestDef<ListAssetTaskInfoRequest, ListAssetTaskInfoResponse> genForListAssetTaskInfo() {
+        // basic
+        HttpRequestDef.Builder<ListAssetTaskInfoRequest, ListAssetTaskInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAssetTaskInfoRequest.class, ListAssetTaskInfoResponse.class)
+                .withName("ListAssetTaskInfo")
+                .withUri("/v1/{project_id}/asset/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssetTaskInfoRequest::getType, ListAssetTaskInfoRequest::setType));
+        builder.<String>withRequestField("asset_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssetTaskInfoRequest::getAssetId, ListAssetTaskInfoRequest::setAssetId));
+        builder.<String>withRequestField("create_time_after",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssetTaskInfoRequest::getCreateTimeAfter,
+                ListAssetTaskInfoRequest::setCreateTimeAfter));
+        builder.<String>withRequestField("create_time_before",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssetTaskInfoRequest::getCreateTimeBefore,
+                ListAssetTaskInfoRequest::setCreateTimeBefore));
+        builder.<String>withRequestField("end_time_after",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssetTaskInfoRequest::getEndTimeAfter,
+                ListAssetTaskInfoRequest::setEndTimeAfter));
+        builder.<String>withRequestField("end_time_before",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssetTaskInfoRequest::getEndTimeBefore,
+                ListAssetTaskInfoRequest::setEndTimeBefore));
+        builder.<List<String>>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAssetTaskInfoRequest::getStatus, ListAssetTaskInfoRequest::setStatus));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssetTaskInfoRequest::getMarker, ListAssetTaskInfoRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAssetTaskInfoRequest::getLimit, ListAssetTaskInfoRequest::setLimit));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssetTaskInfoRequest::getXSdkDate, ListAssetTaskInfoRequest::setXSdkDate));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCategoryInfoRequest, ListCategoryInfoResponse> listCategoryInfo =
+        genForListCategoryInfo();
+
+    private static HttpRequestDef<ListCategoryInfoRequest, ListCategoryInfoResponse> genForListCategoryInfo() {
+        // basic
+        HttpRequestDef.Builder<ListCategoryInfoRequest, ListCategoryInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCategoryInfoRequest.class, ListCategoryInfoResponse.class)
+                .withName("ListCategoryInfo")
+                .withUri("/v2/{project_id}/asset/categories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<Integer>>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListCategoryInfoRequest::getId, ListCategoryInfoRequest::setId));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCategoryInfoRequest::getXSdkDate, ListCategoryInfoRequest::setXSdkDate));
+
+        // response
+        builder.<List<QueryCategoryInfoRsp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListCategoryInfoResponse::getBody, ListCategoryInfoResponse::setBody)
+                .withInnerContainerType(QueryCategoryInfoRsp.class));
 
         return builder.build();
     }

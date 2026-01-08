@@ -104,7 +104,7 @@ public class Member {
     }
 
     /**
-     * **参数解释**：后端服务器ID。  **取值范围**：不涉及 > 此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。
+     * **参数解释**：后端服务器ID。 **取值范围**：不涉及 > 此处并非ECS服务器的ID，而是ELB为绑定的后端服务器自动生成的member ID。
      * @return id
      */
     public String getId() {
@@ -388,7 +388,7 @@ public class Member {
     }
 
     /**
-     * **参数解释**：后端服务器的类型。  **取值范围**： - ip：跨VPC的member。 - instance：关联到ECS的member。
+     * **参数解释**：后端服务器的类型。  **取值范围**： - ip：IP类型的member。 - instance：关联到ECS的member。
      * @return memberType
      */
     public String getMemberType() {

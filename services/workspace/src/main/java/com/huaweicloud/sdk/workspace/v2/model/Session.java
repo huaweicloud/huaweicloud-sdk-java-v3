@@ -102,7 +102,7 @@ public class Session {
     }
 
     /**
-     * 锁定生效开始时间，格式 hh:mm:ss
+     * 锁定生效开始时间，格式 hh:mm:ss。
      * @return autoLockStartTime
      */
     public String getAutoLockStartTime() {
@@ -119,7 +119,7 @@ public class Session {
     }
 
     /**
-     * 锁定生效开始时间，格式 hh:mm:ss
+     * 锁定生效时间，格式 hh:mm:ss。
      * @return autoLockEndTime
      */
     public String getAutoLockEndTime() {

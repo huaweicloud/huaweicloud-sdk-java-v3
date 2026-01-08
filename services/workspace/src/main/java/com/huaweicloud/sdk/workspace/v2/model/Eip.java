@@ -128,7 +128,7 @@ public class Eip {
     }
 
     /**
-     * EIP的类型，5_bgp（全动态BGP），5_sbgp（静态BGP）。
+     * EIP的类型。
      * @return type
      */
     public String getType() {

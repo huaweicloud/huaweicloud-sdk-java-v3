@@ -21,7 +21,7 @@ public class BatchSetBackupPolicyRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_policy")
 
-    private BackupPolicyInfo backupPolicy;
+    private BatchSetBackupPolicyOption backupPolicy;
 
     public BatchSetBackupPolicyRequestBody withInstanceIds(List<String> instanceIds) {
         this.instanceIds = instanceIds;
@@ -56,14 +56,14 @@ public class BatchSetBackupPolicyRequestBody {
         this.instanceIds = instanceIds;
     }
 
-    public BatchSetBackupPolicyRequestBody withBackupPolicy(BackupPolicyInfo backupPolicy) {
+    public BatchSetBackupPolicyRequestBody withBackupPolicy(BatchSetBackupPolicyOption backupPolicy) {
         this.backupPolicy = backupPolicy;
         return this;
     }
 
-    public BatchSetBackupPolicyRequestBody withBackupPolicy(Consumer<BackupPolicyInfo> backupPolicySetter) {
+    public BatchSetBackupPolicyRequestBody withBackupPolicy(Consumer<BatchSetBackupPolicyOption> backupPolicySetter) {
         if (this.backupPolicy == null) {
-            this.backupPolicy = new BackupPolicyInfo();
+            this.backupPolicy = new BatchSetBackupPolicyOption();
             backupPolicySetter.accept(this.backupPolicy);
         }
 
@@ -74,11 +74,11 @@ public class BatchSetBackupPolicyRequestBody {
      * Get backupPolicy
      * @return backupPolicy
      */
-    public BackupPolicyInfo getBackupPolicy() {
+    public BatchSetBackupPolicyOption getBackupPolicy() {
         return backupPolicy;
     }
 
-    public void setBackupPolicy(BackupPolicyInfo backupPolicy) {
+    public void setBackupPolicy(BatchSetBackupPolicyOption backupPolicy) {
         this.backupPolicy = backupPolicy;
     }
 

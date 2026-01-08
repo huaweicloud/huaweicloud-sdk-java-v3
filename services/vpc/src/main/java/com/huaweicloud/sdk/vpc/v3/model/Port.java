@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 1、功能说明：端口对象 2、取值范围：N/A 3、约束：N/A 4、默认值：N/A
+ * 功能说明：端口对象。
  */
 public class Port {
 
@@ -172,7 +172,7 @@ public class Port {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extra_dhcp_opts")
 
-    private List<ExtraDhcpOpt> extraDhcpOpts = null;
+    private List<PortExtraDhcpOpt> extraDhcpOpts = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "position_type")
@@ -187,7 +187,7 @@ public class Port {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<ResourceTag> tags = null;
+    private List<ResponseTag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "allowed_address_pairs")
@@ -200,7 +200,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：管理状态 2、取值范围：true/false 3、约束：N/A 4、默认值：true 5、权限：N/A
+     * **参数解释**： 端口的管理状态。 **取值范围**： true，false，默认值true。
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -217,7 +217,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：主机ID 2、取值范围：N/A 3、约束：管理员权限，普通租户不可见 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口所在的主机ID。 **取值范围**： 不涉及。
      * @return bindingHostId
      */
     public String getBindingHostId() {
@@ -234,7 +234,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：提供用户设置自定义信息 2、取值范围：N/A 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口的用户自定义信息。 **取值范围**： 不涉及。
      * @return bindingProfile
      */
     public Object getBindingProfile() {
@@ -277,7 +277,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：端口的接口类型 (ovs/hw_veb等)(扩展属性) 2、取值范围：N/A 3、约束：管理员权限，普通租户不可见 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口绑定的虚拟接口类型 (ovs/hw_veb等)，扩展属性。 **取值范围**： - ovs：表示使用 Open vSwitch（OVS）作为虚拟交换机 - bridge：表示使用 Linux 内核桥接（bridge）实现虚拟网络 - hw_veb：表示硬件虚拟以太网桥（Hardware Virtual Ethernet Bridge），通常用于支持 SR-IOV 的硬件网卡 - vhostuser：表示使用 vhost-user 协议（基于 Unix 域套接字）与外部虚拟交换机通信 - distributed：表示用于分布式虚拟交换机 - binding_failed：表示端口绑定失败 - unbound：表示该端口未绑定到任何网络后端
      * @return bindingVifType
      */
     public String getBindingVifType() {
@@ -294,7 +294,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：绑定的vNIC类型normal: 软交换direct: SRIOV硬直通（不支持） 2、取值范围：normal或者direct 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 绑定的vNIC类型。 **取值范围**： - normal: 软交换。 - direct: SRIOV硬直通（不支持）。 - baremetal：用于裸金属服务器。
      * @return bindingVnicType
      */
     public String getBindingVnicType() {
@@ -311,7 +311,7 @@ public class Port {
     }
 
     /**
-     * 1、功能说明：创建时间 2、取值范围：格式 \"UTC时间 格式: yyyy-MM-ddTHH:mm:ss\"  3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口的创建时间。 **取值范围**： UTC时间，格式: yyyy-MM-ddTHH:mm:ss。
      * @return createdAt
      */
     public OffsetDateTime getCreatedAt() {
@@ -328,7 +328,7 @@ public class Port {
     }
 
     /**
-     * 1、功能说明：创建时间 2、取值范围：格式 \"UTC时间 格式: yyyy-MM-ddTHH:mm:ss\"  3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口的最近一次更新的时间。 **取值范围**： UTC时间，格式: yyyy-MM-ddTHH:mm:ss。
      * @return updatedAt
      */
     public OffsetDateTime getUpdatedAt() {
@@ -345,7 +345,7 @@ public class Port {
     }
 
     /**
-     * 1、功能说明：端口描述 2、取值范围：0-255个字符，不能包含“<”和“>” 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口的描述信息。 **取值范围**： 0-255个字符，不能包含“<”和“>”。
      * @return description
      */
     public String getDescription() {
@@ -362,7 +362,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：端口所属设备ID 2、取值范围：标准UUID 3、约束：不支持设置和更新，由系统自动维护 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口所属的设备ID。 **取值范围**： 带“-”的标准UUID格式。
      * @return deviceId
      */
     public String getDeviceId() {
@@ -379,7 +379,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：设备所属（DHCP/Router/ lb/Nova） 2、取值范围：N/A 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口所属的设备名称。 **取值范围**： - network:dhcp, 表示DHCP服务 - network:router_interface_distributed, 表示子网网关地址 - compute:xxx, 表示云服务器网卡私有IP地址，其中XXX对应具体的可用区名称，例如compute:aa-bb-cc表示私有IP地址被可用区aa-bb-cc内的云服务器使用 - neutron:VIP_PORT, 表示虚拟IP地址 - neutron:LOADBALANCERV2, 表示共享型ELB - neutron:LOADBALANCERV3, 表示独享型ELB - network:endpoint_interface, 表示VPC终端节点 - network:nat_gateway, 表示NAT网关 - network:ucmp, 表示UCMP端口，为企业路由器服务所用
      * @return deviceOwner
      */
     public String getDeviceOwner() {
@@ -396,7 +396,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：标识这个端口所属虚拟机的flavor 2、取值范围：N/A 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 标识此端口所属云服务器的flavor。 **取值范围**： 不涉及。
      * @return ecsFlavor
      */
     public String getEcsFlavor() {
@@ -413,7 +413,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：端口唯一标识 2、取值范围：标准UUID 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口的资源ID。 **取值范围**： 带“-”的标准UUID格式。
      * @return id
      */
     public String getId() {
@@ -430,7 +430,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：端口所属实例ID，例如RDS实例ID 2、取值范围：N/A 3、约束：不支持设置和更新，由系统自动维护 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口所属的云服务实例ID，例如RDS实例ID。 **取值范围**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -447,7 +447,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：端口所属实例类型，例如“RDS” 2、取值范围：N/A 3、约束：不支持设置和更新，由系统自动维护 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口所属的云服务实例类型，例如“RDS”。 **取值范围**： 不涉及。
      * @return instanceType
      */
     public String getInstanceType() {
@@ -464,7 +464,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：MAC地址 2、取值范围：N/A 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口的MAC地址。 **取值范围**： 不涉及
      * @return macAddress
      */
     public String getMacAddress() {
@@ -481,7 +481,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：端口名称 2、取值范围：默认为空，最大长度不超过255 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口的名称。 **取值范围**： 默认为空，最大长度不超过255。
      * @return name
      */
     public String getName() {
@@ -498,7 +498,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：端口安全使能标记，如果不使能则安全组和dhcp防欺骗不生效 2、取值范围：true/false 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口的安全使能标记，如果不使能，则安全组和DHCP防欺骗不生效。 **取值范围**： - true：使能端口安全。 - false：未使能端口安全。
      * @return portSecurityEnabled
      */
     public Boolean getPortSecurityEnabled() {
@@ -531,7 +531,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：port的私有IP地址 2、取值范围：N/A 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口的私有IP地址。 **取值范围**： 不涉及。
      * @return privateIps
      */
     public List<PrivateIpInfo> getPrivateIps() {
@@ -548,7 +548,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：项目ID 2、取值范围：UUID 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口所属的项目ID。 **取值范围**： 不涉及。
      * @return projectId
      */
     public String getProjectId() {
@@ -581,7 +581,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：安全组 2、取值范围：N/A 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口绑定的安全组列表。 **取值范围**： 不涉及。
      * @return securityGroups
      */
     public List<String> getSecurityGroups() {
@@ -598,7 +598,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：端口状态 2、取值范围：ACTIVE，BUILD，DOWN 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口的状态。 **取值范围**： - ACTIVE：端口处于活动状态，可以正常进行网络通信。 - BUILD：端口正在创建或配置中。 - DOWN：端口处于非活动状态，不能进行网络通信。Hana 硬直通虚拟机端口状态总为DOWN。
      * @return status
      */
     public String getStatus() {
@@ -615,7 +615,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：租户ID 2、取值范围：UUID 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口所属的租户ID。 **取值范围**： 不涉及。
      * @return tenantId
      */
     public String getTenantId() {
@@ -632,7 +632,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：所属网络ID 2、取值范围：标准UUID 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口所在的虚拟子网ID。 **取值范围**： 带“-”的标准UUID格式。
      * @return virsubnetId
      */
     public String getVirsubnetId() {
@@ -649,7 +649,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：VPC的ID 2、取值范围：标准UUID 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口所在的VPC的ID。 **取值范围**： 带“-”的标准UUID格式。
      * @return vpcId
      */
     public String getVpcId() {
@@ -666,7 +666,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：VPC_租户ID 2、取值范围：UUID 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口所在的VPC的租户ID。 **取值范围**： 不涉及。
      * @return vpcTenantId
      */
     public String getVpcTenantId() {
@@ -683,7 +683,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：本地IP 2、取值范围：N/A 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口的VTEP IP地址，即虚拟隧道端点的 IP 地址。 **取值范围**： 不涉及。
      * @return vtepIp
      */
     public String getVtepIp() {
@@ -700,7 +700,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：是否使能efi，使能则表示端口支持vRoCE能力 2、取值范围：true or false 3、约束：N/A 4、默认值：false 5、权限：N/A
+     * **参数解释**： 是否使能efi，使能则表示端口支持vRoCE能力。 **取值范围**： - true：使能efi。 - false：未使能efi。
      * @return enableEfi
      */
     public Boolean getEnableEfi() {
@@ -717,7 +717,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：作用域 2、取值范围：center，表示作用域为中心；{azId}，表示作用域为具体的可用区 3、约束：N/A 4、默认值：center 5、权限：N/A
+     * **参数解释**： 端口所在子网的作用域（边缘云场景）。 **取值范围**： - center：表示作用域为中心。 - {publicBorderGroup}：表示作用域为具体的公网边界组。公网边界组限制子网的可用区范围，可关联多个边缘可用区。
      * @return scope
      */
     public String getScope() {
@@ -734,7 +734,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：端口所属的可用分区 2、取值范围：N/A 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口所属的可用分区的ID。 **取值范围**： 不涉及。
      * @return zoneId
      */
     public String getZoneId() {
@@ -751,7 +751,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：迁移目的节点信息，包括目的节点的binding:vif_details和binding:vif_type 2、取值范围：N/A 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口迁移的目的节点信息，包括目的节点的binding:vif_details和binding:vif_type。 **取值范围**： 不涉及。
      * @return bindingMigrationInfo
      */
     public Object getBindingMigrationInfo() {
@@ -762,12 +762,12 @@ public class Port {
         this.bindingMigrationInfo = bindingMigrationInfo;
     }
 
-    public Port withExtraDhcpOpts(List<ExtraDhcpOpt> extraDhcpOpts) {
+    public Port withExtraDhcpOpts(List<PortExtraDhcpOpt> extraDhcpOpts) {
         this.extraDhcpOpts = extraDhcpOpts;
         return this;
     }
 
-    public Port addExtraDhcpOptsItem(ExtraDhcpOpt extraDhcpOptsItem) {
+    public Port addExtraDhcpOptsItem(PortExtraDhcpOpt extraDhcpOptsItem) {
         if (this.extraDhcpOpts == null) {
             this.extraDhcpOpts = new ArrayList<>();
         }
@@ -775,7 +775,7 @@ public class Port {
         return this;
     }
 
-    public Port withExtraDhcpOpts(Consumer<List<ExtraDhcpOpt>> extraDhcpOptsSetter) {
+    public Port withExtraDhcpOpts(Consumer<List<PortExtraDhcpOpt>> extraDhcpOptsSetter) {
         if (this.extraDhcpOpts == null) {
             this.extraDhcpOpts = new ArrayList<>();
         }
@@ -784,14 +784,14 @@ public class Port {
     }
 
     /**
-     * 功能说明：DHCP的扩展属性
+     * **参数解释**： DHCP的扩展属性。 **取值范围**： 不涉及。
      * @return extraDhcpOpts
      */
-    public List<ExtraDhcpOpt> getExtraDhcpOpts() {
+    public List<PortExtraDhcpOpt> getExtraDhcpOpts() {
         return extraDhcpOpts;
     }
 
-    public void setExtraDhcpOpts(List<ExtraDhcpOpt> extraDhcpOpts) {
+    public void setExtraDhcpOpts(List<PortExtraDhcpOpt> extraDhcpOpts) {
         this.extraDhcpOpts = extraDhcpOpts;
     }
 
@@ -801,7 +801,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：边缘场景位置类型 2、取值范围：N/A 3、约束：N/A 4、默认值：center 5、权限：N/A
+     * **参数解释**： 边缘场景端口的位置类型。 **取值范围**： 默认值center。
      * @return positionType
      */
     public String getPositionType() {
@@ -818,7 +818,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：端口绑定实例信息 2、取值范围：N/A 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口绑定的实例信息。 **取值范围**： 不涉及。
      * @return instanceInfo
      */
     public Object getInstanceInfo() {
@@ -829,12 +829,12 @@ public class Port {
         this.instanceInfo = instanceInfo;
     }
 
-    public Port withTags(List<ResourceTag> tags) {
+    public Port withTags(List<ResponseTag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public Port addTagsItem(ResourceTag tagsItem) {
+    public Port addTagsItem(ResponseTag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -842,7 +842,7 @@ public class Port {
         return this;
     }
 
-    public Port withTags(Consumer<List<ResourceTag>> tagsSetter) {
+    public Port withTags(Consumer<List<ResponseTag>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -851,14 +851,14 @@ public class Port {
     }
 
     /**
-     * 参数解释： 端口的标签信息，包括标签键和标签值，可用来分类和标识资源。 取值范围： 不涉及。
+     * **参数解释**： 端口的标签信息，包括标签键和标签值，可用来分类和标识资源。详情请参见Tag对象。 **取值范围**： 不涉及。
      * @return tags
      */
-    public List<ResourceTag> getTags() {
+    public List<ResponseTag> getTags() {
         return tags;
     }
 
-    public void setTags(List<ResourceTag> tags) {
+    public void setTags(List<ResponseTag> tags) {
         this.tags = tags;
     }
 
@@ -884,7 +884,7 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：IP/Mac对列表 2、取值范围：N/A 3、约束： - IP地址不允许为 “0.0.0.0/0” - 如果allowed_address_pairs配置地址池较大的CIDR（掩码小于24位），建议为该port配置一个单独的安全组。 - 如果allowed_address_pairs的IP地址为“1.1.1.1/0”，表示关闭源目地址检查开关。 - 被绑定的云服务器网卡allowed_address_pairs的IP地址填“1.1.1.1/0”。 4、默认值：N/A 5、权限：N/A
+     * **参数解释**： 端口的IP/Mac对列表。 **取值范围**： - IP地址不允许为 “0.0.0.0/0”。 - 如果allowed_address_pairs配置地址池较大的IP网段（掩码小于24位），建议为该端口配置一个单独的安全组。 - 如果allowed_address_pairs的IP地址为“1.1.1.1/0”，表示关闭源目地址检查开关。 - 被绑定的云服务器网卡allowed_address_pairs的IP地址填“1.1.1.1/0”。
      * @return allowedAddressPairs
      */
     public List<AllowedAddressPair> getAllowedAddressPairs() {

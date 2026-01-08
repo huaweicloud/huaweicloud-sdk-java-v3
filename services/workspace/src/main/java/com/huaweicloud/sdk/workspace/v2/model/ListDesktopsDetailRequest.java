@@ -189,6 +189,11 @@ public class ListDesktopsDetailRequest {
     private String computerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "computer_names")
+
+    private List<String> computerNames = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desktop_ip")
 
     private String desktopIp;
@@ -384,6 +389,39 @@ public class ListDesktopsDetailRequest {
 
     public void setComputerName(String computerName) {
         this.computerName = computerName;
+    }
+
+    public ListDesktopsDetailRequest withComputerNames(List<String> computerNames) {
+        this.computerNames = computerNames;
+        return this;
+    }
+
+    public ListDesktopsDetailRequest addComputerNamesItem(String computerNamesItem) {
+        if (this.computerNames == null) {
+            this.computerNames = new ArrayList<>();
+        }
+        this.computerNames.add(computerNamesItem);
+        return this;
+    }
+
+    public ListDesktopsDetailRequest withComputerNames(Consumer<List<String>> computerNamesSetter) {
+        if (this.computerNames == null) {
+            this.computerNames = new ArrayList<>();
+        }
+        computerNamesSetter.accept(this.computerNames);
+        return this;
+    }
+
+    /**
+     * 桌面名列表
+     * @return computerNames
+     */
+    public List<String> getComputerNames() {
+        return computerNames;
+    }
+
+    public void setComputerNames(List<String> computerNames) {
+        this.computerNames = computerNames;
     }
 
     public ListDesktopsDetailRequest withDesktopIp(String desktopIp) {
@@ -690,10 +728,11 @@ public class ListDesktopsDetailRequest {
         return Objects.equals(this.status, that.status) && Objects.equals(this.userName, that.userName)
             && Objects.equals(this.userNames, that.userNames) && Objects.equals(this.sortField, that.sortField)
             && Objects.equals(this.sortType, that.sortType) && Objects.equals(this.computerName, that.computerName)
-            && Objects.equals(this.desktopIp, that.desktopIp) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.desktopId, that.desktopId)
-            && Objects.equals(this.desktopType, that.desktopType) && Objects.equals(this.tag, that.tag)
-            && Objects.equals(this.poolId, that.poolId) && Objects.equals(this.userAttached, that.userAttached)
+            && Objects.equals(this.computerNames, that.computerNames) && Objects.equals(this.desktopIp, that.desktopIp)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.desktopType, that.desktopType)
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.poolId, that.poolId)
+            && Objects.equals(this.userAttached, that.userAttached)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.chargeMode, that.chargeMode)
             && Objects.equals(this.inMaintenanceMode, that.inMaintenanceMode)
@@ -710,6 +749,7 @@ public class ListDesktopsDetailRequest {
             sortField,
             sortType,
             computerName,
+            computerNames,
             desktopIp,
             offset,
             limit,
@@ -738,6 +778,7 @@ public class ListDesktopsDetailRequest {
         sb.append("    sortField: ").append(toIndentedString(sortField)).append("\n");
         sb.append("    sortType: ").append(toIndentedString(sortType)).append("\n");
         sb.append("    computerName: ").append(toIndentedString(computerName)).append("\n");
+        sb.append("    computerNames: ").append(toIndentedString(computerNames)).append("\n");
         sb.append("    desktopIp: ").append(toIndentedString(desktopIp)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

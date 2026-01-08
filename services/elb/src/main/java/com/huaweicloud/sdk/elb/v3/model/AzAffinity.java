@@ -36,7 +36,7 @@ public class AzAffinity {
     }
 
     /**
-     * **参数解释**：后端服务器组是否开启可用区亲和。开启后，负载均衡器会按照配置的亲和策略进行转发。  **约束限制**： - 仅IP,TCP,UDP的pool支持。 - TLS监听器绑定的pool不支持。 - 开启后，原本的pool_health配置失效。  **取值范围**：false 不开启，true 开启。  **默认取值**：不涉及
+     * **参数解释**：后端服务器组是否开启可用区亲和。开启后，负载均衡器会按照配置的亲和策略进行转发。  **约束限制**： - 仅IP,TCP,UDP的pool支持。 - TLS监听器绑定的pool不支持。 - 开启后，原本的pool_health配置失效。  **取值范围**：false不开启，true开启。  **默认取值**：不涉及
      * @return enable
      */
     public Boolean getEnable() {

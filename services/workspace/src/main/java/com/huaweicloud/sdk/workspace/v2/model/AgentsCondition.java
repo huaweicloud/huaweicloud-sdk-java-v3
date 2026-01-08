@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 桌面agent安装情况。
+ * 桌面监控插件安装情况。
  */
 public class AgentsCondition {
 
@@ -216,7 +216,7 @@ public class AgentsCondition {
     }
 
     /**
-     * 单个桌面内的agent安装情况。
+     * 单个桌面内的监控插件安装情况。
      * @return agentInfo
      */
     public List<AgentInfo> getAgentInfo() {

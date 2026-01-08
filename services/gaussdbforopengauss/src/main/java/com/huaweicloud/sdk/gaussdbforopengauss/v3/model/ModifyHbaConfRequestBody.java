@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ModifyHbaConfRequestBody
@@ -13,44 +14,62 @@ public class ModifyHbaConfRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "before_conf")
 
-    private Object beforeConf;
+    private BeforeHbaConfOption beforeConf;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "after_conf")
 
-    private Object afterConf;
+    private AfterHbaConfOption afterConf;
 
-    public ModifyHbaConfRequestBody withBeforeConf(Object beforeConf) {
+    public ModifyHbaConfRequestBody withBeforeConf(BeforeHbaConfOption beforeConf) {
         this.beforeConf = beforeConf;
         return this;
     }
 
+    public ModifyHbaConfRequestBody withBeforeConf(Consumer<BeforeHbaConfOption> beforeConfSetter) {
+        if (this.beforeConf == null) {
+            this.beforeConf = new BeforeHbaConfOption();
+            beforeConfSetter.accept(this.beforeConf);
+        }
+
+        return this;
+    }
+
     /**
-     * **参数解释**: 需要修改的hba配置信息。 **约束限制**: 不涉及。
+     * Get beforeConf
      * @return beforeConf
      */
-    public Object getBeforeConf() {
+    public BeforeHbaConfOption getBeforeConf() {
         return beforeConf;
     }
 
-    public void setBeforeConf(Object beforeConf) {
+    public void setBeforeConf(BeforeHbaConfOption beforeConf) {
         this.beforeConf = beforeConf;
     }
 
-    public ModifyHbaConfRequestBody withAfterConf(Object afterConf) {
+    public ModifyHbaConfRequestBody withAfterConf(AfterHbaConfOption afterConf) {
         this.afterConf = afterConf;
         return this;
     }
 
+    public ModifyHbaConfRequestBody withAfterConf(Consumer<AfterHbaConfOption> afterConfSetter) {
+        if (this.afterConf == null) {
+            this.afterConf = new AfterHbaConfOption();
+            afterConfSetter.accept(this.afterConf);
+        }
+
+        return this;
+    }
+
     /**
-     * **参数解释**: 修改后的hba配置信息。 **约束限制**: 不涉及。
+     * Get afterConf
      * @return afterConf
      */
-    public Object getAfterConf() {
+    public AfterHbaConfOption getAfterConf() {
         return afterConf;
     }
 
-    public void setAfterConf(Object afterConf) {
+    public void setAfterConf(AfterHbaConfOption afterConf) {
         this.afterConf = afterConf;
     }
 

@@ -16,7 +16,7 @@ import java.util.Objects;
 public class AlarmHistoryItemV2Condition {
 
     /**
-     * **参数解释**： 指标周期，单位是秒。如想了解各个云服务的指标原始周期可以参考“[支持服务列表](ces_03_0059.xml)”。 **取值范围**： 0是默认值，例如事件类告警该字段就用0即可； 1代表指标的原始周期，比如RDS监控指标原始周期是60s，表示该RDS指标按60s周期为一个数据点参与告警计算； 300代表指标按5分钟聚合周期为一个数据点参与告警计算； 1200代表指标按20分钟聚合周期为一个数据点参与告警计算； 3600代表指标按60分钟聚合周期为一个数据点参与告警计算； 14400代表指标按4小时聚合周期为一个数据点参与告警计算； 86400代表指标按1天聚合周期为一个数据点参与告警计算。 
+     * **参数解释**： 指标周期，单位是秒。如想了解各个云服务的指标原始周期可以参考[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)。 **取值范围**： 0是默认值，例如事件类告警该字段就用0即可； 1代表指标的原始周期，比如RDS监控指标原始周期是60s，表示该RDS指标按60s周期为一个数据点参与告警计算； 300代表指标按5分钟聚合周期为一个数据点参与告警计算； 1200代表指标按20分钟聚合周期为一个数据点参与告警计算； 3600代表指标按60分钟聚合周期为一个数据点参与告警计算； 14400代表指标按4小时聚合周期为一个数据点参与告警计算； 86400代表指标按1天聚合周期为一个数据点参与告警计算。 
      */
     public static final class PeriodEnum {
 
@@ -274,7 +274,7 @@ public class AlarmHistoryItemV2Condition {
     }
 
     /**
-     * **参数解释**： 指标周期，单位是秒。如想了解各个云服务的指标原始周期可以参考“[支持服务列表](ces_03_0059.xml)”。 **取值范围**： 0是默认值，例如事件类告警该字段就用0即可； 1代表指标的原始周期，比如RDS监控指标原始周期是60s，表示该RDS指标按60s周期为一个数据点参与告警计算； 300代表指标按5分钟聚合周期为一个数据点参与告警计算； 1200代表指标按20分钟聚合周期为一个数据点参与告警计算； 3600代表指标按60分钟聚合周期为一个数据点参与告警计算； 14400代表指标按4小时聚合周期为一个数据点参与告警计算； 86400代表指标按1天聚合周期为一个数据点参与告警计算。 
+     * **参数解释**： 指标周期，单位是秒。如想了解各个云服务的指标原始周期可以参考[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)。 **取值范围**： 0是默认值，例如事件类告警该字段就用0即可； 1代表指标的原始周期，比如RDS监控指标原始周期是60s，表示该RDS指标按60s周期为一个数据点参与告警计算； 300代表指标按5分钟聚合周期为一个数据点参与告警计算； 1200代表指标按20分钟聚合周期为一个数据点参与告警计算； 3600代表指标按60分钟聚合周期为一个数据点参与告警计算； 14400代表指标按4小时聚合周期为一个数据点参与告警计算； 86400代表指标按1天聚合周期为一个数据点参与告警计算。 
      * @return period
      */
     public PeriodEnum getPeriod() {
@@ -325,7 +325,7 @@ public class AlarmHistoryItemV2Condition {
     }
 
     /**
-     * **参数解释**： 告警阈值。 **取值范围**： 具体阈值取值请参见附录中各服务监控指标中取值范围，如[支持监控的服务列表](ces_03_0059.xml)中ECS的CPU使用率cpu_util取值范围可配置80。最小值为-1.7976931348623157e+108，最大值为1.7976931348623157e+108。 
+     * **参数解释**： 告警阈值。 **取值范围**： 具体阈值取值请参见附录中各服务监控指标中取值范围，如[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)中ECS的CPU使用率cpu_util取值范围可配置80。最小值为-1.7976931348623157e+108，最大值为1.7976931348623157e+108。 
      * minimum: -1.7976931348623156E+108
      * maximum: 1.7976931348623156E+108
      * @return value

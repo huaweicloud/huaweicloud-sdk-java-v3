@@ -24,6 +24,11 @@ public class BatchDetachInstancesResponse extends SdkResponse {
 
     private String jobId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "success_job_ids")
+
+    private List<String> successJobIds = null;
+
     public BatchDetachInstancesResponse withFailedOperationList(List<VmOperateResult> failedOperationList) {
         this.failedOperationList = failedOperationList;
         return this;
@@ -64,7 +69,7 @@ public class BatchDetachInstancesResponse extends SdkResponse {
     }
 
     /**
-     * 任务ID。
+     * 任务ID,池桌面返回job_id,普通桌面job_id为空。
      * @return jobId
      */
     public String getJobId() {
@@ -73,6 +78,39 @@ public class BatchDetachInstancesResponse extends SdkResponse {
 
     public void setJobId(String jobId) {
         this.jobId = jobId;
+    }
+
+    public BatchDetachInstancesResponse withSuccessJobIds(List<String> successJobIds) {
+        this.successJobIds = successJobIds;
+        return this;
+    }
+
+    public BatchDetachInstancesResponse addSuccessJobIdsItem(String successJobIdsItem) {
+        if (this.successJobIds == null) {
+            this.successJobIds = new ArrayList<>();
+        }
+        this.successJobIds.add(successJobIdsItem);
+        return this;
+    }
+
+    public BatchDetachInstancesResponse withSuccessJobIds(Consumer<List<String>> successJobIdsSetter) {
+        if (this.successJobIds == null) {
+            this.successJobIds = new ArrayList<>();
+        }
+        successJobIdsSetter.accept(this.successJobIds);
+        return this;
+    }
+
+    /**
+     * 内部服务操作成功jobId
+     * @return successJobIds
+     */
+    public List<String> getSuccessJobIds() {
+        return successJobIds;
+    }
+
+    public void setSuccessJobIds(List<String> successJobIds) {
+        this.successJobIds = successJobIds;
     }
 
     @Override
@@ -85,12 +123,12 @@ public class BatchDetachInstancesResponse extends SdkResponse {
         }
         BatchDetachInstancesResponse that = (BatchDetachInstancesResponse) obj;
         return Objects.equals(this.failedOperationList, that.failedOperationList)
-            && Objects.equals(this.jobId, that.jobId);
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.successJobIds, that.successJobIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(failedOperationList, jobId);
+        return Objects.hash(failedOperationList, jobId, successJobIds);
     }
 
     @Override
@@ -99,6 +137,7 @@ public class BatchDetachInstancesResponse extends SdkResponse {
         sb.append("class BatchDetachInstancesResponse {\n");
         sb.append("    failedOperationList: ").append(toIndentedString(failedOperationList)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    successJobIds: ").append(toIndentedString(successJobIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

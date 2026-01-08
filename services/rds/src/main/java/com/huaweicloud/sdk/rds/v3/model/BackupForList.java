@@ -237,6 +237,11 @@ public class BackupForList {
 
     private Boolean associatedWithDdm;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "min_data_volume_capacity_for_restore")
+
+    private Integer minDataVolumeCapacityForRestore;
+
     public BackupForList withId(String id) {
         this.id = id;
         return this;
@@ -449,6 +454,23 @@ public class BackupForList {
         this.associatedWithDdm = associatedWithDdm;
     }
 
+    public BackupForList withMinDataVolumeCapacityForRestore(Integer minDataVolumeCapacityForRestore) {
+        this.minDataVolumeCapacityForRestore = minDataVolumeCapacityForRestore;
+        return this;
+    }
+
+    /**
+     * 该备份源文件大小，用于该备份文件恢复到新实例时需要的最小磁盘空间大小。
+     * @return minDataVolumeCapacityForRestore
+     */
+    public Integer getMinDataVolumeCapacityForRestore() {
+        return minDataVolumeCapacityForRestore;
+    }
+
+    public void setMinDataVolumeCapacityForRestore(Integer minDataVolumeCapacityForRestore) {
+        this.minDataVolumeCapacityForRestore = minDataVolumeCapacityForRestore;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -463,7 +485,8 @@ public class BackupForList {
             && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
             && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
             && Objects.equals(this.size, that.size) && Objects.equals(this.datastore, that.datastore)
-            && Objects.equals(this.associatedWithDdm, that.associatedWithDdm);
+            && Objects.equals(this.associatedWithDdm, that.associatedWithDdm)
+            && Objects.equals(this.minDataVolumeCapacityForRestore, that.minDataVolumeCapacityForRestore);
     }
 
     @Override
@@ -478,7 +501,8 @@ public class BackupForList {
             type,
             size,
             datastore,
-            associatedWithDdm);
+            associatedWithDdm,
+            minDataVolumeCapacityForRestore);
     }
 
     @Override
@@ -496,6 +520,9 @@ public class BackupForList {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
         sb.append("    associatedWithDdm: ").append(toIndentedString(associatedWithDdm)).append("\n");
+        sb.append("    minDataVolumeCapacityForRestore: ")
+            .append(toIndentedString(minDataVolumeCapacityForRestore))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

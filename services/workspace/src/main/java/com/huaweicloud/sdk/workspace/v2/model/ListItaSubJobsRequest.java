@@ -63,7 +63,7 @@ public class ListItaSubJobsRequest {
     }
 
     /**
-     * 任务ID。 “job_type”与“job_id”建议至少填写一个
+     * 任务ID。 “job_type”与“job_id”建议至少填写一个。
      * @return jobId
      */
     public String getJobId() {

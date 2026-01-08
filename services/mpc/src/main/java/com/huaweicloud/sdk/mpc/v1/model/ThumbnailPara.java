@@ -100,6 +100,16 @@ public class ThumbnailPara {
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "amount")
+
+    private Integer amount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "threshold")
+
+    private Integer threshold;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
     private Integer time;
@@ -164,6 +174,44 @@ public class ThumbnailPara {
 
     public void setType(TypeEnum type) {
         this.type = type;
+    }
+
+    public ThumbnailPara withAmount(Integer amount) {
+        this.amount = amount;
+        return this;
+    }
+
+    /**
+     * 黑点比例大于等于此值认为是黑帧。 
+     * minimum: 1
+     * maximum: 100
+     * @return amount
+     */
+    public Integer getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Integer amount) {
+        this.amount = amount;
+    }
+
+    public ThumbnailPara withThreshold(Integer threshold) {
+        this.threshold = threshold;
+        return this;
+    }
+
+    /**
+     * 像素值小于此值认为是黑点。 
+     * minimum: 0
+     * maximum: 255
+     * @return threshold
+     */
+    public Integer getThreshold() {
+        return threshold;
+    }
+
+    public void setThreshold(Integer threshold) {
+        this.threshold = threshold;
     }
 
     public ThumbnailPara withTime(Integer time) {
@@ -391,7 +439,8 @@ public class ThumbnailPara {
             return false;
         }
         ThumbnailPara that = (ThumbnailPara) obj;
-        return Objects.equals(this.type, that.type) && Objects.equals(this.time, that.time)
+        return Objects.equals(this.type, that.type) && Objects.equals(this.amount, that.amount)
+            && Objects.equals(this.threshold, that.threshold) && Objects.equals(this.time, that.time)
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.duration, that.duration)
             && Objects.equals(this.dots, that.dots) && Objects.equals(this.dotsMs, that.dotsMs)
             && Objects.equals(this.outputFilename, that.outputFilename) && Objects.equals(this.format, that.format)
@@ -401,8 +450,19 @@ public class ThumbnailPara {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(type, time, startTime, duration, dots, dotsMs, outputFilename, format, width, height, maxLength);
+        return Objects.hash(type,
+            amount,
+            threshold,
+            time,
+            startTime,
+            duration,
+            dots,
+            dotsMs,
+            outputFilename,
+            format,
+            width,
+            height,
+            maxLength);
     }
 
     @Override
@@ -410,6 +470,8 @@ public class ThumbnailPara {
         StringBuilder sb = new StringBuilder();
         sb.append("class ThumbnailPara {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+        sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");

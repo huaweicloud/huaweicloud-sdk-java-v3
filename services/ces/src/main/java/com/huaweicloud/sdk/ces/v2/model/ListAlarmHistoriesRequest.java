@@ -53,6 +53,16 @@ public class ListAlarmHistoriesRequest {
          */
         public static final StatusEnum INVALID = new StatusEnum("invalid");
 
+        /**
+         * Enum INSUFFICIENT_DATA for value: "insufficient_data"
+         */
+        public static final StatusEnum INSUFFICIENT_DATA = new StatusEnum("insufficient_data");
+
+        /**
+         * Enum OK_MANUAL for value: "ok_manual"
+         */
+        public static final StatusEnum OK_MANUAL = new StatusEnum("ok_manual");
+
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
@@ -60,6 +70,8 @@ public class ListAlarmHistoriesRequest {
             map.put("ok", OK);
             map.put("alarm", ALARM);
             map.put("invalid", INVALID);
+            map.put("insufficient_data", INSUFFICIENT_DATA);
+            map.put("ok_manual", OK_MANUAL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -321,6 +333,11 @@ public class ListAlarmHistoriesRequest {
 
     private OrderByEnum orderBy;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mask_status")
+
+    private String maskStatus;
+
     public ListAlarmHistoriesRequest withAlarmId(List<String> alarmId) {
         this.alarmId = alarmId;
         return this;
@@ -360,7 +377,7 @@ public class ListAlarmHistoriesRequest {
     }
 
     /**
-     * **参数解释**： 告警记录ID。 **约束限制**： 不涉及。 **取值范围**： 以ah开头，后跟22位由字母或数字组成的字符串，字符串长度为24。 **默认取值**： 不涉及。 
+     * **参数解释**： 告警流水号。优化告警流水号生成规则，由之前的 ah1655717086704DEnBrJ999 更改为 ah251222T092004SAD2yARym **约束限制**： 不涉及。 **取值范围**： 以ah开头，后跟22位由字母或数字组成的字符串，字符串长度为24。 **默认取值**： 不涉及。 
      * @return recordId
      */
     public String getRecordId() {
@@ -410,7 +427,7 @@ public class ListAlarmHistoriesRequest {
     }
 
     /**
-     * **参数解释**： 告警规则状态列表。告警规则状态：枚举值，ok为正常，alarm为告警，invalid为已失效。 **约束限制**： 列表长度最大为3。 
+     * **参数解释**： 告警规则状态列表。 **取值范围**： 告警规则状态：枚举值。 - ok：已解决 - alarm：告警中 - invalid：已失效 - insufficient_data: 数据不足 - ok_manual: 已解决（手动） **约束限制**： 包含的告警规则状态对象数量为[0,3] 
      * @return status
      */
     public List<StatusEnum> getStatus() {
@@ -446,7 +463,7 @@ public class ListAlarmHistoriesRequest {
     }
 
     /**
-     * **参数解释**： 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”。 **约束限制**： 不涉及。 **取值范围**： 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度必须在 3 到 32个字符之间。 **默认取值**： 不涉及。 
+     * **参数解释**： 查询服务的命名空间，各服务命名空间请参阅[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)。 **约束限制**： 不涉及。 **取值范围**： 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度必须在 3 到 32个字符之间。 **默认取值**： 不涉及。 
      * @return namespace
      */
     public String getNamespace() {
@@ -614,6 +631,23 @@ public class ListAlarmHistoriesRequest {
         this.orderBy = orderBy;
     }
 
+    public ListAlarmHistoriesRequest withMaskStatus(String maskStatus) {
+        this.maskStatus = maskStatus;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 告警规则屏蔽状态 **约束限制**： 不涉及。 **取值范围**： - UN_MASKED 活跃告警 - MASKED 屏蔽告警 **默认取值**： 不涉及 
+     * @return maskStatus
+     */
+    public String getMaskStatus() {
+        return maskStatus;
+    }
+
+    public void setMaskStatus(String maskStatus) {
+        this.maskStatus = maskStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -630,7 +664,8 @@ public class ListAlarmHistoriesRequest {
             && Objects.equals(this.to, that.to) && Objects.equals(this.alarmType, that.alarmType)
             && Objects.equals(this.createTimeFrom, that.createTimeFrom)
             && Objects.equals(this.createTimeTo, that.createTimeTo) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.orderBy, that.orderBy);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.orderBy, that.orderBy)
+            && Objects.equals(this.maskStatus, that.maskStatus);
     }
 
     @Override
@@ -649,7 +684,8 @@ public class ListAlarmHistoriesRequest {
             createTimeTo,
             offset,
             limit,
-            orderBy);
+            orderBy,
+            maskStatus);
     }
 
     @Override
@@ -671,6 +707,7 @@ public class ListAlarmHistoriesRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");
+        sb.append("    maskStatus: ").append(toIndentedString(maskStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

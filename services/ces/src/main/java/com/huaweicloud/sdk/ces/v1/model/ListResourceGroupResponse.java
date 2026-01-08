@@ -46,7 +46,7 @@ public class ListResourceGroupResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 一个或者多个资源分组信息。
+     * **参数解释**： 一个或者多个资源分组信息。 
      * @return resourceGroups
      */
     public List<ResourceGroupInfo> getResourceGroups() {

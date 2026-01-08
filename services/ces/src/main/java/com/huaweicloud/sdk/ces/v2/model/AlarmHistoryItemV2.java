@@ -454,7 +454,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * **参数解释**： 告警记录ID。 **取值范围**： 以ah开头，后跟22位由字母或数字组成的字符串，字符串长度为24。 
+     * **参数解释**： 告警流水号。优化告警流水号生成规则，由 ah1655717086704DEnBrJ999 更改为 ah251222T092004SAD2yARym **取值范围**： 以ah开头，后跟22位由字母或数字组成的字符串，字符串长度为24。 
      * @return recordId
      */
     public String getRecordId() {

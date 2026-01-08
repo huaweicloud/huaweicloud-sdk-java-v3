@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.sfsturbo.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -34,6 +39,87 @@ public class Metadata {
     @JsonProperty(value = "hpc_bw")
 
     private String hpcBw;
+
+    /**
+     * 是否自动创建安全组规则。\"true\"表示自动创建安全组规则，\"false\"表示不自动创建安全组规则。默认值是\"true\"。
+     */
+    public static final class AutoCreateSecurityGroupRulesEnum {
+
+        /**
+         * Enum TRUE for value: "true"
+         */
+        public static final AutoCreateSecurityGroupRulesEnum TRUE = new AutoCreateSecurityGroupRulesEnum("true");
+
+        /**
+         * Enum FALSE for value: "false"
+         */
+        public static final AutoCreateSecurityGroupRulesEnum FALSE = new AutoCreateSecurityGroupRulesEnum("false");
+
+        private static final Map<String, AutoCreateSecurityGroupRulesEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AutoCreateSecurityGroupRulesEnum> createStaticFields() {
+            Map<String, AutoCreateSecurityGroupRulesEnum> map = new HashMap<>();
+            map.put("true", TRUE);
+            map.put("false", FALSE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AutoCreateSecurityGroupRulesEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AutoCreateSecurityGroupRulesEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new AutoCreateSecurityGroupRulesEnum(value));
+        }
+
+        public static AutoCreateSecurityGroupRulesEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AutoCreateSecurityGroupRulesEnum) {
+                return this.value.equals(((AutoCreateSecurityGroupRulesEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_create_security_group_rules")
+
+    private AutoCreateSecurityGroupRulesEnum autoCreateSecurityGroupRules;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vault_id")
+
+    private String vaultId;
 
     public Metadata withCryptKeyId(String cryptKeyId) {
         this.cryptKeyId = cryptKeyId;
@@ -120,6 +206,40 @@ public class Metadata {
         this.hpcBw = hpcBw;
     }
 
+    public Metadata withAutoCreateSecurityGroupRules(AutoCreateSecurityGroupRulesEnum autoCreateSecurityGroupRules) {
+        this.autoCreateSecurityGroupRules = autoCreateSecurityGroupRules;
+        return this;
+    }
+
+    /**
+     * 是否自动创建安全组规则。\"true\"表示自动创建安全组规则，\"false\"表示不自动创建安全组规则。默认值是\"true\"。
+     * @return autoCreateSecurityGroupRules
+     */
+    public AutoCreateSecurityGroupRulesEnum getAutoCreateSecurityGroupRules() {
+        return autoCreateSecurityGroupRules;
+    }
+
+    public void setAutoCreateSecurityGroupRules(AutoCreateSecurityGroupRulesEnum autoCreateSecurityGroupRules) {
+        this.autoCreateSecurityGroupRules = autoCreateSecurityGroupRules;
+    }
+
+    public Metadata withVaultId(String vaultId) {
+        this.vaultId = vaultId;
+        return this;
+    }
+
+    /**
+     * 存储库ID。
+     * @return vaultId
+     */
+    public String getVaultId() {
+        return vaultId;
+    }
+
+    public void setVaultId(String vaultId) {
+        this.vaultId = vaultId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -132,12 +252,20 @@ public class Metadata {
         return Objects.equals(this.cryptKeyId, that.cryptKeyId)
             && Objects.equals(this.dedicatedFlavor, that.dedicatedFlavor)
             && Objects.equals(this.dedicatedStorageId, that.dedicatedStorageId)
-            && Objects.equals(this.expandType, that.expandType) && Objects.equals(this.hpcBw, that.hpcBw);
+            && Objects.equals(this.expandType, that.expandType) && Objects.equals(this.hpcBw, that.hpcBw)
+            && Objects.equals(this.autoCreateSecurityGroupRules, that.autoCreateSecurityGroupRules)
+            && Objects.equals(this.vaultId, that.vaultId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cryptKeyId, dedicatedFlavor, dedicatedStorageId, expandType, hpcBw);
+        return Objects.hash(cryptKeyId,
+            dedicatedFlavor,
+            dedicatedStorageId,
+            expandType,
+            hpcBw,
+            autoCreateSecurityGroupRules,
+            vaultId);
     }
 
     @Override
@@ -149,6 +277,10 @@ public class Metadata {
         sb.append("    dedicatedStorageId: ").append(toIndentedString(dedicatedStorageId)).append("\n");
         sb.append("    expandType: ").append(toIndentedString(expandType)).append("\n");
         sb.append("    hpcBw: ").append(toIndentedString(hpcBw)).append("\n");
+        sb.append("    autoCreateSecurityGroupRules: ")
+            .append(toIndentedString(autoCreateSecurityGroupRules))
+            .append("\n");
+        sb.append("    vaultId: ").append(toIndentedString(vaultId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

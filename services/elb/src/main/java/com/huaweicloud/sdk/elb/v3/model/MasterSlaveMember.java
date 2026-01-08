@@ -145,7 +145,7 @@ public class MasterSlaveMember {
     }
 
     /**
-     * **参数解释**：后端服务器所在子网的IPv4子网ID或IPv6子网ID。 若所属的LB的IP类型后端转发特性已开启，则该字段可以不传，表示添加跨VPC的后端服务器。此时address必须为**私网IPv4**地址，所在的pool的协议必须为UDP/TCP/TLS/HTTP/HTTPS/QUIC/GRPC。  **取值范围**：不涉及  [不支持IPv6，请勿设置为IPv6子网ID。](tag:dt)
+     * **参数解释**：后端服务器所在子网的IPv4子网ID或IPv6子网ID。 若所属的LB的IP类型后端转发特性已开启，则该字段可以不传，表示添加IP类型的后端服务器。此时address必须为**私网IPv4**地址，所在的pool的协议必须为UDP/TCP/TLS/HTTP/HTTPS/QUIC/GRPC[/GRPCS](tag:not_open)。  **取值范围**：不涉及  [不支持IPv6，请勿设置为IPv6子网ID。](tag:dt)
      * @return subnetCidrId
      */
     public String getSubnetCidrId() {
@@ -249,7 +249,7 @@ public class MasterSlaveMember {
     }
 
     /**
-     * **参数解释**：后端服务器的健康状态。  **取值范围**：不涉及 - ONLINE：后端服务器正常。 - NO_MONITOR：后端服务器所在的服务器组没有健康检查器。 - OFFLINE：后端服务器关联的ECS服务器不存在或已关机。
+     * **参数解释**：后端服务器的健康状态。  **取值范围**：不涉及 - ONLINE：后端服务器正常。 - NO_MONITOR：后端服务器所在的服务器组没有健康检查器。 - OFFLINE：后端服务器关联的ECS服务器不存在或已关机。 - INITIAL：后端云服务器健康检查打开时的初始状态。 - UNKNOWN: 后端云服务器组没有绑定监听器或者后端云服务器没有关联ECS等原因，后端云服务器健康检查结果未知。
      * @return operatingStatus
      */
     public String getOperatingStatus() {
@@ -292,7 +292,7 @@ public class MasterSlaveMember {
     }
 
     /**
-     * **参数解释**：后端服务器的类型。  **取值范围**： - ip：跨VPC的member。 - instance：关联到ECS的member。
+     * **参数解释**：后端服务器的类型。  **取值范围**： - ip：IP类型的member。 - instance：关联到ECS的member。
      * @return memberType
      */
     public String getMemberType() {
@@ -309,7 +309,7 @@ public class MasterSlaveMember {
     }
 
     /**
-     * **参数解释**：member关联的实例ID。空表示member关联的实例为非真实设备 （如：跨VPC场景）。  **取值范围**：不涉及
+     * **参数解释**：member关联的实例ID。空表示member关联的实例为非真实设备 （如：IP类型的后端场景）。  **取值范围**：不涉及
      * @return instanceId
      */
     public String getInstanceId() {

@@ -105,6 +105,16 @@ public class AutoscalePolicy {
 
     private Integer onceAutoCreated;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "min_retention")
+
+    private Integer minRetention;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "idle_retention_duration")
+
+    private Integer idleRetentionDuration;
+
     public AutoscalePolicy withAutoscaleType(AutoscaleTypeEnum autoscaleType) {
         this.autoscaleType = autoscaleType;
         return this;
@@ -128,9 +138,9 @@ public class AutoscalePolicy {
     }
 
     /**
-     * 自动创建桌面上限。
+     * 最大自动创建桌面数。
      * minimum: 1
-     * maximum: 1000
+     * maximum: 5000
      * @return maxAutoCreated
      */
     public Integer getMaxAutoCreated() {
@@ -147,9 +157,9 @@ public class AutoscalePolicy {
     }
 
     /**
-     * 空闲桌面低于多少时开始自动创建桌面。
-     * minimum: 1
-     * maximum: 1000
+     * 预留空闲桌面数。
+     * minimum: 0
+     * maximum: 5000
      * @return minIdle
      */
     public Integer getMinIdle() {
@@ -166,7 +176,7 @@ public class AutoscalePolicy {
     }
 
     /**
-     * 一次自动创建桌面的数量。
+     * 一次自动创建桌面的数量(已弃用)。
      * minimum: 1
      * maximum: 100
      * @return onceAutoCreated
@@ -177,6 +187,44 @@ public class AutoscalePolicy {
 
     public void setOnceAutoCreated(Integer onceAutoCreated) {
         this.onceAutoCreated = onceAutoCreated;
+    }
+
+    public AutoscalePolicy withMinRetention(Integer minRetention) {
+        this.minRetention = minRetention;
+        return this;
+    }
+
+    /**
+     * 最小桌面数。
+     * minimum: 0
+     * maximum: 5000
+     * @return minRetention
+     */
+    public Integer getMinRetention() {
+        return minRetention;
+    }
+
+    public void setMinRetention(Integer minRetention) {
+        this.minRetention = minRetention;
+    }
+
+    public AutoscalePolicy withIdleRetentionDuration(Integer idleRetentionDuration) {
+        this.idleRetentionDuration = idleRetentionDuration;
+        return this;
+    }
+
+    /**
+     * 空闲桌面保留时长（分钟）。
+     * minimum: 0
+     * maximum: 43200
+     * @return idleRetentionDuration
+     */
+    public Integer getIdleRetentionDuration() {
+        return idleRetentionDuration;
+    }
+
+    public void setIdleRetentionDuration(Integer idleRetentionDuration) {
+        this.idleRetentionDuration = idleRetentionDuration;
     }
 
     @Override
@@ -190,12 +238,15 @@ public class AutoscalePolicy {
         AutoscalePolicy that = (AutoscalePolicy) obj;
         return Objects.equals(this.autoscaleType, that.autoscaleType)
             && Objects.equals(this.maxAutoCreated, that.maxAutoCreated) && Objects.equals(this.minIdle, that.minIdle)
-            && Objects.equals(this.onceAutoCreated, that.onceAutoCreated);
+            && Objects.equals(this.onceAutoCreated, that.onceAutoCreated)
+            && Objects.equals(this.minRetention, that.minRetention)
+            && Objects.equals(this.idleRetentionDuration, that.idleRetentionDuration);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(autoscaleType, maxAutoCreated, minIdle, onceAutoCreated);
+        return Objects
+            .hash(autoscaleType, maxAutoCreated, minIdle, onceAutoCreated, minRetention, idleRetentionDuration);
     }
 
     @Override
@@ -206,6 +257,8 @@ public class AutoscalePolicy {
         sb.append("    maxAutoCreated: ").append(toIndentedString(maxAutoCreated)).append("\n");
         sb.append("    minIdle: ").append(toIndentedString(minIdle)).append("\n");
         sb.append("    onceAutoCreated: ").append(toIndentedString(onceAutoCreated)).append("\n");
+        sb.append("    minRetention: ").append(toIndentedString(minRetention)).append("\n");
+        sb.append("    idleRetentionDuration: ").append(toIndentedString(idleRetentionDuration)).append("\n");
         sb.append("}");
         return sb.toString();
     }

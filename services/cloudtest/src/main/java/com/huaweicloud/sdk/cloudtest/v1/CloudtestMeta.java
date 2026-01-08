@@ -124,6 +124,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestReportCustomDetailByUriR
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestReportCustomDetailByUriResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DownloadAssetTemplateRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DownloadAssetTemplateResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.DownloadStepImageNewRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DownloadStepImageNewResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.EtlRequestBody;
 import com.huaweicloud.sdk.cloudtest.v1.model.ExecuteTaskInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.ExportFactorRequest;
@@ -1402,6 +1404,50 @@ public class CloudtestMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTestReportCustomDetailByUriRequest::getCustomInfoUri,
                 DeleteTestReportCustomDetailByUriRequest::setCustomInfoUri));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadStepImageNewRequest, DownloadStepImageNewResponse> downloadStepImageNew =
+        genForDownloadStepImageNew();
+
+    private static HttpRequestDef<DownloadStepImageNewRequest, DownloadStepImageNewResponse> genForDownloadStepImageNew() {
+        // basic
+        HttpRequestDef.Builder<DownloadStepImageNewRequest, DownloadStepImageNewResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, DownloadStepImageNewRequest.class, DownloadStepImageNewResponse.class)
+            .withName("DownloadStepImageNew")
+            .withUri("/v4/{project_id}/image/{parent}/{sub}/{file_name}/{file_type}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadStepImageNewRequest::getProjectId,
+                DownloadStepImageNewRequest::setProjectId));
+        builder.<String>withRequestField("parent",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadStepImageNewRequest::getParent, DownloadStepImageNewRequest::setParent));
+        builder.<String>withRequestField("sub",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadStepImageNewRequest::getSub, DownloadStepImageNewRequest::setSub));
+        builder.<String>withRequestField("file_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadStepImageNewRequest::getFileName, DownloadStepImageNewRequest::setFileName));
+        builder.<String>withRequestField("file_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadStepImageNewRequest::getFileType, DownloadStepImageNewRequest::setFileType));
 
         // response
 

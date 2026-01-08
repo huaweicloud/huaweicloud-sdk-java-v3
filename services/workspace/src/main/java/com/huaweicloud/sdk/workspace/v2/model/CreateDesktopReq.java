@@ -193,6 +193,11 @@ public class CreateDesktopReq {
 
     private String hourPackageOfferingId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "if_mount_old_desktop_disk")
+
+    private Boolean ifMountOldDesktopDisk;
+
     public CreateDesktopReq withDesktopType(DesktopTypeEnum desktopType) {
         this.desktopType = desktopType;
         return this;
@@ -216,7 +221,7 @@ public class CreateDesktopReq {
     }
 
     /**
-     * 可用分区。将桌面创建到指定的可用分区。如果不指定则使用系统随机的可用分区。
+     * 可用分区。将桌面创建到指定的可用分区。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -425,7 +430,7 @@ public class CreateDesktopReq {
     }
 
     /**
-     * 创建桌面使用的参数列表。长度为1-100。  当前不支持一批桌面不同配置，所有桌面的配置和第一台的一致，如果第一台未设置参数，则取外层的同名参数。
+     * 创建桌面使用的参数列表。长度为1-100。
      * @return desktops
      */
     public List<Desktop> getDesktops() {
@@ -677,6 +682,23 @@ public class CreateDesktopReq {
         this.hourPackageOfferingId = hourPackageOfferingId;
     }
 
+    public CreateDesktopReq withIfMountOldDesktopDisk(Boolean ifMountOldDesktopDisk) {
+        this.ifMountOldDesktopDisk = ifMountOldDesktopDisk;
+        return this;
+    }
+
+    /**
+     * 是否在发放新桌面时，挂载旧桌面磁盘为数据盘
+     * @return ifMountOldDesktopDisk
+     */
+    public Boolean getIfMountOldDesktopDisk() {
+        return ifMountOldDesktopDisk;
+    }
+
+    public void setIfMountOldDesktopDisk(Boolean ifMountOldDesktopDisk) {
+        this.ifMountOldDesktopDisk = ifMountOldDesktopDisk;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -699,7 +721,8 @@ public class CreateDesktopReq {
             && Objects.equals(this.applySharedVpcDedicatedParam, that.applySharedVpcDedicatedParam)
             && Objects.equals(this.eip, that.eip) && Objects.equals(this.desktopNamePolicyId, that.desktopNamePolicyId)
             && Objects.equals(this.hourPackageProductId, that.hourPackageProductId)
-            && Objects.equals(this.hourPackageOfferingId, that.hourPackageOfferingId);
+            && Objects.equals(this.hourPackageOfferingId, that.hourPackageOfferingId)
+            && Objects.equals(this.ifMountOldDesktopDisk, that.ifMountOldDesktopDisk);
     }
 
     @Override
@@ -724,7 +747,8 @@ public class CreateDesktopReq {
             eip,
             desktopNamePolicyId,
             hourPackageProductId,
-            hourPackageOfferingId);
+            hourPackageOfferingId,
+            ifMountOldDesktopDisk);
     }
 
     @Override
@@ -754,6 +778,7 @@ public class CreateDesktopReq {
         sb.append("    desktopNamePolicyId: ").append(toIndentedString(desktopNamePolicyId)).append("\n");
         sb.append("    hourPackageProductId: ").append(toIndentedString(hourPackageProductId)).append("\n");
         sb.append("    hourPackageOfferingId: ").append(toIndentedString(hourPackageOfferingId)).append("\n");
+        sb.append("    ifMountOldDesktopDisk: ").append(toIndentedString(ifMountOldDesktopDisk)).append("\n");
         sb.append("}");
         return sb.toString();
     }

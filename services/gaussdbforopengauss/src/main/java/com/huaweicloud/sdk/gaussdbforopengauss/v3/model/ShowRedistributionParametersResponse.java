@@ -15,44 +15,44 @@ import java.util.function.Consumer;
 public class ShowRedistributionParametersResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "redistribution_parameters")
+    @JsonProperty(value = "expansion_parameters")
 
-    private List<RedistributionParameterResult> redistributionParameters = null;
+    private List<RedistributionParameterResult> expansionParameters = null;
 
-    public ShowRedistributionParametersResponse withRedistributionParameters(
-        List<RedistributionParameterResult> redistributionParameters) {
-        this.redistributionParameters = redistributionParameters;
+    public ShowRedistributionParametersResponse withExpansionParameters(
+        List<RedistributionParameterResult> expansionParameters) {
+        this.expansionParameters = expansionParameters;
         return this;
     }
 
-    public ShowRedistributionParametersResponse addRedistributionParametersItem(
-        RedistributionParameterResult redistributionParametersItem) {
-        if (this.redistributionParameters == null) {
-            this.redistributionParameters = new ArrayList<>();
+    public ShowRedistributionParametersResponse addExpansionParametersItem(
+        RedistributionParameterResult expansionParametersItem) {
+        if (this.expansionParameters == null) {
+            this.expansionParameters = new ArrayList<>();
         }
-        this.redistributionParameters.add(redistributionParametersItem);
+        this.expansionParameters.add(expansionParametersItem);
         return this;
     }
 
-    public ShowRedistributionParametersResponse withRedistributionParameters(
-        Consumer<List<RedistributionParameterResult>> redistributionParametersSetter) {
-        if (this.redistributionParameters == null) {
-            this.redistributionParameters = new ArrayList<>();
+    public ShowRedistributionParametersResponse withExpansionParameters(
+        Consumer<List<RedistributionParameterResult>> expansionParametersSetter) {
+        if (this.expansionParameters == null) {
+            this.expansionParameters = new ArrayList<>();
         }
-        redistributionParametersSetter.accept(this.redistributionParameters);
+        expansionParametersSetter.accept(this.expansionParameters);
         return this;
     }
 
     /**
      * **参数解释**: 参数列表信息。
-     * @return redistributionParameters
+     * @return expansionParameters
      */
-    public List<RedistributionParameterResult> getRedistributionParameters() {
-        return redistributionParameters;
+    public List<RedistributionParameterResult> getExpansionParameters() {
+        return expansionParameters;
     }
 
-    public void setRedistributionParameters(List<RedistributionParameterResult> redistributionParameters) {
-        this.redistributionParameters = redistributionParameters;
+    public void setExpansionParameters(List<RedistributionParameterResult> expansionParameters) {
+        this.expansionParameters = expansionParameters;
     }
 
     @Override
@@ -64,19 +64,19 @@ public class ShowRedistributionParametersResponse extends SdkResponse {
             return false;
         }
         ShowRedistributionParametersResponse that = (ShowRedistributionParametersResponse) obj;
-        return Objects.equals(this.redistributionParameters, that.redistributionParameters);
+        return Objects.equals(this.expansionParameters, that.expansionParameters);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(redistributionParameters);
+        return Objects.hash(expansionParameters);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowRedistributionParametersResponse {\n");
-        sb.append("    redistributionParameters: ").append(toIndentedString(redistributionParameters)).append("\n");
+        sb.append("    expansionParameters: ").append(toIndentedString(expansionParameters)).append("\n");
         sb.append("}");
         return sb.toString();
     }

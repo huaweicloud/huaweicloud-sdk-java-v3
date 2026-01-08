@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * MasterSlaveHealthMonitor
+ * 健康检查对象
  */
 public class MasterSlaveHealthMonitor {
 

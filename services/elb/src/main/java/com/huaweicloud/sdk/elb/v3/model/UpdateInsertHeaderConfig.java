@@ -65,7 +65,7 @@ public class UpdateInsertHeaderConfig {
     }
 
     /**
-     * **参数解释**：请求头参数的值。  **约束限制**：当value_type为SYSTEM_DEFINED时，value只可从CLIENT-PORT,CLIENT-IP, ELB-PROTOCOL, ELB-ID, ELB-PORT, ELB-EIP, ELB-VIP中取值。  **取值范围**：1-128个字符，支持ascii码值32<=ch<=127范围内可打印字符，*和英文问号?。不能以空格开头或结尾。  **默认取值**：不涉及
+     * **参数解释**：请求头参数的值。  **约束限制**：当value_type为SYSTEM_DEFINED时，value只可从CLIENT-PORT, CLIENT-IP, ELB-PROTOCOL, ELB-ID,         ELB-PORT, ELB-EIP, ELB-VIP, TLS-PROTOCOL, TLS-CIPHER, CLIENTCERT-SUBJECTDN, CLIENTCERT-ISSUERDN,         CLIENTCERT-FINGERPRINT, CLIENTCERT-CLIENTVERIFY, CLIENTCERT-SERIALNUMBER,         CLIENTCERT, CLIENTCERT-CIPHERS, CLIENTCERT-END, TLS-ALPN-PROTOCOL, TLS-SNI,         TLS-JA3, TLS-JA4中取值。{TLS-PROTOCOL, TLS-CIPHER, CLIENTCERT-SUBJECTDN, CLIENTCERT-ISSUERDN,         CLIENTCERT-FINGERPRINT, CLIENTCERT-CLIENTVERIFY, CLIENTCERT-SERIALNUMBER,         CLIENTCERT, CLIENTCERT-CIPHERS, CLIENTCERT-END, TLS-ALPN-PROTOCOL, TLS-SNI,         TLS-JA3, TLS-JA4}只有HTTPS、quic协议类型的监听器支持  **取值范围**：1-128个字符，支持ascii码值32<=ch<=127范围内可打印字符，*和英文问号?。不能以空格开头或结尾，不允许设置值为：connection、upgrade、content-length、transfer-encoding、keep-alive、te、host、cookie、remoteip、authority、transparent、x-forwarded-host、x-forwarded-for、x-forwarded-for-port、x-forwarded-tls-certificate-id、 x-forwarded-tls-protocol、x-forwarded-tls-cipher、x-forwarded-port、x-real-ip、x-forwarded-proto、x-forwarded-elb-ip、 x-forwarded-elb-id、x-forwarded-elb-vip、x-nuwa-trace-ne-in、x-nuwa-trace-ne-out。  **默认取值**：不涉及
      * @return value
      */
     public String getValue() {

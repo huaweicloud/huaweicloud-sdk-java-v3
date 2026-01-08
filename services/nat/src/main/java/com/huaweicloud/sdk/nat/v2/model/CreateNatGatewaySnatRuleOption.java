@@ -119,7 +119,7 @@ public class CreateNatGatewaySnatRuleOption {
     }
 
     /**
-     * 0：VPC侧，可以指定network_id 或者cidr 1：专线侧，只能指定cidr 不输入默认为0（VPC） 
+     * 资源类型。 取值范围： - 0：VPC侧，可以指定network_id 或者cidr - 1：专线侧，只能指定cidr 不输入默认为0（VPC） 
      * minimum: 0
      * maximum: 1
      * @return sourceType

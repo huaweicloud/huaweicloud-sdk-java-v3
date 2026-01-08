@@ -187,6 +187,11 @@ public class VideoProcess {
     private AdaptationEnum adaptation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fill_type")
+
+    private String fillType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "upsample")
 
     private Integer upsample;
@@ -357,6 +362,23 @@ public class VideoProcess {
         this.adaptation = adaptation;
     }
 
+    public VideoProcess withFillType(String fillType) {
+        this.fillType = fillType;
+        return this;
+    }
+
+    /**
+     * adaptation为NONE时生效： - stretch：拉伸，对每一帧进行拉伸，填满整个画面 - black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。 - white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。 - gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。 
+     * @return fillType
+     */
+    public String getFillType() {
+        return fillType;
+    }
+
+    public void setFillType(String fillType) {
+        this.fillType = fillType;
+    }
+
     public VideoProcess withUpsample(Integer upsample) {
         this.upsample = upsample;
         return this;
@@ -405,14 +427,20 @@ public class VideoProcess {
         return Objects.equals(this.hlsInitCount, that.hlsInitCount)
             && Objects.equals(this.hlsInitInterval, that.hlsInitInterval)
             && Objects.equals(this.hlsStorageType, that.hlsStorageType) && Objects.equals(this.rotate, that.rotate)
-            && Objects.equals(this.adaptation, that.adaptation) && Objects.equals(this.upsample, that.upsample)
-            && Objects.equals(this.hlsSegmentType, that.hlsSegmentType);
+            && Objects.equals(this.adaptation, that.adaptation) && Objects.equals(this.fillType, that.fillType)
+            && Objects.equals(this.upsample, that.upsample) && Objects.equals(this.hlsSegmentType, that.hlsSegmentType);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(hlsInitCount, hlsInitInterval, hlsStorageType, rotate, adaptation, upsample, hlsSegmentType);
+        return Objects.hash(hlsInitCount,
+            hlsInitInterval,
+            hlsStorageType,
+            rotate,
+            adaptation,
+            fillType,
+            upsample,
+            hlsSegmentType);
     }
 
     @Override
@@ -424,6 +452,7 @@ public class VideoProcess {
         sb.append("    hlsStorageType: ").append(toIndentedString(hlsStorageType)).append("\n");
         sb.append("    rotate: ").append(toIndentedString(rotate)).append("\n");
         sb.append("    adaptation: ").append(toIndentedString(adaptation)).append("\n");
+        sb.append("    fillType: ").append(toIndentedString(fillType)).append("\n");
         sb.append("    upsample: ").append(toIndentedString(upsample)).append("\n");
         sb.append("    hlsSegmentType: ").append(toIndentedString(hlsSegmentType)).append("\n");
         sb.append("}");

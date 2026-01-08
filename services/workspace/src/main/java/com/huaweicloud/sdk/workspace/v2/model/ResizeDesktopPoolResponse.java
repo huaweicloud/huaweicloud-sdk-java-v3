@@ -63,7 +63,7 @@ public class ResizeDesktopPoolResponse extends SdkResponse {
     }
 
     /**
-     * 按需桌面变更规格返回的任务信息。
+     * 桌面变更规格返回的任务信息
      * @return jobs
      */
     public List<ResizeDesktopPoolJobResponse> getJobs() {

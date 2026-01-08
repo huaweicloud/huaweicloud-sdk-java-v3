@@ -48,7 +48,7 @@ public class SetChargeModesBody {
     }
 
     /**
-     * 产品模式，仅支持base（基础加速）
+     * 产品模式。取值意义： - base：基础加速
      * @return productType
      */
     public String getProductType() {

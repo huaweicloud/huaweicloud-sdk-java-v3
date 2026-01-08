@@ -249,7 +249,7 @@ public class ShowWidgetResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释** 视图id **取值范围** 字符串必须以wg开头，包含22个字母和数字，长度为24个字符。 
+     * **参数解释** 视图id **取值范围** 字符串必须以wg开头，后跟22个字母和数字，总长度为24个字符 
      * @return widgetId
      */
     public String getWidgetId() {

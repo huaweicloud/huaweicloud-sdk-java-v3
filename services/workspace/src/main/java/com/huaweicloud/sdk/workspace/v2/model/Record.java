@@ -115,6 +115,11 @@ public class Record {
 
     private String publicIp;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public Record withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -472,6 +477,23 @@ public class Record {
         this.publicIp = publicIp;
     }
 
+    public Record withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -495,7 +517,8 @@ public class Record {
             && Objects.equals(this.isReconnect, that.isReconnect)
             && Objects.equals(this.connectionFailureReason, that.connectionFailureReason)
             && Objects.equals(this.networkRtt, that.networkRtt) && Objects.equals(this.e2eRtt, that.e2eRtt)
-            && Objects.equals(this.sourceIp, that.sourceIp) && Objects.equals(this.publicIp, that.publicIp);
+            && Objects.equals(this.sourceIp, that.sourceIp) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
@@ -520,7 +543,8 @@ public class Record {
             networkRtt,
             e2eRtt,
             sourceIp,
-            publicIp);
+            publicIp,
+            enterpriseProjectId);
     }
 
     @Override
@@ -548,6 +572,7 @@ public class Record {
         sb.append("    e2eRtt: ").append(toIndentedString(e2eRtt)).append("\n");
         sb.append("    sourceIp: ").append(toIndentedString(sourceIp)).append("\n");
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
