@@ -31,6 +31,9 @@ public class EswRegion {
     public static final Region AP_SOUTHEAST_3 =
         new Region("ap-southeast-3", "https://esw.ap-southeast-3.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_4 =
+        new Region("ap-southeast-4", "https://esw.ap-southeast-4.myhuaweicloud.com");
+
     public static final Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://esw.sa-brazil-1.myhuaweicloud.com");
 
     public static final Region LA_SOUTH_2 = new Region("la-south-2", "https://esw.la-south-2.myhuaweicloud.com");
@@ -58,6 +61,7 @@ public class EswRegion {
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
         map.put("ap-southeast-2", AP_SOUTHEAST_2);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
+        map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("sa-brazil-1", SA_BRAZIL_1);
         map.put("la-south-2", LA_SOUTH_2);
         map.put("tr-west-1", TR_WEST_1);

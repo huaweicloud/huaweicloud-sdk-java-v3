@@ -22,7 +22,7 @@ public class Cluster {
     private InstanceActivateInfo activateInfo;
 
     /**
-     * 计费模式  - Period: 包周期  - Demand: 按需
+     * 计费模式  - Period：包周期  - Demand：按需
      */
     public static final class ChargeModelEnum {
 
@@ -113,7 +113,7 @@ public class Cluster {
     private Long created;
 
     /**
-     * 部署方式  - CLOUD: 云上  - OUTSIDE：云外
+     * 部署方式  - CLOUD：云上  - OUTSIDE：云外
      */
     public static final class DeployModeEnum {
 
@@ -274,7 +274,7 @@ public class Cluster {
     }
 
     /**
-     * 计费模式  - Period: 包周期  - Demand: 按需
+     * 计费模式  - Period：包周期  - Demand：按需
      * @return chargeModel
      */
     public ChargeModelEnum getChargeModel() {
@@ -325,7 +325,7 @@ public class Cluster {
     }
 
     /**
-     * 部署方式  - CLOUD: 云上  - OUTSIDE：云外
+     * 部署方式  - CLOUD：云上  - OUTSIDE：云外
      * @return deployMode
      */
     public DeployModeEnum getDeployMode() {

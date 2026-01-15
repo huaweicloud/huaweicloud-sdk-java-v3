@@ -43,6 +43,8 @@ import com.huaweicloud.sdk.drs.v5.model.CreateJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.CreateJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.CreateReplicationJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.CreateReplicationJobResponse;
+import com.huaweicloud.sdk.drs.v5.model.DeleteColumnInfosRequest;
+import com.huaweicloud.sdk.drs.v5.model.DeleteColumnInfosResponse;
 import com.huaweicloud.sdk.drs.v5.model.DeleteConnectionRequest;
 import com.huaweicloud.sdk.drs.v5.model.DeleteConnectionResponse;
 import com.huaweicloud.sdk.drs.v5.model.DeleteJdbcDriverRequest;
@@ -103,6 +105,8 @@ import com.huaweicloud.sdk.drs.v5.model.ListUserJdbcDriversRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListUserJdbcDriversResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListsAgencyPermissionsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListsAgencyPermissionsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ModifyColumnInfosRequest;
+import com.huaweicloud.sdk.drs.v5.model.ModifyColumnInfosResponse;
 import com.huaweicloud.sdk.drs.v5.model.ModifyConnectionRequest;
 import com.huaweicloud.sdk.drs.v5.model.ModifyConnectionResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowActionsRequest;
@@ -111,6 +115,8 @@ import com.huaweicloud.sdk.drs.v5.model.ShowAgencyInfoRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowAgencyInfoResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowColumnInfoResultRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowColumnInfoResultResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowColumnInfosRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowColumnInfosResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowComparePolicyRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowComparePolicyResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowCompareProgressRequest;
@@ -157,10 +163,14 @@ import com.huaweicloud.sdk.drs.v5.model.ShowPositionResultRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowPositionResultResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowProgressDataRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowProgressDataResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowReplayProgressRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowReplayProgressResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowReplayResultsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowReplayResultsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowReplicationJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowReplicationJobResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowSubscriptionListsRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowSubscriptionListsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowSupportObjectTypeRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowSupportObjectTypeResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowTimelineRequest;
@@ -810,6 +820,35 @@ public class DrsClient {
     public SyncInvoker<CreateReplicationJobRequest, CreateReplicationJobResponse> createReplicationJobInvoker(
         CreateReplicationJobRequest request) {
         return new SyncInvoker<>(request, DrsMeta.createReplicationJob, hcClient);
+    }
+
+    /**
+     * 删除对象的列信息（列映射、列过滤）
+     *
+     * 删除对象的列信息（列映射、列过滤）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteColumnInfosRequest 请求对象
+     * @return DeleteColumnInfosResponse
+     */
+    public DeleteColumnInfosResponse deleteColumnInfos(DeleteColumnInfosRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.deleteColumnInfos);
+    }
+
+    /**
+     * 删除对象的列信息（列映射、列过滤）
+     *
+     * 删除对象的列信息（列映射、列过滤）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteColumnInfosRequest 请求对象
+     * @return SyncInvoker<DeleteColumnInfosRequest, DeleteColumnInfosResponse>
+     */
+    public SyncInvoker<DeleteColumnInfosRequest, DeleteColumnInfosResponse> deleteColumnInfosInvoker(
+        DeleteColumnInfosRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.deleteColumnInfos, hcClient);
     }
 
     /**
@@ -1683,6 +1722,35 @@ public class DrsClient {
     }
 
     /**
+     * 修改对象的列信息（列映射、列过滤）
+     *
+     * 修改对象的列信息（列映射、列过滤）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyColumnInfosRequest 请求对象
+     * @return ModifyColumnInfosResponse
+     */
+    public ModifyColumnInfosResponse modifyColumnInfos(ModifyColumnInfosRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.modifyColumnInfos);
+    }
+
+    /**
+     * 修改对象的列信息（列映射、列过滤）
+     *
+     * 修改对象的列信息（列映射、列过滤）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyColumnInfosRequest 请求对象
+     * @return SyncInvoker<ModifyColumnInfosRequest, ModifyColumnInfosResponse>
+     */
+    public SyncInvoker<ModifyColumnInfosRequest, ModifyColumnInfosResponse> modifyColumnInfosInvoker(
+        ModifyColumnInfosRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.modifyColumnInfos, hcClient);
+    }
+
+    /**
      * 修改连接
      *
      * 修改创建的连接信息。
@@ -1795,6 +1863,35 @@ public class DrsClient {
     public SyncInvoker<ShowColumnInfoResultRequest, ShowColumnInfoResultResponse> showColumnInfoResultInvoker(
         ShowColumnInfoResultRequest request) {
         return new SyncInvoker<>(request, DrsMeta.showColumnInfoResult, hcClient);
+    }
+
+    /**
+     * 查询对象的列信息（列映射、列过滤）
+     *
+     * 查询对象的列信息（列映射、列过滤）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowColumnInfosRequest 请求对象
+     * @return ShowColumnInfosResponse
+     */
+    public ShowColumnInfosResponse showColumnInfos(ShowColumnInfosRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.showColumnInfos);
+    }
+
+    /**
+     * 查询对象的列信息（列映射、列过滤）
+     *
+     * 查询对象的列信息（列映射、列过滤）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowColumnInfosRequest 请求对象
+     * @return SyncInvoker<ShowColumnInfosRequest, ShowColumnInfosResponse>
+     */
+    public SyncInvoker<ShowColumnInfosRequest, ShowColumnInfosResponse> showColumnInfosInvoker(
+        ShowColumnInfosRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.showColumnInfos, hcClient);
     }
 
     /**
@@ -2487,6 +2584,35 @@ public class DrsClient {
     }
 
     /**
+     * 查询录制回放任务进度
+     *
+     * 查询录制回放任务进度
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowReplayProgressRequest 请求对象
+     * @return ShowReplayProgressResponse
+     */
+    public ShowReplayProgressResponse showReplayProgress(ShowReplayProgressRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.showReplayProgress);
+    }
+
+    /**
+     * 查询录制回放任务进度
+     *
+     * 查询录制回放任务进度
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowReplayProgressRequest 请求对象
+     * @return SyncInvoker<ShowReplayProgressRequest, ShowReplayProgressResponse>
+     */
+    public SyncInvoker<ShowReplayProgressRequest, ShowReplayProgressResponse> showReplayProgressInvoker(
+        ShowReplayProgressRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.showReplayProgress, hcClient);
+    }
+
+    /**
      * 查询录制回放结果
      *
      * 获取录制回放结果数据，包括：回放基于时间维度统计信息，异常SQL及统计结果、慢SQL及统计结果
@@ -2542,6 +2668,35 @@ public class DrsClient {
     public SyncInvoker<ShowReplicationJobRequest, ShowReplicationJobResponse> showReplicationJobInvoker(
         ShowReplicationJobRequest request) {
         return new SyncInvoker<>(request, DrsMeta.showReplicationJob, hcClient);
+    }
+
+    /**
+     * 查询订阅任务列表
+     *
+     * 查询订阅任务列表，可以根据企业项目，引擎类型，网络类型，任务状态，任务名称，任务ID进行查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSubscriptionListsRequest 请求对象
+     * @return ShowSubscriptionListsResponse
+     */
+    public ShowSubscriptionListsResponse showSubscriptionLists(ShowSubscriptionListsRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.showSubscriptionLists);
+    }
+
+    /**
+     * 查询订阅任务列表
+     *
+     * 查询订阅任务列表，可以根据企业项目，引擎类型，网络类型，任务状态，任务名称，任务ID进行查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSubscriptionListsRequest 请求对象
+     * @return SyncInvoker<ShowSubscriptionListsRequest, ShowSubscriptionListsResponse>
+     */
+    public SyncInvoker<ShowSubscriptionListsRequest, ShowSubscriptionListsResponse> showSubscriptionListsInvoker(
+        ShowSubscriptionListsRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.showSubscriptionLists, hcClient);
     }
 
     /**

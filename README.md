@@ -304,8 +304,8 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-java-v3/blob/m
     * [1.4 SSL Certification](#14-ssl-certification-top)
     * [1.5 Signing Algorithm](#15-signing-algorithm-top)
 * [2. Credentials Configuration](#2-credentials-configuration-top)
-    * [2.1 Use Permanent AK&SK](#21-use-permanent-aksk-top)
-    * [2.2 Use Temporary AK&SK](#22-use-temporary-aksk-top)
+    * [2.1 Use Temporary AK&SK](#22-use-temporary-aksk-top)
+    * [2.2 Use Permanent AK&SK](#21-use-permanent-aksk-top)
     * [2.3 Use IdpId&IdTokenFile](#23-use-idpididtokenfile-top)
     * [2.4 Authentication Management](#24-authentication-management-top)
         * [2.4.1 Environment Variables](#241-environment-variables-top)
@@ -445,8 +445,8 @@ For `global` services' authentication, domainId is required to initialize Global
 
 The following authentications are supported:
 
-- permanent AK&SK
 - temporary AK&SK + SecurityToken
+- permanent AK&SK
 - IdpId&IdTokenFile
 
 **Parameter description**:
@@ -457,40 +457,7 @@ The following authentications are supported:
 - `domainId` is the account ID of Huawei Cloud.
 - `securityToken` is the security token when using temporary AK/SK.
 
-#### 2.1 Use Permanent AK&SK [:top:](#user-manual-top)
-
-To obtain the AK/SK, please refer to https://support.huaweicloud.com/intl/en-us/devg-apisign/api-sign-provide-aksk.html
-
-**Parameter description**:
-
-- `ak` is the access key ID for your account.
-- `sk` is the secret access key for your account.
-- `projectId` is the ID of your project depending on the region you want to operate.
-- `domainId` is the account ID of Huawei Cloud.
-
-``` java
-// Regional Services
-BasicCredentials basicCredentials = new BasicCredentials()
-    .withAk(ak)
-    .withSk(sk)
-    .withProjectId(projectId)
-
-// Global Services
-GlobalCredentials globalCredentials = new GlobalCredentials()
-    .withAk(ak)
-    .withSk(sk)
-    .withDomainId(domainId);
-```
-
-**Notice**:
-
-- projectId/domainId supports **automatic acquisition** in version `3.0.26-beta` or later, if you want to use this
-  feature, you need to provide the ak and sk of your account and the id of the region, and then build your client
-  instance with method `withRegion()`, detailed example could refer
-  to [3.2 Initialize the client with specified Region](#32-initialize-the-serviceclient-with-specified-region-recommended-top)
-  .
-
-#### 2.2 Use Temporary AK&SK [:top:](#user-manual-top)
+#### 2.1 Use Temporary AK&SK [:top:](#user-manual-top)
 
 A temporary access key and securityToken are issued by the system to IAM users, and can be valid for 15 minutes to 24 hours. After the validity period expires, you need to obtain them again. It's required to obtain temporary AK&SK and security token first, which could be obtained through
 permanent AK&SK or through an agency.
@@ -526,21 +493,40 @@ GlobalCredentials globalCredentials = new GlobalCredentials()
     .withSecurityToken(securityToken)
     .withDomainId(domainId);
 ```
+#### 2.2 Use Permanent AK&SK [:top:](#user-manual-top)
 
-In the following two cases, the credential information will be obtained from the metadata of the instance:
+> ⚠️The Huawei Cloud main account is for administrators and has full access to resources and cloud services. If the AK and SK are leaked, it will pose a significant information security risk to the system; therefore, their use is not recommended.
+> It is recommended to use the AK and SK of a minimally authorized IAM user. For details about how to use IAM securely, please refer to the [Best Practices for Using IAM](https://support.huaweicloud.com/intl/en-us/bestpractice-iam/iam_0426.html).
 
-1. BasicCredentials or GlobalCredentials were not manually specified when creating the client.
-2. AK/SK was not specified when creating BasicCredentials or GlobalCredentials.
+To obtain the AK/SK, please refer to https://support.huaweicloud.com/intl/en-us/devg-apisign/api-sign-provide-aksk.html
 
-Refer to the [Obtaining Metadata](https://support.huaweicloud.com/intl/en-us/usermanual-ecs/ecs_03_0166.html) for more information.
+**Parameter description**:
 
-```java
-// Regional services
-BasicCredentials credentials = new BasicCredentials().withProjectId(projectId);
+- `ak` is the access key ID for your account.
+- `sk` is the secret access key for your account.
+- `projectId` is the ID of your project depending on the region you want to operate.
+- `domainId` is the account ID of Huawei Cloud.
 
-// Global services
-GlobalCredentials credentials = new GlobalCredentials().withDomainId(domainId);
+``` java
+// Regional Services
+BasicCredentials basicCredentials = new BasicCredentials()
+    .withAk(ak)
+    .withSk(sk)
+    .withProjectId(projectId)
+
+// Global Services
+GlobalCredentials globalCredentials = new GlobalCredentials()
+    .withAk(ak)
+    .withSk(sk)
+    .withDomainId(domainId);
 ```
+
+**Notice**:
+
+- projectId/domainId supports **automatic acquisition** in version `3.0.26-beta` or later, if you want to use this
+  feature, you need to provide the ak and sk of your account and the id of the region, and then build your client
+  instance with method `withRegion()`, detailed example could refer
+  to [3.2 Initialize the client with specified Region](#32-initialize-the-serviceclient-with-specified-region-recommended-top).
 
 #### 2.3 Use IdpId&IdTokenFile [:top:](#user-manual-top)
 

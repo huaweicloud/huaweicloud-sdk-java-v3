@@ -48,7 +48,7 @@ public class ShowDomainDetectionRequest {
     }
 
     /**
-     * 待诊断记录集的类型。 取值范围：CNAME、TXT、MX。
+     * **参数解释：** 待诊断记录集的类型。 **取值范围：** - MX：指定域名对应的邮件服务器。 - CNAME：将域名解析到另一域名，或者多个域名映射到同一域名上。 - TXT：用于对域名进行标识和说明。
      * @return type
      */
     public String getType() {

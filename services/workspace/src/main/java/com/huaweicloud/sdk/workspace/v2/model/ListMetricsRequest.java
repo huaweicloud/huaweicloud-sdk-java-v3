@@ -19,6 +19,11 @@ import java.util.function.Consumer;
 public class ListMetricsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dim")
+
+    private String dim;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
     private String startTime;
@@ -27,11 +32,6 @@ public class ListMetricsRequest {
     @JsonProperty(value = "end_time")
 
     private String endTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dim")
-
-    private String dim;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric_names")
@@ -113,6 +113,23 @@ public class ListMetricsRequest {
 
     private PeriodEnum period;
 
+    public ListMetricsRequest withDim(String dim) {
+        this.dim = dim;
+        return this;
+    }
+
+    /**
+     * 指标维度 | 目前最大支持3个维度，必须从0开始；维度格式为dim.{i}=key,value，key的最大长度32，value的最大长度为256。 单维度：dim.0=instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d 多维度：dim.0=key,value&dim.1=key,value。
+     * @return dim
+     */
+    public String getDim() {
+        return dim;
+    }
+
+    public void setDim(String dim) {
+        this.dim = dim;
+    }
+
     public ListMetricsRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -145,23 +162,6 @@ public class ListMetricsRequest {
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
-    }
-
-    public ListMetricsRequest withDim(String dim) {
-        this.dim = dim;
-        return this;
-    }
-
-    /**
-     * 指标维度 | 目前最大支持3个维度，必须从0开始；维度格式为dim.{i}=key,value，key的最大长度32，value的最大长度为256。 单维度：dim.0=instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d 多维度：dim.0=key,value&dim.1=key,value。
-     * @return dim
-     */
-    public String getDim() {
-        return dim;
-    }
-
-    public void setDim(String dim) {
-        this.dim = dim;
     }
 
     public ListMetricsRequest withMetricNames(List<String> metricNames) {
@@ -223,23 +223,23 @@ public class ListMetricsRequest {
             return false;
         }
         ListMetricsRequest that = (ListMetricsRequest) obj;
-        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.dim, that.dim) && Objects.equals(this.metricNames, that.metricNames)
+        return Objects.equals(this.dim, that.dim) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.metricNames, that.metricNames)
             && Objects.equals(this.period, that.period);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(startTime, endTime, dim, metricNames, period);
+        return Objects.hash(dim, startTime, endTime, metricNames, period);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListMetricsRequest {\n");
+        sb.append("    dim: ").append(toIndentedString(dim)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
-        sb.append("    dim: ").append(toIndentedString(dim)).append("\n");
         sb.append("    metricNames: ").append(toIndentedString(metricNames)).append("\n");
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("}");

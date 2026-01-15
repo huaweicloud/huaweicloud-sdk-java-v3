@@ -24,6 +24,11 @@ public class NodeMetadata {
     private String uid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "labels")
+
+    private Map<String, String> labels = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "annotations")
 
     private Map<String, String> annotations = null;
@@ -75,6 +80,39 @@ public class NodeMetadata {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public NodeMetadata withLabels(Map<String, String> labels) {
+        this.labels = labels;
+        return this;
+    }
+
+    public NodeMetadata putLabelsItem(String key, String labelsItem) {
+        if (this.labels == null) {
+            this.labels = new HashMap<>();
+        }
+        this.labels.put(key, labelsItem);
+        return this;
+    }
+
+    public NodeMetadata withLabels(Consumer<Map<String, String>> labelsSetter) {
+        if (this.labels == null) {
+            this.labels = new HashMap<>();
+        }
+        labelsSetter.accept(this.labels);
+        return this;
+    }
+
+    /**
+     * **参数解释**： CCE自有节点标签，非Kubernetes原生labels。 > 标签可用于选择对象并查找满足某些条件的对象集合，格式为key/value键值对。  **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及  示例：  ``` \"labels\": {   \"key\" : \"value\" } ```
+     * @return labels
+     */
+    public Map<String, String> getLabels() {
+        return labels;
+    }
+
+    public void setLabels(Map<String, String> labels) {
+        this.labels = labels;
     }
 
     public NodeMetadata withAnnotations(Map<String, String> annotations) {
@@ -180,7 +218,7 @@ public class NodeMetadata {
         }
         NodeMetadata that = (NodeMetadata) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.uid, that.uid)
-            && Objects.equals(this.annotations, that.annotations)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.annotations, that.annotations)
             && Objects.equals(this.creationTimestamp, that.creationTimestamp)
             && Objects.equals(this.updateTimestamp, that.updateTimestamp)
             && Objects.equals(this.ownerReferences, that.ownerReferences);
@@ -188,7 +226,7 @@ public class NodeMetadata {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, uid, annotations, creationTimestamp, updateTimestamp, ownerReferences);
+        return Objects.hash(name, uid, labels, annotations, creationTimestamp, updateTimestamp, ownerReferences);
     }
 
     @Override
@@ -197,6 +235,7 @@ public class NodeMetadata {
         sb.append("class NodeMetadata {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    uid: ").append(toIndentedString(uid)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
         sb.append("    creationTimestamp: ").append(toIndentedString(creationTimestamp)).append("\n");
         sb.append("    updateTimestamp: ").append(toIndentedString(updateTimestamp)).append("\n");

@@ -72,7 +72,7 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
 
     private static final long DEFAULT_DURATION_SECONDS = 6 * 60 * 60; // 6h
 
-    private static final long DEFAULT_EXPIRATION_THRESHOLD_SECONDS = 2 * 60 * 60; // 2h
+    private static final long DEFAULT_EXPIRATION_THRESHOLD_SECONDS = 40 * 60; // 40min
 
     private long expirationThresholdSeconds = DEFAULT_EXPIRATION_THRESHOLD_SECONDS;
 
@@ -211,14 +211,19 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
         return toDerivedT();
     }
 
+    /**
+     * @deprecated This method will be removed in future.
+     */
     public long getExpirationThresholdSeconds() {
         return expirationThresholdSeconds;
     }
 
+    /**
+     * @deprecated This method will be removed in future, do not set this option if no problems occur.
+     * If this option needs to be set, the recommended value range is 1200~2400.
+     */
+    @Deprecated
     public void setExpirationThresholdSeconds(long expirationThresholdSeconds) {
-        if (expirationThresholdSeconds < 60 || expirationThresholdSeconds > 7200) {
-            throw new IllegalArgumentException("expirationThresholdSeconds must be between 60 and 7200.");
-        }
         this.expirationThresholdSeconds = expirationThresholdSeconds;
     }
 

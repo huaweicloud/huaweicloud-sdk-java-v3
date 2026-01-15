@@ -21,7 +21,7 @@ public class ApplyWorkspaceReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ad_domains")
 
-    private AdDomain adDomains;
+    private ApplyWorkspaceAdDomain adDomains;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_id")
@@ -139,14 +139,14 @@ public class ApplyWorkspaceReq {
 
     private Boolean isSendEmail;
 
-    public ApplyWorkspaceReq withAdDomains(AdDomain adDomains) {
+    public ApplyWorkspaceReq withAdDomains(ApplyWorkspaceAdDomain adDomains) {
         this.adDomains = adDomains;
         return this;
     }
 
-    public ApplyWorkspaceReq withAdDomains(Consumer<AdDomain> adDomainsSetter) {
+    public ApplyWorkspaceReq withAdDomains(Consumer<ApplyWorkspaceAdDomain> adDomainsSetter) {
         if (this.adDomains == null) {
-            this.adDomains = new AdDomain();
+            this.adDomains = new ApplyWorkspaceAdDomain();
             adDomainsSetter.accept(this.adDomains);
         }
 
@@ -157,11 +157,11 @@ public class ApplyWorkspaceReq {
      * Get adDomains
      * @return adDomains
      */
-    public AdDomain getAdDomains() {
+    public ApplyWorkspaceAdDomain getAdDomains() {
         return adDomains;
     }
 
-    public void setAdDomains(AdDomain adDomains) {
+    public void setAdDomains(ApplyWorkspaceAdDomain adDomains) {
         this.adDomains = adDomains;
     }
 

@@ -20,9 +20,9 @@ public class ShowDomainTemplateResponse extends SdkResponse {
     private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "temlates")
+    @JsonProperty(value = "templates")
 
-    private List<TemplateItem> temlates = null;
+    private List<TemplateItem> templates = null;
 
     public ShowDomainTemplateResponse withTotal(Integer total) {
         this.total = total;
@@ -41,37 +41,37 @@ public class ShowDomainTemplateResponse extends SdkResponse {
         this.total = total;
     }
 
-    public ShowDomainTemplateResponse withTemlates(List<TemplateItem> temlates) {
-        this.temlates = temlates;
+    public ShowDomainTemplateResponse withTemplates(List<TemplateItem> templates) {
+        this.templates = templates;
         return this;
     }
 
-    public ShowDomainTemplateResponse addTemlatesItem(TemplateItem temlatesItem) {
-        if (this.temlates == null) {
-            this.temlates = new ArrayList<>();
+    public ShowDomainTemplateResponse addTemplatesItem(TemplateItem templatesItem) {
+        if (this.templates == null) {
+            this.templates = new ArrayList<>();
         }
-        this.temlates.add(temlatesItem);
+        this.templates.add(templatesItem);
         return this;
     }
 
-    public ShowDomainTemplateResponse withTemlates(Consumer<List<TemplateItem>> temlatesSetter) {
-        if (this.temlates == null) {
-            this.temlates = new ArrayList<>();
+    public ShowDomainTemplateResponse withTemplates(Consumer<List<TemplateItem>> templatesSetter) {
+        if (this.templates == null) {
+            this.templates = new ArrayList<>();
         }
-        temlatesSetter.accept(this.temlates);
+        templatesSetter.accept(this.templates);
         return this;
     }
 
     /**
-     * Get temlates
-     * @return temlates
+     * Get templates
+     * @return templates
      */
-    public List<TemplateItem> getTemlates() {
-        return temlates;
+    public List<TemplateItem> getTemplates() {
+        return templates;
     }
 
-    public void setTemlates(List<TemplateItem> temlates) {
-        this.temlates = temlates;
+    public void setTemplates(List<TemplateItem> templates) {
+        this.templates = templates;
     }
 
     @Override
@@ -83,12 +83,12 @@ public class ShowDomainTemplateResponse extends SdkResponse {
             return false;
         }
         ShowDomainTemplateResponse that = (ShowDomainTemplateResponse) obj;
-        return Objects.equals(this.total, that.total) && Objects.equals(this.temlates, that.temlates);
+        return Objects.equals(this.total, that.total) && Objects.equals(this.templates, that.templates);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, temlates);
+        return Objects.hash(total, templates);
     }
 
     @Override
@@ -96,7 +96,7 @@ public class ShowDomainTemplateResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowDomainTemplateResponse {\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
-        sb.append("    temlates: ").append(toIndentedString(temlates)).append("\n");
+        sb.append("    templates: ").append(toIndentedString(templates)).append("\n");
         sb.append("}");
         return sb.toString();
     }

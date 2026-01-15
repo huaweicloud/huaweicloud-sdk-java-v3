@@ -160,7 +160,7 @@ public class CreateInstancePeriodRequest {
     }
 
     /**
-     * 云服务器对应可用分区信息。(两个主备分区，中间用“,”分割，例如az1.dc1,az2.dc2)。
+     * 云服务器对应可用分区信息。(两个主备分区，中间用“,”分隔，例如az1.dc1,az2.dc2)。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -314,7 +314,7 @@ public class CreateInstancePeriodRequest {
     }
 
     /**
-     * 计费模式： - 0: 包周期计费 - 1: 按需计费
+     * 计费模式： - 0：包周期计费 - 1：按需计费
      * @return chargingMode
      */
     public Integer getChargingMode() {
@@ -331,7 +331,7 @@ public class CreateInstancePeriodRequest {
     }
 
     /**
-     * -订购周期类型 - 0: 天 - 1：周 - 2：月 - 3：年 - 4: 小时 - 5: 绝对时间
+     * -订购周期类型 - 0：天 - 1：周 - 2：月 - 3：年 - 4：小时 - 5：绝对时间
      * @return periodType
      */
     public Integer getPeriodType() {
@@ -466,7 +466,7 @@ public class CreateInstancePeriodRequest {
     }
 
     /**
-     * 自动续费 - 1: 自动续费 - 0: 不自动续费
+     * 自动续费 - 1：自动续费 - 0：不自动续费
      * @return isAutoRenew
      */
     public Integer getIsAutoRenew() {

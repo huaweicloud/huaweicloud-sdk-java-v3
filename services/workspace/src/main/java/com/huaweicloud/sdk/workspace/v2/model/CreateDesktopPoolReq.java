@@ -156,7 +156,7 @@ public class CreateDesktopPoolReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
 
-    private List<SecurityGroup> securityGroups = null;
+    private List<SecurityGroupIdInfo> securityGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorized_objects")
@@ -462,12 +462,12 @@ public class CreateDesktopPoolReq {
         this.subnetIds = subnetIds;
     }
 
-    public CreateDesktopPoolReq withSecurityGroups(List<SecurityGroup> securityGroups) {
+    public CreateDesktopPoolReq withSecurityGroups(List<SecurityGroupIdInfo> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
     }
 
-    public CreateDesktopPoolReq addSecurityGroupsItem(SecurityGroup securityGroupsItem) {
+    public CreateDesktopPoolReq addSecurityGroupsItem(SecurityGroupIdInfo securityGroupsItem) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -475,7 +475,7 @@ public class CreateDesktopPoolReq {
         return this;
     }
 
-    public CreateDesktopPoolReq withSecurityGroups(Consumer<List<SecurityGroup>> securityGroupsSetter) {
+    public CreateDesktopPoolReq withSecurityGroups(Consumer<List<SecurityGroupIdInfo>> securityGroupsSetter) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -487,11 +487,11 @@ public class CreateDesktopPoolReq {
      * 桌面使用的安全组，如果不指定则默认使用桌面代理中指定的安全组。
      * @return securityGroups
      */
-    public List<SecurityGroup> getSecurityGroups() {
+    public List<SecurityGroupIdInfo> getSecurityGroups() {
         return securityGroups;
     }
 
-    public void setSecurityGroups(List<SecurityGroup> securityGroups) {
+    public void setSecurityGroups(List<SecurityGroupIdInfo> securityGroups) {
         this.securityGroups = securityGroups;
     }
 

@@ -20,6 +20,16 @@ public class I18n {
 
     private String enUs;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "es_us")
+
+    private String esUs;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pt_br")
+
+    private String ptBr;
+
     public I18n withZhCn(String zhCn) {
         this.zhCn = zhCn;
         return this;
@@ -54,6 +64,40 @@ public class I18n {
         this.enUs = enUs;
     }
 
+    public I18n withEsUs(String esUs) {
+        this.esUs = esUs;
+        return this;
+    }
+
+    /**
+     * 可用分区西班牙语名称。
+     * @return esUs
+     */
+    public String getEsUs() {
+        return esUs;
+    }
+
+    public void setEsUs(String esUs) {
+        this.esUs = esUs;
+    }
+
+    public I18n withPtBr(String ptBr) {
+        this.ptBr = ptBr;
+        return this;
+    }
+
+    /**
+     * 可用分区葡萄牙语名称。
+     * @return ptBr
+     */
+    public String getPtBr() {
+        return ptBr;
+    }
+
+    public void setPtBr(String ptBr) {
+        this.ptBr = ptBr;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +107,13 @@ public class I18n {
             return false;
         }
         I18n that = (I18n) obj;
-        return Objects.equals(this.zhCn, that.zhCn) && Objects.equals(this.enUs, that.enUs);
+        return Objects.equals(this.zhCn, that.zhCn) && Objects.equals(this.enUs, that.enUs)
+            && Objects.equals(this.esUs, that.esUs) && Objects.equals(this.ptBr, that.ptBr);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(zhCn, enUs);
+        return Objects.hash(zhCn, enUs, esUs, ptBr);
     }
 
     @Override
@@ -77,6 +122,8 @@ public class I18n {
         sb.append("class I18n {\n");
         sb.append("    zhCn: ").append(toIndentedString(zhCn)).append("\n");
         sb.append("    enUs: ").append(toIndentedString(enUs)).append("\n");
+        sb.append("    esUs: ").append(toIndentedString(esUs)).append("\n");
+        sb.append("    ptBr: ").append(toIndentedString(ptBr)).append("\n");
         sb.append("}");
         return sb.toString();
     }

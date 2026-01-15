@@ -26,7 +26,7 @@ public class ResourceInstanceResponseSysTags {
     }
 
     /**
-     * 键
+     * 键。最大长度128个字符。
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class ResourceInstanceResponseSysTags {
     }
 
     /**
-     * 值
+     * 值。每个值最大长度255个字符。
      * @return value
      */
     public String getValue() {

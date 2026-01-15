@@ -1089,6 +1089,81 @@ public class QueryJobResp {
 
     private Boolean isOpenFastClean;
 
+    /**
+     * 灾备任务内核方向，up上云，down下云。当任务处于倒换中，与灾备任务方向相反，否则相同。
+     */
+    public static final class JobKernelDirectionEnum {
+
+        /**
+         * Enum UP for value: "up"
+         */
+        public static final JobKernelDirectionEnum UP = new JobKernelDirectionEnum("up");
+
+        /**
+         * Enum DOWN for value: "down"
+         */
+        public static final JobKernelDirectionEnum DOWN = new JobKernelDirectionEnum("down");
+
+        private static final Map<String, JobKernelDirectionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, JobKernelDirectionEnum> createStaticFields() {
+            Map<String, JobKernelDirectionEnum> map = new HashMap<>();
+            map.put("up", UP);
+            map.put("down", DOWN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        JobKernelDirectionEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static JobKernelDirectionEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobKernelDirectionEnum(value));
+        }
+
+        public static JobKernelDirectionEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof JobKernelDirectionEnum) {
+                return this.value.equals(((JobKernelDirectionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_kernel_direction")
+
+    private JobKernelDirectionEnum jobKernelDirection;
+
     public QueryJobResp withId(String id) {
         this.id = id;
         return this;
@@ -2295,6 +2370,23 @@ public class QueryJobResp {
         this.isOpenFastClean = isOpenFastClean;
     }
 
+    public QueryJobResp withJobKernelDirection(JobKernelDirectionEnum jobKernelDirection) {
+        this.jobKernelDirection = jobKernelDirection;
+        return this;
+    }
+
+    /**
+     * 灾备任务内核方向，up上云，down下云。当任务处于倒换中，与灾备任务方向相反，否则相同。
+     * @return jobKernelDirection
+     */
+    public JobKernelDirectionEnum getJobKernelDirection() {
+        return jobKernelDirection;
+    }
+
+    public void setJobKernelDirection(JobKernelDirectionEnum jobKernelDirection) {
+        this.jobKernelDirection = jobKernelDirection;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -2343,7 +2435,8 @@ public class QueryJobResp {
             && Objects.equals(this.publicIpList, that.publicIpList)
             && Objects.equals(this.bindPublicIpState, that.bindPublicIpState)
             && Objects.equals(this.children, that.children)
-            && Objects.equals(this.isOpenFastClean, that.isOpenFastClean);
+            && Objects.equals(this.isOpenFastClean, that.isOpenFastClean)
+            && Objects.equals(this.jobKernelDirection, that.jobKernelDirection);
     }
 
     @Override
@@ -2408,7 +2501,8 @@ public class QueryJobResp {
             publicIpList,
             bindPublicIpState,
             children,
-            isOpenFastClean);
+            isOpenFastClean,
+            jobKernelDirection);
     }
 
     @Override
@@ -2476,6 +2570,7 @@ public class QueryJobResp {
         sb.append("    bindPublicIpState: ").append(toIndentedString(bindPublicIpState)).append("\n");
         sb.append("    children: ").append(toIndentedString(children)).append("\n");
         sb.append("    isOpenFastClean: ").append(toIndentedString(isOpenFastClean)).append("\n");
+        sb.append("    jobKernelDirection: ").append(toIndentedString(jobKernelDirection)).append("\n");
         sb.append("}");
         return sb.toString();
     }

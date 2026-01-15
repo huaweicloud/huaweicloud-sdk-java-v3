@@ -54,6 +54,11 @@ public class ActionParams {
     private Boolean isOnlyInitTask;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_auto_create_compare")
+
+    private Boolean isAutoCreateCompare;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "force_delete")
 
     private Boolean forceDelete;
@@ -243,6 +248,23 @@ public class ActionParams {
         this.isOnlyInitTask = isOnlyInitTask;
     }
 
+    public ActionParams withIsAutoCreateCompare(Boolean isAutoCreateCompare) {
+        this.isAutoCreateCompare = isAutoCreateCompare;
+        return this;
+    }
+
+    /**
+     * 是否在任务结束时自动创建对比任务，不填默认设置为true。
+     * @return isAutoCreateCompare
+     */
+    public Boolean getIsAutoCreateCompare() {
+        return isAutoCreateCompare;
+    }
+
+    public void setIsAutoCreateCompare(Boolean isAutoCreateCompare) {
+        this.isAutoCreateCompare = isAutoCreateCompare;
+    }
+
     public ActionParams withForceDelete(Boolean forceDelete) {
         this.forceDelete = forceDelete;
         return this;
@@ -353,6 +375,7 @@ public class ActionParams {
             && Objects.equals(this.compareTaskParam, that.compareTaskParam)
             && Objects.equals(this.isSyncReEdit, that.isSyncReEdit)
             && Objects.equals(this.isOnlyInitTask, that.isOnlyInitTask)
+            && Objects.equals(this.isAutoCreateCompare, that.isAutoCreateCompare)
             && Objects.equals(this.forceDelete, that.forceDelete)
             && Objects.equals(this.publicIpConfig, that.publicIpConfig)
             && Objects.equals(this.replayConfig, that.replayConfig) && Objects.equals(this.repairInfo, that.repairInfo);
@@ -368,6 +391,7 @@ public class ActionParams {
             compareTaskParam,
             isSyncReEdit,
             isOnlyInitTask,
+            isAutoCreateCompare,
             forceDelete,
             publicIpConfig,
             replayConfig,
@@ -386,6 +410,7 @@ public class ActionParams {
         sb.append("    compareTaskParam: ").append(toIndentedString(compareTaskParam)).append("\n");
         sb.append("    isSyncReEdit: ").append(toIndentedString(isSyncReEdit)).append("\n");
         sb.append("    isOnlyInitTask: ").append(toIndentedString(isOnlyInitTask)).append("\n");
+        sb.append("    isAutoCreateCompare: ").append(toIndentedString(isAutoCreateCompare)).append("\n");
         sb.append("    forceDelete: ").append(toIndentedString(forceDelete)).append("\n");
         sb.append("    publicIpConfig: ").append(toIndentedString(publicIpConfig)).append("\n");
         sb.append("    replayConfig: ").append(toIndentedString(replayConfig)).append("\n");

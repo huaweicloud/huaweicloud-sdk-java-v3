@@ -21,11 +21,6 @@ public class SubCertData {
 
     private String keyAlgorithm;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "signature_algorithm")
-
-    private String signatureAlgorithm;
-
     public SubCertData withDistinguishedName(DistinguishedName distinguishedName) {
         this.distinguishedName = distinguishedName;
         return this;
@@ -69,23 +64,6 @@ public class SubCertData {
         this.keyAlgorithm = keyAlgorithm;
     }
 
-    public SubCertData withSignatureAlgorithm(String signatureAlgorithm) {
-        this.signatureAlgorithm = signatureAlgorithm;
-        return this;
-    }
-
-    /**
-     * 签名哈希算法 SHA-256 SHA-512。
-     * @return signatureAlgorithm
-     */
-    public String getSignatureAlgorithm() {
-        return signatureAlgorithm;
-    }
-
-    public void setSignatureAlgorithm(String signatureAlgorithm) {
-        this.signatureAlgorithm = signatureAlgorithm;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -96,13 +74,12 @@ public class SubCertData {
         }
         SubCertData that = (SubCertData) obj;
         return Objects.equals(this.distinguishedName, that.distinguishedName)
-            && Objects.equals(this.keyAlgorithm, that.keyAlgorithm)
-            && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm);
+            && Objects.equals(this.keyAlgorithm, that.keyAlgorithm);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(distinguishedName, keyAlgorithm, signatureAlgorithm);
+        return Objects.hash(distinguishedName, keyAlgorithm);
     }
 
     @Override
@@ -111,7 +88,6 @@ public class SubCertData {
         sb.append("class SubCertData {\n");
         sb.append("    distinguishedName: ").append(toIndentedString(distinguishedName)).append("\n");
         sb.append("    keyAlgorithm: ").append(toIndentedString(keyAlgorithm)).append("\n");
-        sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
         sb.append("}");
         return sb.toString();
     }

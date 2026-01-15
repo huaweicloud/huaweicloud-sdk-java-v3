@@ -439,6 +439,11 @@ public class DesktopDetailInfo {
 
     private HourPackageInfo hourPackageInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_freeze")
+
+    private Boolean isFreeze;
+
     public DesktopDetailInfo withDesktopId(String desktopId) {
         this.desktopId = desktopId;
         return this;
@@ -1400,6 +1405,23 @@ public class DesktopDetailInfo {
         this.hourPackageInfo = hourPackageInfo;
     }
 
+    public DesktopDetailInfo withIsFreeze(Boolean isFreeze) {
+        this.isFreeze = isFreeze;
+        return this;
+    }
+
+    /**
+     * 是否冻结
+     * @return isFreeze
+     */
+    public Boolean getIsFreeze() {
+        return isFreeze;
+    }
+
+    public void setIsFreeze(Boolean isFreeze) {
+        this.isFreeze = isFreeze;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1438,7 +1460,8 @@ public class DesktopDetailInfo {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.billResourceId, that.billResourceId)
             && Objects.equals(this.process, that.process) && Objects.equals(this.rootResourceId, that.rootResourceId)
-            && Objects.equals(this.hourPackageInfo, that.hourPackageInfo);
+            && Objects.equals(this.hourPackageInfo, that.hourPackageInfo)
+            && Objects.equals(this.isFreeze, that.isFreeze);
     }
 
     @Override
@@ -1487,7 +1510,8 @@ public class DesktopDetailInfo {
             billResourceId,
             process,
             rootResourceId,
-            hourPackageInfo);
+            hourPackageInfo,
+            isFreeze);
     }
 
     @Override
@@ -1539,6 +1563,7 @@ public class DesktopDetailInfo {
         sb.append("    process: ").append(toIndentedString(process)).append("\n");
         sb.append("    rootResourceId: ").append(toIndentedString(rootResourceId)).append("\n");
         sb.append("    hourPackageInfo: ").append(toIndentedString(hourPackageInfo)).append("\n");
+        sb.append("    isFreeze: ").append(toIndentedString(isFreeze)).append("\n");
         sb.append("}");
         return sb.toString();
     }

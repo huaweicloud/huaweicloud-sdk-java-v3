@@ -608,6 +608,11 @@ public class ShowJobDetailRequest {
 
     private CompareDetailTypeEnum compareDetailType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_level")
+
+    private String logLevel;
+
     public ShowJobDetailRequest withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -831,6 +836,23 @@ public class ShowJobDetailRequest {
         this.compareDetailType = compareDetailType;
     }
 
+    public ShowJobDetailRequest withLogLevel(String logLevel) {
+        this.logLevel = logLevel;
+        return this;
+    }
+
+    /**
+     * 查询日志的级别。取值： - Info：提示级别。 - Warn：警告级别。 - Error：错误级别。
+     * @return logLevel
+     */
+    public String getLogLevel() {
+        return logLevel;
+    }
+
+    public void setLogLevel(String logLevel) {
+        this.logLevel = logLevel;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -848,7 +870,8 @@ public class ShowJobDetailRequest {
             && Objects.equals(this.compareTaskId, that.compareTaskId)
             && Objects.equals(this.sourceDbName, that.sourceDbName)
             && Objects.equals(this.targetDbName, that.targetDbName)
-            && Objects.equals(this.compareDetailType, that.compareDetailType);
+            && Objects.equals(this.compareDetailType, that.compareDetailType)
+            && Objects.equals(this.logLevel, that.logLevel);
     }
 
     @Override
@@ -865,7 +888,8 @@ public class ShowJobDetailRequest {
             compareTaskId,
             sourceDbName,
             targetDbName,
-            compareDetailType);
+            compareDetailType,
+            logLevel);
     }
 
     @Override
@@ -885,6 +909,7 @@ public class ShowJobDetailRequest {
         sb.append("    sourceDbName: ").append(toIndentedString(sourceDbName)).append("\n");
         sb.append("    targetDbName: ").append(toIndentedString(targetDbName)).append("\n");
         sb.append("    compareDetailType: ").append(toIndentedString(compareDetailType)).append("\n");
+        sb.append("    logLevel: ").append(toIndentedString(logLevel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -101,7 +101,7 @@ public class QueryDiagnosisResult {
     }
 
     /**
-     * 状态。
+     * 状态。 INIT：初始化，RUNNING：诊断中，SUCCESS：诊断完成，FAILED：诊断失败
      * @return status
      */
     public String getStatus() {

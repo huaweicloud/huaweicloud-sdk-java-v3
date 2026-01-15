@@ -22,7 +22,7 @@ public class UnbindDbEncryptEipResponse extends SdkResponse {
     }
 
     /**
-     * 操作结果  - success: 成功  - failed: 失败
+     * 操作结果  - success：成功  - failed：失败
      * @return result
      */
     public String getResult() {

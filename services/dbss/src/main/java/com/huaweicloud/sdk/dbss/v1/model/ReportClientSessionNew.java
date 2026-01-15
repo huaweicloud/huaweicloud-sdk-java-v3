@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * ReportClientSessionNew
+ * 数据库用户会话量
  */
 public class ReportClientSessionNew {
 

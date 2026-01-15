@@ -26,7 +26,7 @@ public class ResourceInstanceResponseTags {
     }
 
     /**
-     * 键
+     * 键。最大长度128个字符。
      * @return key
      */
     public String getKey() {

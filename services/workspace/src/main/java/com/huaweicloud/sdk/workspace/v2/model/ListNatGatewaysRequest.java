@@ -151,6 +151,11 @@ public class ListNatGatewaysRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
     public ListNatGatewaysRequest withId(String id) {
         this.id = id;
         return this;
@@ -338,6 +343,25 @@ public class ListNatGatewaysRequest {
         this.limit = limit;
     }
 
+    public ListNatGatewaysRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 偏移量，默认0。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -351,12 +375,13 @@ public class ListNatGatewaysRequest {
             && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
             && Objects.equals(this.spec, that.spec) && Objects.equals(this.routerId, that.routerId)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, enterpriseProjectId, description, createdAt, name, status, spec, routerId, limit);
+        return Objects
+            .hash(id, enterpriseProjectId, description, createdAt, name, status, spec, routerId, limit, offset);
     }
 
     @Override
@@ -372,6 +397,7 @@ public class ListNatGatewaysRequest {
         sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
         sb.append("    routerId: ").append(toIndentedString(routerId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

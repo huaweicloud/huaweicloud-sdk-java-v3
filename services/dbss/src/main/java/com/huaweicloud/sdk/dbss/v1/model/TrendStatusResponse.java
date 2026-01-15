@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * TrendStatusResponse
+ * 数据库趋势统计
  */
 public class TrendStatusResponse {
 
@@ -87,7 +87,7 @@ public class TrendStatusResponse {
     }
 
     /**
-     * 统计类型  - RISK: 风险  - SESSION：SESSION  - SQL: SQL  - COUNT: 数量  - INJECTION：注入 - OPERATION: 操作
+     * 统计类型  - RISK：风险  - SESSION：SESSION  - SQL：SQL  - COUNT：数量  - INJECTION：注入 - OPERATION：操作
      * @return statisticsType
      */
     public String getStatisticsType() {

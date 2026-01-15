@@ -30,6 +30,11 @@ public class PoliciesPeripheralsDeviceRedirectionPrinterRedirectionOptions {
 
     private String universalPrinterDriver;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "network_redirect_printer_enable")
+
+    private Boolean networkRedirectPrinterEnable;
+
     public PoliciesPeripheralsDeviceRedirectionPrinterRedirectionOptions withMobilePrinterEnable(
         Boolean mobilePrinterEnable) {
         this.mobilePrinterEnable = mobilePrinterEnable;
@@ -102,6 +107,24 @@ public class PoliciesPeripheralsDeviceRedirectionPrinterRedirectionOptions {
         this.universalPrinterDriver = universalPrinterDriver;
     }
 
+    public PoliciesPeripheralsDeviceRedirectionPrinterRedirectionOptions withNetworkRedirectPrinterEnable(
+        Boolean networkRedirectPrinterEnable) {
+        this.networkRedirectPrinterEnable = networkRedirectPrinterEnable;
+        return this;
+    }
+
+    /**
+     * 是否开启使用端侧网络连接网络打印机开关。取值为： false：表示关闭。 true：表示开启。
+     * @return networkRedirectPrinterEnable
+     */
+    public Boolean getNetworkRedirectPrinterEnable() {
+        return networkRedirectPrinterEnable;
+    }
+
+    public void setNetworkRedirectPrinterEnable(Boolean networkRedirectPrinterEnable) {
+        this.networkRedirectPrinterEnable = networkRedirectPrinterEnable;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -115,7 +138,8 @@ public class PoliciesPeripheralsDeviceRedirectionPrinterRedirectionOptions {
         return Objects.equals(this.mobilePrinterEnable, that.mobilePrinterEnable)
             && Objects.equals(this.printDataCompressionMode, that.printDataCompressionMode)
             && Objects.equals(this.syncClientDefaultPrinterEnable, that.syncClientDefaultPrinterEnable)
-            && Objects.equals(this.universalPrinterDriver, that.universalPrinterDriver);
+            && Objects.equals(this.universalPrinterDriver, that.universalPrinterDriver)
+            && Objects.equals(this.networkRedirectPrinterEnable, that.networkRedirectPrinterEnable);
     }
 
     @Override
@@ -123,7 +147,8 @@ public class PoliciesPeripheralsDeviceRedirectionPrinterRedirectionOptions {
         return Objects.hash(mobilePrinterEnable,
             printDataCompressionMode,
             syncClientDefaultPrinterEnable,
-            universalPrinterDriver);
+            universalPrinterDriver,
+            networkRedirectPrinterEnable);
     }
 
     @Override
@@ -136,6 +161,9 @@ public class PoliciesPeripheralsDeviceRedirectionPrinterRedirectionOptions {
             .append(toIndentedString(syncClientDefaultPrinterEnable))
             .append("\n");
         sb.append("    universalPrinterDriver: ").append(toIndentedString(universalPrinterDriver)).append("\n");
+        sb.append("    networkRedirectPrinterEnable: ")
+            .append(toIndentedString(networkRedirectPrinterEnable))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

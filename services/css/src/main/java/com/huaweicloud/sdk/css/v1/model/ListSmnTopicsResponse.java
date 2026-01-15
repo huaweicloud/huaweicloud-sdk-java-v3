@@ -41,7 +41,7 @@ public class ListSmnTopicsResponse extends SdkResponse {
     }
 
     /**
-     * SMN主题名称列表。
+     * 主题名称
      * @return topicsName
      */
     public List<String> getTopicsName() {

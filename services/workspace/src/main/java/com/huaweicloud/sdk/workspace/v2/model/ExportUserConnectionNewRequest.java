@@ -55,6 +55,11 @@ public class ExportUserConnectionNewRequest {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ip")
+
+    private String publicIp;
+
     public ExportUserConnectionNewRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -212,6 +217,23 @@ public class ExportUserConnectionNewRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public ExportUserConnectionNewRequest withPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+        return this;
+    }
+
+    /**
+     * 客户端出口IP。
+     * @return publicIp
+     */
+    public String getPublicIp() {
+        return publicIp;
+    }
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -225,7 +247,8 @@ public class ExportUserConnectionNewRequest {
             && Objects.equals(this.userName, that.userName) && Objects.equals(this.computerName, that.computerName)
             && Objects.equals(this.terminalType, that.terminalType) && Objects.equals(this.language, that.language)
             && Objects.equals(this.minE2eRtt, that.minE2eRtt) && Objects.equals(this.maxE2eRtt, that.maxE2eRtt)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.publicIp, that.publicIp);
     }
 
     @Override
@@ -238,7 +261,8 @@ public class ExportUserConnectionNewRequest {
             language,
             minE2eRtt,
             maxE2eRtt,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            publicIp);
     }
 
     @Override
@@ -254,6 +278,7 @@ public class ExportUserConnectionNewRequest {
         sb.append("    minE2eRtt: ").append(toIndentedString(minE2eRtt)).append("\n");
         sb.append("    maxE2eRtt: ").append(toIndentedString(maxE2eRtt)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

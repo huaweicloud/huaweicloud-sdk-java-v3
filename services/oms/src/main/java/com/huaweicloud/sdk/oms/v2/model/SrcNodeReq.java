@@ -193,7 +193,7 @@ public class SrcNodeReq {
     }
 
     /**
-     * 当源端为腾讯云时，需要填写此参数。
+     * 腾讯云APPID，当源端为腾讯云时，需要填写此参数，您可以在腾讯云控制台账号信息页面获取。
      * @return appId
      */
     public String getAppId() {

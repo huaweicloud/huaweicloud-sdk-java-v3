@@ -26,7 +26,7 @@ public class Tag {
     }
 
     /**
-     * 标签key
+     * 标签key \"key1\" : \"value1\", \"key2\" : \"value2\"
      * @return key
      */
     public String getKey() {

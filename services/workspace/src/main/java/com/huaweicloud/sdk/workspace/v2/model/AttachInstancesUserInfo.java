@@ -36,7 +36,7 @@ public class AttachInstancesUserInfo {
     private String userGroup;
 
     /**
-     * 对象类型，可选值为： - USER：用户。 - GROUP：用户组。
+     * 对象类型，可选值为，默认值为USER： - USER：用户。 - GROUP：用户组。
      */
     public static final class TypeEnum {
 
@@ -184,7 +184,7 @@ public class AttachInstancesUserInfo {
     }
 
     /**
-     * 对象类型，可选值为： - USER：用户。 - GROUP：用户组。
+     * 对象类型，可选值为，默认值为USER： - USER：用户。 - GROUP：用户组。
      * @return type
      */
     public TypeEnum getType() {

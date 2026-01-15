@@ -24,7 +24,7 @@ public class AuditScopeSwitchRequestNew {
     private List<String> ids = null;
 
     /**
-     * 状态  - OFF： 关闭  - ON： 启用
+     * 状态  - OFF：关闭  - ON：启用
      */
     public static final class StatusEnum {
 
@@ -137,7 +137,7 @@ public class AuditScopeSwitchRequestNew {
     }
 
     /**
-     * 状态  - OFF： 关闭  - ON： 启用
+     * 状态  - OFF：关闭  - ON：启用
      * @return status
      */
     public StatusEnum getStatus() {

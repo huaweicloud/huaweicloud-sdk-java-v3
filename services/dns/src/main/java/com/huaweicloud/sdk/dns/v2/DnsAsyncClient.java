@@ -123,6 +123,8 @@ import com.huaweicloud.sdk.dns.v2.model.ListEndpointVpcsRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListEndpointVpcsResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListEndpointsRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListEndpointsResponse;
+import com.huaweicloud.sdk.dns.v2.model.ListInstancesRequest;
+import com.huaweicloud.sdk.dns.v2.model.ListInstancesResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListLineGroupsRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListLineGroupsResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListNameServersRequest;
@@ -1701,6 +1703,35 @@ public class DnsAsyncClient {
     public AsyncInvoker<ListEndpointsRequest, ListEndpointsResponse> listEndpointsAsyncInvoker(
         ListEndpointsRequest request) {
         return new AsyncInvoker<>(request, DnsMeta.listEndpoints, hcClient);
+    }
+
+    /**
+     * 批量查询DNS解析量统计相关的资源
+     *
+     * 批量查询DNS解析量统计相关的资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesRequest 请求对象
+     * @return CompletableFuture<ListInstancesResponse>
+     */
+    public CompletableFuture<ListInstancesResponse> listInstancesAsync(ListInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DnsMeta.listInstances);
+    }
+
+    /**
+     * 批量查询DNS解析量统计相关的资源
+     *
+     * 批量查询DNS解析量统计相关的资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesRequest 请求对象
+     * @return AsyncInvoker<ListInstancesRequest, ListInstancesResponse>
+     */
+    public AsyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesAsyncInvoker(
+        ListInstancesRequest request) {
+        return new AsyncInvoker<>(request, DnsMeta.listInstances, hcClient);
     }
 
     /**

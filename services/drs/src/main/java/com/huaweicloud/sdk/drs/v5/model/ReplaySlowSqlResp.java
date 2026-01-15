@@ -36,7 +36,7 @@ public class ReplaySlowSqlResp {
     }
 
     /**
-     * SQL语句类型
+     * SQL语句类型 取值：SELECT, INSERT, DELETE, UPDATE, DDL
      * @return objectType
      */
     public String getObjectType() {

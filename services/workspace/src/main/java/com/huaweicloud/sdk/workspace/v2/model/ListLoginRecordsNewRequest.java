@@ -36,6 +36,16 @@ public class ListLoginRecordsNewRequest {
     private String terminalType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ip")
+
+    private String publicIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -54,11 +64,6 @@ public class ListLoginRecordsNewRequest {
     @JsonProperty(value = "max_network_rtt")
 
     private Integer maxNetworkRtt;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterprise_project_id")
-
-    private String enterpriseProjectId;
 
     public ListLoginRecordsNewRequest withStartTime(String startTime) {
         this.startTime = startTime;
@@ -145,6 +150,40 @@ public class ListLoginRecordsNewRequest {
         this.terminalType = terminalType;
     }
 
+    public ListLoginRecordsNewRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ListLoginRecordsNewRequest withPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+        return this;
+    }
+
+    /**
+     * 终端出口IP。
+     * @return publicIp
+     */
+    public String getPublicIp() {
+        return publicIp;
+    }
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+    }
+
     public ListLoginRecordsNewRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -221,23 +260,6 @@ public class ListLoginRecordsNewRequest {
         this.maxNetworkRtt = maxNetworkRtt;
     }
 
-    public ListLoginRecordsNewRequest withEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-        return this;
-    }
-
-    /**
-     * 企业项目ID。
-     * @return enterpriseProjectId
-     */
-    public String getEnterpriseProjectId() {
-        return enterpriseProjectId;
-    }
-
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -249,10 +271,11 @@ public class ListLoginRecordsNewRequest {
         ListLoginRecordsNewRequest that = (ListLoginRecordsNewRequest) obj;
         return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
             && Objects.equals(this.userName, that.userName) && Objects.equals(this.computerName, that.computerName)
-            && Objects.equals(this.terminalType, that.terminalType) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.terminalType, that.terminalType)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.minNetworkRtt, that.minNetworkRtt)
-            && Objects.equals(this.maxNetworkRtt, that.maxNetworkRtt)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.maxNetworkRtt, that.maxNetworkRtt);
     }
 
     @Override
@@ -262,11 +285,12 @@ public class ListLoginRecordsNewRequest {
             userName,
             computerName,
             terminalType,
+            enterpriseProjectId,
+            publicIp,
             offset,
             limit,
             minNetworkRtt,
-            maxNetworkRtt,
-            enterpriseProjectId);
+            maxNetworkRtt);
     }
 
     @Override
@@ -278,11 +302,12 @@ public class ListLoginRecordsNewRequest {
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    computerName: ").append(toIndentedString(computerName)).append("\n");
         sb.append("    terminalType: ").append(toIndentedString(terminalType)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    minNetworkRtt: ").append(toIndentedString(minNetworkRtt)).append("\n");
         sb.append("    maxNetworkRtt: ").append(toIndentedString(maxNetworkRtt)).append("\n");
-        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

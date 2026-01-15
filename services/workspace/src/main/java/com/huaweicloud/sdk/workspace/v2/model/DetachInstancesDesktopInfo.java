@@ -26,7 +26,7 @@ public class DetachInstancesDesktopInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detach_user_infos")
 
-    private List<AttachInstancesUserInfo> detachUserInfos = null;
+    private List<DetachInstancesUserInfo> detachUserInfos = null;
 
     public DetachInstancesDesktopInfo withDesktopId(String desktopId) {
         this.desktopId = desktopId;
@@ -62,12 +62,12 @@ public class DetachInstancesDesktopInfo {
         this.isDetachAllUsers = isDetachAllUsers;
     }
 
-    public DetachInstancesDesktopInfo withDetachUserInfos(List<AttachInstancesUserInfo> detachUserInfos) {
+    public DetachInstancesDesktopInfo withDetachUserInfos(List<DetachInstancesUserInfo> detachUserInfos) {
         this.detachUserInfos = detachUserInfos;
         return this;
     }
 
-    public DetachInstancesDesktopInfo addDetachUserInfosItem(AttachInstancesUserInfo detachUserInfosItem) {
+    public DetachInstancesDesktopInfo addDetachUserInfosItem(DetachInstancesUserInfo detachUserInfosItem) {
         if (this.detachUserInfos == null) {
             this.detachUserInfos = new ArrayList<>();
         }
@@ -76,7 +76,7 @@ public class DetachInstancesDesktopInfo {
     }
 
     public DetachInstancesDesktopInfo withDetachUserInfos(
-        Consumer<List<AttachInstancesUserInfo>> detachUserInfosSetter) {
+        Consumer<List<DetachInstancesUserInfo>> detachUserInfosSetter) {
         if (this.detachUserInfos == null) {
             this.detachUserInfos = new ArrayList<>();
         }
@@ -88,11 +88,11 @@ public class DetachInstancesDesktopInfo {
      * 解分配的用户信息列表。
      * @return detachUserInfos
      */
-    public List<AttachInstancesUserInfo> getDetachUserInfos() {
+    public List<DetachInstancesUserInfo> getDetachUserInfos() {
         return detachUserInfos;
     }
 
-    public void setDetachUserInfos(List<AttachInstancesUserInfo> detachUserInfos) {
+    public void setDetachUserInfos(List<DetachInstancesUserInfo> detachUserInfos) {
         this.detachUserInfos = detachUserInfos;
     }
 

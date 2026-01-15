@@ -62,20 +62,25 @@ public class MetadataAccessor {
     private void tryUpdateToken(boolean throwOnFailure) {
         lastCallMillis = System.currentTimeMillis();
         SimpleResponse response = getToken();
-        if (response.code == 200) {
-            token = response.body;
-        } else if (response.code == 404 || response.code == 405) {
-            if (throwOnFailure) {
-                throw new ClientRequestException(
-                        response.code, new SdkErrorMessage(String.valueOf(response.code), response.body));
-            } else {
-                token = null;
-            }
-        } else {
-            throw new ServerResponseException(
-                    response.code, new SdkErrorMessage(String.valueOf(response.code), response.body));
-        }
 
+        switch (response.code) {
+            case 200:
+                token = response.body;
+                break;
+            case 404:
+            case 405:
+            case 503:
+                if (throwOnFailure) {
+                    throw new ClientRequestException(
+                            response.code, new SdkErrorMessage(String.valueOf(response.code), response.body));
+                } else {
+                    token = null;
+                }
+                break;
+            default:
+                throw new ServerResponseException(
+                        response.code, new SdkErrorMessage(String.valueOf(response.code), response.body));
+        }
     }
 
     protected Credential getCredentials() {

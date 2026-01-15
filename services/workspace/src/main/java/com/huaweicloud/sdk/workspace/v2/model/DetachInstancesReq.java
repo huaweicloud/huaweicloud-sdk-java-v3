@@ -45,7 +45,7 @@ public class DetachInstancesReq {
     }
 
     /**
-     * 桌面id列表，不能为空。
+     * 桌面id列表，不能为空。运行状态为【已休眠】的桌面不支持解绑操作。
      * @return desktopIds
      */
     public List<String> getDesktopIds() {

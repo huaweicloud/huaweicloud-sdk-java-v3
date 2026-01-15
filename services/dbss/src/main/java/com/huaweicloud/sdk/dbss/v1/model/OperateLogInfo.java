@@ -107,7 +107,7 @@ public class OperateLogInfo {
     }
 
     /**
-     * 该条记录的操作类型 - create：创建 - update：更新 - delete：删除 - download: 下载
+     * 该条记录的操作类型 - create：创建 - update：更新 - delete：删除 - download：下载
      * @return action
      */
     public String getAction() {
@@ -175,7 +175,7 @@ public class OperateLogInfo {
     }
 
     /**
-     * 该条记录对应用户执行的结果 - success: 成功 - fail: 失败
+     * 该条记录对应用户执行的结果 - success：成功 - fail：失败
      * @return result
      */
     public String getResult() {

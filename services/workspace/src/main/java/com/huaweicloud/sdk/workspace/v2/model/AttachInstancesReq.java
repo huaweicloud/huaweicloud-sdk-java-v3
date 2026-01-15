@@ -33,6 +33,16 @@ public class AttachInstancesReq {
 
     private String desktopNamePolicyId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "encrypt_type")
+
+    private EncryptType encryptType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kms_id")
+
+    private String kmsId;
+
     public AttachInstancesReq withDesktops(List<AttachInstancesDesktopInfo> desktops) {
         this.desktops = desktops;
         return this;
@@ -117,6 +127,40 @@ public class AttachInstancesReq {
         this.desktopNamePolicyId = desktopNamePolicyId;
     }
 
+    public AttachInstancesReq withEncryptType(EncryptType encryptType) {
+        this.encryptType = encryptType;
+        return this;
+    }
+
+    /**
+     * Get encryptType
+     * @return encryptType
+     */
+    public EncryptType getEncryptType() {
+        return encryptType;
+    }
+
+    public void setEncryptType(EncryptType encryptType) {
+        this.encryptType = encryptType;
+    }
+
+    public AttachInstancesReq withKmsId(String kmsId) {
+        this.kmsId = kmsId;
+        return this;
+    }
+
+    /**
+     * 密钥ID，encrypt_type为ENCRYPTED时必传。
+     * @return kmsId
+     */
+    public String getKmsId() {
+        return kmsId;
+    }
+
+    public void setKmsId(String kmsId) {
+        this.kmsId = kmsId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -128,12 +172,13 @@ public class AttachInstancesReq {
         AttachInstancesReq that = (AttachInstancesReq) obj;
         return Objects.equals(this.desktops, that.desktops) && Objects.equals(this.imageType, that.imageType)
             && Objects.equals(this.imageId, that.imageId)
-            && Objects.equals(this.desktopNamePolicyId, that.desktopNamePolicyId);
+            && Objects.equals(this.desktopNamePolicyId, that.desktopNamePolicyId)
+            && Objects.equals(this.encryptType, that.encryptType) && Objects.equals(this.kmsId, that.kmsId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktops, imageType, imageId, desktopNamePolicyId);
+        return Objects.hash(desktops, imageType, imageId, desktopNamePolicyId, encryptType, kmsId);
     }
 
     @Override
@@ -144,6 +189,8 @@ public class AttachInstancesReq {
         sb.append("    imageType: ").append(toIndentedString(imageType)).append("\n");
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("    desktopNamePolicyId: ").append(toIndentedString(desktopNamePolicyId)).append("\n");
+        sb.append("    encryptType: ").append(toIndentedString(encryptType)).append("\n");
+        sb.append("    kmsId: ").append(toIndentedString(kmsId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -31,7 +31,7 @@ public class ListAdOusRequest {
     }
 
     /**
-     * 域。
+     * 域，默认查询主域。
      * @return domain
      */
     public String getDomain() {

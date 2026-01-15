@@ -289,7 +289,7 @@ public class ChargeOrderDbssNew {
     }
 
     /**
-     * 实例部署方式，默认为云上 - CLOUD： 云上 - OUTSIDE：云外
+     * 实例部署方式，默认为云上 - CLOUD：云上 - OUTSIDE：云外
      * @return deployMode
      */
     public String getDeployMode() {

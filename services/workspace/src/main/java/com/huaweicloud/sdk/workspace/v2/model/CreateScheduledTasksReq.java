@@ -172,7 +172,7 @@ public class CreateScheduledTasksReq {
     private String timeZone;
 
     /**
-     * 任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照。
+     * 任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照。 - DELETE_BLACK_ECS: 删除黑产ecs
      */
     public static final class TaskTypeEnum {
 
@@ -211,6 +211,11 @@ public class CreateScheduledTasksReq {
          */
         public static final TaskTypeEnum CREATE_SNAPSHOT = new TaskTypeEnum("CREATE_SNAPSHOT");
 
+        /**
+         * Enum DELETE_BLACK_ECS for value: "DELETE_BLACK_ECS"
+         */
+        public static final TaskTypeEnum DELETE_BLACK_ECS = new TaskTypeEnum("DELETE_BLACK_ECS");
+
         private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TaskTypeEnum> createStaticFields() {
@@ -222,6 +227,7 @@ public class CreateScheduledTasksReq {
             map.put("REBUILD", REBUILD);
             map.put("EXECUTE_SCRIPT", EXECUTE_SCRIPT);
             map.put("CREATE_SNAPSHOT", CREATE_SNAPSHOT);
+            map.put("DELETE_BLACK_ECS", DELETE_BLACK_ECS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -555,7 +561,7 @@ public class CreateScheduledTasksReq {
     }
 
     /**
-     * 任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照。
+     * 任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照。 - DELETE_BLACK_ECS: 删除黑产ecs
      * @return taskType
      */
     public TaskTypeEnum getTaskType() {

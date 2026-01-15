@@ -87,7 +87,7 @@ public class CountOperationStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * 状态  - FINISHED：已完成  - RUNNING：运行中
+     * 状态  - FINISHED：已完成 - RUNNING：运行中
      * @return status
      */
     public String getStatus() {

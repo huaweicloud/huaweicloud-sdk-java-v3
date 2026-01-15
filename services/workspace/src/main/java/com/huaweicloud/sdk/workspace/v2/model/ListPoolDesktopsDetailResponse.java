@@ -35,6 +35,26 @@ public class ListPoolDesktopsDetailResponse extends SdkResponse {
     private Integer periodDesktopsNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "on_demand_free_image_desktops_num")
+
+    private Integer onDemandFreeImageDesktopsNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "on_demand_charge_image_desktops_num")
+
+    private Integer onDemandChargeImageDesktopsNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "period_free_image_desktops_num")
+
+    private Integer periodFreeImageDesktopsNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "period_charge_image_desktops_num")
+
+    private Integer periodChargeImageDesktopsNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inconsistent_type")
 
     private InconsistentTypeEnum inconsistentType;
@@ -123,6 +143,74 @@ public class ListPoolDesktopsDetailResponse extends SdkResponse {
         this.periodDesktopsNum = periodDesktopsNum;
     }
 
+    public ListPoolDesktopsDetailResponse withOnDemandFreeImageDesktopsNum(Integer onDemandFreeImageDesktopsNum) {
+        this.onDemandFreeImageDesktopsNum = onDemandFreeImageDesktopsNum;
+        return this;
+    }
+
+    /**
+     * 按需免费桌面总数。
+     * @return onDemandFreeImageDesktopsNum
+     */
+    public Integer getOnDemandFreeImageDesktopsNum() {
+        return onDemandFreeImageDesktopsNum;
+    }
+
+    public void setOnDemandFreeImageDesktopsNum(Integer onDemandFreeImageDesktopsNum) {
+        this.onDemandFreeImageDesktopsNum = onDemandFreeImageDesktopsNum;
+    }
+
+    public ListPoolDesktopsDetailResponse withOnDemandChargeImageDesktopsNum(Integer onDemandChargeImageDesktopsNum) {
+        this.onDemandChargeImageDesktopsNum = onDemandChargeImageDesktopsNum;
+        return this;
+    }
+
+    /**
+     * 按需收费桌面总数。
+     * @return onDemandChargeImageDesktopsNum
+     */
+    public Integer getOnDemandChargeImageDesktopsNum() {
+        return onDemandChargeImageDesktopsNum;
+    }
+
+    public void setOnDemandChargeImageDesktopsNum(Integer onDemandChargeImageDesktopsNum) {
+        this.onDemandChargeImageDesktopsNum = onDemandChargeImageDesktopsNum;
+    }
+
+    public ListPoolDesktopsDetailResponse withPeriodFreeImageDesktopsNum(Integer periodFreeImageDesktopsNum) {
+        this.periodFreeImageDesktopsNum = periodFreeImageDesktopsNum;
+        return this;
+    }
+
+    /**
+     * 包周期免费桌面总数。
+     * @return periodFreeImageDesktopsNum
+     */
+    public Integer getPeriodFreeImageDesktopsNum() {
+        return periodFreeImageDesktopsNum;
+    }
+
+    public void setPeriodFreeImageDesktopsNum(Integer periodFreeImageDesktopsNum) {
+        this.periodFreeImageDesktopsNum = periodFreeImageDesktopsNum;
+    }
+
+    public ListPoolDesktopsDetailResponse withPeriodChargeImageDesktopsNum(Integer periodChargeImageDesktopsNum) {
+        this.periodChargeImageDesktopsNum = periodChargeImageDesktopsNum;
+        return this;
+    }
+
+    /**
+     * 包周期收费桌面总数。
+     * @return periodChargeImageDesktopsNum
+     */
+    public Integer getPeriodChargeImageDesktopsNum() {
+        return periodChargeImageDesktopsNum;
+    }
+
+    public void setPeriodChargeImageDesktopsNum(Integer periodChargeImageDesktopsNum) {
+        this.periodChargeImageDesktopsNum = periodChargeImageDesktopsNum;
+    }
+
     public ListPoolDesktopsDetailResponse withInconsistentType(InconsistentTypeEnum inconsistentType) {
         this.inconsistentType = inconsistentType;
         return this;
@@ -152,12 +240,24 @@ public class ListPoolDesktopsDetailResponse extends SdkResponse {
         return Objects.equals(this.poolDesktops, that.poolDesktops) && Objects.equals(this.totalCount, that.totalCount)
             && Objects.equals(this.onDemandDesktopsNum, that.onDemandDesktopsNum)
             && Objects.equals(this.periodDesktopsNum, that.periodDesktopsNum)
+            && Objects.equals(this.onDemandFreeImageDesktopsNum, that.onDemandFreeImageDesktopsNum)
+            && Objects.equals(this.onDemandChargeImageDesktopsNum, that.onDemandChargeImageDesktopsNum)
+            && Objects.equals(this.periodFreeImageDesktopsNum, that.periodFreeImageDesktopsNum)
+            && Objects.equals(this.periodChargeImageDesktopsNum, that.periodChargeImageDesktopsNum)
             && Objects.equals(this.inconsistentType, that.inconsistentType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(poolDesktops, totalCount, onDemandDesktopsNum, periodDesktopsNum, inconsistentType);
+        return Objects.hash(poolDesktops,
+            totalCount,
+            onDemandDesktopsNum,
+            periodDesktopsNum,
+            onDemandFreeImageDesktopsNum,
+            onDemandChargeImageDesktopsNum,
+            periodFreeImageDesktopsNum,
+            periodChargeImageDesktopsNum,
+            inconsistentType);
     }
 
     @Override
@@ -168,6 +268,16 @@ public class ListPoolDesktopsDetailResponse extends SdkResponse {
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("    onDemandDesktopsNum: ").append(toIndentedString(onDemandDesktopsNum)).append("\n");
         sb.append("    periodDesktopsNum: ").append(toIndentedString(periodDesktopsNum)).append("\n");
+        sb.append("    onDemandFreeImageDesktopsNum: ")
+            .append(toIndentedString(onDemandFreeImageDesktopsNum))
+            .append("\n");
+        sb.append("    onDemandChargeImageDesktopsNum: ")
+            .append(toIndentedString(onDemandChargeImageDesktopsNum))
+            .append("\n");
+        sb.append("    periodFreeImageDesktopsNum: ").append(toIndentedString(periodFreeImageDesktopsNum)).append("\n");
+        sb.append("    periodChargeImageDesktopsNum: ")
+            .append(toIndentedString(periodChargeImageDesktopsNum))
+            .append("\n");
         sb.append("    inconsistentType: ").append(toIndentedString(inconsistentType)).append("\n");
         sb.append("}");
         return sb.toString();

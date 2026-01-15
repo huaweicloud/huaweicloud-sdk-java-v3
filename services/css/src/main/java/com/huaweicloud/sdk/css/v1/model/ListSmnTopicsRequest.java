@@ -21,7 +21,7 @@ public class ListSmnTopicsRequest {
     }
 
     /**
-     * 指定待查询的集群ID。
+     * 域账号ID。
      * @return domainId
      */
     public String getDomainId() {

@@ -110,6 +110,11 @@ public class ShowProgressDataRequest {
 
     private String type;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "search_name")
+
+    private String searchName;
+
     public ShowProgressDataRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -199,6 +204,23 @@ public class ShowProgressDataRequest {
         this.type = type;
     }
 
+    public ShowProgressDataRequest withSearchName(String searchName) {
+        this.searchName = searchName;
+        return this;
+    }
+
+    /**
+     * 需要过滤的源库对象名称
+     * @return searchName
+     */
+    public String getSearchName() {
+        return searchName;
+    }
+
+    public void setSearchName(String searchName) {
+        this.searchName = searchName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -210,12 +232,12 @@ public class ShowProgressDataRequest {
         ShowProgressDataRequest that = (ShowProgressDataRequest) obj;
         return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.jobId, that.jobId)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.type, that.type);
+            && Objects.equals(this.type, that.type) && Objects.equals(this.searchName, that.searchName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, jobId, offset, limit, type);
+        return Objects.hash(xLanguage, jobId, offset, limit, type, searchName);
     }
 
     @Override
@@ -227,6 +249,7 @@ public class ShowProgressDataRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    searchName: ").append(toIndentedString(searchName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

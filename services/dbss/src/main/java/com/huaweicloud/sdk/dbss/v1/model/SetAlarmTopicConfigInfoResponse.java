@@ -22,7 +22,7 @@ public class SetAlarmTopicConfigInfoResponse extends SdkResponse {
     }
 
     /**
-     * 状态  - success: 成功  - fail: 失败
+     * 状态  - success：成功  - fail：失败
      * @return status
      */
     public String getStatus() {

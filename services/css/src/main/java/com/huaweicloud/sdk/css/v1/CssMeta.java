@@ -10,6 +10,7 @@ import com.huaweicloud.sdk.css.v1.model.AddFavoriteRequest;
 import com.huaweicloud.sdk.css.v1.model.AddFavoriteResponse;
 import com.huaweicloud.sdk.css.v1.model.AddIndependentNodeRequest;
 import com.huaweicloud.sdk.css.v1.model.AddIndependentNodeResponse;
+import com.huaweicloud.sdk.css.v1.model.AiOpsSetting;
 import com.huaweicloud.sdk.css.v1.model.BatchAddOrDeleteTagOnClusterReq;
 import com.huaweicloud.sdk.css.v1.model.BindPublicReq;
 import com.huaweicloud.sdk.css.v1.model.BindPublicReqEipReq;
@@ -21,6 +22,8 @@ import com.huaweicloud.sdk.css.v1.model.ChangeModeResponse;
 import com.huaweicloud.sdk.css.v1.model.ChangeSecurityGroupReq;
 import com.huaweicloud.sdk.css.v1.model.ChangeSecurityGroupRequest;
 import com.huaweicloud.sdk.css.v1.model.ChangeSecurityGroupResponse;
+import com.huaweicloud.sdk.css.v1.model.CloseAiOpsSettingRequest;
+import com.huaweicloud.sdk.css.v1.model.CloseAiOpsSettingResponse;
 import com.huaweicloud.sdk.css.v1.model.CloseKibanaPublicReq;
 import com.huaweicloud.sdk.css.v1.model.ClusterChangeMainSubnet;
 import com.huaweicloud.sdk.css.v1.model.CreateAgencyRequest;
@@ -130,6 +133,10 @@ import com.huaweicloud.sdk.css.v1.model.RetryUpgradeTaskRequest;
 import com.huaweicloud.sdk.css.v1.model.RetryUpgradeTaskResponse;
 import com.huaweicloud.sdk.css.v1.model.RoleExtendReq;
 import com.huaweicloud.sdk.css.v1.model.SetRDSBackupCnfReq;
+import com.huaweicloud.sdk.css.v1.model.ShowAiOpsDetectorRequest;
+import com.huaweicloud.sdk.css.v1.model.ShowAiOpsDetectorResponse;
+import com.huaweicloud.sdk.css.v1.model.ShowAiOpsSettingRequest;
+import com.huaweicloud.sdk.css.v1.model.ShowAiOpsSettingResponse;
 import com.huaweicloud.sdk.css.v1.model.ShowAutoCreatePolicyRequest;
 import com.huaweicloud.sdk.css.v1.model.ShowAutoCreatePolicyResponse;
 import com.huaweicloud.sdk.css.v1.model.ShowCertsDetailRequest;
@@ -208,6 +215,8 @@ import com.huaweicloud.sdk.css.v1.model.StopVpecpRequest;
 import com.huaweicloud.sdk.css.v1.model.StopVpecpResponse;
 import com.huaweicloud.sdk.css.v1.model.TagReq;
 import com.huaweicloud.sdk.css.v1.model.UnBindPublicReq;
+import com.huaweicloud.sdk.css.v1.model.UpdateAiOpsSettingRequest;
+import com.huaweicloud.sdk.css.v1.model.UpdateAiOpsSettingResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateAlterKibanaRequest;
 import com.huaweicloud.sdk.css.v1.model.UpdateAlterKibanaResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateAzByInstanceTypeReq;
@@ -397,6 +406,29 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeSecurityGroupReq.class),
             f -> f.withMarshaller(ChangeSecurityGroupRequest::getBody, ChangeSecurityGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CloseAiOpsSettingRequest, CloseAiOpsSettingResponse> closeAiOpsSetting =
+        genForCloseAiOpsSetting();
+
+    private static HttpRequestDef<CloseAiOpsSettingRequest, CloseAiOpsSettingResponse> genForCloseAiOpsSetting() {
+        // basic
+        HttpRequestDef.Builder<CloseAiOpsSettingRequest, CloseAiOpsSettingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, CloseAiOpsSettingRequest.class, CloseAiOpsSettingResponse.class)
+                .withName("CloseAiOpsSetting")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/ai-ops/close")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CloseAiOpsSettingRequest::getClusterId, CloseAiOpsSettingRequest::setClusterId));
 
         // response
 
@@ -880,6 +912,11 @@ public class CssMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAiOpsRequest::getOffset, ListAiOpsRequest::setOffset));
+        builder.<String>withRequestField("report",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiOpsRequest::getReport, ListAiOpsRequest::setReport));
 
         // response
 
@@ -1306,6 +1343,52 @@ public class CssMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RetryUpgradeTaskRequest::getRetryMode, RetryUpgradeTaskRequest::setRetryMode));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAiOpsDetectorRequest, ShowAiOpsDetectorResponse> showAiOpsDetector =
+        genForShowAiOpsDetector();
+
+    private static HttpRequestDef<ShowAiOpsDetectorRequest, ShowAiOpsDetectorResponse> genForShowAiOpsDetector() {
+        // basic
+        HttpRequestDef.Builder<ShowAiOpsDetectorRequest, ShowAiOpsDetectorResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAiOpsDetectorRequest.class, ShowAiOpsDetectorResponse.class)
+                .withName("ShowAiOpsDetector")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/ai-ops/detector")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAiOpsDetectorRequest::getClusterId, ShowAiOpsDetectorRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAiOpsSettingRequest, ShowAiOpsSettingResponse> showAiOpsSetting =
+        genForShowAiOpsSetting();
+
+    private static HttpRequestDef<ShowAiOpsSettingRequest, ShowAiOpsSettingResponse> genForShowAiOpsSetting() {
+        // basic
+        HttpRequestDef.Builder<ShowAiOpsSettingRequest, ShowAiOpsSettingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAiOpsSettingRequest.class, ShowAiOpsSettingResponse.class)
+                .withName("ShowAiOpsSetting")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/ai-ops/setting")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAiOpsSettingRequest::getClusterId, ShowAiOpsSettingRequest::setClusterId));
 
         // response
 
@@ -1912,6 +1995,34 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StopVpecpRequest::getClusterId, StopVpecpRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAiOpsSettingRequest, UpdateAiOpsSettingResponse> updateAiOpsSetting =
+        genForUpdateAiOpsSetting();
+
+    private static HttpRequestDef<UpdateAiOpsSettingRequest, UpdateAiOpsSettingResponse> genForUpdateAiOpsSetting() {
+        // basic
+        HttpRequestDef.Builder<UpdateAiOpsSettingRequest, UpdateAiOpsSettingResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateAiOpsSettingRequest.class, UpdateAiOpsSettingResponse.class)
+                .withName("UpdateAiOpsSetting")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/ai-ops/setting")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAiOpsSettingRequest::getClusterId, UpdateAiOpsSettingRequest::setClusterId));
+        builder.<AiOpsSetting>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AiOpsSetting.class),
+            f -> f.withMarshaller(UpdateAiOpsSettingRequest::getBody, UpdateAiOpsSettingRequest::setBody));
 
         // response
 

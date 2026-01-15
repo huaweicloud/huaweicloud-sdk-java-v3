@@ -90,7 +90,7 @@ public class ShowReplicationJobResponse extends SdkResponse {
     }
 
     /**
-     * 任务状态。
+     * 任务状态。取值：success，failed
      * @return status
      */
     public String getStatus() {

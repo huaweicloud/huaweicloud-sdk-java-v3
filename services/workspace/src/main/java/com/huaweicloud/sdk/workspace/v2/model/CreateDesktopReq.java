@@ -104,6 +104,11 @@ public class CreateDesktopReq {
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "buy_type")
+
+    private String buyType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_type")
 
     private String imageType;
@@ -131,7 +136,7 @@ public class CreateDesktopReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
 
-    private List<SecurityGroup> securityGroups = null;
+    private List<SecurityGroupIdInfo> securityGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desktops")
@@ -247,6 +252,23 @@ public class CreateDesktopReq {
 
     public void setProductId(String productId) {
         this.productId = productId;
+    }
+
+    public CreateDesktopReq withBuyType(String buyType) {
+        this.buyType = buyType;
+        return this;
+    }
+
+    /**
+     * console页面购买方式。默认值为custom。  - speed：快速购买。 - custom：自定义购买。
+     * @return buyType
+     */
+    public String getBuyType() {
+        return buyType;
+    }
+
+    public void setBuyType(String buyType) {
+        this.buyType = buyType;
     }
 
     public CreateDesktopReq withImageType(String imageType) {
@@ -375,12 +397,12 @@ public class CreateDesktopReq {
         this.nics = nics;
     }
 
-    public CreateDesktopReq withSecurityGroups(List<SecurityGroup> securityGroups) {
+    public CreateDesktopReq withSecurityGroups(List<SecurityGroupIdInfo> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
     }
 
-    public CreateDesktopReq addSecurityGroupsItem(SecurityGroup securityGroupsItem) {
+    public CreateDesktopReq addSecurityGroupsItem(SecurityGroupIdInfo securityGroupsItem) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -388,7 +410,7 @@ public class CreateDesktopReq {
         return this;
     }
 
-    public CreateDesktopReq withSecurityGroups(Consumer<List<SecurityGroup>> securityGroupsSetter) {
+    public CreateDesktopReq withSecurityGroups(Consumer<List<SecurityGroupIdInfo>> securityGroupsSetter) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -400,11 +422,11 @@ public class CreateDesktopReq {
      * 桌面使用的安全组，如果不指定则默认使用桌面代理中指定的安全组。
      * @return securityGroups
      */
-    public List<SecurityGroup> getSecurityGroups() {
+    public List<SecurityGroupIdInfo> getSecurityGroups() {
         return securityGroups;
     }
 
-    public void setSecurityGroups(List<SecurityGroup> securityGroups) {
+    public void setSecurityGroups(List<SecurityGroupIdInfo> securityGroups) {
         this.securityGroups = securityGroups;
     }
 
@@ -710,12 +732,13 @@ public class CreateDesktopReq {
         CreateDesktopReq that = (CreateDesktopReq) obj;
         return Objects.equals(this.desktopType, that.desktopType)
             && Objects.equals(this.availabilityZone, that.availabilityZone)
-            && Objects.equals(this.productId, that.productId) && Objects.equals(this.imageType, that.imageType)
-            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.rootVolume, that.rootVolume)
-            && Objects.equals(this.dataVolumes, that.dataVolumes) && Objects.equals(this.nics, that.nics)
-            && Objects.equals(this.securityGroups, that.securityGroups) && Objects.equals(this.desktops, that.desktops)
-            && Objects.equals(this.desktopName, that.desktopName) && Objects.equals(this.desktopIps, that.desktopIps)
-            && Objects.equals(this.size, that.size) && Objects.equals(this.emailNotification, that.emailNotification)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.buyType, that.buyType)
+            && Objects.equals(this.imageType, that.imageType) && Objects.equals(this.imageId, that.imageId)
+            && Objects.equals(this.rootVolume, that.rootVolume) && Objects.equals(this.dataVolumes, that.dataVolumes)
+            && Objects.equals(this.nics, that.nics) && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.desktops, that.desktops) && Objects.equals(this.desktopName, that.desktopName)
+            && Objects.equals(this.desktopIps, that.desktopIps) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.emailNotification, that.emailNotification)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.applySharedVpcDedicatedParam, that.applySharedVpcDedicatedParam)
@@ -730,6 +753,7 @@ public class CreateDesktopReq {
         return Objects.hash(desktopType,
             availabilityZone,
             productId,
+            buyType,
             imageType,
             imageId,
             rootVolume,
@@ -758,6 +782,7 @@ public class CreateDesktopReq {
         sb.append("    desktopType: ").append(toIndentedString(desktopType)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("    buyType: ").append(toIndentedString(buyType)).append("\n");
         sb.append("    imageType: ").append(toIndentedString(imageType)).append("\n");
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("    rootVolume: ").append(toIndentedString(rootVolume)).append("\n");

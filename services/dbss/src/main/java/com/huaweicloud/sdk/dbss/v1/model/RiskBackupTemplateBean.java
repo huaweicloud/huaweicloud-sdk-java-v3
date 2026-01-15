@@ -131,7 +131,7 @@ public class RiskBackupTemplateBean {
     }
 
     /**
-     * 状态 - 0: 关闭 - 1：开启
+     * 状态 - 0：关闭 - 1：开启
      * @return status
      */
     public Integer getStatus() {

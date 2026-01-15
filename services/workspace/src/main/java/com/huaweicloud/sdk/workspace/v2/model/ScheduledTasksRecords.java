@@ -70,6 +70,16 @@ public class ScheduledTasksRecords {
 
     private String executeObjectType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expire_time")
+
+    private String expireTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extra_params")
+
+    private String extraParams;
+
     public ScheduledTasksRecords withId(String id) {
         this.id = id;
         return this;
@@ -274,6 +284,40 @@ public class ScheduledTasksRecords {
         this.executeObjectType = executeObjectType;
     }
 
+    public ScheduledTasksRecords withExpireTime(String expireTime) {
+        this.expireTime = expireTime;
+        return this;
+    }
+
+    /**
+     * 到期时间，格式为yyyy-MM-dd HH:mm:ss。
+     * @return expireTime
+     */
+    public String getExpireTime() {
+        return expireTime;
+    }
+
+    public void setExpireTime(String expireTime) {
+        this.expireTime = expireTime;
+    }
+
+    public ScheduledTasksRecords withExtraParams(String extraParams) {
+        this.extraParams = extraParams;
+        return this;
+    }
+
+    /**
+     * 扩展参数，json格式。
+     * @return extraParams
+     */
+    public String getExtraParams() {
+        return extraParams;
+    }
+
+    public void setExtraParams(String extraParams) {
+        this.extraParams = extraParams;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -289,7 +333,8 @@ public class ScheduledTasksRecords {
             && Objects.equals(this.successNum, that.successNum) && Objects.equals(this.failedNum, that.failedNum)
             && Objects.equals(this.skipNum, that.skipNum) && Objects.equals(this.timeZone, that.timeZone)
             && Objects.equals(this.executeTaskId, that.executeTaskId)
-            && Objects.equals(this.executeObjectType, that.executeObjectType);
+            && Objects.equals(this.executeObjectType, that.executeObjectType)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.extraParams, that.extraParams);
     }
 
     @Override
@@ -305,7 +350,9 @@ public class ScheduledTasksRecords {
             skipNum,
             timeZone,
             executeTaskId,
-            executeObjectType);
+            executeObjectType,
+            expireTime,
+            extraParams);
     }
 
     @Override
@@ -324,6 +371,8 @@ public class ScheduledTasksRecords {
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
         sb.append("    executeTaskId: ").append(toIndentedString(executeTaskId)).append("\n");
         sb.append("    executeObjectType: ").append(toIndentedString(executeObjectType)).append("\n");
+        sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
+        sb.append("    extraParams: ").append(toIndentedString(extraParams)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -6,9 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * UnSupportAuditInfo
+ * UnsupportedAuditInfo
  */
-public class UnSupportAuditInfo {
+public class UnsupportedAuditInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audit_version")
@@ -20,7 +20,7 @@ public class UnSupportAuditInfo {
 
     private String serverName;
 
-    public UnSupportAuditInfo withAuditVersion(String auditVersion) {
+    public UnsupportedAuditInfo withAuditVersion(String auditVersion) {
         this.auditVersion = auditVersion;
         return this;
     }
@@ -37,7 +37,7 @@ public class UnSupportAuditInfo {
         this.auditVersion = auditVersion;
     }
 
-    public UnSupportAuditInfo withServerName(String serverName) {
+    public UnsupportedAuditInfo withServerName(String serverName) {
         this.serverName = serverName;
         return this;
     }
@@ -62,7 +62,7 @@ public class UnSupportAuditInfo {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UnSupportAuditInfo that = (UnSupportAuditInfo) obj;
+        UnsupportedAuditInfo that = (UnsupportedAuditInfo) obj;
         return Objects.equals(this.auditVersion, that.auditVersion) && Objects.equals(this.serverName, that.serverName);
     }
 
@@ -74,7 +74,7 @@ public class UnSupportAuditInfo {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class UnSupportAuditInfo {\n");
+        sb.append("class UnsupportedAuditInfo {\n");
         sb.append("    auditVersion: ").append(toIndentedString(auditVersion)).append("\n");
         sb.append("    serverName: ").append(toIndentedString(serverName)).append("\n");
         sb.append("}");

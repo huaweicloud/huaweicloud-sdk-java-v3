@@ -15,41 +15,42 @@ import java.util.function.Consumer;
 public class ListEcsSpecificationNewResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "specification")
+    @JsonProperty(value = "specifications")
 
-    private List<EcsSpecificationBean> specification = null;
+    private List<EcsSpecificationBean> specifications = null;
 
-    public ListEcsSpecificationNewResponse withSpecification(List<EcsSpecificationBean> specification) {
-        this.specification = specification;
+    public ListEcsSpecificationNewResponse withSpecifications(List<EcsSpecificationBean> specifications) {
+        this.specifications = specifications;
         return this;
     }
 
-    public ListEcsSpecificationNewResponse addSpecificationItem(EcsSpecificationBean specificationItem) {
-        if (this.specification == null) {
-            this.specification = new ArrayList<>();
+    public ListEcsSpecificationNewResponse addSpecificationsItem(EcsSpecificationBean specificationsItem) {
+        if (this.specifications == null) {
+            this.specifications = new ArrayList<>();
         }
-        this.specification.add(specificationItem);
+        this.specifications.add(specificationsItem);
         return this;
     }
 
-    public ListEcsSpecificationNewResponse withSpecification(Consumer<List<EcsSpecificationBean>> specificationSetter) {
-        if (this.specification == null) {
-            this.specification = new ArrayList<>();
+    public ListEcsSpecificationNewResponse withSpecifications(
+        Consumer<List<EcsSpecificationBean>> specificationsSetter) {
+        if (this.specifications == null) {
+            this.specifications = new ArrayList<>();
         }
-        specificationSetter.accept(this.specification);
+        specificationsSetter.accept(this.specifications);
         return this;
     }
 
     /**
      * ecs规格集合
-     * @return specification
+     * @return specifications
      */
-    public List<EcsSpecificationBean> getSpecification() {
-        return specification;
+    public List<EcsSpecificationBean> getSpecifications() {
+        return specifications;
     }
 
-    public void setSpecification(List<EcsSpecificationBean> specification) {
-        this.specification = specification;
+    public void setSpecifications(List<EcsSpecificationBean> specifications) {
+        this.specifications = specifications;
     }
 
     @Override
@@ -61,19 +62,19 @@ public class ListEcsSpecificationNewResponse extends SdkResponse {
             return false;
         }
         ListEcsSpecificationNewResponse that = (ListEcsSpecificationNewResponse) obj;
-        return Objects.equals(this.specification, that.specification);
+        return Objects.equals(this.specifications, that.specifications);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(specification);
+        return Objects.hash(specifications);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListEcsSpecificationNewResponse {\n");
-        sb.append("    specification: ").append(toIndentedString(specification)).append("\n");
+        sb.append("    specifications: ").append(toIndentedString(specifications)).append("\n");
         sb.append("}");
         return sb.toString();
     }

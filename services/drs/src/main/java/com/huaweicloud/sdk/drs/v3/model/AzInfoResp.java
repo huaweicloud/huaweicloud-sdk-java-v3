@@ -65,7 +65,7 @@ public class AzInfoResp {
     }
 
     /**
-     * 可用区状态
+     * 可用区状态，ENABLED：可用，DISABLED：不可用
      * @return status
      */
     public String getStatus() {

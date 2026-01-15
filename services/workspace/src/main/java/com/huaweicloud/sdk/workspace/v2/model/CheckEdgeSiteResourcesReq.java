@@ -31,7 +31,7 @@ public class CheckEdgeSiteResourcesReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumes")
 
-    private List<Volume> volumes = null;
+    private List<CheckEdgeSiteResourcesVolume> volumes = null;
 
     public CheckEdgeSiteResourcesReq withAvailabilityZoneId(String availabilityZoneId) {
         this.availabilityZoneId = availabilityZoneId;
@@ -86,12 +86,12 @@ public class CheckEdgeSiteResourcesReq {
         this.resourceCounts = resourceCounts;
     }
 
-    public CheckEdgeSiteResourcesReq withVolumes(List<Volume> volumes) {
+    public CheckEdgeSiteResourcesReq withVolumes(List<CheckEdgeSiteResourcesVolume> volumes) {
         this.volumes = volumes;
         return this;
     }
 
-    public CheckEdgeSiteResourcesReq addVolumesItem(Volume volumesItem) {
+    public CheckEdgeSiteResourcesReq addVolumesItem(CheckEdgeSiteResourcesVolume volumesItem) {
         if (this.volumes == null) {
             this.volumes = new ArrayList<>();
         }
@@ -99,7 +99,7 @@ public class CheckEdgeSiteResourcesReq {
         return this;
     }
 
-    public CheckEdgeSiteResourcesReq withVolumes(Consumer<List<Volume>> volumesSetter) {
+    public CheckEdgeSiteResourcesReq withVolumes(Consumer<List<CheckEdgeSiteResourcesVolume>> volumesSetter) {
         if (this.volumes == null) {
             this.volumes = new ArrayList<>();
         }
@@ -108,14 +108,14 @@ public class CheckEdgeSiteResourcesReq {
     }
 
     /**
-     * 磁盘列表。
+     * 磁盘列表。包含系统盘。
      * @return volumes
      */
-    public List<Volume> getVolumes() {
+    public List<CheckEdgeSiteResourcesVolume> getVolumes() {
         return volumes;
     }
 
-    public void setVolumes(List<Volume> volumes) {
+    public void setVolumes(List<CheckEdgeSiteResourcesVolume> volumes) {
         this.volumes = volumes;
     }
 

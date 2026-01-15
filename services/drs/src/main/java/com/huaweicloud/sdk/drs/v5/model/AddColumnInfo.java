@@ -36,7 +36,7 @@ public class AddColumnInfo {
     }
 
     /**
-     * 列类型
+     * 列类型 取值：default_value，create_time，update_time，expression，server_database_table
      * @return columnType
      */
     public String getColumnType() {
@@ -87,7 +87,7 @@ public class AddColumnInfo {
     }
 
     /**
-     * 填充列的数据类型
+     * 填充列的数据类型 取值：int，long，varchar(256)，varchar(191)，datetime，timestamp
      * @return dataType
      */
     public String getDataType() {

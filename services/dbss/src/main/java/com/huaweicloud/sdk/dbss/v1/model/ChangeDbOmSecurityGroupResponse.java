@@ -37,7 +37,7 @@ public class ChangeDbOmSecurityGroupResponse extends SdkResponse {
     }
 
     /**
-     * - 0: 正常 - 非0: 异常
+     * - 0：正常 - 非0：异常
      * @return code
      */
     public Integer getCode() {

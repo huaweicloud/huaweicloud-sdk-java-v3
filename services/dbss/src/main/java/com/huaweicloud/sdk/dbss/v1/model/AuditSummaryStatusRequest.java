@@ -36,7 +36,7 @@ public class AuditSummaryStatusRequest {
     }
 
     /**
-     * 操作码，operType为switch时必输入  - on: 开启  - off: 关闭
+     * 操作码，operType为switch时必输入  - on：开启  - off：关闭
      * @return code
      */
     public String getCode() {
@@ -53,7 +53,7 @@ public class AuditSummaryStatusRequest {
     }
 
     /**
-     * 操作类型  - switch: 任务开关  - execute: 立即刷新
+     * 操作类型  - switch：任务开关  - execute：立即刷新
      * @return operType
      */
     public String getOperType() {

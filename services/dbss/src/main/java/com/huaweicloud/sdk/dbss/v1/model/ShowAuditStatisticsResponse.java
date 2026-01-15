@@ -47,7 +47,7 @@ public class ShowAuditStatisticsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unsupported_audit_infos")
 
-    private UnSupportAuditInfoResponse unsupportedAuditInfos;
+    private UnsupportedAuditInfoResponse unsupportedAuditInfos;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
@@ -190,15 +190,15 @@ public class ShowAuditStatisticsResponse extends SdkResponse {
         this.ruleRiskStatistics = ruleRiskStatistics;
     }
 
-    public ShowAuditStatisticsResponse withUnsupportedAuditInfos(UnSupportAuditInfoResponse unsupportedAuditInfos) {
+    public ShowAuditStatisticsResponse withUnsupportedAuditInfos(UnsupportedAuditInfoResponse unsupportedAuditInfos) {
         this.unsupportedAuditInfos = unsupportedAuditInfos;
         return this;
     }
 
     public ShowAuditStatisticsResponse withUnsupportedAuditInfos(
-        Consumer<UnSupportAuditInfoResponse> unsupportedAuditInfosSetter) {
+        Consumer<UnsupportedAuditInfoResponse> unsupportedAuditInfosSetter) {
         if (this.unsupportedAuditInfos == null) {
-            this.unsupportedAuditInfos = new UnSupportAuditInfoResponse();
+            this.unsupportedAuditInfos = new UnsupportedAuditInfoResponse();
             unsupportedAuditInfosSetter.accept(this.unsupportedAuditInfos);
         }
 
@@ -209,11 +209,11 @@ public class ShowAuditStatisticsResponse extends SdkResponse {
      * Get unsupportedAuditInfos
      * @return unsupportedAuditInfos
      */
-    public UnSupportAuditInfoResponse getUnsupportedAuditInfos() {
+    public UnsupportedAuditInfoResponse getUnsupportedAuditInfos() {
         return unsupportedAuditInfos;
     }
 
-    public void setUnsupportedAuditInfos(UnSupportAuditInfoResponse unsupportedAuditInfos) {
+    public void setUnsupportedAuditInfos(UnsupportedAuditInfoResponse unsupportedAuditInfos) {
         this.unsupportedAuditInfos = unsupportedAuditInfos;
     }
 

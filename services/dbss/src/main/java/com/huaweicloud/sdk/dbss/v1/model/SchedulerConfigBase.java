@@ -96,7 +96,7 @@ public class SchedulerConfigBase {
     private FormatEnum format;
 
     /**
-     * 周期 - AUDIT_REPORT_DAY: 天 - AUDIT_REPORT_WEEK：周 - AUDIT_REPORT_MONTH：月 - AUDIT_REPORT_YEAR：年 - AUDIT_REPORT_REAL_TIME：实时
+     * 周期 - AUDIT_REPORT_DAY：天 - AUDIT_REPORT_WEEK：周 - AUDIT_REPORT_MONTH：月 - AUDIT_REPORT_YEAR：年 - AUDIT_REPORT_REAL_TIME：实时
      */
     public static final class FrequencyEnum {
 
@@ -349,7 +349,7 @@ public class SchedulerConfigBase {
     private String startTime;
 
     /**
-     * 模板状态 - ON: 开启 - OFF：关闭
+     * 模板状态 - ON：开启 - OFF：关闭
      */
     public static final class StatusEnum {
 
@@ -468,7 +468,7 @@ public class SchedulerConfigBase {
     }
 
     /**
-     * 周期 - AUDIT_REPORT_DAY: 天 - AUDIT_REPORT_WEEK：周 - AUDIT_REPORT_MONTH：月 - AUDIT_REPORT_YEAR：年 - AUDIT_REPORT_REAL_TIME：实时
+     * 周期 - AUDIT_REPORT_DAY：天 - AUDIT_REPORT_WEEK：周 - AUDIT_REPORT_MONTH：月 - AUDIT_REPORT_YEAR：年 - AUDIT_REPORT_REAL_TIME：实时
      * @return frequency
      */
     public FrequencyEnum getFrequency() {
@@ -553,7 +553,7 @@ public class SchedulerConfigBase {
     }
 
     /**
-     * 模板状态 - ON: 开启 - OFF：关闭
+     * 模板状态 - ON：开启 - OFF：关闭
      * @return status
      */
     public StatusEnum getStatus() {

@@ -235,7 +235,7 @@ public class SrcNodeResp {
     }
 
     /**
-     * 当源端为腾讯云时，会返回此参数。
+     * 腾讯云APPID，当源端为腾讯云时，会返回此参数。
      * @return appId
      */
     public String getAppId() {

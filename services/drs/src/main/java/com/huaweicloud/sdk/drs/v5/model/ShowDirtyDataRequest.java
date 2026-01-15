@@ -115,6 +115,16 @@ public class ShowDirtyDataRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "anonymize_mode")
+
+    private Boolean anonymizeMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_mode")
+
+    private String taskMode;
+
     public ShowDirtyDataRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -221,6 +231,40 @@ public class ShowDirtyDataRequest {
         this.limit = limit;
     }
 
+    public ShowDirtyDataRequest withAnonymizeMode(Boolean anonymizeMode) {
+        this.anonymizeMode = anonymizeMode;
+        return this;
+    }
+
+    /**
+     * 是否脱敏。
+     * @return anonymizeMode
+     */
+    public Boolean getAnonymizeMode() {
+        return anonymizeMode;
+    }
+
+    public void setAnonymizeMode(Boolean anonymizeMode) {
+        this.anonymizeMode = anonymizeMode;
+    }
+
+    public ShowDirtyDataRequest withTaskMode(String taskMode) {
+        this.taskMode = taskMode;
+        return this;
+    }
+
+    /**
+     * 查询任务阶段信息，不传默认查增量阶段信息。 - FULL_TRANSFER，全量阶段
+     * @return taskMode
+     */
+    public String getTaskMode() {
+        return taskMode;
+    }
+
+    public void setTaskMode(String taskMode) {
+        this.taskMode = taskMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -232,12 +276,13 @@ public class ShowDirtyDataRequest {
         ShowDirtyDataRequest that = (ShowDirtyDataRequest) obj;
         return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.jobId, that.jobId)
             && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.anonymizeMode, that.anonymizeMode) && Objects.equals(this.taskMode, that.taskMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, jobId, beginTime, endTime, offset, limit);
+        return Objects.hash(xLanguage, jobId, beginTime, endTime, offset, limit, anonymizeMode, taskMode);
     }
 
     @Override
@@ -250,6 +295,8 @@ public class ShowDirtyDataRequest {
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    anonymizeMode: ").append(toIndentedString(anonymizeMode)).append("\n");
+        sb.append("    taskMode: ").append(toIndentedString(taskMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

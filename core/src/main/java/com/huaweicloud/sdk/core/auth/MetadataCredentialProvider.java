@@ -44,10 +44,17 @@ public class MetadataCredentialProvider implements ICredentialProvider {
         return new MetadataGlobalCredentialProvider();
     }
 
+    /**
+     * @deprecated This method will be removed in future.
+     */
     public Long getExpirationThresholdSeconds() {
         return expirationThresholdSeconds;
     }
 
+    /**
+     * @deprecated This method will be removed in future, do not set this option if no problems occur.
+     * If this option needs to be set, the recommended value range is 1200~2400.
+     */
     public void setExpirationThresholdSeconds(Long expirationThresholdSeconds) {
         this.expirationThresholdSeconds = expirationThresholdSeconds;
     }

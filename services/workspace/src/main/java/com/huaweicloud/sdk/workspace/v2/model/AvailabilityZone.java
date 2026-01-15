@@ -11,9 +11,9 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * AvailabilityZoneInfo
+ * AvailabilityZone
  */
-public class AvailabilityZoneInfo {
+public class AvailabilityZone {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
@@ -50,7 +50,7 @@ public class AvailabilityZoneInfo {
 
     private Boolean defaultAvailabilityZone;
 
-    public AvailabilityZoneInfo withAvailabilityZone(String availabilityZone) {
+    public AvailabilityZone withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
     }
@@ -67,7 +67,7 @@ public class AvailabilityZoneInfo {
         this.availabilityZone = availabilityZone;
     }
 
-    public AvailabilityZoneInfo withDisplayName(String displayName) {
+    public AvailabilityZone withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
     }
@@ -84,12 +84,12 @@ public class AvailabilityZoneInfo {
         this.displayName = displayName;
     }
 
-    public AvailabilityZoneInfo withI18n(Map<String, String> i18n) {
+    public AvailabilityZone withI18n(Map<String, String> i18n) {
         this.i18n = i18n;
         return this;
     }
 
-    public AvailabilityZoneInfo putI18nItem(String key, String i18nItem) {
+    public AvailabilityZone putI18nItem(String key, String i18nItem) {
         if (this.i18n == null) {
             this.i18n = new HashMap<>();
         }
@@ -97,7 +97,7 @@ public class AvailabilityZoneInfo {
         return this;
     }
 
-    public AvailabilityZoneInfo withI18n(Consumer<Map<String, String>> i18nSetter) {
+    public AvailabilityZone withI18n(Consumer<Map<String, String>> i18nSetter) {
         if (this.i18n == null) {
             this.i18n = new HashMap<>();
         }
@@ -117,12 +117,12 @@ public class AvailabilityZoneInfo {
         this.i18n = i18n;
     }
 
-    public AvailabilityZoneInfo withSoldOut(SoldOutInfo soldOut) {
+    public AvailabilityZone withSoldOut(SoldOutInfo soldOut) {
         this.soldOut = soldOut;
         return this;
     }
 
-    public AvailabilityZoneInfo withSoldOut(Consumer<SoldOutInfo> soldOutSetter) {
+    public AvailabilityZone withSoldOut(Consumer<SoldOutInfo> soldOutSetter) {
         if (this.soldOut == null) {
             this.soldOut = new SoldOutInfo();
             soldOutSetter.accept(this.soldOut);
@@ -143,12 +143,12 @@ public class AvailabilityZoneInfo {
         this.soldOut = soldOut;
     }
 
-    public AvailabilityZoneInfo withProductIds(List<String> productIds) {
+    public AvailabilityZone withProductIds(List<String> productIds) {
         this.productIds = productIds;
         return this;
     }
 
-    public AvailabilityZoneInfo addProductIdsItem(String productIdsItem) {
+    public AvailabilityZone addProductIdsItem(String productIdsItem) {
         if (this.productIds == null) {
             this.productIds = new ArrayList<>();
         }
@@ -156,7 +156,7 @@ public class AvailabilityZoneInfo {
         return this;
     }
 
-    public AvailabilityZoneInfo withProductIds(Consumer<List<String>> productIdsSetter) {
+    public AvailabilityZone withProductIds(Consumer<List<String>> productIdsSetter) {
         if (this.productIds == null) {
             this.productIds = new ArrayList<>();
         }
@@ -176,7 +176,7 @@ public class AvailabilityZoneInfo {
         this.productIds = productIds;
     }
 
-    public AvailabilityZoneInfo withVisible(Boolean visible) {
+    public AvailabilityZone withVisible(Boolean visible) {
         this.visible = visible;
         return this;
     }
@@ -193,7 +193,7 @@ public class AvailabilityZoneInfo {
         this.visible = visible;
     }
 
-    public AvailabilityZoneInfo withDefaultAvailabilityZone(Boolean defaultAvailabilityZone) {
+    public AvailabilityZone withDefaultAvailabilityZone(Boolean defaultAvailabilityZone) {
         this.defaultAvailabilityZone = defaultAvailabilityZone;
         return this;
     }
@@ -218,7 +218,7 @@ public class AvailabilityZoneInfo {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AvailabilityZoneInfo that = (AvailabilityZoneInfo) obj;
+        AvailabilityZone that = (AvailabilityZone) obj;
         return Objects.equals(this.availabilityZone, that.availabilityZone)
             && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.i18n, that.i18n)
             && Objects.equals(this.soldOut, that.soldOut) && Objects.equals(this.productIds, that.productIds)
@@ -234,7 +234,7 @@ public class AvailabilityZoneInfo {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class AvailabilityZoneInfo {\n");
+        sb.append("class AvailabilityZone {\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
         sb.append("    i18n: ").append(toIndentedString(i18n)).append("\n");

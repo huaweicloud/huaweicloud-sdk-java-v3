@@ -124,7 +124,7 @@ public class RuleRiskResponseRules {
     }
 
     /**
-     * 风险规则状态。 - ON: 开启 - OFF: 关闭
+     * 风险规则状态。 - ON：开启 - OFF：关闭
      * @return status
      */
     public String getStatus() {
@@ -175,7 +175,7 @@ public class RuleRiskResponseRules {
     }
 
     /**
-     * 规则类型 - SYSTEM: 系统  - CUSTOMIZE: 自定义
+     * 规则类型 - SYSTEM：系统  - CUSTOMIZE：自定义
      * @return ruleType
      */
     public String getRuleType() {

@@ -53,7 +53,7 @@ public class RetryTaskResp {
     }
 
     /**
-     * 状态
+     * 状态：success，failed
      * @return status
      */
     public String getStatus() {

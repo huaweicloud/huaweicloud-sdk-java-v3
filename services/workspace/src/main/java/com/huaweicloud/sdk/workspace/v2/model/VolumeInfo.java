@@ -40,6 +40,11 @@ public class VolumeInfo {
 
     private String resourceSpecCode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kms_id")
+
+    private String kmsId;
+
     public VolumeInfo withId(String id) {
         this.id = id;
         return this;
@@ -148,6 +153,23 @@ public class VolumeInfo {
         this.resourceSpecCode = resourceSpecCode;
     }
 
+    public VolumeInfo withKmsId(String kmsId) {
+        this.kmsId = kmsId;
+        return this;
+    }
+
+    /**
+     * kms密钥Id
+     * @return kmsId
+     */
+    public String getKmsId() {
+        return kmsId;
+    }
+
+    public void setKmsId(String kmsId) {
+        this.kmsId = kmsId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -160,12 +182,12 @@ public class VolumeInfo {
         return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
             && Objects.equals(this.size, that.size) && Objects.equals(this.iops, that.iops)
             && Objects.equals(this.throughput, that.throughput)
-            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode);
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode) && Objects.equals(this.kmsId, that.kmsId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, type, size, iops, throughput, resourceSpecCode);
+        return Objects.hash(id, type, size, iops, throughput, resourceSpecCode, kmsId);
     }
 
     @Override
@@ -178,6 +200,7 @@ public class VolumeInfo {
         sb.append("    iops: ").append(toIndentedString(iops)).append("\n");
         sb.append("    throughput: ").append(toIndentedString(throughput)).append("\n");
         sb.append("    resourceSpecCode: ").append(toIndentedString(resourceSpecCode)).append("\n");
+        sb.append("    kmsId: ").append(toIndentedString(kmsId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

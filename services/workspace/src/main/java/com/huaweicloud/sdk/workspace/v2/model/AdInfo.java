@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -155,6 +157,11 @@ public class AdInfo {
     @JsonProperty(value = "certificate_id")
 
     private String certificateId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_controllers")
+
+    private List<DomainController> domainControllers = null;
 
     public AdInfo withDomainType(DomainTypeEnum domainType) {
         this.domainType = domainType;
@@ -403,6 +410,39 @@ public class AdInfo {
         this.certificateId = certificateId;
     }
 
+    public AdInfo withDomainControllers(List<DomainController> domainControllers) {
+        this.domainControllers = domainControllers;
+        return this;
+    }
+
+    public AdInfo addDomainControllersItem(DomainController domainControllersItem) {
+        if (this.domainControllers == null) {
+            this.domainControllers = new ArrayList<>();
+        }
+        this.domainControllers.add(domainControllersItem);
+        return this;
+    }
+
+    public AdInfo withDomainControllers(Consumer<List<DomainController>> domainControllersSetter) {
+        if (this.domainControllers == null) {
+            this.domainControllers = new ArrayList<>();
+        }
+        domainControllersSetter.accept(this.domainControllers);
+        return this;
+    }
+
+    /**
+     * 域控制器信息列表。
+     * @return domainControllers
+     */
+    public List<DomainController> getDomainControllers() {
+        return domainControllers;
+    }
+
+    public void setDomainControllers(List<DomainController> domainControllers) {
+        this.domainControllers = domainControllers;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -423,7 +463,8 @@ public class AdInfo {
             && Objects.equals(this.deleteComputerObject, that.deleteComputerObject)
             && Objects.equals(this.useLdaps, that.useLdaps) && Objects.equals(this.tlsConfig, that.tlsConfig)
             && Objects.equals(this.cbaEnabled, that.cbaEnabled)
-            && Objects.equals(this.certificateId, that.certificateId);
+            && Objects.equals(this.certificateId, that.certificateId)
+            && Objects.equals(this.domainControllers, that.domainControllers);
     }
 
     @Override
@@ -441,7 +482,8 @@ public class AdInfo {
             useLdaps,
             tlsConfig,
             cbaEnabled,
-            certificateId);
+            certificateId,
+            domainControllers);
     }
 
     @Override
@@ -462,6 +504,7 @@ public class AdInfo {
         sb.append("    tlsConfig: ").append(toIndentedString(tlsConfig)).append("\n");
         sb.append("    cbaEnabled: ").append(toIndentedString(cbaEnabled)).append("\n");
         sb.append("    certificateId: ").append(toIndentedString(certificateId)).append("\n");
+        sb.append("    domainControllers: ").append(toIndentedString(domainControllers)).append("\n");
         sb.append("}");
         return sb.toString();
     }

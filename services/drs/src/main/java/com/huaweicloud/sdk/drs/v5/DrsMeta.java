@@ -58,6 +58,9 @@ import com.huaweicloud.sdk.drs.v5.model.CreateOfflineTaskReq;
 import com.huaweicloud.sdk.drs.v5.model.CreateReplicationJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.CreateReplicationJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.DataProcessReq;
+import com.huaweicloud.sdk.drs.v5.model.DeleteColumnInfoReq;
+import com.huaweicloud.sdk.drs.v5.model.DeleteColumnInfosRequest;
+import com.huaweicloud.sdk.drs.v5.model.DeleteColumnInfosResponse;
 import com.huaweicloud.sdk.drs.v5.model.DeleteConnectionRequest;
 import com.huaweicloud.sdk.drs.v5.model.DeleteConnectionResponse;
 import com.huaweicloud.sdk.drs.v5.model.DeleteDriverReq;
@@ -124,6 +127,9 @@ import com.huaweicloud.sdk.drs.v5.model.ListUserJdbcDriversRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListUserJdbcDriversResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListsAgencyPermissionsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListsAgencyPermissionsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ModifyColumnInfoReq;
+import com.huaweicloud.sdk.drs.v5.model.ModifyColumnInfosRequest;
+import com.huaweicloud.sdk.drs.v5.model.ModifyColumnInfosResponse;
 import com.huaweicloud.sdk.drs.v5.model.ModifyComparePolicyReq;
 import com.huaweicloud.sdk.drs.v5.model.ModifyConnectionRequest;
 import com.huaweicloud.sdk.drs.v5.model.ModifyConnectionResponse;
@@ -134,13 +140,17 @@ import com.huaweicloud.sdk.drs.v5.model.QueryColumnReq;
 import com.huaweicloud.sdk.drs.v5.model.QueryDbPositionReq;
 import com.huaweicloud.sdk.drs.v5.model.QueryInstanceByTagReq;
 import com.huaweicloud.sdk.drs.v5.model.QuerySelectObjectInfoReq;
+import com.huaweicloud.sdk.drs.v5.model.QuerySubscriptionsReq;
 import com.huaweicloud.sdk.drs.v5.model.QueryUserSelectedObjectInfoReq;
 import com.huaweicloud.sdk.drs.v5.model.ShowActionsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowActionsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowAgencyInfoRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowAgencyInfoResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowColumnInfoReq;
 import com.huaweicloud.sdk.drs.v5.model.ShowColumnInfoResultRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowColumnInfoResultResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowColumnInfosRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowColumnInfosResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowComparePolicyRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowComparePolicyResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowCompareProgressRequest;
@@ -187,10 +197,14 @@ import com.huaweicloud.sdk.drs.v5.model.ShowPositionResultRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowPositionResultResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowProgressDataRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowProgressDataResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowReplayProgressRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowReplayProgressResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowReplayResultsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowReplayResultsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowReplicationJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowReplicationJobResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowSubscriptionListsRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowSubscriptionListsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowSupportObjectTypeRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowSupportObjectTypeResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowTimelineRequest;
@@ -893,6 +907,39 @@ public class DrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateOfflineTaskReq.class),
             f -> f.withMarshaller(CreateReplicationJobRequest::getBody, CreateReplicationJobRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteColumnInfosRequest, DeleteColumnInfosResponse> deleteColumnInfos =
+        genForDeleteColumnInfos();
+
+    private static HttpRequestDef<DeleteColumnInfosRequest, DeleteColumnInfosResponse> genForDeleteColumnInfos() {
+        // basic
+        HttpRequestDef.Builder<DeleteColumnInfosRequest, DeleteColumnInfosResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteColumnInfosRequest.class, DeleteColumnInfosResponse.class)
+                .withName("DeleteColumnInfos")
+                .withUri("/v5/{project_id}/job/{job_id}/column-info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteColumnInfosRequest::getJobId, DeleteColumnInfosRequest::setJobId));
+        builder.<DeleteColumnInfosRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteColumnInfosRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(DeleteColumnInfosRequest::getXLanguage, DeleteColumnInfosRequest::setXLanguage));
+        builder.<DeleteColumnInfoReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteColumnInfoReq.class),
+            f -> f.withMarshaller(DeleteColumnInfosRequest::getBody, DeleteColumnInfosRequest::setBody));
 
         // response
 
@@ -2141,6 +2188,39 @@ public class DrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ModifyColumnInfosRequest, ModifyColumnInfosResponse> modifyColumnInfos =
+        genForModifyColumnInfos();
+
+    private static HttpRequestDef<ModifyColumnInfosRequest, ModifyColumnInfosResponse> genForModifyColumnInfos() {
+        // basic
+        HttpRequestDef.Builder<ModifyColumnInfosRequest, ModifyColumnInfosResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ModifyColumnInfosRequest.class, ModifyColumnInfosResponse.class)
+                .withName("ModifyColumnInfos")
+                .withUri("/v5/{project_id}/job/{job_id}/column-info-modification")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyColumnInfosRequest::getJobId, ModifyColumnInfosRequest::setJobId));
+        builder.<ModifyColumnInfosRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ModifyColumnInfosRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ModifyColumnInfosRequest::getXLanguage, ModifyColumnInfosRequest::setXLanguage));
+        builder.<ModifyColumnInfoReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyColumnInfoReq.class),
+            f -> f.withMarshaller(ModifyColumnInfosRequest::getBody, ModifyColumnInfosRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ModifyConnectionRequest, ModifyConnectionResponse> modifyConnection =
         genForModifyConnection();
 
@@ -2267,6 +2347,39 @@ public class DrsMeta {
             TypeCasts.uncheckedConversion(ShowColumnInfoResultRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowColumnInfoResultRequest::getXLanguage,
                 ShowColumnInfoResultRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowColumnInfosRequest, ShowColumnInfosResponse> showColumnInfos =
+        genForShowColumnInfos();
+
+    private static HttpRequestDef<ShowColumnInfosRequest, ShowColumnInfosResponse> genForShowColumnInfos() {
+        // basic
+        HttpRequestDef.Builder<ShowColumnInfosRequest, ShowColumnInfosResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowColumnInfosRequest.class, ShowColumnInfosResponse.class)
+                .withName("ShowColumnInfos")
+                .withUri("/v5/{project_id}/job/{job_id}/column-info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowColumnInfosRequest::getJobId, ShowColumnInfosRequest::setJobId));
+        builder.<ShowColumnInfosRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowColumnInfosRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowColumnInfosRequest::getXLanguage, ShowColumnInfosRequest::setXLanguage));
+        builder.<ShowColumnInfoReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowColumnInfoReq.class),
+            f -> f.withMarshaller(ShowColumnInfosRequest::getBody, ShowColumnInfosRequest::setBody));
 
         // response
 
@@ -2652,6 +2765,16 @@ public class DrsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowDirtyDataRequest::getLimit, ShowDirtyDataRequest::setLimit));
+        builder.<Boolean>withRequestField("anonymize_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowDirtyDataRequest::getAnonymizeMode, ShowDirtyDataRequest::setAnonymizeMode));
+        builder.<String>withRequestField("task_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDirtyDataRequest::getTaskMode, ShowDirtyDataRequest::setTaskMode));
         builder.<ShowDirtyDataRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -3002,6 +3125,11 @@ public class DrsMeta {
             TypeCasts.uncheckedConversion(ShowJobDetailRequest.CompareDetailTypeEnum.class),
             f -> f.withMarshaller(ShowJobDetailRequest::getCompareDetailType,
                 ShowJobDetailRequest::setCompareDetailType));
+        builder.<String>withRequestField("log_level",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobDetailRequest::getLogLevel, ShowJobDetailRequest::setLogLevel));
         builder.<ShowJobDetailRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -3166,11 +3294,44 @@ public class DrsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowProgressDataRequest::getLimit, ShowProgressDataRequest::setLimit));
+        builder.<String>withRequestField("search_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProgressDataRequest::getSearchName, ShowProgressDataRequest::setSearchName));
         builder.<ShowProgressDataRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowProgressDataRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowProgressDataRequest::getXLanguage, ShowProgressDataRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowReplayProgressRequest, ShowReplayProgressResponse> showReplayProgress =
+        genForShowReplayProgress();
+
+    private static HttpRequestDef<ShowReplayProgressRequest, ShowReplayProgressResponse> genForShowReplayProgress() {
+        // basic
+        HttpRequestDef.Builder<ShowReplayProgressRequest, ShowReplayProgressResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowReplayProgressRequest.class, ShowReplayProgressResponse.class)
+                .withName("ShowReplayProgress")
+                .withUri("/v5/{project_id}/jobs/{job_id}/replay-progress")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReplayProgressRequest::getJobId, ShowReplayProgressRequest::setJobId));
+        builder.<ShowReplayProgressRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowReplayProgressRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowReplayProgressRequest::getXLanguage, ShowReplayProgressRequest::setXLanguage));
 
         // response
 
@@ -3283,6 +3444,45 @@ public class DrsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowReplicationJobRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowReplicationJobRequest::getXLanguage, ShowReplicationJobRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSubscriptionListsRequest, ShowSubscriptionListsResponse> showSubscriptionLists =
+        genForShowSubscriptionLists();
+
+    private static HttpRequestDef<ShowSubscriptionListsRequest, ShowSubscriptionListsResponse> genForShowSubscriptionLists() {
+        // basic
+        HttpRequestDef.Builder<ShowSubscriptionListsRequest, ShowSubscriptionListsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ShowSubscriptionListsRequest.class, ShowSubscriptionListsResponse.class)
+            .withName("ShowSubscriptionLists")
+            .withUri("/v5/{project_id}/subscriptions")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowSubscriptionListsRequest::getLimit, ShowSubscriptionListsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowSubscriptionListsRequest::getOffset, ShowSubscriptionListsRequest::setOffset));
+        builder.<ShowSubscriptionListsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowSubscriptionListsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowSubscriptionListsRequest::getXLanguage,
+                ShowSubscriptionListsRequest::setXLanguage));
+        builder.<QuerySubscriptionsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QuerySubscriptionsReq.class),
+            f -> f.withMarshaller(ShowSubscriptionListsRequest::getBody, ShowSubscriptionListsRequest::setBody));
 
         // response
 

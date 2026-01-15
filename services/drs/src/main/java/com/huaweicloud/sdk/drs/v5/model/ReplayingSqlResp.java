@@ -124,7 +124,7 @@ public class ReplayingSqlResp {
     }
 
     /**
-     * 执行状态
+     * 执行状态 取值：INIT，RUNNING，FAILED，PAUSE，SUCCESS，FINISHED
      * @return status
      */
     public String getStatus() {

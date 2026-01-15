@@ -26,7 +26,7 @@ public class ResourceTagInfo {
     }
 
     /**
-     * 标签键。
+     * 标签键。例如键值对{“aaa”:\"bbb\"}的key为\"aaa\"
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class ResourceTagInfo {
     }
 
     /**
-     * 标签值。
+     * 标签值。例如键值对{“aaa”:\"bbb\"}的value为\"bbb\"
      * @return value
      */
     public String getValue() {

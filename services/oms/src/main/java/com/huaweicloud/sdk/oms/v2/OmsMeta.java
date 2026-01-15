@@ -328,16 +328,16 @@ public class OmsMeta {
             TypeCasts.uncheckedConversion(ListSyncTaskStatisticRequest.DataTypeEnum.class),
             f -> f.withMarshaller(ListSyncTaskStatisticRequest::getDataType,
                 ListSyncTaskStatisticRequest::setDataType));
-        builder.<String>withRequestField("start_time",
+        builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListSyncTaskStatisticRequest::getStartTime,
                 ListSyncTaskStatisticRequest::setStartTime));
-        builder.<String>withRequestField("end_time",
+        builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListSyncTaskStatisticRequest::getEndTime, ListSyncTaskStatisticRequest::setEndTime));
 
         // response
@@ -642,10 +642,10 @@ public class OmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSyncTaskRequest::getSyncTaskId, ShowSyncTaskRequest::setSyncTaskId));
-        builder.<String>withRequestField("query_time",
+        builder.<Long>withRequestField("query_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ShowSyncTaskRequest::getQueryTime, ShowSyncTaskRequest::setQueryTime));
 
         // response

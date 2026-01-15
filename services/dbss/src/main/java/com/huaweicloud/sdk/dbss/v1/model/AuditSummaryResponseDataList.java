@@ -103,7 +103,7 @@ public class AuditSummaryResponseDataList {
     }
 
     /**
-     * 状态 - 1: success - 2: failure
+     * 状态 - 1：success - 2：failure
      * @return status
      */
     public String getStatus() {

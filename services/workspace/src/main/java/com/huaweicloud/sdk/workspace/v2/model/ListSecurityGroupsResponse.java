@@ -17,14 +17,14 @@ public class ListSecurityGroupsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
 
-    private List<SecurityGroup> securityGroups = null;
+    private List<SimpleSecurityGroupsInfo> securityGroups = null;
 
-    public ListSecurityGroupsResponse withSecurityGroups(List<SecurityGroup> securityGroups) {
+    public ListSecurityGroupsResponse withSecurityGroups(List<SimpleSecurityGroupsInfo> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
     }
 
-    public ListSecurityGroupsResponse addSecurityGroupsItem(SecurityGroup securityGroupsItem) {
+    public ListSecurityGroupsResponse addSecurityGroupsItem(SimpleSecurityGroupsInfo securityGroupsItem) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -32,7 +32,8 @@ public class ListSecurityGroupsResponse extends SdkResponse {
         return this;
     }
 
-    public ListSecurityGroupsResponse withSecurityGroups(Consumer<List<SecurityGroup>> securityGroupsSetter) {
+    public ListSecurityGroupsResponse withSecurityGroups(
+        Consumer<List<SimpleSecurityGroupsInfo>> securityGroupsSetter) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -44,11 +45,11 @@ public class ListSecurityGroupsResponse extends SdkResponse {
      * 安全组列表。
      * @return securityGroups
      */
-    public List<SecurityGroup> getSecurityGroups() {
+    public List<SimpleSecurityGroupsInfo> getSecurityGroups() {
         return securityGroups;
     }
 
-    public void setSecurityGroups(List<SecurityGroup> securityGroups) {
+    public void setSecurityGroups(List<SimpleSecurityGroupsInfo> securityGroups) {
         this.securityGroups = securityGroups;
     }
 

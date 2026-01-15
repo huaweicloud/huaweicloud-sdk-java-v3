@@ -111,6 +111,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ChangeUserPrivilegeGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeUserPrivilegeGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeUserStatusRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeUserStatusResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CheckCidrRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CheckCidrResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CheckDesktopImagesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CheckDesktopImagesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CheckEdgeSiteResourcesRequest;
@@ -353,6 +355,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListDesktopSnapshotRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopSnapshotResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopUsageMetricRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopUsageMetricResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsByTagsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsByTagsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsConnectStatusRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsConnectStatusResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsDetailRequest;
@@ -405,6 +409,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListNatGatewaysRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListNatGatewaysResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListNatMappingConfigsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListNatMappingConfigsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListNotificationRecordsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListNotificationRecordsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListOriginalPolicyInfoRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListOriginalPolicyInfoResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListOtpDevicesByUserIdRequest;
@@ -669,6 +675,8 @@ import com.huaweicloud.sdk.workspace.v2.model.UploadAppRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UploadAppResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ValidateConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ValidateConfigResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ValidateDomainControllerRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ValidateDomainControllerResponse;
 
 public class WorkspaceClient {
 
@@ -4562,7 +4570,7 @@ public class WorkspaceClient {
     }
 
     /**
-     * 批量添加删除标签
+     * 批量添加或删除标签
      *
      * 为指定桌面批量添加或删除标签。创建时，如果创建的标签已经存在（key相同），则覆盖。删除时，如果删除的标签不存在，默认处理成功。
      * 
@@ -4576,7 +4584,7 @@ public class WorkspaceClient {
     }
 
     /**
-     * 批量添加删除标签
+     * 批量添加或删除标签
      *
      * 为指定桌面批量添加或删除标签。创建时，如果创建的标签已经存在（key相同），则覆盖。删除时，如果删除的标签不存在，默认处理成功。
      * 
@@ -4676,9 +4684,9 @@ public class WorkspaceClient {
     }
 
     /**
-     * 使用标签过滤桌面
+     * 使用标签过滤桌面（已废弃）
      *
-     * 使用标签过滤桌面。
+     * 使用标签过滤桌面。该接口已废弃，请使用post /v2/{project_id}/desktops/resource-instances/action
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4690,9 +4698,9 @@ public class WorkspaceClient {
     }
 
     /**
-     * 使用标签过滤桌面
+     * 使用标签过滤桌面（已废弃）
      *
-     * 使用标签过滤桌面。
+     * 使用标签过滤桌面。该接口已废弃，请使用post /v2/{project_id}/desktops/resource-instances/action
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4702,6 +4710,35 @@ public class WorkspaceClient {
     public SyncInvoker<ListDesktopByTagsRequest, ListDesktopByTagsResponse> listDesktopByTagsInvoker(
         ListDesktopByTagsRequest request) {
         return new SyncInvoker<>(request, WorkspaceMeta.listDesktopByTags, hcClient);
+    }
+
+    /**
+     * 使用标签过滤桌面
+     *
+     * 使用标签过滤桌面。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopsByTagsRequest 请求对象
+     * @return ListDesktopsByTagsResponse
+     */
+    public ListDesktopsByTagsResponse listDesktopsByTags(ListDesktopsByTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.listDesktopsByTags);
+    }
+
+    /**
+     * 使用标签过滤桌面
+     *
+     * 使用标签过滤桌面。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopsByTagsRequest 请求对象
+     * @return SyncInvoker<ListDesktopsByTagsRequest, ListDesktopsByTagsResponse>
+     */
+    public SyncInvoker<ListDesktopsByTagsRequest, ListDesktopsByTagsResponse> listDesktopsByTagsInvoker(
+        ListDesktopsByTagsRequest request) {
+        return new SyncInvoker<>(request, WorkspaceMeta.listDesktopsByTags, hcClient);
     }
 
     /**
@@ -5804,6 +5841,34 @@ public class WorkspaceClient {
     public SyncInvoker<BatchDisassociateDesktopsEipRequest, BatchDisassociateDesktopsEipResponse> batchDisassociateDesktopsEipInvoker(
         BatchDisassociateDesktopsEipRequest request) {
         return new SyncInvoker<>(request, WorkspaceMeta.batchDisassociateDesktopsEip, hcClient);
+    }
+
+    /**
+     * 校验租户冲突网段
+     *
+     * 该接口用于校验租户网段是否冲突,返回冲突网段列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckCidrRequest 请求对象
+     * @return CheckCidrResponse
+     */
+    public CheckCidrResponse checkCidr(CheckCidrRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.checkCidr);
+    }
+
+    /**
+     * 校验租户冲突网段
+     *
+     * 该接口用于校验租户网段是否冲突,返回冲突网段列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckCidrRequest 请求对象
+     * @return SyncInvoker<CheckCidrRequest, CheckCidrResponse>
+     */
+    public SyncInvoker<CheckCidrRequest, CheckCidrResponse> checkCidrInvoker(CheckCidrRequest request) {
+        return new SyncInvoker<>(request, WorkspaceMeta.checkCidr, hcClient);
     }
 
     /**
@@ -9633,6 +9698,35 @@ public class WorkspaceClient {
     }
 
     /**
+     * 查询通知拦截记录
+     *
+     * 查询通知拦截记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNotificationRecordsRequest 请求对象
+     * @return ListNotificationRecordsResponse
+     */
+    public ListNotificationRecordsResponse listNotificationRecords(ListNotificationRecordsRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.listNotificationRecords);
+    }
+
+    /**
+     * 查询通知拦截记录
+     *
+     * 查询通知拦截记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNotificationRecordsRequest 请求对象
+     * @return SyncInvoker<ListNotificationRecordsRequest, ListNotificationRecordsResponse>
+     */
+    public SyncInvoker<ListNotificationRecordsRequest, ListNotificationRecordsResponse> listNotificationRecordsInvoker(
+        ListNotificationRecordsRequest request) {
+        return new SyncInvoker<>(request, WorkspaceMeta.listNotificationRecords, hcClient);
+    }
+
+    /**
      * 查询OTP设备
      *
      * 该接口用于查询相应用户下面的OTP设备。
@@ -10357,6 +10451,35 @@ public class WorkspaceClient {
     public SyncInvoker<UpdateWorkspaceRequest, UpdateWorkspaceResponse> updateWorkspaceInvoker(
         UpdateWorkspaceRequest request) {
         return new SyncInvoker<>(request, WorkspaceMeta.updateWorkspace, hcClient);
+    }
+
+    /**
+     * 校验域控有效性
+     *
+     * 校验域控有效性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ValidateDomainControllerRequest 请求对象
+     * @return ValidateDomainControllerResponse
+     */
+    public ValidateDomainControllerResponse validateDomainController(ValidateDomainControllerRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.validateDomainController);
+    }
+
+    /**
+     * 校验域控有效性
+     *
+     * 校验域控有效性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ValidateDomainControllerRequest 请求对象
+     * @return SyncInvoker<ValidateDomainControllerRequest, ValidateDomainControllerResponse>
+     */
+    public SyncInvoker<ValidateDomainControllerRequest, ValidateDomainControllerResponse> validateDomainControllerInvoker(
+        ValidateDomainControllerRequest request) {
+        return new SyncInvoker<>(request, WorkspaceMeta.validateDomainController, hcClient);
     }
 
 }

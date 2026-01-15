@@ -25,6 +25,16 @@ public class ListWksEdgeSitesRequest {
 
     private String status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
     public ListWksEdgeSitesRequest withName(String name) {
         this.name = name;
         return this;
@@ -76,6 +86,44 @@ public class ListWksEdgeSitesRequest {
         this.status = status;
     }
 
+    public ListWksEdgeSitesRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 每页数量，范围0-1000，默认1000。
+     * minimum: 0
+     * maximum: 1000
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListWksEdgeSitesRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 偏移量，默认0。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +134,13 @@ public class ListWksEdgeSitesRequest {
         }
         ListWksEdgeSitesRequest that = (ListWksEdgeSitesRequest) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.availabilityZoneId, that.availabilityZoneId)
-            && Objects.equals(this.status, that.status);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, availabilityZoneId, status);
+        return Objects.hash(name, availabilityZoneId, status, limit, offset);
     }
 
     @Override
@@ -101,6 +150,8 @@ public class ListWksEdgeSitesRequest {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    availabilityZoneId: ").append(toIndentedString(availabilityZoneId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

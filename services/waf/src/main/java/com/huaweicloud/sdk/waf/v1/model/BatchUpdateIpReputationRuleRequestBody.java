@@ -19,11 +19,6 @@ public class BatchUpdateIpReputationRuleRequestBody {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "policyname")
-
-    private String policyname;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -63,23 +58,6 @@ public class BatchUpdateIpReputationRuleRequestBody {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public BatchUpdateIpReputationRuleRequestBody withPolicyname(String policyname) {
-        this.policyname = policyname;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 策略名称 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
-     * @return policyname
-     */
-    public String getPolicyname() {
-        return policyname;
-    }
-
-    public void setPolicyname(String policyname) {
-        this.policyname = policyname;
     }
 
     public BatchUpdateIpReputationRuleRequestBody withDescription(String description) {
@@ -221,15 +199,14 @@ public class BatchUpdateIpReputationRuleRequestBody {
             return false;
         }
         BatchUpdateIpReputationRuleRequestBody that = (BatchUpdateIpReputationRuleRequestBody) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.policyname, that.policyname)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.action, that.action)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.policyRuleIds, that.policyRuleIds);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.policyRuleIds, that.policyRuleIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, policyname, description, action, type, tags, policyRuleIds);
+        return Objects.hash(name, description, action, type, tags, policyRuleIds);
     }
 
     @Override
@@ -237,7 +214,6 @@ public class BatchUpdateIpReputationRuleRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchUpdateIpReputationRuleRequestBody {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    policyname: ").append(toIndentedString(policyname)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

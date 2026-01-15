@@ -21,6 +21,11 @@ public class StartInfo {
     private Boolean isOnlyInitTask;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_auto_create_compare")
+
+    private Boolean isAutoCreateCompare;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
     private String startTime;
@@ -48,7 +53,7 @@ public class StartInfo {
     }
 
     /**
-     * 是否支持只初始化任务。
+     * 是否支持只初始化任务。仅支持白名单用户使用，需要提交工单申请才能使用。
      * @return isOnlyInitTask
      */
     public Boolean getIsOnlyInitTask() {
@@ -57,6 +62,23 @@ public class StartInfo {
 
     public void setIsOnlyInitTask(Boolean isOnlyInitTask) {
         this.isOnlyInitTask = isOnlyInitTask;
+    }
+
+    public StartInfo withIsAutoCreateCompare(Boolean isAutoCreateCompare) {
+        this.isAutoCreateCompare = isAutoCreateCompare;
+        return this;
+    }
+
+    /**
+     * 是否在任务结束时自动创建对比任务，不填默认设置为true。
+     * @return isAutoCreateCompare
+     */
+    public Boolean getIsAutoCreateCompare() {
+        return isAutoCreateCompare;
+    }
+
+    public void setIsAutoCreateCompare(Boolean isAutoCreateCompare) {
+        this.isAutoCreateCompare = isAutoCreateCompare;
     }
 
     public StartInfo withStartTime(String startTime) {
@@ -86,12 +108,13 @@ public class StartInfo {
         }
         StartInfo that = (StartInfo) obj;
         return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.isOnlyInitTask, that.isOnlyInitTask)
+            && Objects.equals(this.isAutoCreateCompare, that.isAutoCreateCompare)
             && Objects.equals(this.startTime, that.startTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, isOnlyInitTask, startTime);
+        return Objects.hash(jobId, isOnlyInitTask, isAutoCreateCompare, startTime);
     }
 
     @Override
@@ -100,6 +123,7 @@ public class StartInfo {
         sb.append("class StartInfo {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    isOnlyInitTask: ").append(toIndentedString(isOnlyInitTask)).append("\n");
+        sb.append("    isAutoCreateCompare: ").append(toIndentedString(isAutoCreateCompare)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("}");
         return sb.toString();

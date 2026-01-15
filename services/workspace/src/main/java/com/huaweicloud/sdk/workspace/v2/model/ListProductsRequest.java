@@ -56,7 +56,7 @@ public class ListProductsRequest {
     }
 
     /**
-     * 产品ID。
+     * 产品ID。指定该参数会返回支持变更规格的套餐信息。
      * @return productId
      */
     public String getProductId() {

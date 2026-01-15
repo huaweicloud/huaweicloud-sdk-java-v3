@@ -44,6 +44,11 @@ public class DesktopToImageReq {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_clear_data")
+
+    private Boolean isClearData;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_ram")
 
     private String maxRam;
@@ -171,6 +176,23 @@ public class DesktopToImageReq {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public DesktopToImageReq withIsClearData(Boolean isClearData) {
+        this.isClearData = isClearData;
+        return this;
+    }
+
+    /**
+     * 当不封装镜像时,用此字段来区分是否删除用户信息，默认为false。不删除用户信息：false，删除用户信息：true。
+     * @return isClearData
+     */
+    public Boolean getIsClearData() {
+        return isClearData;
+    }
+
+    public void setIsClearData(Boolean isClearData) {
+        this.isClearData = isClearData;
+    }
+
     public DesktopToImageReq withMaxRam(String maxRam) {
         this.maxRam = maxRam;
         return this;
@@ -220,7 +242,8 @@ public class DesktopToImageReq {
             && Objects.equals(this.executeSysprep, that.executeSysprep)
             && Objects.equals(this.imageTags, that.imageTags)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.maxRam, that.maxRam) && Objects.equals(this.minRam, that.minRam);
+            && Objects.equals(this.isClearData, that.isClearData) && Objects.equals(this.maxRam, that.maxRam)
+            && Objects.equals(this.minRam, that.minRam);
     }
 
     @Override
@@ -231,6 +254,7 @@ public class DesktopToImageReq {
             executeSysprep,
             imageTags,
             enterpriseProjectId,
+            isClearData,
             maxRam,
             minRam);
     }
@@ -245,6 +269,7 @@ public class DesktopToImageReq {
         sb.append("    executeSysprep: ").append(toIndentedString(executeSysprep)).append("\n");
         sb.append("    imageTags: ").append(toIndentedString(imageTags)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    isClearData: ").append(toIndentedString(isClearData)).append("\n");
         sb.append("    maxRam: ").append(toIndentedString(maxRam)).append("\n");
         sb.append("    minRam: ").append(toIndentedString(minRam)).append("\n");
         sb.append("}");

@@ -87,7 +87,7 @@ public class TuningParameter {
     }
 
     /**
-     * 参数取值范围。
+     * 参数范围。
      * @return range
      */
     public String getRange() {

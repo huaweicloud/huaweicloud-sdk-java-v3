@@ -14,6 +14,11 @@ import java.util.function.Consumer;
 public class BatchUpdateAntiTamperRulesRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hostname")
 
     private String hostname;
@@ -32,6 +37,23 @@ public class BatchUpdateAntiTamperRulesRequestBody {
     @JsonProperty(value = "policy_rule_ids")
 
     private List<PolicyRuleIdRequestBodyPolicyRuleIds> policyRuleIds = null;
+
+    public BatchUpdateAntiTamperRulesRequestBody withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 规则名称 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public BatchUpdateAntiTamperRulesRequestBody withHostname(String hostname) {
         this.hostname = hostname;
@@ -129,20 +151,21 @@ public class BatchUpdateAntiTamperRulesRequestBody {
             return false;
         }
         BatchUpdateAntiTamperRulesRequestBody that = (BatchUpdateAntiTamperRulesRequestBody) obj;
-        return Objects.equals(this.hostname, that.hostname) && Objects.equals(this.url, that.url)
-            && Objects.equals(this.description, that.description)
+        return Objects.equals(this.name, that.name) && Objects.equals(this.hostname, that.hostname)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.description, that.description)
             && Objects.equals(this.policyRuleIds, that.policyRuleIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hostname, url, description, policyRuleIds);
+        return Objects.hash(name, hostname, url, description, policyRuleIds);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchUpdateAntiTamperRulesRequestBody {\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

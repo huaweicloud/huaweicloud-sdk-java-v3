@@ -22,7 +22,7 @@ public class BatchSetAuditAlarmLogStatusResponse extends SdkResponse {
     }
 
     /**
-     * 请求结果  - request_success: 成功
+     * 请求结果  - request_success：成功
      * @return result
      */
     public String getResult() {

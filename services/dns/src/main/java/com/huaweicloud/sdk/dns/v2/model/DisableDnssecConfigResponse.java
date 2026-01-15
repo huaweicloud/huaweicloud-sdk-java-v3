@@ -22,7 +22,7 @@ public class DisableDnssecConfigResponse extends SdkResponse {
     }
 
     /**
-     * 状态。  取值范围：  DISABLE：关闭
+     * **参数解释：** 状态。 **取值范围：** DISABLE：关闭
      * @return status
      */
     public String getStatus() {

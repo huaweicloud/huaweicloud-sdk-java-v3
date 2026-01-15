@@ -134,7 +134,7 @@ public class BatchJobActionReq {
     }
 
     /**
-     * 操作对应的参数（API参考文档-批量测试连接-集群模式-property字段数据结构说明）[字段说明参考](https://support.huaweicloud.com/api-drs/drs_03_0106.html)
+     * 操作对应的参数（API参考文档-批量测试连接-集群模式-property字段数据结构说明）[字段说明参考](https://support.huaweicloud.com/api-drs/drs_03_0106.html dbtype参数取值：mysql, taurusha, sqlserver, postgresql, ddm, mongodb, awsdocumentdb, hwmongodb, hwpostgresql, oracle, taurus, gaussdb, kafka, mrsKafka, cassandra, dynamo, dws, gaussdbv5, gaussdbv5ha, gaussmongodb, multigaussdbv5, dmq, gaussdbt, gaussdbtha, gaussdb300, elasticsearch, db2, tidb, redis, gaussredis, rediscluster, mariadb, oceanbase, informix, gaussdbv1, gausscassandra, geminidynamo, dds, tauruslite, star-rocks, gaussdbformysqllite, taurus-postgresql, thl, opengauss, ddmforgaussdb, gaussdbmultimaster
      * @return property
      */
     public String getProperty() {

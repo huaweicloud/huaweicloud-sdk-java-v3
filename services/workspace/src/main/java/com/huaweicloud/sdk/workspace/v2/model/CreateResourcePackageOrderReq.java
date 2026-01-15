@@ -21,7 +21,7 @@ public class CreateResourcePackageOrderReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_packages")
 
-    private List<ResourcePackage> resourcePackages = null;
+    private List<DesktopResourcePackage> resourcePackages = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_size")
@@ -50,12 +50,12 @@ public class CreateResourcePackageOrderReq {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public CreateResourcePackageOrderReq withResourcePackages(List<ResourcePackage> resourcePackages) {
+    public CreateResourcePackageOrderReq withResourcePackages(List<DesktopResourcePackage> resourcePackages) {
         this.resourcePackages = resourcePackages;
         return this;
     }
 
-    public CreateResourcePackageOrderReq addResourcePackagesItem(ResourcePackage resourcePackagesItem) {
+    public CreateResourcePackageOrderReq addResourcePackagesItem(DesktopResourcePackage resourcePackagesItem) {
         if (this.resourcePackages == null) {
             this.resourcePackages = new ArrayList<>();
         }
@@ -63,7 +63,8 @@ public class CreateResourcePackageOrderReq {
         return this;
     }
 
-    public CreateResourcePackageOrderReq withResourcePackages(Consumer<List<ResourcePackage>> resourcePackagesSetter) {
+    public CreateResourcePackageOrderReq withResourcePackages(
+        Consumer<List<DesktopResourcePackage>> resourcePackagesSetter) {
         if (this.resourcePackages == null) {
             this.resourcePackages = new ArrayList<>();
         }
@@ -75,11 +76,11 @@ public class CreateResourcePackageOrderReq {
      * 资源包。
      * @return resourcePackages
      */
-    public List<ResourcePackage> getResourcePackages() {
+    public List<DesktopResourcePackage> getResourcePackages() {
         return resourcePackages;
     }
 
-    public void setResourcePackages(List<ResourcePackage> resourcePackages) {
+    public void setResourcePackages(List<DesktopResourcePackage> resourcePackages) {
         this.resourcePackages = resourcePackages;
     }
 

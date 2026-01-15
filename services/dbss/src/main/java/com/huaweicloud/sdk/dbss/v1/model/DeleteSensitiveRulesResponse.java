@@ -22,7 +22,7 @@ public class DeleteSensitiveRulesResponse extends SdkResponse {
     }
 
     /**
-     * 状态  - SUCCESS: 成功  - FAILED: 失败
+     * 状态  - SUCCESS：成功  - FAILED：失败
      * @return status
      */
     public String getStatus() {

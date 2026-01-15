@@ -79,7 +79,7 @@ public class UpdateConnectionReq {
     }
 
     /**
-     * 数据库类型。
+     * 数据库类型。 取值：mysql - postgresql - mongodb - oracle
      * @return dbType
      */
     public String getDbType() {

@@ -36,7 +36,7 @@ public class TemplateBean {
     private String frequency;
 
     /**
-     * 类型 - COMPREHENSIVE: 综合报表 - COMPLIANCE: 合规报表 - DB_SPECIAL：数据库专项报表 - CLIENT_SPECIAL：客户端专项报表 - SQL_SPECIAL：SQL
+     * 类型 - COMPREHENSIVE：综合报表 - COMPLIANCE：合规报表 - DB_SPECIAL：数据库专项报表 - CLIENT_SPECIAL：客户端专项报表 - SQL_SPECIAL：SQL
      */
     public static final class GroupEnum {
 
@@ -214,7 +214,7 @@ public class TemplateBean {
     private StatusEnum status;
 
     /**
-     * 报表类型 - COMPREHENSIVE: 数据库安全综合报表 - COMPLIANCE: 数据库安全合规报表 - SOX: SOX-萨班斯报表 - PCI: 行业标准安全报表 - DB_ANALYSIS: 数据库服务器分析报表 - CLIENT_IP_ANALYSIS: 客户端IP分析报表 - SQL_DCL_COMMAND: DCL命令报表 - SQL_DDL_COMMAND: DDL命令报表 - SQL_DML_COMMAND: DML命令报表
+     * 报表类型 - COMPREHENSIVE：数据库安全综合报表 - COMPLIANCE：数据库安全合规报表 - SOX：SOX-萨班斯报表 - PCI：行业标准安全报表 - DB_ANALYSIS：数据库服务器分析报表 - CLIENT_IP_ANALYSIS：客户端IP分析报表 - SQL_DCL_COMMAND：DCL命令报表 - SQL_DDL_COMMAND：DDL命令报表 - SQL_DML_COMMAND：DML命令报表
      */
     public static final class TypeEnum {
 
@@ -404,7 +404,7 @@ public class TemplateBean {
     }
 
     /**
-     * 类型 - COMPREHENSIVE: 综合报表 - COMPLIANCE: 合规报表 - DB_SPECIAL：数据库专项报表 - CLIENT_SPECIAL：客户端专项报表 - SQL_SPECIAL：SQL
+     * 类型 - COMPREHENSIVE：综合报表 - COMPLIANCE：合规报表 - DB_SPECIAL：数据库专项报表 - CLIENT_SPECIAL：客户端专项报表 - SQL_SPECIAL：SQL
      * @return group
      */
     public GroupEnum getGroup() {
@@ -472,7 +472,7 @@ public class TemplateBean {
     }
 
     /**
-     * 报表类型 - COMPREHENSIVE: 数据库安全综合报表 - COMPLIANCE: 数据库安全合规报表 - SOX: SOX-萨班斯报表 - PCI: 行业标准安全报表 - DB_ANALYSIS: 数据库服务器分析报表 - CLIENT_IP_ANALYSIS: 客户端IP分析报表 - SQL_DCL_COMMAND: DCL命令报表 - SQL_DDL_COMMAND: DDL命令报表 - SQL_DML_COMMAND: DML命令报表
+     * 报表类型 - COMPREHENSIVE：数据库安全综合报表 - COMPLIANCE：数据库安全合规报表 - SOX：SOX-萨班斯报表 - PCI：行业标准安全报表 - DB_ANALYSIS：数据库服务器分析报表 - CLIENT_IP_ANALYSIS：客户端IP分析报表 - SQL_DCL_COMMAND：DCL命令报表 - SQL_DDL_COMMAND：DDL命令报表 - SQL_DML_COMMAND：DML命令报表
      * @return type
      */
     public TypeEnum getType() {

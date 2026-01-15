@@ -109,7 +109,7 @@ public class ActionBaseResp {
     }
 
     /**
-     * 操作结果。
+     * 操作结果。 success，failed
      * @return status
      */
     public String getStatus() {

@@ -98,7 +98,7 @@ public class AuditAgentRespoonseAgents {
     }
 
     /**
-     * agent 类型 - DB: 数据库端 - APP: 应用端
+     * agent 类型 - DB：数据库端 - APP：应用端
      * @return agentType
      */
     public String getAgentType() {

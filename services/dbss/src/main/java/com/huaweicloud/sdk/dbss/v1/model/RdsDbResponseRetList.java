@@ -48,7 +48,7 @@ public class RdsDbResponseRetList {
     }
 
     /**
-     * 状态 - SUCCESS: 成功 - FAILED： 失败
+     * 状态 - SUCCESS：成功 - FAILED：失败
      * @return retStatus
      */
     public String getRetStatus() {

@@ -41,7 +41,7 @@ public class CountDbAccountSessionResponse extends SdkResponse {
     }
 
     /**
-     * Get body
+     * 用户会话量列表
      * @return body
      */
     public List<ReportAccountSessionNew> getBody() {

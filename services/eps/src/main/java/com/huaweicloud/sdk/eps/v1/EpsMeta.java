@@ -219,6 +219,11 @@ public class EpsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListEnterpriseProjectRequest::getStatus, ListEnterpriseProjectRequest::setStatus));
+        builder.<ListEnterpriseProjectRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListEnterpriseProjectRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListEnterpriseProjectRequest::getType, ListEnterpriseProjectRequest::setType));
 
         // response
 

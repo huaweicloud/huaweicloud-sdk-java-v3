@@ -71,6 +71,11 @@ public class NodeSpecUpdate {
     private Map<String, String> k8sTags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ecsGroupId")
+
+    private String ecsGroupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userTags")
 
     private List<UserTag> userTags = null;
@@ -376,6 +381,23 @@ public class NodeSpecUpdate {
         this.k8sTags = k8sTags;
     }
 
+    public NodeSpecUpdate withEcsGroupId(String ecsGroupId) {
+        this.ecsGroupId = ecsGroupId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 云服务器组ID，若指定，将节点创建在该云服务器组下。 **约束限制**： 创建节点池时该配置不会生效，若要保持节点池中的节点都在同一个云服务器组内，请在节点池 nodeManagement 字段中配置。 **取值范围**： 不涉及 **默认取值**： 不涉及
+     * @return ecsGroupId
+     */
+    public String getEcsGroupId() {
+        return ecsGroupId;
+    }
+
+    public void setEcsGroupId(String ecsGroupId) {
+        this.ecsGroupId = ecsGroupId;
+    }
+
     public NodeSpecUpdate withUserTags(List<UserTag> userTags) {
         this.userTags = userTags;
         return this;
@@ -579,7 +601,8 @@ public class NodeSpecUpdate {
             && Objects.equals(this.storage, that.storage) && Objects.equals(this.runtime, that.runtime)
             && Objects.equals(this.taints, that.taints)
             && Objects.equals(this.waitPostInstallFinish, that.waitPostInstallFinish)
-            && Objects.equals(this.k8sTags, that.k8sTags) && Objects.equals(this.userTags, that.userTags)
+            && Objects.equals(this.k8sTags, that.k8sTags) && Objects.equals(this.ecsGroupId, that.ecsGroupId)
+            && Objects.equals(this.userTags, that.userTags)
             && Objects.equals(this.nodeNameTemplate, that.nodeNameTemplate)
             && Objects.equals(this.initializedConditions, that.initializedConditions)
             && Objects.equals(this.serverEnterpriseProjectID, that.serverEnterpriseProjectID)
@@ -600,6 +623,7 @@ public class NodeSpecUpdate {
             taints,
             waitPostInstallFinish,
             k8sTags,
+            ecsGroupId,
             userTags,
             nodeNameTemplate,
             initializedConditions,
@@ -624,6 +648,7 @@ public class NodeSpecUpdate {
         sb.append("    taints: ").append(toIndentedString(taints)).append("\n");
         sb.append("    waitPostInstallFinish: ").append(toIndentedString(waitPostInstallFinish)).append("\n");
         sb.append("    k8sTags: ").append(toIndentedString(k8sTags)).append("\n");
+        sb.append("    ecsGroupId: ").append(toIndentedString(ecsGroupId)).append("\n");
         sb.append("    userTags: ").append(toIndentedString(userTags)).append("\n");
         sb.append("    nodeNameTemplate: ").append(toIndentedString(nodeNameTemplate)).append("\n");
         sb.append("    initializedConditions: ").append(toIndentedString(initializedConditions)).append("\n");

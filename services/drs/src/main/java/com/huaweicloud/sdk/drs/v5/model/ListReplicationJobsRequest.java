@@ -450,7 +450,7 @@ public class ListReplicationJobsRequest {
     }
 
     /**
-     * 排序字段。
+     * 排序字段。 取值：name，db_type，inst_id，ip，created_at，description，tag_value
      * @return sortKey
      */
     public String getSortKey() {

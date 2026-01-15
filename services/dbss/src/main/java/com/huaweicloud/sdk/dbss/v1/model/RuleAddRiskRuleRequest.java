@@ -118,7 +118,7 @@ public class RuleAddRiskRuleRequest {
     }
 
     /**
-     * 影响行数操作符 - GREATER: 大于 - EQUAL: 等于 - LESS: 小于 - GREATER_EQUAL: 大于等于 - LESS_EQUAL: 小于等于 - NO_MATCH: 不等于
+     * 影响行数操作符 - GREATER：大于 - EQUAL：等于 - LESS：小于 - GREATER_EQUAL：大于等于 - LESS_EQUAL：小于等于 - NO_MATCH：不等于
      * @return affectSymbol
      */
     public String getAffectSymbol() {
@@ -186,7 +186,7 @@ public class RuleAddRiskRuleRequest {
     }
 
     /**
-     * 执行时长操作符 - GREATER: 大于 - EQUAL: 等于 - LESS: 小于 - GREATER_EQUAL: 大于等于 - LESS_EQUAL: 小于等于 - NO_MATCH: 不等于
+     * 执行时长操作符 - GREATER：大于 - EQUAL：等于 - LESS：小于 - GREATER_EQUAL：大于等于 - LESS_EQUAL：小于等于 - NO_MATCH：不等于
      * @return executionSymbol
      */
     public String getExecutionSymbol() {

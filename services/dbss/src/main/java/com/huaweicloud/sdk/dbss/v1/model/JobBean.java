@@ -98,7 +98,7 @@ public class JobBean {
     }
 
     /**
-     * 任务状态 - SUCCESS: 成功 - RUNNING：运行中 - FAIL：失败 - INIT：初始化 - READY：就绪
+     * 任务状态 - SUCCESS：成功 - RUNNING：运行中 - FAIL：失败 - INIT：初始化 - READY：就绪
      * @return status
      */
     public String getStatus() {
@@ -217,7 +217,7 @@ public class JobBean {
     }
 
     /**
-     * 计费模式 - Period: 包周期计费 - Demand: 按需计费
+     * 计费模式 - Period：包周期计费 - Demand：按需计费
      * @return chargeMode
      */
     public String getChargeMode() {

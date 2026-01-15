@@ -330,7 +330,7 @@ public class QueryMetricResult {
     }
 
     /**
-     * 同步状态。
+     * 同步状态。 succeed：同步成功，failed：同步失败，processing：同步中，waiting：等待中
      * @return applyCurrentState
      */
     public String getApplyCurrentState() {

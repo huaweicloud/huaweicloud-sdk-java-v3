@@ -24,7 +24,7 @@ public class BatchSwitchesRequestNew {
     private List<String> ids = null;
 
     /**
-     * 开关状态 - OFF: 关闭 - ON: 开启
+     * 开关状态 - OFF：关闭 - ON：开启
      */
     public static final class StatusEnum {
 
@@ -137,7 +137,7 @@ public class BatchSwitchesRequestNew {
     }
 
     /**
-     * 开关状态 - OFF: 关闭 - ON: 开启
+     * 开关状态 - OFF：关闭 - ON：开启
      * @return status
      */
     public StatusEnum getStatus() {

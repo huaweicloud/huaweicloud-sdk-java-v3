@@ -14,16 +14,16 @@ public class ExportUsersNewRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ExportUsersV3Req body;
+    private ExportUsersNewReq body;
 
-    public ExportUsersNewRequest withBody(ExportUsersV3Req body) {
+    public ExportUsersNewRequest withBody(ExportUsersNewReq body) {
         this.body = body;
         return this;
     }
 
-    public ExportUsersNewRequest withBody(Consumer<ExportUsersV3Req> bodySetter) {
+    public ExportUsersNewRequest withBody(Consumer<ExportUsersNewReq> bodySetter) {
         if (this.body == null) {
-            this.body = new ExportUsersV3Req();
+            this.body = new ExportUsersNewReq();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class ExportUsersNewRequest {
      * Get body
      * @return body
      */
-    public ExportUsersV3Req getBody() {
+    public ExportUsersNewReq getBody() {
         return body;
     }
 
-    public void setBody(ExportUsersV3Req body) {
+    public void setBody(ExportUsersNewReq body) {
         this.body = body;
     }
 

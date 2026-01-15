@@ -18,7 +18,7 @@ public class ShowSyncTaskRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "query_time")
 
-    private String queryTime;
+    private Long queryTime;
 
     public ShowSyncTaskRequest withSyncTaskId(String syncTaskId) {
         this.syncTaskId = syncTaskId;
@@ -37,20 +37,22 @@ public class ShowSyncTaskRequest {
         this.syncTaskId = syncTaskId;
     }
 
-    public ShowSyncTaskRequest withQueryTime(String queryTime) {
+    public ShowSyncTaskRequest withQueryTime(Long queryTime) {
         this.queryTime = queryTime;
         return this;
     }
 
     /**
      * 查询同步任务详情的时间（毫秒），依据该值返回所在月份的统计数据。
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return queryTime
      */
-    public String getQueryTime() {
+    public Long getQueryTime() {
         return queryTime;
     }
 
-    public void setQueryTime(String queryTime) {
+    public void setQueryTime(Long queryTime) {
         this.queryTime = queryTime;
     }
 

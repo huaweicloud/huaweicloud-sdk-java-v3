@@ -139,7 +139,7 @@ public class ReplaySlowSqlTemplateResp {
     }
 
     /**
-     * SQL类型
+     * SQL类型 取值：SELECT, INSERT, DELETE, UPDATE, DDL
      * @return queryType
      */
     public String getQueryType() {

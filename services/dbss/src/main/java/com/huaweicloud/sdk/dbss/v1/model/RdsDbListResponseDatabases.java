@@ -168,7 +168,7 @@ public class RdsDbListResponseDatabases {
     }
 
     /**
-     * 数据库类型 - MYSQL: MySql - ORACLE: Oracle - POSTGRESQL: PostgreSQL - SQLSERVER: SQL Server - DAMENG: DAMENG - TAURUS: TaurusDB - DWS: GaussDB DWS - KINGBASE: KINGBASE - MARIADB: MariaDB - GAUSSDBOPENGAUSS: GaussDB/openGauss
+     * 数据库类型 - MYSQL：MySql - ORACLE：Oracle - POSTGRESQL：PostgreSQL - SQLSERVER：SQL Server - DAMENG：DAMENG - TAURUS：TaurusDB - DWS：GaussDB DWS - KINGBASE：KINGBASE - MARIADB：MariaDB - GAUSSDBOPENGAUSS：GaussDB/openGauss
      * @return type
      */
     public String getType() {

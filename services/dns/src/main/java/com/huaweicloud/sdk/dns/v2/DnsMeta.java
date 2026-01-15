@@ -160,6 +160,9 @@ import com.huaweicloud.sdk.dns.v2.model.ListEndpointVpcsRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListEndpointVpcsResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListEndpointsRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListEndpointsResponse;
+import com.huaweicloud.sdk.dns.v2.model.ListInstancesRequest;
+import com.huaweicloud.sdk.dns.v2.model.ListInstancesRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.ListInstancesResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListLineGroupsRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListLineGroupsResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListNameServersRequest;
@@ -1546,6 +1549,29 @@ public class DnsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListEndpointsRequest::getOffset, ListEndpointsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstancesRequest, ListInstancesResponse> listInstances =
+        genForListInstances();
+
+    private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForListInstances() {
+        // basic
+        HttpRequestDef.Builder<ListInstancesRequest, ListInstancesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListInstancesRequest.class, ListInstancesResponse.class)
+                .withName("ListInstances")
+                .withUri("/v2.1/batch-query-instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListInstancesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListInstancesRequestBody.class),
+            f -> f.withMarshaller(ListInstancesRequest::getBody, ListInstancesRequest::setBody));
 
         // response
 

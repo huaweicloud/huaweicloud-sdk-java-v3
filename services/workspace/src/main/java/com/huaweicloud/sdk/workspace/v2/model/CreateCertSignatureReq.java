@@ -22,11 +22,6 @@ public class CreateCertSignatureReq {
     private String keyAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "signature_algorithm")
-
-    private String signatureAlgorithm;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transaction_id")
 
     private String transactionId;
@@ -74,23 +69,6 @@ public class CreateCertSignatureReq {
         this.keyAlgorithm = keyAlgorithm;
     }
 
-    public CreateCertSignatureReq withSignatureAlgorithm(String signatureAlgorithm) {
-        this.signatureAlgorithm = signatureAlgorithm;
-        return this;
-    }
-
-    /**
-     * 签名哈希算法 SHA-256 SHA-512。
-     * @return signatureAlgorithm
-     */
-    public String getSignatureAlgorithm() {
-        return signatureAlgorithm;
-    }
-
-    public void setSignatureAlgorithm(String signatureAlgorithm) {
-        this.signatureAlgorithm = signatureAlgorithm;
-    }
-
     public CreateCertSignatureReq withTransactionId(String transactionId) {
         this.transactionId = transactionId;
         return this;
@@ -119,13 +97,12 @@ public class CreateCertSignatureReq {
         CreateCertSignatureReq that = (CreateCertSignatureReq) obj;
         return Objects.equals(this.distinguishedName, that.distinguishedName)
             && Objects.equals(this.keyAlgorithm, that.keyAlgorithm)
-            && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm)
             && Objects.equals(this.transactionId, that.transactionId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(distinguishedName, keyAlgorithm, signatureAlgorithm, transactionId);
+        return Objects.hash(distinguishedName, keyAlgorithm, transactionId);
     }
 
     @Override
@@ -134,7 +111,6 @@ public class CreateCertSignatureReq {
         sb.append("class CreateCertSignatureReq {\n");
         sb.append("    distinguishedName: ").append(toIndentedString(distinguishedName)).append("\n");
         sb.append("    keyAlgorithm: ").append(toIndentedString(keyAlgorithm)).append("\n");
-        sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
         sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
         sb.append("}");
         return sb.toString();

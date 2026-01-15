@@ -195,7 +195,7 @@ public class ListAlarmTopicConfigInfoNewResponse extends SdkResponse {
     }
 
     /**
-     * 是否支持SMN订阅  - true: 支持  - false: 不支持
+     * 是否支持SMN订阅  - true：支持  - false：不支持
      * @return smnEffective
      */
     public Boolean getSmnEffective() {

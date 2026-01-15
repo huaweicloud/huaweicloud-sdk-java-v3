@@ -27,6 +27,11 @@ public class CreateChangeOrderReq {
     private Integer periodNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_auto_renew")
+
+    private Integer isAutoRenew;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resize_product_id")
 
     private String resizeProductId;
@@ -67,7 +72,7 @@ public class CreateChangeOrderReq {
     }
 
     /**
-     * 类型 resizeDesktops(变更规格)、expandVolumes(扩容磁盘)。
+     * 类型 resizeDesktops(变更规格)、expandVolumes(扩容磁盘)、meteredToPeriod(按需转包周期)。
      * @return type
      */
     public String getType() {
@@ -84,7 +89,7 @@ public class CreateChangeOrderReq {
     }
 
     /**
-     * 周期类型，2：包月；3：包年。
+     * 周期类型，2：包月；3：包年； type为 meteredToPeriod 并且 is_subscribe == true 时不能为空。
      * minimum: 0
      * maximum: 255
      * @return periodType
@@ -103,7 +108,7 @@ public class CreateChangeOrderReq {
     }
 
     /**
-     * 周期数。
+     * 周期数；type为 meteredToPeriod 并且 is_subscribe == true 时不能为空。
      * minimum: 0
      * maximum: 2147483647
      * @return periodNum
@@ -114,6 +119,25 @@ public class CreateChangeOrderReq {
 
     public void setPeriodNum(Integer periodNum) {
         this.periodNum = periodNum;
+    }
+
+    public CreateChangeOrderReq withIsAutoRenew(Integer isAutoRenew) {
+        this.isAutoRenew = isAutoRenew;
+        return this;
+    }
+
+    /**
+     * 是否自动续费 *  按需转包周期场景支持自动续费； *  0：不自动续费，1：自动续费； *  默认值为0，表示不自动续费；
+     * minimum: 0
+     * maximum: 255
+     * @return isAutoRenew
+     */
+    public Integer getIsAutoRenew() {
+        return isAutoRenew;
+    }
+
+    public void setIsAutoRenew(Integer isAutoRenew) {
+        this.isAutoRenew = isAutoRenew;
     }
 
     public CreateChangeOrderReq withResizeProductId(String resizeProductId) {
@@ -258,7 +282,7 @@ public class CreateChangeOrderReq {
         }
         CreateChangeOrderReq that = (CreateChangeOrderReq) obj;
         return Objects.equals(this.type, that.type) && Objects.equals(this.periodType, that.periodType)
-            && Objects.equals(this.periodNum, that.periodNum)
+            && Objects.equals(this.periodNum, that.periodNum) && Objects.equals(this.isAutoRenew, that.isAutoRenew)
             && Objects.equals(this.resizeProductId, that.resizeProductId)
             && Objects.equals(this.expandVolumeId, that.expandVolumeId)
             && Objects.equals(this.expandNewSize, that.expandNewSize)
@@ -273,6 +297,7 @@ public class CreateChangeOrderReq {
         return Objects.hash(type,
             periodType,
             periodNum,
+            isAutoRenew,
             resizeProductId,
             expandVolumeId,
             expandNewSize,
@@ -289,6 +314,7 @@ public class CreateChangeOrderReq {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
         sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
+        sb.append("    isAutoRenew: ").append(toIndentedString(isAutoRenew)).append("\n");
         sb.append("    resizeProductId: ").append(toIndentedString(resizeProductId)).append("\n");
         sb.append("    expandVolumeId: ").append(toIndentedString(expandVolumeId)).append("\n");
         sb.append("    expandNewSize: ").append(toIndentedString(expandNewSize)).append("\n");

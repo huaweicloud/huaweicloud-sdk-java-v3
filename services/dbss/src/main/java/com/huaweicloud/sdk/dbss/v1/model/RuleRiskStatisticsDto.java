@@ -21,7 +21,7 @@ public class RuleRiskStatisticsDto {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_risk_count")
 
-    private List<AuditInsanceRiskCount> instanceRiskCount = null;
+    private List<AuditInstanceRiskCount> instanceRiskCount = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_name")
@@ -45,12 +45,12 @@ public class RuleRiskStatisticsDto {
         this.count = count;
     }
 
-    public RuleRiskStatisticsDto withInstanceRiskCount(List<AuditInsanceRiskCount> instanceRiskCount) {
+    public RuleRiskStatisticsDto withInstanceRiskCount(List<AuditInstanceRiskCount> instanceRiskCount) {
         this.instanceRiskCount = instanceRiskCount;
         return this;
     }
 
-    public RuleRiskStatisticsDto addInstanceRiskCountItem(AuditInsanceRiskCount instanceRiskCountItem) {
+    public RuleRiskStatisticsDto addInstanceRiskCountItem(AuditInstanceRiskCount instanceRiskCountItem) {
         if (this.instanceRiskCount == null) {
             this.instanceRiskCount = new ArrayList<>();
         }
@@ -58,7 +58,7 @@ public class RuleRiskStatisticsDto {
         return this;
     }
 
-    public RuleRiskStatisticsDto withInstanceRiskCount(Consumer<List<AuditInsanceRiskCount>> instanceRiskCountSetter) {
+    public RuleRiskStatisticsDto withInstanceRiskCount(Consumer<List<AuditInstanceRiskCount>> instanceRiskCountSetter) {
         if (this.instanceRiskCount == null) {
             this.instanceRiskCount = new ArrayList<>();
         }
@@ -70,11 +70,11 @@ public class RuleRiskStatisticsDto {
      * 实例数据库风险汇总
      * @return instanceRiskCount
      */
-    public List<AuditInsanceRiskCount> getInstanceRiskCount() {
+    public List<AuditInstanceRiskCount> getInstanceRiskCount() {
         return instanceRiskCount;
     }
 
-    public void setInstanceRiskCount(List<AuditInsanceRiskCount> instanceRiskCount) {
+    public void setInstanceRiskCount(List<AuditInstanceRiskCount> instanceRiskCount) {
         this.instanceRiskCount = instanceRiskCount;
     }
 

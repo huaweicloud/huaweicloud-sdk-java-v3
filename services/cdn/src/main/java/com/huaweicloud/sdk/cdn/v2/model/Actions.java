@@ -34,9 +34,9 @@ public class Actions {
     private AccessControl accessControl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "request_limit_rules")
+    @JsonProperty(value = "request_limit_rule")
 
-    private RequestLimitRulesEngine requestLimitRules;
+    private RequestLimitRulesEngine requestLimitRule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "origin_request_url_rewrite")
@@ -61,7 +61,7 @@ public class Actions {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code_cache")
 
-    private ErrorCodeCacheEngine errorCodeCache;
+    private List<ErrorCodeCacheEngine> errorCodeCache = null;
 
     public Actions withFlexibleOrigin(List<FlexibleOriginsEngine> flexibleOrigin) {
         this.flexibleOrigin = flexibleOrigin;
@@ -188,30 +188,30 @@ public class Actions {
         this.accessControl = accessControl;
     }
 
-    public Actions withRequestLimitRules(RequestLimitRulesEngine requestLimitRules) {
-        this.requestLimitRules = requestLimitRules;
+    public Actions withRequestLimitRule(RequestLimitRulesEngine requestLimitRule) {
+        this.requestLimitRule = requestLimitRule;
         return this;
     }
 
-    public Actions withRequestLimitRules(Consumer<RequestLimitRulesEngine> requestLimitRulesSetter) {
-        if (this.requestLimitRules == null) {
-            this.requestLimitRules = new RequestLimitRulesEngine();
-            requestLimitRulesSetter.accept(this.requestLimitRules);
+    public Actions withRequestLimitRule(Consumer<RequestLimitRulesEngine> requestLimitRuleSetter) {
+        if (this.requestLimitRule == null) {
+            this.requestLimitRule = new RequestLimitRulesEngine();
+            requestLimitRuleSetter.accept(this.requestLimitRule);
         }
 
         return this;
     }
 
     /**
-     * Get requestLimitRules
-     * @return requestLimitRules
+     * Get requestLimitRule
+     * @return requestLimitRule
      */
-    public RequestLimitRulesEngine getRequestLimitRules() {
-        return requestLimitRules;
+    public RequestLimitRulesEngine getRequestLimitRule() {
+        return requestLimitRule;
     }
 
-    public void setRequestLimitRules(RequestLimitRulesEngine requestLimitRules) {
-        this.requestLimitRules = requestLimitRules;
+    public void setRequestLimitRule(RequestLimitRulesEngine requestLimitRule) {
+        this.requestLimitRule = requestLimitRule;
     }
 
     public Actions withOriginRequestUrlRewrite(OriginRequestUrlRewriteEngine originRequestUrlRewrite) {
@@ -318,17 +318,24 @@ public class Actions {
         this.browserCacheRule = browserCacheRule;
     }
 
-    public Actions withErrorCodeCache(ErrorCodeCacheEngine errorCodeCache) {
+    public Actions withErrorCodeCache(List<ErrorCodeCacheEngine> errorCodeCache) {
         this.errorCodeCache = errorCodeCache;
         return this;
     }
 
-    public Actions withErrorCodeCache(Consumer<ErrorCodeCacheEngine> errorCodeCacheSetter) {
+    public Actions addErrorCodeCacheItem(ErrorCodeCacheEngine errorCodeCacheItem) {
         if (this.errorCodeCache == null) {
-            this.errorCodeCache = new ErrorCodeCacheEngine();
-            errorCodeCacheSetter.accept(this.errorCodeCache);
+            this.errorCodeCache = new ArrayList<>();
         }
+        this.errorCodeCache.add(errorCodeCacheItem);
+        return this;
+    }
 
+    public Actions withErrorCodeCache(Consumer<List<ErrorCodeCacheEngine>> errorCodeCacheSetter) {
+        if (this.errorCodeCache == null) {
+            this.errorCodeCache = new ArrayList<>();
+        }
+        errorCodeCacheSetter.accept(this.errorCodeCache);
         return this;
     }
 
@@ -336,11 +343,11 @@ public class Actions {
      * Get errorCodeCache
      * @return errorCodeCache
      */
-    public ErrorCodeCacheEngine getErrorCodeCache() {
+    public List<ErrorCodeCacheEngine> getErrorCodeCache() {
         return errorCodeCache;
     }
 
-    public void setErrorCodeCache(ErrorCodeCacheEngine errorCodeCache) {
+    public void setErrorCodeCache(List<ErrorCodeCacheEngine> errorCodeCache) {
         this.errorCodeCache = errorCodeCache;
     }
 
@@ -357,7 +364,7 @@ public class Actions {
             && Objects.equals(this.originRequestHeader, that.originRequestHeader)
             && Objects.equals(this.httpResponseHeader, that.httpResponseHeader)
             && Objects.equals(this.accessControl, that.accessControl)
-            && Objects.equals(this.requestLimitRules, that.requestLimitRules)
+            && Objects.equals(this.requestLimitRule, that.requestLimitRule)
             && Objects.equals(this.originRequestUrlRewrite, that.originRequestUrlRewrite)
             && Objects.equals(this.cacheRule, that.cacheRule)
             && Objects.equals(this.requestUrlRewrite, that.requestUrlRewrite)
@@ -371,7 +378,7 @@ public class Actions {
             originRequestHeader,
             httpResponseHeader,
             accessControl,
-            requestLimitRules,
+            requestLimitRule,
             originRequestUrlRewrite,
             cacheRule,
             requestUrlRewrite,
@@ -387,7 +394,7 @@ public class Actions {
         sb.append("    originRequestHeader: ").append(toIndentedString(originRequestHeader)).append("\n");
         sb.append("    httpResponseHeader: ").append(toIndentedString(httpResponseHeader)).append("\n");
         sb.append("    accessControl: ").append(toIndentedString(accessControl)).append("\n");
-        sb.append("    requestLimitRules: ").append(toIndentedString(requestLimitRules)).append("\n");
+        sb.append("    requestLimitRule: ").append(toIndentedString(requestLimitRule)).append("\n");
         sb.append("    originRequestUrlRewrite: ").append(toIndentedString(originRequestUrlRewrite)).append("\n");
         sb.append("    cacheRule: ").append(toIndentedString(cacheRule)).append("\n");
         sb.append("    requestUrlRewrite: ").append(toIndentedString(requestUrlRewrite)).append("\n");

@@ -41,7 +41,7 @@ public class QuotaResource {
     }
 
     /**
-     * 配额类型信息
+     * 配额类型信息 instances：实例的数量配额，cpu：CPU的配额，cores：CPU核心数的配额，server_groups服务器组的配额，mem内存配额，ram主存配额
      * @return type
      */
     public String getType() {

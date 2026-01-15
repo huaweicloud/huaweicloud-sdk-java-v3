@@ -91,11 +91,10 @@ public class AbstractCredentialsTest {
         credentials.setAk("xxx");
         credentials.setSk("xxx");
         credentials.setSecurityToken("xxx");
-        credentials.setExpirationThresholdSeconds(60L);
-        credentials.setExpiredAt(100000L);
+        credentials.setExpiredAt(2500000L);
 
         try (MockedStatic<TimeUtils> timeUtilsMock = Mockito.mockStatic(TimeUtils.class)) {
-            timeUtilsMock.when(TimeUtils::getTimeInMillis).thenReturn(40000L).thenReturn(40001L);
+            timeUtilsMock.when(TimeUtils::getTimeInMillis).thenReturn(100000L).thenReturn(100001L);
             Assert.assertFalse(credentials.needUpdateSecurityTokenFromMetadata());
             Assert.assertTrue(credentials.needUpdateSecurityTokenFromMetadata());        }
     }
@@ -124,11 +123,10 @@ public class AbstractCredentialsTest {
         credentials.setAk("ak");
         credentials.setSk("sk");
         credentials.setSecurityToken("xxx");
-        credentials.setExpirationThresholdSeconds(60L);
-        credentials.setExpiredAt(100000L);
+        credentials.setExpiredAt(2500000L);
 
         try (MockedStatic<TimeUtils> timeUtilsMock = Mockito.mockStatic(TimeUtils.class)) {
-            timeUtilsMock.when(TimeUtils::getTimeInMillis).thenReturn(40000L).thenReturn(40001L);
+            timeUtilsMock.when(TimeUtils::getTimeInMillis).thenReturn(100000L).thenReturn(100001L);
             Assert.assertFalse(credentials.needUpdateFederalAuthToken());
             Assert.assertTrue(credentials.needUpdateFederalAuthToken());
         }

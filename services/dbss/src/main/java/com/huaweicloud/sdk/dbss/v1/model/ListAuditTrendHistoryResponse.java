@@ -41,7 +41,7 @@ public class ListAuditTrendHistoryResponse extends SdkResponse {
     }
 
     /**
-     * Get body
+     * 趋势统计数据列表
      * @return body
      */
     public List<TrendStatusResponse> getBody() {

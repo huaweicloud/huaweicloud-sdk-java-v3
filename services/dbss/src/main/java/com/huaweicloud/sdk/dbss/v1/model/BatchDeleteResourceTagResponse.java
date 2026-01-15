@@ -22,7 +22,7 @@ public class BatchDeleteResourceTagResponse extends SdkResponse {
     }
 
     /**
-     * Get body
+     * 无返回内容
      * @return body
      */
     public String getBody() {

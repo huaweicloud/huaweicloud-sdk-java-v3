@@ -109,7 +109,7 @@ public class EcsSpecificationBean {
     }
 
     /**
-     * 规格等级，支持的等级以局点配置为准。 - entry:入门版 - low:基础版 - medium:专业版 - high:高级版
+     * 规格等级，支持的等级以局点配置为准。 - entry：入门版 - low：基础版 - medium：专业版 - high：高级版
      * @return level
      */
     public String getLevel() {
@@ -194,7 +194,7 @@ public class EcsSpecificationBean {
     }
 
     /**
-     * 可用区类型 - DEDICATED: 大网 - DEC: 边缘小站 - EDGE: 专属
+     * 可用区类型 - DEDICATED：大网 - DEC：边缘小站 - EDGE：专属
      * @return azType
      */
     public String getAzType() {

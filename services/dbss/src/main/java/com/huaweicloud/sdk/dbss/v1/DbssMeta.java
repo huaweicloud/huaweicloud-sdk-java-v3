@@ -2239,6 +2239,16 @@ public class DbssMeta {
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListAuditRuleRisksNewRequest::getSupportDbClassifyRule,
                 ListAuditRuleRisksNewRequest::setSupportDbClassifyRule));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuditRuleRisksNewRequest::getOffset, ListAuditRuleRisksNewRequest::setOffset));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuditRuleRisksNewRequest::getLimit, ListAuditRuleRisksNewRequest::setLimit));
 
         // response
 

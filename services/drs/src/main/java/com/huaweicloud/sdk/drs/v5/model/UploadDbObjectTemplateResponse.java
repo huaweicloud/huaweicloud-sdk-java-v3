@@ -49,7 +49,7 @@ public class UploadDbObjectTemplateResponse extends SdkResponse {
     }
 
     /**
-     * 文件解析状态。
+     * 文件解析状态。 取值：success，failed
      * @return processStatus
      */
     public String getProcessStatus() {

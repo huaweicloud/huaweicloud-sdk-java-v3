@@ -22,6 +22,11 @@ public class UpdateDesktopResponse extends SdkResponse {
     private String errorMsg;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_detail")
+
+    private String errorDetail;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encoded_authorization_message")
 
     private String encodedAuthorizationMessage;
@@ -60,6 +65,23 @@ public class UpdateDesktopResponse extends SdkResponse {
         this.errorMsg = errorMsg;
     }
 
+    public UpdateDesktopResponse withErrorDetail(String errorDetail) {
+        this.errorDetail = errorDetail;
+        return this;
+    }
+
+    /**
+     * 错误详情。
+     * @return errorDetail
+     */
+    public String getErrorDetail() {
+        return errorDetail;
+    }
+
+    public void setErrorDetail(String errorDetail) {
+        this.errorDetail = errorDetail;
+    }
+
     public UpdateDesktopResponse withEncodedAuthorizationMessage(String encodedAuthorizationMessage) {
         this.encodedAuthorizationMessage = encodedAuthorizationMessage;
         return this;
@@ -87,12 +109,13 @@ public class UpdateDesktopResponse extends SdkResponse {
         }
         UpdateDesktopResponse that = (UpdateDesktopResponse) obj;
         return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.errorDetail, that.errorDetail)
             && Objects.equals(this.encodedAuthorizationMessage, that.encodedAuthorizationMessage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(errorCode, errorMsg, encodedAuthorizationMessage);
+        return Objects.hash(errorCode, errorMsg, errorDetail, encodedAuthorizationMessage);
     }
 
     @Override
@@ -101,6 +124,7 @@ public class UpdateDesktopResponse extends SdkResponse {
         sb.append("class UpdateDesktopResponse {\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
+        sb.append("    errorDetail: ").append(toIndentedString(errorDetail)).append("\n");
         sb.append("    encodedAuthorizationMessage: ")
             .append(toIndentedString(encodedAuthorizationMessage))
             .append("\n");

@@ -298,7 +298,7 @@ public class Params {
     }
 
     /**
-     * 参数类型
+     * 参数类型 figure，string
      * @return dataType
      */
     public String getDataType() {
@@ -332,7 +332,7 @@ public class Params {
     }
 
     /**
-     * 参数名
+     * 参数名 binlog_cache_size，binlog_stmt_cache_size，bulk_insert_buffer_size，character_set_server，collation_server...
      * @return key
      */
     public String getKey() {

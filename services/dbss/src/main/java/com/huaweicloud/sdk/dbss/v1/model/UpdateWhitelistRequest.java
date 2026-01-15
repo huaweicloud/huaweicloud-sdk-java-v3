@@ -84,7 +84,7 @@ public class UpdateWhitelistRequest {
     }
 
     /**
-     * 是否启用  - true: 启用  - false: 禁用
+     * 是否启用  - true：启用  - false：禁用
      * @return enabled
      */
     public Boolean getEnabled() {

@@ -22,6 +22,11 @@ public class BatchRebuildDesktopsSystemDiskResponse extends SdkResponse {
     private String errorMsg;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_detail")
+
+    private String errorDetail;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encoded_authorization_message")
 
     private String encodedAuthorizationMessage;
@@ -63,6 +68,23 @@ public class BatchRebuildDesktopsSystemDiskResponse extends SdkResponse {
 
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
+    }
+
+    public BatchRebuildDesktopsSystemDiskResponse withErrorDetail(String errorDetail) {
+        this.errorDetail = errorDetail;
+        return this;
+    }
+
+    /**
+     * 错误详情。
+     * @return errorDetail
+     */
+    public String getErrorDetail() {
+        return errorDetail;
+    }
+
+    public void setErrorDetail(String errorDetail) {
+        this.errorDetail = errorDetail;
     }
 
     public BatchRebuildDesktopsSystemDiskResponse withEncodedAuthorizationMessage(String encodedAuthorizationMessage) {
@@ -109,13 +131,14 @@ public class BatchRebuildDesktopsSystemDiskResponse extends SdkResponse {
         }
         BatchRebuildDesktopsSystemDiskResponse that = (BatchRebuildDesktopsSystemDiskResponse) obj;
         return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.errorDetail, that.errorDetail)
             && Objects.equals(this.encodedAuthorizationMessage, that.encodedAuthorizationMessage)
             && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(errorCode, errorMsg, encodedAuthorizationMessage, jobId);
+        return Objects.hash(errorCode, errorMsg, errorDetail, encodedAuthorizationMessage, jobId);
     }
 
     @Override
@@ -124,6 +147,7 @@ public class BatchRebuildDesktopsSystemDiskResponse extends SdkResponse {
         sb.append("class BatchRebuildDesktopsSystemDiskResponse {\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
+        sb.append("    errorDetail: ").append(toIndentedString(errorDetail)).append("\n");
         sb.append("    encodedAuthorizationMessage: ")
             .append(toIndentedString(encodedAuthorizationMessage))
             .append("\n");

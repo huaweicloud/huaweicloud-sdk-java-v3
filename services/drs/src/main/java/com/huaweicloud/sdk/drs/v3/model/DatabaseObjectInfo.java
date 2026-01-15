@@ -75,7 +75,7 @@ public class DatabaseObjectInfo {
     }
 
     /**
-     * 类型。
+     * 类型。 table：表名，function：函数，database：SCHEMA，procedure：存储过程
      * @return type
      */
     public String getType() {

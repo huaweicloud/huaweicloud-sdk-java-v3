@@ -190,6 +190,81 @@ public class ListEnterpriseProjectRequest {
 
     private Integer status;
 
+    /**
+     * 查询项目类型。 - prod-商用项目 - poc-测试项目
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum PROD for value: "prod"
+         */
+        public static final TypeEnum PROD = new TypeEnum("prod");
+
+        /**
+         * Enum POC for value: "poc"
+         */
+        public static final TypeEnum POC = new TypeEnum("poc");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("prod", PROD);
+            map.put("poc", POC);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private TypeEnum type;
+
     public ListEnterpriseProjectRequest withId(String id) {
         this.id = id;
         return this;
@@ -309,6 +384,23 @@ public class ListEnterpriseProjectRequest {
         this.status = status;
     }
 
+    public ListEnterpriseProjectRequest withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 查询项目类型。 - prod-商用项目 - poc-测试项目
+     * @return type
+     */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -321,12 +413,12 @@ public class ListEnterpriseProjectRequest {
         return Objects.equals(this.id, that.id) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.name, that.name) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.sortKey, that.sortKey)
-            && Objects.equals(this.status, that.status);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, limit, name, offset, sortDir, sortKey, status);
+        return Objects.hash(id, limit, name, offset, sortDir, sortKey, status, type);
     }
 
     @Override
@@ -340,6 +432,7 @@ public class ListEnterpriseProjectRequest {
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

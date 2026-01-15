@@ -53,7 +53,7 @@ public class DatabaseObjectResp {
     }
 
     /**
-     * 选择对象任务成功标志
+     * 选择对象任务成功标志：true，false
      * @return status
      */
     public Boolean getStatus() {

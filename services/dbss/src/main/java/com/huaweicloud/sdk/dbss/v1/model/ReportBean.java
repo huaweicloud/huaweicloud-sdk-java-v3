@@ -144,7 +144,7 @@ public class ReportBean {
     }
 
     /**
-     * 格式  - pdf: PDF文件  - zip: zip文件
+     * 格式  - pdf：PDF文件  - zip：zip文件
      * @return format
      */
     public String getFormat() {
@@ -229,7 +229,7 @@ public class ReportBean {
     }
 
     /**
-     * 报表类型 - PDF: pdf - ZIP: zip
+     * 报表类型 - PDF：pdf - ZIP：zip
      * @return templateType
      */
     public String getTemplateType() {
@@ -246,7 +246,7 @@ public class ReportBean {
     }
 
     /**
-     * 周期 - AUDIT_REPORT_DAY: 按天 - AUDIT_REPORT_WEEK： 按周 - AUDIT_REPORT_MONTH： 按月 - AUDIT_REPORT_YEAR：按年 - AUDIT_REPORT_REAL_TIME：立即
+     * 周期 - AUDIT_REPORT_DAY：按天 - AUDIT_REPORT_WEEK：按周 - AUDIT_REPORT_MONTH：按月 - AUDIT_REPORT_YEAR：按年 - AUDIT_REPORT_REAL_TIME：立即
      * @return type
      */
     public String getType() {

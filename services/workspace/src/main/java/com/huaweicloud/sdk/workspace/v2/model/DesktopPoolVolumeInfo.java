@@ -30,6 +30,11 @@ public class DesktopPoolVolumeInfo {
 
     private Integer throughput;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kms_id")
+
+    private String kmsId;
+
     public DesktopPoolVolumeInfo withId(String id) {
         this.id = id;
         return this;
@@ -102,6 +107,23 @@ public class DesktopPoolVolumeInfo {
         this.throughput = throughput;
     }
 
+    public DesktopPoolVolumeInfo withKmsId(String kmsId) {
+        this.kmsId = kmsId;
+        return this;
+    }
+
+    /**
+     * kms密钥id。变更密钥是传入密钥id；如需删除密钥则传入空字符串；默认null，不变更密钥。
+     * @return kmsId
+     */
+    public String getKmsId() {
+        return kmsId;
+    }
+
+    public void setKmsId(String kmsId) {
+        this.kmsId = kmsId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -112,12 +134,13 @@ public class DesktopPoolVolumeInfo {
         }
         DesktopPoolVolumeInfo that = (DesktopPoolVolumeInfo) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.iops, that.iops) && Objects.equals(this.throughput, that.throughput);
+            && Objects.equals(this.iops, that.iops) && Objects.equals(this.throughput, that.throughput)
+            && Objects.equals(this.kmsId, that.kmsId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, type, iops, throughput);
+        return Objects.hash(id, type, iops, throughput, kmsId);
     }
 
     @Override
@@ -128,6 +151,7 @@ public class DesktopPoolVolumeInfo {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    iops: ").append(toIndentedString(iops)).append("\n");
         sb.append("    throughput: ").append(toIndentedString(throughput)).append("\n");
+        sb.append("    kmsId: ").append(toIndentedString(kmsId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -75,7 +75,7 @@ public class AsyncUpdateJobResp {
     }
 
     /**
-     * 操作结果。
+     * 操作结果。 取值：success，failed
      * @return status
      */
     public String getStatus() {

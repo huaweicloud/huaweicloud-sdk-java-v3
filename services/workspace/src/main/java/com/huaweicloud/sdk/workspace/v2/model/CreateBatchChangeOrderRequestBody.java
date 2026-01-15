@@ -116,6 +116,11 @@ public class CreateBatchChangeOrderRequestBody {
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agency_urn")
+
+    private String agencyUrn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "add_volume_param")
 
     private EstimateAddVolumeRequestBody addVolumeParam;
@@ -160,6 +165,23 @@ public class CreateBatchChangeOrderRequestBody {
 
     public void setType(TypeEnum type) {
         this.type = type;
+    }
+
+    public CreateBatchChangeOrderRequestBody withAgencyUrn(String agencyUrn) {
+        this.agencyUrn = agencyUrn;
+        return this;
+    }
+
+    /**
+     * 授权给Billing服务的委托URN。使用RAM共享密钥创建包周期云桌面或添加包周期磁盘、重建系统时，需要传入该字段。
+     * @return agencyUrn
+     */
+    public String getAgencyUrn() {
+        return agencyUrn;
+    }
+
+    public void setAgencyUrn(String agencyUrn) {
+        this.agencyUrn = agencyUrn;
     }
 
     public CreateBatchChangeOrderRequestBody withAddVolumeParam(EstimateAddVolumeRequestBody addVolumeParam) {
@@ -334,7 +356,8 @@ public class CreateBatchChangeOrderRequestBody {
             return false;
         }
         CreateBatchChangeOrderRequestBody that = (CreateBatchChangeOrderRequestBody) obj;
-        return Objects.equals(this.type, that.type) && Objects.equals(this.addVolumeParam, that.addVolumeParam)
+        return Objects.equals(this.type, that.type) && Objects.equals(this.agencyUrn, that.agencyUrn)
+            && Objects.equals(this.addVolumeParam, that.addVolumeParam)
             && Objects.equals(this.extendVolumeParam, that.extendVolumeParam)
             && Objects.equals(this.resizeParam, that.resizeParam)
             && Objects.equals(this.changeImageParam, that.changeImageParam)
@@ -345,6 +368,7 @@ public class CreateBatchChangeOrderRequestBody {
     @Override
     public int hashCode() {
         return Objects.hash(type,
+            agencyUrn,
             addVolumeParam,
             extendVolumeParam,
             resizeParam,
@@ -358,6 +382,7 @@ public class CreateBatchChangeOrderRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateBatchChangeOrderRequestBody {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    agencyUrn: ").append(toIndentedString(agencyUrn)).append("\n");
         sb.append("    addVolumeParam: ").append(toIndentedString(addVolumeParam)).append("\n");
         sb.append("    extendVolumeParam: ").append(toIndentedString(extendVolumeParam)).append("\n");
         sb.append("    resizeParam: ").append(toIndentedString(resizeParam)).append("\n");

@@ -133,6 +133,11 @@ public class SimpleDesktopInfo {
 
     private String connectStatus;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pool_id")
+
+    private String poolId;
+
     public SimpleDesktopInfo withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -573,6 +578,23 @@ public class SimpleDesktopInfo {
         this.connectStatus = connectStatus;
     }
 
+    public SimpleDesktopInfo withPoolId(String poolId) {
+        this.poolId = poolId;
+        return this;
+    }
+
+    /**
+     * 桌面池id。
+     * @return poolId
+     */
+    public String getPoolId() {
+        return poolId;
+    }
+
+    public void setPoolId(String poolId) {
+        this.poolId = poolId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -597,7 +619,7 @@ public class SimpleDesktopInfo {
             && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.billResourceId, that.billResourceId)
             && Objects.equals(this.status, that.status) && Objects.equals(this.taskStatus, that.taskStatus)
             && Objects.equals(this.availabilityZone, that.availabilityZone)
-            && Objects.equals(this.connectStatus, that.connectStatus);
+            && Objects.equals(this.connectStatus, that.connectStatus) && Objects.equals(this.poolId, that.poolId);
     }
 
     @Override
@@ -625,7 +647,8 @@ public class SimpleDesktopInfo {
             status,
             taskStatus,
             availabilityZone,
-            connectStatus);
+            connectStatus,
+            poolId);
     }
 
     @Override
@@ -656,6 +679,7 @@ public class SimpleDesktopInfo {
         sb.append("    taskStatus: ").append(toIndentedString(taskStatus)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    connectStatus: ").append(toIndentedString(connectStatus)).append("\n");
+        sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

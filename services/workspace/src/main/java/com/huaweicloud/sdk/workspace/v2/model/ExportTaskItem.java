@@ -228,7 +228,7 @@ public class ExportTaskItem {
     }
 
     /**
-     * 创建文件的时间, utc时间：yyyy-MM-dd'T'HH:mm:ss.SSSZ。
+     * 导出任务的开始时间, utc时间：yyyy-MM-dd'T'HH:mm:ss.SSSZ。
      * @return createTime
      */
     public String getCreateTime() {
@@ -245,7 +245,7 @@ public class ExportTaskItem {
     }
 
     /**
-     * 创建文件的时间, utc时间：yyyy-MM-dd'T'HH:mm:ss.SSSZ。
+     * 导出任务的结束时间, utc时间：yyyy-MM-dd'T'HH:mm:ss.SSSZ。
      * @return endTime
      */
     public String getEndTime() {

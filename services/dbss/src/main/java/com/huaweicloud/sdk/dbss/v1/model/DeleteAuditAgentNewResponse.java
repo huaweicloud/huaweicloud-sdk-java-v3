@@ -22,7 +22,7 @@ public class DeleteAuditAgentNewResponse extends SdkResponse {
     }
 
     /**
-     * 操作结果  - SUCCESS: 成功
+     * 操作结果  - SUCCESS：成功
      * @return result
      */
     public String getResult() {

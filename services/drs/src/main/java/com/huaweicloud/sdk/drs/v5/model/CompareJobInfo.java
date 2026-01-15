@@ -205,7 +205,7 @@ public class CompareJobInfo {
     }
 
     /**
-     * 对比类型。
+     * 对比类型。 object：对象对比，lines：行对比，contents：内容对比
      * @return type
      */
     public String getType() {
@@ -273,7 +273,7 @@ public class CompareJobInfo {
     }
 
     /**
-     * 对比计算资源。
+     * 对比计算资源。 取值：db，drs
      * @return computeType
      */
     public String getComputeType() {
@@ -290,7 +290,7 @@ public class CompareJobInfo {
     }
 
     /**
-     * 导出比对结果状态。
+     * 导出比对结果状态。 INIT：初始状态，EXPORTING：比对结果导出中，EXPORT_COMPLETE：比对结果导出完成，EXPORT_COMMON_FAILED：比对结果导出失败
      * @return exportStatus
      */
     public String getExportStatus() {

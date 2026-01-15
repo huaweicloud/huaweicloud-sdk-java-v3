@@ -831,7 +831,7 @@ public class WafAsyncClient {
     /**
      * 批量更新防敏感信息泄露规则
      *
-     * 批量修改防敏感信息泄露规则
+     * 批量更新防敏感信息泄露规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -846,7 +846,7 @@ public class WafAsyncClient {
     /**
      * 批量更新防敏感信息泄露规则
      *
-     * 批量修改防敏感信息泄露规则
+     * 批量更新防敏感信息泄露规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -861,7 +861,7 @@ public class WafAsyncClient {
     /**
      * 批量更新网页防篡改规则
      *
-     * 批量修改地理位置访问控制规则
+     * 批量更新网页防篡改规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -876,7 +876,7 @@ public class WafAsyncClient {
     /**
      * 批量更新网页防篡改规则
      *
-     * 批量修改地理位置访问控制规则
+     * 批量更新网页防篡改规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -891,7 +891,7 @@ public class WafAsyncClient {
     /**
      * 批量修改CC防护规则
      *
-     * 批量修改地理位置访问控制规则
+     * 批量修改CC防护规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -905,7 +905,7 @@ public class WafAsyncClient {
     /**
      * 批量修改CC防护规则
      *
-     * 批量修改地理位置访问控制规则
+     * 批量修改CC防护规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -920,7 +920,7 @@ public class WafAsyncClient {
     /**
      * 批量更新精准防护规则
      *
-     * 批量修改地理位置访问控制规则
+     * 批量更新精准防护规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -935,7 +935,7 @@ public class WafAsyncClient {
     /**
      * 批量更新精准防护规则
      *
-     * 批量修改地理位置访问控制规则
+     * 批量更新精准防护规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -980,7 +980,7 @@ public class WafAsyncClient {
     /**
      * 批量更新全局白名单规则
      *
-     * 批量修改全局白名单规则
+     * 批量更新全局白名单规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -995,7 +995,7 @@ public class WafAsyncClient {
     /**
      * 批量更新全局白名单规则
      *
-     * 批量修改全局白名单规则
+     * 批量更新全局白名单规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1010,7 +1010,7 @@ public class WafAsyncClient {
     /**
      * 批量更新威胁情报规则
      *
-     * 批量修改地理位置访问控制规则
+     * 批量更新威胁情报规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1025,7 +1025,7 @@ public class WafAsyncClient {
     /**
      * 批量更新威胁情报规则
      *
-     * 批量修改地理位置访问控制规则
+     * 批量更新威胁情报规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1040,7 +1040,7 @@ public class WafAsyncClient {
     /**
      * 批量更新隐私屏蔽规则
      *
-     * 批量修改全局白名单规则
+     * 批量更新隐私屏蔽规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1055,7 +1055,7 @@ public class WafAsyncClient {
     /**
      * 批量更新隐私屏蔽规则
      *
-     * 批量修改全局白名单规则
+     * 批量更新隐私屏蔽规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1070,7 +1070,7 @@ public class WafAsyncClient {
     /**
      * 批量更新黑白名单设置规则
      *
-     * 批量修改地理位置访问控制规则
+     * 批量更新黑白名单设置规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1085,7 +1085,7 @@ public class WafAsyncClient {
     /**
      * 批量更新黑白名单设置规则
      *
-     * 批量修改地理位置访问控制规则
+     * 批量更新黑白名单设置规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

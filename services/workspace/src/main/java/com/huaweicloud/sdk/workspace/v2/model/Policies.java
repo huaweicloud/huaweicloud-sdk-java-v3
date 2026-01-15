@@ -76,6 +76,16 @@ public class Policies {
 
     private PoliciesRecordAudit recordAudit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cloud_storage")
+
+    private PoliciesCloudStorage cloudStorage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_profile")
+
+    private PoliciesUserProfile userProfile;
+
     public Policies withPeripherals(PoliciesPeripherals peripherals) {
         this.peripherals = peripherals;
         return this;
@@ -414,6 +424,58 @@ public class Policies {
         this.recordAudit = recordAudit;
     }
 
+    public Policies withCloudStorage(PoliciesCloudStorage cloudStorage) {
+        this.cloudStorage = cloudStorage;
+        return this;
+    }
+
+    public Policies withCloudStorage(Consumer<PoliciesCloudStorage> cloudStorageSetter) {
+        if (this.cloudStorage == null) {
+            this.cloudStorage = new PoliciesCloudStorage();
+            cloudStorageSetter.accept(this.cloudStorage);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get cloudStorage
+     * @return cloudStorage
+     */
+    public PoliciesCloudStorage getCloudStorage() {
+        return cloudStorage;
+    }
+
+    public void setCloudStorage(PoliciesCloudStorage cloudStorage) {
+        this.cloudStorage = cloudStorage;
+    }
+
+    public Policies withUserProfile(PoliciesUserProfile userProfile) {
+        this.userProfile = userProfile;
+        return this;
+    }
+
+    public Policies withUserProfile(Consumer<PoliciesUserProfile> userProfileSetter) {
+        if (this.userProfile == null) {
+            this.userProfile = new PoliciesUserProfile();
+            userProfileSetter.accept(this.userProfile);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get userProfile
+     * @return userProfile
+     */
+    public PoliciesUserProfile getUserProfile() {
+        return userProfile;
+    }
+
+    public void setUserProfile(PoliciesUserProfile userProfile) {
+        this.userProfile = userProfile;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -430,7 +492,9 @@ public class Policies {
             && Objects.equals(this.watermark, that.watermark) && Objects.equals(this.keyboardMouse, that.keyboardMouse)
             && Objects.equals(this.seamless, that.seamless)
             && Objects.equals(this.personalizedDataMgmt, that.personalizedDataMgmt)
-            && Objects.equals(this.custom, that.custom) && Objects.equals(this.recordAudit, that.recordAudit);
+            && Objects.equals(this.custom, that.custom) && Objects.equals(this.recordAudit, that.recordAudit)
+            && Objects.equals(this.cloudStorage, that.cloudStorage)
+            && Objects.equals(this.userProfile, that.userProfile);
     }
 
     @Override
@@ -447,7 +511,9 @@ public class Policies {
             seamless,
             personalizedDataMgmt,
             custom,
-            recordAudit);
+            recordAudit,
+            cloudStorage,
+            userProfile);
     }
 
     @Override
@@ -467,6 +533,8 @@ public class Policies {
         sb.append("    personalizedDataMgmt: ").append(toIndentedString(personalizedDataMgmt)).append("\n");
         sb.append("    custom: ").append(toIndentedString(custom)).append("\n");
         sb.append("    recordAudit: ").append(toIndentedString(recordAudit)).append("\n");
+        sb.append("    cloudStorage: ").append(toIndentedString(cloudStorage)).append("\n");
+        sb.append("    userProfile: ").append(toIndentedString(userProfile)).append("\n");
         sb.append("}");
         return sb.toString();
     }

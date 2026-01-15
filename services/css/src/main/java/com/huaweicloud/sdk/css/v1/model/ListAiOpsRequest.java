@@ -25,13 +25,18 @@ public class ListAiOpsRequest {
 
     private Integer offset;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "report")
+
+    private String report;
+
     public ListAiOpsRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
     }
 
     /**
-     * 指定待查询的集群ID。
+     * **参数解释**： 指定查询的集群ID。获取方法请参见[获取集群ID](css_03_0101.xml)。 **约束限制**： 不涉及 **取值范围**： 集群ID。 **默认取值**： 不涉及
      * @return clusterId
      */
     public String getClusterId() {
@@ -48,7 +53,7 @@ public class ListAiOpsRequest {
     }
 
     /**
-     * 分页参数，列表当前分页的数量限制。
+     * **参数解释**： 分页参数，列表当前分页的数量限制。默认值为10，即一次查询10个任务信息。 **约束限制**： 不涉及 **取值范围**： 1-1000 **默认取值**： 10
      * @return limit
      */
     public Integer getLimit() {
@@ -65,7 +70,7 @@ public class ListAiOpsRequest {
     }
 
     /**
-     * 偏移量。 偏移量为一个大于0小于终端节点服务总个数的整数， 表示从偏移量后面的终端节点服务开始查询。
+     * **参数解释**： 偏移量，表示从偏移量后面的计数开始查询。 **约束限制**： 不涉及 **取值范围**： 0-1000 **默认取值**： 0
      * @return offset
      */
     public Integer getOffset() {
@@ -74,6 +79,23 @@ public class ListAiOpsRequest {
 
     public void setOffset(Integer offset) {
         this.offset = offset;
+    }
+
+    public ListAiOpsRequest withReport(String report) {
+        this.report = report;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 获取当前最新一份报告或历史报告 **约束限制**： 不涉及 **取值范围**： - current   仅获取当前最新一次检测报告 - history   仅获取当前历史检测报告  **默认取值**： 不涉及
+     * @return report
+     */
+    public String getReport() {
+        return report;
+    }
+
+    public void setReport(String report) {
+        this.report = report;
     }
 
     @Override
@@ -86,12 +108,12 @@ public class ListAiOpsRequest {
         }
         ListAiOpsRequest that = (ListAiOpsRequest) obj;
         return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.report, that.report);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, limit, offset);
+        return Objects.hash(clusterId, limit, offset, report);
     }
 
     @Override
@@ -101,6 +123,7 @@ public class ListAiOpsRequest {
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    report: ").append(toIndentedString(report)).append("\n");
         sb.append("}");
         return sb.toString();
     }

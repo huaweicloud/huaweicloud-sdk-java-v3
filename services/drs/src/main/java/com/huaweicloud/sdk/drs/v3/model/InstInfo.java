@@ -127,7 +127,7 @@ public class InstInfo {
     private EngineTypeEnum engineType;
 
     /**
-     * 实例类型
+     * 实例类型 取值：common，high，ultrahigh
      */
     public static final class InstTypeEnum {
 
@@ -313,7 +313,7 @@ public class InstInfo {
     }
 
     /**
-     * 实例类型
+     * 实例类型 取值：common，high，ultrahigh
      * @return instType
      */
     public InstTypeEnum getInstType() {

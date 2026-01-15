@@ -591,9 +591,9 @@ public class DbssClient {
     }
 
     /**
-     * 绑定数据库加密实例的eip
+     * 绑定数据库加密实例的EIP
      *
-     * 绑定数据库加密实例的eip
+     * 绑定数据库加密实例的EIP
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -605,9 +605,9 @@ public class DbssClient {
     }
 
     /**
-     * 绑定数据库加密实例的eip
+     * 绑定数据库加密实例的EIP
      *
-     * 绑定数据库加密实例的eip
+     * 绑定数据库加密实例的EIP
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -620,9 +620,9 @@ public class DbssClient {
     }
 
     /**
-     * 绑定数据库运维实例的eip
+     * 绑定数据库运维实例的EIP
      *
-     * 绑定数据库运维实例的eip
+     * 绑定数据库运维实例的EIP
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -634,9 +634,9 @@ public class DbssClient {
     }
 
     /**
-     * 绑定数据库运维实例的eip
+     * 绑定数据库运维实例的EIP
      *
-     * 绑定数据库运维实例的eip
+     * 绑定数据库运维实例的EIP
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1028,7 +1028,7 @@ public class DbssClient {
     /**
      * 按包周期方式购买数据库加密实例
      *
-     * 按需方式购买数据库加密实例
+     * 按包周期方式购买数据库加密实例
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1043,7 +1043,7 @@ public class DbssClient {
     /**
      * 按包周期方式购买数据库加密实例
      *
-     * 按需方式购买数据库加密实例
+     * 按包周期方式购买数据库加密实例
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4214,9 +4214,9 @@ public class DbssClient {
     }
 
     /**
-     * 解绑数据库加密实例的eip
+     * 解绑数据库加密实例的EIP
      *
-     * 解绑数据库加密实例的eip
+     * 解绑数据库加密实例的EIP
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4228,9 +4228,9 @@ public class DbssClient {
     }
 
     /**
-     * 解绑数据库加密实例的eip
+     * 解绑数据库加密实例的EIP
      *
-     * 解绑数据库加密实例的eip
+     * 解绑数据库加密实例的EIP
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4243,9 +4243,9 @@ public class DbssClient {
     }
 
     /**
-     * 解绑数据库运维实例的eip
+     * 解绑数据库运维实例的EIP
      *
-     * 解绑数据库运维实例的eip
+     * 解绑数据库运维实例的EIP
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4257,9 +4257,9 @@ public class DbssClient {
     }
 
     /**
-     * 解绑数据库运维实例的eip
+     * 解绑数据库运维实例的EIP
      *
-     * 解绑数据库运维实例的eip
+     * 解绑数据库运维实例的EIP
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

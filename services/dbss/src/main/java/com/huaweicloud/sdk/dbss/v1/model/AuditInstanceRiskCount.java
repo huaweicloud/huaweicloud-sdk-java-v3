@@ -6,9 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * AuditInsanceRiskCount
+ * AuditInstanceRiskCount
  */
-public class AuditInsanceRiskCount {
+public class AuditInstanceRiskCount {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
@@ -40,7 +40,7 @@ public class AuditInsanceRiskCount {
 
     private String instanceName;
 
-    public AuditInsanceRiskCount withCount(Long count) {
+    public AuditInstanceRiskCount withCount(Long count) {
         this.count = count;
         return this;
     }
@@ -57,7 +57,7 @@ public class AuditInsanceRiskCount {
         this.count = count;
     }
 
-    public AuditInsanceRiskCount withDbId(String dbId) {
+    public AuditInstanceRiskCount withDbId(String dbId) {
         this.dbId = dbId;
         return this;
     }
@@ -74,7 +74,7 @@ public class AuditInsanceRiskCount {
         this.dbId = dbId;
     }
 
-    public AuditInsanceRiskCount withDbIp(String dbIp) {
+    public AuditInstanceRiskCount withDbIp(String dbIp) {
         this.dbIp = dbIp;
         return this;
     }
@@ -91,7 +91,7 @@ public class AuditInsanceRiskCount {
         this.dbIp = dbIp;
     }
 
-    public AuditInsanceRiskCount withDbName(String dbName) {
+    public AuditInstanceRiskCount withDbName(String dbName) {
         this.dbName = dbName;
         return this;
     }
@@ -108,7 +108,7 @@ public class AuditInsanceRiskCount {
         this.dbName = dbName;
     }
 
-    public AuditInsanceRiskCount withInstanceId(String instanceId) {
+    public AuditInstanceRiskCount withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
@@ -125,7 +125,7 @@ public class AuditInsanceRiskCount {
         this.instanceId = instanceId;
     }
 
-    public AuditInsanceRiskCount withInstanceName(String instanceName) {
+    public AuditInstanceRiskCount withInstanceName(String instanceName) {
         this.instanceName = instanceName;
         return this;
     }
@@ -150,7 +150,7 @@ public class AuditInsanceRiskCount {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AuditInsanceRiskCount that = (AuditInsanceRiskCount) obj;
+        AuditInstanceRiskCount that = (AuditInstanceRiskCount) obj;
         return Objects.equals(this.count, that.count) && Objects.equals(this.dbId, that.dbId)
             && Objects.equals(this.dbIp, that.dbIp) && Objects.equals(this.dbName, that.dbName)
             && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceName, that.instanceName);
@@ -164,7 +164,7 @@ public class AuditInsanceRiskCount {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class AuditInsanceRiskCount {\n");
+        sb.append("class AuditInstanceRiskCount {\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    dbId: ").append(toIndentedString(dbId)).append("\n");
         sb.append("    dbIp: ").append(toIndentedString(dbIp)).append("\n");

@@ -21,7 +21,7 @@ public class SubscribeUserSharerReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "users")
 
-    private List<User> users = null;
+    private List<SubscribeUserInfo> users = null;
 
     public SubscribeUserSharerReq withUserSharerSku(String userSharerSku) {
         this.userSharerSku = userSharerSku;
@@ -40,12 +40,12 @@ public class SubscribeUserSharerReq {
         this.userSharerSku = userSharerSku;
     }
 
-    public SubscribeUserSharerReq withUsers(List<User> users) {
+    public SubscribeUserSharerReq withUsers(List<SubscribeUserInfo> users) {
         this.users = users;
         return this;
     }
 
-    public SubscribeUserSharerReq addUsersItem(User usersItem) {
+    public SubscribeUserSharerReq addUsersItem(SubscribeUserInfo usersItem) {
         if (this.users == null) {
             this.users = new ArrayList<>();
         }
@@ -53,7 +53,7 @@ public class SubscribeUserSharerReq {
         return this;
     }
 
-    public SubscribeUserSharerReq withUsers(Consumer<List<User>> usersSetter) {
+    public SubscribeUserSharerReq withUsers(Consumer<List<SubscribeUserInfo>> usersSetter) {
         if (this.users == null) {
             this.users = new ArrayList<>();
         }
@@ -65,11 +65,11 @@ public class SubscribeUserSharerReq {
      * 开通协同的的用户列表。
      * @return users
      */
-    public List<User> getUsers() {
+    public List<SubscribeUserInfo> getUsers() {
         return users;
     }
 
-    public void setUsers(List<User> users) {
+    public void setUsers(List<SubscribeUserInfo> users) {
         this.users = users;
     }
 

@@ -383,7 +383,7 @@ public class ListConnectionsRequest {
     }
 
     /**
-     * 返回结果按该关键字排序，默认为“created_at”。
+     * 返回结果按该关键字排序，默认为“created_at”。 取值：name，db_type，inst_id，ip，created_at，description，tag_value
      * @return sortKey
      */
     public String getSortKey() {

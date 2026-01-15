@@ -116,12 +116,12 @@ public class ListSyncTaskStatisticRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
-    private String startTime;
+    private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    private String endTime;
+    private Long endTime;
 
     public ListSyncTaskStatisticRequest withSyncTaskId(String syncTaskId) {
         this.syncTaskId = syncTaskId;
@@ -157,37 +157,41 @@ public class ListSyncTaskStatisticRequest {
         this.dataType = dataType;
     }
 
-    public ListSyncTaskStatisticRequest withStartTime(String startTime) {
+    public ListSyncTaskStatisticRequest withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
 
     /**
      * 查询开始时间
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return startTime
      */
-    public String getStartTime() {
+    public Long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(String startTime) {
+    public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
 
-    public ListSyncTaskStatisticRequest withEndTime(String endTime) {
+    public ListSyncTaskStatisticRequest withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
 
     /**
      * 查询结束时间
+     * minimum: 0
+     * maximum: 9223372036854775807
      * @return endTime
      */
-    public String getEndTime() {
+    public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(String endTime) {
+    public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
 

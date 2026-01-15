@@ -14,19 +14,9 @@ import java.util.function.Consumer;
 public class BatchUpdateCustomRuleRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "policyid")
-
-    private String policyid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -83,23 +73,6 @@ public class BatchUpdateCustomRuleRequestBody {
 
     private List<PolicyRuleIdRequestBodyPolicyRuleIds> policyRuleIds = null;
 
-    public BatchUpdateCustomRuleRequestBody withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    /**
-     * 规则id
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public BatchUpdateCustomRuleRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -115,23 +88,6 @@ public class BatchUpdateCustomRuleRequestBody {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public BatchUpdateCustomRuleRequestBody withPolicyid(String policyid) {
-        this.policyid = policyid;
-        return this;
-    }
-
-    /**
-     * 策略id
-     * @return policyid
-     */
-    public String getPolicyid() {
-        return policyid;
-    }
-
-    public void setPolicyid(String policyid) {
-        this.policyid = policyid;
     }
 
     public BatchUpdateCustomRuleRequestBody withDescription(String description) {
@@ -374,8 +330,7 @@ public class BatchUpdateCustomRuleRequestBody {
             return false;
         }
         BatchUpdateCustomRuleRequestBody that = (BatchUpdateCustomRuleRequestBody) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.description, that.description)
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.status, that.status) && Objects.equals(this.conditions, that.conditions)
             && Objects.equals(this.action, that.action) && Objects.equals(this.actionMode, that.actionMode)
             && Objects.equals(this.priority, that.priority) && Objects.equals(this.time, that.time)
@@ -385,9 +340,7 @@ public class BatchUpdateCustomRuleRequestBody {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id,
-            name,
-            policyid,
+        return Objects.hash(name,
             description,
             status,
             conditions,
@@ -405,9 +358,7 @@ public class BatchUpdateCustomRuleRequestBody {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchUpdateCustomRuleRequestBody {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");

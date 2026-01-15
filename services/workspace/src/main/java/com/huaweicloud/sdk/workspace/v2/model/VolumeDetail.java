@@ -56,6 +56,11 @@ public class VolumeDetail {
     private String billResourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desktop_pool_disk_id")
+
+    private String desktopPoolDiskId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private String createTime;
@@ -229,6 +234,23 @@ public class VolumeDetail {
         this.billResourceId = billResourceId;
     }
 
+    public VolumeDetail withDesktopPoolDiskId(String desktopPoolDiskId) {
+        this.desktopPoolDiskId = desktopPoolDiskId;
+        return this;
+    }
+
+    /**
+     * 桌面池磁盘ID。
+     * @return desktopPoolDiskId
+     */
+    public String getDesktopPoolDiskId() {
+        return desktopPoolDiskId;
+    }
+
+    public void setDesktopPoolDiskId(String desktopPoolDiskId) {
+        this.desktopPoolDiskId = desktopPoolDiskId;
+    }
+
     public VolumeDetail withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -294,6 +316,7 @@ public class VolumeDetail {
             && Objects.equals(this.throughput, that.throughput) && Objects.equals(this.device, that.device)
             && Objects.equals(this.id, that.id) && Objects.equals(this.volumeId, that.volumeId)
             && Objects.equals(this.billResourceId, that.billResourceId)
+            && Objects.equals(this.desktopPoolDiskId, that.desktopPoolDiskId)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.displayName, that.displayName)
             && Objects.equals(this.resourceSpecCode, that.resourceSpecCode);
     }
@@ -309,6 +332,7 @@ public class VolumeDetail {
             id,
             volumeId,
             billResourceId,
+            desktopPoolDiskId,
             createTime,
             displayName,
             resourceSpecCode);
@@ -327,6 +351,7 @@ public class VolumeDetail {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    volumeId: ").append(toIndentedString(volumeId)).append("\n");
         sb.append("    billResourceId: ").append(toIndentedString(billResourceId)).append("\n");
+        sb.append("    desktopPoolDiskId: ").append(toIndentedString(desktopPoolDiskId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
         sb.append("    resourceSpecCode: ").append(toIndentedString(resourceSpecCode)).append("\n");

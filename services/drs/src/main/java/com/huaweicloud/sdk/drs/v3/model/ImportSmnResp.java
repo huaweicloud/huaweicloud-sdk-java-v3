@@ -53,7 +53,7 @@ public class ImportSmnResp {
     }
 
     /**
-     * 状态
+     * 状态 取值：success，failed
      * @return status
      */
     public String getStatus() {

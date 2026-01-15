@@ -15,38 +15,21 @@ import java.util.function.Consumer;
 public class ListAiOpsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "aiops_list")
+
+    private List<AiOps> aiopsList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_size")
 
     private Integer totalSize;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "aiops_list")
-
-    private List<ListAiOpsRequestBodyAiopsList> aiopsList = null;
-
-    public ListAiOpsResponse withTotalSize(Integer totalSize) {
-        this.totalSize = totalSize;
-        return this;
-    }
-
-    /**
-     * 检测任务个数。
-     * @return totalSize
-     */
-    public Integer getTotalSize() {
-        return totalSize;
-    }
-
-    public void setTotalSize(Integer totalSize) {
-        this.totalSize = totalSize;
-    }
-
-    public ListAiOpsResponse withAiopsList(List<ListAiOpsRequestBodyAiopsList> aiopsList) {
+    public ListAiOpsResponse withAiopsList(List<AiOps> aiopsList) {
         this.aiopsList = aiopsList;
         return this;
     }
 
-    public ListAiOpsResponse addAiopsListItem(ListAiOpsRequestBodyAiopsList aiopsListItem) {
+    public ListAiOpsResponse addAiopsListItem(AiOps aiopsListItem) {
         if (this.aiopsList == null) {
             this.aiopsList = new ArrayList<>();
         }
@@ -54,7 +37,7 @@ public class ListAiOpsResponse extends SdkResponse {
         return this;
     }
 
-    public ListAiOpsResponse withAiopsList(Consumer<List<ListAiOpsRequestBodyAiopsList>> aiopsListSetter) {
+    public ListAiOpsResponse withAiopsList(Consumer<List<AiOps>> aiopsListSetter) {
         if (this.aiopsList == null) {
             this.aiopsList = new ArrayList<>();
         }
@@ -63,15 +46,32 @@ public class ListAiOpsResponse extends SdkResponse {
     }
 
     /**
-     * 创建一个集群检测任务。
+     * Get aiopsList
      * @return aiopsList
      */
-    public List<ListAiOpsRequestBodyAiopsList> getAiopsList() {
+    public List<AiOps> getAiopsList() {
         return aiopsList;
     }
 
-    public void setAiopsList(List<ListAiOpsRequestBodyAiopsList> aiopsList) {
+    public void setAiopsList(List<AiOps> aiopsList) {
         this.aiopsList = aiopsList;
+    }
+
+    public ListAiOpsResponse withTotalSize(Integer totalSize) {
+        this.totalSize = totalSize;
+        return this;
+    }
+
+    /**
+     * 参数解释： 集群风险检测任务总数。 取值范围： 不涉及
+     * @return totalSize
+     */
+    public Integer getTotalSize() {
+        return totalSize;
+    }
+
+    public void setTotalSize(Integer totalSize) {
+        this.totalSize = totalSize;
     }
 
     @Override
@@ -83,20 +83,20 @@ public class ListAiOpsResponse extends SdkResponse {
             return false;
         }
         ListAiOpsResponse that = (ListAiOpsResponse) obj;
-        return Objects.equals(this.totalSize, that.totalSize) && Objects.equals(this.aiopsList, that.aiopsList);
+        return Objects.equals(this.aiopsList, that.aiopsList) && Objects.equals(this.totalSize, that.totalSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(totalSize, aiopsList);
+        return Objects.hash(aiopsList, totalSize);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAiOpsResponse {\n");
-        sb.append("    totalSize: ").append(toIndentedString(totalSize)).append("\n");
         sb.append("    aiopsList: ").append(toIndentedString(aiopsList)).append("\n");
+        sb.append("    totalSize: ").append(toIndentedString(totalSize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

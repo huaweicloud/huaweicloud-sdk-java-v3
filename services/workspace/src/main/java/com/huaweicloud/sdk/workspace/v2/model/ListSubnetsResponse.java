@@ -17,19 +17,19 @@ public class ListSubnetsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnets")
 
-    private List<SubnetInfo> subnets = null;
+    private List<SingleSubnetInfo> subnets = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_size")
 
     private Integer subnetSize;
 
-    public ListSubnetsResponse withSubnets(List<SubnetInfo> subnets) {
+    public ListSubnetsResponse withSubnets(List<SingleSubnetInfo> subnets) {
         this.subnets = subnets;
         return this;
     }
 
-    public ListSubnetsResponse addSubnetsItem(SubnetInfo subnetsItem) {
+    public ListSubnetsResponse addSubnetsItem(SingleSubnetInfo subnetsItem) {
         if (this.subnets == null) {
             this.subnets = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class ListSubnetsResponse extends SdkResponse {
         return this;
     }
 
-    public ListSubnetsResponse withSubnets(Consumer<List<SubnetInfo>> subnetsSetter) {
+    public ListSubnetsResponse withSubnets(Consumer<List<SingleSubnetInfo>> subnetsSetter) {
         if (this.subnets == null) {
             this.subnets = new ArrayList<>();
         }
@@ -49,11 +49,11 @@ public class ListSubnetsResponse extends SdkResponse {
      * 子网列表。
      * @return subnets
      */
-    public List<SubnetInfo> getSubnets() {
+    public List<SingleSubnetInfo> getSubnets() {
         return subnets;
     }
 
-    public void setSubnets(List<SubnetInfo> subnets) {
+    public void setSubnets(List<SingleSubnetInfo> subnets) {
         this.subnets = subnets;
     }
 

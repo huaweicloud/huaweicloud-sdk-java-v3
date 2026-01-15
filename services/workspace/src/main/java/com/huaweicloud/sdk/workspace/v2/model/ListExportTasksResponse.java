@@ -63,7 +63,7 @@ public class ListExportTasksResponse extends SdkResponse {
     }
 
     /**
-     * 导出任务列表总数。
+     * 导出任务总数。
      * @return count
      */
     public Integer getCount() {

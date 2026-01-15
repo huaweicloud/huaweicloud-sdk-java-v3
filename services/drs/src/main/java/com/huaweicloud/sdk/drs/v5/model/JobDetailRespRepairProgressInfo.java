@@ -42,7 +42,7 @@ public class JobDetailRespRepairProgressInfo {
     }
 
     /**
-     * 修复状态。
+     * 修复状态。 取值：\"FAILED\", \"SUCCEEDED\", \"FINISHED\", \"SUCCESS\"
      * @return status
      */
     public String getStatus() {

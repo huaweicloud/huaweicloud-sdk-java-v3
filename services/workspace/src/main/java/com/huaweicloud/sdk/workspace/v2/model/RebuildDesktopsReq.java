@@ -29,6 +29,16 @@ public class RebuildDesktopsReq {
     private String imageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "encrypt_type")
+
+    private EncryptType encryptType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kms_id")
+
+    private String kmsId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_type")
 
     private String osType;
@@ -97,7 +107,7 @@ public class RebuildDesktopsReq {
     }
 
     /**
-     * 镜像类型。
+     * 镜像类型 - 公共镜像：gold - 私有镜像：private - 市场镜像：market
      * @return imageType
      */
     public String getImageType() {
@@ -123,6 +133,40 @@ public class RebuildDesktopsReq {
 
     public void setImageId(String imageId) {
         this.imageId = imageId;
+    }
+
+    public RebuildDesktopsReq withEncryptType(EncryptType encryptType) {
+        this.encryptType = encryptType;
+        return this;
+    }
+
+    /**
+     * Get encryptType
+     * @return encryptType
+     */
+    public EncryptType getEncryptType() {
+        return encryptType;
+    }
+
+    public void setEncryptType(EncryptType encryptType) {
+        this.encryptType = encryptType;
+    }
+
+    public RebuildDesktopsReq withKmsId(String kmsId) {
+        this.kmsId = kmsId;
+        return this;
+    }
+
+    /**
+     * 密钥ID，encrypt_type为ENCRYPTED时必传。
+     * @return kmsId
+     */
+    public String getKmsId() {
+        return kmsId;
+    }
+
+    public void setKmsId(String kmsId) {
+        this.kmsId = kmsId;
     }
 
     public RebuildDesktopsReq withOsType(String osType) {
@@ -239,7 +283,8 @@ public class RebuildDesktopsReq {
         }
         RebuildDesktopsReq that = (RebuildDesktopsReq) obj;
         return Objects.equals(this.desktopIds, that.desktopIds) && Objects.equals(this.imageType, that.imageType)
-            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.encryptType, that.encryptType)
+            && Objects.equals(this.kmsId, that.kmsId) && Objects.equals(this.osType, that.osType)
             && Objects.equals(this.delayTime, that.delayTime) && Objects.equals(this.message, that.message)
             && Objects.equals(this.orderId, that.orderId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
@@ -248,8 +293,17 @@ public class RebuildDesktopsReq {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(desktopIds, imageType, imageId, osType, delayTime, message, orderId, enterpriseProjectId, handleType);
+        return Objects.hash(desktopIds,
+            imageType,
+            imageId,
+            encryptType,
+            kmsId,
+            osType,
+            delayTime,
+            message,
+            orderId,
+            enterpriseProjectId,
+            handleType);
     }
 
     @Override
@@ -259,6 +313,8 @@ public class RebuildDesktopsReq {
         sb.append("    desktopIds: ").append(toIndentedString(desktopIds)).append("\n");
         sb.append("    imageType: ").append(toIndentedString(imageType)).append("\n");
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
+        sb.append("    encryptType: ").append(toIndentedString(encryptType)).append("\n");
+        sb.append("    kmsId: ").append(toIndentedString(kmsId)).append("\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("    delayTime: ").append(toIndentedString(delayTime)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");

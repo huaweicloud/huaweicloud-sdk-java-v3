@@ -21,11 +21,6 @@ public class Product {
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "flavor_id")
-
-    private String flavorId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
     private String type;
@@ -160,23 +155,6 @@ public class Product {
 
     public void setProductId(String productId) {
         this.productId = productId;
-    }
-
-    public Product withFlavorId(String flavorId) {
-        this.flavorId = flavorId;
-        return this;
-    }
-
-    /**
-     * 规格ID。
-     * @return flavorId
-     */
-    public String getFlavorId() {
-        return flavorId;
-    }
-
-    public void setFlavorId(String flavorId) {
-        this.flavorId = flavorId;
     }
 
     public Product withType(String type) {
@@ -646,11 +624,11 @@ public class Product {
             return false;
         }
         Product that = (Product) obj;
-        return Objects.equals(this.productId, that.productId) && Objects.equals(this.flavorId, that.flavorId)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.architecture, that.architecture)
-            && Objects.equals(this.cpu, that.cpu) && Objects.equals(this.cpuDesc, that.cpuDesc)
-            && Objects.equals(this.memory, that.memory) && Objects.equals(this.isGpu, that.isGpu)
-            && Objects.equals(this.vram, that.vram) && Objects.equals(this.systemDiskType, that.systemDiskType)
+        return Objects.equals(this.productId, that.productId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.architecture, that.architecture) && Objects.equals(this.cpu, that.cpu)
+            && Objects.equals(this.cpuDesc, that.cpuDesc) && Objects.equals(this.memory, that.memory)
+            && Objects.equals(this.isGpu, that.isGpu) && Objects.equals(this.vram, that.vram)
+            && Objects.equals(this.systemDiskType, that.systemDiskType)
             && Objects.equals(this.systemDiskSize, that.systemDiskSize)
             && Objects.equals(this.dataDiskSize, that.dataDiskSize) && Objects.equals(this.gpuDesc, that.gpuDesc)
             && Objects.equals(this.billSwitch, that.billSwitch) && Objects.equals(this.descriptions, that.descriptions)
@@ -667,7 +645,6 @@ public class Product {
     @Override
     public int hashCode() {
         return Objects.hash(productId,
-            flavorId,
             type,
             architecture,
             cpu,
@@ -699,7 +676,6 @@ public class Product {
         StringBuilder sb = new StringBuilder();
         sb.append("class Product {\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-        sb.append("    flavorId: ").append(toIndentedString(flavorId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    architecture: ").append(toIndentedString(architecture)).append("\n");
         sb.append("    cpu: ").append(toIndentedString(cpu)).append("\n");

@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ListTagsRequest {
 
     /**
-     * 资源类型。 - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备 - subscription：数据订阅 - backupMigration：备份迁移 - replay：录制回放
+     * 资源类型。 - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备 - subscription：数据订阅 - backupMigration：备份迁移 - replay：录制回放 - verify：校验任务
      */
     public static final class ResourceTypeEnum {
 
@@ -50,6 +50,11 @@ public class ListTagsRequest {
          */
         public static final ResourceTypeEnum REPLAY = new ResourceTypeEnum("replay");
 
+        /**
+         * Enum VERIFY for value: "verify"
+         */
+        public static final ResourceTypeEnum VERIFY = new ResourceTypeEnum("verify");
+
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ResourceTypeEnum> createStaticFields() {
@@ -60,6 +65,7 @@ public class ListTagsRequest {
             map.put("subscription", SUBSCRIPTION);
             map.put("backupMigration", BACKUPMIGRATION);
             map.put("replay", REPLAY);
+            map.put("verify", VERIFY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -195,7 +201,7 @@ public class ListTagsRequest {
     }
 
     /**
-     * 资源类型。 - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备 - subscription：数据订阅 - backupMigration：备份迁移 - replay：录制回放
+     * 资源类型。 - migration：实时迁移 - sync：实时同步 - cloudDataGuard：实时灾备 - subscription：数据订阅 - backupMigration：备份迁移 - replay：录制回放 - verify：校验任务
      * @return resourceType
      */
     public ResourceTypeEnum getResourceType() {

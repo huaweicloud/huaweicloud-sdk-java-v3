@@ -185,7 +185,7 @@ public class RdsNoAgentDbRequestDatabases {
     }
 
     /**
-     * 数据库类型 - MYSQL: MySQL - ORACLE: Oracle - POSTGRESQL: PostgreSQL - TAURUS: Taurus DB - DWS: GaussDB(DWS) - GAUSSDBOPENGAUSS：GaussDB/openGauss - DDS： DDS(MongoDB)
+     * 数据库类型 - MYSQL：MySQL - ORACLE：Oracle - POSTGRESQL：PostgreSQL - TAURUS：Taurus DB - DWS：GaussDB(DWS) - GAUSSDBOPENGAUSS：GaussDB/openGauss - DDS：DDS(MongoDB)
      * @return type
      */
     public String getType() {

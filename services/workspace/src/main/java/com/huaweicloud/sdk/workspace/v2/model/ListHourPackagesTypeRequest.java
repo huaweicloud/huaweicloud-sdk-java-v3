@@ -20,6 +20,16 @@ public class ListHourPackagesTypeRequest {
 
     private String resourceSpecCode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
     public ListHourPackagesTypeRequest withDesktopResourceSpecCode(String desktopResourceSpecCode) {
         this.desktopResourceSpecCode = desktopResourceSpecCode;
         return this;
@@ -54,6 +64,44 @@ public class ListHourPackagesTypeRequest {
         this.resourceSpecCode = resourceSpecCode;
     }
 
+    public ListHourPackagesTypeRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 每页数量，范围0-1000，默认1000。
+     * minimum: 0
+     * maximum: 1000
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListHourPackagesTypeRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 偏移量，默认0。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +112,13 @@ public class ListHourPackagesTypeRequest {
         }
         ListHourPackagesTypeRequest that = (ListHourPackagesTypeRequest) obj;
         return Objects.equals(this.desktopResourceSpecCode, that.desktopResourceSpecCode)
-            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode);
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktopResourceSpecCode, resourceSpecCode);
+        return Objects.hash(desktopResourceSpecCode, resourceSpecCode, limit, offset);
     }
 
     @Override
@@ -78,6 +127,8 @@ public class ListHourPackagesTypeRequest {
         sb.append("class ListHourPackagesTypeRequest {\n");
         sb.append("    desktopResourceSpecCode: ").append(toIndentedString(desktopResourceSpecCode)).append("\n");
         sb.append("    resourceSpecCode: ").append(toIndentedString(resourceSpecCode)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -35,6 +35,11 @@ public class ListAppAuthorizationsRequest {
 
     private String targetType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "assign_type")
+
+    private String assignType;
+
     public ListAppAuthorizationsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -124,6 +129,23 @@ public class ListAppAuthorizationsRequest {
         this.targetType = targetType;
     }
 
+    public ListAppAuthorizationsRequest withAssignType(String assignType) {
+        this.assignType = assignType;
+        return this;
+    }
+
+    /**
+     * 类型： * `ALL_USER` - 所有用户 * `ASSIGN_USER` - 部分用户
+     * @return assignType
+     */
+    public String getAssignType() {
+        return assignType;
+    }
+
+    public void setAssignType(String assignType) {
+        this.assignType = assignType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -135,12 +157,12 @@ public class ListAppAuthorizationsRequest {
         ListAppAuthorizationsRequest that = (ListAppAuthorizationsRequest) obj;
         return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.appId, that.appId) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.targetType, that.targetType);
+            && Objects.equals(this.targetType, that.targetType) && Objects.equals(this.assignType, that.assignType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, appId, name, targetType);
+        return Objects.hash(offset, limit, appId, name, targetType, assignType);
     }
 
     @Override
@@ -152,6 +174,7 @@ public class ListAppAuthorizationsRequest {
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    targetType: ").append(toIndentedString(targetType)).append("\n");
+        sb.append("    assignType: ").append(toIndentedString(assignType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

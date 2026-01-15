@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 检测任务完成后发送SMN告警消息。
+ * **参数解释**： 检测报告发送，当前功能已废弃。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
  */
 public class CreateAiOpsRequestBodyAlarm {
 
@@ -26,7 +26,7 @@ public class CreateAiOpsRequestBodyAlarm {
     }
 
     /**
-     * SMN告警消息敏感度。 - high：高风险。 - medium：中风险。 - suggestion：建议。 - norisk：无风险。
+     * **参数解释**： 报告发送风险类别，当前功能已废弃。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return level
      */
     public String getLevel() {
@@ -43,7 +43,7 @@ public class CreateAiOpsRequestBodyAlarm {
     }
 
     /**
-     * SMN主题名称。
+     * **参数解释**： 报告发送主题，当前功能已废弃。 **约束限制**： 不涉及 **默认取值**： 不涉及
      * @return smnTopic
      */
     public String getSmnTopic() {

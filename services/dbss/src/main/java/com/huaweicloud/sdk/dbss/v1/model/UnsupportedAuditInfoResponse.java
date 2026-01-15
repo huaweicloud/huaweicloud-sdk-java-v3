@@ -9,26 +9,26 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * UnSupportAuditInfoResponse
+ * UnsupportedAuditInfoResponse
  */
-public class UnSupportAuditInfoResponse {
+public class UnsupportedAuditInfoResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audit_infos")
 
-    private List<UnSupportAuditInfo> auditInfos = null;
+    private List<UnsupportedAuditInfo> auditInfos = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "support_version")
 
     private String supportVersion;
 
-    public UnSupportAuditInfoResponse withAuditInfos(List<UnSupportAuditInfo> auditInfos) {
+    public UnsupportedAuditInfoResponse withAuditInfos(List<UnsupportedAuditInfo> auditInfos) {
         this.auditInfos = auditInfos;
         return this;
     }
 
-    public UnSupportAuditInfoResponse addAuditInfosItem(UnSupportAuditInfo auditInfosItem) {
+    public UnsupportedAuditInfoResponse addAuditInfosItem(UnsupportedAuditInfo auditInfosItem) {
         if (this.auditInfos == null) {
             this.auditInfos = new ArrayList<>();
         }
@@ -36,7 +36,7 @@ public class UnSupportAuditInfoResponse {
         return this;
     }
 
-    public UnSupportAuditInfoResponse withAuditInfos(Consumer<List<UnSupportAuditInfo>> auditInfosSetter) {
+    public UnsupportedAuditInfoResponse withAuditInfos(Consumer<List<UnsupportedAuditInfo>> auditInfosSetter) {
         if (this.auditInfos == null) {
             this.auditInfos = new ArrayList<>();
         }
@@ -48,15 +48,15 @@ public class UnSupportAuditInfoResponse {
      * 审计信息
      * @return auditInfos
      */
-    public List<UnSupportAuditInfo> getAuditInfos() {
+    public List<UnsupportedAuditInfo> getAuditInfos() {
         return auditInfos;
     }
 
-    public void setAuditInfos(List<UnSupportAuditInfo> auditInfos) {
+    public void setAuditInfos(List<UnsupportedAuditInfo> auditInfos) {
         this.auditInfos = auditInfos;
     }
 
-    public UnSupportAuditInfoResponse withSupportVersion(String supportVersion) {
+    public UnsupportedAuditInfoResponse withSupportVersion(String supportVersion) {
         this.supportVersion = supportVersion;
         return this;
     }
@@ -81,7 +81,7 @@ public class UnSupportAuditInfoResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UnSupportAuditInfoResponse that = (UnSupportAuditInfoResponse) obj;
+        UnsupportedAuditInfoResponse that = (UnsupportedAuditInfoResponse) obj;
         return Objects.equals(this.auditInfos, that.auditInfos)
             && Objects.equals(this.supportVersion, that.supportVersion);
     }
@@ -94,7 +94,7 @@ public class UnSupportAuditInfoResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class UnSupportAuditInfoResponse {\n");
+        sb.append("class UnsupportedAuditInfoResponse {\n");
         sb.append("    auditInfos: ").append(toIndentedString(auditInfos)).append("\n");
         sb.append("    supportVersion: ").append(toIndentedString(supportVersion)).append("\n");
         sb.append("}");

@@ -21,7 +21,7 @@ public class QueryAvailableNodeTypeReq {
     private String engineType;
 
     /**
-     * 迁移场景，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备
+     * 迁移场景 migration实时迁移，sync实时同步，dataGuard实时灾备，subscription实时订阅，replay流量回放
      */
     public static final class DbUseTypeEnum {
 
@@ -215,7 +215,7 @@ public class QueryAvailableNodeTypeReq {
     }
 
     /**
-     * 迁移场景，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备
+     * 迁移场景 migration实时迁移，sync实时同步，dataGuard实时灾备，subscription实时订阅，replay流量回放
      * @return dbUseType
      */
     public DbUseTypeEnum getDbUseType() {
@@ -249,7 +249,7 @@ public class QueryAvailableNodeTypeReq {
     }
 
     /**
-     * 规格类型。
+     * 规格类型。 micro：极小，small：小，medium：中，high：高，xlarge：超高，2xlarge：极高
      * @return nodeType
      */
     public String getNodeType() {

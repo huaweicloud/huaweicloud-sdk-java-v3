@@ -121,7 +121,7 @@ public class WhitelistBean {
     }
 
     /**
-     * 状态 - true:启用 - false: 禁用
+     * 状态 - true：启用 - false：禁用
      * @return enabled
      */
     public Boolean getEnabled() {

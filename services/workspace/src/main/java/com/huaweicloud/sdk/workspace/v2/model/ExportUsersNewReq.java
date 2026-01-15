@@ -6,9 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * ExportUsersV3Req
+ * ExportUsersNewReq
  */
-public class ExportUsersV3Req {
+public class ExportUsersNewReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_name")
@@ -35,7 +35,7 @@ public class ExportUsersV3Req {
 
     private String enterpriseProjectId;
 
-    public ExportUsersV3Req withUserName(String userName) {
+    public ExportUsersNewReq withUserName(String userName) {
         this.userName = userName;
         return this;
     }
@@ -52,7 +52,7 @@ public class ExportUsersV3Req {
         this.userName = userName;
     }
 
-    public ExportUsersV3Req withDescription(String description) {
+    public ExportUsersNewReq withDescription(String description) {
         this.description = description;
         return this;
     }
@@ -69,7 +69,7 @@ public class ExportUsersV3Req {
         this.description = description;
     }
 
-    public ExportUsersV3Req withActiveType(String activeType) {
+    public ExportUsersNewReq withActiveType(String activeType) {
         this.activeType = activeType;
         return this;
     }
@@ -86,7 +86,7 @@ public class ExportUsersV3Req {
         this.activeType = activeType;
     }
 
-    public ExportUsersV3Req withLanguage(String language) {
+    public ExportUsersNewReq withLanguage(String language) {
         this.language = language;
         return this;
     }
@@ -103,7 +103,7 @@ public class ExportUsersV3Req {
         this.language = language;
     }
 
-    public ExportUsersV3Req withEnterpriseProjectId(String enterpriseProjectId) {
+    public ExportUsersNewReq withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
@@ -128,7 +128,7 @@ public class ExportUsersV3Req {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportUsersV3Req that = (ExportUsersV3Req) obj;
+        ExportUsersNewReq that = (ExportUsersNewReq) obj;
         return Objects.equals(this.userName, that.userName) && Objects.equals(this.description, that.description)
             && Objects.equals(this.activeType, that.activeType) && Objects.equals(this.language, that.language)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
@@ -142,7 +142,7 @@ public class ExportUsersV3Req {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ExportUsersV3Req {\n");
+        sb.append("class ExportUsersNewReq {\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    activeType: ").append(toIndentedString(activeType)).append("\n");

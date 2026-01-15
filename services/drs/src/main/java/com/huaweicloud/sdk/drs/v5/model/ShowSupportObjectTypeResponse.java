@@ -74,6 +74,16 @@ public class ShowSupportObjectTypeResponse extends SdkResponse {
 
     private Boolean isImportCloumn;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "import_mapping_type")
+
+    private String importMappingType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_import_unique_key")
+
+    private Boolean isImportUniqueKey;
+
     public ShowSupportObjectTypeResponse withIsFullTransSupportObject(Boolean isFullTransSupportObject) {
         this.isFullTransSupportObject = isFullTransSupportObject;
         return this;
@@ -295,6 +305,40 @@ public class ShowSupportObjectTypeResponse extends SdkResponse {
         this.isImportCloumn = isImportCloumn;
     }
 
+    public ShowSupportObjectTypeResponse withImportMappingType(String importMappingType) {
+        this.importMappingType = importMappingType;
+        return this;
+    }
+
+    /**
+     * 文件导入映射场景。 - table_mapping - topic_mapping
+     * @return importMappingType
+     */
+    public String getImportMappingType() {
+        return importMappingType;
+    }
+
+    public void setImportMappingType(String importMappingType) {
+        this.importMappingType = importMappingType;
+    }
+
+    public ShowSupportObjectTypeResponse withIsImportUniqueKey(Boolean isImportUniqueKey) {
+        this.isImportUniqueKey = isImportUniqueKey;
+        return this;
+    }
+
+    /**
+     * 唯一键信息是否导入。
+     * @return isImportUniqueKey
+     */
+    public Boolean getIsImportUniqueKey() {
+        return isImportUniqueKey;
+    }
+
+    public void setIsImportUniqueKey(Boolean isImportUniqueKey) {
+        this.isImportUniqueKey = isImportUniqueKey;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -314,7 +358,9 @@ public class ShowSupportObjectTypeResponse extends SdkResponse {
             && Objects.equals(this.isTableSupportSearch, that.isTableSupportSearch)
             && Objects.equals(this.fileSize, that.fileSize) && Objects.equals(this.previousSelect, that.previousSelect)
             && Objects.equals(this.importLevel, that.importLevel)
-            && Objects.equals(this.isImportCloumn, that.isImportCloumn);
+            && Objects.equals(this.isImportCloumn, that.isImportCloumn)
+            && Objects.equals(this.importMappingType, that.importMappingType)
+            && Objects.equals(this.isImportUniqueKey, that.isImportUniqueKey);
     }
 
     @Override
@@ -330,7 +376,9 @@ public class ShowSupportObjectTypeResponse extends SdkResponse {
             fileSize,
             previousSelect,
             importLevel,
-            isImportCloumn);
+            isImportCloumn,
+            importMappingType,
+            isImportUniqueKey);
     }
 
     @Override
@@ -351,6 +399,8 @@ public class ShowSupportObjectTypeResponse extends SdkResponse {
         sb.append("    previousSelect: ").append(toIndentedString(previousSelect)).append("\n");
         sb.append("    importLevel: ").append(toIndentedString(importLevel)).append("\n");
         sb.append("    isImportCloumn: ").append(toIndentedString(isImportCloumn)).append("\n");
+        sb.append("    importMappingType: ").append(toIndentedString(importMappingType)).append("\n");
+        sb.append("    isImportUniqueKey: ").append(toIndentedString(isImportUniqueKey)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -15,6 +15,16 @@ import java.util.Objects;
  */
 public class ShowGrowthRateRequest {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dim")
+
+    private String dim;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metric_name")
+
+    private String metricName;
+
     /**
      * 环比周期 | DAY - 天 MONTH - 月。
      */
@@ -90,31 +100,21 @@ public class ShowGrowthRateRequest {
 
     private GrowPeriodEnum growPeriod;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "metric_name")
-
-    private String metricName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dim")
-
-    private String dim;
-
-    public ShowGrowthRateRequest withGrowPeriod(GrowPeriodEnum growPeriod) {
-        this.growPeriod = growPeriod;
+    public ShowGrowthRateRequest withDim(String dim) {
+        this.dim = dim;
         return this;
     }
 
     /**
-     * 环比周期 | DAY - 天 MONTH - 月。
-     * @return growPeriod
+     * 指标维度 | 目前最大支持3个维度，必须从0开始；维度格式为dim.{i}=key,value，key的最大长度32，value的最大长度为256。 单维度：dim.0=instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d 多维度：dim.0=key,value&dim.1=key,value。
+     * @return dim
      */
-    public GrowPeriodEnum getGrowPeriod() {
-        return growPeriod;
+    public String getDim() {
+        return dim;
     }
 
-    public void setGrowPeriod(GrowPeriodEnum growPeriod) {
-        this.growPeriod = growPeriod;
+    public void setDim(String dim) {
+        this.dim = dim;
     }
 
     public ShowGrowthRateRequest withMetricName(String metricName) {
@@ -134,21 +134,21 @@ public class ShowGrowthRateRequest {
         this.metricName = metricName;
     }
 
-    public ShowGrowthRateRequest withDim(String dim) {
-        this.dim = dim;
+    public ShowGrowthRateRequest withGrowPeriod(GrowPeriodEnum growPeriod) {
+        this.growPeriod = growPeriod;
         return this;
     }
 
     /**
-     * 指标维度 | 目前最大支持3个维度，必须从0开始；维度格式为dim.{i}=key,value，key的最大长度32，value的最大长度为256。 单维度：dim.0=instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d 多维度：dim.0=key,value&dim.1=key,value。
-     * @return dim
+     * 环比周期 | DAY - 天 MONTH - 月。
+     * @return growPeriod
      */
-    public String getDim() {
-        return dim;
+    public GrowPeriodEnum getGrowPeriod() {
+        return growPeriod;
     }
 
-    public void setDim(String dim) {
-        this.dim = dim;
+    public void setGrowPeriod(GrowPeriodEnum growPeriod) {
+        this.growPeriod = growPeriod;
     }
 
     @Override
@@ -160,22 +160,22 @@ public class ShowGrowthRateRequest {
             return false;
         }
         ShowGrowthRateRequest that = (ShowGrowthRateRequest) obj;
-        return Objects.equals(this.growPeriod, that.growPeriod) && Objects.equals(this.metricName, that.metricName)
-            && Objects.equals(this.dim, that.dim);
+        return Objects.equals(this.dim, that.dim) && Objects.equals(this.metricName, that.metricName)
+            && Objects.equals(this.growPeriod, that.growPeriod);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(growPeriod, metricName, dim);
+        return Objects.hash(dim, metricName, growPeriod);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowGrowthRateRequest {\n");
-        sb.append("    growPeriod: ").append(toIndentedString(growPeriod)).append("\n");
-        sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
         sb.append("    dim: ").append(toIndentedString(dim)).append("\n");
+        sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
+        sb.append("    growPeriod: ").append(toIndentedString(growPeriod)).append("\n");
         sb.append("}");
         return sb.toString();
     }

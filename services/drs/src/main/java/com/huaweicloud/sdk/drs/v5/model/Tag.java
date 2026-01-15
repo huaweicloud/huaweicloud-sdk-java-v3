@@ -29,7 +29,7 @@ public class Tag {
     }
 
     /**
-     * 标签键。
+     * 标签键。例如键值对{“aaa”:\"bbb\"}的key为\"aaa\"
      * @return key
      */
     public String getKey() {
@@ -62,7 +62,7 @@ public class Tag {
     }
 
     /**
-     * 标签值。
+     * 标签值。例如键值对{“aaa”:[\"bbb\"]}的values为[\"bbb\"]
      * @return values
      */
     public List<String> getValues() {

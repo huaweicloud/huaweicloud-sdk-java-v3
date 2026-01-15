@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.workspace.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -28,10 +33,86 @@ public class EstimateAddSubResourcesRequestBody {
 
     private String promotionPlanId;
 
+    /**
+     * 处理类型 - ONLY_FOR_EXPAND：仅对新扩容桌面生效 - FOR_EXPAND_AND_IDLE：对新扩容桌面与空闲桌面生效 - FOR_EXPAND_AND_ALL：对新扩容桌面与已有全部桌面生效
+     */
+    public static final class HandleTypeEnum {
+
+        /**
+         * Enum ONLY_FOR_EXPAND for value: "ONLY_FOR_EXPAND"
+         */
+        public static final HandleTypeEnum ONLY_FOR_EXPAND = new HandleTypeEnum("ONLY_FOR_EXPAND");
+
+        /**
+         * Enum FOR_EXPAND_AND_IDLE for value: "FOR_EXPAND_AND_IDLE"
+         */
+        public static final HandleTypeEnum FOR_EXPAND_AND_IDLE = new HandleTypeEnum("FOR_EXPAND_AND_IDLE");
+
+        /**
+         * Enum FOR_EXPAND_AND_ALL for value: "FOR_EXPAND_AND_ALL"
+         */
+        public static final HandleTypeEnum FOR_EXPAND_AND_ALL = new HandleTypeEnum("FOR_EXPAND_AND_ALL");
+
+        private static final Map<String, HandleTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, HandleTypeEnum> createStaticFields() {
+            Map<String, HandleTypeEnum> map = new HashMap<>();
+            map.put("ONLY_FOR_EXPAND", ONLY_FOR_EXPAND);
+            map.put("FOR_EXPAND_AND_IDLE", FOR_EXPAND_AND_IDLE);
+            map.put("FOR_EXPAND_AND_ALL", FOR_EXPAND_AND_ALL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        HandleTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static HandleTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HandleTypeEnum(value));
+        }
+
+        public static HandleTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof HandleTypeEnum) {
+                return this.value.equals(((HandleTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "handle_type")
 
-    private String handleType;
+    private HandleTypeEnum handleType;
 
     public EstimateAddSubResourcesRequestBody withDesktopPoolId(String desktopPoolId) {
         this.desktopPoolId = desktopPoolId;
@@ -100,7 +181,7 @@ public class EstimateAddSubResourcesRequestBody {
         this.promotionPlanId = promotionPlanId;
     }
 
-    public EstimateAddSubResourcesRequestBody withHandleType(String handleType) {
+    public EstimateAddSubResourcesRequestBody withHandleType(HandleTypeEnum handleType) {
         this.handleType = handleType;
         return this;
     }
@@ -109,11 +190,11 @@ public class EstimateAddSubResourcesRequestBody {
      * 处理类型 - ONLY_FOR_EXPAND：仅对新扩容桌面生效 - FOR_EXPAND_AND_IDLE：对新扩容桌面与空闲桌面生效 - FOR_EXPAND_AND_ALL：对新扩容桌面与已有全部桌面生效
      * @return handleType
      */
-    public String getHandleType() {
+    public HandleTypeEnum getHandleType() {
         return handleType;
     }
 
-    public void setHandleType(String handleType) {
+    public void setHandleType(HandleTypeEnum handleType) {
         this.handleType = handleType;
     }
 

@@ -46,6 +46,11 @@ public class ScheduledTask {
     private String nextExecutionTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expire_time")
+
+    private String expireTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable")
 
     private Boolean enable;
@@ -69,6 +74,11 @@ public class ScheduledTask {
     @JsonProperty(value = "wait_time")
 
     private Integer waitTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extra_params")
+
+    private String extraParams;
 
     public ScheduledTask withId(String id) {
         this.id = id;
@@ -110,7 +120,7 @@ public class ScheduledTask {
     }
 
     /**
-     * 任务类型。START：开机，STOP：关机，REBOOT：重启，HIBERNATE：休眠，REBUILD：重建系统盘，EXECUTE_SCRIPT：执行脚本，CREATE_SNAPSHOT：创建快照。
+     * 任务类型。START：开机，STOP：关机，REBOOT：重启，HIBERNATE：休眠，REBUILD：重建系统盘，EXECUTE_SCRIPT：执行脚本，CREATE_SNAPSHOT：创建快照，DELETE_BLACK_ECS：删除桌面
      * @return taskType
      */
     public String getTaskType() {
@@ -187,6 +197,23 @@ public class ScheduledTask {
 
     public void setNextExecutionTime(String nextExecutionTime) {
         this.nextExecutionTime = nextExecutionTime;
+    }
+
+    public ScheduledTask withExpireTime(String expireTime) {
+        this.expireTime = expireTime;
+        return this;
+    }
+
+    /**
+     * 到期时间，格式为yyyy-MM-dd HH:mm:ss。
+     * @return expireTime
+     */
+    public String getExpireTime() {
+        return expireTime;
+    }
+
+    public void setExpireTime(String expireTime) {
+        this.expireTime = expireTime;
     }
 
     public ScheduledTask withEnable(Boolean enable) {
@@ -274,6 +301,23 @@ public class ScheduledTask {
         this.waitTime = waitTime;
     }
 
+    public ScheduledTask withExtraParams(String extraParams) {
+        this.extraParams = extraParams;
+        return this;
+    }
+
+    /**
+     * 扩展参数，json格式。
+     * @return extraParams
+     */
+    public String getExtraParams() {
+        return extraParams;
+    }
+
+    public void setExtraParams(String extraParams) {
+        this.extraParams = extraParams;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -288,9 +332,10 @@ public class ScheduledTask {
             && Objects.equals(this.lifeCycleType, that.lifeCycleType)
             && Objects.equals(this.lastStatus, that.lastStatus)
             && Objects.equals(this.nextExecutionTime, that.nextExecutionTime)
-            && Objects.equals(this.enable, that.enable) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.priority, that.priority) && Objects.equals(this.timeZone, that.timeZone)
-            && Objects.equals(this.waitTime, that.waitTime);
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.enable, that.enable)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.waitTime, that.waitTime)
+            && Objects.equals(this.extraParams, that.extraParams);
     }
 
     @Override
@@ -302,11 +347,13 @@ public class ScheduledTask {
             lifeCycleType,
             lastStatus,
             nextExecutionTime,
+            expireTime,
             enable,
             description,
             priority,
             timeZone,
-            waitTime);
+            waitTime,
+            extraParams);
     }
 
     @Override
@@ -320,11 +367,13 @@ public class ScheduledTask {
         sb.append("    lifeCycleType: ").append(toIndentedString(lifeCycleType)).append("\n");
         sb.append("    lastStatus: ").append(toIndentedString(lastStatus)).append("\n");
         sb.append("    nextExecutionTime: ").append(toIndentedString(nextExecutionTime)).append("\n");
+        sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
         sb.append("    waitTime: ").append(toIndentedString(waitTime)).append("\n");
+        sb.append("    extraParams: ").append(toIndentedString(extraParams)).append("\n");
         sb.append("}");
         return sb.toString();
     }

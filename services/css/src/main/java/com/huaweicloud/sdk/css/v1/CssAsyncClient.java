@@ -13,6 +13,8 @@ import com.huaweicloud.sdk.css.v1.model.ChangeModeRequest;
 import com.huaweicloud.sdk.css.v1.model.ChangeModeResponse;
 import com.huaweicloud.sdk.css.v1.model.ChangeSecurityGroupRequest;
 import com.huaweicloud.sdk.css.v1.model.ChangeSecurityGroupResponse;
+import com.huaweicloud.sdk.css.v1.model.CloseAiOpsSettingRequest;
+import com.huaweicloud.sdk.css.v1.model.CloseAiOpsSettingResponse;
 import com.huaweicloud.sdk.css.v1.model.CreateAgencyRequest;
 import com.huaweicloud.sdk.css.v1.model.CreateAgencyResponse;
 import com.huaweicloud.sdk.css.v1.model.CreateAiOpsRequest;
@@ -103,6 +105,10 @@ import com.huaweicloud.sdk.css.v1.model.RestoreSnapshotRequest;
 import com.huaweicloud.sdk.css.v1.model.RestoreSnapshotResponse;
 import com.huaweicloud.sdk.css.v1.model.RetryUpgradeTaskRequest;
 import com.huaweicloud.sdk.css.v1.model.RetryUpgradeTaskResponse;
+import com.huaweicloud.sdk.css.v1.model.ShowAiOpsDetectorRequest;
+import com.huaweicloud.sdk.css.v1.model.ShowAiOpsDetectorResponse;
+import com.huaweicloud.sdk.css.v1.model.ShowAiOpsSettingRequest;
+import com.huaweicloud.sdk.css.v1.model.ShowAiOpsSettingResponse;
 import com.huaweicloud.sdk.css.v1.model.ShowAutoCreatePolicyRequest;
 import com.huaweicloud.sdk.css.v1.model.ShowAutoCreatePolicyResponse;
 import com.huaweicloud.sdk.css.v1.model.ShowCertsDetailRequest;
@@ -167,6 +173,8 @@ import com.huaweicloud.sdk.css.v1.model.StopSnapshotRequest;
 import com.huaweicloud.sdk.css.v1.model.StopSnapshotResponse;
 import com.huaweicloud.sdk.css.v1.model.StopVpecpRequest;
 import com.huaweicloud.sdk.css.v1.model.StopVpecpResponse;
+import com.huaweicloud.sdk.css.v1.model.UpdateAiOpsSettingRequest;
+import com.huaweicloud.sdk.css.v1.model.UpdateAiOpsSettingResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateAlterKibanaRequest;
 import com.huaweicloud.sdk.css.v1.model.UpdateAlterKibanaResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateAzByInstanceTypeRequest;
@@ -354,6 +362,35 @@ public class CssAsyncClient {
     public AsyncInvoker<ChangeSecurityGroupRequest, ChangeSecurityGroupResponse> changeSecurityGroupAsyncInvoker(
         ChangeSecurityGroupRequest request) {
         return new AsyncInvoker<>(request, CssMeta.changeSecurityGroup, hcClient);
+    }
+
+    /**
+     * 关闭智能运维定时检测
+     *
+     * CSS服务提供智能运维功能的定时检测，支持每日定时检测集群的潜在风险。此接口用于关闭智能运维定时检测。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CloseAiOpsSettingRequest 请求对象
+     * @return CompletableFuture<CloseAiOpsSettingResponse>
+     */
+    public CompletableFuture<CloseAiOpsSettingResponse> closeAiOpsSettingAsync(CloseAiOpsSettingRequest request) {
+        return hcClient.asyncInvokeHttp(request, CssMeta.closeAiOpsSetting);
+    }
+
+    /**
+     * 关闭智能运维定时检测
+     *
+     * CSS服务提供智能运维功能的定时检测，支持每日定时检测集群的潜在风险。此接口用于关闭智能运维定时检测。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CloseAiOpsSettingRequest 请求对象
+     * @return AsyncInvoker<CloseAiOpsSettingRequest, CloseAiOpsSettingResponse>
+     */
+    public AsyncInvoker<CloseAiOpsSettingRequest, CloseAiOpsSettingResponse> closeAiOpsSettingAsyncInvoker(
+        CloseAiOpsSettingRequest request) {
+        return new AsyncInvoker<>(request, CssMeta.closeAiOpsSetting, hcClient);
     }
 
     /**
@@ -858,7 +895,7 @@ public class CssAsyncClient {
     /**
      * 获取智能运维任务列表及详情
      *
-     * 该接口用于获取智能运维任务列表及详情。
+     * CSS服务提供智能运维功能，支持检测集群潜在风险。检测任务完成后，可以查看集群存在的风险项详情，根据风险建议及时处理集群存在的风险。此接口用于获取智能运维任务列表及详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -872,7 +909,7 @@ public class CssAsyncClient {
     /**
      * 获取智能运维任务列表及详情
      *
-     * 该接口用于获取智能运维任务列表及详情。
+     * CSS服务提供智能运维功能，支持检测集群潜在风险。检测任务完成后，可以查看集群存在的风险项详情，根据风险建议及时处理集群存在的风险。此接口用于获取智能运维任务列表及详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1338,6 +1375,64 @@ public class CssAsyncClient {
     public AsyncInvoker<RetryUpgradeTaskRequest, RetryUpgradeTaskResponse> retryUpgradeTaskAsyncInvoker(
         RetryUpgradeTaskRequest request) {
         return new AsyncInvoker<>(request, CssMeta.retryUpgradeTask, hcClient);
+    }
+
+    /**
+     * 查看智能运维检测项
+     *
+     * CSS服务提供智能运维功能，支持检测集群潜在风险。此接口用于获取智能运维的检测项。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAiOpsDetectorRequest 请求对象
+     * @return CompletableFuture<ShowAiOpsDetectorResponse>
+     */
+    public CompletableFuture<ShowAiOpsDetectorResponse> showAiOpsDetectorAsync(ShowAiOpsDetectorRequest request) {
+        return hcClient.asyncInvokeHttp(request, CssMeta.showAiOpsDetector);
+    }
+
+    /**
+     * 查看智能运维检测项
+     *
+     * CSS服务提供智能运维功能，支持检测集群潜在风险。此接口用于获取智能运维的检测项。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAiOpsDetectorRequest 请求对象
+     * @return AsyncInvoker<ShowAiOpsDetectorRequest, ShowAiOpsDetectorResponse>
+     */
+    public AsyncInvoker<ShowAiOpsDetectorRequest, ShowAiOpsDetectorResponse> showAiOpsDetectorAsyncInvoker(
+        ShowAiOpsDetectorRequest request) {
+        return new AsyncInvoker<>(request, CssMeta.showAiOpsDetector, hcClient);
+    }
+
+    /**
+     * 查看智能运维定时检测设置
+     *
+     * CSS服务提供智能运维功能的定时检测，支持每日定时检测集群的潜在风险。此接口用于获取智能运维定时检测设置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAiOpsSettingRequest 请求对象
+     * @return CompletableFuture<ShowAiOpsSettingResponse>
+     */
+    public CompletableFuture<ShowAiOpsSettingResponse> showAiOpsSettingAsync(ShowAiOpsSettingRequest request) {
+        return hcClient.asyncInvokeHttp(request, CssMeta.showAiOpsSetting);
+    }
+
+    /**
+     * 查看智能运维定时检测设置
+     *
+     * CSS服务提供智能运维功能的定时检测，支持每日定时检测集群的潜在风险。此接口用于获取智能运维定时检测设置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAiOpsSettingRequest 请求对象
+     * @return AsyncInvoker<ShowAiOpsSettingRequest, ShowAiOpsSettingResponse>
+     */
+    public AsyncInvoker<ShowAiOpsSettingRequest, ShowAiOpsSettingResponse> showAiOpsSettingAsyncInvoker(
+        ShowAiOpsSettingRequest request) {
+        return new AsyncInvoker<>(request, CssMeta.showAiOpsSetting, hcClient);
     }
 
     /**
@@ -2026,6 +2121,35 @@ public class CssAsyncClient {
      */
     public AsyncInvoker<StopVpecpRequest, StopVpecpResponse> stopVpecpAsyncInvoker(StopVpecpRequest request) {
         return new AsyncInvoker<>(request, CssMeta.stopVpecp, hcClient);
+    }
+
+    /**
+     * 更新智能运维定时检测设置
+     *
+     * CSS服务提供智能运维功能的定时检测，支持每日定时检测集群的潜在风险。此接口用于设置智能运维定时检测。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAiOpsSettingRequest 请求对象
+     * @return CompletableFuture<UpdateAiOpsSettingResponse>
+     */
+    public CompletableFuture<UpdateAiOpsSettingResponse> updateAiOpsSettingAsync(UpdateAiOpsSettingRequest request) {
+        return hcClient.asyncInvokeHttp(request, CssMeta.updateAiOpsSetting);
+    }
+
+    /**
+     * 更新智能运维定时检测设置
+     *
+     * CSS服务提供智能运维功能的定时检测，支持每日定时检测集群的潜在风险。此接口用于设置智能运维定时检测。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAiOpsSettingRequest 请求对象
+     * @return AsyncInvoker<UpdateAiOpsSettingRequest, UpdateAiOpsSettingResponse>
+     */
+    public AsyncInvoker<UpdateAiOpsSettingRequest, UpdateAiOpsSettingResponse> updateAiOpsSettingAsyncInvoker(
+        UpdateAiOpsSettingRequest request) {
+        return new AsyncInvoker<>(request, CssMeta.updateAiOpsSetting, hcClient);
     }
 
     /**

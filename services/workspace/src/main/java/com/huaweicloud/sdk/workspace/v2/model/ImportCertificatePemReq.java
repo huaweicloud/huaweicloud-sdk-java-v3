@@ -22,11 +22,6 @@ public class ImportCertificatePemReq {
     private String keyAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "signature_algorithm")
-
-    private String signatureAlgorithm;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transaction_id")
 
     private String transactionId;
@@ -82,23 +77,6 @@ public class ImportCertificatePemReq {
 
     public void setKeyAlgorithm(String keyAlgorithm) {
         this.keyAlgorithm = keyAlgorithm;
-    }
-
-    public ImportCertificatePemReq withSignatureAlgorithm(String signatureAlgorithm) {
-        this.signatureAlgorithm = signatureAlgorithm;
-        return this;
-    }
-
-    /**
-     * 签名哈希算法 SHA-256 SHA-512。
-     * @return signatureAlgorithm
-     */
-    public String getSignatureAlgorithm() {
-        return signatureAlgorithm;
-    }
-
-    public void setSignatureAlgorithm(String signatureAlgorithm) {
-        this.signatureAlgorithm = signatureAlgorithm;
     }
 
     public ImportCertificatePemReq withTransactionId(String transactionId) {
@@ -172,7 +150,6 @@ public class ImportCertificatePemReq {
         ImportCertificatePemReq that = (ImportCertificatePemReq) obj;
         return Objects.equals(this.distinguishedName, that.distinguishedName)
             && Objects.equals(this.keyAlgorithm, that.keyAlgorithm)
-            && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm)
             && Objects.equals(this.transactionId, that.transactionId)
             && Objects.equals(this.crlConfiguration, that.crlConfiguration)
             && Objects.equals(this.pemCode, that.pemCode);
@@ -180,8 +157,7 @@ public class ImportCertificatePemReq {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(distinguishedName, keyAlgorithm, signatureAlgorithm, transactionId, crlConfiguration, pemCode);
+        return Objects.hash(distinguishedName, keyAlgorithm, transactionId, crlConfiguration, pemCode);
     }
 
     @Override
@@ -190,7 +166,6 @@ public class ImportCertificatePemReq {
         sb.append("class ImportCertificatePemReq {\n");
         sb.append("    distinguishedName: ").append(toIndentedString(distinguishedName)).append("\n");
         sb.append("    keyAlgorithm: ").append(toIndentedString(keyAlgorithm)).append("\n");
-        sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
         sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
         sb.append("    crlConfiguration: ").append(toIndentedString(crlConfiguration)).append("\n");
         sb.append("    pemCode: ").append(toIndentedString(pemCode)).append("\n");

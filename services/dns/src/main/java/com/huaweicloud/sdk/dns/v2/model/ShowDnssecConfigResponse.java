@@ -82,7 +82,7 @@ public class ShowDnssecConfigResponse extends SdkResponse {
     }
 
     /**
-     * 域名。
+     * **参数解释：** 域名。 **取值范围：** 不涉及。
      * @return zoneName
      */
     public String getZoneName() {
@@ -99,7 +99,7 @@ public class ShowDnssecConfigResponse extends SdkResponse {
     }
 
     /**
-     * 密钥标签。
+     * **参数解释：** 密钥标签。 **取值范围：** 不涉及。
      * @return keyTag
      */
     public Integer getKeyTag() {
@@ -116,7 +116,7 @@ public class ShowDnssecConfigResponse extends SdkResponse {
     }
 
     /**
-     * 旗标。
+     * **参数解释：** 旗标。 **取值范围：** 不涉及。
      * @return flag
      */
     public Integer getFlag() {
@@ -133,7 +133,7 @@ public class ShowDnssecConfigResponse extends SdkResponse {
     }
 
     /**
-     * 摘要算法。
+     * **参数解释：** 摘要算法。 **取值范围：** 不涉及。
      * @return digestAlgorithm
      */
     public String getDigestAlgorithm() {
@@ -150,7 +150,7 @@ public class ShowDnssecConfigResponse extends SdkResponse {
     }
 
     /**
-     * 摘要算法类型。
+     * **参数解释：** 摘要算法类型。 **取值范围：** 不涉及。
      * @return digestType
      */
     public Integer getDigestType() {
@@ -167,7 +167,7 @@ public class ShowDnssecConfigResponse extends SdkResponse {
     }
 
     /**
-     * 摘要。
+     * **参数解释：** 摘要。 **取值范围：** 不涉及。
      * @return digest
      */
     public String getDigest() {
@@ -184,7 +184,7 @@ public class ShowDnssecConfigResponse extends SdkResponse {
     }
 
     /**
-     * 签名算法。
+     * **参数解释：** 签名算法。 **取值范围：** 不涉及。
      * @return signature
      */
     public String getSignature() {
@@ -201,7 +201,7 @@ public class ShowDnssecConfigResponse extends SdkResponse {
     }
 
     /**
-     * 签名算法类型。
+     * **参数解释：** 签名算法类型。 **取值范围：** 不涉及。
      * @return signatureType
      */
     public Integer getSignatureType() {
@@ -218,7 +218,7 @@ public class ShowDnssecConfigResponse extends SdkResponse {
     }
 
     /**
-     * 公有密钥。
+     * **参数解释：** 公有密钥。 **取值范围：** 不涉及。
      * @return kskPublicKey
      */
     public String getKskPublicKey() {
@@ -235,7 +235,7 @@ public class ShowDnssecConfigResponse extends SdkResponse {
     }
 
     /**
-     * DS记录。
+     * **参数解释：** DS记录。 **取值范围：** 不涉及。
      * @return dsRecord
      */
     public String getDsRecord() {
@@ -252,7 +252,7 @@ public class ShowDnssecConfigResponse extends SdkResponse {
     }
 
     /**
-     * 创建时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
+     * **参数解释：** 创建时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。 **取值范围：** 不涉及。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -269,7 +269,7 @@ public class ShowDnssecConfigResponse extends SdkResponse {
     }
 
     /**
-     * 更新时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
+     * **参数解释：** 更新时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。 **取值范围：** 不涉及。
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -286,7 +286,7 @@ public class ShowDnssecConfigResponse extends SdkResponse {
     }
 
     /**
-     * 状态。  取值范围：  ENABLE：启用 DISABLE：关闭
+     * **参数解释：** 状态。 **取值范围：** - ENABLE：启用 - DISABLE：关闭
      * @return status
      */
     public String getStatus() {
