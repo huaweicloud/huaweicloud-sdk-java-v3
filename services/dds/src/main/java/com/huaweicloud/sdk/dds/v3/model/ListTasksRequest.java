@@ -26,6 +26,11 @@ public class ListTasksRequest {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -91,6 +96,23 @@ public class ListTasksRequest {
         this.status = status;
     }
 
+    public ListTasksRequest withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 任务ID。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public ListTasksRequest withName(String name) {
         this.name = name;
         return this;
@@ -152,13 +174,14 @@ public class ListTasksRequest {
         }
         ListTasksRequest that = (ListTasksRequest) obj;
         return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(startTime, endTime, status, name, offset, limit);
+        return Objects.hash(startTime, endTime, status, id, name, offset, limit);
     }
 
     @Override
@@ -168,6 +191,7 @@ public class ListTasksRequest {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

@@ -21,7 +21,7 @@ public class CreateGroupResp {
     }
 
     /**
-     * 创建成功的消费组名称。
+     * **参数解释**： 创建成功的消费组名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return name
      */
     public String getName() {

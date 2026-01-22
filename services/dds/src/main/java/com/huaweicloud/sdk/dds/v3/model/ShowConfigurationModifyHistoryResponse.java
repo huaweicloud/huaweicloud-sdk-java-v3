@@ -41,7 +41,7 @@ public class ShowConfigurationModifyHistoryResponse extends SdkResponse {
     }
 
     /**
-     * 参数模板的修改历史列表。
+     * **参数解释：** 参数模板的修改历史列表。 **取值范围：** 不涉及。
      * @return histories
      */
     public List<HistoryInfo> getHistories() {

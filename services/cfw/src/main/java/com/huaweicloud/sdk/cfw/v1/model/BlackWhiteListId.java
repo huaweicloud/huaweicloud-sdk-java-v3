@@ -43,7 +43,7 @@ public class BlackWhiteListId {
     }
 
     /**
-     * 黑白名单名称，为黑白名单的地址
+     * 黑白名单的地址
      * @return name
      */
     public String getName() {

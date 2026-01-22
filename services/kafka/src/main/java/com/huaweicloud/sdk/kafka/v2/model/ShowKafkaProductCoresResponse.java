@@ -44,7 +44,7 @@ public class ShowKafkaProductCoresResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 需要扩容的存储空间。 **取值范围**： 不涉及。
+     * **参数解释**： 预估存储空间，当填写的broker_num小于等于当前实例真实值时，显示为当前实例的存储空间。如果填写的broker_num大于当前实例真实值时，显示为所填写broker_num时实例的预估存储空间。 **取值范围**： 不涉及。
      * @return totalExtendStorageSpace
      */
     public Integer getTotalExtendStorageSpace() {

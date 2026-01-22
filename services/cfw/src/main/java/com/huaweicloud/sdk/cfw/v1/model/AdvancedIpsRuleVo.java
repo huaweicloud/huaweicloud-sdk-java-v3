@@ -58,7 +58,7 @@ public class AdvancedIpsRuleVo {
     }
 
     /**
-     * 高级ips规则id
+     * 频率ips规则id
      * @return ipsRuleId
      */
     public String getIpsRuleId() {
@@ -75,7 +75,7 @@ public class AdvancedIpsRuleVo {
     }
 
     /**
-     * ips规则类型：0表示敏感目录扫描、1表示反弹xshell
+     * ips规则类型：0表示敏感目录扫描、1表示反弹shell
      * @return ipsRuleType
      */
     public Integer getIpsRuleType() {
@@ -92,7 +92,7 @@ public class AdvancedIpsRuleVo {
     }
 
     /**
-     * 包含特殊参数的JSON字符串
+     * 频率ips定义JSON字符串
      * @return param
      */
     public String getParam() {
@@ -109,7 +109,7 @@ public class AdvancedIpsRuleVo {
     }
 
     /**
-     * 开关状态：0表示关闭、1表示开启
+     * 频率ips规则状态，0表示关闭，1表示开启
      * @return status
      */
     public Integer getStatus() {

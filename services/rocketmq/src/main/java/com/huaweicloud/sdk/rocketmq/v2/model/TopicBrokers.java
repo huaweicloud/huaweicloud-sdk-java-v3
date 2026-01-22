@@ -32,7 +32,7 @@ public class TopicBrokers {
     }
 
     /**
-     * **参数解释**： 代理名称。 **取值范围**： 不涉及。
+     * **参数解释**： 代理名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return brokerName
      */
     public String getBrokerName() {
@@ -49,7 +49,7 @@ public class TopicBrokers {
     }
 
     /**
-     * **参数解释**： 读队列个数。 **取值范围**： 不涉及。
+     * **参数解释**： 读队列个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return readQueueNum
      */
     public BigDecimal getReadQueueNum() {
@@ -66,7 +66,7 @@ public class TopicBrokers {
     }
 
     /**
-     * **参数解释**： 写队列个数。 **取值范围**： 不涉及。
+     * **参数解释**： 写队列个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return writeQueueNum
      */
     public BigDecimal getWriteQueueNum() {

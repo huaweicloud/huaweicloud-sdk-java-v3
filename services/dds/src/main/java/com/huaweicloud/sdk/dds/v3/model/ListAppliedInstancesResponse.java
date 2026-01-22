@@ -41,7 +41,7 @@ public class ListAppliedInstancesResponse extends SdkResponse {
     }
 
     /**
-     * 可以应用的实例列表。
+     * **参数解释：** 可以应用的实例列表。 **取值范围：** 不涉及。
      * @return instances
      */
     public List<ApplicableInstancesInfo> getInstances() {

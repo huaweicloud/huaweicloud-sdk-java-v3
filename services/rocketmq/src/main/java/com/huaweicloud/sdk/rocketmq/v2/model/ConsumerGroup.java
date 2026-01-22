@@ -44,7 +44,7 @@ public class ConsumerGroup {
     private Integer retryMaxTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "createdAt")
+    @JsonProperty(value = "created_at")
 
     private Long createdAt;
 
@@ -58,13 +58,18 @@ public class ConsumerGroup {
 
     private Boolean consumeOrderly;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_online")
+
+    private Boolean groupOnline;
+
     public ConsumerGroup withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
     }
 
     /**
-     * **参数解释**： 是否可以消费。 **取值范围**： - true：可以消费。 - false：不可以消费。
+     * **参数解释**： 是否可以消费。 **约束限制**： 不涉及。 **取值范围**： - true：可以消费。 - false：不可以消费。 **默认取值**： 不涉及。
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -81,7 +86,7 @@ public class ConsumerGroup {
     }
 
     /**
-     * **参数解释**： 是否广播。 **取值范围**： - true：可以广播。 - false：不可以广播。
+     * **参数解释**： 是否广播。 **约束限制**： 不涉及。 **取值范围**： - true：可以广播。 - false：不可以广播。 **默认取值**： 不涉及。
      * @return broadcast
      */
     public Boolean getBroadcast() {
@@ -114,7 +119,7 @@ public class ConsumerGroup {
     }
 
     /**
-     * **参数解释**： 关联的代理列表。
+     * **参数解释**： 关联的代理列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return brokers
      */
     public List<String> getBrokers() {
@@ -131,7 +136,7 @@ public class ConsumerGroup {
     }
 
     /**
-     * **参数解释**： 消费组名称。 **取值范围**： 不涉及。
+     * **参数解释**： 消费组名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -148,7 +153,7 @@ public class ConsumerGroup {
     }
 
     /**
-     * **参数解释**： 消费组描述。 **取值范围**： 不涉及。
+     * **参数解释**： 消费组描述。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return groupDesc
      */
     public String getGroupDesc() {
@@ -165,7 +170,7 @@ public class ConsumerGroup {
     }
 
     /**
-     * **参数解释**： 最大重试次数。 **取值范围**： 1~16。
+     * **参数解释**： 最大重试次数。 **约束限制**： 不涉及。 **取值范围**： 1~16。 **默认取值**： 不涉及。
      * @return retryMaxTime
      */
     public Integer getRetryMaxTime() {
@@ -182,7 +187,7 @@ public class ConsumerGroup {
     }
 
     /**
-     * **参数解释**： 创建时间戳。 **取值范围**： 不涉及。
+     * **参数解释**： 创建时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return createdAt
      */
     public Long getCreatedAt() {
@@ -215,7 +220,7 @@ public class ConsumerGroup {
     }
 
     /**
-     * **参数解释**： 权限集。
+     * **参数解释**： 权限集。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return permissions
      */
     public List<String> getPermissions() {
@@ -232,7 +237,7 @@ public class ConsumerGroup {
     }
 
     /**
-     * **参数解释**： 是否按顺序消费。 **取值范围**： - true：按顺序消费。 - false：不按顺序消费。
+     * **参数解释**： 是否按顺序消费。 **约束限制**： 不涉及。 **取值范围**： - true：按顺序消费。 - false：不按顺序消费。 **默认取值**： 不涉及。
      * @return consumeOrderly
      */
     public Boolean getConsumeOrderly() {
@@ -241,6 +246,23 @@ public class ConsumerGroup {
 
     public void setConsumeOrderly(Boolean consumeOrderly) {
         this.consumeOrderly = consumeOrderly;
+    }
+
+    public ConsumerGroup withGroupOnline(Boolean groupOnline) {
+        this.groupOnline = groupOnline;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 消费组是否在线。 **约束限制**： 不涉及。 **取值范围**： - true：消费组在线。 - false：消费组不在线。 **默认取值**： 不涉及。
+     * @return groupOnline
+     */
+    public Boolean getGroupOnline() {
+        return groupOnline;
+    }
+
+    public void setGroupOnline(Boolean groupOnline) {
+        this.groupOnline = groupOnline;
     }
 
     @Override
@@ -256,13 +278,22 @@ public class ConsumerGroup {
             && Objects.equals(this.brokers, that.brokers) && Objects.equals(this.name, that.name)
             && Objects.equals(this.groupDesc, that.groupDesc) && Objects.equals(this.retryMaxTime, that.retryMaxTime)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.permissions, that.permissions)
-            && Objects.equals(this.consumeOrderly, that.consumeOrderly);
+            && Objects.equals(this.consumeOrderly, that.consumeOrderly)
+            && Objects.equals(this.groupOnline, that.groupOnline);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(enabled, broadcast, brokers, name, groupDesc, retryMaxTime, createdAt, permissions, consumeOrderly);
+        return Objects.hash(enabled,
+            broadcast,
+            brokers,
+            name,
+            groupDesc,
+            retryMaxTime,
+            createdAt,
+            permissions,
+            consumeOrderly,
+            groupOnline);
     }
 
     @Override
@@ -278,6 +309,7 @@ public class ConsumerGroup {
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
         sb.append("    consumeOrderly: ").append(toIndentedString(consumeOrderly)).append("\n");
+        sb.append("    groupOnline: ").append(toIndentedString(groupOnline)).append("\n");
         sb.append("}");
         return sb.toString();
     }

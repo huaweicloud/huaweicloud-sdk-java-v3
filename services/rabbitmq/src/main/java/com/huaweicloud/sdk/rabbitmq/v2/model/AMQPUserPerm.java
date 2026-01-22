@@ -36,7 +36,7 @@ public class AMQPUserPerm {
     }
 
     /**
-     * 需要配置权限的Vhost名称，一个用户可以配置多个Vhost下的资源权限。
+     * **参数解释**： 需要配置权限的Vhost名称，一个用户可以配置多个Vhost下的资源权限。 **取值范围**： 不涉及。
      * @return vhost
      */
     public String getVhost() {
@@ -53,7 +53,7 @@ public class AMQPUserPerm {
     }
 
     /**
-     * 使用正则表达式匹配资源配置权限。例如，在输入框内输入“^janeway-.*”，则表示授权给该用户当前Vhost下，所有名称以“janeway-”开头的资源的配置权限。
+     * **参数解释**： 使用正则表达式匹配资源配置权限。例如，在输入框内输入“^janeway-.*”，则表示授权给该用户当前Vhost下，所有名称以“janeway-”开头的资源的配置权限。 **取值范围**： 不涉及。
      * @return conf
      */
     public String getConf() {
@@ -70,7 +70,7 @@ public class AMQPUserPerm {
     }
 
     /**
-     * 使用正则表达式匹配资源写权限。例如，在输入框内输入“.*”，则表示授权给该用户当前Vhost下，所有资源的写权限。
+     * **参数解释**： 使用正则表达式匹配资源写权限。例如，在输入框内输入“.*”，则表示授权给该用户当前Vhost下，所有资源的写权限。 **取值范围**： 不涉及。
      * @return write
      */
     public String getWrite() {
@@ -87,7 +87,7 @@ public class AMQPUserPerm {
     }
 
     /**
-     * 使用正则表达式匹配资源读权限。例如，在输入框内输入“.*”，则表示授权给该用户当前Vhost下，所有资源的读权限。
+     * **参数解释**： 使用正则表达式匹配资源读权限。例如，在输入框内输入“.*”，则表示授权给该用户当前Vhost下，所有资源的读权限。 **取值范围**： 不涉及。
      * @return read
      */
     public String getRead() {

@@ -5,20 +5,30 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchCreateOrDeleteRocketmqTagRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchCreateOrDeleteRocketmqTagResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisRecordsForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisRecordsForRocketMqResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisRecordsRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisRecordsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisReportRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisReportResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteInstancesRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteInstancesResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteRocketMqMigrationTaskRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteRocketMqMigrationTaskResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.BatchResetRocketMqMessageOffsetsRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.BatchResetRocketMqMessageOffsetsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchUpdateConsumerGroupRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchUpdateConsumerGroupResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateConsumerGroupOrBatchDeleteConsumerGroupRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateConsumerGroupOrBatchDeleteConsumerGroupResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.CreateDiagnosisTaskForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.CreateDiagnosisTaskForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateDiagnosisTaskRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateDiagnosisTaskResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateInstanceByEngineRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateInstanceByEngineResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.CreatePostPaidInstanceForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.CreatePostPaidInstanceForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreatePostPaidInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreatePostPaidInstanceResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateRocketMqMigrationTaskRequest;
@@ -33,10 +43,16 @@ import com.huaweicloud.sdk.rocketmq.v2.model.DeleteConsumerGroupRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteConsumerGroupResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteInstanceResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.DeleteRocketMqMigrationTaskRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.DeleteRocketMqMigrationTaskResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.DeleteScheduledTaskRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.DeleteScheduledTaskResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteTopicRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteTopicResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteUserRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteUserResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.EnableDnsRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.EnableDnsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ExportDlqMessageRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ExportDlqMessageResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListAvailableZonesRequest;
@@ -45,10 +61,16 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ListBackgroundTasksRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListBackgroundTasksResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListBrokersRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListBrokersResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListConfigFeaturesRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListConfigFeaturesResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListConsumeGroupAccessPolicyForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListConsumeGroupAccessPolicyForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListConsumeGroupAccessPolicyRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListConsumeGroupAccessPolicyResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListConsumerGroupOfTopicRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListConsumerGroupOfTopicResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListDiagnosisReportsForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListDiagnosisReportsForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListDiagnosisReportsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListDiagnosisReportsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListEngineProductsRequest;
@@ -57,36 +79,68 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ListInstanceConsumerGroupsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListInstanceConsumerGroupsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListInstancesRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListInstancesResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListMessageTraceForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListMessageTraceForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListMessageTraceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListMessageTraceResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListMessagesForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListMessagesForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListMessagesRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListMessagesResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListRocketInstanceTopicsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListRocketInstanceTopicsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListRocketMqMigrationTaskRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListRocketMqMigrationTaskResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListScheduledTasksRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListScheduledTasksResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListTopicAccessPolicyRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListTopicAccessPolicyResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListUserRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListUserResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ModifyInstanceSslConfigRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ModifyInstanceSslConfigResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ModifyRecyclePolicyRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ModifyRecyclePolicyResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ResetConsumeOffsetForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ResetConsumeOffsetForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResetConsumeOffsetRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResetConsumeOffsetResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.RestoreRecycleInstanceRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.RestoreRecycleInstanceResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.SendDlqMessageForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.SendDlqMessageForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendDlqMessageRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendDlqMessageResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.SendMessageForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.SendMessageForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendMessageRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendMessageResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowBackgroundTaskProgressRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowBackgroundTaskProgressResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowBackgroundTaskRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowBackgroundTaskResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowCesHierarchyRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowCesHierarchyResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerConnectionsForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerConnectionsForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerConnectionsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerConnectionsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerListOrDetailsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerListOrDetailsResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowDiagnosisReportForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowDiagnosisReportForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowDiagnosisReportRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowDiagnosisReportResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowDiagnosisStackForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowDiagnosisStackForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowDiagnosisStackRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowDiagnosisStackResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowEngineInstanceExtendProductInfoForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowEngineInstanceExtendProductInfoForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowEngineInstanceExtendProductInfoRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowEngineInstanceExtendProductInfoResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowGroupRequest;
@@ -99,26 +153,42 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ShowOneTopicRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowOneTopicResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowRecycleInstancesRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowRecycleInstancesResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketMqConfigsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketMqConfigsResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketMqProductCoresRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketMqProductCoresResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketMqScalePreCheckInfoRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketMqScalePreCheckInfoResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketmqProjectTagsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketmqProjectTagsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketmqTagsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketmqTagsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowTopicStatusRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowTopicStatusResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowUpgradeInstanceVersionRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowUpgradeInstanceVersionResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowUserRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowUserResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowVolumeExpandConfigRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowVolumeExpandConfigResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateConsumerGroupRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateConsumerGroupResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateInstanceResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateRocketMqConfigsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateRocketMqConfigsResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.UpdateScheduledTaskRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.UpdateScheduledTaskResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateTopicRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateTopicResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateUserRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateUserResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.UpdateVolumeExpansionConfigRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.UpdateVolumeExpansionConfigResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ValidateConsumedMessageForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ValidateConsumedMessageForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ValidateConsumedMessageRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ValidateConsumedMessageResponse;
 
@@ -165,6 +235,66 @@ public class RocketMQAsyncClient {
     public AsyncInvoker<BatchCreateOrDeleteRocketmqTagRequest, BatchCreateOrDeleteRocketmqTagResponse> batchCreateOrDeleteRocketmqTagAsyncInvoker(
         BatchCreateOrDeleteRocketmqTagRequest request) {
         return new AsyncInvoker<>(request, RocketMQMeta.batchCreateOrDeleteRocketmqTag, hcClient);
+    }
+
+    /**
+     * 批量删除实例诊断报告
+     *
+     * 批量删除实例诊断报告。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteDiagnosisRecordsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteDiagnosisRecordsResponse>
+     */
+    public CompletableFuture<BatchDeleteDiagnosisRecordsResponse> batchDeleteDiagnosisRecordsAsync(
+        BatchDeleteDiagnosisRecordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.batchDeleteDiagnosisRecords);
+    }
+
+    /**
+     * 批量删除实例诊断报告
+     *
+     * 批量删除实例诊断报告。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteDiagnosisRecordsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteDiagnosisRecordsRequest, BatchDeleteDiagnosisRecordsResponse>
+     */
+    public AsyncInvoker<BatchDeleteDiagnosisRecordsRequest, BatchDeleteDiagnosisRecordsResponse> batchDeleteDiagnosisRecordsAsyncInvoker(
+        BatchDeleteDiagnosisRecordsRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.batchDeleteDiagnosisRecords, hcClient);
+    }
+
+    /**
+     * 批量删除实例诊断报告
+     *
+     * 批量删除实例诊断报告。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteDiagnosisRecordsForRocketMqRequest 请求对象
+     * @return CompletableFuture<BatchDeleteDiagnosisRecordsForRocketMqResponse>
+     */
+    public CompletableFuture<BatchDeleteDiagnosisRecordsForRocketMqResponse> batchDeleteDiagnosisRecordsForRocketMqAsync(
+        BatchDeleteDiagnosisRecordsForRocketMqRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.batchDeleteDiagnosisRecordsForRocketMq);
+    }
+
+    /**
+     * 批量删除实例诊断报告
+     *
+     * 批量删除实例诊断报告。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteDiagnosisRecordsForRocketMqRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteDiagnosisRecordsForRocketMqRequest, BatchDeleteDiagnosisRecordsForRocketMqResponse>
+     */
+    public AsyncInvoker<BatchDeleteDiagnosisRecordsForRocketMqRequest, BatchDeleteDiagnosisRecordsForRocketMqResponse> batchDeleteDiagnosisRecordsForRocketMqAsyncInvoker(
+        BatchDeleteDiagnosisRecordsForRocketMqRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.batchDeleteDiagnosisRecordsForRocketMq, hcClient);
     }
 
     /**
@@ -258,6 +388,36 @@ public class RocketMQAsyncClient {
     }
 
     /**
+     * 批量重置消费进度
+     *
+     * 批量重置消费进度。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchResetRocketMqMessageOffsetsRequest 请求对象
+     * @return CompletableFuture<BatchResetRocketMqMessageOffsetsResponse>
+     */
+    public CompletableFuture<BatchResetRocketMqMessageOffsetsResponse> batchResetRocketMqMessageOffsetsAsync(
+        BatchResetRocketMqMessageOffsetsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.batchResetRocketMqMessageOffsets);
+    }
+
+    /**
+     * 批量重置消费进度
+     *
+     * 批量重置消费进度。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchResetRocketMqMessageOffsetsRequest 请求对象
+     * @return AsyncInvoker<BatchResetRocketMqMessageOffsetsRequest, BatchResetRocketMqMessageOffsetsResponse>
+     */
+    public AsyncInvoker<BatchResetRocketMqMessageOffsetsRequest, BatchResetRocketMqMessageOffsetsResponse> batchResetRocketMqMessageOffsetsAsyncInvoker(
+        BatchResetRocketMqMessageOffsetsRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.batchResetRocketMqMessageOffsets, hcClient);
+    }
+
+    /**
      * 批量修改消费组
      *
      * 批量修改消费组。
@@ -347,9 +507,39 @@ public class RocketMQAsyncClient {
     }
 
     /**
+     * 创建实例诊断任务
+     *
+     * 创建实例诊断任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDiagnosisTaskForRocketMqRequest 请求对象
+     * @return CompletableFuture<CreateDiagnosisTaskForRocketMqResponse>
+     */
+    public CompletableFuture<CreateDiagnosisTaskForRocketMqResponse> createDiagnosisTaskForRocketMqAsync(
+        CreateDiagnosisTaskForRocketMqRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.createDiagnosisTaskForRocketMq);
+    }
+
+    /**
+     * 创建实例诊断任务
+     *
+     * 创建实例诊断任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDiagnosisTaskForRocketMqRequest 请求对象
+     * @return AsyncInvoker<CreateDiagnosisTaskForRocketMqRequest, CreateDiagnosisTaskForRocketMqResponse>
+     */
+    public AsyncInvoker<CreateDiagnosisTaskForRocketMqRequest, CreateDiagnosisTaskForRocketMqResponse> createDiagnosisTaskForRocketMqAsyncInvoker(
+        CreateDiagnosisTaskForRocketMqRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.createDiagnosisTaskForRocketMq, hcClient);
+    }
+
+    /**
      * 创建实例
      *
-     * 创建实例[，该接口支持创建按需和包周期两种计费方式的实例](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)。
+     * 创建实例[，该接口支持创建按需和包周期两种计费方式的实例](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,cmcc,ax)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -364,7 +554,7 @@ public class RocketMQAsyncClient {
     /**
      * 创建实例
      *
-     * 创建实例[，该接口支持创建按需和包周期两种计费方式的实例](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)。
+     * 创建实例[，该接口支持创建按需和包周期两种计费方式的实例](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,cmcc,ax)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -404,6 +594,36 @@ public class RocketMQAsyncClient {
     public AsyncInvoker<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> createPostPaidInstanceAsyncInvoker(
         CreatePostPaidInstanceRequest request) {
         return new AsyncInvoker<>(request, RocketMQMeta.createPostPaidInstance, hcClient);
+    }
+
+    /**
+     * 创建实例
+     *
+     * 创建实例[，该接口支持创建按需和包周期两种计费方式的实例](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,cmcc,ax)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePostPaidInstanceForRocketMqRequest 请求对象
+     * @return CompletableFuture<CreatePostPaidInstanceForRocketMqResponse>
+     */
+    public CompletableFuture<CreatePostPaidInstanceForRocketMqResponse> createPostPaidInstanceForRocketMqAsync(
+        CreatePostPaidInstanceForRocketMqRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.createPostPaidInstanceForRocketMq);
+    }
+
+    /**
+     * 创建实例
+     *
+     * 创建实例[，该接口支持创建按需和包周期两种计费方式的实例](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,cmcc,ax)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePostPaidInstanceForRocketMqRequest 请求对象
+     * @return AsyncInvoker<CreatePostPaidInstanceForRocketMqRequest, CreatePostPaidInstanceForRocketMqResponse>
+     */
+    public AsyncInvoker<CreatePostPaidInstanceForRocketMqRequest, CreatePostPaidInstanceForRocketMqResponse> createPostPaidInstanceForRocketMqAsyncInvoker(
+        CreatePostPaidInstanceForRocketMqRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.createPostPaidInstanceForRocketMq, hcClient);
     }
 
     /**
@@ -553,6 +773,65 @@ public class RocketMQAsyncClient {
     }
 
     /**
+     * 删除元数据迁移任务
+     *
+     * 删除元数据迁移任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRocketMqMigrationTaskRequest 请求对象
+     * @return CompletableFuture<DeleteRocketMqMigrationTaskResponse>
+     */
+    public CompletableFuture<DeleteRocketMqMigrationTaskResponse> deleteRocketMqMigrationTaskAsync(
+        DeleteRocketMqMigrationTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.deleteRocketMqMigrationTask);
+    }
+
+    /**
+     * 删除元数据迁移任务
+     *
+     * 删除元数据迁移任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRocketMqMigrationTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteRocketMqMigrationTaskRequest, DeleteRocketMqMigrationTaskResponse>
+     */
+    public AsyncInvoker<DeleteRocketMqMigrationTaskRequest, DeleteRocketMqMigrationTaskResponse> deleteRocketMqMigrationTaskAsyncInvoker(
+        DeleteRocketMqMigrationTaskRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.deleteRocketMqMigrationTask, hcClient);
+    }
+
+    /**
+     * 删除定时任务管理中的指定记录
+     *
+     * 删除定时任务管理中的指定记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteScheduledTaskRequest 请求对象
+     * @return CompletableFuture<DeleteScheduledTaskResponse>
+     */
+    public CompletableFuture<DeleteScheduledTaskResponse> deleteScheduledTaskAsync(DeleteScheduledTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.deleteScheduledTask);
+    }
+
+    /**
+     * 删除定时任务管理中的指定记录
+     *
+     * 删除定时任务管理中的指定记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteScheduledTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteScheduledTaskRequest, DeleteScheduledTaskResponse>
+     */
+    public AsyncInvoker<DeleteScheduledTaskRequest, DeleteScheduledTaskResponse> deleteScheduledTaskAsyncInvoker(
+        DeleteScheduledTaskRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.deleteScheduledTask, hcClient);
+    }
+
+    /**
      * 删除用户
      *
      * 删除用户。
@@ -578,6 +857,34 @@ public class RocketMQAsyncClient {
      */
     public AsyncInvoker<DeleteUserRequest, DeleteUserResponse> deleteUserAsyncInvoker(DeleteUserRequest request) {
         return new AsyncInvoker<>(request, RocketMQMeta.deleteUser, hcClient);
+    }
+
+    /**
+     * 开启RocketMQ实例域名访问能力
+     *
+     * 开启RocketMQ实例域名访问能力。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableDnsRequest 请求对象
+     * @return CompletableFuture<EnableDnsResponse>
+     */
+    public CompletableFuture<EnableDnsResponse> enableDnsAsync(EnableDnsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.enableDns);
+    }
+
+    /**
+     * 开启RocketMQ实例域名访问能力
+     *
+     * 开启RocketMQ实例域名访问能力。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableDnsRequest 请求对象
+     * @return AsyncInvoker<EnableDnsRequest, EnableDnsResponse>
+     */
+    public AsyncInvoker<EnableDnsRequest, EnableDnsResponse> enableDnsAsyncInvoker(EnableDnsRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.enableDns, hcClient);
     }
 
     /**
@@ -696,6 +1003,35 @@ public class RocketMQAsyncClient {
     }
 
     /**
+     * 获取特性开关列表
+     *
+     * 获取特性开关列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConfigFeaturesRequest 请求对象
+     * @return CompletableFuture<ListConfigFeaturesResponse>
+     */
+    public CompletableFuture<ListConfigFeaturesResponse> listConfigFeaturesAsync(ListConfigFeaturesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.listConfigFeatures);
+    }
+
+    /**
+     * 获取特性开关列表
+     *
+     * 获取特性开关列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConfigFeaturesRequest 请求对象
+     * @return AsyncInvoker<ListConfigFeaturesRequest, ListConfigFeaturesResponse>
+     */
+    public AsyncInvoker<ListConfigFeaturesRequest, ListConfigFeaturesResponse> listConfigFeaturesAsyncInvoker(
+        ListConfigFeaturesRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.listConfigFeatures, hcClient);
+    }
+
+    /**
      * 查询消费组的授权用户列表
      *
      * 查询消费组的授权用户列表。
@@ -726,6 +1062,36 @@ public class RocketMQAsyncClient {
     }
 
     /**
+     * 查询消费组的授权用户列表
+     *
+     * 查询消费组的授权用户列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConsumeGroupAccessPolicyForRocketMqRequest 请求对象
+     * @return CompletableFuture<ListConsumeGroupAccessPolicyForRocketMqResponse>
+     */
+    public CompletableFuture<ListConsumeGroupAccessPolicyForRocketMqResponse> listConsumeGroupAccessPolicyForRocketMqAsync(
+        ListConsumeGroupAccessPolicyForRocketMqRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.listConsumeGroupAccessPolicyForRocketMq);
+    }
+
+    /**
+     * 查询消费组的授权用户列表
+     *
+     * 查询消费组的授权用户列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConsumeGroupAccessPolicyForRocketMqRequest 请求对象
+     * @return AsyncInvoker<ListConsumeGroupAccessPolicyForRocketMqRequest, ListConsumeGroupAccessPolicyForRocketMqResponse>
+     */
+    public AsyncInvoker<ListConsumeGroupAccessPolicyForRocketMqRequest, ListConsumeGroupAccessPolicyForRocketMqResponse> listConsumeGroupAccessPolicyForRocketMqAsyncInvoker(
+        ListConsumeGroupAccessPolicyForRocketMqRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.listConsumeGroupAccessPolicyForRocketMq, hcClient);
+    }
+
+    /**
      * 查询实例诊断报告列表
      *
      * 查询实例诊断报告列表。
@@ -753,6 +1119,36 @@ public class RocketMQAsyncClient {
     public AsyncInvoker<ListDiagnosisReportsRequest, ListDiagnosisReportsResponse> listDiagnosisReportsAsyncInvoker(
         ListDiagnosisReportsRequest request) {
         return new AsyncInvoker<>(request, RocketMQMeta.listDiagnosisReports, hcClient);
+    }
+
+    /**
+     * 查询实例诊断报告列表
+     *
+     * 查询实例诊断报告列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDiagnosisReportsForRocketMqRequest 请求对象
+     * @return CompletableFuture<ListDiagnosisReportsForRocketMqResponse>
+     */
+    public CompletableFuture<ListDiagnosisReportsForRocketMqResponse> listDiagnosisReportsForRocketMqAsync(
+        ListDiagnosisReportsForRocketMqRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.listDiagnosisReportsForRocketMq);
+    }
+
+    /**
+     * 查询实例诊断报告列表
+     *
+     * 查询实例诊断报告列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDiagnosisReportsForRocketMqRequest 请求对象
+     * @return AsyncInvoker<ListDiagnosisReportsForRocketMqRequest, ListDiagnosisReportsForRocketMqResponse>
+     */
+    public AsyncInvoker<ListDiagnosisReportsForRocketMqRequest, ListDiagnosisReportsForRocketMqResponse> listDiagnosisReportsForRocketMqAsyncInvoker(
+        ListDiagnosisReportsForRocketMqRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.listDiagnosisReportsForRocketMq, hcClient);
     }
 
     /**
@@ -873,6 +1269,36 @@ public class RocketMQAsyncClient {
     }
 
     /**
+     * 查询消息轨迹
+     *
+     * 查询消息轨迹。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMessageTraceForRocketMqRequest 请求对象
+     * @return CompletableFuture<ListMessageTraceForRocketMqResponse>
+     */
+    public CompletableFuture<ListMessageTraceForRocketMqResponse> listMessageTraceForRocketMqAsync(
+        ListMessageTraceForRocketMqRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.listMessageTraceForRocketMq);
+    }
+
+    /**
+     * 查询消息轨迹
+     *
+     * 查询消息轨迹。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMessageTraceForRocketMqRequest 请求对象
+     * @return AsyncInvoker<ListMessageTraceForRocketMqRequest, ListMessageTraceForRocketMqResponse>
+     */
+    public AsyncInvoker<ListMessageTraceForRocketMqRequest, ListMessageTraceForRocketMqResponse> listMessageTraceForRocketMqAsyncInvoker(
+        ListMessageTraceForRocketMqRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.listMessageTraceForRocketMq, hcClient);
+    }
+
+    /**
      * 查询消息
      *
      * 查询消息。
@@ -899,6 +1325,36 @@ public class RocketMQAsyncClient {
     public AsyncInvoker<ListMessagesRequest, ListMessagesResponse> listMessagesAsyncInvoker(
         ListMessagesRequest request) {
         return new AsyncInvoker<>(request, RocketMQMeta.listMessages, hcClient);
+    }
+
+    /**
+     * 查询消息
+     *
+     * 查询消息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMessagesForRocketMqRequest 请求对象
+     * @return CompletableFuture<ListMessagesForRocketMqResponse>
+     */
+    public CompletableFuture<ListMessagesForRocketMqResponse> listMessagesForRocketMqAsync(
+        ListMessagesForRocketMqRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.listMessagesForRocketMq);
+    }
+
+    /**
+     * 查询消息
+     *
+     * 查询消息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMessagesForRocketMqRequest 请求对象
+     * @return AsyncInvoker<ListMessagesForRocketMqRequest, ListMessagesForRocketMqResponse>
+     */
+    public AsyncInvoker<ListMessagesForRocketMqRequest, ListMessagesForRocketMqResponse> listMessagesForRocketMqAsyncInvoker(
+        ListMessagesForRocketMqRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.listMessagesForRocketMq, hcClient);
     }
 
     /**
@@ -931,6 +1387,35 @@ public class RocketMQAsyncClient {
     public AsyncInvoker<ListRocketMqMigrationTaskRequest, ListRocketMqMigrationTaskResponse> listRocketMqMigrationTaskAsyncInvoker(
         ListRocketMqMigrationTaskRequest request) {
         return new AsyncInvoker<>(request, RocketMQMeta.listRocketMqMigrationTask, hcClient);
+    }
+
+    /**
+     * 查询实例的定时任务列表
+     *
+     * 查询实例的定时任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduledTasksRequest 请求对象
+     * @return CompletableFuture<ListScheduledTasksResponse>
+     */
+    public CompletableFuture<ListScheduledTasksResponse> listScheduledTasksAsync(ListScheduledTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.listScheduledTasks);
+    }
+
+    /**
+     * 查询实例的定时任务列表
+     *
+     * 查询实例的定时任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduledTasksRequest 请求对象
+     * @return AsyncInvoker<ListScheduledTasksRequest, ListScheduledTasksResponse>
+     */
+    public AsyncInvoker<ListScheduledTasksRequest, ListScheduledTasksResponse> listScheduledTasksAsyncInvoker(
+        ListScheduledTasksRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.listScheduledTasks, hcClient);
     }
 
     /**
@@ -992,9 +1477,9 @@ public class RocketMQAsyncClient {
     }
 
     /**
-     * 修改实例ssl相关配置
+     * 修改实例SSL相关配置
      *
-     * 修改实例ssl相关配置。
+     * 修改实例SSL相关配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1007,9 +1492,9 @@ public class RocketMQAsyncClient {
     }
 
     /**
-     * 修改实例ssl相关配置
+     * 修改实例SSL相关配置
      *
-     * 修改实例ssl相关配置。
+     * 修改实例SSL相关配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1019,6 +1504,35 @@ public class RocketMQAsyncClient {
     public AsyncInvoker<ModifyInstanceSslConfigRequest, ModifyInstanceSslConfigResponse> modifyInstanceSslConfigAsyncInvoker(
         ModifyInstanceSslConfigRequest request) {
         return new AsyncInvoker<>(request, RocketMQMeta.modifyInstanceSslConfig, hcClient);
+    }
+
+    /**
+     * 更新回收站策略
+     *
+     * 更新回收站策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyRecyclePolicyRequest 请求对象
+     * @return CompletableFuture<ModifyRecyclePolicyResponse>
+     */
+    public CompletableFuture<ModifyRecyclePolicyResponse> modifyRecyclePolicyAsync(ModifyRecyclePolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.modifyRecyclePolicy);
+    }
+
+    /**
+     * 更新回收站策略
+     *
+     * 更新回收站策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyRecyclePolicyRequest 请求对象
+     * @return AsyncInvoker<ModifyRecyclePolicyRequest, ModifyRecyclePolicyResponse>
+     */
+    public AsyncInvoker<ModifyRecyclePolicyRequest, ModifyRecyclePolicyResponse> modifyRecyclePolicyAsyncInvoker(
+        ModifyRecyclePolicyRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.modifyRecyclePolicy, hcClient);
     }
 
     /**
@@ -1051,11 +1565,41 @@ public class RocketMQAsyncClient {
     }
 
     /**
+     * 重置消费进度
+     *
+     * 重置消费进度。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResetConsumeOffsetForRocketMqRequest 请求对象
+     * @return CompletableFuture<ResetConsumeOffsetForRocketMqResponse>
+     */
+    public CompletableFuture<ResetConsumeOffsetForRocketMqResponse> resetConsumeOffsetForRocketMqAsync(
+        ResetConsumeOffsetForRocketMqRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.resetConsumeOffsetForRocketMq);
+    }
+
+    /**
+     * 重置消费进度
+     *
+     * 重置消费进度。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResetConsumeOffsetForRocketMqRequest 请求对象
+     * @return AsyncInvoker<ResetConsumeOffsetForRocketMqRequest, ResetConsumeOffsetForRocketMqResponse>
+     */
+    public AsyncInvoker<ResetConsumeOffsetForRocketMqRequest, ResetConsumeOffsetForRocketMqResponse> resetConsumeOffsetForRocketMqAsyncInvoker(
+        ResetConsumeOffsetForRocketMqRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.resetConsumeOffsetForRocketMq, hcClient);
+    }
+
+    /**
      * 实例规格变更
      *
      * 实例规格变更。
      * 
-     * [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,hws_hk,ctc)
+     * [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,hws_hk,ctc,cmcc,ax)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1071,7 +1615,7 @@ public class RocketMQAsyncClient {
      *
      * 实例规格变更。
      * 
-     * [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,hws_hk,ctc)
+     * [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,hws_hk,ctc,cmcc,ax)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1081,6 +1625,70 @@ public class RocketMQAsyncClient {
     public AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstanceAsyncInvoker(
         ResizeInstanceRequest request) {
         return new AsyncInvoker<>(request, RocketMQMeta.resizeInstance, hcClient);
+    }
+
+    /**
+     * 实例规格变更
+     *
+     * 实例规格变更。
+     * 
+     * [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,hws_hk,ctc,cmcc)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResizeInstanceForRocketMqRequest 请求对象
+     * @return CompletableFuture<ResizeInstanceForRocketMqResponse>
+     */
+    public CompletableFuture<ResizeInstanceForRocketMqResponse> resizeInstanceForRocketMqAsync(
+        ResizeInstanceForRocketMqRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.resizeInstanceForRocketMq);
+    }
+
+    /**
+     * 实例规格变更
+     *
+     * 实例规格变更。
+     * 
+     * [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,hws_hk,ctc,cmcc)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResizeInstanceForRocketMqRequest 请求对象
+     * @return AsyncInvoker<ResizeInstanceForRocketMqRequest, ResizeInstanceForRocketMqResponse>
+     */
+    public AsyncInvoker<ResizeInstanceForRocketMqRequest, ResizeInstanceForRocketMqResponse> resizeInstanceForRocketMqAsyncInvoker(
+        ResizeInstanceForRocketMqRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.resizeInstanceForRocketMq, hcClient);
+    }
+
+    /**
+     * 恢复回收站实例
+     *
+     * 恢复回收站实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreRecycleInstanceRequest 请求对象
+     * @return CompletableFuture<RestoreRecycleInstanceResponse>
+     */
+    public CompletableFuture<RestoreRecycleInstanceResponse> restoreRecycleInstanceAsync(
+        RestoreRecycleInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.restoreRecycleInstance);
+    }
+
+    /**
+     * 恢复回收站实例
+     *
+     * 恢复回收站实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreRecycleInstanceRequest 请求对象
+     * @return AsyncInvoker<RestoreRecycleInstanceRequest, RestoreRecycleInstanceResponse>
+     */
+    public AsyncInvoker<RestoreRecycleInstanceRequest, RestoreRecycleInstanceResponse> restoreRecycleInstanceAsyncInvoker(
+        RestoreRecycleInstanceRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.restoreRecycleInstance, hcClient);
     }
 
     /**
@@ -1113,6 +1721,36 @@ public class RocketMQAsyncClient {
     }
 
     /**
+     * 重发死信消息
+     *
+     * 重发死信消息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SendDlqMessageForRocketMqRequest 请求对象
+     * @return CompletableFuture<SendDlqMessageForRocketMqResponse>
+     */
+    public CompletableFuture<SendDlqMessageForRocketMqResponse> sendDlqMessageForRocketMqAsync(
+        SendDlqMessageForRocketMqRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.sendDlqMessageForRocketMq);
+    }
+
+    /**
+     * 重发死信消息
+     *
+     * 重发死信消息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SendDlqMessageForRocketMqRequest 请求对象
+     * @return AsyncInvoker<SendDlqMessageForRocketMqRequest, SendDlqMessageForRocketMqResponse>
+     */
+    public AsyncInvoker<SendDlqMessageForRocketMqRequest, SendDlqMessageForRocketMqResponse> sendDlqMessageForRocketMqAsyncInvoker(
+        SendDlqMessageForRocketMqRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.sendDlqMessageForRocketMq, hcClient);
+    }
+
+    /**
      * 发送消息
      *
      * 发送消息。
@@ -1138,6 +1776,124 @@ public class RocketMQAsyncClient {
      */
     public AsyncInvoker<SendMessageRequest, SendMessageResponse> sendMessageAsyncInvoker(SendMessageRequest request) {
         return new AsyncInvoker<>(request, RocketMQMeta.sendMessage, hcClient);
+    }
+
+    /**
+     * 发送消息
+     *
+     * 发送消息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SendMessageForRocketMqRequest 请求对象
+     * @return CompletableFuture<SendMessageForRocketMqResponse>
+     */
+    public CompletableFuture<SendMessageForRocketMqResponse> sendMessageForRocketMqAsync(
+        SendMessageForRocketMqRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.sendMessageForRocketMq);
+    }
+
+    /**
+     * 发送消息
+     *
+     * 发送消息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SendMessageForRocketMqRequest 请求对象
+     * @return AsyncInvoker<SendMessageForRocketMqRequest, SendMessageForRocketMqResponse>
+     */
+    public AsyncInvoker<SendMessageForRocketMqRequest, SendMessageForRocketMqResponse> sendMessageForRocketMqAsyncInvoker(
+        SendMessageForRocketMqRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.sendMessageForRocketMq, hcClient);
+    }
+
+    /**
+     * 查询后台任务管理中的指定记录
+     *
+     * 查询后台任务管理中的指定记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBackgroundTaskRequest 请求对象
+     * @return CompletableFuture<ShowBackgroundTaskResponse>
+     */
+    public CompletableFuture<ShowBackgroundTaskResponse> showBackgroundTaskAsync(ShowBackgroundTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.showBackgroundTask);
+    }
+
+    /**
+     * 查询后台任务管理中的指定记录
+     *
+     * 查询后台任务管理中的指定记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBackgroundTaskRequest 请求对象
+     * @return AsyncInvoker<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse>
+     */
+    public AsyncInvoker<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> showBackgroundTaskAsyncInvoker(
+        ShowBackgroundTaskRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.showBackgroundTask, hcClient);
+    }
+
+    /**
+     * 查询实例变更记录的进度
+     *
+     * 查询后台任务管理中的指定实例变更记录的进度。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBackgroundTaskProgressRequest 请求对象
+     * @return CompletableFuture<ShowBackgroundTaskProgressResponse>
+     */
+    public CompletableFuture<ShowBackgroundTaskProgressResponse> showBackgroundTaskProgressAsync(
+        ShowBackgroundTaskProgressRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.showBackgroundTaskProgress);
+    }
+
+    /**
+     * 查询实例变更记录的进度
+     *
+     * 查询后台任务管理中的指定实例变更记录的进度。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBackgroundTaskProgressRequest 请求对象
+     * @return AsyncInvoker<ShowBackgroundTaskProgressRequest, ShowBackgroundTaskProgressResponse>
+     */
+    public AsyncInvoker<ShowBackgroundTaskProgressRequest, ShowBackgroundTaskProgressResponse> showBackgroundTaskProgressAsyncInvoker(
+        ShowBackgroundTaskProgressRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.showBackgroundTaskProgress, hcClient);
+    }
+
+    /**
+     * 查询实例在CES的监控层级关系
+     *
+     * 查询实例在CES的监控层级关系。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCesHierarchyRequest 请求对象
+     * @return CompletableFuture<ShowCesHierarchyResponse>
+     */
+    public CompletableFuture<ShowCesHierarchyResponse> showCesHierarchyAsync(ShowCesHierarchyRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.showCesHierarchy);
+    }
+
+    /**
+     * 查询实例在CES的监控层级关系
+     *
+     * 查询实例在CES的监控层级关系。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCesHierarchyRequest 请求对象
+     * @return AsyncInvoker<ShowCesHierarchyRequest, ShowCesHierarchyResponse>
+     */
+    public AsyncInvoker<ShowCesHierarchyRequest, ShowCesHierarchyResponse> showCesHierarchyAsyncInvoker(
+        ShowCesHierarchyRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.showCesHierarchy, hcClient);
     }
 
     /**
@@ -1168,6 +1924,36 @@ public class RocketMQAsyncClient {
     public AsyncInvoker<ShowConsumerConnectionsRequest, ShowConsumerConnectionsResponse> showConsumerConnectionsAsyncInvoker(
         ShowConsumerConnectionsRequest request) {
         return new AsyncInvoker<>(request, RocketMQMeta.showConsumerConnections, hcClient);
+    }
+
+    /**
+     * 查询消费者列表
+     *
+     * 查询消费组内消费者列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowConsumerConnectionsForRocketMqRequest 请求对象
+     * @return CompletableFuture<ShowConsumerConnectionsForRocketMqResponse>
+     */
+    public CompletableFuture<ShowConsumerConnectionsForRocketMqResponse> showConsumerConnectionsForRocketMqAsync(
+        ShowConsumerConnectionsForRocketMqRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.showConsumerConnectionsForRocketMq);
+    }
+
+    /**
+     * 查询消费者列表
+     *
+     * 查询消费组内消费者列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowConsumerConnectionsForRocketMqRequest 请求对象
+     * @return AsyncInvoker<ShowConsumerConnectionsForRocketMqRequest, ShowConsumerConnectionsForRocketMqResponse>
+     */
+    public AsyncInvoker<ShowConsumerConnectionsForRocketMqRequest, ShowConsumerConnectionsForRocketMqResponse> showConsumerConnectionsForRocketMqAsyncInvoker(
+        ShowConsumerConnectionsForRocketMqRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.showConsumerConnectionsForRocketMq, hcClient);
     }
 
     /**
@@ -1230,6 +2016,36 @@ public class RocketMQAsyncClient {
     }
 
     /**
+     * 查询实例诊断报告
+     *
+     * 查询实例诊断报告。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDiagnosisReportForRocketMqRequest 请求对象
+     * @return CompletableFuture<ShowDiagnosisReportForRocketMqResponse>
+     */
+    public CompletableFuture<ShowDiagnosisReportForRocketMqResponse> showDiagnosisReportForRocketMqAsync(
+        ShowDiagnosisReportForRocketMqRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.showDiagnosisReportForRocketMq);
+    }
+
+    /**
+     * 查询实例诊断报告
+     *
+     * 查询实例诊断报告。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDiagnosisReportForRocketMqRequest 请求对象
+     * @return AsyncInvoker<ShowDiagnosisReportForRocketMqRequest, ShowDiagnosisReportForRocketMqResponse>
+     */
+    public AsyncInvoker<ShowDiagnosisReportForRocketMqRequest, ShowDiagnosisReportForRocketMqResponse> showDiagnosisReportForRocketMqAsyncInvoker(
+        ShowDiagnosisReportForRocketMqRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.showDiagnosisReportForRocketMq, hcClient);
+    }
+
+    /**
      * 查询stack信息
      *
      * 查询stack信息。
@@ -1256,6 +2072,36 @@ public class RocketMQAsyncClient {
     public AsyncInvoker<ShowDiagnosisStackRequest, ShowDiagnosisStackResponse> showDiagnosisStackAsyncInvoker(
         ShowDiagnosisStackRequest request) {
         return new AsyncInvoker<>(request, RocketMQMeta.showDiagnosisStack, hcClient);
+    }
+
+    /**
+     * 查询stack信息
+     *
+     * 查询stack信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDiagnosisStackForRocketMqRequest 请求对象
+     * @return CompletableFuture<ShowDiagnosisStackForRocketMqResponse>
+     */
+    public CompletableFuture<ShowDiagnosisStackForRocketMqResponse> showDiagnosisStackForRocketMqAsync(
+        ShowDiagnosisStackForRocketMqRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.showDiagnosisStackForRocketMq);
+    }
+
+    /**
+     * 查询stack信息
+     *
+     * 查询stack信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDiagnosisStackForRocketMqRequest 请求对象
+     * @return AsyncInvoker<ShowDiagnosisStackForRocketMqRequest, ShowDiagnosisStackForRocketMqResponse>
+     */
+    public AsyncInvoker<ShowDiagnosisStackForRocketMqRequest, ShowDiagnosisStackForRocketMqResponse> showDiagnosisStackForRocketMqAsyncInvoker(
+        ShowDiagnosisStackForRocketMqRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.showDiagnosisStackForRocketMq, hcClient);
     }
 
     /**
@@ -1286,6 +2132,36 @@ public class RocketMQAsyncClient {
     public AsyncInvoker<ShowEngineInstanceExtendProductInfoRequest, ShowEngineInstanceExtendProductInfoResponse> showEngineInstanceExtendProductInfoAsyncInvoker(
         ShowEngineInstanceExtendProductInfoRequest request) {
         return new AsyncInvoker<>(request, RocketMQMeta.showEngineInstanceExtendProductInfo, hcClient);
+    }
+
+    /**
+     * 查询实例的扩容规格列表
+     *
+     * 查询实例的扩容规格列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEngineInstanceExtendProductInfoForRocketMqRequest 请求对象
+     * @return CompletableFuture<ShowEngineInstanceExtendProductInfoForRocketMqResponse>
+     */
+    public CompletableFuture<ShowEngineInstanceExtendProductInfoForRocketMqResponse> showEngineInstanceExtendProductInfoForRocketMqAsync(
+        ShowEngineInstanceExtendProductInfoForRocketMqRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.showEngineInstanceExtendProductInfoForRocketMq);
+    }
+
+    /**
+     * 查询实例的扩容规格列表
+     *
+     * 查询实例的扩容规格列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEngineInstanceExtendProductInfoForRocketMqRequest 请求对象
+     * @return AsyncInvoker<ShowEngineInstanceExtendProductInfoForRocketMqRequest, ShowEngineInstanceExtendProductInfoForRocketMqResponse>
+     */
+    public AsyncInvoker<ShowEngineInstanceExtendProductInfoForRocketMqRequest, ShowEngineInstanceExtendProductInfoForRocketMqResponse> showEngineInstanceExtendProductInfoForRocketMqAsyncInvoker(
+        ShowEngineInstanceExtendProductInfoForRocketMqRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.showEngineInstanceExtendProductInfoForRocketMq, hcClient);
     }
 
     /**
@@ -1403,6 +2279,36 @@ public class RocketMQAsyncClient {
     }
 
     /**
+     * 查询回收站实例列表
+     *
+     * 查询回收站实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecycleInstancesRequest 请求对象
+     * @return CompletableFuture<ShowRecycleInstancesResponse>
+     */
+    public CompletableFuture<ShowRecycleInstancesResponse> showRecycleInstancesAsync(
+        ShowRecycleInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.showRecycleInstances);
+    }
+
+    /**
+     * 查询回收站实例列表
+     *
+     * 查询回收站实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecycleInstancesRequest 请求对象
+     * @return AsyncInvoker<ShowRecycleInstancesRequest, ShowRecycleInstancesResponse>
+     */
+    public AsyncInvoker<ShowRecycleInstancesRequest, ShowRecycleInstancesResponse> showRecycleInstancesAsyncInvoker(
+        ShowRecycleInstancesRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.showRecycleInstances, hcClient);
+    }
+
+    /**
      * 查询RocketMQ配置
      *
      * 该接口用于查询RocketMQ配置，若成功则返回配置的相关信息。
@@ -1429,6 +2335,66 @@ public class RocketMQAsyncClient {
     public AsyncInvoker<ShowRocketMqConfigsRequest, ShowRocketMqConfigsResponse> showRocketMqConfigsAsyncInvoker(
         ShowRocketMqConfigsRequest request) {
         return new AsyncInvoker<>(request, RocketMQMeta.showRocketMqConfigs, hcClient);
+    }
+
+    /**
+     * 查询RocketMQ产品规格核数
+     *
+     * 查询RocketMQ产品规格核数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRocketMqProductCoresRequest 请求对象
+     * @return CompletableFuture<ShowRocketMqProductCoresResponse>
+     */
+    public CompletableFuture<ShowRocketMqProductCoresResponse> showRocketMqProductCoresAsync(
+        ShowRocketMqProductCoresRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.showRocketMqProductCores);
+    }
+
+    /**
+     * 查询RocketMQ产品规格核数
+     *
+     * 查询RocketMQ产品规格核数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRocketMqProductCoresRequest 请求对象
+     * @return AsyncInvoker<ShowRocketMqProductCoresRequest, ShowRocketMqProductCoresResponse>
+     */
+    public AsyncInvoker<ShowRocketMqProductCoresRequest, ShowRocketMqProductCoresResponse> showRocketMqProductCoresAsyncInvoker(
+        ShowRocketMqProductCoresRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.showRocketMqProductCores, hcClient);
+    }
+
+    /**
+     * 查询RocketMQ实例扩容前置检查信息
+     *
+     * 获取RocketMQ实例扩容前置检查信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRocketMqScalePreCheckInfoRequest 请求对象
+     * @return CompletableFuture<ShowRocketMqScalePreCheckInfoResponse>
+     */
+    public CompletableFuture<ShowRocketMqScalePreCheckInfoResponse> showRocketMqScalePreCheckInfoAsync(
+        ShowRocketMqScalePreCheckInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.showRocketMqScalePreCheckInfo);
+    }
+
+    /**
+     * 查询RocketMQ实例扩容前置检查信息
+     *
+     * 获取RocketMQ实例扩容前置检查信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRocketMqScalePreCheckInfoRequest 请求对象
+     * @return AsyncInvoker<ShowRocketMqScalePreCheckInfoRequest, ShowRocketMqScalePreCheckInfoResponse>
+     */
+    public AsyncInvoker<ShowRocketMqScalePreCheckInfoRequest, ShowRocketMqScalePreCheckInfoResponse> showRocketMqScalePreCheckInfoAsyncInvoker(
+        ShowRocketMqScalePreCheckInfoRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.showRocketMqScalePreCheckInfo, hcClient);
     }
 
     /**
@@ -1491,6 +2457,36 @@ public class RocketMQAsyncClient {
     }
 
     /**
+     * 查询RocketMQ实例版本信息
+     *
+     * 查询RocketMQ实例版本信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowUpgradeInstanceVersionRequest 请求对象
+     * @return CompletableFuture<ShowUpgradeInstanceVersionResponse>
+     */
+    public CompletableFuture<ShowUpgradeInstanceVersionResponse> showUpgradeInstanceVersionAsync(
+        ShowUpgradeInstanceVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.showUpgradeInstanceVersion);
+    }
+
+    /**
+     * 查询RocketMQ实例版本信息
+     *
+     * 查询RocketMQ实例版本信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowUpgradeInstanceVersionRequest 请求对象
+     * @return AsyncInvoker<ShowUpgradeInstanceVersionRequest, ShowUpgradeInstanceVersionResponse>
+     */
+    public AsyncInvoker<ShowUpgradeInstanceVersionRequest, ShowUpgradeInstanceVersionResponse> showUpgradeInstanceVersionAsyncInvoker(
+        ShowUpgradeInstanceVersionRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.showUpgradeInstanceVersion, hcClient);
+    }
+
+    /**
      * 查询用户详情
      *
      * 查询用户详情。
@@ -1516,6 +2512,36 @@ public class RocketMQAsyncClient {
      */
     public AsyncInvoker<ShowUserRequest, ShowUserResponse> showUserAsyncInvoker(ShowUserRequest request) {
         return new AsyncInvoker<>(request, RocketMQMeta.showUser, hcClient);
+    }
+
+    /**
+     * 查询磁盘自动扩容配置
+     *
+     * 查询磁盘自动扩容配置，包括磁盘自动扩容是否开启，以及开启后的扩容阈值、扩容步长、扩容上限信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVolumeExpandConfigRequest 请求对象
+     * @return CompletableFuture<ShowVolumeExpandConfigResponse>
+     */
+    public CompletableFuture<ShowVolumeExpandConfigResponse> showVolumeExpandConfigAsync(
+        ShowVolumeExpandConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.showVolumeExpandConfig);
+    }
+
+    /**
+     * 查询磁盘自动扩容配置
+     *
+     * 查询磁盘自动扩容配置，包括磁盘自动扩容是否开启，以及开启后的扩容阈值、扩容步长、扩容上限信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVolumeExpandConfigRequest 请求对象
+     * @return AsyncInvoker<ShowVolumeExpandConfigRequest, ShowVolumeExpandConfigResponse>
+     */
+    public AsyncInvoker<ShowVolumeExpandConfigRequest, ShowVolumeExpandConfigResponse> showVolumeExpandConfigAsyncInvoker(
+        ShowVolumeExpandConfigRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.showVolumeExpandConfig, hcClient);
     }
 
     /**
@@ -1550,7 +2576,7 @@ public class RocketMQAsyncClient {
     /**
      * 修改实例信息
      *
-     * 修改实例的名称和描述信息。
+     * 修改实例相关信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1564,7 +2590,7 @@ public class RocketMQAsyncClient {
     /**
      * 修改实例信息
      *
-     * 修改实例的名称和描述信息。
+     * 修改实例相关信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1607,6 +2633,35 @@ public class RocketMQAsyncClient {
     }
 
     /**
+     * 修改定时任务管理中的指定记录
+     *
+     * 修改定时任务管理中的指定记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateScheduledTaskRequest 请求对象
+     * @return CompletableFuture<UpdateScheduledTaskResponse>
+     */
+    public CompletableFuture<UpdateScheduledTaskResponse> updateScheduledTaskAsync(UpdateScheduledTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.updateScheduledTask);
+    }
+
+    /**
+     * 修改定时任务管理中的指定记录
+     *
+     * 修改定时任务管理中的指定记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateScheduledTaskRequest 请求对象
+     * @return AsyncInvoker<UpdateScheduledTaskRequest, UpdateScheduledTaskResponse>
+     */
+    public AsyncInvoker<UpdateScheduledTaskRequest, UpdateScheduledTaskResponse> updateScheduledTaskAsyncInvoker(
+        UpdateScheduledTaskRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.updateScheduledTask, hcClient);
+    }
+
+    /**
      * 修改用户参数
      *
      * 修改用户参数。
@@ -1632,6 +2687,36 @@ public class RocketMQAsyncClient {
      */
     public AsyncInvoker<UpdateUserRequest, UpdateUserResponse> updateUserAsyncInvoker(UpdateUserRequest request) {
         return new AsyncInvoker<>(request, RocketMQMeta.updateUser, hcClient);
+    }
+
+    /**
+     * 修改磁盘自动扩容配置
+     *
+     * 该接口用于修改磁盘自动扩容配置，包含磁盘自动扩容是否开启、扩容阈值、扩容步长，以及扩容上限的配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateVolumeExpansionConfigRequest 请求对象
+     * @return CompletableFuture<UpdateVolumeExpansionConfigResponse>
+     */
+    public CompletableFuture<UpdateVolumeExpansionConfigResponse> updateVolumeExpansionConfigAsync(
+        UpdateVolumeExpansionConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.updateVolumeExpansionConfig);
+    }
+
+    /**
+     * 修改磁盘自动扩容配置
+     *
+     * 该接口用于修改磁盘自动扩容配置，包含磁盘自动扩容是否开启、扩容阈值、扩容步长，以及扩容上限的配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateVolumeExpansionConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateVolumeExpansionConfigRequest, UpdateVolumeExpansionConfigResponse>
+     */
+    public AsyncInvoker<UpdateVolumeExpansionConfigRequest, UpdateVolumeExpansionConfigResponse> updateVolumeExpansionConfigAsyncInvoker(
+        UpdateVolumeExpansionConfigRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.updateVolumeExpansionConfig, hcClient);
     }
 
     /**
@@ -1662,6 +2747,36 @@ public class RocketMQAsyncClient {
     public AsyncInvoker<ValidateConsumedMessageRequest, ValidateConsumedMessageResponse> validateConsumedMessageAsyncInvoker(
         ValidateConsumedMessageRequest request) {
         return new AsyncInvoker<>(request, RocketMQMeta.validateConsumedMessage, hcClient);
+    }
+
+    /**
+     * 消费验证
+     *
+     * 消费验证。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ValidateConsumedMessageForRocketMqRequest 请求对象
+     * @return CompletableFuture<ValidateConsumedMessageForRocketMqResponse>
+     */
+    public CompletableFuture<ValidateConsumedMessageForRocketMqResponse> validateConsumedMessageForRocketMqAsync(
+        ValidateConsumedMessageForRocketMqRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.validateConsumedMessageForRocketMq);
+    }
+
+    /**
+     * 消费验证
+     *
+     * 消费验证。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ValidateConsumedMessageForRocketMqRequest 请求对象
+     * @return AsyncInvoker<ValidateConsumedMessageForRocketMqRequest, ValidateConsumedMessageForRocketMqResponse>
+     */
+    public AsyncInvoker<ValidateConsumedMessageForRocketMqRequest, ValidateConsumedMessageForRocketMqResponse> validateConsumedMessageForRocketMqAsyncInvoker(
+        ValidateConsumedMessageForRocketMqRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.validateConsumedMessageForRocketMq, hcClient);
     }
 
     /**

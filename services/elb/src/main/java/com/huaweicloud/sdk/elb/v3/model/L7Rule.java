@@ -280,7 +280,7 @@ public class L7Rule {
     }
 
     /**
-     * **参数解释**：provisioning状态。该字段无效，默认为ACTIVE。  **取值范围**：ACTIVE、PENDING_CREATE 或者ERROR。
+     * **参数解释**：provisioning状态。该字段无效，默认为ACTIVE。  **取值范围**： - ACTIVE：已生效。 - PENDING_CREATE：创建中。 - ERROR：当前配置有误。
      * @return provisioningStatus
      */
     public String getProvisioningStatus() {

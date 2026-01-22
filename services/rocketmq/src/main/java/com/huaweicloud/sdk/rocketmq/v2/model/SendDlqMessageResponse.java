@@ -42,7 +42,7 @@ public class SendDlqMessageResponse extends SdkResponse {
     }
 
     /**
-     * 重发死信消息结果。
+     * **参数解释**： 重发死信消息结果。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return resendResults
      */
     public List<DeadletterResendRespResendResults> getResendResults() {

@@ -46,7 +46,7 @@ public class ListInstancesResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 实例列表。 **取值范围**： 不涉及。
+     * **参数解释**： 实例列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return instances
      */
     public List<InstanceDetail> getInstances() {
@@ -63,7 +63,7 @@ public class ListInstancesResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 实例数量。 **取值范围**： 不涉及。
+     * **参数解释**： 实例数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return instanceNum
      */
     public Integer getInstanceNum() {

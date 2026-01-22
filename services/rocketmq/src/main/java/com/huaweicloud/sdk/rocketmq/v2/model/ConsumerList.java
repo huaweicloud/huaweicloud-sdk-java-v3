@@ -45,7 +45,7 @@ public class ConsumerList {
     }
 
     /**
-     * **参数解释**： Topic列表（当查询Topic消费“列表”时才显示此参数）。
+     * **参数解释**： Topic列表（当查询Topic消费“列表”时才显示此参数）。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return topics
      */
     public List<String> getTopics() {
@@ -62,7 +62,7 @@ public class ConsumerList {
     }
 
     /**
-     * **参数解释**： Topic总数（当查询Topic消费“列表”时才显示此参数）。 **取值范围**： 不涉及。
+     * **参数解释**： Topic总数（当查询Topic消费“列表”时才显示此参数）。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return total
      */
     public Integer getTotal() {

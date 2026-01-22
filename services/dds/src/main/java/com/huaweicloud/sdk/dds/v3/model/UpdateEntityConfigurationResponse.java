@@ -27,7 +27,7 @@ public class UpdateEntityConfigurationResponse extends SdkResponse {
     }
 
     /**
-     * 修改实例参数的异步任务ID。
+     * **参数解释：** 修改实例参数的异步任务ID。 **取值范围：** 不涉及。
      * @return jobId
      */
     public String getJobId() {
@@ -44,7 +44,7 @@ public class UpdateEntityConfigurationResponse extends SdkResponse {
     }
 
     /**
-     * 参数修改涉及范围（实例，组，节点）否需要重启。 - false不需要重启 - true需要重启。
+     * **参数解释：** 参数修改涉及范围（实例，组，节点）否需要重启。 **取值范围：** - 取值为false，不需要重启。 - 取值为true，需要重启。
      * @return restartRequired
      */
     public Boolean getRestartRequired() {

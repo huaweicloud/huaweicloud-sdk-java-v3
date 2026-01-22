@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * items
+ * **参数解释**： 规则体 **约束限制**： 不涉及
  */
 public class AddRuleAclDtoRules {
 
@@ -29,7 +29,7 @@ public class AddRuleAclDtoRules {
     private OrderRuleAclDto sequence;
 
     /**
-     * 地址类型，0表示ipv4，1表示ipv6
+     * **参数解释**： IP地址的互联网协议类型，用于指定IP地址的互联网协议，由客户指定 **约束限制**： 不涉及 **取值范围**： 0表示IPv4，1表示IPv6 **默认取值**： 不涉及
      */
     public static final class AddressTypeEnum {
 
@@ -115,7 +115,7 @@ public class AddRuleAclDtoRules {
     private Integer actionType;
 
     /**
-     * 规则启用状态，0表示禁用，1表示启用
+     * **参数解释**： 规则启用状态，用于区分规则是否启用 **约束限制**： 仅能使用数字0和1 **取值范围**： 0表示启用，1表示禁用 **默认取值**： 不涉及
      */
     public static final class StatusEnum {
 
@@ -215,7 +215,7 @@ public class AddRuleAclDtoRules {
     private Long longConnectTimeSecond;
 
     /**
-     * 是否支持长连接，0表示不支持长连接，1表示支持长连接
+     * **参数解释**： 用于表示是否支持长连接。 **约束限制**： 不涉及 **取值范围**： 0表示不支持，1表示支持 **默认取值**： 不涉及
      */
     public static final class LongConnectEnableEnum {
 
@@ -295,7 +295,7 @@ public class AddRuleAclDtoRules {
     private String description;
 
     /**
-     * 方向：0表示外到内，1表示内到外，规则type=0（互联网规则）或者type= 2（nat规则）时方向值必填
+     * **参数解释**： 规则方向，用于指定规则是从云上至云下，还是云下至云上 **约束限制**： 当规则type=0（互联网规则）或者type= 2（NAT规则）时方向值必填 **取值范围**： 0表示外到内（云下到云上），1表示内到外（云上到云下）， **默认取值**： 不涉及
      */
     public static final class DirectionEnum {
 
@@ -395,7 +395,7 @@ public class AddRuleAclDtoRules {
     }
 
     /**
-     * 规则名称
+     * **参数解释**： 规则名称，由用户定义，用于标识规则 **约束限制**： 字符串长度为0到255 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return name
      */
     public String getName() {
@@ -438,7 +438,7 @@ public class AddRuleAclDtoRules {
     }
 
     /**
-     * 地址类型，0表示ipv4，1表示ipv6
+     * **参数解释**： IP地址的互联网协议类型，用于指定IP地址的互联网协议，由客户指定 **约束限制**： 不涉及 **取值范围**： 0表示IPv4，1表示IPv6 **默认取值**： 不涉及
      * @return addressType
      */
     public AddressTypeEnum getAddressType() {
@@ -455,7 +455,7 @@ public class AddRuleAclDtoRules {
     }
 
     /**
-     * 规则动作，0表示允许通行（permit），1表示拒绝通行（deny）
+     * **参数解释**： 规则动作类型，用于区分规则对流量的动作 **约束限制**： 仅能使用数字0和1 **取值范围**： 0表示允许通行（permit），1表示拒绝通行（deny） **默认取值**： 不涉及
      * @return actionType
      */
     public Integer getActionType() {
@@ -472,7 +472,7 @@ public class AddRuleAclDtoRules {
     }
 
     /**
-     * 规则启用状态，0表示禁用，1表示启用
+     * **参数解释**： 规则启用状态，用于区分规则是否启用 **约束限制**： 仅能使用数字0和1 **取值范围**： 0表示启用，1表示禁用 **默认取值**： 不涉及
      * @return status
      */
     public StatusEnum getStatus() {
@@ -505,7 +505,7 @@ public class AddRuleAclDtoRules {
     }
 
     /**
-     * 规则应用列表，规则应用类型包括：“HTTP”，\"HTTPS\"，\"TLS1\"，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”，“BGP”等。
+     * **参数解释**： 规则应用协议列表 **约束限制**： 不涉及 **取值范围**： 规则应用类型包括：“HTTP”，\"HTTPS\"，\"TLS1\"，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”，“BGP”等。 **默认取值**： 不涉及
      * @return applications
      */
     public List<String> getApplications() {
@@ -522,7 +522,7 @@ public class AddRuleAclDtoRules {
     }
 
     /**
-     * 长连接时长
+     * **参数解释**： 长连接时长（s），用于表示流量产生会话保持的最大时长。 **约束限制**： 仅能为数字 **取值范围**： 1-86400000。 **默认取值**： 不涉及
      * @return longConnectTime
      */
     public Long getLongConnectTime() {
@@ -539,7 +539,7 @@ public class AddRuleAclDtoRules {
     }
 
     /**
-     * 长连接时长对应小时
+     * **参数解释**： 长连接时长对应小时数（h）。 **约束限制**： 仅能为数字 **取值范围**： 0-24000。 **默认取值**： 不涉及
      * @return longConnectTimeHour
      */
     public Long getLongConnectTimeHour() {
@@ -556,7 +556,7 @@ public class AddRuleAclDtoRules {
     }
 
     /**
-     * 长连接时长对应分钟
+     * **参数解释**： 长连接时长对应分钟数（min）。 **约束限制**： 仅能为数字 **取值范围**： 0-60。 **默认取值**： 不涉及
      * @return longConnectTimeMinute
      */
     public Long getLongConnectTimeMinute() {
@@ -573,7 +573,7 @@ public class AddRuleAclDtoRules {
     }
 
     /**
-     * 长连接时长秒
+     * **参数解释**： 长连接时长对应秒数（s）。 **约束限制**： 仅能为数字 **取值范围**： 0-60。 **默认取值**： 不涉及
      * @return longConnectTimeSecond
      */
     public Long getLongConnectTimeSecond() {
@@ -590,7 +590,7 @@ public class AddRuleAclDtoRules {
     }
 
     /**
-     * 是否支持长连接，0表示不支持长连接，1表示支持长连接
+     * **参数解释**： 用于表示是否支持长连接。 **约束限制**： 不涉及 **取值范围**： 0表示不支持，1表示支持 **默认取值**： 不涉及
      * @return longConnectEnable
      */
     public LongConnectEnableEnum getLongConnectEnable() {
@@ -607,7 +607,7 @@ public class AddRuleAclDtoRules {
     }
 
     /**
-     * 描述
+     * **参数解释**： 规则描述，用于描述规则的用途。 **约束限制**： 不涉及 **取值范围**： 长度在0-255之间 **默认取值**： 不涉及
      * @return description
      */
     public String getDescription() {
@@ -624,7 +624,7 @@ public class AddRuleAclDtoRules {
     }
 
     /**
-     * 方向：0表示外到内，1表示内到外，规则type=0（互联网规则）或者type= 2（nat规则）时方向值必填
+     * **参数解释**： 规则方向，用于指定规则是从云上至云下，还是云下至云上 **约束限制**： 当规则type=0（互联网规则）或者type= 2（NAT规则）时方向值必填 **取值范围**： 0表示外到内（云下到云上），1表示内到外（云上到云下）， **默认取值**： 不涉及
      * @return direction
      */
     public DirectionEnum getDirection() {

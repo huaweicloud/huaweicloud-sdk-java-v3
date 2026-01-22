@@ -565,11 +565,6 @@ public class DdsMeta {
             f -> f.withMarshaller(CancelScheduledTaskRequest::getJobId, CancelScheduledTaskRequest::setJobId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CancelScheduledTaskResponse::getBody, CancelScheduledTaskResponse::setBody));
 
         return builder.build();
     }
@@ -2441,6 +2436,11 @@ public class DdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTasksRequest::getStatus, ListTasksRequest::setStatus));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getId, ListTasksRequest::setId));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

@@ -86,7 +86,7 @@ public class ListAccessControlLogsRequest {
     private Integer limit;
 
     /**
-     * 日志类型包括：internet，vpc，nat
+     * **参数解释**： 日志类型 **约束限制**： 不涉及 **取值范围**： internet为南北向日志、nat为nat场景日志，vpc为东西向日志，vgw为vgw场景日志 **默认取值**： 不涉及
      */
     public static final class LogTypeEnum {
 
@@ -222,7 +222,7 @@ public class ListAccessControlLogsRequest {
     }
 
     /**
-     * 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
+     * 防火墙ID，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
      * @return fwInstanceId
      */
     public String getFwInstanceId() {
@@ -239,7 +239,7 @@ public class ListAccessControlLogsRequest {
     }
 
     /**
-     * 规则id，可通过[查询防护规则接口](ListAclRules.xml)查询获得，通过返回值中的data.records.rule_id（.表示各对象之间层级的区分）获得。
+     * 规则ID，可通过[查询防护规则接口](ListAclRules.xml)查询获得，通过返回值中的data.records.rule_id（.表示各对象之间层级的区分）获得。
      * @return ruleId
      */
     public String getRuleId() {
@@ -358,7 +358,7 @@ public class ListAccessControlLogsRequest {
     }
 
     /**
-     * 协议类型，包含TCP, UDP,ICMP,ICMPV6等。
+     * 协议类型，包含TCP, UDP，ICMP，ICMPV6等。
      * @return protocol
      */
     public String getProtocol() {
@@ -375,7 +375,7 @@ public class ListAccessControlLogsRequest {
     }
 
     /**
-     * 规则应用类型包括：“HTTP”，\"HTTPS\"，\"TLS1\"，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”,“BGP”等。
+     * 规则应用类型包括：“HTTP”，“HTTPS”，“TLS1”，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”,“BGP”等。
      * @return app
      */
     public String getApp() {
@@ -460,7 +460,7 @@ public class ListAccessControlLogsRequest {
     }
 
     /**
-     * 日志类型包括：internet，vpc，nat
+     * **参数解释**： 日志类型 **约束限制**： 不涉及 **取值范围**： internet为南北向日志、nat为nat场景日志，vpc为东西向日志，vgw为vgw场景日志 **默认取值**： 不涉及
      * @return logType
      */
     public LogTypeEnum getLogType() {

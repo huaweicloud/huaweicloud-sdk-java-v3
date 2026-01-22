@@ -26,7 +26,7 @@ public class IpsRuleVO {
     private String createTime;
 
     /**
-     * Gets or Sets defaultStatus
+     * 默认状态
      */
     public static final class DefaultStatusEnum {
 
@@ -124,7 +124,7 @@ public class IpsRuleVO {
     private String ipsCve;
 
     /**
-     * Gets or Sets ipsGroup
+     * ips组，使用ips规则拦截模式区分，包含，0：观察模式，1：严格模式，2：中等模式，3：宽松模式
      */
     public static final class IpsGroupEnum {
 
@@ -216,7 +216,7 @@ public class IpsRuleVO {
     private String ipsId;
 
     /**
-     * Gets or Sets ipsLevel
+     * ips严重等级，  ips严重等级，包含CRITICAL、HIGH、MEDIUM、LOW
      */
     public static final class IpsLevelEnum {
 
@@ -319,7 +319,7 @@ public class IpsRuleVO {
     private String ipsRulesType;
 
     /**
-     * Gets or Sets ipsStatus
+     * ips规则状态，包含观察：OBSERVE、拦截：ENABLE、禁用：CLOSE、恢复默认：DEFAULT、全局恢复默认：ALL_DEFAULT
      */
     public static final class IpsStatusEnum {
 
@@ -417,7 +417,7 @@ public class IpsRuleVO {
     }
 
     /**
-     * Get affectedApplication
+     * 受影响对象，可包含如下：Others、Sun、Apache、IBM、VMware、WordPress、Adobe、Oracle、Google Chrome等
      * @return affectedApplication
      */
     public String getAffectedApplication() {
@@ -434,7 +434,7 @@ public class IpsRuleVO {
     }
 
     /**
-     * Get createTime
+     * ips规则创建的年份
      * @return createTime
      */
     public String getCreateTime() {
@@ -451,7 +451,7 @@ public class IpsRuleVO {
     }
 
     /**
-     * Get defaultStatus
+     * 默认状态
      * @return defaultStatus
      */
     public DefaultStatusEnum getDefaultStatus() {
@@ -468,7 +468,7 @@ public class IpsRuleVO {
     }
 
     /**
-     * Get ipsCve
+     * cve id
      * @return ipsCve
      */
     public String getIpsCve() {
@@ -485,7 +485,7 @@ public class IpsRuleVO {
     }
 
     /**
-     * Get ipsGroup
+     * ips组，使用ips规则拦截模式区分，包含，0：观察模式，1：严格模式，2：中等模式，3：宽松模式
      * @return ipsGroup
      */
     public IpsGroupEnum getIpsGroup() {
@@ -502,7 +502,7 @@ public class IpsRuleVO {
     }
 
     /**
-     * Get ipsId
+     * ips规则id
      * @return ipsId
      */
     public String getIpsId() {
@@ -519,7 +519,7 @@ public class IpsRuleVO {
     }
 
     /**
-     * Get ipsLevel
+     * ips严重等级，  ips严重等级，包含CRITICAL、HIGH、MEDIUM、LOW
      * @return ipsLevel
      */
     public IpsLevelEnum getIpsLevel() {
@@ -536,7 +536,7 @@ public class IpsRuleVO {
     }
 
     /**
-     * Get ipsName
+     * ips规则名称
      * @return ipsName
      */
     public String getIpsName() {
@@ -553,7 +553,7 @@ public class IpsRuleVO {
     }
 
     /**
-     * Get ipsRulesType
+     * ips规则类型，包括漏洞扫描、黑客工具、特洛伊木马等
      * @return ipsRulesType
      */
     public String getIpsRulesType() {
@@ -570,7 +570,7 @@ public class IpsRuleVO {
     }
 
     /**
-     * Get ipsStatus
+     * ips规则状态，包含观察：OBSERVE、拦截：ENABLE、禁用：CLOSE、恢复默认：DEFAULT、全局恢复默认：ALL_DEFAULT
      * @return ipsStatus
      */
     public IpsStatusEnum getIpsStatus() {

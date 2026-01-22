@@ -22,7 +22,7 @@ public class UpdateLogConfigResponse extends SdkResponse {
     }
 
     /**
-     * 更新日志配置返回值，为防火墙id
+     * 更新日志配置返回值，为防火墙ID
      * @return data
      */
     public String getData() {

@@ -127,7 +127,7 @@ public class ResizeInstanceReq {
     }
 
     /**
-     * 规格变更后的消息存储空间，单位：GB。
+     * 规格变更后的消息存储空间，单位：GB。注意：磁盘容量仅支持设置为100的整数倍。
      * @return newStorageSpace
      */
     public Integer getNewStorageSpace() {

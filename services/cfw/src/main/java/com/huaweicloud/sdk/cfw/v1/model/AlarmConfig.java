@@ -76,7 +76,7 @@ public class AlarmConfig {
     }
 
     /**
-     * 账号名称
+     * Get accountName
      * @return accountName
      */
     public String getAccountName() {
@@ -93,7 +93,7 @@ public class AlarmConfig {
     }
 
     /**
-     * 告警id
+     * Get alarmId
      * @return alarmId
      */
     public String getAlarmId() {
@@ -110,7 +110,7 @@ public class AlarmConfig {
     }
 
     /**
-     * 告警周期，0：全天，1：8时到22时
+     * 告警周期，0：8时到22时，1：全天
      * @return alarmTimePeriod
      */
     public Integer getAlarmTimePeriod() {
@@ -178,7 +178,7 @@ public class AlarmConfig {
     }
 
     /**
-     * 告警频次时间范围
+     * 告警频次时间范围，以分钟为单位
      * @return frequencyTime
      */
     public Integer getFrequencyTime() {
@@ -195,7 +195,7 @@ public class AlarmConfig {
     }
 
     /**
-     * 告警语言
+     * 告警语言，zh-cn为中文，en-us为英文
      * @return language
      */
     public String getLanguage() {
@@ -212,7 +212,7 @@ public class AlarmConfig {
     }
 
     /**
-     * 告警主题名称
+     * 通知群组名称
      * @return name
      */
     public String getName() {
@@ -229,7 +229,7 @@ public class AlarmConfig {
     }
 
     /**
-     * 告警等级
+     * 告警等级，当type为0和4时，severity为CRITICAL,HIGH,MEDIUM,LOW四种等级的组合字符串，当type为2时，severity固定为3
      * @return severity
      */
     public String getSeverity() {
@@ -246,7 +246,7 @@ public class AlarmConfig {
     }
 
     /**
-     * 告警urn
+     * 告警topic的urn
      * @return topicUrn
      */
     public String getTopicUrn() {
@@ -263,7 +263,7 @@ public class AlarmConfig {
     }
 
     /**
-     * 用户名称
+     * 用户名称，为cfw
      * @return username
      */
     public String getUsername() {

@@ -29,7 +29,7 @@ public class CreateEWFirewallInspectVpcResp {
     }
 
     /**
-     * 引流VPC的ID
+     * **参数解释**： 引流VPC的ID **取值范围**： 不涉及
      * @return vpcId
      */
     public String getVpcId() {
@@ -62,7 +62,7 @@ public class CreateEWFirewallInspectVpcResp {
     }
 
     /**
-     * 创建的引流VPC的子网ID列表
+     * **参数解释**： 创建的引流VPC的子网ID列表 **取值范围**： 不涉及
      * @return subnetIds
      */
     public List<String> getSubnetIds() {

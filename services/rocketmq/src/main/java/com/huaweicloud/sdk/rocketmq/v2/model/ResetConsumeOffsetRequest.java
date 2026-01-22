@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.rocketmq.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -16,74 +11,10 @@ import java.util.function.Consumer;
  */
 public class ResetConsumeOffsetRequest {
 
-    /**
-     * 引擎类型：reliability。
-     */
-    public static final class EngineEnum {
-
-        /**
-         * Enum RELIABILITY for value: "reliability"
-         */
-        public static final EngineEnum RELIABILITY = new EngineEnum("reliability");
-
-        private static final Map<String, EngineEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, EngineEnum> createStaticFields() {
-            Map<String, EngineEnum> map = new HashMap<>();
-            map.put("reliability", RELIABILITY);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        EngineEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static EngineEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineEnum(value));
-        }
-
-        public static EngineEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof EngineEnum) {
-                return this.value.equals(((EngineEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine")
 
-    private EngineEnum engine;
+    private String engine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
@@ -91,29 +22,29 @@ public class ResetConsumeOffsetRequest {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "group_id")
+    @JsonProperty(value = "group")
 
-    private String groupId;
+    private String group;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private ResetConsumeOffsetReq body;
 
-    public ResetConsumeOffsetRequest withEngine(EngineEnum engine) {
+    public ResetConsumeOffsetRequest withEngine(String engine) {
         this.engine = engine;
         return this;
     }
 
     /**
-     * 引擎类型：reliability。
+     * **参数解释**： 引擎。 **约束限制**： 不涉及。 **取值范围**： - rocketmq：RocketMQ消息引擎。 - reliability：RocketMQ消息引擎别称。 **默认取值**： 不涉及。
      * @return engine
      */
-    public EngineEnum getEngine() {
+    public String getEngine() {
         return engine;
     }
 
-    public void setEngine(EngineEnum engine) {
+    public void setEngine(String engine) {
         this.engine = engine;
     }
 
@@ -123,7 +54,7 @@ public class ResetConsumeOffsetRequest {
     }
 
     /**
-     * 实例ID。
+     * **参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -134,21 +65,21 @@ public class ResetConsumeOffsetRequest {
         this.instanceId = instanceId;
     }
 
-    public ResetConsumeOffsetRequest withGroupId(String groupId) {
-        this.groupId = groupId;
+    public ResetConsumeOffsetRequest withGroup(String group) {
+        this.group = group;
         return this;
     }
 
     /**
-     * 消费组名称。
-     * @return groupId
+     * **参数解释**： 消费组名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return group
      */
-    public String getGroupId() {
-        return groupId;
+    public String getGroup() {
+        return group;
     }
 
-    public void setGroupId(String groupId) {
-        this.groupId = groupId;
+    public void setGroup(String group) {
+        this.group = group;
     }
 
     public ResetConsumeOffsetRequest withBody(ResetConsumeOffsetReq body) {
@@ -187,12 +118,12 @@ public class ResetConsumeOffsetRequest {
         }
         ResetConsumeOffsetRequest that = (ResetConsumeOffsetRequest) obj;
         return Objects.equals(this.engine, that.engine) && Objects.equals(this.instanceId, that.instanceId)
-            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.body, that.body);
+            && Objects.equals(this.group, that.group) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(engine, instanceId, groupId, body);
+        return Objects.hash(engine, instanceId, group, body);
     }
 
     @Override
@@ -201,7 +132,7 @@ public class ResetConsumeOffsetRequest {
         sb.append("class ResetConsumeOffsetRequest {\n");
         sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    group: ").append(toIndentedString(group)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

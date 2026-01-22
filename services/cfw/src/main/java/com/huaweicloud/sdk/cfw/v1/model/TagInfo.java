@@ -29,7 +29,7 @@ public class TagInfo {
     }
 
     /**
-     * 标签键
+     * **参数解释**： 标签键 **约束限制**： 不涉及
      * @return key
      */
     public String getKey() {
@@ -62,7 +62,7 @@ public class TagInfo {
     }
 
     /**
-     * 标签值列表
+     * **参数解释**： 标签值列表 **约束限制**： 不涉及
      * @return values
      */
     public List<String> getValues() {

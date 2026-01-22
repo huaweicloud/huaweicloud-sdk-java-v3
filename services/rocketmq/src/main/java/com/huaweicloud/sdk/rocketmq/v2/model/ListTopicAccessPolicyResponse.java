@@ -52,7 +52,7 @@ public class ListTopicAccessPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 用户列表。
+     * **参数解释**： 用户列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return policies
      */
     public List<ListAccessPolicyRespPolicies> getPolicies() {
@@ -69,7 +69,7 @@ public class ListTopicAccessPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 总用户个数。
+     * **参数解释**： 总用户个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return total
      */
     public BigDecimal getTotal() {
@@ -86,7 +86,7 @@ public class ListTopicAccessPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 主题或消费组名称。
+     * **参数解释**： 主题或消费组名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return name
      */
     public String getName() {

@@ -135,7 +135,7 @@ public class AdvancedIpsRuleDto {
     }
 
     /**
-     * 开关状态：0表示关闭、1表示开启
+     * 频率ips规则状态，0表示关闭，1表示打开
      * minimum: 0
      * maximum: 1
      * @return status

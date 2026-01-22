@@ -48,7 +48,7 @@ public class AddAddressItemsInfoDtoAddressItems {
     }
 
     /**
-     * ip
+     * ip地址
      * @return address
      */
     public String getAddress() {

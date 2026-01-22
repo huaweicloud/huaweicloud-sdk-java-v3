@@ -150,7 +150,7 @@ public class AvailabilityZone {
     }
 
     /**
-     * **参数解释**：可用区的产品编码，用于控制台购买ELB前查询定价，仅边缘场景有效。  **取值范围**：不涉及 [不支持该字段，请勿使用。](tag:dt,hcso_dt)
+     * **参数解释**：可用区的产品编码，用于控制台购买ELB前查询定价，仅边缘场景有效。  **取值范围**：不涉及  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
      * @return specCode
      */
     public String getSpecCode() {

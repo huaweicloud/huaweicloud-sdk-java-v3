@@ -46,7 +46,7 @@ public class ListDnsServersResponse extends SdkResponse {
     }
 
     /**
-     * dns服务器列表
+     * **参数解释**： dns服务器列表 **取值范围**： 不涉及
      * @return data
      */
     public List<DnsServersResponseDTO> getData() {
@@ -63,7 +63,7 @@ public class ListDnsServersResponse extends SdkResponse {
     }
 
     /**
-     * dns服务器总数
+     * **参数解释**： dns服务器总数 **取值范围**： 不涉及
      * @return total
      */
     public Integer getTotal() {

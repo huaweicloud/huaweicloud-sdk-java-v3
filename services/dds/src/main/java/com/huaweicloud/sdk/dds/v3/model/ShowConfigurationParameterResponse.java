@@ -60,7 +60,7 @@ public class ShowConfigurationParameterResponse extends SdkResponse {
     }
 
     /**
-     * 参数模板ID。
+     * **参数解释：** 参数模板ID。 **取值范围：** 不涉及。
      * @return id
      */
     public String getId() {
@@ -77,7 +77,7 @@ public class ShowConfigurationParameterResponse extends SdkResponse {
     }
 
     /**
-     * 参数模板名称。
+     * **参数解释：** 参数模板名称。 **取值范围：** 不涉及。
      * @return name
      */
     public String getName() {
@@ -94,7 +94,7 @@ public class ShowConfigurationParameterResponse extends SdkResponse {
     }
 
     /**
-     * 数据库版本。
+     * **参数解释：** 数据库版本。 **取值范围：** 不涉及。
      * @return datastoreVersion
      */
     public String getDatastoreVersion() {
@@ -111,7 +111,7 @@ public class ShowConfigurationParameterResponse extends SdkResponse {
     }
 
     /**
-     * 数据库类型。
+     * **参数解释：** 数据库类型。 **取值范围：** 不涉及。
      * @return datastoreName
      */
     public String getDatastoreName() {
@@ -128,7 +128,7 @@ public class ShowConfigurationParameterResponse extends SdkResponse {
     }
 
     /**
-     * 参数模板描述。
+     * **参数解释：** 参数模板描述。 **取值范围：** 不涉及。
      * @return description
      */
     public String getDescription() {
@@ -145,7 +145,7 @@ public class ShowConfigurationParameterResponse extends SdkResponse {
     }
 
     /**
-     * 创建时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * **参数解释：** 创建时间，格式为“yyyy-MM-ddTHH:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量。 **取值范围：** 不涉及。
      * @return created
      */
     public String getCreated() {
@@ -162,7 +162,7 @@ public class ShowConfigurationParameterResponse extends SdkResponse {
     }
 
     /**
-     * 更新时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * **参数解释：** 更新时间，格式为“yyyy-MM-ddTHH:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量。 **取值范围：** 不涉及。
      * @return updated
      */
     public String getUpdated() {
@@ -196,7 +196,7 @@ public class ShowConfigurationParameterResponse extends SdkResponse {
     }
 
     /**
-     * 参数对象，用户基于默认参数模板自定义的参数配置。
+     * **参数解释：** 参数对象，用户基于默认参数模板自定义的参数配置。 **取值范围：** 不涉及。
      * @return parameters
      */
     public List<ConfigurationParametersResult> getParameters() {

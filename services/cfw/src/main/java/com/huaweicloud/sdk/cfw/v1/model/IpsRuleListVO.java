@@ -49,7 +49,7 @@ public class IpsRuleListVO {
     }
 
     /**
-     * Get fwInstanceId
+     * 防火墙ID
      * @return fwInstanceId
      */
     public String getFwInstanceId() {
@@ -66,7 +66,7 @@ public class IpsRuleListVO {
     }
 
     /**
-     * Get limit
+     * 每页显示个数，范围为1-1024
      * @return limit
      */
     public Integer getLimit() {
@@ -83,7 +83,7 @@ public class IpsRuleListVO {
     }
 
     /**
-     * Get objectId
+     * 防护对象id
      * @return objectId
      */
     public String getObjectId() {
@@ -100,7 +100,7 @@ public class IpsRuleListVO {
     }
 
     /**
-     * Get offset
+     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
      * @return offset
      */
     public Integer getOffset() {
@@ -133,7 +133,7 @@ public class IpsRuleListVO {
     }
 
     /**
-     * Get records
+     * 查询ips规则列表
      * @return records
      */
     public List<IpsRuleVO> getRecords() {
@@ -150,7 +150,7 @@ public class IpsRuleListVO {
     }
 
     /**
-     * Get total
+     * 查询ips规则总数
      * @return total
      */
     public Integer getTotal() {

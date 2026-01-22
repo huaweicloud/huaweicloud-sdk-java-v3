@@ -16,13 +16,18 @@ public class ShowRabbitMqProductCoresResponse extends SdkResponse {
 
     private Integer coreNum;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_extend_storage_space")
+
+    private Integer totalExtendStorageSpace;
+
     public ShowRabbitMqProductCoresResponse withCoreNum(Integer coreNum) {
         this.coreNum = coreNum;
         return this;
     }
 
     /**
-     * 核数
+     * **参数解释**： 核数。 **取值范围**： 不涉及。
      * @return coreNum
      */
     public Integer getCoreNum() {
@@ -31,6 +36,23 @@ public class ShowRabbitMqProductCoresResponse extends SdkResponse {
 
     public void setCoreNum(Integer coreNum) {
         this.coreNum = coreNum;
+    }
+
+    public ShowRabbitMqProductCoresResponse withTotalExtendStorageSpace(Integer totalExtendStorageSpace) {
+        this.totalExtendStorageSpace = totalExtendStorageSpace;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 预估存储空间，当填写的broker_num小于等于当前实例真实值时，显示为当前实例的存储空间。如果填写的broker_num大于当前实例真实值时，显示为所填写broker_num时实例的预估存储空间。 **取值范围**： 不涉及。
+     * @return totalExtendStorageSpace
+     */
+    public Integer getTotalExtendStorageSpace() {
+        return totalExtendStorageSpace;
+    }
+
+    public void setTotalExtendStorageSpace(Integer totalExtendStorageSpace) {
+        this.totalExtendStorageSpace = totalExtendStorageSpace;
     }
 
     @Override
@@ -42,12 +64,13 @@ public class ShowRabbitMqProductCoresResponse extends SdkResponse {
             return false;
         }
         ShowRabbitMqProductCoresResponse that = (ShowRabbitMqProductCoresResponse) obj;
-        return Objects.equals(this.coreNum, that.coreNum);
+        return Objects.equals(this.coreNum, that.coreNum)
+            && Objects.equals(this.totalExtendStorageSpace, that.totalExtendStorageSpace);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(coreNum);
+        return Objects.hash(coreNum, totalExtendStorageSpace);
     }
 
     @Override
@@ -55,6 +78,7 @@ public class ShowRabbitMqProductCoresResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowRabbitMqProductCoresResponse {\n");
         sb.append("    coreNum: ").append(toIndentedString(coreNum)).append("\n");
+        sb.append("    totalExtendStorageSpace: ").append(toIndentedString(totalExtendStorageSpace)).append("\n");
         sb.append("}");
         return sb.toString();
     }

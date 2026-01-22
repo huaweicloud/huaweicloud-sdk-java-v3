@@ -20,14 +20,14 @@ public class ListResourceTagsResponse extends SdkResponse {
     private String data;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sys_tags")
-
-    private List<ResourceTag> sysTags = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<ResourceTag> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sys_tags")
+
+    private List<ResourceTag> sysTags = null;
 
     public ListResourceTagsResponse withData(String data) {
         this.data = data;
@@ -44,6 +44,39 @@ public class ListResourceTagsResponse extends SdkResponse {
 
     public void setData(String data) {
         this.data = data;
+    }
+
+    public ListResourceTagsResponse withTags(List<ResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public ListResourceTagsResponse addTagsItem(ResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ListResourceTagsResponse withTags(Consumer<List<ResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 资源标签列表
+     * @return tags
+     */
+    public List<ResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ResourceTag> tags) {
+        this.tags = tags;
     }
 
     public ListResourceTagsResponse withSysTags(List<ResourceTag> sysTags) {
@@ -79,39 +112,6 @@ public class ListResourceTagsResponse extends SdkResponse {
         this.sysTags = sysTags;
     }
 
-    public ListResourceTagsResponse withTags(List<ResourceTag> tags) {
-        this.tags = tags;
-        return this;
-    }
-
-    public ListResourceTagsResponse addTagsItem(ResourceTag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        this.tags.add(tagsItem);
-        return this;
-    }
-
-    public ListResourceTagsResponse withTags(Consumer<List<ResourceTag>> tagsSetter) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        tagsSetter.accept(this.tags);
-        return this;
-    }
-
-    /**
-     * Get tags
-     * @return tags
-     */
-    public List<ResourceTag> getTags() {
-        return tags;
-    }
-
-    public void setTags(List<ResourceTag> tags) {
-        this.tags = tags;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -121,13 +121,13 @@ public class ListResourceTagsResponse extends SdkResponse {
             return false;
         }
         ListResourceTagsResponse that = (ListResourceTagsResponse) obj;
-        return Objects.equals(this.data, that.data) && Objects.equals(this.sysTags, that.sysTags)
-            && Objects.equals(this.tags, that.tags);
+        return Objects.equals(this.data, that.data) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.sysTags, that.sysTags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(data, sysTags, tags);
+        return Objects.hash(data, tags, sysTags);
     }
 
     @Override
@@ -135,8 +135,8 @@ public class ListResourceTagsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListResourceTagsResponse {\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
-        sb.append("    sysTags: ").append(toIndentedString(sysTags)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    sysTags: ").append(toIndentedString(sysTags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

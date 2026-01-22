@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * vpc protects vo
+ * **参数解释**： vpc protects vo **取值范围**： 不涉及
  */
 public class VPCProtectsVo {
 
@@ -54,7 +54,7 @@ public class VPCProtectsVo {
     }
 
     /**
-     * 总防护VPC数
+     * **参数解释**： 总防护VPC数 **取值范围**： 不涉及
      * @return total
      */
     public Integer getTotal() {
@@ -71,7 +71,7 @@ public class VPCProtectsVo {
     }
 
     /**
-     * 防火墙东西向防护可进行跨账号防护VPC，self_total表示本项目防护VPC总数。
+     * **参数解释**： 防火墙东西向防护可进行跨账号防护VPC，self_total表示本项目防护VPC总数。 **取值范围**： 不涉及
      * @return selfTotal
      */
     public Integer getSelfTotal() {
@@ -88,7 +88,7 @@ public class VPCProtectsVo {
     }
 
     /**
-     * 防火墙东西向防护可进行跨账号防护VPC，other_total表示其他项目防护VPC数
+     * **参数解释**： 防火墙东西向防护可进行跨账号防护VPC，other_total表示其他项目防护VPC数 **取值范围**： 不涉及
      * @return otherTotal
      */
     public Integer getOtherTotal() {
@@ -121,7 +121,7 @@ public class VPCProtectsVo {
     }
 
     /**
-     * 防火墙东西向防护可进行跨账号防护VPC，protect_vpcs指的是总体防护VPC列表
+     * **参数解释**： 防火墙东西向防护可进行跨账号防护VPC，protect_vpcs表示总体防护VPC列表 **取值范围**： 不涉及
      * @return protectVpcs
      */
     public List<VpcAttachmentDetail> getProtectVpcs() {
@@ -154,7 +154,7 @@ public class VPCProtectsVo {
     }
 
     /**
-     * 防火墙东西向防护可进行跨账号防护VPC，self_protect_vpcs指的是本项目防护VPC列表
+     * **参数解释**： 防火墙东西向防护可进行跨账号防护VPC，self_protect_vpcs表示本项目防护VPC列表 **取值范围**： 不涉及
      * @return selfProtectVpcs
      */
     public List<VpcAttachmentDetail> getSelfProtectVpcs() {
@@ -187,7 +187,7 @@ public class VPCProtectsVo {
     }
 
     /**
-     * 防火墙东西向防护可进行跨账号防护VPC，other_protect_vpcs指的是其他项目防护VPC列表
+     * **参数解释**： 防火墙东西向防护可进行跨账号防护VPC，other_protect_vpcs表示其他项目防护VPC列表 **取值范围**： 不涉及
      * @return otherProtectVpcs
      */
     public List<VpcAttachmentDetail> getOtherProtectVpcs() {
@@ -204,7 +204,7 @@ public class VPCProtectsVo {
     }
 
     /**
-     * 租户的所有VPC资产数量
+     * **参数解释**： 租户的所有VPC资产数量 **取值范围**： 不涉及
      * @return totalAssets
      */
     public Integer getTotalAssets() {

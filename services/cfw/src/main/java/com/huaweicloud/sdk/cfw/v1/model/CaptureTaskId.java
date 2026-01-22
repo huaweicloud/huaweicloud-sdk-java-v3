@@ -26,7 +26,7 @@ public class CaptureTaskId {
     }
 
     /**
-     * 防火墙id
+     * 防火墙ID
      * @return id
      */
     public String getId() {

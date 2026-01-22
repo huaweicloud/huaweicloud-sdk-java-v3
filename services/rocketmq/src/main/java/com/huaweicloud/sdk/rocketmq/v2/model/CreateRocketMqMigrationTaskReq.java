@@ -16,12 +16,12 @@ import java.util.function.Consumer;
 public class CreateRocketMqMigrationTaskReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "topicConfigTable")
+    @JsonProperty(value = "topic_config_table")
 
     private Map<String, MigrationRocketMqTopicConfig> topicConfigTable = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "subscriptionGroupTable")
+    @JsonProperty(value = "subscription_group_table")
 
     private Map<String, MigrationRocketMqSubscriptionGroup> subscriptionGroupTable = null;
 
@@ -70,7 +70,7 @@ public class CreateRocketMqMigrationTaskReq {
     }
 
     /**
-     * RocketMQ Topic 元数据，键为Topic名，值为topic配置，迁移任务类型为自建RocketMQ上云(rocketmq)时必填。
+     * **参数解释**： RocketMQ Topic 元数据，键为Topic名，值为topic配置，迁移任务类型为自建RocketMQ上云(rocketmq)时必填。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return topicConfigTable
      */
     public Map<String, MigrationRocketMqTopicConfig> getTopicConfigTable() {
@@ -106,7 +106,7 @@ public class CreateRocketMqMigrationTaskReq {
     }
 
     /**
-     * RocketMQ消费组元数据，键为消费组名，值为消费组配置，迁移任务类型为自建RocketMQ上云(rocketmq)时必填。
+     * **参数解释**： RocketMQ消费组元数据，键为消费组名，值为消费组配置，迁移任务类型为自建RocketMQ上云(rocketmq)时必填。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return subscriptionGroupTable
      */
     public Map<String, MigrationRocketMqSubscriptionGroup> getSubscriptionGroupTable() {
@@ -139,7 +139,7 @@ public class CreateRocketMqMigrationTaskReq {
     }
 
     /**
-     * RabbitMQ vhost元数据列表，迁移任务类型为自建RabbitMQ上云(rabbitToRocket)时必填。
+     * **参数解释**： RabbitMQ vhost元数据列表，迁移任务类型为自建RabbitMQ上云(rabbitToRocket)时必填。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return vhosts
      */
     public List<MigrationRabbitVhostMetadata> getVhosts() {
@@ -172,7 +172,7 @@ public class CreateRocketMqMigrationTaskReq {
     }
 
     /**
-     * RabbitMQ队列元数据列表，迁移任务类型为自建RabbitMQ上云(rabbitToRocket)时必填。
+     * **参数解释**： RabbitMQ队列元数据列表，迁移任务类型为自建RabbitMQ上云(rabbitToRocket)时必填。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return queues
      */
     public List<MigrationRabbitQueueMetadata> getQueues() {
@@ -206,7 +206,7 @@ public class CreateRocketMqMigrationTaskReq {
     }
 
     /**
-     * RabbitMQ交换机元数据列表，迁移任务类型为自建RabbitMQ上云(rabbitToRocket)时必填。
+     * **参数解释**： RabbitMQ交换机元数据列表，迁移任务类型为自建RabbitMQ上云(rabbitToRocket)时必填。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return exchanges
      */
     public List<MigrationRabbitExchangeMetadata> getExchanges() {
@@ -239,7 +239,7 @@ public class CreateRocketMqMigrationTaskReq {
     }
 
     /**
-     * RabbitMQ binding元数据列表，迁移任务类型为自建RabbitMQ上云(rabbitToRocket)时必填。
+     * **参数解释**： RabbitMQ binding元数据列表，迁移任务类型为自建RabbitMQ上云(rabbitToRocket)时必填。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return bindings
      */
     public List<MigrationRabbitBindingMetadata> getBindings() {

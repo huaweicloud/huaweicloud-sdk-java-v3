@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,22 +17,38 @@ public class ListRegionsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private Object data;
+    private List<IpRegionResponseBodyData> data = null;
 
-    public ListRegionsResponse withData(Object data) {
+    public ListRegionsResponse withData(List<IpRegionResponseBodyData> data) {
         this.data = data;
         return this;
     }
 
+    public ListRegionsResponse addDataItem(IpRegionResponseBodyData dataItem) {
+        if (this.data == null) {
+            this.data = new ArrayList<>();
+        }
+        this.data.add(dataItem);
+        return this;
+    }
+
+    public ListRegionsResponse withData(Consumer<List<IpRegionResponseBodyData>> dataSetter) {
+        if (this.data == null) {
+            this.data = new ArrayList<>();
+        }
+        dataSetter.accept(this.data);
+        return this;
+    }
+
     /**
-     * region列表
+     * **参数解释**： 地域列表 **取值范围**： 不涉及 
      * @return data
      */
-    public Object getData() {
+    public List<IpRegionResponseBodyData> getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(List<IpRegionResponseBodyData> data) {
         this.data = data;
     }
 

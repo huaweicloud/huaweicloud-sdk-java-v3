@@ -14,16 +14,16 @@ public class UpdateObjectConfigDescRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ObjectInfoDto body;
+    private UpdateObjectConfigDesc body;
 
-    public UpdateObjectConfigDescRequest withBody(ObjectInfoDto body) {
+    public UpdateObjectConfigDescRequest withBody(UpdateObjectConfigDesc body) {
         this.body = body;
         return this;
     }
 
-    public UpdateObjectConfigDescRequest withBody(Consumer<ObjectInfoDto> bodySetter) {
+    public UpdateObjectConfigDescRequest withBody(Consumer<UpdateObjectConfigDesc> bodySetter) {
         if (this.body == null) {
-            this.body = new ObjectInfoDto();
+            this.body = new UpdateObjectConfigDesc();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class UpdateObjectConfigDescRequest {
      * Get body
      * @return body
      */
-    public ObjectInfoDto getBody() {
+    public UpdateObjectConfigDesc getBody() {
         return body;
     }
 
-    public void setBody(ObjectInfoDto body) {
+    public void setBody(UpdateObjectConfigDesc body) {
         this.body = body;
     }
 

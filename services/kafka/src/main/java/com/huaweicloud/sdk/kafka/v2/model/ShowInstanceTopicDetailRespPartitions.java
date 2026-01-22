@@ -26,17 +26,17 @@ public class ShowInstanceTopicDetailRespPartitions {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "leo")
 
-    private Long leo;
+    private Integer leo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hw")
 
-    private Long hw;
+    private Integer hw;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lso")
 
-    private Long lso;
+    private Integer lso;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_update_timestamp")
@@ -82,7 +82,7 @@ public class ShowInstanceTopicDetailRespPartitions {
         this.leader = leader;
     }
 
-    public ShowInstanceTopicDetailRespPartitions withLeo(Long leo) {
+    public ShowInstanceTopicDetailRespPartitions withLeo(Integer leo) {
         this.leo = leo;
         return this;
     }
@@ -91,15 +91,15 @@ public class ShowInstanceTopicDetailRespPartitions {
      * **参数解释**： 分区leader副本的LEO（Log End Offset）。 **取值范围**： 不涉及
      * @return leo
      */
-    public Long getLeo() {
+    public Integer getLeo() {
         return leo;
     }
 
-    public void setLeo(Long leo) {
+    public void setLeo(Integer leo) {
         this.leo = leo;
     }
 
-    public ShowInstanceTopicDetailRespPartitions withHw(Long hw) {
+    public ShowInstanceTopicDetailRespPartitions withHw(Integer hw) {
         this.hw = hw;
         return this;
     }
@@ -108,15 +108,15 @@ public class ShowInstanceTopicDetailRespPartitions {
      * **参数解释**： 分区高水位（HW，High Watermark）。 **取值范围**： 不涉及
      * @return hw
      */
-    public Long getHw() {
+    public Integer getHw() {
         return hw;
     }
 
-    public void setHw(Long hw) {
+    public void setHw(Integer hw) {
         this.hw = hw;
     }
 
-    public ShowInstanceTopicDetailRespPartitions withLso(Long lso) {
+    public ShowInstanceTopicDetailRespPartitions withLso(Integer lso) {
         this.lso = lso;
         return this;
     }
@@ -125,11 +125,11 @@ public class ShowInstanceTopicDetailRespPartitions {
      * **参数解释**： 分区leader副本的LSO（Log Start Offset）。 **取值范围**： 不涉及
      * @return lso
      */
-    public Long getLso() {
+    public Integer getLso() {
         return lso;
     }
 
-    public void setLso(Long lso) {
+    public void setLso(Integer lso) {
         this.lso = lso;
     }
 

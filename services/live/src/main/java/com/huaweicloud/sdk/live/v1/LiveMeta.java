@@ -9,6 +9,9 @@ import com.huaweicloud.sdk.live.v1.model.AddFlowOutputsRequest;
 import com.huaweicloud.sdk.live.v1.model.BatchShowIpBelongsRequest;
 import com.huaweicloud.sdk.live.v1.model.BatchShowIpBelongsResponse;
 import com.huaweicloud.sdk.live.v1.model.CallbackUrl;
+import com.huaweicloud.sdk.live.v1.model.CheckDomainVerificationInfo;
+import com.huaweicloud.sdk.live.v1.model.CheckDomainVerificationRequest;
+import com.huaweicloud.sdk.live.v1.model.CheckDomainVerificationResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainMappingRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainMappingResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainRequest;
@@ -24,6 +27,8 @@ import com.huaweicloud.sdk.live.v1.model.CreateHarvestTaskResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateOttChannelInfoReq;
 import com.huaweicloud.sdk.live.v1.model.CreateOttChannelInfoRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateOttChannelInfoResponse;
+import com.huaweicloud.sdk.live.v1.model.CreatePullTaskRequest;
+import com.huaweicloud.sdk.live.v1.model.CreatePullTaskResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateRecordCallbackConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateRecordCallbackConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateRecordIndexRequest;
@@ -65,6 +70,8 @@ import com.huaweicloud.sdk.live.v1.model.DeleteOttChannelInfoRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteOttChannelInfoResponse;
 import com.huaweicloud.sdk.live.v1.model.DeletePublishTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.DeletePublishTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.DeletePullTaskRequest;
+import com.huaweicloud.sdk.live.v1.model.DeletePullTaskResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteRecordCallbackConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteRecordCallbackConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteRecordRuleRequest;
@@ -114,6 +121,8 @@ import com.huaweicloud.sdk.live.v1.model.ListOttChannelInfoRequest;
 import com.huaweicloud.sdk.live.v1.model.ListOttChannelInfoResponse;
 import com.huaweicloud.sdk.live.v1.model.ListPublishTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.ListPublishTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.ListPullTasksRequest;
+import com.huaweicloud.sdk.live.v1.model.ListPullTasksResponse;
 import com.huaweicloud.sdk.live.v1.model.ListRecordCallbackConfigsRequest;
 import com.huaweicloud.sdk.live.v1.model.ListRecordCallbackConfigsResponse;
 import com.huaweicloud.sdk.live.v1.model.ListRecordContentsRequest;
@@ -132,6 +141,7 @@ import com.huaweicloud.sdk.live.v1.model.ListWatermarkTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.ListWatermarkTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.LiveDomainCreateReq;
 import com.huaweicloud.sdk.live.v1.model.LiveDomainModifyReq;
+import com.huaweicloud.sdk.live.v1.model.LivePullStreamTask;
 import com.huaweicloud.sdk.live.v1.model.LiveSnapshotConfig;
 import com.huaweicloud.sdk.live.v1.model.ModifyDelayConfig;
 import com.huaweicloud.sdk.live.v1.model.ModifyFlowOutputRequest;
@@ -147,6 +157,7 @@ import com.huaweicloud.sdk.live.v1.model.ModifyHarvestTaskRequest;
 import com.huaweicloud.sdk.live.v1.model.ModifyHarvestTaskRequestBody;
 import com.huaweicloud.sdk.live.v1.model.ModifyHarvestTaskResponse;
 import com.huaweicloud.sdk.live.v1.model.ModifyHlsConfig;
+import com.huaweicloud.sdk.live.v1.model.ModifyLivePullStreamTask;
 import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelEncoderSettings;
 import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelEndPointsReq;
 import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelGeneral;
@@ -166,6 +177,8 @@ import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInputReq;
 import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelRecordSettings;
 import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelState;
 import com.huaweicloud.sdk.live.v1.model.ModifyPullSourcesConfig;
+import com.huaweicloud.sdk.live.v1.model.ModifyPullTaskRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyPullTaskResponse;
 import com.huaweicloud.sdk.live.v1.model.ModifyWatermarkRule;
 import com.huaweicloud.sdk.live.v1.model.ObsAuthorityConfigV2;
 import com.huaweicloud.sdk.live.v1.model.RecordCallbackConfigRequest;
@@ -178,6 +191,8 @@ import com.huaweicloud.sdk.live.v1.model.ScheduleRecordTasksReq;
 import com.huaweicloud.sdk.live.v1.model.SetRefererChainInfo;
 import com.huaweicloud.sdk.live.v1.model.SetRefererChainRequest;
 import com.huaweicloud.sdk.live.v1.model.SetRefererChainResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowCertificateInfoRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowCertificateInfoResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowChannelStatisticReq;
 import com.huaweicloud.sdk.live.v1.model.ShowChannelStatisticRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowChannelStatisticResponse;
@@ -187,6 +202,8 @@ import com.huaweicloud.sdk.live.v1.model.ShowDomainKeyChainRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainKeyChainResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowDomainVerificationRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowDomainVerificationResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowFlowDetailRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowFlowDetailResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowOutputInfoRequest;
@@ -274,6 +291,29 @@ public class LiveMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(BatchShowIpBelongsRequest::getIp, BatchShowIpBelongsRequest::setIp));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckDomainVerificationRequest, CheckDomainVerificationResponse> checkDomainVerification =
+        genForCheckDomainVerification();
+
+    private static HttpRequestDef<CheckDomainVerificationRequest, CheckDomainVerificationResponse> genForCheckDomainVerification() {
+        // basic
+        HttpRequestDef.Builder<CheckDomainVerificationRequest, CheckDomainVerificationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CheckDomainVerificationRequest.class, CheckDomainVerificationResponse.class)
+            .withName("CheckDomainVerification")
+            .withUri("/v1/{project_id}/domain/verification")
+            .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<CheckDomainVerificationInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CheckDomainVerificationInfo.class),
+            f -> f.withMarshaller(CheckDomainVerificationRequest::getBody, CheckDomainVerificationRequest::setBody));
 
         // response
 
@@ -370,6 +410,29 @@ public class LiveMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateFlowsRequestBody.class),
             f -> f.withMarshaller(CreateFlowsRequest::getBody, CreateFlowsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePullTaskRequest, CreatePullTaskResponse> createPullTask =
+        genForCreatePullTask();
+
+    private static HttpRequestDef<CreatePullTaskRequest, CreatePullTaskResponse> genForCreatePullTask() {
+        // basic
+        HttpRequestDef.Builder<CreatePullTaskRequest, CreatePullTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePullTaskRequest.class, CreatePullTaskResponse.class)
+                .withName("CreatePullTask")
+                .withUri("/v1/{project_id}/pull/stream/task")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<LivePullStreamTask>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LivePullStreamTask.class),
+            f -> f.withMarshaller(CreatePullTaskRequest::getBody, CreatePullTaskRequest::setBody));
 
         // response
 
@@ -810,6 +873,34 @@ public class LiveMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeletePublishTemplateRequest::getDomain, DeletePublishTemplateRequest::setDomain));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePullTaskRequest, DeletePullTaskResponse> deletePullTask =
+        genForDeletePullTask();
+
+    private static HttpRequestDef<DeletePullTaskRequest, DeletePullTaskResponse> genForDeletePullTask() {
+        // basic
+        HttpRequestDef.Builder<DeletePullTaskRequest, DeletePullTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePullTaskRequest.class, DeletePullTaskResponse.class)
+                .withName("DeletePullTask")
+                .withUri("/v1/{project_id}/pull/stream/task")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("region",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePullTaskRequest::getRegion, DeletePullTaskRequest::setRegion));
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePullTaskRequest::getTaskId, DeletePullTaskRequest::setTaskId));
 
         // response
 
@@ -1299,6 +1390,44 @@ public class LiveMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPublishTemplateRequest::getDomain, ListPublishTemplateRequest::setDomain));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPullTasksRequest, ListPullTasksResponse> listPullTasks =
+        genForListPullTasks();
+
+    private static HttpRequestDef<ListPullTasksRequest, ListPullTasksResponse> genForListPullTasks() {
+        // basic
+        HttpRequestDef.Builder<ListPullTasksRequest, ListPullTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPullTasksRequest.class, ListPullTasksResponse.class)
+                .withName("ListPullTasks")
+                .withUri("/v1/{project_id}/pull/stream/task")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("region",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPullTasksRequest::getRegion, ListPullTasksRequest::setRegion));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPullTasksRequest::getOffset, ListPullTasksRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPullTasksRequest::getLimit, ListPullTasksRequest::setLimit));
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPullTasksRequest::getTaskId, ListPullTasksRequest::setTaskId));
 
         // response
 
@@ -1828,6 +1957,29 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ModifyPullTaskRequest, ModifyPullTaskResponse> modifyPullTask =
+        genForModifyPullTask();
+
+    private static HttpRequestDef<ModifyPullTaskRequest, ModifyPullTaskResponse> genForModifyPullTask() {
+        // basic
+        HttpRequestDef.Builder<ModifyPullTaskRequest, ModifyPullTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyPullTaskRequest.class, ModifyPullTaskResponse.class)
+                .withName("ModifyPullTask")
+                .withUri("/v1/{project_id}/pull/stream/task")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<ModifyLivePullStreamTask>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyLivePullStreamTask.class),
+            f -> f.withMarshaller(ModifyPullTaskRequest::getBody, ModifyPullTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RunRecordRequest, RunRecordResponse> runRecord = genForRunRecord();
 
     private static HttpRequestDef<RunRecordRequest, RunRecordResponse> genForRunRecord() {
@@ -1928,6 +2080,29 @@ public class LiveMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDomainKeyChainRequest::getDomain, ShowDomainKeyChainRequest::setDomain));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDomainVerificationRequest, ShowDomainVerificationResponse> showDomainVerification =
+        genForShowDomainVerification();
+
+    private static HttpRequestDef<ShowDomainVerificationRequest, ShowDomainVerificationResponse> genForShowDomainVerification() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainVerificationRequest, ShowDomainVerificationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDomainVerificationRequest.class, ShowDomainVerificationResponse.class)
+            .withName("ShowDomainVerification")
+            .withUri("/v1/{project_id}/domain/verification")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainVerificationRequest::getDomain, ShowDomainVerificationRequest::setDomain));
 
         // response
 
@@ -2679,6 +2854,40 @@ public class LiveMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDomainHttpsCertRequest::getDomain, DeleteDomainHttpsCertRequest::setDomain));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCertificateInfoRequest, ShowCertificateInfoResponse> showCertificateInfo =
+        genForShowCertificateInfo();
+
+    private static HttpRequestDef<ShowCertificateInfoRequest, ShowCertificateInfoResponse> genForShowCertificateInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowCertificateInfoRequest, ShowCertificateInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCertificateInfoRequest.class, ShowCertificateInfoResponse.class)
+                .withName("ShowCertificateInfo")
+                .withUri("/v2/{project_id}/certificates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("play_domain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCertificateInfoRequest::getPlayDomain,
+                ShowCertificateInfoRequest::setPlayDomain));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowCertificateInfoRequest::getOffset, ShowCertificateInfoRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowCertificateInfoRequest::getLimit, ShowCertificateInfoRequest::setLimit));
 
         // response
 

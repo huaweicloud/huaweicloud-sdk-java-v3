@@ -15,16 +15,6 @@ import java.util.function.Consumer;
 public class ShowInstanceNodesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "next_offset")
-
-    private Integer nextOffset;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "previous_offset")
-
-    private Integer previousOffset;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodes")
 
     private List<NodeContextEntity> nodes = null;
@@ -33,40 +23,6 @@ public class ShowInstanceNodesResponse extends SdkResponse {
     @JsonProperty(value = "total")
 
     private Integer total;
-
-    public ShowInstanceNodesResponse withNextOffset(Integer nextOffset) {
-        this.nextOffset = nextOffset;
-        return this;
-    }
-
-    /**
-     * 下个分页的offset。
-     * @return nextOffset
-     */
-    public Integer getNextOffset() {
-        return nextOffset;
-    }
-
-    public void setNextOffset(Integer nextOffset) {
-        this.nextOffset = nextOffset;
-    }
-
-    public ShowInstanceNodesResponse withPreviousOffset(Integer previousOffset) {
-        this.previousOffset = previousOffset;
-        return this;
-    }
-
-    /**
-     * 上个分页的offset。
-     * @return previousOffset
-     */
-    public Integer getPreviousOffset() {
-        return previousOffset;
-    }
-
-    public void setPreviousOffset(Integer previousOffset) {
-        this.previousOffset = previousOffset;
-    }
 
     public ShowInstanceNodesResponse withNodes(List<NodeContextEntity> nodes) {
         this.nodes = nodes;
@@ -90,7 +46,7 @@ public class ShowInstanceNodesResponse extends SdkResponse {
     }
 
     /**
-     * 后台任务ID
+     * **参数解释**： 后台任务ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return nodes
      */
     public List<NodeContextEntity> getNodes() {
@@ -107,7 +63,7 @@ public class ShowInstanceNodesResponse extends SdkResponse {
     }
 
     /**
-     * 总个数
+     * **参数解释**： 总个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return total
      */
     public Integer getTotal() {
@@ -127,22 +83,18 @@ public class ShowInstanceNodesResponse extends SdkResponse {
             return false;
         }
         ShowInstanceNodesResponse that = (ShowInstanceNodesResponse) obj;
-        return Objects.equals(this.nextOffset, that.nextOffset)
-            && Objects.equals(this.previousOffset, that.previousOffset) && Objects.equals(this.nodes, that.nodes)
-            && Objects.equals(this.total, that.total);
+        return Objects.equals(this.nodes, that.nodes) && Objects.equals(this.total, that.total);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nextOffset, previousOffset, nodes, total);
+        return Objects.hash(nodes, total);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowInstanceNodesResponse {\n");
-        sb.append("    nextOffset: ").append(toIndentedString(nextOffset)).append("\n");
-        sb.append("    previousOffset: ").append(toIndentedString(previousOffset)).append("\n");
         sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("}");

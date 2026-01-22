@@ -26,7 +26,7 @@ public class DiffConfigurationRequest {
     }
 
     /**
-     * 需要进行比较的参数模板ID。
+     * **参数解释：** 需要进行比较的参数模板ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return sourceConfigurationId
      */
     public String getSourceConfigurationId() {
@@ -43,7 +43,7 @@ public class DiffConfigurationRequest {
     }
 
     /**
-     * 需要进行比较的参数模板ID。
+     * **参数解释：** 需要进行比较的参数模板ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return targetConfigurationId
      */
     public String getTargetConfigurationId() {

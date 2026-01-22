@@ -159,7 +159,7 @@ public class CreateExchangeResponse extends SdkResponse {
     }
 
     /**
-     * Exchange类型
+     * **参数解释**： Exchange类型。 **取值范围**： - direct：该类型Exchange会将消息路由到Routing Key完全匹配的Queue中。 - fanout：该类型Exchange会将消息路由到所有与其绑定的Queue中。 - topic：该类型Exchange将Routing Key进行通配符匹配，然后将消息路由到匹配成功的Queue中。 - headers：该类型Exchange与Routing Key无关，而与消息中的Headers属性信息相关。Exchange根据消息中的Headers属性键值对和绑定的属性键值对进行匹配，根据匹配情况路由消息。
      * @return type
      */
     public String getType() {

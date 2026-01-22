@@ -1,0 +1,72 @@
+package com.huaweicloud.sdk.cfw.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/**
+ * Request Object
+ */
+public class DeleteScheduleRequest {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "schedule_id")
+
+    private String scheduleId;
+
+    public DeleteScheduleRequest withScheduleId(String scheduleId) {
+        this.scheduleId = scheduleId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 时间表ID，可以通过调用[查询时间表列表接口]获得，通过返回值中的data.records.schedule_id获得 **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
+     * @return scheduleId
+     */
+    public String getScheduleId() {
+        return scheduleId;
+    }
+
+    public void setScheduleId(String scheduleId) {
+        this.scheduleId = scheduleId;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        DeleteScheduleRequest that = (DeleteScheduleRequest) obj;
+        return Objects.equals(this.scheduleId, that.scheduleId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(scheduleId);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class DeleteScheduleRequest {\n");
+        sb.append("    scheduleId: ").append(toIndentedString(scheduleId)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

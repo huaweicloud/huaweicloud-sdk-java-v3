@@ -57,7 +57,7 @@ public class QueueDetails {
     }
 
     /**
-     * Queue所属Vhost名称
+     * **参数解释**： Queue所属Vhost名称。 **取值范围**： 不涉及。
      * @return vhost
      */
     public String getVhost() {
@@ -74,7 +74,7 @@ public class QueueDetails {
     }
 
     /**
-     * Queue名称
+     * **参数解释**： Queue名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -91,7 +91,7 @@ public class QueueDetails {
     }
 
     /**
-     * 是否持久化
+     * **参数解释**： Queue是否开启持久化。 **取值范围**： - true：开启持久化。 - false：未开启持久化。
      * @return durable
      */
     public Boolean getDurable() {
@@ -108,7 +108,7 @@ public class QueueDetails {
     }
 
     /**
-     * 是否自动删除
+     * **参数解释**： Queue是否开启自动删除。 **取值范围**： - true：开启自动删除。 - false：未开启自动删除。
      * @return autoDelete
      */
     public Boolean getAutoDelete() {
@@ -125,7 +125,7 @@ public class QueueDetails {
     }
 
     /**
-     * 待消费消息数
+     * **参数解释**： 待消费消息数。 **取值范围**： 不涉及。
      * @return messages
      */
     public Integer getMessages() {
@@ -142,7 +142,7 @@ public class QueueDetails {
     }
 
     /**
-     * 连接的消费者数
+     * **参数解释**： 连接的消费者数。 **取值范围**： 不涉及。
      * @return consumers
      */
     public Integer getConsumers() {
@@ -159,7 +159,7 @@ public class QueueDetails {
     }
 
     /**
-     * 策略[（AMQP版本不支持policy，不涉及此参数）](tag:hws,hws_hk)
+     * **参数解释**： 策略[（AMQP版本不支持policy，不涉及此参数）](tag:hws,hws_hk,,hws_eu)。 **取值范围**： 不涉及。
      * @return policy
      */
     public String getPolicy() {

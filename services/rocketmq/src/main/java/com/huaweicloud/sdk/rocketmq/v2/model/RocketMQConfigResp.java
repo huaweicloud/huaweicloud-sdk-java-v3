@@ -46,7 +46,7 @@ public class RocketMQConfigResp {
     }
 
     /**
-     * RocketMQ配置名称。
+     * **参数解释**： RocketMQ配置名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -63,7 +63,7 @@ public class RocketMQConfigResp {
     }
 
     /**
-     * RocketMQ配置当前值。
+     * **参数解释**： RocketMQ配置当前值。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return value
      */
     public String getValue() {
@@ -80,7 +80,7 @@ public class RocketMQConfigResp {
     }
 
     /**
-     * RocketMQ配置的类型。
+     * **参数解释**： RocketMQ配置的类型。 **约束限制**： 不涉及。 **取值范围**： - dynamic：动态。 - static：静态。    **默认取值**： 不涉及。
      * @return configType
      */
     public String getConfigType() {
@@ -97,7 +97,7 @@ public class RocketMQConfigResp {
     }
 
     /**
-     * RocketMQ配置的默认值。
+     * **参数解释**： RocketMQ配置的默认值。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return defaultValue
      */
     public String getDefaultValue() {
@@ -114,7 +114,7 @@ public class RocketMQConfigResp {
     }
 
     /**
-     * RocketMQ配置取值的范围。
+     * **参数解释**： RocketMQ配置取值的范围。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return validValues
      */
     public String getValidValues() {
@@ -131,7 +131,7 @@ public class RocketMQConfigResp {
     }
 
     /**
-     * RocketMQ配置值的类型。
+     * **参数解释**： RocketMQ配置值的类型。 **约束限制**： 不涉及。 **取值范围**： - integer：整数类型。 - boolean：布尔类型。 **默认取值**： 不涉及。
      * @return valueType
      */
     public String getValueType() {

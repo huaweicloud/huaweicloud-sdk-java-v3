@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * **参数解释**： 自定义IPS规则内容 **取值范围**： 不涉及
+ * **参数解释**： 自定义IPS规则内容 **约束限制**：     不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
  */
 public class IpsContent {
 
@@ -51,7 +51,7 @@ public class IpsContent {
     }
 
     /**
-     * **参数解释**： 内容 **取值范围**： 不涉及
+     * **参数解释**： 内容 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
      * @return content
      */
     public String getContent() {
@@ -68,7 +68,7 @@ public class IpsContent {
     }
 
     /**
-     * **参数解释**： 深度 **取值范围**： 不涉及
+     * **参数解释**： 匹配特征时，截止匹配的位置 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
      * minimum: 1
      * maximum: 65535
      * @return depth
@@ -87,7 +87,7 @@ public class IpsContent {
     }
 
     /**
-     * **参数解释**： 报文内容是否为十六进制 **取值范围**： 不涉及
+     * **参数解释**： 报文内容是否为十六进制 **约束限制**： 不涉及 **取值范围**： true： 是十六进制 false： 不是十六进制 **默认取值**：   不涉及
      * @return isHex
      */
     public Boolean getIsHex() {
@@ -104,7 +104,7 @@ public class IpsContent {
     }
 
     /**
-     * **参数解释**： 是否忽略大小写 **取值范围**： 不涉及
+     * **参数解释**： 是否忽略大小写 **约束限制**： 不涉及 **取值范围**： true： 忽略 false： 不忽略 **默认取值**：   不涉及
      * @return isIgnore
      */
     public Boolean getIsIgnore() {
@@ -121,7 +121,7 @@ public class IpsContent {
     }
 
     /**
-     * **参数解释**： 是否在uri中截取报文 **取值范围**： 不涉及
+     * **参数解释**： 是否匹配URL中跟“内容”一致的字段 **约束限制**： 不涉及 **取值范围**： true： 匹配 false： 不匹配 **默认取值**：   不涉及
      * @return isUri
      */
     public Boolean getIsUri() {
@@ -138,7 +138,7 @@ public class IpsContent {
     }
 
     /**
-     * **参数解释**： 偏移量 **取值范围**： 不涉及
+     * **参数解释**： 匹配特征时开始的位置 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
      * minimum: 0
      * maximum: 65535
      * @return offset
@@ -157,7 +157,7 @@ public class IpsContent {
     }
 
     /**
-     * **参数解释**： 相对位置 **取值范围**： 不涉及
+     * **参数解释**： 匹配特征时，指定开始的位置 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
      * minimum: 0
      * maximum: 1
      * @return relativePosition

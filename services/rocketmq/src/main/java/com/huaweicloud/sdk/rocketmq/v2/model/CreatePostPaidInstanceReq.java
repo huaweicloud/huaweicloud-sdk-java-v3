@@ -1,15 +1,10 @@
 package com.huaweicloud.sdk.rocketmq.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -28,146 +23,15 @@ public class CreatePostPaidInstanceReq {
 
     private String description;
 
-    /**
-     * 消息引擎。取值填写为：reliability。
-     */
-    public static final class EngineEnum {
-
-        /**
-         * Enum RELIABILITY for value: "reliability"
-         */
-        public static final EngineEnum RELIABILITY = new EngineEnum("reliability");
-
-        private static final Map<String, EngineEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, EngineEnum> createStaticFields() {
-            Map<String, EngineEnum> map = new HashMap<>();
-            map.put("reliability", RELIABILITY);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        EngineEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static EngineEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineEnum(value));
-        }
-
-        public static EngineEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof EngineEnum) {
-                return this.value.equals(((EngineEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine")
 
-    private EngineEnum engine;
-
-    /**
-     * 消息引擎的版本。取值填写为：[4.8.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[5.x](tag:hcs,fcs)。
-     */
-    public static final class EngineVersionEnum {
-
-        /**
-         * Enum _4_8_0_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_DT_5_X_TAG_HCS_ for value: "[4.8.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[5.x](tag:hcs)"
-         */
-        public static final EngineVersionEnum _4_8_0_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_DT_5_X_TAG_HCS_ =
-            new EngineVersionEnum(
-                "[4.8.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[5.x](tag:hcs)");
-
-        private static final Map<String, EngineVersionEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, EngineVersionEnum> createStaticFields() {
-            Map<String, EngineVersionEnum> map = new HashMap<>();
-            map.put("[4.8.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[5.x](tag:hcs)",
-                _4_8_0_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_DT_5_X_TAG_HCS_);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        EngineVersionEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static EngineVersionEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineVersionEnum(value));
-        }
-
-        public static EngineVersionEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof EngineVersionEnum) {
-                return this.value.equals(((EngineVersionEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String engine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_version")
 
-    private EngineVersionEnum engineVersion;
+    private String engineVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_space")
@@ -194,232 +58,20 @@ public class CreatePostPaidInstanceReq {
 
     private List<String> availableZones = null;
 
-    /**
-     * RocketMQ实例规格。[x86环境后缀为.x86，arm环境为.arm。](tag:hcs,fcs)   - [c6.2u8g.cluster.x86或c6.2u8g.cluster.arm：单个代理最大分区数50，单个代理最大消费组数100](tag:fcs)   - [c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[c6.4u16g.cluster.x86或c6.4u16g.cluster.arm：单个代理最大分区数100，单个代理最大消费组数200](tag:hcs)   - [c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[c6.8u32g.cluster.x86或c6.8u32g.cluster.arm：单个代理最大Topic数200，单个代理最大消费组数400](tag:hcs,fcs)   - [c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[c6.16u64g.cluster.x86或c6.16u64g.cluster.arm：单个代理最大Topic数300，单个代理最大消费组数600](tag:hcs,fcs)   - [c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[c6.32u128g.cluster.x86或c6.32u128g.cluster.arm：单个代理最大Topic数400，单个代理最大消费组数800](tag:hcs,fcs)
-     */
-    public static final class ProductIdEnum {
-
-        /**
-         * Enum _C6_4U8G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_DT_C6_4U16G_CLUSTER_X86_TAG_HCS_FCS_ for value: "[c6.4u8g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[c6.4u16g.cluster.x86](tag:hcs,fcs)"
-         */
-        public static final ProductIdEnum _C6_4U8G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_DT_C6_4U16G_CLUSTER_X86_TAG_HCS_FCS_ =
-            new ProductIdEnum(
-                "[c6.4u8g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[c6.4u16g.cluster.x86](tag:hcs,fcs)");
-
-        /**
-         * Enum _C6_8U16G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_DT_C6_8U32G_CLUSTER_X86_TAG_HCS_FCS_ for value: "[c6.8u16g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[c6.8u32g.cluster.x86](tag:hcs,fcs)"
-         */
-        public static final ProductIdEnum _C6_8U16G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_DT_C6_8U32G_CLUSTER_X86_TAG_HCS_FCS_ =
-            new ProductIdEnum(
-                "[c6.8u16g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[c6.8u32g.cluster.x86](tag:hcs,fcs)");
-
-        /**
-         * Enum _C6_12U24G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_DT_C6_16U64G_CLUSTER_X86_TAG_HCS_FCS_ for value: "[c6.12u24g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[c6.16u64g.cluster.x86](tag:hcs,fcs)"
-         */
-        public static final ProductIdEnum _C6_12U24G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_DT_C6_16U64G_CLUSTER_X86_TAG_HCS_FCS_ =
-            new ProductIdEnum(
-                "[c6.12u24g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[c6.16u64g.cluster.x86](tag:hcs,fcs)");
-
-        /**
-         * Enum _C6_16U32G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_DT_C6_32U128G_CLUSTER_X86_TAG_HCS_FCS_ for value: "[c6.16u32g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[c6.32u128g.cluster.x86](tag:hcs,fcs)"
-         */
-        public static final ProductIdEnum _C6_16U32G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_DT_C6_32U128G_CLUSTER_X86_TAG_HCS_FCS_ =
-            new ProductIdEnum(
-                "[c6.16u32g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[c6.32u128g.cluster.x86](tag:hcs,fcs)");
-
-        /**
-         * Enum _C6_2U8G_CLUSTER_X86_TAG_FCS_ for value: "[c6.2u8g.cluster.x86](tag:fcs)"
-         */
-        public static final ProductIdEnum _C6_2U8G_CLUSTER_X86_TAG_FCS_ =
-            new ProductIdEnum("[c6.2u8g.cluster.x86](tag:fcs)");
-
-        /**
-         * Enum _C6_2U8G_CLUSTER_ARM_TAG_FCS_ for value: "[c6.2u8g.cluster.arm](tag:fcs)"
-         */
-        public static final ProductIdEnum _C6_2U8G_CLUSTER_ARM_TAG_FCS_ =
-            new ProductIdEnum("[c6.2u8g.cluster.arm](tag:fcs)");
-
-        /**
-         * Enum _C6_4U16G_CLUSTER_ARM_TAG_HCS_FCS_ for value: "[c6.4u16g.cluster.arm](tag:hcs,fcs)"
-         */
-        public static final ProductIdEnum _C6_4U16G_CLUSTER_ARM_TAG_HCS_FCS_ =
-            new ProductIdEnum("[c6.4u16g.cluster.arm](tag:hcs,fcs)");
-
-        /**
-         * Enum _C6_8U32G_CLUSTER_ARM_TAG_HCS_FCS_ for value: "[c6.8u32g.cluster.arm](tag:hcs,fcs)"
-         */
-        public static final ProductIdEnum _C6_8U32G_CLUSTER_ARM_TAG_HCS_FCS_ =
-            new ProductIdEnum("[c6.8u32g.cluster.arm](tag:hcs,fcs)");
-
-        /**
-         * Enum _C6_16U64G_CLUSTER_ARM_TAG_HCS_FCS_ for value: "[c6.16u64g.cluster.arm](tag:hcs,fcs)"
-         */
-        public static final ProductIdEnum _C6_16U64G_CLUSTER_ARM_TAG_HCS_FCS_ =
-            new ProductIdEnum("[c6.16u64g.cluster.arm](tag:hcs,fcs)");
-
-        /**
-         * Enum _C6_32U128G_CLUSTER_ARM_TAG_HCS_FCS_ for value: "[c6.32u128g.cluster.arm](tag:hcs,fcs)"
-         */
-        public static final ProductIdEnum _C6_32U128G_CLUSTER_ARM_TAG_HCS_FCS_ =
-            new ProductIdEnum("[c6.32u128g.cluster.arm](tag:hcs,fcs)");
-
-        private static final Map<String, ProductIdEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ProductIdEnum> createStaticFields() {
-            Map<String, ProductIdEnum> map = new HashMap<>();
-            map.put(
-                "[c6.4u8g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[c6.4u16g.cluster.x86](tag:hcs,fcs)",
-                _C6_4U8G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_DT_C6_4U16G_CLUSTER_X86_TAG_HCS_FCS_);
-            map.put(
-                "[c6.8u16g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[c6.8u32g.cluster.x86](tag:hcs,fcs)",
-                _C6_8U16G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_DT_C6_8U32G_CLUSTER_X86_TAG_HCS_FCS_);
-            map.put(
-                "[c6.12u24g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[c6.16u64g.cluster.x86](tag:hcs,fcs)",
-                _C6_12U24G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_DT_C6_16U64G_CLUSTER_X86_TAG_HCS_FCS_);
-            map.put(
-                "[c6.16u32g.cluster](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[c6.32u128g.cluster.x86](tag:hcs,fcs)",
-                _C6_16U32G_CLUSTER_TAG_HWS_HWS_EU_HWS_HK_OCB_HWS_OCB_CTC_G42_HK_G42_TM_SBC_HK_SBC_HK_TM_DT_C6_32U128G_CLUSTER_X86_TAG_HCS_FCS_);
-            map.put("[c6.2u8g.cluster.x86](tag:fcs)", _C6_2U8G_CLUSTER_X86_TAG_FCS_);
-            map.put("[c6.2u8g.cluster.arm](tag:fcs)", _C6_2U8G_CLUSTER_ARM_TAG_FCS_);
-            map.put("[c6.4u16g.cluster.arm](tag:hcs,fcs)", _C6_4U16G_CLUSTER_ARM_TAG_HCS_FCS_);
-            map.put("[c6.8u32g.cluster.arm](tag:hcs,fcs)", _C6_8U32G_CLUSTER_ARM_TAG_HCS_FCS_);
-            map.put("[c6.16u64g.cluster.arm](tag:hcs,fcs)", _C6_16U64G_CLUSTER_ARM_TAG_HCS_FCS_);
-            map.put("[c6.32u128g.cluster.arm](tag:hcs,fcs)", _C6_32U128G_CLUSTER_ARM_TAG_HCS_FCS_);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ProductIdEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ProductIdEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProductIdEnum(value));
-        }
-
-        public static ProductIdEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ProductIdEnum) {
-                return this.value.equals(((ProductIdEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
 
-    private ProductIdEnum productId;
+    private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_enable")
 
     private Boolean sslEnable;
 
-    /**
-     * 存储IO规格。   - dms.physical.storage.high.v2: 高IO类型磁盘   - dms.physical.storage.ultra.v2: 超高IO类型磁盘
-     */
-    public static final class StorageSpecCodeEnum {
-
-        /**
-         * Enum DMS_PHYSICAL_STORAGE_HIGH_V2 for value: "dms.physical.storage.high.v2"
-         */
-        public static final StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_HIGH_V2 =
-            new StorageSpecCodeEnum("dms.physical.storage.high.v2");
-
-        /**
-         * Enum DMS_PHYSICAL_STORAGE_ULTRA_V2 for value: "dms.physical.storage.ultra.v2"
-         */
-        public static final StorageSpecCodeEnum DMS_PHYSICAL_STORAGE_ULTRA_V2 =
-            new StorageSpecCodeEnum("dms.physical.storage.ultra.v2");
-
-        private static final Map<String, StorageSpecCodeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, StorageSpecCodeEnum> createStaticFields() {
-            Map<String, StorageSpecCodeEnum> map = new HashMap<>();
-            map.put("dms.physical.storage.high.v2", DMS_PHYSICAL_STORAGE_HIGH_V2);
-            map.put("dms.physical.storage.ultra.v2", DMS_PHYSICAL_STORAGE_ULTRA_V2);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        StorageSpecCodeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StorageSpecCodeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StorageSpecCodeEnum(value));
-        }
-
-        public static StorageSpecCodeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof StorageSpecCodeEnum) {
-                return this.value.equals(((StorageSpecCodeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_spec_code")
 
-    private StorageSpecCodeEnum storageSpecCode;
+    private String storageSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
@@ -447,6 +99,16 @@ public class CreatePostPaidInstanceReq {
     private Boolean enablePublicip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disk_encrypted_enable")
+
+    private Boolean diskEncryptedEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disk_encrypted_key")
+
+    private String diskEncryptedKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip_id")
 
     private String publicipId;
@@ -472,7 +134,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 实例名称。  由英文字符开头，只能由英文字母、数字、中划线、下划线组成，长度为4~64的字符。
+     * **参数解释**： 实例名称。 **约束限制**： 由英文字符开头，只能由英文字母、数字、中划线、下划线组成，长度为4~64的字符。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -489,7 +151,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 实例的描述信息。  长度不超过1024的字符串。[且字符串不能包含\">\"与\"<\"，字符串首字符不能为\"=\",\"+\",\"-\",\"@\"的全角和半角字符。](tag:hcs)  > \\与\"在json报文中属于特殊字符，如果参数值中需要显示\\或者\"字符，请在字符前增加转义字符\\，比如\\\\或者\\\"。
+     * **参数解释**： 实例的描述信息。 **约束限制**： 长度不超过1024的字符串。[且字符串不能包含\">\"与\"<\"，字符串首字符不能为\"=\",\"+\",\"-\",\"@\"的全角和半角字符。](tag:hcs)  > \\与\"在json报文中属于特殊字符，如果参数值中需要显示\\或者\"字符，请在字符前增加转义字符\\，比如\\\\或者\\\"。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return description
      */
     public String getDescription() {
@@ -500,37 +162,37 @@ public class CreatePostPaidInstanceReq {
         this.description = description;
     }
 
-    public CreatePostPaidInstanceReq withEngine(EngineEnum engine) {
+    public CreatePostPaidInstanceReq withEngine(String engine) {
         this.engine = engine;
         return this;
     }
 
     /**
-     * 消息引擎。取值填写为：reliability。
+     * **参数解释**： 消息引擎类型。 **约束限制**： 不涉及。 **取值范围**： - rocketmq：RocketMQ消息引擎。 - reliability：RocketMQ消息引擎别称。 **默认取值**： 不涉及。
      * @return engine
      */
-    public EngineEnum getEngine() {
+    public String getEngine() {
         return engine;
     }
 
-    public void setEngine(EngineEnum engine) {
+    public void setEngine(String engine) {
         this.engine = engine;
     }
 
-    public CreatePostPaidInstanceReq withEngineVersion(EngineVersionEnum engineVersion) {
+    public CreatePostPaidInstanceReq withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
         return this;
     }
 
     /**
-     * 消息引擎的版本。取值填写为：[4.8.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[5.x](tag:hcs,fcs)。
+     * **参数解释**： 消息引擎的版本。取值填写为：[4.8.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,cmcc,ax,srg)[5.x](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,hcs,dt,hcs_oemout,srg)。 **约束限制**： 不涉及。 **取值范围**： - rocketmq：RocketMQ消息引擎。 - reliability：RocketMQ消息引擎别称。 **默认取值**： 不涉及。
      * @return engineVersion
      */
-    public EngineVersionEnum getEngineVersion() {
+    public String getEngineVersion() {
         return engineVersion;
     }
 
-    public void setEngineVersion(EngineVersionEnum engineVersion) {
+    public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
 
@@ -540,7 +202,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 存储空间。
+     * **参数解释**： 存储空间，单位：GB。 **约束限制**： 不涉及。 **取值范围**： 不同的实例规格支持不同的存储配置。 [- RocketMQ 5.x 单机存储取值范围：100-30000。](tag:dt) [- RocketMQ 5.x 集群存储取值范围：200-60000。](tag:dt) **默认取值**： 不涉及。
      * @return storageSpace
      */
     public Integer getStorageSpace() {
@@ -557,7 +219,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 虚拟私有云ID。  获取方法如下：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。
+     * **参数解释**： 虚拟私有云ID。  获取方法如下：参考《虚拟私有云 API参考》，调用“查询VPC列表”接口，从响应体中获取VPC ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return vpcId
      */
     public String getVpcId() {
@@ -574,7 +236,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 子网信息。  获取方法如下：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。
+     * **参数解释**： 子网信息。  获取方法如下：参考《虚拟私有云 API参考》，调用“查询子网列表”接口，从响应体中获取子网ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -591,7 +253,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 指定实例所属的安全组。  获取方法如下：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。
+     * **参数解释**： 指定实例所属的安全组。  获取方法如下：参考《虚拟私有云 API参考》，调用“查询安全组列表”接口，从响应体中获取安全组ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -624,7 +286,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 创建节点到指定且有资源的可用区ID。请参考[查询可用区信息](ListAvailableZones.xml)获取可用区ID。 该参数不能为空数组或者数组的值为空， 请注意查看该可用区是否有资源。  创建RocketMQ实例，支持节点部署在1个或[3个及3个以上的可用区。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[2个可用区。](tag:fcs)在为节点指定可用区时，用逗号分隔开。
+     * **参数解释**： 创建节点到指定且有资源的可用区ID。请参考[查询可用区信息](ListAvailableZones.xml)获取可用区ID。 该参数不能为空数组或者数组的值为空， 请注意查看该可用区是否有资源。  创建RocketMQ实例，支持节点部署在1个或[3个及3个以上的可用区。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt,cmcc)[2个可用区。](tag:fcs)在为节点指定可用区时，用逗号分隔开。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return availableZones
      */
     public List<String> getAvailableZones() {
@@ -635,20 +297,20 @@ public class CreatePostPaidInstanceReq {
         this.availableZones = availableZones;
     }
 
-    public CreatePostPaidInstanceReq withProductId(ProductIdEnum productId) {
+    public CreatePostPaidInstanceReq withProductId(String productId) {
         this.productId = productId;
         return this;
     }
 
     /**
-     * RocketMQ实例规格。[x86环境后缀为.x86，arm环境为.arm。](tag:hcs,fcs)   - [c6.2u8g.cluster.x86或c6.2u8g.cluster.arm：单个代理最大分区数50，单个代理最大消费组数100](tag:fcs)   - [c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[c6.4u16g.cluster.x86或c6.4u16g.cluster.arm：单个代理最大分区数100，单个代理最大消费组数200](tag:hcs)   - [c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[c6.8u32g.cluster.x86或c6.8u32g.cluster.arm：单个代理最大Topic数200，单个代理最大消费组数400](tag:hcs,fcs)   - [c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[c6.16u64g.cluster.x86或c6.16u64g.cluster.arm：单个代理最大Topic数300，单个代理最大消费组数600](tag:hcs,fcs)   - [c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt)[c6.32u128g.cluster.x86或c6.32u128g.cluster.arm：单个代理最大Topic数400，单个代理最大消费组数800](tag:hcs,fcs)
+     * **参数解释**： RocketMQ实例规格。[x86环境后缀为.x86，arm环境为.arm。single表示单机，cluster表示集群。](tag:hcs,fcs,hcs_oemout)  **约束限制**： 不涉及。  **取值范围**： [当“type”为“single.basic”选择单机规格；当“type”为“cluster.basic”选择集群规格。](tag:dt) [- c6.2u8g.cluster.x86或c6.2u8g.cluster.arm：单个代理最大分区数50，单个代理最大消费组数100](tag:fcs) [- c6.4u8g.cluster.small：单个代理最大Topic数2000，单个代理最大消费组数2000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,cmcc,ax,srg) [- c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,cmcc,ax,srg) [- c6.4u16g.cluster.x86或c6.4u16g.cluster.arm：单个代理最大分区数100，单个代理最大消费组数200](tag:hcs,hcs_oemout) [- c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,cmcc,ax,srg) [- c6.8u32g.cluster.x86或c6.8u32g.cluster.arm：单个代理最大Topic数200，单个代理最大消费组数400](tag:hcs,fcs,hcs_oemout) [- c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,cmcc,ax,srg) [- c6.16u64g.cluster.x86或c6.16u64g.cluster.arm：单个代理最大Topic数300，单个代理最大消费组数600](tag:hcs,fcs,hcs_oemout) [- c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,cmcc,ax,srg) [- c6.32u128g.cluster.x86或c6.32u128g.cluster.arm：单个代理最大Topic数400，单个代理最大消费组数800](tag:hcs,fcs,hcs_oemout) [- rocketmq.b1.large.1：RocketMQ 5.x 基础版单机规格，实例TPS 500](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt,srg) [- rocketmq.b2.large.4：RocketMQ 5.x 基础版集群规格，实例TPS 2000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt,srg) [- rocketmq.b2.large.8：RocketMQ 5.x 基础版集群规格，实例TPS 4000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt,srg) [- rocketmq.b2.large.12：RocketMQ 5.x 基础版集群规格，实例TPS 6000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt,srg) [- rocketmq.p1.large.1：RocketMQ 5.x 专业版单机规格，实例TPS 500](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.8：RocketMQ 5.x 专业版集群规格，实例TPS 4000](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.12：RocketMQ 5.x 专业版集群规格，实例TPS 6000](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.20：RocketMQ 5.x 专业版集群规格，实例TPS 10000](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.40：RocketMQ 5.x 专业版集群规格，实例TPS 20000](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.100：RocketMQ 5.x 专业版集群规格，实例TPS 50000](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.150：RocketMQ 5.x 专业版集群规格，实例TPS 75000](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.200：RocketMQ 5.x 专业版集群规格，实例TPS 100000](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.300：RocketMQ 5.x 专业版集群规格，实例TPS 150000](tag:hws,hws_eu,hws_hk,ctc,srg)  **默认取值**： 不涉及。
      * @return productId
      */
-    public ProductIdEnum getProductId() {
+    public String getProductId() {
         return productId;
     }
 
-    public void setProductId(ProductIdEnum productId) {
+    public void setProductId(String productId) {
         this.productId = productId;
     }
 
@@ -658,7 +320,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 是否打开SSL加密访问。 - true：打开SSL加密访问。 - false：不打开SSL加密访问。
+     * **参数解释**： 是否打开SSL加密访问。 **约束限制**： 不涉及。 **取值范围**： - true：打开SSL加密访问。 - false：不打开SSL加密访问。 **默认取值**： false。
      * @return sslEnable
      */
     public Boolean getSslEnable() {
@@ -669,20 +331,20 @@ public class CreatePostPaidInstanceReq {
         this.sslEnable = sslEnable;
     }
 
-    public CreatePostPaidInstanceReq withStorageSpecCode(StorageSpecCodeEnum storageSpecCode) {
+    public CreatePostPaidInstanceReq withStorageSpecCode(String storageSpecCode) {
         this.storageSpecCode = storageSpecCode;
         return this;
     }
 
     /**
-     * 存储IO规格。   - dms.physical.storage.high.v2: 高IO类型磁盘   - dms.physical.storage.ultra.v2: 超高IO类型磁盘
+     * **参数解释**： 存储IO规格。 **约束限制**： 不涉及。 **取值范围**： - dms.physical.storage.high.v2：高IO类型磁盘 - dms.physical.storage.ultra.v2：超高IO类型磁盘 [- dms.physical.storage.general：使用通用型SSD的磁盘类型。](tag:hws,hws_hk,dt,ctc,ax) [- dms.physical.storage.extreme：使用极速型SSD的磁盘类型。](tag:hws,hws_hk,dt,ctc,ax) **默认取值**： 不涉及。
      * @return storageSpecCode
      */
-    public StorageSpecCodeEnum getStorageSpecCode() {
+    public String getStorageSpecCode() {
         return storageSpecCode;
     }
 
-    public void setStorageSpecCode(StorageSpecCodeEnum storageSpecCode) {
+    public void setStorageSpecCode(String storageSpecCode) {
         this.storageSpecCode = storageSpecCode;
     }
 
@@ -692,7 +354,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 企业项目ID。若为企业项目账号，该参数必填。
+     * **参数解释**： 企业项目ID。若为企业项目账号，该参数必填。 **约束限制**： 不涉及。 **取值范围**：  不涉及。 **默认取值**： 不涉及。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -709,7 +371,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 是否开启访问控制列表。
+     * **参数解释**： 是否开启访问控制列表。 **约束限制**： 不涉及。 **取值范围**： - true：开启访问控制列表。 - false：不开启访问控制列表。 **默认取值**： false。
      * @return enableAcl
      */
     public Boolean getEnableAcl() {
@@ -726,7 +388,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 是否支持IPv6。   - true：支持   - false：不支持
+     * **参数解释**： 是否支持IPv6。[华为云Stack不支持此参数。](tag:hcs,hcs_oemout) **约束限制**： 不涉及。 **取值范围**： - true：支持 - false：不支持 **默认取值**： false。
      * @return ipv6Enable
      */
     public Boolean getIpv6Enable() {
@@ -743,7 +405,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 是否开启Proxy功能。   - true：支持   - false：不支持
+     * **参数解释**： 是否开启Proxy功能。 **约束限制**： 不涉及。 **取值范围**： - true：支持 - false：不支持 **默认取值**： 不涉及。
      * @return proxyEnable
      */
     public Boolean getProxyEnable() {
@@ -760,7 +422,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 是否开启公网访问功能。默认不开启公网。 - true：开启 - false：不开启
+     * **参数解释**： 是否开启公网访问功能。默认不开启公网。 **约束限制**： 不涉及。 **取值范围**： - true：支持 - false：不支持 **默认取值**： false。
      * @return enablePublicip
      */
     public Boolean getEnablePublicip() {
@@ -771,13 +433,47 @@ public class CreatePostPaidInstanceReq {
         this.enablePublicip = enablePublicip;
     }
 
+    public CreatePostPaidInstanceReq withDiskEncryptedEnable(Boolean diskEncryptedEnable) {
+        this.diskEncryptedEnable = diskEncryptedEnable;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否开启磁盘加密。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return diskEncryptedEnable
+     */
+    public Boolean getDiskEncryptedEnable() {
+        return diskEncryptedEnable;
+    }
+
+    public void setDiskEncryptedEnable(Boolean diskEncryptedEnable) {
+        this.diskEncryptedEnable = diskEncryptedEnable;
+    }
+
+    public CreatePostPaidInstanceReq withDiskEncryptedKey(String diskEncryptedKey) {
+        this.diskEncryptedKey = diskEncryptedKey;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 磁盘加密key，未开启磁盘加密时为空 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return diskEncryptedKey
+     */
+    public String getDiskEncryptedKey() {
+        return diskEncryptedKey;
+    }
+
+    public void setDiskEncryptedKey(String diskEncryptedKey) {
+        this.diskEncryptedKey = diskEncryptedKey;
+    }
+
     public CreatePostPaidInstanceReq withPublicipId(String publicipId) {
         this.publicipId = publicipId;
         return this;
     }
 
     /**
-     * 实例绑定的弹性IP地址的ID。  以英文逗号隔开多个弹性IP地址的ID。  如果开启了公网访问功能（即enable_publicip为true），该字段为必选。
+     * **参数解释**： 实例绑定的弹性IP地址的ID。  以英文逗号隔开多个弹性IP地址的ID。  如果开启了公网访问功能（即enable_publicip为true），该字段为必选。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return publicipId
      */
     public String getPublicipId() {
@@ -794,7 +490,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 代理个数。
+     * **参数解释**： 代理个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return brokerNum
      */
     public Integer getBrokerNum() {
@@ -811,7 +507,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 架构类型。
+     * **参数解释**： 架构类型。 **约束限制**： 不涉及。 **取值范围**： - X86：复杂指令集计算。 - ARM：精简指令集计算。 **默认取值**： 不涉及。
      * @return archType
      */
     public String getArchType() {
@@ -828,7 +524,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 实例使用的安全协议。
+     * **参数解释**： 实例使用的安全协议。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return tlsMode
      */
     public String getTlsMode() {
@@ -860,6 +556,8 @@ public class CreatePostPaidInstanceReq {
             && Objects.equals(this.enableAcl, that.enableAcl) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
             && Objects.equals(this.proxyEnable, that.proxyEnable)
             && Objects.equals(this.enablePublicip, that.enablePublicip)
+            && Objects.equals(this.diskEncryptedEnable, that.diskEncryptedEnable)
+            && Objects.equals(this.diskEncryptedKey, that.diskEncryptedKey)
             && Objects.equals(this.publicipId, that.publicipId) && Objects.equals(this.brokerNum, that.brokerNum)
             && Objects.equals(this.archType, that.archType) && Objects.equals(this.tlsMode, that.tlsMode);
     }
@@ -883,6 +581,8 @@ public class CreatePostPaidInstanceReq {
             ipv6Enable,
             proxyEnable,
             enablePublicip,
+            diskEncryptedEnable,
+            diskEncryptedKey,
             publicipId,
             brokerNum,
             archType,
@@ -910,6 +610,8 @@ public class CreatePostPaidInstanceReq {
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("    proxyEnable: ").append(toIndentedString(proxyEnable)).append("\n");
         sb.append("    enablePublicip: ").append(toIndentedString(enablePublicip)).append("\n");
+        sb.append("    diskEncryptedEnable: ").append(toIndentedString(diskEncryptedEnable)).append("\n");
+        sb.append("    diskEncryptedKey: ").append(toIndentedString(diskEncryptedKey)).append("\n");
         sb.append("    publicipId: ").append(toIndentedString(publicipId)).append("\n");
         sb.append("    brokerNum: ").append(toIndentedString(brokerNum)).append("\n");
         sb.append("    archType: ").append(toIndentedString(archType)).append("\n");

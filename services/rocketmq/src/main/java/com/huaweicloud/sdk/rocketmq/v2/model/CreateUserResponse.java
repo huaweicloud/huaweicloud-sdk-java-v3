@@ -40,7 +40,7 @@ public class CreateUserResponse extends SdkResponse {
     private Boolean admin;
 
     /**
-     * **参数解释**： 默认的主题权限。 **约束限制**： 不涉及。 **取值范围**： - pub：拥有发布权限。 - sub：拥有订阅权限。 - PUB|sub：拥有发布订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。
+     * **参数解释**： 默认的主题权限。 **约束限制**： 不涉及。 **取值范围**： - PUB：拥有发布权限。 - SUB：拥有订阅权限。 - PUB|SUB：拥有发布订阅权限。 - DENY：无权限。 **默认取值**： 不涉及。
      */
     public static final class DefaultTopicPermEnum {
 
@@ -127,7 +127,7 @@ public class CreateUserResponse extends SdkResponse {
     private DefaultTopicPermEnum defaultTopicPerm;
 
     /**
-     * **参数解释**： 默认的消费组权限。 **约束限制**： 不涉及。 **取值范围**： - sub：拥有订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。
+     * **参数解释**： 默认的消费组权限。 **约束限制**： 不涉及。 **取值范围**： - SUB：拥有订阅权限。 - DENY：无权限。 **默认取值**： 不涉及。
      */
     public static final class DefaultGroupPermEnum {
 
@@ -209,7 +209,7 @@ public class CreateUserResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_perms")
 
-    private List<UserGroupPerms> groupPerms = null;
+    private List<UserRespGroupPerms> groupPerms = null;
 
     public CreateUserResponse withAccessKey(String accessKey) {
         this.accessKey = accessKey;
@@ -217,7 +217,7 @@ public class CreateUserResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 用户名。 **约束限制**： 只能英文字母开头，且由英文字母、数字、中划线、下划线组成，长度为7~64个字符。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 用户名。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return accessKey
      */
     public String getAccessKey() {
@@ -234,7 +234,7 @@ public class CreateUserResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 密钥。 **约束限制**： 8-32个字符。 至少包含以下字符中的3种： - 大写字母 - 小写字母 - 数字 - 特殊字符`~!@#$%^&*()-_=+\\\\|[{}];:\\'\\\",<.>/?密钥。 不能与名称或倒序的名称相同。  **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 密钥。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return secretKey
      */
     public String getSecretKey() {
@@ -268,7 +268,7 @@ public class CreateUserResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 是否为管理员。 **约束限制**： 不涉及。 **取值范围**： - true：是管理员。 - false：不是管理员。  **默认取值**： 不涉及。
+     * **参数解释**： 是否为管理员。 **约束限制**： 不涉及。 **取值范围**： - true：是管理员。 - false：不是管理员。 **默认取值**： 不涉及。
      * @return admin
      */
     public Boolean getAdmin() {
@@ -285,7 +285,7 @@ public class CreateUserResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 默认的主题权限。 **约束限制**： 不涉及。 **取值范围**： - pub：拥有发布权限。 - sub：拥有订阅权限。 - PUB|sub：拥有发布订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。
+     * **参数解释**： 默认的主题权限。 **约束限制**： 不涉及。 **取值范围**： - PUB：拥有发布权限。 - SUB：拥有订阅权限。 - PUB|SUB：拥有发布订阅权限。 - DENY：无权限。 **默认取值**： 不涉及。
      * @return defaultTopicPerm
      */
     public DefaultTopicPermEnum getDefaultTopicPerm() {
@@ -302,7 +302,7 @@ public class CreateUserResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 默认的消费组权限。 **约束限制**： 不涉及。 **取值范围**： - sub：拥有订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。
+     * **参数解释**： 默认的消费组权限。 **约束限制**： 不涉及。 **取值范围**： - SUB：拥有订阅权限。 - DENY：无权限。 **默认取值**： 不涉及。
      * @return defaultGroupPerm
      */
     public DefaultGroupPermEnum getDefaultGroupPerm() {
@@ -346,12 +346,12 @@ public class CreateUserResponse extends SdkResponse {
         this.topicPerms = topicPerms;
     }
 
-    public CreateUserResponse withGroupPerms(List<UserGroupPerms> groupPerms) {
+    public CreateUserResponse withGroupPerms(List<UserRespGroupPerms> groupPerms) {
         this.groupPerms = groupPerms;
         return this;
     }
 
-    public CreateUserResponse addGroupPermsItem(UserGroupPerms groupPermsItem) {
+    public CreateUserResponse addGroupPermsItem(UserRespGroupPerms groupPermsItem) {
         if (this.groupPerms == null) {
             this.groupPerms = new ArrayList<>();
         }
@@ -359,7 +359,7 @@ public class CreateUserResponse extends SdkResponse {
         return this;
     }
 
-    public CreateUserResponse withGroupPerms(Consumer<List<UserGroupPerms>> groupPermsSetter) {
+    public CreateUserResponse withGroupPerms(Consumer<List<UserRespGroupPerms>> groupPermsSetter) {
         if (this.groupPerms == null) {
             this.groupPerms = new ArrayList<>();
         }
@@ -371,11 +371,11 @@ public class CreateUserResponse extends SdkResponse {
      * **参数解释**： 特殊的消费组权限。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return groupPerms
      */
-    public List<UserGroupPerms> getGroupPerms() {
+    public List<UserRespGroupPerms> getGroupPerms() {
         return groupPerms;
     }
 
-    public void setGroupPerms(List<UserGroupPerms> groupPerms) {
+    public void setGroupPerms(List<UserRespGroupPerms> groupPerms) {
         this.groupPerms = groupPerms;
     }
 

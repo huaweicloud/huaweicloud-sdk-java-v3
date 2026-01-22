@@ -65,7 +65,7 @@ public class ShowFirewallReportRequest {
     }
 
     /**
-     * **参数解释**： 安全报告ID **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
+     * **参数解释**： 安全报告ID，可以通过调用[查询安全报告发送历史接口]获得，通过返回值中的data.records.report_id获得 **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
      * @return reportId
      */
     public String getReportId() {

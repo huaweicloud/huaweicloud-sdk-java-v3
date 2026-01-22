@@ -229,6 +229,10 @@ import com.huaweicloud.sdk.swr.v2.model.ListNamespacesRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListNamespacesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListQuotasRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListQuotasResponse;
+import com.huaweicloud.sdk.swr.v2.model.ListReferencesRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListReferencesResponse;
+import com.huaweicloud.sdk.swr.v2.model.ListRepoAccessoriesRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListRepoAccessoriesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListRepoDetailsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListRepoDetailsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListRepoDomainsRequest;
@@ -727,6 +731,11 @@ public class SwrMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateSecretRequest::getProjectname, CreateSecretRequest::setProjectname));
+        builder.<Integer>withRequestField("duration_seconds",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CreateSecretRequest::getDurationSeconds, CreateSecretRequest::setDurationSeconds));
 
         // response
 
@@ -1178,6 +1187,93 @@ public class SwrMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListReferencesRequest, ListReferencesResponse> listReferences =
+        genForListReferences();
+
+    private static HttpRequestDef<ListReferencesRequest, ListReferencesResponse> genForListReferences() {
+        // basic
+        HttpRequestDef.Builder<ListReferencesRequest, ListReferencesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListReferencesRequest.class, ListReferencesResponse.class)
+                .withName("ListReferences")
+                .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/{tag}/references")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("namespace",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReferencesRequest::getNamespace, ListReferencesRequest::setNamespace));
+        builder.<String>withRequestField("repository",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReferencesRequest::getRepository, ListReferencesRequest::setRepository));
+        builder.<String>withRequestField("tag",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReferencesRequest::getTag, ListReferencesRequest::setTag));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListReferencesRequest::getLimit, ListReferencesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReferencesRequest::getMarker, ListReferencesRequest::setMarker));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRepoAccessoriesRequest, ListRepoAccessoriesResponse> listRepoAccessories =
+        genForListRepoAccessories();
+
+    private static HttpRequestDef<ListRepoAccessoriesRequest, ListRepoAccessoriesResponse> genForListRepoAccessories() {
+        // basic
+        HttpRequestDef.Builder<ListRepoAccessoriesRequest, ListRepoAccessoriesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRepoAccessoriesRequest.class, ListRepoAccessoriesResponse.class)
+                .withName("ListRepoAccessories")
+                .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/{tag}/accessories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("namespace",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRepoAccessoriesRequest::getNamespace, ListRepoAccessoriesRequest::setNamespace));
+        builder.<String>withRequestField("repository",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRepoAccessoriesRequest::getRepository,
+                ListRepoAccessoriesRequest::setRepository));
+        builder.<String>withRequestField("tag",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRepoAccessoriesRequest::getTag, ListRepoAccessoriesRequest::setTag));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRepoAccessoriesRequest::getLimit, ListRepoAccessoriesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRepoAccessoriesRequest::getOffset, ListRepoAccessoriesRequest::setOffset));
 
         // response
 
@@ -4063,6 +4159,12 @@ public class SwrMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListInstanceLtCredentialsRequest::getLimit,
                 ListInstanceLtCredentialsRequest::setLimit));
+        builder.<Boolean>withRequestField("self_only",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListInstanceLtCredentialsRequest::getSelfOnly,
+                ListInstanceLtCredentialsRequest::setSelfOnly));
 
         // response
 

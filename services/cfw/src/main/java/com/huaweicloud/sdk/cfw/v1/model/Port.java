@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Port
+ * **参数解释**： 端口信息 **约束限制**：   不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
  */
 public class Port {
 
@@ -26,7 +26,7 @@ public class Port {
     }
 
     /**
-     * **参数解释**： 端口类型 **取值范围**： -1 Any，0 包含，1 排除
+     * **参数解释**： 端口操作类型 **约束限制**：   不涉及 **取值范围**： -1：Any 0：包含 1：排除 **默认取值**：   不涉及
      * minimum: -1
      * maximum: 1
      * @return portType
@@ -45,7 +45,7 @@ public class Port {
     }
 
     /**
-     * **参数解释**： 端口 **取值范围**： 不涉及
+     * **参数解释**： 端口 **约束限制**：   不涉及 **取值范围**： 不涉及 **默认取值**：   不涉及
      * @return ports
      */
     public String getPorts() {

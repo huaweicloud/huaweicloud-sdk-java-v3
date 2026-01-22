@@ -29,7 +29,7 @@ public class IpsRuleChangeDto {
     private String objectId;
 
     /**
-     * ips规则状态
+     * ips规则状态，包含观察：OBSERVE、拦截：ENABLE、禁用：CLOSE、恢复默认：DEFAULT、全局恢复默认：ALL_DEFAULT
      */
     public static final class StatusEnum {
 
@@ -143,7 +143,7 @@ public class IpsRuleChangeDto {
     }
 
     /**
-     * ips的id列表
+     * ips的id列表，Ips规则id，为必填参数，可通过[获取ips规则列表]( ListIpsRules.xml)查询获得，通过返回值中的data.records.ips_id（.表示各对象之间层级的区分）获得。
      * @return ipsIds
      */
     public List<String> getIpsIds() {
@@ -177,7 +177,7 @@ public class IpsRuleChangeDto {
     }
 
     /**
-     * ips规则状态
+     * ips规则状态，包含观察：OBSERVE、拦截：ENABLE、禁用：CLOSE、恢复默认：DEFAULT、全局恢复默认：ALL_DEFAULT
      * @return status
      */
     public StatusEnum getStatus() {

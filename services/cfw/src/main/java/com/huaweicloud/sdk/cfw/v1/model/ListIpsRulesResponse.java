@@ -15,16 +15,16 @@ public class ListIpsRulesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private AdvancedIpsRuleListVo data;
+    private IpsRuleListVO data;
 
-    public ListIpsRulesResponse withData(AdvancedIpsRuleListVo data) {
+    public ListIpsRulesResponse withData(IpsRuleListVO data) {
         this.data = data;
         return this;
     }
 
-    public ListIpsRulesResponse withData(Consumer<AdvancedIpsRuleListVo> dataSetter) {
+    public ListIpsRulesResponse withData(Consumer<IpsRuleListVO> dataSetter) {
         if (this.data == null) {
-            this.data = new AdvancedIpsRuleListVo();
+            this.data = new IpsRuleListVO();
             dataSetter.accept(this.data);
         }
 
@@ -35,11 +35,11 @@ public class ListIpsRulesResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public AdvancedIpsRuleListVo getData() {
+    public IpsRuleListVO getData() {
         return data;
     }
 
-    public void setData(AdvancedIpsRuleListVo data) {
+    public void setData(IpsRuleListVO data) {
         this.data = data;
     }
 

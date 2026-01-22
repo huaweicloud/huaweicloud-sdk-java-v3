@@ -21,7 +21,7 @@ public class VpcAttachmentDetail {
     }
 
     /**
-     * 东西向防护添加的防护vpc的id
+     * **参数解释**： 东西向防护添加的防护VPC的ID **取值范围**： 不涉及
      * @return vpcId
      */
     public String getVpcId() {

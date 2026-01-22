@@ -47,7 +47,7 @@ public class ListMessagesResponse extends SdkResponse {
     }
 
     /**
-     * 消息列表。
+     * **参数解释**： 消息列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return messages
      */
     public List<Message> getMessages() {
@@ -64,7 +64,7 @@ public class ListMessagesResponse extends SdkResponse {
     }
 
     /**
-     * 消息总数。
+     * **参数解释**： 消息总数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return total
      */
     public BigDecimal getTotal() {

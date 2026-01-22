@@ -46,7 +46,7 @@ public class ListBrokersRespBrokers {
     }
 
     /**
-     * 全部代理ID。
+     * **参数解释**： 全部代理ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return ids
      */
     public List<BigDecimal> getIds() {
@@ -63,7 +63,7 @@ public class ListBrokersRespBrokers {
     }
 
     /**
-     * 节点名称。
+     * **参数解释**： 节点名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return brokerName
      */
     public String getBrokerName() {

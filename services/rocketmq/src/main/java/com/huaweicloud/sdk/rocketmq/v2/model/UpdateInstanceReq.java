@@ -40,13 +40,18 @@ public class UpdateInstanceReq {
 
     private String publicipId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public UpdateInstanceReq withName(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * 实例名称。  由英文字符开头，只能由英文字母、数字、中划线组成，长度为4~64的字符。
+     * **参数解释**： 实例名称。 **约束限制**： 由英文字符开头，只能由英文字母、数字、中划线组成，长度为4~64的字符。 **取值范围**： - true：开启弹性TPS。 - false：不开启弹性TPS。 **默认取值**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -63,7 +68,7 @@ public class UpdateInstanceReq {
     }
 
     /**
-     * 实例的描述信息。  长度不超过1024的字符串。[且字符串不能包含\">\"与\"<\"，字符串首字符不能为\"=\",\"+\",\"-\",\"@\"的全角和半角字符。](tag:hcs)  > \\与\"在json报文中属于特殊字符，如果参数值中需要显示\\或者\"字符，请在字符前增加转义字符\\，比如\\\\或者\\\"。
+     * **参数解释**： 实例的描述信息。 **约束限制**： 长度不超过1024的字符串。[且字符串不能包含\">\"与\"<\"，字符串首字符不能为\"=\",\"+\",\"-\",\"@\"的全角和半角字符。](tag:hcs)  > \\与\"在json报文中属于特殊字符，如果参数值中需要显示\\或者\"字符，请在字符前增加转义字符\\，比如\\\\或者\\\"。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return description
      */
     public String getDescription() {
@@ -80,7 +85,7 @@ public class UpdateInstanceReq {
     }
 
     /**
-     * 安全组ID。  获取方法如下：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。
+     * **参数解释**： 安全组ID。 获取方法如下：参考《虚拟私有云 API参考》，调用“查询安全组列表”接口，从响应体中获取安全组ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -97,7 +102,7 @@ public class UpdateInstanceReq {
     }
 
     /**
-     * ACL访问控制。
+     * **参数解释**： 是否开启ACL访问控制。 **约束限制**： 不涉及。 **取值范围**： - true：开启ACL访问控制。 - false：不开启ACL访问控制。 **默认取值**： 不涉及。
      * @return enableAcl
      */
     public Boolean getEnableAcl() {
@@ -114,7 +119,7 @@ public class UpdateInstanceReq {
     }
 
     /**
-     * 是否开启公网。
+     * **参数解释**： 是否开启公网。 **约束限制**： 不涉及。 **取值范围**： - true：开启公网。 - false：不开启公网。 **默认取值**： 不涉及。
      * @return enablePublicip
      */
     public Boolean getEnablePublicip() {
@@ -131,7 +136,7 @@ public class UpdateInstanceReq {
     }
 
     /**
-     * 实例绑定的弹性IP地址的ID。  以英文逗号隔开多个弹性IP地址的ID。  如果开启了公网访问功能（即enable_publicip为true），该字段为必选。
+     * **参数解释**： 实例绑定的弹性IP地址的ID。 **约束限制**： 以英文逗号隔开多个弹性IP地址的ID。 如果开启了公网访问功能（即enable_publicip为true），该字段为必选。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return publicipId
      */
     public String getPublicipId() {
@@ -140,6 +145,23 @@ public class UpdateInstanceReq {
 
     public void setPublicipId(String publicipId) {
         this.publicipId = publicipId;
+    }
+
+    public UpdateInstanceReq withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 企业项目。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     @Override
@@ -155,12 +177,14 @@ public class UpdateInstanceReq {
             && Objects.equals(this.securityGroupId, that.securityGroupId)
             && Objects.equals(this.enableAcl, that.enableAcl)
             && Objects.equals(this.enablePublicip, that.enablePublicip)
-            && Objects.equals(this.publicipId, that.publicipId);
+            && Objects.equals(this.publicipId, that.publicipId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, securityGroupId, enableAcl, enablePublicip, publicipId);
+        return Objects
+            .hash(name, description, securityGroupId, enableAcl, enablePublicip, publicipId, enterpriseProjectId);
     }
 
     @Override
@@ -173,6 +197,7 @@ public class UpdateInstanceReq {
         sb.append("    enableAcl: ").append(toIndentedString(enableAcl)).append("\n");
         sb.append("    enablePublicip: ").append(toIndentedString(enablePublicip)).append("\n");
         sb.append("    publicipId: ").append(toIndentedString(publicipId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

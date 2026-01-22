@@ -21,9 +21,19 @@ public class GroupMessageOffsetsDetailEntity {
     private String messageCurrentOffset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "topic")
+
+    private String topic;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_log_start_offset")
 
     private Integer messageLogStartOffset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lag")
+
+    private Integer lag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_log_end_offset")
@@ -79,6 +89,23 @@ public class GroupMessageOffsetsDetailEntity {
         this.messageCurrentOffset = messageCurrentOffset;
     }
 
+    public GroupMessageOffsetsDetailEntity withTopic(String topic) {
+        this.topic = topic;
+        return this;
+    }
+
+    /**
+     * topic名称
+     * @return topic
+     */
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
+    }
+
     public GroupMessageOffsetsDetailEntity withMessageLogStartOffset(Integer messageLogStartOffset) {
         this.messageLogStartOffset = messageLogStartOffset;
         return this;
@@ -94,6 +121,23 @@ public class GroupMessageOffsetsDetailEntity {
 
     public void setMessageLogStartOffset(Integer messageLogStartOffset) {
         this.messageLogStartOffset = messageLogStartOffset;
+    }
+
+    public GroupMessageOffsetsDetailEntity withLag(Integer lag) {
+        this.lag = lag;
+        return this;
+    }
+
+    /**
+     * 剩余可消费消息数，即消息堆积数
+     * @return lag
+     */
+    public Integer getLag() {
+        return lag;
+    }
+
+    public void setLag(Integer lag) {
+        this.lag = lag;
     }
 
     public GroupMessageOffsetsDetailEntity withMessageLogEndOffset(Integer messageLogEndOffset) {
@@ -175,8 +219,9 @@ public class GroupMessageOffsetsDetailEntity {
         GroupMessageOffsetsDetailEntity that = (GroupMessageOffsetsDetailEntity) obj;
         return Objects.equals(this.partition, that.partition)
             && Objects.equals(this.messageCurrentOffset, that.messageCurrentOffset)
+            && Objects.equals(this.topic, that.topic)
             && Objects.equals(this.messageLogStartOffset, that.messageLogStartOffset)
-            && Objects.equals(this.messageLogEndOffset, that.messageLogEndOffset)
+            && Objects.equals(this.lag, that.lag) && Objects.equals(this.messageLogEndOffset, that.messageLogEndOffset)
             && Objects.equals(this.consumerId, that.consumerId) && Objects.equals(this.host, that.host)
             && Objects.equals(this.clientId, that.clientId);
     }
@@ -185,7 +230,9 @@ public class GroupMessageOffsetsDetailEntity {
     public int hashCode() {
         return Objects.hash(partition,
             messageCurrentOffset,
+            topic,
             messageLogStartOffset,
+            lag,
             messageLogEndOffset,
             consumerId,
             host,
@@ -198,7 +245,9 @@ public class GroupMessageOffsetsDetailEntity {
         sb.append("class GroupMessageOffsetsDetailEntity {\n");
         sb.append("    partition: ").append(toIndentedString(partition)).append("\n");
         sb.append("    messageCurrentOffset: ").append(toIndentedString(messageCurrentOffset)).append("\n");
+        sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
         sb.append("    messageLogStartOffset: ").append(toIndentedString(messageLogStartOffset)).append("\n");
+        sb.append("    lag: ").append(toIndentedString(lag)).append("\n");
         sb.append("    messageLogEndOffset: ").append(toIndentedString(messageLogEndOffset)).append("\n");
         sb.append("    consumerId: ").append(toIndentedString(consumerId)).append("\n");
         sb.append("    host: ").append(toIndentedString(host)).append("\n");

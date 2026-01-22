@@ -43,7 +43,7 @@ public class JobEntities {
     }
 
     /**
-     * **参数解释**：子任务关联的资源类型。  **取值范围**：不涉及
+     * **参数解释**：子任务关联的资源类型。  **取值范围**： - loadbalancer：弹性负载均衡器。 - listener：监听器。
      * @return resourceType
      */
     public String getResourceType() {

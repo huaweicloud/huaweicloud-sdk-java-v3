@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 规则id列表
+ * **参数解释**： 规则ID列表
  */
 public class RuleIdList {
 

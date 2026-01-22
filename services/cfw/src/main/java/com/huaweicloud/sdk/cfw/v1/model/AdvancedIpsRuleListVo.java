@@ -45,7 +45,7 @@ public class AdvancedIpsRuleListVo {
     }
 
     /**
-     * Get advancedIpsRules
+     * 频率ips规则列表
      * @return advancedIpsRules
      */
     public List<AdvancedIpsRuleVo> getAdvancedIpsRules() {
@@ -62,7 +62,7 @@ public class AdvancedIpsRuleListVo {
     }
 
     /**
-     * Get total
+     * 频率ips规则总数
      * @return total
      */
     public Integer getTotal() {

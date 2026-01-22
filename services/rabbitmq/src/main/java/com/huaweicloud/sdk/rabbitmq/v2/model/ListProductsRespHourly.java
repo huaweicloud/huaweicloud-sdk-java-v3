@@ -34,7 +34,7 @@ public class ListProductsRespHourly {
     }
 
     /**
-     * 消息引擎的名称，该字段显示为rabbitmq。
+     * **参数解释**： 消息引擎的名称，该字段显示为rabbitmq。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -51,7 +51,7 @@ public class ListProductsRespHourly {
     }
 
     /**
-     * 消息引擎的版本，当前支持3.8.35[和3.7.17](tag:sbc,hk_sbc)。
+     * **参数解释**： 消息引擎的版本。 **取值范围**： - 3.8.35 [- 3.12.13](tag:srg) [- AMQP-0-9-1](tag:hws,hws_hk,hws_eu)
      * @return version
      */
     public String getVersion() {
@@ -84,7 +84,7 @@ public class ListProductsRespHourly {
     }
 
     /**
-     * 产品规格列表。
+     * **参数解释**： 产品规格列表。 **取值范围**： 不涉及。
      * @return values
      */
     public List<ListProductsRespValues> getValues() {

@@ -39,6 +39,16 @@ public class FlowDetailsVO {
     private Long lastTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agg_start_time")
+
+    private Long aggStartTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agg_end_time")
+
+    private Long aggEndTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ports")
 
     private List<ItemVO> ports = null;
@@ -182,6 +192,40 @@ public class FlowDetailsVO {
 
     public void setLastTime(Long lastTime) {
         this.lastTime = lastTime;
+    }
+
+    public FlowDetailsVO withAggStartTime(Long aggStartTime) {
+        this.aggStartTime = aggStartTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 聚合开始时间 **取值范围**： 不涉及
+     * @return aggStartTime
+     */
+    public Long getAggStartTime() {
+        return aggStartTime;
+    }
+
+    public void setAggStartTime(Long aggStartTime) {
+        this.aggStartTime = aggStartTime;
+    }
+
+    public FlowDetailsVO withAggEndTime(Long aggEndTime) {
+        this.aggEndTime = aggEndTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 聚合结束时间 **取值范围**： 不涉及
+     * @return aggEndTime
+     */
+    public Long getAggEndTime() {
+        return aggEndTime;
+    }
+
+    public void setAggEndTime(Long aggEndTime) {
+        this.aggEndTime = aggEndTime;
     }
 
     public FlowDetailsVO withPorts(List<ItemVO> ports) {
@@ -397,7 +441,8 @@ public class FlowDetailsVO {
         return Objects.equals(this.apps, that.apps)
             && Objects.equals(this.associateInstanceType, that.associateInstanceType)
             && Objects.equals(this.deviceName, that.deviceName) && Objects.equals(this.item, that.item)
-            && Objects.equals(this.lastTime, that.lastTime) && Objects.equals(this.ports, that.ports)
+            && Objects.equals(this.lastTime, that.lastTime) && Objects.equals(this.aggStartTime, that.aggStartTime)
+            && Objects.equals(this.aggEndTime, that.aggEndTime) && Objects.equals(this.ports, that.ports)
             && Objects.equals(this.region, that.region) && Objects.equals(this.requestByte, that.requestByte)
             && Objects.equals(this.responseByte, that.responseByte) && Objects.equals(this.sessions, that.sessions)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.srcIp, that.srcIp)
@@ -411,6 +456,8 @@ public class FlowDetailsVO {
             deviceName,
             item,
             lastTime,
+            aggStartTime,
+            aggEndTime,
             ports,
             region,
             requestByte,
@@ -431,6 +478,8 @@ public class FlowDetailsVO {
         sb.append("    deviceName: ").append(toIndentedString(deviceName)).append("\n");
         sb.append("    item: ").append(toIndentedString(item)).append("\n");
         sb.append("    lastTime: ").append(toIndentedString(lastTime)).append("\n");
+        sb.append("    aggStartTime: ").append(toIndentedString(aggStartTime)).append("\n");
+        sb.append("    aggEndTime: ").append(toIndentedString(aggEndTime)).append("\n");
         sb.append("    ports: ").append(toIndentedString(ports)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    requestByte: ").append(toIndentedString(requestByte)).append("\n");

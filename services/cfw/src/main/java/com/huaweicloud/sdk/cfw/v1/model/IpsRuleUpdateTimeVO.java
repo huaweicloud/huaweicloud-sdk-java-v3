@@ -31,7 +31,7 @@ public class IpsRuleUpdateTimeVO {
     }
 
     /**
-     * Get ipsType
+     * ips类型，0表示基础防御，1表示虚拟补丁
      * @return ipsType
      */
     public Integer getIpsType() {
@@ -48,7 +48,7 @@ public class IpsRuleUpdateTimeVO {
     }
 
     /**
-     * Get ipsVersion
+     * ips规则版本
      * @return ipsVersion
      */
     public String getIpsVersion() {
@@ -65,7 +65,7 @@ public class IpsRuleUpdateTimeVO {
     }
 
     /**
-     * Get updateTime
+     * ips更新时间戳
      * @return updateTime
      */
     public Long getUpdateTime() {

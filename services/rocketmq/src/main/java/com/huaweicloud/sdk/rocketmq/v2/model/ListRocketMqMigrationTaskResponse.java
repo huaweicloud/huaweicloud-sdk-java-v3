@@ -30,7 +30,7 @@ public class ListRocketMqMigrationTaskResponse extends SdkResponse {
     }
 
     /**
-     * 元数据迁移任务总数。
+     * **参数解释**： 元数据迁移任务总数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return total
      */
     public Integer getTotal() {
@@ -63,7 +63,7 @@ public class ListRocketMqMigrationTaskResponse extends SdkResponse {
     }
 
     /**
-     * 元数据迁移任务列表。
+     * **参数解释**： 元数据迁移任务列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return task
      */
     public List<MetadataTask> getTask() {

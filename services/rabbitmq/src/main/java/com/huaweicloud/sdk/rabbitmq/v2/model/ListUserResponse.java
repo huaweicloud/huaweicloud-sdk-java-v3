@@ -46,7 +46,7 @@ public class ListUserResponse extends SdkResponse {
     }
 
     /**
-     * 用户列表。
+     * **参数解释**： 用户列表。
      * @return users
      */
     public List<AMQPUser> getUsers() {
@@ -63,7 +63,7 @@ public class ListUserResponse extends SdkResponse {
     }
 
     /**
-     * 总用户个数。
+     * **参数解释**： 总用户个数。 **取值范围**： 不涉及。
      * @return total
      */
     public Integer getTotal() {

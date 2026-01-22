@@ -6,12 +6,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * RocketMQ元数据迁移，RocketMQ Topic元数据。
+ * **参数解释**： RocketMQ元数据迁移，RocketMQ Topic元数据。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
  */
 public class MigrationRocketMqTopicConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "topicName")
+    @JsonProperty(value = "topic_name")
 
     private String topicName;
 
@@ -26,22 +26,22 @@ public class MigrationRocketMqTopicConfig {
     private Integer perm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "readQueueNums")
+    @JsonProperty(value = "read_queue_nums")
 
     private Integer readQueueNums;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "writeQueueNums")
+    @JsonProperty(value = "write_queue_nums")
 
     private Integer writeQueueNums;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "topicFilterType")
+    @JsonProperty(value = "topic_filter_type")
 
     private String topicFilterType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "topicSysFlag")
+    @JsonProperty(value = "topic_sys_flag")
 
     private Integer topicSysFlag;
 
@@ -51,7 +51,7 @@ public class MigrationRocketMqTopicConfig {
     }
 
     /**
-     * Topic名称。
+     * **参数解释**： Topic名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return topicName
      */
     public String getTopicName() {
@@ -68,7 +68,7 @@ public class MigrationRocketMqTopicConfig {
     }
 
     /**
-     * 是否有序消息。
+     * **参数解释**： 是否有序消息。 **约束限制**： 不涉及。 **取值范围**： - true：有序消息。 - false：无序消息。 **默认取值**： false。
      * @return order
      */
     public Boolean getOrder() {
@@ -85,7 +85,7 @@ public class MigrationRocketMqTopicConfig {
     }
 
     /**
-     * Topic权限。
+     * **参数解释**： Topic权限。 **约束限制**： 不涉及。 **取值范围**： - PUB：拥有发布权限。 - SUB：拥有订阅权限。 - PUB|SUB：拥有发布订阅权限。 - DENY：无权限。 **默认取值**： 6。
      * @return perm
      */
     public Integer getPerm() {
@@ -102,7 +102,7 @@ public class MigrationRocketMqTopicConfig {
     }
 
     /**
-     * 读队列个数。
+     * **参数解释**： 读队列个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 16。
      * @return readQueueNums
      */
     public Integer getReadQueueNums() {
@@ -119,7 +119,7 @@ public class MigrationRocketMqTopicConfig {
     }
 
     /**
-     * 写队列个数。
+     * **参数解释**： 写队列个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 16。
      * @return writeQueueNums
      */
     public Integer getWriteQueueNums() {
@@ -136,7 +136,7 @@ public class MigrationRocketMqTopicConfig {
     }
 
     /**
-     * Topic过滤类型。   - SINGLE_TAG：单标签   - MULTI_TAG：多标签
+     * **参数解释**： Topic过滤类型。 **约束限制**： 不涉及。 **取值范围**： - SINGLE_TAG：单标签   - MULTI_TAG：多标签 **默认取值**： 不涉及。
      * @return topicFilterType
      */
     public String getTopicFilterType() {
@@ -153,7 +153,7 @@ public class MigrationRocketMqTopicConfig {
     }
 
     /**
-     * Topic系统标志位。
+     * **参数解释**： Topic系统标志位。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 0。
      * @return topicSysFlag
      */
     public Integer getTopicSysFlag() {

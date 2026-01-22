@@ -35,14 +35,20 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteQueueInfoRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteQueueInfoResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteScheduledTaskRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteScheduledTaskResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteUserRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteUserResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.EnableDnsRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.EnableDnsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListAvailableZonesResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListBackgroundTasksRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListBackgroundTasksResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListBindingsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListBindingsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListConfigFeaturesRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListConfigFeaturesResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListEngineProductsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListEngineProductsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListExchangesRequest;
@@ -55,16 +61,22 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.ListProductsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListProductsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListQueuesRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListQueuesResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListScheduledTasksRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListScheduledTasksResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListUserRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListUserResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListVhostsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListVhostsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ModifyRecyclePolicyRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ModifyRecyclePolicyResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResetPasswordRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResetPasswordResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeEngineInstanceRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeEngineInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeInstanceRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeInstanceResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.RestoreRecycleInstanceRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.RestoreRecycleInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowBackgroundTaskRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowBackgroundTaskResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowCesHierarchyRequest;
@@ -87,12 +99,20 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqTagsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqTagsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRecycleInstancesRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRecycleInstancesResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowVolumeExpandConfigRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowVolumeExpandConfigResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.UpdateInstanceRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.UpdateInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.UpdatePluginsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.UpdatePluginsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.UpdateScheduledTaskRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.UpdateScheduledTaskResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.UpdateUserRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.UpdateUserResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.UpdateVolumeExpansionConfigRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.UpdateVolumeExpansionConfigResponse;
 
 public class RabbitMQClient {
 
@@ -203,7 +223,7 @@ public class RabbitMQClient {
     /**
      * 创建实例
      *
-     * 创建实例[，该接口支持创建按需[和包周期](tag:hws,hws_eu,hws_hk,ctc,cmcc)计费方式的实例](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,cmcc,sbc)。
+     * 创建实例[，该接口支持创建按需[和包周期](tag:hws,hws_eu,hws_hk,ctc,cmcc,ax)计费方式的实例](tag:hws,hws_eu,hws_hk,ctc,g42,hk_g42,tm,hk_tm,cmcc,sbc,ax,hk_sbc)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -218,7 +238,7 @@ public class RabbitMQClient {
     /**
      * 创建实例
      *
-     * 创建实例[，该接口支持创建按需[和包周期](tag:hws,hws_eu,hws_hk,ctc,cmcc)计费方式的实例](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,cmcc,sbc)。
+     * 创建实例[，该接口支持创建按需[和包周期](tag:hws,hws_eu,hws_hk,ctc,cmcc,ax)计费方式的实例](tag:hws,hws_eu,hws_hk,ctc,g42,hk_g42,tm,hk_tm,cmcc,sbc,ax,hk_sbc)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -317,6 +337,35 @@ public class RabbitMQClient {
     }
 
     /**
+     * 删除定时任务管理中的指定记录
+     *
+     * 删除定时任务管理中的指定记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteScheduledTaskRequest 请求对象
+     * @return DeleteScheduledTaskResponse
+     */
+    public DeleteScheduledTaskResponse deleteScheduledTask(DeleteScheduledTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, RabbitMQMeta.deleteScheduledTask);
+    }
+
+    /**
+     * 删除定时任务管理中的指定记录
+     *
+     * 删除定时任务管理中的指定记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteScheduledTaskRequest 请求对象
+     * @return SyncInvoker<DeleteScheduledTaskRequest, DeleteScheduledTaskResponse>
+     */
+    public SyncInvoker<DeleteScheduledTaskRequest, DeleteScheduledTaskResponse> deleteScheduledTaskInvoker(
+        DeleteScheduledTaskRequest request) {
+        return new SyncInvoker<>(request, RabbitMQMeta.deleteScheduledTask, hcClient);
+    }
+
+    /**
      * 删除用户
      *
      * 删除用户（仅AMQP版本支持）。
@@ -342,6 +391,34 @@ public class RabbitMQClient {
      */
     public SyncInvoker<DeleteUserRequest, DeleteUserResponse> deleteUserInvoker(DeleteUserRequest request) {
         return new SyncInvoker<>(request, RabbitMQMeta.deleteUser, hcClient);
+    }
+
+    /**
+     * 开启RabbitMQ实例域名访问能力
+     *
+     * 开启RabbitMQ实例域名访问功能后，客户端可以通过域名连接RabbitMQ实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableDnsRequest 请求对象
+     * @return EnableDnsResponse
+     */
+    public EnableDnsResponse enableDns(EnableDnsRequest request) {
+        return hcClient.syncInvokeHttp(request, RabbitMQMeta.enableDns);
+    }
+
+    /**
+     * 开启RabbitMQ实例域名访问能力
+     *
+     * 开启RabbitMQ实例域名访问功能后，客户端可以通过域名连接RabbitMQ实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableDnsRequest 请求对象
+     * @return SyncInvoker<EnableDnsRequest, EnableDnsResponse>
+     */
+    public SyncInvoker<EnableDnsRequest, EnableDnsResponse> enableDnsInvoker(EnableDnsRequest request) {
+        return new SyncInvoker<>(request, RabbitMQMeta.enableDns, hcClient);
     }
 
     /**
@@ -400,6 +477,35 @@ public class RabbitMQClient {
     public SyncInvoker<ListBackgroundTasksRequest, ListBackgroundTasksResponse> listBackgroundTasksInvoker(
         ListBackgroundTasksRequest request) {
         return new SyncInvoker<>(request, RabbitMQMeta.listBackgroundTasks, hcClient);
+    }
+
+    /**
+     * 查询特性开关列表
+     *
+     * 查询特性开关列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConfigFeaturesRequest 请求对象
+     * @return ListConfigFeaturesResponse
+     */
+    public ListConfigFeaturesResponse listConfigFeatures(ListConfigFeaturesRequest request) {
+        return hcClient.syncInvokeHttp(request, RabbitMQMeta.listConfigFeatures);
+    }
+
+    /**
+     * 查询特性开关列表
+     *
+     * 查询特性开关列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConfigFeaturesRequest 请求对象
+     * @return SyncInvoker<ListConfigFeaturesRequest, ListConfigFeaturesResponse>
+     */
+    public SyncInvoker<ListConfigFeaturesRequest, ListConfigFeaturesResponse> listConfigFeaturesInvoker(
+        ListConfigFeaturesRequest request) {
+        return new SyncInvoker<>(request, RabbitMQMeta.listConfigFeatures, hcClient);
     }
 
     /**
@@ -517,6 +623,35 @@ public class RabbitMQClient {
     }
 
     /**
+     * 查询实例的定时任务列表
+     *
+     * 查询实例的定时任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduledTasksRequest 请求对象
+     * @return ListScheduledTasksResponse
+     */
+    public ListScheduledTasksResponse listScheduledTasks(ListScheduledTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, RabbitMQMeta.listScheduledTasks);
+    }
+
+    /**
+     * 查询实例的定时任务列表
+     *
+     * 查询实例的定时任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduledTasksRequest 请求对象
+     * @return SyncInvoker<ListScheduledTasksRequest, ListScheduledTasksResponse>
+     */
+    public SyncInvoker<ListScheduledTasksRequest, ListScheduledTasksResponse> listScheduledTasksInvoker(
+        ListScheduledTasksRequest request) {
+        return new SyncInvoker<>(request, RabbitMQMeta.listScheduledTasks, hcClient);
+    }
+
+    /**
      * 查询用户列表
      *
      * 查询用户列表（仅AMQP版本支持）。
@@ -542,6 +677,35 @@ public class RabbitMQClient {
      */
     public SyncInvoker<ListUserRequest, ListUserResponse> listUserInvoker(ListUserRequest request) {
         return new SyncInvoker<>(request, RabbitMQMeta.listUser, hcClient);
+    }
+
+    /**
+     * 更新回收站策略
+     *
+     * 更新回收站策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyRecyclePolicyRequest 请求对象
+     * @return ModifyRecyclePolicyResponse
+     */
+    public ModifyRecyclePolicyResponse modifyRecyclePolicy(ModifyRecyclePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, RabbitMQMeta.modifyRecyclePolicy);
+    }
+
+    /**
+     * 更新回收站策略
+     *
+     * 更新回收站策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyRecyclePolicyRequest 请求对象
+     * @return SyncInvoker<ModifyRecyclePolicyRequest, ModifyRecyclePolicyResponse>
+     */
+    public SyncInvoker<ModifyRecyclePolicyRequest, ModifyRecyclePolicyResponse> modifyRecyclePolicyInvoker(
+        ModifyRecyclePolicyRequest request) {
+        return new SyncInvoker<>(request, RabbitMQMeta.modifyRecyclePolicy, hcClient);
     }
 
     /**
@@ -577,7 +741,7 @@ public class RabbitMQClient {
      *
      * 实例规格变更。
      * 
-     * [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,hws_hk,ctc,cmcc,hws_eu)
+     * [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,hws_hk,ctc,cmcc,hws_eu,ax)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -593,7 +757,7 @@ public class RabbitMQClient {
      *
      * 实例规格变更。
      * 
-     * [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,hws_hk,ctc,cmcc,hws_eu)
+     * [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,hws_hk,ctc,cmcc,hws_eu,ax)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -636,6 +800,35 @@ public class RabbitMQClient {
     public SyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstanceInvoker(
         ResizeInstanceRequest request) {
         return new SyncInvoker<>(request, RabbitMQMeta.resizeInstance, hcClient);
+    }
+
+    /**
+     * 恢复回收站实例
+     *
+     * 恢复回收站实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreRecycleInstanceRequest 请求对象
+     * @return RestoreRecycleInstanceResponse
+     */
+    public RestoreRecycleInstanceResponse restoreRecycleInstance(RestoreRecycleInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, RabbitMQMeta.restoreRecycleInstance);
+    }
+
+    /**
+     * 恢复回收站实例
+     *
+     * 恢复回收站实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreRecycleInstanceRequest 请求对象
+     * @return SyncInvoker<RestoreRecycleInstanceRequest, RestoreRecycleInstanceResponse>
+     */
+    public SyncInvoker<RestoreRecycleInstanceRequest, RestoreRecycleInstanceResponse> restoreRecycleInstanceInvoker(
+        RestoreRecycleInstanceRequest request) {
+        return new SyncInvoker<>(request, RabbitMQMeta.restoreRecycleInstance, hcClient);
     }
 
     /**
@@ -933,6 +1126,64 @@ public class RabbitMQClient {
     }
 
     /**
+     * 查询回收站实例列表
+     *
+     * 查询回收站实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecycleInstancesRequest 请求对象
+     * @return ShowRecycleInstancesResponse
+     */
+    public ShowRecycleInstancesResponse showRecycleInstances(ShowRecycleInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, RabbitMQMeta.showRecycleInstances);
+    }
+
+    /**
+     * 查询回收站实例列表
+     *
+     * 查询回收站实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecycleInstancesRequest 请求对象
+     * @return SyncInvoker<ShowRecycleInstancesRequest, ShowRecycleInstancesResponse>
+     */
+    public SyncInvoker<ShowRecycleInstancesRequest, ShowRecycleInstancesResponse> showRecycleInstancesInvoker(
+        ShowRecycleInstancesRequest request) {
+        return new SyncInvoker<>(request, RabbitMQMeta.showRecycleInstances, hcClient);
+    }
+
+    /**
+     * 查询磁盘自动扩容配置
+     *
+     * 查询磁盘自动扩容配置，包括磁盘自动扩容是否开启，以及开启后的扩容阈值、扩容步长、扩容上限信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVolumeExpandConfigRequest 请求对象
+     * @return ShowVolumeExpandConfigResponse
+     */
+    public ShowVolumeExpandConfigResponse showVolumeExpandConfig(ShowVolumeExpandConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, RabbitMQMeta.showVolumeExpandConfig);
+    }
+
+    /**
+     * 查询磁盘自动扩容配置
+     *
+     * 查询磁盘自动扩容配置，包括磁盘自动扩容是否开启，以及开启后的扩容阈值、扩容步长、扩容上限信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVolumeExpandConfigRequest 请求对象
+     * @return SyncInvoker<ShowVolumeExpandConfigRequest, ShowVolumeExpandConfigResponse>
+     */
+    public SyncInvoker<ShowVolumeExpandConfigRequest, ShowVolumeExpandConfigResponse> showVolumeExpandConfigInvoker(
+        ShowVolumeExpandConfigRequest request) {
+        return new SyncInvoker<>(request, RabbitMQMeta.showVolumeExpandConfig, hcClient);
+    }
+
+    /**
      * 修改实例信息
      *
      * 修改实例的名称和描述信息。
@@ -990,6 +1241,35 @@ public class RabbitMQClient {
     }
 
     /**
+     * 修改定时任务管理中的指定记录
+     *
+     * 修改定时任务管理中的指定记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateScheduledTaskRequest 请求对象
+     * @return UpdateScheduledTaskResponse
+     */
+    public UpdateScheduledTaskResponse updateScheduledTask(UpdateScheduledTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, RabbitMQMeta.updateScheduledTask);
+    }
+
+    /**
+     * 修改定时任务管理中的指定记录
+     *
+     * 修改定时任务管理中的指定记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateScheduledTaskRequest 请求对象
+     * @return SyncInvoker<UpdateScheduledTaskRequest, UpdateScheduledTaskResponse>
+     */
+    public SyncInvoker<UpdateScheduledTaskRequest, UpdateScheduledTaskResponse> updateScheduledTaskInvoker(
+        UpdateScheduledTaskRequest request) {
+        return new SyncInvoker<>(request, RabbitMQMeta.updateScheduledTask, hcClient);
+    }
+
+    /**
      * 修改用户参数
      *
      * 修改用户参数（仅AMQP版本支持）。
@@ -1015,6 +1295,35 @@ public class RabbitMQClient {
      */
     public SyncInvoker<UpdateUserRequest, UpdateUserResponse> updateUserInvoker(UpdateUserRequest request) {
         return new SyncInvoker<>(request, RabbitMQMeta.updateUser, hcClient);
+    }
+
+    /**
+     * 修改磁盘自动扩容配置
+     *
+     * 该接口用于修改磁盘自动扩容配置，包含磁盘自动扩容是否开启、扩容阈值、扩容步长，以及扩容上限的配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateVolumeExpansionConfigRequest 请求对象
+     * @return UpdateVolumeExpansionConfigResponse
+     */
+    public UpdateVolumeExpansionConfigResponse updateVolumeExpansionConfig(UpdateVolumeExpansionConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, RabbitMQMeta.updateVolumeExpansionConfig);
+    }
+
+    /**
+     * 修改磁盘自动扩容配置
+     *
+     * 该接口用于修改磁盘自动扩容配置，包含磁盘自动扩容是否开启、扩容阈值、扩容步长，以及扩容上限的配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateVolumeExpansionConfigRequest 请求对象
+     * @return SyncInvoker<UpdateVolumeExpansionConfigRequest, UpdateVolumeExpansionConfigResponse>
+     */
+    public SyncInvoker<UpdateVolumeExpansionConfigRequest, UpdateVolumeExpansionConfigResponse> updateVolumeExpansionConfigInvoker(
+        UpdateVolumeExpansionConfigRequest request) {
+        return new SyncInvoker<>(request, RabbitMQMeta.updateVolumeExpansionConfig, hcClient);
     }
 
     /**

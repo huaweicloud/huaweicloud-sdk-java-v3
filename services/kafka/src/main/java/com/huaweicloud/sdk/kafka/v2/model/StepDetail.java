@@ -16,9 +16,9 @@ public class StepDetail {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status")
+    @JsonProperty(value = "statue")
 
-    private String status;
+    private String statue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
@@ -47,21 +47,21 @@ public class StepDetail {
         this.name = name;
     }
 
-    public StepDetail withStatus(String status) {
-        this.status = status;
+    public StepDetail withStatue(String statue) {
+        this.statue = statue;
         return this;
     }
 
     /**
      * **参数解释**： 任务状态。 **取值范围**： - COMPLETED：任务已完成。 - IN_PROGRESS：任务正在进行。 - FAILED：任务失败。 - WAITING：等待开始。
-     * @return status
+     * @return statue
      */
-    public String getStatus() {
-        return status;
+    public String getStatue() {
+        return statue;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setStatue(String statue) {
+        this.statue = statue;
     }
 
     public StepDetail withStartTime(String startTime) {
@@ -107,13 +107,13 @@ public class StepDetail {
             return false;
         }
         StepDetail that = (StepDetail) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+        return Objects.equals(this.name, that.name) && Objects.equals(this.statue, that.statue)
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, status, startTime, endTime);
+        return Objects.hash(name, statue, startTime, endTime);
     }
 
     @Override
@@ -121,7 +121,7 @@ public class StepDetail {
         StringBuilder sb = new StringBuilder();
         sb.append("class StepDetail {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    statue: ").append(toIndentedString(statue)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("}");

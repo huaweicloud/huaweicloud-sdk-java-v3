@@ -19,6 +19,11 @@ public class ListYmlsJobResponse extends SdkResponse {
 
     private List<ConfigListRsp> configList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "totalSize")
+
+    private Integer totalSize;
+
     public ListYmlsJobResponse withConfigList(List<ConfigListRsp> configList) {
         this.configList = configList;
         return this;
@@ -52,6 +57,23 @@ public class ListYmlsJobResponse extends SdkResponse {
         this.configList = configList;
     }
 
+    public ListYmlsJobResponse withTotalSize(Integer totalSize) {
+        this.totalSize = totalSize;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 配置任务数量。 **取值范围**： 不涉及
+     * @return totalSize
+     */
+    public Integer getTotalSize() {
+        return totalSize;
+    }
+
+    public void setTotalSize(Integer totalSize) {
+        this.totalSize = totalSize;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +83,12 @@ public class ListYmlsJobResponse extends SdkResponse {
             return false;
         }
         ListYmlsJobResponse that = (ListYmlsJobResponse) obj;
-        return Objects.equals(this.configList, that.configList);
+        return Objects.equals(this.configList, that.configList) && Objects.equals(this.totalSize, that.totalSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(configList);
+        return Objects.hash(configList, totalSize);
     }
 
     @Override
@@ -74,6 +96,7 @@ public class ListYmlsJobResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListYmlsJobResponse {\n");
         sb.append("    configList: ").append(toIndentedString(configList)).append("\n");
+        sb.append("    totalSize: ").append(toIndentedString(totalSize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

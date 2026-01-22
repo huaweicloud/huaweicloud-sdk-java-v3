@@ -382,7 +382,7 @@ public class ListSupportMasksRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mask")
 
-    private List<Integer> mask = null;
+    private Integer mask;
 
     public ListSupportMasksRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -619,36 +619,22 @@ public class ListSupportMasksRequest {
         this.ipVersion = ipVersion;
     }
 
-    public ListSupportMasksRequest withMask(List<Integer> mask) {
+    public ListSupportMasksRequest withMask(Integer mask) {
         this.mask = mask;
-        return this;
-    }
-
-    public ListSupportMasksRequest addMaskItem(Integer maskItem) {
-        if (this.mask == null) {
-            this.mask = new ArrayList<>();
-        }
-        this.mask.add(maskItem);
-        return this;
-    }
-
-    public ListSupportMasksRequest withMask(Consumer<List<Integer>> maskSetter) {
-        if (this.mask == null) {
-            this.mask = new ArrayList<>();
-        }
-        maskSetter.accept(this.mask);
         return this;
     }
 
     /**
      * Get mask
+     * minimum: 1
+     * maximum: 128
      * @return mask
      */
-    public List<Integer> getMask() {
+    public Integer getMask() {
         return mask;
     }
 
-    public void setMask(List<Integer> mask) {
+    public void setMask(Integer mask) {
         this.mask = mask;
     }
 

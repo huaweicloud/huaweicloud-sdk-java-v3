@@ -41,7 +41,7 @@ public class ListDomainParseDetailResponse extends SdkResponse {
     }
 
     /**
-     * 域名解析ip列表
+     * **参数解释**： 域名解析IP列表 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return data
      */
     public List<String> getData() {

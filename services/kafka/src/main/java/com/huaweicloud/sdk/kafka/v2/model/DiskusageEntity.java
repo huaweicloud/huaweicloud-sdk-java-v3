@@ -122,7 +122,7 @@ public class DiskusageEntity {
     }
 
     /**
-     * 消息标签。
+     * **参数解释**： 已使用的磁盘容量占比。 **取值范围**： 不涉及。
      * @return dataDiskUsePercentage
      */
     public String getDataDiskUsePercentage() {
@@ -139,7 +139,7 @@ public class DiskusageEntity {
     }
 
     /**
-     * 消息标签。
+     * **参数解释**： 状态。 **取值范围**： 不涉及。
      * @return status
      */
     public String getStatus() {

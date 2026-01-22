@@ -31,7 +31,7 @@ public class VpcDetail {
     }
 
     /**
-     * 创建引流VPC产生的随机UUID
+     * **参数解释**： 创建引流VPC产生的随机UUID **取值范围**： 不涉及
      * @return id
      */
     public String getId() {
@@ -48,7 +48,7 @@ public class VpcDetail {
     }
 
     /**
-     * 引流VPC名称
+     * **参数解释**： 引流VPC名称 **取值范围**： 不涉及
      * @return name
      */
     public String getName() {
@@ -65,7 +65,7 @@ public class VpcDetail {
     }
 
     /**
-     * 功能说明：虚拟私有云下可用子网的范围 取值范围： 10.0.0.0/8~24 172.16.0.0/12~24 192.168.0.0/16~24 不指定cidr时，默认值为空 约束：必须是cidr格式，例如:192.168.0.0/16
+     * **参数解释**： 虚拟私有云下可用子网的范围 **取值范围**： 10.0.0.0/8~24 172.16.0.0/12~24 192.168.0.0/16~24
      * @return cidr
      */
     public String getCidr() {

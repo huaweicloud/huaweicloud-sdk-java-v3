@@ -170,7 +170,7 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
     }
 
     /**
-     * 规则id
+     * 规则ID
      * @return ruleId
      */
     public String getRuleId() {
@@ -374,7 +374,7 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
     }
 
     /**
-     * 规则应用类型包括：“HTTP”，\"HTTPS\"，\"TLS1\"，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”，“BGP”等。
+     * 规则应用类型包括：“HTTP”，“HTTPS”，“TLS1”，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”，“BGP”等。
      * @return app
      */
     public String getApp() {

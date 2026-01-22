@@ -41,7 +41,7 @@ public class BindingsDetails {
     }
 
     /**
-     * Exchange名称
+     * **参数解释**： Exchange名称。 **取值范围**： 不涉及。
      * @return source
      */
     public String getSource() {
@@ -58,7 +58,7 @@ public class BindingsDetails {
     }
 
     /**
-     * 绑定目标类型
+     * **参数解释**： 绑定目标的类型。 **取值范围**： - exchange：交换机。 - queue：队列。
      * @return destinationType
      */
     public String getDestinationType() {
@@ -75,7 +75,7 @@ public class BindingsDetails {
     }
 
     /**
-     * 绑定目标的名称
+     * **参数解释**： 绑定目标。 **取值范围**： 不涉及。
      * @return destination
      */
     public String getDestination() {
@@ -92,7 +92,7 @@ public class BindingsDetails {
     }
 
     /**
-     * 绑定键值
+     * **参数解释**： 绑定键值。 **取值范围**： 不涉及。
      * @return routingKey
      */
     public String getRoutingKey() {
@@ -109,7 +109,7 @@ public class BindingsDetails {
     }
 
     /**
-     * 经过URL转译后routing_key
+     * **参数解释**： 经过URL转译后routing_key。 **取值范围**： 不涉及。
      * @return propertiesKey
      */
     public String getPropertiesKey() {

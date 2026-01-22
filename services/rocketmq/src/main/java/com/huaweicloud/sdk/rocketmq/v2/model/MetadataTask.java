@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 元数据迁移任务。
+ * **参数解释**： 元数据迁移任务。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
  */
 public class MetadataTask {
 
@@ -41,7 +41,7 @@ public class MetadataTask {
     }
 
     /**
-     * 元数据迁移任务ID。
+     * **参数解释**： 元数据迁移任务ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -58,7 +58,7 @@ public class MetadataTask {
     }
 
     /**
-     * 元数据迁移任务名称。
+     * **参数解释**： 元数据迁移任务名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -75,7 +75,7 @@ public class MetadataTask {
     }
 
     /**
-     * 元数据迁移任务开始时间。
+     * **参数解释**： 元数据迁移任务开始时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return startDate
      */
     public String getStartDate() {
@@ -92,7 +92,7 @@ public class MetadataTask {
     }
 
     /**
-     * 元数据迁移任务状态。
+     * **参数解释**： 元数据迁移任务状态。 **约束限制**： 不涉及。 **取值范围**： - creating：创建中。 - starting：迁移中。 - failed：迁移失败。 - finished：迁移完成。 **默认取值**： 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -109,7 +109,7 @@ public class MetadataTask {
     }
 
     /**
-     * 元数据迁移类型。
+     * **参数解释**： 元数据迁移类型。 **约束限制**： 不涉及。 **取值范围**： - rocketmq：从rocketmq迁移到rocketmq。 - rabbitToRocket：从rabbitmq迁移到rocketmq。 **默认取值**： 不涉及。
      * @return type
      */
     public String getType() {

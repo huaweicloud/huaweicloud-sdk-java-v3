@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 当前规格实例的属性。
+ * **参数解释**： 当前规格实例的属性。
  */
 public class ListEnginePropertiesEntity {
 
@@ -71,7 +71,7 @@ public class ListEnginePropertiesEntity {
     }
 
     /**
-     * 节点增长步长。
+     * **参数解释**： 节点增长步长。 **取值范围**： 不涉及。
      * @return stepLength
      */
     public String getStepLength() {
@@ -88,7 +88,7 @@ public class ListEnginePropertiesEntity {
     }
 
     /**
-     * 每个Broker的最大队列。
+     * **参数解释**： 每个Broker的最大队列。 **取值范围**： 不涉及。
      * @return maxQueuePerBroker
      */
     public String getMaxQueuePerBroker() {
@@ -105,7 +105,7 @@ public class ListEnginePropertiesEntity {
     }
 
     /**
-     * 每个Broker的最大连接数。
+     * **参数解释**： 每个Broker的最大连接数。 **取值范围**： 不涉及。
      * @return maxConnectionPerBroker
      */
     public String getMaxConnectionPerBroker() {
@@ -122,7 +122,7 @@ public class ListEnginePropertiesEntity {
     }
 
     /**
-     * Broker的最大个数。
+     * **参数解释**： Broker的最大个数。 **取值范围**： 不涉及。
      * @return maxBroker
      */
     public String getMaxBroker() {
@@ -139,7 +139,7 @@ public class ListEnginePropertiesEntity {
     }
 
     /**
-     * 每个节点的最大存储。单位为GB。
+     * **参数解释**： 每个节点的最大存储。单位为GB。 **取值范围**： 不涉及。
      * @return maxStoragePerNode
      */
     public String getMaxStoragePerNode() {
@@ -156,7 +156,7 @@ public class ListEnginePropertiesEntity {
     }
 
     /**
-     * 每个Broker的最大消费者数。
+     * **参数解释**： 每个Broker的最大消费者数。 **取值范围**： 不涉及。
      * @return maxConsumerPerBroker
      */
     public String getMaxConsumerPerBroker() {
@@ -173,7 +173,7 @@ public class ListEnginePropertiesEntity {
     }
 
     /**
-     * Broker的最小个数。
+     * **参数解释**： Broker的最小个数。 **取值范围**： 不涉及。
      * @return minBroker
      */
     public String getMinBroker() {
@@ -190,7 +190,7 @@ public class ListEnginePropertiesEntity {
     }
 
     /**
-     * 每个Broker的最大带宽。
+     * **参数解释**： 每个Broker的最大带宽。 **取值范围**： 不涉及。
      * @return maxBandwidthPerBroker
      */
     public String getMaxBandwidthPerBroker() {
@@ -207,7 +207,7 @@ public class ListEnginePropertiesEntity {
     }
 
     /**
-     * 每个节点的最小存储。单位为GB。
+     * **参数解释**： 每个节点的最小存储。单位为GB。 **取值范围**： 不涉及。
      * @return minStoragePerNode
      */
     public String getMinStoragePerNode() {
@@ -224,7 +224,7 @@ public class ListEnginePropertiesEntity {
     }
 
     /**
-     * 每个Broker的最大TPS。
+     * **参数解释**： 每个Broker的最大TPS。 **取值范围**： 不涉及。
      * @return maxTpsPerBroker
      */
     public String getMaxTpsPerBroker() {
@@ -241,7 +241,7 @@ public class ListEnginePropertiesEntity {
     }
 
     /**
-     * product_id的别名。
+     * **参数解释**： product_id的别名。 **取值范围**： 不涉及。
      * @return productAlias
      */
     public String getProductAlias() {

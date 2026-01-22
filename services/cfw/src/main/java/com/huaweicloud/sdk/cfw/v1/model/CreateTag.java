@@ -26,7 +26,7 @@ public class CreateTag {
     }
 
     /**
-     * 标签键
+     * **参数解释**： 标签键 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class CreateTag {
     }
 
     /**
-     * 标签值
+     * **参数解释**： 标签值 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return value
      */
     public String getValue() {

@@ -44,7 +44,7 @@ public class ListProductsRespIo {
     }
 
     /**
-     * IO类型。
+     * **参数解释**： IO类型。 **取值范围**： 不涉及。
      * @return ioType
      */
     public String getIoType() {
@@ -61,7 +61,7 @@ public class ListProductsRespIo {
     }
 
     /**
-     * IO规格。
+     * **参数解释**： IO规格。 **取值范围**： 不涉及。
      * @return storageSpecCode
      */
     public String getStorageSpecCode() {
@@ -94,7 +94,7 @@ public class ListProductsRespIo {
     }
 
     /**
-     * IO未售罄的可用区列表。
+     * **参数解释**： IO未售罄的可用区列表。 **取值范围**： 不涉及。
      * @return availableZones
      */
     public List<String> getAvailableZones() {
@@ -127,7 +127,7 @@ public class ListProductsRespIo {
     }
 
     /**
-     * IO已售罄的不可用区列表。
+     * **参数解释**： IO已售罄的不可用区列表。 **取值范围**： 不涉及。
      * @return unavailableZones
      */
     public List<String> getUnavailableZones() {
@@ -144,7 +144,7 @@ public class ListProductsRespIo {
     }
 
     /**
-     * 磁盘类型。
+     * **参数解释**： 磁盘类型。 **取值范围**： 不涉及。
      * @return volumeType
      */
     public String getVolumeType() {

@@ -89,92 +89,10 @@ public class ShowEngineInstanceExtendProductInfoRequest {
 
     private String instanceId;
 
-    /**
-     * 产品的类型。   - advanced：专享版   - platinum：铂金版   - dec：专属云版   - exp：体验版
-     */
-    public static final class TypeEnum {
-
-        /**
-         * Enum ADVANCED for value: "advanced"
-         */
-        public static final TypeEnum ADVANCED = new TypeEnum("advanced");
-
-        /**
-         * Enum PLATINUM for value: "platinum"
-         */
-        public static final TypeEnum PLATINUM = new TypeEnum("platinum");
-
-        /**
-         * Enum DEC for value: "dec"
-         */
-        public static final TypeEnum DEC = new TypeEnum("dec");
-
-        /**
-         * Enum EXP for value: "exp"
-         */
-        public static final TypeEnum EXP = new TypeEnum("exp");
-
-        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, TypeEnum> createStaticFields() {
-            Map<String, TypeEnum> map = new HashMap<>();
-            map.put("advanced", ADVANCED);
-            map.put("platinum", PLATINUM);
-            map.put("dec", DEC);
-            map.put("exp", EXP);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        TypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static TypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
-        }
-
-        public static TypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof TypeEnum) {
-                return this.value.equals(((TypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private TypeEnum type;
+    private String type;
 
     public ShowEngineInstanceExtendProductInfoRequest withEngine(EngineEnum engine) {
         this.engine = engine;
@@ -210,20 +128,20 @@ public class ShowEngineInstanceExtendProductInfoRequest {
         this.instanceId = instanceId;
     }
 
-    public ShowEngineInstanceExtendProductInfoRequest withType(TypeEnum type) {
+    public ShowEngineInstanceExtendProductInfoRequest withType(String type) {
         this.type = type;
         return this;
     }
 
     /**
-     * 产品的类型。   - advanced：专享版   - platinum：铂金版   - dec：专属云版   - exp：体验版
+     * **参数解释**： 产品的类型。 **约束限制**： 不涉及。 **取值范围**： advanced：专享版 **默认取值**： 不涉及。
      * @return type
      */
-    public TypeEnum getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(TypeEnum type) {
+    public void setType(String type) {
         this.type = type;
     }
 

@@ -21,7 +21,7 @@ public class BatchDeleteTopicResp {
     }
 
     /**
-     * 删除主题任务ID。
+     * **参数解释**： 删除主题任务ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return jobId
      */
     public String getJobId() {

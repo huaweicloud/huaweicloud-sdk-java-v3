@@ -41,7 +41,7 @@ public class ShowRocketmqProjectTagsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 总数。 **取值范围**： 不涉及。
+     * **参数解释**： 总数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return total
      */
     public BigDecimal getTotal() {
@@ -58,7 +58,7 @@ public class ShowRocketmqProjectTagsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 下个分页的offset。 **取值范围**： 不涉及。
+     * **参数解释**： 下个分页的offset。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return nextOffset
      */
     public Integer getNextOffset() {
@@ -75,7 +75,7 @@ public class ShowRocketmqProjectTagsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 上个分页的offset。 **取值范围**： 不涉及。
+     * **参数解释**： 上个分页的offset。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return previousOffset
      */
     public Integer getPreviousOffset() {
@@ -108,7 +108,7 @@ public class ShowRocketmqProjectTagsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 标签列表。
+     * **参数解释**： 标签列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return tags
      */
     public List<TagMultyValueEntity> getTags() {

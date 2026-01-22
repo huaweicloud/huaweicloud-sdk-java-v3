@@ -34,7 +34,7 @@ public class ApplicableInstancesInfo {
     }
 
     /**
-     * 实例ID。
+     * **参数解释：** 实例ID。 **取值范围：** 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -51,7 +51,7 @@ public class ApplicableInstancesInfo {
     }
 
     /**
-     * 实例名称。
+     * **参数解释：** 实例名称。 **取值范围：** 不涉及。
      * @return instanceName
      */
     public String getInstanceName() {
@@ -84,7 +84,7 @@ public class ApplicableInstancesInfo {
     }
 
     /**
-     * 节点组信息或节点信息的列表对象。  当参数模板是集群类型时，如果是shard组或者config组的参数模板，则可应用到的是对应类型的节点组，如果是mongos组的参数模板，则可应用到的是对应类型的的节点。  当参数模板是副本集或单节点类型时，直接应用到对应实例。  例如：一个mongos参数模板可应用到一个或多个mongos节点。
+     * **参数解释：** 节点组信息或节点信息的列表对象。 **取值范围：** 当参数模板是副本集或单节点类型时，不返回该字段，模板直接应用到对应实例。 当参数模板是集群类型时，如果是shard组或者config组的参数模板，则返回的是对应类型的节点组信息；如果是mongos组的参数模板，则返回的是对应类型的的节点信息。 例如：一个mongos参数模板可应用到一个或多个mongos节点。
      * @return entities
      */
     public List<EntityInfo> getEntities() {

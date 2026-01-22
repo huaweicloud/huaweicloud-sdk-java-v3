@@ -29,7 +29,7 @@ public class AntiVirusRuleDto {
     }
 
     /**
-     * 防护对象ID
+     * 防护对象ID，为必传参数
      * @return objectId
      */
     public String getObjectId() {
@@ -62,7 +62,7 @@ public class AntiVirusRuleDto {
     }
 
     /**
-     * 扫描协议配置
+     * 扫描协议配置列表
      * @return scanProtocolConfigs
      */
     public List<ScanProtocolConfig> getScanProtocolConfigs() {

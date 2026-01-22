@@ -15,41 +15,41 @@ import java.util.function.Consumer;
 public class RestoreRecycleInstanceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instances")
+    @JsonProperty(value = "results")
 
-    private List<InstanceResumeResult> instances = null;
+    private List<InstanceResumeResult> results = null;
 
-    public RestoreRecycleInstanceResponse withInstances(List<InstanceResumeResult> instances) {
-        this.instances = instances;
+    public RestoreRecycleInstanceResponse withResults(List<InstanceResumeResult> results) {
+        this.results = results;
         return this;
     }
 
-    public RestoreRecycleInstanceResponse addInstancesItem(InstanceResumeResult instancesItem) {
-        if (this.instances == null) {
-            this.instances = new ArrayList<>();
+    public RestoreRecycleInstanceResponse addResultsItem(InstanceResumeResult resultsItem) {
+        if (this.results == null) {
+            this.results = new ArrayList<>();
         }
-        this.instances.add(instancesItem);
+        this.results.add(resultsItem);
         return this;
     }
 
-    public RestoreRecycleInstanceResponse withInstances(Consumer<List<InstanceResumeResult>> instancesSetter) {
-        if (this.instances == null) {
-            this.instances = new ArrayList<>();
+    public RestoreRecycleInstanceResponse withResults(Consumer<List<InstanceResumeResult>> resultsSetter) {
+        if (this.results == null) {
+            this.results = new ArrayList<>();
         }
-        instancesSetter.accept(this.instances);
+        resultsSetter.accept(this.results);
         return this;
     }
 
     /**
-     * **参数解释**： 实例列表。
-     * @return instances
+     * **参数解释**： 实例恢复列表。
+     * @return results
      */
-    public List<InstanceResumeResult> getInstances() {
-        return instances;
+    public List<InstanceResumeResult> getResults() {
+        return results;
     }
 
-    public void setInstances(List<InstanceResumeResult> instances) {
-        this.instances = instances;
+    public void setResults(List<InstanceResumeResult> results) {
+        this.results = results;
     }
 
     @Override
@@ -61,19 +61,19 @@ public class RestoreRecycleInstanceResponse extends SdkResponse {
             return false;
         }
         RestoreRecycleInstanceResponse that = (RestoreRecycleInstanceResponse) obj;
-        return Objects.equals(this.instances, that.instances);
+        return Objects.equals(this.results, that.results);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instances);
+        return Objects.hash(results);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RestoreRecycleInstanceResponse {\n");
-        sb.append("    instances: ").append(toIndentedString(instances)).append("\n");
+        sb.append("    results: ").append(toIndentedString(results)).append("\n");
         sb.append("}");
         return sb.toString();
     }

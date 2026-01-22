@@ -41,7 +41,7 @@ public class UpdateDnsServersResponse extends SdkResponse {
     }
 
     /**
-     * 域名服务器列表
+     * **参数解释**： 域名服务器列表 **取值范围**： 不涉及
      * @return data
      */
     public List<String> getData() {

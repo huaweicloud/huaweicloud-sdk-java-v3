@@ -21,7 +21,7 @@ public class UserGroupPerms {
     private String name;
 
     /**
-     * **参数解释**： 消费组权限。 **约束限制**： 不涉及。 **取值范围**： - sub：拥有订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。
+     * **参数解释**： 消费组权限。 **约束限制**： 不涉及。 **取值范围**： - SUB：拥有订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。
      */
     public static final class PermEnum {
 
@@ -118,7 +118,7 @@ public class UserGroupPerms {
     }
 
     /**
-     * **参数解释**： 消费组权限。 **约束限制**： 不涉及。 **取值范围**： - sub：拥有订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。
+     * **参数解释**： 消费组权限。 **约束限制**： 不涉及。 **取值范围**： - SUB：拥有订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。
      * @return perm
      */
     public PermEnum getPerm() {

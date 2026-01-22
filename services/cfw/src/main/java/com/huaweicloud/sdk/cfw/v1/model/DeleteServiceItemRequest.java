@@ -11,6 +11,11 @@ import java.util.Objects;
 public class DeleteServiceItemRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fw_instance_id")
+
+    private String fwInstanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "item_id")
 
     private String itemId;
@@ -20,10 +25,22 @@ public class DeleteServiceItemRequest {
 
     private String enterpriseProjectId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "fw_instance_id")
+    public DeleteServiceItemRequest withFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+        return this;
+    }
 
-    private String fwInstanceId;
+    /**
+     * **参数解释**： 防火墙ID，字段已废弃 **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
+     * @return fwInstanceId
+     */
+    public String getFwInstanceId() {
+        return fwInstanceId;
+    }
+
+    public void setFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+    }
 
     public DeleteServiceItemRequest withItemId(String itemId) {
         this.itemId = itemId;
@@ -31,7 +48,7 @@ public class DeleteServiceItemRequest {
     }
 
     /**
-     * 服务组成员id，可通过[查询服务成员列表接口](ListServiceItems.xml)查询获得，通过返回值中的data.records.item_id（.表示各对象之间层级的区分）获得。
+     * **参数解释**： 服务组成员id，可通过[查询服务成员列表接口](ListServiceItems.xml)查询获得，通过返回值中的data.records.item_id（.表示各对象之间层级的区分）获得。 **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
      * @return itemId
      */
     public String getItemId() {
@@ -48,7 +65,7 @@ public class DeleteServiceItemRequest {
     }
 
     /**
-     * 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
+     * **参数解释**： 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0 **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -57,23 +74,6 @@ public class DeleteServiceItemRequest {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
-    }
-
-    public DeleteServiceItemRequest withFwInstanceId(String fwInstanceId) {
-        this.fwInstanceId = fwInstanceId;
-        return this;
-    }
-
-    /**
-     * 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
-     * @return fwInstanceId
-     */
-    public String getFwInstanceId() {
-        return fwInstanceId;
-    }
-
-    public void setFwInstanceId(String fwInstanceId) {
-        this.fwInstanceId = fwInstanceId;
     }
 
     @Override
@@ -85,23 +85,22 @@ public class DeleteServiceItemRequest {
             return false;
         }
         DeleteServiceItemRequest that = (DeleteServiceItemRequest) obj;
-        return Objects.equals(this.itemId, that.itemId)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, that.fwInstanceId);
+        return Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.itemId, that.itemId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(itemId, enterpriseProjectId, fwInstanceId);
+        return Objects.hash(fwInstanceId, itemId, enterpriseProjectId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteServiceItemRequest {\n");
+        sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
         sb.append("    itemId: ").append(toIndentedString(itemId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

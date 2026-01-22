@@ -197,7 +197,7 @@ public class AvailableZonesResp {
     }
 
     /**
-     * **参数解释**： 是否支持IPv6。 **取值范围**： - true：支持 - false：不支持
+     * **参数解释**： 是否支持IPv6。[华为云Stack不支持此参数。](tag:hcs)  **取值范围**： - true：支持 - false：不支持
      * @return ipv6Enable
      */
     public Boolean getIpv6Enable() {

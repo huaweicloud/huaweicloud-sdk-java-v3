@@ -31,7 +31,7 @@ public class DeleteAddressItemRequest {
     }
 
     /**
-     * 地址组成员id，可通过[查询地址组成员接口](ListAddressItems.xml)查询获得，通过返回值中的data.records.item_id（.表示各对象之间层级的区分）获得。
+     * **参数解释**： 地址组成员id，可通过[查询地址组成员接口](ListAddressItems.xml)查询获得，通过返回值中的data.records.item_id（.表示各对象之间层级的区分）获得。 **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
      * @return itemId
      */
     public String getItemId() {
@@ -48,7 +48,7 @@ public class DeleteAddressItemRequest {
     }
 
     /**
-     * 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
+     * **参数解释**： 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0 **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -65,7 +65,7 @@ public class DeleteAddressItemRequest {
     }
 
     /**
-     * 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
+     * **参数解释**： 防火墙ID，字段已废弃 **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
      * @return fwInstanceId
      */
     public String getFwInstanceId() {

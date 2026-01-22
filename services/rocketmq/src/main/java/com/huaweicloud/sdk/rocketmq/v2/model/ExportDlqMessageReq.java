@@ -34,7 +34,7 @@ public class ExportDlqMessageReq {
     }
 
     /**
-     * 主题名称。
+     * **参数解释**： 主题名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return topic
      */
     public String getTopic() {
@@ -67,7 +67,7 @@ public class ExportDlqMessageReq {
     }
 
     /**
-     * 消息ID列表。
+     * **参数解释**： 消息ID列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return msgIdList
      */
     public List<String> getMsgIdList() {
@@ -100,7 +100,7 @@ public class ExportDlqMessageReq {
     }
 
     /**
-     * 唯一Key列表。
+     * **参数解释**： 唯一Key列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return uniqKeyList
      */
     public List<String> getUniqKeyList() {

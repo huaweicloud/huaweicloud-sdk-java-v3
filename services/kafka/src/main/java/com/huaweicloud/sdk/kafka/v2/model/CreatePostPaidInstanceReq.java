@@ -586,7 +586,7 @@ public class CreatePostPaidInstanceReq {
     private Boolean enableAutoTopic;
 
     /**
-     * 存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hws,hk)   - 参数specification为100MB/300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB/1200MB时，取值dms.physical.storage.ultra  如何选择磁盘类型请参考《云硬盘 [产品介绍](tag:hws,hws_hk,hws_eu,cmcc)[用户指南](tag:dt,g42,hk_g42,ctc,tm,hk_tm,sbc,ocb,hws_ocb,ax)》的“磁盘类型及性能介绍”。
+     * 存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hws,hk)   - 参数specification为100MB/300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB/1200MB时，取值dms.physical.storage.ultra  如何选择磁盘类型请参考[[《云硬盘 产品介绍》](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0014580744.html)](tag:hws)[[《云硬盘 产品介绍》](https://support.huaweicloud.com/intl/zh-cn/productdesc-evs/zh-cn_topic_0014580744.html)](tag:hws_hk)[[《云硬盘 产品介绍》](https://support.huaweicloud.com/eu/productdesc-evs/en-us_topic_0014580744.html)](tag:hws_eu)[产品介绍](tag:cmcc)[《云硬盘 用户指南》](tag:dt,g42,hk_g42,ctc,tm,hk_tm,sbc,ocb,hws_ocb,ax,hk_sbc,srg)的“磁盘类型及性能介绍”。
      */
     public static final class StorageSpecCodeEnum {
 
@@ -750,7 +750,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 消息引擎的版本。取值填写为：   - 1.1.0   [- 2.3.0](tag:ocb,hws_ocb,sbc,hk_sbc,cmcc,hws_eu,dt,ctc,g42,hk_g42,tm,hk_tm)   - 2.7   [- 3.x](tag:hws,hws_hk,dt,sbc,hcs,fcs,ctc,tm,hk_tm,hws_eu,ax)
+     * 消息引擎的版本。取值填写为：   [- 1.1.0](tag:hws,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,sbc,hk_sbc,cmcc,ax,srg)   [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm,dt,cmcc,ocb,hws_ocb)   - 2.7   [- 3.x](tag:hws,hws_hk,dt,sbc,hk_sbc,hcs,fcs,ctc,tm,hk_tm,hws_eu,ax,cmcc,srg)
      * @return engineVersion
      */
     public String getEngineVersion() {
@@ -784,7 +784,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 代理个数。 [取值范围:  - 老规格实例此参数无需设置  - 新规格必须设置，取值范围：3 ~ 50。](tag:hws,hws_hk,g42,tm,hk_g42,hk_tm,ctc,dt,ocb,hws_ocb,sbc,hk_sbc) [此参数无需设置](tag:cmcc)
+     * 代理个数。 取值范围:  - 老规格实例此参数无需设置  - 新规格必须设置，取值范围：3 ~ 50。
      * @return brokerNum
      */
     public Integer getBrokerNum() {
@@ -801,7 +801,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 消息存储空间，单位GB。   - Kafka实例规格为100MB时，存储空间取值范围600GB ~ 90000GB。   - Kafka实例规格为300MB时，存储空间取值范围1200GB ~ 90000GB。   - Kafka实例规格为600MB时，存储空间取值范围2400GB ~ 90000GB。   - Kafka实例规格为1200MB，存储空间取值范围4800GB ~ 90000GB   [- Kafka实例规格为c6.2u4g.cluster时，存储空间取值范围300GB ~ 300000GB。   - Kafka实例规格为c6.4u8g.cluster时，存储空间取值范围300GB ~ 600000GB。   - Kafka实例规格为c6.8u16g.cluster时，存储空间取值范围300GB ~ 900000GB。   - Kafka实例规格为c6.12u24g.cluster时，存储空间取值范围300GB ~ 900000GB。   - Kafka实例规格为c6.16u32g.cluster时，存储空间取值范围300GB ~ 900000GB。](tag:hws,hws_hk)
+     * 消息存储空间，单位GB。注意：磁盘容量仅支持设置为100的整数倍。   - Kafka实例规格为100MB时，存储空间取值范围600GB ~ 90000GB。   - Kafka实例规格为300MB时，存储空间取值范围1200GB ~ 90000GB。   - Kafka实例规格为600MB时，存储空间取值范围2400GB ~ 90000GB。   - Kafka实例规格为1200MB，存储空间取值范围4800GB ~ 90000GB   [- Kafka实例规格为c6.2u4g.cluster时，存储空间取值范围300GB ~ 300000GB。   - Kafka实例规格为c6.4u8g.cluster时，存储空间取值范围300GB ~ 600000GB。   - Kafka实例规格为c6.8u16g.cluster时，存储空间取值范围300GB ~ 900000GB。   - Kafka实例规格为c6.12u24g.cluster时，存储空间取值范围300GB ~ 900000GB。   - Kafka实例规格为c6.16u32g.cluster时，存储空间取值范围300GB ~ 900000GB。](tag:hws,hws_hk)
      * @return storageSpace
      */
     public Integer getStorageSpace() {
@@ -869,7 +869,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 虚拟私有云ID。  获取方法如下：参考《虚拟私有云 API参考》，调用“查询VPC列表”接口，从响应体中获取VPC ID。
+     * 虚拟私有云ID。  获取方法如下：参考[[《虚拟私有云 API参考》](https://support.huaweicloud.com/api-vpc/vpc_apiv3_0003.html)](tag:hws)[[《虚拟私有云 API参考》](https://support.huaweicloud.com/intl/zh-cn/api-vpc/vpc_apiv3_0003.html)](tag:hws_hk)[[《虚拟私有云 API参考》](https://support.huaweicloud.com/eu/api-vpc/vpc_apiv3_0003.html)](tag:hws_eu)[《虚拟私有云 API参考》](tag:ax,cmcc,ctc,sbc,hk_sbc,g42,hk_g42,tm,hk_tm,srg,dt,ocb,hws_ocb,hcs,fcs)，调用“查询VPC列表”接口，从响应体中获取VPC ID。
      * @return vpcId
      */
     public String getVpcId() {
@@ -886,7 +886,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 指定实例所属的安全组。  获取方法如下：参考《虚拟私有云 API参考》，调用“查询安全组列表”接口，从响应体中获取安全组ID。
+     * 指定实例所属的安全组。  获取方法如下：参考[[《虚拟私有云 API参考》](https://support.huaweicloud.com/api-vpc/vpc_apiv3_0011.html)](tag:hws)[[《虚拟私有云 API参考》](https://support.huaweicloud.com/intl/zh-cn/api-vpc/vpc_apiv3_0011.html)](tag:hws_hk)[[《虚拟私有云 API参考》](https://support.huaweicloud.com/eu/api-vpc/vpc_apiv3_0011.html)](tag:hws_eu)[《虚拟私有云 API参考》](tag:ax,cmcc,ctc,sbc,hk_sbc,g42,hk_g42,tm,hk_tm,srg,dt,ocb,hws_ocb,hcs,fcs)，调用“查询安全组列表”接口，从响应体中获取安全组ID。
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -903,7 +903,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 子网信息。  获取方法如下：参考《虚拟私有云 API参考》，调用“查询子网列表”接口，从响应体中获取子网ID。
+     * 子网信息。  获取方法如下：参考[[《虚拟私有云 API参考》](https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html)](tag:hws)[[《虚拟私有云 API参考》](https://support.huaweicloud.com/intl/zh-cn/api-vpc/vpc_subnet01_0003.html)](tag:hws_hk)[[《虚拟私有云 API参考》](https://support.huaweicloud.com/eu/api-vpc/vpc_subnet01_0003.html)](tag:hws_eu)[《虚拟私有云 API参考》](tag:ax,cmcc,ctc,sbc,hk_sbc,g42,hk_g42,tm,hk_tm,srg,dt,ocb,hws_ocb,hcs,fcs)，调用“查询子网列表”接口，从响应体中获取子网ID。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -1038,7 +1038,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 实例绑定的弹性IP地址的ID。  以英文逗号隔开多个弹性IP地址的ID。  如果开启了公网访问功能（即enable_publicip为true），该字段为必选。
+     * 实例绑定的弹性IP地址的ID。[获取方法：参考[[《弹性公网IP API参考》](https://support.huaweicloud.com/api-eip/ListPublicipsV3.html)](tag:hws)[[《弹性公网IP API参考》](https://support.huaweicloud.com/intl/zh-cn/api-eip/ListPublicipsV3.html)](tag:hws_hk)[[《弹性公网IP API参考》](https://support.huaweicloud.com/eu/api-eip/ListPublicipsV3.html)](tag:hws_eu)[《弹性公网IP API参考》](tag:ax,cmcc,ctc,sbc,hk_sbc,g42,hk_g42,srg,dt,ocb,hws_ocb,hcs,fcs)，调用“查询弹性公网IP列表”接口，从响应体中获取弹性公网IP的ID。](tag:ax,cmcc,ctc,sbc,hk_sbc,g42,hk_g42,srg,dt,ocb,hws_ocb,hcs,fcs,hws,hws_hk,hws_eu)  以英文逗号隔开多个弹性IP地址的ID。  如果开启了公网访问功能（即enable_publicip为true），该字段为必选。
      * @return publicipId
      */
     public String getPublicipId() {
@@ -1072,7 +1072,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 开启SASL后使用的安全协议。 - SASL_SSL: 使用SSL证书加密传输，支持账号密码认证，安全性更高。 - SASL_PLAINTEXT: 通过明文传输，支持账号密码认证，性能更好。  若该字段值为空，默认开启SASL_SSL认证机制。实例创建后，此参数不支持动态修改。 若创建实例时，使用了port_protocol参数，则Kafka的内网访问安全协议以及公网访问安全协议会使用port_protocol中的值，则此参数无效。
+     * **参数解释**： 开启SASL后使用的安全协议。 **约束限制**： - 若该字段值为空，默认开启SASL_SSL认证机制。实例创建后，此参数不支持动态修改。 - 若创建实例时，使用了port_protocol参数，则Kafka的内网访问安全协议以及公网访问安全协议会使用port_protocol中的值，则此参数无效。 **取值范围**： - SASL_SSL: 使用SSL证书加密传输，支持账号密码认证，安全性更高。 [- SASL_PLAINTEXT: 通过明文传输，支持账号密码认证，性能更好。](tag:cmcc,ctc,dt,fcs,g42,hk_g42,sbc,hk_sbc,hws,hws_hk,hws_eu,ax,tm,hk_tm,srg) **默认取值**： 不涉及。
      * @return kafkaSecurityProtocol
      */
     public String getKafkaSecurityProtocol() {
@@ -1200,7 +1200,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 是否开启消息转储功能。  默认不开启消息转储。
+     * 是否开启消息转储功能。[华为云Stack不支持此参数。](tag:hcs) 默认不开启消息转储。
      * @return connectorEnable
      */
     public Boolean getConnectorEnable() {
@@ -1234,7 +1234,7 @@ public class CreatePostPaidInstanceReq {
     }
 
     /**
-     * 存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hws,hk)   - 参数specification为100MB/300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB/1200MB时，取值dms.physical.storage.ultra  如何选择磁盘类型请参考《云硬盘 [产品介绍](tag:hws,hws_hk,hws_eu,cmcc)[用户指南](tag:dt,g42,hk_g42,ctc,tm,hk_tm,sbc,ocb,hws_ocb,ax)》的“磁盘类型及性能介绍”。
+     * 存储IO规格。 [新老规格的实例的存储IO规格不相同，创建实例请选择对应的存储IO规格。 新规格实例取值范围：   - dms.physical.storage.high.v2：使用高IO的磁盘类型。   - dms.physical.storage.ultra.v2：使用超高IO的磁盘类型。  老规格实例取值范围：](tag:hws,hk)   - 参数specification为100MB/300MB时，取值dms.physical.storage.high或者dms.physical.storage.ultra   - 参数specification为600MB/1200MB时，取值dms.physical.storage.ultra  如何选择磁盘类型请参考[[《云硬盘 产品介绍》](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0014580744.html)](tag:hws)[[《云硬盘 产品介绍》](https://support.huaweicloud.com/intl/zh-cn/productdesc-evs/zh-cn_topic_0014580744.html)](tag:hws_hk)[[《云硬盘 产品介绍》](https://support.huaweicloud.com/eu/productdesc-evs/en-us_topic_0014580744.html)](tag:hws_eu)[产品介绍](tag:cmcc)[《云硬盘 用户指南》](tag:dt,g42,hk_g42,ctc,tm,hk_tm,sbc,ocb,hws_ocb,ax,hk_sbc,srg)的“磁盘类型及性能介绍”。
      * @return storageSpecCode
      */
     public StorageSpecCodeEnum getStorageSpecCode() {

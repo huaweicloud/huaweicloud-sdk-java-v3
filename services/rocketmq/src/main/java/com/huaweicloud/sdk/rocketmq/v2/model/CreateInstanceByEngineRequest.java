@@ -17,9 +17,14 @@ import java.util.function.Consumer;
 public class CreateInstanceByEngineRequest {
 
     /**
-     * 消息引擎。
+     * **参数解释**： 消息引擎。 **约束限制**： 不涉及。 **取值范围**： - rocketmq：RocketMQ消息引擎。 - reliability：RocketMQ消息引擎别称。 **默认取值**： 不涉及。
      */
     public static final class EngineEnum {
+
+        /**
+         * Enum ROCKETMQ for value: "rocketmq"
+         */
+        public static final EngineEnum ROCKETMQ = new EngineEnum("rocketmq");
 
         /**
          * Enum RELIABILITY for value: "reliability"
@@ -30,6 +35,7 @@ public class CreateInstanceByEngineRequest {
 
         private static Map<String, EngineEnum> createStaticFields() {
             Map<String, EngineEnum> map = new HashMap<>();
+            map.put("rocketmq", ROCKETMQ);
             map.put("reliability", RELIABILITY);
             return Collections.unmodifiableMap(map);
         }
@@ -96,7 +102,7 @@ public class CreateInstanceByEngineRequest {
     }
 
     /**
-     * 消息引擎。
+     * **参数解释**： 消息引擎。 **约束限制**： 不涉及。 **取值范围**： - rocketmq：RocketMQ消息引擎。 - reliability：RocketMQ消息引擎别称。 **默认取值**： 不涉及。
      * @return engine
      */
     public EngineEnum getEngine() {

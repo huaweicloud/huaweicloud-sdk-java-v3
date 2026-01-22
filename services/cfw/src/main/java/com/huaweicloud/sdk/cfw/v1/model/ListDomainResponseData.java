@@ -49,7 +49,7 @@ public class ListDomainResponseData {
     }
 
     /**
-     * 每页显示个数，范围为1-1024
+     * **参数解释**： 每页显示个数 **取值范围**： 1-1024
      * @return limit
      */
     public Integer getLimit() {
@@ -66,7 +66,7 @@ public class ListDomainResponseData {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
+     * **参数解释**： 偏移量：指定返回记录的开始位置 **取值范围**： 大于或等于0
      * @return offset
      */
     public Integer getOffset() {
@@ -83,7 +83,7 @@ public class ListDomainResponseData {
     }
 
     /**
-     * 项目ID
+     * **参数解释**： 项目ID **取值范围**： 不涉及
      * @return projectId
      */
     public String getProjectId() {
@@ -116,7 +116,7 @@ public class ListDomainResponseData {
     }
 
     /**
-     * 域名信息列表
+     * **参数解释**： 域名信息列表 **取值范围**： 不涉及
      * @return records
      */
     public List<DomainInfo> getRecords() {
@@ -133,7 +133,7 @@ public class ListDomainResponseData {
     }
 
     /**
-     * 域名组id
+     * **参数解释**： 域名组id **取值范围**： 不涉及
      * @return setId
      */
     public String getSetId() {
@@ -150,7 +150,7 @@ public class ListDomainResponseData {
     }
 
     /**
-     * 域名总数
+     * **参数解释**： 域名总数 **取值范围**： 不涉及
      * @return total
      */
     public Integer getTotal() {

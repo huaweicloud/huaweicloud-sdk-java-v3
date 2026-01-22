@@ -165,6 +165,11 @@ public class EipResource {
 
     private String fwDomainId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bypass_status")
+
+    private Integer bypassStatus;
+
     public EipResource withId(String id) {
         this.id = id;
         return this;
@@ -307,7 +312,7 @@ public class EipResource {
     }
 
     /**
-     * 关联实例类型，包括：NATGW，ELB，PORT等。
+     * **参数解释**： 关联实例类型 **约束限制**： 不涉及 **取值范围**： PORT：IPV4云服务器 NATGW：NAT网关 ELB： 负载均衡器 VPN： 虚拟专用网络 EVPN： 虚拟专用网络 IPV6_PORT：IPV6云服务器 **默认取值**： 不涉及
      * @return associateInstanceType
      */
     public String getAssociateInstanceType() {
@@ -375,7 +380,7 @@ public class EipResource {
     }
 
     /**
-     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。此处仅取type为0的防护对象id，可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得。
+     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，type为0时，object_id为互联网边界防护对象ID，type为1时，object_id为VPC边界防护对象ID。此处仅取type为0的防护对象id，可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得。
      * @return objectId
      */
     public String getObjectId() {
@@ -437,6 +442,23 @@ public class EipResource {
         this.fwDomainId = fwDomainId;
     }
 
+    public EipResource withBypassStatus(Integer bypassStatus) {
+        this.bypassStatus = bypassStatus;
+        return this;
+    }
+
+    /**
+     * bypass状态，0: 未bypass, 1: 已bypass, 2: 失败
+     * @return bypassStatus
+     */
+    public Integer getBypassStatus() {
+        return bypassStatus;
+    }
+
+    public void setBypassStatus(Integer bypassStatus) {
+        this.bypassStatus = bypassStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -456,7 +478,8 @@ public class EipResource {
             && Objects.equals(this.fwInstanceId, that.fwInstanceId)
             && Objects.equals(this.fwEnterpriseProjectId, that.fwEnterpriseProjectId)
             && Objects.equals(this.objectId, that.objectId) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.fwDomainId, that.fwDomainId);
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.fwDomainId, that.fwDomainId)
+            && Objects.equals(this.bypassStatus, that.bypassStatus);
     }
 
     @Override
@@ -476,7 +499,8 @@ public class EipResource {
             objectId,
             tags,
             domainId,
-            fwDomainId);
+            fwDomainId,
+            bypassStatus);
     }
 
     @Override
@@ -499,6 +523,7 @@ public class EipResource {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    fwDomainId: ").append(toIndentedString(fwDomainId)).append("\n");
+        sb.append("    bypassStatus: ").append(toIndentedString(bypassStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

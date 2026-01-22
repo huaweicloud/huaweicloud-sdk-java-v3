@@ -22,7 +22,7 @@ public class CreateRocketMqMigrationTaskResponse extends SdkResponse {
     }
 
     /**
-     * 任务ID。
+     * **参数解释**： 任务ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return taskId
      */
     public String getTaskId() {

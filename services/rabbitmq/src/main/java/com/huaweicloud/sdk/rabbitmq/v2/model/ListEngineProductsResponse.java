@@ -35,7 +35,7 @@ public class ListEngineProductsResponse extends SdkResponse {
     }
 
     /**
-     * 分布式消息服务的产品类型。
+     * **参数解释**： 消息引擎类型。 **取值范围**： rabbitmq：RabbitMQ引擎。
      * @return engine
      */
     public String getEngine() {
@@ -68,7 +68,7 @@ public class ListEngineProductsResponse extends SdkResponse {
     }
 
     /**
-     * 支持的产品版本类型。
+     * **参数解释**： 支持的产品版本类型。
      * @return versions
      */
     public List<String> getVersions() {
@@ -101,7 +101,7 @@ public class ListEngineProductsResponse extends SdkResponse {
     }
 
     /**
-     * 产品规格的详细信息。
+     * **参数解释**： 产品规格的详细信息。
      * @return products
      */
     public List<ListEngineProductsEntity> getProducts() {

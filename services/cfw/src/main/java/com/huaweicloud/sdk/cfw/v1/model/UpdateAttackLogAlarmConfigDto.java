@@ -71,7 +71,7 @@ public class UpdateAttackLogAlarmConfigDto {
     }
 
     /**
-     * 账号名称
+     * 账户名称
      * @return accountName
      */
     public String getAccountName() {
@@ -88,7 +88,7 @@ public class UpdateAttackLogAlarmConfigDto {
     }
 
     /**
-     * 告警id
+     * 账户名称ID.
      * @return alarmId
      */
     public String getAlarmId() {
@@ -105,7 +105,7 @@ public class UpdateAttackLogAlarmConfigDto {
     }
 
     /**
-     * 告警周期，0：全天，1：8时到22时
+     * 告警周期，0：全天，1：8时到22时，为必传参数
      * @return alarmTimePeriod
      */
     public Integer getAlarmTimePeriod() {
@@ -122,7 +122,7 @@ public class UpdateAttackLogAlarmConfigDto {
     }
 
     /**
-     * 告警类型 0:攻击告警; 1:流量超额预警; 2:EIP未防护告警; 3:威胁情报告警
+     * 告警类型 0：攻击告警; 1：流量超额预警; 2：EIP未防护告警; 3：异常外联告警，为必传参数
      * @return alarmType
      */
     public Integer getAlarmType() {
@@ -139,7 +139,7 @@ public class UpdateAttackLogAlarmConfigDto {
     }
 
     /**
-     * 告警状态 0:失效; 1:生效
+     * 告警状态 0：失效; 1：生效，为必传参数
      * @return enableStatus
      */
     public Integer getEnableStatus() {
@@ -156,7 +156,7 @@ public class UpdateAttackLogAlarmConfigDto {
     }
 
     /**
-     * 告警触发频次
+     * 告警触发频次，为必传参数
      * @return frequencyCount
      */
     public Integer getFrequencyCount() {
@@ -173,7 +173,7 @@ public class UpdateAttackLogAlarmConfigDto {
     }
 
     /**
-     * 告警频次时间范围
+     * 告警频次时间范围，以分钟为单位，为必传参数
      * @return frequencyTime
      */
     public Integer getFrequencyTime() {
@@ -190,7 +190,7 @@ public class UpdateAttackLogAlarmConfigDto {
     }
 
     /**
-     * 告警语言
+     * 告警语言，zh-cn为中文，en-us为英文
      * @return language
      */
     public String getLanguage() {
@@ -207,7 +207,7 @@ public class UpdateAttackLogAlarmConfigDto {
     }
 
     /**
-     * 告警等级
+     * 告警等级，当type为0和4时，severity为CRITICAL,HIGH,MEDIUM,LOW四种等级的组合字符串，当type为1时，severity为2；当type为2时，severity固定为3，为必传参数
      * @return severity
      */
     public String getSeverity() {
@@ -224,7 +224,7 @@ public class UpdateAttackLogAlarmConfigDto {
     }
 
     /**
-     * 告警urn
+     * 告警urn，为必传参数
      * @return topicUrn
      */
     public String getTopicUrn() {
@@ -241,7 +241,7 @@ public class UpdateAttackLogAlarmConfigDto {
     }
 
     /**
-     * 用户名称
+     * 用户名称，为cfw，为必传参数
      * @return username
      */
     public String getUsername() {

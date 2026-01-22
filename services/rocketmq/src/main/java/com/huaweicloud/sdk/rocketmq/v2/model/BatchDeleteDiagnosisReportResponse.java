@@ -41,7 +41,7 @@ public class BatchDeleteDiagnosisReportResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 诊断报告ID列表。 **取值范围**： 不涉及。
+     * **参数解释**： 诊断报告ID列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return reportIdList
      */
     public List<String> getReportIdList() {

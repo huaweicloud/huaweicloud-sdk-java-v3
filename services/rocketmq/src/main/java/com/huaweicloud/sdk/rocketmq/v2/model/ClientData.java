@@ -44,7 +44,7 @@ public class ClientData {
     }
 
     /**
-     * 客户端语言。
+     * **参数解释**： 客户端语言。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return language
      */
     public String getLanguage() {
@@ -61,7 +61,7 @@ public class ClientData {
     }
 
     /**
-     * 客户端版本。
+     * **参数解释**： 客户端版本。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return version
      */
     public String getVersion() {
@@ -78,7 +78,7 @@ public class ClientData {
     }
 
     /**
-     * 客户端ID。
+     * **参数解释**： 客户端ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return clientId
      */
     public String getClientId() {
@@ -95,7 +95,7 @@ public class ClientData {
     }
 
     /**
-     * 客户端地址。
+     * **参数解释**： 客户端地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return clientAddr
      */
     public String getClientAddr() {
@@ -128,7 +128,7 @@ public class ClientData {
     }
 
     /**
-     * 订阅关系列表。
+     * **参数解释**： 订阅关系列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return subscriptions
      */
     public List<Subscription> getSubscriptions() {

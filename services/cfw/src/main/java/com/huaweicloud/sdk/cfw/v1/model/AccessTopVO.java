@@ -126,7 +126,7 @@ public class AccessTopVO {
     }
 
     /**
-     * **参数解释**： 高频命中的阻断策略ID **取值范围**： 不涉及
+     * **参数解释**： Top命中的阻断策略ID **取值范围**： 不涉及
      * @return denyTopOneAclId
      */
     public String getDenyTopOneAclId() {
@@ -143,7 +143,7 @@ public class AccessTopVO {
     }
 
     /**
-     * **参数解释**： 高频命中的阻断策略ID **取值范围**： 不涉及
+     * **参数解释**： Top命中的阻断策略名称 **取值范围**： 不涉及
      * @return denyTopOneAclName
      */
     public String getDenyTopOneAclName() {

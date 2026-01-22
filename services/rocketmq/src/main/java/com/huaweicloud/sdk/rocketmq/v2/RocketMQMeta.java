@@ -5,9 +5,14 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.rocketmq.v2.model.AlterAutoVolumeExpandConfig;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchCreateOrDeleteRocketmqTagRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchCreateOrDeleteRocketmqTagResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchCreateOrDeleteTagReq;
+import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisRecordsForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisRecordsForRocketMqResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisRecordsRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisRecordsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisReportReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisReportRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisReportResponse;
@@ -16,17 +21,25 @@ import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteInstancesRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteInstancesResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteRocketMqMigrationTaskRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteRocketMqMigrationTaskResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.BatchResetConsumeOffsetReq;
+import com.huaweicloud.sdk.rocketmq.v2.model.BatchResetRocketMqMessageOffsetsRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.BatchResetRocketMqMessageOffsetsResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.BatchResumeInstanceReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchUpdateConsumerGroupReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchUpdateConsumerGroupRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchUpdateConsumerGroupResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateConsumerGroupOrBatchDeleteConsumerGroupReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateConsumerGroupOrBatchDeleteConsumerGroupRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateConsumerGroupOrBatchDeleteConsumerGroupResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.CreateDiagnosisTaskForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.CreateDiagnosisTaskForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateDiagnosisTaskRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateDiagnosisTaskResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateInstanceByEngineReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateInstanceByEngineRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreateInstanceByEngineResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.CreatePostPaidInstanceForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.CreatePostPaidInstanceForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreatePostPaidInstanceReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreatePostPaidInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.CreatePostPaidInstanceResponse;
@@ -45,11 +58,17 @@ import com.huaweicloud.sdk.rocketmq.v2.model.DeleteConsumerGroupRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteConsumerGroupResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteInstanceResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.DeleteRocketMqMigrationTaskRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.DeleteRocketMqMigrationTaskResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.DeleteScheduledTaskRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.DeleteScheduledTaskResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteTopicRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteTopicResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteUserRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteUserResponse;
-import com.huaweicloud.sdk.rocketmq.v2.model.DiagnosisRep;
+import com.huaweicloud.sdk.rocketmq.v2.model.DiagnosisReq;
+import com.huaweicloud.sdk.rocketmq.v2.model.EnableDnsRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.EnableDnsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ExportDlqMessageReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.ExportDlqMessageRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ExportDlqMessageResponse;
@@ -59,10 +78,16 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ListBackgroundTasksRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListBackgroundTasksResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListBrokersRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListBrokersResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListConfigFeaturesRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListConfigFeaturesResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListConsumeGroupAccessPolicyForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListConsumeGroupAccessPolicyForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListConsumeGroupAccessPolicyRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListConsumeGroupAccessPolicyResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListConsumerGroupOfTopicRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListConsumerGroupOfTopicResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListDiagnosisReportsForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListDiagnosisReportsForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListDiagnosisReportsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListDiagnosisReportsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListEngineProductsRequest;
@@ -71,14 +96,20 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ListInstanceConsumerGroupsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListInstanceConsumerGroupsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListInstancesRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListInstancesResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListMessageTraceForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListMessageTraceForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListMessageTraceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListMessageTraceResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListMessagesForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListMessagesForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListMessagesRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListMessagesResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListRocketInstanceTopicsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListRocketInstanceTopicsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListRocketMqMigrationTaskRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListRocketMqMigrationTaskResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListScheduledTasksRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ListScheduledTasksResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListTopicAccessPolicyRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListTopicAccessPolicyResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListUserRequest;
@@ -88,27 +119,54 @@ import com.huaweicloud.sdk.rocketmq.v2.model.MetadataDeleteReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.ModifyConfigReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.ModifyInstanceSslConfigRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ModifyInstanceSslConfigResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ModifyRecyclePolicyReq;
+import com.huaweicloud.sdk.rocketmq.v2.model.ModifyRecyclePolicyRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ModifyRecyclePolicyResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.PlainSSLSwitchRep;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResendReq;
+import com.huaweicloud.sdk.rocketmq.v2.model.ResetConsumeOffsetForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ResetConsumeOffsetForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResetConsumeOffsetReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResetConsumeOffsetRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResetConsumeOffsetResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResizeEngineInstanceReq;
+import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.RestoreRecycleInstanceRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.RestoreRecycleInstanceResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.SendDlqMessageForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.SendDlqMessageForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendDlqMessageRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendDlqMessageResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.SendMessageForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.SendMessageForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendMessageReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendMessageRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendMessageResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowBackgroundTaskProgressRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowBackgroundTaskProgressResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowBackgroundTaskRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowBackgroundTaskResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowCesHierarchyRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowCesHierarchyResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerConnectionsForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerConnectionsForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerConnectionsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerConnectionsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerListOrDetailsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowConsumerListOrDetailsResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowDiagnosisReportForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowDiagnosisReportForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowDiagnosisReportRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowDiagnosisReportResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowDiagnosisStackForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowDiagnosisStackForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowDiagnosisStackRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowDiagnosisStackResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowEngineInstanceExtendProductInfoForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowEngineInstanceExtendProductInfoForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowEngineInstanceExtendProductInfoRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowEngineInstanceExtendProductInfoResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowGroupRequest;
@@ -121,16 +179,26 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ShowOneTopicRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowOneTopicResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowRecycleInstancesRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowRecycleInstancesResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketMqConfigsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketMqConfigsResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketMqProductCoresRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketMqProductCoresResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketMqScalePreCheckInfoRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketMqScalePreCheckInfoResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketmqProjectTagsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketmqProjectTagsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketmqTagsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketmqTagsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowTopicStatusRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowTopicStatusResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowUpgradeInstanceVersionRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowUpgradeInstanceVersionResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowUserRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowUserResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowVolumeExpandConfigRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ShowVolumeExpandConfigResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateConsumerGroup;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateConsumerGroupRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateConsumerGroupResponse;
@@ -139,12 +207,18 @@ import com.huaweicloud.sdk.rocketmq.v2.model.UpdateInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateInstanceResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateRocketMqConfigsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateRocketMqConfigsResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.UpdateScheduledTaskRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.UpdateScheduledTaskResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateTopicReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateTopicRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateTopicResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateUserRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.UpdateUserResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.UpdateVolumeExpansionConfigRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.UpdateVolumeExpansionConfigResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.User;
+import com.huaweicloud.sdk.rocketmq.v2.model.ValidateConsumedMessageForRocketMqRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.ValidateConsumedMessageForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ValidateConsumedMessageRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ValidateConsumedMessageResponse;
 
@@ -180,6 +254,78 @@ public class RocketMQMeta {
             TypeCasts.uncheckedConversion(BatchCreateOrDeleteTagReq.class),
             f -> f.withMarshaller(BatchCreateOrDeleteRocketmqTagRequest::getBody,
                 BatchCreateOrDeleteRocketmqTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteDiagnosisRecordsRequest, BatchDeleteDiagnosisRecordsResponse> batchDeleteDiagnosisRecords =
+        genForBatchDeleteDiagnosisRecords();
+
+    private static HttpRequestDef<BatchDeleteDiagnosisRecordsRequest, BatchDeleteDiagnosisRecordsResponse> genForBatchDeleteDiagnosisRecords() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteDiagnosisRecordsRequest, BatchDeleteDiagnosisRecordsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteDiagnosisRecordsRequest.class,
+                    BatchDeleteDiagnosisRecordsResponse.class)
+                .withName("BatchDeleteDiagnosisRecords")
+                .withUri("/v2/{project_id}/{engine}/instances/{instance_id}/diagnosis/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteDiagnosisRecordsRequest::getEngine,
+                BatchDeleteDiagnosisRecordsRequest::setEngine));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteDiagnosisRecordsRequest::getInstanceId,
+                BatchDeleteDiagnosisRecordsRequest::setInstanceId));
+        builder.<BatchDeleteDiagnosisReportReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteDiagnosisReportReq.class),
+            f -> f.withMarshaller(BatchDeleteDiagnosisRecordsRequest::getBody,
+                BatchDeleteDiagnosisRecordsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteDiagnosisRecordsForRocketMqRequest, BatchDeleteDiagnosisRecordsForRocketMqResponse> batchDeleteDiagnosisRecordsForRocketMq =
+        genForBatchDeleteDiagnosisRecordsForRocketMq();
+
+    private static HttpRequestDef<BatchDeleteDiagnosisRecordsForRocketMqRequest, BatchDeleteDiagnosisRecordsForRocketMqResponse> genForBatchDeleteDiagnosisRecordsForRocketMq() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteDiagnosisRecordsForRocketMqRequest, BatchDeleteDiagnosisRecordsForRocketMqResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteDiagnosisRecordsForRocketMqRequest.class,
+                    BatchDeleteDiagnosisRecordsForRocketMqResponse.class)
+                .withName("BatchDeleteDiagnosisRecordsForRocketMq")
+                .withUri("/v2/{project_id}/rocketmq/instances/{instance_id}/diagnosis/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteDiagnosisRecordsForRocketMqRequest::getInstanceId,
+                BatchDeleteDiagnosisRecordsForRocketMqRequest::setInstanceId));
+        builder.<BatchDeleteDiagnosisReportReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteDiagnosisReportReq.class),
+            f -> f.withMarshaller(BatchDeleteDiagnosisRecordsForRocketMqRequest::getBody,
+                BatchDeleteDiagnosisRecordsForRocketMqRequest::setBody));
 
         // response
 
@@ -281,6 +427,39 @@ public class RocketMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchResetRocketMqMessageOffsetsRequest, BatchResetRocketMqMessageOffsetsResponse> batchResetRocketMqMessageOffsets =
+        genForBatchResetRocketMqMessageOffsets();
+
+    private static HttpRequestDef<BatchResetRocketMqMessageOffsetsRequest, BatchResetRocketMqMessageOffsetsResponse> genForBatchResetRocketMqMessageOffsets() {
+        // basic
+        HttpRequestDef.Builder<BatchResetRocketMqMessageOffsetsRequest, BatchResetRocketMqMessageOffsetsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchResetRocketMqMessageOffsetsRequest.class,
+                    BatchResetRocketMqMessageOffsetsResponse.class)
+                .withName("BatchResetRocketMqMessageOffsets")
+                .withUri("/v2/{project_id}/rocketmq/instances/{instance_id}/groups/reset-message-offset")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchResetRocketMqMessageOffsetsRequest::getInstanceId,
+                BatchResetRocketMqMessageOffsetsRequest::setInstanceId));
+        builder.<BatchResetConsumeOffsetReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchResetConsumeOffsetReq.class),
+            f -> f.withMarshaller(BatchResetRocketMqMessageOffsetsRequest::getBody,
+                BatchResetRocketMqMessageOffsetsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchUpdateConsumerGroupRequest, BatchUpdateConsumerGroupResponse> batchUpdateConsumerGroup =
         genForBatchUpdateConsumerGroup();
 
@@ -373,11 +552,44 @@ public class RocketMQMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateDiagnosisTaskRequest::getInstanceId,
                 CreateDiagnosisTaskRequest::setInstanceId));
-        builder.<DiagnosisRep>withRequestField("body",
+        builder.<DiagnosisReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(DiagnosisRep.class),
+            TypeCasts.uncheckedConversion(DiagnosisReq.class),
             f -> f.withMarshaller(CreateDiagnosisTaskRequest::getBody, CreateDiagnosisTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDiagnosisTaskForRocketMqRequest, CreateDiagnosisTaskForRocketMqResponse> createDiagnosisTaskForRocketMq =
+        genForCreateDiagnosisTaskForRocketMq();
+
+    private static HttpRequestDef<CreateDiagnosisTaskForRocketMqRequest, CreateDiagnosisTaskForRocketMqResponse> genForCreateDiagnosisTaskForRocketMq() {
+        // basic
+        HttpRequestDef.Builder<CreateDiagnosisTaskForRocketMqRequest, CreateDiagnosisTaskForRocketMqResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateDiagnosisTaskForRocketMqRequest.class,
+                    CreateDiagnosisTaskForRocketMqResponse.class)
+                .withName("CreateDiagnosisTaskForRocketMq")
+                .withUri("/v2/{project_id}/rocketmq/instances/{instance_id}/diagnosis")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDiagnosisTaskForRocketMqRequest::getInstanceId,
+                CreateDiagnosisTaskForRocketMqRequest::setInstanceId));
+        builder.<DiagnosisReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DiagnosisReq.class),
+            f -> f.withMarshaller(CreateDiagnosisTaskForRocketMqRequest::getBody,
+                CreateDiagnosisTaskForRocketMqRequest::setBody));
 
         // response
 
@@ -429,6 +641,33 @@ public class RocketMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePostPaidInstanceReq.class),
             f -> f.withMarshaller(CreatePostPaidInstanceRequest::getBody, CreatePostPaidInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePostPaidInstanceForRocketMqRequest, CreatePostPaidInstanceForRocketMqResponse> createPostPaidInstanceForRocketMq =
+        genForCreatePostPaidInstanceForRocketMq();
+
+    private static HttpRequestDef<CreatePostPaidInstanceForRocketMqRequest, CreatePostPaidInstanceForRocketMqResponse> genForCreatePostPaidInstanceForRocketMq() {
+        // basic
+        HttpRequestDef.Builder<CreatePostPaidInstanceForRocketMqRequest, CreatePostPaidInstanceForRocketMqResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreatePostPaidInstanceForRocketMqRequest.class,
+                    CreatePostPaidInstanceForRocketMqResponse.class)
+                .withName("CreatePostPaidInstanceForRocketMq")
+                .withUri("/v2/{project_id}/rocketmq/instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateInstanceByEngineReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateInstanceByEngineReq.class),
+            f -> f.withMarshaller(CreatePostPaidInstanceForRocketMqRequest::getBody,
+                CreatePostPaidInstanceForRocketMqRequest::setBody));
 
         // response
 
@@ -594,6 +833,68 @@ public class RocketMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteRocketMqMigrationTaskRequest, DeleteRocketMqMigrationTaskResponse> deleteRocketMqMigrationTask =
+        genForDeleteRocketMqMigrationTask();
+
+    private static HttpRequestDef<DeleteRocketMqMigrationTaskRequest, DeleteRocketMqMigrationTaskResponse> genForDeleteRocketMqMigrationTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteRocketMqMigrationTaskRequest, DeleteRocketMqMigrationTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteRocketMqMigrationTaskRequest.class,
+                    DeleteRocketMqMigrationTaskResponse.class)
+                .withName("DeleteRocketMqMigrationTask")
+                .withUri("/v2/{project_id}/instances/{instance_id}/metadata")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRocketMqMigrationTaskRequest::getInstanceId,
+                DeleteRocketMqMigrationTaskRequest::setInstanceId));
+        builder.<MetadataDeleteReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MetadataDeleteReq.class),
+            f -> f.withMarshaller(DeleteRocketMqMigrationTaskRequest::getBody,
+                DeleteRocketMqMigrationTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteScheduledTaskRequest, DeleteScheduledTaskResponse> deleteScheduledTask =
+        genForDeleteScheduledTask();
+
+    private static HttpRequestDef<DeleteScheduledTaskRequest, DeleteScheduledTaskResponse> genForDeleteScheduledTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteScheduledTaskRequest, DeleteScheduledTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteScheduledTaskRequest.class, DeleteScheduledTaskResponse.class)
+            .withName("DeleteScheduledTask")
+            .withUri("/v2/{project_id}/instances/{instance_id}/scheduled-tasks/{task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteScheduledTaskRequest::getInstanceId,
+                DeleteScheduledTaskRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteScheduledTaskRequest::getTaskId, DeleteScheduledTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteUserRequest, DeleteUserResponse> deleteUser = genForDeleteUser();
 
     private static HttpRequestDef<DeleteUserRequest, DeleteUserResponse> genForDeleteUser() {
@@ -615,6 +916,28 @@ public class RocketMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteUserRequest::getUserName, DeleteUserRequest::setUserName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<EnableDnsRequest, EnableDnsResponse> enableDns = genForEnableDns();
+
+    private static HttpRequestDef<EnableDnsRequest, EnableDnsResponse> genForEnableDns() {
+        // basic
+        HttpRequestDef.Builder<EnableDnsRequest, EnableDnsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, EnableDnsRequest.class, EnableDnsResponse.class)
+                .withName("EnableDns")
+                .withUri("/v2/{project_id}/rocketmq/instances/{instance_id}/dns")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableDnsRequest::getInstanceId, EnableDnsRequest::setInstanceId));
 
         // response
 
@@ -691,11 +1014,11 @@ public class RocketMQMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBackgroundTasksRequest::getInstanceId,
                 ListBackgroundTasksRequest::setInstanceId));
-        builder.<Integer>withRequestField("start",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBackgroundTasksRequest::getStart, ListBackgroundTasksRequest::setStart));
+            f -> f.withMarshaller(ListBackgroundTasksRequest::getOffset, ListBackgroundTasksRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -749,6 +1072,24 @@ public class RocketMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListConfigFeaturesRequest, ListConfigFeaturesResponse> listConfigFeatures =
+        genForListConfigFeatures();
+
+    private static HttpRequestDef<ListConfigFeaturesRequest, ListConfigFeaturesResponse> genForListConfigFeatures() {
+        // basic
+        HttpRequestDef.Builder<ListConfigFeaturesRequest, ListConfigFeaturesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListConfigFeaturesRequest.class, ListConfigFeaturesResponse.class)
+                .withName("ListConfigFeatures")
+                .withUri("/v2/config/features")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListConsumeGroupAccessPolicyRequest, ListConsumeGroupAccessPolicyResponse> listConsumeGroupAccessPolicy =
         genForListConsumeGroupAccessPolicy();
 
@@ -760,14 +1101,14 @@ public class RocketMQMeta {
                     ListConsumeGroupAccessPolicyRequest.class,
                     ListConsumeGroupAccessPolicyResponse.class)
                 .withName("ListConsumeGroupAccessPolicy")
-                .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group_id}/accesspolicy")
+                .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}/accesspolicy")
                 .withContentType("application/json");
 
         // requests
-        builder.<ListConsumeGroupAccessPolicyRequest.EngineEnum>withRequestField("engine",
+        builder.<String>withRequestField("engine",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ListConsumeGroupAccessPolicyRequest.EngineEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListConsumeGroupAccessPolicyRequest::getEngine,
                 ListConsumeGroupAccessPolicyRequest::setEngine));
         builder.<String>withRequestField("instance_id",
@@ -776,24 +1117,69 @@ public class RocketMQMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListConsumeGroupAccessPolicyRequest::getInstanceId,
                 ListConsumeGroupAccessPolicyRequest::setInstanceId));
-        builder.<String>withRequestField("group_id",
+        builder.<String>withRequestField("group",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListConsumeGroupAccessPolicyRequest::getGroupId,
-                ListConsumeGroupAccessPolicyRequest::setGroupId));
-        builder.<String>withRequestField("offset",
+            f -> f.withMarshaller(ListConsumeGroupAccessPolicyRequest::getGroup,
+                ListConsumeGroupAccessPolicyRequest::setGroup));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListConsumeGroupAccessPolicyRequest::getOffset,
                 ListConsumeGroupAccessPolicyRequest::setOffset));
-        builder.<String>withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListConsumeGroupAccessPolicyRequest::getLimit,
                 ListConsumeGroupAccessPolicyRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListConsumeGroupAccessPolicyForRocketMqRequest, ListConsumeGroupAccessPolicyForRocketMqResponse> listConsumeGroupAccessPolicyForRocketMq =
+        genForListConsumeGroupAccessPolicyForRocketMq();
+
+    private static HttpRequestDef<ListConsumeGroupAccessPolicyForRocketMqRequest, ListConsumeGroupAccessPolicyForRocketMqResponse> genForListConsumeGroupAccessPolicyForRocketMq() {
+        // basic
+        HttpRequestDef.Builder<ListConsumeGroupAccessPolicyForRocketMqRequest, ListConsumeGroupAccessPolicyForRocketMqResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListConsumeGroupAccessPolicyForRocketMqRequest.class,
+                    ListConsumeGroupAccessPolicyForRocketMqResponse.class)
+                .withName("ListConsumeGroupAccessPolicyForRocketMq")
+                .withUri("/v2/{project_id}/rocketmq/instances/{instance_id}/groups/{group}/accesspolicy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConsumeGroupAccessPolicyForRocketMqRequest::getInstanceId,
+                ListConsumeGroupAccessPolicyForRocketMqRequest::setInstanceId));
+        builder.<String>withRequestField("group",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConsumeGroupAccessPolicyForRocketMqRequest::getGroup,
+                ListConsumeGroupAccessPolicyForRocketMqRequest::setGroup));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConsumeGroupAccessPolicyForRocketMqRequest::getOffset,
+                ListConsumeGroupAccessPolicyForRocketMqRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConsumeGroupAccessPolicyForRocketMqRequest::getLimit,
+                ListConsumeGroupAccessPolicyForRocketMqRequest::setLimit));
 
         // response
 
@@ -839,6 +1225,45 @@ public class RocketMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDiagnosisReportsForRocketMqRequest, ListDiagnosisReportsForRocketMqResponse> listDiagnosisReportsForRocketMq =
+        genForListDiagnosisReportsForRocketMq();
+
+    private static HttpRequestDef<ListDiagnosisReportsForRocketMqRequest, ListDiagnosisReportsForRocketMqResponse> genForListDiagnosisReportsForRocketMq() {
+        // basic
+        HttpRequestDef.Builder<ListDiagnosisReportsForRocketMqRequest, ListDiagnosisReportsForRocketMqResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListDiagnosisReportsForRocketMqRequest.class,
+                    ListDiagnosisReportsForRocketMqResponse.class)
+                .withName("ListDiagnosisReportsForRocketMq")
+                .withUri("/v2/{project_id}/rocketmq/instances/{instance_id}/diagnosis")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDiagnosisReportsForRocketMqRequest::getInstanceId,
+                ListDiagnosisReportsForRocketMqRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDiagnosisReportsForRocketMqRequest::getOffset,
+                ListDiagnosisReportsForRocketMqRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDiagnosisReportsForRocketMqRequest::getLimit,
+                ListDiagnosisReportsForRocketMqRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListEngineProductsRequest, ListEngineProductsResponse> listEngineProducts =
         genForListEngineProducts();
 
@@ -858,7 +1283,7 @@ public class RocketMQMeta {
             f -> f.withMarshaller(ListEngineProductsRequest::getEngine, ListEngineProductsRequest::setEngine));
         builder.<String>withRequestField("type",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEngineProductsRequest::getType, ListEngineProductsRequest::setType));
         builder.<String>withRequestField("product_id",
@@ -1003,10 +1428,10 @@ public class RocketMQMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<ListMessageTraceRequest.EngineEnum>withRequestField("engine",
+        builder.<String>withRequestField("engine",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ListMessageTraceRequest.EngineEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMessageTraceRequest::getEngine, ListMessageTraceRequest::setEngine));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
@@ -1034,6 +1459,51 @@ public class RocketMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListMessageTraceForRocketMqRequest, ListMessageTraceForRocketMqResponse> listMessageTraceForRocketMq =
+        genForListMessageTraceForRocketMq();
+
+    private static HttpRequestDef<ListMessageTraceForRocketMqRequest, ListMessageTraceForRocketMqResponse> genForListMessageTraceForRocketMq() {
+        // basic
+        HttpRequestDef.Builder<ListMessageTraceForRocketMqRequest, ListMessageTraceForRocketMqResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListMessageTraceForRocketMqRequest.class,
+                    ListMessageTraceForRocketMqResponse.class)
+                .withName("ListMessageTraceForRocketMq")
+                .withUri("/v2/{project_id}/rocketmq/instances/{instance_id}/trace")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMessageTraceForRocketMqRequest::getInstanceId,
+                ListMessageTraceForRocketMqRequest::setInstanceId));
+        builder.<String>withRequestField("msg_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMessageTraceForRocketMqRequest::getMsgId,
+                ListMessageTraceForRocketMqRequest::setMsgId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMessageTraceForRocketMqRequest::getLimit,
+                ListMessageTraceForRocketMqRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMessageTraceForRocketMqRequest::getOffset,
+                ListMessageTraceForRocketMqRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListMessagesRequest, ListMessagesResponse> listMessages = genForListMessages();
 
     private static HttpRequestDef<ListMessagesRequest, ListMessagesResponse> genForListMessages() {
@@ -1045,10 +1515,10 @@ public class RocketMQMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<ListMessagesRequest.EngineEnum>withRequestField("engine",
+        builder.<String>withRequestField("engine",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ListMessagesRequest.EngineEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMessagesRequest::getEngine, ListMessagesRequest::setEngine));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
@@ -1065,15 +1535,15 @@ public class RocketMQMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMessagesRequest::getQueue, ListMessagesRequest::setQueue));
-        builder.<String>withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListMessagesRequest::getLimit, ListMessagesRequest::setLimit));
-        builder.<String>withRequestField("offset",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListMessagesRequest::getOffset, ListMessagesRequest::setOffset));
         builder.<String>withRequestField("key",
             LocationType.Query,
@@ -1095,6 +1565,73 @@ public class RocketMQMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMessagesRequest::getMsgId, ListMessagesRequest::setMsgId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMessagesForRocketMqRequest, ListMessagesForRocketMqResponse> listMessagesForRocketMq =
+        genForListMessagesForRocketMq();
+
+    private static HttpRequestDef<ListMessagesForRocketMqRequest, ListMessagesForRocketMqResponse> genForListMessagesForRocketMq() {
+        // basic
+        HttpRequestDef.Builder<ListMessagesForRocketMqRequest, ListMessagesForRocketMqResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListMessagesForRocketMqRequest.class, ListMessagesForRocketMqResponse.class)
+            .withName("ListMessagesForRocketMq")
+            .withUri("/v2/{project_id}/rocketmq/instances/{instance_id}/messages")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMessagesForRocketMqRequest::getInstanceId,
+                ListMessagesForRocketMqRequest::setInstanceId));
+        builder.<String>withRequestField("topic",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMessagesForRocketMqRequest::getTopic, ListMessagesForRocketMqRequest::setTopic));
+        builder.<String>withRequestField("queue",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMessagesForRocketMqRequest::getQueue, ListMessagesForRocketMqRequest::setQueue));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMessagesForRocketMqRequest::getLimit, ListMessagesForRocketMqRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMessagesForRocketMqRequest::getOffset,
+                ListMessagesForRocketMqRequest::setOffset));
+        builder.<String>withRequestField("key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMessagesForRocketMqRequest::getKey, ListMessagesForRocketMqRequest::setKey));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMessagesForRocketMqRequest::getStartTime,
+                ListMessagesForRocketMqRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMessagesForRocketMqRequest::getEndTime,
+                ListMessagesForRocketMqRequest::setEndTime));
+        builder.<String>withRequestField("msg_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMessagesForRocketMqRequest::getMsgId, ListMessagesForRocketMqRequest::setMsgId));
 
         // response
 
@@ -1133,16 +1670,16 @@ public class RocketMQMeta {
             TypeCasts.uncheckedConversion(ListRocketMqMigrationTaskRequest.TypeEnum.class),
             f -> f.withMarshaller(ListRocketMqMigrationTaskRequest::getType,
                 ListRocketMqMigrationTaskRequest::setType));
-        builder.<String>withRequestField("offset",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRocketMqMigrationTaskRequest::getOffset,
                 ListRocketMqMigrationTaskRequest::setOffset));
-        builder.<String>withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRocketMqMigrationTaskRequest::getLimit,
                 ListRocketMqMigrationTaskRequest::setLimit));
         builder.<String>withRequestField("name",
@@ -1151,6 +1688,49 @@ public class RocketMQMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRocketMqMigrationTaskRequest::getName,
                 ListRocketMqMigrationTaskRequest::setName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListScheduledTasksRequest, ListScheduledTasksResponse> listScheduledTasks =
+        genForListScheduledTasks();
+
+    private static HttpRequestDef<ListScheduledTasksRequest, ListScheduledTasksResponse> genForListScheduledTasks() {
+        // basic
+        HttpRequestDef.Builder<ListScheduledTasksRequest, ListScheduledTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListScheduledTasksRequest.class, ListScheduledTasksResponse.class)
+                .withName("ListScheduledTasks")
+                .withUri("/v2/{project_id}/instances/{instance_id}/scheduled-tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getInstanceId, ListScheduledTasksRequest::setInstanceId));
+        builder.<String>withRequestField("start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getStart, ListScheduledTasksRequest::setStart));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getLimit, ListScheduledTasksRequest::setLimit));
+        builder.<String>withRequestField("begin_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getBeginTime, ListScheduledTasksRequest::setBeginTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getEndTime, ListScheduledTasksRequest::setEndTime));
 
         // response
 
@@ -1180,15 +1760,15 @@ public class RocketMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTopicAccessPolicyRequest::getTopic, ListTopicAccessPolicyRequest::setTopic));
-        builder.<String>withRequestField("offset",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTopicAccessPolicyRequest::getOffset, ListTopicAccessPolicyRequest::setOffset));
-        builder.<String>withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTopicAccessPolicyRequest::getLimit, ListTopicAccessPolicyRequest::setLimit));
 
         // response
@@ -1212,16 +1792,16 @@ public class RocketMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListUserRequest::getInstanceId, ListUserRequest::setInstanceId));
-        builder.<String>withRequestField("offset",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUserRequest::getOffset, ListUserRequest::setOffset));
-        builder.<String>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListUserRequest::getLimit, ListUserRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUserRequest::getOffset, ListUserRequest::setOffset));
 
         // response
 
@@ -1263,6 +1843,29 @@ public class RocketMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ModifyRecyclePolicyRequest, ModifyRecyclePolicyResponse> modifyRecyclePolicy =
+        genForModifyRecyclePolicy();
+
+    private static HttpRequestDef<ModifyRecyclePolicyRequest, ModifyRecyclePolicyResponse> genForModifyRecyclePolicy() {
+        // basic
+        HttpRequestDef.Builder<ModifyRecyclePolicyRequest, ModifyRecyclePolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyRecyclePolicyRequest.class, ModifyRecyclePolicyResponse.class)
+                .withName("ModifyRecyclePolicy")
+                .withUri("/v2/{project_id}/recycle")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ModifyRecyclePolicyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ModifyRecyclePolicyReq.class),
+            f -> f.withMarshaller(ModifyRecyclePolicyRequest::getBody, ModifyRecyclePolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ResetConsumeOffsetRequest, ResetConsumeOffsetResponse> resetConsumeOffset =
         genForResetConsumeOffset();
 
@@ -1271,30 +1874,69 @@ public class RocketMQMeta {
         HttpRequestDef.Builder<ResetConsumeOffsetRequest, ResetConsumeOffsetResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ResetConsumeOffsetRequest.class, ResetConsumeOffsetResponse.class)
                 .withName("ResetConsumeOffset")
-                .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group_id}/reset-message-offset")
+                .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/groups/{group}/reset-message-offset")
                 .withContentType("application/json");
 
         // requests
-        builder.<ResetConsumeOffsetRequest.EngineEnum>withRequestField("engine",
+        builder.<String>withRequestField("engine",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ResetConsumeOffsetRequest.EngineEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResetConsumeOffsetRequest::getEngine, ResetConsumeOffsetRequest::setEngine));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResetConsumeOffsetRequest::getInstanceId, ResetConsumeOffsetRequest::setInstanceId));
-        builder.<String>withRequestField("group_id",
+        builder.<String>withRequestField("group",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResetConsumeOffsetRequest::getGroupId, ResetConsumeOffsetRequest::setGroupId));
+            f -> f.withMarshaller(ResetConsumeOffsetRequest::getGroup, ResetConsumeOffsetRequest::setGroup));
         builder.<ResetConsumeOffsetReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResetConsumeOffsetReq.class),
             f -> f.withMarshaller(ResetConsumeOffsetRequest::getBody, ResetConsumeOffsetRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResetConsumeOffsetForRocketMqRequest, ResetConsumeOffsetForRocketMqResponse> resetConsumeOffsetForRocketMq =
+        genForResetConsumeOffsetForRocketMq();
+
+    private static HttpRequestDef<ResetConsumeOffsetForRocketMqRequest, ResetConsumeOffsetForRocketMqResponse> genForResetConsumeOffsetForRocketMq() {
+        // basic
+        HttpRequestDef.Builder<ResetConsumeOffsetForRocketMqRequest, ResetConsumeOffsetForRocketMqResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ResetConsumeOffsetForRocketMqRequest.class,
+                    ResetConsumeOffsetForRocketMqResponse.class)
+                .withName("ResetConsumeOffsetForRocketMq")
+                .withUri("/v2/{project_id}/rocketmq/instances/{instance_id}/groups/{group}/reset-message-offset")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetConsumeOffsetForRocketMqRequest::getInstanceId,
+                ResetConsumeOffsetForRocketMqRequest::setInstanceId));
+        builder.<String>withRequestField("group",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetConsumeOffsetForRocketMqRequest::getGroup,
+                ResetConsumeOffsetForRocketMqRequest::setGroup));
+        builder.<ResetConsumeOffsetReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResetConsumeOffsetReq.class),
+            f -> f.withMarshaller(ResetConsumeOffsetForRocketMqRequest::getBody,
+                ResetConsumeOffsetForRocketMqRequest::setBody));
 
         // response
 
@@ -1334,6 +1976,62 @@ public class RocketMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResizeInstanceForRocketMqRequest, ResizeInstanceForRocketMqResponse> resizeInstanceForRocketMq =
+        genForResizeInstanceForRocketMq();
+
+    private static HttpRequestDef<ResizeInstanceForRocketMqRequest, ResizeInstanceForRocketMqResponse> genForResizeInstanceForRocketMq() {
+        // basic
+        HttpRequestDef.Builder<ResizeInstanceForRocketMqRequest, ResizeInstanceForRocketMqResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ResizeInstanceForRocketMqRequest.class,
+                    ResizeInstanceForRocketMqResponse.class)
+                .withName("ResizeInstanceForRocketMq")
+                .withUri("/v2/{project_id}/rocketmq/instances/{instance_id}/extend")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResizeInstanceForRocketMqRequest::getInstanceId,
+                ResizeInstanceForRocketMqRequest::setInstanceId));
+        builder.<ResizeEngineInstanceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResizeEngineInstanceReq.class),
+            f -> f.withMarshaller(ResizeInstanceForRocketMqRequest::getBody,
+                ResizeInstanceForRocketMqRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RestoreRecycleInstanceRequest, RestoreRecycleInstanceResponse> restoreRecycleInstance =
+        genForRestoreRecycleInstance();
+
+    private static HttpRequestDef<RestoreRecycleInstanceRequest, RestoreRecycleInstanceResponse> genForRestoreRecycleInstance() {
+        // basic
+        HttpRequestDef.Builder<RestoreRecycleInstanceRequest, RestoreRecycleInstanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RestoreRecycleInstanceRequest.class, RestoreRecycleInstanceResponse.class)
+            .withName("RestoreRecycleInstance")
+            .withUri("/v2/{project_id}/recycle")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BatchResumeInstanceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchResumeInstanceReq.class),
+            f -> f.withMarshaller(RestoreRecycleInstanceRequest::getBody, RestoreRecycleInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SendDlqMessageRequest, SendDlqMessageResponse> sendDlqMessage =
         genForSendDlqMessage();
 
@@ -1346,10 +2044,10 @@ public class RocketMQMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<SendDlqMessageRequest.EngineEnum>withRequestField("engine",
+        builder.<String>withRequestField("engine",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SendDlqMessageRequest.EngineEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SendDlqMessageRequest::getEngine, SendDlqMessageRequest::setEngine));
         builder.<String>withRequestField("instance_id",
             LocationType.Path,
@@ -1361,6 +2059,39 @@ public class RocketMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeadletterResendReq.class),
             f -> f.withMarshaller(SendDlqMessageRequest::getBody, SendDlqMessageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SendDlqMessageForRocketMqRequest, SendDlqMessageForRocketMqResponse> sendDlqMessageForRocketMq =
+        genForSendDlqMessageForRocketMq();
+
+    private static HttpRequestDef<SendDlqMessageForRocketMqRequest, SendDlqMessageForRocketMqResponse> genForSendDlqMessageForRocketMq() {
+        // basic
+        HttpRequestDef.Builder<SendDlqMessageForRocketMqRequest, SendDlqMessageForRocketMqResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    SendDlqMessageForRocketMqRequest.class,
+                    SendDlqMessageForRocketMqResponse.class)
+                .withName("SendDlqMessageForRocketMq")
+                .withUri("/v2/{project_id}/rocketmq/instances/{instance_id}/messages/deadletter-resend")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SendDlqMessageForRocketMqRequest::getInstanceId,
+                SendDlqMessageForRocketMqRequest::setInstanceId));
+        builder.<DeadletterResendReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeadletterResendReq.class),
+            f -> f.withMarshaller(SendDlqMessageForRocketMqRequest::getBody,
+                SendDlqMessageForRocketMqRequest::setBody));
 
         // response
 
@@ -1393,6 +2124,119 @@ public class RocketMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SendMessageReq.class),
             f -> f.withMarshaller(SendMessageRequest::getBody, SendMessageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SendMessageForRocketMqRequest, SendMessageForRocketMqResponse> sendMessageForRocketMq =
+        genForSendMessageForRocketMq();
+
+    private static HttpRequestDef<SendMessageForRocketMqRequest, SendMessageForRocketMqResponse> genForSendMessageForRocketMq() {
+        // basic
+        HttpRequestDef.Builder<SendMessageForRocketMqRequest, SendMessageForRocketMqResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SendMessageForRocketMqRequest.class, SendMessageForRocketMqResponse.class)
+            .withName("SendMessageForRocketMq")
+            .withUri("/v2/{project_id}/rocketmq/instances/{instance_id}/messages")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SendMessageForRocketMqRequest::getInstanceId,
+                SendMessageForRocketMqRequest::setInstanceId));
+        builder.<SendMessageReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SendMessageReq.class),
+            f -> f.withMarshaller(SendMessageForRocketMqRequest::getBody, SendMessageForRocketMqRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> showBackgroundTask =
+        genForShowBackgroundTask();
+
+    private static HttpRequestDef<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> genForShowBackgroundTask() {
+        // basic
+        HttpRequestDef.Builder<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowBackgroundTaskRequest.class, ShowBackgroundTaskResponse.class)
+                .withName("ShowBackgroundTask")
+                .withUri("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackgroundTaskRequest::getInstanceId, ShowBackgroundTaskRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackgroundTaskRequest::getTaskId, ShowBackgroundTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBackgroundTaskProgressRequest, ShowBackgroundTaskProgressResponse> showBackgroundTaskProgress =
+        genForShowBackgroundTaskProgress();
+
+    private static HttpRequestDef<ShowBackgroundTaskProgressRequest, ShowBackgroundTaskProgressResponse> genForShowBackgroundTaskProgress() {
+        // basic
+        HttpRequestDef.Builder<ShowBackgroundTaskProgressRequest, ShowBackgroundTaskProgressResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowBackgroundTaskProgressRequest.class,
+                    ShowBackgroundTaskProgressResponse.class)
+                .withName("ShowBackgroundTaskProgress")
+                .withUri("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}/progress")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackgroundTaskProgressRequest::getInstanceId,
+                ShowBackgroundTaskProgressRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackgroundTaskProgressRequest::getTaskId,
+                ShowBackgroundTaskProgressRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCesHierarchyRequest, ShowCesHierarchyResponse> showCesHierarchy =
+        genForShowCesHierarchy();
+
+    private static HttpRequestDef<ShowCesHierarchyRequest, ShowCesHierarchyResponse> genForShowCesHierarchy() {
+        // basic
+        HttpRequestDef.Builder<ShowCesHierarchyRequest, ShowCesHierarchyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCesHierarchyRequest.class, ShowCesHierarchyResponse.class)
+                .withName("ShowCesHierarchy")
+                .withUri("/v2/{project_id}/instances/{instance_id}/ces-hierarchy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCesHierarchyRequest::getInstanceId, ShowCesHierarchyRequest::setInstanceId));
 
         // response
 
@@ -1439,6 +2283,57 @@ public class RocketMQMeta {
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ShowConsumerConnectionsRequest::getIsDetail,
                 ShowConsumerConnectionsRequest::setIsDetail));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowConsumerConnectionsForRocketMqRequest, ShowConsumerConnectionsForRocketMqResponse> showConsumerConnectionsForRocketMq =
+        genForShowConsumerConnectionsForRocketMq();
+
+    private static HttpRequestDef<ShowConsumerConnectionsForRocketMqRequest, ShowConsumerConnectionsForRocketMqResponse> genForShowConsumerConnectionsForRocketMq() {
+        // basic
+        HttpRequestDef.Builder<ShowConsumerConnectionsForRocketMqRequest, ShowConsumerConnectionsForRocketMqResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowConsumerConnectionsForRocketMqRequest.class,
+                    ShowConsumerConnectionsForRocketMqResponse.class)
+                .withName("ShowConsumerConnectionsForRocketMq")
+                .withUri("/v2/{project_id}/rocketmq/instances/{instance_id}/groups/{group}/clients")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConsumerConnectionsForRocketMqRequest::getInstanceId,
+                ShowConsumerConnectionsForRocketMqRequest::setInstanceId));
+        builder.<String>withRequestField("group",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConsumerConnectionsForRocketMqRequest::getGroup,
+                ShowConsumerConnectionsForRocketMqRequest::setGroup));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowConsumerConnectionsForRocketMqRequest::getLimit,
+                ShowConsumerConnectionsForRocketMqRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowConsumerConnectionsForRocketMqRequest::getOffset,
+                ShowConsumerConnectionsForRocketMqRequest::setOffset));
+        builder.<Boolean>withRequestField("is_detail",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowConsumerConnectionsForRocketMqRequest::getIsDetail,
+                ShowConsumerConnectionsForRocketMqRequest::setIsDetail));
 
         // response
 
@@ -1524,6 +2419,33 @@ public class RocketMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDiagnosisReportForRocketMqRequest, ShowDiagnosisReportForRocketMqResponse> showDiagnosisReportForRocketMq =
+        genForShowDiagnosisReportForRocketMq();
+
+    private static HttpRequestDef<ShowDiagnosisReportForRocketMqRequest, ShowDiagnosisReportForRocketMqResponse> genForShowDiagnosisReportForRocketMq() {
+        // basic
+        HttpRequestDef.Builder<ShowDiagnosisReportForRocketMqRequest, ShowDiagnosisReportForRocketMqResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDiagnosisReportForRocketMqRequest.class,
+                    ShowDiagnosisReportForRocketMqResponse.class)
+                .withName("ShowDiagnosisReportForRocketMq")
+                .withUri("/v2/{project_id}/rocketmq/diagnosis/{report_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("report_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDiagnosisReportForRocketMqRequest::getReportId,
+                ShowDiagnosisReportForRocketMqRequest::setReportId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDiagnosisStackRequest, ShowDiagnosisStackResponse> showDiagnosisStack =
         genForShowDiagnosisStack();
 
@@ -1546,6 +2468,33 @@ public class RocketMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDiagnosisStackRequest::getStackId, ShowDiagnosisStackRequest::setStackId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDiagnosisStackForRocketMqRequest, ShowDiagnosisStackForRocketMqResponse> showDiagnosisStackForRocketMq =
+        genForShowDiagnosisStackForRocketMq();
+
+    private static HttpRequestDef<ShowDiagnosisStackForRocketMqRequest, ShowDiagnosisStackForRocketMqResponse> genForShowDiagnosisStackForRocketMq() {
+        // basic
+        HttpRequestDef.Builder<ShowDiagnosisStackForRocketMqRequest, ShowDiagnosisStackForRocketMqResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDiagnosisStackForRocketMqRequest.class,
+                    ShowDiagnosisStackForRocketMqResponse.class)
+                .withName("ShowDiagnosisStackForRocketMq")
+                .withUri("/v2/{project_id}/rocketmq/diagnosis/stack/{stack_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("stack_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDiagnosisStackForRocketMqRequest::getStackId,
+                ShowDiagnosisStackForRocketMqRequest::setStackId));
 
         // response
 
@@ -1597,6 +2546,51 @@ public class RocketMQMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getOffset,
                 ShowEngineInstanceExtendProductInfoRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowEngineInstanceExtendProductInfoForRocketMqRequest, ShowEngineInstanceExtendProductInfoForRocketMqResponse> showEngineInstanceExtendProductInfoForRocketMq =
+        genForShowEngineInstanceExtendProductInfoForRocketMq();
+
+    private static HttpRequestDef<ShowEngineInstanceExtendProductInfoForRocketMqRequest, ShowEngineInstanceExtendProductInfoForRocketMqResponse> genForShowEngineInstanceExtendProductInfoForRocketMq() {
+        // basic
+        HttpRequestDef.Builder<ShowEngineInstanceExtendProductInfoForRocketMqRequest, ShowEngineInstanceExtendProductInfoForRocketMqResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowEngineInstanceExtendProductInfoForRocketMqRequest.class,
+                    ShowEngineInstanceExtendProductInfoForRocketMqResponse.class)
+                .withName("ShowEngineInstanceExtendProductInfoForRocketMq")
+                .withUri("/v2/{project_id}/rocketmq/instances/{instance_id}/extend")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoForRocketMqRequest::getInstanceId,
+                ShowEngineInstanceExtendProductInfoForRocketMqRequest::setInstanceId));
+        builder.<ShowEngineInstanceExtendProductInfoForRocketMqRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowEngineInstanceExtendProductInfoForRocketMqRequest.TypeEnum.class),
+            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoForRocketMqRequest::getType,
+                ShowEngineInstanceExtendProductInfoForRocketMqRequest::setType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoForRocketMqRequest::getLimit,
+                ShowEngineInstanceExtendProductInfoForRocketMqRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoForRocketMqRequest::getOffset,
+                ShowEngineInstanceExtendProductInfoForRocketMqRequest::setOffset));
 
         // response
 
@@ -1701,6 +2695,34 @@ public class RocketMQMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("includeTagsQuota",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowQuotasRequest::getIncludeTagsQuota, ShowQuotasRequest::setIncludeTagsQuota));
+        builder.<String>withRequestField("onlyQuota",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowQuotasRequest::getOnlyQuota, ShowQuotasRequest::setOnlyQuota));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRecycleInstancesRequest, ShowRecycleInstancesResponse> showRecycleInstances =
+        genForShowRecycleInstances();
+
+    private static HttpRequestDef<ShowRecycleInstancesRequest, ShowRecycleInstancesResponse> genForShowRecycleInstances() {
+        // basic
+        HttpRequestDef.Builder<ShowRecycleInstancesRequest, ShowRecycleInstancesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowRecycleInstancesRequest.class, ShowRecycleInstancesResponse.class)
+            .withName("ShowRecycleInstances")
+            .withUri("/v2/{project_id}/recycle")
+            .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -1735,6 +2757,70 @@ public class RocketMQMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowRocketMqConfigsRequest::getOffset, ShowRocketMqConfigsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRocketMqProductCoresRequest, ShowRocketMqProductCoresResponse> showRocketMqProductCores =
+        genForShowRocketMqProductCores();
+
+    private static HttpRequestDef<ShowRocketMqProductCoresRequest, ShowRocketMqProductCoresResponse> genForShowRocketMqProductCores() {
+        // basic
+        HttpRequestDef.Builder<ShowRocketMqProductCoresRequest, ShowRocketMqProductCoresResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowRocketMqProductCoresRequest.class, ShowRocketMqProductCoresResponse.class)
+                .withName("ShowRocketMqProductCores")
+                .withUri("/v2/rocketmq/products/cores")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRocketMqProductCoresRequest::getInstanceId,
+                ShowRocketMqProductCoresRequest::setInstanceId));
+        builder.<String>withRequestField("product_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRocketMqProductCoresRequest::getProductId,
+                ShowRocketMqProductCoresRequest::setProductId));
+        builder.<String>withRequestField("broker_num",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRocketMqProductCoresRequest::getBrokerNum,
+                ShowRocketMqProductCoresRequest::setBrokerNum));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRocketMqScalePreCheckInfoRequest, ShowRocketMqScalePreCheckInfoResponse> showRocketMqScalePreCheckInfo =
+        genForShowRocketMqScalePreCheckInfo();
+
+    private static HttpRequestDef<ShowRocketMqScalePreCheckInfoRequest, ShowRocketMqScalePreCheckInfoResponse> genForShowRocketMqScalePreCheckInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowRocketMqScalePreCheckInfoRequest, ShowRocketMqScalePreCheckInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowRocketMqScalePreCheckInfoRequest.class,
+                    ShowRocketMqScalePreCheckInfoResponse.class)
+                .withName("ShowRocketMqScalePreCheckInfo")
+                .withUri("/v2/{project_id}/rocketmq/instances/{instance_id}/extend-check")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRocketMqScalePreCheckInfoRequest::getInstanceId,
+                ShowRocketMqScalePreCheckInfoRequest::setInstanceId));
 
         // response
 
@@ -1803,6 +2889,33 @@ public class RocketMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowUpgradeInstanceVersionRequest, ShowUpgradeInstanceVersionResponse> showUpgradeInstanceVersion =
+        genForShowUpgradeInstanceVersion();
+
+    private static HttpRequestDef<ShowUpgradeInstanceVersionRequest, ShowUpgradeInstanceVersionResponse> genForShowUpgradeInstanceVersion() {
+        // basic
+        HttpRequestDef.Builder<ShowUpgradeInstanceVersionRequest, ShowUpgradeInstanceVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowUpgradeInstanceVersionRequest.class,
+                    ShowUpgradeInstanceVersionResponse.class)
+                .withName("ShowUpgradeInstanceVersion")
+                .withUri("/v2/{project_id}/rocketmq/instances/{instance_id}/upgrade")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUpgradeInstanceVersionRequest::getInstanceId,
+                ShowUpgradeInstanceVersionRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowUserRequest, ShowUserResponse> showUser = genForShowUser();
 
     private static HttpRequestDef<ShowUserRequest, ShowUserResponse> genForShowUser() {
@@ -1824,6 +2937,30 @@ public class RocketMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowUserRequest::getUserName, ShowUserRequest::setUserName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowVolumeExpandConfigRequest, ShowVolumeExpandConfigResponse> showVolumeExpandConfig =
+        genForShowVolumeExpandConfig();
+
+    private static HttpRequestDef<ShowVolumeExpandConfigRequest, ShowVolumeExpandConfigResponse> genForShowVolumeExpandConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowVolumeExpandConfigRequest, ShowVolumeExpandConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowVolumeExpandConfigRequest.class, ShowVolumeExpandConfigResponse.class)
+            .withName("ShowVolumeExpandConfig")
+            .withUri("/v2/{project_id}/instances/{instance_id}/auto-volume-expand")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVolumeExpandConfigRequest::getInstanceId,
+                ShowVolumeExpandConfigRequest::setInstanceId));
 
         // response
 
@@ -1921,6 +3058,45 @@ public class RocketMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateScheduledTaskRequest, UpdateScheduledTaskResponse> updateScheduledTask =
+        genForUpdateScheduledTask();
+
+    private static HttpRequestDef<UpdateScheduledTaskRequest, UpdateScheduledTaskResponse> genForUpdateScheduledTask() {
+        // basic
+        HttpRequestDef.Builder<UpdateScheduledTaskRequest, UpdateScheduledTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateScheduledTaskRequest.class, UpdateScheduledTaskResponse.class)
+                .withName("UpdateScheduledTask")
+                .withUri("/v2/{project_id}/instances/{instance_id}/scheduled-tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScheduledTaskRequest::getInstanceId,
+                UpdateScheduledTaskRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScheduledTaskRequest::getTaskId, UpdateScheduledTaskRequest::setTaskId));
+        builder.<String>withRequestField("execute_at",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScheduledTaskRequest::getExecuteAt, UpdateScheduledTaskRequest::setExecuteAt));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScheduledTaskRequest::getStatus, UpdateScheduledTaskRequest::setStatus));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateUserRequest, UpdateUserResponse> updateUser = genForUpdateUser();
 
     private static HttpRequestDef<UpdateUserRequest, UpdateUserResponse> genForUpdateUser() {
@@ -1953,6 +3129,45 @@ public class RocketMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateVolumeExpansionConfigRequest, UpdateVolumeExpansionConfigResponse> updateVolumeExpansionConfig =
+        genForUpdateVolumeExpansionConfig();
+
+    private static HttpRequestDef<UpdateVolumeExpansionConfigRequest, UpdateVolumeExpansionConfigResponse> genForUpdateVolumeExpansionConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateVolumeExpansionConfigRequest, UpdateVolumeExpansionConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateVolumeExpansionConfigRequest.class,
+                    UpdateVolumeExpansionConfigResponse.class)
+                .withName("UpdateVolumeExpansionConfig")
+                .withUri("/v2/{project_id}/instances/{instance_id}/auto-volume-expand")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateVolumeExpansionConfigRequest::getInstanceId,
+                UpdateVolumeExpansionConfigRequest::setInstanceId));
+        builder.<AlterAutoVolumeExpandConfig>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AlterAutoVolumeExpandConfig.class),
+            f -> f.withMarshaller(UpdateVolumeExpansionConfigRequest::getBody,
+                UpdateVolumeExpansionConfigRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateVolumeExpansionConfigResponse::getBody,
+                UpdateVolumeExpansionConfigResponse::setBody));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ValidateConsumedMessageRequest, ValidateConsumedMessageResponse> validateConsumedMessage =
         genForValidateConsumedMessage();
 
@@ -1965,10 +3180,10 @@ public class RocketMQMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<ValidateConsumedMessageRequest.EngineEnum>withRequestField("engine",
+        builder.<String>withRequestField("engine",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ValidateConsumedMessageRequest.EngineEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ValidateConsumedMessageRequest::getEngine,
                 ValidateConsumedMessageRequest::setEngine));
         builder.<String>withRequestField("instance_id",
@@ -1982,6 +3197,39 @@ public class RocketMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResendReq.class),
             f -> f.withMarshaller(ValidateConsumedMessageRequest::getBody, ValidateConsumedMessageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ValidateConsumedMessageForRocketMqRequest, ValidateConsumedMessageForRocketMqResponse> validateConsumedMessageForRocketMq =
+        genForValidateConsumedMessageForRocketMq();
+
+    private static HttpRequestDef<ValidateConsumedMessageForRocketMqRequest, ValidateConsumedMessageForRocketMqResponse> genForValidateConsumedMessageForRocketMq() {
+        // basic
+        HttpRequestDef.Builder<ValidateConsumedMessageForRocketMqRequest, ValidateConsumedMessageForRocketMqResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ValidateConsumedMessageForRocketMqRequest.class,
+                    ValidateConsumedMessageForRocketMqResponse.class)
+                .withName("ValidateConsumedMessageForRocketMq")
+                .withUri("/v2/{project_id}/rocketmq/instances/{instance_id}/messages/resend")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ValidateConsumedMessageForRocketMqRequest::getInstanceId,
+                ValidateConsumedMessageForRocketMqRequest::setInstanceId));
+        builder.<ResendReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResendReq.class),
+            f -> f.withMarshaller(ValidateConsumedMessageForRocketMqRequest::getBody,
+                ValidateConsumedMessageForRocketMqRequest::setBody));
 
         // response
 

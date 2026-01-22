@@ -43,7 +43,7 @@ public class ShowBackgroundTaskProgressRequest {
     }
 
     /**
-     * **参数解释**： 任务ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 任务ID。 **约束限制**： 仅Kafka扩容时支持查询进度。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return taskId
      */
     public String getTaskId() {

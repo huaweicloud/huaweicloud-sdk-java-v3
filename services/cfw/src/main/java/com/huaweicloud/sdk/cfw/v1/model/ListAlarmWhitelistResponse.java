@@ -15,16 +15,16 @@ public class ListAlarmWhitelistResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private PageInfo data;
+    private HttpListAlarmWhiteListResponseData data;
 
-    public ListAlarmWhitelistResponse withData(PageInfo data) {
+    public ListAlarmWhitelistResponse withData(HttpListAlarmWhiteListResponseData data) {
         this.data = data;
         return this;
     }
 
-    public ListAlarmWhitelistResponse withData(Consumer<PageInfo> dataSetter) {
+    public ListAlarmWhitelistResponse withData(Consumer<HttpListAlarmWhiteListResponseData> dataSetter) {
         if (this.data == null) {
-            this.data = new PageInfo();
+            this.data = new HttpListAlarmWhiteListResponseData();
             dataSetter.accept(this.data);
         }
 
@@ -35,11 +35,11 @@ public class ListAlarmWhitelistResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public PageInfo getData() {
+    public HttpListAlarmWhiteListResponseData getData() {
         return data;
     }
 
-    public void setData(PageInfo data) {
+    public void setData(HttpListAlarmWhiteListResponseData data) {
         this.data = data;
     }
 

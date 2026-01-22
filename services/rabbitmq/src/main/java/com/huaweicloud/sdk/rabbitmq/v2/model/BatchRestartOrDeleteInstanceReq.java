@@ -161,6 +161,11 @@ public class BatchRestartOrDeleteInstanceReq {
 
     private AllFailureEnum allFailure;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "force_delete")
+
+    private Boolean forceDelete;
+
     public BatchRestartOrDeleteInstanceReq withInstances(List<String> instances) {
         this.instances = instances;
         return this;
@@ -228,6 +233,23 @@ public class BatchRestartOrDeleteInstanceReq {
         this.allFailure = allFailure;
     }
 
+    public BatchRestartOrDeleteInstanceReq withForceDelete(Boolean forceDelete) {
+        this.forceDelete = forceDelete;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否强删除。 **约束限制**： 不涉及。 **取值范围**： - true：强删除，强删除实例不进入回收站。 - false：弱删除，实例进入回收站。 **默认取值**： 不涉及。
+     * @return forceDelete
+     */
+    public Boolean getForceDelete() {
+        return forceDelete;
+    }
+
+    public void setForceDelete(Boolean forceDelete) {
+        this.forceDelete = forceDelete;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -238,12 +260,12 @@ public class BatchRestartOrDeleteInstanceReq {
         }
         BatchRestartOrDeleteInstanceReq that = (BatchRestartOrDeleteInstanceReq) obj;
         return Objects.equals(this.instances, that.instances) && Objects.equals(this.action, that.action)
-            && Objects.equals(this.allFailure, that.allFailure);
+            && Objects.equals(this.allFailure, that.allFailure) && Objects.equals(this.forceDelete, that.forceDelete);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instances, action, allFailure);
+        return Objects.hash(instances, action, allFailure, forceDelete);
     }
 
     @Override
@@ -253,6 +275,7 @@ public class BatchRestartOrDeleteInstanceReq {
         sb.append("    instances: ").append(toIndentedString(instances)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    allFailure: ").append(toIndentedString(allFailure)).append("\n");
+        sb.append("    forceDelete: ").append(toIndentedString(forceDelete)).append("\n");
         sb.append("}");
         return sb.toString();
     }

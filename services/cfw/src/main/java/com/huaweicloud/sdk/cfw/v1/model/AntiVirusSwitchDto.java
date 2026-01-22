@@ -26,7 +26,7 @@ public class AntiVirusSwitchDto {
     }
 
     /**
-     * 反病毒开关状态
+     * 参数解释： 反病毒开关状态，为必传参数 约束限制： 不涉及 取值范围： 0：开启 1：关闭 默认取值： 不涉及
      * minimum: 0
      * maximum: 1
      * @return antiVirusStatus
@@ -45,7 +45,7 @@ public class AntiVirusSwitchDto {
     }
 
     /**
-     * 防护对象ID
+     * 防护对象ID，为必传参数
      * @return objectId
      */
     public String getObjectId() {

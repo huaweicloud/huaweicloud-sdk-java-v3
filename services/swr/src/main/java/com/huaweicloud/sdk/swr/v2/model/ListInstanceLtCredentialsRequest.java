@@ -25,6 +25,11 @@ public class ListInstanceLtCredentialsRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "self_only")
+
+    private Boolean selfOnly;
+
     public ListInstanceLtCredentialsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -78,6 +83,23 @@ public class ListInstanceLtCredentialsRequest {
         this.limit = limit;
     }
 
+    public ListInstanceLtCredentialsRequest withSelfOnly(Boolean selfOnly) {
+        this.selfOnly = selfOnly;
+        return this;
+    }
+
+    /**
+     * 值为false的时候，拥有te_admin角色的用户可以查询实例下所有的长期登录凭证，默认情况下只查询自己创建的长期登录凭证
+     * @return selfOnly
+     */
+    public Boolean getSelfOnly() {
+        return selfOnly;
+    }
+
+    public void setSelfOnly(Boolean selfOnly) {
+        this.selfOnly = selfOnly;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -88,12 +110,12 @@ public class ListInstanceLtCredentialsRequest {
         }
         ListInstanceLtCredentialsRequest that = (ListInstanceLtCredentialsRequest) obj;
         return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.selfOnly, that.selfOnly);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, offset, limit);
+        return Objects.hash(instanceId, offset, limit, selfOnly);
     }
 
     @Override
@@ -103,6 +125,7 @@ public class ListInstanceLtCredentialsRequest {
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    selfOnly: ").append(toIndentedString(selfOnly)).append("\n");
         sb.append("}");
         return sb.toString();
     }

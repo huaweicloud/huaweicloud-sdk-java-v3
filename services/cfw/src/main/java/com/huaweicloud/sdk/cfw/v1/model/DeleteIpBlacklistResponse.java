@@ -12,25 +12,25 @@ import java.util.Objects;
 public class DeleteIpBlacklistResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "data")
+    @JsonProperty(value = "body")
 
-    private Object data;
+    private Object body;
 
-    public DeleteIpBlacklistResponse withData(Object data) {
-        this.data = data;
+    public DeleteIpBlacklistResponse withBody(Object body) {
+        this.body = body;
         return this;
     }
 
     /**
-     * Get data
-     * @return data
+     * Get body
+     * @return body
      */
-    public Object getData() {
-        return data;
+    public Object getBody() {
+        return body;
     }
 
-    public void setData(Object data) {
-        this.data = data;
+    public void setBody(Object body) {
+        this.body = body;
     }
 
     @Override
@@ -42,19 +42,19 @@ public class DeleteIpBlacklistResponse extends SdkResponse {
             return false;
         }
         DeleteIpBlacklistResponse that = (DeleteIpBlacklistResponse) obj;
-        return Objects.equals(this.data, that.data);
+        return Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(data);
+        return Objects.hash(body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteIpBlacklistResponse {\n");
-        sb.append("    data: ").append(toIndentedString(data)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

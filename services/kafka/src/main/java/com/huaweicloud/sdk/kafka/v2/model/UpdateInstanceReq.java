@@ -194,7 +194,7 @@ public class UpdateInstanceReq {
     }
 
     /**
-     * 安全组ID。  获取方法如下：参考《虚拟私有云 API参考》，调用“查询安全组列表”接口，从响应体中获取安全组ID。
+     * 安全组ID。  获取方法如下：参考[[《虚拟私有云 API参考》](https://support.huaweicloud.com/api-vpc/vpc_apiv3_0011.html)](tag:hws)[[《虚拟私有云 API参考》](https://support.huaweicloud.com/intl/zh-cn/api-vpc/vpc_apiv3_0011.html)](tag:hws_hk)[[《虚拟私有云 API参考》](https://support.huaweicloud.com/eu/api-vpc/vpc_apiv3_0011.html)](tag:hws_eu)[《虚拟私有云 API参考》](tag:ax,cmcc,ctc,sbc,hk_sbc,g42,hk_g42,tm,hk_tm,srg,dt,ocb,hws_ocb,hcs,fcs)，调用“查询安全组列表”接口，从响应体中获取安全组ID。
      * @return securityGroupId
      */
     public String getSecurityGroupId() {

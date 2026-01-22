@@ -45,6 +45,16 @@ public class BlackWhiteListResponseDataRecords {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_date")
+
+    private String createdDate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "modified_date")
+
+    private String modifiedDate;
+
     public BlackWhiteListResponseDataRecords withListId(String listId) {
         this.listId = listId;
         return this;
@@ -85,7 +95,7 @@ public class BlackWhiteListResponseDataRecords {
     }
 
     /**
-     * ip地址类型0：ipv4，1:ipv6
+     * IP地址类型0：ipv4，1:ipv6
      * @return addressType
      */
     public Integer getAddressType() {
@@ -102,7 +112,7 @@ public class BlackWhiteListResponseDataRecords {
     }
 
     /**
-     * ip地址
+     * IP地址
      * @return address
      */
     public String getAddress() {
@@ -164,6 +174,40 @@ public class BlackWhiteListResponseDataRecords {
         this.description = description;
     }
 
+    public BlackWhiteListResponseDataRecords withCreatedDate(String createdDate) {
+        this.createdDate = createdDate;
+        return this;
+    }
+
+    /**
+     * |- **参数解释**： 黑白名单创建时间。 **取值范围**： 不涉及 
+     * @return createdDate
+     */
+    public String getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(String createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public BlackWhiteListResponseDataRecords withModifiedDate(String modifiedDate) {
+        this.modifiedDate = modifiedDate;
+        return this;
+    }
+
+    /**
+     * |- **参数解释**： 黑白名单修改时间。 **取值范围**： 不涉及 
+     * @return modifiedDate
+     */
+    public String getModifiedDate() {
+        return modifiedDate;
+    }
+
+    public void setModifiedDate(String modifiedDate) {
+        this.modifiedDate = modifiedDate;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -176,12 +220,14 @@ public class BlackWhiteListResponseDataRecords {
         return Objects.equals(this.listId, that.listId) && Objects.equals(this.direction, that.direction)
             && Objects.equals(this.addressType, that.addressType) && Objects.equals(this.address, that.address)
             && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.port, that.port)
-            && Objects.equals(this.description, that.description);
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createdDate, that.createdDate)
+            && Objects.equals(this.modifiedDate, that.modifiedDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(listId, direction, addressType, address, protocol, port, description);
+        return Objects
+            .hash(listId, direction, addressType, address, protocol, port, description, createdDate, modifiedDate);
     }
 
     @Override
@@ -195,6 +241,8 @@ public class BlackWhiteListResponseDataRecords {
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
+        sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
         sb.append("}");
         return sb.toString();
     }

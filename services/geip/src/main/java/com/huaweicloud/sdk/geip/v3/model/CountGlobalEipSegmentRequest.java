@@ -18,26 +18,6 @@ import java.util.function.Consumer;
  */
 public class CountGlobalEipSegmentRequest {
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limit")
-
-    private Integer limit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "offset")
-
-    private Integer offset;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "marker")
-
-    private String marker;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_reverse")
-
-    private Boolean pageReverse;
-
     /**
      * Gets or Sets fields
      */
@@ -363,76 +343,6 @@ public class CountGlobalEipSegmentRequest {
     @JsonProperty(value = "tags")
 
     private List<String> tags = null;
-
-    public CountGlobalEipSegmentRequest withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    /**
-     * 每页条数
-     * minimum: 0
-     * maximum: 2000
-     * @return limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
-    public CountGlobalEipSegmentRequest withOffset(Integer offset) {
-        this.offset = offset;
-        return this;
-    }
-
-    /**
-     * 分页起始点
-     * @return offset
-     */
-    public Integer getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Integer offset) {
-        this.offset = offset;
-    }
-
-    public CountGlobalEipSegmentRequest withMarker(String marker) {
-        this.marker = marker;
-        return this;
-    }
-
-    /**
-     * 分页起始点
-     * @return marker
-     */
-    public String getMarker() {
-        return marker;
-    }
-
-    public void setMarker(String marker) {
-        this.marker = marker;
-    }
-
-    public CountGlobalEipSegmentRequest withPageReverse(Boolean pageReverse) {
-        this.pageReverse = pageReverse;
-        return this;
-    }
-
-    /**
-     * 翻页方向
-     * @return pageReverse
-     */
-    public Boolean getPageReverse() {
-        return pageReverse;
-    }
-
-    public void setPageReverse(Boolean pageReverse) {
-        this.pageReverse = pageReverse;
-    }
 
     public CountGlobalEipSegmentRequest withFields(List<FieldsEnum> fields) {
         this.fields = fields;
@@ -1162,9 +1072,7 @@ public class CountGlobalEipSegmentRequest {
             return false;
         }
         CountGlobalEipSegmentRequest that = (CountGlobalEipSegmentRequest) obj;
-        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.marker, that.marker) && Objects.equals(this.pageReverse, that.pageReverse)
-            && Objects.equals(this.fields, that.fields) && Objects.equals(this.id, that.id)
+        return Objects.equals(this.fields, that.fields) && Objects.equals(this.id, that.id)
             && Objects.equals(this.internetBandwidthId, that.internetBandwidthId)
             && Objects.equals(this.name, that.name) && Objects.equals(this.nameLike, that.nameLike)
             && Objects.equals(this.accessSite, that.accessSite) && Objects.equals(this.geipPoolName, that.geipPoolName)
@@ -1185,11 +1093,7 @@ public class CountGlobalEipSegmentRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit,
-            offset,
-            marker,
-            pageReverse,
-            fields,
+        return Objects.hash(fields,
             id,
             internetBandwidthId,
             name,
@@ -1217,10 +1121,6 @@ public class CountGlobalEipSegmentRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CountGlobalEipSegmentRequest {\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
-        sb.append("    pageReverse: ").append(toIndentedString(pageReverse)).append("\n");
         sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    internetBandwidthId: ").append(toIndentedString(internetBandwidthId)).append("\n");

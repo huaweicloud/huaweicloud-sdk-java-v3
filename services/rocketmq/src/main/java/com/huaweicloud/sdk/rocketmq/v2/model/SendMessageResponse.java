@@ -56,7 +56,7 @@ public class SendMessageResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 主题名称。 **取值范围**： 不涉及。
+     * **参数解释**： 主题名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return topic
      */
     public String getTopic() {
@@ -73,7 +73,7 @@ public class SendMessageResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 消息内容。 **取值范围**： 不涉及。
+     * **参数解释**： 消息内容。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return body
      */
     public String getBody() {
@@ -106,7 +106,7 @@ public class SendMessageResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 特性列表。 **取值范围**： 不涉及。
+     * **参数解释**： 特性列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return propertyList
      */
     public List<SendMessageProperties> getPropertyList() {
@@ -123,7 +123,7 @@ public class SendMessageResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 消息ID。 **取值范围**： 不涉及。
+     * **参数解释**： 消息ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return msgId
      */
     public String getMsgId() {
@@ -140,7 +140,7 @@ public class SendMessageResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 队列ID。 **取值范围**： 不涉及。
+     * **参数解释**： 队列ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return queueId
      */
     public BigDecimal getQueueId() {
@@ -157,7 +157,7 @@ public class SendMessageResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 队列offset。 **取值范围**： 不涉及。
+     * **参数解释**： 队列offset。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return queueOffset
      */
     public BigDecimal getQueueOffset() {
@@ -174,7 +174,7 @@ public class SendMessageResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： Broker名称。 **取值范围**： 不涉及。
+     * **参数解释**： Broker名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return brokerName
      */
     public String getBrokerName() {

@@ -102,7 +102,7 @@ public class ListInstanceConsumerGroupMessageOffsetRequest {
     }
 
     /**
-     * topic名称。
+     * topic名称。查询消费组消息位点时必填项。
      * @return topic
      */
     public String getTopic() {

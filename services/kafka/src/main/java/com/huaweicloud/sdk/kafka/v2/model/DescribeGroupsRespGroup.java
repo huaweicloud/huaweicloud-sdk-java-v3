@@ -18,7 +18,7 @@ public class DescribeGroupsRespGroup {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "createdAt")
 
-    private Object createdAt;
+    private Long createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_id")
@@ -57,7 +57,7 @@ public class DescribeGroupsRespGroup {
         this.state = state;
     }
 
-    public DescribeGroupsRespGroup withCreatedAt(Object createdAt) {
+    public DescribeGroupsRespGroup withCreatedAt(Long createdAt) {
         this.createdAt = createdAt;
         return this;
     }
@@ -66,11 +66,11 @@ public class DescribeGroupsRespGroup {
      * **参数解释**： 创建时间。 **取值范围**： 不涉及。
      * @return createdAt
      */
-    public Object getCreatedAt() {
+    public Long getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Object createdAt) {
+    public void setCreatedAt(Long createdAt) {
         this.createdAt = createdAt;
     }
 

@@ -26,7 +26,7 @@ public class ShowCeshierarchyRespNodes {
     }
 
     /**
-     * 节点名称。
+     * **参数解释**： 节点名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -43,7 +43,7 @@ public class ShowCeshierarchyRespNodes {
     }
 
     /**
-     * 可用区。
+     * **参数解释**： 可用区。 **取值范围**： 不涉及。
      * @return availableZone
      */
     public String getAvailableZone() {

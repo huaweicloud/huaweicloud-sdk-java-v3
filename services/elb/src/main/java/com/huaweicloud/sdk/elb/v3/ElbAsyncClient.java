@@ -1737,9 +1737,9 @@ public class ElbAsyncClient {
     }
 
     /**
-     * 查询转发规则列表
+     * 查询转发规则全局列表
      *
-     * 查询当前项目下的转发规则列表。
+     * 查询当前项目下所有转发规则列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1751,9 +1751,9 @@ public class ElbAsyncClient {
     }
 
     /**
-     * 查询转发规则列表
+     * 查询转发规则全局列表
      *
-     * 查询当前项目下的转发规则列表。
+     * 查询当前项目下所有转发规则列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

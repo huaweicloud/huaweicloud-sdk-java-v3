@@ -34,7 +34,7 @@ public class MemberCheckJobResultGroup {
     }
 
     /**
-     * **参数解释**：检查结果，true表示检查通过，false为检查不通过。  **取值范围**：不涉及
+     * **参数解释**：检查结果。  **取值范围**：true表示检查通过，false为检查不通过。
      * @return checkResult
      */
     public Boolean getCheckResult() {
@@ -84,7 +84,7 @@ public class MemberCheckJobResultGroup {
     }
 
     /**
-     * **参数解释**：processed检查完成，processing检查中，failed检查失败。  **取值范围**：不涉及
+     * **参数解释**：分组检查任务状态。  **取值范围**： - processed：检查任务执行完成。 - processing：检查任务执行中。 - failed：检查任务执行失败。
      * @return checkStatus
      */
     public String getCheckStatus() {

@@ -22,7 +22,7 @@ public class CreateRocketMqMigrationTaskRequest {
     private String instanceId;
 
     /**
-     * true开启同名覆盖，会对已有的同名元数据的配置进行修改，false时当Topic或group已存在则会报错。
+     * **参数解释**： true开启同名覆盖，会对已有的同名元数据的配置进行修改，false时当Topic或group已存在则会报错。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      */
     public static final class OverwriteEnum {
 
@@ -102,7 +102,7 @@ public class CreateRocketMqMigrationTaskRequest {
     private String name;
 
     /**
-     * 迁移任务类型，分为自建RocketMQ上云(rocketmq)、自建RabbitMQ上云(rabbitToRocket)
+     * **参数解释**： 迁移任务类型，分为自建RocketMQ上云(rocketmq)、自建RabbitMQ上云(rabbitToRocket) **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      */
     public static final class TypeEnum {
 
@@ -187,7 +187,7 @@ public class CreateRocketMqMigrationTaskRequest {
     }
 
     /**
-     * 实例ID。
+     * **参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -204,7 +204,7 @@ public class CreateRocketMqMigrationTaskRequest {
     }
 
     /**
-     * true开启同名覆盖，会对已有的同名元数据的配置进行修改，false时当Topic或group已存在则会报错。
+     * **参数解释**： true开启同名覆盖，会对已有的同名元数据的配置进行修改，false时当Topic或group已存在则会报错。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return overwrite
      */
     public OverwriteEnum getOverwrite() {
@@ -221,7 +221,7 @@ public class CreateRocketMqMigrationTaskRequest {
     }
 
     /**
-     * 迁移任务名称，名称规则参考创建实例。
+     * **参数解释**： 迁移任务名称，名称规则参考创建实例。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -238,7 +238,7 @@ public class CreateRocketMqMigrationTaskRequest {
     }
 
     /**
-     * 迁移任务类型，分为自建RocketMQ上云(rocketmq)、自建RabbitMQ上云(rabbitToRocket)
+     * **参数解释**： 迁移任务类型，分为自建RocketMQ上云(rocketmq)、自建RabbitMQ上云(rabbitToRocket) **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return type
      */
     public TypeEnum getType() {

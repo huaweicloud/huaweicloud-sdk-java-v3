@@ -31,7 +31,7 @@ public class DomainInfo {
     }
 
     /**
-     * 域名地址id
+     * **参数解释**： 域名地址id **取值范围**： 不涉及
      * @return domainAddressId
      */
     public String getDomainAddressId() {
@@ -48,7 +48,7 @@ public class DomainInfo {
     }
 
     /**
-     * 域名，如www.test.com
+     * **参数解释**： 域名 **取值范围**： 不涉及
      * @return domainName
      */
     public String getDomainName() {
@@ -65,7 +65,7 @@ public class DomainInfo {
     }
 
     /**
-     * 域名描述
+     * **参数解释**： 域名描述 **取值范围**： 不涉及
      * @return description
      */
     public String getDescription() {

@@ -21,7 +21,7 @@ public class ListJobRequest {
     }
 
     /**
-     * 创建按需防火墙返回的任务ID，可通过调用[创建防火墙接口](CreateFirewall.xml)返回值获得。返回值中job_id即为此处的job_id
+     * **参数解释**： 创建按需防火墙返回的任务ID，可通过调用[创建防火墙接口](CreateFirewall.xml)返回值获得。返回值中job_id即为此处的job_id **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
      * @return jobId
      */
     public String getJobId() {

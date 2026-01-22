@@ -65,7 +65,7 @@ public class AntiVirusVO {
     }
 
     /**
-     * Get name
+     * 防护对象名称
      * @return name
      */
     public String getName() {

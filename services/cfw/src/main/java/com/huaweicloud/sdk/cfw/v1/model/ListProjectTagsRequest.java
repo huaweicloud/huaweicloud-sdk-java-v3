@@ -31,7 +31,7 @@ public class ListProjectTagsRequest {
     }
 
     /**
-     * 分页查询数据限制
+     * 每页显示个数，范围为1-1024
      * minimum: 0
      * maximum: 1000
      * @return limit
@@ -50,7 +50,7 @@ public class ListProjectTagsRequest {
     }
 
     /**
-     * 查询偏移量
+     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
      * minimum: 0
      * @return offset
      */

@@ -8,26 +8,56 @@ import com.huaweicloud.sdk.cfw.v1.model.AddAddressSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.AddAddressSetResponse;
 import com.huaweicloud.sdk.cfw.v1.model.AddBlackWhiteListRequest;
 import com.huaweicloud.sdk.cfw.v1.model.AddBlackWhiteListResponse;
+import com.huaweicloud.sdk.cfw.v1.model.AddCustomDnsServerRequest;
+import com.huaweicloud.sdk.cfw.v1.model.AddCustomDnsServerResponse;
 import com.huaweicloud.sdk.cfw.v1.model.AddDomainSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.AddDomainSetResponse;
 import com.huaweicloud.sdk.cfw.v1.model.AddDomainsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.AddDomainsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.AddEipAlarmWhitelistRequest;
+import com.huaweicloud.sdk.cfw.v1.model.AddEipAlarmWhitelistResponse;
 import com.huaweicloud.sdk.cfw.v1.model.AddLogConfigRequest;
 import com.huaweicloud.sdk.cfw.v1.model.AddLogConfigResponse;
 import com.huaweicloud.sdk.cfw.v1.model.AddServiceItemsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.AddServiceItemsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.AddServiceSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.AddServiceSetResponse;
+import com.huaweicloud.sdk.cfw.v1.model.BatchAddAccountsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.BatchAddAccountsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.BatchCreateBlackWhiteListRequest;
+import com.huaweicloud.sdk.cfw.v1.model.BatchCreateBlackWhiteListResponse;
+import com.huaweicloud.sdk.cfw.v1.model.BatchCreateIpsWhitelistRequest;
+import com.huaweicloud.sdk.cfw.v1.model.BatchCreateIpsWhitelistResponse;
+import com.huaweicloud.sdk.cfw.v1.model.BatchCreatePrivateNetworkSegmentsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.BatchCreatePrivateNetworkSegmentsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteAclRulesRequest;
 import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteAclRulesResponse;
 import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteAddressItemsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteAddressItemsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteAddressSetsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteAddressSetsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteBlackWhiteListsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteBlackWhiteListsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteCustomerIpsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteCustomerIpsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteDomainSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteDomainSetResponse;
+import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteIpsWhitelistRequest;
+import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteIpsWhitelistResponse;
+import com.huaweicloud.sdk.cfw.v1.model.BatchDeletePrivateNetworkSegmentsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.BatchDeletePrivateNetworkSegmentsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteSchedulesRequest;
+import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteSchedulesResponse;
 import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteServiceItemsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteServiceItemsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteServiceSetsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteServiceSetsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.BatchRemoveAccountsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.BatchRemoveAccountsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.BatchUpdateAclRuleActionsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.BatchUpdateAclRuleActionsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.BatchUpdateCustomerIpsActionRequest;
+import com.huaweicloud.sdk.cfw.v1.model.BatchUpdateCustomerIpsActionResponse;
 import com.huaweicloud.sdk.cfw.v1.model.CancelCaptureTaskRequest;
 import com.huaweicloud.sdk.cfw.v1.model.CancelCaptureTaskResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeEastWestFirewallStatusRequest;
@@ -42,12 +72,16 @@ import com.huaweicloud.sdk.cfw.v1.model.ChangeIpsSwitchStatusRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeIpsSwitchStatusResponse;
 import com.huaweicloud.sdk.cfw.v1.model.CreateCaptureTaskRequest;
 import com.huaweicloud.sdk.cfw.v1.model.CreateCaptureTaskResponse;
+import com.huaweicloud.sdk.cfw.v1.model.CreateCustomerIpsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.CreateCustomerIpsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.CreateEastWestFirewallRequest;
 import com.huaweicloud.sdk.cfw.v1.model.CreateEastWestFirewallResponse;
 import com.huaweicloud.sdk.cfw.v1.model.CreateFirewallRequest;
 import com.huaweicloud.sdk.cfw.v1.model.CreateFirewallResponse;
 import com.huaweicloud.sdk.cfw.v1.model.CreateReportProfileRequest;
 import com.huaweicloud.sdk.cfw.v1.model.CreateReportProfileResponse;
+import com.huaweicloud.sdk.cfw.v1.model.CreateScheduleRequest;
+import com.huaweicloud.sdk.cfw.v1.model.CreateScheduleResponse;
 import com.huaweicloud.sdk.cfw.v1.model.CreateTagRequest;
 import com.huaweicloud.sdk.cfw.v1.model.CreateTagResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteAclRuleHitCountRequest;
@@ -72,12 +106,20 @@ import com.huaweicloud.sdk.cfw.v1.model.DeleteIpBlacklistRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteIpBlacklistResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteReportProfileRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteReportProfileResponse;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteScheduleRequest;
+import com.huaweicloud.sdk.cfw.v1.model.DeleteScheduleResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceItemRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceItemResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteServiceSetResponse;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteTagRequest;
 import com.huaweicloud.sdk.cfw.v1.model.DeleteTagResponse;
+import com.huaweicloud.sdk.cfw.v1.model.DownloadExportResultRequest;
+import com.huaweicloud.sdk.cfw.v1.model.DownloadExportResultResponse;
+import com.huaweicloud.sdk.cfw.v1.model.DownloadImportResultRequest;
+import com.huaweicloud.sdk.cfw.v1.model.DownloadImportResultResponse;
+import com.huaweicloud.sdk.cfw.v1.model.DownloadImportTemplateRequest;
+import com.huaweicloud.sdk.cfw.v1.model.DownloadImportTemplateResponse;
 import com.huaweicloud.sdk.cfw.v1.model.EnableIpBlacklistRequest;
 import com.huaweicloud.sdk.cfw.v1.model.EnableIpBlacklistResponse;
 import com.huaweicloud.sdk.cfw.v1.model.EnableMultiAccountRequest;
@@ -86,14 +128,20 @@ import com.huaweicloud.sdk.cfw.v1.model.ExportIpBlacklistRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ExportIpBlacklistResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ExportLogsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ExportLogsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ExportRuleAclRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ExportRuleAclResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ImportIpBlacklistRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ImportIpBlacklistResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ImportRuleAclRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ImportRuleAclResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListAccessControlLogsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListAccessControlLogsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListAccountsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListAccountsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListAclRuleHitCountRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListAclRuleHitCountResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListAclRuleHitStatusRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListAclRuleHitStatusResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListAclRulesRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListAclRulesResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListAddressItemsRequest;
@@ -102,6 +150,8 @@ import com.huaweicloud.sdk.cfw.v1.model.ListAddressSetDetailRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListAddressSetDetailResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListAddressSetsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListAddressSetsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListAdvancedIpsRulesRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListAdvancedIpsRulesResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListAlarmWhitelistRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListAlarmWhitelistResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListAttackLogsRequest;
@@ -122,6 +172,8 @@ import com.huaweicloud.sdk.cfw.v1.model.ListDomainParseDetailRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListDomainParseDetailResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListDomainParseIpRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListDomainParseIpResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListDomainResolveIpRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListDomainResolveIpResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListDomainSetsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListDomainSetsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListDomainsRequest;
@@ -146,12 +198,12 @@ import com.huaweicloud.sdk.cfw.v1.model.ListIpBlacklistSwitchRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpBlacklistSwitchResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsProtectModeRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsProtectModeResponse;
-import com.huaweicloud.sdk.cfw.v1.model.ListIpsRules1Request;
-import com.huaweicloud.sdk.cfw.v1.model.ListIpsRules1Response;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsRulesRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsRulesResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsSwitchStatusRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsSwitchStatusResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListIpsWhitelistsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListIpsWhitelistsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListJobRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListJobResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListLogConfigRequest;
@@ -162,18 +214,24 @@ import com.huaweicloud.sdk.cfw.v1.model.ListOrganizationAccountsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListOrganizationAccountsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListOrganizationTreeRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListOrganizationTreeResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListPrivateNetworkSegmentsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListPrivateNetworkSegmentsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListProtectedVpcsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListProtectedVpcsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListRegionsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListRegionsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListReportHistoryRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListReportHistoryResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListReportProfilesRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListReportProfilesResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListResourceTagsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListResourceTagsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListRuleAclTagsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListRuleAclTagsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListSchedulesRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListSchedulesResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListServiceItemsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListServiceItemsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListServiceSetDetailRequest;
@@ -204,6 +262,8 @@ import com.huaweicloud.sdk.cfw.v1.model.ShowAttackTrendRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAttackTrendResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAutoProtectStatusRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowAutoProtectStatusResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowConfigQuotaRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowConfigQuotaResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowCustomerIpsInfoRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowCustomerIpsInfoResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowDomainSetDetailRequest;
@@ -212,6 +272,8 @@ import com.huaweicloud.sdk.cfw.v1.model.ShowEwAssociatedErRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowEwAssociatedErResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowEwAssociatedVpcRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowEwAssociatedVpcResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowExportStatusRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowExportStatusResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowFirewallReportRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowFirewallReportResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowFlowDetailRequest;
@@ -228,10 +290,14 @@ import com.huaweicloud.sdk.cfw.v1.model.ShowLogsCountRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowLogsCountResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowReportProfileRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowReportProfileResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowSnFirewallProtectionStatusRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowSnFirewallProtectionStatusResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ShowTrafficTrendRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ShowTrafficTrendResponse;
 import com.huaweicloud.sdk.cfw.v1.model.SwitchAutoProtectStatusRequest;
 import com.huaweicloud.sdk.cfw.v1.model.SwitchAutoProtectStatusResponse;
+import com.huaweicloud.sdk.cfw.v1.model.SwitchFirewallEipProtectionRequest;
+import com.huaweicloud.sdk.cfw.v1.model.SwitchFirewallEipProtectionResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateAclRuleOrderRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateAclRuleOrderResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateAclRuleRequest;
@@ -254,12 +320,20 @@ import com.huaweicloud.sdk.cfw.v1.model.UpdateDnsServersRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateDnsServersResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateDomainSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateDomainSetResponse;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateFirewallNameRequest;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateFirewallNameResponse;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateIpsWhitelistRequest;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateIpsWhitelistResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateLogConfigRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateLogConfigResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateObjectConfigDescRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateObjectConfigDescResponse;
+import com.huaweicloud.sdk.cfw.v1.model.UpdatePrivateNetworkSegmentRequest;
+import com.huaweicloud.sdk.cfw.v1.model.UpdatePrivateNetworkSegmentResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateReportProfileRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateReportProfileResponse;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateScheduleRequest;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateScheduleResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateServiceSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateServiceSetResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
@@ -279,327 +353,6 @@ public class CfwAsyncClient {
     public static ClientBuilder<CfwAsyncClient> newBuilder() {
         ClientBuilder<CfwAsyncClient> clientBuilder = new ClientBuilder<>(CfwAsyncClient::new);
         return clientBuilder;
-    }
-
-    /**
-     * 添加地址组成员
-     *
-     * 添加地址组成员
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AddAddressItemRequest 请求对象
-     * @return CompletableFuture<AddAddressItemResponse>
-     */
-    public CompletableFuture<AddAddressItemResponse> addAddressItemAsync(AddAddressItemRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.addAddressItem);
-    }
-
-    /**
-     * 添加地址组成员
-     *
-     * 添加地址组成员
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AddAddressItemRequest 请求对象
-     * @return AsyncInvoker<AddAddressItemRequest, AddAddressItemResponse>
-     */
-    public AsyncInvoker<AddAddressItemRequest, AddAddressItemResponse> addAddressItemAsyncInvoker(
-        AddAddressItemRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.addAddressItem, hcClient);
-    }
-
-    /**
-     * 添加地址组
-     *
-     * 添加地址组
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AddAddressSetRequest 请求对象
-     * @return CompletableFuture<AddAddressSetResponse>
-     */
-    public CompletableFuture<AddAddressSetResponse> addAddressSetAsync(AddAddressSetRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.addAddressSet);
-    }
-
-    /**
-     * 添加地址组
-     *
-     * 添加地址组
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AddAddressSetRequest 请求对象
-     * @return AsyncInvoker<AddAddressSetRequest, AddAddressSetResponse>
-     */
-    public AsyncInvoker<AddAddressSetRequest, AddAddressSetResponse> addAddressSetAsyncInvoker(
-        AddAddressSetRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.addAddressSet, hcClient);
-    }
-
-    /**
-     * 创建黑白名单规则
-     *
-     * 创建黑白名单规则
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AddBlackWhiteListRequest 请求对象
-     * @return CompletableFuture<AddBlackWhiteListResponse>
-     */
-    public CompletableFuture<AddBlackWhiteListResponse> addBlackWhiteListAsync(AddBlackWhiteListRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.addBlackWhiteList);
-    }
-
-    /**
-     * 创建黑白名单规则
-     *
-     * 创建黑白名单规则
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AddBlackWhiteListRequest 请求对象
-     * @return AsyncInvoker<AddBlackWhiteListRequest, AddBlackWhiteListResponse>
-     */
-    public AsyncInvoker<AddBlackWhiteListRequest, AddBlackWhiteListResponse> addBlackWhiteListAsyncInvoker(
-        AddBlackWhiteListRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.addBlackWhiteList, hcClient);
-    }
-
-    /**
-     * 添加域名组
-     *
-     * 添加域名组
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AddDomainSetRequest 请求对象
-     * @return CompletableFuture<AddDomainSetResponse>
-     */
-    public CompletableFuture<AddDomainSetResponse> addDomainSetAsync(AddDomainSetRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.addDomainSet);
-    }
-
-    /**
-     * 添加域名组
-     *
-     * 添加域名组
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AddDomainSetRequest 请求对象
-     * @return AsyncInvoker<AddDomainSetRequest, AddDomainSetResponse>
-     */
-    public AsyncInvoker<AddDomainSetRequest, AddDomainSetResponse> addDomainSetAsyncInvoker(
-        AddDomainSetRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.addDomainSet, hcClient);
-    }
-
-    /**
-     * 添加域名列表
-     *
-     * 添加域名列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AddDomainsRequest 请求对象
-     * @return CompletableFuture<AddDomainsResponse>
-     */
-    public CompletableFuture<AddDomainsResponse> addDomainsAsync(AddDomainsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.addDomains);
-    }
-
-    /**
-     * 添加域名列表
-     *
-     * 添加域名列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AddDomainsRequest 请求对象
-     * @return AsyncInvoker<AddDomainsRequest, AddDomainsResponse>
-     */
-    public AsyncInvoker<AddDomainsRequest, AddDomainsResponse> addDomainsAsyncInvoker(AddDomainsRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.addDomains, hcClient);
-    }
-
-    /**
-     * 创建日志配置
-     *
-     * 创建日志配置
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AddLogConfigRequest 请求对象
-     * @return CompletableFuture<AddLogConfigResponse>
-     */
-    public CompletableFuture<AddLogConfigResponse> addLogConfigAsync(AddLogConfigRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.addLogConfig);
-    }
-
-    /**
-     * 创建日志配置
-     *
-     * 创建日志配置
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AddLogConfigRequest 请求对象
-     * @return AsyncInvoker<AddLogConfigRequest, AddLogConfigResponse>
-     */
-    public AsyncInvoker<AddLogConfigRequest, AddLogConfigResponse> addLogConfigAsyncInvoker(
-        AddLogConfigRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.addLogConfig, hcClient);
-    }
-
-    /**
-     * 新建服务成员
-     *
-     * 批量添加服务组成员
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AddServiceItemsRequest 请求对象
-     * @return CompletableFuture<AddServiceItemsResponse>
-     */
-    public CompletableFuture<AddServiceItemsResponse> addServiceItemsAsync(AddServiceItemsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.addServiceItems);
-    }
-
-    /**
-     * 新建服务成员
-     *
-     * 批量添加服务组成员
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AddServiceItemsRequest 请求对象
-     * @return AsyncInvoker<AddServiceItemsRequest, AddServiceItemsResponse>
-     */
-    public AsyncInvoker<AddServiceItemsRequest, AddServiceItemsResponse> addServiceItemsAsyncInvoker(
-        AddServiceItemsRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.addServiceItems, hcClient);
-    }
-
-    /**
-     * 新建服务组
-     *
-     * 创建服务组
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AddServiceSetRequest 请求对象
-     * @return CompletableFuture<AddServiceSetResponse>
-     */
-    public CompletableFuture<AddServiceSetResponse> addServiceSetAsync(AddServiceSetRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.addServiceSet);
-    }
-
-    /**
-     * 新建服务组
-     *
-     * 创建服务组
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request AddServiceSetRequest 请求对象
-     * @return AsyncInvoker<AddServiceSetRequest, AddServiceSetResponse>
-     */
-    public AsyncInvoker<AddServiceSetRequest, AddServiceSetResponse> addServiceSetAsyncInvoker(
-        AddServiceSetRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.addServiceSet, hcClient);
-    }
-
-    /**
-     * 批量删除地址组成员
-     *
-     * 批量删除地址组成员
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchDeleteAddressItemsRequest 请求对象
-     * @return CompletableFuture<BatchDeleteAddressItemsResponse>
-     */
-    public CompletableFuture<BatchDeleteAddressItemsResponse> batchDeleteAddressItemsAsync(
-        BatchDeleteAddressItemsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.batchDeleteAddressItems);
-    }
-
-    /**
-     * 批量删除地址组成员
-     *
-     * 批量删除地址组成员
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchDeleteAddressItemsRequest 请求对象
-     * @return AsyncInvoker<BatchDeleteAddressItemsRequest, BatchDeleteAddressItemsResponse>
-     */
-    public AsyncInvoker<BatchDeleteAddressItemsRequest, BatchDeleteAddressItemsResponse> batchDeleteAddressItemsAsyncInvoker(
-        BatchDeleteAddressItemsRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.batchDeleteAddressItems, hcClient);
-    }
-
-    /**
-     * 批量删除域名组
-     *
-     * 批量删除域名组
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchDeleteDomainSetRequest 请求对象
-     * @return CompletableFuture<BatchDeleteDomainSetResponse>
-     */
-    public CompletableFuture<BatchDeleteDomainSetResponse> batchDeleteDomainSetAsync(
-        BatchDeleteDomainSetRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.batchDeleteDomainSet);
-    }
-
-    /**
-     * 批量删除域名组
-     *
-     * 批量删除域名组
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchDeleteDomainSetRequest 请求对象
-     * @return AsyncInvoker<BatchDeleteDomainSetRequest, BatchDeleteDomainSetResponse>
-     */
-    public AsyncInvoker<BatchDeleteDomainSetRequest, BatchDeleteDomainSetResponse> batchDeleteDomainSetAsyncInvoker(
-        BatchDeleteDomainSetRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.batchDeleteDomainSet, hcClient);
-    }
-
-    /**
-     * 批量删除服务组成员信息
-     *
-     * 批量删除服务组成员信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchDeleteServiceItemsRequest 请求对象
-     * @return CompletableFuture<BatchDeleteServiceItemsResponse>
-     */
-    public CompletableFuture<BatchDeleteServiceItemsResponse> batchDeleteServiceItemsAsync(
-        BatchDeleteServiceItemsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.batchDeleteServiceItems);
-    }
-
-    /**
-     * 批量删除服务组成员信息
-     *
-     * 批量删除服务组成员信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchDeleteServiceItemsRequest 请求对象
-     * @return AsyncInvoker<BatchDeleteServiceItemsRequest, BatchDeleteServiceItemsResponse>
-     */
-    public AsyncInvoker<BatchDeleteServiceItemsRequest, BatchDeleteServiceItemsResponse> batchDeleteServiceItemsAsyncInvoker(
-        BatchDeleteServiceItemsRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.batchDeleteServiceItems, hcClient);
     }
 
     /**
@@ -661,181 +414,6 @@ public class CfwAsyncClient {
     }
 
     /**
-     * 创建东西向防火墙
-     *
-     * 创建东西向防火墙
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateEastWestFirewallRequest 请求对象
-     * @return CompletableFuture<CreateEastWestFirewallResponse>
-     */
-    public CompletableFuture<CreateEastWestFirewallResponse> createEastWestFirewallAsync(
-        CreateEastWestFirewallRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.createEastWestFirewall);
-    }
-
-    /**
-     * 创建东西向防火墙
-     *
-     * 创建东西向防火墙
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateEastWestFirewallRequest 请求对象
-     * @return AsyncInvoker<CreateEastWestFirewallRequest, CreateEastWestFirewallResponse>
-     */
-    public AsyncInvoker<CreateEastWestFirewallRequest, CreateEastWestFirewallResponse> createEastWestFirewallAsyncInvoker(
-        CreateEastWestFirewallRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.createEastWestFirewall, hcClient);
-    }
-
-    /**
-     * 创建防火墙
-     *
-     * 创建防火墙
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateFirewallRequest 请求对象
-     * @return CompletableFuture<CreateFirewallResponse>
-     */
-    public CompletableFuture<CreateFirewallResponse> createFirewallAsync(CreateFirewallRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.createFirewall);
-    }
-
-    /**
-     * 创建防火墙
-     *
-     * 创建防火墙
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateFirewallRequest 请求对象
-     * @return AsyncInvoker<CreateFirewallRequest, CreateFirewallResponse>
-     */
-    public AsyncInvoker<CreateFirewallRequest, CreateFirewallResponse> createFirewallAsyncInvoker(
-        CreateFirewallRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.createFirewall, hcClient);
-    }
-
-    /**
-     * 标签创建接口
-     *
-     * 创建标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateTagRequest 请求对象
-     * @return CompletableFuture<CreateTagResponse>
-     */
-    public CompletableFuture<CreateTagResponse> createTagAsync(CreateTagRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.createTag);
-    }
-
-    /**
-     * 标签创建接口
-     *
-     * 创建标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateTagRequest 请求对象
-     * @return AsyncInvoker<CreateTagRequest, CreateTagResponse>
-     */
-    public AsyncInvoker<CreateTagRequest, CreateTagResponse> createTagAsyncInvoker(CreateTagRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.createTag, hcClient);
-    }
-
-    /**
-     * 删除地址组成员
-     *
-     * 删除地址组成员
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteAddressItemRequest 请求对象
-     * @return CompletableFuture<DeleteAddressItemResponse>
-     */
-    public CompletableFuture<DeleteAddressItemResponse> deleteAddressItemAsync(DeleteAddressItemRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.deleteAddressItem);
-    }
-
-    /**
-     * 删除地址组成员
-     *
-     * 删除地址组成员
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteAddressItemRequest 请求对象
-     * @return AsyncInvoker<DeleteAddressItemRequest, DeleteAddressItemResponse>
-     */
-    public AsyncInvoker<DeleteAddressItemRequest, DeleteAddressItemResponse> deleteAddressItemAsyncInvoker(
-        DeleteAddressItemRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.deleteAddressItem, hcClient);
-    }
-
-    /**
-     * 删除地址组
-     *
-     * 删除地址组
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteAddressSetRequest 请求对象
-     * @return CompletableFuture<DeleteAddressSetResponse>
-     */
-    public CompletableFuture<DeleteAddressSetResponse> deleteAddressSetAsync(DeleteAddressSetRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.deleteAddressSet);
-    }
-
-    /**
-     * 删除地址组
-     *
-     * 删除地址组
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteAddressSetRequest 请求对象
-     * @return AsyncInvoker<DeleteAddressSetRequest, DeleteAddressSetResponse>
-     */
-    public AsyncInvoker<DeleteAddressSetRequest, DeleteAddressSetResponse> deleteAddressSetAsyncInvoker(
-        DeleteAddressSetRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.deleteAddressSet, hcClient);
-    }
-
-    /**
-     * 删除黑白名单规则
-     *
-     * 删除黑白名单规则
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteBlackWhiteListRequest 请求对象
-     * @return CompletableFuture<DeleteBlackWhiteListResponse>
-     */
-    public CompletableFuture<DeleteBlackWhiteListResponse> deleteBlackWhiteListAsync(
-        DeleteBlackWhiteListRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.deleteBlackWhiteList);
-    }
-
-    /**
-     * 删除黑白名单规则
-     *
-     * 删除黑白名单规则
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteBlackWhiteListRequest 请求对象
-     * @return AsyncInvoker<DeleteBlackWhiteListRequest, DeleteBlackWhiteListResponse>
-     */
-    public AsyncInvoker<DeleteBlackWhiteListRequest, DeleteBlackWhiteListResponse> deleteBlackWhiteListAsyncInvoker(
-        DeleteBlackWhiteListRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.deleteBlackWhiteList, hcClient);
-    }
-
-    /**
      * 批量删除抓包任务
      *
      * 批量删除抓包任务
@@ -865,93 +443,6 @@ public class CfwAsyncClient {
     }
 
     /**
-     * 删除域名组
-     *
-     * 删除域名组
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteDomainSetRequest 请求对象
-     * @return CompletableFuture<DeleteDomainSetResponse>
-     */
-    public CompletableFuture<DeleteDomainSetResponse> deleteDomainSetAsync(DeleteDomainSetRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.deleteDomainSet);
-    }
-
-    /**
-     * 删除域名组
-     *
-     * 删除域名组
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteDomainSetRequest 请求对象
-     * @return AsyncInvoker<DeleteDomainSetRequest, DeleteDomainSetResponse>
-     */
-    public AsyncInvoker<DeleteDomainSetRequest, DeleteDomainSetResponse> deleteDomainSetAsyncInvoker(
-        DeleteDomainSetRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.deleteDomainSet, hcClient);
-    }
-
-    /**
-     * 删除域名列表
-     *
-     * 删除域名列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteDomainsRequest 请求对象
-     * @return CompletableFuture<DeleteDomainsResponse>
-     */
-    public CompletableFuture<DeleteDomainsResponse> deleteDomainsAsync(DeleteDomainsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.deleteDomains);
-    }
-
-    /**
-     * 删除域名列表
-     *
-     * 删除域名列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteDomainsRequest 请求对象
-     * @return AsyncInvoker<DeleteDomainsRequest, DeleteDomainsResponse>
-     */
-    public AsyncInvoker<DeleteDomainsRequest, DeleteDomainsResponse> deleteDomainsAsyncInvoker(
-        DeleteDomainsRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.deleteDomains, hcClient);
-    }
-
-    /**
-     * 删除防火墙
-     *
-     * 删除防火墙，仅按需生效
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteFirewallRequest 请求对象
-     * @return CompletableFuture<DeleteFirewallResponse>
-     */
-    public CompletableFuture<DeleteFirewallResponse> deleteFirewallAsync(DeleteFirewallRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.deleteFirewall);
-    }
-
-    /**
-     * 删除防火墙
-     *
-     * 删除防火墙，仅按需生效
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteFirewallRequest 请求对象
-     * @return AsyncInvoker<DeleteFirewallRequest, DeleteFirewallResponse>
-     */
-    public AsyncInvoker<DeleteFirewallRequest, DeleteFirewallResponse> deleteFirewallAsyncInvoker(
-        DeleteFirewallRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.deleteFirewall, hcClient);
-    }
-
-    /**
      * 删除已经导入的IP黑名单
      *
      * 删除流量过滤功能下已经导入的IP黑名单，指定生效范围进行删除。 标准版的墙只会存在生效范围为EIP的IP黑名单，专业版的墙会存在生效范围为EIP和NAT的IP黑名单。
@@ -978,92 +469,6 @@ public class CfwAsyncClient {
     public AsyncInvoker<DeleteIpBlacklistRequest, DeleteIpBlacklistResponse> deleteIpBlacklistAsyncInvoker(
         DeleteIpBlacklistRequest request) {
         return new AsyncInvoker<>(request, CfwMeta.deleteIpBlacklist, hcClient);
-    }
-
-    /**
-     * 删除服务成员
-     *
-     * 删除服务组成员
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteServiceItemRequest 请求对象
-     * @return CompletableFuture<DeleteServiceItemResponse>
-     */
-    public CompletableFuture<DeleteServiceItemResponse> deleteServiceItemAsync(DeleteServiceItemRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.deleteServiceItem);
-    }
-
-    /**
-     * 删除服务成员
-     *
-     * 删除服务组成员
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteServiceItemRequest 请求对象
-     * @return AsyncInvoker<DeleteServiceItemRequest, DeleteServiceItemResponse>
-     */
-    public AsyncInvoker<DeleteServiceItemRequest, DeleteServiceItemResponse> deleteServiceItemAsyncInvoker(
-        DeleteServiceItemRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.deleteServiceItem, hcClient);
-    }
-
-    /**
-     * 删除服务组
-     *
-     * 删除服务组
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteServiceSetRequest 请求对象
-     * @return CompletableFuture<DeleteServiceSetResponse>
-     */
-    public CompletableFuture<DeleteServiceSetResponse> deleteServiceSetAsync(DeleteServiceSetRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.deleteServiceSet);
-    }
-
-    /**
-     * 删除服务组
-     *
-     * 删除服务组
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteServiceSetRequest 请求对象
-     * @return AsyncInvoker<DeleteServiceSetRequest, DeleteServiceSetResponse>
-     */
-    public AsyncInvoker<DeleteServiceSetRequest, DeleteServiceSetResponse> deleteServiceSetAsyncInvoker(
-        DeleteServiceSetRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.deleteServiceSet, hcClient);
-    }
-
-    /**
-     * 删除标签
-     *
-     * 删除标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteTagRequest 请求对象
-     * @return CompletableFuture<DeleteTagResponse>
-     */
-    public CompletableFuture<DeleteTagResponse> deleteTagAsync(DeleteTagRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.deleteTag);
-    }
-
-    /**
-     * 删除标签
-     *
-     * 删除标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteTagRequest 请求对象
-     * @return AsyncInvoker<DeleteTagRequest, DeleteTagResponse>
-     */
-    public AsyncInvoker<DeleteTagRequest, DeleteTagResponse> deleteTagAsyncInvoker(DeleteTagRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.deleteTag, hcClient);
     }
 
     /**
@@ -1160,182 +565,6 @@ public class CfwAsyncClient {
     }
 
     /**
-     * 查询访问控制日志
-     *
-     * 查询访问控制日志
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAccessControlLogsRequest 请求对象
-     * @return CompletableFuture<ListAccessControlLogsResponse>
-     */
-    public CompletableFuture<ListAccessControlLogsResponse> listAccessControlLogsAsync(
-        ListAccessControlLogsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listAccessControlLogs);
-    }
-
-    /**
-     * 查询访问控制日志
-     *
-     * 查询访问控制日志
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAccessControlLogsRequest 请求对象
-     * @return AsyncInvoker<ListAccessControlLogsRequest, ListAccessControlLogsResponse>
-     */
-    public AsyncInvoker<ListAccessControlLogsRequest, ListAccessControlLogsResponse> listAccessControlLogsAsyncInvoker(
-        ListAccessControlLogsRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listAccessControlLogs, hcClient);
-    }
-
-    /**
-     * 查询地址组成员
-     *
-     * 查询地址组成员
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAddressItemsRequest 请求对象
-     * @return CompletableFuture<ListAddressItemsResponse>
-     */
-    public CompletableFuture<ListAddressItemsResponse> listAddressItemsAsync(ListAddressItemsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listAddressItems);
-    }
-
-    /**
-     * 查询地址组成员
-     *
-     * 查询地址组成员
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAddressItemsRequest 请求对象
-     * @return AsyncInvoker<ListAddressItemsRequest, ListAddressItemsResponse>
-     */
-    public AsyncInvoker<ListAddressItemsRequest, ListAddressItemsResponse> listAddressItemsAsyncInvoker(
-        ListAddressItemsRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listAddressItems, hcClient);
-    }
-
-    /**
-     * 查询地址组详细信息
-     *
-     * 查询地址组详细
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAddressSetDetailRequest 请求对象
-     * @return CompletableFuture<ListAddressSetDetailResponse>
-     */
-    public CompletableFuture<ListAddressSetDetailResponse> listAddressSetDetailAsync(
-        ListAddressSetDetailRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listAddressSetDetail);
-    }
-
-    /**
-     * 查询地址组详细信息
-     *
-     * 查询地址组详细
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAddressSetDetailRequest 请求对象
-     * @return AsyncInvoker<ListAddressSetDetailRequest, ListAddressSetDetailResponse>
-     */
-    public AsyncInvoker<ListAddressSetDetailRequest, ListAddressSetDetailResponse> listAddressSetDetailAsyncInvoker(
-        ListAddressSetDetailRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listAddressSetDetail, hcClient);
-    }
-
-    /**
-     * 查询地址组列表
-     *
-     * 查询地址组列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAddressSetsRequest 请求对象
-     * @return CompletableFuture<ListAddressSetsResponse>
-     */
-    public CompletableFuture<ListAddressSetsResponse> listAddressSetsAsync(ListAddressSetsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listAddressSets);
-    }
-
-    /**
-     * 查询地址组列表
-     *
-     * 查询地址组列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAddressSetsRequest 请求对象
-     * @return AsyncInvoker<ListAddressSetsRequest, ListAddressSetsResponse>
-     */
-    public AsyncInvoker<ListAddressSetsRequest, ListAddressSetsResponse> listAddressSetsAsyncInvoker(
-        ListAddressSetsRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listAddressSets, hcClient);
-    }
-
-    /**
-     * 查询攻击日志
-     *
-     * 查询攻击日志
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAttackLogsRequest 请求对象
-     * @return CompletableFuture<ListAttackLogsResponse>
-     */
-    public CompletableFuture<ListAttackLogsResponse> listAttackLogsAsync(ListAttackLogsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listAttackLogs);
-    }
-
-    /**
-     * 查询攻击日志
-     *
-     * 查询攻击日志
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAttackLogsRequest 请求对象
-     * @return AsyncInvoker<ListAttackLogsRequest, ListAttackLogsResponse>
-     */
-    public AsyncInvoker<ListAttackLogsRequest, ListAttackLogsResponse> listAttackLogsAsyncInvoker(
-        ListAttackLogsRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listAttackLogs, hcClient);
-    }
-
-    /**
-     * 查询黑白名单列表
-     *
-     * 查询黑白名单列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListBlackWhiteListsRequest 请求对象
-     * @return CompletableFuture<ListBlackWhiteListsResponse>
-     */
-    public CompletableFuture<ListBlackWhiteListsResponse> listBlackWhiteListsAsync(ListBlackWhiteListsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listBlackWhiteLists);
-    }
-
-    /**
-     * 查询黑白名单列表
-     *
-     * 查询黑白名单列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListBlackWhiteListsRequest 请求对象
-     * @return AsyncInvoker<ListBlackWhiteListsRequest, ListBlackWhiteListsResponse>
-     */
-    public AsyncInvoker<ListBlackWhiteListsRequest, ListBlackWhiteListsResponse> listBlackWhiteListsAsyncInvoker(
-        ListBlackWhiteListsRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listBlackWhiteLists, hcClient);
-    }
-
-    /**
      * 获取抓包任务结果
      *
      * 获取抓包任务结果
@@ -1391,268 +620,6 @@ public class CfwAsyncClient {
     public AsyncInvoker<ListCaptureTaskRequest, ListCaptureTaskResponse> listCaptureTaskAsyncInvoker(
         ListCaptureTaskRequest request) {
         return new AsyncInvoker<>(request, CfwMeta.listCaptureTask, hcClient);
-    }
-
-    /**
-     * 查询dns服务器列表
-     *
-     * 查询dns服务器列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDnsServersRequest 请求对象
-     * @return CompletableFuture<ListDnsServersResponse>
-     */
-    public CompletableFuture<ListDnsServersResponse> listDnsServersAsync(ListDnsServersRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listDnsServers);
-    }
-
-    /**
-     * 查询dns服务器列表
-     *
-     * 查询dns服务器列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDnsServersRequest 请求对象
-     * @return AsyncInvoker<ListDnsServersRequest, ListDnsServersResponse>
-     */
-    public AsyncInvoker<ListDnsServersRequest, ListDnsServersResponse> listDnsServersAsyncInvoker(
-        ListDnsServersRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listDnsServers, hcClient);
-    }
-
-    /**
-     * 查询域名解析ip地址
-     *
-     * 测试域名有效性
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDomainParseDetailRequest 请求对象
-     * @return CompletableFuture<ListDomainParseDetailResponse>
-     */
-    public CompletableFuture<ListDomainParseDetailResponse> listDomainParseDetailAsync(
-        ListDomainParseDetailRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listDomainParseDetail);
-    }
-
-    /**
-     * 查询域名解析ip地址
-     *
-     * 测试域名有效性
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDomainParseDetailRequest 请求对象
-     * @return AsyncInvoker<ListDomainParseDetailRequest, ListDomainParseDetailResponse>
-     */
-    public AsyncInvoker<ListDomainParseDetailRequest, ListDomainParseDetailResponse> listDomainParseDetailAsyncInvoker(
-        ListDomainParseDetailRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listDomainParseDetail, hcClient);
-    }
-
-    /**
-     * 获取域名地址解析结果
-     *
-     * 获取域名地址解析结果
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDomainParseIpRequest 请求对象
-     * @return CompletableFuture<ListDomainParseIpResponse>
-     */
-    public CompletableFuture<ListDomainParseIpResponse> listDomainParseIpAsync(ListDomainParseIpRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listDomainParseIp);
-    }
-
-    /**
-     * 获取域名地址解析结果
-     *
-     * 获取域名地址解析结果
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDomainParseIpRequest 请求对象
-     * @return AsyncInvoker<ListDomainParseIpRequest, ListDomainParseIpResponse>
-     */
-    public AsyncInvoker<ListDomainParseIpRequest, ListDomainParseIpResponse> listDomainParseIpAsyncInvoker(
-        ListDomainParseIpRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listDomainParseIp, hcClient);
-    }
-
-    /**
-     * 查询域名组列表
-     *
-     * 查询域名组列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDomainSetsRequest 请求对象
-     * @return CompletableFuture<ListDomainSetsResponse>
-     */
-    public CompletableFuture<ListDomainSetsResponse> listDomainSetsAsync(ListDomainSetsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listDomainSets);
-    }
-
-    /**
-     * 查询域名组列表
-     *
-     * 查询域名组列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDomainSetsRequest 请求对象
-     * @return AsyncInvoker<ListDomainSetsRequest, ListDomainSetsResponse>
-     */
-    public AsyncInvoker<ListDomainSetsRequest, ListDomainSetsResponse> listDomainSetsAsyncInvoker(
-        ListDomainSetsRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listDomainSets, hcClient);
-    }
-
-    /**
-     * 获取域名组下域名列表
-     *
-     * 获取域名组下域名列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDomainsRequest 请求对象
-     * @return CompletableFuture<ListDomainsResponse>
-     */
-    public CompletableFuture<ListDomainsResponse> listDomainsAsync(ListDomainsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listDomains);
-    }
-
-    /**
-     * 获取域名组下域名列表
-     *
-     * 获取域名组下域名列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDomainsRequest 请求对象
-     * @return AsyncInvoker<ListDomainsRequest, ListDomainsResponse>
-     */
-    public AsyncInvoker<ListDomainsRequest, ListDomainsResponse> listDomainsAsyncInvoker(ListDomainsRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listDomains, hcClient);
-    }
-
-    /**
-     * 获取东西向防火墙信息
-     *
-     * 获取东西向防火墙信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListEastWestFirewallRequest 请求对象
-     * @return CompletableFuture<ListEastWestFirewallResponse>
-     */
-    public CompletableFuture<ListEastWestFirewallResponse> listEastWestFirewallAsync(
-        ListEastWestFirewallRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listEastWestFirewall);
-    }
-
-    /**
-     * 获取东西向防火墙信息
-     *
-     * 获取东西向防火墙信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListEastWestFirewallRequest 请求对象
-     * @return AsyncInvoker<ListEastWestFirewallRequest, ListEastWestFirewallResponse>
-     */
-    public AsyncInvoker<ListEastWestFirewallRequest, ListEastWestFirewallResponse> listEastWestFirewallAsyncInvoker(
-        ListEastWestFirewallRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listEastWestFirewall, hcClient);
-    }
-
-    /**
-     * 查询防火墙详细信息
-     *
-     * 查询防火墙实例
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListFirewallDetailRequest 请求对象
-     * @return CompletableFuture<ListFirewallDetailResponse>
-     */
-    public CompletableFuture<ListFirewallDetailResponse> listFirewallDetailAsync(ListFirewallDetailRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listFirewallDetail);
-    }
-
-    /**
-     * 查询防火墙详细信息
-     *
-     * 查询防火墙实例
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListFirewallDetailRequest 请求对象
-     * @return AsyncInvoker<ListFirewallDetailRequest, ListFirewallDetailResponse>
-     */
-    public AsyncInvoker<ListFirewallDetailRequest, ListFirewallDetailResponse> listFirewallDetailAsyncInvoker(
-        ListFirewallDetailRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listFirewallDetail, hcClient);
-    }
-
-    /**
-     * 查询防火墙列表
-     *
-     * 查询防火墙列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListFirewallListRequest 请求对象
-     * @return CompletableFuture<ListFirewallListResponse>
-     */
-    public CompletableFuture<ListFirewallListResponse> listFirewallListAsync(ListFirewallListRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listFirewallList);
-    }
-
-    /**
-     * 查询防火墙列表
-     *
-     * 查询防火墙列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListFirewallListRequest 请求对象
-     * @return AsyncInvoker<ListFirewallListRequest, ListFirewallListResponse>
-     */
-    public AsyncInvoker<ListFirewallListRequest, ListFirewallListResponse> listFirewallListAsyncInvoker(
-        ListFirewallListRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listFirewallList, hcClient);
-    }
-
-    /**
-     * 查询流日志
-     *
-     * 查询流日志
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListFlowLogsRequest 请求对象
-     * @return CompletableFuture<ListFlowLogsResponse>
-     */
-    public CompletableFuture<ListFlowLogsResponse> listFlowLogsAsync(ListFlowLogsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listFlowLogs);
-    }
-
-    /**
-     * 查询流日志
-     *
-     * 查询流日志
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListFlowLogsRequest 请求对象
-     * @return AsyncInvoker<ListFlowLogsRequest, ListFlowLogsResponse>
-     */
-    public AsyncInvoker<ListFlowLogsRequest, ListFlowLogsResponse> listFlowLogsAsyncInvoker(
-        ListFlowLogsRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listFlowLogs, hcClient);
     }
 
     /**
@@ -1715,63 +682,6 @@ public class CfwAsyncClient {
     }
 
     /**
-     * 获取CFW任务执行状态
-     *
-     * 获取CFW任务执行状态
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListJobRequest 请求对象
-     * @return CompletableFuture<ListJobResponse>
-     */
-    public CompletableFuture<ListJobResponse> listJobAsync(ListJobRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listJob);
-    }
-
-    /**
-     * 获取CFW任务执行状态
-     *
-     * 获取CFW任务执行状态
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListJobRequest 请求对象
-     * @return AsyncInvoker<ListJobRequest, ListJobResponse>
-     */
-    public AsyncInvoker<ListJobRequest, ListJobResponse> listJobAsyncInvoker(ListJobRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listJob, hcClient);
-    }
-
-    /**
-     * 获取日志配置
-     *
-     * 获取日志配置
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListLogConfigRequest 请求对象
-     * @return CompletableFuture<ListLogConfigResponse>
-     */
-    public CompletableFuture<ListLogConfigResponse> listLogConfigAsync(ListLogConfigRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listLogConfig);
-    }
-
-    /**
-     * 获取日志配置
-     *
-     * 获取日志配置
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListLogConfigRequest 请求对象
-     * @return AsyncInvoker<ListLogConfigRequest, ListLogConfigResponse>
-     */
-    public AsyncInvoker<ListLogConfigRequest, ListLogConfigResponse> listLogConfigAsyncInvoker(
-        ListLogConfigRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listLogConfig, hcClient);
-    }
-
-    /**
      * 查询标签信息
      *
      * 查询标签信息
@@ -1801,35 +711,6 @@ public class CfwAsyncClient {
     }
 
     /**
-     * 查询防护VPC数
-     *
-     * 查询防护vpc信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListProtectedVpcsRequest 请求对象
-     * @return CompletableFuture<ListProtectedVpcsResponse>
-     */
-    public CompletableFuture<ListProtectedVpcsResponse> listProtectedVpcsAsync(ListProtectedVpcsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listProtectedVpcs);
-    }
-
-    /**
-     * 查询防护VPC数
-     *
-     * 查询防护vpc信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListProtectedVpcsRequest 请求对象
-     * @return AsyncInvoker<ListProtectedVpcsRequest, ListProtectedVpcsResponse>
-     */
-    public AsyncInvoker<ListProtectedVpcsRequest, ListProtectedVpcsResponse> listProtectedVpcsAsyncInvoker(
-        ListProtectedVpcsRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listProtectedVpcs, hcClient);
-    }
-
-    /**
      * 查询资源标签信息
      *
      * 查询资源标签信息
@@ -1856,94 +737,6 @@ public class CfwAsyncClient {
     public AsyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse> listResourceTagsAsyncInvoker(
         ListResourceTagsRequest request) {
         return new AsyncInvoker<>(request, CfwMeta.listResourceTags, hcClient);
-    }
-
-    /**
-     * 查询服务成员列表
-     *
-     * 查询服务组成员列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListServiceItemsRequest 请求对象
-     * @return CompletableFuture<ListServiceItemsResponse>
-     */
-    public CompletableFuture<ListServiceItemsResponse> listServiceItemsAsync(ListServiceItemsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listServiceItems);
-    }
-
-    /**
-     * 查询服务成员列表
-     *
-     * 查询服务组成员列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListServiceItemsRequest 请求对象
-     * @return AsyncInvoker<ListServiceItemsRequest, ListServiceItemsResponse>
-     */
-    public AsyncInvoker<ListServiceItemsRequest, ListServiceItemsResponse> listServiceItemsAsyncInvoker(
-        ListServiceItemsRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listServiceItems, hcClient);
-    }
-
-    /**
-     * 查询服务组详情
-     *
-     * 查询服务组细节
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListServiceSetDetailRequest 请求对象
-     * @return CompletableFuture<ListServiceSetDetailResponse>
-     */
-    public CompletableFuture<ListServiceSetDetailResponse> listServiceSetDetailAsync(
-        ListServiceSetDetailRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listServiceSetDetail);
-    }
-
-    /**
-     * 查询服务组详情
-     *
-     * 查询服务组细节
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListServiceSetDetailRequest 请求对象
-     * @return AsyncInvoker<ListServiceSetDetailRequest, ListServiceSetDetailResponse>
-     */
-    public AsyncInvoker<ListServiceSetDetailRequest, ListServiceSetDetailResponse> listServiceSetDetailAsyncInvoker(
-        ListServiceSetDetailRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listServiceSetDetail, hcClient);
-    }
-
-    /**
-     * 获取服务组列表
-     *
-     * 获取服务组列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListServiceSetsRequest 请求对象
-     * @return CompletableFuture<ListServiceSetsResponse>
-     */
-    public CompletableFuture<ListServiceSetsResponse> listServiceSetsAsync(ListServiceSetsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listServiceSets);
-    }
-
-    /**
-     * 获取服务组列表
-     *
-     * 获取服务组列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListServiceSetsRequest 请求对象
-     * @return AsyncInvoker<ListServiceSetsRequest, ListServiceSetsResponse>
-     */
-    public AsyncInvoker<ListServiceSetsRequest, ListServiceSetsResponse> listServiceSetsAsyncInvoker(
-        ListServiceSetsRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listServiceSets, hcClient);
     }
 
     /**
@@ -2091,64 +884,6 @@ public class CfwAsyncClient {
     }
 
     /**
-     * 查看域名组详情
-     *
-     * 查看域名组详情
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowDomainSetDetailRequest 请求对象
-     * @return CompletableFuture<ShowDomainSetDetailResponse>
-     */
-    public CompletableFuture<ShowDomainSetDetailResponse> showDomainSetDetailAsync(ShowDomainSetDetailRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.showDomainSetDetail);
-    }
-
-    /**
-     * 查看域名组详情
-     *
-     * 查看域名组详情
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowDomainSetDetailRequest 请求对象
-     * @return AsyncInvoker<ShowDomainSetDetailRequest, ShowDomainSetDetailResponse>
-     */
-    public AsyncInvoker<ShowDomainSetDetailRequest, ShowDomainSetDetailResponse> showDomainSetDetailAsyncInvoker(
-        ShowDomainSetDetailRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.showDomainSetDetail, hcClient);
-    }
-
-    /**
-     * 更新地址组信息
-     *
-     * 更新地址组信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateAddressSetRequest 请求对象
-     * @return CompletableFuture<UpdateAddressSetResponse>
-     */
-    public CompletableFuture<UpdateAddressSetResponse> updateAddressSetAsync(UpdateAddressSetRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.updateAddressSet);
-    }
-
-    /**
-     * 更新地址组信息
-     *
-     * 更新地址组信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateAddressSetRequest 请求对象
-     * @return AsyncInvoker<UpdateAddressSetRequest, UpdateAddressSetResponse>
-     */
-    public AsyncInvoker<UpdateAddressSetRequest, UpdateAddressSetResponse> updateAddressSetAsyncInvoker(
-        UpdateAddressSetRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.updateAddressSet, hcClient);
-    }
-
-    /**
      * 修改告警配置接口
      *
      * 修改告警配置接口
@@ -2234,182 +969,6 @@ public class CfwAsyncClient {
     public AsyncInvoker<UpdateAntiVirusSwitchRequest, UpdateAntiVirusSwitchResponse> updateAntiVirusSwitchAsyncInvoker(
         UpdateAntiVirusSwitchRequest request) {
         return new AsyncInvoker<>(request, CfwMeta.updateAntiVirusSwitch, hcClient);
-    }
-
-    /**
-     * 更新黑白名单列表
-     *
-     * 更新黑白名单列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateBlackWhiteListRequest 请求对象
-     * @return CompletableFuture<UpdateBlackWhiteListResponse>
-     */
-    public CompletableFuture<UpdateBlackWhiteListResponse> updateBlackWhiteListAsync(
-        UpdateBlackWhiteListRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.updateBlackWhiteList);
-    }
-
-    /**
-     * 更新黑白名单列表
-     *
-     * 更新黑白名单列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateBlackWhiteListRequest 请求对象
-     * @return AsyncInvoker<UpdateBlackWhiteListRequest, UpdateBlackWhiteListResponse>
-     */
-    public AsyncInvoker<UpdateBlackWhiteListRequest, UpdateBlackWhiteListResponse> updateBlackWhiteListAsyncInvoker(
-        UpdateBlackWhiteListRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.updateBlackWhiteList, hcClient);
-    }
-
-    /**
-     * 更新dns服务器列表
-     *
-     * 更新dns服务器列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateDnsServersRequest 请求对象
-     * @return CompletableFuture<UpdateDnsServersResponse>
-     */
-    public CompletableFuture<UpdateDnsServersResponse> updateDnsServersAsync(UpdateDnsServersRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.updateDnsServers);
-    }
-
-    /**
-     * 更新dns服务器列表
-     *
-     * 更新dns服务器列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateDnsServersRequest 请求对象
-     * @return AsyncInvoker<UpdateDnsServersRequest, UpdateDnsServersResponse>
-     */
-    public AsyncInvoker<UpdateDnsServersRequest, UpdateDnsServersResponse> updateDnsServersAsyncInvoker(
-        UpdateDnsServersRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.updateDnsServers, hcClient);
-    }
-
-    /**
-     * 更新域名组
-     *
-     * 更新域名组
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateDomainSetRequest 请求对象
-     * @return CompletableFuture<UpdateDomainSetResponse>
-     */
-    public CompletableFuture<UpdateDomainSetResponse> updateDomainSetAsync(UpdateDomainSetRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.updateDomainSet);
-    }
-
-    /**
-     * 更新域名组
-     *
-     * 更新域名组
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateDomainSetRequest 请求对象
-     * @return AsyncInvoker<UpdateDomainSetRequest, UpdateDomainSetResponse>
-     */
-    public AsyncInvoker<UpdateDomainSetRequest, UpdateDomainSetResponse> updateDomainSetAsyncInvoker(
-        UpdateDomainSetRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.updateDomainSet, hcClient);
-    }
-
-    /**
-     * 更新日志配置
-     *
-     * 更新日志配置
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateLogConfigRequest 请求对象
-     * @return CompletableFuture<UpdateLogConfigResponse>
-     */
-    public CompletableFuture<UpdateLogConfigResponse> updateLogConfigAsync(UpdateLogConfigRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.updateLogConfig);
-    }
-
-    /**
-     * 更新日志配置
-     *
-     * 更新日志配置
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateLogConfigRequest 请求对象
-     * @return AsyncInvoker<UpdateLogConfigRequest, UpdateLogConfigResponse>
-     */
-    public AsyncInvoker<UpdateLogConfigRequest, UpdateLogConfigResponse> updateLogConfigAsyncInvoker(
-        UpdateLogConfigRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.updateLogConfig, hcClient);
-    }
-
-    /**
-     * 编辑对象组内成员的描述信息
-     *
-     * 编辑对象组内成员的描述信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateObjectConfigDescRequest 请求对象
-     * @return CompletableFuture<UpdateObjectConfigDescResponse>
-     */
-    public CompletableFuture<UpdateObjectConfigDescResponse> updateObjectConfigDescAsync(
-        UpdateObjectConfigDescRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.updateObjectConfigDesc);
-    }
-
-    /**
-     * 编辑对象组内成员的描述信息
-     *
-     * 编辑对象组内成员的描述信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateObjectConfigDescRequest 请求对象
-     * @return AsyncInvoker<UpdateObjectConfigDescRequest, UpdateObjectConfigDescResponse>
-     */
-    public AsyncInvoker<UpdateObjectConfigDescRequest, UpdateObjectConfigDescResponse> updateObjectConfigDescAsyncInvoker(
-        UpdateObjectConfigDescRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.updateObjectConfigDesc, hcClient);
-    }
-
-    /**
-     * 修改服务组
-     *
-     * 更新服务组
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateServiceSetRequest 请求对象
-     * @return CompletableFuture<UpdateServiceSetResponse>
-     */
-    public CompletableFuture<UpdateServiceSetResponse> updateServiceSetAsync(UpdateServiceSetRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.updateServiceSet);
-    }
-
-    /**
-     * 修改服务组
-     *
-     * 更新服务组
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateServiceSetRequest 请求对象
-     * @return AsyncInvoker<UpdateServiceSetRequest, UpdateServiceSetResponse>
-     */
-    public AsyncInvoker<UpdateServiceSetRequest, UpdateServiceSetResponse> updateServiceSetAsyncInvoker(
-        UpdateServiceSetRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.updateServiceSet, hcClient);
     }
 
     /**
@@ -2559,6 +1118,154 @@ public class CfwAsyncClient {
     }
 
     /**
+     * 下载导出结果
+     *
+     * 下载导出结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadExportResultRequest 请求对象
+     * @return CompletableFuture<DownloadExportResultResponse>
+     */
+    public CompletableFuture<DownloadExportResultResponse> downloadExportResultAsync(
+        DownloadExportResultRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.downloadExportResult);
+    }
+
+    /**
+     * 下载导出结果
+     *
+     * 下载导出结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadExportResultRequest 请求对象
+     * @return AsyncInvoker<DownloadExportResultRequest, DownloadExportResultResponse>
+     */
+    public AsyncInvoker<DownloadExportResultRequest, DownloadExportResultResponse> downloadExportResultAsyncInvoker(
+        DownloadExportResultRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.downloadExportResult, hcClient);
+    }
+
+    /**
+     * 下载导入规则
+     *
+     * 下载导入规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadImportResultRequest 请求对象
+     * @return CompletableFuture<DownloadImportResultResponse>
+     */
+    public CompletableFuture<DownloadImportResultResponse> downloadImportResultAsync(
+        DownloadImportResultRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.downloadImportResult);
+    }
+
+    /**
+     * 下载导入规则
+     *
+     * 下载导入规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadImportResultRequest 请求对象
+     * @return AsyncInvoker<DownloadImportResultRequest, DownloadImportResultResponse>
+     */
+    public AsyncInvoker<DownloadImportResultRequest, DownloadImportResultResponse> downloadImportResultAsyncInvoker(
+        DownloadImportResultRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.downloadImportResult, hcClient);
+    }
+
+    /**
+     * 下载导入模板
+     *
+     * 下载导入模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadImportTemplateRequest 请求对象
+     * @return CompletableFuture<DownloadImportTemplateResponse>
+     */
+    public CompletableFuture<DownloadImportTemplateResponse> downloadImportTemplateAsync(
+        DownloadImportTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.downloadImportTemplate);
+    }
+
+    /**
+     * 下载导入模板
+     *
+     * 下载导入模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadImportTemplateRequest 请求对象
+     * @return AsyncInvoker<DownloadImportTemplateRequest, DownloadImportTemplateResponse>
+     */
+    public AsyncInvoker<DownloadImportTemplateRequest, DownloadImportTemplateResponse> downloadImportTemplateAsyncInvoker(
+        DownloadImportTemplateRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.downloadImportTemplate, hcClient);
+    }
+
+    /**
+     * 导出访问控制规则
+     *
+     * 导出访问控制规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportRuleAclRequest 请求对象
+     * @return CompletableFuture<ExportRuleAclResponse>
+     */
+    public CompletableFuture<ExportRuleAclResponse> exportRuleAclAsync(ExportRuleAclRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.exportRuleAcl);
+    }
+
+    /**
+     * 导出访问控制规则
+     *
+     * 导出访问控制规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportRuleAclRequest 请求对象
+     * @return AsyncInvoker<ExportRuleAclRequest, ExportRuleAclResponse>
+     */
+    public AsyncInvoker<ExportRuleAclRequest, ExportRuleAclResponse> exportRuleAclAsyncInvoker(
+        ExportRuleAclRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.exportRuleAcl, hcClient);
+    }
+
+    /**
+     * 导入访问控制规则
+     *
+     * 导入访问控制规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ImportRuleAclRequest 请求对象
+     * @return CompletableFuture<ImportRuleAclResponse>
+     */
+    public CompletableFuture<ImportRuleAclResponse> importRuleAclAsync(ImportRuleAclRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.importRuleAcl);
+    }
+
+    /**
+     * 导入访问控制规则
+     *
+     * 导入访问控制规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ImportRuleAclRequest 请求对象
+     * @return AsyncInvoker<ImportRuleAclRequest, ImportRuleAclResponse>
+     */
+    public AsyncInvoker<ImportRuleAclRequest, ImportRuleAclResponse> importRuleAclAsyncInvoker(
+        ImportRuleAclRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.importRuleAcl, hcClient);
+    }
+
+    /**
      * 获取规则击中次数
      *
      * 获取规则击中次数
@@ -2585,6 +1292,36 @@ public class CfwAsyncClient {
     public AsyncInvoker<ListAclRuleHitCountRequest, ListAclRuleHitCountResponse> listAclRuleHitCountAsyncInvoker(
         ListAclRuleHitCountRequest request) {
         return new AsyncInvoker<>(request, CfwMeta.listAclRuleHitCount, hcClient);
+    }
+
+    /**
+     * 获取规则的命中次数和最后一次命中时间
+     *
+     * 获取规则的命中次数和最后一次命中时间
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAclRuleHitStatusRequest 请求对象
+     * @return CompletableFuture<ListAclRuleHitStatusResponse>
+     */
+    public CompletableFuture<ListAclRuleHitStatusResponse> listAclRuleHitStatusAsync(
+        ListAclRuleHitStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listAclRuleHitStatus);
+    }
+
+    /**
+     * 获取规则的命中次数和最后一次命中时间
+     *
+     * 获取规则的命中次数和最后一次命中时间
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAclRuleHitStatusRequest 请求对象
+     * @return AsyncInvoker<ListAclRuleHitStatusRequest, ListAclRuleHitStatusResponse>
+     */
+    public AsyncInvoker<ListAclRuleHitStatusRequest, ListAclRuleHitStatusResponse> listAclRuleHitStatusAsyncInvoker(
+        ListAclRuleHitStatusRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listAclRuleHitStatus, hcClient);
     }
 
     /**
@@ -2671,6 +1408,35 @@ public class CfwAsyncClient {
     public AsyncInvoker<ListRuleAclTagsRequest, ListRuleAclTagsResponse> listRuleAclTagsAsyncInvoker(
         ListRuleAclTagsRequest request) {
         return new AsyncInvoker<>(request, CfwMeta.listRuleAclTags, hcClient);
+    }
+
+    /**
+     * 查询导出结果
+     *
+     * 查询导出结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowExportStatusRequest 请求对象
+     * @return CompletableFuture<ShowExportStatusResponse>
+     */
+    public CompletableFuture<ShowExportStatusResponse> showExportStatusAsync(ShowExportStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.showExportStatus);
+    }
+
+    /**
+     * 查询导出结果
+     *
+     * 查询导出结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowExportStatusRequest 请求对象
+     * @return AsyncInvoker<ShowExportStatusRequest, ShowExportStatusResponse>
+     */
+    public AsyncInvoker<ShowExportStatusRequest, ShowExportStatusResponse> showExportStatusAsyncInvoker(
+        ShowExportStatusRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.showExportStatus, hcClient);
     }
 
     /**
@@ -2761,6 +1527,972 @@ public class CfwAsyncClient {
     }
 
     /**
+     * 添加地址组成员
+     *
+     * 添加地址组成员
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddAddressItemRequest 请求对象
+     * @return CompletableFuture<AddAddressItemResponse>
+     */
+    public CompletableFuture<AddAddressItemResponse> addAddressItemAsync(AddAddressItemRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.addAddressItem);
+    }
+
+    /**
+     * 添加地址组成员
+     *
+     * 添加地址组成员
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddAddressItemRequest 请求对象
+     * @return AsyncInvoker<AddAddressItemRequest, AddAddressItemResponse>
+     */
+    public AsyncInvoker<AddAddressItemRequest, AddAddressItemResponse> addAddressItemAsyncInvoker(
+        AddAddressItemRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.addAddressItem, hcClient);
+    }
+
+    /**
+     * 添加地址组
+     *
+     * 添加地址组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddAddressSetRequest 请求对象
+     * @return CompletableFuture<AddAddressSetResponse>
+     */
+    public CompletableFuture<AddAddressSetResponse> addAddressSetAsync(AddAddressSetRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.addAddressSet);
+    }
+
+    /**
+     * 添加地址组
+     *
+     * 添加地址组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddAddressSetRequest 请求对象
+     * @return AsyncInvoker<AddAddressSetRequest, AddAddressSetResponse>
+     */
+    public AsyncInvoker<AddAddressSetRequest, AddAddressSetResponse> addAddressSetAsyncInvoker(
+        AddAddressSetRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.addAddressSet, hcClient);
+    }
+
+    /**
+     * 批量删除地址组成员
+     *
+     * 批量删除地址组成员
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteAddressItemsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteAddressItemsResponse>
+     */
+    public CompletableFuture<BatchDeleteAddressItemsResponse> batchDeleteAddressItemsAsync(
+        BatchDeleteAddressItemsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.batchDeleteAddressItems);
+    }
+
+    /**
+     * 批量删除地址组成员
+     *
+     * 批量删除地址组成员
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteAddressItemsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteAddressItemsRequest, BatchDeleteAddressItemsResponse>
+     */
+    public AsyncInvoker<BatchDeleteAddressItemsRequest, BatchDeleteAddressItemsResponse> batchDeleteAddressItemsAsyncInvoker(
+        BatchDeleteAddressItemsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.batchDeleteAddressItems, hcClient);
+    }
+
+    /**
+     * 批量删除地址组
+     *
+     * 批量删除地址组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteAddressSetsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteAddressSetsResponse>
+     */
+    public CompletableFuture<BatchDeleteAddressSetsResponse> batchDeleteAddressSetsAsync(
+        BatchDeleteAddressSetsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.batchDeleteAddressSets);
+    }
+
+    /**
+     * 批量删除地址组
+     *
+     * 批量删除地址组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteAddressSetsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteAddressSetsRequest, BatchDeleteAddressSetsResponse>
+     */
+    public AsyncInvoker<BatchDeleteAddressSetsRequest, BatchDeleteAddressSetsResponse> batchDeleteAddressSetsAsyncInvoker(
+        BatchDeleteAddressSetsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.batchDeleteAddressSets, hcClient);
+    }
+
+    /**
+     * 删除地址组成员
+     *
+     * 删除地址组成员
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAddressItemRequest 请求对象
+     * @return CompletableFuture<DeleteAddressItemResponse>
+     */
+    public CompletableFuture<DeleteAddressItemResponse> deleteAddressItemAsync(DeleteAddressItemRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.deleteAddressItem);
+    }
+
+    /**
+     * 删除地址组成员
+     *
+     * 删除地址组成员
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAddressItemRequest 请求对象
+     * @return AsyncInvoker<DeleteAddressItemRequest, DeleteAddressItemResponse>
+     */
+    public AsyncInvoker<DeleteAddressItemRequest, DeleteAddressItemResponse> deleteAddressItemAsyncInvoker(
+        DeleteAddressItemRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.deleteAddressItem, hcClient);
+    }
+
+    /**
+     * 删除地址组
+     *
+     * 删除地址组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAddressSetRequest 请求对象
+     * @return CompletableFuture<DeleteAddressSetResponse>
+     */
+    public CompletableFuture<DeleteAddressSetResponse> deleteAddressSetAsync(DeleteAddressSetRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.deleteAddressSet);
+    }
+
+    /**
+     * 删除地址组
+     *
+     * 删除地址组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAddressSetRequest 请求对象
+     * @return AsyncInvoker<DeleteAddressSetRequest, DeleteAddressSetResponse>
+     */
+    public AsyncInvoker<DeleteAddressSetRequest, DeleteAddressSetResponse> deleteAddressSetAsyncInvoker(
+        DeleteAddressSetRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.deleteAddressSet, hcClient);
+    }
+
+    /**
+     * 查询地址组成员
+     *
+     * 查询地址组成员
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAddressItemsRequest 请求对象
+     * @return CompletableFuture<ListAddressItemsResponse>
+     */
+    public CompletableFuture<ListAddressItemsResponse> listAddressItemsAsync(ListAddressItemsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listAddressItems);
+    }
+
+    /**
+     * 查询地址组成员
+     *
+     * 查询地址组成员
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAddressItemsRequest 请求对象
+     * @return AsyncInvoker<ListAddressItemsRequest, ListAddressItemsResponse>
+     */
+    public AsyncInvoker<ListAddressItemsRequest, ListAddressItemsResponse> listAddressItemsAsyncInvoker(
+        ListAddressItemsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listAddressItems, hcClient);
+    }
+
+    /**
+     * 查询地址组详细信息
+     *
+     * 查询地址组详细
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAddressSetDetailRequest 请求对象
+     * @return CompletableFuture<ListAddressSetDetailResponse>
+     */
+    public CompletableFuture<ListAddressSetDetailResponse> listAddressSetDetailAsync(
+        ListAddressSetDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listAddressSetDetail);
+    }
+
+    /**
+     * 查询地址组详细信息
+     *
+     * 查询地址组详细
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAddressSetDetailRequest 请求对象
+     * @return AsyncInvoker<ListAddressSetDetailRequest, ListAddressSetDetailResponse>
+     */
+    public AsyncInvoker<ListAddressSetDetailRequest, ListAddressSetDetailResponse> listAddressSetDetailAsyncInvoker(
+        ListAddressSetDetailRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listAddressSetDetail, hcClient);
+    }
+
+    /**
+     * 查询地址组列表
+     *
+     * 查询地址组列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAddressSetsRequest 请求对象
+     * @return CompletableFuture<ListAddressSetsResponse>
+     */
+    public CompletableFuture<ListAddressSetsResponse> listAddressSetsAsync(ListAddressSetsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listAddressSets);
+    }
+
+    /**
+     * 查询地址组列表
+     *
+     * 查询地址组列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAddressSetsRequest 请求对象
+     * @return AsyncInvoker<ListAddressSetsRequest, ListAddressSetsResponse>
+     */
+    public AsyncInvoker<ListAddressSetsRequest, ListAddressSetsResponse> listAddressSetsAsyncInvoker(
+        ListAddressSetsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listAddressSets, hcClient);
+    }
+
+    /**
+     * 更新地址组信息
+     *
+     * 更新地址组信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAddressSetRequest 请求对象
+     * @return CompletableFuture<UpdateAddressSetResponse>
+     */
+    public CompletableFuture<UpdateAddressSetResponse> updateAddressSetAsync(UpdateAddressSetRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.updateAddressSet);
+    }
+
+    /**
+     * 更新地址组信息
+     *
+     * 更新地址组信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAddressSetRequest 请求对象
+     * @return AsyncInvoker<UpdateAddressSetRequest, UpdateAddressSetResponse>
+     */
+    public AsyncInvoker<UpdateAddressSetRequest, UpdateAddressSetResponse> updateAddressSetAsyncInvoker(
+        UpdateAddressSetRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.updateAddressSet, hcClient);
+    }
+
+    /**
+     * 更新对象配置描述
+     *
+     * 更新对象配置描述
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateObjectConfigDescRequest 请求对象
+     * @return CompletableFuture<UpdateObjectConfigDescResponse>
+     */
+    public CompletableFuture<UpdateObjectConfigDescResponse> updateObjectConfigDescAsync(
+        UpdateObjectConfigDescRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.updateObjectConfigDesc);
+    }
+
+    /**
+     * 更新对象配置描述
+     *
+     * 更新对象配置描述
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateObjectConfigDescRequest 请求对象
+     * @return AsyncInvoker<UpdateObjectConfigDescRequest, UpdateObjectConfigDescResponse>
+     */
+    public AsyncInvoker<UpdateObjectConfigDescRequest, UpdateObjectConfigDescResponse> updateObjectConfigDescAsyncInvoker(
+        UpdateObjectConfigDescRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.updateObjectConfigDesc, hcClient);
+    }
+
+    /**
+     * 创建黑白名单规则
+     *
+     * 创建黑白名单规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddBlackWhiteListRequest 请求对象
+     * @return CompletableFuture<AddBlackWhiteListResponse>
+     */
+    public CompletableFuture<AddBlackWhiteListResponse> addBlackWhiteListAsync(AddBlackWhiteListRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.addBlackWhiteList);
+    }
+
+    /**
+     * 创建黑白名单规则
+     *
+     * 创建黑白名单规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddBlackWhiteListRequest 请求对象
+     * @return AsyncInvoker<AddBlackWhiteListRequest, AddBlackWhiteListResponse>
+     */
+    public AsyncInvoker<AddBlackWhiteListRequest, AddBlackWhiteListResponse> addBlackWhiteListAsyncInvoker(
+        AddBlackWhiteListRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.addBlackWhiteList, hcClient);
+    }
+
+    /**
+     * 批量添加黑白名单列表
+     *
+     * 批量添加黑白名单列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateBlackWhiteListRequest 请求对象
+     * @return CompletableFuture<BatchCreateBlackWhiteListResponse>
+     */
+    public CompletableFuture<BatchCreateBlackWhiteListResponse> batchCreateBlackWhiteListAsync(
+        BatchCreateBlackWhiteListRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.batchCreateBlackWhiteList);
+    }
+
+    /**
+     * 批量添加黑白名单列表
+     *
+     * 批量添加黑白名单列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateBlackWhiteListRequest 请求对象
+     * @return AsyncInvoker<BatchCreateBlackWhiteListRequest, BatchCreateBlackWhiteListResponse>
+     */
+    public AsyncInvoker<BatchCreateBlackWhiteListRequest, BatchCreateBlackWhiteListResponse> batchCreateBlackWhiteListAsyncInvoker(
+        BatchCreateBlackWhiteListRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.batchCreateBlackWhiteList, hcClient);
+    }
+
+    /**
+     * 批量删除黑白名单列表
+     *
+     * 批量删除黑白名单列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteBlackWhiteListsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteBlackWhiteListsResponse>
+     */
+    public CompletableFuture<BatchDeleteBlackWhiteListsResponse> batchDeleteBlackWhiteListsAsync(
+        BatchDeleteBlackWhiteListsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.batchDeleteBlackWhiteLists);
+    }
+
+    /**
+     * 批量删除黑白名单列表
+     *
+     * 批量删除黑白名单列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteBlackWhiteListsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteBlackWhiteListsRequest, BatchDeleteBlackWhiteListsResponse>
+     */
+    public AsyncInvoker<BatchDeleteBlackWhiteListsRequest, BatchDeleteBlackWhiteListsResponse> batchDeleteBlackWhiteListsAsyncInvoker(
+        BatchDeleteBlackWhiteListsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.batchDeleteBlackWhiteLists, hcClient);
+    }
+
+    /**
+     * 删除黑白名单规则
+     *
+     * 删除黑白名单规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteBlackWhiteListRequest 请求对象
+     * @return CompletableFuture<DeleteBlackWhiteListResponse>
+     */
+    public CompletableFuture<DeleteBlackWhiteListResponse> deleteBlackWhiteListAsync(
+        DeleteBlackWhiteListRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.deleteBlackWhiteList);
+    }
+
+    /**
+     * 删除黑白名单规则
+     *
+     * 删除黑白名单规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteBlackWhiteListRequest 请求对象
+     * @return AsyncInvoker<DeleteBlackWhiteListRequest, DeleteBlackWhiteListResponse>
+     */
+    public AsyncInvoker<DeleteBlackWhiteListRequest, DeleteBlackWhiteListResponse> deleteBlackWhiteListAsyncInvoker(
+        DeleteBlackWhiteListRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.deleteBlackWhiteList, hcClient);
+    }
+
+    /**
+     * 查询黑白名单列表
+     *
+     * 查询黑白名单列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBlackWhiteListsRequest 请求对象
+     * @return CompletableFuture<ListBlackWhiteListsResponse>
+     */
+    public CompletableFuture<ListBlackWhiteListsResponse> listBlackWhiteListsAsync(ListBlackWhiteListsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listBlackWhiteLists);
+    }
+
+    /**
+     * 查询黑白名单列表
+     *
+     * 查询黑白名单列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBlackWhiteListsRequest 请求对象
+     * @return AsyncInvoker<ListBlackWhiteListsRequest, ListBlackWhiteListsResponse>
+     */
+    public AsyncInvoker<ListBlackWhiteListsRequest, ListBlackWhiteListsResponse> listBlackWhiteListsAsyncInvoker(
+        ListBlackWhiteListsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listBlackWhiteLists, hcClient);
+    }
+
+    /**
+     * 更新黑白名单列表
+     *
+     * 更新黑白名单列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateBlackWhiteListRequest 请求对象
+     * @return CompletableFuture<UpdateBlackWhiteListResponse>
+     */
+    public CompletableFuture<UpdateBlackWhiteListResponse> updateBlackWhiteListAsync(
+        UpdateBlackWhiteListRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.updateBlackWhiteList);
+    }
+
+    /**
+     * 更新黑白名单列表
+     *
+     * 更新黑白名单列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateBlackWhiteListRequest 请求对象
+     * @return AsyncInvoker<UpdateBlackWhiteListRequest, UpdateBlackWhiteListResponse>
+     */
+    public AsyncInvoker<UpdateBlackWhiteListRequest, UpdateBlackWhiteListResponse> updateBlackWhiteListAsyncInvoker(
+        UpdateBlackWhiteListRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.updateBlackWhiteList, hcClient);
+    }
+
+    /**
+     * 添加指定DNS服务器
+     *
+     * 添加指定DNS服务器
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddCustomDnsServerRequest 请求对象
+     * @return CompletableFuture<AddCustomDnsServerResponse>
+     */
+    public CompletableFuture<AddCustomDnsServerResponse> addCustomDnsServerAsync(AddCustomDnsServerRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.addCustomDnsServer);
+    }
+
+    /**
+     * 添加指定DNS服务器
+     *
+     * 添加指定DNS服务器
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddCustomDnsServerRequest 请求对象
+     * @return AsyncInvoker<AddCustomDnsServerRequest, AddCustomDnsServerResponse>
+     */
+    public AsyncInvoker<AddCustomDnsServerRequest, AddCustomDnsServerResponse> addCustomDnsServerAsyncInvoker(
+        AddCustomDnsServerRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.addCustomDnsServer, hcClient);
+    }
+
+    /**
+     * 添加域名组
+     *
+     * 添加域名组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddDomainSetRequest 请求对象
+     * @return CompletableFuture<AddDomainSetResponse>
+     */
+    public CompletableFuture<AddDomainSetResponse> addDomainSetAsync(AddDomainSetRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.addDomainSet);
+    }
+
+    /**
+     * 添加域名组
+     *
+     * 添加域名组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddDomainSetRequest 请求对象
+     * @return AsyncInvoker<AddDomainSetRequest, AddDomainSetResponse>
+     */
+    public AsyncInvoker<AddDomainSetRequest, AddDomainSetResponse> addDomainSetAsyncInvoker(
+        AddDomainSetRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.addDomainSet, hcClient);
+    }
+
+    /**
+     * 添加域名列表
+     *
+     * 添加域名列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddDomainsRequest 请求对象
+     * @return CompletableFuture<AddDomainsResponse>
+     */
+    public CompletableFuture<AddDomainsResponse> addDomainsAsync(AddDomainsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.addDomains);
+    }
+
+    /**
+     * 添加域名列表
+     *
+     * 添加域名列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddDomainsRequest 请求对象
+     * @return AsyncInvoker<AddDomainsRequest, AddDomainsResponse>
+     */
+    public AsyncInvoker<AddDomainsRequest, AddDomainsResponse> addDomainsAsyncInvoker(AddDomainsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.addDomains, hcClient);
+    }
+
+    /**
+     * 批量删除域名组
+     *
+     * 批量删除域名组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteDomainSetRequest 请求对象
+     * @return CompletableFuture<BatchDeleteDomainSetResponse>
+     */
+    public CompletableFuture<BatchDeleteDomainSetResponse> batchDeleteDomainSetAsync(
+        BatchDeleteDomainSetRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.batchDeleteDomainSet);
+    }
+
+    /**
+     * 批量删除域名组
+     *
+     * 批量删除域名组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteDomainSetRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteDomainSetRequest, BatchDeleteDomainSetResponse>
+     */
+    public AsyncInvoker<BatchDeleteDomainSetRequest, BatchDeleteDomainSetResponse> batchDeleteDomainSetAsyncInvoker(
+        BatchDeleteDomainSetRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.batchDeleteDomainSet, hcClient);
+    }
+
+    /**
+     * 删除域名组
+     *
+     * 删除域名组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDomainSetRequest 请求对象
+     * @return CompletableFuture<DeleteDomainSetResponse>
+     */
+    public CompletableFuture<DeleteDomainSetResponse> deleteDomainSetAsync(DeleteDomainSetRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.deleteDomainSet);
+    }
+
+    /**
+     * 删除域名组
+     *
+     * 删除域名组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDomainSetRequest 请求对象
+     * @return AsyncInvoker<DeleteDomainSetRequest, DeleteDomainSetResponse>
+     */
+    public AsyncInvoker<DeleteDomainSetRequest, DeleteDomainSetResponse> deleteDomainSetAsyncInvoker(
+        DeleteDomainSetRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.deleteDomainSet, hcClient);
+    }
+
+    /**
+     * 删除域名列表
+     *
+     * 删除域名列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDomainsRequest 请求对象
+     * @return CompletableFuture<DeleteDomainsResponse>
+     */
+    public CompletableFuture<DeleteDomainsResponse> deleteDomainsAsync(DeleteDomainsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.deleteDomains);
+    }
+
+    /**
+     * 删除域名列表
+     *
+     * 删除域名列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDomainsRequest 请求对象
+     * @return AsyncInvoker<DeleteDomainsRequest, DeleteDomainsResponse>
+     */
+    public AsyncInvoker<DeleteDomainsRequest, DeleteDomainsResponse> deleteDomainsAsyncInvoker(
+        DeleteDomainsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.deleteDomains, hcClient);
+    }
+
+    /**
+     * 查询DNS服务器列表
+     *
+     * 查询DNS服务器列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDnsServersRequest 请求对象
+     * @return CompletableFuture<ListDnsServersResponse>
+     */
+    public CompletableFuture<ListDnsServersResponse> listDnsServersAsync(ListDnsServersRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listDnsServers);
+    }
+
+    /**
+     * 查询DNS服务器列表
+     *
+     * 查询DNS服务器列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDnsServersRequest 请求对象
+     * @return AsyncInvoker<ListDnsServersRequest, ListDnsServersResponse>
+     */
+    public AsyncInvoker<ListDnsServersRequest, ListDnsServersResponse> listDnsServersAsyncInvoker(
+        ListDnsServersRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listDnsServers, hcClient);
+    }
+
+    /**
+     * 查询域名解析IP地址
+     *
+     * 测试域名有效性
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainParseDetailRequest 请求对象
+     * @return CompletableFuture<ListDomainParseDetailResponse>
+     */
+    public CompletableFuture<ListDomainParseDetailResponse> listDomainParseDetailAsync(
+        ListDomainParseDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listDomainParseDetail);
+    }
+
+    /**
+     * 查询域名解析IP地址
+     *
+     * 测试域名有效性
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainParseDetailRequest 请求对象
+     * @return AsyncInvoker<ListDomainParseDetailRequest, ListDomainParseDetailResponse>
+     */
+    public AsyncInvoker<ListDomainParseDetailRequest, ListDomainParseDetailResponse> listDomainParseDetailAsyncInvoker(
+        ListDomainParseDetailRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listDomainParseDetail, hcClient);
+    }
+
+    /**
+     * 获取域名地址解析结果
+     *
+     * 获取域名地址解析结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainParseIpRequest 请求对象
+     * @return CompletableFuture<ListDomainParseIpResponse>
+     */
+    public CompletableFuture<ListDomainParseIpResponse> listDomainParseIpAsync(ListDomainParseIpRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listDomainParseIp);
+    }
+
+    /**
+     * 获取域名地址解析结果
+     *
+     * 获取域名地址解析结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainParseIpRequest 请求对象
+     * @return AsyncInvoker<ListDomainParseIpRequest, ListDomainParseIpResponse>
+     */
+    public AsyncInvoker<ListDomainParseIpRequest, ListDomainParseIpResponse> listDomainParseIpAsyncInvoker(
+        ListDomainParseIpRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listDomainParseIp, hcClient);
+    }
+
+    /**
+     * 获取域名解析结果
+     *
+     * 获取域名解析结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainResolveIpRequest 请求对象
+     * @return CompletableFuture<ListDomainResolveIpResponse>
+     */
+    public CompletableFuture<ListDomainResolveIpResponse> listDomainResolveIpAsync(ListDomainResolveIpRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listDomainResolveIp);
+    }
+
+    /**
+     * 获取域名解析结果
+     *
+     * 获取域名解析结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainResolveIpRequest 请求对象
+     * @return AsyncInvoker<ListDomainResolveIpRequest, ListDomainResolveIpResponse>
+     */
+    public AsyncInvoker<ListDomainResolveIpRequest, ListDomainResolveIpResponse> listDomainResolveIpAsyncInvoker(
+        ListDomainResolveIpRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listDomainResolveIp, hcClient);
+    }
+
+    /**
+     * 查询域名组列表
+     *
+     * 查询域名组列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainSetsRequest 请求对象
+     * @return CompletableFuture<ListDomainSetsResponse>
+     */
+    public CompletableFuture<ListDomainSetsResponse> listDomainSetsAsync(ListDomainSetsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listDomainSets);
+    }
+
+    /**
+     * 查询域名组列表
+     *
+     * 查询域名组列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainSetsRequest 请求对象
+     * @return AsyncInvoker<ListDomainSetsRequest, ListDomainSetsResponse>
+     */
+    public AsyncInvoker<ListDomainSetsRequest, ListDomainSetsResponse> listDomainSetsAsyncInvoker(
+        ListDomainSetsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listDomainSets, hcClient);
+    }
+
+    /**
+     * 获取域名组下域名列表
+     *
+     * 获取域名组下域名列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainsRequest 请求对象
+     * @return CompletableFuture<ListDomainsResponse>
+     */
+    public CompletableFuture<ListDomainsResponse> listDomainsAsync(ListDomainsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listDomains);
+    }
+
+    /**
+     * 获取域名组下域名列表
+     *
+     * 获取域名组下域名列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainsRequest 请求对象
+     * @return AsyncInvoker<ListDomainsRequest, ListDomainsResponse>
+     */
+    public AsyncInvoker<ListDomainsRequest, ListDomainsResponse> listDomainsAsyncInvoker(ListDomainsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listDomains, hcClient);
+    }
+
+    /**
+     * 查看域名组详情
+     *
+     * 查看域名组详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainSetDetailRequest 请求对象
+     * @return CompletableFuture<ShowDomainSetDetailResponse>
+     */
+    public CompletableFuture<ShowDomainSetDetailResponse> showDomainSetDetailAsync(ShowDomainSetDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.showDomainSetDetail);
+    }
+
+    /**
+     * 查看域名组详情
+     *
+     * 查看域名组详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainSetDetailRequest 请求对象
+     * @return AsyncInvoker<ShowDomainSetDetailRequest, ShowDomainSetDetailResponse>
+     */
+    public AsyncInvoker<ShowDomainSetDetailRequest, ShowDomainSetDetailResponse> showDomainSetDetailAsyncInvoker(
+        ShowDomainSetDetailRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.showDomainSetDetail, hcClient);
+    }
+
+    /**
+     * 更新DNS服务器列表
+     *
+     * 更新DNS服务器列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDnsServersRequest 请求对象
+     * @return CompletableFuture<UpdateDnsServersResponse>
+     */
+    public CompletableFuture<UpdateDnsServersResponse> updateDnsServersAsync(UpdateDnsServersRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.updateDnsServers);
+    }
+
+    /**
+     * 更新DNS服务器列表
+     *
+     * 更新DNS服务器列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDnsServersRequest 请求对象
+     * @return AsyncInvoker<UpdateDnsServersRequest, UpdateDnsServersResponse>
+     */
+    public AsyncInvoker<UpdateDnsServersRequest, UpdateDnsServersResponse> updateDnsServersAsyncInvoker(
+        UpdateDnsServersRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.updateDnsServers, hcClient);
+    }
+
+    /**
+     * 更新域名组
+     *
+     * 更新域名组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDomainSetRequest 请求对象
+     * @return CompletableFuture<UpdateDomainSetResponse>
+     */
+    public CompletableFuture<UpdateDomainSetResponse> updateDomainSetAsync(UpdateDomainSetRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.updateDomainSet);
+    }
+
+    /**
+     * 更新域名组
+     *
+     * 更新域名组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDomainSetRequest 请求对象
+     * @return AsyncInvoker<UpdateDomainSetRequest, UpdateDomainSetResponse>
+     */
+    public AsyncInvoker<UpdateDomainSetRequest, UpdateDomainSetResponse> updateDomainSetAsyncInvoker(
+        UpdateDomainSetRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.updateDomainSet, hcClient);
+    }
+
+    /**
+     * 添加EIP告警白名单
+     *
+     * 添加EIP告警白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddEipAlarmWhitelistRequest 请求对象
+     * @return CompletableFuture<AddEipAlarmWhitelistResponse>
+     */
+    public CompletableFuture<AddEipAlarmWhitelistResponse> addEipAlarmWhitelistAsync(
+        AddEipAlarmWhitelistRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.addEipAlarmWhitelist);
+    }
+
+    /**
+     * 添加EIP告警白名单
+     *
+     * 添加EIP告警白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddEipAlarmWhitelistRequest 请求对象
+     * @return AsyncInvoker<AddEipAlarmWhitelistRequest, AddEipAlarmWhitelistResponse>
+     */
+    public AsyncInvoker<AddEipAlarmWhitelistRequest, AddEipAlarmWhitelistResponse> addEipAlarmWhitelistAsyncInvoker(
+        AddEipAlarmWhitelistRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.addEipAlarmWhitelist, hcClient);
+    }
+
+    /**
      * 弹性IP开启关闭
      *
      * 开启关闭EIP，客户购买EIP后首次开启EIP防护前需使用ListEips同步EIP资产，sync字段设置为1。
@@ -2790,9 +2522,9 @@ public class CfwAsyncClient {
     }
 
     /**
-     * 查看eip告警白名单
+     * 查看EIP告警白名单
      *
-     * 查看eip告警白名单
+     * 查看EIP告警白名单
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2804,9 +2536,9 @@ public class CfwAsyncClient {
     }
 
     /**
-     * 查看eip告警白名单
+     * 查看EIP告警白名单
      *
-     * 查看eip告警白名单
+     * 查看EIP告警白名单
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2819,9 +2551,9 @@ public class CfwAsyncClient {
     }
 
     /**
-     * 查询Eip个数
+     * 查询EIP数量
      *
-     * 查询Eip个数
+     * 查询EIP数量
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2833,9 +2565,9 @@ public class CfwAsyncClient {
     }
 
     /**
-     * 查询Eip个数
+     * 查询EIP数量
      *
-     * 查询Eip个数
+     * 查询EIP数量
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2876,9 +2608,9 @@ public class CfwAsyncClient {
     }
 
     /**
-     * 获取eip自动防护状态信息
+     * 获取EIP自动防护状态信息
      *
-     * 获取eip自动防护状态信息
+     * 获取EIP自动防护状态信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2891,9 +2623,9 @@ public class CfwAsyncClient {
     }
 
     /**
-     * 获取eip自动防护状态信息
+     * 获取EIP自动防护状态信息
      *
-     * 获取eip自动防护状态信息
+     * 获取EIP自动防护状态信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2906,9 +2638,9 @@ public class CfwAsyncClient {
     }
 
     /**
-     * 修改eip自动防护开关
+     * 修改EIP自动防护开关
      *
-     * 修改eip自动防护开关
+     * 修改EIP自动防护开关
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2921,9 +2653,9 @@ public class CfwAsyncClient {
     }
 
     /**
-     * 修改eip自动防护开关
+     * 修改EIP自动防护开关
      *
-     * 修改eip自动防护开关
+     * 修改EIP自动防护开关
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2933,6 +2665,473 @@ public class CfwAsyncClient {
     public AsyncInvoker<SwitchAutoProtectStatusRequest, SwitchAutoProtectStatusResponse> switchAutoProtectStatusAsyncInvoker(
         SwitchAutoProtectStatusRequest request) {
         return new AsyncInvoker<>(request, CfwMeta.switchAutoProtectStatus, hcClient);
+    }
+
+    /**
+     * 一键逃生/一键恢复开关
+     *
+     * 一键逃生/一键恢复开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchFirewallEipProtectionRequest 请求对象
+     * @return CompletableFuture<SwitchFirewallEipProtectionResponse>
+     */
+    public CompletableFuture<SwitchFirewallEipProtectionResponse> switchFirewallEipProtectionAsync(
+        SwitchFirewallEipProtectionRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.switchFirewallEipProtection);
+    }
+
+    /**
+     * 一键逃生/一键恢复开关
+     *
+     * 一键逃生/一键恢复开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchFirewallEipProtectionRequest 请求对象
+     * @return AsyncInvoker<SwitchFirewallEipProtectionRequest, SwitchFirewallEipProtectionResponse>
+     */
+    public AsyncInvoker<SwitchFirewallEipProtectionRequest, SwitchFirewallEipProtectionResponse> switchFirewallEipProtectionAsyncInvoker(
+        SwitchFirewallEipProtectionRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.switchFirewallEipProtection, hcClient);
+    }
+
+    /**
+     * 创建东西向防火墙
+     *
+     * 创建东西向防火墙
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateEastWestFirewallRequest 请求对象
+     * @return CompletableFuture<CreateEastWestFirewallResponse>
+     */
+    public CompletableFuture<CreateEastWestFirewallResponse> createEastWestFirewallAsync(
+        CreateEastWestFirewallRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.createEastWestFirewall);
+    }
+
+    /**
+     * 创建东西向防火墙
+     *
+     * 创建东西向防火墙
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateEastWestFirewallRequest 请求对象
+     * @return AsyncInvoker<CreateEastWestFirewallRequest, CreateEastWestFirewallResponse>
+     */
+    public AsyncInvoker<CreateEastWestFirewallRequest, CreateEastWestFirewallResponse> createEastWestFirewallAsyncInvoker(
+        CreateEastWestFirewallRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.createEastWestFirewall, hcClient);
+    }
+
+    /**
+     * 创建防火墙
+     *
+     * 创建防火墙
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateFirewallRequest 请求对象
+     * @return CompletableFuture<CreateFirewallResponse>
+     */
+    public CompletableFuture<CreateFirewallResponse> createFirewallAsync(CreateFirewallRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.createFirewall);
+    }
+
+    /**
+     * 创建防火墙
+     *
+     * 创建防火墙
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateFirewallRequest 请求对象
+     * @return AsyncInvoker<CreateFirewallRequest, CreateFirewallResponse>
+     */
+    public AsyncInvoker<CreateFirewallRequest, CreateFirewallResponse> createFirewallAsyncInvoker(
+        CreateFirewallRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.createFirewall, hcClient);
+    }
+
+    /**
+     * 标签创建接口
+     *
+     * 创建标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTagRequest 请求对象
+     * @return CompletableFuture<CreateTagResponse>
+     */
+    public CompletableFuture<CreateTagResponse> createTagAsync(CreateTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.createTag);
+    }
+
+    /**
+     * 标签创建接口
+     *
+     * 创建标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTagRequest 请求对象
+     * @return AsyncInvoker<CreateTagRequest, CreateTagResponse>
+     */
+    public AsyncInvoker<CreateTagRequest, CreateTagResponse> createTagAsyncInvoker(CreateTagRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.createTag, hcClient);
+    }
+
+    /**
+     * 删除防火墙
+     *
+     * 删除防火墙，仅按需生效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteFirewallRequest 请求对象
+     * @return CompletableFuture<DeleteFirewallResponse>
+     */
+    public CompletableFuture<DeleteFirewallResponse> deleteFirewallAsync(DeleteFirewallRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.deleteFirewall);
+    }
+
+    /**
+     * 删除防火墙
+     *
+     * 删除防火墙，仅按需生效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteFirewallRequest 请求对象
+     * @return AsyncInvoker<DeleteFirewallRequest, DeleteFirewallResponse>
+     */
+    public AsyncInvoker<DeleteFirewallRequest, DeleteFirewallResponse> deleteFirewallAsyncInvoker(
+        DeleteFirewallRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.deleteFirewall, hcClient);
+    }
+
+    /**
+     * 删除标签
+     *
+     * 删除标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTagRequest 请求对象
+     * @return CompletableFuture<DeleteTagResponse>
+     */
+    public CompletableFuture<DeleteTagResponse> deleteTagAsync(DeleteTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.deleteTag);
+    }
+
+    /**
+     * 删除标签
+     *
+     * 删除标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTagRequest 请求对象
+     * @return AsyncInvoker<DeleteTagRequest, DeleteTagResponse>
+     */
+    public AsyncInvoker<DeleteTagRequest, DeleteTagResponse> deleteTagAsyncInvoker(DeleteTagRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.deleteTag, hcClient);
+    }
+
+    /**
+     * 获取东西向防火墙信息
+     *
+     * 获取东西向防火墙信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEastWestFirewallRequest 请求对象
+     * @return CompletableFuture<ListEastWestFirewallResponse>
+     */
+    public CompletableFuture<ListEastWestFirewallResponse> listEastWestFirewallAsync(
+        ListEastWestFirewallRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listEastWestFirewall);
+    }
+
+    /**
+     * 获取东西向防火墙信息
+     *
+     * 获取东西向防火墙信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEastWestFirewallRequest 请求对象
+     * @return AsyncInvoker<ListEastWestFirewallRequest, ListEastWestFirewallResponse>
+     */
+    public AsyncInvoker<ListEastWestFirewallRequest, ListEastWestFirewallResponse> listEastWestFirewallAsyncInvoker(
+        ListEastWestFirewallRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listEastWestFirewall, hcClient);
+    }
+
+    /**
+     * 查询防火墙详细信息
+     *
+     * 查询防火墙实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFirewallDetailRequest 请求对象
+     * @return CompletableFuture<ListFirewallDetailResponse>
+     */
+    public CompletableFuture<ListFirewallDetailResponse> listFirewallDetailAsync(ListFirewallDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listFirewallDetail);
+    }
+
+    /**
+     * 查询防火墙详细信息
+     *
+     * 查询防火墙实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFirewallDetailRequest 请求对象
+     * @return AsyncInvoker<ListFirewallDetailRequest, ListFirewallDetailResponse>
+     */
+    public AsyncInvoker<ListFirewallDetailRequest, ListFirewallDetailResponse> listFirewallDetailAsyncInvoker(
+        ListFirewallDetailRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listFirewallDetail, hcClient);
+    }
+
+    /**
+     * 查询防火墙列表
+     *
+     * 查询防火墙列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFirewallListRequest 请求对象
+     * @return CompletableFuture<ListFirewallListResponse>
+     */
+    public CompletableFuture<ListFirewallListResponse> listFirewallListAsync(ListFirewallListRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listFirewallList);
+    }
+
+    /**
+     * 查询防火墙列表
+     *
+     * 查询防火墙列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFirewallListRequest 请求对象
+     * @return AsyncInvoker<ListFirewallListRequest, ListFirewallListResponse>
+     */
+    public AsyncInvoker<ListFirewallListRequest, ListFirewallListResponse> listFirewallListAsyncInvoker(
+        ListFirewallListRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listFirewallList, hcClient);
+    }
+
+    /**
+     * 获取CFW任务执行状态
+     *
+     * 获取CFW任务执行状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListJobRequest 请求对象
+     * @return CompletableFuture<ListJobResponse>
+     */
+    public CompletableFuture<ListJobResponse> listJobAsync(ListJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listJob);
+    }
+
+    /**
+     * 获取CFW任务执行状态
+     *
+     * 获取CFW任务执行状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListJobRequest 请求对象
+     * @return AsyncInvoker<ListJobRequest, ListJobResponse>
+     */
+    public AsyncInvoker<ListJobRequest, ListJobResponse> listJobAsyncInvoker(ListJobRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listJob, hcClient);
+    }
+
+    /**
+     * 查询防护VPC数
+     *
+     * 查询防护vpc信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProtectedVpcsRequest 请求对象
+     * @return CompletableFuture<ListProtectedVpcsResponse>
+     */
+    public CompletableFuture<ListProtectedVpcsResponse> listProtectedVpcsAsync(ListProtectedVpcsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listProtectedVpcs);
+    }
+
+    /**
+     * 查询防护VPC数
+     *
+     * 查询防护vpc信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProtectedVpcsRequest 请求对象
+     * @return AsyncInvoker<ListProtectedVpcsRequest, ListProtectedVpcsResponse>
+     */
+    public AsyncInvoker<ListProtectedVpcsRequest, ListProtectedVpcsResponse> listProtectedVpcsAsyncInvoker(
+        ListProtectedVpcsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listProtectedVpcs, hcClient);
+    }
+
+    /**
+     * 查询防火墙配额信息
+     *
+     * 查询防火墙配额信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowConfigQuotaRequest 请求对象
+     * @return CompletableFuture<ShowConfigQuotaResponse>
+     */
+    public CompletableFuture<ShowConfigQuotaResponse> showConfigQuotaAsync(ShowConfigQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.showConfigQuota);
+    }
+
+    /**
+     * 查询防火墙配额信息
+     *
+     * 查询防火墙配额信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowConfigQuotaRequest 请求对象
+     * @return AsyncInvoker<ShowConfigQuotaRequest, ShowConfigQuotaResponse>
+     */
+    public AsyncInvoker<ShowConfigQuotaRequest, ShowConfigQuotaResponse> showConfigQuotaAsyncInvoker(
+        ShowConfigQuotaRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.showConfigQuota, hcClient);
+    }
+
+    /**
+     * 查询南北向防火墙防护状态
+     *
+     * 查询南北向防火墙防护状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSnFirewallProtectionStatusRequest 请求对象
+     * @return CompletableFuture<ShowSnFirewallProtectionStatusResponse>
+     */
+    public CompletableFuture<ShowSnFirewallProtectionStatusResponse> showSnFirewallProtectionStatusAsync(
+        ShowSnFirewallProtectionStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.showSnFirewallProtectionStatus);
+    }
+
+    /**
+     * 查询南北向防火墙防护状态
+     *
+     * 查询南北向防火墙防护状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSnFirewallProtectionStatusRequest 请求对象
+     * @return AsyncInvoker<ShowSnFirewallProtectionStatusRequest, ShowSnFirewallProtectionStatusResponse>
+     */
+    public AsyncInvoker<ShowSnFirewallProtectionStatusRequest, ShowSnFirewallProtectionStatusResponse> showSnFirewallProtectionStatusAsyncInvoker(
+        ShowSnFirewallProtectionStatusRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.showSnFirewallProtectionStatus, hcClient);
+    }
+
+    /**
+     * 更改防火墙名称
+     *
+     * 更改防火墙名称
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateFirewallNameRequest 请求对象
+     * @return CompletableFuture<UpdateFirewallNameResponse>
+     */
+    public CompletableFuture<UpdateFirewallNameResponse> updateFirewallNameAsync(UpdateFirewallNameRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.updateFirewallName);
+    }
+
+    /**
+     * 更改防火墙名称
+     *
+     * 更改防火墙名称
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateFirewallNameRequest 请求对象
+     * @return AsyncInvoker<UpdateFirewallNameRequest, UpdateFirewallNameResponse>
+     */
+    public AsyncInvoker<UpdateFirewallNameRequest, UpdateFirewallNameResponse> updateFirewallNameAsyncInvoker(
+        UpdateFirewallNameRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.updateFirewallName, hcClient);
+    }
+
+    /**
+     * 批量删除自定义IPS规则
+     *
+     * 批量删除自定义IPS规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteCustomerIpsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteCustomerIpsResponse>
+     */
+    public CompletableFuture<BatchDeleteCustomerIpsResponse> batchDeleteCustomerIpsAsync(
+        BatchDeleteCustomerIpsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.batchDeleteCustomerIps);
+    }
+
+    /**
+     * 批量删除自定义IPS规则
+     *
+     * 批量删除自定义IPS规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteCustomerIpsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteCustomerIpsRequest, BatchDeleteCustomerIpsResponse>
+     */
+    public AsyncInvoker<BatchDeleteCustomerIpsRequest, BatchDeleteCustomerIpsResponse> batchDeleteCustomerIpsAsyncInvoker(
+        BatchDeleteCustomerIpsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.batchDeleteCustomerIps, hcClient);
+    }
+
+    /**
+     * 批量更新自定义IPS规则的动作
+     *
+     * 批量更新自定义IPS规则的动作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateCustomerIpsActionRequest 请求对象
+     * @return CompletableFuture<BatchUpdateCustomerIpsActionResponse>
+     */
+    public CompletableFuture<BatchUpdateCustomerIpsActionResponse> batchUpdateCustomerIpsActionAsync(
+        BatchUpdateCustomerIpsActionRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.batchUpdateCustomerIpsAction);
+    }
+
+    /**
+     * 批量更新自定义IPS规则的动作
+     *
+     * 批量更新自定义IPS规则的动作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateCustomerIpsActionRequest 请求对象
+     * @return AsyncInvoker<BatchUpdateCustomerIpsActionRequest, BatchUpdateCustomerIpsActionResponse>
+     */
+    public AsyncInvoker<BatchUpdateCustomerIpsActionRequest, BatchUpdateCustomerIpsActionResponse> batchUpdateCustomerIpsActionAsyncInvoker(
+        BatchUpdateCustomerIpsActionRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.batchUpdateCustomerIpsAction, hcClient);
     }
 
     /**
@@ -2966,9 +3165,9 @@ public class CfwAsyncClient {
     }
 
     /**
-     * 改变ips规则模式
+     * 改变IPS规则模式
      *
-     * 改变ips规则模式
+     * 改变IPS规则模式
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2980,9 +3179,9 @@ public class CfwAsyncClient {
     }
 
     /**
-     * 改变ips规则模式
+     * 改变IPS规则模式
      *
-     * 改变ips规则模式
+     * 改变IPS规则模式
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3025,178 +3224,62 @@ public class CfwAsyncClient {
     }
 
     /**
-     * 查询防护模式
+     * 创建自定义IPS规则
      *
-     * 查询防护模式
+     * 创建自定义IPS规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListIpsProtectModeRequest 请求对象
-     * @return CompletableFuture<ListIpsProtectModeResponse>
+     * @param request CreateCustomerIpsRequest 请求对象
+     * @return CompletableFuture<CreateCustomerIpsResponse>
      */
-    public CompletableFuture<ListIpsProtectModeResponse> listIpsProtectModeAsync(ListIpsProtectModeRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listIpsProtectMode);
+    public CompletableFuture<CreateCustomerIpsResponse> createCustomerIpsAsync(CreateCustomerIpsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.createCustomerIps);
     }
 
     /**
-     * 查询防护模式
+     * 创建自定义IPS规则
      *
-     * 查询防护模式
+     * 创建自定义IPS规则
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListIpsProtectModeRequest 请求对象
-     * @return AsyncInvoker<ListIpsProtectModeRequest, ListIpsProtectModeResponse>
+     * @param request CreateCustomerIpsRequest 请求对象
+     * @return AsyncInvoker<CreateCustomerIpsRequest, CreateCustomerIpsResponse>
      */
-    public AsyncInvoker<ListIpsProtectModeRequest, ListIpsProtectModeResponse> listIpsProtectModeAsyncInvoker(
-        ListIpsProtectModeRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listIpsProtectMode, hcClient);
+    public AsyncInvoker<CreateCustomerIpsRequest, CreateCustomerIpsResponse> createCustomerIpsAsyncInvoker(
+        CreateCustomerIpsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.createCustomerIps, hcClient);
     }
 
     /**
-     * 查询频率ips规则信息
+     * 查询频率IPS规则信息
      *
-     * 查询频率ips规则信息
+     * 查询频率IPS规则信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListIpsRulesRequest 请求对象
-     * @return CompletableFuture<ListIpsRulesResponse>
+     * @param request ListAdvancedIpsRulesRequest 请求对象
+     * @return CompletableFuture<ListAdvancedIpsRulesResponse>
      */
-    public CompletableFuture<ListIpsRulesResponse> listIpsRulesAsync(ListIpsRulesRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listIpsRules);
+    public CompletableFuture<ListAdvancedIpsRulesResponse> listAdvancedIpsRulesAsync(
+        ListAdvancedIpsRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listAdvancedIpsRules);
     }
 
     /**
-     * 查询频率ips规则信息
+     * 查询频率IPS规则信息
      *
-     * 查询频率ips规则信息
+     * 查询频率IPS规则信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListIpsRulesRequest 请求对象
-     * @return AsyncInvoker<ListIpsRulesRequest, ListIpsRulesResponse>
+     * @param request ListAdvancedIpsRulesRequest 请求对象
+     * @return AsyncInvoker<ListAdvancedIpsRulesRequest, ListAdvancedIpsRulesResponse>
      */
-    public AsyncInvoker<ListIpsRulesRequest, ListIpsRulesResponse> listIpsRulesAsyncInvoker(
-        ListIpsRulesRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listIpsRules, hcClient);
-    }
-
-    /**
-     * 获取ips规则列表
-     *
-     * 获取ips规则列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListIpsRules1Request 请求对象
-     * @return CompletableFuture<ListIpsRules1Response>
-     */
-    public CompletableFuture<ListIpsRules1Response> listIpsRules1Async(ListIpsRules1Request request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listIpsRules1);
-    }
-
-    /**
-     * 获取ips规则列表
-     *
-     * 获取ips规则列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListIpsRules1Request 请求对象
-     * @return AsyncInvoker<ListIpsRules1Request, ListIpsRules1Response>
-     */
-    public AsyncInvoker<ListIpsRules1Request, ListIpsRules1Response> listIpsRules1AsyncInvoker(
-        ListIpsRules1Request request) {
-        return new AsyncInvoker<>(request, CfwMeta.listIpsRules1, hcClient);
-    }
-
-    /**
-     * 查询IPS特性开关状态
-     *
-     * 查询IPS特性开关状态
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListIpsSwitchStatusRequest 请求对象
-     * @return CompletableFuture<ListIpsSwitchStatusResponse>
-     */
-    public CompletableFuture<ListIpsSwitchStatusResponse> listIpsSwitchStatusAsync(ListIpsSwitchStatusRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.listIpsSwitchStatus);
-    }
-
-    /**
-     * 查询IPS特性开关状态
-     *
-     * 查询IPS特性开关状态
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListIpsSwitchStatusRequest 请求对象
-     * @return AsyncInvoker<ListIpsSwitchStatusRequest, ListIpsSwitchStatusResponse>
-     */
-    public AsyncInvoker<ListIpsSwitchStatusRequest, ListIpsSwitchStatusResponse> listIpsSwitchStatusAsyncInvoker(
-        ListIpsSwitchStatusRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.listIpsSwitchStatus, hcClient);
-    }
-
-    /**
-     * 获取ips规则细节
-     *
-     * 获取ips规则细节
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowIpsUpdateTimeRequest 请求对象
-     * @return CompletableFuture<ShowIpsUpdateTimeResponse>
-     */
-    public CompletableFuture<ShowIpsUpdateTimeResponse> showIpsUpdateTimeAsync(ShowIpsUpdateTimeRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.showIpsUpdateTime);
-    }
-
-    /**
-     * 获取ips规则细节
-     *
-     * 获取ips规则细节
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowIpsUpdateTimeRequest 请求对象
-     * @return AsyncInvoker<ShowIpsUpdateTimeRequest, ShowIpsUpdateTimeResponse>
-     */
-    public AsyncInvoker<ShowIpsUpdateTimeRequest, ShowIpsUpdateTimeResponse> showIpsUpdateTimeAsyncInvoker(
-        ShowIpsUpdateTimeRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.showIpsUpdateTime, hcClient);
-    }
-
-    /**
-     * 创建频率ips规则
-     *
-     * 创建频率ips规则
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateAdvancedIpsRuleRequest 请求对象
-     * @return CompletableFuture<UpdateAdvancedIpsRuleResponse>
-     */
-    public CompletableFuture<UpdateAdvancedIpsRuleResponse> updateAdvancedIpsRuleAsync(
-        UpdateAdvancedIpsRuleRequest request) {
-        return hcClient.asyncInvokeHttp(request, CfwMeta.updateAdvancedIpsRule);
-    }
-
-    /**
-     * 创建频率ips规则
-     *
-     * 创建频率ips规则
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateAdvancedIpsRuleRequest 请求对象
-     * @return AsyncInvoker<UpdateAdvancedIpsRuleRequest, UpdateAdvancedIpsRuleResponse>
-     */
-    public AsyncInvoker<UpdateAdvancedIpsRuleRequest, UpdateAdvancedIpsRuleResponse> updateAdvancedIpsRuleAsyncInvoker(
-        UpdateAdvancedIpsRuleRequest request) {
-        return new AsyncInvoker<>(request, CfwMeta.updateAdvancedIpsRule, hcClient);
+    public AsyncInvoker<ListAdvancedIpsRulesRequest, ListAdvancedIpsRulesResponse> listAdvancedIpsRulesAsyncInvoker(
+        ListAdvancedIpsRulesRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listAdvancedIpsRules, hcClient);
     }
 
     /**
@@ -3229,6 +3312,93 @@ public class CfwAsyncClient {
     }
 
     /**
+     * 查询防护模式
+     *
+     * 查询防护模式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIpsProtectModeRequest 请求对象
+     * @return CompletableFuture<ListIpsProtectModeResponse>
+     */
+    public CompletableFuture<ListIpsProtectModeResponse> listIpsProtectModeAsync(ListIpsProtectModeRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listIpsProtectMode);
+    }
+
+    /**
+     * 查询防护模式
+     *
+     * 查询防护模式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIpsProtectModeRequest 请求对象
+     * @return AsyncInvoker<ListIpsProtectModeRequest, ListIpsProtectModeResponse>
+     */
+    public AsyncInvoker<ListIpsProtectModeRequest, ListIpsProtectModeResponse> listIpsProtectModeAsyncInvoker(
+        ListIpsProtectModeRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listIpsProtectMode, hcClient);
+    }
+
+    /**
+     * 获取IPS规则列表
+     *
+     * 获取IPS规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIpsRulesRequest 请求对象
+     * @return CompletableFuture<ListIpsRulesResponse>
+     */
+    public CompletableFuture<ListIpsRulesResponse> listIpsRulesAsync(ListIpsRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listIpsRules);
+    }
+
+    /**
+     * 获取IPS规则列表
+     *
+     * 获取IPS规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIpsRulesRequest 请求对象
+     * @return AsyncInvoker<ListIpsRulesRequest, ListIpsRulesResponse>
+     */
+    public AsyncInvoker<ListIpsRulesRequest, ListIpsRulesResponse> listIpsRulesAsyncInvoker(
+        ListIpsRulesRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listIpsRules, hcClient);
+    }
+
+    /**
+     * 查询IPS特性开关状态
+     *
+     * 查询IPS特性开关状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIpsSwitchStatusRequest 请求对象
+     * @return CompletableFuture<ListIpsSwitchStatusResponse>
+     */
+    public CompletableFuture<ListIpsSwitchStatusResponse> listIpsSwitchStatusAsync(ListIpsSwitchStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listIpsSwitchStatus);
+    }
+
+    /**
+     * 查询IPS特性开关状态
+     *
+     * 查询IPS特性开关状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIpsSwitchStatusRequest 请求对象
+     * @return AsyncInvoker<ListIpsSwitchStatusRequest, ListIpsSwitchStatusResponse>
+     */
+    public AsyncInvoker<ListIpsSwitchStatusRequest, ListIpsSwitchStatusResponse> listIpsSwitchStatusAsyncInvoker(
+        ListIpsSwitchStatusRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listIpsSwitchStatus, hcClient);
+    }
+
+    /**
      * 查询自定义IPS规则详情
      *
      * 功能说明：自定义IPS规则详情，特性:根据路径输入的IPS ID查看对应的自定义IPS详情
@@ -3258,6 +3428,65 @@ public class CfwAsyncClient {
     }
 
     /**
+     * 获取IPS规则细节
+     *
+     * 获取IPS规则细节
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIpsUpdateTimeRequest 请求对象
+     * @return CompletableFuture<ShowIpsUpdateTimeResponse>
+     */
+    public CompletableFuture<ShowIpsUpdateTimeResponse> showIpsUpdateTimeAsync(ShowIpsUpdateTimeRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.showIpsUpdateTime);
+    }
+
+    /**
+     * 获取IPS规则细节
+     *
+     * 获取IPS规则细节
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIpsUpdateTimeRequest 请求对象
+     * @return AsyncInvoker<ShowIpsUpdateTimeRequest, ShowIpsUpdateTimeResponse>
+     */
+    public AsyncInvoker<ShowIpsUpdateTimeRequest, ShowIpsUpdateTimeResponse> showIpsUpdateTimeAsyncInvoker(
+        ShowIpsUpdateTimeRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.showIpsUpdateTime, hcClient);
+    }
+
+    /**
+     * 创建频率IPS规则
+     *
+     * 创建频率IPS规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAdvancedIpsRuleRequest 请求对象
+     * @return CompletableFuture<UpdateAdvancedIpsRuleResponse>
+     */
+    public CompletableFuture<UpdateAdvancedIpsRuleResponse> updateAdvancedIpsRuleAsync(
+        UpdateAdvancedIpsRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.updateAdvancedIpsRule);
+    }
+
+    /**
+     * 创建频率IPS规则
+     *
+     * 创建频率IPS规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAdvancedIpsRuleRequest 请求对象
+     * @return AsyncInvoker<UpdateAdvancedIpsRuleRequest, UpdateAdvancedIpsRuleResponse>
+     */
+    public AsyncInvoker<UpdateAdvancedIpsRuleRequest, UpdateAdvancedIpsRuleResponse> updateAdvancedIpsRuleAsyncInvoker(
+        UpdateAdvancedIpsRuleRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.updateAdvancedIpsRule, hcClient);
+    }
+
+    /**
      * 更新自定义IPS规则
      *
      * 更新自定义IPS规则
@@ -3284,6 +3513,124 @@ public class CfwAsyncClient {
     public AsyncInvoker<UpdateCustomerIpsRequest, UpdateCustomerIpsResponse> updateCustomerIpsAsyncInvoker(
         UpdateCustomerIpsRequest request) {
         return new AsyncInvoker<>(request, CfwMeta.updateCustomerIps, hcClient);
+    }
+
+    /**
+     * 批量添加IPS白名单
+     *
+     * 批量添加IPS白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateIpsWhitelistRequest 请求对象
+     * @return CompletableFuture<BatchCreateIpsWhitelistResponse>
+     */
+    public CompletableFuture<BatchCreateIpsWhitelistResponse> batchCreateIpsWhitelistAsync(
+        BatchCreateIpsWhitelistRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.batchCreateIpsWhitelist);
+    }
+
+    /**
+     * 批量添加IPS白名单
+     *
+     * 批量添加IPS白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateIpsWhitelistRequest 请求对象
+     * @return AsyncInvoker<BatchCreateIpsWhitelistRequest, BatchCreateIpsWhitelistResponse>
+     */
+    public AsyncInvoker<BatchCreateIpsWhitelistRequest, BatchCreateIpsWhitelistResponse> batchCreateIpsWhitelistAsyncInvoker(
+        BatchCreateIpsWhitelistRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.batchCreateIpsWhitelist, hcClient);
+    }
+
+    /**
+     * 批量删除IPS白名单
+     *
+     * 批量删除IPS白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteIpsWhitelistRequest 请求对象
+     * @return CompletableFuture<BatchDeleteIpsWhitelistResponse>
+     */
+    public CompletableFuture<BatchDeleteIpsWhitelistResponse> batchDeleteIpsWhitelistAsync(
+        BatchDeleteIpsWhitelistRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.batchDeleteIpsWhitelist);
+    }
+
+    /**
+     * 批量删除IPS白名单
+     *
+     * 批量删除IPS白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteIpsWhitelistRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteIpsWhitelistRequest, BatchDeleteIpsWhitelistResponse>
+     */
+    public AsyncInvoker<BatchDeleteIpsWhitelistRequest, BatchDeleteIpsWhitelistResponse> batchDeleteIpsWhitelistAsyncInvoker(
+        BatchDeleteIpsWhitelistRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.batchDeleteIpsWhitelist, hcClient);
+    }
+
+    /**
+     * 查询IPS白名单列表详情
+     *
+     * 查询IPS白名单列表详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIpsWhitelistsRequest 请求对象
+     * @return CompletableFuture<ListIpsWhitelistsResponse>
+     */
+    public CompletableFuture<ListIpsWhitelistsResponse> listIpsWhitelistsAsync(ListIpsWhitelistsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listIpsWhitelists);
+    }
+
+    /**
+     * 查询IPS白名单列表详情
+     *
+     * 查询IPS白名单列表详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIpsWhitelistsRequest 请求对象
+     * @return AsyncInvoker<ListIpsWhitelistsRequest, ListIpsWhitelistsResponse>
+     */
+    public AsyncInvoker<ListIpsWhitelistsRequest, ListIpsWhitelistsResponse> listIpsWhitelistsAsyncInvoker(
+        ListIpsWhitelistsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listIpsWhitelists, hcClient);
+    }
+
+    /**
+     * 更新IPS白名单
+     *
+     * 更新IPS白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateIpsWhitelistRequest 请求对象
+     * @return CompletableFuture<UpdateIpsWhitelistResponse>
+     */
+    public CompletableFuture<UpdateIpsWhitelistResponse> updateIpsWhitelistAsync(UpdateIpsWhitelistRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.updateIpsWhitelist);
+    }
+
+    /**
+     * 更新IPS白名单
+     *
+     * 更新IPS白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateIpsWhitelistRequest 请求对象
+     * @return AsyncInvoker<UpdateIpsWhitelistRequest, UpdateIpsWhitelistResponse>
+     */
+    public AsyncInvoker<UpdateIpsWhitelistRequest, UpdateIpsWhitelistResponse> updateIpsWhitelistAsyncInvoker(
+        UpdateIpsWhitelistRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.updateIpsWhitelist, hcClient);
     }
 
     /**
@@ -3663,6 +4010,35 @@ public class CfwAsyncClient {
     }
 
     /**
+     * 创建日志配置
+     *
+     * 创建日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddLogConfigRequest 请求对象
+     * @return CompletableFuture<AddLogConfigResponse>
+     */
+    public CompletableFuture<AddLogConfigResponse> addLogConfigAsync(AddLogConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.addLogConfig);
+    }
+
+    /**
+     * 创建日志配置
+     *
+     * 创建日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddLogConfigRequest 请求对象
+     * @return AsyncInvoker<AddLogConfigRequest, AddLogConfigResponse>
+     */
+    public AsyncInvoker<AddLogConfigRequest, AddLogConfigResponse> addLogConfigAsyncInvoker(
+        AddLogConfigRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.addLogConfig, hcClient);
+    }
+
+    /**
      * 导出防火墙日志
      *
      * 导出防火墙日志
@@ -3691,6 +4067,123 @@ public class CfwAsyncClient {
     }
 
     /**
+     * 查询访问控制日志
+     *
+     * 查询访问控制日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAccessControlLogsRequest 请求对象
+     * @return CompletableFuture<ListAccessControlLogsResponse>
+     */
+    public CompletableFuture<ListAccessControlLogsResponse> listAccessControlLogsAsync(
+        ListAccessControlLogsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listAccessControlLogs);
+    }
+
+    /**
+     * 查询访问控制日志
+     *
+     * 查询访问控制日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAccessControlLogsRequest 请求对象
+     * @return AsyncInvoker<ListAccessControlLogsRequest, ListAccessControlLogsResponse>
+     */
+    public AsyncInvoker<ListAccessControlLogsRequest, ListAccessControlLogsResponse> listAccessControlLogsAsyncInvoker(
+        ListAccessControlLogsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listAccessControlLogs, hcClient);
+    }
+
+    /**
+     * 查询攻击日志
+     *
+     * 查询攻击日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAttackLogsRequest 请求对象
+     * @return CompletableFuture<ListAttackLogsResponse>
+     */
+    public CompletableFuture<ListAttackLogsResponse> listAttackLogsAsync(ListAttackLogsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listAttackLogs);
+    }
+
+    /**
+     * 查询攻击日志
+     *
+     * 查询攻击日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAttackLogsRequest 请求对象
+     * @return AsyncInvoker<ListAttackLogsRequest, ListAttackLogsResponse>
+     */
+    public AsyncInvoker<ListAttackLogsRequest, ListAttackLogsResponse> listAttackLogsAsyncInvoker(
+        ListAttackLogsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listAttackLogs, hcClient);
+    }
+
+    /**
+     * 查询流日志
+     *
+     * 查询流日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFlowLogsRequest 请求对象
+     * @return CompletableFuture<ListFlowLogsResponse>
+     */
+    public CompletableFuture<ListFlowLogsResponse> listFlowLogsAsync(ListFlowLogsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listFlowLogs);
+    }
+
+    /**
+     * 查询流日志
+     *
+     * 查询流日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFlowLogsRequest 请求对象
+     * @return AsyncInvoker<ListFlowLogsRequest, ListFlowLogsResponse>
+     */
+    public AsyncInvoker<ListFlowLogsRequest, ListFlowLogsResponse> listFlowLogsAsyncInvoker(
+        ListFlowLogsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listFlowLogs, hcClient);
+    }
+
+    /**
+     * 获取日志配置
+     *
+     * 获取日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLogConfigRequest 请求对象
+     * @return CompletableFuture<ListLogConfigResponse>
+     */
+    public CompletableFuture<ListLogConfigResponse> listLogConfigAsync(ListLogConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listLogConfig);
+    }
+
+    /**
+     * 获取日志配置
+     *
+     * 获取日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLogConfigRequest 请求对象
+     * @return AsyncInvoker<ListLogConfigRequest, ListLogConfigResponse>
+     */
+    public AsyncInvoker<ListLogConfigRequest, ListLogConfigResponse> listLogConfigAsyncInvoker(
+        ListLogConfigRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listLogConfig, hcClient);
+    }
+
+    /**
      * 查询防火墙日志
      *
      * 查询防火墙日志
@@ -3716,6 +4209,93 @@ public class CfwAsyncClient {
      */
     public AsyncInvoker<ListLogsRequest, ListLogsResponse> listLogsAsyncInvoker(ListLogsRequest request) {
         return new AsyncInvoker<>(request, CfwMeta.listLogs, hcClient);
+    }
+
+    /**
+     * 更新日志配置
+     *
+     * 更新日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateLogConfigRequest 请求对象
+     * @return CompletableFuture<UpdateLogConfigResponse>
+     */
+    public CompletableFuture<UpdateLogConfigResponse> updateLogConfigAsync(UpdateLogConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.updateLogConfig);
+    }
+
+    /**
+     * 更新日志配置
+     *
+     * 更新日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateLogConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateLogConfigRequest, UpdateLogConfigResponse>
+     */
+    public AsyncInvoker<UpdateLogConfigRequest, UpdateLogConfigResponse> updateLogConfigAsyncInvoker(
+        UpdateLogConfigRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.updateLogConfig, hcClient);
+    }
+
+    /**
+     * 批量添加账号
+     *
+     * 批量添加账号
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchAddAccountsRequest 请求对象
+     * @return CompletableFuture<BatchAddAccountsResponse>
+     */
+    public CompletableFuture<BatchAddAccountsResponse> batchAddAccountsAsync(BatchAddAccountsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.batchAddAccounts);
+    }
+
+    /**
+     * 批量添加账号
+     *
+     * 批量添加账号
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchAddAccountsRequest 请求对象
+     * @return AsyncInvoker<BatchAddAccountsRequest, BatchAddAccountsResponse>
+     */
+    public AsyncInvoker<BatchAddAccountsRequest, BatchAddAccountsResponse> batchAddAccountsAsyncInvoker(
+        BatchAddAccountsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.batchAddAccounts, hcClient);
+    }
+
+    /**
+     * 批量移除账号
+     *
+     * 批量移除账号
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchRemoveAccountsRequest 请求对象
+     * @return CompletableFuture<BatchRemoveAccountsResponse>
+     */
+    public CompletableFuture<BatchRemoveAccountsResponse> batchRemoveAccountsAsync(BatchRemoveAccountsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.batchRemoveAccounts);
+    }
+
+    /**
+     * 批量移除账号
+     *
+     * 批量移除账号
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchRemoveAccountsRequest 请求对象
+     * @return AsyncInvoker<BatchRemoveAccountsRequest, BatchRemoveAccountsResponse>
+     */
+    public AsyncInvoker<BatchRemoveAccountsRequest, BatchRemoveAccountsResponse> batchRemoveAccountsAsyncInvoker(
+        BatchRemoveAccountsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.batchRemoveAccounts, hcClient);
     }
 
     /**
@@ -3837,6 +4417,152 @@ public class CfwAsyncClient {
     }
 
     /**
+     * 批量删除时间表
+     *
+     * 批量删除时间表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSchedulesRequest 请求对象
+     * @return CompletableFuture<BatchDeleteSchedulesResponse>
+     */
+    public CompletableFuture<BatchDeleteSchedulesResponse> batchDeleteSchedulesAsync(
+        BatchDeleteSchedulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.batchDeleteSchedules);
+    }
+
+    /**
+     * 批量删除时间表
+     *
+     * 批量删除时间表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSchedulesRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteSchedulesRequest, BatchDeleteSchedulesResponse>
+     */
+    public AsyncInvoker<BatchDeleteSchedulesRequest, BatchDeleteSchedulesResponse> batchDeleteSchedulesAsyncInvoker(
+        BatchDeleteSchedulesRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.batchDeleteSchedules, hcClient);
+    }
+
+    /**
+     * 创建时间表
+     *
+     * 创建时间表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateScheduleRequest 请求对象
+     * @return CompletableFuture<CreateScheduleResponse>
+     */
+    public CompletableFuture<CreateScheduleResponse> createScheduleAsync(CreateScheduleRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.createSchedule);
+    }
+
+    /**
+     * 创建时间表
+     *
+     * 创建时间表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateScheduleRequest 请求对象
+     * @return AsyncInvoker<CreateScheduleRequest, CreateScheduleResponse>
+     */
+    public AsyncInvoker<CreateScheduleRequest, CreateScheduleResponse> createScheduleAsyncInvoker(
+        CreateScheduleRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.createSchedule, hcClient);
+    }
+
+    /**
+     * 删除时间表
+     *
+     * 删除时间表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteScheduleRequest 请求对象
+     * @return CompletableFuture<DeleteScheduleResponse>
+     */
+    public CompletableFuture<DeleteScheduleResponse> deleteScheduleAsync(DeleteScheduleRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.deleteSchedule);
+    }
+
+    /**
+     * 删除时间表
+     *
+     * 删除时间表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteScheduleRequest 请求对象
+     * @return AsyncInvoker<DeleteScheduleRequest, DeleteScheduleResponse>
+     */
+    public AsyncInvoker<DeleteScheduleRequest, DeleteScheduleResponse> deleteScheduleAsyncInvoker(
+        DeleteScheduleRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.deleteSchedule, hcClient);
+    }
+
+    /**
+     * 查询时间表列表
+     *
+     * 查询时间表列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSchedulesRequest 请求对象
+     * @return CompletableFuture<ListSchedulesResponse>
+     */
+    public CompletableFuture<ListSchedulesResponse> listSchedulesAsync(ListSchedulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listSchedules);
+    }
+
+    /**
+     * 查询时间表列表
+     *
+     * 查询时间表列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSchedulesRequest 请求对象
+     * @return AsyncInvoker<ListSchedulesRequest, ListSchedulesResponse>
+     */
+    public AsyncInvoker<ListSchedulesRequest, ListSchedulesResponse> listSchedulesAsyncInvoker(
+        ListSchedulesRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listSchedules, hcClient);
+    }
+
+    /**
+     * 更新时间表
+     *
+     * 更新时间表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateScheduleRequest 请求对象
+     * @return CompletableFuture<UpdateScheduleResponse>
+     */
+    public CompletableFuture<UpdateScheduleResponse> updateScheduleAsync(UpdateScheduleRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.updateSchedule);
+    }
+
+    /**
+     * 更新时间表
+     *
+     * 更新时间表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateScheduleRequest 请求对象
+     * @return AsyncInvoker<UpdateScheduleRequest, UpdateScheduleResponse>
+     */
+    public AsyncInvoker<UpdateScheduleRequest, UpdateScheduleResponse> updateScheduleAsyncInvoker(
+        UpdateScheduleRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.updateSchedule, hcClient);
+    }
+
+    /**
      * 创建安全报告模板
      *
      * 创建安全报告模板
@@ -3892,6 +4618,35 @@ public class CfwAsyncClient {
     public AsyncInvoker<DeleteReportProfileRequest, DeleteReportProfileResponse> deleteReportProfileAsyncInvoker(
         DeleteReportProfileRequest request) {
         return new AsyncInvoker<>(request, CfwMeta.deleteReportProfile, hcClient);
+    }
+
+    /**
+     * 查询安全报告发送历史
+     *
+     * 查询安全报告发送历史
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListReportHistoryRequest 请求对象
+     * @return CompletableFuture<ListReportHistoryResponse>
+     */
+    public CompletableFuture<ListReportHistoryResponse> listReportHistoryAsync(ListReportHistoryRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listReportHistory);
+    }
+
+    /**
+     * 查询安全报告发送历史
+     *
+     * 查询安全报告发送历史
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListReportHistoryRequest 请求对象
+     * @return AsyncInvoker<ListReportHistoryRequest, ListReportHistoryResponse>
+     */
+    public AsyncInvoker<ListReportHistoryRequest, ListReportHistoryResponse> listReportHistoryAsyncInvoker(
+        ListReportHistoryRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listReportHistory, hcClient);
     }
 
     /**
@@ -4011,6 +4766,359 @@ public class CfwAsyncClient {
     }
 
     /**
+     * 新建服务成员
+     *
+     * 批量添加服务组成员
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddServiceItemsRequest 请求对象
+     * @return CompletableFuture<AddServiceItemsResponse>
+     */
+    public CompletableFuture<AddServiceItemsResponse> addServiceItemsAsync(AddServiceItemsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.addServiceItems);
+    }
+
+    /**
+     * 新建服务成员
+     *
+     * 批量添加服务组成员
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddServiceItemsRequest 请求对象
+     * @return AsyncInvoker<AddServiceItemsRequest, AddServiceItemsResponse>
+     */
+    public AsyncInvoker<AddServiceItemsRequest, AddServiceItemsResponse> addServiceItemsAsyncInvoker(
+        AddServiceItemsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.addServiceItems, hcClient);
+    }
+
+    /**
+     * 新建服务组
+     *
+     * 创建服务组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddServiceSetRequest 请求对象
+     * @return CompletableFuture<AddServiceSetResponse>
+     */
+    public CompletableFuture<AddServiceSetResponse> addServiceSetAsync(AddServiceSetRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.addServiceSet);
+    }
+
+    /**
+     * 新建服务组
+     *
+     * 创建服务组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddServiceSetRequest 请求对象
+     * @return AsyncInvoker<AddServiceSetRequest, AddServiceSetResponse>
+     */
+    public AsyncInvoker<AddServiceSetRequest, AddServiceSetResponse> addServiceSetAsyncInvoker(
+        AddServiceSetRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.addServiceSet, hcClient);
+    }
+
+    /**
+     * 批量删除服务组成员信息
+     *
+     * 批量删除服务组成员信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteServiceItemsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteServiceItemsResponse>
+     */
+    public CompletableFuture<BatchDeleteServiceItemsResponse> batchDeleteServiceItemsAsync(
+        BatchDeleteServiceItemsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.batchDeleteServiceItems);
+    }
+
+    /**
+     * 批量删除服务组成员信息
+     *
+     * 批量删除服务组成员信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteServiceItemsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteServiceItemsRequest, BatchDeleteServiceItemsResponse>
+     */
+    public AsyncInvoker<BatchDeleteServiceItemsRequest, BatchDeleteServiceItemsResponse> batchDeleteServiceItemsAsyncInvoker(
+        BatchDeleteServiceItemsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.batchDeleteServiceItems, hcClient);
+    }
+
+    /**
+     * 批量删除服务组
+     *
+     * 批量删除服务组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteServiceSetsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteServiceSetsResponse>
+     */
+    public CompletableFuture<BatchDeleteServiceSetsResponse> batchDeleteServiceSetsAsync(
+        BatchDeleteServiceSetsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.batchDeleteServiceSets);
+    }
+
+    /**
+     * 批量删除服务组
+     *
+     * 批量删除服务组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteServiceSetsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteServiceSetsRequest, BatchDeleteServiceSetsResponse>
+     */
+    public AsyncInvoker<BatchDeleteServiceSetsRequest, BatchDeleteServiceSetsResponse> batchDeleteServiceSetsAsyncInvoker(
+        BatchDeleteServiceSetsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.batchDeleteServiceSets, hcClient);
+    }
+
+    /**
+     * 删除服务组成员
+     *
+     * 删除服务组成员
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteServiceItemRequest 请求对象
+     * @return CompletableFuture<DeleteServiceItemResponse>
+     */
+    public CompletableFuture<DeleteServiceItemResponse> deleteServiceItemAsync(DeleteServiceItemRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.deleteServiceItem);
+    }
+
+    /**
+     * 删除服务组成员
+     *
+     * 删除服务组成员
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteServiceItemRequest 请求对象
+     * @return AsyncInvoker<DeleteServiceItemRequest, DeleteServiceItemResponse>
+     */
+    public AsyncInvoker<DeleteServiceItemRequest, DeleteServiceItemResponse> deleteServiceItemAsyncInvoker(
+        DeleteServiceItemRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.deleteServiceItem, hcClient);
+    }
+
+    /**
+     * 删除服务组
+     *
+     * 删除服务组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteServiceSetRequest 请求对象
+     * @return CompletableFuture<DeleteServiceSetResponse>
+     */
+    public CompletableFuture<DeleteServiceSetResponse> deleteServiceSetAsync(DeleteServiceSetRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.deleteServiceSet);
+    }
+
+    /**
+     * 删除服务组
+     *
+     * 删除服务组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteServiceSetRequest 请求对象
+     * @return AsyncInvoker<DeleteServiceSetRequest, DeleteServiceSetResponse>
+     */
+    public AsyncInvoker<DeleteServiceSetRequest, DeleteServiceSetResponse> deleteServiceSetAsyncInvoker(
+        DeleteServiceSetRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.deleteServiceSet, hcClient);
+    }
+
+    /**
+     * 查询服务成员列表
+     *
+     * 查询服务组成员列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListServiceItemsRequest 请求对象
+     * @return CompletableFuture<ListServiceItemsResponse>
+     */
+    public CompletableFuture<ListServiceItemsResponse> listServiceItemsAsync(ListServiceItemsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listServiceItems);
+    }
+
+    /**
+     * 查询服务成员列表
+     *
+     * 查询服务组成员列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListServiceItemsRequest 请求对象
+     * @return AsyncInvoker<ListServiceItemsRequest, ListServiceItemsResponse>
+     */
+    public AsyncInvoker<ListServiceItemsRequest, ListServiceItemsResponse> listServiceItemsAsyncInvoker(
+        ListServiceItemsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listServiceItems, hcClient);
+    }
+
+    /**
+     * 查询服务组详情
+     *
+     * 查询服务组细节
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListServiceSetDetailRequest 请求对象
+     * @return CompletableFuture<ListServiceSetDetailResponse>
+     */
+    public CompletableFuture<ListServiceSetDetailResponse> listServiceSetDetailAsync(
+        ListServiceSetDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listServiceSetDetail);
+    }
+
+    /**
+     * 查询服务组详情
+     *
+     * 查询服务组细节
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListServiceSetDetailRequest 请求对象
+     * @return AsyncInvoker<ListServiceSetDetailRequest, ListServiceSetDetailResponse>
+     */
+    public AsyncInvoker<ListServiceSetDetailRequest, ListServiceSetDetailResponse> listServiceSetDetailAsyncInvoker(
+        ListServiceSetDetailRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listServiceSetDetail, hcClient);
+    }
+
+    /**
+     * 获取服务组列表
+     *
+     * 获取服务组列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListServiceSetsRequest 请求对象
+     * @return CompletableFuture<ListServiceSetsResponse>
+     */
+    public CompletableFuture<ListServiceSetsResponse> listServiceSetsAsync(ListServiceSetsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listServiceSets);
+    }
+
+    /**
+     * 获取服务组列表
+     *
+     * 获取服务组列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListServiceSetsRequest 请求对象
+     * @return AsyncInvoker<ListServiceSetsRequest, ListServiceSetsResponse>
+     */
+    public AsyncInvoker<ListServiceSetsRequest, ListServiceSetsResponse> listServiceSetsAsyncInvoker(
+        ListServiceSetsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listServiceSets, hcClient);
+    }
+
+    /**
+     * 修改服务组
+     *
+     * 更新服务组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateServiceSetRequest 请求对象
+     * @return CompletableFuture<UpdateServiceSetResponse>
+     */
+    public CompletableFuture<UpdateServiceSetResponse> updateServiceSetAsync(UpdateServiceSetRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.updateServiceSet);
+    }
+
+    /**
+     * 修改服务组
+     *
+     * 更新服务组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateServiceSetRequest 请求对象
+     * @return AsyncInvoker<UpdateServiceSetRequest, UpdateServiceSetResponse>
+     */
+    public AsyncInvoker<UpdateServiceSetRequest, UpdateServiceSetResponse> updateServiceSetAsyncInvoker(
+        UpdateServiceSetRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.updateServiceSet, hcClient);
+    }
+
+    /**
+     * 创建私网网段
+     *
+     * 添加私网网段的接口，添加私网网段后该网段的流量将引流到VPC防火墙防护
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreatePrivateNetworkSegmentsRequest 请求对象
+     * @return CompletableFuture<BatchCreatePrivateNetworkSegmentsResponse>
+     */
+    public CompletableFuture<BatchCreatePrivateNetworkSegmentsResponse> batchCreatePrivateNetworkSegmentsAsync(
+        BatchCreatePrivateNetworkSegmentsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.batchCreatePrivateNetworkSegments);
+    }
+
+    /**
+     * 创建私网网段
+     *
+     * 添加私网网段的接口，添加私网网段后该网段的流量将引流到VPC防火墙防护
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreatePrivateNetworkSegmentsRequest 请求对象
+     * @return AsyncInvoker<BatchCreatePrivateNetworkSegmentsRequest, BatchCreatePrivateNetworkSegmentsResponse>
+     */
+    public AsyncInvoker<BatchCreatePrivateNetworkSegmentsRequest, BatchCreatePrivateNetworkSegmentsResponse> batchCreatePrivateNetworkSegmentsAsyncInvoker(
+        BatchCreatePrivateNetworkSegmentsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.batchCreatePrivateNetworkSegments, hcClient);
+    }
+
+    /**
+     * 删除私网网段信息
+     *
+     * 删除私网网段的接口，根据用户输入的私网网段conf_id，删除对应ID的私网网段
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeletePrivateNetworkSegmentsRequest 请求对象
+     * @return CompletableFuture<BatchDeletePrivateNetworkSegmentsResponse>
+     */
+    public CompletableFuture<BatchDeletePrivateNetworkSegmentsResponse> batchDeletePrivateNetworkSegmentsAsync(
+        BatchDeletePrivateNetworkSegmentsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.batchDeletePrivateNetworkSegments);
+    }
+
+    /**
+     * 删除私网网段信息
+     *
+     * 删除私网网段的接口，根据用户输入的私网网段conf_id，删除对应ID的私网网段
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeletePrivateNetworkSegmentsRequest 请求对象
+     * @return AsyncInvoker<BatchDeletePrivateNetworkSegmentsRequest, BatchDeletePrivateNetworkSegmentsResponse>
+     */
+    public AsyncInvoker<BatchDeletePrivateNetworkSegmentsRequest, BatchDeletePrivateNetworkSegmentsResponse> batchDeletePrivateNetworkSegmentsAsyncInvoker(
+        BatchDeletePrivateNetworkSegmentsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.batchDeletePrivateNetworkSegments, hcClient);
+    }
+
+    /**
      * 更新VPC间防火墙防护状态
      *
      * 更新VPC间防火墙防护状态
@@ -4038,6 +5146,36 @@ public class CfwAsyncClient {
     public AsyncInvoker<ChangeEastWestFirewallStatusRequest, ChangeEastWestFirewallStatusResponse> changeEastWestFirewallStatusAsyncInvoker(
         ChangeEastWestFirewallStatusRequest request) {
         return new AsyncInvoker<>(request, CfwMeta.changeEastWestFirewallStatus, hcClient);
+    }
+
+    /**
+     * 获取私网网段的信息
+     *
+     * 东西向私网网段查询接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPrivateNetworkSegmentsRequest 请求对象
+     * @return CompletableFuture<ListPrivateNetworkSegmentsResponse>
+     */
+    public CompletableFuture<ListPrivateNetworkSegmentsResponse> listPrivateNetworkSegmentsAsync(
+        ListPrivateNetworkSegmentsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.listPrivateNetworkSegments);
+    }
+
+    /**
+     * 获取私网网段的信息
+     *
+     * 东西向私网网段查询接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPrivateNetworkSegmentsRequest 请求对象
+     * @return AsyncInvoker<ListPrivateNetworkSegmentsRequest, ListPrivateNetworkSegmentsResponse>
+     */
+    public AsyncInvoker<ListPrivateNetworkSegmentsRequest, ListPrivateNetworkSegmentsResponse> listPrivateNetworkSegmentsAsyncInvoker(
+        ListPrivateNetworkSegmentsRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.listPrivateNetworkSegments, hcClient);
     }
 
     /**
@@ -4096,6 +5234,38 @@ public class CfwAsyncClient {
     public AsyncInvoker<ShowEwAssociatedVpcRequest, ShowEwAssociatedVpcResponse> showEwAssociatedVpcAsyncInvoker(
         ShowEwAssociatedVpcRequest request) {
         return new AsyncInvoker<>(request, CfwMeta.showEwAssociatedVpc, hcClient);
+    }
+
+    /**
+     * 更新私网网段
+     *
+     * 更新私网网段的REST接口，主要特性：
+     *  * 根据私网网段ID，更新对应的私网网段信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePrivateNetworkSegmentRequest 请求对象
+     * @return CompletableFuture<UpdatePrivateNetworkSegmentResponse>
+     */
+    public CompletableFuture<UpdatePrivateNetworkSegmentResponse> updatePrivateNetworkSegmentAsync(
+        UpdatePrivateNetworkSegmentRequest request) {
+        return hcClient.asyncInvokeHttp(request, CfwMeta.updatePrivateNetworkSegment);
+    }
+
+    /**
+     * 更新私网网段
+     *
+     * 更新私网网段的REST接口，主要特性：
+     *  * 根据私网网段ID，更新对应的私网网段信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePrivateNetworkSegmentRequest 请求对象
+     * @return AsyncInvoker<UpdatePrivateNetworkSegmentRequest, UpdatePrivateNetworkSegmentResponse>
+     */
+    public AsyncInvoker<UpdatePrivateNetworkSegmentRequest, UpdatePrivateNetworkSegmentResponse> updatePrivateNetworkSegmentAsyncInvoker(
+        UpdatePrivateNetworkSegmentRequest request) {
+        return new AsyncInvoker<>(request, CfwMeta.updatePrivateNetworkSegment, hcClient);
     }
 
 }

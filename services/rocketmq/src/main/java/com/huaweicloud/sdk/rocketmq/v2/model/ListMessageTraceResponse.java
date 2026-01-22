@@ -41,7 +41,7 @@ public class ListMessageTraceResponse extends SdkResponse {
     }
 
     /**
-     * 总数。
+     * **参数解释**： 总数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return total
      */
     public BigDecimal getTotal() {
@@ -58,7 +58,7 @@ public class ListMessageTraceResponse extends SdkResponse {
     }
 
     /**
-     * 下个分页的offset。
+     * **参数解释**： 下个分页的offset。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return nextOffset
      */
     public Integer getNextOffset() {
@@ -75,7 +75,7 @@ public class ListMessageTraceResponse extends SdkResponse {
     }
 
     /**
-     * 上个分页的offset。
+     * **参数解释**： 上个分页的offset。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return previousOffset
      */
     public Integer getPreviousOffset() {
@@ -108,7 +108,7 @@ public class ListMessageTraceResponse extends SdkResponse {
     }
 
     /**
-     * 消息轨迹列表。
+     * **参数解释**： 消息轨迹列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return trace
      */
     public List<ListMessageTraceRespTrace> getTrace() {

@@ -26,7 +26,7 @@ public class DeleteServiceItemResponseBodyData {
     }
 
     /**
-     * 服务组成员id
+     * **参数解释**： 服务组成员ID **取值范围**： 不涉及
      * @return id
      */
     public String getId() {
@@ -43,7 +43,7 @@ public class DeleteServiceItemResponseBodyData {
     }
 
     /**
-     * 服务组成员名称，为源和目的端口
+     * **参数解释**： 源、目的端口 **取值范围**： 不涉及
      * @return name
      */
     public String getName() {

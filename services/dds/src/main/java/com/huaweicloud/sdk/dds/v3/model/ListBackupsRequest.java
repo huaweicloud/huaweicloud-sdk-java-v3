@@ -243,7 +243,7 @@ public class ListBackupsRequest {
     }
 
     /**
-     * **参数解释：** 实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。如果instance_id以“”起始，表示按照“”后面的值模糊匹配，否则，按照实际填写的instance_id精确匹配查询。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * **参数解释：** 实例ID，可以调用“查询实例列表和详情-QueryingInstancesandDetails”接口获取。如果未申请实例，可以调用“创建实例-CreatingaDBInstance”接口创建。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -260,7 +260,7 @@ public class ListBackupsRequest {
     }
 
     /**
-     * **参数解释：** 备份ID。如果backup_id以“”起始，表示按照“”后面的值模糊匹配，否则，按照实际填写的backup_id精确匹配查询。 **约束限制：** 当该字段传入的备份ID归属为自动增量备份时，实例ID必传，且实例ID必须为精确匹配。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * **参数解释：** 备份ID。 **约束限制：** 当该字段传入的备份ID归属为自动增量备份时，实例ID必传。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return backupId
      */
     public String getBackupId() {

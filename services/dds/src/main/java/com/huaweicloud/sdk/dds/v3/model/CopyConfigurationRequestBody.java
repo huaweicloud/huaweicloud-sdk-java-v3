@@ -26,7 +26,7 @@ public class CopyConfigurationRequestBody {
     }
 
     /**
-     * 复制后的参数模板模板名称
+     * 复制后的参数模板模板名称 参数模板名称在1到64个字符之间，区分大小写，可包含字母、数字、中划线、下划线或句点，不能包含其他特殊字符。
      * @return name
      */
     public String getName() {
@@ -43,7 +43,7 @@ public class CopyConfigurationRequestBody {
     }
 
     /**
-     * 参数模板模板描述。
+     * 参数模板描述。 默认为空。取值范围：长度不超过256位，且不能包含回车和>!<\"&'=特殊字符。
      * @return description
      */
     public String getDescription() {

@@ -26,7 +26,7 @@ public class ListRocketMqMigrationTaskRequest {
     private String id;
 
     /**
-     * 查询类型。
+     * **参数解释**： 查询类型。 **约束限制**： 不涉及。 **取值范围**： - vhost：虚拟主机。 - exchange：交换机。 - queue：队列。 - all：所有。            **默认取值**： 不涉及。
      */
     public static final class TypeEnum {
 
@@ -115,12 +115,12 @@ public class ListRocketMqMigrationTaskRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    private String offset;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    private String limit;
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -133,7 +133,7 @@ public class ListRocketMqMigrationTaskRequest {
     }
 
     /**
-     * 实例ID。
+     * **参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -150,7 +150,7 @@ public class ListRocketMqMigrationTaskRequest {
     }
 
     /**
-     * 任务ID。
+     * **参数解释**： 任务ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -167,7 +167,7 @@ public class ListRocketMqMigrationTaskRequest {
     }
 
     /**
-     * 查询类型。
+     * **参数解释**： 查询类型。 **约束限制**： 不涉及。 **取值范围**： - vhost：虚拟主机。 - exchange：交换机。 - queue：队列。 - all：所有。            **默认取值**： 不涉及。
      * @return type
      */
     public TypeEnum getType() {
@@ -178,37 +178,37 @@ public class ListRocketMqMigrationTaskRequest {
         this.type = type;
     }
 
-    public ListRocketMqMigrationTaskRequest withOffset(String offset) {
+    public ListRocketMqMigrationTaskRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
     /**
-     * 当前页，从1开始。
+     * **参数解释**： 当前页，从1开始。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return offset
      */
-    public String getOffset() {
+    public Integer getOffset() {
         return offset;
     }
 
-    public void setOffset(String offset) {
+    public void setOffset(Integer offset) {
         this.offset = offset;
     }
 
-    public ListRocketMqMigrationTaskRequest withLimit(String limit) {
+    public ListRocketMqMigrationTaskRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
     /**
-     * 当前页大小。
+     * **参数解释**： 当前页大小。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return limit
      */
-    public String getLimit() {
+    public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(String limit) {
+    public void setLimit(Integer limit) {
         this.limit = limit;
     }
 
@@ -218,7 +218,7 @@ public class ListRocketMqMigrationTaskRequest {
     }
 
     /**
-     * - 查询vhost列表时，该字段可为空。 - 查询exchange列表时，该字段为exchange所属vhost名称。 - 查询queue列表时，该字段为queue所属vhost-所属exchange，例vhost1-exchange1。
+     * **参数解释**： vhost名称 **约束限制**： - 查询vhost列表时，该字段可为空。 - 查询exchange列表时，该字段为exchange所属vhost名称。 - 查询queue列表时，该字段为queue所属vhost-所属exchange，例vhost1-exchange1。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return name
      */
     public String getName() {

@@ -566,7 +566,7 @@ public class ListFlowStatisticRequest {
     /**
      * **参数解释**： 开始时间 **约束限制**： 不涉及 **取值范围**： 毫秒级时间戳 **默认取值**： 不涉及
      * minimum: 0
-     * maximum: 9223372036854775807
+     * maximum: 9007199254740992
      * @return startTime
      */
     public Long getStartTime() {
@@ -585,7 +585,7 @@ public class ListFlowStatisticRequest {
     /**
      * **参数解释**： 结束时间 **约束限制**： 不涉及 **取值范围**： 毫秒级时间戳 **默认取值**： 不涉及
      * minimum: 0
-     * maximum: 9223372036854775807
+     * maximum: 9007199254740992
      * @return endTime
      */
     public Long getEndTime() {
@@ -670,7 +670,7 @@ public class ListFlowStatisticRequest {
 
     /**
      * **参数解释**： 聚合条数 **约束限制**： 不涉及 **取值范围**： 0到10条 **默认取值**： 5
-     * minimum: 1
+     * minimum: 0
      * maximum: 1000
      * @return size
      */

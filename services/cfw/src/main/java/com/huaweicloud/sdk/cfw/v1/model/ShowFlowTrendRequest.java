@@ -442,7 +442,7 @@ public class ShowFlowTrendRequest {
     /**
      * **参数解释**： 开始时间 **约束限制**： 不涉及 **取值范围**： 毫秒级时间戳 **默认取值**： 不涉及
      * minimum: 0
-     * maximum: 9223372036854775807
+     * maximum: 9007199254740992
      * @return startTime
      */
     public Long getStartTime() {
@@ -461,7 +461,7 @@ public class ShowFlowTrendRequest {
     /**
      * **参数解释**： 结束时间 **约束限制**： 不涉及 **取值范围**： 毫秒级时间戳 **默认取值**： 不涉及
      * minimum: 0
-     * maximum: 9223372036854775807
+     * maximum: 9007199254740992
      * @return endTime
      */
     public Long getEndTime() {

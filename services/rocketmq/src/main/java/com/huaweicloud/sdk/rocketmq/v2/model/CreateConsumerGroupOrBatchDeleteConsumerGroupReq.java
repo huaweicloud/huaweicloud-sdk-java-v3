@@ -14,9 +14,9 @@ import java.util.function.Consumer;
 public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "groups")
+    @JsonProperty(value = "job_id")
 
-    private List<String> groups = null;
+    private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -53,37 +53,21 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
 
     private String groupDesc;
 
-    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withGroups(List<String> groups) {
-        this.groups = groups;
-        return this;
-    }
-
-    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq addGroupsItem(String groupsItem) {
-        if (this.groups == null) {
-            this.groups = new ArrayList<>();
-        }
-        this.groups.add(groupsItem);
-        return this;
-    }
-
-    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withGroups(Consumer<List<String>> groupsSetter) {
-        if (this.groups == null) {
-            this.groups = new ArrayList<>();
-        }
-        groupsSetter.accept(this.groups);
+    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withJobId(String jobId) {
+        this.jobId = jobId;
         return this;
     }
 
     /**
-     * 待删除的消费组列表。
-     * @return groups
+     * **参数解释**： 待删除的消费组列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return jobId
      */
-    public List<String> getGroups() {
-        return groups;
+    public String getJobId() {
+        return jobId;
     }
 
-    public void setGroups(List<String> groups) {
-        this.groups = groups;
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
     }
 
     public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withName(String name) {
@@ -92,7 +76,7 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
     }
 
     /**
-     * 消费组名称，只能由英文字母、数字、百分号、竖线、中划线、下划线组成，长度3~64个字符。
+     * **参数解释**： 消费组名称。 **约束限制**： 只能由英文字母、数字、百分号、竖线、中划线、下划线组成，长度3~64个字符。 当创建消费组时必填。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -125,7 +109,7 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
     }
 
     /**
-     * 关联的代理列表（仅RocketMQ实例4.8.0版本需要填写此参数）。
+     * **参数解释**： 关联的代理列表。 **约束限制**： 仅RocketMQ实例4.8.0版本需要填写此参数。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return brokers
      */
     public List<String> getBrokers() {
@@ -142,7 +126,7 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
     }
 
     /**
-     * 是否广播。
+     * **参数解释**： 是否设置为广播消费。 **约束限制**： 不涉及。 **取值范围**： - true：使用广播消费。 - false：不使用广播消费。 **默认取值**： 不涉及。
      * @return broadcast
      */
     public Boolean getBroadcast() {
@@ -159,7 +143,7 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
     }
 
     /**
-     * 最大重试次数，取值范围为1~16。
+     * **参数解释**： 最大重试次数。 **约束限制**： 不涉及。 **取值范围**： 1~16。 **默认取值**： 不涉及。
      * @return retryMaxTime
      */
     public Integer getRetryMaxTime() {
@@ -176,7 +160,7 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
     }
 
     /**
-     * 是否可以消费。
+     * **参数解释**： 是否可以消费。 **约束限制**： 不涉及。 **取值范围**： - true：可以消费。 - false：不可以消费。 **默认取值**： 不涉及。
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -193,7 +177,7 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
     }
 
     /**
-     * 是否按顺序消费（仅RocketMQ实例5.x版本需要填写此参数）。
+     * **参数解释**： 是否按顺序消费。 **约束限制**： 仅RocketMQ实例5.x版本需要填写此参数。[华为云Stack不支持此参数。](tag:hcs,hcs_oemout) **取值范围**： - true：顺序消费。 - false：不按顺序消费。 **默认取值**： 不涉及。
      * @return consumeOrderly
      */
     public Boolean getConsumeOrderly() {
@@ -210,7 +194,7 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
     }
 
     /**
-     * 消费组描述，长度0~200个字符。
+     * **参数解释**： 消费组描述。 **约束限制**： 不涉及。 **取值范围**： 0~200。 **默认取值**： 不涉及。
      * @return groupDesc
      */
     public String getGroupDesc() {
@@ -230,7 +214,7 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
             return false;
         }
         CreateConsumerGroupOrBatchDeleteConsumerGroupReq that = (CreateConsumerGroupOrBatchDeleteConsumerGroupReq) obj;
-        return Objects.equals(this.groups, that.groups) && Objects.equals(this.name, that.name)
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.brokers, that.brokers) && Objects.equals(this.broadcast, that.broadcast)
             && Objects.equals(this.retryMaxTime, that.retryMaxTime) && Objects.equals(this.enabled, that.enabled)
             && Objects.equals(this.consumeOrderly, that.consumeOrderly)
@@ -239,14 +223,14 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
 
     @Override
     public int hashCode() {
-        return Objects.hash(groups, name, brokers, broadcast, retryMaxTime, enabled, consumeOrderly, groupDesc);
+        return Objects.hash(jobId, name, brokers, broadcast, retryMaxTime, enabled, consumeOrderly, groupDesc);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {\n");
-        sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    brokers: ").append(toIndentedString(brokers)).append("\n");
         sb.append("    broadcast: ").append(toIndentedString(broadcast)).append("\n");

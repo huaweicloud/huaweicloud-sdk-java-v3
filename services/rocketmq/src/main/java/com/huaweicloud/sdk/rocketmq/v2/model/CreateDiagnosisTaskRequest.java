@@ -24,7 +24,7 @@ public class CreateDiagnosisTaskRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private DiagnosisRep body;
+    private DiagnosisReq body;
 
     public CreateDiagnosisTaskRequest withEngine(String engine) {
         this.engine = engine;
@@ -32,7 +32,7 @@ public class CreateDiagnosisTaskRequest {
     }
 
     /**
-     * 引擎。
+     * **参数解释**： 引擎。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return engine
      */
     public String getEngine() {
@@ -49,7 +49,7 @@ public class CreateDiagnosisTaskRequest {
     }
 
     /**
-     * **参数解释**： 实例ID。获取方法如下：登录RocketMQ控制台，在RocketMQ实例详情页面查找实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -60,14 +60,14 @@ public class CreateDiagnosisTaskRequest {
         this.instanceId = instanceId;
     }
 
-    public CreateDiagnosisTaskRequest withBody(DiagnosisRep body) {
+    public CreateDiagnosisTaskRequest withBody(DiagnosisReq body) {
         this.body = body;
         return this;
     }
 
-    public CreateDiagnosisTaskRequest withBody(Consumer<DiagnosisRep> bodySetter) {
+    public CreateDiagnosisTaskRequest withBody(Consumer<DiagnosisReq> bodySetter) {
         if (this.body == null) {
-            this.body = new DiagnosisRep();
+            this.body = new DiagnosisReq();
             bodySetter.accept(this.body);
         }
 
@@ -78,11 +78,11 @@ public class CreateDiagnosisTaskRequest {
      * Get body
      * @return body
      */
-    public DiagnosisRep getBody() {
+    public DiagnosisReq getBody() {
         return body;
     }
 
-    public void setBody(DiagnosisRep body) {
+    public void setBody(DiagnosisReq body) {
         this.body = body;
     }
 

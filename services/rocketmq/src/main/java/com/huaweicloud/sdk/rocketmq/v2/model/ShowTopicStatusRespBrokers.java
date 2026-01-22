@@ -45,7 +45,7 @@ public class ShowTopicStatusRespBrokers {
     }
 
     /**
-     * 队列列表。
+     * **参数解释**： 队列列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return queues
      */
     public List<ShowTopicStatusRespQueues> getQueues() {
@@ -62,7 +62,7 @@ public class ShowTopicStatusRespBrokers {
     }
 
     /**
-     * 节点名称。
+     * **参数解释**： 节点名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return brokerName
      */
     public String getBrokerName() {

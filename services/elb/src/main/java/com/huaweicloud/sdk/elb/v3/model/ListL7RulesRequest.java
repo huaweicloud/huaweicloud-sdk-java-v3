@@ -236,7 +236,7 @@ public class ListL7RulesRequest {
     }
 
     /**
-     * **参数解释**：转发规则的配置状态。 支持多值查询，查询条件格式：*provisioning_status=xxx&provisioning_status=xxx*。  **约束限制**：不涉及  **取值范围**：ACTIVE 表示正常。  **默认取值**：不涉及
+     * **参数解释**：转发规则的配置状态。 支持多值查询，查询条件格式：*provisioning_status=xxx&provisioning_status=xxx*。  **约束限制**：不涉及  **取值范围**： - ACTIVE：已生效。 - PENDING_CREATE：创建中。 - ERROR：当前配置有误。  **默认取值**：不涉及
      * @return provisioningStatus
      */
     public List<String> getProvisioningStatus() {

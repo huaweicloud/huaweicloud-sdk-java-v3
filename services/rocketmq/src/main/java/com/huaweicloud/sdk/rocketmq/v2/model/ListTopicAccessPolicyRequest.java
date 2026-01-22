@@ -23,12 +23,12 @@ public class ListTopicAccessPolicyRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    private String offset;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    private String limit;
+    private Integer limit;
 
     public ListTopicAccessPolicyRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -36,7 +36,7 @@ public class ListTopicAccessPolicyRequest {
     }
 
     /**
-     * 实例ID。
+     * **参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -53,7 +53,7 @@ public class ListTopicAccessPolicyRequest {
     }
 
     /**
-     * 主题名称。
+     * **参数解释**： 主题名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return topic
      */
     public String getTopic() {
@@ -64,37 +64,37 @@ public class ListTopicAccessPolicyRequest {
         this.topic = topic;
     }
 
-    public ListTopicAccessPolicyRequest withOffset(String offset) {
+    public ListTopicAccessPolicyRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
     /**
-     * 偏移量，表示从此偏移量开始查询， offset大于等于0。
+     * **参数解释**： 偏移量，表示从此偏移量开始查询， offset大于等于0。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return offset
      */
-    public String getOffset() {
+    public Integer getOffset() {
         return offset;
     }
 
-    public void setOffset(String offset) {
+    public void setOffset(Integer offset) {
         this.offset = offset;
     }
 
-    public ListTopicAccessPolicyRequest withLimit(String limit) {
+    public ListTopicAccessPolicyRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
     /**
-     * 查询数量。
+     * **参数解释**： 查询数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return limit
      */
-    public String getLimit() {
+    public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(String limit) {
+    public void setLimit(Integer limit) {
         this.limit = limit;
     }
 

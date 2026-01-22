@@ -16,11 +16,6 @@ public class ListAccessPolicyRespPolicies {
     private String accessKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "secret_key")
-
-    private String secretKey;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "white_remote_address")
 
     private String whiteRemoteAddress;
@@ -41,7 +36,7 @@ public class ListAccessPolicyRespPolicies {
     }
 
     /**
-     * 用户名。
+     * **参数解释**： 用户名。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return accessKey
      */
     public String getAccessKey() {
@@ -52,30 +47,13 @@ public class ListAccessPolicyRespPolicies {
         this.accessKey = accessKey;
     }
 
-    public ListAccessPolicyRespPolicies withSecretKey(String secretKey) {
-        this.secretKey = secretKey;
-        return this;
-    }
-
-    /**
-     * 密钥。
-     * @return secretKey
-     */
-    public String getSecretKey() {
-        return secretKey;
-    }
-
-    public void setSecretKey(String secretKey) {
-        this.secretKey = secretKey;
-    }
-
     public ListAccessPolicyRespPolicies withWhiteRemoteAddress(String whiteRemoteAddress) {
         this.whiteRemoteAddress = whiteRemoteAddress;
         return this;
     }
 
     /**
-     * IP白名单。
+     * **参数解释**： IP白名单。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return whiteRemoteAddress
      */
     public String getWhiteRemoteAddress() {
@@ -92,7 +70,7 @@ public class ListAccessPolicyRespPolicies {
     }
 
     /**
-     * 是否为管理员。
+     * **参数解释**： 是否为管理员。 **约束限制**： 不涉及。 **取值范围**： - true：是管理员。 - false：不是管理员。 **默认取值**： 不涉及。
      * @return admin
      */
     public Boolean getAdmin() {
@@ -109,7 +87,7 @@ public class ListAccessPolicyRespPolicies {
     }
 
     /**
-     * 权限。
+     * **参数解释**： 用户权限。 **约束限制**： 不涉及。 **取值范围**： - PUB：拥有发布权限。 - SUB：拥有订阅权限。 - PUB|SUB：拥有发布订阅权限。 - DENY：无权限。 **默认取值**： 不涉及。
      * @return perm
      */
     public String getPerm() {
@@ -129,14 +107,14 @@ public class ListAccessPolicyRespPolicies {
             return false;
         }
         ListAccessPolicyRespPolicies that = (ListAccessPolicyRespPolicies) obj;
-        return Objects.equals(this.accessKey, that.accessKey) && Objects.equals(this.secretKey, that.secretKey)
+        return Objects.equals(this.accessKey, that.accessKey)
             && Objects.equals(this.whiteRemoteAddress, that.whiteRemoteAddress)
             && Objects.equals(this.admin, that.admin) && Objects.equals(this.perm, that.perm);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(accessKey, secretKey, whiteRemoteAddress, admin, perm);
+        return Objects.hash(accessKey, whiteRemoteAddress, admin, perm);
     }
 
     @Override
@@ -144,7 +122,6 @@ public class ListAccessPolicyRespPolicies {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAccessPolicyRespPolicies {\n");
         sb.append("    accessKey: ").append(toIndentedString(accessKey)).append("\n");
-        sb.append("    secretKey: ").append(toIndentedString(secretKey)).append("\n");
         sb.append("    whiteRemoteAddress: ").append(toIndentedString(whiteRemoteAddress)).append("\n");
         sb.append("    admin: ").append(toIndentedString(admin)).append("\n");
         sb.append("    perm: ").append(toIndentedString(perm)).append("\n");

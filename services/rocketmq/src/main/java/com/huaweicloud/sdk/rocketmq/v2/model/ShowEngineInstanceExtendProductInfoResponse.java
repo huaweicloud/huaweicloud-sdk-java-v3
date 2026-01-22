@@ -51,7 +51,7 @@ public class ShowEngineInstanceExtendProductInfoResponse extends SdkResponse {
     }
 
     /**
-     * 总数。
+     * **参数解释**： 总数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return total
      */
     public BigDecimal getTotal() {
@@ -68,7 +68,7 @@ public class ShowEngineInstanceExtendProductInfoResponse extends SdkResponse {
     }
 
     /**
-     * 下个分页的offset。
+     * **参数解释**： 下个分页的offset。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return nextOffset
      */
     public Integer getNextOffset() {
@@ -85,7 +85,7 @@ public class ShowEngineInstanceExtendProductInfoResponse extends SdkResponse {
     }
 
     /**
-     * 上个分页的offset。
+     * **参数解释**： 上个分页的offset。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return previousOffset
      */
     public Integer getPreviousOffset() {
@@ -102,7 +102,7 @@ public class ShowEngineInstanceExtendProductInfoResponse extends SdkResponse {
     }
 
     /**
-     * 消息引擎类型。
+     * **参数解释**： 消息引擎类型。 **约束限制**： 不涉及。 **取值范围**： - rocketmq：RocketMQ消息引擎。 - reliability：RocketMQ消息引擎别称。 **默认取值**： 不涉及。
      * @return engine
      */
     public String getEngine() {
@@ -135,7 +135,7 @@ public class ShowEngineInstanceExtendProductInfoResponse extends SdkResponse {
     }
 
     /**
-     * 消息引擎支持的版本。
+     * **参数解释**： 消息引擎支持的版本。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return versions
      */
     public List<String> getVersions() {
@@ -169,7 +169,7 @@ public class ShowEngineInstanceExtendProductInfoResponse extends SdkResponse {
     }
 
     /**
-     * 规格变更的产品信息。
+     * **参数解释**： 规格变更的产品信息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return products
      */
     public List<RocketMQExtendProductInfoEntity> getProducts() {

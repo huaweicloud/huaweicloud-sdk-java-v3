@@ -137,7 +137,7 @@ public class ShowInstanceMessagesRequest {
     }
 
     /**
-     * **参数解释**： 开始时间。  Unix毫秒时间戳。  **约束限制**： 查询消息偏移量时，为必选参数。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 开始时间。  Unix毫秒时间戳。  **约束限制**： 按创建时间查询时，为必选参数。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return startTime
      */
     public String getStartTime() {
@@ -154,7 +154,7 @@ public class ShowInstanceMessagesRequest {
     }
 
     /**
-     * **参数解释**： 结束时间。  Unix毫秒时间戳。  **约束限制**： 查询消息偏移量时，为必选参数。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 结束时间。  Unix毫秒时间戳。  **约束限制**： 按创建时间查询时，为必选参数。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return endTime
      */
     public String getEndTime() {
@@ -222,7 +222,7 @@ public class ShowInstanceMessagesRequest {
     }
 
     /**
-     * **参数解释**： 消息偏移量。 **约束限制**： 查询消息内容时，为必选参数。  若start_time、end_time参数不为空，该参数无效。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 消息偏移量。 **约束限制**： 按偏移量查询时，为必选参数。  若start_time、end_time参数不为空，该参数无效。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return messageOffset
      */
     public String getMessageOffset() {
@@ -239,7 +239,7 @@ public class ShowInstanceMessagesRequest {
     }
 
     /**
-     * **参数解释**： 分区。 **约束限制**： 查询消息内容时，为必选参数。  若start_time、end_time参数不为空，该参数无效。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 分区。 **约束限制**： 按偏移量查询时，为必选参数。  若start_time、end_time参数不为空，该参数无效。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return partition
      */
     public String getPartition() {

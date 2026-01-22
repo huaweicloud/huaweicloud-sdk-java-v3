@@ -26,7 +26,7 @@ public class AddressItemId {
     }
 
     /**
-     * 地址组成员id
+     * **参数解释**： 地址组成员ID **取值范围**： 不涉及
      * @return id
      */
     public String getId() {
@@ -43,7 +43,7 @@ public class AddressItemId {
     }
 
     /**
-     * 地址组成员名称
+     * **参数解释**： IP地址 **取值范围**： 不涉及
      * @return name
      */
     public String getName() {

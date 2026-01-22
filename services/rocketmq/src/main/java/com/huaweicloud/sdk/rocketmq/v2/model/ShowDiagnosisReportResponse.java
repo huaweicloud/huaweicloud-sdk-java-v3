@@ -35,9 +35,9 @@ public class ShowDiagnosisReportResponse extends SdkResponse {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "creat_at")
+    @JsonProperty(value = "created_at")
 
-    private Long creatAt;
+    private Long createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "abnormal_item_sum")
@@ -65,14 +65,24 @@ public class ShowDiagnosisReportResponse extends SdkResponse {
     private Boolean subscriptionConsistency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "duplicate_client_id")
+
+    private Boolean duplicateClientId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "different_consumer_type")
+
+    private Boolean differentConsumerType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subscriptions")
 
-    private List<String> subscriptions = null;
+    private List<SubscriptionEntity> subscriptions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "diagnosis_node_report_list")
 
-    private List<String> diagnosisNodeReportList = null;
+    private List<DiagnosisNodeReportEntity> diagnosisNodeReportList = null;
 
     public ShowDiagnosisReportResponse withReportId(String reportId) {
         this.reportId = reportId;
@@ -80,7 +90,7 @@ public class ShowDiagnosisReportResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 报告ID。 **取值范围**： 不涉及。
+     * **参数解释**： 报告ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return reportId
      */
     public String getReportId() {
@@ -97,7 +107,7 @@ public class ShowDiagnosisReportResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 消费组名称。 **取值范围**： 不涉及。
+     * **参数解释**： 消费组名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return groupName
      */
     public String getGroupName() {
@@ -114,7 +124,7 @@ public class ShowDiagnosisReportResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 消费者数量。 **取值范围**： 不涉及。
+     * **参数解释**： 消费者数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return consumerNums
      */
     public Integer getConsumerNums() {
@@ -131,7 +141,7 @@ public class ShowDiagnosisReportResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 状态。 **取值范围**： 不涉及。
+     * **参数解释**： 状态。 **约束限制**： 不涉及。 **取值范围**： - diagnosing：诊断中。 - failed：诊断失败。 - deleted：手动删除。 - finished：诊断完成。 - normal：诊断结果正常。 - abnormal：诊断结果异常。 **默认取值**： 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -142,21 +152,21 @@ public class ShowDiagnosisReportResponse extends SdkResponse {
         this.status = status;
     }
 
-    public ShowDiagnosisReportResponse withCreatAt(Long creatAt) {
-        this.creatAt = creatAt;
+    public ShowDiagnosisReportResponse withCreatedAt(Long createdAt) {
+        this.createdAt = createdAt;
         return this;
     }
 
     /**
-     * **参数解释**： 生成时间。 **取值范围**： 不涉及。
-     * @return creatAt
+     * **参数解释**： 生成时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return createdAt
      */
-    public Long getCreatAt() {
-        return creatAt;
+    public Long getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreatAt(Long creatAt) {
-        this.creatAt = creatAt;
+    public void setCreatedAt(Long createdAt) {
+        this.createdAt = createdAt;
     }
 
     public ShowDiagnosisReportResponse withAbnormalItemSum(Integer abnormalItemSum) {
@@ -165,7 +175,7 @@ public class ShowDiagnosisReportResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 异常项数量。 **取值范围**： 不涉及。
+     * **参数解释**： 异常项数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return abnormalItemSum
      */
     public Integer getAbnormalItemSum() {
@@ -182,7 +192,7 @@ public class ShowDiagnosisReportResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 异常节点数量。 **取值范围**： 不涉及。
+     * **参数解释**： 异常节点数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return faultedNodeSum
      */
     public Integer getFaultedNodeSum() {
@@ -199,7 +209,7 @@ public class ShowDiagnosisReportResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 是否在线。 **取值范围**： - true: 在线。 - false: 不在线。
+     * **参数解释**： 是否在线。 **取值范围**： - True：在线。 - False：不在线。
      * @return online
      */
     public Boolean getOnline() {
@@ -216,7 +226,7 @@ public class ShowDiagnosisReportResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 消息堆积数。 **取值范围**： 不涉及。
+     * **参数解释**： 消息堆积数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return messageAccumulation
      */
     public Integer getMessageAccumulation() {
@@ -233,7 +243,7 @@ public class ShowDiagnosisReportResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 订阅一致性。 **取值范围**： - true: 订阅关系一致。 - false: 订阅关系不一致。
+     * **参数解释**： 订阅一致性。 **约束限制**： 不涉及。 **取值范围**： - True：订阅关系一致。 - False：订阅关系不一致。 **默认取值**： 不涉及。
      * @return subscriptionConsistency
      */
     public Boolean getSubscriptionConsistency() {
@@ -244,12 +254,46 @@ public class ShowDiagnosisReportResponse extends SdkResponse {
         this.subscriptionConsistency = subscriptionConsistency;
     }
 
-    public ShowDiagnosisReportResponse withSubscriptions(List<String> subscriptions) {
+    public ShowDiagnosisReportResponse withDuplicateClientId(Boolean duplicateClientId) {
+        this.duplicateClientId = duplicateClientId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否存在重复的客户端ID。 **约束限制**： 不涉及。 **取值范围**： - True：存在重复的客户端ID。 - False：不存在重复的客户端ID。 **默认取值**： 不涉及。
+     * @return duplicateClientId
+     */
+    public Boolean getDuplicateClientId() {
+        return duplicateClientId;
+    }
+
+    public void setDuplicateClientId(Boolean duplicateClientId) {
+        this.duplicateClientId = duplicateClientId;
+    }
+
+    public ShowDiagnosisReportResponse withDifferentConsumerType(Boolean differentConsumerType) {
+        this.differentConsumerType = differentConsumerType;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否存在不一致的消费类型。 **约束限制**： 不涉及。 **取值范围**： - True：存在不一致的消费类型。 - False：不存在不一致的消费类型。 **默认取值**： 不涉及。
+     * @return differentConsumerType
+     */
+    public Boolean getDifferentConsumerType() {
+        return differentConsumerType;
+    }
+
+    public void setDifferentConsumerType(Boolean differentConsumerType) {
+        this.differentConsumerType = differentConsumerType;
+    }
+
+    public ShowDiagnosisReportResponse withSubscriptions(List<SubscriptionEntity> subscriptions) {
         this.subscriptions = subscriptions;
         return this;
     }
 
-    public ShowDiagnosisReportResponse addSubscriptionsItem(String subscriptionsItem) {
+    public ShowDiagnosisReportResponse addSubscriptionsItem(SubscriptionEntity subscriptionsItem) {
         if (this.subscriptions == null) {
             this.subscriptions = new ArrayList<>();
         }
@@ -257,7 +301,7 @@ public class ShowDiagnosisReportResponse extends SdkResponse {
         return this;
     }
 
-    public ShowDiagnosisReportResponse withSubscriptions(Consumer<List<String>> subscriptionsSetter) {
+    public ShowDiagnosisReportResponse withSubscriptions(Consumer<List<SubscriptionEntity>> subscriptionsSetter) {
         if (this.subscriptions == null) {
             this.subscriptions = new ArrayList<>();
         }
@@ -266,23 +310,25 @@ public class ShowDiagnosisReportResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 订阅者列表。 **取值范围**： 不涉及。
+     * **参数解释**： 订阅者列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return subscriptions
      */
-    public List<String> getSubscriptions() {
+    public List<SubscriptionEntity> getSubscriptions() {
         return subscriptions;
     }
 
-    public void setSubscriptions(List<String> subscriptions) {
+    public void setSubscriptions(List<SubscriptionEntity> subscriptions) {
         this.subscriptions = subscriptions;
     }
 
-    public ShowDiagnosisReportResponse withDiagnosisNodeReportList(List<String> diagnosisNodeReportList) {
+    public ShowDiagnosisReportResponse withDiagnosisNodeReportList(
+        List<DiagnosisNodeReportEntity> diagnosisNodeReportList) {
         this.diagnosisNodeReportList = diagnosisNodeReportList;
         return this;
     }
 
-    public ShowDiagnosisReportResponse addDiagnosisNodeReportListItem(String diagnosisNodeReportListItem) {
+    public ShowDiagnosisReportResponse addDiagnosisNodeReportListItem(
+        DiagnosisNodeReportEntity diagnosisNodeReportListItem) {
         if (this.diagnosisNodeReportList == null) {
             this.diagnosisNodeReportList = new ArrayList<>();
         }
@@ -291,7 +337,7 @@ public class ShowDiagnosisReportResponse extends SdkResponse {
     }
 
     public ShowDiagnosisReportResponse withDiagnosisNodeReportList(
-        Consumer<List<String>> diagnosisNodeReportListSetter) {
+        Consumer<List<DiagnosisNodeReportEntity>> diagnosisNodeReportListSetter) {
         if (this.diagnosisNodeReportList == null) {
             this.diagnosisNodeReportList = new ArrayList<>();
         }
@@ -300,14 +346,14 @@ public class ShowDiagnosisReportResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 诊断节点报告列表。 **取值范围**： 不涉及。
+     * **参数解释**： 诊断节点报告列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return diagnosisNodeReportList
      */
-    public List<String> getDiagnosisNodeReportList() {
+    public List<DiagnosisNodeReportEntity> getDiagnosisNodeReportList() {
         return diagnosisNodeReportList;
     }
 
-    public void setDiagnosisNodeReportList(List<String> diagnosisNodeReportList) {
+    public void setDiagnosisNodeReportList(List<DiagnosisNodeReportEntity> diagnosisNodeReportList) {
         this.diagnosisNodeReportList = diagnosisNodeReportList;
     }
 
@@ -322,10 +368,13 @@ public class ShowDiagnosisReportResponse extends SdkResponse {
         ShowDiagnosisReportResponse that = (ShowDiagnosisReportResponse) obj;
         return Objects.equals(this.reportId, that.reportId) && Objects.equals(this.groupName, that.groupName)
             && Objects.equals(this.consumerNums, that.consumerNums) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.creatAt, that.creatAt) && Objects.equals(this.abnormalItemSum, that.abnormalItemSum)
+            && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.abnormalItemSum, that.abnormalItemSum)
             && Objects.equals(this.faultedNodeSum, that.faultedNodeSum) && Objects.equals(this.online, that.online)
             && Objects.equals(this.messageAccumulation, that.messageAccumulation)
             && Objects.equals(this.subscriptionConsistency, that.subscriptionConsistency)
+            && Objects.equals(this.duplicateClientId, that.duplicateClientId)
+            && Objects.equals(this.differentConsumerType, that.differentConsumerType)
             && Objects.equals(this.subscriptions, that.subscriptions)
             && Objects.equals(this.diagnosisNodeReportList, that.diagnosisNodeReportList);
     }
@@ -336,12 +385,14 @@ public class ShowDiagnosisReportResponse extends SdkResponse {
             groupName,
             consumerNums,
             status,
-            creatAt,
+            createdAt,
             abnormalItemSum,
             faultedNodeSum,
             online,
             messageAccumulation,
             subscriptionConsistency,
+            duplicateClientId,
+            differentConsumerType,
             subscriptions,
             diagnosisNodeReportList);
     }
@@ -354,12 +405,14 @@ public class ShowDiagnosisReportResponse extends SdkResponse {
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    consumerNums: ").append(toIndentedString(consumerNums)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    creatAt: ").append(toIndentedString(creatAt)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    abnormalItemSum: ").append(toIndentedString(abnormalItemSum)).append("\n");
         sb.append("    faultedNodeSum: ").append(toIndentedString(faultedNodeSum)).append("\n");
         sb.append("    online: ").append(toIndentedString(online)).append("\n");
         sb.append("    messageAccumulation: ").append(toIndentedString(messageAccumulation)).append("\n");
         sb.append("    subscriptionConsistency: ").append(toIndentedString(subscriptionConsistency)).append("\n");
+        sb.append("    duplicateClientId: ").append(toIndentedString(duplicateClientId)).append("\n");
+        sb.append("    differentConsumerType: ").append(toIndentedString(differentConsumerType)).append("\n");
         sb.append("    subscriptions: ").append(toIndentedString(subscriptions)).append("\n");
         sb.append("    diagnosisNodeReportList: ").append(toIndentedString(diagnosisNodeReportList)).append("\n");
         sb.append("}");

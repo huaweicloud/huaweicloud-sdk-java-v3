@@ -44,7 +44,7 @@ public class QueryFireWallInstanceDto {
     }
 
     /**
-     * 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
+     * **参数解释**： 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0 **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -61,7 +61,7 @@ public class QueryFireWallInstanceDto {
     }
 
     /**
-     * 查询关键字，可为防火墙id或防火墙名称的一部分。可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
+     * **参数解释**： 查询关键字，可为防火墙ID或防火墙名称的一部分。可通过[防火墙ID获取方式](cfw_02_0028.xml)获取 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return keyWord
      */
     public String getKeyWord() {
@@ -94,7 +94,7 @@ public class QueryFireWallInstanceDto {
     }
 
     /**
-     * 标签列表，可通过查询标签服务查询标签接口获得，返回值即为标签列表
+     * **参数解释**： 标签列表，可通过查询标签服务查询标签接口获得，返回值即为标签列表 **约束限制**： 不涉及
      * @return tags
      */
     public List<TagInfo> getTags() {
@@ -111,7 +111,7 @@ public class QueryFireWallInstanceDto {
     }
 
     /**
-     * 每页显示个数，范围为1-1024
+     * **参数解释**： 每页显示个数 **约束限制**： 不涉及 **取值范围**： 1-1024 **默认取值**： 不涉及
      * @return limit
      */
     public Integer getLimit() {
@@ -128,7 +128,7 @@ public class QueryFireWallInstanceDto {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
+     * **参数解释**： 偏移量：指定返回记录的开始位置 **约束限制**： 不涉及 **取值范围**： 大于或等于0 **默认取值**： 0
      * @return offset
      */
     public Integer getOffset() {

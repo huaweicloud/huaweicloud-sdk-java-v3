@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class CreatePostPaidInstanceByEngineRequest {
 
     /**
-     * 消息引擎。
+     * **参数解释**： 消息引擎。 **约束限制**： 不涉及。 **取值范围**： rabbitmq：RabbitMQ引擎。 **默认取值**： 不涉及。
      */
     public static final class EngineEnum {
 
@@ -96,7 +96,7 @@ public class CreatePostPaidInstanceByEngineRequest {
     }
 
     /**
-     * 消息引擎。
+     * **参数解释**： 消息引擎。 **约束限制**： 不涉及。 **取值范围**： rabbitmq：RabbitMQ引擎。 **默认取值**： 不涉及。
      * @return engine
      */
     public EngineEnum getEngine() {

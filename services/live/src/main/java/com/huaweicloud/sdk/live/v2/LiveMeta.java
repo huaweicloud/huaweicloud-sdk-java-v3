@@ -197,6 +197,11 @@ public class LiveMeta {
             TypeCasts.uncheckedConversion(ListBandwidthDetailRequest.ServiceTypeEnum.class),
             f -> f.withMarshaller(ListBandwidthDetailRequest::getServiceType,
                 ListBandwidthDetailRequest::setServiceType));
+        builder.<ListBandwidthDetailRequest.IpTypeEnum>withRequestField("ip_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListBandwidthDetailRequest.IpTypeEnum.class),
+            f -> f.withMarshaller(ListBandwidthDetailRequest::getIpType, ListBandwidthDetailRequest::setIpType));
 
         // response
 

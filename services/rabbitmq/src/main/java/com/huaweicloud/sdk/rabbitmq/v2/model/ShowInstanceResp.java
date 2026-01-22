@@ -425,6 +425,16 @@ public class ShowInstanceResp {
 
     private List<TagEntity> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_type")
+
+    private String serviceType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "storage_type")
+
+    private String storageType;
+
     public ShowInstanceResp withAccessUser(String accessUser) {
         this.accessUser = accessUser;
         return this;
@@ -482,7 +492,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * **参数解释**： 消息引擎。 **取值范围**： 不涉及。
+     * **参数解释**： 消息引擎类型。 **取值范围**： rabbitmq：RabbitMQ引擎。
      * @return engine
      */
     public String getEngine() {
@@ -499,7 +509,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * **参数解释**： 消息引擎版本。 **取值范围**： 不涉及。
+     * **参数解释**： 消息引擎版本。 **取值范围**： - 3.8.35 [- 3.12.13](tag:srg) [- AMQP-0-9-1](tag:hws,hws_hk,hws_eu)
      * @return engineVersion
      */
     public String getEngineVersion() {
@@ -669,7 +679,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * **参数解释**： 实例状态。 **取值范围**： [详细状态说明请参考[实例状态说明](rabbitmq-api-180514012.xml)](tag:hws,hws_eu,hws_hk,cmcc,ctc,sbc,hk_sbc,g42,hk_g42,tm,hk_tm)[详细状态说明请参考[实例状态说明](kafka-api-180514012.xml)](tag:hcs)。
+     * **参数解释**： 实例状态。 **取值范围**： [详细状态说明请参考[实例状态说明](rabbitmq-api-180514012.xml)](tag:hws,hws_eu,hws_hk,cmcc,ctc,sbc,hk_sbc,g42,hk_g42,tm,hk_tm,ax)[详细状态说明请参考[实例状态说明](kafka-api-180514012.xml)](tag:hcs)。
      * @return status
      */
     public String getStatus() {
@@ -720,7 +730,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * **参数解释**： 资源规格标识。 **取值范围**： [- dms.instance.rabbitmq.single.c3.2u4g：RabbitMQ单机，vm规格2u4g - dms.instance.rabbitmq.single.c3.4u8g：RabbitMQ单机，vm规格4u8g - dms.instance.rabbitmq.single.c3.8u16g：RabbitMQ单机，vm规格8u16g - dms.instance.rabbitmq.single.c3.16u32g：RabbitMQ单机，vm规格16u32g - dms.instance.rabbitmq.cluster.c3.4u8g.3：RabbitMQ集群，vm规格4u8g，3个节点 - dms.instance.rabbitmq.cluster.c3.4u8g.5：RabbitMQ集群，vm规格4u8g，5个节点 - dms.instance.rabbitmq.cluster.c3.4u8g.7：RabbitMQ集群，vm规格4u8g，7个节点 - dms.instance.rabbitmq.cluster.c3.8u16g.3：RabbitMQ集群，vm规格8u16g，3个节点 - dms.instance.rabbitmq.cluster.c3.8u16g.5：RabbitMQ集群，vm规格8u16g，5个节点 - dms.instance.rabbitmq.cluster.c3.8u16g.7：RabbitMQ集群，vm规格8u16g，7个节点 - dms.instance.rabbitmq.cluster.c3.16u32g.3：RabbitMQ集群，vm规格16u32g，3个节点 - dms.instance.rabbitmq.cluster.c3.16u32g.5：RabbitMQ集群，vm规格16u32g，5个节点 - dms.instance.rabbitmq.cluster.c3.16u32g.7：RabbitMQ集群，vm规格16u32g，7个节点](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,sbc)
+     * **参数解释**： 资源规格标识。 **取值范围**： -[ dms.instance.rabbitmq.single.c3.2u4g：RabbitMQ单机，vm规格2u4g - dms.instance.rabbitmq.single.c3.4u8g：RabbitMQ单机，vm规格4u8g - dms.instance.rabbitmq.single.c3.8u16g：RabbitMQ单机，vm规格8u16g - dms.instance.rabbitmq.single.c3.16u32g：RabbitMQ单机，vm规格16u32g - dms.instance.rabbitmq.cluster.c3.4u8g.3：RabbitMQ集群，vm规格4u8g，3个节点 - dms.instance.rabbitmq.cluster.c3.4u8g.5：RabbitMQ集群，vm规格4u8g，5个节点 - dms.instance.rabbitmq.cluster.c3.4u8g.7：RabbitMQ集群，vm规格4u8g，7个节点 - dms.instance.rabbitmq.cluster.c3.8u16g.3：RabbitMQ集群，vm规格8u16g，3个节点 - dms.instance.rabbitmq.cluster.c3.8u16g.5：RabbitMQ集群，vm规格8u16g，5个节点 - dms.instance.rabbitmq.cluster.c3.8u16g.7：RabbitMQ集群，vm规格8u16g，7个节点 - dms.instance.rabbitmq.cluster.c3.16u32g.3：RabbitMQ集群，vm规格16u32g，3个节点 - dms.instance.rabbitmq.cluster.c3.16u32g.5：RabbitMQ集群，vm规格16u32g，5个节点 - dms.instance.rabbitmq.cluster.c3.16u32g.7：RabbitMQ集群，vm规格16u32g，7个节点](tag:hws,hws_eu,hws_hk,ctc,g42,hk_g42,tm,hk_tm,sbc,ax,hk_sbc)
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {
@@ -1060,7 +1070,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * **参数解释**： 实例扩容磁盘次数，如果超过20次则无法扩容磁盘。 **取值范围**： 不涉及。
+     * **参数解释**： 实例扩容磁盘次数。 **取值范围**： 不涉及。
      * @return extendTimes
      */
     public Integer getExtendTimes() {
@@ -1356,6 +1366,40 @@ public class ShowInstanceResp {
         this.tags = tags;
     }
 
+    public ShowInstanceResp withServiceType(String serviceType) {
+        this.serviceType = serviceType;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 服务类型。 **取值范围**： advanced：服务类型。
+     * @return serviceType
+     */
+    public String getServiceType() {
+        return serviceType;
+    }
+
+    public void setServiceType(String serviceType) {
+        this.serviceType = serviceType;
+    }
+
+    public ShowInstanceResp withStorageType(String storageType) {
+        this.storageType = storageType;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 存储类型。 **取值范围**： hec：存储类型。
+     * @return storageType
+     */
+    public String getStorageType() {
+        return storageType;
+    }
+
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1405,7 +1449,8 @@ public class ShowInstanceResp {
             && Objects.equals(this.storageSpecCode, that.storageSpecCode)
             && Objects.equals(this.ipv6Enable, that.ipv6Enable)
             && Objects.equals(this.ipv6ConnectAddresses, that.ipv6ConnectAddresses)
-            && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.serviceType, that.serviceType)
+            && Objects.equals(this.storageType, that.storageType);
     }
 
     @Override
@@ -1460,7 +1505,9 @@ public class ShowInstanceResp {
             storageSpecCode,
             ipv6Enable,
             ipv6ConnectAddresses,
-            tags);
+            tags,
+            serviceType,
+            storageType);
     }
 
     @Override
@@ -1524,6 +1571,8 @@ public class ShowInstanceResp {
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("    ipv6ConnectAddresses: ").append(toIndentedString(ipv6ConnectAddresses)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
+        sb.append("    storageType: ").append(toIndentedString(storageType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

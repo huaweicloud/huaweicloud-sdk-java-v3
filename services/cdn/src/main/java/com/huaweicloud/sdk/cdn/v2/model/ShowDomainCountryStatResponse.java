@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -30,6 +33,11 @@ public class ShowDomainCountryStatResponse extends SdkResponse {
     @JsonProperty(value = "stat_type")
 
     private String statType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "result")
+
+    private Map<String, Object> result = null;
 
     public ShowDomainCountryStatResponse withAction(String action) {
         this.action = action;
@@ -99,6 +107,39 @@ public class ShowDomainCountryStatResponse extends SdkResponse {
         this.statType = statType;
     }
 
+    public ShowDomainCountryStatResponse withResult(Map<String, Object> result) {
+        this.result = result;
+        return this;
+    }
+
+    public ShowDomainCountryStatResponse putResultItem(String key, Object resultItem) {
+        if (this.result == null) {
+            this.result = new HashMap<>();
+        }
+        this.result.put(key, resultItem);
+        return this;
+    }
+
+    public ShowDomainCountryStatResponse withResult(Consumer<Map<String, Object>> resultSetter) {
+        if (this.result == null) {
+            this.result = new HashMap<>();
+        }
+        resultSetter.accept(this.result);
+        return this;
+    }
+
+    /**
+     * 按指定的分组方式组织的数据
+     * @return result
+     */
+    public Map<String, Object> getResult() {
+        return result;
+    }
+
+    public void setResult(Map<String, Object> result) {
+        this.result = result;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -109,12 +150,13 @@ public class ShowDomainCountryStatResponse extends SdkResponse {
         }
         ShowDomainCountryStatResponse that = (ShowDomainCountryStatResponse) obj;
         return Objects.equals(this.action, that.action) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.statType, that.statType);
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.statType, that.statType)
+            && Objects.equals(this.result, that.result);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(action, startTime, endTime, statType);
+        return Objects.hash(action, startTime, endTime, statType, result);
     }
 
     @Override
@@ -125,6 +167,7 @@ public class ShowDomainCountryStatResponse extends SdkResponse {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    statType: ").append(toIndentedString(statType)).append("\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("}");
         return sb.toString();
     }

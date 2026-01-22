@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.rocketmq.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -16,74 +11,10 @@ import java.util.function.Consumer;
  */
 public class SendDlqMessageRequest {
 
-    /**
-     * 消息引擎。
-     */
-    public static final class EngineEnum {
-
-        /**
-         * Enum RELIABILITY for value: "reliability"
-         */
-        public static final EngineEnum RELIABILITY = new EngineEnum("reliability");
-
-        private static final Map<String, EngineEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, EngineEnum> createStaticFields() {
-            Map<String, EngineEnum> map = new HashMap<>();
-            map.put("reliability", RELIABILITY);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        EngineEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static EngineEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineEnum(value));
-        }
-
-        public static EngineEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof EngineEnum) {
-                return this.value.equals(((EngineEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine")
 
-    private EngineEnum engine;
+    private String engine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
@@ -95,20 +26,20 @@ public class SendDlqMessageRequest {
 
     private DeadletterResendReq body;
 
-    public SendDlqMessageRequest withEngine(EngineEnum engine) {
+    public SendDlqMessageRequest withEngine(String engine) {
         this.engine = engine;
         return this;
     }
 
     /**
-     * 消息引擎。
+     * **参数解释**： 消息引擎。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return engine
      */
-    public EngineEnum getEngine() {
+    public String getEngine() {
         return engine;
     }
 
-    public void setEngine(EngineEnum engine) {
+    public void setEngine(String engine) {
         this.engine = engine;
     }
 
@@ -118,7 +49,7 @@ public class SendDlqMessageRequest {
     }
 
     /**
-     * 实例ID。
+     * **参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {

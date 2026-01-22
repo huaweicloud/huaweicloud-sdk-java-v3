@@ -36,7 +36,7 @@ public class ListEastWestFirewallRequest {
     }
 
     /**
-     * 每页显示个数，范围为1-1024
+     * **参数解释**： 每页显示个数 **约束限制**： 不涉及 **取值范围**： 1-1024 **默认取值**： 不涉及
      * @return limit
      */
     public Integer getLimit() {
@@ -53,7 +53,7 @@ public class ListEastWestFirewallRequest {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
+     * **参数解释**： 偏移量：指定返回记录的开始位置 **约束限制**： 必须为数字 **取值范围**： 大于或等于0 **默认取值**： 默认0
      * @return offset
      */
     public Integer getOffset() {
@@ -70,7 +70,7 @@ public class ListEastWestFirewallRequest {
     }
 
     /**
-     * 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
+     * **参数解释**： 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取 **约束限制**： 用户未开启企业项目时为0 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -87,7 +87,7 @@ public class ListEastWestFirewallRequest {
     }
 
     /**
-     * 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
+     * **参数解释**： 防火墙ID，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取 **约束限制**： 不涉及 **取值范围**： 32位UUID **默认取值**： 不涉及
      * @return fwInstanceId
      */
     public String getFwInstanceId() {

@@ -119,7 +119,7 @@ public class DnsIpResponse {
     }
 
     /**
-     * **参数解释**：ip对应的域名。  **约束限制**： - 如果ip为私网类型，则这里为负载均衡实例的私网域名 - 如果ip为公网类型，则这里为负载均衡实例的公网域名
+     * **参数解释**：ip对应的域名。  **约束限制**： - 如果ip为私网类型，则这里为负载均衡实例的私网域名。 - 如果ip为公网类型，则这里为负载均衡实例的公网域名。
      * @return domainName
      */
     public String getDomainName() {

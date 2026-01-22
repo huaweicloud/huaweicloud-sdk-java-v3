@@ -27,7 +27,7 @@ public class CreateTopicReqQueues {
     }
 
     /**
-     * 关联的代理。
+     * **参数解释**： 关联的代理。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return broker
      */
     public String getBroker() {
@@ -44,7 +44,7 @@ public class CreateTopicReqQueues {
     }
 
     /**
-     * 队列数，范围1~50。
+     * **参数解释**： 队列数。 **约束限制**： 不涉及。 **取值范围**： 1~50。 **默认取值**： 不涉及。
      * @return queueNum
      */
     public BigDecimal getQueueNum() {

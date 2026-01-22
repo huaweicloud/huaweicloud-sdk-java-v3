@@ -41,7 +41,7 @@ public class NodeContextEntity {
     }
 
     /**
-     * ID
+     * **参数解释**： ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -58,7 +58,7 @@ public class NodeContextEntity {
     }
 
     /**
-     * broker名称
+     * **参数解释**： broker名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return brokerName
      */
     public String getBrokerName() {
@@ -75,7 +75,7 @@ public class NodeContextEntity {
     }
 
     /**
-     * broker的ID
+     * **参数解释**： broker的ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return brokerId
      */
     public Integer getBrokerId() {
@@ -92,7 +92,7 @@ public class NodeContextEntity {
     }
 
     /**
-     * 地址
+     * **参数解释**： 地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return address
      */
     public String getAddress() {
@@ -109,7 +109,7 @@ public class NodeContextEntity {
     }
 
     /**
-     * 公网地址
+     * **参数解释**： 公网地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return publicAddress
      */
     public String getPublicAddress() {

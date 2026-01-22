@@ -16,7 +16,7 @@ import java.util.Objects;
 public class RocketMQConfigReq {
 
     /**
-     * RocketMQ配置名称。
+     * **参数解释**： RocketMQ配置名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      */
     public static final class NameEnum {
 
@@ -95,7 +95,7 @@ public class RocketMQConfigReq {
     }
 
     /**
-     * RocketMQ配置名称。
+     * **参数解释**： RocketMQ配置名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return name
      */
     public NameEnum getName() {
@@ -112,7 +112,7 @@ public class RocketMQConfigReq {
     }
 
     /**
-     * RocketMQ配置目标值。
+     * **参数解释**： RocketMQ配置目标值。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return value
      */
     public String getValue() {

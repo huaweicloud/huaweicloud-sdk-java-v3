@@ -19,6 +19,11 @@ public class ListLogsJobResponse extends SdkResponse {
 
     private List<ClusterLogRecord> clusterLogRecord = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "totalSize")
+
+    private Integer totalSize;
+
     public ListLogsJobResponse withClusterLogRecord(List<ClusterLogRecord> clusterLogRecord) {
         this.clusterLogRecord = clusterLogRecord;
         return this;
@@ -52,6 +57,23 @@ public class ListLogsJobResponse extends SdkResponse {
         this.clusterLogRecord = clusterLogRecord;
     }
 
+    public ListLogsJobResponse withTotalSize(Integer totalSize) {
+        this.totalSize = totalSize;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 日志记录总条数。 **取值范围**： 不涉及
+     * @return totalSize
+     */
+    public Integer getTotalSize() {
+        return totalSize;
+    }
+
+    public void setTotalSize(Integer totalSize) {
+        this.totalSize = totalSize;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +83,13 @@ public class ListLogsJobResponse extends SdkResponse {
             return false;
         }
         ListLogsJobResponse that = (ListLogsJobResponse) obj;
-        return Objects.equals(this.clusterLogRecord, that.clusterLogRecord);
+        return Objects.equals(this.clusterLogRecord, that.clusterLogRecord)
+            && Objects.equals(this.totalSize, that.totalSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterLogRecord);
+        return Objects.hash(clusterLogRecord, totalSize);
     }
 
     @Override
@@ -74,6 +97,7 @@ public class ListLogsJobResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListLogsJobResponse {\n");
         sb.append("    clusterLogRecord: ").append(toIndentedString(clusterLogRecord)).append("\n");
+        sb.append("    totalSize: ").append(toIndentedString(totalSize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

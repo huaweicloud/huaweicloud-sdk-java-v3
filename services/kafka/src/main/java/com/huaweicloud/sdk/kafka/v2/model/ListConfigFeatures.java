@@ -48,7 +48,7 @@ public class ListConfigFeatures {
     }
 
     /**
-     * **参数解释**： 状态。  **取值范围**： - 0：特性关闭。 - 1：特性开启。
+     * **参数解释**： 状态。  **取值范围**： - 1：特性开启。 - 0：特性关闭。
      * @return status
      */
     public Integer getStatus() {

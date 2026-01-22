@@ -149,7 +149,7 @@ public class ListPoolDesktopsDetailResponse extends SdkResponse {
     }
 
     /**
-     * 按需免费桌面总数。
+     * 按需免费镜像桌面总数。
      * @return onDemandFreeImageDesktopsNum
      */
     public Integer getOnDemandFreeImageDesktopsNum() {
@@ -166,7 +166,7 @@ public class ListPoolDesktopsDetailResponse extends SdkResponse {
     }
 
     /**
-     * 按需收费桌面总数。
+     * 按需收费镜像桌面总数。
      * @return onDemandChargeImageDesktopsNum
      */
     public Integer getOnDemandChargeImageDesktopsNum() {
@@ -183,7 +183,7 @@ public class ListPoolDesktopsDetailResponse extends SdkResponse {
     }
 
     /**
-     * 包周期免费桌面总数。
+     * 包周期免费镜像桌面总数。
      * @return periodFreeImageDesktopsNum
      */
     public Integer getPeriodFreeImageDesktopsNum() {
@@ -200,7 +200,7 @@ public class ListPoolDesktopsDetailResponse extends SdkResponse {
     }
 
     /**
-     * 包周期收费桌面总数。
+     * 包周期收费镜像桌面总数。
      * @return periodChargeImageDesktopsNum
      */
     public Integer getPeriodChargeImageDesktopsNum() {

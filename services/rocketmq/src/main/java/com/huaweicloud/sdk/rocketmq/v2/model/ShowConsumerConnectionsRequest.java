@@ -41,7 +41,7 @@ public class ShowConsumerConnectionsRequest {
     }
 
     /**
-     * 实例ID。
+     * **参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -58,7 +58,7 @@ public class ShowConsumerConnectionsRequest {
     }
 
     /**
-     * 消费组名称。
+     * **参数解释**： 消费组名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return group
      */
     public String getGroup() {
@@ -75,7 +75,7 @@ public class ShowConsumerConnectionsRequest {
     }
 
     /**
-     * 查询数量，取值范围为1~50。
+     * **参数解释**： 查询数量。 **约束限制**： 不涉及。 **取值范围**： 1~50。 **默认取值**： 不涉及。
      * @return limit
      */
     public Integer getLimit() {
@@ -92,7 +92,7 @@ public class ShowConsumerConnectionsRequest {
     }
 
     /**
-     * 偏移量，表示从此偏移量开始查询， offset大于等于0。
+     * **参数解释**： 偏移量，表示从此偏移量开始查询， offset大于等于0。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return offset
      */
     public Integer getOffset() {
@@ -109,7 +109,7 @@ public class ShowConsumerConnectionsRequest {
     }
 
     /**
-     * 是否查询消费者详细列表，参数为“true”则表示查询详细列表，否则表示查询简易列表。
+     * **参数解释**： 是否查询消费者详细列表，参数为“true”则表示查询详细列表，否则表示查询简易列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return isDetail
      */
     public Boolean getIsDetail() {

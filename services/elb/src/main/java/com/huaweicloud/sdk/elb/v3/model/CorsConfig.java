@@ -65,7 +65,7 @@ public class CorsConfig {
     }
 
     /**
-     * **参数解释**：允许的访问来源列表。支持只配置一个元素*，或配置一个或多个值。  **约束限制**： - 单个值必须以http://或者https://开头，后边加一个正确的域名或一级泛域名。（例：http://_*.test.abc.example.com） - 单个值可以不加端口，也可以指定端口，端口范围：1~65535。
+     * **参数解释**：允许的访问来源列表。  **取值范围**：单个列表项的取值 - 通配符（*），表示匹配所有来源。 - 除通配符外，其他值只能是以http://或者https://开头（小写），后面加域名。可以是具体域名或一级泛域名，可以包含端口或不包含端口。例：http://_*.test.abc.example.com:80
      * @return allowOrigin
      */
     public List<String> getAllowOrigin() {

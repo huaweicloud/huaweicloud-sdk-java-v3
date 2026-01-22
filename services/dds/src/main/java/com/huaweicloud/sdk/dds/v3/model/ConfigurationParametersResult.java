@@ -51,7 +51,7 @@ public class ConfigurationParametersResult {
     }
 
     /**
-     * 参数名称。
+     * **参数解释：** 参数名称。 **取值范围：** 不涉及。
      * @return name
      */
     public String getName() {
@@ -68,7 +68,7 @@ public class ConfigurationParametersResult {
     }
 
     /**
-     * 参数值。
+     * **参数解释：** 参数值。 **取值范围：** 不涉及。
      * @return value
      */
     public String getValue() {
@@ -85,7 +85,7 @@ public class ConfigurationParametersResult {
     }
 
     /**
-     * 参数描述。
+     * **参数解释：** 参数描述。 **取值范围：** 不涉及。
      * @return description
      */
     public String getDescription() {
@@ -102,7 +102,7 @@ public class ConfigurationParametersResult {
     }
 
     /**
-     * 参数类型，取值为“integer”，“string”，“boolean”，“float”或“list”。
+     * **参数解释：** 参数类型。 **取值范围：** - integer - string - boolean - float - list
      * @return type
      */
     public String getType() {
@@ -119,7 +119,7 @@ public class ConfigurationParametersResult {
     }
 
     /**
-     * 参数值范围，如integer取值0-1、boolean取值true|false等。
+     * **参数解释：** 参数值范围。 **取值范围：** - integer取值0-1。 - boolean取值true/false等。
      * @return valueRange
      */
     public String getValueRange() {
@@ -136,7 +136,7 @@ public class ConfigurationParametersResult {
     }
 
     /**
-     * 参数是否需要重启。 - 取值为“true”，需要重启。 - 取值为“false”，不需要重启。
+     * **参数解释：** 参数是否需要重启。 **取值范围：** - 取值为“true”，需要重启。 - 取值为“false”，不需要重启。
      * @return restartRequired
      */
     public Boolean getRestartRequired() {
@@ -153,7 +153,7 @@ public class ConfigurationParametersResult {
     }
 
     /**
-     * 是否只读。 - 取值为“false”，非只读参数。 - 取值为“true”，只读参数。
+     * **参数解释：** 是否只读 **取值范围：** - 取值为“true”，只读参数。 - 取值为“false”，非只读参数。
      * @return readonly
      */
     public Boolean getReadonly() {

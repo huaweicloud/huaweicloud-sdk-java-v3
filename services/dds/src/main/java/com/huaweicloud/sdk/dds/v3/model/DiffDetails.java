@@ -31,7 +31,7 @@ public class DiffDetails {
     }
 
     /**
-     * 参数名称
+     * **参数解释：** 参数名称。 **取值范围：** 不涉及。
      * @return parameterName
      */
     public String getParameterName() {
@@ -48,7 +48,7 @@ public class DiffDetails {
     }
 
     /**
-     * 比较参数模板的参数值。
+     * **参数解释：** 源参数模板中的参数值。 **取值范围：** 不涉及。
      * @return sourceValue
      */
     public String getSourceValue() {
@@ -65,7 +65,7 @@ public class DiffDetails {
     }
 
     /**
-     * 目标参数模板的参数值。
+     * **参数解释：** 目标参数模板中的参数值。 **取值范围：** 不涉及。
      * @return targetValue
      */
     public String getTargetValue() {

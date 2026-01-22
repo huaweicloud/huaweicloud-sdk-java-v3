@@ -26,7 +26,7 @@ public class CoveredIPVO {
     }
 
     /**
-     * ip地址
+     * IP地址
      * @return ip
      */
     public String getIp() {
@@ -43,7 +43,7 @@ public class CoveredIPVO {
     }
 
     /**
-     * 覆盖ip地址。
+     * 覆盖IP地址。
      * @return coveredIp
      */
     public String getCoveredIp() {

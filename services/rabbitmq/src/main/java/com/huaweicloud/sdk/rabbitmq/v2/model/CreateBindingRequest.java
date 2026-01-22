@@ -54,7 +54,7 @@ public class CreateBindingRequest {
     }
 
     /**
-     * Vhost名称
+     * vhost名称，名称中包含/时，需要将/替换为__F_SLASH__，否则会调用失败。例如：Vhost名称为/test，入参值为__F_SLASH__test。
      * @return vhost
      */
     public String getVhost() {

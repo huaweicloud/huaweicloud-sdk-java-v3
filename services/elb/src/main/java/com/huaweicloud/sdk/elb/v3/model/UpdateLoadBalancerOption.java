@@ -608,7 +608,7 @@ public class UpdateLoadBalancerOption {
     }
 
     /**
-     * **参数解释**：双栈类型负载均衡器的IPv6地址。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及 [不支持IPv6，请勿使用。](tag:dt)
+     * **参数解释**：双栈类型负载均衡器的IPv6地址。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  [不支持IPv6，请勿使用。](tag:dt)
      * @return ipv6VipAddress
      */
     public String getIpv6VipAddress() {

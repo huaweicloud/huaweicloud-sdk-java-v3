@@ -35,7 +35,7 @@ public class ShowTopicStatusResponse extends SdkResponse {
     }
 
     /**
-     * 最大偏移量。
+     * **参数解释**： 最大偏移量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return maxOffset
      */
     public Integer getMaxOffset() {
@@ -52,7 +52,7 @@ public class ShowTopicStatusResponse extends SdkResponse {
     }
 
     /**
-     * 最小偏移量。
+     * **参数解释**： 最小偏移量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return minOffset
      */
     public Integer getMinOffset() {
@@ -85,7 +85,7 @@ public class ShowTopicStatusResponse extends SdkResponse {
     }
 
     /**
-     * 代理。
+     * **参数解释**： 代理。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return brokers
      */
     public List<ShowTopicStatusRespBrokers> getBrokers() {

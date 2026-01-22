@@ -522,7 +522,12 @@ public class ShowInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cross_vpc_info")
 
-    private String crossVpcInfo;
+    private Object crossVpcInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_cross_vpc_info")
+
+    private Object publicCrossVpcInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_enable")
@@ -699,7 +704,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： Kafka的版本。 **取值范围**： [- 1.1.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,sbc,cmcc,ax) [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm,dt,sbc,cmcc) - 2.7 [- 3.x](tag:hws,hws_hk,dt,sbc,hcs,fcs,ctc,tm,hk_tm,hws_eu,ax)
+     * **参数解释**： Kafka的版本。 **取值范围**： [- 1.1.0](tag:hws,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,sbc,hk_sbc,cmcc,ax,srg) [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm,dt,cmcc,ocb,hws_ocb) - 2.7 [- 3.x](tag:hws,hws_hk,dt,sbc,hk_sbc,hcs,fcs,ctc,tm,hk_tm,hws_eu,ax,cmcc,srg)
      * @return engineVersion
      */
     public String getEngineVersion() {
@@ -750,7 +755,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 消息存储空间，单位：GB。 **取值范围**： [- Kafka实例规格为c6.2u4g.cluster时，存储空间取值范围300GB ~ 300000GB。 - Kafka实例规格为c6.4u8g.cluster时，存储空间取值范围300GB ~ 600000GB。 - Kafka实例规格为c6.8u16g.cluster时，存储空间取值范围300GB ~ 1500000GB。 - Kafka实例规格为c6.12u24g.cluster时，存储空间取值范围300GB ~ 1500000GB。 - Kafka实例规格为c6.16u32g.cluster时，存储空间取值范围300GB ~ 1500000GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,ax) [- Kafka实例规格为kafka.2u4g.cluster.small时，存储空间取值范围300GB~300000GB。](tag:hws,hws_hk,hws_eu,dt,ax) [- Kafka实例规格为kafka.2u8g.cluster时，存储空间取值范围300GB~300000GB。](tag:fcs) [- Kafka实例规格为kafka.4u16g.cluster时，存储空间取值范围300GB~600000GB。 - Kafka实例规格为kafka.8u32g.cluster时，存储空间取值范围300GB~1500000GB。 - Kafka实例规格为kafka.16u64g.cluster时，存储空间取值范围300GB~1500000GB。 - Kafka实例规格为kafka.32u128g.cluster时，存储空间取值范围300GB~1500000GB。](tag:hcs,fcs)
+     * **参数解释**： 消息存储空间，单位：GB。 **取值范围**： [- Kafka实例规格为c6.2u4g.cluster时，存储空间取值范围300GB ~ 300000GB。 - Kafka实例规格为c6.4u8g.cluster时，存储空间取值范围300GB ~ 600000GB。 - Kafka实例规格为c6.8u16g.cluster时，存储空间取值范围300GB ~ 1500000GB。 - Kafka实例规格为c6.12u24g.cluster时，存储空间取值范围300GB ~ 1500000GB。 - Kafka实例规格为c6.16u32g.cluster时，存储空间取值范围300GB ~ 1500000GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,ax,cmcc,sbc,hk_sbc,srg) [- Kafka实例规格为kafka.2u4g.cluster.small时，存储空间取值范围300GB~300000GB。](tag:hws,hws_hk,hws_eu,dt,ax) [- Kafka实例规格为kafka.2u8g.cluster时，存储空间取值范围300GB~300000GB。](tag:fcs) [- Kafka实例规格为kafka.4u16g.cluster时，存储空间取值范围300GB~600000GB。 - Kafka实例规格为kafka.8u32g.cluster时，存储空间取值范围300GB~1500000GB。 - Kafka实例规格为kafka.16u64g.cluster时，存储空间取值范围300GB~1500000GB。 - Kafka实例规格为kafka.32u128g.cluster时，存储空间取值范围300GB~1500000GB。](tag:hcs,fcs)
      * @return storageSpace
      */
     public Integer getStorageSpace() {
@@ -903,7 +908,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 付费模式。 **取值范围**： [- 1表示按需计费。 - 0表示包年/包月计费。](tag:hws,hws_hk,ctc,cmcc,ax)[付费模式，暂未使用。](tag:hws_ocb,ocb) [- 1表示按需计费。](tag:dt,g42,tm,hk_g42,hk_tm,hcs,fcs,sbc,hk_sbc,hws_eu)
+     * **参数解释**： 付费模式。 **取值范围**： [- 1表示按需计费。 - 0表示包年/包月计费。](tag:hws,hws_hk,ctc,cmcc,ax,hws_eu)[付费模式，暂未使用。](tag:hws_ocb,ocb) [- 1表示按需计费。](tag:dt,g42,tm,hk_g42,hk_tm,hcs,fcs,sbc,hk_sbc)
      * @return chargingMode
      */
     public Integer getChargingMode() {
@@ -1175,7 +1180,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： Kafka使用的安全协议。 若实例详情中不存在port_protocols返回参数，则kafka_security_protocol同时代表内网访问、公网访问以及跨VPC访问的安全协议。 若实例详情中存在port_protocols返回参数，则kafka_security_protocol仅代表跨VPC访问的安全协议。内网访问公网访问的安全协议请参考port_protocols参数。 **取值范围**： - PLAINTEXT：既未采用SSL证书进行加密传输，也不支持账号密码认证。性能更好，安全性较低，建议在生产环境下公网访问不使用此方式。 - SASL_SSL：采用SSL证书进行加密传输，支持账号密码认证，安全性更高。 - SASL_PLAINTEXT：明文传输，支持账号密码认证，性能更好，建议使用SCRAM-SHA-512机制。
+     * **参数解释**： Kafka使用的安全协议。 若实例详情中不存在port_protocols返回参数，则kafka_security_protocol同时代表内网访问、公网访问以及跨VPC访问的安全协议。 若实例详情中存在port_protocols返回参数，则kafka_security_protocol仅代表跨VPC访问的安全协议。内网访问公网访问的安全协议请参考port_protocols参数。 **取值范围**： - PLAINTEXT：既未采用SSL证书进行加密传输，也不支持账号密码认证。性能更好，安全性较低，建议在生产环境下公网访问不使用此方式。 - SASL_SSL：采用SSL证书进行加密传输，支持账号密码认证，安全性更高。 [- SASL_PLAINTEXT：明文传输，支持账号密码认证，性能更好，建议使用SCRAM-SHA-512机制。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,ax)
      * @return kafkaSecurityProtocol
      */
     public String getKafkaSecurityProtocol() {
@@ -1226,7 +1231,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 是否开启双向认证。 **取值范围**： - true：开启 - false：未开启
+     * **参数解释**： 是否开启双向认证。[华为云Stack不支持此参数。](tag:hcs) **取值范围**： - true：开启 - false：未开启
      * @return sslTwoWayEnable
      */
     public Boolean getSslTwoWayEnable() {
@@ -1243,7 +1248,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 是否开启证书替换。 **取值范围**： - true：开启 - false：未开启
+     * **参数解释**： 是否开启证书替换。[华为云Stack不支持此参数。](tag:hcs) **取值范围**： - true：开启 - false：未开启
      * @return certReplaced
      */
     public Boolean getCertReplaced() {
@@ -1260,7 +1265,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 公网访问Kafka Manager连接地址。 **取值范围**： 不涉及。
+     * **参数解释**： 公网访问Kafka Manager连接地址。[华为云Stack不支持此参数。](tag:hcs) **取值范围**： 不涉及。
      * @return publicManagementConnectAddress
      */
     public String getPublicManagementConnectAddress() {
@@ -1581,7 +1586,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 服务类型。 **取值范围**： advanced。
+     * **参数解释**： 服务类型。 **取值范围**： advanced：服务类型。
      * @return serviceType
      */
     public String getServiceType() {
@@ -1598,7 +1603,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 存储类型。 **取值范围**： hec
+     * **参数解释**： 存储类型。 **取值范围**： hec：存储类型。
      * @return storageType
      */
     public String getStorageType() {
@@ -1694,7 +1699,7 @@ public class ShowInstanceResponse extends SdkResponse {
         this.newAuthCert = newAuthCert;
     }
 
-    public ShowInstanceResponse withCrossVpcInfo(String crossVpcInfo) {
+    public ShowInstanceResponse withCrossVpcInfo(Object crossVpcInfo) {
         this.crossVpcInfo = crossVpcInfo;
         return this;
     }
@@ -1703,12 +1708,29 @@ public class ShowInstanceResponse extends SdkResponse {
      * **参数解释**： 跨VPC访问信息。 **取值范围**： 不涉及。
      * @return crossVpcInfo
      */
-    public String getCrossVpcInfo() {
+    public Object getCrossVpcInfo() {
         return crossVpcInfo;
     }
 
-    public void setCrossVpcInfo(String crossVpcInfo) {
+    public void setCrossVpcInfo(Object crossVpcInfo) {
         this.crossVpcInfo = crossVpcInfo;
+    }
+
+    public ShowInstanceResponse withPublicCrossVpcInfo(Object publicCrossVpcInfo) {
+        this.publicCrossVpcInfo = publicCrossVpcInfo;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 公网跨VPC访问信息。 **取值范围**： 不涉及。
+     * @return publicCrossVpcInfo
+     */
+    public Object getPublicCrossVpcInfo() {
+        return publicCrossVpcInfo;
+    }
+
+    public void setPublicCrossVpcInfo(Object publicCrossVpcInfo) {
+        this.publicCrossVpcInfo = publicCrossVpcInfo;
     }
 
     public ShowInstanceResponse withIpv6Enable(Boolean ipv6Enable) {
@@ -2073,7 +2095,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 节点数。 **取值范围**： - [1：Kafka单机实例的节点数。](tag:hws,hws_hk,hws_eu,dt,hcs,ax) - 3~50：Kafka集群实例的节点数。
+     * **参数解释**： 节点数。 **取值范围**： [- 1：Kafka单机实例的节点数。](tag:hws,hws_hk,hws_eu,dt,hcs,ax) - 3~50：Kafka集群实例的节点数。
      * @return nodeNum
      */
     public Integer getNodeNum() {
@@ -2267,7 +2289,9 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.publicBandwidth, that.publicBandwidth)
             && Objects.equals(this.enableLogCollection, that.enableLogCollection)
             && Objects.equals(this.newAuthCert, that.newAuthCert)
-            && Objects.equals(this.crossVpcInfo, that.crossVpcInfo) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.crossVpcInfo, that.crossVpcInfo)
+            && Objects.equals(this.publicCrossVpcInfo, that.publicCrossVpcInfo)
+            && Objects.equals(this.ipv6Enable, that.ipv6Enable)
             && Objects.equals(this.ipv6ConnectAddresses, that.ipv6ConnectAddresses)
             && Objects.equals(this.connectorEnable, that.connectorEnable)
             && Objects.equals(this.connectorNodeNum, that.connectorNodeNum)
@@ -2353,6 +2377,7 @@ public class ShowInstanceResponse extends SdkResponse {
             enableLogCollection,
             newAuthCert,
             crossVpcInfo,
+            publicCrossVpcInfo,
             ipv6Enable,
             ipv6ConnectAddresses,
             connectorEnable,
@@ -2447,6 +2472,7 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    enableLogCollection: ").append(toIndentedString(enableLogCollection)).append("\n");
         sb.append("    newAuthCert: ").append(toIndentedString(newAuthCert)).append("\n");
         sb.append("    crossVpcInfo: ").append(toIndentedString(crossVpcInfo)).append("\n");
+        sb.append("    publicCrossVpcInfo: ").append(toIndentedString(publicCrossVpcInfo)).append("\n");
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("    ipv6ConnectAddresses: ").append(toIndentedString(ipv6ConnectAddresses)).append("\n");
         sb.append("    connectorEnable: ").append(toIndentedString(connectorEnable)).append("\n");

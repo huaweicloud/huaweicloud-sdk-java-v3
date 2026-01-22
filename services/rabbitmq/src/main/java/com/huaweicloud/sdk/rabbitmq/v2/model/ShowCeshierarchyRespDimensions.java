@@ -44,7 +44,7 @@ public class ShowCeshierarchyRespDimensions {
     }
 
     /**
-     * 监控维度名称。
+     * **参数解释**： 监控维度名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -77,7 +77,7 @@ public class ShowCeshierarchyRespDimensions {
     }
 
     /**
-     * 监控指标名称。
+     * **参数解释**： 监控指标名称。
      * @return metrics
      */
     public List<String> getMetrics() {
@@ -110,7 +110,7 @@ public class ShowCeshierarchyRespDimensions {
     }
 
     /**
-     * 监控查询使用的key。
+     * **参数解释**： 监控查询使用的key。
      * @return keyName
      */
     public List<String> getKeyName() {
@@ -143,7 +143,7 @@ public class ShowCeshierarchyRespDimensions {
     }
 
     /**
-     * 监控维度路由。
+     * **参数解释**： 监控维度路由。
      * @return dimRouter
      */
     public List<String> getDimRouter() {
@@ -176,7 +176,7 @@ public class ShowCeshierarchyRespDimensions {
     }
 
     /**
-     * 子维度列表。
+     * **参数解释**： 子维度列表。
      * @return children
      */
     public List<ShowCeshierarchyRespChildren> getChildren() {

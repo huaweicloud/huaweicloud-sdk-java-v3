@@ -31,9 +31,9 @@ public class DiagnosisReportResp {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "creat_at")
+    @JsonProperty(value = "created_at")
 
-    private Long creatAt;
+    private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "abnormal_item_sum")
@@ -51,7 +51,7 @@ public class DiagnosisReportResp {
     }
 
     /**
-     * **参数解释**： 报告ID。 **取值范围**： 不涉及。
+     * **参数解释**： 报告ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return reportId
      */
     public String getReportId() {
@@ -68,7 +68,7 @@ public class DiagnosisReportResp {
     }
 
     /**
-     * **参数解释**： 消费组名称。 **取值范围**： 不涉及。
+     * **参数解释**： 消费组名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return groupName
      */
     public String getGroupName() {
@@ -85,7 +85,7 @@ public class DiagnosisReportResp {
     }
 
     /**
-     * **参数解释**： 消费者数量。 **取值范围**： 不涉及。
+     * **参数解释**： 消费者数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return consumerNums
      */
     public Integer getConsumerNums() {
@@ -102,7 +102,7 @@ public class DiagnosisReportResp {
     }
 
     /**
-     * **参数解释**： 状态。 **取值范围**： 不涉及。
+     * **参数解释**： 状态。 **约束限制**： 不涉及。 **取值范围**： - diagnosing：诊断中。 - failed：诊断失败。 - deleted：手动删除。 - finished：诊断完成。 - normal：诊断结果正常。 - abnormal：诊断结果异常。 **默认取值**： 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -113,21 +113,21 @@ public class DiagnosisReportResp {
         this.status = status;
     }
 
-    public DiagnosisReportResp withCreatAt(Long creatAt) {
-        this.creatAt = creatAt;
+    public DiagnosisReportResp withCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
         return this;
     }
 
     /**
-     * **参数解释**： 生成时间。 **取值范围**： 不涉及。
-     * @return creatAt
+     * **参数解释**： 创建时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return createdAt
      */
-    public Long getCreatAt() {
-        return creatAt;
+    public String getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreatAt(Long creatAt) {
-        this.creatAt = creatAt;
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 
     public DiagnosisReportResp withAbnormalItemSum(Integer abnormalItemSum) {
@@ -136,7 +136,7 @@ public class DiagnosisReportResp {
     }
 
     /**
-     * **参数解释**： 异常项数量。 **取值范围**： 不涉及。
+     * **参数解释**： 异常项数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return abnormalItemSum
      */
     public Integer getAbnormalItemSum() {
@@ -153,7 +153,7 @@ public class DiagnosisReportResp {
     }
 
     /**
-     * **参数解释**： 异常节点数量。 **取值范围**： 不涉及。
+     * **参数解释**： 异常节点数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return faultedNodeSum
      */
     public Integer getFaultedNodeSum() {
@@ -175,13 +175,14 @@ public class DiagnosisReportResp {
         DiagnosisReportResp that = (DiagnosisReportResp) obj;
         return Objects.equals(this.reportId, that.reportId) && Objects.equals(this.groupName, that.groupName)
             && Objects.equals(this.consumerNums, that.consumerNums) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.creatAt, that.creatAt) && Objects.equals(this.abnormalItemSum, that.abnormalItemSum)
+            && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.abnormalItemSum, that.abnormalItemSum)
             && Objects.equals(this.faultedNodeSum, that.faultedNodeSum);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(reportId, groupName, consumerNums, status, creatAt, abnormalItemSum, faultedNodeSum);
+        return Objects.hash(reportId, groupName, consumerNums, status, createdAt, abnormalItemSum, faultedNodeSum);
     }
 
     @Override
@@ -192,7 +193,7 @@ public class DiagnosisReportResp {
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    consumerNums: ").append(toIndentedString(consumerNums)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    creatAt: ").append(toIndentedString(creatAt)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    abnormalItemSum: ").append(toIndentedString(abnormalItemSum)).append("\n");
         sb.append("    faultedNodeSum: ").append(toIndentedString(faultedNodeSum)).append("\n");
         sb.append("}");

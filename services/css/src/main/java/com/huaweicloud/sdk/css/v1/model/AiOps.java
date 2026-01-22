@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.css.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -42,6 +43,11 @@ public class AiOps {
     @JsonProperty(value = "status")
 
     private Integer status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private LocalDate createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "summary")
@@ -155,6 +161,23 @@ public class AiOps {
         this.status = status;
     }
 
+    public AiOps withCreateTime(LocalDate createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 集群风险检测任务创建时间。 **取值范围**： 格式：Unix时间戳格式。
+     * @return createTime
+     */
+    public LocalDate getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(LocalDate createTime) {
+        this.createTime = createTime;
+    }
+
     public AiOps withSummary(SummaryInfo summary) {
         this.summary = summary;
         return this;
@@ -226,12 +249,13 @@ public class AiOps {
         return Objects.equals(this.id, that.id) && Objects.equals(this.checkType, that.checkType)
             && Objects.equals(this.triggerType, that.triggerType) && Objects.equals(this.name, that.name)
             && Objects.equals(this.desc, that.desc) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.summary, that.summary) && Objects.equals(this.taskRisks, that.taskRisks);
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.summary, that.summary)
+            && Objects.equals(this.taskRisks, that.taskRisks);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, checkType, triggerType, name, desc, status, summary, taskRisks);
+        return Objects.hash(id, checkType, triggerType, name, desc, status, createTime, summary, taskRisks);
     }
 
     @Override
@@ -244,6 +268,7 @@ public class AiOps {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    desc: ").append(toIndentedString(desc)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
         sb.append("    taskRisks: ").append(toIndentedString(taskRisks)).append("\n");
         sb.append("}");

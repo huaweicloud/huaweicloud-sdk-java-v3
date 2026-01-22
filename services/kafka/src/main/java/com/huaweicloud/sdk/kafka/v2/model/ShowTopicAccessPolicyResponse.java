@@ -52,7 +52,7 @@ public class ShowTopicAccessPolicyResponse extends SdkResponse {
     }
 
     /**
-     * Topic类型。
+     * **参数解释**： Topic类型。 **取值范围**： - 0：普通Topic。 - 1：系统(内部)Topic。
      * @return topicType
      */
     public Integer getTopicType() {

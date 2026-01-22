@@ -41,7 +41,7 @@ public class ShowIpsUpdateTimeResponse extends SdkResponse {
     }
 
     /**
-     * Get data
+     * 查询ips规则细节时间数据
      * @return data
      */
     public List<IpsRuleUpdateTimeVO> getData() {

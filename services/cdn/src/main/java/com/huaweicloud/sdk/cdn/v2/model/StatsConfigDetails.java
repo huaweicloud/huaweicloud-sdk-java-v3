@@ -31,11 +31,6 @@ public class StatsConfigDetails {
 
     private ConfigInfo configInfo;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "expired_time")
-
-    private Long expiredTime;
-
     public StatsConfigDetails withConfigType(Integer configType) {
         this.configType = configType;
         return this;
@@ -115,25 +110,6 @@ public class StatsConfigDetails {
         this.configInfo = configInfo;
     }
 
-    public StatsConfigDetails withExpiredTime(Long expiredTime) {
-        this.expiredTime = expiredTime;
-        return this;
-    }
-
-    /**
-     * 统计配置失效时间，秒时间戳
-     * minimum: 0
-     * maximum: 4102416000
-     * @return expiredTime
-     */
-    public Long getExpiredTime() {
-        return expiredTime;
-    }
-
-    public void setExpiredTime(Long expiredTime) {
-        this.expiredTime = expiredTime;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -144,13 +120,12 @@ public class StatsConfigDetails {
         }
         StatsConfigDetails that = (StatsConfigDetails) obj;
         return Objects.equals(this.configType, that.configType) && Objects.equals(this.resourceType, that.resourceType)
-            && Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.configInfo, that.configInfo)
-            && Objects.equals(this.expiredTime, that.expiredTime);
+            && Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.configInfo, that.configInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(configType, resourceType, resourceName, configInfo, expiredTime);
+        return Objects.hash(configType, resourceType, resourceName, configInfo);
     }
 
     @Override
@@ -161,7 +136,6 @@ public class StatsConfigDetails {
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("    configInfo: ").append(toIndentedString(configInfo)).append("\n");
-        sb.append("    expiredTime: ").append(toIndentedString(expiredTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

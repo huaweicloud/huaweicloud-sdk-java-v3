@@ -27,7 +27,7 @@ public class CreateTopicOrBatchDeleteTopicResponse extends SdkResponse {
     }
 
     /**
-     * 主题名称。
+     * **参数解释**： 主题名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -44,7 +44,7 @@ public class CreateTopicOrBatchDeleteTopicResponse extends SdkResponse {
     }
 
     /**
-     * 删除主题任务ID。
+     * **参数解释**： 删除主题任务ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return jobId
      */
     public String getJobId() {

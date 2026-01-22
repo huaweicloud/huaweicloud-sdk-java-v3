@@ -81,7 +81,7 @@ public class ListEipsRequest {
     }
 
     /**
-     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。此处仅取type为0的防护对象id，可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得。
+     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，type为0时，object_id为互联网边界防护对象ID，type为1时，object_id为VPC边界防护对象ID。此处仅取type为0的防护对象id，可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得。
      * @return objectId
      */
     public String getObjectId() {
@@ -200,7 +200,7 @@ public class ListEipsRequest {
     }
 
     /**
-     * 设备关键字，是eip绑定的资产的名称或id
+     * 设备关键字，是eip绑定的资产的名称或id，可通过EIP服务的查询弹性公网IP列表接口获取，通过返回值中的publicips.id（.表示各对象之间层级的区分）获得
      * @return deviceKey
      */
     public String getDeviceKey() {
@@ -234,7 +234,7 @@ public class ListEipsRequest {
     }
 
     /**
-     * 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
+     * 防火墙ID，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
      * @return fwInstanceId
      */
     public String getFwInstanceId() {
@@ -251,7 +251,7 @@ public class ListEipsRequest {
     }
 
     /**
-     * 防火墙关键字，可使用防火墙id或名称查询，可通过[防火墙ID获取方式](cfw_02_0028.xml)
+     * 防火墙关键字，可使用防火墙ID或名称查询，可通过[防火墙ID获取方式](cfw_02_0028.xml)
      * @return fwKeyWord
      */
     public String getFwKeyWord() {

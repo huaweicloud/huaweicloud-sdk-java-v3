@@ -39,7 +39,7 @@ public class ConsumerDetailResp {
     }
 
     /**
-     * **参数解释**： 消费堆积总数。 **取值范围**： 不涉及。
+     * **参数解释**： 消费堆积总数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return lag
      */
     public Long getLag() {
@@ -56,7 +56,7 @@ public class ConsumerDetailResp {
     }
 
     /**
-     * **参数解释**： 消息总数。 **取值范围**： 不涉及。
+     * **参数解释**： 消息总数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return maxOffset
      */
     public Long getMaxOffset() {
@@ -73,7 +73,7 @@ public class ConsumerDetailResp {
     }
 
     /**
-     * **参数解释**： 已消费消息数。 **取值范围**： 不涉及。
+     * **参数解释**： 已消费消息数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return consumerOffset
      */
     public Long getConsumerOffset() {
@@ -106,7 +106,7 @@ public class ConsumerDetailResp {
     }
 
     /**
-     * **参数解释**： Topic关联代理（当查询Topic消费“详情”才显示此参数）。
+     * **参数解释**： Topic关联代理（当查询Topic消费“详情”才显示此参数）。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return brokers
      */
     public List<Brokers> getBrokers() {

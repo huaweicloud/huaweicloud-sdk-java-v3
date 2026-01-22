@@ -16,9 +16,9 @@ public class ListBackgroundTasksRequest {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "start")
+    @JsonProperty(value = "offset")
 
-    private Integer start;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -41,7 +41,7 @@ public class ListBackgroundTasksRequest {
     }
 
     /**
-     * **参数解释**： 实例ID。获取方法如下：登录RocketMQ控制台，在RocketMQ实例详情页面查找实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -52,21 +52,21 @@ public class ListBackgroundTasksRequest {
         this.instanceId = instanceId;
     }
 
-    public ListBackgroundTasksRequest withStart(Integer start) {
-        this.start = start;
+    public ListBackgroundTasksRequest withOffset(Integer offset) {
+        this.offset = offset;
         return this;
     }
 
     /**
      * **参数解释**： 开启查询的任务编号。 **约束限制**： 不涉及。 **取值范围**： 大于等于0。 **默认取值**： 不涉及。
-     * @return start
+     * @return offset
      */
-    public Integer getStart() {
-        return start;
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setStart(Integer start) {
-        this.start = start;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     public ListBackgroundTasksRequest withLimit(Integer limit) {
@@ -129,14 +129,14 @@ public class ListBackgroundTasksRequest {
             return false;
         }
         ListBackgroundTasksRequest that = (ListBackgroundTasksRequest) obj;
-        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.start, that.start)
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.beginTime, that.beginTime)
             && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, start, limit, beginTime, endTime);
+        return Objects.hash(instanceId, offset, limit, beginTime, endTime);
     }
 
     @Override
@@ -144,7 +144,7 @@ public class ListBackgroundTasksRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListBackgroundTasksRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    start: ").append(toIndentedString(start)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");

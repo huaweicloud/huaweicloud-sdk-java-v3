@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 支持的特性功能。
+ * **参数解释**： 支持的特性功能。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
  */
 public class RocketMQProductSupportFeaturesEntity {
 
@@ -29,7 +29,7 @@ public class RocketMQProductSupportFeaturesEntity {
     }
 
     /**
-     * 特性名称。
+     * **参数解释**： 特性名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -62,7 +62,7 @@ public class RocketMQProductSupportFeaturesEntity {
     }
 
     /**
-     * 功能特性的键值对。
+     * **参数解释**： 功能特性的键值对。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return properties
      */
     public Map<String, String> getProperties() {

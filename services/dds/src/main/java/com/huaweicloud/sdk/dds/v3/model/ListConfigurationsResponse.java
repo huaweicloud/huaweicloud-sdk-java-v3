@@ -30,7 +30,7 @@ public class ListConfigurationsResponse extends SdkResponse {
     }
 
     /**
-     * 总记录数。
+     * **参数解释：** 总记录数。 **取值范围：** 不涉及。
      * @return totalCount
      */
     public Integer getTotalCount() {
@@ -64,7 +64,7 @@ public class ListConfigurationsResponse extends SdkResponse {
     }
 
     /**
-     * 参数模板列表。
+     * **参数解释：** 参数模板列表。 **取值范围：** 不涉及。
      * @return configurations
      */
     public List<ListConfigurationsResult> getConfigurations() {

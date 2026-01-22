@@ -35,7 +35,7 @@ public class Topic {
     private BigDecimal totalWriteQueueNum;
 
     /**
-     * **参数解释**： 权限。 **取值范围**： - sub：拥有订阅权限。 - pub：拥有发布权限。 - all：拥有发布、订阅权限。
+     * **参数解释**： 权限。 **约束限制**： 不涉及。 **取值范围**： - sub：拥有订阅权限。 - pub：拥有发布权限。 - all：拥有发布、订阅权限。       **默认取值**： 不涉及。
      */
     public static final class PermissionEnum {
 
@@ -121,7 +121,7 @@ public class Topic {
     private List<TopicBrokers> brokers = null;
 
     /**
-     * **参数解释**： 消息类型（RocketMQ实例5.x版本才包含此参数）。 **取值范围**： - NORMAL：普通消息。 - FIFO：顺序消息。 - DELAY：定时消息。 - TRANSACTION：事务消息。
+     * **参数解释**： 消息类型（RocketMQ实例5.x版本才包含此参数）。 **约束限制**： 不涉及。 **取值范围**： - NORMAL：普通消息。 - FIFO：顺序消息。 - DELAY：定时消息。 - TRANSACTION：事务消息。 **默认取值**： 不涉及。
      */
     public static final class MessageTypeEnum {
 
@@ -213,7 +213,7 @@ public class Topic {
     }
 
     /**
-     * **参数解释**： Topic名称。 **取值范围**： 不涉及。
+     * **参数解释**： Topic名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -230,7 +230,7 @@ public class Topic {
     }
 
     /**
-     * **参数解释**： 总读队列个数。 **取值范围**： 不涉及。
+     * **参数解释**： 总读队列个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return totalReadQueueNum
      */
     public BigDecimal getTotalReadQueueNum() {
@@ -247,7 +247,7 @@ public class Topic {
     }
 
     /**
-     * **参数解释**： 总写队列个数。 **取值范围**： 不涉及。
+     * **参数解释**： 总写队列个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return totalWriteQueueNum
      */
     public BigDecimal getTotalWriteQueueNum() {
@@ -264,7 +264,7 @@ public class Topic {
     }
 
     /**
-     * **参数解释**： 权限。 **取值范围**： - sub：拥有订阅权限。 - pub：拥有发布权限。 - all：拥有发布、订阅权限。
+     * **参数解释**： 权限。 **约束限制**： 不涉及。 **取值范围**： - sub：拥有订阅权限。 - pub：拥有发布权限。 - all：拥有发布、订阅权限。       **默认取值**： 不涉及。
      * @return permission
      */
     public PermissionEnum getPermission() {
@@ -297,7 +297,7 @@ public class Topic {
     }
 
     /**
-     * 关联的代理。
+     * **参数解释**： 关联的代理。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return brokers
      */
     public List<TopicBrokers> getBrokers() {
@@ -314,7 +314,7 @@ public class Topic {
     }
 
     /**
-     * **参数解释**： 消息类型（RocketMQ实例5.x版本才包含此参数）。 **取值范围**： - NORMAL：普通消息。 - FIFO：顺序消息。 - DELAY：定时消息。 - TRANSACTION：事务消息。
+     * **参数解释**： 消息类型（RocketMQ实例5.x版本才包含此参数）。 **约束限制**： 不涉及。 **取值范围**： - NORMAL：普通消息。 - FIFO：顺序消息。 - DELAY：定时消息。 - TRANSACTION：事务消息。 **默认取值**： 不涉及。
      * @return messageType
      */
     public MessageTypeEnum getMessageType() {

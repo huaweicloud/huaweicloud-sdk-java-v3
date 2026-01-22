@@ -6,47 +6,47 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * RocketMQ元数据迁移，RocketMQ消费组元数据。
+ * **参数解释**： RocketMQ元数据迁移，RocketMQ消费组元数据。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
  */
 public class MigrationRocketMqSubscriptionGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "groupName")
+    @JsonProperty(value = "group_name")
 
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "consumeBroadcastEnable")
+    @JsonProperty(value = "consume_broadcast_enable")
 
     private Boolean consumeBroadcastEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "consumeEnable")
+    @JsonProperty(value = "consume_enable")
 
     private Boolean consumeEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "consumeFromMinEnable")
+    @JsonProperty(value = "consume_from_min_enable")
 
     private Boolean consumeFromMinEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "notifyConsumerIdsChangedEnable")
+    @JsonProperty(value = "notify_consumer_ids_changed_enable")
 
     private Boolean notifyConsumerIdsChangedEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "retryMaxTimes")
+    @JsonProperty(value = "retry_max_times")
 
     private Integer retryMaxTimes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "retryQueueNums")
+    @JsonProperty(value = "retry_queue_nums")
 
     private Integer retryQueueNums;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "whichBrokerWhenConsumeSlow")
+    @JsonProperty(value = "which_broker_when_consume_slow")
 
     private Long whichBrokerWhenConsumeSlow;
 
@@ -56,7 +56,7 @@ public class MigrationRocketMqSubscriptionGroup {
     }
 
     /**
-     * 消费组名。
+     * **参数解释**： 消费组名。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return groupName
      */
     public String getGroupName() {
@@ -73,7 +73,7 @@ public class MigrationRocketMqSubscriptionGroup {
     }
 
     /**
-     * 是否允许以广播模式消费。
+     * **参数解释**： 是否允许以广播模式消费。 **约束限制**： 不涉及。 **取值范围**： - true：允许以广播模式消费。 - false：不允许以广播模式消费。 **默认取值**： 不涉及。
      * @return consumeBroadcastEnable
      */
     public Boolean getConsumeBroadcastEnable() {
@@ -90,7 +90,7 @@ public class MigrationRocketMqSubscriptionGroup {
     }
 
     /**
-     * 是否允许消费。
+     * **参数解释**： 是否允许消费。 **约束限制**： 不涉及。 **取值范围**： - true：允许消费。 - false：不允许消费。 **默认取值**： true。
      * @return consumeEnable
      */
     public Boolean getConsumeEnable() {
@@ -107,7 +107,7 @@ public class MigrationRocketMqSubscriptionGroup {
     }
 
     /**
-     * 是否从最小偏移量开始消费。
+     * **参数解释**： 是否从最小偏移量开始消费。 **约束限制**： 不涉及。 **取值范围**： - true：是。 - false：不是。 **默认取值**： true。
      * @return consumeFromMinEnable
      */
     public Boolean getConsumeFromMinEnable() {
@@ -125,7 +125,7 @@ public class MigrationRocketMqSubscriptionGroup {
     }
 
     /**
-     * 消费者ID变化时是否通知。
+     * **参数解释**： 消费者ID变化时是否通知。 **约束限制**： 不涉及。 **取值范围**： - true：是。 - false：不是。 **默认取值**： true。
      * @return notifyConsumerIdsChangedEnable
      */
     public Boolean getNotifyConsumerIdsChangedEnable() {
@@ -142,7 +142,7 @@ public class MigrationRocketMqSubscriptionGroup {
     }
 
     /**
-     * 消费最大重试次数。
+     * **参数解释**： 消费最大重试次数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 16。
      * @return retryMaxTimes
      */
     public Integer getRetryMaxTimes() {
@@ -159,7 +159,7 @@ public class MigrationRocketMqSubscriptionGroup {
     }
 
     /**
-     * 重试队列个数。
+     * **参数解释**： 消费最大重试次数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 1。
      * @return retryQueueNums
      */
     public Integer getRetryQueueNums() {
@@ -176,7 +176,7 @@ public class MigrationRocketMqSubscriptionGroup {
     }
 
     /**
-     * 慢消费时选择的broker节点ID。
+     * **参数解释**： 慢消费时选择的broker节点ID **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 1。
      * @return whichBrokerWhenConsumeSlow
      */
     public Long getWhichBrokerWhenConsumeSlow() {

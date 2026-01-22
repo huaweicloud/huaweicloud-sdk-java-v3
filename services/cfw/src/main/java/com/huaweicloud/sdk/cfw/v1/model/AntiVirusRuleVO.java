@@ -39,7 +39,7 @@ public class AntiVirusRuleVO {
     }
 
     /**
-     * Get id
+     * 反病毒规则id
      * @return id
      */
     public String getId() {
@@ -56,7 +56,7 @@ public class AntiVirusRuleVO {
     }
 
     /**
-     * Get name
+     * 反病毒规则名称
      * @return name
      */
     public String getName() {
@@ -89,7 +89,7 @@ public class AntiVirusRuleVO {
     }
 
     /**
-     * Get scanProtocolConfigs
+     * 反病毒扫描协议列表
      * @return scanProtocolConfigs
      */
     public List<ScanProtocolConfig> getScanProtocolConfigs() {
@@ -106,7 +106,7 @@ public class AntiVirusRuleVO {
     }
 
     /**
-     * Get total
+     * 反病毒扫描协议列表总数
      * @return total
      */
     public Integer getTotal() {

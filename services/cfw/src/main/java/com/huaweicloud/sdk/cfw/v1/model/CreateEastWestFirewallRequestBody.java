@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 创建东西向防火墙body体
+ * **参数解释**： 创建东西向防火墙body体 **约束限制**： 不涉及
  */
 public class CreateEastWestFirewallRequestBody {
 
@@ -31,7 +31,7 @@ public class CreateEastWestFirewallRequestBody {
     }
 
     /**
-     * 出方向关联ER ID,可通过ER服务查询企业路由器列表接口获得，返回值中instances.id即为erid（.表示各对象之间层级的区分）
+     * **参数解释**： 出方向关联ER ID,可通过ER服务查询企业路由器列表接口获得，返回值中instances.id即为erid（.表示各对象之间层级的区分） **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return erId
      */
     public String getErId() {
@@ -48,7 +48,7 @@ public class CreateEastWestFirewallRequestBody {
     }
 
     /**
-     * 创建引流VPC时使用的网段
+     * **参数解释**： 创建引流VPC时使用的网段 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return inspectionCidr
      */
     public String getInspectionCidr() {
@@ -65,7 +65,7 @@ public class CreateEastWestFirewallRequestBody {
     }
 
     /**
-     * 东西向防火墙模式，填写er
+     * **参数解释**： 东西向防火墙模式，填写er **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return mode
      */
     public String getMode() {

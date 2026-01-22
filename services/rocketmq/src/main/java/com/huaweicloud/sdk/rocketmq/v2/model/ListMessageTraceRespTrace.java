@@ -22,7 +22,7 @@ public class ListMessageTraceRespTrace {
     private Boolean success;
 
     /**
-     * 轨迹类型
+     * **参数解释**： 轨迹类型。 **约束限制**： 不涉及。 **取值范围**： - Pub：生产者成功发送消息。 - SubBefore：消费者准备消费消息。 - SubAfter：消费者完成消息消费。 - EndTransaction：事务消息被提交或回滚。 - Receive：服务侧接收消息。 - Ack：消费者手动确认消费。 **默认取值**： 不涉及。
      */
     public static final class TraceTypeEnum {
 
@@ -46,6 +46,16 @@ public class ListMessageTraceRespTrace {
          */
         public static final TraceTypeEnum ENDTRANSACTION = new TraceTypeEnum("EndTransaction");
 
+        /**
+         * Enum RECEIVE for value: "Receive"
+         */
+        public static final TraceTypeEnum RECEIVE = new TraceTypeEnum("Receive");
+
+        /**
+         * Enum ACK for value: "Ack"
+         */
+        public static final TraceTypeEnum ACK = new TraceTypeEnum("Ack");
+
         private static final Map<String, TraceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TraceTypeEnum> createStaticFields() {
@@ -54,6 +64,8 @@ public class ListMessageTraceRespTrace {
             map.put("SubBefore", SUBBEFORE);
             map.put("SubAfter", SUBAFTER);
             map.put("EndTransaction", ENDTRANSACTION);
+            map.put("Receive", RECEIVE);
+            map.put("Ack", ACK);
             return Collections.unmodifiableMap(map);
         }
 
@@ -179,7 +191,7 @@ public class ListMessageTraceRespTrace {
     private BigDecimal bodyLength;
 
     /**
-     * 消息类型。
+     * **参数解释**： 消息类型。 **约束限制**： 不涉及。 **取值范围**： - Normal_Msg：普通消息。 - Trans_Msg_Half：事务半消息。 - Trans_msg_Commit：事务提交消息。 - Delay_Msg：延迟消息。 - Order_Msg：顺序消息。 **默认取值** 不涉及。
      */
     public static final class MsgTypeEnum {
 
@@ -203,6 +215,11 @@ public class ListMessageTraceRespTrace {
          */
         public static final MsgTypeEnum DELAY_MSG = new MsgTypeEnum("Delay_Msg");
 
+        /**
+         * Enum ORDER_MSG for value: "Order_Msg"
+         */
+        public static final MsgTypeEnum ORDER_MSG = new MsgTypeEnum("Order_Msg");
+
         private static final Map<String, MsgTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, MsgTypeEnum> createStaticFields() {
@@ -211,6 +228,7 @@ public class ListMessageTraceRespTrace {
             map.put("Trans_Msg_Half", TRANS_MSG_HALF);
             map.put("Trans_msg_Commit", TRANS_MSG_COMMIT);
             map.put("Delay_Msg", DELAY_MSG);
+            map.put("Order_Msg", ORDER_MSG);
             return Collections.unmodifiableMap(map);
         }
 
@@ -266,7 +284,7 @@ public class ListMessageTraceRespTrace {
     private MsgTypeEnum msgType;
 
     /**
-     * 事务状态。
+     * **参数解释**： 事务状态。 **约束限制**： 不涉及。 **取值范围**： - COMMIT_MESSAGE - ROLLBACK_MESSAGE - UNKNOW **默认取值** 不涉及。
      */
     public static final class TransactionStateEnum {
 
@@ -362,7 +380,7 @@ public class ListMessageTraceRespTrace {
     }
 
     /**
-     * 是否成功。
+     * **参数解释**： 是否成功。 **约束限制**： 不涉及。 **取值范围**： - true：成功。 - false：失败。 **默认取值**： 不涉及。
      * @return success
      */
     public Boolean getSuccess() {
@@ -379,7 +397,7 @@ public class ListMessageTraceRespTrace {
     }
 
     /**
-     * 轨迹类型
+     * **参数解释**： 轨迹类型。 **约束限制**： 不涉及。 **取值范围**： - Pub：生产者成功发送消息。 - SubBefore：消费者准备消费消息。 - SubAfter：消费者完成消息消费。 - EndTransaction：事务消息被提交或回滚。 - Receive：服务侧接收消息。 - Ack：消费者手动确认消费。 **默认取值**： 不涉及。
      * @return traceType
      */
     public TraceTypeEnum getTraceType() {
@@ -396,7 +414,7 @@ public class ListMessageTraceRespTrace {
     }
 
     /**
-     * 时间。
+     * **参数解释**： 时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return timestamp
      */
     public BigDecimal getTimestamp() {
@@ -413,7 +431,7 @@ public class ListMessageTraceRespTrace {
     }
 
     /**
-     * 生产组或消费组。
+     * **参数解释**： 生产组或消费组。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return groupName
      */
     public String getGroupName() {
@@ -430,7 +448,7 @@ public class ListMessageTraceRespTrace {
     }
 
     /**
-     * 耗时。
+     * **参数解释**： 耗时。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return costTime
      */
     public BigDecimal getCostTime() {
@@ -447,7 +465,7 @@ public class ListMessageTraceRespTrace {
     }
 
     /**
-     * 请求ID。
+     * **参数解释**： 请求ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return requestId
      */
     public String getRequestId() {
@@ -464,7 +482,7 @@ public class ListMessageTraceRespTrace {
     }
 
     /**
-     * 消费状态：  - 0-消费成功  - 1-消费超时  - 2-消费发生异常   - 3-消费返回NULL  - 5-消费失败
+     * **参数解释**： 消费状态： **约束限制**： 不涉及。 **取值范围**：  - 0-消费成功  - 1-消费超时  - 2-消费发生异常   - 3-消费返回NULL  - 5-消费失败 **默认取值**： 不涉及。
      * @return consumeStatus
      */
     public BigDecimal getConsumeStatus() {
@@ -481,7 +499,7 @@ public class ListMessageTraceRespTrace {
     }
 
     /**
-     * 主题名称。
+     * **参数解释**： 主题名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**
      * @return topic
      */
     public String getTopic() {
@@ -498,7 +516,7 @@ public class ListMessageTraceRespTrace {
     }
 
     /**
-     * 消息ID。
+     * **参数解释**： 消息ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return msgId
      */
     public String getMsgId() {
@@ -515,7 +533,7 @@ public class ListMessageTraceRespTrace {
     }
 
     /**
-     * offset消息ID。
+     * **参数解释**： offset消息ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return offsetMsgId
      */
     public String getOffsetMsgId() {
@@ -532,7 +550,7 @@ public class ListMessageTraceRespTrace {
     }
 
     /**
-     * 消息的标签。
+     * **参数解释**： 消息的标签。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return tags
      */
     public String getTags() {
@@ -549,7 +567,7 @@ public class ListMessageTraceRespTrace {
     }
 
     /**
-     * 消息的keys。
+     * **参数解释**： 消息的keys。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return keys
      */
     public String getKeys() {
@@ -566,7 +584,7 @@ public class ListMessageTraceRespTrace {
     }
 
     /**
-     * 存储消息的主机IP。
+     * **参数解释**： 存储消息的主机IP。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return storeHost
      */
     public String getStoreHost() {
@@ -583,7 +601,7 @@ public class ListMessageTraceRespTrace {
     }
 
     /**
-     * 产生消息的主机IP。
+     * **参数解释**： 产生消息的主机IP。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return clientHost
      */
     public String getClientHost() {
@@ -600,7 +618,7 @@ public class ListMessageTraceRespTrace {
     }
 
     /**
-     * 重试次数。
+     * **参数解释**： 重试次数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return retryTimes
      */
     public Integer getRetryTimes() {
@@ -617,7 +635,7 @@ public class ListMessageTraceRespTrace {
     }
 
     /**
-     * 消息体长度。
+     * **参数解释**： 消息体长度。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return bodyLength
      */
     public BigDecimal getBodyLength() {
@@ -634,7 +652,7 @@ public class ListMessageTraceRespTrace {
     }
 
     /**
-     * 消息类型。
+     * **参数解释**： 消息类型。 **约束限制**： 不涉及。 **取值范围**： - Normal_Msg：普通消息。 - Trans_Msg_Half：事务半消息。 - Trans_msg_Commit：事务提交消息。 - Delay_Msg：延迟消息。 - Order_Msg：顺序消息。 **默认取值** 不涉及。
      * @return msgType
      */
     public MsgTypeEnum getMsgType() {
@@ -651,7 +669,7 @@ public class ListMessageTraceRespTrace {
     }
 
     /**
-     * 事务状态。
+     * **参数解释**： 事务状态。 **约束限制**： 不涉及。 **取值范围**： - COMMIT_MESSAGE - ROLLBACK_MESSAGE - UNKNOW **默认取值** 不涉及。
      * @return transactionState
      */
     public TransactionStateEnum getTransactionState() {
@@ -668,7 +686,7 @@ public class ListMessageTraceRespTrace {
     }
 
     /**
-     * 事务ID。
+     * **参数解释**： 事务ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return transactionId
      */
     public String getTransactionId() {
@@ -685,7 +703,7 @@ public class ListMessageTraceRespTrace {
     }
 
     /**
-     * 是否为事务回查的响应。
+     * **参数解释**： 是否为事务回查的响应。 **约束限制**： 不涉及。 **取值范围**： - true：是事务回查的响应。 - false：不是事务回查的响应。 **默认取值** 不涉及。
      * @return fromTransactionCheck
      */
     public Boolean getFromTransactionCheck() {

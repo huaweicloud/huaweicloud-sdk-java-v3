@@ -46,7 +46,7 @@ public class BatchUpdateConsumerGroup {
     }
 
     /**
-     * 消费组名称，只能由英文字母、数字、百分号、竖线、中划线、下划线组成，长度3~64个字符。
+     * **参数解释**： 消费组名称。 **约束限制**： 只能由英文字母、数字、百分号、竖线、中划线、下划线组成，长度3~64个字符。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -63,7 +63,7 @@ public class BatchUpdateConsumerGroup {
     }
 
     /**
-     * 是否广播。
+     * **参数解释**： 是否设置为广播消费。 **约束限制**： 不涉及。 **取值范围**： - true：使用广播消费。 - false：不使用广播消费。 **默认取值**： 不涉及。
      * @return broadcast
      */
     public Boolean getBroadcast() {
@@ -80,7 +80,7 @@ public class BatchUpdateConsumerGroup {
     }
 
     /**
-     * 最大重试次数，取值范围为1~16。
+     * **参数解释**： 最大重试次数。 **约束限制**： 不涉及。 **取值范围**： 1~16。 **默认取值**： 不涉及。
      * @return retryMaxTime
      */
     public Integer getRetryMaxTime() {
@@ -97,7 +97,7 @@ public class BatchUpdateConsumerGroup {
     }
 
     /**
-     * 是否可以消费。
+     * **参数解释**： 是否可以消费。 **约束限制**： 不涉及。 **取值范围**： - true：可以消费。 - false：不可以消费。 **默认取值**： 不涉及。
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -114,7 +114,7 @@ public class BatchUpdateConsumerGroup {
     }
 
     /**
-     * 是否按顺序消费（仅RocketMQ实例5.x版本需要填写此参数）。
+     * **参数解释**： 是否按顺序消费（仅RocketMQ实例5.x版本需要填写此参数）。[华为云Stack不支持](tag:hcs,hcs_oemout) **约束限制**： 不涉及。 **取值范围**： - true：顺序消费。 - false：不按顺序消费。 **默认取值**： 不涉及。
      * @return consumeOrderly
      */
     public Boolean getConsumeOrderly() {
@@ -131,7 +131,7 @@ public class BatchUpdateConsumerGroup {
     }
 
     /**
-     * 消费组描述，长度0~200个字符。
+     * **参数解释**： 消费组描述。 **约束限制**： 长度0~200个字符 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return groupDesc
      */
     public String getGroupDesc() {

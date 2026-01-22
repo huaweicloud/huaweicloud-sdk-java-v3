@@ -49,6 +49,8 @@ import com.huaweicloud.sdk.eip.v3.model.ShowInternalVpcIgwRequest;
 import com.huaweicloud.sdk.eip.v3.model.ShowInternalVpcIgwResponse;
 import com.huaweicloud.sdk.eip.v3.model.ShowPublicipPoolRequest;
 import com.huaweicloud.sdk.eip.v3.model.ShowPublicipPoolResponse;
+import com.huaweicloud.sdk.eip.v3.model.ShowPublicipPoolTypesRequest;
+import com.huaweicloud.sdk.eip.v3.model.ShowPublicipPoolTypesResponse;
 import com.huaweicloud.sdk.eip.v3.model.ShowPublicipRequest;
 import com.huaweicloud.sdk.eip.v3.model.ShowPublicipResponse;
 import com.huaweicloud.sdk.eip.v3.model.UpdatePublicipRequest;
@@ -298,6 +300,35 @@ public class EipClient {
     public SyncInvoker<ShowPublicipPoolRequest, ShowPublicipPoolResponse> showPublicipPoolInvoker(
         ShowPublicipPoolRequest request) {
         return new SyncInvoker<>(request, EipMeta.showPublicipPool, hcClient);
+    }
+
+    /**
+     * 查询公网IP池类型
+     *
+     * 查询公网IP池类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPublicipPoolTypesRequest 请求对象
+     * @return ShowPublicipPoolTypesResponse
+     */
+    public ShowPublicipPoolTypesResponse showPublicipPoolTypes(ShowPublicipPoolTypesRequest request) {
+        return hcClient.syncInvokeHttp(request, EipMeta.showPublicipPoolTypes);
+    }
+
+    /**
+     * 查询公网IP池类型
+     *
+     * 查询公网IP池类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPublicipPoolTypesRequest 请求对象
+     * @return SyncInvoker<ShowPublicipPoolTypesRequest, ShowPublicipPoolTypesResponse>
+     */
+    public SyncInvoker<ShowPublicipPoolTypesRequest, ShowPublicipPoolTypesResponse> showPublicipPoolTypesInvoker(
+        ShowPublicipPoolTypesRequest request) {
+        return new SyncInvoker<>(request, EipMeta.showPublicipPoolTypes, hcClient);
     }
 
     /**

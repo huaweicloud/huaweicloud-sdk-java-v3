@@ -6,6 +6,7 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.rabbitmq.v2.model.AMQPUser;
+import com.huaweicloud.sdk.rabbitmq.v2.model.AlterAutoVolumeExpandConfig;
 import com.huaweicloud.sdk.rabbitmq.v2.model.BatchCreateOrDeleteRabbitMqTagRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.BatchCreateOrDeleteRabbitMqTagResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.BatchCreateOrDeleteTagReq;
@@ -19,6 +20,7 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.BatchDeleteVhostsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.BatchRestartOrDeleteInstanceReq;
 import com.huaweicloud.sdk.rabbitmq.v2.model.BatchRestartOrDeleteInstancesRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.BatchRestartOrDeleteInstancesResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.BatchResumeInstanceReq;
 import com.huaweicloud.sdk.rabbitmq.v2.model.CreateBindingBody;
 import com.huaweicloud.sdk.rabbitmq.v2.model.CreateBindingRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.CreateBindingResponse;
@@ -46,14 +48,20 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteQueueInfoRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteQueueInfoResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteScheduledTaskRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteScheduledTaskResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteUserRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteUserResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.EnableDnsRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.EnableDnsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListAvailableZonesResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListBackgroundTasksRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListBackgroundTasksResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListBindingsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListBindingsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListConfigFeaturesRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListConfigFeaturesResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListEngineProductsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListEngineProductsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListExchangesRequest;
@@ -66,10 +74,15 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.ListProductsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListProductsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListQueuesRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListQueuesResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListScheduledTasksRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ListScheduledTasksResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListUserRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListUserResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListVhostsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListVhostsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ModifyRecyclePolicyReq;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ModifyRecyclePolicyRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ModifyRecyclePolicyResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResetPasswordReq;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResetPasswordRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResetPasswordResponse;
@@ -79,6 +92,8 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeEngineInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeInstanceReq;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeInstanceRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeInstanceResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.RestoreRecycleInstanceRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.RestoreRecycleInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowBackgroundTaskRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowBackgroundTaskResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowCesHierarchyRequest;
@@ -101,14 +116,22 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqTagsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqTagsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRecycleInstancesRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRecycleInstancesResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowVolumeExpandConfigRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowVolumeExpandConfigResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.UpdateInstanceReq;
 import com.huaweicloud.sdk.rabbitmq.v2.model.UpdateInstanceRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.UpdateInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.UpdatePluginsReq;
 import com.huaweicloud.sdk.rabbitmq.v2.model.UpdatePluginsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.UpdatePluginsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.UpdateScheduledTaskRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.UpdateScheduledTaskResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.UpdateUserRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.UpdateUserResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.UpdateVolumeExpansionConfigRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.UpdateVolumeExpansionConfigResponse;
 
 @SuppressWarnings("unchecked")
 public class RabbitMQMeta {
@@ -308,6 +331,35 @@ public class RabbitMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteScheduledTaskRequest, DeleteScheduledTaskResponse> deleteScheduledTask =
+        genForDeleteScheduledTask();
+
+    private static HttpRequestDef<DeleteScheduledTaskRequest, DeleteScheduledTaskResponse> genForDeleteScheduledTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteScheduledTaskRequest, DeleteScheduledTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteScheduledTaskRequest.class, DeleteScheduledTaskResponse.class)
+            .withName("DeleteScheduledTask")
+            .withUri("/v2/{project_id}/instances/{instance_id}/scheduled-tasks/{task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteScheduledTaskRequest::getInstanceId,
+                DeleteScheduledTaskRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteScheduledTaskRequest::getTaskId, DeleteScheduledTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteUserRequest, DeleteUserResponse> deleteUser = genForDeleteUser();
 
     private static HttpRequestDef<DeleteUserRequest, DeleteUserResponse> genForDeleteUser() {
@@ -329,6 +381,28 @@ public class RabbitMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteUserRequest::getUserName, DeleteUserRequest::setUserName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<EnableDnsRequest, EnableDnsResponse> enableDns = genForEnableDns();
+
+    private static HttpRequestDef<EnableDnsRequest, EnableDnsResponse> genForEnableDns() {
+        // basic
+        HttpRequestDef.Builder<EnableDnsRequest, EnableDnsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, EnableDnsRequest.class, EnableDnsResponse.class)
+                .withName("EnableDns")
+                .withUri("/v2/{project_id}/rabbitmq/instances/{instance_id}/dns")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableDnsRequest::getInstanceId, EnableDnsRequest::setInstanceId));
 
         // response
 
@@ -371,11 +445,11 @@ public class RabbitMQMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBackgroundTasksRequest::getInstanceId,
                 ListBackgroundTasksRequest::setInstanceId));
-        builder.<Integer>withRequestField("start",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBackgroundTasksRequest::getStart, ListBackgroundTasksRequest::setStart));
+            f -> f.withMarshaller(ListBackgroundTasksRequest::getOffset, ListBackgroundTasksRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -391,6 +465,24 @@ public class RabbitMQMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBackgroundTasksRequest::getEndTime, ListBackgroundTasksRequest::setEndTime));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListConfigFeaturesRequest, ListConfigFeaturesResponse> listConfigFeatures =
+        genForListConfigFeatures();
+
+    private static HttpRequestDef<ListConfigFeaturesRequest, ListConfigFeaturesResponse> genForListConfigFeatures() {
+        // basic
+        HttpRequestDef.Builder<ListConfigFeaturesRequest, ListConfigFeaturesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListConfigFeaturesRequest.class, ListConfigFeaturesResponse.class)
+                .withName("ListConfigFeatures")
+                .withUri("/v2/config/features")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -536,6 +628,49 @@ public class RabbitMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListScheduledTasksRequest, ListScheduledTasksResponse> listScheduledTasks =
+        genForListScheduledTasks();
+
+    private static HttpRequestDef<ListScheduledTasksRequest, ListScheduledTasksResponse> genForListScheduledTasks() {
+        // basic
+        HttpRequestDef.Builder<ListScheduledTasksRequest, ListScheduledTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListScheduledTasksRequest.class, ListScheduledTasksResponse.class)
+                .withName("ListScheduledTasks")
+                .withUri("/v2/{project_id}/instances/{instance_id}/scheduled-tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getInstanceId, ListScheduledTasksRequest::setInstanceId));
+        builder.<String>withRequestField("start",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getStart, ListScheduledTasksRequest::setStart));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getLimit, ListScheduledTasksRequest::setLimit));
+        builder.<String>withRequestField("begin_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getBeginTime, ListScheduledTasksRequest::setBeginTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getEndTime, ListScheduledTasksRequest::setEndTime));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListUserRequest, ListUserResponse> listUser = genForListUser();
 
     private static HttpRequestDef<ListUserRequest, ListUserResponse> genForListUser() {
@@ -562,6 +697,29 @@ public class RabbitMQMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListUserRequest::getLimit, ListUserRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyRecyclePolicyRequest, ModifyRecyclePolicyResponse> modifyRecyclePolicy =
+        genForModifyRecyclePolicy();
+
+    private static HttpRequestDef<ModifyRecyclePolicyRequest, ModifyRecyclePolicyResponse> genForModifyRecyclePolicy() {
+        // basic
+        HttpRequestDef.Builder<ModifyRecyclePolicyRequest, ModifyRecyclePolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyRecyclePolicyRequest.class, ModifyRecyclePolicyResponse.class)
+                .withName("ModifyRecyclePolicy")
+                .withUri("/v2/{project_id}/recycle")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ModifyRecyclePolicyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ModifyRecyclePolicyReq.class),
+            f -> f.withMarshaller(ModifyRecyclePolicyRequest::getBody, ModifyRecyclePolicyRequest::setBody));
 
         // response
 
@@ -658,6 +816,29 @@ public class RabbitMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RestoreRecycleInstanceRequest, RestoreRecycleInstanceResponse> restoreRecycleInstance =
+        genForRestoreRecycleInstance();
+
+    private static HttpRequestDef<RestoreRecycleInstanceRequest, RestoreRecycleInstanceResponse> genForRestoreRecycleInstance() {
+        // basic
+        HttpRequestDef.Builder<RestoreRecycleInstanceRequest, RestoreRecycleInstanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RestoreRecycleInstanceRequest.class, RestoreRecycleInstanceResponse.class)
+            .withName("RestoreRecycleInstance")
+            .withUri("/v2/{project_id}/recycle")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BatchResumeInstanceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchResumeInstanceReq.class),
+            f -> f.withMarshaller(RestoreRecycleInstanceRequest::getBody, RestoreRecycleInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> showBackgroundTask =
         genForShowBackgroundTask();
 
@@ -736,10 +917,10 @@ public class RabbitMQMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getInstanceId,
                 ShowEngineInstanceExtendProductInfoRequest::setInstanceId));
-        builder.<ShowEngineInstanceExtendProductInfoRequest.TypeEnum>withRequestField("type",
+        builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ShowEngineInstanceExtendProductInfoRequest.TypeEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEngineInstanceExtendProductInfoRequest::getType,
                 ShowEngineInstanceExtendProductInfoRequest::setType));
 
@@ -859,7 +1040,7 @@ public class RabbitMQMeta {
         // requests
         builder.<String>withRequestField("instance_id",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowRabbitMqProductCoresRequest::getInstanceId,
                 ShowRabbitMqProductCoresRequest::setInstanceId));
@@ -869,6 +1050,12 @@ public class RabbitMQMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowRabbitMqProductCoresRequest::getProductId,
                 ShowRabbitMqProductCoresRequest::setProductId));
+        builder.<String>withRequestField("broker_num",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRabbitMqProductCoresRequest::getBrokerNum,
+                ShowRabbitMqProductCoresRequest::setBrokerNum));
 
         // response
 
@@ -910,6 +1097,48 @@ public class RabbitMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowRabbitMqTagsRequest::getInstanceId, ShowRabbitMqTagsRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRecycleInstancesRequest, ShowRecycleInstancesResponse> showRecycleInstances =
+        genForShowRecycleInstances();
+
+    private static HttpRequestDef<ShowRecycleInstancesRequest, ShowRecycleInstancesResponse> genForShowRecycleInstances() {
+        // basic
+        HttpRequestDef.Builder<ShowRecycleInstancesRequest, ShowRecycleInstancesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowRecycleInstancesRequest.class, ShowRecycleInstancesResponse.class)
+            .withName("ShowRecycleInstances")
+            .withUri("/v2/{project_id}/recycle")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowVolumeExpandConfigRequest, ShowVolumeExpandConfigResponse> showVolumeExpandConfig =
+        genForShowVolumeExpandConfig();
+
+    private static HttpRequestDef<ShowVolumeExpandConfigRequest, ShowVolumeExpandConfigResponse> genForShowVolumeExpandConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowVolumeExpandConfigRequest, ShowVolumeExpandConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowVolumeExpandConfigRequest.class, ShowVolumeExpandConfigResponse.class)
+            .withName("ShowVolumeExpandConfig")
+            .withUri("/v2/{project_id}/instances/{instance_id}/auto-volume-expand")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVolumeExpandConfigRequest::getInstanceId,
+                ShowVolumeExpandConfigRequest::setInstanceId));
 
         // response
 
@@ -972,6 +1201,45 @@ public class RabbitMQMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateScheduledTaskRequest, UpdateScheduledTaskResponse> updateScheduledTask =
+        genForUpdateScheduledTask();
+
+    private static HttpRequestDef<UpdateScheduledTaskRequest, UpdateScheduledTaskResponse> genForUpdateScheduledTask() {
+        // basic
+        HttpRequestDef.Builder<UpdateScheduledTaskRequest, UpdateScheduledTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateScheduledTaskRequest.class, UpdateScheduledTaskResponse.class)
+                .withName("UpdateScheduledTask")
+                .withUri("/v2/{project_id}/instances/{instance_id}/scheduled-tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScheduledTaskRequest::getInstanceId,
+                UpdateScheduledTaskRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScheduledTaskRequest::getTaskId, UpdateScheduledTaskRequest::setTaskId));
+        builder.<String>withRequestField("execute_at",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScheduledTaskRequest::getExecuteAt, UpdateScheduledTaskRequest::setExecuteAt));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScheduledTaskRequest::getStatus, UpdateScheduledTaskRequest::setStatus));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateUserRequest, UpdateUserResponse> updateUser = genForUpdateUser();
 
     private static HttpRequestDef<UpdateUserRequest, UpdateUserResponse> genForUpdateUser() {
@@ -1000,6 +1268,45 @@ public class RabbitMQMeta {
             f -> f.withMarshaller(UpdateUserRequest::getBody, UpdateUserRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateVolumeExpansionConfigRequest, UpdateVolumeExpansionConfigResponse> updateVolumeExpansionConfig =
+        genForUpdateVolumeExpansionConfig();
+
+    private static HttpRequestDef<UpdateVolumeExpansionConfigRequest, UpdateVolumeExpansionConfigResponse> genForUpdateVolumeExpansionConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateVolumeExpansionConfigRequest, UpdateVolumeExpansionConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateVolumeExpansionConfigRequest.class,
+                    UpdateVolumeExpansionConfigResponse.class)
+                .withName("UpdateVolumeExpansionConfig")
+                .withUri("/v2/{project_id}/instances/{instance_id}/auto-volume-expand")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateVolumeExpansionConfigRequest::getInstanceId,
+                UpdateVolumeExpansionConfigRequest::setInstanceId));
+        builder.<AlterAutoVolumeExpandConfig>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AlterAutoVolumeExpandConfig.class),
+            f -> f.withMarshaller(UpdateVolumeExpansionConfigRequest::getBody,
+                UpdateVolumeExpansionConfigRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateVolumeExpansionConfigResponse::getBody,
+                UpdateVolumeExpansionConfigResponse::setBody));
 
         return builder.build();
     }

@@ -71,6 +71,8 @@ import com.huaweicloud.sdk.css.v1.model.ListClustersTagsRequest;
 import com.huaweicloud.sdk.css.v1.model.ListClustersTagsResponse;
 import com.huaweicloud.sdk.css.v1.model.ListConfsRequest;
 import com.huaweicloud.sdk.css.v1.model.ListConfsResponse;
+import com.huaweicloud.sdk.css.v1.model.ListDiskTypeRequest;
+import com.huaweicloud.sdk.css.v1.model.ListDiskTypeResponse;
 import com.huaweicloud.sdk.css.v1.model.ListElbCertsRequest;
 import com.huaweicloud.sdk.css.v1.model.ListElbCertsResponse;
 import com.huaweicloud.sdk.css.v1.model.ListElbsRequest;
@@ -976,6 +978,35 @@ public class CssAsyncClient {
     public AsyncInvoker<ListClustersTagsRequest, ListClustersTagsResponse> listClustersTagsAsyncInvoker(
         ListClustersTagsRequest request) {
         return new AsyncInvoker<>(request, CssMeta.listClustersTags, hcClient);
+    }
+
+    /**
+     * 列举磁盘类型
+     *
+     * 获取各可用区支持的磁盘类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDiskTypeRequest 请求对象
+     * @return CompletableFuture<ListDiskTypeResponse>
+     */
+    public CompletableFuture<ListDiskTypeResponse> listDiskTypeAsync(ListDiskTypeRequest request) {
+        return hcClient.asyncInvokeHttp(request, CssMeta.listDiskType);
+    }
+
+    /**
+     * 列举磁盘类型
+     *
+     * 获取各可用区支持的磁盘类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDiskTypeRequest 请求对象
+     * @return AsyncInvoker<ListDiskTypeRequest, ListDiskTypeResponse>
+     */
+    public AsyncInvoker<ListDiskTypeRequest, ListDiskTypeResponse> listDiskTypeAsyncInvoker(
+        ListDiskTypeRequest request) {
+        return new AsyncInvoker<>(request, CssMeta.listDiskType, hcClient);
     }
 
     /**

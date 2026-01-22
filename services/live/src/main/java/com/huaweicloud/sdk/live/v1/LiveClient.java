@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.live.v1.model.BatchShowIpBelongsRequest;
 import com.huaweicloud.sdk.live.v1.model.BatchShowIpBelongsResponse;
+import com.huaweicloud.sdk.live.v1.model.CheckDomainVerificationRequest;
+import com.huaweicloud.sdk.live.v1.model.CheckDomainVerificationResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainMappingRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainMappingResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainRequest;
@@ -17,6 +19,8 @@ import com.huaweicloud.sdk.live.v1.model.CreateHarvestTaskRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateHarvestTaskResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateOttChannelInfoRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateOttChannelInfoResponse;
+import com.huaweicloud.sdk.live.v1.model.CreatePullTaskRequest;
+import com.huaweicloud.sdk.live.v1.model.CreatePullTaskResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateRecordCallbackConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateRecordCallbackConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateRecordIndexRequest;
@@ -57,6 +61,8 @@ import com.huaweicloud.sdk.live.v1.model.DeleteOttChannelInfoRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteOttChannelInfoResponse;
 import com.huaweicloud.sdk.live.v1.model.DeletePublishTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.DeletePublishTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.DeletePullTaskRequest;
+import com.huaweicloud.sdk.live.v1.model.DeletePullTaskResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteRecordCallbackConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteRecordCallbackConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteRecordRuleRequest;
@@ -99,6 +105,8 @@ import com.huaweicloud.sdk.live.v1.model.ListOttChannelInfoRequest;
 import com.huaweicloud.sdk.live.v1.model.ListOttChannelInfoResponse;
 import com.huaweicloud.sdk.live.v1.model.ListPublishTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.ListPublishTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.ListPullTasksRequest;
+import com.huaweicloud.sdk.live.v1.model.ListPullTasksResponse;
 import com.huaweicloud.sdk.live.v1.model.ListRecordCallbackConfigsRequest;
 import com.huaweicloud.sdk.live.v1.model.ListRecordCallbackConfigsResponse;
 import com.huaweicloud.sdk.live.v1.model.ListRecordContentsRequest;
@@ -137,10 +145,14 @@ import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoRecordSettingsReque
 import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoRecordSettingsResponse;
 import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoStatsRequest;
 import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoStatsResponse;
+import com.huaweicloud.sdk.live.v1.model.ModifyPullTaskRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyPullTaskResponse;
 import com.huaweicloud.sdk.live.v1.model.RunRecordRequest;
 import com.huaweicloud.sdk.live.v1.model.RunRecordResponse;
 import com.huaweicloud.sdk.live.v1.model.SetRefererChainRequest;
 import com.huaweicloud.sdk.live.v1.model.SetRefererChainResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowCertificateInfoRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowCertificateInfoResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowChannelStatisticRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowChannelStatisticResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainHttpsCertRequest;
@@ -149,6 +161,8 @@ import com.huaweicloud.sdk.live.v1.model.ShowDomainKeyChainRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainKeyChainResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowDomainVerificationRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowDomainVerificationResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowFlowDetailRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowFlowDetailResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowOutputInfoRequest;
@@ -246,6 +260,35 @@ public class LiveClient {
     public SyncInvoker<BatchShowIpBelongsRequest, BatchShowIpBelongsResponse> batchShowIpBelongsInvoker(
         BatchShowIpBelongsRequest request) {
         return new SyncInvoker<>(request, LiveMeta.batchShowIpBelongs, hcClient);
+    }
+
+    /**
+     * 域名归属权认证
+     *
+     * 域名归属权认证，确保创建的域名对应的主域名有归属权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckDomainVerificationRequest 请求对象
+     * @return CheckDomainVerificationResponse
+     */
+    public CheckDomainVerificationResponse checkDomainVerification(CheckDomainVerificationRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.checkDomainVerification);
+    }
+
+    /**
+     * 域名归属权认证
+     *
+     * 域名归属权认证，确保创建的域名对应的主域名有归属权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckDomainVerificationRequest 请求对象
+     * @return SyncInvoker<CheckDomainVerificationRequest, CheckDomainVerificationResponse>
+     */
+    public SyncInvoker<CheckDomainVerificationRequest, CheckDomainVerificationResponse> checkDomainVerificationInvoker(
+        CheckDomainVerificationRequest request) {
+        return new SyncInvoker<>(request, LiveMeta.checkDomainVerification, hcClient);
     }
 
     /**
@@ -360,6 +403,35 @@ public class LiveClient {
      */
     public SyncInvoker<CreateFlowsRequest, CreateFlowsResponse> createFlowsInvoker(CreateFlowsRequest request) {
         return new SyncInvoker<>(request, LiveMeta.createFlows, hcClient);
+    }
+
+    /**
+     * 创建直播拉流转推任务
+     *
+     * 根据租户指定的拉流源以及拉流任务信息创建直播拉流转推任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePullTaskRequest 请求对象
+     * @return CreatePullTaskResponse
+     */
+    public CreatePullTaskResponse createPullTask(CreatePullTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.createPullTask);
+    }
+
+    /**
+     * 创建直播拉流转推任务
+     *
+     * 根据租户指定的拉流源以及拉流任务信息创建直播拉流转推任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePullTaskRequest 请求对象
+     * @return SyncInvoker<CreatePullTaskRequest, CreatePullTaskResponse>
+     */
+    public SyncInvoker<CreatePullTaskRequest, CreatePullTaskResponse> createPullTaskInvoker(
+        CreatePullTaskRequest request) {
+        return new SyncInvoker<>(request, LiveMeta.createPullTask, hcClient);
     }
 
     /**
@@ -851,6 +923,35 @@ public class LiveClient {
     public SyncInvoker<DeletePublishTemplateRequest, DeletePublishTemplateResponse> deletePublishTemplateInvoker(
         DeletePublishTemplateRequest request) {
         return new SyncInvoker<>(request, LiveMeta.deletePublishTemplate, hcClient);
+    }
+
+    /**
+     * 删除直播拉流转推任务
+     *
+     * 停止并删除直播拉流转推任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePullTaskRequest 请求对象
+     * @return DeletePullTaskResponse
+     */
+    public DeletePullTaskResponse deletePullTask(DeletePullTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.deletePullTask);
+    }
+
+    /**
+     * 删除直播拉流转推任务
+     *
+     * 停止并删除直播拉流转推任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePullTaskRequest 请求对象
+     * @return SyncInvoker<DeletePullTaskRequest, DeletePullTaskResponse>
+     */
+    public SyncInvoker<DeletePullTaskRequest, DeletePullTaskResponse> deletePullTaskInvoker(
+        DeletePullTaskRequest request) {
+        return new SyncInvoker<>(request, LiveMeta.deletePullTask, hcClient);
     }
 
     /**
@@ -1351,6 +1452,34 @@ public class LiveClient {
     }
 
     /**
+     * 查询直播拉流转推任务
+     *
+     * 查询直播拉流转推任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPullTasksRequest 请求对象
+     * @return ListPullTasksResponse
+     */
+    public ListPullTasksResponse listPullTasks(ListPullTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.listPullTasks);
+    }
+
+    /**
+     * 查询直播拉流转推任务
+     *
+     * 查询直播拉流转推任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPullTasksRequest 请求对象
+     * @return SyncInvoker<ListPullTasksRequest, ListPullTasksResponse>
+     */
+    public SyncInvoker<ListPullTasksRequest, ListPullTasksResponse> listPullTasksInvoker(ListPullTasksRequest request) {
+        return new SyncInvoker<>(request, LiveMeta.listPullTasks, hcClient);
+    }
+
+    /**
      * 查询录制回调配置列表
      *
      * 查询录制回调配置列表接口。通过指定条件，查询满足条件的配置列表。
@@ -1699,6 +1828,35 @@ public class LiveClient {
     }
 
     /**
+     * 修改直播拉流转推任务
+     *
+     * 修改直播拉流转推任务，仅当source_type为PullVodPushLive的任务生效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyPullTaskRequest 请求对象
+     * @return ModifyPullTaskResponse
+     */
+    public ModifyPullTaskResponse modifyPullTask(ModifyPullTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.modifyPullTask);
+    }
+
+    /**
+     * 修改直播拉流转推任务
+     *
+     * 修改直播拉流转推任务，仅当source_type为PullVodPushLive的任务生效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyPullTaskRequest 请求对象
+     * @return SyncInvoker<ModifyPullTaskRequest, ModifyPullTaskResponse>
+     */
+    public SyncInvoker<ModifyPullTaskRequest, ModifyPullTaskResponse> modifyPullTaskInvoker(
+        ModifyPullTaskRequest request) {
+        return new SyncInvoker<>(request, LiveMeta.modifyPullTask, hcClient);
+    }
+
+    /**
      * 提交录制控制命令
      *
      * 对单条流的实时录制控制接口。
@@ -1810,6 +1968,35 @@ public class LiveClient {
     public SyncInvoker<ShowDomainKeyChainRequest, ShowDomainKeyChainResponse> showDomainKeyChainInvoker(
         ShowDomainKeyChainRequest request) {
         return new SyncInvoker<>(request, LiveMeta.showDomainKeyChain, hcClient);
+    }
+
+    /**
+     * 查询域名归属权验证信息
+     *
+     * 查询域名归属权验证信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainVerificationRequest 请求对象
+     * @return ShowDomainVerificationResponse
+     */
+    public ShowDomainVerificationResponse showDomainVerification(ShowDomainVerificationRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.showDomainVerification);
+    }
+
+    /**
+     * 查询域名归属权验证信息
+     *
+     * 查询域名归属权验证信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainVerificationRequest 请求对象
+     * @return SyncInvoker<ShowDomainVerificationRequest, ShowDomainVerificationResponse>
+     */
+    public SyncInvoker<ShowDomainVerificationRequest, ShowDomainVerificationResponse> showDomainVerificationInvoker(
+        ShowDomainVerificationRequest request) {
+        return new SyncInvoker<>(request, LiveMeta.showDomainVerification, hcClient);
     }
 
     /**
@@ -2627,6 +2814,35 @@ public class LiveClient {
     public SyncInvoker<DeleteDomainHttpsCertRequest, DeleteDomainHttpsCertResponse> deleteDomainHttpsCertInvoker(
         DeleteDomainHttpsCertRequest request) {
         return new SyncInvoker<>(request, LiveMeta.deleteDomainHttpsCert, hcClient);
+    }
+
+    /**
+     * 查询HTTPS证书信息
+     *
+     * 根据项目ID、域名等信息查询HTTPS证书信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCertificateInfoRequest 请求对象
+     * @return ShowCertificateInfoResponse
+     */
+    public ShowCertificateInfoResponse showCertificateInfo(ShowCertificateInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.showCertificateInfo);
+    }
+
+    /**
+     * 查询HTTPS证书信息
+     *
+     * 根据项目ID、域名等信息查询HTTPS证书信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCertificateInfoRequest 请求对象
+     * @return SyncInvoker<ShowCertificateInfoRequest, ShowCertificateInfoResponse>
+     */
+    public SyncInvoker<ShowCertificateInfoRequest, ShowCertificateInfoResponse> showCertificateInfoInvoker(
+        ShowCertificateInfoRequest request) {
+        return new SyncInvoker<>(request, LiveMeta.showCertificateInfo, hcClient);
     }
 
     /**

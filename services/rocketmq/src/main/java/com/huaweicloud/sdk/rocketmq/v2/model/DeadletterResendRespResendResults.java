@@ -31,7 +31,7 @@ public class DeadletterResendRespResendResults {
     }
 
     /**
-     * 消息ID。
+     * **参数解释**： 消息ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return msgId
      */
     public String getMsgId() {
@@ -48,7 +48,7 @@ public class DeadletterResendRespResendResults {
     }
 
     /**
-     * 错误码。
+     * **参数解释**： 错误码。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return errorCode
      */
     public String getErrorCode() {
@@ -65,7 +65,7 @@ public class DeadletterResendRespResendResults {
     }
 
     /**
-     * 错误信息。
+     * **参数解释**： 错误信息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值** 不涉及。
      * @return errorMessage
      */
     public String getErrorMessage() {

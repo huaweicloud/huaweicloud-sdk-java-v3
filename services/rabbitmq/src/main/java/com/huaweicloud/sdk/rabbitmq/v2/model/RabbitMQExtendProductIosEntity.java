@@ -39,7 +39,7 @@ public class RabbitMQExtendProductIosEntity {
     }
 
     /**
-     * 存储IO规格。
+     * **参数解释**： 存储IO规格。 **取值范围**： - dms.physical.storage.high.v2：高IO云硬盘。 - dms.physical.storage.ultra.v2：超高IO云硬盘。 [- dms.physical.storage.general：通用型SSD云硬盘。](tag:hws,hws_hk,ax) [- dms.physical.storage.extreme：极速型SSD云硬盘。](tag:hws,hws_hk,ax)
      * @return ioSpec
      */
     public String getIoSpec() {
@@ -89,7 +89,7 @@ public class RabbitMQExtendProductIosEntity {
     }
 
     /**
-     * IO类型。
+     * **参数解释**： IO类型。 **取值范围**： evs
      * @return type
      */
     public String getType() {

@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 消息。
+ * **参数解释**： 消息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
  */
 public class Message {
 
@@ -90,7 +90,7 @@ public class Message {
     }
 
     /**
-     * 消息ID。
+     * **参数解释**： 消息ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return msgId
      */
     public String getMsgId() {
@@ -107,7 +107,7 @@ public class Message {
     }
 
     /**
-     * 实例ID。
+     * **参数解释**： 实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -124,7 +124,7 @@ public class Message {
     }
 
     /**
-     * 主题名称。
+     * **参数解释**： 主题名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return topic
      */
     public String getTopic() {
@@ -141,7 +141,7 @@ public class Message {
     }
 
     /**
-     * 存储消息的时间。
+     * **参数解释**： 存储消息的时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return storeTimestamp
      */
     public BigDecimal getStoreTimestamp() {
@@ -158,7 +158,7 @@ public class Message {
     }
 
     /**
-     * 产生消息的时间。
+     * **参数解释**： 产生消息的时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return bornTimestamp
      */
     public BigDecimal getBornTimestamp() {
@@ -175,7 +175,7 @@ public class Message {
     }
 
     /**
-     * 重试次数。
+     * **参数解释**： 重试次数。 **取值范围**： 不涉及。
      * @return reconsumeTimes
      */
     public Integer getReconsumeTimes() {
@@ -192,7 +192,7 @@ public class Message {
     }
 
     /**
-     * 消息体。
+     * **参数解释**： 消息体。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return body
      */
     public String getBody() {
@@ -209,7 +209,7 @@ public class Message {
     }
 
     /**
-     * 消息体校验和。
+     * **参数解释**： 消息体校验和。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return bodyCrc
      */
     public BigDecimal getBodyCrc() {
@@ -226,7 +226,7 @@ public class Message {
     }
 
     /**
-     * 存储大小。
+     * **参数解释**： 存储大小。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return storeSize
      */
     public BigDecimal getStoreSize() {
@@ -259,7 +259,7 @@ public class Message {
     }
 
     /**
-     * 消息属性列表。
+     * **参数解释**： 消息属性列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return propertyList
      */
     public List<MessagePropertyList> getPropertyList() {
@@ -276,7 +276,7 @@ public class Message {
     }
 
     /**
-     * 产生消息的主机IP。
+     * **参数解释**： 产生消息的主机IP。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return bornHost
      */
     public String getBornHost() {
@@ -293,7 +293,7 @@ public class Message {
     }
 
     /**
-     * 存储消息的主机IP。
+     * **参数解释**： 存储消息的主机IP。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return storeHost
      */
     public String getStoreHost() {
@@ -310,7 +310,7 @@ public class Message {
     }
 
     /**
-     * 队列ID。
+     * **参数解释**： 队列ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return queueId
      */
     public Integer getQueueId() {
@@ -327,7 +327,7 @@ public class Message {
     }
 
     /**
-     * 在队列中的偏移量。
+     * **参数解释**： 在队列中的偏移量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return queueOffset
      */
     public Integer getQueueOffset() {

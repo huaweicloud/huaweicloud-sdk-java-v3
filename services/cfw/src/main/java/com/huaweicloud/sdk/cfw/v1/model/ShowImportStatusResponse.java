@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,10 +15,19 @@ public class ShowImportStatusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private Object data;
+    private ShowImportStatusId data;
 
-    public ShowImportStatusResponse withData(Object data) {
+    public ShowImportStatusResponse withData(ShowImportStatusId data) {
         this.data = data;
+        return this;
+    }
+
+    public ShowImportStatusResponse withData(Consumer<ShowImportStatusId> dataSetter) {
+        if (this.data == null) {
+            this.data = new ShowImportStatusId();
+            dataSetter.accept(this.data);
+        }
+
         return this;
     }
 
@@ -25,11 +35,11 @@ public class ShowImportStatusResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public Object getData() {
+    public ShowImportStatusId getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(ShowImportStatusId data) {
         this.data = data;
     }
 

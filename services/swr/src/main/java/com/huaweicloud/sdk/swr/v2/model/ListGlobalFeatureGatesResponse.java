@@ -26,6 +26,11 @@ public class ListGlobalFeatureGatesResponse extends SdkResponse {
 
     private Boolean cerAvailable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enableOBSEncryptUserKmsKey")
+
+    private Boolean enableOBSEncryptUserKmsKey;
+
     public ListGlobalFeatureGatesResponse withEnableUserDefObs(Boolean enableUserDefObs) {
         this.enableUserDefObs = enableUserDefObs;
         return this;
@@ -77,6 +82,23 @@ public class ListGlobalFeatureGatesResponse extends SdkResponse {
         this.cerAvailable = cerAvailable;
     }
 
+    public ListGlobalFeatureGatesResponse withEnableOBSEncryptUserKmsKey(Boolean enableOBSEncryptUserKmsKey) {
+        this.enableOBSEncryptUserKmsKey = enableOBSEncryptUserKmsKey;
+        return this;
+    }
+
+    /**
+     * 是否支持使用已有KSM密钥ID创建OBS桶
+     * @return enableOBSEncryptUserKmsKey
+     */
+    public Boolean getEnableOBSEncryptUserKmsKey() {
+        return enableOBSEncryptUserKmsKey;
+    }
+
+    public void setEnableOBSEncryptUserKmsKey(Boolean enableOBSEncryptUserKmsKey) {
+        this.enableOBSEncryptUserKmsKey = enableOBSEncryptUserKmsKey;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -88,12 +110,13 @@ public class ListGlobalFeatureGatesResponse extends SdkResponse {
         ListGlobalFeatureGatesResponse that = (ListGlobalFeatureGatesResponse) obj;
         return Objects.equals(this.enableUserDefObs, that.enableUserDefObs)
             && Objects.equals(this.enableEnterprise, that.enableEnterprise)
-            && Objects.equals(this.cerAvailable, that.cerAvailable);
+            && Objects.equals(this.cerAvailable, that.cerAvailable)
+            && Objects.equals(this.enableOBSEncryptUserKmsKey, that.enableOBSEncryptUserKmsKey);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enableUserDefObs, enableEnterprise, cerAvailable);
+        return Objects.hash(enableUserDefObs, enableEnterprise, cerAvailable, enableOBSEncryptUserKmsKey);
     }
 
     @Override
@@ -103,6 +126,7 @@ public class ListGlobalFeatureGatesResponse extends SdkResponse {
         sb.append("    enableUserDefObs: ").append(toIndentedString(enableUserDefObs)).append("\n");
         sb.append("    enableEnterprise: ").append(toIndentedString(enableEnterprise)).append("\n");
         sb.append("    cerAvailable: ").append(toIndentedString(cerAvailable)).append("\n");
+        sb.append("    enableOBSEncryptUserKmsKey: ").append(toIndentedString(enableOBSEncryptUserKmsKey)).append("\n");
         sb.append("}");
         return sb.toString();
     }

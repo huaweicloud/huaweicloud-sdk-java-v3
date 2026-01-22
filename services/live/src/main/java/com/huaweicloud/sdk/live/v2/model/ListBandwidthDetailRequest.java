@@ -295,6 +295,81 @@ public class ListBandwidthDetailRequest {
 
     private ServiceTypeEnum serviceType;
 
+    /**
+     * ip类型，取值如下：  - v4 ：ipv4协议  - v6 ：ipv6协议   不填写默认查询所有ip类型的数据   该参数只对2026-01-30后的数据生效。 
+     */
+    public static final class IpTypeEnum {
+
+        /**
+         * Enum V4 for value: "v4"
+         */
+        public static final IpTypeEnum V4 = new IpTypeEnum("v4");
+
+        /**
+         * Enum V6 for value: "v6"
+         */
+        public static final IpTypeEnum V6 = new IpTypeEnum("v6");
+
+        private static final Map<String, IpTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, IpTypeEnum> createStaticFields() {
+            Map<String, IpTypeEnum> map = new HashMap<>();
+            map.put("v4", V4);
+            map.put("v6", V6);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        IpTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static IpTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IpTypeEnum(value));
+        }
+
+        public static IpTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof IpTypeEnum) {
+                return this.value.equals(((IpTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_type")
+
+    private IpTypeEnum ipType;
+
     public ListBandwidthDetailRequest withPlayDomains(List<String> playDomains) {
         this.playDomains = playDomains;
         return this;
@@ -548,6 +623,23 @@ public class ListBandwidthDetailRequest {
         this.serviceType = serviceType;
     }
 
+    public ListBandwidthDetailRequest withIpType(IpTypeEnum ipType) {
+        this.ipType = ipType;
+        return this;
+    }
+
+    /**
+     * ip类型，取值如下：  - v4 ：ipv4协议  - v6 ：ipv6协议   不填写默认查询所有ip类型的数据   该参数只对2026-01-30后的数据生效。 
+     * @return ipType
+     */
+    public IpTypeEnum getIpType() {
+        return ipType;
+    }
+
+    public void setIpType(IpTypeEnum ipType) {
+        this.ipType = ipType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -562,13 +654,23 @@ public class ListBandwidthDetailRequest {
             && Objects.equals(this.region, that.region) && Objects.equals(this.isp, that.isp)
             && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.interval, that.interval)
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.serviceType, that.serviceType);
+            && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.ipType, that.ipType);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(playDomains, app, stream, country, region, isp, protocol, interval, startTime, endTime, serviceType);
+        return Objects.hash(playDomains,
+            app,
+            stream,
+            country,
+            region,
+            isp,
+            protocol,
+            interval,
+            startTime,
+            endTime,
+            serviceType,
+            ipType);
     }
 
     @Override
@@ -586,6 +688,7 @@ public class ListBandwidthDetailRequest {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
+        sb.append("    ipType: ").append(toIndentedString(ipType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

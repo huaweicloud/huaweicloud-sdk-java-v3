@@ -40,7 +40,7 @@ public class BatchDeleteAclRulesResponseData {
     }
 
     /**
-     * 批量删除规则返回data
+     * **参数解释**： 批量删除规则返回 **取值范围**： 不涉及
      * @return responseDatas
      */
     public List<BatchDeleteRuleInfo> getResponseDatas() {

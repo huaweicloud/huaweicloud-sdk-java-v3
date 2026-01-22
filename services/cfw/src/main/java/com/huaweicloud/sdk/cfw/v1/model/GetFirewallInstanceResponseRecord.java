@@ -121,7 +121,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id。，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，默认情况下，fw_instance_Id为空时，返回账号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
+     * **参数解释**： 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id。可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获取 **取值范围**： 不涉及
      * @return fwInstanceId
      */
     public String getFwInstanceId() {
@@ -138,7 +138,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 防火墙名称
+     * **参数解释**： 防火墙名称 **取值范围**： 不涉及
      * @return name
      */
     public String getName() {
@@ -155,7 +155,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 集群类型，包含主备（0）和集群（1）两种方式，主备模式包含四个节点，2个主节点构成集群，剩余两个节点为主节点的备节点，集群模式仅拉起两个节点作为集群。
+     * **参数解释**： 集群类型 **取值范围**： - 0：主备模式，包含四个节点，2个主节点构成集群，剩余两个节点为主节点的备节点 - 1：集群模式，仅拉起两个节点作为集群
      * @return haType
      */
     public Integer getHaType() {
@@ -172,7 +172,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 计费模式 0：包年/包月 1：按需
+     * **参数解释**： 计费模式 **取值范围**： - 0：包年/包月 - 1：按需
      * @return chargeMode
      */
     public Integer getChargeMode() {
@@ -189,7 +189,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 防火墙防护类型，目前仅支持0，互联网防护
+     * **参数解释**： 防火墙防护类型 **取值范围**： 目前仅支持0，互联网防护
      * @return serviceType
      */
     public Integer getServiceType() {
@@ -206,7 +206,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 引擎类型，0：自研引擎 1：山石引擎 3：天融信引擎
+     * **参数解释**： 引擎类型 **取值范围**： - 0：自研引擎 - 1：山石引擎 - 3：天融信引擎
      * @return engineType
      */
     public Integer getEngineType() {
@@ -265,7 +265,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 防护对象列表
+     * **参数解释**： 防护对象列表 **取值范围**： 不涉及
      * @return protectObjects
      */
     public List<ProtectObjectVO> getProtectObjects() {
@@ -282,7 +282,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 防火墙状态列表，包括-1：等待支付，0：创建中，1，删除中，2：运行中，3：升级中，4：删除完成：5：冻结中，6：创建失败，7：删除失败，8：冻结失败，9：存储中，10：存储失败，11：升级失败
+     * **参数解释**： 防火墙状态列表 **取值范围**： - -1：等待支付 - 0：创建中 - 1，删除中 - 2：运行中 - 3：升级中 - 4：删除完成 - 5：冻结中 - 6：创建失败 - 7：删除失败 - 8：冻结失败 - 9：存储中 - 10：存储失败 - 11：升级失败
      * @return status
      */
     public Integer getStatus() {
@@ -299,7 +299,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 是否为旧引擎，true表示是，false表示不是
+     * **参数解释**： 是否为旧引擎 **取值范围**： - true：是 - false：不是
      * @return isOldFirewallInstance
      */
     public Boolean getIsOldFirewallInstance() {
@@ -316,7 +316,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 是否支持obs，true表示是，false表示不是
+     * **参数解释**： 是否支持obs **取值范围**： - true：是 - false：不是
      * @return isAvailableObs
      */
     public Boolean getIsAvailableObs() {
@@ -333,7 +333,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 是否支持威胁情报标签，true表示是，false表示不是
+     * **参数解释**： 是否支持威胁情报标签 **取值范围**： - true：是 - false：不是
      * @return isSupportThreatTags
      */
     public Boolean getIsSupportThreatTags() {
@@ -350,7 +350,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 是否支持ipv6，true表示是，false表示不是
+     * **参数解释**： 是否支持ipv6 **取值范围**： - true：是 - false：不是
      * @return supportIpv6
      */
     public Boolean getSupportIpv6() {
@@ -383,7 +383,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 特性开关，boolean值为true表示是，false表示否
+     * **参数解释**： 特性开关 **取值范围**： - true：是 - false：不是
      * @return featureToggle
      */
     public Map<String, Boolean> getFeatureToggle() {
@@ -416,7 +416,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 防火墙资源列表
+     * **参数解释**： 防火墙资源列表 **取值范围**： 不涉及
      * @return resources
      */
     public List<FirewallInstanceResource> getResources() {
@@ -433,7 +433,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 防火墙名称
+     * **参数解释**： 防火墙名称 **取值范围**： 不涉及
      * @return fwInstanceName
      */
     public String getFwInstanceName() {
@@ -450,7 +450,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
+     * **参数解释**： 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取 **取值范围**： 不涉及
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -467,7 +467,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 防火墙资源id，同fw_instance_id
+     * **参数解释**： 防火墙资源id，同fw_instance_id **取值范围**： 不涉及
      * @return resourceId
      */
     public String getResourceId() {
@@ -484,7 +484,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 是否支持url过滤，true表示是，false表示不是
+     * **参数解释**： 是否支持url过滤 **取值范围**： - true：是 - false：不是
      * @return supportUrlFiltering
      */
     public Boolean getSupportUrlFiltering() {
@@ -501,7 +501,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 标签列表，标签键值map转化的json字符串，如\"{\\\"key\\\":\\\"value\\\"}\"
+     * **参数解释**： 标签列表，标签键值map转化的json字符串，如\"{\\\"key\\\":\\\"value\\\"}\" **取值范围**： 不涉及
      * @return tags
      */
     public String getTags() {

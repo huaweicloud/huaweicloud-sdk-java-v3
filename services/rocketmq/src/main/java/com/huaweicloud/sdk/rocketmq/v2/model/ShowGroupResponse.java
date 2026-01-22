@@ -40,24 +40,24 @@ public class ShowGroupResponse extends SdkResponse {
     private String groupDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private Long createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retry_max_time")
 
     private Integer retryMaxTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "app_id")
-
-    private String appId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "app_name")
-
-    private String appName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permissions")
 
     private List<String> permissions = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "consume_orderly")
+
+    private Boolean consumeOrderly;
 
     public ShowGroupResponse withEnabled(Boolean enabled) {
         this.enabled = enabled;
@@ -65,7 +65,7 @@ public class ShowGroupResponse extends SdkResponse {
     }
 
     /**
-     * 是否可以消费。
+     * **参数解释**： 是否可以消费。 **约束限制**： 不涉及。 **取值范围**： - true：可以消费。 - false：不可以消费。 **默认取值**： 不涉及。
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -82,7 +82,7 @@ public class ShowGroupResponse extends SdkResponse {
     }
 
     /**
-     * 是否广播。
+     * **参数解释**： 是否广播。 **约束限制**： 不涉及。 **取值范围**： - true：开启广播消费。 - false：不开启广播消费。 **默认取值**： 不涉及。
      * @return broadcast
      */
     public Boolean getBroadcast() {
@@ -115,7 +115,7 @@ public class ShowGroupResponse extends SdkResponse {
     }
 
     /**
-     * 关联的代理列表。
+     * **参数解释**： 关联的代理列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return brokers
      */
     public List<String> getBrokers() {
@@ -132,7 +132,7 @@ public class ShowGroupResponse extends SdkResponse {
     }
 
     /**
-     * 消费组名称。
+     * **参数解释**： 消费组名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -149,7 +149,7 @@ public class ShowGroupResponse extends SdkResponse {
     }
 
     /**
-     * 消费组描述。
+     * **参数解释**： 消费组描述。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return groupDesc
      */
     public String getGroupDesc() {
@@ -160,13 +160,30 @@ public class ShowGroupResponse extends SdkResponse {
         this.groupDesc = groupDesc;
     }
 
+    public ShowGroupResponse withCreatedAt(Long createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 创建时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return createdAt
+     */
+    public Long getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Long createdAt) {
+        this.createdAt = createdAt;
+    }
+
     public ShowGroupResponse withRetryMaxTime(Integer retryMaxTime) {
         this.retryMaxTime = retryMaxTime;
         return this;
     }
 
     /**
-     * 最大重试次数。
+     * **参数解释**： 最大重试次数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return retryMaxTime
      */
     public Integer getRetryMaxTime() {
@@ -175,40 +192,6 @@ public class ShowGroupResponse extends SdkResponse {
 
     public void setRetryMaxTime(Integer retryMaxTime) {
         this.retryMaxTime = retryMaxTime;
-    }
-
-    public ShowGroupResponse withAppId(String appId) {
-        this.appId = appId;
-        return this;
-    }
-
-    /**
-     * 应用ID。
-     * @return appId
-     */
-    public String getAppId() {
-        return appId;
-    }
-
-    public void setAppId(String appId) {
-        this.appId = appId;
-    }
-
-    public ShowGroupResponse withAppName(String appName) {
-        this.appName = appName;
-        return this;
-    }
-
-    /**
-     * 应用名称。
-     * @return appName
-     */
-    public String getAppName() {
-        return appName;
-    }
-
-    public void setAppName(String appName) {
-        this.appName = appName;
     }
 
     public ShowGroupResponse withPermissions(List<String> permissions) {
@@ -233,7 +216,7 @@ public class ShowGroupResponse extends SdkResponse {
     }
 
     /**
-     * 权限。
+     * **参数解释**： 权限。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return permissions
      */
     public List<String> getPermissions() {
@@ -242,6 +225,23 @@ public class ShowGroupResponse extends SdkResponse {
 
     public void setPermissions(List<String> permissions) {
         this.permissions = permissions;
+    }
+
+    public ShowGroupResponse withConsumeOrderly(Boolean consumeOrderly) {
+        this.consumeOrderly = consumeOrderly;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否顺序消费。 **约束限制**： 不涉及。 **取值范围**： - true：开启顺序消费。 - false：不开启顺序消费。 **默认取值**： 不涉及。
+     * @return consumeOrderly
+     */
+    public Boolean getConsumeOrderly() {
+        return consumeOrderly;
+    }
+
+    public void setConsumeOrderly(Boolean consumeOrderly) {
+        this.consumeOrderly = consumeOrderly;
     }
 
     @Override
@@ -255,14 +255,16 @@ public class ShowGroupResponse extends SdkResponse {
         ShowGroupResponse that = (ShowGroupResponse) obj;
         return Objects.equals(this.enabled, that.enabled) && Objects.equals(this.broadcast, that.broadcast)
             && Objects.equals(this.brokers, that.brokers) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.groupDesc, that.groupDesc) && Objects.equals(this.retryMaxTime, that.retryMaxTime)
-            && Objects.equals(this.appId, that.appId) && Objects.equals(this.appName, that.appName)
-            && Objects.equals(this.permissions, that.permissions);
+            && Objects.equals(this.groupDesc, that.groupDesc) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.retryMaxTime, that.retryMaxTime)
+            && Objects.equals(this.permissions, that.permissions)
+            && Objects.equals(this.consumeOrderly, that.consumeOrderly);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enabled, broadcast, brokers, name, groupDesc, retryMaxTime, appId, appName, permissions);
+        return Objects
+            .hash(enabled, broadcast, brokers, name, groupDesc, createdAt, retryMaxTime, permissions, consumeOrderly);
     }
 
     @Override
@@ -274,10 +276,10 @@ public class ShowGroupResponse extends SdkResponse {
         sb.append("    brokers: ").append(toIndentedString(brokers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    groupDesc: ").append(toIndentedString(groupDesc)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    retryMaxTime: ").append(toIndentedString(retryMaxTime)).append("\n");
-        sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
-        sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
+        sb.append("    consumeOrderly: ").append(toIndentedString(consumeOrderly)).append("\n");
         sb.append("}");
         return sb.toString();
     }

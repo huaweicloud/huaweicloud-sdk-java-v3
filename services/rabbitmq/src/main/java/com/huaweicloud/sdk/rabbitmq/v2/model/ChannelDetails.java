@@ -46,7 +46,7 @@ public class ChannelDetails {
     }
 
     /**
-     * channel信息，包括客户端IP:Port到服务端IP:Port(channel_id)。
+     * **参数解释**： channel信息，包括客户端IP:Port到服务端IP:Port(channel_id)。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -63,7 +63,7 @@ public class ChannelDetails {
     }
 
     /**
-     * channel数量
+     * **参数解释**： channel数量。 **取值范围**： 不涉及。
      * @return number
      */
     public Integer getNumber() {
@@ -80,7 +80,7 @@ public class ChannelDetails {
     }
 
     /**
-     * 消费者用户名，在开启ACL访问控制后返回真实用户名，未开启ACL时返回null。
+     * **参数解释**： 消费者用户名，在开启ACL访问控制后返回真实用户名，未开启ACL时返回null。 **取值范围**： 不涉及。
      * @return user
      */
     public String getUser() {
@@ -97,7 +97,7 @@ public class ChannelDetails {
     }
 
     /**
-     * connection信息，包括客户端IP:Port到服务端IP:Port。
+     * **参数解释**： connection信息，包括客户端IP:Port到服务端IP:Port。 **取值范围**： 不涉及。
      * @return connectionName
      */
     public String getConnectionName() {
@@ -114,7 +114,7 @@ public class ChannelDetails {
     }
 
     /**
-     * 连接的消费者IP
+     * **参数解释**： 连接的消费者IP。 **取值范围**： 不涉及。
      * @return peerHost
      */
     public String getPeerHost() {
@@ -131,7 +131,7 @@ public class ChannelDetails {
     }
 
     /**
-     * 连接的消费者进程端口号
+     * **参数解释**： 连接的消费者进程端口号。 **取值范围**： 不涉及。
      * @return peerPort
      */
     public Integer getPeerPort() {

@@ -78,7 +78,7 @@ public class AddressItems {
     }
 
     /**
-     * 覆盖ip列表
+     * 覆盖IP列表
      * @return coveredIp
      */
     public List<CoveredIPVO> getCoveredIp() {

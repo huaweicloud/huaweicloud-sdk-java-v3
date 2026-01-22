@@ -26,7 +26,7 @@ public class ProtectObjectVO {
     private String objectName;
 
     /**
-     * 防护对象类型：0 南北向，1 东西向护对象类型
+     * **参数解释**： 防护对象类型 **取值范围**： - 0：南北向 - 1：东西向
      */
     public static final class TypeEnum {
 
@@ -106,7 +106,7 @@ public class ProtectObjectVO {
     }
 
     /**
-     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id。
+     * **参数解释**： 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id。 **取值范围**： 不涉及
      * @return objectId
      */
     public String getObjectId() {
@@ -123,7 +123,7 @@ public class ProtectObjectVO {
     }
 
     /**
-     * 防护对象名称
+     * **参数解释**： 防护对象名称 **取值范围**： 不涉及
      * @return objectName
      */
     public String getObjectName() {
@@ -140,7 +140,7 @@ public class ProtectObjectVO {
     }
 
     /**
-     * 防护对象类型：0 南北向，1 东西向护对象类型
+     * **参数解释**： 防护对象类型 **取值范围**： - 0：南北向 - 1：东西向
      * @return type
      */
     public TypeEnum getType() {

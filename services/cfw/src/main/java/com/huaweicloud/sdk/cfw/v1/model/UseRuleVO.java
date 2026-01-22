@@ -26,7 +26,7 @@ public class UseRuleVO {
     }
 
     /**
-     * 规则id
+     * 规则ID
      * @return id
      */
     public String getId() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * RocketMQ元数据迁移，RabbitMQ binding元数据。
+ * **参数解释**： RocketMQ元数据迁移，RabbitMQ binding元数据。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
  */
 public class MigrationRabbitBindingMetadata {
 
@@ -41,7 +41,7 @@ public class MigrationRabbitBindingMetadata {
     }
 
     /**
-     * vhost名称。
+     * **参数解释**： vhost名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return vhost
      */
     public String getVhost() {
@@ -58,7 +58,7 @@ public class MigrationRabbitBindingMetadata {
     }
 
     /**
-     * 消息的来源。
+     * **参数解释**： 消息的来源。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return source
      */
     public String getSource() {
@@ -75,7 +75,7 @@ public class MigrationRabbitBindingMetadata {
     }
 
     /**
-     * 消息的目标。
+     * **参数解释**： 消息的目标。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return destination
      */
     public String getDestination() {
@@ -92,7 +92,7 @@ public class MigrationRabbitBindingMetadata {
     }
 
     /**
-     * 目标的类型。
+     * **参数解释**： 目标的类型。 **约束限制**： 不涉及。 **取值范围**： - exchange：交换机。 - queue：队列。[RabbitMQ AMQP版本只支持绑定queue。](tag:hws,hws_hk) **默认取值**： 不涉及。
      * @return destinationType
      */
     public String getDestinationType() {
@@ -109,7 +109,7 @@ public class MigrationRabbitBindingMetadata {
     }
 
     /**
-     * 路由键。
+     * **参数解释**： 路由键。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return routingKey
      */
     public String getRoutingKey() {

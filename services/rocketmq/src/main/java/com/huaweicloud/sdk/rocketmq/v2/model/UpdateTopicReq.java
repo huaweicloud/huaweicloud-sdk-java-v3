@@ -30,7 +30,7 @@ public class UpdateTopicReq {
     private BigDecimal writeQueueNum;
 
     /**
-     * **参数解释**： 权限。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 权限。 **约束限制**： 仅4.8.0实例支持修改该参数。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      */
     public static final class PermissionEnum {
 
@@ -126,7 +126,7 @@ public class UpdateTopicReq {
     }
 
     /**
-     * **参数解释**： 总读队列个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 总读队列个数。 **约束限制**： 仅4.8.0实例支持修改该参数。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return readQueueNum
      */
     public BigDecimal getReadQueueNum() {
@@ -143,7 +143,7 @@ public class UpdateTopicReq {
     }
 
     /**
-     * **参数解释**： 总写队列个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 总写队列个数。 **约束限制**： 仅4.8.0实例支持修改该参数。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return writeQueueNum
      */
     public BigDecimal getWriteQueueNum() {
@@ -160,7 +160,7 @@ public class UpdateTopicReq {
     }
 
     /**
-     * **参数解释**： 权限。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 权限。 **约束限制**： 仅4.8.0实例支持修改该参数。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return permission
      */
     public PermissionEnum getPermission() {
@@ -193,7 +193,7 @@ public class UpdateTopicReq {
     }
 
     /**
-     * **参数解释**： 队列。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 队列。 **约束限制**： 仅4.8.0实例支持修改该参数。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return queues
      */
     public List<UpdateTopicQueueEntity> getQueues() {

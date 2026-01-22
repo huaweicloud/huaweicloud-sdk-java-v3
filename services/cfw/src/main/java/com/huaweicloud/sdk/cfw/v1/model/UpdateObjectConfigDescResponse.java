@@ -22,7 +22,7 @@ public class UpdateObjectConfigDescResponse extends SdkResponse {
     }
 
     /**
-     * Get data
+     * 成员id
      * @return data
      */
     public Object getData() {

@@ -26,7 +26,7 @@ public class DomainSetResponseData {
     }
 
     /**
-     * 域名组id
+     * **参数解释**： 域名组id **取值范围**： 不涉及
      * @return id
      */
     public String getId() {
@@ -43,7 +43,7 @@ public class DomainSetResponseData {
     }
 
     /**
-     * 域名组名称
+     * **参数解释**： 域名组名称 **取值范围**： 不涉及
      * @return name
      */
     public String getName() {

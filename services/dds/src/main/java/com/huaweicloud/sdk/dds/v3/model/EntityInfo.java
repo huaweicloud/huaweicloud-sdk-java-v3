@@ -26,7 +26,7 @@ public class EntityInfo {
     }
 
     /**
-     * 组ID或节点ID。
+     * **参数解释：** 组ID或节点ID。 **取值范围：** 不涉及。
      * @return entityId
      */
     public String getEntityId() {
@@ -43,7 +43,7 @@ public class EntityInfo {
     }
 
     /**
-     * 组名称或节点名称。
+     * **参数解释：** 组名称或节点名称。 **取值范围：** 不涉及。
      * @return entityName
      */
     public String getEntityName() {

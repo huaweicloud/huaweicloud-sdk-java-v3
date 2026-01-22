@@ -990,10 +990,10 @@ public class GeipMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListSupportMasksRequest::getIpVersion, ListSupportMasksRequest::setIpVersion));
-        builder.<List<Integer>>withRequestField("mask",
+        builder.<Integer>withRequestField("mask",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSupportMasksRequest::getMask, ListSupportMasksRequest::setMask));
 
         // response
@@ -1653,27 +1653,6 @@ public class GeipMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CountGlobalEipSegmentRequest::getLimit, CountGlobalEipSegmentRequest::setLimit));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CountGlobalEipSegmentRequest::getOffset, CountGlobalEipSegmentRequest::setOffset));
-        builder.<String>withRequestField("marker",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CountGlobalEipSegmentRequest::getMarker, CountGlobalEipSegmentRequest::setMarker));
-        builder.<Boolean>withRequestField("page_reverse",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(CountGlobalEipSegmentRequest::getPageReverse,
-                CountGlobalEipSegmentRequest::setPageReverse));
         builder.<List<CountGlobalEipSegmentRequest.FieldsEnum>>withRequestField("fields",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

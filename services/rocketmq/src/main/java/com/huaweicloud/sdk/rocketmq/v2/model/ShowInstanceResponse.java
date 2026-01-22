@@ -1,16 +1,11 @@
 package com.huaweicloud.sdk.rocketmq.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -39,80 +34,10 @@ public class ShowInstanceResponse extends SdkResponse {
 
     private String description;
 
-    /**
-     * **参数解释**： 实例类型。 **取值范围**： - single：单机。 - cluster：集群。
-     */
-    public static final class TypeEnum {
-
-        /**
-         * Enum SINGLE for value: "single"
-         */
-        public static final TypeEnum SINGLE = new TypeEnum("single");
-
-        /**
-         * Enum CLUSTER for value: "cluster"
-         */
-        public static final TypeEnum CLUSTER = new TypeEnum("cluster");
-
-        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, TypeEnum> createStaticFields() {
-            Map<String, TypeEnum> map = new HashMap<>();
-            map.put("single", SINGLE);
-            map.put("cluster", CLUSTER);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        TypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static TypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
-        }
-
-        public static TypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof TypeEnum) {
-                return this.value.equals(((TypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private TypeEnum type;
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "specification")
@@ -405,6 +330,16 @@ public class ShowInstanceResponse extends SdkResponse {
     private Boolean drEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "quota_address")
+
+    private String quotaAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_msg_process_tps")
+
+    private Integer maxMsgProcessTps;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "config_ssl_need_restart_process")
 
     private Boolean configSslNeedRestartProcess;
@@ -414,13 +349,28 @@ public class ShowInstanceResponse extends SdkResponse {
 
     private String tlsMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "arch_type")
+
+    private String archType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_elastic_tps")
+
+    private Boolean enableElasticTps;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_volume_expand_enable")
+
+    private Boolean autoVolumeExpandEnable;
+
     public ShowInstanceResponse withName(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * **参数解释**： 实例名称。 **取值范围**： 不涉及。
+     * **参数解释**： 实例名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -437,7 +387,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 消息引擎。 **取值范围**： 不涉及。
+     * **参数解释**： 消息引擎类型。 **约束限制**： 不涉及。 **取值范围**： - rocketmq：RocketMQ消息引擎。 - reliability：RocketMQ消息引擎别称。 **默认取值**： 不涉及。
      * @return engine
      */
     public String getEngine() {
@@ -454,7 +404,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 状态。 **取值范围**： [详细状态说明请参考[实例状态说明](hrm-api-0010.xml)。](tag:hws,hws_hk,ctc,hws_eu,ocb,g42,hk_g42,tm,sbc,hk_sbc,cmcc,hk_tm)[详细状态说明请参考[实例状态说明](kafka-api-180514012.xml)。](tag:hcs,fcs)
+     * **参数解释**： 消息状态。 **约束限制**： 不涉及。 **取值范围**： [详细状态说明请参考[实例状态说明](hrm-api-0010.xml)。](tag:hws,hws_hk,ctc,hws_eu,ocb,g42,hk_g42,tm,sbc,hk_sbc,cmcc,hk_tm,dt,ax,srg)[详细状态说明请参考[实例状态说明](kafka-api-180514012.xml)。](tag:hcs,fcs,hcs_oemout) **默认取值**： 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -471,7 +421,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 消息描述。 **取值范围**： 不涉及。
+     * **参数解释**： 消息描述。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return description
      */
     public String getDescription() {
@@ -482,20 +432,20 @@ public class ShowInstanceResponse extends SdkResponse {
         this.description = description;
     }
 
-    public ShowInstanceResponse withType(TypeEnum type) {
+    public ShowInstanceResponse withType(String type) {
         this.type = type;
         return this;
     }
 
     /**
-     * **参数解释**： 实例类型。 **取值范围**： - single：单机。 - cluster：集群。
+     * **参数解释**： 消息描述。 **约束限制**： 不涉及。 **取值范围**： [- single：4.8.0单机。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,cmcc,ax,srg) [- cluster：4.8.0集群。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,cmcc,ax,srg) [- single.basic：5.x单机基础版。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt,srg) [- cluster.basic：5.x集群基础版。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt,srg) [- cluster.professional：5.x集群专业版。](tag:hws,hws_eu,hws_hk,ctc,srg) **默认取值**： 不涉及。
      * @return type
      */
-    public TypeEnum getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(TypeEnum type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -505,7 +455,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 实例规格。 **取值范围**： 不涉及。
+     * **参数解释**： 实例规格。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return specification
      */
     public String getSpecification() {
@@ -522,7 +472,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 实例版本。 **取值范围**： 不涉及。
+     * **参数解释**： 实例版本。 **约束限制**： 不涉及。 **取值范围**： [- 4.8.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,cmcc,ax,srg) [- 5.x](tag:hws,hws_eu,hws_hk,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt,srg) **默认取值**： 不涉及。
      * @return engineVersion
      */
     public String getEngineVersion() {
@@ -539,7 +489,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 实例ID。 **取值范围**： 不涉及。
+     * **参数解释**： 实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -556,7 +506,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 付费模式。 **取值范围**： [1表示按需计费。](tag:hws_eu,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[1表示按需计费，0表示包年/包月计费。](tag:hws,hws_eu,hws_hk,ctc) [计费模式，参数暂未使用。](tag:ocb,hws_ocb,hcs,fcs)
+     * **参数解释**： 付费模式。 **约束限制**： 不涉及。 **取值范围**： [1表示按需计费。](tag:hws_eu,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,cmcc,dt)[1表示按需计费，0表示包年/包月计费。](tag:hws,hws_eu,hws_hk,ctc,cmcc,ax) [计费模式，参数暂未使用。](tag:ocb,hws_ocb,hcs,fcs,hcs_oemout,srg) **默认取值**： 不涉及。
      * @return chargingMode
      */
     public Integer getChargingMode() {
@@ -573,7 +523,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 私有云ID。 **取值范围**： 不涉及。
+     * **参数解释**： 私有云ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return vpcId
      */
     public String getVpcId() {
@@ -590,7 +540,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 私有云名称。 **取值范围**： 不涉及。
+     * **参数解释**： 私有云名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return vpcName
      */
     public String getVpcName() {
@@ -607,7 +557,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 完成创建时间。  格式为时间戳，指从格林威治时间1970年01月01日00时00分00秒起至指定时间的偏差总毫秒数。 **取值范围**： 不涉及。
+     * **参数解释**： 完成创建时间。 格式为时间戳，指从格林威治时间1970年01月01日00时00分00秒起至指定时间的偏差总毫秒数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -624,7 +574,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 产品标识。 **取值范围**： 不涉及。
+     * **参数解释**： RocketMQ实例规格。[x86环境后缀为.x86，arm环境为.arm。single表示单机，cluster表示集群。](tag:hcs,fcs,hcs_oemout)  **约束限制**： 不涉及。 **取值范围**： [当“type”为“single.basic”选择单机规格；当“type”为“cluster.basic”选择集群规格。](tag:dt) [- c6.2u8g.cluster.x86或c6.2u8g.cluster.arm：单个代理最大分区数50，单个代理最大消费组数100](tag:fcs) [- c6.4u8g.cluster.small：单个代理最大Topic数2000，单个代理最大消费组数2000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,cmcc,ax,srg) [- c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,cmcc,ax,srg) [- c6.4u16g.cluster.x86或c6.4u16g.cluster.arm：单个代理最大分区数100，单个代理最大消费组数200](tag:hcs,hcs_oemout) [- c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,cmcc,ax,srg) [- c6.8u32g.cluster.x86或c6.8u32g.cluster.arm：单个代理最大Topic数200，单个代理最大消费组数400](tag:hcs,fcs,hcs_oemout) [- c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,cmcc,ax,srg) [- c6.16u64g.cluster.x86或c6.16u64g.cluster.arm：单个代理最大Topic数300，单个代理最大消费组数600](tag:hcs,fcs,hcs_oemout) [- c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,cmcc,ax,srg) [- c6.32u128g.cluster.x86或c6.32u128g.cluster.arm：单个代理最大Topic数400，单个代理最大消费组数800](tag:hcs,fcs,hcs_oemout) [- rocketmq.b1.large.1：RocketMQ 5.x基础版单机规格，实例TPS 500](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt,srg) [- rocketmq.b2.large.4：RocketMQ 5.x基础版集群规格，实例TPS 2000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt,srg) [- rocketmq.b2.large.8：RocketMQ 5.x基础版集群规格，实例TPS 4000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt,srg) [- rocketmq.b2.large.12：RocketMQ 5.x基础版集群规格，实例TPS 6000](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,sbc,hk_sbc,hk_tm,dt,srg) [- rocketmq.p1.large.1：RocketMQ 5.x专业版单机规格，实例TPS 500](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.8：RocketMQ 5.x专业版集群规格，实例TPS 4000](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.12：RocketMQ 5.x专业版集群规格，实例TPS 6000](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.20：RocketMQ 5.x专业版集群规格，实例TPS 10000](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.40：RocketMQ 5.x专业版集群规格，实例TPS 20000](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.100：RocketMQ 5.x专业版集群规格，实例TPS 50000](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.150：RocketMQ 5.x专业版集群规格，实例TPS 75000](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.200：RocketMQ 5.x专业版集群规格，实例TPS 100000](tag:hws,hws_eu,hws_hk,ctc,srg) [- rocketmq.p2.large.300：RocketMQ 5.x专业版集群规格，实例TPS 150000](tag:hws,hws_eu,hws_hk,ctc,srg)  **默认取值**： 不涉及。
      * @return productId
      */
     public String getProductId() {
@@ -641,7 +591,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 安全组ID。 **取值范围**： 不涉及。
+     * **参数解释**： 安全组ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -658,7 +608,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 安全组名称。 **取值范围**： 不涉及。
+     * **参数解释**： 安全组名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return securityGroupName
      */
     public String getSecurityGroupName() {
@@ -675,7 +625,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 子网ID。 **取值范围**： 不涉及。
+     * **参数解释**： 子网ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -692,7 +642,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 子网名称。 **取值范围**： 不涉及。
+     * **参数解释**： 子网名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return subnetName
      */
     public String getSubnetName() {
@@ -709,7 +659,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 子网路由（仅RocketMQ 5.x版本会显示此字段）。 **取值范围**： 不涉及。
+     * **参数解释**： 子网路由。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return subnetCidr
      */
     public String getSubnetCidr() {
@@ -742,7 +692,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 可用区ID列表。 **取值范围**： 不涉及。
+     * **参数解释**： 可用区ID列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return availableZones
      */
     public List<String> getAvailableZones() {
@@ -775,7 +725,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 可用区名称列表。
+     * **参数解释**： 可用区名称列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return availableZoneNames
      */
     public List<String> getAvailableZoneNames() {
@@ -792,7 +742,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 用户ID。 **取值范围**： 不涉及。
+     * **参数解释**： 用户ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return userId
      */
     public String getUserId() {
@@ -809,7 +759,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 用户名。 **取值范围**： 不涉及。
+     * **参数解释**： 用户名。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return userName
      */
     public String getUserName() {
@@ -826,7 +776,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 维护时间窗开始时间，格式为HH:mm:ss。 **取值范围**： 不涉及。
+     * **参数解释**： 维护时间窗开始时间，格式为HH:mm:ss。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return maintainBegin
      */
     public String getMaintainBegin() {
@@ -843,7 +793,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 维护时间窗结束时间，格式为HH:mm:ss。 **取值范围**： 不涉及。
+     * **参数解释**： 维护时间窗结束时间，格式为HH:mm:ss。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return maintainEnd
      */
     public String getMaintainEnd() {
@@ -860,7 +810,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 是否开启消息收集功能。 **取值范围**： - true：开启。 - false：不开启。
+     * **参数解释**： 是否开启消息收集功能。 **约束限制**： 不涉及。 **取值范围**： - true：开启。 - false：不开启。 **默认取值**： 不涉及。
      * @return enableLogCollection
      */
     public Boolean getEnableLogCollection() {
@@ -877,7 +827,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 存储空间，单位：GB。 **取值范围**： 不涉及。
+     * **参数解释**： 存储空间，单位：GB。 **约束限制**： 不涉及。 **取值范围**： 不同的实例规格支持不同的存储配置。 [- RocketMQ 5.x 单机存储取值范围：100-30000。](tag:dt) [- RocketMQ 5.x 集群存储取值范围：200-60000。](tag:dt) **默认取值**： 不涉及。
      * @return storageSpace
      */
     public Integer getStorageSpace() {
@@ -894,7 +844,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 已用消息存储空间，单位：GB。 **取值范围**： 不涉及。
+     * **参数解释**： 已用消息存储空间，单位：GB。 **约束限制**： 不涉及。 **取值范围**： 不同的实例规格支持不同的存储配置。 [- RocketMQ 5.x 单机存储取值范围：100-30000。](tag:dt) [- RocketMQ 5.x 集群存储取值范围：200-60000。](tag:dt) **默认取值**： 不涉及。
      * @return usedStorageSpace
      */
     public Integer getUsedStorageSpace() {
@@ -911,7 +861,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 是否开启公网。 **取值范围**： - true：开启。 - false：不开启。
+     * **参数解释**： 是否开启公网。 **约束限制**： 不涉及。 **取值范围**： - true：开启。 - false：不开启。 **默认取值**： 不涉及。
      * @return enablePublicip
      */
     public Boolean getEnablePublicip() {
@@ -928,7 +878,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 实例绑定的弹性IP地址的ID。  以英文逗号隔开多个弹性IP地址的ID。  如果开启了公网访问功能（即enable_publicip为true），该字段为必选。 **取值范围**： 不涉及。
+     * **参数解释**： 实例绑定的弹性IP地址的ID。  以英文逗号隔开多个弹性IP地址的ID。  如果开启了公网访问功能（即enable_publicip为true），该字段为必选。 **约束限制**： 不涉及。 **取值范围**： - true：开启。 - false：不开启。 **默认取值**： 不涉及。
      * @return publicipId
      */
     public String getPublicipId() {
@@ -945,7 +895,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 公网IP地址。 **取值范围**： 不涉及。
+     * **参数解释**： 公网IP地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return publicipAddress
      */
     public String getPublicipAddress() {
@@ -962,7 +912,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 是否开启SSL。 **取值范围**： - true：开启。 - false：未开启。
+     * **参数解释**： 是否开启SSL。 **约束限制**： 不涉及。 **取值范围**： - true：开启。 - false：未开启。 **默认取值**： 不涉及。
      * @return sslEnable
      */
     public Boolean getSslEnable() {
@@ -979,7 +929,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 跨VPC访问信息。 **取值范围**： 不涉及。
+     * **参数解释**： 跨VPC访问信息。 **约束限制**： 不涉及。 **取值范围**： - true：开启。 - false：未开启。 **默认取值**： 不涉及。
      * @return crossVpcInfo
      */
     public String getCrossVpcInfo() {
@@ -996,7 +946,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 存储资源ID。 **取值范围**： 不涉及。
+     * **参数解释**： 存储资源ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return storageResourceId
      */
     public String getStorageResourceId() {
@@ -1013,7 +963,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 存储规格代码。 **取值范围**： 不涉及。
+     * **参数解释**： 存储规格代码。 **约束限制**： 不涉及。 **取值范围**： - dms.physical.storage.high.v2：高IO类型磁盘 - dms.physical.storage.ultra.v2：超高IO类型磁盘 [- dms.physical.storage.general：使用通用型SSD的磁盘类型。](tag:hws,hws_hk,dt,ctc,ax) [- dms.physical.storage.extreme：使用极速型SSD的磁盘类型。](tag:hws,hws_hk,dt,ctc,ax) **默认取值**： 不涉及。
      * @return storageSpecCode
      */
     public String getStorageSpecCode() {
@@ -1030,7 +980,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 服务类型。 **取值范围**： 不涉及。
+     * **参数解释**： 服务类型。 **约束限制**： 不涉及。 **取值范围**： - advanced：[华为云服务类型。](tag:hws,hws_hk)[服务类型。](tag:ctc,hws_eu,ocb,g42,hk_g42,tm,sbc,hk_sbc,cmcc,hk_tm,hcs,fcs,dt,srg,ax,srg,hcs_oemout) [- dec：专属云服务类型。](tag:hws,hws_hk) **默认取值**： 不涉及。
      * @return serviceType
      */
     public String getServiceType() {
@@ -1047,7 +997,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 存储类型。 **取值范围**： 不涉及。
+     * **参数解释**： 存储类型。 **约束限制**： 不涉及。 **取值范围**： - hec：[华为云存储类型。](tag:hws,hws_hk)[存储类型。](tag:ctc,hws_eu,ocb,g42,hk_g42,tm,sbc,hk_sbc,cmcc,hk_tm,hcs,fcs,dt,srg,ax,srg,hcs_oemout) [- dss：专属云存储类型。](tag:hws,hws_hk) **默认取值**： 不涉及。
      * @return storageType
      */
     public String getStorageType() {
@@ -1064,7 +1014,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 扩展时间。 **取值范围**： 不涉及。
+     * **参数解释**： 扩展时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return extendTimes
      */
     public Long getExtendTimes() {
@@ -1081,7 +1031,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 是否开启IPv6。 **取值范围**： - true：开启。 - false：未开启。
+     * **参数解释**： 是否开启IPv6。 **约束限制**： 不涉及。 **取值范围**： - true：开启。 - false：未开启。 **默认取值**： 不涉及。
      * @return ipv6Enable
      */
     public Boolean getIpv6Enable() {
@@ -1098,7 +1048,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 实例支持的特性功能。 **取值范围**： 不涉及。
+     * **参数解释**： 实例支持的特性功能。 **约束限制**： 不涉及。 **取值范围**： - true：开启。 - false：未开启。 **默认取值**： 不涉及。
      * @return supportFeatures
      */
     public String getSupportFeatures() {
@@ -1115,7 +1065,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 是否开启磁盘加密。 **取值范围**： - true：开启。 - false：不开启。
+     * **参数解释**： 是否开启磁盘加密。 **约束限制**： 不涉及。 **取值范围**： - true：开启。 - false：不开启。 **默认取值**： 不涉及。
      * @return diskEncrypted
      */
     public Boolean getDiskEncrypted() {
@@ -1132,7 +1082,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 云监控版本。 **取值范围**： 不涉及。
+     * **参数解释**： 云监控版本。 **约束限制**： 不涉及。 **取值范围**： - true：开启。 - false：不开启。 **默认取值**： 不涉及。
      * @return cesVersion
      */
     public String getCesVersion() {
@@ -1149,7 +1099,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 节点数。 **取值范围**： 不涉及。
+     * **参数解释**： 节点数。（仅RocketMQ 4.8.0版本会显示此字段） **约束限制**： 不涉及。 **取值范围**： - true：开启。 - false：不开启。 **默认取值**： 不涉及。
      * @return nodeNum
      */
     public Integer getNodeNum() {
@@ -1166,7 +1116,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 是否启用新规格计费。 **取值范围**： - true：开启。 - false：未开启。
+     * **参数解释**： 是否启用新规格计费。 **约束限制**： 不涉及。 **取值范围**： - true：开启。 - false：不开启。 **默认取值**： 不涉及。
      * @return newSpecBillingEnable
      */
     public Boolean getNewSpecBillingEnable() {
@@ -1183,7 +1133,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 是否开启访问控制列表。 **取值范围**： - true：开启。 - false：未开启。
+     * **参数解释**： 是否开启访问控制列表。 **约束限制**： 不涉及。 **取值范围**： - true：开启。 - false：不开启。 **默认取值**： 不涉及。
      * @return enableAcl
      */
     public Boolean getEnableAcl() {
@@ -1200,7 +1150,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： Broker节点数（仅RocketMQ 4.8.0版本会显示此字段）。 **取值范围**： 不涉及。
+     * **参数解释**： Broker节点数。 **约束限制**： 不涉及。 **取值范围**：   不涉及。 **默认取值**： 不涉及。
      * @return brokerNum
      */
     public Integer getBrokerNum() {
@@ -1217,7 +1167,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 实例是否开启域名访问功能。 **取值范围**： - true：开启。 - false：未开启。
+     * **参数解释**： 实例是否开启域名访问功能。 **约束限制**： 不涉及。 **取值范围**： - true：开启。 - false：不开启。 **默认取值**： 不涉及。
      * @return dnsEnable
      */
     public Boolean getDnsEnable() {
@@ -1234,7 +1184,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 元数据地址。 **取值范围**： 不涉及。
+     * **参数解释**： 元数据地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return namesrvAddress
      */
     public String getNamesrvAddress() {
@@ -1251,7 +1201,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 元数据域名。 **取值范围**： 不涉及。
+     * **参数解释**： 元数据域名。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return namesrvDomainName
      */
     public String getNamesrvDomainName() {
@@ -1268,7 +1218,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 业务数据地址。 **取值范围**： 不涉及。
+     * **参数解释**： 业务数据地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return brokerAddress
      */
     public String getBrokerAddress() {
@@ -1285,7 +1235,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 公网元数据地址。 **取值范围**： 不涉及。
+     * **参数解释**： 公网元数据地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return publicNamesrvAddress
      */
     public String getPublicNamesrvAddress() {
@@ -1302,7 +1252,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 公网元数据域名。 **取值范围**： 不涉及。
+     * **参数解释**： 公网元数据域名。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return publicNamesrvDomainName
      */
     public String getPublicNamesrvDomainName() {
@@ -1319,7 +1269,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 公网业务数据地址。 **取值范围**： 不涉及。
+     * **参数解释**： 公网业务数据地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return publicBrokerAddress
      */
     public String getPublicBrokerAddress() {
@@ -1336,7 +1286,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： grpc连接地址（仅RocketMQ 5.x版本会显示此字段）。 **取值范围**： 不涉及。
+     * **参数解释**： grpc连接地址（仅RocketMQ 5.x版本会显示此字段）。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return grpcAddress
      */
     public String getGrpcAddress() {
@@ -1353,7 +1303,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： grpc连接域名（仅RocketMQ 5.x版本会显示此字段）。 **取值范围**： 不涉及。
+     * **参数解释**： grpc连接域名（仅RocketMQ 5.x版本会显示此字段）。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return grpcDomainName
      */
     public String getGrpcDomainName() {
@@ -1370,7 +1320,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 公网grpc连接地址（仅RocketMQ 5.x版本会显示此字段）。 **取值范围**： 不涉及。
+     * **参数解释**： 公网grpc连接地址（仅RocketMQ 5.x版本会显示此字段）。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return publicGrpcAddress
      */
     public String getPublicGrpcAddress() {
@@ -1387,7 +1337,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 公网grpc连接域名（仅RocketMQ 5.x版本会显示此字段）。 **取值范围**： 不涉及。
+     * **参数解释**： 公网grpc连接域名（仅RocketMQ 5.x版本会显示此字段）。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return publicGrpcDomainName
      */
     public String getPublicGrpcDomainName() {
@@ -1404,7 +1354,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 企业项目ID。 **取值范围**： 不涉及。
+     * **参数解释**： 企业项目ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -1437,7 +1387,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 标签列表。 **取值范围**： 不涉及。
+     * **参数解释**： 标签列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return tags
      */
     public List<TagEntity> getTags() {
@@ -1454,7 +1404,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 总存储空间。 **取值范围**： 不涉及。
+     * **参数解释**： 总存储空间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return totalStorageSpace
      */
     public Integer getTotalStorageSpace() {
@@ -1471,7 +1421,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 资源规格。 **取值范围**： 不涉及。
+     * **参数解释**： 资源规格。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {
@@ -1488,7 +1438,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 生产TPS占比。 **取值范围**： 不涉及。
+     * **参数解释**： 生产TPS占比。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return producePortion
      */
     public Integer getProducePortion() {
@@ -1505,7 +1455,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 消费TPS占比。 **取值范围**： 不涉及。
+     * **参数解释**： 消费TPS占比。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return consumePortion
      */
     public Integer getConsumePortion() {
@@ -1522,7 +1472,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 是否为容灾实例。 **取值范围**： 不涉及。
+     * **参数解释**： 是否为容灾实例。 **约束限制**： 不涉及。 **取值范围**： - true：容灾实例。 - false：非容灾实例。 **默认取值**： 不涉及。
      * @return drEnable
      */
     public Boolean getDrEnable() {
@@ -1533,13 +1483,47 @@ public class ShowInstanceResponse extends SdkResponse {
         this.drEnable = drEnable;
     }
 
+    public ShowInstanceResponse withQuotaAddress(String quotaAddress) {
+        this.quotaAddress = quotaAddress;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 流控地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return quotaAddress
+     */
+    public String getQuotaAddress() {
+        return quotaAddress;
+    }
+
+    public void setQuotaAddress(String quotaAddress) {
+        this.quotaAddress = quotaAddress;
+    }
+
+    public ShowInstanceResponse withMaxMsgProcessTps(Integer maxMsgProcessTps) {
+        this.maxMsgProcessTps = maxMsgProcessTps;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 最大消息TPS。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return maxMsgProcessTps
+     */
+    public Integer getMaxMsgProcessTps() {
+        return maxMsgProcessTps;
+    }
+
+    public void setMaxMsgProcessTps(Integer maxMsgProcessTps) {
+        this.maxMsgProcessTps = maxMsgProcessTps;
+    }
+
     public ShowInstanceResponse withConfigSslNeedRestartProcess(Boolean configSslNeedRestartProcess) {
         this.configSslNeedRestartProcess = configSslNeedRestartProcess;
         return this;
     }
 
     /**
-     * **参数解释**： 配置ssl是否需要重启。 **取值范围**： 不涉及。
+     * **参数解释**： 配置ssl是否需要重启。 **约束限制**： 不涉及。 **取值范围**： - true：需要重启。 - false：不需要重启。 **默认取值**： 不涉及。
      * @return configSslNeedRestartProcess
      */
     public Boolean getConfigSslNeedRestartProcess() {
@@ -1556,7 +1540,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 实例使用的安全协议。 **取值范围**： 不涉及。
+     * **参数解释**： 实例使用的安全协议。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return tlsMode
      */
     public String getTlsMode() {
@@ -1565,6 +1549,57 @@ public class ShowInstanceResponse extends SdkResponse {
 
     public void setTlsMode(String tlsMode) {
         this.tlsMode = tlsMode;
+    }
+
+    public ShowInstanceResponse withArchType(String archType) {
+        this.archType = archType;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 架构类型。 **约束限制**： 不涉及。 **取值范围**： - X86。 - ARM。 **默认取值**： 不涉及。
+     * @return archType
+     */
+    public String getArchType() {
+        return archType;
+    }
+
+    public void setArchType(String archType) {
+        this.archType = archType;
+    }
+
+    public ShowInstanceResponse withEnableElasticTps(Boolean enableElasticTps) {
+        this.enableElasticTps = enableElasticTps;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 弹性TPS开关状态。 **约束限制**： 不涉及。 **取值范围**： - true：开启弹性TPS。 - false：不开启弹性TPS。 **默认取值**： 不涉及。
+     * @return enableElasticTps
+     */
+    public Boolean getEnableElasticTps() {
+        return enableElasticTps;
+    }
+
+    public void setEnableElasticTps(Boolean enableElasticTps) {
+        this.enableElasticTps = enableElasticTps;
+    }
+
+    public ShowInstanceResponse withAutoVolumeExpandEnable(Boolean autoVolumeExpandEnable) {
+        this.autoVolumeExpandEnable = autoVolumeExpandEnable;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否开启自动磁盘扩容。 **约束限制**： 不涉及。 **取值范围**： - true：开启自动磁盘扩容。 - false：不开启自动磁盘扩容。     **默认取值**： 不涉及。
+     * @return autoVolumeExpandEnable
+     */
+    public Boolean getAutoVolumeExpandEnable() {
+        return autoVolumeExpandEnable;
+    }
+
+    public void setAutoVolumeExpandEnable(Boolean autoVolumeExpandEnable) {
+        this.autoVolumeExpandEnable = autoVolumeExpandEnable;
     }
 
     @Override
@@ -1624,8 +1659,12 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
             && Objects.equals(this.producePortion, that.producePortion)
             && Objects.equals(this.consumePortion, that.consumePortion) && Objects.equals(this.drEnable, that.drEnable)
+            && Objects.equals(this.quotaAddress, that.quotaAddress)
+            && Objects.equals(this.maxMsgProcessTps, that.maxMsgProcessTps)
             && Objects.equals(this.configSslNeedRestartProcess, that.configSslNeedRestartProcess)
-            && Objects.equals(this.tlsMode, that.tlsMode);
+            && Objects.equals(this.tlsMode, that.tlsMode) && Objects.equals(this.archType, that.archType)
+            && Objects.equals(this.enableElasticTps, that.enableElasticTps)
+            && Objects.equals(this.autoVolumeExpandEnable, that.autoVolumeExpandEnable);
     }
 
     @Override
@@ -1693,8 +1732,13 @@ public class ShowInstanceResponse extends SdkResponse {
             producePortion,
             consumePortion,
             drEnable,
+            quotaAddress,
+            maxMsgProcessTps,
             configSslNeedRestartProcess,
-            tlsMode);
+            tlsMode,
+            archType,
+            enableElasticTps,
+            autoVolumeExpandEnable);
     }
 
     @Override
@@ -1764,10 +1808,15 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    producePortion: ").append(toIndentedString(producePortion)).append("\n");
         sb.append("    consumePortion: ").append(toIndentedString(consumePortion)).append("\n");
         sb.append("    drEnable: ").append(toIndentedString(drEnable)).append("\n");
+        sb.append("    quotaAddress: ").append(toIndentedString(quotaAddress)).append("\n");
+        sb.append("    maxMsgProcessTps: ").append(toIndentedString(maxMsgProcessTps)).append("\n");
         sb.append("    configSslNeedRestartProcess: ")
             .append(toIndentedString(configSslNeedRestartProcess))
             .append("\n");
         sb.append("    tlsMode: ").append(toIndentedString(tlsMode)).append("\n");
+        sb.append("    archType: ").append(toIndentedString(archType)).append("\n");
+        sb.append("    enableElasticTps: ").append(toIndentedString(enableElasticTps)).append("\n");
+        sb.append("    autoVolumeExpandEnable: ").append(toIndentedString(autoVolumeExpandEnable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

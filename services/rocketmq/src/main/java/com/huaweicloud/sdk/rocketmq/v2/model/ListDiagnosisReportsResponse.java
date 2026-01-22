@@ -19,6 +19,11 @@ public class ListDiagnosisReportsResponse extends SdkResponse {
 
     private List<DiagnosisReportResp> diagnosisReportList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_num")
+
+    private Object totalNum;
+
     public ListDiagnosisReportsResponse withDiagnosisReportList(List<DiagnosisReportResp> diagnosisReportList) {
         this.diagnosisReportList = diagnosisReportList;
         return this;
@@ -42,7 +47,7 @@ public class ListDiagnosisReportsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 诊断报告列表。 **取值范围**： 不涉及。
+     * **参数解释**： 诊断报告列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return diagnosisReportList
      */
     public List<DiagnosisReportResp> getDiagnosisReportList() {
@@ -51,6 +56,23 @@ public class ListDiagnosisReportsResponse extends SdkResponse {
 
     public void setDiagnosisReportList(List<DiagnosisReportResp> diagnosisReportList) {
         this.diagnosisReportList = diagnosisReportList;
+    }
+
+    public ListDiagnosisReportsResponse withTotalNum(Object totalNum) {
+        this.totalNum = totalNum;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 报告数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return totalNum
+     */
+    public Object getTotalNum() {
+        return totalNum;
+    }
+
+    public void setTotalNum(Object totalNum) {
+        this.totalNum = totalNum;
     }
 
     @Override
@@ -62,12 +84,13 @@ public class ListDiagnosisReportsResponse extends SdkResponse {
             return false;
         }
         ListDiagnosisReportsResponse that = (ListDiagnosisReportsResponse) obj;
-        return Objects.equals(this.diagnosisReportList, that.diagnosisReportList);
+        return Objects.equals(this.diagnosisReportList, that.diagnosisReportList)
+            && Objects.equals(this.totalNum, that.totalNum);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(diagnosisReportList);
+        return Objects.hash(diagnosisReportList, totalNum);
     }
 
     @Override
@@ -75,6 +98,7 @@ public class ListDiagnosisReportsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListDiagnosisReportsResponse {\n");
         sb.append("    diagnosisReportList: ").append(toIndentedString(diagnosisReportList)).append("\n");
+        sb.append("    totalNum: ").append(toIndentedString(totalNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

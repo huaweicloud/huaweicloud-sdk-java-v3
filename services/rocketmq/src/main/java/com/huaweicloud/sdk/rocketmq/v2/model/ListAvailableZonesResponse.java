@@ -22,7 +22,7 @@ public class ListAvailableZonesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_zones")
 
-    private List<ListAvailableZonesRespAvailableZones> availableZones = null;
+    private List<ListAvailableZonesElements> availableZones = null;
 
     public ListAvailableZonesResponse withRegionId(String regionId) {
         this.regionId = regionId;
@@ -30,7 +30,7 @@ public class ListAvailableZonesResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 区域ID。 **取值范围**： 不涉及。
+     * **参数解释**： 区域ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return regionId
      */
     public String getRegionId() {
@@ -41,12 +41,12 @@ public class ListAvailableZonesResponse extends SdkResponse {
         this.regionId = regionId;
     }
 
-    public ListAvailableZonesResponse withAvailableZones(List<ListAvailableZonesRespAvailableZones> availableZones) {
+    public ListAvailableZonesResponse withAvailableZones(List<ListAvailableZonesElements> availableZones) {
         this.availableZones = availableZones;
         return this;
     }
 
-    public ListAvailableZonesResponse addAvailableZonesItem(ListAvailableZonesRespAvailableZones availableZonesItem) {
+    public ListAvailableZonesResponse addAvailableZonesItem(ListAvailableZonesElements availableZonesItem) {
         if (this.availableZones == null) {
             this.availableZones = new ArrayList<>();
         }
@@ -55,7 +55,7 @@ public class ListAvailableZonesResponse extends SdkResponse {
     }
 
     public ListAvailableZonesResponse withAvailableZones(
-        Consumer<List<ListAvailableZonesRespAvailableZones>> availableZonesSetter) {
+        Consumer<List<ListAvailableZonesElements>> availableZonesSetter) {
         if (this.availableZones == null) {
             this.availableZones = new ArrayList<>();
         }
@@ -64,14 +64,14 @@ public class ListAvailableZonesResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 可用区数组。
+     * **参数解释**： 可用区数组。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return availableZones
      */
-    public List<ListAvailableZonesRespAvailableZones> getAvailableZones() {
+    public List<ListAvailableZonesElements> getAvailableZones() {
         return availableZones;
     }
 
-    public void setAvailableZones(List<ListAvailableZonesRespAvailableZones> availableZones) {
+    public void setAvailableZones(List<ListAvailableZonesElements> availableZones) {
         this.availableZones = availableZones;
     }
 

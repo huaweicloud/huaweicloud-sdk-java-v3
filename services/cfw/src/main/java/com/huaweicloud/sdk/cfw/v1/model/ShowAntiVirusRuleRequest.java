@@ -16,11 +16,6 @@ public class ShowAntiVirusRuleRequest {
     private String objectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "engine_type")
-
-    private Integer engineType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -35,13 +30,18 @@ public class ShowAntiVirusRuleRequest {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "engine_type")
+
+    private Integer engineType;
+
     public ShowAntiVirusRuleRequest withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
     }
 
     /**
-     * 防护对象ID，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。此处仅取type为1的防护对象id，可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得。
+     * 防护对象ID，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，type为0时，object_id为互联网边界防护对象ID，type为1时，object_id为VPC边界防护对象ID。此处仅取type为1的防护对象id，可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得。
      * @return objectId
      */
     public String getObjectId() {
@@ -52,32 +52,13 @@ public class ShowAntiVirusRuleRequest {
         this.objectId = objectId;
     }
 
-    public ShowAntiVirusRuleRequest withEngineType(Integer engineType) {
-        this.engineType = engineType;
-        return this;
-    }
-
-    /**
-     * 防火墙类型
-     * minimum: 0
-     * maximum: 2
-     * @return engineType
-     */
-    public Integer getEngineType() {
-        return engineType;
-    }
-
-    public void setEngineType(Integer engineType) {
-        this.engineType = engineType;
-    }
-
     public ShowAntiVirusRuleRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
     /**
-     * 每页显示的数据量
+     * 每页显示个数，范围为1-1024
      * minimum: 1
      * maximum: 1024
      * @return limit
@@ -96,7 +77,7 @@ public class ShowAntiVirusRuleRequest {
     }
 
     /**
-     * 查询偏移量
+     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于0，首页时为空，非首页时不为空
      * minimum: 0
      * @return offset
      */
@@ -125,6 +106,23 @@ public class ShowAntiVirusRuleRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public ShowAntiVirusRuleRequest withEngineType(Integer engineType) {
+        this.engineType = engineType;
+        return this;
+    }
+
+    /**
+     * 废弃字段
+     * @return engineType
+     */
+    public Integer getEngineType() {
+        return engineType;
+    }
+
+    public void setEngineType(Integer engineType) {
+        this.engineType = engineType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -134,14 +132,15 @@ public class ShowAntiVirusRuleRequest {
             return false;
         }
         ShowAntiVirusRuleRequest that = (ShowAntiVirusRuleRequest) obj;
-        return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.engineType, that.engineType)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+        return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.engineType, that.engineType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(objectId, engineType, limit, offset, enterpriseProjectId);
+        return Objects.hash(objectId, limit, offset, enterpriseProjectId, engineType);
     }
 
     @Override
@@ -149,10 +148,10 @@ public class ShowAntiVirusRuleRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowAntiVirusRuleRequest {\n");
         sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
-        sb.append("    engineType: ").append(toIndentedString(engineType)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    engineType: ").append(toIndentedString(engineType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

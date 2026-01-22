@@ -22,7 +22,7 @@ public class ListProductsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "Monthly")
 
-    private List<ListProductsRespHourly> monthly = null;
+    private List<ListProductsRespMonthly> monthly = null;
 
     public ListProductsResponse withHourly(List<ListProductsRespHourly> hourly) {
         this.hourly = hourly;
@@ -46,7 +46,7 @@ public class ListProductsResponse extends SdkResponse {
     }
 
     /**
-     * 表示按需付费的产品列表。
+     * **参数解释**： 表示按需付费的产品列表。
      * @return hourly
      */
     public List<ListProductsRespHourly> getHourly() {
@@ -57,12 +57,12 @@ public class ListProductsResponse extends SdkResponse {
         this.hourly = hourly;
     }
 
-    public ListProductsResponse withMonthly(List<ListProductsRespHourly> monthly) {
+    public ListProductsResponse withMonthly(List<ListProductsRespMonthly> monthly) {
         this.monthly = monthly;
         return this;
     }
 
-    public ListProductsResponse addMonthlyItem(ListProductsRespHourly monthlyItem) {
+    public ListProductsResponse addMonthlyItem(ListProductsRespMonthly monthlyItem) {
         if (this.monthly == null) {
             this.monthly = new ArrayList<>();
         }
@@ -70,7 +70,7 @@ public class ListProductsResponse extends SdkResponse {
         return this;
     }
 
-    public ListProductsResponse withMonthly(Consumer<List<ListProductsRespHourly>> monthlySetter) {
+    public ListProductsResponse withMonthly(Consumer<List<ListProductsRespMonthly>> monthlySetter) {
         if (this.monthly == null) {
             this.monthly = new ArrayList<>();
         }
@@ -79,14 +79,14 @@ public class ListProductsResponse extends SdkResponse {
     }
 
     /**
-     * 表示包年包月的产品列表。当前暂不支持通过API创建包年包月的rabbitmq实例。
+     * **参数解释**： 表示包年包月的产品列表。当前暂不支持通过API创建包年包月的Kafka实例。
      * @return monthly
      */
-    public List<ListProductsRespHourly> getMonthly() {
+    public List<ListProductsRespMonthly> getMonthly() {
         return monthly;
     }
 
-    public void setMonthly(List<ListProductsRespHourly> monthly) {
+    public void setMonthly(List<ListProductsRespMonthly> monthly) {
         this.monthly = monthly;
     }
 

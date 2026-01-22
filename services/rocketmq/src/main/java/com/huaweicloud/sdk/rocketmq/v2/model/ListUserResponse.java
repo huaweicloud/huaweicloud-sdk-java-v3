@@ -18,19 +18,19 @@ public class ListUserResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "users")
 
-    private List<User> users = null;
+    private List<UserResp> users = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
     private BigDecimal total;
 
-    public ListUserResponse withUsers(List<User> users) {
+    public ListUserResponse withUsers(List<UserResp> users) {
         this.users = users;
         return this;
     }
 
-    public ListUserResponse addUsersItem(User usersItem) {
+    public ListUserResponse addUsersItem(UserResp usersItem) {
         if (this.users == null) {
             this.users = new ArrayList<>();
         }
@@ -38,7 +38,7 @@ public class ListUserResponse extends SdkResponse {
         return this;
     }
 
-    public ListUserResponse withUsers(Consumer<List<User>> usersSetter) {
+    public ListUserResponse withUsers(Consumer<List<UserResp>> usersSetter) {
         if (this.users == null) {
             this.users = new ArrayList<>();
         }
@@ -47,14 +47,14 @@ public class ListUserResponse extends SdkResponse {
     }
 
     /**
-     * 用户列表。
+     * **参数解释**： 用户列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return users
      */
-    public List<User> getUsers() {
+    public List<UserResp> getUsers() {
         return users;
     }
 
-    public void setUsers(List<User> users) {
+    public void setUsers(List<UserResp> users) {
         this.users = users;
     }
 
@@ -64,7 +64,7 @@ public class ListUserResponse extends SdkResponse {
     }
 
     /**
-     * 总用户个数。
+     * **参数解释**： 总用户个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return total
      */
     public BigDecimal getTotal() {

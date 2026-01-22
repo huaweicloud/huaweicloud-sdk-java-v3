@@ -36,7 +36,7 @@ public class ShowTopicStatusRespQueues {
     }
 
     /**
-     * 队列ID。
+     * **参数解释**： 队列ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return id
      */
     public Integer getId() {
@@ -53,7 +53,7 @@ public class ShowTopicStatusRespQueues {
     }
 
     /**
-     * 最小偏移量。
+     * **参数解释**： 最小偏移量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return minOffset
      */
     public Integer getMinOffset() {
@@ -70,7 +70,7 @@ public class ShowTopicStatusRespQueues {
     }
 
     /**
-     * 最大偏移量。
+     * **参数解释**： 最大偏移量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return maxOffset
      */
     public Integer getMaxOffset() {
@@ -87,7 +87,7 @@ public class ShowTopicStatusRespQueues {
     }
 
     /**
-     * 最后一条消息的时间。
+     * **参数解释**： 最后一条消息的时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return lastMessageTime
      */
     public Long getLastMessageTime() {

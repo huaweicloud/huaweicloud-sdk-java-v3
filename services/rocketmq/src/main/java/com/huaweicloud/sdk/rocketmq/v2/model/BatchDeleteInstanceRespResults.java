@@ -16,7 +16,7 @@ import java.util.Objects;
 public class BatchDeleteInstanceRespResults {
 
     /**
-     * 操作结果。
+     * **参数解释**： 操作结果。 **约束限制**： 不涉及。 **取值范围**： - success - failed **默认取值**： 不涉及。
      */
     public static final class ResultEnum {
 
@@ -101,7 +101,7 @@ public class BatchDeleteInstanceRespResults {
     }
 
     /**
-     * 操作结果。
+     * **参数解释**： 操作结果。 **约束限制**： 不涉及。 **取值范围**： - success - failed **默认取值**： 不涉及。
      * @return result
      */
     public ResultEnum getResult() {

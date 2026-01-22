@@ -92,6 +92,8 @@ import com.huaweicloud.sdk.css.v1.model.ListClustersTagsRequest;
 import com.huaweicloud.sdk.css.v1.model.ListClustersTagsResponse;
 import com.huaweicloud.sdk.css.v1.model.ListConfsRequest;
 import com.huaweicloud.sdk.css.v1.model.ListConfsResponse;
+import com.huaweicloud.sdk.css.v1.model.ListDiskTypeRequest;
+import com.huaweicloud.sdk.css.v1.model.ListDiskTypeResponse;
 import com.huaweicloud.sdk.css.v1.model.ListElbCertsRequest;
 import com.huaweicloud.sdk.css.v1.model.ListElbCertsResponse;
 import com.huaweicloud.sdk.css.v1.model.ListElbsRequest;
@@ -974,6 +976,23 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListClustersTagsRequest::getResourceType, ListClustersTagsRequest::setResourceType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDiskTypeRequest, ListDiskTypeResponse> listDiskType = genForListDiskType();
+
+    private static HttpRequestDef<ListDiskTypeRequest, ListDiskTypeResponse> genForListDiskType() {
+        // basic
+        HttpRequestDef.Builder<ListDiskTypeRequest, ListDiskTypeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDiskTypeRequest.class, ListDiskTypeResponse.class)
+                .withName("ListDiskType")
+                .withUri("/v1.0/{project_id}/disktypes")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

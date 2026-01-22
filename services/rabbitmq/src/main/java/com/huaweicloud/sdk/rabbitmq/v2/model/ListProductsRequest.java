@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ListProductsRequest {
 
     /**
-     * 消息引擎的类型。当前只支持rabbitmq。
+     * **参数解释**： 消息引擎的类型。 **约束限制**： 不涉及。 **取值范围**： rabbitmq：RabbitMQ引擎。 **默认取值**： 不涉及。
      */
     public static final class EngineEnum {
 
@@ -90,7 +90,7 @@ public class ListProductsRequest {
     }
 
     /**
-     * 消息引擎的类型。当前只支持rabbitmq。
+     * **参数解释**： 消息引擎的类型。 **约束限制**： 不涉及。 **取值范围**： rabbitmq：RabbitMQ引擎。 **默认取值**： 不涉及。
      * @return engine
      */
     public EngineEnum getEngine() {

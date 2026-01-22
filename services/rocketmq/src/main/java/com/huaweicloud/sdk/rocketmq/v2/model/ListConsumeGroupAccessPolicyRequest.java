@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.rocketmq.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -15,74 +10,10 @@ import java.util.Objects;
  */
 public class ListConsumeGroupAccessPolicyRequest {
 
-    /**
-     * 消息引擎。
-     */
-    public static final class EngineEnum {
-
-        /**
-         * Enum RELIABILITY for value: "reliability"
-         */
-        public static final EngineEnum RELIABILITY = new EngineEnum("reliability");
-
-        private static final Map<String, EngineEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, EngineEnum> createStaticFields() {
-            Map<String, EngineEnum> map = new HashMap<>();
-            map.put("reliability", RELIABILITY);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        EngineEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static EngineEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineEnum(value));
-        }
-
-        public static EngineEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof EngineEnum) {
-                return this.value.equals(((EngineEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine")
 
-    private EngineEnum engine;
+    private String engine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
@@ -90,34 +21,34 @@ public class ListConsumeGroupAccessPolicyRequest {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "group_id")
+    @JsonProperty(value = "group")
 
-    private String groupId;
+    private String group;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    private String offset;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    private String limit;
+    private Integer limit;
 
-    public ListConsumeGroupAccessPolicyRequest withEngine(EngineEnum engine) {
+    public ListConsumeGroupAccessPolicyRequest withEngine(String engine) {
         this.engine = engine;
         return this;
     }
 
     /**
-     * 消息引擎。
+     * **参数解释**： 消息引擎。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： rocketmq。
      * @return engine
      */
-    public EngineEnum getEngine() {
+    public String getEngine() {
         return engine;
     }
 
-    public void setEngine(EngineEnum engine) {
+    public void setEngine(String engine) {
         this.engine = engine;
     }
 
@@ -127,7 +58,7 @@ public class ListConsumeGroupAccessPolicyRequest {
     }
 
     /**
-     * 实例ID。
+     * **参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -138,54 +69,54 @@ public class ListConsumeGroupAccessPolicyRequest {
         this.instanceId = instanceId;
     }
 
-    public ListConsumeGroupAccessPolicyRequest withGroupId(String groupId) {
-        this.groupId = groupId;
+    public ListConsumeGroupAccessPolicyRequest withGroup(String group) {
+        this.group = group;
         return this;
     }
 
     /**
-     * 消费组。
-     * @return groupId
+     * **参数解释**： 消费组。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return group
      */
-    public String getGroupId() {
-        return groupId;
+    public String getGroup() {
+        return group;
     }
 
-    public void setGroupId(String groupId) {
-        this.groupId = groupId;
+    public void setGroup(String group) {
+        this.group = group;
     }
 
-    public ListConsumeGroupAccessPolicyRequest withOffset(String offset) {
+    public ListConsumeGroupAccessPolicyRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
     /**
-     * 偏移量，表示从此偏移量开始查询， offset大于等于0。
+     * **参数解释**： 偏移量，表示从此偏移量开始查询， offset大于等于0。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return offset
      */
-    public String getOffset() {
+    public Integer getOffset() {
         return offset;
     }
 
-    public void setOffset(String offset) {
+    public void setOffset(Integer offset) {
         this.offset = offset;
     }
 
-    public ListConsumeGroupAccessPolicyRequest withLimit(String limit) {
+    public ListConsumeGroupAccessPolicyRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
     /**
-     * 查询数量。
+     * **参数解释**： 查询数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return limit
      */
-    public String getLimit() {
+    public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(String limit) {
+    public void setLimit(Integer limit) {
         this.limit = limit;
     }
 
@@ -199,13 +130,13 @@ public class ListConsumeGroupAccessPolicyRequest {
         }
         ListConsumeGroupAccessPolicyRequest that = (ListConsumeGroupAccessPolicyRequest) obj;
         return Objects.equals(this.engine, that.engine) && Objects.equals(this.instanceId, that.instanceId)
-            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.group, that.group) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(engine, instanceId, groupId, offset, limit);
+        return Objects.hash(engine, instanceId, group, offset, limit);
     }
 
     @Override
@@ -214,7 +145,7 @@ public class ListConsumeGroupAccessPolicyRequest {
         sb.append("class ListConsumeGroupAccessPolicyRequest {\n");
         sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    group: ").append(toIndentedString(group)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

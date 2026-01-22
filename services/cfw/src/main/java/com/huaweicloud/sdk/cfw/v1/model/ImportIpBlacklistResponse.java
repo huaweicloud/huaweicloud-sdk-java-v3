@@ -14,9 +14,9 @@ public class ImportIpBlacklistResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private String body;
+    private Object body;
 
-    public ImportIpBlacklistResponse withBody(String body) {
+    public ImportIpBlacklistResponse withBody(Object body) {
         this.body = body;
         return this;
     }
@@ -25,11 +25,11 @@ public class ImportIpBlacklistResponse extends SdkResponse {
      * Get body
      * @return body
      */
-    public String getBody() {
+    public Object getBody() {
         return body;
     }
 
-    public void setBody(String body) {
+    public void setBody(Object body) {
         this.body = body;
     }
 

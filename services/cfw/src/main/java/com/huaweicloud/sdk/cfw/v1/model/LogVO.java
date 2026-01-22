@@ -78,7 +78,7 @@ public class LogVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dst_region_id")
 
-    private Object dstRegionId;
+    private String dstRegionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dst_region_name")
@@ -486,7 +486,7 @@ public class LogVO {
         this.startTime = startTime;
     }
 
-    public LogVO withDstRegionId(Object dstRegionId) {
+    public LogVO withDstRegionId(String dstRegionId) {
         this.dstRegionId = dstRegionId;
         return this;
     }
@@ -495,11 +495,11 @@ public class LogVO {
      * **参数解释**： 目的地区ID **取值范围**： 不涉及
      * @return dstRegionId
      */
-    public Object getDstRegionId() {
+    public String getDstRegionId() {
         return dstRegionId;
     }
 
-    public void setDstRegionId(Object dstRegionId) {
+    public void setDstRegionId(String dstRegionId) {
         this.dstRegionId = dstRegionId;
     }
 

@@ -201,6 +201,10 @@ import com.huaweicloud.sdk.swr.v2.model.ListNamespacesRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListNamespacesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListQuotasRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListQuotasResponse;
+import com.huaweicloud.sdk.swr.v2.model.ListReferencesRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListReferencesResponse;
+import com.huaweicloud.sdk.swr.v2.model.ListRepoAccessoriesRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListRepoAccessoriesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListRepoDetailsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListRepoDetailsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListRepoDomainsRequest;
@@ -1094,6 +1098,64 @@ public class SwrAsyncClient {
      */
     public AsyncInvoker<ListQuotasRequest, ListQuotasResponse> listQuotasAsyncInvoker(ListQuotasRequest request) {
         return new AsyncInvoker<>(request, SwrMeta.listQuotas, hcClient);
+    }
+
+    /**
+     * 获取签名镜像关联的被签名镜像版本列表
+     *
+     * 获取签名镜像关联的被签名镜像版本列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListReferencesRequest 请求对象
+     * @return CompletableFuture<ListReferencesResponse>
+     */
+    public CompletableFuture<ListReferencesResponse> listReferencesAsync(ListReferencesRequest request) {
+        return hcClient.asyncInvokeHttp(request, SwrMeta.listReferences);
+    }
+
+    /**
+     * 获取签名镜像关联的被签名镜像版本列表
+     *
+     * 获取签名镜像关联的被签名镜像版本列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListReferencesRequest 请求对象
+     * @return AsyncInvoker<ListReferencesRequest, ListReferencesResponse>
+     */
+    public AsyncInvoker<ListReferencesRequest, ListReferencesResponse> listReferencesAsyncInvoker(
+        ListReferencesRequest request) {
+        return new AsyncInvoker<>(request, SwrMeta.listReferences, hcClient);
+    }
+
+    /**
+     * 查询镜像的附件列表
+     *
+     * 获取共享仓的镜像的附件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRepoAccessoriesRequest 请求对象
+     * @return CompletableFuture<ListRepoAccessoriesResponse>
+     */
+    public CompletableFuture<ListRepoAccessoriesResponse> listRepoAccessoriesAsync(ListRepoAccessoriesRequest request) {
+        return hcClient.asyncInvokeHttp(request, SwrMeta.listRepoAccessories);
+    }
+
+    /**
+     * 查询镜像的附件列表
+     *
+     * 获取共享仓的镜像的附件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRepoAccessoriesRequest 请求对象
+     * @return AsyncInvoker<ListRepoAccessoriesRequest, ListRepoAccessoriesResponse>
+     */
+    public AsyncInvoker<ListRepoAccessoriesRequest, ListRepoAccessoriesResponse> listRepoAccessoriesAsyncInvoker(
+        ListRepoAccessoriesRequest request) {
+        return new AsyncInvoker<>(request, SwrMeta.listRepoAccessories, hcClient);
     }
 
     /**

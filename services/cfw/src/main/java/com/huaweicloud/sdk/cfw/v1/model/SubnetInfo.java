@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 管理子网信息
+ * **参数解释**： 管理子网信息 **取值范围**： 不涉及
  */
 public class SubnetInfo {
 
@@ -51,7 +51,7 @@ public class SubnetInfo {
     }
 
     /**
-     * 子网所在的可用区标识，从终端节点获取，参考[终端节点](cfw_02_0000.xml)
+     * **参数解释**： 子网所在的可用区标识，从终端节点获取，参考[终端节点](cfw_02_0000.xml) **取值范围**： 不涉及
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -68,7 +68,7 @@ public class SubnetInfo {
     }
 
     /**
-     * 功能说明：虚拟私有云下可用子网的范围 取值范围： 10.0.0.0/8~24 172.16.0.0/12~24 192.168.0.0/16~24 不指定cidr时，默认值为空 约束：必须是cidr格式，例如:192.168.0.0/16
+     * **参数解释**： 虚拟私有云下可用子网的范围 **取值范围**： 10.0.0.0/8~24 172.16.0.0/12~24 192.168.0.0/16~24
      * @return cidr
      */
     public String getCidr() {
@@ -85,7 +85,7 @@ public class SubnetInfo {
     }
 
     /**
-     * 子网名称
+     * **参数解释**： 子网名称 **取值范围**： 不涉及
      * @return name
      */
     public String getName() {
@@ -102,7 +102,7 @@ public class SubnetInfo {
     }
 
     /**
-     * 子网id
+     * **参数解释**： 子网id **取值范围**： 不涉及
      * @return id
      */
     public String getId() {
@@ -119,7 +119,7 @@ public class SubnetInfo {
     }
 
     /**
-     * 子网的网关，取值范围为子网网段cidr中的ip地址
+     * **参数解释**： 子网的网关 **取值范围**： 子网网段cidr中的IP地址
      * @return gatewayIp
      */
     public String getGatewayIp() {
@@ -136,7 +136,7 @@ public class SubnetInfo {
     }
 
     /**
-     * 创建vpc产生的uuid
+     * **参数解释**： 创建VPC产生的uuid **取值范围**： 不涉及
      * @return vpcId
      */
     public String getVpcId() {
@@ -153,7 +153,7 @@ public class SubnetInfo {
     }
 
     /**
-     * 是否支持ipv6，boolean值为true表示是，false表示否
+     * **参数解释**： 是否支持ipv6 **取值范围**： - true：是 - false：否
      * @return ipv6Enable
      */
     public Boolean getIpv6Enable() {

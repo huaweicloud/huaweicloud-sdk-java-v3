@@ -39,7 +39,7 @@ public class GetFirewallInstanceData {
     }
 
     /**
-     * 每页显示个数，范围为1-1024
+     * **参数解释**： 每页显示个数 **取值范围**： 1-1024
      * @return limit
      */
     public Integer getLimit() {
@@ -56,7 +56,7 @@ public class GetFirewallInstanceData {
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
+     * **参数解释**： 偏移量：指定返回记录的开始位 **取值范围**： 大于或等于0
      * @return offset
      */
     public Integer getOffset() {
@@ -73,7 +73,7 @@ public class GetFirewallInstanceData {
     }
 
     /**
-     * 防火墙总数
+     * **参数解释**： 防火墙总数 **取值范围**： 不涉及
      * @return total
      */
     public Integer getTotal() {
@@ -106,7 +106,7 @@ public class GetFirewallInstanceData {
     }
 
     /**
-     * 查询防火墙实例信息列表
+     * **参数解释**： 查询防火墙实例信息列表 **取值范围**： 不涉及
      * @return records
      */
     public List<GetFirewallInstanceResponseRecord> getRecords() {

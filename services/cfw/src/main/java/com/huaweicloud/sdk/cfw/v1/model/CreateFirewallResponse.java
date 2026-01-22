@@ -33,7 +33,7 @@ public class CreateFirewallResponse extends SdkResponse {
     }
 
     /**
-     * 实例创建的任务id。仅创建按需实例时会返回该参数。
+     * **参数解释**： 实例创建的任务id **取值范围**： 不涉及
      * @return jobId
      */
     public String getJobId() {
@@ -50,7 +50,7 @@ public class CreateFirewallResponse extends SdkResponse {
     }
 
     /**
-     * 订单号，创建包年包月时返回该参数。
+     * **参数解释**： 订单号 **取值范围**： 不涉及
      * @return orderId
      */
     public String getOrderId() {

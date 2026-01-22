@@ -50,6 +50,11 @@ public class ShowClusterDetailResponse extends SdkResponse {
     private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "snapshotPolicy")
+
+    private Object snapshotPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
 
     private String created;
@@ -344,6 +349,23 @@ public class ShowClusterDetailResponse extends SdkResponse {
 
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
+    }
+
+    public ShowClusterDetailResponse withSnapshotPolicy(Object snapshotPolicy) {
+        this.snapshotPolicy = snapshotPolicy;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 集群自动快照策略相关信息。 **取值范围**： 不涉及
+     * @return snapshotPolicy
+     */
+    public Object getSnapshotPolicy() {
+        return snapshotPolicy;
+    }
+
+    public void setSnapshotPolicy(Object snapshotPolicy) {
+        this.snapshotPolicy = snapshotPolicy;
     }
 
     public ShowClusterDetailResponse withCreated(String created) {
@@ -859,9 +881,10 @@ public class ShowClusterDetailResponse extends SdkResponse {
             && Objects.equals(this.publicKibanaResp, that.publicKibanaResp)
             && Objects.equals(this.elbWhiteList, that.elbWhiteList) && Objects.equals(this.updated, that.updated)
             && Objects.equals(this.name, that.name) && Objects.equals(this.publicIp, that.publicIp)
-            && Objects.equals(this.created, that.created) && Objects.equals(this.id, that.id)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.endpoint, that.endpoint)
-            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.snapshotPolicy, that.snapshotPolicy) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.endpoint, that.endpoint) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetId, that.subnetId)
             && Objects.equals(this.securityGroupId, that.securityGroupId) && Objects.equals(this.vpcepIp, that.vpcepIp)
             && Objects.equals(this.vpcepIpv6Address, that.vpcepIpv6Address)
             && Objects.equals(this.bandwidthSize, that.bandwidthSize)
@@ -889,6 +912,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
             updated,
             name,
             publicIp,
+            snapshotPolicy,
             created,
             id,
             status,
@@ -929,6 +953,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
+        sb.append("    snapshotPolicy: ").append(toIndentedString(snapshotPolicy)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

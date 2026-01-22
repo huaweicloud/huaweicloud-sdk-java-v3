@@ -21,9 +21,9 @@ public class ModifyKafkaPublicIPAccessSwitchReq {
     private Integer publicBoundwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "publicIpId")
+    @JsonProperty(value = "publicip_id")
 
-    private String publicIpId;
+    private String publicipId;
 
     public ModifyKafkaPublicIPAccessSwitchReq withEipAddress(String eipAddress) {
         this.eipAddress = eipAddress;
@@ -59,21 +59,21 @@ public class ModifyKafkaPublicIPAccessSwitchReq {
         this.publicBoundwidth = publicBoundwidth;
     }
 
-    public ModifyKafkaPublicIPAccessSwitchReq withPublicIpId(String publicIpId) {
-        this.publicIpId = publicIpId;
+    public ModifyKafkaPublicIPAccessSwitchReq withPublicipId(String publicipId) {
+        this.publicipId = publicipId;
         return this;
     }
 
     /**
-     * **参数解释**： 公网IP的ID。  **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
-     * @return publicIpId
+     * **参数解释**： 公网IP的ID。[获取方法：参考[[《弹性公网IP API参考》](https://support.huaweicloud.com/api-eip/ListPublicipsV3.html)](tag:hws)[[《弹性公网IP API参考》](https://support.huaweicloud.com/intl/zh-cn/api-eip/ListPublicipsV3.html)](tag:hws_hk)[[《弹性公网IP API参考》](https://support.huaweicloud.com/eu/api-eip/ListPublicipsV3.html)](tag:hws_eu)[《弹性公网IP API参考》](tag:ax,cmcc,ctc,sbc,hk_sbc,g42,hk_g42,srg,dt,ocb,hws_ocb,hcs,fcs)，调用“查询弹性公网IP列表”接口，从响应体中获取弹性公网IP的ID。](tag:ax,cmcc,ctc,sbc,hk_sbc,g42,hk_g42,srg,dt,ocb,hws_ocb,hcs,fcs,hws,hws_hk,hws_eu) **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return publicipId
      */
-    public String getPublicIpId() {
-        return publicIpId;
+    public String getPublicipId() {
+        return publicipId;
     }
 
-    public void setPublicIpId(String publicIpId) {
-        this.publicIpId = publicIpId;
+    public void setPublicipId(String publicipId) {
+        this.publicipId = publicipId;
     }
 
     @Override
@@ -87,12 +87,12 @@ public class ModifyKafkaPublicIPAccessSwitchReq {
         ModifyKafkaPublicIPAccessSwitchReq that = (ModifyKafkaPublicIPAccessSwitchReq) obj;
         return Objects.equals(this.eipAddress, that.eipAddress)
             && Objects.equals(this.publicBoundwidth, that.publicBoundwidth)
-            && Objects.equals(this.publicIpId, that.publicIpId);
+            && Objects.equals(this.publicipId, that.publicipId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(eipAddress, publicBoundwidth, publicIpId);
+        return Objects.hash(eipAddress, publicBoundwidth, publicipId);
     }
 
     @Override
@@ -101,7 +101,7 @@ public class ModifyKafkaPublicIPAccessSwitchReq {
         sb.append("class ModifyKafkaPublicIPAccessSwitchReq {\n");
         sb.append("    eipAddress: ").append(toIndentedString(eipAddress)).append("\n");
         sb.append("    publicBoundwidth: ").append(toIndentedString(publicBoundwidth)).append("\n");
-        sb.append("    publicIpId: ").append(toIndentedString(publicIpId)).append("\n");
+        sb.append("    publicipId: ").append(toIndentedString(publicipId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

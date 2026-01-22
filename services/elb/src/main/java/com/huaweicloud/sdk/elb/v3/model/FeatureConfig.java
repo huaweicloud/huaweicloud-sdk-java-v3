@@ -190,7 +190,7 @@ public class FeatureConfig {
     }
 
     /**
-     * **参数解释**：特性配置值(value字段)的类型，如：INT，表示整型。  **取值范围**：不涉及
+     * **参数解释**：特性配置值(value字段)的类型。  **取值范围**： - VARCHAR：字符串 - INT：整型 - BOOL：布尔型 - LIST：列表
      * @return type
      */
     public String getType() {

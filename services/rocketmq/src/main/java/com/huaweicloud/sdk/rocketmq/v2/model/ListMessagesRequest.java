@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.rocketmq.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -15,74 +10,10 @@ import java.util.Objects;
  */
 public class ListMessagesRequest {
 
-    /**
-     * 消息引擎。
-     */
-    public static final class EngineEnum {
-
-        /**
-         * Enum RELIABILITY for value: "reliability"
-         */
-        public static final EngineEnum RELIABILITY = new EngineEnum("reliability");
-
-        private static final Map<String, EngineEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, EngineEnum> createStaticFields() {
-            Map<String, EngineEnum> map = new HashMap<>();
-            map.put("reliability", RELIABILITY);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        EngineEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static EngineEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineEnum(value));
-        }
-
-        public static EngineEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof EngineEnum) {
-                return this.value.equals(((EngineEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine")
 
-    private EngineEnum engine;
+    private String engine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
@@ -102,12 +33,12 @@ public class ListMessagesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    private String limit;
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    private String offset;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key")
@@ -129,20 +60,20 @@ public class ListMessagesRequest {
 
     private String msgId;
 
-    public ListMessagesRequest withEngine(EngineEnum engine) {
+    public ListMessagesRequest withEngine(String engine) {
         this.engine = engine;
         return this;
     }
 
     /**
-     * 消息引擎。
+     * **参数解释**： 消息引擎。 **约束限制**： 不涉及。 **取值范围**： - rocketmq：RocketMQ消息引擎。 - reliability：RocketMQ消息引擎别称。 **默认取值**： 不涉及。
      * @return engine
      */
-    public EngineEnum getEngine() {
+    public String getEngine() {
         return engine;
     }
 
-    public void setEngine(EngineEnum engine) {
+    public void setEngine(String engine) {
         this.engine = engine;
     }
 
@@ -152,7 +83,7 @@ public class ListMessagesRequest {
     }
 
     /**
-     * 实例ID。
+     * **参数解释**： 实例ID。获取方法如下：调用“查询所有实例列表”接口，从响应体中获取实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -169,7 +100,7 @@ public class ListMessagesRequest {
     }
 
     /**
-     * 主题名称。
+     * **参数解释**： 主题名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return topic
      */
     public String getTopic() {
@@ -186,7 +117,7 @@ public class ListMessagesRequest {
     }
 
     /**
-     * 队列。
+     * **参数解释**： 队列。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return queue
      */
     public String getQueue() {
@@ -197,37 +128,37 @@ public class ListMessagesRequest {
         this.queue = queue;
     }
 
-    public ListMessagesRequest withLimit(String limit) {
+    public ListMessagesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
     /**
-     * 查询数量。
+     * **参数解释**： 查询数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return limit
      */
-    public String getLimit() {
+    public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(String limit) {
+    public void setLimit(Integer limit) {
         this.limit = limit;
     }
 
-    public ListMessagesRequest withOffset(String offset) {
+    public ListMessagesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
     /**
-     * 偏移量，表示从此偏移量开始查询， offset大于等于0。
+     * **参数解释**： 偏移量。 **约束限制**： 不涉及。 **取值范围**： 大于等于0。 **默认取值**： 不涉及。
      * @return offset
      */
-    public String getOffset() {
+    public Integer getOffset() {
         return offset;
     }
 
-    public void setOffset(String offset) {
+    public void setOffset(Integer offset) {
         this.offset = offset;
     }
 
@@ -237,7 +168,7 @@ public class ListMessagesRequest {
     }
 
     /**
-     * 消息的key。
+     * **参数解释**： 消息的key。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return key
      */
     public String getKey() {
@@ -254,7 +185,7 @@ public class ListMessagesRequest {
     }
 
     /**
-     * 开始时间（不通过msg_id精确查询消息时，此参数必填）。
+     * **参数解释**： 开始时间。 **约束限制**： 不通过msg_id精确查询消息时，此参数必填。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return startTime
      */
     public String getStartTime() {
@@ -271,7 +202,7 @@ public class ListMessagesRequest {
     }
 
     /**
-     * 结束时间（不通过msg_id精确查询消息时，此参数必填）。
+     * **参数解释**： 结束时间。 **约束限制**： 不通过msg_id精确查询消息时，此参数必填。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return endTime
      */
     public String getEndTime() {
@@ -288,7 +219,7 @@ public class ListMessagesRequest {
     }
 
     /**
-     * 消息ID。
+     * **参数解释**： 消息ID。 **约束限制**： 不通过时间范围查询消息时，此参数必填。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return msgId
      */
     public String getMsgId() {

@@ -80,7 +80,7 @@ public class UpdateBlackWhiteListDto {
     }
 
     /**
-     * ip地址
+     * IP地址
      * @return address
      */
     public String getAddress() {

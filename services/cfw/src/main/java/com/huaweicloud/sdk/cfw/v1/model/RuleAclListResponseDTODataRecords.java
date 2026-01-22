@@ -24,6 +24,11 @@ public class RuleAclListResponseDTODataRecords {
     private String ruleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private Integer orderId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "applications")
 
     private List<String> applications = null;
@@ -38,13 +43,8 @@ public class RuleAclListResponseDTODataRecords {
 
     private String name;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "order_id")
-
-    private Integer orderId;
-
     /**
-     * 规则方向0：外到内1：内到外
+     * **参数解释**： 规则方向 **取值范围**： 0：外到内1：内到外
      */
     public static final class DirectionEnum {
 
@@ -174,7 +174,7 @@ public class RuleAclListResponseDTODataRecords {
     private RuleServiceDtoForResponse service;
 
     /**
-     * 规则类型，0：互联网规则，1：vpc规则，2：nat规则
+     * **参数解释**： 规则类型，用于区分不同防护对象设置规则类型。 **取值范围**：  0：互联网边界规则，源（source）和目的（destination）地址需要为公网IP或域名； 1：VPC间规则，源（source）和目的（destination）地址需要为私有ip； 2：NAT规则，源（source）地址需要为私网IP，目的地址为公网IP或域名。
      */
     public static final class TypeEnum {
 
@@ -260,6 +260,11 @@ public class RuleAclListResponseDTODataRecords {
     private String createdDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "modified_date")
+
+    private String modifiedDate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_open_time")
 
     private String lastOpenTime;
@@ -275,7 +280,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 规则id
+     * **参数解释**： 规则ID **取值范围**： 不涉及
      * @return ruleId
      */
     public String getRuleId() {
@@ -284,6 +289,23 @@ public class RuleAclListResponseDTODataRecords {
 
     public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
+    }
+
+    public RuleAclListResponseDTODataRecords withOrderId(Integer orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 排序id **取值范围**： 不涉及
+     * @return orderId
+     */
+    public Integer getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
     }
 
     public RuleAclListResponseDTODataRecords withApplications(List<String> applications) {
@@ -308,7 +330,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 应用列表
+     * **参数解释**： 应用列表 **取值范围**： 不涉及
      * @return applications
      */
     public List<String> getApplications() {
@@ -325,7 +347,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 地址类型0 ipv4，1 ipv6
+     * 参数解释： IP地址的互联网协议类型，用于指定IP地址的互联网协议，由客户指定 约束限制： 不涉及 取值范围： 0：IPv4 1：IPv6 默认取值： 不涉及
      * @return addressType
      */
     public Integer getAddressType() {
@@ -342,7 +364,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 规则名称
+     * **参数解释**： 规则名称 **取值范围**： 不涉及
      * @return name
      */
     public String getName() {
@@ -353,30 +375,13 @@ public class RuleAclListResponseDTODataRecords {
         this.name = name;
     }
 
-    public RuleAclListResponseDTODataRecords withOrderId(Integer orderId) {
-        this.orderId = orderId;
-        return this;
-    }
-
-    /**
-     * 排序id
-     * @return orderId
-     */
-    public Integer getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
-    }
-
     public RuleAclListResponseDTODataRecords withDirection(DirectionEnum direction) {
         this.direction = direction;
         return this;
     }
 
     /**
-     * 规则方向0：外到内1：内到外
+     * **参数解释**： 规则方向 **取值范围**： 0：外到内1：内到外
      * @return direction
      */
     public DirectionEnum getDirection() {
@@ -393,7 +398,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 动作0：permit，1：deny
+     * **参数解释**： 规则动作类型，用于区分规则对流量的动作 **取值范围**： 0表示允许通行（permit），1表示拒绝通行（deny）
      * @return actionType
      */
     public Integer getActionType() {
@@ -410,7 +415,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 规则下发状态 0：禁用，1：启用
+     * **参数解释**： 规则启用状态，用于区分规则是否启用 **取值范围**： 0表示启用，1表示禁用
      * @return status
      */
     public Integer getStatus() {
@@ -427,7 +432,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 描述
+     * **参数解释**： 规则描述，用于描述规则的用途。 **取值范围**： 不涉及
      * @return description
      */
     public String getDescription() {
@@ -444,7 +449,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 长连接时长
+     * **参数解释**： 长连接时长（s）。 **取值范围**： 1-86400000。
      * @return longConnectTime
      */
     public Long getLongConnectTime() {
@@ -461,7 +466,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 长连接支持
+     * **参数解释**： 用于表示是否支持长连接。 **取值范围**： 0表示不支持，1表示支持
      * @return longConnectEnable
      */
     public Integer getLongConnectEnable() {
@@ -478,7 +483,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 长连接时长对应小时
+     * **参数解释**： 长连接时长对应小时数（h）。 **取值范围**： 0-24000。
      * @return longConnectTimeHour
      */
     public Long getLongConnectTimeHour() {
@@ -495,7 +500,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 长连接时长对应分钟
+     * **参数解释**： 长连接时长对应分钟数（min）。 **取值范围**： 0-60。
      * @return longConnectTimeMinute
      */
     public Long getLongConnectTimeMinute() {
@@ -512,7 +517,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 长连接时长秒
+     * **参数解释**： 长连接时长对应秒数（s）。 **取值范围**： 0-60。
      * @return longConnectTimeSecond
      */
     public Long getLongConnectTimeSecond() {
@@ -607,7 +612,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 规则类型，0：互联网规则，1：vpc规则，2：nat规则
+     * **参数解释**： 规则类型，用于区分不同防护对象设置规则类型。 **取值范围**：  0：互联网边界规则，源（source）和目的（destination）地址需要为公网IP或域名； 1：VPC间规则，源（source）和目的（destination）地址需要为私有ip； 2：NAT规则，源（source）地址需要为私网IP，目的地址为公网IP或域名。
      * @return type
      */
     public TypeEnum getType() {
@@ -624,7 +629,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 规则创建时间，例如：\"2024-08-12 08:40:00\"
+     * **参数解释**： 规则创建时间。 **取值范围**： 不涉及
      * @return createdDate
      */
     public String getCreatedDate() {
@@ -635,13 +640,30 @@ public class RuleAclListResponseDTODataRecords {
         this.createdDate = createdDate;
     }
 
+    public RuleAclListResponseDTODataRecords withModifiedDate(String modifiedDate) {
+        this.modifiedDate = modifiedDate;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 规则修改时间。 **取值范围**： 不涉及
+     * @return modifiedDate
+     */
+    public String getModifiedDate() {
+        return modifiedDate;
+    }
+
+    public void setModifiedDate(String modifiedDate) {
+        this.modifiedDate = modifiedDate;
+    }
+
     public RuleAclListResponseDTODataRecords withLastOpenTime(String lastOpenTime) {
         this.lastOpenTime = lastOpenTime;
         return this;
     }
 
     /**
-     * 规则最后开启时间，例如：\"2024-08-12 08:40:00\"
+     * **参数解释**： 规则最后开启时间。 **取值范围**： 不涉及
      * @return lastOpenTime
      */
     public String getLastOpenTime() {
@@ -687,11 +709,11 @@ public class RuleAclListResponseDTODataRecords {
             return false;
         }
         RuleAclListResponseDTODataRecords that = (RuleAclListResponseDTODataRecords) obj;
-        return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.applications, that.applications)
+        return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.applications, that.applications)
             && Objects.equals(this.addressType, that.addressType) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.direction, that.direction)
-            && Objects.equals(this.actionType, that.actionType) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.direction, that.direction) && Objects.equals(this.actionType, that.actionType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description)
             && Objects.equals(this.longConnectTime, that.longConnectTime)
             && Objects.equals(this.longConnectEnable, that.longConnectEnable)
             && Objects.equals(this.longConnectTimeHour, that.longConnectTimeHour)
@@ -700,16 +722,17 @@ public class RuleAclListResponseDTODataRecords {
             && Objects.equals(this.source, that.source) && Objects.equals(this.destination, that.destination)
             && Objects.equals(this.service, that.service) && Objects.equals(this.type, that.type)
             && Objects.equals(this.createdDate, that.createdDate)
+            && Objects.equals(this.modifiedDate, that.modifiedDate)
             && Objects.equals(this.lastOpenTime, that.lastOpenTime) && Objects.equals(this.tag, that.tag);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(ruleId,
+            orderId,
             applications,
             addressType,
             name,
-            orderId,
             direction,
             actionType,
             status,
@@ -724,6 +747,7 @@ public class RuleAclListResponseDTODataRecords {
             service,
             type,
             createdDate,
+            modifiedDate,
             lastOpenTime,
             tag);
     }
@@ -733,10 +757,10 @@ public class RuleAclListResponseDTODataRecords {
         StringBuilder sb = new StringBuilder();
         sb.append("class RuleAclListResponseDTODataRecords {\n");
         sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    applications: ").append(toIndentedString(applications)).append("\n");
         sb.append("    addressType: ").append(toIndentedString(addressType)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
         sb.append("    actionType: ").append(toIndentedString(actionType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
@@ -751,6 +775,7 @@ public class RuleAclListResponseDTODataRecords {
         sb.append("    service: ").append(toIndentedString(service)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
+        sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
         sb.append("    lastOpenTime: ").append(toIndentedString(lastOpenTime)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("}");

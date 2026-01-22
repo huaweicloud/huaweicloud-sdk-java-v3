@@ -3,10 +3,7 @@ package com.huaweicloud.sdk.rocketmq.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * BatchDeleteConsumerGroupReq
@@ -14,41 +11,25 @@ import java.util.function.Consumer;
 public class BatchDeleteConsumerGroupReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "groups")
+    @JsonProperty(value = "job_id")
 
-    private List<String> groups = null;
+    private String jobId;
 
-    public BatchDeleteConsumerGroupReq withGroups(List<String> groups) {
-        this.groups = groups;
-        return this;
-    }
-
-    public BatchDeleteConsumerGroupReq addGroupsItem(String groupsItem) {
-        if (this.groups == null) {
-            this.groups = new ArrayList<>();
-        }
-        this.groups.add(groupsItem);
-        return this;
-    }
-
-    public BatchDeleteConsumerGroupReq withGroups(Consumer<List<String>> groupsSetter) {
-        if (this.groups == null) {
-            this.groups = new ArrayList<>();
-        }
-        groupsSetter.accept(this.groups);
+    public BatchDeleteConsumerGroupReq withJobId(String jobId) {
+        this.jobId = jobId;
         return this;
     }
 
     /**
-     * 待删除的消费组列表。
-     * @return groups
+     * **参数解释**： 待删除的消费组列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return jobId
      */
-    public List<String> getGroups() {
-        return groups;
+    public String getJobId() {
+        return jobId;
     }
 
-    public void setGroups(List<String> groups) {
-        this.groups = groups;
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
     }
 
     @Override
@@ -60,19 +41,19 @@ public class BatchDeleteConsumerGroupReq {
             return false;
         }
         BatchDeleteConsumerGroupReq that = (BatchDeleteConsumerGroupReq) obj;
-        return Objects.equals(this.groups, that.groups);
+        return Objects.equals(this.jobId, that.jobId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groups);
+        return Objects.hash(jobId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchDeleteConsumerGroupReq {\n");
-        sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

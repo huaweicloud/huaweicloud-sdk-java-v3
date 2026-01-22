@@ -31,6 +31,11 @@ public class DnsServersResponseDTO {
     private String serverIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private Integer status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "health_check_domain_name")
 
     private String healthCheckDomainName;
@@ -41,7 +46,7 @@ public class DnsServersResponseDTO {
     }
 
     /**
-     * 域名服务器id
+     * **参数解释**： 域名服务器id **取值范围**： 不涉及
      * @return id
      */
     public Integer getId() {
@@ -58,7 +63,7 @@ public class DnsServersResponseDTO {
     }
 
     /**
-     * 域名服务器是否应用，0否 1是
+     * **参数解释**： 域名服务器是否应用 **取值范围**： - 0：否 - 1：是
      * @return isApplied
      */
     public Integer getIsApplied() {
@@ -75,7 +80,7 @@ public class DnsServersResponseDTO {
     }
 
     /**
-     * 域名服务器是否是用户自定义的dns服务器，0否 1是
+     * **参数解释**： 域名服务器是否是用户自定义的dns服务器 **取值范围**： - 0：否 - 1：是
      * @return isCustomized
      */
     public Integer getIsCustomized() {
@@ -92,7 +97,7 @@ public class DnsServersResponseDTO {
     }
 
     /**
-     * DNS服务器IP
+     * **参数解释**： DNS服务器IP **取值范围**： 不涉及
      * @return serverIp
      */
     public String getServerIp() {
@@ -103,13 +108,30 @@ public class DnsServersResponseDTO {
         this.serverIp = serverIp;
     }
 
+    public DnsServersResponseDTO withStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * **参数解释**： dns服务器解析状态 **取值范围**： 0：解析域名的频率正常 1：解析域名的频率缓慢 2：解析域名异常 
+     * @return status
+     */
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
     public DnsServersResponseDTO withHealthCheckDomainName(String healthCheckDomainName) {
         this.healthCheckDomainName = healthCheckDomainName;
         return this;
     }
 
     /**
-     * 健康检查域名
+     * **参数解释**： 健康检查域名 **取值范围**： 不涉及
      * @return healthCheckDomainName
      */
     public String getHealthCheckDomainName() {
@@ -131,12 +153,13 @@ public class DnsServersResponseDTO {
         DnsServersResponseDTO that = (DnsServersResponseDTO) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.isApplied, that.isApplied)
             && Objects.equals(this.isCustomized, that.isCustomized) && Objects.equals(this.serverIp, that.serverIp)
+            && Objects.equals(this.status, that.status)
             && Objects.equals(this.healthCheckDomainName, that.healthCheckDomainName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, isApplied, isCustomized, serverIp, healthCheckDomainName);
+        return Objects.hash(id, isApplied, isCustomized, serverIp, status, healthCheckDomainName);
     }
 
     @Override
@@ -147,6 +170,7 @@ public class DnsServersResponseDTO {
         sb.append("    isApplied: ").append(toIndentedString(isApplied)).append("\n");
         sb.append("    isCustomized: ").append(toIndentedString(isCustomized)).append("\n");
         sb.append("    serverIp: ").append(toIndentedString(serverIp)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    healthCheckDomainName: ").append(toIndentedString(healthCheckDomainName)).append("\n");
         sb.append("}");
         return sb.toString();

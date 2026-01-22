@@ -26,7 +26,7 @@ public class ShowInstanceExtendProductInfoRespHourly {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "values")
 
-    private List<ListProductsRespValues> values = null;
+    private List<ShowInstanceExtendProductInfoRespValues> values = null;
 
     public ShowInstanceExtendProductInfoRespHourly withName(String name) {
         this.name = name;
@@ -51,7 +51,7 @@ public class ShowInstanceExtendProductInfoRespHourly {
     }
 
     /**
-     * 消息引擎的版本，当前支持3.8.35[和3.7.17](tag:hk_sbc,sbc)。
+     * 消息引擎的版本，当前支持3.8.35。
      * @return version
      */
     public String getVersion() {
@@ -62,12 +62,12 @@ public class ShowInstanceExtendProductInfoRespHourly {
         this.version = version;
     }
 
-    public ShowInstanceExtendProductInfoRespHourly withValues(List<ListProductsRespValues> values) {
+    public ShowInstanceExtendProductInfoRespHourly withValues(List<ShowInstanceExtendProductInfoRespValues> values) {
         this.values = values;
         return this;
     }
 
-    public ShowInstanceExtendProductInfoRespHourly addValuesItem(ListProductsRespValues valuesItem) {
+    public ShowInstanceExtendProductInfoRespHourly addValuesItem(ShowInstanceExtendProductInfoRespValues valuesItem) {
         if (this.values == null) {
             this.values = new ArrayList<>();
         }
@@ -75,7 +75,8 @@ public class ShowInstanceExtendProductInfoRespHourly {
         return this;
     }
 
-    public ShowInstanceExtendProductInfoRespHourly withValues(Consumer<List<ListProductsRespValues>> valuesSetter) {
+    public ShowInstanceExtendProductInfoRespHourly withValues(
+        Consumer<List<ShowInstanceExtendProductInfoRespValues>> valuesSetter) {
         if (this.values == null) {
             this.values = new ArrayList<>();
         }
@@ -87,11 +88,11 @@ public class ShowInstanceExtendProductInfoRespHourly {
      * 产品规格列表。
      * @return values
      */
-    public List<ListProductsRespValues> getValues() {
+    public List<ShowInstanceExtendProductInfoRespValues> getValues() {
         return values;
     }
 
-    public void setValues(List<ListProductsRespValues> values) {
+    public void setValues(List<ShowInstanceExtendProductInfoRespValues> values) {
         this.values = values;
     }
 

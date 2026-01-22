@@ -58,6 +58,8 @@ import com.huaweicloud.sdk.eip.v3.model.ShowInternalVpcIgwRequest;
 import com.huaweicloud.sdk.eip.v3.model.ShowInternalVpcIgwResponse;
 import com.huaweicloud.sdk.eip.v3.model.ShowPublicipPoolRequest;
 import com.huaweicloud.sdk.eip.v3.model.ShowPublicipPoolResponse;
+import com.huaweicloud.sdk.eip.v3.model.ShowPublicipPoolTypesRequest;
+import com.huaweicloud.sdk.eip.v3.model.ShowPublicipPoolTypesResponse;
 import com.huaweicloud.sdk.eip.v3.model.ShowPublicipRequest;
 import com.huaweicloud.sdk.eip.v3.model.ShowPublicipResponse;
 import com.huaweicloud.sdk.eip.v3.model.UpdatePublicipRequest;
@@ -589,6 +591,86 @@ public class EipMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ShowPublicipPoolRequest::getFields, ShowPublicipPoolRequest::setFields));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPublicipPoolTypesRequest, ShowPublicipPoolTypesResponse> showPublicipPoolTypes =
+        genForShowPublicipPoolTypes();
+
+    private static HttpRequestDef<ShowPublicipPoolTypesRequest, ShowPublicipPoolTypesResponse> genForShowPublicipPoolTypes() {
+        // basic
+        HttpRequestDef.Builder<ShowPublicipPoolTypesRequest, ShowPublicipPoolTypesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowPublicipPoolTypesRequest.class, ShowPublicipPoolTypesResponse.class)
+            .withName("ShowPublicipPoolTypes")
+            .withUri("/v3/{project_id}/eip/publicip-pool-types")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPublicipPoolTypesRequest::getMarker, ShowPublicipPoolTypesRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowPublicipPoolTypesRequest::getLimit, ShowPublicipPoolTypesRequest::setLimit));
+        builder.<String>withRequestField("fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPublicipPoolTypesRequest::getFields, ShowPublicipPoolTypesRequest::setFields));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPublicipPoolTypesRequest::getSortKey, ShowPublicipPoolTypesRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPublicipPoolTypesRequest::getSortDir, ShowPublicipPoolTypesRequest::setSortDir));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPublicipPoolTypesRequest::getId, ShowPublicipPoolTypesRequest::setId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPublicipPoolTypesRequest::getName, ShowPublicipPoolTypesRequest::setName));
+        builder.<Integer>withRequestField("size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowPublicipPoolTypesRequest::getSize, ShowPublicipPoolTypesRequest::setSize));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPublicipPoolTypesRequest::getStatus, ShowPublicipPoolTypesRequest::setStatus));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPublicipPoolTypesRequest::getType, ShowPublicipPoolTypesRequest::setType));
+        builder.<String>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPublicipPoolTypesRequest::getDescription,
+                ShowPublicipPoolTypesRequest::setDescription));
+        builder.<String>withRequestField("public_border_group",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPublicipPoolTypesRequest::getPublicBorderGroup,
+                ShowPublicipPoolTypesRequest::setPublicBorderGroup));
 
         // response
 

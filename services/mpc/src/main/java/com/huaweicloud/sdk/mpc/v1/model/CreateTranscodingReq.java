@@ -74,11 +74,6 @@ public class CreateTranscodingReq {
     private List<ImageSprite> imageSprites = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "pipeline_id")
-
-    private String pipelineId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority")
 
     private Integer priority;
@@ -482,23 +477,6 @@ public class CreateTranscodingReq {
         this.imageSprites = imageSprites;
     }
 
-    public CreateTranscodingReq withPipelineId(String pipelineId) {
-        this.pipelineId = pipelineId;
-        return this;
-    }
-
-    /**
-     * 
-     * @return pipelineId
-     */
-    public String getPipelineId() {
-        return pipelineId;
-    }
-
-    public void setPipelineId(String pipelineId) {
-        this.pipelineId = pipelineId;
-    }
-
     public CreateTranscodingReq withPriority(Integer priority) {
         this.priority = priority;
         return this;
@@ -750,11 +728,10 @@ public class CreateTranscodingReq {
             && Objects.equals(this.outputFilenames, that.outputFilenames)
             && Objects.equals(this.userData, that.userData) && Objects.equals(this.watermarks, that.watermarks)
             && Objects.equals(this.thumbnail, that.thumbnail) && Objects.equals(this.thumbnails, that.thumbnails)
-            && Objects.equals(this.imageSprites, that.imageSprites) && Objects.equals(this.pipelineId, that.pipelineId)
-            && Objects.equals(this.priority, that.priority) && Objects.equals(this.subtitle, that.subtitle)
-            && Objects.equals(this.encryption, that.encryption) && Objects.equals(this.crop, that.crop)
-            && Objects.equals(this.audioTrack, that.audioTrack) && Objects.equals(this.multiAudio, that.multiAudio)
-            && Objects.equals(this.videoProcess, that.videoProcess)
+            && Objects.equals(this.imageSprites, that.imageSprites) && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.subtitle, that.subtitle) && Objects.equals(this.encryption, that.encryption)
+            && Objects.equals(this.crop, that.crop) && Objects.equals(this.audioTrack, that.audioTrack)
+            && Objects.equals(this.multiAudio, that.multiAudio) && Objects.equals(this.videoProcess, that.videoProcess)
             && Objects.equals(this.audioProcess, that.audioProcess) && Objects.equals(this.metadata, that.metadata);
     }
 
@@ -772,7 +749,6 @@ public class CreateTranscodingReq {
             thumbnail,
             thumbnails,
             imageSprites,
-            pipelineId,
             priority,
             subtitle,
             encryption,
@@ -800,7 +776,6 @@ public class CreateTranscodingReq {
         sb.append("    thumbnail: ").append(toIndentedString(thumbnail)).append("\n");
         sb.append("    thumbnails: ").append(toIndentedString(thumbnails)).append("\n");
         sb.append("    imageSprites: ").append(toIndentedString(imageSprites)).append("\n");
-        sb.append("    pipelineId: ").append(toIndentedString(pipelineId)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    subtitle: ").append(toIndentedString(subtitle)).append("\n");
         sb.append("    encryption: ").append(toIndentedString(encryption)).append("\n");
