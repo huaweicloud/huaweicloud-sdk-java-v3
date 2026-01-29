@@ -21,7 +21,7 @@ public class ShowApiVersionRequest {
     }
 
     /**
-     * 版本信息
+     * 版本信息，如v3
      * @return version
      */
     public String getVersion() {

@@ -19,7 +19,7 @@ public class BatchDeleteIssuesV4Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private BatchDelelteIssuesRequestV4 body;
+    private BatchDeleteIssuesRequestV4 body;
 
     public BatchDeleteIssuesV4Request withProjectId(String projectId) {
         this.projectId = projectId;
@@ -38,14 +38,14 @@ public class BatchDeleteIssuesV4Request {
         this.projectId = projectId;
     }
 
-    public BatchDeleteIssuesV4Request withBody(BatchDelelteIssuesRequestV4 body) {
+    public BatchDeleteIssuesV4Request withBody(BatchDeleteIssuesRequestV4 body) {
         this.body = body;
         return this;
     }
 
-    public BatchDeleteIssuesV4Request withBody(Consumer<BatchDelelteIssuesRequestV4> bodySetter) {
+    public BatchDeleteIssuesV4Request withBody(Consumer<BatchDeleteIssuesRequestV4> bodySetter) {
         if (this.body == null) {
-            this.body = new BatchDelelteIssuesRequestV4();
+            this.body = new BatchDeleteIssuesRequestV4();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class BatchDeleteIssuesV4Request {
      * Get body
      * @return body
      */
-    public BatchDelelteIssuesRequestV4 getBody() {
+    public BatchDeleteIssuesRequestV4 getBody() {
         return body;
     }
 
-    public void setBody(BatchDelelteIssuesRequestV4 body) {
+    public void setBody(BatchDeleteIssuesRequestV4 body) {
         this.body = body;
     }
 

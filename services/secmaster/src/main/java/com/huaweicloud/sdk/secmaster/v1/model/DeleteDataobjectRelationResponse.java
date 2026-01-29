@@ -23,6 +23,16 @@ public class DeleteDataobjectRelationResponse extends SdkResponse {
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "success")
+
+    private Boolean success;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
     private BatchOperateDataobjectResult data;
@@ -64,6 +74,40 @@ public class DeleteDataobjectRelationResponse extends SdkResponse {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public DeleteDataobjectRelationResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    /**
+     * 请求ID
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
+    public DeleteDataobjectRelationResponse withSuccess(Boolean success) {
+        this.success = success;
+        return this;
+    }
+
+    /**
+     * 是否成功
+     * @return success
+     */
+    public Boolean getSuccess() {
+        return success;
+    }
+
+    public void setSuccess(Boolean success) {
+        this.success = success;
     }
 
     public DeleteDataobjectRelationResponse withData(BatchOperateDataobjectResult data) {
@@ -121,12 +165,13 @@ public class DeleteDataobjectRelationResponse extends SdkResponse {
         }
         DeleteDataobjectRelationResponse that = (DeleteDataobjectRelationResponse) obj;
         return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.requestId, that.requestId) && Objects.equals(this.success, that.success)
             && Objects.equals(this.data, that.data) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, message, data, xRequestId);
+        return Objects.hash(code, message, requestId, success, data, xRequestId);
     }
 
     @Override
@@ -135,6 +180,8 @@ public class DeleteDataobjectRelationResponse extends SdkResponse {
         sb.append("class DeleteDataobjectRelationResponse {\n");
         sb.append("    code: ").append(toIndentedString(code)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    success: ").append(toIndentedString(success)).append("\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");

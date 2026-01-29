@@ -21,14 +21,14 @@ public class ListRetrieveScriptsRequest {
     private String tableId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "script_name")
-
-    private String scriptName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Long offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "script_name")
+
+    private String scriptName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -79,23 +79,6 @@ public class ListRetrieveScriptsRequest {
         this.tableId = tableId;
     }
 
-    public ListRetrieveScriptsRequest withScriptName(String scriptName) {
-        this.scriptName = scriptName;
-        return this;
-    }
-
-    /**
-     * 脚本名称
-     * @return scriptName
-     */
-    public String getScriptName() {
-        return scriptName;
-    }
-
-    public void setScriptName(String scriptName) {
-        this.scriptName = scriptName;
-    }
-
     public ListRetrieveScriptsRequest withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -113,6 +96,23 @@ public class ListRetrieveScriptsRequest {
 
     public void setOffset(Long offset) {
         this.offset = offset;
+    }
+
+    public ListRetrieveScriptsRequest withScriptName(String scriptName) {
+        this.scriptName = scriptName;
+        return this;
+    }
+
+    /**
+     * 脚本名称
+     * @return scriptName
+     */
+    public String getScriptName() {
+        return scriptName;
+    }
+
+    public void setScriptName(String scriptName) {
+        this.scriptName = scriptName;
     }
 
     public ListRetrieveScriptsRequest withLimit(Long limit) {
@@ -178,14 +178,14 @@ public class ListRetrieveScriptsRequest {
         }
         ListRetrieveScriptsRequest that = (ListRetrieveScriptsRequest) obj;
         return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.tableId, that.tableId)
-            && Objects.equals(this.scriptName, that.scriptName) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.scriptName, that.scriptName)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.sortKey, that.sortKey)
             && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspaceId, tableId, scriptName, offset, limit, sortKey, sortDir);
+        return Objects.hash(workspaceId, tableId, offset, scriptName, limit, sortKey, sortDir);
     }
 
     @Override
@@ -194,8 +194,8 @@ public class ListRetrieveScriptsRequest {
         sb.append("class ListRetrieveScriptsRequest {\n");
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("    tableId: ").append(toIndentedString(tableId)).append("\n");
-        sb.append("    scriptName: ").append(toIndentedString(scriptName)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    scriptName: ").append(toIndentedString(scriptName)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");

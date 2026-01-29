@@ -1,15 +1,10 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -48,86 +43,10 @@ public class TemplateRequest {
 
     private String availabilityZone;
 
-    /**
-     * 磁盘类型 SAS:串行连接SCSI SSD:固态硬盘 SATA:串口硬盘 
-     */
-    public static final class VolumetypeEnum {
-
-        /**
-         * Enum SAS for value: "SAS"
-         */
-        public static final VolumetypeEnum SAS = new VolumetypeEnum("SAS");
-
-        /**
-         * Enum SSD for value: "SSD"
-         */
-        public static final VolumetypeEnum SSD = new VolumetypeEnum("SSD");
-
-        /**
-         * Enum SATA for value: "SATA"
-         */
-        public static final VolumetypeEnum SATA = new VolumetypeEnum("SATA");
-
-        private static final Map<String, VolumetypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, VolumetypeEnum> createStaticFields() {
-            Map<String, VolumetypeEnum> map = new HashMap<>();
-            map.put("SAS", SAS);
-            map.put("SSD", SSD);
-            map.put("SATA", SATA);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        VolumetypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static VolumetypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VolumetypeEnum(value));
-        }
-
-        public static VolumetypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof VolumetypeEnum) {
-                return this.value.equals(((VolumetypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volumetype")
 
-    private VolumetypeEnum volumetype;
+    private String volumetype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor")
@@ -159,86 +78,10 @@ public class TemplateRequest {
 
     private List<TemplateDisk> disk = null;
 
-    /**
-     * 数据盘磁盘类型 SAS:串行连接SCSI SSD:固态硬盘 SATA:串口硬盘 
-     */
-    public static final class DataVolumeTypeEnum {
-
-        /**
-         * Enum SAS for value: "SAS"
-         */
-        public static final DataVolumeTypeEnum SAS = new DataVolumeTypeEnum("SAS");
-
-        /**
-         * Enum SSD for value: "SSD"
-         */
-        public static final DataVolumeTypeEnum SSD = new DataVolumeTypeEnum("SSD");
-
-        /**
-         * Enum SATA for value: "SATA"
-         */
-        public static final DataVolumeTypeEnum SATA = new DataVolumeTypeEnum("SATA");
-
-        private static final Map<String, DataVolumeTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, DataVolumeTypeEnum> createStaticFields() {
-            Map<String, DataVolumeTypeEnum> map = new HashMap<>();
-            map.put("SAS", SAS);
-            map.put("SSD", SSD);
-            map.put("SATA", SATA);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        DataVolumeTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static DataVolumeTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DataVolumeTypeEnum(value));
-        }
-
-        public static DataVolumeTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof DataVolumeTypeEnum) {
-                return this.value.equals(((DataVolumeTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_volume_type")
 
-    private DataVolumeTypeEnum dataVolumeType;
+    private String dataVolumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_password")
@@ -256,7 +99,7 @@ public class TemplateRequest {
     }
 
     /**
-     * 模板名称
+     * 模板名称 仅由中文字符、下划线、短横线、数字、英文大小写字母组成
      * @return name
      */
     public String getName() {
@@ -352,20 +195,20 @@ public class TemplateRequest {
         this.availabilityZone = availabilityZone;
     }
 
-    public TemplateRequest withVolumetype(VolumetypeEnum volumetype) {
+    public TemplateRequest withVolumetype(String volumetype) {
         this.volumetype = volumetype;
         return this;
     }
 
     /**
-     * 磁盘类型 SAS:串行连接SCSI SSD:固态硬盘 SATA:串口硬盘 
+     * 磁盘类型 （非枚举数据，来源于EVS服务） 常见类型如：SAS:串行连接SCSI，SSD:固态硬盘，SATA:串口硬盘等。 详细类型请参考EIP服务API文档中“查询单个云硬盘详情”部分，查看响应参数的中volume_type字段描述
      * @return volumetype
      */
-    public VolumetypeEnum getVolumetype() {
+    public String getVolumetype() {
         return volumetype;
     }
 
-    public void setVolumetype(VolumetypeEnum volumetype) {
+    public void setVolumetype(String volumetype) {
         this.volumetype = volumetype;
     }
 
@@ -537,20 +380,20 @@ public class TemplateRequest {
         this.disk = disk;
     }
 
-    public TemplateRequest withDataVolumeType(DataVolumeTypeEnum dataVolumeType) {
+    public TemplateRequest withDataVolumeType(String dataVolumeType) {
         this.dataVolumeType = dataVolumeType;
         return this;
     }
 
     /**
-     * 数据盘磁盘类型 SAS:串行连接SCSI SSD:固态硬盘 SATA:串口硬盘 
+     * 数据盘磁盘类型 （非枚举数据，来源于EVS服务） 常见类型如：SAS:串行连接SCSI，SSD:固态硬盘，SATA:串口硬盘等。 详细类型请参考EIP服务API文档中“查询单个云硬盘详情”部分，查看响应参数的中volume_type字段描述
      * @return dataVolumeType
      */
-    public DataVolumeTypeEnum getDataVolumeType() {
+    public String getDataVolumeType() {
         return dataVolumeType;
     }
 
-    public void setDataVolumeType(DataVolumeTypeEnum dataVolumeType) {
+    public void setDataVolumeType(String dataVolumeType) {
         this.dataVolumeType = dataVolumeType;
     }
 

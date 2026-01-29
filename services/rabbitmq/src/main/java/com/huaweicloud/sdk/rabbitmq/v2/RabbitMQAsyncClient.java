@@ -19,8 +19,6 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.CreateExchangeRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.CreateExchangeResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.CreatePostPaidInstanceByEngineRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.CreatePostPaidInstanceByEngineResponse;
-import com.huaweicloud.sdk.rabbitmq.v2.model.CreatePostPaidInstanceRequest;
-import com.huaweicloud.sdk.rabbitmq.v2.model.CreatePostPaidInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.CreateQueueRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.CreateQueueResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.CreateUserRequest;
@@ -73,8 +71,6 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.ResetPasswordRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResetPasswordResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeEngineInstanceRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeEngineInstanceResponse;
-import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeInstanceRequest;
-import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.RestoreRecycleInstanceRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.RestoreRecycleInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowBackgroundTaskRequest;
@@ -83,8 +79,6 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.ShowCesHierarchyRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowCesHierarchyResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowEngineInstanceExtendProductInfoRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowEngineInstanceExtendProductInfoResponse;
-import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceExtendProductInfoRequest;
-import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceExtendProductInfoResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowMaintainWindowsRequest;
@@ -191,36 +185,6 @@ public class RabbitMQAsyncClient {
     public AsyncInvoker<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> batchRestartOrDeleteInstancesAsyncInvoker(
         BatchRestartOrDeleteInstancesRequest request) {
         return new AsyncInvoker<>(request, RabbitMQMeta.batchRestartOrDeleteInstances, hcClient);
-    }
-
-    /**
-     * 创建实例(按需)
-     *
-     * 创建实例，该接口创建的实例为按需计费的方式。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreatePostPaidInstanceRequest 请求对象
-     * @return CompletableFuture<CreatePostPaidInstanceResponse>
-     */
-    public CompletableFuture<CreatePostPaidInstanceResponse> createPostPaidInstanceAsync(
-        CreatePostPaidInstanceRequest request) {
-        return hcClient.asyncInvokeHttp(request, RabbitMQMeta.createPostPaidInstance);
-    }
-
-    /**
-     * 创建实例(按需)
-     *
-     * 创建实例，该接口创建的实例为按需计费的方式。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreatePostPaidInstanceRequest 请求对象
-     * @return AsyncInvoker<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse>
-     */
-    public AsyncInvoker<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> createPostPaidInstanceAsyncInvoker(
-        CreatePostPaidInstanceRequest request) {
-        return new AsyncInvoker<>(request, RabbitMQMeta.createPostPaidInstance, hcClient);
     }
 
     /**
@@ -778,39 +742,6 @@ public class RabbitMQAsyncClient {
     }
 
     /**
-     * 实例规格变更
-     *
-     * 实例规格变更。
-     * 
-     * [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,hws_hk,ctc,cmcc,hws_eu)
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ResizeInstanceRequest 请求对象
-     * @return CompletableFuture<ResizeInstanceResponse>
-     */
-    public CompletableFuture<ResizeInstanceResponse> resizeInstanceAsync(ResizeInstanceRequest request) {
-        return hcClient.asyncInvokeHttp(request, RabbitMQMeta.resizeInstance);
-    }
-
-    /**
-     * 实例规格变更
-     *
-     * 实例规格变更。
-     * 
-     * [**当前通过调用API，只支持按需实例进行实例规格变更。**](tag:hws,hws_hk,ctc,cmcc,hws_eu)
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ResizeInstanceRequest 请求对象
-     * @return AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse>
-     */
-    public AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstanceAsyncInvoker(
-        ResizeInstanceRequest request) {
-        return new AsyncInvoker<>(request, RabbitMQMeta.resizeInstance, hcClient);
-    }
-
-    /**
      * 恢复回收站实例
      *
      * 恢复回收站实例。
@@ -955,40 +886,6 @@ public class RabbitMQAsyncClient {
     public AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceAsyncInvoker(
         ShowInstanceRequest request) {
         return new AsyncInvoker<>(request, RabbitMQMeta.showInstance, hcClient);
-    }
-
-    /**
-     * 查询可扩容规格列表
-     *
-     * 查询可扩容规格列表。
-     * 
-     * RabbtiMQ只支持只增加节点数的扩容方式。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowInstanceExtendProductInfoRequest 请求对象
-     * @return CompletableFuture<ShowInstanceExtendProductInfoResponse>
-     */
-    public CompletableFuture<ShowInstanceExtendProductInfoResponse> showInstanceExtendProductInfoAsync(
-        ShowInstanceExtendProductInfoRequest request) {
-        return hcClient.asyncInvokeHttp(request, RabbitMQMeta.showInstanceExtendProductInfo);
-    }
-
-    /**
-     * 查询可扩容规格列表
-     *
-     * 查询可扩容规格列表。
-     * 
-     * RabbtiMQ只支持只增加节点数的扩容方式。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowInstanceExtendProductInfoRequest 请求对象
-     * @return AsyncInvoker<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse>
-     */
-    public AsyncInvoker<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> showInstanceExtendProductInfoAsyncInvoker(
-        ShowInstanceExtendProductInfoRequest request) {
-        return new AsyncInvoker<>(request, RabbitMQMeta.showInstanceExtendProductInfo, hcClient);
     }
 
     /**

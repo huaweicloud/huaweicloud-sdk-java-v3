@@ -20,6 +20,9 @@ import com.huaweicloud.sdk.secmaster.v2.model.CreateAnalysisScriptResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateCodeSegmentRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateCodeSegmentRequestBody;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateCodeSegmentResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateCollectConfigRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateCollectConfigResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateCollectConfigV2RequestBody;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateCustomizedCheckitemRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateCustomizedCheckitemResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateCustomizedCompliancePackageRequest;
@@ -36,6 +39,9 @@ import com.huaweicloud.sdk.secmaster.v2.model.CreatePipeResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateRetrieveScriptRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateRetrieveScriptRequestBody;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateRetrieveScriptResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateSqlRenderRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateSqlRenderRequestBody;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateSqlRenderResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateSqlValidationRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateSqlValidationRequestBody;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateSqlValidationResponse;
@@ -93,6 +99,8 @@ import com.huaweicloud.sdk.secmaster.v2.model.ListAnalysisScriptsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAnalysisScriptsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListCodeSegmentsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListCodeSegmentsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListCollectConfigRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListCollectConfigResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListDataTransformationMetricsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListDataTransformationMetricsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListDataTransformationsRequest;
@@ -307,6 +315,34 @@ public class SecMasterMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateCollectConfigRequest, CreateCollectConfigResponse> createCollectConfig =
+        genForCreateCollectConfig();
+
+    private static HttpRequestDef<CreateCollectConfigRequest, CreateCollectConfigResponse> genForCreateCollectConfig() {
+        // basic
+        HttpRequestDef.Builder<CreateCollectConfigRequest, CreateCollectConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateCollectConfigRequest.class, CreateCollectConfigResponse.class)
+                .withName("CreateCollectConfig")
+                .withUri("/v2/{project_id}/collector/cloudlogs/config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCollectConfigRequest::getRegionId, CreateCollectConfigRequest::setRegionId));
+        builder.<CreateCollectConfigV2RequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateCollectConfigV2RequestBody.class),
+            f -> f.withMarshaller(CreateCollectConfigRequest::getBody, CreateCollectConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateCustomizedCheckitemRequest, CreateCustomizedCheckitemResponse> createCustomizedCheckitem =
         genForCreateCustomizedCheckitem();
 
@@ -498,6 +534,34 @@ public class SecMasterMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRetrieveScriptRequestBody.class),
             f -> f.withMarshaller(CreateRetrieveScriptRequest::getBody, CreateRetrieveScriptRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSqlRenderRequest, CreateSqlRenderResponse> createSqlRender =
+        genForCreateSqlRender();
+
+    private static HttpRequestDef<CreateSqlRenderRequest, CreateSqlRenderResponse> genForCreateSqlRender() {
+        // basic
+        HttpRequestDef.Builder<CreateSqlRenderRequest, CreateSqlRenderResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSqlRenderRequest.class, CreateSqlRenderResponse.class)
+                .withName("CreateSqlRender")
+                .withUri("/v2/{project_id}/workspaces/{workspace_id}/siem/ad-hoc-queries/sql-render")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSqlRenderRequest::getWorkspaceId, CreateSqlRenderRequest::setWorkspaceId));
+        builder.<CreateSqlRenderRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSqlRenderRequestBody.class),
+            f -> f.withMarshaller(CreateSqlRenderRequest::getBody, CreateSqlRenderRequest::setBody));
 
         // response
 
@@ -1369,6 +1433,65 @@ public class SecMasterMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCollectConfigRequest, ListCollectConfigResponse> listCollectConfig =
+        genForListCollectConfig();
+
+    private static HttpRequestDef<ListCollectConfigRequest, ListCollectConfigResponse> genForListCollectConfig() {
+        // basic
+        HttpRequestDef.Builder<ListCollectConfigRequest, ListCollectConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCollectConfigRequest.class, ListCollectConfigResponse.class)
+                .withName("ListCollectConfig")
+                .withUri("/v2/{project_id}/collector/cloudlogs/config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCollectConfigRequest::getRegionId, ListCollectConfigRequest::setRegionId));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListCollectConfigRequest::getOffset, ListCollectConfigRequest::setOffset));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListCollectConfigRequest::getLimit, ListCollectConfigRequest::setLimit));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCollectConfigRequest::getSortKey, ListCollectConfigRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCollectConfigRequest::getSortDir, ListCollectConfigRequest::setSortDir));
+        builder.<String>withRequestField("csvc",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCollectConfigRequest::getCsvc, ListCollectConfigRequest::setCsvc));
+        builder.<String>withRequestField("domain_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCollectConfigRequest::getDomainId, ListCollectConfigRequest::setDomainId));
+        builder.<Boolean>withRequestField("query_statistics",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListCollectConfigRequest::getQueryStatistics,
+                ListCollectConfigRequest::setQueryStatistics));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListDataTransformationMetricsRequest, ListDataTransformationMetricsResponse> listDataTransformationMetrics =
         genForListDataTransformationMetrics();
 
@@ -1621,17 +1744,17 @@ public class SecMasterMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRetrieveScriptsRequest::getTableId, ListRetrieveScriptsRequest::setTableId));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListRetrieveScriptsRequest::getOffset, ListRetrieveScriptsRequest::setOffset));
         builder.<String>withRequestField("script_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRetrieveScriptsRequest::getScriptName,
                 ListRetrieveScriptsRequest::setScriptName));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListRetrieveScriptsRequest::getOffset, ListRetrieveScriptsRequest::setOffset));
         builder.<Long>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

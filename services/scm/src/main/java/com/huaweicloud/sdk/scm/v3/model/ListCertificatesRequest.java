@@ -55,6 +55,11 @@ public class ListCertificatesRequest {
 
     private Integer expiredDaysSince;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "content")
+
+    private String content;
+
     public ListCertificatesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -214,6 +219,23 @@ public class ListCertificatesRequest {
         this.expiredDaysSince = expiredDaysSince;
     }
 
+    public ListCertificatesRequest withContent(String content) {
+        this.content = content;
+        return this;
+    }
+
+    /**
+     * 证书名称、域名搜索关键词
+     * @return content
+     */
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -229,7 +251,8 @@ public class ListCertificatesRequest {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.deploySupport, that.deploySupport)
             && Objects.equals(this.ownedBySelf, that.ownedBySelf)
-            && Objects.equals(this.expiredDaysSince, that.expiredDaysSince);
+            && Objects.equals(this.expiredDaysSince, that.expiredDaysSince)
+            && Objects.equals(this.content, that.content);
     }
 
     @Override
@@ -242,7 +265,8 @@ public class ListCertificatesRequest {
             enterpriseProjectId,
             deploySupport,
             ownedBySelf,
-            expiredDaysSince);
+            expiredDaysSince,
+            content);
     }
 
     @Override
@@ -258,6 +282,7 @@ public class ListCertificatesRequest {
         sb.append("    deploySupport: ").append(toIndentedString(deploySupport)).append("\n");
         sb.append("    ownedBySelf: ").append(toIndentedString(ownedBySelf)).append("\n");
         sb.append("    expiredDaysSince: ").append(toIndentedString(expiredDaysSince)).append("\n");
+        sb.append("    content: ").append(toIndentedString(content)).append("\n");
         sb.append("}");
         return sb.toString();
     }

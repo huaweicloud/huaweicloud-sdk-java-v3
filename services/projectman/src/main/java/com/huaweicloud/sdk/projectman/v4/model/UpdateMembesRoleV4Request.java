@@ -19,7 +19,7 @@ public class UpdateMembesRoleV4Request {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdateMembesRoleV4RequestBody body;
+    private UpdateMembersRoleV4RequestBody body;
 
     public UpdateMembesRoleV4Request withProjectId(String projectId) {
         this.projectId = projectId;
@@ -38,14 +38,14 @@ public class UpdateMembesRoleV4Request {
         this.projectId = projectId;
     }
 
-    public UpdateMembesRoleV4Request withBody(UpdateMembesRoleV4RequestBody body) {
+    public UpdateMembesRoleV4Request withBody(UpdateMembersRoleV4RequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateMembesRoleV4Request withBody(Consumer<UpdateMembesRoleV4RequestBody> bodySetter) {
+    public UpdateMembesRoleV4Request withBody(Consumer<UpdateMembersRoleV4RequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdateMembesRoleV4RequestBody();
+            this.body = new UpdateMembersRoleV4RequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class UpdateMembesRoleV4Request {
      * Get body
      * @return body
      */
-    public UpdateMembesRoleV4RequestBody getBody() {
+    public UpdateMembersRoleV4RequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateMembesRoleV4RequestBody body) {
+    public void setBody(UpdateMembersRoleV4RequestBody body) {
         this.body = body;
     }
 

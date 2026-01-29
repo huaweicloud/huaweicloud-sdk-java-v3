@@ -16,7 +16,7 @@ import com.huaweicloud.sdk.projectman.v4.model.AddMemberV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.BatchAddMembersV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.BatchAddMembersV4RequestBody;
 import com.huaweicloud.sdk.projectman.v4.model.BatchAddMembersV4Response;
-import com.huaweicloud.sdk.projectman.v4.model.BatchDelelteIssuesRequestV4;
+import com.huaweicloud.sdk.projectman.v4.model.BatchDeleteIssuesRequestV4;
 import com.huaweicloud.sdk.projectman.v4.model.BatchDeleteIssuesV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.BatchDeleteIssuesV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.BatchDeleteIterationsV4Request;
@@ -66,6 +66,8 @@ import com.huaweicloud.sdk.projectman.v4.model.CreateSystemIssueV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.CreateSystemIssueV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.DeleteAttachmentRequest;
 import com.huaweicloud.sdk.projectman.v4.model.DeleteAttachmentResponse;
+import com.huaweicloud.sdk.projectman.v4.model.DeleteIpdImageInIssueRequest;
+import com.huaweicloud.sdk.projectman.v4.model.DeleteIpdImageInIssueResponse;
 import com.huaweicloud.sdk.projectman.v4.model.DeleteIssueV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.DeleteIssueV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.DeleteIterationV4Request;
@@ -80,6 +82,8 @@ import com.huaweicloud.sdk.projectman.v4.model.DownloadAttachmentRequest;
 import com.huaweicloud.sdk.projectman.v4.model.DownloadAttachmentResponse;
 import com.huaweicloud.sdk.projectman.v4.model.DownloadImageFileRequest;
 import com.huaweicloud.sdk.projectman.v4.model.DownloadImageFileResponse;
+import com.huaweicloud.sdk.projectman.v4.model.DownloadIpdImageInIssueRequest;
+import com.huaweicloud.sdk.projectman.v4.model.DownloadIpdImageInIssueResponse;
 import com.huaweicloud.sdk.projectman.v4.model.DownloadIpdIssueAttachmentRequest;
 import com.huaweicloud.sdk.projectman.v4.model.DownloadIpdIssueAttachmentResponse;
 import com.huaweicloud.sdk.projectman.v4.model.IssueRequestV4;
@@ -204,8 +208,8 @@ import com.huaweicloud.sdk.projectman.v4.model.UpdateIssueV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.UpdateIterationRequestV4;
 import com.huaweicloud.sdk.projectman.v4.model.UpdateIterationV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.UpdateIterationV4Response;
+import com.huaweicloud.sdk.projectman.v4.model.UpdateMembersRoleV4RequestBody;
 import com.huaweicloud.sdk.projectman.v4.model.UpdateMembesRoleV4Request;
-import com.huaweicloud.sdk.projectman.v4.model.UpdateMembesRoleV4RequestBody;
 import com.huaweicloud.sdk.projectman.v4.model.UpdateMembesRoleV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.UpdateNickNameV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.UpdateNickNameV4Response;
@@ -223,6 +227,9 @@ import com.huaweicloud.sdk.projectman.v4.model.UpdateUserNickNameRequestV4;
 import com.huaweicloud.sdk.projectman.v4.model.UploadAttachmentsRequest;
 import com.huaweicloud.sdk.projectman.v4.model.UploadAttachmentsRequestBody;
 import com.huaweicloud.sdk.projectman.v4.model.UploadAttachmentsResponse;
+import com.huaweicloud.sdk.projectman.v4.model.UploadIpdImageInIssueRequest;
+import com.huaweicloud.sdk.projectman.v4.model.UploadIpdImageInIssueRequestBody;
+import com.huaweicloud.sdk.projectman.v4.model.UploadIpdImageInIssueResponse;
 import com.huaweicloud.sdk.projectman.v4.model.UploadIssueImgRequest;
 import com.huaweicloud.sdk.projectman.v4.model.UploadIssueImgRequestBody;
 import com.huaweicloud.sdk.projectman.v4.model.UploadIssueImgResponse;
@@ -976,10 +983,10 @@ public class ProjectManMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateMembesRoleV4Request::getProjectId, UpdateMembesRoleV4Request::setProjectId));
-        builder.<UpdateMembesRoleV4RequestBody>withRequestField("body",
+        builder.<UpdateMembersRoleV4RequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateMembesRoleV4RequestBody.class),
+            TypeCasts.uncheckedConversion(UpdateMembersRoleV4RequestBody.class),
             f -> f.withMarshaller(UpdateMembesRoleV4Request::getBody, UpdateMembesRoleV4Request::setBody));
 
         // response
@@ -1100,6 +1107,77 @@ public class ProjectManMeta {
             TypeCasts.uncheckedConversion(CreateIpdProjectIssueAttachmentRequestBody.class),
             f -> f.withMarshaller(CreateIpdProjectIssueAttachmentRequest::getBody,
                 CreateIpdProjectIssueAttachmentRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteIpdImageInIssueRequest, DeleteIpdImageInIssueResponse> deleteIpdImageInIssue =
+        genForDeleteIpdImageInIssue();
+
+    private static HttpRequestDef<DeleteIpdImageInIssueRequest, DeleteIpdImageInIssueResponse> genForDeleteIpdImageInIssue() {
+        // basic
+        HttpRequestDef.Builder<DeleteIpdImageInIssueRequest, DeleteIpdImageInIssueResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteIpdImageInIssueRequest.class, DeleteIpdImageInIssueResponse.class)
+            .withName("DeleteIpdImageInIssue")
+            .withUri("/v2/ipdprojectservice/projects/{project_id}/images")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteIpdImageInIssueRequest::getProjectId,
+                DeleteIpdImageInIssueRequest::setProjectId));
+        builder.<String>withRequestField("issue_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteIpdImageInIssueRequest::getIssueId, DeleteIpdImageInIssueRequest::setIssueId));
+        builder.<String>withRequestField("file_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteIpdImageInIssueRequest::getFileName,
+                DeleteIpdImageInIssueRequest::setFileName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadIpdImageInIssueRequest, DownloadIpdImageInIssueResponse> downloadIpdImageInIssue =
+        genForDownloadIpdImageInIssue();
+
+    private static HttpRequestDef<DownloadIpdImageInIssueRequest, DownloadIpdImageInIssueResponse> genForDownloadIpdImageInIssue() {
+        // basic
+        HttpRequestDef.Builder<DownloadIpdImageInIssueRequest, DownloadIpdImageInIssueResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, DownloadIpdImageInIssueRequest.class, DownloadIpdImageInIssueResponse.class)
+            .withName("DownloadIpdImageInIssue")
+            .withUri("/v2/ipdprojectservice/projects/{project_id}/images")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadIpdImageInIssueRequest::getProjectId,
+                DownloadIpdImageInIssueRequest::setProjectId));
+        builder.<String>withRequestField("issue_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadIpdImageInIssueRequest::getIssueId,
+                DownloadIpdImageInIssueRequest::setIssueId));
+        builder.<String>withRequestField("file_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadIpdImageInIssueRequest::getFileName,
+                DownloadIpdImageInIssueRequest::setFileName));
 
         // response
 
@@ -1345,6 +1423,40 @@ public class ProjectManMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(WorkItemFlowRequestBody.class),
             f -> f.withMarshaller(TransferWorkItemFlowRequest::getBody, TransferWorkItemFlowRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadIpdImageInIssueRequest, UploadIpdImageInIssueResponse> uploadIpdImageInIssue =
+        genForUploadIpdImageInIssue();
+
+    private static HttpRequestDef<UploadIpdImageInIssueRequest, UploadIpdImageInIssueResponse> genForUploadIpdImageInIssue() {
+        // basic
+        HttpRequestDef.Builder<UploadIpdImageInIssueRequest, UploadIpdImageInIssueResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UploadIpdImageInIssueRequest.class, UploadIpdImageInIssueResponse.class)
+            .withName("UploadIpdImageInIssue")
+            .withUri("/v2/ipdprojectservice/projects/{project_id}/images")
+            .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadIpdImageInIssueRequest::getProjectId,
+                UploadIpdImageInIssueRequest::setProjectId));
+        builder.<String>withRequestField("issue_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadIpdImageInIssueRequest::getIssueId, UploadIpdImageInIssueRequest::setIssueId));
+        builder.<UploadIpdImageInIssueRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadIpdImageInIssueRequestBody.class),
+            f -> f.withMarshaller(UploadIpdImageInIssueRequest::getBody, UploadIpdImageInIssueRequest::setBody));
 
         // response
 
@@ -1622,10 +1734,10 @@ public class ProjectManMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchDeleteIssuesV4Request::getProjectId, BatchDeleteIssuesV4Request::setProjectId));
-        builder.<BatchDelelteIssuesRequestV4>withRequestField("body",
+        builder.<BatchDeleteIssuesRequestV4>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchDelelteIssuesRequestV4.class),
+            TypeCasts.uncheckedConversion(BatchDeleteIssuesRequestV4.class),
             f -> f.withMarshaller(BatchDeleteIssuesV4Request::getBody, BatchDeleteIssuesV4Request::setBody));
 
         // response

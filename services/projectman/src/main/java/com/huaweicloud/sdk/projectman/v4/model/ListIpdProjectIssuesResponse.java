@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -19,7 +20,7 @@ public class ListIpdProjectIssuesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    private Object result;
+    private IssueListResult result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -43,20 +44,29 @@ public class ListIpdProjectIssuesResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ListIpdProjectIssuesResponse withResult(Object result) {
+    public ListIpdProjectIssuesResponse withResult(IssueListResult result) {
         this.result = result;
         return this;
     }
 
+    public ListIpdProjectIssuesResponse withResult(Consumer<IssueListResult> resultSetter) {
+        if (this.result == null) {
+            this.result = new IssueListResult();
+            resultSetter.accept(this.result);
+        }
+
+        return this;
+    }
+
     /**
-     * 返回对象
+     * Get result
      * @return result
      */
-    public Object getResult() {
+    public IssueListResult getResult() {
         return result;
     }
 
-    public void setResult(Object result) {
+    public void setResult(IssueListResult result) {
         this.result = result;
     }
 

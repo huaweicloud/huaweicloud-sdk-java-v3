@@ -67,7 +67,7 @@ public class IsapTableStorageSettingDto {
     private Long lakeStoragePeriod;
 
     /**
-     * **参数解释**: 数据湖定时分区设置 - MINUTE10 10分钟 - HOUR 小时 - DAY 天  **约束限制** 不涉及 **取值范围**: - MINUTE - HOUR - DAY  **默认值** 不涉及    
+     * **参数解释**: 数据湖定时分区设置 - MINUTE10 10分钟 - HOUR 小时 - DAY 天  **约束限制** 不涉及 **取值范围**: - MINUTE - HOUR - DAY  **默认值** 不涉及
      */
     public static final class LakePartitionSettingEnum {
 
@@ -335,7 +335,7 @@ public class IsapTableStorageSettingDto {
     }
 
     /**
-     * **参数解释**: 数据湖定时分区设置 - MINUTE10 10分钟 - HOUR 小时 - DAY 天  **约束限制** 不涉及 **取值范围**: - MINUTE - HOUR - DAY  **默认值** 不涉及    
+     * **参数解释**: 数据湖定时分区设置 - MINUTE10 10分钟 - HOUR 小时 - DAY 天  **约束限制** 不涉及 **取值范围**: - MINUTE - HOUR - DAY  **默认值** 不涉及
      * @return lakePartitionSetting
      */
     public LakePartitionSettingEnum getLakePartitionSetting() {

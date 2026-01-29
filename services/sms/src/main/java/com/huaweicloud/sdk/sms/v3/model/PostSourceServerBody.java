@@ -29,6 +29,11 @@ public class PostSourceServerBody {
     private String ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6")
+
+    private String ipv6;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -258,80 +263,10 @@ public class PostSourceServerBody {
 
     private Boolean accountRights;
 
-    /**
-     * Linux必选，系统引导类型，BOOT_LOADER(GRUB/LILO)
-     */
-    public static final class BootLoaderEnum {
-
-        /**
-         * Enum GRUB for value: "GRUB"
-         */
-        public static final BootLoaderEnum GRUB = new BootLoaderEnum("GRUB");
-
-        /**
-         * Enum LILO for value: "LILO"
-         */
-        public static final BootLoaderEnum LILO = new BootLoaderEnum("LILO");
-
-        private static final Map<String, BootLoaderEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, BootLoaderEnum> createStaticFields() {
-            Map<String, BootLoaderEnum> map = new HashMap<>();
-            map.put("GRUB", GRUB);
-            map.put("LILO", LILO);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        BootLoaderEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static BootLoaderEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BootLoaderEnum(value));
-        }
-
-        public static BootLoaderEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof BootLoaderEnum) {
-                return this.value.equals(((BootLoaderEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "boot_loader")
 
-    private BootLoaderEnum bootLoader;
+    private String bootLoader;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "system_dir")
@@ -453,7 +388,7 @@ public class PostSourceServerBody {
     private MigrationCycleEnum migrationCycle;
 
     /**
-     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败 premigready：迁移演练就绪 premiged：迁移演练完成 premigfailed：迁移演练失败 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成 error：错误
+     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败 premigready：迁移演练就绪 premiging：迁移演练中 premiged：迁移演练完成 premigfailed：迁移演练失败 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成 error：错误
      */
     public static final class StateEnum {
 
@@ -634,86 +569,10 @@ public class PostSourceServerBody {
 
     private Boolean oemSystem;
 
-    /**
-     * 启动方式，可以取值MANUAL、MGC或者空。
-     */
-    public static final class StartTypeEnum {
-
-        /**
-         * Enum MANUAL for value: "MANUAL"
-         */
-        public static final StartTypeEnum MANUAL = new StartTypeEnum("MANUAL");
-
-        /**
-         * Enum MGC for value: "MGC"
-         */
-        public static final StartTypeEnum MGC = new StartTypeEnum("MGC");
-
-        /**
-         * Enum EMPTY for value: ""
-         */
-        public static final StartTypeEnum EMPTY = new StartTypeEnum("");
-
-        private static final Map<String, StartTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, StartTypeEnum> createStaticFields() {
-            Map<String, StartTypeEnum> map = new HashMap<>();
-            map.put("MANUAL", MANUAL);
-            map.put("MGC", MGC);
-            map.put("", EMPTY);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        StartTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StartTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StartTypeEnum(value));
-        }
-
-        public static StartTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof StartTypeEnum) {
-                return this.value.equals(((StartTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_type")
 
-    private StartTypeEnum startType;
+    private String startType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "io_read_wait")
@@ -726,7 +585,7 @@ public class PostSourceServerBody {
     private Boolean hasTc;
 
     /**
-     * 平台信息: hw：华为  ali：阿里 aws：亚马逊 azure：微软云 gcp：谷歌云 tencent：腾讯云 vmware hyperv other：其他
+     * 平台信息: hw：华为  ali：阿里 aws：亚马逊 azure：微软云 gcp：谷歌云 tencent：腾讯云 vmware：VMware hyperv：HyperV other：其他 default：默认
      */
     public static final class PlatformEnum {
 
@@ -775,6 +634,11 @@ public class PostSourceServerBody {
          */
         public static final PlatformEnum OTHER = new PlatformEnum("other");
 
+        /**
+         * Enum DEFAULT for value: "default"
+         */
+        public static final PlatformEnum DEFAULT = new PlatformEnum("default");
+
         private static final Map<String, PlatformEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, PlatformEnum> createStaticFields() {
@@ -788,6 +652,7 @@ public class PostSourceServerBody {
             map.put("vmware", VMWARE);
             map.put("hyperv", HYPERV);
             map.put("other", OTHER);
+            map.put("default", DEFAULT);
             return Collections.unmodifiableMap(map);
         }
 
@@ -865,7 +730,7 @@ public class PostSourceServerBody {
     }
 
     /**
-     * 源端服务器ip，注册源端时必选，更新非必选
+     * 源端服务器ip，格式需满足ip标准格式。ip与ipv6必填一个。
      * @return ip
      */
     public String getIp() {
@@ -874,6 +739,23 @@ public class PostSourceServerBody {
 
     public void setIp(String ip) {
         this.ip = ip;
+    }
+
+    public PostSourceServerBody withIpv6(String ipv6) {
+        this.ipv6 = ipv6;
+        return this;
+    }
+
+    /**
+     * 源端服务器ip，格式需满足ipv6标准格式。ip与ipv6必填一个。
+     * @return ipv6
+     */
+    public String getIpv6() {
+        return ipv6;
+    }
+
+    public void setIpv6(String ipv6) {
+        this.ipv6 = ipv6;
     }
 
     public PostSourceServerBody withName(String name) {
@@ -899,7 +781,7 @@ public class PostSourceServerBody {
     }
 
     /**
-     * 源端主机名，注册源端必选，更新非必选
+     * 源端主机名
      * @return hostname
      */
     public String getHostname() {
@@ -1071,7 +953,7 @@ public class PostSourceServerBody {
     }
 
     /**
-     * Linux 必选，源端的Btrfs信息。如果源端不存在Btrfs，则为[]
+     * 源端的Btrfs信息。如果源端不存在Btrfs，则为[] Linux场景必选，否则无法通过后续环境检查
      * @return btrfsList
      */
     public List<BtrfsFileSystem> getBtrfsList() {
@@ -1138,7 +1020,7 @@ public class PostSourceServerBody {
     }
 
     /**
-     * 是否安装rsync组件，Linux系统此参数为必选
+     * 是否安装rsync组件，Linux系统此参数为必选，否则无法通过后续环境检查
      * @return hasRsync
      */
     public Boolean getHasRsync() {
@@ -1155,7 +1037,7 @@ public class PostSourceServerBody {
     }
 
     /**
-     * Linux场景必选，源端是否是半虚拟化
+     * 源端是否是半虚拟化 Linux场景必选，否则无法通过后续环境检查
      * @return paravirtualization
      */
     public Boolean getParavirtualization() {
@@ -1172,7 +1054,7 @@ public class PostSourceServerBody {
     }
 
     /**
-     * Linux必选，裸设备列表
+     * 裸设备列表 Linux场景必选，否则无法通过后续环境检查
      * @return rawDevices
      */
     public String getRawDevices() {
@@ -1189,7 +1071,7 @@ public class PostSourceServerBody {
     }
 
     /**
-     * Windows 必选，是否缺少驱动文件
+     * 是否缺少驱动文件 Windows场景必选，否则无法通过后续环境检查
      * @return driverFiles
      */
     public Boolean getDriverFiles() {
@@ -1206,7 +1088,7 @@ public class PostSourceServerBody {
     }
 
     /**
-     * Windows必选，是否存在不正常服务
+     * 是否存在不正常服务 Windows场景必选，否则无法通过后续环境检查
      * @return systemServices
      */
     public Boolean getSystemServices() {
@@ -1223,7 +1105,7 @@ public class PostSourceServerBody {
     }
 
     /**
-     * Windows必选，权限是否满足要求
+     * 权限是否满足要求 Windows场景必选，否则无法通过后续环境检查
      * @return accountRights
      */
     public Boolean getAccountRights() {
@@ -1234,20 +1116,20 @@ public class PostSourceServerBody {
         this.accountRights = accountRights;
     }
 
-    public PostSourceServerBody withBootLoader(BootLoaderEnum bootLoader) {
+    public PostSourceServerBody withBootLoader(String bootLoader) {
         this.bootLoader = bootLoader;
         return this;
     }
 
     /**
-     * Linux必选，系统引导类型，BOOT_LOADER(GRUB/LILO)
+     * 系统引导类型 仅允许“GRUB”取值，Linux场景必选，否则无法通过后续环境检查
      * @return bootLoader
      */
-    public BootLoaderEnum getBootLoader() {
+    public String getBootLoader() {
         return bootLoader;
     }
 
-    public void setBootLoader(BootLoaderEnum bootLoader) {
+    public void setBootLoader(String bootLoader) {
         this.bootLoader = bootLoader;
     }
 
@@ -1257,7 +1139,7 @@ public class PostSourceServerBody {
     }
 
     /**
-     * Windows必选，系统目录
+     * 系统目录 Windows场景必选，否则无法通过后续环境检查
      * @return systemDir
      */
     public String getSystemDir() {
@@ -1290,7 +1172,7 @@ public class PostSourceServerBody {
     }
 
     /**
-     * Linux必选，如果没有卷组，输入[]
+     * 卷组 如果没有卷组，输入[] Linux场景必选，否则无法通过后续环境检查
      * @return volumeGroups
      */
     public List<VolumeGroups> getVolumeGroups() {
@@ -1358,7 +1240,7 @@ public class PostSourceServerBody {
     }
 
     /**
-     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败 premigready：迁移演练就绪 premiged：迁移演练完成 premigfailed：迁移演练失败 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成 error：错误
+     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败 premigready：迁移演练就绪 premiging：迁移演练中 premiged：迁移演练完成 premigfailed：迁移演练失败 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成 error：错误
      * @return state
      */
     public StateEnum getState() {
@@ -1386,20 +1268,20 @@ public class PostSourceServerBody {
         this.oemSystem = oemSystem;
     }
 
-    public PostSourceServerBody withStartType(StartTypeEnum startType) {
+    public PostSourceServerBody withStartType(String startType) {
         this.startType = startType;
         return this;
     }
 
     /**
-     * 启动方式，可以取值MANUAL、MGC或者空。
+     * 启动方式 可以取值MANUAL、MGC或者空，不进行校验
      * @return startType
      */
-    public StartTypeEnum getStartType() {
+    public String getStartType() {
         return startType;
     }
 
-    public void setStartType(StartTypeEnum startType) {
+    public void setStartType(String startType) {
         this.startType = startType;
     }
 
@@ -1428,7 +1310,7 @@ public class PostSourceServerBody {
     }
 
     /**
-     * 是否安装tc组件，Linux系统此参数为必选
+     * 是否安装tc组件，Linux系统此参数为必选，否则无法通过后续环境检查
      * @return hasTc
      */
     public Boolean getHasTc() {
@@ -1445,7 +1327,7 @@ public class PostSourceServerBody {
     }
 
     /**
-     * 平台信息: hw：华为  ali：阿里 aws：亚马逊 azure：微软云 gcp：谷歌云 tencent：腾讯云 vmware hyperv other：其他
+     * 平台信息: hw：华为  ali：阿里 aws：亚马逊 azure：微软云 gcp：谷歌云 tencent：腾讯云 vmware：VMware hyperv：HyperV other：其他 default：默认
      * @return platform
      */
     public PlatformEnum getPlatform() {
@@ -1466,8 +1348,9 @@ public class PostSourceServerBody {
         }
         PostSourceServerBody that = (PostSourceServerBody) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.ip, that.ip)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.hostname, that.hostname)
-            && Objects.equals(this.osType, that.osType) && Objects.equals(this.osVersion, that.osVersion)
+            && Objects.equals(this.ipv6, that.ipv6) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.hostname, that.hostname) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.osVersion, that.osVersion)
             && Objects.equals(this.linuxBlockCheck, that.linuxBlockCheck)
             && Objects.equals(this.firmware, that.firmware) && Objects.equals(this.cpuQuantity, that.cpuQuantity)
             && Objects.equals(this.memory, that.memory) && Objects.equals(this.disks, that.disks)
@@ -1491,6 +1374,7 @@ public class PostSourceServerBody {
     public int hashCode() {
         return Objects.hash(id,
             ip,
+            ipv6,
             name,
             hostname,
             osType,
@@ -1529,6 +1413,7 @@ public class PostSourceServerBody {
         sb.append("class PostSourceServerBody {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    ipv6: ").append(toIndentedString(ipv6)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");

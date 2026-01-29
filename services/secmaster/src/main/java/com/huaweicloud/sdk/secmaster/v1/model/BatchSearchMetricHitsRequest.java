@@ -71,7 +71,7 @@ public class BatchSearchMetricHitsRequest {
     }
 
     /**
-     * 是否启用缓存，默认true, 禁用缓存 false
+     * 是否启用缓存，默认true，禁用缓存 false
      * @return cache
      */
     public Boolean getCache() {

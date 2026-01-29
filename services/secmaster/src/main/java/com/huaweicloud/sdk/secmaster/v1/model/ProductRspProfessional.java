@@ -51,7 +51,7 @@ public class ProductRspProfessional {
     }
 
     /**
-     * 云服务产品的主服务类型，云脑默认为：hws.service.type.sa
+     * 云服务产品的主服务类型，云脑默认为：xxx.service.type.sa
      * @return cloudServiceType
      */
     public String getCloudServiceType() {

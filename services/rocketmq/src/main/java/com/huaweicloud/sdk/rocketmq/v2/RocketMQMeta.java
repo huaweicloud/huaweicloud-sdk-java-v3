@@ -14,16 +14,11 @@ import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisRecordsForRocke
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisRecordsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisRecordsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisReportReq;
-import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisReportRequest;
-import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteDiagnosisReportResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteInstanceReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteInstancesRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteInstancesResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteRocketMqMigrationTaskRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchDeleteRocketMqMigrationTaskResponse;
-import com.huaweicloud.sdk.rocketmq.v2.model.BatchResetConsumeOffsetReq;
-import com.huaweicloud.sdk.rocketmq.v2.model.BatchResetRocketMqMessageOffsetsRequest;
-import com.huaweicloud.sdk.rocketmq.v2.model.BatchResetRocketMqMessageOffsetsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchResumeInstanceReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchUpdateConsumerGroupReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.BatchUpdateConsumerGroupRequest;
@@ -58,8 +53,6 @@ import com.huaweicloud.sdk.rocketmq.v2.model.DeleteConsumerGroupRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteConsumerGroupResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteInstanceResponse;
-import com.huaweicloud.sdk.rocketmq.v2.model.DeleteRocketMqMigrationTaskRequest;
-import com.huaweicloud.sdk.rocketmq.v2.model.DeleteRocketMqMigrationTaskResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteScheduledTaskRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteScheduledTaskResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.DeleteTopicRequest;
@@ -69,9 +62,6 @@ import com.huaweicloud.sdk.rocketmq.v2.model.DeleteUserResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.DiagnosisReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.EnableDnsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.EnableDnsResponse;
-import com.huaweicloud.sdk.rocketmq.v2.model.ExportDlqMessageReq;
-import com.huaweicloud.sdk.rocketmq.v2.model.ExportDlqMessageRequest;
-import com.huaweicloud.sdk.rocketmq.v2.model.ExportDlqMessageResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListAvailableZonesResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListBackgroundTasksRequest;
@@ -114,7 +104,6 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ListTopicAccessPolicyRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListTopicAccessPolicyResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListUserRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ListUserResponse;
-import com.huaweicloud.sdk.rocketmq.v2.model.Message;
 import com.huaweicloud.sdk.rocketmq.v2.model.MetadataDeleteReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.ModifyConfigReq;
 import com.huaweicloud.sdk.rocketmq.v2.model.ModifyInstanceSslConfigRequest;
@@ -193,8 +182,6 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketmqTagsRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowRocketmqTagsResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowTopicStatusRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowTopicStatusResponse;
-import com.huaweicloud.sdk.rocketmq.v2.model.ShowUpgradeInstanceVersionRequest;
-import com.huaweicloud.sdk.rocketmq.v2.model.ShowUpgradeInstanceVersionResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowUserRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowUserResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ShowVolumeExpandConfigRequest;
@@ -221,8 +208,6 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ValidateConsumedMessageForRocketMqR
 import com.huaweicloud.sdk.rocketmq.v2.model.ValidateConsumedMessageForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ValidateConsumedMessageRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ValidateConsumedMessageResponse;
-
-import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class RocketMQMeta {
@@ -332,45 +317,6 @@ public class RocketMQMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchDeleteDiagnosisReportRequest, BatchDeleteDiagnosisReportResponse> batchDeleteDiagnosisReport =
-        genForBatchDeleteDiagnosisReport();
-
-    private static HttpRequestDef<BatchDeleteDiagnosisReportRequest, BatchDeleteDiagnosisReportResponse> genForBatchDeleteDiagnosisReport() {
-        // basic
-        HttpRequestDef.Builder<BatchDeleteDiagnosisReportRequest, BatchDeleteDiagnosisReportResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.DELETE,
-                    BatchDeleteDiagnosisReportRequest.class,
-                    BatchDeleteDiagnosisReportResponse.class)
-                .withName("BatchDeleteDiagnosisReport")
-                .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/diagnosis")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("engine",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteDiagnosisReportRequest::getEngine,
-                BatchDeleteDiagnosisReportRequest::setEngine));
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteDiagnosisReportRequest::getInstanceId,
-                BatchDeleteDiagnosisReportRequest::setInstanceId));
-        builder.<BatchDeleteDiagnosisReportReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchDeleteDiagnosisReportReq.class),
-            f -> f.withMarshaller(BatchDeleteDiagnosisReportRequest::getBody,
-                BatchDeleteDiagnosisReportRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse> batchDeleteInstances =
         genForBatchDeleteInstances();
 
@@ -421,39 +367,6 @@ public class RocketMQMeta {
             TypeCasts.uncheckedConversion(MetadataDeleteReq.class),
             f -> f.withMarshaller(BatchDeleteRocketMqMigrationTaskRequest::getBody,
                 BatchDeleteRocketMqMigrationTaskRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<BatchResetRocketMqMessageOffsetsRequest, BatchResetRocketMqMessageOffsetsResponse> batchResetRocketMqMessageOffsets =
-        genForBatchResetRocketMqMessageOffsets();
-
-    private static HttpRequestDef<BatchResetRocketMqMessageOffsetsRequest, BatchResetRocketMqMessageOffsetsResponse> genForBatchResetRocketMqMessageOffsets() {
-        // basic
-        HttpRequestDef.Builder<BatchResetRocketMqMessageOffsetsRequest, BatchResetRocketMqMessageOffsetsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    BatchResetRocketMqMessageOffsetsRequest.class,
-                    BatchResetRocketMqMessageOffsetsResponse.class)
-                .withName("BatchResetRocketMqMessageOffsets")
-                .withUri("/v2/{project_id}/rocketmq/instances/{instance_id}/groups/reset-message-offset")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchResetRocketMqMessageOffsetsRequest::getInstanceId,
-                BatchResetRocketMqMessageOffsetsRequest::setInstanceId));
-        builder.<BatchResetConsumeOffsetReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchResetConsumeOffsetReq.class),
-            f -> f.withMarshaller(BatchResetRocketMqMessageOffsetsRequest::getBody,
-                BatchResetRocketMqMessageOffsetsRequest::setBody));
 
         // response
 
@@ -833,39 +746,6 @@ public class RocketMQMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteRocketMqMigrationTaskRequest, DeleteRocketMqMigrationTaskResponse> deleteRocketMqMigrationTask =
-        genForDeleteRocketMqMigrationTask();
-
-    private static HttpRequestDef<DeleteRocketMqMigrationTaskRequest, DeleteRocketMqMigrationTaskResponse> genForDeleteRocketMqMigrationTask() {
-        // basic
-        HttpRequestDef.Builder<DeleteRocketMqMigrationTaskRequest, DeleteRocketMqMigrationTaskResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.DELETE,
-                    DeleteRocketMqMigrationTaskRequest.class,
-                    DeleteRocketMqMigrationTaskResponse.class)
-                .withName("DeleteRocketMqMigrationTask")
-                .withUri("/v2/{project_id}/instances/{instance_id}/metadata")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteRocketMqMigrationTaskRequest::getInstanceId,
-                DeleteRocketMqMigrationTaskRequest::setInstanceId));
-        builder.<MetadataDeleteReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(MetadataDeleteReq.class),
-            f -> f.withMarshaller(DeleteRocketMqMigrationTaskRequest::getBody,
-                DeleteRocketMqMigrationTaskRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<DeleteScheduledTaskRequest, DeleteScheduledTaskResponse> deleteScheduledTask =
         genForDeleteScheduledTask();
 
@@ -940,40 +820,6 @@ public class RocketMQMeta {
             f -> f.withMarshaller(EnableDnsRequest::getInstanceId, EnableDnsRequest::setInstanceId));
 
         // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ExportDlqMessageRequest, ExportDlqMessageResponse> exportDlqMessage =
-        genForExportDlqMessage();
-
-    private static HttpRequestDef<ExportDlqMessageRequest, ExportDlqMessageResponse> genForExportDlqMessage() {
-        // basic
-        HttpRequestDef.Builder<ExportDlqMessageRequest, ExportDlqMessageResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ExportDlqMessageRequest.class, ExportDlqMessageResponse.class)
-                .withName("ExportDlqMessage")
-                .withUri("/v2/{project_id}/instances/{instance_id}/messages/export")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExportDlqMessageRequest::getInstanceId, ExportDlqMessageRequest::setInstanceId));
-        builder.<ExportDlqMessageReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ExportDlqMessageReq.class),
-            f -> f.withMarshaller(ExportDlqMessageRequest::getBody, ExportDlqMessageRequest::setBody));
-
-        // response
-        builder.<List<Message>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ExportDlqMessageResponse::getBody, ExportDlqMessageResponse::setBody)
-                .withInnerContainerType(Message.class));
 
         return builder.build();
     }
@@ -2883,33 +2729,6 @@ public class RocketMQMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowRocketmqTagsRequest::getOffset, ShowRocketmqTagsRequest::setOffset));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowUpgradeInstanceVersionRequest, ShowUpgradeInstanceVersionResponse> showUpgradeInstanceVersion =
-        genForShowUpgradeInstanceVersion();
-
-    private static HttpRequestDef<ShowUpgradeInstanceVersionRequest, ShowUpgradeInstanceVersionResponse> genForShowUpgradeInstanceVersion() {
-        // basic
-        HttpRequestDef.Builder<ShowUpgradeInstanceVersionRequest, ShowUpgradeInstanceVersionResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ShowUpgradeInstanceVersionRequest.class,
-                    ShowUpgradeInstanceVersionResponse.class)
-                .withName("ShowUpgradeInstanceVersion")
-                .withUri("/v2/{project_id}/rocketmq/instances/{instance_id}/upgrade")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUpgradeInstanceVersionRequest::getInstanceId,
-                ShowUpgradeInstanceVersionRequest::setInstanceId));
 
         // response
 

@@ -22,6 +22,16 @@ public class CreateDpeClassifyRequestBody {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_id")
+
+    private Object projectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workspace_id")
+
+    private Object workspaceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dataclass_id")
 
     private String dataclassId;
@@ -73,6 +83,40 @@ public class CreateDpeClassifyRequestBody {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public CreateDpeClassifyRequestBody withProjectId(Object projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * Get projectId
+     * @return projectId
+     */
+    public Object getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(Object projectId) {
+        this.projectId = projectId;
+    }
+
+    public CreateDpeClassifyRequestBody withWorkspaceId(Object workspaceId) {
+        this.workspaceId = workspaceId;
+        return this;
+    }
+
+    /**
+     * Get workspaceId
+     * @return workspaceId
+     */
+    public Object getWorkspaceId() {
+        return workspaceId;
+    }
+
+    public void setWorkspaceId(Object workspaceId) {
+        this.workspaceId = workspaceId;
     }
 
     public CreateDpeClassifyRequestBody withDataclassId(String dataclassId) {
@@ -162,13 +206,14 @@ public class CreateDpeClassifyRequestBody {
         }
         CreateDpeClassifyRequestBody that = (CreateDpeClassifyRequestBody) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.workspaceId, that.workspaceId)
             && Objects.equals(this.dataclassId, that.dataclassId) && Objects.equals(this.dataSource, that.dataSource)
             && Objects.equals(this.description, that.description) && Objects.equals(this.classifier, that.classifier);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, dataclassId, dataSource, description, classifier);
+        return Objects.hash(id, name, projectId, workspaceId, dataclassId, dataSource, description, classifier);
     }
 
     @Override
@@ -177,6 +222,8 @@ public class CreateDpeClassifyRequestBody {
         sb.append("class CreateDpeClassifyRequestBody {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("    dataclassId: ").append(toIndentedString(dataclassId)).append("\n");
         sb.append("    dataSource: ").append(toIndentedString(dataSource)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

@@ -24,7 +24,7 @@ public class TableDisplaySetting {
     private List<TableColumnDisplaySetting> columns = null;
 
     /**
-     * **参数解释**: 表展示设置 - TABLE 表展示 - RAW 原始数据展示  **约束限制** 不涉及 **取值范围**: - TABLE - RAW  **默认值** 不涉及   
+     * **参数解释**: 表展示设置 - TABLE 表展示 - RAW 原始数据展示  **约束限制** 不涉及 **取值范围**: - TABLE - RAW  **默认值** 不涉及
      */
     public static final class FormatEnum {
 
@@ -137,7 +137,7 @@ public class TableDisplaySetting {
     }
 
     /**
-     * **参数解释**: 表展示设置 - TABLE 表展示 - RAW 原始数据展示  **约束限制** 不涉及 **取值范围**: - TABLE - RAW  **默认值** 不涉及   
+     * **参数解释**: 表展示设置 - TABLE 表展示 - RAW 原始数据展示  **约束限制** 不涉及 **取值范围**: - TABLE - RAW  **默认值** 不涉及
      * @return format
      */
     public FormatEnum getFormat() {

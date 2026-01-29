@@ -8,6 +8,7 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.secmaster.v1.model.AlertRuleTemplateMetric;
 import com.huaweicloud.sdk.secmaster.v1.model.AlterResourceTagsInBatchesRequestBody;
 import com.huaweicloud.sdk.secmaster.v1.model.AopInstanceEventData;
+import com.huaweicloud.sdk.secmaster.v1.model.AopInstanceUpdateDataPojo;
 import com.huaweicloud.sdk.secmaster.v1.model.AopworkflowVersionValidateRes;
 import com.huaweicloud.sdk.secmaster.v1.model.ApprovePlaybookInfo;
 import com.huaweicloud.sdk.secmaster.v1.model.AuditLogInfo;
@@ -67,6 +68,7 @@ import com.huaweicloud.sdk.secmaster.v1.model.CreateAlertRuleResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateAlertRuleSimulationRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateAlertRuleSimulationRequestBody;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateAlertRuleSimulationResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.CreateAnalysisRequestBody;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateAopWorkflowInfo;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateAopWorkflowRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateAopWorkflowResponse;
@@ -174,6 +176,8 @@ import com.huaweicloud.sdk.secmaster.v1.model.CreateRetryPolicyRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateRetryPolicyRequestBody;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateRetryPolicyResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateRuleInfo;
+import com.huaweicloud.sdk.secmaster.v1.model.CreateSearchAnalysisRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.CreateSearchAnalysisResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateSearchConditionRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateSearchConditionRequestBody;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateSearchConditionResponse;
@@ -186,6 +190,8 @@ import com.huaweicloud.sdk.secmaster.v1.model.CreateShipperDelegateAuthRequestBo
 import com.huaweicloud.sdk.secmaster.v1.model.CreateShipperDelegateAuthResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateShipperRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateShipperResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.CreateSubscriptionOrderRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.CreateSubscriptionOrderResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateTemplateReq;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateWorkflowInstanceRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateWorkflowInstanceResponse;
@@ -211,6 +217,8 @@ import com.huaweicloud.sdk.secmaster.v1.model.DeleteAopWorkflowVersionRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteAopWorkflowVersionResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteCatalogueRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteCatalogueResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.DeleteClassifierRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.DeleteClassifierResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteCollectorChannelGroupRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteCollectorChannelGroupResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteCollectorChannelRequest;
@@ -289,6 +297,8 @@ import com.huaweicloud.sdk.secmaster.v1.model.DeleteShipperRequestBody;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteShipperResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteSingleMapperRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteSingleMapperResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.DeleteSubscriptionOrderRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.DeleteSubscriptionOrderResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteTagsRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteTagsResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteWorkspaceRequest;
@@ -314,6 +324,9 @@ import com.huaweicloud.sdk.secmaster.v1.model.EnableConsumptionRequestBody;
 import com.huaweicloud.sdk.secmaster.v1.model.EnableDataclassTypeRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.EnableDataclassTypeRequestBody;
 import com.huaweicloud.sdk.secmaster.v1.model.EnableDataclassTypeResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.ExecuteLayoutRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.ExecuteLayoutRequestBody;
+import com.huaweicloud.sdk.secmaster.v1.model.ExecuteLayoutResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.ExecuteReportActionInfo;
 import com.huaweicloud.sdk.secmaster.v1.model.ExecuteReportActionRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.ExecuteReportActionResponse;
@@ -521,8 +534,14 @@ import com.huaweicloud.sdk.secmaster.v1.model.ListShipperAuthorizationsRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.ListShipperAuthorizationsResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.ListShippersRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.ListShippersResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.ListSubscriptionGlobalOrderRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.ListSubscriptionGlobalOrderResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.ListSubscriptionOrderRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.ListSubscriptionOrderResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.ListSubscriptionProductRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.ListSubscriptionProductResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.ListTasksRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.ListTasksResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.ListVpcEndpointServiceRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.ListVpcEndpointServiceResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.ListVulnerabilitiesRequest;
@@ -537,6 +556,7 @@ import com.huaweicloud.sdk.secmaster.v1.model.ModifyAopWorkflowVersionInfo;
 import com.huaweicloud.sdk.secmaster.v1.model.ModifyPlaybookInfo;
 import com.huaweicloud.sdk.secmaster.v1.model.ModifyPlaybookVersionInfo;
 import com.huaweicloud.sdk.secmaster.v1.model.ModifyRuleInfo;
+import com.huaweicloud.sdk.secmaster.v1.model.ModifyTaskInfo;
 import com.huaweicloud.sdk.secmaster.v1.model.ModuleCreateRequestPojo;
 import com.huaweicloud.sdk.secmaster.v1.model.ModuleTemplateFieldDto;
 import com.huaweicloud.sdk.secmaster.v1.model.ModuleUpdateRequestPojo;
@@ -544,6 +564,7 @@ import com.huaweicloud.sdk.secmaster.v1.model.NodeExpansionInfo;
 import com.huaweicloud.sdk.secmaster.v1.model.OperationDto;
 import com.huaweicloud.sdk.secmaster.v1.model.OperationPlaybookInfo;
 import com.huaweicloud.sdk.secmaster.v1.model.OrderAlert;
+import com.huaweicloud.sdk.secmaster.v1.model.OrderInfoReq;
 import com.huaweicloud.sdk.secmaster.v1.model.PauseShipperRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.PauseShipperResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.QueryDpeMapperRequestBody;
@@ -672,11 +693,14 @@ import com.huaweicloud.sdk.secmaster.v1.model.ShowShipperParamRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.ShowShipperParamResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.ShowShipperRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.ShowShipperResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.ShowTaskRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.ShowTaskResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.ShowTemplateFields;
 import com.huaweicloud.sdk.secmaster.v1.model.ShowVulnerabilityRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.ShowVulnerabilityResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.ShowWorkspaceRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.ShowWorkspaceResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.UnsubscribeParam;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateAlertRuleRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateAlertRuleRequestBody;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateAlertRuleResponse;
@@ -716,6 +740,8 @@ import com.huaweicloud.sdk.secmaster.v1.model.UpdateLayoutRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateLayoutResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateLayoutWizardsRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateLayoutWizardsResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.UpdateMapperRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.UpdateMapperResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateMappingInfoStatusRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateMappingInfoStatusResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateMetricsRequest;
@@ -724,6 +750,7 @@ import com.huaweicloud.sdk.secmaster.v1.model.UpdateModuleRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateModuleResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateNodeRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateNodeResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.UpdateOrderInfoReq;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdatePipeIndexRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdatePipeIndexResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdatePipeRequest;
@@ -746,12 +773,18 @@ import com.huaweicloud.sdk.secmaster.v1.model.UpdateReportResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateSearchConditionRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateSearchConditionRequestBody;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateSearchConditionResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.UpdateSubscriptionOrderRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.UpdateSubscriptionOrderResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateTagValueRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateTagValueRequestBody;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateTagValueResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.UpdateTaskRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.UpdateTaskResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateVpcEndpointServiceRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateVpcEndpointServiceRequestBody;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateVpcEndpointServiceResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.UpdateWorkflowInstanceRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.UpdateWorkflowInstanceResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateWorkspaceRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateWorkspaceRequestBody;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateWorkspaceResponse;
@@ -1238,7 +1271,7 @@ public class SecMasterMeta {
             HttpRequestDef.builder(HttpMethod.POST, CopyMappingRequest.class, CopyMappingResponse.class)
                 .withName("CopyMapping")
                 .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/mappings/{mapping_id}/clone")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("mapping_id",
@@ -1627,7 +1660,7 @@ public class SecMasterMeta {
             HttpRequestDef.builder(HttpMethod.POST, CreateClassifierRequest.class, CreateClassifierResponse.class)
                 .withName("CreateClassifier")
                 .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/mappings/classifiers")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("workspace_id",
@@ -2300,7 +2333,7 @@ public class SecMasterMeta {
             HttpRequestDef.builder(HttpMethod.POST, CreateMapperRequest.class, CreateMapperResponse.class)
                 .withName("CreateMapper")
                 .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/mappings/mappers")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("workspace_id",
@@ -2701,7 +2734,7 @@ public class SecMasterMeta {
             .builder(HttpMethod.POST, CreatePreProcessRulesRequest.class, CreatePreProcessRulesResponse.class)
             .withName("CreatePreProcessRules")
             .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/mappings/preprocess-rules")
-            .withContentType("application/json");
+            .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("workspace_id",
@@ -2831,6 +2864,35 @@ public class SecMasterMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateSearchAnalysisRequest, CreateSearchAnalysisResponse> createSearchAnalysis =
+        genForCreateSearchAnalysis();
+
+    private static HttpRequestDef<CreateSearchAnalysisRequest, CreateSearchAnalysisResponse> genForCreateSearchAnalysis() {
+        // basic
+        HttpRequestDef.Builder<CreateSearchAnalysisRequest, CreateSearchAnalysisResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateSearchAnalysisRequest.class, CreateSearchAnalysisResponse.class)
+            .withName("CreateSearchAnalysis")
+            .withUri("/v1/{project_id}/workspaces/{workspace_id}/siem/search/analysis")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSearchAnalysisRequest::getWorkspaceId,
+                CreateSearchAnalysisRequest::setWorkspaceId));
+        builder.<CreateAnalysisRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAnalysisRequestBody.class),
+            f -> f.withMarshaller(CreateSearchAnalysisRequest::getBody, CreateSearchAnalysisRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateSearchConditionRequest, CreateSearchConditionResponse> createSearchCondition =
         genForCreateSearchCondition();
 
@@ -2949,6 +3011,35 @@ public class SecMasterMeta {
             TypeCasts.uncheckedConversion(CreateShipperDelegateAuthRequestBody.class),
             f -> f.withMarshaller(CreateShipperDelegateAuthRequest::getBody,
                 CreateShipperDelegateAuthRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSubscriptionOrderRequest, CreateSubscriptionOrderResponse> createSubscriptionOrder =
+        genForCreateSubscriptionOrder();
+
+    private static HttpRequestDef<CreateSubscriptionOrderRequest, CreateSubscriptionOrderResponse> genForCreateSubscriptionOrder() {
+        // basic
+        HttpRequestDef.Builder<CreateSubscriptionOrderRequest, CreateSubscriptionOrderResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateSubscriptionOrderRequest.class, CreateSubscriptionOrderResponse.class)
+            .withName("CreateSubscriptionOrder")
+            .withUri("/v1/{project_id}/subscriptions/orders")
+            .withContentType("application/json;charset=utf-8");
+
+        // requests
+        builder.<CreateSubscriptionOrderRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSubscriptionOrderRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CreateSubscriptionOrderRequest::getXLanguage,
+                CreateSubscriptionOrderRequest::setXLanguage));
+        builder.<OrderInfoReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OrderInfoReq.class),
+            f -> f.withMarshaller(CreateSubscriptionOrderRequest::getBody, CreateSubscriptionOrderRequest::setBody));
 
         // response
 
@@ -3197,6 +3288,34 @@ public class SecMasterMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(DeleteCatalogueResponse::getXRequestId, DeleteCatalogueResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteClassifierRequest, DeleteClassifierResponse> deleteClassifier =
+        genForDeleteClassifier();
+
+    private static HttpRequestDef<DeleteClassifierRequest, DeleteClassifierResponse> genForDeleteClassifier() {
+        // basic
+        HttpRequestDef.Builder<DeleteClassifierRequest, DeleteClassifierResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteClassifierRequest.class, DeleteClassifierResponse.class)
+                .withName("DeleteClassifier")
+                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/mappings/classifiers/{classifier_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteClassifierRequest::getWorkspaceId, DeleteClassifierRequest::setWorkspaceId));
+        builder.<String>withRequestField("classifier_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteClassifierRequest::getClassifierId, DeleteClassifierRequest::setClassifierId));
+
+        // response
+
         return builder.build();
     }
 
@@ -4337,6 +4456,35 @@ public class SecMasterMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteSubscriptionOrderRequest, DeleteSubscriptionOrderResponse> deleteSubscriptionOrder =
+        genForDeleteSubscriptionOrder();
+
+    private static HttpRequestDef<DeleteSubscriptionOrderRequest, DeleteSubscriptionOrderResponse> genForDeleteSubscriptionOrder() {
+        // basic
+        HttpRequestDef.Builder<DeleteSubscriptionOrderRequest, DeleteSubscriptionOrderResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteSubscriptionOrderRequest.class, DeleteSubscriptionOrderResponse.class)
+            .withName("DeleteSubscriptionOrder")
+            .withUri("/v1/{project_id}/subscriptions/orders")
+            .withContentType("application/json;charset=utf-8");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSubscriptionOrderRequest::getXLanguage,
+                DeleteSubscriptionOrderRequest::setXLanguage));
+        builder.<UnsubscribeParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UnsubscribeParam.class),
+            f -> f.withMarshaller(DeleteSubscriptionOrderRequest::getBody, DeleteSubscriptionOrderRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteTagsRequest, DeleteTagsResponse> deleteTags = genForDeleteTags();
 
     private static HttpRequestDef<DeleteTagsRequest, DeleteTagsResponse> genForDeleteTags() {
@@ -4666,6 +4814,39 @@ public class SecMasterMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteLayoutRequest, ExecuteLayoutResponse> executeLayout =
+        genForExecuteLayout();
+
+    private static HttpRequestDef<ExecuteLayoutRequest, ExecuteLayoutResponse> genForExecuteLayout() {
+        // basic
+        HttpRequestDef.Builder<ExecuteLayoutRequest, ExecuteLayoutResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExecuteLayoutRequest.class, ExecuteLayoutResponse.class)
+                .withName("ExecuteLayout")
+                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/layouts/action")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteLayoutRequest::getWorkspaceId, ExecuteLayoutRequest::setWorkspaceId));
+        builder.<ExecuteLayoutRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExecuteLayoutRequestBody.class),
+            f -> f.withMarshaller(ExecuteLayoutRequest::getBody, ExecuteLayoutRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ExecuteLayoutResponse::getXRequestId, ExecuteLayoutResponse::setXRequestId));
         return builder.build();
     }
 
@@ -8512,6 +8693,72 @@ public class SecMasterMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSubscriptionGlobalOrderRequest, ListSubscriptionGlobalOrderResponse> listSubscriptionGlobalOrder =
+        genForListSubscriptionGlobalOrder();
+
+    private static HttpRequestDef<ListSubscriptionGlobalOrderRequest, ListSubscriptionGlobalOrderResponse> genForListSubscriptionGlobalOrder() {
+        // basic
+        HttpRequestDef.Builder<ListSubscriptionGlobalOrderRequest, ListSubscriptionGlobalOrderResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSubscriptionGlobalOrderRequest.class,
+                    ListSubscriptionGlobalOrderResponse.class)
+                .withName("ListSubscriptionGlobalOrder")
+                .withUri("/v1/subscriptions/orders")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubscriptionGlobalOrderRequest::getXLanguage,
+                ListSubscriptionGlobalOrderRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSubscriptionOrderRequest, ListSubscriptionOrderResponse> listSubscriptionOrder =
+        genForListSubscriptionOrder();
+
+    private static HttpRequestDef<ListSubscriptionOrderRequest, ListSubscriptionOrderResponse> genForListSubscriptionOrder() {
+        // basic
+        HttpRequestDef.Builder<ListSubscriptionOrderRequest, ListSubscriptionOrderResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSubscriptionOrderRequest.class, ListSubscriptionOrderResponse.class)
+            .withName("ListSubscriptionOrder")
+            .withUri("/v1/{project_id}/subscriptions/orders")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSubscriptionOrderRequest::getOffset, ListSubscriptionOrderRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSubscriptionOrderRequest::getLimit, ListSubscriptionOrderRequest::setLimit));
+        builder.<ListSubscriptionOrderRequest.PageEnum>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSubscriptionOrderRequest.PageEnum.class),
+            f -> f.withMarshaller(ListSubscriptionOrderRequest::getPage, ListSubscriptionOrderRequest::setPage));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubscriptionOrderRequest::getXLanguage,
+                ListSubscriptionOrderRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSubscriptionProductRequest, ListSubscriptionProductResponse> listSubscriptionProduct =
         genForListSubscriptionProduct();
 
@@ -8530,6 +8777,83 @@ public class SecMasterMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSubscriptionProductRequest::getXLanguage,
                 ListSubscriptionProductRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTasksRequest, ListTasksResponse> listTasks = genForListTasks();
+
+    private static HttpRequestDef<ListTasksRequest, ListTasksResponse> genForListTasks() {
+        // basic
+        HttpRequestDef.Builder<ListTasksRequest, ListTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTasksRequest.class, ListTasksResponse.class)
+                .withName("ListTasks")
+                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getWorkspaceId, ListTasksRequest::setWorkspaceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTasksRequest::getOffset, ListTasksRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTasksRequest::getLimit, ListTasksRequest::setLimit));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getSortKey, ListTasksRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getSortDir, ListTasksRequest::setSortDir));
+        builder.<String>withRequestField("note",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getNote, ListTasksRequest::setNote));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getName, ListTasksRequest::setName));
+        builder.<ListTasksRequest.BusinessTypeEnum>withRequestField("business_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTasksRequest.BusinessTypeEnum.class),
+            f -> f.withMarshaller(ListTasksRequest::getBusinessType, ListTasksRequest::setBusinessType));
+        builder.<String>withRequestField("creator_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getCreatorName, ListTasksRequest::setCreatorName));
+        builder.<ListTasksRequest.QueryTypeEnum>withRequestField("query_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTasksRequest.QueryTypeEnum.class),
+            f -> f.withMarshaller(ListTasksRequest::getQueryType, ListTasksRequest::setQueryType));
+        builder.<String>withRequestField("from_date",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getFromDate, ListTasksRequest::setFromDate));
+        builder.<String>withRequestField("to_date",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getToDate, ListTasksRequest::setToDate));
 
         // response
 
@@ -9915,7 +10239,7 @@ public class SecMasterMeta {
             HttpRequestDef.builder(HttpMethod.POST, ShowMapperListRequest.class, ShowMapperListResponse.class)
                 .withName("ShowMapperList")
                 .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/mappings/mappers/search")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("workspace_id",
@@ -9967,7 +10291,7 @@ public class SecMasterMeta {
             HttpRequestDef.builder(HttpMethod.POST, ShowMappingInfoListRequest.class, ShowMappingInfoListResponse.class)
                 .withName("ShowMappingInfoList")
                 .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/mappings/search")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("workspace_id",
@@ -10523,7 +10847,7 @@ public class SecMasterMeta {
             .builder(HttpMethod.POST, ShowPreProcessRulesListRequest.class, ShowPreProcessRulesListResponse.class)
             .withName("ShowPreProcessRulesList")
             .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/mappings/preprocess-rules/search")
-            .withContentType("application/json");
+            .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("workspace_id",
@@ -10728,6 +11052,33 @@ public class SecMasterMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowShipperParamRequest::getParam, ShowShipperParamRequest::setParam));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTaskRequest, ShowTaskResponse> showTask = genForShowTask();
+
+    private static HttpRequestDef<ShowTaskRequest, ShowTaskResponse> genForShowTask() {
+        // basic
+        HttpRequestDef.Builder<ShowTaskRequest, ShowTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTaskRequest.class, ShowTaskResponse.class)
+                .withName("ShowTask")
+                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskRequest::getWorkspaceId, ShowTaskRequest::setWorkspaceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskRequest::getTaskId, ShowTaskRequest::setTaskId));
 
         // response
 
@@ -10939,7 +11290,7 @@ public class SecMasterMeta {
             HttpRequestDef.builder(HttpMethod.PUT, UpdateClassifierRequest.class, UpdateClassifierResponse.class)
                 .withName("UpdateClassifier")
                 .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/mappings/classifiers/{classifier_id}")
-                .withContentType("application/json");
+                .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("workspace_id",
@@ -11398,6 +11749,38 @@ public class SecMasterMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateMapperRequest, UpdateMapperResponse> updateMapper = genForUpdateMapper();
+
+    private static HttpRequestDef<UpdateMapperRequest, UpdateMapperResponse> genForUpdateMapper() {
+        // basic
+        HttpRequestDef.Builder<UpdateMapperRequest, UpdateMapperResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateMapperRequest.class, UpdateMapperResponse.class)
+                .withName("UpdateMapper")
+                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/mappings/mappers/{mapper_id}")
+                .withContentType("application/json;charset=utf-8");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMapperRequest::getWorkspaceId, UpdateMapperRequest::setWorkspaceId));
+        builder.<String>withRequestField("mapper_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMapperRequest::getMapperId, UpdateMapperRequest::setMapperId));
+        builder.<CreateDpeMappingRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateDpeMappingRequestBody.class),
+            f -> f.withMarshaller(UpdateMapperRequest::getBody, UpdateMapperRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateMappingInfoStatusRequest, UpdateMappingInfoStatusResponse> updateMappingInfoStatus =
         genForUpdateMappingInfoStatus();
 
@@ -11407,7 +11790,7 @@ public class SecMasterMeta {
             .builder(HttpMethod.PUT, UpdateMappingInfoStatusRequest.class, UpdateMappingInfoStatusResponse.class)
             .withName("UpdateMappingInfoStatus")
             .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/mappings/{mapping_id}/status")
-            .withContentType("application/json");
+            .withContentType("application/json;charset=utf-8");
 
         // requests
         builder.<String>withRequestField("workspace_id",
@@ -11923,6 +12306,35 @@ public class SecMasterMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateSubscriptionOrderRequest, UpdateSubscriptionOrderResponse> updateSubscriptionOrder =
+        genForUpdateSubscriptionOrder();
+
+    private static HttpRequestDef<UpdateSubscriptionOrderRequest, UpdateSubscriptionOrderResponse> genForUpdateSubscriptionOrder() {
+        // basic
+        HttpRequestDef.Builder<UpdateSubscriptionOrderRequest, UpdateSubscriptionOrderResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateSubscriptionOrderRequest.class, UpdateSubscriptionOrderResponse.class)
+            .withName("UpdateSubscriptionOrder")
+            .withUri("/v1/{project_id}/subscriptions/orders")
+            .withContentType("application/json;charset=utf-8");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSubscriptionOrderRequest::getXLanguage,
+                UpdateSubscriptionOrderRequest::setXLanguage));
+        builder.<UpdateOrderInfoReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateOrderInfoReq.class),
+            f -> f.withMarshaller(UpdateSubscriptionOrderRequest::getBody, UpdateSubscriptionOrderRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateTagValueRequest, UpdateTagValueResponse> updateTagValue =
         genForUpdateTagValue();
 
@@ -11955,6 +12367,38 @@ public class SecMasterMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateTagValueRequestBody.class),
             f -> f.withMarshaller(UpdateTagValueRequest::getBody, UpdateTagValueRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTaskRequest, UpdateTaskResponse> updateTask = genForUpdateTask();
+
+    private static HttpRequestDef<UpdateTaskRequest, UpdateTaskResponse> genForUpdateTask() {
+        // basic
+        HttpRequestDef.Builder<UpdateTaskRequest, UpdateTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateTaskRequest.class, UpdateTaskResponse.class)
+                .withName("UpdateTask")
+                .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/tasks/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTaskRequest::getWorkspaceId, UpdateTaskRequest::setWorkspaceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTaskRequest::getTaskId, UpdateTaskRequest::setTaskId));
+        builder.<ModifyTaskInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ModifyTaskInfo.class),
+            f -> f.withMarshaller(UpdateTaskRequest::getBody, UpdateTaskRequest::setBody));
 
         // response
 
@@ -11997,6 +12441,41 @@ public class SecMasterMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateVpcEndpointServiceRequestBody.class),
             f -> f.withMarshaller(UpdateVpcEndpointServiceRequest::getBody, UpdateVpcEndpointServiceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateWorkflowInstanceRequest, UpdateWorkflowInstanceResponse> updateWorkflowInstance =
+        genForUpdateWorkflowInstance();
+
+    private static HttpRequestDef<UpdateWorkflowInstanceRequest, UpdateWorkflowInstanceResponse> genForUpdateWorkflowInstance() {
+        // basic
+        HttpRequestDef.Builder<UpdateWorkflowInstanceRequest, UpdateWorkflowInstanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateWorkflowInstanceRequest.class, UpdateWorkflowInstanceResponse.class)
+            .withName("UpdateWorkflowInstance")
+            .withUri("/v1/{project_id}/workspaces/{workspace_id}/soc/workflows/instances/{instance_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateWorkflowInstanceRequest::getWorkspaceId,
+                UpdateWorkflowInstanceRequest::setWorkspaceId));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateWorkflowInstanceRequest::getInstanceId,
+                UpdateWorkflowInstanceRequest::setInstanceId));
+        builder.<AopInstanceUpdateDataPojo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AopInstanceUpdateDataPojo.class),
+            f -> f.withMarshaller(UpdateWorkflowInstanceRequest::getBody, UpdateWorkflowInstanceRequest::setBody));
 
         // response
 

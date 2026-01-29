@@ -101,6 +101,16 @@ public class IndicatorDataObjectDetail {
 
     private Integer confidence;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "labels")
+
+    private String labels;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "defanged")
+
+    private Boolean defanged;
+
     public IndicatorDataObjectDetail withIndicatorType(IndicatorDataObjectDetailIndicatorType indicatorType) {
         this.indicatorType = indicatorType;
         return this;
@@ -439,6 +449,40 @@ public class IndicatorDataObjectDetail {
         this.confidence = confidence;
     }
 
+    public IndicatorDataObjectDetail withLabels(String labels) {
+        this.labels = labels;
+        return this;
+    }
+
+    /**
+     * 标签
+     * @return labels
+     */
+    public String getLabels() {
+        return labels;
+    }
+
+    public void setLabels(String labels) {
+        this.labels = labels;
+    }
+
+    public IndicatorDataObjectDetail withDefanged(Boolean defanged) {
+        this.defanged = defanged;
+        return this;
+    }
+
+    /**
+     * 是否失效
+     * @return defanged
+     */
+    public Boolean getDefanged() {
+        return defanged;
+    }
+
+    public void setDefanged(Boolean defanged) {
+        this.defanged = defanged;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -458,7 +502,8 @@ public class IndicatorDataObjectDetail {
             && Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.revoked, that.revoked) && Objects.equals(this.status, that.status)
             && Objects.equals(this.verdict, that.verdict) && Objects.equals(this.workspaceId, that.workspaceId)
-            && Objects.equals(this.confidence, that.confidence);
+            && Objects.equals(this.confidence, that.confidence) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.defanged, that.defanged);
     }
 
     @Override
@@ -480,7 +525,9 @@ public class IndicatorDataObjectDetail {
             status,
             verdict,
             workspaceId,
-            confidence);
+            confidence,
+            labels,
+            defanged);
     }
 
     @Override
@@ -505,6 +552,8 @@ public class IndicatorDataObjectDetail {
         sb.append("    verdict: ").append(toIndentedString(verdict)).append("\n");
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
+        sb.append("    defanged: ").append(toIndentedString(defanged)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -21,7 +21,7 @@ public class ListRecipientsStatusRequestBody {
     }
 
     /**
-     * 收件人邮箱,可以为多个，多个时由英文分号(\";\")分割
+     * 收件人邮箱,可以为多个，多个时由英文分号(\";\")分隔
      * @return emailAddress
      */
     public String getEmailAddress() {

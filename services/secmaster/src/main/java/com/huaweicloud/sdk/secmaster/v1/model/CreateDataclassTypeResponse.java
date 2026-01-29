@@ -131,6 +131,11 @@ public class CreateDataclassTypeResponse extends SdkResponse {
 
     private String dataclassBusinessCode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_count")
+
+    private Integer subCount;
+
     public CreateDataclassTypeResponse withId(String id) {
         this.id = id;
         return this;
@@ -543,6 +548,25 @@ public class CreateDataclassTypeResponse extends SdkResponse {
         this.dataclassBusinessCode = dataclassBusinessCode;
     }
 
+    public CreateDataclassTypeResponse withSubCount(Integer subCount) {
+        this.subCount = subCount;
+        return this;
+    }
+
+    /**
+     * 类型分类下子类型数目
+     * minimum: 0
+     * maximum: 999999999
+     * @return subCount
+     */
+    public Integer getSubCount() {
+        return subCount;
+    }
+
+    public void setSubCount(Integer subCount) {
+        this.subCount = subCount;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -565,7 +589,8 @@ public class CreateDataclassTypeResponse extends SdkResponse {
             && Objects.equals(this.creatorName, that.creatorName) && Objects.equals(this.modifierId, that.modifierId)
             && Objects.equals(this.modifierName, that.modifierName) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.dataclassBusinessCode, that.dataclassBusinessCode);
+            && Objects.equals(this.dataclassBusinessCode, that.dataclassBusinessCode)
+            && Objects.equals(this.subCount, that.subCount);
     }
 
     @Override
@@ -593,7 +618,8 @@ public class CreateDataclassTypeResponse extends SdkResponse {
             modifierName,
             createTime,
             updateTime,
-            dataclassBusinessCode);
+            dataclassBusinessCode,
+            subCount);
     }
 
     @Override
@@ -624,6 +650,7 @@ public class CreateDataclassTypeResponse extends SdkResponse {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    dataclassBusinessCode: ").append(toIndentedString(dataclassBusinessCode)).append("\n");
+        sb.append("    subCount: ").append(toIndentedString(subCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

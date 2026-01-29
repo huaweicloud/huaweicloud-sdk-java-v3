@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -45,6 +48,11 @@ public class ListComponentActionsResponse extends SdkResponse {
     @JsonProperty(value = "request_id")
 
     private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data")
+
+    private List<ComponentActionInfo> data = null;
 
     public ListComponentActionsResponse withCode(String code) {
         this.code = code;
@@ -171,6 +179,39 @@ public class ListComponentActionsResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    public ListComponentActionsResponse withData(List<ComponentActionInfo> data) {
+        this.data = data;
+        return this;
+    }
+
+    public ListComponentActionsResponse addDataItem(ComponentActionInfo dataItem) {
+        if (this.data == null) {
+            this.data = new ArrayList<>();
+        }
+        this.data.add(dataItem);
+        return this;
+    }
+
+    public ListComponentActionsResponse withData(Consumer<List<ComponentActionInfo>> dataSetter) {
+        if (this.data == null) {
+            this.data = new ArrayList<>();
+        }
+        dataSetter.accept(this.data);
+        return this;
+    }
+
+    /**
+     * 列表
+     * @return data
+     */
+    public List<ComponentActionInfo> getData() {
+        return data;
+    }
+
+    public void setData(List<ComponentActionInfo> data) {
+        this.data = data;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -183,12 +224,12 @@ public class ListComponentActionsResponse extends SdkResponse {
         return Objects.equals(this.code, that.code) && Objects.equals(this.total, that.total)
             && Objects.equals(this.size, that.size) && Objects.equals(this.page, that.page)
             && Objects.equals(this.message, that.message) && Objects.equals(this.success, that.success)
-            && Objects.equals(this.requestId, that.requestId);
+            && Objects.equals(this.requestId, that.requestId) && Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, total, size, page, message, success, requestId);
+        return Objects.hash(code, total, size, page, message, success, requestId, data);
     }
 
     @Override
@@ -202,6 +243,7 @@ public class ListComponentActionsResponse extends SdkResponse {
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    success: ").append(toIndentedString(success)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }

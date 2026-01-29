@@ -27,7 +27,7 @@ public class ExportConsistencyResultsRequest {
     }
 
     /**
-     * 中英文选择
+     * 中英文选择。当前仅支持英文。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

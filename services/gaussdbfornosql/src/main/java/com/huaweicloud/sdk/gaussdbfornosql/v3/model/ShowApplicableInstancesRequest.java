@@ -25,6 +25,16 @@ public class ShowApplicableInstancesRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_name")
+
+    private String instanceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
     public ShowApplicableInstancesRequest withConfigId(String configId) {
         this.configId = configId;
         return this;
@@ -76,6 +86,40 @@ public class ShowApplicableInstancesRequest {
         this.limit = limit;
     }
 
+    public ShowApplicableInstancesRequest withInstanceName(String instanceName) {
+        this.instanceName = instanceName;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 实例名称，支持模糊搜索。 **约束限制：** 不涉及。 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return instanceName
+     */
+    public String getInstanceName() {
+        return instanceName;
+    }
+
+    public void setInstanceName(String instanceName) {
+        this.instanceName = instanceName;
+    }
+
+    public ShowApplicableInstancesRequest withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 实例ID，支持模糊搜索。 **约束限制：** 不涉及。 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +130,13 @@ public class ShowApplicableInstancesRequest {
         }
         ShowApplicableInstancesRequest that = (ShowApplicableInstancesRequest) obj;
         return Objects.equals(this.configId, that.configId) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(configId, offset, limit);
+        return Objects.hash(configId, offset, limit, instanceName, instanceId);
     }
 
     @Override
@@ -101,6 +146,8 @@ public class ShowApplicableInstancesRequest {
         sb.append("    configId: ").append(toIndentedString(configId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

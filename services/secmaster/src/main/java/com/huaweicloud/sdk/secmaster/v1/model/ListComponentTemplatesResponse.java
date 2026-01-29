@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -45,6 +48,11 @@ public class ListComponentTemplatesResponse extends SdkResponse {
     @JsonProperty(value = "request_id")
 
     private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data")
+
+    private List<TemplateInfo> data = null;
 
     public ListComponentTemplatesResponse withCode(String code) {
         this.code = code;
@@ -171,6 +179,39 @@ public class ListComponentTemplatesResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    public ListComponentTemplatesResponse withData(List<TemplateInfo> data) {
+        this.data = data;
+        return this;
+    }
+
+    public ListComponentTemplatesResponse addDataItem(TemplateInfo dataItem) {
+        if (this.data == null) {
+            this.data = new ArrayList<>();
+        }
+        this.data.add(dataItem);
+        return this;
+    }
+
+    public ListComponentTemplatesResponse withData(Consumer<List<TemplateInfo>> dataSetter) {
+        if (this.data == null) {
+            this.data = new ArrayList<>();
+        }
+        dataSetter.accept(this.data);
+        return this;
+    }
+
+    /**
+     * 插件配置模板列表
+     * @return data
+     */
+    public List<TemplateInfo> getData() {
+        return data;
+    }
+
+    public void setData(List<TemplateInfo> data) {
+        this.data = data;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -183,12 +224,12 @@ public class ListComponentTemplatesResponse extends SdkResponse {
         return Objects.equals(this.code, that.code) && Objects.equals(this.total, that.total)
             && Objects.equals(this.size, that.size) && Objects.equals(this.page, that.page)
             && Objects.equals(this.message, that.message) && Objects.equals(this.success, that.success)
-            && Objects.equals(this.requestId, that.requestId);
+            && Objects.equals(this.requestId, that.requestId) && Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, total, size, page, message, success, requestId);
+        return Objects.hash(code, total, size, page, message, success, requestId, data);
     }
 
     @Override
@@ -202,6 +243,7 @@ public class ListComponentTemplatesResponse extends SdkResponse {
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    success: ").append(toIndentedString(success)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -15,79 +12,69 @@ import java.util.function.Consumer;
 public class ShowMappingFunctionResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "compare_list")
+    @JsonProperty(value = "code")
 
-    private List<DpeCompareFunctionDetail> compareList = null;
+    private String code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "operation_list")
+    @JsonProperty(value = "message")
 
-    private List<DpeOperateFunctionDetail> operationList = null;
+    private String message;
 
-    public ShowMappingFunctionResponse withCompareList(List<DpeCompareFunctionDetail> compareList) {
-        this.compareList = compareList;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data")
 
-    public ShowMappingFunctionResponse addCompareListItem(DpeCompareFunctionDetail compareListItem) {
-        if (this.compareList == null) {
-            this.compareList = new ArrayList<>();
-        }
-        this.compareList.add(compareListItem);
-        return this;
-    }
+    private Object data;
 
-    public ShowMappingFunctionResponse withCompareList(Consumer<List<DpeCompareFunctionDetail>> compareListSetter) {
-        if (this.compareList == null) {
-            this.compareList = new ArrayList<>();
-        }
-        compareListSetter.accept(this.compareList);
+    public ShowMappingFunctionResponse withCode(String code) {
+        this.code = code;
         return this;
     }
 
     /**
-     * 比较函数信息
-     * @return compareList
+     * **参数解释**: 错误码 **取值范围**: 不涉及
+     * @return code
      */
-    public List<DpeCompareFunctionDetail> getCompareList() {
-        return compareList;
+    public String getCode() {
+        return code;
     }
 
-    public void setCompareList(List<DpeCompareFunctionDetail> compareList) {
-        this.compareList = compareList;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public ShowMappingFunctionResponse withOperationList(List<DpeOperateFunctionDetail> operationList) {
-        this.operationList = operationList;
-        return this;
-    }
-
-    public ShowMappingFunctionResponse addOperationListItem(DpeOperateFunctionDetail operationListItem) {
-        if (this.operationList == null) {
-            this.operationList = new ArrayList<>();
-        }
-        this.operationList.add(operationListItem);
-        return this;
-    }
-
-    public ShowMappingFunctionResponse withOperationList(Consumer<List<DpeOperateFunctionDetail>> operationListSetter) {
-        if (this.operationList == null) {
-            this.operationList = new ArrayList<>();
-        }
-        operationListSetter.accept(this.operationList);
+    public ShowMappingFunctionResponse withMessage(String message) {
+        this.message = message;
         return this;
     }
 
     /**
-     * 操作函数信息
-     * @return operationList
+     * **参数解释**: 错误描述 **取值范围**: 不涉及
+     * @return message
      */
-    public List<DpeOperateFunctionDetail> getOperationList() {
-        return operationList;
+    public String getMessage() {
+        return message;
     }
 
-    public void setOperationList(List<DpeOperateFunctionDetail> operationList) {
-        this.operationList = operationList;
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public ShowMappingFunctionResponse withData(Object data) {
+        this.data = data;
+        return this;
+    }
+
+    /**
+     * 分类映射函数数据
+     * @return data
+     */
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
     }
 
     @Override
@@ -99,21 +86,22 @@ public class ShowMappingFunctionResponse extends SdkResponse {
             return false;
         }
         ShowMappingFunctionResponse that = (ShowMappingFunctionResponse) obj;
-        return Objects.equals(this.compareList, that.compareList)
-            && Objects.equals(this.operationList, that.operationList);
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(compareList, operationList);
+        return Objects.hash(code, message, data);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowMappingFunctionResponse {\n");
-        sb.append("    compareList: ").append(toIndentedString(compareList)).append("\n");
-        sb.append("    operationList: ").append(toIndentedString(operationList)).append("\n");
+        sb.append("    code: ").append(toIndentedString(code)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }

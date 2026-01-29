@@ -386,7 +386,7 @@ public class Alert {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sla")
 
-    private Integer sla;
+    private String sla;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
@@ -1127,22 +1127,20 @@ public class Alert {
         this.handleStatus = handleStatus;
     }
 
-    public Alert withSla(Integer sla) {
+    public Alert withSla(String sla) {
         this.sla = sla;
         return this;
     }
 
     /**
-     * 约束闭环时间：设置风险接受持续时间。单位：小时
-     * minimum: 0
-     * maximum: 999
+     * 约束闭环时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区
      * @return sla
      */
-    public Integer getSla() {
+    public String getSla() {
         return sla;
     }
 
-    public void setSla(Integer sla) {
+    public void setSla(String sla) {
         this.sla = sla;
     }
 

@@ -22,7 +22,7 @@ public class ListDiagnosisReportsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_num")
 
-    private Object totalNum;
+    private Long totalNum;
 
     public ListDiagnosisReportsResponse withDiagnosisReportList(List<DiagnosisReportResp> diagnosisReportList) {
         this.diagnosisReportList = diagnosisReportList;
@@ -58,7 +58,7 @@ public class ListDiagnosisReportsResponse extends SdkResponse {
         this.diagnosisReportList = diagnosisReportList;
     }
 
-    public ListDiagnosisReportsResponse withTotalNum(Object totalNum) {
+    public ListDiagnosisReportsResponse withTotalNum(Long totalNum) {
         this.totalNum = totalNum;
         return this;
     }
@@ -67,11 +67,11 @@ public class ListDiagnosisReportsResponse extends SdkResponse {
      * **参数解释**： 报告数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return totalNum
      */
-    public Object getTotalNum() {
+    public Long getTotalNum() {
         return totalNum;
     }
 
-    public void setTotalNum(Object totalNum) {
+    public void setTotalNum(Long totalNum) {
         this.totalNum = totalNum;
     }
 

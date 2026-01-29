@@ -90,7 +90,7 @@ public class UpdateLogGroupResponse extends SdkResponse {
     /**
      * 日志存储时间（天）。
      * minimum: 1
-     * maximum: 30
+     * maximum: 365
      * @return ttlInDays
      */
     public Integer getTtlInDays() {

@@ -25,7 +25,7 @@ public class CreateMapperResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private DpeMappingDetail data;
+    private CreateDpeMappingRequestBody data;
 
     public CreateMapperResponse withCode(String code) {
         this.code = code;
@@ -61,14 +61,14 @@ public class CreateMapperResponse extends SdkResponse {
         this.message = message;
     }
 
-    public CreateMapperResponse withData(DpeMappingDetail data) {
+    public CreateMapperResponse withData(CreateDpeMappingRequestBody data) {
         this.data = data;
         return this;
     }
 
-    public CreateMapperResponse withData(Consumer<DpeMappingDetail> dataSetter) {
+    public CreateMapperResponse withData(Consumer<CreateDpeMappingRequestBody> dataSetter) {
         if (this.data == null) {
-            this.data = new DpeMappingDetail();
+            this.data = new CreateDpeMappingRequestBody();
             dataSetter.accept(this.data);
         }
 
@@ -79,11 +79,11 @@ public class CreateMapperResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public DpeMappingDetail getData() {
+    public CreateDpeMappingRequestBody getData() {
         return data;
     }
 
-    public void setData(DpeMappingDetail data) {
+    public void setData(CreateDpeMappingRequestBody data) {
         this.data = data;
     }
 

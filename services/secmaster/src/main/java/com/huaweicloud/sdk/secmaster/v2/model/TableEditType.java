@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * **参数解释**: 表编辑类型 - MODIFIABLE 可任意修改态 - APPENDED 追加态 (原来的内容锁定，只可追加) - LOCKED 锁定态 (完全锁定，不可修改)  **约束限制** 不涉及 **取值范围**: - MODIFIABLE - APPENDED - LOCKED  **默认值** 不涉及      
+ * **参数解释**: 表编辑类型 - MODIFIABLE 可任意修改态 - APPENDED 追加态 (原来的内容锁定，只可追加) - LOCKED 锁定态 (完全锁定，不可修改)  **约束限制** 不涉及 **取值范围**: - MODIFIABLE - APPENDED - LOCKED  **默认值** 不涉及
  */
 public class TableEditType {
 

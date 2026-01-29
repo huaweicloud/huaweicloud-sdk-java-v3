@@ -30,8 +30,6 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.CreateExchangeResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.CreateInstanceReq;
 import com.huaweicloud.sdk.rabbitmq.v2.model.CreatePostPaidInstanceByEngineRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.CreatePostPaidInstanceByEngineResponse;
-import com.huaweicloud.sdk.rabbitmq.v2.model.CreatePostPaidInstanceRequest;
-import com.huaweicloud.sdk.rabbitmq.v2.model.CreatePostPaidInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.CreateQueueBody;
 import com.huaweicloud.sdk.rabbitmq.v2.model.CreateQueueRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.CreateQueueResponse;
@@ -89,9 +87,6 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.ResetPasswordResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeEngineInstanceReq;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeEngineInstanceRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeEngineInstanceResponse;
-import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeInstanceReq;
-import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeInstanceRequest;
-import com.huaweicloud.sdk.rabbitmq.v2.model.ResizeInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.RestoreRecycleInstanceRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.RestoreRecycleInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowBackgroundTaskRequest;
@@ -100,8 +95,6 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.ShowCesHierarchyRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowCesHierarchyResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowEngineInstanceExtendProductInfoRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowEngineInstanceExtendProductInfoResponse;
-import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceExtendProductInfoRequest;
-import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceExtendProductInfoResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowInstanceResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowMaintainWindowsRequest;
@@ -190,29 +183,6 @@ public class RabbitMQMeta {
             TypeCasts.uncheckedConversion(BatchRestartOrDeleteInstanceReq.class),
             f -> f.withMarshaller(BatchRestartOrDeleteInstancesRequest::getBody,
                 BatchRestartOrDeleteInstancesRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> createPostPaidInstance =
-        genForCreatePostPaidInstance();
-
-    private static HttpRequestDef<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> genForCreatePostPaidInstance() {
-        // basic
-        HttpRequestDef.Builder<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, CreatePostPaidInstanceRequest.class, CreatePostPaidInstanceResponse.class)
-            .withName("CreatePostPaidInstance")
-            .withUri("/v2/{project_id}/instances")
-            .withContentType("application/json");
-
-        // requests
-        builder.<CreateInstanceReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateInstanceReq.class),
-            f -> f.withMarshaller(CreatePostPaidInstanceRequest::getBody, CreatePostPaidInstanceRequest::setBody));
 
         // response
 
@@ -788,34 +758,6 @@ public class RabbitMQMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstance =
-        genForResizeInstance();
-
-    private static HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> genForResizeInstance() {
-        // basic
-        HttpRequestDef.Builder<ResizeInstanceRequest, ResizeInstanceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ResizeInstanceRequest.class, ResizeInstanceResponse.class)
-                .withName("ResizeInstance")
-                .withUri("/v2/{project_id}/instances/{instance_id}/extend")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ResizeInstanceRequest::getInstanceId, ResizeInstanceRequest::setInstanceId));
-        builder.<ResizeInstanceReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ResizeInstanceReq.class),
-            f -> f.withMarshaller(ResizeInstanceRequest::getBody, ResizeInstanceRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<RestoreRecycleInstanceRequest, RestoreRecycleInstanceResponse> restoreRecycleInstance =
         genForRestoreRecycleInstance();
 
@@ -945,45 +887,6 @@ public class RabbitMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, ShowInstanceRequest::setInstanceId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> showInstanceExtendProductInfo =
-        genForShowInstanceExtendProductInfo();
-
-    private static HttpRequestDef<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> genForShowInstanceExtendProductInfo() {
-        // basic
-        HttpRequestDef.Builder<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ShowInstanceExtendProductInfoRequest.class,
-                    ShowInstanceExtendProductInfoResponse.class)
-                .withName("ShowInstanceExtendProductInfo")
-                .withUri("/v2/{project_id}/instances/{instance_id}/extend")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getInstanceId,
-                ShowInstanceExtendProductInfoRequest::setInstanceId));
-        builder.<ShowInstanceExtendProductInfoRequest.TypeEnum>withRequestField("type",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ShowInstanceExtendProductInfoRequest.TypeEnum.class),
-            f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getType,
-                ShowInstanceExtendProductInfoRequest::setType));
-        builder.<ShowInstanceExtendProductInfoRequest.EngineEnum>withRequestField("engine",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ShowInstanceExtendProductInfoRequest.EngineEnum.class),
-            f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getEngine,
-                ShowInstanceExtendProductInfoRequest::setEngine));
 
         // response
 

@@ -45,6 +45,16 @@ public class AccountChangeRecord {
 
     private String type;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "customer_id")
+
+    private String customerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "account_name")
+
+    private String accountName;
+
     public AccountChangeRecord withAccountChangeId(String accountChangeId) {
         this.accountChangeId = accountChangeId;
         return this;
@@ -164,6 +174,40 @@ public class AccountChangeRecord {
         this.type = type;
     }
 
+    public AccountChangeRecord withCustomerId(String customerId) {
+        this.customerId = customerId;
+        return this;
+    }
+
+    /**
+     * |参数名称：客户账号ID| |参数约束及描述：客户账号ID。说明：交易详细类型取值为如下值时，该字段不为空 SOURCE_OPERATION_BEADJUST：伙伴拨款 SOURCE_OPERATION_BEUNBIND：交易模式变更(切换/解除关联回收) SOURCE_OPERATION_BERETRIEVE：伙伴回收|
+     * @return customerId
+     */
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    public AccountChangeRecord withAccountName(String accountName) {
+        this.accountName = accountName;
+        return this;
+    }
+
+    /**
+     * |参数名称：客户登录名称| |参数约束及描述：客户登录名称。说明：客户账号ID不为空时，该字段不为空|
+     * @return accountName
+     */
+    public String getAccountName() {
+        return accountName;
+    }
+
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -177,13 +221,21 @@ public class AccountChangeRecord {
             && Objects.equals(this.tradeDetailType, that.tradeDetailType)
             && Objects.equals(this.tradeTime, that.tradeTime) && Objects.equals(this.tradeId, that.tradeId)
             && Objects.equals(this.changeAmount, that.changeAmount)
-            && Objects.equals(this.balanceAfterChange, that.balanceAfterChange) && Objects.equals(this.type, that.type);
+            && Objects.equals(this.balanceAfterChange, that.balanceAfterChange) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.customerId, that.customerId) && Objects.equals(this.accountName, that.accountName);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(accountChangeId, tradeDetailType, tradeTime, tradeId, changeAmount, balanceAfterChange, type);
+        return Objects.hash(accountChangeId,
+            tradeDetailType,
+            tradeTime,
+            tradeId,
+            changeAmount,
+            balanceAfterChange,
+            type,
+            customerId,
+            accountName);
     }
 
     @Override
@@ -197,6 +249,8 @@ public class AccountChangeRecord {
         sb.append("    changeAmount: ").append(toIndentedString(changeAmount)).append("\n");
         sb.append("    balanceAfterChange: ").append(toIndentedString(balanceAfterChange)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+        sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

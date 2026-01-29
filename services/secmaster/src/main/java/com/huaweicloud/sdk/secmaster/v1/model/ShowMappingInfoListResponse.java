@@ -25,19 +25,19 @@ public class ShowMappingInfoListResponse extends SdkResponse {
     private String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "size")
+
+    private Integer size;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page")
+
+    private Integer page;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
     private Integer total;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "offset")
-
-    private Integer offset;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limit")
-
-    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
@@ -78,6 +78,44 @@ public class ShowMappingInfoListResponse extends SdkResponse {
         this.message = message;
     }
 
+    public ShowMappingInfoListResponse withSize(Integer size) {
+        this.size = size;
+        return this;
+    }
+
+    /**
+     * 分页查询数据大小
+     * minimum: 0
+     * maximum: 9999
+     * @return size
+     */
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
+    public ShowMappingInfoListResponse withPage(Integer page) {
+        this.page = page;
+        return this;
+    }
+
+    /**
+     * 当前页码
+     * minimum: 0
+     * maximum: 100
+     * @return page
+     */
+    public Integer getPage() {
+        return page;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
+    }
+
     public ShowMappingInfoListResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -95,44 +133,6 @@ public class ShowMappingInfoListResponse extends SdkResponse {
 
     public void setTotal(Integer total) {
         this.total = total;
-    }
-
-    public ShowMappingInfoListResponse withOffset(Integer offset) {
-        this.offset = offset;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 偏移量 **约束限制：** 0-10000 **取值范围：** 不涉及 **默认取值：** 0
-     * minimum: 0
-     * maximum: 999999
-     * @return offset
-     */
-    public Integer getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Integer offset) {
-        this.offset = offset;
-    }
-
-    public ShowMappingInfoListResponse withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    /**
-     * **参数解释**: 当前页码 **约束限制**: 不涉及
-     * minimum: 1
-     * maximum: 999999
-     * @return limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
     }
 
     public ShowMappingInfoListResponse withData(List<DpeInfo> data) {
@@ -178,13 +178,13 @@ public class ShowMappingInfoListResponse extends SdkResponse {
         }
         ShowMappingInfoListResponse that = (ShowMappingInfoListResponse) obj;
         return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
-            && Objects.equals(this.total, that.total) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.data, that.data);
+            && Objects.equals(this.size, that.size) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, message, total, offset, limit, data);
+        return Objects.hash(code, message, size, page, total, data);
     }
 
     @Override
@@ -193,9 +193,9 @@ public class ShowMappingInfoListResponse extends SdkResponse {
         sb.append("class ShowMappingInfoListResponse {\n");
         sb.append("    code: ").append(toIndentedString(code)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();

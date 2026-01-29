@@ -214,7 +214,7 @@ public class Incident {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_list")
 
-    private List<AlertResourceList> resourceList = null;
+    private List<IncidentResourceList> resourceList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remediation")
@@ -386,7 +386,7 @@ public class Incident {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sla")
 
-    private Integer sla;
+    private String sla;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
@@ -1034,12 +1034,12 @@ public class Incident {
         this.networkList = networkList;
     }
 
-    public Incident withResourceList(List<AlertResourceList> resourceList) {
+    public Incident withResourceList(List<IncidentResourceList> resourceList) {
         this.resourceList = resourceList;
         return this;
     }
 
-    public Incident addResourceListItem(AlertResourceList resourceListItem) {
+    public Incident addResourceListItem(IncidentResourceList resourceListItem) {
         if (this.resourceList == null) {
             this.resourceList = new ArrayList<>();
         }
@@ -1047,7 +1047,7 @@ public class Incident {
         return this;
     }
 
-    public Incident withResourceList(Consumer<List<AlertResourceList>> resourceListSetter) {
+    public Incident withResourceList(Consumer<List<IncidentResourceList>> resourceListSetter) {
         if (this.resourceList == null) {
             this.resourceList = new ArrayList<>();
         }
@@ -1059,11 +1059,11 @@ public class Incident {
      * 受影响资产
      * @return resourceList
      */
-    public List<AlertResourceList> getResourceList() {
+    public List<IncidentResourceList> getResourceList() {
         return resourceList;
     }
 
-    public void setResourceList(List<AlertResourceList> resourceList) {
+    public void setResourceList(List<IncidentResourceList> resourceList) {
         this.resourceList = resourceList;
     }
 
@@ -1127,22 +1127,20 @@ public class Incident {
         this.handleStatus = handleStatus;
     }
 
-    public Incident withSla(Integer sla) {
+    public Incident withSla(String sla) {
         this.sla = sla;
         return this;
     }
 
     /**
-     * 约束闭环时间：设置风险接受持续时间。单位：小时
-     * minimum: 0
-     * maximum: 999
+     * 约束闭环时间：设置风险接受持续时间。格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息为事件发生时区，无法解析时区的时间，默认时区填东八区
      * @return sla
      */
-    public Integer getSla() {
+    public String getSla() {
         return sla;
     }
 
-    public void setSla(Integer sla) {
+    public void setSla(String sla) {
         this.sla = sla;
     }
 

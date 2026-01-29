@@ -14,6 +14,11 @@ import java.util.function.Consumer;
 public class HlsPackageItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
     private String url;
@@ -102,6 +107,28 @@ public class HlsPackageItem {
     @JsonProperty(value = "slave_url")
 
     private String slaveUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "manifest_selection")
+
+    private ManifestSelection manifestSelection;
+
+    public HlsPackageItem withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * package唯一标识id，由服务创建并在查询时返回，修改endpoints时需要携带。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public HlsPackageItem withUrl(String url) {
         this.url = url;
@@ -472,6 +499,32 @@ public class HlsPackageItem {
         this.slaveUrl = slaveUrl;
     }
 
+    public HlsPackageItem withManifestSelection(ManifestSelection manifestSelection) {
+        this.manifestSelection = manifestSelection;
+        return this;
+    }
+
+    public HlsPackageItem withManifestSelection(Consumer<ManifestSelection> manifestSelectionSetter) {
+        if (this.manifestSelection == null) {
+            this.manifestSelection = new ManifestSelection();
+            manifestSelectionSetter.accept(this.manifestSelection);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get manifestSelection
+     * @return manifestSelection
+     */
+    public ManifestSelection getManifestSelection() {
+        return manifestSelection;
+    }
+
+    public void setManifestSelection(ManifestSelection manifestSelection) {
+        this.manifestSelection = manifestSelection;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -481,7 +534,8 @@ public class HlsPackageItem {
             return false;
         }
         HlsPackageItem that = (HlsPackageItem) obj;
-        return Objects.equals(this.url, that.url) && Objects.equals(this.streamSelection, that.streamSelection)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.streamSelection, that.streamSelection)
             && Objects.equals(this.hlsVersion, that.hlsVersion)
             && Objects.equals(this.segmentDurationSeconds, that.segmentDurationSeconds)
             && Objects.equals(this.playlistWindowSeconds, that.playlistWindowSeconds)
@@ -493,12 +547,14 @@ public class HlsPackageItem {
             && Objects.equals(this.cdnIdentifierHeader, that.cdnIdentifierHeader)
             && Objects.equals(this.originDomainMaster, that.originDomainMaster)
             && Objects.equals(this.originDomainSlave, that.originDomainSlave)
-            && Objects.equals(this.manifestName, that.manifestName) && Objects.equals(this.slaveUrl, that.slaveUrl);
+            && Objects.equals(this.manifestName, that.manifestName) && Objects.equals(this.slaveUrl, that.slaveUrl)
+            && Objects.equals(this.manifestSelection, that.manifestSelection);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(url,
+        return Objects.hash(id,
+            url,
             streamSelection,
             hlsVersion,
             segmentDurationSeconds,
@@ -515,13 +571,15 @@ public class HlsPackageItem {
             originDomainMaster,
             originDomainSlave,
             manifestName,
-            slaveUrl);
+            slaveUrl,
+            manifestSelection);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class HlsPackageItem {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    streamSelection: ").append(toIndentedString(streamSelection)).append("\n");
         sb.append("    hlsVersion: ").append(toIndentedString(hlsVersion)).append("\n");
@@ -540,6 +598,7 @@ public class HlsPackageItem {
         sb.append("    originDomainSlave: ").append(toIndentedString(originDomainSlave)).append("\n");
         sb.append("    manifestName: ").append(toIndentedString(manifestName)).append("\n");
         sb.append("    slaveUrl: ").append(toIndentedString(slaveUrl)).append("\n");
+        sb.append("    manifestSelection: ").append(toIndentedString(manifestSelection)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class TargetDisks {
 
     /**
-     * 磁盘类型，普通磁盘，OS所在磁盘，BOOT所在磁盘 BOOT：BOOT设备 OS：系统设备 NORMAL:平常
+     * 磁盘类型，仅起提示作用，不作校验 BOOT：BOOT所在磁盘 OS：OS所在磁盘 NORMAL：普通磁盘
      */
     public static final class DeviceUseEnum {
 
@@ -130,7 +130,7 @@ public class TargetDisks {
     }
 
     /**
-     * 磁盘类型，普通磁盘，OS所在磁盘，BOOT所在磁盘 BOOT：BOOT设备 OS：系统设备 NORMAL:平常
+     * 磁盘类型，仅起提示作用，不作校验 BOOT：BOOT所在磁盘 OS：OS所在磁盘 NORMAL：普通磁盘
      * @return deviceUse
      */
     public DeviceUseEnum getDeviceUse() {

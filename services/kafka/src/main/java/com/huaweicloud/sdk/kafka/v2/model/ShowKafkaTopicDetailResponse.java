@@ -17,14 +17,14 @@ public class ShowKafkaTopicDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private List<ShowKafkaTopicDetailResponseBody> body = null;
+    private List<KafkaTopicDetailEntity> body = null;
 
-    public ShowKafkaTopicDetailResponse withBody(List<ShowKafkaTopicDetailResponseBody> body) {
+    public ShowKafkaTopicDetailResponse withBody(List<KafkaTopicDetailEntity> body) {
         this.body = body;
         return this;
     }
 
-    public ShowKafkaTopicDetailResponse addBodyItem(ShowKafkaTopicDetailResponseBody bodyItem) {
+    public ShowKafkaTopicDetailResponse addBodyItem(KafkaTopicDetailEntity bodyItem) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class ShowKafkaTopicDetailResponse extends SdkResponse {
         return this;
     }
 
-    public ShowKafkaTopicDetailResponse withBody(Consumer<List<ShowKafkaTopicDetailResponseBody>> bodySetter) {
+    public ShowKafkaTopicDetailResponse withBody(Consumer<List<KafkaTopicDetailEntity>> bodySetter) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -41,14 +41,14 @@ public class ShowKafkaTopicDetailResponse extends SdkResponse {
     }
 
     /**
-     * Topic详情。
+     * 查询Kafka主题详情
      * @return body
      */
-    public List<ShowKafkaTopicDetailResponseBody> getBody() {
+    public List<KafkaTopicDetailEntity> getBody() {
         return body;
     }
 
-    public void setBody(List<ShowKafkaTopicDetailResponseBody> body) {
+    public void setBody(List<KafkaTopicDetailEntity> body) {
         this.body = body;
     }
 

@@ -5,10 +5,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -98,181 +96,15 @@ public class PutTaskReq {
 
     private TypeEnum type;
 
-    /**
-     * 操作系统类型，分为WINDOWS和LINUX，创建时必选，更新时可选
-     */
-    public static final class OsTypeEnum {
-
-        /**
-         * Enum WINDOWS for value: "WINDOWS"
-         */
-        public static final OsTypeEnum WINDOWS = new OsTypeEnum("WINDOWS");
-
-        /**
-         * Enum LINUX for value: "LINUX"
-         */
-        public static final OsTypeEnum LINUX = new OsTypeEnum("LINUX");
-
-        private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, OsTypeEnum> createStaticFields() {
-            Map<String, OsTypeEnum> map = new HashMap<>();
-            map.put("WINDOWS", WINDOWS);
-            map.put("LINUX", LINUX);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        OsTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static OsTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsTypeEnum(value));
-        }
-
-        public static OsTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof OsTypeEnum) {
-                return this.value.equals(((OsTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "os_type")
-
-    private OsTypeEnum osType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
-
-    /**
-     * 进程优先级  0：低  1：标准（默认）  2：高
-     */
-    public static final class PriorityEnum {
-
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final PriorityEnum NUMBER_0 = new PriorityEnum(0);
-
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final PriorityEnum NUMBER_1 = new PriorityEnum(1);
-
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final PriorityEnum NUMBER_2 = new PriorityEnum(2);
-
-        private static final Map<Integer, PriorityEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, PriorityEnum> createStaticFields() {
-            Map<Integer, PriorityEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        PriorityEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static PriorityEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PriorityEnum(value));
-        }
-
-        public static PriorityEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof PriorityEnum) {
-                return this.value.equals(((PriorityEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "priority")
-
-    private PriorityEnum priority;
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
 
     private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "start_target_server")
+    @JsonProperty(value = "region_name")
 
-    private Boolean startTargetServer;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterprise_project_id")
-
-    private String enterpriseProjectId;
+    private String regionName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "exist_server")
@@ -285,9 +117,14 @@ public class PutTaskReq {
     private String migrationIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "region_name")
+    @JsonProperty(value = "use_ipv6")
 
-    private String regionName;
+    private Boolean useIpv6;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "use_public_ip")
+
+    private Boolean usePublicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "speed_limit")
@@ -305,219 +142,44 @@ public class PutTaskReq {
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project")
+
+    private String enterpriseProject;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_disk_id")
+
+    private String imageDiskId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vm_template_id")
 
     private String vmTemplateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "source_server")
+    @JsonProperty(value = "target_disk_ids")
 
-    private PostSourceServerBody sourceServer;
+    private String targetDiskIds;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "snapshot_ids")
+
+    private String snapshotIds;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cutovered_snapshot_ids")
+
+    private String cutoveredSnapshotIds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_server")
 
     private TargetServer targetServer;
 
-    /**
-     * 迁移任务状态 READY: 准备就绪 RUNNING: 迁移中 SYNCING: 同步中 MIGRATE_SUCCESS: 迁移成功 SYNC_SUCCESS: 同步成功 MIGRATE_FAIL: 失败 SYNC_FAIL: 同步失败 ABORTING: 中止中 ABORT: 中止 SKIPPING: 跳过中 DELETING: 删除中 RESETING: 回滚中
-     */
-    public static final class StateEnum {
-
-        /**
-         * Enum READY for value: "READY"
-         */
-        public static final StateEnum READY = new StateEnum("READY");
-
-        /**
-         * Enum RUNNING for value: "RUNNING"
-         */
-        public static final StateEnum RUNNING = new StateEnum("RUNNING");
-
-        /**
-         * Enum SYNCING for value: "SYNCING"
-         */
-        public static final StateEnum SYNCING = new StateEnum("SYNCING");
-
-        /**
-         * Enum MIGRATE_SUCCESS for value: "MIGRATE_SUCCESS"
-         */
-        public static final StateEnum MIGRATE_SUCCESS = new StateEnum("MIGRATE_SUCCESS");
-
-        /**
-         * Enum SYNC_SUCCESS for value: "SYNC_SUCCESS"
-         */
-        public static final StateEnum SYNC_SUCCESS = new StateEnum("SYNC_SUCCESS");
-
-        /**
-         * Enum MIGRATE_FAIL for value: "MIGRATE_FAIL"
-         */
-        public static final StateEnum MIGRATE_FAIL = new StateEnum("MIGRATE_FAIL");
-
-        /**
-         * Enum SYNC_FAIL for value: "SYNC_FAIL"
-         */
-        public static final StateEnum SYNC_FAIL = new StateEnum("SYNC_FAIL");
-
-        /**
-         * Enum ABORTING for value: "ABORTING"
-         */
-        public static final StateEnum ABORTING = new StateEnum("ABORTING");
-
-        /**
-         * Enum ABORT for value: "ABORT"
-         */
-        public static final StateEnum ABORT = new StateEnum("ABORT");
-
-        /**
-         * Enum SKIPPING for value: "SKIPPING"
-         */
-        public static final StateEnum SKIPPING = new StateEnum("SKIPPING");
-
-        /**
-         * Enum DELETING for value: "DELETING"
-         */
-        public static final StateEnum DELETING = new StateEnum("DELETING");
-
-        /**
-         * Enum RESETING for value: "RESETING"
-         */
-        public static final StateEnum RESETING = new StateEnum("RESETING");
-
-        private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, StateEnum> createStaticFields() {
-            Map<String, StateEnum> map = new HashMap<>();
-            map.put("READY", READY);
-            map.put("RUNNING", RUNNING);
-            map.put("SYNCING", SYNCING);
-            map.put("MIGRATE_SUCCESS", MIGRATE_SUCCESS);
-            map.put("SYNC_SUCCESS", SYNC_SUCCESS);
-            map.put("MIGRATE_FAIL", MIGRATE_FAIL);
-            map.put("SYNC_FAIL", SYNC_FAIL);
-            map.put("ABORTING", ABORTING);
-            map.put("ABORT", ABORT);
-            map.put("SKIPPING", SKIPPING);
-            map.put("DELETING", DELETING);
-            map.put("RESETING", RESETING);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        StateEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StateEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
-        }
-
-        public static StateEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof StateEnum) {
-                return this.value.equals(((StateEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "state")
-
-    private StateEnum state;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "estimate_complete_time")
-
-    private Long estimateCompleteTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "connected")
-
-    private Boolean connected;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_date")
-
-    private Long createDate;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "start_date")
-
-    private Long startDate;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "finish_date")
-
-    private Long finishDate;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "migrate_speed")
-
-    private Double migrateSpeed;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "error_json")
-
-    private String errorJson;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total_time")
-
-    private Long totalTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "float_ip")
-
-    private String floatIp;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "remain_seconds")
-
-    private Long remainSeconds;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "target_snapshot_id")
-
-    private String targetSnapshotId;
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "clone_server")
 
     private CloneServer cloneServer;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sub_tasks")
-
-    private List<SubTask> subTasks = null;
 
     public PutTaskReq withName(String name) {
         this.name = name;
@@ -525,7 +187,7 @@ public class PutTaskReq {
     }
 
     /**
-     * 任务名称（用户自定义）
+     * 任务名称（用户自定义） 仅由中文字符、下划线、短横线、数字、英文大小写字母组成
      * @return name
      */
     public String getName() {
@@ -553,59 +215,6 @@ public class PutTaskReq {
         this.type = type;
     }
 
-    public PutTaskReq withOsType(OsTypeEnum osType) {
-        this.osType = osType;
-        return this;
-    }
-
-    /**
-     * 操作系统类型，分为WINDOWS和LINUX，创建时必选，更新时可选
-     * @return osType
-     */
-    public OsTypeEnum getOsType() {
-        return osType;
-    }
-
-    public void setOsType(OsTypeEnum osType) {
-        this.osType = osType;
-    }
-
-    public PutTaskReq withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    /**
-     * 迁移任务ID
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public PutTaskReq withPriority(PriorityEnum priority) {
-        this.priority = priority;
-        return this;
-    }
-
-    /**
-     * 进程优先级  0：低  1：标准（默认）  2：高
-     * minimum: 0
-     * maximum: 2
-     * @return priority
-     */
-    public PriorityEnum getPriority() {
-        return priority;
-    }
-
-    public void setPriority(PriorityEnum priority) {
-        this.priority = priority;
-    }
-
     public PutTaskReq withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
@@ -623,38 +232,21 @@ public class PutTaskReq {
         this.regionId = regionId;
     }
 
-    public PutTaskReq withStartTargetServer(Boolean startTargetServer) {
-        this.startTargetServer = startTargetServer;
+    public PutTaskReq withRegionName(String regionName) {
+        this.regionName = regionName;
         return this;
     }
 
     /**
-     * 迁移完成后是否启动目的端服务器  true：启动  false：停止
-     * @return startTargetServer
+     * 目的端服务器的区域名称
+     * @return regionName
      */
-    public Boolean getStartTargetServer() {
-        return startTargetServer;
+    public String getRegionName() {
+        return regionName;
     }
 
-    public void setStartTargetServer(Boolean startTargetServer) {
-        this.startTargetServer = startTargetServer;
-    }
-
-    public PutTaskReq withEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-        return this;
-    }
-
-    /**
-     * 企业项目ID
-     * @return enterpriseProjectId
-     */
-    public String getEnterpriseProjectId() {
-        return enterpriseProjectId;
-    }
-
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
+    public void setRegionName(String regionName) {
+        this.regionName = regionName;
     }
 
     public PutTaskReq withExistServer(Boolean existServer) {
@@ -680,7 +272,7 @@ public class PutTaskReq {
     }
 
     /**
-     * 目的端服务器的IP地址。  公网迁移时请填写弹性IP地址  专线迁移时请填写私有IP地址
+     * 目的端服务器的IP地址。 公网迁移时请填写弹性IP地址 专线迁移时请填写私有IP地址 如果use_ipv6是true，则需要满足ipv6的格式，如果use_ipv6是false，则需要满足ipv4的格式
      * @return migrationIp
      */
     public String getMigrationIp() {
@@ -691,21 +283,38 @@ public class PutTaskReq {
         this.migrationIp = migrationIp;
     }
 
-    public PutTaskReq withRegionName(String regionName) {
-        this.regionName = regionName;
+    public PutTaskReq withUseIpv6(Boolean useIpv6) {
+        this.useIpv6 = useIpv6;
         return this;
     }
 
     /**
-     * 目的端服务器的区域名称
-     * @return regionName
+     * 目的端服务器的IP地址是否使用ipv6
+     * @return useIpv6
      */
-    public String getRegionName() {
-        return regionName;
+    public Boolean getUseIpv6() {
+        return useIpv6;
     }
 
-    public void setRegionName(String regionName) {
-        this.regionName = regionName;
+    public void setUseIpv6(Boolean useIpv6) {
+        this.useIpv6 = useIpv6;
+    }
+
+    public PutTaskReq withUsePublicIp(Boolean usePublicIp) {
+        this.usePublicIp = usePublicIp;
+        return this;
+    }
+
+    /**
+     * 是否为公网
+     * @return usePublicIp
+     */
+    public Boolean getUsePublicIp() {
+        return usePublicIp;
+    }
+
+    public void setUsePublicIp(Boolean usePublicIp) {
+        this.usePublicIp = usePublicIp;
     }
 
     public PutTaskReq withSpeedLimit(Integer speedLimit) {
@@ -716,7 +325,7 @@ public class PutTaskReq {
     /**
      * 限制迁移速率，单位：Mbps
      * minimum: 0
-     * maximum: 10000
+     * maximum: 1000
      * @return speedLimit
      */
     public Integer getSpeedLimit() {
@@ -761,6 +370,40 @@ public class PutTaskReq {
         this.projectId = projectId;
     }
 
+    public PutTaskReq withEnterpriseProject(String enterpriseProject) {
+        this.enterpriseProject = enterpriseProject;
+        return this;
+    }
+
+    /**
+     * 企业项目ID
+     * @return enterpriseProject
+     */
+    public String getEnterpriseProject() {
+        return enterpriseProject;
+    }
+
+    public void setEnterpriseProject(String enterpriseProject) {
+        this.enterpriseProject = enterpriseProject;
+    }
+
+    public PutTaskReq withImageDiskId(String imageDiskId) {
+        this.imageDiskId = imageDiskId;
+        return this;
+    }
+
+    /**
+     * 目的端服务器镜像代理磁盘ID
+     * @return imageDiskId
+     */
+    public String getImageDiskId() {
+        return imageDiskId;
+    }
+
+    public void setImageDiskId(String imageDiskId) {
+        this.imageDiskId = imageDiskId;
+    }
+
     public PutTaskReq withVmTemplateId(String vmTemplateId) {
         this.vmTemplateId = vmTemplateId;
         return this;
@@ -778,30 +421,55 @@ public class PutTaskReq {
         this.vmTemplateId = vmTemplateId;
     }
 
-    public PutTaskReq withSourceServer(PostSourceServerBody sourceServer) {
-        this.sourceServer = sourceServer;
-        return this;
-    }
-
-    public PutTaskReq withSourceServer(Consumer<PostSourceServerBody> sourceServerSetter) {
-        if (this.sourceServer == null) {
-            this.sourceServer = new PostSourceServerBody();
-            sourceServerSetter.accept(this.sourceServer);
-        }
-
+    public PutTaskReq withTargetDiskIds(String targetDiskIds) {
+        this.targetDiskIds = targetDiskIds;
         return this;
     }
 
     /**
-     * Get sourceServer
-     * @return sourceServer
+     * 目的端服务器磁盘ID数组，用空格分隔，单个id长度不超过255
+     * @return targetDiskIds
      */
-    public PostSourceServerBody getSourceServer() {
-        return sourceServer;
+    public String getTargetDiskIds() {
+        return targetDiskIds;
     }
 
-    public void setSourceServer(PostSourceServerBody sourceServer) {
-        this.sourceServer = sourceServer;
+    public void setTargetDiskIds(String targetDiskIds) {
+        this.targetDiskIds = targetDiskIds;
+    }
+
+    public PutTaskReq withSnapshotIds(String snapshotIds) {
+        this.snapshotIds = snapshotIds;
+        return this;
+    }
+
+    /**
+     * 目的端的快照ID，id之间\";\"分隔
+     * @return snapshotIds
+     */
+    public String getSnapshotIds() {
+        return snapshotIds;
+    }
+
+    public void setSnapshotIds(String snapshotIds) {
+        this.snapshotIds = snapshotIds;
+    }
+
+    public PutTaskReq withCutoveredSnapshotIds(String cutoveredSnapshotIds) {
+        this.cutoveredSnapshotIds = cutoveredSnapshotIds;
+        return this;
+    }
+
+    /**
+     * 割接的快照ID
+     * @return cutoveredSnapshotIds
+     */
+    public String getCutoveredSnapshotIds() {
+        return cutoveredSnapshotIds;
+    }
+
+    public void setCutoveredSnapshotIds(String cutoveredSnapshotIds) {
+        this.cutoveredSnapshotIds = cutoveredSnapshotIds;
     }
 
     public PutTaskReq withTargetServer(TargetServer targetServer) {
@@ -830,224 +498,6 @@ public class PutTaskReq {
         this.targetServer = targetServer;
     }
 
-    public PutTaskReq withState(StateEnum state) {
-        this.state = state;
-        return this;
-    }
-
-    /**
-     * 迁移任务状态 READY: 准备就绪 RUNNING: 迁移中 SYNCING: 同步中 MIGRATE_SUCCESS: 迁移成功 SYNC_SUCCESS: 同步成功 MIGRATE_FAIL: 失败 SYNC_FAIL: 同步失败 ABORTING: 中止中 ABORT: 中止 SKIPPING: 跳过中 DELETING: 删除中 RESETING: 回滚中
-     * @return state
-     */
-    public StateEnum getState() {
-        return state;
-    }
-
-    public void setState(StateEnum state) {
-        this.state = state;
-    }
-
-    public PutTaskReq withEstimateCompleteTime(Long estimateCompleteTime) {
-        this.estimateCompleteTime = estimateCompleteTime;
-        return this;
-    }
-
-    /**
-     * 预估完成时间
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return estimateCompleteTime
-     */
-    public Long getEstimateCompleteTime() {
-        return estimateCompleteTime;
-    }
-
-    public void setEstimateCompleteTime(Long estimateCompleteTime) {
-        this.estimateCompleteTime = estimateCompleteTime;
-    }
-
-    public PutTaskReq withConnected(Boolean connected) {
-        this.connected = connected;
-        return this;
-    }
-
-    /**
-     * 连接状态
-     * @return connected
-     */
-    public Boolean getConnected() {
-        return connected;
-    }
-
-    public void setConnected(Boolean connected) {
-        this.connected = connected;
-    }
-
-    public PutTaskReq withCreateDate(Long createDate) {
-        this.createDate = createDate;
-        return this;
-    }
-
-    /**
-     * 任务创建时间
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return createDate
-     */
-    public Long getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(Long createDate) {
-        this.createDate = createDate;
-    }
-
-    public PutTaskReq withStartDate(Long startDate) {
-        this.startDate = startDate;
-        return this;
-    }
-
-    /**
-     * 任务开始时间
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return startDate
-     */
-    public Long getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Long startDate) {
-        this.startDate = startDate;
-    }
-
-    public PutTaskReq withFinishDate(Long finishDate) {
-        this.finishDate = finishDate;
-        return this;
-    }
-
-    /**
-     * 任务结束时间
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return finishDate
-     */
-    public Long getFinishDate() {
-        return finishDate;
-    }
-
-    public void setFinishDate(Long finishDate) {
-        this.finishDate = finishDate;
-    }
-
-    public PutTaskReq withMigrateSpeed(Double migrateSpeed) {
-        this.migrateSpeed = migrateSpeed;
-        return this;
-    }
-
-    /**
-     * 迁移速率，单位：Mbit/s
-     * minimum: 0
-     * maximum: 1E+4
-     * @return migrateSpeed
-     */
-    public Double getMigrateSpeed() {
-        return migrateSpeed;
-    }
-
-    public void setMigrateSpeed(Double migrateSpeed) {
-        this.migrateSpeed = migrateSpeed;
-    }
-
-    public PutTaskReq withErrorJson(String errorJson) {
-        this.errorJson = errorJson;
-        return this;
-    }
-
-    /**
-     * 错误信息
-     * @return errorJson
-     */
-    public String getErrorJson() {
-        return errorJson;
-    }
-
-    public void setErrorJson(String errorJson) {
-        this.errorJson = errorJson;
-    }
-
-    public PutTaskReq withTotalTime(Long totalTime) {
-        this.totalTime = totalTime;
-        return this;
-    }
-
-    /**
-     * 任务总耗时
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return totalTime
-     */
-    public Long getTotalTime() {
-        return totalTime;
-    }
-
-    public void setTotalTime(Long totalTime) {
-        this.totalTime = totalTime;
-    }
-
-    public PutTaskReq withFloatIp(String floatIp) {
-        this.floatIp = floatIp;
-        return this;
-    }
-
-    /**
-     * 暂时保留float,兼容现网老版本的SMS-Agent
-     * @return floatIp
-     */
-    public String getFloatIp() {
-        return floatIp;
-    }
-
-    public void setFloatIp(String floatIp) {
-        this.floatIp = floatIp;
-    }
-
-    public PutTaskReq withRemainSeconds(Long remainSeconds) {
-        this.remainSeconds = remainSeconds;
-        return this;
-    }
-
-    /**
-     * 迁移剩余时间（秒）
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return remainSeconds
-     */
-    public Long getRemainSeconds() {
-        return remainSeconds;
-    }
-
-    public void setRemainSeconds(Long remainSeconds) {
-        this.remainSeconds = remainSeconds;
-    }
-
-    public PutTaskReq withTargetSnapshotId(String targetSnapshotId) {
-        this.targetSnapshotId = targetSnapshotId;
-        return this;
-    }
-
-    /**
-     * 目的端的快照ID
-     * @return targetSnapshotId
-     */
-    public String getTargetSnapshotId() {
-        return targetSnapshotId;
-    }
-
-    public void setTargetSnapshotId(String targetSnapshotId) {
-        this.targetSnapshotId = targetSnapshotId;
-    }
-
     public PutTaskReq withCloneServer(CloneServer cloneServer) {
         this.cloneServer = cloneServer;
         return this;
@@ -1074,39 +524,6 @@ public class PutTaskReq {
         this.cloneServer = cloneServer;
     }
 
-    public PutTaskReq withSubTasks(List<SubTask> subTasks) {
-        this.subTasks = subTasks;
-        return this;
-    }
-
-    public PutTaskReq addSubTasksItem(SubTask subTasksItem) {
-        if (this.subTasks == null) {
-            this.subTasks = new ArrayList<>();
-        }
-        this.subTasks.add(subTasksItem);
-        return this;
-    }
-
-    public PutTaskReq withSubTasks(Consumer<List<SubTask>> subTasksSetter) {
-        if (this.subTasks == null) {
-            this.subTasks = new ArrayList<>();
-        }
-        subTasksSetter.accept(this.subTasks);
-        return this;
-    }
-
-    /**
-     * 任务包含的子任务列表
-     * @return subTasks
-     */
-    public List<SubTask> getSubTasks() {
-        return subTasks;
-    }
-
-    public void setSubTasks(List<SubTask> subTasks) {
-        this.subTasks = subTasks;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1117,59 +534,42 @@ public class PutTaskReq {
         }
         PutTaskReq that = (PutTaskReq) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.osType, that.osType) && Objects.equals(this.id, that.id)
-            && Objects.equals(this.priority, that.priority) && Objects.equals(this.regionId, that.regionId)
-            && Objects.equals(this.startTargetServer, that.startTargetServer)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.regionName, that.regionName)
             && Objects.equals(this.existServer, that.existServer) && Objects.equals(this.migrationIp, that.migrationIp)
-            && Objects.equals(this.regionName, that.regionName) && Objects.equals(this.speedLimit, that.speedLimit)
-            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.useIpv6, that.useIpv6) && Objects.equals(this.usePublicIp, that.usePublicIp)
+            && Objects.equals(this.speedLimit, that.speedLimit) && Objects.equals(this.projectName, that.projectName)
+            && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.enterpriseProject, that.enterpriseProject)
+            && Objects.equals(this.imageDiskId, that.imageDiskId)
             && Objects.equals(this.vmTemplateId, that.vmTemplateId)
-            && Objects.equals(this.sourceServer, that.sourceServer)
-            && Objects.equals(this.targetServer, that.targetServer) && Objects.equals(this.state, that.state)
-            && Objects.equals(this.estimateCompleteTime, that.estimateCompleteTime)
-            && Objects.equals(this.connected, that.connected) && Objects.equals(this.createDate, that.createDate)
-            && Objects.equals(this.startDate, that.startDate) && Objects.equals(this.finishDate, that.finishDate)
-            && Objects.equals(this.migrateSpeed, that.migrateSpeed) && Objects.equals(this.errorJson, that.errorJson)
-            && Objects.equals(this.totalTime, that.totalTime) && Objects.equals(this.floatIp, that.floatIp)
-            && Objects.equals(this.remainSeconds, that.remainSeconds)
-            && Objects.equals(this.targetSnapshotId, that.targetSnapshotId)
-            && Objects.equals(this.cloneServer, that.cloneServer) && Objects.equals(this.subTasks, that.subTasks);
+            && Objects.equals(this.targetDiskIds, that.targetDiskIds)
+            && Objects.equals(this.snapshotIds, that.snapshotIds)
+            && Objects.equals(this.cutoveredSnapshotIds, that.cutoveredSnapshotIds)
+            && Objects.equals(this.targetServer, that.targetServer)
+            && Objects.equals(this.cloneServer, that.cloneServer);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(name,
             type,
-            osType,
-            id,
-            priority,
             regionId,
-            startTargetServer,
-            enterpriseProjectId,
+            regionName,
             existServer,
             migrationIp,
-            regionName,
+            useIpv6,
+            usePublicIp,
             speedLimit,
             projectName,
             projectId,
+            enterpriseProject,
+            imageDiskId,
             vmTemplateId,
-            sourceServer,
+            targetDiskIds,
+            snapshotIds,
+            cutoveredSnapshotIds,
             targetServer,
-            state,
-            estimateCompleteTime,
-            connected,
-            createDate,
-            startDate,
-            finishDate,
-            migrateSpeed,
-            errorJson,
-            totalTime,
-            floatIp,
-            remainSeconds,
-            targetSnapshotId,
-            cloneServer,
-            subTasks);
+            cloneServer);
     }
 
     @Override
@@ -1178,35 +578,23 @@ public class PutTaskReq {
         sb.append("class PutTaskReq {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
-        sb.append("    startTargetServer: ").append(toIndentedString(startTargetServer)).append("\n");
-        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
         sb.append("    existServer: ").append(toIndentedString(existServer)).append("\n");
         sb.append("    migrationIp: ").append(toIndentedString(migrationIp)).append("\n");
-        sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
+        sb.append("    useIpv6: ").append(toIndentedString(useIpv6)).append("\n");
+        sb.append("    usePublicIp: ").append(toIndentedString(usePublicIp)).append("\n");
         sb.append("    speedLimit: ").append(toIndentedString(speedLimit)).append("\n");
         sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    enterpriseProject: ").append(toIndentedString(enterpriseProject)).append("\n");
+        sb.append("    imageDiskId: ").append(toIndentedString(imageDiskId)).append("\n");
         sb.append("    vmTemplateId: ").append(toIndentedString(vmTemplateId)).append("\n");
-        sb.append("    sourceServer: ").append(toIndentedString(sourceServer)).append("\n");
+        sb.append("    targetDiskIds: ").append(toIndentedString(targetDiskIds)).append("\n");
+        sb.append("    snapshotIds: ").append(toIndentedString(snapshotIds)).append("\n");
+        sb.append("    cutoveredSnapshotIds: ").append(toIndentedString(cutoveredSnapshotIds)).append("\n");
         sb.append("    targetServer: ").append(toIndentedString(targetServer)).append("\n");
-        sb.append("    state: ").append(toIndentedString(state)).append("\n");
-        sb.append("    estimateCompleteTime: ").append(toIndentedString(estimateCompleteTime)).append("\n");
-        sb.append("    connected: ").append(toIndentedString(connected)).append("\n");
-        sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
-        sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
-        sb.append("    finishDate: ").append(toIndentedString(finishDate)).append("\n");
-        sb.append("    migrateSpeed: ").append(toIndentedString(migrateSpeed)).append("\n");
-        sb.append("    errorJson: ").append(toIndentedString(errorJson)).append("\n");
-        sb.append("    totalTime: ").append(toIndentedString(totalTime)).append("\n");
-        sb.append("    floatIp: ").append(toIndentedString(floatIp)).append("\n");
-        sb.append("    remainSeconds: ").append(toIndentedString(remainSeconds)).append("\n");
-        sb.append("    targetSnapshotId: ").append(toIndentedString(targetSnapshotId)).append("\n");
         sb.append("    cloneServer: ").append(toIndentedString(cloneServer)).append("\n");
-        sb.append("    subTasks: ").append(toIndentedString(subTasks)).append("\n");
         sb.append("}");
         return sb.toString();
     }

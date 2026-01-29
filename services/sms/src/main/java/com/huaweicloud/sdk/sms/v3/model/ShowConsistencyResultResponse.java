@@ -17,19 +17,19 @@ public class ShowConsistencyResultResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result_list")
 
-    private List<ConsistencyResultRequestBodyResultList> resultList = null;
+    private List<String> resultList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
 
     private String taskId;
 
-    public ShowConsistencyResultResponse withResultList(List<ConsistencyResultRequestBodyResultList> resultList) {
+    public ShowConsistencyResultResponse withResultList(List<String> resultList) {
         this.resultList = resultList;
         return this;
     }
 
-    public ShowConsistencyResultResponse addResultListItem(ConsistencyResultRequestBodyResultList resultListItem) {
+    public ShowConsistencyResultResponse addResultListItem(String resultListItem) {
         if (this.resultList == null) {
             this.resultList = new ArrayList<>();
         }
@@ -37,8 +37,7 @@ public class ShowConsistencyResultResponse extends SdkResponse {
         return this;
     }
 
-    public ShowConsistencyResultResponse withResultList(
-        Consumer<List<ConsistencyResultRequestBodyResultList>> resultListSetter) {
+    public ShowConsistencyResultResponse withResultList(Consumer<List<String>> resultListSetter) {
         if (this.resultList == null) {
             this.resultList = new ArrayList<>();
         }
@@ -50,11 +49,11 @@ public class ShowConsistencyResultResponse extends SdkResponse {
      * 一致性校验结果列表
      * @return resultList
      */
-    public List<ConsistencyResultRequestBodyResultList> getResultList() {
+    public List<String> getResultList() {
         return resultList;
     }
 
-    public void setResultList(List<ConsistencyResultRequestBodyResultList> resultList) {
+    public void setResultList(List<String> resultList) {
         this.resultList = resultList;
     }
 

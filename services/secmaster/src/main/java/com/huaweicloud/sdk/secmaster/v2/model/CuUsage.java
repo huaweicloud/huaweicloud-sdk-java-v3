@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class CuUsage {
 
     /**
-     * **参数解释**: 目录 - USAGE 使用  **约束限制** 不涉及 **取值范围**: - USAGE  **默认值** 不涉及  
+     * **参数解释**: 目录 - USAGE 使用  **约束限制** 不涉及 **取值范围**: - USAGE  **默认值** 不涉及
      */
     public static final class UsageCategoryEnum {
 
@@ -96,7 +96,7 @@ public class CuUsage {
     }
 
     /**
-     * **参数解释**: 目录 - USAGE 使用  **约束限制** 不涉及 **取值范围**: - USAGE  **默认值** 不涉及  
+     * **参数解释**: 目录 - USAGE 使用  **约束限制** 不涉及 **取值范围**: - USAGE  **默认值** 不涉及
      * @return usageCategory
      */
     public UsageCategoryEnum getUsageCategory() {

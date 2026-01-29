@@ -44,7 +44,7 @@ public class UpdateInstanceConfigurationsResponse extends SdkResponse {
     }
 
     /**
-     * 实例是否需要重启。 - “true”需要重启。 - “false”不需要重启。
+     * **参数解释：** 实例是否需要重启。 **取值范围：** - “true”需要重启。 - “false”不需要重启。
      * @return restartRequired
      */
     public Boolean getRestartRequired() {

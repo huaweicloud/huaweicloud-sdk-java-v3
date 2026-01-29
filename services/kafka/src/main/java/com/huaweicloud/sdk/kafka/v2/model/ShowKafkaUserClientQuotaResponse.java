@@ -17,19 +17,19 @@ public class ShowKafkaUserClientQuotaResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quotas")
 
-    private List<Quota> quotas = null;
+    private List<QuotaResp> quotas = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
     private Integer count;
 
-    public ShowKafkaUserClientQuotaResponse withQuotas(List<Quota> quotas) {
+    public ShowKafkaUserClientQuotaResponse withQuotas(List<QuotaResp> quotas) {
         this.quotas = quotas;
         return this;
     }
 
-    public ShowKafkaUserClientQuotaResponse addQuotasItem(Quota quotasItem) {
+    public ShowKafkaUserClientQuotaResponse addQuotasItem(QuotaResp quotasItem) {
         if (this.quotas == null) {
             this.quotas = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class ShowKafkaUserClientQuotaResponse extends SdkResponse {
         return this;
     }
 
-    public ShowKafkaUserClientQuotaResponse withQuotas(Consumer<List<Quota>> quotasSetter) {
+    public ShowKafkaUserClientQuotaResponse withQuotas(Consumer<List<QuotaResp>> quotasSetter) {
         if (this.quotas == null) {
             this.quotas = new ArrayList<>();
         }
@@ -49,11 +49,11 @@ public class ShowKafkaUserClientQuotaResponse extends SdkResponse {
      * 客户端流控配置列表。 
      * @return quotas
      */
-    public List<Quota> getQuotas() {
+    public List<QuotaResp> getQuotas() {
         return quotas;
     }
 
-    public void setQuotas(List<Quota> quotas) {
+    public void setQuotas(List<QuotaResp> quotas) {
         this.quotas = quotas;
     }
 

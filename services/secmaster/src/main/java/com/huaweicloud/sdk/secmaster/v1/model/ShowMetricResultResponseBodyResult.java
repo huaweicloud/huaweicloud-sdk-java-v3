@@ -100,7 +100,7 @@ public class ShowMetricResultResponseBodyResult {
     }
 
     /**
-     * 生效的列, 当有该参数时，使用指定列作为指标数据结果
+     * 生效的列，当有该参数时，使用指定列作为指标数据结果
      * @return effectiveColumn
      */
     public String getEffectiveColumn() {

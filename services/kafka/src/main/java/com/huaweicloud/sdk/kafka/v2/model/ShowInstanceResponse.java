@@ -522,12 +522,12 @@ public class ShowInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cross_vpc_info")
 
-    private Object crossVpcInfo;
+    private String crossVpcInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_cross_vpc_info")
 
-    private Object publicCrossVpcInfo;
+    private String publicCrossVpcInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_enable")
@@ -891,7 +891,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 资源规格标识。 **取值范围**： [- dms.instance.kafka.cluster.c3.mini：Kafka实例的基准带宽为100MByte/秒。 - dms.instance.kafka.cluster.c3.small.2：Kafka实例的基准带宽为300MByte/秒。 - dms.instance.kafka.cluster.c3.middle.2：Kafka实例的基准带宽为600MByte/秒。 - dms.instance.kafka.cluster.c3.high.2：Kafka实例的基准带宽为1200MByte/秒。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,ax)
+     * **参数解释**： 资源规格标识。 **取值范围**： [- dms.instance.kafka.cluster.c3.mini：Kafka实例的基准带宽为100MByte/秒。 - dms.instance.kafka.cluster.c3.small.2：Kafka实例的基准带宽为300MByte/秒。 - dms.instance.kafka.cluster.c3.middle.2：Kafka实例的基准带宽为600MByte/秒。 - dms.instance.kafka.cluster.c3.high.2：Kafka实例的基准带宽为1200MByte/秒。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,ax) [不涉及。](tag:hcs)
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {
@@ -1699,7 +1699,7 @@ public class ShowInstanceResponse extends SdkResponse {
         this.newAuthCert = newAuthCert;
     }
 
-    public ShowInstanceResponse withCrossVpcInfo(Object crossVpcInfo) {
+    public ShowInstanceResponse withCrossVpcInfo(String crossVpcInfo) {
         this.crossVpcInfo = crossVpcInfo;
         return this;
     }
@@ -1708,15 +1708,15 @@ public class ShowInstanceResponse extends SdkResponse {
      * **参数解释**： 跨VPC访问信息。 **取值范围**： 不涉及。
      * @return crossVpcInfo
      */
-    public Object getCrossVpcInfo() {
+    public String getCrossVpcInfo() {
         return crossVpcInfo;
     }
 
-    public void setCrossVpcInfo(Object crossVpcInfo) {
+    public void setCrossVpcInfo(String crossVpcInfo) {
         this.crossVpcInfo = crossVpcInfo;
     }
 
-    public ShowInstanceResponse withPublicCrossVpcInfo(Object publicCrossVpcInfo) {
+    public ShowInstanceResponse withPublicCrossVpcInfo(String publicCrossVpcInfo) {
         this.publicCrossVpcInfo = publicCrossVpcInfo;
         return this;
     }
@@ -1725,11 +1725,11 @@ public class ShowInstanceResponse extends SdkResponse {
      * **参数解释**： 公网跨VPC访问信息。 **取值范围**： 不涉及。
      * @return publicCrossVpcInfo
      */
-    public Object getPublicCrossVpcInfo() {
+    public String getPublicCrossVpcInfo() {
         return publicCrossVpcInfo;
     }
 
-    public void setPublicCrossVpcInfo(Object publicCrossVpcInfo) {
+    public void setPublicCrossVpcInfo(String publicCrossVpcInfo) {
         this.publicCrossVpcInfo = publicCrossVpcInfo;
     }
 

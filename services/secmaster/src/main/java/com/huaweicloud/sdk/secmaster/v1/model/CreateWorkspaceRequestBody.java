@@ -81,7 +81,7 @@ public class CreateWorkspaceRequestBody {
     }
 
     /**
-     * 企业项目id
+     * enterprise project id
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -98,7 +98,7 @@ public class CreateWorkspaceRequestBody {
     }
 
     /**
-     * 企业项目名称
+     * enterprise project name
      * @return enterpriseProjectName
      */
     public String getEnterpriseProjectName() {

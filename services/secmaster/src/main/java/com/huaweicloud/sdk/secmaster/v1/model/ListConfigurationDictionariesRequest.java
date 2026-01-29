@@ -75,7 +75,7 @@ public class ListConfigurationDictionariesRequest {
     }
 
     /**
-     * 字典使用场景, 告警为ALERT, 等级云为QUAD_CLOUD
+     * 字典使用场景，告警为ALERT，等级云为QUAD_CLOUD
      * @return scene
      */
     public String getScene() {

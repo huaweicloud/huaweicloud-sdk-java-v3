@@ -47,6 +47,8 @@ import com.huaweicloud.sdk.projectman.v4.model.CreateSystemIssueV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.CreateSystemIssueV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.DeleteAttachmentRequest;
 import com.huaweicloud.sdk.projectman.v4.model.DeleteAttachmentResponse;
+import com.huaweicloud.sdk.projectman.v4.model.DeleteIpdImageInIssueRequest;
+import com.huaweicloud.sdk.projectman.v4.model.DeleteIpdImageInIssueResponse;
 import com.huaweicloud.sdk.projectman.v4.model.DeleteIssueV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.DeleteIssueV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.DeleteIterationV4Request;
@@ -61,6 +63,8 @@ import com.huaweicloud.sdk.projectman.v4.model.DownloadAttachmentRequest;
 import com.huaweicloud.sdk.projectman.v4.model.DownloadAttachmentResponse;
 import com.huaweicloud.sdk.projectman.v4.model.DownloadImageFileRequest;
 import com.huaweicloud.sdk.projectman.v4.model.DownloadImageFileResponse;
+import com.huaweicloud.sdk.projectman.v4.model.DownloadIpdImageInIssueRequest;
+import com.huaweicloud.sdk.projectman.v4.model.DownloadIpdImageInIssueResponse;
 import com.huaweicloud.sdk.projectman.v4.model.DownloadIpdIssueAttachmentRequest;
 import com.huaweicloud.sdk.projectman.v4.model.DownloadIpdIssueAttachmentResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ListAssociatedIssuesRequest;
@@ -187,6 +191,8 @@ import com.huaweicloud.sdk.projectman.v4.model.UpdateScrumPlanInProjectRequest;
 import com.huaweicloud.sdk.projectman.v4.model.UpdateScrumPlanInProjectResponse;
 import com.huaweicloud.sdk.projectman.v4.model.UploadAttachmentsRequest;
 import com.huaweicloud.sdk.projectman.v4.model.UploadAttachmentsResponse;
+import com.huaweicloud.sdk.projectman.v4.model.UploadIpdImageInIssueRequest;
+import com.huaweicloud.sdk.projectman.v4.model.UploadIpdImageInIssueResponse;
 import com.huaweicloud.sdk.projectman.v4.model.UploadIssueImgRequest;
 import com.huaweicloud.sdk.projectman.v4.model.UploadIssueImgResponse;
 
@@ -1072,6 +1078,64 @@ public class ProjectManClient {
     }
 
     /**
+     * 删除工作项描述中的图片
+     *
+     * 删除工作项描述中的图片
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteIpdImageInIssueRequest 请求对象
+     * @return DeleteIpdImageInIssueResponse
+     */
+    public DeleteIpdImageInIssueResponse deleteIpdImageInIssue(DeleteIpdImageInIssueRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.deleteIpdImageInIssue);
+    }
+
+    /**
+     * 删除工作项描述中的图片
+     *
+     * 删除工作项描述中的图片
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteIpdImageInIssueRequest 请求对象
+     * @return SyncInvoker<DeleteIpdImageInIssueRequest, DeleteIpdImageInIssueResponse>
+     */
+    public SyncInvoker<DeleteIpdImageInIssueRequest, DeleteIpdImageInIssueResponse> deleteIpdImageInIssueInvoker(
+        DeleteIpdImageInIssueRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.deleteIpdImageInIssue, hcClient);
+    }
+
+    /**
+     * 下载工作项描述中的图片
+     *
+     * 下载工作项描述中的图片
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadIpdImageInIssueRequest 请求对象
+     * @return DownloadIpdImageInIssueResponse
+     */
+    public DownloadIpdImageInIssueResponse downloadIpdImageInIssue(DownloadIpdImageInIssueRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.downloadIpdImageInIssue);
+    }
+
+    /**
+     * 下载工作项描述中的图片
+     *
+     * 下载工作项描述中的图片
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadIpdImageInIssueRequest 请求对象
+     * @return SyncInvoker<DownloadIpdImageInIssueRequest, DownloadIpdImageInIssueResponse>
+     */
+    public SyncInvoker<DownloadIpdImageInIssueRequest, DownloadIpdImageInIssueResponse> downloadIpdImageInIssueInvoker(
+        DownloadIpdImageInIssueRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.downloadIpdImageInIssue, hcClient);
+    }
+
+    /**
      * 查询项目工作项列表
      *
      * 查询Ipd项目的工作项列表
@@ -1272,6 +1336,35 @@ public class ProjectManClient {
     public SyncInvoker<TransferWorkItemFlowRequest, TransferWorkItemFlowResponse> transferWorkItemFlowInvoker(
         TransferWorkItemFlowRequest request) {
         return new SyncInvoker<>(request, ProjectManMeta.transferWorkItemFlow, hcClient);
+    }
+
+    /**
+     * 上传图片到工作项描述中
+     *
+     * 上传图片并更新到工作项描述中
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadIpdImageInIssueRequest 请求对象
+     * @return UploadIpdImageInIssueResponse
+     */
+    public UploadIpdImageInIssueResponse uploadIpdImageInIssue(UploadIpdImageInIssueRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.uploadIpdImageInIssue);
+    }
+
+    /**
+     * 上传图片到工作项描述中
+     *
+     * 上传图片并更新到工作项描述中
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadIpdImageInIssueRequest 请求对象
+     * @return SyncInvoker<UploadIpdImageInIssueRequest, UploadIpdImageInIssueResponse>
+     */
+    public SyncInvoker<UploadIpdImageInIssueRequest, UploadIpdImageInIssueResponse> uploadIpdImageInIssueInvoker(
+        UploadIpdImageInIssueRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.uploadIpdImageInIssue, hcClient);
     }
 
     /**

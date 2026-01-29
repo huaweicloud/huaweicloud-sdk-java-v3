@@ -1,15 +1,10 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -23,155 +18,15 @@ public class ServerDisk {
 
     private String name;
 
-    /**
-     * 磁盘的分区类型，添加源端时源端磁盘必选 MBR：mbr格式 GPT：gpt格式
-     */
-    public static final class PartitionStyleEnum {
-
-        /**
-         * Enum MBR for value: "MBR"
-         */
-        public static final PartitionStyleEnum MBR = new PartitionStyleEnum("MBR");
-
-        /**
-         * Enum GPT for value: "GPT"
-         */
-        public static final PartitionStyleEnum GPT = new PartitionStyleEnum("GPT");
-
-        private static final Map<String, PartitionStyleEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, PartitionStyleEnum> createStaticFields() {
-            Map<String, PartitionStyleEnum> map = new HashMap<>();
-            map.put("MBR", MBR);
-            map.put("GPT", GPT);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        PartitionStyleEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static PartitionStyleEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PartitionStyleEnum(value));
-        }
-
-        public static PartitionStyleEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof PartitionStyleEnum) {
-                return this.value.equals(((PartitionStyleEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition_style")
 
-    private PartitionStyleEnum partitionStyle;
-
-    /**
-     * 磁盘类型 BOOT：BOOT设备 OS：系统设备
-     */
-    public static final class DeviceUseEnum {
-
-        /**
-         * Enum BOOT for value: "BOOT"
-         */
-        public static final DeviceUseEnum BOOT = new DeviceUseEnum("BOOT");
-
-        /**
-         * Enum OS for value: "OS"
-         */
-        public static final DeviceUseEnum OS = new DeviceUseEnum("OS");
-
-        private static final Map<String, DeviceUseEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, DeviceUseEnum> createStaticFields() {
-            Map<String, DeviceUseEnum> map = new HashMap<>();
-            map.put("BOOT", BOOT);
-            map.put("OS", OS);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        DeviceUseEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static DeviceUseEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DeviceUseEnum(value));
-        }
-
-        public static DeviceUseEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof DeviceUseEnum) {
-                return this.value.equals(((DeviceUseEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String partitionStyle;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "device_use")
 
-    private DeviceUseEnum deviceUse;
+    private String deviceUse;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
@@ -220,37 +75,37 @@ public class ServerDisk {
         this.name = name;
     }
 
-    public ServerDisk withPartitionStyle(PartitionStyleEnum partitionStyle) {
+    public ServerDisk withPartitionStyle(String partitionStyle) {
         this.partitionStyle = partitionStyle;
         return this;
     }
 
     /**
-     * 磁盘的分区类型，添加源端时源端磁盘必选 MBR：mbr格式 GPT：gpt格式
+     * 磁盘的分区类型，添加源端时源端磁盘必选，否则无法通过后续环境检查 （非枚举数据，来源于EVS服务） 常见类型如：MBR：主启动记录分区，GPT：Guid Partition Table，全局分区表。 详细类型请参考EVS服务API文档中“MBR和GPT分区形式有何区别”部分描述
      * @return partitionStyle
      */
-    public PartitionStyleEnum getPartitionStyle() {
+    public String getPartitionStyle() {
         return partitionStyle;
     }
 
-    public void setPartitionStyle(PartitionStyleEnum partitionStyle) {
+    public void setPartitionStyle(String partitionStyle) {
         this.partitionStyle = partitionStyle;
     }
 
-    public ServerDisk withDeviceUse(DeviceUseEnum deviceUse) {
+    public ServerDisk withDeviceUse(String deviceUse) {
         this.deviceUse = deviceUse;
         return this;
     }
 
     /**
-     * 磁盘类型 BOOT：BOOT设备 OS：系统设备
+     * 磁盘类型。 无强约束，可为空值，常见取值如下 NORMAL：平常 OS：系统设备 BOOT：BOOT设备 VOLUME_GROUP：VolumeGroup组成设备 BTRFS：BTRFS组成设备
      * @return deviceUse
      */
-    public DeviceUseEnum getDeviceUse() {
+    public String getDeviceUse() {
         return deviceUse;
     }
 
-    public void setDeviceUse(DeviceUseEnum deviceUse) {
+    public void setDeviceUse(String deviceUse) {
         this.deviceUse = deviceUse;
     }
 

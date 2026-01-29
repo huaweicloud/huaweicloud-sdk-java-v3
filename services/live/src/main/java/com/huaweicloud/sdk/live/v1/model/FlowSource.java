@@ -133,6 +133,81 @@ public class FlowSource {
 
     private FlowSourceDecryption decryption;
 
+    /**
+     * **参数解释**： 转推流状态 **约束限制**： 不涉及 **取值范围**： - CONNECTED：转推中 - DISCONNECTED：转推中断 
+     */
+    public static final class HealthStatusEnum {
+
+        /**
+         * Enum CONNECTED for value: "CONNECTED"
+         */
+        public static final HealthStatusEnum CONNECTED = new HealthStatusEnum("CONNECTED");
+
+        /**
+         * Enum DISCONNECTED for value: "DISCONNECTED"
+         */
+        public static final HealthStatusEnum DISCONNECTED = new HealthStatusEnum("DISCONNECTED");
+
+        private static final Map<String, HealthStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, HealthStatusEnum> createStaticFields() {
+            Map<String, HealthStatusEnum> map = new HashMap<>();
+            map.put("CONNECTED", CONNECTED);
+            map.put("DISCONNECTED", DISCONNECTED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        HealthStatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static HealthStatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HealthStatusEnum(value));
+        }
+
+        public static HealthStatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof HealthStatusEnum) {
+                return this.value.equals(((HealthStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "health_status")
+
+    private HealthStatusEnum healthStatus;
+
     public FlowSource withSourceListenerAddress(String sourceListenerAddress) {
         this.sourceListenerAddress = sourceListenerAddress;
         return this;
@@ -315,6 +390,23 @@ public class FlowSource {
         this.decryption = decryption;
     }
 
+    public FlowSource withHealthStatus(HealthStatusEnum healthStatus) {
+        this.healthStatus = healthStatus;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 转推流状态 **约束限制**： 不涉及 **取值范围**： - CONNECTED：转推中 - DISCONNECTED：转推中断 
+     * @return healthStatus
+     */
+    public HealthStatusEnum getHealthStatus() {
+        return healthStatus;
+    }
+
+    public void setHealthStatus(HealthStatusEnum healthStatus) {
+        this.healthStatus = healthStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -329,7 +421,8 @@ public class FlowSource {
             && Objects.equals(this.streamId, that.streamId) && Objects.equals(this.minLatency, that.minLatency)
             && Objects.equals(this.cidrWhitelist, that.cidrWhitelist)
             && Objects.equals(this.description, that.description) && Objects.equals(this.protocol, that.protocol)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.decryption, that.decryption);
+            && Objects.equals(this.name, that.name) && Objects.equals(this.decryption, that.decryption)
+            && Objects.equals(this.healthStatus, that.healthStatus);
     }
 
     @Override
@@ -342,7 +435,8 @@ public class FlowSource {
             description,
             protocol,
             name,
-            decryption);
+            decryption,
+            healthStatus);
     }
 
     @Override
@@ -358,6 +452,7 @@ public class FlowSource {
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    decryption: ").append(toIndentedString(decryption)).append("\n");
+        sb.append("    healthStatus: ").append(toIndentedString(healthStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

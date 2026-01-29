@@ -31,6 +31,16 @@ public class TaxInfo {
 
     private BigDecimal taxAmount;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "taxVisibleFlag")
+
+    private String taxVisibleFlag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "taxAccountingFlag")
+
+    private String taxAccountingFlag;
+
     public TaxInfo withTaxClass(String taxClass) {
         this.taxClass = taxClass;
         return this;
@@ -99,6 +109,40 @@ public class TaxInfo {
         this.taxAmount = taxAmount;
     }
 
+    public TaxInfo withTaxVisibleFlag(String taxVisibleFlag) {
+        this.taxVisibleFlag = taxVisibleFlag;
+        return this;
+    }
+
+    /**
+     * |参数名称：是否展示| |参数的约束及描述：是否展示。Y：展示 N：不展示|
+     * @return taxVisibleFlag
+     */
+    public String getTaxVisibleFlag() {
+        return taxVisibleFlag;
+    }
+
+    public void setTaxVisibleFlag(String taxVisibleFlag) {
+        this.taxVisibleFlag = taxVisibleFlag;
+    }
+
+    public TaxInfo withTaxAccountingFlag(String taxAccountingFlag) {
+        this.taxAccountingFlag = taxAccountingFlag;
+        return this;
+    }
+
+    /**
+     * |参数名称：是否入账| |参数的约束及描述：是否入账。Y：入账 N：不入账|
+     * @return taxAccountingFlag
+     */
+    public String getTaxAccountingFlag() {
+        return taxAccountingFlag;
+    }
+
+    public void setTaxAccountingFlag(String taxAccountingFlag) {
+        this.taxAccountingFlag = taxAccountingFlag;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -109,12 +153,14 @@ public class TaxInfo {
         }
         TaxInfo that = (TaxInfo) obj;
         return Objects.equals(this.taxClass, that.taxClass) && Objects.equals(this.taxRate, that.taxRate)
-            && Objects.equals(this.subTaxClass, that.subTaxClass) && Objects.equals(this.taxAmount, that.taxAmount);
+            && Objects.equals(this.subTaxClass, that.subTaxClass) && Objects.equals(this.taxAmount, that.taxAmount)
+            && Objects.equals(this.taxVisibleFlag, that.taxVisibleFlag)
+            && Objects.equals(this.taxAccountingFlag, that.taxAccountingFlag);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taxClass, taxRate, subTaxClass, taxAmount);
+        return Objects.hash(taxClass, taxRate, subTaxClass, taxAmount, taxVisibleFlag, taxAccountingFlag);
     }
 
     @Override
@@ -125,6 +171,8 @@ public class TaxInfo {
         sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
         sb.append("    subTaxClass: ").append(toIndentedString(subTaxClass)).append("\n");
         sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
+        sb.append("    taxVisibleFlag: ").append(toIndentedString(taxVisibleFlag)).append("\n");
+        sb.append("    taxAccountingFlag: ").append(toIndentedString(taxAccountingFlag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

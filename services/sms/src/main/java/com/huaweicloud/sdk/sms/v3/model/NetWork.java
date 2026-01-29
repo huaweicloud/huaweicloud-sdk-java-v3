@@ -160,7 +160,7 @@ public class NetWork {
     }
 
     /**
-     * Mac地址
+     * 列表中第一个Mac地址必须非空
      * @return mac
      */
     public String getMac() {

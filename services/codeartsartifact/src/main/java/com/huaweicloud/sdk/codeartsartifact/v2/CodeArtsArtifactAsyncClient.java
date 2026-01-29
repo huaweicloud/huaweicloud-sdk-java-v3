@@ -52,6 +52,8 @@ import com.huaweicloud.sdk.codeartsartifact.v2.model.ListProjectUsersRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ListProjectUsersResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ListSecGuardListRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ListSecGuardListResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListUserPrivilegesRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListUserPrivilegesResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ModifyRepositoryRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ModifyRepositoryResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ResetUserPasswordRequest;
@@ -86,10 +88,14 @@ import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowPackageInfoRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowPackageInfoResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectListRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectListResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectRelatedRepositoryRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectRelatedRepositoryResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectReleaseFilesRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectReleaseFilesResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectStorageInfoRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectStorageInfoResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectVersionsCountRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectVersionsCountResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowReleaseProjectFilesRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowReleaseProjectFilesResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepoUserInfoRequest;
@@ -98,14 +104,20 @@ import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepositoryInfoRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepositoryInfoResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepositoryRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepositoryResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepositoryRolesPrivilegeRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepositoryRolesPrivilegeResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowStorageRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowStorageResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowUserPrivilegesRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowUserPrivilegesResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowUserTicketRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowUserTicketResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowVersionListRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowVersionListResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.UpdateArtifactoryRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.UpdateArtifactoryResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.UpdateRepoRolesPrivilegeRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.UpdateRepoRolesPrivilegeResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
@@ -890,6 +902,35 @@ public class CodeArtsArtifactAsyncClient {
     }
 
     /**
+     * 查询用户权限
+     *
+     * 查询用户在项目下的角色及权限，如创建仓库、编辑仓库、上传、下载、导入和导出等权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserPrivilegesRequest 请求对象
+     * @return CompletableFuture<ListUserPrivilegesResponse>
+     */
+    public CompletableFuture<ListUserPrivilegesResponse> listUserPrivilegesAsync(ListUserPrivilegesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.listUserPrivileges);
+    }
+
+    /**
+     * 查询用户权限
+     *
+     * 查询用户在项目下的角色及权限，如创建仓库、编辑仓库、上传、下载、导入和导出等权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserPrivilegesRequest 请求对象
+     * @return AsyncInvoker<ListUserPrivilegesRequest, ListUserPrivilegesResponse>
+     */
+    public AsyncInvoker<ListUserPrivilegesRequest, ListUserPrivilegesResponse> listUserPrivilegesAsyncInvoker(
+        ListUserPrivilegesRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.listUserPrivileges, hcClient);
+    }
+
+    /**
      * 编辑仓库
      *
      * 编辑仓库
@@ -1389,6 +1430,36 @@ public class CodeArtsArtifactAsyncClient {
     }
 
     /**
+     * 查询项目列表
+     *
+     * 调用该接口可以快速查询项目列表信息，包含仓库和项目的关联关系，以便于仓库的管理和协作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProjectRelatedRepositoryRequest 请求对象
+     * @return CompletableFuture<ShowProjectRelatedRepositoryResponse>
+     */
+    public CompletableFuture<ShowProjectRelatedRepositoryResponse> showProjectRelatedRepositoryAsync(
+        ShowProjectRelatedRepositoryRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.showProjectRelatedRepository);
+    }
+
+    /**
+     * 查询项目列表
+     *
+     * 调用该接口可以快速查询项目列表信息，包含仓库和项目的关联关系，以便于仓库的管理和协作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProjectRelatedRepositoryRequest 请求对象
+     * @return AsyncInvoker<ShowProjectRelatedRepositoryRequest, ShowProjectRelatedRepositoryResponse>
+     */
+    public AsyncInvoker<ShowProjectRelatedRepositoryRequest, ShowProjectRelatedRepositoryResponse> showProjectRelatedRepositoryAsyncInvoker(
+        ShowProjectRelatedRepositoryRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.showProjectRelatedRepository, hcClient);
+    }
+
+    /**
      * 获取项目下文件版本信息列表
      *
      * 获取项目下文件版本信息列表
@@ -1446,6 +1517,36 @@ public class CodeArtsArtifactAsyncClient {
     public AsyncInvoker<ShowProjectStorageInfoRequest, ShowProjectStorageInfoResponse> showProjectStorageInfoAsyncInvoker(
         ShowProjectStorageInfoRequest request) {
         return new AsyncInvoker<>(request, CodeArtsArtifactMeta.showProjectStorageInfo, hcClient);
+    }
+
+    /**
+     * 查询项目下的版本数量
+     *
+     * 当发布库版本众多时，用户可根据项目ID查询对应发布库的版本数量，以便于管理和跟踪不同版本的发布情况。该接口支持通过版本名称过滤。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProjectVersionsCountRequest 请求对象
+     * @return CompletableFuture<ShowProjectVersionsCountResponse>
+     */
+    public CompletableFuture<ShowProjectVersionsCountResponse> showProjectVersionsCountAsync(
+        ShowProjectVersionsCountRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.showProjectVersionsCount);
+    }
+
+    /**
+     * 查询项目下的版本数量
+     *
+     * 当发布库版本众多时，用户可根据项目ID查询对应发布库的版本数量，以便于管理和跟踪不同版本的发布情况。该接口支持通过版本名称过滤。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProjectVersionsCountRequest 请求对象
+     * @return AsyncInvoker<ShowProjectVersionsCountRequest, ShowProjectVersionsCountResponse>
+     */
+    public AsyncInvoker<ShowProjectVersionsCountRequest, ShowProjectVersionsCountResponse> showProjectVersionsCountAsyncInvoker(
+        ShowProjectVersionsCountRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.showProjectVersionsCount, hcClient);
     }
 
     /**
@@ -1568,6 +1669,36 @@ public class CodeArtsArtifactAsyncClient {
     }
 
     /**
+     * 查询仓库权限
+     *
+     * 根据仓库ID查询指定仓库的权限，包含各角色对该仓库的权限信息。当用户需要指定仓库的指定权限时，可调用该接口查看需要授权的角色。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRepositoryRolesPrivilegeRequest 请求对象
+     * @return CompletableFuture<ShowRepositoryRolesPrivilegeResponse>
+     */
+    public CompletableFuture<ShowRepositoryRolesPrivilegeResponse> showRepositoryRolesPrivilegeAsync(
+        ShowRepositoryRolesPrivilegeRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.showRepositoryRolesPrivilege);
+    }
+
+    /**
+     * 查询仓库权限
+     *
+     * 根据仓库ID查询指定仓库的权限，包含各角色对该仓库的权限信息。当用户需要指定仓库的指定权限时，可调用该接口查看需要授权的角色。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRepositoryRolesPrivilegeRequest 请求对象
+     * @return AsyncInvoker<ShowRepositoryRolesPrivilegeRequest, ShowRepositoryRolesPrivilegeResponse>
+     */
+    public AsyncInvoker<ShowRepositoryRolesPrivilegeRequest, ShowRepositoryRolesPrivilegeResponse> showRepositoryRolesPrivilegeAsyncInvoker(
+        ShowRepositoryRolesPrivilegeRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.showRepositoryRolesPrivilege, hcClient);
+    }
+
+    /**
      * 仓库用量查询
      *
      * 仓库用量查询
@@ -1654,6 +1785,35 @@ public class CodeArtsArtifactAsyncClient {
     }
 
     /**
+     * 查询发布库版本列表
+     *
+     * 当发布库版本众多时，用户可根据项目ID分页查询对应发布库下的版本列表。该接口支持版本名称的模糊搜索。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVersionListRequest 请求对象
+     * @return CompletableFuture<ShowVersionListResponse>
+     */
+    public CompletableFuture<ShowVersionListResponse> showVersionListAsync(ShowVersionListRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.showVersionList);
+    }
+
+    /**
+     * 查询发布库版本列表
+     *
+     * 当发布库版本众多时，用户可根据项目ID分页查询对应发布库下的版本列表。该接口支持版本名称的模糊搜索。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVersionListRequest 请求对象
+     * @return AsyncInvoker<ShowVersionListRequest, ShowVersionListResponse>
+     */
+    public AsyncInvoker<ShowVersionListRequest, ShowVersionListResponse> showVersionListAsyncInvoker(
+        ShowVersionListRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.showVersionList, hcClient);
+    }
+
+    /**
      * 编辑非maven仓库信息
      *
      * 编辑非maven仓库信息
@@ -1680,6 +1840,36 @@ public class CodeArtsArtifactAsyncClient {
     public AsyncInvoker<UpdateArtifactoryRequest, UpdateArtifactoryResponse> updateArtifactoryAsyncInvoker(
         UpdateArtifactoryRequest request) {
         return new AsyncInvoker<>(request, CodeArtsArtifactMeta.updateArtifactory, hcClient);
+    }
+
+    /**
+     * 更新角色权限
+     *
+     * 根据角色ID更新指定角色的权限，如创建仓库、编辑仓库、上传、下载、导入和导出等权限，实现权限的集中管理和自动化分配。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRepoRolesPrivilegeRequest 请求对象
+     * @return CompletableFuture<UpdateRepoRolesPrivilegeResponse>
+     */
+    public CompletableFuture<UpdateRepoRolesPrivilegeResponse> updateRepoRolesPrivilegeAsync(
+        UpdateRepoRolesPrivilegeRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsArtifactMeta.updateRepoRolesPrivilege);
+    }
+
+    /**
+     * 更新角色权限
+     *
+     * 根据角色ID更新指定角色的权限，如创建仓库、编辑仓库、上传、下载、导入和导出等权限，实现权限的集中管理和自动化分配。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRepoRolesPrivilegeRequest 请求对象
+     * @return AsyncInvoker<UpdateRepoRolesPrivilegeRequest, UpdateRepoRolesPrivilegeResponse>
+     */
+    public AsyncInvoker<UpdateRepoRolesPrivilegeRequest, UpdateRepoRolesPrivilegeResponse> updateRepoRolesPrivilegeAsyncInvoker(
+        UpdateRepoRolesPrivilegeRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsArtifactMeta.updateRepoRolesPrivilege, hcClient);
     }
 
 }

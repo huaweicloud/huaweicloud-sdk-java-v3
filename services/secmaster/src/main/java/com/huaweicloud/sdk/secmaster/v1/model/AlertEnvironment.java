@@ -26,11 +26,6 @@ public class AlertEnvironment {
     private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cross_workspace_id")
-
-    private String crossWorkspaceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
     private String projectId;
@@ -86,23 +81,6 @@ public class AlertEnvironment {
         this.regionId = regionId;
     }
 
-    public AlertEnvironment withCrossWorkspaceId(String crossWorkspaceId) {
-        this.crossWorkspaceId = crossWorkspaceId;
-        return this;
-    }
-
-    /**
-     * 数据投递前的源工作空间id，在源空间下值为null，投递后为被委托用户的id
-     * @return crossWorkspaceId
-     */
-    public String getCrossWorkspaceId() {
-        return crossWorkspaceId;
-    }
-
-    public void setCrossWorkspaceId(String crossWorkspaceId) {
-        this.crossWorkspaceId = crossWorkspaceId;
-    }
-
     public AlertEnvironment withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -130,14 +108,12 @@ public class AlertEnvironment {
         }
         AlertEnvironment that = (AlertEnvironment) obj;
         return Objects.equals(this.vendorType, that.vendorType) && Objects.equals(this.domainId, that.domainId)
-            && Objects.equals(this.regionId, that.regionId)
-            && Objects.equals(this.crossWorkspaceId, that.crossWorkspaceId)
-            && Objects.equals(this.projectId, that.projectId);
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(vendorType, domainId, regionId, crossWorkspaceId, projectId);
+        return Objects.hash(vendorType, domainId, regionId, projectId);
     }
 
     @Override
@@ -147,7 +123,6 @@ public class AlertEnvironment {
         sb.append("    vendorType: ").append(toIndentedString(vendorType)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
-        sb.append("    crossWorkspaceId: ").append(toIndentedString(crossWorkspaceId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("}");
         return sb.toString();

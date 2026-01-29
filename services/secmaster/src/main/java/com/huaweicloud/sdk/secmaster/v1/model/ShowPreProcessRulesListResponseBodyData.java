@@ -120,6 +120,16 @@ public class ShowPreProcessRulesListResponseBodyData {
     private ActionEnum action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "creator_id")
+
+    private String creatorId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "creator_name")
+
+    private String creatorName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expression")
 
     private String expression;
@@ -133,6 +143,16 @@ public class ShowPreProcessRulesListResponseBodyData {
     @JsonProperty(value = "update_time")
 
     private String updateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "modifier_id")
+
+    private String modifierId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "modifier_name")
+
+    private String modifierName;
 
     public ShowPreProcessRulesListResponseBodyData withId(String id) {
         this.id = id;
@@ -270,6 +290,40 @@ public class ShowPreProcessRulesListResponseBodyData {
         this.action = action;
     }
 
+    public ShowPreProcessRulesListResponseBodyData withCreatorId(String creatorId) {
+        this.creatorId = creatorId;
+        return this;
+    }
+
+    /**
+     * 创建者id
+     * @return creatorId
+     */
+    public String getCreatorId() {
+        return creatorId;
+    }
+
+    public void setCreatorId(String creatorId) {
+        this.creatorId = creatorId;
+    }
+
+    public ShowPreProcessRulesListResponseBodyData withCreatorName(String creatorName) {
+        this.creatorName = creatorName;
+        return this;
+    }
+
+    /**
+     * 创建者名称
+     * @return creatorName
+     */
+    public String getCreatorName() {
+        return creatorName;
+    }
+
+    public void setCreatorName(String creatorName) {
+        this.creatorName = creatorName;
+    }
+
     public ShowPreProcessRulesListResponseBodyData withExpression(String expression) {
         this.expression = expression;
         return this;
@@ -321,6 +375,40 @@ public class ShowPreProcessRulesListResponseBodyData {
         this.updateTime = updateTime;
     }
 
+    public ShowPreProcessRulesListResponseBodyData withModifierId(String modifierId) {
+        this.modifierId = modifierId;
+        return this;
+    }
+
+    /**
+     * 修改者id
+     * @return modifierId
+     */
+    public String getModifierId() {
+        return modifierId;
+    }
+
+    public void setModifierId(String modifierId) {
+        this.modifierId = modifierId;
+    }
+
+    public ShowPreProcessRulesListResponseBodyData withModifierName(String modifierName) {
+        this.modifierName = modifierName;
+        return this;
+    }
+
+    /**
+     * 修改者名称
+     * @return modifierName
+     */
+    public String getModifierName() {
+        return modifierName;
+    }
+
+    public void setModifierName(String modifierName) {
+        this.modifierName = modifierName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -334,8 +422,10 @@ public class ShowPreProcessRulesListResponseBodyData {
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.workspaceId, that.workspaceId)
             && Objects.equals(this.mappingId, that.mappingId) && Objects.equals(this.mapperId, that.mapperId)
             && Objects.equals(this.mapperTypeId, that.mapperTypeId) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.creatorId, that.creatorId) && Objects.equals(this.creatorName, that.creatorName)
             && Objects.equals(this.expression, that.expression) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.updateTime, that.updateTime);
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.modifierId, that.modifierId)
+            && Objects.equals(this.modifierName, that.modifierName);
     }
 
     @Override
@@ -348,9 +438,13 @@ public class ShowPreProcessRulesListResponseBodyData {
             mapperId,
             mapperTypeId,
             action,
+            creatorId,
+            creatorName,
             expression,
             createTime,
-            updateTime);
+            updateTime,
+            modifierId,
+            modifierName);
     }
 
     @Override
@@ -365,9 +459,13 @@ public class ShowPreProcessRulesListResponseBodyData {
         sb.append("    mapperId: ").append(toIndentedString(mapperId)).append("\n");
         sb.append("    mapperTypeId: ").append(toIndentedString(mapperTypeId)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
+        sb.append("    creatorId: ").append(toIndentedString(creatorId)).append("\n");
+        sb.append("    creatorName: ").append(toIndentedString(creatorName)).append("\n");
         sb.append("    expression: ").append(toIndentedString(expression)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    modifierId: ").append(toIndentedString(modifierId)).append("\n");
+        sb.append("    modifierName: ").append(toIndentedString(modifierName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

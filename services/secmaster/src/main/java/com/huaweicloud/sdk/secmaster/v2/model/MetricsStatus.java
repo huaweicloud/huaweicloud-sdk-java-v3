@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class MetricsStatus {
 
     /**
-     * **参数解释**: 目录指标 - STATUS 状态  **约束限制** 不涉及 **取值范围**: - STATUS  **默认值** 不涉及  
+     * **参数解释**: 目录指标 - STATUS 状态  **约束限制** 不涉及 **取值范围**: - STATUS  **默认值** 不涉及
      */
     public static final class MetricsCategoryEnum {
 
@@ -96,7 +96,7 @@ public class MetricsStatus {
     }
 
     /**
-     * **参数解释**: 目录指标 - STATUS 状态  **约束限制** 不涉及 **取值范围**: - STATUS  **默认值** 不涉及  
+     * **参数解释**: 目录指标 - STATUS 状态  **约束限制** 不涉及 **取值范围**: - STATUS  **默认值** 不涉及
      * @return metricsCategory
      */
     public MetricsCategoryEnum getMetricsCategory() {

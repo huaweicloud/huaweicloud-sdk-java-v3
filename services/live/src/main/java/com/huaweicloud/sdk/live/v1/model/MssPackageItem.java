@@ -14,6 +14,11 @@ import java.util.function.Consumer;
 public class MssPackageItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url")
 
     private String url;
@@ -92,6 +97,28 @@ public class MssPackageItem {
     @JsonProperty(value = "slave_url")
 
     private String slaveUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "manifest_selection")
+
+    private ManifestSelection manifestSelection;
+
+    public MssPackageItem withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * package唯一标识id，由服务创建并在查询时返回，修改endpoints时需要携带。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public MssPackageItem withUrl(String url) {
         this.url = url;
@@ -414,6 +441,32 @@ public class MssPackageItem {
         this.slaveUrl = slaveUrl;
     }
 
+    public MssPackageItem withManifestSelection(ManifestSelection manifestSelection) {
+        this.manifestSelection = manifestSelection;
+        return this;
+    }
+
+    public MssPackageItem withManifestSelection(Consumer<ManifestSelection> manifestSelectionSetter) {
+        if (this.manifestSelection == null) {
+            this.manifestSelection = new ManifestSelection();
+            manifestSelectionSetter.accept(this.manifestSelection);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get manifestSelection
+     * @return manifestSelection
+     */
+    public ManifestSelection getManifestSelection() {
+        return manifestSelection;
+    }
+
+    public void setManifestSelection(ManifestSelection manifestSelection) {
+        this.manifestSelection = manifestSelection;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -423,7 +476,8 @@ public class MssPackageItem {
             return false;
         }
         MssPackageItem that = (MssPackageItem) obj;
-        return Objects.equals(this.url, that.url) && Objects.equals(this.streamSelection, that.streamSelection)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.streamSelection, that.streamSelection)
             && Objects.equals(this.segmentDurationSeconds, that.segmentDurationSeconds)
             && Objects.equals(this.playlistWindowSeconds, that.playlistWindowSeconds)
             && Objects.equals(this.encryption, that.encryption) && Objects.equals(this.extArgs, that.extArgs)
@@ -435,12 +489,14 @@ public class MssPackageItem {
             && Objects.equals(this.cdnIdentifierHeader, that.cdnIdentifierHeader)
             && Objects.equals(this.originDomainMaster, that.originDomainMaster)
             && Objects.equals(this.originDomainSlave, that.originDomainSlave)
-            && Objects.equals(this.manifestName, that.manifestName) && Objects.equals(this.slaveUrl, that.slaveUrl);
+            && Objects.equals(this.manifestName, that.manifestName) && Objects.equals(this.slaveUrl, that.slaveUrl)
+            && Objects.equals(this.manifestSelection, that.manifestSelection);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(url,
+        return Objects.hash(id,
+            url,
             streamSelection,
             segmentDurationSeconds,
             playlistWindowSeconds,
@@ -455,13 +511,15 @@ public class MssPackageItem {
             originDomainMaster,
             originDomainSlave,
             manifestName,
-            slaveUrl);
+            slaveUrl,
+            manifestSelection);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MssPackageItem {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    streamSelection: ").append(toIndentedString(streamSelection)).append("\n");
         sb.append("    segmentDurationSeconds: ").append(toIndentedString(segmentDurationSeconds)).append("\n");
@@ -478,6 +536,7 @@ public class MssPackageItem {
         sb.append("    originDomainSlave: ").append(toIndentedString(originDomainSlave)).append("\n");
         sb.append("    manifestName: ").append(toIndentedString(manifestName)).append("\n");
         sb.append("    slaveUrl: ").append(toIndentedString(slaveUrl)).append("\n");
+        sb.append("    manifestSelection: ").append(toIndentedString(manifestSelection)).append("\n");
         sb.append("}");
         return sb.toString();
     }

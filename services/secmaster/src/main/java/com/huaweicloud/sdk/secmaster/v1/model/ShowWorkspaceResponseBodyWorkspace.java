@@ -111,7 +111,7 @@ public class ShowWorkspaceResponseBodyWorkspace {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workspace_agency_list")
 
-    private List<CreateWorkspaceResponseBodyWorkspaceAgencyList> workspaceAgencyList = null;
+    private List<UpdateWorkspaceResponseBodyWorkspaceAgencyList> workspaceAgencyList = null;
 
     public ShowWorkspaceResponseBodyWorkspace withId(String id) {
         this.id = id;
@@ -437,13 +437,13 @@ public class ShowWorkspaceResponseBodyWorkspace {
     }
 
     public ShowWorkspaceResponseBodyWorkspace withWorkspaceAgencyList(
-        List<CreateWorkspaceResponseBodyWorkspaceAgencyList> workspaceAgencyList) {
+        List<UpdateWorkspaceResponseBodyWorkspaceAgencyList> workspaceAgencyList) {
         this.workspaceAgencyList = workspaceAgencyList;
         return this;
     }
 
     public ShowWorkspaceResponseBodyWorkspace addWorkspaceAgencyListItem(
-        CreateWorkspaceResponseBodyWorkspaceAgencyList workspaceAgencyListItem) {
+        UpdateWorkspaceResponseBodyWorkspaceAgencyList workspaceAgencyListItem) {
         if (this.workspaceAgencyList == null) {
             this.workspaceAgencyList = new ArrayList<>();
         }
@@ -452,7 +452,7 @@ public class ShowWorkspaceResponseBodyWorkspace {
     }
 
     public ShowWorkspaceResponseBodyWorkspace withWorkspaceAgencyList(
-        Consumer<List<CreateWorkspaceResponseBodyWorkspaceAgencyList>> workspaceAgencyListSetter) {
+        Consumer<List<UpdateWorkspaceResponseBodyWorkspaceAgencyList>> workspaceAgencyListSetter) {
         if (this.workspaceAgencyList == null) {
             this.workspaceAgencyList = new ArrayList<>();
         }
@@ -464,11 +464,11 @@ public class ShowWorkspaceResponseBodyWorkspace {
      * 纳管空间列表
      * @return workspaceAgencyList
      */
-    public List<CreateWorkspaceResponseBodyWorkspaceAgencyList> getWorkspaceAgencyList() {
+    public List<UpdateWorkspaceResponseBodyWorkspaceAgencyList> getWorkspaceAgencyList() {
         return workspaceAgencyList;
     }
 
-    public void setWorkspaceAgencyList(List<CreateWorkspaceResponseBodyWorkspaceAgencyList> workspaceAgencyList) {
+    public void setWorkspaceAgencyList(List<UpdateWorkspaceResponseBodyWorkspaceAgencyList> workspaceAgencyList) {
         this.workspaceAgencyList = workspaceAgencyList;
     }
 

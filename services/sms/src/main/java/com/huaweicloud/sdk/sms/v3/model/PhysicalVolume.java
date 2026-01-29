@@ -71,7 +71,7 @@ public class PhysicalVolume {
     }
 
     /**
-     * 分区类型，普通分区，启动分区，系统分区
+     * 磁盘类型。 无强约束，可为空值，常见取值如下 NORMAL：平常 OS：系统设备 BOOT：BOOT设备 VOLUME_GROUP：VolumeGroup组成设备 BTRFS：BTRFS组成设备
      * @return deviceUse
      */
     public String getDeviceUse() {

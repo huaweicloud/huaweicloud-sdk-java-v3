@@ -30,6 +30,16 @@ public class ListIndicatorsResponse extends SdkResponse {
     private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "size")
+
+    private Integer size;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page")
+
+    private Integer page;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
     private List<IndicatorDetail> data = null;
@@ -90,6 +100,44 @@ public class ListIndicatorsResponse extends SdkResponse {
 
     public void setTotal(Integer total) {
         this.total = total;
+    }
+
+    public ListIndicatorsResponse withSize(Integer size) {
+        this.size = size;
+        return this;
+    }
+
+    /**
+     * 分页大小
+     * minimum: 0
+     * maximum: 1000
+     * @return size
+     */
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
+    public ListIndicatorsResponse withPage(Integer page) {
+        this.page = page;
+        return this;
+    }
+
+    /**
+     * 分页的页码
+     * minimum: 0
+     * maximum: 10000
+     * @return page
+     */
+    public Integer getPage() {
+        return page;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
     }
 
     public ListIndicatorsResponse withData(List<IndicatorDetail> data) {
@@ -154,13 +202,14 @@ public class ListIndicatorsResponse extends SdkResponse {
         }
         ListIndicatorsResponse that = (ListIndicatorsResponse) obj;
         return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
-            && Objects.equals(this.total, that.total) && Objects.equals(this.data, that.data)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.data, that.data)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, message, total, data, xRequestId);
+        return Objects.hash(code, message, total, size, page, data, xRequestId);
     }
 
     @Override
@@ -170,6 +219,8 @@ public class ListIndicatorsResponse extends SdkResponse {
         sb.append("    code: ").append(toIndentedString(code)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");

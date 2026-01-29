@@ -82,11 +82,6 @@ public class CreateIndicatorDetail {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dataclass_id")
-
-    private String dataclassId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workspace_id")
 
     private String workspaceId;
@@ -95,11 +90,6 @@ public class CreateIndicatorDetail {
     @JsonProperty(value = "project_id")
 
     private String projectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dataclass")
-
-    private DataClassRefPojo dataclass;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
@@ -378,23 +368,6 @@ public class CreateIndicatorDetail {
         this.name = name;
     }
 
-    public CreateIndicatorDetail withDataclassId(String dataclassId) {
-        this.dataclassId = dataclassId;
-        return this;
-    }
-
-    /**
-     * 数据类ID
-     * @return dataclassId
-     */
-    public String getDataclassId() {
-        return dataclassId;
-    }
-
-    public void setDataclassId(String dataclassId) {
-        this.dataclassId = dataclassId;
-    }
-
     public CreateIndicatorDetail withWorkspaceId(String workspaceId) {
         this.workspaceId = workspaceId;
         return this;
@@ -427,32 +400,6 @@ public class CreateIndicatorDetail {
 
     public void setProjectId(String projectId) {
         this.projectId = projectId;
-    }
-
-    public CreateIndicatorDetail withDataclass(DataClassRefPojo dataclass) {
-        this.dataclass = dataclass;
-        return this;
-    }
-
-    public CreateIndicatorDetail withDataclass(Consumer<DataClassRefPojo> dataclassSetter) {
-        if (this.dataclass == null) {
-            this.dataclass = new DataClassRefPojo();
-            dataclassSetter.accept(this.dataclass);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get dataclass
-     * @return dataclass
-     */
-    public DataClassRefPojo getDataclass() {
-        return dataclass;
-    }
-
-    public void setDataclass(DataClassRefPojo dataclass) {
-        this.dataclass = dataclass;
     }
 
     public CreateIndicatorDetail withCreateTime(String createTime) {
@@ -506,8 +453,7 @@ public class CreateIndicatorDetail {
             && Objects.equals(this.firstReportTime, that.firstReportTime)
             && Objects.equals(this.lastReportTime, that.lastReportTime) && Objects.equals(this.id, that.id)
             && Objects.equals(this.indicatorType, that.indicatorType) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.dataclassId, that.dataclassId) && Objects.equals(this.workspaceId, that.workspaceId)
-            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.dataclass, that.dataclass)
+            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
@@ -527,10 +473,8 @@ public class CreateIndicatorDetail {
             id,
             indicatorType,
             name,
-            dataclassId,
             workspaceId,
             projectId,
-            dataclass,
             createTime,
             updateTime);
     }
@@ -553,10 +497,8 @@ public class CreateIndicatorDetail {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    indicatorType: ").append(toIndentedString(indicatorType)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    dataclassId: ").append(toIndentedString(dataclassId)).append("\n");
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    dataclass: ").append(toIndentedString(dataclass)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");

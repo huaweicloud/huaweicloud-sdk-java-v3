@@ -51,7 +51,7 @@ public class ListProductsRespHourly {
     }
 
     /**
-     * **参数解释**： 消息引擎的版本。 **取值范围**： - 3.8.35 [- 3.12.13](tag:srg) [- AMQP-0-9-1](tag:hws,hws_hk,hws_eu)
+     * **参数解释**： 消息引擎的版本。 **取值范围**： [- 3.8.35](tag:hws,hws_hk,hws_eu,cmcc,ctc,sbc,hk_sbc,g42,hk_g42,tm,hk_tm,ax,srg) [- 3.12.13](tag:srg) [- 3.13.7](tag:dt) [- AMQP-0-9-1](tag:hws,hws_hk,hws_eu)
      * @return version
      */
     public String getVersion() {

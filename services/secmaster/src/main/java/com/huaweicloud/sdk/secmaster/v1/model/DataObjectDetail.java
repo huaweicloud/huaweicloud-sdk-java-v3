@@ -17,9 +17,9 @@ public class DataObjectDetail {
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dataobject")
+    @JsonProperty(value = "data_object")
 
-    private Object dataobject;
+    private Object dataObject;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dataclass_ref")
@@ -73,21 +73,21 @@ public class DataObjectDetail {
         this.createTime = createTime;
     }
 
-    public DataObjectDetail withDataobject(Object dataobject) {
-        this.dataobject = dataobject;
+    public DataObjectDetail withDataObject(Object dataObject) {
+        this.dataObject = dataObject;
         return this;
     }
 
     /**
      * 数据对象
-     * @return dataobject
+     * @return dataObject
      */
-    public Object getDataobject() {
-        return dataobject;
+    public Object getDataObject() {
+        return dataObject;
     }
 
-    public void setDataobject(Object dataobject) {
-        this.dataobject = dataobject;
+    public void setDataObject(Object dataObject) {
+        this.dataObject = dataObject;
     }
 
     public DataObjectDetail withDataclassRef(AlertDetailDataclassRef dataclassRef) {
@@ -231,7 +231,7 @@ public class DataObjectDetail {
             return false;
         }
         DataObjectDetail that = (DataObjectDetail) obj;
-        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.dataobject, that.dataobject)
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.dataObject, that.dataObject)
             && Objects.equals(this.dataclassRef, that.dataclassRef)
             && Objects.equals(this.formatVersion, that.formatVersion) && Objects.equals(this.id, that.id)
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.updateTime, that.updateTime)
@@ -241,7 +241,7 @@ public class DataObjectDetail {
     @Override
     public int hashCode() {
         return Objects
-            .hash(createTime, dataobject, dataclassRef, formatVersion, id, projectId, updateTime, version, workspaceId);
+            .hash(createTime, dataObject, dataclassRef, formatVersion, id, projectId, updateTime, version, workspaceId);
     }
 
     @Override
@@ -249,7 +249,7 @@ public class DataObjectDetail {
         StringBuilder sb = new StringBuilder();
         sb.append("class DataObjectDetail {\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    dataobject: ").append(toIndentedString(dataobject)).append("\n");
+        sb.append("    dataObject: ").append(toIndentedString(dataObject)).append("\n");
         sb.append("    dataclassRef: ").append(toIndentedString(dataclassRef)).append("\n");
         sb.append("    formatVersion: ").append(toIndentedString(formatVersion)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");

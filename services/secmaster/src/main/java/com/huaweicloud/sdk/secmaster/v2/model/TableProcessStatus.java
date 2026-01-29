@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * **参数解释**: 表处理状态 - COMPLETED 处理完成 - CREATING 创建中 - UPDATING 更新中 - DELETING 删除中 - TRUNCATING 清空中 - CREATE_FAILED 创建失败 - UPDATING_FAILED 更新失败 - DELETING_FAILED 删除失败 - TRUNCATE_FAILED 清空失败  **约束限制** 不涉及 **取值范围**: - COMPLETED - CREATING - UPDATING - DELETING - TRUNCATING - CREATE_FAILED - UPDATING_FAILED - DELETING_FAILED - TRUNCATE_FAILED  **默认值** 不涉及        
+ * **参数解释**: 表处理状态 - COMPLETED 处理完成 - CREATING 创建中 - UPDATING 更新中 - DELETING 删除中 - TRUNCATING 清空中 - CREATE_FAILED 创建失败 - UPDATING_FAILED 更新失败 - DELETING_FAILED 删除失败 - TRUNCATE_FAILED 清空失败  **约束限制** 不涉及 **取值范围**: - COMPLETED - CREATING - UPDATING - DELETING - TRUNCATING - CREATE_FAILED - UPDATING_FAILED - DELETING_FAILED - TRUNCATE_FAILED  **默认值** 不涉及
  */
 public class TableProcessStatus {
 

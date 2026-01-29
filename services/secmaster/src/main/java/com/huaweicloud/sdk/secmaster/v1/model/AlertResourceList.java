@@ -58,7 +58,7 @@ public class AlertResourceList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private String tags;
+    private Object tags;
 
     public AlertResourceList withId(String id) {
         this.id = id;
@@ -213,7 +213,7 @@ public class AlertResourceList {
         this.epName = epName;
     }
 
-    public AlertResourceList withTags(String tags) {
+    public AlertResourceList withTags(Object tags) {
         this.tags = tags;
         return this;
     }
@@ -222,11 +222,11 @@ public class AlertResourceList {
      * 资产标签 1、最多50个key/values对 2、values：最大255字符，取值范围：字母数字,空格,+, -, =, ., _, :, /,@
      * @return tags
      */
-    public String getTags() {
+    public Object getTags() {
         return tags;
     }
 
-    public void setTags(String tags) {
+    public void setTags(Object tags) {
         this.tags = tags;
     }
 

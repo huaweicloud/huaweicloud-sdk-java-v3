@@ -17,14 +17,14 @@ public class ListObsBucketsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private List<ListObsBucketsResponseBody> body = null;
+    private List<ObsBucketEntity> body = null;
 
-    public ListObsBucketsResponse withBody(List<ListObsBucketsResponseBody> body) {
+    public ListObsBucketsResponse withBody(List<ObsBucketEntity> body) {
         this.body = body;
         return this;
     }
 
-    public ListObsBucketsResponse addBodyItem(ListObsBucketsResponseBody bodyItem) {
+    public ListObsBucketsResponse addBodyItem(ObsBucketEntity bodyItem) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class ListObsBucketsResponse extends SdkResponse {
         return this;
     }
 
-    public ListObsBucketsResponse withBody(Consumer<List<ListObsBucketsResponseBody>> bodySetter) {
+    public ListObsBucketsResponse withBody(Consumer<List<ObsBucketEntity>> bodySetter) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -41,14 +41,14 @@ public class ListObsBucketsResponse extends SdkResponse {
     }
 
     /**
-     * Get body
+     * Obs桶查询列表
      * @return body
      */
-    public List<ListObsBucketsResponseBody> getBody() {
+    public List<ObsBucketEntity> getBody() {
         return body;
     }
 
-    public void setBody(List<ListObsBucketsResponseBody> body) {
+    public void setBody(List<ObsBucketEntity> body) {
         this.body = body;
     }
 

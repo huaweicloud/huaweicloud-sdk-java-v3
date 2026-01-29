@@ -14,8 +14,7 @@ import java.util.stream.Collectors;
 
 public class SmsRegion {
 
-    public static final Region AP_SOUTHEAST_1 =
-        new Region("ap-southeast-1", "https://sms.ap-southeast-1.myhuaweicloud.com");
+    public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://sms.cn-north-4.myhuaweicloud.com");
 
     public static final Region AP_SOUTHEAST_3 =
         new Region("ap-southeast-3", "https://sms.ap-southeast-3.myhuaweicloud.com");
@@ -31,7 +30,7 @@ public class SmsRegion {
 
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
-        map.put("ap-southeast-1", AP_SOUTHEAST_1);
+        map.put("cn-north-4", CN_NORTH_4);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
         map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
         map.put("ru-moscow-1", RU_MOSCOW_1);

@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class AlertSeverities {
 
     /**
-     * **参数解释**: 目录 - SEVERITY 严重性  **约束限制** 不涉及 **取值范围**: - SEVERITY  **默认值** 不涉及  
+     * **参数解释**: 目录 - SEVERITY 严重性  **约束限制** 不涉及 **取值范围**: - SEVERITY  **默认值** 不涉及
      */
     public static final class SeverityCategoryEnum {
 
@@ -96,7 +96,7 @@ public class AlertSeverities {
     }
 
     /**
-     * **参数解释**: 目录 - SEVERITY 严重性  **约束限制** 不涉及 **取值范围**: - SEVERITY  **默认值** 不涉及  
+     * **参数解释**: 目录 - SEVERITY 严重性  **约束限制** 不涉及 **取值范围**: - SEVERITY  **默认值** 不涉及
      * @return severityCategory
      */
     public SeverityCategoryEnum getSeverityCategory() {

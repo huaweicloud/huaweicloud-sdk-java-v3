@@ -11,6 +11,8 @@ import com.huaweicloud.sdk.secmaster.v2.model.CreateAnalysisScriptRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateAnalysisScriptResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateCodeSegmentRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateCodeSegmentResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateCollectConfigRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateCollectConfigResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateCustomizedCheckitemRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateCustomizedCheckitemResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateCustomizedCompliancePackageRequest;
@@ -23,6 +25,8 @@ import com.huaweicloud.sdk.secmaster.v2.model.CreatePipeRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreatePipeResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateRetrieveScriptRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateRetrieveScriptResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateSqlRenderRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.CreateSqlRenderResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateSqlValidationRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateSqlValidationResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.CreateTableAnalysisRequest;
@@ -75,6 +79,8 @@ import com.huaweicloud.sdk.secmaster.v2.model.ListAnalysisScriptsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListAnalysisScriptsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListCodeSegmentsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListCodeSegmentsResponse;
+import com.huaweicloud.sdk.secmaster.v2.model.ListCollectConfigRequest;
+import com.huaweicloud.sdk.secmaster.v2.model.ListCollectConfigResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListDataTransformationMetricsRequest;
 import com.huaweicloud.sdk.secmaster.v2.model.ListDataTransformationMetricsResponse;
 import com.huaweicloud.sdk.secmaster.v2.model.ListDataTransformationsRequest;
@@ -286,6 +292,35 @@ public class SecMasterClient {
     }
 
     /**
+     * 保存云服务采集配置
+     *
+     * 保存云服务采集配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCollectConfigRequest 请求对象
+     * @return CreateCollectConfigResponse
+     */
+    public CreateCollectConfigResponse createCollectConfig(CreateCollectConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.createCollectConfig);
+    }
+
+    /**
+     * 保存云服务采集配置
+     *
+     * 保存云服务采集配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCollectConfigRequest 请求对象
+     * @return SyncInvoker<CreateCollectConfigRequest, CreateCollectConfigResponse>
+     */
+    public SyncInvoker<CreateCollectConfigRequest, CreateCollectConfigResponse> createCollectConfigInvoker(
+        CreateCollectConfigRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.createCollectConfig, hcClient);
+    }
+
+    /**
      * 新增自定义检查项
      *
      * 新增自定义检查项
@@ -457,6 +492,35 @@ public class SecMasterClient {
     public SyncInvoker<CreateRetrieveScriptRequest, CreateRetrieveScriptResponse> createRetrieveScriptInvoker(
         CreateRetrieveScriptRequest request) {
         return new SyncInvoker<>(request, SecMasterMeta.createRetrieveScript, hcClient);
+    }
+
+    /**
+     * Adhoc sql参数渲染
+     *
+     * Adhoc sql参数渲染
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSqlRenderRequest 请求对象
+     * @return CreateSqlRenderResponse
+     */
+    public CreateSqlRenderResponse createSqlRender(CreateSqlRenderRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.createSqlRender);
+    }
+
+    /**
+     * Adhoc sql参数渲染
+     *
+     * Adhoc sql参数渲染
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSqlRenderRequest 请求对象
+     * @return SyncInvoker<CreateSqlRenderRequest, CreateSqlRenderResponse>
+     */
+    public SyncInvoker<CreateSqlRenderRequest, CreateSqlRenderResponse> createSqlRenderInvoker(
+        CreateSqlRenderRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.createSqlRender, hcClient);
     }
 
     /**
@@ -1181,6 +1245,35 @@ public class SecMasterClient {
     public SyncInvoker<ListCodeSegmentsRequest, ListCodeSegmentsResponse> listCodeSegmentsInvoker(
         ListCodeSegmentsRequest request) {
         return new SyncInvoker<>(request, SecMasterMeta.listCodeSegments, hcClient);
+    }
+
+    /**
+     * 获取云服务采集配置
+     *
+     * 获取云服务采集配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCollectConfigRequest 请求对象
+     * @return ListCollectConfigResponse
+     */
+    public ListCollectConfigResponse listCollectConfig(ListCollectConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.listCollectConfig);
+    }
+
+    /**
+     * 获取云服务采集配置
+     *
+     * 获取云服务采集配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCollectConfigRequest 请求对象
+     * @return SyncInvoker<ListCollectConfigRequest, ListCollectConfigResponse>
+     */
+    public SyncInvoker<ListCollectConfigRequest, ListCollectConfigResponse> listCollectConfigInvoker(
+        ListCollectConfigRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.listCollectConfig, hcClient);
     }
 
     /**

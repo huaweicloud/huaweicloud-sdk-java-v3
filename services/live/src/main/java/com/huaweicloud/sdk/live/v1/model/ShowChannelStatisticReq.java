@@ -105,6 +105,87 @@ public class ShowChannelStatisticReq {
 
     private SCTE35StatisticReq scte35;
 
+    /**
+     * **参数解释**： 频道对应的region类型，是主region，还是备region **约束限制**： 如果region_type不填，或是没有该字段，则按照主region处理 **取值范围**： - master: 主region - slave: 备region - all: 所有region 
+     */
+    public static final class RegionTypeEnum {
+
+        /**
+         * Enum MASTER for value: "master"
+         */
+        public static final RegionTypeEnum MASTER = new RegionTypeEnum("master");
+
+        /**
+         * Enum SLAVE for value: "slave"
+         */
+        public static final RegionTypeEnum SLAVE = new RegionTypeEnum("slave");
+
+        /**
+         * Enum ALL for value: "all"
+         */
+        public static final RegionTypeEnum ALL = new RegionTypeEnum("all");
+
+        private static final Map<String, RegionTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RegionTypeEnum> createStaticFields() {
+            Map<String, RegionTypeEnum> map = new HashMap<>();
+            map.put("master", MASTER);
+            map.put("slave", SLAVE);
+            map.put("all", ALL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        RegionTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static RegionTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RegionTypeEnum(value));
+        }
+
+        public static RegionTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof RegionTypeEnum) {
+                return this.value.equals(((RegionTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region_type")
+
+    private RegionTypeEnum regionType;
+
     public ShowChannelStatisticReq withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -199,6 +280,23 @@ public class ShowChannelStatisticReq {
         this.scte35 = scte35;
     }
 
+    public ShowChannelStatisticReq withRegionType(RegionTypeEnum regionType) {
+        this.regionType = regionType;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 频道对应的region类型，是主region，还是备region **约束限制**： 如果region_type不填，或是没有该字段，则按照主region处理 **取值范围**： - master: 主region - slave: 备region - all: 所有region 
+     * @return regionType
+     */
+    public RegionTypeEnum getRegionType() {
+        return regionType;
+    }
+
+    public void setRegionType(RegionTypeEnum regionType) {
+        this.regionType = regionType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -210,12 +308,12 @@ public class ShowChannelStatisticReq {
         ShowChannelStatisticReq that = (ShowChannelStatisticReq) obj;
         return Objects.equals(this.domain, that.domain) && Objects.equals(this.appName, that.appName)
             && Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.scte35, that.scte35);
+            && Objects.equals(this.scte35, that.scte35) && Objects.equals(this.regionType, that.regionType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domain, appName, id, type, scte35);
+        return Objects.hash(domain, appName, id, type, scte35, regionType);
     }
 
     @Override
@@ -227,6 +325,7 @@ public class ShowChannelStatisticReq {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    scte35: ").append(toIndentedString(scte35)).append("\n");
+        sb.append("    regionType: ").append(toIndentedString(regionType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

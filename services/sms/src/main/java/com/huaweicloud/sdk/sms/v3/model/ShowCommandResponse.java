@@ -28,7 +28,7 @@ public class ShowCommandResponse extends SdkResponse {
     }
 
     /**
-     * 命令名称，分为：START、STOP、DELETE、SYNC、SKIP
+     * 命令名称，分为：START、STOP、SKIP、PREMIGRATE、TASK_NOT_STARTED、TASK_HAS_STOPPED、TASK_HAS_FINISHED
      * @return commandName
      */
     public String getCommandName() {

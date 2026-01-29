@@ -28,21 +28,6 @@ public class BatchCreateDataobjectRelationsResponse extends SdkResponse {
     private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total")
-
-    private Integer total;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limit")
-
-    private Integer limit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "offset")
-
-    private Integer offset;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "success")
 
     private Boolean success;
@@ -103,63 +88,6 @@ public class BatchCreateDataobjectRelationsResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public BatchCreateDataobjectRelationsResponse withTotal(Integer total) {
-        this.total = total;
-        return this;
-    }
-
-    /**
-     * 总数
-     * minimum: 0
-     * maximum: 10000
-     * @return total
-     */
-    public Integer getTotal() {
-        return total;
-    }
-
-    public void setTotal(Integer total) {
-        this.total = total;
-    }
-
-    public BatchCreateDataobjectRelationsResponse withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    /**
-     * 分页大小
-     * minimum: 0
-     * maximum: 10000
-     * @return limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
-    public BatchCreateDataobjectRelationsResponse withOffset(Integer offset) {
-        this.offset = offset;
-        return this;
-    }
-
-    /**
-     * 偏移量
-     * minimum: 0
-     * maximum: 10000
-     * @return offset
-     */
-    public Integer getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Integer offset) {
-        this.offset = offset;
-    }
-
     public BatchCreateDataobjectRelationsResponse withSuccess(Boolean success) {
         this.success = success;
         return this;
@@ -213,14 +141,13 @@ public class BatchCreateDataobjectRelationsResponse extends SdkResponse {
         }
         BatchCreateDataobjectRelationsResponse that = (BatchCreateDataobjectRelationsResponse) obj;
         return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
-            && Objects.equals(this.requestId, that.requestId) && Objects.equals(this.total, that.total)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.success, that.success) && Objects.equals(this.data, that.data);
+            && Objects.equals(this.requestId, that.requestId) && Objects.equals(this.success, that.success)
+            && Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, message, requestId, total, limit, offset, success, data);
+        return Objects.hash(code, message, requestId, success, data);
     }
 
     @Override
@@ -230,9 +157,6 @@ public class BatchCreateDataobjectRelationsResponse extends SdkResponse {
         sb.append("    code: ").append(toIndentedString(code)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-        sb.append("    total: ").append(toIndentedString(total)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    success: ").append(toIndentedString(success)).append("\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");

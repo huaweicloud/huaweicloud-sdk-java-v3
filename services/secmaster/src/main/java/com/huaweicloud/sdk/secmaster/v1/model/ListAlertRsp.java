@@ -51,7 +51,7 @@ public class ListAlertRsp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "environment")
 
-    private AlertEnvironment environment;
+    private ListAlertRspEnvironment environment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_source")
@@ -765,14 +765,14 @@ public class ListAlertRsp {
         this.labels = labels;
     }
 
-    public ListAlertRsp withEnvironment(AlertEnvironment environment) {
+    public ListAlertRsp withEnvironment(ListAlertRspEnvironment environment) {
         this.environment = environment;
         return this;
     }
 
-    public ListAlertRsp withEnvironment(Consumer<AlertEnvironment> environmentSetter) {
+    public ListAlertRsp withEnvironment(Consumer<ListAlertRspEnvironment> environmentSetter) {
         if (this.environment == null) {
-            this.environment = new AlertEnvironment();
+            this.environment = new ListAlertRspEnvironment();
             environmentSetter.accept(this.environment);
         }
 
@@ -783,11 +783,11 @@ public class ListAlertRsp {
      * Get environment
      * @return environment
      */
-    public AlertEnvironment getEnvironment() {
+    public ListAlertRspEnvironment getEnvironment() {
         return environment;
     }
 
-    public void setEnvironment(AlertEnvironment environment) {
+    public void setEnvironment(ListAlertRspEnvironment environment) {
         this.environment = environment;
     }
 

@@ -41,7 +41,7 @@ public class ResizeEngineInstanceReq {
     }
 
     /**
-     * 变更类型。  取值范围：  [storage：存储空间扩容，代理数量不变。](tag:hws,hws_eu,hws_hk,sbc,ctc,g42,hk_g42,tm,hk_tm,cmcc,ax,hk_sbc)  horizontal：代理数量扩容，每个broker的存储空间不变。  [vertical：垂直扩容，broker的底层虚机规格变更，代理数量和存储空间不变。](tag:hws,hws_eu,hws_hk,sbc,ctc,g42,hk_g42,tm,hk_tm,cmcc,ax,hk_sbc)
+     * 变更类型。  取值范围：  - storage：存储空间扩容，代理数量不变。  - horizontal：代理数量扩容，每个broker的存储空间不变。  - vertical：垂直扩容，broker的底层虚机规格变更，代理数量和存储空间不变。
      * @return operType
      */
     public String getOperType() {

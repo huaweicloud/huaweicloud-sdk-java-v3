@@ -59,6 +59,11 @@ public class ShowGroupResponse extends SdkResponse {
 
     private Boolean consumeOrderly;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_online")
+
+    private Boolean groupOnline;
+
     public ShowGroupResponse withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -244,6 +249,23 @@ public class ShowGroupResponse extends SdkResponse {
         this.consumeOrderly = consumeOrderly;
     }
 
+    public ShowGroupResponse withGroupOnline(Boolean groupOnline) {
+        this.groupOnline = groupOnline;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 消费组是否在线。 **约束限制**： 不涉及。 **取值范围**： - true：消费组在线。 - false：消费组不在线。 **默认取值**： 不涉及。
+     * @return groupOnline
+     */
+    public Boolean getGroupOnline() {
+        return groupOnline;
+    }
+
+    public void setGroupOnline(Boolean groupOnline) {
+        this.groupOnline = groupOnline;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -258,13 +280,22 @@ public class ShowGroupResponse extends SdkResponse {
             && Objects.equals(this.groupDesc, that.groupDesc) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.retryMaxTime, that.retryMaxTime)
             && Objects.equals(this.permissions, that.permissions)
-            && Objects.equals(this.consumeOrderly, that.consumeOrderly);
+            && Objects.equals(this.consumeOrderly, that.consumeOrderly)
+            && Objects.equals(this.groupOnline, that.groupOnline);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(enabled, broadcast, brokers, name, groupDesc, createdAt, retryMaxTime, permissions, consumeOrderly);
+        return Objects.hash(enabled,
+            broadcast,
+            brokers,
+            name,
+            groupDesc,
+            createdAt,
+            retryMaxTime,
+            permissions,
+            consumeOrderly,
+            groupOnline);
     }
 
     @Override
@@ -280,6 +311,7 @@ public class ShowGroupResponse extends SdkResponse {
         sb.append("    retryMaxTime: ").append(toIndentedString(retryMaxTime)).append("\n");
         sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
         sb.append("    consumeOrderly: ").append(toIndentedString(consumeOrderly)).append("\n");
+        sb.append("    groupOnline: ").append(toIndentedString(groupOnline)).append("\n");
         sb.append("}");
         return sb.toString();
     }

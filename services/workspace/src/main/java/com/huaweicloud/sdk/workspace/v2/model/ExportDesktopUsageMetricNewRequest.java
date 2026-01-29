@@ -83,7 +83,7 @@ public class ExportDesktopUsageMetricNewRequest {
     }
 
     /**
-     * 查询截至时间(0时区)。
+     * 查询截止时间(0时区)。
      * @return endTime
      */
     public String getEndTime() {

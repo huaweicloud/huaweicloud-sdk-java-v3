@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * **参数解释**: 表类别 - STREAMING 流式传输 - INDEX 索引 - APPLICATION 应用 - TENANT_OBS 租户对象存储 - LAKE 数据湖  **约束限制** 不涉及 **取值范围**: - STREAMING - INDEX - APPLICATION - TENANT_OBS - LAKE  **默认值** 不涉及      
+ * **参数解释**: 表类别 - STREAMING 流式传输 - INDEX 索引 - APPLICATION 应用 - TENANT_OBS 租户对象存储 - LAKE 数据湖  **约束限制** 不涉及 **取值范围**: - STREAMING - INDEX - APPLICATION - TENANT_OBS - LAKE  **默认值** 不涉及
  */
 public class TableCategory {
 

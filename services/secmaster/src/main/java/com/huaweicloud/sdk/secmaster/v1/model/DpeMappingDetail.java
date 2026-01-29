@@ -49,9 +49,14 @@ public class DpeMappingDetail {
     private String mapperTypeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dpe_info")
+    @JsonProperty(value = "mapping_id")
 
-    private DpeInfo dpeInfo;
+    private String mappingId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mapping_info")
+
+    private DpeInfo mappingInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
@@ -207,30 +212,47 @@ public class DpeMappingDetail {
         this.mapperTypeId = mapperTypeId;
     }
 
-    public DpeMappingDetail withDpeInfo(DpeInfo dpeInfo) {
-        this.dpeInfo = dpeInfo;
+    public DpeMappingDetail withMappingId(String mappingId) {
+        this.mappingId = mappingId;
         return this;
     }
 
-    public DpeMappingDetail withDpeInfo(Consumer<DpeInfo> dpeInfoSetter) {
-        if (this.dpeInfo == null) {
-            this.dpeInfo = new DpeInfo();
-            dpeInfoSetter.accept(this.dpeInfo);
+    /**
+     * 映射id
+     * @return mappingId
+     */
+    public String getMappingId() {
+        return mappingId;
+    }
+
+    public void setMappingId(String mappingId) {
+        this.mappingId = mappingId;
+    }
+
+    public DpeMappingDetail withMappingInfo(DpeInfo mappingInfo) {
+        this.mappingInfo = mappingInfo;
+        return this;
+    }
+
+    public DpeMappingDetail withMappingInfo(Consumer<DpeInfo> mappingInfoSetter) {
+        if (this.mappingInfo == null) {
+            this.mappingInfo = new DpeInfo();
+            mappingInfoSetter.accept(this.mappingInfo);
         }
 
         return this;
     }
 
     /**
-     * Get dpeInfo
-     * @return dpeInfo
+     * Get mappingInfo
+     * @return mappingInfo
      */
-    public DpeInfo getDpeInfo() {
-        return dpeInfo;
+    public DpeInfo getMappingInfo() {
+        return mappingInfo;
     }
 
-    public void setDpeInfo(DpeInfo dpeInfo) {
-        this.dpeInfo = dpeInfo;
+    public void setMappingInfo(DpeInfo mappingInfo) {
+        this.mappingInfo = mappingInfo;
     }
 
     public DpeMappingDetail withCreateTime(String createTime) {
@@ -381,10 +403,11 @@ public class DpeMappingDetail {
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.workspaceId, that.workspaceId)
             && Objects.equals(this.dataclassId, that.dataclassId)
             && Objects.equals(this.dataclassName, that.dataclassName)
-            && Objects.equals(this.mapperTypeId, that.mapperTypeId) && Objects.equals(this.dpeInfo, that.dpeInfo)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.creatorId, that.creatorId)
-            && Objects.equals(this.creatorName, that.creatorName) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.modifierId, that.modifierId) && Objects.equals(this.modifierName, that.modifierName)
+            && Objects.equals(this.mapperTypeId, that.mapperTypeId) && Objects.equals(this.mappingId, that.mappingId)
+            && Objects.equals(this.mappingInfo, that.mappingInfo) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.creatorId, that.creatorId) && Objects.equals(this.creatorName, that.creatorName)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.modifierId, that.modifierId)
+            && Objects.equals(this.modifierName, that.modifierName)
             && Objects.equals(this.mapperFieldList, that.mapperFieldList);
     }
 
@@ -397,7 +420,8 @@ public class DpeMappingDetail {
             dataclassId,
             dataclassName,
             mapperTypeId,
-            dpeInfo,
+            mappingId,
+            mappingInfo,
             createTime,
             creatorId,
             creatorName,
@@ -418,7 +442,8 @@ public class DpeMappingDetail {
         sb.append("    dataclassId: ").append(toIndentedString(dataclassId)).append("\n");
         sb.append("    dataclassName: ").append(toIndentedString(dataclassName)).append("\n");
         sb.append("    mapperTypeId: ").append(toIndentedString(mapperTypeId)).append("\n");
-        sb.append("    dpeInfo: ").append(toIndentedString(dpeInfo)).append("\n");
+        sb.append("    mappingId: ").append(toIndentedString(mappingId)).append("\n");
+        sb.append("    mappingInfo: ").append(toIndentedString(mappingInfo)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    creatorId: ").append(toIndentedString(creatorId)).append("\n");
         sb.append("    creatorName: ").append(toIndentedString(creatorName)).append("\n");

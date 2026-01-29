@@ -46,6 +46,11 @@ public class CesQueryRespQuery {
 
     private CesDimsItem medialiveTailor;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region")
+
+    private CesDimsItem region;
+
     public CesQueryRespQuery withMedialiveMpc(CesDimsItem medialiveMpc) {
         this.medialiveMpc = medialiveMpc;
         return this;
@@ -228,6 +233,32 @@ public class CesQueryRespQuery {
         this.medialiveTailor = medialiveTailor;
     }
 
+    public CesQueryRespQuery withRegion(CesDimsItem region) {
+        this.region = region;
+        return this;
+    }
+
+    public CesQueryRespQuery withRegion(Consumer<CesDimsItem> regionSetter) {
+        if (this.region == null) {
+            this.region = new CesDimsItem();
+            regionSetter.accept(this.region);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get region
+     * @return region
+     */
+    public CesDimsItem getRegion() {
+        return region;
+    }
+
+    public void setRegion(CesDimsItem region) {
+        this.region = region;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -241,13 +272,19 @@ public class CesQueryRespQuery {
             && Objects.equals(this.audio, that.audio) && Objects.equals(this.medialiveCdn, that.medialiveCdn)
             && Objects.equals(this.medialivePackage, that.medialivePackage)
             && Objects.equals(this.medialiveConnect, that.medialiveConnect)
-            && Objects.equals(this.medialiveTailor, that.medialiveTailor);
+            && Objects.equals(this.medialiveTailor, that.medialiveTailor) && Objects.equals(this.region, that.region);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(medialiveMpc, pipeline, audio, medialiveCdn, medialivePackage, medialiveConnect, medialiveTailor);
+        return Objects.hash(medialiveMpc,
+            pipeline,
+            audio,
+            medialiveCdn,
+            medialivePackage,
+            medialiveConnect,
+            medialiveTailor,
+            region);
     }
 
     @Override
@@ -261,6 +298,7 @@ public class CesQueryRespQuery {
         sb.append("    medialivePackage: ").append(toIndentedString(medialivePackage)).append("\n");
         sb.append("    medialiveConnect: ").append(toIndentedString(medialiveConnect)).append("\n");
         sb.append("    medialiveTailor: ").append(toIndentedString(medialiveTailor)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("}");
         return sb.toString();
     }

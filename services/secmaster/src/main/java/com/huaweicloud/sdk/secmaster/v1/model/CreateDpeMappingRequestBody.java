@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CreateDpeMappingRequestBody
+ * 创建分类映射请求体
  */
 public class CreateDpeMappingRequestBody {
 

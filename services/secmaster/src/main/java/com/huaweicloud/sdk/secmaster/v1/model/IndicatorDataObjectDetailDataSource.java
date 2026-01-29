@@ -30,6 +30,16 @@ public class IndicatorDataObjectDetailDataSource {
 
     private String regionId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "product_name")
+
+    private String productName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "product_feature")
+
+    private String productFeature;
+
     public IndicatorDataObjectDetailDataSource withSourceType(Integer sourceType) {
         this.sourceType = sourceType;
         return this;
@@ -100,6 +110,40 @@ public class IndicatorDataObjectDetailDataSource {
         this.regionId = regionId;
     }
 
+    public IndicatorDataObjectDetailDataSource withProductName(String productName) {
+        this.productName = productName;
+        return this;
+    }
+
+    /**
+     * 数据源产品名称
+     * @return productName
+     */
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public IndicatorDataObjectDetailDataSource withProductFeature(String productFeature) {
+        this.productFeature = productFeature;
+        return this;
+    }
+
+    /**
+     * 数据源产品特性
+     * @return productFeature
+     */
+    public String getProductFeature() {
+        return productFeature;
+    }
+
+    public void setProductFeature(String productFeature) {
+        this.productFeature = productFeature;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -110,12 +154,14 @@ public class IndicatorDataObjectDetailDataSource {
         }
         IndicatorDataObjectDetailDataSource that = (IndicatorDataObjectDetailDataSource) obj;
         return Objects.equals(this.sourceType, that.sourceType) && Objects.equals(this.domainId, that.domainId)
-            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.regionId, that.regionId);
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.productName, that.productName)
+            && Objects.equals(this.productFeature, that.productFeature);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sourceType, domainId, projectId, regionId);
+        return Objects.hash(sourceType, domainId, projectId, regionId, productName, productFeature);
     }
 
     @Override
@@ -126,6 +172,8 @@ public class IndicatorDataObjectDetailDataSource {
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
+        sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
+        sb.append("    productFeature: ").append(toIndentedString(productFeature)).append("\n");
         sb.append("}");
         return sb.toString();
     }

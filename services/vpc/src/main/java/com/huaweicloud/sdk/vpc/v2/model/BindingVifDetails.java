@@ -28,7 +28,7 @@ public class BindingVifDetails {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vlan_id")
 
-    private String vlanId;
+    private Integer vlanId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_id")
@@ -91,7 +91,7 @@ public class BindingVifDetails {
         this.ovsHybridPlug = ovsHybridPlug;
     }
 
-    public BindingVifDetails withVlanId(String vlanId) {
+    public BindingVifDetails withVlanId(Integer vlanId) {
         this.vlanId = vlanId;
         return this;
     }
@@ -100,11 +100,11 @@ public class BindingVifDetails {
      * 辅助弹性网卡的vlan ID。
      * @return vlanId
      */
-    public String getVlanId() {
+    public Integer getVlanId() {
         return vlanId;
     }
 
-    public void setVlanId(String vlanId) {
+    public void setVlanId(Integer vlanId) {
         this.vlanId = vlanId;
     }
 

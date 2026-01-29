@@ -25,7 +25,7 @@ public class CreateSqlValidationResponse extends SdkResponse {
     private List<TableItem> sources = null;
 
     /**
-     * **参数解释**: sql模式 - STREAMING 流式处理 - BATCH 批处理  **约束限制** 不涉及 **取值范围**: - STREAMING - BATCH  **默认值** 不涉及  
+     * **参数解释**: sql模式 - STREAMING 流式处理 - BATCH 批处理  **约束限制** 不涉及 **取值范围**: - STREAMING - BATCH  **默认值** 不涉及
      */
     public static final class ModesEnum {
 

@@ -17,6 +17,11 @@ public class AcceptScheduledEventRequest {
     private String eventId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workspaceId")
+
+    private String workspaceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private EventUpdate body;
@@ -36,6 +41,23 @@ public class AcceptScheduledEventRequest {
 
     public void setEventId(String eventId) {
         this.eventId = eventId;
+    }
+
+    public AcceptScheduledEventRequest withWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
+        return this;
+    }
+
+    /**
+     * **参数解释**：工作空间ID，默认值为0，取值于查询workspaces列表的接口的id字段。 **约束限制**：系统自动生成，只能以小写字母开头，数字、中划线组成，不能以中划线结尾，且长度小于63个字符。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * @return workspaceId
+     */
+    public String getWorkspaceId() {
+        return workspaceId;
+    }
+
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
     }
 
     public AcceptScheduledEventRequest withBody(EventUpdate body) {
@@ -73,12 +95,13 @@ public class AcceptScheduledEventRequest {
             return false;
         }
         AcceptScheduledEventRequest that = (AcceptScheduledEventRequest) obj;
-        return Objects.equals(this.eventId, that.eventId) && Objects.equals(this.body, that.body);
+        return Objects.equals(this.eventId, that.eventId) && Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(eventId, body);
+        return Objects.hash(eventId, workspaceId, body);
     }
 
     @Override
@@ -86,6 +109,7 @@ public class AcceptScheduledEventRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class AcceptScheduledEventRequest {\n");
         sb.append("    eventId: ").append(toIndentedString(eventId)).append("\n");
+        sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

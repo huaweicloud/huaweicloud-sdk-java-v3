@@ -13,34 +13,78 @@ import java.util.function.Consumer;
 public class ChangeResourceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "data_object")
+    @JsonProperty(value = "code")
 
-    private ResourceDetail dataObject;
+    private String code;
 
-    public ChangeResourceResponse withDataObject(ResourceDetail dataObject) {
-        this.dataObject = dataObject;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "message")
+
+    private String message;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data")
+
+    private ChangeResourceRequestBody data;
+
+    public ChangeResourceResponse withCode(String code) {
+        this.code = code;
         return this;
     }
 
-    public ChangeResourceResponse withDataObject(Consumer<ResourceDetail> dataObjectSetter) {
-        if (this.dataObject == null) {
-            this.dataObject = new ResourceDetail();
-            dataObjectSetter.accept(this.dataObject);
+    /**
+     * 错误码
+     * @return code
+     */
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public ChangeResourceResponse withMessage(String message) {
+        this.message = message;
+        return this;
+    }
+
+    /**
+     * 错误信息
+     * @return message
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public ChangeResourceResponse withData(ChangeResourceRequestBody data) {
+        this.data = data;
+        return this;
+    }
+
+    public ChangeResourceResponse withData(Consumer<ChangeResourceRequestBody> dataSetter) {
+        if (this.data == null) {
+            this.data = new ChangeResourceRequestBody();
+            dataSetter.accept(this.data);
         }
 
         return this;
     }
 
     /**
-     * Get dataObject
-     * @return dataObject
+     * Get data
+     * @return data
      */
-    public ResourceDetail getDataObject() {
-        return dataObject;
+    public ChangeResourceRequestBody getData() {
+        return data;
     }
 
-    public void setDataObject(ResourceDetail dataObject) {
-        this.dataObject = dataObject;
+    public void setData(ChangeResourceRequestBody data) {
+        this.data = data;
     }
 
     @Override
@@ -52,19 +96,22 @@ public class ChangeResourceResponse extends SdkResponse {
             return false;
         }
         ChangeResourceResponse that = (ChangeResourceResponse) obj;
-        return Objects.equals(this.dataObject, that.dataObject);
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dataObject);
+        return Objects.hash(code, message, data);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ChangeResourceResponse {\n");
-        sb.append("    dataObject: ").append(toIndentedString(dataObject)).append("\n");
+        sb.append("    code: ").append(toIndentedString(code)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }

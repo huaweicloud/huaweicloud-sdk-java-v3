@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * **参数解释**: sku类型 - FLOW_DATA_BANDWIDTH 数据带宽 - CSS_CAPACITY 索引集群容量 - PAIMON_CAPACITY 数据库容量 - OBS_CAPACITY 对象存储容量 - JOB_CAPACITY 作业容量 - AD_HOC_COUNT 即席查询数量  **约束限制** 不涉及 **取值范围**: - FLOW_DATA_BANDWIDTH - CSS_CAPACITY - PAIMON_CAPACITY - OBS_CAPACITY - JOB_CAPACITY - AD_HOC_COUNT  **默认值** 不涉及      
+ * **参数解释**: sku类型 - FLOW_DATA_BANDWIDTH 数据带宽 - CSS_CAPACITY 索引集群容量 - PAIMON_CAPACITY 数据库容量 - OBS_CAPACITY 对象存储容量 - JOB_CAPACITY 作业容量 - AD_HOC_COUNT 即席查询数量  **约束限制** 不涉及 **取值范围**: - FLOW_DATA_BANDWIDTH - CSS_CAPACITY - PAIMON_CAPACITY - OBS_CAPACITY - JOB_CAPACITY - AD_HOC_COUNT  **默认值** 不涉及
  */
 public class SkuEnum {
 

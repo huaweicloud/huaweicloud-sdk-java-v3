@@ -116,7 +116,7 @@ public class UploadAttachmentRequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 导入的流程文件
+     * 上传的附件
      * @return uploadFile
      */
     public FormDataFilePart getUploadFile() {

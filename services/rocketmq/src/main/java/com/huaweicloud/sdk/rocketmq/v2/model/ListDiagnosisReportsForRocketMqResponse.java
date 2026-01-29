@@ -22,7 +22,7 @@ public class ListDiagnosisReportsForRocketMqResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_num")
 
-    private Object totalNum;
+    private Long totalNum;
 
     public ListDiagnosisReportsForRocketMqResponse withDiagnosisReportList(
         List<DiagnosisReportResp> diagnosisReportList) {
@@ -60,7 +60,7 @@ public class ListDiagnosisReportsForRocketMqResponse extends SdkResponse {
         this.diagnosisReportList = diagnosisReportList;
     }
 
-    public ListDiagnosisReportsForRocketMqResponse withTotalNum(Object totalNum) {
+    public ListDiagnosisReportsForRocketMqResponse withTotalNum(Long totalNum) {
         this.totalNum = totalNum;
         return this;
     }
@@ -69,11 +69,11 @@ public class ListDiagnosisReportsForRocketMqResponse extends SdkResponse {
      * **参数解释**： 报告数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return totalNum
      */
-    public Object getTotalNum() {
+    public Long getTotalNum() {
         return totalNum;
     }
 
-    public void setTotalNum(Object totalNum) {
+    public void setTotalNum(Long totalNum) {
         this.totalNum = totalNum;
     }
 

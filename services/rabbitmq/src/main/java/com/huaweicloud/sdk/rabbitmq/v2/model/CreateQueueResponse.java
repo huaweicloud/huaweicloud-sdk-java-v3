@@ -86,7 +86,7 @@ public class CreateQueueResponse extends SdkResponse {
     }
 
     /**
-     * 是否持久化[（AMQP版本默认持久化，不涉及此字段）](tag:hws,hws_hk,hws_eu)
+     * 是否持久化[（AMQP版本默认持久化，不涉及此字段）](tag:hws,hws_hk,hws_eu,srg)
      * @return durable
      */
     public Boolean getDurable() {
@@ -154,7 +154,7 @@ public class CreateQueueResponse extends SdkResponse {
     }
 
     /**
-     * 若设置惰性队列，请输入lazy。惰性队列模式会在磁盘上存储尽可能多的消息以减少内存使用；若不设置，队列将消息存储在内存缓存以尽可能快地传递消息。[（AMQP版本默认将消息存储到磁盘，不涉及此字段）](tag:hws,hws_hk,hws_eu)
+     * 若设置惰性队列，请输入lazy。惰性队列模式会在磁盘上存储尽可能多的消息以减少内存使用；若不设置，队列将消息存储在内存缓存以尽可能快地传递消息。[（AMQP版本默认将消息存储到磁盘，不涉及此字段）](tag:hws,hws_hk,hws_eu,srg)
      * @return lazyMode
      */
     public String getLazyMode() {

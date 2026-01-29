@@ -62,7 +62,7 @@ public class DeleteDictionaryRequest {
     }
 
     /**
-     * 是否删除内置字典,默认不对外开放删除内置字典工具
+     * 是否删除内置字典，默认不对外开放删除内置字典工具
      * @return isBuiltIn
      */
     public Boolean getIsBuiltIn() {

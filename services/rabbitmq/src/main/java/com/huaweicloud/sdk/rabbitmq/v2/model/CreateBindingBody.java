@@ -65,7 +65,7 @@ public class CreateBindingBody {
     }
 
     /**
-     * **参数解释**： 绑定目标端类型。 **约束限制**： [不涉及。](tag:sbc,cmcc,tm,hk_tm,ax,hk_sbc)[AMQP版本只支持绑定Queue。](tag:hws,hws_hk,hws_eu) **取值范围**： - exchange：交换机。 - queue：队列。 **默认取值**： 不涉及。
+     * **参数解释**： 绑定目标端类型。 **约束限制**： [不涉及。](tag:sbc,cmcc,tm,hk_tm,ax,hk_sbc)[AMQP版本只支持绑定Queue。](tag:hws,hws_hk,hws_eu,srg) **取值范围**： - exchange：交换机。 - queue：队列。 **默认取值**： 不涉及。
      * @return destinationType
      */
     public String getDestinationType() {

@@ -64,7 +64,7 @@ public class ListEngineProductsEntity {
     }
 
     /**
-     * **参数解释**： 产品类型。 **取值范围**： - single：单机。    - cluster：集群。 [- single.professional：单机专业版，AMQP版本产品类型。](tag:hws,hws_hk,hws_eu) [- cluster.professional：集群专业版，AMQP版本产品类型。](tag:hws,hws_hk,hws_eu)
+     * **参数解释**： 产品类型。 **取值范围**： - single：单机。    - cluster：集群。 [- single.professional：单机专业版，AMQP版本产品类型。](tag:hws,hws_hk,hws_eu,srg) [- cluster.professional：集群专业版，AMQP版本产品类型。](tag:hws,hws_hk,hws_eu,srg)
      * @return type
      */
     public String getType() {

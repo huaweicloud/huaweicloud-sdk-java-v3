@@ -37,7 +37,7 @@ public class ShowDataConsumptionResponse extends SdkResponse {
     private String pipeName;
 
     /**
-     * **参数解释**: 状态 - ENABLED 启用 - DISABLED 禁用  **约束限制** 不涉及 **取值范围**: - ENABLED - DISABLED  **默认值** 不涉及   
+     * **参数解释**: 状态 - ENABLED 启用 - DISABLED 禁用  **约束限制** 不涉及 **取值范围**: - ENABLED - DISABLED  **默认值** 不涉及
      */
     public static final class StatusEnum {
 
@@ -112,7 +112,7 @@ public class ShowDataConsumptionResponse extends SdkResponse {
     private StatusEnum status;
 
     /**
-     * **参数解释**: 网络类型 - INTERNET 互联网 - INTRANET 内联网  **约束限制** 不涉及 **取值范围**: - INTERNET - INTRANET  **默认值** 不涉及         
+     * **参数解释**: 网络类型 - INTERNET 互联网 - INTRANET 内联网  **约束限制** 不涉及 **取值范围**: - INTERNET - INTRANET  **默认值** 不涉及
      */
     public static final class TypeEnum {
 
@@ -275,7 +275,7 @@ public class ShowDataConsumptionResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**: 状态 - ENABLED 启用 - DISABLED 禁用  **约束限制** 不涉及 **取值范围**: - ENABLED - DISABLED  **默认值** 不涉及   
+     * **参数解释**: 状态 - ENABLED 启用 - DISABLED 禁用  **约束限制** 不涉及 **取值范围**: - ENABLED - DISABLED  **默认值** 不涉及
      * @return status
      */
     public StatusEnum getStatus() {
@@ -292,7 +292,7 @@ public class ShowDataConsumptionResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**: 网络类型 - INTERNET 互联网 - INTRANET 内联网  **约束限制** 不涉及 **取值范围**: - INTERNET - INTRANET  **默认值** 不涉及         
+     * **参数解释**: 网络类型 - INTERNET 互联网 - INTRANET 内联网  **约束限制** 不涉及 **取值范围**: - INTERNET - INTRANET  **默认值** 不涉及
      * @return type
      */
     public TypeEnum getType() {

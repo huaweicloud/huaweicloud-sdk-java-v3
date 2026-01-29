@@ -208,6 +208,11 @@ public class ListServersRequest {
     private String ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6")
+
+    private String ipv6;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "migproject")
 
     private String migproject;
@@ -336,6 +341,11 @@ public class ListServersRequest {
 
     private Boolean isConsistencyResultExist;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vm_id")
+
+    private String vmId;
+
     public ListServersRequest withState(StateEnum state) {
         this.state = state;
         return this;
@@ -402,6 +412,23 @@ public class ListServersRequest {
 
     public void setIp(String ip) {
         this.ip = ip;
+    }
+
+    public ListServersRequest withIpv6(String ipv6) {
+        this.ipv6 = ipv6;
+        return this;
+    }
+
+    /**
+     * 源端服务器IPV6地址，优先使用IP进行查询
+     * @return ipv6
+     */
+    public String getIpv6() {
+        return ipv6;
+    }
+
+    public void setIpv6(String ipv6) {
+        this.ipv6 = ipv6;
     }
 
     public ListServersRequest withMigproject(String migproject) {
@@ -527,6 +554,23 @@ public class ListServersRequest {
         this.isConsistencyResultExist = isConsistencyResultExist;
     }
 
+    public ListServersRequest withVmId(String vmId) {
+        this.vmId = vmId;
+        return this;
+    }
+
+    /**
+     * 平台的克隆服务器id
+     * @return vmId
+     */
+    public String getVmId() {
+        return vmId;
+    }
+
+    public void setVmId(String vmId) {
+        this.vmId = vmId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -538,11 +582,13 @@ public class ListServersRequest {
         ListServersRequest that = (ListServersRequest) obj;
         return Objects.equals(this.state, that.state) && Objects.equals(this.name, that.name)
             && Objects.equals(this.id, that.id) && Objects.equals(this.ip, that.ip)
-            && Objects.equals(this.migproject, that.migproject) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.migrationCycle, that.migrationCycle)
+            && Objects.equals(this.ipv6, that.ipv6) && Objects.equals(this.migproject, that.migproject)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.migrationCycle, that.migrationCycle)
             && Objects.equals(this.connected, that.connected)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.isConsistencyResultExist, that.isConsistencyResultExist);
+            && Objects.equals(this.isConsistencyResultExist, that.isConsistencyResultExist)
+            && Objects.equals(this.vmId, that.vmId);
     }
 
     @Override
@@ -551,13 +597,15 @@ public class ListServersRequest {
             name,
             id,
             ip,
+            ipv6,
             migproject,
             limit,
             offset,
             migrationCycle,
             connected,
             enterpriseProjectId,
-            isConsistencyResultExist);
+            isConsistencyResultExist,
+            vmId);
     }
 
     @Override
@@ -568,6 +616,7 @@ public class ListServersRequest {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    ipv6: ").append(toIndentedString(ipv6)).append("\n");
         sb.append("    migproject: ").append(toIndentedString(migproject)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
@@ -575,6 +624,7 @@ public class ListServersRequest {
         sb.append("    connected: ").append(toIndentedString(connected)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    isConsistencyResultExist: ").append(toIndentedString(isConsistencyResultExist)).append("\n");
+        sb.append("    vmId: ").append(toIndentedString(vmId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

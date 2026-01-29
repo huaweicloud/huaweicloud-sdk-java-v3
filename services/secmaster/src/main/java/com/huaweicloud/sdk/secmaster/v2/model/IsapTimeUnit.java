@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * **参数解释**: 时间单位 - MINUTE 分钟 - HOUR 小时 - DAY 天 - MONTH 月  **约束限制** 不涉及 **取值范围**: - MINUTE - HOUR - DAY - MONTH  **默认值** 不涉及        
+ * **参数解释**: 时间单位 - MINUTE 分钟 - HOUR 小时 - DAY 天 - MONTH 月  **约束限制** 不涉及 **取值范围**: - MINUTE - HOUR - DAY - MONTH  **默认值** 不涉及
  */
 public class IsapTimeUnit {
 

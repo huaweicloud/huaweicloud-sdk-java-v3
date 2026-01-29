@@ -17,11 +17,6 @@ import java.util.Objects;
 public class ShowMigprojectResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -151,30 +146,13 @@ public class ShowMigprojectResponse extends SdkResponse {
 
     private Boolean startNetworkCheck;
 
-    public ShowMigprojectResponse withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    /**
-     * 迁移项目ID
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public ShowMigprojectResponse withName(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * 迁移项目名称
+     * 迁移项目名称，只能由中文字符、英文字母、数字、下划线、短横线组成
      * @return name
      */
     public String getName() {
@@ -261,7 +239,7 @@ public class ShowMigprojectResponse extends SdkResponse {
     /**
      * 限制迁移速率，单位：Mbps
      * minimum: 0
-     * maximum: 10000
+     * maximum: 1000
      * @return speedLimit
      */
     public Integer getSpeedLimit() {
@@ -383,9 +361,8 @@ public class ShowMigprojectResponse extends SdkResponse {
             return false;
         }
         ShowMigprojectResponse that = (ShowMigprojectResponse) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.isdefault, that.isdefault)
-            && Objects.equals(this.region, that.region)
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.isdefault, that.isdefault) && Objects.equals(this.region, that.region)
             && Objects.equals(this.startTargetServer, that.startTargetServer)
             && Objects.equals(this.speedLimit, that.speedLimit) && Objects.equals(this.usePublicIp, that.usePublicIp)
             && Objects.equals(this.existServer, that.existServer) && Objects.equals(this.type, that.type)
@@ -396,8 +373,7 @@ public class ShowMigprojectResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id,
-            name,
+        return Objects.hash(name,
             description,
             isdefault,
             region,
@@ -415,7 +391,6 @@ public class ShowMigprojectResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowMigprojectResponse {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    isdefault: ").append(toIndentedString(isdefault)).append("\n");

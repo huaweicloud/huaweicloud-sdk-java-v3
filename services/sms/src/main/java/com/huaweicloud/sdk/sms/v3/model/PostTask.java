@@ -227,6 +227,11 @@ public class PostTask {
     private String vmTemplateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "clonevm_template_id")
+
+    private String clonevmTemplateId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "use_public_ip")
 
     private Boolean usePublicIp;
@@ -277,7 +282,7 @@ public class PostTask {
     }
 
     /**
-     * 任务名称
+     * 任务名称，只能由中文字符、英文字母、数字、下划线、短横线组成
      * @return name
      */
     public String getName() {
@@ -414,7 +419,7 @@ public class PostTask {
     }
 
     /**
-     * 迁移IP，如果是自动创建虚拟机，不需要此参数
+     * 迁移IP，如果是自动创建虚拟机，不需要此参数。 use_ipv6是false时，migration_ip应满足ipv4的格式标准；use_ipv6是true时，migration_ip应满足ipv6的格式标准。
      * @return migrationIp
      */
     public String getMigrationIp() {
@@ -529,6 +534,23 @@ public class PostTask {
         this.vmTemplateId = vmTemplateId;
     }
 
+    public PostTask withClonevmTemplateId(String clonevmTemplateId) {
+        this.clonevmTemplateId = clonevmTemplateId;
+        return this;
+    }
+
+    /**
+     * 克隆服务器模板ID
+     * @return clonevmTemplateId
+     */
+    public String getClonevmTemplateId() {
+        return clonevmTemplateId;
+    }
+
+    public void setClonevmTemplateId(String clonevmTemplateId) {
+        this.clonevmTemplateId = clonevmTemplateId;
+    }
+
     public PostTask withUsePublicIp(Boolean usePublicIp) {
         this.usePublicIp = usePublicIp;
         return this;
@@ -622,7 +644,7 @@ public class PostTask {
     /**
      * 迁移速率限制值
      * minimum: 0
-     * maximum: 10000
+     * maximum: 1000
      * @return speedLimit
      */
     public Integer getSpeedLimit() {
@@ -704,6 +726,7 @@ public class PostTask {
             && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.projectName, that.projectName)
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.priority, that.priority)
             && Objects.equals(this.vmTemplateId, that.vmTemplateId)
+            && Objects.equals(this.clonevmTemplateId, that.clonevmTemplateId)
             && Objects.equals(this.usePublicIp, that.usePublicIp) && Objects.equals(this.useIpv6, that.useIpv6)
             && Objects.equals(this.syncing, that.syncing) && Objects.equals(this.existServer, that.existServer)
             && Objects.equals(this.startNetworkCheck, that.startNetworkCheck)
@@ -729,6 +752,7 @@ public class PostTask {
             projectId,
             priority,
             vmTemplateId,
+            clonevmTemplateId,
             usePublicIp,
             useIpv6,
             syncing,
@@ -758,6 +782,7 @@ public class PostTask {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    vmTemplateId: ").append(toIndentedString(vmTemplateId)).append("\n");
+        sb.append("    clonevmTemplateId: ").append(toIndentedString(clonevmTemplateId)).append("\n");
         sb.append("    usePublicIp: ").append(toIndentedString(usePublicIp)).append("\n");
         sb.append("    useIpv6: ").append(toIndentedString(useIpv6)).append("\n");
         sb.append("    syncing: ").append(toIndentedString(syncing)).append("\n");

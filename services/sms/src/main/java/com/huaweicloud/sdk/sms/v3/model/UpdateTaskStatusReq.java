@@ -16,7 +16,7 @@ import java.util.Objects;
 public class UpdateTaskStatusReq {
 
     /**
-     * 操作任务的具体动作 start:开始任务 stop:停止任务 test:测试 clone_test:克隆测试 restart:重新开始 network_check:网络质量检测 skip:跳过一致性校验子任务 clear:清理快照资源 migration_test: 开始迁移演练
+     * 操作任务的具体动作 start:开始任务 stop:停止任务 test:测试 cutover:启动目的端 clone_test:克隆测试 restart:重新开始 network_check:网络质量检测 skip:跳过一致性校验子任务 clear:清理快照资源 migration_test: 开始迁移演练 error_for_overspeed:处理任务超速，任务自动暂停
      */
     public static final class OperationEnum {
 
@@ -153,7 +153,7 @@ public class UpdateTaskStatusReq {
     }
 
     /**
-     * 操作任务的具体动作 start:开始任务 stop:停止任务 test:测试 clone_test:克隆测试 restart:重新开始 network_check:网络质量检测 skip:跳过一致性校验子任务 clear:清理快照资源 migration_test: 开始迁移演练
+     * 操作任务的具体动作 start:开始任务 stop:停止任务 test:测试 cutover:启动目的端 clone_test:克隆测试 restart:重新开始 network_check:网络质量检测 skip:跳过一致性校验子任务 clear:清理快照资源 migration_test: 开始迁移演练 error_for_overspeed:处理任务超速，任务自动暂停
      * @return operation
      */
     public OperationEnum getOperation() {
@@ -187,7 +187,7 @@ public class UpdateTaskStatusReq {
     }
 
     /**
-     * 是否切换hce
+     * 是否切换hce，仅支持linux的迁移任务
      * @return switchHce
      */
     public Boolean getSwitchHce() {

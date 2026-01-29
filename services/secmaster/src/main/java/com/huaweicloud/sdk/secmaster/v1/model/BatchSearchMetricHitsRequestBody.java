@@ -61,7 +61,7 @@ public class BatchSearchMetricHitsRequestBody {
     }
 
     /**
-     * 待查询的指标Id列表, 可参照附录中指标信息说明获取已有指标信息。
+     * 待查询的指标Id列表，可参照附录中指标信息说明获取已有指标信息。
      * @return metricIds
      */
     public List<String> getMetricIds() {
@@ -94,7 +94,7 @@ public class BatchSearchMetricHitsRequestBody {
     }
 
     /**
-     * 工作空间列表, 当指标支持获取多工作空间数据时填写。
+     * 工作空间列表，当指标支持获取多工作空间数据时填写。
      * @return workspaceIds
      */
     public List<String> getWorkspaceIds() {

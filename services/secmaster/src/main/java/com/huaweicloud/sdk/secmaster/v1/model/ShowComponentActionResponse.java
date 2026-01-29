@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -30,6 +31,11 @@ public class ShowComponentActionResponse extends SdkResponse {
     @JsonProperty(value = "request_id")
 
     private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data")
+
+    private ComponentActionInfo data;
 
     public ShowComponentActionResponse withCode(String code) {
         this.code = code;
@@ -99,6 +105,32 @@ public class ShowComponentActionResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    public ShowComponentActionResponse withData(ComponentActionInfo data) {
+        this.data = data;
+        return this;
+    }
+
+    public ShowComponentActionResponse withData(Consumer<ComponentActionInfo> dataSetter) {
+        if (this.data == null) {
+            this.data = new ComponentActionInfo();
+            dataSetter.accept(this.data);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get data
+     * @return data
+     */
+    public ComponentActionInfo getData() {
+        return data;
+    }
+
+    public void setData(ComponentActionInfo data) {
+        this.data = data;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -109,12 +141,13 @@ public class ShowComponentActionResponse extends SdkResponse {
         }
         ShowComponentActionResponse that = (ShowComponentActionResponse) obj;
         return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
-            && Objects.equals(this.success, that.success) && Objects.equals(this.requestId, that.requestId);
+            && Objects.equals(this.success, that.success) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, message, success, requestId);
+        return Objects.hash(code, message, success, requestId, data);
     }
 
     @Override
@@ -125,6 +158,7 @@ public class ShowComponentActionResponse extends SdkResponse {
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    success: ").append(toIndentedString(success)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }

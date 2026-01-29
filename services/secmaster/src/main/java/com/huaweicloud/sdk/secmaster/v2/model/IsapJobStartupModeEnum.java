@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * **参数解释**: 作业启动模式 - UPGRADE 升级启动 - REFRESH_NEW 全新启动  **约束限制** 不涉及 **取值范围**: - UPGRADE - REFRESH_NEW  **默认值** 不涉及      
+ * **参数解释**: 作业启动模式 - UPGRADE 升级启动 - REFRESH_NEW 全新启动  **约束限制** 不涉及 **取值范围**: - UPGRADE - REFRESH_NEW  **默认值** 不涉及
  */
 public class IsapJobStartupModeEnum {
 

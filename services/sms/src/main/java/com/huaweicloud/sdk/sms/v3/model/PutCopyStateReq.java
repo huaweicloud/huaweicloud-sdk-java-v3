@@ -11,12 +11,12 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 源端复制状态
+ * 源端复制状态 copystate与migrationcycle忽略大小写，但必须满足一些搭配，否则更新失败，接口报错： migrationcycle状态为 checking时，copystate只能为unavailable/waiting setting时， waiting/premigready/premiging/premiged/premigfailed replicating时，init/replicate/deleting/stopping/error/stopped syncing时，syncing/cloning/deleting/stopping/error/stopped cutovering时，cutovering/deleting/stopping/error/stopped cutovered时，finished/deleting/stopping/error/stopped
  */
 public class PutCopyStateReq {
 
     /**
-     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败 premigready：迁移演练就绪 premiged：迁移演练完成 premigfailed：迁移演练失败 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成 error：错误
+     * 源端服务器状态 unavailable: 环境校验不通过 waiting: 等待 init: 初始化 replicate: 复制 syncing: 持续同步 stopping: 暂停中 stopped: 已暂停 skipping: 跳过中 deleting: 删除中 clearing: 清理快照资源中 cleared: 清理快照资源完成 clearfailed: 清理快照资源失败 premigready: 迁移演练就绪 premiging: 迁移演练中 premiged: 迁移演练完成 premigfailed: 迁移演练失败 cloning: 等待克隆完成 cutovering: 启动目的端中 finished: 启动目的端完成 error: 错误
      */
     public static final class CopystateEnum {
 
@@ -31,9 +31,9 @@ public class PutCopyStateReq {
         public static final CopystateEnum WAITING = new CopystateEnum("waiting");
 
         /**
-         * Enum INITIALIZE for value: "initialize"
+         * Enum INIT for value: "init"
          */
-        public static final CopystateEnum INITIALIZE = new CopystateEnum("initialize");
+        public static final CopystateEnum INIT = new CopystateEnum("init");
 
         /**
          * Enum REPLICATE for value: "replicate"
@@ -86,6 +86,11 @@ public class PutCopyStateReq {
         public static final CopystateEnum PREMIGREADY = new CopystateEnum("premigready");
 
         /**
+         * Enum PREMIGING for value: "premiging"
+         */
+        public static final CopystateEnum PREMIGING = new CopystateEnum("premiging");
+
+        /**
          * Enum PREMIGED for value: "premiged"
          */
         public static final CopystateEnum PREMIGED = new CopystateEnum("premiged");
@@ -121,7 +126,7 @@ public class PutCopyStateReq {
             Map<String, CopystateEnum> map = new HashMap<>();
             map.put("unavailable", UNAVAILABLE);
             map.put("waiting", WAITING);
-            map.put("initialize", INITIALIZE);
+            map.put("init", INIT);
             map.put("replicate", REPLICATE);
             map.put("syncing", SYNCING);
             map.put("stopping", STOPPING);
@@ -132,6 +137,7 @@ public class PutCopyStateReq {
             map.put("cleared", CLEARED);
             map.put("clearfailed", CLEARFAILED);
             map.put("premigready", PREMIGREADY);
+            map.put("premiging", PREMIGING);
             map.put("premiged", PREMIGED);
             map.put("premigfailed", PREMIGFAILED);
             map.put("cloning", CLONING);
@@ -193,9 +199,29 @@ public class PutCopyStateReq {
     private CopystateEnum copystate;
 
     /**
-     * 迁移周期 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中 
+     * 迁移周期 no_ready:未就绪 ready_for_test:已就绪 testing:测试中 tested:测试完成 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中
      */
     public static final class MigrationcycleEnum {
+
+        /**
+         * Enum NO_READY for value: "no_ready"
+         */
+        public static final MigrationcycleEnum NO_READY = new MigrationcycleEnum("no_ready");
+
+        /**
+         * Enum READY_FOR_TEST for value: "ready_for_test"
+         */
+        public static final MigrationcycleEnum READY_FOR_TEST = new MigrationcycleEnum("ready_for_test");
+
+        /**
+         * Enum TESTING for value: "testing"
+         */
+        public static final MigrationcycleEnum TESTING = new MigrationcycleEnum("testing");
+
+        /**
+         * Enum TESTED for value: "tested"
+         */
+        public static final MigrationcycleEnum TESTED = new MigrationcycleEnum("tested");
 
         /**
          * Enum CUTOVERING for value: "cutovering"
@@ -231,6 +257,10 @@ public class PutCopyStateReq {
 
         private static Map<String, MigrationcycleEnum> createStaticFields() {
             Map<String, MigrationcycleEnum> map = new HashMap<>();
+            map.put("no_ready", NO_READY);
+            map.put("ready_for_test", READY_FOR_TEST);
+            map.put("testing", TESTING);
+            map.put("tested", TESTED);
             map.put("cutovering", CUTOVERING);
             map.put("cutovered", CUTOVERED);
             map.put("checking", CHECKING);
@@ -297,7 +327,7 @@ public class PutCopyStateReq {
     }
 
     /**
-     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败 premigready：迁移演练就绪 premiged：迁移演练完成 premigfailed：迁移演练失败 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成 error：错误
+     * 源端服务器状态 unavailable: 环境校验不通过 waiting: 等待 init: 初始化 replicate: 复制 syncing: 持续同步 stopping: 暂停中 stopped: 已暂停 skipping: 跳过中 deleting: 删除中 clearing: 清理快照资源中 cleared: 清理快照资源完成 clearfailed: 清理快照资源失败 premigready: 迁移演练就绪 premiging: 迁移演练中 premiged: 迁移演练完成 premigfailed: 迁移演练失败 cloning: 等待克隆完成 cutovering: 启动目的端中 finished: 启动目的端完成 error: 错误
      * @return copystate
      */
     public CopystateEnum getCopystate() {
@@ -314,7 +344,7 @@ public class PutCopyStateReq {
     }
 
     /**
-     * 迁移周期 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中 
+     * 迁移周期 no_ready:未就绪 ready_for_test:已就绪 testing:测试中 tested:测试完成 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中
      * @return migrationcycle
      */
     public MigrationcycleEnum getMigrationcycle() {

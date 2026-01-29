@@ -17,7 +17,7 @@ public class ShowAdhocResultResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "batch")
 
-    private Object batch;
+    private Integer batch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schema")
@@ -59,20 +59,22 @@ public class ShowAdhocResultResponse extends SdkResponse {
 
     private String jobId;
 
-    public ShowAdhocResultResponse withBatch(Object batch) {
+    public ShowAdhocResultResponse withBatch(Integer batch) {
         this.batch = batch;
         return this;
     }
 
     /**
      * 获取数据的批次，为0则为第一次查询
+     * minimum: 0
+     * maximum: 255
      * @return batch
      */
-    public Object getBatch() {
+    public Integer getBatch() {
         return batch;
     }
 
-    public void setBatch(Object batch) {
+    public void setBatch(Integer batch) {
         this.batch = batch;
     }
 

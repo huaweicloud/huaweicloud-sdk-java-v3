@@ -390,6 +390,11 @@ public class ScmMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListCertificatesRequest::getExpiredDaysSince,
                 ListCertificatesRequest::setExpiredDaysSince));
+        builder.<String>withRequestField("content",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getContent, ListCertificatesRequest::setContent));
 
         // response
 

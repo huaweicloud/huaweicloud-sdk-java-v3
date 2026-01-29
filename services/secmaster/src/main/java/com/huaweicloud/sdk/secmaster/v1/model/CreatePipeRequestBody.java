@@ -121,7 +121,7 @@ public class CreatePipeRequestBody {
     }
 
     /**
-     * 数据管道名称
+     * 数据管道名称；必须以英文字母开头，且只能包含小写英文字母、数字和'_'，且'_'不能在结尾，也不能连续出现。 不能以系统预留的前缀isap_、csb_、secmaster_、sec_、s_sec_、i_sec_、l_sec_、security_开头
      * @return pipeName
      */
     public String getPipeName() {

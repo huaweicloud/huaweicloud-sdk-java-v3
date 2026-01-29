@@ -119,6 +119,8 @@ import com.huaweicloud.sdk.secmaster.v1.model.CreateResourceConfigRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateResourceConfigResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateRetryPolicyRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateRetryPolicyResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.CreateSearchAnalysisRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.CreateSearchAnalysisResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateSearchConditionRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateSearchConditionResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateServiceAgencyRequest;
@@ -127,6 +129,8 @@ import com.huaweicloud.sdk.secmaster.v1.model.CreateShipperDelegateAuthRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateShipperDelegateAuthResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateShipperRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateShipperResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.CreateSubscriptionOrderRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.CreateSubscriptionOrderResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateWorkflowInstanceRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateWorkflowInstanceResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.CreateWorkspaceRequest;
@@ -143,6 +147,8 @@ import com.huaweicloud.sdk.secmaster.v1.model.DeleteAopWorkflowVersionRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteAopWorkflowVersionResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteCatalogueRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteCatalogueResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.DeleteClassifierRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.DeleteClassifierResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteCollectorChannelGroupRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteCollectorChannelGroupResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteCollectorChannelRequest;
@@ -211,6 +217,8 @@ import com.huaweicloud.sdk.secmaster.v1.model.DeleteShipperRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteShipperResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteSingleMapperRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteSingleMapperResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.DeleteSubscriptionOrderRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.DeleteSubscriptionOrderResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteTagsRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteTagsResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.DeleteWorkspaceRequest;
@@ -233,6 +241,8 @@ import com.huaweicloud.sdk.secmaster.v1.model.EnableAlertRuleRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.EnableAlertRuleResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.EnableDataclassTypeRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.EnableDataclassTypeResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.ExecuteLayoutRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.ExecuteLayoutResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.ExecuteReportActionRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.ExecuteReportActionResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.ExportAlertsRequest;
@@ -409,8 +419,14 @@ import com.huaweicloud.sdk.secmaster.v1.model.ListShipperAuthorizationsRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.ListShipperAuthorizationsResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.ListShippersRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.ListShippersResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.ListSubscriptionGlobalOrderRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.ListSubscriptionGlobalOrderResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.ListSubscriptionOrderRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.ListSubscriptionOrderResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.ListSubscriptionProductRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.ListSubscriptionProductResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.ListTasksRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.ListTasksResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.ListVpcEndpointServiceRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.ListVpcEndpointServiceResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.ListVulnerabilitiesRequest;
@@ -537,6 +553,8 @@ import com.huaweicloud.sdk.secmaster.v1.model.ShowShipperParamRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.ShowShipperParamResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.ShowShipperRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.ShowShipperResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.ShowTaskRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.ShowTaskResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.ShowVulnerabilityRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.ShowVulnerabilityResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.ShowWorkspaceRequest;
@@ -575,6 +593,8 @@ import com.huaweicloud.sdk.secmaster.v1.model.UpdateLayoutRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateLayoutResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateLayoutWizardsRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateLayoutWizardsResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.UpdateMapperRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.UpdateMapperResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateMappingInfoStatusRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateMappingInfoStatusResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateMetricsRequest;
@@ -601,10 +621,16 @@ import com.huaweicloud.sdk.secmaster.v1.model.UpdateReportRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateReportResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateSearchConditionRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateSearchConditionResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.UpdateSubscriptionOrderRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.UpdateSubscriptionOrderResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateTagValueRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateTagValueResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.UpdateTaskRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.UpdateTaskResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateVpcEndpointServiceRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateVpcEndpointServiceResponse;
+import com.huaweicloud.sdk.secmaster.v1.model.UpdateWorkflowInstanceRequest;
+import com.huaweicloud.sdk.secmaster.v1.model.UpdateWorkflowInstanceResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateWorkspaceRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateWorkspaceResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.UploadAttachmentRequest;
@@ -2308,6 +2334,35 @@ public class SecMasterClient {
     }
 
     /**
+     * 执行分析
+     *
+     * 执行分析
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSearchAnalysisRequest 请求对象
+     * @return CreateSearchAnalysisResponse
+     */
+    public CreateSearchAnalysisResponse createSearchAnalysis(CreateSearchAnalysisRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.createSearchAnalysis);
+    }
+
+    /**
+     * 执行分析
+     *
+     * 执行分析
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSearchAnalysisRequest 请求对象
+     * @return SyncInvoker<CreateSearchAnalysisRequest, CreateSearchAnalysisResponse>
+     */
+    public SyncInvoker<CreateSearchAnalysisRequest, CreateSearchAnalysisResponse> createSearchAnalysisInvoker(
+        CreateSearchAnalysisRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.createSearchAnalysis, hcClient);
+    }
+
+    /**
      * 创建检索条件
      *
      * 创建检索条件
@@ -2420,6 +2475,35 @@ public class SecMasterClient {
     public SyncInvoker<CreateShipperDelegateAuthRequest, CreateShipperDelegateAuthResponse> createShipperDelegateAuthInvoker(
         CreateShipperDelegateAuthRequest request) {
         return new SyncInvoker<>(request, SecMasterMeta.createShipperDelegateAuth, hcClient);
+    }
+
+    /**
+     * 开通或配置安全云脑订阅
+     *
+     * 安全云脑开通与配置接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSubscriptionOrderRequest 请求对象
+     * @return CreateSubscriptionOrderResponse
+     */
+    public CreateSubscriptionOrderResponse createSubscriptionOrder(CreateSubscriptionOrderRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.createSubscriptionOrder);
+    }
+
+    /**
+     * 开通或配置安全云脑订阅
+     *
+     * 安全云脑开通与配置接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSubscriptionOrderRequest 请求对象
+     * @return SyncInvoker<CreateSubscriptionOrderRequest, CreateSubscriptionOrderResponse>
+     */
+    public SyncInvoker<CreateSubscriptionOrderRequest, CreateSubscriptionOrderResponse> createSubscriptionOrderInvoker(
+        CreateSubscriptionOrderRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.createSubscriptionOrder, hcClient);
     }
 
     /**
@@ -2650,6 +2734,35 @@ public class SecMasterClient {
     public SyncInvoker<DeleteCatalogueRequest, DeleteCatalogueResponse> deleteCatalogueInvoker(
         DeleteCatalogueRequest request) {
         return new SyncInvoker<>(request, SecMasterMeta.deleteCatalogue, hcClient);
+    }
+
+    /**
+     * 删除分类
+     *
+     * 删除分类
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteClassifierRequest 请求对象
+     * @return DeleteClassifierResponse
+     */
+    public DeleteClassifierResponse deleteClassifier(DeleteClassifierRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.deleteClassifier);
+    }
+
+    /**
+     * 删除分类
+     *
+     * 删除分类
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteClassifierRequest 请求对象
+     * @return SyncInvoker<DeleteClassifierRequest, DeleteClassifierResponse>
+     */
+    public SyncInvoker<DeleteClassifierRequest, DeleteClassifierResponse> deleteClassifierInvoker(
+        DeleteClassifierRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.deleteClassifier, hcClient);
     }
 
     /**
@@ -3632,6 +3745,35 @@ public class SecMasterClient {
     }
 
     /**
+     * 取消订阅资源
+     *
+     * 安全云脑退订服务接口，目前仅支持按需场景
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSubscriptionOrderRequest 请求对象
+     * @return DeleteSubscriptionOrderResponse
+     */
+    public DeleteSubscriptionOrderResponse deleteSubscriptionOrder(DeleteSubscriptionOrderRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.deleteSubscriptionOrder);
+    }
+
+    /**
+     * 取消订阅资源
+     *
+     * 安全云脑退订服务接口，目前仅支持按需场景
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSubscriptionOrderRequest 请求对象
+     * @return SyncInvoker<DeleteSubscriptionOrderRequest, DeleteSubscriptionOrderResponse>
+     */
+    public SyncInvoker<DeleteSubscriptionOrderRequest, DeleteSubscriptionOrderResponse> deleteSubscriptionOrderInvoker(
+        DeleteSubscriptionOrderRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.deleteSubscriptionOrder, hcClient);
+    }
+
+    /**
      * 删除资源标签
      *
      * 为指定实例批量删除标签
@@ -3950,6 +4092,34 @@ public class SecMasterClient {
     public SyncInvoker<EnableDataclassTypeRequest, EnableDataclassTypeResponse> enableDataclassTypeInvoker(
         EnableDataclassTypeRequest request) {
         return new SyncInvoker<>(request, SecMasterMeta.enableDataclassType, hcClient);
+    }
+
+    /**
+     * 操作布局
+     *
+     * 操作布局
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteLayoutRequest 请求对象
+     * @return ExecuteLayoutResponse
+     */
+    public ExecuteLayoutResponse executeLayout(ExecuteLayoutRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.executeLayout);
+    }
+
+    /**
+     * 操作布局
+     *
+     * 操作布局
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteLayoutRequest 请求对象
+     * @return SyncInvoker<ExecuteLayoutRequest, ExecuteLayoutResponse>
+     */
+    public SyncInvoker<ExecuteLayoutRequest, ExecuteLayoutResponse> executeLayoutInvoker(ExecuteLayoutRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.executeLayout, hcClient);
     }
 
     /**
@@ -5490,7 +5660,7 @@ public class SecMasterClient {
     /**
      * 列出所有数据对象
      *
-     * 列出所有与数据对象
+     * 列出所有数据对象
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5504,7 +5674,7 @@ public class SecMasterClient {
     /**
      * 列出所有数据对象
      *
-     * 列出所有与数据对象
+     * 列出所有数据对象
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6496,6 +6666,64 @@ public class SecMasterClient {
     }
 
     /**
+     * 查询已购资源清单
+     *
+     * 查询已购资源清单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubscriptionGlobalOrderRequest 请求对象
+     * @return ListSubscriptionGlobalOrderResponse
+     */
+    public ListSubscriptionGlobalOrderResponse listSubscriptionGlobalOrder(ListSubscriptionGlobalOrderRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.listSubscriptionGlobalOrder);
+    }
+
+    /**
+     * 查询已购资源清单
+     *
+     * 查询已购资源清单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubscriptionGlobalOrderRequest 请求对象
+     * @return SyncInvoker<ListSubscriptionGlobalOrderRequest, ListSubscriptionGlobalOrderResponse>
+     */
+    public SyncInvoker<ListSubscriptionGlobalOrderRequest, ListSubscriptionGlobalOrderResponse> listSubscriptionGlobalOrderInvoker(
+        ListSubscriptionGlobalOrderRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.listSubscriptionGlobalOrder, hcClient);
+    }
+
+    /**
+     * 查询租户订阅资源
+     *
+     * 查询租户版本信息，注意：目前其中参数purchase、usage、smn互斥，同时只能有一个请求参数被命中，优先级为：smn &gt; usage &gt; purchase
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubscriptionOrderRequest 请求对象
+     * @return ListSubscriptionOrderResponse
+     */
+    public ListSubscriptionOrderResponse listSubscriptionOrder(ListSubscriptionOrderRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.listSubscriptionOrder);
+    }
+
+    /**
+     * 查询租户订阅资源
+     *
+     * 查询租户版本信息，注意：目前其中参数purchase、usage、smn互斥，同时只能有一个请求参数被命中，优先级为：smn &gt; usage &gt; purchase
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubscriptionOrderRequest 请求对象
+     * @return SyncInvoker<ListSubscriptionOrderRequest, ListSubscriptionOrderResponse>
+     */
+    public SyncInvoker<ListSubscriptionOrderRequest, ListSubscriptionOrderResponse> listSubscriptionOrderInvoker(
+        ListSubscriptionOrderRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.listSubscriptionOrder, hcClient);
+    }
+
+    /**
      * 查询当前站点支持的商品清单
      *
      * 查询当前站点SecMaster支持的商品清单
@@ -6522,6 +6750,34 @@ public class SecMasterClient {
     public SyncInvoker<ListSubscriptionProductRequest, ListSubscriptionProductResponse> listSubscriptionProductInvoker(
         ListSubscriptionProductRequest request) {
         return new SyncInvoker<>(request, SecMasterMeta.listSubscriptionProduct, hcClient);
+    }
+
+    /**
+     * 查询待办列表
+     *
+     * 查询待办列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTasksRequest 请求对象
+     * @return ListTasksResponse
+     */
+    public ListTasksResponse listTasks(ListTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.listTasks);
+    }
+
+    /**
+     * 查询待办列表
+     *
+     * 查询待办列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTasksRequest 请求对象
+     * @return SyncInvoker<ListTasksRequest, ListTasksResponse>
+     */
+    public SyncInvoker<ListTasksRequest, ListTasksResponse> listTasksInvoker(ListTasksRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.listTasks, hcClient);
     }
 
     /**
@@ -8335,6 +8591,34 @@ public class SecMasterClient {
     }
 
     /**
+     * 查询待办的详情
+     *
+     * 查询待办的详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTaskRequest 请求对象
+     * @return ShowTaskResponse
+     */
+    public ShowTaskResponse showTask(ShowTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.showTask);
+    }
+
+    /**
+     * 查询待办的详情
+     *
+     * 查询待办的详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTaskRequest 请求对象
+     * @return SyncInvoker<ShowTaskRequest, ShowTaskResponse>
+     */
+    public SyncInvoker<ShowTaskRequest, ShowTaskResponse> showTaskInvoker(ShowTaskRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.showTask, hcClient);
+    }
+
+    /**
      * 获取漏洞详情
      *
      * 获取漏洞详情
@@ -8886,6 +9170,34 @@ public class SecMasterClient {
     }
 
     /**
+     * 修改单个映射
+     *
+     * 修改单个映射
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateMapperRequest 请求对象
+     * @return UpdateMapperResponse
+     */
+    public UpdateMapperResponse updateMapper(UpdateMapperRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.updateMapper);
+    }
+
+    /**
+     * 修改单个映射
+     *
+     * 修改单个映射
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateMapperRequest 请求对象
+     * @return SyncInvoker<UpdateMapperRequest, UpdateMapperResponse>
+     */
+    public SyncInvoker<UpdateMapperRequest, UpdateMapperResponse> updateMapperInvoker(UpdateMapperRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.updateMapper, hcClient);
+    }
+
+    /**
      * 修分类映射启用禁用状态
      *
      * 修分类映射启用禁用状态
@@ -9258,6 +9570,35 @@ public class SecMasterClient {
     }
 
     /**
+     * 更新订购资源
+     *
+     * 更新订购资源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSubscriptionOrderRequest 请求对象
+     * @return UpdateSubscriptionOrderResponse
+     */
+    public UpdateSubscriptionOrderResponse updateSubscriptionOrder(UpdateSubscriptionOrderRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.updateSubscriptionOrder);
+    }
+
+    /**
+     * 更新订购资源
+     *
+     * 更新订购资源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSubscriptionOrderRequest 请求对象
+     * @return SyncInvoker<UpdateSubscriptionOrderRequest, UpdateSubscriptionOrderResponse>
+     */
+    public SyncInvoker<UpdateSubscriptionOrderRequest, UpdateSubscriptionOrderResponse> updateSubscriptionOrderInvoker(
+        UpdateSubscriptionOrderRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.updateSubscriptionOrder, hcClient);
+    }
+
+    /**
      * 更新标签值
      *
      * 更新标签值
@@ -9287,6 +9628,34 @@ public class SecMasterClient {
     }
 
     /**
+     * 更新待办的信息
+     *
+     * 更新待办的信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTaskRequest 请求对象
+     * @return UpdateTaskResponse
+     */
+    public UpdateTaskResponse updateTask(UpdateTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.updateTask);
+    }
+
+    /**
+     * 更新待办的信息
+     *
+     * 更新待办的信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTaskRequest 请求对象
+     * @return SyncInvoker<UpdateTaskRequest, UpdateTaskResponse>
+     */
+    public SyncInvoker<UpdateTaskRequest, UpdateTaskResponse> updateTaskInvoker(UpdateTaskRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.updateTask, hcClient);
+    }
+
+    /**
      * 更新VPC终端节点服务
      *
      * 更新VPC终端节点服务
@@ -9313,6 +9682,35 @@ public class SecMasterClient {
     public SyncInvoker<UpdateVpcEndpointServiceRequest, UpdateVpcEndpointServiceResponse> updateVpcEndpointServiceInvoker(
         UpdateVpcEndpointServiceRequest request) {
         return new SyncInvoker<>(request, SecMasterMeta.updateVpcEndpointService, hcClient);
+    }
+
+    /**
+     * 更新流程实例
+     *
+     * 更新流程实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateWorkflowInstanceRequest 请求对象
+     * @return UpdateWorkflowInstanceResponse
+     */
+    public UpdateWorkflowInstanceResponse updateWorkflowInstance(UpdateWorkflowInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, SecMasterMeta.updateWorkflowInstance);
+    }
+
+    /**
+     * 更新流程实例
+     *
+     * 更新流程实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateWorkflowInstanceRequest 请求对象
+     * @return SyncInvoker<UpdateWorkflowInstanceRequest, UpdateWorkflowInstanceResponse>
+     */
+    public SyncInvoker<UpdateWorkflowInstanceRequest, UpdateWorkflowInstanceResponse> updateWorkflowInstanceInvoker(
+        UpdateWorkflowInstanceRequest request) {
+        return new SyncInvoker<>(request, SecMasterMeta.updateWorkflowInstance, hcClient);
     }
 
     /**

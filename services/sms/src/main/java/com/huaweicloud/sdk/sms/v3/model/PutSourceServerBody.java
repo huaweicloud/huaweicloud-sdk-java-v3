@@ -89,7 +89,7 @@ public class PutSourceServerBody {
     }
 
     /**
-     * 磁盘
+     * 磁盘，仅在“待配置目的端”状态下，此修改才生效
      * @return disks
      */
     public List<PutDisk> getDisks() {
@@ -122,7 +122,7 @@ public class PutSourceServerBody {
     }
 
     /**
-     * 卷组
+     * 卷组，仅在“待配置目的端”状态下，此修改才生效
      * @return volumeGroups
      */
     public List<PutVolumeGroups> getVolumeGroups() {

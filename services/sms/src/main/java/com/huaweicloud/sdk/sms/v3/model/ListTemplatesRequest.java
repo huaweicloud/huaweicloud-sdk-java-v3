@@ -35,6 +35,11 @@ public class ListTemplatesRequest {
 
     private Integer offset;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
     public ListTemplatesRequest withName(String name) {
         this.name = name;
         return this;
@@ -124,6 +129,23 @@ public class ListTemplatesRequest {
         this.offset = offset;
     }
 
+    public ListTemplatesRequest withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 模板id
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -135,12 +157,12 @@ public class ListTemplatesRequest {
         ListTemplatesRequest that = (ListTemplatesRequest) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.availabilityZone, that.availabilityZone)
             && Objects.equals(this.region, that.region) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, availabilityZone, region, limit, offset);
+        return Objects.hash(name, availabilityZone, region, limit, offset, id);
     }
 
     @Override
@@ -152,6 +174,7 @@ public class ListTemplatesRequest {
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

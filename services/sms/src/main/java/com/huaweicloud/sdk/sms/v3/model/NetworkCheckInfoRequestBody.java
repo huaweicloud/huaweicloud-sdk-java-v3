@@ -95,7 +95,7 @@ public class NetworkCheckInfoRequestBody {
     }
 
     /**
-     * 网络时延
+     * 网络时延（ms）
      * minimum: 0
      * maximum: 1E+4
      * @return networkDelay
@@ -114,7 +114,7 @@ public class NetworkCheckInfoRequestBody {
     }
 
     /**
-     * 网络抖动
+     * 网络抖动（ms）
      * minimum: 0
      * maximum: 1E+4
      * @return networkJitter
@@ -133,7 +133,7 @@ public class NetworkCheckInfoRequestBody {
     }
 
     /**
-     * 带宽
+     * 带宽速率（Mbit/s）
      * minimum: 0
      * maximum: 1E+4
      * @return migrationSpeed
@@ -152,7 +152,7 @@ public class NetworkCheckInfoRequestBody {
     }
 
     /**
-     * 丢包
+     * 丢包率（%）
      * minimum: 0
      * maximum: 1E+2
      * @return lossPercentage
@@ -171,7 +171,7 @@ public class NetworkCheckInfoRequestBody {
     }
 
     /**
-     * CPU占用
+     * CPU占用率（%）
      * minimum: 0
      * maximum: 1E+2
      * @return cpuUsage
@@ -190,7 +190,7 @@ public class NetworkCheckInfoRequestBody {
     }
 
     /**
-     * 内存占用
+     * 内存占用率（%）
      * minimum: 0
      * maximum: 1E+2
      * @return memUsage

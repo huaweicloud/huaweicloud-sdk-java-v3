@@ -240,6 +240,86 @@ public class SCTE35InfoItem {
 
     private String rawSplice;
 
+    /**
+     * **参数解释**： 该广告信号对应的region类型，是主region，还是备region **取值范围**：  - master: 主region  - slave: 备region 
+     */
+    public static final class RegionTypeEnum {
+
+        /**
+         * Enum MASTER for value: "master"
+         */
+        public static final RegionTypeEnum MASTER = new RegionTypeEnum("master");
+
+        /**
+         * Enum SLAVE for value: "slave"
+         */
+        public static final RegionTypeEnum SLAVE = new RegionTypeEnum("slave");
+
+        private static final Map<String, RegionTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RegionTypeEnum> createStaticFields() {
+            Map<String, RegionTypeEnum> map = new HashMap<>();
+            map.put("master", MASTER);
+            map.put("slave", SLAVE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        RegionTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static RegionTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RegionTypeEnum(value));
+        }
+
+        public static RegionTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof RegionTypeEnum) {
+                return this.value.equals(((RegionTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region_type")
+
+    private RegionTypeEnum regionType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region")
+
+    private String region;
+
     public SCTE35InfoItem withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -365,6 +445,40 @@ public class SCTE35InfoItem {
         this.rawSplice = rawSplice;
     }
 
+    public SCTE35InfoItem withRegionType(RegionTypeEnum regionType) {
+        this.regionType = regionType;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 该广告信号对应的region类型，是主region，还是备region **取值范围**：  - master: 主region  - slave: 备region 
+     * @return regionType
+     */
+    public RegionTypeEnum getRegionType() {
+        return regionType;
+    }
+
+    public void setRegionType(RegionTypeEnum regionType) {
+        this.regionType = regionType;
+    }
+
+    public SCTE35InfoItem withRegion(String region) {
+        this.region = region;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 该广告信号对应的region区域 **取值范围**： 华为云的region 
+     * @return region
+     */
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -377,12 +491,14 @@ public class SCTE35InfoItem {
         return Objects.equals(this.type, that.type) && Objects.equals(this.eventId, that.eventId)
             && Objects.equals(this.startDate, that.startDate) && Objects.equals(this.duration, that.duration)
             && Objects.equals(this.segmentationType, that.segmentationType)
-            && Objects.equals(this.base64Data, that.base64Data) && Objects.equals(this.rawSplice, that.rawSplice);
+            && Objects.equals(this.base64Data, that.base64Data) && Objects.equals(this.rawSplice, that.rawSplice)
+            && Objects.equals(this.regionType, that.regionType) && Objects.equals(this.region, that.region);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, eventId, startDate, duration, segmentationType, base64Data, rawSplice);
+        return Objects
+            .hash(type, eventId, startDate, duration, segmentationType, base64Data, rawSplice, regionType, region);
     }
 
     @Override
@@ -396,6 +512,8 @@ public class SCTE35InfoItem {
         sb.append("    segmentationType: ").append(toIndentedString(segmentationType)).append("\n");
         sb.append("    base64Data: ").append(toIndentedString(base64Data)).append("\n");
         sb.append("    rawSplice: ").append(toIndentedString(rawSplice)).append("\n");
+        sb.append("    regionType: ").append(toIndentedString(regionType)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("}");
         return sb.toString();
     }

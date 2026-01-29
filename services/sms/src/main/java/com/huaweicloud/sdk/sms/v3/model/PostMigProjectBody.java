@@ -236,7 +236,7 @@ public class PostMigProjectBody {
     }
 
     /**
-     * 限制迁移速率，单位：Mbps
+     * 限制迁移速率，单位：Mbps。0表示不限速
      * minimum: 0
      * maximum: 1000
      * @return speedLimit

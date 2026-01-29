@@ -3600,6 +3600,18 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowApplicableInstancesRequest::getLimit, ShowApplicableInstancesRequest::setLimit));
+        builder.<String>withRequestField("instance_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowApplicableInstancesRequest::getInstanceName,
+                ShowApplicableInstancesRequest::setInstanceName));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowApplicableInstancesRequest::getInstanceId,
+                ShowApplicableInstancesRequest::setInstanceId));
 
         // response
 

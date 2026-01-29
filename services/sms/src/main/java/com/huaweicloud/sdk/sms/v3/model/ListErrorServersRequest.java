@@ -21,11 +21,6 @@ public class ListErrorServersRequest {
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "migproject")
-
-    private String migproject;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -68,23 +63,6 @@ public class ListErrorServersRequest {
         this.offset = offset;
     }
 
-    public ListErrorServersRequest withMigproject(String migproject) {
-        this.migproject = migproject;
-        return this;
-    }
-
-    /**
-     * 需要查询的迁移项目ID，添加此字段将只查询对应ID下的迁移任务报错信息
-     * @return migproject
-     */
-    public String getMigproject() {
-        return migproject;
-    }
-
-    public void setMigproject(String migproject) {
-        this.migproject = migproject;
-    }
-
     public ListErrorServersRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -112,13 +90,12 @@ public class ListErrorServersRequest {
         }
         ListErrorServersRequest that = (ListErrorServersRequest) obj;
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.migproject, that.migproject)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, offset, migproject, enterpriseProjectId);
+        return Objects.hash(limit, offset, enterpriseProjectId);
     }
 
     @Override
@@ -127,7 +104,6 @@ public class ListErrorServersRequest {
         sb.append("class ListErrorServersRequest {\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    migproject: ").append(toIndentedString(migproject)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();

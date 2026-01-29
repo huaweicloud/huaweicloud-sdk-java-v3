@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * **参数解释**: 模式 - COUNT 计数  **约束限制** 不涉及 **取值范围**: - COUNT  **默认值** 不涉及        
+ * **参数解释**: 模式 - COUNT 计数  **约束限制** 不涉及 **取值范围**: - COUNT  **默认值** 不涉及
  */
 public class Mode {
 

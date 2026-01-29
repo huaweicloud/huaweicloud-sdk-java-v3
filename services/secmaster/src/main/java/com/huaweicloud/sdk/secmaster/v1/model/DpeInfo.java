@@ -61,6 +61,16 @@ public class DpeInfo {
     private String instanceNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "built_in")
+
+    private String builtIn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data_source")
+
+    private String dataSource;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -265,6 +275,40 @@ public class DpeInfo {
         this.instanceNum = instanceNum;
     }
 
+    public DpeInfo withBuiltIn(String builtIn) {
+        this.builtIn = builtIn;
+        return this;
+    }
+
+    /**
+     * 是否内置数据
+     * @return builtIn
+     */
+    public String getBuiltIn() {
+        return builtIn;
+    }
+
+    public void setBuiltIn(String builtIn) {
+        this.builtIn = builtIn;
+    }
+
+    public DpeInfo withDataSource(String dataSource) {
+        this.dataSource = dataSource;
+        return this;
+    }
+
+    /**
+     * 数据源
+     * @return dataSource
+     */
+    public String getDataSource() {
+        return dataSource;
+    }
+
+    public void setDataSource(String dataSource) {
+        this.dataSource = dataSource;
+    }
+
     public DpeInfo withDescription(String description) {
         this.description = description;
         return this;
@@ -399,7 +443,8 @@ public class DpeInfo {
             && Objects.equals(this.dataclassName, that.dataclassName)
             && Objects.equals(this.classifierId, that.classifierId) && Objects.equals(this.status, that.status)
             && Objects.equals(this.completeDegree, that.completeDegree)
-            && Objects.equals(this.instanceNum, that.instanceNum) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.instanceNum, that.instanceNum) && Objects.equals(this.builtIn, that.builtIn)
+            && Objects.equals(this.dataSource, that.dataSource) && Objects.equals(this.description, that.description)
             && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.creatorId, that.creatorId) && Objects.equals(this.creatorName, that.creatorName)
             && Objects.equals(this.modifierId, that.modifierId) && Objects.equals(this.modifierName, that.modifierName);
@@ -417,6 +462,8 @@ public class DpeInfo {
             status,
             completeDegree,
             instanceNum,
+            builtIn,
+            dataSource,
             description,
             updateTime,
             createTime,
@@ -440,6 +487,8 @@ public class DpeInfo {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    completeDegree: ").append(toIndentedString(completeDegree)).append("\n");
         sb.append("    instanceNum: ").append(toIndentedString(instanceNum)).append("\n");
+        sb.append("    builtIn: ").append(toIndentedString(builtIn)).append("\n");
+        sb.append("    dataSource: ").append(toIndentedString(dataSource)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");

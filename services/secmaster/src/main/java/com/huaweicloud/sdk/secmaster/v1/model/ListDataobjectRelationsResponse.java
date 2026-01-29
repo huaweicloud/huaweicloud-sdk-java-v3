@@ -30,14 +30,14 @@ public class ListDataobjectRelationsResponse extends SdkResponse {
     private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limit")
+    @JsonProperty(value = "size")
 
-    private Integer limit;
+    private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "offset")
+    @JsonProperty(value = "page")
 
-    private Integer offset;
+    private Integer page;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "success")
@@ -107,42 +107,42 @@ public class ListDataobjectRelationsResponse extends SdkResponse {
         this.total = total;
     }
 
-    public ListDataobjectRelationsResponse withLimit(Integer limit) {
-        this.limit = limit;
+    public ListDataobjectRelationsResponse withSize(Integer size) {
+        this.size = size;
         return this;
     }
 
     /**
      * 分页大小
      * minimum: 0
-     * maximum: 10000
-     * @return limit
+     * maximum: 1000
+     * @return size
      */
-    public Integer getLimit() {
-        return limit;
+    public Integer getSize() {
+        return size;
     }
 
-    public void setLimit(Integer limit) {
-        this.limit = limit;
+    public void setSize(Integer size) {
+        this.size = size;
     }
 
-    public ListDataobjectRelationsResponse withOffset(Integer offset) {
-        this.offset = offset;
+    public ListDataobjectRelationsResponse withPage(Integer page) {
+        this.page = page;
         return this;
     }
 
     /**
-     * 偏移量
+     * 分页的页码
      * minimum: 0
      * maximum: 10000
-     * @return offset
+     * @return page
      */
-    public Integer getOffset() {
-        return offset;
+    public Integer getPage() {
+        return page;
     }
 
-    public void setOffset(Integer offset) {
-        this.offset = offset;
+    public void setPage(Integer page) {
+        this.page = page;
     }
 
     public ListDataobjectRelationsResponse withSuccess(Boolean success) {
@@ -224,14 +224,14 @@ public class ListDataobjectRelationsResponse extends SdkResponse {
         }
         ListDataobjectRelationsResponse that = (ListDataobjectRelationsResponse) obj;
         return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
-            && Objects.equals(this.total, that.total) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.success, that.success)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.success, that.success)
             && Objects.equals(this.data, that.data) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, message, total, limit, offset, success, data, xRequestId);
+        return Objects.hash(code, message, total, size, page, success, data, xRequestId);
     }
 
     @Override
@@ -241,8 +241,8 @@ public class ListDataobjectRelationsResponse extends SdkResponse {
         sb.append("    code: ").append(toIndentedString(code)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    success: ").append(toIndentedString(success)).append("\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");

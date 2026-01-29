@@ -61,12 +61,15 @@ import com.huaweicloud.sdk.codeartsartifact.v2.model.ListProjectUsersRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ListProjectUsersResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ListSecGuardListRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ListSecGuardListResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListUserPrivilegesRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ListUserPrivilegesResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ModifyRepositoryRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ModifyRepositoryResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.PathMap;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.RepoFileQueryDTOV5;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ResetUserPasswordRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ResetUserPasswordResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.RolePrivilegeV5;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.SearchArtifactsRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.SearchArtifactsResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.SearchByChecksumRequest;
@@ -97,10 +100,14 @@ import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowPackageInfoRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowPackageInfoResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectListRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectListResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectRelatedRepositoryRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectRelatedRepositoryResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectReleaseFilesRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectReleaseFilesResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectStorageInfoRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectStorageInfoResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectVersionsCountRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowProjectVersionsCountResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowReleaseProjectFilesRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowReleaseProjectFilesResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepoUserInfoRequest;
@@ -109,16 +116,22 @@ import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepositoryInfoRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepositoryInfoResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepositoryRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepositoryResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepositoryRolesPrivilegeRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepositoryRolesPrivilegeResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowStorageRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowStorageResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowUserPrivilegesRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowUserPrivilegesResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowUserTicketRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowUserTicketResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowVersionListRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowVersionListResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.TrashArtifactModelForDelete;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.UpdateArtifactoryRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.UpdateArtifactoryResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.UpdateNotMavenRepoDO;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.UpdateRepoRolesPrivilegeRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.UpdateRepoRolesPrivilegeResponse;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
@@ -1004,6 +1017,29 @@ public class CodeArtsArtifactMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListUserPrivilegesRequest, ListUserPrivilegesResponse> listUserPrivileges =
+        genForListUserPrivileges();
+
+    private static HttpRequestDef<ListUserPrivilegesRequest, ListUserPrivilegesResponse> genForListUserPrivileges() {
+        // basic
+        HttpRequestDef.Builder<ListUserPrivilegesRequest, ListUserPrivilegesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUserPrivilegesRequest.class, ListUserPrivilegesResponse.class)
+                .withName("ListUserPrivileges")
+                .withUri("/v5/user/{project_id}/privileges")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserPrivilegesRequest::getProjectId, ListUserPrivilegesRequest::setProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ModifyRepositoryRequest, ModifyRepositoryResponse> modifyRepository =
         genForModifyRepository();
 
@@ -1512,6 +1548,51 @@ public class CodeArtsArtifactMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowProjectRelatedRepositoryRequest, ShowProjectRelatedRepositoryResponse> showProjectRelatedRepository =
+        genForShowProjectRelatedRepository();
+
+    private static HttpRequestDef<ShowProjectRelatedRepositoryRequest, ShowProjectRelatedRepositoryResponse> genForShowProjectRelatedRepository() {
+        // basic
+        HttpRequestDef.Builder<ShowProjectRelatedRepositoryRequest, ShowProjectRelatedRepositoryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowProjectRelatedRepositoryRequest.class,
+                    ShowProjectRelatedRepositoryResponse.class)
+                .withName("ShowProjectRelatedRepository")
+                .withUri("/v5/maven/project/repository")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("search_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProjectRelatedRepositoryRequest::getSearchName,
+                ShowProjectRelatedRepositoryRequest::setSearchName));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowProjectRelatedRepositoryRequest::getOffset,
+                ShowProjectRelatedRepositoryRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowProjectRelatedRepositoryRequest::getLimit,
+                ShowProjectRelatedRepositoryRequest::setLimit));
+        builder.<String>withRequestField("repo_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProjectRelatedRepositoryRequest::getRepoId,
+                ShowProjectRelatedRepositoryRequest::setRepoId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowProjectReleaseFilesRequest, ShowProjectReleaseFilesResponse> showProjectReleaseFiles =
         genForShowProjectReleaseFiles();
 
@@ -1577,6 +1658,37 @@ public class CodeArtsArtifactMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowProjectStorageInfoRequest::getParentId,
                 ShowProjectStorageInfoRequest::setParentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowProjectVersionsCountRequest, ShowProjectVersionsCountResponse> showProjectVersionsCount =
+        genForShowProjectVersionsCount();
+
+    private static HttpRequestDef<ShowProjectVersionsCountRequest, ShowProjectVersionsCountResponse> genForShowProjectVersionsCount() {
+        // basic
+        HttpRequestDef.Builder<ShowProjectVersionsCountRequest, ShowProjectVersionsCountResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowProjectVersionsCountRequest.class, ShowProjectVersionsCountResponse.class)
+                .withName("ShowProjectVersionsCount")
+                .withUri("/v5/{project_id}/versions/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProjectVersionsCountRequest::getProjectId,
+                ShowProjectVersionsCountRequest::setProjectId));
+        builder.<String>withRequestField("build_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProjectVersionsCountRequest::getBuildVersion,
+                ShowProjectVersionsCountRequest::setBuildVersion));
 
         // response
 
@@ -1703,6 +1815,45 @@ public class CodeArtsArtifactMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowRepositoryRolesPrivilegeRequest, ShowRepositoryRolesPrivilegeResponse> showRepositoryRolesPrivilege =
+        genForShowRepositoryRolesPrivilege();
+
+    private static HttpRequestDef<ShowRepositoryRolesPrivilegeRequest, ShowRepositoryRolesPrivilegeResponse> genForShowRepositoryRolesPrivilege() {
+        // basic
+        HttpRequestDef.Builder<ShowRepositoryRolesPrivilegeRequest, ShowRepositoryRolesPrivilegeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowRepositoryRolesPrivilegeRequest.class,
+                    ShowRepositoryRolesPrivilegeResponse.class)
+                .withName("ShowRepositoryRolesPrivilege")
+                .withUri("/cloudartifact/v5/repositories/{project_id}/{repo_id}/privileges")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRepositoryRolesPrivilegeRequest::getProjectId,
+                ShowRepositoryRolesPrivilegeRequest::setProjectId));
+        builder.<String>withRequestField("repo_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRepositoryRolesPrivilegeRequest::getRepoId,
+                ShowRepositoryRolesPrivilegeRequest::setRepoId));
+        builder.<ShowRepositoryRolesPrivilegeRequest.XLanguageEnum>withRequestField("x-language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowRepositoryRolesPrivilegeRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowRepositoryRolesPrivilegeRequest::getXLanguage,
+                ShowRepositoryRolesPrivilegeRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowStorageRequest, ShowStorageResponse> showStorage = genForShowStorage();
 
     private static HttpRequestDef<ShowStorageRequest, ShowStorageResponse> genForShowStorage() {
@@ -1771,6 +1922,44 @@ public class CodeArtsArtifactMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowVersionListRequest, ShowVersionListResponse> showVersionList =
+        genForShowVersionList();
+
+    private static HttpRequestDef<ShowVersionListRequest, ShowVersionListResponse> genForShowVersionList() {
+        // basic
+        HttpRequestDef.Builder<ShowVersionListRequest, ShowVersionListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowVersionListRequest.class, ShowVersionListResponse.class)
+                .withName("ShowVersionList")
+                .withUri("/v5/{project_id}/versions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVersionListRequest::getProjectId, ShowVersionListRequest::setProjectId));
+        builder.<String>withRequestField("build_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVersionListRequest::getBuildVersion, ShowVersionListRequest::setBuildVersion));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowVersionListRequest::getOffset, ShowVersionListRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowVersionListRequest::getLimit, ShowVersionListRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateArtifactoryRequest, UpdateArtifactoryResponse> updateArtifactory =
         genForUpdateArtifactory();
 
@@ -1788,6 +1977,36 @@ public class CodeArtsArtifactMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateNotMavenRepoDO.class),
             f -> f.withMarshaller(UpdateArtifactoryRequest::getBody, UpdateArtifactoryRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRepoRolesPrivilegeRequest, UpdateRepoRolesPrivilegeResponse> updateRepoRolesPrivilege =
+        genForUpdateRepoRolesPrivilege();
+
+    private static HttpRequestDef<UpdateRepoRolesPrivilegeRequest, UpdateRepoRolesPrivilegeResponse> genForUpdateRepoRolesPrivilege() {
+        // basic
+        HttpRequestDef.Builder<UpdateRepoRolesPrivilegeRequest, UpdateRepoRolesPrivilegeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateRepoRolesPrivilegeRequest.class, UpdateRepoRolesPrivilegeResponse.class)
+                .withName("UpdateRepoRolesPrivilege")
+                .withUri("/cloudartifact/v5/repositories/{role_id}/privileges")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("role_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRepoRolesPrivilegeRequest::getRoleId,
+                UpdateRepoRolesPrivilegeRequest::setRoleId));
+        builder.<RolePrivilegeV5>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RolePrivilegeV5.class),
+            f -> f.withMarshaller(UpdateRepoRolesPrivilegeRequest::getBody, UpdateRepoRolesPrivilegeRequest::setBody));
 
         // response
 

@@ -509,11 +509,6 @@ public class SmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListErrorServersRequest::getOffset, ListErrorServersRequest::setOffset));
-        builder.<String>withRequestField("migproject",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListErrorServersRequest::getMigproject, ListErrorServersRequest::setMigproject));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -585,6 +580,11 @@ public class SmsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServersRequest::getIp, ListServersRequest::setIp));
+        builder.<String>withRequestField("ipv6",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServersRequest::getIpv6, ListServersRequest::setIpv6));
         builder.<String>withRequestField("migproject",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -622,6 +622,11 @@ public class SmsMeta {
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListServersRequest::getIsConsistencyResultExist,
                 ListServersRequest::setIsConsistencyResultExist));
+        builder.<String>withRequestField("vm_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServersRequest::getVmId, ListServersRequest::setVmId));
 
         // response
 
@@ -718,6 +723,11 @@ public class SmsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTemplatesRequest::getOffset, ListTemplatesRequest::setOffset));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTemplatesRequest::getId, ListTemplatesRequest::setId));
 
         // response
 
