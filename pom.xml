@@ -271,8 +271,6 @@
                                     <doclint>none</doclint>
                                     <quiet>true</quiet>
                                     <notree>true</notree>
-                                    <index>false</index>
-                                    <threads>2C</threads>
                                 </configuration>
                             </execution>
                         </executions>
