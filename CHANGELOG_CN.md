@@ -1,3 +1,96 @@
+# 3.1.185 2026-02-02
+
+### HuaweiCloud SDK ModelArts
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持以下接口：
+    - `PatchNodePool`
+    - `PatchServiceV2`
+    - `RenewLease`
+    - `ListAutoScalingPolicyDetails`
+    - `CreateAutoScalingPolicy`
+    - `ShowAutoScalingPolicyDetail`
+    - `UpdateAutoScalingPolicy`
+    - `DeleteAutoScalingPolicy`
+    - `ListInspectionJobs`
+    - `CreateInspectionJob`
+    - `StopInspectionJob`
+    - `ShowInspectionJob`
+    - `UpdateInspectionJob`
+    - `DeleteInspectionJob`
+    - `ShowInspectionStatistics`
+    - `ListInspectionItems`
+    - `ListInspectionNodes`
+    - `ListLogDiagnosisJobs`
+    - `CreateLogDiagnosisJob`
+    - `StopLogDiagnosisJob`
+    - `ShowLogDiagnosisJob`
+    - `UpdateLogDiagnosisJob`
+    - `DeleteLogDiagnosisJob`
+    - `ShowLogDiagnosisJobResult`
+    - `CreateNetworkParameterDiagnosisJob`
+    - `ListNetworkDiagnosisJobs`
+    - `DeleteNetworkDiagnosisJob`
+    - `ListNetworkDiagnosisJobAlarm`
+    - `ListNetworkDiagnosisJobProxyResponseDelimit`
+    - `ListProfilingDiagnosisJobs`
+    - `CreateProfilingDiagnosisJob`
+    - `StopProfilingDiagnosisJob`
+    - `ShowProfilingDiagnosisJob`
+    - `UpdateProfilingDiagnosisJob`
+    - `DeleteProfilingDiagnosisJob`
+    - `ShowProfilingDiagnosisJobResult`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **AcceptScheduledEvent**
+    - 请求参数变更
+      - `- workspaceId`
+    - 响应参数变更
+      - `+ catalog: enum value [software,hardware]`
+      - `+ type: enum value [system-maintenance,localdisk-recovery,node_reboot,operation-request,node_maintenance,node_redeploy,node_localdisk_recovery]`
+      - `+ state: enum value [inquiring,scheduled,executing,completed,failed,canceled]`
+      - `+ instanceType: enum value [devserver,lite-cluster,standard]`
+  - **ListScheduledEvents**
+    - 响应参数变更
+      - `+ events.catalog: enum value [software,hardware]`
+      - `+ events.type: enum value [system-maintenance,localdisk-recovery,node_reboot,operation-request,node_maintenance,node_redeploy,node_localdisk_recovery]`
+      - `+ events.state: enum value [inquiring,scheduled,executing,completed,failed,canceled]`
+      - `+ events.instanceType: enum value [devserver,lite-cluster,standard]`
+  - **PatchPool**
+    - 响应参数变更
+      - `- metadata.labels.os.modelarts/node.prefix`
+      - `- metadata.labels.os.modelarts/tenant.project.id`
+      - `- metadata.labels.os.modelarts/enterprise.project.id`
+      - `- metadata.labels.os.modelarts.pool/biz`
+      - `- metadata.labels.os.modelarts/create-from`
+      - `- metadata.labels.os.modelarts/nobilling`
+      - `- metadata.labels.os.modelarts/order.name`
+      - `- metadata.labels.os.modelarts/region`
+      - `- metadata.annotations.os.modelarts.pool/scheduler.queue.strategy`
+      - `- metadata.annotations.os.modelarts.pool/subpools.count`
+      - `- metadata.annotations.os.modelarts/tenant.domain.name`
+      - `- metadata.annotations.os.modelarts.pool/scope.external.dependency.train`
+      - `- spec.containernetwork`
+      - `- spec.resources.maxCount`
+      - `- spec.resources.extendParams`
+      - `- spec.resources.os`
+      - `- spec.resources.dataVolumes`
+      - `- spec.resources.volumeGroupConfigs`
+      - `- status.clusters`
+      - `* status.resources.creating.azs: list<PoolNodeAz> -> list<object>`
+  - **PatchNetwork**
+    - 请求参数变更
+      - `* spec.connection.peerConnectionList: list<PeerConnectionItem> -> list<object>`
+    - 响应参数变更
+      - `* metadata: object<NetworkMetadata> -> object<NeworkMetadata>`
+      - `* spec.connection.peerConnectionList: list<PeerConnectionItem> -> list<object>`
+      - `* status.connectionStatus.peerConnectionStatus: list<PeerConnectionStatus> -> list<object>`
+      - `- status.connectionStatus.sfsTurboStatus.connectionType`
+      - `* status.connectionStatus.sfsTurboStatus: list<SfsTurboConnectionStatus> -> list<object>`
+
 # 3.1.184 2026-01-29
 
 ### HuaweiCloud SDK BSS

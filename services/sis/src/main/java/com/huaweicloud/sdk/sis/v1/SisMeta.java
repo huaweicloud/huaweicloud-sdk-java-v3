@@ -9,8 +9,15 @@ import com.huaweicloud.sdk.sis.v1.model.CollectTranscriberJobRequest;
 import com.huaweicloud.sdk.sis.v1.model.CollectTranscriberJobResponse;
 import com.huaweicloud.sdk.sis.v1.model.CreateVocabularyRequest;
 import com.huaweicloud.sdk.sis.v1.model.CreateVocabularyResponse;
+import com.huaweicloud.sdk.sis.v1.model.CreateVoiceRequest;
+import com.huaweicloud.sdk.sis.v1.model.CreateVoiceResponse;
 import com.huaweicloud.sdk.sis.v1.model.DeleteVocabularyRequest;
 import com.huaweicloud.sdk.sis.v1.model.DeleteVocabularyResponse;
+import com.huaweicloud.sdk.sis.v1.model.GenerateSpeechRequest;
+import com.huaweicloud.sdk.sis.v1.model.GenerateSpeechRequestBody;
+import com.huaweicloud.sdk.sis.v1.model.GenerateSpeechResponse;
+import com.huaweicloud.sdk.sis.v1.model.ListVoicesRequest;
+import com.huaweicloud.sdk.sis.v1.model.ListVoicesResponse;
 import com.huaweicloud.sdk.sis.v1.model.PostCreateVocabReq;
 import com.huaweicloud.sdk.sis.v1.model.PostCustomTTSReq;
 import com.huaweicloud.sdk.sis.v1.model.PostShortAudioReq;
@@ -22,6 +29,7 @@ import com.huaweicloud.sdk.sis.v1.model.RecognizeFlashAsrRequest;
 import com.huaweicloud.sdk.sis.v1.model.RecognizeFlashAsrResponse;
 import com.huaweicloud.sdk.sis.v1.model.RecognizeShortAudioRequest;
 import com.huaweicloud.sdk.sis.v1.model.RecognizeShortAudioResponse;
+import com.huaweicloud.sdk.sis.v1.model.RegisterVoiceReq;
 import com.huaweicloud.sdk.sis.v1.model.RunTtsRequest;
 import com.huaweicloud.sdk.sis.v1.model.RunTtsResponse;
 import com.huaweicloud.sdk.sis.v1.model.ShowVocabulariesParams;
@@ -81,6 +89,28 @@ public class SisMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateVoiceRequest, CreateVoiceResponse> createVoice = genForCreateVoice();
+
+    private static HttpRequestDef<CreateVoiceRequest, CreateVoiceResponse> genForCreateVoice() {
+        // basic
+        HttpRequestDef.Builder<CreateVoiceRequest, CreateVoiceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateVoiceRequest.class, CreateVoiceResponse.class)
+                .withName("CreateVoice")
+                .withUri("/v1/{project_id}/vcs/voices")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<RegisterVoiceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RegisterVoiceReq.class),
+            f -> f.withMarshaller(CreateVoiceRequest::getBody, CreateVoiceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteVocabularyRequest, DeleteVocabularyResponse> deleteVocabulary =
         genForDeleteVocabulary();
 
@@ -98,6 +128,56 @@ public class SisMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteVocabularyRequest::getVocabularyId, DeleteVocabularyRequest::setVocabularyId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GenerateSpeechRequest, GenerateSpeechResponse> generateSpeech =
+        genForGenerateSpeech();
+
+    private static HttpRequestDef<GenerateSpeechRequest, GenerateSpeechResponse> genForGenerateSpeech() {
+        // basic
+        HttpRequestDef.Builder<GenerateSpeechRequest, GenerateSpeechResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, GenerateSpeechRequest.class, GenerateSpeechResponse.class)
+                .withName("GenerateSpeech")
+                .withUri("/v1/{project_id}/vcs/voices/clone")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<GenerateSpeechRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(GenerateSpeechRequestBody.class),
+            f -> f.withMarshaller(GenerateSpeechRequest::getBody, GenerateSpeechRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListVoicesRequest, ListVoicesResponse> listVoices = genForListVoices();
+
+    private static HttpRequestDef<ListVoicesRequest, ListVoicesResponse> genForListVoices() {
+        // basic
+        HttpRequestDef.Builder<ListVoicesRequest, ListVoicesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListVoicesRequest.class, ListVoicesResponse.class)
+                .withName("ListVoices")
+                .withUri("/v1/{project_id}/vcs/voices")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVoicesRequest::getLimit, ListVoicesRequest::setLimit));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVoicesRequest::getOffset, ListVoicesRequest::setOffset));
 
         // response
 

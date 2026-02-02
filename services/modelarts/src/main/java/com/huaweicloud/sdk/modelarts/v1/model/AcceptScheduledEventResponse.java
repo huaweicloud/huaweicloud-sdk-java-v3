@@ -1,11 +1,16 @@
 package com.huaweicloud.sdk.modelarts.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -19,30 +24,370 @@ public class AcceptScheduledEventResponse extends SdkResponse {
 
     private String id;
 
+    /**
+     * **参数解释**：事件分类。 **取值范围**：可选值如下： - hardware：硬件维修。 - software：软件维修。
+     */
+    public static final class CatalogEnum {
+
+        /**
+         * Enum SOFTWARE for value: "software"
+         */
+        public static final CatalogEnum SOFTWARE = new CatalogEnum("software");
+
+        /**
+         * Enum HARDWARE for value: "hardware"
+         */
+        public static final CatalogEnum HARDWARE = new CatalogEnum("hardware");
+
+        private static final Map<String, CatalogEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CatalogEnum> createStaticFields() {
+            Map<String, CatalogEnum> map = new HashMap<>();
+            map.put("software", SOFTWARE);
+            map.put("hardware", HARDWARE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        CatalogEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static CatalogEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CatalogEnum(value));
+        }
+
+        public static CatalogEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof CatalogEnum) {
+                return this.value.equals(((CatalogEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "catalog")
 
-    private String catalog;
+    private CatalogEnum catalog;
+
+    /**
+     * **参数解释**：事件类型。 **取值范围**：可选值如下： - system-maintenance：系统维护 - localdisk-recovery：本地盘恢复 - node_reboot：节点重启 - operation-request：运维授权 - node_maintenance：超节点维护 - node_redeploy：超节点重部署 - node_localdisk_recovery 超节点本地盘恢复。
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum SYSTEM_MAINTENANCE for value: "system-maintenance"
+         */
+        public static final TypeEnum SYSTEM_MAINTENANCE = new TypeEnum("system-maintenance");
+
+        /**
+         * Enum LOCALDISK_RECOVERY for value: "localdisk-recovery"
+         */
+        public static final TypeEnum LOCALDISK_RECOVERY = new TypeEnum("localdisk-recovery");
+
+        /**
+         * Enum NODE_REBOOT for value: "node_reboot"
+         */
+        public static final TypeEnum NODE_REBOOT = new TypeEnum("node_reboot");
+
+        /**
+         * Enum OPERATION_REQUEST for value: "operation-request"
+         */
+        public static final TypeEnum OPERATION_REQUEST = new TypeEnum("operation-request");
+
+        /**
+         * Enum NODE_MAINTENANCE for value: "node_maintenance"
+         */
+        public static final TypeEnum NODE_MAINTENANCE = new TypeEnum("node_maintenance");
+
+        /**
+         * Enum NODE_REDEPLOY for value: "node_redeploy"
+         */
+        public static final TypeEnum NODE_REDEPLOY = new TypeEnum("node_redeploy");
+
+        /**
+         * Enum NODE_LOCALDISK_RECOVERY for value: "node_localdisk_recovery"
+         */
+        public static final TypeEnum NODE_LOCALDISK_RECOVERY = new TypeEnum("node_localdisk_recovery");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("system-maintenance", SYSTEM_MAINTENANCE);
+            map.put("localdisk-recovery", LOCALDISK_RECOVERY);
+            map.put("node_reboot", NODE_REBOOT);
+            map.put("operation-request", OPERATION_REQUEST);
+            map.put("node_maintenance", NODE_MAINTENANCE);
+            map.put("node_redeploy", NODE_REDEPLOY);
+            map.put("node_localdisk_recovery", NODE_LOCALDISK_RECOVERY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private String type;
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
 
+    /**
+     * **参数解释**：事件状态。 **取值范围**：可选择值如下： - inquiring: 待授权, - scheduled: 待执行, - executing: 执行中, - completed: 执行成功 - failed: 执行失败 - canceled: 取消
+     */
+    public static final class StateEnum {
+
+        /**
+         * Enum INQUIRING for value: "inquiring"
+         */
+        public static final StateEnum INQUIRING = new StateEnum("inquiring");
+
+        /**
+         * Enum SCHEDULED for value: "scheduled"
+         */
+        public static final StateEnum SCHEDULED = new StateEnum("scheduled");
+
+        /**
+         * Enum EXECUTING for value: "executing"
+         */
+        public static final StateEnum EXECUTING = new StateEnum("executing");
+
+        /**
+         * Enum COMPLETED for value: "completed"
+         */
+        public static final StateEnum COMPLETED = new StateEnum("completed");
+
+        /**
+         * Enum FAILED for value: "failed"
+         */
+        public static final StateEnum FAILED = new StateEnum("failed");
+
+        /**
+         * Enum CANCELED for value: "canceled"
+         */
+        public static final StateEnum CANCELED = new StateEnum("canceled");
+
+        private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StateEnum> createStaticFields() {
+            Map<String, StateEnum> map = new HashMap<>();
+            map.put("inquiring", INQUIRING);
+            map.put("scheduled", SCHEDULED);
+            map.put("executing", EXECUTING);
+            map.put("completed", COMPLETED);
+            map.put("failed", FAILED);
+            map.put("canceled", CANCELED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StateEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
+        }
+
+        public static StateEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StateEnum) {
+                return this.value.equals(((StateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
 
-    private String state;
+    private StateEnum state;
+
+    /**
+     * **参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点  - lite-cluster lite池  - standard 标准池
+     */
+    public static final class InstanceTypeEnum {
+
+        /**
+         * Enum DEVSERVER for value: "devserver"
+         */
+        public static final InstanceTypeEnum DEVSERVER = new InstanceTypeEnum("devserver");
+
+        /**
+         * Enum LITE_CLUSTER for value: "lite-cluster"
+         */
+        public static final InstanceTypeEnum LITE_CLUSTER = new InstanceTypeEnum("lite-cluster");
+
+        /**
+         * Enum STANDARD for value: "standard"
+         */
+        public static final InstanceTypeEnum STANDARD = new InstanceTypeEnum("standard");
+
+        private static final Map<String, InstanceTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, InstanceTypeEnum> createStaticFields() {
+            Map<String, InstanceTypeEnum> map = new HashMap<>();
+            map.put("devserver", DEVSERVER);
+            map.put("lite-cluster", LITE_CLUSTER);
+            map.put("standard", STANDARD);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        InstanceTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static InstanceTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InstanceTypeEnum(value));
+        }
+
+        public static InstanceTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof InstanceTypeEnum) {
+                return this.value.equals(((InstanceTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instanceType")
 
-    private String instanceType;
+    private InstanceTypeEnum instanceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instanceId")
@@ -116,7 +461,7 @@ public class AcceptScheduledEventResponse extends SdkResponse {
         this.id = id;
     }
 
-    public AcceptScheduledEventResponse withCatalog(String catalog) {
+    public AcceptScheduledEventResponse withCatalog(CatalogEnum catalog) {
         this.catalog = catalog;
         return this;
     }
@@ -125,15 +470,15 @@ public class AcceptScheduledEventResponse extends SdkResponse {
      * **参数解释**：事件分类。 **取值范围**：可选值如下： - hardware：硬件维修。 - software：软件维修。
      * @return catalog
      */
-    public String getCatalog() {
+    public CatalogEnum getCatalog() {
         return catalog;
     }
 
-    public void setCatalog(String catalog) {
+    public void setCatalog(CatalogEnum catalog) {
         this.catalog = catalog;
     }
 
-    public AcceptScheduledEventResponse withType(String type) {
+    public AcceptScheduledEventResponse withType(TypeEnum type) {
         this.type = type;
         return this;
     }
@@ -142,11 +487,11 @@ public class AcceptScheduledEventResponse extends SdkResponse {
      * **参数解释**：事件类型。 **取值范围**：可选值如下： - system-maintenance：系统维护 - localdisk-recovery：本地盘恢复 - node_reboot：节点重启 - operation-request：运维授权 - node_maintenance：超节点维护 - node_redeploy：超节点重部署 - node_localdisk_recovery 超节点本地盘恢复。
      * @return type
      */
-    public String getType() {
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 
@@ -167,7 +512,7 @@ public class AcceptScheduledEventResponse extends SdkResponse {
         this.description = description;
     }
 
-    public AcceptScheduledEventResponse withState(String state) {
+    public AcceptScheduledEventResponse withState(StateEnum state) {
         this.state = state;
         return this;
     }
@@ -176,15 +521,15 @@ public class AcceptScheduledEventResponse extends SdkResponse {
      * **参数解释**：事件状态。 **取值范围**：可选择值如下： - inquiring: 待授权, - scheduled: 待执行, - executing: 执行中, - completed: 执行成功 - failed: 执行失败 - canceled: 取消
      * @return state
      */
-    public String getState() {
+    public StateEnum getState() {
         return state;
     }
 
-    public void setState(String state) {
+    public void setState(StateEnum state) {
         this.state = state;
     }
 
-    public AcceptScheduledEventResponse withInstanceType(String instanceType) {
+    public AcceptScheduledEventResponse withInstanceType(InstanceTypeEnum instanceType) {
         this.instanceType = instanceType;
         return this;
     }
@@ -193,11 +538,11 @@ public class AcceptScheduledEventResponse extends SdkResponse {
      * **参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点  - lite-cluster lite池  - standard 标准池
      * @return instanceType
      */
-    public String getInstanceType() {
+    public InstanceTypeEnum getInstanceType() {
         return instanceType;
     }
 
-    public void setInstanceType(String instanceType) {
+    public void setInstanceType(InstanceTypeEnum instanceType) {
         this.instanceType = instanceType;
     }
 
@@ -258,7 +603,7 @@ public class AcceptScheduledEventResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：资源池对外显示的名称, lite-cluster、standard才具有，取值自资源池详情的metadata.name字段。只能以小写字母开头，数字、中划线组成，不能以中划线结尾，且长度为[36-63]个字符。 **取值范围**：不涉及。
+     * **参数解释**：资源池对外显示的名称, lite-cluster、standard才具有，取值自资源池详情的metadata.name字段。只能以小写字母开头，数字、中划线组成，不能以中划线结尾，且长度为[36-63]个字符。。 **取值范围**：不涉及。
      * @return poolDisplayName
      */
     public String getPoolDisplayName() {
@@ -292,7 +637,7 @@ public class AcceptScheduledEventResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：事件开始时间。 **约束限制**：格式为UTC时间字符串：2025-09-15T07:02:30Z。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * **参数解释**：事件开始时间。 **约束限制**：格式为UTC时间字符串：2025-09-15T07:02:30Z。。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return startTime
      */
     public String getStartTime() {

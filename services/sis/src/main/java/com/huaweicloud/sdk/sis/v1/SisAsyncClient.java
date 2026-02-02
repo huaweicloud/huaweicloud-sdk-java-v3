@@ -7,8 +7,14 @@ import com.huaweicloud.sdk.sis.v1.model.CollectTranscriberJobRequest;
 import com.huaweicloud.sdk.sis.v1.model.CollectTranscriberJobResponse;
 import com.huaweicloud.sdk.sis.v1.model.CreateVocabularyRequest;
 import com.huaweicloud.sdk.sis.v1.model.CreateVocabularyResponse;
+import com.huaweicloud.sdk.sis.v1.model.CreateVoiceRequest;
+import com.huaweicloud.sdk.sis.v1.model.CreateVoiceResponse;
 import com.huaweicloud.sdk.sis.v1.model.DeleteVocabularyRequest;
 import com.huaweicloud.sdk.sis.v1.model.DeleteVocabularyResponse;
+import com.huaweicloud.sdk.sis.v1.model.GenerateSpeechRequest;
+import com.huaweicloud.sdk.sis.v1.model.GenerateSpeechResponse;
+import com.huaweicloud.sdk.sis.v1.model.ListVoicesRequest;
+import com.huaweicloud.sdk.sis.v1.model.ListVoicesResponse;
 import com.huaweicloud.sdk.sis.v1.model.PushTranscriberJobsRequest;
 import com.huaweicloud.sdk.sis.v1.model.PushTranscriberJobsResponse;
 import com.huaweicloud.sdk.sis.v1.model.RecognizeFlashAsrRequest;
@@ -99,6 +105,34 @@ public class SisAsyncClient {
     }
 
     /**
+     * 注册接口
+     *
+     * 客户上传一段录音，并指定voice_name，在系统中注册声音。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateVoiceRequest 请求对象
+     * @return CompletableFuture<CreateVoiceResponse>
+     */
+    public CompletableFuture<CreateVoiceResponse> createVoiceAsync(CreateVoiceRequest request) {
+        return hcClient.asyncInvokeHttp(request, SisMeta.createVoice);
+    }
+
+    /**
+     * 注册接口
+     *
+     * 客户上传一段录音，并指定voice_name，在系统中注册声音。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateVoiceRequest 请求对象
+     * @return AsyncInvoker<CreateVoiceRequest, CreateVoiceResponse>
+     */
+    public AsyncInvoker<CreateVoiceRequest, CreateVoiceResponse> createVoiceAsyncInvoker(CreateVoiceRequest request) {
+        return new AsyncInvoker<>(request, SisMeta.createVoice, hcClient);
+    }
+
+    /**
      * 删除热词表
      *
      * 通过热词表id删除热词表。
@@ -125,6 +159,63 @@ public class SisAsyncClient {
     public AsyncInvoker<DeleteVocabularyRequest, DeleteVocabularyResponse> deleteVocabularyAsyncInvoker(
         DeleteVocabularyRequest request) {
         return new AsyncInvoker<>(request, SisMeta.deleteVocabulary, hcClient);
+    }
+
+    /**
+     * 合成接口
+     *
+     * 用户指定一个声色名称，并指定对应的文本，合成对应的复刻的声音
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GenerateSpeechRequest 请求对象
+     * @return CompletableFuture<GenerateSpeechResponse>
+     */
+    public CompletableFuture<GenerateSpeechResponse> generateSpeechAsync(GenerateSpeechRequest request) {
+        return hcClient.asyncInvokeHttp(request, SisMeta.generateSpeech);
+    }
+
+    /**
+     * 合成接口
+     *
+     * 用户指定一个声色名称，并指定对应的文本，合成对应的复刻的声音
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GenerateSpeechRequest 请求对象
+     * @return AsyncInvoker<GenerateSpeechRequest, GenerateSpeechResponse>
+     */
+    public AsyncInvoker<GenerateSpeechRequest, GenerateSpeechResponse> generateSpeechAsyncInvoker(
+        GenerateSpeechRequest request) {
+        return new AsyncInvoker<>(request, SisMeta.generateSpeech, hcClient);
+    }
+
+    /**
+     * 查询接口
+     *
+     * 查询已注册的声音列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVoicesRequest 请求对象
+     * @return CompletableFuture<ListVoicesResponse>
+     */
+    public CompletableFuture<ListVoicesResponse> listVoicesAsync(ListVoicesRequest request) {
+        return hcClient.asyncInvokeHttp(request, SisMeta.listVoices);
+    }
+
+    /**
+     * 查询接口
+     *
+     * 查询已注册的声音列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVoicesRequest 请求对象
+     * @return AsyncInvoker<ListVoicesRequest, ListVoicesResponse>
+     */
+    public AsyncInvoker<ListVoicesRequest, ListVoicesResponse> listVoicesAsyncInvoker(ListVoicesRequest request) {
+        return new AsyncInvoker<>(request, SisMeta.listVoices, hcClient);
     }
 
     /**

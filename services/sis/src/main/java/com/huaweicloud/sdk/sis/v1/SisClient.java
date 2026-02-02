@@ -7,8 +7,14 @@ import com.huaweicloud.sdk.sis.v1.model.CollectTranscriberJobRequest;
 import com.huaweicloud.sdk.sis.v1.model.CollectTranscriberJobResponse;
 import com.huaweicloud.sdk.sis.v1.model.CreateVocabularyRequest;
 import com.huaweicloud.sdk.sis.v1.model.CreateVocabularyResponse;
+import com.huaweicloud.sdk.sis.v1.model.CreateVoiceRequest;
+import com.huaweicloud.sdk.sis.v1.model.CreateVoiceResponse;
 import com.huaweicloud.sdk.sis.v1.model.DeleteVocabularyRequest;
 import com.huaweicloud.sdk.sis.v1.model.DeleteVocabularyResponse;
+import com.huaweicloud.sdk.sis.v1.model.GenerateSpeechRequest;
+import com.huaweicloud.sdk.sis.v1.model.GenerateSpeechResponse;
+import com.huaweicloud.sdk.sis.v1.model.ListVoicesRequest;
+import com.huaweicloud.sdk.sis.v1.model.ListVoicesResponse;
 import com.huaweicloud.sdk.sis.v1.model.PushTranscriberJobsRequest;
 import com.huaweicloud.sdk.sis.v1.model.PushTranscriberJobsResponse;
 import com.huaweicloud.sdk.sis.v1.model.RecognizeFlashAsrRequest;
@@ -96,6 +102,34 @@ public class SisClient {
     }
 
     /**
+     * 注册接口
+     *
+     * 客户上传一段录音，并指定voice_name，在系统中注册声音。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateVoiceRequest 请求对象
+     * @return CreateVoiceResponse
+     */
+    public CreateVoiceResponse createVoice(CreateVoiceRequest request) {
+        return hcClient.syncInvokeHttp(request, SisMeta.createVoice);
+    }
+
+    /**
+     * 注册接口
+     *
+     * 客户上传一段录音，并指定voice_name，在系统中注册声音。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateVoiceRequest 请求对象
+     * @return SyncInvoker<CreateVoiceRequest, CreateVoiceResponse>
+     */
+    public SyncInvoker<CreateVoiceRequest, CreateVoiceResponse> createVoiceInvoker(CreateVoiceRequest request) {
+        return new SyncInvoker<>(request, SisMeta.createVoice, hcClient);
+    }
+
+    /**
      * 删除热词表
      *
      * 通过热词表id删除热词表。
@@ -122,6 +156,63 @@ public class SisClient {
     public SyncInvoker<DeleteVocabularyRequest, DeleteVocabularyResponse> deleteVocabularyInvoker(
         DeleteVocabularyRequest request) {
         return new SyncInvoker<>(request, SisMeta.deleteVocabulary, hcClient);
+    }
+
+    /**
+     * 合成接口
+     *
+     * 用户指定一个声色名称，并指定对应的文本，合成对应的复刻的声音
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GenerateSpeechRequest 请求对象
+     * @return GenerateSpeechResponse
+     */
+    public GenerateSpeechResponse generateSpeech(GenerateSpeechRequest request) {
+        return hcClient.syncInvokeHttp(request, SisMeta.generateSpeech);
+    }
+
+    /**
+     * 合成接口
+     *
+     * 用户指定一个声色名称，并指定对应的文本，合成对应的复刻的声音
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GenerateSpeechRequest 请求对象
+     * @return SyncInvoker<GenerateSpeechRequest, GenerateSpeechResponse>
+     */
+    public SyncInvoker<GenerateSpeechRequest, GenerateSpeechResponse> generateSpeechInvoker(
+        GenerateSpeechRequest request) {
+        return new SyncInvoker<>(request, SisMeta.generateSpeech, hcClient);
+    }
+
+    /**
+     * 查询接口
+     *
+     * 查询已注册的声音列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVoicesRequest 请求对象
+     * @return ListVoicesResponse
+     */
+    public ListVoicesResponse listVoices(ListVoicesRequest request) {
+        return hcClient.syncInvokeHttp(request, SisMeta.listVoices);
+    }
+
+    /**
+     * 查询接口
+     *
+     * 查询已注册的声音列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVoicesRequest 请求对象
+     * @return SyncInvoker<ListVoicesRequest, ListVoicesResponse>
+     */
+    public SyncInvoker<ListVoicesRequest, ListVoicesResponse> listVoicesInvoker(ListVoicesRequest request) {
+        return new SyncInvoker<>(request, SisMeta.listVoices, hcClient);
     }
 
     /**

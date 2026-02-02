@@ -38,7 +38,7 @@ import org.bson.codecs.pojo.PojoCodecProvider;
 import java.nio.ByteBuffer;
 import java.util.Objects;
 
-import static com.mongodb.MongoClient.getDefaultCodecRegistry;
+import static com.mongodb.MongoClientSettings.getDefaultCodecRegistry;
 
 public class KvsExceptionHandler implements ExceptionHandler {
     @Override
