@@ -31,7 +31,7 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
     private String groupId;
 
     /**
-     * 扩展信息导入模式 - merge：当扩展信息定义冲突时，merge保留原有扩展信息 - override：当扩展信息定义冲突时，override会覆盖原有扩展信息
+     * 扩展信息导入模式 - merge：当扩展信息定义冲突时，merge保留原有扩展信息 - override：当扩展信息定义冲突时，override会覆盖原有扩展信息 
      */
     public static final class ExtendModeEnum {
 
@@ -116,7 +116,7 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
     private Boolean mockMode;
 
     /**
-     * 导入模式 - merge：当API信息定义冲突时，merge保留原有API信息 - override：当API信息定义冲突时，override会覆盖原有API信息
+     * 导入模式 - merge：当API信息定义冲突时，merge保留原有API信息 - override：当API信息定义冲突时，override会覆盖原有API信息 
      */
     public static final class ApiModeEnum {
 
@@ -200,7 +200,7 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 是否创建新分组
+     * 是否创建新分组。
      * @return isCreateGroup
      */
     public Boolean getIsCreateGroup() {
@@ -217,7 +217,7 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
     }
 
     /**
-     * API分组编号，当is_create_group=false时为必填
+     * API分组编号，当is_create_group=false时为必填。
      * @return groupId
      */
     public String getGroupId() {
@@ -234,7 +234,7 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 扩展信息导入模式 - merge：当扩展信息定义冲突时，merge保留原有扩展信息 - override：当扩展信息定义冲突时，override会覆盖原有扩展信息
+     * 扩展信息导入模式 - merge：当扩展信息定义冲突时，merge保留原有扩展信息 - override：当扩展信息定义冲突时，override会覆盖原有扩展信息 
      * @return extendMode
      */
     public ExtendModeEnum getExtendMode() {
@@ -251,7 +251,7 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 是否开启简易导入模式
+     * 是否开启简易导入模式。
      * @return simpleMode
      */
     public Boolean getSimpleMode() {
@@ -268,7 +268,7 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 是否开启Mock后端
+     * 是否开启Mock后端。
      * @return mockMode
      */
     public Boolean getMockMode() {
@@ -285,7 +285,7 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 导入模式 - merge：当API信息定义冲突时，merge保留原有API信息 - override：当API信息定义冲突时，override会覆盖原有API信息
+     * 导入模式 - merge：当API信息定义冲突时，merge保留原有API信息 - override：当API信息定义冲突时，override会覆盖原有API信息 
      * @return apiMode
      */
     public ApiModeEnum getApiMode() {
@@ -302,7 +302,7 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 导入Api的请求体，json或yaml格式的文件
+     * 导入Api的请求体，json或yaml或yml格式的文件。
      * @return fileName
      */
     public FormDataFilePart getFileName() {

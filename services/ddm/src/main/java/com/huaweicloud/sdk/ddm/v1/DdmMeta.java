@@ -8,6 +8,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.ddm.v1.model.AdminUserInfoReq;
 import com.huaweicloud.sdk.ddm.v1.model.BatchDeleteNodesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.BatchDeleteNodesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.BatchModifyReadAndWriteStrategyRequest;
+import com.huaweicloud.sdk.ddm.v1.model.BatchModifyReadWriteStrategyRequest;
+import com.huaweicloud.sdk.ddm.v1.model.BatchModifyReadWriteStrategyResponse;
 import com.huaweicloud.sdk.ddm.v1.model.BindEipOpenRequest;
 import com.huaweicloud.sdk.ddm.v1.model.BindEipRequest;
 import com.huaweicloud.sdk.ddm.v1.model.BindEipResponse;
@@ -17,8 +20,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ChangeDatabaseVersionRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ChangeDatabaseVersionResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ChangeStrategyRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ChangeStrategyResponse;
-import com.huaweicloud.sdk.ddm.v1.model.CheckDataNodeConnectionV0V3Request;
-import com.huaweicloud.sdk.ddm.v1.model.CheckDataNodeConnectionV0V3Response;
+import com.huaweicloud.sdk.ddm.v1.model.CheckDataNodeConnectionRequest;
+import com.huaweicloud.sdk.ddm.v1.model.CheckDataNodeConnectionResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CheckMigrateLogicDbRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CheckMigrateLogicDbResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CheckPreliminaryResultsRequest;
@@ -27,11 +30,12 @@ import com.huaweicloud.sdk.ddm.v1.model.CleanMigrationRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CleanMigrationResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CompareParameterGroupsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CompareParameterGroupsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ConfigSqlBlacklistReqV3VO;
 import com.huaweicloud.sdk.ddm.v1.model.ConfigurationCopyReqV3;
 import com.huaweicloud.sdk.ddm.v1.model.ConfigurationDiffReqV3;
 import com.huaweicloud.sdk.ddm.v1.model.ConfigurationUpdateReqV3;
-import com.huaweicloud.sdk.ddm.v1.model.CopyParameterGroupRequest;
-import com.huaweicloud.sdk.ddm.v1.model.CopyParameterGroupResponse;
+import com.huaweicloud.sdk.ddm.v1.model.CopyConfigurationRequest;
+import com.huaweicloud.sdk.ddm.v1.model.CopyConfigurationResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateConfigurationRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseReq;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseRequest;
@@ -74,6 +78,7 @@ import com.huaweicloud.sdk.ddm.v1.model.DeleteUserRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteUserResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DownloadSchemaMetadataRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DownloadSchemaMetadataResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ElbIpGroupOpsReq;
 import com.huaweicloud.sdk.ddm.v1.model.EnlargeRequest;
 import com.huaweicloud.sdk.ddm.v1.model.EsdbCheckRdsConnectionsRequestV3;
 import com.huaweicloud.sdk.ddm.v1.model.ExecuteKillLogicalProcessesRequest;
@@ -96,6 +101,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListBackupsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListBackupsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListConfigurationApplyHistoriesRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListConfigurationApplyHistoriesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListDatabaseAvailableVersionsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListDatabaseAvailableVersionsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListDatabasesRequest;
@@ -106,26 +113,30 @@ import com.huaweicloud.sdk.ddm.v1.model.ListDdmEnginesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListDdmEnginesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListDdmFlavorsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListDdmFlavorsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListDdmsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListDdmsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListEnginesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListEnginesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListFlavorsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListGroupRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListGroupResponse;
-import com.huaweicloud.sdk.ddm.v1.model.ListInstancesAppliedParameterGroupV0V3Request;
-import com.huaweicloud.sdk.ddm.v1.model.ListInstancesAppliedParameterGroupV0V3Response;
+import com.huaweicloud.sdk.ddm.v1.model.ListInstancesConfigurationsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListInstancesConfigurationsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListInstancesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListInstancesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListNodesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListNodesResponse;
-import com.huaweicloud.sdk.ddm.v1.model.ListParameterGroupApplyHistoryV0V3Request;
-import com.huaweicloud.sdk.ddm.v1.model.ListParameterGroupApplyHistoryV0V3Response;
 import com.huaweicloud.sdk.ddm.v1.model.ListReadWriteRatioRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListReadWriteRatioResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogAnalysisRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogAnalysisResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListSqlBlackRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListSqlBlackResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListTasksRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListTasksResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListUsersRequest;
@@ -145,6 +156,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ModifyElbVipOpenReq;
 import com.huaweicloud.sdk.ddm.v1.model.ModifyInstanceNameReq;
 import com.huaweicloud.sdk.ddm.v1.model.ModifyInstanceSecurityGroupReq;
 import com.huaweicloud.sdk.ddm.v1.model.ModifyReadAndWriteStrategyReq;
+import com.huaweicloud.sdk.ddm.v1.model.ModifySqlBlackListRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ModifySqlBlackListResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ParaGroupUpdate;
 import com.huaweicloud.sdk.ddm.v1.model.RebuildConfigRequest;
 import com.huaweicloud.sdk.ddm.v1.model.RebuildConfigResponse;
@@ -203,8 +216,12 @@ import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceParamRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceParamResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowIpGroupRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowIpGroupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowLogicalProcessesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowLogicalProcessesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowMigrationLogRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowMigrationLogResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowNodeRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowNodeResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowPhysicalProcessesRequest;
@@ -219,6 +236,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ShowRiskInfoRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowRiskInfoResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShrinkInstanceNodesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShrinkInstanceNodesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.SwitchIpGroupRequest;
+import com.huaweicloud.sdk.ddm.v1.model.SwitchIpGroupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.SwitchRouteRequest;
 import com.huaweicloud.sdk.ddm.v1.model.SwitchRouteResponse;
 import com.huaweicloud.sdk.ddm.v1.model.SwitchSslOpenRequest;
@@ -1531,6 +1550,33 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDdmsRequest, ListDdmsResponse> listDdms = genForListDdms();
+
+    private static HttpRequestDef<ListDdmsRequest, ListDdmsResponse> genForListDdms() {
+        // basic
+        HttpRequestDef.Builder<ListDdmsRequest, ListDdmsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDdmsRequest.class, ListDdmsResponse.class)
+                .withName("ListDdms")
+                .withUri("/v3/{project_id}/instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDdmsRequest::getOffset, ListDdmsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDdmsRequest::getLimit, ListDdmsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListEnginesRequest, ListEnginesResponse> listEngines = genForListEngines();
 
     private static HttpRequestDef<ListEnginesRequest, ListEnginesResponse> genForListEngines() {
@@ -1761,6 +1807,55 @@ public class DdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSlowLogRequest::getEndDate, ListSlowLogRequest::setEndDate));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSlowLogAnalysisRequest, ListSlowLogAnalysisResponse> listSlowLogAnalysis =
+        genForListSlowLogAnalysis();
+
+    private static HttpRequestDef<ListSlowLogAnalysisRequest, ListSlowLogAnalysisResponse> genForListSlowLogAnalysis() {
+        // basic
+        HttpRequestDef.Builder<ListSlowLogAnalysisRequest, ListSlowLogAnalysisResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSlowLogAnalysisRequest.class, ListSlowLogAnalysisResponse.class)
+                .withName("ListSlowLogAnalysis")
+                .withUri("/v3/{project_id}/instances/{instance_id}/slow-log-analysis")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSlowLogAnalysisRequest::getInstanceId,
+                ListSlowLogAnalysisRequest::setInstanceId));
+        builder.<BigDecimal>withRequestField("start_date",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BigDecimal.class),
+            f -> f.withMarshaller(ListSlowLogAnalysisRequest::getStartDate, ListSlowLogAnalysisRequest::setStartDate));
+        builder.<BigDecimal>withRequestField("end_date",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BigDecimal.class),
+            f -> f.withMarshaller(ListSlowLogAnalysisRequest::getEndDate, ListSlowLogAnalysisRequest::setEndDate));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSlowLogAnalysisRequest::getOffset, ListSlowLogAnalysisRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSlowLogAnalysisRequest::getLimit, ListSlowLogAnalysisRequest::setLimit));
+        builder.<String>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSlowLogAnalysisRequest::getOrder, ListSlowLogAnalysisRequest::setOrder));
 
         // response
 
@@ -2579,6 +2674,33 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowIpGroupRequest, ShowIpGroupResponse> showIpGroup = genForShowIpGroup();
+
+    private static HttpRequestDef<ShowIpGroupRequest, ShowIpGroupResponse> genForShowIpGroup() {
+        // basic
+        HttpRequestDef.Builder<ShowIpGroupRequest, ShowIpGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowIpGroupRequest.class, ShowIpGroupResponse.class)
+                .withName("ShowIpGroup")
+                .withUri("/v3/{project_id}/instances/{instance_id}/groups/{group_id}/acls")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIpGroupRequest::getGroupId, ShowIpGroupRequest::setGroupId));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIpGroupRequest::getInstanceId, ShowIpGroupRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowLogicalProcessesRequest, ShowLogicalProcessesResponse> showLogicalProcesses =
         genForShowLogicalProcesses();
 
@@ -2612,6 +2734,44 @@ public class DdmMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowLogicalProcessesRequest::getKeyword, ShowLogicalProcessesRequest::setKeyword));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMigrationLogRequest, ShowMigrationLogResponse> showMigrationLog =
+        genForShowMigrationLog();
+
+    private static HttpRequestDef<ShowMigrationLogRequest, ShowMigrationLogResponse> genForShowMigrationLog() {
+        // basic
+        HttpRequestDef.Builder<ShowMigrationLogRequest, ShowMigrationLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowMigrationLogRequest.class, ShowMigrationLogResponse.class)
+                .withName("ShowMigrationLog")
+                .withUri("/v3/{project_id}/instance/{instance_id}/task/{task_id}/run-logs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMigrationLogRequest::getInstanceId, ShowMigrationLogRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMigrationLogRequest::getTaskId, ShowMigrationLogRequest::setTaskId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowMigrationLogRequest::getOffset, ShowMigrationLogRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowMigrationLogRequest::getLimit, ShowMigrationLogRequest::setLimit));
 
         // response
 
@@ -2812,6 +2972,39 @@ public class DdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReduceRequest.class),
             f -> f.withMarshaller(ShrinkInstanceNodesRequest::getBody, ShrinkInstanceNodesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchIpGroupRequest, SwitchIpGroupResponse> switchIpGroup =
+        genForSwitchIpGroup();
+
+    private static HttpRequestDef<SwitchIpGroupRequest, SwitchIpGroupResponse> genForSwitchIpGroup() {
+        // basic
+        HttpRequestDef.Builder<SwitchIpGroupRequest, SwitchIpGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SwitchIpGroupRequest.class, SwitchIpGroupResponse.class)
+                .withName("SwitchIpGroup")
+                .withUri("/v3/{project_id}/instances/{instance_id}/groups/{group_id}/acls")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchIpGroupRequest::getInstanceId, SwitchIpGroupRequest::setInstanceId));
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchIpGroupRequest::getGroupId, SwitchIpGroupRequest::setGroupId));
+        builder.<ElbIpGroupOpsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ElbIpGroupOpsReq.class),
+            f -> f.withMarshaller(SwitchIpGroupRequest::getBody, SwitchIpGroupRequest::setBody));
 
         // response
 
@@ -3196,27 +3389,29 @@ public class DdmMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CheckDataNodeConnectionV0V3Request, CheckDataNodeConnectionV0V3Response> checkDataNodeConnectionV0V3 =
-        genForCheckDataNodeConnectionV0V3();
+    public static final HttpRequestDef<CheckDataNodeConnectionRequest, CheckDataNodeConnectionResponse> checkDataNodeConnection =
+        genForCheckDataNodeConnection();
 
-    private static HttpRequestDef<CheckDataNodeConnectionV0V3Request, CheckDataNodeConnectionV0V3Response> genForCheckDataNodeConnectionV0V3() {
+    private static HttpRequestDef<CheckDataNodeConnectionRequest, CheckDataNodeConnectionResponse> genForCheckDataNodeConnection() {
         // basic
-        HttpRequestDef.Builder<CheckDataNodeConnectionV0V3Request, CheckDataNodeConnectionV0V3Response> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    CheckDataNodeConnectionV0V3Request.class,
-                    CheckDataNodeConnectionV0V3Response.class)
-                .withName("CheckDataNodeConnectionV0V3")
-                .withUri("/v3/ddm/instance/rds/connection")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<CheckDataNodeConnectionRequest, CheckDataNodeConnectionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CheckDataNodeConnectionRequest.class, CheckDataNodeConnectionResponse.class)
+            .withName("CheckDataNodeConnection")
+            .withUri("/v3/{project_id}/instance/{instance_id}/rds/connection")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckDataNodeConnectionRequest::getInstanceId,
+                CheckDataNodeConnectionRequest::setInstanceId));
         builder.<EsdbCheckRdsConnectionsRequestV3>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EsdbCheckRdsConnectionsRequestV3.class),
-            f -> f.withMarshaller(CheckDataNodeConnectionV0V3Request::getBody,
-                CheckDataNodeConnectionV0V3Request::setBody));
+            f -> f.withMarshaller(CheckDataNodeConnectionRequest::getBody, CheckDataNodeConnectionRequest::setBody));
 
         // response
 
@@ -3246,14 +3441,14 @@ public class DdmMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CopyParameterGroupRequest, CopyParameterGroupResponse> copyParameterGroup =
-        genForCopyParameterGroup();
+    public static final HttpRequestDef<CopyConfigurationRequest, CopyConfigurationResponse> copyConfiguration =
+        genForCopyConfiguration();
 
-    private static HttpRequestDef<CopyParameterGroupRequest, CopyParameterGroupResponse> genForCopyParameterGroup() {
+    private static HttpRequestDef<CopyConfigurationRequest, CopyConfigurationResponse> genForCopyConfiguration() {
         // basic
-        HttpRequestDef.Builder<CopyParameterGroupRequest, CopyParameterGroupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CopyParameterGroupRequest.class, CopyParameterGroupResponse.class)
-                .withName("CopyParameterGroup")
+        HttpRequestDef.Builder<CopyConfigurationRequest, CopyConfigurationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CopyConfigurationRequest.class, CopyConfigurationResponse.class)
+                .withName("CopyConfiguration")
                 .withUri("/v3/{project_id}/configurations/{config_id}/copy")
                 .withContentType("application/json;charset=UTF-8");
 
@@ -3262,73 +3457,29 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CopyParameterGroupRequest::getConfigId, CopyParameterGroupRequest::setConfigId));
+            f -> f.withMarshaller(CopyConfigurationRequest::getConfigId, CopyConfigurationRequest::setConfigId));
         builder.<ConfigurationCopyReqV3>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ConfigurationCopyReqV3.class),
-            f -> f.withMarshaller(CopyParameterGroupRequest::getBody, CopyParameterGroupRequest::setBody));
-
-        // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CopyParameterGroupResponse::getBody, CopyParameterGroupResponse::setBody));
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListInstancesAppliedParameterGroupV0V3Request, ListInstancesAppliedParameterGroupV0V3Response> listInstancesAppliedParameterGroupV0V3 =
-        genForListInstancesAppliedParameterGroupV0V3();
-
-    private static HttpRequestDef<ListInstancesAppliedParameterGroupV0V3Request, ListInstancesAppliedParameterGroupV0V3Response> genForListInstancesAppliedParameterGroupV0V3() {
-        // basic
-        HttpRequestDef.Builder<ListInstancesAppliedParameterGroupV0V3Request, ListInstancesAppliedParameterGroupV0V3Response> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ListInstancesAppliedParameterGroupV0V3Request.class,
-                    ListInstancesAppliedParameterGroupV0V3Response.class)
-                .withName("ListInstancesAppliedParameterGroupV0V3")
-                .withUri("/v3/{project_id}/configurations/{config_id}/query-instances")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("config_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesAppliedParameterGroupV0V3Request::getConfigId,
-                ListInstancesAppliedParameterGroupV0V3Request::setConfigId));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstancesAppliedParameterGroupV0V3Request::getOffset,
-                ListInstancesAppliedParameterGroupV0V3Request::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInstancesAppliedParameterGroupV0V3Request::getLimit,
-                ListInstancesAppliedParameterGroupV0V3Request::setLimit));
+            f -> f.withMarshaller(CopyConfigurationRequest::getBody, CopyConfigurationRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListParameterGroupApplyHistoryV0V3Request, ListParameterGroupApplyHistoryV0V3Response> listParameterGroupApplyHistoryV0V3 =
-        genForListParameterGroupApplyHistoryV0V3();
+    public static final HttpRequestDef<ListConfigurationApplyHistoriesRequest, ListConfigurationApplyHistoriesResponse> listConfigurationApplyHistories =
+        genForListConfigurationApplyHistories();
 
-    private static HttpRequestDef<ListParameterGroupApplyHistoryV0V3Request, ListParameterGroupApplyHistoryV0V3Response> genForListParameterGroupApplyHistoryV0V3() {
+    private static HttpRequestDef<ListConfigurationApplyHistoriesRequest, ListConfigurationApplyHistoriesResponse> genForListConfigurationApplyHistories() {
         // basic
-        HttpRequestDef.Builder<ListParameterGroupApplyHistoryV0V3Request, ListParameterGroupApplyHistoryV0V3Response> builder =
+        HttpRequestDef.Builder<ListConfigurationApplyHistoriesRequest, ListConfigurationApplyHistoriesResponse> builder =
             HttpRequestDef
                 .builder(HttpMethod.GET,
-                    ListParameterGroupApplyHistoryV0V3Request.class,
-                    ListParameterGroupApplyHistoryV0V3Response.class)
-                .withName("ListParameterGroupApplyHistoryV0V3")
+                    ListConfigurationApplyHistoriesRequest.class,
+                    ListConfigurationApplyHistoriesResponse.class)
+                .withName("ListConfigurationApplyHistories")
                 .withUri("/v3/{project_id}/configurations/{config_id}/apply-histories")
                 .withContentType("application/json");
 
@@ -3337,20 +3488,59 @@ public class DdmMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListParameterGroupApplyHistoryV0V3Request::getConfigId,
-                ListParameterGroupApplyHistoryV0V3Request::setConfigId));
+            f -> f.withMarshaller(ListConfigurationApplyHistoriesRequest::getConfigId,
+                ListConfigurationApplyHistoriesRequest::setConfigId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListParameterGroupApplyHistoryV0V3Request::getOffset,
-                ListParameterGroupApplyHistoryV0V3Request::setOffset));
+            f -> f.withMarshaller(ListConfigurationApplyHistoriesRequest::getOffset,
+                ListConfigurationApplyHistoriesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListParameterGroupApplyHistoryV0V3Request::getLimit,
-                ListParameterGroupApplyHistoryV0V3Request::setLimit));
+            f -> f.withMarshaller(ListConfigurationApplyHistoriesRequest::getLimit,
+                ListConfigurationApplyHistoriesRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstancesConfigurationsRequest, ListInstancesConfigurationsResponse> listInstancesConfigurations =
+        genForListInstancesConfigurations();
+
+    private static HttpRequestDef<ListInstancesConfigurationsRequest, ListInstancesConfigurationsResponse> genForListInstancesConfigurations() {
+        // basic
+        HttpRequestDef.Builder<ListInstancesConfigurationsRequest, ListInstancesConfigurationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInstancesConfigurationsRequest.class,
+                    ListInstancesConfigurationsResponse.class)
+                .withName("ListInstancesConfigurations")
+                .withUri("/v3/{project_id}/configurations/{config_id}/query-instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesConfigurationsRequest::getConfigId,
+                ListInstancesConfigurationsRequest::setConfigId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstancesConfigurationsRequest::getOffset,
+                ListInstancesConfigurationsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstancesConfigurationsRequest::getLimit,
+                ListInstancesConfigurationsRequest::setLimit));
 
         // response
 
@@ -3365,7 +3555,7 @@ public class DdmMeta {
         HttpRequestDef.Builder<ResetParameterGroupRequest, ResetParameterGroupResponse> builder =
             HttpRequestDef.builder(HttpMethod.PUT, ResetParameterGroupRequest.class, ResetParameterGroupResponse.class)
                 .withName("ResetParameterGroup")
-                .withUri("/v3/{project_id}/configurations/{config_id}/reset")
+                .withUri("/v3/{project_id}/configurations/{config_id}")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
@@ -3402,6 +3592,100 @@ public class DdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDdmDetailRequest::getInstanceId, ShowDdmDetailRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchModifyReadWriteStrategyRequest, BatchModifyReadWriteStrategyResponse> batchModifyReadWriteStrategy =
+        genForBatchModifyReadWriteStrategy();
+
+    private static HttpRequestDef<BatchModifyReadWriteStrategyRequest, BatchModifyReadWriteStrategyResponse> genForBatchModifyReadWriteStrategy() {
+        // basic
+        HttpRequestDef.Builder<BatchModifyReadWriteStrategyRequest, BatchModifyReadWriteStrategyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    BatchModifyReadWriteStrategyRequest.class,
+                    BatchModifyReadWriteStrategyResponse.class)
+                .withName("BatchModifyReadWriteStrategy")
+                .withUri("/v3/{project_id}/instances/{instance_id}/action/batch-modify-read-write-strategy")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchModifyReadWriteStrategyRequest::getInstanceId,
+                BatchModifyReadWriteStrategyRequest::setInstanceId));
+        builder.<BatchModifyReadAndWriteStrategyRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchModifyReadAndWriteStrategyRequest.class),
+            f -> f.withMarshaller(BatchModifyReadWriteStrategyRequest::getBody,
+                BatchModifyReadWriteStrategyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifySqlBlackListRequest, ModifySqlBlackListResponse> modifySqlBlackList =
+        genForModifySqlBlackList();
+
+    private static HttpRequestDef<ModifySqlBlackListRequest, ModifySqlBlackListResponse> genForModifySqlBlackList() {
+        // basic
+        HttpRequestDef.Builder<ModifySqlBlackListRequest, ModifySqlBlackListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifySqlBlackListRequest.class, ModifySqlBlackListResponse.class)
+                .withName("ModifySqlBlackList")
+                .withUri("/v3/{project_id}/instances/{instance_id}/databases/{logic_db_name}/sql-black-list")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifySqlBlackListRequest::getInstanceId, ModifySqlBlackListRequest::setInstanceId));
+        builder.<String>withRequestField("logic_db_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifySqlBlackListRequest::getLogicDbName,
+                ModifySqlBlackListRequest::setLogicDbName));
+        builder.<ConfigSqlBlacklistReqV3VO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ConfigSqlBlacklistReqV3VO.class),
+            f -> f.withMarshaller(ModifySqlBlackListRequest::getBody, ModifySqlBlackListRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSqlBlackRequest, ListSqlBlackResponse> listSqlBlack = genForListSqlBlack();
+
+    private static HttpRequestDef<ListSqlBlackRequest, ListSqlBlackResponse> genForListSqlBlack() {
+        // basic
+        HttpRequestDef.Builder<ListSqlBlackRequest, ListSqlBlackResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSqlBlackRequest.class, ListSqlBlackResponse.class)
+                .withName("ListSqlBlack")
+                .withUri("/v3/{project_id}/instances/{instance_id}/databases/{logic_db_name}/sql-black-list")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSqlBlackRequest::getInstanceId, ListSqlBlackRequest::setInstanceId));
+        builder.<String>withRequestField("logic_db_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSqlBlackRequest::getLogicDbName, ListSqlBlackRequest::setLogicDbName));
 
         // response
 

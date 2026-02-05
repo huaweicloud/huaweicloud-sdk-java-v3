@@ -20,9 +20,9 @@ public class ListCollectConfigResponse extends SdkResponse {
     private List<ListCollectConfigResponseBodyAllVendors> allVendors = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cofing_statistics")
+    @JsonProperty(value = "config_statistics")
 
-    private ListCollectConfigResponseBodyCofingStatistics cofingStatistics;
+    private ListCollectConfigResponseBodyConfigStatistics configStatistics;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_list")
@@ -103,32 +103,32 @@ public class ListCollectConfigResponse extends SdkResponse {
         this.allVendors = allVendors;
     }
 
-    public ListCollectConfigResponse withCofingStatistics(
-        ListCollectConfigResponseBodyCofingStatistics cofingStatistics) {
-        this.cofingStatistics = cofingStatistics;
+    public ListCollectConfigResponse withConfigStatistics(
+        ListCollectConfigResponseBodyConfigStatistics configStatistics) {
+        this.configStatistics = configStatistics;
         return this;
     }
 
-    public ListCollectConfigResponse withCofingStatistics(
-        Consumer<ListCollectConfigResponseBodyCofingStatistics> cofingStatisticsSetter) {
-        if (this.cofingStatistics == null) {
-            this.cofingStatistics = new ListCollectConfigResponseBodyCofingStatistics();
-            cofingStatisticsSetter.accept(this.cofingStatistics);
+    public ListCollectConfigResponse withConfigStatistics(
+        Consumer<ListCollectConfigResponseBodyConfigStatistics> configStatisticsSetter) {
+        if (this.configStatistics == null) {
+            this.configStatistics = new ListCollectConfigResponseBodyConfigStatistics();
+            configStatisticsSetter.accept(this.configStatistics);
         }
 
         return this;
     }
 
     /**
-     * Get cofingStatistics
-     * @return cofingStatistics
+     * Get configStatistics
+     * @return configStatistics
      */
-    public ListCollectConfigResponseBodyCofingStatistics getCofingStatistics() {
-        return cofingStatistics;
+    public ListCollectConfigResponseBodyConfigStatistics getConfigStatistics() {
+        return configStatistics;
     }
 
-    public void setCofingStatistics(ListCollectConfigResponseBodyCofingStatistics cofingStatistics) {
-        this.cofingStatistics = cofingStatistics;
+    public void setConfigStatistics(ListCollectConfigResponseBodyConfigStatistics configStatistics) {
+        this.configStatistics = configStatistics;
     }
 
     public ListCollectConfigResponse withDataList(List<ListCollectConfigResponseBodyDataList> dataList) {
@@ -343,7 +343,7 @@ public class ListCollectConfigResponse extends SdkResponse {
         }
         ListCollectConfigResponse that = (ListCollectConfigResponse) obj;
         return Objects.equals(this.allVendors, that.allVendors)
-            && Objects.equals(this.cofingStatistics, that.cofingStatistics)
+            && Objects.equals(this.configStatistics, that.configStatistics)
             && Objects.equals(this.dataList, that.dataList) && Objects.equals(this.datasets, that.datasets)
             && Objects.equals(this.dataspaceId, that.dataspaceId)
             && Objects.equals(this.dataspaceName, that.dataspaceName) && Objects.equals(this.domainId, that.domainId)
@@ -354,7 +354,7 @@ public class ListCollectConfigResponse extends SdkResponse {
     @Override
     public int hashCode() {
         return Objects.hash(allVendors,
-            cofingStatistics,
+            configStatistics,
             dataList,
             datasets,
             dataspaceId,
@@ -371,7 +371,7 @@ public class ListCollectConfigResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCollectConfigResponse {\n");
         sb.append("    allVendors: ").append(toIndentedString(allVendors)).append("\n");
-        sb.append("    cofingStatistics: ").append(toIndentedString(cofingStatistics)).append("\n");
+        sb.append("    configStatistics: ").append(toIndentedString(configStatistics)).append("\n");
         sb.append("    dataList: ").append(toIndentedString(dataList)).append("\n");
         sb.append("    datasets: ").append(toIndentedString(datasets)).append("\n");
         sb.append("    dataspaceId: ").append(toIndentedString(dataspaceId)).append("\n");

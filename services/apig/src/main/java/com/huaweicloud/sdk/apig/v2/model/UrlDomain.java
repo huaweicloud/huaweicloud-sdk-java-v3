@@ -200,7 +200,7 @@ public class UrlDomain {
     }
 
     /**
-     * SSL证书编号
+     * SSL证书编号。当绑定的证书有RSA类型时，该字段有值，且展示对应RSA证书的编号。
      * @return sslId
      */
     public String getSslId() {
@@ -217,7 +217,7 @@ public class UrlDomain {
     }
 
     /**
-     * SSL证书名称
+     * SSL证书名称。当绑定的证书有RSA类型时，该字段有值，且展示对应RSA证书的名称。
      * @return sslName
      */
     public String getSslName() {
@@ -268,7 +268,7 @@ public class UrlDomain {
     }
 
     /**
-     * 是否存在信任的根证书CA。当绑定证书存在trusted_root_ca时为true。
+     * 是否存在信任的根证书CA。只有当域名绑定的所有证书都存在信任的根证书CA时为true。
      * @return isHasTrustedRootCa
      */
     public Boolean getIsHasTrustedRootCa() {

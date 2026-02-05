@@ -65,7 +65,7 @@ public class DisassociateAppQuotaWithAppRequest {
     }
 
     /**
-     * 应用编号
+     * 凭据编号
      * @return appId
      */
     public String getAppId() {

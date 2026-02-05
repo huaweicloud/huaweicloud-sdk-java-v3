@@ -53,7 +53,7 @@ public class QuerySessionTypesReq {
     }
 
     /**
-     * 磁盘类型。
+     * 会话类型： - CPU - GPU
      * @return sessionType
      */
     public String getSessionType() {
@@ -70,7 +70,7 @@ public class QuerySessionTypesReq {
     }
 
     /**
-     * 资源类型字段。
+     * 资源类型: -hws.resource.type.workspace.volume： 云办公桌面磁盘 -hws.resource.type.workspace.desktop： 云办公桌面 -hws.resource.type.workspace.appstream： 云应用 -hws.resource.type.workspace.appstreamsession： 云应用多会话
      * @return resourceType
      */
     public String getResourceType() {
@@ -87,7 +87,7 @@ public class QuerySessionTypesReq {
     }
 
     /**
-     * 资源所属云服务类型编码。
+     * 资源所属云服务类型编码： - hws.service.type.vdi - hws.service.type.marketplace
      * @return cloudServiceType
      */
     public String getCloudServiceType() {

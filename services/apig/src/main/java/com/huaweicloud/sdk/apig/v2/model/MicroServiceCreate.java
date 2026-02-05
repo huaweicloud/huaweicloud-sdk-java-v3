@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class MicroServiceCreate {
 
     /**
-     * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎（工作负载） - CCE_SERVICE: CCE云容器引擎（Service） - NACOS: Nacos注册中心，nacos_info必填
+     * 微服务类型。 - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎（工作负载） - CCE_SERVICE：CCE云容器引擎（Service）（暂不支持） - NACOS：nacos注册中心，nacos_info必填 
      */
     public static final class ServiceTypeEnum {
 
@@ -129,7 +129,7 @@ public class MicroServiceCreate {
     }
 
     /**
-     * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎（工作负载） - CCE_SERVICE: CCE云容器引擎（Service） - NACOS: Nacos注册中心，nacos_info必填
+     * 微服务类型。 - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎（工作负载） - CCE_SERVICE：CCE云容器引擎（Service）（暂不支持） - NACOS：nacos注册中心，nacos_info必填 
      * @return serviceType
      */
     public ServiceTypeEnum getServiceType() {

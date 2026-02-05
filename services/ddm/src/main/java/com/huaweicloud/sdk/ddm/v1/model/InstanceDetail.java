@@ -163,7 +163,7 @@ public class InstanceDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags_info")
 
-    private List<TagsInfo> tagsInfo = null;
+    private Object tagsInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_user_name")
@@ -186,7 +186,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例ID。
+     * **参数解释**：  实例ID，此参数是实例的唯一标识。  **参数范围**：  只能由英文字母、数字组成，后缀为in09，长度为36个字符。
      * @return id
      */
     public String getId() {
@@ -203,7 +203,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例名称。
+     * **参数解释**：  实例名称。  **参数范围**：  不涉及。
      * @return name
      */
     public String getName() {
@@ -220,7 +220,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 实例别名。
+     * **参数解释**：  实例别名。  **参数范围**：  不涉及。
      * @return alias
      */
     public String getAlias() {
@@ -237,7 +237,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 项目ID。
+     * **参数解释**：  租户在某一Region下的project ID。  获取方法请参见[获取项目ID](https://support.huaweicloud.com/api-ddm/ddm_api_01_0063.html)。  **参数范围**：  只能由英文字母、数字组成，且长度为32个字符。 
      * @return projectId
      */
     public String getProjectId() {
@@ -254,7 +254,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 集群模式。
+     * **参数解释**：  集群模式。  **参数范围**：  不涉及。
      * @return clusterMode
      */
     public String getClusterMode() {
@@ -271,7 +271,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 状态。
+     * **参数解释**：  状态。  **参数范围**：  不涉及。
      * @return status
      */
     public String getStatus() {
@@ -288,7 +288,7 @@ public class InstanceDetail {
     }
 
     /**
-     * bpdomain_id
+     * **参数解释**：  bpdomain_id。  **参数范围**：  不涉及。
      * @return bpdomainId
      */
     public String getBpdomainId() {
@@ -305,7 +305,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 账户ID。
+     * **参数解释**：  账户ID。  **参数范围**：  不涉及。
      * @return userId
      */
     public String getUserId() {
@@ -322,7 +322,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 数据库版本。
+     * **参数解释**：  数据库版本。  **参数范围**：  不涉及。
      * @return datastoreVersion
      */
     public String getDatastoreVersion() {
@@ -339,7 +339,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 数据库类型。
+     * **参数解释**：  数据库类型。  **参数范围**：  不涉及。
      * @return datastoreType
      */
     public String getDatastoreType() {
@@ -356,7 +356,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 创建时间。
+     * **参数解释**：  创建时间。  **参数范围**：  不涉及。
      * @return createAt
      */
     public String getCreateAt() {
@@ -373,7 +373,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 更新时间。
+     * **参数解释**：  更新时间。  **参数范围**：  不涉及。
      * @return updateAt
      */
     public String getUpdateAt() {
@@ -390,7 +390,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 删除时间。
+     * **参数解释**：  删除时间。  **参数范围**：  不涉及。
      * @return deleteAt
      */
     public String getDeleteAt() {
@@ -407,7 +407,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 是否有版本可升级。
+     * **参数解释**：  是否有版本可升级。  **参数范围**：  不涉及。
      * @return newVersionAvailable
      */
     public Boolean getNewVersionAvailable() {
@@ -424,7 +424,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 是否有版本可回滚。
+     * **参数解释**：  是否有版本可回滚。  **参数范围**：  不涉及。
      * @return rollbackVersionAvailable
      */
     public Boolean getRollbackVersionAvailable() {
@@ -441,7 +441,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 是否有版本可降级。
+     * **参数解释**：  是否有版本可降级。  **参数范围**：  不涉及。
      * @return degradeVersionAvailable
      */
     public Boolean getDegradeVersionAvailable() {
@@ -458,7 +458,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 公共ip。
+     * **参数解释**：  公共ip。  **参数范围**：  不涉及。
      * @return publicIp
      */
     public String getPublicIp() {
@@ -475,7 +475,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 端口。
+     * **参数解释**：  端口。  **参数范围**：  不涉及。
      * @return port
      */
     public String getPort() {
@@ -492,7 +492,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 创建失败原因编码。
+     * **参数解释**：  创建失败原因编码。  **参数范围**：  不涉及。
      * @return createFailErrorCode
      */
     public String getCreateFailErrorCode() {
@@ -509,7 +509,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 时区。
+     * **参数解释**：  时区。  **参数范围**：  不涉及。
      * @return timeZone
      */
     public String getTimeZone() {
@@ -526,7 +526,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 付费模式。
+     * **参数解释**：  付费模式。  **参数范围**：  不涉及。
      * @return payModel
      */
     public String getPayModel() {
@@ -543,7 +543,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 订单ID。
+     * **参数解释**：  订单ID。  **参数范围**：  不涉及。
      * @return orderId
      */
     public String getOrderId() {
@@ -560,7 +560,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 周期。
+     * **参数解释**：  周期。  **参数范围**：  不涉及。
      * minimum: 0
      * maximum: 2147483647
      * @return period
@@ -579,7 +579,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 是否冻结。
+     * **参数解释**：  是否冻结。  **参数范围**：  不涉及。
      * @return isFrozen
      */
     public Boolean getIsFrozen() {
@@ -596,7 +596,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 冻结时间。
+     * **参数解释**：  冻结时间。  **参数范围**：  不涉及。
      * @return frozenTime
      */
     public String getFrozenTime() {
@@ -629,7 +629,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 锁状态。
+     * **参数解释**：  锁状态。  **参数范围**：  不涉及。
      * @return actions
      */
     public List<ActionInfo> getActions() {
@@ -646,7 +646,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 是否只有默认组。
+     * **参数解释**：  是否只有默认组。  **参数范围**：  不涉及。
      * @return onlyDefaultGroup
      */
     public Boolean getOnlyDefaultGroup() {
@@ -679,7 +679,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 组信息。
+     * **参数解释**：  组信息。  **参数范围**：  不涉及。
      * @return groups
      */
     public List<DdmGroupInfo> getGroups() {
@@ -712,7 +712,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 其他信息。
+     * **参数解释**：  其他信息。  **参数范围**：  不涉及。
      * @return extendMap
      */
     public Map<String, String> getExtendMap() {
@@ -723,36 +723,20 @@ public class InstanceDetail {
         this.extendMap = extendMap;
     }
 
-    public InstanceDetail withTagsInfo(List<TagsInfo> tagsInfo) {
+    public InstanceDetail withTagsInfo(Object tagsInfo) {
         this.tagsInfo = tagsInfo;
         return this;
     }
 
-    public InstanceDetail addTagsInfoItem(TagsInfo tagsInfoItem) {
-        if (this.tagsInfo == null) {
-            this.tagsInfo = new ArrayList<>();
-        }
-        this.tagsInfo.add(tagsInfoItem);
-        return this;
-    }
-
-    public InstanceDetail withTagsInfo(Consumer<List<TagsInfo>> tagsInfoSetter) {
-        if (this.tagsInfo == null) {
-            this.tagsInfo = new ArrayList<>();
-        }
-        tagsInfoSetter.accept(this.tagsInfo);
-        return this;
-    }
-
     /**
-     * 标签信息。
+     * **参数解释**：  标签信息。  **参数范围**：  不涉及。
      * @return tagsInfo
      */
-    public List<TagsInfo> getTagsInfo() {
+    public Object getTagsInfo() {
         return tagsInfo;
     }
 
-    public void setTagsInfo(List<TagsInfo> tagsInfo) {
+    public void setTagsInfo(Object tagsInfo) {
         this.tagsInfo = tagsInfo;
     }
 
@@ -762,7 +746,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 管理员账号。
+     * **参数解释**：  管理员账号。  **参数范围**：  不涉及。
      * @return adminUserName
      */
     public String getAdminUserName() {
@@ -779,7 +763,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 绑定eip信息。
+     * **参数解释**：  绑定eip信息。  **参数范围**：  不涉及。
      * @return eipBindingInfo
      */
     public Object getEipBindingInfo() {
@@ -796,7 +780,7 @@ public class InstanceDetail {
     }
 
     /**
-     * 是否支持ssl。
+     * **参数解释**：  是否支持ssl。  **参数范围**：  不涉及。
      * minimum: 0
      * maximum: 2147483647
      * @return enableSsl

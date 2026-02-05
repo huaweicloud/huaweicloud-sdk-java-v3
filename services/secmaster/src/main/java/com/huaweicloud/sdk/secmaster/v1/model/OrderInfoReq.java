@@ -195,7 +195,7 @@ public class OrderInfoReq {
     private OrderConfig config;
 
     /**
-     * 当scene=PREPAID时需要填写，订购周期类型： 2：月； 3：年；
+     * 当scene=PREPAID时需要填写，订阅周期类型： 2：月； 3：年；
      */
     public static final class PeriodTypeEnum {
 
@@ -270,7 +270,7 @@ public class OrderInfoReq {
     private PeriodTypeEnum periodType;
 
     /**
-     * 订购周期数，当scene=PREPAID时需要填写该值 取值大于0；小于等于0会报错。 当period_type=2时，其可选范围为[1, 9]，当period_type=3，其可选范围为[1, 3]
+     * 订阅周期数，当scene=PREPAID时需要填写该值 取值大于0；小于等于0会报错。 当period_type=2时，其可选范围为[1, 9]，当period_type=3，其可选范围为[1, 3]
      */
     public static final class PeriodNumEnum {
 
@@ -610,7 +610,7 @@ public class OrderInfoReq {
     }
 
     /**
-     * 当scene=PREPAID时需要填写，订购周期类型： 2：月； 3：年；
+     * 当scene=PREPAID时需要填写，订阅周期类型： 2：月； 3：年；
      * minimum: 2
      * maximum: 3
      * @return periodType
@@ -629,7 +629,7 @@ public class OrderInfoReq {
     }
 
     /**
-     * 订购周期数，当scene=PREPAID时需要填写该值 取值大于0；小于等于0会报错。 当period_type=2时，其可选范围为[1, 9]，当period_type=3，其可选范围为[1, 3]
+     * 订阅周期数，当scene=PREPAID时需要填写该值 取值大于0；小于等于0会报错。 当period_type=2时，其可选范围为[1, 9]，当period_type=3，其可选范围为[1, 3]
      * minimum: 1
      * maximum: 9
      * @return periodNum

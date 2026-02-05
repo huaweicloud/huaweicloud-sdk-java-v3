@@ -109,7 +109,7 @@ public class ResourceUsage {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_spec_code")
 
-    private Object resourceSpecCode;
+    private String resourceSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_type")
@@ -187,7 +187,7 @@ public class ResourceUsage {
         this.sourceResourceSpecCode = sourceResourceSpecCode;
     }
 
-    public ResourceUsage withResourceSpecCode(Object resourceSpecCode) {
+    public ResourceUsage withResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
         return this;
     }
@@ -196,11 +196,11 @@ public class ResourceUsage {
      * 源资源规格编码
      * @return resourceSpecCode
      */
-    public Object getResourceSpecCode() {
+    public String getResourceSpecCode() {
         return resourceSpecCode;
     }
 
-    public void setResourceSpecCode(Object resourceSpecCode) {
+    public void setResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
     }
 

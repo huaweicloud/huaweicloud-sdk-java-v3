@@ -100,7 +100,7 @@ public class ServerHdaDetails {
     }
 
     /**
-     * 是否是维护状态。
+     * 服务器维护状态： - true : 维护态的实例。 - false: 非维护态的实例。
      * @return maintainStatus
      */
     public Boolean getMaintainStatus() {

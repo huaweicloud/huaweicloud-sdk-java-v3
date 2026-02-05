@@ -51,6 +51,11 @@ public class CreateDpeClassifyRequestBody {
 
     private DpeClassifyCreate classifier;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mapper")
+
+    private CreateDpeMappingRequestBody mapper;
+
     public CreateDpeClassifyRequestBody withId(String id) {
         this.id = id;
         return this;
@@ -196,6 +201,32 @@ public class CreateDpeClassifyRequestBody {
         this.classifier = classifier;
     }
 
+    public CreateDpeClassifyRequestBody withMapper(CreateDpeMappingRequestBody mapper) {
+        this.mapper = mapper;
+        return this;
+    }
+
+    public CreateDpeClassifyRequestBody withMapper(Consumer<CreateDpeMappingRequestBody> mapperSetter) {
+        if (this.mapper == null) {
+            this.mapper = new CreateDpeMappingRequestBody();
+            mapperSetter.accept(this.mapper);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get mapper
+     * @return mapper
+     */
+    public CreateDpeMappingRequestBody getMapper() {
+        return mapper;
+    }
+
+    public void setMapper(CreateDpeMappingRequestBody mapper) {
+        this.mapper = mapper;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -208,12 +239,13 @@ public class CreateDpeClassifyRequestBody {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.workspaceId, that.workspaceId)
             && Objects.equals(this.dataclassId, that.dataclassId) && Objects.equals(this.dataSource, that.dataSource)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.classifier, that.classifier);
+            && Objects.equals(this.description, that.description) && Objects.equals(this.classifier, that.classifier)
+            && Objects.equals(this.mapper, that.mapper);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, projectId, workspaceId, dataclassId, dataSource, description, classifier);
+        return Objects.hash(id, name, projectId, workspaceId, dataclassId, dataSource, description, classifier, mapper);
     }
 
     @Override
@@ -228,6 +260,7 @@ public class CreateDpeClassifyRequestBody {
         sb.append("    dataSource: ").append(toIndentedString(dataSource)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    classifier: ").append(toIndentedString(classifier)).append("\n");
+        sb.append("    mapper: ").append(toIndentedString(mapper)).append("\n");
         sb.append("}");
         return sb.toString();
     }

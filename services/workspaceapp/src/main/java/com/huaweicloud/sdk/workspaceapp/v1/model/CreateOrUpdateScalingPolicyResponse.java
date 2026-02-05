@@ -32,6 +32,11 @@ public class CreateOrUpdateScalingPolicyResponse extends SdkResponse {
 
     private ScalingPolicyBySession scalingPolicyBySession;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scaling_policy_by_resource")
+
+    private ScalingPolicyByResource scalingPolicyByResource;
+
     public CreateOrUpdateScalingPolicyResponse withEnable(Boolean enable) {
         this.enable = enable;
         return this;
@@ -115,6 +120,34 @@ public class CreateOrUpdateScalingPolicyResponse extends SdkResponse {
         this.scalingPolicyBySession = scalingPolicyBySession;
     }
 
+    public CreateOrUpdateScalingPolicyResponse withScalingPolicyByResource(
+        ScalingPolicyByResource scalingPolicyByResource) {
+        this.scalingPolicyByResource = scalingPolicyByResource;
+        return this;
+    }
+
+    public CreateOrUpdateScalingPolicyResponse withScalingPolicyByResource(
+        Consumer<ScalingPolicyByResource> scalingPolicyByResourceSetter) {
+        if (this.scalingPolicyByResource == null) {
+            this.scalingPolicyByResource = new ScalingPolicyByResource();
+            scalingPolicyByResourceSetter.accept(this.scalingPolicyByResource);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get scalingPolicyByResource
+     * @return scalingPolicyByResource
+     */
+    public ScalingPolicyByResource getScalingPolicyByResource() {
+        return scalingPolicyByResource;
+    }
+
+    public void setScalingPolicyByResource(ScalingPolicyByResource scalingPolicyByResource) {
+        this.scalingPolicyByResource = scalingPolicyByResource;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -126,12 +159,14 @@ public class CreateOrUpdateScalingPolicyResponse extends SdkResponse {
         CreateOrUpdateScalingPolicyResponse that = (CreateOrUpdateScalingPolicyResponse) obj;
         return Objects.equals(this.enable, that.enable) && Objects.equals(this.maxScalingAmount, that.maxScalingAmount)
             && Objects.equals(this.singleExpansionCount, that.singleExpansionCount)
-            && Objects.equals(this.scalingPolicyBySession, that.scalingPolicyBySession);
+            && Objects.equals(this.scalingPolicyBySession, that.scalingPolicyBySession)
+            && Objects.equals(this.scalingPolicyByResource, that.scalingPolicyByResource);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enable, maxScalingAmount, singleExpansionCount, scalingPolicyBySession);
+        return Objects
+            .hash(enable, maxScalingAmount, singleExpansionCount, scalingPolicyBySession, scalingPolicyByResource);
     }
 
     @Override
@@ -142,6 +177,7 @@ public class CreateOrUpdateScalingPolicyResponse extends SdkResponse {
         sb.append("    maxScalingAmount: ").append(toIndentedString(maxScalingAmount)).append("\n");
         sb.append("    singleExpansionCount: ").append(toIndentedString(singleExpansionCount)).append("\n");
         sb.append("    scalingPolicyBySession: ").append(toIndentedString(scalingPolicyBySession)).append("\n");
+        sb.append("    scalingPolicyByResource: ").append(toIndentedString(scalingPolicyByResource)).append("\n");
         sb.append("}");
         return sb.toString();
     }

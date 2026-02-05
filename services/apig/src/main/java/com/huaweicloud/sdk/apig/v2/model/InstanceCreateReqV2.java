@@ -232,7 +232,7 @@ public class InstanceCreateReqV2 {
     private Integer bandwidthSize;
 
     /**
-     * 带宽收费模式： - bandwidth - traffic
+     * 带宽收费模式： - bandwidth：按带宽计费 - [traffic：按流量计费](tag:hws_test) 
      */
     public static final class BandwidthChargingModeEnum {
 
@@ -402,7 +402,7 @@ public class InstanceCreateReqV2 {
     private Integer ingressBandwidthSize;
 
     /**
-     * 入口带宽收费模式： - bandwidth - traffic
+     * 入口带宽收费模式： - bandwidth：按带宽计费 - [traffic：按流量计费](tag:hws_test) 
      */
     public static final class IngressBandwidthChargingModeEnum {
 
@@ -586,7 +586,7 @@ public class InstanceCreateReqV2 {
     }
 
     /**
-     * 虚拟私有云ID。  获取方法如下：   - 方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。   - 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询VPC列表”章节。 
+     * 虚拟私有云ID。  获取方法如下：   - 方法1：在虚拟私有云服务的控制台界面，进入虚拟私有云的详情页面查找VPC ID。   - 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询VPC列表”章节。 
      * @return vpcId
      */
     public String getVpcId() {
@@ -603,7 +603,7 @@ public class InstanceCreateReqV2 {
     }
 
     /**
-     * 子网的网络ID。  获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询子网列表”章节。 
+     * 子网的网络ID。  获取方法如下： - 方法1：在虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询子网列表”章节。 
      * @return subnetId
      */
     public String getSubnetId() {
@@ -620,7 +620,7 @@ public class InstanceCreateReqV2 {
     }
 
     /**
-     * 指定实例所属的安全组。  获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询安全组列表”章节。 
+     * 指定实例所属的安全组。  获取方法如下： - 方法1：在虚拟私有云服务的控制台界面，进入安全组的详情页面查找安全组ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询安全组列表”章节。 
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -637,7 +637,7 @@ public class InstanceCreateReqV2 {
     }
 
     /**
-     * 弹性公网IP ID。  实例需要开启公网访问，且loadbalancer_provider为lvs时需要填写，绑定后使用者可以通过该入口从公网访问APIG实例中的API等资源  获取方法：登录虚拟私有云服务的控制台界面，在弹性公网IP的详情页面查找弹性公网IP ID。
+     * 弹性公网IP ID。  实例需要开启公网访问，且loadbalancer_provider为lvs时需要填写，绑定后使用者可以通过该入口从公网访问APIG实例中的API等资源  获取方法：在虚拟私有云服务的控制台界面，进入弹性公网IP的详情页面查找弹性公网IP ID。
      * @return eipId
      */
     public String getEipId() {
@@ -654,7 +654,7 @@ public class InstanceCreateReqV2 {
     }
 
     /**
-     * 企业项目ID，企业账号必填。  获取方法如下： - 方法1：登录企业项目管理界面，在项目管理详情页面查找项目ID。 - 方法2：通过企业项目管理的API接口查询，具体方法请参见《企业管理API参考》的“查询企业项目列表”章节。
+     * 企业项目ID，企业账号必填。  获取方法如下： - 方法1：在企业项目管理界面，进入项目管理详情页面查找项目ID。 - 方法2：通过企业项目管理的API接口查询，具体方法请参见《企业管理API参考》的“查询企业项目列表”章节。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -704,7 +704,7 @@ public class InstanceCreateReqV2 {
     }
 
     /**
-     * 出公网带宽  实例需要开启出公网功能时需要填写，绑定后使用者可以利用该出口访问公网上的互联网资源
+     * 出公网带宽  实例需要开启出公网功能时需要填写，绑定后使用者可以利用该出口访问公网上的互联网资源 
      * @return bandwidthSize
      */
     public Integer getBandwidthSize() {
@@ -721,7 +721,7 @@ public class InstanceCreateReqV2 {
     }
 
     /**
-     * 带宽收费模式： - bandwidth - traffic
+     * 带宽收费模式： - bandwidth：按带宽计费 - [traffic：按流量计费](tag:hws_test) 
      * @return bandwidthChargingMode
      */
     public BandwidthChargingModeEnum getBandwidthChargingMode() {
@@ -738,7 +738,7 @@ public class InstanceCreateReqV2 {
     }
 
     /**
-     * 公网访问是否支持IPv6。  当前仅部分region部分可用区支持IPv6
+     * 公网访问是否支持IPv6。  当前仅部分region部分可用区支持IPv6 
      * @return ipv6Enable
      */
     public Boolean getIpv6Enable() {
@@ -788,7 +788,7 @@ public class InstanceCreateReqV2 {
     }
 
     /**
-     * 标签列表。  一个实例默认最多支持创建20个标签
+     * 标签列表。  一个实例默认最多支持创建20个标签 
      * @return tags
      */
     public List<TmsKeyValue> getTags() {
@@ -840,7 +840,7 @@ public class InstanceCreateReqV2 {
     }
 
     /**
-     * 入口带宽收费模式： - bandwidth - traffic
+     * 入口带宽收费模式： - bandwidth：按带宽计费 - [traffic：按流量计费](tag:hws_test) 
      * @return ingressBandwidthChargingMode
      */
     public IngressBandwidthChargingModeEnum getIngressBandwidthChargingMode() {

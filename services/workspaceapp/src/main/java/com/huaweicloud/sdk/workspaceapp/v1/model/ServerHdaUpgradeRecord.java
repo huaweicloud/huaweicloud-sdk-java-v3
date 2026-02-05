@@ -180,7 +180,7 @@ public class ServerHdaUpgradeRecord {
     }
 
     /**
-     * HDA升级状态。
+     * HDA升级状态： - fail：升级失败 - upgrade success：升级成功
      * @return upgradeStatus
      */
     public String getUpgradeStatus() {

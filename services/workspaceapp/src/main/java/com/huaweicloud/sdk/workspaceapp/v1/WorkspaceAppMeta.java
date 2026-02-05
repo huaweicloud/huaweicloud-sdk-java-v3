@@ -84,12 +84,18 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.BatchUpgradeHdaVersionResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BindAppWarehouseBucketRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BindAppWarehouseBucketResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BucketNameReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ChangeClusterReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ChangeClusterRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ChangeClusterResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ChangeServerImageReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ChangeServerImageRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ChangeServerImageResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CheckAppGroupReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CheckAppGroupRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CheckAppGroupResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CheckPublishAppReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CheckPublishAppRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CheckPublishAppResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CheckQuotaRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CheckQuotaResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CountImageSubJobsRequest;
@@ -107,6 +113,9 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.CreateBucketOrAclResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateCloudStorageReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateCloudStorageRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateCloudStorageResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateHotspotSessionConfigReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateHotspotSessionConfigRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateHotspotSessionConfigResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateImageServerReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateImageServerRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateImageServerResponse;
@@ -221,6 +230,8 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.ListFoldersAndFilesResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListFutureExecutionsReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListFutureExecutionsRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListFutureExecutionsResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListHotspotSessionConfigRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListHotspotSessionConfigResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListImageJobsRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListImageJobsResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListImageServersRequest;
@@ -229,6 +240,8 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.ListImageSubJobsRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListImageSubJobsResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListLatestAttachedServerAppRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListLatestAttachedServerAppResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListNonMigrationUsersRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListNonMigrationUsersResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListPersistentStorageRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListPersistentStorageResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListPolicyGroupDetailInfoRequest;
@@ -336,8 +349,6 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.ShowOriginalPolicyInfoRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowOriginalPolicyInfoResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowPolicyGroupRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowPolicyGroupResponse;
-import com.huaweicloud.sdk.workspaceapp.v1.model.ShowPrivacyStatementRequest;
-import com.huaweicloud.sdk.workspaceapp.v1.model.ShowPrivacyStatementResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowProjectConfigRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowProjectConfigResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowPublishableAppRequest;
@@ -362,9 +373,6 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.ShowServerVncRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowServerVncResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowSessionTypesRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowSessionTypesResponse;
-import com.huaweicloud.sdk.workspaceapp.v1.model.SignPrivacyStatementReq;
-import com.huaweicloud.sdk.workspaceapp.v1.model.SignPrivacyStatementRequest;
-import com.huaweicloud.sdk.workspaceapp.v1.model.SignPrivacyStatementResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.TransferFilePreReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.TransferFilePreRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.TransferFilePreResponse;
@@ -382,9 +390,15 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateAppRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateAppResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateCloudUserFolderAssignmentRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateCloudUserFolderAssignmentResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateHotspotSessionConfigReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateHotspotSessionConfigRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateHotspotSessionConfigResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateImageServerReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateImageServerRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateImageServerResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateNonMigrationUsersReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateNonMigrationUsersRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateNonMigrationUsersResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdatePolicyGroupReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdatePolicyGroupRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdatePolicyGroupResponse;
@@ -728,6 +742,34 @@ public class WorkspaceAppMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchUpdateAppReq.class),
             f -> f.withMarshaller(BatchEnableAppRequest::getBody, BatchEnableAppRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckPublishAppRequest, CheckPublishAppResponse> checkPublishApp =
+        genForCheckPublishApp();
+
+    private static HttpRequestDef<CheckPublishAppRequest, CheckPublishAppResponse> genForCheckPublishApp() {
+        // basic
+        HttpRequestDef.Builder<CheckPublishAppRequest, CheckPublishAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckPublishAppRequest.class, CheckPublishAppResponse.class)
+                .withName("CheckPublishApp")
+                .withUri("/v1/{project_id}/app-groups/{app_group_id}/apps/actions/check")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckPublishAppRequest::getAppGroupId, CheckPublishAppRequest::setAppGroupId));
+        builder.<CheckPublishAppReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CheckPublishAppReq.class),
+            f -> f.withMarshaller(CheckPublishAppRequest::getBody, CheckPublishAppRequest::setBody));
 
         // response
 
@@ -1586,6 +1628,34 @@ public class WorkspaceAppMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ChangeClusterRequest, ChangeClusterResponse> changeCluster =
+        genForChangeCluster();
+
+    private static HttpRequestDef<ChangeClusterRequest, ChangeClusterResponse> genForChangeCluster() {
+        // basic
+        HttpRequestDef.Builder<ChangeClusterRequest, ChangeClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ChangeClusterRequest.class, ChangeClusterResponse.class)
+                .withName("ChangeCluster")
+                .withUri("/v1/{project_id}/cloud-storages/{storage_id}/actions/change-cluster")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("storage_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeClusterRequest::getStorageId, ChangeClusterRequest::setStorageId));
+        builder.<ChangeClusterReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeClusterReq.class),
+            f -> f.withMarshaller(ChangeClusterRequest::getBody, ChangeClusterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateCloudStorageRequest, CreateCloudStorageResponse> createCloudStorage =
         genForCreateCloudStorage();
 
@@ -2007,6 +2077,166 @@ public class WorkspaceAppMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateHotspotSessionConfigRequest, CreateHotspotSessionConfigResponse> createHotspotSessionConfig =
+        genForCreateHotspotSessionConfig();
+
+    private static HttpRequestDef<CreateHotspotSessionConfigRequest, CreateHotspotSessionConfigResponse> genForCreateHotspotSessionConfig() {
+        // basic
+        HttpRequestDef.Builder<CreateHotspotSessionConfigRequest, CreateHotspotSessionConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateHotspotSessionConfigRequest.class,
+                    CreateHotspotSessionConfigResponse.class)
+                .withName("CreateHotspotSessionConfig")
+                .withUri("/v1/{project_id}/hotspot-session-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateHotspotSessionConfigReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateHotspotSessionConfigReq.class),
+            f -> f.withMarshaller(CreateHotspotSessionConfigRequest::getBody,
+                CreateHotspotSessionConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHotspotSessionConfigRequest, ListHotspotSessionConfigResponse> listHotspotSessionConfig =
+        genForListHotspotSessionConfig();
+
+    private static HttpRequestDef<ListHotspotSessionConfigRequest, ListHotspotSessionConfigResponse> genForListHotspotSessionConfig() {
+        // basic
+        HttpRequestDef.Builder<ListHotspotSessionConfigRequest, ListHotspotSessionConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListHotspotSessionConfigRequest.class, ListHotspotSessionConfigResponse.class)
+                .withName("ListHotspotSessionConfig")
+                .withUri("/v1/{project_id}/hotspot-session-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHotspotSessionConfigRequest::getOffset,
+                ListHotspotSessionConfigRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHotspotSessionConfigRequest::getLimit,
+                ListHotspotSessionConfigRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNonMigrationUsersRequest, ListNonMigrationUsersResponse> listNonMigrationUsers =
+        genForListNonMigrationUsers();
+
+    private static HttpRequestDef<ListNonMigrationUsersRequest, ListNonMigrationUsersResponse> genForListNonMigrationUsers() {
+        // basic
+        HttpRequestDef.Builder<ListNonMigrationUsersRequest, ListNonMigrationUsersResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListNonMigrationUsersRequest.class, ListNonMigrationUsersResponse.class)
+            .withName("ListNonMigrationUsers")
+            .withUri("/v1/{project_id}/hotspot-session-config/{config_id}/non-migration-users")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNonMigrationUsersRequest::getConfigId,
+                ListNonMigrationUsersRequest::setConfigId));
+        builder.<String>withRequestField("user_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNonMigrationUsersRequest::getUserName,
+                ListNonMigrationUsersRequest::setUserName));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListNonMigrationUsersRequest::getOffset, ListNonMigrationUsersRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListNonMigrationUsersRequest::getLimit, ListNonMigrationUsersRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateHotspotSessionConfigRequest, UpdateHotspotSessionConfigResponse> updateHotspotSessionConfig =
+        genForUpdateHotspotSessionConfig();
+
+    private static HttpRequestDef<UpdateHotspotSessionConfigRequest, UpdateHotspotSessionConfigResponse> genForUpdateHotspotSessionConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateHotspotSessionConfigRequest, UpdateHotspotSessionConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PATCH,
+                    UpdateHotspotSessionConfigRequest.class,
+                    UpdateHotspotSessionConfigResponse.class)
+                .withName("UpdateHotspotSessionConfig")
+                .withUri("/v1/{project_id}/hotspot-session-config/{config_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateHotspotSessionConfigRequest::getConfigId,
+                UpdateHotspotSessionConfigRequest::setConfigId));
+        builder.<UpdateHotspotSessionConfigReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateHotspotSessionConfigReq.class),
+            f -> f.withMarshaller(UpdateHotspotSessionConfigRequest::getBody,
+                UpdateHotspotSessionConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateNonMigrationUsersRequest, UpdateNonMigrationUsersResponse> updateNonMigrationUsers =
+        genForUpdateNonMigrationUsers();
+
+    private static HttpRequestDef<UpdateNonMigrationUsersRequest, UpdateNonMigrationUsersResponse> genForUpdateNonMigrationUsers() {
+        // basic
+        HttpRequestDef.Builder<UpdateNonMigrationUsersRequest, UpdateNonMigrationUsersResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PATCH, UpdateNonMigrationUsersRequest.class, UpdateNonMigrationUsersResponse.class)
+            .withName("UpdateNonMigrationUsers")
+            .withUri("/v1/{project_id}/hotspot-session-config/{config_id}/non-migration-users")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateNonMigrationUsersRequest::getConfigId,
+                UpdateNonMigrationUsersRequest::setConfigId));
+        builder.<UpdateNonMigrationUsersReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateNonMigrationUsersReq.class),
+            f -> f.withMarshaller(UpdateNonMigrationUsersRequest::getBody, UpdateNonMigrationUsersRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AttachImageServerAppRequest, AttachImageServerAppResponse> attachImageServerApp =
         genForAttachImageServerApp();
 
@@ -2076,6 +2306,11 @@ public class WorkspaceAppMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateImageServerRequest::getServiceTransactionId,
                 CreateImageServerRequest::setServiceTransactionId));
+        builder.<String>withRequestField("X-Linked-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateImageServerRequest::getXLinkedId, CreateImageServerRequest::setXLinkedId));
         builder.<CreateImageServerReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -3481,53 +3716,6 @@ public class WorkspaceAppMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePolicyTemplateReq.class),
             f -> f.withMarshaller(UpdatePolicyTemplateRequest::getBody, UpdatePolicyTemplateRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowPrivacyStatementRequest, ShowPrivacyStatementResponse> showPrivacyStatement =
-        genForShowPrivacyStatement();
-
-    private static HttpRequestDef<ShowPrivacyStatementRequest, ShowPrivacyStatementResponse> genForShowPrivacyStatement() {
-        // basic
-        HttpRequestDef.Builder<ShowPrivacyStatementRequest, ShowPrivacyStatementResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowPrivacyStatementRequest.class, ShowPrivacyStatementResponse.class)
-            .withName("ShowPrivacyStatement")
-            .withUri("/v1/{project_id}/privacy-statement")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPrivacyStatementRequest::getXLanguage,
-                ShowPrivacyStatementRequest::setXLanguage));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<SignPrivacyStatementRequest, SignPrivacyStatementResponse> signPrivacyStatement =
-        genForSignPrivacyStatement();
-
-    private static HttpRequestDef<SignPrivacyStatementRequest, SignPrivacyStatementResponse> genForSignPrivacyStatement() {
-        // basic
-        HttpRequestDef.Builder<SignPrivacyStatementRequest, SignPrivacyStatementResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, SignPrivacyStatementRequest.class, SignPrivacyStatementResponse.class)
-            .withName("SignPrivacyStatement")
-            .withUri("/v1/{project_id}/privacy-statement")
-            .withContentType("application/json");
-
-        // requests
-        builder.<SignPrivacyStatementReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SignPrivacyStatementReq.class),
-            f -> f.withMarshaller(SignPrivacyStatementRequest::getBody, SignPrivacyStatementRequest::setBody));
 
         // response
 

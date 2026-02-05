@@ -14,31 +14,9 @@ import java.util.function.Consumer;
 public class EsdbCheckRdsConnectionsRequestV3 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_id")
-
-    private String instanceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "infos")
 
     private List<EsdbCheckRdsConnectionRequestV3> infos = null;
-
-    public EsdbCheckRdsConnectionsRequestV3 withInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-        return this;
-    }
-
-    /**
-     * **参数解释**：  实例ID，此参数是实例的唯一标识。  **约束限制**：  不涉及。  **取值范围**：  只能由英文字母、数字组成，后缀为in09，长度为36个字符。  **默认取值**：  不涉及。
-     * @return instanceId
-     */
-    public String getInstanceId() {
-        return instanceId;
-    }
-
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-    }
 
     public EsdbCheckRdsConnectionsRequestV3 withInfos(List<EsdbCheckRdsConnectionRequestV3> infos) {
         this.infos = infos;
@@ -62,7 +40,7 @@ public class EsdbCheckRdsConnectionsRequestV3 {
     }
 
     /**
-     * **参数解释**：  rds连通性检查相关信息的集合。  **参数范围**：  不涉及。
+     * **参数解释**：  rds连通性检查相关信息的集合。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
      * @return infos
      */
     public List<EsdbCheckRdsConnectionRequestV3> getInfos() {
@@ -82,19 +60,18 @@ public class EsdbCheckRdsConnectionsRequestV3 {
             return false;
         }
         EsdbCheckRdsConnectionsRequestV3 that = (EsdbCheckRdsConnectionsRequestV3) obj;
-        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.infos, that.infos);
+        return Objects.equals(this.infos, that.infos);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, infos);
+        return Objects.hash(infos);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class EsdbCheckRdsConnectionsRequestV3 {\n");
-        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    infos: ").append(toIndentedString(infos)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -49,14 +49,24 @@ public class SubscriptionResource {
     private String resourceSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "to_period")
+
+    private Boolean toPeriod;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private String createTime;
+    private Long createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time")
+
+    private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
 
-    private String expireTime;
+    private Long expireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_status")
@@ -257,37 +267,77 @@ public class SubscriptionResource {
         this.resourceSpecCode = resourceSpecCode;
     }
 
-    public SubscriptionResource withCreateTime(String createTime) {
+    public SubscriptionResource withToPeriod(Boolean toPeriod) {
+        this.toPeriod = toPeriod;
+        return this;
+    }
+
+    /**
+     * 当前资源是否能进行按需转包周期操作
+     * @return toPeriod
+     */
+    public Boolean getToPeriod() {
+        return toPeriod;
+    }
+
+    public void setToPeriod(Boolean toPeriod) {
+        this.toPeriod = toPeriod;
+    }
+
+    public SubscriptionResource withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
 
     /**
      * 创建时间戳
+     * minimum: 1640966400000
+     * maximum: 4796640000000
      * @return createTime
      */
-    public String getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 
-    public SubscriptionResource withExpireTime(String expireTime) {
+    public SubscriptionResource withUpdateTime(Long updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    /**
+     * 更新时间戳
+     * minimum: 1640966400000
+     * maximum: 4796640000000
+     * @return updateTime
+     */
+    public Long getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Long updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public SubscriptionResource withExpireTime(Long expireTime) {
         this.expireTime = expireTime;
         return this;
     }
 
     /**
-     * 到期时间戳，只有按需资源有该字段
+     * 到期时间戳，只有包年包月资源才有该字段
+     * minimum: 1640966400000
+     * maximum: 4796640000000
      * @return expireTime
      */
-    public String getExpireTime() {
+    public Long getExpireTime() {
         return expireTime;
     }
 
-    public void setExpireTime(String expireTime) {
+    public void setExpireTime(Long expireTime) {
         this.expireTime = expireTime;
     }
 
@@ -425,7 +475,8 @@ public class SubscriptionResource {
             && Objects.equals(this.cloudService, that.cloudService)
             && Objects.equals(this.resourceType, that.resourceType)
             && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.expireTime, that.expireTime)
+            && Objects.equals(this.toPeriod, that.toPeriod) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.expireTime, that.expireTime)
             && Objects.equals(this.resourceStatus, that.resourceStatus) && Objects.equals(this.orderId, that.orderId)
             && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.tagList, that.tagList)
             && Objects.equals(this.usages, that.usages);
@@ -439,7 +490,9 @@ public class SubscriptionResource {
             cloudService,
             resourceType,
             resourceSpecCode,
+            toPeriod,
             createTime,
+            updateTime,
             expireTime,
             resourceStatus,
             orderId,
@@ -458,7 +511,9 @@ public class SubscriptionResource {
         sb.append("    cloudService: ").append(toIndentedString(cloudService)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    resourceSpecCode: ").append(toIndentedString(resourceSpecCode)).append("\n");
+        sb.append("    toPeriod: ").append(toIndentedString(toPeriod)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    resourceStatus: ").append(toIndentedString(resourceStatus)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");

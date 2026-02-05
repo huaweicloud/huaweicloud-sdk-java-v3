@@ -49,7 +49,7 @@ public class UpdateAppV2Request {
     }
 
     /**
-     * 应用编号
+     * 凭据编号
      * @return appId
      */
     public String getAppId() {

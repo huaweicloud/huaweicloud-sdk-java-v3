@@ -41,7 +41,7 @@ public class ShowDdmDetailResponse extends SdkResponse {
     }
 
     /**
-     * 实例详情。
+     * **参数解释**：  查询实例详情相关信息的返回集合。  **参数范围**：  不涉及。
      * @return instances
      */
     public List<InstanceDetail> getInstances() {

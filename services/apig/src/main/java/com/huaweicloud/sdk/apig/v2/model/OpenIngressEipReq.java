@@ -21,7 +21,7 @@ public class OpenIngressEipReq {
     private Integer bandwidthSize;
 
     /**
-     * 入公网带宽计费类型： - bandwidth：按带宽计费 - traffic：按流量计费
+     * 入公网带宽计费类型： - bandwidth：按带宽计费 - [traffic：按流量计费](tag:hws_test) 
      */
     public static final class BandwidthChargingModeEnum {
 
@@ -101,7 +101,7 @@ public class OpenIngressEipReq {
     }
 
     /**
-     * 入公网带宽  单位：Mbit/s
+     * 入公网带宽  单位：Mbit/s 
      * @return bandwidthSize
      */
     public Integer getBandwidthSize() {
@@ -118,7 +118,7 @@ public class OpenIngressEipReq {
     }
 
     /**
-     * 入公网带宽计费类型： - bandwidth：按带宽计费 - traffic：按流量计费
+     * 入公网带宽计费类型： - bandwidth：按带宽计费 - [traffic：按流量计费](tag:hws_test) 
      * @return bandwidthChargingMode
      */
     public BandwidthChargingModeEnum getBandwidthChargingMode() {

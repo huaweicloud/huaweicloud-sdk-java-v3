@@ -32,6 +32,11 @@ public class ProjectConfig {
     private Boolean isRelevance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_group_id")
+
+    private String clusterGroupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private OffsetDateTime createTime;
@@ -104,6 +109,23 @@ public class ProjectConfig {
         this.isRelevance = isRelevance;
     }
 
+    public ProjectConfig withClusterGroupId(String clusterGroupId) {
+        this.clusterGroupId = clusterGroupId;
+        return this;
+    }
+
+    /**
+     * sfs集群ID。
+     * @return clusterGroupId
+     */
+    public String getClusterGroupId() {
+        return clusterGroupId;
+    }
+
+    public void setClusterGroupId(String clusterGroupId) {
+        this.clusterGroupId = clusterGroupId;
+    }
+
     public ProjectConfig withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -133,12 +155,14 @@ public class ProjectConfig {
         return Objects.equals(this.projectConfigId, that.projectConfigId)
             && Objects.equals(this.projectConfigName, that.projectConfigName)
             && Objects.equals(this.storageQuota, that.storageQuota)
-            && Objects.equals(this.isRelevance, that.isRelevance) && Objects.equals(this.createTime, that.createTime);
+            && Objects.equals(this.isRelevance, that.isRelevance)
+            && Objects.equals(this.clusterGroupId, that.clusterGroupId)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectConfigId, projectConfigName, storageQuota, isRelevance, createTime);
+        return Objects.hash(projectConfigId, projectConfigName, storageQuota, isRelevance, clusterGroupId, createTime);
     }
 
     @Override
@@ -149,6 +173,7 @@ public class ProjectConfig {
         sb.append("    projectConfigName: ").append(toIndentedString(projectConfigName)).append("\n");
         sb.append("    storageQuota: ").append(toIndentedString(storageQuota)).append("\n");
         sb.append("    isRelevance: ").append(toIndentedString(isRelevance)).append("\n");
+        sb.append("    clusterGroupId: ").append(toIndentedString(clusterGroupId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.ddm.v1.model.BatchDeleteNodesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.BatchDeleteNodesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.BatchModifyReadWriteStrategyRequest;
+import com.huaweicloud.sdk.ddm.v1.model.BatchModifyReadWriteStrategyResponse;
 import com.huaweicloud.sdk.ddm.v1.model.BindEipRequest;
 import com.huaweicloud.sdk.ddm.v1.model.BindEipResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CancelMigrationRequest;
@@ -13,8 +15,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ChangeDatabaseVersionRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ChangeDatabaseVersionResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ChangeStrategyRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ChangeStrategyResponse;
-import com.huaweicloud.sdk.ddm.v1.model.CheckDataNodeConnectionV0V3Request;
-import com.huaweicloud.sdk.ddm.v1.model.CheckDataNodeConnectionV0V3Response;
+import com.huaweicloud.sdk.ddm.v1.model.CheckDataNodeConnectionRequest;
+import com.huaweicloud.sdk.ddm.v1.model.CheckDataNodeConnectionResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CheckMigrateLogicDbRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CheckMigrateLogicDbResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CheckPreliminaryResultsRequest;
@@ -23,8 +25,8 @@ import com.huaweicloud.sdk.ddm.v1.model.CleanMigrationRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CleanMigrationResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CompareParameterGroupsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CompareParameterGroupsResponse;
-import com.huaweicloud.sdk.ddm.v1.model.CopyParameterGroupRequest;
-import com.huaweicloud.sdk.ddm.v1.model.CopyParameterGroupResponse;
+import com.huaweicloud.sdk.ddm.v1.model.CopyConfigurationRequest;
+import com.huaweicloud.sdk.ddm.v1.model.CopyConfigurationResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDdmConfigurationsRequest;
@@ -77,6 +79,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListBackupsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListBackupsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListConfigurationApplyHistoriesRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListConfigurationApplyHistoriesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListDatabaseAvailableVersionsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListDatabaseAvailableVersionsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListDatabasesRequest;
@@ -87,26 +91,30 @@ import com.huaweicloud.sdk.ddm.v1.model.ListDdmEnginesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListDdmEnginesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListDdmFlavorsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListDdmFlavorsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListDdmsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListDdmsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListEnginesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListEnginesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListFlavorsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListGroupRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListGroupResponse;
-import com.huaweicloud.sdk.ddm.v1.model.ListInstancesAppliedParameterGroupV0V3Request;
-import com.huaweicloud.sdk.ddm.v1.model.ListInstancesAppliedParameterGroupV0V3Response;
+import com.huaweicloud.sdk.ddm.v1.model.ListInstancesConfigurationsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListInstancesConfigurationsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListInstancesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListInstancesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListNodesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListNodesResponse;
-import com.huaweicloud.sdk.ddm.v1.model.ListParameterGroupApplyHistoryV0V3Request;
-import com.huaweicloud.sdk.ddm.v1.model.ListParameterGroupApplyHistoryV0V3Response;
 import com.huaweicloud.sdk.ddm.v1.model.ListReadWriteRatioRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListReadWriteRatioResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogAnalysisRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogAnalysisResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListSqlBlackRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListSqlBlackResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListTasksRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListTasksResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListUsersRequest;
@@ -119,6 +127,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ModifyConfigurationRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ModifyConfigurationResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ModifyEipRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ModifyEipResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ModifySqlBlackListRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ModifySqlBlackListResponse;
 import com.huaweicloud.sdk.ddm.v1.model.RebuildConfigRequest;
 import com.huaweicloud.sdk.ddm.v1.model.RebuildConfigResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ResetAdministratorRequest;
@@ -169,8 +179,12 @@ import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceParamRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceParamResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowIpGroupRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowIpGroupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowLogicalProcessesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowLogicalProcessesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowMigrationLogRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowMigrationLogResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowNodeRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowNodeResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowPhysicalProcessesRequest;
@@ -185,6 +199,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ShowRiskInfoRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowRiskInfoResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShrinkInstanceNodesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShrinkInstanceNodesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.SwitchIpGroupRequest;
+import com.huaweicloud.sdk.ddm.v1.model.SwitchIpGroupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.SwitchRouteRequest;
 import com.huaweicloud.sdk.ddm.v1.model.SwitchRouteResponse;
 import com.huaweicloud.sdk.ddm.v1.model.SwitchSslRequest;
@@ -1484,6 +1500,34 @@ public class DdmAsyncClient {
     }
 
     /**
+     * 查询实例列表
+     *
+     * 查询实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDdmsRequest 请求对象
+     * @return CompletableFuture<ListDdmsResponse>
+     */
+    public CompletableFuture<ListDdmsResponse> listDdmsAsync(ListDdmsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.listDdms);
+    }
+
+    /**
+     * 查询实例列表
+     *
+     * 查询实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDdmsRequest 请求对象
+     * @return AsyncInvoker<ListDdmsRequest, ListDdmsResponse>
+     */
+    public AsyncInvoker<ListDdmsRequest, ListDdmsResponse> listDdmsAsyncInvoker(ListDdmsRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.listDdms, hcClient);
+    }
+
+    /**
      * 查询DDM引擎信息
      *
      * 查询DDM引擎信息详情。
@@ -1679,6 +1723,35 @@ public class DdmAsyncClient {
      */
     public AsyncInvoker<ListSlowLogRequest, ListSlowLogResponse> listSlowLogAsyncInvoker(ListSlowLogRequest request) {
         return new AsyncInvoker<>(request, DdmMeta.listSlowLog, hcClient);
+    }
+
+    /**
+     * 查询慢日志
+     *
+     * 查询慢日志V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSlowLogAnalysisRequest 请求对象
+     * @return CompletableFuture<ListSlowLogAnalysisResponse>
+     */
+    public CompletableFuture<ListSlowLogAnalysisResponse> listSlowLogAnalysisAsync(ListSlowLogAnalysisRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.listSlowLogAnalysis);
+    }
+
+    /**
+     * 查询慢日志
+     *
+     * 查询慢日志V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSlowLogAnalysisRequest 请求对象
+     * @return AsyncInvoker<ListSlowLogAnalysisRequest, ListSlowLogAnalysisResponse>
+     */
+    public AsyncInvoker<ListSlowLogAnalysisRequest, ListSlowLogAnalysisResponse> listSlowLogAnalysisAsyncInvoker(
+        ListSlowLogAnalysisRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.listSlowLogAnalysis, hcClient);
     }
 
     /**
@@ -2461,6 +2534,34 @@ public class DdmAsyncClient {
     }
 
     /**
+     * 查询访问控制组
+     *
+     * 查询访问控制组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIpGroupRequest 请求对象
+     * @return CompletableFuture<ShowIpGroupResponse>
+     */
+    public CompletableFuture<ShowIpGroupResponse> showIpGroupAsync(ShowIpGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.showIpGroup);
+    }
+
+    /**
+     * 查询访问控制组
+     *
+     * 查询访问控制组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIpGroupRequest 请求对象
+     * @return AsyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse>
+     */
+    public AsyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse> showIpGroupAsyncInvoker(ShowIpGroupRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.showIpGroup, hcClient);
+    }
+
+    /**
      * 查询逻辑会话列表
      *
      * 查询逻辑会话列表
@@ -2488,6 +2589,35 @@ public class DdmAsyncClient {
     public AsyncInvoker<ShowLogicalProcessesRequest, ShowLogicalProcessesResponse> showLogicalProcessesAsyncInvoker(
         ShowLogicalProcessesRequest request) {
         return new AsyncInvoker<>(request, DdmMeta.showLogicalProcesses, hcClient);
+    }
+
+    /**
+     * 查询分片变更的日志
+     *
+     * 查询分片变更的日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMigrationLogRequest 请求对象
+     * @return CompletableFuture<ShowMigrationLogResponse>
+     */
+    public CompletableFuture<ShowMigrationLogResponse> showMigrationLogAsync(ShowMigrationLogRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.showMigrationLog);
+    }
+
+    /**
+     * 查询分片变更的日志
+     *
+     * 查询分片变更的日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMigrationLogRequest 请求对象
+     * @return AsyncInvoker<ShowMigrationLogRequest, ShowMigrationLogResponse>
+     */
+    public AsyncInvoker<ShowMigrationLogRequest, ShowMigrationLogResponse> showMigrationLogAsyncInvoker(
+        ShowMigrationLogRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.showMigrationLog, hcClient);
     }
 
     /**
@@ -2663,6 +2793,35 @@ public class DdmAsyncClient {
     public AsyncInvoker<ShrinkInstanceNodesRequest, ShrinkInstanceNodesResponse> shrinkInstanceNodesAsyncInvoker(
         ShrinkInstanceNodesRequest request) {
         return new AsyncInvoker<>(request, DdmMeta.shrinkInstanceNodes, hcClient);
+    }
+
+    /**
+     * 创建访问控制组
+     *
+     * 创建访问控制组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchIpGroupRequest 请求对象
+     * @return CompletableFuture<SwitchIpGroupResponse>
+     */
+    public CompletableFuture<SwitchIpGroupResponse> switchIpGroupAsync(SwitchIpGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.switchIpGroup);
+    }
+
+    /**
+     * 创建访问控制组
+     *
+     * 创建访问控制组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchIpGroupRequest 请求对象
+     * @return AsyncInvoker<SwitchIpGroupRequest, SwitchIpGroupResponse>
+     */
+    public AsyncInvoker<SwitchIpGroupRequest, SwitchIpGroupResponse> switchIpGroupAsyncInvoker(
+        SwitchIpGroupRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.switchIpGroup, hcClient);
     }
 
     /**
@@ -3049,12 +3208,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CheckDataNodeConnectionV0V3Request 请求对象
-     * @return CompletableFuture<CheckDataNodeConnectionV0V3Response>
+     * @param request CheckDataNodeConnectionRequest 请求对象
+     * @return CompletableFuture<CheckDataNodeConnectionResponse>
      */
-    public CompletableFuture<CheckDataNodeConnectionV0V3Response> checkDataNodeConnectionV0V3Async(
-        CheckDataNodeConnectionV0V3Request request) {
-        return hcClient.asyncInvokeHttp(request, DdmMeta.checkDataNodeConnectionV0V3);
+    public CompletableFuture<CheckDataNodeConnectionResponse> checkDataNodeConnectionAsync(
+        CheckDataNodeConnectionRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.checkDataNodeConnection);
     }
 
     /**
@@ -3064,12 +3223,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CheckDataNodeConnectionV0V3Request 请求对象
-     * @return AsyncInvoker<CheckDataNodeConnectionV0V3Request, CheckDataNodeConnectionV0V3Response>
+     * @param request CheckDataNodeConnectionRequest 请求对象
+     * @return AsyncInvoker<CheckDataNodeConnectionRequest, CheckDataNodeConnectionResponse>
      */
-    public AsyncInvoker<CheckDataNodeConnectionV0V3Request, CheckDataNodeConnectionV0V3Response> checkDataNodeConnectionV0V3AsyncInvoker(
-        CheckDataNodeConnectionV0V3Request request) {
-        return new AsyncInvoker<>(request, DdmMeta.checkDataNodeConnectionV0V3, hcClient);
+    public AsyncInvoker<CheckDataNodeConnectionRequest, CheckDataNodeConnectionResponse> checkDataNodeConnectionAsyncInvoker(
+        CheckDataNodeConnectionRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.checkDataNodeConnection, hcClient);
     }
 
     /**
@@ -3109,11 +3268,11 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CopyParameterGroupRequest 请求对象
-     * @return CompletableFuture<CopyParameterGroupResponse>
+     * @param request CopyConfigurationRequest 请求对象
+     * @return CompletableFuture<CopyConfigurationResponse>
      */
-    public CompletableFuture<CopyParameterGroupResponse> copyParameterGroupAsync(CopyParameterGroupRequest request) {
-        return hcClient.asyncInvokeHttp(request, DdmMeta.copyParameterGroup);
+    public CompletableFuture<CopyConfigurationResponse> copyConfigurationAsync(CopyConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.copyConfiguration);
     }
 
     /**
@@ -3123,42 +3282,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request CopyParameterGroupRequest 请求对象
-     * @return AsyncInvoker<CopyParameterGroupRequest, CopyParameterGroupResponse>
+     * @param request CopyConfigurationRequest 请求对象
+     * @return AsyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse>
      */
-    public AsyncInvoker<CopyParameterGroupRequest, CopyParameterGroupResponse> copyParameterGroupAsyncInvoker(
-        CopyParameterGroupRequest request) {
-        return new AsyncInvoker<>(request, DdmMeta.copyParameterGroup, hcClient);
-    }
-
-    /**
-     * 查询可应用的实例列表V3
-     *
-     * 查询可应用的实例列表V3
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListInstancesAppliedParameterGroupV0V3Request 请求对象
-     * @return CompletableFuture<ListInstancesAppliedParameterGroupV0V3Response>
-     */
-    public CompletableFuture<ListInstancesAppliedParameterGroupV0V3Response> listInstancesAppliedParameterGroupV0V3Async(
-        ListInstancesAppliedParameterGroupV0V3Request request) {
-        return hcClient.asyncInvokeHttp(request, DdmMeta.listInstancesAppliedParameterGroupV0V3);
-    }
-
-    /**
-     * 查询可应用的实例列表V3
-     *
-     * 查询可应用的实例列表V3
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListInstancesAppliedParameterGroupV0V3Request 请求对象
-     * @return AsyncInvoker<ListInstancesAppliedParameterGroupV0V3Request, ListInstancesAppliedParameterGroupV0V3Response>
-     */
-    public AsyncInvoker<ListInstancesAppliedParameterGroupV0V3Request, ListInstancesAppliedParameterGroupV0V3Response> listInstancesAppliedParameterGroupV0V3AsyncInvoker(
-        ListInstancesAppliedParameterGroupV0V3Request request) {
-        return new AsyncInvoker<>(request, DdmMeta.listInstancesAppliedParameterGroupV0V3, hcClient);
+    public AsyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse> copyConfigurationAsyncInvoker(
+        CopyConfigurationRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.copyConfiguration, hcClient);
     }
 
     /**
@@ -3168,12 +3297,12 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListParameterGroupApplyHistoryV0V3Request 请求对象
-     * @return CompletableFuture<ListParameterGroupApplyHistoryV0V3Response>
+     * @param request ListConfigurationApplyHistoriesRequest 请求对象
+     * @return CompletableFuture<ListConfigurationApplyHistoriesResponse>
      */
-    public CompletableFuture<ListParameterGroupApplyHistoryV0V3Response> listParameterGroupApplyHistoryV0V3Async(
-        ListParameterGroupApplyHistoryV0V3Request request) {
-        return hcClient.asyncInvokeHttp(request, DdmMeta.listParameterGroupApplyHistoryV0V3);
+    public CompletableFuture<ListConfigurationApplyHistoriesResponse> listConfigurationApplyHistoriesAsync(
+        ListConfigurationApplyHistoriesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.listConfigurationApplyHistories);
     }
 
     /**
@@ -3183,12 +3312,42 @@ public class DdmAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListParameterGroupApplyHistoryV0V3Request 请求对象
-     * @return AsyncInvoker<ListParameterGroupApplyHistoryV0V3Request, ListParameterGroupApplyHistoryV0V3Response>
+     * @param request ListConfigurationApplyHistoriesRequest 请求对象
+     * @return AsyncInvoker<ListConfigurationApplyHistoriesRequest, ListConfigurationApplyHistoriesResponse>
      */
-    public AsyncInvoker<ListParameterGroupApplyHistoryV0V3Request, ListParameterGroupApplyHistoryV0V3Response> listParameterGroupApplyHistoryV0V3AsyncInvoker(
-        ListParameterGroupApplyHistoryV0V3Request request) {
-        return new AsyncInvoker<>(request, DdmMeta.listParameterGroupApplyHistoryV0V3, hcClient);
+    public AsyncInvoker<ListConfigurationApplyHistoriesRequest, ListConfigurationApplyHistoriesResponse> listConfigurationApplyHistoriesAsyncInvoker(
+        ListConfigurationApplyHistoriesRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.listConfigurationApplyHistories, hcClient);
+    }
+
+    /**
+     * 查询可应用的实例列表V3
+     *
+     * 查询可应用的实例列表V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesConfigurationsRequest 请求对象
+     * @return CompletableFuture<ListInstancesConfigurationsResponse>
+     */
+    public CompletableFuture<ListInstancesConfigurationsResponse> listInstancesConfigurationsAsync(
+        ListInstancesConfigurationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.listInstancesConfigurations);
+    }
+
+    /**
+     * 查询可应用的实例列表V3
+     *
+     * 查询可应用的实例列表V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesConfigurationsRequest 请求对象
+     * @return AsyncInvoker<ListInstancesConfigurationsRequest, ListInstancesConfigurationsResponse>
+     */
+    public AsyncInvoker<ListInstancesConfigurationsRequest, ListInstancesConfigurationsResponse> listInstancesConfigurationsAsyncInvoker(
+        ListInstancesConfigurationsRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.listInstancesConfigurations, hcClient);
     }
 
     /**
@@ -3247,6 +3406,94 @@ public class DdmAsyncClient {
     public AsyncInvoker<ShowDdmDetailRequest, ShowDdmDetailResponse> showDdmDetailAsyncInvoker(
         ShowDdmDetailRequest request) {
         return new AsyncInvoker<>(request, DdmMeta.showDdmDetail, hcClient);
+    }
+
+    /**
+     * 批量设置读策略V3
+     *
+     * 批量设置读策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchModifyReadWriteStrategyRequest 请求对象
+     * @return CompletableFuture<BatchModifyReadWriteStrategyResponse>
+     */
+    public CompletableFuture<BatchModifyReadWriteStrategyResponse> batchModifyReadWriteStrategyAsync(
+        BatchModifyReadWriteStrategyRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.batchModifyReadWriteStrategy);
+    }
+
+    /**
+     * 批量设置读策略V3
+     *
+     * 批量设置读策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchModifyReadWriteStrategyRequest 请求对象
+     * @return AsyncInvoker<BatchModifyReadWriteStrategyRequest, BatchModifyReadWriteStrategyResponse>
+     */
+    public AsyncInvoker<BatchModifyReadWriteStrategyRequest, BatchModifyReadWriteStrategyResponse> batchModifyReadWriteStrategyAsyncInvoker(
+        BatchModifyReadWriteStrategyRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.batchModifyReadWriteStrategy, hcClient);
+    }
+
+    /**
+     * 修改sql黑名单
+     *
+     * 修改sql黑名单V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifySqlBlackListRequest 请求对象
+     * @return CompletableFuture<ModifySqlBlackListResponse>
+     */
+    public CompletableFuture<ModifySqlBlackListResponse> modifySqlBlackListAsync(ModifySqlBlackListRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.modifySqlBlackList);
+    }
+
+    /**
+     * 修改sql黑名单
+     *
+     * 修改sql黑名单V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifySqlBlackListRequest 请求对象
+     * @return AsyncInvoker<ModifySqlBlackListRequest, ModifySqlBlackListResponse>
+     */
+    public AsyncInvoker<ModifySqlBlackListRequest, ModifySqlBlackListResponse> modifySqlBlackListAsyncInvoker(
+        ModifySqlBlackListRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.modifySqlBlackList, hcClient);
+    }
+
+    /**
+     * 查询sql黑名单V3
+     *
+     * 查询sql黑名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSqlBlackRequest 请求对象
+     * @return CompletableFuture<ListSqlBlackResponse>
+     */
+    public CompletableFuture<ListSqlBlackResponse> listSqlBlackAsync(ListSqlBlackRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.listSqlBlack);
+    }
+
+    /**
+     * 查询sql黑名单V3
+     *
+     * 查询sql黑名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSqlBlackRequest 请求对象
+     * @return AsyncInvoker<ListSqlBlackRequest, ListSqlBlackResponse>
+     */
+    public AsyncInvoker<ListSqlBlackRequest, ListSqlBlackResponse> listSqlBlackAsyncInvoker(
+        ListSqlBlackRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.listSqlBlack, hcClient);
     }
 
 }

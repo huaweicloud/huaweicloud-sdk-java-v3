@@ -81,6 +81,11 @@ public class Policies {
 
     private PoliciesFolderRedirection folderRedirection;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_profile_management")
+
+    private PoliciesUserProfileManagement userProfileManagement;
+
     public Policies withPeripherals(PoliciesPeripherals peripherals) {
         this.peripherals = peripherals;
         return this;
@@ -445,6 +450,32 @@ public class Policies {
         this.folderRedirection = folderRedirection;
     }
 
+    public Policies withUserProfileManagement(PoliciesUserProfileManagement userProfileManagement) {
+        this.userProfileManagement = userProfileManagement;
+        return this;
+    }
+
+    public Policies withUserProfileManagement(Consumer<PoliciesUserProfileManagement> userProfileManagementSetter) {
+        if (this.userProfileManagement == null) {
+            this.userProfileManagement = new PoliciesUserProfileManagement();
+            userProfileManagementSetter.accept(this.userProfileManagement);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get userProfileManagement
+     * @return userProfileManagement
+     */
+    public PoliciesUserProfileManagement getUserProfileManagement() {
+        return userProfileManagement;
+    }
+
+    public void setUserProfileManagement(PoliciesUserProfileManagement userProfileManagement) {
+        this.userProfileManagement = userProfileManagement;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -462,7 +493,8 @@ public class Policies {
             && Objects.equals(this.custom, that.custom) && Objects.equals(this.cloudStorage, that.cloudStorage)
             && Objects.equals(this.userProfile, that.userProfile)
             && Objects.equals(this.urlRedirection, that.urlRedirection)
-            && Objects.equals(this.folderRedirection, that.folderRedirection);
+            && Objects.equals(this.folderRedirection, that.folderRedirection)
+            && Objects.equals(this.userProfileManagement, that.userProfileManagement);
     }
 
     @Override
@@ -480,7 +512,8 @@ public class Policies {
             cloudStorage,
             userProfile,
             urlRedirection,
-            folderRedirection);
+            folderRedirection,
+            userProfileManagement);
     }
 
     @Override
@@ -501,6 +534,7 @@ public class Policies {
         sb.append("    userProfile: ").append(toIndentedString(userProfile)).append("\n");
         sb.append("    urlRedirection: ").append(toIndentedString(urlRedirection)).append("\n");
         sb.append("    folderRedirection: ").append(toIndentedString(folderRedirection)).append("\n");
+        sb.append("    userProfileManagement: ").append(toIndentedString(userProfileManagement)).append("\n");
         sb.append("}");
         return sb.toString();
     }

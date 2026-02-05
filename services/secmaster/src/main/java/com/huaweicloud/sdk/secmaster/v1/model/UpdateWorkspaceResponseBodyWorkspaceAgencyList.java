@@ -342,7 +342,7 @@ public class UpdateWorkspaceResponseBodyWorkspaceAgencyList {
     }
 
     /**
-     * 委托空间购买版本
+     * 资源规格编码
      * @return resourceSpecCode
      */
     public List<String> getResourceSpecCode() {

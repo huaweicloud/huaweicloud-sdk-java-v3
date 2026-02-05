@@ -28,7 +28,7 @@ public class MicroServiceInfo {
     private String instanceId;
 
     /**
-     * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎（工作负载） - CCE_SERVICE: CCE云容器引擎（Service） - NACOS: nacos引擎，nacos_info必填
+     * 微服务类型。 - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎（工作负载） - CCE_SERVICE：CCE云容器引擎（Service）（暂不支持） - NACOS：nacos引擎，nacos_info必填 
      */
     public static final class ServiceTypeEnum {
 
@@ -184,7 +184,7 @@ public class MicroServiceInfo {
     }
 
     /**
-     * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎（工作负载） - CCE_SERVICE: CCE云容器引擎（Service） - NACOS: nacos引擎，nacos_info必填
+     * 微服务类型。 - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎（工作负载） - CCE_SERVICE：CCE云容器引擎（Service）（暂不支持） - NACOS：nacos引擎，nacos_info必填 
      * @return serviceType
      */
     public ServiceTypeEnum getServiceType() {

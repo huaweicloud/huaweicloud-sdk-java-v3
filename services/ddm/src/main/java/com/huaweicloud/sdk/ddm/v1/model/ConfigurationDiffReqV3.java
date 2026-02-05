@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * ConfigurationDiffReqV3
@@ -12,34 +11,47 @@ import java.util.function.Consumer;
 public class ConfigurationDiffReqV3 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "diff_para")
+    @JsonProperty(value = "source_id")
 
-    private ParaGroupDiff diffPara;
+    private String sourceId;
 
-    public ConfigurationDiffReqV3 withDiffPara(ParaGroupDiff diffPara) {
-        this.diffPara = diffPara;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "target_id")
 
-    public ConfigurationDiffReqV3 withDiffPara(Consumer<ParaGroupDiff> diffParaSetter) {
-        if (this.diffPara == null) {
-            this.diffPara = new ParaGroupDiff();
-            diffParaSetter.accept(this.diffPara);
-        }
+    private String targetId;
 
+    public ConfigurationDiffReqV3 withSourceId(String sourceId) {
+        this.sourceId = sourceId;
         return this;
     }
 
     /**
-     * Get diffPara
-     * @return diffPara
+     * **参数解释**：  源参数组ID。  **约束限制**：  不涉及。  **取值范围**：  只能由英文字母、数字组成，长度为36个字符。  **默认取值**：  不涉及。
+     * @return sourceId
      */
-    public ParaGroupDiff getDiffPara() {
-        return diffPara;
+    public String getSourceId() {
+        return sourceId;
     }
 
-    public void setDiffPara(ParaGroupDiff diffPara) {
-        this.diffPara = diffPara;
+    public void setSourceId(String sourceId) {
+        this.sourceId = sourceId;
+    }
+
+    public ConfigurationDiffReqV3 withTargetId(String targetId) {
+        this.targetId = targetId;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  目标参数组ID。  **约束限制**：  不涉及。  **取值范围**：  只能由英文字母、数字组成，长度为36个字符。  **默认取值**：  不涉及。
+     * @return targetId
+     */
+    public String getTargetId() {
+        return targetId;
+    }
+
+    public void setTargetId(String targetId) {
+        this.targetId = targetId;
     }
 
     @Override
@@ -51,19 +63,20 @@ public class ConfigurationDiffReqV3 {
             return false;
         }
         ConfigurationDiffReqV3 that = (ConfigurationDiffReqV3) obj;
-        return Objects.equals(this.diffPara, that.diffPara);
+        return Objects.equals(this.sourceId, that.sourceId) && Objects.equals(this.targetId, that.targetId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(diffPara);
+        return Objects.hash(sourceId, targetId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ConfigurationDiffReqV3 {\n");
-        sb.append("    diffPara: ").append(toIndentedString(diffPara)).append("\n");
+        sb.append("    sourceId: ").append(toIndentedString(sourceId)).append("\n");
+        sb.append("    targetId: ").append(toIndentedString(targetId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

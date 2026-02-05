@@ -11,47 +11,47 @@ import java.util.Objects;
 public class ApplicableInstance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "entity_id")
+    @JsonProperty(value = "instance_id")
 
-    private String entityId;
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "config_id")
+    @JsonProperty(value = "instance_name")
 
-    private String configId;
+    private String instanceName;
 
-    public ApplicableInstance withEntityId(String entityId) {
-        this.entityId = entityId;
+    public ApplicableInstance withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
         return this;
     }
 
     /**
-     * **参数解释**：  实例ID，此参数是实例的唯一标识。  **约束限制**：  不涉及。  **取值范围**：  只能由英文字母、数字组成，后缀为in09，长度为36个字符。  **默认取值**：  不涉及。
-     * @return entityId
+     * **参数解释**：  实例ID，此参数是实例的唯一标识。  **参数范围**：  只能由英文字母、数字组成，后缀为in09，长度为36个字符。
+     * @return instanceId
      */
-    public String getEntityId() {
-        return entityId;
+    public String getInstanceId() {
+        return instanceId;
     }
 
-    public void setEntityId(String entityId) {
-        this.entityId = entityId;
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
     }
 
-    public ApplicableInstance withConfigId(String configId) {
-        this.configId = configId;
+    public ApplicableInstance withInstanceName(String instanceName) {
+        this.instanceName = instanceName;
         return this;
     }
 
     /**
-     * **参数解释**：  参数组ID。  **约束限制**：  不涉及。  **取值范围**：  只能由英文字母、数字组成，长度为36个字符。  **默认取值**：  不涉及。
-     * @return configId
+     * **参数解释**：  实例名称。  **参数范围**：  不涉及。
+     * @return instanceName
      */
-    public String getConfigId() {
-        return configId;
+    public String getInstanceName() {
+        return instanceName;
     }
 
-    public void setConfigId(String configId) {
-        this.configId = configId;
+    public void setInstanceName(String instanceName) {
+        this.instanceName = instanceName;
     }
 
     @Override
@@ -63,20 +63,20 @@ public class ApplicableInstance {
             return false;
         }
         ApplicableInstance that = (ApplicableInstance) obj;
-        return Objects.equals(this.entityId, that.entityId) && Objects.equals(this.configId, that.configId);
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceName, that.instanceName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(entityId, configId);
+        return Objects.hash(instanceId, instanceName);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ApplicableInstance {\n");
-        sb.append("    entityId: ").append(toIndentedString(entityId)).append("\n");
-        sb.append("    configId: ").append(toIndentedString(configId)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

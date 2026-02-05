@@ -116,7 +116,7 @@ public class ExportOpenApiReq {
     private DefineEnum define;
 
     /**
-     * 导出的API定义的格式
+     * 导出的API定义的格式。 - json - yaml - yml 
      */
     public static final class TypeEnum {
 
@@ -263,7 +263,7 @@ public class ExportOpenApiReq {
     }
 
     /**
-     * 导出的API定义的格式
+     * 导出的API定义的格式。 - json - yaml - yml 
      * @return type
      */
     public TypeEnum getType() {

@@ -14,41 +14,45 @@ import java.util.function.Consumer;
 public class CreateCloudStorageReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "project_config_ids")
+    @JsonProperty(value = "project_config_cluster_group_id_list")
 
-    private List<String> projectConfigIds = null;
+    private List<ProjectConfigClusterGroupIdEntity> projectConfigClusterGroupIdList = null;
 
-    public CreateCloudStorageReq withProjectConfigIds(List<String> projectConfigIds) {
-        this.projectConfigIds = projectConfigIds;
+    public CreateCloudStorageReq withProjectConfigClusterGroupIdList(
+        List<ProjectConfigClusterGroupIdEntity> projectConfigClusterGroupIdList) {
+        this.projectConfigClusterGroupIdList = projectConfigClusterGroupIdList;
         return this;
     }
 
-    public CreateCloudStorageReq addProjectConfigIdsItem(String projectConfigIdsItem) {
-        if (this.projectConfigIds == null) {
-            this.projectConfigIds = new ArrayList<>();
+    public CreateCloudStorageReq addProjectConfigClusterGroupIdListItem(
+        ProjectConfigClusterGroupIdEntity projectConfigClusterGroupIdListItem) {
+        if (this.projectConfigClusterGroupIdList == null) {
+            this.projectConfigClusterGroupIdList = new ArrayList<>();
         }
-        this.projectConfigIds.add(projectConfigIdsItem);
+        this.projectConfigClusterGroupIdList.add(projectConfigClusterGroupIdListItem);
         return this;
     }
 
-    public CreateCloudStorageReq withProjectConfigIds(Consumer<List<String>> projectConfigIdsSetter) {
-        if (this.projectConfigIds == null) {
-            this.projectConfigIds = new ArrayList<>();
+    public CreateCloudStorageReq withProjectConfigClusterGroupIdList(
+        Consumer<List<ProjectConfigClusterGroupIdEntity>> projectConfigClusterGroupIdListSetter) {
+        if (this.projectConfigClusterGroupIdList == null) {
+            this.projectConfigClusterGroupIdList = new ArrayList<>();
         }
-        projectConfigIdsSetter.accept(this.projectConfigIds);
+        projectConfigClusterGroupIdListSetter.accept(this.projectConfigClusterGroupIdList);
         return this;
     }
 
     /**
-     * project_config_id,数量区间 [1, 50]。
-     * @return projectConfigIds
+     * 创建项目配置关联ID列表。
+     * @return projectConfigClusterGroupIdList
      */
-    public List<String> getProjectConfigIds() {
-        return projectConfigIds;
+    public List<ProjectConfigClusterGroupIdEntity> getProjectConfigClusterGroupIdList() {
+        return projectConfigClusterGroupIdList;
     }
 
-    public void setProjectConfigIds(List<String> projectConfigIds) {
-        this.projectConfigIds = projectConfigIds;
+    public void setProjectConfigClusterGroupIdList(
+        List<ProjectConfigClusterGroupIdEntity> projectConfigClusterGroupIdList) {
+        this.projectConfigClusterGroupIdList = projectConfigClusterGroupIdList;
     }
 
     @Override
@@ -60,19 +64,21 @@ public class CreateCloudStorageReq {
             return false;
         }
         CreateCloudStorageReq that = (CreateCloudStorageReq) obj;
-        return Objects.equals(this.projectConfigIds, that.projectConfigIds);
+        return Objects.equals(this.projectConfigClusterGroupIdList, that.projectConfigClusterGroupIdList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectConfigIds);
+        return Objects.hash(projectConfigClusterGroupIdList);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateCloudStorageReq {\n");
-        sb.append("    projectConfigIds: ").append(toIndentedString(projectConfigIds)).append("\n");
+        sb.append("    projectConfigClusterGroupIdList: ")
+            .append(toIndentedString(projectConfigClusterGroupIdList))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

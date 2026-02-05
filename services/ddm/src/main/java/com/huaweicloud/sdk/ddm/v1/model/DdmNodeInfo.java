@@ -49,7 +49,7 @@ public class DdmNodeInfo {
     }
 
     /**
-     * 节点ID。
+     * **参数解释**：  节点ID。  **参数范围**：  不涉及。
      * @return id
      */
     public String getId() {
@@ -66,7 +66,7 @@ public class DdmNodeInfo {
     }
 
     /**
-     * 状态。
+     * **参数解释**：  状态。  **参数范围**：  不涉及。
      * @return status
      */
     public String getStatus() {
@@ -83,7 +83,7 @@ public class DdmNodeInfo {
     }
 
     /**
-     * 名称。
+     * **参数解释**：  名称。  **参数范围**：  不涉及。
      * @return name
      */
     public String getName() {
@@ -100,7 +100,7 @@ public class DdmNodeInfo {
     }
 
     /**
-     * 可用区编码。
+     * **参数解释**：  可用区编码。  **参数范围**：  不涉及。
      * @return azCode
      */
     public String getAzCode() {
@@ -133,7 +133,7 @@ public class DdmNodeInfo {
     }
 
     /**
-     * 锁状态。
+     * **参数解释**：  锁状态。  **参数范围**：  不涉及。
      * @return actions
      */
     public List<ActionInfo> getActions() {
@@ -150,7 +150,7 @@ public class DdmNodeInfo {
     }
 
     /**
-     * 子网ID。
+     * **参数解释**：  子网ID。  **参数范围**：  不涉及。
      * @return subnetId
      */
     public String getSubnetId() {

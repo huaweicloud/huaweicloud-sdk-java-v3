@@ -15,11 +15,6 @@ public class CreateSecretRequest {
 
     private String projectname;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "duration_seconds")
-
-    private Integer durationSeconds;
-
     public CreateSecretRequest withProjectname(String projectname) {
         this.projectname = projectname;
         return this;
@@ -37,25 +32,6 @@ public class CreateSecretRequest {
         this.projectname = projectname;
     }
 
-    public CreateSecretRequest withDurationSeconds(Integer durationSeconds) {
-        this.durationSeconds = durationSeconds;
-        return this;
-    }
-
-    /**
-     * 自定义临时凭证有效期，单位秒，取值范围15min-24h
-     * minimum: 900
-     * maximum: 86400
-     * @return durationSeconds
-     */
-    public Integer getDurationSeconds() {
-        return durationSeconds;
-    }
-
-    public void setDurationSeconds(Integer durationSeconds) {
-        this.durationSeconds = durationSeconds;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -65,13 +41,12 @@ public class CreateSecretRequest {
             return false;
         }
         CreateSecretRequest that = (CreateSecretRequest) obj;
-        return Objects.equals(this.projectname, that.projectname)
-            && Objects.equals(this.durationSeconds, that.durationSeconds);
+        return Objects.equals(this.projectname, that.projectname);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectname, durationSeconds);
+        return Objects.hash(projectname);
     }
 
     @Override
@@ -79,7 +54,6 @@ public class CreateSecretRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateSecretRequest {\n");
         sb.append("    projectname: ").append(toIndentedString(projectname)).append("\n");
-        sb.append("    durationSeconds: ").append(toIndentedString(durationSeconds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

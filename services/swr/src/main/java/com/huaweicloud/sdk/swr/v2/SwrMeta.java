@@ -731,11 +731,6 @@ public class SwrMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateSecretRequest::getProjectname, CreateSecretRequest::setProjectname));
-        builder.<Integer>withRequestField("duration_seconds",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(CreateSecretRequest::getDurationSeconds, CreateSecretRequest::setDurationSeconds));
 
         // response
 

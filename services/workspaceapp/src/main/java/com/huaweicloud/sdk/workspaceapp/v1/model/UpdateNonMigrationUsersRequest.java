@@ -1,0 +1,105 @@
+package com.huaweicloud.sdk.workspaceapp.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * Request Object
+ */
+public class UpdateNonMigrationUsersRequest {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "config_id")
+
+    private String configId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private UpdateNonMigrationUsersReq body;
+
+    public UpdateNonMigrationUsersRequest withConfigId(String configId) {
+        this.configId = configId;
+        return this;
+    }
+
+    /**
+     * 热点会话迁移配置ID。
+     * @return configId
+     */
+    public String getConfigId() {
+        return configId;
+    }
+
+    public void setConfigId(String configId) {
+        this.configId = configId;
+    }
+
+    public UpdateNonMigrationUsersRequest withBody(UpdateNonMigrationUsersReq body) {
+        this.body = body;
+        return this;
+    }
+
+    public UpdateNonMigrationUsersRequest withBody(Consumer<UpdateNonMigrationUsersReq> bodySetter) {
+        if (this.body == null) {
+            this.body = new UpdateNonMigrationUsersReq();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public UpdateNonMigrationUsersReq getBody() {
+        return body;
+    }
+
+    public void setBody(UpdateNonMigrationUsersReq body) {
+        this.body = body;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        UpdateNonMigrationUsersRequest that = (UpdateNonMigrationUsersRequest) obj;
+        return Objects.equals(this.configId, that.configId) && Objects.equals(this.body, that.body);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(configId, body);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class UpdateNonMigrationUsersRequest {\n");
+        sb.append("    configId: ").append(toIndentedString(configId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

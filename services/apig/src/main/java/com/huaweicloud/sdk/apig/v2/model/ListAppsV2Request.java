@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -35,10 +40,74 @@ public class ListAppsV2Request {
 
     private String name;
 
+    /**
+     * APP状态。 - 1：有效 
+     */
+    public static final class StatusEnum {
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final StatusEnum NUMBER_1 = new StatusEnum(1);
+
+        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, StatusEnum> createStaticFields() {
+            Map<Integer, StatusEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        StatusEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
+        }
+
+        public static StatusEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private Integer status;
+    private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_key")
@@ -54,6 +123,16 @@ public class ListAppsV2Request {
     @JsonProperty(value = "precise_search")
 
     private String preciseSearch;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "related_domain_id")
+
+    private String relatedDomainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "related_project_id")
+
+    private String relatedProjectId;
 
     public ListAppsV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -142,20 +221,20 @@ public class ListAppsV2Request {
         this.name = name;
     }
 
-    public ListAppsV2Request withStatus(Integer status) {
+    public ListAppsV2Request withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
     /**
-     * APP状态
+     * APP状态。 - 1：有效 
      * @return status
      */
-    public Integer getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 
@@ -165,7 +244,7 @@ public class ListAppsV2Request {
     }
 
     /**
-     * APP的KEY
+     * APP凭据的key。
      * @return appKey
      */
     public String getAppKey() {
@@ -182,7 +261,7 @@ public class ListAppsV2Request {
     }
 
     /**
-     * APP的创建者。 - USER：用户自行创建 - MARKET：[云商店分配](tag:hws)[暂未使用](tag:cmcc,ctc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm,hws_hk)
+     * APP的创建者。 - USER：用户自行创建 - MARKET：[云商店分配](tag:hws)[暂未使用](tag:cmcc,ctc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm,hws_hk,srg,ax)
      * @return creator
      */
     public String getCreator() {
@@ -210,6 +289,40 @@ public class ListAppsV2Request {
         this.preciseSearch = preciseSearch;
     }
 
+    public ListAppsV2Request withRelatedDomainId(String relatedDomainId) {
+        this.relatedDomainId = relatedDomainId;
+        return this;
+    }
+
+    /**
+     * 凭据关联的账号ID。
+     * @return relatedDomainId
+     */
+    public String getRelatedDomainId() {
+        return relatedDomainId;
+    }
+
+    public void setRelatedDomainId(String relatedDomainId) {
+        this.relatedDomainId = relatedDomainId;
+    }
+
+    public ListAppsV2Request withRelatedProjectId(String relatedProjectId) {
+        this.relatedProjectId = relatedProjectId;
+        return this;
+    }
+
+    /**
+     * 凭据关联的项目ID。
+     * @return relatedProjectId
+     */
+    public String getRelatedProjectId() {
+        return relatedProjectId;
+    }
+
+    public void setRelatedProjectId(String relatedProjectId) {
+        this.relatedProjectId = relatedProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -223,12 +336,24 @@ public class ListAppsV2Request {
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.id, that.id)
             && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
             && Objects.equals(this.appKey, that.appKey) && Objects.equals(this.creator, that.creator)
-            && Objects.equals(this.preciseSearch, that.preciseSearch);
+            && Objects.equals(this.preciseSearch, that.preciseSearch)
+            && Objects.equals(this.relatedDomainId, that.relatedDomainId)
+            && Objects.equals(this.relatedProjectId, that.relatedProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, offset, limit, id, name, status, appKey, creator, preciseSearch);
+        return Objects.hash(instanceId,
+            offset,
+            limit,
+            id,
+            name,
+            status,
+            appKey,
+            creator,
+            preciseSearch,
+            relatedDomainId,
+            relatedProjectId);
     }
 
     @Override
@@ -244,6 +369,8 @@ public class ListAppsV2Request {
         sb.append("    appKey: ").append(toIndentedString(appKey)).append("\n");
         sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("    preciseSearch: ").append(toIndentedString(preciseSearch)).append("\n");
+        sb.append("    relatedDomainId: ").append(toIndentedString(relatedDomainId)).append("\n");
+        sb.append("    relatedProjectId: ").append(toIndentedString(relatedProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

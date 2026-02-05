@@ -25,6 +25,11 @@ public class CreateServerImageReq {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "execute_sysprep")
+
+    private Boolean executeSysprep;
+
     public CreateServerImageReq withName(String name) {
         this.name = name;
         return this;
@@ -76,6 +81,23 @@ public class CreateServerImageReq {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public CreateServerImageReq withExecuteSysprep(Boolean executeSysprep) {
+        this.executeSysprep = executeSysprep;
+        return this;
+    }
+
+    /**
+     * 是否执行系统封装步骤。
+     * @return executeSysprep
+     */
+    public Boolean getExecuteSysprep() {
+        return executeSysprep;
+    }
+
+    public void setExecuteSysprep(Boolean executeSysprep) {
+        this.executeSysprep = executeSysprep;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +108,13 @@ public class CreateServerImageReq {
         }
         CreateServerImageReq that = (CreateServerImageReq) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.executeSysprep, that.executeSysprep);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, enterpriseProjectId);
+        return Objects.hash(name, description, enterpriseProjectId, executeSysprep);
     }
 
     @Override
@@ -101,6 +124,7 @@ public class CreateServerImageReq {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    executeSysprep: ").append(toIndentedString(executeSysprep)).append("\n");
         sb.append("}");
         return sb.toString();
     }

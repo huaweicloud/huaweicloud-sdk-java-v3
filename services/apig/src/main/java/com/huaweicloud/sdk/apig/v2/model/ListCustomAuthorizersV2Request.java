@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -35,10 +40,80 @@ public class ListCustomAuthorizersV2Request {
 
     private String name;
 
+    /**
+     * 自定义认证类型。 - FRONTEND：前端 - BACKEND：后端 
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum FRONTEND for value: "FRONTEND"
+         */
+        public static final TypeEnum FRONTEND = new TypeEnum("FRONTEND");
+
+        /**
+         * Enum BACKEND for value: "BACKEND"
+         */
+        public static final TypeEnum BACKEND = new TypeEnum("BACKEND");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("FRONTEND", FRONTEND);
+            map.put("BACKEND", BACKEND);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private String type;
+    private TypeEnum type;
 
     public ListCustomAuthorizersV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -127,20 +202,20 @@ public class ListCustomAuthorizersV2Request {
         this.name = name;
     }
 
-    public ListCustomAuthorizersV2Request withType(String type) {
+    public ListCustomAuthorizersV2Request withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
     /**
-     * 类型
+     * 自定义认证类型。 - FRONTEND：前端 - BACKEND：后端 
      * @return type
      */
-    public String getType() {
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 

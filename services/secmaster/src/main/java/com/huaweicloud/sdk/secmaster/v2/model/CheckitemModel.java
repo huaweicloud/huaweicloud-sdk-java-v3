@@ -198,7 +198,7 @@ public class CheckitemModel {
     }
 
     /**
-     * 表示该检查项的检查方式 0：自动项 3: 剧本流程/logic app
+     * 表示该检查项的检查方式 0：手动 1：自动 3: 自动-剧本流程 4: 自动-企业主机安全 5：自动-配置审计服务
      * minimum: 0
      * maximum: 99
      * @return method
@@ -234,7 +234,7 @@ public class CheckitemModel {
     }
 
     /**
-     * 表示该检查项的来源 0：默认/default 2: 剧本流程/playbook
+     * 表示该检查项的来源 0：自动 2: 自动-剧本流程 3: 手动 4: 自动-企业主机安全 5：自动-配置审计服务
      * minimum: 0
      * maximum: 99
      * @return source

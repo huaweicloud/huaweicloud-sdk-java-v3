@@ -72,7 +72,7 @@ public class VolumeTypeInfo {
     }
 
     /**
-     * 磁盘类型。
+     * 磁盘类型： - SSD：超高IO磁盘 - SAS：高IO磁盘
      * @return volumeType
      */
     public String getVolumeType() {
@@ -89,7 +89,7 @@ public class VolumeTypeInfo {
     }
 
     /**
-     * 磁盘产品类型。
+     * 磁盘产品类型： - workspace
      * @return volumeProductType
      */
     public String getVolumeProductType() {
@@ -106,7 +106,7 @@ public class VolumeTypeInfo {
     }
 
     /**
-     * 资源类型字段。
+     * 资源类型: -hws.resource.type.workspace.volume： 云办公桌面磁盘 -hws.resource.type.workspace.desktop： 云办公桌面 -hws.resource.type.workspace.appstream： 云应用 -hws.resource.type.workspace.appstreamsession： 云应用多会话
      * @return resourceType
      */
     public String getResourceType() {
@@ -123,7 +123,7 @@ public class VolumeTypeInfo {
     }
 
     /**
-     * 资源所属云服务类型编码。
+     * 资源所属云服务类型编码： - hws.service.type.vdi - hws.service.type.marketplace
      * @return cloudServiceType
      */
     public String getCloudServiceType() {

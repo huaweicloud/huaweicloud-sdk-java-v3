@@ -27,7 +27,7 @@ public class ApiBindAclInfo {
     private String aclName;
 
     /**
-     * ACL策略作用的对象类型
+     * ACL策略作用的对象类型。 - IP：IP地址 - DOMAIN：账号名 - DOMAIN_ID：账号ID 
      */
     public static final class EntityTypeEnum {
 
@@ -108,7 +108,7 @@ public class ApiBindAclInfo {
     private EntityTypeEnum entityType;
 
     /**
-     * ACL策略类型 - PERMIT：白名单类型 - DENY：黑名单类型
+     * ACL策略类型。 - PERMIT：白名单类型 - DENY：黑名单类型 
      */
     public static final class AclTypeEnum {
 
@@ -247,7 +247,7 @@ public class ApiBindAclInfo {
     }
 
     /**
-     * ACL策略作用的对象类型
+     * ACL策略作用的对象类型。 - IP：IP地址 - DOMAIN：账号名 - DOMAIN_ID：账号ID 
      * @return entityType
      */
     public EntityTypeEnum getEntityType() {
@@ -264,7 +264,7 @@ public class ApiBindAclInfo {
     }
 
     /**
-     * ACL策略类型 - PERMIT：白名单类型 - DENY：黑名单类型
+     * ACL策略类型。 - PERMIT：白名单类型 - DENY：黑名单类型 
      * @return aclType
      */
     public AclTypeEnum getAclType() {

@@ -106,80 +106,15 @@ public class SslInfo {
 
     private AlgorithmTypeEnum algorithmType;
 
-    /**
-     * 证书可见范围： - instance：当前实例 - global：全局
-     */
-    public static final class TypeEnum {
-
-        /**
-         * Enum INSTANCE for value: "instance"
-         */
-        public static final TypeEnum INSTANCE = new TypeEnum("instance");
-
-        /**
-         * Enum GLOBAL for value: "global"
-         */
-        public static final TypeEnum GLOBAL = new TypeEnum("global");
-
-        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, TypeEnum> createStaticFields() {
-            Map<String, TypeEnum> map = new HashMap<>();
-            map.put("instance", INSTANCE);
-            map.put("global", GLOBAL);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        TypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static TypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
-        }
-
-        public static TypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof TypeEnum) {
-                return this.value.equals(((TypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private TypeEnum type;
+    private Integer type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_has_trusted_root_ca")
+
+    private Boolean isHasTrustedRootCa;
 
     public SslInfo withSslId(String sslId) {
         this.sslId = sslId;
@@ -232,21 +167,38 @@ public class SslInfo {
         this.algorithmType = algorithmType;
     }
 
-    public SslInfo withType(TypeEnum type) {
+    public SslInfo withType(Integer type) {
         this.type = type;
         return this;
     }
 
     /**
-     * 证书可见范围： - instance：当前实例 - global：全局
+     * 证书可见范围： - 1: 当前实例 - 2: 全局 
      * @return type
      */
-    public TypeEnum getType() {
+    public Integer getType() {
         return type;
     }
 
-    public void setType(TypeEnum type) {
+    public void setType(Integer type) {
         this.type = type;
+    }
+
+    public SslInfo withIsHasTrustedRootCa(Boolean isHasTrustedRootCa) {
+        this.isHasTrustedRootCa = isHasTrustedRootCa;
+        return this;
+    }
+
+    /**
+     * 是否存在信任的根证书CA。当绑定证书存在trusted_root_ca时为true。
+     * @return isHasTrustedRootCa
+     */
+    public Boolean getIsHasTrustedRootCa() {
+        return isHasTrustedRootCa;
+    }
+
+    public void setIsHasTrustedRootCa(Boolean isHasTrustedRootCa) {
+        this.isHasTrustedRootCa = isHasTrustedRootCa;
     }
 
     @Override
@@ -259,12 +211,13 @@ public class SslInfo {
         }
         SslInfo that = (SslInfo) obj;
         return Objects.equals(this.sslId, that.sslId) && Objects.equals(this.sslName, that.sslName)
-            && Objects.equals(this.algorithmType, that.algorithmType) && Objects.equals(this.type, that.type);
+            && Objects.equals(this.algorithmType, that.algorithmType) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.isHasTrustedRootCa, that.isHasTrustedRootCa);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sslId, sslName, algorithmType, type);
+        return Objects.hash(sslId, sslName, algorithmType, type, isHasTrustedRootCa);
     }
 
     @Override
@@ -275,6 +228,7 @@ public class SslInfo {
         sb.append("    sslName: ").append(toIndentedString(sslName)).append("\n");
         sb.append("    algorithmType: ").append(toIndentedString(algorithmType)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    isHasTrustedRootCa: ").append(toIndentedString(isHasTrustedRootCa)).append("\n");
         sb.append("}");
         return sb.toString();
     }

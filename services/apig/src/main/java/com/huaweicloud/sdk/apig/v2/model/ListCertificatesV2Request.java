@@ -41,7 +41,7 @@ public class ListCertificatesV2Request {
     private String signatureAlgorithm;
 
     /**
-     * 证书可见范围
+     * 证书类型。 - instance：实例证书 - global：全局证书 
      */
     public static final class TypeEnum {
 
@@ -121,7 +121,7 @@ public class ListCertificatesV2Request {
     private String instanceId;
 
     /**
-     * 证书算法类型： - RSA。 - ECC。 - SM2。
+     * 证书算法类型。 - RSA - ECC - SM2 
      */
     public static final class AlgorithmTypeEnum {
 
@@ -294,7 +294,7 @@ public class ListCertificatesV2Request {
     }
 
     /**
-     * 证书可见范围
+     * 证书类型。 - instance：实例证书 - global：全局证书 
      * @return type
      */
     public TypeEnum getType() {
@@ -328,7 +328,7 @@ public class ListCertificatesV2Request {
     }
 
     /**
-     * 证书算法类型： - RSA。 - ECC。 - SM2。
+     * 证书算法类型。 - RSA - ECC - SM2 
      * @return algorithmType
      */
     public AlgorithmTypeEnum getAlgorithmType() {

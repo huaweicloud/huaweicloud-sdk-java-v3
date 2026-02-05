@@ -46,7 +46,7 @@ public class DpeClassifyCreate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "direct_classifier")
 
-    private Object directClassifier;
+    private String directClassifier;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "direct_classifier_type_id")
@@ -195,20 +195,20 @@ public class DpeClassifyCreate {
         this.mappingId = mappingId;
     }
 
-    public DpeClassifyCreate withDirectClassifier(Object directClassifier) {
+    public DpeClassifyCreate withDirectClassifier(String directClassifier) {
         this.directClassifier = directClassifier;
         return this;
     }
 
     /**
-     * 分类方式
+     * 是否直接分类
      * @return directClassifier
      */
-    public Object getDirectClassifier() {
+    public String getDirectClassifier() {
         return directClassifier;
     }
 
-    public void setDirectClassifier(Object directClassifier) {
+    public void setDirectClassifier(String directClassifier) {
         this.directClassifier = directClassifier;
     }
 

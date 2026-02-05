@@ -100,7 +100,7 @@ public class AuthorizerResp {
     private TypeEnum type;
 
     /**
-     * 只能为：FUNC
+     * 自定义认证的类型。当前只支持函数类型：FUNC。
      */
     public static final class AuthorizerTypeEnum {
 
@@ -343,7 +343,7 @@ public class AuthorizerResp {
     }
 
     /**
-     * 只能为：FUNC
+     * 自定义认证的类型。当前只支持函数类型：FUNC。
      * @return authorizerType
      */
     public AuthorizerTypeEnum getAuthorizerType() {

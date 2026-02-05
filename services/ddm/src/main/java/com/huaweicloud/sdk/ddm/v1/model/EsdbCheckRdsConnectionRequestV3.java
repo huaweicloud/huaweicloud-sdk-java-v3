@@ -36,7 +36,7 @@ public class EsdbCheckRdsConnectionRequestV3 {
     }
 
     /**
-     * **参数解释**：  内网地址以及端口号。  格式为xx.xx.xx.xx:xx。  **参数范围**：  不涉及。
+     * **参数解释**：  内网地址以及端口号。  格式为xx.xx.xx.xx:xx。  **约束限制**：  不涉及  **取值范围**：  不涉及。  **默认取值**：  不涉及。
      * @return endpoint
      */
     public String getEndpoint() {
@@ -53,7 +53,7 @@ public class EsdbCheckRdsConnectionRequestV3 {
     }
 
     /**
-     * **参数解释**：  实例账号名称。  **参数范围**：  不涉及。
+     * **参数解释**：  数据节点的账号名称。  **约束限制**：  不涉及  **取值范围**：  不涉及。  **默认取值**：  不涉及。
      * @return username
      */
     public String getUsername() {
@@ -70,7 +70,7 @@ public class EsdbCheckRdsConnectionRequestV3 {
     }
 
     /**
-     * **参数解释**：  实例账号密码。  **约束限制**：  - 至少包含三种字符组合：小写字母、大写字母、数字、特殊字符 ~ ! @ # % ^ * - _ + ? - 不能使用简单、强度不够、容易被猜测的密码。 - 不能与账号名称或者倒序的账号名称相同。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
+     * **参数解释**：  数据节点的账号密码。  **约束限制**：  不涉及  **取值范围**：  不涉及。  **默认取值**：  不涉及。
      * @return password
      */
     public String getPassword() {

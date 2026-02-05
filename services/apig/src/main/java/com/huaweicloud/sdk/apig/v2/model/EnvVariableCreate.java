@@ -87,7 +87,7 @@ public class EnvVariableCreate {
     }
 
     /**
-     * 变量名，支持英文字母、数字、英文格式的下划线、中划线，必须以英文字母开头，3~32个字符。在API定义中等于#Name的值#部分（区分大小写），发布到环境里的API被变量值换。 > 中文字符必须为UTF-8或者unicode编码。
+     * 变量名，支持英文字母、数字、英文格式的下划线、中划线，必须以英文字母开头，3~32个字符。在API定义中等于#Name的值#部分（区分大小写），发布到环境里的API被变量值替换。 > 中文字符必须为UTF-8或者unicode编码。
      * @return variableName
      */
     public String getVariableName() {

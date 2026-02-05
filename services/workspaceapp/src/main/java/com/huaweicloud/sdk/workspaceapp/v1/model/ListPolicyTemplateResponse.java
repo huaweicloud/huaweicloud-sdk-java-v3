@@ -22,7 +22,7 @@ public class ListPolicyTemplateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
 
-    private List<PolicyGroup> items = null;
+    private List<PolicyGroupForTemplate> items = null;
 
     public ListPolicyTemplateResponse withCount(Integer count) {
         this.count = count;
@@ -43,12 +43,12 @@ public class ListPolicyTemplateResponse extends SdkResponse {
         this.count = count;
     }
 
-    public ListPolicyTemplateResponse withItems(List<PolicyGroup> items) {
+    public ListPolicyTemplateResponse withItems(List<PolicyGroupForTemplate> items) {
         this.items = items;
         return this;
     }
 
-    public ListPolicyTemplateResponse addItemsItem(PolicyGroup itemsItem) {
+    public ListPolicyTemplateResponse addItemsItem(PolicyGroupForTemplate itemsItem) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -56,7 +56,7 @@ public class ListPolicyTemplateResponse extends SdkResponse {
         return this;
     }
 
-    public ListPolicyTemplateResponse withItems(Consumer<List<PolicyGroup>> itemsSetter) {
+    public ListPolicyTemplateResponse withItems(Consumer<List<PolicyGroupForTemplate>> itemsSetter) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -68,11 +68,11 @@ public class ListPolicyTemplateResponse extends SdkResponse {
      * 策略组列表，返回列表条目数量上限为分页的最大上限值。
      * @return items
      */
-    public List<PolicyGroup> getItems() {
+    public List<PolicyGroupForTemplate> getItems() {
         return items;
     }
 
-    public void setItems(List<PolicyGroup> items) {
+    public void setItems(List<PolicyGroupForTemplate> items) {
         this.items = items;
     }
 

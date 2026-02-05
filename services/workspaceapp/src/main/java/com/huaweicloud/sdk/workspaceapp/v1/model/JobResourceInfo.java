@@ -131,7 +131,7 @@ public class JobResourceInfo {
     }
 
     /**
-     * 云服务类型编码；新购、规格变更场景，必填。
+     * 云服务类型编码；新购、规格变更场景，必填： - hws.service.type.vdi - hws.service.type.marketplace
      * @return cloudServiceType
      */
     public String getCloudServiceType() {
@@ -148,7 +148,7 @@ public class JobResourceInfo {
     }
 
     /**
-     * 资源类型编码；新购、规格变更场景，必填。
+     * 资源类型编码；新购、规格变更场景，必填: -hws.resource.type.workspace.volume： 云办公桌面磁盘 -hws.resource.type.workspace.desktop： 云办公桌面 -hws.resource.type.workspace.appstream： 云应用 -hws.resource.type.workspace.appstreamsession： 云应用多会话
      * @return resourceType
      */
     public String getResourceType() {

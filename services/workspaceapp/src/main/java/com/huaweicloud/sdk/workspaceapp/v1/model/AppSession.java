@@ -207,7 +207,7 @@ public class AppSession {
     }
 
     /**
-     * 协议类型。
+     * 协议类型： - HDP
      * @return protocolType
      */
     public String getProtocolType() {
@@ -394,7 +394,7 @@ public class AppSession {
     }
 
     /**
-     * 会话状态。
+     * 会话状态： - Active：运行中  - Disconnecte：断开连接 - AppcInit：初始化 - SignedOut：已注销 - InitFail：初始化失败
      * @return sessionState
      */
     public String getSessionState() {

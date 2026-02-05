@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * 请求体
@@ -12,56 +11,47 @@ import java.util.function.Consumer;
 public class ConfigurationCopyReqV3 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "copy_para")
+    @JsonProperty(value = "new_name")
 
-    private ParaGroupCopy copyPara;
+    private String newName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "source_id")
+    @JsonProperty(value = "description")
 
-    private String sourceId;
+    private String description;
 
-    public ConfigurationCopyReqV3 withCopyPara(ParaGroupCopy copyPara) {
-        this.copyPara = copyPara;
-        return this;
-    }
-
-    public ConfigurationCopyReqV3 withCopyPara(Consumer<ParaGroupCopy> copyParaSetter) {
-        if (this.copyPara == null) {
-            this.copyPara = new ParaGroupCopy();
-            copyParaSetter.accept(this.copyPara);
-        }
-
+    public ConfigurationCopyReqV3 withNewName(String newName) {
+        this.newName = newName;
         return this;
     }
 
     /**
-     * Get copyPara
-     * @return copyPara
+     * **参数解释**：  新参数组的名称。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
+     * @return newName
      */
-    public ParaGroupCopy getCopyPara() {
-        return copyPara;
+    public String getNewName() {
+        return newName;
     }
 
-    public void setCopyPara(ParaGroupCopy copyPara) {
-        this.copyPara = copyPara;
+    public void setNewName(String newName) {
+        this.newName = newName;
     }
 
-    public ConfigurationCopyReqV3 withSourceId(String sourceId) {
-        this.sourceId = sourceId;
+    public ConfigurationCopyReqV3 withDescription(String description) {
+        this.description = description;
         return this;
     }
 
     /**
-     * **参数解释**：  目标参数组ID。  **约束限制**：  不涉及。  **取值范围**：  只能由英文字母、数字组成，长度为36个字符。  **默认取值**：  不涉及。
-     * @return sourceId
+     * **参数解释**：  描述。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
+     * @return description
      */
-    public String getSourceId() {
-        return sourceId;
+    public String getDescription() {
+        return description;
     }
 
-    public void setSourceId(String sourceId) {
-        this.sourceId = sourceId;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
@@ -73,20 +63,20 @@ public class ConfigurationCopyReqV3 {
             return false;
         }
         ConfigurationCopyReqV3 that = (ConfigurationCopyReqV3) obj;
-        return Objects.equals(this.copyPara, that.copyPara) && Objects.equals(this.sourceId, that.sourceId);
+        return Objects.equals(this.newName, that.newName) && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(copyPara, sourceId);
+        return Objects.hash(newName, description);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ConfigurationCopyReqV3 {\n");
-        sb.append("    copyPara: ").append(toIndentedString(copyPara)).append("\n");
-        sb.append("    sourceId: ").append(toIndentedString(sourceId)).append("\n");
+        sb.append("    newName: ").append(toIndentedString(newName)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

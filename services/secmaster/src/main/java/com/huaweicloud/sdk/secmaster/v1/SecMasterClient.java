@@ -9570,9 +9570,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 更新订购资源
+     * 更新订阅资源
      *
-     * 更新订购资源
+     * 更新订阅资源
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -9584,9 +9584,9 @@ public class SecMasterClient {
     }
 
     /**
-     * 更新订购资源
+     * 更新订阅资源
      *
-     * 更新订购资源
+     * 更新订阅资源
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -21,7 +21,7 @@ public class ActionInfo {
     }
 
     /**
-     * 锁。
+     * **参数解释**：  锁。  **参数范围**：  不涉及。
      * @return action
      */
     public String getAction() {

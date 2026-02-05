@@ -19,10 +19,92 @@ import java.util.function.Consumer;
  */
 public class ApiForThrottle {
 
+    /**
+     * API的认证方式。 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证 
+     */
+    public static final class AuthTypeEnum {
+
+        /**
+         * Enum NONE for value: "NONE"
+         */
+        public static final AuthTypeEnum NONE = new AuthTypeEnum("NONE");
+
+        /**
+         * Enum APP for value: "APP"
+         */
+        public static final AuthTypeEnum APP = new AuthTypeEnum("APP");
+
+        /**
+         * Enum IAM for value: "IAM"
+         */
+        public static final AuthTypeEnum IAM = new AuthTypeEnum("IAM");
+
+        /**
+         * Enum AUTHORIZER for value: "AUTHORIZER"
+         */
+        public static final AuthTypeEnum AUTHORIZER = new AuthTypeEnum("AUTHORIZER");
+
+        private static final Map<String, AuthTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AuthTypeEnum> createStaticFields() {
+            Map<String, AuthTypeEnum> map = new HashMap<>();
+            map.put("NONE", NONE);
+            map.put("APP", APP);
+            map.put("IAM", IAM);
+            map.put("AUTHORIZER", AUTHORIZER);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AuthTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AuthTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthTypeEnum(value));
+        }
+
+        public static AuthTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AuthTypeEnum) {
+                return this.value.equals(((AuthTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_type")
 
-    private String authType;
+    private AuthTypeEnum authType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_name")
@@ -54,10 +136,80 @@ public class ApiForThrottle {
 
     private String runEnvId;
 
+    /**
+     * API类型。 - 1：公有API - 2：私有API 
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final TypeEnum NUMBER_1 = new TypeEnum(1);
+
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final TypeEnum NUMBER_2 = new TypeEnum(2);
+
+        private static final Map<Integer, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, TypeEnum> createStaticFields() {
+            Map<Integer, TypeEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        TypeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
+        }
+
+        public static TypeEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private Integer type;
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "throttle_name")
@@ -205,20 +357,20 @@ public class ApiForThrottle {
 
     private List<String> tags = null;
 
-    public ApiForThrottle withAuthType(String authType) {
+    public ApiForThrottle withAuthType(AuthTypeEnum authType) {
         this.authType = authType;
         return this;
     }
 
     /**
-     * API的认证方式
+     * API的认证方式。 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证 
      * @return authType
      */
-    public String getAuthType() {
+    public AuthTypeEnum getAuthType() {
         return authType;
     }
 
-    public void setAuthType(String authType) {
+    public void setAuthType(AuthTypeEnum authType) {
         this.authType = authType;
     }
 
@@ -324,20 +476,20 @@ public class ApiForThrottle {
         this.runEnvId = runEnvId;
     }
 
-    public ApiForThrottle withType(Integer type) {
+    public ApiForThrottle withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
     /**
-     * API类型
+     * API类型。 - 1：公有API - 2：私有API 
      * @return type
      */
-    public Integer getType() {
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(Integer type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 

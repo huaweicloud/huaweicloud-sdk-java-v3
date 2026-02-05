@@ -134,6 +134,11 @@ public class SubscriptionResourceInfo {
     private ChargingModeEnum chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "to_period")
+
+    private Boolean toPeriod;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_list")
 
     private List<TagInfo> tagList = null;
@@ -215,6 +220,8 @@ public class SubscriptionResourceInfo {
 
     /**
      * 创建时间戳
+     * minimum: 1640966400000
+     * maximum: 4796640000000
      * @return createTime
      */
     public Long getCreateTime() {
@@ -232,6 +239,8 @@ public class SubscriptionResourceInfo {
 
     /**
      * 到期时间戳，只有按需资源有该字段
+     * minimum: 1640966400000
+     * maximum: 4796640000000
      * @return expireTime
      */
     public Long getExpireTime() {
@@ -295,6 +304,23 @@ public class SubscriptionResourceInfo {
         this.chargingMode = chargingMode;
     }
 
+    public SubscriptionResourceInfo withToPeriod(Boolean toPeriod) {
+        this.toPeriod = toPeriod;
+        return this;
+    }
+
+    /**
+     * 当前资源是否能进行按需转包周期操作
+     * @return toPeriod
+     */
+    public Boolean getToPeriod() {
+        return toPeriod;
+    }
+
+    public void setToPeriod(Boolean toPeriod) {
+        this.toPeriod = toPeriod;
+    }
+
     public SubscriptionResourceInfo withTagList(List<TagInfo> tagList) {
         this.tagList = tagList;
         return this;
@@ -342,7 +368,8 @@ public class SubscriptionResourceInfo {
             && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.expireTime, that.expireTime)
             && Objects.equals(this.resourceStatus, that.resourceStatus) && Objects.equals(this.orderId, that.orderId)
-            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.tagList, that.tagList);
+            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.toPeriod, that.toPeriod)
+            && Objects.equals(this.tagList, that.tagList);
     }
 
     @Override
@@ -356,6 +383,7 @@ public class SubscriptionResourceInfo {
             resourceStatus,
             orderId,
             chargingMode,
+            toPeriod,
             tagList);
     }
 
@@ -372,6 +400,7 @@ public class SubscriptionResourceInfo {
         sb.append("    resourceStatus: ").append(toIndentedString(resourceStatus)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
+        sb.append("    toPeriod: ").append(toIndentedString(toPeriod)).append("\n");
         sb.append("    tagList: ").append(toIndentedString(tagList)).append("\n");
         sb.append("}");
         return sb.toString();

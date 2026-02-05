@@ -21,7 +21,7 @@ public class ApiConditionBase {
     private String reqParamName;
 
     /**
-     * 系统参数-网关内置参数名称。策略类型为system时必选。支持以下参数 - req_path：请求路径。如 /a/b - req_method：请求方法。如 GET 
+     * 系统参数-网关内置参数名称。策略类型为system时必选。支持以下参数 - req_path：请求路径。如 /a/b - req_method：请求方法。如 GET - reqPath：请求路径，废弃。如 /a/b - reqMethod：请求方法，废弃。如 GET 
      */
     public static final class SysParamNameEnum {
 
@@ -387,7 +387,7 @@ public class ApiConditionBase {
     }
 
     /**
-     * 系统参数-网关内置参数名称。策略类型为system时必选。支持以下参数 - req_path：请求路径。如 /a/b - req_method：请求方法。如 GET 
+     * 系统参数-网关内置参数名称。策略类型为system时必选。支持以下参数 - req_path：请求路径。如 /a/b - req_method：请求方法。如 GET - reqPath：请求路径，废弃。如 /a/b - reqMethod：请求方法，废弃。如 GET 
      * @return sysParamName
      */
     public SysParamNameEnum getSysParamName() {

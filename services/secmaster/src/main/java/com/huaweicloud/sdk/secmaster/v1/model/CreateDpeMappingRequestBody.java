@@ -86,6 +86,11 @@ public class CreateDpeMappingRequestBody {
 
     private DpeMappingDetail mapper;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "classifier")
+
+    private DpeClassifyCreate classifier;
+
     public CreateDpeMappingRequestBody withId(String id) {
         this.id = id;
         return this;
@@ -350,6 +355,32 @@ public class CreateDpeMappingRequestBody {
         this.mapper = mapper;
     }
 
+    public CreateDpeMappingRequestBody withClassifier(DpeClassifyCreate classifier) {
+        this.classifier = classifier;
+        return this;
+    }
+
+    public CreateDpeMappingRequestBody withClassifier(Consumer<DpeClassifyCreate> classifierSetter) {
+        if (this.classifier == null) {
+            this.classifier = new DpeClassifyCreate();
+            classifierSetter.accept(this.classifier);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get classifier
+     * @return classifier
+     */
+    public DpeClassifyCreate getClassifier() {
+        return classifier;
+    }
+
+    public void setClassifier(DpeClassifyCreate classifier) {
+        this.classifier = classifier;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -366,7 +397,7 @@ public class CreateDpeMappingRequestBody {
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.creatorId, that.creatorId)
             && Objects.equals(this.creatorName, that.creatorName) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.modifierId, that.modifierId) && Objects.equals(this.modifierName, that.modifierName)
-            && Objects.equals(this.mapper, that.mapper);
+            && Objects.equals(this.mapper, that.mapper) && Objects.equals(this.classifier, that.classifier);
     }
 
     @Override
@@ -385,7 +416,8 @@ public class CreateDpeMappingRequestBody {
             updateTime,
             modifierId,
             modifierName,
-            mapper);
+            mapper,
+            classifier);
     }
 
     @Override
@@ -407,6 +439,7 @@ public class CreateDpeMappingRequestBody {
         sb.append("    modifierId: ").append(toIndentedString(modifierId)).append("\n");
         sb.append("    modifierName: ").append(toIndentedString(modifierName)).append("\n");
         sb.append("    mapper: ").append(toIndentedString(mapper)).append("\n");
+        sb.append("    classifier: ").append(toIndentedString(classifier)).append("\n");
         sb.append("}");
         return sb.toString();
     }

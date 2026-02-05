@@ -32,6 +32,16 @@ public class AppQuotaAppInfo {
     private String appKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "related_domain_id")
+
+    private String relatedDomainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "related_project_id")
+
+    private String relatedProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remark")
 
     private String remark;
@@ -67,7 +77,7 @@ public class AppQuotaAppInfo {
     }
 
     /**
-     * 凭据编号
+     * APP凭据编号。
      * @return appId
      */
     public String getAppId() {
@@ -84,7 +94,7 @@ public class AppQuotaAppInfo {
     }
 
     /**
-     * 凭据名称
+     * APP凭据名称。
      * @return name
      */
     public String getName() {
@@ -118,7 +128,7 @@ public class AppQuotaAppInfo {
     }
 
     /**
-     * 凭据的Key
+     * APP凭据的key。
      * @return appKey
      */
     public String getAppKey() {
@@ -129,13 +139,47 @@ public class AppQuotaAppInfo {
         this.appKey = appKey;
     }
 
+    public AppQuotaAppInfo withRelatedDomainId(String relatedDomainId) {
+        this.relatedDomainId = relatedDomainId;
+        return this;
+    }
+
+    /**
+     * 凭据关联的账号ID。
+     * @return relatedDomainId
+     */
+    public String getRelatedDomainId() {
+        return relatedDomainId;
+    }
+
+    public void setRelatedDomainId(String relatedDomainId) {
+        this.relatedDomainId = relatedDomainId;
+    }
+
+    public AppQuotaAppInfo withRelatedProjectId(String relatedProjectId) {
+        this.relatedProjectId = relatedProjectId;
+        return this;
+    }
+
+    /**
+     * 凭据关联的项目ID。
+     * @return relatedProjectId
+     */
+    public String getRelatedProjectId() {
+        return relatedProjectId;
+    }
+
+    public void setRelatedProjectId(String relatedProjectId) {
+        this.relatedProjectId = relatedProjectId;
+    }
+
     public AppQuotaAppInfo withRemark(String remark) {
         this.remark = remark;
         return this;
     }
 
     /**
-     * 凭据描述
+     * APP凭据描述。
      * @return remark
      */
     public String getRemark() {
@@ -186,7 +230,7 @@ public class AppQuotaAppInfo {
     }
 
     /**
-     * 凭据配额编号
+     * APP凭据配额编号。
      * @return appQuotaId
      */
     public String getAppQuotaId() {
@@ -242,15 +286,27 @@ public class AppQuotaAppInfo {
         AppQuotaAppInfo that = (AppQuotaAppInfo) obj;
         return Objects.equals(this.appId, that.appId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.status, that.status) && Objects.equals(this.appKey, that.appKey)
-            && Objects.equals(this.remark, that.remark) && Objects.equals(this.registerTime, that.registerTime)
-            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.appQuotaId, that.appQuotaId)
-            && Objects.equals(this.appQuotaName, that.appQuotaName) && Objects.equals(this.boundTime, that.boundTime);
+            && Objects.equals(this.relatedDomainId, that.relatedDomainId)
+            && Objects.equals(this.relatedProjectId, that.relatedProjectId) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.registerTime, that.registerTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.appQuotaId, that.appQuotaId) && Objects.equals(this.appQuotaName, that.appQuotaName)
+            && Objects.equals(this.boundTime, that.boundTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(appId, name, status, appKey, remark, registerTime, updateTime, appQuotaId, appQuotaName, boundTime);
+        return Objects.hash(appId,
+            name,
+            status,
+            appKey,
+            relatedDomainId,
+            relatedProjectId,
+            remark,
+            registerTime,
+            updateTime,
+            appQuotaId,
+            appQuotaName,
+            boundTime);
     }
 
     @Override
@@ -261,6 +317,8 @@ public class AppQuotaAppInfo {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    appKey: ").append(toIndentedString(appKey)).append("\n");
+        sb.append("    relatedDomainId: ").append(toIndentedString(relatedDomainId)).append("\n");
+        sb.append("    relatedProjectId: ").append(toIndentedString(relatedProjectId)).append("\n");
         sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("    registerTime: ").append(toIndentedString(registerTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

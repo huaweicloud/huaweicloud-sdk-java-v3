@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,41 +13,65 @@ import java.util.function.Consumer;
 public class ListAlertRuleTemplateMetricsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "severity")
 
-    private Map<String, AlertRuleTemplateMetric> body = null;
+    private AlertRuleTemplateMetric severity;
 
-    public ListAlertRuleTemplateMetricsResponse withBody(Map<String, AlertRuleTemplateMetric> body) {
-        this.body = body;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private AlertRuleTemplateMetric status;
+
+    public ListAlertRuleTemplateMetricsResponse withSeverity(AlertRuleTemplateMetric severity) {
+        this.severity = severity;
         return this;
     }
 
-    public ListAlertRuleTemplateMetricsResponse putBodyItem(String key, AlertRuleTemplateMetric bodyItem) {
-        if (this.body == null) {
-            this.body = new HashMap<>();
+    public ListAlertRuleTemplateMetricsResponse withSeverity(Consumer<AlertRuleTemplateMetric> severitySetter) {
+        if (this.severity == null) {
+            this.severity = new AlertRuleTemplateMetric();
+            severitySetter.accept(this.severity);
         }
-        this.body.put(key, bodyItem);
-        return this;
-    }
 
-    public ListAlertRuleTemplateMetricsResponse withBody(Consumer<Map<String, AlertRuleTemplateMetric>> bodySetter) {
-        if (this.body == null) {
-            this.body = new HashMap<>();
-        }
-        bodySetter.accept(this.body);
         return this;
     }
 
     /**
-     * 响应结果
-     * @return body
+     * Get severity
+     * @return severity
      */
-    public Map<String, AlertRuleTemplateMetric> getBody() {
-        return body;
+    public AlertRuleTemplateMetric getSeverity() {
+        return severity;
     }
 
-    public void setBody(Map<String, AlertRuleTemplateMetric> body) {
-        this.body = body;
+    public void setSeverity(AlertRuleTemplateMetric severity) {
+        this.severity = severity;
+    }
+
+    public ListAlertRuleTemplateMetricsResponse withStatus(AlertRuleTemplateMetric status) {
+        this.status = status;
+        return this;
+    }
+
+    public ListAlertRuleTemplateMetricsResponse withStatus(Consumer<AlertRuleTemplateMetric> statusSetter) {
+        if (this.status == null) {
+            this.status = new AlertRuleTemplateMetric();
+            statusSetter.accept(this.status);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get status
+     * @return status
+     */
+    public AlertRuleTemplateMetric getStatus() {
+        return status;
+    }
+
+    public void setStatus(AlertRuleTemplateMetric status) {
+        this.status = status;
     }
 
     @Override
@@ -61,19 +83,20 @@ public class ListAlertRuleTemplateMetricsResponse extends SdkResponse {
             return false;
         }
         ListAlertRuleTemplateMetricsResponse that = (ListAlertRuleTemplateMetricsResponse) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.severity, that.severity) && Objects.equals(this.status, that.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(severity, status);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAlertRuleTemplateMetricsResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

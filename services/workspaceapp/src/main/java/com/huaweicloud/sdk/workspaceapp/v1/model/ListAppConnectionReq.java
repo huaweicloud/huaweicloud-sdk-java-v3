@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
- * 请求应用使用记录响应体。
+ * 请求应用使用记录请求体。
  */
 public class ListAppConnectionReq {
 
@@ -304,7 +304,7 @@ public class ListAppConnectionReq {
     }
 
     /**
-     * 客户端操作系统类型。
+     * 客户端操作系统类型： - Windows - Mac
      * @return clientType
      */
     public String getClientType() {
@@ -406,7 +406,7 @@ public class ListAppConnectionReq {
     }
 
     /**
-     * 登录应用开始时间，格式 2022-10-31T08:07:39Z。
+     * 登录应用开始时间，只支持导出30天内数据，格式 2022-10-31T08:07:39Z，参数中brokering_start_time与brokering_end_time必须同时存在或都不存在，都不存在时导出近一个月的数据。
      * @return brokeringStartTime
      */
     public OffsetDateTime getBrokeringStartTime() {
@@ -423,7 +423,7 @@ public class ListAppConnectionReq {
     }
 
     /**
-     * 登录应用结束时间，格式 2022-10-31T08:07:39Z。
+     * 登录应用结束时间，只支持导出30天内数据，格式 2022-10-31T08:07:39Z，参数中brokering_start_time与brokering_end_time必须同时存在或都不存在，都不存在时导出近一个月的数据。
      * @return brokeringEndTime
      */
     public OffsetDateTime getBrokeringEndTime() {

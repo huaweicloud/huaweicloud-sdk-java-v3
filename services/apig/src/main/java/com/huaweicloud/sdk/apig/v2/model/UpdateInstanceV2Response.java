@@ -778,7 +778,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     private String eipAddress;
 
     /**
-     * 实例计费方式： - 0：按需计费 - 1：[包周期计费](tag:hws)[暂未使用](tag:hws_hk,cmcc,ctc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm)
+     * 实例计费方式： - 0：按需计费 - 1：[包周期计费](tag:hws,ctc)[暂未使用](tag:hws_hk,cmcc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm,srg,ax)
      */
     public static final class ChargingModeEnum {
 
@@ -1268,7 +1268,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 实例计费方式： - 0：按需计费 - 1：[包周期计费](tag:hws)[暂未使用](tag:hws_hk,cmcc,ctc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm)
+     * 实例计费方式： - 0：按需计费 - 1：[包周期计费](tag:hws,ctc)[暂未使用](tag:hws_hk,cmcc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm,srg,ax)
      * @return chargingMode
      */
     public ChargingModeEnum getChargingMode() {
@@ -1285,7 +1285,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * [包周期计费订单编号](tag:hws)[计费订单编号参数暂未使用](tag:hws_hk,cmcc,ctc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm)
+     * [包周期计费订单编号](tag:hws,ctc)[计费订单编号参数暂未使用](tag:hws_hk,cmcc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm,srg,ax)
      * @return cbcMetadata
      */
     public String getCbcMetadata() {
@@ -1352,7 +1352,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 实例描述
+     * 实例描述 
      * @return description
      */
     public String getDescription() {
@@ -1369,7 +1369,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 虚拟私有云ID。  获取方法如下：   - 方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。   - 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询VPC列表”章节。 
+     * 虚拟私有云ID。  获取方法如下：   - 方法1：在虚拟私有云服务的控制台界面，进入虚拟私有云的详情页面查找VPC ID。   - 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询VPC列表”章节。 
      * @return vpcId
      */
     public String getVpcId() {
@@ -1386,7 +1386,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 子网的网络ID。  获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询子网列表”章节。 
+     * 子网的网络ID。  获取方法如下： - 方法1：在虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询子网列表”章节。 
      * @return subnetId
      */
     public String getSubnetId() {
@@ -1403,7 +1403,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 指定实例所属的安全组。  获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询安全组列表”章节。 
+     * 指定实例所属的安全组。  获取方法如下： - 方法1：在虚拟私有云服务的控制台界面，进入安全组的详情页面查找安全组ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询安全组列表”章节。 
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -1420,7 +1420,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * '维护时间窗开始时间。时间格式为 xx:00:00，xx取值为02,06,10,14,18,22。'  '在这个时间段内，运维人员可以对该实例的节点进行维护操作。维护期间，业务可以正常使用，可能会发生闪断。维护操作通常几个月一次。'
+     * '维护时间窗开始时间。时间格式为 xx:00:00，xx取值为02,06,10,14,18,22。'  '在这个时间段内，运维人员可以对该实例的节点进行维护操作。维护期间，业务可以正常使用，可能会发生闪断。维护操作通常几个月一次。' 
      * @return maintainBegin
      */
     public String getMaintainBegin() {
@@ -1437,7 +1437,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * '维护时间窗结束时间。时间格式为 xx:00:00，与维护时间窗开始时间相差4个小时。'  '在这个时间段内，运维人员可以对该实例的节点进行维护操作。维护期间，业务可以正常使用，可能会发生闪断。维护操作通常几个月一次'。
+     * '维护时间窗结束时间。时间格式为 xx:00:00，与维护时间窗开始时间相差4个小时。'  '在这个时间段内，运维人员可以对该实例的节点进行维护操作。维护期间，业务可以正常使用，可能会发生闪断。维护操作通常几个月一次'。 
      * @return maintainEnd
      */
     public String getMaintainEnd() {
@@ -1454,7 +1454,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 实例入口，虚拟私有云访问地址
+     * 实例入口，虚拟私有云访问地址 
      * @return ingressIp
      */
     public String getIngressIp() {
@@ -1471,7 +1471,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 实例入口，虚拟私有云访问地址 (IPv6)
+     * 实例入口，虚拟私有云访问地址 (IPv6) 
      * @return ingressIpV6
      */
     public String getIngressIpV6() {
@@ -1488,7 +1488,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 实例所属用户ID
+     * 实例所属用户ID 
      * @return userId
      */
     public String getUserId() {
@@ -1505,7 +1505,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 出公网网段 (IPv6)  。  当前仅部分region部分可用区支持IPv6
+     * 出公网网段 (IPv6)  。  当前仅部分region部分可用区支持IPv6 
      * @return natEipIpv6Cidr
      */
     public String getNatEipIpv6Cidr() {
@@ -1522,7 +1522,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 弹性IP地址(IPv6)。  当前仅部分region部分可用区支持IPv6
+     * 弹性IP地址(IPv6)。  当前仅部分region部分可用区支持IPv6 
      * @return eipIpv6Address
      */
     public String getEipIpv6Address() {
@@ -1539,7 +1539,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 实例出公网IP
+     * 实例出公网IP 
      * @return natEipAddress
      */
     public String getNatEipAddress() {
@@ -1556,7 +1556,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 出公网带宽
+     * 出公网带宽 
      * @return bandwidthSize
      */
     public Integer getBandwidthSize() {
@@ -1573,7 +1573,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 出公网带宽计费模式
+     * 出公网带宽计费模式 
      * @return bandwidthChargingMode
      */
     public String getBandwidthChargingMode() {
@@ -1590,7 +1590,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 可用区
+     * 可用区 
      * @return availableZoneIds
      */
     public String getAvailableZoneIds() {
@@ -1607,7 +1607,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 实例版本编号
+     * 实例版本编号 
      * @return instanceVersion
      */
     public String getInstanceVersion() {
@@ -1624,7 +1624,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 子网的网络ID。  暂不支持
+     * 子网的网络ID。  暂不支持 
      * @return virsubnetId
      */
     public String getVirsubnetId() {
@@ -1641,7 +1641,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * roma弹性公网IP。  暂不支持
+     * roma弹性公网IP。  暂不支持 
      * @return romaEipAddress
      */
     public String getRomaEipAddress() {
@@ -1658,7 +1658,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 监听信息  暂不支持
+     * 监听信息  暂不支持 
      * @return listeners
      */
     public Object getListeners() {
@@ -1691,7 +1691,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 实例支持的特性列表
+     * 实例支持的特性列表 
      * @return supportedFeatures
      */
     public List<String> getSupportedFeatures() {
@@ -1750,7 +1750,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 终端节点服务列表
+     * 终端节点服务列表 
      * @return endpointServices
      */
     public List<EndpointService> getEndpointServices() {
@@ -1835,7 +1835,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 实例IPV6出公网IP
+     * 实例IPV6出公网IP 
      * @return publicIpv6Ips
      */
     public List<String> getPublicIpv6Ips() {
@@ -1868,7 +1868,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 公网入口地址列表
+     * 公网入口地址列表 
      * @return publicips
      */
     public List<IpDetails> getPublicips() {
@@ -1901,7 +1901,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 私网入口地址列表
+     * 私网入口地址列表 
      * @return privateips
      */
     public List<IpDetails> getPrivateips() {
@@ -1934,7 +1934,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 不建议使用的实例入口列表：分组子域名解析未指向到该列表的IP，不能用该列表的IP直接访问DEFAULT分组
+     * 不建议使用的实例入口列表：分组子域名解析未指向到该列表的IP，不能用该列表的IP直接访问DEFAULT分组 
      * @return unreliableIps
      */
     public List<String> getUnreliableIps() {
@@ -1951,7 +1951,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 实例是否支持全量IPv6 - true：支持，实例入口和实例出口都支持IPV6 - false：不支持，仅实例入口支持IPV6
+     * 实例是否支持全量IPv6 - true：支持，实例入口和实例出口都支持IPV6 - false：不支持，仅实例入口支持IPV6 
      * @return enableFullstackIpv6
      */
     public Boolean getEnableFullstackIpv6() {
@@ -1968,7 +1968,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 实例是否可释放 - true：可释放 - false：不可释放
+     * 实例是否可释放 - true：可释放 - false：不可释放 
      * @return isReleasable
      */
     public Boolean getIsReleasable() {
@@ -1985,7 +1985,7 @@ public class UpdateInstanceV2Response extends SdkResponse {
     }
 
     /**
-     * 入公网带宽计费模式
+     * 入公网带宽计费模式 
      * @return ingressBandwidthChargingMode
      */
     public String getIngressBandwidthChargingMode() {

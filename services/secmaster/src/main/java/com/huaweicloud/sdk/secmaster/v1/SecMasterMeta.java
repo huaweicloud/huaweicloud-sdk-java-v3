@@ -5,7 +5,6 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.secmaster.v1.model.AlertRuleTemplateMetric;
 import com.huaweicloud.sdk.secmaster.v1.model.AlterResourceTagsInBatchesRequestBody;
 import com.huaweicloud.sdk.secmaster.v1.model.AopInstanceEventData;
 import com.huaweicloud.sdk.secmaster.v1.model.AopInstanceUpdateDataPojo;
@@ -387,7 +386,6 @@ import com.huaweicloud.sdk.secmaster.v1.model.ImportResourceResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.ImportVulnerabilitiesRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.ImportVulnerabilitiesRequestBody;
 import com.huaweicloud.sdk.secmaster.v1.model.ImportVulnerabilitiesResponse;
-import com.huaweicloud.sdk.secmaster.v1.model.Index;
 import com.huaweicloud.sdk.secmaster.v1.model.IndicatorCreateRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.IndicatorListSearchRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.LayoutCreateRequestPojo;
@@ -733,6 +731,7 @@ import com.huaweicloud.sdk.secmaster.v1.model.UpdateDataspaceRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateDataspaceRequestBody;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateDataspaceResponse;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateDpeInfoStatusRequestBody;
+import com.huaweicloud.sdk.secmaster.v1.model.UpdateIndexRequestBody;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateIndicatorRequest;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateIndicatorRequestBody;
 import com.huaweicloud.sdk.secmaster.v1.model.UpdateIndicatorResponse;
@@ -799,7 +798,6 @@ import com.huaweicloud.sdk.secmaster.v1.model.WizardUpdateRequestPojos;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Map;
 
 @SuppressWarnings("unchecked")
 public class SecMasterMeta {
@@ -5518,14 +5516,6 @@ public class SecMasterMeta {
                 ListAlertRuleTemplateMetricsRequest::setWorkspaceId));
 
         // response
-        builder.<Map<String, AlertRuleTemplateMetric>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Map.class),
-            f -> f
-                .withMarshaller(ListAlertRuleTemplateMetricsResponse::getBody,
-                    ListAlertRuleTemplateMetricsResponse::setBody)
-                .withInnerContainerType(AlertRuleTemplateMetric.class));
 
         return builder.build();
     }
@@ -11977,10 +11967,10 @@ public class SecMasterMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdatePipeIndexRequest::getPipeId, UpdatePipeIndexRequest::setPipeId));
-        builder.<Index>withRequestField("body",
+        builder.<UpdateIndexRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Index.class),
+            TypeCasts.uncheckedConversion(UpdateIndexRequestBody.class),
             f -> f.withMarshaller(UpdatePipeIndexRequest::getBody, UpdatePipeIndexRequest::setBody));
 
         // response

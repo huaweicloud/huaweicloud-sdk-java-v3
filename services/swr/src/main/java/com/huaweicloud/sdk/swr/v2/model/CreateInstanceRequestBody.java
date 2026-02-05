@@ -276,11 +276,6 @@ public class CreateInstanceRequestBody {
 
     private String obsBucketName;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "obs_enc_kms_key_id")
-
-    private String obsEncKmsKeyId;
-
     public CreateInstanceRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -502,23 +497,6 @@ public class CreateInstanceRequestBody {
         this.obsBucketName = obsBucketName;
     }
 
-    public CreateInstanceRequestBody withObsEncKmsKeyId(String obsEncKmsKeyId) {
-        this.obsEncKmsKeyId = obsEncKmsKeyId;
-        return this;
-    }
-
-    /**
-     * KMS的密钥ID，用于对自动创建的OBS桶进行加密。密钥的加密算法支持AES-256和SM4。指定该字段时必须开启OBS桶加密开关，且不能指定自定义OBS桶。
-     * @return obsEncKmsKeyId
-     */
-    public String getObsEncKmsKeyId() {
-        return obsEncKmsKeyId;
-    }
-
-    public void setObsEncKmsKeyId(String obsEncKmsKeyId) {
-        this.obsEncKmsKeyId = obsEncKmsKeyId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -535,8 +513,7 @@ public class CreateInstanceRequestBody {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.resourceTags, that.resourceTags) && Objects.equals(this.obsEncrypt, that.obsEncrypt)
             && Objects.equals(this.encryptType, that.encryptType)
-            && Objects.equals(this.obsBucketName, that.obsBucketName)
-            && Objects.equals(this.obsEncKmsKeyId, that.obsEncKmsKeyId);
+            && Objects.equals(this.obsBucketName, that.obsBucketName);
     }
 
     @Override
@@ -552,8 +529,7 @@ public class CreateInstanceRequestBody {
             resourceTags,
             obsEncrypt,
             encryptType,
-            obsBucketName,
-            obsEncKmsKeyId);
+            obsBucketName);
     }
 
     @Override
@@ -572,7 +548,6 @@ public class CreateInstanceRequestBody {
         sb.append("    obsEncrypt: ").append(toIndentedString(obsEncrypt)).append("\n");
         sb.append("    encryptType: ").append(toIndentedString(encryptType)).append("\n");
         sb.append("    obsBucketName: ").append(toIndentedString(obsBucketName)).append("\n");
-        sb.append("    obsEncKmsKeyId: ").append(toIndentedString(obsEncKmsKeyId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

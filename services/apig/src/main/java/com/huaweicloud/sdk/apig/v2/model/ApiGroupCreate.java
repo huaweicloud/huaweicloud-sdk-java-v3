@@ -87,7 +87,7 @@ public class ApiGroupCreate {
     }
 
     /**
-     * 分组版本  - V1：全局分组 - V2：应用级分组  暂不支持，默认V1
+     * 分组版本。 - V1：全局分组。 - V2：应用级分组。 暂不支持。 
      * @return version
      */
     public String getVersion() {

@@ -422,7 +422,7 @@ public class ProductInfo {
     }
 
     /**
-     * 磁盘产品类型。
+     * 磁盘产品类型： - workspace
      * @return volumeProductType
      */
     public String getVolumeProductType() {
@@ -573,7 +573,7 @@ public class ProductInfo {
     }
 
     /**
-     * 系列类型。
+     * 系列类型： - d7 - c7
      * @return seriesType
      */
     public String getSeriesType() {

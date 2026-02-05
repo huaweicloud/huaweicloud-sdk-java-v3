@@ -31,7 +31,7 @@ public class CertificateForm {
     private String privateKey;
 
     /**
-     * 证书可见范围
+     * 证书类型。 - instance：实例证书 - global：全局证书 
      */
     public static final class TypeEnum {
 
@@ -263,7 +263,7 @@ public class CertificateForm {
     }
 
     /**
-     * 证书可见范围
+     * 证书类型。 - instance：实例证书 - global：全局证书 
      * @return type
      */
     public TypeEnum getType() {

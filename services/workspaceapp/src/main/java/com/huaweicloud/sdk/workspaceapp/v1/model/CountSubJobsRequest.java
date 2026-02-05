@@ -48,7 +48,7 @@ public class CountSubJobsRequest {
     }
 
     /**
-     * 任务类型，传入多个任务类型的时候将任务类型用英文逗号(,)进行分隔。
+     * 任务类型，传入多个任务类型的时候将任务类型用英文逗号(,)进行分隔： - CREATE_SERVER 创建服务器 - CREATE_SERVER_IMAGE 创建镜像 - DELETE_SERVER 删除服务器 - UPGRADE_ACCESS_AGENT 升级access agent
      * @return jobType
      */
     public String getJobType() {

@@ -105,6 +105,8 @@ import com.huaweicloud.sdk.rds.v3.model.CreateSubscriptionRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateSubscriptionResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteBackupSelectionRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteBackupSelectionResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteDatabaseRequest;
@@ -1419,6 +1421,35 @@ public class RdsClient {
     public SyncInvoker<CreateXelLogDownloadRequest, CreateXelLogDownloadResponse> createXelLogDownloadInvoker(
         CreateXelLogDownloadRequest request) {
         return new SyncInvoker<>(request, RdsMeta.createXelLogDownload, hcClient);
+    }
+
+    /**
+     * 删除实例选择是否保留自动备份
+     *
+     * 删除实例时选择是否删除或保留自动备份。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteBackupSelectionRequest 请求对象
+     * @return DeleteBackupSelectionResponse
+     */
+    public DeleteBackupSelectionResponse deleteBackupSelection(DeleteBackupSelectionRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.deleteBackupSelection);
+    }
+
+    /**
+     * 删除实例选择是否保留自动备份
+     *
+     * 删除实例时选择是否删除或保留自动备份。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteBackupSelectionRequest 请求对象
+     * @return SyncInvoker<DeleteBackupSelectionRequest, DeleteBackupSelectionResponse>
+     */
+    public SyncInvoker<DeleteBackupSelectionRequest, DeleteBackupSelectionResponse> deleteBackupSelectionInvoker(
+        DeleteBackupSelectionRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.deleteBackupSelection, hcClient);
     }
 
     /**

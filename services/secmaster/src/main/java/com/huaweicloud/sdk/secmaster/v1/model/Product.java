@@ -65,7 +65,7 @@ public class Product {
     }
 
     /**
-     * 订购数量
+     * 订阅数量
      * minimum: 1
      * maximum: 10000
      * @return resourceSize

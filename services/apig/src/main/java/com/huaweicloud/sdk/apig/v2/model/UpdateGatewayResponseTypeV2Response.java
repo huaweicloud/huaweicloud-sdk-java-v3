@@ -41,7 +41,7 @@ public class UpdateGatewayResponseTypeV2Response extends SdkResponse {
     }
 
     /**
-     * Get body
+     * 自定义响应列表。
      * @return body
      */
     public Map<String, ResponseInfoResp> getBody() {

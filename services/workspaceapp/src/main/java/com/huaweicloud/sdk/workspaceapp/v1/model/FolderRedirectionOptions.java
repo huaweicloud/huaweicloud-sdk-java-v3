@@ -67,7 +67,7 @@ public class FolderRedirectionOptions {
     /**
      * 文件夹选项。
      * minimum: 0
-     * maximum: 4095
+     * maximum: 8191
      * @return includeCommonFolders
      */
     public Integer getIncludeCommonFolders() {

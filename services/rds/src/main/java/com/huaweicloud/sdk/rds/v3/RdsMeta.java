@@ -144,6 +144,9 @@ import com.huaweicloud.sdk.rds.v3.model.DatabaseForCreation;
 import com.huaweicloud.sdk.rds.v3.model.DatabaseUserRoleRequest;
 import com.huaweicloud.sdk.rds.v3.model.DbUserPrivilegeRequest;
 import com.huaweicloud.sdk.rds.v3.model.DbUserPwdRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteBackupSelectionRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteBackupSelectionRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.DeleteBackupSelectionResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteDatabaseRequest;
@@ -1596,6 +1599,41 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateXelLogDownloadRequestBody.class),
             f -> f.withMarshaller(CreateXelLogDownloadRequest::getBody, CreateXelLogDownloadRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteBackupSelectionRequest, DeleteBackupSelectionResponse> deleteBackupSelection =
+        genForDeleteBackupSelection();
+
+    private static HttpRequestDef<DeleteBackupSelectionRequest, DeleteBackupSelectionResponse> genForDeleteBackupSelection() {
+        // basic
+        HttpRequestDef.Builder<DeleteBackupSelectionRequest, DeleteBackupSelectionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DeleteBackupSelectionRequest.class, DeleteBackupSelectionResponse.class)
+            .withName("DeleteBackupSelection")
+            .withUri("/v3/{project_id}/instances/{instance_id}/backups/delete-selection")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBackupSelectionRequest::getInstanceId,
+                DeleteBackupSelectionRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteBackupSelectionRequest::getXLanguage,
+                DeleteBackupSelectionRequest::setXLanguage));
+        builder.<DeleteBackupSelectionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteBackupSelectionRequestBody.class),
+            f -> f.withMarshaller(DeleteBackupSelectionRequest::getBody, DeleteBackupSelectionRequest::setBody));
 
         // response
 

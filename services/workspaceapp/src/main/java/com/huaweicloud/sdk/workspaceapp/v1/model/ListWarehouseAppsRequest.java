@@ -84,7 +84,7 @@ public class ListWarehouseAppsRequest {
     }
 
     /**
-     * 审核状态。
+     * 审核状态： - VERIFYING：审核中 - VERIFY_PASS：审核通过 - Verify_FAIL：审核不通过
      * @return verifyStatus
      */
     public String getVerifyStatus() {

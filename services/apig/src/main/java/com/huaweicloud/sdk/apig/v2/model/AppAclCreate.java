@@ -29,7 +29,7 @@ public class AppAclCreate {
     }
 
     /**
-     * 类型 -  PERMIT (白名单类型) -  DENY (黑名单类型)
+     * 类型 - PERMIT：白名单类型 - DENY：黑名单类型
      * @return appAclType
      */
     public String getAppAclType() {

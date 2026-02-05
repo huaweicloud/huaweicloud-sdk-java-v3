@@ -6,13 +6,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -152,9 +149,19 @@ public class AssociateCertificateV2Response extends SdkResponse {
     private String sslId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ssl_infos")
+    @JsonProperty(value = "instance_id")
 
-    private List<SslInfo> sslInfos = null;
+    private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "api_group_id")
+
+    private String apiGroupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "api_group_name")
+
+    private String apiGroupName;
 
     public AssociateCertificateV2Response withUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
@@ -331,37 +338,55 @@ public class AssociateCertificateV2Response extends SdkResponse {
         this.sslId = sslId;
     }
 
-    public AssociateCertificateV2Response withSslInfos(List<SslInfo> sslInfos) {
-        this.sslInfos = sslInfos;
-        return this;
-    }
-
-    public AssociateCertificateV2Response addSslInfosItem(SslInfo sslInfosItem) {
-        if (this.sslInfos == null) {
-            this.sslInfos = new ArrayList<>();
-        }
-        this.sslInfos.add(sslInfosItem);
-        return this;
-    }
-
-    public AssociateCertificateV2Response withSslInfos(Consumer<List<SslInfo>> sslInfosSetter) {
-        if (this.sslInfos == null) {
-            this.sslInfos = new ArrayList<>();
-        }
-        sslInfosSetter.accept(this.sslInfos);
+    public AssociateCertificateV2Response withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
         return this;
     }
 
     /**
-     * SSL证书列表。
-     * @return sslInfos
+     * 实例ID。
+     * @return instanceId
      */
-    public List<SslInfo> getSslInfos() {
-        return sslInfos;
+    public String getInstanceId() {
+        return instanceId;
     }
 
-    public void setSslInfos(List<SslInfo> sslInfos) {
-        this.sslInfos = sslInfos;
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    public AssociateCertificateV2Response withApiGroupId(String apiGroupId) {
+        this.apiGroupId = apiGroupId;
+        return this;
+    }
+
+    /**
+     * API分组的ID。
+     * @return apiGroupId
+     */
+    public String getApiGroupId() {
+        return apiGroupId;
+    }
+
+    public void setApiGroupId(String apiGroupId) {
+        this.apiGroupId = apiGroupId;
+    }
+
+    public AssociateCertificateV2Response withApiGroupName(String apiGroupName) {
+        this.apiGroupName = apiGroupName;
+        return this;
+    }
+
+    /**
+     * API分组的名称。
+     * @return apiGroupName
+     */
+    public String getApiGroupName() {
+        return apiGroupName;
+    }
+
+    public void setApiGroupName(String apiGroupName) {
+        this.apiGroupName = apiGroupName;
     }
 
     @Override
@@ -380,7 +405,8 @@ public class AssociateCertificateV2Response extends SdkResponse {
             && Objects.equals(this.ingressHttpPort, that.ingressHttpPort)
             && Objects.equals(this.ingressHttpsPort, that.ingressHttpsPort)
             && Objects.equals(this.sslName, that.sslName) && Objects.equals(this.sslId, that.sslId)
-            && Objects.equals(this.sslInfos, that.sslInfos);
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.apiGroupId, that.apiGroupId)
+            && Objects.equals(this.apiGroupName, that.apiGroupName);
     }
 
     @Override
@@ -395,7 +421,9 @@ public class AssociateCertificateV2Response extends SdkResponse {
             ingressHttpsPort,
             sslName,
             sslId,
-            sslInfos);
+            instanceId,
+            apiGroupId,
+            apiGroupName);
     }
 
     @Override
@@ -414,7 +442,9 @@ public class AssociateCertificateV2Response extends SdkResponse {
         sb.append("    ingressHttpsPort: ").append(toIndentedString(ingressHttpsPort)).append("\n");
         sb.append("    sslName: ").append(toIndentedString(sslName)).append("\n");
         sb.append("    sslId: ").append(toIndentedString(sslId)).append("\n");
-        sb.append("    sslInfos: ").append(toIndentedString(sslInfos)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    apiGroupId: ").append(toIndentedString(apiGroupId)).append("\n");
+        sb.append("    apiGroupName: ").append(toIndentedString(apiGroupName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

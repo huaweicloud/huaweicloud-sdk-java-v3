@@ -22,8 +22,8 @@ public class ShowHdaUpgradeFlagResponse extends SdkResponse {
     }
 
     /**
-     * hda是否需要升级标识。
-     * minimum: 1
+     * hda是否需要升级标识。0为无需提示升级, 1为需提示升级
+     * minimum: 0
      * maximum: 10
      * @return upgradeFlag
      */

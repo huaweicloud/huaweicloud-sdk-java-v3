@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -13,10 +18,92 @@ import java.util.function.Consumer;
  */
 public class ApiOutline {
 
+    /**
+     * API的认证方式。 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证 
+     */
+    public static final class AuthTypeEnum {
+
+        /**
+         * Enum NONE for value: "NONE"
+         */
+        public static final AuthTypeEnum NONE = new AuthTypeEnum("NONE");
+
+        /**
+         * Enum APP for value: "APP"
+         */
+        public static final AuthTypeEnum APP = new AuthTypeEnum("APP");
+
+        /**
+         * Enum IAM for value: "IAM"
+         */
+        public static final AuthTypeEnum IAM = new AuthTypeEnum("IAM");
+
+        /**
+         * Enum AUTHORIZER for value: "AUTHORIZER"
+         */
+        public static final AuthTypeEnum AUTHORIZER = new AuthTypeEnum("AUTHORIZER");
+
+        private static final Map<String, AuthTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AuthTypeEnum> createStaticFields() {
+            Map<String, AuthTypeEnum> map = new HashMap<>();
+            map.put("NONE", NONE);
+            map.put("APP", APP);
+            map.put("IAM", IAM);
+            map.put("AUTHORIZER", AUTHORIZER);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AuthTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AuthTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthTypeEnum(value));
+        }
+
+        public static AuthTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AuthTypeEnum) {
+                return this.value.equals(((AuthTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_type")
 
-    private String authType;
+    private AuthTypeEnum authType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "run_env_name")
@@ -68,20 +155,20 @@ public class ApiOutline {
 
     private List<String> tags = null;
 
-    public ApiOutline withAuthType(String authType) {
+    public ApiOutline withAuthType(AuthTypeEnum authType) {
         this.authType = authType;
         return this;
     }
 
     /**
-     * API的认证方式
+     * API的认证方式。 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证 
      * @return authType
      */
-    public String getAuthType() {
+    public AuthTypeEnum getAuthType() {
         return authType;
     }
 
-    public void setAuthType(String authType) {
+    public void setAuthType(AuthTypeEnum authType) {
         this.authType = authType;
     }
 

@@ -117,6 +117,16 @@ public class AppInfo {
     private String appKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "related_domain_id")
+
+    private String relatedDomainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "related_project_id")
+
+    private String relatedProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_secret")
 
     private String appSecret;
@@ -196,7 +206,7 @@ public class AppInfo {
     private StatusEnum status;
 
     /**
-     * APP的类型： - apig：存量apig应用，不推荐使用 - roma：roma集成应用  默认apig，暂不支持其他类型
+     * APP的类型。 - apig：APIG凭据应用  默认apig，暂不支持其他类型 
      */
     public static final class AppTypeEnum {
 
@@ -205,17 +215,11 @@ public class AppInfo {
          */
         public static final AppTypeEnum APIG = new AppTypeEnum("apig");
 
-        /**
-         * Enum ROMA for value: "roma"
-         */
-        public static final AppTypeEnum ROMA = new AppTypeEnum("roma");
-
         private static final Map<String, AppTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, AppTypeEnum> createStaticFields() {
             Map<String, AppTypeEnum> map = new HashMap<>();
             map.put("apig", APIG);
-            map.put("roma", ROMA);
             return Collections.unmodifiableMap(map);
         }
 
@@ -366,7 +370,7 @@ public class AppInfo {
     }
 
     /**
-     * APP的key
+     * APP凭据的key。
      * @return appKey
      */
     public String getAppKey() {
@@ -375,6 +379,40 @@ public class AppInfo {
 
     public void setAppKey(String appKey) {
         this.appKey = appKey;
+    }
+
+    public AppInfo withRelatedDomainId(String relatedDomainId) {
+        this.relatedDomainId = relatedDomainId;
+        return this;
+    }
+
+    /**
+     * 凭据关联的账号ID。
+     * @return relatedDomainId
+     */
+    public String getRelatedDomainId() {
+        return relatedDomainId;
+    }
+
+    public void setRelatedDomainId(String relatedDomainId) {
+        this.relatedDomainId = relatedDomainId;
+    }
+
+    public AppInfo withRelatedProjectId(String relatedProjectId) {
+        this.relatedProjectId = relatedProjectId;
+        return this;
+    }
+
+    /**
+     * 凭据关联的项目ID。
+     * @return relatedProjectId
+     */
+    public String getRelatedProjectId() {
+        return relatedProjectId;
+    }
+
+    public void setRelatedProjectId(String relatedProjectId) {
+        this.relatedProjectId = relatedProjectId;
     }
 
     public AppInfo withAppSecret(String appSecret) {
@@ -434,7 +472,7 @@ public class AppInfo {
     }
 
     /**
-     * APP的类型： - apig：存量apig应用，不推荐使用 - roma：roma集成应用  默认apig，暂不支持其他类型
+     * APP的类型。 - apig：APIG凭据应用  默认apig，暂不支持其他类型 
      * @return appType
      */
     public AppTypeEnum getAppType() {
@@ -474,6 +512,8 @@ public class AppInfo {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.remark, that.remark) && Objects.equals(this.creator, that.creator)
             && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.appKey, that.appKey)
+            && Objects.equals(this.relatedDomainId, that.relatedDomainId)
+            && Objects.equals(this.relatedProjectId, that.relatedProjectId)
             && Objects.equals(this.appSecret, that.appSecret) && Objects.equals(this.registerTime, that.registerTime)
             && Objects.equals(this.status, that.status) && Objects.equals(this.appType, that.appType)
             && Objects.equals(this.romaAppType, that.romaAppType);
@@ -481,8 +521,19 @@ public class AppInfo {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(id, name, remark, creator, updateTime, appKey, appSecret, registerTime, status, appType, romaAppType);
+        return Objects.hash(id,
+            name,
+            remark,
+            creator,
+            updateTime,
+            appKey,
+            relatedDomainId,
+            relatedProjectId,
+            appSecret,
+            registerTime,
+            status,
+            appType,
+            romaAppType);
     }
 
     @Override
@@ -495,6 +546,8 @@ public class AppInfo {
         sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    appKey: ").append(toIndentedString(appKey)).append("\n");
+        sb.append("    relatedDomainId: ").append(toIndentedString(relatedDomainId)).append("\n");
+        sb.append("    relatedProjectId: ").append(toIndentedString(relatedProjectId)).append("\n");
         sb.append("    appSecret: ").append(toIndentedString(appSecret)).append("\n");
         sb.append("    registerTime: ").append(toIndentedString(registerTime)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

@@ -26,7 +26,7 @@ public class ThrottleSpecialCreate {
     private String objectId;
 
     /**
-     * 特殊对象类型
+     * 特殊对象类型。 - APP：特殊APP - USER：特殊租户 
      */
     public static final class ObjectTypeEnum {
 
@@ -140,7 +140,7 @@ public class ThrottleSpecialCreate {
     }
 
     /**
-     * 特殊对象类型
+     * 特殊对象类型。 - APP：特殊APP - USER：特殊租户 
      * @return objectType
      */
     public ObjectTypeEnum getObjectType() {

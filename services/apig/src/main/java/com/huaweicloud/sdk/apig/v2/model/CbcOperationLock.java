@@ -16,7 +16,7 @@ import java.util.Objects;
 public class CbcOperationLock {
 
     /**
-     * 限制操作场景： - TO_PERIOD_LOCK：按需转包周期场景锁，不允许进行删除、规格变更、按需转包周期等 - SPEC_CHG_LOCK：包周期规格变更场景锁，不允许进行删除、规格变更等
+     * 限制操作场景： - TO_PERIOD_LOCK：[按需转包周期场景锁，不允许进行删除、规格变更、按需转包周期等](tag:hws,ctc)[暂不支持](tag:hws_hk,cmcc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm,srg,ax) - SPEC_CHG_LOCK：[包周期规格变更场景锁，不允许进行删除、规格变更等](tag:hws,ctc)[暂不支持](tag:hws_hk,cmcc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm,srg,ax)
      */
     public static final class LockSceneEnum {
 
@@ -101,7 +101,7 @@ public class CbcOperationLock {
     }
 
     /**
-     * 限制操作场景： - TO_PERIOD_LOCK：按需转包周期场景锁，不允许进行删除、规格变更、按需转包周期等 - SPEC_CHG_LOCK：包周期规格变更场景锁，不允许进行删除、规格变更等
+     * 限制操作场景： - TO_PERIOD_LOCK：[按需转包周期场景锁，不允许进行删除、规格变更、按需转包周期等](tag:hws,ctc)[暂不支持](tag:hws_hk,cmcc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm,srg,ax) - SPEC_CHG_LOCK：[包周期规格变更场景锁，不允许进行删除、规格变更等](tag:hws,ctc)[暂不支持](tag:hws_hk,cmcc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm,srg,ax)
      * @return lockScene
      */
     public LockSceneEnum getLockScene() {

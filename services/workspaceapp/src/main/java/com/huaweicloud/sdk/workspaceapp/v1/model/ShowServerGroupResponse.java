@@ -914,7 +914,7 @@ public class ShowServerGroupResponse extends SdkResponse {
     }
 
     /**
-     * 镜像类型。
+     * 镜像类型： - gold：云市场镜像 - private：私有镜像
      * @return imageType
      */
     public String getImageType() {

@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -35,10 +40,80 @@ public class ListAclStrategiesV2Request {
 
     private String name;
 
+    /**
+     * 类型。 - PERMIT：白名单类型 - DENY：黑名单类型 
+     */
+    public static final class AclTypeEnum {
+
+        /**
+         * Enum PERMIT for value: "PERMIT"
+         */
+        public static final AclTypeEnum PERMIT = new AclTypeEnum("PERMIT");
+
+        /**
+         * Enum DENY for value: "DENY"
+         */
+        public static final AclTypeEnum DENY = new AclTypeEnum("DENY");
+
+        private static final Map<String, AclTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AclTypeEnum> createStaticFields() {
+            Map<String, AclTypeEnum> map = new HashMap<>();
+            map.put("PERMIT", PERMIT);
+            map.put("DENY", DENY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AclTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AclTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AclTypeEnum(value));
+        }
+
+        public static AclTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AclTypeEnum) {
+                return this.value.equals(((AclTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "acl_type")
 
-    private String aclType;
+    private AclTypeEnum aclType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "entity_type")
@@ -137,20 +212,20 @@ public class ListAclStrategiesV2Request {
         this.name = name;
     }
 
-    public ListAclStrategiesV2Request withAclType(String aclType) {
+    public ListAclStrategiesV2Request withAclType(AclTypeEnum aclType) {
         this.aclType = aclType;
         return this;
     }
 
     /**
-     * 类型 - PERMIT (白名单类型) - DENY (黑名单类型)
+     * 类型。 - PERMIT：白名单类型 - DENY：黑名单类型 
      * @return aclType
      */
-    public String getAclType() {
+    public AclTypeEnum getAclType() {
         return aclType;
     }
 
-    public void setAclType(String aclType) {
+    public void setAclType(AclTypeEnum aclType) {
         this.aclType = aclType;
     }
 

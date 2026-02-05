@@ -16,9 +16,9 @@ public class ListCollectConfigResponseBodySourceList {
     private String csvcDisplay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "csvc_hzzelp")
+    @JsonProperty(value = "csvc_help")
 
-    private String csvcHzzelp;
+    private String csvcHelp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "link")
@@ -52,21 +52,21 @@ public class ListCollectConfigResponseBodySourceList {
         this.csvcDisplay = csvcDisplay;
     }
 
-    public ListCollectConfigResponseBodySourceList withCsvcHzzelp(String csvcHzzelp) {
-        this.csvcHzzelp = csvcHzzelp;
+    public ListCollectConfigResponseBodySourceList withCsvcHelp(String csvcHelp) {
+        this.csvcHelp = csvcHelp;
         return this;
     }
 
     /**
      * 云产品描述
-     * @return csvcHzzelp
+     * @return csvcHelp
      */
-    public String getCsvcHzzelp() {
-        return csvcHzzelp;
+    public String getCsvcHelp() {
+        return csvcHelp;
     }
 
-    public void setCsvcHzzelp(String csvcHzzelp) {
-        this.csvcHzzelp = csvcHzzelp;
+    public void setCsvcHelp(String csvcHelp) {
+        this.csvcHelp = csvcHelp;
     }
 
     public ListCollectConfigResponseBodySourceList withLink(String link) {
@@ -129,14 +129,14 @@ public class ListCollectConfigResponseBodySourceList {
             return false;
         }
         ListCollectConfigResponseBodySourceList that = (ListCollectConfigResponseBodySourceList) obj;
-        return Objects.equals(this.csvcDisplay, that.csvcDisplay) && Objects.equals(this.csvcHzzelp, that.csvcHzzelp)
+        return Objects.equals(this.csvcDisplay, that.csvcDisplay) && Objects.equals(this.csvcHelp, that.csvcHelp)
             && Objects.equals(this.link, that.link) && Objects.equals(this.sourceDisplay, that.sourceDisplay)
             && Objects.equals(this.sourceHelp, that.sourceHelp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(csvcDisplay, csvcHzzelp, link, sourceDisplay, sourceHelp);
+        return Objects.hash(csvcDisplay, csvcHelp, link, sourceDisplay, sourceHelp);
     }
 
     @Override
@@ -144,7 +144,7 @@ public class ListCollectConfigResponseBodySourceList {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCollectConfigResponseBodySourceList {\n");
         sb.append("    csvcDisplay: ").append(toIndentedString(csvcDisplay)).append("\n");
-        sb.append("    csvcHzzelp: ").append(toIndentedString(csvcHzzelp)).append("\n");
+        sb.append("    csvcHelp: ").append(toIndentedString(csvcHelp)).append("\n");
         sb.append("    link: ").append(toIndentedString(link)).append("\n");
         sb.append("    sourceDisplay: ").append(toIndentedString(sourceDisplay)).append("\n");
         sb.append("    sourceHelp: ").append(toIndentedString(sourceHelp)).append("\n");

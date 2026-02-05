@@ -99,7 +99,7 @@ public class RelativeResource {
     }
 
     /**
-     * 比如ECS云服务类型为‘hws.service.type.ec2’。
+     * 依赖云服务类型： - hws.service.type.ec2
      * @return relativeCloudServiceType
      */
     public String getRelativeCloudServiceType() {
@@ -116,7 +116,7 @@ public class RelativeResource {
     }
 
     /**
-     * 比如VM的资源类型为‘hws.resource.type.vm’。
+     * 依赖资源类型： - hws.resource.type.vm
      * @return relativeResourceType
      */
     public String getRelativeResourceType() {

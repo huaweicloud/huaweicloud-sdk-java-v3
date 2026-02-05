@@ -45,7 +45,7 @@ public class CompareParameterGroupsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：  源参数组ID。  **约束限制**：  不涉及。  **取值范围**：  只能由英文字母、数字组成，长度为36个字符。  **默认取值**：  不涉及。
+     * **参数解释**：  源参数组ID。  **参数范围**：  只能由英文字母、数字组成，长度为36个字符。
      * @return sourceId
      */
     public String getSourceId() {
@@ -79,7 +79,7 @@ public class CompareParameterGroupsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：  目标参数组ID。  **约束限制**：  不涉及。  **取值范围**：  只能由英文字母、数字组成，长度为36个字符。  **默认取值**：  不涉及。
+     * **参数解释**：  目标参数组ID。  **参数范围**：  只能由英文字母、数字组成，长度为36个字符。
      * @return targetId
      */
     public String getTargetId() {

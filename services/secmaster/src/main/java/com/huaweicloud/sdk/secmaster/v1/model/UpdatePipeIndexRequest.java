@@ -24,7 +24,7 @@ public class UpdatePipeIndexRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private Index body;
+    private UpdateIndexRequestBody body;
 
     public UpdatePipeIndexRequest withWorkspaceId(String workspaceId) {
         this.workspaceId = workspaceId;
@@ -60,14 +60,14 @@ public class UpdatePipeIndexRequest {
         this.pipeId = pipeId;
     }
 
-    public UpdatePipeIndexRequest withBody(Index body) {
+    public UpdatePipeIndexRequest withBody(UpdateIndexRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdatePipeIndexRequest withBody(Consumer<Index> bodySetter) {
+    public UpdatePipeIndexRequest withBody(Consumer<UpdateIndexRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new Index();
+            this.body = new UpdateIndexRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -78,11 +78,11 @@ public class UpdatePipeIndexRequest {
      * Get body
      * @return body
      */
-    public Index getBody() {
+    public UpdateIndexRequestBody getBody() {
         return body;
     }
 
-    public void setBody(Index body) {
+    public void setBody(UpdateIndexRequestBody body) {
         this.body = body;
     }
 

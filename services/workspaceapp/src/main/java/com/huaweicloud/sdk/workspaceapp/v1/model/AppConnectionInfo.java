@@ -22,6 +22,11 @@ public class AppConnectionInfo {
     private String sid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_id")
+
+    private String appId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "machine_name")
 
     private String machineName;
@@ -183,6 +188,23 @@ public class AppConnectionInfo {
 
     public void setSid(String sid) {
         this.sid = sid;
+    }
+
+    public AppConnectionInfo withAppId(String appId) {
+        this.appId = appId;
+        return this;
+    }
+
+    /**
+     * 应用id。
+     * @return appId
+     */
+    public String getAppId() {
+        return appId;
+    }
+
+    public void setAppId(String appId) {
+        this.appId = appId;
     }
 
     public AppConnectionInfo withMachineName(String machineName) {
@@ -637,9 +659,10 @@ public class AppConnectionInfo {
         }
         AppConnectionInfo that = (AppConnectionInfo) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.sid, that.sid)
-            && Objects.equals(this.machineName, that.machineName) && Objects.equals(this.userName, that.userName)
-            && Objects.equals(this.appGroupName, that.appGroupName) && Objects.equals(this.appGroupId, that.appGroupId)
-            && Objects.equals(this.appName, that.appName) && Objects.equals(this.brokeringTime, that.brokeringTime)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.machineName, that.machineName)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.appGroupName, that.appGroupName)
+            && Objects.equals(this.appGroupId, that.appGroupId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.brokeringTime, that.brokeringTime)
             && Objects.equals(this.failedCode, that.failedCode)
             && Objects.equals(this.connectionFailureReason, that.connectionFailureReason)
             && Objects.equals(this.clientMac, that.clientMac) && Objects.equals(this.clientName, that.clientName)
@@ -659,6 +682,7 @@ public class AppConnectionInfo {
     public int hashCode() {
         return Objects.hash(id,
             sid,
+            appId,
             machineName,
             userName,
             appGroupName,
@@ -693,6 +717,7 @@ public class AppConnectionInfo {
         sb.append("class AppConnectionInfo {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    sid: ").append(toIndentedString(sid)).append("\n");
+        sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    machineName: ").append(toIndentedString(machineName)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    appGroupName: ").append(toIndentedString(appGroupName)).append("\n");

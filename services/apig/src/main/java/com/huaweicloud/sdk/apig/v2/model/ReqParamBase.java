@@ -24,7 +24,7 @@ public class ReqParamBase {
     private String name;
 
     /**
-     * 参数类型
+     * 参数类型。 - STRING：字符串型 - NUMBER：数字型 
      */
     public static final class TypeEnum {
 
@@ -488,7 +488,7 @@ public class ReqParamBase {
     }
 
     /**
-     * 参数类型
+     * 参数类型。 - STRING：字符串型 - NUMBER：数字型 
      * @return type
      */
     public TypeEnum getType() {
@@ -759,7 +759,7 @@ public class ReqParamBase {
     }
 
     /**
-     * 请求参数匹配编排规则的生效优先级与列表顺序保持一致，列表中靠前的配置匹配优先级较高； 如果编配规则列表中包含none_value类型的规则，则none_value类型的规则优先级最高，至多绑定一个none_value类型的规则； 如果编排规则列表中包含default类型的规则，则default类型的规则优先级最低，至多绑定一个default类型的规则； 当编排规则为预处理策略时，该规则不能作为除default以外的最后一个编排规则； 每个API仅允许选择一个参数绑定编排规则，且编排规则不能重复，支持绑定的编排规则数量有配额限制，具体请参见产品介绍的“配额说明”章节。
+     * 请求参数匹配编排规则的生效优先级与列表顺序保持一致，列表中靠前的配置匹配优先级较高； 如果编排规则列表中包含none_value类型的规则，则none_value类型的规则优先级最高，至多绑定一个none_value类型的规则； 如果编排规则列表中包含default类型的规则，则default类型的规则优先级最低，至多绑定一个default类型的规则； 当编排规则为预处理策略时，该规则不能作为除default以外的最后一个编排规则； 每个API仅允许选择一个参数绑定编排规则，且编排规则不能重复，支持绑定的编排规则数量有配额限制，具体请参见产品介绍的“约束与限制”章节。
      * @return orchestrations
      */
     public List<String> getOrchestrations() {

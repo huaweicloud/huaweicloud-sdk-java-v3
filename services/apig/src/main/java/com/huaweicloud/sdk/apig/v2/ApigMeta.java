@@ -17,6 +17,7 @@ import com.huaweicloud.sdk.apig.v2.model.AddIngressEipV2Request;
 import com.huaweicloud.sdk.apig.v2.model.AddIngressEipV2Response;
 import com.huaweicloud.sdk.apig.v2.model.AddingBackendInstancesV2Request;
 import com.huaweicloud.sdk.apig.v2.model.AddingBackendInstancesV2Response;
+import com.huaweicloud.sdk.apig.v2.model.AiApiKeyCreate;
 import com.huaweicloud.sdk.apig.v2.model.ApiAclCreate;
 import com.huaweicloud.sdk.apig.v2.model.ApiActionInfo;
 import com.huaweicloud.sdk.apig.v2.model.ApiAuthCreate;
@@ -89,6 +90,8 @@ import com.huaweicloud.sdk.apig.v2.model.CheckAppV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ConnectionActionReq;
 import com.huaweicloud.sdk.apig.v2.model.CreateAclStrategyV2Request;
 import com.huaweicloud.sdk.apig.v2.model.CreateAclStrategyV2Response;
+import com.huaweicloud.sdk.apig.v2.model.CreateAiApiKeyRequest;
+import com.huaweicloud.sdk.apig.v2.model.CreateAiApiKeyResponse;
 import com.huaweicloud.sdk.apig.v2.model.CreateAnAppV2Request;
 import com.huaweicloud.sdk.apig.v2.model.CreateAnAppV2Response;
 import com.huaweicloud.sdk.apig.v2.model.CreateApiAclBindingV2Request;
@@ -146,6 +149,8 @@ import com.huaweicloud.sdk.apig.v2.model.DebugApiV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DebugApiV2Response;
 import com.huaweicloud.sdk.apig.v2.model.DeleteAclV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DeleteAclV2Response;
+import com.huaweicloud.sdk.apig.v2.model.DeleteAiApiKeyRequest;
+import com.huaweicloud.sdk.apig.v2.model.DeleteAiApiKeyResponse;
 import com.huaweicloud.sdk.apig.v2.model.DeleteApiAclBindingV2Request;
 import com.huaweicloud.sdk.apig.v2.model.DeleteApiAclBindingV2Response;
 import com.huaweicloud.sdk.apig.v2.model.DeleteApiByVersionIdV2Request;
@@ -238,6 +243,8 @@ import com.huaweicloud.sdk.apig.v2.model.ListAclPolicyBindedToApiV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListAclPolicyBindedToApiV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ListAclStrategiesV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ListAclStrategiesV2Response;
+import com.huaweicloud.sdk.apig.v2.model.ListAiApiKeysRequest;
+import com.huaweicloud.sdk.apig.v2.model.ListAiApiKeysResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListApiAttachablePluginsRequest;
 import com.huaweicloud.sdk.apig.v2.model.ListApiAttachablePluginsResponse;
 import com.huaweicloud.sdk.apig.v2.model.ListApiAttachedPluginsRequest;
@@ -387,6 +394,8 @@ import com.huaweicloud.sdk.apig.v2.model.ShowAsyncTaskResultRequest;
 import com.huaweicloud.sdk.apig.v2.model.ShowAsyncTaskResultResponse;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfAclPolicyV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfAclPolicyV2Response;
+import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfAiApiKeyRequest;
+import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfAiApiKeyResponse;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfApiGroupV2Request;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfApiGroupV2Response;
 import com.huaweicloud.sdk.apig.v2.model.ShowDetailsOfApiV2Request;
@@ -957,6 +966,39 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateAiApiKeyRequest, CreateAiApiKeyResponse> createAiApiKey =
+        genForCreateAiApiKey();
+
+    private static HttpRequestDef<CreateAiApiKeyRequest, CreateAiApiKeyResponse> genForCreateAiApiKey() {
+        // basic
+        HttpRequestDef.Builder<CreateAiApiKeyRequest, CreateAiApiKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAiApiKeyRequest.class, CreateAiApiKeyResponse.class)
+                .withName("CreateAiApiKey")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/ai-api-keys")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAiApiKeyRequest::getInstanceId, CreateAiApiKeyRequest::setInstanceId));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAiApiKeyRequest::getAppId, CreateAiApiKeyRequest::setAppId));
+        builder.<AiApiKeyCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AiApiKeyCreate.class),
+            f -> f.withMarshaller(CreateAiApiKeyRequest::getBody, CreateAiApiKeyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateAnAppV2Request, CreateAnAppV2Response> createAnAppV2 =
         genForCreateAnAppV2();
 
@@ -1484,6 +1526,39 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(ThrottleSpecialCreate.class),
             f -> f.withMarshaller(CreateSpecialThrottlingConfigurationV2Request::getBody,
                 CreateSpecialThrottlingConfigurationV2Request::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAiApiKeyRequest, DeleteAiApiKeyResponse> deleteAiApiKey =
+        genForDeleteAiApiKey();
+
+    private static HttpRequestDef<DeleteAiApiKeyRequest, DeleteAiApiKeyResponse> genForDeleteAiApiKey() {
+        // basic
+        HttpRequestDef.Builder<DeleteAiApiKeyRequest, DeleteAiApiKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAiApiKeyRequest.class, DeleteAiApiKeyResponse.class)
+                .withName("DeleteAiApiKey")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/ai-api-keys/{ai_api_key_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAiApiKeyRequest::getInstanceId, DeleteAiApiKeyRequest::setInstanceId));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAiApiKeyRequest::getAppId, DeleteAiApiKeyRequest::setAppId));
+        builder.<String>withRequestField("ai_api_key_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAiApiKeyRequest::getAiApiKeyId, DeleteAiApiKeyRequest::setAiApiKeyId));
 
         // response
 
@@ -2354,6 +2429,44 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAiApiKeysRequest, ListAiApiKeysResponse> listAiApiKeys =
+        genForListAiApiKeys();
+
+    private static HttpRequestDef<ListAiApiKeysRequest, ListAiApiKeysResponse> genForListAiApiKeys() {
+        // basic
+        HttpRequestDef.Builder<ListAiApiKeysRequest, ListAiApiKeysResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAiApiKeysRequest.class, ListAiApiKeysResponse.class)
+                .withName("ListAiApiKeys")
+                .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/ai-api-keys")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiApiKeysRequest::getInstanceId, ListAiApiKeysRequest::setInstanceId));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiApiKeysRequest::getAppId, ListAiApiKeysRequest::setAppId));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAiApiKeysRequest::getOffset, ListAiApiKeysRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAiApiKeysRequest::getLimit, ListAiApiKeysRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListApiAttachablePluginsRequest, ListApiAttachablePluginsResponse> listApiAttachablePlugins =
         genForListApiAttachablePlugins();
 
@@ -2920,10 +3033,10 @@ public class ApigMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppsV2Request::getName, ListAppsV2Request::setName));
-        builder.<Integer>withRequestField("status",
+        builder.<ListAppsV2Request.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
+            TypeCasts.uncheckedConversion(ListAppsV2Request.StatusEnum.class),
             f -> f.withMarshaller(ListAppsV2Request::getStatus, ListAppsV2Request::setStatus));
         builder.<String>withRequestField("app_key",
             LocationType.Query,
@@ -2940,6 +3053,16 @@ public class ApigMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppsV2Request::getPreciseSearch, ListAppsV2Request::setPreciseSearch));
+        builder.<String>withRequestField("related_domain_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppsV2Request::getRelatedDomainId, ListAppsV2Request::setRelatedDomainId));
+        builder.<String>withRequestField("related_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAppsV2Request::getRelatedProjectId, ListAppsV2Request::setRelatedProjectId));
 
         // response
 
@@ -3003,10 +3126,10 @@ public class ApigMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCustomAuthorizersV2Request::getName, ListCustomAuthorizersV2Request::setName));
-        builder.<String>withRequestField("type",
+        builder.<ListCustomAuthorizersV2Request.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListCustomAuthorizersV2Request.TypeEnum.class),
             f -> f.withMarshaller(ListCustomAuthorizersV2Request::getType, ListCustomAuthorizersV2Request::setType));
 
         // response
@@ -4509,6 +4632,41 @@ public class ApigMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDetailsOfAiApiKeyRequest, ShowDetailsOfAiApiKeyResponse> showDetailsOfAiApiKey =
+        genForShowDetailsOfAiApiKey();
+
+    private static HttpRequestDef<ShowDetailsOfAiApiKeyRequest, ShowDetailsOfAiApiKeyResponse> genForShowDetailsOfAiApiKey() {
+        // basic
+        HttpRequestDef.Builder<ShowDetailsOfAiApiKeyRequest, ShowDetailsOfAiApiKeyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDetailsOfAiApiKeyRequest.class, ShowDetailsOfAiApiKeyResponse.class)
+            .withName("ShowDetailsOfAiApiKey")
+            .withUri("/v2/{project_id}/apigw/instances/{instance_id}/apps/{app_id}/ai-api-keys/{ai_api_key_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfAiApiKeyRequest::getInstanceId,
+                ShowDetailsOfAiApiKeyRequest::setInstanceId));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfAiApiKeyRequest::getAppId, ShowDetailsOfAiApiKeyRequest::setAppId));
+        builder.<String>withRequestField("ai_api_key_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDetailsOfAiApiKeyRequest::getAiApiKeyId,
+                ShowDetailsOfAiApiKeyRequest::setAiApiKeyId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDetailsOfAppAclRequest, ShowDetailsOfAppAclResponse> showDetailsOfAppAcl =
         genForShowDetailsOfAppAcl();
 
@@ -5779,10 +5937,10 @@ public class ApigMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAclStrategiesV2Request::getName, ListAclStrategiesV2Request::setName));
-        builder.<String>withRequestField("acl_type",
+        builder.<ListAclStrategiesV2Request.AclTypeEnum>withRequestField("acl_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListAclStrategiesV2Request.AclTypeEnum.class),
             f -> f.withMarshaller(ListAclStrategiesV2Request::getAclType, ListAclStrategiesV2Request::setAclType));
         builder.<String>withRequestField("entity_type",
             LocationType.Query,
@@ -6669,20 +6827,20 @@ public class ApigMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisV2Request::getReqUri, ListApisV2Request::setReqUri));
-        builder.<String>withRequestField("auth_type",
+        builder.<ListApisV2Request.AuthTypeEnum>withRequestField("auth_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListApisV2Request.AuthTypeEnum.class),
             f -> f.withMarshaller(ListApisV2Request::getAuthType, ListApisV2Request::setAuthType));
         builder.<String>withRequestField("env_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisV2Request::getEnvId, ListApisV2Request::setEnvId));
-        builder.<Integer>withRequestField("type",
+        builder.<ListApisV2Request.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
+            TypeCasts.uncheckedConversion(ListApisV2Request.TypeEnum.class),
             f -> f.withMarshaller(ListApisV2Request::getType, ListApisV2Request::setType));
         builder.<String>withRequestField("precise_search",
             LocationType.Query,

@@ -26,7 +26,7 @@ public class Tags {
     }
 
     /**
-     * 标签名称。
+     * **参数解释**：  标签名称。  **参数范围**：  不涉及。
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class Tags {
     }
 
     /**
-     * 标签值。
+     * **参数解释**：  标签值。  **参数范围**：  不涉及。
      * @return value
      */
     public String getValue() {

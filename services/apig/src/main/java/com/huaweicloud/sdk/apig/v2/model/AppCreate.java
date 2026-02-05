@@ -30,6 +30,16 @@ public class AppCreate {
 
     private String appSecret;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "related_domain_id")
+
+    private String relatedDomainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "related_project_id")
+
+    private String relatedProjectId;
+
     public AppCreate withName(String name) {
         this.name = name;
         return this;
@@ -70,7 +80,7 @@ public class AppCreate {
     }
 
     /**
-     * APP的key。支持英文，数字，“_”，“-”，且只能以英文或数字开头，8 ~ 200个字符。
+     * APP凭据的key。支持英文，数字，“_”，“-”，且只能以英文或数字开头，8 ~ 200个字符。
      * @return appKey
      */
     public String getAppKey() {
@@ -98,6 +108,40 @@ public class AppCreate {
         this.appSecret = appSecret;
     }
 
+    public AppCreate withRelatedDomainId(String relatedDomainId) {
+        this.relatedDomainId = relatedDomainId;
+        return this;
+    }
+
+    /**
+     * 凭据关联的账号ID。
+     * @return relatedDomainId
+     */
+    public String getRelatedDomainId() {
+        return relatedDomainId;
+    }
+
+    public void setRelatedDomainId(String relatedDomainId) {
+        this.relatedDomainId = relatedDomainId;
+    }
+
+    public AppCreate withRelatedProjectId(String relatedProjectId) {
+        this.relatedProjectId = relatedProjectId;
+        return this;
+    }
+
+    /**
+     * 凭据关联的项目ID。
+     * @return relatedProjectId
+     */
+    public String getRelatedProjectId() {
+        return relatedProjectId;
+    }
+
+    public void setRelatedProjectId(String relatedProjectId) {
+        this.relatedProjectId = relatedProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +152,14 @@ public class AppCreate {
         }
         AppCreate that = (AppCreate) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.remark, that.remark)
-            && Objects.equals(this.appKey, that.appKey) && Objects.equals(this.appSecret, that.appSecret);
+            && Objects.equals(this.appKey, that.appKey) && Objects.equals(this.appSecret, that.appSecret)
+            && Objects.equals(this.relatedDomainId, that.relatedDomainId)
+            && Objects.equals(this.relatedProjectId, that.relatedProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, remark, appKey, appSecret);
+        return Objects.hash(name, remark, appKey, appSecret, relatedDomainId, relatedProjectId);
     }
 
     @Override
@@ -124,6 +170,8 @@ public class AppCreate {
         sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("    appKey: ").append(toIndentedString(appKey)).append("\n");
         sb.append("    appSecret: ").append(toIndentedString(appSecret)).append("\n");
+        sb.append("    relatedDomainId: ").append(toIndentedString(relatedDomainId)).append("\n");
+        sb.append("    relatedProjectId: ").append(toIndentedString(relatedProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

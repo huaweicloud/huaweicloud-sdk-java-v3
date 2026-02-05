@@ -111,7 +111,7 @@ public class ListAppQuotaBoundAppsRequest {
     }
 
     /**
-     * 凭据名称
+     * APP凭据名称。
      * @return appName
      */
     public String getAppName() {

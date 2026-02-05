@@ -589,7 +589,7 @@ public class CreateServerGroupReq {
     }
 
     /**
-     * 是否启用服务器组。
+     * 是否启用服务器组： - true： 启用 - false： 禁用
      * @return serverGroupStatus
      */
     public Boolean getServerGroupStatus() {

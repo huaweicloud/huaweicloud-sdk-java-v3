@@ -71,11 +71,6 @@ public class ShowShareFeatureGatesResponse extends SdkResponse {
 
     private Boolean enableImageQuota;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enable_customize_validity_period")
-
-    private Boolean enableCustomizeValidityPeriod;
-
     public ShowShareFeatureGatesResponse withEnableExperience(Boolean enableExperience) {
         this.enableExperience = enableExperience;
         return this;
@@ -280,23 +275,6 @@ public class ShowShareFeatureGatesResponse extends SdkResponse {
         this.enableImageQuota = enableImageQuota;
     }
 
-    public ShowShareFeatureGatesResponse withEnableCustomizeValidityPeriod(Boolean enableCustomizeValidityPeriod) {
-        this.enableCustomizeValidityPeriod = enableCustomizeValidityPeriod;
-        return this;
-    }
-
-    /**
-     * 是否支持自定义临时登录指令有效期
-     * @return enableCustomizeValidityPeriod
-     */
-    public Boolean getEnableCustomizeValidityPeriod() {
-        return enableCustomizeValidityPeriod;
-    }
-
-    public void setEnableCustomizeValidityPeriod(Boolean enableCustomizeValidityPeriod) {
-        this.enableCustomizeValidityPeriod = enableCustomizeValidityPeriod;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -317,8 +295,7 @@ public class ShowShareFeatureGatesResponse extends SdkResponse {
             && Objects.equals(this.enableAuthorizationToken, that.enableAuthorizationToken)
             && Objects.equals(this.enableResource, that.enableResource)
             && Objects.equals(this.enableListV3, that.enableListV3)
-            && Objects.equals(this.enableImageQuota, that.enableImageQuota)
-            && Objects.equals(this.enableCustomizeValidityPeriod, that.enableCustomizeValidityPeriod);
+            && Objects.equals(this.enableImageQuota, that.enableImageQuota);
     }
 
     @Override
@@ -334,8 +311,7 @@ public class ShowShareFeatureGatesResponse extends SdkResponse {
             enableAuthorizationToken,
             enableResource,
             enableListV3,
-            enableImageQuota,
-            enableCustomizeValidityPeriod);
+            enableImageQuota);
     }
 
     @Override
@@ -354,9 +330,6 @@ public class ShowShareFeatureGatesResponse extends SdkResponse {
         sb.append("    enableResource: ").append(toIndentedString(enableResource)).append("\n");
         sb.append("    enableListV3: ").append(toIndentedString(enableListV3)).append("\n");
         sb.append("    enableImageQuota: ").append(toIndentedString(enableImageQuota)).append("\n");
-        sb.append("    enableCustomizeValidityPeriod: ")
-            .append(toIndentedString(enableCustomizeValidityPeriod))
-            .append("\n");
         sb.append("}");
         return sb.toString();
     }

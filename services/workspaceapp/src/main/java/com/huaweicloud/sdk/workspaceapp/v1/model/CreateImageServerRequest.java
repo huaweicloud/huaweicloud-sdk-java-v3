@@ -17,6 +17,11 @@ public class CreateImageServerRequest {
     private String serviceTransactionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Linked-Id")
+
+    private String xLinkedId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private CreateImageServerReq body;
@@ -36,6 +41,25 @@ public class CreateImageServerRequest {
 
     public void setServiceTransactionId(String serviceTransactionId) {
         this.serviceTransactionId = serviceTransactionId;
+    }
+
+    public CreateImageServerRequest withXLinkedId(String xLinkedId) {
+        this.xLinkedId = xLinkedId;
+        return this;
+    }
+
+    /**
+     * 交易组件调用时下发的关联ID。
+     * @return xLinkedId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Linked-Id")
+    public String getXLinkedId() {
+        return xLinkedId;
+    }
+
+    public void setXLinkedId(String xLinkedId) {
+        this.xLinkedId = xLinkedId;
     }
 
     public CreateImageServerRequest withBody(CreateImageServerReq body) {
@@ -74,12 +98,12 @@ public class CreateImageServerRequest {
         }
         CreateImageServerRequest that = (CreateImageServerRequest) obj;
         return Objects.equals(this.serviceTransactionId, that.serviceTransactionId)
-            && Objects.equals(this.body, that.body);
+            && Objects.equals(this.xLinkedId, that.xLinkedId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serviceTransactionId, body);
+        return Objects.hash(serviceTransactionId, xLinkedId, body);
     }
 
     @Override
@@ -87,6 +111,7 @@ public class CreateImageServerRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateImageServerRequest {\n");
         sb.append("    serviceTransactionId: ").append(toIndentedString(serviceTransactionId)).append("\n");
+        sb.append("    xLinkedId: ").append(toIndentedString(xLinkedId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

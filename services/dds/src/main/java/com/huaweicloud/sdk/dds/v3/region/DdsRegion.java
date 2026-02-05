@@ -86,6 +86,11 @@ public class DdsRegion {
 
     public static final Region CN_NORTH_11 = new Region("cn-north-11", "https://dds.cn-north-11.myhuaweicloud.com");
 
+    public static final Region CN_SOUTHWEST_3 =
+        new Region("cn-southwest-3", "https://dds.cn-southwest-3.myhuaweicloud.com");
+
+    public static final Region CN_SOUTH_4 = new Region("cn-south-4", "https://dds.cn-south-4.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("DDS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -124,6 +129,8 @@ public class DdsRegion {
         map.put("af-north-1", AF_NORTH_1);
         map.put("ap-southeast-5", AP_SOUTHEAST_5);
         map.put("cn-north-11", CN_NORTH_11);
+        map.put("cn-southwest-3", CN_SOUTHWEST_3);
+        map.put("cn-south-4", CN_SOUTH_4);
         return Collections.unmodifiableMap(map);
     }
 

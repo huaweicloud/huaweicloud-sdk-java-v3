@@ -49,10 +49,80 @@ public class SignApiBindingBase {
 
     private String envName;
 
+    /**
+     * API类型。 - 1：公有API - 2：私有API 
+     */
+    public static final class ApiTypeEnum {
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final ApiTypeEnum NUMBER_1 = new ApiTypeEnum(1);
+
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final ApiTypeEnum NUMBER_2 = new ApiTypeEnum(2);
+
+        private static final Map<Integer, ApiTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, ApiTypeEnum> createStaticFields() {
+            Map<Integer, ApiTypeEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        ApiTypeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ApiTypeEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApiTypeEnum(value));
+        }
+
+        public static ApiTypeEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ApiTypeEnum) {
+                return this.value.equals(((ApiTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_type")
 
-    private Integer apiType;
+    private ApiTypeEnum apiType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "api_name")
@@ -297,20 +367,20 @@ public class SignApiBindingBase {
         this.envName = envName;
     }
 
-    public SignApiBindingBase withApiType(Integer apiType) {
+    public SignApiBindingBase withApiType(ApiTypeEnum apiType) {
         this.apiType = apiType;
         return this;
     }
 
     /**
-     * API类型
+     * API类型。 - 1：公有API - 2：私有API 
      * @return apiType
      */
-    public Integer getApiType() {
+    public ApiTypeEnum getApiType() {
         return apiType;
     }
 
-    public void setApiType(Integer apiType) {
+    public void setApiType(ApiTypeEnum apiType) {
         this.apiType = apiType;
     }
 

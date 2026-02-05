@@ -71,7 +71,7 @@ public class DdmGroupInfo {
     }
 
     /**
-     * 组ID。
+     * **参数解释**：  组ID。  **参数范围**：  不涉及。
      * @return id
      */
     public String getId() {
@@ -88,7 +88,7 @@ public class DdmGroupInfo {
     }
 
     /**
-     * 名称。
+     * **参数解释**：  名称。  **参数范围**：  不涉及。
      * @return name
      */
     public String getName() {
@@ -105,7 +105,7 @@ public class DdmGroupInfo {
     }
 
     /**
-     * 角色。
+     * **参数解释**：  角色。  **参数范围**：  不涉及。
      * @return role
      */
     public String getRole() {
@@ -122,7 +122,7 @@ public class DdmGroupInfo {
     }
 
     /**
-     * 组ip。
+     * **参数解释**：  组ip。  **参数范围**：  不涉及。
      * @return endpoint
      */
     public String getEndpoint() {
@@ -139,7 +139,7 @@ public class DdmGroupInfo {
     }
 
     /**
-     * ipv6。
+     * **参数解释**：  ipv6。  **参数范围**：  不涉及。
      * @return ipv6Endpoint
      */
     public String getIpv6Endpoint() {
@@ -156,7 +156,7 @@ public class DdmGroupInfo {
     }
 
     /**
-     * 节点数量。
+     * **参数解释**：  节点数量。  **参数范围**：  不涉及。
      * minimum: 0
      * maximum: 2147483647
      * @return nodeCount
@@ -175,7 +175,7 @@ public class DdmGroupInfo {
     }
 
     /**
-     * 负载均衡。
+     * **参数解释**：  负载均衡。  **参数范围**：  不涉及。
      * @return loadBalance
      */
     public Boolean getLoadBalance() {
@@ -192,7 +192,7 @@ public class DdmGroupInfo {
     }
 
     /**
-     * 是否默认组。
+     * **参数解释**：  是否默认组。  **参数范围**：  不涉及。
      * @return isDefaultGroup
      */
     public Boolean getIsDefaultGroup() {
@@ -225,7 +225,7 @@ public class DdmGroupInfo {
     }
 
     /**
-     * 其他信息。
+     * **参数解释**：  其他信息。  **参数范围**：  不涉及。
      * @return extendMap
      */
     public Map<String, String> getExtendMap() {
@@ -258,7 +258,7 @@ public class DdmGroupInfo {
     }
 
     /**
-     * 节点信息。
+     * **参数解释**：  节点信息。  **参数范围**：  不涉及。
      * @return nodes
      */
     public List<DdmNodeInfo> getNodes() {

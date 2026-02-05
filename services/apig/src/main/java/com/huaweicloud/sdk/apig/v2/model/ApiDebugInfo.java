@@ -245,7 +245,7 @@ public class ApiDebugInfo {
     }
 
     /**
-     * 调试模式 - DEVELOPER 调试尚未发布的API定义 - MARKET [调试云商店已购买的API](tag:hws)[暂未使用](tag:cmcc,ctc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm,hws_hk) - CONSUMER 调试指定运行环境下的API定义 > DEVELOPER模式，接口调用者必须是API拥有者。    [MARKET模式，接口调用者必须是API购买者或拥有者。](tag:hws)    CONSUMER模式，接口调用者必须有API在指定环境上的授权信息或是API拥有者。
+     * 调试模式 - DEVELOPER 调试尚未发布的API定义 - MARKET [调试云商店已购买的API](tag:hws)[暂未使用](tag:cmcc,ctc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm,hws_hk,srg,ax) - CONSUMER 调试指定运行环境下的API定义 > DEVELOPER模式，接口调用者必须是API拥有者。    [MARKET模式，接口调用者必须是API购买者或拥有者。](tag:hws)    CONSUMER模式，接口调用者必须有API在指定环境上的授权信息或是API拥有者。
      * @return mode
      */
     public String getMode() {
@@ -329,7 +329,7 @@ public class ApiDebugInfo {
     }
 
     /**
-     * 调试请求使用的APP的key
+     * 调试请求使用的APP凭据的key
      * @return appKey
      */
     public String getAppKey() {
@@ -346,7 +346,7 @@ public class ApiDebugInfo {
     }
 
     /**
-     * 调试请求使用的APP的密钥
+     * 调试请求使用的APP凭据的密钥
      * @return appSecret
      */
     public String getAppSecret() {
@@ -363,7 +363,7 @@ public class ApiDebugInfo {
     }
 
     /**
-     * API的访问域名，如果使用自定义入方向端口的特性时，需要带上端口信息，用冒号分隔，例如test.com:8080。 API的访问域名未提供时根据mode的取值使用如下默认值： - DEVELOPER API分组的子域名 - MARKET [云商店为API分组分配的域名](tag:hws)[暂未使用](tag:cmcc,ctc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm,hws_hk) - CONSUMER API分组的子域名
+     * API的访问域名，如果使用自定义入方向端口的特性时，需要带上端口信息，用冒号分隔，例如test.com:8080。 API的访问域名未提供时根据mode的取值使用如下默认值： - DEVELOPER API分组的子域名 - MARKET [云商店为API分组分配的域名](tag:hws)[暂未使用](tag:cmcc,ctc,DT,g42,hk_g42,hk_sbc,hk_tm,hws_eu,hws_ocb,OCB,sbc,tm,hws_hk,srg,ax) - CONSUMER API分组的子域名
      * @return domain
      */
     public String getDomain() {

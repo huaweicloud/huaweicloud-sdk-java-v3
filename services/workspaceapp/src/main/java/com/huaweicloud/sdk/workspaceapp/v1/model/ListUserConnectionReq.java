@@ -134,7 +134,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 用户连接类别。
+     * 用户连接类别,1代表共享桌面，2代表普通应用。
      * @return connectType
      */
     public String getConnectType() {
@@ -270,7 +270,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 客户端操作系统类型。
+     * 客户端操作系统类型： - Mac - Windows
      * @return clientType
      */
     public String getClientType() {
@@ -372,7 +372,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 登录应用开始时间，格式 2022-10-31T08:07:39Z。
+     * 登录应用开始时间，只支持导出30天内数据，格式 2022-10-31T08:07:39Z。
      * @return updateTime
      */
     public OffsetDateTime getUpdateTime() {
@@ -406,7 +406,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 登录应用开始时间，格式 2022-10-31T08:07:39Z。
+     * 登录应用开始时间，只支持导出30天内数据，格式 2022-10-31T08:07:39Z，参数中login_start_time与login_end_time必须同时存在或都不存在，都不存在时导出近一个月的数据。
      * @return loginStartTime
      */
     public OffsetDateTime getLoginStartTime() {
@@ -423,7 +423,7 @@ public class ListUserConnectionReq {
     }
 
     /**
-     * 登录应用结束时间，格式 2022-10-31T08:07:39Z。
+     * 登录应用结束时间，只支持导出30天内数据，格式 2022-10-31T08:07:39Z，参数中login_start_time与login_end_time必须同时存在或都不存在，都不存在时导出近一个月的数据。
      * @return loginEndTime
      */
     public OffsetDateTime getLoginEndTime() {

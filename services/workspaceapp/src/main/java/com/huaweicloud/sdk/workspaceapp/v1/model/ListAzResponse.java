@@ -70,7 +70,7 @@ public class ListAzResponse extends SdkResponse {
     }
 
     /**
-     * 默认站点类型。
+     * 默认站点类型： - CENTER - IES
      * @return defaultType
      */
     public String getDefaultType() {
@@ -103,7 +103,7 @@ public class ListAzResponse extends SdkResponse {
     }
 
     /**
-     * 云应用支持的站点类型。
+     * 云应用支持的站点类型： - CENTER - IES
      * @return supportType
      */
     public List<String> getSupportType() {

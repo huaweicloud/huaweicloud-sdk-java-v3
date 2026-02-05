@@ -27,6 +27,11 @@ public class CloudStorage {
     private String projectConfigId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_group_id")
+
+    private String clusterGroupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private OffsetDateTime createTime;
@@ -92,6 +97,23 @@ public class CloudStorage {
         this.projectConfigId = projectConfigId;
     }
 
+    public CloudStorage withClusterGroupId(String clusterGroupId) {
+        this.clusterGroupId = clusterGroupId;
+        return this;
+    }
+
+    /**
+     * sfs集群ID。
+     * @return clusterGroupId
+     */
+    public String getClusterGroupId() {
+        return clusterGroupId;
+    }
+
+    public void setClusterGroupId(String clusterGroupId) {
+        this.clusterGroupId = clusterGroupId;
+    }
+
     public CloudStorage withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
@@ -154,6 +176,7 @@ public class CloudStorage {
         CloudStorage that = (CloudStorage) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.projectConfigId, that.projectConfigId)
+            && Objects.equals(this.clusterGroupId, that.clusterGroupId)
             && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.userClaimCount, that.userClaimCount)
             && Objects.equals(this.shareClaimCount, that.shareClaimCount);
@@ -161,7 +184,7 @@ public class CloudStorage {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, projectConfigId, createTime, userClaimCount, shareClaimCount);
+        return Objects.hash(id, name, projectConfigId, clusterGroupId, createTime, userClaimCount, shareClaimCount);
     }
 
     @Override
@@ -171,6 +194,7 @@ public class CloudStorage {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    projectConfigId: ").append(toIndentedString(projectConfigId)).append("\n");
+        sb.append("    clusterGroupId: ").append(toIndentedString(clusterGroupId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    userClaimCount: ").append(toIndentedString(userClaimCount)).append("\n");
         sb.append("    shareClaimCount: ").append(toIndentedString(shareClaimCount)).append("\n");

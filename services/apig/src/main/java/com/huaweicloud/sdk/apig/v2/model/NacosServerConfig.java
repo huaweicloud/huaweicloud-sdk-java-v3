@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Nacos服务端配置信息。
+ * nacos服务端配置信息。
  */
 public class NacosServerConfig {
 

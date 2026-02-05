@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * Nacos微服务详细信息。
+ * nacos微服务详细信息。
  */
 public class MicroServiceInfoNacosBase {
 

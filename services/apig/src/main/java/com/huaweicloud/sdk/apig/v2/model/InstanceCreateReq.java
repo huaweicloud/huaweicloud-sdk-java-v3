@@ -232,7 +232,7 @@ public class InstanceCreateReq {
     private Integer bandwidthSize;
 
     /**
-     * 出公网带宽计费类型，实例需要开启出公网功能时需要填写： - bandwidth：按带宽计费 - traffic：按流量计费
+     * 出公网带宽计费类型，实例需要开启出公网功能时需要填写： - bandwidth：按带宽计费 - [traffic：按流量计费](tag:hws_test) 
      */
     public static final class BandwidthChargingModeEnum {
 
@@ -312,7 +312,7 @@ public class InstanceCreateReq {
     private Boolean ipv6Enable;
 
     /**
-     * 实例使用的负载均衡器类型 - 该字段废弃，由Region支持的负载均衡模式决定使用elb还是lvs，详情参考产品介绍下的约束与限制。 - lvs Linux虚拟服务器 - elb 弹性负载均衡，elb仅部分region支持
+     * 实例使用的负载均衡器类型 - 该字段废弃，由Region支持的负载均衡模式决定使用elb还是lvs，详情参考产品介绍下的约束与限制。 - lvs Linux虚拟服务器 - elb 弹性负载均衡，elb仅部分region支持 
      */
     public static final class LoadbalancerProviderEnum {
 
@@ -402,7 +402,7 @@ public class InstanceCreateReq {
     private Integer ingressBandwidthSize;
 
     /**
-     * 入公网带宽计费类型，实例需要开启入公网功能，且loadbalancer_provider为elb时需要填写： - bandwidth：按带宽计费 - traffic：按流量计费
+     * 入公网带宽计费类型，实例需要开启入公网功能，且loadbalancer_provider为elb时需要填写： - bandwidth：按带宽计费 - [traffic：按流量计费](tag:hws_test) 
      */
     public static final class IngressBandwidthChargingModeEnum {
 
@@ -586,7 +586,7 @@ public class InstanceCreateReq {
     }
 
     /**
-     * 虚拟私有云ID。  获取方法如下：   - 方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。   - 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询VPC列表”章节。 
+     * 虚拟私有云ID。  获取方法如下：   - 方法1：在虚拟私有云服务的控制台界面，进入虚拟私有云的详情页面查找VPC ID。   - 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询VPC列表”章节。 
      * @return vpcId
      */
     public String getVpcId() {
@@ -603,7 +603,7 @@ public class InstanceCreateReq {
     }
 
     /**
-     * 子网的网络ID。  获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询子网列表”章节。 
+     * 子网的网络ID。  获取方法如下： - 方法1：在虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询子网列表”章节。 
      * @return subnetId
      */
     public String getSubnetId() {
@@ -620,7 +620,7 @@ public class InstanceCreateReq {
     }
 
     /**
-     * 指定实例所属的安全组。  获取方法如下： - 方法1：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询安全组列表”章节。 
+     * 指定实例所属的安全组。  获取方法如下： - 方法1：在虚拟私有云服务的控制台界面，进入安全组的详情页面查找安全组ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体方法请参见《虚拟私有云服务API参考》的“查询安全组列表”章节。 
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -637,7 +637,7 @@ public class InstanceCreateReq {
     }
 
     /**
-     * 弹性公网IP ID。  实例需要开启公网访问，且loadbalancer_provider为lvs时需要填写，绑定后使用者可以通过该入口从公网访问APIG实例中的API等资源  获取方法：登录虚拟私有云服务的控制台界面，在弹性公网IP的详情页面查找弹性公网IP ID。
+     * 弹性公网IP ID。  实例需要开启公网访问，且loadbalancer_provider为lvs时需要填写，绑定后使用者可以通过该入口从公网访问APIG实例中的API等资源  获取方法：在虚拟私有云服务的控制台界面，进入弹性公网IP的详情页面查找弹性公网IP ID。
      * @return eipId
      */
     public String getEipId() {
@@ -654,7 +654,7 @@ public class InstanceCreateReq {
     }
 
     /**
-     * 企业项目ID，企业账号必填。  获取方法如下： - 方法1：登录企业项目管理界面，在项目管理详情页面查找项目ID。 - 方法2：通过企业项目管理的API接口查询，具体方法请参见《企业管理API参考》的“查询企业项目列表”章节。
+     * 企业项目ID，企业账号必填。  获取方法如下： - 方法1：在企业项目管理界面，进入项目管理详情页面查找项目ID。 - 方法2：通过企业项目管理的API接口查询，具体方法请参见《企业管理API参考》的“查询企业项目列表”章节。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -704,7 +704,7 @@ public class InstanceCreateReq {
     }
 
     /**
-     * 出公网带宽  实例需要开启出公网功能时需要填写，绑定后使用者可以利用该出口访问公网上的互联网资源
+     * 出公网带宽  实例需要开启出公网功能时需要填写，绑定后使用者可以利用该出口访问公网上的互联网资源 
      * @return bandwidthSize
      */
     public Integer getBandwidthSize() {
@@ -721,7 +721,7 @@ public class InstanceCreateReq {
     }
 
     /**
-     * 出公网带宽计费类型，实例需要开启出公网功能时需要填写： - bandwidth：按带宽计费 - traffic：按流量计费
+     * 出公网带宽计费类型，实例需要开启出公网功能时需要填写： - bandwidth：按带宽计费 - [traffic：按流量计费](tag:hws_test) 
      * @return bandwidthChargingMode
      */
     public BandwidthChargingModeEnum getBandwidthChargingMode() {
@@ -738,7 +738,7 @@ public class InstanceCreateReq {
     }
 
     /**
-     * 公网访问是否支持IPv6。  当前仅部分region部分可用区支持IPv6
+     * 公网访问是否支持IPv6。  当前仅部分region部分可用区支持IPv6 
      * @return ipv6Enable
      */
     public Boolean getIpv6Enable() {
@@ -755,7 +755,7 @@ public class InstanceCreateReq {
     }
 
     /**
-     * 实例使用的负载均衡器类型 - 该字段废弃，由Region支持的负载均衡模式决定使用elb还是lvs，详情参考产品介绍下的约束与限制。 - lvs Linux虚拟服务器 - elb 弹性负载均衡，elb仅部分region支持
+     * 实例使用的负载均衡器类型 - 该字段废弃，由Region支持的负载均衡模式决定使用elb还是lvs，详情参考产品介绍下的约束与限制。 - lvs Linux虚拟服务器 - elb 弹性负载均衡，elb仅部分region支持 
      * @return loadbalancerProvider
      */
     public LoadbalancerProviderEnum getLoadbalancerProvider() {
@@ -788,7 +788,7 @@ public class InstanceCreateReq {
     }
 
     /**
-     * 标签列表。  一个实例默认最多支持创建20个标签
+     * 标签列表。  一个实例默认最多支持创建20个标签 
      * @return tags
      */
     public List<TmsKeyValue> getTags() {
@@ -822,7 +822,7 @@ public class InstanceCreateReq {
     }
 
     /**
-     * 入公网带宽  实例需要开启入公网功能，且loadbalancer_provider为elb时需要填写，绑定后使用者可以通过该入口从公网访问APIG实例中的API等资源
+     * 入公网带宽  实例需要开启入公网功能，且loadbalancer_provider为elb时需要填写，绑定后使用者可以通过该入口从公网访问APIG实例中的API等资源 
      * @return ingressBandwidthSize
      */
     public Integer getIngressBandwidthSize() {
@@ -840,7 +840,7 @@ public class InstanceCreateReq {
     }
 
     /**
-     * 入公网带宽计费类型，实例需要开启入公网功能，且loadbalancer_provider为elb时需要填写： - bandwidth：按带宽计费 - traffic：按流量计费
+     * 入公网带宽计费类型，实例需要开启入公网功能，且loadbalancer_provider为elb时需要填写： - bandwidth：按带宽计费 - [traffic：按流量计费](tag:hws_test) 
      * @return ingressBandwidthChargingMode
      */
     public IngressBandwidthChargingModeEnum getIngressBandwidthChargingMode() {

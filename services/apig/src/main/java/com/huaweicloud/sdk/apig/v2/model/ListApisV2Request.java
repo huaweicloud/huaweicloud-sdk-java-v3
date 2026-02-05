@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -55,20 +60,172 @@ public class ListApisV2Request {
 
     private String reqUri;
 
+    /**
+     * 授权类型。 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证 
+     */
+    public static final class AuthTypeEnum {
+
+        /**
+         * Enum NONE for value: "NONE"
+         */
+        public static final AuthTypeEnum NONE = new AuthTypeEnum("NONE");
+
+        /**
+         * Enum APP for value: "APP"
+         */
+        public static final AuthTypeEnum APP = new AuthTypeEnum("APP");
+
+        /**
+         * Enum IAM for value: "IAM"
+         */
+        public static final AuthTypeEnum IAM = new AuthTypeEnum("IAM");
+
+        /**
+         * Enum AUTHORIZER for value: "AUTHORIZER"
+         */
+        public static final AuthTypeEnum AUTHORIZER = new AuthTypeEnum("AUTHORIZER");
+
+        private static final Map<String, AuthTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AuthTypeEnum> createStaticFields() {
+            Map<String, AuthTypeEnum> map = new HashMap<>();
+            map.put("NONE", NONE);
+            map.put("APP", APP);
+            map.put("IAM", IAM);
+            map.put("AUTHORIZER", AUTHORIZER);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AuthTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AuthTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthTypeEnum(value));
+        }
+
+        public static AuthTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AuthTypeEnum) {
+                return this.value.equals(((AuthTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auth_type")
 
-    private String authType;
+    private AuthTypeEnum authType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_id")
 
     private String envId;
 
+    /**
+     * API类型。 - 1：公有API - 2：私有API 
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final TypeEnum NUMBER_1 = new TypeEnum(1);
+
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final TypeEnum NUMBER_2 = new TypeEnum(2);
+
+        private static final Map<Integer, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, TypeEnum> createStaticFields() {
+            Map<Integer, TypeEnum> map = new HashMap<>();
+            map.put(1, NUMBER_1);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        TypeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
+        }
+
+        public static TypeEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private Integer type;
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "precise_search")
@@ -245,20 +402,20 @@ public class ListApisV2Request {
         this.reqUri = reqUri;
     }
 
-    public ListApisV2Request withAuthType(String authType) {
+    public ListApisV2Request withAuthType(AuthTypeEnum authType) {
         this.authType = authType;
         return this;
     }
 
     /**
-     * 授权类型
+     * 授权类型。 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证 
      * @return authType
      */
-    public String getAuthType() {
+    public AuthTypeEnum getAuthType() {
         return authType;
     }
 
-    public void setAuthType(String authType) {
+    public void setAuthType(AuthTypeEnum authType) {
         this.authType = authType;
     }
 
@@ -279,20 +436,20 @@ public class ListApisV2Request {
         this.envId = envId;
     }
 
-    public ListApisV2Request withType(Integer type) {
+    public ListApisV2Request withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
     /**
-     * API类型
+     * API类型。 - 1：公有API - 2：私有API 
      * @return type
      */
-    public Integer getType() {
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(Integer type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 
