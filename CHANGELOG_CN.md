@@ -1,3 +1,19 @@
+# 3.1.187 2026-02-12
+
+### HuaweiCloud SDK CodeArtsPipeline
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowPipelineRunDetail**
+    - 响应参数变更
+      - `+ pause_time`
+      - `+ stages.pause_time`
+
 # 3.1.186 2026-02-05
 
 ### HuaweiCloud SDK APIG

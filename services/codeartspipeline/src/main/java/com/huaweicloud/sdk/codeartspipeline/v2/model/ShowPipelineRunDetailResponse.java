@@ -70,6 +70,11 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     private Integer runNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pause_time")
+
+    private Long pauseTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
     private Long startTime;
@@ -329,6 +334,23 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
 
     public void setRunNumber(Integer runNumber) {
         this.runNumber = runNumber;
+    }
+
+    public ShowPipelineRunDetailResponse withPauseTime(Long pauseTime) {
+        this.pauseTime = pauseTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 流水线中断时间，单位毫秒。 **取值范围**： 大于等于 0。 
+     * @return pauseTime
+     */
+    public Long getPauseTime() {
+        return pauseTime;
+    }
+
+    public void setPauseTime(Long pauseTime) {
+        this.pauseTime = pauseTime;
     }
 
     public ShowPipelineRunDetailResponse withStartTime(Long startTime) {
@@ -648,14 +670,14 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
             && Objects.equals(this.description, that.description) && Objects.equals(this.isPublish, that.isPublish)
             && Objects.equals(this.executorId, that.executorId) && Objects.equals(this.executorName, that.executorName)
             && Objects.equals(this.status, that.status) && Objects.equals(this.triggerType, that.triggerType)
-            && Objects.equals(this.runNumber, that.runNumber) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.stages, that.stages)
-            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.region, that.region) && Objects.equals(this.componentId, that.componentId)
-            && Objects.equals(this.language, that.language) && Objects.equals(this.sources, that.sources)
-            && Objects.equals(this.artifacts, that.artifacts) && Objects.equals(this.subjectId, that.subjectId)
-            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.groupName, that.groupName)
-            && Objects.equals(this.detailUrl, that.detailUrl)
+            && Objects.equals(this.runNumber, that.runNumber) && Objects.equals(this.pauseTime, that.pauseTime)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.stages, that.stages) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.componentId, that.componentId) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.sources, that.sources) && Objects.equals(this.artifacts, that.artifacts)
+            && Objects.equals(this.subjectId, that.subjectId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.detailUrl, that.detailUrl)
             && Objects.equals(this.currentSystemTime, that.currentSystemTime);
     }
 
@@ -672,6 +694,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
             status,
             triggerType,
             runNumber,
+            pauseTime,
             startTime,
             endTime,
             stages,
@@ -704,6 +727,7 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    triggerType: ").append(toIndentedString(triggerType)).append("\n");
         sb.append("    runNumber: ").append(toIndentedString(runNumber)).append("\n");
+        sb.append("    pauseTime: ").append(toIndentedString(pauseTime)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    stages: ").append(toIndentedString(stages)).append("\n");

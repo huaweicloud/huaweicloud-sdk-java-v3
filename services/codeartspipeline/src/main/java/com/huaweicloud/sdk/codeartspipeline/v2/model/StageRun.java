@@ -79,6 +79,11 @@ public class StageRun {
     private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pause_time")
+
+    private Long pauseTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pre")
 
     private List<StepRun> pre = null;
@@ -330,6 +335,23 @@ public class StageRun {
         this.endTime = endTime;
     }
 
+    public StageRun withPauseTime(Long pauseTime) {
+        this.pauseTime = pauseTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 阶段中断时间，单位毫秒。 **取值范围**： 大于等于 0。 
+     * @return pauseTime
+     */
+    public Long getPauseTime() {
+        return pauseTime;
+    }
+
+    public void setPauseTime(Long pauseTime) {
+        this.pauseTime = pauseTime;
+    }
+
     public StageRun withPre(List<StepRun> pre) {
         this.pre = pre;
         return this;
@@ -444,8 +466,9 @@ public class StageRun {
             && Objects.equals(this.isSelect, that.isSelect) && Objects.equals(this.sequence, that.sequence)
             && Objects.equals(this.dependsOn, that.dependsOn) && Objects.equals(this.condition, that.condition)
             && Objects.equals(this.status, that.status) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.pre, that.pre)
-            && Objects.equals(this.post, that.post) && Objects.equals(this.jobs, that.jobs);
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.pauseTime, that.pauseTime)
+            && Objects.equals(this.pre, that.pre) && Objects.equals(this.post, that.post)
+            && Objects.equals(this.jobs, that.jobs);
     }
 
     @Override
@@ -463,6 +486,7 @@ public class StageRun {
             status,
             startTime,
             endTime,
+            pauseTime,
             pre,
             post,
             jobs);
@@ -485,6 +509,7 @@ public class StageRun {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    pauseTime: ").append(toIndentedString(pauseTime)).append("\n");
         sb.append("    pre: ").append(toIndentedString(pre)).append("\n");
         sb.append("    post: ").append(toIndentedString(post)).append("\n");
         sb.append("    jobs: ").append(toIndentedString(jobs)).append("\n");

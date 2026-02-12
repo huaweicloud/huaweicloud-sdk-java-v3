@@ -1,3 +1,19 @@
+# 3.1.187 2026-02-12
+
+### HuaweiCloud SDK CodeArtsPipeline
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowPipelineRunDetail**
+    - changes of response param
+      - `+ pause_time`
+      - `+ stages.pause_time`
+
 # 3.1.186 2026-02-05
 
 ### HuaweiCloud SDK APIG
