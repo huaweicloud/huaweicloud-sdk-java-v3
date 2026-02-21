@@ -25,9 +25,9 @@ public class ListDataArtsStudioInstancesResponse extends SdkResponse {
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "commodity_order_lists")
+    @JsonProperty(value = "commodity_orders")
 
-    private List<ApigCommodityOrder> commodityOrderLists = null;
+    private List<ApigCommodityOrder> commodityOrders = null;
 
     public ListDataArtsStudioInstancesResponse withBillingCheck(Boolean billingCheck) {
         this.billingCheck = billingCheck;
@@ -65,38 +65,38 @@ public class ListDataArtsStudioInstancesResponse extends SdkResponse {
         this.count = count;
     }
 
-    public ListDataArtsStudioInstancesResponse withCommodityOrderLists(List<ApigCommodityOrder> commodityOrderLists) {
-        this.commodityOrderLists = commodityOrderLists;
+    public ListDataArtsStudioInstancesResponse withCommodityOrders(List<ApigCommodityOrder> commodityOrders) {
+        this.commodityOrders = commodityOrders;
         return this;
     }
 
-    public ListDataArtsStudioInstancesResponse addCommodityOrderListsItem(ApigCommodityOrder commodityOrderListsItem) {
-        if (this.commodityOrderLists == null) {
-            this.commodityOrderLists = new ArrayList<>();
+    public ListDataArtsStudioInstancesResponse addCommodityOrdersItem(ApigCommodityOrder commodityOrdersItem) {
+        if (this.commodityOrders == null) {
+            this.commodityOrders = new ArrayList<>();
         }
-        this.commodityOrderLists.add(commodityOrderListsItem);
+        this.commodityOrders.add(commodityOrdersItem);
         return this;
     }
 
-    public ListDataArtsStudioInstancesResponse withCommodityOrderLists(
-        Consumer<List<ApigCommodityOrder>> commodityOrderListsSetter) {
-        if (this.commodityOrderLists == null) {
-            this.commodityOrderLists = new ArrayList<>();
+    public ListDataArtsStudioInstancesResponse withCommodityOrders(
+        Consumer<List<ApigCommodityOrder>> commodityOrdersSetter) {
+        if (this.commodityOrders == null) {
+            this.commodityOrders = new ArrayList<>();
         }
-        commodityOrderListsSetter.accept(this.commodityOrderLists);
+        commodityOrdersSetter.accept(this.commodityOrders);
         return this;
     }
 
     /**
      * 返回实例列表
-     * @return commodityOrderLists
+     * @return commodityOrders
      */
-    public List<ApigCommodityOrder> getCommodityOrderLists() {
-        return commodityOrderLists;
+    public List<ApigCommodityOrder> getCommodityOrders() {
+        return commodityOrders;
     }
 
-    public void setCommodityOrderLists(List<ApigCommodityOrder> commodityOrderLists) {
-        this.commodityOrderLists = commodityOrderLists;
+    public void setCommodityOrders(List<ApigCommodityOrder> commodityOrders) {
+        this.commodityOrders = commodityOrders;
     }
 
     @Override
@@ -109,12 +109,12 @@ public class ListDataArtsStudioInstancesResponse extends SdkResponse {
         }
         ListDataArtsStudioInstancesResponse that = (ListDataArtsStudioInstancesResponse) obj;
         return Objects.equals(this.billingCheck, that.billingCheck) && Objects.equals(this.count, that.count)
-            && Objects.equals(this.commodityOrderLists, that.commodityOrderLists);
+            && Objects.equals(this.commodityOrders, that.commodityOrders);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(billingCheck, count, commodityOrderLists);
+        return Objects.hash(billingCheck, count, commodityOrders);
     }
 
     @Override
@@ -123,7 +123,7 @@ public class ListDataArtsStudioInstancesResponse extends SdkResponse {
         sb.append("class ListDataArtsStudioInstancesResponse {\n");
         sb.append("    billingCheck: ").append(toIndentedString(billingCheck)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
-        sb.append("    commodityOrderLists: ").append(toIndentedString(commodityOrderLists)).append("\n");
+        sb.append("    commodityOrders: ").append(toIndentedString(commodityOrders)).append("\n");
         sb.append("}");
         return sb.toString();
     }
