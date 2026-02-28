@@ -376,7 +376,7 @@ VpcClient client = VpcClient.newBuilder()
 
 HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig()
 // 默认连接超时时间为60秒，可根据需要配置（v3.1.94及之前的版本）
-.withTimeout(60);
+.withTimeout(60)
 // 默认连接超时时间为60秒，可根据需要调整（v3.1.95版本起，优先使用withConnectionTimeout）
 .withConnectionTimeout(60)
 // 默认读取超时时间为120秒，可根据需要调整
@@ -476,7 +476,7 @@ BasicCredentials basicCredentials = new BasicCredentials()
     .withAk(ak)
     .withSk(sk)
     .withSecurityToken(securityToken)
-    .withProjectId(projectId)
+    .withProjectId(projectId);
 
 // Global级服务
 GlobalCredentials globalCredentials = new GlobalCredentials()
@@ -541,7 +541,7 @@ import com.huaweicloud.sdk.core.auth.GlobalCredentials;
 BasicCredentials basicCredentials = new BasicCredentials()
     .withIdpId(idpId)
     .withIdTokenFile(idTokenFile)
-    .withProjectId(projectId)
+    .withProjectId(projectId);
 
 // Global级服务
 GlobalCredentials globalCredentials = new GlobalCredentials()
@@ -1212,7 +1212,7 @@ try {
     .retryTimes(5)
     // 请求重试条件，默认的重试条件为网络连接异常自动重试
     .retryCondition(BaseInvoker.defaultRetryCondition())
-    .invoke();
+    .invoke().get();
     logger.info(response.toString());
 } catch (SdkException e) {
     logger.error("", e);
@@ -1237,8 +1237,6 @@ try {
     logger.info(response.toString());
 } catch (InterruptedException e) {
     logger.error("InterruptedException", e);
-} catch (ExecutionException e) {
-    logger.error("ExecutionException", e);
 }
 ```
 

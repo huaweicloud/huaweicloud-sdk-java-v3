@@ -484,7 +484,7 @@ BasicCredentials basicCredentials = new BasicCredentials()
     .withAk(ak)
     .withSk(sk)
     .withSecurityToken(securityToken)
-    .withProjectId(projectId)
+    .withProjectId(projectId);
 
 // Global services
 GlobalCredentials globalCredentials = new GlobalCredentials()
@@ -512,7 +512,7 @@ To obtain the AK/SK, please refer to https://support.huaweicloud.com/intl/en-us/
 BasicCredentials basicCredentials = new BasicCredentials()
     .withAk(ak)
     .withSk(sk)
-    .withProjectId(projectId)
+    .withProjectId(projectId);
 
 // Global Services
 GlobalCredentials globalCredentials = new GlobalCredentials()
@@ -547,7 +547,7 @@ import com.huaweicloud.sdk.core.auth.GlobalCredentials;
 BasicCredentials basicCredentials = new BasicCredentials()
     .withIdpId(idpId)
     .withIdTokenFile(idTokenFile)
-    .withProjectId(projectId)
+    .withProjectId(projectId);
 
 // Global service
 GlobalCredentials globalCredentials = new GlobalCredentials()
@@ -1233,7 +1233,7 @@ try {
     .retryTimes(5)
     // retry condition, which would be retried for ConnectionException
     .retryCondition(BaseInvoker.defaultRetryCondition())
-    .invoke();
+    .invoke().get();
     logger.info(response.toString());
 } catch (SdkException e) {
     logger.error("", e);
@@ -1259,8 +1259,6 @@ try {
     logger.info(response.toString());
 } catch (InterruptedException e) {
     logger.error("InterruptedException", e);
-} catch (ExecutionException e) {
-    logger.error("ExecutionException", e);
 }
 ```
 
