@@ -120,6 +120,26 @@ public class ListWdrSnapshotsCollectResultsRequest {
 
     private String jobId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_end_time")
+
+    private String jobEndTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_start_time")
+
+    private String jobStartTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "wdr_type")
+
+    private String wdrType;
+
     public ListWdrSnapshotsCollectResultsRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -245,6 +265,74 @@ public class ListWdrSnapshotsCollectResultsRequest {
         this.jobId = jobId;
     }
 
+    public ListWdrSnapshotsCollectResultsRequest withJobEndTime(String jobEndTime) {
+        this.jobEndTime = jobEndTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**:   采集任务创建时间终点。可查询任务创建时间小于等于该时间终点的任务结果。格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量。时区中的+号需要进行URL编码，编码为%2B，时区中的-号无需编码。例如，北京时间偏移显示为+0800，job_end_time=2024-03-16T17:20:33+0800，传参时编码为job_end_time=2024-03-16T17:20:33%2B0800。 **约束限制**:   不涉及。 **取值范围**:   不涉及。 **默认取值**:   不涉及。
+     * @return jobEndTime
+     */
+    public String getJobEndTime() {
+        return jobEndTime;
+    }
+
+    public void setJobEndTime(String jobEndTime) {
+        this.jobEndTime = jobEndTime;
+    }
+
+    public ListWdrSnapshotsCollectResultsRequest withJobStartTime(String jobStartTime) {
+        this.jobStartTime = jobStartTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**:   采集任务创建时间起点。可查询任务创建时间大于等于该时间起点的任务结果。格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量。时区中的+号需要进行URL编码，编码为%2B，时区中的-号无需编码。例如，北京时间偏移显示为+0800，job_start_time=2024-03-15T17:20:33+0800传参时编码为job_start_time=2024-03-15T17:20:33%2B0800。 **约束限制**:   不涉及。 **取值范围**:   不涉及。 **默认取值**:   不涉及。
+     * @return jobStartTime
+     */
+    public String getJobStartTime() {
+        return jobStartTime;
+    }
+
+    public void setJobStartTime(String jobStartTime) {
+        this.jobStartTime = jobStartTime;
+    }
+
+    public ListWdrSnapshotsCollectResultsRequest withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 任务采集状态。填写后，可查询对应采集状态的任务结果。 **约束限制**: 不支持模糊匹配，区分大小写，请填写完整的合法状态值。 **取值范围**: - EXPORTING：采集中。 - SUCCESS：采集成功。 - FAILED：采集失败。  **默认取值**:   不涉及。
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public ListWdrSnapshotsCollectResultsRequest withWdrType(String wdrType) {
+        this.wdrType = wdrType;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 填写后，可查询对应采集类型的任务结果。 **约束限制**: 不支持模糊匹配，区分大小写，请填写完整的合法枚举值。 **取值范围**: - cluster：实例级。 - component：组件级。 - pdb：租户级。  **默认取值**:   不涉及。
+     * @return wdrType
+     */
+    public String getWdrType() {
+        return wdrType;
+    }
+
+    public void setWdrType(String wdrType) {
+        this.wdrType = wdrType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -257,12 +345,24 @@ public class ListWdrSnapshotsCollectResultsRequest {
         return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.jobId, that.jobId);
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobEndTime, that.jobEndTime)
+            && Objects.equals(this.jobStartTime, that.jobStartTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.wdrType, that.wdrType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, instanceId, offset, limit, startTime, endTime, jobId);
+        return Objects.hash(xLanguage,
+            instanceId,
+            offset,
+            limit,
+            startTime,
+            endTime,
+            jobId,
+            jobEndTime,
+            jobStartTime,
+            status,
+            wdrType);
     }
 
     @Override
@@ -276,6 +376,10 @@ public class ListWdrSnapshotsCollectResultsRequest {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    jobEndTime: ").append(toIndentedString(jobEndTime)).append("\n");
+        sb.append("    jobStartTime: ").append(toIndentedString(jobStartTime)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    wdrType: ").append(toIndentedString(wdrType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

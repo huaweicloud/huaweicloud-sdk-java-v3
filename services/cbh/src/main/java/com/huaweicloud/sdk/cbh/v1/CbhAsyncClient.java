@@ -65,6 +65,7 @@ public class CbhAsyncClient {
      * @param request ChangeInstanceNetworkRequest 请求对象
      * @return CompletableFuture<ChangeInstanceNetworkResponse>
      */
+    @Deprecated
     public CompletableFuture<ChangeInstanceNetworkResponse> changeInstanceNetworkAsync(
         ChangeInstanceNetworkRequest request) {
         return hcClient.asyncInvokeHttp(request, CbhMeta.changeInstanceNetwork);
@@ -80,6 +81,7 @@ public class CbhAsyncClient {
      * @param request ChangeInstanceNetworkRequest 请求对象
      * @return AsyncInvoker<ChangeInstanceNetworkRequest, ChangeInstanceNetworkResponse>
      */
+    @Deprecated
     public AsyncInvoker<ChangeInstanceNetworkRequest, ChangeInstanceNetworkResponse> changeInstanceNetworkAsyncInvoker(
         ChangeInstanceNetworkRequest request) {
         return new AsyncInvoker<>(request, CbhMeta.changeInstanceNetwork, hcClient);
@@ -95,6 +97,7 @@ public class CbhAsyncClient {
      * @param request ChangeInstanceOrderRequest 请求对象
      * @return CompletableFuture<ChangeInstanceOrderResponse>
      */
+    @Deprecated
     public CompletableFuture<ChangeInstanceOrderResponse> changeInstanceOrderAsync(ChangeInstanceOrderRequest request) {
         return hcClient.asyncInvokeHttp(request, CbhMeta.changeInstanceOrder);
     }
@@ -109,6 +112,7 @@ public class CbhAsyncClient {
      * @param request ChangeInstanceOrderRequest 请求对象
      * @return AsyncInvoker<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse>
      */
+    @Deprecated
     public AsyncInvoker<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse> changeInstanceOrderAsyncInvoker(
         ChangeInstanceOrderRequest request) {
         return new AsyncInvoker<>(request, CbhMeta.changeInstanceOrder, hcClient);
@@ -124,6 +128,7 @@ public class CbhAsyncClient {
      * @param request CreateCbhRequest 请求对象
      * @return CompletableFuture<CreateCbhResponse>
      */
+    @Deprecated
     public CompletableFuture<CreateCbhResponse> createCbhAsync(CreateCbhRequest request) {
         return hcClient.asyncInvokeHttp(request, CbhMeta.createCbh);
     }
@@ -138,6 +143,7 @@ public class CbhAsyncClient {
      * @param request CreateCbhRequest 请求对象
      * @return AsyncInvoker<CreateCbhRequest, CreateCbhResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreateCbhRequest, CreateCbhResponse> createCbhAsyncInvoker(CreateCbhRequest request) {
         return new AsyncInvoker<>(request, CbhMeta.createCbh, hcClient);
     }
@@ -152,6 +158,7 @@ public class CbhAsyncClient {
      * @param request CreateInstanceOrderRequest 请求对象
      * @return CompletableFuture<CreateInstanceOrderResponse>
      */
+    @Deprecated
     public CompletableFuture<CreateInstanceOrderResponse> createInstanceOrderAsync(CreateInstanceOrderRequest request) {
         return hcClient.asyncInvokeHttp(request, CbhMeta.createInstanceOrder);
     }
@@ -166,6 +173,7 @@ public class CbhAsyncClient {
      * @param request CreateInstanceOrderRequest 请求对象
      * @return AsyncInvoker<CreateInstanceOrderRequest, CreateInstanceOrderResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreateInstanceOrderRequest, CreateInstanceOrderResponse> createInstanceOrderAsyncInvoker(
         CreateInstanceOrderRequest request) {
         return new AsyncInvoker<>(request, CbhMeta.createInstanceOrder, hcClient);
@@ -181,6 +189,7 @@ public class CbhAsyncClient {
      * @param request InstallCbhEipRequest 请求对象
      * @return CompletableFuture<InstallCbhEipResponse>
      */
+    @Deprecated
     public CompletableFuture<InstallCbhEipResponse> installCbhEipAsync(InstallCbhEipRequest request) {
         return hcClient.asyncInvokeHttp(request, CbhMeta.installCbhEip);
     }
@@ -195,6 +204,7 @@ public class CbhAsyncClient {
      * @param request InstallCbhEipRequest 请求对象
      * @return AsyncInvoker<InstallCbhEipRequest, InstallCbhEipResponse>
      */
+    @Deprecated
     public AsyncInvoker<InstallCbhEipRequest, InstallCbhEipResponse> installCbhEipAsyncInvoker(
         InstallCbhEipRequest request) {
         return new AsyncInvoker<>(request, CbhMeta.installCbhEip, hcClient);
@@ -239,6 +249,7 @@ public class CbhAsyncClient {
      * @param request ListQuotaStatusRequest 请求对象
      * @return CompletableFuture<ListQuotaStatusResponse>
      */
+    @Deprecated
     public CompletableFuture<ListQuotaStatusResponse> listQuotaStatusAsync(ListQuotaStatusRequest request) {
         return hcClient.asyncInvokeHttp(request, CbhMeta.listQuotaStatus);
     }
@@ -253,6 +264,7 @@ public class CbhAsyncClient {
      * @param request ListQuotaStatusRequest 请求对象
      * @return AsyncInvoker<ListQuotaStatusRequest, ListQuotaStatusResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListQuotaStatusRequest, ListQuotaStatusResponse> listQuotaStatusAsyncInvoker(
         ListQuotaStatusRequest request) {
         return new AsyncInvoker<>(request, CbhMeta.listQuotaStatus, hcClient);
@@ -268,6 +280,7 @@ public class CbhAsyncClient {
      * @param request ResetLoginMethodRequest 请求对象
      * @return CompletableFuture<ResetLoginMethodResponse>
      */
+    @Deprecated
     public CompletableFuture<ResetLoginMethodResponse> resetLoginMethodAsync(ResetLoginMethodRequest request) {
         return hcClient.asyncInvokeHttp(request, CbhMeta.resetLoginMethod);
     }
@@ -282,6 +295,7 @@ public class CbhAsyncClient {
      * @param request ResetLoginMethodRequest 请求对象
      * @return AsyncInvoker<ResetLoginMethodRequest, ResetLoginMethodResponse>
      */
+    @Deprecated
     public AsyncInvoker<ResetLoginMethodRequest, ResetLoginMethodResponse> resetLoginMethodAsyncInvoker(
         ResetLoginMethodRequest request) {
         return new AsyncInvoker<>(request, CbhMeta.resetLoginMethod, hcClient);
@@ -297,6 +311,7 @@ public class CbhAsyncClient {
      * @param request ResetPasswordRequest 请求对象
      * @return CompletableFuture<ResetPasswordResponse>
      */
+    @Deprecated
     public CompletableFuture<ResetPasswordResponse> resetPasswordAsync(ResetPasswordRequest request) {
         return hcClient.asyncInvokeHttp(request, CbhMeta.resetPassword);
     }
@@ -311,6 +326,7 @@ public class CbhAsyncClient {
      * @param request ResetPasswordRequest 请求对象
      * @return AsyncInvoker<ResetPasswordRequest, ResetPasswordResponse>
      */
+    @Deprecated
     public AsyncInvoker<ResetPasswordRequest, ResetPasswordResponse> resetPasswordAsyncInvoker(
         ResetPasswordRequest request) {
         return new AsyncInvoker<>(request, CbhMeta.resetPassword, hcClient);
@@ -326,6 +342,7 @@ public class CbhAsyncClient {
      * @param request RestartCbhInstanceRequest 请求对象
      * @return CompletableFuture<RestartCbhInstanceResponse>
      */
+    @Deprecated
     public CompletableFuture<RestartCbhInstanceResponse> restartCbhInstanceAsync(RestartCbhInstanceRequest request) {
         return hcClient.asyncInvokeHttp(request, CbhMeta.restartCbhInstance);
     }
@@ -340,6 +357,7 @@ public class CbhAsyncClient {
      * @param request RestartCbhInstanceRequest 请求对象
      * @return AsyncInvoker<RestartCbhInstanceRequest, RestartCbhInstanceResponse>
      */
+    @Deprecated
     public AsyncInvoker<RestartCbhInstanceRequest, RestartCbhInstanceResponse> restartCbhInstanceAsyncInvoker(
         RestartCbhInstanceRequest request) {
         return new AsyncInvoker<>(request, CbhMeta.restartCbhInstance, hcClient);
@@ -355,6 +373,7 @@ public class CbhAsyncClient {
      * @param request SearchQuotaRequest 请求对象
      * @return CompletableFuture<SearchQuotaResponse>
      */
+    @Deprecated
     public CompletableFuture<SearchQuotaResponse> searchQuotaAsync(SearchQuotaRequest request) {
         return hcClient.asyncInvokeHttp(request, CbhMeta.searchQuota);
     }
@@ -369,6 +388,7 @@ public class CbhAsyncClient {
      * @param request SearchQuotaRequest 请求对象
      * @return AsyncInvoker<SearchQuotaRequest, SearchQuotaResponse>
      */
+    @Deprecated
     public AsyncInvoker<SearchQuotaRequest, SearchQuotaResponse> searchQuotaAsyncInvoker(SearchQuotaRequest request) {
         return new AsyncInvoker<>(request, CbhMeta.searchQuota, hcClient);
     }
@@ -383,6 +403,7 @@ public class CbhAsyncClient {
      * @param request ShowAvailableZoneInfoRequest 请求对象
      * @return CompletableFuture<ShowAvailableZoneInfoResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowAvailableZoneInfoResponse> showAvailableZoneInfoAsync(
         ShowAvailableZoneInfoRequest request) {
         return hcClient.asyncInvokeHttp(request, CbhMeta.showAvailableZoneInfo);
@@ -398,6 +419,7 @@ public class CbhAsyncClient {
      * @param request ShowAvailableZoneInfoRequest 请求对象
      * @return AsyncInvoker<ShowAvailableZoneInfoRequest, ShowAvailableZoneInfoResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowAvailableZoneInfoRequest, ShowAvailableZoneInfoResponse> showAvailableZoneInfoAsyncInvoker(
         ShowAvailableZoneInfoRequest request) {
         return new AsyncInvoker<>(request, CbhMeta.showAvailableZoneInfo, hcClient);
@@ -413,6 +435,7 @@ public class CbhAsyncClient {
      * @param request ShowNetworkConfigurationRequest 请求对象
      * @return CompletableFuture<ShowNetworkConfigurationResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowNetworkConfigurationResponse> showNetworkConfigurationAsync(
         ShowNetworkConfigurationRequest request) {
         return hcClient.asyncInvokeHttp(request, CbhMeta.showNetworkConfiguration);
@@ -428,6 +451,7 @@ public class CbhAsyncClient {
      * @param request ShowNetworkConfigurationRequest 请求对象
      * @return AsyncInvoker<ShowNetworkConfigurationRequest, ShowNetworkConfigurationResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowNetworkConfigurationRequest, ShowNetworkConfigurationResponse> showNetworkConfigurationAsyncInvoker(
         ShowNetworkConfigurationRequest request) {
         return new AsyncInvoker<>(request, CbhMeta.showNetworkConfiguration, hcClient);
@@ -443,6 +467,7 @@ public class CbhAsyncClient {
      * @param request StartCbhInstanceRequest 请求对象
      * @return CompletableFuture<StartCbhInstanceResponse>
      */
+    @Deprecated
     public CompletableFuture<StartCbhInstanceResponse> startCbhInstanceAsync(StartCbhInstanceRequest request) {
         return hcClient.asyncInvokeHttp(request, CbhMeta.startCbhInstance);
     }
@@ -457,6 +482,7 @@ public class CbhAsyncClient {
      * @param request StartCbhInstanceRequest 请求对象
      * @return AsyncInvoker<StartCbhInstanceRequest, StartCbhInstanceResponse>
      */
+    @Deprecated
     public AsyncInvoker<StartCbhInstanceRequest, StartCbhInstanceResponse> startCbhInstanceAsyncInvoker(
         StartCbhInstanceRequest request) {
         return new AsyncInvoker<>(request, CbhMeta.startCbhInstance, hcClient);
@@ -472,6 +498,7 @@ public class CbhAsyncClient {
      * @param request StopCbhInstanceRequest 请求对象
      * @return CompletableFuture<StopCbhInstanceResponse>
      */
+    @Deprecated
     public CompletableFuture<StopCbhInstanceResponse> stopCbhInstanceAsync(StopCbhInstanceRequest request) {
         return hcClient.asyncInvokeHttp(request, CbhMeta.stopCbhInstance);
     }
@@ -486,6 +513,7 @@ public class CbhAsyncClient {
      * @param request StopCbhInstanceRequest 请求对象
      * @return AsyncInvoker<StopCbhInstanceRequest, StopCbhInstanceResponse>
      */
+    @Deprecated
     public AsyncInvoker<StopCbhInstanceRequest, StopCbhInstanceResponse> stopCbhInstanceAsyncInvoker(
         StopCbhInstanceRequest request) {
         return new AsyncInvoker<>(request, CbhMeta.stopCbhInstance, hcClient);
@@ -501,6 +529,7 @@ public class CbhAsyncClient {
      * @param request UninstallCbhEipRequest 请求对象
      * @return CompletableFuture<UninstallCbhEipResponse>
      */
+    @Deprecated
     public CompletableFuture<UninstallCbhEipResponse> uninstallCbhEipAsync(UninstallCbhEipRequest request) {
         return hcClient.asyncInvokeHttp(request, CbhMeta.uninstallCbhEip);
     }
@@ -515,6 +544,7 @@ public class CbhAsyncClient {
      * @param request UninstallCbhEipRequest 请求对象
      * @return AsyncInvoker<UninstallCbhEipRequest, UninstallCbhEipResponse>
      */
+    @Deprecated
     public AsyncInvoker<UninstallCbhEipRequest, UninstallCbhEipResponse> uninstallCbhEipAsyncInvoker(
         UninstallCbhEipRequest request) {
         return new AsyncInvoker<>(request, CbhMeta.uninstallCbhEip, hcClient);
@@ -530,6 +560,7 @@ public class CbhAsyncClient {
      * @param request UpgradeCbhInstanceRequest 请求对象
      * @return CompletableFuture<UpgradeCbhInstanceResponse>
      */
+    @Deprecated
     public CompletableFuture<UpgradeCbhInstanceResponse> upgradeCbhInstanceAsync(UpgradeCbhInstanceRequest request) {
         return hcClient.asyncInvokeHttp(request, CbhMeta.upgradeCbhInstance);
     }
@@ -544,6 +575,7 @@ public class CbhAsyncClient {
      * @param request UpgradeCbhInstanceRequest 请求对象
      * @return AsyncInvoker<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse> upgradeCbhInstanceAsyncInvoker(
         UpgradeCbhInstanceRequest request) {
         return new AsyncInvoker<>(request, CbhMeta.upgradeCbhInstance, hcClient);
@@ -559,6 +591,7 @@ public class CbhAsyncClient {
      * @param request LoginCbhRequest 请求对象
      * @return CompletableFuture<LoginCbhResponse>
      */
+    @Deprecated
     public CompletableFuture<LoginCbhResponse> loginCbhAsync(LoginCbhRequest request) {
         return hcClient.asyncInvokeHttp(request, CbhMeta.loginCbh);
     }
@@ -573,6 +606,7 @@ public class CbhAsyncClient {
      * @param request LoginCbhRequest 请求对象
      * @return AsyncInvoker<LoginCbhRequest, LoginCbhResponse>
      */
+    @Deprecated
     public AsyncInvoker<LoginCbhRequest, LoginCbhResponse> loginCbhAsyncInvoker(LoginCbhRequest request) {
         return new AsyncInvoker<>(request, CbhMeta.loginCbh, hcClient);
     }

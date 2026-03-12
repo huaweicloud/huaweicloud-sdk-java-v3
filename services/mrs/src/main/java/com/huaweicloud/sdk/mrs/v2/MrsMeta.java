@@ -18,6 +18,7 @@ import com.huaweicloud.sdk.mrs.v2.model.CancelSqlResponse;
 import com.huaweicloud.sdk.mrs.v2.model.CancelSyncIamUserRequest;
 import com.huaweicloud.sdk.mrs.v2.model.CancelSyncIamUserResponse;
 import com.huaweicloud.sdk.mrs.v2.model.CancelSyncRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ClusterAuthTros;
 import com.huaweicloud.sdk.mrs.v2.model.CreateAutoScalingPolicyRequest;
 import com.huaweicloud.sdk.mrs.v2.model.CreateAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.mrs.v2.model.CreateClusterReqV2;
@@ -39,6 +40,8 @@ import com.huaweicloud.sdk.mrs.v2.model.ExpandClusterResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ExpandParam;
 import com.huaweicloud.sdk.mrs.v2.model.JobBatchDelete;
 import com.huaweicloud.sdk.mrs.v2.model.JobExecution;
+import com.huaweicloud.sdk.mrs.v2.model.ListClusterManagerAuthStateRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ListClusterManagerAuthStateResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ListNodesRequest;
@@ -89,6 +92,8 @@ import com.huaweicloud.sdk.mrs.v2.model.UpdateAgencyMappingRequest;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateAgencyMappingResponse;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateAutoScalingPolicyRequest;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateAutoScalingPolicyResponse;
+import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterAuthTrosRequest;
+import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterAuthTrosResponse;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterNameRequest;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterNameResponse;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterReq;
@@ -626,6 +631,33 @@ public class MrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListClusterManagerAuthStateRequest, ListClusterManagerAuthStateResponse> listClusterManagerAuthState =
+        genForListClusterManagerAuthState();
+
+    private static HttpRequestDef<ListClusterManagerAuthStateRequest, ListClusterManagerAuthStateResponse> genForListClusterManagerAuthState() {
+        // basic
+        HttpRequestDef.Builder<ListClusterManagerAuthStateRequest, ListClusterManagerAuthStateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListClusterManagerAuthStateRequest.class,
+                    ListClusterManagerAuthStateResponse.class)
+                .withName("ListClusterManagerAuthState")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/manager-auth")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterManagerAuthStateRequest::getClusterId,
+                ListClusterManagerAuthStateRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListNodesRequest, ListNodesResponse> listNodes = genForListNodes();
 
     private static HttpRequestDef<ListNodesRequest, ListNodesResponse> genForListNodes() {
@@ -739,6 +771,35 @@ public class MrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShrinkParam.class),
             f -> f.withMarshaller(ShrinkClusterRequest::getBody, ShrinkClusterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateClusterAuthTrosRequest, UpdateClusterAuthTrosResponse> updateClusterAuthTros =
+        genForUpdateClusterAuthTros();
+
+    private static HttpRequestDef<UpdateClusterAuthTrosRequest, UpdateClusterAuthTrosResponse> genForUpdateClusterAuthTros() {
+        // basic
+        HttpRequestDef.Builder<UpdateClusterAuthTrosRequest, UpdateClusterAuthTrosResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpdateClusterAuthTrosRequest.class, UpdateClusterAuthTrosResponse.class)
+            .withName("UpdateClusterAuthTros")
+            .withUri("/v2/{project_id}/clusters/{cluster_id}/manager-auth")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClusterAuthTrosRequest::getClusterId,
+                UpdateClusterAuthTrosRequest::setClusterId));
+        builder.<ClusterAuthTros>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ClusterAuthTros.class),
+            f -> f.withMarshaller(UpdateClusterAuthTrosRequest::getBody, UpdateClusterAuthTrosRequest::setBody));
 
         // response
 

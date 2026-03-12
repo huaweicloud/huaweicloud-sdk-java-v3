@@ -63,6 +63,7 @@ public class CbhClient {
      * @param request ChangeInstanceNetworkRequest 请求对象
      * @return ChangeInstanceNetworkResponse
      */
+    @Deprecated
     public ChangeInstanceNetworkResponse changeInstanceNetwork(ChangeInstanceNetworkRequest request) {
         return hcClient.syncInvokeHttp(request, CbhMeta.changeInstanceNetwork);
     }
@@ -77,6 +78,7 @@ public class CbhClient {
      * @param request ChangeInstanceNetworkRequest 请求对象
      * @return SyncInvoker<ChangeInstanceNetworkRequest, ChangeInstanceNetworkResponse>
      */
+    @Deprecated
     public SyncInvoker<ChangeInstanceNetworkRequest, ChangeInstanceNetworkResponse> changeInstanceNetworkInvoker(
         ChangeInstanceNetworkRequest request) {
         return new SyncInvoker<>(request, CbhMeta.changeInstanceNetwork, hcClient);
@@ -92,6 +94,7 @@ public class CbhClient {
      * @param request ChangeInstanceOrderRequest 请求对象
      * @return ChangeInstanceOrderResponse
      */
+    @Deprecated
     public ChangeInstanceOrderResponse changeInstanceOrder(ChangeInstanceOrderRequest request) {
         return hcClient.syncInvokeHttp(request, CbhMeta.changeInstanceOrder);
     }
@@ -106,6 +109,7 @@ public class CbhClient {
      * @param request ChangeInstanceOrderRequest 请求对象
      * @return SyncInvoker<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse>
      */
+    @Deprecated
     public SyncInvoker<ChangeInstanceOrderRequest, ChangeInstanceOrderResponse> changeInstanceOrderInvoker(
         ChangeInstanceOrderRequest request) {
         return new SyncInvoker<>(request, CbhMeta.changeInstanceOrder, hcClient);
@@ -121,6 +125,7 @@ public class CbhClient {
      * @param request CreateCbhRequest 请求对象
      * @return CreateCbhResponse
      */
+    @Deprecated
     public CreateCbhResponse createCbh(CreateCbhRequest request) {
         return hcClient.syncInvokeHttp(request, CbhMeta.createCbh);
     }
@@ -135,6 +140,7 @@ public class CbhClient {
      * @param request CreateCbhRequest 请求对象
      * @return SyncInvoker<CreateCbhRequest, CreateCbhResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateCbhRequest, CreateCbhResponse> createCbhInvoker(CreateCbhRequest request) {
         return new SyncInvoker<>(request, CbhMeta.createCbh, hcClient);
     }
@@ -149,6 +155,7 @@ public class CbhClient {
      * @param request CreateInstanceOrderRequest 请求对象
      * @return CreateInstanceOrderResponse
      */
+    @Deprecated
     public CreateInstanceOrderResponse createInstanceOrder(CreateInstanceOrderRequest request) {
         return hcClient.syncInvokeHttp(request, CbhMeta.createInstanceOrder);
     }
@@ -163,6 +170,7 @@ public class CbhClient {
      * @param request CreateInstanceOrderRequest 请求对象
      * @return SyncInvoker<CreateInstanceOrderRequest, CreateInstanceOrderResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateInstanceOrderRequest, CreateInstanceOrderResponse> createInstanceOrderInvoker(
         CreateInstanceOrderRequest request) {
         return new SyncInvoker<>(request, CbhMeta.createInstanceOrder, hcClient);
@@ -178,6 +186,7 @@ public class CbhClient {
      * @param request InstallCbhEipRequest 请求对象
      * @return InstallCbhEipResponse
      */
+    @Deprecated
     public InstallCbhEipResponse installCbhEip(InstallCbhEipRequest request) {
         return hcClient.syncInvokeHttp(request, CbhMeta.installCbhEip);
     }
@@ -192,6 +201,7 @@ public class CbhClient {
      * @param request InstallCbhEipRequest 请求对象
      * @return SyncInvoker<InstallCbhEipRequest, InstallCbhEipResponse>
      */
+    @Deprecated
     public SyncInvoker<InstallCbhEipRequest, InstallCbhEipResponse> installCbhEipInvoker(InstallCbhEipRequest request) {
         return new SyncInvoker<>(request, CbhMeta.installCbhEip, hcClient);
     }
@@ -235,6 +245,7 @@ public class CbhClient {
      * @param request ListQuotaStatusRequest 请求对象
      * @return ListQuotaStatusResponse
      */
+    @Deprecated
     public ListQuotaStatusResponse listQuotaStatus(ListQuotaStatusRequest request) {
         return hcClient.syncInvokeHttp(request, CbhMeta.listQuotaStatus);
     }
@@ -249,6 +260,7 @@ public class CbhClient {
      * @param request ListQuotaStatusRequest 请求对象
      * @return SyncInvoker<ListQuotaStatusRequest, ListQuotaStatusResponse>
      */
+    @Deprecated
     public SyncInvoker<ListQuotaStatusRequest, ListQuotaStatusResponse> listQuotaStatusInvoker(
         ListQuotaStatusRequest request) {
         return new SyncInvoker<>(request, CbhMeta.listQuotaStatus, hcClient);
@@ -264,6 +276,7 @@ public class CbhClient {
      * @param request ResetLoginMethodRequest 请求对象
      * @return ResetLoginMethodResponse
      */
+    @Deprecated
     public ResetLoginMethodResponse resetLoginMethod(ResetLoginMethodRequest request) {
         return hcClient.syncInvokeHttp(request, CbhMeta.resetLoginMethod);
     }
@@ -278,6 +291,7 @@ public class CbhClient {
      * @param request ResetLoginMethodRequest 请求对象
      * @return SyncInvoker<ResetLoginMethodRequest, ResetLoginMethodResponse>
      */
+    @Deprecated
     public SyncInvoker<ResetLoginMethodRequest, ResetLoginMethodResponse> resetLoginMethodInvoker(
         ResetLoginMethodRequest request) {
         return new SyncInvoker<>(request, CbhMeta.resetLoginMethod, hcClient);
@@ -293,6 +307,7 @@ public class CbhClient {
      * @param request ResetPasswordRequest 请求对象
      * @return ResetPasswordResponse
      */
+    @Deprecated
     public ResetPasswordResponse resetPassword(ResetPasswordRequest request) {
         return hcClient.syncInvokeHttp(request, CbhMeta.resetPassword);
     }
@@ -307,6 +322,7 @@ public class CbhClient {
      * @param request ResetPasswordRequest 请求对象
      * @return SyncInvoker<ResetPasswordRequest, ResetPasswordResponse>
      */
+    @Deprecated
     public SyncInvoker<ResetPasswordRequest, ResetPasswordResponse> resetPasswordInvoker(ResetPasswordRequest request) {
         return new SyncInvoker<>(request, CbhMeta.resetPassword, hcClient);
     }
@@ -321,6 +337,7 @@ public class CbhClient {
      * @param request RestartCbhInstanceRequest 请求对象
      * @return RestartCbhInstanceResponse
      */
+    @Deprecated
     public RestartCbhInstanceResponse restartCbhInstance(RestartCbhInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, CbhMeta.restartCbhInstance);
     }
@@ -335,6 +352,7 @@ public class CbhClient {
      * @param request RestartCbhInstanceRequest 请求对象
      * @return SyncInvoker<RestartCbhInstanceRequest, RestartCbhInstanceResponse>
      */
+    @Deprecated
     public SyncInvoker<RestartCbhInstanceRequest, RestartCbhInstanceResponse> restartCbhInstanceInvoker(
         RestartCbhInstanceRequest request) {
         return new SyncInvoker<>(request, CbhMeta.restartCbhInstance, hcClient);
@@ -350,6 +368,7 @@ public class CbhClient {
      * @param request SearchQuotaRequest 请求对象
      * @return SearchQuotaResponse
      */
+    @Deprecated
     public SearchQuotaResponse searchQuota(SearchQuotaRequest request) {
         return hcClient.syncInvokeHttp(request, CbhMeta.searchQuota);
     }
@@ -364,6 +383,7 @@ public class CbhClient {
      * @param request SearchQuotaRequest 请求对象
      * @return SyncInvoker<SearchQuotaRequest, SearchQuotaResponse>
      */
+    @Deprecated
     public SyncInvoker<SearchQuotaRequest, SearchQuotaResponse> searchQuotaInvoker(SearchQuotaRequest request) {
         return new SyncInvoker<>(request, CbhMeta.searchQuota, hcClient);
     }
@@ -378,6 +398,7 @@ public class CbhClient {
      * @param request ShowAvailableZoneInfoRequest 请求对象
      * @return ShowAvailableZoneInfoResponse
      */
+    @Deprecated
     public ShowAvailableZoneInfoResponse showAvailableZoneInfo(ShowAvailableZoneInfoRequest request) {
         return hcClient.syncInvokeHttp(request, CbhMeta.showAvailableZoneInfo);
     }
@@ -392,6 +413,7 @@ public class CbhClient {
      * @param request ShowAvailableZoneInfoRequest 请求对象
      * @return SyncInvoker<ShowAvailableZoneInfoRequest, ShowAvailableZoneInfoResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowAvailableZoneInfoRequest, ShowAvailableZoneInfoResponse> showAvailableZoneInfoInvoker(
         ShowAvailableZoneInfoRequest request) {
         return new SyncInvoker<>(request, CbhMeta.showAvailableZoneInfo, hcClient);
@@ -407,6 +429,7 @@ public class CbhClient {
      * @param request ShowNetworkConfigurationRequest 请求对象
      * @return ShowNetworkConfigurationResponse
      */
+    @Deprecated
     public ShowNetworkConfigurationResponse showNetworkConfiguration(ShowNetworkConfigurationRequest request) {
         return hcClient.syncInvokeHttp(request, CbhMeta.showNetworkConfiguration);
     }
@@ -421,6 +444,7 @@ public class CbhClient {
      * @param request ShowNetworkConfigurationRequest 请求对象
      * @return SyncInvoker<ShowNetworkConfigurationRequest, ShowNetworkConfigurationResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowNetworkConfigurationRequest, ShowNetworkConfigurationResponse> showNetworkConfigurationInvoker(
         ShowNetworkConfigurationRequest request) {
         return new SyncInvoker<>(request, CbhMeta.showNetworkConfiguration, hcClient);
@@ -436,6 +460,7 @@ public class CbhClient {
      * @param request StartCbhInstanceRequest 请求对象
      * @return StartCbhInstanceResponse
      */
+    @Deprecated
     public StartCbhInstanceResponse startCbhInstance(StartCbhInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, CbhMeta.startCbhInstance);
     }
@@ -450,6 +475,7 @@ public class CbhClient {
      * @param request StartCbhInstanceRequest 请求对象
      * @return SyncInvoker<StartCbhInstanceRequest, StartCbhInstanceResponse>
      */
+    @Deprecated
     public SyncInvoker<StartCbhInstanceRequest, StartCbhInstanceResponse> startCbhInstanceInvoker(
         StartCbhInstanceRequest request) {
         return new SyncInvoker<>(request, CbhMeta.startCbhInstance, hcClient);
@@ -465,6 +491,7 @@ public class CbhClient {
      * @param request StopCbhInstanceRequest 请求对象
      * @return StopCbhInstanceResponse
      */
+    @Deprecated
     public StopCbhInstanceResponse stopCbhInstance(StopCbhInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, CbhMeta.stopCbhInstance);
     }
@@ -479,6 +506,7 @@ public class CbhClient {
      * @param request StopCbhInstanceRequest 请求对象
      * @return SyncInvoker<StopCbhInstanceRequest, StopCbhInstanceResponse>
      */
+    @Deprecated
     public SyncInvoker<StopCbhInstanceRequest, StopCbhInstanceResponse> stopCbhInstanceInvoker(
         StopCbhInstanceRequest request) {
         return new SyncInvoker<>(request, CbhMeta.stopCbhInstance, hcClient);
@@ -494,6 +522,7 @@ public class CbhClient {
      * @param request UninstallCbhEipRequest 请求对象
      * @return UninstallCbhEipResponse
      */
+    @Deprecated
     public UninstallCbhEipResponse uninstallCbhEip(UninstallCbhEipRequest request) {
         return hcClient.syncInvokeHttp(request, CbhMeta.uninstallCbhEip);
     }
@@ -508,6 +537,7 @@ public class CbhClient {
      * @param request UninstallCbhEipRequest 请求对象
      * @return SyncInvoker<UninstallCbhEipRequest, UninstallCbhEipResponse>
      */
+    @Deprecated
     public SyncInvoker<UninstallCbhEipRequest, UninstallCbhEipResponse> uninstallCbhEipInvoker(
         UninstallCbhEipRequest request) {
         return new SyncInvoker<>(request, CbhMeta.uninstallCbhEip, hcClient);
@@ -523,6 +553,7 @@ public class CbhClient {
      * @param request UpgradeCbhInstanceRequest 请求对象
      * @return UpgradeCbhInstanceResponse
      */
+    @Deprecated
     public UpgradeCbhInstanceResponse upgradeCbhInstance(UpgradeCbhInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, CbhMeta.upgradeCbhInstance);
     }
@@ -537,6 +568,7 @@ public class CbhClient {
      * @param request UpgradeCbhInstanceRequest 请求对象
      * @return SyncInvoker<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse>
      */
+    @Deprecated
     public SyncInvoker<UpgradeCbhInstanceRequest, UpgradeCbhInstanceResponse> upgradeCbhInstanceInvoker(
         UpgradeCbhInstanceRequest request) {
         return new SyncInvoker<>(request, CbhMeta.upgradeCbhInstance, hcClient);
@@ -552,6 +584,7 @@ public class CbhClient {
      * @param request LoginCbhRequest 请求对象
      * @return LoginCbhResponse
      */
+    @Deprecated
     public LoginCbhResponse loginCbh(LoginCbhRequest request) {
         return hcClient.syncInvokeHttp(request, CbhMeta.loginCbh);
     }
@@ -566,6 +599,7 @@ public class CbhClient {
      * @param request LoginCbhRequest 请求对象
      * @return SyncInvoker<LoginCbhRequest, LoginCbhResponse>
      */
+    @Deprecated
     public SyncInvoker<LoginCbhRequest, LoginCbhResponse> loginCbhInvoker(LoginCbhRequest request) {
         return new SyncInvoker<>(request, CbhMeta.loginCbh, hcClient);
     }

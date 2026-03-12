@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.organizations.v1.model.AcceptHandshakeRequest;
 import com.huaweicloud.sdk.organizations.v1.model.AcceptHandshakeResponse;
+import com.huaweicloud.sdk.organizations.v1.model.AttachDryRunPolicyRequest;
+import com.huaweicloud.sdk.organizations.v1.model.AttachDryRunPolicyResponse;
 import com.huaweicloud.sdk.organizations.v1.model.AttachPolicyRequest;
 import com.huaweicloud.sdk.organizations.v1.model.AttachPolicyResponse;
 import com.huaweicloud.sdk.organizations.v1.model.CancelHandshakeRequest;
@@ -16,6 +18,9 @@ import com.huaweicloud.sdk.organizations.v1.model.CloseAccountResponse;
 import com.huaweicloud.sdk.organizations.v1.model.CreateAccountReqBody;
 import com.huaweicloud.sdk.organizations.v1.model.CreateAccountRequest;
 import com.huaweicloud.sdk.organizations.v1.model.CreateAccountResponse;
+import com.huaweicloud.sdk.organizations.v1.model.CreateDryRunPolicyReqBody;
+import com.huaweicloud.sdk.organizations.v1.model.CreateDryRunPolicyRequest;
+import com.huaweicloud.sdk.organizations.v1.model.CreateDryRunPolicyResponse;
 import com.huaweicloud.sdk.organizations.v1.model.CreateOrganizationRequest;
 import com.huaweicloud.sdk.organizations.v1.model.CreateOrganizationResponse;
 import com.huaweicloud.sdk.organizations.v1.model.CreateOrganizationalUnitReqBody;
@@ -32,6 +37,8 @@ import com.huaweicloud.sdk.organizations.v1.model.CreateTagResourceResponse;
 import com.huaweicloud.sdk.organizations.v1.model.DeclineHandshakeRequest;
 import com.huaweicloud.sdk.organizations.v1.model.DeclineHandshakeResponse;
 import com.huaweicloud.sdk.organizations.v1.model.DelegatedAdministratorReqBody;
+import com.huaweicloud.sdk.organizations.v1.model.DeleteDryRunPolicyRequest;
+import com.huaweicloud.sdk.organizations.v1.model.DeleteDryRunPolicyResponse;
 import com.huaweicloud.sdk.organizations.v1.model.DeleteOrganizationRequest;
 import com.huaweicloud.sdk.organizations.v1.model.DeleteOrganizationResponse;
 import com.huaweicloud.sdk.organizations.v1.model.DeleteOrganizationalUnitRequest;
@@ -42,6 +49,8 @@ import com.huaweicloud.sdk.organizations.v1.model.DeleteTagResourceRequest;
 import com.huaweicloud.sdk.organizations.v1.model.DeleteTagResourceResponse;
 import com.huaweicloud.sdk.organizations.v1.model.DeregisterDelegatedAdministratorRequest;
 import com.huaweicloud.sdk.organizations.v1.model.DeregisterDelegatedAdministratorResponse;
+import com.huaweicloud.sdk.organizations.v1.model.DetachDryRunPolicyRequest;
+import com.huaweicloud.sdk.organizations.v1.model.DetachDryRunPolicyResponse;
 import com.huaweicloud.sdk.organizations.v1.model.DetachPolicyRequest;
 import com.huaweicloud.sdk.organizations.v1.model.DetachPolicyResponse;
 import com.huaweicloud.sdk.organizations.v1.model.DisablePolicyTypeRequest;
@@ -67,6 +76,10 @@ import com.huaweicloud.sdk.organizations.v1.model.ListDelegatedAdministratorsReq
 import com.huaweicloud.sdk.organizations.v1.model.ListDelegatedAdministratorsResponse;
 import com.huaweicloud.sdk.organizations.v1.model.ListDelegatedServicesRequest;
 import com.huaweicloud.sdk.organizations.v1.model.ListDelegatedServicesResponse;
+import com.huaweicloud.sdk.organizations.v1.model.ListDryRunPoliciesRequest;
+import com.huaweicloud.sdk.organizations.v1.model.ListDryRunPoliciesResponse;
+import com.huaweicloud.sdk.organizations.v1.model.ListEntitiesForDryRunPolicyRequest;
+import com.huaweicloud.sdk.organizations.v1.model.ListEntitiesForDryRunPolicyResponse;
 import com.huaweicloud.sdk.organizations.v1.model.ListEntitiesForPolicyRequest;
 import com.huaweicloud.sdk.organizations.v1.model.ListEntitiesForPolicyResponse;
 import com.huaweicloud.sdk.organizations.v1.model.ListEntitiesRequest;
@@ -111,6 +124,10 @@ import com.huaweicloud.sdk.organizations.v1.model.ShowAccountRequest;
 import com.huaweicloud.sdk.organizations.v1.model.ShowAccountResponse;
 import com.huaweicloud.sdk.organizations.v1.model.ShowCreateAccountStatusRequest;
 import com.huaweicloud.sdk.organizations.v1.model.ShowCreateAccountStatusResponse;
+import com.huaweicloud.sdk.organizations.v1.model.ShowDryRunConfigRequest;
+import com.huaweicloud.sdk.organizations.v1.model.ShowDryRunConfigResponse;
+import com.huaweicloud.sdk.organizations.v1.model.ShowDryRunPolicyRequest;
+import com.huaweicloud.sdk.organizations.v1.model.ShowDryRunPolicyResponse;
 import com.huaweicloud.sdk.organizations.v1.model.ShowEffectivePoliciesRequest;
 import com.huaweicloud.sdk.organizations.v1.model.ShowEffectivePoliciesResponse;
 import com.huaweicloud.sdk.organizations.v1.model.ShowHandshakeRequest;
@@ -133,6 +150,11 @@ import com.huaweicloud.sdk.organizations.v1.model.UntagResourceResponse;
 import com.huaweicloud.sdk.organizations.v1.model.UpdateAccountReqBody;
 import com.huaweicloud.sdk.organizations.v1.model.UpdateAccountRequest;
 import com.huaweicloud.sdk.organizations.v1.model.UpdateAccountResponse;
+import com.huaweicloud.sdk.organizations.v1.model.UpdateDryRunConfigReqBody;
+import com.huaweicloud.sdk.organizations.v1.model.UpdateDryRunConfigRequest;
+import com.huaweicloud.sdk.organizations.v1.model.UpdateDryRunConfigResponse;
+import com.huaweicloud.sdk.organizations.v1.model.UpdateDryRunPolicyRequest;
+import com.huaweicloud.sdk.organizations.v1.model.UpdateDryRunPolicyResponse;
 import com.huaweicloud.sdk.organizations.v1.model.UpdateOrganizationalUnitReqBody;
 import com.huaweicloud.sdk.organizations.v1.model.UpdateOrganizationalUnitRequest;
 import com.huaweicloud.sdk.organizations.v1.model.UpdateOrganizationalUnitResponse;
@@ -677,6 +699,363 @@ public class OrganizationsMeta {
             TypeCasts.uncheckedConversion(DelegatedAdministratorReqBody.class),
             f -> f.withMarshaller(RegisterDelegatedAdministratorRequest::getBody,
                 RegisterDelegatedAdministratorRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDryRunConfigRequest, ShowDryRunConfigResponse> showDryRunConfig =
+        genForShowDryRunConfig();
+
+    private static HttpRequestDef<ShowDryRunConfigRequest, ShowDryRunConfigResponse> genForShowDryRunConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowDryRunConfigRequest, ShowDryRunConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDryRunConfigRequest.class, ShowDryRunConfigResponse.class)
+                .withName("ShowDryRunConfig")
+                .withUri("/v1/organizations/dry-run-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("root_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDryRunConfigRequest::getRootId, ShowDryRunConfigRequest::setRootId));
+        builder.<ShowDryRunConfigRequest.PolicyTypeEnum>withRequestField("policy_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowDryRunConfigRequest.PolicyTypeEnum.class),
+            f -> f.withMarshaller(ShowDryRunConfigRequest::getPolicyType, ShowDryRunConfigRequest::setPolicyType));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDryRunConfigRequest::getXSecurityToken,
+                ShowDryRunConfigRequest::setXSecurityToken));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDryRunConfigRequest, UpdateDryRunConfigResponse> updateDryRunConfig =
+        genForUpdateDryRunConfig();
+
+    private static HttpRequestDef<UpdateDryRunConfigRequest, UpdateDryRunConfigResponse> genForUpdateDryRunConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateDryRunConfigRequest, UpdateDryRunConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateDryRunConfigRequest.class, UpdateDryRunConfigResponse.class)
+                .withName("UpdateDryRunConfig")
+                .withUri("/v1/organizations/dry-run-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDryRunConfigRequest::getXSecurityToken,
+                UpdateDryRunConfigRequest::setXSecurityToken));
+        builder.<UpdateDryRunConfigReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDryRunConfigReqBody.class),
+            f -> f.withMarshaller(UpdateDryRunConfigRequest::getBody, UpdateDryRunConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AttachDryRunPolicyRequest, AttachDryRunPolicyResponse> attachDryRunPolicy =
+        genForAttachDryRunPolicy();
+
+    private static HttpRequestDef<AttachDryRunPolicyRequest, AttachDryRunPolicyResponse> genForAttachDryRunPolicy() {
+        // basic
+        HttpRequestDef.Builder<AttachDryRunPolicyRequest, AttachDryRunPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AttachDryRunPolicyRequest.class, AttachDryRunPolicyResponse.class)
+                .withName("AttachDryRunPolicy")
+                .withUri("/v1/organizations/dry-run-policies/{policy_id}/attach")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AttachDryRunPolicyRequest::getPolicyId, AttachDryRunPolicyRequest::setPolicyId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AttachDryRunPolicyRequest::getXSecurityToken,
+                AttachDryRunPolicyRequest::setXSecurityToken));
+        builder.<PolicyTachReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PolicyTachReqBody.class),
+            f -> f.withMarshaller(AttachDryRunPolicyRequest::getBody, AttachDryRunPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDryRunPolicyRequest, CreateDryRunPolicyResponse> createDryRunPolicy =
+        genForCreateDryRunPolicy();
+
+    private static HttpRequestDef<CreateDryRunPolicyRequest, CreateDryRunPolicyResponse> genForCreateDryRunPolicy() {
+        // basic
+        HttpRequestDef.Builder<CreateDryRunPolicyRequest, CreateDryRunPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDryRunPolicyRequest.class, CreateDryRunPolicyResponse.class)
+                .withName("CreateDryRunPolicy")
+                .withUri("/v1/organizations/dry-run-policies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDryRunPolicyRequest::getXSecurityToken,
+                CreateDryRunPolicyRequest::setXSecurityToken));
+        builder.<CreateDryRunPolicyRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateDryRunPolicyRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CreateDryRunPolicyRequest::getXLanguage, CreateDryRunPolicyRequest::setXLanguage));
+        builder.<CreateDryRunPolicyReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDryRunPolicyReqBody.class),
+            f -> f.withMarshaller(CreateDryRunPolicyRequest::getBody, CreateDryRunPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDryRunPolicyRequest, DeleteDryRunPolicyResponse> deleteDryRunPolicy =
+        genForDeleteDryRunPolicy();
+
+    private static HttpRequestDef<DeleteDryRunPolicyRequest, DeleteDryRunPolicyResponse> genForDeleteDryRunPolicy() {
+        // basic
+        HttpRequestDef.Builder<DeleteDryRunPolicyRequest, DeleteDryRunPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDryRunPolicyRequest.class, DeleteDryRunPolicyResponse.class)
+                .withName("DeleteDryRunPolicy")
+                .withUri("/v1/organizations/dry-run-policies/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDryRunPolicyRequest::getPolicyId, DeleteDryRunPolicyRequest::setPolicyId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDryRunPolicyRequest::getXSecurityToken,
+                DeleteDryRunPolicyRequest::setXSecurityToken));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DetachDryRunPolicyRequest, DetachDryRunPolicyResponse> detachDryRunPolicy =
+        genForDetachDryRunPolicy();
+
+    private static HttpRequestDef<DetachDryRunPolicyRequest, DetachDryRunPolicyResponse> genForDetachDryRunPolicy() {
+        // basic
+        HttpRequestDef.Builder<DetachDryRunPolicyRequest, DetachDryRunPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DetachDryRunPolicyRequest.class, DetachDryRunPolicyResponse.class)
+                .withName("DetachDryRunPolicy")
+                .withUri("/v1/organizations/dry-run-policies/{policy_id}/detach")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DetachDryRunPolicyRequest::getPolicyId, DetachDryRunPolicyRequest::setPolicyId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DetachDryRunPolicyRequest::getXSecurityToken,
+                DetachDryRunPolicyRequest::setXSecurityToken));
+        builder.<PolicyTachReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PolicyTachReqBody.class),
+            f -> f.withMarshaller(DetachDryRunPolicyRequest::getBody, DetachDryRunPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDryRunPoliciesRequest, ListDryRunPoliciesResponse> listDryRunPolicies =
+        genForListDryRunPolicies();
+
+    private static HttpRequestDef<ListDryRunPoliciesRequest, ListDryRunPoliciesResponse> genForListDryRunPolicies() {
+        // basic
+        HttpRequestDef.Builder<ListDryRunPoliciesRequest, ListDryRunPoliciesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDryRunPoliciesRequest.class, ListDryRunPoliciesResponse.class)
+                .withName("ListDryRunPolicies")
+                .withUri("/v1/organizations/dry-run-policies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("attached_entity_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDryRunPoliciesRequest::getAttachedEntityId,
+                ListDryRunPoliciesRequest::setAttachedEntityId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDryRunPoliciesRequest::getLimit, ListDryRunPoliciesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDryRunPoliciesRequest::getMarker, ListDryRunPoliciesRequest::setMarker));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDryRunPoliciesRequest::getXSecurityToken,
+                ListDryRunPoliciesRequest::setXSecurityToken));
+        builder.<ListDryRunPoliciesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListDryRunPoliciesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListDryRunPoliciesRequest::getXLanguage, ListDryRunPoliciesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEntitiesForDryRunPolicyRequest, ListEntitiesForDryRunPolicyResponse> listEntitiesForDryRunPolicy =
+        genForListEntitiesForDryRunPolicy();
+
+    private static HttpRequestDef<ListEntitiesForDryRunPolicyRequest, ListEntitiesForDryRunPolicyResponse> genForListEntitiesForDryRunPolicy() {
+        // basic
+        HttpRequestDef.Builder<ListEntitiesForDryRunPolicyRequest, ListEntitiesForDryRunPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListEntitiesForDryRunPolicyRequest.class,
+                    ListEntitiesForDryRunPolicyResponse.class)
+                .withName("ListEntitiesForDryRunPolicy")
+                .withUri("/v1/organizations/dry-run-policies/{policy_id}/attached-entities")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEntitiesForDryRunPolicyRequest::getPolicyId,
+                ListEntitiesForDryRunPolicyRequest::setPolicyId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEntitiesForDryRunPolicyRequest::getLimit,
+                ListEntitiesForDryRunPolicyRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEntitiesForDryRunPolicyRequest::getMarker,
+                ListEntitiesForDryRunPolicyRequest::setMarker));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEntitiesForDryRunPolicyRequest::getXSecurityToken,
+                ListEntitiesForDryRunPolicyRequest::setXSecurityToken));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDryRunPolicyRequest, ShowDryRunPolicyResponse> showDryRunPolicy =
+        genForShowDryRunPolicy();
+
+    private static HttpRequestDef<ShowDryRunPolicyRequest, ShowDryRunPolicyResponse> genForShowDryRunPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowDryRunPolicyRequest, ShowDryRunPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDryRunPolicyRequest.class, ShowDryRunPolicyResponse.class)
+                .withName("ShowDryRunPolicy")
+                .withUri("/v1/organizations/dry-run-policies/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDryRunPolicyRequest::getPolicyId, ShowDryRunPolicyRequest::setPolicyId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDryRunPolicyRequest::getXSecurityToken,
+                ShowDryRunPolicyRequest::setXSecurityToken));
+        builder.<ShowDryRunPolicyRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowDryRunPolicyRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowDryRunPolicyRequest::getXLanguage, ShowDryRunPolicyRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDryRunPolicyRequest, UpdateDryRunPolicyResponse> updateDryRunPolicy =
+        genForUpdateDryRunPolicy();
+
+    private static HttpRequestDef<UpdateDryRunPolicyRequest, UpdateDryRunPolicyResponse> genForUpdateDryRunPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateDryRunPolicyRequest, UpdateDryRunPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PATCH, UpdateDryRunPolicyRequest.class, UpdateDryRunPolicyResponse.class)
+                .withName("UpdateDryRunPolicy")
+                .withUri("/v1/organizations/dry-run-policies/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDryRunPolicyRequest::getPolicyId, UpdateDryRunPolicyRequest::setPolicyId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDryRunPolicyRequest::getXSecurityToken,
+                UpdateDryRunPolicyRequest::setXSecurityToken));
+        builder.<UpdateDryRunPolicyRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateDryRunPolicyRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(UpdateDryRunPolicyRequest::getXLanguage, UpdateDryRunPolicyRequest::setXLanguage));
+        builder.<UpdatePolicyReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePolicyReqBody.class),
+            f -> f.withMarshaller(UpdateDryRunPolicyRequest::getBody, UpdateDryRunPolicyRequest::setBody));
 
         // response
 

@@ -15,24 +15,58 @@ import java.util.function.Consumer;
 public class ShowConsumerStateResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "has_more")
+
+    private Boolean hasMore;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "stream_name")
+
+    private String streamName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_name")
 
     private String appName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "app_id")
+    @JsonProperty(value = "partition_consuming_states")
 
-    private String appId;
+    private List<PartitionConsumingStates> partitionConsumingStates = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_time")
+    public ShowConsumerStateResponse withHasMore(Boolean hasMore) {
+        this.hasMore = hasMore;
+        return this;
+    }
 
-    private Long createTime;
+    /**
+     * 是否还有更多满足条件的App。  - true：是。 - false：否。
+     * @return hasMore
+     */
+    public Boolean getHasMore() {
+        return hasMore;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "commit_checkpoint_stream_names")
+    public void setHasMore(Boolean hasMore) {
+        this.hasMore = hasMore;
+    }
 
-    private List<String> commitCheckpointStreamNames = null;
+    public ShowConsumerStateResponse withStreamName(String streamName) {
+        this.streamName = streamName;
+        return this;
+    }
+
+    /**
+     * 要查询的通道名称。
+     * @return streamName
+     */
+    public String getStreamName() {
+        return streamName;
+    }
+
+    public void setStreamName(String streamName) {
+        this.streamName = streamName;
+    }
 
     public ShowConsumerStateResponse withAppName(String appName) {
         this.appName = appName;
@@ -40,7 +74,7 @@ public class ShowConsumerStateResponse extends SdkResponse {
     }
 
     /**
-     * App的名称。
+     * 要查询的APP的名称，用户数据消费程序的唯一标识符。
      * @return appName
      */
     public String getAppName() {
@@ -51,72 +85,40 @@ public class ShowConsumerStateResponse extends SdkResponse {
         this.appName = appName;
     }
 
-    public ShowConsumerStateResponse withAppId(String appId) {
-        this.appId = appId;
+    public ShowConsumerStateResponse withPartitionConsumingStates(
+        List<PartitionConsumingStates> partitionConsumingStates) {
+        this.partitionConsumingStates = partitionConsumingStates;
         return this;
     }
 
-    /**
-     * App的唯一标识符。
-     * @return appId
-     */
-    public String getAppId() {
-        return appId;
-    }
-
-    public void setAppId(String appId) {
-        this.appId = appId;
-    }
-
-    public ShowConsumerStateResponse withCreateTime(Long createTime) {
-        this.createTime = createTime;
-        return this;
-    }
-
-    /**
-     * App创建的时间，单位毫秒。
-     * @return createTime
-     */
-    public Long getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
-    }
-
-    public ShowConsumerStateResponse withCommitCheckpointStreamNames(List<String> commitCheckpointStreamNames) {
-        this.commitCheckpointStreamNames = commitCheckpointStreamNames;
-        return this;
-    }
-
-    public ShowConsumerStateResponse addCommitCheckpointStreamNamesItem(String commitCheckpointStreamNamesItem) {
-        if (this.commitCheckpointStreamNames == null) {
-            this.commitCheckpointStreamNames = new ArrayList<>();
+    public ShowConsumerStateResponse addPartitionConsumingStatesItem(
+        PartitionConsumingStates partitionConsumingStatesItem) {
+        if (this.partitionConsumingStates == null) {
+            this.partitionConsumingStates = new ArrayList<>();
         }
-        this.commitCheckpointStreamNames.add(commitCheckpointStreamNamesItem);
+        this.partitionConsumingStates.add(partitionConsumingStatesItem);
         return this;
     }
 
-    public ShowConsumerStateResponse withCommitCheckpointStreamNames(
-        Consumer<List<String>> commitCheckpointStreamNamesSetter) {
-        if (this.commitCheckpointStreamNames == null) {
-            this.commitCheckpointStreamNames = new ArrayList<>();
+    public ShowConsumerStateResponse withPartitionConsumingStates(
+        Consumer<List<PartitionConsumingStates>> partitionConsumingStatesSetter) {
+        if (this.partitionConsumingStates == null) {
+            this.partitionConsumingStates = new ArrayList<>();
         }
-        commitCheckpointStreamNamesSetter.accept(this.commitCheckpointStreamNames);
+        partitionConsumingStatesSetter.accept(this.partitionConsumingStates);
         return this;
     }
 
     /**
-     * 关联通道列表。
-     * @return commitCheckpointStreamNames
+     * 当前分区消费状态.
+     * @return partitionConsumingStates
      */
-    public List<String> getCommitCheckpointStreamNames() {
-        return commitCheckpointStreamNames;
+    public List<PartitionConsumingStates> getPartitionConsumingStates() {
+        return partitionConsumingStates;
     }
 
-    public void setCommitCheckpointStreamNames(List<String> commitCheckpointStreamNames) {
-        this.commitCheckpointStreamNames = commitCheckpointStreamNames;
+    public void setPartitionConsumingStates(List<PartitionConsumingStates> partitionConsumingStates) {
+        this.partitionConsumingStates = partitionConsumingStates;
     }
 
     @Override
@@ -128,26 +130,24 @@ public class ShowConsumerStateResponse extends SdkResponse {
             return false;
         }
         ShowConsumerStateResponse that = (ShowConsumerStateResponse) obj;
-        return Objects.equals(this.appName, that.appName) && Objects.equals(this.appId, that.appId)
-            && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.commitCheckpointStreamNames, that.commitCheckpointStreamNames);
+        return Objects.equals(this.hasMore, that.hasMore) && Objects.equals(this.streamName, that.streamName)
+            && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.partitionConsumingStates, that.partitionConsumingStates);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(appName, appId, createTime, commitCheckpointStreamNames);
+        return Objects.hash(hasMore, streamName, appName, partitionConsumingStates);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowConsumerStateResponse {\n");
+        sb.append("    hasMore: ").append(toIndentedString(hasMore)).append("\n");
+        sb.append("    streamName: ").append(toIndentedString(streamName)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
-        sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
-        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    commitCheckpointStreamNames: ")
-            .append(toIndentedString(commitCheckpointStreamNames))
-            .append("\n");
+        sb.append("    partitionConsumingStates: ").append(toIndentedString(partitionConsumingStates)).append("\n");
         sb.append("}");
         return sb.toString();
     }

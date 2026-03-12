@@ -63,6 +63,11 @@ public class IssueCertificateAuthorityCertificateRequestBody {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hsm_cluster_info")
+
+    private HsmClusterInfo hsmClusterInfo;
+
     public IssueCertificateAuthorityCertificateRequestBody withIssuerId(String issuerId) {
         this.issuerId = issuerId;
         return this;
@@ -280,6 +285,33 @@ public class IssueCertificateAuthorityCertificateRequestBody {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public IssueCertificateAuthorityCertificateRequestBody withHsmClusterInfo(HsmClusterInfo hsmClusterInfo) {
+        this.hsmClusterInfo = hsmClusterInfo;
+        return this;
+    }
+
+    public IssueCertificateAuthorityCertificateRequestBody withHsmClusterInfo(
+        Consumer<HsmClusterInfo> hsmClusterInfoSetter) {
+        if (this.hsmClusterInfo == null) {
+            this.hsmClusterInfo = new HsmClusterInfo();
+            hsmClusterInfoSetter.accept(this.hsmClusterInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get hsmClusterInfo
+     * @return hsmClusterInfo
+     */
+    public HsmClusterInfo getHsmClusterInfo() {
+        return hsmClusterInfo;
+    }
+
+    public void setHsmClusterInfo(HsmClusterInfo hsmClusterInfo) {
+        this.hsmClusterInfo = hsmClusterInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -295,7 +327,8 @@ public class IssueCertificateAuthorityCertificateRequestBody {
             && Objects.equals(this.distinguishedName, that.distinguishedName)
             && Objects.equals(this.keyAlgorithm, that.keyAlgorithm) && Objects.equals(this.keyUsages, that.keyUsages)
             && Objects.equals(this.crlConfiguration, that.crlConfiguration)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.hsmClusterInfo, that.hsmClusterInfo);
     }
 
     @Override
@@ -309,7 +342,8 @@ public class IssueCertificateAuthorityCertificateRequestBody {
             keyAlgorithm,
             keyUsages,
             crlConfiguration,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            hsmClusterInfo);
     }
 
     @Override
@@ -326,6 +360,7 @@ public class IssueCertificateAuthorityCertificateRequestBody {
         sb.append("    keyUsages: ").append(toIndentedString(keyUsages)).append("\n");
         sb.append("    crlConfiguration: ").append(toIndentedString(crlConfiguration)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    hsmClusterInfo: ").append(toIndentedString(hsmClusterInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

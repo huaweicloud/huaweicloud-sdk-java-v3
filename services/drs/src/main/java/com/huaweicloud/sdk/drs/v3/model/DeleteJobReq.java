@@ -16,7 +16,7 @@ import java.util.Objects;
 public class DeleteJobReq {
 
     /**
-     * terminate:结束迁移任务,force_terminate:强制结束迁移任务,delete:删除迁移任务
+     * terminate:结束迁移任务,force_terminate:强制结束迁移任务,delete:删除迁移任务,roll_back_upgrade_active_standby:转主备任务回滚
      */
     public static final class DeleteTypeEnum {
 
@@ -35,6 +35,12 @@ public class DeleteJobReq {
          */
         public static final DeleteTypeEnum DELETE = new DeleteTypeEnum("delete");
 
+        /**
+         * Enum ROLL_BACK_UPGRADE_ACTIVE_STANDBY for value: "roll_back_upgrade_active_standby"
+         */
+        public static final DeleteTypeEnum ROLL_BACK_UPGRADE_ACTIVE_STANDBY =
+            new DeleteTypeEnum("roll_back_upgrade_active_standby");
+
         private static final Map<String, DeleteTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DeleteTypeEnum> createStaticFields() {
@@ -42,6 +48,7 @@ public class DeleteJobReq {
             map.put("terminate", TERMINATE);
             map.put("force_terminate", FORCE_TERMINATE);
             map.put("delete", DELETE);
+            map.put("roll_back_upgrade_active_standby", ROLL_BACK_UPGRADE_ACTIVE_STANDBY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -112,7 +119,7 @@ public class DeleteJobReq {
     }
 
     /**
-     * terminate:结束迁移任务,force_terminate:强制结束迁移任务,delete:删除迁移任务
+     * terminate:结束迁移任务,force_terminate:强制结束迁移任务,delete:删除迁移任务,roll_back_upgrade_active_standby:转主备任务回滚
      * @return deleteType
      */
     public DeleteTypeEnum getDeleteType() {

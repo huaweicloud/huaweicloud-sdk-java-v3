@@ -3983,6 +3983,12 @@ public class DrsMeta {
             TypeCasts.uncheckedConversion(UploadDbObjectTemplateRequest.FileImportDbLevelEnum.class),
             f -> f.withMarshaller(UploadDbObjectTemplateRequest::getFileImportDbLevel,
                 UploadDbObjectTemplateRequest::setFileImportDbLevel));
+        builder.<String>withRequestField("file_import_mapping_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadDbObjectTemplateRequest::getFileImportMappingType,
+                UploadDbObjectTemplateRequest::setFileImportMappingType));
         builder.<UploadDbObjectTemplateRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

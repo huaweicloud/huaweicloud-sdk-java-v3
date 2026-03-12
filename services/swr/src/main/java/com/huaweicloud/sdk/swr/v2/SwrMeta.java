@@ -147,6 +147,8 @@ import com.huaweicloud.sdk.swr.v2.model.ExecuteInstanceRetentionPolicyResponse;
 import com.huaweicloud.sdk.swr.v2.model.ExecuteInstanceSignPolicyRequest;
 import com.huaweicloud.sdk.swr.v2.model.ExecuteInstanceSignPolicyResponse;
 import com.huaweicloud.sdk.swr.v2.model.ExecuteRetentionPolicyRequestBody;
+import com.huaweicloud.sdk.swr.v2.model.ListAllInstanceRepositoriesRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListAllInstanceRepositoriesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListApiVersionsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListApiVersionsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListAuditLogsRequest;
@@ -3647,6 +3649,45 @@ public class SwrMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ExecuteInstanceSignPolicyRequest::getPolicyId,
                 ExecuteInstanceSignPolicyRequest::setPolicyId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAllInstanceRepositoriesRequest, ListAllInstanceRepositoriesResponse> listAllInstanceRepositories =
+        genForListAllInstanceRepositories();
+
+    private static HttpRequestDef<ListAllInstanceRepositoriesRequest, ListAllInstanceRepositoriesResponse> genForListAllInstanceRepositories() {
+        // basic
+        HttpRequestDef.Builder<ListAllInstanceRepositoriesRequest, ListAllInstanceRepositoriesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAllInstanceRepositoriesRequest.class,
+                    ListAllInstanceRepositoriesResponse.class)
+                .withName("ListAllInstanceRepositories")
+                .withUri("/v2/{project_id}/repositories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllInstanceRepositoriesRequest::getMarker,
+                ListAllInstanceRepositoriesRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAllInstanceRepositoriesRequest::getLimit,
+                ListAllInstanceRepositoriesRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllInstanceRepositoriesRequest::getName,
+                ListAllInstanceRepositoriesRequest::setName));
 
         // response
 

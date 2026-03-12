@@ -202,6 +202,11 @@ public class PolicyAssignmentRequestBody {
     private PolicyFilterDefinition policyFilter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_filter_v2")
+
+    private PolicyFilterDefinitionV2 policyFilterV2;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_policy")
 
     private CustomPolicy customPolicy;
@@ -313,6 +318,32 @@ public class PolicyAssignmentRequestBody {
 
     public void setPolicyFilter(PolicyFilterDefinition policyFilter) {
         this.policyFilter = policyFilter;
+    }
+
+    public PolicyAssignmentRequestBody withPolicyFilterV2(PolicyFilterDefinitionV2 policyFilterV2) {
+        this.policyFilterV2 = policyFilterV2;
+        return this;
+    }
+
+    public PolicyAssignmentRequestBody withPolicyFilterV2(Consumer<PolicyFilterDefinitionV2> policyFilterV2Setter) {
+        if (this.policyFilterV2 == null) {
+            this.policyFilterV2 = new PolicyFilterDefinitionV2();
+            policyFilterV2Setter.accept(this.policyFilterV2);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get policyFilterV2
+     * @return policyFilterV2
+     */
+    public PolicyFilterDefinitionV2 getPolicyFilterV2() {
+        return policyFilterV2;
+    }
+
+    public void setPolicyFilterV2(PolicyFilterDefinitionV2 policyFilterV2) {
+        this.policyFilterV2 = policyFilterV2;
     }
 
     public PolicyAssignmentRequestBody withCustomPolicy(CustomPolicy customPolicy) {
@@ -436,6 +467,7 @@ public class PolicyAssignmentRequestBody {
         return Objects.equals(this.policyAssignmentType, that.policyAssignmentType)
             && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.period, that.period) && Objects.equals(this.policyFilter, that.policyFilter)
+            && Objects.equals(this.policyFilterV2, that.policyFilterV2)
             && Objects.equals(this.customPolicy, that.customPolicy)
             && Objects.equals(this.policyDefinitionId, that.policyDefinitionId)
             && Objects.equals(this.parameters, that.parameters) && Objects.equals(this.tags, that.tags);
@@ -448,6 +480,7 @@ public class PolicyAssignmentRequestBody {
             description,
             period,
             policyFilter,
+            policyFilterV2,
             customPolicy,
             policyDefinitionId,
             parameters,
@@ -463,6 +496,7 @@ public class PolicyAssignmentRequestBody {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("    policyFilter: ").append(toIndentedString(policyFilter)).append("\n");
+        sb.append("    policyFilterV2: ").append(toIndentedString(policyFilterV2)).append("\n");
         sb.append("    customPolicy: ").append(toIndentedString(customPolicy)).append("\n");
         sb.append("    policyDefinitionId: ").append(toIndentedString(policyDefinitionId)).append("\n");
         sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");

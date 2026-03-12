@@ -24,7 +24,7 @@ public class ResizeInstancesFlavorRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private OpenGaussResizeRequest body;
+    private OpenGaussResizeRequestBody body;
 
     public ResizeInstancesFlavorRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -62,14 +62,14 @@ public class ResizeInstancesFlavorRequest {
         this.instanceId = instanceId;
     }
 
-    public ResizeInstancesFlavorRequest withBody(OpenGaussResizeRequest body) {
+    public ResizeInstancesFlavorRequest withBody(OpenGaussResizeRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public ResizeInstancesFlavorRequest withBody(Consumer<OpenGaussResizeRequest> bodySetter) {
+    public ResizeInstancesFlavorRequest withBody(Consumer<OpenGaussResizeRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new OpenGaussResizeRequest();
+            this.body = new OpenGaussResizeRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -80,11 +80,11 @@ public class ResizeInstancesFlavorRequest {
      * Get body
      * @return body
      */
-    public OpenGaussResizeRequest getBody() {
+    public OpenGaussResizeRequestBody getBody() {
         return body;
     }
 
-    public void setBody(OpenGaussResizeRequest body) {
+    public void setBody(OpenGaussResizeRequestBody body) {
         this.body = body;
     }
 

@@ -292,7 +292,7 @@ public class UserAuthorityReq {
     }
 
     /**
-     * **参数解释**： 授权对象信息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 授权对象信息。 **约束限制**： 不涉及。 **取值范围**： 列表项最大值为100。 **默认取值**： 不涉及。
      * @return grantMembers
      */
     public List<String> getGrantMembers() {
@@ -325,7 +325,7 @@ public class UserAuthorityReq {
     }
 
     /**
-     * **参数解释**： 授权列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 授权列表。 **约束限制**： 不涉及。 **取值范围**： 列表项最大值为2000。 **默认取值**： 不涉及。
      * @return grantList
      */
     public List<GrantAuthority> getGrantList() {

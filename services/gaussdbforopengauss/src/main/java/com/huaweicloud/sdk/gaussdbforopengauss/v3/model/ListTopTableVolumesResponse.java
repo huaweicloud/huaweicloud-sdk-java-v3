@@ -110,6 +110,16 @@ public class ListTopTableVolumesResponse extends SdkResponse {
 
     private StateEnum state;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_id")
+
+    private String jobId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_id")
+
+    private String nodeId;
+
     public ListTopTableVolumesResponse withTableVolumes(List<TableVolumeResult> tableVolumes) {
         this.tableVolumes = tableVolumes;
         return this;
@@ -177,6 +187,40 @@ public class ListTopTableVolumesResponse extends SdkResponse {
         this.state = state;
     }
 
+    public ListTopTableVolumesResponse withJobId(String jobId) {
+        this.jobId = jobId;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 任务ID，当无请求参数时返回。 **取值范围**: 不涉及。 
+     * @return jobId
+     */
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
+    public ListTopTableVolumesResponse withNodeId(String nodeId) {
+        this.nodeId = nodeId;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 工作流执行节点ID，当无请求参数时返回。 **取值范围**: 不涉及。 
+     * @return nodeId
+     */
+    public String getNodeId() {
+        return nodeId;
+    }
+
+    public void setNodeId(String nodeId) {
+        this.nodeId = nodeId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -187,12 +231,13 @@ public class ListTopTableVolumesResponse extends SdkResponse {
         }
         ListTopTableVolumesResponse that = (ListTopTableVolumesResponse) obj;
         return Objects.equals(this.tableVolumes, that.tableVolumes) && Objects.equals(this.totalCount, that.totalCount)
-            && Objects.equals(this.state, that.state);
+            && Objects.equals(this.state, that.state) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.nodeId, that.nodeId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tableVolumes, totalCount, state);
+        return Objects.hash(tableVolumes, totalCount, state, jobId, nodeId);
     }
 
     @Override
@@ -202,6 +247,8 @@ public class ListTopTableVolumesResponse extends SdkResponse {
         sb.append("    tableVolumes: ").append(toIndentedString(tableVolumes)).append("\n");
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -41,7 +41,7 @@ public class ListWaitEventRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "wait_event_query_info")
 
-    private WaitEventQueryInfo waitEventQueryInfo;
+    private WaitEventQueryInfoOption waitEventQueryInfo;
 
     public ListWaitEventRequestBody withNodeId(String nodeId) {
         this.nodeId = nodeId;
@@ -144,14 +144,15 @@ public class ListWaitEventRequestBody {
         this.orderFields = orderFields;
     }
 
-    public ListWaitEventRequestBody withWaitEventQueryInfo(WaitEventQueryInfo waitEventQueryInfo) {
+    public ListWaitEventRequestBody withWaitEventQueryInfo(WaitEventQueryInfoOption waitEventQueryInfo) {
         this.waitEventQueryInfo = waitEventQueryInfo;
         return this;
     }
 
-    public ListWaitEventRequestBody withWaitEventQueryInfo(Consumer<WaitEventQueryInfo> waitEventQueryInfoSetter) {
+    public ListWaitEventRequestBody withWaitEventQueryInfo(
+        Consumer<WaitEventQueryInfoOption> waitEventQueryInfoSetter) {
         if (this.waitEventQueryInfo == null) {
-            this.waitEventQueryInfo = new WaitEventQueryInfo();
+            this.waitEventQueryInfo = new WaitEventQueryInfoOption();
             waitEventQueryInfoSetter.accept(this.waitEventQueryInfo);
         }
 
@@ -162,11 +163,11 @@ public class ListWaitEventRequestBody {
      * Get waitEventQueryInfo
      * @return waitEventQueryInfo
      */
-    public WaitEventQueryInfo getWaitEventQueryInfo() {
+    public WaitEventQueryInfoOption getWaitEventQueryInfo() {
         return waitEventQueryInfo;
     }
 
-    public void setWaitEventQueryInfo(WaitEventQueryInfo waitEventQueryInfo) {
+    public void setWaitEventQueryInfo(WaitEventQueryInfoOption waitEventQueryInfo) {
         this.waitEventQueryInfo = waitEventQueryInfo;
     }
 

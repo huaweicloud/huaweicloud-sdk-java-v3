@@ -1,0 +1,254 @@
+package com.huaweicloud.sdk.organizations.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * 创建试运行策略操作的请求体。
+ */
+public class CreateDryRunPolicyReqBody {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "content")
+
+    private String content;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    /**
+     * 要创建的策略类型,service_control_policy服务控制策略。
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum SERVICE_CONTROL_POLICY for value: "service_control_policy"
+         */
+        public static final TypeEnum SERVICE_CONTROL_POLICY = new TypeEnum("service_control_policy");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("service_control_policy", SERVICE_CONTROL_POLICY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private TypeEnum type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<TagDto> tags = null;
+
+    public CreateDryRunPolicyReqBody withContent(String content) {
+        this.content = content;
+        return this;
+    }
+
+    /**
+     * 要添加到新策略的策略文本内容。
+     * @return content
+     */
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public CreateDryRunPolicyReqBody withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 要分配给策略的可选说明。
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public CreateDryRunPolicyReqBody withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 要分配给策略的名称。
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public CreateDryRunPolicyReqBody withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 要创建的策略类型,service_control_policy服务控制策略。
+     * @return type
+     */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
+    public CreateDryRunPolicyReqBody withTags(List<TagDto> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateDryRunPolicyReqBody addTagsItem(TagDto tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateDryRunPolicyReqBody withTags(Consumer<List<TagDto>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 要附加到新创建的策略的标签列表。
+     * @return tags
+     */
+    public List<TagDto> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<TagDto> tags) {
+        this.tags = tags;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        CreateDryRunPolicyReqBody that = (CreateDryRunPolicyReqBody) obj;
+        return Objects.equals(this.content, that.content) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.tags, that.tags);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(content, description, name, type, tags);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class CreateDryRunPolicyReqBody {\n");
+        sb.append("    content: ").append(toIndentedString(content)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

@@ -73,6 +73,8 @@ import com.huaweicloud.sdk.vod.v1.model.DeleteTemplateGroupCollectionRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTemplateGroupCollectionResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTemplateGroupRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTemplateGroupResponse;
+import com.huaweicloud.sdk.vod.v1.model.DeleteThumbnailsRequest;
+import com.huaweicloud.sdk.vod.v1.model.DeleteThumbnailsResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTranscodeProductReq;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTranscodeProductRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTranscodeProductResponse;
@@ -101,6 +103,10 @@ import com.huaweicloud.sdk.vod.v1.model.ListTemplateGroupCollectionRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListTemplateGroupCollectionResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListTemplateGroupRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListTemplateGroupResponse;
+import com.huaweicloud.sdk.vod.v1.model.ListThumbnailDetailsRequest;
+import com.huaweicloud.sdk.vod.v1.model.ListThumbnailDetailsResponse;
+import com.huaweicloud.sdk.vod.v1.model.ListThumbnailInfoRequest;
+import com.huaweicloud.sdk.vod.v1.model.ListThumbnailInfoResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListTopStatisticsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListTopStatisticsResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListTranscodeTemplateRequest;
@@ -994,6 +1000,39 @@ public class VodMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteThumbnailsRequest, DeleteThumbnailsResponse> deleteThumbnails =
+        genForDeleteThumbnails();
+
+    private static HttpRequestDef<DeleteThumbnailsRequest, DeleteThumbnailsResponse> genForDeleteThumbnails() {
+        // basic
+        HttpRequestDef.Builder<DeleteThumbnailsRequest, DeleteThumbnailsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteThumbnailsRequest.class, DeleteThumbnailsResponse.class)
+                .withName("DeleteThumbnails")
+                .withUri("/v1/{project_id}/asset/thumbnails")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("asset_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteThumbnailsRequest::getAssetId, DeleteThumbnailsRequest::setAssetId));
+        builder.<List<String>>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(DeleteThumbnailsRequest::getTaskId, DeleteThumbnailsRequest::setTaskId));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteThumbnailsRequest::getXSdkDate, DeleteThumbnailsRequest::setXSdkDate));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteTranscodeProductRequest, DeleteTranscodeProductResponse> deleteTranscodeProduct =
         genForDeleteTranscodeProduct();
 
@@ -1522,6 +1561,87 @@ public class VodMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTemplateGroupCollectionRequest::getXSdkDate,
                 ListTemplateGroupCollectionRequest::setXSdkDate));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListThumbnailDetailsRequest, ListThumbnailDetailsResponse> listThumbnailDetails =
+        genForListThumbnailDetails();
+
+    private static HttpRequestDef<ListThumbnailDetailsRequest, ListThumbnailDetailsResponse> genForListThumbnailDetails() {
+        // basic
+        HttpRequestDef.Builder<ListThumbnailDetailsRequest, ListThumbnailDetailsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListThumbnailDetailsRequest.class, ListThumbnailDetailsResponse.class)
+            .withName("ListThumbnailDetails")
+            .withUri("/v1/{project_id}/asset/thumbnail/details")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListThumbnailDetailsRequest::getTaskId, ListThumbnailDetailsRequest::setTaskId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListThumbnailDetailsRequest::getOffset, ListThumbnailDetailsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListThumbnailDetailsRequest::getLimit, ListThumbnailDetailsRequest::setLimit));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListThumbnailDetailsRequest::getXSdkDate, ListThumbnailDetailsRequest::setXSdkDate));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListThumbnailInfoRequest, ListThumbnailInfoResponse> listThumbnailInfo =
+        genForListThumbnailInfo();
+
+    private static HttpRequestDef<ListThumbnailInfoRequest, ListThumbnailInfoResponse> genForListThumbnailInfo() {
+        // basic
+        HttpRequestDef.Builder<ListThumbnailInfoRequest, ListThumbnailInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListThumbnailInfoRequest.class, ListThumbnailInfoResponse.class)
+                .withName("ListThumbnailInfo")
+                .withUri("/v1/{project_id}/asset/thumbnails")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("asset_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListThumbnailInfoRequest::getAssetId, ListThumbnailInfoRequest::setAssetId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListThumbnailInfoRequest::getTaskId, ListThumbnailInfoRequest::setTaskId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListThumbnailInfoRequest::getOffset, ListThumbnailInfoRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListThumbnailInfoRequest::getLimit, ListThumbnailInfoRequest::setLimit));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListThumbnailInfoRequest::getXSdkDate, ListThumbnailInfoRequest::setXSdkDate));
 
         // response
 

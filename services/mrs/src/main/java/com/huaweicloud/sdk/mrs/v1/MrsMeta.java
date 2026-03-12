@@ -35,6 +35,8 @@ import com.huaweicloud.sdk.mrs.v1.model.ListAsyncTaskStatusRequest;
 import com.huaweicloud.sdk.mrs.v1.model.ListAsyncTaskStatusResponse;
 import com.huaweicloud.sdk.mrs.v1.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.mrs.v1.model.ListAvailableZonesResponse;
+import com.huaweicloud.sdk.mrs.v1.model.ListClusterSshStateRequest;
+import com.huaweicloud.sdk.mrs.v1.model.ListClusterSshStateResponse;
 import com.huaweicloud.sdk.mrs.v1.model.ListClusterTagsRequest;
 import com.huaweicloud.sdk.mrs.v1.model.ListClusterTagsResponse;
 import com.huaweicloud.sdk.mrs.v1.model.ListClustersByTagsRequest;
@@ -55,6 +57,10 @@ import com.huaweicloud.sdk.mrs.v1.model.ShowMrsVersionMetadataResponse;
 import com.huaweicloud.sdk.mrs.v1.model.SubmitJobReqV11;
 import com.huaweicloud.sdk.mrs.v1.model.UpdateClusterScalingRequest;
 import com.huaweicloud.sdk.mrs.v1.model.UpdateClusterScalingResponse;
+import com.huaweicloud.sdk.mrs.v1.model.UpdateClusterSshRequest;
+import com.huaweicloud.sdk.mrs.v1.model.UpdateClusterSshResponse;
+
+import java.math.BigDecimal;
 
 @SuppressWarnings("unchecked")
 public class MrsMeta {
@@ -339,6 +345,29 @@ public class MrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListClusterSshStateRequest, ListClusterSshStateResponse> listClusterSshState =
+        genForListClusterSshState();
+
+    private static HttpRequestDef<ListClusterSshStateRequest, ListClusterSshStateResponse> genForListClusterSshState() {
+        // basic
+        HttpRequestDef.Builder<ListClusterSshStateRequest, ListClusterSshStateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListClusterSshStateRequest.class, ListClusterSshStateResponse.class)
+                .withName("ListClusterSshState")
+                .withUri("/v1/cluster/{cluster_id}/ssh")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterSshStateRequest::getClusterId, ListClusterSshStateRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListClusterTagsRequest, ListClusterTagsResponse> listClusterTags =
         genForListClusterTags();
 
@@ -581,6 +610,39 @@ public class MrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ClusterScalingReq.class),
             f -> f.withMarshaller(UpdateClusterScalingRequest::getBody, UpdateClusterScalingRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateClusterSshRequest, UpdateClusterSshResponse> updateClusterSsh =
+        genForUpdateClusterSsh();
+
+    private static HttpRequestDef<UpdateClusterSshRequest, UpdateClusterSshResponse> genForUpdateClusterSsh() {
+        // basic
+        HttpRequestDef.Builder<UpdateClusterSshRequest, UpdateClusterSshResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateClusterSshRequest.class, UpdateClusterSshResponse.class)
+                .withName("UpdateClusterSsh")
+                .withUri("/v1/cluster/{cluster_id}/ssh")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateClusterSshRequest::getClusterId, UpdateClusterSshRequest::setClusterId));
+        builder.<Boolean>withRequestField("enable",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(UpdateClusterSshRequest::getEnable, UpdateClusterSshRequest::setEnable));
+        builder.<BigDecimal>withRequestField("expire_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BigDecimal.class),
+            f -> f.withMarshaller(UpdateClusterSshRequest::getExpireTime, UpdateClusterSshRequest::setExpireTime));
 
         // response
 

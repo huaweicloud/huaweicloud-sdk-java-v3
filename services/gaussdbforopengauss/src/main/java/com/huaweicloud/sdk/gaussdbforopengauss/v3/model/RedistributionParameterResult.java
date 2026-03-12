@@ -33,7 +33,7 @@ public class RedistributionParameterResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private Object type;
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -108,7 +108,7 @@ public class RedistributionParameterResult {
         this.valueRange = valueRange;
     }
 
-    public RedistributionParameterResult withType(Object type) {
+    public RedistributionParameterResult withType(String type) {
         this.type = type;
         return this;
     }
@@ -117,11 +117,11 @@ public class RedistributionParameterResult {
      * **参数解释**: 参数类型。 **取值范围**: - integer：整数。 - boolean：布尔类型。 - string：字符串类型。
      * @return type
      */
-    public Object getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(Object type) {
+    public void setType(String type) {
         this.type = type;
     }
 

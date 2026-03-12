@@ -112,6 +112,16 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
 
     private Integer chargingMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_id")
+
+    private String clusterId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_id")
+
+    private String domainId;
+
     public ShowCertificateAuthorityResponse withCaId(String caId) {
         this.caId = caId;
         return this;
@@ -473,6 +483,40 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
         this.chargingMode = chargingMode;
     }
 
+    public ShowCertificateAuthorityResponse withClusterId(String clusterId) {
+        this.clusterId = clusterId;
+        return this;
+    }
+
+    /**
+     * dhsm集群id。
+     * @return clusterId
+     */
+    public String getClusterId() {
+        return clusterId;
+    }
+
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
+    }
+
+    public ShowCertificateAuthorityResponse withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    /**
+     * 账号ID。
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -494,7 +538,8 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
             && Objects.equals(this.distinguishedName, that.distinguishedName)
             && Objects.equals(this.crlConfiguration, that.crlConfiguration)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.freeQuota, that.freeQuota) && Objects.equals(this.chargingMode, that.chargingMode);
+            && Objects.equals(this.freeQuota, that.freeQuota) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.domainId, that.domainId);
     }
 
     @Override
@@ -518,7 +563,9 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
             crlConfiguration,
             enterpriseProjectId,
             freeQuota,
-            chargingMode);
+            chargingMode,
+            clusterId,
+            domainId);
     }
 
     @Override
@@ -545,6 +592,8 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    freeQuota: ").append(toIndentedString(freeQuota)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
+        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

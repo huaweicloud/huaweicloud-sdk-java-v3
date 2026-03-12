@@ -381,7 +381,7 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussInstanceActionR
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussInstanceRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussModifyInstanceConfigurationRequest;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussResizeRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussResizeRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpengaussRestoreInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ParamGroupCopyRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ParamGroupDiffRequestBody;
@@ -5637,10 +5637,10 @@ public class GaussDBforopenGaussMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResizeInstancesFlavorRequest::getXLanguage,
                 ResizeInstancesFlavorRequest::setXLanguage));
-        builder.<OpenGaussResizeRequest>withRequestField("body",
+        builder.<OpenGaussResizeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(OpenGaussResizeRequest.class),
+            TypeCasts.uncheckedConversion(OpenGaussResizeRequestBody.class),
             f -> f.withMarshaller(ResizeInstancesFlavorRequest::getBody, ResizeInstancesFlavorRequest::setBody));
 
         // response
@@ -8256,10 +8256,10 @@ public class GaussDBforopenGaussMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResizeInstanceFlavorRequest::getXLanguage,
                 ResizeInstanceFlavorRequest::setXLanguage));
-        builder.<OpenGaussResizeRequest>withRequestField("body",
+        builder.<OpenGaussResizeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(OpenGaussResizeRequest.class),
+            TypeCasts.uncheckedConversion(OpenGaussResizeRequestBody.class),
             f -> f.withMarshaller(ResizeInstanceFlavorRequest::getBody, ResizeInstanceFlavorRequest::setBody));
 
         // response
@@ -9717,6 +9717,30 @@ public class GaussDBforopenGaussMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListWdrSnapshotsCollectResultsRequest::getJobId,
                 ListWdrSnapshotsCollectResultsRequest::setJobId));
+        builder.<String>withRequestField("job_end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWdrSnapshotsCollectResultsRequest::getJobEndTime,
+                ListWdrSnapshotsCollectResultsRequest::setJobEndTime));
+        builder.<String>withRequestField("job_start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWdrSnapshotsCollectResultsRequest::getJobStartTime,
+                ListWdrSnapshotsCollectResultsRequest::setJobStartTime));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWdrSnapshotsCollectResultsRequest::getStatus,
+                ListWdrSnapshotsCollectResultsRequest::setStatus));
+        builder.<String>withRequestField("wdr_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWdrSnapshotsCollectResultsRequest::getWdrType,
+                ListWdrSnapshotsCollectResultsRequest::setWdrType));
         builder.<ListWdrSnapshotsCollectResultsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

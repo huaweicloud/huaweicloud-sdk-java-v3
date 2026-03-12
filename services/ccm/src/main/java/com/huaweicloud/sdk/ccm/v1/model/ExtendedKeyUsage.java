@@ -35,6 +35,11 @@ public class ExtendedKeyUsage {
 
     private Boolean timeStamping;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "smart_card_logon")
+
+    private Boolean smartCardLogon;
+
     public ExtendedKeyUsage withServerAuth(Boolean serverAuth) {
         this.serverAuth = serverAuth;
         return this;
@@ -120,6 +125,23 @@ public class ExtendedKeyUsage {
         this.timeStamping = timeStamping;
     }
 
+    public ExtendedKeyUsage withSmartCardLogon(Boolean smartCardLogon) {
+        this.smartCardLogon = smartCardLogon;
+        return this;
+    }
+
+    /**
+     * 智能卡登录，OID为：1.3.6.1.4.1.311.20.2.2。 - **true** - **false** > Active Directory登录，默认为false。
+     * @return smartCardLogon
+     */
+    public Boolean getSmartCardLogon() {
+        return smartCardLogon;
+    }
+
+    public void setSmartCardLogon(Boolean smartCardLogon) {
+        this.smartCardLogon = smartCardLogon;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -132,12 +154,13 @@ public class ExtendedKeyUsage {
         return Objects.equals(this.serverAuth, that.serverAuth) && Objects.equals(this.clientAuth, that.clientAuth)
             && Objects.equals(this.codeSigning, that.codeSigning)
             && Objects.equals(this.emailProtection, that.emailProtection)
-            && Objects.equals(this.timeStamping, that.timeStamping);
+            && Objects.equals(this.timeStamping, that.timeStamping)
+            && Objects.equals(this.smartCardLogon, that.smartCardLogon);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serverAuth, clientAuth, codeSigning, emailProtection, timeStamping);
+        return Objects.hash(serverAuth, clientAuth, codeSigning, emailProtection, timeStamping, smartCardLogon);
     }
 
     @Override
@@ -149,6 +172,7 @@ public class ExtendedKeyUsage {
         sb.append("    codeSigning: ").append(toIndentedString(codeSigning)).append("\n");
         sb.append("    emailProtection: ").append(toIndentedString(emailProtection)).append("\n");
         sb.append("    timeStamping: ").append(toIndentedString(timeStamping)).append("\n");
+        sb.append("    smartCardLogon: ").append(toIndentedString(smartCardLogon)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -17,6 +17,9 @@ public class ConfigRegion {
     public static final Region CN_NORTH_4 =
         new Region("cn-north-4", "https://rms.myhuaweicloud.com", "https://rms.myhuaweicloud.cn");
 
+    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://rms.eu-west-101.myhuaweicloud.com",
+        "https://rms.eu-west-101.myhuaweicloud.cn");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CONFIG");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -24,6 +27,7 @@ public class ConfigRegion {
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
         map.put("cn-north-4", CN_NORTH_4);
+        map.put("eu-west-101", EU_WEST_101);
         return Collections.unmodifiableMap(map);
     }
 

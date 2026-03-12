@@ -97,7 +97,7 @@ public class UploadDbObjectTemplateRequest {
     private XLanguageEnum xLanguage;
 
     /**
-     * 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级
+     * 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级 - partition：partition分区级导入
      */
     public static final class FileImportDbLevelEnum {
 
@@ -116,6 +116,11 @@ public class UploadDbObjectTemplateRequest {
          */
         public static final FileImportDbLevelEnum COLUMN = new FileImportDbLevelEnum("column");
 
+        /**
+         * Enum PARTITION for value: "partition"
+         */
+        public static final FileImportDbLevelEnum PARTITION = new FileImportDbLevelEnum("partition");
+
         private static final Map<String, FileImportDbLevelEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, FileImportDbLevelEnum> createStaticFields() {
@@ -123,6 +128,7 @@ public class UploadDbObjectTemplateRequest {
             map.put("database", DATABASE);
             map.put("table", TABLE);
             map.put("column", COLUMN);
+            map.put("partition", PARTITION);
             return Collections.unmodifiableMap(map);
         }
 
@@ -178,6 +184,11 @@ public class UploadDbObjectTemplateRequest {
     private FileImportDbLevelEnum fileImportDbLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "file_import_mapping_type")
+
+    private String fileImportMappingType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private UploadDbObjectTemplateRequestBody body;
@@ -224,7 +235,7 @@ public class UploadDbObjectTemplateRequest {
     }
 
     /**
-     * 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级
+     * 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级 - partition：partition分区级导入
      * @return fileImportDbLevel
      */
     public FileImportDbLevelEnum getFileImportDbLevel() {
@@ -233,6 +244,23 @@ public class UploadDbObjectTemplateRequest {
 
     public void setFileImportDbLevel(FileImportDbLevelEnum fileImportDbLevel) {
         this.fileImportDbLevel = fileImportDbLevel;
+    }
+
+    public UploadDbObjectTemplateRequest withFileImportMappingType(String fileImportMappingType) {
+        this.fileImportMappingType = fileImportMappingType;
+        return this;
+    }
+
+    /**
+     * 导入文件模板的映射场景，取值： - table_mapping：表名映射 - topic_mapping：topic名映射
+     * @return fileImportMappingType
+     */
+    public String getFileImportMappingType() {
+        return fileImportMappingType;
+    }
+
+    public void setFileImportMappingType(String fileImportMappingType) {
+        this.fileImportMappingType = fileImportMappingType;
     }
 
     public UploadDbObjectTemplateRequest withBody(UploadDbObjectTemplateRequestBody body) {
@@ -271,12 +299,14 @@ public class UploadDbObjectTemplateRequest {
         }
         UploadDbObjectTemplateRequest that = (UploadDbObjectTemplateRequest) obj;
         return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.xLanguage, that.xLanguage)
-            && Objects.equals(this.fileImportDbLevel, that.fileImportDbLevel) && Objects.equals(this.body, that.body);
+            && Objects.equals(this.fileImportDbLevel, that.fileImportDbLevel)
+            && Objects.equals(this.fileImportMappingType, that.fileImportMappingType)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, xLanguage, fileImportDbLevel, body);
+        return Objects.hash(jobId, xLanguage, fileImportDbLevel, fileImportMappingType, body);
     }
 
     @Override
@@ -286,6 +316,7 @@ public class UploadDbObjectTemplateRequest {
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    fileImportDbLevel: ").append(toIndentedString(fileImportDbLevel)).append("\n");
+        sb.append("    fileImportMappingType: ").append(toIndentedString(fileImportMappingType)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

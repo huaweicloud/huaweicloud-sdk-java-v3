@@ -37,7 +37,7 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configuration_parameters")
 
-    private List<ConfigurationParameter> configurationParameters = null;
+    private List<ConfigurationParameterResult> configurationParameters = null;
 
     public ShowInstanceConfigurationResponse withDatastoreVersion(String datastoreVersion) {
         this.datastoreVersion = datastoreVersion;
@@ -108,13 +108,13 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
     }
 
     public ShowInstanceConfigurationResponse withConfigurationParameters(
-        List<ConfigurationParameter> configurationParameters) {
+        List<ConfigurationParameterResult> configurationParameters) {
         this.configurationParameters = configurationParameters;
         return this;
     }
 
     public ShowInstanceConfigurationResponse addConfigurationParametersItem(
-        ConfigurationParameter configurationParametersItem) {
+        ConfigurationParameterResult configurationParametersItem) {
         if (this.configurationParameters == null) {
             this.configurationParameters = new ArrayList<>();
         }
@@ -123,7 +123,7 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
     }
 
     public ShowInstanceConfigurationResponse withConfigurationParameters(
-        Consumer<List<ConfigurationParameter>> configurationParametersSetter) {
+        Consumer<List<ConfigurationParameterResult>> configurationParametersSetter) {
         if (this.configurationParameters == null) {
             this.configurationParameters = new ArrayList<>();
         }
@@ -135,11 +135,11 @@ public class ShowInstanceConfigurationResponse extends SdkResponse {
      * 参数对象，用户基于默认参数模板自定义的参数配置。
      * @return configurationParameters
      */
-    public List<ConfigurationParameter> getConfigurationParameters() {
+    public List<ConfigurationParameterResult> getConfigurationParameters() {
         return configurationParameters;
     }
 
-    public void setConfigurationParameters(List<ConfigurationParameter> configurationParameters) {
+    public void setConfigurationParameters(List<ConfigurationParameterResult> configurationParameters) {
         this.configurationParameters = configurationParameters;
     }
 

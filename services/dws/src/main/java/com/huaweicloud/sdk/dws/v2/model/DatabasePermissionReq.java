@@ -124,7 +124,7 @@ public class DatabasePermissionReq {
     }
 
     /**
-     * **参数解释**： 授权列表。is_grant为true时必填。 **取值范围**： 不涉及。
+     * **参数解释**： 授权列表。is_grant为true时必填。 **取值范围**： 列表项最大值为100。
      * @return grantList
      */
     public List<Grant> getGrantList() {
@@ -157,7 +157,7 @@ public class DatabasePermissionReq {
     }
 
     /**
-     * **参数解释**： 撤销权限列表。is_grant为false时必填。 **取值范围**： 不涉及。
+     * **参数解释**： 撤销权限列表。is_grant为false时必填。 **取值范围**： 列表项最大值为100。
      * @return revokeList
      */
     public List<Revoke> getRevokeList() {
@@ -190,7 +190,7 @@ public class DatabasePermissionReq {
     }
 
     /**
-     * **参数解释**： 被授权角色列表。 **取值范围**： 不涉及。
+     * **参数解释**： 被授权角色列表。 **取值范围**： 列表项取值[0,100]。
      * @return roleList
      */
     public List<String> getRoleList() {
@@ -223,7 +223,7 @@ public class DatabasePermissionReq {
     }
 
     /**
-     * **参数解释**： 权限所属对象列表。 **取值范围**： 不涉及。
+     * **参数解释**： 权限所属对象列表。 **取值范围**： 列表项取值[0,2000]。
      * @return objectList
      */
     public List<String> getObjectList() {

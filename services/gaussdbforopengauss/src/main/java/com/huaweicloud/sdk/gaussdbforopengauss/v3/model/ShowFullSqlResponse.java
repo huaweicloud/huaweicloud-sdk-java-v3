@@ -17,27 +17,36 @@ public class ShowFullSqlResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trace_statistics")
 
-    private Object traceStatistics;
+    private FullSqlTraceStatisticsResult traceStatistics;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "components")
 
     private List<FullSqlComponetResult> components = null;
 
-    public ShowFullSqlResponse withTraceStatistics(Object traceStatistics) {
+    public ShowFullSqlResponse withTraceStatistics(FullSqlTraceStatisticsResult traceStatistics) {
         this.traceStatistics = traceStatistics;
         return this;
     }
 
+    public ShowFullSqlResponse withTraceStatistics(Consumer<FullSqlTraceStatisticsResult> traceStatisticsSetter) {
+        if (this.traceStatistics == null) {
+            this.traceStatistics = new FullSqlTraceStatisticsResult();
+            traceStatisticsSetter.accept(this.traceStatistics);
+        }
+
+        return this;
+    }
+
     /**
-     * **参数解释**: 链路详情。
+     * Get traceStatistics
      * @return traceStatistics
      */
-    public Object getTraceStatistics() {
+    public FullSqlTraceStatisticsResult getTraceStatistics() {
         return traceStatistics;
     }
 
-    public void setTraceStatistics(Object traceStatistics) {
+    public void setTraceStatistics(FullSqlTraceStatisticsResult traceStatistics) {
         this.traceStatistics = traceStatistics;
     }
 

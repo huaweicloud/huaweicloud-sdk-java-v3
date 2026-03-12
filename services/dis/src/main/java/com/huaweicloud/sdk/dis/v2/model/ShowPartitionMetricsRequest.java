@@ -127,7 +127,7 @@ public class ShowPartitionMetricsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    private String endTime;
+    private Long endTime;
 
     public ShowPartitionMetricsRequest withStreamName(String streamName) {
         this.streamName = streamName;
@@ -214,7 +214,7 @@ public class ShowPartitionMetricsRequest {
         this.startTime = startTime;
     }
 
-    public ShowPartitionMetricsRequest withEndTime(String endTime) {
+    public ShowPartitionMetricsRequest withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -223,11 +223,11 @@ public class ShowPartitionMetricsRequest {
      * 监控结束时间点，10位时间戳。
      * @return endTime
      */
-    public String getEndTime() {
+    public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(String endTime) {
+    public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
 

@@ -91,14 +91,14 @@ public class FullSqlComponetResult {
     private String sessionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "begin_time")
+    @JsonProperty(value = "start_time")
 
-    private String beginTime;
+    private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "end_time")
+    @JsonProperty(value = "finish_time")
 
-    private String endTime;
+    private String finishTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "slow_query_threshold")
@@ -121,9 +121,9 @@ public class FullSqlComponetResult {
     private String queryPlan;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "n_return_rows")
+    @JsonProperty(value = "n_returned_rows")
 
-    private Long nReturnRows;
+    private Long nReturnedRows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "n_tuples_fetched")
@@ -537,38 +537,38 @@ public class FullSqlComponetResult {
         this.sessionId = sessionId;
     }
 
-    public FullSqlComponetResult withBeginTime(String beginTime) {
-        this.beginTime = beginTime;
+    public FullSqlComponetResult withStartTime(String startTime) {
+        this.startTime = startTime;
         return this;
     }
 
     /**
      * **参数解释**: 开始时间，格式为“yyyy-mm-ddThh:mm:ss.SSSSSZ”。 **取值范围**: 不涉及。
-     * @return beginTime
+     * @return startTime
      */
-    public String getBeginTime() {
-        return beginTime;
+    public String getStartTime() {
+        return startTime;
     }
 
-    public void setBeginTime(String beginTime) {
-        this.beginTime = beginTime;
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
     }
 
-    public FullSqlComponetResult withEndTime(String endTime) {
-        this.endTime = endTime;
+    public FullSqlComponetResult withFinishTime(String finishTime) {
+        this.finishTime = finishTime;
         return this;
     }
 
     /**
      * **参数解释**: 结束时间，格式为“yyyy-mm-ddThh:mm:ss.SSSSSZ”。 **取值范围**: 不涉及。
-     * @return endTime
+     * @return finishTime
      */
-    public String getEndTime() {
-        return endTime;
+    public String getFinishTime() {
+        return finishTime;
     }
 
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
+    public void setFinishTime(String finishTime) {
+        this.finishTime = finishTime;
     }
 
     public FullSqlComponetResult withSlowQueryThreshold(Long slowQueryThreshold) {
@@ -643,23 +643,23 @@ public class FullSqlComponetResult {
         this.queryPlan = queryPlan;
     }
 
-    public FullSqlComponetResult withNReturnRows(Long nReturnRows) {
-        this.nReturnRows = nReturnRows;
+    public FullSqlComponetResult withNReturnedRows(Long nReturnedRows) {
+        this.nReturnedRows = nReturnedRows;
         return this;
     }
 
     /**
      * **参数解释**: SELECT语句的返回结果集行数。 **取值范围**: 不涉及。
-     * @return nReturnRows
+     * @return nReturnedRows
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "n_return_rows")
-    public Long getNReturnRows() {
-        return nReturnRows;
+    @JsonProperty(value = "n_returned_rows")
+    public Long getNReturnedRows() {
+        return nReturnedRows;
     }
 
-    public void setNReturnRows(Long nReturnRows) {
-        this.nReturnRows = nReturnRows;
+    public void setNReturnedRows(Long nReturnedRows) {
+        this.nReturnedRows = nReturnedRows;
     }
 
     public FullSqlComponetResult withNTuplesFetched(Long nTuplesFetched) {
@@ -1170,10 +1170,10 @@ public class FullSqlComponetResult {
             && Objects.equals(this.sqlExecId, that.sqlExecId) && Objects.equals(this.transactionId, that.transactionId)
             && Objects.equals(this.traceId, that.traceId) && Objects.equals(this.query, that.query)
             && Objects.equals(this.threadId, that.threadId) && Objects.equals(this.sessionId, that.sessionId)
-            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.finishTime, that.finishTime)
             && Objects.equals(this.slowQueryThreshold, that.slowQueryThreshold)
             && Objects.equals(this.nSoftParse, that.nSoftParse) && Objects.equals(this.nHardParse, that.nHardParse)
-            && Objects.equals(this.queryPlan, that.queryPlan) && Objects.equals(this.nReturnRows, that.nReturnRows)
+            && Objects.equals(this.queryPlan, that.queryPlan) && Objects.equals(this.nReturnedRows, that.nReturnedRows)
             && Objects.equals(this.nTuplesFetched, that.nTuplesFetched)
             && Objects.equals(this.nTuplesReturned, that.nTuplesReturned)
             && Objects.equals(this.nTuplesInserted, that.nTuplesInserted)
@@ -1214,13 +1214,13 @@ public class FullSqlComponetResult {
             query,
             threadId,
             sessionId,
-            beginTime,
-            endTime,
+            startTime,
+            finishTime,
             slowQueryThreshold,
             nSoftParse,
             nHardParse,
             queryPlan,
-            nReturnRows,
+            nReturnedRows,
             nTuplesFetched,
             nTuplesReturned,
             nTuplesInserted,
@@ -1271,13 +1271,13 @@ public class FullSqlComponetResult {
         sb.append("    query: ").append(toIndentedString(query)).append("\n");
         sb.append("    threadId: ").append(toIndentedString(threadId)).append("\n");
         sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
-        sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
-        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    finishTime: ").append(toIndentedString(finishTime)).append("\n");
         sb.append("    slowQueryThreshold: ").append(toIndentedString(slowQueryThreshold)).append("\n");
         sb.append("    nSoftParse: ").append(toIndentedString(nSoftParse)).append("\n");
         sb.append("    nHardParse: ").append(toIndentedString(nHardParse)).append("\n");
         sb.append("    queryPlan: ").append(toIndentedString(queryPlan)).append("\n");
-        sb.append("    nReturnRows: ").append(toIndentedString(nReturnRows)).append("\n");
+        sb.append("    nReturnedRows: ").append(toIndentedString(nReturnedRows)).append("\n");
         sb.append("    nTuplesFetched: ").append(toIndentedString(nTuplesFetched)).append("\n");
         sb.append("    nTuplesReturned: ").append(toIndentedString(nTuplesReturned)).append("\n");
         sb.append("    nTuplesInserted: ").append(toIndentedString(nTuplesInserted)).append("\n");

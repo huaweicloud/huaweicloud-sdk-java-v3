@@ -68,6 +68,11 @@ public class CreateCertificateAuthorityRequestBody {
 
     private String caId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hsm_cluster_info")
+
+    private HsmClusterInfo hsmClusterInfo;
+
     public CreateCertificateAuthorityRequestBody withType(String type) {
         this.type = type;
         return this;
@@ -302,6 +307,32 @@ public class CreateCertificateAuthorityRequestBody {
         this.caId = caId;
     }
 
+    public CreateCertificateAuthorityRequestBody withHsmClusterInfo(HsmClusterInfo hsmClusterInfo) {
+        this.hsmClusterInfo = hsmClusterInfo;
+        return this;
+    }
+
+    public CreateCertificateAuthorityRequestBody withHsmClusterInfo(Consumer<HsmClusterInfo> hsmClusterInfoSetter) {
+        if (this.hsmClusterInfo == null) {
+            this.hsmClusterInfo = new HsmClusterInfo();
+            hsmClusterInfoSetter.accept(this.hsmClusterInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get hsmClusterInfo
+     * @return hsmClusterInfo
+     */
+    public HsmClusterInfo getHsmClusterInfo() {
+        return hsmClusterInfo;
+    }
+
+    public void setHsmClusterInfo(HsmClusterInfo hsmClusterInfo) {
+        this.hsmClusterInfo = hsmClusterInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -318,7 +349,7 @@ public class CreateCertificateAuthorityRequestBody {
             && Objects.equals(this.keyUsages, that.keyUsages)
             && Objects.equals(this.crlConfiguration, that.crlConfiguration)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.caId, that.caId);
+            && Objects.equals(this.caId, that.caId) && Objects.equals(this.hsmClusterInfo, that.hsmClusterInfo);
     }
 
     @Override
@@ -333,7 +364,8 @@ public class CreateCertificateAuthorityRequestBody {
             keyUsages,
             crlConfiguration,
             enterpriseProjectId,
-            caId);
+            caId,
+            hsmClusterInfo);
     }
 
     @Override
@@ -351,6 +383,7 @@ public class CreateCertificateAuthorityRequestBody {
         sb.append("    crlConfiguration: ").append(toIndentedString(crlConfiguration)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    caId: ").append(toIndentedString(caId)).append("\n");
+        sb.append("    hsmClusterInfo: ").append(toIndentedString(hsmClusterInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

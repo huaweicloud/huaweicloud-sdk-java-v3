@@ -29,6 +29,8 @@ import com.huaweicloud.sdk.koophone.v1.model.ExecuteJobRequest;
 import com.huaweicloud.sdk.koophone.v1.model.ExecuteJobResponse;
 import com.huaweicloud.sdk.koophone.v1.model.InstallAppRequest;
 import com.huaweicloud.sdk.koophone.v1.model.InstallAppResponse;
+import com.huaweicloud.sdk.koophone.v1.model.ListInstanceAppRequest;
+import com.huaweicloud.sdk.koophone.v1.model.ListInstanceAppResponse;
 import com.huaweicloud.sdk.koophone.v1.model.ListInstancesRequest;
 import com.huaweicloud.sdk.koophone.v1.model.ListInstancesResponse;
 import com.huaweicloud.sdk.koophone.v1.model.ProvisionInstanceRequest;
@@ -479,6 +481,39 @@ public class KooPhoneClient {
      */
     public SyncInvoker<InstallAppRequest, InstallAppResponse> installAppInvoker(InstallAppRequest request) {
         return new SyncInvoker<>(request, KooPhoneMeta.installApp, hcClient);
+    }
+
+    /**
+     * 应用列表查询
+     *
+     * 实例安装应用列表查询。
+     * 调用此api的前提条件是租户需要先购买实例。
+     * 接口返回租户实例中安装的应用列表信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceAppRequest 请求对象
+     * @return ListInstanceAppResponse
+     */
+    public ListInstanceAppResponse listInstanceApp(ListInstanceAppRequest request) {
+        return hcClient.syncInvokeHttp(request, KooPhoneMeta.listInstanceApp);
+    }
+
+    /**
+     * 应用列表查询
+     *
+     * 实例安装应用列表查询。
+     * 调用此api的前提条件是租户需要先购买实例。
+     * 接口返回租户实例中安装的应用列表信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceAppRequest 请求对象
+     * @return SyncInvoker<ListInstanceAppRequest, ListInstanceAppResponse>
+     */
+    public SyncInvoker<ListInstanceAppRequest, ListInstanceAppResponse> listInstanceAppInvoker(
+        ListInstanceAppRequest request) {
+        return new SyncInvoker<>(request, KooPhoneMeta.listInstanceApp, hcClient);
     }
 
     /**

@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.organizations.v1.model.AcceptHandshakeRequest;
 import com.huaweicloud.sdk.organizations.v1.model.AcceptHandshakeResponse;
+import com.huaweicloud.sdk.organizations.v1.model.AttachDryRunPolicyRequest;
+import com.huaweicloud.sdk.organizations.v1.model.AttachDryRunPolicyResponse;
 import com.huaweicloud.sdk.organizations.v1.model.AttachPolicyRequest;
 import com.huaweicloud.sdk.organizations.v1.model.AttachPolicyResponse;
 import com.huaweicloud.sdk.organizations.v1.model.CancelHandshakeRequest;
@@ -13,6 +15,8 @@ import com.huaweicloud.sdk.organizations.v1.model.CloseAccountRequest;
 import com.huaweicloud.sdk.organizations.v1.model.CloseAccountResponse;
 import com.huaweicloud.sdk.organizations.v1.model.CreateAccountRequest;
 import com.huaweicloud.sdk.organizations.v1.model.CreateAccountResponse;
+import com.huaweicloud.sdk.organizations.v1.model.CreateDryRunPolicyRequest;
+import com.huaweicloud.sdk.organizations.v1.model.CreateDryRunPolicyResponse;
 import com.huaweicloud.sdk.organizations.v1.model.CreateOrganizationRequest;
 import com.huaweicloud.sdk.organizations.v1.model.CreateOrganizationResponse;
 import com.huaweicloud.sdk.organizations.v1.model.CreateOrganizationalUnitRequest;
@@ -25,6 +29,8 @@ import com.huaweicloud.sdk.organizations.v1.model.CreateTagResourceRequest;
 import com.huaweicloud.sdk.organizations.v1.model.CreateTagResourceResponse;
 import com.huaweicloud.sdk.organizations.v1.model.DeclineHandshakeRequest;
 import com.huaweicloud.sdk.organizations.v1.model.DeclineHandshakeResponse;
+import com.huaweicloud.sdk.organizations.v1.model.DeleteDryRunPolicyRequest;
+import com.huaweicloud.sdk.organizations.v1.model.DeleteDryRunPolicyResponse;
 import com.huaweicloud.sdk.organizations.v1.model.DeleteOrganizationRequest;
 import com.huaweicloud.sdk.organizations.v1.model.DeleteOrganizationResponse;
 import com.huaweicloud.sdk.organizations.v1.model.DeleteOrganizationalUnitRequest;
@@ -35,6 +41,8 @@ import com.huaweicloud.sdk.organizations.v1.model.DeleteTagResourceRequest;
 import com.huaweicloud.sdk.organizations.v1.model.DeleteTagResourceResponse;
 import com.huaweicloud.sdk.organizations.v1.model.DeregisterDelegatedAdministratorRequest;
 import com.huaweicloud.sdk.organizations.v1.model.DeregisterDelegatedAdministratorResponse;
+import com.huaweicloud.sdk.organizations.v1.model.DetachDryRunPolicyRequest;
+import com.huaweicloud.sdk.organizations.v1.model.DetachDryRunPolicyResponse;
 import com.huaweicloud.sdk.organizations.v1.model.DetachPolicyRequest;
 import com.huaweicloud.sdk.organizations.v1.model.DetachPolicyResponse;
 import com.huaweicloud.sdk.organizations.v1.model.DisablePolicyTypeRequest;
@@ -59,6 +67,10 @@ import com.huaweicloud.sdk.organizations.v1.model.ListDelegatedAdministratorsReq
 import com.huaweicloud.sdk.organizations.v1.model.ListDelegatedAdministratorsResponse;
 import com.huaweicloud.sdk.organizations.v1.model.ListDelegatedServicesRequest;
 import com.huaweicloud.sdk.organizations.v1.model.ListDelegatedServicesResponse;
+import com.huaweicloud.sdk.organizations.v1.model.ListDryRunPoliciesRequest;
+import com.huaweicloud.sdk.organizations.v1.model.ListDryRunPoliciesResponse;
+import com.huaweicloud.sdk.organizations.v1.model.ListEntitiesForDryRunPolicyRequest;
+import com.huaweicloud.sdk.organizations.v1.model.ListEntitiesForDryRunPolicyResponse;
 import com.huaweicloud.sdk.organizations.v1.model.ListEntitiesForPolicyRequest;
 import com.huaweicloud.sdk.organizations.v1.model.ListEntitiesForPolicyResponse;
 import com.huaweicloud.sdk.organizations.v1.model.ListEntitiesRequest;
@@ -99,6 +111,10 @@ import com.huaweicloud.sdk.organizations.v1.model.ShowAccountRequest;
 import com.huaweicloud.sdk.organizations.v1.model.ShowAccountResponse;
 import com.huaweicloud.sdk.organizations.v1.model.ShowCreateAccountStatusRequest;
 import com.huaweicloud.sdk.organizations.v1.model.ShowCreateAccountStatusResponse;
+import com.huaweicloud.sdk.organizations.v1.model.ShowDryRunConfigRequest;
+import com.huaweicloud.sdk.organizations.v1.model.ShowDryRunConfigResponse;
+import com.huaweicloud.sdk.organizations.v1.model.ShowDryRunPolicyRequest;
+import com.huaweicloud.sdk.organizations.v1.model.ShowDryRunPolicyResponse;
 import com.huaweicloud.sdk.organizations.v1.model.ShowEffectivePoliciesRequest;
 import com.huaweicloud.sdk.organizations.v1.model.ShowEffectivePoliciesResponse;
 import com.huaweicloud.sdk.organizations.v1.model.ShowHandshakeRequest;
@@ -117,6 +133,10 @@ import com.huaweicloud.sdk.organizations.v1.model.UntagResourceRequest;
 import com.huaweicloud.sdk.organizations.v1.model.UntagResourceResponse;
 import com.huaweicloud.sdk.organizations.v1.model.UpdateAccountRequest;
 import com.huaweicloud.sdk.organizations.v1.model.UpdateAccountResponse;
+import com.huaweicloud.sdk.organizations.v1.model.UpdateDryRunConfigRequest;
+import com.huaweicloud.sdk.organizations.v1.model.UpdateDryRunConfigResponse;
+import com.huaweicloud.sdk.organizations.v1.model.UpdateDryRunPolicyRequest;
+import com.huaweicloud.sdk.organizations.v1.model.UpdateDryRunPolicyResponse;
 import com.huaweicloud.sdk.organizations.v1.model.UpdateOrganizationalUnitRequest;
 import com.huaweicloud.sdk.organizations.v1.model.UpdateOrganizationalUnitResponse;
 import com.huaweicloud.sdk.organizations.v1.model.UpdatePolicyRequest;
@@ -592,6 +612,296 @@ public class OrganizationsClient {
     public SyncInvoker<RegisterDelegatedAdministratorRequest, RegisterDelegatedAdministratorResponse> registerDelegatedAdministratorInvoker(
         RegisterDelegatedAdministratorRequest request) {
         return new SyncInvoker<>(request, OrganizationsMeta.registerDelegatedAdministrator, hcClient);
+    }
+
+    /**
+     * 查询组织策略试运行的配置
+     *
+     * 查询组织策略试运行的配置。此操作只能由组织的管理或云服务委托管理员账号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDryRunConfigRequest 请求对象
+     * @return ShowDryRunConfigResponse
+     */
+    public ShowDryRunConfigResponse showDryRunConfig(ShowDryRunConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, OrganizationsMeta.showDryRunConfig);
+    }
+
+    /**
+     * 查询组织策略试运行的配置
+     *
+     * 查询组织策略试运行的配置。此操作只能由组织的管理或云服务委托管理员账号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDryRunConfigRequest 请求对象
+     * @return SyncInvoker<ShowDryRunConfigRequest, ShowDryRunConfigResponse>
+     */
+    public SyncInvoker<ShowDryRunConfigRequest, ShowDryRunConfigResponse> showDryRunConfigInvoker(
+        ShowDryRunConfigRequest request) {
+        return new SyncInvoker<>(request, OrganizationsMeta.showDryRunConfig, hcClient);
+    }
+
+    /**
+     * 更新组织策略试运行的配置
+     *
+     * 更新组织策略试运行的配置。此操作只能由组织的管理账号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDryRunConfigRequest 请求对象
+     * @return UpdateDryRunConfigResponse
+     */
+    public UpdateDryRunConfigResponse updateDryRunConfig(UpdateDryRunConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, OrganizationsMeta.updateDryRunConfig);
+    }
+
+    /**
+     * 更新组织策略试运行的配置
+     *
+     * 更新组织策略试运行的配置。此操作只能由组织的管理账号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDryRunConfigRequest 请求对象
+     * @return SyncInvoker<UpdateDryRunConfigRequest, UpdateDryRunConfigResponse>
+     */
+    public SyncInvoker<UpdateDryRunConfigRequest, UpdateDryRunConfigResponse> updateDryRunConfigInvoker(
+        UpdateDryRunConfigRequest request) {
+        return new SyncInvoker<>(request, OrganizationsMeta.updateDryRunConfig, hcClient);
+    }
+
+    /**
+     * 将试运行策略跟实体绑定
+     *
+     * 绑定试运行策略到根、组织单元或个人账户。此操作只能由组织的管理账号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AttachDryRunPolicyRequest 请求对象
+     * @return AttachDryRunPolicyResponse
+     */
+    public AttachDryRunPolicyResponse attachDryRunPolicy(AttachDryRunPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, OrganizationsMeta.attachDryRunPolicy);
+    }
+
+    /**
+     * 将试运行策略跟实体绑定
+     *
+     * 绑定试运行策略到根、组织单元或个人账户。此操作只能由组织的管理账号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AttachDryRunPolicyRequest 请求对象
+     * @return SyncInvoker<AttachDryRunPolicyRequest, AttachDryRunPolicyResponse>
+     */
+    public SyncInvoker<AttachDryRunPolicyRequest, AttachDryRunPolicyResponse> attachDryRunPolicyInvoker(
+        AttachDryRunPolicyRequest request) {
+        return new SyncInvoker<>(request, OrganizationsMeta.attachDryRunPolicy, hcClient);
+    }
+
+    /**
+     * 创建试运行策略
+     *
+     * 创建指定类型的试运行策略。此操作只能由组织的管理账号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDryRunPolicyRequest 请求对象
+     * @return CreateDryRunPolicyResponse
+     */
+    public CreateDryRunPolicyResponse createDryRunPolicy(CreateDryRunPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, OrganizationsMeta.createDryRunPolicy);
+    }
+
+    /**
+     * 创建试运行策略
+     *
+     * 创建指定类型的试运行策略。此操作只能由组织的管理账号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDryRunPolicyRequest 请求对象
+     * @return SyncInvoker<CreateDryRunPolicyRequest, CreateDryRunPolicyResponse>
+     */
+    public SyncInvoker<CreateDryRunPolicyRequest, CreateDryRunPolicyResponse> createDryRunPolicyInvoker(
+        CreateDryRunPolicyRequest request) {
+        return new SyncInvoker<>(request, OrganizationsMeta.createDryRunPolicy, hcClient);
+    }
+
+    /**
+     * 删除试运行策略
+     *
+     * 从组织中删除指定的试运行策略。在执行此操作之前，必须首先将策略跟所有组织单元、根和账号解绑。此操作只能由组织的管理账号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDryRunPolicyRequest 请求对象
+     * @return DeleteDryRunPolicyResponse
+     */
+    public DeleteDryRunPolicyResponse deleteDryRunPolicy(DeleteDryRunPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, OrganizationsMeta.deleteDryRunPolicy);
+    }
+
+    /**
+     * 删除试运行策略
+     *
+     * 从组织中删除指定的试运行策略。在执行此操作之前，必须首先将策略跟所有组织单元、根和账号解绑。此操作只能由组织的管理账号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDryRunPolicyRequest 请求对象
+     * @return SyncInvoker<DeleteDryRunPolicyRequest, DeleteDryRunPolicyResponse>
+     */
+    public SyncInvoker<DeleteDryRunPolicyRequest, DeleteDryRunPolicyResponse> deleteDryRunPolicyInvoker(
+        DeleteDryRunPolicyRequest request) {
+        return new SyncInvoker<>(request, OrganizationsMeta.deleteDryRunPolicy, hcClient);
+    }
+
+    /**
+     * 将试运行策略跟实体解绑
+     *
+     * 从根、组织单元或账号解绑试运行策略。此操作只能由组织的管理账号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DetachDryRunPolicyRequest 请求对象
+     * @return DetachDryRunPolicyResponse
+     */
+    public DetachDryRunPolicyResponse detachDryRunPolicy(DetachDryRunPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, OrganizationsMeta.detachDryRunPolicy);
+    }
+
+    /**
+     * 将试运行策略跟实体解绑
+     *
+     * 从根、组织单元或账号解绑试运行策略。此操作只能由组织的管理账号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DetachDryRunPolicyRequest 请求对象
+     * @return SyncInvoker<DetachDryRunPolicyRequest, DetachDryRunPolicyResponse>
+     */
+    public SyncInvoker<DetachDryRunPolicyRequest, DetachDryRunPolicyResponse> detachDryRunPolicyInvoker(
+        DetachDryRunPolicyRequest request) {
+        return new SyncInvoker<>(request, OrganizationsMeta.detachDryRunPolicy, hcClient);
+    }
+
+    /**
+     * 列出试运行策略
+     *
+     * 列出组织中的所有试运行策略。如果指定了资源ID，例如组织单元ID或账号ID，则将获得该资源已绑定的策略列表。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDryRunPoliciesRequest 请求对象
+     * @return ListDryRunPoliciesResponse
+     */
+    public ListDryRunPoliciesResponse listDryRunPolicies(ListDryRunPoliciesRequest request) {
+        return hcClient.syncInvokeHttp(request, OrganizationsMeta.listDryRunPolicies);
+    }
+
+    /**
+     * 列出试运行策略
+     *
+     * 列出组织中的所有试运行策略。如果指定了资源ID，例如组织单元ID或账号ID，则将获得该资源已绑定的策略列表。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDryRunPoliciesRequest 请求对象
+     * @return SyncInvoker<ListDryRunPoliciesRequest, ListDryRunPoliciesResponse>
+     */
+    public SyncInvoker<ListDryRunPoliciesRequest, ListDryRunPoliciesResponse> listDryRunPoliciesInvoker(
+        ListDryRunPoliciesRequest request) {
+        return new SyncInvoker<>(request, OrganizationsMeta.listDryRunPolicies, hcClient);
+    }
+
+    /**
+     * 列出跟指定试运行策略绑定的所有实体
+     *
+     * 列出跟指定试运行策略绑定的所有根、组织单元和账号。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEntitiesForDryRunPolicyRequest 请求对象
+     * @return ListEntitiesForDryRunPolicyResponse
+     */
+    public ListEntitiesForDryRunPolicyResponse listEntitiesForDryRunPolicy(ListEntitiesForDryRunPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, OrganizationsMeta.listEntitiesForDryRunPolicy);
+    }
+
+    /**
+     * 列出跟指定试运行策略绑定的所有实体
+     *
+     * 列出跟指定试运行策略绑定的所有根、组织单元和账号。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEntitiesForDryRunPolicyRequest 请求对象
+     * @return SyncInvoker<ListEntitiesForDryRunPolicyRequest, ListEntitiesForDryRunPolicyResponse>
+     */
+    public SyncInvoker<ListEntitiesForDryRunPolicyRequest, ListEntitiesForDryRunPolicyResponse> listEntitiesForDryRunPolicyInvoker(
+        ListEntitiesForDryRunPolicyRequest request) {
+        return new SyncInvoker<>(request, OrganizationsMeta.listEntitiesForDryRunPolicy, hcClient);
+    }
+
+    /**
+     * 查询试运行策略相关信息
+     *
+     * 检索试运行策略的相关信息。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDryRunPolicyRequest 请求对象
+     * @return ShowDryRunPolicyResponse
+     */
+    public ShowDryRunPolicyResponse showDryRunPolicy(ShowDryRunPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, OrganizationsMeta.showDryRunPolicy);
+    }
+
+    /**
+     * 查询试运行策略相关信息
+     *
+     * 检索试运行策略的相关信息。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDryRunPolicyRequest 请求对象
+     * @return SyncInvoker<ShowDryRunPolicyRequest, ShowDryRunPolicyResponse>
+     */
+    public SyncInvoker<ShowDryRunPolicyRequest, ShowDryRunPolicyResponse> showDryRunPolicyInvoker(
+        ShowDryRunPolicyRequest request) {
+        return new SyncInvoker<>(request, OrganizationsMeta.showDryRunPolicy, hcClient);
+    }
+
+    /**
+     * 更新试运行策略
+     *
+     * 更新试运行策略，可以更新试运行策略的名称、描述或内容。如果不提供任何参数，则策略将保持不变。您不能更改策略的类型。此操作只能由组织的管理账号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDryRunPolicyRequest 请求对象
+     * @return UpdateDryRunPolicyResponse
+     */
+    public UpdateDryRunPolicyResponse updateDryRunPolicy(UpdateDryRunPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, OrganizationsMeta.updateDryRunPolicy);
+    }
+
+    /**
+     * 更新试运行策略
+     *
+     * 更新试运行策略，可以更新试运行策略的名称、描述或内容。如果不提供任何参数，则策略将保持不变。您不能更改策略的类型。此操作只能由组织的管理账号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDryRunPolicyRequest 请求对象
+     * @return SyncInvoker<UpdateDryRunPolicyRequest, UpdateDryRunPolicyResponse>
+     */
+    public SyncInvoker<UpdateDryRunPolicyRequest, UpdateDryRunPolicyResponse> updateDryRunPolicyInvoker(
+        UpdateDryRunPolicyRequest request) {
+        return new SyncInvoker<>(request, OrganizationsMeta.updateDryRunPolicy, hcClient);
     }
 
     /**

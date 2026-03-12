@@ -119,6 +119,8 @@ import com.huaweicloud.sdk.swr.v2.model.ExecuteInstanceRetentionPolicyRequest;
 import com.huaweicloud.sdk.swr.v2.model.ExecuteInstanceRetentionPolicyResponse;
 import com.huaweicloud.sdk.swr.v2.model.ExecuteInstanceSignPolicyRequest;
 import com.huaweicloud.sdk.swr.v2.model.ExecuteInstanceSignPolicyResponse;
+import com.huaweicloud.sdk.swr.v2.model.ListAllInstanceRepositoriesRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListAllInstanceRepositoriesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListApiVersionsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListApiVersionsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListAuditLogsRequest;
@@ -3100,6 +3102,36 @@ public class SwrAsyncClient {
     public AsyncInvoker<ExecuteInstanceSignPolicyRequest, ExecuteInstanceSignPolicyResponse> executeInstanceSignPolicyAsyncInvoker(
         ExecuteInstanceSignPolicyRequest request) {
         return new AsyncInvoker<>(request, SwrMeta.executeInstanceSignPolicy, hcClient);
+    }
+
+    /**
+     * 获取当前项目下所有企业仓库实例的仓库列表
+     *
+     * 获取当前项目下所有企业仓库实例的仓库列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllInstanceRepositoriesRequest 请求对象
+     * @return CompletableFuture<ListAllInstanceRepositoriesResponse>
+     */
+    public CompletableFuture<ListAllInstanceRepositoriesResponse> listAllInstanceRepositoriesAsync(
+        ListAllInstanceRepositoriesRequest request) {
+        return hcClient.asyncInvokeHttp(request, SwrMeta.listAllInstanceRepositories);
+    }
+
+    /**
+     * 获取当前项目下所有企业仓库实例的仓库列表
+     *
+     * 获取当前项目下所有企业仓库实例的仓库列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllInstanceRepositoriesRequest 请求对象
+     * @return AsyncInvoker<ListAllInstanceRepositoriesRequest, ListAllInstanceRepositoriesResponse>
+     */
+    public AsyncInvoker<ListAllInstanceRepositoriesRequest, ListAllInstanceRepositoriesResponse> listAllInstanceRepositoriesAsyncInvoker(
+        ListAllInstanceRepositoriesRequest request) {
+        return new AsyncInvoker<>(request, SwrMeta.listAllInstanceRepositories, hcClient);
     }
 
     /**

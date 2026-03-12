@@ -609,10 +609,10 @@ public class DisMeta {
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ShowPartitionMetricsRequest::getStartTime,
                 ShowPartitionMetricsRequest::setStartTime));
-        builder.<String>withRequestField("end_time",
+        builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ShowPartitionMetricsRequest::getEndTime, ShowPartitionMetricsRequest::setEndTime));
 
         // response

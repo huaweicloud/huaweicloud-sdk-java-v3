@@ -27,6 +27,8 @@ import com.huaweicloud.sdk.mrs.v1.model.ListAsyncTaskStatusRequest;
 import com.huaweicloud.sdk.mrs.v1.model.ListAsyncTaskStatusResponse;
 import com.huaweicloud.sdk.mrs.v1.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.mrs.v1.model.ListAvailableZonesResponse;
+import com.huaweicloud.sdk.mrs.v1.model.ListClusterSshStateRequest;
+import com.huaweicloud.sdk.mrs.v1.model.ListClusterSshStateResponse;
 import com.huaweicloud.sdk.mrs.v1.model.ListClusterTagsRequest;
 import com.huaweicloud.sdk.mrs.v1.model.ListClusterTagsResponse;
 import com.huaweicloud.sdk.mrs.v1.model.ListClustersByTagsRequest;
@@ -45,6 +47,8 @@ import com.huaweicloud.sdk.mrs.v1.model.ShowMrsVersionMetadataRequest;
 import com.huaweicloud.sdk.mrs.v1.model.ShowMrsVersionMetadataResponse;
 import com.huaweicloud.sdk.mrs.v1.model.UpdateClusterScalingRequest;
 import com.huaweicloud.sdk.mrs.v1.model.UpdateClusterScalingResponse;
+import com.huaweicloud.sdk.mrs.v1.model.UpdateClusterSshRequest;
+import com.huaweicloud.sdk.mrs.v1.model.UpdateClusterSshResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -452,6 +456,35 @@ public class MrsAsyncClient {
     }
 
     /**
+     * 查询集群节点授权状态
+     *
+     * 查询集群节点授权状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClusterSshStateRequest 请求对象
+     * @return CompletableFuture<ListClusterSshStateResponse>
+     */
+    public CompletableFuture<ListClusterSshStateResponse> listClusterSshStateAsync(ListClusterSshStateRequest request) {
+        return hcClient.asyncInvokeHttp(request, MrsMeta.listClusterSshState);
+    }
+
+    /**
+     * 查询集群节点授权状态
+     *
+     * 查询集群节点授权状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClusterSshStateRequest 请求对象
+     * @return AsyncInvoker<ListClusterSshStateRequest, ListClusterSshStateResponse>
+     */
+    public AsyncInvoker<ListClusterSshStateRequest, ListClusterSshStateResponse> listClusterSshStateAsyncInvoker(
+        ListClusterSshStateRequest request) {
+        return new AsyncInvoker<>(request, MrsMeta.listClusterSshState, hcClient);
+    }
+
+    /**
      * 查询指定集群的标签
      *
      * 查询指定集群的标签信息。
@@ -694,6 +727,35 @@ public class MrsAsyncClient {
     public AsyncInvoker<UpdateClusterScalingRequest, UpdateClusterScalingResponse> updateClusterScalingAsyncInvoker(
         UpdateClusterScalingRequest request) {
         return new AsyncInvoker<>(request, MrsMeta.updateClusterScaling, hcClient);
+    }
+
+    /**
+     * 开启/关闭集群节点授权
+     *
+     * 开启/关闭集群节点授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateClusterSshRequest 请求对象
+     * @return CompletableFuture<UpdateClusterSshResponse>
+     */
+    public CompletableFuture<UpdateClusterSshResponse> updateClusterSshAsync(UpdateClusterSshRequest request) {
+        return hcClient.asyncInvokeHttp(request, MrsMeta.updateClusterSsh);
+    }
+
+    /**
+     * 开启/关闭集群节点授权
+     *
+     * 开启/关闭集群节点授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateClusterSshRequest 请求对象
+     * @return AsyncInvoker<UpdateClusterSshRequest, UpdateClusterSshResponse>
+     */
+    public AsyncInvoker<UpdateClusterSshRequest, UpdateClusterSshResponse> updateClusterSshAsyncInvoker(
+        UpdateClusterSshRequest request) {
+        return new AsyncInvoker<>(request, MrsMeta.updateClusterSsh, hcClient);
     }
 
     /**

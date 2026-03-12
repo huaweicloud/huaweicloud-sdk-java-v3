@@ -98,7 +98,7 @@ public class DownloadDbObjectTemplateRequest implements ProgressRequest {
     private XLanguageEnum xLanguage;
 
     /**
-     * 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级
+     * 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级 - partition：partition分区级导入
      */
     public static final class FileImportDbLevelEnum {
 
@@ -117,6 +117,11 @@ public class DownloadDbObjectTemplateRequest implements ProgressRequest {
          */
         public static final FileImportDbLevelEnum COLUMN = new FileImportDbLevelEnum("column");
 
+        /**
+         * Enum PARTITION for value: "partition"
+         */
+        public static final FileImportDbLevelEnum PARTITION = new FileImportDbLevelEnum("partition");
+
         private static final Map<String, FileImportDbLevelEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, FileImportDbLevelEnum> createStaticFields() {
@@ -124,6 +129,7 @@ public class DownloadDbObjectTemplateRequest implements ProgressRequest {
             map.put("database", DATABASE);
             map.put("table", TABLE);
             map.put("column", COLUMN);
+            map.put("partition", PARTITION);
             return Collections.unmodifiableMap(map);
         }
 
@@ -244,7 +250,7 @@ public class DownloadDbObjectTemplateRequest implements ProgressRequest {
     }
 
     /**
-     * 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级
+     * 文件模板支持数据同步级别，不填默认为table表级。 - database：库级 - table：表级 - column：列级 - partition：partition分区级导入
      * @return fileImportDbLevel
      */
     public FileImportDbLevelEnum getFileImportDbLevel() {

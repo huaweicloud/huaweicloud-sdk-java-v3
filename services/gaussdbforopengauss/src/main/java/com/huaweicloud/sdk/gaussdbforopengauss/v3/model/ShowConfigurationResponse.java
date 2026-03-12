@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -51,11 +50,6 @@ public class ShowConfigurationResponse extends SdkResponse {
     @JsonProperty(value = "backup_parallel_degree")
 
     private Integer backupParallelDegree;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "backup_node_info")
-
-    private BackupNodeInfoResult backupNodeInfo;
 
     public ShowConfigurationResponse withRateLimit(Integer rateLimit) {
         this.rateLimit = rateLimit;
@@ -199,32 +193,6 @@ public class ShowConfigurationResponse extends SdkResponse {
         this.backupParallelDegree = backupParallelDegree;
     }
 
-    public ShowConfigurationResponse withBackupNodeInfo(BackupNodeInfoResult backupNodeInfo) {
-        this.backupNodeInfo = backupNodeInfo;
-        return this;
-    }
-
-    public ShowConfigurationResponse withBackupNodeInfo(Consumer<BackupNodeInfoResult> backupNodeInfoSetter) {
-        if (this.backupNodeInfo == null) {
-            this.backupNodeInfo = new BackupNodeInfoResult();
-            backupNodeInfoSetter.accept(this.backupNodeInfo);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get backupNodeInfo
-     * @return backupNodeInfo
-     */
-    public BackupNodeInfoResult getBackupNodeInfo() {
-        return backupNodeInfo;
-    }
-
-    public void setBackupNodeInfo(BackupNodeInfoResult backupNodeInfo) {
-        this.backupNodeInfo = backupNodeInfo;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -240,8 +208,7 @@ public class ShowConfigurationResponse extends SdkResponse {
             && Objects.equals(this.closeCompression, that.closeCompression)
             && Objects.equals(this.defaultBackupMediaType, that.defaultBackupMediaType)
             && Objects.equals(this.defaultBackupMethod, that.defaultBackupMethod)
-            && Objects.equals(this.backupParallelDegree, that.backupParallelDegree)
-            && Objects.equals(this.backupNodeInfo, that.backupNodeInfo);
+            && Objects.equals(this.backupParallelDegree, that.backupParallelDegree);
     }
 
     @Override
@@ -253,8 +220,7 @@ public class ShowConfigurationResponse extends SdkResponse {
             closeCompression,
             defaultBackupMediaType,
             defaultBackupMethod,
-            backupParallelDegree,
-            backupNodeInfo);
+            backupParallelDegree);
     }
 
     @Override
@@ -269,7 +235,6 @@ public class ShowConfigurationResponse extends SdkResponse {
         sb.append("    defaultBackupMediaType: ").append(toIndentedString(defaultBackupMediaType)).append("\n");
         sb.append("    defaultBackupMethod: ").append(toIndentedString(defaultBackupMethod)).append("\n");
         sb.append("    backupParallelDegree: ").append(toIndentedString(backupParallelDegree)).append("\n");
-        sb.append("    backupNodeInfo: ").append(toIndentedString(backupNodeInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

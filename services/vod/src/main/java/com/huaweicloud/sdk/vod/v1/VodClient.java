@@ -57,6 +57,8 @@ import com.huaweicloud.sdk.vod.v1.model.DeleteTemplateGroupCollectionRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTemplateGroupCollectionResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTemplateGroupRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTemplateGroupResponse;
+import com.huaweicloud.sdk.vod.v1.model.DeleteThumbnailsRequest;
+import com.huaweicloud.sdk.vod.v1.model.DeleteThumbnailsResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTranscodeProductRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTranscodeProductResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTranscodeTemplateRequest;
@@ -83,6 +85,10 @@ import com.huaweicloud.sdk.vod.v1.model.ListTemplateGroupCollectionRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListTemplateGroupCollectionResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListTemplateGroupRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListTemplateGroupResponse;
+import com.huaweicloud.sdk.vod.v1.model.ListThumbnailDetailsRequest;
+import com.huaweicloud.sdk.vod.v1.model.ListThumbnailDetailsResponse;
+import com.huaweicloud.sdk.vod.v1.model.ListThumbnailInfoRequest;
+import com.huaweicloud.sdk.vod.v1.model.ListThumbnailInfoResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListTopStatisticsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListTopStatisticsResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListTranscodeTemplateRequest;
@@ -983,6 +989,35 @@ public class VodClient {
     }
 
     /**
+     * 删除媒资下的多个截图
+     *
+     * 删除媒资对应的截图，支持批量删除单个媒资下的多个截图结果，一次最多能删除十个。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteThumbnailsRequest 请求对象
+     * @return DeleteThumbnailsResponse
+     */
+    public DeleteThumbnailsResponse deleteThumbnails(DeleteThumbnailsRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.deleteThumbnails);
+    }
+
+    /**
+     * 删除媒资下的多个截图
+     *
+     * 删除媒资对应的截图，支持批量删除单个媒资下的多个截图结果，一次最多能删除十个。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteThumbnailsRequest 请求对象
+     * @return SyncInvoker<DeleteThumbnailsRequest, DeleteThumbnailsResponse>
+     */
+    public SyncInvoker<DeleteThumbnailsRequest, DeleteThumbnailsResponse> deleteThumbnailsInvoker(
+        DeleteThumbnailsRequest request) {
+        return new SyncInvoker<>(request, VodMeta.deleteThumbnails, hcClient);
+    }
+
+    /**
      * 删除转码产物
      *
      * 删除转码产物。
@@ -1339,6 +1374,64 @@ public class VodClient {
     public SyncInvoker<ListTemplateGroupCollectionRequest, ListTemplateGroupCollectionResponse> listTemplateGroupCollectionInvoker(
         ListTemplateGroupCollectionRequest request) {
         return new SyncInvoker<>(request, VodMeta.listTemplateGroupCollection, hcClient);
+    }
+
+    /**
+     * 查询截图详情
+     *
+     * 查询截图结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListThumbnailDetailsRequest 请求对象
+     * @return ListThumbnailDetailsResponse
+     */
+    public ListThumbnailDetailsResponse listThumbnailDetails(ListThumbnailDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.listThumbnailDetails);
+    }
+
+    /**
+     * 查询截图详情
+     *
+     * 查询截图结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListThumbnailDetailsRequest 请求对象
+     * @return SyncInvoker<ListThumbnailDetailsRequest, ListThumbnailDetailsResponse>
+     */
+    public SyncInvoker<ListThumbnailDetailsRequest, ListThumbnailDetailsResponse> listThumbnailDetailsInvoker(
+        ListThumbnailDetailsRequest request) {
+        return new SyncInvoker<>(request, VodMeta.listThumbnailDetails, hcClient);
+    }
+
+    /**
+     * 查询截图任务结果列表
+     *
+     * 查询截图任务结果列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListThumbnailInfoRequest 请求对象
+     * @return ListThumbnailInfoResponse
+     */
+    public ListThumbnailInfoResponse listThumbnailInfo(ListThumbnailInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.listThumbnailInfo);
+    }
+
+    /**
+     * 查询截图任务结果列表
+     *
+     * 查询截图任务结果列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListThumbnailInfoRequest 请求对象
+     * @return SyncInvoker<ListThumbnailInfoRequest, ListThumbnailInfoResponse>
+     */
+    public SyncInvoker<ListThumbnailInfoRequest, ListThumbnailInfoResponse> listThumbnailInfoInvoker(
+        ListThumbnailInfoRequest request) {
+        return new SyncInvoker<>(request, VodMeta.listThumbnailInfo, hcClient);
     }
 
     /**

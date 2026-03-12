@@ -27,6 +27,8 @@ import com.huaweicloud.sdk.mrs.v2.model.ExecuteSqlRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ExecuteSqlResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ExpandClusterRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ExpandClusterResponse;
+import com.huaweicloud.sdk.mrs.v2.model.ListClusterManagerAuthStateRequest;
+import com.huaweicloud.sdk.mrs.v2.model.ListClusterManagerAuthStateResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorRequest;
 import com.huaweicloud.sdk.mrs.v2.model.ListDataConnectorResponse;
 import com.huaweicloud.sdk.mrs.v2.model.ListNodesRequest;
@@ -73,6 +75,8 @@ import com.huaweicloud.sdk.mrs.v2.model.UpdateAgencyMappingRequest;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateAgencyMappingResponse;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateAutoScalingPolicyRequest;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateAutoScalingPolicyResponse;
+import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterAuthTrosRequest;
+import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterAuthTrosResponse;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterNameRequest;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateClusterNameResponse;
 import com.huaweicloud.sdk.mrs.v2.model.UpdateDataConnectorRequest;
@@ -620,6 +624,36 @@ public class MrsAsyncClient {
     }
 
     /**
+     * 查询集群界面授权状态
+     *
+     * 查询集群界面授权状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClusterManagerAuthStateRequest 请求对象
+     * @return CompletableFuture<ListClusterManagerAuthStateResponse>
+     */
+    public CompletableFuture<ListClusterManagerAuthStateResponse> listClusterManagerAuthStateAsync(
+        ListClusterManagerAuthStateRequest request) {
+        return hcClient.asyncInvokeHttp(request, MrsMeta.listClusterManagerAuthState);
+    }
+
+    /**
+     * 查询集群界面授权状态
+     *
+     * 查询集群界面授权状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClusterManagerAuthStateRequest 请求对象
+     * @return AsyncInvoker<ListClusterManagerAuthStateRequest, ListClusterManagerAuthStateResponse>
+     */
+    public AsyncInvoker<ListClusterManagerAuthStateRequest, ListClusterManagerAuthStateResponse> listClusterManagerAuthStateAsyncInvoker(
+        ListClusterManagerAuthStateRequest request) {
+        return new AsyncInvoker<>(request, MrsMeta.listClusterManagerAuthState, hcClient);
+    }
+
+    /**
      * 查询集群节点列表
      *
      * 查询集群节点列表。
@@ -704,6 +738,36 @@ public class MrsAsyncClient {
     public AsyncInvoker<ShrinkClusterRequest, ShrinkClusterResponse> shrinkClusterAsyncInvoker(
         ShrinkClusterRequest request) {
         return new AsyncInvoker<>(request, MrsMeta.shrinkCluster, hcClient);
+    }
+
+    /**
+     * 开启/关闭集群界面授权
+     *
+     * 开启/关闭集群界面授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateClusterAuthTrosRequest 请求对象
+     * @return CompletableFuture<UpdateClusterAuthTrosResponse>
+     */
+    public CompletableFuture<UpdateClusterAuthTrosResponse> updateClusterAuthTrosAsync(
+        UpdateClusterAuthTrosRequest request) {
+        return hcClient.asyncInvokeHttp(request, MrsMeta.updateClusterAuthTros);
+    }
+
+    /**
+     * 开启/关闭集群界面授权
+     *
+     * 开启/关闭集群界面授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateClusterAuthTrosRequest 请求对象
+     * @return AsyncInvoker<UpdateClusterAuthTrosRequest, UpdateClusterAuthTrosResponse>
+     */
+    public AsyncInvoker<UpdateClusterAuthTrosRequest, UpdateClusterAuthTrosResponse> updateClusterAuthTrosAsyncInvoker(
+        UpdateClusterAuthTrosRequest request) {
+        return new AsyncInvoker<>(request, MrsMeta.updateClusterAuthTros, hcClient);
     }
 
     /**

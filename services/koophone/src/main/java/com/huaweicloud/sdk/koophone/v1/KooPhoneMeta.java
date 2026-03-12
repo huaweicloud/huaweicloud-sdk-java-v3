@@ -47,6 +47,8 @@ import com.huaweicloud.sdk.koophone.v1.model.InstanceStreamingStopReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceSyncCommandsReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceUnassignReq;
 import com.huaweicloud.sdk.koophone.v1.model.InstanceVideoSettingReq;
+import com.huaweicloud.sdk.koophone.v1.model.ListInstanceAppRequest;
+import com.huaweicloud.sdk.koophone.v1.model.ListInstanceAppResponse;
 import com.huaweicloud.sdk.koophone.v1.model.ListInstancesRequest;
 import com.huaweicloud.sdk.koophone.v1.model.ListInstancesResponse;
 import com.huaweicloud.sdk.koophone.v1.model.ProvisionInstanceRequest;
@@ -357,6 +359,49 @@ public class KooPhoneMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(InstallAppReq.class),
             f -> f.withMarshaller(InstallAppRequest::getBody, InstallAppRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstanceAppRequest, ListInstanceAppResponse> listInstanceApp =
+        genForListInstanceApp();
+
+    private static HttpRequestDef<ListInstanceAppRequest, ListInstanceAppResponse> genForListInstanceApp() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceAppRequest, ListInstanceAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListInstanceAppRequest.class, ListInstanceAppResponse.class)
+                .withName("ListInstanceApp")
+                .withUri("/v1/instances/{instance_id}/app-list")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceAppRequest::getInstanceId, ListInstanceAppRequest::setInstanceId));
+        builder.<Integer>withRequestField("page_no",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceAppRequest::getPageNo, ListInstanceAppRequest::setPageNo));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceAppRequest::getPageSize, ListInstanceAppRequest::setPageSize));
+        builder.<Integer>withRequestField("app_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceAppRequest::getAppType, ListInstanceAppRequest::setAppType));
+        builder.<String>withRequestField("x-request-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceAppRequest::getXRequestId, ListInstanceAppRequest::setXRequestId));
 
         // response
 
