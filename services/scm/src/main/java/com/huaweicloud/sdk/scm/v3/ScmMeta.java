@@ -29,6 +29,10 @@ import com.huaweicloud.sdk.scm.v3.model.DeleteCsrResponse;
 import com.huaweicloud.sdk.scm.v3.model.DeployCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.DeployCertificateRequestBody;
 import com.huaweicloud.sdk.scm.v3.model.DeployCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.DisableNotificationRequest;
+import com.huaweicloud.sdk.scm.v3.model.DisableNotificationResponse;
+import com.huaweicloud.sdk.scm.v3.model.EnableNotificationRequest;
+import com.huaweicloud.sdk.scm.v3.model.EnableNotificationResponse;
 import com.huaweicloud.sdk.scm.v3.model.ExportCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.ExportCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.ImportCertificateRequest;
@@ -48,6 +52,7 @@ import com.huaweicloud.sdk.scm.v3.model.ListDeployedResourcesRequestBody;
 import com.huaweicloud.sdk.scm.v3.model.ListDeployedResourcesResponse;
 import com.huaweicloud.sdk.scm.v3.model.ListTagsByCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.ListTagsByCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.NoticeRequestBody;
 import com.huaweicloud.sdk.scm.v3.model.PurchaseCertificateRequestBody;
 import com.huaweicloud.sdk.scm.v3.model.PushCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.PushCertificateRequestBody;
@@ -68,6 +73,8 @@ import com.huaweicloud.sdk.scm.v3.model.UpdateCsrResponse;
 import com.huaweicloud.sdk.scm.v3.model.UploadCsrRequest;
 import com.huaweicloud.sdk.scm.v3.model.UploadCsrRequestBody;
 import com.huaweicloud.sdk.scm.v3.model.UploadCsrResponse;
+
+import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class ScmMeta {
@@ -260,6 +267,54 @@ public class ScmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeployCertificateRequestBody.class),
             f -> f.withMarshaller(DeployCertificateRequest::getBody, DeployCertificateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisableNotificationRequest, DisableNotificationResponse> disableNotification =
+        genForDisableNotification();
+
+    private static HttpRequestDef<DisableNotificationRequest, DisableNotificationResponse> genForDisableNotification() {
+        // basic
+        HttpRequestDef.Builder<DisableNotificationRequest, DisableNotificationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DisableNotificationRequest.class, DisableNotificationResponse.class)
+                .withName("DisableNotification")
+                .withUri("/v3/scm/notification/disable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<NoticeRequestBody>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(DisableNotificationRequest::getBody, DisableNotificationRequest::setBody)
+                .withInnerContainerType(NoticeRequestBody.class));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<EnableNotificationRequest, EnableNotificationResponse> enableNotification =
+        genForEnableNotification();
+
+    private static HttpRequestDef<EnableNotificationRequest, EnableNotificationResponse> genForEnableNotification() {
+        // basic
+        HttpRequestDef.Builder<EnableNotificationRequest, EnableNotificationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, EnableNotificationRequest.class, EnableNotificationResponse.class)
+                .withName("EnableNotification")
+                .withUri("/v3/scm/notification/enable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<NoticeRequestBody>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(EnableNotificationRequest::getBody, EnableNotificationRequest::setBody)
+                .withInnerContainerType(NoticeRequestBody.class));
 
         // response
 

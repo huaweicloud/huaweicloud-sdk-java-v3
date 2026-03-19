@@ -43,7 +43,7 @@ public class ListHostRouteRequest {
     }
 
     /**
-     * **参数解释：** 域名id，您可以通过调用查询云模式防护域名列表（ListHost）获取域名id **约束限制：** 不涉及 **取值范围：** 只能由英文字母、数字组成，且长度为32个字符。 **默认取值：** 不涉及
+     * **参数解释：** 域名id，您可以通过调用查询云模式防护域名列表（ListHost）获取域名id **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return instanceId
      */
     public String getInstanceId() {

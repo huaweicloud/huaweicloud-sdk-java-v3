@@ -15,47 +15,47 @@ import java.util.function.Consumer;
 public class ListInstanceReplicationPolicyExecSubTasksResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "subtasks")
+    @JsonProperty(value = "sub_tasks")
 
-    private List<SubtaskDetail> subtasks = null;
+    private List<SubtaskDetail> subTasks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
     private Integer total;
 
-    public ListInstanceReplicationPolicyExecSubTasksResponse withSubtasks(List<SubtaskDetail> subtasks) {
-        this.subtasks = subtasks;
+    public ListInstanceReplicationPolicyExecSubTasksResponse withSubTasks(List<SubtaskDetail> subTasks) {
+        this.subTasks = subTasks;
         return this;
     }
 
-    public ListInstanceReplicationPolicyExecSubTasksResponse addSubtasksItem(SubtaskDetail subtasksItem) {
-        if (this.subtasks == null) {
-            this.subtasks = new ArrayList<>();
+    public ListInstanceReplicationPolicyExecSubTasksResponse addSubTasksItem(SubtaskDetail subTasksItem) {
+        if (this.subTasks == null) {
+            this.subTasks = new ArrayList<>();
         }
-        this.subtasks.add(subtasksItem);
+        this.subTasks.add(subTasksItem);
         return this;
     }
 
-    public ListInstanceReplicationPolicyExecSubTasksResponse withSubtasks(
-        Consumer<List<SubtaskDetail>> subtasksSetter) {
-        if (this.subtasks == null) {
-            this.subtasks = new ArrayList<>();
+    public ListInstanceReplicationPolicyExecSubTasksResponse withSubTasks(
+        Consumer<List<SubtaskDetail>> subTasksSetter) {
+        if (this.subTasks == null) {
+            this.subTasks = new ArrayList<>();
         }
-        subtasksSetter.accept(this.subtasks);
+        subTasksSetter.accept(this.subTasks);
         return this;
     }
 
     /**
-     * 老化策略执行记录子任务列表
-     * @return subtasks
+     * 镜像同步策略执行记录子任务列表
+     * @return subTasks
      */
-    public List<SubtaskDetail> getSubtasks() {
-        return subtasks;
+    public List<SubtaskDetail> getSubTasks() {
+        return subTasks;
     }
 
-    public void setSubtasks(List<SubtaskDetail> subtasks) {
-        this.subtasks = subtasks;
+    public void setSubTasks(List<SubtaskDetail> subTasks) {
+        this.subTasks = subTasks;
     }
 
     public ListInstanceReplicationPolicyExecSubTasksResponse withTotal(Integer total) {
@@ -64,7 +64,7 @@ public class ListInstanceReplicationPolicyExecSubTasksResponse extends SdkRespon
     }
 
     /**
-     * 老化策略执行记录子任务总数
+     * 镜像同步策略执行记录子任务总数
      * @return total
      */
     public Integer getTotal() {
@@ -85,19 +85,19 @@ public class ListInstanceReplicationPolicyExecSubTasksResponse extends SdkRespon
         }
         ListInstanceReplicationPolicyExecSubTasksResponse that =
             (ListInstanceReplicationPolicyExecSubTasksResponse) obj;
-        return Objects.equals(this.subtasks, that.subtasks) && Objects.equals(this.total, that.total);
+        return Objects.equals(this.subTasks, that.subTasks) && Objects.equals(this.total, that.total);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subtasks, total);
+        return Objects.hash(subTasks, total);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListInstanceReplicationPolicyExecSubTasksResponse {\n");
-        sb.append("    subtasks: ").append(toIndentedString(subtasks)).append("\n");
+        sb.append("    subTasks: ").append(toIndentedString(subTasks)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("}");
         return sb.toString();

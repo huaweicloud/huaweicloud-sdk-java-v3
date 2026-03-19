@@ -85,6 +85,11 @@ public class ListVulHostVulsRequest {
 
     private String repairPriority;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_id_list")
+
+    private String hostIdList;
+
     public ListVulHostVulsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -344,6 +349,23 @@ public class ListVulHostVulsRequest {
         this.repairPriority = repairPriority;
     }
 
+    public ListVulHostVulsRequest withHostIdList(String hostIdList) {
+        this.hostIdList = hostIdList;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 主机id列表，多个主机id用英文逗号分隔 **约束限制**: 不涉及 **取值范围**: 字符长度0-1850位 **默认取值**: 不涉及 
+     * @return hostIdList
+     */
+    public String getHostIdList() {
+        return hostIdList;
+    }
+
+    public void setHostIdList(String hostIdList) {
+        this.hostIdList = hostIdList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -361,7 +383,8 @@ public class ListVulHostVulsRequest {
             && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp)
             && Objects.equals(this.type, that.type) && Objects.equals(this.repairType, that.repairType)
             && Objects.equals(this.severityLevel, that.severityLevel)
-            && Objects.equals(this.repairPriority, that.repairPriority);
+            && Objects.equals(this.repairPriority, that.repairPriority)
+            && Objects.equals(this.hostIdList, that.hostIdList);
     }
 
     @Override
@@ -380,7 +403,8 @@ public class ListVulHostVulsRequest {
             type,
             repairType,
             severityLevel,
-            repairPriority);
+            repairPriority,
+            hostIdList);
     }
 
     @Override
@@ -402,6 +426,7 @@ public class ListVulHostVulsRequest {
         sb.append("    repairType: ").append(toIndentedString(repairType)).append("\n");
         sb.append("    severityLevel: ").append(toIndentedString(severityLevel)).append("\n");
         sb.append("    repairPriority: ").append(toIndentedString(repairPriority)).append("\n");
+        sb.append("    hostIdList: ").append(toIndentedString(hostIdList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -22,7 +22,7 @@ public class ListAntiTamperPolicyRulesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
 
-    private List<LeakageListInfo> items = null;
+    private List<AntiTamperRuleResponseBody> items = null;
 
     public ListAntiTamperPolicyRulesResponse withTotal(Integer total) {
         this.total = total;
@@ -30,7 +30,7 @@ public class ListAntiTamperPolicyRulesResponse extends SdkResponse {
     }
 
     /**
-     * 防泄露规则数量
+     * 网页防篡改规则总条数
      * @return total
      */
     public Integer getTotal() {
@@ -41,12 +41,12 @@ public class ListAntiTamperPolicyRulesResponse extends SdkResponse {
         this.total = total;
     }
 
-    public ListAntiTamperPolicyRulesResponse withItems(List<LeakageListInfo> items) {
+    public ListAntiTamperPolicyRulesResponse withItems(List<AntiTamperRuleResponseBody> items) {
         this.items = items;
         return this;
     }
 
-    public ListAntiTamperPolicyRulesResponse addItemsItem(LeakageListInfo itemsItem) {
+    public ListAntiTamperPolicyRulesResponse addItemsItem(AntiTamperRuleResponseBody itemsItem) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class ListAntiTamperPolicyRulesResponse extends SdkResponse {
         return this;
     }
 
-    public ListAntiTamperPolicyRulesResponse withItems(Consumer<List<LeakageListInfo>> itemsSetter) {
+    public ListAntiTamperPolicyRulesResponse withItems(Consumer<List<AntiTamperRuleResponseBody>> itemsSetter) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -63,14 +63,14 @@ public class ListAntiTamperPolicyRulesResponse extends SdkResponse {
     }
 
     /**
-     * 防泄露规则列表
+     * 网页防篡改规则数组
      * @return items
      */
-    public List<LeakageListInfo> getItems() {
+    public List<AntiTamperRuleResponseBody> getItems() {
         return items;
     }
 
-    public void setItems(List<LeakageListInfo> items) {
+    public void setItems(List<AntiTamperRuleResponseBody> items) {
         this.items = items;
     }
 

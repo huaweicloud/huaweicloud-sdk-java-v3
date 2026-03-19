@@ -48,7 +48,7 @@ public class ShowCcRuleRequest {
     }
 
     /**
-     * 策略id（策略id从查询防护策略列表接口获取）
+     * **参数解释：** 防护策略id，您可以通过调用查询防护策略列表（ListPolicy）获取策略id **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return policyId
      */
     public String getPolicyId() {
@@ -65,7 +65,7 @@ public class ShowCcRuleRequest {
     }
 
     /**
-     * ID of the cc rule. It can be obtained by calling the **ListCcRules** API.
+     * **参数解释：** CC规则id，您可以通过查询CC规则列表（ListCcRules）接口的响应体中的id字段获取规则id **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return ruleId
      */
     public String getRuleId() {

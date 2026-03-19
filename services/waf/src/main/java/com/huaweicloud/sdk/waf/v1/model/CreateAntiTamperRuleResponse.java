@@ -98,7 +98,7 @@ public class CreateAntiTamperRuleResponse extends SdkResponse {
     }
 
     /**
-     * 防篡改的url，
+     * 防篡改的url
      * @return url
      */
     public String getUrl() {

@@ -41,7 +41,7 @@ public class ListResponseCodeTimelineResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 安全统计的时间线，按时间顺序展示统计数据 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * 安全统计的时间线，按时间顺序展示统计数据
      * @return body
      */
     public List<StatisticsTimelineItem> getBody() {

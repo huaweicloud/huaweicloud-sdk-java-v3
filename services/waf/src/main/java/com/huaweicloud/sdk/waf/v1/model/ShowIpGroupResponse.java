@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -28,6 +30,11 @@ public class ShowIpGroupResponse extends SdkResponse {
     @JsonProperty(value = "ips")
 
     private String ips;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_remarks")
+
+    private Map<String, String> ipRemarks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
@@ -98,6 +105,39 @@ public class ShowIpGroupResponse extends SdkResponse {
 
     public void setIps(String ips) {
         this.ips = ips;
+    }
+
+    public ShowIpGroupResponse withIpRemarks(Map<String, String> ipRemarks) {
+        this.ipRemarks = ipRemarks;
+        return this;
+    }
+
+    public ShowIpGroupResponse putIpRemarksItem(String key, String ipRemarksItem) {
+        if (this.ipRemarks == null) {
+            this.ipRemarks = new HashMap<>();
+        }
+        this.ipRemarks.put(key, ipRemarksItem);
+        return this;
+    }
+
+    public ShowIpGroupResponse withIpRemarks(Consumer<Map<String, String>> ipRemarksSetter) {
+        if (this.ipRemarks == null) {
+            this.ipRemarks = new HashMap<>();
+        }
+        ipRemarksSetter.accept(this.ipRemarks);
+        return this;
+    }
+
+    /**
+     * ip或ip段的备注
+     * @return ipRemarks
+     */
+    public Map<String, String> getIpRemarks() {
+        return ipRemarks;
+    }
+
+    public void setIpRemarks(Map<String, String> ipRemarks) {
+        this.ipRemarks = ipRemarks;
     }
 
     public ShowIpGroupResponse withSize(Integer size) {
@@ -203,14 +243,14 @@ public class ShowIpGroupResponse extends SdkResponse {
         }
         ShowIpGroupResponse that = (ShowIpGroupResponse) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.ips, that.ips) && Objects.equals(this.size, that.size)
-            && Objects.equals(this.rules, that.rules) && Objects.equals(this.shareInfo, that.shareInfo)
-            && Objects.equals(this.description, that.description);
+            && Objects.equals(this.ips, that.ips) && Objects.equals(this.ipRemarks, that.ipRemarks)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.rules, that.rules)
+            && Objects.equals(this.shareInfo, that.shareInfo) && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, ips, size, rules, shareInfo, description);
+        return Objects.hash(id, name, ips, ipRemarks, size, rules, shareInfo, description);
     }
 
     @Override
@@ -220,6 +260,7 @@ public class ShowIpGroupResponse extends SdkResponse {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    ips: ").append(toIndentedString(ips)).append("\n");
+        sb.append("    ipRemarks: ").append(toIndentedString(ipRemarks)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
         sb.append("    shareInfo: ").append(toIndentedString(shareInfo)).append("\n");

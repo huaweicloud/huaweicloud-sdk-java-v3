@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.waf.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * CreateIpGroupRequestBody
@@ -21,6 +24,11 @@ public class CreateIpGroupRequestBody {
     private String ips;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_remarks")
+
+    private Map<String, String> ipRemarks = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -31,7 +39,7 @@ public class CreateIpGroupRequestBody {
     }
 
     /**
-     * 地址组名称
+     * **参数解释：** 地址组名称 **约束限制：** 长度限制：[1,256] **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return name
      */
     public String getName() {
@@ -48,7 +56,7 @@ public class CreateIpGroupRequestBody {
     }
 
     /**
-     * 以逗号分隔的ip或ip段
+     * **参数解释：** 以逗号分隔的ip或ip段 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return ips
      */
     public String getIps() {
@@ -57,6 +65,39 @@ public class CreateIpGroupRequestBody {
 
     public void setIps(String ips) {
         this.ips = ips;
+    }
+
+    public CreateIpGroupRequestBody withIpRemarks(Map<String, String> ipRemarks) {
+        this.ipRemarks = ipRemarks;
+        return this;
+    }
+
+    public CreateIpGroupRequestBody putIpRemarksItem(String key, String ipRemarksItem) {
+        if (this.ipRemarks == null) {
+            this.ipRemarks = new HashMap<>();
+        }
+        this.ipRemarks.put(key, ipRemarksItem);
+        return this;
+    }
+
+    public CreateIpGroupRequestBody withIpRemarks(Consumer<Map<String, String>> ipRemarksSetter) {
+        if (this.ipRemarks == null) {
+            this.ipRemarks = new HashMap<>();
+        }
+        ipRemarksSetter.accept(this.ipRemarks);
+        return this;
+    }
+
+    /**
+     * **参数解释：** ip或ip段的备注 **约束限制：** key必须是ips中包含的单个ip或ip段 **取值范围：** value必须匹配正则：[^<>]{0,64} **默认取值：** 不涉及
+     * @return ipRemarks
+     */
+    public Map<String, String> getIpRemarks() {
+        return ipRemarks;
+    }
+
+    public void setIpRemarks(Map<String, String> ipRemarks) {
+        this.ipRemarks = ipRemarks;
     }
 
     public CreateIpGroupRequestBody withDescription(String description) {
@@ -86,12 +127,12 @@ public class CreateIpGroupRequestBody {
         }
         CreateIpGroupRequestBody that = (CreateIpGroupRequestBody) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.ips, that.ips)
-            && Objects.equals(this.description, that.description);
+            && Objects.equals(this.ipRemarks, that.ipRemarks) && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, ips, description);
+        return Objects.hash(name, ips, ipRemarks, description);
     }
 
     @Override
@@ -100,6 +141,7 @@ public class CreateIpGroupRequestBody {
         sb.append("class CreateIpGroupRequestBody {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    ips: ").append(toIndentedString(ips)).append("\n");
+        sb.append("    ipRemarks: ").append(toIndentedString(ipRemarks)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();

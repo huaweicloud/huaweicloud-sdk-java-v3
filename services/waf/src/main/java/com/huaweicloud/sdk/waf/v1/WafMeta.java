@@ -59,8 +59,8 @@ import com.huaweicloud.sdk.waf.v1.model.BatchUpdateAntitamperRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateCcRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateCcRulesRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateCcRulesResponse;
-import com.huaweicloud.sdk.waf.v1.model.BatchUpdateCustomRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateCustomRulesRequest;
+import com.huaweicloud.sdk.waf.v1.model.BatchUpdateCustomRulesRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateCustomRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateGeoipRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.BatchUpdateGeoipRulesRequestBody;
@@ -428,6 +428,8 @@ import com.huaweicloud.sdk.waf.v1.model.UpdateHostProtectStatusResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateHostRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdateHostResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateIgnoreRuleHitNumRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateIgnoreRuleHitNumResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateIgnoreRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateIgnoreRuleRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.UpdateIgnoreRuleResponse;
@@ -535,10 +537,10 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("policyids",
+        builder.<List<String>>withRequestField("policyids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(BatchCreateAntiTamperRuleRequest::getPolicyids,
                 BatchCreateAntiTamperRuleRequest::setPolicyids));
         builder.<String>withRequestField("enterprise_project_id",
@@ -644,18 +646,18 @@ public class WafMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("policyids",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateCustomRuleRequest::getPolicyids,
-                BatchCreateCustomRuleRequest::setPolicyids));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchCreateCustomRuleRequest::getEnterpriseProjectId,
                 BatchCreateCustomRuleRequest::setEnterpriseProjectId));
+        builder.<List<String>>withRequestField("policyids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchCreateCustomRuleRequest::getPolicyids,
+                BatchCreateCustomRuleRequest::setPolicyids));
         builder.<BatchCreateCustomRuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -957,14 +959,14 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("rule_type",
+        builder.<BatchDeleteRulesRequest.RuleTypeEnum>withRequestField("rule_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(BatchDeleteRulesRequest.RuleTypeEnum.class),
             f -> f.withMarshaller(BatchDeleteRulesRequest::getRuleType, BatchDeleteRulesRequest::setRuleType));
         builder.<PolicyRuleIdRequestBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PolicyRuleIdRequestBody.class),
             f -> f.withMarshaller(BatchDeleteRulesRequest::getBody, BatchDeleteRulesRequest::setBody));
 
@@ -988,6 +990,12 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateAntileakageRulesRequest::getEnterpriseProjectId,
+                BatchUpdateAntileakageRulesRequest::setEnterpriseProjectId));
         builder.<BatchUpdateAntileakageRuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1015,6 +1023,12 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateAntitamperRulesRequest::getEnterpriseProjectId,
+                BatchUpdateAntitamperRulesRequest::setEnterpriseProjectId));
         builder.<BatchUpdateAntiTamperRulesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1039,6 +1053,12 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateCcRulesRequest::getEnterpriseProjectId,
+                BatchUpdateCcRulesRequest::setEnterpriseProjectId));
         builder.<BatchUpdateCcRulesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1062,10 +1082,16 @@ public class WafMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<BatchUpdateCustomRuleRequestBody>withRequestField("body",
-            LocationType.Body,
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(BatchUpdateCustomRuleRequestBody.class),
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateCustomRulesRequest::getEnterpriseProjectId,
+                BatchUpdateCustomRulesRequest::setEnterpriseProjectId));
+        builder.<BatchUpdateCustomRulesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdateCustomRulesRequestBody.class),
             f -> f.withMarshaller(BatchUpdateCustomRulesRequest::getBody, BatchUpdateCustomRulesRequest::setBody));
 
         // response
@@ -1085,6 +1111,12 @@ public class WafMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateGeoipRulesRequest::getEnterpriseProjectId,
+                BatchUpdateGeoipRulesRequest::setEnterpriseProjectId));
         builder.<BatchUpdateGeoipRulesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1160,7 +1192,7 @@ public class WafMeta {
         // requests
         builder.<BatchUpdatePrivacyRuleRequestBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchUpdatePrivacyRuleRequestBody.class),
             f -> f.withMarshaller(BatchUpdatePrivacyRulesRequest::getBody, BatchUpdatePrivacyRulesRequest::setBody));
 
@@ -1184,6 +1216,12 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateWhiteblackipRulesRequest::getEnterpriseProjectId,
+                BatchUpdateWhiteblackipRulesRequest::setEnterpriseProjectId));
         builder.<BatchUpdateWhiteBlackIpRuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1345,6 +1383,12 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmPolicyAntileakageMapRequest::getEnterpriseProjectId,
+                ConfirmPolicyAntileakageMapRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("lang",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1372,16 +1416,16 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("lang",
+        builder.<ConfirmPolicyIpReputationMapRequest.LangEnum>withRequestField("lang",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ConfirmPolicyIpReputationMapRequest.LangEnum.class),
             f -> f.withMarshaller(ConfirmPolicyIpReputationMapRequest::getLang,
                 ConfirmPolicyIpReputationMapRequest::setLang));
-        builder.<String>withRequestField("type",
+        builder.<ConfirmPolicyIpReputationMapRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ConfirmPolicyIpReputationMapRequest.TypeEnum.class),
             f -> f.withMarshaller(ConfirmPolicyIpReputationMapRequest::getType,
                 ConfirmPolicyIpReputationMapRequest::setType));
 
@@ -3002,10 +3046,10 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("policyids",
+        builder.<List<String>>withRequestField("policyids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListAntiTamperPolicyRulesRequest::getPolicyids,
                 ListAntiTamperPolicyRulesRequest::setPolicyids));
         builder.<String>withRequestField("enterprise_project_id",
@@ -3057,14 +3101,24 @@ public class WafMeta {
                 ListAnticrawlerRulesRequest::setEnterpriseProjectId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAnticrawlerRulesRequest::getOffset, ListAnticrawlerRulesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAnticrawlerRulesRequest::getLimit, ListAnticrawlerRulesRequest::setLimit));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAnticrawlerRulesRequest::getPage, ListAnticrawlerRulesRequest::setPage));
+        builder.<Integer>withRequestField("pagesize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAnticrawlerRulesRequest::getPagesize, ListAnticrawlerRulesRequest::setPagesize));
         builder.<ListAnticrawlerRulesRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -3146,14 +3200,24 @@ public class WafMeta {
                 ListAntileakageRulesRequest::setEnterpriseProjectId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAntileakageRulesRequest::getOffset, ListAntileakageRulesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAntileakageRulesRequest::getLimit, ListAntileakageRulesRequest::setLimit));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAntileakageRulesRequest::getPage, ListAntileakageRulesRequest::setPage));
+        builder.<Integer>withRequestField("pagesize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAntileakageRulesRequest::getPagesize, ListAntileakageRulesRequest::setPagesize));
 
         // response
 
@@ -3261,15 +3325,15 @@ public class WafMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListBandwidthTimelineRequest::getTo, ListBandwidthTimelineRequest::setTo));
-        builder.<String>withRequestField("hosts",
+        builder.<List<String>>withRequestField("hosts",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListBandwidthTimelineRequest::getHosts, ListBandwidthTimelineRequest::setHosts));
-        builder.<String>withRequestField("instances",
+        builder.<List<String>>withRequestField("instances",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListBandwidthTimelineRequest::getInstances,
                 ListBandwidthTimelineRequest::setInstances));
         builder.<String>withRequestField("group_by",
@@ -3277,10 +3341,10 @@ public class WafMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBandwidthTimelineRequest::getGroupBy, ListBandwidthTimelineRequest::setGroupBy));
-        builder.<Integer>withRequestField("display_option",
+        builder.<ListBandwidthTimelineRequest.DisplayOptionEnum>withRequestField("display_option",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
+            TypeCasts.uncheckedConversion(ListBandwidthTimelineRequest.DisplayOptionEnum.class),
             f -> f.withMarshaller(ListBandwidthTimelineRequest::getDisplayOption,
                 ListBandwidthTimelineRequest::setDisplayOption));
 
@@ -3358,14 +3422,24 @@ public class WafMeta {
                 ListCcRulesRequest::setEnterpriseProjectId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListCcRulesRequest::getOffset, ListCcRulesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListCcRulesRequest::getLimit, ListCcRulesRequest::setLimit));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCcRulesRequest::getPage, ListCcRulesRequest::setPage));
+        builder.<Integer>withRequestField("pagesize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCcRulesRequest::getPagesize, ListCcRulesRequest::setPagesize));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -3518,10 +3592,10 @@ public class WafMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("policyids",
+        builder.<List<String>>withRequestField("policyids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListCustomPolicyRulesRequest::getPolicyids,
                 ListCustomPolicyRulesRequest::setPolicyids));
         builder.<String>withRequestField("enterprise_project_id",
@@ -3572,14 +3646,24 @@ public class WafMeta {
                 ListCustomRulesRequest::setEnterpriseProjectId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListCustomRulesRequest::getOffset, ListCustomRulesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListCustomRulesRequest::getLimit, ListCustomRulesRequest::setLimit));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomRulesRequest::getPage, ListCustomRulesRequest::setPage));
+        builder.<Integer>withRequestField("pagesize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomRulesRequest::getPagesize, ListCustomRulesRequest::setPagesize));
 
         // response
 
@@ -3617,21 +3701,131 @@ public class WafMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListEventRequest::getTo, ListEventRequest::setTo));
-        builder.<List<String>>withRequestField("attacks",
+        builder.<List<String>>withRequestField("ids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEventRequest::getIds, ListEventRequest::setIds));
+        builder.<List<String>>withRequestField("nids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEventRequest::getNids, ListEventRequest::setNids));
+        builder.<List<ListEventRequest.AttacksEnum>>withRequestField("attacks",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListEventRequest::getAttacks, ListEventRequest::setAttacks));
-        builder.<List<String>>withRequestField("hosts",
+        builder.<List<ListEventRequest.NattacksEnum>>withRequestField("nattacks",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEventRequest::getHosts, ListEventRequest::setHosts));
+            f -> f.withMarshaller(ListEventRequest::getNattacks, ListEventRequest::setNattacks));
+        builder.<List<String>>withRequestField("rules",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEventRequest::getRules, ListEventRequest::setRules));
+        builder.<List<String>>withRequestField("nrules",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEventRequest::getNrules, ListEventRequest::setNrules));
         builder.<List<String>>withRequestField("sips",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListEventRequest::getSips, ListEventRequest::setSips));
+        builder.<List<String>>withRequestField("nsips",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEventRequest::getNsips, ListEventRequest::setNsips));
+        builder.<String>withRequestField("sip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventRequest::getSip, ListEventRequest::setSip));
+        builder.<List<String>>withRequestField("urls",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEventRequest::getUrls, ListEventRequest::setUrls));
+        builder.<List<String>>withRequestField("nurls",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEventRequest::getNurls, ListEventRequest::setNurls));
+        builder.<String>withRequestField("url",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventRequest::getUrl, ListEventRequest::setUrl));
+        builder.<List<ListEventRequest.ActionsEnum>>withRequestField("actions",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEventRequest::getActions, ListEventRequest::setActions));
+        builder.<List<ListEventRequest.NactionsEnum>>withRequestField("nactions",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEventRequest::getNactions, ListEventRequest::setNactions));
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventRequest::getDomain, ListEventRequest::setDomain));
+        builder.<String>withRequestField("ndomain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventRequest::getNdomain, ListEventRequest::setNdomain));
+        builder.<List<String>>withRequestField("domains",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEventRequest::getDomains, ListEventRequest::setDomains));
+        builder.<List<String>>withRequestField("ip_countries",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEventRequest::getIpCountries, ListEventRequest::setIpCountries));
+        builder.<List<String>>withRequestField("nip_countries",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEventRequest::getNipCountries, ListEventRequest::setNipCountries));
+        builder.<List<String>>withRequestField("ip_regions",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEventRequest::getIpRegions, ListEventRequest::setIpRegions));
+        builder.<List<String>>withRequestField("nip_regions",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEventRequest::getNipRegions, ListEventRequest::setNipRegions));
+        builder.<List<String>>withRequestField("response_codes",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEventRequest::getResponseCodes, ListEventRequest::setResponseCodes));
+        builder.<String>withRequestField("payload",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventRequest::getPayload, ListEventRequest::setPayload));
+        builder.<List<String>>withRequestField("hosts",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEventRequest::getHosts, ListEventRequest::setHosts));
+        builder.<List<String>>withRequestField("instances",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEventRequest::getInstances, ListEventRequest::setInstances));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -3642,10 +3836,25 @@ public class WafMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListEventRequest::getPagesize, ListEventRequest::setPagesize));
-        builder.<String>withRequestField("X-Language",
+        builder.<ListEventRequest.SortKeyEnum>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListEventRequest.SortKeyEnum.class),
+            f -> f.withMarshaller(ListEventRequest::getSortKey, ListEventRequest::setSortKey));
+        builder.<ListEventRequest.SortDirectionEnum>withRequestField("sort_direction",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListEventRequest.SortDirectionEnum.class),
+            f -> f.withMarshaller(ListEventRequest::getSortDirection, ListEventRequest::setSortDirection));
+        builder.<ListEventRequest.QueryModeEnum>withRequestField("query_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListEventRequest.QueryModeEnum.class),
+            f -> f.withMarshaller(ListEventRequest::getQueryMode, ListEventRequest::setQueryMode));
+        builder.<ListEventRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListEventRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListEventRequest::getXLanguage, ListEventRequest::setXLanguage));
 
         // response
@@ -3692,18 +3901,18 @@ public class WafMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("policyids",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListGeoIpPolicyRulesRequest::getPolicyids,
-                ListGeoIpPolicyRulesRequest::setPolicyids));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListGeoIpPolicyRulesRequest::getEnterpriseProjectId,
                 ListGeoIpPolicyRulesRequest::setEnterpriseProjectId));
+        builder.<List<String>>withRequestField("policyids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGeoIpPolicyRulesRequest::getPolicyids,
+                ListGeoIpPolicyRulesRequest::setPolicyids));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -3956,10 +4165,15 @@ public class WafMeta {
         HttpRequestDef.Builder<ListInstanceTagsRequest, ListInstanceTagsResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListInstanceTagsRequest.class, ListInstanceTagsResponse.class)
                 .withName("ListInstanceTags")
-                .withUri("/v1/{project_id}/waf/{resourceid}/tags")
+                .withUri("/v1/{project_id}/waf/{resource_type}/{resourceid}/tags")
                 .withContentType("application/json");
 
         // requests
+        builder.<ListInstanceTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListInstanceTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListInstanceTagsRequest::getResourceType, ListInstanceTagsRequest::setResourceType));
         builder.<String>withRequestField("resourceid",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -4091,14 +4305,25 @@ public class WafMeta {
                 ListIpReputationRulesRequest::setEnterpriseProjectId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListIpReputationRulesRequest::getOffset, ListIpReputationRulesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListIpReputationRulesRequest::getLimit, ListIpReputationRulesRequest::setLimit));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIpReputationRulesRequest::getPage, ListIpReputationRulesRequest::setPage));
+        builder.<Integer>withRequestField("pagesize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIpReputationRulesRequest::getPagesize,
+                ListIpReputationRulesRequest::setPagesize));
 
         // response
 
@@ -4168,22 +4393,22 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListOverviewsClassificationRequest::getTop,
                 ListOverviewsClassificationRequest::setTop));
-        builder.<String>withRequestField("hosts",
+        builder.<List<String>>withRequestField("hosts",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListOverviewsClassificationRequest::getHosts,
                 ListOverviewsClassificationRequest::setHosts));
-        builder.<String>withRequestField("instances",
+        builder.<List<String>>withRequestField("instances",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListOverviewsClassificationRequest::getInstances,
                 ListOverviewsClassificationRequest::setInstances));
-        builder.<String>withRequestField("X-Language",
+        builder.<ListOverviewsClassificationRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListOverviewsClassificationRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListOverviewsClassificationRequest::getXLanguage,
                 ListOverviewsClassificationRequest::setXLanguage));
 
@@ -4421,14 +4646,24 @@ public class WafMeta {
                 ListPunishmentRulesRequest::setEnterpriseProjectId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPunishmentRulesRequest::getOffset, ListPunishmentRulesRequest::setOffset));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPunishmentRulesRequest::getLimit, ListPunishmentRulesRequest::setLimit));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPunishmentRulesRequest::getPage, ListPunishmentRulesRequest::setPage));
+        builder.<Integer>withRequestField("pagesize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPunishmentRulesRequest::getPagesize, ListPunishmentRulesRequest::setPagesize));
 
         // response
 
@@ -4463,15 +4698,15 @@ public class WafMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListQpsTimelineRequest::getTo, ListQpsTimelineRequest::setTo));
-        builder.<String>withRequestField("hosts",
+        builder.<List<String>>withRequestField("hosts",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListQpsTimelineRequest::getHosts, ListQpsTimelineRequest::setHosts));
-        builder.<String>withRequestField("instances",
+        builder.<List<String>>withRequestField("instances",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListQpsTimelineRequest::getInstances, ListQpsTimelineRequest::setInstances));
         builder.<String>withRequestField("group_by",
             LocationType.Query,
@@ -4763,16 +4998,36 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("recent",
+        builder.<ListSourceIpTop5Request.RecentEnum>withRequestField("recent",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSourceIpTop5Request.RecentEnum.class),
             f -> f.withMarshaller(ListSourceIpTop5Request::getRecent, ListSourceIpTop5Request::setRecent));
+        builder.<Integer>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSourceIpTop5Request::getFrom, ListSourceIpTop5Request::setFrom));
+        builder.<Integer>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSourceIpTop5Request::getTo, ListSourceIpTop5Request::setTo));
+        builder.<Integer>withRequestField("top",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSourceIpTop5Request::getTop, ListSourceIpTop5Request::setTop));
         builder.<List<String>>withRequestField("hosts",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListSourceIpTop5Request::getHosts, ListSourceIpTop5Request::setHosts));
+        builder.<List<String>>withRequestField("instances",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSourceIpTop5Request::getInstances, ListSourceIpTop5Request::setInstances));
 
         // response
 
@@ -4807,15 +5062,15 @@ public class WafMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListStatisticsRequest::getTo, ListStatisticsRequest::setTo));
-        builder.<String>withRequestField("hosts",
+        builder.<List<String>>withRequestField("hosts",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListStatisticsRequest::getHosts, ListStatisticsRequest::setHosts));
-        builder.<String>withRequestField("instances",
+        builder.<List<String>>withRequestField("instances",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListStatisticsRequest::getInstances, ListStatisticsRequest::setInstances));
 
         // response
@@ -4840,16 +5095,31 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("recent",
+        builder.<ListThreatsRequest.RecentEnum>withRequestField("recent",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListThreatsRequest.RecentEnum.class),
             f -> f.withMarshaller(ListThreatsRequest::getRecent, ListThreatsRequest::setRecent));
+        builder.<Integer>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListThreatsRequest::getFrom, ListThreatsRequest::setFrom));
+        builder.<Integer>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListThreatsRequest::getTo, ListThreatsRequest::setTo));
         builder.<List<String>>withRequestField("hosts",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListThreatsRequest::getHosts, ListThreatsRequest::setHosts));
+        builder.<List<String>>withRequestField("instances",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListThreatsRequest::getInstances, ListThreatsRequest::setInstances));
 
         // response
 
@@ -4889,20 +5159,20 @@ public class WafMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTopAbnormalRequest::getTop, ListTopAbnormalRequest::setTop));
-        builder.<Integer>withRequestField("code",
+        builder.<ListTopAbnormalRequest.CodeEnum>withRequestField("code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
+            TypeCasts.uncheckedConversion(ListTopAbnormalRequest.CodeEnum.class),
             f -> f.withMarshaller(ListTopAbnormalRequest::getCode, ListTopAbnormalRequest::setCode));
-        builder.<String>withRequestField("hosts",
+        builder.<List<String>>withRequestField("hosts",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListTopAbnormalRequest::getHosts, ListTopAbnormalRequest::setHosts));
-        builder.<String>withRequestField("instances",
+        builder.<List<String>>withRequestField("instances",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListTopAbnormalRequest::getInstances, ListTopAbnormalRequest::setInstances));
 
         // response
@@ -4985,15 +5255,15 @@ public class WafMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTopIpRequest::getTop, ListTopIpRequest::setTop));
-        builder.<String>withRequestField("hosts",
+        builder.<List<String>>withRequestField("hosts",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListTopIpRequest::getHosts, ListTopIpRequest::setHosts));
-        builder.<String>withRequestField("instances",
+        builder.<List<String>>withRequestField("instances",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListTopIpRequest::getInstances, ListTopIpRequest::setInstances));
 
         // response
@@ -5033,15 +5303,15 @@ public class WafMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTopUrlRequest::getTop, ListTopUrlRequest::setTop));
-        builder.<String>withRequestField("hosts",
+        builder.<List<String>>withRequestField("hosts",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListTopUrlRequest::getHosts, ListTopUrlRequest::setHosts));
-        builder.<String>withRequestField("instances",
+        builder.<List<String>>withRequestField("instances",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListTopUrlRequest::getInstances, ListTopUrlRequest::setInstances));
 
         // response
@@ -5062,13 +5332,13 @@ public class WafMeta {
         // requests
         builder.<Integer>withRequestField("top",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListUrlRequest::getTop, ListUrlRequest::setTop));
-        builder.<String>withRequestField("recent",
+        builder.<ListUrlRequest.RecentEnum>withRequestField("recent",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListUrlRequest.RecentEnum.class),
             f -> f.withMarshaller(ListUrlRequest::getRecent, ListUrlRequest::setRecent));
         builder.<Integer>withRequestField("from",
             LocationType.Query,
@@ -5591,6 +5861,11 @@ public class WafMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("region",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConsoleConfigRequest::getRegion, ShowConsoleConfigRequest::setRegion));
 
         // response
 
@@ -5652,10 +5927,10 @@ public class WafMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEventRequest::getEnterpriseProjectId, ShowEventRequest::setEnterpriseProjectId));
-        builder.<String>withRequestField("X-Language",
+        builder.<ShowEventRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ShowEventRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowEventRequest::getXLanguage, ShowEventRequest::setXLanguage));
 
         // response
@@ -6680,6 +6955,41 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateIgnoreRuleHitNumRequest, UpdateIgnoreRuleHitNumResponse> updateIgnoreRuleHitNum =
+        genForUpdateIgnoreRuleHitNum();
+
+    private static HttpRequestDef<UpdateIgnoreRuleHitNumRequest, UpdateIgnoreRuleHitNumResponse> genForUpdateIgnoreRuleHitNum() {
+        // basic
+        HttpRequestDef.Builder<UpdateIgnoreRuleHitNumRequest, UpdateIgnoreRuleHitNumResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpdateIgnoreRuleHitNumRequest.class, UpdateIgnoreRuleHitNumResponse.class)
+            .withName("UpdateIgnoreRuleHitNum")
+            .withUri("/v1/{project_id}/waf/policy/{policy_id}/ignore/{rule_id}/recount")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateIgnoreRuleHitNumRequest::getPolicyId,
+                UpdateIgnoreRuleHitNumRequest::setPolicyId));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateIgnoreRuleHitNumRequest::getRuleId, UpdateIgnoreRuleHitNumRequest::setRuleId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateIgnoreRuleHitNumRequest::getEnterpriseProjectId,
+                UpdateIgnoreRuleHitNumRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateInstanceRouteRequest, UpdateInstanceRouteResponse> updateInstanceRoute =
         genForUpdateInstanceRoute();
 
@@ -6739,10 +7049,10 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateIpGroupRequest::getEnterpriseProjectId,
                 UpdateIpGroupRequest::setEnterpriseProjectId));
-        builder.<String>withRequestField("action",
+        builder.<UpdateIpGroupRequest.ActionEnum>withRequestField("action",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(UpdateIpGroupRequest.ActionEnum.class),
             f -> f.withMarshaller(UpdateIpGroupRequest::getAction, UpdateIpGroupRequest::setAction));
         builder.<UpdateIpGroupRequestBody>withRequestField("body",
             LocationType.Body,
@@ -6999,6 +7309,12 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdatePremiumHostAccessStatusRequest::getHostId,
                 UpdatePremiumHostAccessStatusRequest::setHostId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePremiumHostAccessStatusRequest::getEnterpriseProjectId,
+                UpdatePremiumHostAccessStatusRequest::setEnterpriseProjectId));
         builder.<UpdatePremiumHostAccessStatusRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -7100,6 +7416,12 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdatePremiumInstanceProgressRequest::getHostId,
                 UpdatePremiumInstanceProgressRequest::setHostId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePremiumInstanceProgressRequest::getEnterpriseProjectId,
+                UpdatePremiumInstanceProgressRequest::setEnterpriseProjectId));
         builder.<AccessProgress>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -7374,10 +7696,16 @@ public class WafMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowWebProtectionRuleRequest::getRuleId, ShowWebProtectionRuleRequest::setRuleId));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWebProtectionRuleRequest::getEnterpriseProjectId,
+                ShowWebProtectionRuleRequest::setEnterpriseProjectId));
+        builder.<ShowWebProtectionRuleRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowWebProtectionRuleRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowWebProtectionRuleRequest::getXLanguage,
                 ShowWebProtectionRuleRequest::setXLanguage));
 

@@ -53,11 +53,6 @@ public class DedicatedHostType {
 
     private List<DedicatedHostTypeOffering> availabilityZoneOfferings = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_info")
-
-    private PageInfo pageInfo;
-
     public DedicatedHostType withHostType(String hostType) {
         this.hostType = hostType;
         return this;
@@ -227,32 +222,6 @@ public class DedicatedHostType {
         this.availabilityZoneOfferings = availabilityZoneOfferings;
     }
 
-    public DedicatedHostType withPageInfo(PageInfo pageInfo) {
-        this.pageInfo = pageInfo;
-        return this;
-    }
-
-    public DedicatedHostType withPageInfo(Consumer<PageInfo> pageInfoSetter) {
-        if (this.pageInfo == null) {
-            this.pageInfo = new PageInfo();
-            pageInfoSetter.accept(this.pageInfo);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get pageInfo
-     * @return pageInfo
-     */
-    public PageInfo getPageInfo() {
-        return pageInfo;
-    }
-
-    public void setPageInfo(PageInfo pageInfo) {
-        this.pageInfo = pageInfo;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -266,21 +235,13 @@ public class DedicatedHostType {
             && Objects.equals(this.cores, that.cores) && Objects.equals(this.sockets, that.sockets)
             && Objects.equals(this.memory, that.memory) && Objects.equals(this.supportedFlavors, that.supportedFlavors)
             && Objects.equals(this.category, that.category)
-            && Objects.equals(this.availabilityZoneOfferings, that.availabilityZoneOfferings)
-            && Objects.equals(this.pageInfo, that.pageInfo);
+            && Objects.equals(this.availabilityZoneOfferings, that.availabilityZoneOfferings);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hostType,
-            vcpus,
-            cores,
-            sockets,
-            memory,
-            supportedFlavors,
-            category,
-            availabilityZoneOfferings,
-            pageInfo);
+        return Objects
+            .hash(hostType, vcpus, cores, sockets, memory, supportedFlavors, category, availabilityZoneOfferings);
     }
 
     @Override
@@ -295,7 +256,6 @@ public class DedicatedHostType {
         sb.append("    supportedFlavors: ").append(toIndentedString(supportedFlavors)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("    availabilityZoneOfferings: ").append(toIndentedString(availabilityZoneOfferings)).append("\n");
-        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

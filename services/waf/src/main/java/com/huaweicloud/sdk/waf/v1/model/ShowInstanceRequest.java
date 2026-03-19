@@ -43,7 +43,7 @@ public class ShowInstanceRequest {
     }
 
     /**
-     * 独享引擎ID（通过调用WAF的ListInstance接口获取所有独享引擎信息查询独享引擎ID）
+     * **参数解释：** 独享引擎ID（通过调用WAF的ListInstance接口获取所有独享引擎信息查询独享引擎ID） **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return instanceId
      */
     public String getInstanceId() {

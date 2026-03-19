@@ -191,7 +191,7 @@ public class CreateInstanceRequestBody {
     }
 
     /**
-     * 独享引擎ECS规格，实例规格。创建资源租户类独享引擎可不填该参数，创建普通资源租户独享引擎必填该参数。普通租户类独享引擎具体支持的规格以waf控制台上支持的规格为准，企业版对应8U16G的ecs规格，专业版对应2U4G的ecs规格。
+     * 独享引擎ECS规格，实例规格。创建资源租户类独享引擎可不填该参数，创建普通租户独享引擎必填该参数。普通租户类独享引擎具体支持的规格以waf控制台上支持的规格为准，如8U32G的ECS规格
      * @return cpuFlavor
      */
     public String getCpuFlavor() {

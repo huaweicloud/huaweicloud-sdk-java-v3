@@ -45,6 +45,11 @@ public class ShowSwitchesStatusRequest {
          */
         public static final CodeEnum IMAGE_FREE_TO_PAY_POPUP = new CodeEnum("image_free_to_pay_popup");
 
+        /**
+         * Enum DISPLAY_UNPROTECTED_HOST for value: "display_unprotected_host"
+         */
+        public static final CodeEnum DISPLAY_UNPROTECTED_HOST = new CodeEnum("display_unprotected_host");
+
         private static final Map<String, CodeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CodeEnum> createStaticFields() {
@@ -53,6 +58,7 @@ public class ShowSwitchesStatusRequest {
             map.put("image_pay_per_scan", IMAGE_PAY_PER_SCAN);
             map.put("image_popup", IMAGE_POPUP);
             map.put("image_free_to_pay_popup", IMAGE_FREE_TO_PAY_POPUP);
+            map.put("display_unprotected_host", DISPLAY_UNPROTECTED_HOST);
             return Collections.unmodifiableMap(map);
         }
 

@@ -33,7 +33,7 @@ public class WafGeoIpRule {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
 
-    private Integer timestamp;
+    private Long timestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "white")
@@ -108,7 +108,7 @@ public class WafGeoIpRule {
         this.overseasType = overseasType;
     }
 
-    public WafGeoIpRule withTimestamp(Integer timestamp) {
+    public WafGeoIpRule withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
@@ -117,11 +117,11 @@ public class WafGeoIpRule {
      * 添加时间
      * @return timestamp
      */
-    public Integer getTimestamp() {
+    public Long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Integer timestamp) {
+    public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
 

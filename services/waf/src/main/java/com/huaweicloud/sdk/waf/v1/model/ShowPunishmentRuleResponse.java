@@ -27,6 +27,11 @@ public class ShowPunishmentRuleResponse extends SdkResponse {
     private Integer blockTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "time_unit")
+
+    private String timeUnit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
 
     private String category;
@@ -92,6 +97,23 @@ public class ShowPunishmentRuleResponse extends SdkResponse {
         this.blockTime = blockTime;
     }
 
+    public ShowPunishmentRuleResponse withTimeUnit(String timeUnit) {
+        this.timeUnit = timeUnit;
+        return this;
+    }
+
+    /**
+     * 时间单位
+     * @return timeUnit
+     */
+    public String getTimeUnit() {
+        return timeUnit;
+    }
+
+    public void setTimeUnit(String timeUnit) {
+        this.timeUnit = timeUnit;
+    }
+
     public ShowPunishmentRuleResponse withCategory(String category) {
         this.category = category;
         return this;
@@ -153,13 +175,14 @@ public class ShowPunishmentRuleResponse extends SdkResponse {
         }
         ShowPunishmentRuleResponse that = (ShowPunishmentRuleResponse) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
-            && Objects.equals(this.blockTime, that.blockTime) && Objects.equals(this.category, that.category)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.timestamp, that.timestamp);
+            && Objects.equals(this.blockTime, that.blockTime) && Objects.equals(this.timeUnit, that.timeUnit)
+            && Objects.equals(this.category, that.category) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, policyid, blockTime, category, description, timestamp);
+        return Objects.hash(id, policyid, blockTime, timeUnit, category, description, timestamp);
     }
 
     @Override
@@ -169,6 +192,7 @@ public class ShowPunishmentRuleResponse extends SdkResponse {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
         sb.append("    blockTime: ").append(toIndentedString(blockTime)).append("\n");
+        sb.append("    timeUnit: ").append(toIndentedString(timeUnit)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");

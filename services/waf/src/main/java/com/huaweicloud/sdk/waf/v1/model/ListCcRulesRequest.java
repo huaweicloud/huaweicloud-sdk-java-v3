@@ -36,6 +36,16 @@ public class ListCcRulesRequest {
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page")
+
+    private Integer page;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pagesize")
+
+    private Integer pagesize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -178,7 +188,7 @@ public class ListCcRulesRequest {
     }
 
     /**
-     * 策略id（策略id从查询防护策略列表接口获取）
+     * **参数解释：** 防护策略id，您可以通过调用查询防护策略列表（ListPolicy）获取策略id **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return policyId
      */
     public String getPolicyId() {
@@ -195,7 +205,7 @@ public class ListCcRulesRequest {
     }
 
     /**
-     * 偏移量，表示查询该偏移量之后的记录。
+     * **参数解释：** 偏移量，表示查询该偏移量之后的记录，与参数limit一起使用 **约束限制：** 不涉及 **取值范围：** [0, 65535] **默认取值：** 不涉及
      * @return offset
      */
     public Integer getOffset() {
@@ -212,7 +222,7 @@ public class ListCcRulesRequest {
     }
 
     /**
-     * 查询返回记录的数量限制。
+     * **参数解释：** 查询返回记录的数量限制，与参数offset一起使用，如果offset为设置值，则limit无效 **约束限制：** 不涉及 **取值范围：** [1, 65535] **默认取值：** 10
      * @return limit
      */
     public Integer getLimit() {
@@ -221,6 +231,42 @@ public class ListCcRulesRequest {
 
     public void setLimit(Integer limit) {
         this.limit = limit;
+    }
+
+    public ListCcRulesRequest withPage(Integer page) {
+        this.page = page;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 当前页码，与参数pagesize一起使用 **约束限制：** 不涉及 **取值范围：** [1, 记录数/pagesize] **默认取值：** 1
+     * minimum: 1
+     * @return page
+     */
+    public Integer getPage() {
+        return page;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
+    }
+
+    public ListCcRulesRequest withPagesize(Integer pagesize) {
+        this.pagesize = pagesize;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 每页大小，与参数page一起使用 **约束限制：** 不涉及 **取值范围：** [0, 2147483647] **默认取值：** 1000
+     * minimum: 0
+     * @return pagesize
+     */
+    public Integer getPagesize() {
+        return pagesize;
+    }
+
+    public void setPagesize(Integer pagesize) {
+        this.pagesize = pagesize;
     }
 
     public ListCcRulesRequest withName(String name) {
@@ -302,14 +348,16 @@ public class ListCcRulesRequest {
         ListCcRulesRequest that = (ListCcRulesRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.pagesize, that.pagesize) && Objects.equals(this.name, that.name)
             && Objects.equals(this.status, that.status) && Objects.equals(this.category, that.category)
             && Objects.equals(this.tagType, that.tagType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, policyId, offset, limit, name, status, category, tagType);
+        return Objects
+            .hash(enterpriseProjectId, policyId, offset, limit, page, pagesize, name, status, category, tagType);
     }
 
     @Override
@@ -320,6 +368,8 @@ public class ListCcRulesRequest {
         sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    page: ").append(toIndentedString(page)).append("\n");
+        sb.append("    pagesize: ").append(toIndentedString(pagesize)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");

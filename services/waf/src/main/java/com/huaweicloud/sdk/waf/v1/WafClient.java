@@ -359,6 +359,8 @@ import com.huaweicloud.sdk.waf.v1.model.UpdateHostProtectStatusRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateHostProtectStatusResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateHostResponse;
+import com.huaweicloud.sdk.waf.v1.model.UpdateIgnoreRuleHitNumRequest;
+import com.huaweicloud.sdk.waf.v1.model.UpdateIgnoreRuleHitNumResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateIgnoreRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.UpdateIgnoreRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.UpdateInstanceRouteRequest;
@@ -1954,7 +1956,7 @@ public class WafClient {
     /**
      * 购买包周期云模式waf
      *
-     * 购买包周期云模式waf。
+     * 购买包周期云模式waf
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1968,7 +1970,7 @@ public class WafClient {
     /**
      * 购买包周期云模式waf
      *
-     * 购买包周期云模式waf。
+     * 购买包周期云模式waf
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5494,6 +5496,35 @@ public class WafClient {
     public SyncInvoker<UpdateIgnoreRuleRequest, UpdateIgnoreRuleResponse> updateIgnoreRuleInvoker(
         UpdateIgnoreRuleRequest request) {
         return new SyncInvoker<>(request, WafMeta.updateIgnoreRule, hcClient);
+    }
+
+    /**
+     * 全局白名单(原误报屏蔽)防护规则的命中次数清零
+     *
+     * 全局白名单(原误报屏蔽)防护规则的命中次数清零
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateIgnoreRuleHitNumRequest 请求对象
+     * @return UpdateIgnoreRuleHitNumResponse
+     */
+    public UpdateIgnoreRuleHitNumResponse updateIgnoreRuleHitNum(UpdateIgnoreRuleHitNumRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.updateIgnoreRuleHitNum);
+    }
+
+    /**
+     * 全局白名单(原误报屏蔽)防护规则的命中次数清零
+     *
+     * 全局白名单(原误报屏蔽)防护规则的命中次数清零
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateIgnoreRuleHitNumRequest 请求对象
+     * @return SyncInvoker<UpdateIgnoreRuleHitNumRequest, UpdateIgnoreRuleHitNumResponse>
+     */
+    public SyncInvoker<UpdateIgnoreRuleHitNumRequest, UpdateIgnoreRuleHitNumResponse> updateIgnoreRuleHitNumInvoker(
+        UpdateIgnoreRuleHitNumRequest request) {
+        return new SyncInvoker<>(request, WafMeta.updateIgnoreRuleHitNum, hcClient);
     }
 
     /**

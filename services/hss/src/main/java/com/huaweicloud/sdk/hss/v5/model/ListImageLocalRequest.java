@@ -16,16 +16,6 @@ public class ListImageLocalRequest {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "image_name")
-
-    private String imageName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "image_version")
-
-    private String imageVersion;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -34,6 +24,16 @@ public class ListImageLocalRequest {
     @JsonProperty(value = "limit")
 
     private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_name")
+
+    private String imageName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_version")
+
+    private String imageVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scan_status")
@@ -126,7 +126,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
+     * **参数解释**: 企业项目ID，用于过滤不同企业项目下的资产。获取方式请参见[获取企业项目ID](hss_02_0027.xml)。 如需查询所有企业项目下的资产请传参“all_granted_eps”。 **约束限制**: 开通企业项目功能后才需要配置企业项目ID参数。 **取值范围**: 字符长度1-256位 **默认取值**: 0，表示默认企业项目（default）。 
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -137,47 +137,13 @@ public class ListImageLocalRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public ListImageLocalRequest withImageName(String imageName) {
-        this.imageName = imageName;
-        return this;
-    }
-
-    /**
-     * 镜像名称
-     * @return imageName
-     */
-    public String getImageName() {
-        return imageName;
-    }
-
-    public void setImageName(String imageName) {
-        this.imageName = imageName;
-    }
-
-    public ListImageLocalRequest withImageVersion(String imageVersion) {
-        this.imageVersion = imageVersion;
-        return this;
-    }
-
-    /**
-     * 镜像版本
-     * @return imageVersion
-     */
-    public String getImageVersion() {
-        return imageVersion;
-    }
-
-    public void setImageVersion(String imageVersion) {
-        this.imageVersion = imageVersion;
-    }
-
     public ListImageLocalRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
     /**
-     * 偏移量：指定返回记录的开始位置
+     * **参数解释**: 偏移量：指定返回记录的开始位置 **约束限制**: 不涉及 **取值范围**: 最小值0，最大值2000000 **默认取值**: 默认为0 
      * minimum: 0
      * maximum: 2000000
      * @return offset
@@ -196,7 +162,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * 每页显示数量
+     * **参数解释**: 每页显示个数 **约束限制**: 不涉及 **取值范围**: 取值10-200 **默认取值**: 10 
      * minimum: 10
      * maximum: 200
      * @return limit
@@ -209,13 +175,47 @@ public class ListImageLocalRequest {
         this.limit = limit;
     }
 
+    public ListImageLocalRequest withImageName(String imageName) {
+        this.imageName = imageName;
+        return this;
+    }
+
+    /**
+     * **参数解释** 本地镜像的名称，用于模糊筛选指定名称的本地镜像列表 **约束限制** 支持部分匹配（如传入'web'可匹配所有名称含'web'的镜像），区分大小写 **取值范围** 字符长度1-256位，支持字母、数字、短横线、下划线、点号，禁止含@#$%等特殊字符 **默认取值** 无 
+     * @return imageName
+     */
+    public String getImageName() {
+        return imageName;
+    }
+
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
+    }
+
+    public ListImageLocalRequest withImageVersion(String imageVersion) {
+        this.imageVersion = imageVersion;
+        return this;
+    }
+
+    /**
+     * **参数解释** 本地镜像的版本标识，用于筛选指定版本的本地镜像，需与image_name配合使用 **约束限制** 仅当指定image_name时传参有效，否则筛选条件不生效 **取值范围** 字符长度1-128位，支持字母、数字、短横线、下划线、点号、冒号 **默认取值** 无 
+     * @return imageVersion
+     */
+    public String getImageVersion() {
+        return imageVersion;
+    }
+
+    public void setImageVersion(String imageVersion) {
+        this.imageVersion = imageVersion;
+    }
+
     public ListImageLocalRequest withScanStatus(String scanStatus) {
         this.scanStatus = scanStatus;
         return this;
     }
 
     /**
-     * 扫描状态，包含如下:   - unscan : 未扫描   - success : 扫描完成   - scanning : 扫描中   - failed : 扫描失败   - waiting_for_scan : 等待扫描
+     * **参数解释** 本地镜像的安全扫描状态，用于筛选指定扫描状态的镜像列表 **约束限制** 取值必须在指定范围内，否则返回空结果，区分大小写 **取值范围**   - unscan : 未扫描   - success : 扫描完成   - scanning : 扫描中   - failed : 扫描失败   - waiting_for_scan : 等待扫描 **默认取值** 无 
      * @return scanStatus
      */
     public String getScanStatus() {
@@ -232,7 +232,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * **参数解释** : 镜像类型 **约束限制** : 不涉及 **取值范围** : 包含如下两种:  - other_image : 非SWR镜像  - swr_image : SWR镜像 **默认取值** : 不涉及 
+     * **参数解释** 本地镜像的存储来源类型，用于筛选不同来源的本地镜像 **约束限制** 取值必须在指定范围内，否则返回空结果，区分大小写 **取值范围**  - other_image : 非SWR镜像  - swr_image : SWR镜像 **默认取值** 无 
      * @return localImageType
      */
     public String getLocalImageType() {
@@ -249,7 +249,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * 镜像大小，单位字节
+     * **参数解释** 本地镜像的大小（单位字节），用于筛选指定大小的镜像（精确匹配） **约束限制** 仅支持精确匹配，如需范围筛选需结合业务层处理 **取值范围** 取值0-9223372036854775807（约9EB） **默认取值** 无 
      * minimum: 0
      * maximum: 2147483547
      * @return imageSize
@@ -268,7 +268,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * 最近更新时间搜索开始日期，时间单位：毫秒（ms）
+     * **参数解释** 本地镜像版本最后更新时间的查询起始值（Unix时间戳，单位ms），与end_latest_update_time配合筛选时间范围 **时间格式** Unix时间戳（如1697509433000表示2023-10-16 10:23:53） **约束限制** 需与end_latest_update_time同时使用，且小于end_latest_update_time，否则筛选无效 **取值范围** 取值0-9223372036854775807 **默认取值** 无 
      * minimum: 0
      * maximum: 2147483547
      * @return startLatestUpdateTime
@@ -287,7 +287,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * 最近更新时间搜索结束日期，时间单位：毫秒（ms）
+     * **参数解释** 本地镜像版本最后更新时间的查询结束值（Unix时间戳，单位ms），与start_latest_update_time配合筛选时间范围 **时间格式** Unix时间戳（如1709973506292表示2024-03-08 15:18:26） **约束限制** 需与start_latest_update_time同时使用，且大于start_latest_update_time，否则筛选无效 **取值范围** 取值0-9223372036854775807 **默认取值** 无 
      * minimum: 0
      * maximum: 2147483547
      * @return endLatestUpdateTime
@@ -306,7 +306,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * 最近一次扫描完成时间搜索开始日期，时间单位：毫秒（ms）
+     * **参数解释** 本地镜像最近一次扫描完成时间的查询起始值（Unix时间戳，单位ms），与end_latest_scan_time配合筛选时间范围 **时间格式** Unix时间戳（精确到毫秒） **约束限制** 仅对scan_status为success的镜像有效，需与end_latest_scan_time同时使用 **取值范围** 取值0-9223372036854775807 **默认取值** 无 
      * minimum: 0
      * maximum: 2147483547
      * @return startLatestScanTime
@@ -325,7 +325,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * 最近一次扫描完成时间搜索结束日期，时间单位：毫秒（ms）
+     * **参数解释** 本地镜像最近一次扫描完成时间的查询结束值（Unix时间戳，单位ms），与start_latest_scan_time配合筛选时间范围 **时间格式** Unix时间戳（精确到毫秒） **约束限制** 仅对scan_status为success的镜像有效，且需大于start_latest_scan_time **取值范围** 取值0-9223372036854775807 **默认取值** 无 
      * minimum: 0
      * maximum: 2147483547
      * @return endLatestScanTime
@@ -344,7 +344,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * 是否存在软件漏洞
+     * **参数解释** 用于筛选是否存在软件漏洞的本地镜像，true表示筛选有漏洞的镜像，false表示筛选无漏洞的镜像 **约束限制** 仅对scan_status为success的镜像有效，未扫描镜像不会被筛选 **取值范围** true（存在漏洞）、false（不存在漏洞） **默认取值** 无（不筛选漏洞状态） 
      * @return hasVul
      */
     public Boolean getHasVul() {
@@ -361,7 +361,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * 本地镜像所关联服务器的名称
+     * **参数解释** 本地镜像所关联的云服务器名称，用于筛选关联指定服务器的本地镜像 **约束限制** 支持模糊匹配，区分大小写，仅对关联了服务器的镜像有效 **取值范围** 字符长度1-64位，支持中文、英文、数字、短横线、下划线，禁止含特殊字符 **默认取值** 无 
      * @return hostName
      */
     public String getHostName() {
@@ -378,7 +378,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * 本地镜像所关联服务器的ID
+     * **参数解释** 本地镜像所关联的云服务器唯一标识（ECS实例ID），用于精准筛选关联指定服务器的本地镜像 **约束限制** 精确匹配，仅对关联了该服务器的镜像有效 **取值范围** 字符长度1-64位，支持字母、数字、短横线 **默认取值** 无 
      * @return hostId
      */
     public String getHostId() {
@@ -395,7 +395,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * 本地镜像所关联服务器的IP（公网或私网）
+     * **参数解释** 本地镜像所关联服务器的公网或私网IP地址，用于筛选关联指定IP服务器的本地镜像 **约束限制** 支持IPv4格式，精确匹配，多个IP需通过业务层分批查询 **取值范围** 符合IPv4格式的字符串（如 **默认取值** 无 
      * @return hostIp
      */
     public String getHostIp() {
@@ -412,7 +412,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * 本地镜像所关联容器的ID
+     * **参数解释** 本地镜像所关联的容器唯一标识（Docker容器ID），用于精准筛选关联指定容器的本地镜像 **约束限制** 精确匹配，仅对关联了容器的镜像有效 **取值范围** 字符长度1-64位，支持字母、数字、短横线、下划线 **默认取值** 无 
      * @return containerId
      */
     public String getContainerId() {
@@ -429,7 +429,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * 本地镜像所关联容器的名称
+     * **参数解释** 本地镜像所关联的容器名称，用于筛选关联指定名称容器的本地镜像 **约束限制** 支持模糊匹配，区分大小写，仅对关联了容器的镜像有效 **取值范围** 字符长度1-64位，支持字母、数字、短横线、下划线、点号 **默认取值** 无 
      * @return containerName
      */
     public String getContainerName() {
@@ -446,7 +446,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * 本地镜像所关联Pod的ID
+     * **参数解释** 本地镜像所关联的Kubernetes Pod唯一标识，用于精准筛选关联指定Pod的本地镜像 **约束限制** 精确匹配，仅对K8s环境中关联了Pod的镜像有效 **取值范围** 字符长度1-64位，支持字母、数字、短横线 **默认取值** 无 
      * @return podId
      */
     public String getPodId() {
@@ -463,7 +463,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * 本地镜像所关联Pod的名称
+     * **参数解释** 本地镜像所关联的Kubernetes Pod名称，用于筛选关联指定名称Pod的本地镜像 **约束限制** 支持模糊匹配，区分大小写，仅对K8s环境中关联了Pod的镜像有效 **取值范围** 字符长度1-63位，支持字母、数字、短横线，不能以短横线开头或结尾 **默认取值** 无 
      * @return podName
      */
     public String getPodName() {
@@ -480,7 +480,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * 本地镜像所关联软件的名称
+     * **参数解释** 本地镜像中部署的应用软件名称（如Nginx、MySQL），用于筛选包含指定应用的本地镜像 **约束限制** 支持模糊匹配，区分大小写，仅对已识别应用的镜像有效 **取值范围** 字符长度1-64位，支持中文、英文、数字、短横线、下划线 **默认取值** 无 
      * @return appName
      */
     public String getAppName() {
@@ -497,7 +497,7 @@ public class ListImageLocalRequest {
     }
 
     /**
-     * **参数解释**: 是否存在容器 **约束限制**: 不涉及 **取值范围**: - true：是。 - false：否。  **默认取值**: 不涉及 
+     * **参数解释** 用于筛选是否关联了容器的本地镜像 **取值范围**: - true：关联容器的镜像 - false：未关联容器的镜像 **默认取值** 无（不筛选容器关联状态） 
      * @return hasContainer
      */
     public Boolean getHasContainer() {
@@ -518,8 +518,8 @@ public class ListImageLocalRequest {
         }
         ListImageLocalRequest that = (ListImageLocalRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.imageName, that.imageName) && Objects.equals(this.imageVersion, that.imageVersion)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.imageName, that.imageName) && Objects.equals(this.imageVersion, that.imageVersion)
             && Objects.equals(this.scanStatus, that.scanStatus)
             && Objects.equals(this.localImageType, that.localImageType)
             && Objects.equals(this.imageSize, that.imageSize)
@@ -538,10 +538,10 @@ public class ListImageLocalRequest {
     @Override
     public int hashCode() {
         return Objects.hash(enterpriseProjectId,
-            imageName,
-            imageVersion,
             offset,
             limit,
+            imageName,
+            imageVersion,
             scanStatus,
             localImageType,
             imageSize,
@@ -566,10 +566,10 @@ public class ListImageLocalRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListImageLocalRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");
-        sb.append("    imageVersion: ").append(toIndentedString(imageVersion)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");
+        sb.append("    imageVersion: ").append(toIndentedString(imageVersion)).append("\n");
         sb.append("    scanStatus: ").append(toIndentedString(scanStatus)).append("\n");
         sb.append("    localImageType: ").append(toIndentedString(localImageType)).append("\n");
         sb.append("    imageSize: ").append(toIndentedString(imageSize)).append("\n");

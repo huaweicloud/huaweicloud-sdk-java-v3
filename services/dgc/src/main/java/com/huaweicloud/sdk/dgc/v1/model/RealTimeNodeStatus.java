@@ -21,14 +21,14 @@ public class RealTimeNodeStatus {
     private String name;
 
     /**
-     * Gets or Sets status
+     * 节点状态： - STARTING：启动中 - NORMAL：正常 - EXCEPTION：异常 - STOPPING： 停止中 - STOPPED：停止 - PAUSE: 暂停 - ABNORMAL: 运行异常/失败 - DISABLE: 节点禁用 - OVERLOAD: 繁忙 - INIT: 初始化
      */
     public static final class StatusEnum {
 
         /**
-         * Enum STARTTING for value: "STARTTING"
+         * Enum STARTING for value: "STARTING"
          */
-        public static final StatusEnum STARTTING = new StatusEnum("STARTTING");
+        public static final StatusEnum STARTING = new StatusEnum("STARTING");
 
         /**
          * Enum NORMAL for value: "NORMAL"
@@ -50,15 +50,45 @@ public class RealTimeNodeStatus {
          */
         public static final StatusEnum STOPPED = new StatusEnum("STOPPED");
 
+        /**
+         * Enum PAUSE for value: "PAUSE"
+         */
+        public static final StatusEnum PAUSE = new StatusEnum("PAUSE");
+
+        /**
+         * Enum ABNORMAL for value: "ABNORMAL"
+         */
+        public static final StatusEnum ABNORMAL = new StatusEnum("ABNORMAL");
+
+        /**
+         * Enum DISABLE for value: "DISABLE"
+         */
+        public static final StatusEnum DISABLE = new StatusEnum("DISABLE");
+
+        /**
+         * Enum OVERLOAD for value: "OVERLOAD"
+         */
+        public static final StatusEnum OVERLOAD = new StatusEnum("OVERLOAD");
+
+        /**
+         * Enum INIT for value: "INIT"
+         */
+        public static final StatusEnum INIT = new StatusEnum("INIT");
+
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
             Map<String, StatusEnum> map = new HashMap<>();
-            map.put("STARTTING", STARTTING);
+            map.put("STARTING", STARTING);
             map.put("NORMAL", NORMAL);
             map.put("EXCEPTION", EXCEPTION);
             map.put("STOPPING", STOPPING);
             map.put("STOPPED", STOPPED);
+            map.put("PAUSE", PAUSE);
+            map.put("ABNORMAL", ABNORMAL);
+            map.put("DISABLE", DISABLE);
+            map.put("OVERLOAD", OVERLOAD);
+            map.put("INIT", INIT);
             return Collections.unmodifiableMap(map);
         }
 
@@ -119,7 +149,7 @@ public class RealTimeNodeStatus {
     private String logPath;
 
     /**
-     * Gets or Sets nodeType
+     * 节点类型
      */
     public static final class NodeTypeEnum {
 
@@ -277,13 +307,28 @@ public class RealTimeNodeStatus {
 
     private NodeTypeEnum nodeType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lastInstanceStatus")
+
+    private String lastInstanceStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "runningData")
+
+    private String runningData;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extendCounter")
+
+    private String extendCounter;
+
     public RealTimeNodeStatus withName(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * Get name
+     * 节点名称。
      * @return name
      */
     public String getName() {
@@ -300,7 +345,7 @@ public class RealTimeNodeStatus {
     }
 
     /**
-     * Get status
+     * 节点状态： - STARTING：启动中 - NORMAL：正常 - EXCEPTION：异常 - STOPPING： 停止中 - STOPPED：停止 - PAUSE: 暂停 - ABNORMAL: 运行异常/失败 - DISABLE: 节点禁用 - OVERLOAD: 繁忙 - INIT: 初始化
      * @return status
      */
     public StatusEnum getStatus() {
@@ -317,7 +362,7 @@ public class RealTimeNodeStatus {
     }
 
     /**
-     * Get logPath
+     * 节点运行日志路径
      * @return logPath
      */
     public String getLogPath() {
@@ -334,7 +379,7 @@ public class RealTimeNodeStatus {
     }
 
     /**
-     * Get nodeType
+     * 节点类型
      * @return nodeType
      */
     public NodeTypeEnum getNodeType() {
@@ -343,6 +388,57 @@ public class RealTimeNodeStatus {
 
     public void setNodeType(NodeTypeEnum nodeType) {
         this.nodeType = nodeType;
+    }
+
+    public RealTimeNodeStatus withLastInstanceStatus(String lastInstanceStatus) {
+        this.lastInstanceStatus = lastInstanceStatus;
+        return this;
+    }
+
+    /**
+     * 上一次实例的执行状态。
+     * @return lastInstanceStatus
+     */
+    public String getLastInstanceStatus() {
+        return lastInstanceStatus;
+    }
+
+    public void setLastInstanceStatus(String lastInstanceStatus) {
+        this.lastInstanceStatus = lastInstanceStatus;
+    }
+
+    public RealTimeNodeStatus withRunningData(String runningData) {
+        this.runningData = runningData;
+        return this;
+    }
+
+    /**
+     * 节点运行时内部存放的部分数据。
+     * @return runningData
+     */
+    public String getRunningData() {
+        return runningData;
+    }
+
+    public void setRunningData(String runningData) {
+        this.runningData = runningData;
+    }
+
+    public RealTimeNodeStatus withExtendCounter(String extendCounter) {
+        this.extendCounter = extendCounter;
+        return this;
+    }
+
+    /**
+     * 扩展计数器。
+     * @return extendCounter
+     */
+    public String getExtendCounter() {
+        return extendCounter;
+    }
+
+    public void setExtendCounter(String extendCounter) {
+        this.extendCounter = extendCounter;
     }
 
     @Override
@@ -355,12 +451,15 @@ public class RealTimeNodeStatus {
         }
         RealTimeNodeStatus that = (RealTimeNodeStatus) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.logPath, that.logPath) && Objects.equals(this.nodeType, that.nodeType);
+            && Objects.equals(this.logPath, that.logPath) && Objects.equals(this.nodeType, that.nodeType)
+            && Objects.equals(this.lastInstanceStatus, that.lastInstanceStatus)
+            && Objects.equals(this.runningData, that.runningData)
+            && Objects.equals(this.extendCounter, that.extendCounter);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, status, logPath, nodeType);
+        return Objects.hash(name, status, logPath, nodeType, lastInstanceStatus, runningData, extendCounter);
     }
 
     @Override
@@ -371,6 +470,9 @@ public class RealTimeNodeStatus {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    logPath: ").append(toIndentedString(logPath)).append("\n");
         sb.append("    nodeType: ").append(toIndentedString(nodeType)).append("\n");
+        sb.append("    lastInstanceStatus: ").append(toIndentedString(lastInstanceStatus)).append("\n");
+        sb.append("    runningData: ").append(toIndentedString(runningData)).append("\n");
+        sb.append("    extendCounter: ").append(toIndentedString(extendCounter)).append("\n");
         sb.append("}");
         return sb.toString();
     }

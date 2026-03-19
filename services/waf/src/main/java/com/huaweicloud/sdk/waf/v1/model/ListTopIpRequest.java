@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.waf.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -33,12 +36,12 @@ public class ListTopIpRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosts")
 
-    private String hosts;
+    private List<String> hosts = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
 
-    private String instances;
+    private List<String> instances = null;
 
     public ListTopIpRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -63,7 +66,7 @@ public class ListTopIpRequest {
     }
 
     /**
-     * **参数解释：** 起始时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 起始时间(毫秒时间戳)，需要和to同时使用 **约束限制：** from <= to **取值范围：** from ~ to 最大范围30天 **默认取值：** 不涉及
      * @return from
      */
     public Long getFrom() {
@@ -80,7 +83,7 @@ public class ListTopIpRequest {
     }
 
     /**
-     * **参数解释：** 结束时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 结束时间(毫秒时间戳)，需要和from同时使用 **约束限制：** from ~ to 最大范围30天 **取值范围：** 不能超过当天的结束时间 **默认取值：** 不涉及
      * @return to
      */
     public Long getTo() {
@@ -97,7 +100,7 @@ public class ListTopIpRequest {
     }
 
     /**
-     * **参数解释：** 要查询的前几的结果 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 查询前TopN的结果 **约束限制：** 不涉及 **取值范围：** [1, 10] **默认取值：** 5
      * @return top
      */
     public Integer getTop() {
@@ -108,37 +111,69 @@ public class ListTopIpRequest {
         this.top = top;
     }
 
-    public ListTopIpRequest withHosts(String hosts) {
+    public ListTopIpRequest withHosts(List<String> hosts) {
         this.hosts = hosts;
         return this;
     }
 
+    public ListTopIpRequest addHostsItem(String hostsItem) {
+        if (this.hosts == null) {
+            this.hosts = new ArrayList<>();
+        }
+        this.hosts.add(hostsItem);
+        return this;
+    }
+
+    public ListTopIpRequest withHosts(Consumer<List<String>> hostsSetter) {
+        if (this.hosts == null) {
+            this.hosts = new ArrayList<>();
+        }
+        hostsSetter.accept(this.hosts);
+        return this;
+    }
+
     /**
-     * **参数解释：** 要查询域名列表 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 要查询的域名id列表，通过 ”查询独享模式域名列表“（ListPremiumHost）或者 “查询云模式防护域名列表” （ListHost）接口获取；不传参代表查询全部域名的数据 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return hosts
      */
-    public String getHosts() {
+    public List<String> getHosts() {
         return hosts;
     }
 
-    public void setHosts(String hosts) {
+    public void setHosts(List<String> hosts) {
         this.hosts = hosts;
     }
 
-    public ListTopIpRequest withInstances(String instances) {
+    public ListTopIpRequest withInstances(List<String> instances) {
         this.instances = instances;
         return this;
     }
 
+    public ListTopIpRequest addInstancesItem(String instancesItem) {
+        if (this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
+        this.instances.add(instancesItem);
+        return this;
+    }
+
+    public ListTopIpRequest withInstances(Consumer<List<String>> instancesSetter) {
+        if (this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
+        instancesSetter.accept(this.instances);
+        return this;
+    }
+
     /**
-     * **参数解释：** 要查询实例列表 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 要查询的实例id列表，通过 “查询WAF独享引擎列表”（ListInstance）接口获取 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return instances
      */
-    public String getInstances() {
+    public List<String> getInstances() {
         return instances;
     }
 
-    public void setInstances(String instances) {
+    public void setInstances(List<String> instances) {
         this.instances = instances;
     }
 

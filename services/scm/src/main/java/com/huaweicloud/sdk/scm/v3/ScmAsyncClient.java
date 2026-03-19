@@ -21,6 +21,10 @@ import com.huaweicloud.sdk.scm.v3.model.DeleteCsrRequest;
 import com.huaweicloud.sdk.scm.v3.model.DeleteCsrResponse;
 import com.huaweicloud.sdk.scm.v3.model.DeployCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.DeployCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.DisableNotificationRequest;
+import com.huaweicloud.sdk.scm.v3.model.DisableNotificationResponse;
+import com.huaweicloud.sdk.scm.v3.model.EnableNotificationRequest;
+import com.huaweicloud.sdk.scm.v3.model.EnableNotificationResponse;
 import com.huaweicloud.sdk.scm.v3.model.ExportCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.ExportCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.ImportCertificateRequest;
@@ -275,6 +279,64 @@ public class ScmAsyncClient {
     public AsyncInvoker<DeployCertificateRequest, DeployCertificateResponse> deployCertificateAsyncInvoker(
         DeployCertificateRequest request) {
         return new AsyncInvoker<>(request, ScmMeta.deployCertificate, hcClient);
+    }
+
+    /**
+     * 禁用证书提醒
+     *
+     * 禁用证书提醒。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisableNotificationRequest 请求对象
+     * @return CompletableFuture<DisableNotificationResponse>
+     */
+    public CompletableFuture<DisableNotificationResponse> disableNotificationAsync(DisableNotificationRequest request) {
+        return hcClient.asyncInvokeHttp(request, ScmMeta.disableNotification);
+    }
+
+    /**
+     * 禁用证书提醒
+     *
+     * 禁用证书提醒。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisableNotificationRequest 请求对象
+     * @return AsyncInvoker<DisableNotificationRequest, DisableNotificationResponse>
+     */
+    public AsyncInvoker<DisableNotificationRequest, DisableNotificationResponse> disableNotificationAsyncInvoker(
+        DisableNotificationRequest request) {
+        return new AsyncInvoker<>(request, ScmMeta.disableNotification, hcClient);
+    }
+
+    /**
+     * 启用证书提醒
+     *
+     * 启用证书提醒。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableNotificationRequest 请求对象
+     * @return CompletableFuture<EnableNotificationResponse>
+     */
+    public CompletableFuture<EnableNotificationResponse> enableNotificationAsync(EnableNotificationRequest request) {
+        return hcClient.asyncInvokeHttp(request, ScmMeta.enableNotification);
+    }
+
+    /**
+     * 启用证书提醒
+     *
+     * 启用证书提醒。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableNotificationRequest 请求对象
+     * @return AsyncInvoker<EnableNotificationRequest, EnableNotificationResponse>
+     */
+    public AsyncInvoker<EnableNotificationRequest, EnableNotificationResponse> enableNotificationAsyncInvoker(
+        EnableNotificationRequest request) {
+        return new AsyncInvoker<>(request, ScmMeta.enableNotification, hcClient);
     }
 
     /**

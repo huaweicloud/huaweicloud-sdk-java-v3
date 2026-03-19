@@ -30,7 +30,7 @@ public class ListTopDomainsResponse extends SdkResponse {
     }
 
     /**
-     * CountItem的总数量
+     * TopDomainsCountItem的总数量
      * @return total
      */
     public Integer getTotal() {
@@ -63,7 +63,7 @@ public class ListTopDomainsResponse extends SdkResponse {
     }
 
     /**
-     * CountItem详细信息
+     * TopDomainsCountItem的详细信息
      * @return items
      */
     public List<TopDomainsCountItem> getItems() {

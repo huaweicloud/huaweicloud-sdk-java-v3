@@ -223,6 +223,9 @@ public class ObsSigner {
 
             if (key.equals("content-type")) {
                 contentType = entry.getValue().get(0);
+                if ("application/xml".equals(contentType)){
+                    contentType = contentType + "; charset=utf-8";
+                }
                 continue;
             }
 

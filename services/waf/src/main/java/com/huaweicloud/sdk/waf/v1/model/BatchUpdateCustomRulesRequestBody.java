@@ -9,9 +9,9 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * BatchUpdateCustomRuleRequestBody
+ * BatchUpdateCustomRulesRequestBody
  */
-public class BatchUpdateCustomRuleRequestBody {
+public class BatchUpdateCustomRulesRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -71,9 +71,9 @@ public class BatchUpdateCustomRuleRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_rule_ids")
 
-    private List<PolicyRuleIdRequestBodyPolicyRuleIds> policyRuleIds = null;
+    private List<BatchUpdateCustomRulesRequestBodyPolicyRuleIds> policyRuleIds = null;
 
-    public BatchUpdateCustomRuleRequestBody withName(String name) {
+    public BatchUpdateCustomRulesRequestBody withName(String name) {
         this.name = name;
         return this;
     }
@@ -90,7 +90,7 @@ public class BatchUpdateCustomRuleRequestBody {
         this.name = name;
     }
 
-    public BatchUpdateCustomRuleRequestBody withDescription(String description) {
+    public BatchUpdateCustomRulesRequestBody withDescription(String description) {
         this.description = description;
         return this;
     }
@@ -107,7 +107,7 @@ public class BatchUpdateCustomRuleRequestBody {
         this.description = description;
     }
 
-    public BatchUpdateCustomRuleRequestBody withStatus(Integer status) {
+    public BatchUpdateCustomRulesRequestBody withStatus(Integer status) {
         this.status = status;
         return this;
     }
@@ -124,12 +124,12 @@ public class BatchUpdateCustomRuleRequestBody {
         this.status = status;
     }
 
-    public BatchUpdateCustomRuleRequestBody withConditions(List<CustomRuleConditions> conditions) {
+    public BatchUpdateCustomRulesRequestBody withConditions(List<CustomRuleConditions> conditions) {
         this.conditions = conditions;
         return this;
     }
 
-    public BatchUpdateCustomRuleRequestBody addConditionsItem(CustomRuleConditions conditionsItem) {
+    public BatchUpdateCustomRulesRequestBody addConditionsItem(CustomRuleConditions conditionsItem) {
         if (this.conditions == null) {
             this.conditions = new ArrayList<>();
         }
@@ -137,7 +137,7 @@ public class BatchUpdateCustomRuleRequestBody {
         return this;
     }
 
-    public BatchUpdateCustomRuleRequestBody withConditions(Consumer<List<CustomRuleConditions>> conditionsSetter) {
+    public BatchUpdateCustomRulesRequestBody withConditions(Consumer<List<CustomRuleConditions>> conditionsSetter) {
         if (this.conditions == null) {
             this.conditions = new ArrayList<>();
         }
@@ -157,12 +157,12 @@ public class BatchUpdateCustomRuleRequestBody {
         this.conditions = conditions;
     }
 
-    public BatchUpdateCustomRuleRequestBody withAction(CustomAction action) {
+    public BatchUpdateCustomRulesRequestBody withAction(CustomAction action) {
         this.action = action;
         return this;
     }
 
-    public BatchUpdateCustomRuleRequestBody withAction(Consumer<CustomAction> actionSetter) {
+    public BatchUpdateCustomRulesRequestBody withAction(Consumer<CustomAction> actionSetter) {
         if (this.action == null) {
             this.action = new CustomAction();
             actionSetter.accept(this.action);
@@ -183,7 +183,7 @@ public class BatchUpdateCustomRuleRequestBody {
         this.action = action;
     }
 
-    public BatchUpdateCustomRuleRequestBody withActionMode(Boolean actionMode) {
+    public BatchUpdateCustomRulesRequestBody withActionMode(Boolean actionMode) {
         this.actionMode = actionMode;
         return this;
     }
@@ -200,7 +200,7 @@ public class BatchUpdateCustomRuleRequestBody {
         this.actionMode = actionMode;
     }
 
-    public BatchUpdateCustomRuleRequestBody withPriority(Integer priority) {
+    public BatchUpdateCustomRulesRequestBody withPriority(Integer priority) {
         this.priority = priority;
         return this;
     }
@@ -217,13 +217,13 @@ public class BatchUpdateCustomRuleRequestBody {
         this.priority = priority;
     }
 
-    public BatchUpdateCustomRuleRequestBody withTime(Boolean time) {
+    public BatchUpdateCustomRulesRequestBody withTime(Boolean time) {
         this.time = time;
         return this;
     }
 
     /**
-     * 精准防护规则生效时间:  - “false”：表示该规则立即生效。   - “true”：表示自定义生效时间。
+     * 精准防护规则生效时间:  - false：表示该规则立即生效 - true：表示自定义生效时间
      * @return time
      */
     public Boolean getTime() {
@@ -234,7 +234,7 @@ public class BatchUpdateCustomRuleRequestBody {
         this.time = time;
     }
 
-    public BatchUpdateCustomRuleRequestBody withStart(Long start) {
+    public BatchUpdateCustomRulesRequestBody withStart(Long start) {
         this.start = start;
         return this;
     }
@@ -251,7 +251,7 @@ public class BatchUpdateCustomRuleRequestBody {
         this.start = start;
     }
 
-    public BatchUpdateCustomRuleRequestBody withTerminal(Long terminal) {
+    public BatchUpdateCustomRulesRequestBody withTerminal(Long terminal) {
         this.terminal = terminal;
         return this;
     }
@@ -268,7 +268,7 @@ public class BatchUpdateCustomRuleRequestBody {
         this.terminal = terminal;
     }
 
-    public BatchUpdateCustomRuleRequestBody withProducer(Integer producer) {
+    public BatchUpdateCustomRulesRequestBody withProducer(Integer producer) {
         this.producer = producer;
         return this;
     }
@@ -285,14 +285,14 @@ public class BatchUpdateCustomRuleRequestBody {
         this.producer = producer;
     }
 
-    public BatchUpdateCustomRuleRequestBody withPolicyRuleIds(
-        List<PolicyRuleIdRequestBodyPolicyRuleIds> policyRuleIds) {
+    public BatchUpdateCustomRulesRequestBody withPolicyRuleIds(
+        List<BatchUpdateCustomRulesRequestBodyPolicyRuleIds> policyRuleIds) {
         this.policyRuleIds = policyRuleIds;
         return this;
     }
 
-    public BatchUpdateCustomRuleRequestBody addPolicyRuleIdsItem(
-        PolicyRuleIdRequestBodyPolicyRuleIds policyRuleIdsItem) {
+    public BatchUpdateCustomRulesRequestBody addPolicyRuleIdsItem(
+        BatchUpdateCustomRulesRequestBodyPolicyRuleIds policyRuleIdsItem) {
         if (this.policyRuleIds == null) {
             this.policyRuleIds = new ArrayList<>();
         }
@@ -300,8 +300,8 @@ public class BatchUpdateCustomRuleRequestBody {
         return this;
     }
 
-    public BatchUpdateCustomRuleRequestBody withPolicyRuleIds(
-        Consumer<List<PolicyRuleIdRequestBodyPolicyRuleIds>> policyRuleIdsSetter) {
+    public BatchUpdateCustomRulesRequestBody withPolicyRuleIds(
+        Consumer<List<BatchUpdateCustomRulesRequestBodyPolicyRuleIds>> policyRuleIdsSetter) {
         if (this.policyRuleIds == null) {
             this.policyRuleIds = new ArrayList<>();
         }
@@ -313,11 +313,11 @@ public class BatchUpdateCustomRuleRequestBody {
      * **参数解释：** 策略和规则id数组，关联防护策略与对应的规则集合 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return policyRuleIds
      */
-    public List<PolicyRuleIdRequestBodyPolicyRuleIds> getPolicyRuleIds() {
+    public List<BatchUpdateCustomRulesRequestBodyPolicyRuleIds> getPolicyRuleIds() {
         return policyRuleIds;
     }
 
-    public void setPolicyRuleIds(List<PolicyRuleIdRequestBodyPolicyRuleIds> policyRuleIds) {
+    public void setPolicyRuleIds(List<BatchUpdateCustomRulesRequestBodyPolicyRuleIds> policyRuleIds) {
         this.policyRuleIds = policyRuleIds;
     }
 
@@ -329,7 +329,7 @@ public class BatchUpdateCustomRuleRequestBody {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdateCustomRuleRequestBody that = (BatchUpdateCustomRuleRequestBody) obj;
+        BatchUpdateCustomRulesRequestBody that = (BatchUpdateCustomRulesRequestBody) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.status, that.status) && Objects.equals(this.conditions, that.conditions)
             && Objects.equals(this.action, that.action) && Objects.equals(this.actionMode, that.actionMode)
@@ -357,7 +357,7 @@ public class BatchUpdateCustomRuleRequestBody {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class BatchUpdateCustomRuleRequestBody {\n");
+        sb.append("class BatchUpdateCustomRulesRequestBody {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

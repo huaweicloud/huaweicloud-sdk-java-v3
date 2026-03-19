@@ -8195,9 +8195,9 @@ public class HssClient {
     }
 
     /**
-     * 查询配置检测策略组列表10
+     * 查询配置检测策略组列表
      *
-     * 查询配置检测策略组列表10。
+     * 查询配置检测策略组列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8210,9 +8210,9 @@ public class HssClient {
     }
 
     /**
-     * 查询配置检测策略组列表10
+     * 查询配置检测策略组列表
      *
-     * 查询配置检测策略组列表10。
+     * 查询配置检测策略组列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -10175,9 +10175,9 @@ public class HssClient {
     }
 
     /**
-     * 创建VPC终端节点的创建
+     * 创建VPC终端节点
      *
-     * 创建VPC终端节点的创建。
+     * 创建VPC终端节点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -10189,9 +10189,9 @@ public class HssClient {
     }
 
     /**
-     * 创建VPC终端节点的创建
+     * 创建VPC终端节点
      *
-     * 创建VPC终端节点的创建。
+     * 创建VPC终端节点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -11450,7 +11450,7 @@ public class HssClient {
     /**
      * 本地镜像列表查询
      *
-     * 本地镜像列表查询。
+     * 本地镜像列表查询
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -11464,7 +11464,7 @@ public class HssClient {
     /**
      * 本地镜像列表查询
      *
-     * 本地镜像列表查询。
+     * 本地镜像列表查询
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -14355,9 +14355,9 @@ public class HssClient {
     }
 
     /**
-     * 查询Serverless资产列表
+     * 查询Serverless资产列表--接口已废弃
      *
-     * 查询Serverless资产列表。
+     * 查询Serverless资产列表--接口已废弃
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -14369,9 +14369,9 @@ public class HssClient {
     }
 
     /**
-     * 查询Serverless资产列表
+     * 查询Serverless资产列表--接口已废弃
      *
-     * 查询Serverless资产列表。
+     * 查询Serverless资产列表--接口已废弃
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -14384,9 +14384,9 @@ public class HssClient {
     }
 
     /**
-     * 查询Serverless资产详细信息
+     * 查询Serverless资产详细信息--接口已废弃
      *
-     * 查询Serverless资产详细信息。
+     * 查询Serverless资产详细信息--接口已废弃
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -14398,9 +14398,9 @@ public class HssClient {
     }
 
     /**
-     * 查询Serverless资产详细信息
+     * 查询Serverless资产详细信息--接口已废弃
      *
-     * 查询Serverless资产详细信息。
+     * 查询Serverless资产详细信息--接口已废弃
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

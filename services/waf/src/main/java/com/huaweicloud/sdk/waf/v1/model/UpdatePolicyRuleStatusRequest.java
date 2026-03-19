@@ -27,29 +27,14 @@ public class UpdatePolicyRuleStatusRequest {
     private String policyId;
 
     /**
-     * **参数解释：** 策略类型 **约束限制：** 不涉及 **取值范围：**  - custom：精准防护   - cc: cc攻击   - whiteblackip: 黑白名单  - geoip: 地理位置  - privacy: 私屏蔽防护  - antitamper: 防篡改规则  - ignore: 全局白名单  **默认取值：** 不涉及
+     * **参数解释：** 规则类型 **约束限制：** 需要购买“大模型防火墙”服务后才可使用llm-guards **取值范围：** - cc CC防护 - custom 精准防护 - whiteblackip 黑白名单 - geoip 地理位置防护 - ip-reputation 威胁情报 - antitamper 防篡改 - antileakage 防敏感信息泄露 - ignore 全局白名单(原误报屏蔽) - privacy 隐私屏蔽 - llm-guards 大模型防火墙 **默认取值：** 不涉及
      */
     public static final class RuletypeEnum {
 
         /**
-         * Enum WHITEBLACKIP for value: "whiteblackip"
+         * Enum CC for value: "cc"
          */
-        public static final RuletypeEnum WHITEBLACKIP = new RuletypeEnum("whiteblackip");
-
-        /**
-         * Enum GEOIP for value: "geoip"
-         */
-        public static final RuletypeEnum GEOIP = new RuletypeEnum("geoip");
-
-        /**
-         * Enum PRIVACY for value: "privacy"
-         */
-        public static final RuletypeEnum PRIVACY = new RuletypeEnum("privacy");
-
-        /**
-         * Enum ANTITAMPER for value: "antitamper"
-         */
-        public static final RuletypeEnum ANTITAMPER = new RuletypeEnum("antitamper");
+        public static final RuletypeEnum CC = new RuletypeEnum("cc");
 
         /**
          * Enum CUSTOM for value: "custom"
@@ -57,26 +42,59 @@ public class UpdatePolicyRuleStatusRequest {
         public static final RuletypeEnum CUSTOM = new RuletypeEnum("custom");
 
         /**
+         * Enum WHITEBLACKIP for value: "whiteblackip"
+         */
+        public static final RuletypeEnum WHITEBLACKIP = new RuletypeEnum("whiteblackip");
+
+        /**
+         * Enum PRIVACY for value: "privacy"
+         */
+        public static final RuletypeEnum PRIVACY = new RuletypeEnum("privacy");
+
+        /**
          * Enum IGNORE for value: "ignore"
          */
         public static final RuletypeEnum IGNORE = new RuletypeEnum("ignore");
 
         /**
-         * Enum CC for value: "cc"
+         * Enum GEOIP for value: "geoip"
          */
-        public static final RuletypeEnum CC = new RuletypeEnum("cc");
+        public static final RuletypeEnum GEOIP = new RuletypeEnum("geoip");
+
+        /**
+         * Enum ANTITAMPER for value: "antitamper"
+         */
+        public static final RuletypeEnum ANTITAMPER = new RuletypeEnum("antitamper");
+
+        /**
+         * Enum ANTILEAKAGE for value: "antileakage"
+         */
+        public static final RuletypeEnum ANTILEAKAGE = new RuletypeEnum("antileakage");
+
+        /**
+         * Enum IP_REPUTATION for value: "ip-reputation"
+         */
+        public static final RuletypeEnum IP_REPUTATION = new RuletypeEnum("ip-reputation");
+
+        /**
+         * Enum LLM_GUARDS for value: "llm-guards"
+         */
+        public static final RuletypeEnum LLM_GUARDS = new RuletypeEnum("llm-guards");
 
         private static final Map<String, RuletypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, RuletypeEnum> createStaticFields() {
             Map<String, RuletypeEnum> map = new HashMap<>();
-            map.put("whiteblackip", WHITEBLACKIP);
-            map.put("geoip", GEOIP);
-            map.put("privacy", PRIVACY);
-            map.put("antitamper", ANTITAMPER);
-            map.put("custom", CUSTOM);
-            map.put("ignore", IGNORE);
             map.put("cc", CC);
+            map.put("custom", CUSTOM);
+            map.put("whiteblackip", WHITEBLACKIP);
+            map.put("privacy", PRIVACY);
+            map.put("ignore", IGNORE);
+            map.put("geoip", GEOIP);
+            map.put("antitamper", ANTITAMPER);
+            map.put("antileakage", ANTILEAKAGE);
+            map.put("ip-reputation", IP_REPUTATION);
+            map.put("llm-guards", LLM_GUARDS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -147,7 +165,7 @@ public class UpdatePolicyRuleStatusRequest {
     }
 
     /**
-     * **参数解释：** 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目ID。若需要查询当前用户所有企业项目绑定的资源信息，请传参all_granted_eps。 **约束限制：** 不涉及 **取值范围：**  - 0：代表default企业项目  - all_granted_eps：代表所有企业项目  - 其它企业项目ID：长度为36个字符  **默认取值：** 0
+     * **参数解释：** 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目ID。若需要查询当前用户所有企业项目绑定的资源信息，请传参all_granted_eps。 **约束限制：** 不涉及 **取值范围：**  - 0：代表default企业项目  - all_granted_eps：代表所有企业项目  - 其它企业项目ID：长度为36个字符 **默认取值：** 0
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -164,7 +182,7 @@ public class UpdatePolicyRuleStatusRequest {
     }
 
     /**
-     * 策略id（策略id从查询防护策略列表接口获取）
+     * **参数解释：** 防护策略id，您可以通过调用查询防护策略列表（ListPolicy）获取策略id **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return policyId
      */
     public String getPolicyId() {
@@ -181,7 +199,7 @@ public class UpdatePolicyRuleStatusRequest {
     }
 
     /**
-     * **参数解释：** 策略类型 **约束限制：** 不涉及 **取值范围：**  - custom：精准防护   - cc: cc攻击   - whiteblackip: 黑白名单  - geoip: 地理位置  - privacy: 私屏蔽防护  - antitamper: 防篡改规则  - ignore: 全局白名单  **默认取值：** 不涉及
+     * **参数解释：** 规则类型 **约束限制：** 需要购买“大模型防火墙”服务后才可使用llm-guards **取值范围：** - cc CC防护 - custom 精准防护 - whiteblackip 黑白名单 - geoip 地理位置防护 - ip-reputation 威胁情报 - antitamper 防篡改 - antileakage 防敏感信息泄露 - ignore 全局白名单(原误报屏蔽) - privacy 隐私屏蔽 - llm-guards 大模型防火墙 **默认取值：** 不涉及
      * @return ruletype
      */
     public RuletypeEnum getRuletype() {
@@ -198,7 +216,7 @@ public class UpdatePolicyRuleStatusRequest {
     }
 
     /**
-     * 规则id，根据不同的规则类型（ruletype）调用规则列表接口获取规则id，例如黑白名单（whiteblackip）规则id，您可以通过调用查询黑白名单规则列表（ListWhiteblackipRule）获取规则id
+     * **参数解释：** 规则id，通过对应规则类型的查询防护规则列表接口获取 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return ruleId
      */
     public String getRuleId() {

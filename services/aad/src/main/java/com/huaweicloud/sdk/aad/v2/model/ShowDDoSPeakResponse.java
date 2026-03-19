@@ -44,7 +44,7 @@ public class ShowDDoSPeakResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "utime")
 
-    private Integer utime;
+    private Long utime;
 
     public ShowDDoSPeakResponse withAttackKbytesTotal(Integer attackKbytesTotal) {
         this.attackKbytesTotal = attackKbytesTotal;
@@ -160,7 +160,7 @@ public class ShowDDoSPeakResponse extends SdkResponse {
         this.ddosCount = ddosCount;
     }
 
-    public ShowDDoSPeakResponse withUtime(Integer utime) {
+    public ShowDDoSPeakResponse withUtime(Long utime) {
         this.utime = utime;
         return this;
     }
@@ -171,11 +171,11 @@ public class ShowDDoSPeakResponse extends SdkResponse {
      * maximum: 2000
      * @return utime
      */
-    public Integer getUtime() {
+    public Long getUtime() {
         return utime;
     }
 
-    public void setUtime(Integer utime) {
+    public void setUtime(Long utime) {
         this.utime = utime;
     }
 

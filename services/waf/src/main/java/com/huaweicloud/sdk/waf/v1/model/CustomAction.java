@@ -16,7 +16,7 @@ import java.util.Objects;
 public class CustomAction {
 
     /**
-     * 操作类型。   - “block”：拦截。   - “pass”：放行。   - “log”：仅记录
+     * 操作类型。   - block：拦截  - pass：放行   - log：仅记录
      */
     public static final class CategoryEnum {
 
@@ -107,7 +107,7 @@ public class CustomAction {
     }
 
     /**
-     * 操作类型。   - “block”：拦截。   - “pass”：放行。   - “log”：仅记录
+     * 操作类型。   - block：拦截  - pass：放行   - log：仅记录
      * @return category
      */
     public CategoryEnum getCategory() {

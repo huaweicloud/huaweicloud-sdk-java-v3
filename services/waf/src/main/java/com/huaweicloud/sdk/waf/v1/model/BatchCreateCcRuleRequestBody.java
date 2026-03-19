@@ -36,7 +36,7 @@ public class BatchCreateCcRuleRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
-    private CreateCcRuleRequestBodyAction action;
+    private BatchCreateCcRuleRequestBodyAction action;
 
     /**
      * **参数解释：** 限速模式标识，用于指定区分单个Web访问者的判断依据 **约束限制：** 不涉及 **取值范围：**  - ip：IP限速，根据IP区分单个Web访问者  - cookie：用户限速，根据Cookie键值区分单个Web访问者  - header：用户限速，根据Header区分单个Web访问者  - other：根据Referer（自定义请求访问的来源）字段区分单个Web访问者  - policy：策略限速  - domain：域名限速  - url：url限速 **默认取值：** 不涉及
@@ -260,14 +260,14 @@ public class BatchCreateCcRuleRequestBody {
         this.conditions = conditions;
     }
 
-    public BatchCreateCcRuleRequestBody withAction(CreateCcRuleRequestBodyAction action) {
+    public BatchCreateCcRuleRequestBody withAction(BatchCreateCcRuleRequestBodyAction action) {
         this.action = action;
         return this;
     }
 
-    public BatchCreateCcRuleRequestBody withAction(Consumer<CreateCcRuleRequestBodyAction> actionSetter) {
+    public BatchCreateCcRuleRequestBody withAction(Consumer<BatchCreateCcRuleRequestBodyAction> actionSetter) {
         if (this.action == null) {
-            this.action = new CreateCcRuleRequestBodyAction();
+            this.action = new BatchCreateCcRuleRequestBodyAction();
             actionSetter.accept(this.action);
         }
 
@@ -278,11 +278,11 @@ public class BatchCreateCcRuleRequestBody {
      * Get action
      * @return action
      */
-    public CreateCcRuleRequestBodyAction getAction() {
+    public BatchCreateCcRuleRequestBodyAction getAction() {
         return action;
     }
 
-    public void setAction(CreateCcRuleRequestBodyAction action) {
+    public void setAction(BatchCreateCcRuleRequestBodyAction action) {
         this.action = action;
     }
 

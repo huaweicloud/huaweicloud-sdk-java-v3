@@ -108,7 +108,7 @@ public class CreatePrepaidCloudWafRequestBody {
     }
 
     /**
-     * region Id
+     * **参数解释：** 局点ID **约束限制：** 华为云支持的局点ID **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return regionId
      */
     public String getRegionId() {

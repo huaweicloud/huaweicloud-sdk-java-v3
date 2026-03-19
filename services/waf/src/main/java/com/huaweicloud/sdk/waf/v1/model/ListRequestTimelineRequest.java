@@ -66,7 +66,7 @@ public class ListRequestTimelineRequest {
     }
 
     /**
-     * 起始时间（13位毫秒时间戳），需要和to同时使用
+     * **参数解释：** 起始时间(毫秒时间戳)，需要和to同时使用 **约束限制：** from <= to **取值范围：** from ~ to 最大范围30天 **默认取值：** 不涉及
      * @return from
      */
     public Long getFrom() {
@@ -83,7 +83,7 @@ public class ListRequestTimelineRequest {
     }
 
     /**
-     * 结束时间（13位毫秒时间戳），需要和from同时使用
+     * **参数解释：** 结束时间(毫秒时间戳)，需要和from同时使用 **约束限制：** from ~ to 最大范围30天 **取值范围：** 不能超过当天的结束时间 **默认取值：** 不涉及
      * @return to
      */
     public Long getTo() {
@@ -116,7 +116,7 @@ public class ListRequestTimelineRequest {
     }
 
     /**
-     * 域名id，通过查询云模式防护域名列表（ListHost）获取域名id或者通过独享模式域名列表（ListPremiumHost）获取域名id。默认不传，查询该项目下所有防护域名的top业务异常统计信息。
+     * **参数解释：** 要查询的域名id列表，通过 ”查询独享模式域名列表“（ListPremiumHost）或者 “查询云模式防护域名列表” （ListHost）接口获取；不传参代表查询全部域名的数据 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return hosts
      */
     public List<String> getHosts() {
@@ -149,7 +149,7 @@ public class ListRequestTimelineRequest {
     }
 
     /**
-     * 要查询引擎实例id
+     * **参数解释：** 要查询的实例id列表，通过 “查询WAF独享引擎列表”（ListInstance）接口获取 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return instances
      */
     public List<String> getInstances() {
@@ -166,7 +166,7 @@ public class ListRequestTimelineRequest {
     }
 
     /**
-     * 展示维度，按天展示时传\"DAY\"；默认不传，按照分钟展示
+     * **参数解释：** 展示维度，按天展示时传\"DAY\" **约束限制：** 不涉及 **取值范围：** - DAY **默认取值：** 不涉及
      * @return groupBy
      */
     public String getGroupBy() {

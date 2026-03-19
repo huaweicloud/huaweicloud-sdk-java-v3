@@ -1729,6 +1729,18 @@ public class ObsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(PutObjectRequest::getXObsServerSideEncryptionKmsKeyId,
                 PutObjectRequest::setXObsServerSideEncryptionKmsKeyId));
+        builder.<String>withRequestField("x-obs-server-side-encryption-bucket-key-enabled",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PutObjectRequest::getXObsServerSideEncryptionBucketKeyEnabled,
+                PutObjectRequest::setXObsServerSideEncryptionBucketKeyEnabled));
+        builder.<String>withRequestField("x-obs-server-side-data-encryption",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PutObjectRequest::getXObsServerSideDataEncryption,
+                PutObjectRequest::setXObsServerSideDataEncryption));
         builder.<String>withRequestField("x-obs-server-side-encryption-customer-algorithm",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1758,6 +1770,22 @@ public class ObsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(PutObjectRequest::getXObsExpires, PutObjectRequest::setXObsExpires));
+        builder.<String>withRequestField("x-obs-tagging",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PutObjectRequest::getXObsTagging, PutObjectRequest::setXObsTagging));
+        builder.<String>withRequestField("x-obs-object-lock-mode",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PutObjectRequest::getXObsObjectLockMode, PutObjectRequest::setXObsObjectLockMode));
+        builder.<String>withRequestField("x-obs-object-lock-retain-until-date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(PutObjectRequest::getXObsObjectLockRetainUntilDate,
+                PutObjectRequest::setXObsObjectLockRetainUntilDate));
 
         // response
 

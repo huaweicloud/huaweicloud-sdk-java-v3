@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 全量SQL开关记录
@@ -14,6 +17,11 @@ public class SqlTypeRangeConfigResult {
     @JsonProperty(value = "category")
 
     private String category;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "prefixes")
+
+    private List<String> prefixes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_preset")
@@ -35,6 +43,39 @@ public class SqlTypeRangeConfigResult {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public SqlTypeRangeConfigResult withPrefixes(List<String> prefixes) {
+        this.prefixes = prefixes;
+        return this;
+    }
+
+    public SqlTypeRangeConfigResult addPrefixesItem(String prefixesItem) {
+        if (this.prefixes == null) {
+            this.prefixes = new ArrayList<>();
+        }
+        this.prefixes.add(prefixesItem);
+        return this;
+    }
+
+    public SqlTypeRangeConfigResult withPrefixes(Consumer<List<String>> prefixesSetter) {
+        if (this.prefixes == null) {
+            this.prefixes = new ArrayList<>();
+        }
+        prefixesSetter.accept(this.prefixes);
+        return this;
+    }
+
+    /**
+     * **参数解释**: 对应SQL类别中，采集的SQL语句类型列表，采用前缀方式进行匹配。 **取值范围**: - all：不区分SQL类型，全部采集。对应取值为：[\".*\"]。 - ddl：只采集DDL语句类别，对于取值为：[\"create\", \"alter\", \"drop\", \"truncate\", \"reindex\", \"vacuum\", \"analyze\", \"declare\", \"move\", \"close\"]。 - dml：只采集DML语句类型，对于取值为：[\"insert\", \"update\", \"delete\", \"merge\", \"show\", \"explain\", \"prepare\", \"lock\", \"copy\", \"execute\", \"deallocate\"]。 - dcl：只采集DCL语句类型，对于取值为：[\"grant\", \"revoke\", \"reassign\", \"set\"]。 - tcl：只采集TCL语句类型，对于取值为：[\"begin\", \"commit\", \"rollback\", \"start\", \"savepoint\", \"checkpoint\", \"release savepoint\"]。 - dql：只采集DQL语句类型，对于取值为：[\"select\"]。 - custom：采集自定义语句类型。对应取值为：开启全量SQL时，用户填写的自定义SQL语句类型列表。
+     * @return prefixes
+     */
+    public List<String> getPrefixes() {
+        return prefixes;
+    }
+
+    public void setPrefixes(List<String> prefixes) {
+        this.prefixes = prefixes;
     }
 
     public SqlTypeRangeConfigResult withIsPreset(Boolean isPreset) {
@@ -63,12 +104,13 @@ public class SqlTypeRangeConfigResult {
             return false;
         }
         SqlTypeRangeConfigResult that = (SqlTypeRangeConfigResult) obj;
-        return Objects.equals(this.category, that.category) && Objects.equals(this.isPreset, that.isPreset);
+        return Objects.equals(this.category, that.category) && Objects.equals(this.prefixes, that.prefixes)
+            && Objects.equals(this.isPreset, that.isPreset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(category, isPreset);
+        return Objects.hash(category, prefixes, isPreset);
     }
 
     @Override
@@ -76,6 +118,7 @@ public class SqlTypeRangeConfigResult {
         StringBuilder sb = new StringBuilder();
         sb.append("class SqlTypeRangeConfigResult {\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
+        sb.append("    prefixes: ").append(toIndentedString(prefixes)).append("\n");
         sb.append("    isPreset: ").append(toIndentedString(isPreset)).append("\n");
         sb.append("}");
         return sb.toString();

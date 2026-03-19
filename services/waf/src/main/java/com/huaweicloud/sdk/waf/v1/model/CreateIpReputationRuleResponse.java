@@ -70,7 +70,7 @@ public class CreateIpReputationRuleResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 规则ID，唯一标识该规则 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 规则ID，唯一标识该规则 **约束限制：** 同一个标签在多个规则中只能出现一次，即多个规则的标签列表不允许重合 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return id
      */
     public String getId() {
@@ -104,7 +104,7 @@ public class CreateIpReputationRuleResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 规则名称 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 规则名称 **约束限制：** 长度范围：[1, 256] **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return name
      */
     public String getName() {
@@ -222,7 +222,7 @@ public class CreateIpReputationRuleResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 标签列表，关联的情报标识 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 标签列表，用于指定关联的情报标识，可通过ConfirmPolicyIpReputationMap接口查询；多个标识之间使用逗号\",\"分隔 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return tags
      */
     public List<String> getTags() {

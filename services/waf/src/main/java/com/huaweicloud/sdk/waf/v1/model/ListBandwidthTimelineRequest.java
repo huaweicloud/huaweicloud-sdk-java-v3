@@ -1,9 +1,17 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -28,22 +36,92 @@ public class ListBandwidthTimelineRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosts")
 
-    private String hosts;
+    private List<String> hosts = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
 
-    private String instances;
+    private List<String> instances = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "group_by")
 
     private String groupBy;
 
+    /**
+     * **参数解释：** 发送/接受字节数查看形式 **约束限制：** 不涉及 **取值范围：** - 0 平均值 - 1 峰值 **默认取值：** 不涉及
+     */
+    public static final class DisplayOptionEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final DisplayOptionEnum NUMBER_0 = new DisplayOptionEnum(0);
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final DisplayOptionEnum NUMBER_1 = new DisplayOptionEnum(1);
+
+        private static final Map<Integer, DisplayOptionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, DisplayOptionEnum> createStaticFields() {
+            Map<Integer, DisplayOptionEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        DisplayOptionEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static DisplayOptionEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DisplayOptionEnum(value));
+        }
+
+        public static DisplayOptionEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof DisplayOptionEnum) {
+                return this.value.equals(((DisplayOptionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "display_option")
 
-    private Integer displayOption;
+    private DisplayOptionEnum displayOption;
 
     public ListBandwidthTimelineRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -68,7 +146,7 @@ public class ListBandwidthTimelineRequest {
     }
 
     /**
-     * 查询的带宽统计数据的起始时间（13位毫秒时间戳），需要和to同时使用
+     * **参数解释：** 起始时间(毫秒时间戳)，需要和to同时使用 **约束限制：** from <= to **取值范围：** from ~ to 最大范围30天 **默认取值：** 不涉及
      * @return from
      */
     public Long getFrom() {
@@ -85,7 +163,7 @@ public class ListBandwidthTimelineRequest {
     }
 
     /**
-     * 查询的带宽统计数据的结束时间（13位毫秒时间戳），需要和from同时使用
+     * **参数解释：** 结束时间(毫秒时间戳)，需要和from同时使用 **约束限制：** from ~ to 最大范围30天 **取值范围：** 不能超过当天的结束时间 **默认取值：** 不涉及
      * @return to
      */
     public Long getTo() {
@@ -96,37 +174,69 @@ public class ListBandwidthTimelineRequest {
         this.to = to;
     }
 
-    public ListBandwidthTimelineRequest withHosts(String hosts) {
+    public ListBandwidthTimelineRequest withHosts(List<String> hosts) {
         this.hosts = hosts;
         return this;
     }
 
+    public ListBandwidthTimelineRequest addHostsItem(String hostsItem) {
+        if (this.hosts == null) {
+            this.hosts = new ArrayList<>();
+        }
+        this.hosts.add(hostsItem);
+        return this;
+    }
+
+    public ListBandwidthTimelineRequest withHosts(Consumer<List<String>> hostsSetter) {
+        if (this.hosts == null) {
+            this.hosts = new ArrayList<>();
+        }
+        hostsSetter.accept(this.hosts);
+        return this;
+    }
+
     /**
-     * 域名id，用于查询指定的防护域名在from到to这段时间内的带宽数据。通过查询云模式防护域名列表（ListHost）获取域名id或者通过独享模式域名列表（ListPremiumHost）获取域名id
+     * **参数解释：** 要查询的域名id列表，通过 ”查询独享模式域名列表“（ListPremiumHost）或者 “查询云模式防护域名列表” （ListHost）接口获取；不传参代表查询全部域名的数据 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return hosts
      */
-    public String getHosts() {
+    public List<String> getHosts() {
         return hosts;
     }
 
-    public void setHosts(String hosts) {
+    public void setHosts(List<String> hosts) {
         this.hosts = hosts;
     }
 
-    public ListBandwidthTimelineRequest withInstances(String instances) {
+    public ListBandwidthTimelineRequest withInstances(List<String> instances) {
         this.instances = instances;
         return this;
     }
 
+    public ListBandwidthTimelineRequest addInstancesItem(String instancesItem) {
+        if (this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
+        this.instances.add(instancesItem);
+        return this;
+    }
+
+    public ListBandwidthTimelineRequest withInstances(Consumer<List<String>> instancesSetter) {
+        if (this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
+        instancesSetter.accept(this.instances);
+        return this;
+    }
+
     /**
-     * 引擎实例id，用于查询指定的独享引擎实例所防护的域名在from到to这段时间内的带宽数据。
+     * **参数解释：** 要查询的实例id列表，通过 “查询WAF独享引擎列表”（ListInstance）接口获取 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return instances
      */
-    public String getInstances() {
+    public List<String> getInstances() {
         return instances;
     }
 
-    public void setInstances(String instances) {
+    public void setInstances(List<String> instances) {
         this.instances = instances;
     }
 
@@ -136,7 +246,7 @@ public class ListBandwidthTimelineRequest {
     }
 
     /**
-     * 展示维度，按天展示时传\"DAY\"；默认不传，按照分钟展示。
+     * **参数解释：** 展示维度，按天展示时传\"DAY\" **约束限制：** 不涉及 **取值范围：** - DAY **默认取值：** 不涉及
      * @return groupBy
      */
     public String getGroupBy() {
@@ -147,20 +257,20 @@ public class ListBandwidthTimelineRequest {
         this.groupBy = groupBy;
     }
 
-    public ListBandwidthTimelineRequest withDisplayOption(Integer displayOption) {
+    public ListBandwidthTimelineRequest withDisplayOption(DisplayOptionEnum displayOption) {
         this.displayOption = displayOption;
         return this;
     }
 
     /**
-     * 发送/接受字节数，查看峰值请输入1，查看平均值请输入0
+     * **参数解释：** 发送/接受字节数查看形式 **约束限制：** 不涉及 **取值范围：** - 0 平均值 - 1 峰值 **默认取值：** 不涉及
      * @return displayOption
      */
-    public Integer getDisplayOption() {
+    public DisplayOptionEnum getDisplayOption() {
         return displayOption;
     }
 
-    public void setDisplayOption(Integer displayOption) {
+    public void setDisplayOption(DisplayOptionEnum displayOption) {
         this.displayOption = displayOption;
     }
 

@@ -196,7 +196,7 @@ public class BatchUpdateCcRulesRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_rule_ids")
 
-    private List<PolicyRuleIdRequestBodyPolicyRuleIds> policyRuleIds = null;
+    private List<BatchUpdateCcRulesRequestBodyPolicyRuleIds> policyRuleIds = null;
 
     public BatchUpdateCcRulesRequestBody withName(String name) {
         this.name = name;
@@ -487,12 +487,14 @@ public class BatchUpdateCcRulesRequestBody {
         this.description = description;
     }
 
-    public BatchUpdateCcRulesRequestBody withPolicyRuleIds(List<PolicyRuleIdRequestBodyPolicyRuleIds> policyRuleIds) {
+    public BatchUpdateCcRulesRequestBody withPolicyRuleIds(
+        List<BatchUpdateCcRulesRequestBodyPolicyRuleIds> policyRuleIds) {
         this.policyRuleIds = policyRuleIds;
         return this;
     }
 
-    public BatchUpdateCcRulesRequestBody addPolicyRuleIdsItem(PolicyRuleIdRequestBodyPolicyRuleIds policyRuleIdsItem) {
+    public BatchUpdateCcRulesRequestBody addPolicyRuleIdsItem(
+        BatchUpdateCcRulesRequestBodyPolicyRuleIds policyRuleIdsItem) {
         if (this.policyRuleIds == null) {
             this.policyRuleIds = new ArrayList<>();
         }
@@ -501,7 +503,7 @@ public class BatchUpdateCcRulesRequestBody {
     }
 
     public BatchUpdateCcRulesRequestBody withPolicyRuleIds(
-        Consumer<List<PolicyRuleIdRequestBodyPolicyRuleIds>> policyRuleIdsSetter) {
+        Consumer<List<BatchUpdateCcRulesRequestBodyPolicyRuleIds>> policyRuleIdsSetter) {
         if (this.policyRuleIds == null) {
             this.policyRuleIds = new ArrayList<>();
         }
@@ -513,11 +515,11 @@ public class BatchUpdateCcRulesRequestBody {
      * **参数解释：** 策略和规则id数组，关联防护策略与对应的规则集合 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return policyRuleIds
      */
-    public List<PolicyRuleIdRequestBodyPolicyRuleIds> getPolicyRuleIds() {
+    public List<BatchUpdateCcRulesRequestBodyPolicyRuleIds> getPolicyRuleIds() {
         return policyRuleIds;
     }
 
-    public void setPolicyRuleIds(List<PolicyRuleIdRequestBodyPolicyRuleIds> policyRuleIds) {
+    public void setPolicyRuleIds(List<BatchUpdateCcRulesRequestBodyPolicyRuleIds> policyRuleIds) {
         this.policyRuleIds = policyRuleIds;
     }
 

@@ -182,7 +182,7 @@ public class ListImageRiskConfigsRequest {
     }
 
     /**
-     * **参数解释** 镜像的版本标识，用于筛选指定版本的镜像安全配置检测结果，与image_name配合使用 **约束限制** 仅当指定image_name时传参有效，否则筛选条件不生效 **取值范围** 符合镜像版本命名规范的字符串、默认取值：无 
+     * **参数解释** 镜像的版本标识，用于筛选指定版本的镜像安全配置检测结果，与image_name配合使用 **约束限制** 仅当指定image_name时传参有效，否则筛选条件不生效 **取值范围** 符合镜像版本命名规范的字符串 **默认取值** 无 
      * @return imageVersion
      */
     public String getImageVersion() {
@@ -199,7 +199,7 @@ public class ListImageRiskConfigsRequest {
     }
 
     /**
-     * **参数解释** 镜像的唯一标识，用于精准筛选指定镜像的安全配置检测结果，优先级高于image_name+image_version **约束限制** 传入后将忽略image_name和image_version参数，直接按ID筛选 **默认取值** 无 
+     * **参数解释** 镜像的唯一标识，用于精准筛选指定镜像的安全配置检测结果，优先级高于image_name+image_version **约束限制** 传入后将忽略image_name和image_version参数，直接按ID筛选 **取值范围** 镜像id，字符长度0~128位 **默认取值** 无 
      * @return imageId
      */
     public String getImageId() {

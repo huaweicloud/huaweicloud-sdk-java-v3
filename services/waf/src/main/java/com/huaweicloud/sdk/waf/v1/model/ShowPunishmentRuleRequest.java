@@ -48,7 +48,7 @@ public class ShowPunishmentRuleRequest {
     }
 
     /**
-     * 防护策略id，您可以通过调用查询防护策略列表（ListPolicy）获取策略id
+     * **参数解释：** 防护策略id，您可以通过调用查询防护策略列表（ListPolicy）获取策略id **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return policyId
      */
     public String getPolicyId() {
@@ -65,7 +65,7 @@ public class ShowPunishmentRuleRequest {
     }
 
     /**
-     * 攻击惩罚规则id，通过查询攻击惩罚规则列表接口（ListPunishmentRules）获取
+     * **参数解释：** 攻击惩罚规则id，通过查询攻击惩罚规则列表接口（ListPunishmentRules）获取 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return ruleId
      */
     public String getRuleId() {

@@ -21,7 +21,7 @@ public class CreateCloudWafPostPaidResourceRequestbody {
     }
 
     /**
-     * 租户所在的站点，hec-hk：华为云国际站
+     * 租户所在的站点 - hec-hk：华为云国际站 - hws：华为云大陆站
      * @return consoleArea
      */
     public String getConsoleArea() {

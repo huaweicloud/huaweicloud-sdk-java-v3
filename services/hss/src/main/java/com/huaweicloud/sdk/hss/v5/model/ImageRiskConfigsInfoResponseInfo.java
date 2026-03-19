@@ -51,7 +51,7 @@ public class ImageRiskConfigsInfoResponseInfo {
     }
 
     /**
-     * **参数解释** 镜像安全配置检测结果的风险等级，用于筛选指定风险等级的检测记录 **约束限制** 取值必须在指定范围内，否则返回空结果 **取值范围** - Security：安全 - Low：低危 - Medium：中危 - High：高危 **默认取值** 无 
+     * **参数解释** 镜像安全配置检测结果的风险等级，用于筛选指定风险等级的检测记录 **取值范围** - Security：安全 - Low：低危 - Medium：中危 - High：高危 
      * @return severity
      */
     public String getSeverity() {
@@ -68,7 +68,7 @@ public class ImageRiskConfigsInfoResponseInfo {
     }
 
     /**
-     * **参数解释** 安全配置检测的基线名称，用于筛选指定基线的检测结果（如'CentOS 7'、'EulerOS'等） **约束限制** 仅支持功能介绍中列出的系统基线（CentOS 7、Debian 10、EulerOS、Ubuntu16） **取值范围** 支持的基线名称列表详见功能介绍 **默认取值** 无 
+     * **参数解释** 安全配置检测的基线名称，用于筛选指定基线的检测结果（如'CentOS 7'、'EulerOS'等） **取值范围** 支持的基线名称列表详见功能介绍 
      * @return checkName
      */
     public String getCheckName() {
@@ -102,7 +102,7 @@ public class ImageRiskConfigsInfoResponseInfo {
     }
 
     /**
-     * **参数解释** 安全配置检测遵循的标准，用于筛选符合指定标准的检测结果 **约束限制** 取值必须在指定范围内，否则返回空结果 **取值范围** - cn_standard：等保合规标准 - hw_standard：云安全实践标准 **默认取值** 无 
+     * **参数解释** 安全配置检测遵循的标准，用于筛选符合指定标准的检测结果 **约束限制** 取值必须在指定范围内，否则返回空结果 **取值范围** - cn_standard：等保合规标准 - hw_standard：云安全实践标准 
      * @return standard
      */
     public String getStandard() {

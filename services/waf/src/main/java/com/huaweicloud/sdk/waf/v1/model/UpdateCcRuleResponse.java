@@ -57,7 +57,7 @@ public class UpdateCcRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
-    private CcrulesListInfoAction action;
+    private UpdateCcRuleResponseBodyAction action;
 
     /**
      * **参数解释：** 限速模式标识，用于指定区分单个Web访问者的判断依据 **约束限制：** 不涉及 **取值范围：**  - ip：IP限速，根据IP区分单个Web访问者  - cookie：用户限速，根据Cookie键值区分单个Web访问者  - header：用户限速，根据Header区分单个Web访问者  - other：根据Referer（自定义请求访问的来源）字段区分单个Web访问者  - policy：策略限速  - domain：域名限速  - url：url限速 **默认取值：** 不涉及
@@ -364,14 +364,14 @@ public class UpdateCcRuleResponse extends SdkResponse {
         this.conditions = conditions;
     }
 
-    public UpdateCcRuleResponse withAction(CcrulesListInfoAction action) {
+    public UpdateCcRuleResponse withAction(UpdateCcRuleResponseBodyAction action) {
         this.action = action;
         return this;
     }
 
-    public UpdateCcRuleResponse withAction(Consumer<CcrulesListInfoAction> actionSetter) {
+    public UpdateCcRuleResponse withAction(Consumer<UpdateCcRuleResponseBodyAction> actionSetter) {
         if (this.action == null) {
-            this.action = new CcrulesListInfoAction();
+            this.action = new UpdateCcRuleResponseBodyAction();
             actionSetter.accept(this.action);
         }
 
@@ -382,11 +382,11 @@ public class UpdateCcRuleResponse extends SdkResponse {
      * Get action
      * @return action
      */
-    public CcrulesListInfoAction getAction() {
+    public UpdateCcRuleResponseBodyAction getAction() {
         return action;
     }
 
-    public void setAction(CcrulesListInfoAction action) {
+    public void setAction(UpdateCcRuleResponseBodyAction action) {
         this.action = action;
     }
 

@@ -30,6 +30,16 @@ public class ListIpReputationRulesRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page")
+
+    private Integer page;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pagesize")
+
+    private Integer pagesize;
+
     public ListIpReputationRulesRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -70,7 +80,7 @@ public class ListIpReputationRulesRequest {
     }
 
     /**
-     * **参数解释：** 偏移量，表示查询该偏移量之后的记录。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 偏移量，表示查询该偏移量之后的记录 **约束限制：** 不涉及 **取值范围：** [0, 65535] **默认取值：** 不涉及
      * @return offset
      */
     public Integer getOffset() {
@@ -87,7 +97,7 @@ public class ListIpReputationRulesRequest {
     }
 
     /**
-     * **参数解释：** 查询返回记录的数量限制。 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 1000
+     * **参数解释：** 查询返回记录的数量限制 **约束限制：** 不涉及 **取值范围：** [1, 65535] **默认取值：** 10
      * @return limit
      */
     public Integer getLimit() {
@@ -96,6 +106,40 @@ public class ListIpReputationRulesRequest {
 
     public void setLimit(Integer limit) {
         this.limit = limit;
+    }
+
+    public ListIpReputationRulesRequest withPage(Integer page) {
+        this.page = page;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 分页查询时，返回第几页数据 **约束限制：** 不涉及 **取值范围：** page参数的实际有效范围取决于总数据量和pagesize的取值，不能大于总页数 **默认取值：** 1
+     * @return page
+     */
+    public Integer getPage() {
+        return page;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
+    }
+
+    public ListIpReputationRulesRequest withPagesize(Integer pagesize) {
+        this.pagesize = pagesize;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 分页查询时，每页包含的结果条数 **约束限制：** 不涉及 **取值范围：** [0, 总数据量] **默认取值：** 10
+     * @return pagesize
+     */
+    public Integer getPagesize() {
+        return pagesize;
+    }
+
+    public void setPagesize(Integer pagesize) {
+        this.pagesize = pagesize;
     }
 
     @Override
@@ -109,12 +153,13 @@ public class ListIpReputationRulesRequest {
         ListIpReputationRulesRequest that = (ListIpReputationRulesRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.pagesize, that.pagesize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, policyId, offset, limit);
+        return Objects.hash(enterpriseProjectId, policyId, offset, limit, page, pagesize);
     }
 
     @Override
@@ -125,6 +170,8 @@ public class ListIpReputationRulesRequest {
         sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    page: ").append(toIndentedString(page)).append("\n");
+        sb.append("    pagesize: ").append(toIndentedString(pagesize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -43,7 +43,7 @@ public class ShowValueListRequest {
     }
 
     /**
-     * 引用表id，通过查询引用表列表（ListValueList）接口获取
+     * **参数解释：** 引用表id，通过查询引用表列表（ListValueList）接口获取 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return valuelistid
      */
     public String getValuelistid() {

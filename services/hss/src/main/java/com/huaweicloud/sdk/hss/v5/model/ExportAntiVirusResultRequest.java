@@ -54,6 +54,11 @@ public class ExportAntiVirusResultRequest {
     private List<String> severityList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "severities")
+
+    private String severities;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asset_value")
 
     private String assetValue;
@@ -238,7 +243,7 @@ public class ExportAntiVirusResultRequest {
     }
 
     /**
-     * **参数解释**: 威胁等级 **约束限制**: 不涉及 **取值范围**: 威胁等级，包含如下:   - Low：低危   - Medium：中危   - High：高危   - Critical：致命 **默认取值**: 不涉及 
+     * **参数解释**: 威胁等级，已废弃 **约束限制**: 不涉及 **取值范围**: 威胁等级，包含如下:   - Low：低危   - Medium：中危   - High：高危   - Critical：致命 **默认取值**: 不涉及 
      * @return severityList
      */
     public List<String> getSeverityList() {
@@ -247,6 +252,23 @@ public class ExportAntiVirusResultRequest {
 
     public void setSeverityList(List<String> severityList) {
         this.severityList = severityList;
+    }
+
+    public ExportAntiVirusResultRequest withSeverities(String severities) {
+        this.severities = severities;
+        return this;
+    }
+
+    /**
+     * 威胁等级，包含如下:   - Low : 低危   - Medium : 中危   - High : 高危   - Critical : 危急
+     * @return severities
+     */
+    public String getSeverities() {
+        return severities;
+    }
+
+    public void setSeverities(String severities) {
+        this.severities = severities;
     }
 
     public ExportAntiVirusResultRequest withAssetValue(String assetValue) {
@@ -409,11 +431,11 @@ public class ExportAntiVirusResultRequest {
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.privateIp, that.privateIp)
             && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.handleStatus, that.handleStatus)
-            && Objects.equals(this.severityList, that.severityList) && Objects.equals(this.assetValue, that.assetValue)
-            && Objects.equals(this.malwareName, that.malwareName) && Objects.equals(this.filePath, that.filePath)
-            && Objects.equals(this.exportSize, that.exportSize) && Objects.equals(this.fileHash, that.fileHash)
-            && Objects.equals(this.taskName, that.taskName) && Objects.equals(this.manualIsolate, that.manualIsolate)
-            && Objects.equals(this.body, that.body);
+            && Objects.equals(this.severityList, that.severityList) && Objects.equals(this.severities, that.severities)
+            && Objects.equals(this.assetValue, that.assetValue) && Objects.equals(this.malwareName, that.malwareName)
+            && Objects.equals(this.filePath, that.filePath) && Objects.equals(this.exportSize, that.exportSize)
+            && Objects.equals(this.fileHash, that.fileHash) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.manualIsolate, that.manualIsolate) && Objects.equals(this.body, that.body);
     }
 
     @Override
@@ -426,6 +448,7 @@ public class ExportAntiVirusResultRequest {
             publicIp,
             handleStatus,
             severityList,
+            severities,
             assetValue,
             malwareName,
             filePath,
@@ -448,6 +471,7 @@ public class ExportAntiVirusResultRequest {
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    handleStatus: ").append(toIndentedString(handleStatus)).append("\n");
         sb.append("    severityList: ").append(toIndentedString(severityList)).append("\n");
+        sb.append("    severities: ").append(toIndentedString(severities)).append("\n");
         sb.append("    assetValue: ").append(toIndentedString(assetValue)).append("\n");
         sb.append("    malwareName: ").append(toIndentedString(malwareName)).append("\n");
         sb.append("    filePath: ").append(toIndentedString(filePath)).append("\n");

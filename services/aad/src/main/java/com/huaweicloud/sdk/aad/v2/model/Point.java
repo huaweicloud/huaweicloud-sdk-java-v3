@@ -13,7 +13,7 @@ public class Point {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
-    private Integer time;
+    private Long time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
@@ -40,7 +40,7 @@ public class Point {
 
     private Integer customCustom;
 
-    public Point withTime(Integer time) {
+    public Point withTime(Long time) {
         this.time = time;
         return this;
     }
@@ -49,11 +49,11 @@ public class Point {
      * 时间戳
      * @return time
      */
-    public Integer getTime() {
+    public Long getTime() {
         return time;
     }
 
-    public void setTime(Integer time) {
+    public void setTime(Long time) {
         this.time = time;
     }
 

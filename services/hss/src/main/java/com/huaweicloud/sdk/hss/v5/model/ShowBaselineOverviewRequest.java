@@ -20,6 +20,11 @@ public class ShowBaselineOverviewRequest {
 
     private String groupId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "statistics_type")
+
+    private String statisticsType;
+
     public ShowBaselineOverviewRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -54,6 +59,23 @@ public class ShowBaselineOverviewRequest {
         this.groupId = groupId;
     }
 
+    public ShowBaselineOverviewRequest withStatisticsType(String statisticsType) {
+        this.statisticsType = statisticsType;
+        return this;
+    }
+
+    /**
+     * **参数解释** 统计类型，不同的查询类型返回不同的统计数据，为空表示返回所有数据 **约束限制** 不涉及 **取值范围** - weakpwd: 查询主机弱口令检测统计数据 - baseline_passrate: 查询基线检查通过率、主机配置基线通过率、基线风险统计、未通过检查项/已检查项 - host_risk_top_5: 查询主机配置风险TO5 - host_num: 未通过主机/主机总数  **默认取值** 不涉及
+     * @return statisticsType
+     */
+    public String getStatisticsType() {
+        return statisticsType;
+    }
+
+    public void setStatisticsType(String statisticsType) {
+        this.statisticsType = statisticsType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +86,12 @@ public class ShowBaselineOverviewRequest {
         }
         ShowBaselineOverviewRequest that = (ShowBaselineOverviewRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.groupId, that.groupId);
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.statisticsType, that.statisticsType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, groupId);
+        return Objects.hash(enterpriseProjectId, groupId, statisticsType);
     }
 
     @Override
@@ -78,6 +100,7 @@ public class ShowBaselineOverviewRequest {
         sb.append("class ShowBaselineOverviewRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+        sb.append("    statisticsType: ").append(toIndentedString(statisticsType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

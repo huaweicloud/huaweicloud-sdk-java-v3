@@ -24,7 +24,7 @@ public class ListWafAttackEventlist {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
-    private Integer time;
+    private Long time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sip")
@@ -85,7 +85,7 @@ public class ListWafAttackEventlist {
         this.domain = domain;
     }
 
-    public ListWafAttackEventlist withTime(Integer time) {
+    public ListWafAttackEventlist withTime(Long time) {
         this.time = time;
         return this;
     }
@@ -94,11 +94,11 @@ public class ListWafAttackEventlist {
      * 攻击时间
      * @return time
      */
-    public Integer getTime() {
+    public Long getTime() {
         return time;
     }
 
-    public void setTime(Integer time) {
+    public void setTime(Long time) {
         this.time = time;
     }
 

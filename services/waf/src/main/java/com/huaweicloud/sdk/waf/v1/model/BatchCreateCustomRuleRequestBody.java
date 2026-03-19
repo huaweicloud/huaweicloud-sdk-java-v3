@@ -64,7 +64,7 @@ public class BatchCreateCustomRuleRequestBody {
     }
 
     /**
-     * 精准防护规则生效时间:  - “false”：表示该规则立即生效。   - “true”：表示自定义生效时间。
+     * 精准防护规则生效时间:  - false：表示该规则立即生效 - true：表示自定义生效时间
      * @return time
      */
     public Boolean getTime() {

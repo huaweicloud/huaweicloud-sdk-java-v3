@@ -78,7 +78,7 @@ public class CustomRuleConditions {
     }
 
     /**
-     * 条件匹配逻辑。
+     * 条件匹配逻辑
      * @return logicOperation
      */
     public String getLogicOperation() {

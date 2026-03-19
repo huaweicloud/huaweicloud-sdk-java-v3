@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -18,10 +23,74 @@ public class BatchCreateIpReputationRuleRequestBody {
 
     private String name;
 
+    /**
+     * **参数解释：** 信誉类型（目前只支持idc） **约束限制：** 不涉及 **取值范围：** - idc  **默认取值：** 不涉及
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum IDC for value: "idc"
+         */
+        public static final TypeEnum IDC = new TypeEnum("idc");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("idc", IDC);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private String type;
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -31,7 +100,7 @@ public class BatchCreateIpReputationRuleRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
-    private UpdateIpReputationRuleRequestBodyAction action;
+    private CreateIpReputationRuleRequestBodyAction action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -49,7 +118,7 @@ public class BatchCreateIpReputationRuleRequestBody {
     }
 
     /**
-     * **参数解释：** 规则名称 **约束限制：** 不涉及 **取值范围：** 规则名称只能由字母、数字、-、_和.组成，长度不能超过64个字符 **默认取值：** 不涉及
+     * **参数解释：** 规则名称 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return name
      */
     public String getName() {
@@ -60,20 +129,20 @@ public class BatchCreateIpReputationRuleRequestBody {
         this.name = name;
     }
 
-    public BatchCreateIpReputationRuleRequestBody withType(String type) {
+    public BatchCreateIpReputationRuleRequestBody withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
     /**
-     * **参数解释：** 信誉类型（目前只支持idc） **约束限制：** 不涉及 **取值范围：** - idc   **默认取值：** 不涉及
+     * **参数解释：** 信誉类型（目前只支持idc） **约束限制：** 不涉及 **取值范围：** - idc  **默认取值：** 不涉及
      * @return type
      */
-    public String getType() {
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 
@@ -99,7 +168,7 @@ public class BatchCreateIpReputationRuleRequestBody {
     }
 
     /**
-     * **参数解释：** 标签列表，用于指定关联的情报标识 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 标签列表，用于指定关联的情报标识，可通过ConfirmPolicyIpReputationMap接口查询；多个标识之间使用逗号\",\"分隔 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return tags
      */
     public List<String> getTags() {
@@ -110,15 +179,15 @@ public class BatchCreateIpReputationRuleRequestBody {
         this.tags = tags;
     }
 
-    public BatchCreateIpReputationRuleRequestBody withAction(UpdateIpReputationRuleRequestBodyAction action) {
+    public BatchCreateIpReputationRuleRequestBody withAction(CreateIpReputationRuleRequestBodyAction action) {
         this.action = action;
         return this;
     }
 
     public BatchCreateIpReputationRuleRequestBody withAction(
-        Consumer<UpdateIpReputationRuleRequestBodyAction> actionSetter) {
+        Consumer<CreateIpReputationRuleRequestBodyAction> actionSetter) {
         if (this.action == null) {
-            this.action = new UpdateIpReputationRuleRequestBodyAction();
+            this.action = new CreateIpReputationRuleRequestBodyAction();
             actionSetter.accept(this.action);
         }
 
@@ -129,11 +198,11 @@ public class BatchCreateIpReputationRuleRequestBody {
      * Get action
      * @return action
      */
-    public UpdateIpReputationRuleRequestBodyAction getAction() {
+    public CreateIpReputationRuleRequestBodyAction getAction() {
         return action;
     }
 
-    public void setAction(UpdateIpReputationRuleRequestBodyAction action) {
+    public void setAction(CreateIpReputationRuleRequestBodyAction action) {
         this.action = action;
     }
 
@@ -176,7 +245,7 @@ public class BatchCreateIpReputationRuleRequestBody {
     }
 
     /**
-     * **参数解释：** 添加规则的策略id列表。策略id从\"查询防护策略列表\"(ListPolicy)接口获取，多个策略之间用“,”隔开 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 添加规则的策略id列表。策略id从\"查询防护策略列表\"(ListPolicy)接口获取，多个策略之间用“,”隔开 **约束限制：** 不能为空 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return policyIds
      */
     public List<String> getPolicyIds() {

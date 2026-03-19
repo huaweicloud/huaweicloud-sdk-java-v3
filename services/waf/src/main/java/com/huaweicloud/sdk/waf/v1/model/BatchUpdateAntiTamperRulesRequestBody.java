@@ -36,7 +36,7 @@ public class BatchUpdateAntiTamperRulesRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_rule_ids")
 
-    private List<PolicyRuleIdRequestBodyPolicyRuleIds> policyRuleIds = null;
+    private List<BatchUpdateAntiTamperRulesRequestBodyPolicyRuleIds> policyRuleIds = null;
 
     public BatchUpdateAntiTamperRulesRequestBody withName(String name) {
         this.name = name;
@@ -44,7 +44,7 @@ public class BatchUpdateAntiTamperRulesRequestBody {
     }
 
     /**
-     * **参数解释：** 规则名称 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 规则名称 **约束限制：** 长度范围：[1, 256] **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return name
      */
     public String getName() {
@@ -78,7 +78,7 @@ public class BatchUpdateAntiTamperRulesRequestBody {
     }
 
     /**
-     * 防篡改规则防护的url，需要填写标准的url格式，例如/admin/xxx或者/admin/_*,以\"*\"号结尾代表路径前缀
+     * 防篡改规则防护的url，需要填写标准的url格式，例如/admin/xxx或者/admin/\\*,以\"\\*\"号结尾代表路径前缀
      * @return url
      */
     public String getUrl() {
@@ -107,13 +107,13 @@ public class BatchUpdateAntiTamperRulesRequestBody {
     }
 
     public BatchUpdateAntiTamperRulesRequestBody withPolicyRuleIds(
-        List<PolicyRuleIdRequestBodyPolicyRuleIds> policyRuleIds) {
+        List<BatchUpdateAntiTamperRulesRequestBodyPolicyRuleIds> policyRuleIds) {
         this.policyRuleIds = policyRuleIds;
         return this;
     }
 
     public BatchUpdateAntiTamperRulesRequestBody addPolicyRuleIdsItem(
-        PolicyRuleIdRequestBodyPolicyRuleIds policyRuleIdsItem) {
+        BatchUpdateAntiTamperRulesRequestBodyPolicyRuleIds policyRuleIdsItem) {
         if (this.policyRuleIds == null) {
             this.policyRuleIds = new ArrayList<>();
         }
@@ -122,7 +122,7 @@ public class BatchUpdateAntiTamperRulesRequestBody {
     }
 
     public BatchUpdateAntiTamperRulesRequestBody withPolicyRuleIds(
-        Consumer<List<PolicyRuleIdRequestBodyPolicyRuleIds>> policyRuleIdsSetter) {
+        Consumer<List<BatchUpdateAntiTamperRulesRequestBodyPolicyRuleIds>> policyRuleIdsSetter) {
         if (this.policyRuleIds == null) {
             this.policyRuleIds = new ArrayList<>();
         }
@@ -134,11 +134,11 @@ public class BatchUpdateAntiTamperRulesRequestBody {
      * **参数解释：** 策略和规则id数组，关联防护策略与对应的规则集合 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return policyRuleIds
      */
-    public List<PolicyRuleIdRequestBodyPolicyRuleIds> getPolicyRuleIds() {
+    public List<BatchUpdateAntiTamperRulesRequestBodyPolicyRuleIds> getPolicyRuleIds() {
         return policyRuleIds;
     }
 
-    public void setPolicyRuleIds(List<PolicyRuleIdRequestBodyPolicyRuleIds> policyRuleIds) {
+    public void setPolicyRuleIds(List<BatchUpdateAntiTamperRulesRequestBodyPolicyRuleIds> policyRuleIds) {
         this.policyRuleIds = policyRuleIds;
     }
 

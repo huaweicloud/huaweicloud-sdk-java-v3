@@ -74,6 +74,21 @@ public class UpdateIgnoreRuleResponse extends SdkResponse {
 
     private List<String> domain = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time")
+
+    private Long updateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "clear_time")
+
+    private Long clearTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hit_num")
+
+    private Integer hitNum;
+
     public UpdateIgnoreRuleResponse withId(String id) {
         this.id = id;
         return this;
@@ -182,7 +197,7 @@ public class UpdateIgnoreRuleResponse extends SdkResponse {
     }
 
     /**
-     * 需要屏蔽的规则，可屏蔽一个或者多个，屏蔽多个时使用半角符;分隔   - 当需要屏蔽某一条内置规则时，该参数值为该内置规则id,可以在Web应用防火墙控制台的防护策略->策略名称->Web基础防护的高级设置->防护规则中查询；也可以在防护事件的事件详情中查询内置规则id   - 当需要屏蔽web基础防护某一类规则时，该参数值为需要屏蔽的web基础防护某一类规则名。其中，xss：xss攻击；webshell：网站木马；vuln：其他类型攻击；sqli：sql注入攻击；robot：恶意爬虫；rfi：远程文件包含；lfi：本地文件包含；cmdi：命令注入攻击   - 当需要屏蔽Web基础防护模块，该参数值为：all   - 当需要屏蔽规则为所有检测模块时，该参数值为：bypass
+     * 被屏蔽检测的规则类型或规则ID
      * @return rule
      */
     public String getRule() {
@@ -319,6 +334,57 @@ public class UpdateIgnoreRuleResponse extends SdkResponse {
         this.domain = domain;
     }
 
+    public UpdateIgnoreRuleResponse withUpdateTime(Long updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    /**
+     * 规则的最后更新时间
+     * @return updateTime
+     */
+    public Long getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Long updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public UpdateIgnoreRuleResponse withClearTime(Long clearTime) {
+        this.clearTime = clearTime;
+        return this;
+    }
+
+    /**
+     * 命中次数手动清零时间
+     * @return clearTime
+     */
+    public Long getClearTime() {
+        return clearTime;
+    }
+
+    public void setClearTime(Long clearTime) {
+        this.clearTime = clearTime;
+    }
+
+    public UpdateIgnoreRuleResponse withHitNum(Integer hitNum) {
+        this.hitNum = hitNum;
+        return this;
+    }
+
+    /**
+     * 规则的命中次数
+     * @return hitNum
+     */
+    public Integer getHitNum() {
+        return hitNum;
+    }
+
+    public void setHitNum(Integer hitNum) {
+        this.hitNum = hitNum;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -333,7 +399,9 @@ public class UpdateIgnoreRuleResponse extends SdkResponse {
             && Objects.equals(this.status, that.status) && Objects.equals(this.url, that.url)
             && Objects.equals(this.rule, that.rule) && Objects.equals(this.mode, that.mode)
             && Objects.equals(this.urlLogic, that.urlLogic) && Objects.equals(this.conditions, that.conditions)
-            && Objects.equals(this.advanced, that.advanced) && Objects.equals(this.domain, that.domain);
+            && Objects.equals(this.advanced, that.advanced) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.clearTime, that.clearTime)
+            && Objects.equals(this.hitNum, that.hitNum);
     }
 
     @Override
@@ -349,7 +417,10 @@ public class UpdateIgnoreRuleResponse extends SdkResponse {
             urlLogic,
             conditions,
             advanced,
-            domain);
+            domain,
+            updateTime,
+            clearTime,
+            hitNum);
     }
 
     @Override
@@ -368,6 +439,9 @@ public class UpdateIgnoreRuleResponse extends SdkResponse {
         sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
         sb.append("    advanced: ").append(toIndentedString(advanced)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    clearTime: ").append(toIndentedString(clearTime)).append("\n");
+        sb.append("    hitNum: ").append(toIndentedString(hitNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

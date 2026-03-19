@@ -43,7 +43,7 @@ public class ShowIpGroupRequest {
     }
 
     /**
-     * ip地址组id
+     * **参数解释：** ip地址组id，可从查询地址组列表(ListIpGroup)接口中获取 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return id
      */
     public String getId() {

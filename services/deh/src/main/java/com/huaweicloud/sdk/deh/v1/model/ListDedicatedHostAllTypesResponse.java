@@ -19,6 +19,11 @@ public class ListDedicatedHostAllTypesResponse extends SdkResponse {
 
     private List<DedicatedHostType> dedicatedHostTypes = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private PageInfo pageInfo;
+
     public ListDedicatedHostAllTypesResponse withDedicatedHostTypes(List<DedicatedHostType> dedicatedHostTypes) {
         this.dedicatedHostTypes = dedicatedHostTypes;
         return this;
@@ -53,6 +58,32 @@ public class ListDedicatedHostAllTypesResponse extends SdkResponse {
         this.dedicatedHostTypes = dedicatedHostTypes;
     }
 
+    public ListDedicatedHostAllTypesResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListDedicatedHostAllTypesResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -62,12 +93,13 @@ public class ListDedicatedHostAllTypesResponse extends SdkResponse {
             return false;
         }
         ListDedicatedHostAllTypesResponse that = (ListDedicatedHostAllTypesResponse) obj;
-        return Objects.equals(this.dedicatedHostTypes, that.dedicatedHostTypes);
+        return Objects.equals(this.dedicatedHostTypes, that.dedicatedHostTypes)
+            && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dedicatedHostTypes);
+        return Objects.hash(dedicatedHostTypes, pageInfo);
     }
 
     @Override
@@ -75,6 +107,7 @@ public class ListDedicatedHostAllTypesResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListDedicatedHostAllTypesResponse {\n");
         sb.append("    dedicatedHostTypes: ").append(toIndentedString(dedicatedHostTypes)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

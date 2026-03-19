@@ -43,7 +43,7 @@ public class ShowPremiumHostRequest {
     }
 
     /**
-     * 独享模式域名ID
+     * **参数解释：** 域名id，通过 ”查询独享模式域名列表“（ListPremiumHost）获取 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return hostId
      */
     public String getHostId() {

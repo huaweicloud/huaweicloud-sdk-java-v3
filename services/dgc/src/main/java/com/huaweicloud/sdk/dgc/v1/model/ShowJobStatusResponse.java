@@ -25,14 +25,14 @@ public class ShowJobStatusResponse extends SdkResponse {
     private String name;
 
     /**
-     * Gets or Sets status
+     * 作业状态： - STARTING：启动中 - NORMAL：正常 - EXCEPTION：异常 - STOPPING： 停止中 - STOPPED：停止 - PAUSE: 暂停 - ABNORMAL: 运行异常/失败 - DISABLE: 节点禁用 - OVERLOAD: 繁忙 - INIT: 初始化
      */
     public static final class StatusEnum {
 
         /**
-         * Enum STARTTING for value: "STARTTING"
+         * Enum STARTING for value: "STARTING"
          */
-        public static final StatusEnum STARTTING = new StatusEnum("STARTTING");
+        public static final StatusEnum STARTING = new StatusEnum("STARTING");
 
         /**
          * Enum NORMAL for value: "NORMAL"
@@ -54,15 +54,45 @@ public class ShowJobStatusResponse extends SdkResponse {
          */
         public static final StatusEnum STOPPED = new StatusEnum("STOPPED");
 
+        /**
+         * Enum PAUSE for value: "PAUSE"
+         */
+        public static final StatusEnum PAUSE = new StatusEnum("PAUSE");
+
+        /**
+         * Enum ABNORMAL for value: "ABNORMAL"
+         */
+        public static final StatusEnum ABNORMAL = new StatusEnum("ABNORMAL");
+
+        /**
+         * Enum DISABLE for value: "DISABLE"
+         */
+        public static final StatusEnum DISABLE = new StatusEnum("DISABLE");
+
+        /**
+         * Enum OVERLOAD for value: "OVERLOAD"
+         */
+        public static final StatusEnum OVERLOAD = new StatusEnum("OVERLOAD");
+
+        /**
+         * Enum INIT for value: "INIT"
+         */
+        public static final StatusEnum INIT = new StatusEnum("INIT");
+
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
             Map<String, StatusEnum> map = new HashMap<>();
-            map.put("STARTTING", STARTTING);
+            map.put("STARTING", STARTING);
             map.put("NORMAL", NORMAL);
             map.put("EXCEPTION", EXCEPTION);
             map.put("STOPPING", STOPPING);
             map.put("STOPPED", STOPPED);
+            map.put("PAUSE", PAUSE);
+            map.put("ABNORMAL", ABNORMAL);
+            map.put("DISABLE", DISABLE);
+            map.put("OVERLOAD", OVERLOAD);
+            map.put("INIT", INIT);
             return Collections.unmodifiableMap(map);
         }
 
@@ -137,13 +167,23 @@ public class ShowJobStatusResponse extends SdkResponse {
 
     private List<RealTimeNodeStatus> nodes = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "createUser")
+
+    private String createUser;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lastModifiyUser")
+
+    private String lastModifiyUser;
+
     public ShowJobStatusResponse withName(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * Get name
+     * 作业名称。
      * @return name
      */
     public String getName() {
@@ -160,7 +200,7 @@ public class ShowJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * Get status
+     * 作业状态： - STARTING：启动中 - NORMAL：正常 - EXCEPTION：异常 - STOPPING： 停止中 - STOPPED：停止 - PAUSE: 暂停 - ABNORMAL: 运行异常/失败 - DISABLE: 节点禁用 - OVERLOAD: 繁忙 - INIT: 初始化
      * @return status
      */
     public StatusEnum getStatus() {
@@ -177,7 +217,7 @@ public class ShowJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * Get starttime
+     * 开始时间。
      * @return starttime
      */
     public String getStarttime() {
@@ -194,7 +234,7 @@ public class ShowJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * Get endTime
+     * 结束时间。
      * @return endTime
      */
     public String getEndTime() {
@@ -211,7 +251,7 @@ public class ShowJobStatusResponse extends SdkResponse {
     }
 
     /**
-     * 状态最后更新时间
+     * 状态最后更新时间。
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -255,6 +295,40 @@ public class ShowJobStatusResponse extends SdkResponse {
         this.nodes = nodes;
     }
 
+    public ShowJobStatusResponse withCreateUser(String createUser) {
+        this.createUser = createUser;
+        return this;
+    }
+
+    /**
+     * 创建人。
+     * @return createUser
+     */
+    public String getCreateUser() {
+        return createUser;
+    }
+
+    public void setCreateUser(String createUser) {
+        this.createUser = createUser;
+    }
+
+    public ShowJobStatusResponse withLastModifiyUser(String lastModifiyUser) {
+        this.lastModifiyUser = lastModifiyUser;
+        return this;
+    }
+
+    /**
+     * 最后修改人。
+     * @return lastModifiyUser
+     */
+    public String getLastModifiyUser() {
+        return lastModifiyUser;
+    }
+
+    public void setLastModifiyUser(String lastModifiyUser) {
+        this.lastModifiyUser = lastModifiyUser;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -266,12 +340,14 @@ public class ShowJobStatusResponse extends SdkResponse {
         ShowJobStatusResponse that = (ShowJobStatusResponse) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
             && Objects.equals(this.starttime, that.starttime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.lastUpdateTime, that.lastUpdateTime) && Objects.equals(this.nodes, that.nodes);
+            && Objects.equals(this.lastUpdateTime, that.lastUpdateTime) && Objects.equals(this.nodes, that.nodes)
+            && Objects.equals(this.createUser, that.createUser)
+            && Objects.equals(this.lastModifiyUser, that.lastModifiyUser);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, status, starttime, endTime, lastUpdateTime, nodes);
+        return Objects.hash(name, status, starttime, endTime, lastUpdateTime, nodes, createUser, lastModifiyUser);
     }
 
     @Override
@@ -284,6 +360,8 @@ public class ShowJobStatusResponse extends SdkResponse {
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    lastUpdateTime: ").append(toIndentedString(lastUpdateTime)).append("\n");
         sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
+        sb.append("    createUser: ").append(toIndentedString(createUser)).append("\n");
+        sb.append("    lastModifiyUser: ").append(toIndentedString(lastModifiyUser)).append("\n");
         sb.append("}");
         return sb.toString();
     }

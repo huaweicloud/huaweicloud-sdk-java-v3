@@ -1,19 +1,97 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
 public class ListOverviewsClassificationRequest {
 
+    /**
+     * **参数解释：** 地理位置展示语言 **约束限制：** 不涉及 **取值范围：** - zh-cn 中文 - en-us 英文 **默认取值：** en-us
+     */
+    public static final class XLanguageEnum {
+
+        /**
+         * Enum ZH_CN for value: "zh-cn"
+         */
+        public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
+
+        /**
+         * Enum EN_US for value: "en-us"
+         */
+        public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
+
+        private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, XLanguageEnum> createStaticFields() {
+            Map<String, XLanguageEnum> map = new HashMap<>();
+            map.put("zh-cn", ZH_CN);
+            map.put("en-us", EN_US);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        XLanguageEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static XLanguageEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new XLanguageEnum(value));
+        }
+
+        public static XLanguageEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof XLanguageEnum) {
+                return this.value.equals(((XLanguageEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
 
-    private String xLanguage;
+    private XLanguageEnum xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
@@ -38,29 +116,29 @@ public class ListOverviewsClassificationRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosts")
 
-    private String hosts;
+    private List<String> hosts = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
 
-    private String instances;
+    private List<String> instances = null;
 
-    public ListOverviewsClassificationRequest withXLanguage(String xLanguage) {
+    public ListOverviewsClassificationRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
 
     /**
-     * 语言，默认值为en-us。zh-cn（中文）/en-us（英文）
+     * **参数解释：** 地理位置展示语言 **约束限制：** 不涉及 **取值范围：** - zh-cn 中文 - en-us 英文 **默认取值：** en-us
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
-    public String getXLanguage() {
+    public XLanguageEnum getXLanguage() {
         return xLanguage;
     }
 
-    public void setXLanguage(String xLanguage) {
+    public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
 
@@ -87,7 +165,7 @@ public class ListOverviewsClassificationRequest {
     }
 
     /**
-     * 起始时间（13位毫秒时间戳），需要和to同时使用
+     * **参数解释：** 起始时间(毫秒时间戳)，需要和to同时使用 **约束限制：** from <= to **取值范围：** from ~ to 最大范围30天 **默认取值：** 不涉及
      * @return from
      */
     public Long getFrom() {
@@ -104,7 +182,7 @@ public class ListOverviewsClassificationRequest {
     }
 
     /**
-     * 结束时间（13位毫秒时间戳），需要和from同时使用
+     * **参数解释：** 结束时间(毫秒时间戳)，需要和from同时使用 **约束限制：** from ~ to 最大范围30天 **取值范围：** 不能超过当天的结束时间 **默认取值：** 不涉及
      * @return to
      */
     public Long getTo() {
@@ -121,7 +199,7 @@ public class ListOverviewsClassificationRequest {
     }
 
     /**
-     * 要查询的前几的结果，最大值为10，默认值为5。
+     * **参数解释：** 查询前TopN的结果 **约束限制：** 不涉及 **取值范围：** [1, 10] **默认取值：** 5
      * @return top
      */
     public Integer getTop() {
@@ -132,37 +210,69 @@ public class ListOverviewsClassificationRequest {
         this.top = top;
     }
 
-    public ListOverviewsClassificationRequest withHosts(String hosts) {
+    public ListOverviewsClassificationRequest withHosts(List<String> hosts) {
         this.hosts = hosts;
         return this;
     }
 
+    public ListOverviewsClassificationRequest addHostsItem(String hostsItem) {
+        if (this.hosts == null) {
+            this.hosts = new ArrayList<>();
+        }
+        this.hosts.add(hostsItem);
+        return this;
+    }
+
+    public ListOverviewsClassificationRequest withHosts(Consumer<List<String>> hostsSetter) {
+        if (this.hosts == null) {
+            this.hosts = new ArrayList<>();
+        }
+        hostsSetter.accept(this.hosts);
+        return this;
+    }
+
     /**
-     * 域名id，通过查询云模式防护域名列表（ListHost）获取域名id或者通过独享模式域名列表（ListPremiumHost）获取域名id。默认不传，查询该项目下所有防护域名的top业务异常统计信息。
+     * **参数解释：** 要查询的域名id列表，通过 ”查询独享模式域名列表“（ListPremiumHost）或者 “查询云模式防护域名列表” （ListHost）接口获取；不传参代表查询全部域名的数据 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return hosts
      */
-    public String getHosts() {
+    public List<String> getHosts() {
         return hosts;
     }
 
-    public void setHosts(String hosts) {
+    public void setHosts(List<String> hosts) {
         this.hosts = hosts;
     }
 
-    public ListOverviewsClassificationRequest withInstances(String instances) {
+    public ListOverviewsClassificationRequest withInstances(List<String> instances) {
         this.instances = instances;
         return this;
     }
 
+    public ListOverviewsClassificationRequest addInstancesItem(String instancesItem) {
+        if (this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
+        this.instances.add(instancesItem);
+        return this;
+    }
+
+    public ListOverviewsClassificationRequest withInstances(Consumer<List<String>> instancesSetter) {
+        if (this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
+        instancesSetter.accept(this.instances);
+        return this;
+    }
+
     /**
-     * 要查询引擎实例id
+     * **参数解释：** 要查询的实例id列表，通过 “查询WAF独享引擎列表”（ListInstance）接口获取 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return instances
      */
-    public String getInstances() {
+    public List<String> getInstances() {
         return instances;
     }
 
-    public void setInstances(String instances) {
+    public void setInstances(List<String> instances) {
         this.instances = instances;
     }
 

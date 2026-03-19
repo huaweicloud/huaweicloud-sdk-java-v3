@@ -49,6 +49,11 @@ public class ListAntivirusHandleHistoryRequest {
     private List<String> severityList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "severities")
+
+    private String severities;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_name")
 
     private String hostName;
@@ -221,7 +226,7 @@ public class ListAntivirusHandleHistoryRequest {
     }
 
     /**
-     * **参数解释**: 威胁等级 **约束限制**: 不涉及 **取值范围**: 威胁等级，包含如下:   - Low：低危   - Medium：中危   - High：高危   - Critical：致命 **默认取值**: 不涉及 
+     * **参数解释**: 威胁等级，已废弃 **约束限制**: 不涉及 **取值范围**: 威胁等级，包含如下:   - Low：低危   - Medium：中危   - High：高危   - Critical：致命 **默认取值**: 不涉及 
      * @return severityList
      */
     public List<String> getSeverityList() {
@@ -230,6 +235,23 @@ public class ListAntivirusHandleHistoryRequest {
 
     public void setSeverityList(List<String> severityList) {
         this.severityList = severityList;
+    }
+
+    public ListAntivirusHandleHistoryRequest withSeverities(String severities) {
+        this.severities = severities;
+        return this;
+    }
+
+    /**
+     * 威胁等级，包含如下:   - Low : 低危   - Medium : 中危   - High : 高危   - Critical : 危急
+     * @return severities
+     */
+    public String getSeverities() {
+        return severities;
+    }
+
+    public void setSeverities(String severities) {
+        this.severities = severities;
     }
 
     public ListAntivirusHandleHistoryRequest withHostName(String hostName) {
@@ -400,11 +422,12 @@ public class ListAntivirusHandleHistoryRequest {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.malwareName, that.malwareName) && Objects.equals(this.filePath, that.filePath)
-            && Objects.equals(this.severityList, that.severityList) && Objects.equals(this.hostName, that.hostName)
-            && Objects.equals(this.privateIp, that.privateIp) && Objects.equals(this.publicIp, that.publicIp)
-            && Objects.equals(this.assetValue, that.assetValue) && Objects.equals(this.handleMethod, that.handleMethod)
-            && Objects.equals(this.userName, that.userName) && Objects.equals(this.sortDir, that.sortDir)
-            && Objects.equals(this.eventType, that.eventType) && Objects.equals(this.sortKey, that.sortKey);
+            && Objects.equals(this.severityList, that.severityList) && Objects.equals(this.severities, that.severities)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.assetValue, that.assetValue)
+            && Objects.equals(this.handleMethod, that.handleMethod) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.eventType, that.eventType)
+            && Objects.equals(this.sortKey, that.sortKey);
     }
 
     @Override
@@ -416,6 +439,7 @@ public class ListAntivirusHandleHistoryRequest {
             malwareName,
             filePath,
             severityList,
+            severities,
             hostName,
             privateIp,
             publicIp,
@@ -438,6 +462,7 @@ public class ListAntivirusHandleHistoryRequest {
         sb.append("    malwareName: ").append(toIndentedString(malwareName)).append("\n");
         sb.append("    filePath: ").append(toIndentedString(filePath)).append("\n");
         sb.append("    severityList: ").append(toIndentedString(severityList)).append("\n");
+        sb.append("    severities: ").append(toIndentedString(severities)).append("\n");
         sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");

@@ -62,7 +62,7 @@ public class UpdateIpReputationRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
-    private CreateIpReputationRuleResponseBodyAction action;
+    private UpdateIdcIpRuleResponseBodyAction action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isp")
@@ -109,7 +109,7 @@ public class UpdateIpReputationRuleResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 规则名称 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 规则名称 **约束限制：** 长度范围：[1, 256] **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return name
      */
     public String getName() {
@@ -159,7 +159,7 @@ public class UpdateIpReputationRuleResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 标签列表，用于指定关联的情报标识 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 标签列表，用于指定关联的情报标识，可通过ConfirmPolicyIpReputationMap接口查询；多个标识之间使用逗号\",\"分隔 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return tags
      */
     public List<String> getTags() {
@@ -238,14 +238,14 @@ public class UpdateIpReputationRuleResponse extends SdkResponse {
         this.status = status;
     }
 
-    public UpdateIpReputationRuleResponse withAction(CreateIpReputationRuleResponseBodyAction action) {
+    public UpdateIpReputationRuleResponse withAction(UpdateIdcIpRuleResponseBodyAction action) {
         this.action = action;
         return this;
     }
 
-    public UpdateIpReputationRuleResponse withAction(Consumer<CreateIpReputationRuleResponseBodyAction> actionSetter) {
+    public UpdateIpReputationRuleResponse withAction(Consumer<UpdateIdcIpRuleResponseBodyAction> actionSetter) {
         if (this.action == null) {
-            this.action = new CreateIpReputationRuleResponseBodyAction();
+            this.action = new UpdateIdcIpRuleResponseBodyAction();
             actionSetter.accept(this.action);
         }
 
@@ -256,11 +256,11 @@ public class UpdateIpReputationRuleResponse extends SdkResponse {
      * Get action
      * @return action
      */
-    public CreateIpReputationRuleResponseBodyAction getAction() {
+    public UpdateIdcIpRuleResponseBodyAction getAction() {
         return action;
     }
 
-    public void setAction(CreateIpReputationRuleResponseBodyAction action) {
+    public void setAction(UpdateIdcIpRuleResponseBodyAction action) {
         this.action = action;
     }
 

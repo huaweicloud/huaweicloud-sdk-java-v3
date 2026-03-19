@@ -46,7 +46,7 @@ public class BatchUpdateIgnoreRuleRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_rule_ids")
 
-    private List<PolicyRuleIdRequestBodyPolicyRuleIds> policyRuleIds = null;
+    private List<BatchUpdateIgnoreRuleRequestBodyPolicyRuleIds> policyRuleIds = null;
 
     public BatchUpdateIgnoreRuleRequestBody withDomain(List<String> domain) {
         this.domain = domain;
@@ -137,7 +137,7 @@ public class BatchUpdateIgnoreRuleRequestBody {
     }
 
     /**
-     * 需要屏蔽的规则，可屏蔽一个或者多个，屏蔽多个时使用半角符;分隔   - 当需要屏蔽某一条内置规则时，该参数值为该内置规则id,可以在Web应用防火墙控制台的防护策略->策略名称->Web基础防护的高级设置->防护规则中查询；也可以在防护事件的事件详情中查询内置规则id   - 当需要屏蔽web基础防护某一类规则时，该参数值为需要屏蔽的web基础防护某一类规则名。其中，xss：xss攻击；webshell：网站木马；vuln：其他类型攻击；sqli：sql注入攻击；robot：恶意爬虫；rfi：远程文件包含；lfi：本地文件包含；cmdi：命令注入攻击   - 当需要屏蔽Web基础防护模块，该参数值为：all   - 当需要屏蔽规则为所有检测模块时，该参数值为：bypass
+     * **参数解释：** 需要屏蔽的规则 **约束限制：** 参数值根据\"不检测模块\"变化 **取值范围：** 不检测模块: - 所有模块: bypass - Web基础防护模块按照规则类型划分:   - ID: 内置规则id，通过ListWebBasicProtectionRules接口获取ID，多个id以分号;分隔，比如：\"000000;111111\"   - 类别: 多个类型以分号;分隔，比如：\"xss;webshell\"     - xss：XSS攻击     - webshell：网站木马     - vuln：其他类型攻击     - sqli：SQL注入攻击     - robot：恶意爬虫     - rfi：远程文件包含     - lfi：本地文件包含     - cmdi：命令注入攻击   - 所有内置规则 - 非法请求: illegal **默认取值：** 不涉及
      * @return rule
      */
     public String getRule() {
@@ -192,13 +192,13 @@ public class BatchUpdateIgnoreRuleRequestBody {
     }
 
     public BatchUpdateIgnoreRuleRequestBody withPolicyRuleIds(
-        List<PolicyRuleIdRequestBodyPolicyRuleIds> policyRuleIds) {
+        List<BatchUpdateIgnoreRuleRequestBodyPolicyRuleIds> policyRuleIds) {
         this.policyRuleIds = policyRuleIds;
         return this;
     }
 
     public BatchUpdateIgnoreRuleRequestBody addPolicyRuleIdsItem(
-        PolicyRuleIdRequestBodyPolicyRuleIds policyRuleIdsItem) {
+        BatchUpdateIgnoreRuleRequestBodyPolicyRuleIds policyRuleIdsItem) {
         if (this.policyRuleIds == null) {
             this.policyRuleIds = new ArrayList<>();
         }
@@ -207,7 +207,7 @@ public class BatchUpdateIgnoreRuleRequestBody {
     }
 
     public BatchUpdateIgnoreRuleRequestBody withPolicyRuleIds(
-        Consumer<List<PolicyRuleIdRequestBodyPolicyRuleIds>> policyRuleIdsSetter) {
+        Consumer<List<BatchUpdateIgnoreRuleRequestBodyPolicyRuleIds>> policyRuleIdsSetter) {
         if (this.policyRuleIds == null) {
             this.policyRuleIds = new ArrayList<>();
         }
@@ -216,14 +216,14 @@ public class BatchUpdateIgnoreRuleRequestBody {
     }
 
     /**
-     * **参数解释：** 策略和规则id数组，关联防护策略与对应的规则集合 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 策略ID和规则id数组，规则ID与规则所属的策略ID **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return policyRuleIds
      */
-    public List<PolicyRuleIdRequestBodyPolicyRuleIds> getPolicyRuleIds() {
+    public List<BatchUpdateIgnoreRuleRequestBodyPolicyRuleIds> getPolicyRuleIds() {
         return policyRuleIds;
     }
 
-    public void setPolicyRuleIds(List<PolicyRuleIdRequestBodyPolicyRuleIds> policyRuleIds) {
+    public void setPolicyRuleIds(List<BatchUpdateIgnoreRuleRequestBodyPolicyRuleIds> policyRuleIds) {
         this.policyRuleIds = policyRuleIds;
     }
 

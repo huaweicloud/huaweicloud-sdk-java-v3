@@ -57,7 +57,7 @@ public class ConfirmIpReputationRuleResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
-    private CreateIpReputationRuleResponseBodyAction action;
+    private UpdateIdcIpRuleResponseBodyAction action;
 
     public ConfirmIpReputationRuleResponse withId(String id) {
         this.id = id;
@@ -211,14 +211,14 @@ public class ConfirmIpReputationRuleResponse extends SdkResponse {
         this.tags = tags;
     }
 
-    public ConfirmIpReputationRuleResponse withAction(CreateIpReputationRuleResponseBodyAction action) {
+    public ConfirmIpReputationRuleResponse withAction(UpdateIdcIpRuleResponseBodyAction action) {
         this.action = action;
         return this;
     }
 
-    public ConfirmIpReputationRuleResponse withAction(Consumer<CreateIpReputationRuleResponseBodyAction> actionSetter) {
+    public ConfirmIpReputationRuleResponse withAction(Consumer<UpdateIdcIpRuleResponseBodyAction> actionSetter) {
         if (this.action == null) {
-            this.action = new CreateIpReputationRuleResponseBodyAction();
+            this.action = new UpdateIdcIpRuleResponseBodyAction();
             actionSetter.accept(this.action);
         }
 
@@ -229,11 +229,11 @@ public class ConfirmIpReputationRuleResponse extends SdkResponse {
      * Get action
      * @return action
      */
-    public CreateIpReputationRuleResponseBodyAction getAction() {
+    public UpdateIdcIpRuleResponseBodyAction getAction() {
         return action;
     }
 
-    public void setAction(CreateIpReputationRuleResponseBodyAction action) {
+    public void setAction(UpdateIdcIpRuleResponseBodyAction action) {
         this.action = action;
     }
 

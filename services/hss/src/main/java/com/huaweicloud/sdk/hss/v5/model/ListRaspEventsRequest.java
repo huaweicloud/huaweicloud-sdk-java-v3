@@ -16,6 +16,11 @@ public class ListRaspEventsRequest {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_id")
+
+    private String hostId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -24,11 +29,6 @@ public class ListRaspEventsRequest {
     @JsonProperty(value = "limit")
 
     private Integer limit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "host_id")
-
-    private String hostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
@@ -77,6 +77,23 @@ public class ListRaspEventsRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public ListRaspEventsRequest withHostId(String hostId) {
+        this.hostId = hostId;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 服务器的唯一标识ID **约束限制**: 不涉及 **取值范围**: 字符长度1-64位 **默认取值**: 不涉及 
+     * @return hostId
+     */
+    public String getHostId() {
+        return hostId;
+    }
+
+    public void setHostId(String hostId) {
+        this.hostId = hostId;
+    }
+
     public ListRaspEventsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -113,23 +130,6 @@ public class ListRaspEventsRequest {
 
     public void setLimit(Integer limit) {
         this.limit = limit;
-    }
-
-    public ListRaspEventsRequest withHostId(String hostId) {
-        this.hostId = hostId;
-        return this;
-    }
-
-    /**
-     * Host Id
-     * @return hostId
-     */
-    public String getHostId() {
-        return hostId;
-    }
-
-    public void setHostId(String hostId) {
-        this.hostId = hostId;
     }
 
     public ListRaspEventsRequest withStartTime(Long startTime) {
@@ -248,8 +248,8 @@ public class ListRaspEventsRequest {
         }
         ListRaspEventsRequest that = (ListRaspEventsRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.appType, that.appType)
             && Objects.equals(this.severity, that.severity) && Objects.equals(this.attackTag, that.attackTag)
             && Objects.equals(this.protectStatus, that.protectStatus);
@@ -258,9 +258,9 @@ public class ListRaspEventsRequest {
     @Override
     public int hashCode() {
         return Objects.hash(enterpriseProjectId,
+            hostId,
             offset,
             limit,
-            hostId,
             startTime,
             endTime,
             appType,
@@ -274,9 +274,9 @@ public class ListRaspEventsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListRaspEventsRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    appType: ").append(toIndentedString(appType)).append("\n");

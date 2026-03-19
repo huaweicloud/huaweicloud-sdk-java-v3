@@ -36,6 +36,26 @@ public class AntiVirusHostResponseInfo {
     private String agentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os_name")
+
+    private String osName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_status")
+
+    private String hostStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_status")
+
+    private String agentStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "asset_value")
+
+    private String assetValue;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_type")
 
     private String osType;
@@ -130,6 +150,74 @@ public class AntiVirusHostResponseInfo {
         this.agentId = agentId;
     }
 
+    public AntiVirusHostResponseInfo withOsName(String osName) {
+        this.osName = osName;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 操作系统名称 **取值范围**: 字符长度0-128位 
+     * @return osName
+     */
+    public String getOsName() {
+        return osName;
+    }
+
+    public void setOsName(String osName) {
+        this.osName = osName;
+    }
+
+    public AntiVirusHostResponseInfo withHostStatus(String hostStatus) {
+        this.hostStatus = hostStatus;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 主机状态 **取值范围**: - ACTIVE：正在运行 - SHUTOFF：关机 - BUILDING：创建中 - ERROR：故障 
+     * @return hostStatus
+     */
+    public String getHostStatus() {
+        return hostStatus;
+    }
+
+    public void setHostStatus(String hostStatus) {
+        this.hostStatus = hostStatus;
+    }
+
+    public AntiVirusHostResponseInfo withAgentStatus(String agentStatus) {
+        this.agentStatus = agentStatus;
+        return this;
+    }
+
+    /**
+     * **参数解释**： Agent状态 **取值范围**: - installed：已安装 - not_installed：未安 - online：在线 - offline：离线 - install_failed：安装失败 - installing：安装中 - not_online：不在线的（除了在线以外的所有状态，仅作为查询条件） 
+     * @return agentStatus
+     */
+    public String getAgentStatus() {
+        return agentStatus;
+    }
+
+    public void setAgentStatus(String agentStatus) {
+        this.agentStatus = agentStatus;
+    }
+
+    public AntiVirusHostResponseInfo withAssetValue(String assetValue) {
+        this.assetValue = assetValue;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 资产重要性。 **取值范围**： - important ：重要资产。 - common ：一般资产。 - test ：测试资产。
+     * @return assetValue
+     */
+    public String getAssetValue() {
+        return assetValue;
+    }
+
+    public void setAssetValue(String assetValue) {
+        this.assetValue = assetValue;
+    }
+
     public AntiVirusHostResponseInfo withOsType(String osType) {
         this.osType = osType;
         return this;
@@ -175,13 +263,25 @@ public class AntiVirusHostResponseInfo {
         AntiVirusHostResponseInfo that = (AntiVirusHostResponseInfo) obj;
         return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostName, that.hostName)
             && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.privateIp, that.privateIp)
-            && Objects.equals(this.agentId, that.agentId) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.agentId, that.agentId) && Objects.equals(this.osName, that.osName)
+            && Objects.equals(this.hostStatus, that.hostStatus) && Objects.equals(this.agentStatus, that.agentStatus)
+            && Objects.equals(this.assetValue, that.assetValue) && Objects.equals(this.osType, that.osType)
             && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hostId, hostName, publicIp, privateIp, agentId, osType, groupId);
+        return Objects.hash(hostId,
+            hostName,
+            publicIp,
+            privateIp,
+            agentId,
+            osName,
+            hostStatus,
+            agentStatus,
+            assetValue,
+            osType,
+            groupId);
     }
 
     @Override
@@ -193,6 +293,10 @@ public class AntiVirusHostResponseInfo {
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
         sb.append("    agentId: ").append(toIndentedString(agentId)).append("\n");
+        sb.append("    osName: ").append(toIndentedString(osName)).append("\n");
+        sb.append("    hostStatus: ").append(toIndentedString(hostStatus)).append("\n");
+        sb.append("    agentStatus: ").append(toIndentedString(agentStatus)).append("\n");
+        sb.append("    assetValue: ").append(toIndentedString(assetValue)).append("\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("}");

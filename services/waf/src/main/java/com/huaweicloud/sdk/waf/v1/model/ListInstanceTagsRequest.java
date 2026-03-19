@@ -1,14 +1,94 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
  * Request Object
  */
 public class ListInstanceTagsRequest {
+
+    /**
+     * **参数解释：** 资源类型 **约束限制：** 不涉及 **取值范围：** - waf 云模式引擎 - waf-instance 独享引擎 **默认取值：** 不涉及
+     */
+    public static final class ResourceTypeEnum {
+
+        /**
+         * Enum WAF for value: "waf"
+         */
+        public static final ResourceTypeEnum WAF = new ResourceTypeEnum("waf");
+
+        /**
+         * Enum WAF_INSTANCE for value: "waf-instance"
+         */
+        public static final ResourceTypeEnum WAF_INSTANCE = new ResourceTypeEnum("waf-instance");
+
+        private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ResourceTypeEnum> createStaticFields() {
+            Map<String, ResourceTypeEnum> map = new HashMap<>();
+            map.put("waf", WAF);
+            map.put("waf-instance", WAF_INSTANCE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ResourceTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ResourceTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
+        }
+
+        public static ResourceTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ResourceTypeEnum) {
+                return this.value.equals(((ResourceTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_type")
+
+    private ResourceTypeEnum resourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resourceid")
@@ -20,13 +100,30 @@ public class ListInstanceTagsRequest {
 
     private String enterpriseProjectId;
 
+    public ListInstanceTagsRequest withResourceType(ResourceTypeEnum resourceType) {
+        this.resourceType = resourceType;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 资源类型 **约束限制：** 不涉及 **取值范围：** - waf 云模式引擎 - waf-instance 独享引擎 **默认取值：** 不涉及
+     * @return resourceType
+     */
+    public ResourceTypeEnum getResourceType() {
+        return resourceType;
+    }
+
+    public void setResourceType(ResourceTypeEnum resourceType) {
+        this.resourceType = resourceType;
+    }
+
     public ListInstanceTagsRequest withResourceid(String resourceid) {
         this.resourceid = resourceid;
         return this;
     }
 
     /**
-     * **参数解释：** 资源类型，目前支持waf和waf-instance **约束限制：** 不涉及 **取值范围：** - waf - waf-instance  **默认取值：** 不涉及
+     * **参数解释：** 引擎id **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return resourceid
      */
     public String getResourceid() {
@@ -43,7 +140,7 @@ public class ListInstanceTagsRequest {
     }
 
     /**
-     * **参数解释：** 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目ID。若需要查询当前用户所有企业项目绑定的资源信息，请传参all_granted_eps。 **约束限制：** 不涉及 **取值范围：**  - 0：代表default企业项目  - all_granted_eps：代表所有企业项目  - 其它企业项目ID：长度为36个字符  **默认取值：** 0
+     * **参数解释：** 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目ID。若需要查询当前用户所有企业项目绑定的资源信息，请传参all_granted_eps。 **约束限制：** 不涉及 **取值范围：**  - 0：代表default企业项目  - all_granted_eps：代表所有企业项目  - 其它企业项目ID：长度为36个字符 **默认取值：** 0
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -63,19 +160,20 @@ public class ListInstanceTagsRequest {
             return false;
         }
         ListInstanceTagsRequest that = (ListInstanceTagsRequest) obj;
-        return Objects.equals(this.resourceid, that.resourceid)
+        return Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.resourceid, that.resourceid)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceid, enterpriseProjectId);
+        return Objects.hash(resourceType, resourceid, enterpriseProjectId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListInstanceTagsRequest {\n");
+        sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    resourceid: ").append(toIndentedString(resourceid)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");

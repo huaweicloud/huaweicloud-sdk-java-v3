@@ -23,7 +23,7 @@ public class Curve {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
-    private Integer time;
+    private Long time;
 
     public Curve withIn(Float in) {
         this.in = in;
@@ -59,7 +59,7 @@ public class Curve {
         this.out = out;
     }
 
-    public Curve withTime(Integer time) {
+    public Curve withTime(Long time) {
         this.time = time;
         return this;
     }
@@ -68,11 +68,11 @@ public class Curve {
      * 时间戳
      * @return time
      */
-    public Integer getTime() {
+    public Long getTime() {
         return time;
     }
 
-    public void setTime(Integer time) {
+    public void setTime(Long time) {
         this.time = time;
     }
 

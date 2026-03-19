@@ -103,7 +103,7 @@ public class ShowAntitamperRuleResponse extends SdkResponse {
     }
 
     /**
-     * 防篡改的url，
+     * 防篡改的url
      * @return url
      */
     public String getUrl() {

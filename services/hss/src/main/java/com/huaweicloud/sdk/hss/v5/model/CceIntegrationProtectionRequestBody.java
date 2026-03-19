@@ -16,7 +16,7 @@ import java.util.Objects;
 public class CceIntegrationProtectionRequestBody {
 
     /**
-     * **参数解释**: cce集群类型 **约束限制**: 不涉及 **取值范围**: 包含如下两种： - existing：存量集群。 - adding：新增集群。  **默认取值**: 不涉及 
+     * **参数解释**: cce集群类型 **约束限制**: 不涉及 **取值范围**: 包含如下两种： - existing：存量集群。 - adding：新增集群。 **默认取值**: 不涉及 
      */
     public static final class ClusterTypeEnum {
 
@@ -101,7 +101,7 @@ public class CceIntegrationProtectionRequestBody {
     private String clusterName;
 
     /**
-     * **参数解释**: 付费模式 **约束限制**: 不涉及 **取值范围**: 包含如下两种： - on_demand：按需。 - free_security_check：免费安全体检。  **默认取值**: 不涉及 
+     * **参数解释**: 付费模式 **约束限制**: 不涉及 **取值范围**: 包含如下两种： - on_demand：按需。 - free_security_check：免费安全体检。 **默认取值**: 不涉及 
      */
     public static final class ChargingModeEnum {
 
@@ -176,7 +176,7 @@ public class CceIntegrationProtectionRequestBody {
     private ChargingModeEnum chargingMode;
 
     /**
-     * **参数解释**: cce防护类型 **约束限制**: 不涉及 **取值范围**: 包含如下两种： - cluster_level：集群级别防护。 - node_level：节点级别防护。  **默认取值**: 不涉及 
+     * **参数解释**: cce防护类型， **约束限制**: 当前只支持集群级别防护 **取值范围**: 包含如下两种： - cluster_level：集群级别防护。 - node_level：节点级别防护。 **默认取值**: 不涉及 
      */
     public static final class CceProtectionTypeEnum {
 
@@ -261,7 +261,7 @@ public class CceIntegrationProtectionRequestBody {
     }
 
     /**
-     * **参数解释**: cce集群类型 **约束限制**: 不涉及 **取值范围**: 包含如下两种： - existing：存量集群。 - adding：新增集群。  **默认取值**: 不涉及 
+     * **参数解释**: cce集群类型 **约束限制**: 不涉及 **取值范围**: 包含如下两种： - existing：存量集群。 - adding：新增集群。 **默认取值**: 不涉及 
      * @return clusterType
      */
     public ClusterTypeEnum getClusterType() {
@@ -278,7 +278,7 @@ public class CceIntegrationProtectionRequestBody {
     }
 
     /**
-     * 集群id
+     * **参数解释**: 集群id **约束限制**: 新增集群没有集群id，存量集群的集群id必填 **取值范围**: 字符长度1-256位 **默认取值**: 不涉及 
      * @return clusterId
      */
     public String getClusterId() {
@@ -312,7 +312,7 @@ public class CceIntegrationProtectionRequestBody {
     }
 
     /**
-     * **参数解释**: 付费模式 **约束限制**: 不涉及 **取值范围**: 包含如下两种： - on_demand：按需。 - free_security_check：免费安全体检。  **默认取值**: 不涉及 
+     * **参数解释**: 付费模式 **约束限制**: 不涉及 **取值范围**: 包含如下两种： - on_demand：按需。 - free_security_check：免费安全体检。 **默认取值**: 不涉及 
      * @return chargingMode
      */
     public ChargingModeEnum getChargingMode() {
@@ -329,7 +329,7 @@ public class CceIntegrationProtectionRequestBody {
     }
 
     /**
-     * **参数解释**: cce防护类型 **约束限制**: 不涉及 **取值范围**: 包含如下两种： - cluster_level：集群级别防护。 - node_level：节点级别防护。  **默认取值**: 不涉及 
+     * **参数解释**: cce防护类型， **约束限制**: 当前只支持集群级别防护 **取值范围**: 包含如下两种： - cluster_level：集群级别防护。 - node_level：节点级别防护。 **默认取值**: 不涉及 
      * @return cceProtectionType
      */
     public CceProtectionTypeEnum getCceProtectionType() {

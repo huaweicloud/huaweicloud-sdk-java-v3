@@ -13,14 +13,14 @@ public class ListConnectionNumberDataList {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
-    private Integer time;
+    private Long time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
 
     private Integer value;
 
-    public ListConnectionNumberDataList withTime(Integer time) {
+    public ListConnectionNumberDataList withTime(Long time) {
         this.time = time;
         return this;
     }
@@ -29,11 +29,11 @@ public class ListConnectionNumberDataList {
      * 时间戳毫秒值
      * @return time
      */
-    public Integer getTime() {
+    public Long getTime() {
         return time;
     }
 
-    public void setTime(Integer time) {
+    public void setTime(Long time) {
         this.time = time;
     }
 

@@ -116,7 +116,7 @@ public class BatchUpdateAntileakageRuleRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_rule_ids")
 
-    private List<PolicyRuleIdRequestBodyPolicyRuleIds> policyRuleIds = null;
+    private List<BatchUpdateAntileakageRuleRequestBodyPolicyRuleIds> policyRuleIds = null;
 
     public BatchUpdateAntileakageRuleRequestBody withUrl(String url) {
         this.url = url;
@@ -229,13 +229,13 @@ public class BatchUpdateAntileakageRuleRequestBody {
     }
 
     public BatchUpdateAntileakageRuleRequestBody withPolicyRuleIds(
-        List<PolicyRuleIdRequestBodyPolicyRuleIds> policyRuleIds) {
+        List<BatchUpdateAntileakageRuleRequestBodyPolicyRuleIds> policyRuleIds) {
         this.policyRuleIds = policyRuleIds;
         return this;
     }
 
     public BatchUpdateAntileakageRuleRequestBody addPolicyRuleIdsItem(
-        PolicyRuleIdRequestBodyPolicyRuleIds policyRuleIdsItem) {
+        BatchUpdateAntileakageRuleRequestBodyPolicyRuleIds policyRuleIdsItem) {
         if (this.policyRuleIds == null) {
             this.policyRuleIds = new ArrayList<>();
         }
@@ -244,7 +244,7 @@ public class BatchUpdateAntileakageRuleRequestBody {
     }
 
     public BatchUpdateAntileakageRuleRequestBody withPolicyRuleIds(
-        Consumer<List<PolicyRuleIdRequestBodyPolicyRuleIds>> policyRuleIdsSetter) {
+        Consumer<List<BatchUpdateAntileakageRuleRequestBodyPolicyRuleIds>> policyRuleIdsSetter) {
         if (this.policyRuleIds == null) {
             this.policyRuleIds = new ArrayList<>();
         }
@@ -256,11 +256,11 @@ public class BatchUpdateAntileakageRuleRequestBody {
      * **参数解释：** 策略和规则id数组，关联防护策略与对应的规则集合 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return policyRuleIds
      */
-    public List<PolicyRuleIdRequestBodyPolicyRuleIds> getPolicyRuleIds() {
+    public List<BatchUpdateAntileakageRuleRequestBodyPolicyRuleIds> getPolicyRuleIds() {
         return policyRuleIds;
     }
 
-    public void setPolicyRuleIds(List<PolicyRuleIdRequestBodyPolicyRuleIds> policyRuleIds) {
+    public void setPolicyRuleIds(List<BatchUpdateAntileakageRuleRequestBodyPolicyRuleIds> policyRuleIds) {
         this.policyRuleIds = policyRuleIds;
     }
 

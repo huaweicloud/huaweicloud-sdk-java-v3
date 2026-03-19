@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ListServersRequest {
 
     /**
-     * **参数解释**： 服务器管理状态 **约束限制**： 不涉及 **取值范围**： - onboard：上架中，用户下单，完成LLD设计。 - ready：交付完成，完成硬装、网调、服务器初始化、软调及转维验收。 - in-use：使用中，用户发放裸机。 - frozen：冻结，因欠费导致资源冻结。 - offboarding：下架中。  **默认取值**： 不涉及
+     * **参数解释**： 服务器管理状态 **约束限制**： 不涉及 **取值范围**： - onboard：上架中，用户下单，完成LLD设计。 - os-ready: 软调完成 服务器完成软调，即将进行转维。 - ready：交付完成，完成硬装、网调、服务器初始化、软调及转维验收。 - in-use：使用中，用户发放裸机。 - frozen：冻结，因欠费导致资源冻结。 - maintain:维护中 服务器故障，进入维修 - offboarding：下架中。  **默认取值**： 不涉及
      */
     public static final class ManageStateEnum {
 
@@ -24,6 +24,11 @@ public class ListServersRequest {
          * Enum ONBOARD for value: "onboard"
          */
         public static final ManageStateEnum ONBOARD = new ManageStateEnum("onboard");
+
+        /**
+         * Enum OS_READY for value: "os-ready"
+         */
+        public static final ManageStateEnum OS_READY = new ManageStateEnum("os-ready");
 
         /**
          * Enum READY for value: "ready"
@@ -34,6 +39,11 @@ public class ListServersRequest {
          * Enum IN_USE for value: "in-use"
          */
         public static final ManageStateEnum IN_USE = new ManageStateEnum("in-use");
+
+        /**
+         * Enum MAINTAIN for value: "maintain"
+         */
+        public static final ManageStateEnum MAINTAIN = new ManageStateEnum("maintain");
 
         /**
          * Enum FROZEN for value: "frozen"
@@ -50,8 +60,10 @@ public class ListServersRequest {
         private static Map<String, ManageStateEnum> createStaticFields() {
             Map<String, ManageStateEnum> map = new HashMap<>();
             map.put("onboard", ONBOARD);
+            map.put("os-ready", OS_READY);
             map.put("ready", READY);
             map.put("in-use", IN_USE);
+            map.put("maintain", MAINTAIN);
             map.put("frozen", FROZEN);
             map.put("offboarding", OFFBOARDING);
             return Collections.unmodifiableMap(map);
@@ -124,7 +136,7 @@ public class ListServersRequest {
     }
 
     /**
-     * **参数解释**： 服务器管理状态 **约束限制**： 不涉及 **取值范围**： - onboard：上架中，用户下单，完成LLD设计。 - ready：交付完成，完成硬装、网调、服务器初始化、软调及转维验收。 - in-use：使用中，用户发放裸机。 - frozen：冻结，因欠费导致资源冻结。 - offboarding：下架中。  **默认取值**： 不涉及
+     * **参数解释**： 服务器管理状态 **约束限制**： 不涉及 **取值范围**： - onboard：上架中，用户下单，完成LLD设计。 - os-ready: 软调完成 服务器完成软调，即将进行转维。 - ready：交付完成，完成硬装、网调、服务器初始化、软调及转维验收。 - in-use：使用中，用户发放裸机。 - frozen：冻结，因欠费导致资源冻结。 - maintain:维护中 服务器故障，进入维修 - offboarding：下架中。  **默认取值**： 不涉及
      * @return manageState
      */
     public ManageStateEnum getManageState() {

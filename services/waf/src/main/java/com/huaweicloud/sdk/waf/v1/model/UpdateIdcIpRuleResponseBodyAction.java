@@ -8,20 +8,20 @@ import java.util.Objects;
 /**
  * **参数解释：** 防护动作配置 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
  */
-public class BatchUpdateIpReputationRuleRequestBodyAction {
+public class UpdateIdcIpRuleResponseBodyAction {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "category")
 
     private String category;
 
-    public BatchUpdateIpReputationRuleRequestBodyAction withCategory(String category) {
+    public UpdateIdcIpRuleResponseBodyAction withCategory(String category) {
         this.category = category;
         return this;
     }
 
     /**
-     * **参数解释：** 动作类型（如captcha表示验证码） **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 动作类型（如log表示仅记录） **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return category
      */
     public String getCategory() {
@@ -40,7 +40,7 @@ public class BatchUpdateIpReputationRuleRequestBodyAction {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdateIpReputationRuleRequestBodyAction that = (BatchUpdateIpReputationRuleRequestBodyAction) obj;
+        UpdateIdcIpRuleResponseBodyAction that = (UpdateIdcIpRuleResponseBodyAction) obj;
         return Objects.equals(this.category, that.category);
     }
 
@@ -52,7 +52,7 @@ public class BatchUpdateIpReputationRuleRequestBodyAction {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class BatchUpdateIpReputationRuleRequestBodyAction {\n");
+        sb.append("class UpdateIdcIpRuleResponseBodyAction {\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("}");
         return sb.toString();

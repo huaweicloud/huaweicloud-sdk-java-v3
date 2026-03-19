@@ -27,7 +27,7 @@ public class ListInstanceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
 
-    private List<ListInstance> items = null;
+    private List<Instance> items = null;
 
     public ListInstanceResponse withTotal(Integer total) {
         this.total = total;
@@ -63,12 +63,12 @@ public class ListInstanceResponse extends SdkResponse {
         this.purchased = purchased;
     }
 
-    public ListInstanceResponse withItems(List<ListInstance> items) {
+    public ListInstanceResponse withItems(List<Instance> items) {
         this.items = items;
         return this;
     }
 
-    public ListInstanceResponse addItemsItem(ListInstance itemsItem) {
+    public ListInstanceResponse addItemsItem(Instance itemsItem) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -76,7 +76,7 @@ public class ListInstanceResponse extends SdkResponse {
         return this;
     }
 
-    public ListInstanceResponse withItems(Consumer<List<ListInstance>> itemsSetter) {
+    public ListInstanceResponse withItems(Consumer<List<Instance>> itemsSetter) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -88,11 +88,11 @@ public class ListInstanceResponse extends SdkResponse {
      * 详细的独享引擎信息列表
      * @return items
      */
-    public List<ListInstance> getItems() {
+    public List<Instance> getItems() {
         return items;
     }
 
-    public void setItems(List<ListInstance> items) {
+    public void setItems(List<Instance> items) {
         this.items = items;
     }
 

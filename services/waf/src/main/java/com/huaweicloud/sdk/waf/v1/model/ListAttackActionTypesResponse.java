@@ -30,7 +30,7 @@ public class ListAttackActionTypesResponse extends SdkResponse {
     }
 
     /**
-     * CountItem的总数量
+     * AttackActionCountItem的总数量
      * @return total
      */
     public Integer getTotal() {
@@ -63,7 +63,7 @@ public class ListAttackActionTypesResponse extends SdkResponse {
     }
 
     /**
-     * CountItem详细信息
+     * AttackActionCountItem详细信息
      * @return items
      */
     public List<AttackActionCountItem> getItems() {

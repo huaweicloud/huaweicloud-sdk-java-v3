@@ -48,7 +48,7 @@ public class ShowWhiteBlackIpRuleRequest {
     }
 
     /**
-     * 防护策略id，您可以通过调用查询防护策略列表（ListPolicy）获取策略id
+     * **参数解释：** 防护策略id，您可以通过调用查询防护策略列表（ListPolicy）获取策略id **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return policyId
      */
     public String getPolicyId() {
@@ -65,7 +65,7 @@ public class ShowWhiteBlackIpRuleRequest {
     }
 
     /**
-     * 黑白名单规则id，您可以通过调用查询黑白名单规则列表（ListWhiteblackipRule）获取黑白名单规则id
+     * **参数解释：** 黑白名单规则id，您可以通过调用查询黑白名单规则列表（ListWhiteblackipRule）获取黑白名单规则id **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return ruleId
      */
     public String getRuleId() {

@@ -6598,6 +6598,11 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRaspEventsRequest::getEnterpriseProjectId,
                 ListRaspEventsRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("host_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRaspEventsRequest::getHostId, ListRaspEventsRequest::setHostId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -6608,11 +6613,6 @@ public class HssMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRaspEventsRequest::getLimit, ListRaspEventsRequest::setLimit));
-        builder.<String>withRequestField("host_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRaspEventsRequest::getHostId, ListRaspEventsRequest::setHostId));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -10188,6 +10188,12 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ExportAntiVirusResultRequest::getSeverityList,
                 ExportAntiVirusResultRequest::setSeverityList));
+        builder.<String>withRequestField("severities",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportAntiVirusResultRequest::getSeverities,
+                ExportAntiVirusResultRequest::setSeverities));
         builder.<String>withRequestField("asset_value",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -10409,7 +10415,7 @@ public class HssMeta {
                 ListAntiVirusPaidHostsRequest::setGroupId));
         builder.<String>withRequestField("scan_type",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAntiVirusPaidHostsRequest::getScanType,
                 ListAntiVirusPaidHostsRequest::setScanType));
@@ -10520,6 +10526,12 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListAntiVirusResultRequest::getSeverityList,
                 ListAntiVirusResultRequest::setSeverityList));
+        builder.<String>withRequestField("severities",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAntiVirusResultRequest::getSeverities,
+                ListAntiVirusResultRequest::setSeverities));
         builder.<String>withRequestField("asset_value",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -10553,6 +10565,17 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListAntiVirusResultRequest::getManualIsolate,
                 ListAntiVirusResultRequest::setManualIsolate));
+        builder.<List<String>>withRequestField("id_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAntiVirusResultRequest::getIdList, ListAntiVirusResultRequest::setIdList));
+        builder.<List<String>>withRequestField("file_hash_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAntiVirusResultRequest::getFileHashList,
+                ListAntiVirusResultRequest::setFileHashList));
 
         // response
 
@@ -12714,6 +12737,12 @@ public class HssMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBaselineOverviewRequest::getGroupId, ShowBaselineOverviewRequest::setGroupId));
+        builder.<String>withRequestField("statistics_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBaselineOverviewRequest::getStatisticsType,
+                ShowBaselineOverviewRequest::setStatisticsType));
 
         // response
 
@@ -15519,6 +15548,26 @@ public class HssMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListHostStatusRequest::getVpcId, ListHostStatusRequest::setVpcId));
+        builder.<String>withRequestField("host_name_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHostStatusRequest::getHostNameList, ListHostStatusRequest::setHostNameList));
+        builder.<String>withRequestField("host_id_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHostStatusRequest::getHostIdList, ListHostStatusRequest::setHostIdList));
+        builder.<String>withRequestField("public_ip_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHostStatusRequest::getPublicIpList, ListHostStatusRequest::setPublicIpList));
+        builder.<String>withRequestField("private_ip_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHostStatusRequest::getPrivateIpList, ListHostStatusRequest::setPrivateIpList));
         builder.<Boolean>withRequestField("has_intrusion",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -17471,16 +17520,6 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImageLocalRequest::getEnterpriseProjectId,
                 ListImageLocalRequest::setEnterpriseProjectId));
-        builder.<String>withRequestField("image_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListImageLocalRequest::getImageName, ListImageLocalRequest::setImageName));
-        builder.<String>withRequestField("image_version",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListImageLocalRequest::getImageVersion, ListImageLocalRequest::setImageVersion));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -17491,6 +17530,16 @@ public class HssMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListImageLocalRequest::getLimit, ListImageLocalRequest::setLimit));
+        builder.<String>withRequestField("image_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getImageName, ListImageLocalRequest::setImageName));
+        builder.<String>withRequestField("image_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageLocalRequest::getImageVersion, ListImageLocalRequest::setImageVersion));
         builder.<String>withRequestField("scan_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -21926,6 +21975,12 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListAntivirusHandleHistoryRequest::getSeverityList,
                 ListAntivirusHandleHistoryRequest::setSeverityList));
+        builder.<String>withRequestField("severities",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAntivirusHandleHistoryRequest::getSeverities,
+                ListAntivirusHandleHistoryRequest::setSeverities));
         builder.<String>withRequestField("host_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -24516,6 +24571,11 @@ public class HssMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVulHostHostsRequest::getClusterId, ListVulHostHostsRequest::setClusterId));
+        builder.<String>withRequestField("host_id_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulHostHostsRequest::getHostIdList, ListVulHostHostsRequest::setHostIdList));
 
         // response
 
@@ -24707,6 +24767,11 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVulHostVulsRequest::getRepairPriority,
                 ListVulHostVulsRequest::setRepairPriority));
+        builder.<String>withRequestField("host_id_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVulHostVulsRequest::getHostIdList, ListVulHostVulsRequest::setHostIdList));
 
         // response
 

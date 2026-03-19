@@ -71,6 +71,21 @@ public class ListThreatsResponse extends SdkResponse {
 
     private Integer antitamper;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "llm_prompt_injection")
+
+    private Integer llmPromptInjection;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "llm_prompt_sensitive")
+
+    private Integer llmPromptSensitive;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "llm_response_sensitive")
+
+    private Integer llmResponseSensitive;
+
     public ListThreatsResponse withXss(Integer xss) {
         this.xss = xss;
         return this;
@@ -275,6 +290,57 @@ public class ListThreatsResponse extends SdkResponse {
         this.antitamper = antitamper;
     }
 
+    public ListThreatsResponse withLlmPromptInjection(Integer llmPromptInjection) {
+        this.llmPromptInjection = llmPromptInjection;
+        return this;
+    }
+
+    /**
+     * 时间区间内大模型提示词注入攻击数量
+     * @return llmPromptInjection
+     */
+    public Integer getLlmPromptInjection() {
+        return llmPromptInjection;
+    }
+
+    public void setLlmPromptInjection(Integer llmPromptInjection) {
+        this.llmPromptInjection = llmPromptInjection;
+    }
+
+    public ListThreatsResponse withLlmPromptSensitive(Integer llmPromptSensitive) {
+        this.llmPromptSensitive = llmPromptSensitive;
+        return this;
+    }
+
+    /**
+     * 时间区间内大模型提示词合规检测数量
+     * @return llmPromptSensitive
+     */
+    public Integer getLlmPromptSensitive() {
+        return llmPromptSensitive;
+    }
+
+    public void setLlmPromptSensitive(Integer llmPromptSensitive) {
+        this.llmPromptSensitive = llmPromptSensitive;
+    }
+
+    public ListThreatsResponse withLlmResponseSensitive(Integer llmResponseSensitive) {
+        this.llmResponseSensitive = llmResponseSensitive;
+        return this;
+    }
+
+    /**
+     * 时间区间内大模型响应合规检测数量
+     * @return llmResponseSensitive
+     */
+    public Integer getLlmResponseSensitive() {
+        return llmResponseSensitive;
+    }
+
+    public void setLlmResponseSensitive(Integer llmResponseSensitive) {
+        this.llmResponseSensitive = llmResponseSensitive;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -289,13 +355,29 @@ public class ListThreatsResponse extends SdkResponse {
             && Objects.equals(this.rfi, that.rfi) && Objects.equals(this.webshell, that.webshell)
             && Objects.equals(this.robot, that.robot) && Objects.equals(this.cc, that.cc)
             && Objects.equals(this.custom, that.custom) && Objects.equals(this.whiteblackip, that.whiteblackip)
-            && Objects.equals(this.antileakage, that.antileakage) && Objects.equals(this.antitamper, that.antitamper);
+            && Objects.equals(this.antileakage, that.antileakage) && Objects.equals(this.antitamper, that.antitamper)
+            && Objects.equals(this.llmPromptInjection, that.llmPromptInjection)
+            && Objects.equals(this.llmPromptSensitive, that.llmPromptSensitive)
+            && Objects.equals(this.llmResponseSensitive, that.llmResponseSensitive);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(xss, sqli, cmdi, lfi, rfi, webshell, robot, cc, custom, whiteblackip, antileakage, antitamper);
+        return Objects.hash(xss,
+            sqli,
+            cmdi,
+            lfi,
+            rfi,
+            webshell,
+            robot,
+            cc,
+            custom,
+            whiteblackip,
+            antileakage,
+            antitamper,
+            llmPromptInjection,
+            llmPromptSensitive,
+            llmResponseSensitive);
     }
 
     @Override
@@ -314,6 +396,9 @@ public class ListThreatsResponse extends SdkResponse {
         sb.append("    whiteblackip: ").append(toIndentedString(whiteblackip)).append("\n");
         sb.append("    antileakage: ").append(toIndentedString(antileakage)).append("\n");
         sb.append("    antitamper: ").append(toIndentedString(antitamper)).append("\n");
+        sb.append("    llmPromptInjection: ").append(toIndentedString(llmPromptInjection)).append("\n");
+        sb.append("    llmPromptSensitive: ").append(toIndentedString(llmPromptSensitive)).append("\n");
+        sb.append("    llmResponseSensitive: ").append(toIndentedString(llmResponseSensitive)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -43,12 +43,12 @@ public class ListBlackHoleEventRecordItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
-    private Integer startTime;
+    private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    private Integer endTime;
+    private Long endTime;
 
     public ListBlackHoleEventRecordItem withProjectId(String projectId) {
         this.projectId = projectId;
@@ -152,7 +152,7 @@ public class ListBlackHoleEventRecordItem {
         this.eventType = eventType;
     }
 
-    public ListBlackHoleEventRecordItem withStartTime(Integer startTime) {
+    public ListBlackHoleEventRecordItem withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
@@ -163,15 +163,15 @@ public class ListBlackHoleEventRecordItem {
      * maximum: 2000
      * @return startTime
      */
-    public Integer getStartTime() {
+    public Long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Integer startTime) {
+    public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
 
-    public ListBlackHoleEventRecordItem withEndTime(Integer endTime) {
+    public ListBlackHoleEventRecordItem withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -182,11 +182,11 @@ public class ListBlackHoleEventRecordItem {
      * maximum: 2000
      * @return endTime
      */
-    public Integer getEndTime() {
+    public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Integer endTime) {
+    public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
 

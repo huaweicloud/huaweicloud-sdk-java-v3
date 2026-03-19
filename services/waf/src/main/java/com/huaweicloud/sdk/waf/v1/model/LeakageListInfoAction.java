@@ -16,7 +16,7 @@ import java.util.Objects;
 public class LeakageListInfoAction {
 
     /**
-     * 操作类型。   - “block”：过滤。   - “log”：仅记录
+     * 操作类型。   - block：过滤。   - log：仅记录
      */
     public static final class CategoryEnum {
 
@@ -96,7 +96,7 @@ public class LeakageListInfoAction {
     }
 
     /**
-     * 操作类型。   - “block”：过滤。   - “log”：仅记录
+     * 操作类型。   - block：过滤。   - log：仅记录
      * @return category
      */
     public CategoryEnum getCategory() {

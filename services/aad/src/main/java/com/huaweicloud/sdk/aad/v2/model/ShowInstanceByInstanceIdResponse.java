@@ -30,17 +30,17 @@ public class ShowInstanceByInstanceIdResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
 
-    private Integer expireTime;
+    private Long expireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private Integer createTime;
+    private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_time")
 
-    private Integer currentTime;
+    private Long currentTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_spec_data")
@@ -108,7 +108,7 @@ public class ShowInstanceByInstanceIdResponse extends SdkResponse {
         this.version = version;
     }
 
-    public ShowInstanceByInstanceIdResponse withExpireTime(Integer expireTime) {
+    public ShowInstanceByInstanceIdResponse withExpireTime(Long expireTime) {
         this.expireTime = expireTime;
         return this;
     }
@@ -119,15 +119,15 @@ public class ShowInstanceByInstanceIdResponse extends SdkResponse {
      * maximum: 2000
      * @return expireTime
      */
-    public Integer getExpireTime() {
+    public Long getExpireTime() {
         return expireTime;
     }
 
-    public void setExpireTime(Integer expireTime) {
+    public void setExpireTime(Long expireTime) {
         this.expireTime = expireTime;
     }
 
-    public ShowInstanceByInstanceIdResponse withCreateTime(Integer createTime) {
+    public ShowInstanceByInstanceIdResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -138,15 +138,15 @@ public class ShowInstanceByInstanceIdResponse extends SdkResponse {
      * maximum: 2000
      * @return createTime
      */
-    public Integer getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Integer createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 
-    public ShowInstanceByInstanceIdResponse withCurrentTime(Integer currentTime) {
+    public ShowInstanceByInstanceIdResponse withCurrentTime(Long currentTime) {
         this.currentTime = currentTime;
         return this;
     }
@@ -157,11 +157,11 @@ public class ShowInstanceByInstanceIdResponse extends SdkResponse {
      * maximum: 2000
      * @return currentTime
      */
-    public Integer getCurrentTime() {
+    public Long getCurrentTime() {
         return currentTime;
     }
 
-    public void setCurrentTime(Integer currentTime) {
+    public void setCurrentTime(Long currentTime) {
         this.currentTime = currentTime;
     }
 

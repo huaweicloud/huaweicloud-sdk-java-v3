@@ -52,7 +52,7 @@ public class CircuitBreaker {
     }
 
     /**
-     * 熔断开关，是否开启连接保护   - true：开启连接保护   - false: 关闭连接保护 
+     * 熔断开关，是否开启连接保护   - true：开启连接保护   - false: 关闭连接保护
      * @return _switch
      */
     public Boolean getSwitch() {

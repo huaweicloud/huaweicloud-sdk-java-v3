@@ -48,7 +48,7 @@ public class ShowPrivacyRuleRequest {
     }
 
     /**
-     * 防护策略id，您可以通过调用查询防护策略列表（ListPolicy）获取策略id
+     * **参数解释：** 策略id，唯一标识一条防护策略，可从\"查询防护策略列表\"(ListPolicy)接口获取 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return policyId
      */
     public String getPolicyId() {
@@ -65,7 +65,7 @@ public class ShowPrivacyRuleRequest {
     }
 
     /**
-     * 隐私屏蔽规则id，您可以通过调用查询隐私屏蔽规则列表（ListPrivacyRule）获取规则id
+     * **参数解释：** 隐私屏蔽规则id，您可以通过调用查询隐私屏蔽规则列表（ListPrivacyRule）获取规则id **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return ruleId
      */
     public String getRuleId() {

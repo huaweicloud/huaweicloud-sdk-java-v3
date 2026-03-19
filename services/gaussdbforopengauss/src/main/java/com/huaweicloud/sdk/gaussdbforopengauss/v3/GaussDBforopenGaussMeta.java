@@ -8453,8 +8453,8 @@ public class GaussDBforopenGaussMeta {
 
         // requests
         builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListLtsConfigsRequest::getInstanceId, ListLtsConfigsRequest::setInstanceId));
         builder.<String>withRequestField("instance_name",

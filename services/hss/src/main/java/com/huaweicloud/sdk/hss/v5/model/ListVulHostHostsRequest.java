@@ -70,6 +70,11 @@ public class ListVulHostHostsRequest {
 
     private String clusterId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_id_list")
+
+    private String hostIdList;
+
     public ListVulHostHostsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -278,6 +283,23 @@ public class ListVulHostHostsRequest {
         this.clusterId = clusterId;
     }
 
+    public ListVulHostHostsRequest withHostIdList(String hostIdList) {
+        this.hostIdList = hostIdList;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 主机id列表，多个主机id用英文逗号分隔 **约束限制**: 不涉及 **取值范围**: 字符长度0-1850位 **默认取值**: 不涉及 
+     * @return hostIdList
+     */
+    public String getHostIdList() {
+        return hostIdList;
+    }
+
+    public void setHostIdList(String hostIdList) {
+        this.hostIdList = hostIdList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -293,7 +315,7 @@ public class ListVulHostHostsRequest {
             && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.publicIp, that.publicIp)
             && Objects.equals(this.privateIp, that.privateIp) && Objects.equals(this.severityLevel, that.severityLevel)
             && Objects.equals(this.handleStatus, that.handleStatus) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.clusterId, that.clusterId);
+            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.hostIdList, that.hostIdList);
     }
 
     @Override
@@ -309,7 +331,8 @@ public class ListVulHostHostsRequest {
             severityLevel,
             handleStatus,
             status,
-            clusterId);
+            clusterId,
+            hostIdList);
     }
 
     @Override
@@ -328,6 +351,7 @@ public class ListVulHostHostsRequest {
         sb.append("    handleStatus: ").append(toIndentedString(handleStatus)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    hostIdList: ").append(toIndentedString(hostIdList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

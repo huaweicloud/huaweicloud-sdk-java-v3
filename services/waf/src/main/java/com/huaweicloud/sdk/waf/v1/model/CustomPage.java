@@ -21,7 +21,7 @@ public class CustomPage {
     private String statusCode;
 
     /**
-     * **参数解释：** “自定义”告警页面内容类型 **约束限制：** 不涉及 **取值范围：**  - text/html  - text/xml  - application/json  **默认取值：** 不涉及
+     * **参数解释：** “自定义”告警页面内容类型 **约束限制：** 不涉及 **取值范围：**  - text/html  - text/xml  - application/json **默认取值：** 不涉及
      */
     public static final class ContentTypeEnum {
 
@@ -129,7 +129,7 @@ public class CustomPage {
     }
 
     /**
-     * **参数解释：** “自定义”告警页面内容类型 **约束限制：** 不涉及 **取值范围：**  - text/html  - text/xml  - application/json  **默认取值：** 不涉及
+     * **参数解释：** “自定义”告警页面内容类型 **约束限制：** 不涉及 **取值范围：**  - text/html  - text/xml  - application/json **默认取值：** 不涉及
      * @return contentType
      */
     public ContentTypeEnum getContentType() {

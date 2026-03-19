@@ -11,9 +11,31 @@ import java.util.Objects;
 public class ConfirmPolicyAntileakageMapRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lang")
 
     private String lang;
+
+    public ConfirmPolicyAntileakageMapRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目ID。若需要查询当前用户所有企业项目绑定的资源信息，请传参all_granted_eps。 **约束限制：** 不涉及 **取值范围：**  - 0：代表default企业项目  - all_granted_eps：代表所有企业项目  - 其它企业项目ID：长度为36个字符 **默认取值：** 0
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public ConfirmPolicyAntileakageMapRequest withLang(String lang) {
         this.lang = lang;
@@ -21,7 +43,7 @@ public class ConfirmPolicyAntileakageMapRequest {
     }
 
     /**
-     * **参数解释：** 语言的类型 - cn代表中文 - en代表英文  **约束限制：** 不涉及 **取值范围：** - cn - en  **默认取值：** - cn
+     * **参数解释：**  语言类型  **约束限制：**  不涉及  **取值范围：**  - cn 中文  - en 英文  **默认取值：**  cn
      * @return lang
      */
     public String getLang() {
@@ -41,18 +63,20 @@ public class ConfirmPolicyAntileakageMapRequest {
             return false;
         }
         ConfirmPolicyAntileakageMapRequest that = (ConfirmPolicyAntileakageMapRequest) obj;
-        return Objects.equals(this.lang, that.lang);
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.lang, that.lang);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(lang);
+        return Objects.hash(enterpriseProjectId, lang);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ConfirmPolicyAntileakageMapRequest {\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    lang: ").append(toIndentedString(lang)).append("\n");
         sb.append("}");
         return sb.toString();

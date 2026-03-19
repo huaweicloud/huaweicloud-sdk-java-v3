@@ -201,6 +201,20 @@ public class PutObjectRequest extends SdkStreamRequest {
     private String xObsServerSideEncryptionKmsKeyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-server-side-encryption-bucket-key-enabled")
+
+    @JacksonXmlProperty(localName = "x-obs-server-side-encryption-bucket-key-enabled")
+
+    private String xObsServerSideEncryptionBucketKeyEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-server-side-data-encryption")
+
+    @JacksonXmlProperty(localName = "x-obs-server-side-data-encryption")
+
+    private String xObsServerSideDataEncryption;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x-obs-server-side-encryption-customer-algorithm")
 
     @JacksonXmlProperty(localName = "x-obs-server-side-encryption-customer-algorithm")
@@ -234,6 +248,27 @@ public class PutObjectRequest extends SdkStreamRequest {
     @JacksonXmlProperty(localName = "x-obs-expires")
 
     private Integer xObsExpires;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-tagging")
+
+    @JacksonXmlProperty(localName = "x-obs-tagging")
+
+    private String xObsTagging;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-object-lock-mode")
+
+    @JacksonXmlProperty(localName = "x-obs-object-lock-mode")
+
+    private String xObsObjectLockMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-object-lock-retain-until-date")
+
+    @JacksonXmlProperty(localName = "x-obs-object-lock-retain-until-date")
+
+    private String xObsObjectLockRetainUntilDate;
 
     public PutObjectRequest withBucketName(String bucketName) {
         this.bucketName = bucketName;
@@ -512,6 +547,45 @@ public class PutObjectRequest extends SdkStreamRequest {
         this.xObsServerSideEncryptionKmsKeyId = xObsServerSideEncryptionKmsKeyId;
     }
 
+    public PutObjectRequest withXObsServerSideEncryptionBucketKeyEnabled(
+        String xObsServerSideEncryptionBucketKeyEnabled) {
+        this.xObsServerSideEncryptionBucketKeyEnabled = xObsServerSideEncryptionBucketKeyEnabled;
+        return this;
+    }
+
+    /**
+     * SSE-KMS桶密钥功能开关。 示例：x-obs-server-side-encryption-bucket-key-enabled:true 约束：当您设置本头域为“true”时，必须同时设置本接口的另一个头域x-obs-server-side-encryption-kms-key-id以指定密钥ID。 
+     * @return xObsServerSideEncryptionBucketKeyEnabled
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-server-side-encryption-bucket-key-enabled")
+    public String getXObsServerSideEncryptionBucketKeyEnabled() {
+        return xObsServerSideEncryptionBucketKeyEnabled;
+    }
+
+    public void setXObsServerSideEncryptionBucketKeyEnabled(String xObsServerSideEncryptionBucketKeyEnabled) {
+        this.xObsServerSideEncryptionBucketKeyEnabled = xObsServerSideEncryptionBucketKeyEnabled;
+    }
+
+    public PutObjectRequest withXObsServerSideDataEncryption(String xObsServerSideDataEncryption) {
+        this.xObsServerSideDataEncryption = xObsServerSideDataEncryption;
+        return this;
+    }
+
+    /**
+     * 该头域表示对象使用的数据加密算法。 示例：x-obs-server-side-data-encryption：SM4 约束：仅在SSE-KMS加密方式下使用该头域。      不携带该头域则使用AES256算法。 
+     * @return xObsServerSideDataEncryption
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-server-side-data-encryption")
+    public String getXObsServerSideDataEncryption() {
+        return xObsServerSideDataEncryption;
+    }
+
+    public void setXObsServerSideDataEncryption(String xObsServerSideDataEncryption) {
+        this.xObsServerSideDataEncryption = xObsServerSideDataEncryption;
+    }
+
     public PutObjectRequest withXObsServerSideEncryptionCustomerAlgorithm(
         String xObsServerSideEncryptionCustomerAlgorithm) {
         this.xObsServerSideEncryptionCustomerAlgorithm = xObsServerSideEncryptionCustomerAlgorithm;
@@ -606,6 +680,63 @@ public class PutObjectRequest extends SdkStreamRequest {
         this.xObsExpires = xObsExpires;
     }
 
+    public PutObjectRequest withXObsTagging(String xObsTagging) {
+        this.xObsTagging = xObsTagging;
+        return this;
+    }
+
+    /**
+     * 以键值对（Key-Value）的形式指定Object的标签信息，可同时设置多个标签。 示例：x-obs-tagging:TagA=A&TagB&TagC 约束：Key或Value包含特殊字符以及“=”、中文字符时，需要进行URL编码处理。      如果某项没有“=”，则看作Value为空字符串。 
+     * @return xObsTagging
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-tagging")
+    public String getXObsTagging() {
+        return xObsTagging;
+    }
+
+    public void setXObsTagging(String xObsTagging) {
+        this.xObsTagging = xObsTagging;
+    }
+
+    public PutObjectRequest withXObsObjectLockMode(String xObsObjectLockMode) {
+        this.xObsObjectLockMode = xObsObjectLockMode;
+        return this;
+    }
+
+    /**
+     * 要应用于此对象的WORM模式。 示例：x-obs-object-lock-mode:COMPLIANCE 约束：仅支持COMPLIANCE，即合规模式。      该参数需要和x-obs-object-lock-retain-until-date一同使用。 
+     * @return xObsObjectLockMode
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-object-lock-mode")
+    public String getXObsObjectLockMode() {
+        return xObsObjectLockMode;
+    }
+
+    public void setXObsObjectLockMode(String xObsObjectLockMode) {
+        this.xObsObjectLockMode = xObsObjectLockMode;
+    }
+
+    public PutObjectRequest withXObsObjectLockRetainUntilDate(String xObsObjectLockRetainUntilDate) {
+        this.xObsObjectLockRetainUntilDate = xObsObjectLockRetainUntilDate;
+        return this;
+    }
+
+    /**
+     * 此对象的WORM策略过期的截止时间。 示例：x-obs-object-lock-retain-until-date:2015-07-01T04:11:15Z 约束：格式要求为UTC时间，并符合ISO 8601标准。如：2015-07-01T04:11:15Z。      该参数需要和x-obs-object-lock-mode一同使用。 
+     * @return xObsObjectLockRetainUntilDate
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-object-lock-retain-until-date")
+    public String getXObsObjectLockRetainUntilDate() {
+        return xObsObjectLockRetainUntilDate;
+    }
+
+    public void setXObsObjectLockRetainUntilDate(String xObsObjectLockRetainUntilDate) {
+        this.xObsObjectLockRetainUntilDate = xObsObjectLockRetainUntilDate;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -627,12 +758,17 @@ public class PutObjectRequest extends SdkStreamRequest {
             && Objects.equals(this.xObsWebsiteRedirectLocation, that.xObsWebsiteRedirectLocation)
             && Objects.equals(this.xObsServerSideEncryption, that.xObsServerSideEncryption)
             && Objects.equals(this.xObsServerSideEncryptionKmsKeyId, that.xObsServerSideEncryptionKmsKeyId)
+            && Objects.equals(this.xObsServerSideEncryptionBucketKeyEnabled,
+                that.xObsServerSideEncryptionBucketKeyEnabled)
+            && Objects.equals(this.xObsServerSideDataEncryption, that.xObsServerSideDataEncryption)
             && Objects.equals(this.xObsServerSideEncryptionCustomerAlgorithm,
                 that.xObsServerSideEncryptionCustomerAlgorithm)
             && Objects.equals(this.xObsServerSideEncryptionCustomerKey, that.xObsServerSideEncryptionCustomerKey)
             && Objects.equals(this.xObsServerSideEncryptionCustomerKeyMD5, that.xObsServerSideEncryptionCustomerKeyMD5)
             && Objects.equals(this.successActionRedirect, that.successActionRedirect)
-            && Objects.equals(this.xObsExpires, that.xObsExpires);
+            && Objects.equals(this.xObsExpires, that.xObsExpires) && Objects.equals(this.xObsTagging, that.xObsTagging)
+            && Objects.equals(this.xObsObjectLockMode, that.xObsObjectLockMode)
+            && Objects.equals(this.xObsObjectLockRetainUntilDate, that.xObsObjectLockRetainUntilDate);
     }
 
     @Override
@@ -652,11 +788,16 @@ public class PutObjectRequest extends SdkStreamRequest {
             xObsWebsiteRedirectLocation,
             xObsServerSideEncryption,
             xObsServerSideEncryptionKmsKeyId,
+            xObsServerSideEncryptionBucketKeyEnabled,
+            xObsServerSideDataEncryption,
             xObsServerSideEncryptionCustomerAlgorithm,
             xObsServerSideEncryptionCustomerKey,
             xObsServerSideEncryptionCustomerKeyMD5,
             successActionRedirect,
-            xObsExpires);
+            xObsExpires,
+            xObsTagging,
+            xObsObjectLockMode,
+            xObsObjectLockRetainUntilDate);
     }
 
     @Override
@@ -682,6 +823,12 @@ public class PutObjectRequest extends SdkStreamRequest {
         sb.append("    xObsServerSideEncryptionKmsKeyId: ")
             .append(toIndentedString(xObsServerSideEncryptionKmsKeyId))
             .append("\n");
+        sb.append("    xObsServerSideEncryptionBucketKeyEnabled: ")
+            .append(toIndentedString(xObsServerSideEncryptionBucketKeyEnabled))
+            .append("\n");
+        sb.append("    xObsServerSideDataEncryption: ")
+            .append(toIndentedString(xObsServerSideDataEncryption))
+            .append("\n");
         sb.append("    xObsServerSideEncryptionCustomerAlgorithm: ")
             .append(toIndentedString(xObsServerSideEncryptionCustomerAlgorithm))
             .append("\n");
@@ -693,6 +840,11 @@ public class PutObjectRequest extends SdkStreamRequest {
             .append("\n");
         sb.append("    successActionRedirect: ").append(toIndentedString(successActionRedirect)).append("\n");
         sb.append("    xObsExpires: ").append(toIndentedString(xObsExpires)).append("\n");
+        sb.append("    xObsTagging: ").append(toIndentedString(xObsTagging)).append("\n");
+        sb.append("    xObsObjectLockMode: ").append(toIndentedString(xObsObjectLockMode)).append("\n");
+        sb.append("    xObsObjectLockRetainUntilDate: ")
+            .append(toIndentedString(xObsObjectLockRetainUntilDate))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

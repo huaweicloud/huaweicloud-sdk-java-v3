@@ -250,7 +250,7 @@ public class BatchCreateAntileakageRuleRequestBody {
     }
 
     /**
-     * 添加规则的策略id列表。策略id从\"查询防护策略列表\"(ListPolicy)接口获取，多个策略之间用“,”隔开
+     * **参数解释：** 添加规则的策略id列表。策略id从\"查询防护策略列表\"(ListPolicy)接口获取，多个策略之间用“,”隔开 **约束限制：** 不能为空 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return policyIds
      */
     public List<String> getPolicyIds() {

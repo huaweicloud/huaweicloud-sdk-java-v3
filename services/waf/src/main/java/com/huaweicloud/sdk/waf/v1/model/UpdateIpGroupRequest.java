@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -21,10 +26,86 @@ public class UpdateIpGroupRequest {
 
     private String id;
 
+    /**
+     * **参数解释：** 修改ip地址组时，此为必传字段 **约束限制：** 不涉及 **取值范围：** - add 添加 - delete 删除 - update 修改 **默认取值：** 不涉及
+     */
+    public static final class ActionEnum {
+
+        /**
+         * Enum ADD for value: "add"
+         */
+        public static final ActionEnum ADD = new ActionEnum("add");
+
+        /**
+         * Enum DELETE for value: "delete"
+         */
+        public static final ActionEnum DELETE = new ActionEnum("delete");
+
+        /**
+         * Enum UPDATE for value: "update"
+         */
+        public static final ActionEnum UPDATE = new ActionEnum("update");
+
+        private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ActionEnum> createStaticFields() {
+            Map<String, ActionEnum> map = new HashMap<>();
+            map.put("add", ADD);
+            map.put("delete", DELETE);
+            map.put("update", UPDATE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ActionEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ActionEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
+        }
+
+        public static ActionEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ActionEnum) {
+                return this.value.equals(((ActionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
-    private String action;
+    private ActionEnum action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
@@ -37,7 +118,7 @@ public class UpdateIpGroupRequest {
     }
 
     /**
-     * **参数解释：** 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目ID。若需要查询当前用户所有企业项目绑定的资源信息，请传参all_granted_eps。 **约束限制：** 不涉及 **取值范围：**  - 0：代表default企业项目  - all_granted_eps：代表所有企业项目  - 其它企业项目ID：长度为36个字符  **默认取值：** 0
+     * **参数解释：** 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目ID。若需要查询当前用户所有企业项目绑定的资源信息，请传参all_granted_eps。 **约束限制：** 不涉及 **取值范围：**  - 0：代表default企业项目  - all_granted_eps：代表所有企业项目  - 其它企业项目ID：长度为36个字符 **默认取值：** 0
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -54,7 +135,7 @@ public class UpdateIpGroupRequest {
     }
 
     /**
-     * ip地址组id
+     * **参数解释：** ip地址组id，可从查询地址组列表(ListIpGroup)接口中获取 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return id
      */
     public String getId() {
@@ -65,20 +146,20 @@ public class UpdateIpGroupRequest {
         this.id = id;
     }
 
-    public UpdateIpGroupRequest withAction(String action) {
+    public UpdateIpGroupRequest withAction(ActionEnum action) {
         this.action = action;
         return this;
     }
 
     /**
-     * 增量修改ip地址组时，此为必传字段，传入“add”;删除一个或者多个ip时传入“delete”
+     * **参数解释：** 修改ip地址组时，此为必传字段 **约束限制：** 不涉及 **取值范围：** - add 添加 - delete 删除 - update 修改 **默认取值：** 不涉及
      * @return action
      */
-    public String getAction() {
+    public ActionEnum getAction() {
         return action;
     }
 
-    public void setAction(String action) {
+    public void setAction(ActionEnum action) {
         this.action = action;
     }
 

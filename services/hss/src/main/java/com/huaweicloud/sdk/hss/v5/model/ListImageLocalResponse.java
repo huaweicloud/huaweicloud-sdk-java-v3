@@ -30,7 +30,7 @@ public class ListImageLocalResponse extends SdkResponse {
     }
 
     /**
-     * 本地镜像总数
+     * **参数解释** 符合所有筛选条件的本地镜像总记录数，用于分页计算总页数 **取值范围** 取值0-2147483647 
      * minimum: 0
      * maximum: 2147483547
      * @return totalNum
@@ -65,7 +65,7 @@ public class ListImageLocalResponse extends SdkResponse {
     }
 
     /**
-     * 本地镜像数据列表
+     * **参数解释** 包含查询到的本地镜像详情，每个元素对应一个本地镜像的完整信息 **取值范围** 数组长度0-limit（每页显示个数），元素结构符合ImageLocalInfo定义，数组为空表示无匹配结果 
      * @return dataList
      */
     public List<ImageLocalInfo> getDataList() {

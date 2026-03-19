@@ -196,7 +196,7 @@ public class WhiteBlackIpResponseBody {
     }
 
     /**
-     * 防护动作：  - 0拦截  - 1放行  - 2仅记录
+     * 防护动作：  - 0 拦截  - 1 放行  - 2 仅记录
      * @return white
      */
     public Integer getWhite() {

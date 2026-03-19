@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -26,12 +31,76 @@ public class BatchUpdateIpReputationRuleRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
-    private BatchUpdateIpReputationRuleRequestBodyAction action;
+    private CreateIpReputationRuleRequestBodyAction action;
+
+    /**
+     * **参数解释：** 信誉类型（目前只支持idc） **约束限制：** 不涉及 **取值范围：** - idc  **默认取值：** 不涉及
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum IDC for value: "idc"
+         */
+        public static final TypeEnum IDC = new TypeEnum("idc");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("idc", IDC);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
 
-    private String type;
+    private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -41,7 +110,7 @@ public class BatchUpdateIpReputationRuleRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_rule_ids")
 
-    private List<PolicyRuleIdRequestBodyPolicyRuleIds> policyRuleIds = null;
+    private List<BatchUpdateIpReputationRuleRequestBodyPolicyRuleIds> policyRuleIds = null;
 
     public BatchUpdateIpReputationRuleRequestBody withName(String name) {
         this.name = name;
@@ -49,7 +118,7 @@ public class BatchUpdateIpReputationRuleRequestBody {
     }
 
     /**
-     * **参数解释：** 规则名称 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 规则名称 **约束限制：** 长度范围：[1, 256] **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return name
      */
     public String getName() {
@@ -77,15 +146,15 @@ public class BatchUpdateIpReputationRuleRequestBody {
         this.description = description;
     }
 
-    public BatchUpdateIpReputationRuleRequestBody withAction(BatchUpdateIpReputationRuleRequestBodyAction action) {
+    public BatchUpdateIpReputationRuleRequestBody withAction(CreateIpReputationRuleRequestBodyAction action) {
         this.action = action;
         return this;
     }
 
     public BatchUpdateIpReputationRuleRequestBody withAction(
-        Consumer<BatchUpdateIpReputationRuleRequestBodyAction> actionSetter) {
+        Consumer<CreateIpReputationRuleRequestBodyAction> actionSetter) {
         if (this.action == null) {
-            this.action = new BatchUpdateIpReputationRuleRequestBodyAction();
+            this.action = new CreateIpReputationRuleRequestBodyAction();
             actionSetter.accept(this.action);
         }
 
@@ -96,28 +165,28 @@ public class BatchUpdateIpReputationRuleRequestBody {
      * Get action
      * @return action
      */
-    public BatchUpdateIpReputationRuleRequestBodyAction getAction() {
+    public CreateIpReputationRuleRequestBodyAction getAction() {
         return action;
     }
 
-    public void setAction(BatchUpdateIpReputationRuleRequestBodyAction action) {
+    public void setAction(CreateIpReputationRuleRequestBodyAction action) {
         this.action = action;
     }
 
-    public BatchUpdateIpReputationRuleRequestBody withType(String type) {
+    public BatchUpdateIpReputationRuleRequestBody withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
     /**
-     * **参数解释：** 规则类型（如idc表示机房IP情报类型） **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 信誉类型（目前只支持idc） **约束限制：** 不涉及 **取值范围：** - idc  **默认取值：** 不涉及
      * @return type
      */
-    public String getType() {
+    public TypeEnum getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(TypeEnum type) {
         this.type = type;
     }
 
@@ -143,7 +212,7 @@ public class BatchUpdateIpReputationRuleRequestBody {
     }
 
     /**
-     * **参数解释：** 标签列表，关联的情报标识 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 标签列表，用于指定关联的情报标识，可通过ConfirmPolicyIpReputationMap接口查询；多个标识之间使用逗号\",\"分隔 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return tags
      */
     public List<String> getTags() {
@@ -155,13 +224,13 @@ public class BatchUpdateIpReputationRuleRequestBody {
     }
 
     public BatchUpdateIpReputationRuleRequestBody withPolicyRuleIds(
-        List<PolicyRuleIdRequestBodyPolicyRuleIds> policyRuleIds) {
+        List<BatchUpdateIpReputationRuleRequestBodyPolicyRuleIds> policyRuleIds) {
         this.policyRuleIds = policyRuleIds;
         return this;
     }
 
     public BatchUpdateIpReputationRuleRequestBody addPolicyRuleIdsItem(
-        PolicyRuleIdRequestBodyPolicyRuleIds policyRuleIdsItem) {
+        BatchUpdateIpReputationRuleRequestBodyPolicyRuleIds policyRuleIdsItem) {
         if (this.policyRuleIds == null) {
             this.policyRuleIds = new ArrayList<>();
         }
@@ -170,7 +239,7 @@ public class BatchUpdateIpReputationRuleRequestBody {
     }
 
     public BatchUpdateIpReputationRuleRequestBody withPolicyRuleIds(
-        Consumer<List<PolicyRuleIdRequestBodyPolicyRuleIds>> policyRuleIdsSetter) {
+        Consumer<List<BatchUpdateIpReputationRuleRequestBodyPolicyRuleIds>> policyRuleIdsSetter) {
         if (this.policyRuleIds == null) {
             this.policyRuleIds = new ArrayList<>();
         }
@@ -182,11 +251,11 @@ public class BatchUpdateIpReputationRuleRequestBody {
      * **参数解释：** 策略和规则id数组，关联防护策略与对应的规则集合 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return policyRuleIds
      */
-    public List<PolicyRuleIdRequestBodyPolicyRuleIds> getPolicyRuleIds() {
+    public List<BatchUpdateIpReputationRuleRequestBodyPolicyRuleIds> getPolicyRuleIds() {
         return policyRuleIds;
     }
 
-    public void setPolicyRuleIds(List<PolicyRuleIdRequestBodyPolicyRuleIds> policyRuleIds) {
+    public void setPolicyRuleIds(List<BatchUpdateIpReputationRuleRequestBodyPolicyRuleIds> policyRuleIds) {
         this.policyRuleIds = policyRuleIds;
     }
 

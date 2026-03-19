@@ -21,7 +21,7 @@ public class UpdatePrivacyRuleRequestBody {
     private String url;
 
     /**
-     * **参数解释：** 屏蔽字段 **约束限制：** 不涉及 **取值范围：**  - params: 请求参数  - cookie: 根据Cookie区分的Web访问者  - header: 自定义HTTP首部  - form: 表单参数  **默认取值：** 不涉及
+     * **参数解释：** 屏蔽字段 **约束限制：** 不涉及 **取值范围：**  - params: 请求参数  - cookie: 根据Cookie区分的Web访问者  - header: 自定义HTTP首部  - form: 表单参数 **默认取值：** 不涉及
      */
     public static final class CategoryEnum {
 
@@ -123,7 +123,7 @@ public class UpdatePrivacyRuleRequestBody {
     }
 
     /**
-     * 隐私屏蔽规则防护的url，需要填写标准的url格式，例如/admin/xxx或者/admin/_*,以\"*\"（星号）结尾代表路径前缀
+     * **参数解释：** 隐私屏蔽规则防护的url，需要填写标准的url格式，例如/admin/xxx或者/admin/\\*，以\"\\*\"结尾的路径前缀表示一个通配符，用于匹配该路径前缀下的所有子路径。例如，如果你有一个路径前缀/admin/，那么它将匹配所有以/admin/开头的URL路径。将url的参数设置为/admin/\\*，所有以/admin/开头的URL路径都会被该规则所覆盖 **约束限制：** 标准URL字符串或者URL前缀匹配字符串 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return url
      */
     public String getUrl() {
@@ -140,7 +140,7 @@ public class UpdatePrivacyRuleRequestBody {
     }
 
     /**
-     * **参数解释：** 屏蔽字段 **约束限制：** 不涉及 **取值范围：**  - params: 请求参数  - cookie: 根据Cookie区分的Web访问者  - header: 自定义HTTP首部  - form: 表单参数  **默认取值：** 不涉及
+     * **参数解释：** 屏蔽字段 **约束限制：** 不涉及 **取值范围：**  - params: 请求参数  - cookie: 根据Cookie区分的Web访问者  - header: 自定义HTTP首部  - form: 表单参数 **默认取值：** 不涉及
      * @return category
      */
     public CategoryEnum getCategory() {
@@ -157,7 +157,7 @@ public class UpdatePrivacyRuleRequestBody {
     }
 
     /**
-     * 屏蔽字段名，根据“屏蔽字段”设置字段名，被屏蔽的字段将不会出现在日志中。屏蔽字段名长度不能超过2048字节，且只能由数字、字母、下划线和中划线组成
+     * **参数解释：** 屏蔽字段名，被屏蔽的字段将不会出现在日志中 **约束限制：** 长度不能超过2048字节 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return index
      */
     public String getIndex() {

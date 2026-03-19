@@ -41,7 +41,7 @@ public class ListJobInstancesRequest {
     private Long maxPlanTime;
 
     /**
-     * 实例运行状态： - waiting：等待运行 - running：运行中 - success：运行成功 - fail： 运行失败 - running-exception：运行异常 - pause： 暂停 - manual-stop：取消
+     * 实例运行状态： - waiting：等待运行 - running：运行中 - success：运行成功 - forceSuccess：强制成功 - ignoreSuccess：忽略失败 - freeze：冻结 - skip-by-depend：跳过 - waiting-confirm：待确认执行 - fail： 运行失败 - running-exception：运行异常 - pause： 暂停 - manual-stop：取消
      */
     public static final class StatusEnum {
 
@@ -59,6 +59,31 @@ public class ListJobInstancesRequest {
          * Enum SUCCESS for value: "success"
          */
         public static final StatusEnum SUCCESS = new StatusEnum("success");
+
+        /**
+         * Enum FORCESUCCESS for value: "forceSuccess"
+         */
+        public static final StatusEnum FORCESUCCESS = new StatusEnum("forceSuccess");
+
+        /**
+         * Enum IGNORESUCCESS for value: "ignoreSuccess"
+         */
+        public static final StatusEnum IGNORESUCCESS = new StatusEnum("ignoreSuccess");
+
+        /**
+         * Enum FREEZE for value: "freeze"
+         */
+        public static final StatusEnum FREEZE = new StatusEnum("freeze");
+
+        /**
+         * Enum SKIP_BY_DEPEND for value: "skip-by-depend"
+         */
+        public static final StatusEnum SKIP_BY_DEPEND = new StatusEnum("skip-by-depend");
+
+        /**
+         * Enum WAITING_CONFIRM for value: "waiting-confirm"
+         */
+        public static final StatusEnum WAITING_CONFIRM = new StatusEnum("waiting-confirm");
 
         /**
          * Enum FAIL for value: "fail"
@@ -87,6 +112,11 @@ public class ListJobInstancesRequest {
             map.put("waiting", WAITING);
             map.put("running", RUNNING);
             map.put("success", SUCCESS);
+            map.put("forceSuccess", FORCESUCCESS);
+            map.put("ignoreSuccess", IGNORESUCCESS);
+            map.put("freeze", FREEZE);
+            map.put("skip-by-depend", SKIP_BY_DEPEND);
+            map.put("waiting-confirm", WAITING_CONFIRM);
             map.put("fail", FAIL);
             map.put("running-exception", RUNNING_EXCEPTION);
             map.put("pause", PAUSE);
@@ -339,7 +369,7 @@ public class ListJobInstancesRequest {
     }
 
     /**
-     * 实例运行状态： - waiting：等待运行 - running：运行中 - success：运行成功 - fail： 运行失败 - running-exception：运行异常 - pause： 暂停 - manual-stop：取消
+     * 实例运行状态： - waiting：等待运行 - running：运行中 - success：运行成功 - forceSuccess：强制成功 - ignoreSuccess：忽略失败 - freeze：冻结 - skip-by-depend：跳过 - waiting-confirm：待确认执行 - fail： 运行失败 - running-exception：运行异常 - pause： 暂停 - manual-stop：取消
      * @return status
      */
     public StatusEnum getStatus() {

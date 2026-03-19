@@ -91,6 +91,26 @@ public class ListHostStatusRequest {
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_name_list")
+
+    private String hostNameList;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_id_list")
+
+    private String hostIdList;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ip_list")
+
+    private String publicIpList;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "private_ip_list")
+
+    private String privateIpList;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "has_intrusion")
 
     private Boolean hasIntrusion;
@@ -480,6 +500,74 @@ public class ListHostStatusRequest {
 
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
+    }
+
+    public ListHostStatusRequest withHostNameList(String hostNameList) {
+        this.hostNameList = hostNameList;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 服务器名称列表 **约束限制**: 不涉及 **取值范围**: 单个服务器名称字符长度1-64位 批量查询服务器名称个数1-60个 采用逗号分割 **默认取值**: 不涉及
+     * @return hostNameList
+     */
+    public String getHostNameList() {
+        return hostNameList;
+    }
+
+    public void setHostNameList(String hostNameList) {
+        this.hostNameList = hostNameList;
+    }
+
+    public ListHostStatusRequest withHostIdList(String hostIdList) {
+        this.hostIdList = hostIdList;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 服务器ID列表 **约束限制**: 不涉及 **取值范围**: 单个服务器ID字符长度1-36位 批量查询服务器ID个数1-100个 采用逗号分割 **默认取值**: 不涉及
+     * @return hostIdList
+     */
+    public String getHostIdList() {
+        return hostIdList;
+    }
+
+    public void setHostIdList(String hostIdList) {
+        this.hostIdList = hostIdList;
+    }
+
+    public ListHostStatusRequest withPublicIpList(String publicIpList) {
+        this.publicIpList = publicIpList;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 服务器公网IP列表 **约束限制**: 不涉及 **取值范围**: 单个服务器公网IP字符长度1-39位 批量查询服务器公网IP个数1-100个 采用逗号分割 **默认取值**: 不涉及
+     * @return publicIpList
+     */
+    public String getPublicIpList() {
+        return publicIpList;
+    }
+
+    public void setPublicIpList(String publicIpList) {
+        this.publicIpList = publicIpList;
+    }
+
+    public ListHostStatusRequest withPrivateIpList(String privateIpList) {
+        this.privateIpList = privateIpList;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 服务器私有IP列表 **约束限制**: 不涉及 **取值范围**: 单个服务器私有IP字符长度1-39位 批量查询服务器私有IP个数1-100个 采用逗号分割 **默认取值**: 不涉及
+     * @return privateIpList
+     */
+    public String getPrivateIpList() {
+        return privateIpList;
+    }
+
+    public void setPrivateIpList(String privateIpList) {
+        this.privateIpList = privateIpList;
     }
 
     public ListHostStatusRequest withHasIntrusion(Boolean hasIntrusion) {
@@ -912,6 +1000,9 @@ public class ListHostStatusRequest {
             && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.ipAddr, that.ipAddr)
             && Objects.equals(this.protectStatus, that.protectStatus) && Objects.equals(this.groupId, that.groupId)
             && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.hostNameList, that.hostNameList) && Objects.equals(this.hostIdList, that.hostIdList)
+            && Objects.equals(this.publicIpList, that.publicIpList)
+            && Objects.equals(this.privateIpList, that.privateIpList)
             && Objects.equals(this.hasIntrusion, that.hasIntrusion) && Objects.equals(this.hasVul, that.hasVul)
             && Objects.equals(this.hasBaseline, that.hasBaseline) && Objects.equals(this.sortKey, that.sortKey)
             && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.policyGroupId, that.policyGroupId)
@@ -948,6 +1039,10 @@ public class ListHostStatusRequest {
             groupId,
             groupName,
             vpcId,
+            hostNameList,
+            hostIdList,
+            publicIpList,
+            privateIpList,
             hasIntrusion,
             hasVul,
             hasBaseline,
@@ -994,6 +1089,10 @@ public class ListHostStatusRequest {
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    hostNameList: ").append(toIndentedString(hostNameList)).append("\n");
+        sb.append("    hostIdList: ").append(toIndentedString(hostIdList)).append("\n");
+        sb.append("    publicIpList: ").append(toIndentedString(publicIpList)).append("\n");
+        sb.append("    privateIpList: ").append(toIndentedString(privateIpList)).append("\n");
         sb.append("    hasIntrusion: ").append(toIndentedString(hasIntrusion)).append("\n");
         sb.append("    hasVul: ").append(toIndentedString(hasVul)).append("\n");
         sb.append("    hasBaseline: ").append(toIndentedString(hasBaseline)).append("\n");

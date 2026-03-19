@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -35,10 +40,80 @@ public class CreateWhiteBlackIpRuleRequestBody {
 
     private String ipGroupId;
 
+    /**
+     * **参数解释：** 生效模式 **约束限制：** 不涉及 **取值范围：** - permanent 立即生效 - customize 自定义生效 **默认取值：** permanent
+     */
+    public static final class TimeModeEnum {
+
+        /**
+         * Enum PERMANENT for value: "permanent"
+         */
+        public static final TimeModeEnum PERMANENT = new TimeModeEnum("permanent");
+
+        /**
+         * Enum CUSTOMIZE for value: "customize"
+         */
+        public static final TimeModeEnum CUSTOMIZE = new TimeModeEnum("customize");
+
+        private static final Map<String, TimeModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TimeModeEnum> createStaticFields() {
+            Map<String, TimeModeEnum> map = new HashMap<>();
+            map.put("permanent", PERMANENT);
+            map.put("customize", CUSTOMIZE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TimeModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TimeModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TimeModeEnum(value));
+        }
+
+        public static TimeModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TimeModeEnum) {
+                return this.value.equals(((TimeModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time_mode")
 
-    private String timeMode;
+    private TimeModeEnum timeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start")
@@ -56,7 +131,7 @@ public class CreateWhiteBlackIpRuleRequestBody {
     }
 
     /**
-     * 规则名称只能由字母、数字、-、_和.组成，长度不能超过64个字符
+     * **参数解释：** 规则名称 **约束限制：** 长度范围：[1, 256] **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return name
      */
     public String getName() {
@@ -73,7 +148,7 @@ public class CreateWhiteBlackIpRuleRequestBody {
     }
 
     /**
-     * 黑白名单ip地址，需要输入标准的ip地址或地址段，例如：42.123.120.66或42.123.120.0/16
+     * **参数解释：** ip地址，需要输入标准的ip地址或地址段，例如：42.123.120.66或42.123.120.0/16 **约束限制：** 参数“addr”和“ip_group_id”必须存在一个，同时存在时以参数“addr”为准 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return addr
      */
     public String getAddr() {
@@ -107,7 +182,7 @@ public class CreateWhiteBlackIpRuleRequestBody {
     }
 
     /**
-     * 防护动作：  - 0 拦截  - 1 放行   - 2 仅记录
+     * **参数解释：** 防护动作 **约束限制：** 不涉及 **取值范围：**  - 0 拦截  - 1 放行   - 2 仅记录 **默认取值：** 不涉及
      * @return white
      */
     public Integer getWhite() {
@@ -124,7 +199,7 @@ public class CreateWhiteBlackIpRuleRequestBody {
     }
 
     /**
-     * 创建的Ip地址组id，该参数与addr参数只能使用一个；Ip地址组可在控制台中对象管理->地址组管理中添加。
+     * **参数解释：** Ip地址组id，可在控制台中对象管理->地址组管理中添加 **约束限制：** 参数“addr”和“ip_group_id”必须存在一个，同时存在时以参数“addr”为准 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return ipGroupId
      */
     public String getIpGroupId() {
@@ -135,20 +210,20 @@ public class CreateWhiteBlackIpRuleRequestBody {
         this.ipGroupId = ipGroupId;
     }
 
-    public CreateWhiteBlackIpRuleRequestBody withTimeMode(String timeMode) {
+    public CreateWhiteBlackIpRuleRequestBody withTimeMode(TimeModeEnum timeMode) {
         this.timeMode = timeMode;
         return this;
     }
 
     /**
-     * 生效模式，默认为permanent（立即生效）,创建自定义生效规则时请输入：customize
+     * **参数解释：** 生效模式 **约束限制：** 不涉及 **取值范围：** - permanent 立即生效 - customize 自定义生效 **默认取值：** permanent
      * @return timeMode
      */
-    public String getTimeMode() {
+    public TimeModeEnum getTimeMode() {
         return timeMode;
     }
 
-    public void setTimeMode(String timeMode) {
+    public void setTimeMode(TimeModeEnum timeMode) {
         this.timeMode = timeMode;
     }
 

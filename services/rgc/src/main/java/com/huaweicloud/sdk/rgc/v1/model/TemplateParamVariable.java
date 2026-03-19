@@ -48,6 +48,11 @@ public class TemplateParamVariable {
 
     private List<TemplateParamVariableValidation> validations = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "latest_param")
+
+    private String latestParam;
+
     public TemplateParamVariable withDefault(Object _default) {
         this._default = _default;
         return this;
@@ -183,6 +188,23 @@ public class TemplateParamVariable {
         this.validations = validations;
     }
 
+    public TemplateParamVariable withLatestParam(String latestParam) {
+        this.latestParam = latestParam;
+        return this;
+    }
+
+    /**
+     * 最近一次的部署参数。
+     * @return latestParam
+     */
+    public String getLatestParam() {
+        return latestParam;
+    }
+
+    public void setLatestParam(String latestParam) {
+        this.latestParam = latestParam;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -195,12 +217,12 @@ public class TemplateParamVariable {
         return Objects.equals(this._default, that._default) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description) && Objects.equals(this.nullable, that.nullable)
             && Objects.equals(this.sensitive, that.sensitive) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.validations, that.validations);
+            && Objects.equals(this.validations, that.validations) && Objects.equals(this.latestParam, that.latestParam);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(_default, name, description, nullable, sensitive, type, validations);
+        return Objects.hash(_default, name, description, nullable, sensitive, type, validations, latestParam);
     }
 
     @Override
@@ -214,6 +236,7 @@ public class TemplateParamVariable {
         sb.append("    sensitive: ").append(toIndentedString(sensitive)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    validations: ").append(toIndentedString(validations)).append("\n");
+        sb.append("    latestParam: ").append(toIndentedString(latestParam)).append("\n");
         sb.append("}");
         return sb.toString();
     }

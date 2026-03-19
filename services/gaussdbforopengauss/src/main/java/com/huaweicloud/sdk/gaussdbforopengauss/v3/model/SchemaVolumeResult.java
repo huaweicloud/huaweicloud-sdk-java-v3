@@ -26,9 +26,9 @@ public class SchemaVolumeResult {
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "nsp_name")
+    @JsonProperty(value = "schema_name")
 
-    private String nspName;
+    private String schemaName;
 
     public SchemaVolumeResult withSchemaSize(String schemaSize) {
         this.schemaSize = schemaSize;
@@ -81,21 +81,21 @@ public class SchemaVolumeResult {
         this.userName = userName;
     }
 
-    public SchemaVolumeResult withNspName(String nspName) {
-        this.nspName = nspName;
+    public SchemaVolumeResult withSchemaName(String schemaName) {
+        this.schemaName = schemaName;
         return this;
     }
 
     /**
      * **参数解释**: schema名称空间的名称。 **取值范围**: 不涉及。 
-     * @return nspName
+     * @return schemaName
      */
-    public String getNspName() {
-        return nspName;
+    public String getSchemaName() {
+        return schemaName;
     }
 
-    public void setNspName(String nspName) {
-        this.nspName = nspName;
+    public void setSchemaName(String schemaName) {
+        this.schemaName = schemaName;
     }
 
     @Override
@@ -108,12 +108,12 @@ public class SchemaVolumeResult {
         }
         SchemaVolumeResult that = (SchemaVolumeResult) obj;
         return Objects.equals(this.schemaSize, that.schemaSize) && Objects.equals(this.tableCount, that.tableCount)
-            && Objects.equals(this.userName, that.userName) && Objects.equals(this.nspName, that.nspName);
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.schemaName, that.schemaName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(schemaSize, tableCount, userName, nspName);
+        return Objects.hash(schemaSize, tableCount, userName, schemaName);
     }
 
     @Override
@@ -123,7 +123,7 @@ public class SchemaVolumeResult {
         sb.append("    schemaSize: ").append(toIndentedString(schemaSize)).append("\n");
         sb.append("    tableCount: ").append(toIndentedString(tableCount)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
-        sb.append("    nspName: ").append(toIndentedString(nspName)).append("\n");
+        sb.append("    schemaName: ").append(toIndentedString(schemaName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

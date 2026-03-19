@@ -48,7 +48,7 @@ public class ListValueListRequest {
     }
 
     /**
-     * 分页查询时，每页包含多少条结果。范围1-100，默认值为10，表示每页包含10条结果。
+     * 分页查询时，每页包含多少条结果。范围-1-100，默认值为-1，表示查询全部结果。
      * @return pagesize
      */
     public Integer getPagesize() {

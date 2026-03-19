@@ -54,6 +54,11 @@ public class ListAntiVirusResultRequest {
     private List<String> severityList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "severities")
+
+    private String severities;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "asset_value")
 
     private String assetValue;
@@ -82,6 +87,16 @@ public class ListAntiVirusResultRequest {
     @JsonProperty(value = "manual_isolate")
 
     private Boolean manualIsolate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id_list")
+
+    private List<String> idList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "file_hash_list")
+
+    private List<String> fileHashList = null;
 
     public ListAntiVirusResultRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
@@ -228,7 +243,7 @@ public class ListAntiVirusResultRequest {
     }
 
     /**
-     * **参数解释**: 威胁等级 **约束限制**: 不涉及 **取值范围**: 威胁等级，包含如下:   - Low：低危   - Medium：中危   - High：高危   - Critical：致命 **默认取值**: 不涉及 
+     * **参数解释**: 威胁等级，已废弃 **约束限制**: 不涉及 **取值范围**: 威胁等级，包含如下:   - Low：低危   - Medium：中危   - High：高危   - Critical：致命 **默认取值**: 不涉及 
      * @return severityList
      */
     public List<String> getSeverityList() {
@@ -237,6 +252,23 @@ public class ListAntiVirusResultRequest {
 
     public void setSeverityList(List<String> severityList) {
         this.severityList = severityList;
+    }
+
+    public ListAntiVirusResultRequest withSeverities(String severities) {
+        this.severities = severities;
+        return this;
+    }
+
+    /**
+     * 威胁等级，包含如下:   - Low : 低危   - Medium : 中危   - High : 高危   - Critical : 危急
+     * @return severities
+     */
+    public String getSeverities() {
+        return severities;
+    }
+
+    public void setSeverities(String severities) {
+        this.severities = severities;
     }
 
     public ListAntiVirusResultRequest withAssetValue(String assetValue) {
@@ -341,6 +373,72 @@ public class ListAntiVirusResultRequest {
         this.manualIsolate = manualIsolate;
     }
 
+    public ListAntiVirusResultRequest withIdList(List<String> idList) {
+        this.idList = idList;
+        return this;
+    }
+
+    public ListAntiVirusResultRequest addIdListItem(String idListItem) {
+        if (this.idList == null) {
+            this.idList = new ArrayList<>();
+        }
+        this.idList.add(idListItem);
+        return this;
+    }
+
+    public ListAntiVirusResultRequest withIdList(Consumer<List<String>> idListSetter) {
+        if (this.idList == null) {
+            this.idList = new ArrayList<>();
+        }
+        idListSetter.accept(this.idList);
+        return this;
+    }
+
+    /**
+     * id列表
+     * @return idList
+     */
+    public List<String> getIdList() {
+        return idList;
+    }
+
+    public void setIdList(List<String> idList) {
+        this.idList = idList;
+    }
+
+    public ListAntiVirusResultRequest withFileHashList(List<String> fileHashList) {
+        this.fileHashList = fileHashList;
+        return this;
+    }
+
+    public ListAntiVirusResultRequest addFileHashListItem(String fileHashListItem) {
+        if (this.fileHashList == null) {
+            this.fileHashList = new ArrayList<>();
+        }
+        this.fileHashList.add(fileHashListItem);
+        return this;
+    }
+
+    public ListAntiVirusResultRequest withFileHashList(Consumer<List<String>> fileHashListSetter) {
+        if (this.fileHashList == null) {
+            this.fileHashList = new ArrayList<>();
+        }
+        fileHashListSetter.accept(this.fileHashList);
+        return this;
+    }
+
+    /**
+     * hash列表
+     * @return fileHashList
+     */
+    public List<String> getFileHashList() {
+        return fileHashList;
+    }
+
+    public void setFileHashList(List<String> fileHashList) {
+        this.fileHashList = fileHashList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -354,10 +452,11 @@ public class ListAntiVirusResultRequest {
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.privateIp, that.privateIp)
             && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.handleStatus, that.handleStatus)
-            && Objects.equals(this.severityList, that.severityList) && Objects.equals(this.assetValue, that.assetValue)
-            && Objects.equals(this.malwareName, that.malwareName) && Objects.equals(this.filePath, that.filePath)
-            && Objects.equals(this.fileHash, that.fileHash) && Objects.equals(this.taskName, that.taskName)
-            && Objects.equals(this.manualIsolate, that.manualIsolate);
+            && Objects.equals(this.severityList, that.severityList) && Objects.equals(this.severities, that.severities)
+            && Objects.equals(this.assetValue, that.assetValue) && Objects.equals(this.malwareName, that.malwareName)
+            && Objects.equals(this.filePath, that.filePath) && Objects.equals(this.fileHash, that.fileHash)
+            && Objects.equals(this.taskName, that.taskName) && Objects.equals(this.manualIsolate, that.manualIsolate)
+            && Objects.equals(this.idList, that.idList) && Objects.equals(this.fileHashList, that.fileHashList);
     }
 
     @Override
@@ -370,12 +469,15 @@ public class ListAntiVirusResultRequest {
             publicIp,
             handleStatus,
             severityList,
+            severities,
             assetValue,
             malwareName,
             filePath,
             fileHash,
             taskName,
-            manualIsolate);
+            manualIsolate,
+            idList,
+            fileHashList);
     }
 
     @Override
@@ -390,12 +492,15 @@ public class ListAntiVirusResultRequest {
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    handleStatus: ").append(toIndentedString(handleStatus)).append("\n");
         sb.append("    severityList: ").append(toIndentedString(severityList)).append("\n");
+        sb.append("    severities: ").append(toIndentedString(severities)).append("\n");
         sb.append("    assetValue: ").append(toIndentedString(assetValue)).append("\n");
         sb.append("    malwareName: ").append(toIndentedString(malwareName)).append("\n");
         sb.append("    filePath: ").append(toIndentedString(filePath)).append("\n");
         sb.append("    fileHash: ").append(toIndentedString(fileHash)).append("\n");
         sb.append("    taskName: ").append(toIndentedString(taskName)).append("\n");
         sb.append("    manualIsolate: ").append(toIndentedString(manualIsolate)).append("\n");
+        sb.append("    idList: ").append(toIndentedString(idList)).append("\n");
+        sb.append("    fileHashList: ").append(toIndentedString(fileHashList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

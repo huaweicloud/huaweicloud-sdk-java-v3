@@ -48,7 +48,7 @@ public class ShowAnticrawlerRuleRequest {
     }
 
     /**
-     * 防护策略id，通过指定防护策略id来指明查询该防护策略下的防护规则，您可以通过调用查询防护策略列表（ListPolicy）获取策略id
+     * **参数解释：** 防护策略id，您可以通过调用查询防护策略列表（ListPolicy）获取策略id **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return policyId
      */
     public String getPolicyId() {
@@ -65,7 +65,7 @@ public class ShowAnticrawlerRuleRequest {
     }
 
     /**
-     * 规则id
+     * **参数解释：** JS反爬虫规则id，您可以通过查询JS脚本反爬虫规则列表（ListAnticrawlerRules）接口的响应体中的id字段获取规则id **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return ruleId
      */
     public String getRuleId() {

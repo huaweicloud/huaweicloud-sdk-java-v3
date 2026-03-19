@@ -27,7 +27,7 @@ public class ShowWebProtectionRuleResponse extends SdkResponse {
     private String cveNumber;
 
     /**
-     * **参数解释：** 危险等级 - 1：高危 - 2：中危 - 3：低危  **取值范围：** - 1 - 2 - 3
+     * **参数解释：** 危险等级 - 1：高危 - 2：中危 - 3：低危 **取值范围：** - 1 - 2 - 3
      */
     public static final class RiskLevelEnum {
 
@@ -167,7 +167,7 @@ public class ShowWebProtectionRuleResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 危险等级 - 1：高危 - 2：中危 - 3：低危  **取值范围：** - 1 - 2 - 3
+     * **参数解释：** 危险等级 - 1：高危 - 2：中危 - 3：低危 **取值范围：** - 1 - 2 - 3
      * @return riskLevel
      */
     public RiskLevelEnum getRiskLevel() {

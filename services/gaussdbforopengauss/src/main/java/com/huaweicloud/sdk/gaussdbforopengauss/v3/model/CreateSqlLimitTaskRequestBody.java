@@ -76,7 +76,7 @@ public class CreateSqlLimitTaskRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_infos")
 
-    private List<CreateLimitTaskNodeOption> nodeInfos = null;
+    private List<CreateSqlLimitTaskNodeOption> nodeInfos = null;
 
     public CreateSqlLimitTaskRequestBody withTaskScope(String taskScope) {
         this.taskScope = taskScope;
@@ -282,12 +282,12 @@ public class CreateSqlLimitTaskRequestBody {
         this.databases = databases;
     }
 
-    public CreateSqlLimitTaskRequestBody withNodeInfos(List<CreateLimitTaskNodeOption> nodeInfos) {
+    public CreateSqlLimitTaskRequestBody withNodeInfos(List<CreateSqlLimitTaskNodeOption> nodeInfos) {
         this.nodeInfos = nodeInfos;
         return this;
     }
 
-    public CreateSqlLimitTaskRequestBody addNodeInfosItem(CreateLimitTaskNodeOption nodeInfosItem) {
+    public CreateSqlLimitTaskRequestBody addNodeInfosItem(CreateSqlLimitTaskNodeOption nodeInfosItem) {
         if (this.nodeInfos == null) {
             this.nodeInfos = new ArrayList<>();
         }
@@ -295,7 +295,7 @@ public class CreateSqlLimitTaskRequestBody {
         return this;
     }
 
-    public CreateSqlLimitTaskRequestBody withNodeInfos(Consumer<List<CreateLimitTaskNodeOption>> nodeInfosSetter) {
+    public CreateSqlLimitTaskRequestBody withNodeInfos(Consumer<List<CreateSqlLimitTaskNodeOption>> nodeInfosSetter) {
         if (this.nodeInfos == null) {
             this.nodeInfos = new ArrayList<>();
         }
@@ -307,11 +307,11 @@ public class CreateSqlLimitTaskRequestBody {
      * **参数解释**: CN节点信息列表 **约束限制**: 如果“limit_type”为SQL_ID，则“node_infos”必选。
      * @return nodeInfos
      */
-    public List<CreateLimitTaskNodeOption> getNodeInfos() {
+    public List<CreateSqlLimitTaskNodeOption> getNodeInfos() {
         return nodeInfos;
     }
 
-    public void setNodeInfos(List<CreateLimitTaskNodeOption> nodeInfos) {
+    public void setNodeInfos(List<CreateSqlLimitTaskNodeOption> nodeInfos) {
         this.nodeInfos = nodeInfos;
     }
 

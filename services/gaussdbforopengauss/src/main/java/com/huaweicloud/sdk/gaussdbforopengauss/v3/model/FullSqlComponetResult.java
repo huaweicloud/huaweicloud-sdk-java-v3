@@ -81,6 +81,11 @@ public class FullSqlComponetResult {
     private String query;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sql")
+
+    private String sql;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "thread_id")
 
     private String threadId;
@@ -501,6 +506,23 @@ public class FullSqlComponetResult {
 
     public void setQuery(String query) {
         this.query = query;
+    }
+
+    public FullSqlComponetResult withSql(String sql) {
+        this.sql = sql;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 解析后的原始SQL文本。 开启track_stmt_parameter参数后，会把SQL文本中的变量替换成真实值，展示原始的SQL。对于track_stmt_parameter参数关闭时采集的SQL文本，无法获取到SQL参数变量的值，展示的内容为空。 **取值范围**: 不涉及。
+     * @return sql
+     */
+    public String getSql() {
+        return sql;
+    }
+
+    public void setSql(String sql) {
+        this.sql = sql;
     }
 
     public FullSqlComponetResult withThreadId(String threadId) {
@@ -1169,8 +1191,9 @@ public class FullSqlComponetResult {
             && Objects.equals(this.parentSqlId, that.parentSqlId) && Objects.equals(this.sqlId, that.sqlId)
             && Objects.equals(this.sqlExecId, that.sqlExecId) && Objects.equals(this.transactionId, that.transactionId)
             && Objects.equals(this.traceId, that.traceId) && Objects.equals(this.query, that.query)
-            && Objects.equals(this.threadId, that.threadId) && Objects.equals(this.sessionId, that.sessionId)
-            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.finishTime, that.finishTime)
+            && Objects.equals(this.sql, that.sql) && Objects.equals(this.threadId, that.threadId)
+            && Objects.equals(this.sessionId, that.sessionId) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.finishTime, that.finishTime)
             && Objects.equals(this.slowQueryThreshold, that.slowQueryThreshold)
             && Objects.equals(this.nSoftParse, that.nSoftParse) && Objects.equals(this.nHardParse, that.nHardParse)
             && Objects.equals(this.queryPlan, that.queryPlan) && Objects.equals(this.nReturnedRows, that.nReturnedRows)
@@ -1212,6 +1235,7 @@ public class FullSqlComponetResult {
             transactionId,
             traceId,
             query,
+            sql,
             threadId,
             sessionId,
             startTime,
@@ -1269,6 +1293,7 @@ public class FullSqlComponetResult {
         sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
         sb.append("    traceId: ").append(toIndentedString(traceId)).append("\n");
         sb.append("    query: ").append(toIndentedString(query)).append("\n");
+        sb.append("    sql: ").append(toIndentedString(sql)).append("\n");
         sb.append("    threadId: ").append(toIndentedString(threadId)).append("\n");
         sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");

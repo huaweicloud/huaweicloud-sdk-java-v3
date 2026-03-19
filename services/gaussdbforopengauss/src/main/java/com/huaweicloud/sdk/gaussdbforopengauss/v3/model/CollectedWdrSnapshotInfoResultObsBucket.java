@@ -28,7 +28,7 @@ public class CollectedWdrSnapshotInfoResultObsBucket {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
 
-    private String port;
+    private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
@@ -86,7 +86,7 @@ public class CollectedWdrSnapshotInfoResultObsBucket {
         this.url = url;
     }
 
-    public CollectedWdrSnapshotInfoResultObsBucket withPort(String port) {
+    public CollectedWdrSnapshotInfoResultObsBucket withPort(Integer port) {
         this.port = port;
         return this;
     }
@@ -95,11 +95,11 @@ public class CollectedWdrSnapshotInfoResultObsBucket {
      * **参数解释**： OBS服务端口号。 **取值范围**： 不涉及。
      * @return port
      */
-    public String getPort() {
+    public Integer getPort() {
         return port;
     }
 
-    public void setPort(String port) {
+    public void setPort(Integer port) {
         this.port = port;
     }
 

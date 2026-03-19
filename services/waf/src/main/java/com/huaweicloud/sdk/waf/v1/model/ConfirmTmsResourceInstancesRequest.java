@@ -27,7 +27,7 @@ public class ConfirmTmsResourceInstancesRequest {
     }
 
     /**
-     * **参数解释：** 资源类型，目前支持waf-instance，waf **约束限制：** 不涉及 **取值范围：** 只能由英文字母、数字组成，且长度为32个字符。 **默认取值：** 不涉及
+     * **参数解释：** 资源类型，目前支持waf-instance，waf **约束限制：** 不涉及 **取值范围：** - waf - waf-instance **默认取值：** 不涉及
      * @return resourceType
      */
     public String getResourceType() {

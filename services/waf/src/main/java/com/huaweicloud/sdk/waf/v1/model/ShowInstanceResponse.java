@@ -268,7 +268,7 @@ public class ShowInstanceResponse extends SdkResponse {
     private RunStatusEnum runStatus;
 
     /**
-     * **参数解释：** 独享引擎接入状态 **约束限制：** 不涉及 **取值范围：**  - 0: 未接入  - 1: 已接入  **默认取值：** 不涉及
+     * **参数解释：** 独享引擎接入状态 **约束限制：** 不涉及 **取值范围：**  - 0: 未接入  - 1: 已接入 **默认取值：** 不涉及
      */
     public static final class AccessStatusEnum {
 
@@ -603,7 +603,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 独享引擎接入状态 **约束限制：** 不涉及 **取值范围：**  - 0: 未接入  - 1: 已接入  **默认取值：** 不涉及
+     * **参数解释：** 独享引擎接入状态 **约束限制：** 不涉及 **取值范围：**  - 0: 未接入  - 1: 已接入 **默认取值：** 不涉及
      * @return accessStatus
      */
     public AccessStatusEnum getAccessStatus() {

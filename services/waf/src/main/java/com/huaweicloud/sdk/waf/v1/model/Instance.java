@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 /**
  * 独享引擎实例信息
  */
-public class ListInstance {
+public class Instance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -386,7 +386,7 @@ public class ListInstance {
 
     private String instanceName;
 
-    public ListInstance withId(String id) {
+    public Instance withId(String id) {
         this.id = id;
         return this;
     }
@@ -403,7 +403,7 @@ public class ListInstance {
         this.id = id;
     }
 
-    public ListInstance withInstancename(String instancename) {
+    public Instance withInstancename(String instancename) {
         this.instancename = instancename;
         return this;
     }
@@ -420,7 +420,7 @@ public class ListInstance {
         this.instancename = instancename;
     }
 
-    public ListInstance withRegion(String region) {
+    public Instance withRegion(String region) {
         this.region = region;
         return this;
     }
@@ -437,7 +437,7 @@ public class ListInstance {
         this.region = region;
     }
 
-    public ListInstance withZone(String zone) {
+    public Instance withZone(String zone) {
         this.zone = zone;
         return this;
     }
@@ -454,7 +454,7 @@ public class ListInstance {
         this.zone = zone;
     }
 
-    public ListInstance withArch(String arch) {
+    public Instance withArch(String arch) {
         this.arch = arch;
         return this;
     }
@@ -471,7 +471,7 @@ public class ListInstance {
         this.arch = arch;
     }
 
-    public ListInstance withCpuFlavor(String cpuFlavor) {
+    public Instance withCpuFlavor(String cpuFlavor) {
         this.cpuFlavor = cpuFlavor;
         return this;
     }
@@ -488,7 +488,7 @@ public class ListInstance {
         this.cpuFlavor = cpuFlavor;
     }
 
-    public ListInstance withVpcId(String vpcId) {
+    public Instance withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
@@ -505,7 +505,7 @@ public class ListInstance {
         this.vpcId = vpcId;
     }
 
-    public ListInstance withSubnetId(String subnetId) {
+    public Instance withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
@@ -522,7 +522,7 @@ public class ListInstance {
         this.subnetId = subnetId;
     }
 
-    public ListInstance withServiceIp(String serviceIp) {
+    public Instance withServiceIp(String serviceIp) {
         this.serviceIp = serviceIp;
         return this;
     }
@@ -539,12 +539,12 @@ public class ListInstance {
         this.serviceIp = serviceIp;
     }
 
-    public ListInstance withSecurityGroupIds(List<String> securityGroupIds) {
+    public Instance withSecurityGroupIds(List<String> securityGroupIds) {
         this.securityGroupIds = securityGroupIds;
         return this;
     }
 
-    public ListInstance addSecurityGroupIdsItem(String securityGroupIdsItem) {
+    public Instance addSecurityGroupIdsItem(String securityGroupIdsItem) {
         if (this.securityGroupIds == null) {
             this.securityGroupIds = new ArrayList<>();
         }
@@ -552,7 +552,7 @@ public class ListInstance {
         return this;
     }
 
-    public ListInstance withSecurityGroupIds(Consumer<List<String>> securityGroupIdsSetter) {
+    public Instance withSecurityGroupIds(Consumer<List<String>> securityGroupIdsSetter) {
         if (this.securityGroupIds == null) {
             this.securityGroupIds = new ArrayList<>();
         }
@@ -572,7 +572,7 @@ public class ListInstance {
         this.securityGroupIds = securityGroupIds;
     }
 
-    public ListInstance withStatus(StatusEnum status) {
+    public Instance withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
@@ -589,7 +589,7 @@ public class ListInstance {
         this.status = status;
     }
 
-    public ListInstance withRunStatus(RunStatusEnum runStatus) {
+    public Instance withRunStatus(RunStatusEnum runStatus) {
         this.runStatus = runStatus;
         return this;
     }
@@ -606,7 +606,7 @@ public class ListInstance {
         this.runStatus = runStatus;
     }
 
-    public ListInstance withAccessStatus(AccessStatusEnum accessStatus) {
+    public Instance withAccessStatus(AccessStatusEnum accessStatus) {
         this.accessStatus = accessStatus;
         return this;
     }
@@ -623,7 +623,7 @@ public class ListInstance {
         this.accessStatus = accessStatus;
     }
 
-    public ListInstance withUpgradable(Integer upgradable) {
+    public Instance withUpgradable(Integer upgradable) {
         this.upgradable = upgradable;
         return this;
     }
@@ -640,7 +640,7 @@ public class ListInstance {
         this.upgradable = upgradable;
     }
 
-    public ListInstance withCloudServiceType(String cloudServiceType) {
+    public Instance withCloudServiceType(String cloudServiceType) {
         this.cloudServiceType = cloudServiceType;
         return this;
     }
@@ -657,7 +657,7 @@ public class ListInstance {
         this.cloudServiceType = cloudServiceType;
     }
 
-    public ListInstance withResourceType(String resourceType) {
+    public Instance withResourceType(String resourceType) {
         this.resourceType = resourceType;
         return this;
     }
@@ -674,7 +674,7 @@ public class ListInstance {
         this.resourceType = resourceType;
     }
 
-    public ListInstance withResourceSpecCode(String resourceSpecCode) {
+    public Instance withResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
         return this;
     }
@@ -691,7 +691,7 @@ public class ListInstance {
         this.resourceSpecCode = resourceSpecCode;
     }
 
-    public ListInstance withSpecification(String specification) {
+    public Instance withSpecification(String specification) {
         this.specification = specification;
         return this;
     }
@@ -708,12 +708,12 @@ public class ListInstance {
         this.specification = specification;
     }
 
-    public ListInstance withHosts(List<IdHostnameEntry> hosts) {
+    public Instance withHosts(List<IdHostnameEntry> hosts) {
         this.hosts = hosts;
         return this;
     }
 
-    public ListInstance addHostsItem(IdHostnameEntry hostsItem) {
+    public Instance addHostsItem(IdHostnameEntry hostsItem) {
         if (this.hosts == null) {
             this.hosts = new ArrayList<>();
         }
@@ -721,7 +721,7 @@ public class ListInstance {
         return this;
     }
 
-    public ListInstance withHosts(Consumer<List<IdHostnameEntry>> hostsSetter) {
+    public Instance withHosts(Consumer<List<IdHostnameEntry>> hostsSetter) {
         if (this.hosts == null) {
             this.hosts = new ArrayList<>();
         }
@@ -741,7 +741,7 @@ public class ListInstance {
         this.hosts = hosts;
     }
 
-    public ListInstance withServerId(String serverId) {
+    public Instance withServerId(String serverId) {
         this.serverId = serverId;
         return this;
     }
@@ -758,7 +758,7 @@ public class ListInstance {
         this.serverId = serverId;
     }
 
-    public ListInstance withCreateTime(Long createTime) {
+    public Instance withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -775,7 +775,7 @@ public class ListInstance {
         this.createTime = createTime;
     }
 
-    public ListInstance withInstanceName(String instanceName) {
+    public Instance withInstanceName(String instanceName) {
         this.instanceName = instanceName;
         return this;
     }
@@ -800,7 +800,7 @@ public class ListInstance {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstance that = (ListInstance) obj;
+        Instance that = (Instance) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.instancename, that.instancename)
             && Objects.equals(this.region, that.region) && Objects.equals(this.zone, that.zone)
             && Objects.equals(this.arch, that.arch) && Objects.equals(this.cpuFlavor, that.cpuFlavor)
@@ -846,7 +846,7 @@ public class ListInstance {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ListInstance {\n");
+        sb.append("class Instance {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    instancename: ").append(toIndentedString(instancename)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");

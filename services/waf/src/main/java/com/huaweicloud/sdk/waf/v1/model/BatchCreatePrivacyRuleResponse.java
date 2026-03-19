@@ -42,7 +42,7 @@ public class BatchCreatePrivacyRuleResponse extends SdkResponse {
     private String url;
 
     /**
-     * **参数解释：** 屏蔽字段 **约束限制：** 不涉及 **取值范围：**  - params: 请求参数  - cookie: 根据Cookie区分的Web访问者  - header: 自定义HTTP首部  - form: 表单参数  **默认取值：** 不涉及
+     * **参数解释：** 屏蔽字段 **约束限制：** 不涉及 **取值范围：**  - params: 请求参数  - cookie: 根据Cookie区分的Web访问者  - header: 自定义HTTP首部  - form: 表单参数 **默认取值：** 不涉及
      */
     public static final class CategoryEnum {
 
@@ -212,7 +212,7 @@ public class BatchCreatePrivacyRuleResponse extends SdkResponse {
     }
 
     /**
-     * 隐私屏蔽规则防护的url，需要填写标准的url格式，例如/admin/xxx或者/admin/_*,以\"*\"号结尾代表路径前缀
+     * 隐私屏蔽规则防护的url，需要填写标准的url格式，例如/admin/xxx或者/admin/\\*,以\"\\*\"号结尾代表路径前缀
      * @return url
      */
     public String getUrl() {
@@ -229,7 +229,7 @@ public class BatchCreatePrivacyRuleResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 屏蔽字段 **约束限制：** 不涉及 **取值范围：**  - params: 请求参数  - cookie: 根据Cookie区分的Web访问者  - header: 自定义HTTP首部  - form: 表单参数  **默认取值：** 不涉及
+     * **参数解释：** 屏蔽字段 **约束限制：** 不涉及 **取值范围：**  - params: 请求参数  - cookie: 根据Cookie区分的Web访问者  - header: 自定义HTTP首部  - form: 表单参数 **默认取值：** 不涉及
      * @return category
      */
     public CategoryEnum getCategory() {
