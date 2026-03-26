@@ -45,6 +45,16 @@ public class AlarmSubRequest {
 
     private String timeZone;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_id")
+
+    private String clusterId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_detail")
+
+    private String alarmDetail;
+
     public AlarmSubRequest withName(String name) {
         this.name = name;
         return this;
@@ -164,6 +174,40 @@ public class AlarmSubRequest {
         this.timeZone = timeZone;
     }
 
+    public AlarmSubRequest withClusterId(String clusterId) {
+        this.clusterId = clusterId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 集群ID。 **取值范围**： 不涉及。
+     * @return clusterId
+     */
+    public String getClusterId() {
+        return clusterId;
+    }
+
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
+    }
+
+    public AlarmSubRequest withAlarmDetail(String alarmDetail) {
+        this.alarmDetail = alarmDetail;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 细粒度告警详细信息，规则为告警ID与告警级别用英文冒号分割，告警之间用逗号分割。当该字段不为空时，alarm_level字段需要设置为空 **取值范围**： 不涉及。
+     * @return alarmDetail
+     */
+    public String getAlarmDetail() {
+        return alarmDetail;
+    }
+
+    public void setAlarmDetail(String alarmDetail) {
+        this.alarmDetail = alarmDetail;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -178,7 +222,8 @@ public class AlarmSubRequest {
             && Objects.equals(this.notificationTarget, that.notificationTarget)
             && Objects.equals(this.notificationTargetName, that.notificationTargetName)
             && Objects.equals(this.notificationTargetType, that.notificationTargetType)
-            && Objects.equals(this.timeZone, that.timeZone);
+            && Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.alarmDetail, that.alarmDetail);
     }
 
     @Override
@@ -189,7 +234,9 @@ public class AlarmSubRequest {
             notificationTarget,
             notificationTargetName,
             notificationTargetType,
-            timeZone);
+            timeZone,
+            clusterId,
+            alarmDetail);
     }
 
     @Override
@@ -203,6 +250,8 @@ public class AlarmSubRequest {
         sb.append("    notificationTargetName: ").append(toIndentedString(notificationTargetName)).append("\n");
         sb.append("    notificationTargetType: ").append(toIndentedString(notificationTargetType)).append("\n");
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
+        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    alarmDetail: ").append(toIndentedString(alarmDetail)).append("\n");
         sb.append("}");
         return sb.toString();
     }

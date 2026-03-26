@@ -108,6 +108,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarRocksDatabaseUserResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarrocksInstanceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateStarrocksInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DbConfigCheckRequestV3;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteAutoSqlLimitingRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteAutoSqlLimitingResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteChLtsConfigRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteClickHouseDataBaseConfigRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteClickHouseDataBaseConfigResponse;
@@ -138,6 +140,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.DeleteGaussMySqlProxyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteGaussMySqlProxyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteGaussMySqlReadonlyNodeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteGaussMySqlReadonlyNodeResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteHtapProcessListRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteHtapProcessListResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteHtapProcessReq;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteLtsConfigsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteLtsConfigsRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteLtsConfigsResponse;
@@ -149,6 +154,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.DeleteScheduleTasKResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteSqlFilterRuleReq;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteSqlFilterRuleRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteSqlFilterRuleResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarRockLtsConfigRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarRockLtsConfigResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarRocksDataReplication;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarRocksDataReplicationRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarRocksDataReplicationResponse;
@@ -173,6 +180,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ExpandGaussMySqlInstanceVolumeRespon
 import com.huaweicloud.sdk.gaussdb.v3.model.ExpandGaussMySqlProxyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ExpandGaussMySqlProxyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.GrantDatabasePermissionRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.HtapCreateLTSConfigRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.HtapDeleteLTSConfigRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.HtapErrorLogQueryRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.InvokeGaussMySqlInstanceSwitchOverRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.InvokeGaussMySqlInstanceSwitchOverResponse;
@@ -428,8 +437,12 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowHtapErrorLogDetailRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowHtapErrorLogDetailResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowHtapLtsConfigRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowHtapLtsConfigResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowHtapProcessListRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowHtapProcessListResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowHtapQueryQueuesRuleRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowHtapQueryQueuesRuleResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowInstanceBackupsRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowInstanceBackupsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowInstanceDatabaseVersionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowInstanceDatabaseVersionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowInstanceDatabasesForHtapRequest;
@@ -610,6 +623,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSlowlogSensitiveSwitchRequestB
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSlowlogSensitiveSwitchResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSqlFilterControlRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateSqlFilterControlResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRockLtsConfigRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRockLtsConfigResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRocksDatabaseUserPasswordRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRocksDatabaseUserPasswordResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRocksDatabaseUserPermissionRequest;
@@ -1416,6 +1431,41 @@ public class GaussDBMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRestoreTablesRequestBody.class),
             f -> f.withMarshaller(CreateRestoreTablesRequest::getBody, CreateRestoreTablesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAutoSqlLimitingRequest, DeleteAutoSqlLimitingResponse> deleteAutoSqlLimiting =
+        genForDeleteAutoSqlLimiting();
+
+    private static HttpRequestDef<DeleteAutoSqlLimitingRequest, DeleteAutoSqlLimitingResponse> genForDeleteAutoSqlLimiting() {
+        // basic
+        HttpRequestDef.Builder<DeleteAutoSqlLimitingRequest, DeleteAutoSqlLimitingResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteAutoSqlLimitingRequest.class, DeleteAutoSqlLimitingResponse.class)
+            .withName("DeleteAutoSqlLimiting")
+            .withUri("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/auto-sql-limiting")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAutoSqlLimitingRequest::getInstanceId,
+                DeleteAutoSqlLimitingRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAutoSqlLimitingRequest::getNodeId, DeleteAutoSqlLimitingRequest::setNodeId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAutoSqlLimitingRequest::getXLanguage,
+                DeleteAutoSqlLimitingRequest::setXLanguage));
 
         // response
 
@@ -4818,6 +4868,68 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowInstanceBackupsRequest, ShowInstanceBackupsResponse> showInstanceBackups =
+        genForShowInstanceBackups();
+
+    private static HttpRequestDef<ShowInstanceBackupsRequest, ShowInstanceBackupsResponse> genForShowInstanceBackups() {
+        // basic
+        HttpRequestDef.Builder<ShowInstanceBackupsRequest, ShowInstanceBackupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowInstanceBackupsRequest.class, ShowInstanceBackupsResponse.class)
+                .withName("ShowInstanceBackups")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceBackupsRequest::getInstanceId,
+                ShowInstanceBackupsRequest::setInstanceId));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceBackupsRequest::getOffset, ShowInstanceBackupsRequest::setOffset));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceBackupsRequest::getLimit, ShowInstanceBackupsRequest::setLimit));
+        builder.<String>withRequestField("order_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceBackupsRequest::getOrderField,
+                ShowInstanceBackupsRequest::setOrderField));
+        builder.<String>withRequestField("order_rule",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceBackupsRequest::getOrderRule, ShowInstanceBackupsRequest::setOrderRule));
+        builder.<String>withRequestField("filter_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceBackupsRequest::getFilterField,
+                ShowInstanceBackupsRequest::setFilterField));
+        builder.<String>withRequestField("filter_content",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceBackupsRequest::getFilterContent,
+                ShowInstanceBackupsRequest::setFilterContent));
+        builder.<ShowInstanceBackupsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowInstanceBackupsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowInstanceBackupsRequest::getXLanguage, ShowInstanceBackupsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowInstanceDatabaseVersionRequest, ShowInstanceDatabaseVersionResponse> showInstanceDatabaseVersion =
         genForShowInstanceDatabaseVersion();
 
@@ -7960,6 +8072,75 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteHtapProcessListRequest, DeleteHtapProcessListResponse> deleteHtapProcessList =
+        genForDeleteHtapProcessList();
+
+    private static HttpRequestDef<DeleteHtapProcessListRequest, DeleteHtapProcessListResponse> genForDeleteHtapProcessList() {
+        // basic
+        HttpRequestDef.Builder<DeleteHtapProcessListRequest, DeleteHtapProcessListResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteHtapProcessListRequest.class, DeleteHtapProcessListResponse.class)
+            .withName("DeleteHtapProcessList")
+            .withUri("/v3/{project_id}/instances/{instance_id}/htap/process")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHtapProcessListRequest::getInstanceId,
+                DeleteHtapProcessListRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHtapProcessListRequest::getXLanguage,
+                DeleteHtapProcessListRequest::setXLanguage));
+        builder.<DeleteHtapProcessReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteHtapProcessReq.class),
+            f -> f.withMarshaller(DeleteHtapProcessListRequest::getBody, DeleteHtapProcessListRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteStarRockLtsConfigRequest, DeleteStarRockLtsConfigResponse> deleteStarRockLtsConfig =
+        genForDeleteStarRockLtsConfig();
+
+    private static HttpRequestDef<DeleteStarRockLtsConfigRequest, DeleteStarRockLtsConfigResponse> genForDeleteStarRockLtsConfig() {
+        // basic
+        HttpRequestDef.Builder<DeleteStarRockLtsConfigRequest, DeleteStarRockLtsConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteStarRockLtsConfigRequest.class, DeleteStarRockLtsConfigResponse.class)
+            .withName("DeleteStarRockLtsConfig")
+            .withUri("/v3/{project_id}/starrocks/instances/logs/lts-configs")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<DeleteStarRockLtsConfigRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteStarRockLtsConfigRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(DeleteStarRockLtsConfigRequest::getXLanguage,
+                DeleteStarRockLtsConfigRequest::setXLanguage));
+        builder.<HtapDeleteLTSConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(HtapDeleteLTSConfigRequestBody.class),
+            f -> f.withMarshaller(DeleteStarRockLtsConfigRequest::getBody, DeleteStarRockLtsConfigRequest::setBody));
+
+        // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(DeleteStarRockLtsConfigResponse::getBody, DeleteStarRockLtsConfigResponse::setBody));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteStarRocksDataReplicationRequest, DeleteStarRocksDataReplicationResponse> deleteStarRocksDataReplication =
         genForDeleteStarRocksDataReplication();
 
@@ -9413,6 +9594,45 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowHtapProcessListRequest, ShowHtapProcessListResponse> showHtapProcessList =
+        genForShowHtapProcessList();
+
+    private static HttpRequestDef<ShowHtapProcessListRequest, ShowHtapProcessListResponse> genForShowHtapProcessList() {
+        // basic
+        HttpRequestDef.Builder<ShowHtapProcessListRequest, ShowHtapProcessListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowHtapProcessListRequest.class, ShowHtapProcessListResponse.class)
+                .withName("ShowHtapProcessList")
+                .withUri("/v3/{project_id}/instances/{instance_id}/htap/process")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHtapProcessListRequest::getInstanceId,
+                ShowHtapProcessListRequest::setInstanceId));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHtapProcessListRequest::getLimit, ShowHtapProcessListRequest::setLimit));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHtapProcessListRequest::getOffset, ShowHtapProcessListRequest::setOffset));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHtapProcessListRequest::getXLanguage, ShowHtapProcessListRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowHtapQueryQueuesRuleRequest, ShowHtapQueryQueuesRuleResponse> showHtapQueryQueuesRule =
         genForShowHtapQueryQueuesRule();
 
@@ -9897,6 +10117,40 @@ public class GaussDBMeta {
                 UpdateHtapQueryQueuesControlRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateStarRockLtsConfigRequest, UpdateStarRockLtsConfigResponse> updateStarRockLtsConfig =
+        genForUpdateStarRockLtsConfig();
+
+    private static HttpRequestDef<UpdateStarRockLtsConfigRequest, UpdateStarRockLtsConfigResponse> genForUpdateStarRockLtsConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateStarRockLtsConfigRequest, UpdateStarRockLtsConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpdateStarRockLtsConfigRequest.class, UpdateStarRockLtsConfigResponse.class)
+            .withName("UpdateStarRockLtsConfig")
+            .withUri("/v3/{project_id}/starrocks/instances/logs/lts-configs")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<UpdateStarRockLtsConfigRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateStarRockLtsConfigRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(UpdateStarRockLtsConfigRequest::getXLanguage,
+                UpdateStarRockLtsConfigRequest::setXLanguage));
+        builder.<HtapCreateLTSConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(HtapCreateLTSConfigRequestBody.class),
+            f -> f.withMarshaller(UpdateStarRockLtsConfigRequest::getBody, UpdateStarRockLtsConfigRequest::setBody));
+
+        // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(UpdateStarRockLtsConfigResponse::getBody, UpdateStarRockLtsConfigResponse::setBody));
 
         return builder.build();
     }

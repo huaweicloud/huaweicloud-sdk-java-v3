@@ -142,6 +142,12 @@ import com.huaweicloud.sdk.das.v3.model.ListInstanceNodesInfoRequest;
 import com.huaweicloud.sdk.das.v3.model.ListInstanceNodesInfoResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInstanceTopSlowLogRequest;
 import com.huaweicloud.sdk.das.v3.model.ListInstanceTopSlowLogResponse;
+import com.huaweicloud.sdk.das.v3.model.ListLockBlockingDbRequest;
+import com.huaweicloud.sdk.das.v3.model.ListLockBlockingDbResponse;
+import com.huaweicloud.sdk.das.v3.model.ListLockBlockingDetailRequest;
+import com.huaweicloud.sdk.das.v3.model.ListLockBlockingDetailResponse;
+import com.huaweicloud.sdk.das.v3.model.ListLockBlockingRelationshipRequest;
+import com.huaweicloud.sdk.das.v3.model.ListLockBlockingRelationshipResponse;
 import com.huaweicloud.sdk.das.v3.model.ListMetadataLocksRequest;
 import com.huaweicloud.sdk.das.v3.model.ListMetadataLocksResponse;
 import com.huaweicloud.sdk.das.v3.model.ListProcessesRequest;
@@ -178,6 +184,9 @@ import com.huaweicloud.sdk.das.v3.model.SaveCredentialForBatchInspectionResponse
 import com.huaweicloud.sdk.das.v3.model.SaveCredentialRequest;
 import com.huaweicloud.sdk.das.v3.model.SaveCredentialRequestBody;
 import com.huaweicloud.sdk.das.v3.model.SaveCredentialResponse;
+import com.huaweicloud.sdk.das.v3.model.SetLockBlockingSwitchReq;
+import com.huaweicloud.sdk.das.v3.model.SetLockBlockingSwitchRequest;
+import com.huaweicloud.sdk.das.v3.model.SetLockBlockingSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricRequest;
 import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionRequest;
@@ -200,6 +209,12 @@ import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowLatestDeadLockSnapshotRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowLatestDeadLockSnapshotResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowLockBlockingStatisticsRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowLockBlockingStatisticsResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowLockBlockingSwitchRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowLockBlockingSwitchResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowLockBlockingTrendRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowLockBlockingTrendResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowMetricNamesSupportRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowMetricNamesSupportResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowQuotasRequest;
@@ -2544,6 +2559,148 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListLockBlockingDbRequest, ListLockBlockingDbResponse> listLockBlockingDb =
+        genForListLockBlockingDb();
+
+    private static HttpRequestDef<ListLockBlockingDbRequest, ListLockBlockingDbResponse> genForListLockBlockingDb() {
+        // basic
+        HttpRequestDef.Builder<ListLockBlockingDbRequest, ListLockBlockingDbResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLockBlockingDbRequest.class, ListLockBlockingDbResponse.class)
+                .withName("ListLockBlockingDb")
+                .withUri("/v3/{project_id}/instances/{instance_id}/lock-blocking/get-lock-blocking-db-list")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLockBlockingDbRequest::getInstanceId, ListLockBlockingDbRequest::setInstanceId));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListLockBlockingDbRequest::getStartTime, ListLockBlockingDbRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListLockBlockingDbRequest::getEndTime, ListLockBlockingDbRequest::setEndTime));
+        builder.<ListLockBlockingDbRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListLockBlockingDbRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListLockBlockingDbRequest::getXLanguage, ListLockBlockingDbRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLockBlockingDetailRequest, ListLockBlockingDetailResponse> listLockBlockingDetail =
+        genForListLockBlockingDetail();
+
+    private static HttpRequestDef<ListLockBlockingDetailRequest, ListLockBlockingDetailResponse> genForListLockBlockingDetail() {
+        // basic
+        HttpRequestDef.Builder<ListLockBlockingDetailRequest, ListLockBlockingDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListLockBlockingDetailRequest.class, ListLockBlockingDetailResponse.class)
+            .withName("ListLockBlockingDetail")
+            .withUri("/v3/{project_id}/instances/{instance_id}/lock-blocking/get-lock-blocking-detail-list")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLockBlockingDetailRequest::getInstanceId,
+                ListLockBlockingDetailRequest::setInstanceId));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListLockBlockingDetailRequest::getStartTime,
+                ListLockBlockingDetailRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListLockBlockingDetailRequest::getEndTime,
+                ListLockBlockingDetailRequest::setEndTime));
+        builder.<Integer>withRequestField("per_page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLockBlockingDetailRequest::getPerPage,
+                ListLockBlockingDetailRequest::setPerPage));
+        builder.<Integer>withRequestField("cur_page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLockBlockingDetailRequest::getCurPage,
+                ListLockBlockingDetailRequest::setCurPage));
+        builder.<String>withRequestField("db_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLockBlockingDetailRequest::getDbName, ListLockBlockingDetailRequest::setDbName));
+        builder.<ListLockBlockingDetailRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListLockBlockingDetailRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListLockBlockingDetailRequest::getXLanguage,
+                ListLockBlockingDetailRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLockBlockingRelationshipRequest, ListLockBlockingRelationshipResponse> listLockBlockingRelationship =
+        genForListLockBlockingRelationship();
+
+    private static HttpRequestDef<ListLockBlockingRelationshipRequest, ListLockBlockingRelationshipResponse> genForListLockBlockingRelationship() {
+        // basic
+        HttpRequestDef.Builder<ListLockBlockingRelationshipRequest, ListLockBlockingRelationshipResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListLockBlockingRelationshipRequest.class,
+                    ListLockBlockingRelationshipResponse.class)
+                .withName("ListLockBlockingRelationship")
+                .withUri("/v3/{project_id}/instances/{instance_id}/lock-blocking/get-lock-blocking-relationship")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLockBlockingRelationshipRequest::getInstanceId,
+                ListLockBlockingRelationshipRequest::setInstanceId));
+        builder.<String>withRequestField("unique_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLockBlockingRelationshipRequest::getUniqueId,
+                ListLockBlockingRelationshipRequest::setUniqueId));
+        builder.<Long>withRequestField("spid",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListLockBlockingRelationshipRequest::getSpid,
+                ListLockBlockingRelationshipRequest::setSpid));
+        builder.<ListLockBlockingRelationshipRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListLockBlockingRelationshipRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListLockBlockingRelationshipRequest::getXLanguage,
+                ListLockBlockingRelationshipRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListMetadataLocksRequest, ListMetadataLocksResponse> listMetadataLocks =
         genForListMetadataLocks();
 
@@ -3201,6 +3358,35 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetLockBlockingSwitchRequest, SetLockBlockingSwitchResponse> setLockBlockingSwitch =
+        genForSetLockBlockingSwitch();
+
+    private static HttpRequestDef<SetLockBlockingSwitchRequest, SetLockBlockingSwitchResponse> genForSetLockBlockingSwitch() {
+        // basic
+        HttpRequestDef.Builder<SetLockBlockingSwitchRequest, SetLockBlockingSwitchResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SetLockBlockingSwitchRequest.class, SetLockBlockingSwitchResponse.class)
+            .withName("SetLockBlockingSwitch")
+            .withUri("/v3/{project_id}/lock-blocking/switch")
+            .withContentType("application/json");
+
+        // requests
+        builder.<SetLockBlockingSwitchRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SetLockBlockingSwitchRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(SetLockBlockingSwitchRequest::getXLanguage,
+                SetLockBlockingSwitchRequest::setXLanguage));
+        builder.<SetLockBlockingSwitchReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetLockBlockingSwitchReq.class),
+            f -> f.withMarshaller(SetLockBlockingSwitchRequest::getBody, SetLockBlockingSwitchRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetThresholdForMetricRequest, SetThresholdForMetricResponse> setThresholdForMetric =
         genForSetThresholdForMetric();
 
@@ -3532,6 +3718,122 @@ public class DasMeta {
             TypeCasts.uncheckedConversion(ShowLatestDeadLockSnapshotRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowLatestDeadLockSnapshotRequest::getXLanguage,
                 ShowLatestDeadLockSnapshotRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLockBlockingStatisticsRequest, ShowLockBlockingStatisticsResponse> showLockBlockingStatistics =
+        genForShowLockBlockingStatistics();
+
+    private static HttpRequestDef<ShowLockBlockingStatisticsRequest, ShowLockBlockingStatisticsResponse> genForShowLockBlockingStatistics() {
+        // basic
+        HttpRequestDef.Builder<ShowLockBlockingStatisticsRequest, ShowLockBlockingStatisticsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowLockBlockingStatisticsRequest.class,
+                    ShowLockBlockingStatisticsResponse.class)
+                .withName("ShowLockBlockingStatistics")
+                .withUri("/v3/{project_id}/instances/{instance_id}/lock-blocking/get-lock-blocking-statistics")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLockBlockingStatisticsRequest::getInstanceId,
+                ShowLockBlockingStatisticsRequest::setInstanceId));
+        builder.<Long>withRequestField("current_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowLockBlockingStatisticsRequest::getCurrentTime,
+                ShowLockBlockingStatisticsRequest::setCurrentTime));
+        builder.<ShowLockBlockingStatisticsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowLockBlockingStatisticsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowLockBlockingStatisticsRequest::getXLanguage,
+                ShowLockBlockingStatisticsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLockBlockingSwitchRequest, ShowLockBlockingSwitchResponse> showLockBlockingSwitch =
+        genForShowLockBlockingSwitch();
+
+    private static HttpRequestDef<ShowLockBlockingSwitchRequest, ShowLockBlockingSwitchResponse> genForShowLockBlockingSwitch() {
+        // basic
+        HttpRequestDef.Builder<ShowLockBlockingSwitchRequest, ShowLockBlockingSwitchResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowLockBlockingSwitchRequest.class, ShowLockBlockingSwitchResponse.class)
+            .withName("ShowLockBlockingSwitch")
+            .withUri("/v3/{project_id}/lock-blocking/switch")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLockBlockingSwitchRequest::getInstanceId,
+                ShowLockBlockingSwitchRequest::setInstanceId));
+        builder.<String>withRequestField("engine_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLockBlockingSwitchRequest::getEngineType,
+                ShowLockBlockingSwitchRequest::setEngineType));
+        builder.<ShowLockBlockingSwitchRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowLockBlockingSwitchRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowLockBlockingSwitchRequest::getXLanguage,
+                ShowLockBlockingSwitchRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLockBlockingTrendRequest, ShowLockBlockingTrendResponse> showLockBlockingTrend =
+        genForShowLockBlockingTrend();
+
+    private static HttpRequestDef<ShowLockBlockingTrendRequest, ShowLockBlockingTrendResponse> genForShowLockBlockingTrend() {
+        // basic
+        HttpRequestDef.Builder<ShowLockBlockingTrendRequest, ShowLockBlockingTrendResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowLockBlockingTrendRequest.class, ShowLockBlockingTrendResponse.class)
+            .withName("ShowLockBlockingTrend")
+            .withUri("/v3/{project_id}/instances/{instance_id}/lock-blocking/get-lock-blocking-trend")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLockBlockingTrendRequest::getInstanceId,
+                ShowLockBlockingTrendRequest::setInstanceId));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowLockBlockingTrendRequest::getStartTime,
+                ShowLockBlockingTrendRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowLockBlockingTrendRequest::getEndTime, ShowLockBlockingTrendRequest::setEndTime));
+        builder.<ShowLockBlockingTrendRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowLockBlockingTrendRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowLockBlockingTrendRequest::getXLanguage,
+                ShowLockBlockingTrendRequest::setXLanguage));
 
         // response
 

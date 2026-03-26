@@ -50,6 +50,21 @@ public class ListInstancesRequest {
 
     private String poolSceneTag;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order")
+
+    private String order;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_by")
+
+    private String orderBy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pool_name")
+
+    private String poolName;
+
     public ListInstancesRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -188,6 +203,57 @@ public class ListInstancesRequest {
         this.poolSceneTag = poolSceneTag;
     }
 
+    public ListInstancesRequest withOrder(String order) {
+        this.order = order;
+        return this;
+    }
+
+    /**
+     * 排序类型：desc 倒序, asc 正序
+     * @return order
+     */
+    public String getOrder() {
+        return order;
+    }
+
+    public void setOrder(String order) {
+        this.order = order;
+    }
+
+    public ListInstancesRequest withOrderBy(String orderBy) {
+        this.orderBy = orderBy;
+        return this;
+    }
+
+    /**
+     * 排序字段
+     * @return orderBy
+     */
+    public String getOrderBy() {
+        return orderBy;
+    }
+
+    public void setOrderBy(String orderBy) {
+        this.orderBy = orderBy;
+    }
+
+    public ListInstancesRequest withPoolName(String poolName) {
+        this.poolName = poolName;
+        return this;
+    }
+
+    /**
+     * 节点组名称
+     * @return poolName
+     */
+    public String getPoolName() {
+        return poolName;
+    }
+
+    public void setPoolName(String poolName) {
+        this.poolName = poolName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -202,13 +268,23 @@ public class ListInstancesRequest {
             && Objects.equals(this.instanceName, that.instanceName)
             && Objects.equals(this.queryStartTime, that.queryStartTime)
             && Objects.equals(this.queryEndTime, that.queryEndTime)
-            && Objects.equals(this.poolSceneTag, that.poolSceneTag);
+            && Objects.equals(this.poolSceneTag, that.poolSceneTag) && Objects.equals(this.order, that.order)
+            && Objects.equals(this.orderBy, that.orderBy) && Objects.equals(this.poolName, that.poolName);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(xRequestId, pageNo, pageSize, instanceId, instanceName, queryStartTime, queryEndTime, poolSceneTag);
+        return Objects.hash(xRequestId,
+            pageNo,
+            pageSize,
+            instanceId,
+            instanceName,
+            queryStartTime,
+            queryEndTime,
+            poolSceneTag,
+            order,
+            orderBy,
+            poolName);
     }
 
     @Override
@@ -223,6 +299,9 @@ public class ListInstancesRequest {
         sb.append("    queryStartTime: ").append(toIndentedString(queryStartTime)).append("\n");
         sb.append("    queryEndTime: ").append(toIndentedString(queryEndTime)).append("\n");
         sb.append("    poolSceneTag: ").append(toIndentedString(poolSceneTag)).append("\n");
+        sb.append("    order: ").append(toIndentedString(order)).append("\n");
+        sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");
+        sb.append("    poolName: ").append(toIndentedString(poolName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

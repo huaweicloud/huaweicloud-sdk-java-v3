@@ -19,6 +19,11 @@ public class ListElbsResponse extends SdkResponse {
 
     private List<ClusterElbInfo> elbs = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Integer count;
+
     public ListElbsResponse withElbs(List<ClusterElbInfo> elbs) {
         this.elbs = elbs;
         return this;
@@ -52,6 +57,23 @@ public class ListElbsResponse extends SdkResponse {
         this.elbs = elbs;
     }
 
+    public ListElbsResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 总条数。 **取值范围**： 不涉及。
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +83,12 @@ public class ListElbsResponse extends SdkResponse {
             return false;
         }
         ListElbsResponse that = (ListElbsResponse) obj;
-        return Objects.equals(this.elbs, that.elbs);
+        return Objects.equals(this.elbs, that.elbs) && Objects.equals(this.count, that.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(elbs);
+        return Objects.hash(elbs, count);
     }
 
     @Override
@@ -74,6 +96,7 @@ public class ListElbsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListElbsResponse {\n");
         sb.append("    elbs: ").append(toIndentedString(elbs)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");
         return sb.toString();
     }

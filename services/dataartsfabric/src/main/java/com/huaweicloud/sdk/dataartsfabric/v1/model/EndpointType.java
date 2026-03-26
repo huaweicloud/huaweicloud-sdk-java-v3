@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Endpoint的类型  - service：Service EP，代表一个可接收Service请求资源组  - ray：Ray on k8s的EP，代表一个Ray集群  - inference：推理的EP，代表一个推理函数实例  - job：Job EP，代表一个可接收Job请求资源组
+ * **参数解释**：Endpoint的类型。 **约束限制**：不涉及。 **取值范围**：   - service：Service EP，代表一个可接收Service请求资源组；   - ray：RayCluter on k8s的EP，代表一个Ray集群；   - inference：推理的EP，代表一个推理函数实例；   - job：Job EP，代表一个可接收Job请求资源组；   - ray_service：RayService on k8s的EP，代表一个RayService。   - sql：SQL EP，代表一个可接收SQL请求资源组。   - container_job：容器类型job的EP，代表一个可接收容器类型Job请求的资源组。   - notebook：Notebook EP，代表一个notebook运行资源组。 **默认取值**：不涉及。
  */
 public class EndpointType {
 
@@ -32,6 +32,26 @@ public class EndpointType {
      */
     public static final EndpointType JOB = new EndpointType("job");
 
+    /**
+     * Enum RAY_SERVICE for value: "ray_service"
+     */
+    public static final EndpointType RAY_SERVICE = new EndpointType("ray_service");
+
+    /**
+     * Enum SQL for value: "sql"
+     */
+    public static final EndpointType SQL = new EndpointType("sql");
+
+    /**
+     * Enum CONTAINER_JOB for value: "container_job"
+     */
+    public static final EndpointType CONTAINER_JOB = new EndpointType("container_job");
+
+    /**
+     * Enum NOTEBOOK for value: "notebook"
+     */
+    public static final EndpointType NOTEBOOK = new EndpointType("notebook");
+
     private static final Map<String, EndpointType> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, EndpointType> createStaticFields() {
@@ -40,6 +60,10 @@ public class EndpointType {
         map.put("ray", RAY);
         map.put("inference", INFERENCE);
         map.put("job", JOB);
+        map.put("ray_service", RAY_SERVICE);
+        map.put("sql", SQL);
+        map.put("container_job", CONTAINER_JOB);
+        map.put("notebook", NOTEBOOK);
         return Collections.unmodifiableMap(map);
     }
 

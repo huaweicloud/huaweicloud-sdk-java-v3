@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 配置文件信息。
+ * **参数解释**： 配置文件信息。 **约束限制**： 不涉及
  */
 public class UpdateYmlsReqEdit {
 

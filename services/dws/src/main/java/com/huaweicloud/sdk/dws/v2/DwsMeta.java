@@ -2437,6 +2437,21 @@ public class DwsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmDetailRequest::getLimit, ListAlarmDetailRequest::setLimit));
+        builder.<Long>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAlarmDetailRequest::getFrom, ListAlarmDetailRequest::setFrom));
+        builder.<Long>withRequestField("to",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAlarmDetailRequest::getTo, ListAlarmDetailRequest::setTo));
+        builder.<Integer>withRequestField("recent_day",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAlarmDetailRequest::getRecentDay, ListAlarmDetailRequest::setRecentDay));
 
         // response
 

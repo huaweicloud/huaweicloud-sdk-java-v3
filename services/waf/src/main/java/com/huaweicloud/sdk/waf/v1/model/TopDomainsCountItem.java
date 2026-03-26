@@ -20,6 +20,11 @@ public class TopDomainsCountItem {
 
     private Long num;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "web_tag")
+
+    private String webTag;
+
     public TopDomainsCountItem withKey(String key) {
         this.key = key;
         return this;
@@ -54,6 +59,23 @@ public class TopDomainsCountItem {
         this.num = num;
     }
 
+    public TopDomainsCountItem withWebTag(String webTag) {
+        this.webTag = webTag;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 网站名称，对应WAF控制台域名详情中的网站名称 **取值范围：** 不涉及
+     * @return webTag
+     */
+    public String getWebTag() {
+        return webTag;
+    }
+
+    public void setWebTag(String webTag) {
+        this.webTag = webTag;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class TopDomainsCountItem {
             return false;
         }
         TopDomainsCountItem that = (TopDomainsCountItem) obj;
-        return Objects.equals(this.key, that.key) && Objects.equals(this.num, that.num);
+        return Objects.equals(this.key, that.key) && Objects.equals(this.num, that.num)
+            && Objects.equals(this.webTag, that.webTag);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(key, num);
+        return Objects.hash(key, num, webTag);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class TopDomainsCountItem {
         sb.append("class TopDomainsCountItem {\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    num: ").append(toIndentedString(num)).append("\n");
+        sb.append("    webTag: ").append(toIndentedString(webTag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

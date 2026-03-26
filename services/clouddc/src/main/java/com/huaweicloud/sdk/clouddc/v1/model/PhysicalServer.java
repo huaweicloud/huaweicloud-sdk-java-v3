@@ -39,6 +39,11 @@ public class PhysicalServer {
     private ManageState manageState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "frozen_state")
+
+    private FrozenState frozenState;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "power_state")
 
     private PowerState powerState;
@@ -161,6 +166,23 @@ public class PhysicalServer {
 
     public void setManageState(ManageState manageState) {
         this.manageState = manageState;
+    }
+
+    public PhysicalServer withFrozenState(FrozenState frozenState) {
+        this.frozenState = frozenState;
+        return this;
+    }
+
+    /**
+     * Get frozenState
+     * @return frozenState
+     */
+    public FrozenState getFrozenState() {
+        return frozenState;
+    }
+
+    public void setFrozenState(FrozenState frozenState) {
+        this.frozenState = frozenState;
     }
 
     public PhysicalServer withPowerState(PowerState powerState) {
@@ -353,7 +375,8 @@ public class PhysicalServer {
         PhysicalServer that = (PhysicalServer) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.domainId, that.domainId)
-            && Objects.equals(this.manageState, that.manageState) && Objects.equals(this.powerState, that.powerState)
+            && Objects.equals(this.manageState, that.manageState) && Objects.equals(this.frozenState, that.frozenState)
+            && Objects.equals(this.powerState, that.powerState)
             && Objects.equals(this.operationState, that.operationState)
             && Objects.equals(this.healthState, that.healthState) && Objects.equals(this.onboardTime, that.onboardTime)
             && Objects.equals(this.location, that.location)
@@ -368,6 +391,7 @@ public class PhysicalServer {
             projectId,
             domainId,
             manageState,
+            frozenState,
             powerState,
             operationState,
             healthState,
@@ -387,6 +411,7 @@ public class PhysicalServer {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    manageState: ").append(toIndentedString(manageState)).append("\n");
+        sb.append("    frozenState: ").append(toIndentedString(frozenState)).append("\n");
         sb.append("    powerState: ").append(toIndentedString(powerState)).append("\n");
         sb.append("    operationState: ").append(toIndentedString(operationState)).append("\n");
         sb.append("    healthState: ").append(toIndentedString(healthState)).append("\n");

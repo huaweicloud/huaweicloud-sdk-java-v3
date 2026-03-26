@@ -65,6 +65,11 @@ public class ClusterElbInfo {
 
     private String vpcId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_target_enable")
+
+    private Boolean ipTargetEnable;
+
     public ClusterElbInfo withId(String id) {
         this.id = id;
         return this;
@@ -252,6 +257,23 @@ public class ClusterElbInfo {
         this.vpcId = vpcId;
     }
 
+    public ClusterElbInfo withIpTargetEnable(Boolean ipTargetEnable) {
+        this.ipTargetEnable = ipTargetEnable;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否支持跨vpc绑定。 **取值范围**： 不涉及。
+     * @return ipTargetEnable
+     */
+    public Boolean getIpTargetEnable() {
+        return ipTargetEnable;
+    }
+
+    public void setIpTargetEnable(Boolean ipTargetEnable) {
+        this.ipTargetEnable = ipTargetEnable;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -266,7 +288,7 @@ public class ClusterElbInfo {
             && Objects.equals(this.vipAddress, that.vipAddress) && Objects.equals(this.vipSubnetId, that.vipSubnetId)
             && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.type, that.type)
             && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.bandwidth, that.bandwidth)
-            && Objects.equals(this.vpcId, that.vpcId);
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.ipTargetEnable, that.ipTargetEnable);
     }
 
     @Override
@@ -281,7 +303,8 @@ public class ClusterElbInfo {
             type,
             adminStateUp,
             bandwidth,
-            vpcId);
+            vpcId,
+            ipTargetEnable);
     }
 
     @Override
@@ -299,6 +322,7 @@ public class ClusterElbInfo {
         sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
         sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    ipTargetEnable: ").append(toIndentedString(ipTargetEnable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

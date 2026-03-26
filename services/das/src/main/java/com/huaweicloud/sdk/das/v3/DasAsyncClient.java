@@ -111,6 +111,12 @@ import com.huaweicloud.sdk.das.v3.model.ListInstanceNodesInfoRequest;
 import com.huaweicloud.sdk.das.v3.model.ListInstanceNodesInfoResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInstanceTopSlowLogRequest;
 import com.huaweicloud.sdk.das.v3.model.ListInstanceTopSlowLogResponse;
+import com.huaweicloud.sdk.das.v3.model.ListLockBlockingDbRequest;
+import com.huaweicloud.sdk.das.v3.model.ListLockBlockingDbResponse;
+import com.huaweicloud.sdk.das.v3.model.ListLockBlockingDetailRequest;
+import com.huaweicloud.sdk.das.v3.model.ListLockBlockingDetailResponse;
+import com.huaweicloud.sdk.das.v3.model.ListLockBlockingRelationshipRequest;
+import com.huaweicloud.sdk.das.v3.model.ListLockBlockingRelationshipResponse;
 import com.huaweicloud.sdk.das.v3.model.ListMetadataLocksRequest;
 import com.huaweicloud.sdk.das.v3.model.ListMetadataLocksResponse;
 import com.huaweicloud.sdk.das.v3.model.ListProcessesRequest;
@@ -141,6 +147,8 @@ import com.huaweicloud.sdk.das.v3.model.SaveCredentialForBatchInspectionRequest;
 import com.huaweicloud.sdk.das.v3.model.SaveCredentialForBatchInspectionResponse;
 import com.huaweicloud.sdk.das.v3.model.SaveCredentialRequest;
 import com.huaweicloud.sdk.das.v3.model.SaveCredentialResponse;
+import com.huaweicloud.sdk.das.v3.model.SetLockBlockingSwitchRequest;
+import com.huaweicloud.sdk.das.v3.model.SetLockBlockingSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricRequest;
 import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionRequest;
@@ -163,6 +171,12 @@ import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowLatestDeadLockSnapshotRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowLatestDeadLockSnapshotResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowLockBlockingStatisticsRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowLockBlockingStatisticsResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowLockBlockingSwitchRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowLockBlockingSwitchResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowLockBlockingTrendRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowLockBlockingTrendResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowMetricNamesSupportRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowMetricNamesSupportResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowQuotasRequest;
@@ -1868,6 +1882,101 @@ public class DasAsyncClient {
     }
 
     /**
+     * 查询锁阻塞数据库名列表
+     *
+     * 查询锁阻塞数据库名列表。
+     * 仅支持SQLServer实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLockBlockingDbRequest 请求对象
+     * @return CompletableFuture<ListLockBlockingDbResponse>
+     */
+    public CompletableFuture<ListLockBlockingDbResponse> listLockBlockingDbAsync(ListLockBlockingDbRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.listLockBlockingDb);
+    }
+
+    /**
+     * 查询锁阻塞数据库名列表
+     *
+     * 查询锁阻塞数据库名列表。
+     * 仅支持SQLServer实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLockBlockingDbRequest 请求对象
+     * @return AsyncInvoker<ListLockBlockingDbRequest, ListLockBlockingDbResponse>
+     */
+    public AsyncInvoker<ListLockBlockingDbRequest, ListLockBlockingDbResponse> listLockBlockingDbAsyncInvoker(
+        ListLockBlockingDbRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.listLockBlockingDb, hcClient);
+    }
+
+    /**
+     * 查询锁阻塞明细列表
+     *
+     * 查询锁阻塞明细列表。
+     * 仅支持SQLServer实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLockBlockingDetailRequest 请求对象
+     * @return CompletableFuture<ListLockBlockingDetailResponse>
+     */
+    public CompletableFuture<ListLockBlockingDetailResponse> listLockBlockingDetailAsync(
+        ListLockBlockingDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.listLockBlockingDetail);
+    }
+
+    /**
+     * 查询锁阻塞明细列表
+     *
+     * 查询锁阻塞明细列表。
+     * 仅支持SQLServer实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLockBlockingDetailRequest 请求对象
+     * @return AsyncInvoker<ListLockBlockingDetailRequest, ListLockBlockingDetailResponse>
+     */
+    public AsyncInvoker<ListLockBlockingDetailRequest, ListLockBlockingDetailResponse> listLockBlockingDetailAsyncInvoker(
+        ListLockBlockingDetailRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.listLockBlockingDetail, hcClient);
+    }
+
+    /**
+     * 查询锁阻塞关系
+     *
+     * 查询锁阻塞关系。
+     * 仅支持SQLServer实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLockBlockingRelationshipRequest 请求对象
+     * @return CompletableFuture<ListLockBlockingRelationshipResponse>
+     */
+    public CompletableFuture<ListLockBlockingRelationshipResponse> listLockBlockingRelationshipAsync(
+        ListLockBlockingRelationshipRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.listLockBlockingRelationship);
+    }
+
+    /**
+     * 查询锁阻塞关系
+     *
+     * 查询锁阻塞关系。
+     * 仅支持SQLServer实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLockBlockingRelationshipRequest 请求对象
+     * @return AsyncInvoker<ListLockBlockingRelationshipRequest, ListLockBlockingRelationshipResponse>
+     */
+    public AsyncInvoker<ListLockBlockingRelationshipRequest, ListLockBlockingRelationshipResponse> listLockBlockingRelationshipAsyncInvoker(
+        ListLockBlockingRelationshipRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.listLockBlockingRelationship, hcClient);
+    }
+
+    /**
      * 查询元数据锁列表
      *
      * 查询元数据锁列表。
@@ -2313,6 +2422,36 @@ public class DasAsyncClient {
     }
 
     /**
+     * 设置锁阻塞开关和保存时长
+     *
+     * 设置锁阻塞开关和保存时长，仅支持SQLServer引擎
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetLockBlockingSwitchRequest 请求对象
+     * @return CompletableFuture<SetLockBlockingSwitchResponse>
+     */
+    public CompletableFuture<SetLockBlockingSwitchResponse> setLockBlockingSwitchAsync(
+        SetLockBlockingSwitchRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.setLockBlockingSwitch);
+    }
+
+    /**
+     * 设置锁阻塞开关和保存时长
+     *
+     * 设置锁阻塞开关和保存时长，仅支持SQLServer引擎
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetLockBlockingSwitchRequest 请求对象
+     * @return AsyncInvoker<SetLockBlockingSwitchRequest, SetLockBlockingSwitchResponse>
+     */
+    public AsyncInvoker<SetLockBlockingSwitchRequest, SetLockBlockingSwitchResponse> setLockBlockingSwitchAsyncInvoker(
+        SetLockBlockingSwitchRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.setLockBlockingSwitch, hcClient);
+    }
+
+    /**
      * 设置指标阈值
      *
      * 设置指标阈值
@@ -2609,6 +2748,102 @@ public class DasAsyncClient {
     public AsyncInvoker<ShowLatestDeadLockSnapshotRequest, ShowLatestDeadLockSnapshotResponse> showLatestDeadLockSnapshotAsyncInvoker(
         ShowLatestDeadLockSnapshotRequest request) {
         return new AsyncInvoker<>(request, DasMeta.showLatestDeadLockSnapshot, hcClient);
+    }
+
+    /**
+     * 查询锁阻塞数量统计
+     *
+     * 查询锁阻塞数量统计。
+     * 仅支持SQLServer实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLockBlockingStatisticsRequest 请求对象
+     * @return CompletableFuture<ShowLockBlockingStatisticsResponse>
+     */
+    public CompletableFuture<ShowLockBlockingStatisticsResponse> showLockBlockingStatisticsAsync(
+        ShowLockBlockingStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.showLockBlockingStatistics);
+    }
+
+    /**
+     * 查询锁阻塞数量统计
+     *
+     * 查询锁阻塞数量统计。
+     * 仅支持SQLServer实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLockBlockingStatisticsRequest 请求对象
+     * @return AsyncInvoker<ShowLockBlockingStatisticsRequest, ShowLockBlockingStatisticsResponse>
+     */
+    public AsyncInvoker<ShowLockBlockingStatisticsRequest, ShowLockBlockingStatisticsResponse> showLockBlockingStatisticsAsyncInvoker(
+        ShowLockBlockingStatisticsRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.showLockBlockingStatistics, hcClient);
+    }
+
+    /**
+     * 查询锁阻塞开关和保存时长
+     *
+     * 查询锁阻塞开关和保存时长。
+     * 仅支持SQLServer实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLockBlockingSwitchRequest 请求对象
+     * @return CompletableFuture<ShowLockBlockingSwitchResponse>
+     */
+    public CompletableFuture<ShowLockBlockingSwitchResponse> showLockBlockingSwitchAsync(
+        ShowLockBlockingSwitchRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.showLockBlockingSwitch);
+    }
+
+    /**
+     * 查询锁阻塞开关和保存时长
+     *
+     * 查询锁阻塞开关和保存时长。
+     * 仅支持SQLServer实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLockBlockingSwitchRequest 请求对象
+     * @return AsyncInvoker<ShowLockBlockingSwitchRequest, ShowLockBlockingSwitchResponse>
+     */
+    public AsyncInvoker<ShowLockBlockingSwitchRequest, ShowLockBlockingSwitchResponse> showLockBlockingSwitchAsyncInvoker(
+        ShowLockBlockingSwitchRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.showLockBlockingSwitch, hcClient);
+    }
+
+    /**
+     * 查询锁阻塞趋势列表
+     *
+     * 查询锁阻塞趋势列表。
+     * 仅支持SQLServer实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLockBlockingTrendRequest 请求对象
+     * @return CompletableFuture<ShowLockBlockingTrendResponse>
+     */
+    public CompletableFuture<ShowLockBlockingTrendResponse> showLockBlockingTrendAsync(
+        ShowLockBlockingTrendRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.showLockBlockingTrend);
+    }
+
+    /**
+     * 查询锁阻塞趋势列表
+     *
+     * 查询锁阻塞趋势列表。
+     * 仅支持SQLServer实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLockBlockingTrendRequest 请求对象
+     * @return AsyncInvoker<ShowLockBlockingTrendRequest, ShowLockBlockingTrendResponse>
+     */
+    public AsyncInvoker<ShowLockBlockingTrendRequest, ShowLockBlockingTrendResponse> showLockBlockingTrendAsyncInvoker(
+        ShowLockBlockingTrendRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.showLockBlockingTrend, hcClient);
     }
 
     /**

@@ -1006,7 +1006,7 @@ public class DwsClient {
     /**
      * 创建集群
      *
-     * 该接口用于创建集群。
+     * 该接口用于创建集群。建议使用新的v2接口，此接口仅保证现有功能，新功能新特性不再新增。
      * 集群必须要运行在VPC之内，创建集群前，您需要先创建VPC，并获取VPC和子网的id。
      * 该接口为异步接口，创建集群需要10～15分钟。
      * 
@@ -1022,7 +1022,7 @@ public class DwsClient {
     /**
      * 创建集群
      *
-     * 该接口用于创建集群。
+     * 该接口用于创建集群。建议使用新的v2接口，此接口仅保证现有功能，新功能新特性不再新增。
      * 集群必须要运行在VPC之内，创建集群前，您需要先创建VPC，并获取VPC和子网的id。
      * 该接口为异步接口，创建集群需要10～15分钟。
      * 
@@ -1423,7 +1423,8 @@ public class DwsClient {
     /**
      * 删除集群
      *
-     * 删除集群。集群删除后将释放此集群的所有资源，包括客户数据。为了安全起见，请在删除集群前为这个集群创建快照。
+     * 删除集群v2接口。集群删除后将释放此集群的所有资源，包括客户数据。为了安全起见，请在删除集群前为这个集群创建快照。
+     * 删除集群建议优先使用“删除DWS集群”接口，覆盖此接口所有参数及功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1437,7 +1438,8 @@ public class DwsClient {
     /**
      * 删除集群
      *
-     * 删除集群。集群删除后将释放此集群的所有资源，包括客户数据。为了安全起见，请在删除集群前为这个集群创建快照。
+     * 删除集群v2接口。集群删除后将释放此集群的所有资源，包括客户数据。为了安全起见，请在删除集群前为这个集群创建快照。
+     * 删除集群建议优先使用“删除DWS集群”接口，覆盖此接口所有参数及功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1600,9 +1602,9 @@ public class DwsClient {
     }
 
     /**
-     * 删除集群V2
+     * 删除DWS集群
      *
-     * 删除集群。集群删除后将释放此集群的所有资源，包括客户数据。为了安全起见，请在删除集群前为这个集群创建快照。
+     * 删除集群v2接口。集群删除后将释放此集群的所有资源，包括客户数据。为了安全起见，请在删除集群前为这个集群创建快照。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1614,9 +1616,9 @@ public class DwsClient {
     }
 
     /**
-     * 删除集群V2
+     * 删除DWS集群
      *
-     * 删除集群。集群删除后将释放此集群的所有资源，包括客户数据。为了安全起见，请在删除集群前为这个集群创建快照。
+     * 删除集群v2接口。集群删除后将释放此集群的所有资源，包括客户数据。为了安全起见，请在删除集群前为这个集群创建快照。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3657,7 +3659,7 @@ public class DwsClient {
     /**
      * 查询规格信息
      *
-     * 该接口用于查询所有GaussDB(DWS)服务支持的规格信息。
+     * 该接口用于查询所有DWS服务支持的规格信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3671,7 +3673,7 @@ public class DwsClient {
     /**
      * 查询规格信息
      *
-     * 该接口用于查询所有GaussDB(DWS)服务支持的规格信息。
+     * 该接口用于查询所有DWS服务支持的规格信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3742,7 +3744,7 @@ public class DwsClient {
     /**
      * 查询配额
      *
-     * 查询单租户在GaussDB(DWS)服务下的配额信息。
+     * 查询单租户在DWS服务下的配额信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3756,7 +3758,7 @@ public class DwsClient {
     /**
      * 查询配额
      *
-     * 查询单租户在GaussDB(DWS)服务下的配额信息。
+     * 查询单租户在DWS服务下的配额信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5721,7 +5723,7 @@ public class DwsClient {
      * 该接口用于容灾进行灾备切换操作。
      * “灾备切换”按钮用于在容灾正常情况下主备倒换操作。
      * 容灾状态为“运行中”时可以执行灾备切换操作。
-     * 灾备切换需要一定时间，在此期间，原生产集群将可不用。
+     * 灾备切换需要一定时间，在此期间，原生产集群将不可用。
      * 不同场景下进行灾备切换，RPO（Recovery Point Object，灾难发生后，系统和数据必须恢复到的时间点要求。）说明如下：
      *   生产集群在“可用”的状态下，RPO&#x3D;0。
      *   生产集群在“不可用”的状态下，无法保证RPO&#x3D;0，但数据至少可恢复到生产集群“最近容灾成功时间”。
@@ -5742,7 +5744,7 @@ public class DwsClient {
      * 该接口用于容灾进行灾备切换操作。
      * “灾备切换”按钮用于在容灾正常情况下主备倒换操作。
      * 容灾状态为“运行中”时可以执行灾备切换操作。
-     * 灾备切换需要一定时间，在此期间，原生产集群将可不用。
+     * 灾备切换需要一定时间，在此期间，原生产集群将不可用。
      * 不同场景下进行灾备切换，RPO（Recovery Point Object，灾难发生后，系统和数据必须恢复到的时间点要求。）说明如下：
      *   生产集群在“可用”的状态下，RPO&#x3D;0。
      *   生产集群在“不可用”的状态下，无法保证RPO&#x3D;0，但数据至少可恢复到生产集群“最近容灾成功时间”。

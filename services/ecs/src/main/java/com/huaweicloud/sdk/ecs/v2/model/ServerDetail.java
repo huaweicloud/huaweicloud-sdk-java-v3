@@ -16,6 +16,26 @@ import java.util.function.Consumer;
 public class ServerDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "capacity_reservation_id")
+
+    private String capacityReservationId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "capacity_reservation_specification")
+
+    private CapacityReservationSpecification capacityReservationSpecification;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "spod_id")
+
+    private String spodId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enclave_options")
+
+    private EnclaveOptions enclaveOptions;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
@@ -259,6 +279,94 @@ public class ServerDetail {
     @JsonProperty(value = "network_interfaces")
 
     private List<NetworkInterfaces> networkInterfaces = null;
+
+    public ServerDetail withCapacityReservationId(String capacityReservationId) {
+        this.capacityReservationId = capacityReservationId;
+        return this;
+    }
+
+    /**
+     * 容量预留ID
+     * @return capacityReservationId
+     */
+    public String getCapacityReservationId() {
+        return capacityReservationId;
+    }
+
+    public void setCapacityReservationId(String capacityReservationId) {
+        this.capacityReservationId = capacityReservationId;
+    }
+
+    public ServerDetail withCapacityReservationSpecification(
+        CapacityReservationSpecification capacityReservationSpecification) {
+        this.capacityReservationSpecification = capacityReservationSpecification;
+        return this;
+    }
+
+    public ServerDetail withCapacityReservationSpecification(
+        Consumer<CapacityReservationSpecification> capacityReservationSpecificationSetter) {
+        if (this.capacityReservationSpecification == null) {
+            this.capacityReservationSpecification = new CapacityReservationSpecification();
+            capacityReservationSpecificationSetter.accept(this.capacityReservationSpecification);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get capacityReservationSpecification
+     * @return capacityReservationSpecification
+     */
+    public CapacityReservationSpecification getCapacityReservationSpecification() {
+        return capacityReservationSpecification;
+    }
+
+    public void setCapacityReservationSpecification(CapacityReservationSpecification capacityReservationSpecification) {
+        this.capacityReservationSpecification = capacityReservationSpecification;
+    }
+
+    public ServerDetail withSpodId(String spodId) {
+        this.spodId = spodId;
+        return this;
+    }
+
+    /**
+     * 共池裸机按整机柜发放的同一批次的批创ID
+     * @return spodId
+     */
+    public String getSpodId() {
+        return spodId;
+    }
+
+    public void setSpodId(String spodId) {
+        this.spodId = spodId;
+    }
+
+    public ServerDetail withEnclaveOptions(EnclaveOptions enclaveOptions) {
+        this.enclaveOptions = enclaveOptions;
+        return this;
+    }
+
+    public ServerDetail withEnclaveOptions(Consumer<EnclaveOptions> enclaveOptionsSetter) {
+        if (this.enclaveOptions == null) {
+            this.enclaveOptions = new EnclaveOptions();
+            enclaveOptionsSetter.accept(this.enclaveOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get enclaveOptions
+     * @return enclaveOptions
+     */
+    public EnclaveOptions getEnclaveOptions() {
+        return enclaveOptions;
+    }
+
+    public void setEnclaveOptions(EnclaveOptions enclaveOptions) {
+        this.enclaveOptions = enclaveOptions;
+    }
 
     public ServerDetail withStatus(String status) {
         this.status = status;
@@ -1272,7 +1380,10 @@ public class ServerDetail {
             return false;
         }
         ServerDetail that = (ServerDetail) obj;
-        return Objects.equals(this.status, that.status) && Objects.equals(this.updated, that.updated)
+        return Objects.equals(this.capacityReservationId, that.capacityReservationId)
+            && Objects.equals(this.capacityReservationSpecification, that.capacityReservationSpecification)
+            && Objects.equals(this.spodId, that.spodId) && Objects.equals(this.enclaveOptions, that.enclaveOptions)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.updated, that.updated)
             && Objects.equals(this.autoTerminateTime, that.autoTerminateTime)
             && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.osEXTSRVATTRHost, that.osEXTSRVATTRHost)
             && Objects.equals(this.addresses, that.addresses) && Objects.equals(this.keyName, that.keyName)
@@ -1312,7 +1423,11 @@ public class ServerDetail {
 
     @Override
     public int hashCode() {
-        return Objects.hash(status,
+        return Objects.hash(capacityReservationId,
+            capacityReservationSpecification,
+            spodId,
+            enclaveOptions,
+            status,
             updated,
             autoTerminateTime,
             hostId,
@@ -1367,6 +1482,12 @@ public class ServerDetail {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ServerDetail {\n");
+        sb.append("    capacityReservationId: ").append(toIndentedString(capacityReservationId)).append("\n");
+        sb.append("    capacityReservationSpecification: ")
+            .append(toIndentedString(capacityReservationSpecification))
+            .append("\n");
+        sb.append("    spodId: ").append(toIndentedString(spodId)).append("\n");
+        sb.append("    enclaveOptions: ").append(toIndentedString(enclaveOptions)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
         sb.append("    autoTerminateTime: ").append(toIndentedString(autoTerminateTime)).append("\n");

@@ -25,6 +25,21 @@ public class ListAlarmDetailRequest {
 
     private String limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "from")
+
+    private Long from;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "to")
+
+    private Long to;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "recent_day")
+
+    private Integer recentDay;
+
     public ListAlarmDetailRequest withTimeZone(String timeZone) {
         this.timeZone = timeZone;
         return this;
@@ -76,6 +91,57 @@ public class ListAlarmDetailRequest {
         this.limit = limit;
     }
 
+    public ListAlarmDetailRequest withFrom(Long from) {
+        this.from = from;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  开始UTC时间，单位精确到毫秒。  **取值范围**：  不涉及。
+     * @return from
+     */
+    public Long getFrom() {
+        return from;
+    }
+
+    public void setFrom(Long from) {
+        this.from = from;
+    }
+
+    public ListAlarmDetailRequest withTo(Long to) {
+        this.to = to;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  结束UTC时间，单位精确到毫秒。  **取值范围**：  不涉及。
+     * @return to
+     */
+    public Long getTo() {
+        return to;
+    }
+
+    public void setTo(Long to) {
+        this.to = to;
+    }
+
+    public ListAlarmDetailRequest withRecentDay(Integer recentDay) {
+        this.recentDay = recentDay;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  查询前N天到当前时间范围内的告警。  **约束限制**： 不涉及。 **取值范围**： 大于0。
+     * @return recentDay
+     */
+    public Integer getRecentDay() {
+        return recentDay;
+    }
+
+    public void setRecentDay(Integer recentDay) {
+        this.recentDay = recentDay;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +152,13 @@ public class ListAlarmDetailRequest {
         }
         ListAlarmDetailRequest that = (ListAlarmDetailRequest) obj;
         return Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.from, that.from)
+            && Objects.equals(this.to, that.to) && Objects.equals(this.recentDay, that.recentDay);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(timeZone, offset, limit);
+        return Objects.hash(timeZone, offset, limit, from, to, recentDay);
     }
 
     @Override
@@ -101,6 +168,9 @@ public class ListAlarmDetailRequest {
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    from: ").append(toIndentedString(from)).append("\n");
+        sb.append("    to: ").append(toIndentedString(to)).append("\n");
+        sb.append("    recentDay: ").append(toIndentedString(recentDay)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -460,6 +460,21 @@ public class KooPhoneMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesRequest::getPoolSceneTag, ListInstancesRequest::setPoolSceneTag));
+        builder.<String>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getOrder, ListInstancesRequest::setOrder));
+        builder.<String>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getOrderBy, ListInstancesRequest::setOrderBy));
+        builder.<String>withRequestField("pool_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getPoolName, ListInstancesRequest::setPoolName));
 
         // response
 

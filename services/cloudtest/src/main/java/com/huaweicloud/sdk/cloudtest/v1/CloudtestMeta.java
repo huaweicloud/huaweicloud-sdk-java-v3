@@ -15,10 +15,13 @@ import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseResultLogResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestItemInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.AlarmStatisticsQuery;
 import com.huaweicloud.sdk.cloudtest.v1.model.AlertStatisticsDto;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddCaseResultInTaskRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddCaseResultInTaskResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddRelationsByOneCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddRelationsByOneCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddResourcesForIteratorRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddResourcesForIteratorResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddTestCaseResultInTaskInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteFacotrByIdsRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteFacotrByIdsResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteTestCaseRequest;
@@ -544,6 +547,48 @@ public class CloudtestMeta {
             f -> f.withMarshaller(AddTestCaseResultLogRequest::getBody, AddTestCaseResultLogRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchAddCaseResultInTaskRequest, BatchAddCaseResultInTaskResponse> batchAddCaseResultInTask =
+        genForBatchAddCaseResultInTask();
+
+    private static HttpRequestDef<BatchAddCaseResultInTaskRequest, BatchAddCaseResultInTaskResponse> genForBatchAddCaseResultInTask() {
+        // basic
+        HttpRequestDef.Builder<BatchAddCaseResultInTaskRequest, BatchAddCaseResultInTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, BatchAddCaseResultInTaskRequest.class, BatchAddCaseResultInTaskResponse.class)
+                .withName("BatchAddCaseResultInTask")
+                .withUri("/v4/{project_id}/versions/{version_uri}/task/testcases/results")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchAddCaseResultInTaskRequest::getProjectId,
+                BatchAddCaseResultInTaskRequest::setProjectId));
+        builder.<String>withRequestField("version_uri",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchAddCaseResultInTaskRequest::getVersionUri,
+                BatchAddCaseResultInTaskRequest::setVersionUri));
+        builder.<BatchAddTestCaseResultInTaskInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchAddTestCaseResultInTaskInfo.class),
+            f -> f.withMarshaller(BatchAddCaseResultInTaskRequest::getBody, BatchAddCaseResultInTaskRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchAddCaseResultInTaskResponse::getBody,
+                BatchAddCaseResultInTaskResponse::setBody));
 
         return builder.build();
     }

@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.gaussdb.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * TaskDetailInfo
@@ -64,6 +67,16 @@ public class TaskDetailInfo {
     @JsonProperty(value = "fail_reason")
 
     private String failReason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "show_detail")
+
+    private Boolean showDetail;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action_names")
+
+    private List<String> actionNames = null;
 
     public TaskDetailInfo withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -252,6 +265,56 @@ public class TaskDetailInfo {
         this.failReason = failReason;
     }
 
+    public TaskDetailInfo withShowDetail(Boolean showDetail) {
+        this.showDetail = showDetail;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  是否支持通过[获取异步任务详情](https://support.huaweicloud.com/api-taurusdb/ShowTaskDetails.html)接口获取任务详情。  **取值范围**：  - true：是。 - false：否。
+     * @return showDetail
+     */
+    public Boolean getShowDetail() {
+        return showDetail;
+    }
+
+    public void setShowDetail(Boolean showDetail) {
+        this.showDetail = showDetail;
+    }
+
+    public TaskDetailInfo withActionNames(List<String> actionNames) {
+        this.actionNames = actionNames;
+        return this;
+    }
+
+    public TaskDetailInfo addActionNamesItem(String actionNamesItem) {
+        if (this.actionNames == null) {
+            this.actionNames = new ArrayList<>();
+        }
+        this.actionNames.add(actionNamesItem);
+        return this;
+    }
+
+    public TaskDetailInfo withActionNames(Consumer<List<String>> actionNamesSetter) {
+        if (this.actionNames == null) {
+            this.actionNames = new ArrayList<>();
+        }
+        actionNamesSetter.accept(this.actionNames);
+        return this;
+    }
+
+    /**
+     * **参数解释**：  支持筛选的任务名称。  **取值范围**：  不涉及。
+     * @return actionNames
+     */
+    public List<String> getActionNames() {
+        return actionNames;
+    }
+
+    public void setActionNames(List<String> actionNames) {
+        this.actionNames = actionNames;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -266,7 +329,8 @@ public class TaskDetailInfo {
             && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.jobName, that.jobName)
             && Objects.equals(this.status, that.status) && Objects.equals(this.process, that.process)
             && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.endedTime, that.endedTime)
-            && Objects.equals(this.failReason, that.failReason);
+            && Objects.equals(this.failReason, that.failReason) && Objects.equals(this.showDetail, that.showDetail)
+            && Objects.equals(this.actionNames, that.actionNames);
     }
 
     @Override
@@ -281,7 +345,9 @@ public class TaskDetailInfo {
             process,
             createdTime,
             endedTime,
-            failReason);
+            failReason,
+            showDetail,
+            actionNames);
     }
 
     @Override
@@ -299,6 +365,8 @@ public class TaskDetailInfo {
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("    endedTime: ").append(toIndentedString(endedTime)).append("\n");
         sb.append("    failReason: ").append(toIndentedString(failReason)).append("\n");
+        sb.append("    showDetail: ").append(toIndentedString(showDetail)).append("\n");
+        sb.append("    actionNames: ").append(toIndentedString(actionNames)).append("\n");
         sb.append("}");
         return sb.toString();
     }

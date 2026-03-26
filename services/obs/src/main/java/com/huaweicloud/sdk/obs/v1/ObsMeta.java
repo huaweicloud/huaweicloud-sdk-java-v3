@@ -14,6 +14,8 @@ import com.huaweicloud.sdk.obs.v1.model.DeleteBucketCustomdomainRequest;
 import com.huaweicloud.sdk.obs.v1.model.DeleteBucketCustomdomainResponse;
 import com.huaweicloud.sdk.obs.v1.model.DeleteBucketRequest;
 import com.huaweicloud.sdk.obs.v1.model.DeleteBucketResponse;
+import com.huaweicloud.sdk.obs.v1.model.DeleteDisPolicyRequest;
+import com.huaweicloud.sdk.obs.v1.model.DeleteDisPolicyResponse;
 import com.huaweicloud.sdk.obs.v1.model.DeleteObjectRequest;
 import com.huaweicloud.sdk.obs.v1.model.DeleteObjectResponse;
 import com.huaweicloud.sdk.obs.v1.model.DeleteObjectsRequest;
@@ -27,6 +29,8 @@ import com.huaweicloud.sdk.obs.v1.model.GetBucketMetadataRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketMetadataResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketNotificationRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketNotificationResponse;
+import com.huaweicloud.sdk.obs.v1.model.GetDisPolicyRequest;
+import com.huaweicloud.sdk.obs.v1.model.GetDisPolicyResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetObjectMetadataRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetObjectMetadataResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetObjectRequest;
@@ -43,9 +47,12 @@ import com.huaweicloud.sdk.obs.v1.model.SetBucketAclResponse;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketCustomDomainBody;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketCustomedomainRequest;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketCustomedomainResponse;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketDisPolicyRequestBody;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketNotificationRequest;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketNotificationRequestBody;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketNotificationResponse;
+import com.huaweicloud.sdk.obs.v1.model.SetDisPolicyRequest;
+import com.huaweicloud.sdk.obs.v1.model.SetDisPolicyResponse;
 
 @SuppressWarnings("unchecked")
 public class ObsMeta {
@@ -558,6 +565,76 @@ public class ObsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteDisPolicyRequest, DeleteDisPolicyResponse> deleteDisPolicy =
+        genForDeleteDisPolicy();
+
+    private static HttpRequestDef<DeleteDisPolicyRequest, DeleteDisPolicyResponse> genForDeleteDisPolicy() {
+        // basic
+        HttpRequestDef.Builder<DeleteDisPolicyRequest, DeleteDisPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDisPolicyRequest.class, DeleteDisPolicyResponse.class)
+                .withName("DeleteDisPolicy")
+                .withUri("/")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bucket_name",
+            LocationType.Cname,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDisPolicyRequest::getBucketName, DeleteDisPolicyRequest::setBucketName));
+        builder.<String>withRequestField("disPolicy",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDisPolicyRequest::getDisPolicy, DeleteDisPolicyRequest::setDisPolicy));
+        builder.<String>withRequestField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDisPolicyRequest::getDate, DeleteDisPolicyRequest::setDate));
+        builder.<String>withRequestField("Host",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDisPolicyRequest::getHost, DeleteDisPolicyRequest::setHost));
+
+        // response
+
+        builder.<String>withResponseField("x-obs-id-2",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDisPolicyResponse::getXObsId2, DeleteDisPolicyResponse::setXObsId2));
+        builder.<String>withResponseField("x-obs-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDisPolicyResponse::getXObsRequestId,
+                DeleteDisPolicyResponse::setXObsRequestId));
+        builder.<String>withResponseField("ETag",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDisPolicyResponse::getEtag, DeleteDisPolicyResponse::setEtag));
+        builder.<String>withResponseField("Connection",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDisPolicyResponse::getConnection, DeleteDisPolicyResponse::setConnection));
+        builder.<String>withResponseField("Content-Length",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDisPolicyResponse::getContentLength,
+                DeleteDisPolicyResponse::setContentLength));
+        builder.<String>withResponseField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDisPolicyResponse::getDate, DeleteDisPolicyResponse::setDate));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteObjectRequest, DeleteObjectResponse> deleteObject = genForDeleteObject();
 
     private static HttpRequestDef<DeleteObjectRequest, DeleteObjectResponse> genForDeleteObject() {
@@ -1048,6 +1125,73 @@ public class ObsMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(GetBucketNotificationResponse::getDate, GetBucketNotificationResponse::setDate));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetDisPolicyRequest, GetDisPolicyResponse> getDisPolicy = genForGetDisPolicy();
+
+    private static HttpRequestDef<GetDisPolicyRequest, GetDisPolicyResponse> genForGetDisPolicy() {
+        // basic
+        HttpRequestDef.Builder<GetDisPolicyRequest, GetDisPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetDisPolicyRequest.class, GetDisPolicyResponse.class)
+                .withName("GetDisPolicy")
+                .withUri("/")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bucket_name",
+            LocationType.Cname,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetDisPolicyRequest::getBucketName, GetDisPolicyRequest::setBucketName));
+        builder.<String>withRequestField("disPolicy",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetDisPolicyRequest::getDisPolicy, GetDisPolicyRequest::setDisPolicy));
+        builder.<String>withRequestField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetDisPolicyRequest::getDate, GetDisPolicyRequest::setDate));
+        builder.<String>withRequestField("Host",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetDisPolicyRequest::getHost, GetDisPolicyRequest::setHost));
+
+        // response
+
+        builder.<String>withResponseField("x-obs-id-2",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetDisPolicyResponse::getXObsId2, GetDisPolicyResponse::setXObsId2));
+        builder.<String>withResponseField("x-obs-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetDisPolicyResponse::getXObsRequestId, GetDisPolicyResponse::setXObsRequestId));
+        builder.<String>withResponseField("ETag",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetDisPolicyResponse::getEtag, GetDisPolicyResponse::setEtag));
+        builder.<String>withResponseField("Connection",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetDisPolicyResponse::getConnection, GetDisPolicyResponse::setConnection));
+        builder.<String>withResponseField("Content-Length",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetDisPolicyResponse::getContentLength, GetDisPolicyResponse::setContentLength));
+        builder.<String>withResponseField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetDisPolicyResponse::getDate, GetDisPolicyResponse::setDate));
         return builder.build();
     }
 
@@ -2079,6 +2223,73 @@ public class ObsMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(SetBucketNotificationResponse::getDate, SetBucketNotificationResponse::setDate));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetDisPolicyRequest, SetDisPolicyResponse> setDisPolicy = genForSetDisPolicy();
+
+    private static HttpRequestDef<SetDisPolicyRequest, SetDisPolicyResponse> genForSetDisPolicy() {
+        // basic
+        HttpRequestDef.Builder<SetDisPolicyRequest, SetDisPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetDisPolicyRequest.class, SetDisPolicyResponse.class)
+                .withName("SetDisPolicy")
+                .withUri("/")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bucket_name",
+            LocationType.Cname,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetDisPolicyRequest::getBucketName, SetDisPolicyRequest::setBucketName));
+        builder.<String>withRequestField("disPolicy",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetDisPolicyRequest::getDisPolicy, SetDisPolicyRequest::setDisPolicy));
+        builder.<String>withRequestField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetDisPolicyRequest::getDate, SetDisPolicyRequest::setDate));
+        builder.<SetBucketDisPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetBucketDisPolicyRequestBody.class),
+            f -> f.withMarshaller(SetDisPolicyRequest::getBody, SetDisPolicyRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("x-obs-id-2",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetDisPolicyResponse::getXObsId2, SetDisPolicyResponse::setXObsId2));
+        builder.<String>withResponseField("x-obs-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetDisPolicyResponse::getXObsRequestId, SetDisPolicyResponse::setXObsRequestId));
+        builder.<String>withResponseField("ETag",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetDisPolicyResponse::getEtag, SetDisPolicyResponse::setEtag));
+        builder.<String>withResponseField("Connection",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetDisPolicyResponse::getConnection, SetDisPolicyResponse::setConnection));
+        builder.<String>withResponseField("Content-Length",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetDisPolicyResponse::getContentLength, SetDisPolicyResponse::setContentLength));
+        builder.<String>withResponseField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetDisPolicyResponse::getDate, SetDisPolicyResponse::setDate));
         return builder.build();
     }
 

@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.dws.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * AlarmSubUpdateRequest
@@ -39,6 +42,26 @@ public class AlarmSubUpdateRequest {
     @JsonProperty(value = "notification_target_type")
 
     private String notificationTargetType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "language")
+
+    private String language;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "time_zone")
+
+    private String timeZone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_id")
+
+    private String clusterId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_details")
+
+    private List<AlarmSubDetailResopnse> alarmDetails = null;
 
     public AlarmSubUpdateRequest withName(String name) {
         this.name = name;
@@ -142,6 +165,90 @@ public class AlarmSubUpdateRequest {
         this.notificationTargetType = notificationTargetType;
     }
 
+    public AlarmSubUpdateRequest withLanguage(String language) {
+        this.language = language;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  语言。  **取值范围**：  不涉及。
+     * @return language
+     */
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public AlarmSubUpdateRequest withTimeZone(String timeZone) {
+        this.timeZone = timeZone;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 时区。 **取值范围**： 不涉及。
+     * @return timeZone
+     */
+    public String getTimeZone() {
+        return timeZone;
+    }
+
+    public void setTimeZone(String timeZone) {
+        this.timeZone = timeZone;
+    }
+
+    public AlarmSubUpdateRequest withClusterId(String clusterId) {
+        this.clusterId = clusterId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 集群ID。 **取值范围**： 不涉及。
+     * @return clusterId
+     */
+    public String getClusterId() {
+        return clusterId;
+    }
+
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
+    }
+
+    public AlarmSubUpdateRequest withAlarmDetails(List<AlarmSubDetailResopnse> alarmDetails) {
+        this.alarmDetails = alarmDetails;
+        return this;
+    }
+
+    public AlarmSubUpdateRequest addAlarmDetailsItem(AlarmSubDetailResopnse alarmDetailsItem) {
+        if (this.alarmDetails == null) {
+            this.alarmDetails = new ArrayList<>();
+        }
+        this.alarmDetails.add(alarmDetailsItem);
+        return this;
+    }
+
+    public AlarmSubUpdateRequest withAlarmDetails(Consumer<List<AlarmSubDetailResopnse>> alarmDetailsSetter) {
+        if (this.alarmDetails == null) {
+            this.alarmDetails = new ArrayList<>();
+        }
+        alarmDetailsSetter.accept(this.alarmDetails);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 订阅的所有告警详细信息。 **取值范围**： 不涉及。
+     * @return alarmDetails
+     */
+    public List<AlarmSubDetailResopnse> getAlarmDetails() {
+        return alarmDetails;
+    }
+
+    public void setAlarmDetails(List<AlarmSubDetailResopnse> alarmDetails) {
+        this.alarmDetails = alarmDetails;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -155,13 +262,23 @@ public class AlarmSubUpdateRequest {
             && Objects.equals(this.alarmLevel, that.alarmLevel)
             && Objects.equals(this.notificationTarget, that.notificationTarget)
             && Objects.equals(this.notificationTargetName, that.notificationTargetName)
-            && Objects.equals(this.notificationTargetType, that.notificationTargetType);
+            && Objects.equals(this.notificationTargetType, that.notificationTargetType)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.timeZone, that.timeZone)
+            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.alarmDetails, that.alarmDetails);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(name, enable, alarmLevel, notificationTarget, notificationTargetName, notificationTargetType);
+        return Objects.hash(name,
+            enable,
+            alarmLevel,
+            notificationTarget,
+            notificationTargetName,
+            notificationTargetType,
+            language,
+            timeZone,
+            clusterId,
+            alarmDetails);
     }
 
     @Override
@@ -174,6 +291,10 @@ public class AlarmSubUpdateRequest {
         sb.append("    notificationTarget: ").append(toIndentedString(notificationTarget)).append("\n");
         sb.append("    notificationTargetName: ").append(toIndentedString(notificationTargetName)).append("\n");
         sb.append("    notificationTargetType: ").append(toIndentedString(notificationTargetType)).append("\n");
+        sb.append("    language: ").append(toIndentedString(language)).append("\n");
+        sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
+        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    alarmDetails: ").append(toIndentedString(alarmDetails)).append("\n");
         sb.append("}");
         return sb.toString();
     }

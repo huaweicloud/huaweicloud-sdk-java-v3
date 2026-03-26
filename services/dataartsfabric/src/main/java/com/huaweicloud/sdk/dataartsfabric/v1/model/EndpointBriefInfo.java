@@ -63,6 +63,11 @@ public class EndpointBriefInfo {
     private CapRef cap;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_image_id")
+
+    private String customImageId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reserved_resource")
 
     private ReservedResource reservedResource;
@@ -270,6 +275,23 @@ public class EndpointBriefInfo {
         this.cap = cap;
     }
 
+    public EndpointBriefInfo withCustomImageId(String customImageId) {
+        this.customImageId = customImageId;
+        return this;
+    }
+
+    /**
+     * - **参数解释**：CustomImageId。 - **约束限制**：不涉及。 - **取值范围**：长度为[32,36]的英文字符、数字和中划线(-)的组合。 - **默认取值**：不涉及。 
+     * @return customImageId
+     */
+    public String getCustomImageId() {
+        return customImageId;
+    }
+
+    public void setCustomImageId(String customImageId) {
+        this.customImageId = customImageId;
+    }
+
     public EndpointBriefInfo withReservedResource(ReservedResource reservedResource) {
         this.reservedResource = reservedResource;
         return this;
@@ -370,6 +392,7 @@ public class EndpointBriefInfo {
             && Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.owner, that.owner) && Objects.equals(this.cap, that.cap)
+            && Objects.equals(this.customImageId, that.customImageId)
             && Objects.equals(this.reservedResource, that.reservedResource)
             && Objects.equals(this.rayResource, that.rayResource) && Objects.equals(this.errorCode, that.errorCode)
             && Objects.equals(this.errorMsg, that.errorMsg);
@@ -387,6 +410,7 @@ public class EndpointBriefInfo {
             updateTime,
             owner,
             cap,
+            customImageId,
             reservedResource,
             rayResource,
             errorCode,
@@ -407,6 +431,7 @@ public class EndpointBriefInfo {
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
         sb.append("    cap: ").append(toIndentedString(cap)).append("\n");
+        sb.append("    customImageId: ").append(toIndentedString(customImageId)).append("\n");
         sb.append("    reservedResource: ").append(toIndentedString(reservedResource)).append("\n");
         sb.append("    rayResource: ").append(toIndentedString(rayResource)).append("\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");

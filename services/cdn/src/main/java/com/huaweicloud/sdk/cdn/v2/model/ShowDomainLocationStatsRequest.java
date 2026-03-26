@@ -36,6 +36,11 @@ public class ShowDomainLocationStatsRequest {
     private String statType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_version")
+
+    private String ipVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "interval")
 
     private Long interval;
@@ -154,6 +159,23 @@ public class ShowDomainLocationStatsRequest {
         this.statType = statType;
     }
 
+    public ShowDomainLocationStatsRequest withIpVersion(String ipVersion) {
+        this.ipVersion = ipVersion;
+        return this;
+    }
+
+    /**
+     * - 传输协议：IPv4或IPv6,不支持同时指定  - 如果不传，默认取全部
+     * @return ipVersion
+     */
+    public String getIpVersion() {
+        return ipVersion;
+    }
+
+    public void setIpVersion(String ipVersion) {
+        this.ipVersion = ipVersion;
+    }
+
     public ShowDomainLocationStatsRequest withInterval(Long interval) {
         this.interval = interval;
         return this;
@@ -269,9 +291,10 @@ public class ShowDomainLocationStatsRequest {
         ShowDomainLocationStatsRequest that = (ShowDomainLocationStatsRequest) obj;
         return Objects.equals(this.action, that.action) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.domainName, that.domainName)
-            && Objects.equals(this.statType, that.statType) && Objects.equals(this.interval, that.interval)
-            && Objects.equals(this.country, that.country) && Objects.equals(this.province, that.province)
-            && Objects.equals(this.isp, that.isp) && Objects.equals(this.groupBy, that.groupBy)
+            && Objects.equals(this.statType, that.statType) && Objects.equals(this.ipVersion, that.ipVersion)
+            && Objects.equals(this.interval, that.interval) && Objects.equals(this.country, that.country)
+            && Objects.equals(this.province, that.province) && Objects.equals(this.isp, that.isp)
+            && Objects.equals(this.groupBy, that.groupBy)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
@@ -282,6 +305,7 @@ public class ShowDomainLocationStatsRequest {
             endTime,
             domainName,
             statType,
+            ipVersion,
             interval,
             country,
             province,
@@ -299,6 +323,7 @@ public class ShowDomainLocationStatsRequest {
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    statType: ").append(toIndentedString(statType)).append("\n");
+        sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
         sb.append("    country: ").append(toIndentedString(country)).append("\n");
         sb.append("    province: ").append(toIndentedString(province)).append("\n");

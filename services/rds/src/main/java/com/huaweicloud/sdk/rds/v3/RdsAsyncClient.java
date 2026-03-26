@@ -37,6 +37,8 @@ import com.huaweicloud.sdk.rds.v3.model.BatchTagAddActionRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchTagAddActionResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchTagDelActionRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchTagDelActionResponse;
+import com.huaweicloud.sdk.rds.v3.model.ChangeBackupConfigRequest;
+import com.huaweicloud.sdk.rds.v3.model.ChangeBackupConfigResponse;
 import com.huaweicloud.sdk.rds.v3.model.ChangeFailoverModeRequest;
 import com.huaweicloud.sdk.rds.v3.model.ChangeFailoverModeResponse;
 import com.huaweicloud.sdk.rds.v3.model.ChangeFailoverStrategyRequest;
@@ -443,6 +445,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowAutoUpgradePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAutoUpgradePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAvailableVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAvailableVersionResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowBackupConfigRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowBackupConfigResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupDownloadLinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupDownloadLinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupPolicyRequest;
@@ -936,6 +940,35 @@ public class RdsAsyncClient {
     public AsyncInvoker<BatchTagDelActionRequest, BatchTagDelActionResponse> batchTagDelActionAsyncInvoker(
         BatchTagDelActionRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.batchTagDelAction, hcClient);
+    }
+
+    /**
+     * 切换实例备份方式（PostgreSQL）
+     *
+     * 备份管理通用配置接口，目前支持切换备份方式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeBackupConfigRequest 请求对象
+     * @return CompletableFuture<ChangeBackupConfigResponse>
+     */
+    public CompletableFuture<ChangeBackupConfigResponse> changeBackupConfigAsync(ChangeBackupConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.changeBackupConfig);
+    }
+
+    /**
+     * 切换实例备份方式（PostgreSQL）
+     *
+     * 备份管理通用配置接口，目前支持切换备份方式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeBackupConfigRequest 请求对象
+     * @return AsyncInvoker<ChangeBackupConfigRequest, ChangeBackupConfigResponse>
+     */
+    public AsyncInvoker<ChangeBackupConfigRequest, ChangeBackupConfigResponse> changeBackupConfigAsyncInvoker(
+        ChangeBackupConfigRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.changeBackupConfig, hcClient);
     }
 
     /**
@@ -4476,6 +4509,35 @@ public class RdsAsyncClient {
     public AsyncInvoker<ShowAvailableVersionRequest, ShowAvailableVersionResponse> showAvailableVersionAsyncInvoker(
         ShowAvailableVersionRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.showAvailableVersion, hcClient);
+    }
+
+    /**
+     * 查询实例备份方式（PostgreSQL）
+     *
+     * 查询备份管理配置接口。目前支持查询备份方式。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBackupConfigRequest 请求对象
+     * @return CompletableFuture<ShowBackupConfigResponse>
+     */
+    public CompletableFuture<ShowBackupConfigResponse> showBackupConfigAsync(ShowBackupConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showBackupConfig);
+    }
+
+    /**
+     * 查询实例备份方式（PostgreSQL）
+     *
+     * 查询备份管理配置接口。目前支持查询备份方式。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBackupConfigRequest 请求对象
+     * @return AsyncInvoker<ShowBackupConfigRequest, ShowBackupConfigResponse>
+     */
+    public AsyncInvoker<ShowBackupConfigRequest, ShowBackupConfigResponse> showBackupConfigAsyncInvoker(
+        ShowBackupConfigRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.showBackupConfig, hcClient);
     }
 
     /**

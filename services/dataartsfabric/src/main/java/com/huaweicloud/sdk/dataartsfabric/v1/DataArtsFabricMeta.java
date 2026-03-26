@@ -22,6 +22,9 @@ import com.huaweicloud.sdk.dataartsfabric.v1.model.CreateAgreementRequest;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.CreateAgreementResponse;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.CreateEndpointRequest;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.CreateEndpointResponse;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.CreateJobInput;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.CreateJobRequest;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.CreateJobResponse;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.CreateMessageNotificationPolicyRequest;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.CreateMessageNotificationPolicyRequestBody;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.CreateMessageNotificationPolicyResponse;
@@ -37,6 +40,10 @@ import com.huaweicloud.sdk.dataartsfabric.v1.model.DeleteAgreementRequest;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.DeleteAgreementResponse;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.DeleteEndpointRequest;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.DeleteEndpointResponse;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.DeleteJobRequest;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.DeleteJobResponse;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.DeleteJobVersionRequest;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.DeleteJobVersionResponse;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.DeleteMessageNotificationPolicyRequest;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.DeleteMessageNotificationPolicyResponse;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.DeleteModelVersionRequest;
@@ -57,6 +64,10 @@ import com.huaweicloud.sdk.dataartsfabric.v1.model.ListFabricWorkspaceTagsReques
 import com.huaweicloud.sdk.dataartsfabric.v1.model.ListFabricWorkspaceTagsResponse;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.ListFeaturesRequest;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.ListFeaturesResponse;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.ListJobVersionsRequest;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.ListJobVersionsResponse;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.ListJobsRequest;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.ListJobsResponse;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.ListMessageNotificationPolicyRequest;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.ListMessageNotificationPolicyResponse;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.ListModelVersionsRequest;
@@ -85,6 +96,9 @@ import com.huaweicloud.sdk.dataartsfabric.v1.model.TenantAgreementBody;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.UpdateEndpointRequest;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.UpdateEndpointRequestBody;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.UpdateEndpointResponse;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.UpdateJobInput;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.UpdateJobRequest;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.UpdateJobResponse;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.UpdateMetricsConfigInput;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.UpdateMetricsConfigRequest;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.UpdateMetricsConfigResponse;
@@ -514,6 +528,255 @@ public class DataArtsFabricMeta {
             .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateJobRequest, CreateJobResponse> createJob = genForCreateJob();
+
+    private static HttpRequestDef<CreateJobRequest, CreateJobResponse> genForCreateJob() {
+        // basic
+        HttpRequestDef.Builder<CreateJobRequest, CreateJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateJobRequest.class, CreateJobResponse.class)
+                .withName("CreateJob")
+                .withUri("/v1/workspaces/{workspace_id}/jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateJobRequest::getWorkspaceId, CreateJobRequest::setWorkspaceId));
+        builder.<CreateJobInput>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateJobInput.class),
+            f -> f.withMarshaller(CreateJobRequest::getBody, CreateJobRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateJobResponse::getXRequestId, CreateJobResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteJobRequest, DeleteJobResponse> deleteJob = genForDeleteJob();
+
+    private static HttpRequestDef<DeleteJobRequest, DeleteJobResponse> genForDeleteJob() {
+        // basic
+        HttpRequestDef.Builder<DeleteJobRequest, DeleteJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteJobRequest.class, DeleteJobResponse.class)
+                .withName("DeleteJob")
+                .withUri("/v1/workspaces/{workspace_id}/jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteJobRequest::getWorkspaceId, DeleteJobRequest::setWorkspaceId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteJobRequest::getJobId, DeleteJobRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteJobVersionRequest, DeleteJobVersionResponse> deleteJobVersion =
+        genForDeleteJobVersion();
+
+    private static HttpRequestDef<DeleteJobVersionRequest, DeleteJobVersionResponse> genForDeleteJobVersion() {
+        // basic
+        HttpRequestDef.Builder<DeleteJobVersionRequest, DeleteJobVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteJobVersionRequest.class, DeleteJobVersionResponse.class)
+                .withName("DeleteJobVersion")
+                .withUri("/v1/workspaces/{workspace_id}/jobs/{job_id}/versions/{version_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteJobVersionRequest::getWorkspaceId, DeleteJobVersionRequest::setWorkspaceId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteJobVersionRequest::getJobId, DeleteJobVersionRequest::setJobId));
+        builder.<String>withRequestField("version_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteJobVersionRequest::getVersionId, DeleteJobVersionRequest::setVersionId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListJobVersionsRequest, ListJobVersionsResponse> listJobVersions =
+        genForListJobVersions();
+
+    private static HttpRequestDef<ListJobVersionsRequest, ListJobVersionsResponse> genForListJobVersions() {
+        // basic
+        HttpRequestDef.Builder<ListJobVersionsRequest, ListJobVersionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListJobVersionsRequest.class, ListJobVersionsResponse.class)
+                .withName("ListJobVersions")
+                .withUri("/v1/workspaces/{workspace_id}/jobs/{job_id}/versions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobVersionsRequest::getWorkspaceId, ListJobVersionsRequest::setWorkspaceId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobVersionsRequest::getJobId, ListJobVersionsRequest::setJobId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobVersionsRequest::getOffset, ListJobVersionsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobVersionsRequest::getLimit, ListJobVersionsRequest::setLimit));
+        builder.<String>withRequestField("version_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobVersionsRequest::getVersionId, ListJobVersionsRequest::setVersionId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobVersionsRequest::getName, ListJobVersionsRequest::setName));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListJobVersionsResponse::getXRequestId, ListJobVersionsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListJobsRequest, ListJobsResponse> listJobs = genForListJobs();
+
+    private static HttpRequestDef<ListJobsRequest, ListJobsResponse> genForListJobs() {
+        // basic
+        HttpRequestDef.Builder<ListJobsRequest, ListJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListJobsRequest.class, ListJobsResponse.class)
+                .withName("ListJobs")
+                .withUri("/v1/workspaces/{workspace_id}/jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobsRequest::getWorkspaceId, ListJobsRequest::setWorkspaceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobsRequest::getOffset, ListJobsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobsRequest::getLimit, ListJobsRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobsRequest::getName, ListJobsRequest::setName));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobsRequest::getId, ListJobsRequest::setId));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobsRequest::getType, ListJobsRequest::setType));
+        builder.<String>withRequestField("endpoint_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobsRequest::getEndpointId, ListJobsRequest::setEndpointId));
+        builder.<String>withRequestField("sort_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobsRequest::getSortBy, ListJobsRequest::setSortBy));
+        builder.<String>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobsRequest::getOrderBy, ListJobsRequest::setOrderBy));
+        builder.<Boolean>withRequestField("create_by_me",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListJobsRequest::getCreateByMe, ListJobsRequest::setCreateByMe));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListJobsResponse::getXRequestId, ListJobsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateJobRequest, UpdateJobResponse> updateJob = genForUpdateJob();
+
+    private static HttpRequestDef<UpdateJobRequest, UpdateJobResponse> genForUpdateJob() {
+        // basic
+        HttpRequestDef.Builder<UpdateJobRequest, UpdateJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateJobRequest.class, UpdateJobResponse.class)
+                .withName("UpdateJob")
+                .withUri("/v1/workspaces/{workspace_id}/jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateJobRequest::getJobId, UpdateJobRequest::setJobId));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateJobRequest::getWorkspaceId, UpdateJobRequest::setWorkspaceId));
+        builder.<UpdateJobInput>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateJobInput.class),
+            f -> f.withMarshaller(UpdateJobRequest::getBody, UpdateJobRequest::setBody));
 
         // response
 

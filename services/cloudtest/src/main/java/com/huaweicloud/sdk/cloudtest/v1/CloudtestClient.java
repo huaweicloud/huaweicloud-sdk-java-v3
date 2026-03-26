@@ -8,6 +8,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseCommentRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseCommentResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseResultLogRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseResultLogResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddCaseResultInTaskRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddCaseResultInTaskResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddRelationsByOneCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddRelationsByOneCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddResourcesForIteratorRequest;
@@ -446,6 +448,35 @@ public class CloudtestClient {
     public SyncInvoker<AddTestCaseResultLogRequest, AddTestCaseResultLogResponse> addTestCaseResultLogInvoker(
         AddTestCaseResultLogRequest request) {
         return new SyncInvoker<>(request, CloudtestMeta.addTestCaseResultLog, hcClient);
+    }
+
+    /**
+     * 在任务下批量设置用例结果
+     *
+     * 在任务下批量设置用例结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchAddCaseResultInTaskRequest 请求对象
+     * @return BatchAddCaseResultInTaskResponse
+     */
+    public BatchAddCaseResultInTaskResponse batchAddCaseResultInTask(BatchAddCaseResultInTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.batchAddCaseResultInTask);
+    }
+
+    /**
+     * 在任务下批量设置用例结果
+     *
+     * 在任务下批量设置用例结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchAddCaseResultInTaskRequest 请求对象
+     * @return SyncInvoker<BatchAddCaseResultInTaskRequest, BatchAddCaseResultInTaskResponse>
+     */
+    public SyncInvoker<BatchAddCaseResultInTaskRequest, BatchAddCaseResultInTaskResponse> batchAddCaseResultInTaskInvoker(
+        BatchAddCaseResultInTaskRequest request) {
+        return new SyncInvoker<>(request, CloudtestMeta.batchAddCaseResultInTask, hcClient);
     }
 
     /**

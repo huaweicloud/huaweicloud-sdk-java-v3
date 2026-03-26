@@ -2105,6 +2105,12 @@ public class CdnMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDomainLocationStatsRequest::getStatType,
                 ShowDomainLocationStatsRequest::setStatType));
+        builder.<String>withRequestField("ip_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainLocationStatsRequest::getIpVersion,
+                ShowDomainLocationStatsRequest::setIpVersion));
         builder.<Long>withRequestField("interval",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

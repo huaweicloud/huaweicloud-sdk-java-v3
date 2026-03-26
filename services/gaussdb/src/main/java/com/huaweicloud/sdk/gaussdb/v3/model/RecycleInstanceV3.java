@@ -99,9 +99,9 @@ public class RecycleInstanceV3 {
     private String recycleStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "recycle_bakcups")
+    @JsonProperty(value = "recycle_backups")
 
-    private List<RecycleBackupV3> recycleBakcups = null;
+    private List<RecycleBackupV3> recycleBackups = null;
 
     public RecycleInstanceV3 withId(String id) {
         this.id = id;
@@ -392,37 +392,37 @@ public class RecycleInstanceV3 {
         this.recycleStatus = recycleStatus;
     }
 
-    public RecycleInstanceV3 withRecycleBakcups(List<RecycleBackupV3> recycleBakcups) {
-        this.recycleBakcups = recycleBakcups;
+    public RecycleInstanceV3 withRecycleBackups(List<RecycleBackupV3> recycleBackups) {
+        this.recycleBackups = recycleBackups;
         return this;
     }
 
-    public RecycleInstanceV3 addRecycleBakcupsItem(RecycleBackupV3 recycleBakcupsItem) {
-        if (this.recycleBakcups == null) {
-            this.recycleBakcups = new ArrayList<>();
+    public RecycleInstanceV3 addRecycleBackupsItem(RecycleBackupV3 recycleBackupsItem) {
+        if (this.recycleBackups == null) {
+            this.recycleBackups = new ArrayList<>();
         }
-        this.recycleBakcups.add(recycleBakcupsItem);
+        this.recycleBackups.add(recycleBackupsItem);
         return this;
     }
 
-    public RecycleInstanceV3 withRecycleBakcups(Consumer<List<RecycleBackupV3>> recycleBakcupsSetter) {
-        if (this.recycleBakcups == null) {
-            this.recycleBakcups = new ArrayList<>();
+    public RecycleInstanceV3 withRecycleBackups(Consumer<List<RecycleBackupV3>> recycleBackupsSetter) {
+        if (this.recycleBackups == null) {
+            this.recycleBackups = new ArrayList<>();
         }
-        recycleBakcupsSetter.accept(this.recycleBakcups);
+        recycleBackupsSetter.accept(this.recycleBackups);
         return this;
     }
 
     /**
      * **参数解释**：  实例所有的回收站备份列表。
-     * @return recycleBakcups
+     * @return recycleBackups
      */
-    public List<RecycleBackupV3> getRecycleBakcups() {
-        return recycleBakcups;
+    public List<RecycleBackupV3> getRecycleBackups() {
+        return recycleBackups;
     }
 
-    public void setRecycleBakcups(List<RecycleBackupV3> recycleBakcups) {
-        this.recycleBakcups = recycleBakcups;
+    public void setRecycleBackups(List<RecycleBackupV3> recycleBackups) {
+        this.recycleBackups = recycleBackups;
     }
 
     @Override
@@ -445,7 +445,7 @@ public class RecycleInstanceV3 {
             && Objects.equals(this.backupLevel, that.backupLevel)
             && Objects.equals(this.recycleBackupId, that.recycleBackupId)
             && Objects.equals(this.recycleStatus, that.recycleStatus)
-            && Objects.equals(this.recycleBakcups, that.recycleBakcups);
+            && Objects.equals(this.recycleBackups, that.recycleBackups);
     }
 
     @Override
@@ -467,7 +467,7 @@ public class RecycleInstanceV3 {
             backupLevel,
             recycleBackupId,
             recycleStatus,
-            recycleBakcups);
+            recycleBackups);
     }
 
     @Override
@@ -491,7 +491,7 @@ public class RecycleInstanceV3 {
         sb.append("    backupLevel: ").append(toIndentedString(backupLevel)).append("\n");
         sb.append("    recycleBackupId: ").append(toIndentedString(recycleBackupId)).append("\n");
         sb.append("    recycleStatus: ").append(toIndentedString(recycleStatus)).append("\n");
-        sb.append("    recycleBakcups: ").append(toIndentedString(recycleBakcups)).append("\n");
+        sb.append("    recycleBackups: ").append(toIndentedString(recycleBackups)).append("\n");
         sb.append("}");
         return sb.toString();
     }

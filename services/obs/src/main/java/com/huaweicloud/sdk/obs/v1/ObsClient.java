@@ -11,6 +11,8 @@ import com.huaweicloud.sdk.obs.v1.model.DeleteBucketCustomdomainRequest;
 import com.huaweicloud.sdk.obs.v1.model.DeleteBucketCustomdomainResponse;
 import com.huaweicloud.sdk.obs.v1.model.DeleteBucketRequest;
 import com.huaweicloud.sdk.obs.v1.model.DeleteBucketResponse;
+import com.huaweicloud.sdk.obs.v1.model.DeleteDisPolicyRequest;
+import com.huaweicloud.sdk.obs.v1.model.DeleteDisPolicyResponse;
 import com.huaweicloud.sdk.obs.v1.model.DeleteObjectRequest;
 import com.huaweicloud.sdk.obs.v1.model.DeleteObjectResponse;
 import com.huaweicloud.sdk.obs.v1.model.DeleteObjectsRequest;
@@ -23,6 +25,8 @@ import com.huaweicloud.sdk.obs.v1.model.GetBucketMetadataRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketMetadataResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketNotificationRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketNotificationResponse;
+import com.huaweicloud.sdk.obs.v1.model.GetDisPolicyRequest;
+import com.huaweicloud.sdk.obs.v1.model.GetDisPolicyResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetObjectMetadataRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetObjectMetadataResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetObjectRequest;
@@ -39,6 +43,8 @@ import com.huaweicloud.sdk.obs.v1.model.SetBucketCustomedomainRequest;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketCustomedomainResponse;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketNotificationRequest;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketNotificationResponse;
+import com.huaweicloud.sdk.obs.v1.model.SetDisPolicyRequest;
+import com.huaweicloud.sdk.obs.v1.model.SetDisPolicyResponse;
 
 public class ObsClient {
 
@@ -255,6 +261,35 @@ public class ObsClient {
     }
 
     /**
+     * 删除DIS通知策略
+     *
+     * 本接口用于删除指定桶中配置的全部DIS通知策略。删除成功，status code返回值为204。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDisPolicyRequest 请求对象
+     * @return DeleteDisPolicyResponse
+     */
+    public DeleteDisPolicyResponse deleteDisPolicy(DeleteDisPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, ObsMeta.deleteDisPolicy);
+    }
+
+    /**
+     * 删除DIS通知策略
+     *
+     * 本接口用于删除指定桶中配置的全部DIS通知策略。删除成功，status code返回值为204。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDisPolicyRequest 请求对象
+     * @return SyncInvoker<DeleteDisPolicyRequest, DeleteDisPolicyResponse>
+     */
+    public SyncInvoker<DeleteDisPolicyRequest, DeleteDisPolicyResponse> deleteDisPolicyInvoker(
+        DeleteDisPolicyRequest request) {
+        return new SyncInvoker<>(request, ObsMeta.deleteDisPolicy, hcClient);
+    }
+
+    /**
      * 删除对象
      *
      * 删除对象的操作。如果要删除的对象不存在，则仍然返回成功信息。
@@ -460,6 +495,34 @@ public class ObsClient {
     }
 
     /**
+     * 获取DIS通知策略
+     *
+     * 本接口用于查询指定桶的DIS通知策略信息。若策略存在，则返回成功，status code返回值为200。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetDisPolicyRequest 请求对象
+     * @return GetDisPolicyResponse
+     */
+    public GetDisPolicyResponse getDisPolicy(GetDisPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, ObsMeta.getDisPolicy);
+    }
+
+    /**
+     * 获取DIS通知策略
+     *
+     * 本接口用于查询指定桶的DIS通知策略信息。若策略存在，则返回成功，status code返回值为200。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetDisPolicyRequest 请求对象
+     * @return SyncInvoker<GetDisPolicyRequest, GetDisPolicyResponse>
+     */
+    public SyncInvoker<GetDisPolicyRequest, GetDisPolicyResponse> getDisPolicyInvoker(GetDisPolicyRequest request) {
+        return new SyncInvoker<>(request, ObsMeta.getDisPolicy, hcClient);
+    }
+
+    /**
      * 获取对象内容
      *
      * GET操作从对象存储下载对象。使用GET接口前，请确认必须拥有对象的READ权限。如果对象Owner向匿名用户授予READ访问权限，则可以在不使用鉴权头域的情况下访问该对象。
@@ -658,9 +721,7 @@ public class ObsClient {
      * 设置桶ACL
      *
      * OBS支持对桶操作进行权限控制。默认情况下，只有桶的创建者才有该桶的读写权限。用户也可以设置其他的访问策略，比如对一个桶可以设置公共访问策略，允许所有人对其都有读权限。
-     * 
      * OBS用户在创建桶时可以设置权限控制策略，也可以通过ACL操作API接口对已存在的桶更改或者获取ACL(access control list) 。一个桶的ACL最多支持100条Grant授权。PUT接口为幂等的覆盖写语意，新设置的桶ACL将覆盖原有的桶ACL，如果需要修改或者删除某条ACL重新PUT一个新的桶ACL即可。
-     * 
      * 使用桶ACL进行权限控制请参考[《对象存储服务权限配置指南》的OBS权限控制概述章节](https://support.huaweicloud.com/perms-cfg-obs/obs_40_0001.html)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -676,9 +737,7 @@ public class ObsClient {
      * 设置桶ACL
      *
      * OBS支持对桶操作进行权限控制。默认情况下，只有桶的创建者才有该桶的读写权限。用户也可以设置其他的访问策略，比如对一个桶可以设置公共访问策略，允许所有人对其都有读权限。
-     * 
      * OBS用户在创建桶时可以设置权限控制策略，也可以通过ACL操作API接口对已存在的桶更改或者获取ACL(access control list) 。一个桶的ACL最多支持100条Grant授权。PUT接口为幂等的覆盖写语意，新设置的桶ACL将覆盖原有的桶ACL，如果需要修改或者删除某条ACL重新PUT一个新的桶ACL即可。
-     * 
      * 使用桶ACL进行权限控制请参考[《对象存储服务权限配置指南》的OBS权限控制概述章节](https://support.huaweicloud.com/perms-cfg-obs/obs_40_0001.html)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -735,7 +794,7 @@ public class ObsClient {
      * 默认情况下，您的桶没有配置事件通知。这个时候桶的通知配置将是一个空NotificationConfiguration。对已配置有事件通知的桶，可以通过添加空NotificationConfiguration元素禁用消息通知功能。
      * 
      * &lt;NotificationConfiguration&gt;
-     * &lt;/NotificationConfiguration&gt; 
+     * &lt;/NotificationConfiguration&gt;
      * 
      * 目前对象存储服务（OBS）支持包括简单通知服务（SMN）、函数工作流服务（FunctionGraph）在内的两种桶通知服务配置。以SMN为例，当OBS接收到配置消息通知的请求后，会验证指定的消息通知服务（SMN）主题是否存在及主题策略是否授权给了对象存储服务，验证通过后会向该主题订阅者发送一个测试消息通知。
      * 
@@ -758,7 +817,7 @@ public class ObsClient {
      * 默认情况下，您的桶没有配置事件通知。这个时候桶的通知配置将是一个空NotificationConfiguration。对已配置有事件通知的桶，可以通过添加空NotificationConfiguration元素禁用消息通知功能。
      * 
      * &lt;NotificationConfiguration&gt;
-     * &lt;/NotificationConfiguration&gt; 
+     * &lt;/NotificationConfiguration&gt;
      * 
      * 目前对象存储服务（OBS）支持包括简单通知服务（SMN）、函数工作流服务（FunctionGraph）在内的两种桶通知服务配置。以SMN为例，当OBS接收到配置消息通知的请求后，会验证指定的消息通知服务（SMN）主题是否存在及主题策略是否授权给了对象存储服务，验证通过后会向该主题订阅者发送一个测试消息通知。
      * 
@@ -772,6 +831,34 @@ public class ObsClient {
     public SyncInvoker<SetBucketNotificationRequest, SetBucketNotificationResponse> setBucketNotificationInvoker(
         SetBucketNotificationRequest request) {
         return new SyncInvoker<>(request, ObsMeta.setBucketNotification, hcClient);
+    }
+
+    /**
+     * 设置DIS通知策略
+     *
+     * 本接口用于为指定桶配置DIS通知策略。接口是幂等的，若桶上已存在相同策略内容，则返回成功，status code返回值为200；否则status code返回值为201。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetDisPolicyRequest 请求对象
+     * @return SetDisPolicyResponse
+     */
+    public SetDisPolicyResponse setDisPolicy(SetDisPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, ObsMeta.setDisPolicy);
+    }
+
+    /**
+     * 设置DIS通知策略
+     *
+     * 本接口用于为指定桶配置DIS通知策略。接口是幂等的，若桶上已存在相同策略内容，则返回成功，status code返回值为200；否则status code返回值为201。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetDisPolicyRequest 请求对象
+     * @return SyncInvoker<SetDisPolicyRequest, SetDisPolicyResponse>
+     */
+    public SyncInvoker<SetDisPolicyRequest, SetDisPolicyResponse> setDisPolicyInvoker(SetDisPolicyRequest request) {
+        return new SyncInvoker<>(request, ObsMeta.setDisPolicy, hcClient);
     }
 
 }

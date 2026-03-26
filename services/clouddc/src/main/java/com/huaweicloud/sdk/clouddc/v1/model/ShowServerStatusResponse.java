@@ -22,6 +22,11 @@ public class ShowServerStatusResponse extends SdkResponse {
 
     private ServerPowerStatus serverPowerStatus;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_manage_state")
+
+    private ServerManageState serverManageState;
+
     public ShowServerStatusResponse withServerStatus(ServerStatus serverStatus) {
         this.serverStatus = serverStatus;
         return this;
@@ -74,6 +79,32 @@ public class ShowServerStatusResponse extends SdkResponse {
         this.serverPowerStatus = serverPowerStatus;
     }
 
+    public ShowServerStatusResponse withServerManageState(ServerManageState serverManageState) {
+        this.serverManageState = serverManageState;
+        return this;
+    }
+
+    public ShowServerStatusResponse withServerManageState(Consumer<ServerManageState> serverManageStateSetter) {
+        if (this.serverManageState == null) {
+            this.serverManageState = new ServerManageState();
+            serverManageStateSetter.accept(this.serverManageState);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get serverManageState
+     * @return serverManageState
+     */
+    public ServerManageState getServerManageState() {
+        return serverManageState;
+    }
+
+    public void setServerManageState(ServerManageState serverManageState) {
+        this.serverManageState = serverManageState;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -84,12 +115,13 @@ public class ShowServerStatusResponse extends SdkResponse {
         }
         ShowServerStatusResponse that = (ShowServerStatusResponse) obj;
         return Objects.equals(this.serverStatus, that.serverStatus)
-            && Objects.equals(this.serverPowerStatus, that.serverPowerStatus);
+            && Objects.equals(this.serverPowerStatus, that.serverPowerStatus)
+            && Objects.equals(this.serverManageState, that.serverManageState);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serverStatus, serverPowerStatus);
+        return Objects.hash(serverStatus, serverPowerStatus, serverManageState);
     }
 
     @Override
@@ -98,6 +130,7 @@ public class ShowServerStatusResponse extends SdkResponse {
         sb.append("class ShowServerStatusResponse {\n");
         sb.append("    serverStatus: ").append(toIndentedString(serverStatus)).append("\n");
         sb.append("    serverPowerStatus: ").append(toIndentedString(serverPowerStatus)).append("\n");
+        sb.append("    serverManageState: ").append(toIndentedString(serverManageState)).append("\n");
         sb.append("}");
         return sb.toString();
     }

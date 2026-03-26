@@ -8,6 +8,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseCommentRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseCommentResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseResultLogRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseResultLogResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddCaseResultInTaskRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddCaseResultInTaskResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddRelationsByOneCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddRelationsByOneCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddResourcesForIteratorRequest;
@@ -449,6 +451,36 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<AddTestCaseResultLogRequest, AddTestCaseResultLogResponse> addTestCaseResultLogAsyncInvoker(
         AddTestCaseResultLogRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.addTestCaseResultLog, hcClient);
+    }
+
+    /**
+     * 在任务下批量设置用例结果
+     *
+     * 在任务下批量设置用例结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchAddCaseResultInTaskRequest 请求对象
+     * @return CompletableFuture<BatchAddCaseResultInTaskResponse>
+     */
+    public CompletableFuture<BatchAddCaseResultInTaskResponse> batchAddCaseResultInTaskAsync(
+        BatchAddCaseResultInTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.batchAddCaseResultInTask);
+    }
+
+    /**
+     * 在任务下批量设置用例结果
+     *
+     * 在任务下批量设置用例结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchAddCaseResultInTaskRequest 请求对象
+     * @return AsyncInvoker<BatchAddCaseResultInTaskRequest, BatchAddCaseResultInTaskResponse>
+     */
+    public AsyncInvoker<BatchAddCaseResultInTaskRequest, BatchAddCaseResultInTaskResponse> batchAddCaseResultInTaskAsyncInvoker(
+        BatchAddCaseResultInTaskRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.batchAddCaseResultInTask, hcClient);
     }
 
     /**

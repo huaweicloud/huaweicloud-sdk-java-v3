@@ -477,12 +477,6 @@ public class SmsMeta {
             f -> f.withMarshaller(ExportConsistencyResultsRequest::getBody, ExportConsistencyResultsRequest::setBody));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ExportConsistencyResultsResponse::getBody,
-                ExportConsistencyResultsResponse::setBody));
 
         return builder.build();
     }

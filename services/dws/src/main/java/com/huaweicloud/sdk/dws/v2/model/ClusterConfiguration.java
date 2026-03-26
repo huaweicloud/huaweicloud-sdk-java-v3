@@ -75,7 +75,7 @@ public class ClusterConfiguration {
     }
 
     /**
-     * **参数解释**： 参数组类型。 **取值范围**： 不涉及。
+     * **参数解释**： 参数组类型。 **取值范围**： 当前只有以下两个参数组有效，其他参数组仅显示但无实际意义。 - parameterGroup：guc参数组。 - securityParameterGroup：安全设置参数组。
      * @return type
      */
     public String getType() {
@@ -92,7 +92,7 @@ public class ClusterConfiguration {
     }
 
     /**
-     * **参数解释**： 集群参数状态。 **取值范围**： In-Sync：已同步。 Applying：应用中。 Pending-Reboot：需重启生效。 Sync-Failure：应用失败。
+     * **参数解释**： 集群参数状态。 **取值范围**： - In-Sync：已同步。 - Applying：应用中。 - Pending-Reboot：需重启生效。 - Sync-Failure：应用失败。
      * @return status
      */
     public String getStatus() {

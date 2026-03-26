@@ -81,7 +81,7 @@ public class ObsSigner {
                     "response-content-encoding", "response-content-language", "response-content-type", "response-expires",
                     "restore", "storageClass", "storagePolicy", "storageinfo", "tagging", "torrent", "truncate", "uploadId",
                     "uploads", "versionId", "versioning", "versions", "website", "x-image-process", "x-image-save-bucket",
-                    "x-image-save-object", "x-obs-security-token"));
+                    "x-image-save-object", "x-obs-security-token", "disPolicy"));
 
     private static final Base64.Encoder BASE64_ENCODER = Base64.getEncoder();
 
@@ -208,42 +208,7 @@ public class ObsSigner {
     private String stringToSign(String httpMethod, Map<String, List<String>> headers, Map<String, List<String>> queries,
                                 String bucketName, String objectName) throws UnsupportedEncodingException {
         TreeMap<String, String> canonicalizedHeaders = new TreeMap<>();
-        List<String> temp = new ArrayList<>();
-        for (Map.Entry<String, List<String>> entry : headers.entrySet()) {
-            String key = entry.getKey();
-            if (key == null || entry.getValue() == null || entry.getValue().size() == 0) {
-                continue;
-            }
-
-            key = key.trim().toLowerCase(Locale.ENGLISH);
-            if (key.equals("content-md5")) {
-                contentMd5 = entry.getValue().get(0);
-                continue;
-            }
-
-            if (key.equals("content-type")) {
-                contentType = entry.getValue().get(0);
-                if ("application/xml".equals(contentType)){
-                    contentType = contentType + "; charset=utf-8";
-                }
-                continue;
-            }
-
-            if (key.equals("date")) {
-                date = entry.getValue().get(0);
-                continue;
-            }
-
-            if (key.startsWith(OBS_PREFIX)) {
-                for (String value : entry.getValue()) {
-                    if (value != null) {
-                        temp.add(value.trim());
-                    }
-                }
-                canonicalizedHeaders.put(key, this.join(temp, ","));
-                temp.clear();
-            }
-        }
+        buildCanonicalizedHeaders(headers, queries, httpMethod, canonicalizedHeaders);
 
         if (canonicalizedHeaders.containsKey("x-obs-date")) {
             date = "";
@@ -292,6 +257,52 @@ public class ObsSigner {
 
         return stringToSign.toString();
     }
+
+    private void buildCanonicalizedHeaders(Map<String, List<String>> headers,
+                                           Map<String, List<String>> queries,
+                                           String httpMethod,
+                                           TreeMap<String, String> canonicalizedHeaders) {
+        List<String> temp = new ArrayList<>();
+        for (Map.Entry<String, List<String>> entry : headers.entrySet()) {
+            String key = entry.getKey();
+            if (key == null || entry.getValue() == null || entry.getValue().size() == 0) {
+                continue;
+            }
+
+            key = key.trim().toLowerCase(Locale.ENGLISH);
+            if (key.equals("content-md5")) {
+                contentMd5 = entry.getValue().get(0);
+                continue;
+            }
+
+            if (key.equals("content-type")) {
+                contentType = entry.getValue().get(0);
+                if ("application/xml".equals(contentType)) {
+                    contentType = contentType + "; charset=utf-8";
+                }
+                if ("application/json".equals(contentType) && queries.containsKey("disPolicy") && httpMethod.equals("PUT")) {
+                    contentType = contentType + "; charset=utf-8";
+                }
+                continue;
+            }
+
+            if (key.equals("date")) {
+                date = entry.getValue().get(0);
+                continue;
+            }
+
+            if (key.startsWith(OBS_PREFIX)) {
+                for (String value : entry.getValue()) {
+                    if (value != null) {
+                        temp.add(value.trim());
+                    }
+                }
+                canonicalizedHeaders.put(key, this.join(temp, ","));
+                temp.clear();
+            }
+        }
+    }
+
 
     private String canonicalizeResource(Map<String, String> canonicalizedResource) {
         StringBuilder resource = new StringBuilder();

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 配置文件操作。 - modify: 修改参数配置。 - delete: 删除参数配置。 - reset: 重置参数配置。
+ * UpdateYmlsReqEditModify
  */
 public class UpdateYmlsReqEditModify {
 
@@ -15,13 +15,18 @@ public class UpdateYmlsReqEditModify {
 
     private Object elasticsearchYml;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kibana.yml")
+
+    private Object kibanaYml;
+
     public UpdateYmlsReqEditModify withElasticsearchYml(Object elasticsearchYml) {
         this.elasticsearchYml = elasticsearchYml;
         return this;
     }
 
     /**
-     * 参数配置列表。值为需要修改的json数据。
+     * **参数解释**： 参数配置列表，值为需要修改的json数据，OpenSearch集群也使用此参数，即修改opensearch.yml时，这里也是填写elasticsearch.yml。 **约束限制**： 不涉及
      * @return elasticsearchYml
      */
     public Object getElasticsearchYml() {
@@ -30,6 +35,23 @@ public class UpdateYmlsReqEditModify {
 
     public void setElasticsearchYml(Object elasticsearchYml) {
         this.elasticsearchYml = elasticsearchYml;
+    }
+
+    public UpdateYmlsReqEditModify withKibanaYml(Object kibanaYml) {
+        this.kibanaYml = kibanaYml;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 参数配置列表，值为需要修改的json数据。OpenSearch集群也使用此参数，即修改opensearch_dashboards.yml时，这里也是填写kibana.yml。 **约束限制**： 不涉及
+     * @return kibanaYml
+     */
+    public Object getKibanaYml() {
+        return kibanaYml;
+    }
+
+    public void setKibanaYml(Object kibanaYml) {
+        this.kibanaYml = kibanaYml;
     }
 
     @Override
@@ -41,12 +63,13 @@ public class UpdateYmlsReqEditModify {
             return false;
         }
         UpdateYmlsReqEditModify that = (UpdateYmlsReqEditModify) obj;
-        return Objects.equals(this.elasticsearchYml, that.elasticsearchYml);
+        return Objects.equals(this.elasticsearchYml, that.elasticsearchYml)
+            && Objects.equals(this.kibanaYml, that.kibanaYml);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(elasticsearchYml);
+        return Objects.hash(elasticsearchYml, kibanaYml);
     }
 
     @Override
@@ -54,6 +77,7 @@ public class UpdateYmlsReqEditModify {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateYmlsReqEditModify {\n");
         sb.append("    elasticsearchYml: ").append(toIndentedString(elasticsearchYml)).append("\n");
+        sb.append("    kibanaYml: ").append(toIndentedString(kibanaYml)).append("\n");
         sb.append("}");
         return sb.toString();
     }

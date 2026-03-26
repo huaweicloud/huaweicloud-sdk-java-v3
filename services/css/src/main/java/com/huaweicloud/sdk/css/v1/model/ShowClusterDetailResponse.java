@@ -52,7 +52,7 @@ public class ShowClusterDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "snapshotPolicy")
 
-    private Object snapshotPolicy;
+    private SnapshotPolicyResp snapshotPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
@@ -351,20 +351,29 @@ public class ShowClusterDetailResponse extends SdkResponse {
         this.publicIp = publicIp;
     }
 
-    public ShowClusterDetailResponse withSnapshotPolicy(Object snapshotPolicy) {
+    public ShowClusterDetailResponse withSnapshotPolicy(SnapshotPolicyResp snapshotPolicy) {
         this.snapshotPolicy = snapshotPolicy;
         return this;
     }
 
+    public ShowClusterDetailResponse withSnapshotPolicy(Consumer<SnapshotPolicyResp> snapshotPolicySetter) {
+        if (this.snapshotPolicy == null) {
+            this.snapshotPolicy = new SnapshotPolicyResp();
+            snapshotPolicySetter.accept(this.snapshotPolicy);
+        }
+
+        return this;
+    }
+
     /**
-     * **参数解释**： 集群自动快照策略相关信息。 **取值范围**： 不涉及
+     * Get snapshotPolicy
      * @return snapshotPolicy
      */
-    public Object getSnapshotPolicy() {
+    public SnapshotPolicyResp getSnapshotPolicy() {
         return snapshotPolicy;
     }
 
-    public void setSnapshotPolicy(Object snapshotPolicy) {
+    public void setSnapshotPolicy(SnapshotPolicyResp snapshotPolicy) {
         this.snapshotPolicy = snapshotPolicy;
     }
 

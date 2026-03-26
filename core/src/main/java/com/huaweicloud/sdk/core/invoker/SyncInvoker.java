@@ -24,6 +24,7 @@ package com.huaweicloud.sdk.core.invoker;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
+import com.huaweicloud.sdk.core.retry.RetryRecord;
 
 /**
  * @param <R> Request type
@@ -53,6 +54,7 @@ public class SyncInvoker<R, S> extends BaseInvoker<R, S, SyncInvoker<R, S>> {
             return hcClient.syncInvokeHttp(req, meta, exchange, extraHeaders);
         }
 
+        initBackoffStrategy(backoffStrategy);
         int execTimes = 0;
         S resp;
         SdkException exception;
@@ -72,6 +74,9 @@ public class SyncInvoker<R, S> extends BaseInvoker<R, S, SyncInvoker<R, S>> {
             }
 
             long delay = backoffStrategy.computeDelayBeforeNextRetry(retryTimes);
+            RetryRecord.RetryLog.get()
+                    .info("The request will retry for the {} time after {} milliseconds, "
+                            + "and the max retry times is {}.", execTimes, delay, retryTimes);
             if (delay > 0) {
                 try {
                     Thread.sleep(delay);

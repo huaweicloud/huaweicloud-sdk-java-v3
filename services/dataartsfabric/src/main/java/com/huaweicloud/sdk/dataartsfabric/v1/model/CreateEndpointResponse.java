@@ -66,6 +66,11 @@ public class CreateEndpointResponse extends SdkResponse {
     private CapRef cap;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_image_id")
+
+    private String customImageId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reserved_resource")
 
     private ReservedResource reservedResource;
@@ -91,14 +96,24 @@ public class CreateEndpointResponse extends SdkResponse {
     private List<Url> urls = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "log_config")
-
-    private LogConfigInfo logConfig;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "business_engine_instance_ids")
 
     private List<String> businessEngineInstanceIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tokens_quota")
+
+    private TokensQuota tokensQuota;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "runtime_env_type")
+
+    private RuntimeEnvType runtimeEnvType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "config")
+
+    private EndpointConfigResponse config;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-id")
@@ -293,6 +308,23 @@ public class CreateEndpointResponse extends SdkResponse {
         this.cap = cap;
     }
 
+    public CreateEndpointResponse withCustomImageId(String customImageId) {
+        this.customImageId = customImageId;
+        return this;
+    }
+
+    /**
+     * - **参数解释**：CustomImageId。 - **约束限制**：不涉及。 - **取值范围**：长度为[32,36]的英文字符、数字和中划线(-)的组合。 - **默认取值**：不涉及。 
+     * @return customImageId
+     */
+    public String getCustomImageId() {
+        return customImageId;
+    }
+
+    public void setCustomImageId(String customImageId) {
+        this.customImageId = customImageId;
+    }
+
     public CreateEndpointResponse withReservedResource(ReservedResource reservedResource) {
         this.reservedResource = reservedResource;
         return this;
@@ -412,32 +444,6 @@ public class CreateEndpointResponse extends SdkResponse {
         this.urls = urls;
     }
 
-    public CreateEndpointResponse withLogConfig(LogConfigInfo logConfig) {
-        this.logConfig = logConfig;
-        return this;
-    }
-
-    public CreateEndpointResponse withLogConfig(Consumer<LogConfigInfo> logConfigSetter) {
-        if (this.logConfig == null) {
-            this.logConfig = new LogConfigInfo();
-            logConfigSetter.accept(this.logConfig);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get logConfig
-     * @return logConfig
-     */
-    public LogConfigInfo getLogConfig() {
-        return logConfig;
-    }
-
-    public void setLogConfig(LogConfigInfo logConfig) {
-        this.logConfig = logConfig;
-    }
-
     public CreateEndpointResponse withBusinessEngineInstanceIds(List<String> businessEngineInstanceIds) {
         this.businessEngineInstanceIds = businessEngineInstanceIds;
         return this;
@@ -470,6 +476,75 @@ public class CreateEndpointResponse extends SdkResponse {
 
     public void setBusinessEngineInstanceIds(List<String> businessEngineInstanceIds) {
         this.businessEngineInstanceIds = businessEngineInstanceIds;
+    }
+
+    public CreateEndpointResponse withTokensQuota(TokensQuota tokensQuota) {
+        this.tokensQuota = tokensQuota;
+        return this;
+    }
+
+    public CreateEndpointResponse withTokensQuota(Consumer<TokensQuota> tokensQuotaSetter) {
+        if (this.tokensQuota == null) {
+            this.tokensQuota = new TokensQuota();
+            tokensQuotaSetter.accept(this.tokensQuota);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get tokensQuota
+     * @return tokensQuota
+     */
+    public TokensQuota getTokensQuota() {
+        return tokensQuota;
+    }
+
+    public void setTokensQuota(TokensQuota tokensQuota) {
+        this.tokensQuota = tokensQuota;
+    }
+
+    public CreateEndpointResponse withRuntimeEnvType(RuntimeEnvType runtimeEnvType) {
+        this.runtimeEnvType = runtimeEnvType;
+        return this;
+    }
+
+    /**
+     * Get runtimeEnvType
+     * @return runtimeEnvType
+     */
+    public RuntimeEnvType getRuntimeEnvType() {
+        return runtimeEnvType;
+    }
+
+    public void setRuntimeEnvType(RuntimeEnvType runtimeEnvType) {
+        this.runtimeEnvType = runtimeEnvType;
+    }
+
+    public CreateEndpointResponse withConfig(EndpointConfigResponse config) {
+        this.config = config;
+        return this;
+    }
+
+    public CreateEndpointResponse withConfig(Consumer<EndpointConfigResponse> configSetter) {
+        if (this.config == null) {
+            this.config = new EndpointConfigResponse();
+            configSetter.accept(this.config);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get config
+     * @return config
+     */
+    public EndpointConfigResponse getConfig() {
+        return config;
+    }
+
+    public void setConfig(EndpointConfigResponse config) {
+        this.config = config;
     }
 
     public CreateEndpointResponse withXRequestId(String xRequestId) {
@@ -505,11 +580,13 @@ public class CreateEndpointResponse extends SdkResponse {
             && Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.owner, that.owner) && Objects.equals(this.cap, that.cap)
+            && Objects.equals(this.customImageId, that.customImageId)
             && Objects.equals(this.reservedResource, that.reservedResource)
             && Objects.equals(this.rayResource, that.rayResource) && Objects.equals(this.errorCode, that.errorCode)
             && Objects.equals(this.errorMsg, that.errorMsg) && Objects.equals(this.urls, that.urls)
-            && Objects.equals(this.logConfig, that.logConfig)
             && Objects.equals(this.businessEngineInstanceIds, that.businessEngineInstanceIds)
+            && Objects.equals(this.tokensQuota, that.tokensQuota)
+            && Objects.equals(this.runtimeEnvType, that.runtimeEnvType) && Objects.equals(this.config, that.config)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
@@ -525,13 +602,16 @@ public class CreateEndpointResponse extends SdkResponse {
             updateTime,
             owner,
             cap,
+            customImageId,
             reservedResource,
             rayResource,
             errorCode,
             errorMsg,
             urls,
-            logConfig,
             businessEngineInstanceIds,
+            tokensQuota,
+            runtimeEnvType,
+            config,
             xRequestId);
     }
 
@@ -549,13 +629,16 @@ public class CreateEndpointResponse extends SdkResponse {
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
         sb.append("    cap: ").append(toIndentedString(cap)).append("\n");
+        sb.append("    customImageId: ").append(toIndentedString(customImageId)).append("\n");
         sb.append("    reservedResource: ").append(toIndentedString(reservedResource)).append("\n");
         sb.append("    rayResource: ").append(toIndentedString(rayResource)).append("\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
         sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
-        sb.append("    logConfig: ").append(toIndentedString(logConfig)).append("\n");
         sb.append("    businessEngineInstanceIds: ").append(toIndentedString(businessEngineInstanceIds)).append("\n");
+        sb.append("    tokensQuota: ").append(toIndentedString(tokensQuota)).append("\n");
+        sb.append("    runtimeEnvType: ").append(toIndentedString(runtimeEnvType)).append("\n");
+        sb.append("    config: ").append(toIndentedString(config)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

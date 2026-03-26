@@ -50,6 +50,8 @@ import com.huaweicloud.sdk.rds.v3.model.BatchTagDelActionRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchTagDelActionResponse;
 import com.huaweicloud.sdk.rds.v3.model.BindEipRequest;
 import com.huaweicloud.sdk.rds.v3.model.BinlogClearPolicyRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.ChangeBackupConfigRequest;
+import com.huaweicloud.sdk.rds.v3.model.ChangeBackupConfigResponse;
 import com.huaweicloud.sdk.rds.v3.model.ChangeFailoverModeRequest;
 import com.huaweicloud.sdk.rds.v3.model.ChangeFailoverModeResponse;
 import com.huaweicloud.sdk.rds.v3.model.ChangeFailoverStrategyRequest;
@@ -509,6 +511,7 @@ import com.huaweicloud.sdk.rds.v3.model.SetBackupPolicyRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.SetBackupPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetBinlogClearPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetBinlogClearPolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetConfigurationRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.SetDatabaseUserPrivilegeReqV3;
 import com.huaweicloud.sdk.rds.v3.model.SetDatabaseUserPrivilegeRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetDatabaseUserPrivilegeResponse;
@@ -553,6 +556,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowAutoUpgradePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAutoUpgradePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAvailableVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAvailableVersionResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowBackupConfigRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowBackupConfigResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupDownloadLinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupDownloadLinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupPolicyRequest;
@@ -1069,6 +1074,44 @@ public class RdsMeta {
             f -> f.withMarshaller(BatchTagDelActionRequest::getBody, BatchTagDelActionRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeBackupConfigRequest, ChangeBackupConfigResponse> changeBackupConfig =
+        genForChangeBackupConfig();
+
+    private static HttpRequestDef<ChangeBackupConfigRequest, ChangeBackupConfigResponse> genForChangeBackupConfig() {
+        // basic
+        HttpRequestDef.Builder<ChangeBackupConfigRequest, ChangeBackupConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ChangeBackupConfigRequest.class, ChangeBackupConfigResponse.class)
+                .withName("ChangeBackupConfig")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeBackupConfigRequest::getInstanceId, ChangeBackupConfigRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeBackupConfigRequest::getXLanguage, ChangeBackupConfigRequest::setXLanguage));
+        builder.<SetConfigurationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetConfigurationRequestBody.class),
+            f -> f.withMarshaller(ChangeBackupConfigRequest::getBody, ChangeBackupConfigRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ChangeBackupConfigResponse::getBody, ChangeBackupConfigResponse::setBody));
 
         return builder.build();
     }
@@ -5501,6 +5544,34 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAvailableVersionRequest::getXLanguage,
                 ShowAvailableVersionRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBackupConfigRequest, ShowBackupConfigResponse> showBackupConfig =
+        genForShowBackupConfig();
+
+    private static HttpRequestDef<ShowBackupConfigRequest, ShowBackupConfigResponse> genForShowBackupConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowBackupConfigRequest, ShowBackupConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowBackupConfigRequest.class, ShowBackupConfigResponse.class)
+                .withName("ShowBackupConfig")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackupConfigRequest::getInstanceId, ShowBackupConfigRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackupConfigRequest::getXLanguage, ShowBackupConfigRequest::setXLanguage));
 
         // response
 

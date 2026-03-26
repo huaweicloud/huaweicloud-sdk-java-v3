@@ -29,6 +29,11 @@ public class ShowDataStoreFlavorDetailResponse extends SdkResponse {
 
     private List<FlavorRespVersionBody> versions = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "modelList")
+
+    private ModelList modelList;
+
     public ShowDataStoreFlavorDetailResponse withId(String id) {
         this.id = id;
         return this;
@@ -96,6 +101,32 @@ public class ShowDataStoreFlavorDetailResponse extends SdkResponse {
         this.versions = versions;
     }
 
+    public ShowDataStoreFlavorDetailResponse withModelList(ModelList modelList) {
+        this.modelList = modelList;
+        return this;
+    }
+
+    public ShowDataStoreFlavorDetailResponse withModelList(Consumer<ModelList> modelListSetter) {
+        if (this.modelList == null) {
+            this.modelList = new ModelList();
+            modelListSetter.accept(this.modelList);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get modelList
+     * @return modelList
+     */
+    public ModelList getModelList() {
+        return modelList;
+    }
+
+    public void setModelList(ModelList modelList) {
+        this.modelList = modelList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -106,12 +137,12 @@ public class ShowDataStoreFlavorDetailResponse extends SdkResponse {
         }
         ShowDataStoreFlavorDetailResponse that = (ShowDataStoreFlavorDetailResponse) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.dbname, that.dbname)
-            && Objects.equals(this.versions, that.versions);
+            && Objects.equals(this.versions, that.versions) && Objects.equals(this.modelList, that.modelList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, dbname, versions);
+        return Objects.hash(id, dbname, versions, modelList);
     }
 
     @Override
@@ -121,6 +152,7 @@ public class ShowDataStoreFlavorDetailResponse extends SdkResponse {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    dbname: ").append(toIndentedString(dbname)).append("\n");
         sb.append("    versions: ").append(toIndentedString(versions)).append("\n");
+        sb.append("    modelList: ").append(toIndentedString(modelList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

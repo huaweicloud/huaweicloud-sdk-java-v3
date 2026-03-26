@@ -36,6 +36,16 @@ public class ResizeClusterRequestBody {
 
     private Boolean autoRedistribute;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mode")
+
+    private String mode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "redis_conf")
+
+    private RedisConfReq redisConf;
+
     public ResizeClusterRequestBody withScaleOut(ScaleOut scaleOut) {
         this.scaleOut = scaleOut;
         return this;
@@ -130,6 +140,49 @@ public class ResizeClusterRequestBody {
         this.autoRedistribute = autoRedistribute;
     }
 
+    public ResizeClusterRequestBody withMode(String mode) {
+        this.mode = mode;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 扩容模式，分为在线和离线。在线扩容过程中，支持数据增删改查及部分DDL语法，其余不支持的语法将会报错。在线扩容对业务影响更小，离线模式存在短暂的中断，数据库不可用。 **约束限制**： 不涉及。 **取值范围**： - insert：在线模式。 - read-only：离线模式。  **默认取值**： read-only
+     * @return mode
+     */
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
+    public ResizeClusterRequestBody withRedisConf(RedisConfReq redisConf) {
+        this.redisConf = redisConf;
+        return this;
+    }
+
+    public ResizeClusterRequestBody withRedisConf(Consumer<RedisConfReq> redisConfSetter) {
+        if (this.redisConf == null) {
+            this.redisConf = new RedisConfReq();
+            redisConfSetter.accept(this.redisConf);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get redisConf
+     * @return redisConf
+     */
+    public RedisConfReq getRedisConf() {
+        return redisConf;
+    }
+
+    public void setRedisConf(RedisConfReq redisConf) {
+        this.redisConf = redisConf;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -143,12 +196,14 @@ public class ResizeClusterRequestBody {
             && Objects.equals(this.logicalClusterName, that.logicalClusterName)
             && Objects.equals(this.createNodeOnly, that.createNodeOnly)
             && Objects.equals(this.waitingForKilling, that.waitingForKilling)
-            && Objects.equals(this.autoRedistribute, that.autoRedistribute);
+            && Objects.equals(this.autoRedistribute, that.autoRedistribute) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.redisConf, that.redisConf);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(scaleOut, logicalClusterName, createNodeOnly, waitingForKilling, autoRedistribute);
+        return Objects
+            .hash(scaleOut, logicalClusterName, createNodeOnly, waitingForKilling, autoRedistribute, mode, redisConf);
     }
 
     @Override
@@ -160,6 +215,8 @@ public class ResizeClusterRequestBody {
         sb.append("    createNodeOnly: ").append(toIndentedString(createNodeOnly)).append("\n");
         sb.append("    waitingForKilling: ").append(toIndentedString(waitingForKilling)).append("\n");
         sb.append("    autoRedistribute: ").append(toIndentedString(autoRedistribute)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    redisConf: ").append(toIndentedString(redisConf)).append("\n");
         sb.append("}");
         return sb.toString();
     }

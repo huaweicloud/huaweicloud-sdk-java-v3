@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.dataartsfabric.v1.model.CreateAgreementRequest;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.CreateAgreementResponse;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.CreateEndpointRequest;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.CreateEndpointResponse;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.CreateJobRequest;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.CreateJobResponse;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.CreateMessageNotificationPolicyRequest;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.CreateMessageNotificationPolicyResponse;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.CreateModelDefinitionRequest;
@@ -29,6 +31,10 @@ import com.huaweicloud.sdk.dataartsfabric.v1.model.DeleteAgreementRequest;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.DeleteAgreementResponse;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.DeleteEndpointRequest;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.DeleteEndpointResponse;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.DeleteJobRequest;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.DeleteJobResponse;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.DeleteJobVersionRequest;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.DeleteJobVersionResponse;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.DeleteMessageNotificationPolicyRequest;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.DeleteMessageNotificationPolicyResponse;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.DeleteModelVersionRequest;
@@ -47,6 +53,10 @@ import com.huaweicloud.sdk.dataartsfabric.v1.model.ListFabricWorkspaceTagsReques
 import com.huaweicloud.sdk.dataartsfabric.v1.model.ListFabricWorkspaceTagsResponse;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.ListFeaturesRequest;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.ListFeaturesResponse;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.ListJobVersionsRequest;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.ListJobVersionsResponse;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.ListJobsRequest;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.ListJobsResponse;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.ListMessageNotificationPolicyRequest;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.ListMessageNotificationPolicyResponse;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.ListModelVersionsRequest;
@@ -71,6 +81,8 @@ import com.huaweicloud.sdk.dataartsfabric.v1.model.SubscribeEndpointRequest;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.SubscribeEndpointResponse;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.UpdateEndpointRequest;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.UpdateEndpointResponse;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.UpdateJobRequest;
+import com.huaweicloud.sdk.dataartsfabric.v1.model.UpdateJobResponse;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.UpdateMetricsConfigRequest;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.UpdateMetricsConfigResponse;
 import com.huaweicloud.sdk.dataartsfabric.v1.model.UpdateModelDefinitionRequest;
@@ -526,6 +538,176 @@ public class DataArtsFabricAsyncClient {
     public AsyncInvoker<ShowAdminHealthCheckRequest, ShowAdminHealthCheckResponse> showAdminHealthCheckAsyncInvoker(
         ShowAdminHealthCheckRequest request) {
         return new AsyncInvoker<>(request, DataArtsFabricMeta.showAdminHealthCheck, hcClient);
+    }
+
+    /**
+     * 创建作业
+     *
+     * 创建作业。支持创建一个spark或python或ray作业，支持的作业类型有spark、python和ray，接口返回作业的详情。此接口为同步接口，无配套使用接口和特殊场景。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateJobRequest 请求对象
+     * @return CompletableFuture<CreateJobResponse>
+     */
+    public CompletableFuture<CreateJobResponse> createJobAsync(CreateJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsFabricMeta.createJob);
+    }
+
+    /**
+     * 创建作业
+     *
+     * 创建作业。支持创建一个spark或python或ray作业，支持的作业类型有spark、python和ray，接口返回作业的详情。此接口为同步接口，无配套使用接口和特殊场景。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateJobRequest 请求对象
+     * @return AsyncInvoker<CreateJobRequest, CreateJobResponse>
+     */
+    public AsyncInvoker<CreateJobRequest, CreateJobResponse> createJobAsyncInvoker(CreateJobRequest request) {
+        return new AsyncInvoker<>(request, DataArtsFabricMeta.createJob, hcClient);
+    }
+
+    /**
+     * 删除指定作业
+     *
+     * 删除指定作业。删除一个作业，根据id删除对应作业，接口无返回体。此接口为同步接口，无配套使用接口和特殊场景。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteJobRequest 请求对象
+     * @return CompletableFuture<DeleteJobResponse>
+     */
+    public CompletableFuture<DeleteJobResponse> deleteJobAsync(DeleteJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsFabricMeta.deleteJob);
+    }
+
+    /**
+     * 删除指定作业
+     *
+     * 删除指定作业。删除一个作业，根据id删除对应作业，接口无返回体。此接口为同步接口，无配套使用接口和特殊场景。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteJobRequest 请求对象
+     * @return AsyncInvoker<DeleteJobRequest, DeleteJobResponse>
+     */
+    public AsyncInvoker<DeleteJobRequest, DeleteJobResponse> deleteJobAsyncInvoker(DeleteJobRequest request) {
+        return new AsyncInvoker<>(request, DataArtsFabricMeta.deleteJob, hcClient);
+    }
+
+    /**
+     * 删除指定作业的指定版本
+     *
+     * 删除作业版本。删除一个作业版本，根据id删除对应作业版本，接口无返回体。此接口为同步接口，无配套使用接口和特殊场景。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteJobVersionRequest 请求对象
+     * @return CompletableFuture<DeleteJobVersionResponse>
+     */
+    public CompletableFuture<DeleteJobVersionResponse> deleteJobVersionAsync(DeleteJobVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsFabricMeta.deleteJobVersion);
+    }
+
+    /**
+     * 删除指定作业的指定版本
+     *
+     * 删除作业版本。删除一个作业版本，根据id删除对应作业版本，接口无返回体。此接口为同步接口，无配套使用接口和特殊场景。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteJobVersionRequest 请求对象
+     * @return AsyncInvoker<DeleteJobVersionRequest, DeleteJobVersionResponse>
+     */
+    public AsyncInvoker<DeleteJobVersionRequest, DeleteJobVersionResponse> deleteJobVersionAsyncInvoker(
+        DeleteJobVersionRequest request) {
+        return new AsyncInvoker<>(request, DataArtsFabricMeta.deleteJobVersion, hcClient);
+    }
+
+    /**
+     * 查询指定作业的版本列表
+     *
+     * 列举作业版本。列举作业下的作业版本，分页返回。支持按名称、id等信息查询，接口分页返回作业版本列表。此接口为同步接口，无配套使用接口和特殊场景。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListJobVersionsRequest 请求对象
+     * @return CompletableFuture<ListJobVersionsResponse>
+     */
+    public CompletableFuture<ListJobVersionsResponse> listJobVersionsAsync(ListJobVersionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsFabricMeta.listJobVersions);
+    }
+
+    /**
+     * 查询指定作业的版本列表
+     *
+     * 列举作业版本。列举作业下的作业版本，分页返回。支持按名称、id等信息查询，接口分页返回作业版本列表。此接口为同步接口，无配套使用接口和特殊场景。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListJobVersionsRequest 请求对象
+     * @return AsyncInvoker<ListJobVersionsRequest, ListJobVersionsResponse>
+     */
+    public AsyncInvoker<ListJobVersionsRequest, ListJobVersionsResponse> listJobVersionsAsyncInvoker(
+        ListJobVersionsRequest request) {
+        return new AsyncInvoker<>(request, DataArtsFabricMeta.listJobVersions, hcClient);
+    }
+
+    /**
+     * 查询作业列表
+     *
+     * 列举作业。列举工作空间下的作业，分页返回。支持按作业类型、名称、id、端点等信息查询，接口分页返回作业列表。此接口为同步接口，无配套使用接口和特殊场景。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListJobsRequest 请求对象
+     * @return CompletableFuture<ListJobsResponse>
+     */
+    public CompletableFuture<ListJobsResponse> listJobsAsync(ListJobsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsFabricMeta.listJobs);
+    }
+
+    /**
+     * 查询作业列表
+     *
+     * 列举作业。列举工作空间下的作业，分页返回。支持按作业类型、名称、id、端点等信息查询，接口分页返回作业列表。此接口为同步接口，无配套使用接口和特殊场景。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListJobsRequest 请求对象
+     * @return AsyncInvoker<ListJobsRequest, ListJobsResponse>
+     */
+    public AsyncInvoker<ListJobsRequest, ListJobsResponse> listJobsAsyncInvoker(ListJobsRequest request) {
+        return new AsyncInvoker<>(request, DataArtsFabricMeta.listJobs, hcClient);
+    }
+
+    /**
+     * 更新作业
+     *
+     * 更新作业详情。更新一个作业的详情，支持更新作业名称、描述、当前版本、当前端点和可见性，接口返回更新后的作业详情。此接口为同步接口，无配套使用接口和特殊场景。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateJobRequest 请求对象
+     * @return CompletableFuture<UpdateJobResponse>
+     */
+    public CompletableFuture<UpdateJobResponse> updateJobAsync(UpdateJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsFabricMeta.updateJob);
+    }
+
+    /**
+     * 更新作业
+     *
+     * 更新作业详情。更新一个作业的详情，支持更新作业名称、描述、当前版本、当前端点和可见性，接口返回更新后的作业详情。此接口为同步接口，无配套使用接口和特殊场景。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateJobRequest 请求对象
+     * @return AsyncInvoker<UpdateJobRequest, UpdateJobResponse>
+     */
+    public AsyncInvoker<UpdateJobRequest, UpdateJobResponse> updateJobAsyncInvoker(UpdateJobRequest request) {
+        return new AsyncInvoker<>(request, DataArtsFabricMeta.updateJob, hcClient);
     }
 
     /**

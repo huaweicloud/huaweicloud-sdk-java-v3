@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -65,6 +68,16 @@ public class UpdateAlarmSubResponse extends SdkResponse {
     @JsonProperty(value = "time_zone")
 
     private String timeZone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_id")
+
+    private String clusterId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_details")
+
+    private List<AlarmSubDetailResopnse> alarmDetails = null;
 
     public UpdateAlarmSubResponse withId(String id) {
         this.id = id;
@@ -253,6 +266,56 @@ public class UpdateAlarmSubResponse extends SdkResponse {
         this.timeZone = timeZone;
     }
 
+    public UpdateAlarmSubResponse withClusterId(String clusterId) {
+        this.clusterId = clusterId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 集群ID。 **取值范围**： 不涉及。
+     * @return clusterId
+     */
+    public String getClusterId() {
+        return clusterId;
+    }
+
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
+    }
+
+    public UpdateAlarmSubResponse withAlarmDetails(List<AlarmSubDetailResopnse> alarmDetails) {
+        this.alarmDetails = alarmDetails;
+        return this;
+    }
+
+    public UpdateAlarmSubResponse addAlarmDetailsItem(AlarmSubDetailResopnse alarmDetailsItem) {
+        if (this.alarmDetails == null) {
+            this.alarmDetails = new ArrayList<>();
+        }
+        this.alarmDetails.add(alarmDetailsItem);
+        return this;
+    }
+
+    public UpdateAlarmSubResponse withAlarmDetails(Consumer<List<AlarmSubDetailResopnse>> alarmDetailsSetter) {
+        if (this.alarmDetails == null) {
+            this.alarmDetails = new ArrayList<>();
+        }
+        alarmDetailsSetter.accept(this.alarmDetails);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 订阅的所有告警详细信息。 **取值范围**： 不涉及。
+     * @return alarmDetails
+     */
+    public List<AlarmSubDetailResopnse> getAlarmDetails() {
+        return alarmDetails;
+    }
+
+    public void setAlarmDetails(List<AlarmSubDetailResopnse> alarmDetails) {
+        this.alarmDetails = alarmDetails;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -268,7 +331,8 @@ public class UpdateAlarmSubResponse extends SdkResponse {
             && Objects.equals(this.notificationTarget, that.notificationTarget)
             && Objects.equals(this.notificationTargetName, that.notificationTargetName)
             && Objects.equals(this.notificationTargetType, that.notificationTargetType)
-            && Objects.equals(this.language, that.language) && Objects.equals(this.timeZone, that.timeZone);
+            && Objects.equals(this.language, that.language) && Objects.equals(this.timeZone, that.timeZone)
+            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.alarmDetails, that.alarmDetails);
     }
 
     @Override
@@ -283,7 +347,9 @@ public class UpdateAlarmSubResponse extends SdkResponse {
             notificationTargetName,
             notificationTargetType,
             language,
-            timeZone);
+            timeZone,
+            clusterId,
+            alarmDetails);
     }
 
     @Override
@@ -301,6 +367,8 @@ public class UpdateAlarmSubResponse extends SdkResponse {
         sb.append("    notificationTargetType: ").append(toIndentedString(notificationTargetType)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
+        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    alarmDetails: ").append(toIndentedString(alarmDetails)).append("\n");
         sb.append("}");
         return sb.toString();
     }
