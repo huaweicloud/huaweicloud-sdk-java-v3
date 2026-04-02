@@ -427,7 +427,7 @@ public class ShowJobExeListNewRequest {
     }
 
     /**
-     * 表示作业列表从该偏移量开始查询。缺省值：0
+     * 表示作业列表从该偏移量开始查询。缺省值：1
      * @return offset
      */
     public String getOffset() {

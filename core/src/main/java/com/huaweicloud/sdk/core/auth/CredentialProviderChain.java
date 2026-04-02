@@ -37,9 +37,10 @@ public class CredentialProviderChain implements ICredentialProvider {
 
     public static CredentialProviderChain getDefaultCredentialProviderChain(String credentialType) {
         ICredentialProvider[] credentialProviders = new ICredentialProvider[]{
-            new EnvCredentialProvider(credentialType),
-            new ProfileCredentialProvider(credentialType),
-            new MetadataCredentialProvider(credentialType)
+                new EnvCredentialProvider(credentialType),
+                new ProfileCredentialProvider(credentialType),
+                new MetadataCredentialProvider(credentialType),
+                new PodIdentityCredentialProvider(credentialType)
         };
         return new CredentialProviderChain(credentialProviders);
     }
@@ -52,6 +53,14 @@ public class CredentialProviderChain implements ICredentialProvider {
         return getDefaultCredentialProviderChain(Constants.Credentials.GLOBAL);
     }
 
+    public static CredentialProviderChain basic() {
+        return getBasicCredentialProviderChain();
+    }
+
+    public static CredentialProviderChain global() {
+        return getGlobalCredentialProviderChain();
+    }
+
     @Override
     public ICredential getCredentials() {
         List<String> exceptions = new ArrayList<>();
@@ -62,9 +71,9 @@ public class CredentialProviderChain implements ICredentialProvider {
                     return credentials;
                 }
             } catch (SdkException e) {
-                exceptions.add(e.getMessage());
+                exceptions.add(provider.getClass().getSimpleName() + ": " + e.getMessage());
             }
         }
-        throw new SdkException("failed to get credentials in providers\n" + String.join("\n", exceptions));
+        throw new SdkException("failed to get credentials in providers:\n" + String.join("\n", exceptions));
     }
 }

@@ -7,7 +7,7 @@
     <packaging>pom</packaging>
     <groupId>com.huaweicloud.sdk</groupId>
     <artifactId>huaweicloud-sdk</artifactId>
-    <version>3.1.190</version>
+    <version>3.1.191</version>
     <name>Huawei Cloud SDK for Java Parent</name>
     <description>Huawei Cloud SDK for Java</description>
     <url>https://github.com/huaweicloud/huaweicloud-sdk-java-v3</url>
@@ -53,6 +53,7 @@
         <mockito.version>4.11.0</mockito.version>
         <mongo-driver.version>4.11.1</mongo-driver.version>
         <spring-boot.version>2.7.12</spring-boot.version>
+        <system-rules.version>1.19.0</system-rules.version>
     </properties>
 
     <dependencyManagement>
@@ -142,6 +143,12 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.stefanbirkner</groupId>
+                <artifactId>system-rules</artifactId>
+                <version>${system-rules.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

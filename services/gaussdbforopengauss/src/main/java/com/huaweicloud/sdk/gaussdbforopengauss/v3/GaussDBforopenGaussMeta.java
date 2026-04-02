@@ -376,6 +376,9 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyInstancePortRespon
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyParameterConfigTemplateRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyParameterConfigTemplateRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyParameterConfigTemplateResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifySecurityGroupRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifySecurityGroupRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifySecurityGroupResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.NodeExecutionInfoResult;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussInstanceActionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussInstanceRequest;
@@ -5509,6 +5512,40 @@ public class GaussDBforopenGaussMeta {
             TypeCasts.uncheckedConversion(ModifyParameterConfigTemplateRequestBody.class),
             f -> f.withMarshaller(ModifyParameterConfigTemplateRequest::getBody,
                 ModifyParameterConfigTemplateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifySecurityGroupRequest, ModifySecurityGroupResponse> modifySecurityGroup =
+        genForModifySecurityGroup();
+
+    private static HttpRequestDef<ModifySecurityGroupRequest, ModifySecurityGroupResponse> genForModifySecurityGroup() {
+        // basic
+        HttpRequestDef.Builder<ModifySecurityGroupRequest, ModifySecurityGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifySecurityGroupRequest.class, ModifySecurityGroupResponse.class)
+                .withName("ModifySecurityGroup")
+                .withUri("/v3/{project_id}/instances/{instance_id}/security-group")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifySecurityGroupRequest::getInstanceId,
+                ModifySecurityGroupRequest::setInstanceId));
+        builder.<ModifySecurityGroupRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ModifySecurityGroupRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ModifySecurityGroupRequest::getXLanguage, ModifySecurityGroupRequest::setXLanguage));
+        builder.<ModifySecurityGroupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifySecurityGroupRequestBody.class),
+            f -> f.withMarshaller(ModifySecurityGroupRequest::getBody, ModifySecurityGroupRequest::setBody));
 
         // response
 

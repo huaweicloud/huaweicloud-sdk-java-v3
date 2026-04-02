@@ -21,47 +21,44 @@
 
 package com.huaweicloud.sdk.core.internal.model;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonDeserializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.huaweicloud.sdk.core.exception.SdkException;
+import com.huaweicloud.sdk.core.utils.StringUtils;
+
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 public class Credential {
+    @JsonDeserialize(using = ExpireDeserializer.class)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonAlias({"expires_at", "expiration"})
+    private Long expiresAt;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "expires_at")
-
-    private String expiresAt;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "access")
-
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonAlias({"access", "accessKeyId"})
     private String access;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "secret")
-
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonAlias({"secret", "secretAccessKey"})
     private String secret;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "securitytoken")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonAlias({"securitytoken", "securityToken"})
+    private String securityToken;
 
-    private String securitytoken;
-
-    public Credential withExpiresAt(String expiresAt) {
-        this.expiresAt = expiresAt;
-        return this;
-    }
-
-    public String getExpiresAt() {
+    public Long getExpiresAt() {
         return expiresAt;
     }
 
-    public void setExpiresAt(String expiresAt) {
+    public void setExpiresAt(Long expiresAt) {
         this.expiresAt = expiresAt;
-    }
-
-    public Credential withAccess(String access) {
-        this.access = access;
-        return this;
     }
 
     public String getAccess() {
@@ -72,11 +69,6 @@ public class Credential {
         this.access = access;
     }
 
-    public Credential withSecret(String secret) {
-        this.secret = secret;
-        return this;
-    }
-
     public String getSecret() {
         return secret;
     }
@@ -85,16 +77,30 @@ public class Credential {
         this.secret = secret;
     }
 
-    public Credential withSecuritytoken(String securitytoken) {
-        this.securitytoken = securitytoken;
-        return this;
-    }
-
     public String getSecurityToken() {
-        return securitytoken;
+        return securityToken;
     }
 
-    public void setSecurityToken(String securitytoken) {
-        this.securitytoken = securitytoken;
+    public void setSecurityToken(String securityToken) {
+        this.securityToken = securityToken;
+    }
+
+    public static class ExpireDeserializer extends JsonDeserializer<Long> {
+        private static final String EXPIRED_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
+
+        @Override
+        public Long deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
+            String expireStr = jsonParser.getText();
+            if (StringUtils.isEmpty(expireStr)) {
+                return null;
+            }
+
+            expireStr = expireStr.replace("000Z", "Z");
+            try {
+                return new SimpleDateFormat(EXPIRED_DATE_FORMAT, Locale.US).parse(expireStr).getTime();
+            } catch (ParseException e) {
+                throw new SdkException("failed to parse expired time:" + expireStr, e);
+            }
+        }
     }
 }

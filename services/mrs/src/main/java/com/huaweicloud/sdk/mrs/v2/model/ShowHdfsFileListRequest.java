@@ -117,7 +117,7 @@ public class ShowHdfsFileListRequest {
     private SortKeyEnum sortKey;
 
     /**
-     * 列表排序方式，desc为降序，asc为升序，默认值为desc。
+     * 列表排序方式，desc为降序，asc为升序，默认值为asc。
      */
     public static final class OrderEnum {
 
@@ -231,7 +231,7 @@ public class ShowHdfsFileListRequest {
     }
 
     /**
-     * 分页参数，表示从该偏移量开始查询文件列表，默认值为0。
+     * 分页参数，表示从该偏移量开始查询文件列表，默认值为1。
      * @return offset
      */
     public String getOffset() {
@@ -282,7 +282,7 @@ public class ShowHdfsFileListRequest {
     }
 
     /**
-     * 列表排序方式，desc为降序，asc为升序，默认值为desc。
+     * 列表排序方式，desc为降序，asc为升序，默认值为asc。
      * @return order
      */
     public OrderEnum getOrder() {

@@ -33,10 +33,8 @@ import com.huaweicloud.sdk.core.internal.model.CreateTemporaryAccessKeyByTokenRe
 import com.huaweicloud.sdk.core.internal.model.CreateTemporaryAccessKeyByTokenResponse;
 import com.huaweicloud.sdk.core.internal.model.CreateTokenWithIdTokenResponse;
 import com.huaweicloud.sdk.core.internal.model.GetIdTokenAuthParams;
-import com.huaweicloud.sdk.core.internal.model.GetIdTokenIdScopeBody;
 import com.huaweicloud.sdk.core.internal.model.GetIdTokenIdTokenBody;
 import com.huaweicloud.sdk.core.internal.model.GetIdTokenRequestBody;
-import com.huaweicloud.sdk.core.internal.model.GetIdTokenScopeDomainOrProjectBody;
 import com.huaweicloud.sdk.core.internal.model.IdentityToken;
 import com.huaweicloud.sdk.core.internal.model.TokenAuth;
 import com.huaweicloud.sdk.core.internal.model.TokenAuthIdentity;
@@ -54,8 +52,6 @@ import java.util.Map;
 import java.util.Objects;
 
 public class IamHelper {
-    public static final String EXPIRED_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
-
     private static final String CREATE_TOKEN_WITH_ID_TOKEN_URI = "/v3.0/OS-AUTH/id-token/tokens";
 
     private static final String CREATE_TEMPORARY_ACCESS_KEY_BY_TOKEN_URI = "/v3.0/OS-CREDENTIAL/securitytokens";
@@ -96,13 +92,6 @@ public class IamHelper {
         return Constants.DEFAULT_IAM_ENDPOINT;
     }
 
-    private static GetIdTokenRequestBody getCreateTokenWithIdTokenRequestBody(
-            String idToken, GetIdTokenIdScopeBody scope) {
-        GetIdTokenIdTokenBody idTokenBody = new GetIdTokenIdTokenBody().withId(idToken);
-        GetIdTokenAuthParams idTokenAuthParams = new GetIdTokenAuthParams().withIdToken(idTokenBody).withScope(scope);
-        return new GetIdTokenRequestBody().withAuth(idTokenAuthParams);
-    }
-
     private static HttpRequest getCreateTokenWithIdTokenRequest(
             String iamEndpoint, String idpId, GetIdTokenRequestBody body) {
         HttpRequest.HttpRequestBuilder builder =
@@ -126,22 +115,6 @@ public class IamHelper {
                 .withPath(CREATE_TEMPORARY_ACCESS_KEY_BY_TOKEN_URI)
                 .withBodyAsString(JsonUtils.toJSON(body))
                 .build();
-    }
-
-    public static HttpRequest getProjectTokenWithIdTokenRequest(
-            String iamEndpoint, String idpId, String idToken, String projectId) {
-        GetIdTokenScopeDomainOrProjectBody project = new GetIdTokenScopeDomainOrProjectBody().withId(projectId);
-        GetIdTokenIdScopeBody scopeBody = new GetIdTokenIdScopeBody().withProject(project);
-        GetIdTokenRequestBody body = getCreateTokenWithIdTokenRequestBody(idToken, scopeBody);
-        return getCreateTokenWithIdTokenRequest(iamEndpoint, idpId, body);
-    }
-
-    public static HttpRequest getDomainTokenWithIdTokenRequest(
-            String iamEndpoint, String idpId, String idToken, String domainId) {
-        GetIdTokenScopeDomainOrProjectBody domain = new GetIdTokenScopeDomainOrProjectBody().withId(domainId);
-        GetIdTokenIdScopeBody scopeBody = new GetIdTokenIdScopeBody().withDomain(domain);
-        GetIdTokenRequestBody body = getCreateTokenWithIdTokenRequestBody(idToken, scopeBody);
-        return getCreateTokenWithIdTokenRequest(iamEndpoint, idpId, body);
     }
 
     public static HttpRequest getUnscopedTokenWithIdTokenRequest(String iamEndpoint, String idpId, String idToken) {

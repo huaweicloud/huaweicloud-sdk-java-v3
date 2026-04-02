@@ -147,13 +147,9 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
 
     @Override
     public HttpRequest syncProcessAuthRequest(HttpRequest httpRequest, HttpClient httpClient) {
-        HttpRequest.HttpRequestBuilder builder = httpRequest.builder().addAutoFilledPathParam(getPathParams());
+        super.processSts(httpClient);
 
-        if (needUpdateFederalAuthToken()) {
-            updateFederalAuthTokenByIdToken(httpClient);
-        } else if (needUpdateSecurityTokenFromMetadata()) {
-            updateSecurityTokenFromMetadata();
-        }
+        HttpRequest.HttpRequestBuilder builder = httpRequest.builder().addAutoFilledPathParam(getPathParams());
 
         if (StringUtils.isNotEmpty(getProjectId())) {
             builder.addHeader(Constants.X_PROJECT_ID, projectId);

@@ -106,7 +106,7 @@ public class UpdateCVEAllowlistRequest {
     }
 
     /**
-     * 漏洞列表
+     * 漏洞列表，最多支持100条数据，且不能有重复漏洞。
      * @return items
      */
     public List<CVEAllowlistItem> getItems() {

@@ -30,7 +30,7 @@ public class CreatePremiumHostResponse extends SdkResponse {
     private String hostname;
 
     /**
-     * **参数解释：** 对外协议，客户端（例如浏览器）请求访问网站的协议类型 **约束限制：** 不涉及 **取值范围：**  - HTTP: HTTP协议  - HTTPS: HTTPS协议  - HTTP&HTTPS: 同事 **默认取值：** 不涉及
+     * **参数解释：** 对外协议，客户端（例如浏览器）请求访问网站的协议类型 **约束限制：** 不涉及 **取值范围：**  - HTTP: HTTP协议  - HTTPS: HTTPS协议  - HTTP&HTTPS: 同时 **默认取值：** 不涉及
      */
     public static final class ProtocolEnum {
 
@@ -431,7 +431,7 @@ public class CreatePremiumHostResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 对外协议，客户端（例如浏览器）请求访问网站的协议类型 **约束限制：** 不涉及 **取值范围：**  - HTTP: HTTP协议  - HTTPS: HTTPS协议  - HTTP&HTTPS: 同事 **默认取值：** 不涉及
+     * **参数解释：** 对外协议，客户端（例如浏览器）请求访问网站的协议类型 **约束限制：** 不涉及 **取值范围：**  - HTTP: HTTP协议  - HTTPS: HTTPS协议  - HTTP&HTTPS: 同时 **默认取值：** 不涉及
      * @return protocol
      */
     public ProtocolEnum getProtocol() {

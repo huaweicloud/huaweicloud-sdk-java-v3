@@ -211,8 +211,12 @@ import com.huaweicloud.sdk.waf.v1.model.ListIgnorePolicyRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListIgnorePolicyRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListIgnoreRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListIgnoreRuleResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListInstancePoolsRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListInstancePoolsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListInstanceRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListInstanceResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListInstanceStatusRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListInstanceStatusResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListInstanceTagsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListIpGroupRequest;
@@ -225,6 +229,10 @@ import com.huaweicloud.sdk.waf.v1.model.ListNoticeConfigsRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListNoticeConfigsResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListOverviewsClassificationRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListOverviewsClassificationResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListOverviewsHostDomainsRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListOverviewsHostDomainsResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListPolicyProtectRulesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListPolicyProtectRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListPolicyRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListPolicyResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListPremiumHostRequest;
@@ -267,6 +275,8 @@ import com.huaweicloud.sdk.waf.v1.model.ListUrlRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListUrlResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListValueListRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListValueListResponse;
+import com.huaweicloud.sdk.waf.v1.model.ListVulnRulesRequest;
+import com.huaweicloud.sdk.waf.v1.model.ListVulnRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListWebBasicProtectionRulesRequest;
 import com.huaweicloud.sdk.waf.v1.model.ListWebBasicProtectionRulesResponse;
 import com.huaweicloud.sdk.waf.v1.model.ListWhiteblackipPolicyRulesRequest;
@@ -3395,6 +3405,64 @@ public class WafClient {
     }
 
     /**
+     * 查询实例组列表
+     *
+     * 查询实例组列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancePoolsRequest 请求对象
+     * @return ListInstancePoolsResponse
+     */
+    public ListInstancePoolsResponse listInstancePools(ListInstancePoolsRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listInstancePools);
+    }
+
+    /**
+     * 查询实例组列表
+     *
+     * 查询实例组列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancePoolsRequest 请求对象
+     * @return SyncInvoker<ListInstancePoolsRequest, ListInstancePoolsResponse>
+     */
+    public SyncInvoker<ListInstancePoolsRequest, ListInstancePoolsResponse> listInstancePoolsInvoker(
+        ListInstancePoolsRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listInstancePools, hcClient);
+    }
+
+    /**
+     * 查询WAF独享引擎状态列表
+     *
+     * 查询WAF独享引擎状态列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceStatusRequest 请求对象
+     * @return ListInstanceStatusResponse
+     */
+    public ListInstanceStatusResponse listInstanceStatus(ListInstanceStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listInstanceStatus);
+    }
+
+    /**
+     * 查询WAF独享引擎状态列表
+     *
+     * 查询WAF独享引擎状态列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceStatusRequest 请求对象
+     * @return SyncInvoker<ListInstanceStatusRequest, ListInstanceStatusResponse>
+     */
+    public SyncInvoker<ListInstanceStatusRequest, ListInstanceStatusResponse> listInstanceStatusInvoker(
+        ListInstanceStatusRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listInstanceStatus, hcClient);
+    }
+
+    /**
      * 查询WAF独享引擎标签
      *
      * 查询WAF独享引擎标签。独享模式只在部分局点支持，包括：华北-北京四、华东-上海一、华南-广州、华南-深圳  、中国-香港、亚太-曼谷、 亚太-新加坡。
@@ -3568,6 +3636,35 @@ public class WafClient {
     }
 
     /**
+     * 查询泛域名的防护事件中的子域名，仅泛域名存在子域名
+     *
+     * 查询泛域名的防护事件中的子域名，仅泛域名存在子域名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOverviewsHostDomainsRequest 请求对象
+     * @return ListOverviewsHostDomainsResponse
+     */
+    public ListOverviewsHostDomainsResponse listOverviewsHostDomains(ListOverviewsHostDomainsRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listOverviewsHostDomains);
+    }
+
+    /**
+     * 查询泛域名的防护事件中的子域名，仅泛域名存在子域名
+     *
+     * 查询泛域名的防护事件中的子域名，仅泛域名存在子域名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOverviewsHostDomainsRequest 请求对象
+     * @return SyncInvoker<ListOverviewsHostDomainsRequest, ListOverviewsHostDomainsResponse>
+     */
+    public SyncInvoker<ListOverviewsHostDomainsRequest, ListOverviewsHostDomainsResponse> listOverviewsHostDomainsInvoker(
+        ListOverviewsHostDomainsRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listOverviewsHostDomains, hcClient);
+    }
+
+    /**
      * 查询防护策略列表
      *
      * 查询防护策略列表
@@ -3596,9 +3693,38 @@ public class WafClient {
     }
 
     /**
-     * 独享模式域名列表
+     * 查询所有策略指定类型的防护规则
      *
-     * 独享模式域名列表
+     * 查询所有策略指定类型的防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPolicyProtectRulesRequest 请求对象
+     * @return ListPolicyProtectRulesResponse
+     */
+    public ListPolicyProtectRulesResponse listPolicyProtectRules(ListPolicyProtectRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listPolicyProtectRules);
+    }
+
+    /**
+     * 查询所有策略指定类型的防护规则
+     *
+     * 查询所有策略指定类型的防护规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPolicyProtectRulesRequest 请求对象
+     * @return SyncInvoker<ListPolicyProtectRulesRequest, ListPolicyProtectRulesResponse>
+     */
+    public SyncInvoker<ListPolicyProtectRulesRequest, ListPolicyProtectRulesResponse> listPolicyProtectRulesInvoker(
+        ListPolicyProtectRulesRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listPolicyProtectRules, hcClient);
+    }
+
+    /**
+     * 查询独享模式域名列表
+     *
+     * 查询独享模式域名列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3610,9 +3736,9 @@ public class WafClient {
     }
 
     /**
-     * 独享模式域名列表
+     * 查询独享模式域名列表
      *
-     * 独享模式域名列表
+     * 查询独享模式域名列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6078,6 +6204,34 @@ public class WafClient {
     public SyncInvoker<CreateQuickAccessDomainRequest, CreateQuickAccessDomainResponse> createQuickAccessDomainInvoker(
         CreateQuickAccessDomainRequest request) {
         return new SyncInvoker<>(request, WafMeta.createQuickAccessDomain, hcClient);
+    }
+
+    /**
+     * 查询Web防护漏洞情报
+     *
+     * 查询Web防护漏洞情报
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVulnRulesRequest 请求对象
+     * @return ListVulnRulesResponse
+     */
+    public ListVulnRulesResponse listVulnRules(ListVulnRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, WafMeta.listVulnRules);
+    }
+
+    /**
+     * 查询Web防护漏洞情报
+     *
+     * 查询Web防护漏洞情报
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVulnRulesRequest 请求对象
+     * @return SyncInvoker<ListVulnRulesRequest, ListVulnRulesResponse>
+     */
+    public SyncInvoker<ListVulnRulesRequest, ListVulnRulesResponse> listVulnRulesInvoker(ListVulnRulesRequest request) {
+        return new SyncInvoker<>(request, WafMeta.listVulnRules, hcClient);
     }
 
     /**

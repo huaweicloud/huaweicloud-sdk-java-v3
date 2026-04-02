@@ -16,6 +16,8 @@ public class BssintlRegion {
 
     public static final Region AP_SOUTHEAST_1 = new Region("ap-southeast-1", "https://bss-intl.myhuaweicloud.com");
 
+    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://bss.myhuaweicloud.eu");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("BSSINTL");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -23,6 +25,7 @@ public class BssintlRegion {
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
+        map.put("eu-west-101", EU_WEST_101);
         return Collections.unmodifiableMap(map);
     }
 

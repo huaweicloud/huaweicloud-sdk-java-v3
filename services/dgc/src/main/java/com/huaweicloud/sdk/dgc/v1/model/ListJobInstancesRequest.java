@@ -335,7 +335,7 @@ public class ListJobInstancesRequest {
     }
 
     /**
-     * 返回作业实际开始时间大于minPlanTime的作业实例，单位为毫秒ms。
+     * 返回作业实例开始运行时间大于minPlanTime的作业实例，单位为毫秒ms，默认设置为查询当天0点。
      * @return minPlanTime
      */
     public Long getMinPlanTime() {
@@ -352,7 +352,7 @@ public class ListJobInstancesRequest {
     }
 
     /**
-     * 返回作业实际开始时间小于maxPlanTime的作业实例，单位为毫秒ms。
+     * 返回作业实例开始运行时间小于maxPlanTime的作业实例，单位为毫秒ms，默认设置为此时的时间点，且开始时间和结束时间的查询范围不超过7天。
      * @return maxPlanTime
      */
     public Long getMaxPlanTime() {

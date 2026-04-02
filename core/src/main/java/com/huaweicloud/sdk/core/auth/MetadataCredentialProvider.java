@@ -44,6 +44,14 @@ public class MetadataCredentialProvider implements ICredentialProvider {
         return new MetadataGlobalCredentialProvider();
     }
 
+    public static MetadataBasicCredentialProvider basic() {
+        return getBasicCredentialMetadataProvider();
+    }
+
+    public static MetadataGlobalCredentialProvider global() {
+        return getGlobalCredentialMetadataProvider();
+    }
+
     /**
      * @deprecated This method will be removed in future.
      */
@@ -80,11 +88,11 @@ public class MetadataCredentialProvider implements ICredentialProvider {
     }
 
     protected ICredential process(AbstractCredentials<?> credentials) {
-        credentials.metadataAccessor = new MetadataAccessor();
+        credentials.stsAccessor = new MetadataAccessor();
         if (getExpirationThresholdSeconds() != null) {
             credentials.setExpirationThresholdSeconds(getExpirationThresholdSeconds());
         }
-        credentials.updateSecurityTokenFromMetadata();
+        credentials.updateSts(credentials.stsAccessor.getCredential());
         return credentials;
     }
 }

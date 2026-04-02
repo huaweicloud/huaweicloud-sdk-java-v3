@@ -59,71 +59,71 @@ public class InvokerTest {
 
     @Test
     public void testSyncInvoker() {
-        SyncInvoker<TestHttpRequestDef.TestRequest, TestHttpRequestDef.TestResponse> syncInvoker = new SyncInvoker<>(
-                new TestHttpRequestDef.TestRequest(), TestHttpRequestDef.buildHttpRequestDef(), hcClient);
-        TestHttpRequestDef.TestResponse testResponse = syncInvoker.invoke();
+        SyncInvoker<HttpRequestDefTest.TestRequest, HttpRequestDefTest.TestResponse> syncInvoker = new SyncInvoker<>(
+                new HttpRequestDefTest.TestRequest(), HttpRequestDefTest.buildHttpRequestDef(), hcClient);
+        HttpRequestDefTest.TestResponse testResponse = syncInvoker.invoke();
         Assert.assertEquals(1, testResponse.getBody().size());
     }
 
     @Test
     public void testSyncInvokerWithoutBackoffStrategy() {
-        SyncInvoker<TestHttpRequestDef.TestRequest, TestHttpRequestDef.TestResponse> syncInvoker = new SyncInvoker<>(
-                new TestHttpRequestDef.TestRequest(), TestHttpRequestDef.buildHttpRequestDef(), hcClient);
-        TestHttpRequestDef.TestResponse testResponse = syncInvoker.retryTimes(1).retryCondition(
+        SyncInvoker<HttpRequestDefTest.TestRequest, HttpRequestDefTest.TestResponse> syncInvoker = new SyncInvoker<>(
+                new HttpRequestDefTest.TestRequest(), HttpRequestDefTest.buildHttpRequestDef(), hcClient);
+        HttpRequestDefTest.TestResponse testResponse = syncInvoker.retryTimes(1).retryCondition(
                 (r, s) -> true).invoke();
         Assert.assertEquals(1, testResponse.getBody().size());
     }
 
     @Test
     public void testSyncInvokerWithRetry() {
-        SyncInvoker<TestHttpRequestDef.TestRequest, TestHttpRequestDef.TestResponse> syncInvoker = new SyncInvoker<>(
-                new TestHttpRequestDef.TestRequest(), TestHttpRequestDef.buildHttpRequestDef(), hcClient);
-        TestHttpRequestDef.TestResponse testResponse = syncInvoker.withRetry(
+        SyncInvoker<HttpRequestDefTest.TestRequest, HttpRequestDefTest.TestResponse> syncInvoker = new SyncInvoker<>(
+                new HttpRequestDefTest.TestRequest(), HttpRequestDefTest.buildHttpRequestDef(), hcClient);
+        HttpRequestDefTest.TestResponse testResponse = syncInvoker.withRetry(
                 1, (r, s) -> true).invoke();
         Assert.assertEquals(1, testResponse.getBody().size());
     }
 
     @Test
     public void testSyncInvokerWithRetry2() {
-        SyncInvoker<TestHttpRequestDef.TestRequest, TestHttpRequestDef.TestResponse> syncInvoker = new SyncInvoker<>(
-                new TestHttpRequestDef.TestRequest(), TestHttpRequestDef.buildHttpRequestDef(), hcClient);
-        TestHttpRequestDef.TestResponse testResponse = syncInvoker.withRetry(
+        SyncInvoker<HttpRequestDefTest.TestRequest, HttpRequestDefTest.TestResponse> syncInvoker = new SyncInvoker<>(
+                new HttpRequestDefTest.TestRequest(), HttpRequestDefTest.buildHttpRequestDef(), hcClient);
+        HttpRequestDefTest.TestResponse testResponse = syncInvoker.withRetry(
                 1, (r, s) -> true, SdkBackoffStrategy.NO_BACKOFF).invoke();
         Assert.assertEquals(1, testResponse.getBody().size());
     }
 
     @Test
     public void testAsyncInvoker() throws ExecutionException, InterruptedException {
-        AsyncInvoker<TestHttpRequestDef.TestRequest, TestHttpRequestDef.TestResponse> asyncInvoker = new AsyncInvoker<>(
-                new TestHttpRequestDef.TestRequest(), TestHttpRequestDef.buildHttpRequestDef(), hcClient);
+        AsyncInvoker<HttpRequestDefTest.TestRequest, HttpRequestDefTest.TestResponse> asyncInvoker = new AsyncInvoker<>(
+                new HttpRequestDefTest.TestRequest(), HttpRequestDefTest.buildHttpRequestDef(), hcClient);
 
-        TestHttpRequestDef.TestResponse testResponse = asyncInvoker.invoke().get();
+        HttpRequestDefTest.TestResponse testResponse = asyncInvoker.invoke().get();
         Assert.assertEquals(1, testResponse.getBody().size());
     }
 
     @Test
     public void testAsyncInvokerWithoutBackoffStrategy() throws ExecutionException, InterruptedException {
-        AsyncInvoker<TestHttpRequestDef.TestRequest, TestHttpRequestDef.TestResponse> asyncInvoker = new AsyncInvoker<>(
-                new TestHttpRequestDef.TestRequest(), TestHttpRequestDef.buildHttpRequestDef(), hcClient);
-        TestHttpRequestDef.TestResponse testResponse = asyncInvoker.retryTimes(1).retryCondition(
+        AsyncInvoker<HttpRequestDefTest.TestRequest, HttpRequestDefTest.TestResponse> asyncInvoker = new AsyncInvoker<>(
+                new HttpRequestDefTest.TestRequest(), HttpRequestDefTest.buildHttpRequestDef(), hcClient);
+        HttpRequestDefTest.TestResponse testResponse = asyncInvoker.retryTimes(1).retryCondition(
                 (r, s) -> true).invoke().get();
         Assert.assertEquals(1, testResponse.getBody().size());
     }
 
     @Test
     public void testAsyncInvokerWithRetry() throws ExecutionException, InterruptedException {
-        AsyncInvoker<TestHttpRequestDef.TestRequest, TestHttpRequestDef.TestResponse> asyncInvoker = new AsyncInvoker<>(
-                new TestHttpRequestDef.TestRequest(), TestHttpRequestDef.buildHttpRequestDef(), hcClient);
-        TestHttpRequestDef.TestResponse testResponse = asyncInvoker.withRetry(
+        AsyncInvoker<HttpRequestDefTest.TestRequest, HttpRequestDefTest.TestResponse> asyncInvoker = new AsyncInvoker<>(
+                new HttpRequestDefTest.TestRequest(), HttpRequestDefTest.buildHttpRequestDef(), hcClient);
+        HttpRequestDefTest.TestResponse testResponse = asyncInvoker.withRetry(
                 1, (r, s) -> true).invoke().get();
         Assert.assertEquals(1, testResponse.getBody().size());
     }
 
     @Test
     public void testAsyncInvokerWithRetry2() throws ExecutionException, InterruptedException {
-        AsyncInvoker<TestHttpRequestDef.TestRequest, TestHttpRequestDef.TestResponse> asyncInvoker = new AsyncInvoker<>(
-                new TestHttpRequestDef.TestRequest(), TestHttpRequestDef.buildHttpRequestDef(), hcClient);
-        TestHttpRequestDef.TestResponse testResponse = asyncInvoker.withRetry(
+        AsyncInvoker<HttpRequestDefTest.TestRequest, HttpRequestDefTest.TestResponse> asyncInvoker = new AsyncInvoker<>(
+                new HttpRequestDefTest.TestRequest(), HttpRequestDefTest.buildHttpRequestDef(), hcClient);
+        HttpRequestDefTest.TestResponse testResponse = asyncInvoker.withRetry(
                 1, (r, s) -> true, SdkBackoffStrategy.NO_BACKOFF).invoke().get();
         Assert.assertEquals(1, testResponse.getBody().size());
     }

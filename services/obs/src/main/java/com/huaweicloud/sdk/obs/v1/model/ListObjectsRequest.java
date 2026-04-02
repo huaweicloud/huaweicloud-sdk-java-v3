@@ -28,6 +28,13 @@ public class ListObjectsRequest {
     private String bucketName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "versions")
+
+    @JacksonXmlProperty(localName = "versions")
+
+    private String versions;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prefix")
 
     @JacksonXmlProperty(localName = "prefix")
@@ -108,6 +115,23 @@ public class ListObjectsRequest {
 
     public void setBucketName(String bucketName) {
         this.bucketName = bucketName;
+    }
+
+    public ListObjectsRequest withVersions(String versions) {
+        this.versions = versions;
+        return this;
+    }
+
+    /**
+     * 添加versions表示请求列举桶内对象（多版本）。 
+     * @return versions
+     */
+    public String getVersions() {
+        return versions;
+    }
+
+    public void setVersions(String versions) {
+        this.versions = versions;
     }
 
     public ListObjectsRequest withPrefix(String prefix) {
@@ -241,17 +265,25 @@ public class ListObjectsRequest {
         }
         ListObjectsRequest that = (ListObjectsRequest) obj;
         return Objects.equals(this.date, that.date) && Objects.equals(this.bucketName, that.bucketName)
-            && Objects.equals(this.prefix, that.prefix) && Objects.equals(this.marker, that.marker)
-            && Objects.equals(this.maxKeys, that.maxKeys) && Objects.equals(this.delimiter, that.delimiter)
-            && Objects.equals(this.keyMarker, that.keyMarker)
+            && Objects.equals(this.versions, that.versions) && Objects.equals(this.prefix, that.prefix)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.maxKeys, that.maxKeys)
+            && Objects.equals(this.delimiter, that.delimiter) && Objects.equals(this.keyMarker, that.keyMarker)
             && Objects.equals(this.versionIdMarker, that.versionIdMarker)
             && Objects.equals(this.encodingType, that.encodingType);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(date, bucketName, prefix, marker, maxKeys, delimiter, keyMarker, versionIdMarker, encodingType);
+        return Objects.hash(date,
+            bucketName,
+            versions,
+            prefix,
+            marker,
+            maxKeys,
+            delimiter,
+            keyMarker,
+            versionIdMarker,
+            encodingType);
     }
 
     @Override
@@ -260,6 +292,7 @@ public class ListObjectsRequest {
         sb.append("class ListObjectsRequest {\n");
         sb.append("    date: ").append(toIndentedString(date)).append("\n");
         sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
+        sb.append("    versions: ").append(toIndentedString(versions)).append("\n");
         sb.append("    prefix: ").append(toIndentedString(prefix)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    maxKeys: ").append(toIndentedString(maxKeys)).append("\n");

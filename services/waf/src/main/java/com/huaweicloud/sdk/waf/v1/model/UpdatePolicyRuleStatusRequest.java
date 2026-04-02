@@ -27,64 +27,59 @@ public class UpdatePolicyRuleStatusRequest {
     private String policyId;
 
     /**
-     * **参数解释：** 规则类型 **约束限制：** 需要购买“大模型防火墙”服务后才可使用llm-guards **取值范围：** - cc CC防护 - custom 精准防护 - whiteblackip 黑白名单 - geoip 地理位置防护 - ip-reputation 威胁情报 - antitamper 防篡改 - antileakage 防敏感信息泄露 - ignore 全局白名单(原误报屏蔽) - privacy 隐私屏蔽 - llm-guards 大模型防火墙 **默认取值：** 不涉及
+     * **参数解释：** 规则类型 **约束限制：** 不涉及 **取值范围：** - cc CC防护 - custom 精准防护 - whiteblackip 黑白名单 - geoip 地理位置防护 - ip-reputation 威胁情报 - antitamper 防篡改 - antileakage 防敏感信息泄露 - ignore 全局白名单(原误报屏蔽) - privacy 隐私屏蔽 **默认取值：** 不涉及
      */
-    public static final class RuletypeEnum {
+    public static final class RuleTypeEnum {
 
         /**
          * Enum CC for value: "cc"
          */
-        public static final RuletypeEnum CC = new RuletypeEnum("cc");
+        public static final RuleTypeEnum CC = new RuleTypeEnum("cc");
 
         /**
          * Enum CUSTOM for value: "custom"
          */
-        public static final RuletypeEnum CUSTOM = new RuletypeEnum("custom");
+        public static final RuleTypeEnum CUSTOM = new RuleTypeEnum("custom");
 
         /**
          * Enum WHITEBLACKIP for value: "whiteblackip"
          */
-        public static final RuletypeEnum WHITEBLACKIP = new RuletypeEnum("whiteblackip");
+        public static final RuleTypeEnum WHITEBLACKIP = new RuleTypeEnum("whiteblackip");
 
         /**
          * Enum PRIVACY for value: "privacy"
          */
-        public static final RuletypeEnum PRIVACY = new RuletypeEnum("privacy");
+        public static final RuleTypeEnum PRIVACY = new RuleTypeEnum("privacy");
 
         /**
          * Enum IGNORE for value: "ignore"
          */
-        public static final RuletypeEnum IGNORE = new RuletypeEnum("ignore");
+        public static final RuleTypeEnum IGNORE = new RuleTypeEnum("ignore");
 
         /**
          * Enum GEOIP for value: "geoip"
          */
-        public static final RuletypeEnum GEOIP = new RuletypeEnum("geoip");
+        public static final RuleTypeEnum GEOIP = new RuleTypeEnum("geoip");
 
         /**
          * Enum ANTITAMPER for value: "antitamper"
          */
-        public static final RuletypeEnum ANTITAMPER = new RuletypeEnum("antitamper");
+        public static final RuleTypeEnum ANTITAMPER = new RuleTypeEnum("antitamper");
 
         /**
          * Enum ANTILEAKAGE for value: "antileakage"
          */
-        public static final RuletypeEnum ANTILEAKAGE = new RuletypeEnum("antileakage");
+        public static final RuleTypeEnum ANTILEAKAGE = new RuleTypeEnum("antileakage");
 
         /**
          * Enum IP_REPUTATION for value: "ip-reputation"
          */
-        public static final RuletypeEnum IP_REPUTATION = new RuletypeEnum("ip-reputation");
+        public static final RuleTypeEnum IP_REPUTATION = new RuleTypeEnum("ip-reputation");
 
-        /**
-         * Enum LLM_GUARDS for value: "llm-guards"
-         */
-        public static final RuletypeEnum LLM_GUARDS = new RuletypeEnum("llm-guards");
+        private static final Map<String, RuleTypeEnum> STATIC_FIELDS = createStaticFields();
 
-        private static final Map<String, RuletypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, RuletypeEnum> createStaticFields() {
-            Map<String, RuletypeEnum> map = new HashMap<>();
+        private static Map<String, RuleTypeEnum> createStaticFields() {
+            Map<String, RuleTypeEnum> map = new HashMap<>();
             map.put("cc", CC);
             map.put("custom", CUSTOM);
             map.put("whiteblackip", WHITEBLACKIP);
@@ -94,13 +89,12 @@ public class UpdatePolicyRuleStatusRequest {
             map.put("antitamper", ANTITAMPER);
             map.put("antileakage", ANTILEAKAGE);
             map.put("ip-reputation", IP_REPUTATION);
-            map.put("llm-guards", LLM_GUARDS);
             return Collections.unmodifiableMap(map);
         }
 
         private String value;
 
-        RuletypeEnum(String value) {
+        RuleTypeEnum(String value) {
             this.value = value;
         }
 
@@ -115,14 +109,14 @@ public class UpdatePolicyRuleStatusRequest {
         }
 
         @JsonCreator
-        public static RuletypeEnum fromValue(String value) {
+        public static RuleTypeEnum fromValue(String value) {
             if (value == null) {
                 return null;
             }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RuletypeEnum(value));
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RuleTypeEnum(value));
         }
 
-        public static RuletypeEnum valueOf(String value) {
+        public static RuleTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
@@ -132,8 +126,8 @@ public class UpdatePolicyRuleStatusRequest {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj instanceof RuletypeEnum) {
-                return this.value.equals(((RuletypeEnum) obj).value);
+            if (obj instanceof RuleTypeEnum) {
+                return this.value.equals(((RuleTypeEnum) obj).value);
             }
             return false;
         }
@@ -145,9 +139,9 @@ public class UpdatePolicyRuleStatusRequest {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ruletype")
+    @JsonProperty(value = "rule_type")
 
-    private RuletypeEnum ruletype;
+    private RuleTypeEnum ruleType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_id")
@@ -193,21 +187,21 @@ public class UpdatePolicyRuleStatusRequest {
         this.policyId = policyId;
     }
 
-    public UpdatePolicyRuleStatusRequest withRuletype(RuletypeEnum ruletype) {
-        this.ruletype = ruletype;
+    public UpdatePolicyRuleStatusRequest withRuleType(RuleTypeEnum ruleType) {
+        this.ruleType = ruleType;
         return this;
     }
 
     /**
-     * **参数解释：** 规则类型 **约束限制：** 需要购买“大模型防火墙”服务后才可使用llm-guards **取值范围：** - cc CC防护 - custom 精准防护 - whiteblackip 黑白名单 - geoip 地理位置防护 - ip-reputation 威胁情报 - antitamper 防篡改 - antileakage 防敏感信息泄露 - ignore 全局白名单(原误报屏蔽) - privacy 隐私屏蔽 - llm-guards 大模型防火墙 **默认取值：** 不涉及
-     * @return ruletype
+     * **参数解释：** 规则类型 **约束限制：** 不涉及 **取值范围：** - cc CC防护 - custom 精准防护 - whiteblackip 黑白名单 - geoip 地理位置防护 - ip-reputation 威胁情报 - antitamper 防篡改 - antileakage 防敏感信息泄露 - ignore 全局白名单(原误报屏蔽) - privacy 隐私屏蔽 **默认取值：** 不涉及
+     * @return ruleType
      */
-    public RuletypeEnum getRuletype() {
-        return ruletype;
+    public RuleTypeEnum getRuleType() {
+        return ruleType;
     }
 
-    public void setRuletype(RuletypeEnum ruletype) {
-        this.ruletype = ruletype;
+    public void setRuleType(RuleTypeEnum ruleType) {
+        this.ruleType = ruleType;
     }
 
     public UpdatePolicyRuleStatusRequest withRuleId(String ruleId) {
@@ -263,13 +257,13 @@ public class UpdatePolicyRuleStatusRequest {
         }
         UpdatePolicyRuleStatusRequest that = (UpdatePolicyRuleStatusRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.ruletype, that.ruletype)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.ruleType, that.ruleType)
             && Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, policyId, ruletype, ruleId, body);
+        return Objects.hash(enterpriseProjectId, policyId, ruleType, ruleId, body);
     }
 
     @Override
@@ -278,7 +272,7 @@ public class UpdatePolicyRuleStatusRequest {
         sb.append("class UpdatePolicyRuleStatusRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
-        sb.append("    ruletype: ").append(toIndentedString(ruletype)).append("\n");
+        sb.append("    ruleType: ").append(toIndentedString(ruleType)).append("\n");
         sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

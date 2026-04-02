@@ -315,6 +315,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyInstancePortReques
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyInstancePortResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyParameterConfigTemplateRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyParameterConfigTemplateResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifySecurityGroupRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifySecurityGroupResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetDrConfigRequest;
@@ -4195,6 +4197,35 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<ModifyParameterConfigTemplateRequest, ModifyParameterConfigTemplateResponse> modifyParameterConfigTemplateInvoker(
         ModifyParameterConfigTemplateRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.modifyParameterConfigTemplate, hcClient);
+    }
+
+    /**
+     * 修改实例安全组
+     *
+     * 修改实例安全组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifySecurityGroupRequest 请求对象
+     * @return ModifySecurityGroupResponse
+     */
+    public ModifySecurityGroupResponse modifySecurityGroup(ModifySecurityGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.modifySecurityGroup);
+    }
+
+    /**
+     * 修改实例安全组
+     *
+     * 修改实例安全组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifySecurityGroupRequest 请求对象
+     * @return SyncInvoker<ModifySecurityGroupRequest, ModifySecurityGroupResponse>
+     */
+    public SyncInvoker<ModifySecurityGroupRequest, ModifySecurityGroupResponse> modifySecurityGroupInvoker(
+        ModifySecurityGroupRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.modifySecurityGroup, hcClient);
     }
 
     /**

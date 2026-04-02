@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class BatchDeleteRulesRequest {
 
     /**
-     * **参数解释：** 需要删除的规则类型,目前支持cc,custom,whiteblackip,privacy,ignore,geoip,antitamper,antileakage,ip-reputation,llm-guards **约束限制：** 需要购买“大模型防火墙”服务后才可使用llm-guards **取值范围：** - cc CC防护 - custom 精准防护 - whiteblackip 黑白名单 - geoip 地理位置防护 - ip-reputation 威胁情报 - antitamper 防篡改 - antileakage 防敏感信息泄露 - ignore 全局白名单(原误报屏蔽) - privacy 隐私屏蔽 - llm-guards 大模型防火墙 **默认取值：** 不涉及
+     * **参数解释：** 需要删除的规则类型 **约束限制：** 不涉及 **取值范围：** - cc CC防护 - custom 精准防护 - whiteblackip 黑白名单 - geoip 地理位置防护 - ip-reputation 威胁情报 - antitamper 防篡改 - antileakage 防敏感信息泄露 - ignore 全局白名单(原误报屏蔽) - privacy 隐私屏蔽 **默认取值：** 不涉及
      */
     public static final class RuleTypeEnum {
 
@@ -66,11 +66,6 @@ public class BatchDeleteRulesRequest {
          */
         public static final RuleTypeEnum IP_REPUTATION = new RuleTypeEnum("ip-reputation");
 
-        /**
-         * Enum LLM_GUARDS for value: "llm-guards"
-         */
-        public static final RuleTypeEnum LLM_GUARDS = new RuleTypeEnum("llm-guards");
-
         private static final Map<String, RuleTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, RuleTypeEnum> createStaticFields() {
@@ -84,7 +79,6 @@ public class BatchDeleteRulesRequest {
             map.put("antitamper", ANTITAMPER);
             map.put("antileakage", ANTILEAKAGE);
             map.put("ip-reputation", IP_REPUTATION);
-            map.put("llm-guards", LLM_GUARDS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -150,7 +144,7 @@ public class BatchDeleteRulesRequest {
     }
 
     /**
-     * **参数解释：** 需要删除的规则类型,目前支持cc,custom,whiteblackip,privacy,ignore,geoip,antitamper,antileakage,ip-reputation,llm-guards **约束限制：** 需要购买“大模型防火墙”服务后才可使用llm-guards **取值范围：** - cc CC防护 - custom 精准防护 - whiteblackip 黑白名单 - geoip 地理位置防护 - ip-reputation 威胁情报 - antitamper 防篡改 - antileakage 防敏感信息泄露 - ignore 全局白名单(原误报屏蔽) - privacy 隐私屏蔽 - llm-guards 大模型防火墙 **默认取值：** 不涉及
+     * **参数解释：** 需要删除的规则类型 **约束限制：** 不涉及 **取值范围：** - cc CC防护 - custom 精准防护 - whiteblackip 黑白名单 - geoip 地理位置防护 - ip-reputation 威胁情报 - antitamper 防篡改 - antileakage 防敏感信息泄露 - ignore 全局白名单(原误报屏蔽) - privacy 隐私屏蔽 **默认取值：** 不涉及
      * @return ruleType
      */
     public RuleTypeEnum getRuleType() {

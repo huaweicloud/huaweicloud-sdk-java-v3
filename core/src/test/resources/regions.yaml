@@ -1,0 +1,8 @@
+# 服务名不区分大小写
+SERVICE:
+  - id: 'test-region-1'
+    endpoint: 'https://endpoint'
+  - id: 'test-region-2'
+    endpoints:
+      - 'https://endpoint1'
+      - 'https://endpoint2'

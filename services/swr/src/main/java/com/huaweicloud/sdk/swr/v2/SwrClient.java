@@ -113,6 +113,8 @@ import com.huaweicloud.sdk.swr.v2.model.DeleteTriggerRequest;
 import com.huaweicloud.sdk.swr.v2.model.DeleteTriggerResponse;
 import com.huaweicloud.sdk.swr.v2.model.DeleteUserRepositoryAuthRequest;
 import com.huaweicloud.sdk.swr.v2.model.DeleteUserRepositoryAuthResponse;
+import com.huaweicloud.sdk.swr.v2.model.ExecuteGcScheduleRequest;
+import com.huaweicloud.sdk.swr.v2.model.ExecuteGcScheduleResponse;
 import com.huaweicloud.sdk.swr.v2.model.ExecuteInstanceReplicationPolicyRequest;
 import com.huaweicloud.sdk.swr.v2.model.ExecuteInstanceReplicationPolicyResponse;
 import com.huaweicloud.sdk.swr.v2.model.ExecuteInstanceRetentionPolicyRequest;
@@ -129,6 +131,8 @@ import com.huaweicloud.sdk.swr.v2.model.ListDomainNamesRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListDomainNamesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListFeatureGatesRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListFeatureGatesResponse;
+import com.huaweicloud.sdk.swr.v2.model.ListGcTasksRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListGcTasksResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListGlobalFeatureGatesRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListGlobalFeatureGatesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListImageAutoSyncReposDetailsRequest;
@@ -241,6 +245,10 @@ import com.huaweicloud.sdk.swr.v2.model.ShowDomainOverviewRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowDomainOverviewResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowDomainResourceReportsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowDomainResourceReportsResponse;
+import com.huaweicloud.sdk.swr.v2.model.ShowGcScheduleRequest;
+import com.huaweicloud.sdk.swr.v2.model.ShowGcScheduleResponse;
+import com.huaweicloud.sdk.swr.v2.model.ShowGcTaskRequest;
+import com.huaweicloud.sdk.swr.v2.model.ShowGcTaskResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowInstanceArtifactAdditionRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowInstanceArtifactAdditionResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowInstanceArtifactRequest;
@@ -293,10 +301,14 @@ import com.huaweicloud.sdk.swr.v2.model.ShowUserRepositoryAuthRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowUserRepositoryAuthResponse;
 import com.huaweicloud.sdk.swr.v2.model.StartManualScanningRequest;
 import com.huaweicloud.sdk.swr.v2.model.StartManualScanningResponse;
+import com.huaweicloud.sdk.swr.v2.model.StopGcTaskRequest;
+import com.huaweicloud.sdk.swr.v2.model.StopGcTaskResponse;
 import com.huaweicloud.sdk.swr.v2.model.StopInstanceReplicationPolicyExecutionRequest;
 import com.huaweicloud.sdk.swr.v2.model.StopInstanceReplicationPolicyExecutionResponse;
 import com.huaweicloud.sdk.swr.v2.model.UpdateDomainNameRequest;
 import com.huaweicloud.sdk.swr.v2.model.UpdateDomainNameResponse;
+import com.huaweicloud.sdk.swr.v2.model.UpdateGcScheduleRequest;
+import com.huaweicloud.sdk.swr.v2.model.UpdateGcScheduleResponse;
 import com.huaweicloud.sdk.swr.v2.model.UpdateImmutableRuleRequest;
 import com.huaweicloud.sdk.swr.v2.model.UpdateImmutableRuleResponse;
 import com.huaweicloud.sdk.swr.v2.model.UpdateInstanceConfigurationRequest;
@@ -2976,6 +2988,35 @@ public class SwrClient {
     }
 
     /**
+     * 执行制品清理计划
+     *
+     * 执行制品清理计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteGcScheduleRequest 请求对象
+     * @return ExecuteGcScheduleResponse
+     */
+    public ExecuteGcScheduleResponse executeGcSchedule(ExecuteGcScheduleRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.executeGcSchedule);
+    }
+
+    /**
+     * 执行制品清理计划
+     *
+     * 执行制品清理计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteGcScheduleRequest 请求对象
+     * @return SyncInvoker<ExecuteGcScheduleRequest, ExecuteGcScheduleResponse>
+     */
+    public SyncInvoker<ExecuteGcScheduleRequest, ExecuteGcScheduleResponse> executeGcScheduleInvoker(
+        ExecuteGcScheduleRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.executeGcSchedule, hcClient);
+    }
+
+    /**
      * 手动执行镜像同步策略
      *
      * 手动执行同步策略
@@ -3177,6 +3218,34 @@ public class SwrClient {
     public SyncInvoker<ListFeatureGatesRequest, ListFeatureGatesResponse> listFeatureGatesInvoker(
         ListFeatureGatesRequest request) {
         return new SyncInvoker<>(request, SwrMeta.listFeatureGates, hcClient);
+    }
+
+    /**
+     * 查询制品清理的任务列表
+     *
+     * 查询制品清理的任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGcTasksRequest 请求对象
+     * @return ListGcTasksResponse
+     */
+    public ListGcTasksResponse listGcTasks(ListGcTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.listGcTasks);
+    }
+
+    /**
+     * 查询制品清理的任务列表
+     *
+     * 查询制品清理的任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGcTasksRequest 请求对象
+     * @return SyncInvoker<ListGcTasksRequest, ListGcTasksResponse>
+     */
+    public SyncInvoker<ListGcTasksRequest, ListGcTasksResponse> listGcTasksInvoker(ListGcTasksRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.listGcTasks, hcClient);
     }
 
     /**
@@ -4237,6 +4306,63 @@ public class SwrClient {
     }
 
     /**
+     * 获取制品清理的计划信息
+     *
+     * 获取制品清理的计划信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowGcScheduleRequest 请求对象
+     * @return ShowGcScheduleResponse
+     */
+    public ShowGcScheduleResponse showGcSchedule(ShowGcScheduleRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.showGcSchedule);
+    }
+
+    /**
+     * 获取制品清理的计划信息
+     *
+     * 获取制品清理的计划信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowGcScheduleRequest 请求对象
+     * @return SyncInvoker<ShowGcScheduleRequest, ShowGcScheduleResponse>
+     */
+    public SyncInvoker<ShowGcScheduleRequest, ShowGcScheduleResponse> showGcScheduleInvoker(
+        ShowGcScheduleRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.showGcSchedule, hcClient);
+    }
+
+    /**
+     * 查询制品清理的任务详情
+     *
+     * 查询制品清理的任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowGcTaskRequest 请求对象
+     * @return ShowGcTaskResponse
+     */
+    public ShowGcTaskResponse showGcTask(ShowGcTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.showGcTask);
+    }
+
+    /**
+     * 查询制品清理的任务详情
+     *
+     * 查询制品清理的任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowGcTaskRequest 请求对象
+     * @return SyncInvoker<ShowGcTaskRequest, ShowGcTaskResponse>
+     */
+    public SyncInvoker<ShowGcTaskRequest, ShowGcTaskResponse> showGcTaskInvoker(ShowGcTaskRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.showGcTask, hcClient);
+    }
+
+    /**
      * 获取实例详情
      *
      * 获取实例详情
@@ -4734,6 +4860,34 @@ public class SwrClient {
     }
 
     /**
+     * 停止制品清理任务
+     *
+     * 停止制品清理任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopGcTaskRequest 请求对象
+     * @return StopGcTaskResponse
+     */
+    public StopGcTaskResponse stopGcTask(StopGcTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.stopGcTask);
+    }
+
+    /**
+     * 停止制品清理任务
+     *
+     * 停止制品清理任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopGcTaskRequest 请求对象
+     * @return SyncInvoker<StopGcTaskRequest, StopGcTaskResponse>
+     */
+    public SyncInvoker<StopGcTaskRequest, StopGcTaskResponse> stopGcTaskInvoker(StopGcTaskRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.stopGcTask, hcClient);
+    }
+
+    /**
      * 停止镜像同步任务
      *
      * 停止镜像同步任务
@@ -4790,6 +4944,35 @@ public class SwrClient {
     public SyncInvoker<UpdateDomainNameRequest, UpdateDomainNameResponse> updateDomainNameInvoker(
         UpdateDomainNameRequest request) {
         return new SyncInvoker<>(request, SwrMeta.updateDomainName, hcClient);
+    }
+
+    /**
+     * 配置制品清理计划
+     *
+     * 配置制品清理计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateGcScheduleRequest 请求对象
+     * @return UpdateGcScheduleResponse
+     */
+    public UpdateGcScheduleResponse updateGcSchedule(UpdateGcScheduleRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.updateGcSchedule);
+    }
+
+    /**
+     * 配置制品清理计划
+     *
+     * 配置制品清理计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateGcScheduleRequest 请求对象
+     * @return SyncInvoker<UpdateGcScheduleRequest, UpdateGcScheduleResponse>
+     */
+    public SyncInvoker<UpdateGcScheduleRequest, UpdateGcScheduleResponse> updateGcScheduleInvoker(
+        UpdateGcScheduleRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.updateGcSchedule, hcClient);
     }
 
     /**

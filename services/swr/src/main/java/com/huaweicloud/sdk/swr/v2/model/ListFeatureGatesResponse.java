@@ -26,6 +26,11 @@ public class ListFeatureGatesResponse extends SdkResponse {
 
     private Boolean enableArtifactScanning;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enableArtifactGc")
+
+    private Boolean enableArtifactGc;
+
     public ListFeatureGatesResponse withEnableDomainName(Boolean enableDomainName) {
         this.enableDomainName = enableDomainName;
         return this;
@@ -77,6 +82,23 @@ public class ListFeatureGatesResponse extends SdkResponse {
         this.enableArtifactScanning = enableArtifactScanning;
     }
 
+    public ListFeatureGatesResponse withEnableArtifactGc(Boolean enableArtifactGc) {
+        this.enableArtifactGc = enableArtifactGc;
+        return this;
+    }
+
+    /**
+     * 是否支持制品清理
+     * @return enableArtifactGc
+     */
+    public Boolean getEnableArtifactGc() {
+        return enableArtifactGc;
+    }
+
+    public void setEnableArtifactGc(Boolean enableArtifactGc) {
+        this.enableArtifactGc = enableArtifactGc;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -88,12 +110,13 @@ public class ListFeatureGatesResponse extends SdkResponse {
         ListFeatureGatesResponse that = (ListFeatureGatesResponse) obj;
         return Objects.equals(this.enableDomainName, that.enableDomainName)
             && Objects.equals(this.enableCombinationRetention, that.enableCombinationRetention)
-            && Objects.equals(this.enableArtifactScanning, that.enableArtifactScanning);
+            && Objects.equals(this.enableArtifactScanning, that.enableArtifactScanning)
+            && Objects.equals(this.enableArtifactGc, that.enableArtifactGc);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enableDomainName, enableCombinationRetention, enableArtifactScanning);
+        return Objects.hash(enableDomainName, enableCombinationRetention, enableArtifactScanning, enableArtifactGc);
     }
 
     @Override
@@ -103,6 +126,7 @@ public class ListFeatureGatesResponse extends SdkResponse {
         sb.append("    enableDomainName: ").append(toIndentedString(enableDomainName)).append("\n");
         sb.append("    enableCombinationRetention: ").append(toIndentedString(enableCombinationRetention)).append("\n");
         sb.append("    enableArtifactScanning: ").append(toIndentedString(enableArtifactScanning)).append("\n");
+        sb.append("    enableArtifactGc: ").append(toIndentedString(enableArtifactGc)).append("\n");
         sb.append("}");
         return sb.toString();
     }

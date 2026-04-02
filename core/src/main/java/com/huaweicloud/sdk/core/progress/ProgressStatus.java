@@ -51,7 +51,7 @@ public interface ProgressStatus {
     /**
      * Obtain the number of new bytes.
      *
-     * @return Number of bytes transferred since last progress refresh
+     * @return Number of bytes transferred since last progress processSts
      */
     long getNewlyTransferredBytes();
 

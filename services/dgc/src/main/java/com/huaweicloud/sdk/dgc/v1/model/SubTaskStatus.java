@@ -31,7 +31,7 @@ public class SubTaskStatus {
     private Long lastUpdate;
 
     /**
-     * 作业运行状态 RUNNING：运行中 SUCCESSFUL：运行成功 FAILED：运行失败
+     * 作业运行状态 RUNNING：运行中 SUCCESSFUL：运行成功 FAILED：运行失败 WARNING：告警
      */
     public static final class StatusEnum {
 
@@ -50,6 +50,11 @@ public class SubTaskStatus {
          */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
 
+        /**
+         * Enum WARNING for value: "WARNING"
+         */
+        public static final StatusEnum WARNING = new StatusEnum("WARNING");
+
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
@@ -57,6 +62,7 @@ public class SubTaskStatus {
             map.put("RUNNING", RUNNING);
             map.put("SUCCESSFUL", SUCCESSFUL);
             map.put("FAILED", FAILED);
+            map.put("WARNING", WARNING);
             return Collections.unmodifiableMap(map);
         }
 
@@ -173,7 +179,7 @@ public class SubTaskStatus {
     }
 
     /**
-     * 作业运行状态 RUNNING：运行中 SUCCESSFUL：运行成功 FAILED：运行失败
+     * 作业运行状态 RUNNING：运行中 SUCCESSFUL：运行成功 FAILED：运行失败 WARNING：告警
      * @return status
      */
     public StatusEnum getStatus() {

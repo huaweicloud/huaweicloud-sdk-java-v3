@@ -40,8 +40,57 @@ public class CreateBucketRequest {
 
     private String xObsAcl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-server-side-encryption")
+
+    @JacksonXmlProperty(localName = "x-obs-server-side-encryption")
+
+    private String xObsServerSideEncryption;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-server-side-data-encryption")
+
+    @JacksonXmlProperty(localName = "x-obs-server-side-data-encryption")
+
+    private String xObsServerSideDataEncryption;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-server-side-encryption-kms-key-id")
+
+    @JacksonXmlProperty(localName = "x-obs-server-side-encryption-kms-key-id")
+
+    private String xObsServerSideEncryptionKmsKeyId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-server-side-encryption-bucket-key-enabled")
+
+    @JacksonXmlProperty(localName = "x-obs-server-side-encryption-bucket-key-enabled")
+
+    private String xObsServerSideEncryptionBucketKeyEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-sse-kms-key-project-id")
+
+    @JacksonXmlProperty(localName = "x-obs-sse-kms-key-project-id")
+
+    private String xObsSseKmsKeyProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-bucket-object-lock-enabled")
+
+    @JacksonXmlProperty(localName = "x-obs-bucket-object-lock-enabled")
+
+    private String xObsBucketObjectLockEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-edge-location")
+
+    @JacksonXmlProperty(localName = "x-obs-edge-location")
+
+    private String xObsEdgeLocation;
+
     /**
-     * 创建桶时，可以加上此消息头设置桶的默认存储类型，默认存储类型有3种：STANDARD（标准存储）、WARM（低频访问存储）、COLD（归档存储）、HIGH_PERFORMANCE（高性能存储，只有并行文件系统支持）。如果没有指定此头域，则创建的桶为标准存储类型。 
+     * 创建桶时，可以加上此消息头设置桶的默认存储类型，默认存储类型有4种：STANDARD（标准存储）、WARM（低频访问存储）、COLD（归档存储）、DEEP_ARCHIVE（深度归档）。如果没有指定此头域，则创建的桶为标准存储类型。 
      */
     public static final class XObsStorageClassEnum {
 
@@ -60,6 +109,11 @@ public class CreateBucketRequest {
          */
         public static final XObsStorageClassEnum COLD = new XObsStorageClassEnum("COLD");
 
+        /**
+         * Enum DEEP_ARCHIVE for value: "DEEP_ARCHIVE"
+         */
+        public static final XObsStorageClassEnum DEEP_ARCHIVE = new XObsStorageClassEnum("DEEP_ARCHIVE");
+
         private static final Map<String, XObsStorageClassEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, XObsStorageClassEnum> createStaticFields() {
@@ -67,6 +121,7 @@ public class CreateBucketRequest {
             map.put("STANDARD", STANDARD);
             map.put("WARM", WARM);
             map.put("COLD", COLD);
+            map.put("DEEP_ARCHIVE", DEEP_ARCHIVE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -321,90 +376,6 @@ public class CreateBucketRequest {
 
     private String xObsEpid;
 
-    /**
-     * 指定桶是创建在公共集群还是专属集群。 
-     */
-    public static final class XObsClusterTypeEnum {
-
-        /**
-         * Enum PUBLIC for value: "public"
-         */
-        public static final XObsClusterTypeEnum PUBLIC = new XObsClusterTypeEnum("public");
-
-        /**
-         * Enum DEDICATED for value: "dedicated"
-         */
-        public static final XObsClusterTypeEnum DEDICATED = new XObsClusterTypeEnum("dedicated");
-
-        private static final Map<String, XObsClusterTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, XObsClusterTypeEnum> createStaticFields() {
-            Map<String, XObsClusterTypeEnum> map = new HashMap<>();
-            map.put("public", PUBLIC);
-            map.put("dedicated", DEDICATED);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        XObsClusterTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static XObsClusterTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new XObsClusterTypeEnum(value));
-        }
-
-        public static XObsClusterTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof XObsClusterTypeEnum) {
-                return this.value.equals(((XObsClusterTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "x-obs-cluster-type")
-
-    @JacksonXmlProperty(localName = "x-obs-cluster-type")
-
-    private XObsClusterTypeEnum xObsClusterType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "x-obs-location-clustergroup-id")
-
-    @JacksonXmlProperty(localName = "x-obs-location-clustergroup-id")
-
-    private String xObsLocationClustergroupId;
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x-obs-ies-location")
 
@@ -472,13 +443,147 @@ public class CreateBucketRequest {
         this.xObsAcl = xObsAcl;
     }
 
+    public CreateBucketRequest withXObsServerSideEncryption(String xObsServerSideEncryption) {
+        this.xObsServerSideEncryption = xObsServerSideEncryption;
+        return this;
+    }
+
+    /**
+     * 创建桶时可以带上此头域来指定桶加密配置的加密模式。 示例：x-obs-server-side-encryption: kms 
+     * @return xObsServerSideEncryption
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-server-side-encryption")
+    public String getXObsServerSideEncryption() {
+        return xObsServerSideEncryption;
+    }
+
+    public void setXObsServerSideEncryption(String xObsServerSideEncryption) {
+        this.xObsServerSideEncryption = xObsServerSideEncryption;
+    }
+
+    public CreateBucketRequest withXObsServerSideDataEncryption(String xObsServerSideDataEncryption) {
+        this.xObsServerSideDataEncryption = xObsServerSideDataEncryption;
+        return this;
+    }
+
+    /**
+     * 创建桶时带上此头域来指定服务端加密配置的加密算法。 示例：x-obs-server-side-data-encryption: AES256 
+     * @return xObsServerSideDataEncryption
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-server-side-data-encryption")
+    public String getXObsServerSideDataEncryption() {
+        return xObsServerSideDataEncryption;
+    }
+
+    public void setXObsServerSideDataEncryption(String xObsServerSideDataEncryption) {
+        this.xObsServerSideDataEncryption = xObsServerSideDataEncryption;
+    }
+
+    public CreateBucketRequest withXObsServerSideEncryptionKmsKeyId(String xObsServerSideEncryptionKmsKeyId) {
+        this.xObsServerSideEncryptionKmsKeyId = xObsServerSideEncryptionKmsKeyId;
+        return this;
+    }
+
+    /**
+     * 当加密方式为SSE-KMS且使用指定密钥加密时，需输入密钥ID。密钥ID获取方法请参见查看密钥。 约束限制： 当您设置了x-obs-server-side-encryption头域且赋值为“kms”，即选择kms加密方式时，才能使用该头域指定加密密钥。 
+     * @return xObsServerSideEncryptionKmsKeyId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-server-side-encryption-kms-key-id")
+    public String getXObsServerSideEncryptionKmsKeyId() {
+        return xObsServerSideEncryptionKmsKeyId;
+    }
+
+    public void setXObsServerSideEncryptionKmsKeyId(String xObsServerSideEncryptionKmsKeyId) {
+        this.xObsServerSideEncryptionKmsKeyId = xObsServerSideEncryptionKmsKeyId;
+    }
+
+    public CreateBucketRequest withXObsServerSideEncryptionBucketKeyEnabled(
+        String xObsServerSideEncryptionBucketKeyEnabled) {
+        this.xObsServerSideEncryptionBucketKeyEnabled = xObsServerSideEncryptionBucketKeyEnabled;
+        return this;
+    }
+
+    /**
+     * SSE-KMS桶密钥功能开关。 约束限制： 当您设置本头域为“true”时，必须同时设置本接口的另一个头域x-obs-server-side-encryption-kms-key-id以指定密钥ID。 
+     * @return xObsServerSideEncryptionBucketKeyEnabled
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-server-side-encryption-bucket-key-enabled")
+    public String getXObsServerSideEncryptionBucketKeyEnabled() {
+        return xObsServerSideEncryptionBucketKeyEnabled;
+    }
+
+    public void setXObsServerSideEncryptionBucketKeyEnabled(String xObsServerSideEncryptionBucketKeyEnabled) {
+        this.xObsServerSideEncryptionBucketKeyEnabled = xObsServerSideEncryptionBucketKeyEnabled;
+    }
+
+    public CreateBucketRequest withXObsSseKmsKeyProjectId(String xObsSseKmsKeyProjectId) {
+        this.xObsSseKmsKeyProjectId = xObsSseKmsKeyProjectId;
+        return this;
+    }
+
+    /**
+     * SSE-KMS加密方式下KMS主密钥所属的项目ID（非企业项目ID）。 
+     * @return xObsSseKmsKeyProjectId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-sse-kms-key-project-id")
+    public String getXObsSseKmsKeyProjectId() {
+        return xObsSseKmsKeyProjectId;
+    }
+
+    public void setXObsSseKmsKeyProjectId(String xObsSseKmsKeyProjectId) {
+        this.xObsSseKmsKeyProjectId = xObsSseKmsKeyProjectId;
+    }
+
+    public CreateBucketRequest withXObsBucketObjectLockEnabled(String xObsBucketObjectLockEnabled) {
+        this.xObsBucketObjectLockEnabled = xObsBucketObjectLockEnabled;
+        return this;
+    }
+
+    /**
+     * 创建桶时可以带上此消息头来开启WORM开关。 示例：x-obs-bucket-object-lock-enabled:true 
+     * @return xObsBucketObjectLockEnabled
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-bucket-object-lock-enabled")
+    public String getXObsBucketObjectLockEnabled() {
+        return xObsBucketObjectLockEnabled;
+    }
+
+    public void setXObsBucketObjectLockEnabled(String xObsBucketObjectLockEnabled) {
+        this.xObsBucketObjectLockEnabled = xObsBucketObjectLockEnabled;
+    }
+
+    public CreateBucketRequest withXObsEdgeLocation(String xObsEdgeLocation) {
+        this.xObsEdgeLocation = xObsEdgeLocation;
+        return this;
+    }
+
+    /**
+     * 如果是要在智能边缘云站点上创建桶，需要携带此头域，头域值为智能边缘云站点的AZ ID。 
+     * @return xObsEdgeLocation
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-edge-location")
+    public String getXObsEdgeLocation() {
+        return xObsEdgeLocation;
+    }
+
+    public void setXObsEdgeLocation(String xObsEdgeLocation) {
+        this.xObsEdgeLocation = xObsEdgeLocation;
+    }
+
     public CreateBucketRequest withXObsStorageClass(XObsStorageClassEnum xObsStorageClass) {
         this.xObsStorageClass = xObsStorageClass;
         return this;
     }
 
     /**
-     * 创建桶时，可以加上此消息头设置桶的默认存储类型，默认存储类型有3种：STANDARD（标准存储）、WARM（低频访问存储）、COLD（归档存储）、HIGH_PERFORMANCE（高性能存储，只有并行文件系统支持）。如果没有指定此头域，则创建的桶为标准存储类型。 
+     * 创建桶时，可以加上此消息头设置桶的默认存储类型，默认存储类型有4种：STANDARD（标准存储）、WARM（低频访问存储）、COLD（归档存储）、DEEP_ARCHIVE（深度归档）。如果没有指定此头域，则创建的桶为标准存储类型。 
      * @return xObsStorageClass
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -681,44 +786,6 @@ public class CreateBucketRequest {
         this.xObsEpid = xObsEpid;
     }
 
-    public CreateBucketRequest withXObsClusterType(XObsClusterTypeEnum xObsClusterType) {
-        this.xObsClusterType = xObsClusterType;
-        return this;
-    }
-
-    /**
-     * 指定桶是创建在公共集群还是专属集群。 
-     * @return xObsClusterType
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "x-obs-cluster-type")
-    public XObsClusterTypeEnum getXObsClusterType() {
-        return xObsClusterType;
-    }
-
-    public void setXObsClusterType(XObsClusterTypeEnum xObsClusterType) {
-        this.xObsClusterType = xObsClusterType;
-    }
-
-    public CreateBucketRequest withXObsLocationClustergroupId(String xObsLocationClustergroupId) {
-        this.xObsLocationClustergroupId = xObsLocationClustergroupId;
-        return this;
-    }
-
-    /**
-     * 集群显性化创桶时，指定的集群组ID 
-     * @return xObsLocationClustergroupId
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "x-obs-location-clustergroup-id")
-    public String getXObsLocationClustergroupId() {
-        return xObsLocationClustergroupId;
-    }
-
-    public void setXObsLocationClustergroupId(String xObsLocationClustergroupId) {
-        this.xObsLocationClustergroupId = xObsLocationClustergroupId;
-    }
-
     public CreateBucketRequest withXObsIesLocation(String xObsIesLocation) {
         this.xObsIesLocation = xObsIesLocation;
         return this;
@@ -775,6 +842,14 @@ public class CreateBucketRequest {
         CreateBucketRequest that = (CreateBucketRequest) obj;
         return Objects.equals(this.bucketName, that.bucketName) && Objects.equals(this.date, that.date)
             && Objects.equals(this.xObsAcl, that.xObsAcl)
+            && Objects.equals(this.xObsServerSideEncryption, that.xObsServerSideEncryption)
+            && Objects.equals(this.xObsServerSideDataEncryption, that.xObsServerSideDataEncryption)
+            && Objects.equals(this.xObsServerSideEncryptionKmsKeyId, that.xObsServerSideEncryptionKmsKeyId)
+            && Objects.equals(this.xObsServerSideEncryptionBucketKeyEnabled,
+                that.xObsServerSideEncryptionBucketKeyEnabled)
+            && Objects.equals(this.xObsSseKmsKeyProjectId, that.xObsSseKmsKeyProjectId)
+            && Objects.equals(this.xObsBucketObjectLockEnabled, that.xObsBucketObjectLockEnabled)
+            && Objects.equals(this.xObsEdgeLocation, that.xObsEdgeLocation)
             && Objects.equals(this.xObsStorageClass, that.xObsStorageClass)
             && Objects.equals(this.xObsGrantRead, that.xObsGrantRead)
             && Objects.equals(this.xObsGrantWrite, that.xObsGrantWrite)
@@ -786,8 +861,6 @@ public class CreateBucketRequest {
             && Objects.equals(this.xObsAzRedundancy, that.xObsAzRedundancy)
             && Objects.equals(this.xObsFsFileInterface, that.xObsFsFileInterface)
             && Objects.equals(this.xObsEpid, that.xObsEpid)
-            && Objects.equals(this.xObsClusterType, that.xObsClusterType)
-            && Objects.equals(this.xObsLocationClustergroupId, that.xObsLocationClustergroupId)
             && Objects.equals(this.xObsIesLocation, that.xObsIesLocation) && Objects.equals(this.body, that.body);
     }
 
@@ -796,6 +869,13 @@ public class CreateBucketRequest {
         return Objects.hash(bucketName,
             date,
             xObsAcl,
+            xObsServerSideEncryption,
+            xObsServerSideDataEncryption,
+            xObsServerSideEncryptionKmsKeyId,
+            xObsServerSideEncryptionBucketKeyEnabled,
+            xObsSseKmsKeyProjectId,
+            xObsBucketObjectLockEnabled,
+            xObsEdgeLocation,
             xObsStorageClass,
             xObsGrantRead,
             xObsGrantWrite,
@@ -807,8 +887,6 @@ public class CreateBucketRequest {
             xObsAzRedundancy,
             xObsFsFileInterface,
             xObsEpid,
-            xObsClusterType,
-            xObsLocationClustergroupId,
             xObsIesLocation,
             body);
     }
@@ -820,6 +898,21 @@ public class CreateBucketRequest {
         sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
         sb.append("    date: ").append(toIndentedString(date)).append("\n");
         sb.append("    xObsAcl: ").append(toIndentedString(xObsAcl)).append("\n");
+        sb.append("    xObsServerSideEncryption: ").append(toIndentedString(xObsServerSideEncryption)).append("\n");
+        sb.append("    xObsServerSideDataEncryption: ")
+            .append(toIndentedString(xObsServerSideDataEncryption))
+            .append("\n");
+        sb.append("    xObsServerSideEncryptionKmsKeyId: ")
+            .append(toIndentedString(xObsServerSideEncryptionKmsKeyId))
+            .append("\n");
+        sb.append("    xObsServerSideEncryptionBucketKeyEnabled: ")
+            .append(toIndentedString(xObsServerSideEncryptionBucketKeyEnabled))
+            .append("\n");
+        sb.append("    xObsSseKmsKeyProjectId: ").append(toIndentedString(xObsSseKmsKeyProjectId)).append("\n");
+        sb.append("    xObsBucketObjectLockEnabled: ")
+            .append(toIndentedString(xObsBucketObjectLockEnabled))
+            .append("\n");
+        sb.append("    xObsEdgeLocation: ").append(toIndentedString(xObsEdgeLocation)).append("\n");
         sb.append("    xObsStorageClass: ").append(toIndentedString(xObsStorageClass)).append("\n");
         sb.append("    xObsGrantRead: ").append(toIndentedString(xObsGrantRead)).append("\n");
         sb.append("    xObsGrantWrite: ").append(toIndentedString(xObsGrantWrite)).append("\n");
@@ -833,8 +926,6 @@ public class CreateBucketRequest {
         sb.append("    xObsAzRedundancy: ").append(toIndentedString(xObsAzRedundancy)).append("\n");
         sb.append("    xObsFsFileInterface: ").append(toIndentedString(xObsFsFileInterface)).append("\n");
         sb.append("    xObsEpid: ").append(toIndentedString(xObsEpid)).append("\n");
-        sb.append("    xObsClusterType: ").append(toIndentedString(xObsClusterType)).append("\n");
-        sb.append("    xObsLocationClustergroupId: ").append(toIndentedString(xObsLocationClustergroupId)).append("\n");
         sb.append("    xObsIesLocation: ").append(toIndentedString(xObsIesLocation)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

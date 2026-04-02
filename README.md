@@ -311,7 +311,8 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-java-v3/blob/m
         * [2.4.1 Environment Variables](#241-environment-variables-top)
         * [2.4.2 Profile](#242-profile-top)
         * [2.4.3 Metadata](#243-metadata-top)
-        * [2.4.4 Provider Chain](#244-provider-chain-top)
+        * [2.4.4 Pod Identity](#244-pod-identity-top)
+        * [2.4.5 Provider Chain](#245-provider-chain-top)
 * [3. Client Initialization](#3-client-initialization-top)
     * [3.1 Initialize the client with specified Endpoint](#31-initialize-the-serviceclient-with-specified-endpoint-top)
     * [3.2 Initialize the client with specified Region (Recommended)](#32-initialize-the-serviceclient-with-specified-region-recommended-top)
@@ -743,9 +744,27 @@ MetadataCredentialProvider globalProvider = MetadataCredentialProvider.getGlobal
 ICredential globalCred = globalProvider.getCredentials();
 ```
 
-##### 2.4.4 Provider Chain [:top:](#user-manual-top)
+##### 2.4.4 Pod Identity [:top:](#user-manual-top)
 
-When creating a service client without credentials, try to load authentication in the order **Environment Variables -> Profile -> Metadata**
+Starting from version `3.1.191`, obtaining temporary AK/SK and security token using Pod Identity in CCE clusters is supported.
+
+Refer to [Pod Identity](https://support.huaweicloud.com/usermanual-cce/cce_10_1110.html) for more information.
+
+```java
+import com.huaweicloud.sdk.core.auth.PodIdentityCredentialProvider;
+
+// basic
+PodIdentityCredentialProvider basicProvider = PodIdentityCredentialProvider.basic();
+ICredential basicCredentials = basicProvider.getCredentials();
+
+// global
+PodIdentityCredentialProvider globalProvider = PodIdentityCredentialProvider.global();
+ICredential globalCredentials = globalProvider.getCredentials();
+```
+
+##### 2.4.5 Provider Chain [:top:](#user-manual-top)
+
+When creating a service client without credentials, try to load authentication in the order **Environment Variables -> Profile -> Metadata -> Pod Identity**
 
 Get authentication from provider chain:
 

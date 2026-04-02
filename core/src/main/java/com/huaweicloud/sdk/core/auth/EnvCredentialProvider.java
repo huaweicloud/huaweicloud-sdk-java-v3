@@ -51,6 +51,14 @@ public class EnvCredentialProvider implements ICredentialProvider {
         return new EnvCredentialProvider(Constants.Credentials.GLOBAL);
     }
 
+    public static EnvCredentialProvider basic() {
+        return getBasicCredentialEnvProvider();
+    }
+
+    public static EnvCredentialProvider global() {
+        return getGlobalCredentialEnvProvider();
+    }
+
     @Override
     public ICredential getCredentials() {
         if (StringUtils.isEmpty(credentialType)) {
@@ -75,6 +83,7 @@ public class EnvCredentialProvider implements ICredentialProvider {
 
         if (StringUtils.isNotEmpty(idpId) && StringUtils.isNotEmpty(idTokenFile)) {
             credentials.withIdpId(idpId).withIdTokenFile(idTokenFile);
+            credentials.stsAccessor = new FederalAccessor();
         } else if (StringUtils.isNotEmpty(ak) && StringUtils.isNotEmpty(sk)) {
             credentials.withAk(ak).withSk(sk).withSecurityToken(securityToken);
         } else {

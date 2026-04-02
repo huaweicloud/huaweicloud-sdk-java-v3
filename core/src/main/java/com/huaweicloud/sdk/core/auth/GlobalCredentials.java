@@ -157,13 +157,9 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
 
     @Override
     public HttpRequest syncProcessAuthRequest(HttpRequest httpRequest, HttpClient httpClient) {
-        HttpRequest.HttpRequestBuilder builder = httpRequest.builder().addAutoFilledPathParam(getPathParams());
+        super.processSts(httpClient);
 
-        if (needUpdateFederalAuthToken()) {
-            updateFederalAuthTokenByIdToken(httpClient);
-        } else if (needUpdateSecurityTokenFromMetadata()) {
-            updateSecurityTokenFromMetadata();
-        }
+        HttpRequest.HttpRequestBuilder builder = httpRequest.builder().addAutoFilledPathParam(getPathParams());
 
         if (StringUtils.isNotEmpty(getDomainId())) {
             builder.addHeader(Constants.X_DOMAIN_ID, getDomainId());

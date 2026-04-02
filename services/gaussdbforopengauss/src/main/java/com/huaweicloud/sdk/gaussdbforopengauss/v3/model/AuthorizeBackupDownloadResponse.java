@@ -30,7 +30,7 @@ public class AuthorizeBackupDownloadResponse extends SdkResponse {
     }
 
     /**
-     * OBS桶名。
+     * **参数解释**: 文件所在桶名。 **取值范围**: 不涉及。
      * @return bucket
      */
     public String getBucket() {
@@ -63,7 +63,7 @@ public class AuthorizeBackupDownloadResponse extends SdkResponse {
     }
 
     /**
-     * 通过OBS Browser+下载备份文件的路径名称。
+     * **参数解释**: 通过OBS Browser+下载备份文件的路径名称。
      * @return filePaths
      */
     public List<String> getFilePaths() {

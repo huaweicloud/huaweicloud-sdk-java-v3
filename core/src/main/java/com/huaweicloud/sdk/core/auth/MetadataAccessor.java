@@ -36,7 +36,7 @@ import okhttp3.Response;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class MetadataAccessor {
+public class MetadataAccessor extends AbstractStsAccessor {
     private static final String METADATA_ENDPOINT = "http://169.254.169.254";
     private static final String GET_TOKEN_PATH = "/meta-data/latest/api/token";
     private static final String GET_SECURITY_KEY_PATH = "/openstack/latest/securitykey";
@@ -83,7 +83,7 @@ public class MetadataAccessor {
         }
     }
 
-    protected Credential getCredentials() {
+    public Credential getCredential(AccessorOptions options) {
         if (token == null && (lastCallMillis == null ||
                 System.currentTimeMillis() - lastCallMillis > DEFAULT_CHECK_TOKEN_DURATION_SECONDS * 1000)) {
             tryUpdateToken(false);
@@ -115,7 +115,6 @@ public class MetadataAccessor {
         if (resp == null || resp.getCredential() == null) {
             throw new SdkException("failed to get credentials in metadata");
         }
-
         return resp.getCredential();
     }
 

@@ -140,6 +140,8 @@ import com.huaweicloud.sdk.swr.v2.model.DeleteTriggerRequest;
 import com.huaweicloud.sdk.swr.v2.model.DeleteTriggerResponse;
 import com.huaweicloud.sdk.swr.v2.model.DeleteUserRepositoryAuthRequest;
 import com.huaweicloud.sdk.swr.v2.model.DeleteUserRepositoryAuthResponse;
+import com.huaweicloud.sdk.swr.v2.model.ExecuteGcScheduleRequest;
+import com.huaweicloud.sdk.swr.v2.model.ExecuteGcScheduleResponse;
 import com.huaweicloud.sdk.swr.v2.model.ExecuteInstanceReplicationPolicyRequest;
 import com.huaweicloud.sdk.swr.v2.model.ExecuteInstanceReplicationPolicyResponse;
 import com.huaweicloud.sdk.swr.v2.model.ExecuteInstanceRetentionPolicyRequest;
@@ -147,6 +149,7 @@ import com.huaweicloud.sdk.swr.v2.model.ExecuteInstanceRetentionPolicyResponse;
 import com.huaweicloud.sdk.swr.v2.model.ExecuteInstanceSignPolicyRequest;
 import com.huaweicloud.sdk.swr.v2.model.ExecuteInstanceSignPolicyResponse;
 import com.huaweicloud.sdk.swr.v2.model.ExecuteRetentionPolicyRequestBody;
+import com.huaweicloud.sdk.swr.v2.model.ExecuteScheduleRequestBody;
 import com.huaweicloud.sdk.swr.v2.model.ListAllInstanceRepositoriesRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListAllInstanceRepositoriesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListApiVersionsRequest;
@@ -157,6 +160,8 @@ import com.huaweicloud.sdk.swr.v2.model.ListDomainNamesRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListDomainNamesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListFeatureGatesRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListFeatureGatesResponse;
+import com.huaweicloud.sdk.swr.v2.model.ListGcTasksRequest;
+import com.huaweicloud.sdk.swr.v2.model.ListGcTasksResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListGlobalFeatureGatesRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListGlobalFeatureGatesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListImageAutoSyncReposDetailsRequest;
@@ -273,6 +278,10 @@ import com.huaweicloud.sdk.swr.v2.model.ShowDomainOverviewRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowDomainOverviewResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowDomainResourceReportsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowDomainResourceReportsResponse;
+import com.huaweicloud.sdk.swr.v2.model.ShowGcScheduleRequest;
+import com.huaweicloud.sdk.swr.v2.model.ShowGcScheduleResponse;
+import com.huaweicloud.sdk.swr.v2.model.ShowGcTaskRequest;
+import com.huaweicloud.sdk.swr.v2.model.ShowGcTaskResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowInstanceArtifactAdditionRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowInstanceArtifactAdditionResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowInstanceArtifactRequest;
@@ -328,6 +337,8 @@ import com.huaweicloud.sdk.swr.v2.model.ShowUserRepositoryAuthRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowUserRepositoryAuthResponse;
 import com.huaweicloud.sdk.swr.v2.model.StartManualScanningRequest;
 import com.huaweicloud.sdk.swr.v2.model.StartManualScanningResponse;
+import com.huaweicloud.sdk.swr.v2.model.StopGcTaskRequest;
+import com.huaweicloud.sdk.swr.v2.model.StopGcTaskResponse;
 import com.huaweicloud.sdk.swr.v2.model.StopInstanceReplicationPolicyExecutionRequest;
 import com.huaweicloud.sdk.swr.v2.model.StopInstanceReplicationPolicyExecutionResponse;
 import com.huaweicloud.sdk.swr.v2.model.SyncJob;
@@ -336,6 +347,8 @@ import com.huaweicloud.sdk.swr.v2.model.Trigger;
 import com.huaweicloud.sdk.swr.v2.model.UpdateDomainNameRequest;
 import com.huaweicloud.sdk.swr.v2.model.UpdateDomainNameRequestBody;
 import com.huaweicloud.sdk.swr.v2.model.UpdateDomainNameResponse;
+import com.huaweicloud.sdk.swr.v2.model.UpdateGcScheduleRequest;
+import com.huaweicloud.sdk.swr.v2.model.UpdateGcScheduleResponse;
 import com.huaweicloud.sdk.swr.v2.model.UpdateImmutableRuleBody;
 import com.huaweicloud.sdk.swr.v2.model.UpdateImmutableRuleRequest;
 import com.huaweicloud.sdk.swr.v2.model.UpdateImmutableRuleResponse;
@@ -377,6 +390,7 @@ import com.huaweicloud.sdk.swr.v2.model.UpdateRetentionPolicyRequestBody;
 import com.huaweicloud.sdk.swr.v2.model.UpdateRetentionRequest;
 import com.huaweicloud.sdk.swr.v2.model.UpdateRetentionRequestBody;
 import com.huaweicloud.sdk.swr.v2.model.UpdateRetentionResponse;
+import com.huaweicloud.sdk.swr.v2.model.UpdateScheduleRequestBody;
 import com.huaweicloud.sdk.swr.v2.model.UpdateSignaturePolicyRequestBody;
 import com.huaweicloud.sdk.swr.v2.model.UpdateTriggerRequest;
 import com.huaweicloud.sdk.swr.v2.model.UpdateTriggerRequestBody;
@@ -3536,6 +3550,34 @@ public class SwrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExecuteGcScheduleRequest, ExecuteGcScheduleResponse> executeGcSchedule =
+        genForExecuteGcSchedule();
+
+    private static HttpRequestDef<ExecuteGcScheduleRequest, ExecuteGcScheduleResponse> genForExecuteGcSchedule() {
+        // basic
+        HttpRequestDef.Builder<ExecuteGcScheduleRequest, ExecuteGcScheduleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExecuteGcScheduleRequest.class, ExecuteGcScheduleResponse.class)
+                .withName("ExecuteGcSchedule")
+                .withUri("/v2/{project_id}/instances/{instance_id}/system/gc/schedule")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteGcScheduleRequest::getInstanceId, ExecuteGcScheduleRequest::setInstanceId));
+        builder.<ExecuteScheduleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExecuteScheduleRequestBody.class),
+            f -> f.withMarshaller(ExecuteGcScheduleRequest::getBody, ExecuteGcScheduleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ExecuteInstanceReplicationPolicyRequest, ExecuteInstanceReplicationPolicyResponse> executeInstanceReplicationPolicy =
         genForExecuteInstanceReplicationPolicy();
 
@@ -3782,6 +3824,43 @@ public class SwrMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFeatureGatesRequest::getInstanceId, ListFeatureGatesRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGcTasksRequest, ListGcTasksResponse> listGcTasks = genForListGcTasks();
+
+    private static HttpRequestDef<ListGcTasksRequest, ListGcTasksResponse> genForListGcTasks() {
+        // basic
+        HttpRequestDef.Builder<ListGcTasksRequest, ListGcTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListGcTasksRequest.class, ListGcTasksResponse.class)
+                .withName("ListGcTasks")
+                .withUri("/v2/{project_id}/instances/{instance_id}/system/gc")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGcTasksRequest::getInstanceId, ListGcTasksRequest::setInstanceId));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGcTasksRequest::getMarker, ListGcTasksRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGcTasksRequest::getLimit, ListGcTasksRequest::setLimit));
+        builder.<ListGcTasksRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListGcTasksRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListGcTasksRequest::getStatus, ListGcTasksRequest::setStatus));
 
         // response
 
@@ -5494,6 +5573,56 @@ public class SwrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowGcScheduleRequest, ShowGcScheduleResponse> showGcSchedule =
+        genForShowGcSchedule();
+
+    private static HttpRequestDef<ShowGcScheduleRequest, ShowGcScheduleResponse> genForShowGcSchedule() {
+        // basic
+        HttpRequestDef.Builder<ShowGcScheduleRequest, ShowGcScheduleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowGcScheduleRequest.class, ShowGcScheduleResponse.class)
+                .withName("ShowGcSchedule")
+                .withUri("/v2/{project_id}/instances/{instance_id}/system/gc/schedule")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowGcScheduleRequest::getInstanceId, ShowGcScheduleRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowGcTaskRequest, ShowGcTaskResponse> showGcTask = genForShowGcTask();
+
+    private static HttpRequestDef<ShowGcTaskRequest, ShowGcTaskResponse> genForShowGcTask() {
+        // basic
+        HttpRequestDef.Builder<ShowGcTaskRequest, ShowGcTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowGcTaskRequest.class, ShowGcTaskResponse.class)
+                .withName("ShowGcTask")
+                .withUri("/v2/{project_id}/instances/{instance_id}/system/gc/{gc_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowGcTaskRequest::getInstanceId, ShowGcTaskRequest::setInstanceId));
+        builder.<Integer>withRequestField("gc_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowGcTaskRequest::getGcId, ShowGcTaskRequest::setGcId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> showInstance = genForShowInstance();
 
     private static HttpRequestDef<ShowInstanceRequest, ShowInstanceResponse> genForShowInstance() {
@@ -6090,6 +6219,33 @@ public class SwrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<StopGcTaskRequest, StopGcTaskResponse> stopGcTask = genForStopGcTask();
+
+    private static HttpRequestDef<StopGcTaskRequest, StopGcTaskResponse> genForStopGcTask() {
+        // basic
+        HttpRequestDef.Builder<StopGcTaskRequest, StopGcTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, StopGcTaskRequest.class, StopGcTaskResponse.class)
+                .withName("StopGcTask")
+                .withUri("/v2/{project_id}/instances/{instance_id}/system/gc/{gc_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopGcTaskRequest::getInstanceId, StopGcTaskRequest::setInstanceId));
+        builder.<Integer>withRequestField("gc_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(StopGcTaskRequest::getGcId, StopGcTaskRequest::setGcId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<StopInstanceReplicationPolicyExecutionRequest, StopInstanceReplicationPolicyExecutionResponse> stopInstanceReplicationPolicyExecution =
         genForStopInstanceReplicationPolicyExecution();
 
@@ -6150,6 +6306,34 @@ public class SwrMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDomainNameRequestBody.class),
             f -> f.withMarshaller(UpdateDomainNameRequest::getBody, UpdateDomainNameRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateGcScheduleRequest, UpdateGcScheduleResponse> updateGcSchedule =
+        genForUpdateGcSchedule();
+
+    private static HttpRequestDef<UpdateGcScheduleRequest, UpdateGcScheduleResponse> genForUpdateGcSchedule() {
+        // basic
+        HttpRequestDef.Builder<UpdateGcScheduleRequest, UpdateGcScheduleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateGcScheduleRequest.class, UpdateGcScheduleResponse.class)
+                .withName("UpdateGcSchedule")
+                .withUri("/v2/{project_id}/instances/{instance_id}/system/gc/schedule")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateGcScheduleRequest::getInstanceId, UpdateGcScheduleRequest::setInstanceId));
+        builder.<UpdateScheduleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateScheduleRequestBody.class),
+            f -> f.withMarshaller(UpdateGcScheduleRequest::getBody, UpdateGcScheduleRequest::setBody));
 
         // response
 

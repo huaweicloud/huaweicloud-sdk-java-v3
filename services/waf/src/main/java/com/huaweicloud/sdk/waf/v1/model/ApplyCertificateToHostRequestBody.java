@@ -78,7 +78,7 @@ public class ApplyCertificateToHostRequestBody {
     }
 
     /**
-     * 独享模式HTTPS域名id，通过独享模式域名列表（ListPremiumHost）接口获取
+     * 独享模式HTTPS域名id，通过查询独享模式域名列表（ListPremiumHost）接口获取
      * @return premiumHostIds
      */
     public List<String> getPremiumHostIds() {

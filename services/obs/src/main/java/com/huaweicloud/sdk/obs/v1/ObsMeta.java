@@ -317,6 +317,47 @@ public class ObsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateBucketRequest::getXObsAcl, CreateBucketRequest::setXObsAcl));
+        builder.<String>withRequestField("x-obs-server-side-encryption",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBucketRequest::getXObsServerSideEncryption,
+                CreateBucketRequest::setXObsServerSideEncryption));
+        builder.<String>withRequestField("x-obs-server-side-data-encryption",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBucketRequest::getXObsServerSideDataEncryption,
+                CreateBucketRequest::setXObsServerSideDataEncryption));
+        builder.<String>withRequestField("x-obs-server-side-encryption-kms-key-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBucketRequest::getXObsServerSideEncryptionKmsKeyId,
+                CreateBucketRequest::setXObsServerSideEncryptionKmsKeyId));
+        builder.<String>withRequestField("x-obs-server-side-encryption-bucket-key-enabled",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBucketRequest::getXObsServerSideEncryptionBucketKeyEnabled,
+                CreateBucketRequest::setXObsServerSideEncryptionBucketKeyEnabled));
+        builder.<String>withRequestField("x-obs-sse-kms-key-project-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBucketRequest::getXObsSseKmsKeyProjectId,
+                CreateBucketRequest::setXObsSseKmsKeyProjectId));
+        builder.<String>withRequestField("x-obs-bucket-object-lock-enabled",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBucketRequest::getXObsBucketObjectLockEnabled,
+                CreateBucketRequest::setXObsBucketObjectLockEnabled));
+        builder.<String>withRequestField("x-obs-edge-location",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBucketRequest::getXObsEdgeLocation, CreateBucketRequest::setXObsEdgeLocation));
         builder.<CreateBucketRequest.XObsStorageClassEnum>withRequestField("x-obs-storage-class",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -377,17 +418,6 @@ public class ObsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateBucketRequest::getXObsEpid, CreateBucketRequest::setXObsEpid));
-        builder.<CreateBucketRequest.XObsClusterTypeEnum>withRequestField("x-obs-cluster-type",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(CreateBucketRequest.XObsClusterTypeEnum.class),
-            f -> f.withMarshaller(CreateBucketRequest::getXObsClusterType, CreateBucketRequest::setXObsClusterType));
-        builder.<String>withRequestField("x-obs-location-clustergroup-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateBucketRequest::getXObsLocationClustergroupId,
-                CreateBucketRequest::setXObsLocationClustergroupId));
         builder.<String>withRequestField("x-obs-ies-location",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1701,6 +1731,11 @@ public class ObsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListObjectsRequest::getBucketName, ListObjectsRequest::setBucketName));
+        builder.<String>withRequestField("versions",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListObjectsRequest::getVersions, ListObjectsRequest::setVersions));
         builder.<String>withRequestField("prefix",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

@@ -31,7 +31,7 @@ public class PostgresqlUserForCreation {
     }
 
     /**
-     * 数据库用户名称。  数据库用户名称在1到63个字符之间，由字母、数字、或下划线组成，不能包含其他特殊字符，不能以“pg”和数字开头，不能和系统用户名称相同。  系统用户包括“rdsAdmin”,“ rdsMetric”, “rdsBackup”, “rdsRepl”,“ rdsProxy”, “rdsDdm”。
+     * 数据库用户名称。  数据库用户名称在1到63个字符之间，由字母、数字、或下划线组成，不能包含其他特殊字符，不能以“pg”和数字开头，不能和系统用户名称相同。  系统用户包括“rdsAdmin”,“rdsMetric”,“rdsBackup”,“rdsRepl”,“rdsProxy”,“rdsDdm”,“rdsDisaster”。
      * @return name
      */
     public String getName() {
