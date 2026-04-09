@@ -469,6 +469,11 @@ public class SourceServersResponseBody {
 
     private Boolean hasTc;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_type")
+
+    private String startType;
+
     public SourceServersResponseBody withId(String id) {
         this.id = id;
         return this;
@@ -910,6 +915,23 @@ public class SourceServersResponseBody {
         this.hasTc = hasTc;
     }
 
+    public SourceServersResponseBody withStartType(String startType) {
+        this.startType = startType;
+        return this;
+    }
+
+    /**
+     * 启动方式 可以取值MANUAL、AUTO或者空，不进行校验。 默认值取值MANUAL，其余则表示从MGC平台启动
+     * @return startType
+     */
+    public String getStartType() {
+        return startType;
+    }
+
+    public void setStartType(String startType) {
+        this.startType = startType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -934,7 +956,7 @@ public class SourceServersResponseBody {
             && Objects.equals(this.migrationCycle, that.migrationCycle)
             && Objects.equals(this.stateActionTime, that.stateActionTime)
             && Objects.equals(this.isConsistencyResultExist, that.isConsistencyResultExist)
-            && Objects.equals(this.hasTc, that.hasTc);
+            && Objects.equals(this.hasTc, that.hasTc) && Objects.equals(this.startType, that.startType);
     }
 
     @Override
@@ -961,7 +983,8 @@ public class SourceServersResponseBody {
             migrationCycle,
             stateActionTime,
             isConsistencyResultExist,
-            hasTc);
+            hasTc,
+            startType);
     }
 
     @Override
@@ -991,6 +1014,7 @@ public class SourceServersResponseBody {
         sb.append("    stateActionTime: ").append(toIndentedString(stateActionTime)).append("\n");
         sb.append("    isConsistencyResultExist: ").append(toIndentedString(isConsistencyResultExist)).append("\n");
         sb.append("    hasTc: ").append(toIndentedString(hasTc)).append("\n");
+        sb.append("    startType: ").append(toIndentedString(startType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

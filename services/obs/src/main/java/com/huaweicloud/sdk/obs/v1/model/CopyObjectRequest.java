@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
+import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -269,6 +270,41 @@ public class CopyObjectRequest {
     @JacksonXmlProperty(localName = "success_action_redirect")
 
     private String successActionRedirect;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-server-side-encryption-bucket-key-enabled")
+
+    @JacksonXmlProperty(localName = "x-obs-server-side-encryption-bucket-key-enabled")
+
+    private String xObsServerSideEncryptionBucketKeyEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-tagging-directive")
+
+    @JacksonXmlProperty(localName = "x-obs-tagging-directive")
+
+    private String xObsTaggingDirective;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-object-lock-mode")
+
+    @JacksonXmlProperty(localName = "x-obs-object-lock-mode")
+
+    private String xObsObjectLockMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-object-lock-retain-until-date")
+
+    @JacksonXmlProperty(localName = "x-obs-object-lock-retain-until-date")
+
+    private OffsetDateTime xObsObjectLockRetainUntilDate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-tagging")
+
+    @JacksonXmlProperty(localName = "x-obs-tagging")
+
+    private String xObsTagging;
 
     public CopyObjectRequest withDate(String date) {
         this.date = date;
@@ -536,7 +572,7 @@ public class CopyObjectRequest {
     }
 
     /**
-     * 复制对象时，可以加上此头域设置目的对象的存储类型。如果未设置此头域，则以目的对象所在桶的默认存储类型作为对象的存储类型。  类型：字符串  说明：存储类型有3种：STANDARD（标准存储）、WARM（低频访问存储）、COLD（归档存储）。因此这里可配置的值有：STANDARD、WARM和COLD，注意大小写敏感。  示例：x-obs-storage-class: STANDARD 
+     * 复制对象时，可以加上此头域设置目的对象的存储类型。如果未设置此头域，则以目的对象所在桶的默认存储类型作为对象的存储类型。  类型：字符串  说明：存储类型有3种：STANDARD（标准存储）、WARM（低频访问存储）、COLD（归档存储）、DEEP_ARCHIVE（深度归档存储）。因此这里可配置的值有：STANDARD、WARM和COLD、DEEP_ARCHIVE，注意大小写敏感。  示例：x-obs-storage-class: STANDARD 
      * @return xObsStorageClass
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -762,6 +798,102 @@ public class CopyObjectRequest {
         this.successActionRedirect = successActionRedirect;
     }
 
+    public CopyObjectRequest withXObsServerSideEncryptionBucketKeyEnabled(
+        String xObsServerSideEncryptionBucketKeyEnabled) {
+        this.xObsServerSideEncryptionBucketKeyEnabled = xObsServerSideEncryptionBucketKeyEnabled;
+        return this;
+    }
+
+    /**
+     * 当您设置本头域为“true”时，必须同时设置本接口的另一个头域x-obs-server-side-encryption-kms-key-id以指定密钥ID。 
+     * @return xObsServerSideEncryptionBucketKeyEnabled
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-server-side-encryption-bucket-key-enabled")
+    public String getXObsServerSideEncryptionBucketKeyEnabled() {
+        return xObsServerSideEncryptionBucketKeyEnabled;
+    }
+
+    public void setXObsServerSideEncryptionBucketKeyEnabled(String xObsServerSideEncryptionBucketKeyEnabled) {
+        this.xObsServerSideEncryptionBucketKeyEnabled = xObsServerSideEncryptionBucketKeyEnabled;
+    }
+
+    public CopyObjectRequest withXObsTaggingDirective(String xObsTaggingDirective) {
+        this.xObsTaggingDirective = xObsTaggingDirective;
+        return this;
+    }
+
+    /**
+     * 通过携带头域x-obs-tagging-directive指定对象标签的复制策略。不带该头域默认不复制。 COPY：复制源对象的对象标签到目标对象。 REPLACE：忽略源对象的对象标签，直接采用请求中指定的对象标签。 示例：x-obs-tagging-directive:COPY 
+     * @return xObsTaggingDirective
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-tagging-directive")
+    public String getXObsTaggingDirective() {
+        return xObsTaggingDirective;
+    }
+
+    public void setXObsTaggingDirective(String xObsTaggingDirective) {
+        this.xObsTaggingDirective = xObsTaggingDirective;
+    }
+
+    public CopyObjectRequest withXObsObjectLockMode(String xObsObjectLockMode) {
+        this.xObsObjectLockMode = xObsObjectLockMode;
+        return this;
+    }
+
+    /**
+     * 要应用于此对象的WORM模式。 示例：x-obs-object-lock-mode:COMPLIANCE 
+     * @return xObsObjectLockMode
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-object-lock-mode")
+    public String getXObsObjectLockMode() {
+        return xObsObjectLockMode;
+    }
+
+    public void setXObsObjectLockMode(String xObsObjectLockMode) {
+        this.xObsObjectLockMode = xObsObjectLockMode;
+    }
+
+    public CopyObjectRequest withXObsObjectLockRetainUntilDate(OffsetDateTime xObsObjectLockRetainUntilDate) {
+        this.xObsObjectLockRetainUntilDate = xObsObjectLockRetainUntilDate;
+        return this;
+    }
+
+    /**
+     * 此对象的WORM策略过期的截止时间。 示例：x-obs-object-lock-retain-until-date:2015-07-01T04:11:15.297Z 
+     * @return xObsObjectLockRetainUntilDate
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-object-lock-retain-until-date")
+    public OffsetDateTime getXObsObjectLockRetainUntilDate() {
+        return xObsObjectLockRetainUntilDate;
+    }
+
+    public void setXObsObjectLockRetainUntilDate(OffsetDateTime xObsObjectLockRetainUntilDate) {
+        this.xObsObjectLockRetainUntilDate = xObsObjectLockRetainUntilDate;
+    }
+
+    public CopyObjectRequest withXObsTagging(String xObsTagging) {
+        this.xObsTagging = xObsTagging;
+        return this;
+    }
+
+    /**
+     * 以键值对（Key-Value）的形式指定Object的标签信息，可同时设置多个标签。 示例：x-obs-tagging:TagA=A&TagB&TagC 
+     * @return xObsTagging
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-tagging")
+    public String getXObsTagging() {
+        return xObsTagging;
+    }
+
+    public void setXObsTagging(String xObsTagging) {
+        this.xObsTagging = xObsTagging;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -798,7 +930,13 @@ public class CopyObjectRequest {
                 that.xObsCopySourceServerSideEncryptionCustomerKey)
             && Objects.equals(this.xObsCopySourceServerSideEncryptionCustomerKeyMD5,
                 that.xObsCopySourceServerSideEncryptionCustomerKeyMD5)
-            && Objects.equals(this.successActionRedirect, that.successActionRedirect);
+            && Objects.equals(this.successActionRedirect, that.successActionRedirect)
+            && Objects.equals(this.xObsServerSideEncryptionBucketKeyEnabled,
+                that.xObsServerSideEncryptionBucketKeyEnabled)
+            && Objects.equals(this.xObsTaggingDirective, that.xObsTaggingDirective)
+            && Objects.equals(this.xObsObjectLockMode, that.xObsObjectLockMode)
+            && Objects.equals(this.xObsObjectLockRetainUntilDate, that.xObsObjectLockRetainUntilDate)
+            && Objects.equals(this.xObsTagging, that.xObsTagging);
     }
 
     @Override
@@ -828,7 +966,12 @@ public class CopyObjectRequest {
             xObsCopySourceServerSideEncryptionCustomerAlgorithm,
             xObsCopySourceServerSideEncryptionCustomerKey,
             xObsCopySourceServerSideEncryptionCustomerKeyMD5,
-            successActionRedirect);
+            successActionRedirect,
+            xObsServerSideEncryptionBucketKeyEnabled,
+            xObsTaggingDirective,
+            xObsObjectLockMode,
+            xObsObjectLockRetainUntilDate,
+            xObsTagging);
     }
 
     @Override
@@ -881,6 +1024,15 @@ public class CopyObjectRequest {
             .append(toIndentedString(xObsCopySourceServerSideEncryptionCustomerKeyMD5))
             .append("\n");
         sb.append("    successActionRedirect: ").append(toIndentedString(successActionRedirect)).append("\n");
+        sb.append("    xObsServerSideEncryptionBucketKeyEnabled: ")
+            .append(toIndentedString(xObsServerSideEncryptionBucketKeyEnabled))
+            .append("\n");
+        sb.append("    xObsTaggingDirective: ").append(toIndentedString(xObsTaggingDirective)).append("\n");
+        sb.append("    xObsObjectLockMode: ").append(toIndentedString(xObsObjectLockMode)).append("\n");
+        sb.append("    xObsObjectLockRetainUntilDate: ")
+            .append(toIndentedString(xObsObjectLockRetainUntilDate))
+            .append("\n");
+        sb.append("    xObsTagging: ").append(toIndentedString(xObsTagging)).append("\n");
         sb.append("}");
         return sb.toString();
     }

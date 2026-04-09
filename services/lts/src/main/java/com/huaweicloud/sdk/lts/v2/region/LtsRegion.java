@@ -84,6 +84,8 @@ public class LtsRegion {
 
     public static final Region CN_SOUTH_4 = new Region("cn-south-4", "https://lts.cn-south-4.myhuaweicloud.com");
 
+    public static final Region AF_NORTH_1 = new Region("af-north-1", "https://lts.af-north-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("LTS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -121,6 +123,7 @@ public class LtsRegion {
         map.put("cn-north-11", CN_NORTH_11);
         map.put("cn-southwest-3", CN_SOUTHWEST_3);
         map.put("cn-south-4", CN_SOUTH_4);
+        map.put("af-north-1", AF_NORTH_1);
         return Collections.unmodifiableMap(map);
     }
 

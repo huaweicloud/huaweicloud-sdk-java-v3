@@ -35,6 +35,8 @@ import com.huaweicloud.sdk.iotda.v5.model.CheckCertificateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CheckCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CloseDeviceTunnelRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CloseDeviceTunnelResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ConfirmBatchTaskRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ConfirmBatchTaskResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CountAsyncHistoryCommandsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CountAsyncHistoryCommandsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateAccessCodeRequest;
@@ -943,6 +945,35 @@ public class IoTDAClient {
     public SyncInvoker<UpdateRoutingBacklogPolicyRequest, UpdateRoutingBacklogPolicyResponse> updateRoutingBacklogPolicyInvoker(
         UpdateRoutingBacklogPolicyRequest request) {
         return new SyncInvoker<>(request, IoTDAMeta.updateRoutingBacklogPolicy, hcClient);
+    }
+
+    /**
+     * 确认执行批量任务
+     *
+     * 应用服务器可调用此接口确执行认批量任务，目前只支持task_type为firmwareUpgrade，softwareUpgrade和moduleUpgrade。如果task_id对应任务已经完成（成功、失败、部分成功，已经停止）或正在停止中，则不可以调用该接口。如果请求Body为{}，则调用该接口后会确认执行所有处于等待中状态子任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ConfirmBatchTaskRequest 请求对象
+     * @return ConfirmBatchTaskResponse
+     */
+    public ConfirmBatchTaskResponse confirmBatchTask(ConfirmBatchTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTDAMeta.confirmBatchTask);
+    }
+
+    /**
+     * 确认执行批量任务
+     *
+     * 应用服务器可调用此接口确执行认批量任务，目前只支持task_type为firmwareUpgrade，softwareUpgrade和moduleUpgrade。如果task_id对应任务已经完成（成功、失败、部分成功，已经停止）或正在停止中，则不可以调用该接口。如果请求Body为{}，则调用该接口后会确认执行所有处于等待中状态子任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ConfirmBatchTaskRequest 请求对象
+     * @return SyncInvoker<ConfirmBatchTaskRequest, ConfirmBatchTaskResponse>
+     */
+    public SyncInvoker<ConfirmBatchTaskRequest, ConfirmBatchTaskResponse> confirmBatchTaskInvoker(
+        ConfirmBatchTaskRequest request) {
+        return new SyncInvoker<>(request, IoTDAMeta.confirmBatchTask, hcClient);
     }
 
     /**

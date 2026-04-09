@@ -48,6 +48,11 @@ public class AccessConfigDeatilCreate {
 
     private Boolean stderr;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "combine_stdout")
+
+    private Boolean combineStdout;
+
     /**
      * CCE接入类型，仅CCE接入类型时使用
      */
@@ -385,6 +390,23 @@ public class AccessConfigDeatilCreate {
 
     public void setStderr(Boolean stderr) {
         this.stderr = stderr;
+    }
+
+    public AccessConfigDeatilCreate withCombineStdout(Boolean combineStdout) {
+        this.combineStdout = combineStdout;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 云容器引擎CCE应用日志接入时，是否将标准输出和标准错误采集到同一个文件。 **取值范围：** - true：将标准输出和标准错误采集到同一个文件（stdout.log）。 - false：将标准输出和标准错误采集到不同的文件（stdout.log和stderr.log）。
+     * @return combineStdout
+     */
+    public Boolean getCombineStdout() {
+        return combineStdout;
+    }
+
+    public void setCombineStdout(Boolean combineStdout) {
+        this.combineStdout = combineStdout;
     }
 
     public AccessConfigDeatilCreate withPathType(PathTypeEnum pathType) {
@@ -949,7 +971,8 @@ public class AccessConfigDeatilCreate {
         return Objects.equals(this.paths, that.paths) && Objects.equals(this.blackPaths, that.blackPaths)
             && Objects.equals(this.format, that.format) && Objects.equals(this.windowsLogInfo, that.windowsLogInfo)
             && Objects.equals(this.stdout, that.stdout) && Objects.equals(this.stderr, that.stderr)
-            && Objects.equals(this.pathType, that.pathType) && Objects.equals(this.namespaceRegex, that.namespaceRegex)
+            && Objects.equals(this.combineStdout, that.combineStdout) && Objects.equals(this.pathType, that.pathType)
+            && Objects.equals(this.namespaceRegex, that.namespaceRegex)
             && Objects.equals(this.podNameRegex, that.podNameRegex)
             && Objects.equals(this.containerNameRegex, that.containerNameRegex)
             && Objects.equals(this.includeLabels, that.includeLabels)
@@ -977,6 +1000,7 @@ public class AccessConfigDeatilCreate {
             windowsLogInfo,
             stdout,
             stderr,
+            combineStdout,
             pathType,
             namespaceRegex,
             podNameRegex,
@@ -1011,6 +1035,7 @@ public class AccessConfigDeatilCreate {
         sb.append("    windowsLogInfo: ").append(toIndentedString(windowsLogInfo)).append("\n");
         sb.append("    stdout: ").append(toIndentedString(stdout)).append("\n");
         sb.append("    stderr: ").append(toIndentedString(stderr)).append("\n");
+        sb.append("    combineStdout: ").append(toIndentedString(combineStdout)).append("\n");
         sb.append("    pathType: ").append(toIndentedString(pathType)).append("\n");
         sb.append("    namespaceRegex: ").append(toIndentedString(namespaceRegex)).append("\n");
         sb.append("    podNameRegex: ").append(toIndentedString(podNameRegex)).append("\n");

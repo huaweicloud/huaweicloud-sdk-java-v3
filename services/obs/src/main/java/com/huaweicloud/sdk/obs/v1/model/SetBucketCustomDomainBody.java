@@ -49,6 +49,34 @@ public class SetBucketCustomDomainBody extends SdkXmlBody<SetBucketCustomDomainB
 
     private String privateKey;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "CertificateType")
+
+    @JacksonXmlProperty(localName = "CertificateType")
+
+    private String certificateType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ENCCertificate")
+
+    @JacksonXmlProperty(localName = "ENCCertificate")
+
+    private String enCCertificate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ENCPrivateKey")
+
+    @JacksonXmlProperty(localName = "ENCPrivateKey")
+
+    private String enCPrivateKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "DeleteCertificate")
+
+    @JacksonXmlProperty(localName = "DeleteCertificate")
+
+    private String deleteCertificate;
+
     public SetBucketCustomDomainBody withName(String name) {
         this.name = name;
         return this;
@@ -134,6 +162,74 @@ public class SetBucketCustomDomainBody extends SdkXmlBody<SetBucketCustomDomainB
         this.privateKey = privateKey;
     }
 
+    public SetBucketCustomDomainBody withCertificateType(String certificateType) {
+        this.certificateType = certificateType;
+        return this;
+    }
+
+    /**
+     * 证书类型。 
+     * @return certificateType
+     */
+    public String getCertificateType() {
+        return certificateType;
+    }
+
+    public void setCertificateType(String certificateType) {
+        this.certificateType = certificateType;
+    }
+
+    public SetBucketCustomDomainBody withEnCCertificate(String enCCertificate) {
+        this.enCCertificate = enCCertificate;
+        return this;
+    }
+
+    /**
+     * 国密证书的加密证书内容。 
+     * @return enCCertificate
+     */
+    public String getEnCCertificate() {
+        return enCCertificate;
+    }
+
+    public void setEnCCertificate(String enCCertificate) {
+        this.enCCertificate = enCCertificate;
+    }
+
+    public SetBucketCustomDomainBody withEnCPrivateKey(String enCPrivateKey) {
+        this.enCPrivateKey = enCPrivateKey;
+        return this;
+    }
+
+    /**
+     * 国密证书的加密私钥，回车换行需要使用转义字符\\n或者\\r\\n替换。 
+     * @return enCPrivateKey
+     */
+    public String getEnCPrivateKey() {
+        return enCPrivateKey;
+    }
+
+    public void setEnCPrivateKey(String enCPrivateKey) {
+        this.enCPrivateKey = enCPrivateKey;
+    }
+
+    public SetBucketCustomDomainBody withDeleteCertificate(String deleteCertificate) {
+        this.deleteCertificate = deleteCertificate;
+        return this;
+    }
+
+    /**
+     * 证书操作类型，是否删除证书。 
+     * @return deleteCertificate
+     */
+    public String getDeleteCertificate() {
+        return deleteCertificate;
+    }
+
+    public void setDeleteCertificate(String deleteCertificate) {
+        this.deleteCertificate = deleteCertificate;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -146,12 +242,24 @@ public class SetBucketCustomDomainBody extends SdkXmlBody<SetBucketCustomDomainB
         return Objects.equals(this.name, that.name) && Objects.equals(this.certificateId, that.certificateId)
             && Objects.equals(this.certificate, that.certificate)
             && Objects.equals(this.certificateChain, that.certificateChain)
-            && Objects.equals(this.privateKey, that.privateKey);
+            && Objects.equals(this.privateKey, that.privateKey)
+            && Objects.equals(this.certificateType, that.certificateType)
+            && Objects.equals(this.enCCertificate, that.enCCertificate)
+            && Objects.equals(this.enCPrivateKey, that.enCPrivateKey)
+            && Objects.equals(this.deleteCertificate, that.deleteCertificate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, certificateId, certificate, certificateChain, privateKey);
+        return Objects.hash(name,
+            certificateId,
+            certificate,
+            certificateChain,
+            privateKey,
+            certificateType,
+            enCCertificate,
+            enCPrivateKey,
+            deleteCertificate);
     }
 
     @Override
@@ -163,6 +271,10 @@ public class SetBucketCustomDomainBody extends SdkXmlBody<SetBucketCustomDomainB
         sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
         sb.append("    certificateChain: ").append(toIndentedString(certificateChain)).append("\n");
         sb.append("    privateKey: ").append(toIndentedString(privateKey)).append("\n");
+        sb.append("    certificateType: ").append(toIndentedString(certificateType)).append("\n");
+        sb.append("    enCCertificate: ").append(toIndentedString(enCCertificate)).append("\n");
+        sb.append("    enCPrivateKey: ").append(toIndentedString(enCPrivateKey)).append("\n");
+        sb.append("    deleteCertificate: ").append(toIndentedString(deleteCertificate)).append("\n");
         sb.append("}");
         return sb.toString();
     }

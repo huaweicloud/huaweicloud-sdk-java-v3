@@ -1274,7 +1274,7 @@ public class PostSourceServerBody {
     }
 
     /**
-     * 启动方式 可以取值MANUAL、MGC或者空，不进行校验
+     * 启动方式 可以取值MANUAL、AUTO或者空，不进行校验。 默认值取值MANUAL，其余则表示从MGC平台启动
      * @return startType
      */
     public String getStartType() {

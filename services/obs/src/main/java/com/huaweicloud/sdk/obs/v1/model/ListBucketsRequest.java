@@ -102,6 +102,20 @@ public class ListBucketsRequest {
 
     private XObsBucketTypeEnum xObsBucketType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-ies-location")
+
+    @JacksonXmlProperty(localName = "x-obs-ies-location")
+
+    private String xObsIesLocation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-edge-location")
+
+    @JacksonXmlProperty(localName = "x-obs-edge-location")
+
+    private String xObsEdgeLocation;
+
     public ListBucketsRequest withDate(String date) {
         this.date = date;
         return this;
@@ -138,6 +152,44 @@ public class ListBucketsRequest {
         this.xObsBucketType = xObsBucketType;
     }
 
+    public ListBucketsRequest withXObsIesLocation(String xObsIesLocation) {
+        this.xObsIesLocation = xObsIesLocation;
+        return this;
+    }
+
+    /**
+     * 通过此头域可以列举指定AZ Id的CloudPond站点的桶，普通桶不返回。如果对应CloudPond站点下没有桶或者没有对应CloudPond站点，则列举桶返回空。 
+     * @return xObsIesLocation
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-ies-location")
+    public String getXObsIesLocation() {
+        return xObsIesLocation;
+    }
+
+    public void setXObsIesLocation(String xObsIesLocation) {
+        this.xObsIesLocation = xObsIesLocation;
+    }
+
+    public ListBucketsRequest withXObsEdgeLocation(String xObsEdgeLocation) {
+        this.xObsEdgeLocation = xObsEdgeLocation;
+        return this;
+    }
+
+    /**
+     * 通过此头域可以列举指定AZ Id的智能边缘云站点的桶，普通桶不返回。如果对应智能边缘云站点下没有桶或者没有对应智能边缘云站点，则列举桶返回空。 示例：x-obs-edge-location:AZ1 
+     * @return xObsEdgeLocation
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-obs-edge-location")
+    public String getXObsEdgeLocation() {
+        return xObsEdgeLocation;
+    }
+
+    public void setXObsEdgeLocation(String xObsEdgeLocation) {
+        this.xObsEdgeLocation = xObsEdgeLocation;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -147,12 +199,14 @@ public class ListBucketsRequest {
             return false;
         }
         ListBucketsRequest that = (ListBucketsRequest) obj;
-        return Objects.equals(this.date, that.date) && Objects.equals(this.xObsBucketType, that.xObsBucketType);
+        return Objects.equals(this.date, that.date) && Objects.equals(this.xObsBucketType, that.xObsBucketType)
+            && Objects.equals(this.xObsIesLocation, that.xObsIesLocation)
+            && Objects.equals(this.xObsEdgeLocation, that.xObsEdgeLocation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(date, xObsBucketType);
+        return Objects.hash(date, xObsBucketType, xObsIesLocation, xObsEdgeLocation);
     }
 
     @Override
@@ -161,6 +215,8 @@ public class ListBucketsRequest {
         sb.append("class ListBucketsRequest {\n");
         sb.append("    date: ").append(toIndentedString(date)).append("\n");
         sb.append("    xObsBucketType: ").append(toIndentedString(xObsBucketType)).append("\n");
+        sb.append("    xObsIesLocation: ").append(toIndentedString(xObsIesLocation)).append("\n");
+        sb.append("    xObsEdgeLocation: ").append(toIndentedString(xObsEdgeLocation)).append("\n");
         sb.append("}");
         return sb.toString();
     }

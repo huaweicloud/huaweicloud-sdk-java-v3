@@ -36,6 +36,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindLtsConfigRequestBody
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindLtsConfigResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CancelScheduleTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CancelScheduleTaskResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ChangeDemand2PeriodRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ChangeDemand2PeriodResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CollectAspRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CollectAspRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CollectAspResponse;
@@ -364,6 +366,7 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListWdrSnapshotsCollectR
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyAutoEnlargePolicyRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyAutoEnlargePolicyRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyAutoEnlargePolicyResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyDBPayTypeRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyEpsQuotaRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyEpsQuotaRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyEpsQuotaResponse;
@@ -564,6 +567,11 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchKmsTdeRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchKmsTdeResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchLogCollectionStatusRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchLogCollectionStatusResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchLoggerReplicaAvailabilityZonesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchLoggerReplicaAvailabilityZonesResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchLoggerReplicaRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchLoggerReplicaRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchLoggerReplicaResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchReplicaRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchReplicaRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchReplicaResponse;
@@ -948,6 +956,35 @@ public class GaussDBforopenGaussMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeDemand2PeriodRequest, ChangeDemand2PeriodResponse> changeDemand2Period =
+        genForChangeDemand2Period();
+
+    private static HttpRequestDef<ChangeDemand2PeriodRequest, ChangeDemand2PeriodResponse> genForChangeDemand2Period() {
+        // basic
+        HttpRequestDef.Builder<ChangeDemand2PeriodRequest, ChangeDemand2PeriodResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ChangeDemand2PeriodRequest.class, ChangeDemand2PeriodResponse.class)
+                .withName("ChangeDemand2Period")
+                .withUri("/v3/{project_id}/instances/change-charge-mode")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ModifyDBPayTypeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyDBPayTypeRequestBody.class),
+            f -> f.withMarshaller(ChangeDemand2PeriodRequest::getBody, ChangeDemand2PeriodRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ChangeDemand2PeriodResponse::getXRequestId,
+                ChangeDemand2PeriodResponse::setXRequestId));
         return builder.build();
     }
 
@@ -7701,6 +7738,73 @@ public class GaussDBforopenGaussMeta {
             String.class,
             f -> f.withMarshaller(SwitchLogCollectionStatusResponse::getBody,
                 SwitchLogCollectionStatusResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchLoggerReplicaRequest, SwitchLoggerReplicaResponse> switchLoggerReplica =
+        genForSwitchLoggerReplica();
+
+    private static HttpRequestDef<SwitchLoggerReplicaRequest, SwitchLoggerReplicaResponse> genForSwitchLoggerReplica() {
+        // basic
+        HttpRequestDef.Builder<SwitchLoggerReplicaRequest, SwitchLoggerReplicaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SwitchLoggerReplicaRequest.class, SwitchLoggerReplicaResponse.class)
+                .withName("SwitchLoggerReplica")
+                .withUri("/v3/{project_id}/instance/{instance_id}/switch-logger-replica")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchLoggerReplicaRequest::getInstanceId,
+                SwitchLoggerReplicaRequest::setInstanceId));
+        builder.<SwitchLoggerReplicaRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SwitchLoggerReplicaRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(SwitchLoggerReplicaRequest::getXLanguage, SwitchLoggerReplicaRequest::setXLanguage));
+        builder.<SwitchLoggerReplicaRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SwitchLoggerReplicaRequestBody.class),
+            f -> f.withMarshaller(SwitchLoggerReplicaRequest::getBody, SwitchLoggerReplicaRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchLoggerReplicaAvailabilityZonesRequest, SwitchLoggerReplicaAvailabilityZonesResponse> switchLoggerReplicaAvailabilityZones =
+        genForSwitchLoggerReplicaAvailabilityZones();
+
+    private static HttpRequestDef<SwitchLoggerReplicaAvailabilityZonesRequest, SwitchLoggerReplicaAvailabilityZonesResponse> genForSwitchLoggerReplicaAvailabilityZones() {
+        // basic
+        HttpRequestDef.Builder<SwitchLoggerReplicaAvailabilityZonesRequest, SwitchLoggerReplicaAvailabilityZonesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    SwitchLoggerReplicaAvailabilityZonesRequest.class,
+                    SwitchLoggerReplicaAvailabilityZonesResponse.class)
+                .withName("SwitchLoggerReplicaAvailabilityZones")
+                .withUri("/v3/{project_id}/instances/{instance_id}/switch-logger-replica/availability_zones")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchLoggerReplicaAvailabilityZonesRequest::getInstanceId,
+                SwitchLoggerReplicaAvailabilityZonesRequest::setInstanceId));
+        builder.<SwitchLoggerReplicaAvailabilityZonesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SwitchLoggerReplicaAvailabilityZonesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(SwitchLoggerReplicaAvailabilityZonesRequest::getXLanguage,
+                SwitchLoggerReplicaAvailabilityZonesRequest::setXLanguage));
+
+        // response
 
         return builder.build();
     }

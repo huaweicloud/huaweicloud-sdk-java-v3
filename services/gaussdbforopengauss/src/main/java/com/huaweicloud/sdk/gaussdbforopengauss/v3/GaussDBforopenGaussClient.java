@@ -25,6 +25,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindLtsConfigRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindLtsConfigResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CancelScheduleTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CancelScheduleTaskResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ChangeDemand2PeriodRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ChangeDemand2PeriodResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CollectAspRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CollectAspResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CollectWdrSnapshotRequest;
@@ -467,6 +469,10 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchKmsTdeRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchKmsTdeResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchLogCollectionStatusRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchLogCollectionStatusResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchLoggerReplicaAvailabilityZonesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchLoggerReplicaAvailabilityZonesResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchLoggerReplicaRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchLoggerReplicaResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchReplicaRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchReplicaResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchShardRequest;
@@ -808,6 +814,35 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<CancelScheduleTaskRequest, CancelScheduleTaskResponse> cancelScheduleTaskInvoker(
         CancelScheduleTaskRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.cancelScheduleTask, hcClient);
+    }
+
+    /**
+     * 按需转包周期
+     *
+     * 按需转包周期
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeDemand2PeriodRequest 请求对象
+     * @return ChangeDemand2PeriodResponse
+     */
+    public ChangeDemand2PeriodResponse changeDemand2Period(ChangeDemand2PeriodRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.changeDemand2Period);
+    }
+
+    /**
+     * 按需转包周期
+     *
+     * 按需转包周期
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeDemand2PeriodRequest 请求对象
+     * @return SyncInvoker<ChangeDemand2PeriodRequest, ChangeDemand2PeriodResponse>
+     */
+    public SyncInvoker<ChangeDemand2PeriodRequest, ChangeDemand2PeriodResponse> changeDemand2PeriodInvoker(
+        ChangeDemand2PeriodRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.changeDemand2Period, hcClient);
     }
 
     /**
@@ -6079,6 +6114,65 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<SwitchLogCollectionStatusRequest, SwitchLogCollectionStatusResponse> switchLogCollectionStatusInvoker(
         SwitchLogCollectionStatusRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.switchLogCollectionStatus, hcClient);
+    }
+
+    /**
+     * 一主两备切换一主一备一日志
+     *
+     * 一主两备切换一主一备一日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchLoggerReplicaRequest 请求对象
+     * @return SwitchLoggerReplicaResponse
+     */
+    public SwitchLoggerReplicaResponse switchLoggerReplica(SwitchLoggerReplicaRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.switchLoggerReplica);
+    }
+
+    /**
+     * 一主两备切换一主一备一日志
+     *
+     * 一主两备切换一主一备一日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchLoggerReplicaRequest 请求对象
+     * @return SyncInvoker<SwitchLoggerReplicaRequest, SwitchLoggerReplicaResponse>
+     */
+    public SyncInvoker<SwitchLoggerReplicaRequest, SwitchLoggerReplicaResponse> switchLoggerReplicaInvoker(
+        SwitchLoggerReplicaRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.switchLoggerReplica, hcClient);
+    }
+
+    /**
+     * 选择日志节点AZ
+     *
+     * 选择日志节点AZ
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchLoggerReplicaAvailabilityZonesRequest 请求对象
+     * @return SwitchLoggerReplicaAvailabilityZonesResponse
+     */
+    public SwitchLoggerReplicaAvailabilityZonesResponse switchLoggerReplicaAvailabilityZones(
+        SwitchLoggerReplicaAvailabilityZonesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.switchLoggerReplicaAvailabilityZones);
+    }
+
+    /**
+     * 选择日志节点AZ
+     *
+     * 选择日志节点AZ
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchLoggerReplicaAvailabilityZonesRequest 请求对象
+     * @return SyncInvoker<SwitchLoggerReplicaAvailabilityZonesRequest, SwitchLoggerReplicaAvailabilityZonesResponse>
+     */
+    public SyncInvoker<SwitchLoggerReplicaAvailabilityZonesRequest, SwitchLoggerReplicaAvailabilityZonesResponse> switchLoggerReplicaAvailabilityZonesInvoker(
+        SwitchLoggerReplicaAvailabilityZonesRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.switchLoggerReplicaAvailabilityZones, hcClient);
     }
 
     /**

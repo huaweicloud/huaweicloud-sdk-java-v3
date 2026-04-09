@@ -8,6 +8,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import com.huaweicloud.sdk.core.SdkStreamRequest;
 
+import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -268,7 +269,7 @@ public class PutObjectRequest extends SdkStreamRequest {
 
     @JacksonXmlProperty(localName = "x-obs-object-lock-retain-until-date")
 
-    private String xObsObjectLockRetainUntilDate;
+    private OffsetDateTime xObsObjectLockRetainUntilDate;
 
     public PutObjectRequest withBucketName(String bucketName) {
         this.bucketName = bucketName;
@@ -718,7 +719,7 @@ public class PutObjectRequest extends SdkStreamRequest {
         this.xObsObjectLockMode = xObsObjectLockMode;
     }
 
-    public PutObjectRequest withXObsObjectLockRetainUntilDate(String xObsObjectLockRetainUntilDate) {
+    public PutObjectRequest withXObsObjectLockRetainUntilDate(OffsetDateTime xObsObjectLockRetainUntilDate) {
         this.xObsObjectLockRetainUntilDate = xObsObjectLockRetainUntilDate;
         return this;
     }
@@ -729,11 +730,11 @@ public class PutObjectRequest extends SdkStreamRequest {
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x-obs-object-lock-retain-until-date")
-    public String getXObsObjectLockRetainUntilDate() {
+    public OffsetDateTime getXObsObjectLockRetainUntilDate() {
         return xObsObjectLockRetainUntilDate;
     }
 
-    public void setXObsObjectLockRetainUntilDate(String xObsObjectLockRetainUntilDate) {
+    public void setXObsObjectLockRetainUntilDate(OffsetDateTime xObsObjectLockRetainUntilDate) {
         this.xObsObjectLockRetainUntilDate = xObsObjectLockRetainUntilDate;
     }
 

@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.clouddc.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 驱动器详细信息，如型号、厂商等
@@ -53,7 +56,7 @@ public class Drive {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sas_address")
 
-    private String sasAddress;
+    private List<String> sasAddress = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "capacity_bytes")
@@ -241,20 +244,36 @@ public class Drive {
         this.protocol = protocol;
     }
 
-    public Drive withSasAddress(String sasAddress) {
+    public Drive withSasAddress(List<String> sasAddress) {
         this.sasAddress = sasAddress;
         return this;
     }
 
+    public Drive addSasAddressItem(String sasAddressItem) {
+        if (this.sasAddress == null) {
+            this.sasAddress = new ArrayList<>();
+        }
+        this.sasAddress.add(sasAddressItem);
+        return this;
+    }
+
+    public Drive withSasAddress(Consumer<List<String>> sasAddressSetter) {
+        if (this.sasAddress == null) {
+            this.sasAddress = new ArrayList<>();
+        }
+        sasAddressSetter.accept(this.sasAddress);
+        return this;
+    }
+
     /**
-     * SAS地址
+     * 驱动器SAS地址
      * @return sasAddress
      */
-    public String getSasAddress() {
+    public List<String> getSasAddress() {
         return sasAddress;
     }
 
-    public void setSasAddress(String sasAddress) {
+    public void setSasAddress(List<String> sasAddress) {
         this.sasAddress = sasAddress;
     }
 

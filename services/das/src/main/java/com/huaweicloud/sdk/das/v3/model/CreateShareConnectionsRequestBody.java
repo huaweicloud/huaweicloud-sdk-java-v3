@@ -24,6 +24,11 @@ public class CreateShareConnectionsRequestBody {
     private String expiredTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "timezone")
+
+    private String timezone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "users")
 
     private List<ShareConnUserInfo> users = null;
@@ -60,6 +65,23 @@ public class CreateShareConnectionsRequestBody {
 
     public void setExpiredTime(String expiredTime) {
         this.expiredTime = expiredTime;
+    }
+
+    public CreateShareConnectionsRequestBody withTimezone(String timezone) {
+        this.timezone = timezone;
+        return this;
+    }
+
+    /**
+     * 时区
+     * @return timezone
+     */
+    public String getTimezone() {
+        return timezone;
+    }
+
+    public void setTimezone(String timezone) {
+        this.timezone = timezone;
     }
 
     public CreateShareConnectionsRequestBody withUsers(List<ShareConnUserInfo> users) {
@@ -105,12 +127,13 @@ public class CreateShareConnectionsRequestBody {
         }
         CreateShareConnectionsRequestBody that = (CreateShareConnectionsRequestBody) obj;
         return Objects.equals(this.sharedConnId, that.sharedConnId)
-            && Objects.equals(this.expiredTime, that.expiredTime) && Objects.equals(this.users, that.users);
+            && Objects.equals(this.expiredTime, that.expiredTime) && Objects.equals(this.timezone, that.timezone)
+            && Objects.equals(this.users, that.users);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sharedConnId, expiredTime, users);
+        return Objects.hash(sharedConnId, expiredTime, timezone, users);
     }
 
     @Override
@@ -119,6 +142,7 @@ public class CreateShareConnectionsRequestBody {
         sb.append("class CreateShareConnectionsRequestBody {\n");
         sb.append("    sharedConnId: ").append(toIndentedString(sharedConnId)).append("\n");
         sb.append("    expiredTime: ").append(toIndentedString(expiredTime)).append("\n");
+        sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
         sb.append("    users: ").append(toIndentedString(users)).append("\n");
         sb.append("}");
         return sb.toString();

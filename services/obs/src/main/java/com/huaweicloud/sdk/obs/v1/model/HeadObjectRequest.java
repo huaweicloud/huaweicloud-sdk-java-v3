@@ -10,8 +10,8 @@ import java.util.Objects;
 /**
  * Request Object
  */
-@JacksonXmlRootElement(localName = "GetObjectMetadataRequest")
-public class GetObjectMetadataRequest {
+@JacksonXmlRootElement(localName = "HeadObjectRequest")
+public class HeadObjectRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bucket_name")
@@ -76,21 +76,7 @@ public class GetObjectMetadataRequest {
 
     private String xObsServerSideEncryptionCustomerKeyMD5;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "success-action-redirect")
-
-    @JacksonXmlProperty(localName = "success-action-redirect")
-
-    private String successActionRedirect;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "x-obs-expires")
-
-    @JacksonXmlProperty(localName = "x-obs-expires")
-
-    private Integer xObsExpires;
-
-    public GetObjectMetadataRequest withBucketName(String bucketName) {
+    public HeadObjectRequest withBucketName(String bucketName) {
         this.bucketName = bucketName;
         return this;
     }
@@ -107,7 +93,7 @@ public class GetObjectMetadataRequest {
         this.bucketName = bucketName;
     }
 
-    public GetObjectMetadataRequest withObjectKey(String objectKey) {
+    public HeadObjectRequest withObjectKey(String objectKey) {
         this.objectKey = objectKey;
         return this;
     }
@@ -124,7 +110,7 @@ public class GetObjectMetadataRequest {
         this.objectKey = objectKey;
     }
 
-    public GetObjectMetadataRequest withDate(String date) {
+    public HeadObjectRequest withDate(String date) {
         this.date = date;
         return this;
     }
@@ -141,7 +127,7 @@ public class GetObjectMetadataRequest {
         this.date = date;
     }
 
-    public GetObjectMetadataRequest withVersionId(String versionId) {
+    public HeadObjectRequest withVersionId(String versionId) {
         this.versionId = versionId;
         return this;
     }
@@ -158,7 +144,7 @@ public class GetObjectMetadataRequest {
         this.versionId = versionId;
     }
 
-    public GetObjectMetadataRequest withOrigin(String origin) {
+    public HeadObjectRequest withOrigin(String origin) {
         this.origin = origin;
         return this;
     }
@@ -175,7 +161,7 @@ public class GetObjectMetadataRequest {
         this.origin = origin;
     }
 
-    public GetObjectMetadataRequest withAccessControlRequestHeaders(String accessControlRequestHeaders) {
+    public HeadObjectRequest withAccessControlRequestHeaders(String accessControlRequestHeaders) {
         this.accessControlRequestHeaders = accessControlRequestHeaders;
         return this;
     }
@@ -192,7 +178,7 @@ public class GetObjectMetadataRequest {
         this.accessControlRequestHeaders = accessControlRequestHeaders;
     }
 
-    public GetObjectMetadataRequest withXObsServerSideEncryptionCustomerAlgorithm(
+    public HeadObjectRequest withXObsServerSideEncryptionCustomerAlgorithm(
         String xObsServerSideEncryptionCustomerAlgorithm) {
         this.xObsServerSideEncryptionCustomerAlgorithm = xObsServerSideEncryptionCustomerAlgorithm;
         return this;
@@ -212,8 +198,7 @@ public class GetObjectMetadataRequest {
         this.xObsServerSideEncryptionCustomerAlgorithm = xObsServerSideEncryptionCustomerAlgorithm;
     }
 
-    public GetObjectMetadataRequest withXObsServerSideEncryptionCustomerKey(
-        String xObsServerSideEncryptionCustomerKey) {
+    public HeadObjectRequest withXObsServerSideEncryptionCustomerKey(String xObsServerSideEncryptionCustomerKey) {
         this.xObsServerSideEncryptionCustomerKey = xObsServerSideEncryptionCustomerKey;
         return this;
     }
@@ -232,8 +217,7 @@ public class GetObjectMetadataRequest {
         this.xObsServerSideEncryptionCustomerKey = xObsServerSideEncryptionCustomerKey;
     }
 
-    public GetObjectMetadataRequest withXObsServerSideEncryptionCustomerKeyMD5(
-        String xObsServerSideEncryptionCustomerKeyMD5) {
+    public HeadObjectRequest withXObsServerSideEncryptionCustomerKeyMD5(String xObsServerSideEncryptionCustomerKeyMD5) {
         this.xObsServerSideEncryptionCustomerKeyMD5 = xObsServerSideEncryptionCustomerKeyMD5;
         return this;
     }
@@ -252,42 +236,6 @@ public class GetObjectMetadataRequest {
         this.xObsServerSideEncryptionCustomerKeyMD5 = xObsServerSideEncryptionCustomerKeyMD5;
     }
 
-    public GetObjectMetadataRequest withSuccessActionRedirect(String successActionRedirect) {
-        this.successActionRedirect = successActionRedirect;
-        return this;
-    }
-
-    /**
-     * 此参数的值是一个URL，用于指定当此次请求操作成功响应后的重定向的地址。  如果此参数值有效且操作成功，响应码为303，Location头域由此参数以及桶名、对象名、对象的ETag组成。 如果此参数值无效，则OBS忽略此参数的作用，响应码为204，Location头域为对象地址。 
-     * @return successActionRedirect
-     */
-    public String getSuccessActionRedirect() {
-        return successActionRedirect;
-    }
-
-    public void setSuccessActionRedirect(String successActionRedirect) {
-        this.successActionRedirect = successActionRedirect;
-    }
-
-    public GetObjectMetadataRequest withXObsExpires(Integer xObsExpires) {
-        this.xObsExpires = xObsExpires;
-        return this;
-    }
-
-    /**
-     * 表示对象的过期时间，单位是天。过期之后对象会被自动删除。（从对象最后修改时间开始计算）  此字段对于每个对象仅支持上传时配置，不支持后期通过修改元数据接口修改。  示例：x-obs-expires:3 
-     * @return xObsExpires
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "x-obs-expires")
-    public Integer getXObsExpires() {
-        return xObsExpires;
-    }
-
-    public void setXObsExpires(Integer xObsExpires) {
-        this.xObsExpires = xObsExpires;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -296,7 +244,7 @@ public class GetObjectMetadataRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetObjectMetadataRequest that = (GetObjectMetadataRequest) obj;
+        HeadObjectRequest that = (HeadObjectRequest) obj;
         return Objects.equals(this.bucketName, that.bucketName) && Objects.equals(this.objectKey, that.objectKey)
             && Objects.equals(this.date, that.date) && Objects.equals(this.versionId, that.versionId)
             && Objects.equals(this.origin, that.origin)
@@ -304,9 +252,7 @@ public class GetObjectMetadataRequest {
             && Objects.equals(this.xObsServerSideEncryptionCustomerAlgorithm,
                 that.xObsServerSideEncryptionCustomerAlgorithm)
             && Objects.equals(this.xObsServerSideEncryptionCustomerKey, that.xObsServerSideEncryptionCustomerKey)
-            && Objects.equals(this.xObsServerSideEncryptionCustomerKeyMD5, that.xObsServerSideEncryptionCustomerKeyMD5)
-            && Objects.equals(this.successActionRedirect, that.successActionRedirect)
-            && Objects.equals(this.xObsExpires, that.xObsExpires);
+            && Objects.equals(this.xObsServerSideEncryptionCustomerKeyMD5, that.xObsServerSideEncryptionCustomerKeyMD5);
     }
 
     @Override
@@ -319,15 +265,13 @@ public class GetObjectMetadataRequest {
             accessControlRequestHeaders,
             xObsServerSideEncryptionCustomerAlgorithm,
             xObsServerSideEncryptionCustomerKey,
-            xObsServerSideEncryptionCustomerKeyMD5,
-            successActionRedirect,
-            xObsExpires);
+            xObsServerSideEncryptionCustomerKeyMD5);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class GetObjectMetadataRequest {\n");
+        sb.append("class HeadObjectRequest {\n");
         sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");
         sb.append("    objectKey: ").append(toIndentedString(objectKey)).append("\n");
         sb.append("    date: ").append(toIndentedString(date)).append("\n");
@@ -345,8 +289,6 @@ public class GetObjectMetadataRequest {
         sb.append("    xObsServerSideEncryptionCustomerKeyMD5: ")
             .append(toIndentedString(xObsServerSideEncryptionCustomerKeyMD5))
             .append("\n");
-        sb.append("    successActionRedirect: ").append(toIndentedString(successActionRedirect)).append("\n");
-        sb.append("    xObsExpires: ").append(toIndentedString(xObsExpires)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -500,6 +500,11 @@ public class ShowServerResponse extends SdkResponse {
 
     private Boolean hasTc;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_type")
+
+    private String startType;
+
     public ShowServerResponse withId(String id) {
         this.id = id;
         return this;
@@ -1107,6 +1112,23 @@ public class ShowServerResponse extends SdkResponse {
         this.hasTc = hasTc;
     }
 
+    public ShowServerResponse withStartType(String startType) {
+        this.startType = startType;
+        return this;
+    }
+
+    /**
+     * 启动方式 可以取值MANUAL、AUTO或者空，不进行校验。 默认值取值MANUAL，其余则表示从MGC平台启动
+     * @return startType
+     */
+    public String getStartType() {
+        return startType;
+    }
+
+    public void setStartType(String startType) {
+        this.startType = startType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1133,7 +1155,8 @@ public class ShowServerResponse extends SdkResponse {
             && Objects.equals(this.replicatesize, that.replicatesize) && Objects.equals(this.totalsize, that.totalsize)
             && Objects.equals(this.lastVisitTime, that.lastVisitTime)
             && Objects.equals(this.stageActionTime, that.stageActionTime)
-            && Objects.equals(this.agentVersion, that.agentVersion) && Objects.equals(this.hasTc, that.hasTc);
+            && Objects.equals(this.agentVersion, that.agentVersion) && Objects.equals(this.hasTc, that.hasTc)
+            && Objects.equals(this.startType, that.startType);
     }
 
     @Override
@@ -1166,7 +1189,8 @@ public class ShowServerResponse extends SdkResponse {
             lastVisitTime,
             stageActionTime,
             agentVersion,
-            hasTc);
+            hasTc,
+            startType);
     }
 
     @Override
@@ -1202,6 +1226,7 @@ public class ShowServerResponse extends SdkResponse {
         sb.append("    stageActionTime: ").append(toIndentedString(stageActionTime)).append("\n");
         sb.append("    agentVersion: ").append(toIndentedString(agentVersion)).append("\n");
         sb.append("    hasTc: ").append(toIndentedString(hasTc)).append("\n");
+        sb.append("    startType: ").append(toIndentedString(startType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -56,6 +56,8 @@ import com.huaweicloud.sdk.iotda.v5.model.CheckCertificateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CheckCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CloseDeviceTunnelRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CloseDeviceTunnelResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ConfirmBatchTaskRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ConfirmBatchTaskResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CountAsyncHistoryCommandsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CountAsyncHistoryCommandsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateAccessCodeRequest;
@@ -1175,6 +1177,39 @@ public class IoTDAMeta {
             TypeCasts.uncheckedConversion(UpdateBacklogPolicy.class),
             f -> f.withMarshaller(UpdateRoutingBacklogPolicyRequest::getBody,
                 UpdateRoutingBacklogPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ConfirmBatchTaskRequest, ConfirmBatchTaskResponse> confirmBatchTask =
+        genForConfirmBatchTask();
+
+    private static HttpRequestDef<ConfirmBatchTaskRequest, ConfirmBatchTaskResponse> genForConfirmBatchTask() {
+        // basic
+        HttpRequestDef.Builder<ConfirmBatchTaskRequest, ConfirmBatchTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ConfirmBatchTaskRequest.class, ConfirmBatchTaskResponse.class)
+                .withName("ConfirmBatchTask")
+                .withUri("/v5/iot/{project_id}/batchtasks/{task_id}/confirm")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmBatchTaskRequest::getTaskId, ConfirmBatchTaskRequest::setTaskId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmBatchTaskRequest::getInstanceId, ConfirmBatchTaskRequest::setInstanceId));
+        builder.<BatchTargets>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchTargets.class),
+            f -> f.withMarshaller(ConfirmBatchTaskRequest::getBody, ConfirmBatchTaskRequest::setBody));
 
         // response
 

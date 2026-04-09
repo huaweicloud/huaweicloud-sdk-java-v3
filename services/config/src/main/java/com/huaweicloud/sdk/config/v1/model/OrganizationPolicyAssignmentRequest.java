@@ -28,6 +28,11 @@ public class OrganizationPolicyAssignmentRequest {
 
     private ManagedPolicyAssignmentMetadata managedPolicyAssignmentMetadata;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_policy_assignment_metadata")
+
+    private CustomPolicyAssignmentMetadata customPolicyAssignmentMetadata;
+
     public OrganizationPolicyAssignmentRequest withExcludedAccounts(List<String> excludedAccounts) {
         this.excludedAccounts = excludedAccounts;
         return this;
@@ -107,6 +112,34 @@ public class OrganizationPolicyAssignmentRequest {
         this.managedPolicyAssignmentMetadata = managedPolicyAssignmentMetadata;
     }
 
+    public OrganizationPolicyAssignmentRequest withCustomPolicyAssignmentMetadata(
+        CustomPolicyAssignmentMetadata customPolicyAssignmentMetadata) {
+        this.customPolicyAssignmentMetadata = customPolicyAssignmentMetadata;
+        return this;
+    }
+
+    public OrganizationPolicyAssignmentRequest withCustomPolicyAssignmentMetadata(
+        Consumer<CustomPolicyAssignmentMetadata> customPolicyAssignmentMetadataSetter) {
+        if (this.customPolicyAssignmentMetadata == null) {
+            this.customPolicyAssignmentMetadata = new CustomPolicyAssignmentMetadata();
+            customPolicyAssignmentMetadataSetter.accept(this.customPolicyAssignmentMetadata);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get customPolicyAssignmentMetadata
+     * @return customPolicyAssignmentMetadata
+     */
+    public CustomPolicyAssignmentMetadata getCustomPolicyAssignmentMetadata() {
+        return customPolicyAssignmentMetadata;
+    }
+
+    public void setCustomPolicyAssignmentMetadata(CustomPolicyAssignmentMetadata customPolicyAssignmentMetadata) {
+        this.customPolicyAssignmentMetadata = customPolicyAssignmentMetadata;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -118,12 +151,16 @@ public class OrganizationPolicyAssignmentRequest {
         OrganizationPolicyAssignmentRequest that = (OrganizationPolicyAssignmentRequest) obj;
         return Objects.equals(this.excludedAccounts, that.excludedAccounts)
             && Objects.equals(this.organizationPolicyAssignmentName, that.organizationPolicyAssignmentName)
-            && Objects.equals(this.managedPolicyAssignmentMetadata, that.managedPolicyAssignmentMetadata);
+            && Objects.equals(this.managedPolicyAssignmentMetadata, that.managedPolicyAssignmentMetadata)
+            && Objects.equals(this.customPolicyAssignmentMetadata, that.customPolicyAssignmentMetadata);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(excludedAccounts, organizationPolicyAssignmentName, managedPolicyAssignmentMetadata);
+        return Objects.hash(excludedAccounts,
+            organizationPolicyAssignmentName,
+            managedPolicyAssignmentMetadata,
+            customPolicyAssignmentMetadata);
     }
 
     @Override
@@ -136,6 +173,9 @@ public class OrganizationPolicyAssignmentRequest {
             .append("\n");
         sb.append("    managedPolicyAssignmentMetadata: ")
             .append(toIndentedString(managedPolicyAssignmentMetadata))
+            .append("\n");
+        sb.append("    customPolicyAssignmentMetadata: ")
+            .append(toIndentedString(customPolicyAssignmentMetadata))
             .append("\n");
         sb.append("}");
         return sb.toString();

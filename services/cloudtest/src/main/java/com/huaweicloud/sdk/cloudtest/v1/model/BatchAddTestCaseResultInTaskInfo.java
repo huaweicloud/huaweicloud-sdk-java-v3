@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.cloudtest.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -29,7 +31,7 @@ public class BatchAddTestCaseResultInTaskInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "test_case_uris")
 
-    private String testCaseUris;
+    private List<String> testCaseUris = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isAsyn")
@@ -96,20 +98,36 @@ public class BatchAddTestCaseResultInTaskInfo {
         this.taskResultUri = taskResultUri;
     }
 
-    public BatchAddTestCaseResultInTaskInfo withTestCaseUris(String testCaseUris) {
+    public BatchAddTestCaseResultInTaskInfo withTestCaseUris(List<String> testCaseUris) {
         this.testCaseUris = testCaseUris;
         return this;
     }
 
+    public BatchAddTestCaseResultInTaskInfo addTestCaseUrisItem(String testCaseUrisItem) {
+        if (this.testCaseUris == null) {
+            this.testCaseUris = new ArrayList<>();
+        }
+        this.testCaseUris.add(testCaseUrisItem);
+        return this;
+    }
+
+    public BatchAddTestCaseResultInTaskInfo withTestCaseUris(Consumer<List<String>> testCaseUrisSetter) {
+        if (this.testCaseUris == null) {
+            this.testCaseUris = new ArrayList<>();
+        }
+        testCaseUrisSetter.accept(this.testCaseUris);
+        return this;
+    }
+
     /**
-     * 用例uri
+     * 用例uri列表
      * @return testCaseUris
      */
-    public String getTestCaseUris() {
+    public List<String> getTestCaseUris() {
         return testCaseUris;
     }
 
-    public void setTestCaseUris(String testCaseUris) {
+    public void setTestCaseUris(List<String> testCaseUris) {
         this.testCaseUris = testCaseUris;
     }
 

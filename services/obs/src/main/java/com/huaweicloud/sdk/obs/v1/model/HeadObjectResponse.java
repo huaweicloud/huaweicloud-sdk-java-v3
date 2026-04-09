@@ -11,8 +11,8 @@ import java.util.Objects;
 /**
  * Response Object
  */
-@JacksonXmlRootElement(localName = "GetObjectMetadataResponse")
-public class GetObjectMetadataResponse extends SdkResponse {
+@JacksonXmlRootElement(localName = "HeadObjectResponse")
+public class HeadObjectResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "x-obs-id-2")
@@ -182,7 +182,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
 
     private String xObsVersionId;
 
-    public GetObjectMetadataResponse withXObsId2(String xObsId2) {
+    public HeadObjectResponse withXObsId2(String xObsId2) {
         this.xObsId2 = xObsId2;
         return this;
     }
@@ -201,7 +201,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.xObsId2 = xObsId2;
     }
 
-    public GetObjectMetadataResponse withXObsRequestId(String xObsRequestId) {
+    public HeadObjectResponse withXObsRequestId(String xObsRequestId) {
         this.xObsRequestId = xObsRequestId;
         return this;
     }
@@ -220,7 +220,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.xObsRequestId = xObsRequestId;
     }
 
-    public GetObjectMetadataResponse withXObsHashCrc64ecma(String xObsHashCrc64ecma) {
+    public HeadObjectResponse withXObsHashCrc64ecma(String xObsHashCrc64ecma) {
         this.xObsHashCrc64ecma = xObsHashCrc64ecma;
         return this;
     }
@@ -239,7 +239,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.xObsHashCrc64ecma = xObsHashCrc64ecma;
     }
 
-    public GetObjectMetadataResponse withAccessControlAllowOrigin(String accessControlAllowOrigin) {
+    public HeadObjectResponse withAccessControlAllowOrigin(String accessControlAllowOrigin) {
         this.accessControlAllowOrigin = accessControlAllowOrigin;
         return this;
     }
@@ -256,7 +256,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.accessControlAllowOrigin = accessControlAllowOrigin;
     }
 
-    public GetObjectMetadataResponse withXObsServerSideEncryption(String xObsServerSideEncryption) {
+    public HeadObjectResponse withXObsServerSideEncryption(String xObsServerSideEncryption) {
         this.xObsServerSideEncryption = xObsServerSideEncryption;
         return this;
     }
@@ -275,7 +275,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.xObsServerSideEncryption = xObsServerSideEncryption;
     }
 
-    public GetObjectMetadataResponse withXObsRestore(String xObsRestore) {
+    public HeadObjectResponse withXObsRestore(String xObsRestore) {
         this.xObsRestore = xObsRestore;
         return this;
     }
@@ -294,7 +294,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.xObsRestore = xObsRestore;
     }
 
-    public GetObjectMetadataResponse withXObsObjectType(String xObsObjectType) {
+    public HeadObjectResponse withXObsObjectType(String xObsObjectType) {
         this.xObsObjectType = xObsObjectType;
         return this;
     }
@@ -313,7 +313,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.xObsObjectType = xObsObjectType;
     }
 
-    public GetObjectMetadataResponse withXObsNextAppendPosition(Integer xObsNextAppendPosition) {
+    public HeadObjectResponse withXObsNextAppendPosition(Integer xObsNextAppendPosition) {
         this.xObsNextAppendPosition = xObsNextAppendPosition;
         return this;
     }
@@ -332,7 +332,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.xObsNextAppendPosition = xObsNextAppendPosition;
     }
 
-    public GetObjectMetadataResponse withAccessControlAllowMethods(String accessControlAllowMethods) {
+    public HeadObjectResponse withAccessControlAllowMethods(String accessControlAllowMethods) {
         this.accessControlAllowMethods = accessControlAllowMethods;
         return this;
     }
@@ -349,7 +349,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.accessControlAllowMethods = accessControlAllowMethods;
     }
 
-    public GetObjectMetadataResponse withConnection(String connection) {
+    public HeadObjectResponse withConnection(String connection) {
         this.connection = connection;
         return this;
     }
@@ -366,7 +366,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.connection = connection;
     }
 
-    public GetObjectMetadataResponse withXObsServerSideEncryptionCustomerKeyMD5(
+    public HeadObjectResponse withXObsServerSideEncryptionCustomerKeyMD5(
         String xObsServerSideEncryptionCustomerKeyMD5) {
         this.xObsServerSideEncryptionCustomerKeyMD5 = xObsServerSideEncryptionCustomerKeyMD5;
         return this;
@@ -386,7 +386,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.xObsServerSideEncryptionCustomerKeyMD5 = xObsServerSideEncryptionCustomerKeyMD5;
     }
 
-    public GetObjectMetadataResponse withXObsExpiration(String xObsExpiration) {
+    public HeadObjectResponse withXObsExpiration(String xObsExpiration) {
         this.xObsExpiration = xObsExpiration;
         return this;
     }
@@ -405,7 +405,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.xObsExpiration = xObsExpiration;
     }
 
-    public GetObjectMetadataResponse withDate(String date) {
+    public HeadObjectResponse withDate(String date) {
         this.date = date;
         return this;
     }
@@ -422,7 +422,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.date = date;
     }
 
-    public GetObjectMetadataResponse withAccessControlAllowHeaders(String accessControlAllowHeaders) {
+    public HeadObjectResponse withAccessControlAllowHeaders(String accessControlAllowHeaders) {
         this.accessControlAllowHeaders = accessControlAllowHeaders;
         return this;
     }
@@ -439,7 +439,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.accessControlAllowHeaders = accessControlAllowHeaders;
     }
 
-    public GetObjectMetadataResponse withXObsUploadId(String xObsUploadId) {
+    public HeadObjectResponse withXObsUploadId(String xObsUploadId) {
         this.xObsUploadId = xObsUploadId;
         return this;
     }
@@ -458,7 +458,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.xObsUploadId = xObsUploadId;
     }
 
-    public GetObjectMetadataResponse withAccessControlExposeHeaders(String accessControlExposeHeaders) {
+    public HeadObjectResponse withAccessControlExposeHeaders(String accessControlExposeHeaders) {
         this.accessControlExposeHeaders = accessControlExposeHeaders;
         return this;
     }
@@ -475,7 +475,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.accessControlExposeHeaders = accessControlExposeHeaders;
     }
 
-    public GetObjectMetadataResponse withEtag(String etag) {
+    public HeadObjectResponse withEtag(String etag) {
         this.etag = etag;
         return this;
     }
@@ -492,7 +492,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.etag = etag;
     }
 
-    public GetObjectMetadataResponse withXObsServerSideEncryptionCustomerAlgorithm(
+    public HeadObjectResponse withXObsServerSideEncryptionCustomerAlgorithm(
         String xObsServerSideEncryptionCustomerAlgorithm) {
         this.xObsServerSideEncryptionCustomerAlgorithm = xObsServerSideEncryptionCustomerAlgorithm;
         return this;
@@ -512,7 +512,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.xObsServerSideEncryptionCustomerAlgorithm = xObsServerSideEncryptionCustomerAlgorithm;
     }
 
-    public GetObjectMetadataResponse withXObsStorageClass(String xObsStorageClass) {
+    public HeadObjectResponse withXObsStorageClass(String xObsStorageClass) {
         this.xObsStorageClass = xObsStorageClass;
         return this;
     }
@@ -531,7 +531,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.xObsStorageClass = xObsStorageClass;
     }
 
-    public GetObjectMetadataResponse withXObsServerSideEncryptionKmsKeyId(String xObsServerSideEncryptionKmsKeyId) {
+    public HeadObjectResponse withXObsServerSideEncryptionKmsKeyId(String xObsServerSideEncryptionKmsKeyId) {
         this.xObsServerSideEncryptionKmsKeyId = xObsServerSideEncryptionKmsKeyId;
         return this;
     }
@@ -550,7 +550,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.xObsServerSideEncryptionKmsKeyId = xObsServerSideEncryptionKmsKeyId;
     }
 
-    public GetObjectMetadataResponse withContentLength(String contentLength) {
+    public HeadObjectResponse withContentLength(String contentLength) {
         this.contentLength = contentLength;
         return this;
     }
@@ -567,7 +567,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.contentLength = contentLength;
     }
 
-    public GetObjectMetadataResponse withAccessControlMaxAge(Integer accessControlMaxAge) {
+    public HeadObjectResponse withAccessControlMaxAge(Integer accessControlMaxAge) {
         this.accessControlMaxAge = accessControlMaxAge;
         return this;
     }
@@ -584,7 +584,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.accessControlMaxAge = accessControlMaxAge;
     }
 
-    public GetObjectMetadataResponse withXObsWebsiteRedirectLocation(String xObsWebsiteRedirectLocation) {
+    public HeadObjectResponse withXObsWebsiteRedirectLocation(String xObsWebsiteRedirectLocation) {
         this.xObsWebsiteRedirectLocation = xObsWebsiteRedirectLocation;
         return this;
     }
@@ -603,7 +603,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         this.xObsWebsiteRedirectLocation = xObsWebsiteRedirectLocation;
     }
 
-    public GetObjectMetadataResponse withXObsVersionId(String xObsVersionId) {
+    public HeadObjectResponse withXObsVersionId(String xObsVersionId) {
         this.xObsVersionId = xObsVersionId;
         return this;
     }
@@ -630,7 +630,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetObjectMetadataResponse that = (GetObjectMetadataResponse) obj;
+        HeadObjectResponse that = (HeadObjectResponse) obj;
         return Objects.equals(this.xObsId2, that.xObsId2) && Objects.equals(this.xObsRequestId, that.xObsRequestId)
             && Objects.equals(this.xObsHashCrc64ecma, that.xObsHashCrc64ecma)
             && Objects.equals(this.accessControlAllowOrigin, that.accessControlAllowOrigin)
@@ -687,7 +687,7 @@ public class GetObjectMetadataResponse extends SdkResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class GetObjectMetadataResponse {\n");
+        sb.append("class HeadObjectResponse {\n");
         sb.append("    xObsId2: ").append(toIndentedString(xObsId2)).append("\n");
         sb.append("    xObsRequestId: ").append(toIndentedString(xObsRequestId)).append("\n");
         sb.append("    xObsHashCrc64ecma: ").append(toIndentedString(xObsHashCrc64ecma)).append("\n");

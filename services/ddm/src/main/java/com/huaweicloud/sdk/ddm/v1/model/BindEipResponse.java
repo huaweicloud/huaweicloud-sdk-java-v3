@@ -22,7 +22,7 @@ public class BindEipResponse extends SdkResponse {
     }
 
     /**
-     * 任务id
+     * **参数解释**：  工作流ID。  **取值范围**：  不涉及。
      * @return jobId
      */
     public String getJobId() {

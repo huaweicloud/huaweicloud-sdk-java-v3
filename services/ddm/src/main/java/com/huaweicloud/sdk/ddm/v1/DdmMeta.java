@@ -48,12 +48,15 @@ import com.huaweicloud.sdk.ddm.v1.model.CreateDdmDatabaseResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDdmInstanceReq;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDdmInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDdmInstanceResponse;
+import com.huaweicloud.sdk.ddm.v1.model.CreateDdmUserRequest;
+import com.huaweicloud.sdk.ddm.v1.model.CreateDdmUserResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateGroupRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateGroupRequestBody;
 import com.huaweicloud.sdk.ddm.v1.model.CreateGroupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateInstanceReq;
 import com.huaweicloud.sdk.ddm.v1.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateInstanceResponse;
+import com.huaweicloud.sdk.ddm.v1.model.CreateUserRequestV3;
 import com.huaweicloud.sdk.ddm.v1.model.CreateUsersReq;
 import com.huaweicloud.sdk.ddm.v1.model.CreateUsersRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateUsersResponse;
@@ -68,6 +71,8 @@ import com.huaweicloud.sdk.ddm.v1.model.DeleteDdmDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteDdmDatabaseResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteDdmInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteDdmInstanceResponse;
+import com.huaweicloud.sdk.ddm.v1.model.DeleteDdmUserRequest;
+import com.huaweicloud.sdk.ddm.v1.model.DeleteDdmUserResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteGroupRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteGroupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteInstanceRequest;
@@ -113,6 +118,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ListDdmEnginesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListDdmEnginesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListDdmFlavorsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListDdmFlavorsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListDdmUsersRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListDdmUsersResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListDdmsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListDdmsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListEnginesRequest;
@@ -158,18 +165,25 @@ import com.huaweicloud.sdk.ddm.v1.model.ModifyInstanceSecurityGroupReq;
 import com.huaweicloud.sdk.ddm.v1.model.ModifyReadAndWriteStrategyReq;
 import com.huaweicloud.sdk.ddm.v1.model.ModifySqlBlackListRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ModifySqlBlackListResponse;
+import com.huaweicloud.sdk.ddm.v1.model.MoveTmlogFilesRequest;
+import com.huaweicloud.sdk.ddm.v1.model.MoveTmlogFilesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.MoveTmlogsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ParaGroupUpdate;
+import com.huaweicloud.sdk.ddm.v1.model.ReadOnlySwitchReq;
 import com.huaweicloud.sdk.ddm.v1.model.RebuildConfigRequest;
 import com.huaweicloud.sdk.ddm.v1.model.RebuildConfigResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ReduceNodeOpenRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ReduceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ResetAdministratorRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ResetAdministratorResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ResetDdmUserPasswordRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ResetDdmUserPasswordResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ResetParameterGroupRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ResetParameterGroupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ResetUserPasswordReq;
 import com.huaweicloud.sdk.ddm.v1.model.ResetUserPasswordRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ResetUserPasswordResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ResetUserPasswordV3RequestBody;
 import com.huaweicloud.sdk.ddm.v1.model.ResizeFlavorReq;
 import com.huaweicloud.sdk.ddm.v1.model.ResizeFlavorRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ResizeFlavorResponse;
@@ -192,6 +206,8 @@ import com.huaweicloud.sdk.ddm.v1.model.RollBackDatabaseVersionRequest;
 import com.huaweicloud.sdk.ddm.v1.model.RollBackDatabaseVersionResponse;
 import com.huaweicloud.sdk.ddm.v1.model.RollbackMigrationRequest;
 import com.huaweicloud.sdk.ddm.v1.model.RollbackMigrationResponse;
+import com.huaweicloud.sdk.ddm.v1.model.SetReadOnlyStatusRequest;
+import com.huaweicloud.sdk.ddm.v1.model.SetReadOnlyStatusResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowAvalibleDdmsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowAvalibleDdmsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowAvalibleRdsRequest;
@@ -234,6 +250,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ShowRelatedDnsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowRelatedDnsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowRiskInfoRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowRiskInfoResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowTmlogInfosRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowTmlogInfosResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShrinkInstanceNodesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShrinkInstanceNodesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.SwitchIpGroupRequest;
@@ -249,6 +267,8 @@ import com.huaweicloud.sdk.ddm.v1.model.UnbindEipRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UnbindEipResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDatabaseInfoRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDatabaseInfoResponse;
+import com.huaweicloud.sdk.ddm.v1.model.UpdateDdmUserRequest;
+import com.huaweicloud.sdk.ddm.v1.model.UpdateDdmUserResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateInstanceNameRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateInstanceNameResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateInstanceParamRequest;
@@ -264,6 +284,7 @@ import com.huaweicloud.sdk.ddm.v1.model.UpdateReadAndWriteStrategyResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateUserReq;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateUserRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateUserResponse;
+import com.huaweicloud.sdk.ddm.v1.model.UpdateUserV3RequestBody;
 import com.huaweicloud.sdk.ddm.v1.model.UploadSchemaMetadataRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UploadSchemaMetadataResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ValidateWeakPasswordRequest;
@@ -829,6 +850,34 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateDdmUserRequest, CreateDdmUserResponse> createDdmUser =
+        genForCreateDdmUser();
+
+    private static HttpRequestDef<CreateDdmUserRequest, CreateDdmUserResponse> genForCreateDdmUser() {
+        // basic
+        HttpRequestDef.Builder<CreateDdmUserRequest, CreateDdmUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDdmUserRequest.class, CreateDdmUserResponse.class)
+                .withName("CreateDdmUser")
+                .withUri("/v3/{project_id}/instances/{instance_id}/users")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDdmUserRequest::getInstanceId, CreateDdmUserRequest::setInstanceId));
+        builder.<CreateUserRequestV3>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateUserRequestV3.class),
+            f -> f.withMarshaller(CreateDdmUserRequest::getBody, CreateDdmUserRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateGroupRequest, CreateGroupResponse> createGroup = genForCreateGroup();
 
     private static HttpRequestDef<CreateGroupRequest, CreateGroupResponse> genForCreateGroup() {
@@ -1031,6 +1080,34 @@ public class DdmMeta {
             FieldExistence.NULL_IGNORE,
             Object.class,
             f -> f.withMarshaller(DeleteDdmInstanceResponse::getBody, DeleteDdmInstanceResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDdmUserRequest, DeleteDdmUserResponse> deleteDdmUser =
+        genForDeleteDdmUser();
+
+    private static HttpRequestDef<DeleteDdmUserRequest, DeleteDdmUserResponse> genForDeleteDdmUser() {
+        // basic
+        HttpRequestDef.Builder<DeleteDdmUserRequest, DeleteDdmUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDdmUserRequest.class, DeleteDdmUserResponse.class)
+                .withName("DeleteDdmUser")
+                .withUri("/v3/{project_id}/instances/{instance_id}/users/{username}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDdmUserRequest::getInstanceId, DeleteDdmUserRequest::setInstanceId));
+        builder.<String>withRequestField("username",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDdmUserRequest::getUsername, DeleteDdmUserRequest::setUsername));
+
+        // response
 
         return builder.build();
     }
@@ -1544,6 +1621,38 @@ public class DdmMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDdmFlavorsRequest::getAvailableZones, ListDdmFlavorsRequest::setAvailableZones));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDdmUsersRequest, ListDdmUsersResponse> listDdmUsers = genForListDdmUsers();
+
+    private static HttpRequestDef<ListDdmUsersRequest, ListDdmUsersResponse> genForListDdmUsers() {
+        // basic
+        HttpRequestDef.Builder<ListDdmUsersRequest, ListDdmUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDdmUsersRequest.class, ListDdmUsersResponse.class)
+                .withName("ListDdmUsers")
+                .withUri("/v3/{project_id}/instances/{instance_id}/users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDdmUsersRequest::getInstanceId, ListDdmUsersRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDdmUsersRequest::getOffset, ListDdmUsersRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDdmUsersRequest::getLimit, ListDdmUsersRequest::setLimit));
 
         // response
 
@@ -2116,6 +2225,40 @@ public class DdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AdminUserInfoReq.class),
             f -> f.withMarshaller(ResetAdministratorRequest::getBody, ResetAdministratorRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResetDdmUserPasswordRequest, ResetDdmUserPasswordResponse> resetDdmUserPassword =
+        genForResetDdmUserPassword();
+
+    private static HttpRequestDef<ResetDdmUserPasswordRequest, ResetDdmUserPasswordResponse> genForResetDdmUserPassword() {
+        // basic
+        HttpRequestDef.Builder<ResetDdmUserPasswordRequest, ResetDdmUserPasswordResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ResetDdmUserPasswordRequest.class, ResetDdmUserPasswordResponse.class)
+            .withName("ResetDdmUserPassword")
+            .withUri("/v3/{project_id}/instances/{instance_id}/users/{username}/password")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetDdmUserPasswordRequest::getInstanceId,
+                ResetDdmUserPasswordRequest::setInstanceId));
+        builder.<String>withRequestField("username",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetDdmUserPasswordRequest::getUsername, ResetDdmUserPasswordRequest::setUsername));
+        builder.<ResetUserPasswordV3RequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResetUserPasswordV3RequestBody.class),
+            f -> f.withMarshaller(ResetDdmUserPasswordRequest::getBody, ResetDdmUserPasswordRequest::setBody));
 
         // response
 
@@ -3144,6 +3287,39 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateDdmUserRequest, UpdateDdmUserResponse> updateDdmUser =
+        genForUpdateDdmUser();
+
+    private static HttpRequestDef<UpdateDdmUserRequest, UpdateDdmUserResponse> genForUpdateDdmUser() {
+        // basic
+        HttpRequestDef.Builder<UpdateDdmUserRequest, UpdateDdmUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDdmUserRequest.class, UpdateDdmUserResponse.class)
+                .withName("UpdateDdmUser")
+                .withUri("/v3/{project_id}/instances/{instance_id}/users/{username}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDdmUserRequest::getInstanceId, UpdateDdmUserRequest::setInstanceId));
+        builder.<String>withRequestField("username",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDdmUserRequest::getUsername, UpdateDdmUserRequest::setUsername));
+        builder.<UpdateUserV3RequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateUserV3RequestBody.class),
+            f -> f.withMarshaller(UpdateDdmUserRequest::getBody, UpdateDdmUserRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateInstanceNameRequest, UpdateInstanceNameResponse> updateInstanceName =
         genForUpdateInstanceName();
 
@@ -3547,6 +3723,34 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<MoveTmlogFilesRequest, MoveTmlogFilesResponse> moveTmlogFiles =
+        genForMoveTmlogFiles();
+
+    private static HttpRequestDef<MoveTmlogFilesRequest, MoveTmlogFilesResponse> genForMoveTmlogFiles() {
+        // basic
+        HttpRequestDef.Builder<MoveTmlogFilesRequest, MoveTmlogFilesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, MoveTmlogFilesRequest.class, MoveTmlogFilesResponse.class)
+                .withName("MoveTmlogFiles")
+                .withUri("/v3/{project_id}/instances/{instance_id}/tmlogs")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(MoveTmlogFilesRequest::getInstanceId, MoveTmlogFilesRequest::setInstanceId));
+        builder.<MoveTmlogsRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MoveTmlogsRequest.class),
+            f -> f.withMarshaller(MoveTmlogFilesRequest::getBody, MoveTmlogFilesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ResetParameterGroupRequest, ResetParameterGroupResponse> resetParameterGroup =
         genForResetParameterGroup();
 
@@ -3575,6 +3779,34 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetReadOnlyStatusRequest, SetReadOnlyStatusResponse> setReadOnlyStatus =
+        genForSetReadOnlyStatus();
+
+    private static HttpRequestDef<SetReadOnlyStatusRequest, SetReadOnlyStatusResponse> genForSetReadOnlyStatus() {
+        // basic
+        HttpRequestDef.Builder<SetReadOnlyStatusRequest, SetReadOnlyStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetReadOnlyStatusRequest.class, SetReadOnlyStatusResponse.class)
+                .withName("SetReadOnlyStatus")
+                .withUri("/v3/{project_id}/instances/{instance_id}/readonly-status")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetReadOnlyStatusRequest::getInstanceId, SetReadOnlyStatusRequest::setInstanceId));
+        builder.<ReadOnlySwitchReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ReadOnlySwitchReq.class),
+            f -> f.withMarshaller(SetReadOnlyStatusRequest::getBody, SetReadOnlyStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDdmDetailRequest, ShowDdmDetailResponse> showDdmDetail =
         genForShowDdmDetail();
 
@@ -3592,6 +3824,39 @@ public class DdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDdmDetailRequest::getInstanceId, ShowDdmDetailRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTmlogInfosRequest, ShowTmlogInfosResponse> showTmlogInfos =
+        genForShowTmlogInfos();
+
+    private static HttpRequestDef<ShowTmlogInfosRequest, ShowTmlogInfosResponse> genForShowTmlogInfos() {
+        // basic
+        HttpRequestDef.Builder<ShowTmlogInfosRequest, ShowTmlogInfosResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTmlogInfosRequest.class, ShowTmlogInfosResponse.class)
+                .withName("ShowTmlogInfos")
+                .withUri("/v3/{project_id}/instances/{instance_id}/tmlogs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTmlogInfosRequest::getInstanceId, ShowTmlogInfosRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTmlogInfosRequest::getOffset, ShowTmlogInfosRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTmlogInfosRequest::getLimit, ShowTmlogInfosRequest::setLimit));
 
         // response
 

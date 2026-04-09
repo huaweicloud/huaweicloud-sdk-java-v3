@@ -36,6 +36,11 @@ public class CreateBatchTask {
     private String taskMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "need_confirm")
+
+    private Boolean needConfirm;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_ext_info")
 
     private Object taskExtInfo;
@@ -131,6 +136,23 @@ public class CreateBatchTask {
 
     public void setTaskMode(String taskMode) {
         this.taskMode = taskMode;
+    }
+
+    public CreateBatchTask withNeedConfirm(Boolean needConfirm) {
+        this.needConfirm = needConfirm;
+        return this;
+    }
+
+    /**
+     * **参数说明**：当需要自主控制该任务时设置此参数，当task_type为firmwareUpgrade，softwareUpgrade，moduleUpgrade支持该参数。软固件升级的场景下，当need_confirm为true时，任务分发后所有子任务一直为waitting状态，需要调确认接口后才变为processing状态，任务开始分发，不设置或者设置为false时子任务自动分发。 **取值范围**：true: 需要确认才分发子任务，false: 不需要确认自动分发子任务。
+     * @return needConfirm
+     */
+    public Boolean getNeedConfirm() {
+        return needConfirm;
+    }
+
+    public void setNeedConfirm(Boolean needConfirm) {
+        this.needConfirm = needConfirm;
     }
 
     public CreateBatchTask withTaskExtInfo(Object taskExtInfo) {
@@ -287,9 +309,9 @@ public class CreateBatchTask {
         CreateBatchTask that = (CreateBatchTask) obj;
         return Objects.equals(this.appId, that.appId) && Objects.equals(this.taskName, that.taskName)
             && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.taskMode, that.taskMode)
-            && Objects.equals(this.taskExtInfo, that.taskExtInfo) && Objects.equals(this.targets, that.targets)
-            && Objects.equals(this.targetsFilter, that.targetsFilter) && Objects.equals(this.document, that.document)
-            && Objects.equals(this.taskPolicy, that.taskPolicy)
+            && Objects.equals(this.needConfirm, that.needConfirm) && Objects.equals(this.taskExtInfo, that.taskExtInfo)
+            && Objects.equals(this.targets, that.targets) && Objects.equals(this.targetsFilter, that.targetsFilter)
+            && Objects.equals(this.document, that.document) && Objects.equals(this.taskPolicy, that.taskPolicy)
             && Objects.equals(this.documentSource, that.documentSource);
     }
 
@@ -299,6 +321,7 @@ public class CreateBatchTask {
             taskName,
             taskType,
             taskMode,
+            needConfirm,
             taskExtInfo,
             targets,
             targetsFilter,
@@ -315,6 +338,7 @@ public class CreateBatchTask {
         sb.append("    taskName: ").append(toIndentedString(taskName)).append("\n");
         sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
         sb.append("    taskMode: ").append(toIndentedString(taskMode)).append("\n");
+        sb.append("    needConfirm: ").append(toIndentedString(needConfirm)).append("\n");
         sb.append("    taskExtInfo: ").append(toIndentedString(taskExtInfo)).append("\n");
         sb.append("    targets: ").append(toIndentedString(targets)).append("\n");
         sb.append("    targetsFilter: ").append(toIndentedString(targetsFilter)).append("\n");

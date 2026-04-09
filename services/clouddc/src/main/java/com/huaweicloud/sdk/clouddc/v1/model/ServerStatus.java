@@ -42,9 +42,9 @@ public class ServerStatus {
     private ServerState health;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "unhealth")
+    @JsonProperty(value = "unHealth")
 
-    private ServerState unhealth;
+    private ServerState unHealth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "isolation")
@@ -207,30 +207,30 @@ public class ServerStatus {
         this.health = health;
     }
 
-    public ServerStatus withUnhealth(ServerState unhealth) {
-        this.unhealth = unhealth;
+    public ServerStatus withUnHealth(ServerState unHealth) {
+        this.unHealth = unHealth;
         return this;
     }
 
-    public ServerStatus withUnhealth(Consumer<ServerState> unhealthSetter) {
-        if (this.unhealth == null) {
-            this.unhealth = new ServerState();
-            unhealthSetter.accept(this.unhealth);
+    public ServerStatus withUnHealth(Consumer<ServerState> unHealthSetter) {
+        if (this.unHealth == null) {
+            this.unHealth = new ServerState();
+            unHealthSetter.accept(this.unHealth);
         }
 
         return this;
     }
 
     /**
-     * Get unhealth
-     * @return unhealth
+     * Get unHealth
+     * @return unHealth
      */
-    public ServerState getUnhealth() {
-        return unhealth;
+    public ServerState getUnHealth() {
+        return unHealth;
     }
 
-    public void setUnhealth(ServerState unhealth) {
-        this.unhealth = unhealth;
+    public void setUnHealth(ServerState unHealth) {
+        this.unHealth = unHealth;
     }
 
     public ServerStatus withIsolation(ServerState isolation) {
@@ -271,12 +271,12 @@ public class ServerStatus {
         return Objects.equals(this.total, that.total) && Objects.equals(this.ok, that.ok)
             && Objects.equals(this.warning, that.warning) && Objects.equals(this.unknown, that.unknown)
             && Objects.equals(this.critical, that.critical) && Objects.equals(this.health, that.health)
-            && Objects.equals(this.unhealth, that.unhealth) && Objects.equals(this.isolation, that.isolation);
+            && Objects.equals(this.unHealth, that.unHealth) && Objects.equals(this.isolation, that.isolation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, ok, warning, unknown, critical, health, unhealth, isolation);
+        return Objects.hash(total, ok, warning, unknown, critical, health, unHealth, isolation);
     }
 
     @Override
@@ -289,7 +289,7 @@ public class ServerStatus {
         sb.append("    unknown: ").append(toIndentedString(unknown)).append("\n");
         sb.append("    critical: ").append(toIndentedString(critical)).append("\n");
         sb.append("    health: ").append(toIndentedString(health)).append("\n");
-        sb.append("    unhealth: ").append(toIndentedString(unhealth)).append("\n");
+        sb.append("    unHealth: ").append(toIndentedString(unHealth)).append("\n");
         sb.append("    isolation: ").append(toIndentedString(isolation)).append("\n");
         sb.append("}");
         return sb.toString();

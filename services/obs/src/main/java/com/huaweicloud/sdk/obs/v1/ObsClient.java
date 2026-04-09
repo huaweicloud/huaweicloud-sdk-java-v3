@@ -9,12 +9,16 @@ import com.huaweicloud.sdk.obs.v1.model.CreateBucketRequest;
 import com.huaweicloud.sdk.obs.v1.model.CreateBucketResponse;
 import com.huaweicloud.sdk.obs.v1.model.DeleteBucketCustomdomainRequest;
 import com.huaweicloud.sdk.obs.v1.model.DeleteBucketCustomdomainResponse;
+import com.huaweicloud.sdk.obs.v1.model.DeleteBucketPublicAccessBlockRequest;
+import com.huaweicloud.sdk.obs.v1.model.DeleteBucketPublicAccessBlockResponse;
 import com.huaweicloud.sdk.obs.v1.model.DeleteBucketRequest;
 import com.huaweicloud.sdk.obs.v1.model.DeleteBucketResponse;
 import com.huaweicloud.sdk.obs.v1.model.DeleteDisPolicyRequest;
 import com.huaweicloud.sdk.obs.v1.model.DeleteDisPolicyResponse;
 import com.huaweicloud.sdk.obs.v1.model.DeleteObjectRequest;
 import com.huaweicloud.sdk.obs.v1.model.DeleteObjectResponse;
+import com.huaweicloud.sdk.obs.v1.model.DeleteObjectTaggingRequest;
+import com.huaweicloud.sdk.obs.v1.model.DeleteObjectTaggingResponse;
 import com.huaweicloud.sdk.obs.v1.model.DeleteObjectsRequest;
 import com.huaweicloud.sdk.obs.v1.model.DeleteObjectsResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketAclRequest;
@@ -25,24 +29,40 @@ import com.huaweicloud.sdk.obs.v1.model.GetBucketMetadataRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketMetadataResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketNotificationRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketNotificationResponse;
+import com.huaweicloud.sdk.obs.v1.model.GetBucketPolicyPublicStatusRequest;
+import com.huaweicloud.sdk.obs.v1.model.GetBucketPolicyPublicStatusResponse;
+import com.huaweicloud.sdk.obs.v1.model.GetBucketPublicAccessBlockRequest;
+import com.huaweicloud.sdk.obs.v1.model.GetBucketPublicAccessBlockResponse;
+import com.huaweicloud.sdk.obs.v1.model.GetBucketPublicStatusRequest;
+import com.huaweicloud.sdk.obs.v1.model.GetBucketPublicStatusResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetDisPolicyRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetDisPolicyResponse;
-import com.huaweicloud.sdk.obs.v1.model.GetObjectMetadataRequest;
-import com.huaweicloud.sdk.obs.v1.model.GetObjectMetadataResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetObjectRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetObjectResponse;
+import com.huaweicloud.sdk.obs.v1.model.GetObjectTaggingRequest;
+import com.huaweicloud.sdk.obs.v1.model.GetObjectTaggingResponse;
+import com.huaweicloud.sdk.obs.v1.model.HeadObjectRequest;
+import com.huaweicloud.sdk.obs.v1.model.HeadObjectResponse;
 import com.huaweicloud.sdk.obs.v1.model.ListBucketsRequest;
 import com.huaweicloud.sdk.obs.v1.model.ListBucketsResponse;
 import com.huaweicloud.sdk.obs.v1.model.ListObjectsRequest;
 import com.huaweicloud.sdk.obs.v1.model.ListObjectsResponse;
 import com.huaweicloud.sdk.obs.v1.model.PutObjectRequest;
 import com.huaweicloud.sdk.obs.v1.model.PutObjectResponse;
+import com.huaweicloud.sdk.obs.v1.model.PutObjectTaggingRequest;
+import com.huaweicloud.sdk.obs.v1.model.PutObjectTaggingResponse;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketAclRequest;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketAclResponse;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketCustomedomainRequest;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketCustomedomainResponse;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketNotificationRequest;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketNotificationResponse;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketObjectLockRequest;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketObjectLockResponse;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketPolicyRequest;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketPolicyResponse;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketPublicAccessBlockRequest;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketPublicAccessBlockResponse;
 import com.huaweicloud.sdk.obs.v1.model.SetDisPolicyRequest;
 import com.huaweicloud.sdk.obs.v1.model.SetDisPolicyResponse;
 
@@ -261,6 +281,36 @@ public class ObsClient {
     }
 
     /**
+     * 删除桶级阻止公共访问配置
+     *
+     * 删除OBS桶的PublicAccessBlock配置;要正确执行此操作，需要确保操作者有DeleteBucketPublicAccessBlock权限。默认情况下只有桶的所有者可以执行此操作，也可以通过设置桶策略或用户策略授权给其他用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteBucketPublicAccessBlockRequest 请求对象
+     * @return DeleteBucketPublicAccessBlockResponse
+     */
+    public DeleteBucketPublicAccessBlockResponse deleteBucketPublicAccessBlock(
+        DeleteBucketPublicAccessBlockRequest request) {
+        return hcClient.syncInvokeHttp(request, ObsMeta.deleteBucketPublicAccessBlock);
+    }
+
+    /**
+     * 删除桶级阻止公共访问配置
+     *
+     * 删除OBS桶的PublicAccessBlock配置;要正确执行此操作，需要确保操作者有DeleteBucketPublicAccessBlock权限。默认情况下只有桶的所有者可以执行此操作，也可以通过设置桶策略或用户策略授权给其他用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteBucketPublicAccessBlockRequest 请求对象
+     * @return SyncInvoker<DeleteBucketPublicAccessBlockRequest, DeleteBucketPublicAccessBlockResponse>
+     */
+    public SyncInvoker<DeleteBucketPublicAccessBlockRequest, DeleteBucketPublicAccessBlockResponse> deleteBucketPublicAccessBlockInvoker(
+        DeleteBucketPublicAccessBlockRequest request) {
+        return new SyncInvoker<>(request, ObsMeta.deleteBucketPublicAccessBlock, hcClient);
+    }
+
+    /**
      * 删除DIS通知策略
      *
      * 本接口用于删除指定桶中配置的全部DIS通知策略。删除成功，status code返回值为204。
@@ -325,6 +375,45 @@ public class ObsClient {
      */
     public SyncInvoker<DeleteObjectRequest, DeleteObjectResponse> deleteObjectInvoker(DeleteObjectRequest request) {
         return new SyncInvoker<>(request, ObsMeta.deleteObject, hcClient);
+    }
+
+    /**
+     * 删除对象标签
+     *
+     * 用户可以通过本接口删除对象（Object）的标签信息。
+     * 如果请求中不携带版本号（versionId），需要确保执行者有DeleteObjectTagging权限。如果请求中携带版本号（versionId），需要确保执行者有DeleteObjectTagging+DeleteObjectVersionTagging权限。缺省情况下只有对象的所有者可以执行此操作，也可以通过设置桶策略或用户策略给其他用户。
+     * 默认删除Object当前版本的标签信息。可以通过指定versionId参数来删除指定Object版本的标签信息。如果对应版本为删除标记（Delete Marker），则OBS将返回404 Not Found。
+     * 
+     * 说明：
+     * 并行文件系统不支持删除文件标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteObjectTaggingRequest 请求对象
+     * @return DeleteObjectTaggingResponse
+     */
+    public DeleteObjectTaggingResponse deleteObjectTagging(DeleteObjectTaggingRequest request) {
+        return hcClient.syncInvokeHttp(request, ObsMeta.deleteObjectTagging);
+    }
+
+    /**
+     * 删除对象标签
+     *
+     * 用户可以通过本接口删除对象（Object）的标签信息。
+     * 如果请求中不携带版本号（versionId），需要确保执行者有DeleteObjectTagging权限。如果请求中携带版本号（versionId），需要确保执行者有DeleteObjectTagging+DeleteObjectVersionTagging权限。缺省情况下只有对象的所有者可以执行此操作，也可以通过设置桶策略或用户策略给其他用户。
+     * 默认删除Object当前版本的标签信息。可以通过指定versionId参数来删除指定Object版本的标签信息。如果对应版本为删除标记（Delete Marker），则OBS将返回404 Not Found。
+     * 
+     * 说明：
+     * 并行文件系统不支持删除文件标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteObjectTaggingRequest 请求对象
+     * @return SyncInvoker<DeleteObjectTaggingRequest, DeleteObjectTaggingResponse>
+     */
+    public SyncInvoker<DeleteObjectTaggingRequest, DeleteObjectTaggingResponse> deleteObjectTaggingInvoker(
+        DeleteObjectTaggingRequest request) {
+        return new SyncInvoker<>(request, ObsMeta.deleteObjectTagging, hcClient);
     }
 
     /**
@@ -495,6 +584,93 @@ public class ObsClient {
     }
 
     /**
+     * 获取桶策略公共状态
+     *
+     * 获取OBS桶策略的公共状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetBucketPolicyPublicStatusRequest 请求对象
+     * @return GetBucketPolicyPublicStatusResponse
+     */
+    public GetBucketPolicyPublicStatusResponse getBucketPolicyPublicStatus(GetBucketPolicyPublicStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, ObsMeta.getBucketPolicyPublicStatus);
+    }
+
+    /**
+     * 获取桶策略公共状态
+     *
+     * 获取OBS桶策略的公共状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetBucketPolicyPublicStatusRequest 请求对象
+     * @return SyncInvoker<GetBucketPolicyPublicStatusRequest, GetBucketPolicyPublicStatusResponse>
+     */
+    public SyncInvoker<GetBucketPolicyPublicStatusRequest, GetBucketPolicyPublicStatusResponse> getBucketPolicyPublicStatusInvoker(
+        GetBucketPolicyPublicStatusRequest request) {
+        return new SyncInvoker<>(request, ObsMeta.getBucketPolicyPublicStatus, hcClient);
+    }
+
+    /**
+     * 获取桶级阻止公共访问配置
+     *
+     * 获取OBS桶的PublicAccessBlock配置，默认情况下只有桶的所有者可以执行此操作，也可以通过设置桶策略或用户策略授权给其他用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetBucketPublicAccessBlockRequest 请求对象
+     * @return GetBucketPublicAccessBlockResponse
+     */
+    public GetBucketPublicAccessBlockResponse getBucketPublicAccessBlock(GetBucketPublicAccessBlockRequest request) {
+        return hcClient.syncInvokeHttp(request, ObsMeta.getBucketPublicAccessBlock);
+    }
+
+    /**
+     * 获取桶级阻止公共访问配置
+     *
+     * 获取OBS桶的PublicAccessBlock配置，默认情况下只有桶的所有者可以执行此操作，也可以通过设置桶策略或用户策略授权给其他用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetBucketPublicAccessBlockRequest 请求对象
+     * @return SyncInvoker<GetBucketPublicAccessBlockRequest, GetBucketPublicAccessBlockResponse>
+     */
+    public SyncInvoker<GetBucketPublicAccessBlockRequest, GetBucketPublicAccessBlockResponse> getBucketPublicAccessBlockInvoker(
+        GetBucketPublicAccessBlockRequest request) {
+        return new SyncInvoker<>(request, ObsMeta.getBucketPublicAccessBlock, hcClient);
+    }
+
+    /**
+     * 获取桶公共状态
+     *
+     * 获取OBS桶的公共状态。要正确执行此操作，需要确保操作者有GetBucketPublicStatus权限。默认情况下只有桶的所有者可以执行此操作，也可以通过设置桶策略或用户策略授权给其他用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetBucketPublicStatusRequest 请求对象
+     * @return GetBucketPublicStatusResponse
+     */
+    public GetBucketPublicStatusResponse getBucketPublicStatus(GetBucketPublicStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, ObsMeta.getBucketPublicStatus);
+    }
+
+    /**
+     * 获取桶公共状态
+     *
+     * 获取OBS桶的公共状态。要正确执行此操作，需要确保操作者有GetBucketPublicStatus权限。默认情况下只有桶的所有者可以执行此操作，也可以通过设置桶策略或用户策略授权给其他用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetBucketPublicStatusRequest 请求对象
+     * @return SyncInvoker<GetBucketPublicStatusRequest, GetBucketPublicStatusResponse>
+     */
+    public SyncInvoker<GetBucketPublicStatusRequest, GetBucketPublicStatusResponse> getBucketPublicStatusInvoker(
+        GetBucketPublicStatusRequest request) {
+        return new SyncInvoker<>(request, ObsMeta.getBucketPublicStatus, hcClient);
+    }
+
+    /**
      * 获取DIS通知策略
      *
      * 本接口用于查询指定桶的DIS通知策略信息。若策略存在，则返回成功，status code返回值为200。
@@ -569,21 +745,42 @@ public class ObsClient {
     }
 
     /**
-     * 获取对象元数据
+     * 获取对象标签
      *
-     * 拥有对象读权限的用户可以执行HEAD操作命令获取对象元数据，返回信息包含对象的元数据信息。
-     * 该操作支持服务端加密功能。
+     * 用户可以通过本接口获取对象（Object）的标签信息。
+     * 如果请求中不携带版本号（versionId），需要确保执行者有GetObjectTagging权限。如果请求中携带版本号（versionId），需要确保执行者有GetObjectTagging+GetObjectVersionTagging权限。缺省情况下只有对象的所有者可以执行此操作，也可以通过设置桶策略或用户策略给其他用户。
+     * 默认获取Object当前版本的标签信息。可以通过指定versionId参数来获取指定Object版本的标签信息。如果对应版本为删除标记（Delete Marker），则OBS将返回404 Not Found。
      * 
-     * #### 多版本 ####
-     * 默认情况下，获取的是最新版本的对象元数据。如果最新版本的对象是删除标记，则返回404。如果要获取指定版本的对象元数据，请求可携带versionId消息参数。
+     * 说明：
+     * 并行文件系统不支持获取文件标签。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request GetObjectMetadataRequest 请求对象
-     * @return GetObjectMetadataResponse
+     * @param request GetObjectTaggingRequest 请求对象
+     * @return GetObjectTaggingResponse
      */
-    public GetObjectMetadataResponse getObjectMetadata(GetObjectMetadataRequest request) {
-        return hcClient.syncInvokeHttp(request, ObsMeta.getObjectMetadata);
+    public GetObjectTaggingResponse getObjectTagging(GetObjectTaggingRequest request) {
+        return hcClient.syncInvokeHttp(request, ObsMeta.getObjectTagging);
+    }
+
+    /**
+     * 获取对象标签
+     *
+     * 用户可以通过本接口获取对象（Object）的标签信息。
+     * 如果请求中不携带版本号（versionId），需要确保执行者有GetObjectTagging权限。如果请求中携带版本号（versionId），需要确保执行者有GetObjectTagging+GetObjectVersionTagging权限。缺省情况下只有对象的所有者可以执行此操作，也可以通过设置桶策略或用户策略给其他用户。
+     * 默认获取Object当前版本的标签信息。可以通过指定versionId参数来获取指定Object版本的标签信息。如果对应版本为删除标记（Delete Marker），则OBS将返回404 Not Found。
+     * 
+     * 说明：
+     * 并行文件系统不支持获取文件标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetObjectTaggingRequest 请求对象
+     * @return SyncInvoker<GetObjectTaggingRequest, GetObjectTaggingResponse>
+     */
+    public SyncInvoker<GetObjectTaggingRequest, GetObjectTaggingResponse> getObjectTaggingInvoker(
+        GetObjectTaggingRequest request) {
+        return new SyncInvoker<>(request, ObsMeta.getObjectTagging, hcClient);
     }
 
     /**
@@ -597,12 +794,29 @@ public class ObsClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request GetObjectMetadataRequest 请求对象
-     * @return SyncInvoker<GetObjectMetadataRequest, GetObjectMetadataResponse>
+     * @param request HeadObjectRequest 请求对象
+     * @return HeadObjectResponse
      */
-    public SyncInvoker<GetObjectMetadataRequest, GetObjectMetadataResponse> getObjectMetadataInvoker(
-        GetObjectMetadataRequest request) {
-        return new SyncInvoker<>(request, ObsMeta.getObjectMetadata, hcClient);
+    public HeadObjectResponse headObject(HeadObjectRequest request) {
+        return hcClient.syncInvokeHttp(request, ObsMeta.headObject);
+    }
+
+    /**
+     * 获取对象元数据
+     *
+     * 拥有对象读权限的用户可以执行HEAD操作命令获取对象元数据，返回信息包含对象的元数据信息。
+     * 该操作支持服务端加密功能。
+     * 
+     * #### 多版本 ####
+     * 默认情况下，获取的是最新版本的对象元数据。如果最新版本的对象是删除标记，则返回404。如果要获取指定版本的对象元数据，请求可携带versionId消息参数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request HeadObjectRequest 请求对象
+     * @return SyncInvoker<HeadObjectRequest, HeadObjectResponse>
+     */
+    public SyncInvoker<HeadObjectRequest, HeadObjectResponse> headObjectInvoker(HeadObjectRequest request) {
+        return new SyncInvoker<>(request, ObsMeta.headObject, hcClient);
     }
 
     /**
@@ -715,6 +929,37 @@ public class ObsClient {
      */
     public SyncInvoker<PutObjectRequest, PutObjectResponse> putObjectInvoker(PutObjectRequest request) {
         return new SyncInvoker<>(request, ObsMeta.putObject, hcClient);
+    }
+
+    /**
+     * 设置对象标签
+     *
+     * 用户可以通过本接口设置或更新对象（Object）的标签信息。对象标签使用一组键值对（Key-Value）标记对象。 如果请求中不携带版本号（versionId），需要确保执行者有PutObjectTagging权限。如果请求中携带版本号（versionId），需要确保执行者有PutObjectTagging+PutObjectVersionTagging权限。缺省情况下只有对象的所有者可以执行此操作，也可以通过设置桶策略或用户策略给其他用户。 默认设置Object当前版本的标签信息。可以通过指定versionId参数来设置指定Object版本的标签信息。如果对应版本为删除标记（Delete Marker），则OBS将返回404 Not Found。
+     * 说明： 1. 并行文件系统不支持给文件设置标签。 2. 每个对象最多能设置10个标签。 3. 标签的键值约束： 键名（Key）区分大小写且必须唯一，不能为空且不能超过128个字符，不允许使用,/|&lt;&gt;&#x3D;*\\字符。 键值（Value）区分大小写且可以为空，不能超过255个字符，不允许使用,/|&lt;&gt;&#x3D;*\\字符。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PutObjectTaggingRequest 请求对象
+     * @return PutObjectTaggingResponse
+     */
+    public PutObjectTaggingResponse putObjectTagging(PutObjectTaggingRequest request) {
+        return hcClient.syncInvokeHttp(request, ObsMeta.putObjectTagging);
+    }
+
+    /**
+     * 设置对象标签
+     *
+     * 用户可以通过本接口设置或更新对象（Object）的标签信息。对象标签使用一组键值对（Key-Value）标记对象。 如果请求中不携带版本号（versionId），需要确保执行者有PutObjectTagging权限。如果请求中携带版本号（versionId），需要确保执行者有PutObjectTagging+PutObjectVersionTagging权限。缺省情况下只有对象的所有者可以执行此操作，也可以通过设置桶策略或用户策略给其他用户。 默认设置Object当前版本的标签信息。可以通过指定versionId参数来设置指定Object版本的标签信息。如果对应版本为删除标记（Delete Marker），则OBS将返回404 Not Found。
+     * 说明： 1. 并行文件系统不支持给文件设置标签。 2. 每个对象最多能设置10个标签。 3. 标签的键值约束： 键名（Key）区分大小写且必须唯一，不能为空且不能超过128个字符，不允许使用,/|&lt;&gt;&#x3D;*\\字符。 键值（Value）区分大小写且可以为空，不能超过255个字符，不允许使用,/|&lt;&gt;&#x3D;*\\字符。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PutObjectTaggingRequest 请求对象
+     * @return SyncInvoker<PutObjectTaggingRequest, PutObjectTaggingResponse>
+     */
+    public SyncInvoker<PutObjectTaggingRequest, PutObjectTaggingResponse> putObjectTaggingInvoker(
+        PutObjectTaggingRequest request) {
+        return new SyncInvoker<>(request, ObsMeta.putObjectTagging, hcClient);
     }
 
     /**
@@ -831,6 +1076,105 @@ public class ObsClient {
     public SyncInvoker<SetBucketNotificationRequest, SetBucketNotificationResponse> setBucketNotificationInvoker(
         SetBucketNotificationRequest request) {
         return new SyncInvoker<>(request, ObsMeta.setBucketNotification, hcClient);
+    }
+
+    /**
+     * 配置桶级默认WORM策略
+     *
+     * 本接口用于为指定桶配置默认保护策略和保护期限。 当您在桶内配置了桶级默认WORM策略以后，如果您在上传对象时没有指定保护策略和保护期限，则新上传的对象会自动应用桶级默认WORM策略。和配置对象级WORM保护策略不同的地方在于，对象级WORM保护策略需要您提供一个明确的时间，在这个时间之前对象都会受到保护，桶级默认WORM策略则要求您提供一个保护期限，实际上对象受到保护的时间点为其上传时间+您指定的保护期限。 要正确执行此操作，需要确保执行者有 \&quot;PutBucketObjectLockConfiguration\&quot;权限。默认情况下只有桶的所有者可以执行此操作，也可以通过设置桶策略或用户策略授权给其他用户。
+     * 说明： 1. 您可以修改甚至清空桶级默认WORM策略，但这仅对修改后上传的对象生效，修改前上传的对象的保护状态不受影响。 2. 多段上传的对象在合并前不受保护，合并后受桶级默认对象策略保护，您可以在其合并后单独为其配置对象级WORM保护策略。
+     * 其它约束如下： 1. 策略目前仅支持设置为合规模式\&quot;COMPLIANCE\&quot; 2. 支持设置的保留期限为1天-100*365天或1年~100年。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetBucketObjectLockRequest 请求对象
+     * @return SetBucketObjectLockResponse
+     */
+    public SetBucketObjectLockResponse setBucketObjectLock(SetBucketObjectLockRequest request) {
+        return hcClient.syncInvokeHttp(request, ObsMeta.setBucketObjectLock);
+    }
+
+    /**
+     * 配置桶级默认WORM策略
+     *
+     * 本接口用于为指定桶配置默认保护策略和保护期限。 当您在桶内配置了桶级默认WORM策略以后，如果您在上传对象时没有指定保护策略和保护期限，则新上传的对象会自动应用桶级默认WORM策略。和配置对象级WORM保护策略不同的地方在于，对象级WORM保护策略需要您提供一个明确的时间，在这个时间之前对象都会受到保护，桶级默认WORM策略则要求您提供一个保护期限，实际上对象受到保护的时间点为其上传时间+您指定的保护期限。 要正确执行此操作，需要确保执行者有 \&quot;PutBucketObjectLockConfiguration\&quot;权限。默认情况下只有桶的所有者可以执行此操作，也可以通过设置桶策略或用户策略授权给其他用户。
+     * 说明： 1. 您可以修改甚至清空桶级默认WORM策略，但这仅对修改后上传的对象生效，修改前上传的对象的保护状态不受影响。 2. 多段上传的对象在合并前不受保护，合并后受桶级默认对象策略保护，您可以在其合并后单独为其配置对象级WORM保护策略。
+     * 其它约束如下： 1. 策略目前仅支持设置为合规模式\&quot;COMPLIANCE\&quot; 2. 支持设置的保留期限为1天-100*365天或1年~100年。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetBucketObjectLockRequest 请求对象
+     * @return SyncInvoker<SetBucketObjectLockRequest, SetBucketObjectLockResponse>
+     */
+    public SyncInvoker<SetBucketObjectLockRequest, SetBucketObjectLockResponse> setBucketObjectLockInvoker(
+        SetBucketObjectLockRequest request) {
+        return new SyncInvoker<>(request, ObsMeta.setBucketObjectLock, hcClient);
+    }
+
+    /**
+     * 设置桶策略
+     *
+     * 该接口的实现使用policy子资源创建或者修改一个桶的策略。如果桶已经存在一个策略，那么当前请求中的策略将完全覆盖桶中现存的策略。单个桶的桶策略条数（statement）没有限制，但一个桶中所有桶策略的JSON描述总大小不能超过20KB。
+     * 
+     * 要使用该接口，使用者要求必须是桶的所有者，或者是桶所有者的子用户且具有设置桶策略的权限。
+     * 
+     * 使用桶策略进行权限控制请参考《对象存储服务权限配置指南》的[OBS权限控制概述](https://support.huaweicloud.com/perms-cfg-obs/obs_40_0001.html)章节。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetBucketPolicyRequest 请求对象
+     * @return SetBucketPolicyResponse
+     */
+    public SetBucketPolicyResponse setBucketPolicy(SetBucketPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, ObsMeta.setBucketPolicy);
+    }
+
+    /**
+     * 设置桶策略
+     *
+     * 该接口的实现使用policy子资源创建或者修改一个桶的策略。如果桶已经存在一个策略，那么当前请求中的策略将完全覆盖桶中现存的策略。单个桶的桶策略条数（statement）没有限制，但一个桶中所有桶策略的JSON描述总大小不能超过20KB。
+     * 
+     * 要使用该接口，使用者要求必须是桶的所有者，或者是桶所有者的子用户且具有设置桶策略的权限。
+     * 
+     * 使用桶策略进行权限控制请参考《对象存储服务权限配置指南》的[OBS权限控制概述](https://support.huaweicloud.com/perms-cfg-obs/obs_40_0001.html)章节。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetBucketPolicyRequest 请求对象
+     * @return SyncInvoker<SetBucketPolicyRequest, SetBucketPolicyResponse>
+     */
+    public SyncInvoker<SetBucketPolicyRequest, SetBucketPolicyResponse> setBucketPolicyInvoker(
+        SetBucketPolicyRequest request) {
+        return new SyncInvoker<>(request, ObsMeta.setBucketPolicy, hcClient);
+    }
+
+    /**
+     * 设置桶级阻止公共访问配置
+     *
+     * 设置桶级阻止公共访问配置，默认情况下只有桶的所有者可以执行此操作，也可以通过设置桶策略或用户策略授权给其他用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetBucketPublicAccessBlockRequest 请求对象
+     * @return SetBucketPublicAccessBlockResponse
+     */
+    public SetBucketPublicAccessBlockResponse setBucketPublicAccessBlock(SetBucketPublicAccessBlockRequest request) {
+        return hcClient.syncInvokeHttp(request, ObsMeta.setBucketPublicAccessBlock);
+    }
+
+    /**
+     * 设置桶级阻止公共访问配置
+     *
+     * 设置桶级阻止公共访问配置，默认情况下只有桶的所有者可以执行此操作，也可以通过设置桶策略或用户策略授权给其他用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetBucketPublicAccessBlockRequest 请求对象
+     * @return SyncInvoker<SetBucketPublicAccessBlockRequest, SetBucketPublicAccessBlockResponse>
+     */
+    public SyncInvoker<SetBucketPublicAccessBlockRequest, SetBucketPublicAccessBlockResponse> setBucketPublicAccessBlockInvoker(
+        SetBucketPublicAccessBlockRequest request) {
+        return new SyncInvoker<>(request, ObsMeta.setBucketPublicAccessBlock, hcClient);
     }
 
     /**

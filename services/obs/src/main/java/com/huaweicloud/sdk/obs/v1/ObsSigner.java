@@ -81,7 +81,7 @@ public class ObsSigner {
                     "response-content-encoding", "response-content-language", "response-content-type", "response-expires",
                     "restore", "storageClass", "storagePolicy", "storageinfo", "tagging", "torrent", "truncate", "uploadId",
                     "uploads", "versionId", "versioning", "versions", "website", "x-image-process", "x-image-save-bucket",
-                    "x-image-save-object", "x-obs-security-token", "disPolicy"));
+                    "x-image-save-object", "x-obs-security-token", "disPolicy","policyStatus","bucketStatus","publicAccessBlock","object-lock"));
 
     private static final Base64.Encoder BASE64_ENCODER = Base64.getEncoder();
 
@@ -280,7 +280,7 @@ public class ObsSigner {
                 if ("application/xml".equals(contentType)) {
                     contentType = contentType + "; charset=utf-8";
                 }
-                if ("application/json".equals(contentType) && queries.containsKey("disPolicy") && httpMethod.equals("PUT")) {
+                if ("application/json".equals(contentType) && (queries.containsKey("disPolicy")||queries.containsKey("policy")) && httpMethod.equals("PUT")) {
                     contentType = contentType + "; charset=utf-8";
                 }
                 continue;
