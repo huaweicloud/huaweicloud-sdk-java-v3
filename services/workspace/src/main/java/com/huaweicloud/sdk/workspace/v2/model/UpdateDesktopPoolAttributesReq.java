@@ -49,6 +49,11 @@ public class UpdateDesktopPoolAttributesReq {
     private AutoscalePolicy autoscalePolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_reset_policy")
+
+    private UserResetPolicy userResetPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "in_maintenance_mode")
 
     private Boolean inMaintenanceMode;
@@ -99,7 +104,7 @@ public class UpdateDesktopPoolAttributesReq {
     }
 
     /**
-     * 桌面池名称，桌面池名称必须保证唯一。桌面名称只允许输入中文、大写字母、小写字母、数字、中划线，长度范围为1~255。
+     * 桌面池名称，桌面池名称必须保证唯一。桌面名称只允许输入中文、大写字母、小写字母、数字、中划线，长度范围为1~64。
      * @return name
      */
     public String getName() {
@@ -237,6 +242,32 @@ public class UpdateDesktopPoolAttributesReq {
 
     public void setAutoscalePolicy(AutoscalePolicy autoscalePolicy) {
         this.autoscalePolicy = autoscalePolicy;
+    }
+
+    public UpdateDesktopPoolAttributesReq withUserResetPolicy(UserResetPolicy userResetPolicy) {
+        this.userResetPolicy = userResetPolicy;
+        return this;
+    }
+
+    public UpdateDesktopPoolAttributesReq withUserResetPolicy(Consumer<UserResetPolicy> userResetPolicySetter) {
+        if (this.userResetPolicy == null) {
+            this.userResetPolicy = new UserResetPolicy();
+            userResetPolicySetter.accept(this.userResetPolicy);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get userResetPolicy
+     * @return userResetPolicy
+     */
+    public UserResetPolicy getUserResetPolicy() {
+        return userResetPolicy;
+    }
+
+    public void setUserResetPolicy(UserResetPolicy userResetPolicy) {
+        this.userResetPolicy = userResetPolicy;
     }
 
     public UpdateDesktopPoolAttributesReq withInMaintenanceMode(Boolean inMaintenanceMode) {
@@ -463,6 +494,7 @@ public class UpdateDesktopPoolAttributesReq {
             && Objects.equals(this.disconnectedRetentionPeriod, that.disconnectedRetentionPeriod)
             && Objects.equals(this.enableAutoscale, that.enableAutoscale)
             && Objects.equals(this.autoscalePolicy, that.autoscalePolicy)
+            && Objects.equals(this.userResetPolicy, that.userResetPolicy)
             && Objects.equals(this.inMaintenanceMode, that.inMaintenanceMode)
             && Objects.equals(this.desktopNamePolicyId, that.desktopNamePolicyId)
             && Objects.equals(this.availabilityZone, that.availabilityZone)
@@ -481,6 +513,7 @@ public class UpdateDesktopPoolAttributesReq {
             disconnectedRetentionPeriod,
             enableAutoscale,
             autoscalePolicy,
+            userResetPolicy,
             inMaintenanceMode,
             desktopNamePolicyId,
             availabilityZone,
@@ -505,6 +538,7 @@ public class UpdateDesktopPoolAttributesReq {
             .append("\n");
         sb.append("    enableAutoscale: ").append(toIndentedString(enableAutoscale)).append("\n");
         sb.append("    autoscalePolicy: ").append(toIndentedString(autoscalePolicy)).append("\n");
+        sb.append("    userResetPolicy: ").append(toIndentedString(userResetPolicy)).append("\n");
         sb.append("    inMaintenanceMode: ").append(toIndentedString(inMaintenanceMode)).append("\n");
         sb.append("    desktopNamePolicyId: ").append(toIndentedString(desktopNamePolicyId)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");

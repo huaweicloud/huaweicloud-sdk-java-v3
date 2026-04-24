@@ -33,6 +33,8 @@ import com.huaweicloud.sdk.obs.v1.model.GetBucketMetadataRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketMetadataResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketNotificationRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketNotificationResponse;
+import com.huaweicloud.sdk.obs.v1.model.GetBucketObjectLockRequest;
+import com.huaweicloud.sdk.obs.v1.model.GetBucketObjectLockResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketPolicyPublicStatusRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketPolicyPublicStatusResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketPublicAccessBlockRequest;
@@ -75,8 +77,14 @@ import com.huaweicloud.sdk.obs.v1.model.SetBucketPolicyResponse;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketPublicAccessBlockRequest;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketPublicAccessBlockRequestBody;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketPublicAccessBlockResponse;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketVersioningRequest;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketVersioningRequestBody;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketVersioningResponse;
 import com.huaweicloud.sdk.obs.v1.model.SetDisPolicyRequest;
 import com.huaweicloud.sdk.obs.v1.model.SetDisPolicyResponse;
+import com.huaweicloud.sdk.obs.v1.model.SetObjectLockRequest;
+import com.huaweicloud.sdk.obs.v1.model.SetObjectLockRequestBody;
+import com.huaweicloud.sdk.obs.v1.model.SetObjectLockResponse;
 
 import java.time.OffsetDateTime;
 
@@ -1356,6 +1364,79 @@ public class ObsMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(GetBucketNotificationResponse::getDate, GetBucketNotificationResponse::setDate));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetBucketObjectLockRequest, GetBucketObjectLockResponse> getBucketObjectLock =
+        genForGetBucketObjectLock();
+
+    private static HttpRequestDef<GetBucketObjectLockRequest, GetBucketObjectLockResponse> genForGetBucketObjectLock() {
+        // basic
+        HttpRequestDef.Builder<GetBucketObjectLockRequest, GetBucketObjectLockResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetBucketObjectLockRequest.class, GetBucketObjectLockResponse.class)
+                .withName("GetBucketObjectLock")
+                .withUri("/")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bucket_name",
+            LocationType.Cname,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetBucketObjectLockRequest::getBucketName,
+                GetBucketObjectLockRequest::setBucketName));
+        builder.<String>withRequestField("object-lock",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetBucketObjectLockRequest::getObjectLock,
+                GetBucketObjectLockRequest::setObjectLock));
+        builder.<String>withRequestField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetBucketObjectLockRequest::getDate, GetBucketObjectLockRequest::setDate));
+        builder.<String>withRequestField("Host",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetBucketObjectLockRequest::getHost, GetBucketObjectLockRequest::setHost));
+
+        // response
+
+        builder.<String>withResponseField("x-obs-id-2",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetBucketObjectLockResponse::getXObsId2, GetBucketObjectLockResponse::setXObsId2));
+        builder.<String>withResponseField("x-obs-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetBucketObjectLockResponse::getXObsRequestId,
+                GetBucketObjectLockResponse::setXObsRequestId));
+        builder.<String>withResponseField("ETag",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetBucketObjectLockResponse::getEtag, GetBucketObjectLockResponse::setEtag));
+        builder.<String>withResponseField("Connection",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetBucketObjectLockResponse::getConnection,
+                GetBucketObjectLockResponse::setConnection));
+        builder.<String>withResponseField("Content-Length",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetBucketObjectLockResponse::getContentLength,
+                GetBucketObjectLockResponse::setContentLength));
+        builder.<String>withResponseField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetBucketObjectLockResponse::getDate, GetBucketObjectLockResponse::setDate));
         return builder.build();
     }
 
@@ -3039,6 +3120,79 @@ public class ObsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetBucketVersioningRequest, SetBucketVersioningResponse> setBucketVersioning =
+        genForSetBucketVersioning();
+
+    private static HttpRequestDef<SetBucketVersioningRequest, SetBucketVersioningResponse> genForSetBucketVersioning() {
+        // basic
+        HttpRequestDef.Builder<SetBucketVersioningRequest, SetBucketVersioningResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetBucketVersioningRequest.class, SetBucketVersioningResponse.class)
+                .withName("SetBucketVersioning")
+                .withUri("/")
+                .withContentType("application/xml");
+
+        // requests
+        builder.<String>withRequestField("bucket_name",
+            LocationType.Cname,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetBucketVersioningRequest::getBucketName,
+                SetBucketVersioningRequest::setBucketName));
+        builder.<String>withRequestField("versioning",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetBucketVersioningRequest::getVersioning,
+                SetBucketVersioningRequest::setVersioning));
+        builder.<String>withRequestField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetBucketVersioningRequest::getDate, SetBucketVersioningRequest::setDate));
+        builder.<SetBucketVersioningRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetBucketVersioningRequestBody.class),
+            f -> f.withMarshaller(SetBucketVersioningRequest::getBody, SetBucketVersioningRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("x-obs-id-2",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetBucketVersioningResponse::getXObsId2, SetBucketVersioningResponse::setXObsId2));
+        builder.<String>withResponseField("x-obs-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetBucketVersioningResponse::getXObsRequestId,
+                SetBucketVersioningResponse::setXObsRequestId));
+        builder.<String>withResponseField("ETag",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetBucketVersioningResponse::getEtag, SetBucketVersioningResponse::setEtag));
+        builder.<String>withResponseField("Connection",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetBucketVersioningResponse::getConnection,
+                SetBucketVersioningResponse::setConnection));
+        builder.<String>withResponseField("Content-Length",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetBucketVersioningResponse::getContentLength,
+                SetBucketVersioningResponse::setContentLength));
+        builder.<String>withResponseField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetBucketVersioningResponse::getDate, SetBucketVersioningResponse::setDate));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetDisPolicyRequest, SetDisPolicyResponse> setDisPolicy = genForSetDisPolicy();
 
     private static HttpRequestDef<SetDisPolicyRequest, SetDisPolicyResponse> genForSetDisPolicy() {
@@ -3103,6 +3257,84 @@ public class ObsMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(SetDisPolicyResponse::getDate, SetDisPolicyResponse::setDate));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetObjectLockRequest, SetObjectLockResponse> setObjectLock =
+        genForSetObjectLock();
+
+    private static HttpRequestDef<SetObjectLockRequest, SetObjectLockResponse> genForSetObjectLock() {
+        // basic
+        HttpRequestDef.Builder<SetObjectLockRequest, SetObjectLockResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetObjectLockRequest.class, SetObjectLockResponse.class)
+                .withName("SetObjectLock")
+                .withUri("/{object_key}")
+                .withContentType("application/xml");
+
+        // requests
+        builder.<String>withRequestField("object_key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetObjectLockRequest::getObjectKey, SetObjectLockRequest::setObjectKey));
+        builder.<String>withRequestField("bucket_name",
+            LocationType.Cname,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetObjectLockRequest::getBucketName, SetObjectLockRequest::setBucketName));
+        builder.<String>withRequestField("retention",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetObjectLockRequest::getRetention, SetObjectLockRequest::setRetention));
+        builder.<String>withRequestField("versionId",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetObjectLockRequest::getVersionId, SetObjectLockRequest::setVersionId));
+        builder.<String>withRequestField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetObjectLockRequest::getDate, SetObjectLockRequest::setDate));
+        builder.<SetObjectLockRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetObjectLockRequestBody.class),
+            f -> f.withMarshaller(SetObjectLockRequest::getBody, SetObjectLockRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("x-obs-id-2",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetObjectLockResponse::getXObsId2, SetObjectLockResponse::setXObsId2));
+        builder.<String>withResponseField("x-obs-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetObjectLockResponse::getXObsRequestId, SetObjectLockResponse::setXObsRequestId));
+        builder.<String>withResponseField("ETag",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetObjectLockResponse::getEtag, SetObjectLockResponse::setEtag));
+        builder.<String>withResponseField("Connection",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetObjectLockResponse::getConnection, SetObjectLockResponse::setConnection));
+        builder.<String>withResponseField("Content-Length",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetObjectLockResponse::getContentLength, SetObjectLockResponse::setContentLength));
+        builder.<String>withResponseField("Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SetObjectLockResponse::getDate, SetObjectLockResponse::setDate));
         return builder.build();
     }
 

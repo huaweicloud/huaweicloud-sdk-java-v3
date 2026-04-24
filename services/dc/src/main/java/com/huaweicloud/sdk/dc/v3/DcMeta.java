@@ -1669,12 +1669,6 @@ public class DcMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("vif_peer_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVifPeerDetectionsRequest::getVifPeerId,
-                ListVifPeerDetectionsRequest::setVifPeerId));
         builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

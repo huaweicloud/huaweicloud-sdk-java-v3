@@ -143,6 +143,11 @@ public class Node {
          */
         public static final TypeEnum DUMMY = new TypeEnum("Dummy");
 
+        /**
+         * Enum MRSSPARKPYTHON for value: "MRSSparkPython"
+         */
+        public static final TypeEnum MRSSPARKPYTHON = new TypeEnum("MRSSparkPython");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -170,6 +175,7 @@ public class Node {
             map.put("DataMigration", DATAMIGRATION);
             map.put("OneclickCDC", ONECLICKCDC);
             map.put("Dummy", DUMMY);
+            map.put("MRSSparkPython", MRSSPARKPYTHON);
             return Collections.unmodifiableMap(map);
         }
 

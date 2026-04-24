@@ -124,6 +124,11 @@ public class UpdateNatMappingConfig {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "assist_auth_enabled")
+
+    private Boolean assistAuthEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<Tag> tags = null;
@@ -249,6 +254,23 @@ public class UpdateNatMappingConfig {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public UpdateNatMappingConfig withAssistAuthEnabled(Boolean assistAuthEnabled) {
+        this.assistAuthEnabled = assistAuthEnabled;
+        return this;
+    }
+
+    /**
+     * 地址映射的辅助认证的开关
+     * @return assistAuthEnabled
+     */
+    public Boolean getAssistAuthEnabled() {
+        return assistAuthEnabled;
+    }
+
+    public void setAssistAuthEnabled(Boolean assistAuthEnabled) {
+        this.assistAuthEnabled = assistAuthEnabled;
+    }
+
     public UpdateNatMappingConfig withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
@@ -295,13 +317,20 @@ public class UpdateNatMappingConfig {
             && Objects.equals(this.natIp, that.natIp) && Objects.equals(this.natPort, that.natPort)
             && Objects.equals(this.vagIp, that.vagIp) && Objects.equals(this.accessFilterType, that.accessFilterType)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.assistAuthEnabled, that.assistAuthEnabled) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(natMapType, natMapValue, natIp, natPort, vagIp, accessFilterType, enterpriseProjectId, tags);
+        return Objects.hash(natMapType,
+            natMapValue,
+            natIp,
+            natPort,
+            vagIp,
+            accessFilterType,
+            enterpriseProjectId,
+            assistAuthEnabled,
+            tags);
     }
 
     @Override
@@ -315,6 +344,7 @@ public class UpdateNatMappingConfig {
         sb.append("    vagIp: ").append(toIndentedString(vagIp)).append("\n");
         sb.append("    accessFilterType: ").append(toIndentedString(accessFilterType)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    assistAuthEnabled: ").append(toIndentedString(assistAuthEnabled)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();

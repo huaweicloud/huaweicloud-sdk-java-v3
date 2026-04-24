@@ -52,7 +52,7 @@ public class UserGroupInfo {
     private String realmId;
 
     /**
-     * 用户组类型。 * AD： AD域用户组 * LOCAL： 本地liteAs用户组
+     * 用户组类型。 * AD： AD域用户组 * LOCAL： 本地liteAs用户组 * UOS： UOS域用户组
      */
     public static final class PlatformTypeEnum {
 
@@ -66,12 +66,18 @@ public class UserGroupInfo {
          */
         public static final PlatformTypeEnum LOCAL = new PlatformTypeEnum("LOCAL");
 
+        /**
+         * Enum UOS for value: "UOS"
+         */
+        public static final PlatformTypeEnum UOS = new PlatformTypeEnum("UOS");
+
         private static final Map<String, PlatformTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, PlatformTypeEnum> createStaticFields() {
             Map<String, PlatformTypeEnum> map = new HashMap<>();
             map.put("AD", AD);
             map.put("LOCAL", LOCAL);
+            map.put("UOS", UOS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -280,7 +286,7 @@ public class UserGroupInfo {
     }
 
     /**
-     * 用户组类型。 * AD： AD域用户组 * LOCAL： 本地liteAs用户组
+     * 用户组类型。 * AD： AD域用户组 * LOCAL： 本地liteAs用户组 * UOS： UOS域用户组
      * @return platformType
      */
     public PlatformTypeEnum getPlatformType() {

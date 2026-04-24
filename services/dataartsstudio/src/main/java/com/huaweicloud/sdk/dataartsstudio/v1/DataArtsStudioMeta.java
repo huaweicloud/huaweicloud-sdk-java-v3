@@ -151,6 +151,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateAppRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateAppResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateApproverRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateApproverResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateBaselineRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateBizMetricRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateBizMetricResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateCatalogRequest;
@@ -171,6 +172,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignDimensionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignDimensionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDirectoryResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryBaselineRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryBaselineResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryEnvRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryEnvResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryJobRequest;
@@ -478,10 +481,14 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryReleasePackagesReq
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryReleasePackagesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryScriptsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryScriptsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactorySearchBaselineInstancesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactorySearchBaselineInstancesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskCompletionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskCompletionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskOverviewRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskOverviewResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryWorkspacesApprovalRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryWorkspacesApprovalResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstanceListRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstanceListResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstancesRequest;
@@ -505,6 +512,10 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListRelationsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListReleasePackagesRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSchemasRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSchemasResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSearchFactoryBaselinesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSearchFactoryBaselinesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSearchFactoryEventsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSearchFactoryEventsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityApprovalsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityApprovalsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityAssignedQueuesRequest;
@@ -2781,6 +2792,47 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DirectoryVO.class),
             f -> f.withMarshaller(CreateDirectoryRequest::getBody, CreateDirectoryRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateFactoryBaselineRequest, CreateFactoryBaselineResponse> createFactoryBaseline =
+        genForCreateFactoryBaseline();
+
+    private static HttpRequestDef<CreateFactoryBaselineRequest, CreateFactoryBaselineResponse> genForCreateFactoryBaseline() {
+        // basic
+        HttpRequestDef.Builder<CreateFactoryBaselineRequest, CreateFactoryBaselineResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateFactoryBaselineRequest.class, CreateFactoryBaselineResponse.class)
+            .withName("CreateFactoryBaseline")
+            .withUri("/v2/{project_id}/factory/aiops/{instance_id}/baseline")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFactoryBaselineRequest::getInstanceId,
+                CreateFactoryBaselineRequest::setInstanceId));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFactoryBaselineRequest::getXProjectId,
+                CreateFactoryBaselineRequest::setXProjectId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFactoryBaselineRequest::getWorkspace,
+                CreateFactoryBaselineRequest::setWorkspace));
+        builder.<CreateBaselineRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateBaselineRequest.class),
+            f -> f.withMarshaller(CreateFactoryBaselineRequest::getBody, CreateFactoryBaselineRequest::setBody));
 
         // response
 
@@ -8100,6 +8152,117 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListFactorySearchBaselineInstancesRequest, ListFactorySearchBaselineInstancesResponse> listFactorySearchBaselineInstances =
+        genForListFactorySearchBaselineInstances();
+
+    private static HttpRequestDef<ListFactorySearchBaselineInstancesRequest, ListFactorySearchBaselineInstancesResponse> genForListFactorySearchBaselineInstances() {
+        // basic
+        HttpRequestDef.Builder<ListFactorySearchBaselineInstancesRequest, ListFactorySearchBaselineInstancesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListFactorySearchBaselineInstancesRequest.class,
+                    ListFactorySearchBaselineInstancesResponse.class)
+                .withName("ListFactorySearchBaselineInstances")
+                .withUri("/v2/{project_id}/factory/aiops/{instance_id}/baselineinstance")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactorySearchBaselineInstancesRequest::getInstanceId,
+                ListFactorySearchBaselineInstancesRequest::setInstanceId));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactorySearchBaselineInstancesRequest::getWorkspaceId,
+                ListFactorySearchBaselineInstancesRequest::setWorkspaceId));
+        builder.<String>withRequestField("baseline_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactorySearchBaselineInstancesRequest::getBaselineName,
+                ListFactorySearchBaselineInstancesRequest::setBaselineName));
+        builder.<String>withRequestField("owner_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactorySearchBaselineInstancesRequest::getOwnerName,
+                ListFactorySearchBaselineInstancesRequest::setOwnerName));
+        builder.<ListFactorySearchBaselineInstancesRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFactorySearchBaselineInstancesRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListFactorySearchBaselineInstancesRequest::getType,
+                ListFactorySearchBaselineInstancesRequest::setType));
+        builder.<Integer>withRequestField("priority",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFactorySearchBaselineInstancesRequest::getPriority,
+                ListFactorySearchBaselineInstancesRequest::setPriority));
+        builder.<ListFactorySearchBaselineInstancesRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFactorySearchBaselineInstancesRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListFactorySearchBaselineInstancesRequest::getStatus,
+                ListFactorySearchBaselineInstancesRequest::setStatus));
+        builder.<ListFactorySearchBaselineInstancesRequest.FinishStatusEnum>withRequestField("finish_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFactorySearchBaselineInstancesRequest.FinishStatusEnum.class),
+            f -> f.withMarshaller(ListFactorySearchBaselineInstancesRequest::getFinishStatus,
+                ListFactorySearchBaselineInstancesRequest::setFinishStatus));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFactorySearchBaselineInstancesRequest::getStartTime,
+                ListFactorySearchBaselineInstancesRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFactorySearchBaselineInstancesRequest::getEndTime,
+                ListFactorySearchBaselineInstancesRequest::setEndTime));
+        builder.<String>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactorySearchBaselineInstancesRequest::getOrderBy,
+                ListFactorySearchBaselineInstancesRequest::setOrderBy));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFactorySearchBaselineInstancesRequest::getOffset,
+                ListFactorySearchBaselineInstancesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFactorySearchBaselineInstancesRequest::getLimit,
+                ListFactorySearchBaselineInstancesRequest::setLimit));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactorySearchBaselineInstancesRequest::getXProjectId,
+                ListFactorySearchBaselineInstancesRequest::setXProjectId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactorySearchBaselineInstancesRequest::getWorkspace,
+                ListFactorySearchBaselineInstancesRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListFactoryTaskCompletionRequest, ListFactoryTaskCompletionResponse> listFactoryTaskCompletion =
         genForListFactoryTaskCompletion();
 
@@ -8162,6 +8325,105 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFactoryTaskOverviewRequest::getWorkspace,
                 ListFactoryTaskOverviewRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFactoryWorkspacesApprovalRequest, ListFactoryWorkspacesApprovalResponse> listFactoryWorkspacesApproval =
+        genForListFactoryWorkspacesApproval();
+
+    private static HttpRequestDef<ListFactoryWorkspacesApprovalRequest, ListFactoryWorkspacesApprovalResponse> genForListFactoryWorkspacesApproval() {
+        // basic
+        HttpRequestDef.Builder<ListFactoryWorkspacesApprovalRequest, ListFactoryWorkspacesApprovalResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListFactoryWorkspacesApprovalRequest.class,
+                    ListFactoryWorkspacesApprovalResponse.class)
+                .withName("ListFactoryWorkspacesApproval")
+                .withUri("/v2/{project_id}/factory/workspaces/approval")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("begin_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFactoryWorkspacesApprovalRequest::getBeginTime,
+                ListFactoryWorkspacesApprovalRequest::setBeginTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFactoryWorkspacesApprovalRequest::getEndTime,
+                ListFactoryWorkspacesApprovalRequest::setEndTime));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryWorkspacesApprovalRequest::getStatus,
+                ListFactoryWorkspacesApprovalRequest::setStatus));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryWorkspacesApprovalRequest::getType,
+                ListFactoryWorkspacesApprovalRequest::setType));
+        builder.<String>withRequestField("apply_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryWorkspacesApprovalRequest::getApplyId,
+                ListFactoryWorkspacesApprovalRequest::setApplyId));
+        builder.<String>withRequestField("approver_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryWorkspacesApprovalRequest::getApproverName,
+                ListFactoryWorkspacesApprovalRequest::setApproverName));
+        builder.<String>withRequestField("create_user",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryWorkspacesApprovalRequest::getCreateUser,
+                ListFactoryWorkspacesApprovalRequest::setCreateUser));
+        builder.<String>withRequestField("object_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryWorkspacesApprovalRequest::getObjectName,
+                ListFactoryWorkspacesApprovalRequest::setObjectName));
+        builder.<String>withRequestField("object_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryWorkspacesApprovalRequest::getObjectType,
+                ListFactoryWorkspacesApprovalRequest::setObjectType));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFactoryWorkspacesApprovalRequest::getOffset,
+                ListFactoryWorkspacesApprovalRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFactoryWorkspacesApprovalRequest::getLimit,
+                ListFactoryWorkspacesApprovalRequest::setLimit));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryWorkspacesApprovalRequest::getWorkspace,
+                ListFactoryWorkspacesApprovalRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryWorkspacesApprovalRequest::getXProjectId,
+                ListFactoryWorkspacesApprovalRequest::setXProjectId));
 
         // response
 
@@ -8682,6 +8944,192 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSchemasRequest::getWorkspace, ListSchemasRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSearchFactoryBaselinesRequest, ListSearchFactoryBaselinesResponse> listSearchFactoryBaselines =
+        genForListSearchFactoryBaselines();
+
+    private static HttpRequestDef<ListSearchFactoryBaselinesRequest, ListSearchFactoryBaselinesResponse> genForListSearchFactoryBaselines() {
+        // basic
+        HttpRequestDef.Builder<ListSearchFactoryBaselinesRequest, ListSearchFactoryBaselinesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSearchFactoryBaselinesRequest.class,
+                    ListSearchFactoryBaselinesResponse.class)
+                .withName("ListSearchFactoryBaselines")
+                .withUri("/v2/{project_id}/factory/aiops/{instance_id}/baseline")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSearchFactoryBaselinesRequest::getInstanceId,
+                ListSearchFactoryBaselinesRequest::setInstanceId));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSearchFactoryBaselinesRequest::getWorkspaceId,
+                ListSearchFactoryBaselinesRequest::setWorkspaceId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSearchFactoryBaselinesRequest::getName,
+                ListSearchFactoryBaselinesRequest::setName));
+        builder.<String>withRequestField("owner_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSearchFactoryBaselinesRequest::getOwnerName,
+                ListSearchFactoryBaselinesRequest::setOwnerName));
+        builder.<Integer>withRequestField("priority",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSearchFactoryBaselinesRequest::getPriority,
+                ListSearchFactoryBaselinesRequest::setPriority));
+        builder.<String>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSearchFactoryBaselinesRequest::getOrderBy,
+                ListSearchFactoryBaselinesRequest::setOrderBy));
+        builder.<Boolean>withRequestField("enable",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListSearchFactoryBaselinesRequest::getEnable,
+                ListSearchFactoryBaselinesRequest::setEnable));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSearchFactoryBaselinesRequest::getOffset,
+                ListSearchFactoryBaselinesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSearchFactoryBaselinesRequest::getLimit,
+                ListSearchFactoryBaselinesRequest::setLimit));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSearchFactoryBaselinesRequest::getXProjectId,
+                ListSearchFactoryBaselinesRequest::setXProjectId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSearchFactoryBaselinesRequest::getWorkspace,
+                ListSearchFactoryBaselinesRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSearchFactoryEventsRequest, ListSearchFactoryEventsResponse> listSearchFactoryEvents =
+        genForListSearchFactoryEvents();
+
+    private static HttpRequestDef<ListSearchFactoryEventsRequest, ListSearchFactoryEventsResponse> genForListSearchFactoryEvents() {
+        // basic
+        HttpRequestDef.Builder<ListSearchFactoryEventsRequest, ListSearchFactoryEventsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSearchFactoryEventsRequest.class, ListSearchFactoryEventsResponse.class)
+            .withName("ListSearchFactoryEvents")
+            .withUri("/v2/{project_id}/factory/aiops/{instance_id}/event")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSearchFactoryEventsRequest::getInstanceId,
+                ListSearchFactoryEventsRequest::setInstanceId));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSearchFactoryEventsRequest::getWorkspaceId,
+                ListSearchFactoryEventsRequest::setWorkspaceId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSearchFactoryEventsRequest::getName, ListSearchFactoryEventsRequest::setName));
+        builder.<String>withRequestField("task_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSearchFactoryEventsRequest::getTaskName,
+                ListSearchFactoryEventsRequest::setTaskName));
+        builder.<String>withRequestField("owner_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSearchFactoryEventsRequest::getOwnerName,
+                ListSearchFactoryEventsRequest::setOwnerName));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSearchFactoryEventsRequest::getType, ListSearchFactoryEventsRequest::setType));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSearchFactoryEventsRequest::getStatus,
+                ListSearchFactoryEventsRequest::setStatus));
+        builder.<String>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSearchFactoryEventsRequest::getOrderBy,
+                ListSearchFactoryEventsRequest::setOrderBy));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSearchFactoryEventsRequest::getStartTime,
+                ListSearchFactoryEventsRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSearchFactoryEventsRequest::getEndTime,
+                ListSearchFactoryEventsRequest::setEndTime));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSearchFactoryEventsRequest::getOffset,
+                ListSearchFactoryEventsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSearchFactoryEventsRequest::getLimit, ListSearchFactoryEventsRequest::setLimit));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSearchFactoryEventsRequest::getXProjectId,
+                ListSearchFactoryEventsRequest::setXProjectId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSearchFactoryEventsRequest::getWorkspace,
+                ListSearchFactoryEventsRequest::setWorkspace));
 
         // response
 
@@ -13808,6 +14256,16 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceResultRequest::getInstanceId, ShowInstanceResultRequest::setInstanceId));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowInstanceResultRequest::getLimit, ShowInstanceResultRequest::setLimit));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowInstanceResultRequest::getOffset, ShowInstanceResultRequest::setOffset));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,

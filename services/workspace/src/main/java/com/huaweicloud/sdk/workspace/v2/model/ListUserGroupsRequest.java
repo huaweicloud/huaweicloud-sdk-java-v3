@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.workspace.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -24,6 +27,16 @@ public class ListUserGroupsRequest {
     @JsonProperty(value = "keyword")
 
     private String keyword;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain")
+
+    private String domain;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "platform_type")
+
+    private List<String> platformType = null;
 
     public ListUserGroupsRequest withLimit(String limit) {
         this.limit = limit;
@@ -76,6 +89,56 @@ public class ListUserGroupsRequest {
         this.keyword = keyword;
     }
 
+    public ListUserGroupsRequest withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    /**
+     * 根据用户组的域名进行过滤。
+     * @return domain
+     */
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    public ListUserGroupsRequest withPlatformType(List<String> platformType) {
+        this.platformType = platformType;
+        return this;
+    }
+
+    public ListUserGroupsRequest addPlatformTypeItem(String platformTypeItem) {
+        if (this.platformType == null) {
+            this.platformType = new ArrayList<>();
+        }
+        this.platformType.add(platformTypeItem);
+        return this;
+    }
+
+    public ListUserGroupsRequest withPlatformType(Consumer<List<String>> platformTypeSetter) {
+        if (this.platformType == null) {
+            this.platformType = new ArrayList<>();
+        }
+        platformTypeSetter.accept(this.platformType);
+        return this;
+    }
+
+    /**
+     * 用户类型。 * AD： AD域用户 * LOCAL： 本地liteAs用户 * UOS： UOS域用户
+     * @return platformType
+     */
+    public List<String> getPlatformType() {
+        return platformType;
+    }
+
+    public void setPlatformType(List<String> platformType) {
+        this.platformType = platformType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +149,13 @@ public class ListUserGroupsRequest {
         }
         ListUserGroupsRequest that = (ListUserGroupsRequest) obj;
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.keyword, that.keyword);
+            && Objects.equals(this.keyword, that.keyword) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.platformType, that.platformType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, offset, keyword);
+        return Objects.hash(limit, offset, keyword, domain, platformType);
     }
 
     @Override
@@ -101,6 +165,8 @@ public class ListUserGroupsRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    keyword: ").append(toIndentedString(keyword)).append("\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
+        sb.append("    platformType: ").append(toIndentedString(platformType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

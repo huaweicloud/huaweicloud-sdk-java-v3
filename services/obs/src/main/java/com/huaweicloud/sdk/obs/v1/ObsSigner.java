@@ -74,14 +74,15 @@ public class ObsSigner {
     private static final String FILE = "file";
 
     private static final List<String> SUB_RESOURCES = Collections.unmodifiableList(
-            Arrays.asList("CDNNotifyConfiguration", "acl", "append", "attname", "backtosource", "cors", "customdomain",
-                    "delete", "deletebucket", "directcoldaccess", "encryption", "inventory", "length", "lifecycle", "location",
-                    "logging", "metadata", "modify", "name", "notification", "orchestration", "partNumber", "policy",
-                    "position", "quota", "rename", "replication", "response-cache-control", "response-content-disposition",
-                    "response-content-encoding", "response-content-language", "response-content-type", "response-expires",
-                    "restore", "storageClass", "storagePolicy", "storageinfo", "tagging", "torrent", "truncate", "uploadId",
-                    "uploads", "versionId", "versioning", "versions", "website", "x-image-process", "x-image-save-bucket",
-                    "x-image-save-object", "x-obs-security-token", "disPolicy","policyStatus","bucketStatus","publicAccessBlock","object-lock"));
+        Arrays.asList("CDNNotifyConfiguration", "acl", "append", "attname", "backtosource", "cors", "customdomain",
+            "delete", "deletebucket", "directcoldaccess", "encryption", "inventory", "length", "lifecycle", "location",
+            "logging", "metadata", "modify", "name", "notification", "orchestration", "partNumber", "policy",
+            "position", "quota", "rename", "replication", "response-cache-control", "response-content-disposition",
+            "response-content-encoding", "response-content-language", "response-content-type", "response-expires",
+            "restore", "storageClass", "storagePolicy", "storageinfo", "tagging", "torrent", "truncate", "uploadId",
+            "uploads", "versionId", "versioning", "versions", "website", "x-image-process", "x-image-save-bucket",
+            "x-image-save-object", "x-obs-security-token", "disPolicy", "policyStatus", "bucketStatus",
+            "publicAccessBlock", "object-lock", "retention"));
 
     private static final Base64.Encoder BASE64_ENCODER = Base64.getEncoder();
 

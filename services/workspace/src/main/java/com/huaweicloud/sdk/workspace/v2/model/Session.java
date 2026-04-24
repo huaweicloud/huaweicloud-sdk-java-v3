@@ -36,6 +36,11 @@ public class Session {
 
     private String autoLockEndTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_lock_screen_on_disconnect")
+
+    private Boolean isLockScreenOnDisconnect;
+
     public Session withVdi(Vdi vdi) {
         this.vdi = vdi;
         return this;
@@ -130,6 +135,23 @@ public class Session {
         this.autoLockEndTime = autoLockEndTime;
     }
 
+    public Session withIsLockScreenOnDisconnect(Boolean isLockScreenOnDisconnect) {
+        this.isLockScreenOnDisconnect = isLockScreenOnDisconnect;
+        return this;
+    }
+
+    /**
+     * 是否断连锁屏。
+     * @return isLockScreenOnDisconnect
+     */
+    public Boolean getIsLockScreenOnDisconnect() {
+        return isLockScreenOnDisconnect;
+    }
+
+    public void setIsLockScreenOnDisconnect(Boolean isLockScreenOnDisconnect) {
+        this.isLockScreenOnDisconnect = isLockScreenOnDisconnect;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -142,12 +164,18 @@ public class Session {
         return Objects.equals(this.vdi, that.vdi) && Objects.equals(this.selfHelpConsole, that.selfHelpConsole)
             && Objects.equals(this.disconnectOnLockFlag, that.disconnectOnLockFlag)
             && Objects.equals(this.autoLockStartTime, that.autoLockStartTime)
-            && Objects.equals(this.autoLockEndTime, that.autoLockEndTime);
+            && Objects.equals(this.autoLockEndTime, that.autoLockEndTime)
+            && Objects.equals(this.isLockScreenOnDisconnect, that.isLockScreenOnDisconnect);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(vdi, selfHelpConsole, disconnectOnLockFlag, autoLockStartTime, autoLockEndTime);
+        return Objects.hash(vdi,
+            selfHelpConsole,
+            disconnectOnLockFlag,
+            autoLockStartTime,
+            autoLockEndTime,
+            isLockScreenOnDisconnect);
     }
 
     @Override
@@ -159,6 +187,7 @@ public class Session {
         sb.append("    disconnectOnLockFlag: ").append(toIndentedString(disconnectOnLockFlag)).append("\n");
         sb.append("    autoLockStartTime: ").append(toIndentedString(autoLockStartTime)).append("\n");
         sb.append("    autoLockEndTime: ").append(toIndentedString(autoLockEndTime)).append("\n");
+        sb.append("    isLockScreenOnDisconnect: ").append(toIndentedString(isLockScreenOnDisconnect)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.drs.v5.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -38,10 +43,80 @@ public class ModifyComparePolicyReq {
 
     private List<String> compareType = null;
 
+    /**
+     * 对比策略： - normal：普通对比。 - manyToOne：多对一对比。
+     */
+    public static final class ComparePolicyEnum {
+
+        /**
+         * Enum NORMAL for value: "normal"
+         */
+        public static final ComparePolicyEnum NORMAL = new ComparePolicyEnum("normal");
+
+        /**
+         * Enum MANYTOONE for value: "manyToOne"
+         */
+        public static final ComparePolicyEnum MANYTOONE = new ComparePolicyEnum("manyToOne");
+
+        private static final Map<String, ComparePolicyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ComparePolicyEnum> createStaticFields() {
+            Map<String, ComparePolicyEnum> map = new HashMap<>();
+            map.put("normal", NORMAL);
+            map.put("manyToOne", MANYTOONE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ComparePolicyEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ComparePolicyEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ComparePolicyEnum(value));
+        }
+
+        public static ComparePolicyEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ComparePolicyEnum) {
+                return this.value.equals(((ComparePolicyEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compare_policy")
 
-    private String comparePolicy;
+    private ComparePolicyEnum comparePolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "interval_hour")
@@ -149,7 +224,7 @@ public class ModifyComparePolicyReq {
         this.compareType = compareType;
     }
 
-    public ModifyComparePolicyReq withComparePolicy(String comparePolicy) {
+    public ModifyComparePolicyReq withComparePolicy(ComparePolicyEnum comparePolicy) {
         this.comparePolicy = comparePolicy;
         return this;
     }
@@ -158,11 +233,11 @@ public class ModifyComparePolicyReq {
      * 对比策略： - normal：普通对比。 - manyToOne：多对一对比。
      * @return comparePolicy
      */
-    public String getComparePolicy() {
+    public ComparePolicyEnum getComparePolicy() {
         return comparePolicy;
     }
 
-    public void setComparePolicy(String comparePolicy) {
+    public void setComparePolicy(ComparePolicyEnum comparePolicy) {
         this.comparePolicy = comparePolicy;
     }
 

@@ -106,6 +106,16 @@ public class ShowScreenRecordResponse extends SdkResponse {
 
     private Integer duration;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "upload_type")
+
+    private String uploadType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "site_type")
+
+    private String siteType;
+
     public ShowScreenRecordResponse withId(String id) {
         this.id = id;
         return this;
@@ -429,6 +439,40 @@ public class ShowScreenRecordResponse extends SdkResponse {
         this.duration = duration;
     }
 
+    public ShowScreenRecordResponse withUploadType(String uploadType) {
+        this.uploadType = uploadType;
+        return this;
+    }
+
+    /**
+     * 上传类型。
+     * @return uploadType
+     */
+    public String getUploadType() {
+        return uploadType;
+    }
+
+    public void setUploadType(String uploadType) {
+        this.uploadType = uploadType;
+    }
+
+    public ShowScreenRecordResponse withSiteType(String siteType) {
+        this.siteType = siteType;
+        return this;
+    }
+
+    /**
+     * 站点类型。
+     * @return siteType
+     */
+    public String getSiteType() {
+        return siteType;
+    }
+
+    public void setSiteType(String siteType) {
+        this.siteType = siteType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -449,7 +493,8 @@ public class ShowScreenRecordResponse extends SdkResponse {
             && Objects.equals(this.eventFilename, that.eventFilename)
             && Objects.equals(this.eventFileSha256, that.eventFileSha256)
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.duration, that.duration);
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.uploadType, that.uploadType) && Objects.equals(this.siteType, that.siteType);
     }
 
     @Override
@@ -472,7 +517,9 @@ public class ShowScreenRecordResponse extends SdkResponse {
             startTime,
             endTime,
             updateTime,
-            duration);
+            duration,
+            uploadType,
+            siteType);
     }
 
     @Override
@@ -498,6 +545,8 @@ public class ShowScreenRecordResponse extends SdkResponse {
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+        sb.append("    uploadType: ").append(toIndentedString(uploadType)).append("\n");
+        sb.append("    siteType: ").append(toIndentedString(siteType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

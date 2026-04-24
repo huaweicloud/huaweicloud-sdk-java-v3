@@ -21,6 +21,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchSetBackupPolicyRequ
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchSetBackupPolicyResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchShowUpgradeCandidateVersionsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchShowUpgradeCandidateVersionsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindDNatRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindDNatResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindLtsConfigRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindLtsConfigResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CancelScheduleTaskRequest;
@@ -155,6 +157,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListConfigurationsDiffRe
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListConfigurationsDiffResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListConfigurationsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListConfigurationsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDNatInfoRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDNatInfoResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseInstancesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseInstancesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseRolesRequest;
@@ -792,6 +796,34 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<BatchShowUpgradeCandidateVersionsRequest, BatchShowUpgradeCandidateVersionsResponse> batchShowUpgradeCandidateVersionsAsyncInvoker(
         BatchShowUpgradeCandidateVersionsRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.batchShowUpgradeCandidateVersions, hcClient);
+    }
+
+    /**
+     * 绑定/解绑NAT网关
+     *
+     * 绑定/解绑NAT网关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindDNatRequest 请求对象
+     * @return CompletableFuture<BindDNatResponse>
+     */
+    public CompletableFuture<BindDNatResponse> bindDNatAsync(BindDNatRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.bindDNat);
+    }
+
+    /**
+     * 绑定/解绑NAT网关
+     *
+     * 绑定/解绑NAT网关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindDNatRequest 请求对象
+     * @return AsyncInvoker<BindDNatRequest, BindDNatResponse>
+     */
+    public AsyncInvoker<BindDNatRequest, BindDNatResponse> bindDNatAsyncInvoker(BindDNatRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.bindDNat, hcClient);
     }
 
     /**
@@ -2320,6 +2352,35 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<ListConfigurationsDiffRequest, ListConfigurationsDiffResponse> listConfigurationsDiffAsyncInvoker(
         ListConfigurationsDiffRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listConfigurationsDiff, hcClient);
+    }
+
+    /**
+     * 查询已绑定的NAT网关列表
+     *
+     * 查询已绑定的NAT网关列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDNatInfoRequest 请求对象
+     * @return CompletableFuture<ListDNatInfoResponse>
+     */
+    public CompletableFuture<ListDNatInfoResponse> listDNatInfoAsync(ListDNatInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listDNatInfo);
+    }
+
+    /**
+     * 查询已绑定的NAT网关列表
+     *
+     * 查询已绑定的NAT网关列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDNatInfoRequest 请求对象
+     * @return AsyncInvoker<ListDNatInfoRequest, ListDNatInfoResponse>
+     */
+    public AsyncInvoker<ListDNatInfoRequest, ListDNatInfoResponse> listDNatInfoAsyncInvoker(
+        ListDNatInfoRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listDNatInfo, hcClient);
     }
 
     /**

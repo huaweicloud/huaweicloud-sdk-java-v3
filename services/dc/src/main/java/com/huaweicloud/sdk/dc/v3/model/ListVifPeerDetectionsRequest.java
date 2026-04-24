@@ -118,11 +118,6 @@ public class ListVifPeerDetectionsRequest {
 
     private Boolean pageReverse;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "vif_peer_id")
-
-    private String vifPeerId;
-
     public ListVifPeerDetectionsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -245,23 +240,6 @@ public class ListVifPeerDetectionsRequest {
         this.pageReverse = pageReverse;
     }
 
-    public ListVifPeerDetectionsRequest withVifPeerId(String vifPeerId) {
-        this.vifPeerId = vifPeerId;
-        return this;
-    }
-
-    /**
-     * 虚拟接口对等体ID
-     * @return vifPeerId
-     */
-    public String getVifPeerId() {
-        return vifPeerId;
-    }
-
-    public void setVifPeerId(String vifPeerId) {
-        this.vifPeerId = vifPeerId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -273,13 +251,12 @@ public class ListVifPeerDetectionsRequest {
         ListVifPeerDetectionsRequest that = (ListVifPeerDetectionsRequest) obj;
         return Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.pageReverse, that.pageReverse)
-            && Objects.equals(this.vifPeerId, that.vifPeerId);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.pageReverse, that.pageReverse);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(marker, limit, sortKey, sortDir, offset, pageReverse, vifPeerId);
+        return Objects.hash(marker, limit, sortKey, sortDir, offset, pageReverse);
     }
 
     @Override
@@ -292,7 +269,6 @@ public class ListVifPeerDetectionsRequest {
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    pageReverse: ").append(toIndentedString(pageReverse)).append("\n");
-        sb.append("    vifPeerId: ").append(toIndentedString(vifPeerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -444,6 +444,16 @@ public class DesktopDetailInfo {
 
     private Boolean isFreeze;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isolated")
+
+    private Boolean isolated;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain")
+
+    private String domain;
+
     public DesktopDetailInfo withDesktopId(String desktopId) {
         this.desktopId = desktopId;
         return this;
@@ -700,7 +710,7 @@ public class DesktopDetailInfo {
     }
 
     /**
-     * 桌面元数据。   - image_name 创建桌面的镜像名称。 - bill_resource_id 镜像计费资源ID。 - metering.image_id 镜像ID。 - metering.resourcespeccode 桌面资源编码。 - metering.resourcetype 桌面资源类型。 - os_bit 操作系统位数：32或64。 - os_type 操作系统类型：Linux、Windows或Others。 - desktop_os_version 操作系统版本。
+     * 桌面元数据。   - image_name 创建桌面的镜像名称。 - image_cloud_service_type 镜像云服务类型。 - image_resource_type 镜像资源类型。 - image_spec_code 镜像规格编码。 - image_bill_resource_id 镜像计费资源ID。 - metering.image_id 镜像ID。 - metering.resourcespeccode 桌面资源编码。 - metering.resourcetype 桌面资源类型。 - os_bit 操作系统位数：32或64。 - os_type 操作系统类型：Linux、Windows或Others。 - desktop_os_version 操作系统版本。
      * @return metadata
      */
     public Map<String, String> getMetadata() {
@@ -1422,6 +1432,40 @@ public class DesktopDetailInfo {
         this.isFreeze = isFreeze;
     }
 
+    public DesktopDetailInfo withIsolated(Boolean isolated) {
+        this.isolated = isolated;
+        return this;
+    }
+
+    /**
+     * 动态池桌面隔离状态，false表示未隔离，true表示已隔离。
+     * @return isolated
+     */
+    public Boolean getIsolated() {
+        return isolated;
+    }
+
+    public void setIsolated(Boolean isolated) {
+        this.isolated = isolated;
+    }
+
+    public DesktopDetailInfo withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    /**
+     * 桌面分配的域。
+     * @return domain
+     */
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1461,7 +1505,8 @@ public class DesktopDetailInfo {
             && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.billResourceId, that.billResourceId)
             && Objects.equals(this.process, that.process) && Objects.equals(this.rootResourceId, that.rootResourceId)
             && Objects.equals(this.hourPackageInfo, that.hourPackageInfo)
-            && Objects.equals(this.isFreeze, that.isFreeze);
+            && Objects.equals(this.isFreeze, that.isFreeze) && Objects.equals(this.isolated, that.isolated)
+            && Objects.equals(this.domain, that.domain);
     }
 
     @Override
@@ -1511,7 +1556,9 @@ public class DesktopDetailInfo {
             process,
             rootResourceId,
             hourPackageInfo,
-            isFreeze);
+            isFreeze,
+            isolated,
+            domain);
     }
 
     @Override
@@ -1564,6 +1611,8 @@ public class DesktopDetailInfo {
         sb.append("    rootResourceId: ").append(toIndentedString(rootResourceId)).append("\n");
         sb.append("    hourPackageInfo: ").append(toIndentedString(hourPackageInfo)).append("\n");
         sb.append("    isFreeze: ").append(toIndentedString(isFreeze)).append("\n");
+        sb.append("    isolated: ").append(toIndentedString(isolated)).append("\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -203,6 +203,11 @@ public class CreateDesktopReq {
 
     private Boolean ifMountOldDesktopDisk;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain")
+
+    private String domain;
+
     public CreateDesktopReq withDesktopType(DesktopTypeEnum desktopType) {
         this.desktopType = desktopType;
         return this;
@@ -721,6 +726,23 @@ public class CreateDesktopReq {
         this.ifMountOldDesktopDisk = ifMountOldDesktopDisk;
     }
 
+    public CreateDesktopReq withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    /**
+     * 桌面分配的域。
+     * @return domain
+     */
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -745,7 +767,8 @@ public class CreateDesktopReq {
             && Objects.equals(this.eip, that.eip) && Objects.equals(this.desktopNamePolicyId, that.desktopNamePolicyId)
             && Objects.equals(this.hourPackageProductId, that.hourPackageProductId)
             && Objects.equals(this.hourPackageOfferingId, that.hourPackageOfferingId)
-            && Objects.equals(this.ifMountOldDesktopDisk, that.ifMountOldDesktopDisk);
+            && Objects.equals(this.ifMountOldDesktopDisk, that.ifMountOldDesktopDisk)
+            && Objects.equals(this.domain, that.domain);
     }
 
     @Override
@@ -772,7 +795,8 @@ public class CreateDesktopReq {
             desktopNamePolicyId,
             hourPackageProductId,
             hourPackageOfferingId,
-            ifMountOldDesktopDisk);
+            ifMountOldDesktopDisk,
+            domain);
     }
 
     @Override
@@ -804,6 +828,7 @@ public class CreateDesktopReq {
         sb.append("    hourPackageProductId: ").append(toIndentedString(hourPackageProductId)).append("\n");
         sb.append("    hourPackageOfferingId: ").append(toIndentedString(hourPackageOfferingId)).append("\n");
         sb.append("    ifMountOldDesktopDisk: ").append(toIndentedString(ifMountOldDesktopDisk)).append("\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("}");
         return sb.toString();
     }

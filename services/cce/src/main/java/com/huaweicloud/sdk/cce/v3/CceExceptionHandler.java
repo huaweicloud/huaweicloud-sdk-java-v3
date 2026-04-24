@@ -21,8 +21,16 @@ public class CceExceptionHandler implements ExceptionHandler {
 
         SdkErrorMessage errorMessage = new SdkErrorMessage(httpResponse.getStatusCode());
         errorMessage.setRequestId(httpResponse.getHeader("X-Request-Id"));
-        Map<String, ?> map = JsonUtils.toObject(httpResponse.getBodyAsString(), new TypeReference<Map<String, ?>>() {
-        });
+        Map<String, ?> map;
+        try {
+            map = JsonUtils.toObject(httpResponse.getBodyAsString(), new TypeReference<Map<String, ?>>() {
+            });
+        } catch (Exception e) {
+            // 当响应体不是JSON格式时,直接使用原始响应文本作为错误信息
+            errorMessage.setErrorCode(String.valueOf(httpResponse.getStatusCode()));
+            errorMessage.setErrorMsg(httpResponse.getBodyAsString());
+            throw new ServiceResponseException(httpResponse.getStatusCode(), errorMessage);
+        }
         if (Objects.isNull(map)) {
             errorMessage.setErrorCode(String.valueOf(httpResponse.getStatusCode()));
             errorMessage.setErrorMsg(httpRequest.getBodyAsString());

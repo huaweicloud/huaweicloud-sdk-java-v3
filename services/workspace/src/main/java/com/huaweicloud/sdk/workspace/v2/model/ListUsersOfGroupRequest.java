@@ -113,12 +113,12 @@ public class ListUsersOfGroupRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    private String limit;
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    private String offset;
+    private Integer offset;
 
     public ListUsersOfGroupRequest withUserName(String userName) {
         this.userName = userName;
@@ -205,37 +205,41 @@ public class ListUsersOfGroupRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public ListUsersOfGroupRequest withLimit(String limit) {
+    public ListUsersOfGroupRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
     /**
-     * 用于分页查询，返回桌面数量限制。如果不指定或为0，默认2000，最大2000。
+     * 用于分页查询，返回桌面数量限制。如果不指定或为0，默认2000，最大10000。
+     * minimum: 0
+     * maximum: 10000
      * @return limit
      */
-    public String getLimit() {
+    public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(String limit) {
+    public void setLimit(Integer limit) {
         this.limit = limit;
     }
 
-    public ListUsersOfGroupRequest withOffset(String offset) {
+    public ListUsersOfGroupRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
     /**
      * 用于分页查询，查询的起始记录序号，从0开始。
+     * minimum: 0
+     * maximum: 100000
      * @return offset
      */
-    public String getOffset() {
+    public Integer getOffset() {
         return offset;
     }
 
-    public void setOffset(String offset) {
+    public void setOffset(Integer offset) {
         this.offset = offset;
     }
 

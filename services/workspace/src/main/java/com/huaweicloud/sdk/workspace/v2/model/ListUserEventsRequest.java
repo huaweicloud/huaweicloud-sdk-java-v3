@@ -41,6 +41,11 @@ public class ListUserEventsRequest {
     private String resourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain")
+
+    private String domain;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -152,6 +157,23 @@ public class ListUserEventsRequest {
         this.resourceName = resourceName;
     }
 
+    public ListUserEventsRequest withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    /**
+     * 域名
+     * @return domain
+     */
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
     public ListUserEventsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -202,12 +224,13 @@ public class ListUserEventsRequest {
         return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
             && Objects.equals(this.username, that.username) && Objects.equals(this.eventType, that.eventType)
             && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(startTime, endTime, username, eventType, resourceId, resourceName, offset, limit);
+        return Objects.hash(startTime, endTime, username, eventType, resourceId, resourceName, domain, offset, limit);
     }
 
     @Override
@@ -220,6 +243,7 @@ public class ListUserEventsRequest {
         sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

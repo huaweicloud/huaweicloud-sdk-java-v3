@@ -172,6 +172,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ParaGroupUpdate;
 import com.huaweicloud.sdk.ddm.v1.model.ReadOnlySwitchReq;
 import com.huaweicloud.sdk.ddm.v1.model.RebuildConfigRequest;
 import com.huaweicloud.sdk.ddm.v1.model.RebuildConfigResponse;
+import com.huaweicloud.sdk.ddm.v1.model.RebuildDdmConfigRequest;
+import com.huaweicloud.sdk.ddm.v1.model.RebuildDdmConfigResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ReduceNodeOpenRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ReduceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ResetAdministratorRequest;
@@ -267,6 +269,11 @@ import com.huaweicloud.sdk.ddm.v1.model.UnbindEipRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UnbindEipResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDatabaseInfoRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDatabaseInfoResponse;
+import com.huaweicloud.sdk.ddm.v1.model.UpdateDdmInstanceNameRequest;
+import com.huaweicloud.sdk.ddm.v1.model.UpdateDdmInstanceNameRequestBody;
+import com.huaweicloud.sdk.ddm.v1.model.UpdateDdmInstanceNameResponse;
+import com.huaweicloud.sdk.ddm.v1.model.UpdateDdmInstanceSecurityGroupRequest;
+import com.huaweicloud.sdk.ddm.v1.model.UpdateDdmInstanceSecurityGroupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDdmUserRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDdmUserResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateInstanceNameRequest;
@@ -277,6 +284,7 @@ import com.huaweicloud.sdk.ddm.v1.model.UpdateInstancePortRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateInstancePortResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateInstanceSecurityGroupRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateInstanceSecurityGroupResponse;
+import com.huaweicloud.sdk.ddm.v1.model.UpdateInstanceSecurityGroupV3RequestBody;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateParametersReq;
 import com.huaweicloud.sdk.ddm.v1.model.UpdatePortRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateReadAndWriteStrategyRequest;
@@ -2203,6 +2211,29 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RebuildDdmConfigRequest, RebuildDdmConfigResponse> rebuildDdmConfig =
+        genForRebuildDdmConfig();
+
+    private static HttpRequestDef<RebuildDdmConfigRequest, RebuildDdmConfigResponse> genForRebuildDdmConfig() {
+        // basic
+        HttpRequestDef.Builder<RebuildDdmConfigRequest, RebuildDdmConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RebuildDdmConfigRequest.class, RebuildDdmConfigResponse.class)
+                .withName("RebuildDdmConfig")
+                .withUri("/v3/{project_id}/instances/{instance_id}/reload-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RebuildDdmConfigRequest::getInstanceId, RebuildDdmConfigRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ResetAdministratorRequest, ResetAdministratorResponse> resetAdministrator =
         genForResetAdministrator();
 
@@ -3281,6 +3312,68 @@ public class DdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateDatabaseInfoRequest::getInstanceId, UpdateDatabaseInfoRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDdmInstanceNameRequest, UpdateDdmInstanceNameResponse> updateDdmInstanceName =
+        genForUpdateDdmInstanceName();
+
+    private static HttpRequestDef<UpdateDdmInstanceNameRequest, UpdateDdmInstanceNameResponse> genForUpdateDdmInstanceName() {
+        // basic
+        HttpRequestDef.Builder<UpdateDdmInstanceNameRequest, UpdateDdmInstanceNameResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateDdmInstanceNameRequest.class, UpdateDdmInstanceNameResponse.class)
+            .withName("UpdateDdmInstanceName")
+            .withUri("/v3/{project_id}/instances/{instance_id}/name")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDdmInstanceNameRequest::getInstanceId,
+                UpdateDdmInstanceNameRequest::setInstanceId));
+        builder.<UpdateDdmInstanceNameRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDdmInstanceNameRequestBody.class),
+            f -> f.withMarshaller(UpdateDdmInstanceNameRequest::getBody, UpdateDdmInstanceNameRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDdmInstanceSecurityGroupRequest, UpdateDdmInstanceSecurityGroupResponse> updateDdmInstanceSecurityGroup =
+        genForUpdateDdmInstanceSecurityGroup();
+
+    private static HttpRequestDef<UpdateDdmInstanceSecurityGroupRequest, UpdateDdmInstanceSecurityGroupResponse> genForUpdateDdmInstanceSecurityGroup() {
+        // basic
+        HttpRequestDef.Builder<UpdateDdmInstanceSecurityGroupRequest, UpdateDdmInstanceSecurityGroupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateDdmInstanceSecurityGroupRequest.class,
+                    UpdateDdmInstanceSecurityGroupResponse.class)
+                .withName("UpdateDdmInstanceSecurityGroup")
+                .withUri("/v3/{project_id}/instances/{instance_id}/security-group")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDdmInstanceSecurityGroupRequest::getInstanceId,
+                UpdateDdmInstanceSecurityGroupRequest::setInstanceId));
+        builder.<UpdateInstanceSecurityGroupV3RequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateInstanceSecurityGroupV3RequestBody.class),
+            f -> f.withMarshaller(UpdateDdmInstanceSecurityGroupRequest::getBody,
+                UpdateDdmInstanceSecurityGroupRequest::setBody));
 
         // response
 

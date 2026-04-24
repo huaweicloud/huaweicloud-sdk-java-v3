@@ -196,6 +196,81 @@ public class UpdateScheduledTasksReq {
 
     private String extraParams;
 
+    /**
+     * 应用对象更新类型，FULL_COVERAGE：全量覆盖；CLEAR_ALL：清空所有。
+     */
+    public static final class ApplyObjectUpdateTypeEnum {
+
+        /**
+         * Enum CLEAR_ALL for value: "CLEAR_ALL"
+         */
+        public static final ApplyObjectUpdateTypeEnum CLEAR_ALL = new ApplyObjectUpdateTypeEnum("CLEAR_ALL");
+
+        /**
+         * Enum FULL_COVERAGE for value: "FULL_COVERAGE"
+         */
+        public static final ApplyObjectUpdateTypeEnum FULL_COVERAGE = new ApplyObjectUpdateTypeEnum("FULL_COVERAGE");
+
+        private static final Map<String, ApplyObjectUpdateTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ApplyObjectUpdateTypeEnum> createStaticFields() {
+            Map<String, ApplyObjectUpdateTypeEnum> map = new HashMap<>();
+            map.put("CLEAR_ALL", CLEAR_ALL);
+            map.put("FULL_COVERAGE", FULL_COVERAGE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ApplyObjectUpdateTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ApplyObjectUpdateTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApplyObjectUpdateTypeEnum(value));
+        }
+
+        public static ApplyObjectUpdateTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ApplyObjectUpdateTypeEnum) {
+                return this.value.equals(((ApplyObjectUpdateTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "apply_object_update_type")
+
+    private ApplyObjectUpdateTypeEnum applyObjectUpdateType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "apply_objects")
 
@@ -215,6 +290,11 @@ public class UpdateScheduledTasksReq {
     @JsonProperty(value = "wait_time")
 
     private Integer waitTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "life_cycle_exec_period")
+
+    private Integer lifeCycleExecPeriod;
 
     public UpdateScheduledTasksReq withScheduledType(ScheduledTypeEnum scheduledType) {
         this.scheduledType = scheduledType;
@@ -544,6 +624,23 @@ public class UpdateScheduledTasksReq {
         this.extraParams = extraParams;
     }
 
+    public UpdateScheduledTasksReq withApplyObjectUpdateType(ApplyObjectUpdateTypeEnum applyObjectUpdateType) {
+        this.applyObjectUpdateType = applyObjectUpdateType;
+        return this;
+    }
+
+    /**
+     * 应用对象更新类型，FULL_COVERAGE：全量覆盖；CLEAR_ALL：清空所有。
+     * @return applyObjectUpdateType
+     */
+    public ApplyObjectUpdateTypeEnum getApplyObjectUpdateType() {
+        return applyObjectUpdateType;
+    }
+
+    public void setApplyObjectUpdateType(ApplyObjectUpdateTypeEnum applyObjectUpdateType) {
+        this.applyObjectUpdateType = applyObjectUpdateType;
+    }
+
     public UpdateScheduledTasksReq withApplyObjects(List<ApplyObject> applyObjects) {
         this.applyObjects = applyObjects;
         return this;
@@ -632,6 +729,25 @@ public class UpdateScheduledTasksReq {
         this.waitTime = waitTime;
     }
 
+    public UpdateScheduledTasksReq withLifeCycleExecPeriod(Integer lifeCycleExecPeriod) {
+        this.lifeCycleExecPeriod = lifeCycleExecPeriod;
+        return this;
+    }
+
+    /**
+     * 触发式任务执行周期，单位分钟。最小1分钟，最大10080分钟（7天）。
+     * minimum: 1
+     * maximum: 10080
+     * @return lifeCycleExecPeriod
+     */
+    public Integer getLifeCycleExecPeriod() {
+        return lifeCycleExecPeriod;
+    }
+
+    public void setLifeCycleExecPeriod(Integer lifeCycleExecPeriod) {
+        this.lifeCycleExecPeriod = lifeCycleExecPeriod;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -653,8 +769,10 @@ public class UpdateScheduledTasksReq {
             && Objects.equals(this.taskName, that.taskName) && Objects.equals(this.forceExecute, that.forceExecute)
             && Objects.equals(this.description, that.description) && Objects.equals(this.enable, that.enable)
             && Objects.equals(this.extraParams, that.extraParams)
+            && Objects.equals(this.applyObjectUpdateType, that.applyObjectUpdateType)
             && Objects.equals(this.applyObjects, that.applyObjects) && Objects.equals(this.priority, that.priority)
-            && Objects.equals(this.isGray, that.isGray) && Objects.equals(this.waitTime, that.waitTime);
+            && Objects.equals(this.isGray, that.isGray) && Objects.equals(this.waitTime, that.waitTime)
+            && Objects.equals(this.lifeCycleExecPeriod, that.lifeCycleExecPeriod);
     }
 
     @Override
@@ -677,10 +795,12 @@ public class UpdateScheduledTasksReq {
             description,
             enable,
             extraParams,
+            applyObjectUpdateType,
             applyObjects,
             priority,
             isGray,
-            waitTime);
+            waitTime,
+            lifeCycleExecPeriod);
     }
 
     @Override
@@ -705,10 +825,12 @@ public class UpdateScheduledTasksReq {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
         sb.append("    extraParams: ").append(toIndentedString(extraParams)).append("\n");
+        sb.append("    applyObjectUpdateType: ").append(toIndentedString(applyObjectUpdateType)).append("\n");
         sb.append("    applyObjects: ").append(toIndentedString(applyObjects)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    isGray: ").append(toIndentedString(isGray)).append("\n");
         sb.append("    waitTime: ").append(toIndentedString(waitTime)).append("\n");
+        sb.append("    lifeCycleExecPeriod: ").append(toIndentedString(lifeCycleExecPeriod)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -17,6 +17,11 @@ public class ShowAssistAuthConfigResponse extends SdkResponse {
 
     private OtpConfigInfo otpConfigInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "main_auth_config_id")
+
+    private String mainAuthConfigId;
+
     public ShowAssistAuthConfigResponse withOtpConfigInfo(OtpConfigInfo otpConfigInfo) {
         this.otpConfigInfo = otpConfigInfo;
         return this;
@@ -43,6 +48,23 @@ public class ShowAssistAuthConfigResponse extends SdkResponse {
         this.otpConfigInfo = otpConfigInfo;
     }
 
+    public ShowAssistAuthConfigResponse withMainAuthConfigId(String mainAuthConfigId) {
+        this.mainAuthConfigId = mainAuthConfigId;
+        return this;
+    }
+
+    /**
+     * 主认证配置id
+     * @return mainAuthConfigId
+     */
+    public String getMainAuthConfigId() {
+        return mainAuthConfigId;
+    }
+
+    public void setMainAuthConfigId(String mainAuthConfigId) {
+        this.mainAuthConfigId = mainAuthConfigId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -52,12 +74,13 @@ public class ShowAssistAuthConfigResponse extends SdkResponse {
             return false;
         }
         ShowAssistAuthConfigResponse that = (ShowAssistAuthConfigResponse) obj;
-        return Objects.equals(this.otpConfigInfo, that.otpConfigInfo);
+        return Objects.equals(this.otpConfigInfo, that.otpConfigInfo)
+            && Objects.equals(this.mainAuthConfigId, that.mainAuthConfigId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(otpConfigInfo);
+        return Objects.hash(otpConfigInfo, mainAuthConfigId);
     }
 
     @Override
@@ -65,6 +88,7 @@ public class ShowAssistAuthConfigResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowAssistAuthConfigResponse {\n");
         sb.append("    otpConfigInfo: ").append(toIndentedString(otpConfigInfo)).append("\n");
+        sb.append("    mainAuthConfigId: ").append(toIndentedString(mainAuthConfigId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

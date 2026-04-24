@@ -51,6 +51,11 @@ public class ListUserUsageMetricRequest {
     private String sortType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain")
+
+    private String domain;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -200,6 +205,23 @@ public class ListUserUsageMetricRequest {
         this.sortType = sortType;
     }
 
+    public ListUserUsageMetricRequest withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    /**
+     * 域名
+     * @return domain
+     */
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
     public ListUserUsageMetricRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -252,7 +274,8 @@ public class ListUserUsageMetricRequest {
             && Objects.equals(this.usageMaxHours, that.usageMaxHours)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.sortField, that.sortField) && Objects.equals(this.sortType, that.sortType)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
@@ -265,6 +288,7 @@ public class ListUserUsageMetricRequest {
             enterpriseProjectId,
             sortField,
             sortType,
+            domain,
             offset,
             limit);
     }
@@ -281,6 +305,7 @@ public class ListUserUsageMetricRequest {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    sortField: ").append(toIndentedString(sortField)).append("\n");
         sb.append("    sortType: ").append(toIndentedString(sortType)).append("\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

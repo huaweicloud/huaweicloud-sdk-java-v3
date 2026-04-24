@@ -139,6 +139,8 @@ import com.huaweicloud.sdk.ddm.v1.model.MoveTmlogFilesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.MoveTmlogFilesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.RebuildConfigRequest;
 import com.huaweicloud.sdk.ddm.v1.model.RebuildConfigResponse;
+import com.huaweicloud.sdk.ddm.v1.model.RebuildDdmConfigRequest;
+import com.huaweicloud.sdk.ddm.v1.model.RebuildDdmConfigResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ResetAdministratorRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ResetAdministratorResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ResetDdmUserPasswordRequest;
@@ -225,6 +227,10 @@ import com.huaweicloud.sdk.ddm.v1.model.UnbindEipRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UnbindEipResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDatabaseInfoRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDatabaseInfoResponse;
+import com.huaweicloud.sdk.ddm.v1.model.UpdateDdmInstanceNameRequest;
+import com.huaweicloud.sdk.ddm.v1.model.UpdateDdmInstanceNameResponse;
+import com.huaweicloud.sdk.ddm.v1.model.UpdateDdmInstanceSecurityGroupRequest;
+import com.huaweicloud.sdk.ddm.v1.model.UpdateDdmInstanceSecurityGroupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDdmUserRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDdmUserResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateInstanceNameRequest;
@@ -2037,6 +2043,35 @@ public class DdmClient {
     }
 
     /**
+     * 表数据重载
+     *
+     * 表数据重载。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RebuildDdmConfigRequest 请求对象
+     * @return RebuildDdmConfigResponse
+     */
+    public RebuildDdmConfigResponse rebuildDdmConfig(RebuildDdmConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.rebuildDdmConfig);
+    }
+
+    /**
+     * 表数据重载
+     *
+     * 表数据重载。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RebuildDdmConfigRequest 请求对象
+     * @return SyncInvoker<RebuildDdmConfigRequest, RebuildDdmConfigResponse>
+     */
+    public SyncInvoker<RebuildDdmConfigRequest, RebuildDdmConfigResponse> rebuildDdmConfigInvoker(
+        RebuildDdmConfigRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.rebuildDdmConfig, hcClient);
+    }
+
+    /**
      * DDM管理员账号密码管理
      *
      * 首次调用时新建DDM管理员帐号并设置密码。后续调用时仅更新管理员密码。
@@ -3065,6 +3100,65 @@ public class DdmClient {
     public SyncInvoker<UpdateDatabaseInfoRequest, UpdateDatabaseInfoResponse> updateDatabaseInfoInvoker(
         UpdateDatabaseInfoRequest request) {
         return new SyncInvoker<>(request, DdmMeta.updateDatabaseInfo, hcClient);
+    }
+
+    /**
+     * 修改实例名称
+     *
+     * 修改实例名称。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDdmInstanceNameRequest 请求对象
+     * @return UpdateDdmInstanceNameResponse
+     */
+    public UpdateDdmInstanceNameResponse updateDdmInstanceName(UpdateDdmInstanceNameRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.updateDdmInstanceName);
+    }
+
+    /**
+     * 修改实例名称
+     *
+     * 修改实例名称。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDdmInstanceNameRequest 请求对象
+     * @return SyncInvoker<UpdateDdmInstanceNameRequest, UpdateDdmInstanceNameResponse>
+     */
+    public SyncInvoker<UpdateDdmInstanceNameRequest, UpdateDdmInstanceNameResponse> updateDdmInstanceNameInvoker(
+        UpdateDdmInstanceNameRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.updateDdmInstanceName, hcClient);
+    }
+
+    /**
+     * 修改实例安全组
+     *
+     * 修改实例安全组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDdmInstanceSecurityGroupRequest 请求对象
+     * @return UpdateDdmInstanceSecurityGroupResponse
+     */
+    public UpdateDdmInstanceSecurityGroupResponse updateDdmInstanceSecurityGroup(
+        UpdateDdmInstanceSecurityGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.updateDdmInstanceSecurityGroup);
+    }
+
+    /**
+     * 修改实例安全组
+     *
+     * 修改实例安全组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDdmInstanceSecurityGroupRequest 请求对象
+     * @return SyncInvoker<UpdateDdmInstanceSecurityGroupRequest, UpdateDdmInstanceSecurityGroupResponse>
+     */
+    public SyncInvoker<UpdateDdmInstanceSecurityGroupRequest, UpdateDdmInstanceSecurityGroupResponse> updateDdmInstanceSecurityGroupInvoker(
+        UpdateDdmInstanceSecurityGroupRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.updateDdmInstanceSecurityGroup, hcClient);
     }
 
     /**

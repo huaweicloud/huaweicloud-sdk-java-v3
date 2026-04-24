@@ -41,7 +41,7 @@ public class DesktopLoginStatisticsRsp {
     }
 
     /**
-     * 使用中。
+     * 使用中个数。
      * minimum: 0
      * maximum: 2147483647
      * @return inUseNum
@@ -60,7 +60,7 @@ public class DesktopLoginStatisticsRsp {
     }
 
     /**
-     * 未注册数目。
+     * 未注册个数。
      * minimum: 0
      * maximum: 2147483647
      * @return unregisteredNum
@@ -79,7 +79,7 @@ public class DesktopLoginStatisticsRsp {
     }
 
     /**
-     * 未注册数目。
+     * 无法连接个数。
      * minimum: 0
      * maximum: 2147483647
      * @return unableToConnectNum
@@ -98,7 +98,7 @@ public class DesktopLoginStatisticsRsp {
     }
 
     /**
-     * 空闲数目。
+     * 就绪个数。
      * minimum: 0
      * maximum: 2147483647
      * @return readyNum
@@ -117,7 +117,7 @@ public class DesktopLoginStatisticsRsp {
     }
 
     /**
-     * 断开连接数目。
+     * 断开连接个数。
      * minimum: 0
      * maximum: 2147483647
      * @return disconnectedNum

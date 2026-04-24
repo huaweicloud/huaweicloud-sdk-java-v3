@@ -172,7 +172,7 @@ public class CreateScheduledTasksReq {
     private String timeZone;
 
     /**
-     * 任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照。 - DELETE_BLACK_ECS: 删除黑产ecs
+     * 任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照
      */
     public static final class TaskTypeEnum {
 
@@ -211,11 +211,6 @@ public class CreateScheduledTasksReq {
          */
         public static final TaskTypeEnum CREATE_SNAPSHOT = new TaskTypeEnum("CREATE_SNAPSHOT");
 
-        /**
-         * Enum DELETE_BLACK_ECS for value: "DELETE_BLACK_ECS"
-         */
-        public static final TaskTypeEnum DELETE_BLACK_ECS = new TaskTypeEnum("DELETE_BLACK_ECS");
-
         private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TaskTypeEnum> createStaticFields() {
@@ -227,7 +222,6 @@ public class CreateScheduledTasksReq {
             map.put("REBUILD", REBUILD);
             map.put("EXECUTE_SCRIPT", EXECUTE_SCRIPT);
             map.put("CREATE_SNAPSHOT", CREATE_SNAPSHOT);
-            map.put("DELETE_BLACK_ECS", DELETE_BLACK_ECS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -311,6 +305,11 @@ public class CreateScheduledTasksReq {
     @JsonProperty(value = "wait_time")
 
     private Integer waitTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "life_cycle_exec_period")
+
+    private Integer lifeCycleExecPeriod;
 
     public CreateScheduledTasksReq withScheduledType(ScheduledTypeEnum scheduledType) {
         this.scheduledType = scheduledType;
@@ -561,7 +560,7 @@ public class CreateScheduledTasksReq {
     }
 
     /**
-     * 任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照。 - DELETE_BLACK_ECS: 删除黑产ecs
+     * 任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。 - CREATE_SNAPSHOT：创建快照
      * @return taskType
      */
     public TaskTypeEnum getTaskType() {
@@ -692,6 +691,25 @@ public class CreateScheduledTasksReq {
         this.waitTime = waitTime;
     }
 
+    public CreateScheduledTasksReq withLifeCycleExecPeriod(Integer lifeCycleExecPeriod) {
+        this.lifeCycleExecPeriod = lifeCycleExecPeriod;
+        return this;
+    }
+
+    /**
+     * 触发式任务执行周期，单位分钟。最小1分钟，最大10080分钟（7天），默认1440分钟（1天）。
+     * minimum: 1
+     * maximum: 10080
+     * @return lifeCycleExecPeriod
+     */
+    public Integer getLifeCycleExecPeriod() {
+        return lifeCycleExecPeriod;
+    }
+
+    public void setLifeCycleExecPeriod(Integer lifeCycleExecPeriod) {
+        this.lifeCycleExecPeriod = lifeCycleExecPeriod;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -713,7 +731,8 @@ public class CreateScheduledTasksReq {
             && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.taskName, that.taskName)
             && Objects.equals(this.forceExecute, that.forceExecute)
             && Objects.equals(this.description, that.description) && Objects.equals(this.extraParams, that.extraParams)
-            && Objects.equals(this.applyObjects, that.applyObjects) && Objects.equals(this.waitTime, that.waitTime);
+            && Objects.equals(this.applyObjects, that.applyObjects) && Objects.equals(this.waitTime, that.waitTime)
+            && Objects.equals(this.lifeCycleExecPeriod, that.lifeCycleExecPeriod);
     }
 
     @Override
@@ -737,7 +756,8 @@ public class CreateScheduledTasksReq {
             description,
             extraParams,
             applyObjects,
-            waitTime);
+            waitTime,
+            lifeCycleExecPeriod);
     }
 
     @Override
@@ -764,6 +784,7 @@ public class CreateScheduledTasksReq {
         sb.append("    extraParams: ").append(toIndentedString(extraParams)).append("\n");
         sb.append("    applyObjects: ").append(toIndentedString(applyObjects)).append("\n");
         sb.append("    waitTime: ").append(toIndentedString(waitTime)).append("\n");
+        sb.append("    lifeCycleExecPeriod: ").append(toIndentedString(lifeCycleExecPeriod)).append("\n");
         sb.append("}");
         return sb.toString();
     }

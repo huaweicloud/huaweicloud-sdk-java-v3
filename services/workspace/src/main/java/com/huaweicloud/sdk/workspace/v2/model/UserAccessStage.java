@@ -16,7 +16,7 @@ import java.util.Objects;
 public class UserAccessStage {
 
     /**
-     * 接入阶段 | LOGIN - 登录 PRECONNECT - 预连接 CONNECT - 正式连接。
+     * 接入阶段 | LOGIN - 登录 PRECONNECT - 预连接 CONNECT - 正式连接 MAIN_AUTH - 主认证 MFA_AUTH - 辅助认证 CLICK_ICON - 点击应用/桌面。
      */
     public static final class StageEnum {
 
@@ -35,6 +35,21 @@ public class UserAccessStage {
          */
         public static final StageEnum CONNECT = new StageEnum("CONNECT");
 
+        /**
+         * Enum MAIN_AUTH for value: "MAIN_AUTH"
+         */
+        public static final StageEnum MAIN_AUTH = new StageEnum("MAIN_AUTH");
+
+        /**
+         * Enum MFA_AUTH for value: "MFA_AUTH"
+         */
+        public static final StageEnum MFA_AUTH = new StageEnum("MFA_AUTH");
+
+        /**
+         * Enum CLICK_ICON for value: "CLICK_ICON"
+         */
+        public static final StageEnum CLICK_ICON = new StageEnum("CLICK_ICON");
+
         private static final Map<String, StageEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StageEnum> createStaticFields() {
@@ -42,6 +57,9 @@ public class UserAccessStage {
             map.put("LOGIN", LOGIN);
             map.put("PRECONNECT", PRECONNECT);
             map.put("CONNECT", CONNECT);
+            map.put("MAIN_AUTH", MAIN_AUTH);
+            map.put("MFA_AUTH", MFA_AUTH);
+            map.put("CLICK_ICON", CLICK_ICON);
             return Collections.unmodifiableMap(map);
         }
 
@@ -132,7 +150,7 @@ public class UserAccessStage {
     }
 
     /**
-     * 接入阶段 | LOGIN - 登录 PRECONNECT - 预连接 CONNECT - 正式连接。
+     * 接入阶段 | LOGIN - 登录 PRECONNECT - 预连接 CONNECT - 正式连接 MAIN_AUTH - 主认证 MFA_AUTH - 辅助认证 CLICK_ICON - 点击应用/桌面。
      * @return stage
      */
     public StageEnum getStage() {

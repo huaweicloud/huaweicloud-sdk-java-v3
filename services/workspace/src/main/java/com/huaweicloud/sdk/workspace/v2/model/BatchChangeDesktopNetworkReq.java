@@ -72,7 +72,7 @@ public class BatchChangeDesktopNetworkReq {
     }
 
     /**
-     * 待切换VPC的ID。
+     * 待切换VPC的ID。选填。如果要修改网络，该字段必传
      * @return vpcId
      */
     public String getVpcId() {
@@ -89,7 +89,7 @@ public class BatchChangeDesktopNetworkReq {
     }
 
     /**
-     * 待切换子网的ID。
+     * 待切换子网的ID。选填。如果要修改网络，该字段必传
      * @return subnetId
      */
     public String getSubnetId() {

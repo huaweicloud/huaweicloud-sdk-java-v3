@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 站点信息。
@@ -115,6 +116,11 @@ public class SiteInfo {
 
     private String createTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "network_config")
+
+    private NetworkConfig networkConfig;
+
     public SiteInfo withSiteId(String siteId) {
         this.siteId = siteId;
         return this;
@@ -217,6 +223,32 @@ public class SiteInfo {
         this.createTime = createTime;
     }
 
+    public SiteInfo withNetworkConfig(NetworkConfig networkConfig) {
+        this.networkConfig = networkConfig;
+        return this;
+    }
+
+    public SiteInfo withNetworkConfig(Consumer<NetworkConfig> networkConfigSetter) {
+        if (this.networkConfig == null) {
+            this.networkConfig = new NetworkConfig();
+            networkConfigSetter.accept(this.networkConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get networkConfig
+     * @return networkConfig
+     */
+    public NetworkConfig getNetworkConfig() {
+        return networkConfig;
+    }
+
+    public void setNetworkConfig(NetworkConfig networkConfig) {
+        this.networkConfig = networkConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -228,12 +260,13 @@ public class SiteInfo {
         SiteInfo that = (SiteInfo) obj;
         return Objects.equals(this.siteId, that.siteId) && Objects.equals(this.siteName, that.siteName)
             && Objects.equals(this.siteType, that.siteType) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.createTime, that.createTime);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.networkConfig, that.networkConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(siteId, siteName, siteType, projectId, status, createTime);
+        return Objects.hash(siteId, siteName, siteType, projectId, status, createTime, networkConfig);
     }
 
     @Override
@@ -246,6 +279,7 @@ public class SiteInfo {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    networkConfig: ").append(toIndentedString(networkConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

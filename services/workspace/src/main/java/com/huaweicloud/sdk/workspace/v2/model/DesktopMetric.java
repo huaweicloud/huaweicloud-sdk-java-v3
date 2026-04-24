@@ -24,6 +24,11 @@ public class DesktopMetric {
     private String resourcePoolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_pool_name")
+
+    private String resourcePoolName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_name")
 
     private String resourceName;
@@ -32,6 +37,16 @@ public class DesktopMetric {
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "machine_sid")
+
+    private String machineSid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "latest_connect_username")
+
+    private String latestConnectUsername;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric")
@@ -72,6 +87,23 @@ public class DesktopMetric {
         this.resourcePoolId = resourcePoolId;
     }
 
+    public DesktopMetric withResourcePoolName(String resourcePoolName) {
+        this.resourcePoolName = resourcePoolName;
+        return this;
+    }
+
+    /**
+     * 桌面池名称(仅桌面池中的桌面存在该字段)。
+     * @return resourcePoolName
+     */
+    public String getResourcePoolName() {
+        return resourcePoolName;
+    }
+
+    public void setResourcePoolName(String resourcePoolName) {
+        this.resourcePoolName = resourcePoolName;
+    }
+
     public DesktopMetric withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
@@ -104,6 +136,40 @@ public class DesktopMetric {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public DesktopMetric withMachineSid(String machineSid) {
+        this.machineSid = machineSid;
+        return this;
+    }
+
+    /**
+     * 虚机sid
+     * @return machineSid
+     */
+    public String getMachineSid() {
+        return machineSid;
+    }
+
+    public void setMachineSid(String machineSid) {
+        this.machineSid = machineSid;
+    }
+
+    public DesktopMetric withLatestConnectUsername(String latestConnectUsername) {
+        this.latestConnectUsername = latestConnectUsername;
+        return this;
+    }
+
+    /**
+     * 最近一个登录的用户
+     * @return latestConnectUsername
+     */
+    public String getLatestConnectUsername() {
+        return latestConnectUsername;
+    }
+
+    public void setLatestConnectUsername(String latestConnectUsername) {
+        this.latestConnectUsername = latestConnectUsername;
     }
 
     public DesktopMetric withMetric(List<Metric> metric) {
@@ -150,14 +216,24 @@ public class DesktopMetric {
         DesktopMetric that = (DesktopMetric) obj;
         return Objects.equals(this.resourceId, that.resourceId)
             && Objects.equals(this.resourcePoolId, that.resourcePoolId)
+            && Objects.equals(this.resourcePoolName, that.resourcePoolName)
             && Objects.equals(this.resourceName, that.resourceName)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.machineSid, that.machineSid)
+            && Objects.equals(this.latestConnectUsername, that.latestConnectUsername)
             && Objects.equals(this.metric, that.metric);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceId, resourcePoolId, resourceName, enterpriseProjectId, metric);
+        return Objects.hash(resourceId,
+            resourcePoolId,
+            resourcePoolName,
+            resourceName,
+            enterpriseProjectId,
+            machineSid,
+            latestConnectUsername,
+            metric);
     }
 
     @Override
@@ -166,8 +242,11 @@ public class DesktopMetric {
         sb.append("class DesktopMetric {\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    resourcePoolId: ").append(toIndentedString(resourcePoolId)).append("\n");
+        sb.append("    resourcePoolName: ").append(toIndentedString(resourcePoolName)).append("\n");
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    machineSid: ").append(toIndentedString(machineSid)).append("\n");
+        sb.append("    latestConnectUsername: ").append(toIndentedString(latestConnectUsername)).append("\n");
         sb.append("    metric: ").append(toIndentedString(metric)).append("\n");
         sb.append("}");
         return sb.toString();

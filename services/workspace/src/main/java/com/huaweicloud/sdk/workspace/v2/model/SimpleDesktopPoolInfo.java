@@ -104,6 +104,16 @@ public class SimpleDesktopPoolInfo {
     private String imageProductCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_cloud_service_type")
+
+    private String imageCloudServiceType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_resource_type")
+
+    private String imageResourceType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "root_volume")
 
     private VolumeInfo rootVolume;
@@ -132,6 +142,11 @@ public class SimpleDesktopPoolInfo {
     @JsonProperty(value = "autoscale_policy")
 
     private AutoscalePolicy autoscalePolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_reset_policy")
+
+    private UserResetPolicy userResetPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -167,6 +182,16 @@ public class SimpleDesktopPoolInfo {
     @JsonProperty(value = "vpc_id")
 
     private String vpcId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isolation_num")
+
+    private Integer isolationNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain")
+
+    private String domain;
 
     public SimpleDesktopPoolInfo withId(String id) {
         this.id = id;
@@ -499,6 +524,40 @@ public class SimpleDesktopPoolInfo {
         this.imageProductCode = imageProductCode;
     }
 
+    public SimpleDesktopPoolInfo withImageCloudServiceType(String imageCloudServiceType) {
+        this.imageCloudServiceType = imageCloudServiceType;
+        return this;
+    }
+
+    /**
+     * 镜像的cloudServiceType
+     * @return imageCloudServiceType
+     */
+    public String getImageCloudServiceType() {
+        return imageCloudServiceType;
+    }
+
+    public void setImageCloudServiceType(String imageCloudServiceType) {
+        this.imageCloudServiceType = imageCloudServiceType;
+    }
+
+    public SimpleDesktopPoolInfo withImageResourceType(String imageResourceType) {
+        this.imageResourceType = imageResourceType;
+        return this;
+    }
+
+    /**
+     * 镜像的resourceType。
+     * @return imageResourceType
+     */
+    public String getImageResourceType() {
+        return imageResourceType;
+    }
+
+    public void setImageResourceType(String imageResourceType) {
+        this.imageResourceType = imageResourceType;
+    }
+
     public SimpleDesktopPoolInfo withRootVolume(VolumeInfo rootVolume) {
         this.rootVolume = rootVolume;
         return this;
@@ -651,6 +710,32 @@ public class SimpleDesktopPoolInfo {
         this.autoscalePolicy = autoscalePolicy;
     }
 
+    public SimpleDesktopPoolInfo withUserResetPolicy(UserResetPolicy userResetPolicy) {
+        this.userResetPolicy = userResetPolicy;
+        return this;
+    }
+
+    public SimpleDesktopPoolInfo withUserResetPolicy(Consumer<UserResetPolicy> userResetPolicySetter) {
+        if (this.userResetPolicy == null) {
+            this.userResetPolicy = new UserResetPolicy();
+            userResetPolicySetter.accept(this.userResetPolicy);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get userResetPolicy
+     * @return userResetPolicy
+     */
+    public UserResetPolicy getUserResetPolicy() {
+        return userResetPolicy;
+    }
+
+    public void setUserResetPolicy(UserResetPolicy userResetPolicy) {
+        this.userResetPolicy = userResetPolicy;
+    }
+
     public SimpleDesktopPoolInfo withStatus(String status) {
         this.status = status;
         return this;
@@ -786,6 +871,40 @@ public class SimpleDesktopPoolInfo {
         this.vpcId = vpcId;
     }
 
+    public SimpleDesktopPoolInfo withIsolationNum(Integer isolationNum) {
+        this.isolationNum = isolationNum;
+        return this;
+    }
+
+    /**
+     * 统计无法连接桌面数量。适用于桌面池详情查询。
+     * @return isolationNum
+     */
+    public Integer getIsolationNum() {
+        return isolationNum;
+    }
+
+    public void setIsolationNum(Integer isolationNum) {
+        this.isolationNum = isolationNum;
+    }
+
+    public SimpleDesktopPoolInfo withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    /**
+     * 桌面池分配的域。
+     * @return domain
+     */
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -808,16 +927,20 @@ public class SimpleDesktopPoolInfo {
             && Objects.equals(this.imageOsVersion, that.imageOsVersion)
             && Objects.equals(this.imageOsPlatform, that.imageOsPlatform)
             && Objects.equals(this.imageProductCode, that.imageProductCode)
+            && Objects.equals(this.imageCloudServiceType, that.imageCloudServiceType)
+            && Objects.equals(this.imageResourceType, that.imageResourceType)
             && Objects.equals(this.rootVolume, that.rootVolume) && Objects.equals(this.dataVolumes, that.dataVolumes)
             && Objects.equals(this.securityGroups, that.securityGroups)
             && Objects.equals(this.disconnectedRetentionPeriod, that.disconnectedRetentionPeriod)
             && Objects.equals(this.enableAutoscale, that.enableAutoscale)
-            && Objects.equals(this.autoscalePolicy, that.autoscalePolicy) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.autoscalePolicy, that.autoscalePolicy)
+            && Objects.equals(this.userResetPolicy, that.userResetPolicy) && Objects.equals(this.status, that.status)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.inMaintenanceMode, that.inMaintenanceMode)
             && Objects.equals(this.desktopNamePolicyId, that.desktopNamePolicyId)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.ouName, that.ouName)
-            && Objects.equals(this.vpcId, that.vpcId);
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.isolationNum, that.isolationNum)
+            && Objects.equals(this.domain, that.domain);
     }
 
     @Override
@@ -840,19 +963,24 @@ public class SimpleDesktopPoolInfo {
             imageOsVersion,
             imageOsPlatform,
             imageProductCode,
+            imageCloudServiceType,
+            imageResourceType,
             rootVolume,
             dataVolumes,
             securityGroups,
             disconnectedRetentionPeriod,
             enableAutoscale,
             autoscalePolicy,
+            userResetPolicy,
             status,
             enterpriseProjectId,
             inMaintenanceMode,
             desktopNamePolicyId,
             tags,
             ouName,
-            vpcId);
+            vpcId,
+            isolationNum,
+            domain);
     }
 
     @Override
@@ -877,6 +1005,8 @@ public class SimpleDesktopPoolInfo {
         sb.append("    imageOsVersion: ").append(toIndentedString(imageOsVersion)).append("\n");
         sb.append("    imageOsPlatform: ").append(toIndentedString(imageOsPlatform)).append("\n");
         sb.append("    imageProductCode: ").append(toIndentedString(imageProductCode)).append("\n");
+        sb.append("    imageCloudServiceType: ").append(toIndentedString(imageCloudServiceType)).append("\n");
+        sb.append("    imageResourceType: ").append(toIndentedString(imageResourceType)).append("\n");
         sb.append("    rootVolume: ").append(toIndentedString(rootVolume)).append("\n");
         sb.append("    dataVolumes: ").append(toIndentedString(dataVolumes)).append("\n");
         sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
@@ -885,6 +1015,7 @@ public class SimpleDesktopPoolInfo {
             .append("\n");
         sb.append("    enableAutoscale: ").append(toIndentedString(enableAutoscale)).append("\n");
         sb.append("    autoscalePolicy: ").append(toIndentedString(autoscalePolicy)).append("\n");
+        sb.append("    userResetPolicy: ").append(toIndentedString(userResetPolicy)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    inMaintenanceMode: ").append(toIndentedString(inMaintenanceMode)).append("\n");
@@ -892,6 +1023,8 @@ public class SimpleDesktopPoolInfo {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    ouName: ").append(toIndentedString(ouName)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    isolationNum: ").append(toIndentedString(isolationNum)).append("\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -40,6 +40,11 @@ public class UpdateDesktopNamePolicyReq {
 
     private Boolean isDefaultPolicy;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "prefix_truncation_enabled")
+
+    private Boolean prefixTruncationEnabled;
+
     public UpdateDesktopNamePolicyReq withPolicyName(String policyName) {
         this.policyName = policyName;
         return this;
@@ -148,6 +153,23 @@ public class UpdateDesktopNamePolicyReq {
         this.isDefaultPolicy = isDefaultPolicy;
     }
 
+    public UpdateDesktopNamePolicyReq withPrefixTruncationEnabled(Boolean prefixTruncationEnabled) {
+        this.prefixTruncationEnabled = prefixTruncationEnabled;
+        return this;
+    }
+
+    /**
+     * 当名称前缀加数字长度生成的桌面名称长度超15位时，是否截断名称前缀部分。
+     * @return prefixTruncationEnabled
+     */
+    public Boolean getPrefixTruncationEnabled() {
+        return prefixTruncationEnabled;
+    }
+
+    public void setPrefixTruncationEnabled(Boolean prefixTruncationEnabled) {
+        this.prefixTruncationEnabled = prefixTruncationEnabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -160,12 +182,19 @@ public class UpdateDesktopNamePolicyReq {
         return Objects.equals(this.policyName, that.policyName) && Objects.equals(this.namePrefix, that.namePrefix)
             && Objects.equals(this.digitNumber, that.digitNumber) && Objects.equals(this.startNumber, that.startNumber)
             && Objects.equals(this.singleDomainUserInc, that.singleDomainUserInc)
-            && Objects.equals(this.isDefaultPolicy, that.isDefaultPolicy);
+            && Objects.equals(this.isDefaultPolicy, that.isDefaultPolicy)
+            && Objects.equals(this.prefixTruncationEnabled, that.prefixTruncationEnabled);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyName, namePrefix, digitNumber, startNumber, singleDomainUserInc, isDefaultPolicy);
+        return Objects.hash(policyName,
+            namePrefix,
+            digitNumber,
+            startNumber,
+            singleDomainUserInc,
+            isDefaultPolicy,
+            prefixTruncationEnabled);
     }
 
     @Override
@@ -178,6 +207,7 @@ public class UpdateDesktopNamePolicyReq {
         sb.append("    startNumber: ").append(toIndentedString(startNumber)).append("\n");
         sb.append("    singleDomainUserInc: ").append(toIndentedString(singleDomainUserInc)).append("\n");
         sb.append("    isDefaultPolicy: ").append(toIndentedString(isDefaultPolicy)).append("\n");
+        sb.append("    prefixTruncationEnabled: ").append(toIndentedString(prefixTruncationEnabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }

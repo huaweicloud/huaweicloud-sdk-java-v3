@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -25,7 +27,7 @@ public class ListUpgradeWorkFlowsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
 
-    private UpgradeWorkFlow items;
+    private List<UpgradeWorkFlow> items = null;
 
     public ListUpgradeWorkFlowsResponse withKind(String kind) {
         this.kind = kind;
@@ -61,17 +63,24 @@ public class ListUpgradeWorkFlowsResponse extends SdkResponse {
         this.apiVersion = apiVersion;
     }
 
-    public ListUpgradeWorkFlowsResponse withItems(UpgradeWorkFlow items) {
+    public ListUpgradeWorkFlowsResponse withItems(List<UpgradeWorkFlow> items) {
         this.items = items;
         return this;
     }
 
-    public ListUpgradeWorkFlowsResponse withItems(Consumer<UpgradeWorkFlow> itemsSetter) {
+    public ListUpgradeWorkFlowsResponse addItemsItem(UpgradeWorkFlow itemsItem) {
         if (this.items == null) {
-            this.items = new UpgradeWorkFlow();
-            itemsSetter.accept(this.items);
+            this.items = new ArrayList<>();
         }
+        this.items.add(itemsItem);
+        return this;
+    }
 
+    public ListUpgradeWorkFlowsResponse withItems(Consumer<List<UpgradeWorkFlow>> itemsSetter) {
+        if (this.items == null) {
+            this.items = new ArrayList<>();
+        }
+        itemsSetter.accept(this.items);
         return this;
     }
 
@@ -79,11 +88,11 @@ public class ListUpgradeWorkFlowsResponse extends SdkResponse {
      * Get items
      * @return items
      */
-    public UpgradeWorkFlow getItems() {
+    public List<UpgradeWorkFlow> getItems() {
         return items;
     }
 
-    public void setItems(UpgradeWorkFlow items) {
+    public void setItems(List<UpgradeWorkFlow> items) {
         this.items = items;
     }
 

@@ -11,6 +11,11 @@ import java.util.Objects;
 public class DbObjectInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "object_name")
+
+    private String objectName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_db_name")
 
     private String sourceDbName;
@@ -44,6 +49,23 @@ public class DbObjectInfo {
     @JsonProperty(value = "has_column_info")
 
     private Boolean hasColumnInfo;
+
+    public DbObjectInfo withObjectName(String objectName) {
+        this.objectName = objectName;
+        return this;
+    }
+
+    /**
+     * 对象名
+     * @return objectName
+     */
+    public String getObjectName() {
+        return objectName;
+    }
+
+    public void setObjectName(String objectName) {
+        this.objectName = objectName;
+    }
 
     public DbObjectInfo withSourceDbName(String sourceDbName) {
         this.sourceDbName = sourceDbName;
@@ -173,7 +195,7 @@ public class DbObjectInfo {
             return false;
         }
         DbObjectInfo that = (DbObjectInfo) obj;
-        return Objects.equals(this.sourceDbName, that.sourceDbName)
+        return Objects.equals(this.objectName, that.objectName) && Objects.equals(this.sourceDbName, that.sourceDbName)
             && Objects.equals(this.sourceSchemaName, that.sourceSchemaName)
             && Objects.equals(this.sourceTableName, that.sourceTableName)
             && Objects.equals(this.targetDbName, that.targetDbName)
@@ -184,7 +206,8 @@ public class DbObjectInfo {
 
     @Override
     public int hashCode() {
-        return Objects.hash(sourceDbName,
+        return Objects.hash(objectName,
+            sourceDbName,
             sourceSchemaName,
             sourceTableName,
             targetDbName,
@@ -197,6 +220,7 @@ public class DbObjectInfo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DbObjectInfo {\n");
+        sb.append("    objectName: ").append(toIndentedString(objectName)).append("\n");
         sb.append("    sourceDbName: ").append(toIndentedString(sourceDbName)).append("\n");
         sb.append("    sourceSchemaName: ").append(toIndentedString(sourceSchemaName)).append("\n");
         sb.append("    sourceTableName: ").append(toIndentedString(sourceTableName)).append("\n");

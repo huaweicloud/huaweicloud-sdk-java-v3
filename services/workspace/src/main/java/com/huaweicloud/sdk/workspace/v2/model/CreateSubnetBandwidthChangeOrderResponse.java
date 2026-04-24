@@ -16,6 +16,11 @@ public class CreateSubnetBandwidthChangeOrderResponse extends SdkResponse {
 
     private String orderId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_id")
+
+    private String jobId;
+
     public CreateSubnetBandwidthChangeOrderResponse withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
@@ -33,6 +38,23 @@ public class CreateSubnetBandwidthChangeOrderResponse extends SdkResponse {
         this.orderId = orderId;
     }
 
+    public CreateSubnetBandwidthChangeOrderResponse withJobId(String jobId) {
+        this.jobId = jobId;
+        return this;
+    }
+
+    /**
+     * jobId。
+     * @return jobId
+     */
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -42,12 +64,12 @@ public class CreateSubnetBandwidthChangeOrderResponse extends SdkResponse {
             return false;
         }
         CreateSubnetBandwidthChangeOrderResponse that = (CreateSubnetBandwidthChangeOrderResponse) obj;
-        return Objects.equals(this.orderId, that.orderId);
+        return Objects.equals(this.orderId, that.orderId) && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(orderId);
+        return Objects.hash(orderId, jobId);
     }
 
     @Override
@@ -55,6 +77,7 @@ public class CreateSubnetBandwidthChangeOrderResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateSubnetBandwidthChangeOrderResponse {\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

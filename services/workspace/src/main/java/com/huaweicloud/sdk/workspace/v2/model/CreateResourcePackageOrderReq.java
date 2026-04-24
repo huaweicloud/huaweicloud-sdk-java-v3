@@ -21,7 +21,7 @@ public class CreateResourcePackageOrderReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_packages")
 
-    private List<DesktopResourcePackage> resourcePackages = null;
+    private List<DesktopResourceItem> resourcePackages = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_size")
@@ -50,12 +50,12 @@ public class CreateResourcePackageOrderReq {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public CreateResourcePackageOrderReq withResourcePackages(List<DesktopResourcePackage> resourcePackages) {
+    public CreateResourcePackageOrderReq withResourcePackages(List<DesktopResourceItem> resourcePackages) {
         this.resourcePackages = resourcePackages;
         return this;
     }
 
-    public CreateResourcePackageOrderReq addResourcePackagesItem(DesktopResourcePackage resourcePackagesItem) {
+    public CreateResourcePackageOrderReq addResourcePackagesItem(DesktopResourceItem resourcePackagesItem) {
         if (this.resourcePackages == null) {
             this.resourcePackages = new ArrayList<>();
         }
@@ -64,7 +64,7 @@ public class CreateResourcePackageOrderReq {
     }
 
     public CreateResourcePackageOrderReq withResourcePackages(
-        Consumer<List<DesktopResourcePackage>> resourcePackagesSetter) {
+        Consumer<List<DesktopResourceItem>> resourcePackagesSetter) {
         if (this.resourcePackages == null) {
             this.resourcePackages = new ArrayList<>();
         }
@@ -76,11 +76,11 @@ public class CreateResourcePackageOrderReq {
      * 资源包。
      * @return resourcePackages
      */
-    public List<DesktopResourcePackage> getResourcePackages() {
+    public List<DesktopResourceItem> getResourcePackages() {
         return resourcePackages;
     }
 
-    public void setResourcePackages(List<DesktopResourcePackage> resourcePackages) {
+    public void setResourcePackages(List<DesktopResourceItem> resourcePackages) {
         this.resourcePackages = resourcePackages;
     }
 

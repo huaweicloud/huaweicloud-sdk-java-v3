@@ -30,6 +30,9 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchSetBackupPolicyRequ
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchSetBackupPolicyResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchShowUpgradeCandidateVersionsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchShowUpgradeCandidateVersionsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindDNatRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindDNatRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindDNatResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindEIPRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindLtsConfigRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindLtsConfigRequestBody;
@@ -199,6 +202,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListConfigurationsDiffRe
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListConfigurationsDiffResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListConfigurationsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListConfigurationsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDNatInfoRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDNatInfoResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseInstancesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseInstancesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseRolesRequest;
@@ -925,6 +930,38 @@ public class GaussDBforopenGaussMeta {
             TypeCasts.uncheckedConversion(UpgradeInstancesRequestBody.class),
             f -> f.withMarshaller(BatchShowUpgradeCandidateVersionsRequest::getBody,
                 BatchShowUpgradeCandidateVersionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BindDNatRequest, BindDNatResponse> bindDNat = genForBindDNat();
+
+    private static HttpRequestDef<BindDNatRequest, BindDNatResponse> genForBindDNat() {
+        // basic
+        HttpRequestDef.Builder<BindDNatRequest, BindDNatResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, BindDNatRequest.class, BindDNatResponse.class)
+                .withName("BindDNat")
+                .withUri("/v3/{project_id}/instances/{instance_id}/dnat")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BindDNatRequest::getInstanceId, BindDNatRequest::setInstanceId));
+        builder.<BindDNatRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BindDNatRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(BindDNatRequest::getXLanguage, BindDNatRequest::setXLanguage));
+        builder.<BindDNatRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BindDNatRequestBody.class),
+            f -> f.withMarshaller(BindDNatRequest::getBody, BindDNatRequest::setBody));
 
         // response
 
@@ -2713,6 +2750,33 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ParamGroupDiffRequestBody.class),
             f -> f.withMarshaller(ListConfigurationsDiffRequest::getBody, ListConfigurationsDiffRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDNatInfoRequest, ListDNatInfoResponse> listDNatInfo = genForListDNatInfo();
+
+    private static HttpRequestDef<ListDNatInfoRequest, ListDNatInfoResponse> genForListDNatInfo() {
+        // basic
+        HttpRequestDef.Builder<ListDNatInfoRequest, ListDNatInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDNatInfoRequest.class, ListDNatInfoResponse.class)
+                .withName("ListDNatInfo")
+                .withUri("/v3/{project_id}/instances/{instance_id}/dnat")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDNatInfoRequest::getInstanceId, ListDNatInfoRequest::setInstanceId));
+        builder.<ListDNatInfoRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListDNatInfoRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListDNatInfoRequest::getXLanguage, ListDNatInfoRequest::setXLanguage));
 
         // response
 

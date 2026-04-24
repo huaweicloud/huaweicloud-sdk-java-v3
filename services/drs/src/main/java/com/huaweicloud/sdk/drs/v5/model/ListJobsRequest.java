@@ -554,10 +554,104 @@ public class ListJobsRequest {
 
     private Integer limit;
 
+    /**
+     * 返回结果按该关键字排序，默认为“create_time”。 当前支持排序的关键字： - name - status - create_time - net_type - job_direction - pay_mode
+     */
+    public static final class SortKeyEnum {
+
+        /**
+         * Enum NAME for value: "name"
+         */
+        public static final SortKeyEnum NAME = new SortKeyEnum("name");
+
+        /**
+         * Enum STATUS for value: "status"
+         */
+        public static final SortKeyEnum STATUS = new SortKeyEnum("status");
+
+        /**
+         * Enum CREATE_TIME for value: "create_time"
+         */
+        public static final SortKeyEnum CREATE_TIME = new SortKeyEnum("create_time");
+
+        /**
+         * Enum NET_TYPE for value: "net_type"
+         */
+        public static final SortKeyEnum NET_TYPE = new SortKeyEnum("net_type");
+
+        /**
+         * Enum JOB_DIRECTION for value: "job_direction"
+         */
+        public static final SortKeyEnum JOB_DIRECTION = new SortKeyEnum("job_direction");
+
+        /**
+         * Enum PAY_MODE for value: "pay_mode"
+         */
+        public static final SortKeyEnum PAY_MODE = new SortKeyEnum("pay_mode");
+
+        private static final Map<String, SortKeyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SortKeyEnum> createStaticFields() {
+            Map<String, SortKeyEnum> map = new HashMap<>();
+            map.put("name", NAME);
+            map.put("status", STATUS);
+            map.put("create_time", CREATE_TIME);
+            map.put("net_type", NET_TYPE);
+            map.put("job_direction", JOB_DIRECTION);
+            map.put("pay_mode", PAY_MODE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SortKeyEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SortKeyEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortKeyEnum(value));
+        }
+
+        public static SortKeyEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SortKeyEnum) {
+                return this.value.equals(((SortKeyEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_key")
 
-    private String sortKey;
+    private SortKeyEnum sortKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_dir")
@@ -729,20 +823,20 @@ public class ListJobsRequest {
         this.limit = limit;
     }
 
-    public ListJobsRequest withSortKey(String sortKey) {
+    public ListJobsRequest withSortKey(SortKeyEnum sortKey) {
         this.sortKey = sortKey;
         return this;
     }
 
     /**
-     * 返回结果按该关键字排序，默认为“create_time”。
+     * 返回结果按该关键字排序，默认为“create_time”。 当前支持排序的关键字： - name - status - create_time - net_type - job_direction - pay_mode
      * @return sortKey
      */
-    public String getSortKey() {
+    public SortKeyEnum getSortKey() {
         return sortKey;
     }
 
-    public void setSortKey(String sortKey) {
+    public void setSortKey(SortKeyEnum sortKey) {
         this.sortKey = sortKey;
     }
 

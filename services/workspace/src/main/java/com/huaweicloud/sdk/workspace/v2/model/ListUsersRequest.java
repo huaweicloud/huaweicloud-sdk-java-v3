@@ -69,9 +69,19 @@ public class ListUsersRequest {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disabled")
+
+    private Boolean disabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain")
 
     private String domain;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "platform_type")
+
+    private String platformType;
 
     public ListUsersRequest withUserName(String userName) {
         this.userName = userName;
@@ -276,6 +286,23 @@ public class ListUsersRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public ListUsersRequest withDisabled(Boolean disabled) {
+        this.disabled = disabled;
+        return this;
+    }
+
+    /**
+     * 用户是否被禁用
+     * @return disabled
+     */
+    public Boolean getDisabled() {
+        return disabled;
+    }
+
+    public void setDisabled(Boolean disabled) {
+        this.disabled = disabled;
+    }
+
     public ListUsersRequest withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -291,6 +318,23 @@ public class ListUsersRequest {
 
     public void setDomain(String domain) {
         this.domain = domain;
+    }
+
+    public ListUsersRequest withPlatformType(String platformType) {
+        this.platformType = platformType;
+        return this;
+    }
+
+    /**
+     * 用户类型。 * AD： AD域用户 * LOCAL： 本地liteAs用户 * UOS： UOS域用户
+     * @return platformType
+     */
+    public String getPlatformType() {
+        return platformType;
+    }
+
+    public void setPlatformType(String platformType) {
+        this.platformType = platformType;
     }
 
     @Override
@@ -310,7 +354,8 @@ public class ListUsersRequest {
             && Objects.equals(this.shareSpaceDesktops, that.shareSpaceDesktops)
             && Objects.equals(this.isQueryTotalDesktops, that.isQueryTotalDesktops)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.domain, that.domain);
+            && Objects.equals(this.disabled, that.disabled) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.platformType, that.platformType);
     }
 
     @Override
@@ -326,7 +371,9 @@ public class ListUsersRequest {
             shareSpaceDesktops,
             isQueryTotalDesktops,
             enterpriseProjectId,
-            domain);
+            disabled,
+            domain,
+            platformType);
     }
 
     @Override
@@ -344,7 +391,9 @@ public class ListUsersRequest {
         sb.append("    shareSpaceDesktops: ").append(toIndentedString(shareSpaceDesktops)).append("\n");
         sb.append("    isQueryTotalDesktops: ").append(toIndentedString(isQueryTotalDesktops)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
+        sb.append("    platformType: ").append(toIndentedString(platformType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

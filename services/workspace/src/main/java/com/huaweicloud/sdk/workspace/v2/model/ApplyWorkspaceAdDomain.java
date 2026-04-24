@@ -147,6 +147,16 @@ public class ApplyWorkspaceAdDomain {
     private Boolean useLdaps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cba_enabled")
+
+    private Boolean cbaEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "certificate_id")
+
+    private String certificateId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tls_config")
 
     private TlsConfig tlsConfig;
@@ -357,6 +367,40 @@ public class ApplyWorkspaceAdDomain {
         this.useLdaps = useLdaps;
     }
 
+    public ApplyWorkspaceAdDomain withCbaEnabled(Boolean cbaEnabled) {
+        this.cbaEnabled = cbaEnabled;
+        return this;
+    }
+
+    /**
+     * 是否开启智能卡认证
+     * @return cbaEnabled
+     */
+    public Boolean getCbaEnabled() {
+        return cbaEnabled;
+    }
+
+    public void setCbaEnabled(Boolean cbaEnabled) {
+        this.cbaEnabled = cbaEnabled;
+    }
+
+    public ApplyWorkspaceAdDomain withCertificateId(String certificateId) {
+        this.certificateId = certificateId;
+        return this;
+    }
+
+    /**
+     * 智能卡证书id
+     * @return certificateId
+     */
+    public String getCertificateId() {
+        return certificateId;
+    }
+
+    public void setCertificateId(String certificateId) {
+        this.certificateId = certificateId;
+    }
+
     public ApplyWorkspaceAdDomain withTlsConfig(TlsConfig tlsConfig) {
         this.tlsConfig = tlsConfig;
         return this;
@@ -402,7 +446,8 @@ public class ApplyWorkspaceAdDomain {
             && Objects.equals(this.activeDnsIp, that.activeDnsIp)
             && Objects.equals(this.standbyDnsIp, that.standbyDnsIp)
             && Objects.equals(this.deleteComputerObject, that.deleteComputerObject)
-            && Objects.equals(this.useLdaps, that.useLdaps) && Objects.equals(this.tlsConfig, that.tlsConfig);
+            && Objects.equals(this.useLdaps, that.useLdaps) && Objects.equals(this.cbaEnabled, that.cbaEnabled)
+            && Objects.equals(this.certificateId, that.certificateId) && Objects.equals(this.tlsConfig, that.tlsConfig);
     }
 
     @Override
@@ -419,6 +464,8 @@ public class ApplyWorkspaceAdDomain {
             standbyDnsIp,
             deleteComputerObject,
             useLdaps,
+            cbaEnabled,
+            certificateId,
             tlsConfig);
     }
 
@@ -438,6 +485,8 @@ public class ApplyWorkspaceAdDomain {
         sb.append("    standbyDnsIp: ").append(toIndentedString(standbyDnsIp)).append("\n");
         sb.append("    deleteComputerObject: ").append(toIndentedString(deleteComputerObject)).append("\n");
         sb.append("    useLdaps: ").append(toIndentedString(useLdaps)).append("\n");
+        sb.append("    cbaEnabled: ").append(toIndentedString(cbaEnabled)).append("\n");
+        sb.append("    certificateId: ").append(toIndentedString(certificateId)).append("\n");
         sb.append("    tlsConfig: ").append(toIndentedString(tlsConfig)).append("\n");
         sb.append("}");
         return sb.toString();

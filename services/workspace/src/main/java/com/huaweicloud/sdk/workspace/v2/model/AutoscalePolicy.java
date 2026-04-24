@@ -115,6 +115,16 @@ public class AutoscalePolicy {
 
     private Integer idleRetentionDuration;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_isolation_enable")
+
+    private Boolean autoIsolationEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_isolation_max_num")
+
+    private Integer autoIsolationMaxNum;
+
     public AutoscalePolicy withAutoscaleType(AutoscaleTypeEnum autoscaleType) {
         this.autoscaleType = autoscaleType;
         return this;
@@ -227,6 +237,41 @@ public class AutoscalePolicy {
         this.idleRetentionDuration = idleRetentionDuration;
     }
 
+    public AutoscalePolicy withAutoIsolationEnable(Boolean autoIsolationEnable) {
+        this.autoIsolationEnable = autoIsolationEnable;
+        return this;
+    }
+
+    /**
+     * 自动故障隔离开关。
+     * @return autoIsolationEnable
+     */
+    public Boolean getAutoIsolationEnable() {
+        return autoIsolationEnable;
+    }
+
+    public void setAutoIsolationEnable(Boolean autoIsolationEnable) {
+        this.autoIsolationEnable = autoIsolationEnable;
+    }
+
+    public AutoscalePolicy withAutoIsolationMaxNum(Integer autoIsolationMaxNum) {
+        this.autoIsolationMaxNum = autoIsolationMaxNum;
+        return this;
+    }
+
+    /**
+     * 自动隔离桌面数量上限，默认上限1000。
+     * minimum: 1
+     * @return autoIsolationMaxNum
+     */
+    public Integer getAutoIsolationMaxNum() {
+        return autoIsolationMaxNum;
+    }
+
+    public void setAutoIsolationMaxNum(Integer autoIsolationMaxNum) {
+        this.autoIsolationMaxNum = autoIsolationMaxNum;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -240,13 +285,21 @@ public class AutoscalePolicy {
             && Objects.equals(this.maxAutoCreated, that.maxAutoCreated) && Objects.equals(this.minIdle, that.minIdle)
             && Objects.equals(this.onceAutoCreated, that.onceAutoCreated)
             && Objects.equals(this.minRetention, that.minRetention)
-            && Objects.equals(this.idleRetentionDuration, that.idleRetentionDuration);
+            && Objects.equals(this.idleRetentionDuration, that.idleRetentionDuration)
+            && Objects.equals(this.autoIsolationEnable, that.autoIsolationEnable)
+            && Objects.equals(this.autoIsolationMaxNum, that.autoIsolationMaxNum);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(autoscaleType, maxAutoCreated, minIdle, onceAutoCreated, minRetention, idleRetentionDuration);
+        return Objects.hash(autoscaleType,
+            maxAutoCreated,
+            minIdle,
+            onceAutoCreated,
+            minRetention,
+            idleRetentionDuration,
+            autoIsolationEnable,
+            autoIsolationMaxNum);
     }
 
     @Override
@@ -259,6 +312,8 @@ public class AutoscalePolicy {
         sb.append("    onceAutoCreated: ").append(toIndentedString(onceAutoCreated)).append("\n");
         sb.append("    minRetention: ").append(toIndentedString(minRetention)).append("\n");
         sb.append("    idleRetentionDuration: ").append(toIndentedString(idleRetentionDuration)).append("\n");
+        sb.append("    autoIsolationEnable: ").append(toIndentedString(autoIsolationEnable)).append("\n");
+        sb.append("    autoIsolationMaxNum: ").append(toIndentedString(autoIsolationMaxNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

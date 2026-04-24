@@ -21,6 +21,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchSetBackupPolicyRequ
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchSetBackupPolicyResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchShowUpgradeCandidateVersionsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchShowUpgradeCandidateVersionsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindDNatRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindDNatResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindLtsConfigRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindLtsConfigResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CancelScheduleTaskRequest;
@@ -155,6 +157,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListConfigurationsDiffRe
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListConfigurationsDiffResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListConfigurationsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListConfigurationsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDNatInfoRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDNatInfoResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseInstancesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseInstancesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatabaseRolesRequest;
@@ -785,6 +789,34 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<BatchShowUpgradeCandidateVersionsRequest, BatchShowUpgradeCandidateVersionsResponse> batchShowUpgradeCandidateVersionsInvoker(
         BatchShowUpgradeCandidateVersionsRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.batchShowUpgradeCandidateVersions, hcClient);
+    }
+
+    /**
+     * 绑定/解绑NAT网关
+     *
+     * 绑定/解绑NAT网关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindDNatRequest 请求对象
+     * @return BindDNatResponse
+     */
+    public BindDNatResponse bindDNat(BindDNatRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.bindDNat);
+    }
+
+    /**
+     * 绑定/解绑NAT网关
+     *
+     * 绑定/解绑NAT网关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindDNatRequest 请求对象
+     * @return SyncInvoker<BindDNatRequest, BindDNatResponse>
+     */
+    public SyncInvoker<BindDNatRequest, BindDNatResponse> bindDNatInvoker(BindDNatRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.bindDNat, hcClient);
     }
 
     /**
@@ -2297,6 +2329,34 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<ListConfigurationsDiffRequest, ListConfigurationsDiffResponse> listConfigurationsDiffInvoker(
         ListConfigurationsDiffRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listConfigurationsDiff, hcClient);
+    }
+
+    /**
+     * 查询已绑定的NAT网关列表
+     *
+     * 查询已绑定的NAT网关列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDNatInfoRequest 请求对象
+     * @return ListDNatInfoResponse
+     */
+    public ListDNatInfoResponse listDNatInfo(ListDNatInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listDNatInfo);
+    }
+
+    /**
+     * 查询已绑定的NAT网关列表
+     *
+     * 查询已绑定的NAT网关列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDNatInfoRequest 请求对象
+     * @return SyncInvoker<ListDNatInfoRequest, ListDNatInfoResponse>
+     */
+    public SyncInvoker<ListDNatInfoRequest, ListDNatInfoResponse> listDNatInfoInvoker(ListDNatInfoRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listDNatInfo, hcClient);
     }
 
     /**

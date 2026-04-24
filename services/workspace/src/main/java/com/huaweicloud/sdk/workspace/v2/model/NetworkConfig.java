@@ -43,6 +43,11 @@ public class NetworkConfig {
 
     private List<VpcConfigInfo> vpcConfigInfos = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dc_vnc_ip")
+
+    private String dcVncIp;
+
     public NetworkConfig withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
@@ -177,6 +182,23 @@ public class NetworkConfig {
         this.vpcConfigInfos = vpcConfigInfos;
     }
 
+    public NetworkConfig withDcVncIp(String dcVncIp) {
+        this.dcVncIp = dcVncIp;
+        return this;
+    }
+
+    /**
+     * 自定义的专线VNC地址。
+     * @return dcVncIp
+     */
+    public String getDcVncIp() {
+        return dcVncIp;
+    }
+
+    public void setDcVncIp(String dcVncIp) {
+        this.dcVncIp = dcVncIp;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -190,12 +212,13 @@ public class NetworkConfig {
             && Objects.equals(this.subnetIds, that.subnetIds)
             && Objects.equals(this.managementSubnetCidr, that.managementSubnetCidr)
             && Objects.equals(this.managementNodeSubnetId, that.managementNodeSubnetId)
-            && Objects.equals(this.vpcConfigInfos, that.vpcConfigInfos);
+            && Objects.equals(this.vpcConfigInfos, that.vpcConfigInfos) && Objects.equals(this.dcVncIp, that.dcVncIp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(vpcId, vpcName, subnetIds, managementSubnetCidr, managementNodeSubnetId, vpcConfigInfos);
+        return Objects
+            .hash(vpcId, vpcName, subnetIds, managementSubnetCidr, managementNodeSubnetId, vpcConfigInfos, dcVncIp);
     }
 
     @Override
@@ -208,6 +231,7 @@ public class NetworkConfig {
         sb.append("    managementSubnetCidr: ").append(toIndentedString(managementSubnetCidr)).append("\n");
         sb.append("    managementNodeSubnetId: ").append(toIndentedString(managementNodeSubnetId)).append("\n");
         sb.append("    vpcConfigInfos: ").append(toIndentedString(vpcConfigInfos)).append("\n");
+        sb.append("    dcVncIp: ").append(toIndentedString(dcVncIp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

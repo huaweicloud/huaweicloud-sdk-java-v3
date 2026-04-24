@@ -51,6 +51,11 @@ public class Vdi {
 
     private VdiNoOperationHibernateOptions noOperationHibernateOptions;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ignore_power_status")
+
+    private Boolean ignorePowerStatus;
+
     public Vdi withAutoLockEnable(Boolean autoLockEnable) {
         this.autoLockEnable = autoLockEnable;
         return this;
@@ -227,6 +232,23 @@ public class Vdi {
         this.noOperationHibernateOptions = noOperationHibernateOptions;
     }
 
+    public Vdi withIgnorePowerStatus(Boolean ignorePowerStatus) {
+        this.ignorePowerStatus = ignorePowerStatus;
+        return this;
+    }
+
+    /**
+     * 强制电源管理。
+     * @return ignorePowerStatus
+     */
+    public Boolean getIgnorePowerStatus() {
+        return ignorePowerStatus;
+    }
+
+    public void setIgnorePowerStatus(Boolean ignorePowerStatus) {
+        this.ignorePowerStatus = ignorePowerStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -243,7 +265,8 @@ public class Vdi {
             && Objects.equals(this.disconnectHibernateEnable, that.disconnectHibernateEnable)
             && Objects.equals(this.disconnectHibernateOptions, that.disconnectHibernateOptions)
             && Objects.equals(this.noOperationHibernateEnable, that.noOperationHibernateEnable)
-            && Objects.equals(this.noOperationHibernateOptions, that.noOperationHibernateOptions);
+            && Objects.equals(this.noOperationHibernateOptions, that.noOperationHibernateOptions)
+            && Objects.equals(this.ignorePowerStatus, that.ignorePowerStatus);
     }
 
     @Override
@@ -255,7 +278,8 @@ public class Vdi {
             disconnectHibernateEnable,
             disconnectHibernateOptions,
             noOperationHibernateEnable,
-            noOperationHibernateOptions);
+            noOperationHibernateOptions,
+            ignorePowerStatus);
     }
 
     @Override
@@ -272,6 +296,7 @@ public class Vdi {
         sb.append("    noOperationHibernateOptions: ")
             .append(toIndentedString(noOperationHibernateOptions))
             .append("\n");
+        sb.append("    ignorePowerStatus: ").append(toIndentedString(ignorePowerStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

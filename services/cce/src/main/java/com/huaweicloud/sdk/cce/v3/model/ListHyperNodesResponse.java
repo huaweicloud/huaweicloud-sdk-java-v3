@@ -15,41 +15,41 @@ import java.util.function.Consumer;
 public class ListHyperNodesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "hyperNodeList")
+    @JsonProperty(value = "body")
 
-    private List<HyperNode> hyperNodeList = null;
+    private List<HyperNode> body = null;
 
-    public ListHyperNodesResponse withHyperNodeList(List<HyperNode> hyperNodeList) {
-        this.hyperNodeList = hyperNodeList;
+    public ListHyperNodesResponse withBody(List<HyperNode> body) {
+        this.body = body;
         return this;
     }
 
-    public ListHyperNodesResponse addHyperNodeListItem(HyperNode hyperNodeListItem) {
-        if (this.hyperNodeList == null) {
-            this.hyperNodeList = new ArrayList<>();
+    public ListHyperNodesResponse addBodyItem(HyperNode bodyItem) {
+        if (this.body == null) {
+            this.body = new ArrayList<>();
         }
-        this.hyperNodeList.add(hyperNodeListItem);
+        this.body.add(bodyItem);
         return this;
     }
 
-    public ListHyperNodesResponse withHyperNodeList(Consumer<List<HyperNode>> hyperNodeListSetter) {
-        if (this.hyperNodeList == null) {
-            this.hyperNodeList = new ArrayList<>();
+    public ListHyperNodesResponse withBody(Consumer<List<HyperNode>> bodySetter) {
+        if (this.body == null) {
+            this.body = new ArrayList<>();
         }
-        hyperNodeListSetter.accept(this.hyperNodeList);
+        bodySetter.accept(this.body);
         return this;
     }
 
     /**
-     * Get hyperNodeList
-     * @return hyperNodeList
+     * Get body
+     * @return body
      */
-    public List<HyperNode> getHyperNodeList() {
-        return hyperNodeList;
+    public List<HyperNode> getBody() {
+        return body;
     }
 
-    public void setHyperNodeList(List<HyperNode> hyperNodeList) {
-        this.hyperNodeList = hyperNodeList;
+    public void setBody(List<HyperNode> body) {
+        this.body = body;
     }
 
     @Override
@@ -61,19 +61,19 @@ public class ListHyperNodesResponse extends SdkResponse {
             return false;
         }
         ListHyperNodesResponse that = (ListHyperNodesResponse) obj;
-        return Objects.equals(this.hyperNodeList, that.hyperNodeList);
+        return Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hyperNodeList);
+        return Objects.hash(body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListHyperNodesResponse {\n");
-        sb.append("    hyperNodeList: ").append(toIndentedString(hyperNodeList)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

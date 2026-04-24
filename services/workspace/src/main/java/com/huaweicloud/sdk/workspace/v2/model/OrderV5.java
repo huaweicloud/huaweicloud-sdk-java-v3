@@ -16,6 +16,11 @@ public class OrderV5 {
     private String orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_id")
+
+    private String jobId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_status")
 
     private Integer orderStatus;
@@ -50,6 +55,23 @@ public class OrderV5 {
 
     public void setOrderId(String orderId) {
         this.orderId = orderId;
+    }
+
+    public OrderV5 withJobId(String jobId) {
+        this.jobId = jobId;
+        return this;
+    }
+
+    /**
+     * jobId。
+     * @return jobId
+     */
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
     }
 
     public OrderV5 withOrderStatus(Integer orderStatus) {
@@ -129,14 +151,14 @@ public class OrderV5 {
             return false;
         }
         OrderV5 that = (OrderV5) obj;
-        return Objects.equals(this.orderId, that.orderId) && Objects.equals(this.orderStatus, that.orderStatus)
-            && Objects.equals(this.result, that.result) && Objects.equals(this.resultCode, that.resultCode)
-            && Objects.equals(this.resultMsg, that.resultMsg);
+        return Objects.equals(this.orderId, that.orderId) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.orderStatus, that.orderStatus) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.resultCode, that.resultCode) && Objects.equals(this.resultMsg, that.resultMsg);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(orderId, orderStatus, result, resultCode, resultMsg);
+        return Objects.hash(orderId, jobId, orderStatus, result, resultCode, resultMsg);
     }
 
     @Override
@@ -144,6 +166,7 @@ public class OrderV5 {
         StringBuilder sb = new StringBuilder();
         sb.append("class OrderV5 {\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    orderStatus: ").append(toIndentedString(orderStatus)).append("\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("    resultCode: ").append(toIndentedString(resultCode)).append("\n");

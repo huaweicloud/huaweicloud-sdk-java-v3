@@ -48,6 +48,11 @@ public class ListPoolDesktopsDetailRequest {
          */
         public static final InconsistentTypeEnum DISK_SIZE = new InconsistentTypeEnum("DISK_SIZE");
 
+        /**
+         * Enum AUTO_ISOLATION for value: "AUTO_ISOLATION"
+         */
+        public static final InconsistentTypeEnum AUTO_ISOLATION = new InconsistentTypeEnum("AUTO_ISOLATION");
+
         private static final Map<String, InconsistentTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, InconsistentTypeEnum> createStaticFields() {
@@ -56,6 +61,7 @@ public class ListPoolDesktopsDetailRequest {
             map.put("IMAGE_ID", IMAGE_ID);
             map.put("DISK_NUM", DISK_NUM);
             map.put("DISK_SIZE", DISK_SIZE);
+            map.put("AUTO_ISOLATION", AUTO_ISOLATION);
             return Collections.unmodifiableMap(map);
         }
 
@@ -359,6 +365,11 @@ public class ListPoolDesktopsDetailRequest {
     @JsonProperty(value = "availability_zone")
 
     private String availabilityZone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isolated")
+
+    private Boolean isolated;
 
     public ListPoolDesktopsDetailRequest withPoolId(String poolId) {
         this.poolId = poolId;
@@ -820,6 +831,23 @@ public class ListPoolDesktopsDetailRequest {
         this.availabilityZone = availabilityZone;
     }
 
+    public ListPoolDesktopsDetailRequest withIsolated(Boolean isolated) {
+        this.isolated = isolated;
+        return this;
+    }
+
+    /**
+     * 动态池桌面隔离状态：false表示未隔离，true表示已隔离。
+     * @return isolated
+     */
+    public Boolean getIsolated() {
+        return isolated;
+    }
+
+    public void setIsolated(Boolean isolated) {
+        this.isolated = isolated;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -842,7 +870,8 @@ public class ListPoolDesktopsDetailRequest {
             && Objects.equals(this.inMaintenanceMode, that.inMaintenanceMode)
             && Objects.equals(this.isShareDesktop, that.isShareDesktop) && Objects.equals(this.subnetId, that.subnetId)
             && Objects.equals(this.isSupportInternet, that.isSupportInternet)
-            && Objects.equals(this.availabilityZone, that.availabilityZone);
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.isolated, that.isolated);
     }
 
     @Override
@@ -870,7 +899,8 @@ public class ListPoolDesktopsDetailRequest {
             isShareDesktop,
             subnetId,
             isSupportInternet,
-            availabilityZone);
+            availabilityZone,
+            isolated);
     }
 
     @Override
@@ -901,6 +931,7 @@ public class ListPoolDesktopsDetailRequest {
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    isSupportInternet: ").append(toIndentedString(isSupportInternet)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    isolated: ").append(toIndentedString(isolated)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -39,7 +39,7 @@ public class CreateDesktopOrderRequestBody {
     }
 
     /**
-     * 企业项目ID，默认\"0。\"
+     * 企业项目ID，默认\"0\"。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

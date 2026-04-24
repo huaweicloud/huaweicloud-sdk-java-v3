@@ -50,6 +50,11 @@ public class DesktopNamePolicyInfo {
 
     private Boolean isContainUser;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "prefix_truncation_enabled")
+
+    private Boolean prefixTruncationEnabled;
+
     public DesktopNamePolicyInfo withPolicyId(String policyId) {
         this.policyId = policyId;
         return this;
@@ -186,6 +191,23 @@ public class DesktopNamePolicyInfo {
         this.isContainUser = isContainUser;
     }
 
+    public DesktopNamePolicyInfo withPrefixTruncationEnabled(Boolean prefixTruncationEnabled) {
+        this.prefixTruncationEnabled = prefixTruncationEnabled;
+        return this;
+    }
+
+    /**
+     * 当名称前缀加数字长度生成的桌面名称长度超15位时，是否截断名称前缀部分。
+     * @return prefixTruncationEnabled
+     */
+    public Boolean getPrefixTruncationEnabled() {
+        return prefixTruncationEnabled;
+    }
+
+    public void setPrefixTruncationEnabled(Boolean prefixTruncationEnabled) {
+        this.prefixTruncationEnabled = prefixTruncationEnabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -200,7 +222,8 @@ public class DesktopNamePolicyInfo {
             && Objects.equals(this.startNumber, that.startNumber)
             && Objects.equals(this.singleDomainUserInc, that.singleDomainUserInc)
             && Objects.equals(this.isDefaultPolicy, that.isDefaultPolicy)
-            && Objects.equals(this.isContainUser, that.isContainUser);
+            && Objects.equals(this.isContainUser, that.isContainUser)
+            && Objects.equals(this.prefixTruncationEnabled, that.prefixTruncationEnabled);
     }
 
     @Override
@@ -212,7 +235,8 @@ public class DesktopNamePolicyInfo {
             startNumber,
             singleDomainUserInc,
             isDefaultPolicy,
-            isContainUser);
+            isContainUser,
+            prefixTruncationEnabled);
     }
 
     @Override
@@ -227,6 +251,7 @@ public class DesktopNamePolicyInfo {
         sb.append("    singleDomainUserInc: ").append(toIndentedString(singleDomainUserInc)).append("\n");
         sb.append("    isDefaultPolicy: ").append(toIndentedString(isDefaultPolicy)).append("\n");
         sb.append("    isContainUser: ").append(toIndentedString(isContainUser)).append("\n");
+        sb.append("    prefixTruncationEnabled: ").append(toIndentedString(prefixTruncationEnabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }

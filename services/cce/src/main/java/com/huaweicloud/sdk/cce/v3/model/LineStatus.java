@@ -24,7 +24,7 @@ public class LineStatus {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "critical")
 
-    private String critical;
+    private Boolean critical;
 
     public LineStatus withStartPoint(Point startPoint) {
         this.startPoint = startPoint;
@@ -78,7 +78,7 @@ public class LineStatus {
         this.endPoint = endPoint;
     }
 
-    public LineStatus withCritical(String critical) {
+    public LineStatus withCritical(Boolean critical) {
         this.critical = critical;
         return this;
     }
@@ -87,11 +87,11 @@ public class LineStatus {
      * 表示是否为关键线路（关键线路未执行无法取消升级流程）
      * @return critical
      */
-    public String getCritical() {
+    public Boolean getCritical() {
         return critical;
     }
 
-    public void setCritical(String critical) {
+    public void setCritical(Boolean critical) {
         this.critical = critical;
     }
 

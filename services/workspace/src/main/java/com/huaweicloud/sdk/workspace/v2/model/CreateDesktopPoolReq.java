@@ -194,9 +194,19 @@ public class CreateDesktopPoolReq {
     private AutoscalePolicy autoscalePolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_reset_policy")
+
+    private UserResetPolicy userResetPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desktop_name_policy_id")
 
     private String desktopNamePolicyId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain")
+
+    private String domain;
 
     public CreateDesktopPoolReq withName(String name) {
         this.name = name;
@@ -204,7 +214,7 @@ public class CreateDesktopPoolReq {
     }
 
     /**
-     * 桌面池名称，桌面池名称必须保证唯一。桌面名称只允许输入中文、大写字母、小写字母、数字、中划线，长度范围为1~255。
+     * 桌面池名称，桌面池名称必须保证唯一。桌面名称只允许输入中文、大写字母、小写字母、数字、中划线，长度范围为1~64。
      * @return name
      */
     public String getName() {
@@ -657,6 +667,32 @@ public class CreateDesktopPoolReq {
         this.autoscalePolicy = autoscalePolicy;
     }
 
+    public CreateDesktopPoolReq withUserResetPolicy(UserResetPolicy userResetPolicy) {
+        this.userResetPolicy = userResetPolicy;
+        return this;
+    }
+
+    public CreateDesktopPoolReq withUserResetPolicy(Consumer<UserResetPolicy> userResetPolicySetter) {
+        if (this.userResetPolicy == null) {
+            this.userResetPolicy = new UserResetPolicy();
+            userResetPolicySetter.accept(this.userResetPolicy);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get userResetPolicy
+     * @return userResetPolicy
+     */
+    public UserResetPolicy getUserResetPolicy() {
+        return userResetPolicy;
+    }
+
+    public void setUserResetPolicy(UserResetPolicy userResetPolicy) {
+        this.userResetPolicy = userResetPolicy;
+    }
+
     public CreateDesktopPoolReq withDesktopNamePolicyId(String desktopNamePolicyId) {
         this.desktopNamePolicyId = desktopNamePolicyId;
         return this;
@@ -672,6 +708,23 @@ public class CreateDesktopPoolReq {
 
     public void setDesktopNamePolicyId(String desktopNamePolicyId) {
         this.desktopNamePolicyId = desktopNamePolicyId;
+    }
+
+    public CreateDesktopPoolReq withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    /**
+     * 桌面分配的域。
+     * @return domain
+     */
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
     }
 
     @Override
@@ -697,7 +750,9 @@ public class CreateDesktopPoolReq {
             && Objects.equals(this.disconnectedRetentionPeriod, that.disconnectedRetentionPeriod)
             && Objects.equals(this.enableAutoscale, that.enableAutoscale)
             && Objects.equals(this.autoscalePolicy, that.autoscalePolicy)
-            && Objects.equals(this.desktopNamePolicyId, that.desktopNamePolicyId);
+            && Objects.equals(this.userResetPolicy, that.userResetPolicy)
+            && Objects.equals(this.desktopNamePolicyId, that.desktopNamePolicyId)
+            && Objects.equals(this.domain, that.domain);
     }
 
     @Override
@@ -723,7 +778,9 @@ public class CreateDesktopPoolReq {
             disconnectedRetentionPeriod,
             enableAutoscale,
             autoscalePolicy,
-            desktopNamePolicyId);
+            userResetPolicy,
+            desktopNamePolicyId,
+            domain);
     }
 
     @Override
@@ -753,7 +810,9 @@ public class CreateDesktopPoolReq {
             .append("\n");
         sb.append("    enableAutoscale: ").append(toIndentedString(enableAutoscale)).append("\n");
         sb.append("    autoscalePolicy: ").append(toIndentedString(autoscalePolicy)).append("\n");
+        sb.append("    userResetPolicy: ").append(toIndentedString(userResetPolicy)).append("\n");
         sb.append("    desktopNamePolicyId: ").append(toIndentedString(desktopNamePolicyId)).append("\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("}");
         return sb.toString();
     }

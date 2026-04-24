@@ -36,6 +36,11 @@ public class ScheduledTask {
     private String lifeCycleType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "life_cycle_exec_period")
+
+    private Integer lifeCycleExecPeriod;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_status")
 
     private String lastStatus;
@@ -163,6 +168,23 @@ public class ScheduledTask {
 
     public void setLifeCycleType(String lifeCycleType) {
         this.lifeCycleType = lifeCycleType;
+    }
+
+    public ScheduledTask withLifeCycleExecPeriod(Integer lifeCycleExecPeriod) {
+        this.lifeCycleExecPeriod = lifeCycleExecPeriod;
+        return this;
+    }
+
+    /**
+     * 触发式任务执行周期，单位分钟。最小1分钟，最大10080分钟（7天），默认1440分钟（1天）。
+     * @return lifeCycleExecPeriod
+     */
+    public Integer getLifeCycleExecPeriod() {
+        return lifeCycleExecPeriod;
+    }
+
+    public void setLifeCycleExecPeriod(Integer lifeCycleExecPeriod) {
+        this.lifeCycleExecPeriod = lifeCycleExecPeriod;
     }
 
     public ScheduledTask withLastStatus(String lastStatus) {
@@ -330,6 +352,7 @@ public class ScheduledTask {
         return Objects.equals(this.id, that.id) && Objects.equals(this.taskName, that.taskName)
             && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.scheduledType, that.scheduledType)
             && Objects.equals(this.lifeCycleType, that.lifeCycleType)
+            && Objects.equals(this.lifeCycleExecPeriod, that.lifeCycleExecPeriod)
             && Objects.equals(this.lastStatus, that.lastStatus)
             && Objects.equals(this.nextExecutionTime, that.nextExecutionTime)
             && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.enable, that.enable)
@@ -345,6 +368,7 @@ public class ScheduledTask {
             taskType,
             scheduledType,
             lifeCycleType,
+            lifeCycleExecPeriod,
             lastStatus,
             nextExecutionTime,
             expireTime,
@@ -365,6 +389,7 @@ public class ScheduledTask {
         sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
         sb.append("    scheduledType: ").append(toIndentedString(scheduledType)).append("\n");
         sb.append("    lifeCycleType: ").append(toIndentedString(lifeCycleType)).append("\n");
+        sb.append("    lifeCycleExecPeriod: ").append(toIndentedString(lifeCycleExecPeriod)).append("\n");
         sb.append("    lastStatus: ").append(toIndentedString(lastStatus)).append("\n");
         sb.append("    nextExecutionTime: ").append(toIndentedString(nextExecutionTime)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");

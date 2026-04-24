@@ -86,6 +86,11 @@ public class Policies {
 
     private PoliciesUserProfile userProfile;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_control")
+
+    private PoliciesDomainControl domainControl;
+
     public Policies withPeripherals(PoliciesPeripherals peripherals) {
         this.peripherals = peripherals;
         return this;
@@ -476,6 +481,32 @@ public class Policies {
         this.userProfile = userProfile;
     }
 
+    public Policies withDomainControl(PoliciesDomainControl domainControl) {
+        this.domainControl = domainControl;
+        return this;
+    }
+
+    public Policies withDomainControl(Consumer<PoliciesDomainControl> domainControlSetter) {
+        if (this.domainControl == null) {
+            this.domainControl = new PoliciesDomainControl();
+            domainControlSetter.accept(this.domainControl);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get domainControl
+     * @return domainControl
+     */
+    public PoliciesDomainControl getDomainControl() {
+        return domainControl;
+    }
+
+    public void setDomainControl(PoliciesDomainControl domainControl) {
+        this.domainControl = domainControl;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -494,7 +525,8 @@ public class Policies {
             && Objects.equals(this.personalizedDataMgmt, that.personalizedDataMgmt)
             && Objects.equals(this.custom, that.custom) && Objects.equals(this.recordAudit, that.recordAudit)
             && Objects.equals(this.cloudStorage, that.cloudStorage)
-            && Objects.equals(this.userProfile, that.userProfile);
+            && Objects.equals(this.userProfile, that.userProfile)
+            && Objects.equals(this.domainControl, that.domainControl);
     }
 
     @Override
@@ -513,7 +545,8 @@ public class Policies {
             custom,
             recordAudit,
             cloudStorage,
-            userProfile);
+            userProfile,
+            domainControl);
     }
 
     @Override
@@ -535,6 +568,7 @@ public class Policies {
         sb.append("    recordAudit: ").append(toIndentedString(recordAudit)).append("\n");
         sb.append("    cloudStorage: ").append(toIndentedString(cloudStorage)).append("\n");
         sb.append("    userProfile: ").append(toIndentedString(userProfile)).append("\n");
+        sb.append("    domainControl: ").append(toIndentedString(domainControl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

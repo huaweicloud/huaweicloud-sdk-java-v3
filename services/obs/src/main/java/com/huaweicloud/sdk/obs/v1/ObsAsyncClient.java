@@ -29,6 +29,8 @@ import com.huaweicloud.sdk.obs.v1.model.GetBucketMetadataRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketMetadataResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketNotificationRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketNotificationResponse;
+import com.huaweicloud.sdk.obs.v1.model.GetBucketObjectLockRequest;
+import com.huaweicloud.sdk.obs.v1.model.GetBucketObjectLockResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketPolicyPublicStatusRequest;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketPolicyPublicStatusResponse;
 import com.huaweicloud.sdk.obs.v1.model.GetBucketPublicAccessBlockRequest;
@@ -63,8 +65,12 @@ import com.huaweicloud.sdk.obs.v1.model.SetBucketPolicyRequest;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketPolicyResponse;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketPublicAccessBlockRequest;
 import com.huaweicloud.sdk.obs.v1.model.SetBucketPublicAccessBlockResponse;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketVersioningRequest;
+import com.huaweicloud.sdk.obs.v1.model.SetBucketVersioningResponse;
 import com.huaweicloud.sdk.obs.v1.model.SetDisPolicyRequest;
 import com.huaweicloud.sdk.obs.v1.model.SetDisPolicyResponse;
+import com.huaweicloud.sdk.obs.v1.model.SetObjectLockRequest;
+import com.huaweicloud.sdk.obs.v1.model.SetObjectLockResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -591,6 +597,37 @@ public class ObsAsyncClient {
     public AsyncInvoker<GetBucketNotificationRequest, GetBucketNotificationResponse> getBucketNotificationAsyncInvoker(
         GetBucketNotificationRequest request) {
         return new AsyncInvoker<>(request, ObsMeta.getBucketNotification, hcClient);
+    }
+
+    /**
+     * 获取桶级默认WORM策略
+     *
+     * 获取该桶设置的桶级默认WORM策略。 要正确执行此操作，需要确保操作者有GetBucketObjectLockConfiguration权限。默认情况下只有桶的所有者可以执行此操作，也可以通过设置桶策略或用户策略授权给其他用户。
+     * 说明： 如果您打开了桶级WORM开关，但从未配置过桶级默认WORM策略，您依然可以使用此接口查看开关的打开情况。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetBucketObjectLockRequest 请求对象
+     * @return CompletableFuture<GetBucketObjectLockResponse>
+     */
+    public CompletableFuture<GetBucketObjectLockResponse> getBucketObjectLockAsync(GetBucketObjectLockRequest request) {
+        return hcClient.asyncInvokeHttp(request, ObsMeta.getBucketObjectLock);
+    }
+
+    /**
+     * 获取桶级默认WORM策略
+     *
+     * 获取该桶设置的桶级默认WORM策略。 要正确执行此操作，需要确保操作者有GetBucketObjectLockConfiguration权限。默认情况下只有桶的所有者可以执行此操作，也可以通过设置桶策略或用户策略授权给其他用户。
+     * 说明： 如果您打开了桶级WORM开关，但从未配置过桶级默认WORM策略，您依然可以使用此接口查看开关的打开情况。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetBucketObjectLockRequest 请求对象
+     * @return AsyncInvoker<GetBucketObjectLockRequest, GetBucketObjectLockResponse>
+     */
+    public AsyncInvoker<GetBucketObjectLockRequest, GetBucketObjectLockResponse> getBucketObjectLockAsyncInvoker(
+        GetBucketObjectLockRequest request) {
+        return new AsyncInvoker<>(request, ObsMeta.getBucketObjectLock, hcClient);
     }
 
     /**
@@ -1196,6 +1233,75 @@ public class ObsAsyncClient {
     }
 
     /**
+     * 设置桶的多版本状态
+     *
+     * 多版本功能可在用户意外覆盖或删除对象的情况下提供一种恢复手段。用户可以使用多版本功能来保存、检索和还原对象的各个版本，这样用户能够从意外操作或应用程序故障中轻松恢复数据。多版本功能还可用于数据保留和存档。
+     * 
+     * 默认情况下，桶没有设置多版本功能。
+     * 
+     * 本接口设置桶的多版本状态，用来开启或暂停桶的多版本功能。
+     * 
+     * 设置桶的多版本状态为Enabled，开启桶的多版本功能：
+     * 
+     * 上传对象时，系统为每一个对象创建一个唯一版本号，上传同名的对象将不再覆盖旧的对象，而是创建新的不同版本号的同名对象
+     * 可以指定版本号下载对象，不指定版本号默认下载最新对象；
+     * 删除对象时可以指定版本号删除，不带版本号删除对象仅产生一个带唯一版本号的删除标记，并不删除对象；
+     * 列出桶内对象列表时默认列出最新对象列表，可以指定列出桶内所有版本对象列表；
+     * 除了删除标记外，每个版本的对象存储均需计费（不包括对象元数据）。
+     * 设置桶的多版本状态为Suspended，暂停桶的多版本功能：
+     * 
+     * 旧的版本数据继续保留 ；
+     * 上传对象时创建对象的版本号为null，上传同名的对象将覆盖原有同名的版本号为null的对象；
+     * 可以指定版本号下载对象，不指定版本号默认下载最新对象；
+     * 删除对象时可以指定版本号删除，不带版本号删除对象将产生一个版本号为null的删除标记，并删除版本号为null的对象；
+     * 除了删除标记外，每个版本的对象存储均需计费（不包括对象元数据）。
+     * 只有桶的所有者可以设置桶的多版本状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetBucketVersioningRequest 请求对象
+     * @return CompletableFuture<SetBucketVersioningResponse>
+     */
+    public CompletableFuture<SetBucketVersioningResponse> setBucketVersioningAsync(SetBucketVersioningRequest request) {
+        return hcClient.asyncInvokeHttp(request, ObsMeta.setBucketVersioning);
+    }
+
+    /**
+     * 设置桶的多版本状态
+     *
+     * 多版本功能可在用户意外覆盖或删除对象的情况下提供一种恢复手段。用户可以使用多版本功能来保存、检索和还原对象的各个版本，这样用户能够从意外操作或应用程序故障中轻松恢复数据。多版本功能还可用于数据保留和存档。
+     * 
+     * 默认情况下，桶没有设置多版本功能。
+     * 
+     * 本接口设置桶的多版本状态，用来开启或暂停桶的多版本功能。
+     * 
+     * 设置桶的多版本状态为Enabled，开启桶的多版本功能：
+     * 
+     * 上传对象时，系统为每一个对象创建一个唯一版本号，上传同名的对象将不再覆盖旧的对象，而是创建新的不同版本号的同名对象
+     * 可以指定版本号下载对象，不指定版本号默认下载最新对象；
+     * 删除对象时可以指定版本号删除，不带版本号删除对象仅产生一个带唯一版本号的删除标记，并不删除对象；
+     * 列出桶内对象列表时默认列出最新对象列表，可以指定列出桶内所有版本对象列表；
+     * 除了删除标记外，每个版本的对象存储均需计费（不包括对象元数据）。
+     * 设置桶的多版本状态为Suspended，暂停桶的多版本功能：
+     * 
+     * 旧的版本数据继续保留 ；
+     * 上传对象时创建对象的版本号为null，上传同名的对象将覆盖原有同名的版本号为null的对象；
+     * 可以指定版本号下载对象，不指定版本号默认下载最新对象；
+     * 删除对象时可以指定版本号删除，不带版本号删除对象将产生一个版本号为null的删除标记，并删除版本号为null的对象；
+     * 除了删除标记外，每个版本的对象存储均需计费（不包括对象元数据）。
+     * 只有桶的所有者可以设置桶的多版本状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetBucketVersioningRequest 请求对象
+     * @return AsyncInvoker<SetBucketVersioningRequest, SetBucketVersioningResponse>
+     */
+    public AsyncInvoker<SetBucketVersioningRequest, SetBucketVersioningResponse> setBucketVersioningAsyncInvoker(
+        SetBucketVersioningRequest request) {
+        return new AsyncInvoker<>(request, ObsMeta.setBucketVersioning, hcClient);
+    }
+
+    /**
      * 设置DIS通知策略
      *
      * 本接口用于为指定桶配置DIS通知策略。接口是幂等的，若桶上已存在相同策略内容，则返回成功，status code返回值为200；否则status code返回值为201。
@@ -1222,6 +1328,41 @@ public class ObsAsyncClient {
     public AsyncInvoker<SetDisPolicyRequest, SetDisPolicyResponse> setDisPolicyAsyncInvoker(
         SetDisPolicyRequest request) {
         return new AsyncInvoker<>(request, ObsMeta.setDisPolicy, hcClient);
+    }
+
+    /**
+     * 配置对象级WORM保护策略
+     *
+     * 开启了WORM开关的桶，上传的对象支持配置或修改对象保护期限。 1. 如果上传对象时没有配置保护期限或自动应用桶级默认保护策略，您可以通过该操作配置对象保护期限。 2. 如果上传对象时配置了保护期限或自动应用了默认保护期限，允许用户通过该操作延长保护期限。 3. 对象保护期限仅允许修改，不允许删除。
+     * 说明： 用户需要拥有“PutObjectRetention”权限才能配置或修改对象保护期限。
+     * 多版本 开启了WORM开关的桶默认开启了多版本，因此桶内对象在上传时会具备版本号。您在配置对象级WORM保护策略时可以指定版本号来为特定版本的对象配置，如果您不指定版本号，则改动只会对同名对象的最新版本生效。WORM功能不会对带唯一版本号的删除标记生效。
+     * 多段操作 多段上传的对象在合并前不会自动应用桶级默认WORM策略，也无法通过在上传或合并时指定头域来配置对象级WORM保护策略，指定已上传的段作为此接口的目标对象也无法进行配置。如果您需要对多段对象进行保护，您可以在合并多段对象后通过此接口为其配置对象级WORM保护策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetObjectLockRequest 请求对象
+     * @return CompletableFuture<SetObjectLockResponse>
+     */
+    public CompletableFuture<SetObjectLockResponse> setObjectLockAsync(SetObjectLockRequest request) {
+        return hcClient.asyncInvokeHttp(request, ObsMeta.setObjectLock);
+    }
+
+    /**
+     * 配置对象级WORM保护策略
+     *
+     * 开启了WORM开关的桶，上传的对象支持配置或修改对象保护期限。 1. 如果上传对象时没有配置保护期限或自动应用桶级默认保护策略，您可以通过该操作配置对象保护期限。 2. 如果上传对象时配置了保护期限或自动应用了默认保护期限，允许用户通过该操作延长保护期限。 3. 对象保护期限仅允许修改，不允许删除。
+     * 说明： 用户需要拥有“PutObjectRetention”权限才能配置或修改对象保护期限。
+     * 多版本 开启了WORM开关的桶默认开启了多版本，因此桶内对象在上传时会具备版本号。您在配置对象级WORM保护策略时可以指定版本号来为特定版本的对象配置，如果您不指定版本号，则改动只会对同名对象的最新版本生效。WORM功能不会对带唯一版本号的删除标记生效。
+     * 多段操作 多段上传的对象在合并前不会自动应用桶级默认WORM策略，也无法通过在上传或合并时指定头域来配置对象级WORM保护策略，指定已上传的段作为此接口的目标对象也无法进行配置。如果您需要对多段对象进行保护，您可以在合并多段对象后通过此接口为其配置对象级WORM保护策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetObjectLockRequest 请求对象
+     * @return AsyncInvoker<SetObjectLockRequest, SetObjectLockResponse>
+     */
+    public AsyncInvoker<SetObjectLockRequest, SetObjectLockResponse> setObjectLockAsyncInvoker(
+        SetObjectLockRequest request) {
+        return new AsyncInvoker<>(request, ObsMeta.setObjectLock, hcClient);
     }
 
 }

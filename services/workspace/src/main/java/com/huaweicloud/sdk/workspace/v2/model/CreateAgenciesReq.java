@@ -16,7 +16,7 @@ import java.util.Objects;
 public class CreateAgenciesReq {
 
     /**
-     * 委托场景。   - WORKSPACE：云桌面。   - CLOUD_GAME：云游戏。   - CLOUD_STORAGE：云存储。   - SCREEN_RECORD：录屏审计。
+     * 委托场景。   - WORKSPACE：云桌面。   - CLOUD_GAME：云游戏。   - CLOUD_STORAGE：云存储。   - SCREEN_RECORD：录屏审计。   - IMAGE_CREATION: 镜像制作
      */
     public static final class SceneEnum {
 
@@ -40,6 +40,11 @@ public class CreateAgenciesReq {
          */
         public static final SceneEnum SCREEN_RECORD = new SceneEnum("SCREEN_RECORD");
 
+        /**
+         * Enum IMAGE_CREATION for value: "IMAGE_CREATION"
+         */
+        public static final SceneEnum IMAGE_CREATION = new SceneEnum("IMAGE_CREATION");
+
         private static final Map<String, SceneEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SceneEnum> createStaticFields() {
@@ -48,6 +53,7 @@ public class CreateAgenciesReq {
             map.put("CLOUD_GAME", CLOUD_GAME);
             map.put("CLOUD_STORAGE", CLOUD_STORAGE);
             map.put("SCREEN_RECORD", SCREEN_RECORD);
+            map.put("IMAGE_CREATION", IMAGE_CREATION);
             return Collections.unmodifiableMap(map);
         }
 
@@ -183,7 +189,7 @@ public class CreateAgenciesReq {
     }
 
     /**
-     * 委托场景。   - WORKSPACE：云桌面。   - CLOUD_GAME：云游戏。   - CLOUD_STORAGE：云存储。   - SCREEN_RECORD：录屏审计。
+     * 委托场景。   - WORKSPACE：云桌面。   - CLOUD_GAME：云游戏。   - CLOUD_STORAGE：云存储。   - SCREEN_RECORD：录屏审计。   - IMAGE_CREATION: 镜像制作
      * @return scene
      */
     public SceneEnum getScene() {

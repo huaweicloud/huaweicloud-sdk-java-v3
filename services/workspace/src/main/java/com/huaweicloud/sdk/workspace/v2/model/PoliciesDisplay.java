@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class PoliciesDisplay {
 
     /**
-     * 显示级别。取值为： LEVEL1：表示等级1。 LEVEL2：表示等级2。 LEVEL3：表示等级3。 LEVEL4：表示等级4（默认/推荐）。 LEVEL5：表示等级5。
+     * 显示级别。取值为： LEVEL1：表示等级1。 LEVEL2：表示等级2。 LEVEL3：表示等级3。 LEVEL4：表示等级4（默认/推荐）。 LEVEL5：表示等级5。 LEVEL6：表示画质优先。 LEVEL7：表示流畅优先。 LEVEL8：表示自定义。
      */
     public static final class DisplayLevelEnum {
 
@@ -46,6 +46,21 @@ public class PoliciesDisplay {
          */
         public static final DisplayLevelEnum LEVEL5 = new DisplayLevelEnum("LEVEL5");
 
+        /**
+         * Enum LEVEL6 for value: "LEVEL6"
+         */
+        public static final DisplayLevelEnum LEVEL6 = new DisplayLevelEnum("LEVEL6");
+
+        /**
+         * Enum LEVEL7 for value: "LEVEL7"
+         */
+        public static final DisplayLevelEnum LEVEL7 = new DisplayLevelEnum("LEVEL7");
+
+        /**
+         * Enum LEVEL8 for value: "LEVEL8"
+         */
+        public static final DisplayLevelEnum LEVEL8 = new DisplayLevelEnum("LEVEL8");
+
         private static final Map<String, DisplayLevelEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DisplayLevelEnum> createStaticFields() {
@@ -55,6 +70,9 @@ public class PoliciesDisplay {
             map.put("LEVEL3", LEVEL3);
             map.put("LEVEL4", LEVEL4);
             map.put("LEVEL5", LEVEL5);
+            map.put("LEVEL6", LEVEL6);
+            map.put("LEVEL7", LEVEL7);
+            map.put("LEVEL8", LEVEL8);
             return Collections.unmodifiableMap(map);
         }
 
@@ -190,7 +208,7 @@ public class PoliciesDisplay {
     }
 
     /**
-     * 显示级别。取值为： LEVEL1：表示等级1。 LEVEL2：表示等级2。 LEVEL3：表示等级3。 LEVEL4：表示等级4（默认/推荐）。 LEVEL5：表示等级5。
+     * 显示级别。取值为： LEVEL1：表示等级1。 LEVEL2：表示等级2。 LEVEL3：表示等级3。 LEVEL4：表示等级4（默认/推荐）。 LEVEL5：表示等级5。 LEVEL6：表示画质优先。 LEVEL7：表示流畅优先。 LEVEL8：表示自定义。
      * @return displayLevel
      */
     public DisplayLevelEnum getDisplayLevel() {

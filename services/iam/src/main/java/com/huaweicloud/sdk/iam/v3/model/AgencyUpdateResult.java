@@ -28,7 +28,7 @@ public class AgencyUpdateResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
 
-    private String duration;
+    private Object duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
@@ -101,7 +101,7 @@ public class AgencyUpdateResult {
         this.domainId = domainId;
     }
 
-    public AgencyUpdateResult withDuration(String duration) {
+    public AgencyUpdateResult withDuration(Object duration) {
         this.duration = duration;
         return this;
     }
@@ -110,11 +110,11 @@ public class AgencyUpdateResult {
      * 委托的期限。取值为\"FOREVER\"或“null”表示委托的期限为永久，取值为24表示委托的期限为一天，或为24小时。
      * @return duration
      */
-    public String getDuration() {
+    public Object getDuration() {
         return duration;
     }
 
-    public void setDuration(String duration) {
+    public void setDuration(Object duration) {
         this.duration = duration;
     }
 

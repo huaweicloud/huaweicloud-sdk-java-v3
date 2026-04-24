@@ -174,6 +174,9 @@ import com.huaweicloud.sdk.workspace.v2.model.CheckEnterpriseIdResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CheckSysprepInfoRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CheckSysprepInfoRequestBody;
 import com.huaweicloud.sdk.workspace.v2.model.CheckSysprepInfoResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CloseDomainNewReq;
+import com.huaweicloud.sdk.workspace.v2.model.CloseDomainNewRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CloseDomainNewResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateAccessPolicyReq;
 import com.huaweicloud.sdk.workspace.v2.model.CreateAccessPolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateAccessPolicyResponse;
@@ -217,6 +220,9 @@ import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopUserRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopUserResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDomainNewReq;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDomainNewRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDomainNewResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateOrderReq;
 import com.huaweicloud.sdk.workspace.v2.model.CreateOrderRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateOrderResponse;
@@ -312,6 +318,8 @@ import com.huaweicloud.sdk.workspace.v2.model.DownloadExportFileRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DownloadExportFileResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DownloadMetadataRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DownloadMetadataResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DownloadSpMetadataRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DownloadSpMetadataResponse;
 import com.huaweicloud.sdk.workspace.v2.model.EditUserGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.EditUserReq;
 import com.huaweicloud.sdk.workspace.v2.model.EnableRuleRestrictionRequest;
@@ -412,6 +420,7 @@ import com.huaweicloud.sdk.workspace.v2.model.ImportUserListResponse;
 import com.huaweicloud.sdk.workspace.v2.model.InstallAppRequest;
 import com.huaweicloud.sdk.workspace.v2.model.InstallAppResponse;
 import com.huaweicloud.sdk.workspace.v2.model.JobActionsReq;
+import com.huaweicloud.sdk.workspace.v2.model.LifeCycleTypeConfigRsp;
 import com.huaweicloud.sdk.workspace.v2.model.ListAccessAddressBackupConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAccessAddressBackupConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListAccessPoliciesRequest;
@@ -504,6 +513,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListItaSubJobsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListItaSubJobsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListJobsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListJobsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListLifeCycleTypeConfigurationsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListLifeCycleTypeConfigurationsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListLoginRecordsNewRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListLoginRecordsNewResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListLoginStateRequest;
@@ -560,6 +571,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListScheduledTasksRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListScheduledTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListScreenRecordsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListScreenRecordsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListScreenRecordsTrafficLimitConfigRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListScreenRecordsTrafficLimitConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListScriptRecordsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListScriptRecordsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListScriptTasksRequest;
@@ -578,6 +591,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListSubnetBandwidthsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListSubnetBandwidthsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListSubnetsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListSubnetsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListSubscribeAiAssistantUsersRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListSubscribeAiAssistantUsersResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListTargetOfPolicyGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListTargetOfPolicyGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListTenantConfigsRequest;
@@ -654,6 +669,7 @@ import com.huaweicloud.sdk.workspace.v2.model.RunActionsOnGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.RunActionsOnGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.RunActionsOnWorkspaceJobRequest;
 import com.huaweicloud.sdk.workspace.v2.model.RunActionsOnWorkspaceJobResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ScreenRecordsConfigResultReq;
 import com.huaweicloud.sdk.workspace.v2.model.SendDesktopPoolNotificationsReq;
 import com.huaweicloud.sdk.workspace.v2.model.SendDesktopPoolNotificationsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.SendDesktopPoolNotificationsResponse;
@@ -672,6 +688,8 @@ import com.huaweicloud.sdk.workspace.v2.model.SetRuleRestrictionResponse;
 import com.huaweicloud.sdk.workspace.v2.model.SetUserEventsLtsConfigurationsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.SetUserEventsLtsConfigurationsRequestBody;
 import com.huaweicloud.sdk.workspace.v2.model.SetUserEventsLtsConfigurationsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowAiAssistantUsageFrequencyRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowAiAssistantUsageFrequencyResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowAssistAuthConfigApplyObjectsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowAssistAuthConfigApplyObjectsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowAssistAuthConfigRequest;
@@ -698,6 +716,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopPoolsScriptExecTasksReq
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopPoolsScriptExecTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopRemoteAssistanceInfoRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopRemoteAssistanceInfoResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowDomainsNewRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowDomainsNewResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowGrowthRateRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowGrowthRateResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowHibernateTypeRequest;
@@ -737,6 +757,11 @@ import com.huaweicloud.sdk.workspace.v2.model.ShowWorkspaceLockResponse;
 import com.huaweicloud.sdk.workspace.v2.model.StopScriptExecutionReq;
 import com.huaweicloud.sdk.workspace.v2.model.StopScriptExecutionRequest;
 import com.huaweicloud.sdk.workspace.v2.model.StopScriptExecutionResponse;
+import com.huaweicloud.sdk.workspace.v2.model.SubscribeAiAssistantReq;
+import com.huaweicloud.sdk.workspace.v2.model.SubscribeAiAssistantRequest;
+import com.huaweicloud.sdk.workspace.v2.model.SubscribeAiAssistantResponse;
+import com.huaweicloud.sdk.workspace.v2.model.SyncExternalUserRequest;
+import com.huaweicloud.sdk.workspace.v2.model.SyncExternalUserResponse;
 import com.huaweicloud.sdk.workspace.v2.model.TagsReq;
 import com.huaweicloud.sdk.workspace.v2.model.TerminalsBindingDesktopsConfig;
 import com.huaweicloud.sdk.workspace.v2.model.UnlockWorkspaceRequest;
@@ -766,6 +791,9 @@ import com.huaweicloud.sdk.workspace.v2.model.UpdateAssistAuthMethodConfigReques
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAssistAuthMethodConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAuthMethodConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAuthMethodConfigResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateDcVncRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateDcVncRequestBody;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateDcVncResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopNamePolicyReq;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopNamePolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopNamePolicyResponse;
@@ -780,8 +808,13 @@ import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopSidsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopUsernameReq;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopUsernameRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopUsernameResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateDomainNewReq;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateDomainNewRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateDomainNewResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateEnterpriseIdRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateEnterpriseIdResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateFullSpeedRecordConfigRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateFullSpeedRecordConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateHostsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateHostsRequestBody;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateHostsResponse;
@@ -800,6 +833,9 @@ import com.huaweicloud.sdk.workspace.v2.model.UpdatePolicyGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScheduledTasksReq;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScheduledTasksRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScheduledTasksResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateScreenRecordsRequestBody;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateScreenRecordsTrafficLimitConfigRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateScreenRecordsTrafficLimitConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScriptReq;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScriptRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScriptResponse;
@@ -1166,6 +1202,101 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAgenciesRequest::getAction, ListAgenciesRequest::setAction));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSubscribeAiAssistantUsersRequest, ListSubscribeAiAssistantUsersResponse> listSubscribeAiAssistantUsers =
+        genForListSubscribeAiAssistantUsers();
+
+    private static HttpRequestDef<ListSubscribeAiAssistantUsersRequest, ListSubscribeAiAssistantUsersResponse> genForListSubscribeAiAssistantUsers() {
+        // basic
+        HttpRequestDef.Builder<ListSubscribeAiAssistantUsersRequest, ListSubscribeAiAssistantUsersResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSubscribeAiAssistantUsersRequest.class,
+                    ListSubscribeAiAssistantUsersResponse.class)
+                .withName("ListSubscribeAiAssistantUsers")
+                .withUri("/v3/users/ai-assistant/subscribe")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSubscribeAiAssistantUsersRequest::getLimit,
+                ListSubscribeAiAssistantUsersRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSubscribeAiAssistantUsersRequest::getOffset,
+                ListSubscribeAiAssistantUsersRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAiAssistantUsageFrequencyRequest, ShowAiAssistantUsageFrequencyResponse> showAiAssistantUsageFrequency =
+        genForShowAiAssistantUsageFrequency();
+
+    private static HttpRequestDef<ShowAiAssistantUsageFrequencyRequest, ShowAiAssistantUsageFrequencyResponse> genForShowAiAssistantUsageFrequency() {
+        // basic
+        HttpRequestDef.Builder<ShowAiAssistantUsageFrequencyRequest, ShowAiAssistantUsageFrequencyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAiAssistantUsageFrequencyRequest.class,
+                    ShowAiAssistantUsageFrequencyResponse.class)
+                .withName("ShowAiAssistantUsageFrequency")
+                .withUri("/v3/users/ai-assistant/statistics/usage-frequency")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("count",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowAiAssistantUsageFrequencyRequest::getCount,
+                ShowAiAssistantUsageFrequencyRequest::setCount));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAiAssistantUsageFrequencyRequest::getStartTime,
+                ShowAiAssistantUsageFrequencyRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAiAssistantUsageFrequencyRequest::getEndTime,
+                ShowAiAssistantUsageFrequencyRequest::setEndTime));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SubscribeAiAssistantRequest, SubscribeAiAssistantResponse> subscribeAiAssistant =
+        genForSubscribeAiAssistant();
+
+    private static HttpRequestDef<SubscribeAiAssistantRequest, SubscribeAiAssistantResponse> genForSubscribeAiAssistant() {
+        // basic
+        HttpRequestDef.Builder<SubscribeAiAssistantRequest, SubscribeAiAssistantResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SubscribeAiAssistantRequest.class, SubscribeAiAssistantResponse.class)
+            .withName("SubscribeAiAssistant")
+            .withUri("/v3/users/ai-assistant/subscribe")
+            .withContentType("application/json");
+
+        // requests
+        builder.<SubscribeAiAssistantReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SubscribeAiAssistantReq.class),
+            f -> f.withMarshaller(SubscribeAiAssistantRequest::getBody, SubscribeAiAssistantRequest::setBody));
 
         // response
 
@@ -2020,6 +2151,36 @@ public class WorkspaceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DownloadSpMetadataRequest, DownloadSpMetadataResponse> downloadSpMetadata =
+        genForDownloadSpMetadata();
+
+    private static HttpRequestDef<DownloadSpMetadataRequest, DownloadSpMetadataResponse> genForDownloadSpMetadata() {
+        // basic
+        HttpRequestDef.Builder<DownloadSpMetadataRequest, DownloadSpMetadataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, DownloadSpMetadataRequest.class, DownloadSpMetadataResponse.class)
+                .withName("DownloadSpMetadata")
+                .withUri("/v2/{project_id}/auth-config/saml2/sp/metadata")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identity_provider",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadSpMetadataRequest::getIdentityProvider,
+                DownloadSpMetadataRequest::setIdentityProvider));
+        builder.<String>withRequestField("access_server_address",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadSpMetadataRequest::getAccessServerAddress,
+                DownloadSpMetadataRequest::setAccessServerAddress));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAssistAuthConfigRequest, ShowAssistAuthConfigResponse> showAssistAuthConfig =
         genForShowAssistAuthConfig();
 
@@ -2032,6 +2193,12 @@ public class WorkspaceMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("main_auth_config_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAssistAuthConfigRequest::getMainAuthConfigId,
+                ShowAssistAuthConfigRequest::setMainAuthConfigId));
 
         // response
 
@@ -2773,6 +2940,12 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExportUserConnectionNewRequest::getPublicIp,
                 ExportUserConnectionNewRequest::setPublicIp));
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportUserConnectionNewRequest::getDomain,
+                ExportUserConnectionNewRequest::setDomain));
 
         // response
 
@@ -4660,6 +4833,12 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPoolDesktopsDetailRequest::getAvailabilityZone,
                 ListPoolDesktopsDetailRequest::setAvailabilityZone));
+        builder.<Boolean>withRequestField("isolated",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListPoolDesktopsDetailRequest::getIsolated,
+                ListPoolDesktopsDetailRequest::setIsolated));
 
         // response
 
@@ -5497,6 +5676,16 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListUserGroupsRequest::getKeyword, ListUserGroupsRequest::setKeyword));
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserGroupsRequest::getDomain, ListUserGroupsRequest::setDomain));
+        builder.<List<String>>withRequestField("platform_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListUserGroupsRequest::getPlatformType, ListUserGroupsRequest::setPlatformType));
 
         // response
 
@@ -5541,15 +5730,15 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListUsersOfGroupRequest::getEnterpriseProjectId,
                 ListUsersOfGroupRequest::setEnterpriseProjectId));
-        builder.<String>withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListUsersOfGroupRequest::getLimit, ListUsersOfGroupRequest::setLimit));
-        builder.<String>withRequestField("offset",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListUsersOfGroupRequest::getOffset, ListUsersOfGroupRequest::setOffset));
 
         // response
@@ -8064,6 +8253,41 @@ public class WorkspaceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListLifeCycleTypeConfigurationsRequest, ListLifeCycleTypeConfigurationsResponse> listLifeCycleTypeConfigurations =
+        genForListLifeCycleTypeConfigurations();
+
+    private static HttpRequestDef<ListLifeCycleTypeConfigurationsRequest, ListLifeCycleTypeConfigurationsResponse> genForListLifeCycleTypeConfigurations() {
+        // basic
+        HttpRequestDef.Builder<ListLifeCycleTypeConfigurationsRequest, ListLifeCycleTypeConfigurationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListLifeCycleTypeConfigurationsRequest.class,
+                    ListLifeCycleTypeConfigurationsResponse.class)
+                .withName("ListLifeCycleTypeConfigurations")
+                .withUri("/v2/{project_id}/scheduled-tasks/life-cycle-type/configurations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLifeCycleTypeConfigurationsRequest::getType,
+                ListLifeCycleTypeConfigurationsRequest::setType));
+
+        // response
+        builder.<Map<String, LifeCycleTypeConfigRsp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Map.class),
+            f -> f
+                .withMarshaller(ListLifeCycleTypeConfigurationsResponse::getBody,
+                    ListLifeCycleTypeConfigurationsResponse::setBody)
+                .withInnerContainerType(LifeCycleTypeConfigRsp.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListScheduledTasksRequest, ListScheduledTasksResponse> listScheduledTasks =
         genForListScheduledTasks();
 
@@ -8449,6 +8673,45 @@ public class WorkspaceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListScreenRecordsTrafficLimitConfigRequest, ListScreenRecordsTrafficLimitConfigResponse> listScreenRecordsTrafficLimitConfig =
+        genForListScreenRecordsTrafficLimitConfig();
+
+    private static HttpRequestDef<ListScreenRecordsTrafficLimitConfigRequest, ListScreenRecordsTrafficLimitConfigResponse> genForListScreenRecordsTrafficLimitConfig() {
+        // basic
+        HttpRequestDef.Builder<ListScreenRecordsTrafficLimitConfigRequest, ListScreenRecordsTrafficLimitConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListScreenRecordsTrafficLimitConfigRequest.class,
+                    ListScreenRecordsTrafficLimitConfigResponse.class)
+                .withName("ListScreenRecordsTrafficLimitConfig")
+                .withUri("/v2/{project_id}/screen-records/traffic-limit/configurations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("site_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScreenRecordsTrafficLimitConfigRequest::getSiteId,
+                ListScreenRecordsTrafficLimitConfigRequest::setSiteId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScreenRecordsTrafficLimitConfigRequest::getLimit,
+                ListScreenRecordsTrafficLimitConfigRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScreenRecordsTrafficLimitConfigRequest::getOffset,
+                ListScreenRecordsTrafficLimitConfigRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowScreenRecordRequest, ShowScreenRecordResponse> showScreenRecord =
         genForShowScreenRecord();
 
@@ -8466,6 +8729,66 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowScreenRecordRequest::getRecordId, ShowScreenRecordRequest::setRecordId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateFullSpeedRecordConfigRequest, UpdateFullSpeedRecordConfigResponse> updateFullSpeedRecordConfig =
+        genForUpdateFullSpeedRecordConfig();
+
+    private static HttpRequestDef<UpdateFullSpeedRecordConfigRequest, UpdateFullSpeedRecordConfigResponse> genForUpdateFullSpeedRecordConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateFullSpeedRecordConfigRequest, UpdateFullSpeedRecordConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateFullSpeedRecordConfigRequest.class,
+                    UpdateFullSpeedRecordConfigResponse.class)
+                .withName("UpdateFullSpeedRecordConfig")
+                .withUri("/v2/{project_id}/screen-records/{record_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("record_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFullSpeedRecordConfigRequest::getRecordId,
+                UpdateFullSpeedRecordConfigRequest::setRecordId));
+        builder.<UpdateScreenRecordsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateScreenRecordsRequestBody.class),
+            f -> f.withMarshaller(UpdateFullSpeedRecordConfigRequest::getBody,
+                UpdateFullSpeedRecordConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateScreenRecordsTrafficLimitConfigRequest, UpdateScreenRecordsTrafficLimitConfigResponse> updateScreenRecordsTrafficLimitConfig =
+        genForUpdateScreenRecordsTrafficLimitConfig();
+
+    private static HttpRequestDef<UpdateScreenRecordsTrafficLimitConfigRequest, UpdateScreenRecordsTrafficLimitConfigResponse> genForUpdateScreenRecordsTrafficLimitConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateScreenRecordsTrafficLimitConfigRequest, UpdateScreenRecordsTrafficLimitConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpdateScreenRecordsTrafficLimitConfigRequest.class,
+                    UpdateScreenRecordsTrafficLimitConfigResponse.class)
+                .withName("UpdateScreenRecordsTrafficLimitConfig")
+                .withUri("/v2/{project_id}/screen-records/traffic-limit/configurations")
+                .withContentType("application/json;charset=utf-8");
+
+        // requests
+        builder.<ScreenRecordsConfigResultReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ScreenRecordsConfigResultReq.class),
+            f -> f.withMarshaller(UpdateScreenRecordsTrafficLimitConfigRequest::getBody,
+                UpdateScreenRecordsTrafficLimitConfigRequest::setBody));
 
         // response
 
@@ -9156,6 +9479,33 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAccessModeReq.class),
             f -> f.withMarshaller(UpdateAccessModeRequest::getBody, UpdateAccessModeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDcVncRequest, UpdateDcVncResponse> updateDcVnc = genForUpdateDcVnc();
+
+    private static HttpRequestDef<UpdateDcVncRequest, UpdateDcVncResponse> genForUpdateDcVnc() {
+        // basic
+        HttpRequestDef.Builder<UpdateDcVncRequest, UpdateDcVncResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDcVncRequest.class, UpdateDcVncResponse.class)
+                .withName("UpdateDcVnc")
+                .withUri("/v2/{project_id}/sites/{site_id}/dc-vnc")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("site_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDcVncRequest::getSiteId, UpdateDcVncRequest::setSiteId));
+        builder.<UpdateDcVncRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDcVncRequestBody.class),
+            f -> f.withMarshaller(UpdateDcVncRequest::getBody, UpdateDcVncRequest::setBody));
 
         // response
 
@@ -9936,6 +10286,11 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListUserUsageMetricRequest::getSortType, ListUserUsageMetricRequest::setSortType));
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserUsageMetricRequest::getDomain, ListUserUsageMetricRequest::setDomain));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -10934,11 +11289,21 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListUsersRequest::getEnterpriseProjectId, ListUsersRequest::setEnterpriseProjectId));
+        builder.<Boolean>withRequestField("disabled",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListUsersRequest::getDisabled, ListUsersRequest::setDisabled));
         builder.<String>withRequestField("domain",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListUsersRequest::getDomain, ListUsersRequest::setDomain));
+        builder.<String>withRequestField("platform_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUsersRequest::getPlatformType, ListUsersRequest::setPlatformType));
 
         // response
 
@@ -11071,6 +11436,11 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListUserEventsRequest::getResourceName, ListUserEventsRequest::setResourceName));
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserEventsRequest::getDomain, ListUserEventsRequest::setDomain));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -11533,6 +11903,131 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ValidateDcRequestBody.class),
             f -> f.withMarshaller(ValidateDomainControllerRequest::getBody, ValidateDomainControllerRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CloseDomainNewRequest, CloseDomainNewResponse> closeDomainNew =
+        genForCloseDomainNew();
+
+    private static HttpRequestDef<CloseDomainNewRequest, CloseDomainNewResponse> genForCloseDomainNew() {
+        // basic
+        HttpRequestDef.Builder<CloseDomainNewRequest, CloseDomainNewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, CloseDomainNewRequest.class, CloseDomainNewResponse.class)
+                .withName("CloseDomainNew")
+                .withUri("/v3/{project_id}/domains")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CloseDomainNewReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CloseDomainNewReq.class),
+            f -> f.withMarshaller(CloseDomainNewRequest::getBody, CloseDomainNewRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDomainNewRequest, CreateDomainNewResponse> createDomainNew =
+        genForCreateDomainNew();
+
+    private static HttpRequestDef<CreateDomainNewRequest, CreateDomainNewResponse> genForCreateDomainNew() {
+        // basic
+        HttpRequestDef.Builder<CreateDomainNewRequest, CreateDomainNewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDomainNewRequest.class, CreateDomainNewResponse.class)
+                .withName("CreateDomainNew")
+                .withUri("/v3/{project_id}/domains")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateDomainNewReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDomainNewReq.class),
+            f -> f.withMarshaller(CreateDomainNewRequest::getBody, CreateDomainNewRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDomainsNewRequest, ShowDomainsNewResponse> showDomainsNew =
+        genForShowDomainsNew();
+
+    private static HttpRequestDef<ShowDomainsNewRequest, ShowDomainsNewResponse> genForShowDomainsNew() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainsNewRequest, ShowDomainsNewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDomainsNewRequest.class, ShowDomainsNewResponse.class)
+                .withName("ShowDomainsNew")
+                .withUri("/v3/{project_id}/domains")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("auth_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainsNewRequest::getAuthType, ShowDomainsNewRequest::setAuthType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SyncExternalUserRequest, SyncExternalUserResponse> syncExternalUser =
+        genForSyncExternalUser();
+
+    private static HttpRequestDef<SyncExternalUserRequest, SyncExternalUserResponse> genForSyncExternalUser() {
+        // basic
+        HttpRequestDef.Builder<SyncExternalUserRequest, SyncExternalUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, SyncExternalUserRequest.class, SyncExternalUserResponse.class)
+                .withName("SyncExternalUser")
+                .withUri("/v3/{project_id}/domains/sync-external-user")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("auth_config_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SyncExternalUserRequest::getAuthConfigId, SyncExternalUserRequest::setAuthConfigId));
+        builder.<String>withRequestField("domain_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SyncExternalUserRequest::getDomainId, SyncExternalUserRequest::setDomainId));
+        builder.<String>withRequestField("enterprise_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SyncExternalUserRequest::getEnterpriseId, SyncExternalUserRequest::setEnterpriseId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDomainNewRequest, UpdateDomainNewResponse> updateDomainNew =
+        genForUpdateDomainNew();
+
+    private static HttpRequestDef<UpdateDomainNewRequest, UpdateDomainNewResponse> genForUpdateDomainNew() {
+        // basic
+        HttpRequestDef.Builder<UpdateDomainNewRequest, UpdateDomainNewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDomainNewRequest.class, UpdateDomainNewResponse.class)
+                .withName("UpdateDomainNew")
+                .withUri("/v3/{project_id}/domains")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UpdateDomainNewReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDomainNewReq.class),
+            f -> f.withMarshaller(UpdateDomainNewRequest::getBody, UpdateDomainNewRequest::setBody));
 
         // response
 

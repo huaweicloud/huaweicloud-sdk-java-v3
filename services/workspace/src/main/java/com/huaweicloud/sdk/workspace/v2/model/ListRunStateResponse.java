@@ -37,7 +37,7 @@ public class ListRunStateResponse extends SdkResponse {
     }
 
     /**
-     * 停止个数。
+     * 已关机个数。
      * minimum: 0
      * maximum: 2147483647
      * @return stopNum
@@ -94,7 +94,7 @@ public class ListRunStateResponse extends SdkResponse {
     }
 
     /**
-     * 休眠个数。
+     * 已休眠个数。
      * minimum: 0
      * maximum: 2147483647
      * @return hibernatedNum

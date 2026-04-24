@@ -45,6 +45,11 @@ public class ShowScheduledTasksResponse extends SdkResponse {
     private String lifeCycleType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "life_cycle_exec_period")
+
+    private Integer lifeCycleExecPeriod;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "day_interval")
 
     private Integer dayInterval;
@@ -219,6 +224,23 @@ public class ShowScheduledTasksResponse extends SdkResponse {
 
     public void setLifeCycleType(String lifeCycleType) {
         this.lifeCycleType = lifeCycleType;
+    }
+
+    public ShowScheduledTasksResponse withLifeCycleExecPeriod(Integer lifeCycleExecPeriod) {
+        this.lifeCycleExecPeriod = lifeCycleExecPeriod;
+        return this;
+    }
+
+    /**
+     * 触发式任务执行周期，单位分钟。最小1分钟，最大10080分钟（7天），默认1440分钟（1天）。
+     * @return lifeCycleExecPeriod
+     */
+    public Integer getLifeCycleExecPeriod() {
+        return lifeCycleExecPeriod;
+    }
+
+    public void setLifeCycleExecPeriod(Integer lifeCycleExecPeriod) {
+        this.lifeCycleExecPeriod = lifeCycleExecPeriod;
     }
 
     public ShowScheduledTasksResponse withDayInterval(Integer dayInterval) {
@@ -521,6 +543,7 @@ public class ShowScheduledTasksResponse extends SdkResponse {
             && Objects.equals(this.taskName, that.taskName) && Objects.equals(this.forceExecute, that.forceExecute)
             && Objects.equals(this.scheduledType, that.scheduledType)
             && Objects.equals(this.lifeCycleType, that.lifeCycleType)
+            && Objects.equals(this.lifeCycleExecPeriod, that.lifeCycleExecPeriod)
             && Objects.equals(this.dayInterval, that.dayInterval) && Objects.equals(this.weekList, that.weekList)
             && Objects.equals(this.monthList, that.monthList) && Objects.equals(this.dateList, that.dateList)
             && Objects.equals(this.scheduledDate, that.scheduledDate)
@@ -541,6 +564,7 @@ public class ShowScheduledTasksResponse extends SdkResponse {
             forceExecute,
             scheduledType,
             lifeCycleType,
+            lifeCycleExecPeriod,
             dayInterval,
             weekList,
             monthList,
@@ -568,6 +592,7 @@ public class ShowScheduledTasksResponse extends SdkResponse {
         sb.append("    forceExecute: ").append(toIndentedString(forceExecute)).append("\n");
         sb.append("    scheduledType: ").append(toIndentedString(scheduledType)).append("\n");
         sb.append("    lifeCycleType: ").append(toIndentedString(lifeCycleType)).append("\n");
+        sb.append("    lifeCycleExecPeriod: ").append(toIndentedString(lifeCycleExecPeriod)).append("\n");
         sb.append("    dayInterval: ").append(toIndentedString(dayInterval)).append("\n");
         sb.append("    weekList: ").append(toIndentedString(weekList)).append("\n");
         sb.append("    monthList: ").append(toIndentedString(monthList)).append("\n");

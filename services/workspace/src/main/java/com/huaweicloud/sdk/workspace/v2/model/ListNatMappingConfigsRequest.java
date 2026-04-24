@@ -21,7 +21,7 @@ public class ListNatMappingConfigsRequest {
     }
 
     /**
-     * 站点ID。
+     * 站点ID。如不传默认返回第一个站点的NAT映射配置信息。
      * @return siteId
      */
     public String getSiteId() {

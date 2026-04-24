@@ -25,7 +25,7 @@ public class ShowUserAccessStagesResponse extends SdkResponse {
     private String username;
 
     /**
-     * 接入阶段 | APP - 应用 DESKTOP - 桌面。
+     * 接入阶段 | APP、SHARE_APP - 应用 DESKTOP、VDI - 桌面。
      */
     public static final class BizTypeEnum {
 
@@ -39,12 +39,24 @@ public class ShowUserAccessStagesResponse extends SdkResponse {
          */
         public static final BizTypeEnum DESKTOP = new BizTypeEnum("DESKTOP");
 
+        /**
+         * Enum SHARE_APP for value: "SHARE_APP"
+         */
+        public static final BizTypeEnum SHARE_APP = new BizTypeEnum("SHARE_APP");
+
+        /**
+         * Enum VDI for value: "VDI"
+         */
+        public static final BizTypeEnum VDI = new BizTypeEnum("VDI");
+
         private static final Map<String, BizTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, BizTypeEnum> createStaticFields() {
             Map<String, BizTypeEnum> map = new HashMap<>();
             map.put("APP", APP);
             map.put("DESKTOP", DESKTOP);
+            map.put("SHARE_APP", SHARE_APP);
+            map.put("VDI", VDI);
             return Collections.unmodifiableMap(map);
         }
 
@@ -127,7 +139,7 @@ public class ShowUserAccessStagesResponse extends SdkResponse {
     }
 
     /**
-     * 接入阶段 | APP - 应用 DESKTOP - 桌面。
+     * 接入阶段 | APP、SHARE_APP - 应用 DESKTOP、VDI - 桌面。
      * @return bizType
      */
     public BizTypeEnum getBizType() {

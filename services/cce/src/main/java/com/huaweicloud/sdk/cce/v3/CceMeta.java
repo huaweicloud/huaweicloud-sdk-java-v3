@@ -139,6 +139,7 @@ import com.huaweicloud.sdk.cce.v3.model.GetResourceTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.GetResourceTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.HibernateClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.HibernateClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.HyperNode;
 import com.huaweicloud.sdk.cce.v3.model.InstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAccessPolicyRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAccessPolicyResponse;
@@ -1833,6 +1834,12 @@ public class CceMeta {
             f -> f.withMarshaller(ListHyperNodesRequest::getOffset, ListHyperNodesRequest::setOffset));
 
         // response
+        builder.<List<HyperNode>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListHyperNodesResponse::getBody, ListHyperNodesResponse::setBody)
+                .withInnerContainerType(HyperNode.class));
 
         return builder.build();
     }

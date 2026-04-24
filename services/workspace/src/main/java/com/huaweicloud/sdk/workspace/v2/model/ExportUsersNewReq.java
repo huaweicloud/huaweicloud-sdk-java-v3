@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.workspace.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ExportUsersNewReq
@@ -14,6 +17,11 @@ public class ExportUsersNewReq {
     @JsonProperty(value = "user_name")
 
     private String userName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_names")
+
+    private List<String> userNames = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -50,6 +58,39 @@ public class ExportUsersNewReq {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public ExportUsersNewReq withUserNames(List<String> userNames) {
+        this.userNames = userNames;
+        return this;
+    }
+
+    public ExportUsersNewReq addUserNamesItem(String userNamesItem) {
+        if (this.userNames == null) {
+            this.userNames = new ArrayList<>();
+        }
+        this.userNames.add(userNamesItem);
+        return this;
+    }
+
+    public ExportUsersNewReq withUserNames(Consumer<List<String>> userNamesSetter) {
+        if (this.userNames == null) {
+            this.userNames = new ArrayList<>();
+        }
+        userNamesSetter.accept(this.userNames);
+        return this;
+    }
+
+    /**
+     * 桌面用户名列表
+     * @return userNames
+     */
+    public List<String> getUserNames() {
+        return userNames;
+    }
+
+    public void setUserNames(List<String> userNames) {
+        this.userNames = userNames;
     }
 
     public ExportUsersNewReq withDescription(String description) {
@@ -129,14 +170,15 @@ public class ExportUsersNewReq {
             return false;
         }
         ExportUsersNewReq that = (ExportUsersNewReq) obj;
-        return Objects.equals(this.userName, that.userName) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.activeType, that.activeType) && Objects.equals(this.language, that.language)
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.userNames, that.userNames)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.activeType, that.activeType)
+            && Objects.equals(this.language, that.language)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, description, activeType, language, enterpriseProjectId);
+        return Objects.hash(userName, userNames, description, activeType, language, enterpriseProjectId);
     }
 
     @Override
@@ -144,6 +186,7 @@ public class ExportUsersNewReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class ExportUsersNewReq {\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    userNames: ").append(toIndentedString(userNames)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    activeType: ").append(toIndentedString(activeType)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");

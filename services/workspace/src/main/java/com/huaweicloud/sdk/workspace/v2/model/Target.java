@@ -136,6 +136,11 @@ public class Target {
 
     private TargetTypeEnum targetType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "target_domain")
+
+    private String targetDomain;
+
     public Target withTargetId(String targetId) {
         this.targetId = targetId;
         return this;
@@ -187,6 +192,23 @@ public class Target {
         this.targetType = targetType;
     }
 
+    public Target withTargetDomain(String targetDomain) {
+        this.targetDomain = targetDomain;
+        return this;
+    }
+
+    /**
+     * 对象所在域。
+     * @return targetDomain
+     */
+    public String getTargetDomain() {
+        return targetDomain;
+    }
+
+    public void setTargetDomain(String targetDomain) {
+        this.targetDomain = targetDomain;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -197,12 +219,12 @@ public class Target {
         }
         Target that = (Target) obj;
         return Objects.equals(this.targetId, that.targetId) && Objects.equals(this.targetName, that.targetName)
-            && Objects.equals(this.targetType, that.targetType);
+            && Objects.equals(this.targetType, that.targetType) && Objects.equals(this.targetDomain, that.targetDomain);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(targetId, targetName, targetType);
+        return Objects.hash(targetId, targetName, targetType, targetDomain);
     }
 
     @Override
@@ -212,6 +234,7 @@ public class Target {
         sb.append("    targetId: ").append(toIndentedString(targetId)).append("\n");
         sb.append("    targetName: ").append(toIndentedString(targetName)).append("\n");
         sb.append("    targetType: ").append(toIndentedString(targetType)).append("\n");
+        sb.append("    targetDomain: ").append(toIndentedString(targetDomain)).append("\n");
         sb.append("}");
         return sb.toString();
     }
