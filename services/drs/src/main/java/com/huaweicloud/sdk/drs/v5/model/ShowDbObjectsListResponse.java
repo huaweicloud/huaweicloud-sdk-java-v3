@@ -43,22 +43,22 @@ public class ShowDbObjectsListResponse extends SdkResponse {
         public static final StatusEnum SUCCESS = new StatusEnum("success");
 
         /**
-         * Enum _FAILED for value: " failed"
+         * Enum FAILED for value: "failed"
          */
-        public static final StatusEnum _FAILED = new StatusEnum(" failed");
+        public static final StatusEnum FAILED = new StatusEnum("failed");
 
         /**
-         * Enum _PENDING for value: " pending"
+         * Enum PENDING for value: "pending"
          */
-        public static final StatusEnum _PENDING = new StatusEnum(" pending");
+        public static final StatusEnum PENDING = new StatusEnum("pending");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
             Map<String, StatusEnum> map = new HashMap<>();
             map.put("success", SUCCESS);
-            map.put(" failed", _FAILED);
-            map.put(" pending", _PENDING);
+            map.put("failed", FAILED);
+            map.put("pending", PENDING);
             return Collections.unmodifiableMap(map);
         }
 

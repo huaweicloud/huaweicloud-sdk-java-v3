@@ -11,14 +11,14 @@ import java.util.Objects;
 public class ShowAppListRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_size")
+    @JsonProperty(value = "limit")
 
-    private Integer pageSize;
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_num")
+    @JsonProperty(value = "offset")
 
-    private Integer pageNum;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_name")
@@ -40,8 +40,8 @@ public class ShowAppListRequest {
 
     private String sortDir;
 
-    public ShowAppListRequest withPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public ShowAppListRequest withLimit(Integer limit) {
+        this.limit = limit;
         return this;
     }
 
@@ -49,32 +49,32 @@ public class ShowAppListRequest {
      * 指定查询返回记录条数，默认值10
      * minimum: 0
      * maximum: 1000
-     * @return pageSize
+     * @return limit
      */
-    public Integer getPageSize() {
-        return pageSize;
+    public Integer getLimit() {
+        return limit;
     }
 
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
-    public ShowAppListRequest withPageNum(Integer pageNum) {
-        this.pageNum = pageNum;
+    public ShowAppListRequest withOffset(Integer offset) {
+        this.offset = offset;
         return this;
     }
 
     /**
-     * 索引位置，从page_num指定的下一条数据开始查询默认值为0
+     * 索引位置，从offset指定的下一条数据开始查询默认值为0
      * minimum: 0
-     * @return pageNum
+     * @return offset
      */
-    public Integer getPageNum() {
-        return pageNum;
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setPageNum(Integer pageNum) {
-        this.pageNum = pageNum;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     public ShowAppListRequest withAppName(String appName) {
@@ -154,22 +154,22 @@ public class ShowAppListRequest {
             return false;
         }
         ShowAppListRequest that = (ShowAppListRequest) obj;
-        return Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.pageNum, that.pageNum)
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.appName, that.appName) && Objects.equals(this.vpcName, that.vpcName)
             && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pageSize, pageNum, appName, vpcName, sortKey, sortDir);
+        return Objects.hash(limit, offset, appName, vpcName, sortKey, sortDir);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowAppListRequest {\n");
-        sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
-        sb.append("    pageNum: ").append(toIndentedString(pageNum)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    vpcName: ").append(toIndentedString(vpcName)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");

@@ -11,14 +11,14 @@ import java.util.Objects;
 public class ShowCcspClusterListRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_size")
+    @JsonProperty(value = "limit")
 
-    private Integer pageSize;
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_num")
+    @JsonProperty(value = "offset")
 
-    private Integer pageNum;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -40,8 +40,8 @@ public class ShowCcspClusterListRequest {
 
     private String sortDir;
 
-    public ShowCcspClusterListRequest withPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public ShowCcspClusterListRequest withLimit(Integer limit) {
+        this.limit = limit;
         return this;
     }
 
@@ -49,32 +49,32 @@ public class ShowCcspClusterListRequest {
      * 指定查询返回记录条数，默认值10
      * minimum: 0
      * maximum: 1000
-     * @return pageSize
+     * @return limit
      */
-    public Integer getPageSize() {
-        return pageSize;
+    public Integer getLimit() {
+        return limit;
     }
 
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
-    public ShowCcspClusterListRequest withPageNum(Integer pageNum) {
-        this.pageNum = pageNum;
+    public ShowCcspClusterListRequest withOffset(Integer offset) {
+        this.offset = offset;
         return this;
     }
 
     /**
-     * 索引位置，从page_num指定的下一条数据开始查询默认值为0
+     * 索引位置，从offset指定的下一条数据开始查询默认值为0
      * minimum: 0
-     * @return pageNum
+     * @return offset
      */
-    public Integer getPageNum() {
-        return pageNum;
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setPageNum(Integer pageNum) {
-        this.pageNum = pageNum;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     public ShowCcspClusterListRequest withName(String name) {
@@ -154,22 +154,22 @@ public class ShowCcspClusterListRequest {
             return false;
         }
         ShowCcspClusterListRequest that = (ShowCcspClusterListRequest) obj;
-        return Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.pageNum, that.pageNum)
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.name, that.name) && Objects.equals(this.serviceType, that.serviceType)
             && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pageSize, pageNum, name, serviceType, sortKey, sortDir);
+        return Objects.hash(limit, offset, name, serviceType, sortKey, sortDir);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowCcspClusterListRequest {\n");
-        sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
-        sb.append("    pageNum: ").append(toIndentedString(pageNum)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");

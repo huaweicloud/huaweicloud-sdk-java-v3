@@ -28,13 +28,18 @@ public class SetAuditlogPolicyRequestBody {
 
     private List<String> auditTypes = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "databases")
+
+    private List<String> databases = null;
+
     public SetAuditlogPolicyRequestBody withKeepDays(Integer keepDays) {
         this.keepDays = keepDays;
         return this;
     }
 
     /**
-     * 审计日志保存天数，取值范围0~732。0表示关闭审计日志策略。
+     * 审计日志保存天数，取值范围0~3660。0表示关闭审计日志策略。
      * @return keepDays
      */
     public Integer getKeepDays() {
@@ -84,7 +89,7 @@ public class SetAuditlogPolicyRequestBody {
     }
 
     /**
-     * 审计记录的操作类型，动态范围。空表示不过滤任何操作类型。
+     * 审计记录的操作类型，动态范围。空表示不过滤任何操作类型。该参数仅针对RDS for MySQL实例。
      * @return auditTypes
      */
     public List<String> getAuditTypes() {
@@ -93,6 +98,39 @@ public class SetAuditlogPolicyRequestBody {
 
     public void setAuditTypes(List<String> auditTypes) {
         this.auditTypes = auditTypes;
+    }
+
+    public SetAuditlogPolicyRequestBody withDatabases(List<String> databases) {
+        this.databases = databases;
+        return this;
+    }
+
+    public SetAuditlogPolicyRequestBody addDatabasesItem(String databasesItem) {
+        if (this.databases == null) {
+            this.databases = new ArrayList<>();
+        }
+        this.databases.add(databasesItem);
+        return this;
+    }
+
+    public SetAuditlogPolicyRequestBody withDatabases(Consumer<List<String>> databasesSetter) {
+        if (this.databases == null) {
+            this.databases = new ArrayList<>();
+        }
+        databasesSetter.accept(this.databases);
+        return this;
+    }
+
+    /**
+     * 仅打开审计日志策略时有效。内容为打开审计日志时需自动安装pg_audit插件的数据库名称。空表示不自动安装。该参数仅针对RDS for PostgreSQL实例。
+     * @return databases
+     */
+    public List<String> getDatabases() {
+        return databases;
+    }
+
+    public void setDatabases(List<String> databases) {
+        this.databases = databases;
     }
 
     @Override
@@ -106,12 +144,12 @@ public class SetAuditlogPolicyRequestBody {
         SetAuditlogPolicyRequestBody that = (SetAuditlogPolicyRequestBody) obj;
         return Objects.equals(this.keepDays, that.keepDays)
             && Objects.equals(this.reserveAuditlogs, that.reserveAuditlogs)
-            && Objects.equals(this.auditTypes, that.auditTypes);
+            && Objects.equals(this.auditTypes, that.auditTypes) && Objects.equals(this.databases, that.databases);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(keepDays, reserveAuditlogs, auditTypes);
+        return Objects.hash(keepDays, reserveAuditlogs, auditTypes, databases);
     }
 
     @Override
@@ -121,6 +159,7 @@ public class SetAuditlogPolicyRequestBody {
         sb.append("    keepDays: ").append(toIndentedString(keepDays)).append("\n");
         sb.append("    reserveAuditlogs: ").append(toIndentedString(reserveAuditlogs)).append("\n");
         sb.append("    auditTypes: ").append(toIndentedString(auditTypes)).append("\n");
+        sb.append("    databases: ").append(toIndentedString(databases)).append("\n");
         sb.append("}");
         return sb.toString();
     }

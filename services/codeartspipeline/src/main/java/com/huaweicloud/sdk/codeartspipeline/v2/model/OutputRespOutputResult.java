@@ -18,7 +18,7 @@ public class OutputRespOutputResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
 
-    private String value;
+    private Object value;
 
     public OutputRespOutputResult withKey(String key) {
         this.key = key;
@@ -37,7 +37,7 @@ public class OutputRespOutputResult {
         this.key = key;
     }
 
-    public OutputRespOutputResult withValue(String value) {
+    public OutputRespOutputResult withValue(Object value) {
         this.value = value;
         return this;
     }
@@ -46,11 +46,11 @@ public class OutputRespOutputResult {
      * **参数解释**： 步骤输出value值。 **取值范围**： 不涉及。 
      * @return value
      */
-    public String getValue() {
+    public Object getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(Object value) {
         this.value = value;
     }
 

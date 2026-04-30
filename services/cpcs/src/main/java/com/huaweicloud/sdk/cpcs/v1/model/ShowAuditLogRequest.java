@@ -11,14 +11,14 @@ import java.util.Objects;
 public class ShowAuditLogRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_size")
+    @JsonProperty(value = "limit")
 
-    private Integer pageSize;
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_num")
+    @JsonProperty(value = "offset")
 
-    private Integer pageNum;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
@@ -30,38 +30,38 @@ public class ShowAuditLogRequest {
 
     private Long endTime;
 
-    public ShowAuditLogRequest withPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public ShowAuditLogRequest withLimit(Integer limit) {
+        this.limit = limit;
         return this;
     }
 
     /**
      * 指定查询返回记录条数，默认值10
-     * @return pageSize
+     * @return limit
      */
-    public Integer getPageSize() {
-        return pageSize;
+    public Integer getLimit() {
+        return limit;
     }
 
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
-    public ShowAuditLogRequest withPageNum(Integer pageNum) {
-        this.pageNum = pageNum;
+    public ShowAuditLogRequest withOffset(Integer offset) {
+        this.offset = offset;
         return this;
     }
 
     /**
-     * 索引位置，从page_num指定的下一条数据开始查询默认值为0
-     * @return pageNum
+     * 索引位置，从offset指定的下一条数据开始查询默认值为0
+     * @return offset
      */
-    public Integer getPageNum() {
-        return pageNum;
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setPageNum(Integer pageNum) {
-        this.pageNum = pageNum;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     public ShowAuditLogRequest withStartTime(Long startTime) {
@@ -107,21 +107,21 @@ public class ShowAuditLogRequest {
             return false;
         }
         ShowAuditLogRequest that = (ShowAuditLogRequest) obj;
-        return Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.pageNum, that.pageNum)
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pageSize, pageNum, startTime, endTime);
+        return Objects.hash(limit, offset, startTime, endTime);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowAuditLogRequest {\n");
-        sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
-        sb.append("    pageNum: ").append(toIndentedString(pageNum)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("}");

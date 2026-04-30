@@ -84,6 +84,8 @@ public class ElbRegion {
     public static final Region AP_SOUTHEAST_5 =
         new Region("ap-southeast-5", "https://elb.ap-southeast-5.myhuaweicloud.com");
 
+    public static final Region CN_NORTH_12 = new Region("cn-north-12", "https://elb.cn-north-12.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("ELB");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -121,6 +123,7 @@ public class ElbRegion {
         map.put("cn-east-5", CN_EAST_5);
         map.put("ru-northwest-2", RU_NORTHWEST_2);
         map.put("ap-southeast-5", AP_SOUTHEAST_5);
+        map.put("cn-north-12", CN_NORTH_12);
         return Collections.unmodifiableMap(map);
     }
 

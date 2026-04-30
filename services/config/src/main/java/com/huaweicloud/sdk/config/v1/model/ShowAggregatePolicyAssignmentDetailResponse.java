@@ -19,8 +19,13 @@ import java.util.function.Consumer;
  */
 public class ShowAggregatePolicyAssignmentDetailResponse extends SdkResponse {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "aggregator_name")
+
+    private String aggregatorName;
+
     /**
-     * 规则类型，包括预定义合规规则(builtin)和用户自定义合规规则(custom)
+     * 规则所有方
      */
     public static final class PolicyAssignmentTypeEnum {
 
@@ -174,6 +179,23 @@ public class ShowAggregatePolicyAssignmentDetailResponse extends SdkResponse {
 
     private String targetId;
 
+    public ShowAggregatePolicyAssignmentDetailResponse withAggregatorName(String aggregatorName) {
+        this.aggregatorName = aggregatorName;
+        return this;
+    }
+
+    /**
+     * 聚合器规则的聚合器名称
+     * @return aggregatorName
+     */
+    public String getAggregatorName() {
+        return aggregatorName;
+    }
+
+    public void setAggregatorName(String aggregatorName) {
+        this.aggregatorName = aggregatorName;
+    }
+
     public ShowAggregatePolicyAssignmentDetailResponse withPolicyAssignmentType(
         PolicyAssignmentTypeEnum policyAssignmentType) {
         this.policyAssignmentType = policyAssignmentType;
@@ -181,7 +203,7 @@ public class ShowAggregatePolicyAssignmentDetailResponse extends SdkResponse {
     }
 
     /**
-     * 规则类型，包括预定义合规规则(builtin)和用户自定义合规规则(custom)
+     * 规则所有方
      * @return policyAssignmentType
      */
     public PolicyAssignmentTypeEnum getPolicyAssignmentType() {
@@ -303,7 +325,7 @@ public class ShowAggregatePolicyAssignmentDetailResponse extends SdkResponse {
     }
 
     /**
-     * 触发周期值，可选值：One_Hour, Three_Hours, Six_Hours, Twelve_Hours, TwentyFour_Hours
+     * 触发周期
      * @return period
      */
     public String getPeriod() {
@@ -465,7 +487,7 @@ public class ShowAggregatePolicyAssignmentDetailResponse extends SdkResponse {
     }
 
     /**
-     * Get tags
+     * 标签列表
      * @return tags
      */
     public List<ResourceTag> getTags() {
@@ -516,7 +538,7 @@ public class ShowAggregatePolicyAssignmentDetailResponse extends SdkResponse {
     }
 
     /**
-     * 修正执行的目标id。
+     * 修正执行的目标urn。
      * @return targetId
      */
     public String getTargetId() {
@@ -536,7 +558,8 @@ public class ShowAggregatePolicyAssignmentDetailResponse extends SdkResponse {
             return false;
         }
         ShowAggregatePolicyAssignmentDetailResponse that = (ShowAggregatePolicyAssignmentDetailResponse) obj;
-        return Objects.equals(this.policyAssignmentType, that.policyAssignmentType) && Objects.equals(this.id, that.id)
+        return Objects.equals(this.aggregatorName, that.aggregatorName)
+            && Objects.equals(this.policyAssignmentType, that.policyAssignmentType) && Objects.equals(this.id, that.id)
             && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.policyFilter, that.policyFilter)
             && Objects.equals(this.policyFilterV2, that.policyFilterV2) && Objects.equals(this.period, that.period)
@@ -550,7 +573,8 @@ public class ShowAggregatePolicyAssignmentDetailResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyAssignmentType,
+        return Objects.hash(aggregatorName,
+            policyAssignmentType,
             id,
             name,
             description,
@@ -573,6 +597,7 @@ public class ShowAggregatePolicyAssignmentDetailResponse extends SdkResponse {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowAggregatePolicyAssignmentDetailResponse {\n");
+        sb.append("    aggregatorName: ").append(toIndentedString(aggregatorName)).append("\n");
         sb.append("    policyAssignmentType: ").append(toIndentedString(policyAssignmentType)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

@@ -32,17 +32,17 @@ public class DataFilteringCondition {
             new FilteringTypeEnum("contentConditionalFilter");
 
         /**
-         * Enum _CONFIGCONDITIONALFILTER for value: " configConditionalFilter"
+         * Enum CONFIGCONDITIONALFILTER for value: "configConditionalFilter"
          */
-        public static final FilteringTypeEnum _CONFIGCONDITIONALFILTER =
-            new FilteringTypeEnum(" configConditionalFilter");
+        public static final FilteringTypeEnum CONFIGCONDITIONALFILTER =
+            new FilteringTypeEnum("configConditionalFilter");
 
         private static final Map<String, FilteringTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, FilteringTypeEnum> createStaticFields() {
             Map<String, FilteringTypeEnum> map = new HashMap<>();
             map.put("contentConditionalFilter", CONTENTCONDITIONALFILTER);
-            map.put(" configConditionalFilter", _CONFIGCONDITIONALFILTER);
+            map.put("configConditionalFilter", CONFIGCONDITIONALFILTER);
             return Collections.unmodifiableMap(map);
         }
 

@@ -41,19 +41,19 @@ public class ShowAuditLogResponseBodyAuditRecords {
     private Long time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "operate_status")
+    @JsonProperty(value = "status")
 
-    private Integer operateStatus;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "operate_message")
-
-    private String operateMessage;
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "audit_status")
+    @JsonProperty(value = "failure_message")
 
-    private Integer auditStatus;
+    private String failureMessage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "verification")
+
+    private String verification;
 
     public ShowAuditLogResponseBodyAuditRecords withId(String id) {
         this.id = id;
@@ -157,55 +157,55 @@ public class ShowAuditLogResponseBodyAuditRecords {
         this.time = time;
     }
 
-    public ShowAuditLogResponseBodyAuditRecords withOperateStatus(Integer operateStatus) {
-        this.operateStatus = operateStatus;
+    public ShowAuditLogResponseBodyAuditRecords withStatus(String status) {
+        this.status = status;
         return this;
     }
 
     /**
      * 操作状态
-     * @return operateStatus
+     * @return status
      */
-    public Integer getOperateStatus() {
-        return operateStatus;
+    public String getStatus() {
+        return status;
     }
 
-    public void setOperateStatus(Integer operateStatus) {
-        this.operateStatus = operateStatus;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public ShowAuditLogResponseBodyAuditRecords withOperateMessage(String operateMessage) {
-        this.operateMessage = operateMessage;
+    public ShowAuditLogResponseBodyAuditRecords withFailureMessage(String failureMessage) {
+        this.failureMessage = failureMessage;
         return this;
     }
 
     /**
-     * 操作结果消息
-     * @return operateMessage
+     * 操作失败消息
+     * @return failureMessage
      */
-    public String getOperateMessage() {
-        return operateMessage;
+    public String getFailureMessage() {
+        return failureMessage;
     }
 
-    public void setOperateMessage(String operateMessage) {
-        this.operateMessage = operateMessage;
+    public void setFailureMessage(String failureMessage) {
+        this.failureMessage = failureMessage;
     }
 
-    public ShowAuditLogResponseBodyAuditRecords withAuditStatus(Integer auditStatus) {
-        this.auditStatus = auditStatus;
+    public ShowAuditLogResponseBodyAuditRecords withVerification(String verification) {
+        this.verification = verification;
         return this;
     }
 
     /**
-     * 审计状态
-     * @return auditStatus
+     * 操作验证信息
+     * @return verification
      */
-    public Integer getAuditStatus() {
-        return auditStatus;
+    public String getVerification() {
+        return verification;
     }
 
-    public void setAuditStatus(Integer auditStatus) {
-        this.auditStatus = auditStatus;
+    public void setVerification(String verification) {
+        this.verification = verification;
     }
 
     @Override
@@ -220,15 +220,14 @@ public class ShowAuditLogResponseBodyAuditRecords {
         return Objects.equals(this.id, that.id) && Objects.equals(this.tenantId, that.tenantId)
             && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.clusterType, that.clusterType)
             && Objects.equals(this.operation, that.operation) && Objects.equals(this.time, that.time)
-            && Objects.equals(this.operateStatus, that.operateStatus)
-            && Objects.equals(this.operateMessage, that.operateMessage)
-            && Objects.equals(this.auditStatus, that.auditStatus);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.failureMessage, that.failureMessage)
+            && Objects.equals(this.verification, that.verification);
     }
 
     @Override
     public int hashCode() {
         return Objects
-            .hash(id, tenantId, clusterId, clusterType, operation, time, operateStatus, operateMessage, auditStatus);
+            .hash(id, tenantId, clusterId, clusterType, operation, time, status, failureMessage, verification);
     }
 
     @Override
@@ -241,9 +240,9 @@ public class ShowAuditLogResponseBodyAuditRecords {
         sb.append("    clusterType: ").append(toIndentedString(clusterType)).append("\n");
         sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
-        sb.append("    operateStatus: ").append(toIndentedString(operateStatus)).append("\n");
-        sb.append("    operateMessage: ").append(toIndentedString(operateMessage)).append("\n");
-        sb.append("    auditStatus: ").append(toIndentedString(auditStatus)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    failureMessage: ").append(toIndentedString(failureMessage)).append("\n");
+        sb.append("    verification: ").append(toIndentedString(verification)).append("\n");
         sb.append("}");
         return sb.toString();
     }

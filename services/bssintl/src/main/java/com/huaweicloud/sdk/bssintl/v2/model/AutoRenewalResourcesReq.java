@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.bssintl.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -14,6 +19,81 @@ public class AutoRenewalResourcesReq {
     @JsonProperty(value = "auto_renew_times")
 
     private Integer autoRenewTimes;
+
+    /**
+     * |参数名称：自动续费的周期类型| |参数的约束及描述：该参数非必填，自动续费的周期类型，支持枚举| |MONTH：包月，YEAR：包年。此参数不携带或携带值为null时，按照如下规则处理。购买时，未设置自动续费功能，默认与设置资源的最后一个订单的订购周期类型一致。|
+     */
+    public static final class PeriodTypeEnum {
+
+        /**
+         * Enum MONTH for value: "MONTH"
+         */
+        public static final PeriodTypeEnum MONTH = new PeriodTypeEnum("MONTH");
+
+        /**
+         * Enum YEAR for value: "YEAR"
+         */
+        public static final PeriodTypeEnum YEAR = new PeriodTypeEnum("YEAR");
+
+        private static final Map<String, PeriodTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PeriodTypeEnum> createStaticFields() {
+            Map<String, PeriodTypeEnum> map = new HashMap<>();
+            map.put("MONTH", MONTH);
+            map.put("YEAR", YEAR);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        PeriodTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PeriodTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodTypeEnum(value));
+        }
+
+        public static PeriodTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PeriodTypeEnum) {
+                return this.value.equals(((PeriodTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "period_type")
+
+    private PeriodTypeEnum periodType;
 
     public AutoRenewalResourcesReq withAutoRenewTimes(Integer autoRenewTimes) {
         this.autoRenewTimes = autoRenewTimes;
@@ -34,6 +114,23 @@ public class AutoRenewalResourcesReq {
         this.autoRenewTimes = autoRenewTimes;
     }
 
+    public AutoRenewalResourcesReq withPeriodType(PeriodTypeEnum periodType) {
+        this.periodType = periodType;
+        return this;
+    }
+
+    /**
+     * |参数名称：自动续费的周期类型| |参数的约束及描述：该参数非必填，自动续费的周期类型，支持枚举| |MONTH：包月，YEAR：包年。此参数不携带或携带值为null时，按照如下规则处理。购买时，未设置自动续费功能，默认与设置资源的最后一个订单的订购周期类型一致。|
+     * @return periodType
+     */
+    public PeriodTypeEnum getPeriodType() {
+        return periodType;
+    }
+
+    public void setPeriodType(PeriodTypeEnum periodType) {
+        this.periodType = periodType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -43,12 +140,13 @@ public class AutoRenewalResourcesReq {
             return false;
         }
         AutoRenewalResourcesReq that = (AutoRenewalResourcesReq) obj;
-        return Objects.equals(this.autoRenewTimes, that.autoRenewTimes);
+        return Objects.equals(this.autoRenewTimes, that.autoRenewTimes)
+            && Objects.equals(this.periodType, that.periodType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(autoRenewTimes);
+        return Objects.hash(autoRenewTimes, periodType);
     }
 
     @Override
@@ -56,6 +154,7 @@ public class AutoRenewalResourcesReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class AutoRenewalResourcesReq {\n");
         sb.append("    autoRenewTimes: ").append(toIndentedString(autoRenewTimes)).append("\n");
+        sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

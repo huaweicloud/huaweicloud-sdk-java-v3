@@ -75,6 +75,16 @@ public class RunPipelineSourceParamsBuildParams {
 
     private String sourceCodehubHttpUrl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "virtual_merge_branch")
+
+    private String virtualMergeBranch;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "virtual_merge_commitId")
+
+    private String virtualMergeCommitId;
+
     public RunPipelineSourceParamsBuildParams withAction(String action) {
         this.action = action;
         return this;
@@ -296,6 +306,40 @@ public class RunPipelineSourceParamsBuildParams {
         this.sourceCodehubHttpUrl = sourceCodehubHttpUrl;
     }
 
+    public RunPipelineSourceParamsBuildParams withVirtualMergeBranch(String virtualMergeBranch) {
+        this.virtualMergeBranch = virtualMergeBranch;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 预合并分支。 **取值范围**： 不涉及。 
+     * @return virtualMergeBranch
+     */
+    public String getVirtualMergeBranch() {
+        return virtualMergeBranch;
+    }
+
+    public void setVirtualMergeBranch(String virtualMergeBranch) {
+        this.virtualMergeBranch = virtualMergeBranch;
+    }
+
+    public RunPipelineSourceParamsBuildParams withVirtualMergeCommitId(String virtualMergeCommitId) {
+        this.virtualMergeCommitId = virtualMergeCommitId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 预合并提交ID。 **取值范围**： 不涉及。 
+     * @return virtualMergeCommitId
+     */
+    public String getVirtualMergeCommitId() {
+        return virtualMergeCommitId;
+    }
+
+    public void setVirtualMergeCommitId(String virtualMergeCommitId) {
+        this.virtualMergeCommitId = virtualMergeCommitId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -312,7 +356,9 @@ public class RunPipelineSourceParamsBuildParams {
             && Objects.equals(this.targetBranch, that.targetBranch) && Objects.equals(this.codehubId, that.codehubId)
             && Objects.equals(this.sourceCodehubId, that.sourceCodehubId)
             && Objects.equals(this.sourceCodehubUrl, that.sourceCodehubUrl)
-            && Objects.equals(this.sourceCodehubHttpUrl, that.sourceCodehubHttpUrl);
+            && Objects.equals(this.sourceCodehubHttpUrl, that.sourceCodehubHttpUrl)
+            && Objects.equals(this.virtualMergeBranch, that.virtualMergeBranch)
+            && Objects.equals(this.virtualMergeCommitId, that.virtualMergeCommitId);
     }
 
     @Override
@@ -329,7 +375,9 @@ public class RunPipelineSourceParamsBuildParams {
             codehubId,
             sourceCodehubId,
             sourceCodehubUrl,
-            sourceCodehubHttpUrl);
+            sourceCodehubHttpUrl,
+            virtualMergeBranch,
+            virtualMergeCommitId);
     }
 
     @Override
@@ -349,6 +397,8 @@ public class RunPipelineSourceParamsBuildParams {
         sb.append("    sourceCodehubId: ").append(toIndentedString(sourceCodehubId)).append("\n");
         sb.append("    sourceCodehubUrl: ").append(toIndentedString(sourceCodehubUrl)).append("\n");
         sb.append("    sourceCodehubHttpUrl: ").append(toIndentedString(sourceCodehubHttpUrl)).append("\n");
+        sb.append("    virtualMergeBranch: ").append(toIndentedString(virtualMergeBranch)).append("\n");
+        sb.append("    virtualMergeCommitId: ").append(toIndentedString(virtualMergeCommitId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

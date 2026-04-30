@@ -26,7 +26,7 @@ public class GroupBy {
     }
 
     /**
-     * tag：按照成本标签过滤cost_unit：按照成本单元过滤dimension：默认取值
+     * tag：按照成本标签过滤cost_unit：按照成本分组过滤dimension：默认取值
      * @return type
      */
     public String getType() {

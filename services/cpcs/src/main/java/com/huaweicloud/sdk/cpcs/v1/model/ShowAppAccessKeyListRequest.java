@@ -16,14 +16,14 @@ public class ShowAppAccessKeyListRequest {
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_size")
+    @JsonProperty(value = "limit")
 
-    private Integer pageSize;
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_num")
+    @JsonProperty(value = "offset")
 
-    private Integer pageNum;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_name")
@@ -57,8 +57,8 @@ public class ShowAppAccessKeyListRequest {
         this.appId = appId;
     }
 
-    public ShowAppAccessKeyListRequest withPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public ShowAppAccessKeyListRequest withLimit(Integer limit) {
+        this.limit = limit;
         return this;
     }
 
@@ -66,32 +66,32 @@ public class ShowAppAccessKeyListRequest {
      * 指定查询返回记录条数，默认值10
      * minimum: 0
      * maximum: 1000
-     * @return pageSize
+     * @return limit
      */
-    public Integer getPageSize() {
-        return pageSize;
+    public Integer getLimit() {
+        return limit;
     }
 
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
-    public ShowAppAccessKeyListRequest withPageNum(Integer pageNum) {
-        this.pageNum = pageNum;
+    public ShowAppAccessKeyListRequest withOffset(Integer offset) {
+        this.offset = offset;
         return this;
     }
 
     /**
-     * 索引位置，从page_num指定的下一条数据开始查询默认值为0
+     * 索引位置，从offset指定的下一条数据开始查询默认值为0
      * minimum: 0
-     * @return pageNum
+     * @return offset
      */
-    public Integer getPageNum() {
-        return pageNum;
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setPageNum(Integer pageNum) {
-        this.pageNum = pageNum;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     public ShowAppAccessKeyListRequest withKeyName(String keyName) {
@@ -154,14 +154,14 @@ public class ShowAppAccessKeyListRequest {
             return false;
         }
         ShowAppAccessKeyListRequest that = (ShowAppAccessKeyListRequest) obj;
-        return Objects.equals(this.appId, that.appId) && Objects.equals(this.pageSize, that.pageSize)
-            && Objects.equals(this.pageNum, that.pageNum) && Objects.equals(this.keyName, that.keyName)
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.keyName, that.keyName)
             && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(appId, pageSize, pageNum, keyName, sortKey, sortDir);
+        return Objects.hash(appId, limit, offset, keyName, sortKey, sortDir);
     }
 
     @Override
@@ -169,8 +169,8 @@ public class ShowAppAccessKeyListRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowAppAccessKeyListRequest {\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
-        sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
-        sb.append("    pageNum: ").append(toIndentedString(pageNum)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    keyName: ").append(toIndentedString(keyName)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");

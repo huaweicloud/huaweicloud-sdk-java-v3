@@ -88,6 +88,11 @@ public class StepRun {
 
     private Long endTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "daily_build_number")
+
+    private String dailyBuildNumber;
+
     public StepRun withName(String name) {
         this.name = name;
         return this;
@@ -375,6 +380,23 @@ public class StepRun {
         this.endTime = endTime;
     }
 
+    public StepRun withDailyBuildNumber(String dailyBuildNumber) {
+        this.dailyBuildNumber = dailyBuildNumber;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 构建编号。 **取值范围**： 不涉及。 
+     * @return dailyBuildNumber
+     */
+    public String getDailyBuildNumber() {
+        return dailyBuildNumber;
+    }
+
+    public void setDailyBuildNumber(String dailyBuildNumber) {
+        this.dailyBuildNumber = dailyBuildNumber;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -393,7 +415,8 @@ public class StepRun {
             && Objects.equals(this.endpointIds, that.endpointIds)
             && Objects.equals(this.lastDispatchId, that.lastDispatchId) && Objects.equals(this.status, that.status)
             && Objects.equals(this.message, that.message) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime);
+            && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.dailyBuildNumber, that.dailyBuildNumber);
     }
 
     @Override
@@ -412,7 +435,8 @@ public class StepRun {
             status,
             message,
             startTime,
-            endTime);
+            endTime,
+            dailyBuildNumber);
     }
 
     @Override
@@ -434,6 +458,7 @@ public class StepRun {
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    dailyBuildNumber: ").append(toIndentedString(dailyBuildNumber)).append("\n");
         sb.append("}");
         return sb.toString();
     }

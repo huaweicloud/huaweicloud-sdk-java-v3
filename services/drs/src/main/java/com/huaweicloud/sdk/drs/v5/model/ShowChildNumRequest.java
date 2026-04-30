@@ -111,16 +111,16 @@ public class ShowChildNumRequest {
         public static final DbTypeEnum GAUSSDBV5 = new DbTypeEnum("gaussdbv5");
 
         /**
-         * Enum _DDM for value: " ddm"
+         * Enum DDM for value: "ddm"
          */
-        public static final DbTypeEnum _DDM = new DbTypeEnum(" ddm");
+        public static final DbTypeEnum DDM = new DbTypeEnum("ddm");
 
         private static final Map<String, DbTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DbTypeEnum> createStaticFields() {
             Map<String, DbTypeEnum> map = new HashMap<>();
             map.put("gaussdbv5", GAUSSDBV5);
-            map.put(" ddm", _DDM);
+            map.put("ddm", DDM);
             return Collections.unmodifiableMap(map);
         }
 

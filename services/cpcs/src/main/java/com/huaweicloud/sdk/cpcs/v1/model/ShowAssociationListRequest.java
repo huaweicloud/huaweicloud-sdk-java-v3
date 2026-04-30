@@ -21,14 +21,14 @@ public class ShowAssociationListRequest {
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_size")
+    @JsonProperty(value = "limit")
 
-    private Integer pageSize;
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_num")
+    @JsonProperty(value = "offset")
 
-    private Integer pageNum;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_key")
@@ -74,8 +74,8 @@ public class ShowAssociationListRequest {
         this.appId = appId;
     }
 
-    public ShowAssociationListRequest withPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public ShowAssociationListRequest withLimit(Integer limit) {
+        this.limit = limit;
         return this;
     }
 
@@ -83,32 +83,32 @@ public class ShowAssociationListRequest {
      * 指定查询返回记录条数，默认值10
      * minimum: 0
      * maximum: 1000
-     * @return pageSize
+     * @return limit
      */
-    public Integer getPageSize() {
-        return pageSize;
+    public Integer getLimit() {
+        return limit;
     }
 
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
-    public ShowAssociationListRequest withPageNum(Integer pageNum) {
-        this.pageNum = pageNum;
+    public ShowAssociationListRequest withOffset(Integer offset) {
+        this.offset = offset;
         return this;
     }
 
     /**
-     * 索引位置，从page_num指定的下一条数据开始查询默认值为0
+     * 索引位置，从offset指定的下一条数据开始查询默认值为0
      * minimum: 0
-     * @return pageNum
+     * @return offset
      */
-    public Integer getPageNum() {
-        return pageNum;
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setPageNum(Integer pageNum) {
-        this.pageNum = pageNum;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     public ShowAssociationListRequest withSortKey(String sortKey) {
@@ -155,13 +155,13 @@ public class ShowAssociationListRequest {
         }
         ShowAssociationListRequest that = (ShowAssociationListRequest) obj;
         return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.appId, that.appId)
-            && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.pageNum, that.pageNum)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, appId, pageSize, pageNum, sortKey, sortDir);
+        return Objects.hash(clusterId, appId, limit, offset, sortKey, sortDir);
     }
 
     @Override
@@ -170,8 +170,8 @@ public class ShowAssociationListRequest {
         sb.append("class ShowAssociationListRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
-        sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
-        sb.append("    pageNum: ").append(toIndentedString(pageNum)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("}");

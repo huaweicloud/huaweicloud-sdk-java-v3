@@ -29,6 +29,11 @@ public class ListPipelineRunsQuery {
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time")
+
+    private String updateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Long offset;
@@ -115,6 +120,23 @@ public class ListPipelineRunsQuery {
         this.endTime = endTime;
     }
 
+    public ListPipelineRunsQuery withUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 流水线状态更新时间。 **约束限制**： 不涉及。 **取值范围**： 时间戳或者yyyy-MM-dd HH:mm:ss格式均可。 **默认取值**： 不涉及。 
+     * @return updateTime
+     */
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+    }
+
     public ListPipelineRunsQuery withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -155,7 +177,7 @@ public class ListPipelineRunsQuery {
     }
 
     /**
-     * **参数解释**： 排序字段名称。 **约束限制**： 不涉及。 **取值范围**： \"start_time\" - 流水线开始时间。 **默认取值**： 不涉及。 
+     * **参数解释**： 排序字段名称。 **约束限制**： 不涉及。 **取值范围**： \"start_time\" - 流水线开始时间。 \"update_time\" - 流水线更新时间。 **默认取值**： 不涉及。 
      * @return sortKey
      */
     public String getSortKey() {
@@ -193,14 +215,14 @@ public class ListPipelineRunsQuery {
         }
         ListPipelineRunsQuery that = (ListPipelineRunsQuery) obj;
         return Objects.equals(this.status, that.status) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.sortKey, that.sortKey)
-            && Objects.equals(this.sortDir, that.sortDir);
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, startTime, endTime, offset, limit, sortKey, sortDir);
+        return Objects.hash(status, startTime, endTime, updateTime, offset, limit, sortKey, sortDir);
     }
 
     @Override
@@ -210,6 +232,7 @@ public class ListPipelineRunsQuery {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");

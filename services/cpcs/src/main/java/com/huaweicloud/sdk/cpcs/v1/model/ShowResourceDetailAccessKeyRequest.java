@@ -36,14 +36,14 @@ public class ShowResourceDetailAccessKeyRequest {
     private String certificateType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_size")
+    @JsonProperty(value = "limit")
 
-    private Integer pageSize;
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_num")
+    @JsonProperty(value = "offset")
 
-    private Integer pageNum;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from")
@@ -140,38 +140,38 @@ public class ShowResourceDetailAccessKeyRequest {
         this.certificateType = certificateType;
     }
 
-    public ShowResourceDetailAccessKeyRequest withPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public ShowResourceDetailAccessKeyRequest withLimit(Integer limit) {
+        this.limit = limit;
         return this;
     }
 
     /**
      * 页面大小，不超过1500
-     * @return pageSize
+     * @return limit
      */
-    public Integer getPageSize() {
-        return pageSize;
+    public Integer getLimit() {
+        return limit;
     }
 
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
-    public ShowResourceDetailAccessKeyRequest withPageNum(Integer pageNum) {
-        this.pageNum = pageNum;
+    public ShowResourceDetailAccessKeyRequest withOffset(Integer offset) {
+        this.offset = offset;
         return this;
     }
 
     /**
      * 页数，默认1
-     * @return pageNum
+     * @return offset
      */
-    public Integer getPageNum() {
-        return pageNum;
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setPageNum(Integer pageNum) {
-        this.pageNum = pageNum;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     public ShowResourceDetailAccessKeyRequest withFrom(Long from) {
@@ -220,14 +220,14 @@ public class ShowResourceDetailAccessKeyRequest {
         return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.appId, that.appId)
             && Objects.equals(this.serviceType, that.serviceType)
             && Objects.equals(this.algorithmType, that.algorithmType)
-            && Objects.equals(this.certificateType, that.certificateType)
-            && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.pageNum, that.pageNum)
-            && Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to);
+            && Objects.equals(this.certificateType, that.certificateType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.from, that.from)
+            && Objects.equals(this.to, that.to);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, appId, serviceType, algorithmType, certificateType, pageSize, pageNum, from, to);
+        return Objects.hash(clusterId, appId, serviceType, algorithmType, certificateType, limit, offset, from, to);
     }
 
     @Override
@@ -239,8 +239,8 @@ public class ShowResourceDetailAccessKeyRequest {
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    algorithmType: ").append(toIndentedString(algorithmType)).append("\n");
         sb.append("    certificateType: ").append(toIndentedString(certificateType)).append("\n");
-        sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
-        sb.append("    pageNum: ").append(toIndentedString(pageNum)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    from: ").append(toIndentedString(from)).append("\n");
         sb.append("    to: ").append(toIndentedString(to)).append("\n");
         sb.append("}");

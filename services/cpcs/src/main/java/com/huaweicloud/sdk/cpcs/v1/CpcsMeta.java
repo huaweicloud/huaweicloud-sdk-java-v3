@@ -567,16 +567,16 @@ public class CpcsMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<Integer>withRequestField("page_size",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCcspTenantImagesRequest::getPageSize, ListCcspTenantImagesRequest::setPageSize));
-        builder.<Integer>withRequestField("page_num",
+            f -> f.withMarshaller(ListCcspTenantImagesRequest::getLimit, ListCcspTenantImagesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCcspTenantImagesRequest::getPageNum, ListCcspTenantImagesRequest::setPageNum));
+            f -> f.withMarshaller(ListCcspTenantImagesRequest::getOffset, ListCcspTenantImagesRequest::setOffset));
         builder.<String>withRequestField("image_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -673,16 +673,16 @@ public class CpcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAppAccessKeyListRequest::getAppId, ShowAppAccessKeyListRequest::setAppId));
-        builder.<Integer>withRequestField("page_size",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAppAccessKeyListRequest::getPageSize, ShowAppAccessKeyListRequest::setPageSize));
-        builder.<Integer>withRequestField("page_num",
+            f -> f.withMarshaller(ShowAppAccessKeyListRequest::getLimit, ShowAppAccessKeyListRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAppAccessKeyListRequest::getPageNum, ShowAppAccessKeyListRequest::setPageNum));
+            f -> f.withMarshaller(ShowAppAccessKeyListRequest::getOffset, ShowAppAccessKeyListRequest::setOffset));
         builder.<String>withRequestField("key_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -715,16 +715,16 @@ public class CpcsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<Integer>withRequestField("page_size",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAppListRequest::getPageSize, ShowAppListRequest::setPageSize));
-        builder.<Integer>withRequestField("page_num",
+            f -> f.withMarshaller(ShowAppListRequest::getLimit, ShowAppListRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAppListRequest::getPageNum, ShowAppListRequest::setPageNum));
+            f -> f.withMarshaller(ShowAppListRequest::getOffset, ShowAppListRequest::setOffset));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -773,16 +773,16 @@ public class CpcsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAssociationListRequest::getAppId, ShowAssociationListRequest::setAppId));
-        builder.<Integer>withRequestField("page_size",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAssociationListRequest::getPageSize, ShowAssociationListRequest::setPageSize));
-        builder.<Integer>withRequestField("page_num",
+            f -> f.withMarshaller(ShowAssociationListRequest::getLimit, ShowAssociationListRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAssociationListRequest::getPageNum, ShowAssociationListRequest::setPageNum));
+            f -> f.withMarshaller(ShowAssociationListRequest::getOffset, ShowAssociationListRequest::setOffset));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -810,16 +810,16 @@ public class CpcsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<Integer>withRequestField("page_size",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAuditLogRequest::getPageSize, ShowAuditLogRequest::setPageSize));
-        builder.<Integer>withRequestField("page_num",
+            f -> f.withMarshaller(ShowAuditLogRequest::getLimit, ShowAuditLogRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAuditLogRequest::getPageNum, ShowAuditLogRequest::setPageNum));
+            f -> f.withMarshaller(ShowAuditLogRequest::getOffset, ShowAuditLogRequest::setOffset));
         builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -889,16 +889,16 @@ public class CpcsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<Integer>withRequestField("page_size",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCcspClusterListRequest::getPageSize, ShowCcspClusterListRequest::setPageSize));
-        builder.<Integer>withRequestField("page_num",
+            f -> f.withMarshaller(ShowCcspClusterListRequest::getLimit, ShowCcspClusterListRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCcspClusterListRequest::getPageNum, ShowCcspClusterListRequest::setPageNum));
+            f -> f.withMarshaller(ShowCcspClusterListRequest::getOffset, ShowCcspClusterListRequest::setOffset));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -938,21 +938,21 @@ public class CpcsMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<Integer>withRequestField("page_size",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCcspInstanceInfoRequest::getPageSize, ShowCcspInstanceInfoRequest::setPageSize));
+            f -> f.withMarshaller(ShowCcspInstanceInfoRequest::getLimit, ShowCcspInstanceInfoRequest::setLimit));
         builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCcspInstanceInfoRequest::getName, ShowCcspInstanceInfoRequest::setName));
-        builder.<Integer>withRequestField("page_num",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowCcspInstanceInfoRequest::getPageNum, ShowCcspInstanceInfoRequest::setPageNum));
+            f -> f.withMarshaller(ShowCcspInstanceInfoRequest::getOffset, ShowCcspInstanceInfoRequest::setOffset));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1004,18 +1004,18 @@ public class CpcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowClusterAccessKeyListRequest::getClusterId,
                 ShowClusterAccessKeyListRequest::setClusterId));
-        builder.<Integer>withRequestField("page_size",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowClusterAccessKeyListRequest::getPageSize,
-                ShowClusterAccessKeyListRequest::setPageSize));
-        builder.<Integer>withRequestField("page_num",
+            f -> f.withMarshaller(ShowClusterAccessKeyListRequest::getLimit,
+                ShowClusterAccessKeyListRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowClusterAccessKeyListRequest::getPageNum,
-                ShowClusterAccessKeyListRequest::setPageNum));
+            f -> f.withMarshaller(ShowClusterAccessKeyListRequest::getOffset,
+                ShowClusterAccessKeyListRequest::setOffset));
         builder.<String>withRequestField("app_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1108,18 +1108,18 @@ public class CpcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowResourceDetailAccessKeyRequest::getCertificateType,
                 ShowResourceDetailAccessKeyRequest::setCertificateType));
-        builder.<Integer>withRequestField("page_size",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowResourceDetailAccessKeyRequest::getPageSize,
-                ShowResourceDetailAccessKeyRequest::setPageSize));
-        builder.<Integer>withRequestField("page_num",
+            f -> f.withMarshaller(ShowResourceDetailAccessKeyRequest::getLimit,
+                ShowResourceDetailAccessKeyRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowResourceDetailAccessKeyRequest::getPageNum,
-                ShowResourceDetailAccessKeyRequest::setPageNum));
+            f -> f.withMarshaller(ShowResourceDetailAccessKeyRequest::getOffset,
+                ShowResourceDetailAccessKeyRequest::setOffset));
         builder.<Long>withRequestField("from",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1183,18 +1183,18 @@ public class CpcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowResourceDetailCertificateRequest::getCertificateType,
                 ShowResourceDetailCertificateRequest::setCertificateType));
-        builder.<Integer>withRequestField("page_size",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowResourceDetailCertificateRequest::getPageSize,
-                ShowResourceDetailCertificateRequest::setPageSize));
-        builder.<Integer>withRequestField("page_num",
+            f -> f.withMarshaller(ShowResourceDetailCertificateRequest::getLimit,
+                ShowResourceDetailCertificateRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowResourceDetailCertificateRequest::getPageNum,
-                ShowResourceDetailCertificateRequest::setPageNum));
+            f -> f.withMarshaller(ShowResourceDetailCertificateRequest::getOffset,
+                ShowResourceDetailCertificateRequest::setOffset));
         builder.<Long>withRequestField("from",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

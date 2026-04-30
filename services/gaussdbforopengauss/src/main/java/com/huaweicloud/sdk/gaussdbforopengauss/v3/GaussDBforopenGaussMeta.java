@@ -7814,7 +7814,7 @@ public class GaussDBforopenGaussMeta {
         HttpRequestDef.Builder<SwitchLoggerReplicaRequest, SwitchLoggerReplicaResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, SwitchLoggerReplicaRequest.class, SwitchLoggerReplicaResponse.class)
                 .withName("SwitchLoggerReplica")
-                .withUri("/v3/{project_id}/instance/{instance_id}/switch-logger-replica")
+                .withUri("/v3/{project_id}/instances/{instance_id}/switch-logger-replica")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests

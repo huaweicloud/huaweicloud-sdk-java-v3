@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * 鉴权对象
@@ -12,65 +11,25 @@ import java.util.function.Consumer;
 public class AuthObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "auth")
+    @JsonProperty(value = "app_id")
 
-    private AuthObjectAuth auth;
+    private String appId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "scope")
-
-    private AuthObjectScope scope;
-
-    public AuthObject withAuth(AuthObjectAuth auth) {
-        this.auth = auth;
-        return this;
-    }
-
-    public AuthObject withAuth(Consumer<AuthObjectAuth> authSetter) {
-        if (this.auth == null) {
-            this.auth = new AuthObjectAuth();
-            authSetter.accept(this.auth);
-        }
-
+    public AuthObject withAppId(String appId) {
+        this.appId = appId;
         return this;
     }
 
     /**
-     * Get auth
-     * @return auth
+     * Get appId
+     * @return appId
      */
-    public AuthObjectAuth getAuth() {
-        return auth;
+    public String getAppId() {
+        return appId;
     }
 
-    public void setAuth(AuthObjectAuth auth) {
-        this.auth = auth;
-    }
-
-    public AuthObject withScope(AuthObjectScope scope) {
-        this.scope = scope;
-        return this;
-    }
-
-    public AuthObject withScope(Consumer<AuthObjectScope> scopeSetter) {
-        if (this.scope == null) {
-            this.scope = new AuthObjectScope();
-            scopeSetter.accept(this.scope);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get scope
-     * @return scope
-     */
-    public AuthObjectScope getScope() {
-        return scope;
-    }
-
-    public void setScope(AuthObjectScope scope) {
-        this.scope = scope;
+    public void setAppId(String appId) {
+        this.appId = appId;
     }
 
     @Override
@@ -82,20 +41,19 @@ public class AuthObject {
             return false;
         }
         AuthObject that = (AuthObject) obj;
-        return Objects.equals(this.auth, that.auth) && Objects.equals(this.scope, that.scope);
+        return Objects.equals(this.appId, that.appId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(auth, scope);
+        return Objects.hash(appId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AuthObject {\n");
-        sb.append("    auth: ").append(toIndentedString(auth)).append("\n");
-        sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
+        sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

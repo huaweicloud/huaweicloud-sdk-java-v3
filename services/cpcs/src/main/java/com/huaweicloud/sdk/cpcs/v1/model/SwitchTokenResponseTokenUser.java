@@ -4,11 +4,17 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
- * 主账号信息
+ * 用户信息
  */
-public class SwitchTokenResponseUserDomain {
+public class SwitchTokenResponseTokenUser {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain")
+
+    private SwitchTokenResponseTokenUserDomain domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -20,13 +26,39 @@ public class SwitchTokenResponseUserDomain {
 
     private String id;
 
-    public SwitchTokenResponseUserDomain withName(String name) {
+    public SwitchTokenResponseTokenUser withDomain(SwitchTokenResponseTokenUserDomain domain) {
+        this.domain = domain;
+        return this;
+    }
+
+    public SwitchTokenResponseTokenUser withDomain(Consumer<SwitchTokenResponseTokenUserDomain> domainSetter) {
+        if (this.domain == null) {
+            this.domain = new SwitchTokenResponseTokenUserDomain();
+            domainSetter.accept(this.domain);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get domain
+     * @return domain
+     */
+    public SwitchTokenResponseTokenUserDomain getDomain() {
+        return domain;
+    }
+
+    public void setDomain(SwitchTokenResponseTokenUserDomain domain) {
+        this.domain = domain;
+    }
+
+    public SwitchTokenResponseTokenUser withName(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * 主账号名称
+     * 用户名称
      * @return name
      */
     public String getName() {
@@ -37,13 +69,13 @@ public class SwitchTokenResponseUserDomain {
         this.name = name;
     }
 
-    public SwitchTokenResponseUserDomain withId(String id) {
+    public SwitchTokenResponseTokenUser withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 主账号id
+     * 用户ID
      * @return id
      */
     public String getId() {
@@ -62,19 +94,21 @@ public class SwitchTokenResponseUserDomain {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SwitchTokenResponseUserDomain that = (SwitchTokenResponseUserDomain) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id);
+        SwitchTokenResponseTokenUser that = (SwitchTokenResponseTokenUser) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, id);
+        return Objects.hash(domain, name, id);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class SwitchTokenResponseUserDomain {\n");
+        sb.append("class SwitchTokenResponseTokenUser {\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");

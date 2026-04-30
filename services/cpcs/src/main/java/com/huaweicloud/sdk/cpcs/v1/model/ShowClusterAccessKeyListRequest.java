@@ -16,14 +16,14 @@ public class ShowClusterAccessKeyListRequest {
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_size")
+    @JsonProperty(value = "limit")
 
-    private Integer pageSize;
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_num")
+    @JsonProperty(value = "offset")
 
-    private Integer pageNum;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_name")
@@ -57,8 +57,8 @@ public class ShowClusterAccessKeyListRequest {
         this.clusterId = clusterId;
     }
 
-    public ShowClusterAccessKeyListRequest withPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public ShowClusterAccessKeyListRequest withLimit(Integer limit) {
+        this.limit = limit;
         return this;
     }
 
@@ -66,32 +66,32 @@ public class ShowClusterAccessKeyListRequest {
      * 指定查询返回记录条数，默认值10
      * minimum: 0
      * maximum: 1000
-     * @return pageSize
+     * @return limit
      */
-    public Integer getPageSize() {
-        return pageSize;
+    public Integer getLimit() {
+        return limit;
     }
 
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
-    public ShowClusterAccessKeyListRequest withPageNum(Integer pageNum) {
-        this.pageNum = pageNum;
+    public ShowClusterAccessKeyListRequest withOffset(Integer offset) {
+        this.offset = offset;
         return this;
     }
 
     /**
-     * 索引位置，从page_num指定的下一条数据开始查询默认值为0
+     * 索引位置，从offset指定的下一条数据开始查询默认值为0
      * minimum: 0
-     * @return pageNum
+     * @return offset
      */
-    public Integer getPageNum() {
-        return pageNum;
+    public Integer getOffset() {
+        return offset;
     }
 
-    public void setPageNum(Integer pageNum) {
-        this.pageNum = pageNum;
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     public ShowClusterAccessKeyListRequest withAppName(String appName) {
@@ -154,14 +154,14 @@ public class ShowClusterAccessKeyListRequest {
             return false;
         }
         ShowClusterAccessKeyListRequest that = (ShowClusterAccessKeyListRequest) obj;
-        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.pageSize, that.pageSize)
-            && Objects.equals(this.pageNum, that.pageNum) && Objects.equals(this.appName, that.appName)
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.appName, that.appName)
             && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, pageSize, pageNum, appName, sortKey, sortDir);
+        return Objects.hash(clusterId, limit, offset, appName, sortKey, sortDir);
     }
 
     @Override
@@ -169,8 +169,8 @@ public class ShowClusterAccessKeyListRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowClusterAccessKeyListRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
-        sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
-        sb.append("    pageNum: ").append(toIndentedString(pageNum)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");

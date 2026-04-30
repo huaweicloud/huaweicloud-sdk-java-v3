@@ -6,44 +6,27 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 集群信息
+ * SwitchTokenResponseTokenRoles
  */
-public class AuthObjectScopeCluster {
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
+public class SwitchTokenResponseTokenRoles {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
 
-    public AuthObjectScopeCluster withId(String id) {
-        this.id = id;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
 
-    /**
-     * 集群id
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
+    private Integer id;
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public AuthObjectScopeCluster withName(String name) {
+    public SwitchTokenResponseTokenRoles withName(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * 集群名称
+     * 角色名称
      * @return name
      */
     public String getName() {
@@ -54,6 +37,23 @@ public class AuthObjectScopeCluster {
         this.name = name;
     }
 
+    public SwitchTokenResponseTokenRoles withId(Integer id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 角色ID
+     * @return id
+     */
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -62,21 +62,21 @@ public class AuthObjectScopeCluster {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AuthObjectScopeCluster that = (AuthObjectScopeCluster) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
+        SwitchTokenResponseTokenRoles that = (SwitchTokenResponseTokenRoles) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name);
+        return Objects.hash(name, id);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class AuthObjectScopeCluster {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("class SwitchTokenResponseTokenRoles {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }
