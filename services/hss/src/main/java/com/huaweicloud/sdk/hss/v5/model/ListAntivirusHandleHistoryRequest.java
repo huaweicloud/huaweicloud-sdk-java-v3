@@ -84,14 +84,14 @@ public class ListAntivirusHandleHistoryRequest {
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sort_dir")
-
-    private String sortDir;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_type")
 
     private Integer eventType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_dir")
+
+    private String sortDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_key")
@@ -157,7 +157,7 @@ public class ListAntivirusHandleHistoryRequest {
     }
 
     /**
-     * **参数解释**: 每页显示个数 **约束限制**: 不涉及 **取值范围**: 取值10-200 **默认取值**: 10 
+     * **参数解释**: 每页显示个数 **约束限制**: 必填 **取值范围**: 取值10-200 **默认取值**: 10 
      * minimum: 10
      * maximum: 200
      * @return limit
@@ -311,7 +311,7 @@ public class ListAntivirusHandleHistoryRequest {
     }
 
     /**
-     * **参数解释**： 资产重要性 **约束限制**： 不涉及 **取值范围**： - important：重要资产 - common：一般资产 - test：测试资产  **默认取值**： 无 
+     * **参数解释**: 资产重要性 **约束限制**: 不涉及 **取值范围**： - important：重要资产 - common：一般资产 - test：测试资产  **默认取值**: 不涉及 
      * @return assetValue
      */
     public String getAssetValue() {
@@ -328,7 +328,7 @@ public class ListAntivirusHandleHistoryRequest {
     }
 
     /**
-     * **参数解释**: 处理方式 **约束限制**: 不涉及 **取值范围**: 处理方式，包含如下:   - mark_as_handled：手动处理   - ignore：忽略   - add_to_alarm_whitelist：加入告警白名单   - isolate_and_kill：隔离文件   - unhandle：取消手动处理   - do_not_ignore：取消忽略   - remove_from_alarm_whitelist：删除告警白名单   - do_not_isolate_or_kill：取消隔离文件 **默认取值**: 不涉及 
+     * **参数解释**: 处理方式 **约束限制**: 不涉及 **取值范围**: 处理方式，包含如下:   - mark_as_handled：手动处理   - ignore：忽略   - add_to_alarm_whitelist：加入告警白名单   - manual_isolate_and_kill：手动隔离查杀   - auto_isolate_and_kill：自动隔离查杀   - unhandle：取消手动处理   - do_not_ignore：取消忽略   - remove_from_alarm_whitelist：删除告警白名单   - do_not_isolate_or_kill：取消隔离文件 **默认取值**: 不涉及 
      * @return handleMethod
      */
     public String getHandleMethod() {
@@ -356,23 +356,6 @@ public class ListAntivirusHandleHistoryRequest {
         this.userName = userName;
     }
 
-    public ListAntivirusHandleHistoryRequest withSortDir(String sortDir) {
-        this.sortDir = sortDir;
-        return this;
-    }
-
-    /**
-     * **参数解释**: 排序的顺序 **约束限制**: 不涉及 **取值范围**:   - asc  : 正序   - desc : 倒序  **默认取值**: 正序排序 
-     * @return sortDir
-     */
-    public String getSortDir() {
-        return sortDir;
-    }
-
-    public void setSortDir(String sortDir) {
-        this.sortDir = sortDir;
-    }
-
     public ListAntivirusHandleHistoryRequest withEventType(Integer eventType) {
         this.eventType = eventType;
         return this;
@@ -390,6 +373,23 @@ public class ListAntivirusHandleHistoryRequest {
 
     public void setEventType(Integer eventType) {
         this.eventType = eventType;
+    }
+
+    public ListAntivirusHandleHistoryRequest withSortDir(String sortDir) {
+        this.sortDir = sortDir;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 排序的顺序 **约束限制**: 不涉及 **取值范围**:   - asc：正序   - desc：倒序  **默认取值**: 正序排序 
+     * @return sortDir
+     */
+    public String getSortDir() {
+        return sortDir;
+    }
+
+    public void setSortDir(String sortDir) {
+        this.sortDir = sortDir;
     }
 
     public ListAntivirusHandleHistoryRequest withSortKey(String sortKey) {
@@ -426,7 +426,7 @@ public class ListAntivirusHandleHistoryRequest {
             && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.privateIp, that.privateIp)
             && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.assetValue, that.assetValue)
             && Objects.equals(this.handleMethod, that.handleMethod) && Objects.equals(this.userName, that.userName)
-            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.eventType, that.eventType)
+            && Objects.equals(this.eventType, that.eventType) && Objects.equals(this.sortDir, that.sortDir)
             && Objects.equals(this.sortKey, that.sortKey);
     }
 
@@ -446,8 +446,8 @@ public class ListAntivirusHandleHistoryRequest {
             assetValue,
             handleMethod,
             userName,
-            sortDir,
             eventType,
+            sortDir,
             sortKey);
     }
 
@@ -469,8 +469,8 @@ public class ListAntivirusHandleHistoryRequest {
         sb.append("    assetValue: ").append(toIndentedString(assetValue)).append("\n");
         sb.append("    handleMethod: ").append(toIndentedString(handleMethod)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
-        sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
+        sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("}");
         return sb.toString();

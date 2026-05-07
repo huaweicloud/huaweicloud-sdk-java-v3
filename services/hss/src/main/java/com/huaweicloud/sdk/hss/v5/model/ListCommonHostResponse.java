@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 /**
  * Response Object
  */
-public class ShowWindosVulDetailResponse extends SdkResponse {
+public class ListCommonHostResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_num")
@@ -22,15 +22,15 @@ public class ShowWindosVulDetailResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_list")
 
-    private List<WindowsVulDetailInfo> dataList = null;
+    private List<CommonHostResponseInfo> dataList = null;
 
-    public ShowWindosVulDetailResponse withTotalNum(Integer totalNum) {
+    public ListCommonHostResponse withTotalNum(Integer totalNum) {
         this.totalNum = totalNum;
         return this;
     }
 
     /**
-     * **参数解释**: 数据总条数 **取值范围**: 最小值0，最大值2147483647 
+     * **参数解释**: 总数 **取值范围**: 最小值0，最大值2147483647 
      * minimum: 0
      * maximum: 2147483647
      * @return totalNum
@@ -43,12 +43,12 @@ public class ShowWindosVulDetailResponse extends SdkResponse {
         this.totalNum = totalNum;
     }
 
-    public ShowWindosVulDetailResponse withDataList(List<WindowsVulDetailInfo> dataList) {
+    public ListCommonHostResponse withDataList(List<CommonHostResponseInfo> dataList) {
         this.dataList = dataList;
         return this;
     }
 
-    public ShowWindosVulDetailResponse addDataListItem(WindowsVulDetailInfo dataListItem) {
+    public ListCommonHostResponse addDataListItem(CommonHostResponseInfo dataListItem) {
         if (this.dataList == null) {
             this.dataList = new ArrayList<>();
         }
@@ -56,7 +56,7 @@ public class ShowWindosVulDetailResponse extends SdkResponse {
         return this;
     }
 
-    public ShowWindosVulDetailResponse withDataList(Consumer<List<WindowsVulDetailInfo>> dataListSetter) {
+    public ListCommonHostResponse withDataList(Consumer<List<CommonHostResponseInfo>> dataListSetter) {
         if (this.dataList == null) {
             this.dataList = new ArrayList<>();
         }
@@ -65,14 +65,14 @@ public class ShowWindosVulDetailResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**: 软件漏洞cve列表 **取值范围**: 不涉及 
+     * 列表
      * @return dataList
      */
-    public List<WindowsVulDetailInfo> getDataList() {
+    public List<CommonHostResponseInfo> getDataList() {
         return dataList;
     }
 
-    public void setDataList(List<WindowsVulDetailInfo> dataList) {
+    public void setDataList(List<CommonHostResponseInfo> dataList) {
         this.dataList = dataList;
     }
 
@@ -84,7 +84,7 @@ public class ShowWindosVulDetailResponse extends SdkResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowWindosVulDetailResponse that = (ShowWindosVulDetailResponse) obj;
+        ListCommonHostResponse that = (ListCommonHostResponse) obj;
         return Objects.equals(this.totalNum, that.totalNum) && Objects.equals(this.dataList, that.dataList);
     }
 
@@ -96,7 +96,7 @@ public class ShowWindosVulDetailResponse extends SdkResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ShowWindosVulDetailResponse {\n");
+        sb.append("class ListCommonHostResponse {\n");
         sb.append("    totalNum: ").append(toIndentedString(totalNum)).append("\n");
         sb.append("    dataList: ").append(toIndentedString(dataList)).append("\n");
         sb.append("}");

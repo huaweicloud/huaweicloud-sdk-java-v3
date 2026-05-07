@@ -41,6 +41,87 @@ public class LiveSnapshotConfig {
 
     private Integer objectWriteMode;
 
+    /**
+     * **参数解释**： 截图模式 **约束限制**： 不涉及 **取值范围**：   - keyframe：I帧截图只选取、保存符合要求的I帧。   - nokeyframe：非I帧截图只选取、保存符合要求的非I帧。   - random：随机截图交替选取、保存符合要求的I帧及非I帧。 **默认取值**： keyframe 
+     */
+    public static final class SnapshotModeEnum {
+
+        /**
+         * Enum KEYFRAME for value: "keyframe"
+         */
+        public static final SnapshotModeEnum KEYFRAME = new SnapshotModeEnum("keyframe");
+
+        /**
+         * Enum NOKEYFRAME for value: "nokeyframe"
+         */
+        public static final SnapshotModeEnum NOKEYFRAME = new SnapshotModeEnum("nokeyframe");
+
+        /**
+         * Enum RANDOM for value: "random"
+         */
+        public static final SnapshotModeEnum RANDOM = new SnapshotModeEnum("random");
+
+        private static final Map<String, SnapshotModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SnapshotModeEnum> createStaticFields() {
+            Map<String, SnapshotModeEnum> map = new HashMap<>();
+            map.put("keyframe", KEYFRAME);
+            map.put("nokeyframe", NOKEYFRAME);
+            map.put("random", RANDOM);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SnapshotModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SnapshotModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SnapshotModeEnum(value));
+        }
+
+        public static SnapshotModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SnapshotModeEnum) {
+                return this.value.equals(((SnapshotModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "snapshot_mode")
+
+    private SnapshotModeEnum snapshotMode;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs_location")
 
@@ -296,6 +377,23 @@ public class LiveSnapshotConfig {
         this.objectWriteMode = objectWriteMode;
     }
 
+    public LiveSnapshotConfig withSnapshotMode(SnapshotModeEnum snapshotMode) {
+        this.snapshotMode = snapshotMode;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 截图模式 **约束限制**： 不涉及 **取值范围**：   - keyframe：I帧截图只选取、保存符合要求的I帧。   - nokeyframe：非I帧截图只选取、保存符合要求的非I帧。   - random：随机截图交替选取、保存符合要求的I帧及非I帧。 **默认取值**： keyframe 
+     * @return snapshotMode
+     */
+    public SnapshotModeEnum getSnapshotMode() {
+        return snapshotMode;
+    }
+
+    public void setSnapshotMode(SnapshotModeEnum snapshotMode) {
+        this.snapshotMode = snapshotMode;
+    }
+
     public LiveSnapshotConfig withObsLocation(ObsFileAddr obsLocation) {
         this.obsLocation = obsLocation;
         return this;
@@ -419,6 +517,7 @@ public class LiveSnapshotConfig {
         return Objects.equals(this.domain, that.domain) && Objects.equals(this.appName, that.appName)
             && Objects.equals(this.authKey, that.authKey) && Objects.equals(this.timeInterval, that.timeInterval)
             && Objects.equals(this.objectWriteMode, that.objectWriteMode)
+            && Objects.equals(this.snapshotMode, that.snapshotMode)
             && Objects.equals(this.obsLocation, that.obsLocation)
             && Objects.equals(this.callBackEnable, that.callBackEnable)
             && Objects.equals(this.callBackUrl, that.callBackUrl)
@@ -434,6 +533,7 @@ public class LiveSnapshotConfig {
             authKey,
             timeInterval,
             objectWriteMode,
+            snapshotMode,
             obsLocation,
             callBackEnable,
             callBackUrl,
@@ -451,6 +551,7 @@ public class LiveSnapshotConfig {
         sb.append("    authKey: ").append(toIndentedString(authKey)).append("\n");
         sb.append("    timeInterval: ").append(toIndentedString(timeInterval)).append("\n");
         sb.append("    objectWriteMode: ").append(toIndentedString(objectWriteMode)).append("\n");
+        sb.append("    snapshotMode: ").append(toIndentedString(snapshotMode)).append("\n");
         sb.append("    obsLocation: ").append(toIndentedString(obsLocation)).append("\n");
         sb.append("    callBackEnable: ").append(toIndentedString(callBackEnable)).append("\n");
         sb.append("    callBackUrl: ").append(toIndentedString(callBackUrl)).append("\n");

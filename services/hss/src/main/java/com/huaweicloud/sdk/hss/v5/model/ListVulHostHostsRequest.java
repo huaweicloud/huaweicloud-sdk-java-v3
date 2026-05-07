@@ -75,6 +75,11 @@ public class ListVulHostHostsRequest {
 
     private String hostIdList;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_type")
+
+    private String nodeType;
+
     public ListVulHostHostsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -98,7 +103,7 @@ public class ListVulHostHostsRequest {
     }
 
     /**
-     * **参数解释**: 每页显示个数 **约束限制**: 不涉及 **取值范围**: 取值10-200 **默认取值**: 10 
+     * **参数解释**: 每页显示个数 **约束限制**: 必填 **取值范围**: 取值10-200 **默认取值**: 10 
      * minimum: 10
      * maximum: 200
      * @return limit
@@ -300,6 +305,23 @@ public class ListVulHostHostsRequest {
         this.hostIdList = hostIdList;
     }
 
+    public ListVulHostHostsRequest withNodeType(String nodeType) {
+        this.nodeType = nodeType;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 节点类型 **约束限制**: 不涉及 **取值范围**: - cce：cce节点 - not_cce：非cce节点 字符长度0-256位 **默认取值**: 不涉及 
+     * @return nodeType
+     */
+    public String getNodeType() {
+        return nodeType;
+    }
+
+    public void setNodeType(String nodeType) {
+        this.nodeType = nodeType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -315,7 +337,8 @@ public class ListVulHostHostsRequest {
             && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.publicIp, that.publicIp)
             && Objects.equals(this.privateIp, that.privateIp) && Objects.equals(this.severityLevel, that.severityLevel)
             && Objects.equals(this.handleStatus, that.handleStatus) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.hostIdList, that.hostIdList);
+            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.hostIdList, that.hostIdList)
+            && Objects.equals(this.nodeType, that.nodeType);
     }
 
     @Override
@@ -332,7 +355,8 @@ public class ListVulHostHostsRequest {
             handleStatus,
             status,
             clusterId,
-            hostIdList);
+            hostIdList,
+            nodeType);
     }
 
     @Override
@@ -352,6 +376,7 @@ public class ListVulHostHostsRequest {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    hostIdList: ").append(toIndentedString(hostIdList)).append("\n");
+        sb.append("    nodeType: ").append(toIndentedString(nodeType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

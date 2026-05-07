@@ -98,6 +98,11 @@ public class VulHostHostsResponseInfoDataList {
 
     private VulHostHostsResponseInfoVulIdsInfo vulIdsInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_type")
+
+    private String nodeType;
+
     public VulHostHostsResponseInfoDataList withHostId(String hostId) {
         this.hostId = hostId;
         return this;
@@ -419,6 +424,23 @@ public class VulHostHostsResponseInfoDataList {
         this.vulIdsInfo = vulIdsInfo;
     }
 
+    public VulHostHostsResponseInfoDataList withNodeType(String nodeType) {
+        this.nodeType = nodeType;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 节点类型 **约束限制**: 不涉及 **取值范围**: - cce：cce节点 - not_cce：非cce节点 字符长度0-256位 **默认取值**: 不涉及
+     * @return nodeType
+     */
+    public String getNodeType() {
+        return nodeType;
+    }
+
+    public void setNodeType(String nodeType) {
+        this.nodeType = nodeType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -437,7 +459,7 @@ public class VulHostHostsResponseInfoDataList {
             && Objects.equals(this.score, that.score) && Objects.equals(this.version, that.version)
             && Objects.equals(this.handleStatus, that.handleStatus)
             && Objects.equals(this.vulNumWithRepairPriorityList, that.vulNumWithRepairPriorityList)
-            && Objects.equals(this.vulIdsInfo, that.vulIdsInfo);
+            && Objects.equals(this.vulIdsInfo, that.vulIdsInfo) && Objects.equals(this.nodeType, that.nodeType);
     }
 
     @Override
@@ -458,7 +480,8 @@ public class VulHostHostsResponseInfoDataList {
             version,
             handleStatus,
             vulNumWithRepairPriorityList,
-            vulIdsInfo);
+            vulIdsInfo,
+            nodeType);
     }
 
     @Override
@@ -484,6 +507,7 @@ public class VulHostHostsResponseInfoDataList {
             .append(toIndentedString(vulNumWithRepairPriorityList))
             .append("\n");
         sb.append("    vulIdsInfo: ").append(toIndentedString(vulIdsInfo)).append("\n");
+        sb.append("    nodeType: ").append(toIndentedString(nodeType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

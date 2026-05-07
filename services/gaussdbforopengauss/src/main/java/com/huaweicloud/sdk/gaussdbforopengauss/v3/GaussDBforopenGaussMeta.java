@@ -363,6 +363,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTopTableVolumesRespo
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTransactionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTransactionRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTransactionResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListUpgradePathsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListUpgradePathsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListWaitEventRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListWaitEventRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListWaitEventResponse;
@@ -5412,6 +5414,41 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListTransactionRequestBody.class),
             f -> f.withMarshaller(ListTransactionRequest::getBody, ListTransactionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUpgradePathsRequest, ListUpgradePathsResponse> listUpgradePaths =
+        genForListUpgradePaths();
+
+    private static HttpRequestDef<ListUpgradePathsRequest, ListUpgradePathsResponse> genForListUpgradePaths() {
+        // basic
+        HttpRequestDef.Builder<ListUpgradePathsRequest, ListUpgradePathsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUpgradePathsRequest.class, ListUpgradePathsResponse.class)
+                .withName("ListUpgradePaths")
+                .withUri("/v3/{project_id}/instances/upgrade-paths")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("source_version",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUpgradePathsRequest::getSourceVersion,
+                ListUpgradePathsRequest::setSourceVersion));
+        builder.<String>withRequestField("target_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUpgradePathsRequest::getTargetVersion,
+                ListUpgradePathsRequest::setTargetVersion));
+        builder.<ListUpgradePathsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListUpgradePathsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListUpgradePathsRequest::getXLanguage, ListUpgradePathsRequest::setXLanguage));
 
         // response
 

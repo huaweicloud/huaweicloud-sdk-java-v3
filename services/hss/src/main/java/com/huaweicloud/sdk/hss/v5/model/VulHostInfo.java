@@ -168,6 +168,11 @@ public class VulHostInfo {
 
     private String repairPriority;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_type")
+
+    private String nodeType;
+
     public VulHostInfo withHostId(String hostId) {
         this.hostId = hostId;
         return this;
@@ -734,6 +739,23 @@ public class VulHostInfo {
         this.repairPriority = repairPriority;
     }
 
+    public VulHostInfo withNodeType(String nodeType) {
+        this.nodeType = nodeType;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 节点类型 **约束限制**: 不涉及 **取值范围**: - cce：cce节点 - not_cce：非cce节点 字符长度0-256位 **默认取值**: 不涉及
+     * @return nodeType
+     */
+    public String getNodeType() {
+        return nodeType;
+    }
+
+    public void setNodeType(String nodeType) {
+        this.nodeType = nodeType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -761,7 +783,7 @@ public class VulHostInfo {
             && Objects.equals(this.supportRestore, that.supportRestore)
             && Objects.equals(this.backupName, that.backupName) && Objects.equals(this.agentStatus, that.agentStatus)
             && Objects.equals(this.disabledOperateTypes, that.disabledOperateTypes)
-            && Objects.equals(this.repairPriority, that.repairPriority);
+            && Objects.equals(this.repairPriority, that.repairPriority) && Objects.equals(this.nodeType, that.nodeType);
     }
 
     @Override
@@ -796,7 +818,8 @@ public class VulHostInfo {
             backupName,
             agentStatus,
             disabledOperateTypes,
-            repairPriority);
+            repairPriority,
+            nodeType);
     }
 
     @Override
@@ -834,6 +857,7 @@ public class VulHostInfo {
         sb.append("    agentStatus: ").append(toIndentedString(agentStatus)).append("\n");
         sb.append("    disabledOperateTypes: ").append(toIndentedString(disabledOperateTypes)).append("\n");
         sb.append("    repairPriority: ").append(toIndentedString(repairPriority)).append("\n");
+        sb.append("    nodeType: ").append(toIndentedString(nodeType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

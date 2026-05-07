@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.hss.v5.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 资源
@@ -28,7 +31,7 @@ public class Resources {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
 
-    private String labels;
+    private List<String> labels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "namespace")
@@ -86,20 +89,36 @@ public class Resources {
         this.images = images;
     }
 
-    public Resources withLabels(String labels) {
+    public Resources withLabels(List<String> labels) {
         this.labels = labels;
         return this;
     }
 
+    public Resources addLabelsItem(String labelsItem) {
+        if (this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
+        this.labels.add(labelsItem);
+        return this;
+    }
+
+    public Resources withLabels(Consumer<List<String>> labelsSetter) {
+        if (this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
+        labelsSetter.accept(this.labels);
+        return this;
+    }
+
     /**
-     * **参数解释**： 标签 **取值范围**： 不涉及 
+     * **参数解释**： 标签列表 **取值范围**： 不涉及 
      * @return labels
      */
-    public String getLabels() {
+    public List<String> getLabels() {
         return labels;
     }
 
-    public void setLabels(String labels) {
+    public void setLabels(List<String> labels) {
         this.labels = labels;
     }
 

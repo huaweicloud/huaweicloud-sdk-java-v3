@@ -81,7 +81,7 @@ public class RunPipelineSourceParamsBuildParams {
     private String virtualMergeBranch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "virtual_merge_commitId")
+    @JsonProperty(value = "virtual_merge_commit_id")
 
     private String virtualMergeCommitId;
 

@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * Request Object
  */
-public class ShowWindosVulDetailRequest {
+public class ShowWindowsVulDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
@@ -40,7 +40,7 @@ public class ShowWindosVulDetailRequest {
 
     private String handleStatus;
 
-    public ShowWindosVulDetailRequest withEnterpriseProjectId(String enterpriseProjectId) {
+    public ShowWindowsVulDetailRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
@@ -57,7 +57,7 @@ public class ShowWindosVulDetailRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public ShowWindosVulDetailRequest withLimit(Integer limit) {
+    public ShowWindowsVulDetailRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
@@ -76,7 +76,7 @@ public class ShowWindosVulDetailRequest {
         this.limit = limit;
     }
 
-    public ShowWindosVulDetailRequest withOffset(Integer offset) {
+    public ShowWindowsVulDetailRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
@@ -95,7 +95,7 @@ public class ShowWindosVulDetailRequest {
         this.offset = offset;
     }
 
-    public ShowWindosVulDetailRequest withVulId(String vulId) {
+    public ShowWindowsVulDetailRequest withVulId(String vulId) {
         this.vulId = vulId;
         return this;
     }
@@ -112,7 +112,7 @@ public class ShowWindosVulDetailRequest {
         this.vulId = vulId;
     }
 
-    public ShowWindosVulDetailRequest withCveId(String cveId) {
+    public ShowWindowsVulDetailRequest withCveId(String cveId) {
         this.cveId = cveId;
         return this;
     }
@@ -129,7 +129,7 @@ public class ShowWindosVulDetailRequest {
         this.cveId = cveId;
     }
 
-    public ShowWindosVulDetailRequest withHandleStatus(String handleStatus) {
+    public ShowWindowsVulDetailRequest withHandleStatus(String handleStatus) {
         this.handleStatus = handleStatus;
         return this;
     }
@@ -154,7 +154,7 @@ public class ShowWindosVulDetailRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowWindosVulDetailRequest that = (ShowWindosVulDetailRequest) obj;
+        ShowWindowsVulDetailRequest that = (ShowWindowsVulDetailRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.vulId, that.vulId) && Objects.equals(this.cveId, that.cveId)
@@ -169,7 +169,7 @@ public class ShowWindosVulDetailRequest {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ShowWindosVulDetailRequest {\n");
+        sb.append("class ShowWindowsVulDetailRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

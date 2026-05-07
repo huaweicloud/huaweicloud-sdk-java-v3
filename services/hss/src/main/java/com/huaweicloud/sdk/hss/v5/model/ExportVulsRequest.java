@@ -92,6 +92,11 @@ public class ExportVulsRequest {
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_type")
+
+    private String nodeType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private ExportVulRequestBody body;
@@ -374,6 +379,23 @@ public class ExportVulsRequest {
         this.groupName = groupName;
     }
 
+    public ExportVulsRequest withNodeType(String nodeType) {
+        this.nodeType = nodeType;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 节点类型 **约束限制**: 不涉及 **取值范围**: - cce：cce节点 - not_cce：非cce节点 字符长度0-256位 **默认取值**: 不涉及 
+     * @return nodeType
+     */
+    public String getNodeType() {
+        return nodeType;
+    }
+
+    public void setNodeType(String nodeType) {
+        this.nodeType = nodeType;
+    }
+
     public ExportVulsRequest withBody(ExportVulRequestBody body) {
         this.body = body;
         return this;
@@ -418,7 +440,7 @@ public class ExportVulsRequest {
             && Objects.equals(this.handleStatus, that.handleStatus) && Objects.equals(this.cveId, that.cveId)
             && Objects.equals(this.labelList, that.labelList) && Objects.equals(this.status, that.status)
             && Objects.equals(this.assetValue, that.assetValue) && Objects.equals(this.groupName, that.groupName)
-            && Objects.equals(this.body, that.body);
+            && Objects.equals(this.nodeType, that.nodeType) && Objects.equals(this.body, that.body);
     }
 
     @Override
@@ -439,6 +461,7 @@ public class ExportVulsRequest {
             status,
             assetValue,
             groupName,
+            nodeType,
             body);
     }
 
@@ -462,6 +485,7 @@ public class ExportVulsRequest {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    assetValue: ").append(toIndentedString(assetValue)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
+        sb.append("    nodeType: ").append(toIndentedString(nodeType)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -148,7 +148,7 @@ public class ListCicdImagesRequest {
     }
 
     /**
-     * **参数解释**: 组织名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位。  **默认取值**: 不涉及 
+     * **参数解释**: 组织名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位。 **默认取值**: 不涉及 
      * @return namespace
      */
     public String getNamespace() {
@@ -216,7 +216,7 @@ public class ListCicdImagesRequest {
     }
 
     /**
-     * **参数解释**: 排序的顺序 **约束限制**: 不涉及 **取值范围**:   - asc  : 正序   - desc : 倒序  **默认取值**: 正序排序 
+     * **参数解释**: 排序的顺序 **约束限制**: 不涉及 **取值范围**:   - asc：正序   - desc：倒序  **默认取值**: 正序排序 
      * @return sortDir
      */
     public String getSortDir() {

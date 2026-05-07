@@ -307,6 +307,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTopTableVolumesReque
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTopTableVolumesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTransactionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTransactionResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListUpgradePathsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListUpgradePathsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListWaitEventRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListWaitEventResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListWdrSnapshotsCollectResultsRequest;
@@ -4119,6 +4121,35 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<ListTransactionRequest, ListTransactionResponse> listTransactionInvoker(
         ListTransactionRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listTransaction, hcClient);
+    }
+
+    /**
+     * 查询引擎的升级路径
+     *
+     * 查询引擎的升级路径
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUpgradePathsRequest 请求对象
+     * @return ListUpgradePathsResponse
+     */
+    public ListUpgradePathsResponse listUpgradePaths(ListUpgradePathsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listUpgradePaths);
+    }
+
+    /**
+     * 查询引擎的升级路径
+     *
+     * 查询引擎的升级路径
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUpgradePathsRequest 请求对象
+     * @return SyncInvoker<ListUpgradePathsRequest, ListUpgradePathsResponse>
+     */
+    public SyncInvoker<ListUpgradePathsRequest, ListUpgradePathsResponse> listUpgradePathsInvoker(
+        ListUpgradePathsRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listUpgradePaths, hcClient);
     }
 
     /**

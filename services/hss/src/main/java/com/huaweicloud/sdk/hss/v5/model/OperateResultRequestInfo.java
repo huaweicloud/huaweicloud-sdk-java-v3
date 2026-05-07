@@ -68,7 +68,7 @@ public class OperateResultRequestInfo {
     }
 
     /**
-     * **参数解释**： 病毒查杀结果ID **取值范围**： 字符长度1-64位 
+     * 病毒查杀结果ID
      * @return resultId
      */
     public String getResultId() {

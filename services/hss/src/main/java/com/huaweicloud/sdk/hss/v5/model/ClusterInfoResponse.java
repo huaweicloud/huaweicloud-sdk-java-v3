@@ -91,6 +91,11 @@ public class ClusterInfoResponse {
 
     private ClusterInfoResponseRegistryInfo registryInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_info")
+
+    private ClusterInfoResponseResourceInfo resourceInfo;
+
     public ClusterInfoResponse withLatestVersion(Boolean latestVersion) {
         this.latestVersion = latestVersion;
         return this;
@@ -383,6 +388,32 @@ public class ClusterInfoResponse {
         this.registryInfo = registryInfo;
     }
 
+    public ClusterInfoResponse withResourceInfo(ClusterInfoResponseResourceInfo resourceInfo) {
+        this.resourceInfo = resourceInfo;
+        return this;
+    }
+
+    public ClusterInfoResponse withResourceInfo(Consumer<ClusterInfoResponseResourceInfo> resourceInfoSetter) {
+        if (this.resourceInfo == null) {
+            this.resourceInfo = new ClusterInfoResponseResourceInfo();
+            resourceInfoSetter.accept(this.resourceInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get resourceInfo
+     * @return resourceInfo
+     */
+    public ClusterInfoResponseResourceInfo getResourceInfo() {
+        return resourceInfo;
+    }
+
+    public void setResourceInfo(ClusterInfoResponseResourceInfo resourceInfo) {
+        this.resourceInfo = resourceInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -404,7 +435,8 @@ public class ClusterInfoResponse {
             && Objects.equals(this.failedMessage, that.failedMessage)
             && Objects.equals(this.clusterLogStatus, that.clusterLogStatus)
             && Objects.equals(this.invokedService, that.invokedService)
-            && Objects.equals(this.registryInfo, that.registryInfo);
+            && Objects.equals(this.registryInfo, that.registryInfo)
+            && Objects.equals(this.resourceInfo, that.resourceInfo);
     }
 
     @Override
@@ -424,7 +456,8 @@ public class ClusterInfoResponse {
             failedMessage,
             clusterLogStatus,
             invokedService,
-            registryInfo);
+            registryInfo,
+            resourceInfo);
     }
 
     @Override
@@ -447,6 +480,7 @@ public class ClusterInfoResponse {
         sb.append("    clusterLogStatus: ").append(toIndentedString(clusterLogStatus)).append("\n");
         sb.append("    invokedService: ").append(toIndentedString(invokedService)).append("\n");
         sb.append("    registryInfo: ").append(toIndentedString(registryInfo)).append("\n");
+        sb.append("    resourceInfo: ").append(toIndentedString(resourceInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

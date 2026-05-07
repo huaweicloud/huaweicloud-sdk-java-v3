@@ -160,7 +160,7 @@ public class ListFileEventsRequest {
     }
 
     /**
-     * **参数解释**： 文件路径 **约束限制**： 不涉及 **取值范围**： 字符数1-512位 **默认取值**： 不涉及 
+     * 文件路径
      * @return filePath
      */
     public String getFilePath() {
@@ -247,7 +247,7 @@ public class ListFileEventsRequest {
     }
 
     /**
-     * **参数解释**: 每页显示个数 **约束限制**: 不涉及 **取值范围**: 取值10-200 **默认取值**: 10 
+     * **参数解释**: 每页显示个数 **约束限制**: 必填 **取值范围**: 取值10-200 **默认取值**: 10 
      * minimum: 10
      * maximum: 200
      * @return limit

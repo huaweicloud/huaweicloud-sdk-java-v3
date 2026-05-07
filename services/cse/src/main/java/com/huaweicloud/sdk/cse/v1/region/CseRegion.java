@@ -73,6 +73,9 @@ public class CseRegion {
 
     public static final Region CN_NORTH_11 = new Region("cn-north-11", "https://cse.cn-north-11.myhuaweicloud.com");
 
+    public static final Region MY_KUALALUMPUR_1 =
+        new Region("my-kualalumpur-1", "https://cse.my-kualalumpur-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CSE");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -105,6 +108,7 @@ public class CseRegion {
         map.put("cn-east-4", CN_EAST_4);
         map.put("cn-southwest-3", CN_SOUTHWEST_3);
         map.put("cn-north-11", CN_NORTH_11);
+        map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
         return Collections.unmodifiableMap(map);
     }
 

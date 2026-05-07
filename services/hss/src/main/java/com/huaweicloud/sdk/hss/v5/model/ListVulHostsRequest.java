@@ -110,6 +110,11 @@ public class ListVulHostsRequest {
 
     private Long maxScanTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_type")
+
+    private String nodeType;
+
     public ListVulHostsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -458,6 +463,23 @@ public class ListVulHostsRequest {
         this.maxScanTime = maxScanTime;
     }
 
+    public ListVulHostsRequest withNodeType(String nodeType) {
+        this.nodeType = nodeType;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 节点类型 **约束限制**: 不涉及 **取值范围**: - cce：cce节点 - not_cce：非cce节点 字符长度0-256位 **默认取值**: 不涉及 
+     * @return nodeType
+     */
+    public String getNodeType() {
+        return nodeType;
+    }
+
+    public void setNodeType(String nodeType) {
+        this.nodeType = nodeType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -479,7 +501,8 @@ public class ListVulHostsRequest {
             && Objects.equals(this.clusterName, that.clusterName) && Objects.equals(this.clusterId, that.clusterId)
             && Objects.equals(this.isContainer, that.isContainer)
             && Objects.equals(this.containerName, that.containerName)
-            && Objects.equals(this.minScanTime, that.minScanTime) && Objects.equals(this.maxScanTime, that.maxScanTime);
+            && Objects.equals(this.minScanTime, that.minScanTime) && Objects.equals(this.maxScanTime, that.maxScanTime)
+            && Objects.equals(this.nodeType, that.nodeType);
     }
 
     @Override
@@ -503,7 +526,8 @@ public class ListVulHostsRequest {
             isContainer,
             containerName,
             minScanTime,
-            maxScanTime);
+            maxScanTime,
+            nodeType);
     }
 
     @Override
@@ -530,6 +554,7 @@ public class ListVulHostsRequest {
         sb.append("    containerName: ").append(toIndentedString(containerName)).append("\n");
         sb.append("    minScanTime: ").append(toIndentedString(minScanTime)).append("\n");
         sb.append("    maxScanTime: ").append(toIndentedString(maxScanTime)).append("\n");
+        sb.append("    nodeType: ").append(toIndentedString(nodeType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

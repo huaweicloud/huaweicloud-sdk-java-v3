@@ -49,6 +49,11 @@ public class ShowAgentDaemonsetDetailInfoResponse extends SdkResponse {
 
     private CreateDaemonsetRequestBodyScheduleInfo scheduleInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_info")
+
+    private DaemonsetYamlResponseInfoResourceInfo resourceInfo;
+
     public ShowAgentDaemonsetDetailInfoResponse withYamlContent(String yamlContent) {
         this.yamlContent = yamlContent;
         return this;
@@ -205,6 +210,33 @@ public class ShowAgentDaemonsetDetailInfoResponse extends SdkResponse {
         this.scheduleInfo = scheduleInfo;
     }
 
+    public ShowAgentDaemonsetDetailInfoResponse withResourceInfo(DaemonsetYamlResponseInfoResourceInfo resourceInfo) {
+        this.resourceInfo = resourceInfo;
+        return this;
+    }
+
+    public ShowAgentDaemonsetDetailInfoResponse withResourceInfo(
+        Consumer<DaemonsetYamlResponseInfoResourceInfo> resourceInfoSetter) {
+        if (this.resourceInfo == null) {
+            this.resourceInfo = new DaemonsetYamlResponseInfoResourceInfo();
+            resourceInfoSetter.accept(this.resourceInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get resourceInfo
+     * @return resourceInfo
+     */
+    public DaemonsetYamlResponseInfoResourceInfo getResourceInfo() {
+        return resourceInfo;
+    }
+
+    public void setResourceInfo(DaemonsetYamlResponseInfoResourceInfo resourceInfo) {
+        this.resourceInfo = resourceInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -218,12 +250,20 @@ public class ShowAgentDaemonsetDetailInfoResponse extends SdkResponse {
             && Objects.equals(this.runtimeInfo, that.runtimeInfo)
             && Objects.equals(this.clusterStatus, that.clusterStatus) && Objects.equals(this.dsInfo, that.dsInfo)
             && Objects.equals(this.installedStatus, that.installedStatus)
-            && Objects.equals(this.scheduleInfo, that.scheduleInfo);
+            && Objects.equals(this.scheduleInfo, that.scheduleInfo)
+            && Objects.equals(this.resourceInfo, that.resourceInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(yamlContent, nodeNum, runtimeInfo, clusterStatus, dsInfo, installedStatus, scheduleInfo);
+        return Objects.hash(yamlContent,
+            nodeNum,
+            runtimeInfo,
+            clusterStatus,
+            dsInfo,
+            installedStatus,
+            scheduleInfo,
+            resourceInfo);
     }
 
     @Override
@@ -237,6 +277,7 @@ public class ShowAgentDaemonsetDetailInfoResponse extends SdkResponse {
         sb.append("    dsInfo: ").append(toIndentedString(dsInfo)).append("\n");
         sb.append("    installedStatus: ").append(toIndentedString(installedStatus)).append("\n");
         sb.append("    scheduleInfo: ").append(toIndentedString(scheduleInfo)).append("\n");
+        sb.append("    resourceInfo: ").append(toIndentedString(resourceInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

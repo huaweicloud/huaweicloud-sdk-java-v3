@@ -30,6 +30,11 @@ public class ListAntiVirusPolicyRequest {
 
     private String policyName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scan_type")
+
+    private String scanType;
+
     public ListAntiVirusPolicyRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -53,7 +58,7 @@ public class ListAntiVirusPolicyRequest {
     }
 
     /**
-     * **参数解释**: 偏移量：指定返回记录的开始位置 **约束限制**: 不涉及 **取值范围**: 最小值0，最大值2000000 **默认取值**: 不涉及 
+     * **参数解释**: 偏移量：指定返回记录的开始位置 **约束限制**: 必填 **取值范围**: 最小值0，最大值2000000 **默认取值**: 0 
      * minimum: 0
      * maximum: 2000000
      * @return offset
@@ -72,7 +77,7 @@ public class ListAntiVirusPolicyRequest {
     }
 
     /**
-     * **参数解释**: 每页显示个数 **约束限制**: 不涉及 **取值范围**: 取值10-200 **默认取值**: 10 
+     * **参数解释**: 每页显示个数 **约束限制**: 必填 **取值范围**: 取值10-200 **默认取值**: 10 
      * minimum: 10
      * maximum: 200
      * @return limit
@@ -102,6 +107,23 @@ public class ListAntiVirusPolicyRequest {
         this.policyName = policyName;
     }
 
+    public ListAntiVirusPolicyRequest withScanType(String scanType) {
+        this.scanType = scanType;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 任务类型 **约束限制**: 不涉及 **取值范围**: - quick ：快速扫描 - full：全盘扫描 - custom : 自定义扫描 **默认取值**: 不涉及 
+     * @return scanType
+     */
+    public String getScanType() {
+        return scanType;
+    }
+
+    public void setScanType(String scanType) {
+        this.scanType = scanType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -113,12 +135,12 @@ public class ListAntiVirusPolicyRequest {
         ListAntiVirusPolicyRequest that = (ListAntiVirusPolicyRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.policyName, that.policyName);
+            && Objects.equals(this.policyName, that.policyName) && Objects.equals(this.scanType, that.scanType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, offset, limit, policyName);
+        return Objects.hash(enterpriseProjectId, offset, limit, policyName, scanType);
     }
 
     @Override
@@ -129,6 +151,7 @@ public class ListAntiVirusPolicyRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    policyName: ").append(toIndentedString(policyName)).append("\n");
+        sb.append("    scanType: ").append(toIndentedString(scanType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

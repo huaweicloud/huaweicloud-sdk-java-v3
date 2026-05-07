@@ -91,7 +91,7 @@ public class AntiVirusHandleHistory {
     }
 
     /**
-     * **参数解释**： 病毒查杀结果ID **取值范围**： 字符长度1-64位 
+     * 病毒查杀结果ID
      * @return resultId
      */
     public String getResultId() {
@@ -142,7 +142,7 @@ public class AntiVirusHandleHistory {
     }
 
     /**
-     * **参数解释**： 威胁等级 **取值范围**： Security（安全）、Low（低危）、Medium（中危）、High（高危）、Critical（致命） 
+     * 威胁等级，包含如下:   - Security：安全   - Low: 低危   - Medium: 中危   - High: 高危   - Critical: 危急
      * @return severity
      */
     public String getSeverity() {

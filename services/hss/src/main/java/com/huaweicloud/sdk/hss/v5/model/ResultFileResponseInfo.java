@@ -138,7 +138,7 @@ public class ResultFileResponseInfo {
     }
 
     /**
-     * **参数解释**： 文件创建时间 **取值范围**： 非负长整数，时间格式：毫秒级时间戳（UTC时区，从1970-01-01 00:00:00开始计算），单位：ms 
+     * 文件创建时间
      * minimum: 0
      * maximum: 9223372036854775807
      * @return fileCtime

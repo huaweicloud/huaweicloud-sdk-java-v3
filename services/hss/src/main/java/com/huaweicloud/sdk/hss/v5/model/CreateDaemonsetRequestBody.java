@@ -33,6 +33,11 @@ public class CreateDaemonsetRequestBody {
 
     private CreateDaemonsetRequestBodyScheduleInfo scheduleInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_info")
+
+    private CreateDaemonsetRequestBodyResourceInfo resourceInfo;
+
     public CreateDaemonsetRequestBody withClusterName(String clusterName) {
         this.clusterName = clusterName;
         return this;
@@ -127,6 +132,33 @@ public class CreateDaemonsetRequestBody {
         this.scheduleInfo = scheduleInfo;
     }
 
+    public CreateDaemonsetRequestBody withResourceInfo(CreateDaemonsetRequestBodyResourceInfo resourceInfo) {
+        this.resourceInfo = resourceInfo;
+        return this;
+    }
+
+    public CreateDaemonsetRequestBody withResourceInfo(
+        Consumer<CreateDaemonsetRequestBodyResourceInfo> resourceInfoSetter) {
+        if (this.resourceInfo == null) {
+            this.resourceInfo = new CreateDaemonsetRequestBodyResourceInfo();
+            resourceInfoSetter.accept(this.resourceInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get resourceInfo
+     * @return resourceInfo
+     */
+    public CreateDaemonsetRequestBodyResourceInfo getResourceInfo() {
+        return resourceInfo;
+    }
+
+    public void setResourceInfo(CreateDaemonsetRequestBodyResourceInfo resourceInfo) {
+        this.resourceInfo = resourceInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -138,12 +170,13 @@ public class CreateDaemonsetRequestBody {
         CreateDaemonsetRequestBody that = (CreateDaemonsetRequestBody) obj;
         return Objects.equals(this.clusterName, that.clusterName) && Objects.equals(this.autoUpgrade, that.autoUpgrade)
             && Objects.equals(this.runtimeInfo, that.runtimeInfo)
-            && Objects.equals(this.scheduleInfo, that.scheduleInfo);
+            && Objects.equals(this.scheduleInfo, that.scheduleInfo)
+            && Objects.equals(this.resourceInfo, that.resourceInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterName, autoUpgrade, runtimeInfo, scheduleInfo);
+        return Objects.hash(clusterName, autoUpgrade, runtimeInfo, scheduleInfo, resourceInfo);
     }
 
     @Override
@@ -154,6 +187,7 @@ public class CreateDaemonsetRequestBody {
         sb.append("    autoUpgrade: ").append(toIndentedString(autoUpgrade)).append("\n");
         sb.append("    runtimeInfo: ").append(toIndentedString(runtimeInfo)).append("\n");
         sb.append("    scheduleInfo: ").append(toIndentedString(scheduleInfo)).append("\n");
+        sb.append("    resourceInfo: ").append(toIndentedString(resourceInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

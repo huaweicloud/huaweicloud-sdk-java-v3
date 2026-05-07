@@ -21,6 +21,11 @@ public class VulRepairFailedDetailInfo {
     private String reason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reason_description")
+
+    private String reasonDescription;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reason_describtion")
 
     private String reasonDescribtion;
@@ -64,13 +69,30 @@ public class VulRepairFailedDetailInfo {
         this.reason = reason;
     }
 
+    public VulRepairFailedDetailInfo withReasonDescription(String reasonDescription) {
+        this.reasonDescription = reasonDescription;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 漏洞修复失败原因解释说明 **取值范围**: 字符长度0-256位 
+     * @return reasonDescription
+     */
+    public String getReasonDescription() {
+        return reasonDescription;
+    }
+
+    public void setReasonDescription(String reasonDescription) {
+        this.reasonDescription = reasonDescription;
+    }
+
     public VulRepairFailedDetailInfo withReasonDescribtion(String reasonDescribtion) {
         this.reasonDescribtion = reasonDescribtion;
         return this;
     }
 
     /**
-     * **参数解释**: 漏洞修复失败原因解释说明 **取值范围**: 字符长度0-256位 
+     * **参数解释**: 漏洞修复失败原因解释说明，已废弃 **取值范围**: 字符长度0-256位 
      * @return reasonDescribtion
      */
     public String getReasonDescribtion() {
@@ -108,13 +130,14 @@ public class VulRepairFailedDetailInfo {
         }
         VulRepairFailedDetailInfo that = (VulRepairFailedDetailInfo) obj;
         return Objects.equals(this.software, that.software) && Objects.equals(this.reason, that.reason)
+            && Objects.equals(this.reasonDescription, that.reasonDescription)
             && Objects.equals(this.reasonDescribtion, that.reasonDescribtion)
             && Objects.equals(this.reasonSolution, that.reasonSolution);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(software, reason, reasonDescribtion, reasonSolution);
+        return Objects.hash(software, reason, reasonDescription, reasonDescribtion, reasonSolution);
     }
 
     @Override
@@ -123,6 +146,7 @@ public class VulRepairFailedDetailInfo {
         sb.append("class VulRepairFailedDetailInfo {\n");
         sb.append("    software: ").append(toIndentedString(software)).append("\n");
         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+        sb.append("    reasonDescription: ").append(toIndentedString(reasonDescription)).append("\n");
         sb.append("    reasonDescribtion: ").append(toIndentedString(reasonDescribtion)).append("\n");
         sb.append("    reasonSolution: ").append(toIndentedString(reasonSolution)).append("\n");
         sb.append("}");

@@ -613,7 +613,7 @@ public class ProcessEventResourceResponseInfo {
     }
 
     /**
-     * 集群名称
+     * **参数解释**: 集群名称 **约束限制**: 不涉及 **取值范围**: 字符长度1-128位 **默认取值**: 不涉及 
      * @return clusterName
      */
     public String getClusterName() {

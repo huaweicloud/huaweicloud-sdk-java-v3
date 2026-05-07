@@ -93,6 +93,7 @@ import com.huaweicloud.sdk.live.v1.model.DeleteWatermarkTemplateResponse;
 import com.huaweicloud.sdk.live.v1.model.DomainHttpsCertInfo;
 import com.huaweicloud.sdk.live.v1.model.DomainIpv6SwitchReq;
 import com.huaweicloud.sdk.live.v1.model.DomainMapping;
+import com.huaweicloud.sdk.live.v1.model.DomainStreamBackupInfo;
 import com.huaweicloud.sdk.live.v1.model.GeoBlockingConfigInfo;
 import com.huaweicloud.sdk.live.v1.model.IPAuthInfo;
 import com.huaweicloud.sdk.live.v1.model.KeyChainInfo;
@@ -144,6 +145,8 @@ import com.huaweicloud.sdk.live.v1.model.LiveDomainModifyReq;
 import com.huaweicloud.sdk.live.v1.model.LivePullStreamTask;
 import com.huaweicloud.sdk.live.v1.model.LiveSnapshotConfig;
 import com.huaweicloud.sdk.live.v1.model.ModifyDelayConfig;
+import com.huaweicloud.sdk.live.v1.model.ModifyDomainStreamBackupRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyDomainStreamBackupResponse;
 import com.huaweicloud.sdk.live.v1.model.ModifyFlowOutputRequest;
 import com.huaweicloud.sdk.live.v1.model.ModifyFlowOutputResponse;
 import com.huaweicloud.sdk.live.v1.model.ModifyFlowSourcesRequest;
@@ -202,6 +205,8 @@ import com.huaweicloud.sdk.live.v1.model.ShowDomainKeyChainRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainKeyChainResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowDomainStreamBackupRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowDomainStreamBackupResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainVerificationRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainVerificationResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowFlowDetailRequest;
@@ -1845,6 +1850,30 @@ public class LiveMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ModifyDomainStreamBackupRequest, ModifyDomainStreamBackupResponse> modifyDomainStreamBackup =
+        genForModifyDomainStreamBackup();
+
+    private static HttpRequestDef<ModifyDomainStreamBackupRequest, ModifyDomainStreamBackupResponse> genForModifyDomainStreamBackup() {
+        // basic
+        HttpRequestDef.Builder<ModifyDomainStreamBackupRequest, ModifyDomainStreamBackupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, ModifyDomainStreamBackupRequest.class, ModifyDomainStreamBackupResponse.class)
+                .withName("ModifyDomainStreamBackup")
+                .withUri("/v1/{project_id}/domain/stream-backup")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<DomainStreamBackupInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DomainStreamBackupInfo.class),
+            f -> f.withMarshaller(ModifyDomainStreamBackupRequest::getBody, ModifyDomainStreamBackupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ModifyFlowOutputRequest, ModifyFlowOutputResponse> modifyFlowOutput =
         genForModifyFlowOutput();
 
@@ -2080,6 +2109,30 @@ public class LiveMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDomainKeyChainRequest::getDomain, ShowDomainKeyChainRequest::setDomain));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDomainStreamBackupRequest, ShowDomainStreamBackupResponse> showDomainStreamBackup =
+        genForShowDomainStreamBackup();
+
+    private static HttpRequestDef<ShowDomainStreamBackupRequest, ShowDomainStreamBackupResponse> genForShowDomainStreamBackup() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainStreamBackupRequest, ShowDomainStreamBackupResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDomainStreamBackupRequest.class, ShowDomainStreamBackupResponse.class)
+            .withName("ShowDomainStreamBackup")
+            .withUri("/v1/{project_id}/domain/stream-backup")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("publish_domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainStreamBackupRequest::getPublishDomain,
+                ShowDomainStreamBackupRequest::setPublishDomain));
 
         // response
 

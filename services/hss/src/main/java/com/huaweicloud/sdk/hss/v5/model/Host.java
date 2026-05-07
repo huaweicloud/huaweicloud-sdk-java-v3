@@ -354,6 +354,56 @@ public class Host {
 
     private String clusterId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "container_type")
+
+    private Integer containerType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ransom_protection_status")
+
+    private String ransomProtectionStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "wtp_protect_status")
+
+    private String wtpProtectStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "two_factor_auth")
+
+    private Boolean twoFactorAuth;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data_center_tag")
+
+    private String dataCenterTag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_provider_name")
+
+    private String serviceProviderName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_runtime_info")
+
+    private List<RuntimeServiceInfo> nodeRuntimeInfo = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mode")
+
+    private String mode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cpu_limit")
+
+    private String cpuLimit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mem_limit")
+
+    private String memLimit;
+
     public Host withHostName(String hostName) {
         this.hostName = hostName;
         return this;
@@ -1288,6 +1338,194 @@ public class Host {
         this.clusterId = clusterId;
     }
 
+    public Host withContainerType(Integer containerType) {
+        this.containerType = containerType;
+        return this;
+    }
+
+    /**
+     * 是否存在容器环境。   -0: 否   -1: 是 
+     * minimum: 0
+     * maximum: 1
+     * @return containerType
+     */
+    public Integer getContainerType() {
+        return containerType;
+    }
+
+    public void setContainerType(Integer containerType) {
+        this.containerType = containerType;
+    }
+
+    public Host withRansomProtectionStatus(String ransomProtectionStatus) {
+        this.ransomProtectionStatus = ransomProtectionStatus;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  勒索病毒防护状态  **取值范围**：    - closed ：未开启。    - opened ：防护中。    - opening ：开启中。    - closing ：关闭中。    - protect_failed：防护失败。    - protect_degraded：防护降级。 
+     * @return ransomProtectionStatus
+     */
+    public String getRansomProtectionStatus() {
+        return ransomProtectionStatus;
+    }
+
+    public void setRansomProtectionStatus(String ransomProtectionStatus) {
+        this.ransomProtectionStatus = ransomProtectionStatus;
+    }
+
+    public Host withWtpProtectStatus(String wtpProtectStatus) {
+        this.wtpProtectStatus = wtpProtectStatus;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 网页防篡改防护状态 **取值范围**：   - closed：未开启   - opened：防护中   - opening：开启中   - closing：关闭中   - open_failed：防护失败   - partial_protection：部分防护   - protection_pause：防护暂停 
+     * @return wtpProtectStatus
+     */
+    public String getWtpProtectStatus() {
+        return wtpProtectStatus;
+    }
+
+    public void setWtpProtectStatus(String wtpProtectStatus) {
+        this.wtpProtectStatus = wtpProtectStatus;
+    }
+
+    public Host withTwoFactorAuth(Boolean twoFactorAuth) {
+        this.twoFactorAuth = twoFactorAuth;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 双因子认证是否开启 **取值范围**：   - true：是。   - false：否。 
+     * @return twoFactorAuth
+     */
+    public Boolean getTwoFactorAuth() {
+        return twoFactorAuth;
+    }
+
+    public void setTwoFactorAuth(Boolean twoFactorAuth) {
+        this.twoFactorAuth = twoFactorAuth;
+    }
+
+    public Host withDataCenterTag(String dataCenterTag) {
+        this.dataCenterTag = dataCenterTag;
+        return this;
+    }
+
+    /**
+     * **参数解释** 数据中心标识 **取值范围**   字符长度0-128 
+     * @return dataCenterTag
+     */
+    public String getDataCenterTag() {
+        return dataCenterTag;
+    }
+
+    public void setDataCenterTag(String dataCenterTag) {
+        this.dataCenterTag = dataCenterTag;
+    }
+
+    public Host withServiceProviderName(String serviceProviderName) {
+        this.serviceProviderName = serviceProviderName;
+        return this;
+    }
+
+    /**
+     * **参数解释** 服务商名称 **取值范围**   字符长度0-128 
+     * @return serviceProviderName
+     */
+    public String getServiceProviderName() {
+        return serviceProviderName;
+    }
+
+    public void setServiceProviderName(String serviceProviderName) {
+        this.serviceProviderName = serviceProviderName;
+    }
+
+    public Host withNodeRuntimeInfo(List<RuntimeServiceInfo> nodeRuntimeInfo) {
+        this.nodeRuntimeInfo = nodeRuntimeInfo;
+        return this;
+    }
+
+    public Host addNodeRuntimeInfoItem(RuntimeServiceInfo nodeRuntimeInfoItem) {
+        if (this.nodeRuntimeInfo == null) {
+            this.nodeRuntimeInfo = new ArrayList<>();
+        }
+        this.nodeRuntimeInfo.add(nodeRuntimeInfoItem);
+        return this;
+    }
+
+    public Host withNodeRuntimeInfo(Consumer<List<RuntimeServiceInfo>> nodeRuntimeInfoSetter) {
+        if (this.nodeRuntimeInfo == null) {
+            this.nodeRuntimeInfo = new ArrayList<>();
+        }
+        nodeRuntimeInfoSetter.accept(this.nodeRuntimeInfo);
+        return this;
+    }
+
+    /**
+     * 节点运行时信息，incluster请求参数不为空时返回该字段
+     * @return nodeRuntimeInfo
+     */
+    public List<RuntimeServiceInfo> getNodeRuntimeInfo() {
+        return nodeRuntimeInfo;
+    }
+
+    public void setNodeRuntimeInfo(List<RuntimeServiceInfo> nodeRuntimeInfo) {
+        this.nodeRuntimeInfo = nodeRuntimeInfo;
+    }
+
+    public Host withMode(String mode) {
+        this.mode = mode;
+        return this;
+    }
+
+    /**
+     * **参数解释** 资源限制类型：默认规则or自定义or自适应 **取值范围** 取值0-32 
+     * @return mode
+     */
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
+    public Host withCpuLimit(String cpuLimit) {
+        this.cpuLimit = cpuLimit;
+        return this;
+    }
+
+    /**
+     * **参数解释** cpu最大值 **取值范围** 字符长度0-32位 
+     * @return cpuLimit
+     */
+    public String getCpuLimit() {
+        return cpuLimit;
+    }
+
+    public void setCpuLimit(String cpuLimit) {
+        this.cpuLimit = cpuLimit;
+    }
+
+    public Host withMemLimit(String memLimit) {
+        this.memLimit = memLimit;
+        return this;
+    }
+
+    /**
+     * **参数解释** 内存最大值 **取值范围** 字符长度0-32位
+     * @return memLimit
+     */
+    public String getMemLimit() {
+        return memLimit;
+    }
+
+    public void setMemLimit(String memLimit) {
+        this.memLimit = memLimit;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1330,7 +1568,15 @@ public class Host {
             && Objects.equals(this.keyName, that.keyName) && Objects.equals(this.autoOpenVersion, that.autoOpenVersion)
             && Objects.equals(this.installProgress, that.installProgress) && Objects.equals(this.vpcId, that.vpcId)
             && Objects.equals(this.commonLoginAreaCodes, that.commonLoginAreaCodes)
-            && Objects.equals(this.clusterName, that.clusterName) && Objects.equals(this.clusterId, that.clusterId);
+            && Objects.equals(this.clusterName, that.clusterName) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.containerType, that.containerType)
+            && Objects.equals(this.ransomProtectionStatus, that.ransomProtectionStatus)
+            && Objects.equals(this.wtpProtectStatus, that.wtpProtectStatus)
+            && Objects.equals(this.twoFactorAuth, that.twoFactorAuth)
+            && Objects.equals(this.dataCenterTag, that.dataCenterTag)
+            && Objects.equals(this.serviceProviderName, that.serviceProviderName)
+            && Objects.equals(this.nodeRuntimeInfo, that.nodeRuntimeInfo) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.cpuLimit, that.cpuLimit) && Objects.equals(this.memLimit, that.memLimit);
     }
 
     @Override
@@ -1386,7 +1632,17 @@ public class Host {
             vpcId,
             commonLoginAreaCodes,
             clusterName,
-            clusterId);
+            clusterId,
+            containerType,
+            ransomProtectionStatus,
+            wtpProtectStatus,
+            twoFactorAuth,
+            dataCenterTag,
+            serviceProviderName,
+            nodeRuntimeInfo,
+            mode,
+            cpuLimit,
+            memLimit);
     }
 
     @Override
@@ -1445,6 +1701,16 @@ public class Host {
         sb.append("    commonLoginAreaCodes: ").append(toIndentedString(commonLoginAreaCodes)).append("\n");
         sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    containerType: ").append(toIndentedString(containerType)).append("\n");
+        sb.append("    ransomProtectionStatus: ").append(toIndentedString(ransomProtectionStatus)).append("\n");
+        sb.append("    wtpProtectStatus: ").append(toIndentedString(wtpProtectStatus)).append("\n");
+        sb.append("    twoFactorAuth: ").append(toIndentedString(twoFactorAuth)).append("\n");
+        sb.append("    dataCenterTag: ").append(toIndentedString(dataCenterTag)).append("\n");
+        sb.append("    serviceProviderName: ").append(toIndentedString(serviceProviderName)).append("\n");
+        sb.append("    nodeRuntimeInfo: ").append(toIndentedString(nodeRuntimeInfo)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    cpuLimit: ").append(toIndentedString(cpuLimit)).append("\n");
+        sb.append("    memLimit: ").append(toIndentedString(memLimit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

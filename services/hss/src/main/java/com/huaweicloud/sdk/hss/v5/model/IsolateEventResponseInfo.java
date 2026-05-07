@@ -334,7 +334,7 @@ public class IsolateEventResponseInfo {
     }
 
     /**
-     * **参数解释**： 威胁等级 **取值范围**： Security（安全）、Low（低危）、Medium（中危）、High（高危）、Critical（致命） 
+     * 威胁等级，包含如下:   - Security：安全   - Low: 低危   - Medium: 中危   - High: 高危   - Critical: 危急
      * @return severity
      */
     public String getSeverity() {

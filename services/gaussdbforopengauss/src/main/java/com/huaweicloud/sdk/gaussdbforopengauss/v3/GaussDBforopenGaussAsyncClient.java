@@ -307,6 +307,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTopTableVolumesReque
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTopTableVolumesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTransactionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTransactionResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListUpgradePathsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListUpgradePathsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListWaitEventRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListWaitEventResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListWdrSnapshotsCollectResultsRequest;
@@ -4176,6 +4178,35 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<ListTransactionRequest, ListTransactionResponse> listTransactionAsyncInvoker(
         ListTransactionRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listTransaction, hcClient);
+    }
+
+    /**
+     * 查询引擎的升级路径
+     *
+     * 查询引擎的升级路径
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUpgradePathsRequest 请求对象
+     * @return CompletableFuture<ListUpgradePathsResponse>
+     */
+    public CompletableFuture<ListUpgradePathsResponse> listUpgradePathsAsync(ListUpgradePathsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listUpgradePaths);
+    }
+
+    /**
+     * 查询引擎的升级路径
+     *
+     * 查询引擎的升级路径
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUpgradePathsRequest 请求对象
+     * @return AsyncInvoker<ListUpgradePathsRequest, ListUpgradePathsResponse>
+     */
+    public AsyncInvoker<ListUpgradePathsRequest, ListUpgradePathsResponse> listUpgradePathsAsyncInvoker(
+        ListUpgradePathsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listUpgradePaths, hcClient);
     }
 
     /**

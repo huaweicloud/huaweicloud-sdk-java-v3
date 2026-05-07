@@ -75,6 +75,11 @@ public class ListVulnerabilitiesRequest {
 
     private String groupName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_type")
+
+    private String nodeType;
+
     public ListVulnerabilitiesRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -300,6 +305,23 @@ public class ListVulnerabilitiesRequest {
         this.groupName = groupName;
     }
 
+    public ListVulnerabilitiesRequest withNodeType(String nodeType) {
+        this.nodeType = nodeType;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 节点类型 **约束限制**: 不涉及 **取值范围**: - cce：cce节点 - not_cce：非cce节点 字符长度0-256位 **默认取值**: 不涉及 
+     * @return nodeType
+     */
+    public String getNodeType() {
+        return nodeType;
+    }
+
+    public void setNodeType(String nodeType) {
+        this.nodeType = nodeType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -315,7 +337,8 @@ public class ListVulnerabilitiesRequest {
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.repairPriority, that.repairPriority)
             && Objects.equals(this.handleStatus, that.handleStatus) && Objects.equals(this.cveId, that.cveId)
             && Objects.equals(this.labelList, that.labelList) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.assetValue, that.assetValue) && Objects.equals(this.groupName, that.groupName);
+            && Objects.equals(this.assetValue, that.assetValue) && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.nodeType, that.nodeType);
     }
 
     @Override
@@ -332,7 +355,8 @@ public class ListVulnerabilitiesRequest {
             labelList,
             status,
             assetValue,
-            groupName);
+            groupName,
+            nodeType);
     }
 
     @Override
@@ -352,6 +376,7 @@ public class ListVulnerabilitiesRequest {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    assetValue: ").append(toIndentedString(assetValue)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
+        sb.append("    nodeType: ").append(toIndentedString(nodeType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

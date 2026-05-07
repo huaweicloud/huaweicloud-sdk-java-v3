@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * **参数解释**： 病毒查杀结果ID **取值范围**： 字符长度1-64位 
+ * 病毒查杀结果ID
  */
 public class ResultId {
 

@@ -203,6 +203,11 @@ public class UpdateDaemonsetRequestBody {
 
     private Boolean preferPacketCycle;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_info")
+
+    private CreateDaemonsetRequestBodyResourceInfo resourceInfo;
+
     public UpdateDaemonsetRequestBody withAgentVersion(String agentVersion) {
         this.agentVersion = agentVersion;
         return this;
@@ -382,6 +387,33 @@ public class UpdateDaemonsetRequestBody {
         this.preferPacketCycle = preferPacketCycle;
     }
 
+    public UpdateDaemonsetRequestBody withResourceInfo(CreateDaemonsetRequestBodyResourceInfo resourceInfo) {
+        this.resourceInfo = resourceInfo;
+        return this;
+    }
+
+    public UpdateDaemonsetRequestBody withResourceInfo(
+        Consumer<CreateDaemonsetRequestBodyResourceInfo> resourceInfoSetter) {
+        if (this.resourceInfo == null) {
+            this.resourceInfo = new CreateDaemonsetRequestBodyResourceInfo();
+            resourceInfoSetter.accept(this.resourceInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get resourceInfo
+     * @return resourceInfo
+     */
+    public CreateDaemonsetRequestBodyResourceInfo getResourceInfo() {
+        return resourceInfo;
+    }
+
+    public void setResourceInfo(CreateDaemonsetRequestBodyResourceInfo resourceInfo) {
+        this.resourceInfo = resourceInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -398,7 +430,8 @@ public class UpdateDaemonsetRequestBody {
             && Objects.equals(this.invokedService, that.invokedService)
             && Objects.equals(this.chargingMode, that.chargingMode)
             && Objects.equals(this.cceProtectionType, that.cceProtectionType)
-            && Objects.equals(this.preferPacketCycle, that.preferPacketCycle);
+            && Objects.equals(this.preferPacketCycle, that.preferPacketCycle)
+            && Objects.equals(this.resourceInfo, that.resourceInfo);
     }
 
     @Override
@@ -411,7 +444,8 @@ public class UpdateDaemonsetRequestBody {
             invokedService,
             chargingMode,
             cceProtectionType,
-            preferPacketCycle);
+            preferPacketCycle,
+            resourceInfo);
     }
 
     @Override
@@ -427,6 +461,7 @@ public class UpdateDaemonsetRequestBody {
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    cceProtectionType: ").append(toIndentedString(cceProtectionType)).append("\n");
         sb.append("    preferPacketCycle: ").append(toIndentedString(preferPacketCycle)).append("\n");
+        sb.append("    resourceInfo: ").append(toIndentedString(resourceInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

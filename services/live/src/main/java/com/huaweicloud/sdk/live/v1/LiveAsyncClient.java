@@ -123,6 +123,8 @@ import com.huaweicloud.sdk.live.v1.model.ListWatermarkRuleRequest;
 import com.huaweicloud.sdk.live.v1.model.ListWatermarkRuleResponse;
 import com.huaweicloud.sdk.live.v1.model.ListWatermarkTemplateRequest;
 import com.huaweicloud.sdk.live.v1.model.ListWatermarkTemplateResponse;
+import com.huaweicloud.sdk.live.v1.model.ModifyDomainStreamBackupRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyDomainStreamBackupResponse;
 import com.huaweicloud.sdk.live.v1.model.ModifyFlowOutputRequest;
 import com.huaweicloud.sdk.live.v1.model.ModifyFlowOutputResponse;
 import com.huaweicloud.sdk.live.v1.model.ModifyFlowSourcesRequest;
@@ -161,6 +163,8 @@ import com.huaweicloud.sdk.live.v1.model.ShowDomainKeyChainRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainKeyChainResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowDomainStreamBackupRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowDomainStreamBackupResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainVerificationRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainVerificationResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowFlowDetailRequest;
@@ -1739,6 +1743,36 @@ public class LiveAsyncClient {
     }
 
     /**
+     * 设置域名主备流功能开关
+     *
+     * 设置域名主备流功能开关，可支持同一路流推多个，按照先后顺序定优先级，客户可进行流优先级切换
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyDomainStreamBackupRequest 请求对象
+     * @return CompletableFuture<ModifyDomainStreamBackupResponse>
+     */
+    public CompletableFuture<ModifyDomainStreamBackupResponse> modifyDomainStreamBackupAsync(
+        ModifyDomainStreamBackupRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.modifyDomainStreamBackup);
+    }
+
+    /**
+     * 设置域名主备流功能开关
+     *
+     * 设置域名主备流功能开关，可支持同一路流推多个，按照先后顺序定优先级，客户可进行流优先级切换
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyDomainStreamBackupRequest 请求对象
+     * @return AsyncInvoker<ModifyDomainStreamBackupRequest, ModifyDomainStreamBackupResponse>
+     */
+    public AsyncInvoker<ModifyDomainStreamBackupRequest, ModifyDomainStreamBackupResponse> modifyDomainStreamBackupAsyncInvoker(
+        ModifyDomainStreamBackupRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.modifyDomainStreamBackup, hcClient);
+    }
+
+    /**
      * 更新转推输出
      *
      * 更新转推输出
@@ -1995,6 +2029,36 @@ public class LiveAsyncClient {
     public AsyncInvoker<ShowDomainKeyChainRequest, ShowDomainKeyChainResponse> showDomainKeyChainAsyncInvoker(
         ShowDomainKeyChainRequest request) {
         return new AsyncInvoker<>(request, LiveMeta.showDomainKeyChain, hcClient);
+    }
+
+    /**
+     * 查询域名主备流功能开关
+     *
+     * 查询域名主备流功能开关，可支持同一路流推多个，按照先后顺序定优先级，客户可进行流优先级切换
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainStreamBackupRequest 请求对象
+     * @return CompletableFuture<ShowDomainStreamBackupResponse>
+     */
+    public CompletableFuture<ShowDomainStreamBackupResponse> showDomainStreamBackupAsync(
+        ShowDomainStreamBackupRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.showDomainStreamBackup);
+    }
+
+    /**
+     * 查询域名主备流功能开关
+     *
+     * 查询域名主备流功能开关，可支持同一路流推多个，按照先后顺序定优先级，客户可进行流优先级切换
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainStreamBackupRequest 请求对象
+     * @return AsyncInvoker<ShowDomainStreamBackupRequest, ShowDomainStreamBackupResponse>
+     */
+    public AsyncInvoker<ShowDomainStreamBackupRequest, ShowDomainStreamBackupResponse> showDomainStreamBackupAsyncInvoker(
+        ShowDomainStreamBackupRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.showDomainStreamBackup, hcClient);
     }
 
     /**
