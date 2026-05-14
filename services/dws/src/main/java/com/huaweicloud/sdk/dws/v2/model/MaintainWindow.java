@@ -48,7 +48,7 @@ public class MaintainWindow {
     }
 
     /**
-     * **参数解释**： 维护开始时间，显示格式为 HH：mm，时区为GMT+0。 **取值范围**： 不涉及。
+     * **参数解释**： 维护开始时间，显示格式为 HH:mm，时区为GMT+0。 **取值范围**： 不涉及。
      * @return startTime
      */
     public String getStartTime() {
@@ -65,7 +65,7 @@ public class MaintainWindow {
     }
 
     /**
-     * **参数解释**： 维护结束时间，显示格式为 HH：mm，时区为GMT+0。 **取值范围**： 不涉及。
+     * **参数解释**： 维护结束时间，显示格式为 HH:mm，时区为GMT+0。 **取值范围**： 不涉及。
      * @return endTime
      */
     public String getEndTime() {

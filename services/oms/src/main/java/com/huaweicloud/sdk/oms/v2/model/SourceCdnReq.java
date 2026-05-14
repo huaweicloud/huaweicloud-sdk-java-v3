@@ -231,6 +231,86 @@ public class SourceCdnReq {
 
     private ProtocolEnum protocol;
 
+    /**
+     * 加解密类型，默认为DEFAULT，可选类型为DEFAULT、KMS
+     */
+    public static final class CryptoTypeEnum {
+
+        /**
+         * Enum DEFAULT for value: "DEFAULT"
+         */
+        public static final CryptoTypeEnum DEFAULT = new CryptoTypeEnum("DEFAULT");
+
+        /**
+         * Enum KMS for value: "KMS"
+         */
+        public static final CryptoTypeEnum KMS = new CryptoTypeEnum("KMS");
+
+        private static final Map<String, CryptoTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, CryptoTypeEnum> createStaticFields() {
+            Map<String, CryptoTypeEnum> map = new HashMap<>();
+            map.put("DEFAULT", DEFAULT);
+            map.put("KMS", KMS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        CryptoTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static CryptoTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CryptoTypeEnum(value));
+        }
+
+        public static CryptoTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof CryptoTypeEnum) {
+                return this.value.equals(((CryptoTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "crypto_type")
+
+    private CryptoTypeEnum cryptoType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kms_key_id")
+
+    private String kmsKeyId;
+
     public SourceCdnReq withAuthenticationKey(String authenticationKey) {
         this.authenticationKey = authenticationKey;
         return this;
@@ -299,6 +379,40 @@ public class SourceCdnReq {
         this.protocol = protocol;
     }
 
+    public SourceCdnReq withCryptoType(CryptoTypeEnum cryptoType) {
+        this.cryptoType = cryptoType;
+        return this;
+    }
+
+    /**
+     * 加解密类型，默认为DEFAULT，可选类型为DEFAULT、KMS
+     * @return cryptoType
+     */
+    public CryptoTypeEnum getCryptoType() {
+        return cryptoType;
+    }
+
+    public void setCryptoType(CryptoTypeEnum cryptoType) {
+        this.cryptoType = cryptoType;
+    }
+
+    public SourceCdnReq withKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+        return this;
+    }
+
+    /**
+     * KMS密钥ID，36个字符
+     * @return kmsKeyId
+     */
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -310,12 +424,13 @@ public class SourceCdnReq {
         SourceCdnReq that = (SourceCdnReq) obj;
         return Objects.equals(this.authenticationKey, that.authenticationKey)
             && Objects.equals(this.authenticationType, that.authenticationType)
-            && Objects.equals(this.domain, that.domain) && Objects.equals(this.protocol, that.protocol);
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.cryptoType, that.cryptoType) && Objects.equals(this.kmsKeyId, that.kmsKeyId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authenticationKey, authenticationType, domain, protocol);
+        return Objects.hash(authenticationKey, authenticationType, domain, protocol, cryptoType, kmsKeyId);
     }
 
     @Override
@@ -326,6 +441,8 @@ public class SourceCdnReq {
         sb.append("    authenticationType: ").append(toIndentedString(authenticationType)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
+        sb.append("    cryptoType: ").append(toIndentedString(cryptoType)).append("\n");
+        sb.append("    kmsKeyId: ").append(toIndentedString(kmsKeyId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

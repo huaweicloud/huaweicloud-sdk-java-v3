@@ -16,6 +16,11 @@ public class CreateAssetProcessTaskResponse extends SdkResponse {
 
     private String assetId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "thumbnail_task_id")
+
+    private String thumbnailTaskId;
+
     public CreateAssetProcessTaskResponse withAssetId(String assetId) {
         this.assetId = assetId;
         return this;
@@ -33,6 +38,23 @@ public class CreateAssetProcessTaskResponse extends SdkResponse {
         this.assetId = assetId;
     }
 
+    public CreateAssetProcessTaskResponse withThumbnailTaskId(String thumbnailTaskId) {
+        this.thumbnailTaskId = thumbnailTaskId;
+        return this;
+    }
+
+    /**
+     * 截图任务id，仅支持多截图场景会返回。
+     * @return thumbnailTaskId
+     */
+    public String getThumbnailTaskId() {
+        return thumbnailTaskId;
+    }
+
+    public void setThumbnailTaskId(String thumbnailTaskId) {
+        this.thumbnailTaskId = thumbnailTaskId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -42,12 +64,12 @@ public class CreateAssetProcessTaskResponse extends SdkResponse {
             return false;
         }
         CreateAssetProcessTaskResponse that = (CreateAssetProcessTaskResponse) obj;
-        return Objects.equals(this.assetId, that.assetId);
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.thumbnailTaskId, that.thumbnailTaskId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(assetId);
+        return Objects.hash(assetId, thumbnailTaskId);
     }
 
     @Override
@@ -55,6 +77,7 @@ public class CreateAssetProcessTaskResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateAssetProcessTaskResponse {\n");
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
+        sb.append("    thumbnailTaskId: ").append(toIndentedString(thumbnailTaskId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

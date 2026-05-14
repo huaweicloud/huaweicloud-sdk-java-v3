@@ -63,11 +63,6 @@ public class TaskGroupResp {
 
     private Boolean enableRestore;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enable_kms")
-
-    private Boolean enableKms;
-
     /**
      * 任务类型，默认为PREFIX。 LIST：对象列表迁移 URL_LIST：URL列表迁移， PREFIX：对象前缀迁移
      */
@@ -714,23 +709,6 @@ public class TaskGroupResp {
         this.enableRestore = enableRestore;
     }
 
-    public TaskGroupResp withEnableKms(Boolean enableKms) {
-        this.enableKms = enableKms;
-        return this;
-    }
-
-    /**
-     * 存储入OBS时是否使用KMS加密。
-     * @return enableKms
-     */
-    public Boolean getEnableKms() {
-        return enableKms;
-    }
-
-    public void setEnableKms(Boolean enableKms) {
-        this.enableKms = enableKms;
-    }
-
     public TaskGroupResp withTaskType(TaskTypeEnum taskType) {
         this.taskType = taskType;
         return this;
@@ -1302,8 +1280,7 @@ public class TaskGroupResp {
             && Objects.equals(this.description, that.description) && Objects.equals(this.dstNode, that.dstNode)
             && Objects.equals(this.enableMetadataMigration, that.enableMetadataMigration)
             && Objects.equals(this.enableFailedObjectRecording, that.enableFailedObjectRecording)
-            && Objects.equals(this.enableRestore, that.enableRestore) && Objects.equals(this.enableKms, that.enableKms)
-            && Objects.equals(this.taskType, that.taskType)
+            && Objects.equals(this.enableRestore, that.enableRestore) && Objects.equals(this.taskType, that.taskType)
             && Objects.equals(this.bandwidthPolicy, that.bandwidthPolicy)
             && Objects.equals(this.smnConfig, that.smnConfig) && Objects.equals(this.sourceCdn, that.sourceCdn)
             && Objects.equals(this.migrateSince, that.migrateSince)
@@ -1338,7 +1315,6 @@ public class TaskGroupResp {
             enableMetadataMigration,
             enableFailedObjectRecording,
             enableRestore,
-            enableKms,
             taskType,
             bandwidthPolicy,
             smnConfig,
@@ -1384,7 +1360,6 @@ public class TaskGroupResp {
             .append(toIndentedString(enableFailedObjectRecording))
             .append("\n");
         sb.append("    enableRestore: ").append(toIndentedString(enableRestore)).append("\n");
-        sb.append("    enableKms: ").append(toIndentedString(enableKms)).append("\n");
         sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
         sb.append("    bandwidthPolicy: ").append(toIndentedString(bandwidthPolicy)).append("\n");
         sb.append("    smnConfig: ").append(toIndentedString(smnConfig)).append("\n");

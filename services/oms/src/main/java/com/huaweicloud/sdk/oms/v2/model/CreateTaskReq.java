@@ -116,11 +116,6 @@ public class CreateTaskReq {
     private DstNodeReq dstNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enable_kms")
-
-    private Boolean enableKms;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -578,23 +573,6 @@ public class CreateTaskReq {
         this.dstNode = dstNode;
     }
 
-    public CreateTaskReq withEnableKms(Boolean enableKms) {
-        this.enableKms = enableKms;
-        return this;
-    }
-
-    /**
-     * 是否开启KMS加密，默认不开启。
-     * @return enableKms
-     */
-    public Boolean getEnableKms() {
-        return enableKms;
-    }
-
-    public void setEnableKms(Boolean enableKms) {
-        this.enableKms = enableKms;
-    }
-
     public CreateTaskReq withDescription(String description) {
         this.description = description;
         return this;
@@ -862,8 +840,7 @@ public class CreateTaskReq {
         }
         CreateTaskReq that = (CreateTaskReq) obj;
         return Objects.equals(this.taskType, that.taskType) && Objects.equals(this.srcNode, that.srcNode)
-            && Objects.equals(this.dstNode, that.dstNode) && Objects.equals(this.enableKms, that.enableKms)
-            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.dstNode, that.dstNode) && Objects.equals(this.description, that.description)
             && Objects.equals(this.migrateSince, that.migrateSince)
             && Objects.equals(this.bandwidthPolicy, that.bandwidthPolicy)
             && Objects.equals(this.sourceCdn, that.sourceCdn) && Objects.equals(this.smnConfig, that.smnConfig)
@@ -882,7 +859,6 @@ public class CreateTaskReq {
         return Objects.hash(taskType,
             srcNode,
             dstNode,
-            enableKms,
             description,
             migrateSince,
             bandwidthPolicy,
@@ -905,7 +881,6 @@ public class CreateTaskReq {
         sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
         sb.append("    srcNode: ").append(toIndentedString(srcNode)).append("\n");
         sb.append("    dstNode: ").append(toIndentedString(dstNode)).append("\n");
-        sb.append("    enableKms: ").append(toIndentedString(enableKms)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    migrateSince: ").append(toIndentedString(migrateSince)).append("\n");
         sb.append("    bandwidthPolicy: ").append(toIndentedString(bandwidthPolicy)).append("\n");

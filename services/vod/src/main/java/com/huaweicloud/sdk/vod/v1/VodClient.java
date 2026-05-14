@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.vod.v1.model.CreateAssetByFileUploadRequest;
 import com.huaweicloud.sdk.vod.v1.model.CreateAssetByFileUploadResponse;
 import com.huaweicloud.sdk.vod.v1.model.CreateAssetCategoryRequest;
 import com.huaweicloud.sdk.vod.v1.model.CreateAssetCategoryResponse;
+import com.huaweicloud.sdk.vod.v1.model.CreateAssetEditTaskRequest;
+import com.huaweicloud.sdk.vod.v1.model.CreateAssetEditTaskResponse;
 import com.huaweicloud.sdk.vod.v1.model.CreateAssetProcessTaskRequest;
 import com.huaweicloud.sdk.vod.v1.model.CreateAssetProcessTaskResponse;
 import com.huaweicloud.sdk.vod.v1.model.CreateAssetReviewTaskRequest;
@@ -49,6 +51,8 @@ import com.huaweicloud.sdk.vod.v1.model.CreateWatermarkTemplateRequest;
 import com.huaweicloud.sdk.vod.v1.model.CreateWatermarkTemplateResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteAssetCategoryRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteAssetCategoryResponse;
+import com.huaweicloud.sdk.vod.v1.model.DeleteAssetEditTaskRequest;
+import com.huaweicloud.sdk.vod.v1.model.DeleteAssetEditTaskResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteAssetsRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteAssetsResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteDyAssetRequest;
@@ -69,6 +73,8 @@ import com.huaweicloud.sdk.vod.v1.model.ListAssetCategoryRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetCategoryResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetDailySummaryLogRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetDailySummaryLogResponse;
+import com.huaweicloud.sdk.vod.v1.model.ListAssetEditTaskRequest;
+import com.huaweicloud.sdk.vod.v1.model.ListAssetEditTaskResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetListRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetListResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetTaskInfoRequest;
@@ -380,6 +386,35 @@ public class VodClient {
     public SyncInvoker<CreateAssetCategoryRequest, CreateAssetCategoryResponse> createAssetCategoryInvoker(
         CreateAssetCategoryRequest request) {
         return new SyncInvoker<>(request, VodMeta.createAssetCategory, hcClient);
+    }
+
+    /**
+     * 创建编辑任务
+     *
+     * 创建编辑任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAssetEditTaskRequest 请求对象
+     * @return CreateAssetEditTaskResponse
+     */
+    public CreateAssetEditTaskResponse createAssetEditTask(CreateAssetEditTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.createAssetEditTask);
+    }
+
+    /**
+     * 创建编辑任务
+     *
+     * 创建编辑任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAssetEditTaskRequest 请求对象
+     * @return SyncInvoker<CreateAssetEditTaskRequest, CreateAssetEditTaskResponse>
+     */
+    public SyncInvoker<CreateAssetEditTaskRequest, CreateAssetEditTaskResponse> createAssetEditTaskInvoker(
+        CreateAssetEditTaskRequest request) {
+        return new SyncInvoker<>(request, VodMeta.createAssetEditTask, hcClient);
     }
 
     /**
@@ -872,6 +907,35 @@ public class VodClient {
     }
 
     /**
+     * 取消编辑任务
+     *
+     * 取消编辑任务，仅支持取消等待中的任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAssetEditTaskRequest 请求对象
+     * @return DeleteAssetEditTaskResponse
+     */
+    public DeleteAssetEditTaskResponse deleteAssetEditTask(DeleteAssetEditTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.deleteAssetEditTask);
+    }
+
+    /**
+     * 取消编辑任务
+     *
+     * 取消编辑任务，仅支持取消等待中的任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAssetEditTaskRequest 请求对象
+     * @return SyncInvoker<DeleteAssetEditTaskRequest, DeleteAssetEditTaskResponse>
+     */
+    public SyncInvoker<DeleteAssetEditTaskRequest, DeleteAssetEditTaskResponse> deleteAssetEditTaskInvoker(
+        DeleteAssetEditTaskRequest request) {
+        return new SyncInvoker<>(request, VodMeta.deleteAssetEditTask, hcClient);
+    }
+
+    /**
      * 删除媒资
      *
      * 删除媒资。
@@ -1168,6 +1232,35 @@ public class VodClient {
     public SyncInvoker<ListAssetDailySummaryLogRequest, ListAssetDailySummaryLogResponse> listAssetDailySummaryLogInvoker(
         ListAssetDailySummaryLogRequest request) {
         return new SyncInvoker<>(request, VodMeta.listAssetDailySummaryLog, hcClient);
+    }
+
+    /**
+     * 查询编辑任务
+     *
+     * 查询编辑任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAssetEditTaskRequest 请求对象
+     * @return ListAssetEditTaskResponse
+     */
+    public ListAssetEditTaskResponse listAssetEditTask(ListAssetEditTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.listAssetEditTask);
+    }
+
+    /**
+     * 查询编辑任务
+     *
+     * 查询编辑任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAssetEditTaskRequest 请求对象
+     * @return SyncInvoker<ListAssetEditTaskRequest, ListAssetEditTaskResponse>
+     */
+    public SyncInvoker<ListAssetEditTaskRequest, ListAssetEditTaskResponse> listAssetEditTaskInvoker(
+        ListAssetEditTaskRequest request) {
+        return new SyncInvoker<>(request, VodMeta.listAssetEditTask, hcClient);
     }
 
     /**

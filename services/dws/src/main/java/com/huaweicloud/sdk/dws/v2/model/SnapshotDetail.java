@@ -475,7 +475,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * **参数解释**： 快照BakcupKey。 **取值范围**： 不涉及。
+     * **参数解释**： 快照的key，在其它快照中会用到。 **取值范围**： 不涉及。
      * @return backupKey
      */
     public String getBackupKey() {
@@ -492,7 +492,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * **参数解释**： 增量快照，使用的前一个快照BakcupKey。 **取值范围**： 不涉及。
+     * **参数解释**： 增量快照，使用的前一个快照backup_key。 **取值范围**： 不涉及。
      * @return priorBackupKey
      */
     public String getPriorBackupKey() {
@@ -509,7 +509,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * **参数解释**： 对应全量快照BakcupKey。 **取值范围**： 不涉及。
+     * **参数解释**： 对应全量快照backup_key。 **取值范围**： 不涉及。
      * @return baseBackupKey
      */
     public String getBaseBackupKey() {

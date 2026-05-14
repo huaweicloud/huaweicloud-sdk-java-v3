@@ -14,8 +14,8 @@ import java.util.stream.Collectors;
 
 public class AgentIdentityRegion {
 
-    public static final Region AP_SOUTHEAST_4 =
-        new Region("ap-southeast-4", "https://agent-identity-open.cn-southwest-2.myhuaweicloud.com");
+    public static final Region CN_SOUTHWEST_2 =
+        new Region("cn-southwest-2", "https://agent-identity.cn-southwest-2.myhuaweicloud.com");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("AGENTIDENTITY");
 
@@ -23,7 +23,7 @@ public class AgentIdentityRegion {
 
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
-        map.put("ap-southeast-4", AP_SOUTHEAST_4);
+        map.put("cn-southwest-2", CN_SOUTHWEST_2);
         return Collections.unmodifiableMap(map);
     }
 

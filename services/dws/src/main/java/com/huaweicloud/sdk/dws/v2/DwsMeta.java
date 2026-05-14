@@ -449,6 +449,8 @@ import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateMaintenanceWindowRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateMaintenanceWindowResponse;
+import com.huaweicloud.sdk.dws.v2.model.UpdateQueueBaseInfoRequest;
+import com.huaweicloud.sdk.dws.v2.model.UpdateQueueBaseInfoResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateQueueResourcesRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateQueueResourcesResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateRedistributionConfigurationsRequest;
@@ -457,6 +459,7 @@ import com.huaweicloud.sdk.dws.v2.model.UpdateSchemasRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateSchemasResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateWorkloadPlanStageRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateWorkloadPlanStageResponse;
+import com.huaweicloud.sdk.dws.v2.model.UpdateWorkloadQueueReq;
 import com.huaweicloud.sdk.dws.v2.model.UpdateWorkloadRuleRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateWorkloadRuleResponse;
 import com.huaweicloud.sdk.dws.v2.model.UserAuthorityReq;
@@ -6398,6 +6401,39 @@ public class DwsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(MaintenanceWindow.class),
             f -> f.withMarshaller(UpdateMaintenanceWindowRequest::getBody, UpdateMaintenanceWindowRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateQueueBaseInfoRequest, UpdateQueueBaseInfoResponse> updateQueueBaseInfo =
+        genForUpdateQueueBaseInfo();
+
+    private static HttpRequestDef<UpdateQueueBaseInfoRequest, UpdateQueueBaseInfoResponse> genForUpdateQueueBaseInfo() {
+        // basic
+        HttpRequestDef.Builder<UpdateQueueBaseInfoRequest, UpdateQueueBaseInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateQueueBaseInfoRequest.class, UpdateQueueBaseInfoResponse.class)
+                .withName("UpdateQueueBaseInfo")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/workload/queues/{queue_name}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateQueueBaseInfoRequest::getClusterId, UpdateQueueBaseInfoRequest::setClusterId));
+        builder.<String>withRequestField("queue_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateQueueBaseInfoRequest::getQueueName, UpdateQueueBaseInfoRequest::setQueueName));
+        builder.<UpdateWorkloadQueueReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateWorkloadQueueReq.class),
+            f -> f.withMarshaller(UpdateQueueBaseInfoRequest::getBody, UpdateQueueBaseInfoRequest::setBody));
 
         // response
 

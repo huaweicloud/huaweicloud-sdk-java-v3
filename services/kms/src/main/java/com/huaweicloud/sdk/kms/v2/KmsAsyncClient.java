@@ -51,6 +51,8 @@ import com.huaweicloud.sdk.kms.v2.model.DeleteKeyStoreRequest;
 import com.huaweicloud.sdk.kms.v2.model.DeleteKeyStoreResponse;
 import com.huaweicloud.sdk.kms.v2.model.DeleteTagRequest;
 import com.huaweicloud.sdk.kms.v2.model.DeleteTagResponse;
+import com.huaweicloud.sdk.kms.v2.model.DeriveSharedSecretRequest;
+import com.huaweicloud.sdk.kms.v2.model.DeriveSharedSecretResponse;
 import com.huaweicloud.sdk.kms.v2.model.DisableKeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.DisableKeyResponse;
 import com.huaweicloud.sdk.kms.v2.model.DisableKeyRotationRequest;
@@ -89,6 +91,8 @@ import com.huaweicloud.sdk.kms.v2.model.ListRetirableGrantsRequest;
 import com.huaweicloud.sdk.kms.v2.model.ListRetirableGrantsResponse;
 import com.huaweicloud.sdk.kms.v2.model.ListSupportRegionsRequest;
 import com.huaweicloud.sdk.kms.v2.model.ListSupportRegionsResponse;
+import com.huaweicloud.sdk.kms.v2.model.ReEncryptRequest;
+import com.huaweicloud.sdk.kms.v2.model.ReEncryptResponse;
 import com.huaweicloud.sdk.kms.v2.model.ReplicateKeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.ReplicateKeyResponse;
 import com.huaweicloud.sdk.kms.v2.model.ShowKeyRotationStatusRequest;
@@ -861,6 +865,35 @@ public class KmsAsyncClient {
     }
 
     /**
+     * 派生共享密钥
+     *
+     * 功能介绍：派生共享密钥
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeriveSharedSecretRequest 请求对象
+     * @return CompletableFuture<DeriveSharedSecretResponse>
+     */
+    public CompletableFuture<DeriveSharedSecretResponse> deriveSharedSecretAsync(DeriveSharedSecretRequest request) {
+        return hcClient.asyncInvokeHttp(request, KmsMeta.deriveSharedSecret);
+    }
+
+    /**
+     * 派生共享密钥
+     *
+     * 功能介绍：派生共享密钥
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeriveSharedSecretRequest 请求对象
+     * @return AsyncInvoker<DeriveSharedSecretRequest, DeriveSharedSecretResponse>
+     */
+    public AsyncInvoker<DeriveSharedSecretRequest, DeriveSharedSecretResponse> deriveSharedSecretAsyncInvoker(
+        DeriveSharedSecretRequest request) {
+        return new AsyncInvoker<>(request, KmsMeta.deriveSharedSecret, hcClient);
+    }
+
+    /**
      * 禁用密钥
      *
      * - 功能介绍：禁用密钥，密钥禁用后不可以使用。
@@ -1411,6 +1444,38 @@ public class KmsAsyncClient {
     public AsyncInvoker<ListSupportRegionsRequest, ListSupportRegionsResponse> listSupportRegionsAsyncInvoker(
         ListSupportRegionsRequest request) {
         return new AsyncInvoker<>(request, KmsMeta.listSupportRegions, hcClient);
+    }
+
+    /**
+     * 重加密
+     *
+     * 将密文使用源密钥解密后，再使用指定的新密钥加密。
+     * 能将CreateDatekey，CreateDatakeyWithoutPlainText,EncryptDatakey加密的数据密钥密文重新加密成新的数据密钥密文。
+     * 能将EncryptData加密的密文重新加密成新的密文。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ReEncryptRequest 请求对象
+     * @return CompletableFuture<ReEncryptResponse>
+     */
+    public CompletableFuture<ReEncryptResponse> reEncryptAsync(ReEncryptRequest request) {
+        return hcClient.asyncInvokeHttp(request, KmsMeta.reEncrypt);
+    }
+
+    /**
+     * 重加密
+     *
+     * 将密文使用源密钥解密后，再使用指定的新密钥加密。
+     * 能将CreateDatekey，CreateDatakeyWithoutPlainText,EncryptDatakey加密的数据密钥密文重新加密成新的数据密钥密文。
+     * 能将EncryptData加密的密文重新加密成新的密文。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ReEncryptRequest 请求对象
+     * @return AsyncInvoker<ReEncryptRequest, ReEncryptResponse>
+     */
+    public AsyncInvoker<ReEncryptRequest, ReEncryptResponse> reEncryptAsyncInvoker(ReEncryptRequest request) {
+        return new AsyncInvoker<>(request, KmsMeta.reEncrypt, hcClient);
     }
 
     /**

@@ -41,6 +41,86 @@ public class CreateSyncTaskReq {
 
     private String srcSk;
 
+    /**
+     * 加解密类型，默认为DEFAULT，可选类型为DEFAULT、KMS
+     */
+    public static final class SrcCryptoTypeEnum {
+
+        /**
+         * Enum DEFAULT for value: "DEFAULT"
+         */
+        public static final SrcCryptoTypeEnum DEFAULT = new SrcCryptoTypeEnum("DEFAULT");
+
+        /**
+         * Enum KMS for value: "KMS"
+         */
+        public static final SrcCryptoTypeEnum KMS = new SrcCryptoTypeEnum("KMS");
+
+        private static final Map<String, SrcCryptoTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SrcCryptoTypeEnum> createStaticFields() {
+            Map<String, SrcCryptoTypeEnum> map = new HashMap<>();
+            map.put("DEFAULT", DEFAULT);
+            map.put("KMS", KMS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SrcCryptoTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SrcCryptoTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SrcCryptoTypeEnum(value));
+        }
+
+        public static SrcCryptoTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SrcCryptoTypeEnum) {
+                return this.value.equals(((SrcCryptoTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_crypto_type")
+
+    private SrcCryptoTypeEnum srcCryptoType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "src_kms_key_id")
+
+    private String srcKmsKeyId;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dst_ak")
 
@@ -50,6 +130,86 @@ public class CreateSyncTaskReq {
     @JsonProperty(value = "dst_sk")
 
     private String dstSk;
+
+    /**
+     * 加解密类型，默认为DEFAULT，可选类型为DEFAULT、KMS
+     */
+    public static final class DstCryptoTypeEnum {
+
+        /**
+         * Enum DEFAULT for value: "DEFAULT"
+         */
+        public static final DstCryptoTypeEnum DEFAULT = new DstCryptoTypeEnum("DEFAULT");
+
+        /**
+         * Enum KMS for value: "KMS"
+         */
+        public static final DstCryptoTypeEnum KMS = new DstCryptoTypeEnum("KMS");
+
+        private static final Map<String, DstCryptoTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DstCryptoTypeEnum> createStaticFields() {
+            Map<String, DstCryptoTypeEnum> map = new HashMap<>();
+            map.put("DEFAULT", DEFAULT);
+            map.put("KMS", KMS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        DstCryptoTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static DstCryptoTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DstCryptoTypeEnum(value));
+        }
+
+        public static DstCryptoTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof DstCryptoTypeEnum) {
+                return this.value.equals(((DstCryptoTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_crypto_type")
+
+    private DstCryptoTypeEnum dstCryptoType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dst_kms_key_id")
+
+    private String dstKmsKeyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dst_region")
@@ -70,11 +230,6 @@ public class CreateSyncTaskReq {
     @JsonProperty(value = "enable_metadata_migration")
 
     private Boolean enableMetadataMigration;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enable_kms")
-
-    private Boolean enableKms;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_restore")
@@ -350,6 +505,40 @@ public class CreateSyncTaskReq {
         this.srcSk = srcSk;
     }
 
+    public CreateSyncTaskReq withSrcCryptoType(SrcCryptoTypeEnum srcCryptoType) {
+        this.srcCryptoType = srcCryptoType;
+        return this;
+    }
+
+    /**
+     * 加解密类型，默认为DEFAULT，可选类型为DEFAULT、KMS
+     * @return srcCryptoType
+     */
+    public SrcCryptoTypeEnum getSrcCryptoType() {
+        return srcCryptoType;
+    }
+
+    public void setSrcCryptoType(SrcCryptoTypeEnum srcCryptoType) {
+        this.srcCryptoType = srcCryptoType;
+    }
+
+    public CreateSyncTaskReq withSrcKmsKeyId(String srcKmsKeyId) {
+        this.srcKmsKeyId = srcKmsKeyId;
+        return this;
+    }
+
+    /**
+     * KMS密钥ID，36个字符
+     * @return srcKmsKeyId
+     */
+    public String getSrcKmsKeyId() {
+        return srcKmsKeyId;
+    }
+
+    public void setSrcKmsKeyId(String srcKmsKeyId) {
+        this.srcKmsKeyId = srcKmsKeyId;
+    }
+
     public CreateSyncTaskReq withDstAk(String dstAk) {
         this.dstAk = dstAk;
         return this;
@@ -382,6 +571,40 @@ public class CreateSyncTaskReq {
 
     public void setDstSk(String dstSk) {
         this.dstSk = dstSk;
+    }
+
+    public CreateSyncTaskReq withDstCryptoType(DstCryptoTypeEnum dstCryptoType) {
+        this.dstCryptoType = dstCryptoType;
+        return this;
+    }
+
+    /**
+     * 加解密类型，默认为DEFAULT，可选类型为DEFAULT、KMS
+     * @return dstCryptoType
+     */
+    public DstCryptoTypeEnum getDstCryptoType() {
+        return dstCryptoType;
+    }
+
+    public void setDstCryptoType(DstCryptoTypeEnum dstCryptoType) {
+        this.dstCryptoType = dstCryptoType;
+    }
+
+    public CreateSyncTaskReq withDstKmsKeyId(String dstKmsKeyId) {
+        this.dstKmsKeyId = dstKmsKeyId;
+        return this;
+    }
+
+    /**
+     * KMS密钥ID，36个字符
+     * @return dstKmsKeyId
+     */
+    public String getDstKmsKeyId() {
+        return dstKmsKeyId;
+    }
+
+    public void setDstKmsKeyId(String dstKmsKeyId) {
+        this.dstKmsKeyId = dstKmsKeyId;
     }
 
     public CreateSyncTaskReq withDstRegion(String dstRegion) {
@@ -450,23 +673,6 @@ public class CreateSyncTaskReq {
 
     public void setEnableMetadataMigration(Boolean enableMetadataMigration) {
         this.enableMetadataMigration = enableMetadataMigration;
-    }
-
-    public CreateSyncTaskReq withEnableKms(Boolean enableKms) {
-        this.enableKms = enableKms;
-        return this;
-    }
-
-    /**
-     * 是否开启KMS加密，默认不开启。
-     * @return enableKms
-     */
-    public Boolean getEnableKms() {
-        return enableKms;
-    }
-
-    public void setEnableKms(Boolean enableKms) {
-        this.enableKms = enableKms;
     }
 
     public CreateSyncTaskReq withEnableRestore(Boolean enableRestore) {
@@ -574,11 +780,13 @@ public class CreateSyncTaskReq {
         CreateSyncTaskReq that = (CreateSyncTaskReq) obj;
         return Objects.equals(this.srcCloudType, that.srcCloudType) && Objects.equals(this.srcRegion, that.srcRegion)
             && Objects.equals(this.srcBucket, that.srcBucket) && Objects.equals(this.srcAk, that.srcAk)
-            && Objects.equals(this.srcSk, that.srcSk) && Objects.equals(this.dstAk, that.dstAk)
-            && Objects.equals(this.dstSk, that.dstSk) && Objects.equals(this.dstRegion, that.dstRegion)
+            && Objects.equals(this.srcSk, that.srcSk) && Objects.equals(this.srcCryptoType, that.srcCryptoType)
+            && Objects.equals(this.srcKmsKeyId, that.srcKmsKeyId) && Objects.equals(this.dstAk, that.dstAk)
+            && Objects.equals(this.dstSk, that.dstSk) && Objects.equals(this.dstCryptoType, that.dstCryptoType)
+            && Objects.equals(this.dstKmsKeyId, that.dstKmsKeyId) && Objects.equals(this.dstRegion, that.dstRegion)
             && Objects.equals(this.dstBucket, that.dstBucket) && Objects.equals(this.description, that.description)
             && Objects.equals(this.enableMetadataMigration, that.enableMetadataMigration)
-            && Objects.equals(this.enableKms, that.enableKms) && Objects.equals(this.enableRestore, that.enableRestore)
+            && Objects.equals(this.enableRestore, that.enableRestore)
             && Objects.equals(this.dstStoragePolicy, that.dstStoragePolicy) && Objects.equals(this.appId, that.appId)
             && Objects.equals(this.sourceCdn, that.sourceCdn)
             && Objects.equals(this.consistencyCheck, that.consistencyCheck);
@@ -591,13 +799,16 @@ public class CreateSyncTaskReq {
             srcBucket,
             srcAk,
             srcSk,
+            srcCryptoType,
+            srcKmsKeyId,
             dstAk,
             dstSk,
+            dstCryptoType,
+            dstKmsKeyId,
             dstRegion,
             dstBucket,
             description,
             enableMetadataMigration,
-            enableKms,
             enableRestore,
             dstStoragePolicy,
             appId,
@@ -614,13 +825,16 @@ public class CreateSyncTaskReq {
         sb.append("    srcBucket: ").append(toIndentedString(srcBucket)).append("\n");
         sb.append("    srcAk: ").append(toIndentedString(srcAk)).append("\n");
         sb.append("    srcSk: ").append(toIndentedString(srcSk)).append("\n");
+        sb.append("    srcCryptoType: ").append(toIndentedString(srcCryptoType)).append("\n");
+        sb.append("    srcKmsKeyId: ").append(toIndentedString(srcKmsKeyId)).append("\n");
         sb.append("    dstAk: ").append(toIndentedString(dstAk)).append("\n");
         sb.append("    dstSk: ").append(toIndentedString(dstSk)).append("\n");
+        sb.append("    dstCryptoType: ").append(toIndentedString(dstCryptoType)).append("\n");
+        sb.append("    dstKmsKeyId: ").append(toIndentedString(dstKmsKeyId)).append("\n");
         sb.append("    dstRegion: ").append(toIndentedString(dstRegion)).append("\n");
         sb.append("    dstBucket: ").append(toIndentedString(dstBucket)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    enableMetadataMigration: ").append(toIndentedString(enableMetadataMigration)).append("\n");
-        sb.append("    enableKms: ").append(toIndentedString(enableKms)).append("\n");
         sb.append("    enableRestore: ").append(toIndentedString(enableRestore)).append("\n");
         sb.append("    dstStoragePolicy: ").append(toIndentedString(dstStoragePolicy)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");

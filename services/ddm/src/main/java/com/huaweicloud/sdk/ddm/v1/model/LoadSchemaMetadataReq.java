@@ -33,11 +33,6 @@ public class LoadSchemaMetadataReq {
 
     private String projectId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "iam_account")
-
-    private IamAccount iamAccount;
-
     public LoadSchemaMetadataReq withCompressedDatabasesInfo(String compressedDatabasesInfo) {
         this.compressedDatabasesInfo = compressedDatabasesInfo;
         return this;
@@ -122,32 +117,6 @@ public class LoadSchemaMetadataReq {
         this.projectId = projectId;
     }
 
-    public LoadSchemaMetadataReq withIamAccount(IamAccount iamAccount) {
-        this.iamAccount = iamAccount;
-        return this;
-    }
-
-    public LoadSchemaMetadataReq withIamAccount(Consumer<IamAccount> iamAccountSetter) {
-        if (this.iamAccount == null) {
-            this.iamAccount = new IamAccount();
-            iamAccountSetter.accept(this.iamAccount);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get iamAccount
-     * @return iamAccount
-     */
-    public IamAccount getIamAccount() {
-        return iamAccount;
-    }
-
-    public void setIamAccount(IamAccount iamAccount) {
-        this.iamAccount = iamAccount;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -159,12 +128,12 @@ public class LoadSchemaMetadataReq {
         LoadSchemaMetadataReq that = (LoadSchemaMetadataReq) obj;
         return Objects.equals(this.compressedDatabasesInfo, that.compressedDatabasesInfo)
             && Objects.equals(this.dnInstance, that.dnInstance) && Objects.equals(this.instanceId, that.instanceId)
-            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.iamAccount, that.iamAccount);
+            && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(compressedDatabasesInfo, dnInstance, instanceId, projectId, iamAccount);
+        return Objects.hash(compressedDatabasesInfo, dnInstance, instanceId, projectId);
     }
 
     @Override
@@ -175,7 +144,6 @@ public class LoadSchemaMetadataReq {
         sb.append("    dnInstance: ").append(toIndentedString(dnInstance)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    iamAccount: ").append(toIndentedString(iamAccount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

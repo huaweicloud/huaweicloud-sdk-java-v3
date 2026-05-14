@@ -67,6 +67,9 @@ import com.huaweicloud.sdk.kms.v2.model.DeleteKeyStoreRequest;
 import com.huaweicloud.sdk.kms.v2.model.DeleteKeyStoreResponse;
 import com.huaweicloud.sdk.kms.v2.model.DeleteTagRequest;
 import com.huaweicloud.sdk.kms.v2.model.DeleteTagResponse;
+import com.huaweicloud.sdk.kms.v2.model.DeriveSharedSecretRequest;
+import com.huaweicloud.sdk.kms.v2.model.DeriveSharedSecretRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.DeriveSharedSecretResponse;
 import com.huaweicloud.sdk.kms.v2.model.DisableKeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.DisableKeyResponse;
 import com.huaweicloud.sdk.kms.v2.model.DisableKeyRotationRequest;
@@ -117,6 +120,9 @@ import com.huaweicloud.sdk.kms.v2.model.ListRetirableGrantsResponse;
 import com.huaweicloud.sdk.kms.v2.model.ListSupportRegionsRequest;
 import com.huaweicloud.sdk.kms.v2.model.ListSupportRegionsResponse;
 import com.huaweicloud.sdk.kms.v2.model.OperateKeyRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.ReEncryptRequest;
+import com.huaweicloud.sdk.kms.v2.model.ReEncryptRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.ReEncryptResponse;
 import com.huaweicloud.sdk.kms.v2.model.ReplicateKeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.ReplicateKeyRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.ReplicateKeyResponse;
@@ -733,6 +739,29 @@ public class KmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeriveSharedSecretRequest, DeriveSharedSecretResponse> deriveSharedSecret =
+        genForDeriveSharedSecret();
+
+    private static HttpRequestDef<DeriveSharedSecretRequest, DeriveSharedSecretResponse> genForDeriveSharedSecret() {
+        // basic
+        HttpRequestDef.Builder<DeriveSharedSecretRequest, DeriveSharedSecretResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeriveSharedSecretRequest.class, DeriveSharedSecretResponse.class)
+                .withName("DeriveSharedSecret")
+                .withUri("/v1.0/{project_id}/kms/derive-shared-secret")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<DeriveSharedSecretRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeriveSharedSecretRequestBody.class),
+            f -> f.withMarshaller(DeriveSharedSecretRequest::getBody, DeriveSharedSecretRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DisableKeyRequest, DisableKeyResponse> disableKey = genForDisableKey();
 
     private static HttpRequestDef<DisableKeyRequest, DisableKeyResponse> genForDisableKey() {
@@ -1183,6 +1212,28 @@ public class KmsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSupportRegionsRequest::getOffset, ListSupportRegionsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ReEncryptRequest, ReEncryptResponse> reEncrypt = genForReEncrypt();
+
+    private static HttpRequestDef<ReEncryptRequest, ReEncryptResponse> genForReEncrypt() {
+        // basic
+        HttpRequestDef.Builder<ReEncryptRequest, ReEncryptResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ReEncryptRequest.class, ReEncryptResponse.class)
+                .withName("ReEncrypt")
+                .withUri("/v1.0/{project_id}/kms/re-encrypt")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ReEncryptRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ReEncryptRequestBody.class),
+            f -> f.withMarshaller(ReEncryptRequest::getBody, ReEncryptRequest::setBody));
 
         // response
 

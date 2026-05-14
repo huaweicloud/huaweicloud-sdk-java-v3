@@ -9,6 +9,8 @@ import com.huaweicloud.sdk.iec.v1.model.AssociateSubnetRequest;
 import com.huaweicloud.sdk.iec.v1.model.AssociateSubnetResponse;
 import com.huaweicloud.sdk.iec.v1.model.AttachVipBandwidthRequest;
 import com.huaweicloud.sdk.iec.v1.model.AttachVipBandwidthResponse;
+import com.huaweicloud.sdk.iec.v1.model.BatchListMetricDataRequest;
+import com.huaweicloud.sdk.iec.v1.model.BatchListMetricDataResponse;
 import com.huaweicloud.sdk.iec.v1.model.BatchRebootInstanceRequest;
 import com.huaweicloud.sdk.iec.v1.model.BatchRebootInstanceResponse;
 import com.huaweicloud.sdk.iec.v1.model.BatchStartInstanceRequest;
@@ -2702,6 +2704,35 @@ public class IecAsyncClient {
     public AsyncInvoker<UpdatePublicIpRequest, UpdatePublicIpResponse> updatePublicIpAsyncInvoker(
         UpdatePublicIpRequest request) {
         return new AsyncInvoker<>(request, IecMeta.updatePublicIp, hcClient);
+    }
+
+    /**
+     * 批量查询监控数据
+     *
+     * 批量查询指定时间范围内指定指标的指定粒度的监控数据，目前最多支持500指标的批量查询。接口会按预估点数3000自适应查询起始时间，规则为\&quot;指标数量*(to-from)/监控周期&lt;&#x3D;3000\&quot;，若超出阈值，会自动调整from以满足规则。比如原始数据按1min点周期预估，查询500指标超过6min范围的数据，查询起始时间会自动调整from&#x3D;to-6min。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchListMetricDataRequest 请求对象
+     * @return CompletableFuture<BatchListMetricDataResponse>
+     */
+    public CompletableFuture<BatchListMetricDataResponse> batchListMetricDataAsync(BatchListMetricDataRequest request) {
+        return hcClient.asyncInvokeHttp(request, IecMeta.batchListMetricData);
+    }
+
+    /**
+     * 批量查询监控数据
+     *
+     * 批量查询指定时间范围内指定指标的指定粒度的监控数据，目前最多支持500指标的批量查询。接口会按预估点数3000自适应查询起始时间，规则为\&quot;指标数量*(to-from)/监控周期&lt;&#x3D;3000\&quot;，若超出阈值，会自动调整from以满足规则。比如原始数据按1min点周期预估，查询500指标超过6min范围的数据，查询起始时间会自动调整from&#x3D;to-6min。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchListMetricDataRequest 请求对象
+     * @return AsyncInvoker<BatchListMetricDataRequest, BatchListMetricDataResponse>
+     */
+    public AsyncInvoker<BatchListMetricDataRequest, BatchListMetricDataResponse> batchListMetricDataAsyncInvoker(
+        BatchListMetricDataRequest request) {
+        return new AsyncInvoker<>(request, IecMeta.batchListMetricData, hcClient);
     }
 
     /**

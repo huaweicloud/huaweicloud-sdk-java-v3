@@ -14,6 +14,10 @@ import com.huaweicloud.sdk.iec.v1.model.AssociateSubnetResponse;
 import com.huaweicloud.sdk.iec.v1.model.AttachVipBandwidthRequest;
 import com.huaweicloud.sdk.iec.v1.model.AttachVipBandwidthRequestBody;
 import com.huaweicloud.sdk.iec.v1.model.AttachVipBandwidthResponse;
+import com.huaweicloud.sdk.iec.v1.model.BatchListMetricDataRequest;
+import com.huaweicloud.sdk.iec.v1.model.BatchListMetricDataRequestBody;
+import com.huaweicloud.sdk.iec.v1.model.BatchListMetricDataResponse;
+import com.huaweicloud.sdk.iec.v1.model.BatchMetricData;
 import com.huaweicloud.sdk.iec.v1.model.BatchRebootInstanceRequest;
 import com.huaweicloud.sdk.iec.v1.model.BatchRebootInstanceRequestBody;
 import com.huaweicloud.sdk.iec.v1.model.BatchRebootInstanceResponse;
@@ -2824,6 +2828,35 @@ public class IecMeta {
             f -> f.withMarshaller(UpdatePublicIpRequest::getBody, UpdatePublicIpRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchListMetricDataRequest, BatchListMetricDataResponse> batchListMetricData =
+        genForBatchListMetricData();
+
+    private static HttpRequestDef<BatchListMetricDataRequest, BatchListMetricDataResponse> genForBatchListMetricData() {
+        // basic
+        HttpRequestDef.Builder<BatchListMetricDataRequest, BatchListMetricDataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchListMetricDataRequest.class, BatchListMetricDataResponse.class)
+                .withName("BatchListMetricData")
+                .withUri("/v1/batch-query-metric-data")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchListMetricDataRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchListMetricDataRequestBody.class),
+            f -> f.withMarshaller(BatchListMetricDataRequest::getBody, BatchListMetricDataRequest::setBody));
+
+        // response
+        builder.<List<BatchMetricData>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchListMetricDataResponse::getBody, BatchListMetricDataResponse::setBody)
+                .withInnerContainerType(BatchMetricData.class));
 
         return builder.build();
     }

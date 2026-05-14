@@ -225,6 +225,8 @@ import com.huaweicloud.sdk.ddm.v1.model.SyncDnInformationRequest;
 import com.huaweicloud.sdk.ddm.v1.model.SyncDnInformationResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UnbindEipRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UnbindEipResponse;
+import com.huaweicloud.sdk.ddm.v1.model.UnbindLogicDbRequest;
+import com.huaweicloud.sdk.ddm.v1.model.UnbindLogicDbResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDatabaseInfoRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDatabaseInfoResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDdmInstanceNameRequest;
@@ -3071,6 +3073,34 @@ public class DdmClient {
      */
     public SyncInvoker<UnbindEipRequest, UnbindEipResponse> unbindEipInvoker(UnbindEipRequest request) {
         return new SyncInvoker<>(request, DdmMeta.unbindEip, hcClient);
+    }
+
+    /**
+     * 逻辑库解绑
+     *
+     * 逻辑库解绑
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnbindLogicDbRequest 请求对象
+     * @return UnbindLogicDbResponse
+     */
+    public UnbindLogicDbResponse unbindLogicDb(UnbindLogicDbRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.unbindLogicDb);
+    }
+
+    /**
+     * 逻辑库解绑
+     *
+     * 逻辑库解绑
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnbindLogicDbRequest 请求对象
+     * @return SyncInvoker<UnbindLogicDbRequest, UnbindLogicDbResponse>
+     */
+    public SyncInvoker<UnbindLogicDbRequest, UnbindLogicDbResponse> unbindLogicDbInvoker(UnbindLogicDbRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.unbindLogicDb, hcClient);
     }
 
     /**

@@ -403,7 +403,7 @@ public class V2CreateCluster {
     }
 
     /**
-     * **参数解释**： 集群版本。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 集群版本。选择的版本必须是该规格支持的版本。 **约束限制**： 不涉及。 **取值范围**： 支持的版本范围可以通过 [查询规格信息](ListNodeTypes.xml) 接口查询规格支持的版本进而确定。 **默认取值**： 不涉及。
      * @return datastoreVersion
      */
     public String getDatastoreVersion() {

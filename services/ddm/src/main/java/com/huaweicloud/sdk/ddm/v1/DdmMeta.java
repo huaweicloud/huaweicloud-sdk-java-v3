@@ -267,6 +267,8 @@ import com.huaweicloud.sdk.ddm.v1.model.SyncDnInformationRequest;
 import com.huaweicloud.sdk.ddm.v1.model.SyncDnInformationResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UnbindEipRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UnbindEipResponse;
+import com.huaweicloud.sdk.ddm.v1.model.UnbindLogicDbRequest;
+import com.huaweicloud.sdk.ddm.v1.model.UnbindLogicDbResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDatabaseInfoRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDatabaseInfoResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDdmInstanceNameRequest;
@@ -3289,6 +3291,34 @@ public class DdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UnbindEipRequest::getInstanceId, UnbindEipRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UnbindLogicDbRequest, UnbindLogicDbResponse> unbindLogicDb =
+        genForUnbindLogicDb();
+
+    private static HttpRequestDef<UnbindLogicDbRequest, UnbindLogicDbResponse> genForUnbindLogicDb() {
+        // basic
+        HttpRequestDef.Builder<UnbindLogicDbRequest, UnbindLogicDbResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UnbindLogicDbRequest.class, UnbindLogicDbResponse.class)
+                .withName("UnbindLogicDb")
+                .withUri("/v3/{project_id}/instances/{instance_id}/databases/{logic_db_name}/unbind")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnbindLogicDbRequest::getInstanceId, UnbindLogicDbRequest::setInstanceId));
+        builder.<String>withRequestField("logic_db_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnbindLogicDbRequest::getLogicDbName, UnbindLogicDbRequest::setLogicDbName));
 
         // response
 

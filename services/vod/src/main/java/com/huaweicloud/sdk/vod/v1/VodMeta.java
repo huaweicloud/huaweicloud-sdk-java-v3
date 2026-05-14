@@ -24,6 +24,9 @@ import com.huaweicloud.sdk.vod.v1.model.CreateAssetByFileUploadRequest;
 import com.huaweicloud.sdk.vod.v1.model.CreateAssetByFileUploadResponse;
 import com.huaweicloud.sdk.vod.v1.model.CreateAssetCategoryRequest;
 import com.huaweicloud.sdk.vod.v1.model.CreateAssetCategoryResponse;
+import com.huaweicloud.sdk.vod.v1.model.CreateAssetEditTaskReq;
+import com.huaweicloud.sdk.vod.v1.model.CreateAssetEditTaskRequest;
+import com.huaweicloud.sdk.vod.v1.model.CreateAssetEditTaskResponse;
 import com.huaweicloud.sdk.vod.v1.model.CreateAssetProcessTaskRequest;
 import com.huaweicloud.sdk.vod.v1.model.CreateAssetProcessTaskResponse;
 import com.huaweicloud.sdk.vod.v1.model.CreateAssetReviewTaskRequest;
@@ -65,6 +68,8 @@ import com.huaweicloud.sdk.vod.v1.model.CreateWatermarkTemplateRequest;
 import com.huaweicloud.sdk.vod.v1.model.CreateWatermarkTemplateResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteAssetCategoryRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteAssetCategoryResponse;
+import com.huaweicloud.sdk.vod.v1.model.DeleteAssetEditTaskRequest;
+import com.huaweicloud.sdk.vod.v1.model.DeleteAssetEditTaskResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteAssetsRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteAssetsResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteDyAssetRequest;
@@ -87,6 +92,8 @@ import com.huaweicloud.sdk.vod.v1.model.ListAssetCategoryRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetCategoryResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetDailySummaryLogRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetDailySummaryLogResponse;
+import com.huaweicloud.sdk.vod.v1.model.ListAssetEditTaskRequest;
+import com.huaweicloud.sdk.vod.v1.model.ListAssetEditTaskResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetListRequest;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetListResponse;
 import com.huaweicloud.sdk.vod.v1.model.ListAssetTaskInfoRequest;
@@ -406,6 +413,34 @@ public class VodMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCategoryReq.class),
             f -> f.withMarshaller(CreateAssetCategoryRequest::getBody, CreateAssetCategoryRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAssetEditTaskRequest, CreateAssetEditTaskResponse> createAssetEditTask =
+        genForCreateAssetEditTask();
+
+    private static HttpRequestDef<CreateAssetEditTaskRequest, CreateAssetEditTaskResponse> genForCreateAssetEditTask() {
+        // basic
+        HttpRequestDef.Builder<CreateAssetEditTaskRequest, CreateAssetEditTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAssetEditTaskRequest.class, CreateAssetEditTaskResponse.class)
+                .withName("CreateAssetEditTask")
+                .withUri("/v1/{project_id}/asset/editing/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAssetEditTaskRequest::getXSdkDate, CreateAssetEditTaskRequest::setXSdkDate));
+        builder.<CreateAssetEditTaskReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAssetEditTaskReq.class),
+            f -> f.withMarshaller(CreateAssetEditTaskRequest::getBody, CreateAssetEditTaskRequest::setBody));
 
         // response
 
@@ -864,6 +899,34 @@ public class VodMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteAssetEditTaskRequest, DeleteAssetEditTaskResponse> deleteAssetEditTask =
+        genForDeleteAssetEditTask();
+
+    private static HttpRequestDef<DeleteAssetEditTaskRequest, DeleteAssetEditTaskResponse> genForDeleteAssetEditTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteAssetEditTaskRequest, DeleteAssetEditTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteAssetEditTaskRequest.class, DeleteAssetEditTaskResponse.class)
+            .withName("DeleteAssetEditTask")
+            .withUri("/v1/{project_id}/asset/editing/tasks")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAssetEditTaskRequest::getTaskId, DeleteAssetEditTaskRequest::setTaskId));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAssetEditTaskRequest::getXSdkDate, DeleteAssetEditTaskRequest::setXSdkDate));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteAssetsRequest, DeleteAssetsResponse> deleteAssets = genForDeleteAssets();
 
     private static HttpRequestDef<DeleteAssetsRequest, DeleteAssetsResponse> genForDeleteAssets() {
@@ -1198,6 +1261,44 @@ public class VodMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAssetDailySummaryLogRequest::getXSdkDate,
                 ListAssetDailySummaryLogRequest::setXSdkDate));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAssetEditTaskRequest, ListAssetEditTaskResponse> listAssetEditTask =
+        genForListAssetEditTask();
+
+    private static HttpRequestDef<ListAssetEditTaskRequest, ListAssetEditTaskResponse> genForListAssetEditTask() {
+        // basic
+        HttpRequestDef.Builder<ListAssetEditTaskRequest, ListAssetEditTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAssetEditTaskRequest.class, ListAssetEditTaskResponse.class)
+                .withName("ListAssetEditTask")
+                .withUri("/v1/{project_id}/asset/editing/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssetEditTaskRequest::getTaskId, ListAssetEditTaskRequest::setTaskId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAssetEditTaskRequest::getOffset, ListAssetEditTaskRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAssetEditTaskRequest::getLimit, ListAssetEditTaskRequest::setLimit));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssetEditTaskRequest::getXSdkDate, ListAssetEditTaskRequest::setXSdkDate));
 
         // response
 

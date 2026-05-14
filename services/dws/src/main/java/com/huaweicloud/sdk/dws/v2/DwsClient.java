@@ -387,6 +387,8 @@ import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateMaintenanceWindowRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateMaintenanceWindowResponse;
+import com.huaweicloud.sdk.dws.v2.model.UpdateQueueBaseInfoRequest;
+import com.huaweicloud.sdk.dws.v2.model.UpdateQueueBaseInfoResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateQueueResourcesRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateQueueResourcesResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateRedistributionConfigurationsRequest;
@@ -1423,8 +1425,8 @@ public class DwsClient {
     /**
      * 删除集群
      *
-     * 删除集群v2接口。集群删除后将释放此集群的所有资源，包括客户数据。为了安全起见，请在删除集群前为这个集群创建快照。
-     * 删除集群建议优先使用“删除DWS集群”接口，覆盖此接口所有参数及功能。
+     * 删除集群（旧接口）。集群删除后将释放此集群的所有资源，包括客户数据。为了安全起见，请在删除集群前为这个集群创建快照。
+     * 删除集群建议优先使用另一个新接口，覆盖此接口所有参数及功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1438,8 +1440,8 @@ public class DwsClient {
     /**
      * 删除集群
      *
-     * 删除集群v2接口。集群删除后将释放此集群的所有资源，包括客户数据。为了安全起见，请在删除集群前为这个集群创建快照。
-     * 删除集群建议优先使用“删除DWS集群”接口，覆盖此接口所有参数及功能。
+     * 删除集群（旧接口）。集群删除后将释放此集群的所有资源，包括客户数据。为了安全起见，请在删除集群前为这个集群创建快照。
+     * 删除集群建议优先使用另一个新接口，覆盖此接口所有参数及功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6113,6 +6115,35 @@ public class DwsClient {
     public SyncInvoker<UpdateMaintenanceWindowRequest, UpdateMaintenanceWindowResponse> updateMaintenanceWindowInvoker(
         UpdateMaintenanceWindowRequest request) {
         return new SyncInvoker<>(request, DwsMeta.updateMaintenanceWindow, hcClient);
+    }
+
+    /**
+     * 更新资源池基础信息
+     *
+     * 更新资源池基础信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateQueueBaseInfoRequest 请求对象
+     * @return UpdateQueueBaseInfoResponse
+     */
+    public UpdateQueueBaseInfoResponse updateQueueBaseInfo(UpdateQueueBaseInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.updateQueueBaseInfo);
+    }
+
+    /**
+     * 更新资源池基础信息
+     *
+     * 更新资源池基础信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateQueueBaseInfoRequest 请求对象
+     * @return SyncInvoker<UpdateQueueBaseInfoRequest, UpdateQueueBaseInfoResponse>
+     */
+    public SyncInvoker<UpdateQueueBaseInfoRequest, UpdateQueueBaseInfoResponse> updateQueueBaseInfoInvoker(
+        UpdateQueueBaseInfoRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.updateQueueBaseInfo, hcClient);
     }
 
     /**

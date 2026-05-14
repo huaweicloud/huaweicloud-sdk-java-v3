@@ -44,11 +44,6 @@ public class TaskResp {
     private Boolean enableFailedObjectRecording;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enable_kms")
-
-    private Boolean enableKms;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_metadata_migration")
 
     private Boolean enableMetadataMigration;
@@ -807,23 +802,6 @@ public class TaskResp {
         this.enableFailedObjectRecording = enableFailedObjectRecording;
     }
 
-    public TaskResp withEnableKms(Boolean enableKms) {
-        this.enableKms = enableKms;
-        return this;
-    }
-
-    /**
-     * 存储入OBS时是否使用KMS加密。
-     * @return enableKms
-     */
-    public Boolean getEnableKms() {
-        return enableKms;
-    }
-
-    public void setEnableKms(Boolean enableKms) {
-        this.enableKms = enableKms;
-    }
-
     public TaskResp withEnableMetadataMigration(Boolean enableMetadataMigration) {
         this.enableMetadataMigration = enableMetadataMigration;
         return this;
@@ -1471,7 +1449,6 @@ public class TaskResp {
             && Objects.equals(this.completeSize, that.completeSize)
             && Objects.equals(this.description, that.description) && Objects.equals(this.dstNode, that.dstNode)
             && Objects.equals(this.enableFailedObjectRecording, that.enableFailedObjectRecording)
-            && Objects.equals(this.enableKms, that.enableKms)
             && Objects.equals(this.enableMetadataMigration, that.enableMetadataMigration)
             && Objects.equals(this.enableRestore, that.enableRestore)
             && Objects.equals(this.errorReason, that.errorReason) && Objects.equals(this.failedNum, that.failedNum)
@@ -1503,7 +1480,6 @@ public class TaskResp {
             description,
             dstNode,
             enableFailedObjectRecording,
-            enableKms,
             enableMetadataMigration,
             enableRestore,
             errorReason,
@@ -1550,7 +1526,6 @@ public class TaskResp {
         sb.append("    enableFailedObjectRecording: ")
             .append(toIndentedString(enableFailedObjectRecording))
             .append("\n");
-        sb.append("    enableKms: ").append(toIndentedString(enableKms)).append("\n");
         sb.append("    enableMetadataMigration: ").append(toIndentedString(enableMetadataMigration)).append("\n");
         sb.append("    enableRestore: ").append(toIndentedString(enableRestore)).append("\n");
         sb.append("    errorReason: ").append(toIndentedString(errorReason)).append("\n");

@@ -190,6 +190,11 @@ public class PublicIpInfo {
 
     private BindingEntityTypeEnum bindingEntityType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
     public PublicIpInfo withId(String id) {
         this.id = id;
         return this;
@@ -309,6 +314,23 @@ public class PublicIpInfo {
         this.bindingEntityType = bindingEntityType;
     }
 
+    public PublicIpInfo withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 绑定弹性公网IP的组ID。
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -322,12 +344,14 @@ public class PublicIpInfo {
             && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.privateIp, that.privateIp)
             && Objects.equals(this.bindingEntityId, that.bindingEntityId)
             && Objects.equals(this.bindingEntityName, that.bindingEntityName)
-            && Objects.equals(this.bindingEntityType, that.bindingEntityType);
+            && Objects.equals(this.bindingEntityType, that.bindingEntityType)
+            && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, type, publicIp, privateIp, bindingEntityId, bindingEntityName, bindingEntityType);
+        return Objects
+            .hash(id, type, publicIp, privateIp, bindingEntityId, bindingEntityName, bindingEntityType, groupId);
     }
 
     @Override
@@ -341,6 +365,7 @@ public class PublicIpInfo {
         sb.append("    bindingEntityId: ").append(toIndentedString(bindingEntityId)).append("\n");
         sb.append("    bindingEntityName: ").append(toIndentedString(bindingEntityName)).append("\n");
         sb.append("    bindingEntityType: ").append(toIndentedString(bindingEntityType)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

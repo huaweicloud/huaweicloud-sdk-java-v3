@@ -4,17 +4,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * MigrateRouteSwitchReqVO
  */
 public class MigrateRouteSwitchReqVO {
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "iam_account")
-
-    private IamAccount iamAccount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
@@ -50,32 +44,6 @@ public class MigrateRouteSwitchReqVO {
     @JsonProperty(value = "logic_db_name")
 
     private String logicDbName;
-
-    public MigrateRouteSwitchReqVO withIamAccount(IamAccount iamAccount) {
-        this.iamAccount = iamAccount;
-        return this;
-    }
-
-    public MigrateRouteSwitchReqVO withIamAccount(Consumer<IamAccount> iamAccountSetter) {
-        if (this.iamAccount == null) {
-            this.iamAccount = new IamAccount();
-            iamAccountSetter.accept(this.iamAccount);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get iamAccount
-     * @return iamAccount
-     */
-    public IamAccount getIamAccount() {
-        return iamAccount;
-    }
-
-    public void setIamAccount(IamAccount iamAccount) {
-        this.iamAccount = iamAccount;
-    }
 
     public MigrateRouteSwitchReqVO withProjectId(String projectId) {
         this.projectId = projectId;
@@ -205,8 +173,8 @@ public class MigrateRouteSwitchReqVO {
             return false;
         }
         MigrateRouteSwitchReqVO that = (MigrateRouteSwitchReqVO) obj;
-        return Objects.equals(this.iamAccount, that.iamAccount) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.taskId, that.taskId)
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.taskId, that.taskId)
             && Objects.equals(this.switchRouteBeginTime, that.switchRouteBeginTime)
             && Objects.equals(this.switchRouteEndTime, that.switchRouteEndTime)
             && Objects.equals(this.isOpenApi, that.isOpenApi) && Objects.equals(this.logicDbName, that.logicDbName);
@@ -214,21 +182,14 @@ public class MigrateRouteSwitchReqVO {
 
     @Override
     public int hashCode() {
-        return Objects.hash(iamAccount,
-            projectId,
-            instanceId,
-            taskId,
-            switchRouteBeginTime,
-            switchRouteEndTime,
-            isOpenApi,
-            logicDbName);
+        return Objects
+            .hash(projectId, instanceId, taskId, switchRouteBeginTime, switchRouteEndTime, isOpenApi, logicDbName);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MigrateRouteSwitchReqVO {\n");
-        sb.append("    iamAccount: ").append(toIndentedString(iamAccount)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");

@@ -255,11 +255,6 @@ public class SyncTaskInfo {
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enable_kms")
-
-    private Boolean enableKms;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_metadata_migration")
 
     private Boolean enableMetadataMigration;
@@ -716,23 +711,6 @@ public class SyncTaskInfo {
         this.status = status;
     }
 
-    public SyncTaskInfo withEnableKms(Boolean enableKms) {
-        this.enableKms = enableKms;
-        return this;
-    }
-
-    /**
-     * 是否开启KMS加密，默认不开启。
-     * @return enableKms
-     */
-    public Boolean getEnableKms() {
-        return enableKms;
-    }
-
-    public void setEnableKms(Boolean enableKms) {
-        this.enableKms = enableKms;
-    }
-
     public SyncTaskInfo withEnableMetadataMigration(Boolean enableMetadataMigration) {
         this.enableMetadataMigration = enableMetadataMigration;
         return this;
@@ -875,7 +853,7 @@ public class SyncTaskInfo {
             && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.lastStartTime, that.lastStartTime) && Objects.equals(this.dstBucket, that.dstBucket)
             && Objects.equals(this.dstRegion, that.dstRegion) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.enableKms, that.enableKms)
+            && Objects.equals(this.status, that.status)
             && Objects.equals(this.enableMetadataMigration, that.enableMetadataMigration)
             && Objects.equals(this.enableRestore, that.enableRestore) && Objects.equals(this.appId, that.appId)
             && Objects.equals(this.sourceCdn, that.sourceCdn)
@@ -896,7 +874,6 @@ public class SyncTaskInfo {
             dstRegion,
             description,
             status,
-            enableKms,
             enableMetadataMigration,
             enableRestore,
             appId,
@@ -920,7 +897,6 @@ public class SyncTaskInfo {
         sb.append("    dstRegion: ").append(toIndentedString(dstRegion)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    enableKms: ").append(toIndentedString(enableKms)).append("\n");
         sb.append("    enableMetadataMigration: ").append(toIndentedString(enableMetadataMigration)).append("\n");
         sb.append("    enableRestore: ").append(toIndentedString(enableRestore)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");

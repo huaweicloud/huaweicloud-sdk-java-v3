@@ -637,7 +637,7 @@ public class Snapshots {
     }
 
     /**
-     * **参数解释**： 增量快照使用前一个快照的BackupKey。当取值为FULL时表示这是一个全量快照。 **取值范围**： 不涉及。
+     * **参数解释**： 增量快照使用前一个快照的backup_key。当取值为FULL时表示这是一个全量快照。 **取值范围**： 不涉及。
      * @return priorBackupKey
      */
     public String getPriorBackupKey() {
@@ -654,7 +654,7 @@ public class Snapshots {
     }
 
     /**
-     * **参数解释**： 对应全量快照的BackupKey。 **取值范围**： 不涉及。
+     * **参数解释**： 对应全量快照的backup_key。 **取值范围**： 不涉及。
      * @return baseBackupKey
      */
     public String getBaseBackupKey() {
