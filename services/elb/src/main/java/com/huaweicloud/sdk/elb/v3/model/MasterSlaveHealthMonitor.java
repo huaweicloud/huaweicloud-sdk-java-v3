@@ -278,7 +278,7 @@ public class MasterSlaveHealthMonitor {
     }
 
     /**
-     * **参数解释**：健康检查请求协议。  **取值范围**：TCP、UDP_CONNECT、HTTP、HTTPS。
+     * **参数解释**：健康检查请求协议。  **取值范围**：TCP、UDP_CONNECT、HTTP、HTTPS。UDP_CONNECT即UDP协议。
      * @return type
      */
     public String getType() {

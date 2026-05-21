@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 批量从负载均衡器域名解析中移除IP地址的请求体。
+ * 批量将IP地址从ELB实例域名解析中移除的请求体。
  */
 public class BatchDisableDomainIPsRequestBody {
 

@@ -253,7 +253,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 负载均衡器ID。  支持多值查询，查询条件格式：*id=xxx&id=xxx*。
+     * **参数解释**：负载均衡器ID。 支持多值查询，查询条件格式： *id=xxx&id=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return id
      */
     public List<String> getId() {
@@ -286,7 +286,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 负载均衡器名称。  支持多值查询，查询条件格式：*name=xxx&name=xxx*。
+     * **参数解释**：负载均衡器名称。 支持多值查询，查询条件格式： *name=xxx&name=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return name
      */
     public List<String> getName() {
@@ -319,7 +319,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 负载均衡器的描述信息。  支持多值查询，查询条件格式：*description=xxx&description=xxx*。
+     * **参数解释**：负载均衡器的描述信息。 支持多值查询，查询条件格式： *description=xxx&description=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return description
      */
     public List<String> getDescription() {
@@ -336,7 +336,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * **参数解释**：负载均衡器的启用状态。  **取值范围**： - true ：启用。 - false：停用。  [不支持该字段，请勿使用。](tag:dt)
+     * **参数解释**：负载均衡器的启用状态。  **约束限制**：不涉及  **取值范围**： - true ：启用。 - false：停用。  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:dt)
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -369,7 +369,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 负载均衡器的操作状态。  取值： - ONLINE：正常运行。 - FROZEN：已冻结。  支持多值查询，查询条件格式：*operating_status=xxx&operating_status=xxx*。
+     * **参数解释**：负载均衡器的操作状态。 支持多值查询，查询条件格式： *operating_status=xxx&operating_status=xxx*。  **约束限制**：不涉及  **取值范围**： - ONLINE：正常运行。 - FROZEN：已冻结。  **默认取值**：不涉及
      * @return operatingStatus
      */
     public List<String> getOperatingStatus() {
@@ -386,7 +386,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 是否独享型LB。  取值： - false：共享型 - true：独享型  [仅支持独享型，固定为true。](tag:hws_eu,hcso_dt)
+     * **参数解释**：是否独享型LB。  **约束限制**：不涉及  **取值范围**： - false：共享型 - true：独享型  **默认取值**：不涉及
      * @return guaranteed
      */
     public Boolean getGuaranteed() {
@@ -419,7 +419,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 负载均衡器所在的VPC ID。  支持多值查询，查询条件格式：*vpc_id=xxx&vpc_id=xxx*。
+     * **参数解释**：负载均衡器所在的VPC ID。 支持多值查询，查询条件格式：*vpc_id=xxx&vpc_id=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return vpcId
      */
     public List<String> getVpcId() {
@@ -452,7 +452,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 负载均衡器的IPv4对应的port ID。  支持多值查询，查询条件格式：*vip_port_id=xxx&vip_port_id=xxx*。
+     * **参数解释**：负载均衡器的IPv4对应的port ID。 支持多值查询，查询条件格式： *vip_port_id=xxx&vip_port_id=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return vipPortId
      */
     public List<String> getVipPortId() {
@@ -485,7 +485,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 负载均衡器的IPv4私网IP地址。  支持多值查询，查询条件格式：*vip_address=xxx&vip_address=xxx*。
+     * **参数解释**：负载均衡器的IPv4私网IP地址。 支持多值查询，查询条件格式： *vip_address=xxx&vip_address=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return vipAddress
      */
     public List<String> getVipAddress() {
@@ -518,7 +518,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 负载均衡器所在子网的IPv4子网ID，也称为该负载均衡器实例的前端子网。  支持多值查询，查询条件格式：*vip_subnet_cidr_id=xxx&vip_subnet_cidr_id=xxx*。
+     * **参数解释**：负载均衡器所在子网的IPv4子网ID，也称为该负载均衡器实例的前端子网。 支持多值查询，查询条件格式： *vip_subnet_cidr_id=xxx&vip_subnet_cidr_id=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return vipSubnetCidrId
      */
     public List<String> getVipSubnetCidrId() {
@@ -551,7 +551,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 双栈类型负载均衡器的IPv6对应的port ID。  支持多值查询，查询条件格式：*ipv6_vip_port_id=xxx&ipv6_vip_port_id=xxx*。  [不支持IPv6，请勿使用。](tag:dt)
+     * **参数解释**：双栈类型负载均衡器的IPv6对应的port ID。 支持多值查询，查询条件格式： *ipv6_vip_port_id=xxx&ipv6_vip_port_id=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  [不支持IPv6，请勿使用。](tag:dt)
      * @return ipv6VipPortId
      */
     public List<String> getIpv6VipPortId() {
@@ -584,7 +584,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 双栈类型负载均衡器的IPv6地址。  支持多值查询，查询条件格式：*ipv6_vip_address=xxx&ipv6_vip_address=xxx*。  [不支持IPv6，请勿使用。](tag:dt)
+     * **参数解释**：双栈类型负载均衡器的IPv6地址。 支持多值查询，查询条件格式： *ipv6_vip_address=xxx&ipv6_vip_address=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  [不支持IPv6，请勿使用。](tag:dt)
      * @return ipv6VipAddress
      */
     public List<String> getIpv6VipAddress() {
@@ -617,7 +617,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 双栈类型负载均衡器所在的子网IPv6网络ID，也称为该负载均衡器实例的前端子网。  支持多值查询，查询条件格式：*ipv6_vip_virsubnet_id=xxx&ipv6_vip_virsubnet_id=xxx*。  [不支持IPv6，请勿使用。](tag:dt)
+     * **参数解释**：双栈类型负载均衡器所在的子网IPv6网络ID，也称为该负载均衡器实例的前端子网。 支持多值查询，查询条件格式： *ipv6_vip_virsubnet_id=xxx&ipv6_vip_virsubnet_id=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  [不支持IPv6，请勿使用。](tag:dt)
      * @return ipv6VipVirsubnetId
      */
     public List<String> getIpv6VipVirsubnetId() {
@@ -650,7 +650,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 负载均衡器绑定的EIP。例如要查询绑定以下EIP的LB： \"eips\": [     {         \"eip_id\": \"e9b72a9d-4275-455e-a724-853504e4d9c6\",         \"eip_address\": \"88.88.14.122\",         \"ip_version\": 4     } ] 可以通如下查询： eips=ip_version%3D4&eips=eip_address%3D88.88.14.122&eips=eip_id%3De9b72a9d-4275-455e-a724-853504e4d9c6  支持多值查询，查询条件格式： - eip_id作为查询条件：*eips=eip_id=xxx&eips=eip_id=xxx*。 - eip_address作为查询条件：*eips=eip_address=xxx&eips=eip_address=xxx*。 - ip_version作为查询条件：*eips=ip_version=xxx&eips=ip_version=xxx*。  注：该字段与publicips字段一致。
+     * **参数解释**：负载均衡器绑定的EIP。例如要查询绑定以下EIP的LB： \"eips\": [     {         \"eip_id\": \"e9b72a9d-4275-455e-a724-853504e4d9c6\",         \"eip_address\": \"88.88.14.122\",         \"ip_version\": 4     } ] 可以通如下查询： eips=ip_version%3D4&eips=eip_address%3D88.88.14.122&eips=eip_id%3De9b72a9d-4275-455e-a724-853504e4d9c6 支持多值查询，查询条件格式： - eip_id作为查询条件：*eips=eip_id=xxx&eips=eip_id=xxx*。 - eip_address作为查询条件：*eips=eip_address=xxx&eips=eip_address=xxx*。 - ip_version作为查询条件：*eips=ip_version=xxx&eips=ip_version=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  注：该字段与publicips字段一致。
      * @return eips
      */
     public List<String> getEips() {
@@ -683,7 +683,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 负载均衡器绑定的公网IP。例如要查询绑定以下公网IP的LB： \"publicips=\": [     {         \"public_id\": \"e9b72a9d-4275-455e-a724-853504e4d9c6\",         \"public_address\": \"88.88.14.122\",         \"ip_version\": 4     } ] 可以通如下查询： publicips=ip_version%3D4&publicips=public_address%3D88.88.14.122&publicips=public_id%3De9b72a9d-4275-455e-a724-853504e4d9c6  支持多值查询，查询条件格式： - publicip_id作为查询条件： *publicips=publicip_id=xxx&publicips=publicip_id=xxx* - publicip_address作为查询条件： *publicips=publicip_address=xxx&publicips=publicip_address=xxx* - ip_version作为查询条件： *publicips=ip_version=xxx&publicips=ip_version=xxx*  注：该字段与eips字段一致。
+     * **参数解释**：负载均衡器绑定的公网IP。例如要查询绑定以下公网IP的LB： \"publicips\": [     {         \"public_id\": \"e9b72a9d-4275-455e-a724-853504e4d9c6\",         \"public_address\": \"88.88.14.122\",         \"ip_version\": 4     } ] 可以通如下查询： publicips=ip_version%3D4&publicips=public_address%3D88.88.14.122&publicips=public_id%3De9b72a9d-4275-455e-a724-853504e4d9c6 支持多值查询，查询条件格式： - publicip_id作为查询条件： *publicips=publicip_id=xxx&publicips=publicip_id=xxx* - publicip_address作为查询条件： *publicips=publicip_address=xxx&publicips=publicip_address=xxx* - ip_version作为查询条件： *publicips=ip_version=xxx&publicips=ip_version=xxx*  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  注：该字段与eips字段一致。
      * @return publicips
      */
     public List<String> getPublicips() {
@@ -717,7 +717,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 负载均衡器所在可用区列表。  支持多值查询，查询条件格式： *availability_zone_list=xxx&availability_zone_list=xxx*。
+     * **参数解释**：负载均衡器所在可用区列表。 支持多值查询，查询条件格式： *availability_zone_list=xxx&availability_zone_list=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return availabilityZoneList
      */
     public List<String> getAvailabilityZoneList() {
@@ -750,7 +750,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 网络型规格ID。  支持多值查询，查询条件格式：*l4_flavor_id=xxx&l4_flavor_id=xxx*。  [不支持该字段，请勿使用。](tag:hcso,hk_vdf,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
+     * **参数解释**：网络型规格ID。 支持多值查询，查询条件格式： *l4_flavor_id=xxx&l4_flavor_id=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:hk_vdf,srg,fcs)
      * @return l4FlavorId
      */
     public List<String> getL4FlavorId() {
@@ -783,7 +783,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 应用型规格ID。  支持多值查询，查询条件格式：*l7_flavor_id=xxx&l7_flavor_id=xxx*。  [不支持该字段，请勿使用。](tag:hcso,hk_vdf,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
+     * **参数解释**：应用型规格ID。 支持多值查询，查询条件格式： *l7_flavor_id=xxx&l7_flavor_id=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:hk_vdf,srg,fcs)
      * @return l7FlavorId
      */
     public List<String> getL7FlavorId() {
@@ -816,7 +816,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 资源账单信息。  支持多值查询，查询条件格式：*billing_info=xxx&billing_info=xxx*。  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_test,hcs,hcs_sm,hcso,hk_vdf,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b,hcso_dt,dt,ocb,ctc,cmcc,tm,sbc,g42,hws_ocb,hk_sbc,hk_tm,hk_g42)
+     * **参数解释**：资源账单信息。 支持多值查询，查询条件格式： *billing_info=xxx&billing_info=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_eu_wb,hws_test,fcs,dt,hcso_dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,srg)
      * @return billingInfo
      */
     public List<String> getBillingInfo() {
@@ -849,7 +849,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 负载均衡器中的后端服务器对应的弹性云服务器的ID。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_device_id=xxx&member_device_id=xxx*。
+     * **参数解释**：负载均衡器中的后端服务器对应的弹性云服务器的ID。仅用于查询条件，不作为响应参数字段。 支持多值查询，查询条件格式： *member_device_id=xxx&member_device_id=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return memberDeviceId
      */
     public List<String> getMemberDeviceId() {
@@ -882,7 +882,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 负载均衡器中的后端服务器对应的弹性云服务器的IP地址。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_address=xxx&member_address=xxx*。
+     * **参数解释**：负载均衡器中的后端服务器对应的弹性云服务器的IP地址。仅用于查询条件，不作为响应参数字段。 支持多值查询，查询条件格式： *member_address=xxx&member_address=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return memberAddress
      */
     public List<String> getMemberAddress() {
@@ -949,7 +949,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * IP版本信息。  取值：4代表IPv4，6代表IPv6。  支持多值查询，查询条件格式：*ip_version=xxx&ip_version=xxx*。  [不支持IPv6，请勿设置为6。](tag:dt)
+     * **参数解释**：IP版本信息。 支持多值查询，查询条件格式： *ip_version=xxx&ip_version=xxx*。  **约束限制**：不涉及  **取值范围**：4代表IPv4，6代表IPv6。  **默认取值**：不涉及  [不支持IPv6，请勿设置为6。](tag:dt)
      * @return ipVersion
      */
     public List<Integer> getIpVersion() {
@@ -966,7 +966,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 是否开启删除保护，false不开启，true开启。[不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)  [荷兰region不支持该字段，请勿使用。](tag:dt)
+     * **参数解释**：是否开启删除保护。  **约束限制**：不涉及  **取值范围**：false 不开启，true 开启。  **默认取值**：不涉及  [荷兰region不支持该字段，请勿使用。](tag:dt) [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42)
      * @return deletionProtectionEnable
      */
     public Boolean getDeletionProtectionEnable() {
@@ -999,7 +999,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 下联面子网类型。  取值： - ipv4：ipv4。 - dualstack：双栈。  支持多值查询，查询条件格式： *elb_virsubnet_type=ipv4&elb_virsubnet_type=dualstack*。
+     * **参数解释**：下联面子网类型。 支持多值查询，查询条件格式： *elb_virsubnet_type=ipv4&elb_virsubnet_type=dualstack*。  **约束限制**：不涉及  **取值范围**： - ipv4：ipv4。 - dualstack：双栈，同时支持IPv4和IPv6的子网。  **默认取值**：不涉及
      * @return elbVirsubnetType
      */
     public List<String> getElbVirsubnetType() {
@@ -1032,7 +1032,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 是否开启弹性扩缩容。示例如下： \"autoscaling\": {             \"enable\": \"true\"         }  支持多值查询，查询条件格式：  *autoscaling=enable=true&autoscaling=enable=false*。  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,hcso,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
+     * **参数解释**：是否开启弹性扩缩容。示例如下： \"autoscaling\": {     \"enable\": \"true\" }  支持多值查询，查询条件格式： *autoscaling=enable=true&autoscaling=enable=false*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及  [不支持该字段，请勿使用。](tag:hws_eu,g42,hk_g42,hcso,srg,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
      * @return autoscaling
      */
     public List<String> getAutoscaling() {
@@ -1065,7 +1065,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 修改保护状态, 取值： - nonProtection: 不保护，默认值为nonProtection - consoleProtection: 控制台修改保护
+     * **参数解释**：修改保护状态。  **约束限制**：不涉及  **取值范围**： - nonProtection: 不保护，默认值为nonProtection。 - consoleProtection: 控制台修改保护。  **默认取值**：不涉及
      * @return protectionStatus
      */
     public List<String> getProtectionStatus() {
@@ -1098,7 +1098,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * 负载均衡器绑定的公网IP。示例如下：  {     \"global_eips\": [         {             \"global_eip_id\": \"24000000-0000-0000-0000-100000000001\",             \"global_eip_address\": \"10.10.10.10\",             \"ip_version\": 4         }     ] }  支持多值查询，查询条件格式：  - global_eip_id作为查询条件：*global_eips=global_eip_id=xxx&global_eips=global_eip_id=xxx*。  - global_eip_address作为查询条件：*global_eips=global_eip_address=xxx&global_eips=global_eip_address=xxx*。  - ip_version作为查询条件：*global_eips=ip_version=xxx&global_eips=ip_version=xxx*。
+     * **参数解释**：负载均衡器绑定的公网IP。示例如下： {     \"global_eips\": [         {             \"global_eip_id\": \"24000000-0000-0000-0000-100000000001\",             \"global_eip_address\": \"10.10.10.10\",             \"ip_version\": 4         }     ] } 支持多值查询，查询条件格式： - global_eip_id作为查询条件：*global_eips=global_eip_id=xxx&global_eips=global_eip_id=xxx*。 - global_eip_address作为查询条件：*global_eips=global_eip_address=xxx&global_eips=global_eip_address=xxx*。 - ip_version作为查询条件：*global_eips=ip_version=xxx&global_eips=ip_version=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return globalEips
      */
     public List<String> getGlobalEips() {
@@ -1115,7 +1115,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * LB实例绑定的logtank的topic id信息，支持多值查询，查询条件格式：*log_topic_id=xxx&log_topic_id=xxx*。
+     * **参数解释**：LB所关联的云日志服务（LTS）的日志流ID。 支持多值查询，查询条件格式： *log_topic_id=xxx&log_topic_id=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return logTopicId
      */
     public String getLogTopicId() {
@@ -1132,7 +1132,7 @@ public class ListRecycleBinLoadBalancersRequest {
     }
 
     /**
-     * LB实例绑定的logtank的group id信息，支持多值查询，查询条件格式：*log_group_id=xxx&log_group_id=xxx*。
+     * **参数解释**：LB所关联的云日志服务（LTS）的日志组ID。 支持多值查询，查询条件格式： *log_group_id=xxx&log_group_id=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return logGroupId
      */
     public String getLogGroupId() {

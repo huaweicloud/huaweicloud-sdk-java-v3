@@ -17,6 +17,11 @@ public class UpdateUserDefinedDomainConfigResponse extends SdkResponse {
 
     private DnsConfigResponseBody loadbalancer;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
     public UpdateUserDefinedDomainConfigResponse withLoadbalancer(DnsConfigResponseBody loadbalancer) {
         this.loadbalancer = loadbalancer;
         return this;
@@ -43,6 +48,23 @@ public class UpdateUserDefinedDomainConfigResponse extends SdkResponse {
         this.loadbalancer = loadbalancer;
     }
 
+    public UpdateUserDefinedDomainConfigResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    /**
+     * **参数解释**：请求ID。  **取值范围**：由数字、小写字母和中划线（-）组成的字符串，自动生成。
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -52,12 +74,12 @@ public class UpdateUserDefinedDomainConfigResponse extends SdkResponse {
             return false;
         }
         UpdateUserDefinedDomainConfigResponse that = (UpdateUserDefinedDomainConfigResponse) obj;
-        return Objects.equals(this.loadbalancer, that.loadbalancer);
+        return Objects.equals(this.loadbalancer, that.loadbalancer) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(loadbalancer);
+        return Objects.hash(loadbalancer, requestId);
     }
 
     @Override
@@ -65,6 +87,7 @@ public class UpdateUserDefinedDomainConfigResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateUserDefinedDomainConfigResponse {\n");
         sb.append("    loadbalancer: ").append(toIndentedString(loadbalancer)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

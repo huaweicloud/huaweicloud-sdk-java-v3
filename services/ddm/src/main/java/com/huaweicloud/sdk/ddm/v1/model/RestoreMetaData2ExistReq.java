@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * RestoreMetaData2ExistReq
@@ -13,44 +14,62 @@ public class RestoreMetaData2ExistReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source")
 
-    private Object source;
+    private RestoreMetaDataSource source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target")
 
-    private Object target;
+    private RestoreMetaDataTarget target;
 
-    public RestoreMetaData2ExistReq withSource(Object source) {
+    public RestoreMetaData2ExistReq withSource(RestoreMetaDataSource source) {
         this.source = source;
         return this;
     }
 
+    public RestoreMetaData2ExistReq withSource(Consumer<RestoreMetaDataSource> sourceSetter) {
+        if (this.source == null) {
+            this.source = new RestoreMetaDataSource();
+            sourceSetter.accept(this.source);
+        }
+
+        return this;
+    }
+
     /**
-     * metadata恢复源。
+     * Get source
      * @return source
      */
-    public Object getSource() {
+    public RestoreMetaDataSource getSource() {
         return source;
     }
 
-    public void setSource(Object source) {
+    public void setSource(RestoreMetaDataSource source) {
         this.source = source;
     }
 
-    public RestoreMetaData2ExistReq withTarget(Object target) {
+    public RestoreMetaData2ExistReq withTarget(RestoreMetaDataTarget target) {
         this.target = target;
         return this;
     }
 
+    public RestoreMetaData2ExistReq withTarget(Consumer<RestoreMetaDataTarget> targetSetter) {
+        if (this.target == null) {
+            this.target = new RestoreMetaDataTarget();
+            targetSetter.accept(this.target);
+        }
+
+        return this;
+    }
+
     /**
-     * metadata恢复目标。
+     * Get target
      * @return target
      */
-    public Object getTarget() {
+    public RestoreMetaDataTarget getTarget() {
         return target;
     }
 
-    public void setTarget(Object target) {
+    public void setTarget(RestoreMetaDataTarget target) {
         this.target = target;
     }
 

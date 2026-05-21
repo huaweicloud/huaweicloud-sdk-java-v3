@@ -53,6 +53,11 @@ public class GetUsersListDetailResponsesV3 {
 
     private List<GetUsersListdatabaseV3> databases = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expiration_time")
+
+    private String expirationTime;
+
     public GetUsersListDetailResponsesV3 withName(String name) {
         this.name = name;
         return this;
@@ -221,6 +226,23 @@ public class GetUsersListDetailResponsesV3 {
         this.databases = databases;
     }
 
+    public GetUsersListDetailResponsesV3 withExpirationTime(String expirationTime) {
+        this.expirationTime = expirationTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  DDM实例账号的创建时间。  格式为yyyy-mm-ddThh:mm:ssZ。其中，T指定某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。  **取值范围**：  不涉及。
+     * @return expirationTime
+     */
+    public String getExpirationTime() {
+        return expirationTime;
+    }
+
+    public void setExpirationTime(String expirationTime) {
+        this.expirationTime = expirationTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -235,13 +257,21 @@ public class GetUsersListDetailResponsesV3 {
             && Objects.equals(this.passwordLifetime, that.passwordLifetime)
             && Objects.equals(this.passwordLastChanged, that.passwordLastChanged)
             && Objects.equals(this.description, that.description) && Objects.equals(this.created, that.created)
-            && Objects.equals(this.databases, that.databases);
+            && Objects.equals(this.databases, that.databases)
+            && Objects.equals(this.expirationTime, that.expirationTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(name, status, baseAuthority, passwordLifetime, passwordLastChanged, description, created, databases);
+        return Objects.hash(name,
+            status,
+            baseAuthority,
+            passwordLifetime,
+            passwordLastChanged,
+            description,
+            created,
+            databases,
+            expirationTime);
     }
 
     @Override
@@ -256,6 +286,7 @@ public class GetUsersListDetailResponsesV3 {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    databases: ").append(toIndentedString(databases)).append("\n");
+        sb.append("    expirationTime: ").append(toIndentedString(expirationTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

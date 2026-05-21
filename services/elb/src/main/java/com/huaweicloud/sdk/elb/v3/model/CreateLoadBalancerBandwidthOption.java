@@ -191,7 +191,7 @@ public class CreateLoadBalancerBandwidthOption {
     }
 
     /**
-     * **参数解释**：带宽名称。  **约束限制**： - 如果share_type是PER，该字段是必选。 - 如果bandwidth对象的id有值，该字段被忽略。  **取值范围**：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）  **默认取值**：不涉及
+     * **参数解释**：带宽名称。  **约束限制**：  - 如果选用的是独享带宽，share_type是PER，该字段是必选。 - 如果使用的是共享带宽，参数bandwidth对象的id有值，该字段被忽略。  **取值范围**：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）  **默认取值**：不涉及
      * @return name
      */
     public String getName() {

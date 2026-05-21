@@ -15,9 +15,31 @@ import java.util.function.Consumer;
 public class BatchDeleteCertificatesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificates")
 
     private List<BatchDeleteCertificatesResp> certificates = null;
+
+    public BatchDeleteCertificatesResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    /**
+     * **参数解释**：请求ID。  **取值范围**：由数字、小写字母和中划线（-）组成的字符串，自动生成。
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
     public BatchDeleteCertificatesResponse withCertificates(List<BatchDeleteCertificatesResp> certificates) {
         this.certificates = certificates;
@@ -62,18 +84,19 @@ public class BatchDeleteCertificatesResponse extends SdkResponse {
             return false;
         }
         BatchDeleteCertificatesResponse that = (BatchDeleteCertificatesResponse) obj;
-        return Objects.equals(this.certificates, that.certificates);
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.certificates, that.certificates);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(certificates);
+        return Objects.hash(requestId, certificates);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchDeleteCertificatesResponse {\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    certificates: ").append(toIndentedString(certificates)).append("\n");
         sb.append("}");
         return sb.toString();

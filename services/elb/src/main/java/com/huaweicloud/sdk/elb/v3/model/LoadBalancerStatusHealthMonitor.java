@@ -36,7 +36,7 @@ public class LoadBalancerStatusHealthMonitor {
     }
 
     /**
-     * **参数解释**：健康检查器协议类型。  **取值范围**：TCP、UDP_CONNECT、HTTP。
+     * **参数解释**：健康检查器协议类型。  **取值范围**：TCP、UDP_CONNECT、HTTP。UDP_CONNECT即UDP协议。
      * @return type
      */
     public String getType() {

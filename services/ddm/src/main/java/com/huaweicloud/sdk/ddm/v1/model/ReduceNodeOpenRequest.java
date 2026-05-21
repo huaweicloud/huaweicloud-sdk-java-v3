@@ -14,31 +14,9 @@ import java.util.function.Consumer;
 public class ReduceNodeOpenRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_id")
-
-    private String instanceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_ids")
 
     private List<String> nodeIds = null;
-
-    public ReduceNodeOpenRequest withInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-        return this;
-    }
-
-    /**
-     * 实例id。
-     * @return instanceId
-     */
-    public String getInstanceId() {
-        return instanceId;
-    }
-
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-    }
 
     public ReduceNodeOpenRequest withNodeIds(List<String> nodeIds) {
         this.nodeIds = nodeIds;
@@ -82,19 +60,18 @@ public class ReduceNodeOpenRequest {
             return false;
         }
         ReduceNodeOpenRequest that = (ReduceNodeOpenRequest) obj;
-        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.nodeIds, that.nodeIds);
+        return Objects.equals(this.nodeIds, that.nodeIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, nodeIds);
+        return Objects.hash(nodeIds);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ReduceNodeOpenRequest {\n");
-        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    nodeIds: ").append(toIndentedString(nodeIds)).append("\n");
         sb.append("}");
         return sb.toString();

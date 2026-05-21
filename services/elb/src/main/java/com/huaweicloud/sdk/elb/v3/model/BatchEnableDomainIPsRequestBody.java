@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 批量向负载均衡器域名解析中加入IP地址的请求体。
+ * 批量将IP地址加入ELB实例域名解析中的请求体。
  */
 public class BatchEnableDomainIPsRequestBody {
 

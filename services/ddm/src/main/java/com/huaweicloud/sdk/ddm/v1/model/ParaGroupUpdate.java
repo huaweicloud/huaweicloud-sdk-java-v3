@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.ddm.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ParaGroupUpdate
@@ -23,7 +26,7 @@ public class ParaGroupUpdate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "values")
 
-    private Object values;
+    private Map<String, String> values = null;
 
     public ParaGroupUpdate withName(String name) {
         this.name = name;
@@ -31,7 +34,7 @@ public class ParaGroupUpdate {
     }
 
     /**
-     * 名称。
+     * **参数解释**：  参数组名称。  **约束限制**：  不涉及。  **取值范围**：  在1到64个字符之间，区分大小写，可包含字母、数字、中划线、下划线或句点，不能包含其他特殊字符。。  **默认取值**：  不涉及。
      * @return name
      */
     public String getName() {
@@ -48,7 +51,7 @@ public class ParaGroupUpdate {
     }
 
     /**
-     * 描述。
+     * **参数解释**：  参数组描述。  **约束限制**：  不涉及。  **取值范围**：  不能超过256位，且不能包含回车和特殊字符 ! < \" = ' > &。  **默认取值**：  不涉及。
      * @return description
      */
     public String getDescription() {
@@ -59,20 +62,36 @@ public class ParaGroupUpdate {
         this.description = description;
     }
 
-    public ParaGroupUpdate withValues(Object values) {
+    public ParaGroupUpdate withValues(Map<String, String> values) {
         this.values = values;
         return this;
     }
 
+    public ParaGroupUpdate putValuesItem(String key, String valuesItem) {
+        if (this.values == null) {
+            this.values = new HashMap<>();
+        }
+        this.values.put(key, valuesItem);
+        return this;
+    }
+
+    public ParaGroupUpdate withValues(Consumer<Map<String, String>> valuesSetter) {
+        if (this.values == null) {
+            this.values = new HashMap<>();
+        }
+        valuesSetter.accept(this.values);
+        return this;
+    }
+
     /**
-     * 参数值。
+     * **参数解释**：  修改的值。  **约束限制**：  不涉及  **取值范围**：  长度为1-64的a-z、A-Z、0-9、.、_ 和 -的字符。  **默认取值**：  不涉及。
      * @return values
      */
-    public Object getValues() {
+    public Map<String, String> getValues() {
         return values;
     }
 
-    public void setValues(Object values) {
+    public void setValues(Map<String, String> values) {
         this.values = values;
     }
 

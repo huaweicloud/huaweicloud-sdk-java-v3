@@ -15,9 +15,31 @@ import java.util.function.Consumer;
 public class BatchDeletePoolsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pools")
 
     private List<BatchDeletePoolsResp> pools = null;
+
+    public BatchDeletePoolsResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    /**
+     * **参数解释**：请求ID。  **取值范围**：由数字、小写字母和中划线（-）组成的字符串，自动生成。
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
     public BatchDeletePoolsResponse withPools(List<BatchDeletePoolsResp> pools) {
         this.pools = pools;
@@ -61,18 +83,19 @@ public class BatchDeletePoolsResponse extends SdkResponse {
             return false;
         }
         BatchDeletePoolsResponse that = (BatchDeletePoolsResponse) obj;
-        return Objects.equals(this.pools, that.pools);
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.pools, that.pools);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pools);
+        return Objects.hash(requestId, pools);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchDeletePoolsResponse {\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    pools: ").append(toIndentedString(pools)).append("\n");
         sb.append("}");
         return sb.toString();

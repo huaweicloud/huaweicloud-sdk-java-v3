@@ -68,7 +68,7 @@ public class ShowLoadBalancerTopologyRequest {
     }
 
     /**
-     * 监听器的ID。  支持多值查询，查询条件格式：*listener_id=xxx&listener_id=xxx*。
+     * **参数解释**：监听器的ID。  支持多值查询，查询条件格式：*listener_id=xxx&listener_id=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return listenerId
      */
     public String getListenerId() {
@@ -85,7 +85,7 @@ public class ShowLoadBalancerTopologyRequest {
     }
 
     /**
-     * 后端服务器组的ID。  支持多值查询，查询条件格式：*pool_id=xxx&pool_id=xxx*。
+     * **参数解释**：后端服务器组的ID。  支持多值查询，查询条件格式：*pool_id=xxx&pool_id=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return poolId
      */
     public String getPoolId() {
@@ -102,7 +102,7 @@ public class ShowLoadBalancerTopologyRequest {
     }
 
     /**
-     * 监听器的名称。  支持多值查询，查询条件格式：*listener_name=xxx&listener_name=xxx*。
+     * **参数解释**：监听器的名称。  支持多值查询，查询条件格式：*listener_name=xxx&listener_name=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return listenerName
      */
     public String getListenerName() {
@@ -119,7 +119,7 @@ public class ShowLoadBalancerTopologyRequest {
     }
 
     /**
-     * 监听器的协议。  支持多值查询，查询条件格式：*listener_protocol=xxx&listener_protocol=xxx*。
+     * **参数解释**：监听器的协议。  支持多值查询，查询条件格式：*listener_protocol=xxx&listener_protocol=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return listenerProtocol
      */
     public String getListenerProtocol() {
@@ -136,7 +136,7 @@ public class ShowLoadBalancerTopologyRequest {
     }
 
     /**
-     * 监听器的监听端口。  支持多值查询，查询条件格式：*listener_protocol_port=xxx&listener_protocol_port=xxx*。
+     * **参数解释**：监听器的监听端口。  支持多值查询，查询条件格式：*listener_protocol_port=xxx&listener_protocol_port=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return listenerProtocolPort
      */
     public Integer getListenerProtocolPort() {
@@ -153,7 +153,7 @@ public class ShowLoadBalancerTopologyRequest {
     }
 
     /**
-     * 后端服务器组的名称。  支持多值查询，查询条件格式：*pool_name=xxx&pool_name=xxx*。
+     * **参数解释**：后端服务器组的名称。  支持多值查询，查询条件格式：*pool_name=xxx&pool_name=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return poolName
      */
     public String getPoolName() {

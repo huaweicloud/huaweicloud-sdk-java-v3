@@ -108,6 +108,11 @@ public class ListMasterSlavePoolsRequest {
 
     private Boolean connectionDrain;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_border_group")
+
+    private List<String> publicBorderGroup = null;
+
     public ListMasterSlavePoolsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -673,6 +678,39 @@ public class ListMasterSlavePoolsRequest {
         this.connectionDrain = connectionDrain;
     }
 
+    public ListMasterSlavePoolsRequest withPublicBorderGroup(List<String> publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+        return this;
+    }
+
+    public ListMasterSlavePoolsRequest addPublicBorderGroupItem(String publicBorderGroupItem) {
+        if (this.publicBorderGroup == null) {
+            this.publicBorderGroup = new ArrayList<>();
+        }
+        this.publicBorderGroup.add(publicBorderGroupItem);
+        return this;
+    }
+
+    public ListMasterSlavePoolsRequest withPublicBorderGroup(Consumer<List<String>> publicBorderGroupSetter) {
+        if (this.publicBorderGroup == null) {
+            this.publicBorderGroup = new ArrayList<>();
+        }
+        publicBorderGroupSetter.accept(this.publicBorderGroup);
+        return this;
+    }
+
+    /**
+     * **参数解释**：公网边界组。 支持多值查询，查询条件格式：*public_border_group=xxx&public_border_group=xxx*。  **约束限制**：不涉及  **取值范围**： - center：表示中心站点的公网边界组 - 边缘站点名称：表示边缘站点的公网边界组  **默认取值**：不涉及
+     * @return publicBorderGroup
+     */
+    public List<String> getPublicBorderGroup() {
+        return publicBorderGroup;
+    }
+
+    public void setPublicBorderGroup(List<String> publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -692,7 +730,8 @@ public class ListMasterSlavePoolsRequest {
             && Objects.equals(this.memberDeviceId, that.memberDeviceId)
             && Objects.equals(this.listenerId, that.listenerId)
             && Objects.equals(this.memberInstanceId, that.memberInstanceId) && Objects.equals(this.vpcId, that.vpcId)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.connectionDrain, that.connectionDrain);
+            && Objects.equals(this.type, that.type) && Objects.equals(this.connectionDrain, that.connectionDrain)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
     }
 
     @Override
@@ -715,7 +754,8 @@ public class ListMasterSlavePoolsRequest {
             memberInstanceId,
             vpcId,
             type,
-            connectionDrain);
+            connectionDrain,
+            publicBorderGroup);
     }
 
     @Override
@@ -741,6 +781,7 @@ public class ListMasterSlavePoolsRequest {
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    connectionDrain: ").append(toIndentedString(connectionDrain)).append("\n");
+        sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

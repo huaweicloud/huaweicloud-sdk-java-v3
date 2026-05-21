@@ -6,14 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 负载均衡器dns ip信息。
+ * 负载均衡器IP地址的域名解析配置。
  */
 public class DnsIpResponse {
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable")
@@ -45,30 +40,13 @@ public class DnsIpResponse {
 
     private String updatedAt;
 
-    public DnsIpResponse withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    /**
-     * dns ip信息的ID。
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public DnsIpResponse withEnable(Boolean enable) {
         this.enable = enable;
         return this;
     }
 
     /**
-     * **参数解释**：ip是否加入了域名解析。  **取值范围**： true：已加入域名解析。 false：未加入域名解析。
+     * **参数解释**：是否已加入到域名解析。  **取值范围**： true：已加入域名解析。 false：未加入域名解析。
      * @return enable
      */
     public Boolean getEnable() {
@@ -85,7 +63,7 @@ public class DnsIpResponse {
     }
 
     /**
-     * **参数解释**：ip地址。可以是ipv4地址也可以是ipv6地址。  **约束限制**：必须是负载均衡器的私网地址或者公网地址。
+     * **参数解释**：IPv4或IPv6地址。  **约束限制**：必须是当前负载均衡器绑定的私网地址或者公网地址。
      * @return ipAddress
      */
     public String getIpAddress() {
@@ -102,7 +80,7 @@ public class DnsIpResponse {
     }
 
     /**
-     * **参数解释**：地址类型。  **取值范围**： vip：私网ip。 eip：公网ip。
+     * **参数解释**：IP地址类型。  **取值范围**： vip：私网IP。 eip：公网IP。
      * @return type
      */
     public String getType() {
@@ -119,7 +97,7 @@ public class DnsIpResponse {
     }
 
     /**
-     * **参数解释**：ip对应的域名。  **约束限制**： - 如果ip为私网类型，则这里为负载均衡实例的私网域名。 - 如果ip为公网类型，则这里为负载均衡实例的公网域名。
+     * **参数解释**：当前IP地址关联的负载均衡实例域名。  **约束限制**： - 如果IP为私网类型，则这里为负载均衡实例的私网域名。 - 如果IP为公网类型，则这里为负载均衡实例的公网域名。
      * @return domainName
      */
     public String getDomainName() {
@@ -136,7 +114,7 @@ public class DnsIpResponse {
     }
 
     /**
-     * 创建时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。
+     * **参数解释**：创建时间。  **取值范围**：不涉及
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -153,7 +131,7 @@ public class DnsIpResponse {
     }
 
     /**
-     * 更新时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。
+     * **参数解释**：更新时间。  **取值范围**：不涉及
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -173,22 +151,20 @@ public class DnsIpResponse {
             return false;
         }
         DnsIpResponse that = (DnsIpResponse) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.enable, that.enable)
-            && Objects.equals(this.ipAddress, that.ipAddress) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt);
+        return Objects.equals(this.enable, that.enable) && Objects.equals(this.ipAddress, that.ipAddress)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, enable, ipAddress, type, domainName, createdAt, updatedAt);
+        return Objects.hash(enable, ipAddress, type, domainName, createdAt, updatedAt);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DnsIpResponse {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
         sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

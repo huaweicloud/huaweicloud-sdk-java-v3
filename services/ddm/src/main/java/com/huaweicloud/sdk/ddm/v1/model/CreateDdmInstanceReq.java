@@ -81,7 +81,7 @@ public class CreateDdmInstanceReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charge_info")
 
-    private Object chargeInfo;
+    private ChargeInfo chargeInfo;
 
     public CreateDdmInstanceReq withName(String name) {
         this.name = name;
@@ -322,20 +322,29 @@ public class CreateDdmInstanceReq {
         this.adminUserPassword = adminUserPassword;
     }
 
-    public CreateDdmInstanceReq withChargeInfo(Object chargeInfo) {
+    public CreateDdmInstanceReq withChargeInfo(ChargeInfo chargeInfo) {
         this.chargeInfo = chargeInfo;
         return this;
     }
 
+    public CreateDdmInstanceReq withChargeInfo(Consumer<ChargeInfo> chargeInfoSetter) {
+        if (this.chargeInfo == null) {
+            this.chargeInfo = new ChargeInfo();
+            chargeInfoSetter.accept(this.chargeInfo);
+        }
+
+        return this;
+    }
+
     /**
-     * 付费信息。
+     * Get chargeInfo
      * @return chargeInfo
      */
-    public Object getChargeInfo() {
+    public ChargeInfo getChargeInfo() {
         return chargeInfo;
     }
 
-    public void setChargeInfo(Object chargeInfo) {
+    public void setChargeInfo(ChargeInfo chargeInfo) {
         this.chargeInfo = chargeInfo;
     }
 

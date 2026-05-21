@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 复制负载均衡器接口请求体。
+ * CloneLoadbalancerRequestBody
  */
 public class CloneLoadbalancerRequestBody {
 

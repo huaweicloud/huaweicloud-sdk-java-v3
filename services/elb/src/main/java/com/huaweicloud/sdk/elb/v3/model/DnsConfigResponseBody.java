@@ -9,9 +9,14 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 配置负载均衡器响应体相关配置参数。
+ * DnsConfigResponseBody
  */
 public class DnsConfigResponseBody {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vip_address")
@@ -44,11 +49,6 @@ public class DnsConfigResponseBody {
     private String publicDnsZoneName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "public_dns_zone_id")
-
-    private String publicDnsZoneId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_domain_name")
 
     private String publicDomainName;
@@ -69,11 +69,6 @@ public class DnsConfigResponseBody {
     private String privateDnsZoneName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "private_dns_zone_id")
-
-    private String privateDnsZoneId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_domain_name")
 
     private String privateDomainName;
@@ -87,6 +82,23 @@ public class DnsConfigResponseBody {
     @JsonProperty(value = "private_dns_record_set_ttl")
 
     private Integer privateDnsRecordSetTtl;
+
+    public DnsConfigResponseBody withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * **参数解释**：自定义域名解析配置ID。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public DnsConfigResponseBody withVipAddress(String vipAddress) {
         this.vipAddress = vipAddress;
@@ -222,23 +234,6 @@ public class DnsConfigResponseBody {
         this.publicDnsZoneName = publicDnsZoneName;
     }
 
-    public DnsConfigResponseBody withPublicDnsZoneId(String publicDnsZoneId) {
-        this.publicDnsZoneId = publicDnsZoneId;
-        return this;
-    }
-
-    /**
-     * **参数解释**：   公网域名所使用的zone对应的id。   根据传入的公网zone 名称查询得出。
-     * @return publicDnsZoneId
-     */
-    public String getPublicDnsZoneId() {
-        return publicDnsZoneId;
-    }
-
-    public void setPublicDnsZoneId(String publicDnsZoneId) {
-        this.publicDnsZoneId = publicDnsZoneId;
-    }
-
     public DnsConfigResponseBody withPublicDomainName(String publicDomainName) {
         this.publicDomainName = publicDomainName;
         return this;
@@ -307,23 +302,6 @@ public class DnsConfigResponseBody {
         this.privateDnsZoneName = privateDnsZoneName;
     }
 
-    public DnsConfigResponseBody withPrivateDnsZoneId(String privateDnsZoneId) {
-        this.privateDnsZoneId = privateDnsZoneId;
-        return this;
-    }
-
-    /**
-     * **参数解释**：   私网域名所使用的zone对应的id。 **约束限制**：   根据传入的私网zone 名称查询得出。
-     * @return privateDnsZoneId
-     */
-    public String getPrivateDnsZoneId() {
-        return privateDnsZoneId;
-    }
-
-    public void setPrivateDnsZoneId(String privateDnsZoneId) {
-        this.privateDnsZoneId = privateDnsZoneId;
-    }
-
     public DnsConfigResponseBody withPrivateDomainName(String privateDomainName) {
         this.privateDomainName = privateDomainName;
         return this;
@@ -384,17 +362,15 @@ public class DnsConfigResponseBody {
             return false;
         }
         DnsConfigResponseBody that = (DnsConfigResponseBody) obj;
-        return Objects.equals(this.vipAddress, that.vipAddress)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.vipAddress, that.vipAddress)
             && Objects.equals(this.ipv6VipAddress, that.ipv6VipAddress) && Objects.equals(this.eips, that.eips)
             && Objects.equals(this.globalEips, that.globalEips)
             && Objects.equals(this.publicDomainNameEnable, that.publicDomainNameEnable)
             && Objects.equals(this.publicDnsZoneName, that.publicDnsZoneName)
-            && Objects.equals(this.publicDnsZoneId, that.publicDnsZoneId)
             && Objects.equals(this.publicDomainName, that.publicDomainName)
             && Objects.equals(this.publicDnsRecordSetTtl, that.publicDnsRecordSetTtl)
             && Objects.equals(this.privateDomainNameEnable, that.privateDomainNameEnable)
             && Objects.equals(this.privateDnsZoneName, that.privateDnsZoneName)
-            && Objects.equals(this.privateDnsZoneId, that.privateDnsZoneId)
             && Objects.equals(this.privateDomainName, that.privateDomainName)
             && Objects.equals(this.privateDnsZoneType, that.privateDnsZoneType)
             && Objects.equals(this.privateDnsRecordSetTtl, that.privateDnsRecordSetTtl);
@@ -402,18 +378,17 @@ public class DnsConfigResponseBody {
 
     @Override
     public int hashCode() {
-        return Objects.hash(vipAddress,
+        return Objects.hash(id,
+            vipAddress,
             ipv6VipAddress,
             eips,
             globalEips,
             publicDomainNameEnable,
             publicDnsZoneName,
-            publicDnsZoneId,
             publicDomainName,
             publicDnsRecordSetTtl,
             privateDomainNameEnable,
             privateDnsZoneName,
-            privateDnsZoneId,
             privateDomainName,
             privateDnsZoneType,
             privateDnsRecordSetTtl);
@@ -423,18 +398,17 @@ public class DnsConfigResponseBody {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DnsConfigResponseBody {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    vipAddress: ").append(toIndentedString(vipAddress)).append("\n");
         sb.append("    ipv6VipAddress: ").append(toIndentedString(ipv6VipAddress)).append("\n");
         sb.append("    eips: ").append(toIndentedString(eips)).append("\n");
         sb.append("    globalEips: ").append(toIndentedString(globalEips)).append("\n");
         sb.append("    publicDomainNameEnable: ").append(toIndentedString(publicDomainNameEnable)).append("\n");
         sb.append("    publicDnsZoneName: ").append(toIndentedString(publicDnsZoneName)).append("\n");
-        sb.append("    publicDnsZoneId: ").append(toIndentedString(publicDnsZoneId)).append("\n");
         sb.append("    publicDomainName: ").append(toIndentedString(publicDomainName)).append("\n");
         sb.append("    publicDnsRecordSetTtl: ").append(toIndentedString(publicDnsRecordSetTtl)).append("\n");
         sb.append("    privateDomainNameEnable: ").append(toIndentedString(privateDomainNameEnable)).append("\n");
         sb.append("    privateDnsZoneName: ").append(toIndentedString(privateDnsZoneName)).append("\n");
-        sb.append("    privateDnsZoneId: ").append(toIndentedString(privateDnsZoneId)).append("\n");
         sb.append("    privateDomainName: ").append(toIndentedString(privateDomainName)).append("\n");
         sb.append("    privateDnsZoneType: ").append(toIndentedString(privateDnsZoneType)).append("\n");
         sb.append("    privateDnsRecordSetTtl: ").append(toIndentedString(privateDnsRecordSetTtl)).append("\n");

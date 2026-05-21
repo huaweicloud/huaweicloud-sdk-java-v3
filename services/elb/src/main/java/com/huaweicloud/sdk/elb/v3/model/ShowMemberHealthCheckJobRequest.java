@@ -21,7 +21,7 @@ public class ShowMemberHealthCheckJobRequest {
     }
 
     /**
-     * **参数解释**：创建后端服务器检测任务的接口返回的job_id。
+     * **参数解释**：创建后端服务器检测任务的接口返回的job_id。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return jobId
      */
     public String getJobId() {

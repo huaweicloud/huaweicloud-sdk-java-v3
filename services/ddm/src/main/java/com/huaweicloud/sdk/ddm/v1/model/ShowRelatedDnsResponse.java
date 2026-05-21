@@ -24,6 +24,21 @@ public class ShowRelatedDnsResponse extends SdkResponse {
 
     private String latestRestorableTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total")
+
+    private Integer total;
+
     public ShowRelatedDnsResponse withRelatedDataNodes(List<RelatedDnVO> relatedDataNodes) {
         this.relatedDataNodes = relatedDataNodes;
         return this;
@@ -74,6 +89,57 @@ public class ShowRelatedDnsResponse extends SdkResponse {
         this.latestRestorableTime = latestRestorableTime;
     }
 
+    public ShowRelatedDnsResponse withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  分页参数: 起始值。  **参数范围**：   大于等于0。
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ShowRelatedDnsResponse withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  分页参数: 每页记录数。  **参数范围**：  大于0且小于等于128。
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ShowRelatedDnsResponse withTotal(Integer total) {
+        this.total = total;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  总记录数。  **参数范围**：  不涉及。
+     * @return total
+     */
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -84,12 +150,14 @@ public class ShowRelatedDnsResponse extends SdkResponse {
         }
         ShowRelatedDnsResponse that = (ShowRelatedDnsResponse) obj;
         return Objects.equals(this.relatedDataNodes, that.relatedDataNodes)
-            && Objects.equals(this.latestRestorableTime, that.latestRestorableTime);
+            && Objects.equals(this.latestRestorableTime, that.latestRestorableTime)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.total, that.total);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(relatedDataNodes, latestRestorableTime);
+        return Objects.hash(relatedDataNodes, latestRestorableTime, offset, limit, total);
     }
 
     @Override
@@ -98,6 +166,9 @@ public class ShowRelatedDnsResponse extends SdkResponse {
         sb.append("class ShowRelatedDnsResponse {\n");
         sb.append("    relatedDataNodes: ").append(toIndentedString(relatedDataNodes)).append("\n");
         sb.append("    latestRestorableTime: ").append(toIndentedString(latestRestorableTime)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -1578,6 +1578,11 @@ public class ElbMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListAllL7RulesRequest::getEnterpriseProjectId,
                 ListAllL7RulesRequest::setEnterpriseProjectId));
+        builder.<List<String>>withRequestField("l7policy_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAllL7RulesRequest::getL7policyId, ListAllL7RulesRequest::setL7policyId));
 
         // response
 
@@ -1828,6 +1833,21 @@ public class ElbMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDomainIPsRequest::getLoadbalancerId, ListDomainIPsRequest::setLoadbalancerId));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDomainIPsRequest::getMarker, ListDomainIPsRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDomainIPsRequest::getLimit, ListDomainIPsRequest::setLimit));
+        builder.<Boolean>withRequestField("page_reverse",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListDomainIPsRequest::getPageReverse, ListDomainIPsRequest::setPageReverse));
 
         // response
 
@@ -2934,6 +2954,12 @@ public class ElbMeta {
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListMasterSlavePoolsRequest::getConnectionDrain,
                 ListMasterSlavePoolsRequest::setConnectionDrain));
+        builder.<List<String>>withRequestField("public_border_group",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMasterSlavePoolsRequest::getPublicBorderGroup,
+                ListMasterSlavePoolsRequest::setPublicBorderGroup));
 
         // response
 

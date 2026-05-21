@@ -82,7 +82,7 @@ public class ShowLoadBalancerPortsRequest {
     }
 
     /**
-     * **参数解释**：负载均衡器占用的端口ID。  支持多值查询，查询条件格式：*port_id=xxx&port_id=xxx*。
+     * **参数解释**：负载均衡器占用的端口ID。  支持多值查询，查询条件格式：*port_id=xxx&port_id=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
      * @return portId
      */
     public List<String> getPortId() {

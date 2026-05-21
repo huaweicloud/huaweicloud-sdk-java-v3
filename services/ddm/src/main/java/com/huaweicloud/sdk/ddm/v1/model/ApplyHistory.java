@@ -32,9 +32,9 @@ public class ApplyHistory {
     private OffsetDateTime appliedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "error_code")
+    @JsonProperty(value = "error_message")
 
-    private String errorCode;
+    private String errorMessage;
 
     public ApplyHistory withTargetId(String targetId) {
         this.targetId = targetId;
@@ -104,21 +104,21 @@ public class ApplyHistory {
         this.appliedAt = appliedAt;
     }
 
-    public ApplyHistory withErrorCode(String errorCode) {
-        this.errorCode = errorCode;
+    public ApplyHistory withErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
         return this;
     }
 
     /**
-     * **参数解释**：  错误码。  **参数范围**：  不涉及。
-     * @return errorCode
+     * **参数解释**：  实例应用参数组的报错信息，若实例应用参数组成功则返回空。  **取值范围**：  不涉及。
+     * @return errorMessage
      */
-    public String getErrorCode() {
-        return errorCode;
+    public String getErrorMessage() {
+        return errorMessage;
     }
 
-    public void setErrorCode(String errorCode) {
-        this.errorCode = errorCode;
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
     }
 
     @Override
@@ -132,12 +132,12 @@ public class ApplyHistory {
         ApplyHistory that = (ApplyHistory) obj;
         return Objects.equals(this.targetId, that.targetId) && Objects.equals(this.targetName, that.targetName)
             && Objects.equals(this.applyResult, that.applyResult) && Objects.equals(this.appliedAt, that.appliedAt)
-            && Objects.equals(this.errorCode, that.errorCode);
+            && Objects.equals(this.errorMessage, that.errorMessage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(targetId, targetName, applyResult, appliedAt, errorCode);
+        return Objects.hash(targetId, targetName, applyResult, appliedAt, errorMessage);
     }
 
     @Override
@@ -148,7 +148,7 @@ public class ApplyHistory {
         sb.append("    targetName: ").append(toIndentedString(targetName)).append("\n");
         sb.append("    applyResult: ").append(toIndentedString(applyResult)).append("\n");
         sb.append("    appliedAt: ").append(toIndentedString(appliedAt)).append("\n");
-        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+        sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

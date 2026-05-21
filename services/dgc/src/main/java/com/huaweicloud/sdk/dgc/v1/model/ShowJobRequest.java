@@ -30,6 +30,11 @@ public class ShowJobRequest {
 
     private Boolean dependencies;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "getJobSubmitVersion")
+
+    private Boolean getJobSubmitVersion;
+
     public ShowJobRequest withWorkspace(String workspace) {
         this.workspace = workspace;
         return this;
@@ -70,7 +75,7 @@ public class ShowJobRequest {
     }
 
     /**
-     * 作业版本号，若传入版本号，则查询指定版本号的作业；若不传入，则查询最新的版本作业.
+     * 作业版本号，若传入版本号，则查询指定提交版本号的作业。
      * @return version
      */
     public Integer getVersion() {
@@ -98,6 +103,23 @@ public class ShowJobRequest {
         this.dependencies = dependencies;
     }
 
+    public ShowJobRequest withGetJobSubmitVersion(Boolean getJobSubmitVersion) {
+        this.getJobSubmitVersion = getJobSubmitVersion;
+        return this;
+    }
+
+    /**
+     * 该字段仅在verion未设置时生效，true：作业最新提交版本，false：开发态作业（即最新保存版本）。
+     * @return getJobSubmitVersion
+     */
+    public Boolean getGetJobSubmitVersion() {
+        return getJobSubmitVersion;
+    }
+
+    public void setGetJobSubmitVersion(Boolean getJobSubmitVersion) {
+        this.getJobSubmitVersion = getJobSubmitVersion;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +130,13 @@ public class ShowJobRequest {
         }
         ShowJobRequest that = (ShowJobRequest) obj;
         return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.jobName, that.jobName)
-            && Objects.equals(this.version, that.version) && Objects.equals(this.dependencies, that.dependencies);
+            && Objects.equals(this.version, that.version) && Objects.equals(this.dependencies, that.dependencies)
+            && Objects.equals(this.getJobSubmitVersion, that.getJobSubmitVersion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace, jobName, version, dependencies);
+        return Objects.hash(workspace, jobName, version, dependencies, getJobSubmitVersion);
     }
 
     @Override
@@ -124,6 +147,7 @@ public class ShowJobRequest {
         sb.append("    jobName: ").append(toIndentedString(jobName)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");
+        sb.append("    getJobSubmitVersion: ").append(toIndentedString(getJobSubmitVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

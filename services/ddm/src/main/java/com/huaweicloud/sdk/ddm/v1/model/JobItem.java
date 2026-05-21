@@ -54,9 +54,9 @@ public class JobItem {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "jobs")
+    @JsonProperty(value = "operations")
 
-    private List<String> jobs = null;
+    private List<String> operations = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database_name")
@@ -204,37 +204,37 @@ public class JobItem {
         this.instanceId = instanceId;
     }
 
-    public JobItem withJobs(List<String> jobs) {
-        this.jobs = jobs;
+    public JobItem withOperations(List<String> operations) {
+        this.operations = operations;
         return this;
     }
 
-    public JobItem addJobsItem(String jobsItem) {
-        if (this.jobs == null) {
-            this.jobs = new ArrayList<>();
+    public JobItem addOperationsItem(String operationsItem) {
+        if (this.operations == null) {
+            this.operations = new ArrayList<>();
         }
-        this.jobs.add(jobsItem);
+        this.operations.add(operationsItem);
         return this;
     }
 
-    public JobItem withJobs(Consumer<List<String>> jobsSetter) {
-        if (this.jobs == null) {
-            this.jobs = new ArrayList<>();
+    public JobItem withOperations(Consumer<List<String>> operationsSetter) {
+        if (this.operations == null) {
+            this.operations = new ArrayList<>();
         }
-        jobsSetter.accept(this.jobs);
+        operationsSetter.accept(this.operations);
         return this;
     }
 
     /**
      * 操作。
-     * @return jobs
+     * @return operations
      */
-    public List<String> getJobs() {
-        return jobs;
+    public List<String> getOperations() {
+        return operations;
     }
 
-    public void setJobs(List<String> jobs) {
-        this.jobs = jobs;
+    public void setOperations(List<String> operations) {
+        this.operations = operations;
     }
 
     public JobItem withDatabaseName(String databaseName) {
@@ -284,7 +284,7 @@ public class JobItem {
             && Objects.equals(this.status, that.status) && Objects.equals(this.createdTime, that.createdTime)
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.process, that.process)
             && Objects.equals(this.instanceName, that.instanceName) && Objects.equals(this.instanceId, that.instanceId)
-            && Objects.equals(this.jobs, that.jobs) && Objects.equals(this.databaseName, that.databaseName)
+            && Objects.equals(this.operations, that.operations) && Objects.equals(this.databaseName, that.databaseName)
             && Objects.equals(this.failReason, that.failReason);
     }
 
@@ -298,7 +298,7 @@ public class JobItem {
             process,
             instanceName,
             instanceId,
-            jobs,
+            operations,
             databaseName,
             failReason);
     }
@@ -315,7 +315,7 @@ public class JobItem {
         sb.append("    process: ").append(toIndentedString(process)).append("\n");
         sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    jobs: ").append(toIndentedString(jobs)).append("\n");
+        sb.append("    operations: ").append(toIndentedString(operations)).append("\n");
         sb.append("    databaseName: ").append(toIndentedString(databaseName)).append("\n");
         sb.append("    failReason: ").append(toIndentedString(failReason)).append("\n");
         sb.append("}");

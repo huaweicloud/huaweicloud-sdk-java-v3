@@ -19,6 +19,21 @@ public class ListAvailableRdsForMigrateResponse extends SdkResponse {
 
     private List<AvailableDnInstance> dataNodes = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total")
+
+    private Integer total;
+
     public ListAvailableRdsForMigrateResponse withDataNodes(List<AvailableDnInstance> dataNodes) {
         this.dataNodes = dataNodes;
         return this;
@@ -52,6 +67,57 @@ public class ListAvailableRdsForMigrateResponse extends SdkResponse {
         this.dataNodes = dataNodes;
     }
 
+    public ListAvailableRdsForMigrateResponse withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  分页参数: 起始值。  **参数范围**：   大于等于0。
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ListAvailableRdsForMigrateResponse withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  分页参数: 每页记录数。  **参数范围**：  大于0且小于等于128。
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListAvailableRdsForMigrateResponse withTotal(Integer total) {
+        this.total = total;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  总记录数。  **参数范围**：  不涉及。
+     * @return total
+     */
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +127,13 @@ public class ListAvailableRdsForMigrateResponse extends SdkResponse {
             return false;
         }
         ListAvailableRdsForMigrateResponse that = (ListAvailableRdsForMigrateResponse) obj;
-        return Objects.equals(this.dataNodes, that.dataNodes);
+        return Objects.equals(this.dataNodes, that.dataNodes) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.total, that.total);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dataNodes);
+        return Objects.hash(dataNodes, offset, limit, total);
     }
 
     @Override
@@ -74,6 +141,9 @@ public class ListAvailableRdsForMigrateResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAvailableRdsForMigrateResponse {\n");
         sb.append("    dataNodes: ").append(toIndentedString(dataNodes)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("}");
         return sb.toString();
     }

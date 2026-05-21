@@ -113,6 +113,11 @@ public class MasterSlavePool {
 
     private QuicCidHashStrategy quicCidHashStrategy;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_border_group")
+
+    private String publicBorderGroup;
+
     public MasterSlavePool withDescription(String description) {
         this.description = description;
         return this;
@@ -537,6 +542,23 @@ public class MasterSlavePool {
         this.quicCidHashStrategy = quicCidHashStrategy;
     }
 
+    public MasterSlavePool withPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+        return this;
+    }
+
+    /**
+     * **参数解释**：公网边界组。  **取值范围**： - center：表示中心站点的公网边界组 - 边缘站点名称：表示边缘站点的公网边界组  [不支持该字段，请勿使用。](tag:hws_eu,hws_eu_wb,hws_test,fcs,dt,hcso_dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,srg,g42,hk_g42)
+     * @return publicBorderGroup
+     */
+    public String getPublicBorderGroup() {
+        return publicBorderGroup;
+    }
+
+    public void setPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -559,7 +581,8 @@ public class MasterSlavePool {
             && Objects.equals(this.healthmonitor, that.healthmonitor)
             && Objects.equals(this.anyPortEnable, that.anyPortEnable)
             && Objects.equals(this.connectionDrain, that.connectionDrain)
-            && Objects.equals(this.quicCidHashStrategy, that.quicCidHashStrategy);
+            && Objects.equals(this.quicCidHashStrategy, that.quicCidHashStrategy)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
     }
 
     @Override
@@ -583,7 +606,8 @@ public class MasterSlavePool {
             healthmonitor,
             anyPortEnable,
             connectionDrain,
-            quicCidHashStrategy);
+            quicCidHashStrategy,
+            publicBorderGroup);
     }
 
     @Override
@@ -610,6 +634,7 @@ public class MasterSlavePool {
         sb.append("    anyPortEnable: ").append(toIndentedString(anyPortEnable)).append("\n");
         sb.append("    connectionDrain: ").append(toIndentedString(connectionDrain)).append("\n");
         sb.append("    quicCidHashStrategy: ").append(toIndentedString(quicCidHashStrategy)).append("\n");
+        sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

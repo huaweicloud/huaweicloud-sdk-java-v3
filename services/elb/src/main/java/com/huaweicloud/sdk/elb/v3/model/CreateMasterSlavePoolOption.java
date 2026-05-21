@@ -98,6 +98,11 @@ public class CreateMasterSlavePoolOption {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_border_group")
+
+    private String publicBorderGroup;
+
     public CreateMasterSlavePoolOption withDescription(String description) {
         this.description = description;
         return this;
@@ -442,6 +447,23 @@ public class CreateMasterSlavePoolOption {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public CreateMasterSlavePoolOption withPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+        return this;
+    }
+
+    /**
+     * **参数解释**：公网边界组。  **约束限制**：不涉及  **取值范围**： - center：表示中心站点的公网边界组 - 边缘站点名称：表示边缘站点的公网边界组  **默认取值**：不涉及
+     * @return publicBorderGroup
+     */
+    public String getPublicBorderGroup() {
+        return publicBorderGroup;
+    }
+
+    public void setPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -462,7 +484,8 @@ public class CreateMasterSlavePoolOption {
             && Objects.equals(this.anyPortEnable, that.anyPortEnable)
             && Objects.equals(this.connectionDrain, that.connectionDrain)
             && Objects.equals(this.quicCidHashStrategy, that.quicCidHashStrategy)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
     }
 
     @Override
@@ -483,7 +506,8 @@ public class CreateMasterSlavePoolOption {
             anyPortEnable,
             connectionDrain,
             quicCidHashStrategy,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            publicBorderGroup);
     }
 
     @Override
@@ -507,6 +531,7 @@ public class CreateMasterSlavePoolOption {
         sb.append("    connectionDrain: ").append(toIndentedString(connectionDrain)).append("\n");
         sb.append("    quicCidHashStrategy: ").append(toIndentedString(quicCidHashStrategy)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

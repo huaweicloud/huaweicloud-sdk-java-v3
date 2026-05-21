@@ -3696,7 +3696,7 @@ public class DdmMeta {
         HttpRequestDef.Builder<CheckDataNodeConnectionRequest, CheckDataNodeConnectionResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CheckDataNodeConnectionRequest.class, CheckDataNodeConnectionResponse.class)
             .withName("CheckDataNodeConnection")
-            .withUri("/v3/{project_id}/instance/{instance_id}/rds/connection")
+            .withUri("/v3/{project_id}/instances/{instance_id}/rds/connection")
             .withContentType("application/json;charset=UTF-8");
 
         // requests

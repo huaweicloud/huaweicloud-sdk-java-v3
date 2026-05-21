@@ -369,7 +369,7 @@ public class ListL7RulesRequest {
     }
 
     /**
-     * **参数解释**：匹配类别，可以为HOST_NAME，PATH。 支持多值查询，查询条件格式：*type=xxx&type=xxx*。  **约束限制**：不涉及  **取值范围**：不涉及  **默认取值**：不涉及
+     * **参数解释**：匹配类别。 支持多值查询，查询条件格式：*type=xxx&type=xxx*。  **约束限制**：不涉及  **取值范围**： - HOST_NAME：匹配域名。 - PATH：匹配请求路径。  **默认取值**：不涉及
      * @return type
      */
     public List<String> getType() {

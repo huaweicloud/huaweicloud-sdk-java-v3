@@ -15,9 +15,75 @@ import java.util.function.Consumer;
 public class ListTasksResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total")
+
+    private Integer total;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobs")
 
     private List<JobItem> jobs = null;
+
+    public ListTasksResponse withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 分页偏移量。
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ListTasksResponse withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 一页数量。
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListTasksResponse withTotal(Integer total) {
+        this.total = total;
+        return this;
+    }
+
+    /**
+     * 总条数。
+     * @return total
+     */
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
 
     public ListTasksResponse withJobs(List<JobItem> jobs) {
         this.jobs = jobs;
@@ -61,18 +127,22 @@ public class ListTasksResponse extends SdkResponse {
             return false;
         }
         ListTasksResponse that = (ListTasksResponse) obj;
-        return Objects.equals(this.jobs, that.jobs);
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.jobs, that.jobs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobs);
+        return Objects.hash(offset, limit, total, jobs);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTasksResponse {\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    jobs: ").append(toIndentedString(jobs)).append("\n");
         sb.append("}");
         return sb.toString();

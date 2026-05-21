@@ -259,7 +259,7 @@ public class CreateCertificateOption {
     }
 
     /**
-     * **参数解释**：证书内容。支持最大11层证书链(含证书和证书链)。  **约束限制**：不涉及  **取值范围**：PEM编码格式，最大长度65536个字符。  **默认取值**：不涉及
+     * **参数解释**：证书内容。支持最大11层证书链(含证书和证书链)。  **约束限制**：不涉及  **取值范围**：PEM编码格式，最大长度20000个字符。  **默认取值**：不涉及
      * @return certificate
      */
     public String getCertificate() {
@@ -395,7 +395,7 @@ public class CreateCertificateOption {
     }
 
     /**
-     * **参数解释**：服务器SM双证书的证书内容。支持最大11层证书链(含证书和证书链)。  **约束限制**：仅当type为server_sm时，才支持且必须传入。  **取值范围**：PEM编码格式。最大长度65536字符。  **默认取值**：不涉及
+     * **参数解释**：服务器SM双证书的证书内容。支持最大11层证书链(含证书和证书链)。  **约束限制**：仅当type为server_sm时，才支持且必须传入。  **取值范围**：PEM编码格式。最大长度20000字符。  **默认取值**：不涉及
      * @return encCertificate
      */
     public String getEncCertificate() {

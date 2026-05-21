@@ -15,6 +15,11 @@ import java.util.function.Consumer;
 public class BatchDeleteLoadbalancersResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
     private String jobId;
@@ -23,6 +28,23 @@ public class BatchDeleteLoadbalancersResponse extends SdkResponse {
     @JsonProperty(value = "loadbalancer_ids")
 
     private List<String> loadbalancerIds = null;
+
+    public BatchDeleteLoadbalancersResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    /**
+     * **参数解释**：请求ID。  **取值范围**：由数字、小写字母和中划线（-）组成的字符串，自动生成。
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
     public BatchDeleteLoadbalancersResponse withJobId(String jobId) {
         this.jobId = jobId;
@@ -83,18 +105,20 @@ public class BatchDeleteLoadbalancersResponse extends SdkResponse {
             return false;
         }
         BatchDeleteLoadbalancersResponse that = (BatchDeleteLoadbalancersResponse) obj;
-        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.loadbalancerIds, that.loadbalancerIds);
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.loadbalancerIds, that.loadbalancerIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, loadbalancerIds);
+        return Objects.hash(requestId, jobId, loadbalancerIds);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchDeleteLoadbalancersResponse {\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    loadbalancerIds: ").append(toIndentedString(loadbalancerIds)).append("\n");
         sb.append("}");

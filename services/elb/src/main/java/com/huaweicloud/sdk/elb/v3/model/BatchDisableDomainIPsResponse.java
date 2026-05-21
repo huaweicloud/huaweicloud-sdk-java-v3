@@ -17,14 +17,19 @@ public class BatchDisableDomainIPsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ips")
 
-    private List<ListDnsIpResponseBody> ips = null;
+    private List<DnsIpResponse> ips = null;
 
-    public BatchDisableDomainIPsResponse withIps(List<ListDnsIpResponseBody> ips) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
+    public BatchDisableDomainIPsResponse withIps(List<DnsIpResponse> ips) {
         this.ips = ips;
         return this;
     }
 
-    public BatchDisableDomainIPsResponse addIpsItem(ListDnsIpResponseBody ipsItem) {
+    public BatchDisableDomainIPsResponse addIpsItem(DnsIpResponse ipsItem) {
         if (this.ips == null) {
             this.ips = new ArrayList<>();
         }
@@ -32,7 +37,7 @@ public class BatchDisableDomainIPsResponse extends SdkResponse {
         return this;
     }
 
-    public BatchDisableDomainIPsResponse withIps(Consumer<List<ListDnsIpResponseBody>> ipsSetter) {
+    public BatchDisableDomainIPsResponse withIps(Consumer<List<DnsIpResponse>> ipsSetter) {
         if (this.ips == null) {
             this.ips = new ArrayList<>();
         }
@@ -41,15 +46,32 @@ public class BatchDisableDomainIPsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：返回的负载均衡器的dns ip信息。  **约束限制**：如果负载均衡器的公网域名和私网域名开关都没有打开，则列表为空。  **取值范围**：不涉及  **默认取值**：不涉及
+     * **参数解释**：负载均衡器域名解析的IP地址列表。  **约束限制**：如果负载均衡器的公网域名和私网域名域名解析开关都没有打开，则为空列表。  **取值范围**：不涉及  **默认取值**：不涉及
      * @return ips
      */
-    public List<ListDnsIpResponseBody> getIps() {
+    public List<DnsIpResponse> getIps() {
         return ips;
     }
 
-    public void setIps(List<ListDnsIpResponseBody> ips) {
+    public void setIps(List<DnsIpResponse> ips) {
         this.ips = ips;
+    }
+
+    public BatchDisableDomainIPsResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    /**
+     * **参数解释**：请求ID。  **取值范围**：由数字、小写字母和中划线（-）组成的字符串，自动生成。
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
     }
 
     @Override
@@ -61,12 +83,12 @@ public class BatchDisableDomainIPsResponse extends SdkResponse {
             return false;
         }
         BatchDisableDomainIPsResponse that = (BatchDisableDomainIPsResponse) obj;
-        return Objects.equals(this.ips, that.ips);
+        return Objects.equals(this.ips, that.ips) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ips);
+        return Objects.hash(ips, requestId);
     }
 
     @Override
@@ -74,6 +96,7 @@ public class BatchDisableDomainIPsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchDisableDomainIPsResponse {\n");
         sb.append("    ips: ").append(toIndentedString(ips)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

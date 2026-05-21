@@ -104,6 +104,11 @@ public class CreateGroupRequestBody {
     private String flavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flavor_ref")
+
+    private String flavorRef;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodes")
 
     private List<NodeInfo> nodes = null;
@@ -148,7 +153,7 @@ public class CreateGroupRequestBody {
     }
 
     /**
-     * 节点规格ID。
+     * 节点规格ID（规格ID和规格码必须传一个）。
      * @return flavorId
      */
     public String getFlavorId() {
@@ -157,6 +162,23 @@ public class CreateGroupRequestBody {
 
     public void setFlavorId(String flavorId) {
         this.flavorId = flavorId;
+    }
+
+    public CreateGroupRequestBody withFlavorRef(String flavorRef) {
+        this.flavorRef = flavorRef;
+        return this;
+    }
+
+    /**
+     * 节点规格码（规格ID和规格码必须传一个）。
+     * @return flavorRef
+     */
+    public String getFlavorRef() {
+        return flavorRef;
+    }
+
+    public void setFlavorRef(String flavorRef) {
+        this.flavorRef = flavorRef;
     }
 
     public CreateGroupRequestBody withNodes(List<NodeInfo> nodes) {
@@ -202,12 +224,13 @@ public class CreateGroupRequestBody {
         }
         CreateGroupRequestBody that = (CreateGroupRequestBody) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.flavorId, that.flavorId) && Objects.equals(this.nodes, that.nodes);
+            && Objects.equals(this.flavorId, that.flavorId) && Objects.equals(this.flavorRef, that.flavorRef)
+            && Objects.equals(this.nodes, that.nodes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, flavorId, nodes);
+        return Objects.hash(name, type, flavorId, flavorRef, nodes);
     }
 
     @Override
@@ -217,6 +240,7 @@ public class CreateGroupRequestBody {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    flavorId: ").append(toIndentedString(flavorId)).append("\n");
+        sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
         sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
         sb.append("}");
         return sb.toString();

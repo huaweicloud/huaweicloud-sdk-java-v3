@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * **参数解释**：配置负载均衡器用户自定义域名化相关配置参数。
+ * **参数解释**：自定义负载均衡器域名解析的请求参数。
  */
 public class UpdateUserDefinedDomainConfigRequestBody {
 
