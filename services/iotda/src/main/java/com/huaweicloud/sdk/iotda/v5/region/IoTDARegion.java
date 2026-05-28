@@ -41,6 +41,8 @@ public class IoTDARegion {
 
     public static final Region LA_NORTH_2 = new Region("la-north-2", "https://iotda.la-north-2.myhuaweicloud.com");
 
+    public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://iotda.ru-moscow-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("IOTDA");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -59,6 +61,7 @@ public class IoTDARegion {
         map.put("la-south-2", LA_SOUTH_2);
         map.put("sa-brazil-1", SA_BRAZIL_1);
         map.put("la-north-2", LA_NORTH_2);
+        map.put("ru-moscow-1", RU_MOSCOW_1);
         return Collections.unmodifiableMap(map);
     }
 

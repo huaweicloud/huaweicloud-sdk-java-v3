@@ -5,11 +5,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class BatchBackupInstancesResponse extends SdkResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data")
+
+    private TaskDataResult data;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
@@ -20,6 +26,32 @@ public class BatchBackupInstancesResponse extends SdkResponse {
     @JsonProperty(value = "error_msg")
 
     private String errorMsg;
+
+    public BatchBackupInstancesResponse withData(TaskDataResult data) {
+        this.data = data;
+        return this;
+    }
+
+    public BatchBackupInstancesResponse withData(Consumer<TaskDataResult> dataSetter) {
+        if (this.data == null) {
+            this.data = new TaskDataResult();
+            dataSetter.accept(this.data);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get data
+     * @return data
+     */
+    public TaskDataResult getData() {
+        return data;
+    }
+
+    public void setData(TaskDataResult data) {
+        this.data = data;
+    }
 
     public BatchBackupInstancesResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -64,18 +96,20 @@ public class BatchBackupInstancesResponse extends SdkResponse {
             return false;
         }
         BatchBackupInstancesResponse that = (BatchBackupInstancesResponse) obj;
-        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
+        return Objects.equals(this.data, that.data) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(errorCode, errorMsg);
+        return Objects.hash(data, errorCode, errorMsg);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchBackupInstancesResponse {\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
         sb.append("}");

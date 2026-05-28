@@ -30,6 +30,11 @@ public class ListTasksRequest {
 
     private Integer status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_name")
+
+    private String taskName;
+
     public ListTasksRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
@@ -104,6 +109,23 @@ public class ListTasksRequest {
         this.status = status;
     }
 
+    public ListTasksRequest withTaskName(String taskName) {
+        this.taskName = taskName;
+        return this;
+    }
+
+    /**
+     * 任务名称，支持模糊查询。 1.长度限制0~255 2.不支持特殊字符
+     * @return taskName
+     */
+    public String getTaskName() {
+        return taskName;
+    }
+
+    public void setTaskName(String taskName) {
+        this.taskName = taskName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -114,12 +136,13 @@ public class ListTasksRequest {
         }
         ListTasksRequest that = (ListTasksRequest) obj;
         return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.status, that.status);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.taskName, that.taskName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groupId, limit, offset, status);
+        return Objects.hash(groupId, limit, offset, status, taskName);
     }
 
     @Override
@@ -130,6 +153,7 @@ public class ListTasksRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    taskName: ").append(toIndentedString(taskName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

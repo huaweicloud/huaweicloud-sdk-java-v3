@@ -523,6 +523,11 @@ public class TaskGroupResp {
     private ConsistencyCheckEnum consistencyCheck;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "obs_system")
+
+    private String obsSystem;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_requester_pays")
 
     private Boolean enableRequesterPays;
@@ -1249,6 +1254,23 @@ public class TaskGroupResp {
         this.consistencyCheck = consistencyCheck;
     }
 
+    public TaskGroupResp withObsSystem(String obsSystem) {
+        this.obsSystem = obsSystem;
+        return this;
+    }
+
+    /**
+     * OBS系统类型 BUCKET：一般桶 PFS：并行文件系统
+     * @return obsSystem
+     */
+    public String getObsSystem() {
+        return obsSystem;
+    }
+
+    public void setObsSystem(String obsSystem) {
+        this.obsSystem = obsSystem;
+    }
+
     public TaskGroupResp withEnableRequesterPays(Boolean enableRequesterPays) {
         this.enableRequesterPays = enableRequesterPays;
         return this;
@@ -1301,6 +1323,7 @@ public class TaskGroupResp {
             && Objects.equals(this.objectOverwriteMode, that.objectOverwriteMode)
             && Objects.equals(this.dstStoragePolicy, that.dstStoragePolicy)
             && Objects.equals(this.consistencyCheck, that.consistencyCheck)
+            && Objects.equals(this.obsSystem, that.obsSystem)
             && Objects.equals(this.enableRequesterPays, that.enableRequesterPays);
     }
 
@@ -1342,6 +1365,7 @@ public class TaskGroupResp {
             objectOverwriteMode,
             dstStoragePolicy,
             consistencyCheck,
+            obsSystem,
             enableRequesterPays);
     }
 
@@ -1387,6 +1411,7 @@ public class TaskGroupResp {
         sb.append("    objectOverwriteMode: ").append(toIndentedString(objectOverwriteMode)).append("\n");
         sb.append("    dstStoragePolicy: ").append(toIndentedString(dstStoragePolicy)).append("\n");
         sb.append("    consistencyCheck: ").append(toIndentedString(consistencyCheck)).append("\n");
+        sb.append("    obsSystem: ").append(toIndentedString(obsSystem)).append("\n");
         sb.append("    enableRequesterPays: ").append(toIndentedString(enableRequesterPays)).append("\n");
         sb.append("}");
         return sb.toString();

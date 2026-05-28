@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.oms.v2.model.BatchUpdateTasksRequest;
 import com.huaweicloud.sdk.oms.v2.model.BatchUpdateTasksResponse;
 import com.huaweicloud.sdk.oms.v2.model.CheckPrefixRequest;
 import com.huaweicloud.sdk.oms.v2.model.CheckPrefixResponse;
+import com.huaweicloud.sdk.oms.v2.model.CheckUrlSourceListFileFormatRequest;
+import com.huaweicloud.sdk.oms.v2.model.CheckUrlSourceListFileFormatResponse;
 import com.huaweicloud.sdk.oms.v2.model.CreateSyncEventsRequest;
 import com.huaweicloud.sdk.oms.v2.model.CreateSyncEventsResponse;
 import com.huaweicloud.sdk.oms.v2.model.CreateSyncTaskRequest;
@@ -142,6 +144,36 @@ public class OmsAsyncClient {
      */
     public AsyncInvoker<CheckPrefixRequest, CheckPrefixResponse> checkPrefixAsyncInvoker(CheckPrefixRequest request) {
         return new AsyncInvoker<>(request, OmsMeta.checkPrefix, hcClient);
+    }
+
+    /**
+     * 检查url来源列表文件格式
+     *
+     * 检查url来源列表文件格式是否有效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckUrlSourceListFileFormatRequest 请求对象
+     * @return CompletableFuture<CheckUrlSourceListFileFormatResponse>
+     */
+    public CompletableFuture<CheckUrlSourceListFileFormatResponse> checkUrlSourceListFileFormatAsync(
+        CheckUrlSourceListFileFormatRequest request) {
+        return hcClient.asyncInvokeHttp(request, OmsMeta.checkUrlSourceListFileFormat);
+    }
+
+    /**
+     * 检查url来源列表文件格式
+     *
+     * 检查url来源列表文件格式是否有效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckUrlSourceListFileFormatRequest 请求对象
+     * @return AsyncInvoker<CheckUrlSourceListFileFormatRequest, CheckUrlSourceListFileFormatResponse>
+     */
+    public AsyncInvoker<CheckUrlSourceListFileFormatRequest, CheckUrlSourceListFileFormatResponse> checkUrlSourceListFileFormatAsyncInvoker(
+        CheckUrlSourceListFileFormatRequest request) {
+        return new AsyncInvoker<>(request, OmsMeta.checkUrlSourceListFileFormat, hcClient);
     }
 
     /**
@@ -758,7 +790,7 @@ public class OmsAsyncClient {
     /**
      * 启动同步任务
      *
-     * 同步任务停止后，调用该接口以启动同步任务(目前只支持华北-北京四、华东-上海一地区)。
+     * 同步任务停止后，调用该接口以启动同步任务(目前只支持华北-北京四、华东-上海一和西南-贵阳一地区)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -772,7 +804,7 @@ public class OmsAsyncClient {
     /**
      * 启动同步任务
      *
-     * 同步任务停止后，调用该接口以启动同步任务(目前只支持华北-北京四、华东-上海一地区)。
+     * 同步任务停止后，调用该接口以启动同步任务(目前只支持华北-北京四、华东-上海一和西南-贵阳一地区)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -844,7 +876,7 @@ public class OmsAsyncClient {
     /**
      * 暂停同步任务
      *
-     * 当同步任务处于同步中时，调用该接口停止任务(目前只支持华北-北京四、华东-上海一地区)。
+     * 当同步任务处于同步中时，调用该接口停止任务(目前只支持华北-北京四、华东-上海一和西南-贵阳一地区)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -858,7 +890,7 @@ public class OmsAsyncClient {
     /**
      * 暂停同步任务
      *
-     * 当同步任务处于同步中时，调用该接口停止任务(目前只支持华北-北京四、华东-上海一地区)。
+     * 当同步任务处于同步中时，调用该接口停止任务(目前只支持华北-北京四、华东-上海一和西南-贵阳一地区)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

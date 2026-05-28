@@ -30,6 +30,11 @@ public class RmAuthTokenRespDataResourceSdkExternal {
 
     private String addressIpv6;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "address_adn")
+
+    private String addressAdn;
+
     public RmAuthTokenRespDataResourceSdkExternal withAddress(String address) {
         this.address = address;
         return this;
@@ -98,6 +103,23 @@ public class RmAuthTokenRespDataResourceSdkExternal {
         this.addressIpv6 = addressIpv6;
     }
 
+    public RmAuthTokenRespDataResourceSdkExternal withAddressAdn(String addressAdn) {
+        this.addressAdn = addressAdn;
+        return this;
+    }
+
+    /**
+     * adn地址
+     * @return addressAdn
+     */
+    public String getAddressAdn() {
+        return addressAdn;
+    }
+
+    public void setAddressAdn(String addressAdn) {
+        this.addressAdn = addressAdn;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +130,13 @@ public class RmAuthTokenRespDataResourceSdkExternal {
         }
         RmAuthTokenRespDataResourceSdkExternal that = (RmAuthTokenRespDataResourceSdkExternal) obj;
         return Objects.equals(this.address, that.address) && Objects.equals(this.aport, that.aport)
-            && Objects.equals(this.atype, that.atype) && Objects.equals(this.addressIpv6, that.addressIpv6);
+            && Objects.equals(this.atype, that.atype) && Objects.equals(this.addressIpv6, that.addressIpv6)
+            && Objects.equals(this.addressAdn, that.addressAdn);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(address, aport, atype, addressIpv6);
+        return Objects.hash(address, aport, atype, addressIpv6, addressAdn);
     }
 
     @Override
@@ -124,6 +147,7 @@ public class RmAuthTokenRespDataResourceSdkExternal {
         sb.append("    aport: ").append(toIndentedString(aport)).append("\n");
         sb.append("    atype: ").append(toIndentedString(atype)).append("\n");
         sb.append("    addressIpv6: ").append(toIndentedString(addressIpv6)).append("\n");
+        sb.append("    addressAdn: ").append(toIndentedString(addressAdn)).append("\n");
         sb.append("}");
         return sb.toString();
     }

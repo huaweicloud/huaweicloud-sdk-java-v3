@@ -2869,6 +2869,12 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListClusterScaleInNumbersRequest::getClusterId,
                 ListClusterScaleInNumbersRequest::setClusterId));
+        builder.<String>withRequestField("logical_cluster_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterScaleInNumbersRequest::getLogicalClusterName,
+                ListClusterScaleInNumbersRequest::setLogicalClusterName));
 
         // response
 

@@ -16,49 +16,67 @@ public class RestoreInst2ExistReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source")
 
-    private Object source;
+    private RestoreInstSource source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target")
 
-    private Object target;
+    private RestoreInstTarget target;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_node_relations")
 
     private List<DataNodeRelation> dataNodeRelations = null;
 
-    public RestoreInst2ExistReq withSource(Object source) {
+    public RestoreInst2ExistReq withSource(RestoreInstSource source) {
         this.source = source;
         return this;
     }
 
+    public RestoreInst2ExistReq withSource(Consumer<RestoreInstSource> sourceSetter) {
+        if (this.source == null) {
+            this.source = new RestoreInstSource();
+            sourceSetter.accept(this.source);
+        }
+
+        return this;
+    }
+
     /**
-     * 数据恢复源。
+     * Get source
      * @return source
      */
-    public Object getSource() {
+    public RestoreInstSource getSource() {
         return source;
     }
 
-    public void setSource(Object source) {
+    public void setSource(RestoreInstSource source) {
         this.source = source;
     }
 
-    public RestoreInst2ExistReq withTarget(Object target) {
+    public RestoreInst2ExistReq withTarget(RestoreInstTarget target) {
         this.target = target;
         return this;
     }
 
+    public RestoreInst2ExistReq withTarget(Consumer<RestoreInstTarget> targetSetter) {
+        if (this.target == null) {
+            this.target = new RestoreInstTarget();
+            targetSetter.accept(this.target);
+        }
+
+        return this;
+    }
+
     /**
-     * 数据恢复目标。
+     * Get target
      * @return target
      */
-    public Object getTarget() {
+    public RestoreInstTarget getTarget() {
         return target;
     }
 
-    public void setTarget(Object target) {
+    public void setTarget(RestoreInstTarget target) {
         this.target = target;
     }
 

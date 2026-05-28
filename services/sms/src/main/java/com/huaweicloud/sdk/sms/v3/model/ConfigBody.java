@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ConfigBody {
 
     /**
-     * 配置类型 MIGRATE_EXCLUDE_DIR: 迁移时设定的不迁移目录 SYNC_EXCLUDE_DIR: 同步时设定的不同步目录 ONLY_SYNC_DIR: 同步时设定的同步目录 CONSISTENCY_DIR: 一致性校验的目录 CONSISTENCY_DIR_ILLEGAL: 一致性校验后非法目录 LINUX_BLOCK_COMPRESS_THREAD_NUM: linux块迁移压缩线程个数 MIGRATE_DST_IP: 迁移目的ip LINUX_BLOCK_CACHE_SIZE: linux块迁移缓存大小 LINUX_CPU_LIMIT: linux的cpu限制 LINUX_MEM_LIMIT: linux的内存限制 LINUX_IO_LIMIT: linux的IO限制 NUM_PROCESS_MIGRATE: 迁移进程数 NUM_PROCESS_SYNC: 同步进程数 CONSISTENCY_RECHECK: 一致性校验再检 CONSISTENCY_MODE: 一致性校验模式 DYNAMIC_PORT: 动态端口
+     * 配置类型 MIGRATE_EXCLUDE_DIR: 迁移时设定的不迁移目录 SYNC_EXCLUDE_DIR: 同步时设定的不同步目录 ONLY_SYNC_DIR: 同步时设定的同步目录 CONSISTENCY_DIR: 一致性校验的目录 CONSISTENCY_DIR_ILLEGAL: 一致性校验后非法目录 LINUX_BLOCK_COMPRESS_THREAD_NUM: linux块迁移压缩线程个数 MIGRATE_DST_IP: 迁移目的ip LINUX_BLOCK_CACHE_SIZE: linux块迁移缓存大小 LINUX_CPU_LIMIT: linux的cpu限制 LINUX_MEM_LIMIT: linux的内存限制 LINUX_IO_LIMIT: linux的IO限制 NUM_PROCESS_MIGRATE: 迁移进程数 NUM_PROCESS_SYNC: 同步进程数 CONSISTENCY_RECHECK: 一致性校验再检 CONSISTENCY_MODE: 一致性校验模式 DYNAMIC_PORT: 动态端口 INSTALL_PWD_AGENT: 是否安装密码重置插件，取值\"true\"表示安装，默认为\"true\"
      */
     public static final class ConfigKeyEnum {
 
@@ -191,7 +191,7 @@ public class ConfigBody {
     }
 
     /**
-     * 配置类型 MIGRATE_EXCLUDE_DIR: 迁移时设定的不迁移目录 SYNC_EXCLUDE_DIR: 同步时设定的不同步目录 ONLY_SYNC_DIR: 同步时设定的同步目录 CONSISTENCY_DIR: 一致性校验的目录 CONSISTENCY_DIR_ILLEGAL: 一致性校验后非法目录 LINUX_BLOCK_COMPRESS_THREAD_NUM: linux块迁移压缩线程个数 MIGRATE_DST_IP: 迁移目的ip LINUX_BLOCK_CACHE_SIZE: linux块迁移缓存大小 LINUX_CPU_LIMIT: linux的cpu限制 LINUX_MEM_LIMIT: linux的内存限制 LINUX_IO_LIMIT: linux的IO限制 NUM_PROCESS_MIGRATE: 迁移进程数 NUM_PROCESS_SYNC: 同步进程数 CONSISTENCY_RECHECK: 一致性校验再检 CONSISTENCY_MODE: 一致性校验模式 DYNAMIC_PORT: 动态端口
+     * 配置类型 MIGRATE_EXCLUDE_DIR: 迁移时设定的不迁移目录 SYNC_EXCLUDE_DIR: 同步时设定的不同步目录 ONLY_SYNC_DIR: 同步时设定的同步目录 CONSISTENCY_DIR: 一致性校验的目录 CONSISTENCY_DIR_ILLEGAL: 一致性校验后非法目录 LINUX_BLOCK_COMPRESS_THREAD_NUM: linux块迁移压缩线程个数 MIGRATE_DST_IP: 迁移目的ip LINUX_BLOCK_CACHE_SIZE: linux块迁移缓存大小 LINUX_CPU_LIMIT: linux的cpu限制 LINUX_MEM_LIMIT: linux的内存限制 LINUX_IO_LIMIT: linux的IO限制 NUM_PROCESS_MIGRATE: 迁移进程数 NUM_PROCESS_SYNC: 同步进程数 CONSISTENCY_RECHECK: 一致性校验再检 CONSISTENCY_MODE: 一致性校验模式 DYNAMIC_PORT: 动态端口 INSTALL_PWD_AGENT: 是否安装密码重置插件，取值\"true\"表示安装，默认为\"true\"
      * @return configKey
      */
     public ConfigKeyEnum getConfigKey() {

@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.sms.v3.model;
+package com.huaweicloud.sdk.ddm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,30 +6,30 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Request Object
+ * RestoreInstTarget
  */
-public class UnlockTargetEcsRequest {
+public class RestoreInstTarget {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_id")
+    @JsonProperty(value = "instance_id")
 
-    private String taskId;
+    private String instanceId;
 
-    public UnlockTargetEcsRequest withTaskId(String taskId) {
-        this.taskId = taskId;
+    public RestoreInstTarget withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
         return this;
     }
 
     /**
-     * 指定任务的ID
-     * @return taskId
+     * 实例id。
+     * @return instanceId
      */
-    public String getTaskId() {
-        return taskId;
+    public String getInstanceId() {
+        return instanceId;
     }
 
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
     }
 
     @Override
@@ -40,20 +40,20 @@ public class UnlockTargetEcsRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UnlockTargetEcsRequest that = (UnlockTargetEcsRequest) obj;
-        return Objects.equals(this.taskId, that.taskId);
+        RestoreInstTarget that = (RestoreInstTarget) obj;
+        return Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskId);
+        return Objects.hash(instanceId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class UnlockTargetEcsRequest {\n");
-        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+        sb.append("class RestoreInstTarget {\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

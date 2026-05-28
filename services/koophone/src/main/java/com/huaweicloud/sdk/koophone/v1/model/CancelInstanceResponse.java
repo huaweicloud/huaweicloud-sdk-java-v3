@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -21,13 +22,18 @@ public class CancelInstanceResponse extends SdkResponse {
 
     private String errorMsg;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data")
+
+    private TaskDataResult data;
+
     public CancelInstanceResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
     /**
-     * 响应码，KOOPHONE.API.0001，数字递增
+     * 错误码
      * @return errorCode
      */
     public String getErrorCode() {
@@ -44,7 +50,7 @@ public class CancelInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 响应描述
+     * 错误信息
      * @return errorMsg
      */
     public String getErrorMsg() {
@@ -53,6 +59,32 @@ public class CancelInstanceResponse extends SdkResponse {
 
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
+    }
+
+    public CancelInstanceResponse withData(TaskDataResult data) {
+        this.data = data;
+        return this;
+    }
+
+    public CancelInstanceResponse withData(Consumer<TaskDataResult> dataSetter) {
+        if (this.data == null) {
+            this.data = new TaskDataResult();
+            dataSetter.accept(this.data);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get data
+     * @return data
+     */
+    public TaskDataResult getData() {
+        return data;
+    }
+
+    public void setData(TaskDataResult data) {
+        this.data = data;
     }
 
     @Override
@@ -64,12 +96,13 @@ public class CancelInstanceResponse extends SdkResponse {
             return false;
         }
         CancelInstanceResponse that = (CancelInstanceResponse) obj;
-        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(errorCode, errorMsg);
+        return Objects.hash(errorCode, errorMsg, data);
     }
 
     @Override
@@ -78,6 +111,7 @@ public class CancelInstanceResponse extends SdkResponse {
         sb.append("class CancelInstanceResponse {\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }

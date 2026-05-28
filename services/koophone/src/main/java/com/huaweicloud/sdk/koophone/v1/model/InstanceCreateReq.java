@@ -22,21 +22,21 @@ public class InstanceCreateReq {
     public static final class OsEnum {
 
         /**
-         * Enum AOSP9 for value: "AOSP9"
-         */
-        public static final OsEnum AOSP9 = new OsEnum("AOSP9");
-
-        /**
          * Enum AOSP11 for value: "AOSP11"
          */
         public static final OsEnum AOSP11 = new OsEnum("AOSP11");
+
+        /**
+         * Enum AOSP14 for value: "AOSP14"
+         */
+        public static final OsEnum AOSP14 = new OsEnum("AOSP14");
 
         private static final Map<String, OsEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, OsEnum> createStaticFields() {
             Map<String, OsEnum> map = new HashMap<>();
-            map.put("AOSP9", AOSP9);
             map.put("AOSP11", AOSP11);
+            map.put("AOSP14", AOSP14);
             return Collections.unmodifiableMap(map);
         }
 

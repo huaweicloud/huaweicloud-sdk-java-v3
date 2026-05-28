@@ -1,36 +1,38 @@
-package com.huaweicloud.sdk.sms.v3.model;
+package com.huaweicloud.sdk.ddm.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
- * Response Object
+ * RestoreInstSource
  */
-public class CheckNetAclResponse extends SdkResponse {
+public class RestoreInstSource {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "restore_time")
 
-    private String body;
+    private BigDecimal restoreTime;
 
-    public CheckNetAclResponse withBody(String body) {
-        this.body = body;
+    public RestoreInstSource withRestoreTime(BigDecimal restoreTime) {
+        this.restoreTime = restoreTime;
         return this;
     }
 
     /**
-     * 检查网卡安全组端口是否符合要求成功
-     * @return body
+     * 恢复时间。
+     * minimum: 1
+     * maximum: 9223372036854775807
+     * @return restoreTime
      */
-    public String getBody() {
-        return body;
+    public BigDecimal getRestoreTime() {
+        return restoreTime;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setRestoreTime(BigDecimal restoreTime) {
+        this.restoreTime = restoreTime;
     }
 
     @Override
@@ -41,20 +43,20 @@ public class CheckNetAclResponse extends SdkResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckNetAclResponse that = (CheckNetAclResponse) obj;
-        return Objects.equals(this.body, that.body);
+        RestoreInstSource that = (RestoreInstSource) obj;
+        return Objects.equals(this.restoreTime, that.restoreTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(restoreTime);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CheckNetAclResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("class RestoreInstSource {\n");
+        sb.append("    restoreTime: ").append(toIndentedString(restoreTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

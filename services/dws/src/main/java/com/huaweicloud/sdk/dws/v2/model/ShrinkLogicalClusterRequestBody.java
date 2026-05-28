@@ -28,6 +28,11 @@ public class ShrinkLogicalClusterRequestBody {
 
     private String mode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "shrink_node_num")
+
+    private Integer shrinkNodeNum;
+
     public ShrinkLogicalClusterRequestBody withClusterRings(List<ClusterRing> clusterRings) {
         this.clusterRings = clusterRings;
         return this;
@@ -50,7 +55,7 @@ public class ShrinkLogicalClusterRequestBody {
     }
 
     /**
-     * **参数解释**： 缩容主机环信息。  **约束限制**：  不涉及。 **取值范围**：  不涉及。 **默认取值**：  不涉及。
+     * **参数解释**： 缩容主机环信息。  **约束限制**：  与shrink_node_num缩容节点个数两个参数任选其一，两者都存在，优先取cluster_rings缩容主机环信息参数。 **取值范围**：  不涉及。 **默认取值**：  不涉及。
      * @return clusterRings
      */
     public List<ClusterRing> getClusterRings() {
@@ -95,6 +100,23 @@ public class ShrinkLogicalClusterRequestBody {
         this.mode = mode;
     }
 
+    public ShrinkLogicalClusterRequestBody withShrinkNodeNum(Integer shrinkNodeNum) {
+        this.shrinkNodeNum = shrinkNodeNum;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 缩容节点个数。 **约束限制**：  与cluster_rings缩容主机环信息两个参数任选其一，两者都存在，优先取cluster_rings缩容主机环信息参数。 **取值范围**：  不涉及。 **默认取值**：  不涉及。
+     * @return shrinkNodeNum
+     */
+    public Integer getShrinkNodeNum() {
+        return shrinkNodeNum;
+    }
+
+    public void setShrinkNodeNum(Integer shrinkNodeNum) {
+        this.shrinkNodeNum = shrinkNodeNum;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -105,12 +127,13 @@ public class ShrinkLogicalClusterRequestBody {
         }
         ShrinkLogicalClusterRequestBody that = (ShrinkLogicalClusterRequestBody) obj;
         return Objects.equals(this.clusterRings, that.clusterRings)
-            && Objects.equals(this.parallelJobs, that.parallelJobs) && Objects.equals(this.mode, that.mode);
+            && Objects.equals(this.parallelJobs, that.parallelJobs) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.shrinkNodeNum, that.shrinkNodeNum);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterRings, parallelJobs, mode);
+        return Objects.hash(clusterRings, parallelJobs, mode, shrinkNodeNum);
     }
 
     @Override
@@ -120,6 +143,7 @@ public class ShrinkLogicalClusterRequestBody {
         sb.append("    clusterRings: ").append(toIndentedString(clusterRings)).append("\n");
         sb.append("    parallelJobs: ").append(toIndentedString(parallelJobs)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    shrinkNodeNum: ").append(toIndentedString(shrinkNodeNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

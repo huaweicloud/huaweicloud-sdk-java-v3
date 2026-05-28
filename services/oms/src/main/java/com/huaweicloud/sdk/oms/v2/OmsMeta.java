@@ -11,6 +11,9 @@ import com.huaweicloud.sdk.oms.v2.model.BatchUpdateTasksResponse;
 import com.huaweicloud.sdk.oms.v2.model.CheckPrefixReq;
 import com.huaweicloud.sdk.oms.v2.model.CheckPrefixRequest;
 import com.huaweicloud.sdk.oms.v2.model.CheckPrefixResponse;
+import com.huaweicloud.sdk.oms.v2.model.CheckUrlSourceListFileFormatReq;
+import com.huaweicloud.sdk.oms.v2.model.CheckUrlSourceListFileFormatRequest;
+import com.huaweicloud.sdk.oms.v2.model.CheckUrlSourceListFileFormatResponse;
 import com.huaweicloud.sdk.oms.v2.model.CreateSyncEventsRequest;
 import com.huaweicloud.sdk.oms.v2.model.CreateSyncEventsResponse;
 import com.huaweicloud.sdk.oms.v2.model.CreateSyncTaskReq;
@@ -134,6 +137,33 @@ public class OmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CheckPrefixReq.class),
             f -> f.withMarshaller(CheckPrefixRequest::getBody, CheckPrefixRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckUrlSourceListFileFormatRequest, CheckUrlSourceListFileFormatResponse> checkUrlSourceListFileFormat =
+        genForCheckUrlSourceListFileFormat();
+
+    private static HttpRequestDef<CheckUrlSourceListFileFormatRequest, CheckUrlSourceListFileFormatResponse> genForCheckUrlSourceListFileFormat() {
+        // basic
+        HttpRequestDef.Builder<CheckUrlSourceListFileFormatRequest, CheckUrlSourceListFileFormatResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CheckUrlSourceListFileFormatRequest.class,
+                    CheckUrlSourceListFileFormatResponse.class)
+                .withName("CheckUrlSourceListFileFormat")
+                .withUri("/v2/{project_id}/objectstorage/buckets/url-source-list-file")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CheckUrlSourceListFileFormatReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CheckUrlSourceListFileFormatReq.class),
+            f -> f.withMarshaller(CheckUrlSourceListFileFormatRequest::getBody,
+                CheckUrlSourceListFileFormatRequest::setBody));
 
         // response
 
@@ -442,6 +472,11 @@ public class OmsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTasksRequest::getStatus, ListTasksRequest::setStatus));
+        builder.<String>withRequestField("task_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTasksRequest::getTaskName, ListTasksRequest::setTaskName));
 
         // response
 

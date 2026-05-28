@@ -1,35 +1,44 @@
-package com.huaweicloud.sdk.sms.v3.model;
+package com.huaweicloud.sdk.oms.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
- * Response Object
+ * Request Object
  */
-public class UnlockTargetEcsResponse extends SdkResponse {
+public class CheckUrlSourceListFileFormatRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private String body;
+    private CheckUrlSourceListFileFormatReq body;
 
-    public UnlockTargetEcsResponse withBody(String body) {
+    public CheckUrlSourceListFileFormatRequest withBody(CheckUrlSourceListFileFormatReq body) {
         this.body = body;
         return this;
     }
 
+    public CheckUrlSourceListFileFormatRequest withBody(Consumer<CheckUrlSourceListFileFormatReq> bodySetter) {
+        if (this.body == null) {
+            this.body = new CheckUrlSourceListFileFormatReq();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
     /**
-     * 解锁指定任务的目的端服务器成功
+     * Get body
      * @return body
      */
-    public String getBody() {
+    public CheckUrlSourceListFileFormatReq getBody() {
         return body;
     }
 
-    public void setBody(String body) {
+    public void setBody(CheckUrlSourceListFileFormatReq body) {
         this.body = body;
     }
 
@@ -41,7 +50,7 @@ public class UnlockTargetEcsResponse extends SdkResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UnlockTargetEcsResponse that = (UnlockTargetEcsResponse) obj;
+        CheckUrlSourceListFileFormatRequest that = (CheckUrlSourceListFileFormatRequest) obj;
         return Objects.equals(this.body, that.body);
     }
 
@@ -53,7 +62,7 @@ public class UnlockTargetEcsResponse extends SdkResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class UnlockTargetEcsResponse {\n");
+        sb.append("class CheckUrlSourceListFileFormatRequest {\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

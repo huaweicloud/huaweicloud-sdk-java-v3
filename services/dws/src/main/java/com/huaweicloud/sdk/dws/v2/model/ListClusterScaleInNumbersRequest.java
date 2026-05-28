@@ -15,6 +15,11 @@ public class ListClusterScaleInNumbersRequest {
 
     private String clusterId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "logical_cluster_name")
+
+    private String logicalClusterName;
+
     public ListClusterScaleInNumbersRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
@@ -32,6 +37,23 @@ public class ListClusterScaleInNumbersRequest {
         this.clusterId = clusterId;
     }
 
+    public ListClusterScaleInNumbersRequest withLogicalClusterName(String logicalClusterName) {
+        this.logicalClusterName = logicalClusterName;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 逻辑集群名，填写该参数，表示获取逻辑集群合适的缩容节点个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return logicalClusterName
+     */
+    public String getLogicalClusterName() {
+        return logicalClusterName;
+    }
+
+    public void setLogicalClusterName(String logicalClusterName) {
+        this.logicalClusterName = logicalClusterName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,13 @@ public class ListClusterScaleInNumbersRequest {
             return false;
         }
         ListClusterScaleInNumbersRequest that = (ListClusterScaleInNumbersRequest) obj;
-        return Objects.equals(this.clusterId, that.clusterId);
+        return Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.logicalClusterName, that.logicalClusterName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId);
+        return Objects.hash(clusterId, logicalClusterName);
     }
 
     @Override
@@ -54,6 +77,7 @@ public class ListClusterScaleInNumbersRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListClusterScaleInNumbersRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    logicalClusterName: ").append(toIndentedString(logicalClusterName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

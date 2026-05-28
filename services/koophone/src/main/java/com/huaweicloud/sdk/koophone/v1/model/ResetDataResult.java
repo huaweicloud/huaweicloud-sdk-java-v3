@@ -9,9 +9,9 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * RmInstallAppDataResult
+ * ResetDataResult
  */
-public class RmInstallAppDataResult {
+public class ResetDataResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cmd_jobs")
@@ -23,12 +23,12 @@ public class RmInstallAppDataResult {
 
     private String taskId;
 
-    public RmInstallAppDataResult withCmdJobs(List<CmdJob> cmdJobs) {
+    public ResetDataResult withCmdJobs(List<CmdJob> cmdJobs) {
         this.cmdJobs = cmdJobs;
         return this;
     }
 
-    public RmInstallAppDataResult addCmdJobsItem(CmdJob cmdJobsItem) {
+    public ResetDataResult addCmdJobsItem(CmdJob cmdJobsItem) {
         if (this.cmdJobs == null) {
             this.cmdJobs = new ArrayList<>();
         }
@@ -36,7 +36,7 @@ public class RmInstallAppDataResult {
         return this;
     }
 
-    public RmInstallAppDataResult withCmdJobs(Consumer<List<CmdJob>> cmdJobsSetter) {
+    public ResetDataResult withCmdJobs(Consumer<List<CmdJob>> cmdJobsSetter) {
         if (this.cmdJobs == null) {
             this.cmdJobs = new ArrayList<>();
         }
@@ -56,7 +56,7 @@ public class RmInstallAppDataResult {
         this.cmdJobs = cmdJobs;
     }
 
-    public RmInstallAppDataResult withTaskId(String taskId) {
+    public ResetDataResult withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
     }
@@ -81,7 +81,7 @@ public class RmInstallAppDataResult {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RmInstallAppDataResult that = (RmInstallAppDataResult) obj;
+        ResetDataResult that = (ResetDataResult) obj;
         return Objects.equals(this.cmdJobs, that.cmdJobs) && Objects.equals(this.taskId, that.taskId);
     }
 
@@ -93,7 +93,7 @@ public class RmInstallAppDataResult {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class RmInstallAppDataResult {\n");
+        sb.append("class ResetDataResult {\n");
         sb.append("    cmdJobs: ").append(toIndentedString(cmdJobs)).append("\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("}");

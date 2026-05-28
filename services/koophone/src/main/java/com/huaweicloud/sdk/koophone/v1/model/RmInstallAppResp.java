@@ -14,16 +14,16 @@ public class RmInstallAppResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private RmInstallAppDataResult data;
+    private TaskDataResult data;
 
-    public RmInstallAppResp withData(RmInstallAppDataResult data) {
+    public RmInstallAppResp withData(TaskDataResult data) {
         this.data = data;
         return this;
     }
 
-    public RmInstallAppResp withData(Consumer<RmInstallAppDataResult> dataSetter) {
+    public RmInstallAppResp withData(Consumer<TaskDataResult> dataSetter) {
         if (this.data == null) {
-            this.data = new RmInstallAppDataResult();
+            this.data = new TaskDataResult();
             dataSetter.accept(this.data);
         }
 
@@ -34,11 +34,11 @@ public class RmInstallAppResp {
      * Get data
      * @return data
      */
-    public RmInstallAppDataResult getData() {
+    public TaskDataResult getData() {
         return data;
     }
 
-    public void setData(RmInstallAppDataResult data) {
+    public void setData(TaskDataResult data) {
         this.data = data;
     }
 

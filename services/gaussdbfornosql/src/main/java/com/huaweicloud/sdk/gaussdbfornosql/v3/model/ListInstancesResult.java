@@ -148,6 +148,11 @@ public class ListInstancesResult {
 
     private DualActiveInfo dualActiveInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ssl")
+
+    private String ssl;
+
     public ListInstancesResult withId(String id) {
         this.id = id;
         return this;
@@ -666,6 +671,23 @@ public class ListInstancesResult {
         this.dualActiveInfo = dualActiveInfo;
     }
 
+    public ListInstancesResult withSsl(String ssl) {
+        this.ssl = ssl;
+        return this;
+    }
+
+    /**
+     * 参数解释： SSL安全连接启用情况。 取值范围： - 取值为“0”表示未启用。 - 取值为“1”表示已启用。
+     * @return ssl
+     */
+    public String getSsl() {
+        return ssl;
+    }
+
+    public void setSsl(String ssl) {
+        this.ssl = ssl;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -691,7 +713,7 @@ public class ListInstancesResult {
             && Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.actions, that.actions)
             && Objects.equals(this.lbIpAddress, that.lbIpAddress) && Objects.equals(this.lbPort, that.lbPort)
             && Objects.equals(this.availabilityZone, that.availabilityZone)
-            && Objects.equals(this.dualActiveInfo, that.dualActiveInfo);
+            && Objects.equals(this.dualActiveInfo, that.dualActiveInfo) && Objects.equals(this.ssl, that.ssl);
     }
 
     @Override
@@ -722,7 +744,8 @@ public class ListInstancesResult {
             lbIpAddress,
             lbPort,
             availabilityZone,
-            dualActiveInfo);
+            dualActiveInfo,
+            ssl);
     }
 
     @Override
@@ -756,6 +779,7 @@ public class ListInstancesResult {
         sb.append("    lbPort: ").append(toIndentedString(lbPort)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    dualActiveInfo: ").append(toIndentedString(dualActiveInfo)).append("\n");
+        sb.append("    ssl: ").append(toIndentedString(ssl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

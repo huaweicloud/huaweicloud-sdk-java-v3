@@ -41,12 +41,12 @@ public class LogicalClusterPlanBo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
-    private String startTime;
+    private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    private String endTime;
+    private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "actions")
@@ -138,37 +138,37 @@ public class LogicalClusterPlanBo {
         this.planType = planType;
     }
 
-    public LogicalClusterPlanBo withStartTime(String startTime) {
+    public LogicalClusterPlanBo withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
 
     /**
-     * **参数解释**： 逻辑集群定时增删计划起始时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 逻辑集群定时增删计划起始时间，时间戳格式。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return startTime
      */
-    public String getStartTime() {
+    public Long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(String startTime) {
+    public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
 
-    public LogicalClusterPlanBo withEndTime(String endTime) {
+    public LogicalClusterPlanBo withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
 
     /**
-     * **参数解释**： 逻辑集群定时增删计划终止时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 逻辑集群定时增删计划终止时间，时间戳格式。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return endTime
      */
-    public String getEndTime() {
+    public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(String endTime) {
+    public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
 

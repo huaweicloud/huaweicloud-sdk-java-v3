@@ -21,6 +21,11 @@ public class RmAuthTokenRespData {
 
     private String deviceToken;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "streamingId")
+
+    private String streamingId;
+
     public RmAuthTokenRespData withResource(RmAuthTokenRespDataResource resource) {
         this.resource = resource;
         return this;
@@ -64,6 +69,23 @@ public class RmAuthTokenRespData {
         this.deviceToken = deviceToken;
     }
 
+    public RmAuthTokenRespData withStreamingId(String streamingId) {
+        this.streamingId = streamingId;
+        return this;
+    }
+
+    /**
+     * 串流id标识
+     * @return streamingId
+     */
+    public String getStreamingId() {
+        return streamingId;
+    }
+
+    public void setStreamingId(String streamingId) {
+        this.streamingId = streamingId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -73,12 +95,13 @@ public class RmAuthTokenRespData {
             return false;
         }
         RmAuthTokenRespData that = (RmAuthTokenRespData) obj;
-        return Objects.equals(this.resource, that.resource) && Objects.equals(this.deviceToken, that.deviceToken);
+        return Objects.equals(this.resource, that.resource) && Objects.equals(this.deviceToken, that.deviceToken)
+            && Objects.equals(this.streamingId, that.streamingId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resource, deviceToken);
+        return Objects.hash(resource, deviceToken, streamingId);
     }
 
     @Override
@@ -87,6 +110,7 @@ public class RmAuthTokenRespData {
         sb.append("class RmAuthTokenRespData {\n");
         sb.append("    resource: ").append(toIndentedString(resource)).append("\n");
         sb.append("    deviceToken: ").append(toIndentedString(deviceToken)).append("\n");
+        sb.append("    streamingId: ").append(toIndentedString(streamingId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
