@@ -169,6 +169,11 @@ public class CreateDesktopReq {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ou_name")
+
+    private String ouName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<Tag> tags = null;
@@ -571,6 +576,23 @@ public class CreateDesktopReq {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public CreateDesktopReq withOuName(String ouName) {
+        this.ouName = ouName;
+        return this;
+    }
+
+    /**
+     * OU名称，在对接AD时使用，需提前在AD中创建OU。
+     * @return ouName
+     */
+    public String getOuName() {
+        return ouName;
+    }
+
+    public void setOuName(String ouName) {
+        this.ouName = ouName;
+    }
+
     public CreateDesktopReq withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
@@ -762,7 +784,7 @@ public class CreateDesktopReq {
             && Objects.equals(this.desktopIps, that.desktopIps) && Objects.equals(this.size, that.size)
             && Objects.equals(this.emailNotification, that.emailNotification)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.ouName, that.ouName) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.applySharedVpcDedicatedParam, that.applySharedVpcDedicatedParam)
             && Objects.equals(this.eip, that.eip) && Objects.equals(this.desktopNamePolicyId, that.desktopNamePolicyId)
             && Objects.equals(this.hourPackageProductId, that.hourPackageProductId)
@@ -789,6 +811,7 @@ public class CreateDesktopReq {
             size,
             emailNotification,
             enterpriseProjectId,
+            ouName,
             tags,
             applySharedVpcDedicatedParam,
             eip,
@@ -819,6 +842,7 @@ public class CreateDesktopReq {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    emailNotification: ").append(toIndentedString(emailNotification)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    ouName: ").append(toIndentedString(ouName)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    applySharedVpcDedicatedParam: ")
             .append(toIndentedString(applySharedVpcDedicatedParam))

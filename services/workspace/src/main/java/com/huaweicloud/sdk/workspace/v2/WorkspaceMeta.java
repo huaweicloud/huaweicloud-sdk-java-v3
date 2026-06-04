@@ -789,6 +789,9 @@ import com.huaweicloud.sdk.workspace.v2.model.UpdateAssistAuthConfigApplyObjects
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAssistAuthConfigApplyObjectsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAssistAuthMethodConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAssistAuthMethodConfigResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateAuthConfigReq;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateAuthConfigRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateAuthConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAuthMethodConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAuthMethodConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDcVncRequest;
@@ -813,8 +816,6 @@ import com.huaweicloud.sdk.workspace.v2.model.UpdateDomainNewRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDomainNewResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateEnterpriseIdRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateEnterpriseIdResponse;
-import com.huaweicloud.sdk.workspace.v2.model.UpdateFullSpeedRecordConfigRequest;
-import com.huaweicloud.sdk.workspace.v2.model.UpdateFullSpeedRecordConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateHostsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateHostsRequestBody;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateHostsResponse;
@@ -833,7 +834,9 @@ import com.huaweicloud.sdk.workspace.v2.model.UpdatePolicyGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScheduledTasksReq;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScheduledTasksRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScheduledTasksResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateScreenRecordsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScreenRecordsRequestBody;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateScreenRecordsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScreenRecordsTrafficLimitConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScreenRecordsTrafficLimitConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScriptReq;
@@ -2321,6 +2324,34 @@ public class WorkspaceMeta {
             TypeCasts.uncheckedConversion(AssistAuthMethodConfigRequest.class),
             f -> f.withMarshaller(UpdateAssistAuthMethodConfigRequest::getBody,
                 UpdateAssistAuthMethodConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAuthConfigRequest, UpdateAuthConfigResponse> updateAuthConfig =
+        genForUpdateAuthConfig();
+
+    private static HttpRequestDef<UpdateAuthConfigRequest, UpdateAuthConfigResponse> genForUpdateAuthConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateAuthConfigRequest, UpdateAuthConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAuthConfigRequest.class, UpdateAuthConfigResponse.class)
+                .withName("UpdateAuthConfig")
+                .withUri("/v2/{project_id}/auth-configs/{auth_config_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("auth_config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAuthConfigRequest::getAuthConfigId, UpdateAuthConfigRequest::setAuthConfigId));
+        builder.<UpdateAuthConfigReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAuthConfigReq.class),
+            f -> f.withMarshaller(UpdateAuthConfigRequest::getBody, UpdateAuthConfigRequest::setBody));
 
         // response
 
@@ -8735,17 +8766,14 @@ public class WorkspaceMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateFullSpeedRecordConfigRequest, UpdateFullSpeedRecordConfigResponse> updateFullSpeedRecordConfig =
-        genForUpdateFullSpeedRecordConfig();
+    public static final HttpRequestDef<UpdateScreenRecordsRequest, UpdateScreenRecordsResponse> updateScreenRecords =
+        genForUpdateScreenRecords();
 
-    private static HttpRequestDef<UpdateFullSpeedRecordConfigRequest, UpdateFullSpeedRecordConfigResponse> genForUpdateFullSpeedRecordConfig() {
+    private static HttpRequestDef<UpdateScreenRecordsRequest, UpdateScreenRecordsResponse> genForUpdateScreenRecords() {
         // basic
-        HttpRequestDef.Builder<UpdateFullSpeedRecordConfigRequest, UpdateFullSpeedRecordConfigResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.PUT,
-                    UpdateFullSpeedRecordConfigRequest.class,
-                    UpdateFullSpeedRecordConfigResponse.class)
-                .withName("UpdateFullSpeedRecordConfig")
+        HttpRequestDef.Builder<UpdateScreenRecordsRequest, UpdateScreenRecordsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateScreenRecordsRequest.class, UpdateScreenRecordsResponse.class)
+                .withName("UpdateScreenRecords")
                 .withUri("/v2/{project_id}/screen-records/{record_id}")
                 .withContentType("application/json");
 
@@ -8754,14 +8782,12 @@ public class WorkspaceMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateFullSpeedRecordConfigRequest::getRecordId,
-                UpdateFullSpeedRecordConfigRequest::setRecordId));
+            f -> f.withMarshaller(UpdateScreenRecordsRequest::getRecordId, UpdateScreenRecordsRequest::setRecordId));
         builder.<UpdateScreenRecordsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UpdateScreenRecordsRequestBody.class),
-            f -> f.withMarshaller(UpdateFullSpeedRecordConfigRequest::getBody,
-                UpdateFullSpeedRecordConfigRequest::setBody));
+            f -> f.withMarshaller(UpdateScreenRecordsRequest::getBody, UpdateScreenRecordsRequest::setBody));
 
         // response
 

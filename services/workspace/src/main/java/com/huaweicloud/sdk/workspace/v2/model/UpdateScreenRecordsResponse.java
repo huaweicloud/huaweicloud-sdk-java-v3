@@ -9,7 +9,7 @@ import java.util.Objects;
 /**
  * Response Object
  */
-public class UpdateFullSpeedRecordConfigResponse extends SdkResponse {
+public class UpdateScreenRecordsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result_code")
@@ -21,7 +21,7 @@ public class UpdateFullSpeedRecordConfigResponse extends SdkResponse {
 
     private String resultDesc;
 
-    public UpdateFullSpeedRecordConfigResponse withResultCode(String resultCode) {
+    public UpdateScreenRecordsResponse withResultCode(String resultCode) {
         this.resultCode = resultCode;
         return this;
     }
@@ -38,7 +38,7 @@ public class UpdateFullSpeedRecordConfigResponse extends SdkResponse {
         this.resultCode = resultCode;
     }
 
-    public UpdateFullSpeedRecordConfigResponse withResultDesc(String resultDesc) {
+    public UpdateScreenRecordsResponse withResultDesc(String resultDesc) {
         this.resultDesc = resultDesc;
         return this;
     }
@@ -63,7 +63,7 @@ public class UpdateFullSpeedRecordConfigResponse extends SdkResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFullSpeedRecordConfigResponse that = (UpdateFullSpeedRecordConfigResponse) obj;
+        UpdateScreenRecordsResponse that = (UpdateScreenRecordsResponse) obj;
         return Objects.equals(this.resultCode, that.resultCode) && Objects.equals(this.resultDesc, that.resultDesc);
     }
 
@@ -75,7 +75,7 @@ public class UpdateFullSpeedRecordConfigResponse extends SdkResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class UpdateFullSpeedRecordConfigResponse {\n");
+        sb.append("class UpdateScreenRecordsResponse {\n");
         sb.append("    resultCode: ").append(toIndentedString(resultCode)).append("\n");
         sb.append("    resultDesc: ").append(toIndentedString(resultDesc)).append("\n");
         sb.append("}");

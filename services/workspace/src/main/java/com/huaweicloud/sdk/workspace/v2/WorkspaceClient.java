@@ -637,6 +637,8 @@ import com.huaweicloud.sdk.workspace.v2.model.UpdateAssistAuthConfigApplyObjects
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAssistAuthConfigApplyObjectsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAssistAuthMethodConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAssistAuthMethodConfigResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateAuthConfigRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateAuthConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAuthMethodConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAuthMethodConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDcVncRequest;
@@ -655,8 +657,6 @@ import com.huaweicloud.sdk.workspace.v2.model.UpdateDomainNewRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDomainNewResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateEnterpriseIdRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateEnterpriseIdResponse;
-import com.huaweicloud.sdk.workspace.v2.model.UpdateFullSpeedRecordConfigRequest;
-import com.huaweicloud.sdk.workspace.v2.model.UpdateFullSpeedRecordConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateHostsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateHostsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateMetricNotifyRuleRequest;
@@ -671,6 +671,8 @@ import com.huaweicloud.sdk.workspace.v2.model.UpdatePolicyGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdatePolicyGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScheduledTasksRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScheduledTasksResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateScreenRecordsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateScreenRecordsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScreenRecordsTrafficLimitConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScreenRecordsTrafficLimitConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScriptRequest;
@@ -2278,6 +2280,35 @@ public class WorkspaceClient {
     public SyncInvoker<UpdateAssistAuthMethodConfigRequest, UpdateAssistAuthMethodConfigResponse> updateAssistAuthMethodConfigInvoker(
         UpdateAssistAuthMethodConfigRequest request) {
         return new SyncInvoker<>(request, WorkspaceMeta.updateAssistAuthMethodConfig, hcClient);
+    }
+
+    /**
+     * 增量更新认证配置
+     *
+     * 增量更新指定认证配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAuthConfigRequest 请求对象
+     * @return UpdateAuthConfigResponse
+     */
+    public UpdateAuthConfigResponse updateAuthConfig(UpdateAuthConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.updateAuthConfig);
+    }
+
+    /**
+     * 增量更新认证配置
+     *
+     * 增量更新指定认证配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAuthConfigRequest 请求对象
+     * @return SyncInvoker<UpdateAuthConfigRequest, UpdateAuthConfigResponse>
+     */
+    public SyncInvoker<UpdateAuthConfigRequest, UpdateAuthConfigResponse> updateAuthConfigInvoker(
+        UpdateAuthConfigRequest request) {
+        return new SyncInvoker<>(request, WorkspaceMeta.updateAuthConfig, hcClient);
     }
 
     /**
@@ -7934,11 +7965,11 @@ public class WorkspaceClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request UpdateFullSpeedRecordConfigRequest 请求对象
-     * @return UpdateFullSpeedRecordConfigResponse
+     * @param request UpdateScreenRecordsRequest 请求对象
+     * @return UpdateScreenRecordsResponse
      */
-    public UpdateFullSpeedRecordConfigResponse updateFullSpeedRecordConfig(UpdateFullSpeedRecordConfigRequest request) {
-        return hcClient.syncInvokeHttp(request, WorkspaceMeta.updateFullSpeedRecordConfig);
+    public UpdateScreenRecordsResponse updateScreenRecords(UpdateScreenRecordsRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.updateScreenRecords);
     }
 
     /**
@@ -7948,12 +7979,12 @@ public class WorkspaceClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request UpdateFullSpeedRecordConfigRequest 请求对象
-     * @return SyncInvoker<UpdateFullSpeedRecordConfigRequest, UpdateFullSpeedRecordConfigResponse>
+     * @param request UpdateScreenRecordsRequest 请求对象
+     * @return SyncInvoker<UpdateScreenRecordsRequest, UpdateScreenRecordsResponse>
      */
-    public SyncInvoker<UpdateFullSpeedRecordConfigRequest, UpdateFullSpeedRecordConfigResponse> updateFullSpeedRecordConfigInvoker(
-        UpdateFullSpeedRecordConfigRequest request) {
-        return new SyncInvoker<>(request, WorkspaceMeta.updateFullSpeedRecordConfig, hcClient);
+    public SyncInvoker<UpdateScreenRecordsRequest, UpdateScreenRecordsResponse> updateScreenRecordsInvoker(
+        UpdateScreenRecordsRequest request) {
+        return new SyncInvoker<>(request, WorkspaceMeta.updateScreenRecords, hcClient);
     }
 
     /**

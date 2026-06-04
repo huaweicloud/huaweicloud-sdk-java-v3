@@ -68,6 +68,7 @@ import com.huaweicloud.sdk.lakeformation.v1.model.CreateLakeFormationInstanceReq
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateLakeFormationInstanceResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateRoleRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateRoleResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.CreateTableInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateTableRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateTableResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.DatabaseInput;
@@ -190,6 +191,8 @@ import com.huaweicloud.sdk.lakeformation.v1.model.ShowAccessClientRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowAccessClientResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowAccessServiceRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowAccessServiceResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowAgencyCredentialRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowAgencyCredentialResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowAgencyRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowAgencyResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowAgreementRequest;
@@ -214,7 +217,6 @@ import com.huaweicloud.sdk.lakeformation.v1.model.ShowTableRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowTableResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.Table;
 import com.huaweicloud.sdk.lakeformation.v1.model.TableConstraintsInput;
-import com.huaweicloud.sdk.lakeformation.v1.model.TableInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.TenantAgreementBody;
 import com.huaweicloud.sdk.lakeformation.v1.model.TruncatePartitionInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateAccessClientRequest;
@@ -781,6 +783,30 @@ public class LakeFormationMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAgencyCredentialRequest, ShowAgencyCredentialResponse> showAgencyCredential =
+        genForShowAgencyCredential();
+
+    private static HttpRequestDef<ShowAgencyCredentialRequest, ShowAgencyCredentialResponse> genForShowAgencyCredential() {
+        // basic
+        HttpRequestDef.Builder<ShowAgencyCredentialRequest, ShowAgencyCredentialResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAgencyCredentialRequest.class, ShowAgencyCredentialResponse.class)
+            .withName("ShowAgencyCredential")
+            .withUri("/v1/agency/credential")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ShowAgencyCredentialRequest.AgencyTypeEnum>withRequestField("agency_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowAgencyCredentialRequest.AgencyTypeEnum.class),
+            f -> f.withMarshaller(ShowAgencyCredentialRequest::getAgencyType,
+                ShowAgencyCredentialRequest::setAgencyType));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateCatalogRequest, CreateCatalogResponse> createCatalog =
         genForCreateCatalog();
 
@@ -1055,6 +1081,11 @@ public class LakeFormationMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(DeleteDatabaseRequest::getCascade, DeleteDatabaseRequest::setCascade));
+        builder.<Boolean>withRequestField("is_async",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(DeleteDatabaseRequest::getIsAsync, DeleteDatabaseRequest::setIsAsync));
 
         // response
 
@@ -1144,6 +1175,17 @@ public class LakeFormationMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListDatabasesRequest::getReversePage, ListDatabasesRequest::setReversePage));
+        builder.<String>withRequestField("external_database_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabasesRequest::getExternalDatabaseId,
+                ListDatabasesRequest::setExternalDatabaseId));
+        builder.<Boolean>withRequestField("deleted",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListDatabasesRequest::getDeleted, ListDatabasesRequest::setDeleted));
 
         // response
 
@@ -3125,10 +3167,10 @@ public class LakeFormationMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateTableRequest::getDatabaseName, CreateTableRequest::setDatabaseName));
-        builder.<TableInput>withRequestField("body",
+        builder.<CreateTableInput>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(TableInput.class),
+            TypeCasts.uncheckedConversion(CreateTableInput.class),
             f -> f.withMarshaller(CreateTableRequest::getBody, CreateTableRequest::setBody));
 
         // response
@@ -3212,9 +3254,19 @@ public class LakeFormationMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(DeleteTableRequest::getDeleteData, DeleteTableRequest::setDeleteData));
+        builder.<Boolean>withRequestField("is_async",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(DeleteTableRequest::getIsAsync, DeleteTableRequest::setIsAsync));
 
         // response
 
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteTableResponse::getXRequestId, DeleteTableResponse::setXRequestId));
         return builder.build();
     }
 
@@ -3360,6 +3412,11 @@ public class LakeFormationMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTablesRequest::getTableNamePattern, ListTablesRequest::setTableNamePattern));
+        builder.<ListTablesRequest.TableFormatEnum>withRequestField("table_format",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTablesRequest.TableFormatEnum.class),
+            f -> f.withMarshaller(ListTablesRequest::getTableFormat, ListTablesRequest::setTableFormat));
         builder.<ListTablesRequest.TableTypeEnum>withRequestField("table_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -3385,6 +3442,16 @@ public class LakeFormationMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListTablesRequest::getReversePage, ListTablesRequest::setReversePage));
+        builder.<Boolean>withRequestField("deleted",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListTablesRequest::getDeleted, ListTablesRequest::setDeleted));
+        builder.<String>withRequestField("include_fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTablesRequest::getIncludeFields, ListTablesRequest::setIncludeFields));
 
         // response
 
@@ -3468,6 +3535,11 @@ public class LakeFormationMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTableRequest::getTableName, ShowTableRequest::setTableName));
+        builder.<String>withRequestField("version_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTableRequest::getVersionId, ShowTableRequest::setVersionId));
 
         // response
 

@@ -157,6 +157,8 @@ import com.huaweicloud.sdk.lakeformation.v1.model.ShowAccessClientRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowAccessClientResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowAccessServiceRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowAccessServiceResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowAgencyCredentialRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowAgencyCredentialResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowAgencyRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowAgencyResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowAgreementRequest;
@@ -688,6 +690,36 @@ public class LakeFormationAsyncClient {
     }
 
     /**
+     * 查询委托凭据
+     *
+     * 查询委托凭据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAgencyCredentialRequest 请求对象
+     * @return CompletableFuture<ShowAgencyCredentialResponse>
+     */
+    public CompletableFuture<ShowAgencyCredentialResponse> showAgencyCredentialAsync(
+        ShowAgencyCredentialRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.showAgencyCredential);
+    }
+
+    /**
+     * 查询委托凭据
+     *
+     * 查询委托凭据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAgencyCredentialRequest 请求对象
+     * @return AsyncInvoker<ShowAgencyCredentialRequest, ShowAgencyCredentialResponse>
+     */
+    public AsyncInvoker<ShowAgencyCredentialRequest, ShowAgencyCredentialResponse> showAgencyCredentialAsyncInvoker(
+        ShowAgencyCredentialRequest request) {
+        return new AsyncInvoker<>(request, LakeFormationMeta.showAgencyCredential, hcClient);
+    }
+
+    /**
      * 创建catalog
      *
      * 创建catalog，会在catalog下创建默认数据库，默认数据库名称为：default
@@ -893,7 +925,7 @@ public class LakeFormationAsyncClient {
     /**
      * 创建数据库
      *
-     * 创建数据库
+     * 创建数据库。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -907,7 +939,7 @@ public class LakeFormationAsyncClient {
     /**
      * 创建数据库
      *
-     * 创建数据库
+     * 创建数据库。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -923,8 +955,8 @@ public class LakeFormationAsyncClient {
      * 删除数据库
      *
      * 删除指定数据库，catalog的默认数据库不允许删除。
-     * cascade: 指定为true时，删除数据库下的表；指定为false时，只能删除空的数据库
-     * delete_data: 指定为true时，级联删除会将表的数据放入回收站；指定为false时，不删除表数据
+     * cascade: 指定为true时，删除数据库下的表；指定为false时，只能删除空的数据库。
+     * delete_data: 指定为true时，级联删除会将表的数据放入回收站；指定为false时，不删除表数据。
      * 删除数据库后不支持恢复数据库下的事务表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -940,8 +972,8 @@ public class LakeFormationAsyncClient {
      * 删除数据库
      *
      * 删除指定数据库，catalog的默认数据库不允许删除。
-     * cascade: 指定为true时，删除数据库下的表；指定为false时，只能删除空的数据库
-     * delete_data: 指定为true时，级联删除会将表的数据放入回收站；指定为false时，不删除表数据
+     * cascade: 指定为true时，删除数据库下的表；指定为false时，只能删除空的数据库。
+     * delete_data: 指定为true时，级联删除会将表的数据放入回收站；指定为false时，不删除表数据。
      * 删除数据库后不支持恢复数据库下的事务表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -986,7 +1018,7 @@ public class LakeFormationAsyncClient {
     /**
      * 列举数据库信息
      *
-     * 列举数据库信息
+     * 列举数据库信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1000,7 +1032,7 @@ public class LakeFormationAsyncClient {
     /**
      * 列举数据库信息
      *
-     * 列举数据库信息
+     * 列举数据库信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1015,7 +1047,7 @@ public class LakeFormationAsyncClient {
     /**
      * 获取数据库
      *
-     * 获取数据库
+     * 获取数据库。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1029,7 +1061,7 @@ public class LakeFormationAsyncClient {
     /**
      * 获取数据库
      *
-     * 获取数据库
+     * 获取数据库。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2462,7 +2494,7 @@ public class LakeFormationAsyncClient {
     /**
      * 创建表
      *
-     * 创建表操作
+     * 创建表操作。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2476,7 +2508,7 @@ public class LakeFormationAsyncClient {
     /**
      * 创建表
      *
-     * 创建表操作
+     * 创建表操作。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2519,7 +2551,7 @@ public class LakeFormationAsyncClient {
     /**
      * 删除表
      *
-     * 删除表及表下的分区
+     * 删除表及表下的分区。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2533,7 +2565,7 @@ public class LakeFormationAsyncClient {
     /**
      * 删除表
      *
-     * 删除表及表下的分区
+     * 删除表及表下的分区。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2605,9 +2637,9 @@ public class LakeFormationAsyncClient {
     /**
      * 根据条件分页列举表信息
      *
-     * 返回数据库下符合查询条件的表的元数据信息，不支持事务操作
-     * 当表名通配符或表类型不为空时，优先根据表名和类型筛选过滤
-     * 当表名通配符或表类型为空时，再根据属性筛选过滤
+     * 返回数据库下符合查询条件的表的元数据信息，不支持事务操作。
+     * 当表名通配符或表类型不为空时，优先根据表名和类型筛选过滤。
+     * 当表名通配符或表类型为空时，再根据属性筛选过滤。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2621,9 +2653,9 @@ public class LakeFormationAsyncClient {
     /**
      * 根据条件分页列举表信息
      *
-     * 返回数据库下符合查询条件的表的元数据信息，不支持事务操作
-     * 当表名通配符或表类型不为空时，优先根据表名和类型筛选过滤
-     * 当表名通配符或表类型为空时，再根据属性筛选过滤
+     * 返回数据库下符合查询条件的表的元数据信息，不支持事务操作。
+     * 当表名通配符或表类型不为空时，优先根据表名和类型筛选过滤。
+     * 当表名通配符或表类型为空时，再根据属性筛选过滤。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2666,7 +2698,7 @@ public class LakeFormationAsyncClient {
     /**
      * 获取表信息
      *
-     * 获取表信息
+     * 获取表信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2680,7 +2712,7 @@ public class LakeFormationAsyncClient {
     /**
      * 获取表信息
      *
-     * 获取表信息
+     * 获取表信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2694,7 +2726,7 @@ public class LakeFormationAsyncClient {
     /**
      * 修改表信息
      *
-     * 修改表信息
+     * 修改表信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2708,7 +2740,7 @@ public class LakeFormationAsyncClient {
     /**
      * 修改表信息
      *
-     * 修改表信息
+     * 修改表信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -1,36 +1,35 @@
-package com.huaweicloud.sdk.rds.v3.model;
+package com.huaweicloud.sdk.modelarts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
 /**
- * Response Object
+ * ReportEventBody
  */
-public class UpdatePostgresqlInstanceAliasResponse extends SdkResponse {
+public class ReportEventBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resp")
+    @JsonProperty(value = "type")
 
-    private String resp;
+    private String type;
 
-    public UpdatePostgresqlInstanceAliasResponse withResp(String resp) {
-        this.resp = resp;
+    public ReportEventBody withType(String type) {
+        this.type = type;
         return this;
     }
 
     /**
-     * 操作结果。
-     * @return resp
+     * 事件上报的类型
+     * @return type
      */
-    public String getResp() {
-        return resp;
+    public String getType() {
+        return type;
     }
 
-    public void setResp(String resp) {
-        this.resp = resp;
+    public void setType(String type) {
+        this.type = type;
     }
 
     @Override
@@ -41,20 +40,20 @@ public class UpdatePostgresqlInstanceAliasResponse extends SdkResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePostgresqlInstanceAliasResponse that = (UpdatePostgresqlInstanceAliasResponse) obj;
-        return Objects.equals(this.resp, that.resp);
+        ReportEventBody that = (ReportEventBody) obj;
+        return Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resp);
+        return Objects.hash(type);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class UpdatePostgresqlInstanceAliasResponse {\n");
-        sb.append("    resp: ").append(toIndentedString(resp)).append("\n");
+        sb.append("class ReportEventBody {\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

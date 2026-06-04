@@ -9,7 +9,7 @@ import java.util.function.Consumer;
 /**
  * Request Object
  */
-public class UpdatePostgresqlInstanceAliasRequest {
+public class UpdateInstanceAliasRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Language")
@@ -26,7 +26,7 @@ public class UpdatePostgresqlInstanceAliasRequest {
 
     private UpdateRdsInstanceAliasRequest body;
 
-    public UpdatePostgresqlInstanceAliasRequest withXLanguage(String xLanguage) {
+    public UpdateInstanceAliasRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
@@ -45,7 +45,7 @@ public class UpdatePostgresqlInstanceAliasRequest {
         this.xLanguage = xLanguage;
     }
 
-    public UpdatePostgresqlInstanceAliasRequest withInstanceId(String instanceId) {
+    public UpdateInstanceAliasRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
@@ -62,12 +62,12 @@ public class UpdatePostgresqlInstanceAliasRequest {
         this.instanceId = instanceId;
     }
 
-    public UpdatePostgresqlInstanceAliasRequest withBody(UpdateRdsInstanceAliasRequest body) {
+    public UpdateInstanceAliasRequest withBody(UpdateRdsInstanceAliasRequest body) {
         this.body = body;
         return this;
     }
 
-    public UpdatePostgresqlInstanceAliasRequest withBody(Consumer<UpdateRdsInstanceAliasRequest> bodySetter) {
+    public UpdateInstanceAliasRequest withBody(Consumer<UpdateRdsInstanceAliasRequest> bodySetter) {
         if (this.body == null) {
             this.body = new UpdateRdsInstanceAliasRequest();
             bodySetter.accept(this.body);
@@ -96,7 +96,7 @@ public class UpdatePostgresqlInstanceAliasRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePostgresqlInstanceAliasRequest that = (UpdatePostgresqlInstanceAliasRequest) obj;
+        UpdateInstanceAliasRequest that = (UpdateInstanceAliasRequest) obj;
         return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.body, that.body);
     }
@@ -109,7 +109,7 @@ public class UpdatePostgresqlInstanceAliasRequest {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class UpdatePostgresqlInstanceAliasRequest {\n");
+        sb.append("class UpdateInstanceAliasRequest {\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");

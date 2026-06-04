@@ -561,6 +561,8 @@ import com.huaweicloud.sdk.rds.v3.model.UpdateHostPrivilegeRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateHostPrivilegeResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateIncreBackupPolicy1Request;
 import com.huaweicloud.sdk.rds.v3.model.UpdateIncreBackupPolicy1Response;
+import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceAliasRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceAliasResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceConfigurationAsyncRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceConfigurationAsyncResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceConfigurationRequest;
@@ -575,8 +577,6 @@ import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlDbUserCommentRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlDbUserCommentResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlExtensionRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlExtensionResponse;
-import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlInstanceAliasRequest;
-import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlInstanceAliasResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlParameterValueRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlParameterValueResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateReadWeightRequest;
@@ -5744,6 +5744,35 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 修改实例备注信息
+     *
+     * 修改指定数据库实例的备注信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInstanceAliasRequest 请求对象
+     * @return CompletableFuture<UpdateInstanceAliasResponse>
+     */
+    public CompletableFuture<UpdateInstanceAliasResponse> updateInstanceAliasAsync(UpdateInstanceAliasRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.updateInstanceAlias);
+    }
+
+    /**
+     * 修改实例备注信息
+     *
+     * 修改指定数据库实例的备注信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInstanceAliasRequest 请求对象
+     * @return AsyncInvoker<UpdateInstanceAliasRequest, UpdateInstanceAliasResponse>
+     */
+    public AsyncInvoker<UpdateInstanceAliasRequest, UpdateInstanceAliasResponse> updateInstanceAliasAsyncInvoker(
+        UpdateInstanceAliasRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.updateInstanceAlias, hcClient);
+    }
+
+    /**
      * 修改指定实例的参数
      *
      * 修改指定实例的参数。
@@ -5858,36 +5887,6 @@ public class RdsAsyncClient {
      */
     public AsyncInvoker<UpdatePortRequest, UpdatePortResponse> updatePortAsyncInvoker(UpdatePortRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.updatePort, hcClient);
-    }
-
-    /**
-     * 修改实例备注信息
-     *
-     * 修改指定数据库实例的备注信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdatePostgresqlInstanceAliasRequest 请求对象
-     * @return CompletableFuture<UpdatePostgresqlInstanceAliasResponse>
-     */
-    public CompletableFuture<UpdatePostgresqlInstanceAliasResponse> updatePostgresqlInstanceAliasAsync(
-        UpdatePostgresqlInstanceAliasRequest request) {
-        return hcClient.asyncInvokeHttp(request, RdsMeta.updatePostgresqlInstanceAlias);
-    }
-
-    /**
-     * 修改实例备注信息
-     *
-     * 修改指定数据库实例的备注信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdatePostgresqlInstanceAliasRequest 请求对象
-     * @return AsyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse>
-     */
-    public AsyncInvoker<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse> updatePostgresqlInstanceAliasAsyncInvoker(
-        UpdatePostgresqlInstanceAliasRequest request) {
-        return new AsyncInvoker<>(request, RdsMeta.updatePostgresqlInstanceAlias, hcClient);
     }
 
     /**

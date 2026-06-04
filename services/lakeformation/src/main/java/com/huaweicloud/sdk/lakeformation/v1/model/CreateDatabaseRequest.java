@@ -32,7 +32,7 @@ public class CreateDatabaseRequest {
     }
 
     /**
-     * 实例Id
+     * LakeFormation实例ID。创建实例时自动生成。例如:2180518f-42b8-4947-b20b-adfc53981a25。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -49,7 +49,7 @@ public class CreateDatabaseRequest {
     }
 
     /**
-     * catalog名字
+     * catalog名称。只能包含字母、数字和下划线,且长度为1~256个字符。
      * @return catalogName
      */
     public String getCatalogName() {

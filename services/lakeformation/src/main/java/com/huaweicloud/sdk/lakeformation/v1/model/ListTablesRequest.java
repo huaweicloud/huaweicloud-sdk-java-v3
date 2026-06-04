@@ -36,7 +36,88 @@ public class ListTablesRequest {
     private String tableNamePattern;
 
     /**
-     * table_type
+     * 表格式。支持HIVE,ICEBERG,LANCE
+     */
+    public static final class TableFormatEnum {
+
+        /**
+         * Enum HIVE for value: "HIVE"
+         */
+        public static final TableFormatEnum HIVE = new TableFormatEnum("HIVE");
+
+        /**
+         * Enum ICEBERG for value: "ICEBERG"
+         */
+        public static final TableFormatEnum ICEBERG = new TableFormatEnum("ICEBERG");
+
+        /**
+         * Enum LANCE for value: "LANCE"
+         */
+        public static final TableFormatEnum LANCE = new TableFormatEnum("LANCE");
+
+        private static final Map<String, TableFormatEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TableFormatEnum> createStaticFields() {
+            Map<String, TableFormatEnum> map = new HashMap<>();
+            map.put("HIVE", HIVE);
+            map.put("ICEBERG", ICEBERG);
+            map.put("LANCE", LANCE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TableFormatEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TableFormatEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TableFormatEnum(value));
+        }
+
+        public static TableFormatEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TableFormatEnum) {
+                return this.value.equals(((TableFormatEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "table_format")
+
+    private TableFormatEnum tableFormat;
+
+    /**
+     * 表类型：MANAGED_TABLE-内表、EXTERNAL_TABLE-外表、VIRTUAL_VIEW-视图、MATERIALIZED_VIEW-物化视图、DICTIONARY_TABLE字典表、LAKE_TABLE内表。
      */
     public static final class TableTypeEnum {
 
@@ -60,6 +141,16 @@ public class ListTablesRequest {
          */
         public static final TableTypeEnum MATERIALIZED_VIEW = new TableTypeEnum("MATERIALIZED_VIEW");
 
+        /**
+         * Enum DICTIONARY_TABLE for value: "DICTIONARY_TABLE"
+         */
+        public static final TableTypeEnum DICTIONARY_TABLE = new TableTypeEnum("DICTIONARY_TABLE");
+
+        /**
+         * Enum LAKE_TABLE for value: "LAKE_TABLE"
+         */
+        public static final TableTypeEnum LAKE_TABLE = new TableTypeEnum("LAKE_TABLE");
+
         private static final Map<String, TableTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TableTypeEnum> createStaticFields() {
@@ -68,6 +159,8 @@ public class ListTablesRequest {
             map.put("EXTERNAL_TABLE", EXTERNAL_TABLE);
             map.put("VIRTUAL_VIEW", VIRTUAL_VIEW);
             map.put("MATERIALIZED_VIEW", MATERIALIZED_VIEW);
+            map.put("DICTIONARY_TABLE", DICTIONARY_TABLE);
+            map.put("LAKE_TABLE", LAKE_TABLE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -142,13 +235,23 @@ public class ListTablesRequest {
 
     private Boolean reversePage;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deleted")
+
+    private Boolean deleted;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "include_fields")
+
+    private String includeFields;
+
     public ListTablesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
     /**
-     * 实例ID
+     * LakeFormation实例ID。创建实例时自动生成。例如：2180518f-42b8-4947-b20b-adfc53981a25。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -165,7 +268,7 @@ public class ListTablesRequest {
     }
 
     /**
-     * catalog名字
+     * catalog名称。只能包含字母、数字和下划线，且长度为1~256个字符。
      * @return catalogName
      */
     public String getCatalogName() {
@@ -182,7 +285,7 @@ public class ListTablesRequest {
     }
 
     /**
-     * 数据库名字
+     * 数据库名称。只能包含中文、字母、数字、下划线、中划线，且长度为1~128个字符。
      * @return databaseName
      */
     public String getDatabaseName() {
@@ -199,7 +302,7 @@ public class ListTablesRequest {
     }
 
     /**
-     * 表名字通配符
+     * 表名称通配符。只能包含中文、字母、数字和_|*.-特殊字符，且长度为1~256个字符。
      * @return tableNamePattern
      */
     public String getTableNamePattern() {
@@ -210,13 +313,30 @@ public class ListTablesRequest {
         this.tableNamePattern = tableNamePattern;
     }
 
+    public ListTablesRequest withTableFormat(TableFormatEnum tableFormat) {
+        this.tableFormat = tableFormat;
+        return this;
+    }
+
+    /**
+     * 表格式。支持HIVE,ICEBERG,LANCE
+     * @return tableFormat
+     */
+    public TableFormatEnum getTableFormat() {
+        return tableFormat;
+    }
+
+    public void setTableFormat(TableFormatEnum tableFormat) {
+        this.tableFormat = tableFormat;
+    }
+
     public ListTablesRequest withTableType(TableTypeEnum tableType) {
         this.tableType = tableType;
         return this;
     }
 
     /**
-     * table_type
+     * 表类型：MANAGED_TABLE-内表、EXTERNAL_TABLE-外表、VIRTUAL_VIEW-视图、MATERIALIZED_VIEW-物化视图、DICTIONARY_TABLE字典表、LAKE_TABLE内表。
      * @return tableType
      */
     public TableTypeEnum getTableType() {
@@ -250,9 +370,9 @@ public class ListTablesRequest {
     }
 
     /**
-     * 返回的条目数量
+     * 查询返回条数。默认值为100。最小值为1，最大值为1000。当include_fields只包含name时，最大值可以为5000
      * minimum: 1
-     * maximum: 1000
+     * maximum: 5000
      * @return limit
      */
     public Integer getLimit() {
@@ -269,7 +389,7 @@ public class ListTablesRequest {
     }
 
     /**
-     * 查询的起始记录ID
+     * 查询的起始记录ID。最小长度为0，最大长度为256。
      * @return marker
      */
     public String getMarker() {
@@ -286,7 +406,7 @@ public class ListTablesRequest {
     }
 
     /**
-     * 是否查询上一页
+     * 是否倒序查询。
      * @return reversePage
      */
     public Boolean getReversePage() {
@@ -295,6 +415,40 @@ public class ListTablesRequest {
 
     public void setReversePage(Boolean reversePage) {
         this.reversePage = reversePage;
+    }
+
+    public ListTablesRequest withDeleted(Boolean deleted) {
+        this.deleted = deleted;
+        return this;
+    }
+
+    /**
+     * 是否查询被删除元数据。
+     * @return deleted
+     */
+    public Boolean getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(Boolean deleted) {
+        this.deleted = deleted;
+    }
+
+    public ListTablesRequest withIncludeFields(String includeFields) {
+        this.includeFields = includeFields;
+        return this;
+    }
+
+    /**
+     * 包含字段，非必填，多个字段使用英文逗号分隔，不填时返回全部字段，当前暂只支持name
+     * @return includeFields
+     */
+    public String getIncludeFields() {
+        return includeFields;
+    }
+
+    public void setIncludeFields(String includeFields) {
+        this.includeFields = includeFields;
     }
 
     @Override
@@ -309,9 +463,10 @@ public class ListTablesRequest {
         return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
             && Objects.equals(this.databaseName, that.databaseName)
             && Objects.equals(this.tableNamePattern, that.tableNamePattern)
-            && Objects.equals(this.tableType, that.tableType) && Objects.equals(this.filter, that.filter)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
-            && Objects.equals(this.reversePage, that.reversePage);
+            && Objects.equals(this.tableFormat, that.tableFormat) && Objects.equals(this.tableType, that.tableType)
+            && Objects.equals(this.filter, that.filter) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.reversePage, that.reversePage)
+            && Objects.equals(this.deleted, that.deleted) && Objects.equals(this.includeFields, that.includeFields);
     }
 
     @Override
@@ -320,11 +475,14 @@ public class ListTablesRequest {
             catalogName,
             databaseName,
             tableNamePattern,
+            tableFormat,
             tableType,
             filter,
             limit,
             marker,
-            reversePage);
+            reversePage,
+            deleted,
+            includeFields);
     }
 
     @Override
@@ -335,11 +493,14 @@ public class ListTablesRequest {
         sb.append("    catalogName: ").append(toIndentedString(catalogName)).append("\n");
         sb.append("    databaseName: ").append(toIndentedString(databaseName)).append("\n");
         sb.append("    tableNamePattern: ").append(toIndentedString(tableNamePattern)).append("\n");
+        sb.append("    tableFormat: ").append(toIndentedString(tableFormat)).append("\n");
         sb.append("    tableType: ").append(toIndentedString(tableType)).append("\n");
         sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    reversePage: ").append(toIndentedString(reversePage)).append("\n");
+        sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
+        sb.append("    includeFields: ").append(toIndentedString(includeFields)).append("\n");
         sb.append("}");
         return sb.toString();
     }

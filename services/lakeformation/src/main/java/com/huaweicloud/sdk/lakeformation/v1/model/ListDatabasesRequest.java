@@ -40,13 +40,23 @@ public class ListDatabasesRequest {
 
     private Boolean reversePage;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "external_database_id")
+
+    private String externalDatabaseId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deleted")
+
+    private Boolean deleted;
+
     public ListDatabasesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
     /**
-     * 实例Id
+     * LakeFormation实例ID。创建实例时自动生成。例如:2180518f-42b8-4947-b20b-adfc53981a25。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -63,7 +73,7 @@ public class ListDatabasesRequest {
     }
 
     /**
-     * catalog名字
+     * catalog名称。只能包含字母、数字和下划线,且长度为1~256个字符。
      * @return catalogName
      */
     public String getCatalogName() {
@@ -80,7 +90,7 @@ public class ListDatabasesRequest {
     }
 
     /**
-     * 数据库名字通配符
+     * 数据库名称通配符。只能包含中文、字母、数字和_|*.-特殊字符,且长度为1~128个字符。
      * @return databaseNamePattern
      */
     public String getDatabaseNamePattern() {
@@ -97,7 +107,8 @@ public class ListDatabasesRequest {
     }
 
     /**
-     * 返回的条目数量
+     * 查询返回条数。默认值为1000。最小值为0,最大值为1000。
+     * minimum: 0
      * maximum: 1000
      * @return limit
      */
@@ -115,7 +126,7 @@ public class ListDatabasesRequest {
     }
 
     /**
-     * 查询的起始记录ID
+     * 查询的起始记录ID。最小长度为0,最大长度为256。
      * @return marker
      */
     public String getMarker() {
@@ -132,7 +143,7 @@ public class ListDatabasesRequest {
     }
 
     /**
-     * 是否查询上一页
+     * 是否倒序查询。
      * @return reversePage
      */
     public Boolean getReversePage() {
@@ -141,6 +152,40 @@ public class ListDatabasesRequest {
 
     public void setReversePage(Boolean reversePage) {
         this.reversePage = reversePage;
+    }
+
+    public ListDatabasesRequest withExternalDatabaseId(String externalDatabaseId) {
+        this.externalDatabaseId = externalDatabaseId;
+        return this;
+    }
+
+    /**
+     * 用户端数据库id,创建时指定,不可修改。
+     * @return externalDatabaseId
+     */
+    public String getExternalDatabaseId() {
+        return externalDatabaseId;
+    }
+
+    public void setExternalDatabaseId(String externalDatabaseId) {
+        this.externalDatabaseId = externalDatabaseId;
+    }
+
+    public ListDatabasesRequest withDeleted(Boolean deleted) {
+        this.deleted = deleted;
+        return this;
+    }
+
+    /**
+     * 是否查询被删除元数据。
+     * @return deleted
+     */
+    public Boolean getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(Boolean deleted) {
+        this.deleted = deleted;
     }
 
     @Override
@@ -155,12 +200,21 @@ public class ListDatabasesRequest {
         return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
             && Objects.equals(this.databaseNamePattern, that.databaseNamePattern)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
-            && Objects.equals(this.reversePage, that.reversePage);
+            && Objects.equals(this.reversePage, that.reversePage)
+            && Objects.equals(this.externalDatabaseId, that.externalDatabaseId)
+            && Objects.equals(this.deleted, that.deleted);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, catalogName, databaseNamePattern, limit, marker, reversePage);
+        return Objects.hash(instanceId,
+            catalogName,
+            databaseNamePattern,
+            limit,
+            marker,
+            reversePage,
+            externalDatabaseId,
+            deleted);
     }
 
     @Override
@@ -173,6 +227,8 @@ public class ListDatabasesRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    reversePage: ").append(toIndentedString(reversePage)).append("\n");
+        sb.append("    externalDatabaseId: ").append(toIndentedString(externalDatabaseId)).append("\n");
+        sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
         sb.append("}");
         return sb.toString();
     }

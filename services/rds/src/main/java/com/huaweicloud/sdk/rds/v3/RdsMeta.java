@@ -694,6 +694,8 @@ import com.huaweicloud.sdk.rds.v3.model.UpdateHostPrivilegeResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateIncreBackupPolicy1Request;
 import com.huaweicloud.sdk.rds.v3.model.UpdateIncreBackupPolicy1RequestBody;
 import com.huaweicloud.sdk.rds.v3.model.UpdateIncreBackupPolicy1Response;
+import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceAliasRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceAliasResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceConfigurationAsyncRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceConfigurationAsyncResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateInstanceConfigurationRequest;
@@ -709,8 +711,6 @@ import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlDbUserCommentRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlDbUserCommentResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlExtensionRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlExtensionResponse;
-import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlInstanceAliasRequest;
-import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlInstanceAliasResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlParameterValueRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlParameterValueResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateRdsInstanceAliasRequest;
@@ -6841,6 +6841,40 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateInstanceAliasRequest, UpdateInstanceAliasResponse> updateInstanceAlias =
+        genForUpdateInstanceAlias();
+
+    private static HttpRequestDef<UpdateInstanceAliasRequest, UpdateInstanceAliasResponse> genForUpdateInstanceAlias() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstanceAliasRequest, UpdateInstanceAliasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateInstanceAliasRequest.class, UpdateInstanceAliasResponse.class)
+                .withName("UpdateInstanceAlias")
+                .withUri("/v3/{project_id}/instances/{instance_id}/alias")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceAliasRequest::getInstanceId,
+                UpdateInstanceAliasRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceAliasRequest::getXLanguage, UpdateInstanceAliasRequest::setXLanguage));
+        builder.<UpdateRdsInstanceAliasRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateRdsInstanceAliasRequest.class),
+            f -> f.withMarshaller(UpdateInstanceAliasRequest::getBody, UpdateInstanceAliasRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> updateInstanceConfiguration =
         genForUpdateInstanceConfiguration();
 
@@ -6978,45 +7012,6 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDbPortRequest.class),
             f -> f.withMarshaller(UpdatePortRequest::getBody, UpdatePortRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse> updatePostgresqlInstanceAlias =
-        genForUpdatePostgresqlInstanceAlias();
-
-    private static HttpRequestDef<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse> genForUpdatePostgresqlInstanceAlias() {
-        // basic
-        HttpRequestDef.Builder<UpdatePostgresqlInstanceAliasRequest, UpdatePostgresqlInstanceAliasResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.PUT,
-                    UpdatePostgresqlInstanceAliasRequest.class,
-                    UpdatePostgresqlInstanceAliasResponse.class)
-                .withName("UpdatePostgresqlInstanceAlias")
-                .withUri("/v3/{project_id}/instances/{instance_id}/alias")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePostgresqlInstanceAliasRequest::getInstanceId,
-                UpdatePostgresqlInstanceAliasRequest::setInstanceId));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePostgresqlInstanceAliasRequest::getXLanguage,
-                UpdatePostgresqlInstanceAliasRequest::setXLanguage));
-        builder.<UpdateRdsInstanceAliasRequest>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateRdsInstanceAliasRequest.class),
-            f -> f.withMarshaller(UpdatePostgresqlInstanceAliasRequest::getBody,
-                UpdatePostgresqlInstanceAliasRequest::setBody));
 
         // response
 

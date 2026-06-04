@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.dataartsstudio.v1.model;
+package com.huaweicloud.sdk.modelarts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -7,39 +7,39 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CatalogParamsVO
+ * Request Object
  */
-public class CatalogParamsVO {
+public class UpdateAuthModeRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "entity")
+    @JsonProperty(value = "body")
 
-    private CatalogEntityVO entity;
+    private UpdateAuthModeRequestBody body;
 
-    public CatalogParamsVO withEntity(CatalogEntityVO entity) {
-        this.entity = entity;
+    public UpdateAuthModeRequest withBody(UpdateAuthModeRequestBody body) {
+        this.body = body;
         return this;
     }
 
-    public CatalogParamsVO withEntity(Consumer<CatalogEntityVO> entitySetter) {
-        if (this.entity == null) {
-            this.entity = new CatalogEntityVO();
-            entitySetter.accept(this.entity);
+    public UpdateAuthModeRequest withBody(Consumer<UpdateAuthModeRequestBody> bodySetter) {
+        if (this.body == null) {
+            this.body = new UpdateAuthModeRequestBody();
+            bodySetter.accept(this.body);
         }
 
         return this;
     }
 
     /**
-     * Get entity
-     * @return entity
+     * Get body
+     * @return body
      */
-    public CatalogEntityVO getEntity() {
-        return entity;
+    public UpdateAuthModeRequestBody getBody() {
+        return body;
     }
 
-    public void setEntity(CatalogEntityVO entity) {
-        this.entity = entity;
+    public void setBody(UpdateAuthModeRequestBody body) {
+        this.body = body;
     }
 
     @Override
@@ -50,20 +50,20 @@ public class CatalogParamsVO {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CatalogParamsVO that = (CatalogParamsVO) obj;
-        return Objects.equals(this.entity, that.entity);
+        UpdateAuthModeRequest that = (UpdateAuthModeRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(entity);
+        return Objects.hash(body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CatalogParamsVO {\n");
-        sb.append("    entity: ").append(toIndentedString(entity)).append("\n");
+        sb.append("class UpdateAuthModeRequest {\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

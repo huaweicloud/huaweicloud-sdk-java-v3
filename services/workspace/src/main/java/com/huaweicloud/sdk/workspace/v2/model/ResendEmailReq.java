@@ -15,6 +15,11 @@ public class ResendEmailReq {
 
     private String templateId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "phone_template_id")
+
+    private String phoneTemplateId;
+
     public ResendEmailReq withTemplateId(String templateId) {
         this.templateId = templateId;
         return this;
@@ -32,6 +37,23 @@ public class ResendEmailReq {
         this.templateId = templateId;
     }
 
+    public ResendEmailReq withPhoneTemplateId(String phoneTemplateId) {
+        this.phoneTemplateId = phoneTemplateId;
+        return this;
+    }
+
+    /**
+     * 短信模板ID。
+     * @return phoneTemplateId
+     */
+    public String getPhoneTemplateId() {
+        return phoneTemplateId;
+    }
+
+    public void setPhoneTemplateId(String phoneTemplateId) {
+        this.phoneTemplateId = phoneTemplateId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,13 @@ public class ResendEmailReq {
             return false;
         }
         ResendEmailReq that = (ResendEmailReq) obj;
-        return Objects.equals(this.templateId, that.templateId);
+        return Objects.equals(this.templateId, that.templateId)
+            && Objects.equals(this.phoneTemplateId, that.phoneTemplateId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(templateId);
+        return Objects.hash(templateId, phoneTemplateId);
     }
 
     @Override
@@ -54,6 +77,7 @@ public class ResendEmailReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResendEmailReq {\n");
         sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
+        sb.append("    phoneTemplateId: ").append(toIndentedString(phoneTemplateId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -34,7 +34,7 @@ public class CreateUserRequest {
     private String accountExpires;
 
     /**
-     * 激活类型，默认为用户激活。 * USER_ACTIVATE： 用户激活 * ADMIN_ACTIVATE： 管理员激活
+     * 激活类型，默认为用户激活。 * USER_ACTIVATE： 用户激活。创建后，用户自行激活。需填写用户名、邮箱或手机号，创建后将发送用户登录信息（接入地址、企业ID、用户名、密码）至邮箱或手机号短信。 * ADMIN_ACTIVATE： 管理员激活。对接AD域场景，只需要配置用户名，用户名与AD服务器上已创建的用户名保持一致；未对接AD域场景，需填写用户名、密码，请妥善保管您为用户设置的密码。
      */
     public static final class ActiveTypeEnum {
 
@@ -215,7 +215,7 @@ public class CreateUserRequest {
     }
 
     /**
-     * 激活类型，默认为用户激活。 * USER_ACTIVATE： 用户激活 * ADMIN_ACTIVATE： 管理员激活
+     * 激活类型，默认为用户激活。 * USER_ACTIVATE： 用户激活。创建后，用户自行激活。需填写用户名、邮箱或手机号，创建后将发送用户登录信息（接入地址、企业ID、用户名、密码）至邮箱或手机号短信。 * ADMIN_ACTIVATE： 管理员激活。对接AD域场景，只需要配置用户名，用户名与AD服务器上已创建的用户名保持一致；未对接AD域场景，需填写用户名、密码，请妥善保管您为用户设置的密码。
      * @return activeType
      */
     public ActiveTypeEnum getActiveType() {

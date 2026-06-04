@@ -24,7 +24,7 @@ public class UpdateSubjectRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CatalogParamsVO body;
+    private CatalogVO body;
 
     public UpdateSubjectRequest withWorkspace(String workspace) {
         this.workspace = workspace;
@@ -62,14 +62,14 @@ public class UpdateSubjectRequest {
         this.xProjectId = xProjectId;
     }
 
-    public UpdateSubjectRequest withBody(CatalogParamsVO body) {
+    public UpdateSubjectRequest withBody(CatalogVO body) {
         this.body = body;
         return this;
     }
 
-    public UpdateSubjectRequest withBody(Consumer<CatalogParamsVO> bodySetter) {
+    public UpdateSubjectRequest withBody(Consumer<CatalogVO> bodySetter) {
         if (this.body == null) {
-            this.body = new CatalogParamsVO();
+            this.body = new CatalogVO();
             bodySetter.accept(this.body);
         }
 
@@ -80,11 +80,11 @@ public class UpdateSubjectRequest {
      * Get body
      * @return body
      */
-    public CatalogParamsVO getBody() {
+    public CatalogVO getBody() {
         return body;
     }
 
-    public void setBody(CatalogParamsVO body) {
+    public void setBody(CatalogVO body) {
         this.body = body;
     }
 

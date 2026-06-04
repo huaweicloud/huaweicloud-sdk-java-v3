@@ -19,6 +19,21 @@ public class ShowAvalibleDdmsResponse extends SdkResponse {
 
     private List<DDMInstance4Restore> instances = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total")
+
+    private Integer total;
+
     public ShowAvalibleDdmsResponse withInstances(List<DDMInstance4Restore> instances) {
         this.instances = instances;
         return this;
@@ -52,6 +67,57 @@ public class ShowAvalibleDdmsResponse extends SdkResponse {
         this.instances = instances;
     }
 
+    public ShowAvalibleDdmsResponse withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  分页参数: 起始值。  **取值范围**：   大于等于0。
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ShowAvalibleDdmsResponse withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  分页参数: 每页记录数。  **取值范围**：  大于0且小于等于128。
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ShowAvalibleDdmsResponse withTotal(Integer total) {
+        this.total = total;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  总记录数。  **取值范围**：  不涉及。
+     * @return total
+     */
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +127,13 @@ public class ShowAvalibleDdmsResponse extends SdkResponse {
             return false;
         }
         ShowAvalibleDdmsResponse that = (ShowAvalibleDdmsResponse) obj;
-        return Objects.equals(this.instances, that.instances);
+        return Objects.equals(this.instances, that.instances) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.total, that.total);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instances);
+        return Objects.hash(instances, offset, limit, total);
     }
 
     @Override
@@ -74,6 +141,9 @@ public class ShowAvalibleDdmsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowAvalibleDdmsResponse {\n");
         sb.append("    instances: ").append(toIndentedString(instances)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("}");
         return sb.toString();
     }

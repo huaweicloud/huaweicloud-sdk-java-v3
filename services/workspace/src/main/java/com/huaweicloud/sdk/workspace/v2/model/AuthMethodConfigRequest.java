@@ -46,6 +46,11 @@ public class AuthMethodConfigRequest {
 
     private Saml2AuthConfig saml2AuthConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sms_login_enabled")
+
+    private Boolean smsLoginEnabled;
+
     public AuthMethodConfigRequest withId(String id) {
         this.id = id;
         return this;
@@ -192,6 +197,23 @@ public class AuthMethodConfigRequest {
         this.saml2AuthConfig = saml2AuthConfig;
     }
 
+    public AuthMethodConfigRequest withSmsLoginEnabled(Boolean smsLoginEnabled) {
+        this.smsLoginEnabled = smsLoginEnabled;
+        return this;
+    }
+
+    /**
+     * 短信验证码登录开关。
+     * @return smsLoginEnabled
+     */
+    public Boolean getSmsLoginEnabled() {
+        return smsLoginEnabled;
+    }
+
+    public void setSmsLoginEnabled(Boolean smsLoginEnabled) {
+        this.smsLoginEnabled = smsLoginEnabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -207,7 +229,8 @@ public class AuthMethodConfigRequest {
             && Objects.equals(this.radiusGatewayConfig, that.radiusGatewayConfig)
             && Objects.equals(this.thirdPartyAuthConfig, that.thirdPartyAuthConfig)
             && Objects.equals(this.emergencyLoginMode, that.emergencyLoginMode)
-            && Objects.equals(this.saml2AuthConfig, that.saml2AuthConfig);
+            && Objects.equals(this.saml2AuthConfig, that.saml2AuthConfig)
+            && Objects.equals(this.smsLoginEnabled, that.smsLoginEnabled);
     }
 
     @Override
@@ -218,7 +241,8 @@ public class AuthMethodConfigRequest {
             radiusGatewayConfig,
             thirdPartyAuthConfig,
             emergencyLoginMode,
-            saml2AuthConfig);
+            saml2AuthConfig,
+            smsLoginEnabled);
     }
 
     @Override
@@ -234,6 +258,7 @@ public class AuthMethodConfigRequest {
         sb.append("    thirdPartyAuthConfig: ").append(toIndentedString(thirdPartyAuthConfig)).append("\n");
         sb.append("    emergencyLoginMode: ").append(toIndentedString(emergencyLoginMode)).append("\n");
         sb.append("    saml2AuthConfig: ").append(toIndentedString(saml2AuthConfig)).append("\n");
+        sb.append("    smsLoginEnabled: ").append(toIndentedString(smsLoginEnabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }

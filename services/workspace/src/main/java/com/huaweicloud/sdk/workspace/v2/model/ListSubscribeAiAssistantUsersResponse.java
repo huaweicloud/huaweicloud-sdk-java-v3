@@ -22,7 +22,7 @@ public class ListSubscribeAiAssistantUsersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "users")
 
-    private List<SubscribeUserInfo> users = null;
+    private List<SubscribeUserBasicInfo> users = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "usergroups")
@@ -51,12 +51,12 @@ public class ListSubscribeAiAssistantUsersResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
-    public ListSubscribeAiAssistantUsersResponse withUsers(List<SubscribeUserInfo> users) {
+    public ListSubscribeAiAssistantUsersResponse withUsers(List<SubscribeUserBasicInfo> users) {
         this.users = users;
         return this;
     }
 
-    public ListSubscribeAiAssistantUsersResponse addUsersItem(SubscribeUserInfo usersItem) {
+    public ListSubscribeAiAssistantUsersResponse addUsersItem(SubscribeUserBasicInfo usersItem) {
         if (this.users == null) {
             this.users = new ArrayList<>();
         }
@@ -64,7 +64,7 @@ public class ListSubscribeAiAssistantUsersResponse extends SdkResponse {
         return this;
     }
 
-    public ListSubscribeAiAssistantUsersResponse withUsers(Consumer<List<SubscribeUserInfo>> usersSetter) {
+    public ListSubscribeAiAssistantUsersResponse withUsers(Consumer<List<SubscribeUserBasicInfo>> usersSetter) {
         if (this.users == null) {
             this.users = new ArrayList<>();
         }
@@ -76,11 +76,11 @@ public class ListSubscribeAiAssistantUsersResponse extends SdkResponse {
      * 订阅用户列表。
      * @return users
      */
-    public List<SubscribeUserInfo> getUsers() {
+    public List<SubscribeUserBasicInfo> getUsers() {
         return users;
     }
 
-    public void setUsers(List<SubscribeUserInfo> users) {
+    public void setUsers(List<SubscribeUserBasicInfo> users) {
         this.users = users;
     }
 

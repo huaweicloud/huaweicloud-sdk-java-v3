@@ -198,6 +198,11 @@ public class Configs {
 
     private ClientCert clientCert;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "https_tls_version")
+
+    private HttpsTlsVersion httpsTlsVersion;
+
     public Configs withBusinessType(String businessType) {
         this.businessType = businessType;
         return this;
@@ -1163,6 +1168,32 @@ public class Configs {
         this.clientCert = clientCert;
     }
 
+    public Configs withHttpsTlsVersion(HttpsTlsVersion httpsTlsVersion) {
+        this.httpsTlsVersion = httpsTlsVersion;
+        return this;
+    }
+
+    public Configs withHttpsTlsVersion(Consumer<HttpsTlsVersion> httpsTlsVersionSetter) {
+        if (this.httpsTlsVersion == null) {
+            this.httpsTlsVersion = new HttpsTlsVersion();
+            httpsTlsVersionSetter.accept(this.httpsTlsVersion);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get httpsTlsVersion
+     * @return httpsTlsVersion
+     */
+    public HttpsTlsVersion getHttpsTlsVersion() {
+        return httpsTlsVersion;
+    }
+
+    public void setHttpsTlsVersion(HttpsTlsVersion httpsTlsVersion) {
+        this.httpsTlsVersion = httpsTlsVersion;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1200,7 +1231,8 @@ public class Configs {
             && Objects.equals(this.sni, that.sni) && Objects.equals(this.requestUrlRewrite, that.requestUrlRewrite)
             && Objects.equals(this.browserCacheRules, that.browserCacheRules)
             && Objects.equals(this.accessAreaFilter, that.accessAreaFilter)
-            && Objects.equals(this.clientCert, that.clientCert);
+            && Objects.equals(this.clientCert, that.clientCert)
+            && Objects.equals(this.httpsTlsVersion, that.httpsTlsVersion);
     }
 
     @Override
@@ -1241,7 +1273,8 @@ public class Configs {
             requestUrlRewrite,
             browserCacheRules,
             accessAreaFilter,
-            clientCert);
+            clientCert,
+            httpsTlsVersion);
     }
 
     @Override
@@ -1285,6 +1318,7 @@ public class Configs {
         sb.append("    browserCacheRules: ").append(toIndentedString(browserCacheRules)).append("\n");
         sb.append("    accessAreaFilter: ").append(toIndentedString(accessAreaFilter)).append("\n");
         sb.append("    clientCert: ").append(toIndentedString(clientCert)).append("\n");
+        sb.append("    httpsTlsVersion: ").append(toIndentedString(httpsTlsVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

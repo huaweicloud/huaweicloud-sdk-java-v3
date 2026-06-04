@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.dds.v3.model.BatchTagActionRequest;
 import com.huaweicloud.sdk.dds.v3.model.BatchTagActionResponse;
 import com.huaweicloud.sdk.dds.v3.model.BatchUpgradeDatabaseVersionRequest;
 import com.huaweicloud.sdk.dds.v3.model.BatchUpgradeDatabaseVersionResponse;
+import com.huaweicloud.sdk.dds.v3.model.BindPublicGatewayRequest;
+import com.huaweicloud.sdk.dds.v3.model.BindPublicGatewayResponse;
 import com.huaweicloud.sdk.dds.v3.model.CancelEipRequest;
 import com.huaweicloud.sdk.dds.v3.model.CancelEipResponse;
 import com.huaweicloud.sdk.dds.v3.model.CancelScheduledTaskRequest;
@@ -231,6 +233,8 @@ import com.huaweicloud.sdk.dds.v3.model.SwitchSslRequest;
 import com.huaweicloud.sdk.dds.v3.model.SwitchSslResponse;
 import com.huaweicloud.sdk.dds.v3.model.SwitchoverReplicaSetRequest;
 import com.huaweicloud.sdk.dds.v3.model.SwitchoverReplicaSetResponse;
+import com.huaweicloud.sdk.dds.v3.model.UnbindPublicGatewayRequest;
+import com.huaweicloud.sdk.dds.v3.model.UnbindPublicGatewayResponse;
 import com.huaweicloud.sdk.dds.v3.model.UpdateBackupDownloadPolicyRequest;
 import com.huaweicloud.sdk.dds.v3.model.UpdateBackupDownloadPolicyResponse;
 import com.huaweicloud.sdk.dds.v3.model.UpdateClientNetworkRequest;
@@ -474,6 +478,35 @@ public class DdsAsyncClient {
     public AsyncInvoker<BatchUpgradeDatabaseVersionRequest, BatchUpgradeDatabaseVersionResponse> batchUpgradeDatabaseVersionAsyncInvoker(
         BatchUpgradeDatabaseVersionRequest request) {
         return new AsyncInvoker<>(request, DdsMeta.batchUpgradeDatabaseVersion, hcClient);
+    }
+
+    /**
+     * 绑定公网网关
+     *
+     * 为实例下的节点绑定公网网关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindPublicGatewayRequest 请求对象
+     * @return CompletableFuture<BindPublicGatewayResponse>
+     */
+    public CompletableFuture<BindPublicGatewayResponse> bindPublicGatewayAsync(BindPublicGatewayRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.bindPublicGateway);
+    }
+
+    /**
+     * 绑定公网网关
+     *
+     * 为实例下的节点绑定公网网关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindPublicGatewayRequest 请求对象
+     * @return AsyncInvoker<BindPublicGatewayRequest, BindPublicGatewayResponse>
+     */
+    public AsyncInvoker<BindPublicGatewayRequest, BindPublicGatewayResponse> bindPublicGatewayAsyncInvoker(
+        BindPublicGatewayRequest request) {
+        return new AsyncInvoker<>(request, DdsMeta.bindPublicGateway, hcClient);
     }
 
     /**
@@ -3539,6 +3572,35 @@ public class DdsAsyncClient {
     public AsyncInvoker<SwitchoverReplicaSetRequest, SwitchoverReplicaSetResponse> switchoverReplicaSetAsyncInvoker(
         SwitchoverReplicaSetRequest request) {
         return new AsyncInvoker<>(request, DdsMeta.switchoverReplicaSet, hcClient);
+    }
+
+    /**
+     * 解绑公网网关
+     *
+     * 为实例下的节点解绑公网网关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnbindPublicGatewayRequest 请求对象
+     * @return CompletableFuture<UnbindPublicGatewayResponse>
+     */
+    public CompletableFuture<UnbindPublicGatewayResponse> unbindPublicGatewayAsync(UnbindPublicGatewayRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.unbindPublicGateway);
+    }
+
+    /**
+     * 解绑公网网关
+     *
+     * 为实例下的节点解绑公网网关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnbindPublicGatewayRequest 请求对象
+     * @return AsyncInvoker<UnbindPublicGatewayRequest, UnbindPublicGatewayResponse>
+     */
+    public AsyncInvoker<UnbindPublicGatewayRequest, UnbindPublicGatewayResponse> unbindPublicGatewayAsyncInvoker(
+        UnbindPublicGatewayRequest request) {
+        return new AsyncInvoker<>(request, DdsMeta.unbindPublicGateway, hcClient);
     }
 
     /**

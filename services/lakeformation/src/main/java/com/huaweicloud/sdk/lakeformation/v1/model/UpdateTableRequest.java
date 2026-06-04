@@ -42,7 +42,7 @@ public class UpdateTableRequest {
     }
 
     /**
-     * 实例Id
+     * LakeFormation实例ID。创建实例时自动生成。例如：2180518f-42b8-4947-b20b-adfc53981a25。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -59,7 +59,7 @@ public class UpdateTableRequest {
     }
 
     /**
-     * catalog名字
+     * catalog名称。只能包含字母、数字和下划线，且长度为1~256个字符。
      * @return catalogName
      */
     public String getCatalogName() {
@@ -76,7 +76,7 @@ public class UpdateTableRequest {
     }
 
     /**
-     * 数据库名字
+     * 数据库名称。只能包含中文、字母、数字、下划线、中划线，且长度为1~128个字符。
      * @return databaseName
      */
     public String getDatabaseName() {
@@ -93,7 +93,7 @@ public class UpdateTableRequest {
     }
 
     /**
-     * 表名称
+     * 表名称。只能包含中文、字母、数字、下划线、中划线，且长度为1~256个字符。
      * @return tableName
      */
     public String getTableName() {

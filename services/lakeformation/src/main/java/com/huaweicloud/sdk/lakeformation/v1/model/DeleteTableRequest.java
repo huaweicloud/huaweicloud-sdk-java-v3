@@ -35,13 +35,18 @@ public class DeleteTableRequest {
 
     private Boolean deleteData;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_async")
+
+    private Boolean isAsync;
+
     public DeleteTableRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
     /**
-     * 实例ID
+     * LakeFormation实例ID。创建实例时自动生成。例如：2180518f-42b8-4947-b20b-adfc53981a25。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -58,7 +63,7 @@ public class DeleteTableRequest {
     }
 
     /**
-     * catalog名字
+     * catalog名称。只能包含字母、数字和下划线，且长度为1~256个字符。
      * @return catalogName
      */
     public String getCatalogName() {
@@ -75,7 +80,7 @@ public class DeleteTableRequest {
     }
 
     /**
-     * 数据库名字
+     * 数据库名称。只能包含中文、字母、数字、下划线、中划线，且长度为1~128个字符。
      * @return databaseName
      */
     public String getDatabaseName() {
@@ -92,7 +97,7 @@ public class DeleteTableRequest {
     }
 
     /**
-     * 表名称
+     * 表名称。只能包含中文、字母、数字、下划线、中划线，且长度为1~256个字符。
      * @return tableName
      */
     public String getTableName() {
@@ -109,7 +114,7 @@ public class DeleteTableRequest {
     }
 
     /**
-     * 是否删除表中的数据
+     * 是否删除表中的数据，该参数只针对内表生效，外表不会删除数据。默认为false。
      * @return deleteData
      */
     public Boolean getDeleteData() {
@@ -118,6 +123,23 @@ public class DeleteTableRequest {
 
     public void setDeleteData(Boolean deleteData) {
         this.deleteData = deleteData;
+    }
+
+    public DeleteTableRequest withIsAsync(Boolean isAsync) {
+        this.isAsync = isAsync;
+        return this;
+    }
+
+    /**
+     * 是否异步删除，默认为false。
+     * @return isAsync
+     */
+    public Boolean getIsAsync() {
+        return isAsync;
+    }
+
+    public void setIsAsync(Boolean isAsync) {
+        this.isAsync = isAsync;
     }
 
     @Override
@@ -131,12 +153,12 @@ public class DeleteTableRequest {
         DeleteTableRequest that = (DeleteTableRequest) obj;
         return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
             && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
-            && Objects.equals(this.deleteData, that.deleteData);
+            && Objects.equals(this.deleteData, that.deleteData) && Objects.equals(this.isAsync, that.isAsync);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, catalogName, databaseName, tableName, deleteData);
+        return Objects.hash(instanceId, catalogName, databaseName, tableName, deleteData, isAsync);
     }
 
     @Override
@@ -148,6 +170,7 @@ public class DeleteTableRequest {
         sb.append("    databaseName: ").append(toIndentedString(databaseName)).append("\n");
         sb.append("    tableName: ").append(toIndentedString(tableName)).append("\n");
         sb.append("    deleteData: ").append(toIndentedString(deleteData)).append("\n");
+        sb.append("    isAsync: ").append(toIndentedString(isAsync)).append("\n");
         sb.append("}");
         return sb.toString();
     }

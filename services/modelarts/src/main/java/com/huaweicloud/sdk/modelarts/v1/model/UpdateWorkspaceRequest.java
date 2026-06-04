@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.workspace.v2.model;
+package com.huaweicloud.sdk.modelarts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,43 +9,43 @@ import java.util.function.Consumer;
 /**
  * Request Object
  */
-public class UpdateFullSpeedRecordConfigRequest {
+public class UpdateWorkspaceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "record_id")
+    @JsonProperty(value = "workspace_id")
 
-    private String recordId;
+    private String workspaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdateScreenRecordsRequestBody body;
+    private UpdateWorkspaceReq body;
 
-    public UpdateFullSpeedRecordConfigRequest withRecordId(String recordId) {
-        this.recordId = recordId;
+    public UpdateWorkspaceRequest withWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
         return this;
     }
 
     /**
-     * 录屏记录UUID。
-     * @return recordId
+     * 工作空间ID。[获取方法请参见[查询工作空间列表](ListWorkspace.xml)。](tag:hc)未创建工作空间时默认值为“0”，存在创建并使用的工作空间，以实际取值为准。
+     * @return workspaceId
      */
-    public String getRecordId() {
-        return recordId;
+    public String getWorkspaceId() {
+        return workspaceId;
     }
 
-    public void setRecordId(String recordId) {
-        this.recordId = recordId;
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
     }
 
-    public UpdateFullSpeedRecordConfigRequest withBody(UpdateScreenRecordsRequestBody body) {
+    public UpdateWorkspaceRequest withBody(UpdateWorkspaceReq body) {
         this.body = body;
         return this;
     }
 
-    public UpdateFullSpeedRecordConfigRequest withBody(Consumer<UpdateScreenRecordsRequestBody> bodySetter) {
+    public UpdateWorkspaceRequest withBody(Consumer<UpdateWorkspaceReq> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdateScreenRecordsRequestBody();
+            this.body = new UpdateWorkspaceReq();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class UpdateFullSpeedRecordConfigRequest {
      * Get body
      * @return body
      */
-    public UpdateScreenRecordsRequestBody getBody() {
+    public UpdateWorkspaceReq getBody() {
         return body;
     }
 
-    public void setBody(UpdateScreenRecordsRequestBody body) {
+    public void setBody(UpdateWorkspaceReq body) {
         this.body = body;
     }
 
@@ -72,20 +72,20 @@ public class UpdateFullSpeedRecordConfigRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFullSpeedRecordConfigRequest that = (UpdateFullSpeedRecordConfigRequest) obj;
-        return Objects.equals(this.recordId, that.recordId) && Objects.equals(this.body, that.body);
+        UpdateWorkspaceRequest that = (UpdateWorkspaceRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(recordId, body);
+        return Objects.hash(workspaceId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class UpdateFullSpeedRecordConfigRequest {\n");
-        sb.append("    recordId: ").append(toIndentedString(recordId)).append("\n");
+        sb.append("class UpdateWorkspaceRequest {\n");
+        sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

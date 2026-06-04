@@ -1,35 +1,36 @@
-package com.huaweicloud.sdk.dataartsstudio.v1.model;
+package com.huaweicloud.sdk.modelarts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
 /**
- * 父节点。
+ * Response Object
  */
-public class CatalogAttributeVOParent {
+public class UpdateWorkspaceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
+    @JsonProperty(value = "workspace_id")
 
-    private String id;
+    private String workspaceId;
 
-    public CatalogAttributeVOParent withId(String id) {
-        this.id = id;
+    public UpdateWorkspaceResponse withWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
         return this;
     }
 
     /**
-     * 父节点ID。
-     * @return id
+     * 工作空间ID。
+     * @return workspaceId
      */
-    public String getId() {
-        return id;
+    public String getWorkspaceId() {
+        return workspaceId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
     }
 
     @Override
@@ -40,20 +41,20 @@ public class CatalogAttributeVOParent {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CatalogAttributeVOParent that = (CatalogAttributeVOParent) obj;
-        return Objects.equals(this.id, that.id);
+        UpdateWorkspaceResponse that = (UpdateWorkspaceResponse) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(workspaceId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CatalogAttributeVOParent {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("class UpdateWorkspaceResponse {\n");
+        sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

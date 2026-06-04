@@ -50,6 +50,16 @@ public class NodeItem {
 
     private String availabilityZone;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nat_gateway_id")
+
+    private String natGatewayId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "external_service_port")
+
+    private Integer externalServicePort;
+
     public NodeItem withId(String id) {
         this.id = id;
         return this;
@@ -186,6 +196,40 @@ public class NodeItem {
         this.availabilityZone = availabilityZone;
     }
 
+    public NodeItem withNatGatewayId(String natGatewayId) {
+        this.natGatewayId = natGatewayId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 公网NAT网关实例的ID。可以调用“查询公网NAT网关列表”接口获取。 **取值范围：** 不涉及。
+     * @return natGatewayId
+     */
+    public String getNatGatewayId() {
+        return natGatewayId;
+    }
+
+    public void setNatGatewayId(String natGatewayId) {
+        this.natGatewayId = natGatewayId;
+    }
+
+    public NodeItem withExternalServicePort(Integer externalServicePort) {
+        this.externalServicePort = externalServicePort;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 弹性公网IP对外提供服务的端口号。 **取值范围：** 1~65535。
+     * @return externalServicePort
+     */
+    public Integer getExternalServicePort() {
+        return externalServicePort;
+    }
+
+    public void setExternalServicePort(Integer externalServicePort) {
+        this.externalServicePort = externalServicePort;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -199,12 +243,23 @@ public class NodeItem {
             && Objects.equals(this.status, that.status) && Objects.equals(this.role, that.role)
             && Objects.equals(this.privateIp, that.privateIp) && Objects.equals(this.publicIp, that.publicIp)
             && Objects.equals(this.specCode, that.specCode)
-            && Objects.equals(this.availabilityZone, that.availabilityZone);
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.natGatewayId, that.natGatewayId)
+            && Objects.equals(this.externalServicePort, that.externalServicePort);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, status, role, privateIp, publicIp, specCode, availabilityZone);
+        return Objects.hash(id,
+            name,
+            status,
+            role,
+            privateIp,
+            publicIp,
+            specCode,
+            availabilityZone,
+            natGatewayId,
+            externalServicePort);
     }
 
     @Override
@@ -219,6 +274,8 @@ public class NodeItem {
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    natGatewayId: ").append(toIndentedString(natGatewayId)).append("\n");
+        sb.append("    externalServicePort: ").append(toIndentedString(externalServicePort)).append("\n");
         sb.append("}");
         return sb.toString();
     }

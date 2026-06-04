@@ -29,7 +29,7 @@ public class CreateTableRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private TableInput body;
+    private CreateTableInput body;
 
     public CreateTableRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -37,7 +37,7 @@ public class CreateTableRequest {
     }
 
     /**
-     * 实例Id
+     * LakeFormation实例ID。创建实例时自动生成。例如：2180518f-42b8-4947-b20b-adfc53981a25。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -54,7 +54,7 @@ public class CreateTableRequest {
     }
 
     /**
-     * catalog名字
+     * catalog名称。只能包含字母、数字和下划线，且长度为1~256个字符。
      * @return catalogName
      */
     public String getCatalogName() {
@@ -71,7 +71,7 @@ public class CreateTableRequest {
     }
 
     /**
-     * 数据库名字
+     * 数据库名称。只能包含中文、字母、数字、下划线、中划线，且长度为1~128个字符。
      * @return databaseName
      */
     public String getDatabaseName() {
@@ -82,14 +82,14 @@ public class CreateTableRequest {
         this.databaseName = databaseName;
     }
 
-    public CreateTableRequest withBody(TableInput body) {
+    public CreateTableRequest withBody(CreateTableInput body) {
         this.body = body;
         return this;
     }
 
-    public CreateTableRequest withBody(Consumer<TableInput> bodySetter) {
+    public CreateTableRequest withBody(Consumer<CreateTableInput> bodySetter) {
         if (this.body == null) {
-            this.body = new TableInput();
+            this.body = new CreateTableInput();
             bodySetter.accept(this.body);
         }
 
@@ -100,11 +100,11 @@ public class CreateTableRequest {
      * Get body
      * @return body
      */
-    public TableInput getBody() {
+    public CreateTableInput getBody() {
         return body;
     }
 
-    public void setBody(TableInput body) {
+    public void setBody(CreateTableInput body) {
         this.body = body;
     }
 

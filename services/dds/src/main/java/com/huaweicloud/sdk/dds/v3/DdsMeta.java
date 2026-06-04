@@ -27,6 +27,9 @@ import com.huaweicloud.sdk.dds.v3.model.BatchTagActionResponse;
 import com.huaweicloud.sdk.dds.v3.model.BatchUpgradeDatabaseVersionRequest;
 import com.huaweicloud.sdk.dds.v3.model.BatchUpgradeDatabaseVersionRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.BatchUpgradeDatabaseVersionResponse;
+import com.huaweicloud.sdk.dds.v3.model.BindPublicGatewayRequest;
+import com.huaweicloud.sdk.dds.v3.model.BindPublicGatewayRequestBody;
+import com.huaweicloud.sdk.dds.v3.model.BindPublicGatewayResponse;
 import com.huaweicloud.sdk.dds.v3.model.CancelEipRequest;
 import com.huaweicloud.sdk.dds.v3.model.CancelEipResponse;
 import com.huaweicloud.sdk.dds.v3.model.CancelScheduledTaskRequest;
@@ -289,6 +292,8 @@ import com.huaweicloud.sdk.dds.v3.model.SwitchSslResponse;
 import com.huaweicloud.sdk.dds.v3.model.SwitchoverReplicaSetRequest;
 import com.huaweicloud.sdk.dds.v3.model.SwitchoverReplicaSetRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.SwitchoverReplicaSetResponse;
+import com.huaweicloud.sdk.dds.v3.model.UnbindPublicGatewayRequest;
+import com.huaweicloud.sdk.dds.v3.model.UnbindPublicGatewayResponse;
 import com.huaweicloud.sdk.dds.v3.model.UpdateBackupDownloadPolicyRequest;
 import com.huaweicloud.sdk.dds.v3.model.UpdateBackupDownloadPolicyRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.UpdateBackupDownloadPolicyResponse;
@@ -518,6 +523,39 @@ public class DdsMeta {
             TypeCasts.uncheckedConversion(BatchUpgradeDatabaseVersionRequestBody.class),
             f -> f.withMarshaller(BatchUpgradeDatabaseVersionRequest::getBody,
                 BatchUpgradeDatabaseVersionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BindPublicGatewayRequest, BindPublicGatewayResponse> bindPublicGateway =
+        genForBindPublicGateway();
+
+    private static HttpRequestDef<BindPublicGatewayRequest, BindPublicGatewayResponse> genForBindPublicGateway() {
+        // basic
+        HttpRequestDef.Builder<BindPublicGatewayRequest, BindPublicGatewayResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BindPublicGatewayRequest.class, BindPublicGatewayResponse.class)
+                .withName("BindPublicGateway")
+                .withUri("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/public-gateway")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BindPublicGatewayRequest::getInstanceId, BindPublicGatewayRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BindPublicGatewayRequest::getNodeId, BindPublicGatewayRequest::setNodeId));
+        builder.<BindPublicGatewayRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BindPublicGatewayRequestBody.class),
+            f -> f.withMarshaller(BindPublicGatewayRequest::getBody, BindPublicGatewayRequest::setBody));
 
         // response
 
@@ -3766,6 +3804,35 @@ public class DdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SwitchoverReplicaSetRequestBody.class),
             f -> f.withMarshaller(SwitchoverReplicaSetRequest::getBody, SwitchoverReplicaSetRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UnbindPublicGatewayRequest, UnbindPublicGatewayResponse> unbindPublicGateway =
+        genForUnbindPublicGateway();
+
+    private static HttpRequestDef<UnbindPublicGatewayRequest, UnbindPublicGatewayResponse> genForUnbindPublicGateway() {
+        // basic
+        HttpRequestDef.Builder<UnbindPublicGatewayRequest, UnbindPublicGatewayResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, UnbindPublicGatewayRequest.class, UnbindPublicGatewayResponse.class)
+            .withName("UnbindPublicGateway")
+            .withUri("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/public-gateway")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnbindPublicGatewayRequest::getInstanceId,
+                UnbindPublicGatewayRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnbindPublicGatewayRequest::getNodeId, UnbindPublicGatewayRequest::setNodeId));
 
         // response
 

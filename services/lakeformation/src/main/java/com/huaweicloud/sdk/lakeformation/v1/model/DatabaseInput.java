@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 数据库信息
+ * 数据库信息。
  */
 public class DatabaseInput {
 
@@ -24,12 +24,17 @@ public class DatabaseInput {
     private String databaseName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "external_database_id")
+
+    private String externalDatabaseId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "owner")
 
     private String owner;
 
     /**
-     * 所有者类型,USER-用户,GROUP-组,ROLE-角色。LakeFormation服务分为一期和二期，一期响应Body无该参数。
+     * 所有者类型：USER-用户、GROUP-组、ROLE-角色。LakeFormation服务分为一期和二期，一期响应Body无该参数。
      */
     public static final class OwnerTypeEnum {
 
@@ -110,7 +115,7 @@ public class DatabaseInput {
     private OwnerTypeEnum ownerType;
 
     /**
-     * 所有者来源,IAM-云用户,SAML-联邦,LDAP-ld用户,LOCAL-本地用户,AGENTTENANT-委托,OTHER-其它。LakeFormation服务分为一期和二期，一期响应Body无该参数。
+     * 所有者来源：IAM-云用户、SAML-联邦、LDAP-ld用户、LOCAL-本地用户、AGENTTENANT-委托、OTHER-其它。LakeFormation服务分为一期和二期，一期响应Body无该参数。
      */
     public static final class OwnerAuthSourceTypeEnum {
 
@@ -233,13 +238,98 @@ public class DatabaseInput {
 
     private List<String> functionLocationList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data_statistic_enable")
+
+    private Boolean dataStatisticEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_name")
+
+    private String connectionName;
+
+    /**
+     * 数据库类型：MANAGED_DATABASE内置数据库、FOREIGN_DATABASE外置数据库。
+     */
+    public static final class DatabaseTypeEnum {
+
+        /**
+         * Enum MANAGED_DATABASE for value: "MANAGED_DATABASE"
+         */
+        public static final DatabaseTypeEnum MANAGED_DATABASE = new DatabaseTypeEnum("MANAGED_DATABASE");
+
+        /**
+         * Enum FOREIGN_DATABASE for value: "FOREIGN_DATABASE"
+         */
+        public static final DatabaseTypeEnum FOREIGN_DATABASE = new DatabaseTypeEnum("FOREIGN_DATABASE");
+
+        private static final Map<String, DatabaseTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DatabaseTypeEnum> createStaticFields() {
+            Map<String, DatabaseTypeEnum> map = new HashMap<>();
+            map.put("MANAGED_DATABASE", MANAGED_DATABASE);
+            map.put("FOREIGN_DATABASE", FOREIGN_DATABASE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        DatabaseTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static DatabaseTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DatabaseTypeEnum(value));
+        }
+
+        public static DatabaseTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof DatabaseTypeEnum) {
+                return this.value.equals(((DatabaseTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "database_type")
+
+    private DatabaseTypeEnum databaseType;
+
     public DatabaseInput withDatabaseName(String databaseName) {
         this.databaseName = databaseName;
         return this;
     }
 
     /**
-     * 数据库名称。只能包含中文、字母、数字和下划线，且长度为1~128个字符。
+     * 数据库名称。只能包含中文、字母、数字、下划线、中划线，且长度为1~128个字符。
      * @return databaseName
      */
     public String getDatabaseName() {
@@ -248,6 +338,23 @@ public class DatabaseInput {
 
     public void setDatabaseName(String databaseName) {
         this.databaseName = databaseName;
+    }
+
+    public DatabaseInput withExternalDatabaseId(String externalDatabaseId) {
+        this.externalDatabaseId = externalDatabaseId;
+        return this;
+    }
+
+    /**
+     * 用户端数据库id，创建时指定，不可修改。
+     * @return externalDatabaseId
+     */
+    public String getExternalDatabaseId() {
+        return externalDatabaseId;
+    }
+
+    public void setExternalDatabaseId(String externalDatabaseId) {
+        this.externalDatabaseId = externalDatabaseId;
     }
 
     public DatabaseInput withOwner(String owner) {
@@ -273,7 +380,7 @@ public class DatabaseInput {
     }
 
     /**
-     * 所有者类型,USER-用户,GROUP-组,ROLE-角色。LakeFormation服务分为一期和二期，一期响应Body无该参数。
+     * 所有者类型：USER-用户、GROUP-组、ROLE-角色。LakeFormation服务分为一期和二期，一期响应Body无该参数。
      * @return ownerType
      */
     public OwnerTypeEnum getOwnerType() {
@@ -290,7 +397,7 @@ public class DatabaseInput {
     }
 
     /**
-     * 所有者来源,IAM-云用户,SAML-联邦,LDAP-ld用户,LOCAL-本地用户,AGENTTENANT-委托,OTHER-其它。LakeFormation服务分为一期和二期，一期响应Body无该参数。
+     * 所有者来源：IAM-云用户、SAML-联邦、LDAP-ld用户、LOCAL-本地用户、AGENTTENANT-委托、OTHER-其它。LakeFormation服务分为一期和二期，一期响应Body无该参数。
      * @return ownerAuthSourceType
      */
     public OwnerAuthSourceTypeEnum getOwnerAuthSourceType() {
@@ -324,7 +431,7 @@ public class DatabaseInput {
     }
 
     /**
-     * 数据库路径地址。例如obs://location/uri/
+     * 数据库路径地址。例如obs://location/uri/。
      * @return location
      */
     public String getLocation() {
@@ -357,7 +464,7 @@ public class DatabaseInput {
     }
 
     /**
-     * 标签信息
+     * 标签信息。
      * @return parameters
      */
     public Map<String, String> getParameters() {
@@ -390,7 +497,7 @@ public class DatabaseInput {
     }
 
     /**
-     * 表路径列表
+     * 表路径列表。
      * @return tableLocationList
      */
     public List<String> getTableLocationList() {
@@ -423,7 +530,7 @@ public class DatabaseInput {
     }
 
     /**
-     * 函数路径列表
+     * 函数路径列表。
      * @return functionLocationList
      */
     public List<String> getFunctionLocationList() {
@@ -432,6 +539,57 @@ public class DatabaseInput {
 
     public void setFunctionLocationList(List<String> functionLocationList) {
         this.functionLocationList = functionLocationList;
+    }
+
+    public DatabaseInput withDataStatisticEnable(Boolean dataStatisticEnable) {
+        this.dataStatisticEnable = dataStatisticEnable;
+        return this;
+    }
+
+    /**
+     * 数据概况统计开关。默认状态为关，若要开启database下table的数据概况统计，需要先打开database的数据概况开关
+     * @return dataStatisticEnable
+     */
+    public Boolean getDataStatisticEnable() {
+        return dataStatisticEnable;
+    }
+
+    public void setDataStatisticEnable(Boolean dataStatisticEnable) {
+        this.dataStatisticEnable = dataStatisticEnable;
+    }
+
+    public DatabaseInput withConnectionName(String connectionName) {
+        this.connectionName = connectionName;
+        return this;
+    }
+
+    /**
+     * 连接名称
+     * @return connectionName
+     */
+    public String getConnectionName() {
+        return connectionName;
+    }
+
+    public void setConnectionName(String connectionName) {
+        this.connectionName = connectionName;
+    }
+
+    public DatabaseInput withDatabaseType(DatabaseTypeEnum databaseType) {
+        this.databaseType = databaseType;
+        return this;
+    }
+
+    /**
+     * 数据库类型：MANAGED_DATABASE内置数据库、FOREIGN_DATABASE外置数据库。
+     * @return databaseType
+     */
+    public DatabaseTypeEnum getDatabaseType() {
+        return databaseType;
+    }
+
+    public void setDatabaseType(DatabaseTypeEnum databaseType) {
+        this.databaseType = databaseType;
     }
 
     @Override
@@ -443,18 +601,23 @@ public class DatabaseInput {
             return false;
         }
         DatabaseInput that = (DatabaseInput) obj;
-        return Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.owner, that.owner)
-            && Objects.equals(this.ownerType, that.ownerType)
+        return Objects.equals(this.databaseName, that.databaseName)
+            && Objects.equals(this.externalDatabaseId, that.externalDatabaseId)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.ownerType, that.ownerType)
             && Objects.equals(this.ownerAuthSourceType, that.ownerAuthSourceType)
             && Objects.equals(this.description, that.description) && Objects.equals(this.location, that.location)
             && Objects.equals(this.parameters, that.parameters)
             && Objects.equals(this.tableLocationList, that.tableLocationList)
-            && Objects.equals(this.functionLocationList, that.functionLocationList);
+            && Objects.equals(this.functionLocationList, that.functionLocationList)
+            && Objects.equals(this.dataStatisticEnable, that.dataStatisticEnable)
+            && Objects.equals(this.connectionName, that.connectionName)
+            && Objects.equals(this.databaseType, that.databaseType);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(databaseName,
+            externalDatabaseId,
             owner,
             ownerType,
             ownerAuthSourceType,
@@ -462,7 +625,10 @@ public class DatabaseInput {
             location,
             parameters,
             tableLocationList,
-            functionLocationList);
+            functionLocationList,
+            dataStatisticEnable,
+            connectionName,
+            databaseType);
     }
 
     @Override
@@ -470,6 +636,7 @@ public class DatabaseInput {
         StringBuilder sb = new StringBuilder();
         sb.append("class DatabaseInput {\n");
         sb.append("    databaseName: ").append(toIndentedString(databaseName)).append("\n");
+        sb.append("    externalDatabaseId: ").append(toIndentedString(externalDatabaseId)).append("\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
         sb.append("    ownerType: ").append(toIndentedString(ownerType)).append("\n");
         sb.append("    ownerAuthSourceType: ").append(toIndentedString(ownerAuthSourceType)).append("\n");
@@ -478,6 +645,9 @@ public class DatabaseInput {
         sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
         sb.append("    tableLocationList: ").append(toIndentedString(tableLocationList)).append("\n");
         sb.append("    functionLocationList: ").append(toIndentedString(functionLocationList)).append("\n");
+        sb.append("    dataStatisticEnable: ").append(toIndentedString(dataStatisticEnable)).append("\n");
+        sb.append("    connectionName: ").append(toIndentedString(connectionName)).append("\n");
+        sb.append("    databaseType: ").append(toIndentedString(databaseType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -30,13 +30,18 @@ public class ShowTableRequest {
 
     private String tableName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version_id")
+
+    private String versionId;
+
     public ShowTableRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
     /**
-     * 实例ID
+     * LakeFormation实例ID。创建实例时自动生成。例如：2180518f-42b8-4947-b20b-adfc53981a25。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -53,7 +58,7 @@ public class ShowTableRequest {
     }
 
     /**
-     * catalog名字
+     * catalog名称。只能包含字母、数字和下划线，且长度为1~256个字符。
      * @return catalogName
      */
     public String getCatalogName() {
@@ -70,7 +75,7 @@ public class ShowTableRequest {
     }
 
     /**
-     * 数据库名字
+     * 数据库名称。只能包含中文、字母、数字、下划线、中划线，且长度为1~128个字符。
      * @return databaseName
      */
     public String getDatabaseName() {
@@ -87,7 +92,7 @@ public class ShowTableRequest {
     }
 
     /**
-     * 表名称
+     * 表名称。只能包含中文、字母、数字、下划线、中划线，且长度为1~256个字符。
      * @return tableName
      */
     public String getTableName() {
@@ -96,6 +101,23 @@ public class ShowTableRequest {
 
     public void setTableName(String tableName) {
         this.tableName = tableName;
+    }
+
+    public ShowTableRequest withVersionId(String versionId) {
+        this.versionId = versionId;
+        return this;
+    }
+
+    /**
+     * 版本ID，默认为最新版本
+     * @return versionId
+     */
+    public String getVersionId() {
+        return versionId;
+    }
+
+    public void setVersionId(String versionId) {
+        this.versionId = versionId;
     }
 
     @Override
@@ -108,12 +130,13 @@ public class ShowTableRequest {
         }
         ShowTableRequest that = (ShowTableRequest) obj;
         return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
-            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName);
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.versionId, that.versionId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, catalogName, databaseName, tableName);
+        return Objects.hash(instanceId, catalogName, databaseName, tableName, versionId);
     }
 
     @Override
@@ -124,6 +147,7 @@ public class ShowTableRequest {
         sb.append("    catalogName: ").append(toIndentedString(catalogName)).append("\n");
         sb.append("    databaseName: ").append(toIndentedString(databaseName)).append("\n");
         sb.append("    tableName: ").append(toIndentedString(tableName)).append("\n");
+        sb.append("    versionId: ").append(toIndentedString(versionId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

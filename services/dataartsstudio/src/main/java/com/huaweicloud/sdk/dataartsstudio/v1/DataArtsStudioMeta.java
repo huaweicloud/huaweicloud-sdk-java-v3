@@ -114,7 +114,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CatalogInfo;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CatalogLevelVOList;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CatalogMetaDataEventRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CatalogMoveParaDTO;
-import com.huaweicloud.sdk.dataartsstudio.v1.model.CatalogParamsVO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CatalogVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CategoryDetailVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ChangeCatalogRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ChangeCatalogResponse;
@@ -3610,10 +3610,10 @@ public class DataArtsStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateSubjectRequest::getXProjectId, CreateSubjectRequest::setXProjectId));
-        builder.<CatalogParamsVO>withRequestField("body",
+        builder.<CatalogVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CatalogParamsVO.class),
+            TypeCasts.uncheckedConversion(CatalogVO.class),
             f -> f.withMarshaller(CreateSubjectRequest::getBody, CreateSubjectRequest::setBody));
 
         // response
@@ -16777,10 +16777,10 @@ public class DataArtsStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateSubjectRequest::getXProjectId, UpdateSubjectRequest::setXProjectId));
-        builder.<CatalogParamsVO>withRequestField("body",
+        builder.<CatalogVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CatalogParamsVO.class),
+            TypeCasts.uncheckedConversion(CatalogVO.class),
             f -> f.withMarshaller(UpdateSubjectRequest::getBody, UpdateSubjectRequest::setBody));
 
         // response
