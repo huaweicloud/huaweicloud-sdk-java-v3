@@ -1,0 +1,114 @@
+package com.huaweicloud.sdk.modelarts.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * 训练实验。
+ */
+public class TrainingExperimentResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metadata")
+
+    private TrainingExperimentResponseMetadata metadata;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "statistic")
+
+    private TrainingExperimentStatistic statistic;
+
+    public TrainingExperimentResponse withMetadata(TrainingExperimentResponseMetadata metadata) {
+        this.metadata = metadata;
+        return this;
+    }
+
+    public TrainingExperimentResponse withMetadata(Consumer<TrainingExperimentResponseMetadata> metadataSetter) {
+        if (this.metadata == null) {
+            this.metadata = new TrainingExperimentResponseMetadata();
+            metadataSetter.accept(this.metadata);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get metadata
+     * @return metadata
+     */
+    public TrainingExperimentResponseMetadata getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(TrainingExperimentResponseMetadata metadata) {
+        this.metadata = metadata;
+    }
+
+    public TrainingExperimentResponse withStatistic(TrainingExperimentStatistic statistic) {
+        this.statistic = statistic;
+        return this;
+    }
+
+    public TrainingExperimentResponse withStatistic(Consumer<TrainingExperimentStatistic> statisticSetter) {
+        if (this.statistic == null) {
+            this.statistic = new TrainingExperimentStatistic();
+            statisticSetter.accept(this.statistic);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get statistic
+     * @return statistic
+     */
+    public TrainingExperimentStatistic getStatistic() {
+        return statistic;
+    }
+
+    public void setStatistic(TrainingExperimentStatistic statistic) {
+        this.statistic = statistic;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        TrainingExperimentResponse that = (TrainingExperimentResponse) obj;
+        return Objects.equals(this.metadata, that.metadata) && Objects.equals(this.statistic, that.statistic);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(metadata, statistic);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class TrainingExperimentResponse {\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    statistic: ").append(toIndentedString(statistic)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

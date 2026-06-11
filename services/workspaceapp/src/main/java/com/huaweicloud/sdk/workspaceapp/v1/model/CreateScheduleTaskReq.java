@@ -1,18 +1,102 @@
 package com.huaweicloud.sdk.workspaceapp.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.time.OffsetDateTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * 新增定时任务。
  */
 public class CreateScheduleTaskReq {
+
+    /**
+     * 执行周期类型，可选值为： - FIXED_TIME：指定时间。 - DAY：按天。 - WEEK：按周。 - MONTH：按月。
+     */
+    public static final class ScheduledTypeEnum {
+
+        /**
+         * Enum FIXED_TIME for value: "FIXED_TIME"
+         */
+        public static final ScheduledTypeEnum FIXED_TIME = new ScheduledTypeEnum("FIXED_TIME");
+
+        /**
+         * Enum DAY for value: "DAY"
+         */
+        public static final ScheduledTypeEnum DAY = new ScheduledTypeEnum("DAY");
+
+        /**
+         * Enum WEEK for value: "WEEK"
+         */
+        public static final ScheduledTypeEnum WEEK = new ScheduledTypeEnum("WEEK");
+
+        /**
+         * Enum MONTH for value: "MONTH"
+         */
+        public static final ScheduledTypeEnum MONTH = new ScheduledTypeEnum("MONTH");
+
+        private static final Map<String, ScheduledTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ScheduledTypeEnum> createStaticFields() {
+            Map<String, ScheduledTypeEnum> map = new HashMap<>();
+            map.put("FIXED_TIME", FIXED_TIME);
+            map.put("DAY", DAY);
+            map.put("WEEK", WEEK);
+            map.put("MONTH", MONTH);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ScheduledTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ScheduledTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScheduledTypeEnum(value));
+        }
+
+        public static ScheduledTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ScheduledTypeEnum) {
+                return this.value.equals(((ScheduledTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scheduled_type")
@@ -59,38 +143,13 @@ public class CreateScheduleTaskReq {
 
     private OffsetDateTime expireTime;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_name")
-
-    private String taskName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_type")
-
-    private ScheduleTaskTypeEnum taskType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "schedule_task_policy")
-
-    private ScheduleTaskPolicy scheduleTaskPolicy;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "description")
-
-    private String description;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "target_infos")
-
-    private List<TargetInfo> targetInfos = null;
-
     public CreateScheduleTaskReq withScheduledType(ScheduledTypeEnum scheduledType) {
         this.scheduledType = scheduledType;
         return this;
     }
 
     /**
-     * Get scheduledType
+     * 执行周期类型，可选值为： - FIXED_TIME：指定时间。 - DAY：按天。 - WEEK：按周。 - MONTH：按月。
      * @return scheduledType
      */
     public ScheduledTypeEnum getScheduledType() {
@@ -239,116 +298,6 @@ public class CreateScheduleTaskReq {
         this.expireTime = expireTime;
     }
 
-    public CreateScheduleTaskReq withTaskName(String taskName) {
-        this.taskName = taskName;
-        return this;
-    }
-
-    /**
-     * 任务名称，名称需满足如下规则: 1. 由中文，英文大小写，数字，_-组成，不能有空格。 2. 长度范围1~64个字符。
-     * @return taskName
-     */
-    public String getTaskName() {
-        return taskName;
-    }
-
-    public void setTaskName(String taskName) {
-        this.taskName = taskName;
-    }
-
-    public CreateScheduleTaskReq withTaskType(ScheduleTaskTypeEnum taskType) {
-        this.taskType = taskType;
-        return this;
-    }
-
-    /**
-     * Get taskType
-     * @return taskType
-     */
-    public ScheduleTaskTypeEnum getTaskType() {
-        return taskType;
-    }
-
-    public void setTaskType(ScheduleTaskTypeEnum taskType) {
-        this.taskType = taskType;
-    }
-
-    public CreateScheduleTaskReq withScheduleTaskPolicy(ScheduleTaskPolicy scheduleTaskPolicy) {
-        this.scheduleTaskPolicy = scheduleTaskPolicy;
-        return this;
-    }
-
-    public CreateScheduleTaskReq withScheduleTaskPolicy(Consumer<ScheduleTaskPolicy> scheduleTaskPolicySetter) {
-        if (this.scheduleTaskPolicy == null) {
-            this.scheduleTaskPolicy = new ScheduleTaskPolicy();
-            scheduleTaskPolicySetter.accept(this.scheduleTaskPolicy);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get scheduleTaskPolicy
-     * @return scheduleTaskPolicy
-     */
-    public ScheduleTaskPolicy getScheduleTaskPolicy() {
-        return scheduleTaskPolicy;
-    }
-
-    public void setScheduleTaskPolicy(ScheduleTaskPolicy scheduleTaskPolicy) {
-        this.scheduleTaskPolicy = scheduleTaskPolicy;
-    }
-
-    public CreateScheduleTaskReq withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-    /**
-     * 任务描述。
-     * @return description
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public CreateScheduleTaskReq withTargetInfos(List<TargetInfo> targetInfos) {
-        this.targetInfos = targetInfos;
-        return this;
-    }
-
-    public CreateScheduleTaskReq addTargetInfosItem(TargetInfo targetInfosItem) {
-        if (this.targetInfos == null) {
-            this.targetInfos = new ArrayList<>();
-        }
-        this.targetInfos.add(targetInfosItem);
-        return this;
-    }
-
-    public CreateScheduleTaskReq withTargetInfos(Consumer<List<TargetInfo>> targetInfosSetter) {
-        if (this.targetInfos == null) {
-            this.targetInfos = new ArrayList<>();
-        }
-        targetInfosSetter.accept(this.targetInfos);
-        return this;
-    }
-
-    /**
-     * 定时任务对象列表。
-     * @return targetInfos
-     */
-    public List<TargetInfo> getTargetInfos() {
-        return targetInfos;
-    }
-
-    public void setTargetInfos(List<TargetInfo> targetInfos) {
-        this.targetInfos = targetInfos;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -363,10 +312,7 @@ public class CreateScheduleTaskReq {
             && Objects.equals(this.monthList, that.monthList) && Objects.equals(this.dateList, that.dateList)
             && Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.scheduledDate, that.scheduledDate)
             && Objects.equals(this.scheduledTime, that.scheduledTime)
-            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.taskName, that.taskName)
-            && Objects.equals(this.taskType, that.taskType)
-            && Objects.equals(this.scheduleTaskPolicy, that.scheduleTaskPolicy)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.targetInfos, that.targetInfos);
+            && Objects.equals(this.expireTime, that.expireTime);
     }
 
     @Override
@@ -379,12 +325,7 @@ public class CreateScheduleTaskReq {
             timeZone,
             scheduledDate,
             scheduledTime,
-            expireTime,
-            taskName,
-            taskType,
-            scheduleTaskPolicy,
-            description,
-            targetInfos);
+            expireTime);
     }
 
     @Override
@@ -400,11 +341,6 @@ public class CreateScheduleTaskReq {
         sb.append("    scheduledDate: ").append(toIndentedString(scheduledDate)).append("\n");
         sb.append("    scheduledTime: ").append(toIndentedString(scheduledTime)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
-        sb.append("    taskName: ").append(toIndentedString(taskName)).append("\n");
-        sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
-        sb.append("    scheduleTaskPolicy: ").append(toIndentedString(scheduleTaskPolicy)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    targetInfos: ").append(toIndentedString(targetInfos)).append("\n");
         sb.append("}");
         return sb.toString();
     }

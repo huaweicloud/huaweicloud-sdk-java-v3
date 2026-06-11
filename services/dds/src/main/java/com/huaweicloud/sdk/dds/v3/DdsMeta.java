@@ -21,6 +21,9 @@ import com.huaweicloud.sdk.dds.v3.model.BalancerActiveWindow;
 import com.huaweicloud.sdk.dds.v3.model.BatchDeleteBackupRequest;
 import com.huaweicloud.sdk.dds.v3.model.BatchDeleteBackupRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.BatchDeleteBackupResponse;
+import com.huaweicloud.sdk.dds.v3.model.BatchDeleteShardsRequest;
+import com.huaweicloud.sdk.dds.v3.model.BatchDeleteShardsRequestBody;
+import com.huaweicloud.sdk.dds.v3.model.BatchDeleteShardsResponse;
 import com.huaweicloud.sdk.dds.v3.model.BatchOperateInstanceTagRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.BatchTagActionRequest;
 import com.huaweicloud.sdk.dds.v3.model.BatchTagActionResponse;
@@ -468,6 +471,34 @@ public class DdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteBackupRequestBody.class),
             f -> f.withMarshaller(BatchDeleteBackupRequest::getBody, BatchDeleteBackupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteShardsRequest, BatchDeleteShardsResponse> batchDeleteShards =
+        genForBatchDeleteShards();
+
+    private static HttpRequestDef<BatchDeleteShardsRequest, BatchDeleteShardsResponse> genForBatchDeleteShards() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteShardsRequest, BatchDeleteShardsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteShardsRequest.class, BatchDeleteShardsResponse.class)
+                .withName("BatchDeleteShards")
+                .withUri("/v3/{project_id}/instances/{instance_id}/shards/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteShardsRequest::getInstanceId, BatchDeleteShardsRequest::setInstanceId));
+        builder.<BatchDeleteShardsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteShardsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteShardsRequest::getBody, BatchDeleteShardsRequest::setBody));
 
         // response
 

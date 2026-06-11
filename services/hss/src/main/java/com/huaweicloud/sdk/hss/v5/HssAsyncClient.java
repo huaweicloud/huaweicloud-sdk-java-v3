@@ -2281,6 +2281,66 @@ public class HssAsyncClient {
     }
 
     /**
+     * AI组件详细信息
+     *
+     * 查询AI组件详细信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAiComponentDetailRequest 请求对象
+     * @return CompletableFuture<ListAiComponentDetailResponse>
+     */
+    public CompletableFuture<ListAiComponentDetailResponse> listAiComponentDetailAsync(
+        ListAiComponentDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.listAiComponentDetail);
+    }
+
+    /**
+     * AI组件详细信息
+     *
+     * 查询AI组件详细信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAiComponentDetailRequest 请求对象
+     * @return AsyncInvoker<ListAiComponentDetailRequest, ListAiComponentDetailResponse>
+     */
+    public AsyncInvoker<ListAiComponentDetailRequest, ListAiComponentDetailResponse> listAiComponentDetailAsyncInvoker(
+        ListAiComponentDetailRequest request) {
+        return new AsyncInvoker<>(request, HssMeta.listAiComponentDetail, hcClient);
+    }
+
+    /**
+     * 查询AI组件统计信息
+     *
+     * 查询AI组件统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAiComponentStatisticsRequest 请求对象
+     * @return CompletableFuture<ListAiComponentStatisticsResponse>
+     */
+    public CompletableFuture<ListAiComponentStatisticsResponse> listAiComponentStatisticsAsync(
+        ListAiComponentStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.listAiComponentStatistics);
+    }
+
+    /**
+     * 查询AI组件统计信息
+     *
+     * 查询AI组件统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAiComponentStatisticsRequest 请求对象
+     * @return AsyncInvoker<ListAiComponentStatisticsRequest, ListAiComponentStatisticsResponse>
+     */
+    public AsyncInvoker<ListAiComponentStatisticsRequest, ListAiComponentStatisticsResponse> listAiComponentStatisticsAsyncInvoker(
+        ListAiComponentStatisticsRequest request) {
+        return new AsyncInvoker<>(request, HssMeta.listAiComponentStatistics, hcClient);
+    }
+
+    /**
      * 查询告警白名单列表
      *
      * 查询告警白名单列表。
@@ -4430,9 +4490,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 查入侵事件列表
+     * 查询安全告警事件
      *
-     * 查入侵事件列表。
+     * 查询安全告警事件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4444,9 +4504,9 @@ public class HssAsyncClient {
     }
 
     /**
-     * 查入侵事件列表
+     * 查询安全告警事件
      *
-     * 查入侵事件列表。
+     * 查询安全告警事件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6799,35 +6859,6 @@ public class HssAsyncClient {
     }
 
     /**
-     * 查询Agent历史状态列表
-     *
-     * 查询Agent历史状态列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAgentStatusRequest 请求对象
-     * @return CompletableFuture<ListAgentStatusResponse>
-     */
-    public CompletableFuture<ListAgentStatusResponse> listAgentStatusAsync(ListAgentStatusRequest request) {
-        return hcClient.asyncInvokeHttp(request, HssMeta.listAgentStatus);
-    }
-
-    /**
-     * 查询Agent历史状态列表
-     *
-     * 查询Agent历史状态列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAgentStatusRequest 请求对象
-     * @return AsyncInvoker<ListAgentStatusRequest, ListAgentStatusResponse>
-     */
-    public AsyncInvoker<ListAgentStatusRequest, ListAgentStatusResponse> listAgentStatusAsyncInvoker(
-        ListAgentStatusRequest request) {
-        return new AsyncInvoker<>(request, HssMeta.listAgentStatus, hcClient);
-    }
-
-    /**
      * 修改“病毒查杀按次计费”开关状态
      *
      * 修改“病毒查杀按次计费”开关状态。
@@ -7839,66 +7870,6 @@ public class HssAsyncClient {
     public AsyncInvoker<SwitchAppWhitelistPolicyLearnStatusRequest, SwitchAppWhitelistPolicyLearnStatusResponse> switchAppWhitelistPolicyLearnStatusAsyncInvoker(
         SwitchAppWhitelistPolicyLearnStatusRequest request) {
         return new AsyncInvoker<>(request, HssMeta.switchAppWhitelistPolicyLearnStatus, hcClient);
-    }
-
-    /**
-     * AI组件详细信息
-     *
-     * 查询AI组件详细信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAiComponentDetailRequest 请求对象
-     * @return CompletableFuture<ListAiComponentDetailResponse>
-     */
-    public CompletableFuture<ListAiComponentDetailResponse> listAiComponentDetailAsync(
-        ListAiComponentDetailRequest request) {
-        return hcClient.asyncInvokeHttp(request, HssMeta.listAiComponentDetail);
-    }
-
-    /**
-     * AI组件详细信息
-     *
-     * 查询AI组件详细信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAiComponentDetailRequest 请求对象
-     * @return AsyncInvoker<ListAiComponentDetailRequest, ListAiComponentDetailResponse>
-     */
-    public AsyncInvoker<ListAiComponentDetailRequest, ListAiComponentDetailResponse> listAiComponentDetailAsyncInvoker(
-        ListAiComponentDetailRequest request) {
-        return new AsyncInvoker<>(request, HssMeta.listAiComponentDetail, hcClient);
-    }
-
-    /**
-     * 查询AI组件统计信息
-     *
-     * 查询AI组件统计信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAiComponentStatisticsRequest 请求对象
-     * @return CompletableFuture<ListAiComponentStatisticsResponse>
-     */
-    public CompletableFuture<ListAiComponentStatisticsResponse> listAiComponentStatisticsAsync(
-        ListAiComponentStatisticsRequest request) {
-        return hcClient.asyncInvokeHttp(request, HssMeta.listAiComponentStatistics);
-    }
-
-    /**
-     * 查询AI组件统计信息
-     *
-     * 查询AI组件统计信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAiComponentStatisticsRequest 请求对象
-     * @return AsyncInvoker<ListAiComponentStatisticsRequest, ListAiComponentStatisticsResponse>
-     */
-    public AsyncInvoker<ListAiComponentStatisticsRequest, ListAiComponentStatisticsResponse> listAiComponentStatisticsAsyncInvoker(
-        ListAiComponentStatisticsRequest request) {
-        return new AsyncInvoker<>(request, HssMeta.listAiComponentStatistics, hcClient);
     }
 
     /**
@@ -10780,6 +10751,35 @@ public class HssAsyncClient {
     public AsyncInvoker<DeleteHostsGroupRequest, DeleteHostsGroupResponse> deleteHostsGroupAsyncInvoker(
         DeleteHostsGroupRequest request) {
         return new AsyncInvoker<>(request, HssMeta.deleteHostsGroup, hcClient);
+    }
+
+    /**
+     * 查询Agent历史状态列表
+     *
+     * 查询Agent历史状态列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAgentStatusRequest 请求对象
+     * @return CompletableFuture<ListAgentStatusResponse>
+     */
+    public CompletableFuture<ListAgentStatusResponse> listAgentStatusAsync(ListAgentStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.listAgentStatus);
+    }
+
+    /**
+     * 查询Agent历史状态列表
+     *
+     * 查询Agent历史状态列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAgentStatusRequest 请求对象
+     * @return AsyncInvoker<ListAgentStatusRequest, ListAgentStatusResponse>
+     */
+    public AsyncInvoker<ListAgentStatusRequest, ListAgentStatusResponse> listAgentStatusAsyncInvoker(
+        ListAgentStatusRequest request) {
+        return new AsyncInvoker<>(request, HssMeta.listAgentStatus, hcClient);
     }
 
     /**

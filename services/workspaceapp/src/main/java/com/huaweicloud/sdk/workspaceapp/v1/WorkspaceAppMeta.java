@@ -408,6 +408,7 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.UpdatePolicyTemplateResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdatePreBootPolicyReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdatePreBootPolicyRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdatePreBootPolicyResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateRawIconReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateScheduleTaskReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateScheduleTaskRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateScheduleTaskResponse;
@@ -426,6 +427,8 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateUserFolderReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateWarehouseAppReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateWarehouseAppRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateWarehouseAppResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UploadAppIconRawRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UploadAppIconRawResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UploadAppIconRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UploadAppIconRequestBody;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UploadAppIconResponse;
@@ -1045,6 +1048,39 @@ public class WorkspaceAppMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(UploadAppIconRequestBody.class),
             f -> f.withMarshaller(UploadAppIconRequest::getBody, UploadAppIconRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadAppIconRawRequest, UploadAppIconRawResponse> uploadAppIconRaw =
+        genForUploadAppIconRaw();
+
+    private static HttpRequestDef<UploadAppIconRawRequest, UploadAppIconRawResponse> genForUploadAppIconRaw() {
+        // basic
+        HttpRequestDef.Builder<UploadAppIconRawRequest, UploadAppIconRawResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UploadAppIconRawRequest.class, UploadAppIconRawResponse.class)
+                .withName("UploadAppIconRaw")
+                .withUri("/v1/{project_id}/app-groups/{app_group_id}/apps/{app_id}/raw-icon")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadAppIconRawRequest::getAppGroupId, UploadAppIconRawRequest::setAppGroupId));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadAppIconRawRequest::getAppId, UploadAppIconRawRequest::setAppId));
+        builder.<UpdateRawIconReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateRawIconReq.class),
+            f -> f.withMarshaller(UploadAppIconRawRequest::getBody, UploadAppIconRawRequest::setBody));
 
         // response
 

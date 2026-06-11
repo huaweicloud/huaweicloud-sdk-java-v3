@@ -96,6 +96,11 @@ public class ListTopSqlsRequest {
     private XLanguageEnum xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_key")
 
     private String sortKey;
@@ -149,6 +154,23 @@ public class ListTopSqlsRequest {
 
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
+    }
+
+    public ListTopSqlsRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * Get offset
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
     }
 
     public ListTopSqlsRequest withSortKey(String sortKey) {
@@ -231,13 +253,14 @@ public class ListTopSqlsRequest {
         }
         ListTopSqlsRequest that = (ListTopSqlsRequest) obj;
         return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.xLanguage, that.xLanguage)
-            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.statement, that.statement) && Objects.equals(this.sortDir, that.sortDir);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.statement, that.statement)
+            && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, xLanguage, sortKey, limit, statement, sortDir);
+        return Objects.hash(instanceId, xLanguage, offset, sortKey, limit, statement, sortDir);
     }
 
     @Override
@@ -246,6 +269,7 @@ public class ListTopSqlsRequest {
         sb.append("class ListTopSqlsRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    statement: ").append(toIndentedString(statement)).append("\n");

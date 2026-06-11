@@ -128,7 +128,7 @@ public class CreateAppServerReq {
     }
 
     /**
-     * 可用分区。 > - [将服务创建到指定的可用分区，如果不指定则使用系统随机的可用分区](tag:HW)[将服务创建到指定的可用分区](tag:HCS)。 > - [获取方式详见可用区管理ListAvailabilityZone：\"GET  /v1/{project_id}/availability-zone\"。](tag:HW)[获取方式详见可用区管理ListAvailabilityZone：\"GET  /v1/{project_id}/availability-zone/summary\"。](tag:HCS)
+     * 可用分区。 > - [将服务创建到指定的可用分区，如果不指定则使用系统随机的可用分区，如果不存在中心站点，则必须指定availability_zone](tag:HW)[将服务创建到指定的可用分区](tag:HCS)。 > - [获取方式详见可用区管理ListAvailabilityZone：\"GET  /v1/{project_id}/availability-zone\"。](tag:HW)[获取方式详见可用区管理ListAvailabilityZone：\"GET  /v1/{project_id}/availability-zone/summary\"。](tag:HCS)
      * @return availabilityZone
      */
     public String getAvailabilityZone() {

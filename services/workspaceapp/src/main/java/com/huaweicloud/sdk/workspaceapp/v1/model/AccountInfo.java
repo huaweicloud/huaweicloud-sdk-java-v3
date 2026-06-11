@@ -102,7 +102,7 @@ public class AccountInfo {
     }
 
     /**
-     * 域名城。
+     * 域名称。
      * @return domain
      */
     public String getDomain() {

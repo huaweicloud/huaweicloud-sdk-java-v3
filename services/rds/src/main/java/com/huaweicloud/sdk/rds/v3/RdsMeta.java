@@ -94,6 +94,9 @@ import com.huaweicloud.sdk.rds.v3.model.CreateDistributionResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateDnsNameRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateDnsNameRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.CreateDnsNameResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateDrsJobTaskRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateDrsJobTaskResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateDrsTaskReq;
 import com.huaweicloud.sdk.rds.v3.model.CreateInstanceIam5Request;
 import com.huaweicloud.sdk.rds.v3.model.CreateInstanceIam5Response;
 import com.huaweicloud.sdk.rds.v3.model.CreateInstanceRequest;
@@ -284,6 +287,12 @@ import com.huaweicloud.sdk.rds.v3.model.ListFlavorsResizeResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListFlavorsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListHistoryDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListHistoryDatabaseResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListHistorySessionsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListHistorySessionsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListHistoryTopSqlsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListHistoryTopSqlsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListHistoryWaitEventsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListHistoryWaitEventsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInspectionHistoriesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInspectionHistoriesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceDiagnosisRequest;
@@ -492,6 +501,9 @@ import com.huaweicloud.sdk.rds.v3.model.RevokeRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.RevokeResponse;
 import com.huaweicloud.sdk.rds.v3.model.RevokeSqlserverDbUserPrivilegeRequest;
 import com.huaweicloud.sdk.rds.v3.model.RevokeSqlserverDbUserPrivilegeResponse;
+import com.huaweicloud.sdk.rds.v3.model.RotateAuditLogRequest;
+import com.huaweicloud.sdk.rds.v3.model.RotateAuditLogRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.RotateAuditLogResponse;
 import com.huaweicloud.sdk.rds.v3.model.ScaleProxyRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.SearchQueryScaleComputeFlavorsRequest;
 import com.huaweicloud.sdk.rds.v3.model.SearchQueryScaleComputeFlavorsResponse;
@@ -554,6 +566,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowAutoEnlargePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAutoEnlargePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAutoUpgradePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAutoUpgradePolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowAvailableBuildDrInstanceRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowAvailableBuildDrInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAvailableVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAvailableVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupConfigRequest;
@@ -574,6 +588,12 @@ import com.huaweicloud.sdk.rds.v3.model.ShowDomainNameRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowDomainNameResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowDrReplicaStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowDrReplicaStatusResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowDrsJobNameRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowDrsJobNameResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowHistorySessionAnalyseDownloadInfoRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowHistorySessionAnalyseDownloadInfoResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowHotClodSeparationStatusRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowHotClodSeparationStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowIncreBackupPolicy1Request;
 import com.huaweicloud.sdk.rds.v3.model.ShowIncreBackupPolicy1Response;
 import com.huaweicloud.sdk.rds.v3.model.ShowInformationAboutDatabaseProxyRequest;
@@ -584,6 +604,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowIntelligentKillSessionHistoryRequest
 import com.huaweicloud.sdk.rds.v3.model.ShowIntelligentKillSessionHistoryResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowIntelligentKillSessionStatisticRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowIntelligentKillSessionStatisticResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowMsdtcLocalHostRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowMsdtcLocalHostResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowOffSiteBackupPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowOffSiteBackupPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowPostgresqlParamValueRequest;
@@ -612,6 +634,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowTaskDetailRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowTaskDetailResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowTdeStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowTdeStatusResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowTopObjectsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowTopObjectsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowTransferPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowTransferPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowUpgradeDbMajorVersionStatusRequest;
@@ -741,6 +765,9 @@ import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeLargeVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeLargeVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradePgMajorVersion;
+import com.huaweicloud.sdk.rds.v3.model.UploadHistorySessionAnalyaseBody;
+import com.huaweicloud.sdk.rds.v3.model.UploadHistorySessionAnalyaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.UploadHistorySessionAnalyaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.UserForCreation;
 import com.huaweicloud.sdk.rds.v3.model.ValidateInstanceConnectionRequest;
 import com.huaweicloud.sdk.rds.v3.model.ValidateInstanceConnectionRequestBody;
@@ -1397,6 +1424,34 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDnsNameRequestBody.class),
             f -> f.withMarshaller(CreateDnsNameRequest::getBody, CreateDnsNameRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDrsJobTaskRequest, CreateDrsJobTaskResponse> createDrsJobTask =
+        genForCreateDrsJobTask();
+
+    private static HttpRequestDef<CreateDrsJobTaskRequest, CreateDrsJobTaskResponse> genForCreateDrsJobTask() {
+        // basic
+        HttpRequestDef.Builder<CreateDrsJobTaskRequest, CreateDrsJobTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDrsJobTaskRequest.class, CreateDrsJobTaskResponse.class)
+                .withName("CreateDrsJobTask")
+                .withUri("/v3/{project_id}/instances/{instance_id}/drs-job/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDrsJobTaskRequest::getInstanceId, CreateDrsJobTaskRequest::setInstanceId));
+        builder.<CreateDrsTaskReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDrsTaskReq.class),
+            f -> f.withMarshaller(CreateDrsJobTaskRequest::getBody, CreateDrsJobTaskRequest::setBody));
 
         // response
 
@@ -2728,6 +2783,181 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PostgreSQLHistoryDatabaseRequest.class),
             f -> f.withMarshaller(ListHistoryDatabaseRequest::getBody, ListHistoryDatabaseRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHistorySessionsRequest, ListHistorySessionsResponse> listHistorySessions =
+        genForListHistorySessions();
+
+    private static HttpRequestDef<ListHistorySessionsRequest, ListHistorySessionsResponse> genForListHistorySessions() {
+        // basic
+        HttpRequestDef.Builder<ListHistorySessionsRequest, ListHistorySessionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListHistorySessionsRequest.class, ListHistorySessionsResponse.class)
+                .withName("ListHistorySessions")
+                .withUri("/v3/{project_id}/instances/{instance_id}/history-session")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistorySessionsRequest::getInstanceId,
+                ListHistorySessionsRequest::setInstanceId));
+        builder.<String>withRequestField("pid",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistorySessionsRequest::getPid, ListHistorySessionsRequest::setPid));
+        builder.<String>withRequestField("user_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistorySessionsRequest::getUserName, ListHistorySessionsRequest::setUserName));
+        builder.<String>withRequestField("database_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistorySessionsRequest::getDatabaseName,
+                ListHistorySessionsRequest::setDatabaseName));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListHistorySessionsRequest::getStartTime, ListHistorySessionsRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListHistorySessionsRequest::getEndTime, ListHistorySessionsRequest::setEndTime));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHistorySessionsRequest::getOffset, ListHistorySessionsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHistorySessionsRequest::getLimit, ListHistorySessionsRequest::setLimit));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistorySessionsRequest::getXLanguage, ListHistorySessionsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHistoryTopSqlsRequest, ListHistoryTopSqlsResponse> listHistoryTopSqls =
+        genForListHistoryTopSqls();
+
+    private static HttpRequestDef<ListHistoryTopSqlsRequest, ListHistoryTopSqlsResponse> genForListHistoryTopSqls() {
+        // basic
+        HttpRequestDef.Builder<ListHistoryTopSqlsRequest, ListHistoryTopSqlsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListHistoryTopSqlsRequest.class, ListHistoryTopSqlsResponse.class)
+                .withName("ListHistoryTopSqls")
+                .withUri("/v3/{project_id}/instances/{instance_id}/history-top-sql")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistoryTopSqlsRequest::getInstanceId, ListHistoryTopSqlsRequest::setInstanceId));
+        builder.<String>withRequestField("user_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistoryTopSqlsRequest::getUserName, ListHistoryTopSqlsRequest::setUserName));
+        builder.<String>withRequestField("database_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistoryTopSqlsRequest::getDatabaseName,
+                ListHistoryTopSqlsRequest::setDatabaseName));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListHistoryTopSqlsRequest::getStartTime, ListHistoryTopSqlsRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListHistoryTopSqlsRequest::getEndTime, ListHistoryTopSqlsRequest::setEndTime));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHistoryTopSqlsRequest::getOffset, ListHistoryTopSqlsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHistoryTopSqlsRequest::getLimit, ListHistoryTopSqlsRequest::setLimit));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistoryTopSqlsRequest::getXLanguage, ListHistoryTopSqlsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHistoryWaitEventsRequest, ListHistoryWaitEventsResponse> listHistoryWaitEvents =
+        genForListHistoryWaitEvents();
+
+    private static HttpRequestDef<ListHistoryWaitEventsRequest, ListHistoryWaitEventsResponse> genForListHistoryWaitEvents() {
+        // basic
+        HttpRequestDef.Builder<ListHistoryWaitEventsRequest, ListHistoryWaitEventsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListHistoryWaitEventsRequest.class, ListHistoryWaitEventsResponse.class)
+            .withName("ListHistoryWaitEvents")
+            .withUri("/v3/{project_id}/instances/{instance_id}/history-wait-event")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistoryWaitEventsRequest::getInstanceId,
+                ListHistoryWaitEventsRequest::setInstanceId));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListHistoryWaitEventsRequest::getStartTime,
+                ListHistoryWaitEventsRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListHistoryWaitEventsRequest::getEndTime, ListHistoryWaitEventsRequest::setEndTime));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHistoryWaitEventsRequest::getOffset, ListHistoryWaitEventsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHistoryWaitEventsRequest::getLimit, ListHistoryWaitEventsRequest::setLimit));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHistoryWaitEventsRequest::getXLanguage,
+                ListHistoryWaitEventsRequest::setXLanguage));
 
         // response
 
@@ -4456,6 +4686,11 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTopSqlsRequest::getInstanceId, ListTopSqlsRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTopSqlsRequest::getOffset, ListTopSqlsRequest::setOffset));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -5520,6 +5755,39 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAvailableBuildDrInstanceRequest, ShowAvailableBuildDrInstanceResponse> showAvailableBuildDrInstance =
+        genForShowAvailableBuildDrInstance();
+
+    private static HttpRequestDef<ShowAvailableBuildDrInstanceRequest, ShowAvailableBuildDrInstanceResponse> genForShowAvailableBuildDrInstance() {
+        // basic
+        HttpRequestDef.Builder<ShowAvailableBuildDrInstanceRequest, ShowAvailableBuildDrInstanceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAvailableBuildDrInstanceRequest.class,
+                    ShowAvailableBuildDrInstanceResponse.class)
+                .withName("ShowAvailableBuildDrInstance")
+                .withUri("/v3/{project_id}/instances/disaster-recovery-instance")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowAvailableBuildDrInstanceRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowAvailableBuildDrInstanceRequest.TypeEnum.class),
+            f -> f.withMarshaller(ShowAvailableBuildDrInstanceRequest::getType,
+                ShowAvailableBuildDrInstanceRequest::setType));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAvailableBuildDrInstanceRequest::getXLanguage,
+                ShowAvailableBuildDrInstanceRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAvailableVersionRequest, ShowAvailableVersionResponse> showAvailableVersion =
         genForShowAvailableVersion();
 
@@ -5821,6 +6089,101 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDrReplicaStatusRequest::getXLanguage, ShowDrReplicaStatusRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDrsJobNameRequest, ShowDrsJobNameResponse> showDrsJobName =
+        genForShowDrsJobName();
+
+    private static HttpRequestDef<ShowDrsJobNameRequest, ShowDrsJobNameResponse> genForShowDrsJobName() {
+        // basic
+        HttpRequestDef.Builder<ShowDrsJobNameRequest, ShowDrsJobNameResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDrsJobNameRequest.class, ShowDrsJobNameResponse.class)
+                .withName("ShowDrsJobName")
+                .withUri("/v3/{project_id}/instances/{instance_id}/drs-job/name")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDrsJobNameRequest::getInstanceId, ShowDrsJobNameRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowHistorySessionAnalyseDownloadInfoRequest, ShowHistorySessionAnalyseDownloadInfoResponse> showHistorySessionAnalyseDownloadInfo =
+        genForShowHistorySessionAnalyseDownloadInfo();
+
+    private static HttpRequestDef<ShowHistorySessionAnalyseDownloadInfoRequest, ShowHistorySessionAnalyseDownloadInfoResponse> genForShowHistorySessionAnalyseDownloadInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowHistorySessionAnalyseDownloadInfoRequest, ShowHistorySessionAnalyseDownloadInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowHistorySessionAnalyseDownloadInfoRequest.class,
+                    ShowHistorySessionAnalyseDownloadInfoResponse.class)
+                .withName("ShowHistorySessionAnalyseDownloadInfo")
+                .withUri("/v3/{project_id}/instances/{instance_id}/history-session-analyse-upload")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHistorySessionAnalyseDownloadInfoRequest::getInstanceId,
+                ShowHistorySessionAnalyseDownloadInfoRequest::setInstanceId));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHistorySessionAnalyseDownloadInfoRequest::getType,
+                ShowHistorySessionAnalyseDownloadInfoRequest::setType));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHistorySessionAnalyseDownloadInfoRequest::getXLanguage,
+                ShowHistorySessionAnalyseDownloadInfoRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowHotClodSeparationStatusRequest, ShowHotClodSeparationStatusResponse> showHotClodSeparationStatus =
+        genForShowHotClodSeparationStatus();
+
+    private static HttpRequestDef<ShowHotClodSeparationStatusRequest, ShowHotClodSeparationStatusResponse> genForShowHotClodSeparationStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowHotClodSeparationStatusRequest, ShowHotClodSeparationStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowHotClodSeparationStatusRequest.class,
+                    ShowHotClodSeparationStatusResponse.class)
+                .withName("ShowHotClodSeparationStatus")
+                .withUri("/v3/{project_id}/instances/{instance_id}/hot-cold-separation/status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHotClodSeparationStatusRequest::getInstanceId,
+                ShowHotClodSeparationStatusRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHotClodSeparationStatusRequest::getXLanguage,
+                ShowHotClodSeparationStatusRequest::setXLanguage));
 
         // response
 
@@ -6182,6 +6545,59 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTdeStatusRequest::getInstanceId, ShowTdeStatusRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTopObjectsRequest, ShowTopObjectsResponse> showTopObjects =
+        genForShowTopObjects();
+
+    private static HttpRequestDef<ShowTopObjectsRequest, ShowTopObjectsResponse> genForShowTopObjects() {
+        // basic
+        HttpRequestDef.Builder<ShowTopObjectsRequest, ShowTopObjectsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTopObjectsRequest.class, ShowTopObjectsResponse.class)
+                .withName("ShowTopObjects")
+                .withUri("/v3/{project_id}/instances/{instance_id}/ops/top/objects")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTopObjectsRequest::getInstanceId, ShowTopObjectsRequest::setInstanceId));
+        builder.<Integer>withRequestField("top",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTopObjectsRequest::getTop, ShowTopObjectsRequest::setTop));
+        builder.<String>withRequestField("database_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTopObjectsRequest::getDatabaseName, ShowTopObjectsRequest::setDatabaseName));
+        builder.<String>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTopObjectsRequest::getOrder, ShowTopObjectsRequest::setOrder));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTopObjectsRequest::getOffset, ShowTopObjectsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTopObjectsRequest::getLimit, ShowTopObjectsRequest::setLimit));
+        builder.<ShowTopObjectsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowTopObjectsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowTopObjectsRequest::getXLanguage, ShowTopObjectsRequest::setXLanguage));
 
         // response
 
@@ -7315,6 +7731,45 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UploadHistorySessionAnalyaseRequest, UploadHistorySessionAnalyaseResponse> uploadHistorySessionAnalyase =
+        genForUploadHistorySessionAnalyase();
+
+    private static HttpRequestDef<UploadHistorySessionAnalyaseRequest, UploadHistorySessionAnalyaseResponse> genForUploadHistorySessionAnalyase() {
+        // basic
+        HttpRequestDef.Builder<UploadHistorySessionAnalyaseRequest, UploadHistorySessionAnalyaseResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UploadHistorySessionAnalyaseRequest.class,
+                    UploadHistorySessionAnalyaseResponse.class)
+                .withName("UploadHistorySessionAnalyase")
+                .withUri("/v3/{project_id}/instances/{instance_id}/history-session-analyse-upload")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadHistorySessionAnalyaseRequest::getInstanceId,
+                UploadHistorySessionAnalyaseRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadHistorySessionAnalyaseRequest::getXLanguage,
+                UploadHistorySessionAnalyaseRequest::setXLanguage));
+        builder.<UploadHistorySessionAnalyaseBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadHistorySessionAnalyaseBody.class),
+            f -> f.withMarshaller(UploadHistorySessionAnalyaseRequest::getBody,
+                UploadHistorySessionAnalyaseRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListApiVersionRequest, ListApiVersionResponse> listApiVersion =
         genForListApiVersion();
 
@@ -7368,6 +7823,29 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowApiVersionRequest::getVersion, ShowApiVersionRequest::setVersion));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMsdtcLocalHostRequest, ShowMsdtcLocalHostResponse> showMsdtcLocalHost =
+        genForShowMsdtcLocalHost();
+
+    private static HttpRequestDef<ShowMsdtcLocalHostRequest, ShowMsdtcLocalHostResponse> genForShowMsdtcLocalHost() {
+        // basic
+        HttpRequestDef.Builder<ShowMsdtcLocalHostRequest, ShowMsdtcLocalHostResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowMsdtcLocalHostRequest.class, ShowMsdtcLocalHostResponse.class)
+                .withName("ShowMsdtcLocalHost")
+                .withUri("/v3/{project_id}/instances/{instance_id}/msdtc/local-host")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMsdtcLocalHostRequest::getInstanceId, ShowMsdtcLocalHostRequest::setInstanceId));
 
         // response
 
@@ -9325,6 +9803,39 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(GetInstancesNoIndexTablesRequest::getLimit,
                 GetInstancesNoIndexTablesRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RotateAuditLogRequest, RotateAuditLogResponse> rotateAuditLog =
+        genForRotateAuditLog();
+
+    private static HttpRequestDef<RotateAuditLogRequest, RotateAuditLogResponse> genForRotateAuditLog() {
+        // basic
+        HttpRequestDef.Builder<RotateAuditLogRequest, RotateAuditLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RotateAuditLogRequest.class, RotateAuditLogResponse.class)
+                .withName("RotateAuditLog")
+                .withUri("/v3/{project_id}/instances/{instance_id}/auditlog-rotate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RotateAuditLogRequest::getInstanceId, RotateAuditLogRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RotateAuditLogRequest::getXLanguage, RotateAuditLogRequest::setXLanguage));
+        builder.<RotateAuditLogRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RotateAuditLogRequestBody.class),
+            f -> f.withMarshaller(RotateAuditLogRequest::getBody, RotateAuditLogRequest::setBody));
 
         // response
 

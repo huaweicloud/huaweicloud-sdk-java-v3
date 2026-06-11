@@ -17,7 +17,7 @@ public class ShowDisasterRecoverySettingsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disaster_recovery_settings")
 
-    private List<SwitchoverRatioInfo> disasterRecoverySettings = null;
+    private List<QuerySwitchoverRatioInfo> disasterRecoverySettings = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
@@ -25,13 +25,13 @@ public class ShowDisasterRecoverySettingsResponse extends SdkResponse {
     private Integer totalCount;
 
     public ShowDisasterRecoverySettingsResponse withDisasterRecoverySettings(
-        List<SwitchoverRatioInfo> disasterRecoverySettings) {
+        List<QuerySwitchoverRatioInfo> disasterRecoverySettings) {
         this.disasterRecoverySettings = disasterRecoverySettings;
         return this;
     }
 
     public ShowDisasterRecoverySettingsResponse addDisasterRecoverySettingsItem(
-        SwitchoverRatioInfo disasterRecoverySettingsItem) {
+        QuerySwitchoverRatioInfo disasterRecoverySettingsItem) {
         if (this.disasterRecoverySettings == null) {
             this.disasterRecoverySettings = new ArrayList<>();
         }
@@ -40,7 +40,7 @@ public class ShowDisasterRecoverySettingsResponse extends SdkResponse {
     }
 
     public ShowDisasterRecoverySettingsResponse withDisasterRecoverySettings(
-        Consumer<List<SwitchoverRatioInfo>> disasterRecoverySettingsSetter) {
+        Consumer<List<QuerySwitchoverRatioInfo>> disasterRecoverySettingsSetter) {
         if (this.disasterRecoverySettings == null) {
             this.disasterRecoverySettings = new ArrayList<>();
         }
@@ -49,14 +49,14 @@ public class ShowDisasterRecoverySettingsResponse extends SdkResponse {
     }
 
     /**
-     * 容灾切换的故障节点比例列表。
+     * **参数解释：** 容灾切换的故障节点比例列表。 **取值范围：** 不涉及。
      * @return disasterRecoverySettings
      */
-    public List<SwitchoverRatioInfo> getDisasterRecoverySettings() {
+    public List<QuerySwitchoverRatioInfo> getDisasterRecoverySettings() {
         return disasterRecoverySettings;
     }
 
-    public void setDisasterRecoverySettings(List<SwitchoverRatioInfo> disasterRecoverySettings) {
+    public void setDisasterRecoverySettings(List<QuerySwitchoverRatioInfo> disasterRecoverySettings) {
         this.disasterRecoverySettings = disasterRecoverySettings;
     }
 
@@ -66,7 +66,7 @@ public class ShowDisasterRecoverySettingsResponse extends SdkResponse {
     }
 
     /**
-     * 总记录数。
+     * **参数解释：** 参数修改历史记录总条数。 **取值范围：** 不涉及。
      * @return totalCount
      */
     public Integer getTotalCount() {

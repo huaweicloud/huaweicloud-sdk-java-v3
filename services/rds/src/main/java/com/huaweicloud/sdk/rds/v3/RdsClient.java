@@ -73,6 +73,8 @@ import com.huaweicloud.sdk.rds.v3.model.CreateDistributionRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateDistributionResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateDnsNameRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateDnsNameResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateDrsJobTaskRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateDrsJobTaskResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateInstanceIam5Request;
 import com.huaweicloud.sdk.rds.v3.model.CreateInstanceIam5Response;
 import com.huaweicloud.sdk.rds.v3.model.CreateInstanceRequest;
@@ -225,6 +227,12 @@ import com.huaweicloud.sdk.rds.v3.model.ListFlavorsResizeResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListFlavorsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListHistoryDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListHistoryDatabaseResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListHistorySessionsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListHistorySessionsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListHistoryTopSqlsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListHistoryTopSqlsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListHistoryWaitEventsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListHistoryWaitEventsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInspectionHistoriesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInspectionHistoriesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceDiagnosisRequest;
@@ -391,6 +399,8 @@ import com.huaweicloud.sdk.rds.v3.model.RevokeRequest;
 import com.huaweicloud.sdk.rds.v3.model.RevokeResponse;
 import com.huaweicloud.sdk.rds.v3.model.RevokeSqlserverDbUserPrivilegeRequest;
 import com.huaweicloud.sdk.rds.v3.model.RevokeSqlserverDbUserPrivilegeResponse;
+import com.huaweicloud.sdk.rds.v3.model.RotateAuditLogRequest;
+import com.huaweicloud.sdk.rds.v3.model.RotateAuditLogResponse;
 import com.huaweicloud.sdk.rds.v3.model.SearchQueryScaleComputeFlavorsRequest;
 import com.huaweicloud.sdk.rds.v3.model.SearchQueryScaleComputeFlavorsResponse;
 import com.huaweicloud.sdk.rds.v3.model.SearchQueryScaleFlavorsRequest;
@@ -443,6 +453,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowAutoEnlargePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAutoEnlargePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAutoUpgradePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAutoUpgradePolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowAvailableBuildDrInstanceRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowAvailableBuildDrInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAvailableVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAvailableVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupConfigRequest;
@@ -463,6 +475,12 @@ import com.huaweicloud.sdk.rds.v3.model.ShowDomainNameRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowDomainNameResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowDrReplicaStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowDrReplicaStatusResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowDrsJobNameRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowDrsJobNameResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowHistorySessionAnalyseDownloadInfoRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowHistorySessionAnalyseDownloadInfoResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowHotClodSeparationStatusRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowHotClodSeparationStatusResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowIncreBackupPolicy1Request;
 import com.huaweicloud.sdk.rds.v3.model.ShowIncreBackupPolicy1Response;
 import com.huaweicloud.sdk.rds.v3.model.ShowInformationAboutDatabaseProxyRequest;
@@ -473,6 +491,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowIntelligentKillSessionHistoryRequest
 import com.huaweicloud.sdk.rds.v3.model.ShowIntelligentKillSessionHistoryResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowIntelligentKillSessionStatisticRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowIntelligentKillSessionStatisticResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowMsdtcLocalHostRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowMsdtcLocalHostResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowOffSiteBackupPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowOffSiteBackupPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowPostgresqlParamValueRequest;
@@ -501,6 +521,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowTaskDetailRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowTaskDetailResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowTdeStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowTdeStatusResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowTopObjectsRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowTopObjectsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowTransferPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowTransferPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowUpgradeDbMajorVersionStatusRequest;
@@ -601,6 +623,8 @@ import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeLargeVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeLargeVersionResponse;
+import com.huaweicloud.sdk.rds.v3.model.UploadHistorySessionAnalyaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.UploadHistorySessionAnalyaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.ValidateInstanceConnectionRequest;
 import com.huaweicloud.sdk.rds.v3.model.ValidateInstanceConnectionResponse;
 
@@ -1222,6 +1246,35 @@ public class RdsClient {
      */
     public SyncInvoker<CreateDnsNameRequest, CreateDnsNameResponse> createDnsNameInvoker(CreateDnsNameRequest request) {
         return new SyncInvoker<>(request, RdsMeta.createDnsName, hcClient);
+    }
+
+    /**
+     * 创建drs同步任务
+     *
+     * 创建drs同步任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDrsJobTaskRequest 请求对象
+     * @return CreateDrsJobTaskResponse
+     */
+    public CreateDrsJobTaskResponse createDrsJobTask(CreateDrsJobTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.createDrsJobTask);
+    }
+
+    /**
+     * 创建drs同步任务
+     *
+     * 创建drs同步任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDrsJobTaskRequest 请求对象
+     * @return SyncInvoker<CreateDrsJobTaskRequest, CreateDrsJobTaskResponse>
+     */
+    public SyncInvoker<CreateDrsJobTaskRequest, CreateDrsJobTaskResponse> createDrsJobTaskInvoker(
+        CreateDrsJobTaskRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.createDrsJobTask, hcClient);
     }
 
     /**
@@ -2317,6 +2370,93 @@ public class RdsClient {
     public SyncInvoker<ListHistoryDatabaseRequest, ListHistoryDatabaseResponse> listHistoryDatabaseInvoker(
         ListHistoryDatabaseRequest request) {
         return new SyncInvoker<>(request, RdsMeta.listHistoryDatabase, hcClient);
+    }
+
+    /**
+     * 查询历史会话
+     *
+     * 查询历史会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHistorySessionsRequest 请求对象
+     * @return ListHistorySessionsResponse
+     */
+    public ListHistorySessionsResponse listHistorySessions(ListHistorySessionsRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listHistorySessions);
+    }
+
+    /**
+     * 查询历史会话
+     *
+     * 查询历史会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHistorySessionsRequest 请求对象
+     * @return SyncInvoker<ListHistorySessionsRequest, ListHistorySessionsResponse>
+     */
+    public SyncInvoker<ListHistorySessionsRequest, ListHistorySessionsResponse> listHistorySessionsInvoker(
+        ListHistorySessionsRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.listHistorySessions, hcClient);
+    }
+
+    /**
+     * 查询历史TOP SQL（瞬时）
+     *
+     * 查询历史TOP SQL（瞬时）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHistoryTopSqlsRequest 请求对象
+     * @return ListHistoryTopSqlsResponse
+     */
+    public ListHistoryTopSqlsResponse listHistoryTopSqls(ListHistoryTopSqlsRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listHistoryTopSqls);
+    }
+
+    /**
+     * 查询历史TOP SQL（瞬时）
+     *
+     * 查询历史TOP SQL（瞬时）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHistoryTopSqlsRequest 请求对象
+     * @return SyncInvoker<ListHistoryTopSqlsRequest, ListHistoryTopSqlsResponse>
+     */
+    public SyncInvoker<ListHistoryTopSqlsRequest, ListHistoryTopSqlsResponse> listHistoryTopSqlsInvoker(
+        ListHistoryTopSqlsRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.listHistoryTopSqls, hcClient);
+    }
+
+    /**
+     * 查询历史等待事件
+     *
+     * 查询历史等待事件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHistoryWaitEventsRequest 请求对象
+     * @return ListHistoryWaitEventsResponse
+     */
+    public ListHistoryWaitEventsResponse listHistoryWaitEvents(ListHistoryWaitEventsRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listHistoryWaitEvents);
+    }
+
+    /**
+     * 查询历史等待事件
+     *
+     * 查询历史等待事件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHistoryWaitEventsRequest 请求对象
+     * @return SyncInvoker<ListHistoryWaitEventsRequest, ListHistoryWaitEventsResponse>
+     */
+    public SyncInvoker<ListHistoryWaitEventsRequest, ListHistoryWaitEventsResponse> listHistoryWaitEventsInvoker(
+        ListHistoryWaitEventsRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.listHistoryWaitEvents, hcClient);
     }
 
     /**
@@ -4426,6 +4566,36 @@ public class RdsClient {
     }
 
     /**
+     * 查询可用于搭建容灾的主实例或灾备实例
+     *
+     * 查询可用于搭建容灾的主实例或灾备实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAvailableBuildDrInstanceRequest 请求对象
+     * @return ShowAvailableBuildDrInstanceResponse
+     */
+    public ShowAvailableBuildDrInstanceResponse showAvailableBuildDrInstance(
+        ShowAvailableBuildDrInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showAvailableBuildDrInstance);
+    }
+
+    /**
+     * 查询可用于搭建容灾的主实例或灾备实例
+     *
+     * 查询可用于搭建容灾的主实例或灾备实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAvailableBuildDrInstanceRequest 请求对象
+     * @return SyncInvoker<ShowAvailableBuildDrInstanceRequest, ShowAvailableBuildDrInstanceResponse>
+     */
+    public SyncInvoker<ShowAvailableBuildDrInstanceRequest, ShowAvailableBuildDrInstanceResponse> showAvailableBuildDrInstanceInvoker(
+        ShowAvailableBuildDrInstanceRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.showAvailableBuildDrInstance, hcClient);
+    }
+
+    /**
      * 查询实例可升级的目标版本
      *
      * 查询实例可升级的目标版本
@@ -4712,6 +4882,94 @@ public class RdsClient {
     public SyncInvoker<ShowDrReplicaStatusRequest, ShowDrReplicaStatusResponse> showDrReplicaStatusInvoker(
         ShowDrReplicaStatusRequest request) {
         return new SyncInvoker<>(request, RdsMeta.showDrReplicaStatus, hcClient);
+    }
+
+    /**
+     * 查询实例的drs任务名称
+     *
+     * 查询实例的drs任务名称
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDrsJobNameRequest 请求对象
+     * @return ShowDrsJobNameResponse
+     */
+    public ShowDrsJobNameResponse showDrsJobName(ShowDrsJobNameRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showDrsJobName);
+    }
+
+    /**
+     * 查询实例的drs任务名称
+     *
+     * 查询实例的drs任务名称
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDrsJobNameRequest 请求对象
+     * @return SyncInvoker<ShowDrsJobNameRequest, ShowDrsJobNameResponse>
+     */
+    public SyncInvoker<ShowDrsJobNameRequest, ShowDrsJobNameResponse> showDrsJobNameInvoker(
+        ShowDrsJobNameRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.showDrsJobName, hcClient);
+    }
+
+    /**
+     * 查询历史会话分析的下载信息
+     *
+     * 查询历史会话分析的下载信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHistorySessionAnalyseDownloadInfoRequest 请求对象
+     * @return ShowHistorySessionAnalyseDownloadInfoResponse
+     */
+    public ShowHistorySessionAnalyseDownloadInfoResponse showHistorySessionAnalyseDownloadInfo(
+        ShowHistorySessionAnalyseDownloadInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showHistorySessionAnalyseDownloadInfo);
+    }
+
+    /**
+     * 查询历史会话分析的下载信息
+     *
+     * 查询历史会话分析的下载信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHistorySessionAnalyseDownloadInfoRequest 请求对象
+     * @return SyncInvoker<ShowHistorySessionAnalyseDownloadInfoRequest, ShowHistorySessionAnalyseDownloadInfoResponse>
+     */
+    public SyncInvoker<ShowHistorySessionAnalyseDownloadInfoRequest, ShowHistorySessionAnalyseDownloadInfoResponse> showHistorySessionAnalyseDownloadInfoInvoker(
+        ShowHistorySessionAnalyseDownloadInfoRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.showHistorySessionAnalyseDownloadInfo, hcClient);
+    }
+
+    /**
+     * 查询冷热分离是否开启
+     *
+     * 查询冷热分离是否开启
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHotClodSeparationStatusRequest 请求对象
+     * @return ShowHotClodSeparationStatusResponse
+     */
+    public ShowHotClodSeparationStatusResponse showHotClodSeparationStatus(ShowHotClodSeparationStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showHotClodSeparationStatus);
+    }
+
+    /**
+     * 查询冷热分离是否开启
+     *
+     * 查询冷热分离是否开启
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHotClodSeparationStatusRequest 请求对象
+     * @return SyncInvoker<ShowHotClodSeparationStatusRequest, ShowHotClodSeparationStatusResponse>
+     */
+    public SyncInvoker<ShowHotClodSeparationStatusRequest, ShowHotClodSeparationStatusResponse> showHotClodSeparationStatusInvoker(
+        ShowHotClodSeparationStatusRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.showHotClodSeparationStatus, hcClient);
     }
 
     /**
@@ -5087,6 +5345,35 @@ public class RdsClient {
      */
     public SyncInvoker<ShowTdeStatusRequest, ShowTdeStatusResponse> showTdeStatusInvoker(ShowTdeStatusRequest request) {
         return new SyncInvoker<>(request, RdsMeta.showTdeStatus, hcClient);
+    }
+
+    /**
+     * 查询top对象
+     *
+     * 查询top对象
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTopObjectsRequest 请求对象
+     * @return ShowTopObjectsResponse
+     */
+    public ShowTopObjectsResponse showTopObjects(ShowTopObjectsRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showTopObjects);
+    }
+
+    /**
+     * 查询top对象
+     *
+     * 查询top对象
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTopObjectsRequest 请求对象
+     * @return SyncInvoker<ShowTopObjectsRequest, ShowTopObjectsResponse>
+     */
+    public SyncInvoker<ShowTopObjectsRequest, ShowTopObjectsResponse> showTopObjectsInvoker(
+        ShowTopObjectsRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.showTopObjects, hcClient);
     }
 
     /**
@@ -6075,6 +6362,36 @@ public class RdsClient {
     }
 
     /**
+     * 上传历史会话分析
+     *
+     * 上传历史会话分析
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadHistorySessionAnalyaseRequest 请求对象
+     * @return UploadHistorySessionAnalyaseResponse
+     */
+    public UploadHistorySessionAnalyaseResponse uploadHistorySessionAnalyase(
+        UploadHistorySessionAnalyaseRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.uploadHistorySessionAnalyase);
+    }
+
+    /**
+     * 上传历史会话分析
+     *
+     * 上传历史会话分析
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadHistorySessionAnalyaseRequest 请求对象
+     * @return SyncInvoker<UploadHistorySessionAnalyaseRequest, UploadHistorySessionAnalyaseResponse>
+     */
+    public SyncInvoker<UploadHistorySessionAnalyaseRequest, UploadHistorySessionAnalyaseResponse> uploadHistorySessionAnalyaseInvoker(
+        UploadHistorySessionAnalyaseRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.uploadHistorySessionAnalyase, hcClient);
+    }
+
+    /**
      * 查询API版本列表
      *
      * 查询API版本列表。
@@ -6159,6 +6476,35 @@ public class RdsClient {
     public SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersionInvoker(
         ShowApiVersionRequest request) {
         return new SyncInvoker<>(request, RdsMeta.showApiVersion, hcClient);
+    }
+
+    /**
+     * 获取msdtc本机信息
+     *
+     * 获取msdtc本机信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMsdtcLocalHostRequest 请求对象
+     * @return ShowMsdtcLocalHostResponse
+     */
+    public ShowMsdtcLocalHostResponse showMsdtcLocalHost(ShowMsdtcLocalHostRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.showMsdtcLocalHost);
+    }
+
+    /**
+     * 获取msdtc本机信息
+     *
+     * 获取msdtc本机信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMsdtcLocalHostRequest 请求对象
+     * @return SyncInvoker<ShowMsdtcLocalHostRequest, ShowMsdtcLocalHostResponse>
+     */
+    public SyncInvoker<ShowMsdtcLocalHostRequest, ShowMsdtcLocalHostResponse> showMsdtcLocalHostInvoker(
+        ShowMsdtcLocalHostRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.showMsdtcLocalHost, hcClient);
     }
 
     /**
@@ -7740,6 +8086,35 @@ public class RdsClient {
     public SyncInvoker<GetInstancesNoIndexTablesRequest, GetInstancesNoIndexTablesResponse> getInstancesNoIndexTablesInvoker(
         GetInstancesNoIndexTablesRequest request) {
         return new SyncInvoker<>(request, RdsMeta.getInstancesNoIndexTables, hcClient);
+    }
+
+    /**
+     * 触发审计日志轮转
+     *
+     * 触发审计日志轮转
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RotateAuditLogRequest 请求对象
+     * @return RotateAuditLogResponse
+     */
+    public RotateAuditLogResponse rotateAuditLog(RotateAuditLogRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.rotateAuditLog);
+    }
+
+    /**
+     * 触发审计日志轮转
+     *
+     * 触发审计日志轮转
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RotateAuditLogRequest 请求对象
+     * @return SyncInvoker<RotateAuditLogRequest, RotateAuditLogResponse>
+     */
+    public SyncInvoker<RotateAuditLogRequest, RotateAuditLogResponse> rotateAuditLogInvoker(
+        RotateAuditLogRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.rotateAuditLog, hcClient);
     }
 
     /**

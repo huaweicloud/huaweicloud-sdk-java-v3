@@ -55,6 +55,11 @@ public class CatalogVO {
     private BizStatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "permission")
+
+    private Integer permission;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_biz")
 
     private BizVersionManageVO newBiz;
@@ -97,12 +102,12 @@ public class CatalogVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_id")
 
-    private String parentId;
+    private Long parentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "swap_order_id")
 
-    private String swapOrderId;
+    private Long swapOrderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -113,11 +118,6 @@ public class CatalogVO {
     @JsonProperty(value = "qualified_id")
 
     private String qualifiedId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "from_public")
-
-    private Boolean fromPublic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_by")
@@ -153,6 +153,11 @@ public class CatalogVO {
     @JsonProperty(value = "self_defined_fields")
 
     private List<SelfDefinedFieldVO> selfDefinedFields = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "relations")
+
+    private List<RelationVO> relations = null;
 
     public CatalogVO withNameCh(String nameCh) {
         this.nameCh = nameCh;
@@ -211,7 +216,7 @@ public class CatalogVO {
     }
 
     /**
-     * 扩展名。
+     * 对象标识。
      * @return qualifiedName
      */
     public String getQualifiedName() {
@@ -290,6 +295,23 @@ public class CatalogVO {
         this.status = status;
     }
 
+    public CatalogVO withPermission(Integer permission) {
+        this.permission = permission;
+        return this;
+    }
+
+    /**
+     * Get permission
+     * @return permission
+     */
+    public Integer getPermission() {
+        return permission;
+    }
+
+    public void setPermission(Integer permission) {
+        this.permission = permission;
+    }
+
     public CatalogVO withNewBiz(BizVersionManageVO newBiz) {
         this.newBiz = newBiz;
         return this;
@@ -322,7 +344,7 @@ public class CatalogVO {
     }
 
     /**
-     * 数据所有者。
+     * 数据owner。
      * @return dataOwner
      */
     public String getDataOwner() {
@@ -424,7 +446,7 @@ public class CatalogVO {
     }
 
     /**
-     * 责任人。
+     * 责任人
      * @return owner
      */
     public String getOwner() {
@@ -435,7 +457,7 @@ public class CatalogVO {
         this.owner = owner;
     }
 
-    public CatalogVO withParentId(String parentId) {
+    public CatalogVO withParentId(Long parentId) {
         this.parentId = parentId;
         return this;
     }
@@ -444,15 +466,15 @@ public class CatalogVO {
      * 父目录ID，木有则为根目录，ID字符串。
      * @return parentId
      */
-    public String getParentId() {
+    public Long getParentId() {
         return parentId;
     }
 
-    public void setParentId(String parentId) {
+    public void setParentId(Long parentId) {
         this.parentId = parentId;
     }
 
-    public CatalogVO withSwapOrderId(String swapOrderId) {
+    public CatalogVO withSwapOrderId(Long swapOrderId) {
         this.swapOrderId = swapOrderId;
         return this;
     }
@@ -461,11 +483,11 @@ public class CatalogVO {
      * 同层排序，目标节点的ID，ID字符串。
      * @return swapOrderId
      */
-    public String getSwapOrderId() {
+    public Long getSwapOrderId() {
         return swapOrderId;
     }
 
-    public void setSwapOrderId(String swapOrderId) {
+    public void setSwapOrderId(Long swapOrderId) {
         this.swapOrderId = swapOrderId;
     }
 
@@ -492,7 +514,7 @@ public class CatalogVO {
     }
 
     /**
-     * 认证ID，自动生成。
+     * 认证ID，自动生成
      * @return qualifiedId
      */
     public String getQualifiedId() {
@@ -503,30 +525,13 @@ public class CatalogVO {
         this.qualifiedId = qualifiedId;
     }
 
-    public CatalogVO withFromPublic(Boolean fromPublic) {
-        this.fromPublic = fromPublic;
-        return this;
-    }
-
-    /**
-     * 是否来自公共层。
-     * @return fromPublic
-     */
-    public Boolean getFromPublic() {
-        return fromPublic;
-    }
-
-    public void setFromPublic(Boolean fromPublic) {
-        this.fromPublic = fromPublic;
-    }
-
     public CatalogVO withCreateBy(String createBy) {
         this.createBy = createBy;
         return this;
     }
 
     /**
-     * 创建人。
+     * 创建人
      * @return createBy
      */
     public String getCreateBy() {
@@ -543,7 +548,7 @@ public class CatalogVO {
     }
 
     /**
-     * 更新人。
+     * 更新人
      * @return updateBy
      */
     public String getUpdateBy() {
@@ -560,7 +565,7 @@ public class CatalogVO {
     }
 
     /**
-     * 创建时间，只读，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z。
+     * 创建时间
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -671,6 +676,39 @@ public class CatalogVO {
         this.selfDefinedFields = selfDefinedFields;
     }
 
+    public CatalogVO withRelations(List<RelationVO> relations) {
+        this.relations = relations;
+        return this;
+    }
+
+    public CatalogVO addRelationsItem(RelationVO relationsItem) {
+        if (this.relations == null) {
+            this.relations = new ArrayList<>();
+        }
+        this.relations.add(relationsItem);
+        return this;
+    }
+
+    public CatalogVO withRelations(Consumer<List<RelationVO>> relationsSetter) {
+        if (this.relations == null) {
+            this.relations = new ArrayList<>();
+        }
+        relationsSetter.accept(this.relations);
+        return this;
+    }
+
+    /**
+     * 关系
+     * @return relations
+     */
+    public List<RelationVO> getRelations() {
+        return relations;
+    }
+
+    public void setRelations(List<RelationVO> relations) {
+        this.relations = relations;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -684,17 +722,19 @@ public class CatalogVO {
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.qualifiedName, that.qualifiedName) && Objects.equals(this.guid, that.guid)
             && Objects.equals(this.code, that.code) && Objects.equals(this.alias, that.alias)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.newBiz, that.newBiz)
-            && Objects.equals(this.dataOwner, that.dataOwner) && Objects.equals(this.dataOwnerList, that.dataOwnerList)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.permission, that.permission)
+            && Objects.equals(this.newBiz, that.newBiz) && Objects.equals(this.dataOwner, that.dataOwner)
+            && Objects.equals(this.dataOwnerList, that.dataOwnerList)
             && Objects.equals(this.dataDepartment, that.dataDepartment) && Objects.equals(this.path, that.path)
             && Objects.equals(this.level, that.level) && Objects.equals(this.ordinal, that.ordinal)
             && Objects.equals(this.owner, that.owner) && Objects.equals(this.parentId, that.parentId)
             && Objects.equals(this.swapOrderId, that.swapOrderId) && Objects.equals(this.id, that.id)
-            && Objects.equals(this.qualifiedId, that.qualifiedId) && Objects.equals(this.fromPublic, that.fromPublic)
-            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.updateBy, that.updateBy)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.childrenNum, that.childrenNum) && Objects.equals(this.children, that.children)
-            && Objects.equals(this.selfDefinedFields, that.selfDefinedFields);
+            && Objects.equals(this.qualifiedId, that.qualifiedId) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.updateBy, that.updateBy) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.childrenNum, that.childrenNum)
+            && Objects.equals(this.children, that.children)
+            && Objects.equals(this.selfDefinedFields, that.selfDefinedFields)
+            && Objects.equals(this.relations, that.relations);
     }
 
     @Override
@@ -707,6 +747,7 @@ public class CatalogVO {
             code,
             alias,
             status,
+            permission,
             newBiz,
             dataOwner,
             dataOwnerList,
@@ -719,14 +760,14 @@ public class CatalogVO {
             swapOrderId,
             id,
             qualifiedId,
-            fromPublic,
             createBy,
             updateBy,
             createTime,
             updateTime,
             childrenNum,
             children,
-            selfDefinedFields);
+            selfDefinedFields,
+            relations);
     }
 
     @Override
@@ -741,6 +782,7 @@ public class CatalogVO {
         sb.append("    code: ").append(toIndentedString(code)).append("\n");
         sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    permission: ").append(toIndentedString(permission)).append("\n");
         sb.append("    newBiz: ").append(toIndentedString(newBiz)).append("\n");
         sb.append("    dataOwner: ").append(toIndentedString(dataOwner)).append("\n");
         sb.append("    dataOwnerList: ").append(toIndentedString(dataOwnerList)).append("\n");
@@ -753,7 +795,6 @@ public class CatalogVO {
         sb.append("    swapOrderId: ").append(toIndentedString(swapOrderId)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    qualifiedId: ").append(toIndentedString(qualifiedId)).append("\n");
-        sb.append("    fromPublic: ").append(toIndentedString(fromPublic)).append("\n");
         sb.append("    createBy: ").append(toIndentedString(createBy)).append("\n");
         sb.append("    updateBy: ").append(toIndentedString(updateBy)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
@@ -761,6 +802,7 @@ public class CatalogVO {
         sb.append("    childrenNum: ").append(toIndentedString(childrenNum)).append("\n");
         sb.append("    children: ").append(toIndentedString(children)).append("\n");
         sb.append("    selfDefinedFields: ").append(toIndentedString(selfDefinedFields)).append("\n");
+        sb.append("    relations: ").append(toIndentedString(relations)).append("\n");
         sb.append("}");
         return sb.toString();
     }

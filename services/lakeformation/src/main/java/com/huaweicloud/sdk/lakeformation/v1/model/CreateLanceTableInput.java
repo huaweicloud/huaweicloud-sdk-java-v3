@@ -14,16 +14,16 @@ public class CreateLanceTableInput {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schema")
 
-    private ArrowSchema schema;
+    private LanceSchema schema;
 
-    public CreateLanceTableInput withSchema(ArrowSchema schema) {
+    public CreateLanceTableInput withSchema(LanceSchema schema) {
         this.schema = schema;
         return this;
     }
 
-    public CreateLanceTableInput withSchema(Consumer<ArrowSchema> schemaSetter) {
+    public CreateLanceTableInput withSchema(Consumer<LanceSchema> schemaSetter) {
         if (this.schema == null) {
-            this.schema = new ArrowSchema();
+            this.schema = new LanceSchema();
             schemaSetter.accept(this.schema);
         }
 
@@ -34,11 +34,11 @@ public class CreateLanceTableInput {
      * Get schema
      * @return schema
      */
-    public ArrowSchema getSchema() {
+    public LanceSchema getSchema() {
         return schema;
     }
 
-    public void setSchema(ArrowSchema schema) {
+    public void setSchema(LanceSchema schema) {
         this.schema = schema;
     }
 

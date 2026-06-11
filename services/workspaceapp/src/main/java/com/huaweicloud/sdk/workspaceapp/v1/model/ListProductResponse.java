@@ -27,7 +27,7 @@ public class ListProductResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "products")
 
-    private List<ProductInfo> products = null;
+    private List<ProductDetailInfo> products = null;
 
     public ListProductResponse withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -63,12 +63,12 @@ public class ListProductResponse extends SdkResponse {
         this.osType = osType;
     }
 
-    public ListProductResponse withProducts(List<ProductInfo> products) {
+    public ListProductResponse withProducts(List<ProductDetailInfo> products) {
         this.products = products;
         return this;
     }
 
-    public ListProductResponse addProductsItem(ProductInfo productsItem) {
+    public ListProductResponse addProductsItem(ProductDetailInfo productsItem) {
         if (this.products == null) {
             this.products = new ArrayList<>();
         }
@@ -76,7 +76,7 @@ public class ListProductResponse extends SdkResponse {
         return this;
     }
 
-    public ListProductResponse withProducts(Consumer<List<ProductInfo>> productsSetter) {
+    public ListProductResponse withProducts(Consumer<List<ProductDetailInfo>> productsSetter) {
         if (this.products == null) {
             this.products = new ArrayList<>();
         }
@@ -88,11 +88,11 @@ public class ListProductResponse extends SdkResponse {
      * 产品列表。
      * @return products
      */
-    public List<ProductInfo> getProducts() {
+    public List<ProductDetailInfo> getProducts() {
         return products;
     }
 
-    public void setProducts(List<ProductInfo> products) {
+    public void setProducts(List<ProductDetailInfo> products) {
         this.products = products;
     }
 

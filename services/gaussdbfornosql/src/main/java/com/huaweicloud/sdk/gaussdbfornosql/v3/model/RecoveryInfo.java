@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 参数解释： &#39;备份文件所在OBS信息。&#39; 约束限制： 不涉及。 取值范围： 不涉及。 默认取值： 不涉及。
+ * **参数解释：** &#39;备份文件所在OBS信息。&#39; **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
  */
 public class RecoveryInfo {
 
@@ -29,7 +29,7 @@ public class RecoveryInfo {
     }
 
     /**
-     * 参数解释： '备份文件所在OBS bucket。' 约束限制： 不涉及。 取值范围： 不涉及。 默认取值： 不涉及。
+     * **参数解释：** '备份文件所在OBS bucket。' **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return bucketName
      */
     public String getBucketName() {
@@ -62,7 +62,7 @@ public class RecoveryInfo {
     }
 
     /**
-     * 参数解释： '备份文件名。' 约束限制： 不涉及。 取值范围： 不涉及。 默认取值： 不涉及。
+     * **参数解释：** '备份文件名。' **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return files
      */
     public List<String> getFiles() {

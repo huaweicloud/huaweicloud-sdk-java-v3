@@ -26,7 +26,7 @@ public class AvailabilityZoneDetail {
     }
 
     /**
-     * 主可用区，应为单可用区且和备可用区不同
+     * **参数解释：** 主可用区，应为单可用区且和备可用区不同。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return primaryAvailabilityZone
      */
     public String getPrimaryAvailabilityZone() {
@@ -43,7 +43,7 @@ public class AvailabilityZoneDetail {
     }
 
     /**
-     * 备可用区，应为单可用区且和主可用区不同
+     * **参数解释：** 备可用区，应为单可用区且和主可用区不同。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return secondaryAvailabilityZone
      */
     public String getSecondaryAvailabilityZone() {

@@ -37,12 +37,12 @@ public class ShowWorkspaceResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    private Integer updateTime;
+    private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private Integer createTime;
+    private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_name")
@@ -158,7 +158,7 @@ public class ShowWorkspaceResponse extends SdkResponse {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public ShowWorkspaceResponse withUpdateTime(Integer updateTime) {
+    public ShowWorkspaceResponse withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
@@ -167,15 +167,15 @@ public class ShowWorkspaceResponse extends SdkResponse {
      * 最后修改时间，UTC。
      * @return updateTime
      */
-    public Integer getUpdateTime() {
+    public Long getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Integer updateTime) {
+    public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
 
-    public ShowWorkspaceResponse withCreateTime(Integer createTime) {
+    public ShowWorkspaceResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -184,11 +184,11 @@ public class ShowWorkspaceResponse extends SdkResponse {
      * 创建时间，UTC。
      * @return createTime
      */
-    public Integer getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Integer createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 

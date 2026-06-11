@@ -50,7 +50,7 @@ public class ScalingPolicyByResource {
     }
 
     /**
-     * 分组的总mem使用率(达到改阈值后扩容)。
+     * 分组的总mem使用率(达到该阈值后扩容)。
      * minimum: 1
      * maximum: 100
      * @return memUsageThreshold
@@ -69,7 +69,7 @@ public class ScalingPolicyByResource {
     }
 
     /**
-     * 分组的总显存使用率(达到改阈值后扩容)。
+     * 分组的总显存使用率(达到该阈值后扩容)。
      * minimum: 1
      * maximum: 100
      * @return gpuUsageThreshold

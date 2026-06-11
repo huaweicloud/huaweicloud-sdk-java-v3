@@ -159,7 +159,7 @@ public class AppServer {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_info")
 
-    private ProductInfo productInfo;
+    private ServerProductInfo productInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
@@ -686,14 +686,14 @@ public class AppServer {
         this.serverGroupName = serverGroupName;
     }
 
-    public AppServer withProductInfo(ProductInfo productInfo) {
+    public AppServer withProductInfo(ServerProductInfo productInfo) {
         this.productInfo = productInfo;
         return this;
     }
 
-    public AppServer withProductInfo(Consumer<ProductInfo> productInfoSetter) {
+    public AppServer withProductInfo(Consumer<ServerProductInfo> productInfoSetter) {
         if (this.productInfo == null) {
-            this.productInfo = new ProductInfo();
+            this.productInfo = new ServerProductInfo();
             productInfoSetter.accept(this.productInfo);
         }
 
@@ -704,11 +704,11 @@ public class AppServer {
      * Get productInfo
      * @return productInfo
      */
-    public ProductInfo getProductInfo() {
+    public ServerProductInfo getProductInfo() {
         return productInfo;
     }
 
-    public void setProductInfo(ProductInfo productInfo) {
+    public void setProductInfo(ServerProductInfo productInfo) {
         this.productInfo = productInfo;
     }
 

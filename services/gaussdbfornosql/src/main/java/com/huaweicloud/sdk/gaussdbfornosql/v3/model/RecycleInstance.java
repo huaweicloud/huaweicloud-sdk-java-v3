@@ -32,14 +32,14 @@ public class RecycleInstance {
     private String productType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "datastore")
+    @JsonProperty(value = "data_store")
 
-    private RecycleDatastore datastore;
+    private RecycleDatastore dataStore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "charge_mode")
+    @JsonProperty(value = "charge_type")
 
-    private String chargeMode;
+    private String chargeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
@@ -72,7 +72,7 @@ public class RecycleInstance {
     }
 
     /**
-     * 实例ID。
+     * **参数解释：** 实例ID。 **取值范围：** 不涉及。
      * @return id
      */
     public String getId() {
@@ -89,7 +89,7 @@ public class RecycleInstance {
     }
 
     /**
-     * 实例名称。
+     * **参数解释：** 实例名称。 **取值范围：** 不涉及。
      * @return name
      */
     public String getName() {
@@ -106,7 +106,7 @@ public class RecycleInstance {
     }
 
     /**
-     * 实例类型。   - 取值为“Cluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis Proxy经典部署模式集群实例类型。   - 取值为“CloudNativeCluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis云原生部署模式集群实例类型。   - 取值为“RedisCluster”，表示GeminiDB Redis Cluster经典部署模式集群实例类型。   - 取值为“Replication”，表示GeminiDB Redis经典部署模式主备实例类型。   - 取值为“InfluxdbSingle”，表示GeminiDB Influx经典部署模式单节点实例类型。   - 取值为“ReplicaSet”，表示GeminiDB Mongo副本集实例类型。
+     * **参数解释：** 实例类型。 **取值范围：** - 取值为“Cluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis Proxy经典部署模式集群实例类型。 - 取值为“CloudNativeCluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis云原生部署模式集群实例类型。 - 取值为“RedisCluster”，表示GeminiDB Redis Cluster经典部署模式集群实例类型。 - 取值为“Replication”，表示GeminiDB Redis经典部署模式主备实例类型。 - 取值为“InfluxdbSingle”，表示GeminiDB Influx经典部署模式单节点实例类型。 - 取值为“ReplicaSet”，表示GeminiDB Mongo副本集实例类型。
      * @return mode
      */
     public String getMode() {
@@ -123,7 +123,7 @@ public class RecycleInstance {
     }
 
     /**
-     * 产品类型。 GeminiDB Redis云原生部署模式集群涉及此字段，取值：   -  Standard 标准型   -  Capacity 容量型
+     * **参数解释：** 产品类型。 **取值范围：** GeminiDB Redis云原生部署模式集群涉及此字段，取值：   -  Standard 标准型   -  Capacity 容量型
      * @return productType
      */
     public String getProductType() {
@@ -134,47 +134,47 @@ public class RecycleInstance {
         this.productType = productType;
     }
 
-    public RecycleInstance withDatastore(RecycleDatastore datastore) {
-        this.datastore = datastore;
+    public RecycleInstance withDataStore(RecycleDatastore dataStore) {
+        this.dataStore = dataStore;
         return this;
     }
 
-    public RecycleInstance withDatastore(Consumer<RecycleDatastore> datastoreSetter) {
-        if (this.datastore == null) {
-            this.datastore = new RecycleDatastore();
-            datastoreSetter.accept(this.datastore);
+    public RecycleInstance withDataStore(Consumer<RecycleDatastore> dataStoreSetter) {
+        if (this.dataStore == null) {
+            this.dataStore = new RecycleDatastore();
+            dataStoreSetter.accept(this.dataStore);
         }
 
         return this;
     }
 
     /**
-     * Get datastore
-     * @return datastore
+     * Get dataStore
+     * @return dataStore
      */
-    public RecycleDatastore getDatastore() {
-        return datastore;
+    public RecycleDatastore getDataStore() {
+        return dataStore;
     }
 
-    public void setDatastore(RecycleDatastore datastore) {
-        this.datastore = datastore;
+    public void setDataStore(RecycleDatastore dataStore) {
+        this.dataStore = dataStore;
     }
 
-    public RecycleInstance withChargeMode(String chargeMode) {
-        this.chargeMode = chargeMode;
+    public RecycleInstance withChargeType(String chargeType) {
+        this.chargeType = chargeType;
         return this;
     }
 
     /**
-     * 计费方式。 计费方式。   - prePaid：预付费，即包年/包月。   - postPaid：后付费，即按需付费。
-     * @return chargeMode
+     * **参数解释：** 计费方式。 **取值范围：** - prePaid：预付费，即包年/包月。 - postPaid：后付费，即按需付费。
+     * @return chargeType
      */
-    public String getChargeMode() {
-        return chargeMode;
+    public String getChargeType() {
+        return chargeType;
     }
 
-    public void setChargeMode(String chargeMode) {
-        this.chargeMode = chargeMode;
+    public void setChargeType(String chargeType) {
+        this.chargeType = chargeType;
     }
 
     public RecycleInstance withEnterpriseProjectId(String enterpriseProjectId) {
@@ -183,7 +183,7 @@ public class RecycleInstance {
     }
 
     /**
-     * 企业项目ID，取值为“0”，表示为default企业项目
+     * **参数解释：** 企业项目ID，取值为“0”，表示为default企业项目 **取值范围：** 不涉及。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -200,7 +200,7 @@ public class RecycleInstance {
     }
 
     /**
-     * 备份ID。
+     * **参数解释：** 备份ID。 **取值范围：** 不涉及。
      * @return backupId
      */
     public String getBackupId() {
@@ -217,7 +217,7 @@ public class RecycleInstance {
     }
 
     /**
-     * 实例创建时间。
+     * **参数解释：** 实例创建时间。 **取值范围：** 不涉及。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -234,7 +234,7 @@ public class RecycleInstance {
     }
 
     /**
-     * 实例删除时间。
+     * **参数解释：** 实例删除时间。 **取值范围：** 不涉及。
      * @return deletedAt
      */
     public String getDeletedAt() {
@@ -251,7 +251,7 @@ public class RecycleInstance {
     }
 
     /**
-     * 回收备份保留截止时间。
+     * **参数解释：** 回收备份保留截止时间。 **取值范围：** 不涉及。
      * @return retainedUntil
      */
     public String getRetainedUntil() {
@@ -273,7 +273,7 @@ public class RecycleInstance {
         RecycleInstance that = (RecycleInstance) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.mode, that.mode) && Objects.equals(this.productType, that.productType)
-            && Objects.equals(this.datastore, that.datastore) && Objects.equals(this.chargeMode, that.chargeMode)
+            && Objects.equals(this.dataStore, that.dataStore) && Objects.equals(this.chargeType, that.chargeType)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.backupId, that.backupId) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.deletedAt, that.deletedAt) && Objects.equals(this.retainedUntil, that.retainedUntil);
@@ -285,8 +285,8 @@ public class RecycleInstance {
             name,
             mode,
             productType,
-            datastore,
-            chargeMode,
+            dataStore,
+            chargeType,
             enterpriseProjectId,
             backupId,
             createdAt,
@@ -302,8 +302,8 @@ public class RecycleInstance {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
-        sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
-        sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
+        sb.append("    dataStore: ").append(toIndentedString(dataStore)).append("\n");
+        sb.append("    chargeType: ").append(toIndentedString(chargeType)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    backupId: ").append(toIndentedString(backupId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");

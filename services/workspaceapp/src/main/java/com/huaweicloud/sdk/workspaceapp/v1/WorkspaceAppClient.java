@@ -343,6 +343,8 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateUserFolderAssignmentReque
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateUserFolderAssignmentResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateWarehouseAppRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateWarehouseAppResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UploadAppIconRawRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UploadAppIconRawResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UploadAppIconRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UploadAppIconResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UploadWarehouseAppIconRequest;
@@ -423,7 +425,7 @@ public class WorkspaceAppClient {
     /**
      * 添加用户应用仓库桶及桶授权
      *
-     * 添加用户应用仓库桶及桶授权。
+     * 添加用户应用仓库桶及桶授权，用于租户自定义桶。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -437,7 +439,7 @@ public class WorkspaceAppClient {
     /**
      * 添加用户应用仓库桶及桶授权
      *
-     * 添加用户应用仓库桶及桶授权。
+     * 添加用户应用仓库桶及桶授权，用于租户自定义桶。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -994,6 +996,35 @@ public class WorkspaceAppClient {
      */
     public SyncInvoker<UploadAppIconRequest, UploadAppIconResponse> uploadAppIconInvoker(UploadAppIconRequest request) {
         return new SyncInvoker<>(request, WorkspaceAppMeta.uploadAppIcon, hcClient);
+    }
+
+    /**
+     * 修改自定义应用图标
+     *
+     * 修改自定义应用图标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadAppIconRawRequest 请求对象
+     * @return UploadAppIconRawResponse
+     */
+    public UploadAppIconRawResponse uploadAppIconRaw(UploadAppIconRawRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceAppMeta.uploadAppIconRaw);
+    }
+
+    /**
+     * 修改自定义应用图标
+     *
+     * 修改自定义应用图标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadAppIconRawRequest 请求对象
+     * @return SyncInvoker<UploadAppIconRawRequest, UploadAppIconRawResponse>
+     */
+    public SyncInvoker<UploadAppIconRawRequest, UploadAppIconRawResponse> uploadAppIconRawInvoker(
+        UploadAppIconRawRequest request) {
+        return new SyncInvoker<>(request, WorkspaceAppMeta.uploadAppIconRaw, hcClient);
     }
 
     /**
@@ -1610,7 +1641,7 @@ public class WorkspaceAppClient {
     /**
      * 切换文件夹归属集群
      *
-     * 切换文件夹归属集群，文件系统在切换
+     * 切换文件夹归属集群，该操作需要sfs先操作文件系统切换后调用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1624,7 +1655,7 @@ public class WorkspaceAppClient {
     /**
      * 切换文件夹归属集群
      *
-     * 切换文件夹归属集群，文件系统在切换
+     * 切换文件夹归属集群，该操作需要sfs先操作文件系统切换后调用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1667,7 +1698,7 @@ public class WorkspaceAppClient {
     /**
      * 创建个人文件夹
      *
-     * 创建个人文件夹，已存在对应目录时，仅更新策略不会重复创建目录。
+     * 创建个人文件夹并创建对应文件系统，已存在对应目录时，仅更新策略不会重复创建目录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1681,7 +1712,7 @@ public class WorkspaceAppClient {
     /**
      * 创建个人文件夹
      *
-     * 创建个人文件夹，已存在对应目录时，仅更新策略不会重复创建目录。
+     * 创建个人文件夹并创建对应文件系统，已存在对应目录时，仅更新策略不会重复创建目录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1696,7 +1727,7 @@ public class WorkspaceAppClient {
     /**
      * 删除云存储
      *
-     * 删除共享存储，只会解除NAS与项目配置之间的关联关系。
+     * 删除共享存储，只会解除NAS与项目配置之间的关联关系
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1710,7 +1741,7 @@ public class WorkspaceAppClient {
     /**
      * 删除云存储
      *
-     * 删除共享存储，只会解除NAS与项目配置之间的关联关系。
+     * 删除共享存储，只会解除NAS与项目配置之间的关联关系
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1725,7 +1756,7 @@ public class WorkspaceAppClient {
     /**
      * 删除个人文件夹
      *
-     * 删除个人存储目录，个人目录中的数据也将永久删除且无法恢复。
+     * 删除个人存储目录，对应文件系统也将删除，个人目录中的数据也将永久删除且无法恢复。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1740,7 +1771,7 @@ public class WorkspaceAppClient {
     /**
      * 删除个人文件夹
      *
-     * 删除个人存储目录，个人目录中的数据也将永久删除且无法恢复。
+     * 删除个人存储目录，对应文件系统也将删除，个人目录中的数据也将永久删除且无法恢复。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1871,7 +1902,7 @@ public class WorkspaceAppClient {
     /**
      * 重置userprofile
      *
-     * 重置userprofile，初始化或重置并备份userprofile。
+     * 重置userprofile，初始化或重置并备份userprofile，输入ori_name时将ori_name备份重置到AppData目录，不输入时为初始化重置
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1885,7 +1916,7 @@ public class WorkspaceAppClient {
     /**
      * 重置userprofile
      *
-     * 重置userprofile，初始化或重置并备份userprofile。
+     * 重置userprofile，初始化或重置并备份userprofile，输入ori_name时将ori_name备份重置到AppData目录，不输入时为初始化重置
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1929,7 +1960,7 @@ public class WorkspaceAppClient {
     /**
      * 文件流转
      *
-     * 云存储文件流转与分享
+     * 云存储文件流转与分享，根据不同的transfer_type实现个人文件上传到共享文件夹，从共享文件夹拉取文件到个人文件夹。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1943,7 +1974,7 @@ public class WorkspaceAppClient {
     /**
      * 文件流转
      *
-     * 云存储文件流转与分享
+     * 云存储文件流转与分享，根据不同的transfer_type实现个人文件上传到共享文件夹，从共享文件夹拉取文件到个人文件夹。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1957,7 +1988,7 @@ public class WorkspaceAppClient {
     /**
      * 文件预流转
      *
-     * 文件预流转，在接收方接收文件前返回可用的文件路径
+     * 文件预流转，在接收方接收文件前返回可用的文件路径，如果接收方不存在当前获取文件的同名文件，则不修改返回，否则返回新的可用的文件名。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1971,7 +2002,7 @@ public class WorkspaceAppClient {
     /**
      * 文件预流转
      *
-     * 文件预流转，在接收方接收文件前返回可用的文件路径
+     * 文件预流转，在接收方接收文件前返回可用的文件路径，如果接收方不存在当前获取文件的同名文件，则不修改返回，否则返回新的可用的文件名。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1986,7 +2017,7 @@ public class WorkspaceAppClient {
     /**
      * 修改个人文件夹
      *
-     * 创建个人文件夹。
+     * 修改个人文件夹。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2001,7 +2032,7 @@ public class WorkspaceAppClient {
     /**
      * 修改个人文件夹
      *
-     * 创建个人文件夹。
+     * 修改个人文件夹。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2132,7 +2163,7 @@ public class WorkspaceAppClient {
     /**
      * 修改热点会话不迁移用户
      *
-     * 修改热点会话不迁移用户, 在对热点绘画迁移用户新增时如已存在该用户，则进行覆盖添加，在删除用户时如果不存在用户，则进行忽略。
+     * 修改热点会话不迁移用户, 在对热点会话迁移用户新增时如已存在该用户，则进行覆盖添加，在删除用户时如果不存在用户，则进行忽略。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2146,7 +2177,7 @@ public class WorkspaceAppClient {
     /**
      * 修改热点会话不迁移用户
      *
-     * 修改热点会话不迁移用户, 在对热点绘画迁移用户新增时如已存在该用户，则进行覆盖添加，在删除用户时如果不存在用户，则进行忽略。
+     * 修改热点会话不迁移用户, 在对热点会话迁移用户新增时如已存在该用户，则进行覆盖添加，在删除用户时如果不存在用户，则进行忽略。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

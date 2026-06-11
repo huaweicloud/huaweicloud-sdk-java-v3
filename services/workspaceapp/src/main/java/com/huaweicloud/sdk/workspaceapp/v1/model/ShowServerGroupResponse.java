@@ -148,7 +148,7 @@ public class ShowServerGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_info")
 
-    private ProductInfo productInfo;
+    private ServerProductInfo productInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_name")
@@ -188,7 +188,7 @@ public class ShowServerGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "route_policy")
 
-    private RoutePolicy routePolicy;
+    private RoutePolicyDetail routePolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_product_id")
@@ -679,14 +679,14 @@ public class ShowServerGroupResponse extends SdkResponse {
         this.imageName = imageName;
     }
 
-    public ShowServerGroupResponse withProductInfo(ProductInfo productInfo) {
+    public ShowServerGroupResponse withProductInfo(ServerProductInfo productInfo) {
         this.productInfo = productInfo;
         return this;
     }
 
-    public ShowServerGroupResponse withProductInfo(Consumer<ProductInfo> productInfoSetter) {
+    public ShowServerGroupResponse withProductInfo(Consumer<ServerProductInfo> productInfoSetter) {
         if (this.productInfo == null) {
-            this.productInfo = new ProductInfo();
+            this.productInfo = new ServerProductInfo();
             productInfoSetter.accept(this.productInfo);
         }
 
@@ -697,11 +697,11 @@ public class ShowServerGroupResponse extends SdkResponse {
      * Get productInfo
      * @return productInfo
      */
-    public ProductInfo getProductInfo() {
+    public ServerProductInfo getProductInfo() {
         return productInfo;
     }
 
-    public void setProductInfo(ProductInfo productInfo) {
+    public void setProductInfo(ServerProductInfo productInfo) {
         this.productInfo = productInfo;
     }
 
@@ -865,14 +865,14 @@ public class ShowServerGroupResponse extends SdkResponse {
         this.imageMinDisk = imageMinDisk;
     }
 
-    public ShowServerGroupResponse withRoutePolicy(RoutePolicy routePolicy) {
+    public ShowServerGroupResponse withRoutePolicy(RoutePolicyDetail routePolicy) {
         this.routePolicy = routePolicy;
         return this;
     }
 
-    public ShowServerGroupResponse withRoutePolicy(Consumer<RoutePolicy> routePolicySetter) {
+    public ShowServerGroupResponse withRoutePolicy(Consumer<RoutePolicyDetail> routePolicySetter) {
         if (this.routePolicy == null) {
-            this.routePolicy = new RoutePolicy();
+            this.routePolicy = new RoutePolicyDetail();
             routePolicySetter.accept(this.routePolicy);
         }
 
@@ -883,11 +883,11 @@ public class ShowServerGroupResponse extends SdkResponse {
      * Get routePolicy
      * @return routePolicy
      */
-    public RoutePolicy getRoutePolicy() {
+    public RoutePolicyDetail getRoutePolicy() {
         return routePolicy;
     }
 
-    public void setRoutePolicy(RoutePolicy routePolicy) {
+    public void setRoutePolicy(RoutePolicyDetail routePolicy) {
         this.routePolicy = routePolicy;
     }
 

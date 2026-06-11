@@ -68,6 +68,17 @@ public class DcRegion {
 
     public static final Region EU_WEST_0 = new Region("eu-west-0", "https://dcaas.eu-west-0.myhuaweicloud.com");
 
+    public static final Region CN_NORTH_11 = new Region("cn-north-11", "https://dcaas.cn-north-11.myhuaweicloud.com");
+
+    public static final Region CN_SOUTHWEST_3 =
+        new Region("cn-southwest-3", "https://dcaas.cn-southwest-3.myhuaweicloud.com");
+
+    public static final Region CN_EAST_4 = new Region("cn-east-4", "https://dcaas.cn-east-4.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_12 = new Region("cn-north-12", "https://dcaas.cn-north-12.myhuaweicloud.com");
+
+    public static final Region CN_EAST_5 = new Region("cn-east-5", "https://dcaas.cn-east-5.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("DC");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -98,6 +109,11 @@ public class DcRegion {
         map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
         map.put("eu-west-101", EU_WEST_101);
         map.put("eu-west-0", EU_WEST_0);
+        map.put("cn-north-11", CN_NORTH_11);
+        map.put("cn-southwest-3", CN_SOUTHWEST_3);
+        map.put("cn-east-4", CN_EAST_4);
+        map.put("cn-north-12", CN_NORTH_12);
+        map.put("cn-east-5", CN_EAST_5);
         return Collections.unmodifiableMap(map);
     }
 

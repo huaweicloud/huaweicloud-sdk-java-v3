@@ -22,7 +22,7 @@ public class ListSubJobsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
 
-    private List<ImageJobDetailInfo> items = null;
+    private List<SubJobDetailInfo> items = null;
 
     public ListSubJobsResponse withCount(Integer count) {
         this.count = count;
@@ -43,12 +43,12 @@ public class ListSubJobsResponse extends SdkResponse {
         this.count = count;
     }
 
-    public ListSubJobsResponse withItems(List<ImageJobDetailInfo> items) {
+    public ListSubJobsResponse withItems(List<SubJobDetailInfo> items) {
         this.items = items;
         return this;
     }
 
-    public ListSubJobsResponse addItemsItem(ImageJobDetailInfo itemsItem) {
+    public ListSubJobsResponse addItemsItem(SubJobDetailInfo itemsItem) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -56,7 +56,7 @@ public class ListSubJobsResponse extends SdkResponse {
         return this;
     }
 
-    public ListSubJobsResponse withItems(Consumer<List<ImageJobDetailInfo>> itemsSetter) {
+    public ListSubJobsResponse withItems(Consumer<List<SubJobDetailInfo>> itemsSetter) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -68,11 +68,11 @@ public class ListSubJobsResponse extends SdkResponse {
      * 任务明细信息列表，返回列表条目数量上限为分页的最大上限值。
      * @return items
      */
-    public List<ImageJobDetailInfo> getItems() {
+    public List<SubJobDetailInfo> getItems() {
         return items;
     }
 
-    public void setItems(List<ImageJobDetailInfo> items) {
+    public void setItems(List<SubJobDetailInfo> items) {
         this.items = items;
     }
 

@@ -114,6 +114,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CatalogInfo;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CatalogLevelVOList;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CatalogMetaDataEventRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CatalogMoveParaDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CatalogParamsVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CatalogVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CategoryDetailVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ChangeCatalogRequest;
@@ -835,7 +836,6 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.StandElementFieldVOList;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.StandElementValueVOList;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.StopFactorySupplementDataInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.StopFactorySupplementDataInstanceResponse;
-import com.huaweicloud.sdk.dataartsstudio.v1.model.SubjectParamsVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.TableLineage;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.TableModelUpdateVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.TableModelVO;
@@ -3610,10 +3610,10 @@ public class DataArtsStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateSubjectRequest::getXProjectId, CreateSubjectRequest::setXProjectId));
-        builder.<CatalogVO>withRequestField("body",
+        builder.<CatalogParamsVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CatalogVO.class),
+            TypeCasts.uncheckedConversion(CatalogParamsVO.class),
             f -> f.withMarshaller(CreateSubjectRequest::getBody, CreateSubjectRequest::setBody));
 
         // response
@@ -3643,10 +3643,10 @@ public class DataArtsStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateSubjectNewRequest::getXProjectId, CreateSubjectNewRequest::setXProjectId));
-        builder.<SubjectParamsVO>withRequestField("body",
+        builder.<CatalogVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SubjectParamsVO.class),
+            TypeCasts.uncheckedConversion(CatalogVO.class),
             f -> f.withMarshaller(CreateSubjectNewRequest::getBody, CreateSubjectNewRequest::setBody));
 
         // response
@@ -16777,10 +16777,10 @@ public class DataArtsStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateSubjectRequest::getXProjectId, UpdateSubjectRequest::setXProjectId));
-        builder.<CatalogVO>withRequestField("body",
+        builder.<CatalogParamsVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CatalogVO.class),
+            TypeCasts.uncheckedConversion(CatalogParamsVO.class),
             f -> f.withMarshaller(UpdateSubjectRequest::getBody, UpdateSubjectRequest::setBody));
 
         // response
@@ -16810,10 +16810,10 @@ public class DataArtsStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateSubjectNewRequest::getXProjectId, UpdateSubjectNewRequest::setXProjectId));
-        builder.<SubjectParamsVO>withRequestField("body",
+        builder.<CatalogVO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SubjectParamsVO.class),
+            TypeCasts.uncheckedConversion(CatalogVO.class),
             f -> f.withMarshaller(UpdateSubjectNewRequest::getBody, UpdateSubjectNewRequest::setBody));
 
         // response

@@ -21,7 +21,7 @@ public class BucketNameReq {
     }
 
     /**
-     * 桶名称,名称需满足如下规则: 3～63个字符，数字或字母开头，支持小写字母、数字、“-”、“.”。 禁止使用IP地址。 禁止以“-”或“.”开头及结尾。 禁止两个“.”相邻（如：“my..bucket”）。 禁止“.”和“-”相邻（如：“my-.bucket”和“my.-bucket”）
+     * 桶名称,名称需满足如下规则: 3～63个字符，数字或字母开头，支持小写字母、数字、“-”、“.”。 禁止使用IP地址。 禁止以“-”或“.”开头及结尾。 禁止两个“.”相邻（如：“my..bucket”）。 禁止“.”和“-”相邻（如：“my-.bucket”和“my.-bucket”）。
      * @return bucketName
      */
     public String getBucketName() {

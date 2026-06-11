@@ -1,0 +1,95 @@
+package com.huaweicloud.sdk.modelarts.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/**
+ * InputRemoteConstraint
+ */
+public class InputRemoteConstraint {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data_type")
+
+    private String dataType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "attributes")
+
+    private String attributes;
+
+    public InputRemoteConstraint withDataType(String dataType) {
+        this.dataType = dataType;
+        return this;
+    }
+
+    /**
+     * 数据输入类型，包括数据存储位置、数据集两种方式。
+     * @return dataType
+     */
+    public String getDataType() {
+        return dataType;
+    }
+
+    public void setDataType(String dataType) {
+        this.dataType = dataType;
+    }
+
+    public InputRemoteConstraint withAttributes(String attributes) {
+        this.attributes = attributes;
+        return this;
+    }
+
+    /**
+     * 数据输入为数据集时的相关属性。枚举值：   - data_format 数据格式；   - data_segmentation 数据切分方式；   - dataset_type 标注类型。
+     * @return attributes
+     */
+    public String getAttributes() {
+        return attributes;
+    }
+
+    public void setAttributes(String attributes) {
+        this.attributes = attributes;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        InputRemoteConstraint that = (InputRemoteConstraint) obj;
+        return Objects.equals(this.dataType, that.dataType) && Objects.equals(this.attributes, that.attributes);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(dataType, attributes);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class InputRemoteConstraint {\n");
+        sb.append("    dataType: ").append(toIndentedString(dataType)).append("\n");
+        sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

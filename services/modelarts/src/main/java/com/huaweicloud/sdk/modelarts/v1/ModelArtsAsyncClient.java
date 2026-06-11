@@ -5,28 +5,144 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.modelarts.v1.model.AcceptScheduledEventRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.AcceptScheduledEventResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingExperimentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingExperimentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingJobDescriptionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingJobDescriptionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CheckTrainingExperimentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CheckTrainingExperimentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateSaveImageJobRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateSaveImageJobResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateTrainJobTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateTrainJobTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateTrainingExperimentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateTrainingExperimentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateTrainingJobRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateTrainingJobResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowExecutionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowExecutionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowExecutionsActionsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowExecutionsActionsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowPurchasePoolRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowPurchasePoolResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowScheduleRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowScheduleResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowServiceAuthRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowServiceAuthResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowStepExecutionsActionsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowStepExecutionsActionsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowSubscriptionsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowSubscriptionsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkspaceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteTrainJobTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteTrainJobTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteTrainingExperimentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteTrainingExperimentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteTrainingJobRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteTrainingJobResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowExecutionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowExecutionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowScheduleIdRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowScheduleIdResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowSubscriptionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowSubscriptionResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkspaceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListEventCategoriesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListEventCategoriesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListScheduledEventsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListScheduledEventsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingExperimentsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingExperimentsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobEventsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobEventsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobStagesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobStagesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobTasksRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobTasksResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowExecutionsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowExecutionsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkspaceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.NotifyTrainingJobInformationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.NotifyTrainingJobInformationResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAuthmodeDetailRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAuthmodeDetailResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchParamAnalysisResultPathRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchParamAnalysisResultPathResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchParamsAnalysisRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchParamsAnalysisResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchPerTrialRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchPerTrialResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchTrialEarlyStopRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchTrialEarlyStopResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchTrialsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchTrialsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchYamlTemplateContentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchYamlTemplateContentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchYamlTemplatesInfoRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchYamlTemplatesInfoResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowObsUrlOfTrainingJobLogsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowObsUrlOfTrainingJobLogsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowSaveImageJobRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowSaveImageJobResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainJobTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainJobTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingExperimentDetailsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingExperimentDetailsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobDetailsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobDetailsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobEnginesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobEnginesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobFlavorsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobFlavorsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobLogsPreviewRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobLogsPreviewResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobMetricsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobMetricsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingQuotasRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingQuotasResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowExecutionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowExecutionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowScheduleRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowScheduleResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowStepExecutionMetricsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowStepExecutionMetricsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowSubscriptionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowSubscriptionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowsOverviewRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowsOverviewResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowsTodolistRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowsTodolistResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkspaceQuotasRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkspaceQuotasResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkspaceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.StopTrainingJobRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.StopTrainingJobResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateAuthModeRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateAuthModeResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkflowExecutionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkflowExecutionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkflowRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkflowResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkflowScheduleRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkflowScheduleResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkflowSubscriptionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkflowSubscriptionResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkspaceQuotasRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkspaceQuotasResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkspaceRequest;
@@ -80,6 +196,249 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 更新训练实验信息
+     *
+     * 通过实验ID更新训练实验信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeTrainingExperimentRequest 请求对象
+     * @return CompletableFuture<ChangeTrainingExperimentResponse>
+     */
+    public CompletableFuture<ChangeTrainingExperimentResponse> changeTrainingExperimentAsync(
+        ChangeTrainingExperimentRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.changeTrainingExperiment);
+    }
+
+    /**
+     * 更新训练实验信息
+     *
+     * 通过实验ID更新训练实验信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeTrainingExperimentRequest 请求对象
+     * @return AsyncInvoker<ChangeTrainingExperimentRequest, ChangeTrainingExperimentResponse>
+     */
+    public AsyncInvoker<ChangeTrainingExperimentRequest, ChangeTrainingExperimentResponse> changeTrainingExperimentAsyncInvoker(
+        ChangeTrainingExperimentRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.changeTrainingExperiment, hcClient);
+    }
+
+    /**
+     * 更新训练作业描述
+     *
+     * 更新训练作业描述。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeTrainingJobDescriptionRequest 请求对象
+     * @return CompletableFuture<ChangeTrainingJobDescriptionResponse>
+     */
+    public CompletableFuture<ChangeTrainingJobDescriptionResponse> changeTrainingJobDescriptionAsync(
+        ChangeTrainingJobDescriptionRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.changeTrainingJobDescription);
+    }
+
+    /**
+     * 更新训练作业描述
+     *
+     * 更新训练作业描述。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeTrainingJobDescriptionRequest 请求对象
+     * @return AsyncInvoker<ChangeTrainingJobDescriptionRequest, ChangeTrainingJobDescriptionResponse>
+     */
+    public AsyncInvoker<ChangeTrainingJobDescriptionRequest, ChangeTrainingJobDescriptionResponse> changeTrainingJobDescriptionAsyncInvoker(
+        ChangeTrainingJobDescriptionRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.changeTrainingJobDescription, hcClient);
+    }
+
+    /**
+     * 校验训练实验名称
+     *
+     * 校验训练实验名称接口用于新增训练实验前校验训练实验名称是否重复。
+     * 该接口适用于以下场景：当用户需要创建新的训练实验时，可以通过此接口校验定义的实验名称是否已存在。使用该接口的前提条件是用户具有创建实验的权限。查询操作完成后，将返回实验名称是否重复的结果。若用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckTrainingExperimentRequest 请求对象
+     * @return CompletableFuture<CheckTrainingExperimentResponse>
+     */
+    public CompletableFuture<CheckTrainingExperimentResponse> checkTrainingExperimentAsync(
+        CheckTrainingExperimentRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.checkTrainingExperiment);
+    }
+
+    /**
+     * 校验训练实验名称
+     *
+     * 校验训练实验名称接口用于新增训练实验前校验训练实验名称是否重复。
+     * 该接口适用于以下场景：当用户需要创建新的训练实验时，可以通过此接口校验定义的实验名称是否已存在。使用该接口的前提条件是用户具有创建实验的权限。查询操作完成后，将返回实验名称是否重复的结果。若用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckTrainingExperimentRequest 请求对象
+     * @return AsyncInvoker<CheckTrainingExperimentRequest, CheckTrainingExperimentResponse>
+     */
+    public AsyncInvoker<CheckTrainingExperimentRequest, CheckTrainingExperimentResponse> checkTrainingExperimentAsyncInvoker(
+        CheckTrainingExperimentRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.checkTrainingExperiment, hcClient);
+    }
+
+    /**
+     * 创建发布算法资产
+     *
+     * 创建发布算法资产接口用于在算法管理中创建并发布新的算法资产。
+     * 该接口适用于以下场景：当用户开发完成新的算法并希望将其发布为可复用的算法资产时，可以通过此接口创建并发布算法资产。使用该接口的前提条件是用户已登录且具有创建和发布算法资产的权限。创建发布操作完成后，系统将生成新的算法资产，并将其添加到算法资产列表中，用户可以通过算法ID进行管理和调用。若用户无权限操作、算法资产信息不完整或已存在相同名称的算法资产，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAlgorithmVersionToGalleryRequest 请求对象
+     * @return CompletableFuture<CreateAlgorithmVersionToGalleryResponse>
+     */
+    public CompletableFuture<CreateAlgorithmVersionToGalleryResponse> createAlgorithmVersionToGalleryAsync(
+        CreateAlgorithmVersionToGalleryRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createAlgorithmVersionToGallery);
+    }
+
+    /**
+     * 创建发布算法资产
+     *
+     * 创建发布算法资产接口用于在算法管理中创建并发布新的算法资产。
+     * 该接口适用于以下场景：当用户开发完成新的算法并希望将其发布为可复用的算法资产时，可以通过此接口创建并发布算法资产。使用该接口的前提条件是用户已登录且具有创建和发布算法资产的权限。创建发布操作完成后，系统将生成新的算法资产，并将其添加到算法资产列表中，用户可以通过算法ID进行管理和调用。若用户无权限操作、算法资产信息不完整或已存在相同名称的算法资产，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAlgorithmVersionToGalleryRequest 请求对象
+     * @return AsyncInvoker<CreateAlgorithmVersionToGalleryRequest, CreateAlgorithmVersionToGalleryResponse>
+     */
+    public AsyncInvoker<CreateAlgorithmVersionToGalleryRequest, CreateAlgorithmVersionToGalleryResponse> createAlgorithmVersionToGalleryAsyncInvoker(
+        CreateAlgorithmVersionToGalleryRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createAlgorithmVersionToGallery, hcClient);
+    }
+
+    /**
+     * 创建训练作业镜像保存任务
+     *
+     * 创建训练作业镜像保存任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSaveImageJobRequest 请求对象
+     * @return CompletableFuture<CreateSaveImageJobResponse>
+     */
+    public CompletableFuture<CreateSaveImageJobResponse> createSaveImageJobAsync(CreateSaveImageJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createSaveImageJob);
+    }
+
+    /**
+     * 创建训练作业镜像保存任务
+     *
+     * 创建训练作业镜像保存任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSaveImageJobRequest 请求对象
+     * @return AsyncInvoker<CreateSaveImageJobRequest, CreateSaveImageJobResponse>
+     */
+    public AsyncInvoker<CreateSaveImageJobRequest, CreateSaveImageJobResponse> createSaveImageJobAsyncInvoker(
+        CreateSaveImageJobRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createSaveImageJob, hcClient);
+    }
+
+    /**
+     * 创建训练作业标签
+     *
+     * 创建训练作业标签，支持批量添加，当添加的标签key已存在，则覆盖该标签的value。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTrainJobTagsRequest 请求对象
+     * @return CompletableFuture<CreateTrainJobTagsResponse>
+     */
+    public CompletableFuture<CreateTrainJobTagsResponse> createTrainJobTagsAsync(CreateTrainJobTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createTrainJobTags);
+    }
+
+    /**
+     * 创建训练作业标签
+     *
+     * 创建训练作业标签，支持批量添加，当添加的标签key已存在，则覆盖该标签的value。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTrainJobTagsRequest 请求对象
+     * @return AsyncInvoker<CreateTrainJobTagsRequest, CreateTrainJobTagsResponse>
+     */
+    public AsyncInvoker<CreateTrainJobTagsRequest, CreateTrainJobTagsResponse> createTrainJobTagsAsyncInvoker(
+        CreateTrainJobTagsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createTrainJobTags, hcClient);
+    }
+
+    /**
+     * 创建训练实验
+     *
+     * 创建训练实验接口用于在ModelArts平台上创建新的实验分类。
+     * 该接口适用于以下场景：当用户需要将训练作业放入实验中分类，有序地进行管理，可以通过此接口创建训练实验，常用于多任务的版本管理等场景。使用该接口的前提条件是用户已登录ModelArts平台并具有创建训练实验的权限。创建操作完成后，系统将返回训练实验的详细信息，包括实验ID、当前实验下的训练作业总个数等。若用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTrainingExperimentRequest 请求对象
+     * @return CompletableFuture<CreateTrainingExperimentResponse>
+     */
+    public CompletableFuture<CreateTrainingExperimentResponse> createTrainingExperimentAsync(
+        CreateTrainingExperimentRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createTrainingExperiment);
+    }
+
+    /**
+     * 创建训练实验
+     *
+     * 创建训练实验接口用于在ModelArts平台上创建新的实验分类。
+     * 该接口适用于以下场景：当用户需要将训练作业放入实验中分类，有序地进行管理，可以通过此接口创建训练实验，常用于多任务的版本管理等场景。使用该接口的前提条件是用户已登录ModelArts平台并具有创建训练实验的权限。创建操作完成后，系统将返回训练实验的详细信息，包括实验ID、当前实验下的训练作业总个数等。若用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTrainingExperimentRequest 请求对象
+     * @return AsyncInvoker<CreateTrainingExperimentRequest, CreateTrainingExperimentResponse>
+     */
+    public AsyncInvoker<CreateTrainingExperimentRequest, CreateTrainingExperimentResponse> createTrainingExperimentAsyncInvoker(
+        CreateTrainingExperimentRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createTrainingExperiment, hcClient);
+    }
+
+    /**
+     * 创建训练作业
+     *
+     * 创建训练作业。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTrainingJobRequest 请求对象
+     * @return CompletableFuture<CreateTrainingJobResponse>
+     */
+    public CompletableFuture<CreateTrainingJobResponse> createTrainingJobAsync(CreateTrainingJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createTrainingJob);
+    }
+
+    /**
+     * 创建训练作业
+     *
+     * 创建训练作业。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTrainingJobRequest 请求对象
+     * @return AsyncInvoker<CreateTrainingJobRequest, CreateTrainingJobResponse>
+     */
+    public AsyncInvoker<CreateTrainingJobRequest, CreateTrainingJobResponse> createTrainingJobAsyncInvoker(
+        CreateTrainingJobRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createTrainingJob, hcClient);
+    }
+
+    /**
      * 创建工作空间
      *
      * 创建工作空间（\&quot;default\&quot;为系统预留的默认工作空间名称，不能使用）。
@@ -106,6 +465,96 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<CreateWorkspaceRequest, CreateWorkspaceResponse> createWorkspaceAsyncInvoker(
         CreateWorkspaceRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.createWorkspace, hcClient);
+    }
+
+    /**
+     * 删除训练作业标签
+     *
+     * 删除训练作业标签，支持批量删除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTrainJobTagsRequest 请求对象
+     * @return CompletableFuture<DeleteTrainJobTagsResponse>
+     */
+    public CompletableFuture<DeleteTrainJobTagsResponse> deleteTrainJobTagsAsync(DeleteTrainJobTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deleteTrainJobTags);
+    }
+
+    /**
+     * 删除训练作业标签
+     *
+     * 删除训练作业标签，支持批量删除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTrainJobTagsRequest 请求对象
+     * @return AsyncInvoker<DeleteTrainJobTagsRequest, DeleteTrainJobTagsResponse>
+     */
+    public AsyncInvoker<DeleteTrainJobTagsRequest, DeleteTrainJobTagsResponse> deleteTrainJobTagsAsyncInvoker(
+        DeleteTrainJobTagsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.deleteTrainJobTags, hcClient);
+    }
+
+    /**
+     * 删除训练实验
+     *
+     * 删除训练实验接口用于移除已创建的训练实验。
+     * 该接口适用于以下场景：当训练实验完成、配置错误或需要清理资源时，用户可以通过此接口删除指定的训练实验。使用该接口的前提条件是训练实验已存在且用户具有删除该实验的权限。删除操作完成后，训练实验将被永久移除，相关的配置和资源也将被清理。若训练实验不存在或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTrainingExperimentRequest 请求对象
+     * @return CompletableFuture<DeleteTrainingExperimentResponse>
+     */
+    public CompletableFuture<DeleteTrainingExperimentResponse> deleteTrainingExperimentAsync(
+        DeleteTrainingExperimentRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deleteTrainingExperiment);
+    }
+
+    /**
+     * 删除训练实验
+     *
+     * 删除训练实验接口用于移除已创建的训练实验。
+     * 该接口适用于以下场景：当训练实验完成、配置错误或需要清理资源时，用户可以通过此接口删除指定的训练实验。使用该接口的前提条件是训练实验已存在且用户具有删除该实验的权限。删除操作完成后，训练实验将被永久移除，相关的配置和资源也将被清理。若训练实验不存在或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTrainingExperimentRequest 请求对象
+     * @return AsyncInvoker<DeleteTrainingExperimentRequest, DeleteTrainingExperimentResponse>
+     */
+    public AsyncInvoker<DeleteTrainingExperimentRequest, DeleteTrainingExperimentResponse> deleteTrainingExperimentAsyncInvoker(
+        DeleteTrainingExperimentRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.deleteTrainingExperiment, hcClient);
+    }
+
+    /**
+     * 删除训练作业
+     *
+     * 删除训练作业。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTrainingJobRequest 请求对象
+     * @return CompletableFuture<DeleteTrainingJobResponse>
+     */
+    public CompletableFuture<DeleteTrainingJobResponse> deleteTrainingJobAsync(DeleteTrainingJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deleteTrainingJob);
+    }
+
+    /**
+     * 删除训练作业
+     *
+     * 删除训练作业。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTrainingJobRequest 请求对象
+     * @return AsyncInvoker<DeleteTrainingJobRequest, DeleteTrainingJobResponse>
+     */
+    public AsyncInvoker<DeleteTrainingJobRequest, DeleteTrainingJobResponse> deleteTrainingJobAsyncInvoker(
+        DeleteTrainingJobRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.deleteTrainingJob, hcClient);
     }
 
     /**
@@ -138,6 +587,37 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 获取事件类型列表
+     *
+     * 获取事件类型列表接口用于获取训练管理中支持的事件类型列表。
+     * 该接口适用于以下场景：当用户需要了解训练管理中支持的事件类型，以便在创建或管理训练任务时进行相关配置时，可以通过此接口获取事件类型列表。使用该接口的前提条件是用户已登录且具有访问训练管理的权限。获取操作完成后，响应消息体中将包含所有支持的事件类型及其描述。若用户无权限访问或系统中无事件类型信息，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEventCategoriesRequest 请求对象
+     * @return CompletableFuture<ListEventCategoriesResponse>
+     */
+    public CompletableFuture<ListEventCategoriesResponse> listEventCategoriesAsync(ListEventCategoriesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listEventCategories);
+    }
+
+    /**
+     * 获取事件类型列表
+     *
+     * 获取事件类型列表接口用于获取训练管理中支持的事件类型列表。
+     * 该接口适用于以下场景：当用户需要了解训练管理中支持的事件类型，以便在创建或管理训练任务时进行相关配置时，可以通过此接口获取事件类型列表。使用该接口的前提条件是用户已登录且具有访问训练管理的权限。获取操作完成后，响应消息体中将包含所有支持的事件类型及其描述。若用户无权限访问或系统中无事件类型信息，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEventCategoriesRequest 请求对象
+     * @return AsyncInvoker<ListEventCategoriesRequest, ListEventCategoriesResponse>
+     */
+    public AsyncInvoker<ListEventCategoriesRequest, ListEventCategoriesResponse> listEventCategoriesAsyncInvoker(
+        ListEventCategoriesRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listEventCategories, hcClient);
+    }
+
+    /**
      * 查询计划事件列表
      *
      * 查询计划事件列表信息。
@@ -164,6 +644,68 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<ListScheduledEventsRequest, ListScheduledEventsResponse> listScheduledEventsAsyncInvoker(
         ListScheduledEventsRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.listScheduledEvents, hcClient);
+    }
+
+    /**
+     * 查询训练实验列表
+     *
+     * 查询训练实验列表接口用于获取ModelArts平台上用户已创建的训练实验的列表。
+     * 该接口适用于以下场景：当用户需要查看所有或部分训练实验的概要信息，如实验名称、描述、创建时间等时，可以通过此接口查询训练实验列表。使用该接口的前提条件是用户已登录ModelArts平台并具有查看训练实验的权限。查询操作完成后，系统将返回符合条件的训练实验列表。若用户无权限操作或查询条件不合法，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTrainingExperimentsRequest 请求对象
+     * @return CompletableFuture<ListTrainingExperimentsResponse>
+     */
+    public CompletableFuture<ListTrainingExperimentsResponse> listTrainingExperimentsAsync(
+        ListTrainingExperimentsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listTrainingExperiments);
+    }
+
+    /**
+     * 查询训练实验列表
+     *
+     * 查询训练实验列表接口用于获取ModelArts平台上用户已创建的训练实验的列表。
+     * 该接口适用于以下场景：当用户需要查看所有或部分训练实验的概要信息，如实验名称、描述、创建时间等时，可以通过此接口查询训练实验列表。使用该接口的前提条件是用户已登录ModelArts平台并具有查看训练实验的权限。查询操作完成后，系统将返回符合条件的训练实验列表。若用户无权限操作或查询条件不合法，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTrainingExperimentsRequest 请求对象
+     * @return AsyncInvoker<ListTrainingExperimentsRequest, ListTrainingExperimentsResponse>
+     */
+    public AsyncInvoker<ListTrainingExperimentsRequest, ListTrainingExperimentsResponse> listTrainingExperimentsAsyncInvoker(
+        ListTrainingExperimentsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listTrainingExperiments, hcClient);
+    }
+
+    /**
+     * 获取训练作业事件列表
+     *
+     * 获取训练作业事件列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTrainingJobEventsRequest 请求对象
+     * @return CompletableFuture<ListTrainingJobEventsResponse>
+     */
+    public CompletableFuture<ListTrainingJobEventsResponse> listTrainingJobEventsAsync(
+        ListTrainingJobEventsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listTrainingJobEvents);
+    }
+
+    /**
+     * 获取训练作业事件列表
+     *
+     * 获取训练作业事件列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTrainingJobEventsRequest 请求对象
+     * @return AsyncInvoker<ListTrainingJobEventsRequest, ListTrainingJobEventsResponse>
+     */
+    public AsyncInvoker<ListTrainingJobEventsRequest, ListTrainingJobEventsResponse> listTrainingJobEventsAsyncInvoker(
+        ListTrainingJobEventsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listTrainingJobEvents, hcClient);
     }
 
     /**
@@ -226,6 +768,35 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<ListTrainingJobTasksRequest, ListTrainingJobTasksResponse> listTrainingJobTasksAsyncInvoker(
         ListTrainingJobTasksRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.listTrainingJobTasks, hcClient);
+    }
+
+    /**
+     * 查询训练作业列表
+     *
+     * 根据指定查询条件查询用户创建的训练作业列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTrainingJobsRequest 请求对象
+     * @return CompletableFuture<ListTrainingJobsResponse>
+     */
+    public CompletableFuture<ListTrainingJobsResponse> listTrainingJobsAsync(ListTrainingJobsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listTrainingJobs);
+    }
+
+    /**
+     * 查询训练作业列表
+     *
+     * 根据指定查询条件查询用户创建的训练作业列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTrainingJobsRequest 请求对象
+     * @return AsyncInvoker<ListTrainingJobsRequest, ListTrainingJobsResponse>
+     */
+    public AsyncInvoker<ListTrainingJobsRequest, ListTrainingJobsResponse> listTrainingJobsAsyncInvoker(
+        ListTrainingJobsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listTrainingJobs, hcClient);
     }
 
     /**
@@ -317,6 +888,517 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 获取某个超参敏感度分析图像的路径
+     *
+     * 获取某个超参敏感度分析图像的保存路径。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoSearchParamAnalysisResultPathRequest 请求对象
+     * @return CompletableFuture<ShowAutoSearchParamAnalysisResultPathResponse>
+     */
+    public CompletableFuture<ShowAutoSearchParamAnalysisResultPathResponse> showAutoSearchParamAnalysisResultPathAsync(
+        ShowAutoSearchParamAnalysisResultPathRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showAutoSearchParamAnalysisResultPath);
+    }
+
+    /**
+     * 获取某个超参敏感度分析图像的路径
+     *
+     * 获取某个超参敏感度分析图像的保存路径。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoSearchParamAnalysisResultPathRequest 请求对象
+     * @return AsyncInvoker<ShowAutoSearchParamAnalysisResultPathRequest, ShowAutoSearchParamAnalysisResultPathResponse>
+     */
+    public AsyncInvoker<ShowAutoSearchParamAnalysisResultPathRequest, ShowAutoSearchParamAnalysisResultPathResponse> showAutoSearchParamAnalysisResultPathAsyncInvoker(
+        ShowAutoSearchParamAnalysisResultPathRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showAutoSearchParamAnalysisResultPath, hcClient);
+    }
+
+    /**
+     * 获取超参敏感度分析结果
+     *
+     * 获取超参敏感度分析结果的汇总表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoSearchParamsAnalysisRequest 请求对象
+     * @return CompletableFuture<ShowAutoSearchParamsAnalysisResponse>
+     */
+    public CompletableFuture<ShowAutoSearchParamsAnalysisResponse> showAutoSearchParamsAnalysisAsync(
+        ShowAutoSearchParamsAnalysisRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showAutoSearchParamsAnalysis);
+    }
+
+    /**
+     * 获取超参敏感度分析结果
+     *
+     * 获取超参敏感度分析结果的汇总表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoSearchParamsAnalysisRequest 请求对象
+     * @return AsyncInvoker<ShowAutoSearchParamsAnalysisRequest, ShowAutoSearchParamsAnalysisResponse>
+     */
+    public AsyncInvoker<ShowAutoSearchParamsAnalysisRequest, ShowAutoSearchParamsAnalysisResponse> showAutoSearchParamsAnalysisAsyncInvoker(
+        ShowAutoSearchParamsAnalysisRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showAutoSearchParamsAnalysis, hcClient);
+    }
+
+    /**
+     * 查询超参搜索某个trial的结果
+     *
+     * 根据传入的trial_id，查询指定trial的搜索结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoSearchPerTrialRequest 请求对象
+     * @return CompletableFuture<ShowAutoSearchPerTrialResponse>
+     */
+    public CompletableFuture<ShowAutoSearchPerTrialResponse> showAutoSearchPerTrialAsync(
+        ShowAutoSearchPerTrialRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showAutoSearchPerTrial);
+    }
+
+    /**
+     * 查询超参搜索某个trial的结果
+     *
+     * 根据传入的trial_id，查询指定trial的搜索结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoSearchPerTrialRequest 请求对象
+     * @return AsyncInvoker<ShowAutoSearchPerTrialRequest, ShowAutoSearchPerTrialResponse>
+     */
+    public AsyncInvoker<ShowAutoSearchPerTrialRequest, ShowAutoSearchPerTrialResponse> showAutoSearchPerTrialAsyncInvoker(
+        ShowAutoSearchPerTrialRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showAutoSearchPerTrial, hcClient);
+    }
+
+    /**
+     * 提前终止自动化搜索作业的某个trial
+     *
+     * 提前终止自动化搜索作业的某个trial。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoSearchTrialEarlyStopRequest 请求对象
+     * @return CompletableFuture<ShowAutoSearchTrialEarlyStopResponse>
+     */
+    public CompletableFuture<ShowAutoSearchTrialEarlyStopResponse> showAutoSearchTrialEarlyStopAsync(
+        ShowAutoSearchTrialEarlyStopRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showAutoSearchTrialEarlyStop);
+    }
+
+    /**
+     * 提前终止自动化搜索作业的某个trial
+     *
+     * 提前终止自动化搜索作业的某个trial。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoSearchTrialEarlyStopRequest 请求对象
+     * @return AsyncInvoker<ShowAutoSearchTrialEarlyStopRequest, ShowAutoSearchTrialEarlyStopResponse>
+     */
+    public AsyncInvoker<ShowAutoSearchTrialEarlyStopRequest, ShowAutoSearchTrialEarlyStopResponse> showAutoSearchTrialEarlyStopAsyncInvoker(
+        ShowAutoSearchTrialEarlyStopRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showAutoSearchTrialEarlyStop, hcClient);
+    }
+
+    /**
+     * 查询超参搜索所有trial的结果
+     *
+     * 查询超参搜索所有trial的结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoSearchTrialsRequest 请求对象
+     * @return CompletableFuture<ShowAutoSearchTrialsResponse>
+     */
+    public CompletableFuture<ShowAutoSearchTrialsResponse> showAutoSearchTrialsAsync(
+        ShowAutoSearchTrialsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showAutoSearchTrials);
+    }
+
+    /**
+     * 查询超参搜索所有trial的结果
+     *
+     * 查询超参搜索所有trial的结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoSearchTrialsRequest 请求对象
+     * @return AsyncInvoker<ShowAutoSearchTrialsRequest, ShowAutoSearchTrialsResponse>
+     */
+    public AsyncInvoker<ShowAutoSearchTrialsRequest, ShowAutoSearchTrialsResponse> showAutoSearchTrialsAsyncInvoker(
+        ShowAutoSearchTrialsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showAutoSearchTrials, hcClient);
+    }
+
+    /**
+     * 获取自动化搜索作业yaml模板的内容
+     *
+     * 获取自动化搜索作业yaml模板的内容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoSearchYamlTemplateContentRequest 请求对象
+     * @return CompletableFuture<ShowAutoSearchYamlTemplateContentResponse>
+     */
+    public CompletableFuture<ShowAutoSearchYamlTemplateContentResponse> showAutoSearchYamlTemplateContentAsync(
+        ShowAutoSearchYamlTemplateContentRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showAutoSearchYamlTemplateContent);
+    }
+
+    /**
+     * 获取自动化搜索作业yaml模板的内容
+     *
+     * 获取自动化搜索作业yaml模板的内容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoSearchYamlTemplateContentRequest 请求对象
+     * @return AsyncInvoker<ShowAutoSearchYamlTemplateContentRequest, ShowAutoSearchYamlTemplateContentResponse>
+     */
+    public AsyncInvoker<ShowAutoSearchYamlTemplateContentRequest, ShowAutoSearchYamlTemplateContentResponse> showAutoSearchYamlTemplateContentAsyncInvoker(
+        ShowAutoSearchYamlTemplateContentRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showAutoSearchYamlTemplateContent, hcClient);
+    }
+
+    /**
+     * 获取自动化搜索作业yaml模板的信息
+     *
+     * 获取自动化搜索作业yaml模板的信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoSearchYamlTemplatesInfoRequest 请求对象
+     * @return CompletableFuture<ShowAutoSearchYamlTemplatesInfoResponse>
+     */
+    public CompletableFuture<ShowAutoSearchYamlTemplatesInfoResponse> showAutoSearchYamlTemplatesInfoAsync(
+        ShowAutoSearchYamlTemplatesInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showAutoSearchYamlTemplatesInfo);
+    }
+
+    /**
+     * 获取自动化搜索作业yaml模板的信息
+     *
+     * 获取自动化搜索作业yaml模板的信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoSearchYamlTemplatesInfoRequest 请求对象
+     * @return AsyncInvoker<ShowAutoSearchYamlTemplatesInfoRequest, ShowAutoSearchYamlTemplatesInfoResponse>
+     */
+    public AsyncInvoker<ShowAutoSearchYamlTemplatesInfoRequest, ShowAutoSearchYamlTemplatesInfoResponse> showAutoSearchYamlTemplatesInfoAsyncInvoker(
+        ShowAutoSearchYamlTemplatesInfoRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showAutoSearchYamlTemplatesInfo, hcClient);
+    }
+
+    /**
+     * 查询训练作业指定任务的日志（OBS链接）
+     *
+     * 查询训练作业指定任务的日志（OBS临时链接，有效期5分钟），可全量查看或直接下载。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowObsUrlOfTrainingJobLogsRequest 请求对象
+     * @return CompletableFuture<ShowObsUrlOfTrainingJobLogsResponse>
+     */
+    public CompletableFuture<ShowObsUrlOfTrainingJobLogsResponse> showObsUrlOfTrainingJobLogsAsync(
+        ShowObsUrlOfTrainingJobLogsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showObsUrlOfTrainingJobLogs);
+    }
+
+    /**
+     * 查询训练作业指定任务的日志（OBS链接）
+     *
+     * 查询训练作业指定任务的日志（OBS临时链接，有效期5分钟），可全量查看或直接下载。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowObsUrlOfTrainingJobLogsRequest 请求对象
+     * @return AsyncInvoker<ShowObsUrlOfTrainingJobLogsRequest, ShowObsUrlOfTrainingJobLogsResponse>
+     */
+    public AsyncInvoker<ShowObsUrlOfTrainingJobLogsRequest, ShowObsUrlOfTrainingJobLogsResponse> showObsUrlOfTrainingJobLogsAsyncInvoker(
+        ShowObsUrlOfTrainingJobLogsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showObsUrlOfTrainingJobLogs, hcClient);
+    }
+
+    /**
+     * 查询训练作业镜像保存任务
+     *
+     * 查询训练作业镜像保存任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSaveImageJobRequest 请求对象
+     * @return CompletableFuture<ShowSaveImageJobResponse>
+     */
+    public CompletableFuture<ShowSaveImageJobResponse> showSaveImageJobAsync(ShowSaveImageJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showSaveImageJob);
+    }
+
+    /**
+     * 查询训练作业镜像保存任务
+     *
+     * 查询训练作业镜像保存任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSaveImageJobRequest 请求对象
+     * @return AsyncInvoker<ShowSaveImageJobRequest, ShowSaveImageJobResponse>
+     */
+    public AsyncInvoker<ShowSaveImageJobRequest, ShowSaveImageJobResponse> showSaveImageJobAsyncInvoker(
+        ShowSaveImageJobRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showSaveImageJob, hcClient);
+    }
+
+    /**
+     * 查询训练作业标签
+     *
+     * 查询训练作业标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrainJobTagsRequest 请求对象
+     * @return CompletableFuture<ShowTrainJobTagsResponse>
+     */
+    public CompletableFuture<ShowTrainJobTagsResponse> showTrainJobTagsAsync(ShowTrainJobTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showTrainJobTags);
+    }
+
+    /**
+     * 查询训练作业标签
+     *
+     * 查询训练作业标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrainJobTagsRequest 请求对象
+     * @return AsyncInvoker<ShowTrainJobTagsRequest, ShowTrainJobTagsResponse>
+     */
+    public AsyncInvoker<ShowTrainJobTagsRequest, ShowTrainJobTagsResponse> showTrainJobTagsAsyncInvoker(
+        ShowTrainJobTagsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showTrainJobTags, hcClient);
+    }
+
+    /**
+     * 查询训练实验详情
+     *
+     * 查询训练实验详情接口用于获取指定训练实验的详细信息。
+     * 该接口适用于以下场景：当用户需要查看训练实验的实验名称、描述、创建时间等详细信息时，可以通过此接口获取。使用该接口的前提条件是训练实验已存在且用户具有查看该实验的权限。查询操作完成后，将返回训练实验的详细信息，包括但不限于实验ID、名称、描述、创建时间等。若训练实验不存在或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrainingExperimentDetailsRequest 请求对象
+     * @return CompletableFuture<ShowTrainingExperimentDetailsResponse>
+     */
+    public CompletableFuture<ShowTrainingExperimentDetailsResponse> showTrainingExperimentDetailsAsync(
+        ShowTrainingExperimentDetailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showTrainingExperimentDetails);
+    }
+
+    /**
+     * 查询训练实验详情
+     *
+     * 查询训练实验详情接口用于获取指定训练实验的详细信息。
+     * 该接口适用于以下场景：当用户需要查看训练实验的实验名称、描述、创建时间等详细信息时，可以通过此接口获取。使用该接口的前提条件是训练实验已存在且用户具有查看该实验的权限。查询操作完成后，将返回训练实验的详细信息，包括但不限于实验ID、名称、描述、创建时间等。若训练实验不存在或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrainingExperimentDetailsRequest 请求对象
+     * @return AsyncInvoker<ShowTrainingExperimentDetailsRequest, ShowTrainingExperimentDetailsResponse>
+     */
+    public AsyncInvoker<ShowTrainingExperimentDetailsRequest, ShowTrainingExperimentDetailsResponse> showTrainingExperimentDetailsAsyncInvoker(
+        ShowTrainingExperimentDetailsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showTrainingExperimentDetails, hcClient);
+    }
+
+    /**
+     * 查询训练作业详情
+     *
+     * 查询训练作业详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrainingJobDetailsRequest 请求对象
+     * @return CompletableFuture<ShowTrainingJobDetailsResponse>
+     */
+    public CompletableFuture<ShowTrainingJobDetailsResponse> showTrainingJobDetailsAsync(
+        ShowTrainingJobDetailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showTrainingJobDetails);
+    }
+
+    /**
+     * 查询训练作业详情
+     *
+     * 查询训练作业详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrainingJobDetailsRequest 请求对象
+     * @return AsyncInvoker<ShowTrainingJobDetailsRequest, ShowTrainingJobDetailsResponse>
+     */
+    public AsyncInvoker<ShowTrainingJobDetailsRequest, ShowTrainingJobDetailsResponse> showTrainingJobDetailsAsyncInvoker(
+        ShowTrainingJobDetailsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showTrainingJobDetails, hcClient);
+    }
+
+    /**
+     * 获取训练作业支持的AI预置框架
+     *
+     * 获取训练作业支持的AI预置框架。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrainingJobEnginesRequest 请求对象
+     * @return CompletableFuture<ShowTrainingJobEnginesResponse>
+     */
+    public CompletableFuture<ShowTrainingJobEnginesResponse> showTrainingJobEnginesAsync(
+        ShowTrainingJobEnginesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showTrainingJobEngines);
+    }
+
+    /**
+     * 获取训练作业支持的AI预置框架
+     *
+     * 获取训练作业支持的AI预置框架。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrainingJobEnginesRequest 请求对象
+     * @return AsyncInvoker<ShowTrainingJobEnginesRequest, ShowTrainingJobEnginesResponse>
+     */
+    public AsyncInvoker<ShowTrainingJobEnginesRequest, ShowTrainingJobEnginesResponse> showTrainingJobEnginesAsyncInvoker(
+        ShowTrainingJobEnginesRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showTrainingJobEngines, hcClient);
+    }
+
+    /**
+     * 获取训练作业支持的公共规格
+     *
+     * 获取训练作业支持的公共规格。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrainingJobFlavorsRequest 请求对象
+     * @return CompletableFuture<ShowTrainingJobFlavorsResponse>
+     */
+    public CompletableFuture<ShowTrainingJobFlavorsResponse> showTrainingJobFlavorsAsync(
+        ShowTrainingJobFlavorsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showTrainingJobFlavors);
+    }
+
+    /**
+     * 获取训练作业支持的公共规格
+     *
+     * 获取训练作业支持的公共规格。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrainingJobFlavorsRequest 请求对象
+     * @return AsyncInvoker<ShowTrainingJobFlavorsRequest, ShowTrainingJobFlavorsResponse>
+     */
+    public AsyncInvoker<ShowTrainingJobFlavorsRequest, ShowTrainingJobFlavorsResponse> showTrainingJobFlavorsAsyncInvoker(
+        ShowTrainingJobFlavorsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showTrainingJobFlavors, hcClient);
+    }
+
+    /**
+     * 查询训练作业指定任务的日志（预览）
+     *
+     * 查询训练作业指定任务的日志（预览）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrainingJobLogsPreviewRequest 请求对象
+     * @return CompletableFuture<ShowTrainingJobLogsPreviewResponse>
+     */
+    public CompletableFuture<ShowTrainingJobLogsPreviewResponse> showTrainingJobLogsPreviewAsync(
+        ShowTrainingJobLogsPreviewRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showTrainingJobLogsPreview);
+    }
+
+    /**
+     * 查询训练作业指定任务的日志（预览）
+     *
+     * 查询训练作业指定任务的日志（预览）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrainingJobLogsPreviewRequest 请求对象
+     * @return AsyncInvoker<ShowTrainingJobLogsPreviewRequest, ShowTrainingJobLogsPreviewResponse>
+     */
+    public AsyncInvoker<ShowTrainingJobLogsPreviewRequest, ShowTrainingJobLogsPreviewResponse> showTrainingJobLogsPreviewAsyncInvoker(
+        ShowTrainingJobLogsPreviewRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showTrainingJobLogsPreview, hcClient);
+    }
+
+    /**
+     * 查询训练作业指定任务的运行指标
+     *
+     * 查询训练作业指定任务的运行指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrainingJobMetricsRequest 请求对象
+     * @return CompletableFuture<ShowTrainingJobMetricsResponse>
+     */
+    public CompletableFuture<ShowTrainingJobMetricsResponse> showTrainingJobMetricsAsync(
+        ShowTrainingJobMetricsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showTrainingJobMetrics);
+    }
+
+    /**
+     * 查询训练作业指定任务的运行指标
+     *
+     * 查询训练作业指定任务的运行指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrainingJobMetricsRequest 请求对象
+     * @return AsyncInvoker<ShowTrainingJobMetricsRequest, ShowTrainingJobMetricsResponse>
+     */
+    public AsyncInvoker<ShowTrainingJobMetricsRequest, ShowTrainingJobMetricsResponse> showTrainingJobMetricsAsyncInvoker(
+        ShowTrainingJobMetricsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showTrainingJobMetrics, hcClient);
+    }
+
+    /**
+     * 获取训练配额
+     *
+     * 获取训练配额接口用于查询用户在ModelArts服务中的训练资源配额信息。
+     * 该接口适用于以下场景：当用户需要了解当前可用的训练资源配额，以便合理规划和管理训练任务时，可以通过此接口获取配额详情。使用该接口的前提条件是用户已登录并具有查看配额的权限。响应消息体中包含用户已创建的训练作业个数、剩余可创建个数等。若用户无权限或配额信息为空，接口将返回相应的错误信息或空列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrainingQuotasRequest 请求对象
+     * @return CompletableFuture<ShowTrainingQuotasResponse>
+     */
+    public CompletableFuture<ShowTrainingQuotasResponse> showTrainingQuotasAsync(ShowTrainingQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showTrainingQuotas);
+    }
+
+    /**
+     * 获取训练配额
+     *
+     * 获取训练配额接口用于查询用户在ModelArts服务中的训练资源配额信息。
+     * 该接口适用于以下场景：当用户需要了解当前可用的训练资源配额，以便合理规划和管理训练任务时，可以通过此接口获取配额详情。使用该接口的前提条件是用户已登录并具有查看配额的权限。响应消息体中包含用户已创建的训练作业个数、剩余可创建个数等。若用户无权限或配额信息为空，接口将返回相应的错误信息或空列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTrainingQuotasRequest 请求对象
+     * @return AsyncInvoker<ShowTrainingQuotasRequest, ShowTrainingQuotasResponse>
+     */
+    public AsyncInvoker<ShowTrainingQuotasRequest, ShowTrainingQuotasResponse> showTrainingQuotasAsyncInvoker(
+        ShowTrainingQuotasRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showTrainingQuotas, hcClient);
+    }
+
+    /**
      * 查询工作空间详情
      *
      * 查询工作空间详情。
@@ -372,6 +1454,35 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<ShowWorkspaceQuotasRequest, ShowWorkspaceQuotasResponse> showWorkspaceQuotasAsyncInvoker(
         ShowWorkspaceQuotasRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.showWorkspaceQuotas, hcClient);
+    }
+
+    /**
+     * 终止训练作业
+     *
+     * 终止训练作业，只可终止创建中、等待中、运行中的作业。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopTrainingJobRequest 请求对象
+     * @return CompletableFuture<StopTrainingJobResponse>
+     */
+    public CompletableFuture<StopTrainingJobResponse> stopTrainingJobAsync(StopTrainingJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.stopTrainingJob);
+    }
+
+    /**
+     * 终止训练作业
+     *
+     * 终止训练作业，只可终止创建中、等待中、运行中的作业。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopTrainingJobRequest 请求对象
+     * @return AsyncInvoker<StopTrainingJobRequest, StopTrainingJobResponse>
+     */
+    public AsyncInvoker<StopTrainingJobRequest, StopTrainingJobResponse> stopTrainingJobAsyncInvoker(
+        StopTrainingJobRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.stopTrainingJob, hcClient);
     }
 
     /**
@@ -490,6 +1601,751 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<ValidateAuthorizationRequest, ValidateAuthorizationResponse> validateAuthorizationAsyncInvoker(
         ValidateAuthorizationRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.validateAuthorization, hcClient);
+    }
+
+    /**
+     * 新建Workflow工作流
+     *
+     * 创建Workflow工作流。[可参考[如何开发Workflow](https://support.huaweicloud.com/usermanual-standard-modelarts/modelarts_workflow_0292.html)，创建工作流。](tag:hc)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWorkflowRequest 请求对象
+     * @return CompletableFuture<CreateWorkflowResponse>
+     */
+    public CompletableFuture<CreateWorkflowResponse> createWorkflowAsync(CreateWorkflowRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createWorkflow);
+    }
+
+    /**
+     * 新建Workflow工作流
+     *
+     * 创建Workflow工作流。[可参考[如何开发Workflow](https://support.huaweicloud.com/usermanual-standard-modelarts/modelarts_workflow_0292.html)，创建工作流。](tag:hc)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWorkflowRequest 请求对象
+     * @return AsyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>
+     */
+    public AsyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse> createWorkflowAsyncInvoker(
+        CreateWorkflowRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createWorkflow, hcClient);
+    }
+
+    /**
+     * 创建在线服务包
+     *
+     * 计费工作流购买资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWorkflowPurchasePoolRequest 请求对象
+     * @return CompletableFuture<CreateWorkflowPurchasePoolResponse>
+     */
+    public CompletableFuture<CreateWorkflowPurchasePoolResponse> createWorkflowPurchasePoolAsync(
+        CreateWorkflowPurchasePoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createWorkflowPurchasePool);
+    }
+
+    /**
+     * 创建在线服务包
+     *
+     * 计费工作流购买资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWorkflowPurchasePoolRequest 请求对象
+     * @return AsyncInvoker<CreateWorkflowPurchasePoolRequest, CreateWorkflowPurchasePoolResponse>
+     */
+    public AsyncInvoker<CreateWorkflowPurchasePoolRequest, CreateWorkflowPurchasePoolResponse> createWorkflowPurchasePoolAsyncInvoker(
+        CreateWorkflowPurchasePoolRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createWorkflowPurchasePool, hcClient);
+    }
+
+    /**
+     * 在线服务鉴权
+     *
+     * 计费工作流在线服务鉴权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWorkflowServiceAuthRequest 请求对象
+     * @return CompletableFuture<CreateWorkflowServiceAuthResponse>
+     */
+    public CompletableFuture<CreateWorkflowServiceAuthResponse> createWorkflowServiceAuthAsync(
+        CreateWorkflowServiceAuthRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createWorkflowServiceAuth);
+    }
+
+    /**
+     * 在线服务鉴权
+     *
+     * 计费工作流在线服务鉴权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWorkflowServiceAuthRequest 请求对象
+     * @return AsyncInvoker<CreateWorkflowServiceAuthRequest, CreateWorkflowServiceAuthResponse>
+     */
+    public AsyncInvoker<CreateWorkflowServiceAuthRequest, CreateWorkflowServiceAuthResponse> createWorkflowServiceAuthAsyncInvoker(
+        CreateWorkflowServiceAuthRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createWorkflowServiceAuth, hcClient);
+    }
+
+    /**
+     * 删除Workflow工作流
+     *
+     * 通过ID删除Workflow工作流。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteWorkflowRequest 请求对象
+     * @return CompletableFuture<DeleteWorkflowResponse>
+     */
+    public CompletableFuture<DeleteWorkflowResponse> deleteWorkflowAsync(DeleteWorkflowRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deleteWorkflow);
+    }
+
+    /**
+     * 删除Workflow工作流
+     *
+     * 通过ID删除Workflow工作流。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteWorkflowRequest 请求对象
+     * @return AsyncInvoker<DeleteWorkflowRequest, DeleteWorkflowResponse>
+     */
+    public AsyncInvoker<DeleteWorkflowRequest, DeleteWorkflowResponse> deleteWorkflowAsyncInvoker(
+        DeleteWorkflowRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.deleteWorkflow, hcClient);
+    }
+
+    /**
+     * 获取Workflow工作流列表
+     *
+     * 展示Workflow工作流列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWorkflowsRequest 请求对象
+     * @return CompletableFuture<ListWorkflowsResponse>
+     */
+    public CompletableFuture<ListWorkflowsResponse> listWorkflowsAsync(ListWorkflowsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listWorkflows);
+    }
+
+    /**
+     * 获取Workflow工作流列表
+     *
+     * 展示Workflow工作流列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWorkflowsRequest 请求对象
+     * @return AsyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse>
+     */
+    public AsyncInvoker<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflowsAsyncInvoker(
+        ListWorkflowsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listWorkflows, hcClient);
+    }
+
+    /**
+     * 查询Workflow工作流
+     *
+     * 通过ID查询Workflow工作流详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkflowRequest 请求对象
+     * @return CompletableFuture<ShowWorkflowResponse>
+     */
+    public CompletableFuture<ShowWorkflowResponse> showWorkflowAsync(ShowWorkflowRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showWorkflow);
+    }
+
+    /**
+     * 查询Workflow工作流
+     *
+     * 通过ID查询Workflow工作流详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkflowRequest 请求对象
+     * @return AsyncInvoker<ShowWorkflowRequest, ShowWorkflowResponse>
+     */
+    public AsyncInvoker<ShowWorkflowRequest, ShowWorkflowResponse> showWorkflowAsyncInvoker(
+        ShowWorkflowRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showWorkflow, hcClient);
+    }
+
+    /**
+     * 总览Workflow工作流
+     *
+     * 获取Workflow工作流统计信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkflowsOverviewRequest 请求对象
+     * @return CompletableFuture<ShowWorkflowsOverviewResponse>
+     */
+    public CompletableFuture<ShowWorkflowsOverviewResponse> showWorkflowsOverviewAsync(
+        ShowWorkflowsOverviewRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showWorkflowsOverview);
+    }
+
+    /**
+     * 总览Workflow工作流
+     *
+     * 获取Workflow工作流统计信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkflowsOverviewRequest 请求对象
+     * @return AsyncInvoker<ShowWorkflowsOverviewRequest, ShowWorkflowsOverviewResponse>
+     */
+    public AsyncInvoker<ShowWorkflowsOverviewRequest, ShowWorkflowsOverviewResponse> showWorkflowsOverviewAsyncInvoker(
+        ShowWorkflowsOverviewRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showWorkflowsOverview, hcClient);
+    }
+
+    /**
+     * 查询Workflow待办事项
+     *
+     * 获取Workflow待办列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkflowsTodolistRequest 请求对象
+     * @return CompletableFuture<ShowWorkflowsTodolistResponse>
+     */
+    public CompletableFuture<ShowWorkflowsTodolistResponse> showWorkflowsTodolistAsync(
+        ShowWorkflowsTodolistRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showWorkflowsTodolist);
+    }
+
+    /**
+     * 查询Workflow待办事项
+     *
+     * 获取Workflow待办列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkflowsTodolistRequest 请求对象
+     * @return AsyncInvoker<ShowWorkflowsTodolistRequest, ShowWorkflowsTodolistResponse>
+     */
+    public AsyncInvoker<ShowWorkflowsTodolistRequest, ShowWorkflowsTodolistResponse> showWorkflowsTodolistAsyncInvoker(
+        ShowWorkflowsTodolistRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showWorkflowsTodolist, hcClient);
+    }
+
+    /**
+     * 修改Workflow工作流
+     *
+     * 更新Workflow工作流信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateWorkflowRequest 请求对象
+     * @return CompletableFuture<UpdateWorkflowResponse>
+     */
+    public CompletableFuture<UpdateWorkflowResponse> updateWorkflowAsync(UpdateWorkflowRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.updateWorkflow);
+    }
+
+    /**
+     * 修改Workflow工作流
+     *
+     * 更新Workflow工作流信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateWorkflowRequest 请求对象
+     * @return AsyncInvoker<UpdateWorkflowRequest, UpdateWorkflowResponse>
+     */
+    public AsyncInvoker<UpdateWorkflowRequest, UpdateWorkflowResponse> updateWorkflowAsyncInvoker(
+        UpdateWorkflowRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.updateWorkflow, hcClient);
+    }
+
+    /**
+     * 新建Workflow Execution
+     *
+     * 创建Workflow Execution。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWorkflowExecutionRequest 请求对象
+     * @return CompletableFuture<CreateWorkflowExecutionResponse>
+     */
+    public CompletableFuture<CreateWorkflowExecutionResponse> createWorkflowExecutionAsync(
+        CreateWorkflowExecutionRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createWorkflowExecution);
+    }
+
+    /**
+     * 新建Workflow Execution
+     *
+     * 创建Workflow Execution。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWorkflowExecutionRequest 请求对象
+     * @return AsyncInvoker<CreateWorkflowExecutionRequest, CreateWorkflowExecutionResponse>
+     */
+    public AsyncInvoker<CreateWorkflowExecutionRequest, CreateWorkflowExecutionResponse> createWorkflowExecutionAsyncInvoker(
+        CreateWorkflowExecutionRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createWorkflowExecution, hcClient);
+    }
+
+    /**
+     * 管理Workflow Execution
+     *
+     * 本接口支持对Workflow Execution进行停止或重跑操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWorkflowExecutionsActionsRequest 请求对象
+     * @return CompletableFuture<CreateWorkflowExecutionsActionsResponse>
+     */
+    public CompletableFuture<CreateWorkflowExecutionsActionsResponse> createWorkflowExecutionsActionsAsync(
+        CreateWorkflowExecutionsActionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createWorkflowExecutionsActions);
+    }
+
+    /**
+     * 管理Workflow Execution
+     *
+     * 本接口支持对Workflow Execution进行停止或重跑操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWorkflowExecutionsActionsRequest 请求对象
+     * @return AsyncInvoker<CreateWorkflowExecutionsActionsRequest, CreateWorkflowExecutionsActionsResponse>
+     */
+    public AsyncInvoker<CreateWorkflowExecutionsActionsRequest, CreateWorkflowExecutionsActionsResponse> createWorkflowExecutionsActionsAsyncInvoker(
+        CreateWorkflowExecutionsActionsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createWorkflowExecutionsActions, hcClient);
+    }
+
+    /**
+     * 管理Workflow StepExecution
+     *
+     * 本接口支持对Workflow StepExecution进行重试、停止和继续操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWorkflowStepExecutionsActionsRequest 请求对象
+     * @return CompletableFuture<CreateWorkflowStepExecutionsActionsResponse>
+     */
+    public CompletableFuture<CreateWorkflowStepExecutionsActionsResponse> createWorkflowStepExecutionsActionsAsync(
+        CreateWorkflowStepExecutionsActionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createWorkflowStepExecutionsActions);
+    }
+
+    /**
+     * 管理Workflow StepExecution
+     *
+     * 本接口支持对Workflow StepExecution进行重试、停止和继续操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWorkflowStepExecutionsActionsRequest 请求对象
+     * @return AsyncInvoker<CreateWorkflowStepExecutionsActionsRequest, CreateWorkflowStepExecutionsActionsResponse>
+     */
+    public AsyncInvoker<CreateWorkflowStepExecutionsActionsRequest, CreateWorkflowStepExecutionsActionsResponse> createWorkflowStepExecutionsActionsAsyncInvoker(
+        CreateWorkflowStepExecutionsActionsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createWorkflowStepExecutionsActions, hcClient);
+    }
+
+    /**
+     * 删除Workflow Execution
+     *
+     * 通过ID删除Workflow Execution。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteWorkflowExecutionRequest 请求对象
+     * @return CompletableFuture<DeleteWorkflowExecutionResponse>
+     */
+    public CompletableFuture<DeleteWorkflowExecutionResponse> deleteWorkflowExecutionAsync(
+        DeleteWorkflowExecutionRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deleteWorkflowExecution);
+    }
+
+    /**
+     * 删除Workflow Execution
+     *
+     * 通过ID删除Workflow Execution。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteWorkflowExecutionRequest 请求对象
+     * @return AsyncInvoker<DeleteWorkflowExecutionRequest, DeleteWorkflowExecutionResponse>
+     */
+    public AsyncInvoker<DeleteWorkflowExecutionRequest, DeleteWorkflowExecutionResponse> deleteWorkflowExecutionAsyncInvoker(
+        DeleteWorkflowExecutionRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.deleteWorkflowExecution, hcClient);
+    }
+
+    /**
+     * 获取Execution列表
+     *
+     * 查询Workflow下的执行记录列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWorkflowExecutionsRequest 请求对象
+     * @return CompletableFuture<ListWorkflowExecutionsResponse>
+     */
+    public CompletableFuture<ListWorkflowExecutionsResponse> listWorkflowExecutionsAsync(
+        ListWorkflowExecutionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listWorkflowExecutions);
+    }
+
+    /**
+     * 获取Execution列表
+     *
+     * 查询Workflow下的执行记录列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWorkflowExecutionsRequest 请求对象
+     * @return AsyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse>
+     */
+    public AsyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> listWorkflowExecutionsAsyncInvoker(
+        ListWorkflowExecutionsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listWorkflowExecutions, hcClient);
+    }
+
+    /**
+     * 查询Workflow Execution
+     *
+     * 通过ID查询Workflow Execution详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkflowExecutionRequest 请求对象
+     * @return CompletableFuture<ShowWorkflowExecutionResponse>
+     */
+    public CompletableFuture<ShowWorkflowExecutionResponse> showWorkflowExecutionAsync(
+        ShowWorkflowExecutionRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showWorkflowExecution);
+    }
+
+    /**
+     * 查询Workflow Execution
+     *
+     * 通过ID查询Workflow Execution详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkflowExecutionRequest 请求对象
+     * @return AsyncInvoker<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse>
+     */
+    public AsyncInvoker<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse> showWorkflowExecutionAsyncInvoker(
+        ShowWorkflowExecutionRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showWorkflowExecution, hcClient);
+    }
+
+    /**
+     * 获取Workflow工作流节点度量信息
+     *
+     * 获取Workflow工作流节点的度量信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkflowStepExecutionMetricsRequest 请求对象
+     * @return CompletableFuture<ShowWorkflowStepExecutionMetricsResponse>
+     */
+    public CompletableFuture<ShowWorkflowStepExecutionMetricsResponse> showWorkflowStepExecutionMetricsAsync(
+        ShowWorkflowStepExecutionMetricsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showWorkflowStepExecutionMetrics);
+    }
+
+    /**
+     * 获取Workflow工作流节点度量信息
+     *
+     * 获取Workflow工作流节点的度量信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkflowStepExecutionMetricsRequest 请求对象
+     * @return AsyncInvoker<ShowWorkflowStepExecutionMetricsRequest, ShowWorkflowStepExecutionMetricsResponse>
+     */
+    public AsyncInvoker<ShowWorkflowStepExecutionMetricsRequest, ShowWorkflowStepExecutionMetricsResponse> showWorkflowStepExecutionMetricsAsyncInvoker(
+        ShowWorkflowStepExecutionMetricsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showWorkflowStepExecutionMetrics, hcClient);
+    }
+
+    /**
+     * 更新Workflow Execution
+     *
+     * 通过ID更新Workflow Exectuion。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateWorkflowExecutionRequest 请求对象
+     * @return CompletableFuture<UpdateWorkflowExecutionResponse>
+     */
+    public CompletableFuture<UpdateWorkflowExecutionResponse> updateWorkflowExecutionAsync(
+        UpdateWorkflowExecutionRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.updateWorkflowExecution);
+    }
+
+    /**
+     * 更新Workflow Execution
+     *
+     * 通过ID更新Workflow Exectuion。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateWorkflowExecutionRequest 请求对象
+     * @return AsyncInvoker<UpdateWorkflowExecutionRequest, UpdateWorkflowExecutionResponse>
+     */
+    public AsyncInvoker<UpdateWorkflowExecutionRequest, UpdateWorkflowExecutionResponse> updateWorkflowExecutionAsyncInvoker(
+        UpdateWorkflowExecutionRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.updateWorkflowExecution, hcClient);
+    }
+
+    /**
+     * 创建工作流定时调度
+     *
+     * 创建Workflow定时调度。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWorkflowScheduleRequest 请求对象
+     * @return CompletableFuture<CreateWorkflowScheduleResponse>
+     */
+    public CompletableFuture<CreateWorkflowScheduleResponse> createWorkflowScheduleAsync(
+        CreateWorkflowScheduleRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createWorkflowSchedule);
+    }
+
+    /**
+     * 创建工作流定时调度
+     *
+     * 创建Workflow定时调度。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWorkflowScheduleRequest 请求对象
+     * @return AsyncInvoker<CreateWorkflowScheduleRequest, CreateWorkflowScheduleResponse>
+     */
+    public AsyncInvoker<CreateWorkflowScheduleRequest, CreateWorkflowScheduleResponse> createWorkflowScheduleAsyncInvoker(
+        CreateWorkflowScheduleRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createWorkflowSchedule, hcClient);
+    }
+
+    /**
+     * 删除工作流定时调度信息
+     *
+     * 删除工作流调度信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteWorkflowScheduleIdRequest 请求对象
+     * @return CompletableFuture<DeleteWorkflowScheduleIdResponse>
+     */
+    public CompletableFuture<DeleteWorkflowScheduleIdResponse> deleteWorkflowScheduleIdAsync(
+        DeleteWorkflowScheduleIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deleteWorkflowScheduleId);
+    }
+
+    /**
+     * 删除工作流定时调度信息
+     *
+     * 删除工作流调度信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteWorkflowScheduleIdRequest 请求对象
+     * @return AsyncInvoker<DeleteWorkflowScheduleIdRequest, DeleteWorkflowScheduleIdResponse>
+     */
+    public AsyncInvoker<DeleteWorkflowScheduleIdRequest, DeleteWorkflowScheduleIdResponse> deleteWorkflowScheduleIdAsyncInvoker(
+        DeleteWorkflowScheduleIdRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.deleteWorkflowScheduleId, hcClient);
+    }
+
+    /**
+     * 查询工作流定时调度详情
+     *
+     * 查询工作流调度详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkflowScheduleRequest 请求对象
+     * @return CompletableFuture<ShowWorkflowScheduleResponse>
+     */
+    public CompletableFuture<ShowWorkflowScheduleResponse> showWorkflowScheduleAsync(
+        ShowWorkflowScheduleRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showWorkflowSchedule);
+    }
+
+    /**
+     * 查询工作流定时调度详情
+     *
+     * 查询工作流调度详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkflowScheduleRequest 请求对象
+     * @return AsyncInvoker<ShowWorkflowScheduleRequest, ShowWorkflowScheduleResponse>
+     */
+    public AsyncInvoker<ShowWorkflowScheduleRequest, ShowWorkflowScheduleResponse> showWorkflowScheduleAsyncInvoker(
+        ShowWorkflowScheduleRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showWorkflowSchedule, hcClient);
+    }
+
+    /**
+     * 更新工作流定时调度信息
+     *
+     * 更新WorkflowSchedule信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateWorkflowScheduleRequest 请求对象
+     * @return CompletableFuture<UpdateWorkflowScheduleResponse>
+     */
+    public CompletableFuture<UpdateWorkflowScheduleResponse> updateWorkflowScheduleAsync(
+        UpdateWorkflowScheduleRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.updateWorkflowSchedule);
+    }
+
+    /**
+     * 更新工作流定时调度信息
+     *
+     * 更新WorkflowSchedule信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateWorkflowScheduleRequest 请求对象
+     * @return AsyncInvoker<UpdateWorkflowScheduleRequest, UpdateWorkflowScheduleResponse>
+     */
+    public AsyncInvoker<UpdateWorkflowScheduleRequest, UpdateWorkflowScheduleResponse> updateWorkflowScheduleAsyncInvoker(
+        UpdateWorkflowScheduleRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.updateWorkflowSchedule, hcClient);
+    }
+
+    /**
+     * 新建消息订阅Subscription
+     *
+     * 为Workflow工作流添加消息订阅功能。工作流已订阅的事件发生时，会产生消息提醒。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWorkflowSubscriptionsRequest 请求对象
+     * @return CompletableFuture<CreateWorkflowSubscriptionsResponse>
+     */
+    public CompletableFuture<CreateWorkflowSubscriptionsResponse> createWorkflowSubscriptionsAsync(
+        CreateWorkflowSubscriptionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createWorkflowSubscriptions);
+    }
+
+    /**
+     * 新建消息订阅Subscription
+     *
+     * 为Workflow工作流添加消息订阅功能。工作流已订阅的事件发生时，会产生消息提醒。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateWorkflowSubscriptionsRequest 请求对象
+     * @return AsyncInvoker<CreateWorkflowSubscriptionsRequest, CreateWorkflowSubscriptionsResponse>
+     */
+    public AsyncInvoker<CreateWorkflowSubscriptionsRequest, CreateWorkflowSubscriptionsResponse> createWorkflowSubscriptionsAsyncInvoker(
+        CreateWorkflowSubscriptionsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createWorkflowSubscriptions, hcClient);
+    }
+
+    /**
+     * 删除消息订阅Subscription
+     *
+     * 删除已订阅的消息订阅Subscription。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteWorkflowSubscriptionRequest 请求对象
+     * @return CompletableFuture<DeleteWorkflowSubscriptionResponse>
+     */
+    public CompletableFuture<DeleteWorkflowSubscriptionResponse> deleteWorkflowSubscriptionAsync(
+        DeleteWorkflowSubscriptionRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deleteWorkflowSubscription);
+    }
+
+    /**
+     * 删除消息订阅Subscription
+     *
+     * 删除已订阅的消息订阅Subscription。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteWorkflowSubscriptionRequest 请求对象
+     * @return AsyncInvoker<DeleteWorkflowSubscriptionRequest, DeleteWorkflowSubscriptionResponse>
+     */
+    public AsyncInvoker<DeleteWorkflowSubscriptionRequest, DeleteWorkflowSubscriptionResponse> deleteWorkflowSubscriptionAsyncInvoker(
+        DeleteWorkflowSubscriptionRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.deleteWorkflowSubscription, hcClient);
+    }
+
+    /**
+     * 查询消息订阅Subscription详情
+     *
+     * 查询Workflow工作流已订阅的订阅信息详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkflowSubscriptionRequest 请求对象
+     * @return CompletableFuture<ShowWorkflowSubscriptionResponse>
+     */
+    public CompletableFuture<ShowWorkflowSubscriptionResponse> showWorkflowSubscriptionAsync(
+        ShowWorkflowSubscriptionRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showWorkflowSubscription);
+    }
+
+    /**
+     * 查询消息订阅Subscription详情
+     *
+     * 查询Workflow工作流已订阅的订阅信息详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkflowSubscriptionRequest 请求对象
+     * @return AsyncInvoker<ShowWorkflowSubscriptionRequest, ShowWorkflowSubscriptionResponse>
+     */
+    public AsyncInvoker<ShowWorkflowSubscriptionRequest, ShowWorkflowSubscriptionResponse> showWorkflowSubscriptionAsyncInvoker(
+        ShowWorkflowSubscriptionRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showWorkflowSubscription, hcClient);
+    }
+
+    /**
+     * 更新消息订阅Subscription
+     *
+     * 更新Workflow工作流已订阅的订阅信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateWorkflowSubscriptionRequest 请求对象
+     * @return CompletableFuture<UpdateWorkflowSubscriptionResponse>
+     */
+    public CompletableFuture<UpdateWorkflowSubscriptionResponse> updateWorkflowSubscriptionAsync(
+        UpdateWorkflowSubscriptionRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.updateWorkflowSubscription);
+    }
+
+    /**
+     * 更新消息订阅Subscription
+     *
+     * 更新Workflow工作流已订阅的订阅信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateWorkflowSubscriptionRequest 请求对象
+     * @return AsyncInvoker<UpdateWorkflowSubscriptionRequest, UpdateWorkflowSubscriptionResponse>
+     */
+    public AsyncInvoker<UpdateWorkflowSubscriptionRequest, UpdateWorkflowSubscriptionResponse> updateWorkflowSubscriptionAsyncInvoker(
+        UpdateWorkflowSubscriptionRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.updateWorkflowSubscription, hcClient);
     }
 
 }

@@ -24,7 +24,7 @@ public class UpdateServerGroupReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "route_policy")
 
-    private RoutePolicy routePolicy;
+    private RoutePolicyDetail routePolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_mount_policy")
@@ -105,14 +105,14 @@ public class UpdateServerGroupReq {
         this.description = description;
     }
 
-    public UpdateServerGroupReq withRoutePolicy(RoutePolicy routePolicy) {
+    public UpdateServerGroupReq withRoutePolicy(RoutePolicyDetail routePolicy) {
         this.routePolicy = routePolicy;
         return this;
     }
 
-    public UpdateServerGroupReq withRoutePolicy(Consumer<RoutePolicy> routePolicySetter) {
+    public UpdateServerGroupReq withRoutePolicy(Consumer<RoutePolicyDetail> routePolicySetter) {
         if (this.routePolicy == null) {
-            this.routePolicy = new RoutePolicy();
+            this.routePolicy = new RoutePolicyDetail();
             routePolicySetter.accept(this.routePolicy);
         }
 
@@ -123,11 +123,11 @@ public class UpdateServerGroupReq {
      * Get routePolicy
      * @return routePolicy
      */
-    public RoutePolicy getRoutePolicy() {
+    public RoutePolicyDetail getRoutePolicy() {
         return routePolicy;
     }
 
-    public void setRoutePolicy(RoutePolicy routePolicy) {
+    public void setRoutePolicy(RoutePolicyDetail routePolicy) {
         this.routePolicy = routePolicy;
     }
 

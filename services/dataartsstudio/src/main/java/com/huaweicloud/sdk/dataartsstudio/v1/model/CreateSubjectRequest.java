@@ -24,7 +24,7 @@ public class CreateSubjectRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CatalogVO body;
+    private CatalogParamsVO body;
 
     public CreateSubjectRequest withWorkspace(String workspace) {
         this.workspace = workspace;
@@ -62,14 +62,14 @@ public class CreateSubjectRequest {
         this.xProjectId = xProjectId;
     }
 
-    public CreateSubjectRequest withBody(CatalogVO body) {
+    public CreateSubjectRequest withBody(CatalogParamsVO body) {
         this.body = body;
         return this;
     }
 
-    public CreateSubjectRequest withBody(Consumer<CatalogVO> bodySetter) {
+    public CreateSubjectRequest withBody(Consumer<CatalogParamsVO> bodySetter) {
         if (this.body == null) {
-            this.body = new CatalogVO();
+            this.body = new CatalogParamsVO();
             bodySetter.accept(this.body);
         }
 
@@ -80,11 +80,11 @@ public class CreateSubjectRequest {
      * Get body
      * @return body
      */
-    public CatalogVO getBody() {
+    public CatalogParamsVO getBody() {
         return body;
     }
 
-    public void setBody(CatalogVO body) {
+    public void setBody(CatalogParamsVO body) {
         this.body = body;
     }
 

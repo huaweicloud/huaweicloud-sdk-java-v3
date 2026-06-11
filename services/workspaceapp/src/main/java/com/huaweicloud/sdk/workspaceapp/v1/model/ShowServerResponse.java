@@ -160,7 +160,7 @@ public class ShowServerResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_info")
 
-    private ProductInfo productInfo;
+    private ServerProductInfo productInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
@@ -707,14 +707,14 @@ public class ShowServerResponse extends SdkResponse {
         this.serverGroupName = serverGroupName;
     }
 
-    public ShowServerResponse withProductInfo(ProductInfo productInfo) {
+    public ShowServerResponse withProductInfo(ServerProductInfo productInfo) {
         this.productInfo = productInfo;
         return this;
     }
 
-    public ShowServerResponse withProductInfo(Consumer<ProductInfo> productInfoSetter) {
+    public ShowServerResponse withProductInfo(Consumer<ServerProductInfo> productInfoSetter) {
         if (this.productInfo == null) {
-            this.productInfo = new ProductInfo();
+            this.productInfo = new ServerProductInfo();
             productInfoSetter.accept(this.productInfo);
         }
 
@@ -725,11 +725,11 @@ public class ShowServerResponse extends SdkResponse {
      * Get productInfo
      * @return productInfo
      */
-    public ProductInfo getProductInfo() {
+    public ServerProductInfo getProductInfo() {
         return productInfo;
     }
 
-    public void setProductInfo(ProductInfo productInfo) {
+    public void setProductInfo(ServerProductInfo productInfo) {
         this.productInfo = productInfo;
     }
 

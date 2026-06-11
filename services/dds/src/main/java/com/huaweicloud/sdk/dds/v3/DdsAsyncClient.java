@@ -13,6 +13,8 @@ import com.huaweicloud.sdk.dds.v3.model.AttachInternalIpRequest;
 import com.huaweicloud.sdk.dds.v3.model.AttachInternalIpResponse;
 import com.huaweicloud.sdk.dds.v3.model.BatchDeleteBackupRequest;
 import com.huaweicloud.sdk.dds.v3.model.BatchDeleteBackupResponse;
+import com.huaweicloud.sdk.dds.v3.model.BatchDeleteShardsRequest;
+import com.huaweicloud.sdk.dds.v3.model.BatchDeleteShardsResponse;
 import com.huaweicloud.sdk.dds.v3.model.BatchTagActionRequest;
 import com.huaweicloud.sdk.dds.v3.model.BatchTagActionResponse;
 import com.huaweicloud.sdk.dds.v3.model.BatchUpgradeDatabaseVersionRequest;
@@ -419,6 +421,35 @@ public class DdsAsyncClient {
     public AsyncInvoker<BatchDeleteBackupRequest, BatchDeleteBackupResponse> batchDeleteBackupAsyncInvoker(
         BatchDeleteBackupRequest request) {
         return new AsyncInvoker<>(request, DdsMeta.batchDeleteBackup, hcClient);
+    }
+
+    /**
+     * 删除分片
+     *
+     * 删除分片
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteShardsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteShardsResponse>
+     */
+    public CompletableFuture<BatchDeleteShardsResponse> batchDeleteShardsAsync(BatchDeleteShardsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.batchDeleteShards);
+    }
+
+    /**
+     * 删除分片
+     *
+     * 删除分片
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteShardsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteShardsRequest, BatchDeleteShardsResponse>
+     */
+    public AsyncInvoker<BatchDeleteShardsRequest, BatchDeleteShardsResponse> batchDeleteShardsAsyncInvoker(
+        BatchDeleteShardsRequest request) {
+        return new AsyncInvoker<>(request, DdsMeta.batchDeleteShards, hcClient);
     }
 
     /**

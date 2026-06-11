@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 实例信息。
+ * **参数解释：** 实例信息。 **取值范围：** 不涉及。
  */
 public class ListInstancesResult {
 
@@ -129,6 +129,11 @@ public class ListInstancesResult {
     private List<String> actions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disk_encryption_id")
+
+    private String diskEncryptionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lb_ip_address")
 
     private String lbIpAddress;
@@ -144,14 +149,29 @@ public class ListInstancesResult {
     private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dr_instance_id")
+
+    private String drInstanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dual_active_info")
 
     private DualActiveInfo dualActiveInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ccm_cert_info")
+
+    private CertInfoOption ccmCertInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl")
 
     private String ssl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_space_usage")
+
+    private BackupSpaceUsage backupSpaceUsage;
 
     public ListInstancesResult withId(String id) {
         this.id = id;
@@ -159,7 +179,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 实例ID。
+     * **参数解释：** 实例ID。 **取值范围：** 不涉及。
      * @return id
      */
     public String getId() {
@@ -176,7 +196,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 实例名称。
+     * **参数解释：** 实例名称。 **取值范围：** 不涉及。
      * @return name
      */
     public String getName() {
@@ -193,7 +213,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 实例状态。 取值： - normal，表示实例正常。 - abnormal，表示实例异常。 - creating，表示实例创建中。 - frozen，表示实例被冻结。 - data_disk_full，表示实例磁盘已满。 - createfail，表示实例创建失败。 - enlargefail，表示实例扩容节点个数失败。
+     * **参数解释：** 实例状态。 **取值范围：** - normal，表示实例正常。 - abnormal，表示实例异常。 - creating，表示实例创建中。 - frozen，表示实例被冻结。 - data_disk_full，表示实例磁盘已满。 - createfail，表示实例创建失败。 - enlargefail，表示实例扩容节点个数失败。
      * @return status
      */
     public String getStatus() {
@@ -210,7 +230,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 数据库端口。
+     * **参数解释：** 数据库端口。 **取值范围：** 不涉及。
      * @return port
      */
     public String getPort() {
@@ -227,7 +247,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 实例所在区域。
+     * **参数解释：** 实例所在区域。 **取值范围：** 不涉及。
      * @return region
      */
     public String getRegion() {
@@ -270,7 +290,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 实例类型。与请求参数相同。
+     * **参数解释：** 实例类型。 **取值范围：** 与请求参数相同。
      * @return mode
      */
     public String getMode() {
@@ -287,7 +307,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 产品类型。 GeminiDB Redis云原生部署模式集群涉及此字段，取值：   -  Standard 标准型   -  Capacity 容量型
+     * **参数解释：** 产品类型。 **取值范围：** GeminiDB Redis云原生部署模式集群涉及此字段，取值：   -  Standard 标准型   -  Capacity 容量型
      * @return productType
      */
     public String getProductType() {
@@ -304,7 +324,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 存储引擎。取值为“rocksDB”。
+     * **参数解释：** 存储引擎。 **取值范围：** 取值为“rocksDB”。
      * @return engine
      */
     public String getEngine() {
@@ -321,7 +341,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 实例创建时间。
+     * **参数解释：** 实例创建时间。 **取值范围：** 不涉及。
      * @return created
      */
     public String getCreated() {
@@ -338,7 +358,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 实例操作最新变更的时间。
+     * **参数解释：** 实例操作最新变更的时间。 **取值范围：** 不涉及。
      * @return updated
      */
     public String getUpdated() {
@@ -355,7 +375,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 默认用户名。取值为“rwuser”。
+     * **参数解释：** 默认用户名。 **取值范围：** 取值为“rwuser”。
      * @return dbUserName
      */
     public String getDbUserName() {
@@ -372,7 +392,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 虚拟私有云ID。
+     * **参数解释：** 虚拟私有云ID。 **取值范围：** 不涉及。
      * @return vpcId
      */
     public String getVpcId() {
@@ -389,7 +409,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 子网ID。
+     * **参数解释：** 子网ID。 **取值范围：** GeminiDB Cassandra 实例使用多个子网的场景，请参见表 ListInstancesNodeResult字段数据结构说明中的“subnet_id”。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -406,7 +426,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 安全组ID。
+     * **参数解释：** 安全组ID。 **取值范围：** 不涉及。
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -449,7 +469,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 计费方式。 - 取值为“0”，表示按需计费。 - 取值为“1”，表示包年/包月计费。
+     * **参数解释：** 计费方式。 **取值范围：** - 取值为“0”，表示按需计费。 - 取值为“1”，表示包年/包月计费。
      * @return payMode
      */
     public String getPayMode() {
@@ -466,7 +486,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 系统可维护时间窗。
+     * **参数解释：** 系统可维护时间窗。 **取值范围：** 不涉及。
      * @return maintenanceWindow
      */
     public String getMaintenanceWindow() {
@@ -499,7 +519,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 组信息。
+     * **参数解释：** 组信息。 **取值范围：** 不涉及。
      * @return groups
      */
     public List<ListInstancesGroupResult> getGroups() {
@@ -516,7 +536,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 企业项目ID。取值为“0”，表示为default企业项目。
+     * **参数解释：** 企业项目ID。 **取值范围：** 取值为“0”，表示为default企业项目。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -533,7 +553,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 专属资源ID，只有数据库实例属于专属资源池才会返回该参数。
+     * **参数解释：** 专属资源ID。只有数据库实例属于专属资源池才会返回该参数。 **取值范围：** 不涉及。
      * @return dedicatedResourceId
      */
     public String getDedicatedResourceId() {
@@ -550,7 +570,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 时区。
+     * **参数解释：** 时区。 **取值范围：** 不涉及。
      * @return timeZone
      */
     public String getTimeZone() {
@@ -583,7 +603,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 实例正在执行的动作。
+     * **参数解释：** 实例正在执行的动作。 **取值范围：** 不涉及。
      * @return actions
      */
     public List<String> getActions() {
@@ -594,13 +614,30 @@ public class ListInstancesResult {
         this.actions = actions;
     }
 
+    public ListInstancesResult withDiskEncryptionId(String diskEncryptionId) {
+        this.diskEncryptionId = diskEncryptionId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 磁盘加密时的密钥ID。 **取值范围：** 不涉及。
+     * @return diskEncryptionId
+     */
+    public String getDiskEncryptionId() {
+        return diskEncryptionId;
+    }
+
+    public void setDiskEncryptionId(String diskEncryptionId) {
+        this.diskEncryptionId = diskEncryptionId;
+    }
+
     public ListInstancesResult withLbIpAddress(String lbIpAddress) {
         this.lbIpAddress = lbIpAddress;
         return this;
     }
 
     /**
-     * 负载均衡ip，只有存在负载均衡ip，才会返回该参数。
+     * **参数解释：** 负载均衡ip。 **取值范围：** 只有存在负载均衡ip，才会返回该参数。
      * @return lbIpAddress
      */
     public String getLbIpAddress() {
@@ -617,7 +654,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 负载均衡端口，只有存在负载均衡ip，才会返回该参数。
+     * **参数解释：** 负载均衡端口。 **取值范围：** 只有存在负载均衡ip，才会返回该参数。
      * @return lbPort
      */
     public String getLbPort() {
@@ -634,7 +671,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 实例可用区。
+     * **参数解释：** 实例可用区。 **取值范围：** 不涉及。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -643,6 +680,23 @@ public class ListInstancesResult {
 
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
+    }
+
+    public ListInstancesResult withDrInstanceId(String drInstanceId) {
+        this.drInstanceId = drInstanceId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 容灾实例ID。 **取值范围：** 不涉及。
+     * @return drInstanceId
+     */
+    public String getDrInstanceId() {
+        return drInstanceId;
+    }
+
+    public void setDrInstanceId(String drInstanceId) {
+        this.drInstanceId = drInstanceId;
     }
 
     public ListInstancesResult withDualActiveInfo(DualActiveInfo dualActiveInfo) {
@@ -671,13 +725,39 @@ public class ListInstancesResult {
         this.dualActiveInfo = dualActiveInfo;
     }
 
+    public ListInstancesResult withCcmCertInfo(CertInfoOption ccmCertInfo) {
+        this.ccmCertInfo = ccmCertInfo;
+        return this;
+    }
+
+    public ListInstancesResult withCcmCertInfo(Consumer<CertInfoOption> ccmCertInfoSetter) {
+        if (this.ccmCertInfo == null) {
+            this.ccmCertInfo = new CertInfoOption();
+            ccmCertInfoSetter.accept(this.ccmCertInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get ccmCertInfo
+     * @return ccmCertInfo
+     */
+    public CertInfoOption getCcmCertInfo() {
+        return ccmCertInfo;
+    }
+
+    public void setCcmCertInfo(CertInfoOption ccmCertInfo) {
+        this.ccmCertInfo = ccmCertInfo;
+    }
+
     public ListInstancesResult withSsl(String ssl) {
         this.ssl = ssl;
         return this;
     }
 
     /**
-     * 参数解释： SSL安全连接启用情况。 取值范围： - 取值为“0”表示未启用。 - 取值为“1”表示已启用。
+     * **参数解释：** SSL安全连接启用情况。 **取值范围：** - 取值为“0”表示未启用。 - 取值为“1”表示已启用。
      * @return ssl
      */
     public String getSsl() {
@@ -686,6 +766,32 @@ public class ListInstancesResult {
 
     public void setSsl(String ssl) {
         this.ssl = ssl;
+    }
+
+    public ListInstancesResult withBackupSpaceUsage(BackupSpaceUsage backupSpaceUsage) {
+        this.backupSpaceUsage = backupSpaceUsage;
+        return this;
+    }
+
+    public ListInstancesResult withBackupSpaceUsage(Consumer<BackupSpaceUsage> backupSpaceUsageSetter) {
+        if (this.backupSpaceUsage == null) {
+            this.backupSpaceUsage = new BackupSpaceUsage();
+            backupSpaceUsageSetter.accept(this.backupSpaceUsage);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get backupSpaceUsage
+     * @return backupSpaceUsage
+     */
+    public BackupSpaceUsage getBackupSpaceUsage() {
+        return backupSpaceUsage;
+    }
+
+    public void setBackupSpaceUsage(BackupSpaceUsage backupSpaceUsage) {
+        this.backupSpaceUsage = backupSpaceUsage;
     }
 
     @Override
@@ -711,9 +817,13 @@ public class ListInstancesResult {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.dedicatedResourceId, that.dedicatedResourceId)
             && Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.actions, that.actions)
+            && Objects.equals(this.diskEncryptionId, that.diskEncryptionId)
             && Objects.equals(this.lbIpAddress, that.lbIpAddress) && Objects.equals(this.lbPort, that.lbPort)
             && Objects.equals(this.availabilityZone, that.availabilityZone)
-            && Objects.equals(this.dualActiveInfo, that.dualActiveInfo) && Objects.equals(this.ssl, that.ssl);
+            && Objects.equals(this.drInstanceId, that.drInstanceId)
+            && Objects.equals(this.dualActiveInfo, that.dualActiveInfo)
+            && Objects.equals(this.ccmCertInfo, that.ccmCertInfo) && Objects.equals(this.ssl, that.ssl)
+            && Objects.equals(this.backupSpaceUsage, that.backupSpaceUsage);
     }
 
     @Override
@@ -741,11 +851,15 @@ public class ListInstancesResult {
             dedicatedResourceId,
             timeZone,
             actions,
+            diskEncryptionId,
             lbIpAddress,
             lbPort,
             availabilityZone,
+            drInstanceId,
             dualActiveInfo,
-            ssl);
+            ccmCertInfo,
+            ssl,
+            backupSpaceUsage);
     }
 
     @Override
@@ -775,11 +889,15 @@ public class ListInstancesResult {
         sb.append("    dedicatedResourceId: ").append(toIndentedString(dedicatedResourceId)).append("\n");
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
         sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
+        sb.append("    diskEncryptionId: ").append(toIndentedString(diskEncryptionId)).append("\n");
         sb.append("    lbIpAddress: ").append(toIndentedString(lbIpAddress)).append("\n");
         sb.append("    lbPort: ").append(toIndentedString(lbPort)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    drInstanceId: ").append(toIndentedString(drInstanceId)).append("\n");
         sb.append("    dualActiveInfo: ").append(toIndentedString(dualActiveInfo)).append("\n");
+        sb.append("    ccmCertInfo: ").append(toIndentedString(ccmCertInfo)).append("\n");
         sb.append("    ssl: ").append(toIndentedString(ssl)).append("\n");
+        sb.append("    backupSpaceUsage: ").append(toIndentedString(backupSpaceUsage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

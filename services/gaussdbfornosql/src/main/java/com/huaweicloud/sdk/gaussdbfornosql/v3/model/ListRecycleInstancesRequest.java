@@ -50,7 +50,7 @@ public class ListRecycleInstancesRequest {
     }
 
     /**
-     * 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
+     * **参数解释：** 索引位置，偏移量。 索引位置偏移量。从第一条数据偏移offset条数据后开始查询。 **约束限制：** 大于或等于0。 **取值范围：** 不涉及。 **默认取值：** 0，表示从第一条数据开始查询。
      * @return offset
      */
     public Integer getOffset() {
@@ -67,7 +67,7 @@ public class ListRecycleInstancesRequest {
     }
 
     /**
-     * 查询个数上限值。取值范围：1~100。不传该参数时，默认查询前100条信息。
+     * **参数解释：** 查询个数上限值。 **约束限制：** 不涉及。 **取值范围：** 1~100。 **默认取值：** 100。
      * @return limit
      */
     public Integer getLimit() {

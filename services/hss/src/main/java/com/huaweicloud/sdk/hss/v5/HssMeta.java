@@ -2833,6 +2833,177 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAiComponentDetailRequest, ListAiComponentDetailResponse> listAiComponentDetail =
+        genForListAiComponentDetail();
+
+    private static HttpRequestDef<ListAiComponentDetailRequest, ListAiComponentDetailResponse> genForListAiComponentDetail() {
+        // basic
+        HttpRequestDef.Builder<ListAiComponentDetailRequest, ListAiComponentDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAiComponentDetailRequest.class, ListAiComponentDetailResponse.class)
+            .withName("ListAiComponentDetail")
+            .withUri("/v5/{project_id}/asset/ai-component/detail")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAiComponentDetailRequest::getLimit, ListAiComponentDetailRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAiComponentDetailRequest::getOffset, ListAiComponentDetailRequest::setOffset));
+        builder.<String>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiComponentDetailRequest::getCategory,
+                ListAiComponentDetailRequest::setCategory));
+        builder.<String>withRequestField("catalogue",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiComponentDetailRequest::getCatalogue,
+                ListAiComponentDetailRequest::setCatalogue));
+        builder.<String>withRequestField("server_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiComponentDetailRequest::getServerName,
+                ListAiComponentDetailRequest::setServerName));
+        builder.<String>withRequestField("server_ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiComponentDetailRequest::getServerIp,
+                ListAiComponentDetailRequest::setServerIp));
+        builder.<String>withRequestField("ai_application",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiComponentDetailRequest::getAiApplication,
+                ListAiComponentDetailRequest::setAiApplication));
+        builder.<String>withRequestField("host_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiComponentDetailRequest::getHostId, ListAiComponentDetailRequest::setHostId));
+        builder.<String>withRequestField("ai_tool",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiComponentDetailRequest::getAiTool, ListAiComponentDetailRequest::setAiTool));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiComponentDetailRequest::getType, ListAiComponentDetailRequest::setType));
+        builder.<String>withRequestField("version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiComponentDetailRequest::getVersion, ListAiComponentDetailRequest::setVersion));
+        builder.<String>withRequestField("installation_path",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiComponentDetailRequest::getInstallationPath,
+                ListAiComponentDetailRequest::setInstallationPath));
+        builder.<Long>withRequestField("first_scan_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAiComponentDetailRequest::getFirstScanTime,
+                ListAiComponentDetailRequest::setFirstScanTime));
+        builder.<Long>withRequestField("latest_scan_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAiComponentDetailRequest::getLatestScanTime,
+                ListAiComponentDetailRequest::setLatestScanTime));
+        builder.<String>withRequestField("container_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiComponentDetailRequest::getContainerName,
+                ListAiComponentDetailRequest::setContainerName));
+        builder.<String>withRequestField("container_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiComponentDetailRequest::getContainerId,
+                ListAiComponentDetailRequest::setContainerId));
+        builder.<String>withRequestField("image_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiComponentDetailRequest::getImageName,
+                ListAiComponentDetailRequest::setImageName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAiComponentStatisticsRequest, ListAiComponentStatisticsResponse> listAiComponentStatistics =
+        genForListAiComponentStatistics();
+
+    private static HttpRequestDef<ListAiComponentStatisticsRequest, ListAiComponentStatisticsResponse> genForListAiComponentStatistics() {
+        // basic
+        HttpRequestDef.Builder<ListAiComponentStatisticsRequest, ListAiComponentStatisticsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAiComponentStatisticsRequest.class,
+                    ListAiComponentStatisticsResponse.class)
+                .withName("ListAiComponentStatistics")
+                .withUri("/v5/{project_id}/asset/ai-component/statistics")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiComponentStatisticsRequest::getEnterpriseProjectId,
+                ListAiComponentStatisticsRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiComponentStatisticsRequest::getCategory,
+                ListAiComponentStatisticsRequest::setCategory));
+        builder.<String>withRequestField("catalogue",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiComponentStatisticsRequest::getCatalogue,
+                ListAiComponentStatisticsRequest::setCatalogue));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAiComponentStatisticsRequest::getLimit,
+                ListAiComponentStatisticsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAiComponentStatisticsRequest::getOffset,
+                ListAiComponentStatisticsRequest::setOffset));
+        builder.<String>withRequestField("ai_component_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiComponentStatisticsRequest::getAiComponentName,
+                ListAiComponentStatisticsRequest::setAiComponentName));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAlarmWhiteListRequest, ListAlarmWhiteListResponse> listAlarmWhiteList =
         genForListAlarmWhiteList();
 
@@ -10029,56 +10200,6 @@ public class HssMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAgentStatusRequest, ListAgentStatusResponse> listAgentStatus =
-        genForListAgentStatus();
-
-    private static HttpRequestDef<ListAgentStatusRequest, ListAgentStatusResponse> genForListAgentStatus() {
-        // basic
-        HttpRequestDef.Builder<ListAgentStatusRequest, ListAgentStatusResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListAgentStatusRequest.class, ListAgentStatusResponse.class)
-                .withName("ListAgentStatus")
-                .withUri("/v5/{project_id}/host-management/agent/status")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAgentStatusRequest::getEnterpriseProjectId,
-                ListAgentStatusRequest::setEnterpriseProjectId));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAgentStatusRequest::getLimit, ListAgentStatusRequest::setLimit));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAgentStatusRequest::getOffset, ListAgentStatusRequest::setOffset));
-        builder.<String>withRequestField("agent_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAgentStatusRequest::getAgentId, ListAgentStatusRequest::setAgentId));
-        builder.<String>withRequestField("agent_status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAgentStatusRequest::getAgentStatus, ListAgentStatusRequest::setAgentStatus));
-        builder.<String>withRequestField("abnormal_reason",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAgentStatusRequest::getAbnormalReason,
-                ListAgentStatusRequest::setAbnormalReason));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ChangeAntivirusPayPerScanStatusRequest, ChangeAntivirusPayPerScanStatusResponse> changeAntivirusPayPerScanStatus =
         genForChangeAntivirusPayPerScanStatus();
 
@@ -11724,177 +11845,6 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(SwitchAppWhitelistPolicyLearnStatusRequestInfo.class),
             f -> f.withMarshaller(SwitchAppWhitelistPolicyLearnStatusRequest::getBody,
                 SwitchAppWhitelistPolicyLearnStatusRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListAiComponentDetailRequest, ListAiComponentDetailResponse> listAiComponentDetail =
-        genForListAiComponentDetail();
-
-    private static HttpRequestDef<ListAiComponentDetailRequest, ListAiComponentDetailResponse> genForListAiComponentDetail() {
-        // basic
-        HttpRequestDef.Builder<ListAiComponentDetailRequest, ListAiComponentDetailResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListAiComponentDetailRequest.class, ListAiComponentDetailResponse.class)
-            .withName("ListAiComponentDetail")
-            .withUri("/v5/{project_id}/asset/ai-component/detail")
-            .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAiComponentDetailRequest::getLimit, ListAiComponentDetailRequest::setLimit));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAiComponentDetailRequest::getOffset, ListAiComponentDetailRequest::setOffset));
-        builder.<String>withRequestField("category",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAiComponentDetailRequest::getCategory,
-                ListAiComponentDetailRequest::setCategory));
-        builder.<String>withRequestField("catalogue",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAiComponentDetailRequest::getCatalogue,
-                ListAiComponentDetailRequest::setCatalogue));
-        builder.<String>withRequestField("server_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAiComponentDetailRequest::getServerName,
-                ListAiComponentDetailRequest::setServerName));
-        builder.<String>withRequestField("server_ip",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAiComponentDetailRequest::getServerIp,
-                ListAiComponentDetailRequest::setServerIp));
-        builder.<String>withRequestField("ai_application",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAiComponentDetailRequest::getAiApplication,
-                ListAiComponentDetailRequest::setAiApplication));
-        builder.<String>withRequestField("host_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAiComponentDetailRequest::getHostId, ListAiComponentDetailRequest::setHostId));
-        builder.<String>withRequestField("ai_tool",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAiComponentDetailRequest::getAiTool, ListAiComponentDetailRequest::setAiTool));
-        builder.<String>withRequestField("type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAiComponentDetailRequest::getType, ListAiComponentDetailRequest::setType));
-        builder.<String>withRequestField("version",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAiComponentDetailRequest::getVersion, ListAiComponentDetailRequest::setVersion));
-        builder.<String>withRequestField("installation_path",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAiComponentDetailRequest::getInstallationPath,
-                ListAiComponentDetailRequest::setInstallationPath));
-        builder.<Long>withRequestField("first_scan_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAiComponentDetailRequest::getFirstScanTime,
-                ListAiComponentDetailRequest::setFirstScanTime));
-        builder.<Long>withRequestField("latest_scan_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListAiComponentDetailRequest::getLatestScanTime,
-                ListAiComponentDetailRequest::setLatestScanTime));
-        builder.<String>withRequestField("container_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAiComponentDetailRequest::getContainerName,
-                ListAiComponentDetailRequest::setContainerName));
-        builder.<String>withRequestField("container_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAiComponentDetailRequest::getContainerId,
-                ListAiComponentDetailRequest::setContainerId));
-        builder.<String>withRequestField("image_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAiComponentDetailRequest::getImageName,
-                ListAiComponentDetailRequest::setImageName));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListAiComponentStatisticsRequest, ListAiComponentStatisticsResponse> listAiComponentStatistics =
-        genForListAiComponentStatistics();
-
-    private static HttpRequestDef<ListAiComponentStatisticsRequest, ListAiComponentStatisticsResponse> genForListAiComponentStatistics() {
-        // basic
-        HttpRequestDef.Builder<ListAiComponentStatisticsRequest, ListAiComponentStatisticsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ListAiComponentStatisticsRequest.class,
-                    ListAiComponentStatisticsResponse.class)
-                .withName("ListAiComponentStatistics")
-                .withUri("/v5/{project_id}/asset/ai-component/statistics")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAiComponentStatisticsRequest::getEnterpriseProjectId,
-                ListAiComponentStatisticsRequest::setEnterpriseProjectId));
-        builder.<String>withRequestField("category",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAiComponentStatisticsRequest::getCategory,
-                ListAiComponentStatisticsRequest::setCategory));
-        builder.<String>withRequestField("catalogue",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAiComponentStatisticsRequest::getCatalogue,
-                ListAiComponentStatisticsRequest::setCatalogue));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAiComponentStatisticsRequest::getLimit,
-                ListAiComponentStatisticsRequest::setLimit));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAiComponentStatisticsRequest::getOffset,
-                ListAiComponentStatisticsRequest::setOffset));
-        builder.<String>withRequestField("ai_component_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAiComponentStatisticsRequest::getAiComponentName,
-                ListAiComponentStatisticsRequest::setAiComponentName));
 
         // response
 
@@ -15924,6 +15874,56 @@ public class HssMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteHostsGroupRequest::getRegion, DeleteHostsGroupRequest::setRegion));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAgentStatusRequest, ListAgentStatusResponse> listAgentStatus =
+        genForListAgentStatus();
+
+    private static HttpRequestDef<ListAgentStatusRequest, ListAgentStatusResponse> genForListAgentStatus() {
+        // basic
+        HttpRequestDef.Builder<ListAgentStatusRequest, ListAgentStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAgentStatusRequest.class, ListAgentStatusResponse.class)
+                .withName("ListAgentStatus")
+                .withUri("/v5/{project_id}/host-management/agent/status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentStatusRequest::getEnterpriseProjectId,
+                ListAgentStatusRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAgentStatusRequest::getLimit, ListAgentStatusRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAgentStatusRequest::getOffset, ListAgentStatusRequest::setOffset));
+        builder.<String>withRequestField("agent_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentStatusRequest::getAgentId, ListAgentStatusRequest::setAgentId));
+        builder.<String>withRequestField("agent_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentStatusRequest::getAgentStatus, ListAgentStatusRequest::setAgentStatus));
+        builder.<String>withRequestField("abnormal_reason",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentStatusRequest::getAbnormalReason,
+                ListAgentStatusRequest::setAbnormalReason));
 
         // response
 
@@ -21240,6 +21240,11 @@ public class HssMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListQuotasDetailRequest::getHostName, ListQuotasDetailRequest::setHostName));
+        builder.<List<String>>withRequestField("host_id_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListQuotasDetailRequest::getHostIdList, ListQuotasDetailRequest::setHostIdList));
         builder.<String>withRequestField("resource_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

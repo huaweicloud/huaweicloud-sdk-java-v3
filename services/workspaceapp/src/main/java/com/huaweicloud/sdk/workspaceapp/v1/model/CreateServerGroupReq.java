@@ -46,7 +46,7 @@ public class CreateServerGroupReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "route_policy")
 
-    private RoutePolicy routePolicy;
+    private RoutePolicyDetail routePolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
@@ -240,14 +240,14 @@ public class CreateServerGroupReq {
         this.description = description;
     }
 
-    public CreateServerGroupReq withRoutePolicy(RoutePolicy routePolicy) {
+    public CreateServerGroupReq withRoutePolicy(RoutePolicyDetail routePolicy) {
         this.routePolicy = routePolicy;
         return this;
     }
 
-    public CreateServerGroupReq withRoutePolicy(Consumer<RoutePolicy> routePolicySetter) {
+    public CreateServerGroupReq withRoutePolicy(Consumer<RoutePolicyDetail> routePolicySetter) {
         if (this.routePolicy == null) {
-            this.routePolicy = new RoutePolicy();
+            this.routePolicy = new RoutePolicyDetail();
             routePolicySetter.accept(this.routePolicy);
         }
 
@@ -258,11 +258,11 @@ public class CreateServerGroupReq {
      * Get routePolicy
      * @return routePolicy
      */
-    public RoutePolicy getRoutePolicy() {
+    public RoutePolicyDetail getRoutePolicy() {
         return routePolicy;
     }
 
-    public void setRoutePolicy(RoutePolicy routePolicy) {
+    public void setRoutePolicy(RoutePolicyDetail routePolicy) {
         this.routePolicy = routePolicy;
     }
 
@@ -410,7 +410,7 @@ public class CreateServerGroupReq {
     }
 
     /**
-     * 可用分区。 > - 将服务创建到指定的可用分区，如果不指定则使用系统随机的可用分区。 > - 获取方式详见可用区管理ListAvailabilityZone：\"GET  /v1/{project_id}/availability-zone\"。
+     * 可用分区。 > - 将服务创建到指定的可用分区，如果不指定则使用系统随机的可用分区，如果不存在中心站点，则必须指定availability_zone。 > - 获取方式详见可用区管理ListAvailabilityZone：\"GET  /v1/{project_id}/availability-zone\"。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {

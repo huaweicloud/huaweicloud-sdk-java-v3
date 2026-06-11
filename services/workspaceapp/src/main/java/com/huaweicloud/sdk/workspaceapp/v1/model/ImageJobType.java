@@ -27,6 +27,26 @@ public class ImageJobType {
      */
     public static final ImageJobType DELETE_SERVER = new ImageJobType("DELETE_SERVER");
 
+    /**
+     * Enum BUILD_IMAGE for value: "BUILD_IMAGE"
+     */
+    public static final ImageJobType BUILD_IMAGE = new ImageJobType("BUILD_IMAGE");
+
+    /**
+     * Enum GENERATE_IMAGE for value: "GENERATE_IMAGE"
+     */
+    public static final ImageJobType GENERATE_IMAGE = new ImageJobType("GENERATE_IMAGE");
+
+    /**
+     * Enum DELETE_IMAGE_BUILD_SERVER for value: "DELETE_IMAGE_BUILD_SERVER"
+     */
+    public static final ImageJobType DELETE_IMAGE_BUILD_SERVER = new ImageJobType("DELETE_IMAGE_BUILD_SERVER");
+
+    /**
+     * Enum DELETE_IMAGE for value: "DELETE_IMAGE"
+     */
+    public static final ImageJobType DELETE_IMAGE = new ImageJobType("DELETE_IMAGE");
+
     private static final Map<String, ImageJobType> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, ImageJobType> createStaticFields() {
@@ -34,6 +54,10 @@ public class ImageJobType {
         map.put("CREATE_SERVER", CREATE_SERVER);
         map.put("CREATE_SERVER_IMAGE", CREATE_SERVER_IMAGE);
         map.put("DELETE_SERVER", DELETE_SERVER);
+        map.put("BUILD_IMAGE", BUILD_IMAGE);
+        map.put("GENERATE_IMAGE", GENERATE_IMAGE);
+        map.put("DELETE_IMAGE_BUILD_SERVER", DELETE_IMAGE_BUILD_SERVER);
+        map.put("DELETE_IMAGE", DELETE_IMAGE);
         return Collections.unmodifiableMap(map);
     }
 

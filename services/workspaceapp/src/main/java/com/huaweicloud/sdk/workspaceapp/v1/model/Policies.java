@@ -82,6 +82,11 @@ public class Policies {
     private PoliciesFolderRedirection folderRedirection;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "folder_redirection_v2")
+
+    private PoliciesFolderRedirectionV2 folderRedirectionV2;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_profile_management")
 
     private PoliciesUserProfileManagement userProfileManagement;
@@ -450,6 +455,32 @@ public class Policies {
         this.folderRedirection = folderRedirection;
     }
 
+    public Policies withFolderRedirectionV2(PoliciesFolderRedirectionV2 folderRedirectionV2) {
+        this.folderRedirectionV2 = folderRedirectionV2;
+        return this;
+    }
+
+    public Policies withFolderRedirectionV2(Consumer<PoliciesFolderRedirectionV2> folderRedirectionV2Setter) {
+        if (this.folderRedirectionV2 == null) {
+            this.folderRedirectionV2 = new PoliciesFolderRedirectionV2();
+            folderRedirectionV2Setter.accept(this.folderRedirectionV2);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get folderRedirectionV2
+     * @return folderRedirectionV2
+     */
+    public PoliciesFolderRedirectionV2 getFolderRedirectionV2() {
+        return folderRedirectionV2;
+    }
+
+    public void setFolderRedirectionV2(PoliciesFolderRedirectionV2 folderRedirectionV2) {
+        this.folderRedirectionV2 = folderRedirectionV2;
+    }
+
     public Policies withUserProfileManagement(PoliciesUserProfileManagement userProfileManagement) {
         this.userProfileManagement = userProfileManagement;
         return this;
@@ -494,6 +525,7 @@ public class Policies {
             && Objects.equals(this.userProfile, that.userProfile)
             && Objects.equals(this.urlRedirection, that.urlRedirection)
             && Objects.equals(this.folderRedirection, that.folderRedirection)
+            && Objects.equals(this.folderRedirectionV2, that.folderRedirectionV2)
             && Objects.equals(this.userProfileManagement, that.userProfileManagement);
     }
 
@@ -513,6 +545,7 @@ public class Policies {
             userProfile,
             urlRedirection,
             folderRedirection,
+            folderRedirectionV2,
             userProfileManagement);
     }
 
@@ -534,6 +567,7 @@ public class Policies {
         sb.append("    userProfile: ").append(toIndentedString(userProfile)).append("\n");
         sb.append("    urlRedirection: ").append(toIndentedString(urlRedirection)).append("\n");
         sb.append("    folderRedirection: ").append(toIndentedString(folderRedirection)).append("\n");
+        sb.append("    folderRedirectionV2: ").append(toIndentedString(folderRedirectionV2)).append("\n");
         sb.append("    userProfileManagement: ").append(toIndentedString(userProfileManagement)).append("\n");
         sb.append("}");
         return sb.toString();

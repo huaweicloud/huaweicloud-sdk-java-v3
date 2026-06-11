@@ -87,6 +87,9 @@ public class GaussDBforNoSQLRegion {
     public static final Region CN_NORTH_11 =
         new Region("cn-north-11", "https://gaussdb-nosql.cn-north-11.myhuaweicloud.com");
 
+    public static final Region RU_MOSCOW_1 =
+        new Region("ru-moscow-1", "https://gaussdb-nosql.ru-moscow-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER =
         RegionProviderChain.getDefaultRegionProviderChain("GAUSSDBFORNOSQL");
 
@@ -120,6 +123,7 @@ public class GaussDBforNoSQLRegion {
         map.put("cn-north-9", CN_NORTH_9);
         map.put("eu-west-101", EU_WEST_101);
         map.put("cn-north-11", CN_NORTH_11);
+        map.put("ru-moscow-1", RU_MOSCOW_1);
         return Collections.unmodifiableMap(map);
     }
 

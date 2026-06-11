@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.hss.v5.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 用户自定义告警白名单规则
@@ -29,6 +32,21 @@ public class EventWhiteRuleListRequestInfo {
     @JsonProperty(value = "judge_type")
 
     private String judgeType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scope")
+
+    private Boolean scope;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_ids")
+
+    private List<String> agentIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_ids")
+
+    private List<String> instanceIds = null;
 
     public EventWhiteRuleListRequestInfo withEventType(Integer eventType) {
         this.eventType = eventType;
@@ -100,6 +118,89 @@ public class EventWhiteRuleListRequestInfo {
         this.judgeType = judgeType;
     }
 
+    public EventWhiteRuleListRequestInfo withScope(Boolean scope) {
+        this.scope = scope;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 是否选择所有主机 **约束限制**: 不涉及 **取值范围**: - true：是 - false：否 **默认取值**: false 
+     * @return scope
+     */
+    public Boolean getScope() {
+        return scope;
+    }
+
+    public void setScope(Boolean scope) {
+        this.scope = scope;
+    }
+
+    public EventWhiteRuleListRequestInfo withAgentIds(List<String> agentIds) {
+        this.agentIds = agentIds;
+        return this;
+    }
+
+    public EventWhiteRuleListRequestInfo addAgentIdsItem(String agentIdsItem) {
+        if (this.agentIds == null) {
+            this.agentIds = new ArrayList<>();
+        }
+        this.agentIds.add(agentIdsItem);
+        return this;
+    }
+
+    public EventWhiteRuleListRequestInfo withAgentIds(Consumer<List<String>> agentIdsSetter) {
+        if (this.agentIds == null) {
+            this.agentIds = new ArrayList<>();
+        }
+        agentIdsSetter.accept(this.agentIds);
+        return this;
+    }
+
+    /**
+     * **参数解释**: agent列表 **约束限制**: 不涉及 **取值范围**: 1-1000个agentID **默认取值**: 不涉及 
+     * @return agentIds
+     */
+    public List<String> getAgentIds() {
+        return agentIds;
+    }
+
+    public void setAgentIds(List<String> agentIds) {
+        this.agentIds = agentIds;
+    }
+
+    public EventWhiteRuleListRequestInfo withInstanceIds(List<String> instanceIds) {
+        this.instanceIds = instanceIds;
+        return this;
+    }
+
+    public EventWhiteRuleListRequestInfo addInstanceIdsItem(String instanceIdsItem) {
+        if (this.instanceIds == null) {
+            this.instanceIds = new ArrayList<>();
+        }
+        this.instanceIds.add(instanceIdsItem);
+        return this;
+    }
+
+    public EventWhiteRuleListRequestInfo withInstanceIds(Consumer<List<String>> instanceIdsSetter) {
+        if (this.instanceIds == null) {
+            this.instanceIds = new ArrayList<>();
+        }
+        instanceIdsSetter.accept(this.instanceIds);
+        return this;
+    }
+
+    /**
+     * **参数解释**: 实例ID列表 **约束限制**: 当需要为serverless配置规则时，传入此字段 **取值范围**: 1-1000个实例ID 
+     * @return instanceIds
+     */
+    public List<String> getInstanceIds() {
+        return instanceIds;
+    }
+
+    public void setInstanceIds(List<String> instanceIds) {
+        this.instanceIds = instanceIds;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -110,12 +211,14 @@ public class EventWhiteRuleListRequestInfo {
         }
         EventWhiteRuleListRequestInfo that = (EventWhiteRuleListRequestInfo) obj;
         return Objects.equals(this.eventType, that.eventType) && Objects.equals(this.fieldKey, that.fieldKey)
-            && Objects.equals(this.fieldValue, that.fieldValue) && Objects.equals(this.judgeType, that.judgeType);
+            && Objects.equals(this.fieldValue, that.fieldValue) && Objects.equals(this.judgeType, that.judgeType)
+            && Objects.equals(this.scope, that.scope) && Objects.equals(this.agentIds, that.agentIds)
+            && Objects.equals(this.instanceIds, that.instanceIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(eventType, fieldKey, fieldValue, judgeType);
+        return Objects.hash(eventType, fieldKey, fieldValue, judgeType, scope, agentIds, instanceIds);
     }
 
     @Override
@@ -126,6 +229,9 @@ public class EventWhiteRuleListRequestInfo {
         sb.append("    fieldKey: ").append(toIndentedString(fieldKey)).append("\n");
         sb.append("    fieldValue: ").append(toIndentedString(fieldValue)).append("\n");
         sb.append("    judgeType: ").append(toIndentedString(judgeType)).append("\n");
+        sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
+        sb.append("    agentIds: ").append(toIndentedString(agentIds)).append("\n");
+        sb.append("    instanceIds: ").append(toIndentedString(instanceIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

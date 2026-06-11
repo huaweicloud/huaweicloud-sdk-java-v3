@@ -430,6 +430,7 @@ public class CreateImageServerReq {
     /**
      * 需要付费的会话数，单位/个。
      * minimum: 1
+     * maximum: 10000
      * @return extraSessionSize
      */
     public Integer getExtraSessionSize() {

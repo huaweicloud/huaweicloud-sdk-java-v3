@@ -7,18 +7,87 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.modelarts.v1.model.AcceptScheduledEventRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.AcceptScheduledEventResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingExperimentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingExperimentRequestBody;
+import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingExperimentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingJobDescriptionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingJobDescriptionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CheckTrainingExperimentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CheckTrainingExperimentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryBody;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateSaveImageJobRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateSaveImageJobResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateTmsTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateTrainJobTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateTrainJobTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateTrainingExperimentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateTrainingExperimentRequestBody;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateTrainingExperimentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateTrainingJobRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateTrainingJobResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowExecutionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowExecutionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowExecutionsActionsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowExecutionsActionsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowPurchasePoolRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowPurchasePoolResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowScheduleRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowScheduleResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowServiceAuthRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowServiceAuthResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowStepExecutionsActionsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowStepExecutionsActionsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowSubscriptionsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowSubscriptionsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkspaceReq;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkspaceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteTmsTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteTrainJobTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteTrainJobTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteTrainingExperimentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteTrainingExperimentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteTrainingJobRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteTrainingJobResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowExecutionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowExecutionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowScheduleIdRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowScheduleIdResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowSubscriptionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowSubscriptionResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkspaceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.EventUpdate;
+import com.huaweicloud.sdk.modelarts.v1.model.ExecutionAction;
+import com.huaweicloud.sdk.modelarts.v1.model.ImageSaveJob;
+import com.huaweicloud.sdk.modelarts.v1.model.Job;
+import com.huaweicloud.sdk.modelarts.v1.model.JobActionType;
+import com.huaweicloud.sdk.modelarts.v1.model.JobDescription;
+import com.huaweicloud.sdk.modelarts.v1.model.JobSearches;
+import com.huaweicloud.sdk.modelarts.v1.model.ListEventCategoriesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListEventCategoriesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListScheduledEventsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListScheduledEventsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingExperimentsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingExperimentsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobEventsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobEventsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobStagesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobStagesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobTasksRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobTasksResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowExecutionsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowExecutionsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkspaceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.NotifyTrainingJobInformationRequest;
@@ -26,14 +95,74 @@ import com.huaweicloud.sdk.modelarts.v1.model.NotifyTrainingJobInformationRespon
 import com.huaweicloud.sdk.modelarts.v1.model.ReportEventBody;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAuthmodeDetailRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAuthmodeDetailResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchParamAnalysisResultPathRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchParamAnalysisResultPathResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchParamsAnalysisRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchParamsAnalysisResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchPerTrialRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchPerTrialResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchTrialEarlyStopRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchTrialEarlyStopResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchTrialsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchTrialsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchYamlTemplateContentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchYamlTemplateContentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchYamlTemplatesInfoRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchYamlTemplatesInfoResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowObsUrlOfTrainingJobLogsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowObsUrlOfTrainingJobLogsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowSaveImageJobRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowSaveImageJobResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainJobTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainJobTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingExperimentDetailsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingExperimentDetailsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobDetailsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobDetailsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobEnginesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobEnginesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobFlavorsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobFlavorsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobLogsPreviewRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobLogsPreviewResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobMetricsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingJobMetricsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingQuotasRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingQuotasResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowExecutionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowExecutionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowScheduleRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowScheduleResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowStepExecutionMetricsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowStepExecutionMetricsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowSubscriptionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowSubscriptionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowsOverviewRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowsOverviewResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowsTodolistRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowsTodolistResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkspaceQuotasRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkspaceQuotasResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkspaceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.StepExecutionAction;
+import com.huaweicloud.sdk.modelarts.v1.model.StopTrainingJobRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.StopTrainingJobResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.Subscription;
 import com.huaweicloud.sdk.modelarts.v1.model.TaskHistory;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateAuthModeRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateAuthModeRequestBody;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateAuthModeResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkflowExecutionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkflowExecutionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkflowRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkflowResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkflowScheduleRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkflowScheduleResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkflowSubscriptionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkflowSubscriptionResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkspaceQuotasReq;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkspaceQuotasRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkspaceQuotasResponse;
@@ -43,6 +172,14 @@ import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkspaceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ValidateAuthorizationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ValidateAuthorizationRequestBody;
 import com.huaweicloud.sdk.modelarts.v1.model.ValidateAuthorizationResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.WorkflowExecution;
+import com.huaweicloud.sdk.modelarts.v1.model.WorkflowMainServiceAuthReq;
+import com.huaweicloud.sdk.modelarts.v1.model.WorkflowParam;
+import com.huaweicloud.sdk.modelarts.v1.model.WorkflowSchedule;
+import com.huaweicloud.sdk.modelarts.v1.model.WorkflowScheduleUpdate;
+import com.huaweicloud.sdk.modelarts.v1.model.WorkflowServicePackage;
+import com.huaweicloud.sdk.modelarts.v1.model.WorkflowStepMetric;
+import com.huaweicloud.sdk.modelarts.v1.model.WorkflowUpdate;
 
 import java.util.List;
 
@@ -83,6 +220,236 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ChangeTrainingExperimentRequest, ChangeTrainingExperimentResponse> changeTrainingExperiment =
+        genForChangeTrainingExperiment();
+
+    private static HttpRequestDef<ChangeTrainingExperimentRequest, ChangeTrainingExperimentResponse> genForChangeTrainingExperiment() {
+        // basic
+        HttpRequestDef.Builder<ChangeTrainingExperimentRequest, ChangeTrainingExperimentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, ChangeTrainingExperimentRequest.class, ChangeTrainingExperimentResponse.class)
+                .withName("ChangeTrainingExperiment")
+                .withUri("/v2/{project_id}/training-experiments/{experiment_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("experiment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeTrainingExperimentRequest::getExperimentId,
+                ChangeTrainingExperimentRequest::setExperimentId));
+        builder.<ChangeTrainingExperimentRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ChangeTrainingExperimentRequestBody.class),
+            f -> f.withMarshaller(ChangeTrainingExperimentRequest::getBody, ChangeTrainingExperimentRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeTrainingJobDescriptionRequest, ChangeTrainingJobDescriptionResponse> changeTrainingJobDescription =
+        genForChangeTrainingJobDescription();
+
+    private static HttpRequestDef<ChangeTrainingJobDescriptionRequest, ChangeTrainingJobDescriptionResponse> genForChangeTrainingJobDescription() {
+        // basic
+        HttpRequestDef.Builder<ChangeTrainingJobDescriptionRequest, ChangeTrainingJobDescriptionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ChangeTrainingJobDescriptionRequest.class,
+                    ChangeTrainingJobDescriptionResponse.class)
+                .withName("ChangeTrainingJobDescription")
+                .withUri("/v2/{project_id}/training-jobs/{training_job_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeTrainingJobDescriptionRequest::getTrainingJobId,
+                ChangeTrainingJobDescriptionRequest::setTrainingJobId));
+        builder.<JobDescription>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(JobDescription.class),
+            f -> f.withMarshaller(ChangeTrainingJobDescriptionRequest::getBody,
+                ChangeTrainingJobDescriptionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckTrainingExperimentRequest, CheckTrainingExperimentResponse> checkTrainingExperiment =
+        genForCheckTrainingExperiment();
+
+    private static HttpRequestDef<CheckTrainingExperimentRequest, CheckTrainingExperimentResponse> genForCheckTrainingExperiment() {
+        // basic
+        HttpRequestDef.Builder<CheckTrainingExperimentRequest, CheckTrainingExperimentResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, CheckTrainingExperimentRequest.class, CheckTrainingExperimentResponse.class)
+            .withName("CheckTrainingExperiment")
+            .withUri("/v2/{project_id}/training-experiment-names")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckTrainingExperimentRequest::getWorkspaceId,
+                CheckTrainingExperimentRequest::setWorkspaceId));
+        builder.<String>withRequestField("experiment_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckTrainingExperimentRequest::getExperimentName,
+                CheckTrainingExperimentRequest::setExperimentName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAlgorithmVersionToGalleryRequest, CreateAlgorithmVersionToGalleryResponse> createAlgorithmVersionToGallery =
+        genForCreateAlgorithmVersionToGallery();
+
+    private static HttpRequestDef<CreateAlgorithmVersionToGalleryRequest, CreateAlgorithmVersionToGalleryResponse> genForCreateAlgorithmVersionToGallery() {
+        // basic
+        HttpRequestDef.Builder<CreateAlgorithmVersionToGalleryRequest, CreateAlgorithmVersionToGalleryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateAlgorithmVersionToGalleryRequest.class,
+                    CreateAlgorithmVersionToGalleryResponse.class)
+                .withName("CreateAlgorithmVersionToGallery")
+                .withUri("/v2/{project_id}/gallery-algorithm-publication")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateAlgorithmVersionToGalleryBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAlgorithmVersionToGalleryBody.class),
+            f -> f.withMarshaller(CreateAlgorithmVersionToGalleryRequest::getBody,
+                CreateAlgorithmVersionToGalleryRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSaveImageJobRequest, CreateSaveImageJobResponse> createSaveImageJob =
+        genForCreateSaveImageJob();
+
+    private static HttpRequestDef<CreateSaveImageJobRequest, CreateSaveImageJobResponse> genForCreateSaveImageJob() {
+        // basic
+        HttpRequestDef.Builder<CreateSaveImageJobRequest, CreateSaveImageJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSaveImageJobRequest.class, CreateSaveImageJobResponse.class)
+                .withName("CreateSaveImageJob")
+                .withUri("/v2/{project_id}/training-jobs/{training_job_id}/tasks/{task_id}/save-image-job")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSaveImageJobRequest::getTrainingJobId,
+                CreateSaveImageJobRequest::setTrainingJobId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSaveImageJobRequest::getTaskId, CreateSaveImageJobRequest::setTaskId));
+        builder.<ImageSaveJob>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImageSaveJob.class),
+            f -> f.withMarshaller(CreateSaveImageJobRequest::getBody, CreateSaveImageJobRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTrainJobTagsRequest, CreateTrainJobTagsResponse> createTrainJobTags =
+        genForCreateTrainJobTags();
+
+    private static HttpRequestDef<CreateTrainJobTagsRequest, CreateTrainJobTagsResponse> genForCreateTrainJobTags() {
+        // basic
+        HttpRequestDef.Builder<CreateTrainJobTagsRequest, CreateTrainJobTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTrainJobTagsRequest.class, CreateTrainJobTagsResponse.class)
+                .withName("CreateTrainJobTags")
+                .withUri("/v2/{project_id}/modelarts-training-job/{training_job_id}/tags/create")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTrainJobTagsRequest::getTrainingJobId,
+                CreateTrainJobTagsRequest::setTrainingJobId));
+        builder.<CreateTmsTagsRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTmsTagsRequest.class),
+            f -> f.withMarshaller(CreateTrainJobTagsRequest::getBody, CreateTrainJobTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTrainingExperimentRequest, CreateTrainingExperimentResponse> createTrainingExperiment =
+        genForCreateTrainingExperiment();
+
+    private static HttpRequestDef<CreateTrainingExperimentRequest, CreateTrainingExperimentResponse> genForCreateTrainingExperiment() {
+        // basic
+        HttpRequestDef.Builder<CreateTrainingExperimentRequest, CreateTrainingExperimentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateTrainingExperimentRequest.class, CreateTrainingExperimentResponse.class)
+                .withName("CreateTrainingExperiment")
+                .withUri("/v2/{project_id}/training-experiments")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateTrainingExperimentRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateTrainingExperimentRequestBody.class),
+            f -> f.withMarshaller(CreateTrainingExperimentRequest::getBody, CreateTrainingExperimentRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTrainingJobRequest, CreateTrainingJobResponse> createTrainingJob =
+        genForCreateTrainingJob();
+
+    private static HttpRequestDef<CreateTrainingJobRequest, CreateTrainingJobResponse> genForCreateTrainingJob() {
+        // basic
+        HttpRequestDef.Builder<CreateTrainingJobRequest, CreateTrainingJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTrainingJobRequest.class, CreateTrainingJobResponse.class)
+                .withName("CreateTrainingJob")
+                .withUri("/v2/{project_id}/training-jobs")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<Job>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Job.class),
+            f -> f.withMarshaller(CreateTrainingJobRequest::getBody, CreateTrainingJobRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateWorkspaceRequest, CreateWorkspaceResponse> createWorkspace =
         genForCreateWorkspace();
 
@@ -106,6 +473,91 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteTrainJobTagsRequest, DeleteTrainJobTagsResponse> deleteTrainJobTags =
+        genForDeleteTrainJobTags();
+
+    private static HttpRequestDef<DeleteTrainJobTagsRequest, DeleteTrainJobTagsResponse> genForDeleteTrainJobTags() {
+        // basic
+        HttpRequestDef.Builder<DeleteTrainJobTagsRequest, DeleteTrainJobTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTrainJobTagsRequest.class, DeleteTrainJobTagsResponse.class)
+                .withName("DeleteTrainJobTags")
+                .withUri("/v2/{project_id}/modelarts-training-job/{training_job_id}/tags/delete")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTrainJobTagsRequest::getTrainingJobId,
+                DeleteTrainJobTagsRequest::setTrainingJobId));
+        builder.<DeleteTmsTagsRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteTmsTagsRequest.class),
+            f -> f.withMarshaller(DeleteTrainJobTagsRequest::getBody, DeleteTrainJobTagsRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteTrainJobTagsResponse::getBody, DeleteTrainJobTagsResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTrainingExperimentRequest, DeleteTrainingExperimentResponse> deleteTrainingExperiment =
+        genForDeleteTrainingExperiment();
+
+    private static HttpRequestDef<DeleteTrainingExperimentRequest, DeleteTrainingExperimentResponse> genForDeleteTrainingExperiment() {
+        // basic
+        HttpRequestDef.Builder<DeleteTrainingExperimentRequest, DeleteTrainingExperimentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteTrainingExperimentRequest.class,
+                    DeleteTrainingExperimentResponse.class)
+                .withName("DeleteTrainingExperiment")
+                .withUri("/v2/{project_id}/training-experiments/{experiment_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("experiment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTrainingExperimentRequest::getExperimentId,
+                DeleteTrainingExperimentRequest::setExperimentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTrainingJobRequest, DeleteTrainingJobResponse> deleteTrainingJob =
+        genForDeleteTrainingJob();
+
+    private static HttpRequestDef<DeleteTrainingJobRequest, DeleteTrainingJobResponse> genForDeleteTrainingJob() {
+        // basic
+        HttpRequestDef.Builder<DeleteTrainingJobRequest, DeleteTrainingJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTrainingJobRequest.class, DeleteTrainingJobResponse.class)
+                .withName("DeleteTrainingJob")
+                .withUri("/v2/{project_id}/training-jobs/{training_job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTrainingJobRequest::getTrainingJobId,
+                DeleteTrainingJobRequest::setTrainingJobId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteWorkspaceRequest, DeleteWorkspaceResponse> deleteWorkspace =
         genForDeleteWorkspace();
 
@@ -123,6 +575,30 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteWorkspaceRequest::getWorkspaceId, DeleteWorkspaceRequest::setWorkspaceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEventCategoriesRequest, ListEventCategoriesResponse> listEventCategories =
+        genForListEventCategories();
+
+    private static HttpRequestDef<ListEventCategoriesRequest, ListEventCategoriesResponse> genForListEventCategories() {
+        // basic
+        HttpRequestDef.Builder<ListEventCategoriesRequest, ListEventCategoriesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEventCategoriesRequest.class, ListEventCategoriesResponse.class)
+                .withName("ListEventCategories")
+                .withUri("/v2/{project_id}/training-event-categories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("flavor_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventCategoriesRequest::getFlavorType,
+                ListEventCategoriesRequest::setFlavorType));
 
         // response
 
@@ -161,6 +637,118 @@ public class ModelArtsMeta {
             String.class,
             f -> f.withMarshaller(ListScheduledEventsResponse::getXRequestId,
                 ListScheduledEventsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTrainingExperimentsRequest, ListTrainingExperimentsResponse> listTrainingExperiments =
+        genForListTrainingExperiments();
+
+    private static HttpRequestDef<ListTrainingExperimentsRequest, ListTrainingExperimentsResponse> genForListTrainingExperiments() {
+        // basic
+        HttpRequestDef.Builder<ListTrainingExperimentsRequest, ListTrainingExperimentsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListTrainingExperimentsRequest.class, ListTrainingExperimentsResponse.class)
+            .withName("ListTrainingExperiments")
+            .withUri("/v2/{project_id}/training-experiments")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrainingExperimentsRequest::getWorkspaceId,
+                ListTrainingExperimentsRequest::setWorkspaceId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTrainingExperimentsRequest::getLimit, ListTrainingExperimentsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTrainingExperimentsRequest::getOffset,
+                ListTrainingExperimentsRequest::setOffset));
+        builder.<String>withRequestField("sort_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrainingExperimentsRequest::getSortBy,
+                ListTrainingExperimentsRequest::setSortBy));
+        builder.<ListTrainingExperimentsRequest.OrderEnum>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTrainingExperimentsRequest.OrderEnum.class),
+            f -> f.withMarshaller(ListTrainingExperimentsRequest::getOrder, ListTrainingExperimentsRequest::setOrder));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTrainingJobEventsRequest, ListTrainingJobEventsResponse> listTrainingJobEvents =
+        genForListTrainingJobEvents();
+
+    private static HttpRequestDef<ListTrainingJobEventsRequest, ListTrainingJobEventsResponse> genForListTrainingJobEvents() {
+        // basic
+        HttpRequestDef.Builder<ListTrainingJobEventsRequest, ListTrainingJobEventsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListTrainingJobEventsRequest.class, ListTrainingJobEventsResponse.class)
+            .withName("ListTrainingJobEvents")
+            .withUri("/v2/{project_id}/training-jobs/{training_job_id}/events")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrainingJobEventsRequest::getTrainingJobId,
+                ListTrainingJobEventsRequest::setTrainingJobId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTrainingJobEventsRequest::getOffset, ListTrainingJobEventsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTrainingJobEventsRequest::getLimit, ListTrainingJobEventsRequest::setLimit));
+        builder.<ListTrainingJobEventsRequest.OrderEnum>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTrainingJobEventsRequest.OrderEnum.class),
+            f -> f.withMarshaller(ListTrainingJobEventsRequest::getOrder, ListTrainingJobEventsRequest::setOrder));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrainingJobEventsRequest::getStartTime,
+                ListTrainingJobEventsRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrainingJobEventsRequest::getEndTime, ListTrainingJobEventsRequest::setEndTime));
+        builder.<String>withRequestField("level",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrainingJobEventsRequest::getLevel, ListTrainingJobEventsRequest::setLevel));
+        builder.<String>withRequestField("pattern",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrainingJobEventsRequest::getPattern, ListTrainingJobEventsRequest::setPattern));
+        builder.<ListTrainingJobEventsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTrainingJobEventsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListTrainingJobEventsRequest::getXLanguage,
+                ListTrainingJobEventsRequest::setXLanguage));
+
+        // response
+
         return builder.build();
     }
 
@@ -220,6 +808,29 @@ public class ModelArtsMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListTrainingJobTasksResponse::getBody, ListTrainingJobTasksResponse::setBody)
                 .withInnerContainerType(TaskHistory.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTrainingJobsRequest, ListTrainingJobsResponse> listTrainingJobs =
+        genForListTrainingJobs();
+
+    private static HttpRequestDef<ListTrainingJobsRequest, ListTrainingJobsResponse> genForListTrainingJobs() {
+        // basic
+        HttpRequestDef.Builder<ListTrainingJobsRequest, ListTrainingJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListTrainingJobsRequest.class, ListTrainingJobsResponse.class)
+                .withName("ListTrainingJobs")
+                .withUri("/v2/{project_id}/training-job-searches")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<JobSearches>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(JobSearches.class),
+            f -> f.withMarshaller(ListTrainingJobsRequest::getBody, ListTrainingJobsRequest::setBody));
+
+        // response
 
         return builder.build();
     }
@@ -342,6 +953,487 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAutoSearchParamAnalysisResultPathRequest, ShowAutoSearchParamAnalysisResultPathResponse> showAutoSearchParamAnalysisResultPath =
+        genForShowAutoSearchParamAnalysisResultPath();
+
+    private static HttpRequestDef<ShowAutoSearchParamAnalysisResultPathRequest, ShowAutoSearchParamAnalysisResultPathResponse> genForShowAutoSearchParamAnalysisResultPath() {
+        // basic
+        HttpRequestDef.Builder<ShowAutoSearchParamAnalysisResultPathRequest, ShowAutoSearchParamAnalysisResultPathResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAutoSearchParamAnalysisResultPathRequest.class,
+                    ShowAutoSearchParamAnalysisResultPathResponse.class)
+                .withName("ShowAutoSearchParamAnalysisResultPath")
+                .withUri(
+                    "/v2/{project_id}/training-jobs/{training_job_id}/autosearch-parameter-analysis/{parameter_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("parameter_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoSearchParamAnalysisResultPathRequest::getParameterName,
+                ShowAutoSearchParamAnalysisResultPathRequest::setParameterName));
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoSearchParamAnalysisResultPathRequest::getTrainingJobId,
+                ShowAutoSearchParamAnalysisResultPathRequest::setTrainingJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutoSearchParamsAnalysisRequest, ShowAutoSearchParamsAnalysisResponse> showAutoSearchParamsAnalysis =
+        genForShowAutoSearchParamsAnalysis();
+
+    private static HttpRequestDef<ShowAutoSearchParamsAnalysisRequest, ShowAutoSearchParamsAnalysisResponse> genForShowAutoSearchParamsAnalysis() {
+        // basic
+        HttpRequestDef.Builder<ShowAutoSearchParamsAnalysisRequest, ShowAutoSearchParamsAnalysisResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAutoSearchParamsAnalysisRequest.class,
+                    ShowAutoSearchParamsAnalysisResponse.class)
+                .withName("ShowAutoSearchParamsAnalysis")
+                .withUri("/v2/{project_id}/training-jobs/{training_job_id}/autosearch-parameter-analysis")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoSearchParamsAnalysisRequest::getTrainingJobId,
+                ShowAutoSearchParamsAnalysisRequest::setTrainingJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutoSearchPerTrialRequest, ShowAutoSearchPerTrialResponse> showAutoSearchPerTrial =
+        genForShowAutoSearchPerTrial();
+
+    private static HttpRequestDef<ShowAutoSearchPerTrialRequest, ShowAutoSearchPerTrialResponse> genForShowAutoSearchPerTrial() {
+        // basic
+        HttpRequestDef.Builder<ShowAutoSearchPerTrialRequest, ShowAutoSearchPerTrialResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAutoSearchPerTrialRequest.class, ShowAutoSearchPerTrialResponse.class)
+            .withName("ShowAutoSearchPerTrial")
+            .withUri("/v2/{project_id}/training-jobs/{training_job_id}/autosearch-trials/{trial_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoSearchPerTrialRequest::getTrainingJobId,
+                ShowAutoSearchPerTrialRequest::setTrainingJobId));
+        builder.<String>withRequestField("trial_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoSearchPerTrialRequest::getTrialId,
+                ShowAutoSearchPerTrialRequest::setTrialId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutoSearchTrialEarlyStopRequest, ShowAutoSearchTrialEarlyStopResponse> showAutoSearchTrialEarlyStop =
+        genForShowAutoSearchTrialEarlyStop();
+
+    private static HttpRequestDef<ShowAutoSearchTrialEarlyStopRequest, ShowAutoSearchTrialEarlyStopResponse> genForShowAutoSearchTrialEarlyStop() {
+        // basic
+        HttpRequestDef.Builder<ShowAutoSearchTrialEarlyStopRequest, ShowAutoSearchTrialEarlyStopResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ShowAutoSearchTrialEarlyStopRequest.class,
+                    ShowAutoSearchTrialEarlyStopResponse.class)
+                .withName("ShowAutoSearchTrialEarlyStop")
+                .withUri("/v2/{project_id}/training-jobs/{training_job_id}/autosearch-trial-earlystop/{trial_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoSearchTrialEarlyStopRequest::getTrainingJobId,
+                ShowAutoSearchTrialEarlyStopRequest::setTrainingJobId));
+        builder.<String>withRequestField("trial_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoSearchTrialEarlyStopRequest::getTrialId,
+                ShowAutoSearchTrialEarlyStopRequest::setTrialId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutoSearchTrialsRequest, ShowAutoSearchTrialsResponse> showAutoSearchTrials =
+        genForShowAutoSearchTrials();
+
+    private static HttpRequestDef<ShowAutoSearchTrialsRequest, ShowAutoSearchTrialsResponse> genForShowAutoSearchTrials() {
+        // basic
+        HttpRequestDef.Builder<ShowAutoSearchTrialsRequest, ShowAutoSearchTrialsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAutoSearchTrialsRequest.class, ShowAutoSearchTrialsResponse.class)
+            .withName("ShowAutoSearchTrials")
+            .withUri("/v2/{project_id}/training-jobs/{training_job_id}/autosearch-trials")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoSearchTrialsRequest::getTrainingJobId,
+                ShowAutoSearchTrialsRequest::setTrainingJobId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowAutoSearchTrialsRequest::getLimit, ShowAutoSearchTrialsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowAutoSearchTrialsRequest::getOffset, ShowAutoSearchTrialsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutoSearchYamlTemplateContentRequest, ShowAutoSearchYamlTemplateContentResponse> showAutoSearchYamlTemplateContent =
+        genForShowAutoSearchYamlTemplateContent();
+
+    private static HttpRequestDef<ShowAutoSearchYamlTemplateContentRequest, ShowAutoSearchYamlTemplateContentResponse> genForShowAutoSearchYamlTemplateContent() {
+        // basic
+        HttpRequestDef.Builder<ShowAutoSearchYamlTemplateContentRequest, ShowAutoSearchYamlTemplateContentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAutoSearchYamlTemplateContentRequest.class,
+                    ShowAutoSearchYamlTemplateContentResponse.class)
+                .withName("ShowAutoSearchYamlTemplateContent")
+                .withUri("/v2/{project_id}/training-jobs/autosearch/yaml-templates/{algorithm_type}/{algorithm_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("algorithm_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoSearchYamlTemplateContentRequest::getAlgorithmType,
+                ShowAutoSearchYamlTemplateContentRequest::setAlgorithmType));
+        builder.<String>withRequestField("algorithm_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoSearchYamlTemplateContentRequest::getAlgorithmName,
+                ShowAutoSearchYamlTemplateContentRequest::setAlgorithmName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutoSearchYamlTemplatesInfoRequest, ShowAutoSearchYamlTemplatesInfoResponse> showAutoSearchYamlTemplatesInfo =
+        genForShowAutoSearchYamlTemplatesInfo();
+
+    private static HttpRequestDef<ShowAutoSearchYamlTemplatesInfoRequest, ShowAutoSearchYamlTemplatesInfoResponse> genForShowAutoSearchYamlTemplatesInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowAutoSearchYamlTemplatesInfoRequest, ShowAutoSearchYamlTemplatesInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAutoSearchYamlTemplatesInfoRequest.class,
+                    ShowAutoSearchYamlTemplatesInfoResponse.class)
+                .withName("ShowAutoSearchYamlTemplatesInfo")
+                .withUri("/v2/{project_id}/training-jobs/autosearch/yaml-templates")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowObsUrlOfTrainingJobLogsRequest, ShowObsUrlOfTrainingJobLogsResponse> showObsUrlOfTrainingJobLogs =
+        genForShowObsUrlOfTrainingJobLogs();
+
+    private static HttpRequestDef<ShowObsUrlOfTrainingJobLogsRequest, ShowObsUrlOfTrainingJobLogsResponse> genForShowObsUrlOfTrainingJobLogs() {
+        // basic
+        HttpRequestDef.Builder<ShowObsUrlOfTrainingJobLogsRequest, ShowObsUrlOfTrainingJobLogsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowObsUrlOfTrainingJobLogsRequest.class,
+                    ShowObsUrlOfTrainingJobLogsResponse.class)
+                .withName("ShowObsUrlOfTrainingJobLogs")
+                .withUri("/v2/{project_id}/training-jobs/{training_job_id}/tasks/{task_id}/logs/url")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowObsUrlOfTrainingJobLogsRequest::getTrainingJobId,
+                ShowObsUrlOfTrainingJobLogsRequest::setTrainingJobId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowObsUrlOfTrainingJobLogsRequest::getTaskId,
+                ShowObsUrlOfTrainingJobLogsRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSaveImageJobRequest, ShowSaveImageJobResponse> showSaveImageJob =
+        genForShowSaveImageJob();
+
+    private static HttpRequestDef<ShowSaveImageJobRequest, ShowSaveImageJobResponse> genForShowSaveImageJob() {
+        // basic
+        HttpRequestDef.Builder<ShowSaveImageJobRequest, ShowSaveImageJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSaveImageJobRequest.class, ShowSaveImageJobResponse.class)
+                .withName("ShowSaveImageJob")
+                .withUri("/v2/{project_id}/training-jobs/{training_job_id}/tasks/{task_id}/save-image-job")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSaveImageJobRequest::getTrainingJobId,
+                ShowSaveImageJobRequest::setTrainingJobId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSaveImageJobRequest::getTaskId, ShowSaveImageJobRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTrainJobTagsRequest, ShowTrainJobTagsResponse> showTrainJobTags =
+        genForShowTrainJobTags();
+
+    private static HttpRequestDef<ShowTrainJobTagsRequest, ShowTrainJobTagsResponse> genForShowTrainJobTags() {
+        // basic
+        HttpRequestDef.Builder<ShowTrainJobTagsRequest, ShowTrainJobTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTrainJobTagsRequest.class, ShowTrainJobTagsResponse.class)
+                .withName("ShowTrainJobTags")
+                .withUri("/v2/{project_id}/modelarts-training-job/{training_job_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrainJobTagsRequest::getTrainingJobId,
+                ShowTrainJobTagsRequest::setTrainingJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTrainingExperimentDetailsRequest, ShowTrainingExperimentDetailsResponse> showTrainingExperimentDetails =
+        genForShowTrainingExperimentDetails();
+
+    private static HttpRequestDef<ShowTrainingExperimentDetailsRequest, ShowTrainingExperimentDetailsResponse> genForShowTrainingExperimentDetails() {
+        // basic
+        HttpRequestDef.Builder<ShowTrainingExperimentDetailsRequest, ShowTrainingExperimentDetailsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowTrainingExperimentDetailsRequest.class,
+                    ShowTrainingExperimentDetailsResponse.class)
+                .withName("ShowTrainingExperimentDetails")
+                .withUri("/v2/{project_id}/training-experiments/{experiment_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("experiment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrainingExperimentDetailsRequest::getExperimentId,
+                ShowTrainingExperimentDetailsRequest::setExperimentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTrainingJobDetailsRequest, ShowTrainingJobDetailsResponse> showTrainingJobDetails =
+        genForShowTrainingJobDetails();
+
+    private static HttpRequestDef<ShowTrainingJobDetailsRequest, ShowTrainingJobDetailsResponse> genForShowTrainingJobDetails() {
+        // basic
+        HttpRequestDef.Builder<ShowTrainingJobDetailsRequest, ShowTrainingJobDetailsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowTrainingJobDetailsRequest.class, ShowTrainingJobDetailsResponse.class)
+            .withName("ShowTrainingJobDetails")
+            .withUri("/v2/{project_id}/training-jobs/{training_job_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrainingJobDetailsRequest::getTrainingJobId,
+                ShowTrainingJobDetailsRequest::setTrainingJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTrainingJobEnginesRequest, ShowTrainingJobEnginesResponse> showTrainingJobEngines =
+        genForShowTrainingJobEngines();
+
+    private static HttpRequestDef<ShowTrainingJobEnginesRequest, ShowTrainingJobEnginesResponse> genForShowTrainingJobEngines() {
+        // basic
+        HttpRequestDef.Builder<ShowTrainingJobEnginesRequest, ShowTrainingJobEnginesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowTrainingJobEnginesRequest.class, ShowTrainingJobEnginesResponse.class)
+            .withName("ShowTrainingJobEngines")
+            .withUri("/v2/{project_id}/training-job-engines")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTrainingJobFlavorsRequest, ShowTrainingJobFlavorsResponse> showTrainingJobFlavors =
+        genForShowTrainingJobFlavors();
+
+    private static HttpRequestDef<ShowTrainingJobFlavorsRequest, ShowTrainingJobFlavorsResponse> genForShowTrainingJobFlavors() {
+        // basic
+        HttpRequestDef.Builder<ShowTrainingJobFlavorsRequest, ShowTrainingJobFlavorsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowTrainingJobFlavorsRequest.class, ShowTrainingJobFlavorsResponse.class)
+            .withName("ShowTrainingJobFlavors")
+            .withUri("/v2/{project_id}/training-job-flavors")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("flavor_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrainingJobFlavorsRequest::getFlavorType,
+                ShowTrainingJobFlavorsRequest::setFlavorType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTrainingJobLogsPreviewRequest, ShowTrainingJobLogsPreviewResponse> showTrainingJobLogsPreview =
+        genForShowTrainingJobLogsPreview();
+
+    private static HttpRequestDef<ShowTrainingJobLogsPreviewRequest, ShowTrainingJobLogsPreviewResponse> genForShowTrainingJobLogsPreview() {
+        // basic
+        HttpRequestDef.Builder<ShowTrainingJobLogsPreviewRequest, ShowTrainingJobLogsPreviewResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowTrainingJobLogsPreviewRequest.class,
+                    ShowTrainingJobLogsPreviewResponse.class)
+                .withName("ShowTrainingJobLogsPreview")
+                .withUri("/v2/{project_id}/training-jobs/{training_job_id}/tasks/{task_id}/logs/preview")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrainingJobLogsPreviewRequest::getTrainingJobId,
+                ShowTrainingJobLogsPreviewRequest::setTrainingJobId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrainingJobLogsPreviewRequest::getTaskId,
+                ShowTrainingJobLogsPreviewRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTrainingJobMetricsRequest, ShowTrainingJobMetricsResponse> showTrainingJobMetrics =
+        genForShowTrainingJobMetrics();
+
+    private static HttpRequestDef<ShowTrainingJobMetricsRequest, ShowTrainingJobMetricsResponse> genForShowTrainingJobMetrics() {
+        // basic
+        HttpRequestDef.Builder<ShowTrainingJobMetricsRequest, ShowTrainingJobMetricsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowTrainingJobMetricsRequest.class, ShowTrainingJobMetricsResponse.class)
+            .withName("ShowTrainingJobMetrics")
+            .withUri("/v2/{project_id}/training-jobs/{training_job_id}/metrics/{task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrainingJobMetricsRequest::getTrainingJobId,
+                ShowTrainingJobMetricsRequest::setTrainingJobId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrainingJobMetricsRequest::getTaskId, ShowTrainingJobMetricsRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTrainingQuotasRequest, ShowTrainingQuotasResponse> showTrainingQuotas =
+        genForShowTrainingQuotas();
+
+    private static HttpRequestDef<ShowTrainingQuotasRequest, ShowTrainingQuotasResponse> genForShowTrainingQuotas() {
+        // basic
+        HttpRequestDef.Builder<ShowTrainingQuotasRequest, ShowTrainingQuotasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTrainingQuotasRequest.class, ShowTrainingQuotasResponse.class)
+                .withName("ShowTrainingQuotas")
+                .withUri("/v2/{project_id}/training-quotas")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("user_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrainingQuotasRequest::getUserId, ShowTrainingQuotasRequest::setUserId));
+        builder.<String>withRequestField("resource",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTrainingQuotasRequest::getResource, ShowTrainingQuotasRequest::setResource));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowWorkspaceRequest, ShowWorkspaceResponse> showWorkspace =
         genForShowWorkspace();
 
@@ -383,6 +1475,34 @@ public class ModelArtsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowWorkspaceQuotasRequest::getWorkspaceId,
                 ShowWorkspaceQuotasRequest::setWorkspaceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopTrainingJobRequest, StopTrainingJobResponse> stopTrainingJob =
+        genForStopTrainingJob();
+
+    private static HttpRequestDef<StopTrainingJobRequest, StopTrainingJobResponse> genForStopTrainingJob() {
+        // basic
+        HttpRequestDef.Builder<StopTrainingJobRequest, StopTrainingJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopTrainingJobRequest.class, StopTrainingJobResponse.class)
+                .withName("StopTrainingJob")
+                .withUri("/v2/{project_id}/training-jobs/{training_job_id}/actions")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("training_job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopTrainingJobRequest::getTrainingJobId, StopTrainingJobRequest::setTrainingJobId));
+        builder.<JobActionType>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(JobActionType.class),
+            f -> f.withMarshaller(StopTrainingJobRequest::getBody, StopTrainingJobRequest::setBody));
 
         // response
 
@@ -492,6 +1612,881 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ValidateAuthorizationRequestBody.class),
             f -> f.withMarshaller(ValidateAuthorizationRequest::getBody, ValidateAuthorizationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateWorkflowRequest, CreateWorkflowResponse> createWorkflow =
+        genForCreateWorkflow();
+
+    private static HttpRequestDef<CreateWorkflowRequest, CreateWorkflowResponse> genForCreateWorkflow() {
+        // basic
+        HttpRequestDef.Builder<CreateWorkflowRequest, CreateWorkflowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateWorkflowRequest.class, CreateWorkflowResponse.class)
+                .withName("CreateWorkflow")
+                .withUri("/v2/{project_id}/workflows")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<WorkflowParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(WorkflowParam.class),
+            f -> f.withMarshaller(CreateWorkflowRequest::getBody, CreateWorkflowRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateWorkflowPurchasePoolRequest, CreateWorkflowPurchasePoolResponse> createWorkflowPurchasePool =
+        genForCreateWorkflowPurchasePool();
+
+    private static HttpRequestDef<CreateWorkflowPurchasePoolRequest, CreateWorkflowPurchasePoolResponse> genForCreateWorkflowPurchasePool() {
+        // basic
+        HttpRequestDef.Builder<CreateWorkflowPurchasePoolRequest, CreateWorkflowPurchasePoolResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateWorkflowPurchasePoolRequest.class,
+                    CreateWorkflowPurchasePoolResponse.class)
+                .withName("CreateWorkflowPurchasePool")
+                .withUri("/v2/{project_id}/workflows/{workflow_id}/service/packages")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateWorkflowPurchasePoolRequest::getWorkflowId,
+                CreateWorkflowPurchasePoolRequest::setWorkflowId));
+        builder.<WorkflowServicePackage>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(WorkflowServicePackage.class),
+            f -> f.withMarshaller(CreateWorkflowPurchasePoolRequest::getBody,
+                CreateWorkflowPurchasePoolRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateWorkflowServiceAuthRequest, CreateWorkflowServiceAuthResponse> createWorkflowServiceAuth =
+        genForCreateWorkflowServiceAuth();
+
+    private static HttpRequestDef<CreateWorkflowServiceAuthRequest, CreateWorkflowServiceAuthResponse> genForCreateWorkflowServiceAuth() {
+        // basic
+        HttpRequestDef.Builder<CreateWorkflowServiceAuthRequest, CreateWorkflowServiceAuthResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateWorkflowServiceAuthRequest.class,
+                    CreateWorkflowServiceAuthResponse.class)
+                .withName("CreateWorkflowServiceAuth")
+                .withUri("/v2/{project_id}/workflows/service/auth")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<WorkflowMainServiceAuthReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(WorkflowMainServiceAuthReq.class),
+            f -> f.withMarshaller(CreateWorkflowServiceAuthRequest::getBody,
+                CreateWorkflowServiceAuthRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteWorkflowRequest, DeleteWorkflowResponse> deleteWorkflow =
+        genForDeleteWorkflow();
+
+    private static HttpRequestDef<DeleteWorkflowRequest, DeleteWorkflowResponse> genForDeleteWorkflow() {
+        // basic
+        HttpRequestDef.Builder<DeleteWorkflowRequest, DeleteWorkflowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteWorkflowRequest.class, DeleteWorkflowResponse.class)
+                .withName("DeleteWorkflow")
+                .withUri("/v2/{project_id}/workflows/{workflow_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteWorkflowRequest::getWorkflowId, DeleteWorkflowRequest::setWorkflowId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflows =
+        genForListWorkflows();
+
+    private static HttpRequestDef<ListWorkflowsRequest, ListWorkflowsResponse> genForListWorkflows() {
+        // basic
+        HttpRequestDef.Builder<ListWorkflowsRequest, ListWorkflowsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListWorkflowsRequest.class, ListWorkflowsResponse.class)
+                .withName("ListWorkflows")
+                .withUri("/v2/{project_id}/workflows")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getName, ListWorkflowsRequest::setName));
+        builder.<String>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getDescription, ListWorkflowsRequest::setDescription));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getStatus, ListWorkflowsRequest::setStatus));
+        builder.<String>withRequestField("labels",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getLabels, ListWorkflowsRequest::setLabels));
+        builder.<String>withRequestField("template_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getTemplateId, ListWorkflowsRequest::setTemplateId));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getLimit, ListWorkflowsRequest::setLimit));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getOffset, ListWorkflowsRequest::setOffset));
+        builder.<String>withRequestField("sort_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getSortBy, ListWorkflowsRequest::setSortBy));
+        builder.<ListWorkflowsRequest.SearchTypeEnum>withRequestField("search_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListWorkflowsRequest.SearchTypeEnum.class),
+            f -> f.withMarshaller(ListWorkflowsRequest::getSearchType, ListWorkflowsRequest::setSearchType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowWorkflowRequest, ShowWorkflowResponse> showWorkflow = genForShowWorkflow();
+
+    private static HttpRequestDef<ShowWorkflowRequest, ShowWorkflowResponse> genForShowWorkflow() {
+        // basic
+        HttpRequestDef.Builder<ShowWorkflowRequest, ShowWorkflowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowWorkflowRequest.class, ShowWorkflowResponse.class)
+                .withName("ShowWorkflow")
+                .withUri("/v2/{project_id}/workflows/{workflow_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkflowRequest::getWorkflowId, ShowWorkflowRequest::setWorkflowId));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkflowRequest::getWorkspaceId, ShowWorkflowRequest::setWorkspaceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowWorkflowsOverviewRequest, ShowWorkflowsOverviewResponse> showWorkflowsOverview =
+        genForShowWorkflowsOverview();
+
+    private static HttpRequestDef<ShowWorkflowsOverviewRequest, ShowWorkflowsOverviewResponse> genForShowWorkflowsOverview() {
+        // basic
+        HttpRequestDef.Builder<ShowWorkflowsOverviewRequest, ShowWorkflowsOverviewResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowWorkflowsOverviewRequest.class, ShowWorkflowsOverviewResponse.class)
+            .withName("ShowWorkflowsOverview")
+            .withUri("/v2/{project_id}/workflows/overview")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkflowsOverviewRequest::getWorkspaceId,
+                ShowWorkflowsOverviewRequest::setWorkspaceId));
+        builder.<ShowWorkflowsOverviewRequest.SearchTypeEnum>withRequestField("search_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowWorkflowsOverviewRequest.SearchTypeEnum.class),
+            f -> f.withMarshaller(ShowWorkflowsOverviewRequest::getSearchType,
+                ShowWorkflowsOverviewRequest::setSearchType));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkflowsOverviewRequest::getName, ShowWorkflowsOverviewRequest::setName));
+        builder.<String>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkflowsOverviewRequest::getDescription,
+                ShowWorkflowsOverviewRequest::setDescription));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowWorkflowsTodolistRequest, ShowWorkflowsTodolistResponse> showWorkflowsTodolist =
+        genForShowWorkflowsTodolist();
+
+    private static HttpRequestDef<ShowWorkflowsTodolistRequest, ShowWorkflowsTodolistResponse> genForShowWorkflowsTodolist() {
+        // basic
+        HttpRequestDef.Builder<ShowWorkflowsTodolistRequest, ShowWorkflowsTodolistResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowWorkflowsTodolistRequest.class, ShowWorkflowsTodolistResponse.class)
+            .withName("ShowWorkflowsTodolist")
+            .withUri("/v2/{project_id}/workflows/todolist")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkflowsTodolistRequest::getWorkspaceId,
+                ShowWorkflowsTodolistRequest::setWorkspaceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateWorkflowRequest, UpdateWorkflowResponse> updateWorkflow =
+        genForUpdateWorkflow();
+
+    private static HttpRequestDef<UpdateWorkflowRequest, UpdateWorkflowResponse> genForUpdateWorkflow() {
+        // basic
+        HttpRequestDef.Builder<UpdateWorkflowRequest, UpdateWorkflowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateWorkflowRequest.class, UpdateWorkflowResponse.class)
+                .withName("UpdateWorkflow")
+                .withUri("/v2/{project_id}/workflows/{workflow_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateWorkflowRequest::getWorkflowId, UpdateWorkflowRequest::setWorkflowId));
+        builder.<WorkflowUpdate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(WorkflowUpdate.class),
+            f -> f.withMarshaller(UpdateWorkflowRequest::getBody, UpdateWorkflowRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateWorkflowExecutionRequest, CreateWorkflowExecutionResponse> createWorkflowExecution =
+        genForCreateWorkflowExecution();
+
+    private static HttpRequestDef<CreateWorkflowExecutionRequest, CreateWorkflowExecutionResponse> genForCreateWorkflowExecution() {
+        // basic
+        HttpRequestDef.Builder<CreateWorkflowExecutionRequest, CreateWorkflowExecutionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateWorkflowExecutionRequest.class, CreateWorkflowExecutionResponse.class)
+            .withName("CreateWorkflowExecution")
+            .withUri("/v2/{project_id}/workflows/{workflow_id}/executions")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateWorkflowExecutionRequest::getWorkflowId,
+                CreateWorkflowExecutionRequest::setWorkflowId));
+        builder.<WorkflowExecution>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(WorkflowExecution.class),
+            f -> f.withMarshaller(CreateWorkflowExecutionRequest::getBody, CreateWorkflowExecutionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateWorkflowExecutionsActionsRequest, CreateWorkflowExecutionsActionsResponse> createWorkflowExecutionsActions =
+        genForCreateWorkflowExecutionsActions();
+
+    private static HttpRequestDef<CreateWorkflowExecutionsActionsRequest, CreateWorkflowExecutionsActionsResponse> genForCreateWorkflowExecutionsActions() {
+        // basic
+        HttpRequestDef.Builder<CreateWorkflowExecutionsActionsRequest, CreateWorkflowExecutionsActionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateWorkflowExecutionsActionsRequest.class,
+                    CreateWorkflowExecutionsActionsResponse.class)
+                .withName("CreateWorkflowExecutionsActions")
+                .withUri("/v2/{project_id}/workflows/{workflow_id}/executions/{execution_id}/actions")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateWorkflowExecutionsActionsRequest::getWorkflowId,
+                CreateWorkflowExecutionsActionsRequest::setWorkflowId));
+        builder.<String>withRequestField("execution_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateWorkflowExecutionsActionsRequest::getExecutionId,
+                CreateWorkflowExecutionsActionsRequest::setExecutionId));
+        builder.<ExecutionAction>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExecutionAction.class),
+            f -> f.withMarshaller(CreateWorkflowExecutionsActionsRequest::getBody,
+                CreateWorkflowExecutionsActionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateWorkflowStepExecutionsActionsRequest, CreateWorkflowStepExecutionsActionsResponse> createWorkflowStepExecutionsActions =
+        genForCreateWorkflowStepExecutionsActions();
+
+    private static HttpRequestDef<CreateWorkflowStepExecutionsActionsRequest, CreateWorkflowStepExecutionsActionsResponse> genForCreateWorkflowStepExecutionsActions() {
+        // basic
+        HttpRequestDef.Builder<CreateWorkflowStepExecutionsActionsRequest, CreateWorkflowStepExecutionsActionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateWorkflowStepExecutionsActionsRequest.class,
+                    CreateWorkflowStepExecutionsActionsResponse.class)
+                .withName("CreateWorkflowStepExecutionsActions")
+                .withUri(
+                    "/v2/{project_id}/workflows/{workflow_id}/executions/{execution_id}/step-executions/{step_execution_id}/actions")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateWorkflowStepExecutionsActionsRequest::getWorkflowId,
+                CreateWorkflowStepExecutionsActionsRequest::setWorkflowId));
+        builder.<String>withRequestField("execution_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateWorkflowStepExecutionsActionsRequest::getExecutionId,
+                CreateWorkflowStepExecutionsActionsRequest::setExecutionId));
+        builder.<String>withRequestField("step_execution_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateWorkflowStepExecutionsActionsRequest::getStepExecutionId,
+                CreateWorkflowStepExecutionsActionsRequest::setStepExecutionId));
+        builder.<StepExecutionAction>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(StepExecutionAction.class),
+            f -> f.withMarshaller(CreateWorkflowStepExecutionsActionsRequest::getBody,
+                CreateWorkflowStepExecutionsActionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteWorkflowExecutionRequest, DeleteWorkflowExecutionResponse> deleteWorkflowExecution =
+        genForDeleteWorkflowExecution();
+
+    private static HttpRequestDef<DeleteWorkflowExecutionRequest, DeleteWorkflowExecutionResponse> genForDeleteWorkflowExecution() {
+        // basic
+        HttpRequestDef.Builder<DeleteWorkflowExecutionRequest, DeleteWorkflowExecutionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteWorkflowExecutionRequest.class, DeleteWorkflowExecutionResponse.class)
+            .withName("DeleteWorkflowExecution")
+            .withUri("/v2/{project_id}/workflows/{workflow_id}/executions/{execution_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteWorkflowExecutionRequest::getWorkflowId,
+                DeleteWorkflowExecutionRequest::setWorkflowId));
+        builder.<String>withRequestField("execution_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteWorkflowExecutionRequest::getExecutionId,
+                DeleteWorkflowExecutionRequest::setExecutionId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> listWorkflowExecutions =
+        genForListWorkflowExecutions();
+
+    private static HttpRequestDef<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> genForListWorkflowExecutions() {
+        // basic
+        HttpRequestDef.Builder<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListWorkflowExecutionsRequest.class, ListWorkflowExecutionsResponse.class)
+            .withName("ListWorkflowExecutions")
+            .withUri("/v2/{project_id}/workflows/{workflow_id}/executions")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowExecutionsRequest::getWorkflowId,
+                ListWorkflowExecutionsRequest::setWorkflowId));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowExecutionsRequest::getWorkspaceId,
+                ListWorkflowExecutionsRequest::setWorkspaceId));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowExecutionsRequest::getLimit, ListWorkflowExecutionsRequest::setLimit));
+        builder.<String>withRequestField("sort_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowExecutionsRequest::getSortBy, ListWorkflowExecutionsRequest::setSortBy));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowExecutionsRequest::getOffset, ListWorkflowExecutionsRequest::setOffset));
+        builder.<String>withRequestField("labels",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowExecutionsRequest::getLabels, ListWorkflowExecutionsRequest::setLabels));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowExecutionsRequest::getStatus, ListWorkflowExecutionsRequest::setStatus));
+        builder.<String>withRequestField("scene_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowExecutionsRequest::getSceneId,
+                ListWorkflowExecutionsRequest::setSceneId));
+        builder.<ListWorkflowExecutionsRequest.OrderEnum>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListWorkflowExecutionsRequest.OrderEnum.class),
+            f -> f.withMarshaller(ListWorkflowExecutionsRequest::getOrder, ListWorkflowExecutionsRequest::setOrder));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse> showWorkflowExecution =
+        genForShowWorkflowExecution();
+
+    private static HttpRequestDef<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse> genForShowWorkflowExecution() {
+        // basic
+        HttpRequestDef.Builder<ShowWorkflowExecutionRequest, ShowWorkflowExecutionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowWorkflowExecutionRequest.class, ShowWorkflowExecutionResponse.class)
+            .withName("ShowWorkflowExecution")
+            .withUri("/v2/{project_id}/workflows/{workflow_id}/executions/{execution_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkflowExecutionRequest::getWorkflowId,
+                ShowWorkflowExecutionRequest::setWorkflowId));
+        builder.<String>withRequestField("execution_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkflowExecutionRequest::getExecutionId,
+                ShowWorkflowExecutionRequest::setExecutionId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowWorkflowStepExecutionMetricsRequest, ShowWorkflowStepExecutionMetricsResponse> showWorkflowStepExecutionMetrics =
+        genForShowWorkflowStepExecutionMetrics();
+
+    private static HttpRequestDef<ShowWorkflowStepExecutionMetricsRequest, ShowWorkflowStepExecutionMetricsResponse> genForShowWorkflowStepExecutionMetrics() {
+        // basic
+        HttpRequestDef.Builder<ShowWorkflowStepExecutionMetricsRequest, ShowWorkflowStepExecutionMetricsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowWorkflowStepExecutionMetricsRequest.class,
+                    ShowWorkflowStepExecutionMetricsResponse.class)
+                .withName("ShowWorkflowStepExecutionMetrics")
+                .withUri(
+                    "/v2/{project_id}/workflows/{workflow_id}/executions/{execution_id}/step-executions/{step_execution_id}/metrics")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkflowStepExecutionMetricsRequest::getWorkflowId,
+                ShowWorkflowStepExecutionMetricsRequest::setWorkflowId));
+        builder.<String>withRequestField("execution_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkflowStepExecutionMetricsRequest::getExecutionId,
+                ShowWorkflowStepExecutionMetricsRequest::setExecutionId));
+        builder.<String>withRequestField("step_execution_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkflowStepExecutionMetricsRequest::getStepExecutionId,
+                ShowWorkflowStepExecutionMetricsRequest::setStepExecutionId));
+
+        // response
+        builder.<List<WorkflowStepMetric>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(ShowWorkflowStepExecutionMetricsResponse::getBody,
+                    ShowWorkflowStepExecutionMetricsResponse::setBody)
+                .withInnerContainerType(WorkflowStepMetric.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateWorkflowExecutionRequest, UpdateWorkflowExecutionResponse> updateWorkflowExecution =
+        genForUpdateWorkflowExecution();
+
+    private static HttpRequestDef<UpdateWorkflowExecutionRequest, UpdateWorkflowExecutionResponse> genForUpdateWorkflowExecution() {
+        // basic
+        HttpRequestDef.Builder<UpdateWorkflowExecutionRequest, UpdateWorkflowExecutionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateWorkflowExecutionRequest.class, UpdateWorkflowExecutionResponse.class)
+            .withName("UpdateWorkflowExecution")
+            .withUri("/v2/{project_id}/workflows/{workflow_id}/executions/{execution_id}")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateWorkflowExecutionRequest::getWorkflowId,
+                UpdateWorkflowExecutionRequest::setWorkflowId));
+        builder.<String>withRequestField("execution_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateWorkflowExecutionRequest::getExecutionId,
+                UpdateWorkflowExecutionRequest::setExecutionId));
+        builder.<WorkflowExecution>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(WorkflowExecution.class),
+            f -> f.withMarshaller(UpdateWorkflowExecutionRequest::getBody, UpdateWorkflowExecutionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateWorkflowScheduleRequest, CreateWorkflowScheduleResponse> createWorkflowSchedule =
+        genForCreateWorkflowSchedule();
+
+    private static HttpRequestDef<CreateWorkflowScheduleRequest, CreateWorkflowScheduleResponse> genForCreateWorkflowSchedule() {
+        // basic
+        HttpRequestDef.Builder<CreateWorkflowScheduleRequest, CreateWorkflowScheduleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateWorkflowScheduleRequest.class, CreateWorkflowScheduleResponse.class)
+            .withName("CreateWorkflowSchedule")
+            .withUri("/v2/{project_id}/workflows/{workflow_id}/schedules")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateWorkflowScheduleRequest::getWorkflowId,
+                CreateWorkflowScheduleRequest::setWorkflowId));
+        builder.<WorkflowSchedule>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(WorkflowSchedule.class),
+            f -> f.withMarshaller(CreateWorkflowScheduleRequest::getBody, CreateWorkflowScheduleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteWorkflowScheduleIdRequest, DeleteWorkflowScheduleIdResponse> deleteWorkflowScheduleId =
+        genForDeleteWorkflowScheduleId();
+
+    private static HttpRequestDef<DeleteWorkflowScheduleIdRequest, DeleteWorkflowScheduleIdResponse> genForDeleteWorkflowScheduleId() {
+        // basic
+        HttpRequestDef.Builder<DeleteWorkflowScheduleIdRequest, DeleteWorkflowScheduleIdResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteWorkflowScheduleIdRequest.class,
+                    DeleteWorkflowScheduleIdResponse.class)
+                .withName("DeleteWorkflowScheduleId")
+                .withUri("/v2/{project_id}/workflows/{workflow_id}/schedules/{schedule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteWorkflowScheduleIdRequest::getWorkflowId,
+                DeleteWorkflowScheduleIdRequest::setWorkflowId));
+        builder.<String>withRequestField("schedule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteWorkflowScheduleIdRequest::getScheduleId,
+                DeleteWorkflowScheduleIdRequest::setScheduleId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowWorkflowScheduleRequest, ShowWorkflowScheduleResponse> showWorkflowSchedule =
+        genForShowWorkflowSchedule();
+
+    private static HttpRequestDef<ShowWorkflowScheduleRequest, ShowWorkflowScheduleResponse> genForShowWorkflowSchedule() {
+        // basic
+        HttpRequestDef.Builder<ShowWorkflowScheduleRequest, ShowWorkflowScheduleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowWorkflowScheduleRequest.class, ShowWorkflowScheduleResponse.class)
+            .withName("ShowWorkflowSchedule")
+            .withUri("/v2/{project_id}/workflows/{workflow_id}/schedules/{schedule_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkflowScheduleRequest::getWorkflowId,
+                ShowWorkflowScheduleRequest::setWorkflowId));
+        builder.<String>withRequestField("schedule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkflowScheduleRequest::getScheduleId,
+                ShowWorkflowScheduleRequest::setScheduleId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateWorkflowScheduleRequest, UpdateWorkflowScheduleResponse> updateWorkflowSchedule =
+        genForUpdateWorkflowSchedule();
+
+    private static HttpRequestDef<UpdateWorkflowScheduleRequest, UpdateWorkflowScheduleResponse> genForUpdateWorkflowSchedule() {
+        // basic
+        HttpRequestDef.Builder<UpdateWorkflowScheduleRequest, UpdateWorkflowScheduleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateWorkflowScheduleRequest.class, UpdateWorkflowScheduleResponse.class)
+            .withName("UpdateWorkflowSchedule")
+            .withUri("/v2/{project_id}/workflows/{workflow_id}/schedules/{schedule_id}")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateWorkflowScheduleRequest::getWorkflowId,
+                UpdateWorkflowScheduleRequest::setWorkflowId));
+        builder.<String>withRequestField("schedule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateWorkflowScheduleRequest::getScheduleId,
+                UpdateWorkflowScheduleRequest::setScheduleId));
+        builder.<WorkflowScheduleUpdate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(WorkflowScheduleUpdate.class),
+            f -> f.withMarshaller(UpdateWorkflowScheduleRequest::getBody, UpdateWorkflowScheduleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateWorkflowSubscriptionsRequest, CreateWorkflowSubscriptionsResponse> createWorkflowSubscriptions =
+        genForCreateWorkflowSubscriptions();
+
+    private static HttpRequestDef<CreateWorkflowSubscriptionsRequest, CreateWorkflowSubscriptionsResponse> genForCreateWorkflowSubscriptions() {
+        // basic
+        HttpRequestDef.Builder<CreateWorkflowSubscriptionsRequest, CreateWorkflowSubscriptionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateWorkflowSubscriptionsRequest.class,
+                    CreateWorkflowSubscriptionsResponse.class)
+                .withName("CreateWorkflowSubscriptions")
+                .withUri("/v2/{project_id}/workflows/{workflow_id}/subscriptions")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateWorkflowSubscriptionsRequest::getWorkflowId,
+                CreateWorkflowSubscriptionsRequest::setWorkflowId));
+        builder.<Subscription>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Subscription.class),
+            f -> f.withMarshaller(CreateWorkflowSubscriptionsRequest::getBody,
+                CreateWorkflowSubscriptionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteWorkflowSubscriptionRequest, DeleteWorkflowSubscriptionResponse> deleteWorkflowSubscription =
+        genForDeleteWorkflowSubscription();
+
+    private static HttpRequestDef<DeleteWorkflowSubscriptionRequest, DeleteWorkflowSubscriptionResponse> genForDeleteWorkflowSubscription() {
+        // basic
+        HttpRequestDef.Builder<DeleteWorkflowSubscriptionRequest, DeleteWorkflowSubscriptionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteWorkflowSubscriptionRequest.class,
+                    DeleteWorkflowSubscriptionResponse.class)
+                .withName("DeleteWorkflowSubscription")
+                .withUri("/v2/{project_id}/workflows/{workflow_id}/subscriptions/{subscription_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteWorkflowSubscriptionRequest::getWorkflowId,
+                DeleteWorkflowSubscriptionRequest::setWorkflowId));
+        builder.<String>withRequestField("subscription_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteWorkflowSubscriptionRequest::getSubscriptionId,
+                DeleteWorkflowSubscriptionRequest::setSubscriptionId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowWorkflowSubscriptionRequest, ShowWorkflowSubscriptionResponse> showWorkflowSubscription =
+        genForShowWorkflowSubscription();
+
+    private static HttpRequestDef<ShowWorkflowSubscriptionRequest, ShowWorkflowSubscriptionResponse> genForShowWorkflowSubscription() {
+        // basic
+        HttpRequestDef.Builder<ShowWorkflowSubscriptionRequest, ShowWorkflowSubscriptionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowWorkflowSubscriptionRequest.class, ShowWorkflowSubscriptionResponse.class)
+                .withName("ShowWorkflowSubscription")
+                .withUri("/v2/{project_id}/workflows/{workflow_id}/subscriptions/{subscription_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkflowSubscriptionRequest::getWorkflowId,
+                ShowWorkflowSubscriptionRequest::setWorkflowId));
+        builder.<String>withRequestField("subscription_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkflowSubscriptionRequest::getSubscriptionId,
+                ShowWorkflowSubscriptionRequest::setSubscriptionId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateWorkflowSubscriptionRequest, UpdateWorkflowSubscriptionResponse> updateWorkflowSubscription =
+        genForUpdateWorkflowSubscription();
+
+    private static HttpRequestDef<UpdateWorkflowSubscriptionRequest, UpdateWorkflowSubscriptionResponse> genForUpdateWorkflowSubscription() {
+        // basic
+        HttpRequestDef.Builder<UpdateWorkflowSubscriptionRequest, UpdateWorkflowSubscriptionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateWorkflowSubscriptionRequest.class,
+                    UpdateWorkflowSubscriptionResponse.class)
+                .withName("UpdateWorkflowSubscription")
+                .withUri("/v2/{project_id}/workflows/{workflow_id}/subscriptions/{subscription_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("subscription_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateWorkflowSubscriptionRequest::getSubscriptionId,
+                UpdateWorkflowSubscriptionRequest::setSubscriptionId));
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateWorkflowSubscriptionRequest::getWorkflowId,
+                UpdateWorkflowSubscriptionRequest::setWorkflowId));
+        builder.<Subscription>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Subscription.class),
+            f -> f.withMarshaller(UpdateWorkflowSubscriptionRequest::getBody,
+                UpdateWorkflowSubscriptionRequest::setBody));
 
         // response
 

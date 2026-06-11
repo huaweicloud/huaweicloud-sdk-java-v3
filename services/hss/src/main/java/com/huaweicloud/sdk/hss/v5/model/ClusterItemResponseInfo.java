@@ -34,6 +34,11 @@ public class ClusterItemResponseInfo {
     private List<String> clusterLabels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_type")
+
+    private String clusterType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_status")
 
     private String protectStatus;
@@ -138,6 +143,23 @@ public class ClusterItemResponseInfo {
         this.clusterLabels = clusterLabels;
     }
 
+    public ClusterItemResponseInfo withClusterType(String clusterType) {
+        this.clusterType = clusterType;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 集群类型 **取值范围**: - k8s：原生集群。 - cce：CCE集群。 - ali：阿里云集群。 - tencent：腾讯云集群。 - azure：微软云集群。 - aws：亚马逊集群。 - self_built_hw：华为云自建集群。 - self_built_idc：IDC自建集群。 
+     * @return clusterType
+     */
+    public String getClusterType() {
+        return clusterType;
+    }
+
+    public void setClusterType(String clusterType) {
+        this.clusterType = clusterType;
+    }
+
     public ClusterItemResponseInfo withProtectStatus(String protectStatus) {
         this.protectStatus = protectStatus;
         return this;
@@ -166,12 +188,13 @@ public class ClusterItemResponseInfo {
         ClusterItemResponseInfo that = (ClusterItemResponseInfo) obj;
         return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.clusterName, that.clusterName)
             && Objects.equals(this.clusterNs, that.clusterNs) && Objects.equals(this.clusterLabels, that.clusterLabels)
+            && Objects.equals(this.clusterType, that.clusterType)
             && Objects.equals(this.protectStatus, that.protectStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, clusterName, clusterNs, clusterLabels, protectStatus);
+        return Objects.hash(clusterId, clusterName, clusterNs, clusterLabels, clusterType, protectStatus);
     }
 
     @Override
@@ -182,6 +205,7 @@ public class ClusterItemResponseInfo {
         sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
         sb.append("    clusterNs: ").append(toIndentedString(clusterNs)).append("\n");
         sb.append("    clusterLabels: ").append(toIndentedString(clusterLabels)).append("\n");
+        sb.append("    clusterType: ").append(toIndentedString(clusterType)).append("\n");
         sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
         sb.append("}");
         return sb.toString();

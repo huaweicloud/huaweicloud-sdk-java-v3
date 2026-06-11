@@ -147,7 +147,7 @@ public class ServerGroup {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_info")
 
-    private ProductInfo productInfo;
+    private ServerProductInfo productInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_name")
@@ -643,14 +643,14 @@ public class ServerGroup {
         this.imageName = imageName;
     }
 
-    public ServerGroup withProductInfo(ProductInfo productInfo) {
+    public ServerGroup withProductInfo(ServerProductInfo productInfo) {
         this.productInfo = productInfo;
         return this;
     }
 
-    public ServerGroup withProductInfo(Consumer<ProductInfo> productInfoSetter) {
+    public ServerGroup withProductInfo(Consumer<ServerProductInfo> productInfoSetter) {
         if (this.productInfo == null) {
-            this.productInfo = new ProductInfo();
+            this.productInfo = new ServerProductInfo();
             productInfoSetter.accept(this.productInfo);
         }
 
@@ -661,11 +661,11 @@ public class ServerGroup {
      * Get productInfo
      * @return productInfo
      */
-    public ProductInfo getProductInfo() {
+    public ServerProductInfo getProductInfo() {
         return productInfo;
     }
 
-    public void setProductInfo(ProductInfo productInfo) {
+    public void setProductInfo(ServerProductInfo productInfo) {
         this.productInfo = productInfo;
     }
 

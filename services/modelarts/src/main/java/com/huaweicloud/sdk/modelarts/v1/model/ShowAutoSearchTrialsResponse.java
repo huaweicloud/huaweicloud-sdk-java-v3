@@ -1,0 +1,200 @@
+package com.huaweicloud.sdk.modelarts.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * Response Object
+ */
+public class ShowAutoSearchTrialsResponse extends SdkResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total")
+
+    private Integer total;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Integer count;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_by")
+
+    private String groupBy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "items")
+
+    private ListAutoSearchTrialsItems items;
+
+    public ShowAutoSearchTrialsResponse withTotal(Integer total) {
+        this.total = total;
+        return this;
+    }
+
+    /**
+     * 超参搜索所有trial结果的个数。
+     * @return total
+     */
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+
+    public ShowAutoSearchTrialsResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /**
+     * 超参搜索所有trial结果的当前页展示个数。
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    public ShowAutoSearchTrialsResponse withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 超参搜索所有trial结果的当前页展示个数最大值。
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ShowAutoSearchTrialsResponse withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 超参搜索所有trial结果的当前页数。
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ShowAutoSearchTrialsResponse withGroupBy(String groupBy) {
+        this.groupBy = groupBy;
+        return this;
+    }
+
+    /**
+     * 分类。
+     * @return groupBy
+     */
+    public String getGroupBy() {
+        return groupBy;
+    }
+
+    public void setGroupBy(String groupBy) {
+        this.groupBy = groupBy;
+    }
+
+    public ShowAutoSearchTrialsResponse withItems(ListAutoSearchTrialsItems items) {
+        this.items = items;
+        return this;
+    }
+
+    public ShowAutoSearchTrialsResponse withItems(Consumer<ListAutoSearchTrialsItems> itemsSetter) {
+        if (this.items == null) {
+            this.items = new ListAutoSearchTrialsItems();
+            itemsSetter.accept(this.items);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get items
+     * @return items
+     */
+    public ListAutoSearchTrialsItems getItems() {
+        return items;
+    }
+
+    public void setItems(ListAutoSearchTrialsItems items) {
+        this.items = items;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        ShowAutoSearchTrialsResponse that = (ShowAutoSearchTrialsResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.groupBy, that.groupBy) && Objects.equals(this.items, that.items);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(total, count, limit, offset, groupBy, items);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ShowAutoSearchTrialsResponse {\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    groupBy: ").append(toIndentedString(groupBy)).append("\n");
+        sb.append("    items: ").append(toIndentedString(items)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

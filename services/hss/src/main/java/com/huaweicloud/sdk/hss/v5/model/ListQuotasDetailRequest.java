@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.hss.v5.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -44,6 +47,11 @@ public class ListQuotasDetailRequest {
     @JsonProperty(value = "host_name")
 
     private String hostName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_id_list")
+
+    private List<String> hostIdList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
@@ -184,6 +192,39 @@ public class ListQuotasDetailRequest {
         this.hostName = hostName;
     }
 
+    public ListQuotasDetailRequest withHostIdList(List<String> hostIdList) {
+        this.hostIdList = hostIdList;
+        return this;
+    }
+
+    public ListQuotasDetailRequest addHostIdListItem(String hostIdListItem) {
+        if (this.hostIdList == null) {
+            this.hostIdList = new ArrayList<>();
+        }
+        this.hostIdList.add(hostIdListItem);
+        return this;
+    }
+
+    public ListQuotasDetailRequest withHostIdList(Consumer<List<String>> hostIdListSetter) {
+        if (this.hostIdList == null) {
+            this.hostIdList = new ArrayList<>();
+        }
+        hostIdListSetter.accept(this.hostIdList);
+        return this;
+    }
+
+    /**
+     * **参数解释**: 服务器ID列表 **约束限制**: 不涉及 **取值范围**: 单个服务器ID字符长度1-64位 批量查询服务器ID个数1-100个 采用逗号分割 **默认取值**: 不涉及
+     * @return hostIdList
+     */
+    public List<String> getHostIdList() {
+        return hostIdList;
+    }
+
+    public void setHostIdList(List<String> hostIdList) {
+        this.hostIdList = hostIdList;
+    }
+
     public ListQuotasDetailRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -269,9 +310,9 @@ public class ListQuotasDetailRequest {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.version, that.version) && Objects.equals(this.category, that.category)
             && Objects.equals(this.quotaStatus, that.quotaStatus) && Objects.equals(this.usedStatus, that.usedStatus)
-            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.resourceId, that.resourceId)
-            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIdList, that.hostIdList)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override
@@ -283,6 +324,7 @@ public class ListQuotasDetailRequest {
             quotaStatus,
             usedStatus,
             hostName,
+            hostIdList,
             resourceId,
             chargingMode,
             limit,
@@ -300,6 +342,7 @@ public class ListQuotasDetailRequest {
         sb.append("    quotaStatus: ").append(toIndentedString(quotaStatus)).append("\n");
         sb.append("    usedStatus: ").append(toIndentedString(usedStatus)).append("\n");
         sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
+        sb.append("    hostIdList: ").append(toIndentedString(hostIdList)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

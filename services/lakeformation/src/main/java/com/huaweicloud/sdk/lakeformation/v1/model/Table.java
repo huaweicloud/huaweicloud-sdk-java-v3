@@ -161,6 +161,87 @@ public class Table {
     private StorageDescriptor storageDescriptor;
 
     /**
+     * 表格式,支持HIVE,ICEBERG,LANCE
+     */
+    public static final class TableFormatEnum {
+
+        /**
+         * Enum HIVE for value: "HIVE"
+         */
+        public static final TableFormatEnum HIVE = new TableFormatEnum("HIVE");
+
+        /**
+         * Enum ICEBERG for value: "ICEBERG"
+         */
+        public static final TableFormatEnum ICEBERG = new TableFormatEnum("ICEBERG");
+
+        /**
+         * Enum LANCE for value: "LANCE"
+         */
+        public static final TableFormatEnum LANCE = new TableFormatEnum("LANCE");
+
+        private static final Map<String, TableFormatEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TableFormatEnum> createStaticFields() {
+            Map<String, TableFormatEnum> map = new HashMap<>();
+            map.put("HIVE", HIVE);
+            map.put("ICEBERG", ICEBERG);
+            map.put("LANCE", LANCE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TableFormatEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TableFormatEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TableFormatEnum(value));
+        }
+
+        public static TableFormatEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TableFormatEnum) {
+                return this.value.equals(((TableFormatEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "table_format")
+
+    private TableFormatEnum tableFormat;
+
+    /**
      * 表类型
      */
     public static final class TableTypeEnum {
@@ -524,6 +605,23 @@ public class Table {
         this.storageDescriptor = storageDescriptor;
     }
 
+    public Table withTableFormat(TableFormatEnum tableFormat) {
+        this.tableFormat = tableFormat;
+        return this;
+    }
+
+    /**
+     * 表格式,支持HIVE,ICEBERG,LANCE
+     * @return tableFormat
+     */
+    public TableFormatEnum getTableFormat() {
+        return tableFormat;
+    }
+
+    public void setTableFormat(TableFormatEnum tableFormat) {
+        this.tableFormat = tableFormat;
+    }
+
     public Table withTableType(TableTypeEnum tableType) {
         this.tableType = tableType;
         return this;
@@ -610,7 +708,8 @@ public class Table {
             && Objects.equals(this.ownerType, that.ownerType) && Objects.equals(this.parameters, that.parameters)
             && Objects.equals(this.partitionKeys, that.partitionKeys) && Objects.equals(this.retention, that.retention)
             && Objects.equals(this.storageDescriptor, that.storageDescriptor)
-            && Objects.equals(this.tableType, that.tableType) && Objects.equals(this.comments, that.comments)
+            && Objects.equals(this.tableFormat, that.tableFormat) && Objects.equals(this.tableType, that.tableType)
+            && Objects.equals(this.comments, that.comments)
             && Objects.equals(this.viewExpandedText, that.viewExpandedText)
             && Objects.equals(this.viewOriginalText, that.viewOriginalText);
     }
@@ -630,6 +729,7 @@ public class Table {
             partitionKeys,
             retention,
             storageDescriptor,
+            tableFormat,
             tableType,
             comments,
             viewExpandedText,
@@ -653,6 +753,7 @@ public class Table {
         sb.append("    partitionKeys: ").append(toIndentedString(partitionKeys)).append("\n");
         sb.append("    retention: ").append(toIndentedString(retention)).append("\n");
         sb.append("    storageDescriptor: ").append(toIndentedString(storageDescriptor)).append("\n");
+        sb.append("    tableFormat: ").append(toIndentedString(tableFormat)).append("\n");
         sb.append("    tableType: ").append(toIndentedString(tableType)).append("\n");
         sb.append("    comments: ").append(toIndentedString(comments)).append("\n");
         sb.append("    viewExpandedText: ").append(toIndentedString(viewExpandedText)).append("\n");

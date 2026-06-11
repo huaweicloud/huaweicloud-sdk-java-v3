@@ -148,7 +148,7 @@ public class CreateServerGroupResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_info")
 
-    private ProductInfo productInfo;
+    private ServerProductInfo productInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_name")
@@ -644,14 +644,14 @@ public class CreateServerGroupResponse extends SdkResponse {
         this.imageName = imageName;
     }
 
-    public CreateServerGroupResponse withProductInfo(ProductInfo productInfo) {
+    public CreateServerGroupResponse withProductInfo(ServerProductInfo productInfo) {
         this.productInfo = productInfo;
         return this;
     }
 
-    public CreateServerGroupResponse withProductInfo(Consumer<ProductInfo> productInfoSetter) {
+    public CreateServerGroupResponse withProductInfo(Consumer<ServerProductInfo> productInfoSetter) {
         if (this.productInfo == null) {
-            this.productInfo = new ProductInfo();
+            this.productInfo = new ServerProductInfo();
             productInfoSetter.accept(this.productInfo);
         }
 
@@ -662,11 +662,11 @@ public class CreateServerGroupResponse extends SdkResponse {
      * Get productInfo
      * @return productInfo
      */
-    public ProductInfo getProductInfo() {
+    public ServerProductInfo getProductInfo() {
         return productInfo;
     }
 
-    public void setProductInfo(ProductInfo productInfo) {
+    public void setProductInfo(ServerProductInfo productInfo) {
         this.productInfo = productInfo;
     }
 

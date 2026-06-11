@@ -27,7 +27,7 @@ public class ShowServerGroupRestrictResponse extends SdkResponse {
     }
 
     /**
-     * 单台服务器最大的链接会话数。
+     * 单台服务器最大的连接会话数。
      * @return maxSession
      */
     public Integer getMaxSession() {

@@ -18,7 +18,7 @@ public class WorkspaceQuotasUpdateResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    private Integer updateTime;
+    private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource")
@@ -72,7 +72,7 @@ public class WorkspaceQuotasUpdateResponse {
         this.maxQuota = maxQuota;
     }
 
-    public WorkspaceQuotasUpdateResponse withUpdateTime(Integer updateTime) {
+    public WorkspaceQuotasUpdateResponse withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
@@ -81,11 +81,11 @@ public class WorkspaceQuotasUpdateResponse {
      * 最后修改时间，UTC。如用户未修改过该资源配额,则该值默认为该工作空间的创建时间。
      * @return updateTime
      */
-    public Integer getUpdateTime() {
+    public Long getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Integer updateTime) {
+    public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
 

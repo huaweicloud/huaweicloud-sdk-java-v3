@@ -22,7 +22,7 @@ public class ListInstanceMaintenanceWindowResponse extends SdkResponse {
     }
 
     /**
-     * 参数解释： 实例的可维护时间窗。
+     * **参数解释：** 实例的可维护时间窗。
      * @return maintenanceWindow
      */
     public String getMaintenanceWindow() {

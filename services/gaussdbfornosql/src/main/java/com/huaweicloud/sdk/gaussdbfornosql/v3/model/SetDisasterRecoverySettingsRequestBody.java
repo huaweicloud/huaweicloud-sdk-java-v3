@@ -16,16 +16,16 @@ public class SetDisasterRecoverySettingsRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disaster_recovery_settings")
 
-    private List<SwitchoverRatioInfo> disasterRecoverySettings = null;
+    private List<SetSwitchoverRatioInfo> disasterRecoverySettings = null;
 
     public SetDisasterRecoverySettingsRequestBody withDisasterRecoverySettings(
-        List<SwitchoverRatioInfo> disasterRecoverySettings) {
+        List<SetSwitchoverRatioInfo> disasterRecoverySettings) {
         this.disasterRecoverySettings = disasterRecoverySettings;
         return this;
     }
 
     public SetDisasterRecoverySettingsRequestBody addDisasterRecoverySettingsItem(
-        SwitchoverRatioInfo disasterRecoverySettingsItem) {
+        SetSwitchoverRatioInfo disasterRecoverySettingsItem) {
         if (this.disasterRecoverySettings == null) {
             this.disasterRecoverySettings = new ArrayList<>();
         }
@@ -34,7 +34,7 @@ public class SetDisasterRecoverySettingsRequestBody {
     }
 
     public SetDisasterRecoverySettingsRequestBody withDisasterRecoverySettings(
-        Consumer<List<SwitchoverRatioInfo>> disasterRecoverySettingsSetter) {
+        Consumer<List<SetSwitchoverRatioInfo>> disasterRecoverySettingsSetter) {
         if (this.disasterRecoverySettings == null) {
             this.disasterRecoverySettings = new ArrayList<>();
         }
@@ -43,14 +43,14 @@ public class SetDisasterRecoverySettingsRequestBody {
     }
 
     /**
-     * 容灾切换的故障节点比例列表。
+     * **参数解释：** 容灾切换的故障节点比例列表。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return disasterRecoverySettings
      */
-    public List<SwitchoverRatioInfo> getDisasterRecoverySettings() {
+    public List<SetSwitchoverRatioInfo> getDisasterRecoverySettings() {
         return disasterRecoverySettings;
     }
 
-    public void setDisasterRecoverySettings(List<SwitchoverRatioInfo> disasterRecoverySettings) {
+    public void setDisasterRecoverySettings(List<SetSwitchoverRatioInfo> disasterRecoverySettings) {
         this.disasterRecoverySettings = disasterRecoverySettings;
     }
 
