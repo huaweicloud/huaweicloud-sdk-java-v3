@@ -54,6 +54,11 @@ public class ListMergeRequestEvaluationsResponse extends SdkResponse {
 
     private List<CustomEvaluationDto> customEvaluations = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Total")
+
+    private String xTotal;
+
     public ListMergeRequestEvaluationsResponse withId(Integer id) {
         this.id = id;
         return this;
@@ -222,6 +227,25 @@ public class ListMergeRequestEvaluationsResponse extends SdkResponse {
         this.customEvaluations = customEvaluations;
     }
 
+    public ListMergeRequestEvaluationsResponse withXTotal(String xTotal) {
+        this.xTotal = xTotal;
+        return this;
+    }
+
+    /**
+     * Get xTotal
+     * @return xTotal
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Total")
+    public String getXTotal() {
+        return xTotal;
+    }
+
+    public void setXTotal(String xTotal) {
+        this.xTotal = xTotal;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -234,12 +258,13 @@ public class ListMergeRequestEvaluationsResponse extends SdkResponse {
         return Objects.equals(this.id, that.id) && Objects.equals(this.mergeRequestId, that.mergeRequestId)
             && Objects.equals(this.level, that.level) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.content, that.content)
-            && Objects.equals(this.user, that.user) && Objects.equals(this.customEvaluations, that.customEvaluations);
+            && Objects.equals(this.user, that.user) && Objects.equals(this.customEvaluations, that.customEvaluations)
+            && Objects.equals(this.xTotal, that.xTotal);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, mergeRequestId, level, createdAt, updatedAt, content, user, customEvaluations);
+        return Objects.hash(id, mergeRequestId, level, createdAt, updatedAt, content, user, customEvaluations, xTotal);
     }
 
     @Override
@@ -254,6 +279,7 @@ public class ListMergeRequestEvaluationsResponse extends SdkResponse {
         sb.append("    content: ").append(toIndentedString(content)).append("\n");
         sb.append("    user: ").append(toIndentedString(user)).append("\n");
         sb.append("    customEvaluations: ").append(toIndentedString(customEvaluations)).append("\n");
+        sb.append("    xTotal: ").append(toIndentedString(xTotal)).append("\n");
         sb.append("}");
         return sb.toString();
     }

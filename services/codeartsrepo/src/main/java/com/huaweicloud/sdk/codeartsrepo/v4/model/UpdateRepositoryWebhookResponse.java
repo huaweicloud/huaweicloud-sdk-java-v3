@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -25,6 +28,11 @@ public class UpdateRepositoryWebhookResponse extends SdkResponse {
     @JsonProperty(value = "push_events_branch_regex_filter")
 
     private String pushEventsBranchRegexFilter;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "note_plain_text_filter")
+
+    private List<String> notePlainTextFilter = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_push_events")
@@ -62,6 +70,21 @@ public class UpdateRepositoryWebhookResponse extends SdkResponse {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "event_cfgs")
+
+    private List<WebHookEventCfgDto> eventCfgs = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_cfgs")
+
+    private List<WebHookBranchCfgDto> projectCfgs = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "branch_cfgs")
+
+    private List<WebHookBranchCfgDto> branchCfgs = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private Integer id;
@@ -75,6 +98,11 @@ public class UpdateRepositoryWebhookResponse extends SdkResponse {
     @JsonProperty(value = "updated_at")
 
     private String updatedAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service")
+
+    private String service;
 
     public UpdateRepositoryWebhookResponse withUrl(String url) {
         this.url = url;
@@ -125,6 +153,39 @@ public class UpdateRepositoryWebhookResponse extends SdkResponse {
 
     public void setPushEventsBranchRegexFilter(String pushEventsBranchRegexFilter) {
         this.pushEventsBranchRegexFilter = pushEventsBranchRegexFilter;
+    }
+
+    public UpdateRepositoryWebhookResponse withNotePlainTextFilter(List<String> notePlainTextFilter) {
+        this.notePlainTextFilter = notePlainTextFilter;
+        return this;
+    }
+
+    public UpdateRepositoryWebhookResponse addNotePlainTextFilterItem(String notePlainTextFilterItem) {
+        if (this.notePlainTextFilter == null) {
+            this.notePlainTextFilter = new ArrayList<>();
+        }
+        this.notePlainTextFilter.add(notePlainTextFilterItem);
+        return this;
+    }
+
+    public UpdateRepositoryWebhookResponse withNotePlainTextFilter(Consumer<List<String>> notePlainTextFilterSetter) {
+        if (this.notePlainTextFilter == null) {
+            this.notePlainTextFilter = new ArrayList<>();
+        }
+        notePlainTextFilterSetter.accept(this.notePlainTextFilter);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 评论事件文本过滤规则。 **取值范围：** 字符串长度不少于0，不超过50，不能超过10个。  
+     * @return notePlainTextFilter
+     */
+    public List<String> getNotePlainTextFilter() {
+        return notePlainTextFilter;
+    }
+
+    public void setNotePlainTextFilter(List<String> notePlainTextFilter) {
+        this.notePlainTextFilter = notePlainTextFilter;
     }
 
     public UpdateRepositoryWebhookResponse withTagPushEvents(Boolean tagPushEvents) {
@@ -246,6 +307,105 @@ public class UpdateRepositoryWebhookResponse extends SdkResponse {
         this.description = description;
     }
 
+    public UpdateRepositoryWebhookResponse withEventCfgs(List<WebHookEventCfgDto> eventCfgs) {
+        this.eventCfgs = eventCfgs;
+        return this;
+    }
+
+    public UpdateRepositoryWebhookResponse addEventCfgsItem(WebHookEventCfgDto eventCfgsItem) {
+        if (this.eventCfgs == null) {
+            this.eventCfgs = new ArrayList<>();
+        }
+        this.eventCfgs.add(eventCfgsItem);
+        return this;
+    }
+
+    public UpdateRepositoryWebhookResponse withEventCfgs(Consumer<List<WebHookEventCfgDto>> eventCfgsSetter) {
+        if (this.eventCfgs == null) {
+            this.eventCfgs = new ArrayList<>();
+        }
+        eventCfgsSetter.accept(this.eventCfgs);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 预留字段，事件触发设置，可为空。
+     * @return eventCfgs
+     */
+    public List<WebHookEventCfgDto> getEventCfgs() {
+        return eventCfgs;
+    }
+
+    public void setEventCfgs(List<WebHookEventCfgDto> eventCfgs) {
+        this.eventCfgs = eventCfgs;
+    }
+
+    public UpdateRepositoryWebhookResponse withProjectCfgs(List<WebHookBranchCfgDto> projectCfgs) {
+        this.projectCfgs = projectCfgs;
+        return this;
+    }
+
+    public UpdateRepositoryWebhookResponse addProjectCfgsItem(WebHookBranchCfgDto projectCfgsItem) {
+        if (this.projectCfgs == null) {
+            this.projectCfgs = new ArrayList<>();
+        }
+        this.projectCfgs.add(projectCfgsItem);
+        return this;
+    }
+
+    public UpdateRepositoryWebhookResponse withProjectCfgs(Consumer<List<WebHookBranchCfgDto>> projectCfgsSetter) {
+        if (this.projectCfgs == null) {
+            this.projectCfgs = new ArrayList<>();
+        }
+        projectCfgsSetter.accept(this.projectCfgs);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 预留字段，仓库分支规则设置，可为空。
+     * @return projectCfgs
+     */
+    public List<WebHookBranchCfgDto> getProjectCfgs() {
+        return projectCfgs;
+    }
+
+    public void setProjectCfgs(List<WebHookBranchCfgDto> projectCfgs) {
+        this.projectCfgs = projectCfgs;
+    }
+
+    public UpdateRepositoryWebhookResponse withBranchCfgs(List<WebHookBranchCfgDto> branchCfgs) {
+        this.branchCfgs = branchCfgs;
+        return this;
+    }
+
+    public UpdateRepositoryWebhookResponse addBranchCfgsItem(WebHookBranchCfgDto branchCfgsItem) {
+        if (this.branchCfgs == null) {
+            this.branchCfgs = new ArrayList<>();
+        }
+        this.branchCfgs.add(branchCfgsItem);
+        return this;
+    }
+
+    public UpdateRepositoryWebhookResponse withBranchCfgs(Consumer<List<WebHookBranchCfgDto>> branchCfgsSetter) {
+        if (this.branchCfgs == null) {
+            this.branchCfgs = new ArrayList<>();
+        }
+        branchCfgsSetter.accept(this.branchCfgs);
+        return this;
+    }
+
+    /**
+     * Get branchCfgs
+     * @return branchCfgs
+     */
+    public List<WebHookBranchCfgDto> getBranchCfgs() {
+        return branchCfgs;
+    }
+
+    public void setBranchCfgs(List<WebHookBranchCfgDto> branchCfgs) {
+        this.branchCfgs = branchCfgs;
+    }
+
     public UpdateRepositoryWebhookResponse withId(Integer id) {
         this.id = id;
         return this;
@@ -299,6 +459,23 @@ public class UpdateRepositoryWebhookResponse extends SdkResponse {
         this.updatedAt = updatedAt;
     }
 
+    public UpdateRepositoryWebhookResponse withService(String service) {
+        this.service = service;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 内部服务名称。
+     * @return service
+     */
+    public String getService() {
+        return service;
+    }
+
+    public void setService(String service) {
+        this.service = service;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -310,12 +487,15 @@ public class UpdateRepositoryWebhookResponse extends SdkResponse {
         UpdateRepositoryWebhookResponse that = (UpdateRepositoryWebhookResponse) obj;
         return Objects.equals(this.url, that.url) && Objects.equals(this.pushEvents, that.pushEvents)
             && Objects.equals(this.pushEventsBranchRegexFilter, that.pushEventsBranchRegexFilter)
+            && Objects.equals(this.notePlainTextFilter, that.notePlainTextFilter)
             && Objects.equals(this.tagPushEvents, that.tagPushEvents)
             && Objects.equals(this.mergeRequestsEvents, that.mergeRequestsEvents)
             && Objects.equals(this.noteEvents, that.noteEvents) && Objects.equals(this.token, that.token)
             && Objects.equals(this.tokenType, that.tokenType) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.id, that.id)
-            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.description, that.description) && Objects.equals(this.eventCfgs, that.eventCfgs)
+            && Objects.equals(this.projectCfgs, that.projectCfgs) && Objects.equals(this.branchCfgs, that.branchCfgs)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.service, that.service);
     }
 
     @Override
@@ -323,6 +503,7 @@ public class UpdateRepositoryWebhookResponse extends SdkResponse {
         return Objects.hash(url,
             pushEvents,
             pushEventsBranchRegexFilter,
+            notePlainTextFilter,
             tagPushEvents,
             mergeRequestsEvents,
             noteEvents,
@@ -330,9 +511,13 @@ public class UpdateRepositoryWebhookResponse extends SdkResponse {
             tokenType,
             name,
             description,
+            eventCfgs,
+            projectCfgs,
+            branchCfgs,
             id,
             createdAt,
-            updatedAt);
+            updatedAt,
+            service);
     }
 
     @Override
@@ -344,6 +529,7 @@ public class UpdateRepositoryWebhookResponse extends SdkResponse {
         sb.append("    pushEventsBranchRegexFilter: ")
             .append(toIndentedString(pushEventsBranchRegexFilter))
             .append("\n");
+        sb.append("    notePlainTextFilter: ").append(toIndentedString(notePlainTextFilter)).append("\n");
         sb.append("    tagPushEvents: ").append(toIndentedString(tagPushEvents)).append("\n");
         sb.append("    mergeRequestsEvents: ").append(toIndentedString(mergeRequestsEvents)).append("\n");
         sb.append("    noteEvents: ").append(toIndentedString(noteEvents)).append("\n");
@@ -351,9 +537,13 @@ public class UpdateRepositoryWebhookResponse extends SdkResponse {
         sb.append("    tokenType: ").append(toIndentedString(tokenType)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    eventCfgs: ").append(toIndentedString(eventCfgs)).append("\n");
+        sb.append("    projectCfgs: ").append(toIndentedString(projectCfgs)).append("\n");
+        sb.append("    branchCfgs: ").append(toIndentedString(branchCfgs)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    service: ").append(toIndentedString(service)).append("\n");
         sb.append("}");
         return sb.toString();
     }

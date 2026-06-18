@@ -22,7 +22,7 @@ public class TagResourceV5Request {
     private String resourceId;
 
     /**
-     * 资源类型，可以为“信任委托”（trust agency）或“IAM用户”（user）。
+     * 资源类型，可以为“信任委托”（trust agency）或“IAM用户”（user）或“身份提供商”（provider）。
      */
     public static final class ResourceTypeEnum {
 
@@ -36,12 +36,24 @@ public class TagResourceV5Request {
          */
         public static final ResourceTypeEnum USER = new ResourceTypeEnum("user");
 
+        /**
+         * Enum OIDC_PROVIDER for value: "oidc_provider"
+         */
+        public static final ResourceTypeEnum OIDC_PROVIDER = new ResourceTypeEnum("oidc_provider");
+
+        /**
+         * Enum SAML_PROVIDER for value: "saml_provider"
+         */
+        public static final ResourceTypeEnum SAML_PROVIDER = new ResourceTypeEnum("saml_provider");
+
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ResourceTypeEnum> createStaticFields() {
             Map<String, ResourceTypeEnum> map = new HashMap<>();
             map.put("agency", AGENCY);
             map.put("user", USER);
+            map.put("oidc_provider", OIDC_PROVIDER);
+            map.put("saml_provider", SAML_PROVIDER);
             return Collections.unmodifiableMap(map);
         }
 
@@ -124,7 +136,7 @@ public class TagResourceV5Request {
     }
 
     /**
-     * 资源类型，可以为“信任委托”（trust agency）或“IAM用户”（user）。
+     * 资源类型，可以为“信任委托”（trust agency）或“IAM用户”（user）或“身份提供商”（provider）。
      * @return resourceType
      */
     public ResourceTypeEnum getResourceType() {

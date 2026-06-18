@@ -16,7 +16,7 @@ import java.util.Objects;
 public class RepoNotificationSubscriptionStateDto {
 
     /**
-     * **参数解释：** 配资源。
+     * **参数解释：** 配置源。
      */
     public static final class ConfigSourceEnum {
 
@@ -101,7 +101,7 @@ public class RepoNotificationSubscriptionStateDto {
     }
 
     /**
-     * **参数解释：** 配资源。
+     * **参数解释：** 配置源。
      * @return configSource
      */
     public ConfigSourceEnum getConfigSource() {

@@ -21,7 +21,7 @@ public class ShowGroupsGeneralPolicyRequest {
     }
 
     /**
-     * **参数解释：** 代码组id，代码组首页，Group ID后的数字Id
+     * **参数解释：** 代码组id，代码组首页，Group ID后的数字Id **默认取值：** 不涉及。
      * minimum: 1
      * maximum: 2147483647
      * @return groupId

@@ -56,7 +56,7 @@ public class StatisticEventsDto {
     }
 
     /**
-     * **参数解释：** 统计ID。
+     * **参数解释：** 统计ID。 **默认取值：** 不涉及。
      * minimum: 1
      * maximum: 2147483647
      * @return id
@@ -75,7 +75,7 @@ public class StatisticEventsDto {
     }
 
     /**
-     * **参数解释：** 用户ID。
+     * **参数解释：** 用户ID。 **默认取值：** 不涉及。
      * minimum: 1
      * maximum: 2147483647
      * @return userId
@@ -94,7 +94,7 @@ public class StatisticEventsDto {
     }
 
     /**
-     * **参数解释：** 仓库ID。
+     * **参数解释：** 仓库ID。 **默认取值：** 不涉及。
      * minimum: 1
      * maximum: 2147483647
      * @return projectId
@@ -113,7 +113,7 @@ public class StatisticEventsDto {
     }
 
     /**
-     * **参数解释：** 分支名。 **取值范围：** 最小1个字节，最大200字节
+     * **参数解释：** 分支名。 **取值范围：** 最小1个字节，最大200字节 **默认取值：** 不涉及。
      * @return branch
      */
     public String getBranch() {
@@ -130,7 +130,7 @@ public class StatisticEventsDto {
     }
 
     /**
-     * **参数解释：** 统计状态。
+     * **参数解释：** 统计状态。 **默认取值：** 0
      * @return status
      */
     public String getStatus() {

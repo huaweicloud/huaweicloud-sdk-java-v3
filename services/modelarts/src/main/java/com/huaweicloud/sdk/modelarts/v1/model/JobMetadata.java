@@ -14,11 +14,6 @@ import java.util.function.Consumer;
 public class JobMetadata {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -34,36 +29,9 @@ public class JobMetadata {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_time")
-
-    private Long createTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "user_name")
-
-    private String userName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "annotations")
 
     private Map<String, String> annotations = null;
-
-    public JobMetadata withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    /**
-     * 训练作业ID，创建成功后由ModelArts生成返回，无需填写。
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public JobMetadata withName(String name) {
         this.name = name;
@@ -116,40 +84,6 @@ public class JobMetadata {
         this.description = description;
     }
 
-    public JobMetadata withCreateTime(Long createTime) {
-        this.createTime = createTime;
-        return this;
-    }
-
-    /**
-     * 训练作业创建时间戳，单位为毫秒，创建成功后由ModelArts生成返回，无需填写。
-     * @return createTime
-     */
-    public Long getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
-    }
-
-    public JobMetadata withUserName(String userName) {
-        this.userName = userName;
-        return this;
-    }
-
-    /**
-     * 训练作业创建用户的用户名，创建成功后由ModelArts生成返回，无需填写。
-     * @return userName
-     */
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
     public JobMetadata withAnnotations(Map<String, String> annotations) {
         this.annotations = annotations;
         return this;
@@ -192,27 +126,22 @@ public class JobMetadata {
             return false;
         }
         JobMetadata that = (JobMetadata) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.userName, that.userName)
-            && Objects.equals(this.annotations, that.annotations);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.annotations, that.annotations);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, workspaceId, description, createTime, userName, annotations);
+        return Objects.hash(name, workspaceId, description, annotations);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class JobMetadata {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
         sb.append("}");
         return sb.toString();

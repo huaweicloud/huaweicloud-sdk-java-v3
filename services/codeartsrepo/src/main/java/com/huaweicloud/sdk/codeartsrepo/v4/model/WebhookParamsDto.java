@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.codeartsrepo.v4.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * **参数解释：** Webhook设置参数。
@@ -24,6 +27,11 @@ public class WebhookParamsDto {
     @JsonProperty(value = "push_events_branch_regex_filter")
 
     private String pushEventsBranchRegexFilter;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "note_plain_text_filter")
+
+    private List<String> notePlainTextFilter = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag_push_events")
@@ -109,6 +117,39 @@ public class WebhookParamsDto {
 
     public void setPushEventsBranchRegexFilter(String pushEventsBranchRegexFilter) {
         this.pushEventsBranchRegexFilter = pushEventsBranchRegexFilter;
+    }
+
+    public WebhookParamsDto withNotePlainTextFilter(List<String> notePlainTextFilter) {
+        this.notePlainTextFilter = notePlainTextFilter;
+        return this;
+    }
+
+    public WebhookParamsDto addNotePlainTextFilterItem(String notePlainTextFilterItem) {
+        if (this.notePlainTextFilter == null) {
+            this.notePlainTextFilter = new ArrayList<>();
+        }
+        this.notePlainTextFilter.add(notePlainTextFilterItem);
+        return this;
+    }
+
+    public WebhookParamsDto withNotePlainTextFilter(Consumer<List<String>> notePlainTextFilterSetter) {
+        if (this.notePlainTextFilter == null) {
+            this.notePlainTextFilter = new ArrayList<>();
+        }
+        notePlainTextFilterSetter.accept(this.notePlainTextFilter);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 评论事件文本过滤规则。 **取值范围：** 字符串长度不少于0，不超过50，不能超过10个。  
+     * @return notePlainTextFilter
+     */
+    public List<String> getNotePlainTextFilter() {
+        return notePlainTextFilter;
+    }
+
+    public void setNotePlainTextFilter(List<String> notePlainTextFilter) {
+        this.notePlainTextFilter = notePlainTextFilter;
     }
 
     public WebhookParamsDto withTagPushEvents(Boolean tagPushEvents) {
@@ -241,6 +282,7 @@ public class WebhookParamsDto {
         WebhookParamsDto that = (WebhookParamsDto) obj;
         return Objects.equals(this.url, that.url) && Objects.equals(this.pushEvents, that.pushEvents)
             && Objects.equals(this.pushEventsBranchRegexFilter, that.pushEventsBranchRegexFilter)
+            && Objects.equals(this.notePlainTextFilter, that.notePlainTextFilter)
             && Objects.equals(this.tagPushEvents, that.tagPushEvents)
             && Objects.equals(this.mergeRequestsEvents, that.mergeRequestsEvents)
             && Objects.equals(this.noteEvents, that.noteEvents) && Objects.equals(this.token, that.token)
@@ -253,6 +295,7 @@ public class WebhookParamsDto {
         return Objects.hash(url,
             pushEvents,
             pushEventsBranchRegexFilter,
+            notePlainTextFilter,
             tagPushEvents,
             mergeRequestsEvents,
             noteEvents,
@@ -271,6 +314,7 @@ public class WebhookParamsDto {
         sb.append("    pushEventsBranchRegexFilter: ")
             .append(toIndentedString(pushEventsBranchRegexFilter))
             .append("\n");
+        sb.append("    notePlainTextFilter: ").append(toIndentedString(notePlainTextFilter)).append("\n");
         sb.append("    tagPushEvents: ").append(toIndentedString(tagPushEvents)).append("\n");
         sb.append("    mergeRequestsEvents: ").append(toIndentedString(mergeRequestsEvents)).append("\n");
         sb.append("    noteEvents: ").append(toIndentedString(noteEvents)).append("\n");

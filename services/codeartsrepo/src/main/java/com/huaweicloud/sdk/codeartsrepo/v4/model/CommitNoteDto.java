@@ -197,11 +197,6 @@ public class CommitNoteDto {
     private String diff;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "attachment")
-
-    private String attachment;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "author")
 
     private UserBasicDto author;
@@ -481,6 +476,11 @@ public class CommitNoteDto {
     private Boolean isReply;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "from_robot")
+
+    private Boolean fromRobot;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "moderation_result")
 
     private Boolean moderationResult;
@@ -631,23 +631,6 @@ public class CommitNoteDto {
 
     public void setDiff(String diff) {
         this.diff = diff;
-    }
-
-    public CommitNoteDto withAttachment(String attachment) {
-        this.attachment = attachment;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 附件(弃用)。
-     * @return attachment
-     */
-    public String getAttachment() {
-        return attachment;
-    }
-
-    public void setAttachment(String attachment) {
-        this.attachment = attachment;
     }
 
     public CommitNoteDto withAuthor(UserBasicDto author) {
@@ -1090,6 +1073,23 @@ public class CommitNoteDto {
         this.isReply = isReply;
     }
 
+    public CommitNoteDto withFromRobot(Boolean fromRobot) {
+        this.fromRobot = fromRobot;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否为AI工具提供的。
+     * @return fromRobot
+     */
+    public Boolean getFromRobot() {
+        return fromRobot;
+    }
+
+    public void setFromRobot(Boolean fromRobot) {
+        this.fromRobot = fromRobot;
+    }
+
     public CommitNoteDto withModerationResult(Boolean moderationResult) {
         this.moderationResult = moderationResult;
         return this;
@@ -1154,12 +1154,12 @@ public class CommitNoteDto {
             && Objects.equals(this.commitId, that.commitId) && Objects.equals(this.discussionId, that.discussionId)
             && Objects.equals(this.type, that.type) && Objects.equals(this.body, that.body)
             && Objects.equals(this.diffFile, that.diffFile) && Objects.equals(this.diff, that.diff)
-            && Objects.equals(this.attachment, that.attachment) && Objects.equals(this.author, that.author)
-            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
-            && Objects.equals(this.system, that.system) && Objects.equals(this.noteableId, that.noteableId)
-            && Objects.equals(this.position, that.position) && Objects.equals(this.resolvable, that.resolvable)
-            && Objects.equals(this.resolved, that.resolved) && Objects.equals(this.resolvedBy, that.resolvedBy)
-            && Objects.equals(this.archived, that.archived) && Objects.equals(this.noteableIid, that.noteableIid)
+            && Objects.equals(this.author, that.author) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.system, that.system)
+            && Objects.equals(this.noteableId, that.noteableId) && Objects.equals(this.position, that.position)
+            && Objects.equals(this.resolvable, that.resolvable) && Objects.equals(this.resolved, that.resolved)
+            && Objects.equals(this.resolvedBy, that.resolvedBy) && Objects.equals(this.archived, that.archived)
+            && Objects.equals(this.noteableIid, that.noteableIid)
             && Objects.equals(this.reviewCategories, that.reviewCategories)
             && Objects.equals(this.reviewCategoriesCn, that.reviewCategoriesCn)
             && Objects.equals(this.reviewCategoriesEn, that.reviewCategoriesEn)
@@ -1167,7 +1167,7 @@ public class CommitNoteDto {
             && Objects.equals(this.severityCn, that.severityCn) && Objects.equals(this.severityEn, that.severityEn)
             && Objects.equals(this.filePath, that.filePath) && Objects.equals(this.line, that.line)
             && Objects.equals(this.assignee, that.assignee) && Objects.equals(this.proposer, that.proposer)
-            && Objects.equals(this.isReply, that.isReply)
+            && Objects.equals(this.isReply, that.isReply) && Objects.equals(this.fromRobot, that.fromRobot)
             && Objects.equals(this.moderationResult, that.moderationResult)
             && Objects.equals(this.moderationTime, that.moderationTime)
             && Objects.equals(this.moderationStatus, that.moderationStatus);
@@ -1183,7 +1183,6 @@ public class CommitNoteDto {
             body,
             diffFile,
             diff,
-            attachment,
             author,
             createdAt,
             updatedAt,
@@ -1207,6 +1206,7 @@ public class CommitNoteDto {
             assignee,
             proposer,
             isReply,
+            fromRobot,
             moderationResult,
             moderationTime,
             moderationStatus);
@@ -1224,7 +1224,6 @@ public class CommitNoteDto {
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("    diffFile: ").append(toIndentedString(diffFile)).append("\n");
         sb.append("    diff: ").append(toIndentedString(diff)).append("\n");
-        sb.append("    attachment: ").append(toIndentedString(attachment)).append("\n");
         sb.append("    author: ").append(toIndentedString(author)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -1248,6 +1247,7 @@ public class CommitNoteDto {
         sb.append("    assignee: ").append(toIndentedString(assignee)).append("\n");
         sb.append("    proposer: ").append(toIndentedString(proposer)).append("\n");
         sb.append("    isReply: ").append(toIndentedString(isReply)).append("\n");
+        sb.append("    fromRobot: ").append(toIndentedString(fromRobot)).append("\n");
         sb.append("    moderationResult: ").append(toIndentedString(moderationResult)).append("\n");
         sb.append("    moderationTime: ").append(toIndentedString(moderationTime)).append("\n");
         sb.append("    moderationStatus: ").append(toIndentedString(moderationStatus)).append("\n");

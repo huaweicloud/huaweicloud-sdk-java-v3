@@ -17,24 +17,26 @@ public class ListMergeRequestReviewersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "required_reviewers_list")
 
-    private List<UserBasicDto> requiredReviewersList = null;
+    private List<MergeRequestApprovalUserDto> requiredReviewersList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "optional_reviewers_list")
 
-    private List<UserBasicDto> optionalReviewersList = null;
+    private List<MergeRequestApprovalUserDto> optionalReviewersList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Total")
 
     private String xTotal;
 
-    public ListMergeRequestReviewersResponse withRequiredReviewersList(List<UserBasicDto> requiredReviewersList) {
+    public ListMergeRequestReviewersResponse withRequiredReviewersList(
+        List<MergeRequestApprovalUserDto> requiredReviewersList) {
         this.requiredReviewersList = requiredReviewersList;
         return this;
     }
 
-    public ListMergeRequestReviewersResponse addRequiredReviewersListItem(UserBasicDto requiredReviewersListItem) {
+    public ListMergeRequestReviewersResponse addRequiredReviewersListItem(
+        MergeRequestApprovalUserDto requiredReviewersListItem) {
         if (this.requiredReviewersList == null) {
             this.requiredReviewersList = new ArrayList<>();
         }
@@ -43,7 +45,7 @@ public class ListMergeRequestReviewersResponse extends SdkResponse {
     }
 
     public ListMergeRequestReviewersResponse withRequiredReviewersList(
-        Consumer<List<UserBasicDto>> requiredReviewersListSetter) {
+        Consumer<List<MergeRequestApprovalUserDto>> requiredReviewersListSetter) {
         if (this.requiredReviewersList == null) {
             this.requiredReviewersList = new ArrayList<>();
         }
@@ -55,20 +57,22 @@ public class ListMergeRequestReviewersResponse extends SdkResponse {
      * **参数解释：** 必选检视人列表。 **取值范围：** 不涉及。
      * @return requiredReviewersList
      */
-    public List<UserBasicDto> getRequiredReviewersList() {
+    public List<MergeRequestApprovalUserDto> getRequiredReviewersList() {
         return requiredReviewersList;
     }
 
-    public void setRequiredReviewersList(List<UserBasicDto> requiredReviewersList) {
+    public void setRequiredReviewersList(List<MergeRequestApprovalUserDto> requiredReviewersList) {
         this.requiredReviewersList = requiredReviewersList;
     }
 
-    public ListMergeRequestReviewersResponse withOptionalReviewersList(List<UserBasicDto> optionalReviewersList) {
+    public ListMergeRequestReviewersResponse withOptionalReviewersList(
+        List<MergeRequestApprovalUserDto> optionalReviewersList) {
         this.optionalReviewersList = optionalReviewersList;
         return this;
     }
 
-    public ListMergeRequestReviewersResponse addOptionalReviewersListItem(UserBasicDto optionalReviewersListItem) {
+    public ListMergeRequestReviewersResponse addOptionalReviewersListItem(
+        MergeRequestApprovalUserDto optionalReviewersListItem) {
         if (this.optionalReviewersList == null) {
             this.optionalReviewersList = new ArrayList<>();
         }
@@ -77,7 +81,7 @@ public class ListMergeRequestReviewersResponse extends SdkResponse {
     }
 
     public ListMergeRequestReviewersResponse withOptionalReviewersList(
-        Consumer<List<UserBasicDto>> optionalReviewersListSetter) {
+        Consumer<List<MergeRequestApprovalUserDto>> optionalReviewersListSetter) {
         if (this.optionalReviewersList == null) {
             this.optionalReviewersList = new ArrayList<>();
         }
@@ -89,11 +93,11 @@ public class ListMergeRequestReviewersResponse extends SdkResponse {
      * **参数解释：** 可选检视人列表。 **取值范围：** 不涉及。
      * @return optionalReviewersList
      */
-    public List<UserBasicDto> getOptionalReviewersList() {
+    public List<MergeRequestApprovalUserDto> getOptionalReviewersList() {
         return optionalReviewersList;
     }
 
-    public void setOptionalReviewersList(List<UserBasicDto> optionalReviewersList) {
+    public void setOptionalReviewersList(List<MergeRequestApprovalUserDto> optionalReviewersList) {
         this.optionalReviewersList = optionalReviewersList;
     }
 

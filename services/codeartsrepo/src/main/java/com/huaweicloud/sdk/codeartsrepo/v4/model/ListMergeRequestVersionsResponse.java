@@ -51,6 +51,11 @@ public class ListMergeRequestVersionsResponse extends SdkResponse {
 
     private String realSize;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Total")
+
+    private String xTotal;
+
     public ListMergeRequestVersionsResponse withId(Integer id) {
         this.id = id;
         return this;
@@ -108,7 +113,7 @@ public class ListMergeRequestVersionsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** tart commit节点。
+     * **参数解释：** start commit节点。
      * @return startCommitSha
      */
     public String getStartCommitSha() {
@@ -187,6 +192,25 @@ public class ListMergeRequestVersionsResponse extends SdkResponse {
         this.realSize = realSize;
     }
 
+    public ListMergeRequestVersionsResponse withXTotal(String xTotal) {
+        this.xTotal = xTotal;
+        return this;
+    }
+
+    /**
+     * Get xTotal
+     * @return xTotal
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Total")
+    public String getXTotal() {
+        return xTotal;
+    }
+
+    public void setXTotal(String xTotal) {
+        this.xTotal = xTotal;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -201,13 +225,13 @@ public class ListMergeRequestVersionsResponse extends SdkResponse {
             && Objects.equals(this.startCommitSha, that.startCommitSha)
             && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.mergeRequestId, that.mergeRequestId) && Objects.equals(this.state, that.state)
-            && Objects.equals(this.realSize, that.realSize);
+            && Objects.equals(this.realSize, that.realSize) && Objects.equals(this.xTotal, that.xTotal);
     }
 
     @Override
     public int hashCode() {
         return Objects
-            .hash(id, headCommitSha, baseCommitSha, startCommitSha, createdAt, mergeRequestId, state, realSize);
+            .hash(id, headCommitSha, baseCommitSha, startCommitSha, createdAt, mergeRequestId, state, realSize, xTotal);
     }
 
     @Override
@@ -222,6 +246,7 @@ public class ListMergeRequestVersionsResponse extends SdkResponse {
         sb.append("    mergeRequestId: ").append(toIndentedString(mergeRequestId)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    realSize: ").append(toIndentedString(realSize)).append("\n");
+        sb.append("    xTotal: ").append(toIndentedString(xTotal)).append("\n");
         sb.append("}");
         return sb.toString();
     }

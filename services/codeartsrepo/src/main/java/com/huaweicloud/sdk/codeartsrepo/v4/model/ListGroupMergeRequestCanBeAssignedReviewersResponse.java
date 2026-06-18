@@ -158,9 +158,9 @@ public class ListGroupMergeRequestCanBeAssignedReviewersResponse extends SdkResp
     private String errorMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_committer")
+    @JsonProperty(value = "X-Total")
 
-    private Boolean isCommitter;
+    private String xTotal;
 
     public ListGroupMergeRequestCanBeAssignedReviewersResponse withId(Integer id) {
         this.id = id;
@@ -385,21 +385,23 @@ public class ListGroupMergeRequestCanBeAssignedReviewersResponse extends SdkResp
         this.errorMessage = errorMessage;
     }
 
-    public ListGroupMergeRequestCanBeAssignedReviewersResponse withIsCommitter(Boolean isCommitter) {
-        this.isCommitter = isCommitter;
+    public ListGroupMergeRequestCanBeAssignedReviewersResponse withXTotal(String xTotal) {
+        this.xTotal = xTotal;
         return this;
     }
 
     /**
-     * **参数解释：** 是否为committer。
-     * @return isCommitter
+     * Get xTotal
+     * @return xTotal
      */
-    public Boolean getIsCommitter() {
-        return isCommitter;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Total")
+    public String getXTotal() {
+        return xTotal;
     }
 
-    public void setIsCommitter(Boolean isCommitter) {
-        this.isCommitter = isCommitter;
+    public void setXTotal(String xTotal) {
+        this.xTotal = xTotal;
     }
 
     @Override
@@ -419,7 +421,7 @@ public class ListGroupMergeRequestCanBeAssignedReviewersResponse extends SdkResp
             && Objects.equals(this.email, that.email) && Objects.equals(this.nameCn, that.nameCn)
             && Objects.equals(this.webUrl, that.webUrl) && Objects.equals(this.nickName, that.nickName)
             && Objects.equals(this.tenantName, that.tenantName) && Objects.equals(this.errorMessage, that.errorMessage)
-            && Objects.equals(this.isCommitter, that.isCommitter);
+            && Objects.equals(this.xTotal, that.xTotal);
     }
 
     @Override
@@ -437,7 +439,7 @@ public class ListGroupMergeRequestCanBeAssignedReviewersResponse extends SdkResp
             nickName,
             tenantName,
             errorMessage,
-            isCommitter);
+            xTotal);
     }
 
     @Override
@@ -457,7 +459,7 @@ public class ListGroupMergeRequestCanBeAssignedReviewersResponse extends SdkResp
         sb.append("    nickName: ").append(toIndentedString(nickName)).append("\n");
         sb.append("    tenantName: ").append(toIndentedString(tenantName)).append("\n");
         sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
-        sb.append("    isCommitter: ").append(toIndentedString(isCommitter)).append("\n");
+        sb.append("    xTotal: ").append(toIndentedString(xTotal)).append("\n");
         sb.append("}");
         return sb.toString();
     }

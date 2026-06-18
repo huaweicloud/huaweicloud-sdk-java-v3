@@ -19,6 +19,11 @@ public class ListMergeRequestValidAssignedCandidatesResponse extends SdkResponse
 
     private List<MRVoteReviewerDto> body = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Total")
+
+    private String xTotal;
+
     public ListMergeRequestValidAssignedCandidatesResponse withBody(List<MRVoteReviewerDto> body) {
         this.body = body;
         return this;
@@ -52,6 +57,25 @@ public class ListMergeRequestValidAssignedCandidatesResponse extends SdkResponse
         this.body = body;
     }
 
+    public ListMergeRequestValidAssignedCandidatesResponse withXTotal(String xTotal) {
+        this.xTotal = xTotal;
+        return this;
+    }
+
+    /**
+     * Get xTotal
+     * @return xTotal
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Total")
+    public String getXTotal() {
+        return xTotal;
+    }
+
+    public void setXTotal(String xTotal) {
+        this.xTotal = xTotal;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +85,12 @@ public class ListMergeRequestValidAssignedCandidatesResponse extends SdkResponse
             return false;
         }
         ListMergeRequestValidAssignedCandidatesResponse that = (ListMergeRequestValidAssignedCandidatesResponse) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.body, that.body) && Objects.equals(this.xTotal, that.xTotal);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(body, xTotal);
     }
 
     @Override
@@ -74,6 +98,7 @@ public class ListMergeRequestValidAssignedCandidatesResponse extends SdkResponse
         StringBuilder sb = new StringBuilder();
         sb.append("class ListMergeRequestValidAssignedCandidatesResponse {\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    xTotal: ").append(toIndentedString(xTotal)).append("\n");
         sb.append("}");
         return sb.toString();
     }

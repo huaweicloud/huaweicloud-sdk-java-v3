@@ -40,6 +40,11 @@ public class GeneralPolicyBodyDto {
 
     private String createBranchWhitelistUserIds;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repo_encryption_enabled")
+
+    private Boolean repoEncryptionEnabled;
+
     public GeneralPolicyBodyDto withDisableFork(Boolean disableFork) {
         this.disableFork = disableFork;
         return this;
@@ -142,6 +147,23 @@ public class GeneralPolicyBodyDto {
         this.createBranchWhitelistUserIds = createBranchWhitelistUserIds;
     }
 
+    public GeneralPolicyBodyDto withRepoEncryptionEnabled(Boolean repoEncryptionEnabled) {
+        this.repoEncryptionEnabled = repoEncryptionEnabled;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否开启仓库加密。 **约束限制：** 不涉及。 **取值范围：** - true，开启仓库加密。 - false，关闭仓库加密。
+     * @return repoEncryptionEnabled
+     */
+    public Boolean getRepoEncryptionEnabled() {
+        return repoEncryptionEnabled;
+    }
+
+    public void setRepoEncryptionEnabled(Boolean repoEncryptionEnabled) {
+        this.repoEncryptionEnabled = repoEncryptionEnabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -156,7 +178,8 @@ public class GeneralPolicyBodyDto {
             && Objects.equals(this.branchNameRegex, that.branchNameRegex)
             && Objects.equals(this.tagNameRegex, that.tagNameRegex)
             && Objects.equals(this.forbiddenDeveloperCreateBranch, that.forbiddenDeveloperCreateBranch)
-            && Objects.equals(this.createBranchWhitelistUserIds, that.createBranchWhitelistUserIds);
+            && Objects.equals(this.createBranchWhitelistUserIds, that.createBranchWhitelistUserIds)
+            && Objects.equals(this.repoEncryptionEnabled, that.repoEncryptionEnabled);
     }
 
     @Override
@@ -166,7 +189,8 @@ public class GeneralPolicyBodyDto {
             branchNameRegex,
             tagNameRegex,
             forbiddenDeveloperCreateBranch,
-            createBranchWhitelistUserIds);
+            createBranchWhitelistUserIds,
+            repoEncryptionEnabled);
     }
 
     @Override
@@ -183,6 +207,7 @@ public class GeneralPolicyBodyDto {
         sb.append("    createBranchWhitelistUserIds: ")
             .append(toIndentedString(createBranchWhitelistUserIds))
             .append("\n");
+        sb.append("    repoEncryptionEnabled: ").append(toIndentedString(repoEncryptionEnabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }

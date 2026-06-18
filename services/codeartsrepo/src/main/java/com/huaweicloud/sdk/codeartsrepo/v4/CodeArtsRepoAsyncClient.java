@@ -98,6 +98,8 @@ import com.huaweicloud.sdk.codeartsrepo.v4.model.CreateReviewSettingRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.CreateReviewSettingResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.CreateTagRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.CreateTagResponse;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.CreateTenantKmsGrantRequest;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.CreateTenantKmsGrantResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.DeleteBranchRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.DeleteBranchResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.DeleteFileRequest;
@@ -186,6 +188,8 @@ import com.huaweicloud.sdk.codeartsrepo.v4.model.ListGroupMergeRequestValidAssig
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListGroupMergeRequestValidAssignedCandidatesResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListGroupPermissionResourcesRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListGroupPermissionResourcesResponse;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ListGroupProtectedBranchesRequest;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ListGroupProtectedBranchesResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListGroupProtectedRefsUserGroupsRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListGroupProtectedRefsUserGroupsResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListGroupRepositoriesRequest;
@@ -210,6 +214,8 @@ import com.huaweicloud.sdk.codeartsrepo.v4.model.ListLogsTreeRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListLogsTreeResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListManageableGroupsRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListManageableGroupsResponse;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ListManagementUsersRequest;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ListManagementUsersResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListMembersRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListMembersResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListMergeRequestApproverSettingsRequest;
@@ -260,6 +266,8 @@ import com.huaweicloud.sdk.codeartsrepo.v4.model.ListProjectMergeRequestCanBeAss
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListProjectMergeRequestCanBeAssignedUsersResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListProjectMergeRequestTemplatesRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListProjectMergeRequestTemplatesResponse;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ListProjectMergeRequestsRequest;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ListProjectMergeRequestsResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListProjectNoteRequiredAttributesRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListProjectNoteRequiredAttributesResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListProjectProtectedBranchesRequest;
@@ -300,6 +308,8 @@ import com.huaweicloud.sdk.codeartsrepo.v4.model.ListRepositoryLanguagesRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListRepositoryLanguagesResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListRepositoryMergeRequestsRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListRepositoryMergeRequestsResponse;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ListRepositoryNavigationReferencesRequest;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ListRepositoryNavigationReferencesResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListRepositoryProtectedRefsUserGroupsRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListRepositoryProtectedRefsUserGroupsResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListRepositoryResourcePermissionsRequest;
@@ -322,6 +332,10 @@ import com.huaweicloud.sdk.codeartsrepo.v4.model.ListSubmodulesRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListSubmodulesResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListTagsRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListTagsResponse;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ListTenantCmksRequest;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ListTenantCmksResponse;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ListTenantEncryptedRepositoriesRequest;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ListTenantEncryptedRepositoriesResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListTenantRepositoriesRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListTenantRepositoriesResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ListTenantTrustedIpAddressesRequest;
@@ -340,6 +354,8 @@ import com.huaweicloud.sdk.codeartsrepo.v4.model.MergeMergeRequestRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.MergeMergeRequestResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.RebaseMergeRequestForOpenApiRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.RebaseMergeRequestForOpenApiResponse;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.RebuildRepositoryNavigationRequest;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.RebuildRepositoryNavigationResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.RemoveDeployKeyFromSubmodulesRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.RemoveDeployKeyFromSubmodulesResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.RemoveDeployKeyRequest;
@@ -452,6 +468,8 @@ import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowProjectReviewSettingsReques
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowProjectReviewSettingsResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowProjectSettingsInheritCfgRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowProjectSettingsInheritCfgResponse;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowProjectTenantSettingsRequest;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowProjectTenantSettingsResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowProjectWatermarkRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowProjectWatermarkResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowProjectWebhookLogRequest;
@@ -470,6 +488,10 @@ import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRefCompareRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRefCompareResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRemoteMirrorRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRemoteMirrorResponse;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRepoLastStatisticsRequest;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRepoLastStatisticsResponse;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRepoStatisticsSummaryRequest;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRepoStatisticsSummaryResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRepositoryE2eSettingRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRepositoryE2eSettingResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRepositoryGeneralCommitRuleRequest;
@@ -482,6 +504,12 @@ import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRepositoryInheritSettingSou
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRepositoryInheritSettingSourceResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRepositoryMergeRequestsStatisticRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRepositoryMergeRequestsStatisticResponse;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRepositoryNavigationLanguageRequest;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRepositoryNavigationLanguageResponse;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRepositoryNavigationOutlineRequest;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRepositoryNavigationOutlineResponse;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRepositoryNavigationSchemaRequest;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRepositoryNavigationSchemaResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRepositoryPermissionInheritEnabledRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRepositoryPermissionInheritEnabledResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowRepositoryRequest;
@@ -502,6 +530,12 @@ import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowReviewSettingRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowReviewSettingResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowTagRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowTagResponse;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowTenantDevelopModeRequest;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowTenantDevelopModeResponse;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowTenantKmsGrantRequest;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowTenantKmsGrantResponse;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowTenantRepoEncryptionSettingRequest;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowTenantRepoEncryptionSettingResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowUserEmailsRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowUserEmailsResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.ShowUserRefPermissionRequest;
@@ -514,6 +548,8 @@ import com.huaweicloud.sdk.codeartsrepo.v4.model.SyncDeployKeyToSubmodulesReques
 import com.huaweicloud.sdk.codeartsrepo.v4.model.SyncDeployKeyToSubmodulesResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.TransferGroupRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.TransferGroupResponse;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.TransferRepositoryRequest;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.TransferRepositoryResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.UnlockRepositoryRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.UnlockRepositoryResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.UpdateBranchNameRequest;
@@ -528,6 +564,8 @@ import com.huaweicloud.sdk.codeartsrepo.v4.model.UpdateGroupMergeRequestTemplate
 import com.huaweicloud.sdk.codeartsrepo.v4.model.UpdateGroupMergeRequestTemplateResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.UpdateGroupNoteRequiredAttributesRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.UpdateGroupNoteRequiredAttributesResponse;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.UpdateGroupResourcePermissionsRequest;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.UpdateGroupResourcePermissionsResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.UpdateGroupReviewSettingsRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.UpdateGroupReviewSettingsResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.UpdateGroupWatermarkRequest;
@@ -598,6 +636,8 @@ import com.huaweicloud.sdk.codeartsrepo.v4.model.UpdateRepositoryWatermarkReques
 import com.huaweicloud.sdk.codeartsrepo.v4.model.UpdateRepositoryWatermarkResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.UpdateRepositoryWebhookRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.UpdateRepositoryWebhookResponse;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.UpdateTenantRepoEncryptionSettingRequest;
+import com.huaweicloud.sdk.codeartsrepo.v4.model.UpdateTenantRepoEncryptionSettingResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.UpdateTenantTrustedIpAddressRequest;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.UpdateTenantTrustedIpAddressResponse;
 import com.huaweicloud.sdk.codeartsrepo.v4.model.UpdateTrustedIpAddressRequest;
@@ -2178,6 +2218,36 @@ public class CodeArtsRepoAsyncClient {
     }
 
     /**
+     * 获取代码组下保护分支列表
+     *
+     * 获取代码组下保护分支列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGroupProtectedBranchesRequest 请求对象
+     * @return CompletableFuture<ListGroupProtectedBranchesResponse>
+     */
+    public CompletableFuture<ListGroupProtectedBranchesResponse> listGroupProtectedBranchesAsync(
+        ListGroupProtectedBranchesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsRepoMeta.listGroupProtectedBranches);
+    }
+
+    /**
+     * 获取代码组下保护分支列表
+     *
+     * 获取代码组下保护分支列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGroupProtectedBranchesRequest 请求对象
+     * @return AsyncInvoker<ListGroupProtectedBranchesRequest, ListGroupProtectedBranchesResponse>
+     */
+    public AsyncInvoker<ListGroupProtectedBranchesRequest, ListGroupProtectedBranchesResponse> listGroupProtectedBranchesAsyncInvoker(
+        ListGroupProtectedBranchesRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsRepoMeta.listGroupProtectedBranches, hcClient);
+    }
+
+    /**
      * 获取代码组下的子代码组和仓库列表
      *
      * 获取代码组下的子代码组和仓库列表
@@ -2677,6 +2747,35 @@ public class CodeArtsRepoAsyncClient {
     public AsyncInvoker<ListGroupProtectedRefsUserGroupsRequest, ListGroupProtectedRefsUserGroupsResponse> listGroupProtectedRefsUserGroupsAsyncInvoker(
         ListGroupProtectedRefsUserGroupsRequest request) {
         return new AsyncInvoker<>(request, CodeArtsRepoMeta.listGroupProtectedRefsUserGroups, hcClient);
+    }
+
+    /**
+     * 获取仓库下有审批权限成员
+     *
+     * 获取仓库下有审批权限成员（审批用户是否可以进入该仓库）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListManagementUsersRequest 请求对象
+     * @return CompletableFuture<ListManagementUsersResponse>
+     */
+    public CompletableFuture<ListManagementUsersResponse> listManagementUsersAsync(ListManagementUsersRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsRepoMeta.listManagementUsers);
+    }
+
+    /**
+     * 获取仓库下有审批权限成员
+     *
+     * 获取仓库下有审批权限成员（审批用户是否可以进入该仓库）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListManagementUsersRequest 请求对象
+     * @return AsyncInvoker<ListManagementUsersRequest, ListManagementUsersResponse>
+     */
+    public AsyncInvoker<ListManagementUsersRequest, ListManagementUsersResponse> listManagementUsersAsyncInvoker(
+        ListManagementUsersRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsRepoMeta.listManagementUsers, hcClient);
     }
 
     /**
@@ -3816,9 +3915,9 @@ public class CodeArtsRepoAsyncClient {
     }
 
     /**
-     * 获取可选的合并请求检视人
+     * 获取仓库审核人或合并人
      *
-     * 获取可选的合并请求检视人
+     * 获取仓库审核人或合并人
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3831,9 +3930,9 @@ public class CodeArtsRepoAsyncClient {
     }
 
     /**
-     * 获取可选的合并请求检视人
+     * 获取仓库审核人或合并人
      *
-     * 获取可选的合并请求检视人
+     * 获取仓库审核人或合并人
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3938,7 +4037,7 @@ public class CodeArtsRepoAsyncClient {
     /**
      * 获取项目检视人
      *
-     * 获取代码组检视人
+     * 获取项目检视人
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3953,7 +4052,7 @@ public class CodeArtsRepoAsyncClient {
     /**
      * 获取项目检视人
      *
-     * 获取代码组检视人
+     * 获取项目检视人
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3968,7 +4067,7 @@ public class CodeArtsRepoAsyncClient {
     /**
      * 获取项目审核人或合并人
      *
-     * 获取代码组审核人或合并人
+     * 获取项目审核人或合并人
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3983,7 +4082,7 @@ public class CodeArtsRepoAsyncClient {
     /**
      * 获取项目审核人或合并人
      *
-     * 获取代码组审核人或合并人
+     * 获取项目审核人或合并人
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4023,6 +4122,36 @@ public class CodeArtsRepoAsyncClient {
     public AsyncInvoker<ListProjectMergeRequestTemplatesRequest, ListProjectMergeRequestTemplatesResponse> listProjectMergeRequestTemplatesAsyncInvoker(
         ListProjectMergeRequestTemplatesRequest request) {
         return new AsyncInvoker<>(request, CodeArtsRepoMeta.listProjectMergeRequestTemplates, hcClient);
+    }
+
+    /**
+     * 获取项目MR列表
+     *
+     * 获取项目MR列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProjectMergeRequestsRequest 请求对象
+     * @return CompletableFuture<ListProjectMergeRequestsResponse>
+     */
+    public CompletableFuture<ListProjectMergeRequestsResponse> listProjectMergeRequestsAsync(
+        ListProjectMergeRequestsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsRepoMeta.listProjectMergeRequests);
+    }
+
+    /**
+     * 获取项目MR列表
+     *
+     * 获取项目MR列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProjectMergeRequestsRequest 请求对象
+     * @return AsyncInvoker<ListProjectMergeRequestsRequest, ListProjectMergeRequestsResponse>
+     */
+    public AsyncInvoker<ListProjectMergeRequestsRequest, ListProjectMergeRequestsResponse> listProjectMergeRequestsAsyncInvoker(
+        ListProjectMergeRequestsRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsRepoMeta.listProjectMergeRequests, hcClient);
     }
 
     /**
@@ -5072,6 +5201,36 @@ public class CodeArtsRepoAsyncClient {
     }
 
     /**
+     * 更新代码组权限矩阵配置
+     *
+     * 更新代码组权限矩阵配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateGroupResourcePermissionsRequest 请求对象
+     * @return CompletableFuture<UpdateGroupResourcePermissionsResponse>
+     */
+    public CompletableFuture<UpdateGroupResourcePermissionsResponse> updateGroupResourcePermissionsAsync(
+        UpdateGroupResourcePermissionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsRepoMeta.updateGroupResourcePermissions);
+    }
+
+    /**
+     * 更新代码组权限矩阵配置
+     *
+     * 更新代码组权限矩阵配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateGroupResourcePermissionsRequest 请求对象
+     * @return AsyncInvoker<UpdateGroupResourcePermissionsRequest, UpdateGroupResourcePermissionsResponse>
+     */
+    public AsyncInvoker<UpdateGroupResourcePermissionsRequest, UpdateGroupResourcePermissionsResponse> updateGroupResourcePermissionsAsyncInvoker(
+        UpdateGroupResourcePermissionsRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsRepoMeta.updateGroupResourcePermissions, hcClient);
+    }
+
+    /**
      * 更新仓库权限继承配置
      *
      * 更新仓库权限继承配置。
@@ -5400,9 +5559,12 @@ public class CodeArtsRepoAsyncClient {
     }
 
     /**
-     * 获取资源点对应的角色和权限
+     * 获取代码组中指定权限资源下的权限矩阵
      *
-     * 获取资源点对应的角色和权限
+     * 获取代码组中指定权限资源下的权限矩阵。
+     * 说明：
+     * (a) 权限资源：CodeArtsRepo中需要鉴权的对象。代码组层级的权限资源有：代码组、仓库、代码、成员、Tag、合并请求&amp;变更请求、标签。&lt;动作 + 权限资源&gt; 就构成权限点，如：新建仓库、下载代码、添加成员等。权限点是CodeArtsRepo鉴权的基本单位。
+     * (b) 权限矩阵：记录了角色和权限点之间的关联关系，即记录了角色有哪些权限，没有哪些权限。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5415,9 +5577,12 @@ public class CodeArtsRepoAsyncClient {
     }
 
     /**
-     * 获取资源点对应的角色和权限
+     * 获取代码组中指定权限资源下的权限矩阵
      *
-     * 获取资源点对应的角色和权限
+     * 获取代码组中指定权限资源下的权限矩阵。
+     * 说明：
+     * (a) 权限资源：CodeArtsRepo中需要鉴权的对象。代码组层级的权限资源有：代码组、仓库、代码、成员、Tag、合并请求&amp;变更请求、标签。&lt;动作 + 权限资源&gt; 就构成权限点，如：新建仓库、下载代码、添加成员等。权限点是CodeArtsRepo鉴权的基本单位。
+     * (b) 权限矩阵：记录了角色和权限点之间的关联关系，即记录了角色有哪些权限，没有哪些权限。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6055,35 +6220,6 @@ public class CodeArtsRepoAsyncClient {
     }
 
     /**
-     * 查看分支/tag列表
-     *
-     * 查看分支/tag列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListRefsListRequest 请求对象
-     * @return CompletableFuture<ListRefsListResponse>
-     */
-    public CompletableFuture<ListRefsListResponse> listRefsListAsync(ListRefsListRequest request) {
-        return hcClient.asyncInvokeHttp(request, CodeArtsRepoMeta.listRefsList);
-    }
-
-    /**
-     * 查看分支/tag列表
-     *
-     * 查看分支/tag列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListRefsListRequest 请求对象
-     * @return AsyncInvoker<ListRefsListRequest, ListRefsListResponse>
-     */
-    public AsyncInvoker<ListRefsListRequest, ListRefsListResponse> listRefsListAsyncInvoker(
-        ListRefsListRequest request) {
-        return new AsyncInvoker<>(request, CodeArtsRepoMeta.listRefsList, hcClient);
-    }
-
-    /**
      * 批量删除分支
      *
      * 批量删除分支
@@ -6253,6 +6389,35 @@ public class CodeArtsRepoAsyncClient {
     public AsyncInvoker<ListBranchesRequest, ListBranchesResponse> listBranchesAsyncInvoker(
         ListBranchesRequest request) {
         return new AsyncInvoker<>(request, CodeArtsRepoMeta.listBranches, hcClient);
+    }
+
+    /**
+     * 查看分支/tag列表
+     *
+     * 查看分支/tag列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRefsListRequest 请求对象
+     * @return CompletableFuture<ListRefsListResponse>
+     */
+    public CompletableFuture<ListRefsListResponse> listRefsListAsync(ListRefsListRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsRepoMeta.listRefsList);
+    }
+
+    /**
+     * 查看分支/tag列表
+     *
+     * 查看分支/tag列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRefsListRequest 请求对象
+     * @return AsyncInvoker<ListRefsListRequest, ListRefsListResponse>
+     */
+    public AsyncInvoker<ListRefsListRequest, ListRefsListResponse> listRefsListAsyncInvoker(
+        ListRefsListRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsRepoMeta.listRefsList, hcClient);
     }
 
     /**
@@ -7083,6 +7248,36 @@ public class CodeArtsRepoAsyncClient {
     }
 
     /**
+     * 获取代码导航引用关系
+     *
+     * 获取代码导航引用关系
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRepositoryNavigationReferencesRequest 请求对象
+     * @return CompletableFuture<ListRepositoryNavigationReferencesResponse>
+     */
+    public CompletableFuture<ListRepositoryNavigationReferencesResponse> listRepositoryNavigationReferencesAsync(
+        ListRepositoryNavigationReferencesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsRepoMeta.listRepositoryNavigationReferences);
+    }
+
+    /**
+     * 获取代码导航引用关系
+     *
+     * 获取代码导航引用关系
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRepositoryNavigationReferencesRequest 请求对象
+     * @return AsyncInvoker<ListRepositoryNavigationReferencesRequest, ListRepositoryNavigationReferencesResponse>
+     */
+    public AsyncInvoker<ListRepositoryNavigationReferencesRequest, ListRepositoryNavigationReferencesResponse> listRepositoryNavigationReferencesAsyncInvoker(
+        ListRepositoryNavigationReferencesRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsRepoMeta.listRepositoryNavigationReferences, hcClient);
+    }
+
+    /**
      * 模板仓列表
      *
      * 模板仓列表
@@ -7201,6 +7396,36 @@ public class CodeArtsRepoAsyncClient {
     }
 
     /**
+     * 触发代码导航任务
+     *
+     * 触发代码导航任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RebuildRepositoryNavigationRequest 请求对象
+     * @return CompletableFuture<RebuildRepositoryNavigationResponse>
+     */
+    public CompletableFuture<RebuildRepositoryNavigationResponse> rebuildRepositoryNavigationAsync(
+        RebuildRepositoryNavigationRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsRepoMeta.rebuildRepositoryNavigation);
+    }
+
+    /**
+     * 触发代码导航任务
+     *
+     * 触发代码导航任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RebuildRepositoryNavigationRequest 请求对象
+     * @return AsyncInvoker<RebuildRepositoryNavigationRequest, RebuildRepositoryNavigationResponse>
+     */
+    public AsyncInvoker<RebuildRepositoryNavigationRequest, RebuildRepositoryNavigationResponse> rebuildRepositoryNavigationAsyncInvoker(
+        RebuildRepositoryNavigationRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsRepoMeta.rebuildRepositoryNavigation, hcClient);
+    }
+
+    /**
      * 删除仓库部署密钥
      *
      * 删除仓库部署密钥
@@ -7232,7 +7457,7 @@ public class CodeArtsRepoAsyncClient {
     /**
      * 删除子仓库部署密钥
      *
-     * 将该该仓库的部署密钥从子模组中删除
+     * 将该仓库的部署密钥从子模组中删除
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7247,7 +7472,7 @@ public class CodeArtsRepoAsyncClient {
     /**
      * 删除子仓库部署密钥
      *
-     * 将该该仓库的部署密钥从子模组中删除
+     * 将该仓库的部署密钥从子模组中删除
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7495,6 +7720,66 @@ public class CodeArtsRepoAsyncClient {
     }
 
     /**
+     * 获取仓库最近的提交统计信息
+     *
+     * 获取仓库最近的提交统计信息，其中按人员统计记录最多统计按创建时间降序的前100条数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRepoLastStatisticsRequest 请求对象
+     * @return CompletableFuture<ShowRepoLastStatisticsResponse>
+     */
+    public CompletableFuture<ShowRepoLastStatisticsResponse> showRepoLastStatisticsAsync(
+        ShowRepoLastStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsRepoMeta.showRepoLastStatistics);
+    }
+
+    /**
+     * 获取仓库最近的提交统计信息
+     *
+     * 获取仓库最近的提交统计信息，其中按人员统计记录最多统计按创建时间降序的前100条数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRepoLastStatisticsRequest 请求对象
+     * @return AsyncInvoker<ShowRepoLastStatisticsRequest, ShowRepoLastStatisticsResponse>
+     */
+    public AsyncInvoker<ShowRepoLastStatisticsRequest, ShowRepoLastStatisticsResponse> showRepoLastStatisticsAsyncInvoker(
+        ShowRepoLastStatisticsRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsRepoMeta.showRepoLastStatistics, hcClient);
+    }
+
+    /**
+     * 获取仓库统计信息概览
+     *
+     * 获取仓库统计信息概览，包括仓库大小，分支数量，提交数量等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRepoStatisticsSummaryRequest 请求对象
+     * @return CompletableFuture<ShowRepoStatisticsSummaryResponse>
+     */
+    public CompletableFuture<ShowRepoStatisticsSummaryResponse> showRepoStatisticsSummaryAsync(
+        ShowRepoStatisticsSummaryRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsRepoMeta.showRepoStatisticsSummary);
+    }
+
+    /**
+     * 获取仓库统计信息概览
+     *
+     * 获取仓库统计信息概览，包括仓库大小，分支数量，提交数量等。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRepoStatisticsSummaryRequest 请求对象
+     * @return AsyncInvoker<ShowRepoStatisticsSummaryRequest, ShowRepoStatisticsSummaryResponse>
+     */
+    public AsyncInvoker<ShowRepoStatisticsSummaryRequest, ShowRepoStatisticsSummaryResponse> showRepoStatisticsSummaryAsyncInvoker(
+        ShowRepoStatisticsSummaryRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsRepoMeta.showRepoStatisticsSummary, hcClient);
+    }
+
+    /**
      * 获取仓库详情
      *
      * 获取仓库详情
@@ -7641,6 +7926,96 @@ public class CodeArtsRepoAsyncClient {
     public AsyncInvoker<ShowRepositoryInheritSettingSourceRequest, ShowRepositoryInheritSettingSourceResponse> showRepositoryInheritSettingSourceAsyncInvoker(
         ShowRepositoryInheritSettingSourceRequest request) {
         return new AsyncInvoker<>(request, CodeArtsRepoMeta.showRepositoryInheritSettingSource, hcClient);
+    }
+
+    /**
+     * 获取代码导航功能的语言信息
+     *
+     * 获取代码导航功能的语言信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRepositoryNavigationLanguageRequest 请求对象
+     * @return CompletableFuture<ShowRepositoryNavigationLanguageResponse>
+     */
+    public CompletableFuture<ShowRepositoryNavigationLanguageResponse> showRepositoryNavigationLanguageAsync(
+        ShowRepositoryNavigationLanguageRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsRepoMeta.showRepositoryNavigationLanguage);
+    }
+
+    /**
+     * 获取代码导航功能的语言信息
+     *
+     * 获取代码导航功能的语言信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRepositoryNavigationLanguageRequest 请求对象
+     * @return AsyncInvoker<ShowRepositoryNavigationLanguageRequest, ShowRepositoryNavigationLanguageResponse>
+     */
+    public AsyncInvoker<ShowRepositoryNavigationLanguageRequest, ShowRepositoryNavigationLanguageResponse> showRepositoryNavigationLanguageAsyncInvoker(
+        ShowRepositoryNavigationLanguageRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsRepoMeta.showRepositoryNavigationLanguage, hcClient);
+    }
+
+    /**
+     * 获取代码导航大纲
+     *
+     * 获取代码导航大纲
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRepositoryNavigationOutlineRequest 请求对象
+     * @return CompletableFuture<ShowRepositoryNavigationOutlineResponse>
+     */
+    public CompletableFuture<ShowRepositoryNavigationOutlineResponse> showRepositoryNavigationOutlineAsync(
+        ShowRepositoryNavigationOutlineRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsRepoMeta.showRepositoryNavigationOutline);
+    }
+
+    /**
+     * 获取代码导航大纲
+     *
+     * 获取代码导航大纲
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRepositoryNavigationOutlineRequest 请求对象
+     * @return AsyncInvoker<ShowRepositoryNavigationOutlineRequest, ShowRepositoryNavigationOutlineResponse>
+     */
+    public AsyncInvoker<ShowRepositoryNavigationOutlineRequest, ShowRepositoryNavigationOutlineResponse> showRepositoryNavigationOutlineAsyncInvoker(
+        ShowRepositoryNavigationOutlineRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsRepoMeta.showRepositoryNavigationOutline, hcClient);
+    }
+
+    /**
+     * 获取代码导航功能的模式信息
+     *
+     * 获取代码导航功能的模式信息，包括最近索引创建时间，做大统计的文件数量信息等
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRepositoryNavigationSchemaRequest 请求对象
+     * @return CompletableFuture<ShowRepositoryNavigationSchemaResponse>
+     */
+    public CompletableFuture<ShowRepositoryNavigationSchemaResponse> showRepositoryNavigationSchemaAsync(
+        ShowRepositoryNavigationSchemaRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsRepoMeta.showRepositoryNavigationSchema);
+    }
+
+    /**
+     * 获取代码导航功能的模式信息
+     *
+     * 获取代码导航功能的模式信息，包括最近索引创建时间，做大统计的文件数量信息等
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRepositoryNavigationSchemaRequest 请求对象
+     * @return AsyncInvoker<ShowRepositoryNavigationSchemaRequest, ShowRepositoryNavigationSchemaResponse>
+     */
+    public AsyncInvoker<ShowRepositoryNavigationSchemaRequest, ShowRepositoryNavigationSchemaResponse> showRepositoryNavigationSchemaAsyncInvoker(
+        ShowRepositoryNavigationSchemaRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsRepoMeta.showRepositoryNavigationSchema, hcClient);
     }
 
     /**
@@ -7850,6 +8225,35 @@ public class CodeArtsRepoAsyncClient {
     public AsyncInvoker<SyncDeployKeyToSubmodulesRequest, SyncDeployKeyToSubmodulesResponse> syncDeployKeyToSubmodulesAsyncInvoker(
         SyncDeployKeyToSubmodulesRequest request) {
         return new AsyncInvoker<>(request, CodeArtsRepoMeta.syncDeployKeyToSubmodules, hcClient);
+    }
+
+    /**
+     * 转移仓库
+     *
+     * 将仓库转移到其他代码组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request TransferRepositoryRequest 请求对象
+     * @return CompletableFuture<TransferRepositoryResponse>
+     */
+    public CompletableFuture<TransferRepositoryResponse> transferRepositoryAsync(TransferRepositoryRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsRepoMeta.transferRepository);
+    }
+
+    /**
+     * 转移仓库
+     *
+     * 将仓库转移到其他代码组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request TransferRepositoryRequest 请求对象
+     * @return AsyncInvoker<TransferRepositoryRequest, TransferRepositoryResponse>
+     */
+    public AsyncInvoker<TransferRepositoryRequest, TransferRepositoryResponse> transferRepositoryAsyncInvoker(
+        TransferRepositoryRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsRepoMeta.transferRepository, hcClient);
     }
 
     /**
@@ -8182,6 +8586,36 @@ public class CodeArtsRepoAsyncClient {
     }
 
     /**
+     * 创建当前租户委托给Repo的KMS授权
+     *
+     * 创建当前租户委托给Repo的KMS授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTenantKmsGrantRequest 请求对象
+     * @return CompletableFuture<CreateTenantKmsGrantResponse>
+     */
+    public CompletableFuture<CreateTenantKmsGrantResponse> createTenantKmsGrantAsync(
+        CreateTenantKmsGrantRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsRepoMeta.createTenantKmsGrant);
+    }
+
+    /**
+     * 创建当前租户委托给Repo的KMS授权
+     *
+     * 创建当前租户委托给Repo的KMS授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTenantKmsGrantRequest 请求对象
+     * @return AsyncInvoker<CreateTenantKmsGrantRequest, CreateTenantKmsGrantResponse>
+     */
+    public AsyncInvoker<CreateTenantKmsGrantRequest, CreateTenantKmsGrantResponse> createTenantKmsGrantAsyncInvoker(
+        CreateTenantKmsGrantRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsRepoMeta.createTenantKmsGrant, hcClient);
+    }
+
+    /**
      * 删除租户ip白名单
      *
      * 删除租户ip白名单
@@ -8214,7 +8648,7 @@ public class CodeArtsRepoAsyncClient {
     /**
      * 租户仓库列表
      *
-     * 租户下所有占用资源的仓库列表
+     * 租户下所有占用资源的仓库列表，最多只能导出2万条记录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8229,7 +8663,7 @@ public class CodeArtsRepoAsyncClient {
     /**
      * 租户仓库列表
      *
-     * 租户下所有占用资源的仓库列表
+     * 租户下所有占用资源的仓库列表，最多只能导出2万条记录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -8239,6 +8673,65 @@ public class CodeArtsRepoAsyncClient {
     public AsyncInvoker<ExportTenantRepositoriesRequest, ExportTenantRepositoriesResponse> exportTenantRepositoriesAsyncInvoker(
         ExportTenantRepositoriesRequest request) {
         return new AsyncInvoker<>(request, CodeArtsRepoMeta.exportTenantRepositories, hcClient);
+    }
+
+    /**
+     * 获取当前租户的在KMS托管的主密钥CMK列表
+     *
+     * 获取当前租户的在KMS托管的主密钥CMK列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTenantCmksRequest 请求对象
+     * @return CompletableFuture<ListTenantCmksResponse>
+     */
+    public CompletableFuture<ListTenantCmksResponse> listTenantCmksAsync(ListTenantCmksRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsRepoMeta.listTenantCmks);
+    }
+
+    /**
+     * 获取当前租户的在KMS托管的主密钥CMK列表
+     *
+     * 获取当前租户的在KMS托管的主密钥CMK列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTenantCmksRequest 请求对象
+     * @return AsyncInvoker<ListTenantCmksRequest, ListTenantCmksResponse>
+     */
+    public AsyncInvoker<ListTenantCmksRequest, ListTenantCmksResponse> listTenantCmksAsyncInvoker(
+        ListTenantCmksRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsRepoMeta.listTenantCmks, hcClient);
+    }
+
+    /**
+     * 获取当前租户已加密的仓库列表
+     *
+     * 获取当前租户已加密的仓库列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTenantEncryptedRepositoriesRequest 请求对象
+     * @return CompletableFuture<ListTenantEncryptedRepositoriesResponse>
+     */
+    public CompletableFuture<ListTenantEncryptedRepositoriesResponse> listTenantEncryptedRepositoriesAsync(
+        ListTenantEncryptedRepositoriesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsRepoMeta.listTenantEncryptedRepositories);
+    }
+
+    /**
+     * 获取当前租户已加密的仓库列表
+     *
+     * 获取当前租户已加密的仓库列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTenantEncryptedRepositoriesRequest 请求对象
+     * @return AsyncInvoker<ListTenantEncryptedRepositoriesRequest, ListTenantEncryptedRepositoriesResponse>
+     */
+    public AsyncInvoker<ListTenantEncryptedRepositoriesRequest, ListTenantEncryptedRepositoriesResponse> listTenantEncryptedRepositoriesAsyncInvoker(
+        ListTenantEncryptedRepositoriesRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsRepoMeta.listTenantEncryptedRepositories, hcClient);
     }
 
     /**
@@ -8299,6 +8792,155 @@ public class CodeArtsRepoAsyncClient {
     public AsyncInvoker<ListTenantTrustedIpAddressesRequest, ListTenantTrustedIpAddressesResponse> listTenantTrustedIpAddressesAsyncInvoker(
         ListTenantTrustedIpAddressesRequest request) {
         return new AsyncInvoker<>(request, CodeArtsRepoMeta.listTenantTrustedIpAddresses, hcClient);
+    }
+
+    /**
+     * 获取租户设置
+     *
+     * 获取租户设置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProjectTenantSettingsRequest 请求对象
+     * @return CompletableFuture<ShowProjectTenantSettingsResponse>
+     */
+    public CompletableFuture<ShowProjectTenantSettingsResponse> showProjectTenantSettingsAsync(
+        ShowProjectTenantSettingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsRepoMeta.showProjectTenantSettings);
+    }
+
+    /**
+     * 获取租户设置
+     *
+     * 获取租户设置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProjectTenantSettingsRequest 请求对象
+     * @return AsyncInvoker<ShowProjectTenantSettingsRequest, ShowProjectTenantSettingsResponse>
+     */
+    public AsyncInvoker<ShowProjectTenantSettingsRequest, ShowProjectTenantSettingsResponse> showProjectTenantSettingsAsyncInvoker(
+        ShowProjectTenantSettingsRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsRepoMeta.showProjectTenantSettings, hcClient);
+    }
+
+    /**
+     * 查看当前租户的开发模式
+     *
+     * 查看当前租户的开发模式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTenantDevelopModeRequest 请求对象
+     * @return CompletableFuture<ShowTenantDevelopModeResponse>
+     */
+    public CompletableFuture<ShowTenantDevelopModeResponse> showTenantDevelopModeAsync(
+        ShowTenantDevelopModeRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsRepoMeta.showTenantDevelopMode);
+    }
+
+    /**
+     * 查看当前租户的开发模式
+     *
+     * 查看当前租户的开发模式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTenantDevelopModeRequest 请求对象
+     * @return AsyncInvoker<ShowTenantDevelopModeRequest, ShowTenantDevelopModeResponse>
+     */
+    public AsyncInvoker<ShowTenantDevelopModeRequest, ShowTenantDevelopModeResponse> showTenantDevelopModeAsyncInvoker(
+        ShowTenantDevelopModeRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsRepoMeta.showTenantDevelopMode, hcClient);
+    }
+
+    /**
+     * 获取当前租户委托授权KMS状态
+     *
+     * 获取当前租户委托授权KMS状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTenantKmsGrantRequest 请求对象
+     * @return CompletableFuture<ShowTenantKmsGrantResponse>
+     */
+    public CompletableFuture<ShowTenantKmsGrantResponse> showTenantKmsGrantAsync(ShowTenantKmsGrantRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsRepoMeta.showTenantKmsGrant);
+    }
+
+    /**
+     * 获取当前租户委托授权KMS状态
+     *
+     * 获取当前租户委托授权KMS状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTenantKmsGrantRequest 请求对象
+     * @return AsyncInvoker<ShowTenantKmsGrantRequest, ShowTenantKmsGrantResponse>
+     */
+    public AsyncInvoker<ShowTenantKmsGrantRequest, ShowTenantKmsGrantResponse> showTenantKmsGrantAsyncInvoker(
+        ShowTenantKmsGrantRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsRepoMeta.showTenantKmsGrant, hcClient);
+    }
+
+    /**
+     * 获取当前租户的仓库加密配置
+     *
+     * 获取当前租户的仓库加密配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTenantRepoEncryptionSettingRequest 请求对象
+     * @return CompletableFuture<ShowTenantRepoEncryptionSettingResponse>
+     */
+    public CompletableFuture<ShowTenantRepoEncryptionSettingResponse> showTenantRepoEncryptionSettingAsync(
+        ShowTenantRepoEncryptionSettingRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsRepoMeta.showTenantRepoEncryptionSetting);
+    }
+
+    /**
+     * 获取当前租户的仓库加密配置
+     *
+     * 获取当前租户的仓库加密配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTenantRepoEncryptionSettingRequest 请求对象
+     * @return AsyncInvoker<ShowTenantRepoEncryptionSettingRequest, ShowTenantRepoEncryptionSettingResponse>
+     */
+    public AsyncInvoker<ShowTenantRepoEncryptionSettingRequest, ShowTenantRepoEncryptionSettingResponse> showTenantRepoEncryptionSettingAsyncInvoker(
+        ShowTenantRepoEncryptionSettingRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsRepoMeta.showTenantRepoEncryptionSetting, hcClient);
+    }
+
+    /**
+     * 修改当前租户的仓库加密配置
+     *
+     * 修改当前租户的仓库加密配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTenantRepoEncryptionSettingRequest 请求对象
+     * @return CompletableFuture<UpdateTenantRepoEncryptionSettingResponse>
+     */
+    public CompletableFuture<UpdateTenantRepoEncryptionSettingResponse> updateTenantRepoEncryptionSettingAsync(
+        UpdateTenantRepoEncryptionSettingRequest request) {
+        return hcClient.asyncInvokeHttp(request, CodeArtsRepoMeta.updateTenantRepoEncryptionSetting);
+    }
+
+    /**
+     * 修改当前租户的仓库加密配置
+     *
+     * 修改当前租户的仓库加密配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTenantRepoEncryptionSettingRequest 请求对象
+     * @return AsyncInvoker<UpdateTenantRepoEncryptionSettingRequest, UpdateTenantRepoEncryptionSettingResponse>
+     */
+    public AsyncInvoker<UpdateTenantRepoEncryptionSettingRequest, UpdateTenantRepoEncryptionSettingResponse> updateTenantRepoEncryptionSettingAsyncInvoker(
+        UpdateTenantRepoEncryptionSettingRequest request) {
+        return new AsyncInvoker<>(request, CodeArtsRepoMeta.updateTenantRepoEncryptionSetting, hcClient);
     }
 
     /**

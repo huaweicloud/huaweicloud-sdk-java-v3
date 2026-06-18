@@ -27,6 +27,8 @@ import com.huaweicloud.sdk.rds.v3.model.BatchModifyPublicationRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchModifyPublicationResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchModifySubscriptionRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchModifySubscriptionResponse;
+import com.huaweicloud.sdk.rds.v3.model.BatchResizeFlavorRequest;
+import com.huaweicloud.sdk.rds.v3.model.BatchResizeFlavorResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchRestoreDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchRestoreDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchRestorePostgreSqlTablesRequest;
@@ -812,6 +814,35 @@ public class RdsClient {
     public SyncInvoker<BatchExecuteEventsRequest, BatchExecuteEventsResponse> batchExecuteEventsInvoker(
         BatchExecuteEventsRequest request) {
         return new SyncInvoker<>(request, RdsMeta.batchExecuteEvents, hcClient);
+    }
+
+    /**
+     * 批量变更实例规格
+     *
+     * 批量变更实例规格
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchResizeFlavorRequest 请求对象
+     * @return BatchResizeFlavorResponse
+     */
+    public BatchResizeFlavorResponse batchResizeFlavor(BatchResizeFlavorRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.batchResizeFlavor);
+    }
+
+    /**
+     * 批量变更实例规格
+     *
+     * 批量变更实例规格
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchResizeFlavorRequest 请求对象
+     * @return SyncInvoker<BatchResizeFlavorRequest, BatchResizeFlavorResponse>
+     */
+    public SyncInvoker<BatchResizeFlavorRequest, BatchResizeFlavorResponse> batchResizeFlavorInvoker(
+        BatchResizeFlavorRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.batchResizeFlavor, hcClient);
     }
 
     /**

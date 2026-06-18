@@ -1,0 +1,95 @@
+package com.huaweicloud.sdk.sts.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/**
+ * **参数解释**： 信任委托会话信息。  **取值范围**： 不涉及。 
+ */
+public class AssumedAgencyWithFederationDto {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "urn")
+
+    private String urn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    public AssumedAgencyWithFederationDto withUrn(String urn) {
+        this.urn = urn;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 信任委托会话的URN。  **取值范围**： 不涉及。 
+     * @return urn
+     */
+    public String getUrn() {
+        return urn;
+    }
+
+    public void setUrn(String urn) {
+        this.urn = urn;
+    }
+
+    public AssumedAgencyWithFederationDto withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 信任委托会话的唯一标识，包含了信任委托ID和信任委托会话名称信息。  **取值范围**： 不涉及。 
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        AssumedAgencyWithFederationDto that = (AssumedAgencyWithFederationDto) obj;
+        return Objects.equals(this.urn, that.urn) && Objects.equals(this.id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(urn, id);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class AssumedAgencyWithFederationDto {\n");
+        sb.append("    urn: ").append(toIndentedString(urn)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

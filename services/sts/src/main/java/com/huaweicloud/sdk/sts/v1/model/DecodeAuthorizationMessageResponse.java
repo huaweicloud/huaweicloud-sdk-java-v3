@@ -22,7 +22,7 @@ public class DecodeAuthorizationMessageResponse extends SdkResponse {
     }
 
     /**
-     * 鉴权失败原因的明文。
+     * **参数解释**： 鉴权失败原因的明文。  **取值范围**： 不涉及。 
      * @return decodedMessage
      */
     public String getDecodedMessage() {

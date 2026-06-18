@@ -20,6 +20,11 @@ public class ListScheduledEventsResponse extends SdkResponse {
     private List<ScheduledEvent> events = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Integer count;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-request-id")
 
     private String xRequestId;
@@ -57,6 +62,25 @@ public class ListScheduledEventsResponse extends SdkResponse {
         this.events = events;
     }
 
+    public ListScheduledEventsResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /**
+     * **参数解释**：计划事件总数。 **取值范围**：不涉及。
+     * minimum: 0
+     * maximum: 100000
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
     public ListScheduledEventsResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -85,12 +109,13 @@ public class ListScheduledEventsResponse extends SdkResponse {
             return false;
         }
         ListScheduledEventsResponse that = (ListScheduledEventsResponse) obj;
-        return Objects.equals(this.events, that.events) && Objects.equals(this.xRequestId, that.xRequestId);
+        return Objects.equals(this.events, that.events) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(events, xRequestId);
+        return Objects.hash(events, count, xRequestId);
     }
 
     @Override
@@ -98,6 +123,7 @@ public class ListScheduledEventsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListScheduledEventsResponse {\n");
         sb.append("    events: ").append(toIndentedString(events)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

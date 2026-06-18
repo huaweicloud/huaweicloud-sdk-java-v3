@@ -603,7 +603,7 @@ public class AcceptScheduledEventResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：资源池对外显示的名称, lite-cluster、standard才具有，取值自资源池详情的metadata.name字段。只能以小写字母开头，数字、中划线组成，不能以中划线结尾，且长度为[36-63]个字符。。 **取值范围**：不涉及。
+     * **参数解释**：资源池对外显示的名称, lite-cluster、standard才具有，取值自资源池详情的metadata.name字段。只能以小写字母开头，数字、中划线组成，不能以中划线结尾，且长度为[36-63]个字符。 **取值范围**：不涉及。
      * @return poolDisplayName
      */
     public String getPoolDisplayName() {
@@ -637,7 +637,7 @@ public class AcceptScheduledEventResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：事件开始时间。 **约束限制**：格式为UTC时间字符串：2025-09-15T07:02:30Z。。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * **参数解释**：事件开始时间。 **约束限制**：格式为UTC时间字符串：2025-09-15T07:02:30Z。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return startTime
      */
     public String getStartTime() {

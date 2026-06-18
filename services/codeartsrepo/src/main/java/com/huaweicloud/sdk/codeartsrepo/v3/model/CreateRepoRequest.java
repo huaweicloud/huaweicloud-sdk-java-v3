@@ -26,6 +26,11 @@ public class CreateRepoRequest {
     private String projectUuid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private Integer groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_id")
 
     private String templateId;
@@ -114,6 +119,23 @@ public class CreateRepoRequest {
 
     public void setProjectUuid(String projectUuid) {
         this.projectUuid = projectUuid;
+    }
+
+    public CreateRepoRequest withGroupId(Integer groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 代码组id，代码组首页，Group ID后的数字Id
+     * @return groupId
+     */
+    public Integer getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(Integer groupId) {
+        this.groupId = groupId;
     }
 
     public CreateRepoRequest withTemplateId(String templateId) {
@@ -262,7 +284,8 @@ public class CreateRepoRequest {
         }
         CreateRepoRequest that = (CreateRepoRequest) obj;
         return Objects.equals(this.importMembers, that.importMembers) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.projectUuid, that.projectUuid) && Objects.equals(this.templateId, that.templateId)
+            && Objects.equals(this.projectUuid, that.projectUuid) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.templateId, that.templateId)
             && Objects.equals(this.visibilityLevel, that.visibilityLevel)
             && Objects.equals(this.importUrl, that.importUrl) && Objects.equals(this.description, that.description)
             && Objects.equals(this.gitignoreId, that.gitignoreId) && Objects.equals(this.licenseId, that.licenseId)
@@ -274,6 +297,7 @@ public class CreateRepoRequest {
         return Objects.hash(importMembers,
             name,
             projectUuid,
+            groupId,
             templateId,
             visibilityLevel,
             importUrl,
@@ -291,6 +315,7 @@ public class CreateRepoRequest {
         sb.append("    importMembers: ").append(toIndentedString(importMembers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    projectUuid: ").append(toIndentedString(projectUuid)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
         sb.append("    visibilityLevel: ").append(toIndentedString(visibilityLevel)).append("\n");
         sb.append("    importUrl: ").append(toIndentedString(importUrl)).append("\n");

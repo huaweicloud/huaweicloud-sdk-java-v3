@@ -251,6 +251,98 @@ public class RepositoryBasicDto {
 
     private RepositorySimpleDto forkedFromRepository;
 
+    /**
+     * **参数解释：** 仓库加密状态 **取值范围：** - encrypting，加密中。 - encrypted，已加密。 - decrypting，解密中。 - decrypted，已解密。 **默认取值：** 不涉及。
+     */
+    public static final class EncryptionStatusEnum {
+
+        /**
+         * Enum ENCRYPTING for value: "encrypting"
+         */
+        public static final EncryptionStatusEnum ENCRYPTING = new EncryptionStatusEnum("encrypting");
+
+        /**
+         * Enum ENCRYPTED for value: "encrypted"
+         */
+        public static final EncryptionStatusEnum ENCRYPTED = new EncryptionStatusEnum("encrypted");
+
+        /**
+         * Enum DECRYPTING for value: "decrypting"
+         */
+        public static final EncryptionStatusEnum DECRYPTING = new EncryptionStatusEnum("decrypting");
+
+        /**
+         * Enum DECRYPTED for value: "decrypted"
+         */
+        public static final EncryptionStatusEnum DECRYPTED = new EncryptionStatusEnum("decrypted");
+
+        private static final Map<String, EncryptionStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EncryptionStatusEnum> createStaticFields() {
+            Map<String, EncryptionStatusEnum> map = new HashMap<>();
+            map.put("encrypting", ENCRYPTING);
+            map.put("encrypted", ENCRYPTED);
+            map.put("decrypting", DECRYPTING);
+            map.put("decrypted", DECRYPTED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        EncryptionStatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static EncryptionStatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EncryptionStatusEnum(value));
+        }
+
+        public static EncryptionStatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof EncryptionStatusEnum) {
+                return this.value.equals(((EncryptionStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "encryption_status")
+
+    private EncryptionStatusEnum encryptionStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repo_encryption_enabled")
+
+    private Boolean repoEncryptionEnabled;
+
     public RepositoryBasicDto withId(Integer id) {
         this.id = id;
         return this;
@@ -860,6 +952,40 @@ public class RepositoryBasicDto {
         this.forkedFromRepository = forkedFromRepository;
     }
 
+    public RepositoryBasicDto withEncryptionStatus(EncryptionStatusEnum encryptionStatus) {
+        this.encryptionStatus = encryptionStatus;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 仓库加密状态 **取值范围：** - encrypting，加密中。 - encrypted，已加密。 - decrypting，解密中。 - decrypted，已解密。 **默认取值：** 不涉及。
+     * @return encryptionStatus
+     */
+    public EncryptionStatusEnum getEncryptionStatus() {
+        return encryptionStatus;
+    }
+
+    public void setEncryptionStatus(EncryptionStatusEnum encryptionStatus) {
+        this.encryptionStatus = encryptionStatus;
+    }
+
+    public RepositoryBasicDto withRepoEncryptionEnabled(Boolean repoEncryptionEnabled) {
+        this.repoEncryptionEnabled = repoEncryptionEnabled;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否开启仓库加密 **取值范围：** - true，已开启加密。 - false，未开启加密。
+     * @return repoEncryptionEnabled
+     */
+    public Boolean getRepoEncryptionEnabled() {
+        return repoEncryptionEnabled;
+    }
+
+    public void setRepoEncryptionEnabled(Boolean repoEncryptionEnabled) {
+        this.repoEncryptionEnabled = repoEncryptionEnabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -887,7 +1013,9 @@ public class RepositoryBasicDto {
             && Objects.equals(this.securityTag, that.securityTag) && Objects.equals(this.security, that.security)
             && Objects.equals(this.networkType, that.networkType) && Objects.equals(this.owner, that.owner)
             && Objects.equals(this.creator, that.creator) && Objects.equals(this.creatorId, that.creatorId)
-            && Objects.equals(this.forkedFromRepository, that.forkedFromRepository);
+            && Objects.equals(this.forkedFromRepository, that.forkedFromRepository)
+            && Objects.equals(this.encryptionStatus, that.encryptionStatus)
+            && Objects.equals(this.repoEncryptionEnabled, that.repoEncryptionEnabled);
     }
 
     @Override
@@ -924,7 +1052,9 @@ public class RepositoryBasicDto {
             owner,
             creator,
             creatorId,
-            forkedFromRepository);
+            forkedFromRepository,
+            encryptionStatus,
+            repoEncryptionEnabled);
     }
 
     @Override
@@ -964,6 +1094,8 @@ public class RepositoryBasicDto {
         sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("    creatorId: ").append(toIndentedString(creatorId)).append("\n");
         sb.append("    forkedFromRepository: ").append(toIndentedString(forkedFromRepository)).append("\n");
+        sb.append("    encryptionStatus: ").append(toIndentedString(encryptionStatus)).append("\n");
+        sb.append("    repoEncryptionEnabled: ").append(toIndentedString(repoEncryptionEnabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }

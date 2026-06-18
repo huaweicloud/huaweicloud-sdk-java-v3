@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.codeartsrepo.v4.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -30,13 +35,88 @@ public class ListCommitAssociatedRefsRequest {
 
     private Integer limit;
 
+    /**
+     * **参数解释：** 分支或者tag。 **取值范围：** 只能为branch或者tag。 **约束限制：** 只能为branch或者tag。
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum BRANCH for value: "branch"
+         */
+        public static final TypeEnum BRANCH = new TypeEnum("branch");
+
+        /**
+         * Enum TAG for value: "tag"
+         */
+        public static final TypeEnum TAG = new TypeEnum("tag");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("branch", BRANCH);
+            map.put("tag", TAG);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private TypeEnum type;
+
     public ListCommitAssociatedRefsRequest withRepositoryId(Integer repositoryId) {
         this.repositoryId = repositoryId;
         return this;
     }
 
     /**
-     * **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。
+     * **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/intl/zh-cn/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk_ch)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。 **默认取值：** 不涉及。
      * minimum: 1
      * maximum: 2147483647
      * @return repositoryId
@@ -104,6 +184,23 @@ public class ListCommitAssociatedRefsRequest {
         this.limit = limit;
     }
 
+    public ListCommitAssociatedRefsRequest withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 分支或者tag。 **取值范围：** 只能为branch或者tag。 **约束限制：** 只能为branch或者tag。
+     * @return type
+     */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -114,12 +211,13 @@ public class ListCommitAssociatedRefsRequest {
         }
         ListCommitAssociatedRefsRequest that = (ListCommitAssociatedRefsRequest) obj;
         return Objects.equals(this.repositoryId, that.repositoryId) && Objects.equals(this.sha, that.sha)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(repositoryId, sha, offset, limit);
+        return Objects.hash(repositoryId, sha, offset, limit, type);
     }
 
     @Override
@@ -130,6 +228,7 @@ public class ListCommitAssociatedRefsRequest {
         sb.append("    sha: ").append(toIndentedString(sha)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -1,0 +1,191 @@
+package com.huaweicloud.sdk.codeartsrepo.v4.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/**
+ * Request Object
+ */
+public class ShowRepositoryNavigationOutlineRequest {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repository_id")
+
+    private Integer repositoryId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "revision")
+
+    private String revision;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ref")
+
+    private String ref;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "language")
+
+    private String language;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "blob")
+
+    private String blob;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "file_path")
+
+    private String filePath;
+
+    public ShowRepositoryNavigationOutlineRequest withRepositoryId(Integer repositoryId) {
+        this.repositoryId = repositoryId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/intl/zh-cn/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk_ch)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。 **默认取值：** 不涉及。
+     * minimum: 1
+     * maximum: 2147483647
+     * @return repositoryId
+     */
+    public Integer getRepositoryId() {
+        return repositoryId;
+    }
+
+    public void setRepositoryId(Integer repositoryId) {
+        this.repositoryId = repositoryId;
+    }
+
+    public ShowRepositoryNavigationOutlineRequest withRevision(String revision) {
+        this.revision = revision;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 版本提交id **取值范围：** 不涉及
+     * @return revision
+     */
+    public String getRevision() {
+        return revision;
+    }
+
+    public void setRevision(String revision) {
+        this.revision = revision;
+    }
+
+    public ShowRepositoryNavigationOutlineRequest withRef(String ref) {
+        this.ref = ref;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 引用，可以是分支名称、标签名称或者commitid，如果不传则为默认分支。 **取值范围：** 字符串长度不少于1，不超过2000。
+     * @return ref
+     */
+    public String getRef() {
+        return ref;
+    }
+
+    public void setRef(String ref) {
+        this.ref = ref;
+    }
+
+    public ShowRepositoryNavigationOutlineRequest withLanguage(String language) {
+        this.language = language;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 代码语言 **取值范围：** - C - C++ - Go - Java - JavaScript - PHP - Python - Ruby - Rust
+     * @return language
+     */
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public ShowRepositoryNavigationOutlineRequest withBlob(String blob) {
+        this.blob = blob;
+        return this;
+    }
+
+    /**
+     * **参数解释：** blob文件ID。通过[[查询某个仓库的文件信息](https://support.huaweicloud.com/api-codeartsrepo/ListFilesByQuery.html)](tag:hws)[[查询某个仓库的文件信息](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListFilesByQuery.html)](tag:hws_hk)[查询某个仓库的文件信息](tag:hcs,hcs_sm)接口查询某个仓库的文件信息获取。 **取值范围：** 不涉及。
+     * @return blob
+     */
+    public String getBlob() {
+        return blob;
+    }
+
+    public void setBlob(String blob) {
+        this.blob = blob;
+    }
+
+    public ShowRepositoryNavigationOutlineRequest withFilePath(String filePath) {
+        this.filePath = filePath;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 文件路径。 **取值范围：** 字符串长度不少于1，不超过10000。
+     * @return filePath
+     */
+    public String getFilePath() {
+        return filePath;
+    }
+
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        ShowRepositoryNavigationOutlineRequest that = (ShowRepositoryNavigationOutlineRequest) obj;
+        return Objects.equals(this.repositoryId, that.repositoryId) && Objects.equals(this.revision, that.revision)
+            && Objects.equals(this.ref, that.ref) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.blob, that.blob) && Objects.equals(this.filePath, that.filePath);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(repositoryId, revision, ref, language, blob, filePath);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ShowRepositoryNavigationOutlineRequest {\n");
+        sb.append("    repositoryId: ").append(toIndentedString(repositoryId)).append("\n");
+        sb.append("    revision: ").append(toIndentedString(revision)).append("\n");
+        sb.append("    ref: ").append(toIndentedString(ref)).append("\n");
+        sb.append("    language: ").append(toIndentedString(language)).append("\n");
+        sb.append("    blob: ").append(toIndentedString(blob)).append("\n");
+        sb.append("    filePath: ").append(toIndentedString(filePath)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

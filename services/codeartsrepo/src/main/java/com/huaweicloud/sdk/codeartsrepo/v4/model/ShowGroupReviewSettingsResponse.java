@@ -45,24 +45,14 @@ public class ShowGroupReviewSettingsResponse extends SdkResponse {
     private List<String> reviewModules = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "repository_id")
+    @JsonProperty(value = "secondary_category_type")
 
-    private Integer repositoryId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "note_required_attributes")
-
-    private List<RequiredAttributeDto> noteRequiredAttributes = null;
+    private String secondaryCategoryType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "codehub_default_categories")
+    @JsonProperty(value = "secondary_categories")
 
-    private List<CategoryDto> codehubDefaultCategories = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "hicode_default_categories")
-
-    private List<CategoryDto> hicodeDefaultCategories = null;
+    private List<CategoryDto> secondaryCategories = null;
 
     public ShowGroupReviewSettingsResponse withCategoriesAndModulesEnabled(Boolean categoriesAndModulesEnabled) {
         this.categoriesAndModulesEnabled = categoriesAndModulesEnabled;
@@ -232,127 +222,55 @@ public class ShowGroupReviewSettingsResponse extends SdkResponse {
         this.reviewModules = reviewModules;
     }
 
-    public ShowGroupReviewSettingsResponse withRepositoryId(Integer repositoryId) {
-        this.repositoryId = repositoryId;
+    public ShowGroupReviewSettingsResponse withSecondaryCategoryType(String secondaryCategoryType) {
+        this.secondaryCategoryType = secondaryCategoryType;
         return this;
     }
 
     /**
-     * **参数解释：** 仓库id。
-     * minimum: 1
-     * maximum: 2147483647
-     * @return repositoryId
+     * **参数解释：** 系统预置检视意见分类类型(启用系统预置检视意见分类时返回，默认'HiCode')。
+     * @return secondaryCategoryType
      */
-    public Integer getRepositoryId() {
-        return repositoryId;
+    public String getSecondaryCategoryType() {
+        return secondaryCategoryType;
     }
 
-    public void setRepositoryId(Integer repositoryId) {
-        this.repositoryId = repositoryId;
+    public void setSecondaryCategoryType(String secondaryCategoryType) {
+        this.secondaryCategoryType = secondaryCategoryType;
     }
 
-    public ShowGroupReviewSettingsResponse withNoteRequiredAttributes(
-        List<RequiredAttributeDto> noteRequiredAttributes) {
-        this.noteRequiredAttributes = noteRequiredAttributes;
+    public ShowGroupReviewSettingsResponse withSecondaryCategories(List<CategoryDto> secondaryCategories) {
+        this.secondaryCategories = secondaryCategories;
         return this;
     }
 
-    public ShowGroupReviewSettingsResponse addNoteRequiredAttributesItem(
-        RequiredAttributeDto noteRequiredAttributesItem) {
-        if (this.noteRequiredAttributes == null) {
-            this.noteRequiredAttributes = new ArrayList<>();
+    public ShowGroupReviewSettingsResponse addSecondaryCategoriesItem(CategoryDto secondaryCategoriesItem) {
+        if (this.secondaryCategories == null) {
+            this.secondaryCategories = new ArrayList<>();
         }
-        this.noteRequiredAttributes.add(noteRequiredAttributesItem);
+        this.secondaryCategories.add(secondaryCategoriesItem);
         return this;
     }
 
-    public ShowGroupReviewSettingsResponse withNoteRequiredAttributes(
-        Consumer<List<RequiredAttributeDto>> noteRequiredAttributesSetter) {
-        if (this.noteRequiredAttributes == null) {
-            this.noteRequiredAttributes = new ArrayList<>();
+    public ShowGroupReviewSettingsResponse withSecondaryCategories(
+        Consumer<List<CategoryDto>> secondaryCategoriesSetter) {
+        if (this.secondaryCategories == null) {
+            this.secondaryCategories = new ArrayList<>();
         }
-        noteRequiredAttributesSetter.accept(this.noteRequiredAttributes);
+        secondaryCategoriesSetter.accept(this.secondaryCategories);
         return this;
     }
 
     /**
-     * **参数解释：** 检视意见必填项。
-     * @return noteRequiredAttributes
+     * **参数解释：** 系统预置检视意见分类详情(启用系统预置检视意见分类时返回)。
+     * @return secondaryCategories
      */
-    public List<RequiredAttributeDto> getNoteRequiredAttributes() {
-        return noteRequiredAttributes;
+    public List<CategoryDto> getSecondaryCategories() {
+        return secondaryCategories;
     }
 
-    public void setNoteRequiredAttributes(List<RequiredAttributeDto> noteRequiredAttributes) {
-        this.noteRequiredAttributes = noteRequiredAttributes;
-    }
-
-    public ShowGroupReviewSettingsResponse withCodehubDefaultCategories(List<CategoryDto> codehubDefaultCategories) {
-        this.codehubDefaultCategories = codehubDefaultCategories;
-        return this;
-    }
-
-    public ShowGroupReviewSettingsResponse addCodehubDefaultCategoriesItem(CategoryDto codehubDefaultCategoriesItem) {
-        if (this.codehubDefaultCategories == null) {
-            this.codehubDefaultCategories = new ArrayList<>();
-        }
-        this.codehubDefaultCategories.add(codehubDefaultCategoriesItem);
-        return this;
-    }
-
-    public ShowGroupReviewSettingsResponse withCodehubDefaultCategories(
-        Consumer<List<CategoryDto>> codehubDefaultCategoriesSetter) {
-        if (this.codehubDefaultCategories == null) {
-            this.codehubDefaultCategories = new ArrayList<>();
-        }
-        codehubDefaultCategoriesSetter.accept(this.codehubDefaultCategories);
-        return this;
-    }
-
-    /**
-     * **参数解释：** 检视意见分类(所有可勾选的，需传参with_default_review_categories: true才返回)。
-     * @return codehubDefaultCategories
-     */
-    public List<CategoryDto> getCodehubDefaultCategories() {
-        return codehubDefaultCategories;
-    }
-
-    public void setCodehubDefaultCategories(List<CategoryDto> codehubDefaultCategories) {
-        this.codehubDefaultCategories = codehubDefaultCategories;
-    }
-
-    public ShowGroupReviewSettingsResponse withHicodeDefaultCategories(List<CategoryDto> hicodeDefaultCategories) {
-        this.hicodeDefaultCategories = hicodeDefaultCategories;
-        return this;
-    }
-
-    public ShowGroupReviewSettingsResponse addHicodeDefaultCategoriesItem(CategoryDto hicodeDefaultCategoriesItem) {
-        if (this.hicodeDefaultCategories == null) {
-            this.hicodeDefaultCategories = new ArrayList<>();
-        }
-        this.hicodeDefaultCategories.add(hicodeDefaultCategoriesItem);
-        return this;
-    }
-
-    public ShowGroupReviewSettingsResponse withHicodeDefaultCategories(
-        Consumer<List<CategoryDto>> hicodeDefaultCategoriesSetter) {
-        if (this.hicodeDefaultCategories == null) {
-            this.hicodeDefaultCategories = new ArrayList<>();
-        }
-        hicodeDefaultCategoriesSetter.accept(this.hicodeDefaultCategories);
-        return this;
-    }
-
-    /**
-     * **参数解释：** 系统预置检视意见分类(需传参with_default_review_categories: true才返回)。
-     * @return hicodeDefaultCategories
-     */
-    public List<CategoryDto> getHicodeDefaultCategories() {
-        return hicodeDefaultCategories;
-    }
-
-    public void setHicodeDefaultCategories(List<CategoryDto> hicodeDefaultCategories) {
-        this.hicodeDefaultCategories = hicodeDefaultCategories;
+    public void setSecondaryCategories(List<CategoryDto> secondaryCategories) {
+        this.secondaryCategories = secondaryCategories;
     }
 
     @Override
@@ -370,10 +288,8 @@ public class ShowGroupReviewSettingsResponse extends SdkResponse {
             && Objects.equals(this.reviewDefaultCategories, that.reviewDefaultCategories)
             && Objects.equals(this.reviewCustomizedCategories, that.reviewCustomizedCategories)
             && Objects.equals(this.reviewModules, that.reviewModules)
-            && Objects.equals(this.repositoryId, that.repositoryId)
-            && Objects.equals(this.noteRequiredAttributes, that.noteRequiredAttributes)
-            && Objects.equals(this.codehubDefaultCategories, that.codehubDefaultCategories)
-            && Objects.equals(this.hicodeDefaultCategories, that.hicodeDefaultCategories);
+            && Objects.equals(this.secondaryCategoryType, that.secondaryCategoryType)
+            && Objects.equals(this.secondaryCategories, that.secondaryCategories);
     }
 
     @Override
@@ -384,10 +300,8 @@ public class ShowGroupReviewSettingsResponse extends SdkResponse {
             reviewDefaultCategories,
             reviewCustomizedCategories,
             reviewModules,
-            repositoryId,
-            noteRequiredAttributes,
-            codehubDefaultCategories,
-            hicodeDefaultCategories);
+            secondaryCategoryType,
+            secondaryCategories);
     }
 
     @Override
@@ -402,10 +316,8 @@ public class ShowGroupReviewSettingsResponse extends SdkResponse {
         sb.append("    reviewDefaultCategories: ").append(toIndentedString(reviewDefaultCategories)).append("\n");
         sb.append("    reviewCustomizedCategories: ").append(toIndentedString(reviewCustomizedCategories)).append("\n");
         sb.append("    reviewModules: ").append(toIndentedString(reviewModules)).append("\n");
-        sb.append("    repositoryId: ").append(toIndentedString(repositoryId)).append("\n");
-        sb.append("    noteRequiredAttributes: ").append(toIndentedString(noteRequiredAttributes)).append("\n");
-        sb.append("    codehubDefaultCategories: ").append(toIndentedString(codehubDefaultCategories)).append("\n");
-        sb.append("    hicodeDefaultCategories: ").append(toIndentedString(hicodeDefaultCategories)).append("\n");
+        sb.append("    secondaryCategoryType: ").append(toIndentedString(secondaryCategoryType)).append("\n");
+        sb.append("    secondaryCategories: ").append(toIndentedString(secondaryCategories)).append("\n");
         sb.append("}");
         return sb.toString();
     }

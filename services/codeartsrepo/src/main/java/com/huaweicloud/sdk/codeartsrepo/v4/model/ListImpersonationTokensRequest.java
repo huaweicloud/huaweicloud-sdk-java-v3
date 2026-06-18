@@ -15,11 +15,6 @@ import java.util.Objects;
  */
 public class ListImpersonationTokensRequest {
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "group_id")
-
-    private Integer groupId;
-
     /**
      * **参数解释：** 状态 all 所有状态 active 活跃，未过期 inactive 非活跃，失效的。
      */
@@ -116,25 +111,6 @@ public class ListImpersonationTokensRequest {
 
     private Integer limit;
 
-    public ListImpersonationTokensRequest withGroupId(Integer groupId) {
-        this.groupId = groupId;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 代码组id，代码组首页，Group ID后的数字Id
-     * minimum: 1
-     * maximum: 2147483647
-     * @return groupId
-     */
-    public Integer getGroupId() {
-        return groupId;
-    }
-
-    public void setGroupId(Integer groupId) {
-        this.groupId = groupId;
-    }
-
     public ListImpersonationTokensRequest withState(StateEnum state) {
         this.state = state;
         return this;
@@ -216,21 +192,19 @@ public class ListImpersonationTokensRequest {
             return false;
         }
         ListImpersonationTokensRequest that = (ListImpersonationTokensRequest) obj;
-        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.state, that.state)
-            && Objects.equals(this.search, that.search) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+        return Objects.equals(this.state, that.state) && Objects.equals(this.search, that.search)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groupId, state, search, offset, limit);
+        return Objects.hash(state, search, offset, limit);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListImpersonationTokensRequest {\n");
-        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    search: ").append(toIndentedString(search)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

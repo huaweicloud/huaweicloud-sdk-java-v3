@@ -138,6 +138,11 @@ public class CommitDto {
 
     private String userName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "author_id")
+
+    private Integer authorId;
+
     public CommitDto withId(String id) {
         this.id = id;
         return this;
@@ -597,6 +602,25 @@ public class CommitDto {
         this.userName = userName;
     }
 
+    public CommitDto withAuthorId(Integer authorId) {
+        this.authorId = authorId;
+        return this;
+    }
+
+    /**
+     * 作者id
+     * minimum: 1
+     * maximum: 2147483647
+     * @return authorId
+     */
+    public Integer getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(Integer authorId) {
+        this.authorId = authorId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -622,7 +646,8 @@ public class CommitDto {
             && Objects.equals(this.authorAvatarUrl, that.authorAvatarUrl)
             && Objects.equals(this.committerAvatarUrl, that.committerAvatarUrl)
             && Objects.equals(this.relateUrl, that.relateUrl) && Objects.equals(this.nickName, that.nickName)
-            && Objects.equals(this.tenantName, that.tenantName) && Objects.equals(this.userName, that.userName);
+            && Objects.equals(this.tenantName, that.tenantName) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.authorId, that.authorId);
     }
 
     @Override
@@ -651,7 +676,8 @@ public class CommitDto {
             relateUrl,
             nickName,
             tenantName,
-            userName);
+            userName,
+            authorId);
     }
 
     @Override
@@ -683,6 +709,7 @@ public class CommitDto {
         sb.append("    nickName: ").append(toIndentedString(nickName)).append("\n");
         sb.append("    tenantName: ").append(toIndentedString(tenantName)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    authorId: ").append(toIndentedString(authorId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

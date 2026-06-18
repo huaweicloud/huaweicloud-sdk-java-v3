@@ -18,7 +18,7 @@ public class Subtask {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
-    private Integer jobId;
+    private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "namespace")
@@ -77,7 +77,7 @@ public class Subtask {
         this.id = id;
     }
 
-    public Subtask withJobId(Integer jobId) {
+    public Subtask withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
@@ -86,11 +86,11 @@ public class Subtask {
      * 内部任务ID
      * @return jobId
      */
-    public Integer getJobId() {
+    public String getJobId() {
         return jobId;
     }
 
-    public void setJobId(Integer jobId) {
+    public void setJobId(String jobId) {
         this.jobId = jobId;
     }
 

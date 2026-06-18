@@ -6,8 +6,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -20,47 +22,22 @@ public class UpdateMergeRequestDiscussionInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Integer id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
+    @JsonProperty(value = "individual_note")
 
-    private String type;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
-
-    private String body;
+    private Boolean individualNote;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "attachment")
+    @JsonProperty(value = "notes")
 
-    private String attachment;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "author")
-
-    private UserBasicDto author;
+    private List<NoteDto> notes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "created_at")
+    @JsonProperty(value = "repository_id")
 
-    private String createdAt;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "updated_at")
-
-    private String updatedAt;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "system")
-
-    private Boolean system;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "noteable_id")
-
-    private Integer noteableId;
+    private Integer repositoryId;
 
     /**
      * **参数解释：** 意见类型。 **取值范围：** - MergeRequest: 合并请求下提的检视意见。 - Commit: 代码页或提交记录下提的检视意见。
@@ -143,44 +120,34 @@ public class UpdateMergeRequestDiscussionInfoResponse extends SdkResponse {
     private String commitId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resolvable")
+    @JsonProperty(value = "repository_full_path")
 
-    private Boolean resolvable;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_reply")
-
-    private Boolean isReply;
+    private String repositoryFullPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resolved_by")
+    @JsonProperty(value = "a_mode")
 
-    private UserBasicDto resolvedBy;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "noteable_iid")
-
-    private Integer noteableIid;
+    private String aMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "discussion_id")
+    @JsonProperty(value = "b_mode")
 
-    private String discussionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "repository")
-
-    private String repository;
+    private String bMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "diff_file")
+    @JsonProperty(value = "deleted_file")
 
-    private String diffFile;
+    private Boolean deletedFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "diff")
+    @JsonProperty(value = "new_file")
 
-    private String diff;
+    private Boolean newFile;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resolved")
+
+    private Boolean resolved;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "archived")
@@ -208,7 +175,7 @@ public class UpdateMergeRequestDiscussionInfoResponse extends SdkResponse {
     private String reviewModules;
 
     /**
-     * **参数解释：** 严重程度key。
+     * **参数解释：** 严重程度key。 **取值范围：** - suggestion: 建议。 - minor: 一般。 - major: 严重。 - fatal: 致命。
      */
     public static final class SeverityEnum {
 
@@ -300,7 +267,7 @@ public class UpdateMergeRequestDiscussionInfoResponse extends SdkResponse {
     private String severityCn;
 
     /**
-     * **参数解释：** 严重程度英文。
+     * **参数解释：** 严重程度英文。 **取值范围：** - Suggestion: 建议。 - Minor: 一般。 - major: 严重。 - fatal: 致命。
      */
     public static final class SeverityEnEnum {
 
@@ -387,16 +354,6 @@ public class UpdateMergeRequestDiscussionInfoResponse extends SdkResponse {
     private SeverityEnEnum severityEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "file_path")
-
-    private String filePath;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "line")
-
-    private String line;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "assignee")
 
     private UserBasicDto assignee;
@@ -407,199 +364,109 @@ public class UpdateMergeRequestDiscussionInfoResponse extends SdkResponse {
     private UserBasicDto proposer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "position")
+    @JsonProperty(value = "merge_request_version_params")
 
-    private PositionDto position;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resolved")
-
-    private Boolean resolved;
+    private MergeRequestVersionParamsDto mergeRequestVersionParams;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_outdated")
+    @JsonProperty(value = "diff_file")
 
-    private Boolean isOutdated;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "moderation_result")
-
-    private Boolean moderationResult;
+    private String diffFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "moderation_time")
+    @JsonProperty(value = "added_lines")
 
-    private Long moderationTime;
+    private Integer addedLines;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "moderation_status")
+    @JsonProperty(value = "removed_lines")
 
-    private Integer moderationStatus;
+    private Integer removedLines;
 
-    public UpdateMergeRequestDiscussionInfoResponse withId(Integer id) {
+    public UpdateMergeRequestDiscussionInfoResponse withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * **参数解释：** 评论id(主评论和回复不共用)。
-     * minimum: 1
-     * maximum: 2147483647
+     * **参数解释：** 检视意见id(主评论和回复共用)。
      * @return id
      */
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public UpdateMergeRequestDiscussionInfoResponse withType(String type) {
-        this.type = type;
+    public UpdateMergeRequestDiscussionInfoResponse withIndividualNote(Boolean individualNote) {
+        this.individualNote = individualNote;
         return this;
     }
 
     /**
-     * **参数解释：** 评论类型。 **取值范围：** - DiscussionNote: 需要解决的关联代码行的评论。 - DiffNote: 一般。
-     * @return type
+     * **参数解释：** 个人检视意见(不需要解决)。
+     * @return individualNote
      */
-    public String getType() {
-        return type;
+    public Boolean getIndividualNote() {
+        return individualNote;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setIndividualNote(Boolean individualNote) {
+        this.individualNote = individualNote;
     }
 
-    public UpdateMergeRequestDiscussionInfoResponse withBody(String body) {
-        this.body = body;
+    public UpdateMergeRequestDiscussionInfoResponse withNotes(List<NoteDto> notes) {
+        this.notes = notes;
         return this;
     }
 
-    /**
-     * **参数解释：** 评论内容。
-     * @return body
-     */
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
-    }
-
-    public UpdateMergeRequestDiscussionInfoResponse withAttachment(String attachment) {
-        this.attachment = attachment;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 附件(弃用)。
-     * @return attachment
-     */
-    public String getAttachment() {
-        return attachment;
-    }
-
-    public void setAttachment(String attachment) {
-        this.attachment = attachment;
-    }
-
-    public UpdateMergeRequestDiscussionInfoResponse withAuthor(UserBasicDto author) {
-        this.author = author;
-        return this;
-    }
-
-    public UpdateMergeRequestDiscussionInfoResponse withAuthor(Consumer<UserBasicDto> authorSetter) {
-        if (this.author == null) {
-            this.author = new UserBasicDto();
-            authorSetter.accept(this.author);
+    public UpdateMergeRequestDiscussionInfoResponse addNotesItem(NoteDto notesItem) {
+        if (this.notes == null) {
+            this.notes = new ArrayList<>();
         }
+        this.notes.add(notesItem);
+        return this;
+    }
 
+    public UpdateMergeRequestDiscussionInfoResponse withNotes(Consumer<List<NoteDto>> notesSetter) {
+        if (this.notes == null) {
+            this.notes = new ArrayList<>();
+        }
+        notesSetter.accept(this.notes);
         return this;
     }
 
     /**
-     * Get author
-     * @return author
+     * **参数解释：** 评论列表(主评+回复)。
+     * @return notes
      */
-    public UserBasicDto getAuthor() {
-        return author;
+    public List<NoteDto> getNotes() {
+        return notes;
     }
 
-    public void setAuthor(UserBasicDto author) {
-        this.author = author;
+    public void setNotes(List<NoteDto> notes) {
+        this.notes = notes;
     }
 
-    public UpdateMergeRequestDiscussionInfoResponse withCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+    public UpdateMergeRequestDiscussionInfoResponse withRepositoryId(Integer repositoryId) {
+        this.repositoryId = repositoryId;
         return this;
     }
 
     /**
-     * **参数解释：** 创建时间。
-     * @return createdAt
-     */
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public UpdateMergeRequestDiscussionInfoResponse withUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 更新时间。
-     * @return updatedAt
-     */
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public UpdateMergeRequestDiscussionInfoResponse withSystem(Boolean system) {
-        this.system = system;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 是否为系统添加的。
-     * @return system
-     */
-    public Boolean getSystem() {
-        return system;
-    }
-
-    public void setSystem(Boolean system) {
-        this.system = system;
-    }
-
-    public UpdateMergeRequestDiscussionInfoResponse withNoteableId(Integer noteableId) {
-        this.noteableId = noteableId;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 合并请求id或issue id。
+     * **参数解释：** 仓库id。
      * minimum: 1
      * maximum: 2147483647
-     * @return noteableId
+     * @return repositoryId
      */
-    public Integer getNoteableId() {
-        return noteableId;
+    public Integer getRepositoryId() {
+        return repositoryId;
     }
 
-    public void setNoteableId(Integer noteableId) {
-        this.noteableId = noteableId;
+    public void setRepositoryId(Integer repositoryId) {
+        this.repositoryId = repositoryId;
     }
 
     public UpdateMergeRequestDiscussionInfoResponse withNoteableType(NoteableTypeEnum noteableType) {
@@ -636,151 +503,110 @@ public class UpdateMergeRequestDiscussionInfoResponse extends SdkResponse {
         this.commitId = commitId;
     }
 
-    public UpdateMergeRequestDiscussionInfoResponse withResolvable(Boolean resolvable) {
-        this.resolvable = resolvable;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 是否需要解决。
-     * @return resolvable
-     */
-    public Boolean getResolvable() {
-        return resolvable;
-    }
-
-    public void setResolvable(Boolean resolvable) {
-        this.resolvable = resolvable;
-    }
-
-    public UpdateMergeRequestDiscussionInfoResponse withIsReply(Boolean isReply) {
-        this.isReply = isReply;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 是否为回复。
-     * @return isReply
-     */
-    public Boolean getIsReply() {
-        return isReply;
-    }
-
-    public void setIsReply(Boolean isReply) {
-        this.isReply = isReply;
-    }
-
-    public UpdateMergeRequestDiscussionInfoResponse withResolvedBy(UserBasicDto resolvedBy) {
-        this.resolvedBy = resolvedBy;
-        return this;
-    }
-
-    public UpdateMergeRequestDiscussionInfoResponse withResolvedBy(Consumer<UserBasicDto> resolvedBySetter) {
-        if (this.resolvedBy == null) {
-            this.resolvedBy = new UserBasicDto();
-            resolvedBySetter.accept(this.resolvedBy);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get resolvedBy
-     * @return resolvedBy
-     */
-    public UserBasicDto getResolvedBy() {
-        return resolvedBy;
-    }
-
-    public void setResolvedBy(UserBasicDto resolvedBy) {
-        this.resolvedBy = resolvedBy;
-    }
-
-    public UpdateMergeRequestDiscussionInfoResponse withNoteableIid(Integer noteableIid) {
-        this.noteableIid = noteableIid;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 合并请求iid或issue iid。
-     * minimum: 1
-     * maximum: 2147483647
-     * @return noteableIid
-     */
-    public Integer getNoteableIid() {
-        return noteableIid;
-    }
-
-    public void setNoteableIid(Integer noteableIid) {
-        this.noteableIid = noteableIid;
-    }
-
-    public UpdateMergeRequestDiscussionInfoResponse withDiscussionId(String discussionId) {
-        this.discussionId = discussionId;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 检视意见id(主评论和回复共用)。
-     * @return discussionId
-     */
-    public String getDiscussionId() {
-        return discussionId;
-    }
-
-    public void setDiscussionId(String discussionId) {
-        this.discussionId = discussionId;
-    }
-
-    public UpdateMergeRequestDiscussionInfoResponse withRepository(String repository) {
-        this.repository = repository;
+    public UpdateMergeRequestDiscussionInfoResponse withRepositoryFullPath(String repositoryFullPath) {
+        this.repositoryFullPath = repositoryFullPath;
         return this;
     }
 
     /**
      * **参数解释：** 仓库路径。
-     * @return repository
+     * @return repositoryFullPath
      */
-    public String getRepository() {
-        return repository;
+    public String getRepositoryFullPath() {
+        return repositoryFullPath;
     }
 
-    public void setRepository(String repository) {
-        this.repository = repository;
+    public void setRepositoryFullPath(String repositoryFullPath) {
+        this.repositoryFullPath = repositoryFullPath;
     }
 
-    public UpdateMergeRequestDiscussionInfoResponse withDiffFile(String diffFile) {
-        this.diffFile = diffFile;
+    public UpdateMergeRequestDiscussionInfoResponse withAMode(String aMode) {
+        this.aMode = aMode;
         return this;
     }
 
     /**
-     * **参数解释：** 关联代码行所在文件的文件名。
-     * @return diffFile
+     * **参数解释：** 文件旧权限(默认100644)。
+     * @return aMode
      */
-    public String getDiffFile() {
-        return diffFile;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "a_mode")
+    public String getAMode() {
+        return aMode;
     }
 
-    public void setDiffFile(String diffFile) {
-        this.diffFile = diffFile;
+    public void setAMode(String aMode) {
+        this.aMode = aMode;
     }
 
-    public UpdateMergeRequestDiscussionInfoResponse withDiff(String diff) {
-        this.diff = diff;
+    public UpdateMergeRequestDiscussionInfoResponse withBMode(String bMode) {
+        this.bMode = bMode;
         return this;
     }
 
     /**
-     * **参数解释：** 关联代码行的代码片段。
-     * @return diff
+     * **参数解释：** 文件新权限(默认100644)。
+     * @return bMode
      */
-    public String getDiff() {
-        return diff;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "b_mode")
+    public String getBMode() {
+        return bMode;
     }
 
-    public void setDiff(String diff) {
-        this.diff = diff;
+    public void setBMode(String bMode) {
+        this.bMode = bMode;
+    }
+
+    public UpdateMergeRequestDiscussionInfoResponse withDeletedFile(Boolean deletedFile) {
+        this.deletedFile = deletedFile;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否为删除文件。
+     * @return deletedFile
+     */
+    public Boolean getDeletedFile() {
+        return deletedFile;
+    }
+
+    public void setDeletedFile(Boolean deletedFile) {
+        this.deletedFile = deletedFile;
+    }
+
+    public UpdateMergeRequestDiscussionInfoResponse withNewFile(Boolean newFile) {
+        this.newFile = newFile;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否为新增文件。
+     * @return newFile
+     */
+    public Boolean getNewFile() {
+        return newFile;
+    }
+
+    public void setNewFile(Boolean newFile) {
+        this.newFile = newFile;
+    }
+
+    public UpdateMergeRequestDiscussionInfoResponse withResolved(Boolean resolved) {
+        this.resolved = resolved;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否已解决。
+     * @return resolved
+     */
+    public Boolean getResolved() {
+        return resolved;
+    }
+
+    public void setResolved(Boolean resolved) {
+        this.resolved = resolved;
     }
 
     public UpdateMergeRequestDiscussionInfoResponse withArchived(Boolean archived) {
@@ -823,7 +649,7 @@ public class UpdateMergeRequestDiscussionInfoResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 意见分类中文名。
+     * **参数解释：** 意见分类中文。
      * @return reviewCategoriesCn
      */
     public String getReviewCategoriesCn() {
@@ -840,7 +666,7 @@ public class UpdateMergeRequestDiscussionInfoResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 合并请求版本信息。
+     * **参数解释：** 意见分类英文。
      * @return reviewCategoriesEn
      */
     public String getReviewCategoriesEn() {
@@ -857,7 +683,7 @@ public class UpdateMergeRequestDiscussionInfoResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 合并请求版本信息。
+     * **参数解释：** 意见模块。
      * @return reviewModules
      */
     public String getReviewModules() {
@@ -874,7 +700,7 @@ public class UpdateMergeRequestDiscussionInfoResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 严重程度key。
+     * **参数解释：** 严重程度key。 **取值范围：** - suggestion: 建议。 - minor: 一般。 - major: 严重。 - fatal: 致命。
      * @return severity
      */
     public SeverityEnum getSeverity() {
@@ -891,7 +717,7 @@ public class UpdateMergeRequestDiscussionInfoResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 严重程度中文。 **约束限制：** - 建议 - 一般 - 严重 - 致命
+     * **参数解释：** 严重程度中文。 **取值范围：** - 建议 - 一般 - 严重 - 致命
      * @return severityCn
      */
     public String getSeverityCn() {
@@ -908,7 +734,7 @@ public class UpdateMergeRequestDiscussionInfoResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 严重程度英文。
+     * **参数解释：** 严重程度英文。 **取值范围：** - Suggestion: 建议。 - Minor: 一般。 - major: 严重。 - fatal: 致命。
      * @return severityEn
      */
     public SeverityEnEnum getSeverityEn() {
@@ -917,40 +743,6 @@ public class UpdateMergeRequestDiscussionInfoResponse extends SdkResponse {
 
     public void setSeverityEn(SeverityEnEnum severityEn) {
         this.severityEn = severityEn;
-    }
-
-    public UpdateMergeRequestDiscussionInfoResponse withFilePath(String filePath) {
-        this.filePath = filePath;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 文件路径(弃用)。
-     * @return filePath
-     */
-    public String getFilePath() {
-        return filePath;
-    }
-
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
-    }
-
-    public UpdateMergeRequestDiscussionInfoResponse withLine(String line) {
-        this.line = line;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 行号(弃用)。
-     * @return line
-     */
-    public String getLine() {
-        return line;
-    }
-
-    public void setLine(String line) {
-        this.line = line;
     }
 
     public UpdateMergeRequestDiscussionInfoResponse withAssignee(UserBasicDto assignee) {
@@ -1005,115 +797,87 @@ public class UpdateMergeRequestDiscussionInfoResponse extends SdkResponse {
         this.proposer = proposer;
     }
 
-    public UpdateMergeRequestDiscussionInfoResponse withPosition(PositionDto position) {
-        this.position = position;
+    public UpdateMergeRequestDiscussionInfoResponse withMergeRequestVersionParams(
+        MergeRequestVersionParamsDto mergeRequestVersionParams) {
+        this.mergeRequestVersionParams = mergeRequestVersionParams;
         return this;
     }
 
-    public UpdateMergeRequestDiscussionInfoResponse withPosition(Consumer<PositionDto> positionSetter) {
-        if (this.position == null) {
-            this.position = new PositionDto();
-            positionSetter.accept(this.position);
+    public UpdateMergeRequestDiscussionInfoResponse withMergeRequestVersionParams(
+        Consumer<MergeRequestVersionParamsDto> mergeRequestVersionParamsSetter) {
+        if (this.mergeRequestVersionParams == null) {
+            this.mergeRequestVersionParams = new MergeRequestVersionParamsDto();
+            mergeRequestVersionParamsSetter.accept(this.mergeRequestVersionParams);
         }
 
         return this;
     }
 
     /**
-     * Get position
-     * @return position
+     * Get mergeRequestVersionParams
+     * @return mergeRequestVersionParams
      */
-    public PositionDto getPosition() {
-        return position;
+    public MergeRequestVersionParamsDto getMergeRequestVersionParams() {
+        return mergeRequestVersionParams;
     }
 
-    public void setPosition(PositionDto position) {
-        this.position = position;
+    public void setMergeRequestVersionParams(MergeRequestVersionParamsDto mergeRequestVersionParams) {
+        this.mergeRequestVersionParams = mergeRequestVersionParams;
     }
 
-    public UpdateMergeRequestDiscussionInfoResponse withResolved(Boolean resolved) {
-        this.resolved = resolved;
+    public UpdateMergeRequestDiscussionInfoResponse withDiffFile(String diffFile) {
+        this.diffFile = diffFile;
         return this;
     }
 
     /**
-     * **参数解释：** 是否已解决。
-     * @return resolved
+     * **参数解释：** 变更页检视意见的代码片段。
+     * @return diffFile
      */
-    public Boolean getResolved() {
-        return resolved;
+    public String getDiffFile() {
+        return diffFile;
     }
 
-    public void setResolved(Boolean resolved) {
-        this.resolved = resolved;
+    public void setDiffFile(String diffFile) {
+        this.diffFile = diffFile;
     }
 
-    public UpdateMergeRequestDiscussionInfoResponse withIsOutdated(Boolean isOutdated) {
-        this.isOutdated = isOutdated;
+    public UpdateMergeRequestDiscussionInfoResponse withAddedLines(Integer addedLines) {
+        this.addedLines = addedLines;
         return this;
     }
 
     /**
-     * **参数解释：** 是否已过期。
-     * @return isOutdated
+     * **参数解释：** 检视意见所在文件的新增行数量。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return addedLines
      */
-    public Boolean getIsOutdated() {
-        return isOutdated;
+    public Integer getAddedLines() {
+        return addedLines;
     }
 
-    public void setIsOutdated(Boolean isOutdated) {
-        this.isOutdated = isOutdated;
+    public void setAddedLines(Integer addedLines) {
+        this.addedLines = addedLines;
     }
 
-    public UpdateMergeRequestDiscussionInfoResponse withModerationResult(Boolean moderationResult) {
-        this.moderationResult = moderationResult;
+    public UpdateMergeRequestDiscussionInfoResponse withRemovedLines(Integer removedLines) {
+        this.removedLines = removedLines;
         return this;
     }
 
     /**
-     * **参数解释：** 内容审核结果。
-     * @return moderationResult
+     * **参数解释：** 检视意见所在文件的删除行数量。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return removedLines
      */
-    public Boolean getModerationResult() {
-        return moderationResult;
+    public Integer getRemovedLines() {
+        return removedLines;
     }
 
-    public void setModerationResult(Boolean moderationResult) {
-        this.moderationResult = moderationResult;
-    }
-
-    public UpdateMergeRequestDiscussionInfoResponse withModerationTime(Long moderationTime) {
-        this.moderationTime = moderationTime;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 内容审核时间。
-     * @return moderationTime
-     */
-    public Long getModerationTime() {
-        return moderationTime;
-    }
-
-    public void setModerationTime(Long moderationTime) {
-        this.moderationTime = moderationTime;
-    }
-
-    public UpdateMergeRequestDiscussionInfoResponse withModerationStatus(Integer moderationStatus) {
-        this.moderationStatus = moderationStatus;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 内容审核状态。
-     * @return moderationStatus
-     */
-    public Integer getModerationStatus() {
-        return moderationStatus;
-    }
-
-    public void setModerationStatus(Integer moderationStatus) {
-        this.moderationStatus = moderationStatus;
+    public void setRemovedLines(Integer removedLines) {
+        this.removedLines = removedLines;
     }
 
     @Override
@@ -1125,52 +889,38 @@ public class UpdateMergeRequestDiscussionInfoResponse extends SdkResponse {
             return false;
         }
         UpdateMergeRequestDiscussionInfoResponse that = (UpdateMergeRequestDiscussionInfoResponse) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.body, that.body) && Objects.equals(this.attachment, that.attachment)
-            && Objects.equals(this.author, that.author) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.system, that.system)
-            && Objects.equals(this.noteableId, that.noteableId) && Objects.equals(this.noteableType, that.noteableType)
-            && Objects.equals(this.commitId, that.commitId) && Objects.equals(this.resolvable, that.resolvable)
-            && Objects.equals(this.isReply, that.isReply) && Objects.equals(this.resolvedBy, that.resolvedBy)
-            && Objects.equals(this.noteableIid, that.noteableIid)
-            && Objects.equals(this.discussionId, that.discussionId) && Objects.equals(this.repository, that.repository)
-            && Objects.equals(this.diffFile, that.diffFile) && Objects.equals(this.diff, that.diff)
-            && Objects.equals(this.archived, that.archived)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.individualNote, that.individualNote)
+            && Objects.equals(this.notes, that.notes) && Objects.equals(this.repositoryId, that.repositoryId)
+            && Objects.equals(this.noteableType, that.noteableType) && Objects.equals(this.commitId, that.commitId)
+            && Objects.equals(this.repositoryFullPath, that.repositoryFullPath)
+            && Objects.equals(this.aMode, that.aMode) && Objects.equals(this.bMode, that.bMode)
+            && Objects.equals(this.deletedFile, that.deletedFile) && Objects.equals(this.newFile, that.newFile)
+            && Objects.equals(this.resolved, that.resolved) && Objects.equals(this.archived, that.archived)
             && Objects.equals(this.reviewCategories, that.reviewCategories)
             && Objects.equals(this.reviewCategoriesCn, that.reviewCategoriesCn)
             && Objects.equals(this.reviewCategoriesEn, that.reviewCategoriesEn)
             && Objects.equals(this.reviewModules, that.reviewModules) && Objects.equals(this.severity, that.severity)
             && Objects.equals(this.severityCn, that.severityCn) && Objects.equals(this.severityEn, that.severityEn)
-            && Objects.equals(this.filePath, that.filePath) && Objects.equals(this.line, that.line)
             && Objects.equals(this.assignee, that.assignee) && Objects.equals(this.proposer, that.proposer)
-            && Objects.equals(this.position, that.position) && Objects.equals(this.resolved, that.resolved)
-            && Objects.equals(this.isOutdated, that.isOutdated)
-            && Objects.equals(this.moderationResult, that.moderationResult)
-            && Objects.equals(this.moderationTime, that.moderationTime)
-            && Objects.equals(this.moderationStatus, that.moderationStatus);
+            && Objects.equals(this.mergeRequestVersionParams, that.mergeRequestVersionParams)
+            && Objects.equals(this.diffFile, that.diffFile) && Objects.equals(this.addedLines, that.addedLines)
+            && Objects.equals(this.removedLines, that.removedLines);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id,
-            type,
-            body,
-            attachment,
-            author,
-            createdAt,
-            updatedAt,
-            system,
-            noteableId,
+            individualNote,
+            notes,
+            repositoryId,
             noteableType,
             commitId,
-            resolvable,
-            isReply,
-            resolvedBy,
-            noteableIid,
-            discussionId,
-            repository,
-            diffFile,
-            diff,
+            repositoryFullPath,
+            aMode,
+            bMode,
+            deletedFile,
+            newFile,
+            resolved,
             archived,
             reviewCategories,
             reviewCategoriesCn,
@@ -1179,16 +929,12 @@ public class UpdateMergeRequestDiscussionInfoResponse extends SdkResponse {
             severity,
             severityCn,
             severityEn,
-            filePath,
-            line,
             assignee,
             proposer,
-            position,
-            resolved,
-            isOutdated,
-            moderationResult,
-            moderationTime,
-            moderationStatus);
+            mergeRequestVersionParams,
+            diffFile,
+            addedLines,
+            removedLines);
     }
 
     @Override
@@ -1196,24 +942,17 @@ public class UpdateMergeRequestDiscussionInfoResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateMergeRequestDiscussionInfoResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
-        sb.append("    attachment: ").append(toIndentedString(attachment)).append("\n");
-        sb.append("    author: ").append(toIndentedString(author)).append("\n");
-        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-        sb.append("    system: ").append(toIndentedString(system)).append("\n");
-        sb.append("    noteableId: ").append(toIndentedString(noteableId)).append("\n");
+        sb.append("    individualNote: ").append(toIndentedString(individualNote)).append("\n");
+        sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
+        sb.append("    repositoryId: ").append(toIndentedString(repositoryId)).append("\n");
         sb.append("    noteableType: ").append(toIndentedString(noteableType)).append("\n");
         sb.append("    commitId: ").append(toIndentedString(commitId)).append("\n");
-        sb.append("    resolvable: ").append(toIndentedString(resolvable)).append("\n");
-        sb.append("    isReply: ").append(toIndentedString(isReply)).append("\n");
-        sb.append("    resolvedBy: ").append(toIndentedString(resolvedBy)).append("\n");
-        sb.append("    noteableIid: ").append(toIndentedString(noteableIid)).append("\n");
-        sb.append("    discussionId: ").append(toIndentedString(discussionId)).append("\n");
-        sb.append("    repository: ").append(toIndentedString(repository)).append("\n");
-        sb.append("    diffFile: ").append(toIndentedString(diffFile)).append("\n");
-        sb.append("    diff: ").append(toIndentedString(diff)).append("\n");
+        sb.append("    repositoryFullPath: ").append(toIndentedString(repositoryFullPath)).append("\n");
+        sb.append("    aMode: ").append(toIndentedString(aMode)).append("\n");
+        sb.append("    bMode: ").append(toIndentedString(bMode)).append("\n");
+        sb.append("    deletedFile: ").append(toIndentedString(deletedFile)).append("\n");
+        sb.append("    newFile: ").append(toIndentedString(newFile)).append("\n");
+        sb.append("    resolved: ").append(toIndentedString(resolved)).append("\n");
         sb.append("    archived: ").append(toIndentedString(archived)).append("\n");
         sb.append("    reviewCategories: ").append(toIndentedString(reviewCategories)).append("\n");
         sb.append("    reviewCategoriesCn: ").append(toIndentedString(reviewCategoriesCn)).append("\n");
@@ -1222,16 +961,12 @@ public class UpdateMergeRequestDiscussionInfoResponse extends SdkResponse {
         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
         sb.append("    severityCn: ").append(toIndentedString(severityCn)).append("\n");
         sb.append("    severityEn: ").append(toIndentedString(severityEn)).append("\n");
-        sb.append("    filePath: ").append(toIndentedString(filePath)).append("\n");
-        sb.append("    line: ").append(toIndentedString(line)).append("\n");
         sb.append("    assignee: ").append(toIndentedString(assignee)).append("\n");
         sb.append("    proposer: ").append(toIndentedString(proposer)).append("\n");
-        sb.append("    position: ").append(toIndentedString(position)).append("\n");
-        sb.append("    resolved: ").append(toIndentedString(resolved)).append("\n");
-        sb.append("    isOutdated: ").append(toIndentedString(isOutdated)).append("\n");
-        sb.append("    moderationResult: ").append(toIndentedString(moderationResult)).append("\n");
-        sb.append("    moderationTime: ").append(toIndentedString(moderationTime)).append("\n");
-        sb.append("    moderationStatus: ").append(toIndentedString(moderationStatus)).append("\n");
+        sb.append("    mergeRequestVersionParams: ").append(toIndentedString(mergeRequestVersionParams)).append("\n");
+        sb.append("    diffFile: ").append(toIndentedString(diffFile)).append("\n");
+        sb.append("    addedLines: ").append(toIndentedString(addedLines)).append("\n");
+        sb.append("    removedLines: ").append(toIndentedString(removedLines)).append("\n");
         sb.append("}");
         return sb.toString();
     }

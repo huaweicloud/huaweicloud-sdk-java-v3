@@ -66,7 +66,7 @@ public class CreateCherryPickMergeRequestResponse extends SdkResponse {
     }
 
     /**
-     * CherryPick临时分支名名称
+     * CherryPick临时分支名称
      * @return cherryPickBranchName
      */
     public String getCherryPickBranchName() {

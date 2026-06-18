@@ -21,7 +21,7 @@ public class LineDiscussionDto {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "discussions")
 
-    private List<MergeRequestBasicDiscussionDto> discussions = null;
+    private List<MergeRequestDiscussionDto> discussions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "line")
@@ -115,12 +115,12 @@ public class LineDiscussionDto {
 
     private TypeEnum type;
 
-    public LineDiscussionDto withDiscussions(List<MergeRequestBasicDiscussionDto> discussions) {
+    public LineDiscussionDto withDiscussions(List<MergeRequestDiscussionDto> discussions) {
         this.discussions = discussions;
         return this;
     }
 
-    public LineDiscussionDto addDiscussionsItem(MergeRequestBasicDiscussionDto discussionsItem) {
+    public LineDiscussionDto addDiscussionsItem(MergeRequestDiscussionDto discussionsItem) {
         if (this.discussions == null) {
             this.discussions = new ArrayList<>();
         }
@@ -128,7 +128,7 @@ public class LineDiscussionDto {
         return this;
     }
 
-    public LineDiscussionDto withDiscussions(Consumer<List<MergeRequestBasicDiscussionDto>> discussionsSetter) {
+    public LineDiscussionDto withDiscussions(Consumer<List<MergeRequestDiscussionDto>> discussionsSetter) {
         if (this.discussions == null) {
             this.discussions = new ArrayList<>();
         }
@@ -140,11 +140,11 @@ public class LineDiscussionDto {
      * **参数解释：** 位于某一侧某行的检视意见集合。
      * @return discussions
      */
-    public List<MergeRequestBasicDiscussionDto> getDiscussions() {
+    public List<MergeRequestDiscussionDto> getDiscussions() {
         return discussions;
     }
 
-    public void setDiscussions(List<MergeRequestBasicDiscussionDto> discussions) {
+    public void setDiscussions(List<MergeRequestDiscussionDto> discussions) {
         this.discussions = discussions;
     }
 

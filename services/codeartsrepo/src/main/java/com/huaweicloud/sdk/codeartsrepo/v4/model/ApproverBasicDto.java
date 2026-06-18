@@ -65,6 +65,11 @@ public class ApproverBasicDto {
 
     private String approverComment;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "has_permission")
+
+    private Boolean hasPermission;
+
     public ApproverBasicDto withId(Integer id) {
         this.id = id;
         return this;
@@ -254,6 +259,23 @@ public class ApproverBasicDto {
         this.approverComment = approverComment;
     }
 
+    public ApproverBasicDto withHasPermission(Boolean hasPermission) {
+        this.hasPermission = hasPermission;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否有相关权限。
+     * @return hasPermission
+     */
+    public Boolean getHasPermission() {
+        return hasPermission;
+    }
+
+    public void setHasPermission(Boolean hasPermission) {
+        this.hasPermission = hasPermission;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -268,7 +290,8 @@ public class ApproverBasicDto {
             && Objects.equals(this.email, that.email) && Objects.equals(this.state, that.state)
             && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.avatarUrl, that.avatarUrl)
             && Objects.equals(this.nickName, that.nickName) && Objects.equals(this.tenantName, that.tenantName)
-            && Objects.equals(this.approverComment, that.approverComment);
+            && Objects.equals(this.approverComment, that.approverComment)
+            && Objects.equals(this.hasPermission, that.hasPermission);
     }
 
     @Override
@@ -283,7 +306,8 @@ public class ApproverBasicDto {
             avatarUrl,
             nickName,
             tenantName,
-            approverComment);
+            approverComment,
+            hasPermission);
     }
 
     @Override
@@ -301,6 +325,7 @@ public class ApproverBasicDto {
         sb.append("    nickName: ").append(toIndentedString(nickName)).append("\n");
         sb.append("    tenantName: ").append(toIndentedString(tenantName)).append("\n");
         sb.append("    approverComment: ").append(toIndentedString(approverComment)).append("\n");
+        sb.append("    hasPermission: ").append(toIndentedString(hasPermission)).append("\n");
         sb.append("}");
         return sb.toString();
     }

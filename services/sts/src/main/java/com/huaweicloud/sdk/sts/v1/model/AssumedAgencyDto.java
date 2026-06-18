@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 目标委托信息。
+ * **参数解释**： 委托会话或信任委托会话信息。  **取值范围**： 不涉及。 
  */
 public class AssumedAgencyDto {
 
@@ -26,7 +26,7 @@ public class AssumedAgencyDto {
     }
 
     /**
-     * 目标委托的URN。
+     * **参数解释**： 委托会话或信任委托会话的URN。  **取值范围**： 不涉及。 
      * @return urn
      */
     public String getUrn() {
@@ -43,7 +43,7 @@ public class AssumedAgencyDto {
     }
 
     /**
-     * 目标委托的唯一标志，包含了委托ID和委托会话名称信息。
+     * **参数解释**： 委托会话或信任委托会话的唯一标识，包含了委托ID和委托会话名称信息。  **取值范围**： 不涉及。 
      * @return id
      */
     public String getId() {

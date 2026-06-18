@@ -17,14 +17,19 @@ public class ListProjectMergeRequestCanBeAssignedUsersResponse extends SdkRespon
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private List<MergeRequestVoteReviewerDto> body = null;
+    private List<UserBasicDto> body = null;
 
-    public ListProjectMergeRequestCanBeAssignedUsersResponse withBody(List<MergeRequestVoteReviewerDto> body) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Total")
+
+    private String xTotal;
+
+    public ListProjectMergeRequestCanBeAssignedUsersResponse withBody(List<UserBasicDto> body) {
         this.body = body;
         return this;
     }
 
-    public ListProjectMergeRequestCanBeAssignedUsersResponse addBodyItem(MergeRequestVoteReviewerDto bodyItem) {
+    public ListProjectMergeRequestCanBeAssignedUsersResponse addBodyItem(UserBasicDto bodyItem) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -32,8 +37,7 @@ public class ListProjectMergeRequestCanBeAssignedUsersResponse extends SdkRespon
         return this;
     }
 
-    public ListProjectMergeRequestCanBeAssignedUsersResponse withBody(
-        Consumer<List<MergeRequestVoteReviewerDto>> bodySetter) {
+    public ListProjectMergeRequestCanBeAssignedUsersResponse withBody(Consumer<List<UserBasicDto>> bodySetter) {
         if (this.body == null) {
             this.body = new ArrayList<>();
         }
@@ -45,12 +49,31 @@ public class ListProjectMergeRequestCanBeAssignedUsersResponse extends SdkRespon
      * Get body
      * @return body
      */
-    public List<MergeRequestVoteReviewerDto> getBody() {
+    public List<UserBasicDto> getBody() {
         return body;
     }
 
-    public void setBody(List<MergeRequestVoteReviewerDto> body) {
+    public void setBody(List<UserBasicDto> body) {
         this.body = body;
+    }
+
+    public ListProjectMergeRequestCanBeAssignedUsersResponse withXTotal(String xTotal) {
+        this.xTotal = xTotal;
+        return this;
+    }
+
+    /**
+     * Get xTotal
+     * @return xTotal
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Total")
+    public String getXTotal() {
+        return xTotal;
+    }
+
+    public void setXTotal(String xTotal) {
+        this.xTotal = xTotal;
     }
 
     @Override
@@ -63,12 +86,12 @@ public class ListProjectMergeRequestCanBeAssignedUsersResponse extends SdkRespon
         }
         ListProjectMergeRequestCanBeAssignedUsersResponse that =
             (ListProjectMergeRequestCanBeAssignedUsersResponse) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.body, that.body) && Objects.equals(this.xTotal, that.xTotal);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(body, xTotal);
     }
 
     @Override
@@ -76,6 +99,7 @@ public class ListProjectMergeRequestCanBeAssignedUsersResponse extends SdkRespon
         StringBuilder sb = new StringBuilder();
         sb.append("class ListProjectMergeRequestCanBeAssignedUsersResponse {\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    xTotal: ").append(toIndentedString(xTotal)).append("\n");
         sb.append("}");
         return sb.toString();
     }

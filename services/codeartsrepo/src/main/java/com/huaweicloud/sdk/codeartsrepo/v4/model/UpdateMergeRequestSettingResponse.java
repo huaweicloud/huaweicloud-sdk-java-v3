@@ -462,6 +462,11 @@ public class UpdateMergeRequestSettingResponse extends SdkResponse {
 
     private Integer repositoryId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "has_evaluation_permission")
+
+    private Boolean hasEvaluationPermission;
+
     public UpdateMergeRequestSettingResponse withId(Integer id) {
         this.id = id;
         return this;
@@ -980,6 +985,23 @@ public class UpdateMergeRequestSettingResponse extends SdkResponse {
         this.repositoryId = repositoryId;
     }
 
+    public UpdateMergeRequestSettingResponse withHasEvaluationPermission(Boolean hasEvaluationPermission) {
+        this.hasEvaluationPermission = hasEvaluationPermission;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 调用者是否有星级评价权限。
+     * @return hasEvaluationPermission
+     */
+    public Boolean getHasEvaluationPermission() {
+        return hasEvaluationPermission;
+    }
+
+    public void setHasEvaluationPermission(Boolean hasEvaluationPermission) {
+        this.hasEvaluationPermission = hasEvaluationPermission;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1016,7 +1038,8 @@ public class UpdateMergeRequestSettingResponse extends SdkResponse {
             && Objects.equals(this.mergeMethod, that.mergeMethod)
             && Objects.equals(this.onlyAllowMergeIfVoteBiggerThan, that.onlyAllowMergeIfVoteBiggerThan)
             && Objects.equals(this.onlyAssigneeCanMerge, that.onlyAssigneeCanMerge)
-            && Objects.equals(this.repositoryId, that.repositoryId);
+            && Objects.equals(this.repositoryId, that.repositoryId)
+            && Objects.equals(this.hasEvaluationPermission, that.hasEvaluationPermission);
     }
 
     @Override
@@ -1049,7 +1072,8 @@ public class UpdateMergeRequestSettingResponse extends SdkResponse {
             mergeMethod,
             onlyAllowMergeIfVoteBiggerThan,
             onlyAssigneeCanMerge,
-            repositoryId);
+            repositoryId,
+            hasEvaluationPermission);
     }
 
     @Override
@@ -1095,6 +1119,7 @@ public class UpdateMergeRequestSettingResponse extends SdkResponse {
             .append("\n");
         sb.append("    onlyAssigneeCanMerge: ").append(toIndentedString(onlyAssigneeCanMerge)).append("\n");
         sb.append("    repositoryId: ").append(toIndentedString(repositoryId)).append("\n");
+        sb.append("    hasEvaluationPermission: ").append(toIndentedString(hasEvaluationPermission)).append("\n");
         sb.append("}");
         return sb.toString();
     }

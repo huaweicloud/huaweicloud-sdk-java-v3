@@ -41,7 +41,7 @@ public class ShowMergeRequestCommentsByLineRequest {
     private String path;
 
     /**
-     * Gets or Sets view
+     * **参数解释：** 是否只返回基础信息。 **取值范围：** - basic，返回基础信息(建议)。 - sample，额外返回代码片段等信息。
      */
     public static final class ViewEnum {
 
@@ -130,7 +130,7 @@ public class ShowMergeRequestCommentsByLineRequest {
     }
 
     /**
-     * **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。
+     * **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/intl/zh-cn/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk_ch)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。 **默认取值：** 不涉及。
      * minimum: 1
      * maximum: 2147483647
      * @return repositoryId
@@ -168,7 +168,7 @@ public class ShowMergeRequestCommentsByLineRequest {
     }
 
     /**
-     * Get line
+     * **参数解释：** 获取特定行的检视意见列表(新增、不变行使用右侧行号；删除行使用左侧行号)。
      * minimum: 1
      * maximum: 2147483647
      * @return line
@@ -187,7 +187,7 @@ public class ShowMergeRequestCommentsByLineRequest {
     }
 
     /**
-     * Get withCommitComments
+     * **参数解释：** 是否返回在代码页签下加的评论。 **取值范围：** - true，补充代码页签下的评论并返回。 - false，不处理。
      * @return withCommitComments
      */
     public Boolean getWithCommitComments() {
@@ -221,7 +221,7 @@ public class ShowMergeRequestCommentsByLineRequest {
     }
 
     /**
-     * Get view
+     * **参数解释：** 是否只返回基础信息。 **取值范围：** - basic，返回基础信息(建议)。 - sample，额外返回代码片段等信息。
      * @return view
      */
     public ViewEnum getView() {
@@ -238,7 +238,7 @@ public class ShowMergeRequestCommentsByLineRequest {
     }
 
     /**
-     * 合并请求中原分支与目标分支的共同基准点
+     * **参数解释：** 合并请求中原分支与目标分支的共同基准点。 **取值范围：** 长度为40的sha1字符串。
      * @return baseSha
      */
     public String getBaseSha() {
@@ -255,7 +255,7 @@ public class ShowMergeRequestCommentsByLineRequest {
     }
 
     /**
-     * 合并请求中，从共同基准点开始到原分支方向的第一个提交点
+     * **参数解释：** 合并请求中，从共同基准点开始到原分支方向的第一个提交点。 **取值范围：** 长度为40的sha1字符串。
      * @return startSha
      */
     public String getStartSha() {
@@ -272,7 +272,7 @@ public class ShowMergeRequestCommentsByLineRequest {
     }
 
     /**
-     * 合并请求中原分支指向的提交点
+     * **参数解释：** 合并请求中原分支指向的提交点。 **取值范围：** 长度为40的sha1字符串。
      * @return headSha
      */
     public String getHeadSha() {

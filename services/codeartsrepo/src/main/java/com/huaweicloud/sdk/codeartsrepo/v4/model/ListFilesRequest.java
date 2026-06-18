@@ -21,6 +21,11 @@ public class ListFilesRequest {
     private String refName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "search")
+
+    private String search;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -36,7 +41,7 @@ public class ListFilesRequest {
     }
 
     /**
-     * **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。
+     * **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/intl/zh-cn/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk_ch)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。 **默认取值：** 不涉及。
      * minimum: 1
      * maximum: 2147483647
      * @return repositoryId
@@ -64,6 +69,23 @@ public class ListFilesRequest {
 
     public void setRefName(String refName) {
         this.refName = refName;
+    }
+
+    public ListFilesRequest withSearch(String search) {
+        this.search = search;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 文件名、文件路径 **取值范围：** 不涉及。
+     * @return search
+     */
+    public String getSearch() {
+        return search;
+    }
+
+    public void setSearch(String search) {
+        this.search = search;
     }
 
     public ListFilesRequest withOffset(Integer offset) {
@@ -114,12 +136,13 @@ public class ListFilesRequest {
         }
         ListFilesRequest that = (ListFilesRequest) obj;
         return Objects.equals(this.repositoryId, that.repositoryId) && Objects.equals(this.refName, that.refName)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.search, that.search) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(repositoryId, refName, offset, limit);
+        return Objects.hash(repositoryId, refName, search, offset, limit);
     }
 
     @Override
@@ -128,6 +151,7 @@ public class ListFilesRequest {
         sb.append("class ListFilesRequest {\n");
         sb.append("    repositoryId: ").append(toIndentedString(repositoryId)).append("\n");
         sb.append("    refName: ").append(toIndentedString(refName)).append("\n");
+        sb.append("    search: ").append(toIndentedString(search)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

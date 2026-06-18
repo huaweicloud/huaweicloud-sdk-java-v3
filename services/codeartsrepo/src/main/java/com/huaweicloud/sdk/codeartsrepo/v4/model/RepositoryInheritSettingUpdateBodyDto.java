@@ -16,7 +16,7 @@ import java.util.Objects;
 public class RepositoryInheritSettingUpdateBodyDto {
 
     /**
-     * **参数解释：** 设置源类型。 **约束限制：** 不涉及。 **取值范围：** - protected_branches，保护分支设置。 - protected_tags，保护Tag设置。 - repository_settings，仓库设置。 - push_rules，提交规则设置。 - merge_requests，合并请求设置。 - e2e_settings，E2E设置。 - watermark，水印设置。 **默认取值：** 不涉及。
+     * **参数解释：** 设置源类型。 **约束限制：** 不涉及。 **取值范围：** - protected_branches，保护分支设置。 - protected_tags，保护Tag设置。 - repository_settings，仓库设置。 - push_rules，提交规则设置。 - merge_requests，合并请求设置。 - mr_branch_policies，分支策略设置。 - reviews，检视意见设置。 - e2e_settings，E2E设置。 - watermark，水印设置。 **默认取值：** 不涉及。
      */
     public static final class NameEnum {
 
@@ -46,6 +46,16 @@ public class RepositoryInheritSettingUpdateBodyDto {
         public static final NameEnum MERGE_REQUESTS = new NameEnum("merge_requests");
 
         /**
+         * Enum MR_BRANCH_POLICIES for value: "mr_branch_policies"
+         */
+        public static final NameEnum MR_BRANCH_POLICIES = new NameEnum("mr_branch_policies");
+
+        /**
+         * Enum REVIEWS for value: "reviews"
+         */
+        public static final NameEnum REVIEWS = new NameEnum("reviews");
+
+        /**
          * Enum E2E_SETTINGS for value: "e2e_settings"
          */
         public static final NameEnum E2E_SETTINGS = new NameEnum("e2e_settings");
@@ -64,6 +74,8 @@ public class RepositoryInheritSettingUpdateBodyDto {
             map.put("repository_settings", REPOSITORY_SETTINGS);
             map.put("push_rules", PUSH_RULES);
             map.put("merge_requests", MERGE_REQUESTS);
+            map.put("mr_branch_policies", MR_BRANCH_POLICIES);
+            map.put("reviews", REVIEWS);
             map.put("e2e_settings", E2E_SETTINGS);
             map.put("watermark", WATERMARK);
             return Collections.unmodifiableMap(map);
@@ -201,7 +213,7 @@ public class RepositoryInheritSettingUpdateBodyDto {
     }
 
     /**
-     * **参数解释：** 设置源类型。 **约束限制：** 不涉及。 **取值范围：** - protected_branches，保护分支设置。 - protected_tags，保护Tag设置。 - repository_settings，仓库设置。 - push_rules，提交规则设置。 - merge_requests，合并请求设置。 - e2e_settings，E2E设置。 - watermark，水印设置。 **默认取值：** 不涉及。
+     * **参数解释：** 设置源类型。 **约束限制：** 不涉及。 **取值范围：** - protected_branches，保护分支设置。 - protected_tags，保护Tag设置。 - repository_settings，仓库设置。 - push_rules，提交规则设置。 - merge_requests，合并请求设置。 - mr_branch_policies，分支策略设置。 - reviews，检视意见设置。 - e2e_settings，E2E设置。 - watermark，水印设置。 **默认取值：** 不涉及。
      * @return name
      */
     public NameEnum getName() {

@@ -50,6 +50,11 @@ public class UserBasicExternalDto {
 
     private String tenantName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "has_permission")
+
+    private Boolean hasPermission;
+
     public UserBasicExternalDto withId(Integer id) {
         this.id = id;
         return this;
@@ -188,6 +193,23 @@ public class UserBasicExternalDto {
         this.tenantName = tenantName;
     }
 
+    public UserBasicExternalDto withHasPermission(Boolean hasPermission) {
+        this.hasPermission = hasPermission;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否有相关权限。 **取值范围：** true：有权限。 false：没权限。
+     * @return hasPermission
+     */
+    public Boolean getHasPermission() {
+        return hasPermission;
+    }
+
+    public void setHasPermission(Boolean hasPermission) {
+        this.hasPermission = hasPermission;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -200,12 +222,13 @@ public class UserBasicExternalDto {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.username, that.username) && Objects.equals(this.state, that.state)
             && Objects.equals(this.avatarUrl, that.avatarUrl) && Objects.equals(this.webUrl, that.webUrl)
-            && Objects.equals(this.nickName, that.nickName) && Objects.equals(this.tenantName, that.tenantName);
+            && Objects.equals(this.nickName, that.nickName) && Objects.equals(this.tenantName, that.tenantName)
+            && Objects.equals(this.hasPermission, that.hasPermission);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, username, state, avatarUrl, webUrl, nickName, tenantName);
+        return Objects.hash(id, name, username, state, avatarUrl, webUrl, nickName, tenantName, hasPermission);
     }
 
     @Override
@@ -220,6 +243,7 @@ public class UserBasicExternalDto {
         sb.append("    webUrl: ").append(toIndentedString(webUrl)).append("\n");
         sb.append("    nickName: ").append(toIndentedString(nickName)).append("\n");
         sb.append("    tenantName: ").append(toIndentedString(tenantName)).append("\n");
+        sb.append("    hasPermission: ").append(toIndentedString(hasPermission)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -145,6 +145,11 @@ public class ShowCommitResponse extends SdkResponse {
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "author_id")
+
+    private Integer authorId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "stats")
 
     private CommitStatsDto stats;
@@ -733,6 +738,25 @@ public class ShowCommitResponse extends SdkResponse {
         this.userName = userName;
     }
 
+    public ShowCommitResponse withAuthorId(Integer authorId) {
+        this.authorId = authorId;
+        return this;
+    }
+
+    /**
+     * 作者id
+     * minimum: 1
+     * maximum: 2147483647
+     * @return authorId
+     */
+    public Integer getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(Integer authorId) {
+        this.authorId = authorId;
+    }
+
     public ShowCommitResponse withStats(CommitStatsDto stats) {
         this.stats = stats;
         return this;
@@ -904,9 +928,9 @@ public class ShowCommitResponse extends SdkResponse {
             && Objects.equals(this.committerAvatarUrl, that.committerAvatarUrl)
             && Objects.equals(this.relateUrl, that.relateUrl) && Objects.equals(this.nickName, that.nickName)
             && Objects.equals(this.tenantName, that.tenantName) && Objects.equals(this.userName, that.userName)
-            && Objects.equals(this.stats, that.stats) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.lastPipeline, that.lastPipeline) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.mergeRequest, that.mergeRequest)
+            && Objects.equals(this.authorId, that.authorId) && Objects.equals(this.stats, that.stats)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.lastPipeline, that.lastPipeline)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.mergeRequest, that.mergeRequest)
             && Objects.equals(this.codeChanges, that.codeChanges);
     }
 
@@ -937,6 +961,7 @@ public class ShowCommitResponse extends SdkResponse {
             nickName,
             tenantName,
             userName,
+            authorId,
             stats,
             status,
             lastPipeline,
@@ -974,6 +999,7 @@ public class ShowCommitResponse extends SdkResponse {
         sb.append("    nickName: ").append(toIndentedString(nickName)).append("\n");
         sb.append("    tenantName: ").append(toIndentedString(tenantName)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    authorId: ").append(toIndentedString(authorId)).append("\n");
         sb.append("    stats: ").append(toIndentedString(stats)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    lastPipeline: ").append(toIndentedString(lastPipeline)).append("\n");

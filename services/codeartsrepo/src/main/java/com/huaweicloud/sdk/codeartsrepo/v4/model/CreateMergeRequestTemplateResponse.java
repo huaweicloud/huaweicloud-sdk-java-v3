@@ -18,11 +18,6 @@ public class CreateMergeRequestTemplateResponse extends SdkResponse {
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "repository_id")
-
-    private Integer repositoryId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -67,6 +62,16 @@ public class CreateMergeRequestTemplateResponse extends SdkResponse {
 
     private UserBasicDto creator;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repository_id")
+
+    private Integer repositoryId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "from")
+
+    private MergeRequestTemplateFromDto from;
+
     public CreateMergeRequestTemplateResponse withId(Integer id) {
         this.id = id;
         return this;
@@ -84,23 +89,6 @@ public class CreateMergeRequestTemplateResponse extends SdkResponse {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public CreateMergeRequestTemplateResponse withRepositoryId(Integer repositoryId) {
-        this.repositoryId = repositoryId;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 仓库id。
-     * @return repositoryId
-     */
-    public Integer getRepositoryId() {
-        return repositoryId;
-    }
-
-    public void setRepositoryId(Integer repositoryId) {
-        this.repositoryId = repositoryId;
     }
 
     public CreateMergeRequestTemplateResponse withDescription(String description) {
@@ -267,6 +255,49 @@ public class CreateMergeRequestTemplateResponse extends SdkResponse {
         this.creator = creator;
     }
 
+    public CreateMergeRequestTemplateResponse withRepositoryId(Integer repositoryId) {
+        this.repositoryId = repositoryId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 仓库id。
+     * @return repositoryId
+     */
+    public Integer getRepositoryId() {
+        return repositoryId;
+    }
+
+    public void setRepositoryId(Integer repositoryId) {
+        this.repositoryId = repositoryId;
+    }
+
+    public CreateMergeRequestTemplateResponse withFrom(MergeRequestTemplateFromDto from) {
+        this.from = from;
+        return this;
+    }
+
+    public CreateMergeRequestTemplateResponse withFrom(Consumer<MergeRequestTemplateFromDto> fromSetter) {
+        if (this.from == null) {
+            this.from = new MergeRequestTemplateFromDto();
+            fromSetter.accept(this.from);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get from
+     * @return from
+     */
+    public MergeRequestTemplateFromDto getFrom() {
+        return from;
+    }
+
+    public void setFrom(MergeRequestTemplateFromDto from) {
+        this.from = from;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -276,19 +307,19 @@ public class CreateMergeRequestTemplateResponse extends SdkResponse {
             return false;
         }
         CreateMergeRequestTemplateResponse that = (CreateMergeRequestTemplateResponse) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.repositoryId, that.repositoryId)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.templateName, that.templateName)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.templateName, that.templateName)
             && Objects.equals(this.mergeRequestTitle, that.mergeRequestTitle)
             && Objects.equals(this.isDefault, that.isDefault) && Objects.equals(this.isWip, that.isWip)
             && Objects.equals(this.autoExtractMrTitle, that.autoExtractMrTitle)
-            && Objects.equals(this.creator, that.creator);
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.repositoryId, that.repositoryId)
+            && Objects.equals(this.from, that.from);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id,
-            repositoryId,
             description,
             createdAt,
             updatedAt,
@@ -297,7 +328,9 @@ public class CreateMergeRequestTemplateResponse extends SdkResponse {
             isDefault,
             isWip,
             autoExtractMrTitle,
-            creator);
+            creator,
+            repositoryId,
+            from);
     }
 
     @Override
@@ -305,7 +338,6 @@ public class CreateMergeRequestTemplateResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateMergeRequestTemplateResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    repositoryId: ").append(toIndentedString(repositoryId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -315,6 +347,8 @@ public class CreateMergeRequestTemplateResponse extends SdkResponse {
         sb.append("    isWip: ").append(toIndentedString(isWip)).append("\n");
         sb.append("    autoExtractMrTitle: ").append(toIndentedString(autoExtractMrTitle)).append("\n");
         sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
+        sb.append("    repositoryId: ").append(toIndentedString(repositoryId)).append("\n");
+        sb.append("    from: ").append(toIndentedString(from)).append("\n");
         sb.append("}");
         return sb.toString();
     }

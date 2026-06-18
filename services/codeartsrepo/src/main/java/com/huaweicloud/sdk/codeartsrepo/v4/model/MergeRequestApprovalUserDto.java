@@ -11,9 +11,9 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 合并请求打分模式评审人
+ * MergeRequestApprovalUserDto
  */
-public class MergeRequestVoteReviewerDto {
+public class MergeRequestApprovalUserDto {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -157,11 +157,11 @@ public class MergeRequestVoteReviewerDto {
     private String errorMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_committer")
+    @JsonProperty(value = "has_permission")
 
-    private Boolean isCommitter;
+    private Boolean hasPermission;
 
-    public MergeRequestVoteReviewerDto withId(Integer id) {
+    public MergeRequestApprovalUserDto withId(Integer id) {
         this.id = id;
         return this;
     }
@@ -180,7 +180,7 @@ public class MergeRequestVoteReviewerDto {
         this.id = id;
     }
 
-    public MergeRequestVoteReviewerDto withName(String name) {
+    public MergeRequestApprovalUserDto withName(String name) {
         this.name = name;
         return this;
     }
@@ -197,7 +197,7 @@ public class MergeRequestVoteReviewerDto {
         this.name = name;
     }
 
-    public MergeRequestVoteReviewerDto withUsername(String username) {
+    public MergeRequestApprovalUserDto withUsername(String username) {
         this.username = username;
         return this;
     }
@@ -214,7 +214,7 @@ public class MergeRequestVoteReviewerDto {
         this.username = username;
     }
 
-    public MergeRequestVoteReviewerDto withState(StateEnum state) {
+    public MergeRequestApprovalUserDto withState(StateEnum state) {
         this.state = state;
         return this;
     }
@@ -231,7 +231,7 @@ public class MergeRequestVoteReviewerDto {
         this.state = state;
     }
 
-    public MergeRequestVoteReviewerDto withServiceLicenseStatus(Integer serviceLicenseStatus) {
+    public MergeRequestApprovalUserDto withServiceLicenseStatus(Integer serviceLicenseStatus) {
         this.serviceLicenseStatus = serviceLicenseStatus;
         return this;
     }
@@ -248,7 +248,7 @@ public class MergeRequestVoteReviewerDto {
         this.serviceLicenseStatus = serviceLicenseStatus;
     }
 
-    public MergeRequestVoteReviewerDto withAvatarUrl(String avatarUrl) {
+    public MergeRequestApprovalUserDto withAvatarUrl(String avatarUrl) {
         this.avatarUrl = avatarUrl;
         return this;
     }
@@ -265,7 +265,7 @@ public class MergeRequestVoteReviewerDto {
         this.avatarUrl = avatarUrl;
     }
 
-    public MergeRequestVoteReviewerDto withAvatarPath(String avatarPath) {
+    public MergeRequestApprovalUserDto withAvatarPath(String avatarPath) {
         this.avatarPath = avatarPath;
         return this;
     }
@@ -282,7 +282,7 @@ public class MergeRequestVoteReviewerDto {
         this.avatarPath = avatarPath;
     }
 
-    public MergeRequestVoteReviewerDto withEmail(String email) {
+    public MergeRequestApprovalUserDto withEmail(String email) {
         this.email = email;
         return this;
     }
@@ -299,7 +299,7 @@ public class MergeRequestVoteReviewerDto {
         this.email = email;
     }
 
-    public MergeRequestVoteReviewerDto withNameCn(String nameCn) {
+    public MergeRequestApprovalUserDto withNameCn(String nameCn) {
         this.nameCn = nameCn;
         return this;
     }
@@ -316,7 +316,7 @@ public class MergeRequestVoteReviewerDto {
         this.nameCn = nameCn;
     }
 
-    public MergeRequestVoteReviewerDto withWebUrl(String webUrl) {
+    public MergeRequestApprovalUserDto withWebUrl(String webUrl) {
         this.webUrl = webUrl;
         return this;
     }
@@ -333,7 +333,7 @@ public class MergeRequestVoteReviewerDto {
         this.webUrl = webUrl;
     }
 
-    public MergeRequestVoteReviewerDto withNickName(String nickName) {
+    public MergeRequestApprovalUserDto withNickName(String nickName) {
         this.nickName = nickName;
         return this;
     }
@@ -350,7 +350,7 @@ public class MergeRequestVoteReviewerDto {
         this.nickName = nickName;
     }
 
-    public MergeRequestVoteReviewerDto withTenantName(String tenantName) {
+    public MergeRequestApprovalUserDto withTenantName(String tenantName) {
         this.tenantName = tenantName;
         return this;
     }
@@ -367,7 +367,7 @@ public class MergeRequestVoteReviewerDto {
         this.tenantName = tenantName;
     }
 
-    public MergeRequestVoteReviewerDto withErrorMessage(String errorMessage) {
+    public MergeRequestApprovalUserDto withErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
         return this;
     }
@@ -384,21 +384,21 @@ public class MergeRequestVoteReviewerDto {
         this.errorMessage = errorMessage;
     }
 
-    public MergeRequestVoteReviewerDto withIsCommitter(Boolean isCommitter) {
-        this.isCommitter = isCommitter;
+    public MergeRequestApprovalUserDto withHasPermission(Boolean hasPermission) {
+        this.hasPermission = hasPermission;
         return this;
     }
 
     /**
-     * **参数解释：** 是否为committer。
-     * @return isCommitter
+     * **参数解释：** 是否有相关权限。 **取值范围：** true：有权限。 false：没权限。           
+     * @return hasPermission
      */
-    public Boolean getIsCommitter() {
-        return isCommitter;
+    public Boolean getHasPermission() {
+        return hasPermission;
     }
 
-    public void setIsCommitter(Boolean isCommitter) {
-        this.isCommitter = isCommitter;
+    public void setHasPermission(Boolean hasPermission) {
+        this.hasPermission = hasPermission;
     }
 
     @Override
@@ -409,7 +409,7 @@ public class MergeRequestVoteReviewerDto {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MergeRequestVoteReviewerDto that = (MergeRequestVoteReviewerDto) obj;
+        MergeRequestApprovalUserDto that = (MergeRequestApprovalUserDto) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.username, that.username) && Objects.equals(this.state, that.state)
             && Objects.equals(this.serviceLicenseStatus, that.serviceLicenseStatus)
@@ -417,7 +417,7 @@ public class MergeRequestVoteReviewerDto {
             && Objects.equals(this.email, that.email) && Objects.equals(this.nameCn, that.nameCn)
             && Objects.equals(this.webUrl, that.webUrl) && Objects.equals(this.nickName, that.nickName)
             && Objects.equals(this.tenantName, that.tenantName) && Objects.equals(this.errorMessage, that.errorMessage)
-            && Objects.equals(this.isCommitter, that.isCommitter);
+            && Objects.equals(this.hasPermission, that.hasPermission);
     }
 
     @Override
@@ -435,13 +435,13 @@ public class MergeRequestVoteReviewerDto {
             nickName,
             tenantName,
             errorMessage,
-            isCommitter);
+            hasPermission);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class MergeRequestVoteReviewerDto {\n");
+        sb.append("class MergeRequestApprovalUserDto {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    username: ").append(toIndentedString(username)).append("\n");
@@ -455,7 +455,7 @@ public class MergeRequestVoteReviewerDto {
         sb.append("    nickName: ").append(toIndentedString(nickName)).append("\n");
         sb.append("    tenantName: ").append(toIndentedString(tenantName)).append("\n");
         sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
-        sb.append("    isCommitter: ").append(toIndentedString(isCommitter)).append("\n");
+        sb.append("    hasPermission: ").append(toIndentedString(hasPermission)).append("\n");
         sb.append("}");
         return sb.toString();
     }

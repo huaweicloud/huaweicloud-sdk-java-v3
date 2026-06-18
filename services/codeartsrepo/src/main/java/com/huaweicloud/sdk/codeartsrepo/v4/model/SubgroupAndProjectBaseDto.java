@@ -51,12 +51,12 @@ public class SubgroupAndProjectBaseDto {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at_timestamp")
 
-    private String updatedAtTimestamp;
+    private Long updatedAtTimestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "star_time")
 
-    private String starTime;
+    private Long starTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "starred")
@@ -357,7 +357,7 @@ public class SubgroupAndProjectBaseDto {
         this.createdAt = createdAt;
     }
 
-    public SubgroupAndProjectBaseDto withUpdatedAtTimestamp(String updatedAtTimestamp) {
+    public SubgroupAndProjectBaseDto withUpdatedAtTimestamp(Long updatedAtTimestamp) {
         this.updatedAtTimestamp = updatedAtTimestamp;
         return this;
     }
@@ -366,15 +366,15 @@ public class SubgroupAndProjectBaseDto {
      * **参数解释：** 更新时间戳。 **取值范围：** 字符串长度不少于1，不超过1000。
      * @return updatedAtTimestamp
      */
-    public String getUpdatedAtTimestamp() {
+    public Long getUpdatedAtTimestamp() {
         return updatedAtTimestamp;
     }
 
-    public void setUpdatedAtTimestamp(String updatedAtTimestamp) {
+    public void setUpdatedAtTimestamp(Long updatedAtTimestamp) {
         this.updatedAtTimestamp = updatedAtTimestamp;
     }
 
-    public SubgroupAndProjectBaseDto withStarTime(String starTime) {
+    public SubgroupAndProjectBaseDto withStarTime(Long starTime) {
         this.starTime = starTime;
         return this;
     }
@@ -383,11 +383,11 @@ public class SubgroupAndProjectBaseDto {
      * **参数解释：** 开始时间戳。 **取值范围：** 字符串长度不少于1，不超过1000。
      * @return starTime
      */
-    public String getStarTime() {
+    public Long getStarTime() {
         return starTime;
     }
 
-    public void setStarTime(String starTime) {
+    public void setStarTime(Long starTime) {
         this.starTime = starTime;
     }
 

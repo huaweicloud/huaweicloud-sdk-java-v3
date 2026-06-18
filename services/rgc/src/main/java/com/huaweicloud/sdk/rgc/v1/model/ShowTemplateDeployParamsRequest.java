@@ -20,6 +20,11 @@ public class ShowTemplateDeployParamsRequest {
 
     private String version;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "account_id")
+
+    private String accountId;
+
     public ShowTemplateDeployParamsRequest withTemplateName(String templateName) {
         this.templateName = templateName;
         return this;
@@ -54,6 +59,23 @@ public class ShowTemplateDeployParamsRequest {
         this.version = version;
     }
 
+    public ShowTemplateDeployParamsRequest withAccountId(String accountId) {
+        this.accountId = accountId;
+        return this;
+    }
+
+    /**
+     * 纳管账号ID。
+     * @return accountId
+     */
+    public String getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class ShowTemplateDeployParamsRequest {
             return false;
         }
         ShowTemplateDeployParamsRequest that = (ShowTemplateDeployParamsRequest) obj;
-        return Objects.equals(this.templateName, that.templateName) && Objects.equals(this.version, that.version);
+        return Objects.equals(this.templateName, that.templateName) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.accountId, that.accountId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(templateName, version);
+        return Objects.hash(templateName, version, accountId);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class ShowTemplateDeployParamsRequest {
         sb.append("class ShowTemplateDeployParamsRequest {\n");
         sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -17,24 +17,26 @@ public class ListMergeRequestApproversResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "required_approvers_list")
 
-    private List<UserBasicDto> requiredApproversList = null;
+    private List<MergeRequestApprovalUserDto> requiredApproversList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "optional_approvers_list")
 
-    private List<UserBasicDto> optionalApproversList = null;
+    private List<MergeRequestApprovalUserDto> optionalApproversList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Total")
 
     private String xTotal;
 
-    public ListMergeRequestApproversResponse withRequiredApproversList(List<UserBasicDto> requiredApproversList) {
+    public ListMergeRequestApproversResponse withRequiredApproversList(
+        List<MergeRequestApprovalUserDto> requiredApproversList) {
         this.requiredApproversList = requiredApproversList;
         return this;
     }
 
-    public ListMergeRequestApproversResponse addRequiredApproversListItem(UserBasicDto requiredApproversListItem) {
+    public ListMergeRequestApproversResponse addRequiredApproversListItem(
+        MergeRequestApprovalUserDto requiredApproversListItem) {
         if (this.requiredApproversList == null) {
             this.requiredApproversList = new ArrayList<>();
         }
@@ -43,7 +45,7 @@ public class ListMergeRequestApproversResponse extends SdkResponse {
     }
 
     public ListMergeRequestApproversResponse withRequiredApproversList(
-        Consumer<List<UserBasicDto>> requiredApproversListSetter) {
+        Consumer<List<MergeRequestApprovalUserDto>> requiredApproversListSetter) {
         if (this.requiredApproversList == null) {
             this.requiredApproversList = new ArrayList<>();
         }
@@ -55,20 +57,22 @@ public class ListMergeRequestApproversResponse extends SdkResponse {
      * **参数解释：** 必选审核人列表。 **取值范围：** 不涉及。
      * @return requiredApproversList
      */
-    public List<UserBasicDto> getRequiredApproversList() {
+    public List<MergeRequestApprovalUserDto> getRequiredApproversList() {
         return requiredApproversList;
     }
 
-    public void setRequiredApproversList(List<UserBasicDto> requiredApproversList) {
+    public void setRequiredApproversList(List<MergeRequestApprovalUserDto> requiredApproversList) {
         this.requiredApproversList = requiredApproversList;
     }
 
-    public ListMergeRequestApproversResponse withOptionalApproversList(List<UserBasicDto> optionalApproversList) {
+    public ListMergeRequestApproversResponse withOptionalApproversList(
+        List<MergeRequestApprovalUserDto> optionalApproversList) {
         this.optionalApproversList = optionalApproversList;
         return this;
     }
 
-    public ListMergeRequestApproversResponse addOptionalApproversListItem(UserBasicDto optionalApproversListItem) {
+    public ListMergeRequestApproversResponse addOptionalApproversListItem(
+        MergeRequestApprovalUserDto optionalApproversListItem) {
         if (this.optionalApproversList == null) {
             this.optionalApproversList = new ArrayList<>();
         }
@@ -77,7 +81,7 @@ public class ListMergeRequestApproversResponse extends SdkResponse {
     }
 
     public ListMergeRequestApproversResponse withOptionalApproversList(
-        Consumer<List<UserBasicDto>> optionalApproversListSetter) {
+        Consumer<List<MergeRequestApprovalUserDto>> optionalApproversListSetter) {
         if (this.optionalApproversList == null) {
             this.optionalApproversList = new ArrayList<>();
         }
@@ -89,11 +93,11 @@ public class ListMergeRequestApproversResponse extends SdkResponse {
      * **参数解释：** 可选审核人列表。 **取值范围：** 不涉及。
      * @return optionalApproversList
      */
-    public List<UserBasicDto> getOptionalApproversList() {
+    public List<MergeRequestApprovalUserDto> getOptionalApproversList() {
         return optionalApproversList;
     }
 
-    public void setOptionalApproversList(List<UserBasicDto> optionalApproversList) {
+    public void setOptionalApproversList(List<MergeRequestApprovalUserDto> optionalApproversList) {
         this.optionalApproversList = optionalApproversList;
     }
 

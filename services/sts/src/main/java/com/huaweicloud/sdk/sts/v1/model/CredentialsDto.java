@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
- * 临时安全凭证。
+ * **参数解释**： 临时安全凭证。  **取值范围**： 不涉及。 
  */
 public class CredentialsDto {
 
@@ -37,7 +37,7 @@ public class CredentialsDto {
     }
 
     /**
-     * 临时安全凭证的AK。
+     * **参数解释**： 临时安全凭证的AK。  **取值范围**： 不涉及。 
      * @return accessKeyId
      */
     public String getAccessKeyId() {
@@ -54,7 +54,7 @@ public class CredentialsDto {
     }
 
     /**
-     * 临时安全凭证的失效时间。
+     * **参数解释**： 临时安全凭证的失效时间。  **取值范围**： 不涉及。 
      * @return expiration
      */
     public OffsetDateTime getExpiration() {
@@ -71,7 +71,7 @@ public class CredentialsDto {
     }
 
     /**
-     * 临时安全凭证的SK。
+     * **参数解释**： 临时安全凭证的SK。  **取值范围**： 不涉及。 
      * @return secretAccessKey
      */
     public String getSecretAccessKey() {
@@ -88,7 +88,7 @@ public class CredentialsDto {
     }
 
     /**
-     * 临时安全凭证的security_token。
+     * **参数解释**： 临时安全凭证的security_token。  **取值范围**： 不涉及。 
      * @return securityToken
      */
     public String getSecurityToken() {

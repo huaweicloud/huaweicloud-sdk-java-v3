@@ -49,6 +49,11 @@ public class ShowCommitDiffMetadataResponse extends SdkResponse {
 
     private Boolean tooLarge;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "blob_id")
+
+    private String blobId;
+
     public ShowCommitDiffMetadataResponse withDiffs(List<DiffDto> diffs) {
         this.diffs = diffs;
         return this;
@@ -201,6 +206,23 @@ public class ShowCommitDiffMetadataResponse extends SdkResponse {
         this.tooLarge = tooLarge;
     }
 
+    public ShowCommitDiffMetadataResponse withBlobId(String blobId) {
+        this.blobId = blobId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** blob文件ID。 **约束限制：** 不涉及。    
+     * @return blobId
+     */
+    public String getBlobId() {
+        return blobId;
+    }
+
+    public void setBlobId(String blobId) {
+        this.blobId = blobId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -214,12 +236,13 @@ public class ShowCommitDiffMetadataResponse extends SdkResponse {
             && Objects.equals(this.addedLines, that.addedLines) && Objects.equals(this.removedLines, that.removedLines)
             && Objects.equals(this.changeFileCount, that.changeFileCount)
             && Objects.equals(this.changeLineCount, that.changeLineCount)
-            && Objects.equals(this.tooLarge, that.tooLarge);
+            && Objects.equals(this.tooLarge, that.tooLarge) && Objects.equals(this.blobId, that.blobId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(diffs, diffRefs, addedLines, removedLines, changeFileCount, changeLineCount, tooLarge);
+        return Objects
+            .hash(diffs, diffRefs, addedLines, removedLines, changeFileCount, changeLineCount, tooLarge, blobId);
     }
 
     @Override
@@ -233,6 +256,7 @@ public class ShowCommitDiffMetadataResponse extends SdkResponse {
         sb.append("    changeFileCount: ").append(toIndentedString(changeFileCount)).append("\n");
         sb.append("    changeLineCount: ").append(toIndentedString(changeLineCount)).append("\n");
         sb.append("    tooLarge: ").append(toIndentedString(tooLarge)).append("\n");
+        sb.append("    blobId: ").append(toIndentedString(blobId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

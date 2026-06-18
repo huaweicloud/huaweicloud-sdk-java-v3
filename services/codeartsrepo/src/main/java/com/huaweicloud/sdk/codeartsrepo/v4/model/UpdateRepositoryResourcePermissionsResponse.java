@@ -1,14 +1,9 @@
 package com.huaweicloud.sdk.codeartsrepo.v4.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -16,96 +11,50 @@ import java.util.Objects;
  */
 public class UpdateRepositoryResourcePermissionsResponse extends SdkResponse {
 
-    /**
-     * **参数解释：** 状态码。 - success，表示接口请求成功。 - fail，表示接口请求失败。
-     */
-    public static final class StatusEnum {
-
-        /**
-         * Enum SUCCESS for value: "success"
-         */
-        public static final StatusEnum SUCCESS = new StatusEnum("success");
-
-        /**
-         * Enum FAIL for value: "fail"
-         */
-        public static final StatusEnum FAIL = new StatusEnum("fail");
-
-        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, StatusEnum> createStaticFields() {
-            Map<String, StatusEnum> map = new HashMap<>();
-            map.put("success", SUCCESS);
-            map.put("fail", FAIL);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        StatusEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StatusEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
-        }
-
-        public static StatusEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof StatusEnum) {
-                return this.value.equals(((StatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private StatusEnum status;
+    private Integer status;
 
-    public UpdateRepositoryResourcePermissionsResponse withStatus(StatusEnum status) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "message")
+
+    private String message;
+
+    public UpdateRepositoryResourcePermissionsResponse withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
     /**
-     * **参数解释：** 状态码。 - success，表示接口请求成功。 - fail，表示接口请求失败。
+     * 返回状态码
+     * minimum: 0
+     * maximum: 1000
      * @return status
      */
-    public StatusEnum getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(StatusEnum status) {
+    public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public UpdateRepositoryResourcePermissionsResponse withMessage(String message) {
+        this.message = message;
+        return this;
+    }
+
+    /**
+     * 返回信息
+     * @return message
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     @Override
@@ -117,12 +66,12 @@ public class UpdateRepositoryResourcePermissionsResponse extends SdkResponse {
             return false;
         }
         UpdateRepositoryResourcePermissionsResponse that = (UpdateRepositoryResourcePermissionsResponse) obj;
-        return Objects.equals(this.status, that.status);
+        return Objects.equals(this.status, that.status) && Objects.equals(this.message, that.message);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status);
+        return Objects.hash(status, message);
     }
 
     @Override
@@ -130,6 +79,7 @@ public class UpdateRepositoryResourcePermissionsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateRepositoryResourcePermissionsResponse {\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("}");
         return sb.toString();
     }

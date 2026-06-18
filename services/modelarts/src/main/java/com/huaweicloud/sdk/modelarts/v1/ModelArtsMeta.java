@@ -7,6 +7,14 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.modelarts.v1.model.AcceptScheduledEventRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.AcceptScheduledEventResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.Algorithm;
+import com.huaweicloud.sdk.modelarts.v1.model.AuthorizationRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchCreatePoolTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchCreatePoolTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ChangeAlgorithmRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ChangeAlgorithmResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingExperimentRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingExperimentRequestBody;
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingExperimentResponse;
@@ -14,11 +22,21 @@ import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingJobDescriptionReques
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingJobDescriptionResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CheckTrainingExperimentRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CheckTrainingExperimentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryBody;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateAuthorizationRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateAuthorizationResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateModelArtsAgencyRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateModelArtsAgencyResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateOrderIdRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateOrderIdResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateOrderRequestBody;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateSaveImageJobRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateSaveImageJobResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateTagRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateTmsTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateTrainJobTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateTrainJobTagsResponse;
@@ -46,6 +64,11 @@ import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowSubscriptionsRespons
 import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkspaceReq;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkspaceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteAlgorithmRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteAlgorithmResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteAuthorizationsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteAuthorizationsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteTagRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteTmsTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteTrainJobTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteTrainJobTagsResponse;
@@ -65,13 +88,19 @@ import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkspaceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.EventUpdate;
 import com.huaweicloud.sdk.modelarts.v1.model.ExecutionAction;
+import com.huaweicloud.sdk.modelarts.v1.model.GetAuthorizationsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.GetAuthorizationsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ImageSaveJob;
 import com.huaweicloud.sdk.modelarts.v1.model.Job;
 import com.huaweicloud.sdk.modelarts.v1.model.JobActionType;
 import com.huaweicloud.sdk.modelarts.v1.model.JobDescription;
 import com.huaweicloud.sdk.modelarts.v1.model.JobSearches;
+import com.huaweicloud.sdk.modelarts.v1.model.ListAlgorithmsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListAlgorithmsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListEventCategoriesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListEventCategoriesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListExecutionLabelsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListExecutionLabelsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListScheduledEventsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListScheduledEventsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingExperimentsRequest;
@@ -86,13 +115,18 @@ import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowExecutionsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowExecutionsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowStepExecutionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowStepExecutionResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkspaceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ModelArtsAgencyRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.NotifyTrainingJobInformationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.NotifyTrainingJobInformationResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ReportEventBody;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAlgorithmByUuidRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAlgorithmByUuidResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAuthmodeDetailRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAuthmodeDetailResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchParamAnalysisResultPathRequest;
@@ -109,10 +143,20 @@ import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchYamlTemplateContentR
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchYamlTemplateContentResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchYamlTemplatesInfoRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchYamlTemplatesInfoResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowNetworkAvailableIpRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowNetworkAvailableIpResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowObsUrlOfTrainingJobLogsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowObsUrlOfTrainingJobLogsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeConfigRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeConfigResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeConfigTemplateRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeConfigTemplateResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowSaveImageJobRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowSaveImageJobResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowSearchAlgorithmsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowSearchAlgorithmsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainJobTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainJobTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingExperimentDetailsRequest;
@@ -131,8 +175,12 @@ import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingQuotasRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingQuotasResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowExecutionRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowExecutionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowLabelsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowLabelsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowScheduleListRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowScheduleListResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowScheduleRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowScheduleResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowStepExecutionMetricsRequest;
@@ -203,6 +251,12 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AcceptScheduledEventRequest::getEventId, AcceptScheduledEventRequest::setEventId));
+        builder.<String>withRequestField("workspaceId",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptScheduledEventRequest::getWorkspaceId,
+                AcceptScheduledEventRequest::setWorkspaceId));
         builder.<EventUpdate>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -217,6 +271,90 @@ public class ModelArtsMeta {
             String.class,
             f -> f.withMarshaller(AcceptScheduledEventResponse::getXRequestId,
                 AcceptScheduledEventResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreatePoolTagsRequest, BatchCreatePoolTagsResponse> batchCreatePoolTags =
+        genForBatchCreatePoolTags();
+
+    private static HttpRequestDef<BatchCreatePoolTagsRequest, BatchCreatePoolTagsResponse> genForBatchCreatePoolTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreatePoolTagsRequest, BatchCreatePoolTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreatePoolTagsRequest.class, BatchCreatePoolTagsResponse.class)
+                .withName("BatchCreatePoolTags")
+                .withUri("/v1/{project_id}/pools/{pool_name}/tags/create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreatePoolTagsRequest::getPoolName, BatchCreatePoolTagsRequest::setPoolName));
+        builder.<CreateTagRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTagRequest.class),
+            f -> f.withMarshaller(BatchCreatePoolTagsRequest::getBody, BatchCreatePoolTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeletePoolTagsRequest, BatchDeletePoolTagsResponse> batchDeletePoolTags =
+        genForBatchDeletePoolTags();
+
+    private static HttpRequestDef<BatchDeletePoolTagsRequest, BatchDeletePoolTagsResponse> genForBatchDeletePoolTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeletePoolTagsRequest, BatchDeletePoolTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, BatchDeletePoolTagsRequest.class, BatchDeletePoolTagsResponse.class)
+            .withName("BatchDeletePoolTags")
+            .withUri("/v1/{project_id}/pools/{pool_name}/tags/delete")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeletePoolTagsRequest::getPoolName, BatchDeletePoolTagsRequest::setPoolName));
+        builder.<DeleteTagRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteTagRequest.class),
+            f -> f.withMarshaller(BatchDeletePoolTagsRequest::getBody, BatchDeletePoolTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeAlgorithmRequest, ChangeAlgorithmResponse> changeAlgorithm =
+        genForChangeAlgorithm();
+
+    private static HttpRequestDef<ChangeAlgorithmRequest, ChangeAlgorithmResponse> genForChangeAlgorithm() {
+        // basic
+        HttpRequestDef.Builder<ChangeAlgorithmRequest, ChangeAlgorithmResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ChangeAlgorithmRequest.class, ChangeAlgorithmResponse.class)
+                .withName("ChangeAlgorithm")
+                .withUri("/v2/{project_id}/algorithms/{algorithm_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("algorithm_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeAlgorithmRequest::getAlgorithmId, ChangeAlgorithmRequest::setAlgorithmId));
+        builder.<Algorithm>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Algorithm.class),
+            f -> f.withMarshaller(ChangeAlgorithmRequest::getBody, ChangeAlgorithmRequest::setBody));
+
+        // response
+
         return builder.build();
     }
 
@@ -313,6 +451,29 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateAlgorithmRequest, CreateAlgorithmResponse> createAlgorithm =
+        genForCreateAlgorithm();
+
+    private static HttpRequestDef<CreateAlgorithmRequest, CreateAlgorithmResponse> genForCreateAlgorithm() {
+        // basic
+        HttpRequestDef.Builder<CreateAlgorithmRequest, CreateAlgorithmResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAlgorithmRequest.class, CreateAlgorithmResponse.class)
+                .withName("CreateAlgorithm")
+                .withUri("/v2/{project_id}/algorithms")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<Algorithm>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Algorithm.class),
+            f -> f.withMarshaller(CreateAlgorithmRequest::getBody, CreateAlgorithmRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateAlgorithmVersionToGalleryRequest, CreateAlgorithmVersionToGalleryResponse> createAlgorithmVersionToGallery =
         genForCreateAlgorithmVersionToGallery();
 
@@ -334,6 +495,90 @@ public class ModelArtsMeta {
             TypeCasts.uncheckedConversion(CreateAlgorithmVersionToGalleryBody.class),
             f -> f.withMarshaller(CreateAlgorithmVersionToGalleryRequest::getBody,
                 CreateAlgorithmVersionToGalleryRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAuthorizationRequest, CreateAuthorizationResponse> createAuthorization =
+        genForCreateAuthorization();
+
+    private static HttpRequestDef<CreateAuthorizationRequest, CreateAuthorizationResponse> genForCreateAuthorization() {
+        // basic
+        HttpRequestDef.Builder<CreateAuthorizationRequest, CreateAuthorizationResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAuthorizationRequest.class, CreateAuthorizationResponse.class)
+                .withName("CreateAuthorization")
+                .withUri("/v2/{project_id}/authorizations")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<AuthorizationRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AuthorizationRequest.class),
+            f -> f.withMarshaller(CreateAuthorizationRequest::getBody, CreateAuthorizationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateModelArtsAgencyRequest, CreateModelArtsAgencyResponse> createModelArtsAgency =
+        genForCreateModelArtsAgency();
+
+    private static HttpRequestDef<CreateModelArtsAgencyRequest, CreateModelArtsAgencyResponse> genForCreateModelArtsAgency() {
+        // basic
+        HttpRequestDef.Builder<CreateModelArtsAgencyRequest, CreateModelArtsAgencyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateModelArtsAgencyRequest.class, CreateModelArtsAgencyResponse.class)
+            .withName("CreateModelArtsAgency")
+            .withUri("/v2/{project_id}/agency")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ModelArtsAgencyRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModelArtsAgencyRequest.class),
+            f -> f.withMarshaller(CreateModelArtsAgencyRequest::getBody, CreateModelArtsAgencyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateOrderIdRequest, CreateOrderIdResponse> createOrderId =
+        genForCreateOrderId();
+
+    private static HttpRequestDef<CreateOrderIdRequest, CreateOrderIdResponse> genForCreateOrderId() {
+        // basic
+        HttpRequestDef.Builder<CreateOrderIdRequest, CreateOrderIdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateOrderIdRequest.class, CreateOrderIdResponse.class)
+                .withName("CreateOrderId")
+                .withUri("/v2/{project_id}/pools/{name}/orderid")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateOrderIdRequest::getName, CreateOrderIdRequest::setName));
+        builder.<String>withRequestField("actionType",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateOrderIdRequest::getActionType, CreateOrderIdRequest::setActionType));
+        builder.<String>withRequestField("workspaceId",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateOrderIdRequest::getWorkspaceId, CreateOrderIdRequest::setWorkspaceId));
+        builder.<CreateOrderRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateOrderRequestBody.class),
+            f -> f.withMarshaller(CreateOrderIdRequest::getBody, CreateOrderIdRequest::setBody));
 
         // response
 
@@ -473,6 +718,52 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteAlgorithmRequest, DeleteAlgorithmResponse> deleteAlgorithm =
+        genForDeleteAlgorithm();
+
+    private static HttpRequestDef<DeleteAlgorithmRequest, DeleteAlgorithmResponse> genForDeleteAlgorithm() {
+        // basic
+        HttpRequestDef.Builder<DeleteAlgorithmRequest, DeleteAlgorithmResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAlgorithmRequest.class, DeleteAlgorithmResponse.class)
+                .withName("DeleteAlgorithm")
+                .withUri("/v2/{project_id}/algorithms/{algorithm_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("algorithm_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAlgorithmRequest::getAlgorithmId, DeleteAlgorithmRequest::setAlgorithmId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAuthorizationsRequest, DeleteAuthorizationsResponse> deleteAuthorizations =
+        genForDeleteAuthorizations();
+
+    private static HttpRequestDef<DeleteAuthorizationsRequest, DeleteAuthorizationsResponse> genForDeleteAuthorizations() {
+        // basic
+        HttpRequestDef.Builder<DeleteAuthorizationsRequest, DeleteAuthorizationsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteAuthorizationsRequest.class, DeleteAuthorizationsResponse.class)
+            .withName("DeleteAuthorizations")
+            .withUri("/v2/{project_id}/authorizations")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("user_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAuthorizationsRequest::getUserId, DeleteAuthorizationsRequest::setUserId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteTrainJobTagsRequest, DeleteTrainJobTagsResponse> deleteTrainJobTags =
         genForDeleteTrainJobTags();
 
@@ -581,6 +872,97 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<GetAuthorizationsRequest, GetAuthorizationsResponse> getAuthorizations =
+        genForGetAuthorizations();
+
+    private static HttpRequestDef<GetAuthorizationsRequest, GetAuthorizationsResponse> genForGetAuthorizations() {
+        // basic
+        HttpRequestDef.Builder<GetAuthorizationsRequest, GetAuthorizationsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetAuthorizationsRequest.class, GetAuthorizationsResponse.class)
+                .withName("GetAuthorizations")
+                .withUri("/v2/{project_id}/authorizations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<GetAuthorizationsRequest.SortByEnum>withRequestField("sort_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(GetAuthorizationsRequest.SortByEnum.class),
+            f -> f.withMarshaller(GetAuthorizationsRequest::getSortBy, GetAuthorizationsRequest::setSortBy));
+        builder.<GetAuthorizationsRequest.OrderEnum>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(GetAuthorizationsRequest.OrderEnum.class),
+            f -> f.withMarshaller(GetAuthorizationsRequest::getOrder, GetAuthorizationsRequest::setOrder));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(GetAuthorizationsRequest::getLimit, GetAuthorizationsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(GetAuthorizationsRequest::getOffset, GetAuthorizationsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAlgorithmsRequest, ListAlgorithmsResponse> listAlgorithms =
+        genForListAlgorithms();
+
+    private static HttpRequestDef<ListAlgorithmsRequest, ListAlgorithmsResponse> genForListAlgorithms() {
+        // basic
+        HttpRequestDef.Builder<ListAlgorithmsRequest, ListAlgorithmsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAlgorithmsRequest.class, ListAlgorithmsResponse.class)
+                .withName("ListAlgorithms")
+                .withUri("/v2/{project_id}/algorithms")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAlgorithmsRequest::getOffset, ListAlgorithmsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAlgorithmsRequest::getLimit, ListAlgorithmsRequest::setLimit));
+        builder.<String>withRequestField("sort_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlgorithmsRequest::getSortBy, ListAlgorithmsRequest::setSortBy));
+        builder.<String>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlgorithmsRequest::getOrder, ListAlgorithmsRequest::setOrder));
+        builder.<String>withRequestField("group_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlgorithmsRequest::getGroupBy, ListAlgorithmsRequest::setGroupBy));
+        builder.<String>withRequestField("searches",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlgorithmsRequest::getSearches, ListAlgorithmsRequest::setSearches));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlgorithmsRequest::getWorkspaceId, ListAlgorithmsRequest::setWorkspaceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListEventCategoriesRequest, ListEventCategoriesResponse> listEventCategories =
         genForListEventCategories();
 
@@ -623,11 +1005,53 @@ public class ModelArtsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListScheduledEventsRequest::getWorkspaceId,
                 ListScheduledEventsRequest::setWorkspaceId));
-        builder.<List<String>>withRequestField("state",
+        builder.<List<ListScheduledEventsRequest.StateEnum>>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListScheduledEventsRequest::getState, ListScheduledEventsRequest::setState));
+        builder.<List<String>>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getType, ListScheduledEventsRequest::setType));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getId, ListScheduledEventsRequest::setId));
+        builder.<String>withRequestField("nodeName",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getNodeName, ListScheduledEventsRequest::setNodeName));
+        builder.<String>withRequestField("poolName",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getPoolName, ListScheduledEventsRequest::setPoolName));
+        builder.<String>withRequestField("publishStartTime",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getPublishStartTime,
+                ListScheduledEventsRequest::setPublishStartTime));
+        builder.<String>withRequestField("publishEndTime",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getPublishEndTime,
+                ListScheduledEventsRequest::setPublishEndTime));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getOffset, ListScheduledEventsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getLimit, ListScheduledEventsRequest::setLimit));
 
         // response
 
@@ -935,6 +1359,30 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAlgorithmByUuidRequest, ShowAlgorithmByUuidResponse> showAlgorithmByUuid =
+        genForShowAlgorithmByUuid();
+
+    private static HttpRequestDef<ShowAlgorithmByUuidRequest, ShowAlgorithmByUuidResponse> genForShowAlgorithmByUuid() {
+        // basic
+        HttpRequestDef.Builder<ShowAlgorithmByUuidRequest, ShowAlgorithmByUuidResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAlgorithmByUuidRequest.class, ShowAlgorithmByUuidResponse.class)
+                .withName("ShowAlgorithmByUuid")
+                .withUri("/v2/{project_id}/algorithms/{algorithm_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("algorithm_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAlgorithmByUuidRequest::getAlgorithmId,
+                ShowAlgorithmByUuidRequest::setAlgorithmId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAuthmodeDetailRequest, ShowAuthmodeDetailResponse> showAuthmodeDetail =
         genForShowAuthmodeDetail();
 
@@ -1165,6 +1613,36 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowNetworkAvailableIpRequest, ShowNetworkAvailableIpResponse> showNetworkAvailableIp =
+        genForShowNetworkAvailableIp();
+
+    private static HttpRequestDef<ShowNetworkAvailableIpRequest, ShowNetworkAvailableIpResponse> genForShowNetworkAvailableIp() {
+        // basic
+        HttpRequestDef.Builder<ShowNetworkAvailableIpRequest, ShowNetworkAvailableIpResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowNetworkAvailableIpRequest.class, ShowNetworkAvailableIpResponse.class)
+            .withName("ShowNetworkAvailableIp")
+            .withUri("/v1/{project_id}/networks/{network_name}/network-ip-availabilities?network_id&#x3D;{network_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("network_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNetworkAvailableIpRequest::getNetworkName,
+                ShowNetworkAvailableIpRequest::setNetworkName));
+        builder.<String>withRequestField("network_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNetworkAvailableIpRequest::getNetworkId,
+                ShowNetworkAvailableIpRequest::setNetworkId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowObsUrlOfTrainingJobLogsRequest, ShowObsUrlOfTrainingJobLogsResponse> showObsUrlOfTrainingJobLogs =
         genForShowObsUrlOfTrainingJobLogs();
 
@@ -1198,6 +1676,90 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowPoolNodeConfigRequest, ShowPoolNodeConfigResponse> showPoolNodeConfig =
+        genForShowPoolNodeConfig();
+
+    private static HttpRequestDef<ShowPoolNodeConfigRequest, ShowPoolNodeConfigResponse> genForShowPoolNodeConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowPoolNodeConfigRequest, ShowPoolNodeConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPoolNodeConfigRequest.class, ShowPoolNodeConfigResponse.class)
+                .withName("ShowPoolNodeConfig")
+                .withUri("/v2/{project_id}/pools/{pool_name}/node-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPoolNodeConfigRequest::getPoolName, ShowPoolNodeConfigRequest::setPoolName));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowPoolNodeConfigResponse::getXRequestId,
+                ShowPoolNodeConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPoolNodeConfigTemplateRequest, ShowPoolNodeConfigTemplateResponse> showPoolNodeConfigTemplate =
+        genForShowPoolNodeConfigTemplate();
+
+    private static HttpRequestDef<ShowPoolNodeConfigTemplateRequest, ShowPoolNodeConfigTemplateResponse> genForShowPoolNodeConfigTemplate() {
+        // basic
+        HttpRequestDef.Builder<ShowPoolNodeConfigTemplateRequest, ShowPoolNodeConfigTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowPoolNodeConfigTemplateRequest.class,
+                    ShowPoolNodeConfigTemplateResponse.class)
+                .withName("ShowPoolNodeConfigTemplate")
+                .withUri("/v2/{project_id}/pools/{pool_name}/node-config-template")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPoolNodeConfigTemplateRequest::getPoolName,
+                ShowPoolNodeConfigTemplateRequest::setPoolName));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowPoolNodeConfigTemplateResponse::getXRequestId,
+                ShowPoolNodeConfigTemplateResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPoolTagsRequest, ShowPoolTagsResponse> showPoolTags = genForShowPoolTags();
+
+    private static HttpRequestDef<ShowPoolTagsRequest, ShowPoolTagsResponse> genForShowPoolTags() {
+        // basic
+        HttpRequestDef.Builder<ShowPoolTagsRequest, ShowPoolTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPoolTagsRequest.class, ShowPoolTagsResponse.class)
+                .withName("ShowPoolTags")
+                .withUri("/v1/{project_id}/pools/{pool_name}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPoolTagsRequest::getPoolName, ShowPoolTagsRequest::setPoolName));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSaveImageJobRequest, ShowSaveImageJobResponse> showSaveImageJob =
         genForShowSaveImageJob();
 
@@ -1221,6 +1783,24 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSaveImageJobRequest::getTaskId, ShowSaveImageJobRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSearchAlgorithmsRequest, ShowSearchAlgorithmsResponse> showSearchAlgorithms =
+        genForShowSearchAlgorithms();
+
+    private static HttpRequestDef<ShowSearchAlgorithmsRequest, ShowSearchAlgorithmsResponse> genForShowSearchAlgorithms() {
+        // basic
+        HttpRequestDef.Builder<ShowSearchAlgorithmsRequest, ShowSearchAlgorithmsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowSearchAlgorithmsRequest.class, ShowSearchAlgorithmsResponse.class)
+            .withName("ShowSearchAlgorithms")
+            .withUri("/v2/{project_id}/search-algorithms")
+            .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -1814,6 +2394,55 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowWorkflowLabelsRequest, ShowWorkflowLabelsResponse> showWorkflowLabels =
+        genForShowWorkflowLabels();
+
+    private static HttpRequestDef<ShowWorkflowLabelsRequest, ShowWorkflowLabelsResponse> genForShowWorkflowLabels() {
+        // basic
+        HttpRequestDef.Builder<ShowWorkflowLabelsRequest, ShowWorkflowLabelsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowWorkflowLabelsRequest.class, ShowWorkflowLabelsResponse.class)
+                .withName("ShowWorkflowLabels")
+                .withUri("/v2/{project_id}/workflows/labels")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowWorkflowLabelsRequest::getLimit, ShowWorkflowLabelsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowWorkflowLabelsRequest::getOffset, ShowWorkflowLabelsRequest::setOffset));
+        builder.<ShowWorkflowLabelsRequest.OrderEnum>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowWorkflowLabelsRequest.OrderEnum.class),
+            f -> f.withMarshaller(ShowWorkflowLabelsRequest::getOrder, ShowWorkflowLabelsRequest::setOrder));
+        builder.<ShowWorkflowLabelsRequest.SortByEnum>withRequestField("sort_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowWorkflowLabelsRequest.SortByEnum.class),
+            f -> f.withMarshaller(ShowWorkflowLabelsRequest::getSortBy, ShowWorkflowLabelsRequest::setSortBy));
+        builder.<String>withRequestField("template_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkflowLabelsRequest::getTemplateId, ShowWorkflowLabelsRequest::setTemplateId));
+
+        // response
+        builder.<List<String>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowWorkflowLabelsResponse::getBody, ShowWorkflowLabelsResponse::setBody)
+                .withInnerContainerType(String.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowWorkflowsOverviewRequest, ShowWorkflowsOverviewResponse> showWorkflowsOverview =
         genForShowWorkflowsOverview();
 
@@ -2051,6 +2680,36 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListExecutionLabelsRequest, ListExecutionLabelsResponse> listExecutionLabels =
+        genForListExecutionLabels();
+
+    private static HttpRequestDef<ListExecutionLabelsRequest, ListExecutionLabelsResponse> genForListExecutionLabels() {
+        // basic
+        HttpRequestDef.Builder<ListExecutionLabelsRequest, ListExecutionLabelsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListExecutionLabelsRequest.class, ListExecutionLabelsResponse.class)
+                .withName("ListExecutionLabels")
+                .withUri("/v2/{project_id}/workflows/{workflow_id}/executions/labels")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListExecutionLabelsRequest::getWorkflowId,
+                ListExecutionLabelsRequest::setWorkflowId));
+
+        // response
+        builder.<List<String>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListExecutionLabelsResponse::getBody, ListExecutionLabelsResponse::setBody)
+                .withInnerContainerType(String.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> listWorkflowExecutions =
         genForListWorkflowExecutions();
 
@@ -2111,6 +2770,57 @@ public class ModelArtsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListWorkflowExecutionsRequest.OrderEnum.class),
             f -> f.withMarshaller(ListWorkflowExecutionsRequest::getOrder, ListWorkflowExecutionsRequest::setOrder));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListWorkflowStepExecutionRequest, ListWorkflowStepExecutionResponse> listWorkflowStepExecution =
+        genForListWorkflowStepExecution();
+
+    private static HttpRequestDef<ListWorkflowStepExecutionRequest, ListWorkflowStepExecutionResponse> genForListWorkflowStepExecution() {
+        // basic
+        HttpRequestDef.Builder<ListWorkflowStepExecutionRequest, ListWorkflowStepExecutionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListWorkflowStepExecutionRequest.class,
+                    ListWorkflowStepExecutionResponse.class)
+                .withName("ListWorkflowStepExecution")
+                .withUri("/v2/{project_id}/workflows/{workflow_id}/step-executions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowStepExecutionRequest::getWorkflowId,
+                ListWorkflowStepExecutionRequest::setWorkflowId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWorkflowStepExecutionRequest::getLimit,
+                ListWorkflowStepExecutionRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListWorkflowStepExecutionRequest::getOffset,
+                ListWorkflowStepExecutionRequest::setOffset));
+        builder.<ListWorkflowStepExecutionRequest.OrderEnum>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListWorkflowStepExecutionRequest.OrderEnum.class),
+            f -> f.withMarshaller(ListWorkflowStepExecutionRequest::getOrder,
+                ListWorkflowStepExecutionRequest::setOrder));
+        builder.<String>withRequestField("sort_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkflowStepExecutionRequest::getSortBy,
+                ListWorkflowStepExecutionRequest::setSortBy));
 
         // response
 
@@ -2316,6 +3026,31 @@ public class ModelArtsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowWorkflowScheduleRequest::getScheduleId,
                 ShowWorkflowScheduleRequest::setScheduleId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowWorkflowScheduleListRequest, ShowWorkflowScheduleListResponse> showWorkflowScheduleList =
+        genForShowWorkflowScheduleList();
+
+    private static HttpRequestDef<ShowWorkflowScheduleListRequest, ShowWorkflowScheduleListResponse> genForShowWorkflowScheduleList() {
+        // basic
+        HttpRequestDef.Builder<ShowWorkflowScheduleListRequest, ShowWorkflowScheduleListResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowWorkflowScheduleListRequest.class, ShowWorkflowScheduleListResponse.class)
+                .withName("ShowWorkflowScheduleList")
+                .withUri("/v2/{project_id}/workflows/{workflow_id}/schedules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workflow_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWorkflowScheduleListRequest::getWorkflowId,
+                ShowWorkflowScheduleListRequest::setWorkflowId));
 
         // response
 

@@ -20,13 +20,18 @@ public class Volume {
 
     private String used;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gift_size")
+
+    private String giftSize;
+
     public Volume withSize(String size) {
         this.size = size;
         return this;
     }
 
     /**
-     * 磁盘大小。单位：GB。
+     * 参数解释： 磁盘大小。单位：GB。 取值范围： 不涉及。
      * @return size
      */
     public String getSize() {
@@ -43,7 +48,7 @@ public class Volume {
     }
 
     /**
-     * 磁盘使用量。单位：GB。
+     * 参数解释： 磁盘使用量。单位：GB。 取值范围： 不涉及。
      * @return used
      */
     public String getUsed() {
@@ -52,6 +57,23 @@ public class Volume {
 
     public void setUsed(String used) {
         this.used = used;
+    }
+
+    public Volume withGiftSize(String giftSize) {
+        this.giftSize = giftSize;
+        return this;
+    }
+
+    /**
+     * 参数解释： 赠送的磁盘大小。单位：GB。 取值范围： 不涉及。
+     * @return giftSize
+     */
+    public String getGiftSize() {
+        return giftSize;
+    }
+
+    public void setGiftSize(String giftSize) {
+        this.giftSize = giftSize;
     }
 
     @Override
@@ -63,12 +85,13 @@ public class Volume {
             return false;
         }
         Volume that = (Volume) obj;
-        return Objects.equals(this.size, that.size) && Objects.equals(this.used, that.used);
+        return Objects.equals(this.size, that.size) && Objects.equals(this.used, that.used)
+            && Objects.equals(this.giftSize, that.giftSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(size, used);
+        return Objects.hash(size, used, giftSize);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class Volume {
         sb.append("class Volume {\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    used: ").append(toIndentedString(used)).append("\n");
+        sb.append("    giftSize: ").append(toIndentedString(giftSize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

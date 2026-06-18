@@ -28,6 +28,8 @@ import com.huaweicloud.sdk.cbh.v2.model.ListInstancesRequest;
 import com.huaweicloud.sdk.cbh.v2.model.ListInstancesResponse;
 import com.huaweicloud.sdk.cbh.v2.model.ListSpecificationsRequest;
 import com.huaweicloud.sdk.cbh.v2.model.ListSpecificationsResponse;
+import com.huaweicloud.sdk.cbh.v2.model.ListSwitchConfigInfoRequest;
+import com.huaweicloud.sdk.cbh.v2.model.ListSwitchConfigInfoResponse;
 import com.huaweicloud.sdk.cbh.v2.model.ListTagsRequest;
 import com.huaweicloud.sdk.cbh.v2.model.ListTagsResponse;
 import com.huaweicloud.sdk.cbh.v2.model.LoginInstanceAdminRequest;
@@ -351,6 +353,24 @@ public class CbhMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListSpecificationsResponse::getBody, ListSpecificationsResponse::setBody)
                 .withInnerContainerType(CbsGetSpecInfo.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSwitchConfigInfoRequest, ListSwitchConfigInfoResponse> listSwitchConfigInfo =
+        genForListSwitchConfigInfo();
+
+    private static HttpRequestDef<ListSwitchConfigInfoRequest, ListSwitchConfigInfoResponse> genForListSwitchConfigInfo() {
+        // basic
+        HttpRequestDef.Builder<ListSwitchConfigInfoRequest, ListSwitchConfigInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSwitchConfigInfoRequest.class, ListSwitchConfigInfoResponse.class)
+            .withName("ListSwitchConfigInfo")
+            .withUri("/v2/{project_id}/cbs/feature/config")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
 
         return builder.build();
     }

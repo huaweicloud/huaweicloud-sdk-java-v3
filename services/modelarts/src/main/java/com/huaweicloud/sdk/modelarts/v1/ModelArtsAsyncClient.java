@@ -5,14 +5,28 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.modelarts.v1.model.AcceptScheduledEventRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.AcceptScheduledEventResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchCreatePoolTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchCreatePoolTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ChangeAlgorithmRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ChangeAlgorithmResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingExperimentRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingExperimentResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingJobDescriptionRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingJobDescriptionResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CheckTrainingExperimentRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CheckTrainingExperimentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateAuthorizationRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateAuthorizationResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateModelArtsAgencyRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateModelArtsAgencyResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateOrderIdRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateOrderIdResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateSaveImageJobRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateSaveImageJobResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateTrainJobTagsRequest;
@@ -39,6 +53,10 @@ import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowSubscriptionsRequest
 import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowSubscriptionsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkspaceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteAlgorithmRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteAlgorithmResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteAuthorizationsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteAuthorizationsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteTrainJobTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteTrainJobTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteTrainingExperimentRequest;
@@ -55,8 +73,14 @@ import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowSubscriptionRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowSubscriptionResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkspaceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.GetAuthorizationsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.GetAuthorizationsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListAlgorithmsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListAlgorithmsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListEventCategoriesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListEventCategoriesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListExecutionLabelsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListExecutionLabelsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListScheduledEventsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListScheduledEventsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingExperimentsRequest;
@@ -71,12 +95,16 @@ import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingJobsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowExecutionsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowExecutionsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowStepExecutionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowStepExecutionResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkspaceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.NotifyTrainingJobInformationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.NotifyTrainingJobInformationResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAlgorithmByUuidRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowAlgorithmByUuidResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAuthmodeDetailRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAuthmodeDetailResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchParamAnalysisResultPathRequest;
@@ -93,10 +121,20 @@ import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchYamlTemplateContentR
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchYamlTemplateContentResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchYamlTemplatesInfoRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchYamlTemplatesInfoResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowNetworkAvailableIpRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowNetworkAvailableIpResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowObsUrlOfTrainingJobLogsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowObsUrlOfTrainingJobLogsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeConfigRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeConfigResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeConfigTemplateRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeConfigTemplateResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowSaveImageJobRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowSaveImageJobResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowSearchAlgorithmsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowSearchAlgorithmsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainJobTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainJobTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingExperimentDetailsRequest;
@@ -115,8 +153,12 @@ import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingQuotasRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingQuotasResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowExecutionRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowExecutionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowLabelsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowLabelsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowScheduleListRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowScheduleListResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowScheduleRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowScheduleResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowStepExecutionMetricsRequest;
@@ -193,6 +235,93 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<AcceptScheduledEventRequest, AcceptScheduledEventResponse> acceptScheduledEventAsyncInvoker(
         AcceptScheduledEventRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.acceptScheduledEvent, hcClient);
+    }
+
+    /**
+     * 批量创建资源池标签
+     *
+     * 批量创建资源池标签接口用于为指定资源池添加或更新多个标签信息。该接口适用于以下场景：当需要对资源池进行统一分类管理（如成本归属、环境标识）、批量配置元数据（如项目归属、负责人信息）或更新已有标签值时，管理员可通过此接口一次性操作多个标签。使用该接口的前提条件是目标资源池必须已存在且处于可管理状态，调用者需具备资源池标签管理权限，且提交的标签数据需符合格式规范（如key非空、value长度限制）。操作完成后，系统将为资源池添加新标签或覆盖同名标签的值，且不会影响资源池的其他配置属性。若资源池不存在、用户权限不足、标签格式错误或系统服务异常，接口将返回对应的错误信息（如\&quot;404 Not Found\&quot;、\&quot;403 Forbidden\&quot;、\&quot;400 Bad Request\&quot;或\&quot;503 Service Unavailable\&quot;）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreatePoolTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreatePoolTagsResponse>
+     */
+    public CompletableFuture<BatchCreatePoolTagsResponse> batchCreatePoolTagsAsync(BatchCreatePoolTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.batchCreatePoolTags);
+    }
+
+    /**
+     * 批量创建资源池标签
+     *
+     * 批量创建资源池标签接口用于为指定资源池添加或更新多个标签信息。该接口适用于以下场景：当需要对资源池进行统一分类管理（如成本归属、环境标识）、批量配置元数据（如项目归属、负责人信息）或更新已有标签值时，管理员可通过此接口一次性操作多个标签。使用该接口的前提条件是目标资源池必须已存在且处于可管理状态，调用者需具备资源池标签管理权限，且提交的标签数据需符合格式规范（如key非空、value长度限制）。操作完成后，系统将为资源池添加新标签或覆盖同名标签的值，且不会影响资源池的其他配置属性。若资源池不存在、用户权限不足、标签格式错误或系统服务异常，接口将返回对应的错误信息（如\&quot;404 Not Found\&quot;、\&quot;403 Forbidden\&quot;、\&quot;400 Bad Request\&quot;或\&quot;503 Service Unavailable\&quot;）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreatePoolTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreatePoolTagsRequest, BatchCreatePoolTagsResponse>
+     */
+    public AsyncInvoker<BatchCreatePoolTagsRequest, BatchCreatePoolTagsResponse> batchCreatePoolTagsAsyncInvoker(
+        BatchCreatePoolTagsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.batchCreatePoolTags, hcClient);
+    }
+
+    /**
+     * 批量删除资源池标签
+     *
+     * 批量删除资源标签接口用于移除指定资源上的多个标签信息。该接口适用于以下场景：当需要清理冗余标签（如过期分类、无效元数据）、统一调整资源分类策略或因权限变更需批量移除标签时，管理员可通过此接口一次性删除多个标签。使用该接口的前提条件是目标资源必须已存在且处于可管理状态，调用者需具备资源标签管理权限，且待删除的标签必须已关联至该资源，系统标签管理服务需正常运行。操作完成后，指定标签将从资源中彻底移除，且不会影响资源的其他配置属性。若资源不存在、用户权限不足、标签未关联或系统服务异常，接口将返回对应的错误信息（如\&quot;404 Not Found\&quot;、\&quot;403 Forbidden\&quot;、\&quot;400 Bad Request\&quot;或\&quot;503 Service Unavailable\&quot;）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeletePoolTagsRequest 请求对象
+     * @return CompletableFuture<BatchDeletePoolTagsResponse>
+     */
+    public CompletableFuture<BatchDeletePoolTagsResponse> batchDeletePoolTagsAsync(BatchDeletePoolTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.batchDeletePoolTags);
+    }
+
+    /**
+     * 批量删除资源池标签
+     *
+     * 批量删除资源标签接口用于移除指定资源上的多个标签信息。该接口适用于以下场景：当需要清理冗余标签（如过期分类、无效元数据）、统一调整资源分类策略或因权限变更需批量移除标签时，管理员可通过此接口一次性删除多个标签。使用该接口的前提条件是目标资源必须已存在且处于可管理状态，调用者需具备资源标签管理权限，且待删除的标签必须已关联至该资源，系统标签管理服务需正常运行。操作完成后，指定标签将从资源中彻底移除，且不会影响资源的其他配置属性。若资源不存在、用户权限不足、标签未关联或系统服务异常，接口将返回对应的错误信息（如\&quot;404 Not Found\&quot;、\&quot;403 Forbidden\&quot;、\&quot;400 Bad Request\&quot;或\&quot;503 Service Unavailable\&quot;）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeletePoolTagsRequest 请求对象
+     * @return AsyncInvoker<BatchDeletePoolTagsRequest, BatchDeletePoolTagsResponse>
+     */
+    public AsyncInvoker<BatchDeletePoolTagsRequest, BatchDeletePoolTagsResponse> batchDeletePoolTagsAsyncInvoker(
+        BatchDeletePoolTagsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.batchDeletePoolTags, hcClient);
+    }
+
+    /**
+     * 更新算法
+     *
+     * 更新算法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeAlgorithmRequest 请求对象
+     * @return CompletableFuture<ChangeAlgorithmResponse>
+     */
+    public CompletableFuture<ChangeAlgorithmResponse> changeAlgorithmAsync(ChangeAlgorithmRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.changeAlgorithm);
+    }
+
+    /**
+     * 更新算法
+     *
+     * 更新算法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeAlgorithmRequest 请求对象
+     * @return AsyncInvoker<ChangeAlgorithmRequest, ChangeAlgorithmResponse>
+     */
+    public AsyncInvoker<ChangeAlgorithmRequest, ChangeAlgorithmResponse> changeAlgorithmAsyncInvoker(
+        ChangeAlgorithmRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.changeAlgorithm, hcClient);
     }
 
     /**
@@ -288,6 +417,35 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 创建算法
+     *
+     * 创建一个算法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAlgorithmRequest 请求对象
+     * @return CompletableFuture<CreateAlgorithmResponse>
+     */
+    public CompletableFuture<CreateAlgorithmResponse> createAlgorithmAsync(CreateAlgorithmRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createAlgorithm);
+    }
+
+    /**
+     * 创建算法
+     *
+     * 创建一个算法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAlgorithmRequest 请求对象
+     * @return AsyncInvoker<CreateAlgorithmRequest, CreateAlgorithmResponse>
+     */
+    public AsyncInvoker<CreateAlgorithmRequest, CreateAlgorithmResponse> createAlgorithmAsyncInvoker(
+        CreateAlgorithmRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createAlgorithm, hcClient);
+    }
+
+    /**
      * 创建发布算法资产
      *
      * 创建发布算法资产接口用于在算法管理中创建并发布新的算法资产。
@@ -317,6 +475,94 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<CreateAlgorithmVersionToGalleryRequest, CreateAlgorithmVersionToGalleryResponse> createAlgorithmVersionToGalleryAsyncInvoker(
         CreateAlgorithmVersionToGalleryRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.createAlgorithmVersionToGallery, hcClient);
+    }
+
+    /**
+     * 配置授权
+     *
+     * 配置授权接口用于配置ModelArts的授权。该接口适用于以下场景：当需要为IAM子用户设置访问ModelArts的权限时，管理员可通过此接口配置授权。使用该接口的前提条件是管理员具备IAM系统的Security Administrator权限，并且需要为子用户设置访问密钥。配置完成后，子用户将被授予访问ModelArts资源的权限，从而能够正常使用训练管理、开发环境、数据管理、在线服务等功能。若管理员无权限操作或子用户不存在，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAuthorizationRequest 请求对象
+     * @return CompletableFuture<CreateAuthorizationResponse>
+     */
+    public CompletableFuture<CreateAuthorizationResponse> createAuthorizationAsync(CreateAuthorizationRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createAuthorization);
+    }
+
+    /**
+     * 配置授权
+     *
+     * 配置授权接口用于配置ModelArts的授权。该接口适用于以下场景：当需要为IAM子用户设置访问ModelArts的权限时，管理员可通过此接口配置授权。使用该接口的前提条件是管理员具备IAM系统的Security Administrator权限，并且需要为子用户设置访问密钥。配置完成后，子用户将被授予访问ModelArts资源的权限，从而能够正常使用训练管理、开发环境、数据管理、在线服务等功能。若管理员无权限操作或子用户不存在，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAuthorizationRequest 请求对象
+     * @return AsyncInvoker<CreateAuthorizationRequest, CreateAuthorizationResponse>
+     */
+    public AsyncInvoker<CreateAuthorizationRequest, CreateAuthorizationResponse> createAuthorizationAsyncInvoker(
+        CreateAuthorizationRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createAuthorization, hcClient);
+    }
+
+    /**
+     * 创建ModelArts委托
+     *
+     * 创建ModelArts委托接口用于创建包含OBS、SWR、IEF等依赖服务的ModelArts委托。该接口适用于以下场景：当需要配置ModelArts访问OBS、SWR、IEF等服务的权限时，用户可通过此接口创建委托。使用该接口的前提条件是用户具备创建委托的权限，并且需要在IAM系统中具备相应的权限。创建完成后，ModelArts将被授权访问OBS、SWR、IEF等服务，从而能够正常执行数据存储、镜像拉取、模型部署等功能。若用户无权限创建委托或依赖服务未配置，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateModelArtsAgencyRequest 请求对象
+     * @return CompletableFuture<CreateModelArtsAgencyResponse>
+     */
+    public CompletableFuture<CreateModelArtsAgencyResponse> createModelArtsAgencyAsync(
+        CreateModelArtsAgencyRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createModelArtsAgency);
+    }
+
+    /**
+     * 创建ModelArts委托
+     *
+     * 创建ModelArts委托接口用于创建包含OBS、SWR、IEF等依赖服务的ModelArts委托。该接口适用于以下场景：当需要配置ModelArts访问OBS、SWR、IEF等服务的权限时，用户可通过此接口创建委托。使用该接口的前提条件是用户具备创建委托的权限，并且需要在IAM系统中具备相应的权限。创建完成后，ModelArts将被授权访问OBS、SWR、IEF等服务，从而能够正常执行数据存储、镜像拉取、模型部署等功能。若用户无权限创建委托或依赖服务未配置，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateModelArtsAgencyRequest 请求对象
+     * @return AsyncInvoker<CreateModelArtsAgencyRequest, CreateModelArtsAgencyResponse>
+     */
+    public AsyncInvoker<CreateModelArtsAgencyRequest, CreateModelArtsAgencyResponse> createModelArtsAgencyAsyncInvoker(
+        CreateModelArtsAgencyRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createModelArtsAgency, hcClient);
+    }
+
+    /**
+     * 创建资源池的订单id
+     *
+     * 创建资源池订单ID接口用于生成资源池申请的订单标识。该接口适用于以下场景：当用户需要申请新资源池时（如业务扩展、资源不足或临时资源需求），可通过此接口提交按需转包周期订单的创建请求。使用该接口的前提条件是用户需具备资源申请权限，提交的资源池配置参数（如资源类型、容量、周期等）需符合系统校验规则，且当前仅支持按需转包周期订单类型。订单创建成功后，系统将生成唯一订单ID并触发后续资源分配流程，同时记录操作日志。若用户权限不足、配置参数缺失/冲突（如容量超出配额）、订单类型不支持或系统资源不足，接口将返回对应错误码及提示信息，且不会生成订单ID或占用资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOrderIdRequest 请求对象
+     * @return CompletableFuture<CreateOrderIdResponse>
+     */
+    public CompletableFuture<CreateOrderIdResponse> createOrderIdAsync(CreateOrderIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createOrderId);
+    }
+
+    /**
+     * 创建资源池的订单id
+     *
+     * 创建资源池订单ID接口用于生成资源池申请的订单标识。该接口适用于以下场景：当用户需要申请新资源池时（如业务扩展、资源不足或临时资源需求），可通过此接口提交按需转包周期订单的创建请求。使用该接口的前提条件是用户需具备资源申请权限，提交的资源池配置参数（如资源类型、容量、周期等）需符合系统校验规则，且当前仅支持按需转包周期订单类型。订单创建成功后，系统将生成唯一订单ID并触发后续资源分配流程，同时记录操作日志。若用户权限不足、配置参数缺失/冲突（如容量超出配额）、订单类型不支持或系统资源不足，接口将返回对应错误码及提示信息，且不会生成订单ID或占用资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOrderIdRequest 请求对象
+     * @return AsyncInvoker<CreateOrderIdRequest, CreateOrderIdResponse>
+     */
+    public AsyncInvoker<CreateOrderIdRequest, CreateOrderIdResponse> createOrderIdAsyncInvoker(
+        CreateOrderIdRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createOrderId, hcClient);
     }
 
     /**
@@ -468,6 +714,65 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 删除算法
+     *
+     * 删除算法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAlgorithmRequest 请求对象
+     * @return CompletableFuture<DeleteAlgorithmResponse>
+     */
+    public CompletableFuture<DeleteAlgorithmResponse> deleteAlgorithmAsync(DeleteAlgorithmRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deleteAlgorithm);
+    }
+
+    /**
+     * 删除算法
+     *
+     * 删除算法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAlgorithmRequest 请求对象
+     * @return AsyncInvoker<DeleteAlgorithmRequest, DeleteAlgorithmResponse>
+     */
+    public AsyncInvoker<DeleteAlgorithmRequest, DeleteAlgorithmResponse> deleteAlgorithmAsyncInvoker(
+        DeleteAlgorithmRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.deleteAlgorithm, hcClient);
+    }
+
+    /**
+     * 删除授权
+     *
+     * 删除授权接口用于删除指定用户的授权或删除全量用户的授权。该接口适用于以下场景：当需要撤销特定用户的访问权限或在系统维护时清理所有用户的授权时，管理员可通过此接口删除指定用户的授权或全量用户的授权。使用该接口的前提条件是管理员具备删除授权的权限，并且需要指定要删除授权的用户或选择删除全量用户的授权。删除操作完成后，指定用户的授权将被移除，或所有用户的授权将被清空，用户将无法再访问相关功能。若用户不存在、管理员无权限操作或删除全量授权时系统检测到无管理员权限，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAuthorizationsRequest 请求对象
+     * @return CompletableFuture<DeleteAuthorizationsResponse>
+     */
+    public CompletableFuture<DeleteAuthorizationsResponse> deleteAuthorizationsAsync(
+        DeleteAuthorizationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deleteAuthorizations);
+    }
+
+    /**
+     * 删除授权
+     *
+     * 删除授权接口用于删除指定用户的授权或删除全量用户的授权。该接口适用于以下场景：当需要撤销特定用户的访问权限或在系统维护时清理所有用户的授权时，管理员可通过此接口删除指定用户的授权或全量用户的授权。使用该接口的前提条件是管理员具备删除授权的权限，并且需要指定要删除授权的用户或选择删除全量用户的授权。删除操作完成后，指定用户的授权将被移除，或所有用户的授权将被清空，用户将无法再访问相关功能。若用户不存在、管理员无权限操作或删除全量授权时系统检测到无管理员权限，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAuthorizationsRequest 请求对象
+     * @return AsyncInvoker<DeleteAuthorizationsRequest, DeleteAuthorizationsResponse>
+     */
+    public AsyncInvoker<DeleteAuthorizationsRequest, DeleteAuthorizationsResponse> deleteAuthorizationsAsyncInvoker(
+        DeleteAuthorizationsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.deleteAuthorizations, hcClient);
+    }
+
+    /**
      * 删除训练作业标签
      *
      * 删除训练作业标签，支持批量删除。
@@ -584,6 +889,64 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<DeleteWorkspaceRequest, DeleteWorkspaceResponse> deleteWorkspaceAsyncInvoker(
         DeleteWorkspaceRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.deleteWorkspace, hcClient);
+    }
+
+    /**
+     * 查看授权列表
+     *
+     * 查看授权列表接口用于查看授权信息。该接口适用于以下场景：当用户需要了解当前的授权情况、审核权限分配或管理权限时，可通过此接口查看授权列表。使用该接口的前提条件是用户具备查看授权的权限。查看操作完成后，将返回授权列表，包括被授权的资源、授权类型以及授权内容等信息。若用户无权限查看或授权列表不存在，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetAuthorizationsRequest 请求对象
+     * @return CompletableFuture<GetAuthorizationsResponse>
+     */
+    public CompletableFuture<GetAuthorizationsResponse> getAuthorizationsAsync(GetAuthorizationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.getAuthorizations);
+    }
+
+    /**
+     * 查看授权列表
+     *
+     * 查看授权列表接口用于查看授权信息。该接口适用于以下场景：当用户需要了解当前的授权情况、审核权限分配或管理权限时，可通过此接口查看授权列表。使用该接口的前提条件是用户具备查看授权的权限。查看操作完成后，将返回授权列表，包括被授权的资源、授权类型以及授权内容等信息。若用户无权限查看或授权列表不存在，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetAuthorizationsRequest 请求对象
+     * @return AsyncInvoker<GetAuthorizationsRequest, GetAuthorizationsResponse>
+     */
+    public AsyncInvoker<GetAuthorizationsRequest, GetAuthorizationsResponse> getAuthorizationsAsyncInvoker(
+        GetAuthorizationsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.getAuthorizations, hcClient);
+    }
+
+    /**
+     * 查询算法列表
+     *
+     * 查询算法列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlgorithmsRequest 请求对象
+     * @return CompletableFuture<ListAlgorithmsResponse>
+     */
+    public CompletableFuture<ListAlgorithmsResponse> listAlgorithmsAsync(ListAlgorithmsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listAlgorithms);
+    }
+
+    /**
+     * 查询算法列表
+     *
+     * 查询算法列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlgorithmsRequest 请求对象
+     * @return AsyncInvoker<ListAlgorithmsRequest, ListAlgorithmsResponse>
+     */
+    public AsyncInvoker<ListAlgorithmsRequest, ListAlgorithmsResponse> listAlgorithmsAsyncInvoker(
+        ListAlgorithmsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listAlgorithms, hcClient);
     }
 
     /**
@@ -859,6 +1222,35 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 查询算法详情
+     *
+     * 根据算法id查询指定算法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAlgorithmByUuidRequest 请求对象
+     * @return CompletableFuture<ShowAlgorithmByUuidResponse>
+     */
+    public CompletableFuture<ShowAlgorithmByUuidResponse> showAlgorithmByUuidAsync(ShowAlgorithmByUuidRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showAlgorithmByUuid);
+    }
+
+    /**
+     * 查询算法详情
+     *
+     * 根据算法id查询指定算法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAlgorithmByUuidRequest 请求对象
+     * @return AsyncInvoker<ShowAlgorithmByUuidRequest, ShowAlgorithmByUuidResponse>
+     */
+    public AsyncInvoker<ShowAlgorithmByUuidRequest, ShowAlgorithmByUuidResponse> showAlgorithmByUuidAsyncInvoker(
+        ShowAlgorithmByUuidRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showAlgorithmByUuid, hcClient);
+    }
+
+    /**
      * 查询授权模式
      *
      * 查询授权模式接口用于获取指定资源或功能的授权方式和权限配置信息。该接口适用于以下场景：当系统管理员需要查看资源的访问权限设置、开发者需要验证授权策略配置是否正确，或安全审计人员需要检查授权配置是否符合安全规范时，可通过此接口查询授权模式的详细信息。使用该接口的前提条件是用户具有查询权限且目标资源或功能的授权模式已配置。调用成功后，接口将返回授权模式的类型、规则及权限范围等详细信息。若用户无权限访问该接口，或目标资源的授权模式未配置，接口将返回相应的错误信息。
@@ -1098,6 +1490,36 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 查询网络可用的IP
+     *
+     * 查询网络可用的IP接口用于查找指定网络中未被占用的IP地址。该接口适用于以下场景：在网络规划、资源分配或故障排查时，用户需要快速获取可用的IP地址信息。使用该接口的前提条件是用户具有访问目标网络的权限，并且需要提供有效的网络范围（如子网掩码或IP段）。查询完成后，接口将返回指定网络中未被占用的IP地址列表，用户可以根据结果进行IP地址的分配或进一步操作。若网络不可达、权限不足或网络范围有误，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowNetworkAvailableIpRequest 请求对象
+     * @return CompletableFuture<ShowNetworkAvailableIpResponse>
+     */
+    public CompletableFuture<ShowNetworkAvailableIpResponse> showNetworkAvailableIpAsync(
+        ShowNetworkAvailableIpRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showNetworkAvailableIp);
+    }
+
+    /**
+     * 查询网络可用的IP
+     *
+     * 查询网络可用的IP接口用于查找指定网络中未被占用的IP地址。该接口适用于以下场景：在网络规划、资源分配或故障排查时，用户需要快速获取可用的IP地址信息。使用该接口的前提条件是用户具有访问目标网络的权限，并且需要提供有效的网络范围（如子网掩码或IP段）。查询完成后，接口将返回指定网络中未被占用的IP地址列表，用户可以根据结果进行IP地址的分配或进一步操作。若网络不可达、权限不足或网络范围有误，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowNetworkAvailableIpRequest 请求对象
+     * @return AsyncInvoker<ShowNetworkAvailableIpRequest, ShowNetworkAvailableIpResponse>
+     */
+    public AsyncInvoker<ShowNetworkAvailableIpRequest, ShowNetworkAvailableIpResponse> showNetworkAvailableIpAsyncInvoker(
+        ShowNetworkAvailableIpRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showNetworkAvailableIp, hcClient);
+    }
+
+    /**
      * 查询训练作业指定任务的日志（OBS链接）
      *
      * 查询训练作业指定任务的日志（OBS临时链接，有效期5分钟），可全量查看或直接下载。
@@ -1128,6 +1550,94 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 查询资源池节点自定义配置
+     *
+     * 查询资源池节点自定义配置接口用于获取指定资源池节点的自定义配置信息。该接口适用于以下场景：当需要查看资源池节点的详细配置、优化资源分配或管理节点资源时，用户可通过此接口获取节点的自定义配置数据。使用该接口的前提条件是资源池节点已存在且用户具有访问该节点的权限。调用接口成功后，系统将返回资源池节点的自定义配置信息，包括硬件规格、软件环境、网络设置等详细参数。若资源池节点不存在、用户无权限访问或节点配置信息未正确配置，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPoolNodeConfigRequest 请求对象
+     * @return CompletableFuture<ShowPoolNodeConfigResponse>
+     */
+    public CompletableFuture<ShowPoolNodeConfigResponse> showPoolNodeConfigAsync(ShowPoolNodeConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showPoolNodeConfig);
+    }
+
+    /**
+     * 查询资源池节点自定义配置
+     *
+     * 查询资源池节点自定义配置接口用于获取指定资源池节点的自定义配置信息。该接口适用于以下场景：当需要查看资源池节点的详细配置、优化资源分配或管理节点资源时，用户可通过此接口获取节点的自定义配置数据。使用该接口的前提条件是资源池节点已存在且用户具有访问该节点的权限。调用接口成功后，系统将返回资源池节点的自定义配置信息，包括硬件规格、软件环境、网络设置等详细参数。若资源池节点不存在、用户无权限访问或节点配置信息未正确配置，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPoolNodeConfigRequest 请求对象
+     * @return AsyncInvoker<ShowPoolNodeConfigRequest, ShowPoolNodeConfigResponse>
+     */
+    public AsyncInvoker<ShowPoolNodeConfigRequest, ShowPoolNodeConfigResponse> showPoolNodeConfigAsyncInvoker(
+        ShowPoolNodeConfigRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showPoolNodeConfig, hcClient);
+    }
+
+    /**
+     * 查询资源池节点自定义配置模板
+     *
+     * 查询资源池节点自定义配置模板接口用于获取节点配置模板的结构定义与参数规范。该接口适用于以下场景：当需要了解节点自定义配置的模板结构（如参数字段、校验规则、示例值）、验证配置模板是否符合规范或进行配置模板选型时，用户可通过此接口获取模板的元数据（如参数说明、类型限制、依赖关系等）。使用该接口的前提条件是目标配置模板必须已注册至系统且处于可访问状态，调用者需具备模板查看权限，且系统配置管理服务正常运行。查询操作完成后，系统将返回模板的完整定义信息（如参数列表、版本号、更新时间等），且不会对模板内容或节点配置产生影响。若模板未注册、用户权限不足或系统服务异常，接口将返回对应的错误信息（如\&quot;404 Not Found\&quot;、\&quot;403 Forbidden\&quot;或\&quot;503 Service Unavailable\&quot;）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPoolNodeConfigTemplateRequest 请求对象
+     * @return CompletableFuture<ShowPoolNodeConfigTemplateResponse>
+     */
+    public CompletableFuture<ShowPoolNodeConfigTemplateResponse> showPoolNodeConfigTemplateAsync(
+        ShowPoolNodeConfigTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showPoolNodeConfigTemplate);
+    }
+
+    /**
+     * 查询资源池节点自定义配置模板
+     *
+     * 查询资源池节点自定义配置模板接口用于获取节点配置模板的结构定义与参数规范。该接口适用于以下场景：当需要了解节点自定义配置的模板结构（如参数字段、校验规则、示例值）、验证配置模板是否符合规范或进行配置模板选型时，用户可通过此接口获取模板的元数据（如参数说明、类型限制、依赖关系等）。使用该接口的前提条件是目标配置模板必须已注册至系统且处于可访问状态，调用者需具备模板查看权限，且系统配置管理服务正常运行。查询操作完成后，系统将返回模板的完整定义信息（如参数列表、版本号、更新时间等），且不会对模板内容或节点配置产生影响。若模板未注册、用户权限不足或系统服务异常，接口将返回对应的错误信息（如\&quot;404 Not Found\&quot;、\&quot;403 Forbidden\&quot;或\&quot;503 Service Unavailable\&quot;）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPoolNodeConfigTemplateRequest 请求对象
+     * @return AsyncInvoker<ShowPoolNodeConfigTemplateRequest, ShowPoolNodeConfigTemplateResponse>
+     */
+    public AsyncInvoker<ShowPoolNodeConfigTemplateRequest, ShowPoolNodeConfigTemplateResponse> showPoolNodeConfigTemplateAsyncInvoker(
+        ShowPoolNodeConfigTemplateRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showPoolNodeConfigTemplate, hcClient);
+    }
+
+    /**
+     * 查询资源池上的标签
+     *
+     * 查询资源池的标签接口用于获取指定资源池的标签信息。该接口适用于以下场景：当需要查看、管理或统计特定资源池的标签信息时，用户可通过此接口获取资源池的标签数据。使用该接口的前提条件是资源池已存在且用户具有访问该资源池的权限。调用接口成功后，系统将返回指定资源池的标签信息，包括标签键和标签值。若资源池不存在、用户无权限访问或资源池未配置标签，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPoolTagsRequest 请求对象
+     * @return CompletableFuture<ShowPoolTagsResponse>
+     */
+    public CompletableFuture<ShowPoolTagsResponse> showPoolTagsAsync(ShowPoolTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showPoolTags);
+    }
+
+    /**
+     * 查询资源池上的标签
+     *
+     * 查询资源池的标签接口用于获取指定资源池的标签信息。该接口适用于以下场景：当需要查看、管理或统计特定资源池的标签信息时，用户可通过此接口获取资源池的标签数据。使用该接口的前提条件是资源池已存在且用户具有访问该资源池的权限。调用接口成功后，系统将返回指定资源池的标签信息，包括标签键和标签值。若资源池不存在、用户无权限访问或资源池未配置标签，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPoolTagsRequest 请求对象
+     * @return AsyncInvoker<ShowPoolTagsRequest, ShowPoolTagsResponse>
+     */
+    public AsyncInvoker<ShowPoolTagsRequest, ShowPoolTagsResponse> showPoolTagsAsyncInvoker(
+        ShowPoolTagsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showPoolTags, hcClient);
+    }
+
+    /**
      * 查询训练作业镜像保存任务
      *
      * 查询训练作业镜像保存任务。
@@ -1154,6 +1664,36 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<ShowSaveImageJobRequest, ShowSaveImageJobResponse> showSaveImageJobAsyncInvoker(
         ShowSaveImageJobRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.showSaveImageJob, hcClient);
+    }
+
+    /**
+     * 获取支持的超参搜索算法
+     *
+     * 获取支持的超参搜索算法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSearchAlgorithmsRequest 请求对象
+     * @return CompletableFuture<ShowSearchAlgorithmsResponse>
+     */
+    public CompletableFuture<ShowSearchAlgorithmsResponse> showSearchAlgorithmsAsync(
+        ShowSearchAlgorithmsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showSearchAlgorithms);
+    }
+
+    /**
+     * 获取支持的超参搜索算法
+     *
+     * 获取支持的超参搜索算法。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSearchAlgorithmsRequest 请求对象
+     * @return AsyncInvoker<ShowSearchAlgorithmsRequest, ShowSearchAlgorithmsResponse>
+     */
+    public AsyncInvoker<ShowSearchAlgorithmsRequest, ShowSearchAlgorithmsResponse> showSearchAlgorithmsAsyncInvoker(
+        ShowSearchAlgorithmsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showSearchAlgorithms, hcClient);
     }
 
     /**
@@ -1780,6 +2320,37 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * Workflow列表所有标签
+     *
+     * Workflow列表所有标签接口用于获取指定项目下所有工作流的标签信息。
+     * 该接口适用于以下场景：当用户需要了解项目中所有工作流的标签配置，以便进行资源管理和筛选时，可以通过此接口获取标签列表。使用该接口的前提条件是用户已登录并具有查看工作流标签的权限。响应消息体中包含每个工作流的标签信息，如标签键和值。若用户无权限或项目下无工作流，接口将返回相应的错误信息或空列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkflowLabelsRequest 请求对象
+     * @return CompletableFuture<ShowWorkflowLabelsResponse>
+     */
+    public CompletableFuture<ShowWorkflowLabelsResponse> showWorkflowLabelsAsync(ShowWorkflowLabelsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showWorkflowLabels);
+    }
+
+    /**
+     * Workflow列表所有标签
+     *
+     * Workflow列表所有标签接口用于获取指定项目下所有工作流的标签信息。
+     * 该接口适用于以下场景：当用户需要了解项目中所有工作流的标签配置，以便进行资源管理和筛选时，可以通过此接口获取标签列表。使用该接口的前提条件是用户已登录并具有查看工作流标签的权限。响应消息体中包含每个工作流的标签信息，如标签键和值。若用户无权限或项目下无工作流，接口将返回相应的错误信息或空列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkflowLabelsRequest 请求对象
+     * @return AsyncInvoker<ShowWorkflowLabelsRequest, ShowWorkflowLabelsResponse>
+     */
+    public AsyncInvoker<ShowWorkflowLabelsRequest, ShowWorkflowLabelsResponse> showWorkflowLabelsAsyncInvoker(
+        ShowWorkflowLabelsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showWorkflowLabels, hcClient);
+    }
+
+    /**
      * 总览Workflow工作流
      *
      * 获取Workflow工作流统计信息。
@@ -1989,6 +2560,37 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 获取Workflow Execution列表的所有标签
+     *
+     * 获取Workflow Execution列表的所有标签接口用于查询指定工作流执行记录中的所有标签。
+     * 该接口适用于以下场景：当用户需要查看工作流执行记录的标签信息，以便进行分类、筛选或统计时，可以通过此接口获取所有标签的列表。使用该接口的前提条件是用户已登录且具有查看工作流执行记录的权限。接口响应消息体中包含每个标签的详细信息，如标签键和标签值。若用户无权限操作或指定的工作流执行记录不存在，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListExecutionLabelsRequest 请求对象
+     * @return CompletableFuture<ListExecutionLabelsResponse>
+     */
+    public CompletableFuture<ListExecutionLabelsResponse> listExecutionLabelsAsync(ListExecutionLabelsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listExecutionLabels);
+    }
+
+    /**
+     * 获取Workflow Execution列表的所有标签
+     *
+     * 获取Workflow Execution列表的所有标签接口用于查询指定工作流执行记录中的所有标签。
+     * 该接口适用于以下场景：当用户需要查看工作流执行记录的标签信息，以便进行分类、筛选或统计时，可以通过此接口获取所有标签的列表。使用该接口的前提条件是用户已登录且具有查看工作流执行记录的权限。接口响应消息体中包含每个标签的详细信息，如标签键和标签值。若用户无权限操作或指定的工作流执行记录不存在，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListExecutionLabelsRequest 请求对象
+     * @return AsyncInvoker<ListExecutionLabelsRequest, ListExecutionLabelsResponse>
+     */
+    public AsyncInvoker<ListExecutionLabelsRequest, ListExecutionLabelsResponse> listExecutionLabelsAsyncInvoker(
+        ListExecutionLabelsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listExecutionLabels, hcClient);
+    }
+
+    /**
      * 获取Execution列表
      *
      * 查询Workflow下的执行记录列表。
@@ -2016,6 +2618,36 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> listWorkflowExecutionsAsyncInvoker(
         ListWorkflowExecutionsRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.listWorkflowExecutions, hcClient);
+    }
+
+    /**
+     * 获取StepExecution列表
+     *
+     * 查询指定工作流中各步骤的执行情况。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWorkflowStepExecutionRequest 请求对象
+     * @return CompletableFuture<ListWorkflowStepExecutionResponse>
+     */
+    public CompletableFuture<ListWorkflowStepExecutionResponse> listWorkflowStepExecutionAsync(
+        ListWorkflowStepExecutionRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listWorkflowStepExecution);
+    }
+
+    /**
+     * 获取StepExecution列表
+     *
+     * 查询指定工作流中各步骤的执行情况。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWorkflowStepExecutionRequest 请求对象
+     * @return AsyncInvoker<ListWorkflowStepExecutionRequest, ListWorkflowStepExecutionResponse>
+     */
+    public AsyncInvoker<ListWorkflowStepExecutionRequest, ListWorkflowStepExecutionResponse> listWorkflowStepExecutionAsyncInvoker(
+        ListWorkflowStepExecutionRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listWorkflowStepExecution, hcClient);
     }
 
     /**
@@ -2196,6 +2828,36 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<ShowWorkflowScheduleRequest, ShowWorkflowScheduleResponse> showWorkflowScheduleAsyncInvoker(
         ShowWorkflowScheduleRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.showWorkflowSchedule, hcClient);
+    }
+
+    /**
+     * 查询工作流定时调度列表
+     *
+     * 获取指定工作流的定时调度信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkflowScheduleListRequest 请求对象
+     * @return CompletableFuture<ShowWorkflowScheduleListResponse>
+     */
+    public CompletableFuture<ShowWorkflowScheduleListResponse> showWorkflowScheduleListAsync(
+        ShowWorkflowScheduleListRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showWorkflowScheduleList);
+    }
+
+    /**
+     * 查询工作流定时调度列表
+     *
+     * 获取指定工作流的定时调度信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkflowScheduleListRequest 请求对象
+     * @return AsyncInvoker<ShowWorkflowScheduleListRequest, ShowWorkflowScheduleListResponse>
+     */
+    public AsyncInvoker<ShowWorkflowScheduleListRequest, ShowWorkflowScheduleListResponse> showWorkflowScheduleListAsyncInvoker(
+        ShowWorkflowScheduleListRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showWorkflowScheduleList, hcClient);
     }
 
     /**

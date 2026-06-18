@@ -1426,6 +1426,12 @@ public class RgcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTemplateDeployParamsRequest::getVersion,
                 ShowTemplateDeployParamsRequest::setVersion));
+        builder.<String>withRequestField("account_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTemplateDeployParamsRequest::getAccountId,
+                ShowTemplateDeployParamsRequest::setAccountId));
 
         // response
 

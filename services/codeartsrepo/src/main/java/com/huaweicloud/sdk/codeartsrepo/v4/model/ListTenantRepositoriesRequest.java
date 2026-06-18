@@ -309,6 +309,11 @@ public class ListTenantRepositoriesRequest {
     private SortFieldEnum sortField;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "locked")
+
+    private Boolean locked;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -456,6 +461,23 @@ public class ListTenantRepositoriesRequest {
         this.sortField = sortField;
     }
 
+    public ListTenantRepositoriesRequest withLocked(Boolean locked) {
+        this.locked = locked;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否锁定。 **约束限制：** 不传是查询全部数据 **取值范围：** - true，锁定的仓库。 - false，未锁定的仓库。
+     * @return locked
+     */
+    public Boolean getLocked() {
+        return locked;
+    }
+
+    public void setLocked(Boolean locked) {
+        this.locked = locked;
+    }
+
     public ListTenantRepositoriesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -507,8 +529,8 @@ public class ListTenantRepositoriesRequest {
             && Objects.equals(this.memberNumber, that.memberNumber) && Objects.equals(this.status, that.status)
             && Objects.equals(this.owner, that.owner) && Objects.equals(this.createdAfter, that.createdAfter)
             && Objects.equals(this.createdBefore, that.createdBefore) && Objects.equals(this.sort, that.sort)
-            && Objects.equals(this.sortField, that.sortField) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.sortField, that.sortField) && Objects.equals(this.locked, that.locked)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override
@@ -521,6 +543,7 @@ public class ListTenantRepositoriesRequest {
             createdBefore,
             sort,
             sortField,
+            locked,
             offset,
             limit);
     }
@@ -537,6 +560,7 @@ public class ListTenantRepositoriesRequest {
         sb.append("    createdBefore: ").append(toIndentedString(createdBefore)).append("\n");
         sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
         sb.append("    sortField: ").append(toIndentedString(sortField)).append("\n");
+        sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

@@ -173,6 +173,11 @@ public class GroupBaseDto {
 
     private Boolean starred;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "roles")
+
+    private List<MultipleRoleDto> roles = null;
+
     public GroupBaseDto withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -784,6 +789,39 @@ public class GroupBaseDto {
         this.starred = starred;
     }
 
+    public GroupBaseDto withRoles(List<MultipleRoleDto> roles) {
+        this.roles = roles;
+        return this;
+    }
+
+    public GroupBaseDto addRolesItem(MultipleRoleDto rolesItem) {
+        if (this.roles == null) {
+            this.roles = new ArrayList<>();
+        }
+        this.roles.add(rolesItem);
+        return this;
+    }
+
+    public GroupBaseDto withRoles(Consumer<List<MultipleRoleDto>> rolesSetter) {
+        if (this.roles == null) {
+            this.roles = new ArrayList<>();
+        }
+        rolesSetter.accept(this.roles);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 角色列表。
+     * @return roles
+     */
+    public List<MultipleRoleDto> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<MultipleRoleDto> roles) {
+        this.roles = roles;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -813,7 +851,8 @@ public class GroupBaseDto {
             && Objects.equals(this.parentId, that.parentId) && Objects.equals(this.myRole, that.myRole)
             && Objects.equals(this.members, that.members) && Objects.equals(this.webUrl, that.webUrl)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.subGroupCount, that.subGroupCount)
-            && Objects.equals(this.lastOwner, that.lastOwner) && Objects.equals(this.starred, that.starred);
+            && Objects.equals(this.lastOwner, that.lastOwner) && Objects.equals(this.starred, that.starred)
+            && Objects.equals(this.roles, that.roles);
     }
 
     @Override
@@ -849,7 +888,8 @@ public class GroupBaseDto {
             createdAt,
             subGroupCount,
             lastOwner,
-            starred);
+            starred,
+            roles);
     }
 
     @Override
@@ -888,6 +928,7 @@ public class GroupBaseDto {
         sb.append("    subGroupCount: ").append(toIndentedString(subGroupCount)).append("\n");
         sb.append("    lastOwner: ").append(toIndentedString(lastOwner)).append("\n");
         sb.append("    starred: ").append(toIndentedString(starred)).append("\n");
+        sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
         sb.append("}");
         return sb.toString();
     }

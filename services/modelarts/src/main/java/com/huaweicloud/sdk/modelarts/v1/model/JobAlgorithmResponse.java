@@ -72,17 +72,17 @@ public class JobAlgorithmResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inputs")
 
-    private List<Input> inputs = null;
+    private List<InputResp> inputs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "outputs")
 
-    private List<Output> outputs = null;
+    private List<OutputResp> outputs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine")
 
-    private JobEngine engine;
+    private JobEngineResp engine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "local_code_dir")
@@ -316,12 +316,12 @@ public class JobAlgorithmResponse {
         this.policies = policies;
     }
 
-    public JobAlgorithmResponse withInputs(List<Input> inputs) {
+    public JobAlgorithmResponse withInputs(List<InputResp> inputs) {
         this.inputs = inputs;
         return this;
     }
 
-    public JobAlgorithmResponse addInputsItem(Input inputsItem) {
+    public JobAlgorithmResponse addInputsItem(InputResp inputsItem) {
         if (this.inputs == null) {
             this.inputs = new ArrayList<>();
         }
@@ -329,7 +329,7 @@ public class JobAlgorithmResponse {
         return this;
     }
 
-    public JobAlgorithmResponse withInputs(Consumer<List<Input>> inputsSetter) {
+    public JobAlgorithmResponse withInputs(Consumer<List<InputResp>> inputsSetter) {
         if (this.inputs == null) {
             this.inputs = new ArrayList<>();
         }
@@ -338,23 +338,23 @@ public class JobAlgorithmResponse {
     }
 
     /**
-     * 训练作业的数据输入。
+     * **参数解释**：训练作业的数据输入。
      * @return inputs
      */
-    public List<Input> getInputs() {
+    public List<InputResp> getInputs() {
         return inputs;
     }
 
-    public void setInputs(List<Input> inputs) {
+    public void setInputs(List<InputResp> inputs) {
         this.inputs = inputs;
     }
 
-    public JobAlgorithmResponse withOutputs(List<Output> outputs) {
+    public JobAlgorithmResponse withOutputs(List<OutputResp> outputs) {
         this.outputs = outputs;
         return this;
     }
 
-    public JobAlgorithmResponse addOutputsItem(Output outputsItem) {
+    public JobAlgorithmResponse addOutputsItem(OutputResp outputsItem) {
         if (this.outputs == null) {
             this.outputs = new ArrayList<>();
         }
@@ -362,7 +362,7 @@ public class JobAlgorithmResponse {
         return this;
     }
 
-    public JobAlgorithmResponse withOutputs(Consumer<List<Output>> outputsSetter) {
+    public JobAlgorithmResponse withOutputs(Consumer<List<OutputResp>> outputsSetter) {
         if (this.outputs == null) {
             this.outputs = new ArrayList<>();
         }
@@ -371,25 +371,25 @@ public class JobAlgorithmResponse {
     }
 
     /**
-     * 训练作业的结果输出。
+     * **参数解释**：训练作业的结果输出。
      * @return outputs
      */
-    public List<Output> getOutputs() {
+    public List<OutputResp> getOutputs() {
         return outputs;
     }
 
-    public void setOutputs(List<Output> outputs) {
+    public void setOutputs(List<OutputResp> outputs) {
         this.outputs = outputs;
     }
 
-    public JobAlgorithmResponse withEngine(JobEngine engine) {
+    public JobAlgorithmResponse withEngine(JobEngineResp engine) {
         this.engine = engine;
         return this;
     }
 
-    public JobAlgorithmResponse withEngine(Consumer<JobEngine> engineSetter) {
+    public JobAlgorithmResponse withEngine(Consumer<JobEngineResp> engineSetter) {
         if (this.engine == null) {
-            this.engine = new JobEngine();
+            this.engine = new JobEngineResp();
             engineSetter.accept(this.engine);
         }
 
@@ -400,11 +400,11 @@ public class JobAlgorithmResponse {
      * Get engine
      * @return engine
      */
-    public JobEngine getEngine() {
+    public JobEngineResp getEngine() {
         return engine;
     }
 
-    public void setEngine(JobEngine engine) {
+    public void setEngine(JobEngineResp engine) {
         this.engine = engine;
     }
 

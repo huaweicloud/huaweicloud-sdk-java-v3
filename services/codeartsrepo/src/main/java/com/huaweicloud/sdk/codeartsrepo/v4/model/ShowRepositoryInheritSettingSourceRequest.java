@@ -21,7 +21,7 @@ public class ShowRepositoryInheritSettingSourceRequest {
     private Integer repositoryId;
 
     /**
-     * **参数解释：** 设置名称。 **约束限制：** 不涉及。 **取值范围：** - protected_branches，保护分支。 - protected_tags，保护Tag。 **默认取值：** 不涉及。
+     * **参数解释：** 设置名称。 **约束限制：** 不涉及。 **取值范围：** - protected_branches：保护分支。 - protected_tags：保护Tag。 - merge_requests：合并请求。 **默认取值：** 不涉及。
      */
     public static final class NameEnum {
 
@@ -35,12 +35,18 @@ public class ShowRepositoryInheritSettingSourceRequest {
          */
         public static final NameEnum PROTECTED_TAGS = new NameEnum("protected_tags");
 
+        /**
+         * Enum MERGE_REQUESTS for value: "merge_requests"
+         */
+        public static final NameEnum MERGE_REQUESTS = new NameEnum("merge_requests");
+
         private static final Map<String, NameEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, NameEnum> createStaticFields() {
             Map<String, NameEnum> map = new HashMap<>();
             map.put("protected_branches", PROTECTED_BRANCHES);
             map.put("protected_tags", PROTECTED_TAGS);
+            map.put("merge_requests", MERGE_REQUESTS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -101,7 +107,7 @@ public class ShowRepositoryInheritSettingSourceRequest {
     }
 
     /**
-     * **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。
+     * **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/intl/zh-cn/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk_ch)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。 **默认取值：** 不涉及。
      * minimum: 1
      * maximum: 2147483647
      * @return repositoryId
@@ -120,7 +126,7 @@ public class ShowRepositoryInheritSettingSourceRequest {
     }
 
     /**
-     * **参数解释：** 设置名称。 **约束限制：** 不涉及。 **取值范围：** - protected_branches，保护分支。 - protected_tags，保护Tag。 **默认取值：** 不涉及。
+     * **参数解释：** 设置名称。 **约束限制：** 不涉及。 **取值范围：** - protected_branches：保护分支。 - protected_tags：保护Tag。 - merge_requests：合并请求。 **默认取值：** 不涉及。
      * @return name
      */
     public NameEnum getName() {

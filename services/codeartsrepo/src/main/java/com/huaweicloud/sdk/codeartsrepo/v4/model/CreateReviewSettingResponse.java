@@ -45,9 +45,14 @@ public class CreateReviewSettingResponse extends SdkResponse {
     private List<String> reviewModules = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "repository_id")
+    @JsonProperty(value = "secondary_category_type")
 
-    private Integer repositoryId;
+    private String secondaryCategoryType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "secondary_categories")
+
+    private List<CategoryDto> secondaryCategories = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "note_required_attributes")
@@ -232,23 +237,54 @@ public class CreateReviewSettingResponse extends SdkResponse {
         this.reviewModules = reviewModules;
     }
 
-    public CreateReviewSettingResponse withRepositoryId(Integer repositoryId) {
-        this.repositoryId = repositoryId;
+    public CreateReviewSettingResponse withSecondaryCategoryType(String secondaryCategoryType) {
+        this.secondaryCategoryType = secondaryCategoryType;
         return this;
     }
 
     /**
-     * **参数解释：** 仓库id。
-     * minimum: 1
-     * maximum: 2147483647
-     * @return repositoryId
+     * **参数解释：** 系统预置检视意见分类类型(启用系统预置检视意见分类时返回，默认'HiCode')。
+     * @return secondaryCategoryType
      */
-    public Integer getRepositoryId() {
-        return repositoryId;
+    public String getSecondaryCategoryType() {
+        return secondaryCategoryType;
     }
 
-    public void setRepositoryId(Integer repositoryId) {
-        this.repositoryId = repositoryId;
+    public void setSecondaryCategoryType(String secondaryCategoryType) {
+        this.secondaryCategoryType = secondaryCategoryType;
+    }
+
+    public CreateReviewSettingResponse withSecondaryCategories(List<CategoryDto> secondaryCategories) {
+        this.secondaryCategories = secondaryCategories;
+        return this;
+    }
+
+    public CreateReviewSettingResponse addSecondaryCategoriesItem(CategoryDto secondaryCategoriesItem) {
+        if (this.secondaryCategories == null) {
+            this.secondaryCategories = new ArrayList<>();
+        }
+        this.secondaryCategories.add(secondaryCategoriesItem);
+        return this;
+    }
+
+    public CreateReviewSettingResponse withSecondaryCategories(Consumer<List<CategoryDto>> secondaryCategoriesSetter) {
+        if (this.secondaryCategories == null) {
+            this.secondaryCategories = new ArrayList<>();
+        }
+        secondaryCategoriesSetter.accept(this.secondaryCategories);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 系统预置检视意见分类详情(启用系统预置检视意见分类时返回)。
+     * @return secondaryCategories
+     */
+    public List<CategoryDto> getSecondaryCategories() {
+        return secondaryCategories;
+    }
+
+    public void setSecondaryCategories(List<CategoryDto> secondaryCategories) {
+        this.secondaryCategories = secondaryCategories;
     }
 
     public CreateReviewSettingResponse withNoteRequiredAttributes(List<RequiredAttributeDto> noteRequiredAttributes) {
@@ -274,7 +310,7 @@ public class CreateReviewSettingResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 检视意见必填项。
+     * **参数解释：** 检视意见必填项(post接口不更新必填项时不返回)。
      * @return noteRequiredAttributes
      */
     public List<RequiredAttributeDto> getNoteRequiredAttributes() {
@@ -308,7 +344,7 @@ public class CreateReviewSettingResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 检视意见分类(所有可勾选的，需传参with_default_review_categories: true才返回)。
+     * **参数解释：** 检视意见分类(可勾选的，需get接口传参with_default_review_categories: true才返回)。
      * @return codehubDefaultCategories
      */
     public List<CategoryDto> getCodehubDefaultCategories() {
@@ -342,7 +378,7 @@ public class CreateReviewSettingResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 系统预置检视意见分类(需传参with_default_review_categories: true才返回)。
+     * **参数解释：** 系统预置检视意见分类(需get接口传参with_default_review_categories: true才返回)。
      * @return hicodeDefaultCategories
      */
     public List<CategoryDto> getHicodeDefaultCategories() {
@@ -368,7 +404,8 @@ public class CreateReviewSettingResponse extends SdkResponse {
             && Objects.equals(this.reviewDefaultCategories, that.reviewDefaultCategories)
             && Objects.equals(this.reviewCustomizedCategories, that.reviewCustomizedCategories)
             && Objects.equals(this.reviewModules, that.reviewModules)
-            && Objects.equals(this.repositoryId, that.repositoryId)
+            && Objects.equals(this.secondaryCategoryType, that.secondaryCategoryType)
+            && Objects.equals(this.secondaryCategories, that.secondaryCategories)
             && Objects.equals(this.noteRequiredAttributes, that.noteRequiredAttributes)
             && Objects.equals(this.codehubDefaultCategories, that.codehubDefaultCategories)
             && Objects.equals(this.hicodeDefaultCategories, that.hicodeDefaultCategories);
@@ -382,7 +419,8 @@ public class CreateReviewSettingResponse extends SdkResponse {
             reviewDefaultCategories,
             reviewCustomizedCategories,
             reviewModules,
-            repositoryId,
+            secondaryCategoryType,
+            secondaryCategories,
             noteRequiredAttributes,
             codehubDefaultCategories,
             hicodeDefaultCategories);
@@ -400,7 +438,8 @@ public class CreateReviewSettingResponse extends SdkResponse {
         sb.append("    reviewDefaultCategories: ").append(toIndentedString(reviewDefaultCategories)).append("\n");
         sb.append("    reviewCustomizedCategories: ").append(toIndentedString(reviewCustomizedCategories)).append("\n");
         sb.append("    reviewModules: ").append(toIndentedString(reviewModules)).append("\n");
-        sb.append("    repositoryId: ").append(toIndentedString(repositoryId)).append("\n");
+        sb.append("    secondaryCategoryType: ").append(toIndentedString(secondaryCategoryType)).append("\n");
+        sb.append("    secondaryCategories: ").append(toIndentedString(secondaryCategories)).append("\n");
         sb.append("    noteRequiredAttributes: ").append(toIndentedString(noteRequiredAttributes)).append("\n");
         sb.append("    codehubDefaultCategories: ").append(toIndentedString(codehubDefaultCategories)).append("\n");
         sb.append("    hicodeDefaultCategories: ").append(toIndentedString(hicodeDefaultCategories)).append("\n");

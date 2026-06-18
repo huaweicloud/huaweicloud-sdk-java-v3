@@ -27,7 +27,7 @@ public class DecodeAuthorizationMessageRequest {
     }
 
     /**
-     * 通过临时安全凭证调用接口时，需要提供“X-Security-Token”Http头，取值为临时安全凭证的security_token字段。
+     * **参数解释**： 临时安全凭证的security_token字段。  **约束限制**： 通过临时安全凭证调用接口时，需要提供“X-Security-Token”Http头。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
      * @return xSecurityToken
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

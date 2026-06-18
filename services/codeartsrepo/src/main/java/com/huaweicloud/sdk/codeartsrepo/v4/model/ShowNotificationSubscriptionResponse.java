@@ -30,7 +30,7 @@ public class ShowNotificationSubscriptionResponse extends SdkResponse {
     private Boolean enabled;
 
     /**
-     * **参数解释：** 配资源。
+     * **参数解释：** 配置源。
      */
     public static final class ConfigSourceEnum {
 
@@ -110,7 +110,7 @@ public class ShowNotificationSubscriptionResponse extends SdkResponse {
     private RepoWebHookSubscriptionDto webhookConfig;
 
     /**
-     * **参数解释：** 仓库使用量告警阀值（百分比）。
+     * **参数解释：** 仓库使用量告警阈值（百分比）。
      */
     public static final class WaringRepoUsageRateEnum {
 
@@ -237,7 +237,7 @@ public class ShowNotificationSubscriptionResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 配资源。
+     * **参数解释：** 配置源。
      * @return configSource
      */
     public ConfigSourceEnum getConfigSource() {
@@ -281,7 +281,7 @@ public class ShowNotificationSubscriptionResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 仓库使用量告警阀值（百分比）。
+     * **参数解释：** 仓库使用量告警阈值（百分比）。
      * @return waringRepoUsageRate
      */
     public WaringRepoUsageRateEnum getWaringRepoUsageRate() {

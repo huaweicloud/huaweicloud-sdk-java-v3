@@ -24,7 +24,7 @@ public class UpdateRepoNotificationSubscriptionDto {
     private Boolean enabled;
 
     /**
-     * **参数解释：** 配资源。
+     * **参数解释：** 配置源。
      */
     public static final class ConfigSourceEnum {
 
@@ -104,7 +104,7 @@ public class UpdateRepoNotificationSubscriptionDto {
     private UpdateRepoWebHookSubscriptionDto webhookConfig;
 
     /**
-     * **参数解释：** 仓库使用量告警阀值（百分比）。
+     * **参数解释：** 仓库使用量告警阈值（百分比）。
      */
     public static final class WaringRepoUsageRateEnum {
 
@@ -212,7 +212,7 @@ public class UpdateRepoNotificationSubscriptionDto {
     }
 
     /**
-     * **参数解释：** 配资源。
+     * **参数解释：** 配置源。
      * @return configSource
      */
     public ConfigSourceEnum getConfigSource() {
@@ -256,7 +256,7 @@ public class UpdateRepoNotificationSubscriptionDto {
     }
 
     /**
-     * **参数解释：** 仓库使用量告警阀值（百分比）。
+     * **参数解释：** 仓库使用量告警阈值（百分比）。
      * @return waringRepoUsageRate
      */
     public WaringRepoUsageRateEnum getWaringRepoUsageRate() {

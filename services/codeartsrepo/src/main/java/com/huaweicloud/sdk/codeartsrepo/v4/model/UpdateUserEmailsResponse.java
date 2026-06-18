@@ -126,6 +126,11 @@ public class UpdateUserEmailsResponse extends SdkResponse {
 
     private String commitEmail;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_default")
+
+    private Boolean isDefault;
+
     public UpdateUserEmailsResponse withId(Integer id) {
         this.id = id;
         return this;
@@ -264,6 +269,23 @@ public class UpdateUserEmailsResponse extends SdkResponse {
         this.commitEmail = commitEmail;
     }
 
+    public UpdateUserEmailsResponse withIsDefault(Boolean isDefault) {
+        this.isDefault = isDefault;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否为默认邮箱。
+     * @return isDefault
+     */
+    public Boolean getIsDefault() {
+        return isDefault;
+    }
+
+    public void setIsDefault(Boolean isDefault) {
+        this.isDefault = isDefault;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -277,12 +299,12 @@ public class UpdateUserEmailsResponse extends SdkResponse {
             && Objects.equals(this.username, that.username) && Objects.equals(this.state, that.state)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
             && Objects.equals(this.lastActivityOn, that.lastActivityOn)
-            && Objects.equals(this.commitEmail, that.commitEmail);
+            && Objects.equals(this.commitEmail, that.commitEmail) && Objects.equals(this.isDefault, that.isDefault);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, username, state, createdAt, updatedAt, lastActivityOn, commitEmail);
+        return Objects.hash(id, name, username, state, createdAt, updatedAt, lastActivityOn, commitEmail, isDefault);
     }
 
     @Override
@@ -297,6 +319,7 @@ public class UpdateUserEmailsResponse extends SdkResponse {
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    lastActivityOn: ").append(toIndentedString(lastActivityOn)).append("\n");
         sb.append("    commitEmail: ").append(toIndentedString(commitEmail)).append("\n");
+        sb.append("    isDefault: ").append(toIndentedString(isDefault)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -44,6 +44,16 @@ public class ShowRepositoryGeneralPolicyResponse extends SdkResponse {
 
     private List<PushRuleDevelopersDto> createBranchWhitelistUsers = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repo_encryption_enabled")
+
+    private Boolean repoEncryptionEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repo_encryption_status")
+
+    private ProjectEncryptionStatusBriefDto repoEncryptionStatus;
+
     public ShowRepositoryGeneralPolicyResponse withDisableFork(Boolean disableFork) {
         this.disableFork = disableFork;
         return this;
@@ -166,6 +176,51 @@ public class ShowRepositoryGeneralPolicyResponse extends SdkResponse {
         this.createBranchWhitelistUsers = createBranchWhitelistUsers;
     }
 
+    public ShowRepositoryGeneralPolicyResponse withRepoEncryptionEnabled(Boolean repoEncryptionEnabled) {
+        this.repoEncryptionEnabled = repoEncryptionEnabled;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否开启仓库加密。 **约束限制：** 不涉及。 **取值范围：** - true，开启仓库加密。 - false，关闭仓库加密。
+     * @return repoEncryptionEnabled
+     */
+    public Boolean getRepoEncryptionEnabled() {
+        return repoEncryptionEnabled;
+    }
+
+    public void setRepoEncryptionEnabled(Boolean repoEncryptionEnabled) {
+        this.repoEncryptionEnabled = repoEncryptionEnabled;
+    }
+
+    public ShowRepositoryGeneralPolicyResponse withRepoEncryptionStatus(
+        ProjectEncryptionStatusBriefDto repoEncryptionStatus) {
+        this.repoEncryptionStatus = repoEncryptionStatus;
+        return this;
+    }
+
+    public ShowRepositoryGeneralPolicyResponse withRepoEncryptionStatus(
+        Consumer<ProjectEncryptionStatusBriefDto> repoEncryptionStatusSetter) {
+        if (this.repoEncryptionStatus == null) {
+            this.repoEncryptionStatus = new ProjectEncryptionStatusBriefDto();
+            repoEncryptionStatusSetter.accept(this.repoEncryptionStatus);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get repoEncryptionStatus
+     * @return repoEncryptionStatus
+     */
+    public ProjectEncryptionStatusBriefDto getRepoEncryptionStatus() {
+        return repoEncryptionStatus;
+    }
+
+    public void setRepoEncryptionStatus(ProjectEncryptionStatusBriefDto repoEncryptionStatus) {
+        this.repoEncryptionStatus = repoEncryptionStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -180,7 +235,9 @@ public class ShowRepositoryGeneralPolicyResponse extends SdkResponse {
             && Objects.equals(this.branchNameRegex, that.branchNameRegex)
             && Objects.equals(this.tagNameRegex, that.tagNameRegex)
             && Objects.equals(this.forbiddenDeveloperCreateBranch, that.forbiddenDeveloperCreateBranch)
-            && Objects.equals(this.createBranchWhitelistUsers, that.createBranchWhitelistUsers);
+            && Objects.equals(this.createBranchWhitelistUsers, that.createBranchWhitelistUsers)
+            && Objects.equals(this.repoEncryptionEnabled, that.repoEncryptionEnabled)
+            && Objects.equals(this.repoEncryptionStatus, that.repoEncryptionStatus);
     }
 
     @Override
@@ -190,7 +247,9 @@ public class ShowRepositoryGeneralPolicyResponse extends SdkResponse {
             branchNameRegex,
             tagNameRegex,
             forbiddenDeveloperCreateBranch,
-            createBranchWhitelistUsers);
+            createBranchWhitelistUsers,
+            repoEncryptionEnabled,
+            repoEncryptionStatus);
     }
 
     @Override
@@ -205,6 +264,8 @@ public class ShowRepositoryGeneralPolicyResponse extends SdkResponse {
             .append(toIndentedString(forbiddenDeveloperCreateBranch))
             .append("\n");
         sb.append("    createBranchWhitelistUsers: ").append(toIndentedString(createBranchWhitelistUsers)).append("\n");
+        sb.append("    repoEncryptionEnabled: ").append(toIndentedString(repoEncryptionEnabled)).append("\n");
+        sb.append("    repoEncryptionStatus: ").append(toIndentedString(repoEncryptionStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

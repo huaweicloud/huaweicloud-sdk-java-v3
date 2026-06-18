@@ -35,6 +35,9 @@ import com.huaweicloud.sdk.rds.v3.model.BatchModifyPublicationResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchModifyPublicationsRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.BatchModifySubscriptionRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchModifySubscriptionResponse;
+import com.huaweicloud.sdk.rds.v3.model.BatchResizeFlavorRequest;
+import com.huaweicloud.sdk.rds.v3.model.BatchResizeFlavorRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.BatchResizeFlavorResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchRestoreDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.BatchRestoreDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.BatchRestorePostgreSqlTablesRequest;
@@ -955,6 +958,34 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OperateEventReq.class),
             f -> f.withMarshaller(BatchExecuteEventsRequest::getBody, BatchExecuteEventsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchResizeFlavorRequest, BatchResizeFlavorResponse> batchResizeFlavor =
+        genForBatchResizeFlavor();
+
+    private static HttpRequestDef<BatchResizeFlavorRequest, BatchResizeFlavorResponse> genForBatchResizeFlavor() {
+        // basic
+        HttpRequestDef.Builder<BatchResizeFlavorRequest, BatchResizeFlavorResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchResizeFlavorRequest.class, BatchResizeFlavorResponse.class)
+                .withName("BatchResizeFlavor")
+                .withUri("/v3/{project_id}/instances/batch/resize")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchResizeFlavorRequest::getXLanguage, BatchResizeFlavorRequest::setXLanguage));
+        builder.<BatchResizeFlavorRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchResizeFlavorRequestBody.class),
+            f -> f.withMarshaller(BatchResizeFlavorRequest::getBody, BatchResizeFlavorRequest::setBody));
 
         // response
 

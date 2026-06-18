@@ -22,7 +22,7 @@ public class ResolveMergeRequestConflictsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** prompt property name already exists    
+     * **参数解释：** 解决冲突结果信息    
      * @return message
      */
     public String getMessage() {

@@ -32,7 +32,7 @@ public class GetCallerIdentityResponse extends SdkResponse {
     }
 
     /**
-     * 账号ID。
+     * **参数解释**： 账号ID。  **取值范围**： 不涉及。 
      * @return accountId
      */
     public String getAccountId() {
@@ -49,7 +49,7 @@ public class GetCallerIdentityResponse extends SdkResponse {
     }
 
     /**
-     * 主体URN。
+     * **参数解释**： 主体URN。  **取值范围**： 不涉及。 
      * @return principalUrn
      */
     public String getPrincipalUrn() {
@@ -66,7 +66,7 @@ public class GetCallerIdentityResponse extends SdkResponse {
     }
 
     /**
-     * 主体ID。
+     * **参数解释**： 主体ID。  **取值范围**： 不涉及。 
      * @return principalId
      */
     public String getPrincipalId() {

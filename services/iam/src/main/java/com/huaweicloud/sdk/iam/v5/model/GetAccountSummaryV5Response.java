@@ -81,6 +81,26 @@ public class GetAccountSummaryV5Response extends SdkResponse {
 
     private Integer rootUserMfaEnabled;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "oidc_provider")
+
+    private Integer oidcProvider;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "oidc_provider_quota")
+
+    private Integer oidcProviderQuota;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "saml_provider")
+
+    private Integer samlProvider;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "saml_provider_quota")
+
+    private Integer samlProviderQuota;
+
     public GetAccountSummaryV5Response withAttachedPoliciesPerAgencyQuota(Integer attachedPoliciesPerAgencyQuota) {
         this.attachedPoliciesPerAgencyQuota = attachedPoliciesPerAgencyQuota;
         return this;
@@ -319,6 +339,74 @@ public class GetAccountSummaryV5Response extends SdkResponse {
         this.rootUserMfaEnabled = rootUserMfaEnabled;
     }
 
+    public GetAccountSummaryV5Response withOidcProvider(Integer oidcProvider) {
+        this.oidcProvider = oidcProvider;
+        return this;
+    }
+
+    /**
+     * 此账号当前创建的OIDC身份提供商数量。
+     * @return oidcProvider
+     */
+    public Integer getOidcProvider() {
+        return oidcProvider;
+    }
+
+    public void setOidcProvider(Integer oidcProvider) {
+        this.oidcProvider = oidcProvider;
+    }
+
+    public GetAccountSummaryV5Response withOidcProviderQuota(Integer oidcProviderQuota) {
+        this.oidcProviderQuota = oidcProviderQuota;
+        return this;
+    }
+
+    /**
+     * 此账号当前创建的OIDC身份提供商数量上限。
+     * @return oidcProviderQuota
+     */
+    public Integer getOidcProviderQuota() {
+        return oidcProviderQuota;
+    }
+
+    public void setOidcProviderQuota(Integer oidcProviderQuota) {
+        this.oidcProviderQuota = oidcProviderQuota;
+    }
+
+    public GetAccountSummaryV5Response withSamlProvider(Integer samlProvider) {
+        this.samlProvider = samlProvider;
+        return this;
+    }
+
+    /**
+     * 此账号当前创建的SAML身份提供商数量。
+     * @return samlProvider
+     */
+    public Integer getSamlProvider() {
+        return samlProvider;
+    }
+
+    public void setSamlProvider(Integer samlProvider) {
+        this.samlProvider = samlProvider;
+    }
+
+    public GetAccountSummaryV5Response withSamlProviderQuota(Integer samlProviderQuota) {
+        this.samlProviderQuota = samlProviderQuota;
+        return this;
+    }
+
+    /**
+     * 此账号当前创建的SAML身份提供商数量上限。
+     * @return samlProviderQuota
+     */
+    public Integer getSamlProviderQuota() {
+        return samlProviderQuota;
+    }
+
+    public void setSamlProviderQuota(Integer samlProviderQuota) {
+        this.samlProviderQuota = samlProviderQuota;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -338,7 +426,11 @@ public class GetAccountSummaryV5Response extends SdkResponse {
             && Objects.equals(this.agenciesQuota, that.agenciesQuota) && Objects.equals(this.users, that.users)
             && Objects.equals(this.usersQuota, that.usersQuota) && Objects.equals(this.groups, that.groups)
             && Objects.equals(this.groupsQuota, that.groupsQuota)
-            && Objects.equals(this.rootUserMfaEnabled, that.rootUserMfaEnabled);
+            && Objects.equals(this.rootUserMfaEnabled, that.rootUserMfaEnabled)
+            && Objects.equals(this.oidcProvider, that.oidcProvider)
+            && Objects.equals(this.oidcProviderQuota, that.oidcProviderQuota)
+            && Objects.equals(this.samlProvider, that.samlProvider)
+            && Objects.equals(this.samlProviderQuota, that.samlProviderQuota);
     }
 
     @Override
@@ -356,7 +448,11 @@ public class GetAccountSummaryV5Response extends SdkResponse {
             usersQuota,
             groups,
             groupsQuota,
-            rootUserMfaEnabled);
+            rootUserMfaEnabled,
+            oidcProvider,
+            oidcProviderQuota,
+            samlProvider,
+            samlProviderQuota);
     }
 
     @Override
@@ -383,6 +479,10 @@ public class GetAccountSummaryV5Response extends SdkResponse {
         sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
         sb.append("    groupsQuota: ").append(toIndentedString(groupsQuota)).append("\n");
         sb.append("    rootUserMfaEnabled: ").append(toIndentedString(rootUserMfaEnabled)).append("\n");
+        sb.append("    oidcProvider: ").append(toIndentedString(oidcProvider)).append("\n");
+        sb.append("    oidcProviderQuota: ").append(toIndentedString(oidcProviderQuota)).append("\n");
+        sb.append("    samlProvider: ").append(toIndentedString(samlProvider)).append("\n");
+        sb.append("    samlProviderQuota: ").append(toIndentedString(samlProviderQuota)).append("\n");
         sb.append("}");
         return sb.toString();
     }

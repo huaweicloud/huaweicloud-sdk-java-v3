@@ -18,11 +18,6 @@ public class UpdateProjectMergeRequestTemplateResponse extends SdkResponse {
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "repository_id")
-
-    private Integer repositoryId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -89,25 +84,6 @@ public class UpdateProjectMergeRequestTemplateResponse extends SdkResponse {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public UpdateProjectMergeRequestTemplateResponse withRepositoryId(Integer repositoryId) {
-        this.repositoryId = repositoryId;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 仓库id
-     * minimum: 1
-     * maximum: 2147483647
-     * @return repositoryId
-     */
-    public Integer getRepositoryId() {
-        return repositoryId;
-    }
-
-    public void setRepositoryId(Integer repositoryId) {
-        this.repositoryId = repositoryId;
     }
 
     public UpdateProjectMergeRequestTemplateResponse withDescription(String description) {
@@ -300,9 +276,9 @@ public class UpdateProjectMergeRequestTemplateResponse extends SdkResponse {
             return false;
         }
         UpdateProjectMergeRequestTemplateResponse that = (UpdateProjectMergeRequestTemplateResponse) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.repositoryId, that.repositoryId)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.templateName, that.templateName)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.templateName, that.templateName)
             && Objects.equals(this.mergeRequestTitle, that.mergeRequestTitle)
             && Objects.equals(this.isDefault, that.isDefault) && Objects.equals(this.isWip, that.isWip)
             && Objects.equals(this.autoExtractMrTitle, that.autoExtractMrTitle)
@@ -312,7 +288,6 @@ public class UpdateProjectMergeRequestTemplateResponse extends SdkResponse {
     @Override
     public int hashCode() {
         return Objects.hash(id,
-            repositoryId,
             description,
             createdAt,
             updatedAt,
@@ -330,7 +305,6 @@ public class UpdateProjectMergeRequestTemplateResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateProjectMergeRequestTemplateResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    repositoryId: ").append(toIndentedString(repositoryId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");

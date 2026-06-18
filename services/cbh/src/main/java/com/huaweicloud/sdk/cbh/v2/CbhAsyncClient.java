@@ -20,6 +20,8 @@ import com.huaweicloud.sdk.cbh.v2.model.ListInstancesRequest;
 import com.huaweicloud.sdk.cbh.v2.model.ListInstancesResponse;
 import com.huaweicloud.sdk.cbh.v2.model.ListSpecificationsRequest;
 import com.huaweicloud.sdk.cbh.v2.model.ListSpecificationsResponse;
+import com.huaweicloud.sdk.cbh.v2.model.ListSwitchConfigInfoRequest;
+import com.huaweicloud.sdk.cbh.v2.model.ListSwitchConfigInfoResponse;
 import com.huaweicloud.sdk.cbh.v2.model.ListTagsRequest;
 import com.huaweicloud.sdk.cbh.v2.model.ListTagsResponse;
 import com.huaweicloud.sdk.cbh.v2.model.LoginInstanceAdminRequest;
@@ -370,6 +372,36 @@ public class CbhAsyncClient {
     public AsyncInvoker<ListSpecificationsRequest, ListSpecificationsResponse> listSpecificationsAsyncInvoker(
         ListSpecificationsRequest request) {
         return new AsyncInvoker<>(request, CbhMeta.listSpecifications, hcClient);
+    }
+
+    /**
+     * 获取后端开关控制信息列表
+     *
+     * 获取当前版本的开关控制信息列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSwitchConfigInfoRequest 请求对象
+     * @return CompletableFuture<ListSwitchConfigInfoResponse>
+     */
+    public CompletableFuture<ListSwitchConfigInfoResponse> listSwitchConfigInfoAsync(
+        ListSwitchConfigInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbhMeta.listSwitchConfigInfo);
+    }
+
+    /**
+     * 获取后端开关控制信息列表
+     *
+     * 获取当前版本的开关控制信息列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSwitchConfigInfoRequest 请求对象
+     * @return AsyncInvoker<ListSwitchConfigInfoRequest, ListSwitchConfigInfoResponse>
+     */
+    public AsyncInvoker<ListSwitchConfigInfoRequest, ListSwitchConfigInfoResponse> listSwitchConfigInfoAsyncInvoker(
+        ListSwitchConfigInfoRequest request) {
+        return new AsyncInvoker<>(request, CbhMeta.listSwitchConfigInfo, hcClient);
     }
 
     /**

@@ -51,12 +51,12 @@ public class ListMergeRequestValidAssignedCandidatesRequest {
     private String searchByNameList;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "target_project_id")
+    @JsonProperty(value = "target_repository_id")
 
-    private String targetProjectId;
+    private String targetRepositoryId;
 
     /**
-     * **参数解释：** The type of assignee, merge user or approver
+     * **参数解释：** approver: 获取审核人 assingee: 获取合并人
      */
     public static final class ViewEnum {
 
@@ -130,81 +130,6 @@ public class ListMergeRequestValidAssignedCandidatesRequest {
 
     private ViewEnum view;
 
-    /**
-     * **参数解释：** The type of assignee, merge user or approver
-     */
-    public static final class ModeEnum {
-
-        /**
-         * Enum APPROVER for value: "approver"
-         */
-        public static final ModeEnum APPROVER = new ModeEnum("approver");
-
-        /**
-         * Enum ASSIGNEE for value: "assignee"
-         */
-        public static final ModeEnum ASSIGNEE = new ModeEnum("assignee");
-
-        private static final Map<String, ModeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ModeEnum> createStaticFields() {
-            Map<String, ModeEnum> map = new HashMap<>();
-            map.put("approver", APPROVER);
-            map.put("assignee", ASSIGNEE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ModeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ModeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ModeEnum(value));
-        }
-
-        public static ModeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ModeEnum) {
-                return this.value.equals(((ModeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "mode")
-
-    private ModeEnum mode;
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "only_developers")
 
@@ -216,7 +141,7 @@ public class ListMergeRequestValidAssignedCandidatesRequest {
     }
 
     /**
-     * **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。
+     * **参数解释：** 仓库的ID，通过[[查询用户所有仓库](https://support.huaweicloud.com/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws)[[查询用户所有仓库](https://support.huaweicloud.com/intl/en-us/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk)[[查询用户所有仓库](https://support.huaweicloud.com/intl/zh-cn/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_hk_ch)[[查询用户所有仓库](https://support.huaweicloud.com/eu/api-codeartsrepo/ListUserAllRepositories.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **约束限制：** 不涉及。 **默认取值：** 不涉及。
      * minimum: 1
      * maximum: 2147483647
      * @return repositoryId
@@ -326,7 +251,7 @@ public class ListMergeRequestValidAssignedCandidatesRequest {
     }
 
     /**
-     * **参数解释：** Search user list by name list。
+     * **参数解释：** 批量匹配用户，一次可传多个用户的用户名和昵称，用\", \"分隔，最多50个。示例：\"zhangsan, lisi, wangwu\"
      * @return searchByNameList
      */
     public String getSearchByNameList() {
@@ -337,21 +262,21 @@ public class ListMergeRequestValidAssignedCandidatesRequest {
         this.searchByNameList = searchByNameList;
     }
 
-    public ListMergeRequestValidAssignedCandidatesRequest withTargetProjectId(String targetProjectId) {
-        this.targetProjectId = targetProjectId;
+    public ListMergeRequestValidAssignedCandidatesRequest withTargetRepositoryId(String targetRepositoryId) {
+        this.targetRepositoryId = targetRepositoryId;
         return this;
     }
 
     /**
-     * **参数解释：** 项目的32位uuid，项目唯一标识，通过[[查询项目列表](https://support.huaweicloud.com/api-projectman/ListProjectsV4.html)](tag:hws)[[查询项目列表](https://support.huaweicloud.com/intl/en-us/api-projectman/ListProjectsV4.html)](tag:hws_hk)[[查询项目列表](https://support.huaweicloud.com/eu/api-projectman/ListProjectsV4.html)](tag:hws_eu)[查询项目列表](tag:hcs,hcs_sm)接口查询项目列表获取。 **取值范围：** 字符串长度32。
-     * @return targetProjectId
+     * **参数解释：** 目标仓库id。创建MR时，代码将要合入的仓库。
+     * @return targetRepositoryId
      */
-    public String getTargetProjectId() {
-        return targetProjectId;
+    public String getTargetRepositoryId() {
+        return targetRepositoryId;
     }
 
-    public void setTargetProjectId(String targetProjectId) {
-        this.targetProjectId = targetProjectId;
+    public void setTargetRepositoryId(String targetRepositoryId) {
+        this.targetRepositoryId = targetRepositoryId;
     }
 
     public ListMergeRequestValidAssignedCandidatesRequest withView(ViewEnum view) {
@@ -360,7 +285,7 @@ public class ListMergeRequestValidAssignedCandidatesRequest {
     }
 
     /**
-     * **参数解释：** The type of assignee, merge user or approver
+     * **参数解释：** approver: 获取审核人 assingee: 获取合并人
      * @return view
      */
     public ViewEnum getView() {
@@ -371,30 +296,13 @@ public class ListMergeRequestValidAssignedCandidatesRequest {
         this.view = view;
     }
 
-    public ListMergeRequestValidAssignedCandidatesRequest withMode(ModeEnum mode) {
-        this.mode = mode;
-        return this;
-    }
-
-    /**
-     * **参数解释：** The type of assignee, merge user or approver
-     * @return mode
-     */
-    public ModeEnum getMode() {
-        return mode;
-    }
-
-    public void setMode(ModeEnum mode) {
-        this.mode = mode;
-    }
-
     public ListMergeRequestValidAssignedCandidatesRequest withOnlyDevelopers(Boolean onlyDevelopers) {
         this.onlyDevelopers = onlyDevelopers;
         return this;
     }
 
     /**
-     * **参数解释：** The type of memeber, developer
+     * **参数解释：** true: 仅返回开发者。
      * @return onlyDevelopers
      */
     public Boolean getOnlyDevelopers() {
@@ -419,8 +327,8 @@ public class ListMergeRequestValidAssignedCandidatesRequest {
             && Objects.equals(this.mergeRequestIid, that.mergeRequestIid) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.search, that.search)
             && Objects.equals(this.searchByNameList, that.searchByNameList)
-            && Objects.equals(this.targetProjectId, that.targetProjectId) && Objects.equals(this.view, that.view)
-            && Objects.equals(this.mode, that.mode) && Objects.equals(this.onlyDevelopers, that.onlyDevelopers);
+            && Objects.equals(this.targetRepositoryId, that.targetRepositoryId) && Objects.equals(this.view, that.view)
+            && Objects.equals(this.onlyDevelopers, that.onlyDevelopers);
     }
 
     @Override
@@ -432,9 +340,8 @@ public class ListMergeRequestValidAssignedCandidatesRequest {
             limit,
             search,
             searchByNameList,
-            targetProjectId,
+            targetRepositoryId,
             view,
-            mode,
             onlyDevelopers);
     }
 
@@ -449,9 +356,8 @@ public class ListMergeRequestValidAssignedCandidatesRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    search: ").append(toIndentedString(search)).append("\n");
         sb.append("    searchByNameList: ").append(toIndentedString(searchByNameList)).append("\n");
-        sb.append("    targetProjectId: ").append(toIndentedString(targetProjectId)).append("\n");
+        sb.append("    targetRepositoryId: ").append(toIndentedString(targetRepositoryId)).append("\n");
         sb.append("    view: ").append(toIndentedString(view)).append("\n");
-        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    onlyDevelopers: ").append(toIndentedString(onlyDevelopers)).append("\n");
         sb.append("}");
         return sb.toString();

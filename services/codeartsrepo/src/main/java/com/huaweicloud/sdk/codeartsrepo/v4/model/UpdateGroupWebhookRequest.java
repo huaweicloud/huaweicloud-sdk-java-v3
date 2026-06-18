@@ -24,7 +24,7 @@ public class UpdateGroupWebhookRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private WebhookParamsDto body;
+    private WebhookParamsRequestDto body;
 
     public UpdateGroupWebhookRequest withGroupId(Integer groupId) {
         this.groupId = groupId;
@@ -32,7 +32,7 @@ public class UpdateGroupWebhookRequest {
     }
 
     /**
-     * **参数解释：** 代码组id，代码组首页，Group ID后的数字Id
+     * **参数解释：** 代码组id，代码组首页，Group ID后的数字Id **默认取值：** 不涉及。
      * minimum: 1
      * maximum: 2147483647
      * @return groupId
@@ -64,14 +64,14 @@ public class UpdateGroupWebhookRequest {
         this.hookId = hookId;
     }
 
-    public UpdateGroupWebhookRequest withBody(WebhookParamsDto body) {
+    public UpdateGroupWebhookRequest withBody(WebhookParamsRequestDto body) {
         this.body = body;
         return this;
     }
 
-    public UpdateGroupWebhookRequest withBody(Consumer<WebhookParamsDto> bodySetter) {
+    public UpdateGroupWebhookRequest withBody(Consumer<WebhookParamsRequestDto> bodySetter) {
         if (this.body == null) {
-            this.body = new WebhookParamsDto();
+            this.body = new WebhookParamsRequestDto();
             bodySetter.accept(this.body);
         }
 
@@ -82,11 +82,11 @@ public class UpdateGroupWebhookRequest {
      * Get body
      * @return body
      */
-    public WebhookParamsDto getBody() {
+    public WebhookParamsRequestDto getBody() {
         return body;
     }
 
-    public void setBody(WebhookParamsDto body) {
+    public void setBody(WebhookParamsRequestDto body) {
         this.body = body;
     }
 

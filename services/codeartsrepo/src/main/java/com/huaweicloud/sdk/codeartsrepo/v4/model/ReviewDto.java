@@ -786,7 +786,7 @@ public class ReviewDto {
     }
 
     /**
-     * **参数解释：** 合并请求id(noteable_type=MergRequest时返回)。
+     * **参数解释：** 合并请求id(noteable_type=MergeRequest时返回)。
      * @return mergeRequestId
      */
     public Integer getMergeRequestId() {
@@ -803,7 +803,7 @@ public class ReviewDto {
     }
 
     /**
-     * **参数解释：** 合并请求iid(noteable_type=MergRequest时返回)。
+     * **参数解释：** 合并请求iid(noteable_type=MergeRequest时返回)。
      * @return mergeRequestIid
      */
     public Integer getMergeRequestIid() {
@@ -820,7 +820,7 @@ public class ReviewDto {
     }
 
     /**
-     * **参数解释：** 合并请求标题(noteable_type=MergRequest时返回)。
+     * **参数解释：** 合并请求标题(noteable_type=MergeRequest时返回)。
      * @return mergeRequestTitle
      */
     public String getMergeRequestTitle() {
@@ -837,7 +837,7 @@ public class ReviewDto {
     }
 
     /**
-     * **参数解释：** 合并请求状态(noteable_type=MergRequest时返回)。
+     * **参数解释：** 合并请求状态(noteable_type=MergeRequest时返回)。
      * @return mergeRequestState
      */
     public String getMergeRequestState() {

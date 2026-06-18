@@ -153,6 +153,11 @@ public class TenantRepositoryDto {
 
     private String projectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "locked")
+
+    private Boolean locked;
+
     public TenantRepositoryDto withOwner(String owner) {
         this.owner = owner;
         return this;
@@ -329,6 +334,23 @@ public class TenantRepositoryDto {
         this.projectId = projectId;
     }
 
+    public TenantRepositoryDto withLocked(Boolean locked) {
+        this.locked = locked;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否锁定。 **取值范围：** - true，是。 - false，否。
+     * @return locked
+     */
+    public Boolean getLocked() {
+        return locked;
+    }
+
+    public void setLocked(Boolean locked) {
+        this.locked = locked;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -343,7 +365,8 @@ public class TenantRepositoryDto {
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.memberNumber, that.memberNumber)
             && Objects.equals(this.repositoryId, that.repositoryId)
             && Objects.equals(this.repositoryName, that.repositoryName)
-            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.projectId, that.projectId);
+            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.locked, that.locked);
     }
 
     @Override
@@ -357,7 +380,8 @@ public class TenantRepositoryDto {
             repositoryId,
             repositoryName,
             projectName,
-            projectId);
+            projectId,
+            locked);
     }
 
     @Override
@@ -374,6 +398,7 @@ public class TenantRepositoryDto {
         sb.append("    repositoryName: ").append(toIndentedString(repositoryName)).append("\n");
         sb.append("    projectName: ").append(toIndentedString(projectName)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
         sb.append("}");
         return sb.toString();
     }

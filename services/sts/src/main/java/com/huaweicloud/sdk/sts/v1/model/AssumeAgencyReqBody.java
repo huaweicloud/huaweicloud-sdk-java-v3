@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 接口/v5/agencies/assume的Http请求体。
+ * **参数解释**： 接口/v5/agencies/assume的Http请求体。  **约束限制**： 不涉及。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
  */
 public class AssumeAgencyReqBody {
 
@@ -74,7 +74,7 @@ public class AssumeAgencyReqBody {
     }
 
     /**
-     * 获得的临时安全凭证的有效时间（单位秒）。请注意，该时间需要小于委托本身设置的最大会话持续时间，同时在携带X-Security-Token的Header头时该时间不能超过3600秒。
+     * **参数解释**： 获得的临时安全凭证的有效时间（单位：秒）。  **约束限制**： 请注意，该时间需要小于委托本身设置的最大会话持续时间，同时在携带X-Security-Token的Header头时该时间不能超过3600秒。  **取值范围**： 取值范围为[900,43200]。  **默认取值**： 默认值为3600。 
      * minimum: 900
      * maximum: 43200
      * @return durationSeconds
@@ -93,7 +93,7 @@ public class AssumeAgencyReqBody {
     }
 
     /**
-     * 外部ID，防止混淆代理人问题。
+     * **参数解释**： 外部ID，防止混淆代理人问题。  **约束限制**： 长度范围为[2,1224]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
      * @return externalId
      */
     public String getExternalId() {
@@ -110,7 +110,7 @@ public class AssumeAgencyReqBody {
     }
 
     /**
-     * 自定义策略，限制本次会话获得的临时安全凭证的权限范围不会超过该自定义策略指定的权限。
+     * **参数解释**： 自定义策略，限制本次会话获得的临时安全凭证的权限范围不会超过该自定义策略指定的权限。  **约束限制**： 本次会话获得的临时安全凭证的权限范围不会超过该自定义策略指定的权限。 长度范围为[2,2048]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
      * @return policy
      */
     public String getPolicy() {
@@ -143,7 +143,7 @@ public class AssumeAgencyReqBody {
     }
 
     /**
-     * 预置策略列表，限制本次会话获得的临时安全凭证的权限范围不会超过该预置策略指定的权限。
+     * **参数解释**： 预置策略列表，限制本次会话获得的临时安全凭证的权限范围不会超过该预置策略指定的权限。  **约束限制**： 不涉及。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
      * @return policyIds
      */
     public List<String> getPolicyIds() {
@@ -160,7 +160,7 @@ public class AssumeAgencyReqBody {
     }
 
     /**
-     * 目标委托的URN。
+     * **参数解释**： 目标委托的URN。  **约束限制**： 长度范围为[0,1500]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
      * @return agencyUrn
      */
     public String getAgencyUrn() {
@@ -177,7 +177,7 @@ public class AssumeAgencyReqBody {
     }
 
     /**
-     * 委托会话的会话名。
+     * **参数解释**： 委托会话的会话名。  **约束限制**： 长度范围为[2,128]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
      * @return agencySessionName
      */
     public String getAgencySessionName() {
@@ -194,7 +194,7 @@ public class AssumeAgencyReqBody {
     }
 
     /**
-     * 调用者绑定的MFA设备的序列号。
+     * **参数解释**： 调用者绑定的MFA设备的序列号。  **约束限制**： 长度范围为[9,256]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
      * @return serialNumber
      */
     public String getSerialNumber() {
@@ -211,7 +211,7 @@ public class AssumeAgencyReqBody {
     }
 
     /**
-     * 调用者绑定的MFA设备上的6位数字码。
+     * **参数解释**： 调用者绑定的MFA设备上的6位数字码。  **约束限制**： 长度范围为[6,6]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
      * @return tokenCode
      */
     public String getTokenCode() {
@@ -228,7 +228,7 @@ public class AssumeAgencyReqBody {
     }
 
     /**
-     * 调用链里最初调用者所声明的身份。
+     * **参数解释**： 调用链里最初调用者所声明的身份。  **约束限制**： 长度范围为[2,64]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
      * @return sourceIdentity
      */
     public String getSourceIdentity() {
@@ -261,7 +261,7 @@ public class AssumeAgencyReqBody {
     }
 
     /**
-     * 自定义标签列表。
+     * **参数解释**： 自定义标签列表。  **约束限制**： 不涉及。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
      * @return tags
      */
     public List<TagDto> getTags() {
@@ -294,7 +294,7 @@ public class AssumeAgencyReqBody {
     }
 
     /**
-     * 随着临时安全凭证调用链持续透传的标签键列表。
+     * **参数解释**： 随着临时安全凭证调用链持续透传的标签键列表。  **约束限制**： 不涉及。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
      * @return transitiveTagKeys
      */
     public List<String> getTransitiveTagKeys() {

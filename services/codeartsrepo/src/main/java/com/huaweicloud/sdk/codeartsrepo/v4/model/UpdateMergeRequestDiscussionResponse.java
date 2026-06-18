@@ -33,11 +33,6 @@ public class UpdateMergeRequestDiscussionResponse extends SdkResponse {
     private String body;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "attachment")
-
-    private String attachment;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "author")
 
     private UserBasicDto author;
@@ -422,6 +417,11 @@ public class UpdateMergeRequestDiscussionResponse extends SdkResponse {
     private Boolean isOutdated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "from_robot")
+
+    private Boolean fromRobot;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "moderation_result")
 
     private Boolean moderationResult;
@@ -487,23 +487,6 @@ public class UpdateMergeRequestDiscussionResponse extends SdkResponse {
 
     public void setBody(String body) {
         this.body = body;
-    }
-
-    public UpdateMergeRequestDiscussionResponse withAttachment(String attachment) {
-        this.attachment = attachment;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 附件(弃用)。
-     * @return attachment
-     */
-    public String getAttachment() {
-        return attachment;
-    }
-
-    public void setAttachment(String attachment) {
-        this.attachment = attachment;
     }
 
     public UpdateMergeRequestDiscussionResponse withAuthor(UserBasicDto author) {
@@ -625,7 +608,7 @@ public class UpdateMergeRequestDiscussionResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 提交记录id。
+     * **参数解释：** 提交记录id(源自合并请求下的评论commit_id为null，源自commit的评论才有值)。 **约束限制：** 不涉及。 **取值范围：** 长度为40的sha1字符串。 **默认取值：** 不涉及。
      * @return commitId
      */
     public String getCommitId() {
@@ -1065,6 +1048,23 @@ public class UpdateMergeRequestDiscussionResponse extends SdkResponse {
         this.isOutdated = isOutdated;
     }
 
+    public UpdateMergeRequestDiscussionResponse withFromRobot(Boolean fromRobot) {
+        this.fromRobot = fromRobot;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 是否为AI工具提供的。
+     * @return fromRobot
+     */
+    public Boolean getFromRobot() {
+        return fromRobot;
+    }
+
+    public void setFromRobot(Boolean fromRobot) {
+        this.fromRobot = fromRobot;
+    }
+
     public UpdateMergeRequestDiscussionResponse withModerationResult(Boolean moderationResult) {
         this.moderationResult = moderationResult;
         return this;
@@ -1126,13 +1126,12 @@ public class UpdateMergeRequestDiscussionResponse extends SdkResponse {
         }
         UpdateMergeRequestDiscussionResponse that = (UpdateMergeRequestDiscussionResponse) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.body, that.body) && Objects.equals(this.attachment, that.attachment)
-            && Objects.equals(this.author, that.author) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.system, that.system)
-            && Objects.equals(this.noteableId, that.noteableId) && Objects.equals(this.noteableType, that.noteableType)
-            && Objects.equals(this.commitId, that.commitId) && Objects.equals(this.resolvable, that.resolvable)
-            && Objects.equals(this.isReply, that.isReply) && Objects.equals(this.resolvedBy, that.resolvedBy)
-            && Objects.equals(this.noteableIid, that.noteableIid)
+            && Objects.equals(this.body, that.body) && Objects.equals(this.author, that.author)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.system, that.system) && Objects.equals(this.noteableId, that.noteableId)
+            && Objects.equals(this.noteableType, that.noteableType) && Objects.equals(this.commitId, that.commitId)
+            && Objects.equals(this.resolvable, that.resolvable) && Objects.equals(this.isReply, that.isReply)
+            && Objects.equals(this.resolvedBy, that.resolvedBy) && Objects.equals(this.noteableIid, that.noteableIid)
             && Objects.equals(this.discussionId, that.discussionId) && Objects.equals(this.repository, that.repository)
             && Objects.equals(this.diffFile, that.diffFile) && Objects.equals(this.diff, that.diff)
             && Objects.equals(this.archived, that.archived)
@@ -1144,7 +1143,7 @@ public class UpdateMergeRequestDiscussionResponse extends SdkResponse {
             && Objects.equals(this.filePath, that.filePath) && Objects.equals(this.line, that.line)
             && Objects.equals(this.assignee, that.assignee) && Objects.equals(this.proposer, that.proposer)
             && Objects.equals(this.position, that.position) && Objects.equals(this.resolved, that.resolved)
-            && Objects.equals(this.isOutdated, that.isOutdated)
+            && Objects.equals(this.isOutdated, that.isOutdated) && Objects.equals(this.fromRobot, that.fromRobot)
             && Objects.equals(this.moderationResult, that.moderationResult)
             && Objects.equals(this.moderationTime, that.moderationTime)
             && Objects.equals(this.moderationStatus, that.moderationStatus);
@@ -1155,7 +1154,6 @@ public class UpdateMergeRequestDiscussionResponse extends SdkResponse {
         return Objects.hash(id,
             type,
             body,
-            attachment,
             author,
             createdAt,
             updatedAt,
@@ -1186,6 +1184,7 @@ public class UpdateMergeRequestDiscussionResponse extends SdkResponse {
             position,
             resolved,
             isOutdated,
+            fromRobot,
             moderationResult,
             moderationTime,
             moderationStatus);
@@ -1198,7 +1197,6 @@ public class UpdateMergeRequestDiscussionResponse extends SdkResponse {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
-        sb.append("    attachment: ").append(toIndentedString(attachment)).append("\n");
         sb.append("    author: ").append(toIndentedString(author)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -1229,6 +1227,7 @@ public class UpdateMergeRequestDiscussionResponse extends SdkResponse {
         sb.append("    position: ").append(toIndentedString(position)).append("\n");
         sb.append("    resolved: ").append(toIndentedString(resolved)).append("\n");
         sb.append("    isOutdated: ").append(toIndentedString(isOutdated)).append("\n");
+        sb.append("    fromRobot: ").append(toIndentedString(fromRobot)).append("\n");
         sb.append("    moderationResult: ").append(toIndentedString(moderationResult)).append("\n");
         sb.append("    moderationTime: ").append(toIndentedString(moderationTime)).append("\n");
         sb.append("    moderationStatus: ").append(toIndentedString(moderationStatus)).append("\n");

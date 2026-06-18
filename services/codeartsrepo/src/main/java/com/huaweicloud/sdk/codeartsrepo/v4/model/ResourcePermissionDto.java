@@ -116,7 +116,7 @@ public class ResourcePermissionDto {
     }
 
     /**
-     * **参数解释：** 是否开启。
+     * **参数解释：** 角色是否有该权限点的权限。 **取值范围：** true, false。
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -133,7 +133,7 @@ public class ResourcePermissionDto {
     }
 
     /**
-     * **参数解释：** 是否编辑。
+     * **参数解释：** 角色在该权限点的权限是否可编辑。 **取值范围：** true, false。
      * @return editable
      */
     public Boolean getEditable() {

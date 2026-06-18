@@ -26,7 +26,7 @@ public class TagDto {
     }
 
     /**
-     * 标签键。
+     * **参数解释**： 标签键。  **约束限制**： 长度范围为[1,128]。  **取值范围**： 不涉及。  **默认取值**： 不涉及。 
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class TagDto {
     }
 
     /**
-     * 标签值，取值可以为空字符串，不可以为null。
+     * **参数解释**： 标签值。  **约束限制**： 长度范围为[0,255]。  **取值范围**： 取值可以为空字符串，不可以为null。  **默认取值**： 不涉及。 
      * @return value
      */
     public String getValue() {

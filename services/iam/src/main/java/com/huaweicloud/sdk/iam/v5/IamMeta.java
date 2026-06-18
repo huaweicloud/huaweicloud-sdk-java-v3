@@ -5,6 +5,9 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.iam.v5.model.AddClientIDToOIDCProviderReqBody;
+import com.huaweicloud.sdk.iam.v5.model.AddClientIDToOIDCProviderV5Request;
+import com.huaweicloud.sdk.iam.v5.model.AddClientIDToOIDCProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.AddUserToGroupReqBody;
 import com.huaweicloud.sdk.iam.v5.model.AddUserToGroupV5Request;
 import com.huaweicloud.sdk.iam.v5.model.AddUserToGroupV5Response;
@@ -31,12 +34,18 @@ import com.huaweicloud.sdk.iam.v5.model.CreateGroupV5Response;
 import com.huaweicloud.sdk.iam.v5.model.CreateLoginProfileReqBody;
 import com.huaweicloud.sdk.iam.v5.model.CreateLoginProfileV5Request;
 import com.huaweicloud.sdk.iam.v5.model.CreateLoginProfileV5Response;
+import com.huaweicloud.sdk.iam.v5.model.CreateOIDCProviderReqBody;
+import com.huaweicloud.sdk.iam.v5.model.CreateOIDCProviderV5Request;
+import com.huaweicloud.sdk.iam.v5.model.CreateOIDCProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.CreatePolicyReqBody;
 import com.huaweicloud.sdk.iam.v5.model.CreatePolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.CreatePolicyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.CreatePolicyVersionReqBody;
 import com.huaweicloud.sdk.iam.v5.model.CreatePolicyVersionV5Request;
 import com.huaweicloud.sdk.iam.v5.model.CreatePolicyVersionV5Response;
+import com.huaweicloud.sdk.iam.v5.model.CreateSAMLProviderReqBody;
+import com.huaweicloud.sdk.iam.v5.model.CreateSAMLProviderV5Request;
+import com.huaweicloud.sdk.iam.v5.model.CreateSAMLProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.CreateServiceLinkedAgencyReqBody;
 import com.huaweicloud.sdk.iam.v5.model.CreateServiceLinkedAgencyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.CreateServiceLinkedAgencyV5Response;
@@ -54,12 +63,16 @@ import com.huaweicloud.sdk.iam.v5.model.DeleteGroupV5Request;
 import com.huaweicloud.sdk.iam.v5.model.DeleteGroupV5Response;
 import com.huaweicloud.sdk.iam.v5.model.DeleteLoginProfileV5Request;
 import com.huaweicloud.sdk.iam.v5.model.DeleteLoginProfileV5Response;
+import com.huaweicloud.sdk.iam.v5.model.DeleteOIDCProviderV5Request;
+import com.huaweicloud.sdk.iam.v5.model.DeleteOIDCProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.DeletePolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.DeletePolicyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.DeletePolicyVersionV5Request;
 import com.huaweicloud.sdk.iam.v5.model.DeletePolicyVersionV5Response;
 import com.huaweicloud.sdk.iam.v5.model.DeleteResourceTagsV5Request;
 import com.huaweicloud.sdk.iam.v5.model.DeleteResourceTagsV5Response;
+import com.huaweicloud.sdk.iam.v5.model.DeleteSAMLProviderV5Request;
+import com.huaweicloud.sdk.iam.v5.model.DeleteSAMLProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.DeleteServiceLinkedAgencyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.DeleteServiceLinkedAgencyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.DeleteUserV5Request;
@@ -113,6 +126,8 @@ import com.huaweicloud.sdk.iam.v5.model.ListGroupsV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ListGroupsV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ListMfaDevicesV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ListMfaDevicesV5Response;
+import com.huaweicloud.sdk.iam.v5.model.ListOIDCProvidersV5Request;
+import com.huaweicloud.sdk.iam.v5.model.ListOIDCProvidersV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ListPoliciesV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ListPoliciesV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ListPolicyVersionsV5Request;
@@ -121,10 +136,15 @@ import com.huaweicloud.sdk.iam.v5.model.ListRegisteredServicesForAuthSchemaV5Req
 import com.huaweicloud.sdk.iam.v5.model.ListRegisteredServicesForAuthSchemaV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ListResourceTagsV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ListResourceTagsV5Response;
+import com.huaweicloud.sdk.iam.v5.model.ListSAMLProvidersV5Request;
+import com.huaweicloud.sdk.iam.v5.model.ListSAMLProvidersV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ListServicePrincipalsV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ListServicePrincipalsV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ListUsersV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ListUsersV5Response;
+import com.huaweicloud.sdk.iam.v5.model.RemoveClientIDFromOIDCProviderReqBody;
+import com.huaweicloud.sdk.iam.v5.model.RemoveClientIDFromOIDCProviderV5Request;
+import com.huaweicloud.sdk.iam.v5.model.RemoveClientIDFromOIDCProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.RemoveUserFromGroupReqBody;
 import com.huaweicloud.sdk.iam.v5.model.RemoveUserFromGroupV5Request;
 import com.huaweicloud.sdk.iam.v5.model.RemoveUserFromGroupV5Response;
@@ -143,8 +163,12 @@ import com.huaweicloud.sdk.iam.v5.model.ShowLoginPolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ShowLoginPolicyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ShowLoginProfileV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ShowLoginProfileV5Response;
+import com.huaweicloud.sdk.iam.v5.model.ShowOIDCProviderV5Request;
+import com.huaweicloud.sdk.iam.v5.model.ShowOIDCProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ShowPasswordPolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ShowPasswordPolicyV5Response;
+import com.huaweicloud.sdk.iam.v5.model.ShowSAMLProviderV5Request;
+import com.huaweicloud.sdk.iam.v5.model.ShowSAMLProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ShowUserLastLoginV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ShowUserLastLoginV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ShowUserV5Request;
@@ -167,9 +191,18 @@ import com.huaweicloud.sdk.iam.v5.model.UpdateLoginPolicyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.UpdateLoginProfileReqBody;
 import com.huaweicloud.sdk.iam.v5.model.UpdateLoginProfileV5Request;
 import com.huaweicloud.sdk.iam.v5.model.UpdateLoginProfileV5Response;
+import com.huaweicloud.sdk.iam.v5.model.UpdateOIDCProviderReqBody;
+import com.huaweicloud.sdk.iam.v5.model.UpdateOIDCProviderThumbprintReqBody;
+import com.huaweicloud.sdk.iam.v5.model.UpdateOIDCProviderThumbprintV5Request;
+import com.huaweicloud.sdk.iam.v5.model.UpdateOIDCProviderThumbprintV5Response;
+import com.huaweicloud.sdk.iam.v5.model.UpdateOIDCProviderV5Request;
+import com.huaweicloud.sdk.iam.v5.model.UpdateOIDCProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.UpdatePasswordPolicyReqBody;
 import com.huaweicloud.sdk.iam.v5.model.UpdatePasswordPolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.UpdatePasswordPolicyV5Response;
+import com.huaweicloud.sdk.iam.v5.model.UpdateSAMLProviderReqBody;
+import com.huaweicloud.sdk.iam.v5.model.UpdateSAMLProviderV5Request;
+import com.huaweicloud.sdk.iam.v5.model.UpdateSAMLProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.UpdateTrustPolicyReqBody;
 import com.huaweicloud.sdk.iam.v5.model.UpdateTrustPolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.UpdateTrustPolicyV5Response;
@@ -956,6 +989,232 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AddClientIDToOIDCProviderV5Request, AddClientIDToOIDCProviderV5Response> addClientIDToOIDCProviderV5 =
+        genForAddClientIDToOIDCProviderV5();
+
+    private static HttpRequestDef<AddClientIDToOIDCProviderV5Request, AddClientIDToOIDCProviderV5Response> genForAddClientIDToOIDCProviderV5() {
+        // basic
+        HttpRequestDef.Builder<AddClientIDToOIDCProviderV5Request, AddClientIDToOIDCProviderV5Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AddClientIDToOIDCProviderV5Request.class,
+                    AddClientIDToOIDCProviderV5Response.class)
+                .withName("AddClientIDToOIDCProviderV5")
+                .withUri("/v5/oidc-providers/{provider_id}/add-client-id")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddClientIDToOIDCProviderV5Request::getProviderId,
+                AddClientIDToOIDCProviderV5Request::setProviderId));
+        builder.<AddClientIDToOIDCProviderReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddClientIDToOIDCProviderReqBody.class),
+            f -> f.withMarshaller(AddClientIDToOIDCProviderV5Request::getBody,
+                AddClientIDToOIDCProviderV5Request::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateOIDCProviderV5Request, CreateOIDCProviderV5Response> createOIDCProviderV5 =
+        genForCreateOIDCProviderV5();
+
+    private static HttpRequestDef<CreateOIDCProviderV5Request, CreateOIDCProviderV5Response> genForCreateOIDCProviderV5() {
+        // basic
+        HttpRequestDef.Builder<CreateOIDCProviderV5Request, CreateOIDCProviderV5Response> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateOIDCProviderV5Request.class, CreateOIDCProviderV5Response.class)
+            .withName("CreateOIDCProviderV5")
+            .withUri("/v5/oidc-providers")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CreateOIDCProviderReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateOIDCProviderReqBody.class),
+            f -> f.withMarshaller(CreateOIDCProviderV5Request::getBody, CreateOIDCProviderV5Request::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteOIDCProviderV5Request, DeleteOIDCProviderV5Response> deleteOIDCProviderV5 =
+        genForDeleteOIDCProviderV5();
+
+    private static HttpRequestDef<DeleteOIDCProviderV5Request, DeleteOIDCProviderV5Response> genForDeleteOIDCProviderV5() {
+        // basic
+        HttpRequestDef.Builder<DeleteOIDCProviderV5Request, DeleteOIDCProviderV5Response> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteOIDCProviderV5Request.class, DeleteOIDCProviderV5Response.class)
+            .withName("DeleteOIDCProviderV5")
+            .withUri("/v5/oidc-providers/{provider_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOIDCProviderV5Request::getProviderId,
+                DeleteOIDCProviderV5Request::setProviderId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOIDCProvidersV5Request, ListOIDCProvidersV5Response> listOIDCProvidersV5 =
+        genForListOIDCProvidersV5();
+
+    private static HttpRequestDef<ListOIDCProvidersV5Request, ListOIDCProvidersV5Response> genForListOIDCProvidersV5() {
+        // basic
+        HttpRequestDef.Builder<ListOIDCProvidersV5Request, ListOIDCProvidersV5Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListOIDCProvidersV5Request.class, ListOIDCProvidersV5Response.class)
+                .withName("ListOIDCProvidersV5")
+                .withUri("/v5/oidc-providers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOIDCProvidersV5Request::getLimit, ListOIDCProvidersV5Request::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOIDCProvidersV5Request::getMarker, ListOIDCProvidersV5Request::setMarker));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RemoveClientIDFromOIDCProviderV5Request, RemoveClientIDFromOIDCProviderV5Response> removeClientIDFromOIDCProviderV5 =
+        genForRemoveClientIDFromOIDCProviderV5();
+
+    private static HttpRequestDef<RemoveClientIDFromOIDCProviderV5Request, RemoveClientIDFromOIDCProviderV5Response> genForRemoveClientIDFromOIDCProviderV5() {
+        // basic
+        HttpRequestDef.Builder<RemoveClientIDFromOIDCProviderV5Request, RemoveClientIDFromOIDCProviderV5Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RemoveClientIDFromOIDCProviderV5Request.class,
+                    RemoveClientIDFromOIDCProviderV5Response.class)
+                .withName("RemoveClientIDFromOIDCProviderV5")
+                .withUri("/v5/oidc-providers/{provider_id}/remove-client-id")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveClientIDFromOIDCProviderV5Request::getProviderId,
+                RemoveClientIDFromOIDCProviderV5Request::setProviderId));
+        builder.<RemoveClientIDFromOIDCProviderReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RemoveClientIDFromOIDCProviderReqBody.class),
+            f -> f.withMarshaller(RemoveClientIDFromOIDCProviderV5Request::getBody,
+                RemoveClientIDFromOIDCProviderV5Request::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowOIDCProviderV5Request, ShowOIDCProviderV5Response> showOIDCProviderV5 =
+        genForShowOIDCProviderV5();
+
+    private static HttpRequestDef<ShowOIDCProviderV5Request, ShowOIDCProviderV5Response> genForShowOIDCProviderV5() {
+        // basic
+        HttpRequestDef.Builder<ShowOIDCProviderV5Request, ShowOIDCProviderV5Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowOIDCProviderV5Request.class, ShowOIDCProviderV5Response.class)
+                .withName("ShowOIDCProviderV5")
+                .withUri("/v5/oidc-providers/{provider_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOIDCProviderV5Request::getProviderId, ShowOIDCProviderV5Request::setProviderId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateOIDCProviderThumbprintV5Request, UpdateOIDCProviderThumbprintV5Response> updateOIDCProviderThumbprintV5 =
+        genForUpdateOIDCProviderThumbprintV5();
+
+    private static HttpRequestDef<UpdateOIDCProviderThumbprintV5Request, UpdateOIDCProviderThumbprintV5Response> genForUpdateOIDCProviderThumbprintV5() {
+        // basic
+        HttpRequestDef.Builder<UpdateOIDCProviderThumbprintV5Request, UpdateOIDCProviderThumbprintV5Response> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateOIDCProviderThumbprintV5Request.class,
+                    UpdateOIDCProviderThumbprintV5Response.class)
+                .withName("UpdateOIDCProviderThumbprintV5")
+                .withUri("/v5/oidc-providers/{provider_id}/thumbprint")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateOIDCProviderThumbprintV5Request::getProviderId,
+                UpdateOIDCProviderThumbprintV5Request::setProviderId));
+        builder.<UpdateOIDCProviderThumbprintReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateOIDCProviderThumbprintReqBody.class),
+            f -> f.withMarshaller(UpdateOIDCProviderThumbprintV5Request::getBody,
+                UpdateOIDCProviderThumbprintV5Request::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateOIDCProviderV5Request, UpdateOIDCProviderV5Response> updateOIDCProviderV5 =
+        genForUpdateOIDCProviderV5();
+
+    private static HttpRequestDef<UpdateOIDCProviderV5Request, UpdateOIDCProviderV5Response> genForUpdateOIDCProviderV5() {
+        // basic
+        HttpRequestDef.Builder<UpdateOIDCProviderV5Request, UpdateOIDCProviderV5Response> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateOIDCProviderV5Request.class, UpdateOIDCProviderV5Response.class)
+            .withName("UpdateOIDCProviderV5")
+            .withUri("/v5/oidc-providers/{provider_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateOIDCProviderV5Request::getProviderId,
+                UpdateOIDCProviderV5Request::setProviderId));
+        builder.<UpdateOIDCProviderReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateOIDCProviderReqBody.class),
+            f -> f.withMarshaller(UpdateOIDCProviderV5Request::getBody, UpdateOIDCProviderV5Request::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreatePolicyV5Request, CreatePolicyV5Response> createPolicyV5 =
         genForCreatePolicyV5();
 
@@ -1648,6 +1907,133 @@ public class IamMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Tags.class),
             f -> f.withMarshaller(TagResourceV5Request::getBody, TagResourceV5Request::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSAMLProviderV5Request, CreateSAMLProviderV5Response> createSAMLProviderV5 =
+        genForCreateSAMLProviderV5();
+
+    private static HttpRequestDef<CreateSAMLProviderV5Request, CreateSAMLProviderV5Response> genForCreateSAMLProviderV5() {
+        // basic
+        HttpRequestDef.Builder<CreateSAMLProviderV5Request, CreateSAMLProviderV5Response> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateSAMLProviderV5Request.class, CreateSAMLProviderV5Response.class)
+            .withName("CreateSAMLProviderV5")
+            .withUri("/v5/saml-providers")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CreateSAMLProviderReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSAMLProviderReqBody.class),
+            f -> f.withMarshaller(CreateSAMLProviderV5Request::getBody, CreateSAMLProviderV5Request::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSAMLProviderV5Request, DeleteSAMLProviderV5Response> deleteSAMLProviderV5 =
+        genForDeleteSAMLProviderV5();
+
+    private static HttpRequestDef<DeleteSAMLProviderV5Request, DeleteSAMLProviderV5Response> genForDeleteSAMLProviderV5() {
+        // basic
+        HttpRequestDef.Builder<DeleteSAMLProviderV5Request, DeleteSAMLProviderV5Response> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteSAMLProviderV5Request.class, DeleteSAMLProviderV5Response.class)
+            .withName("DeleteSAMLProviderV5")
+            .withUri("/v5/saml-providers/{provider_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSAMLProviderV5Request::getProviderId,
+                DeleteSAMLProviderV5Request::setProviderId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSAMLProvidersV5Request, ListSAMLProvidersV5Response> listSAMLProvidersV5 =
+        genForListSAMLProvidersV5();
+
+    private static HttpRequestDef<ListSAMLProvidersV5Request, ListSAMLProvidersV5Response> genForListSAMLProvidersV5() {
+        // basic
+        HttpRequestDef.Builder<ListSAMLProvidersV5Request, ListSAMLProvidersV5Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSAMLProvidersV5Request.class, ListSAMLProvidersV5Response.class)
+                .withName("ListSAMLProvidersV5")
+                .withUri("/v5/saml-providers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSAMLProvidersV5Request::getLimit, ListSAMLProvidersV5Request::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSAMLProvidersV5Request::getMarker, ListSAMLProvidersV5Request::setMarker));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSAMLProviderV5Request, ShowSAMLProviderV5Response> showSAMLProviderV5 =
+        genForShowSAMLProviderV5();
+
+    private static HttpRequestDef<ShowSAMLProviderV5Request, ShowSAMLProviderV5Response> genForShowSAMLProviderV5() {
+        // basic
+        HttpRequestDef.Builder<ShowSAMLProviderV5Request, ShowSAMLProviderV5Response> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSAMLProviderV5Request.class, ShowSAMLProviderV5Response.class)
+                .withName("ShowSAMLProviderV5")
+                .withUri("/v5/saml-providers/{provider_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSAMLProviderV5Request::getProviderId, ShowSAMLProviderV5Request::setProviderId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSAMLProviderV5Request, UpdateSAMLProviderV5Response> updateSAMLProviderV5 =
+        genForUpdateSAMLProviderV5();
+
+    private static HttpRequestDef<UpdateSAMLProviderV5Request, UpdateSAMLProviderV5Response> genForUpdateSAMLProviderV5() {
+        // basic
+        HttpRequestDef.Builder<UpdateSAMLProviderV5Request, UpdateSAMLProviderV5Response> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateSAMLProviderV5Request.class, UpdateSAMLProviderV5Response.class)
+            .withName("UpdateSAMLProviderV5")
+            .withUri("/v5/saml-providers/{provider_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("provider_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSAMLProviderV5Request::getProviderId,
+                UpdateSAMLProviderV5Request::setProviderId));
+        builder.<UpdateSAMLProviderReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateSAMLProviderReqBody.class),
+            f -> f.withMarshaller(UpdateSAMLProviderV5Request::getBody, UpdateSAMLProviderV5Request::setBody));
 
         // response
 

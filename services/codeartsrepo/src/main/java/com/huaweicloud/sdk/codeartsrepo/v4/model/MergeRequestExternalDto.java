@@ -69,14 +69,34 @@ public class MergeRequestExternalDto {
     private Boolean isSourceBranchProtected;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_source_branch_default")
+
+    private Boolean isSourceBranchDefault;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "devcloud_source_branch")
 
     private String devcloudSourceBranch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "upvotes")
+
+    private Integer upvotes;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "downvotes")
+
+    private Integer downvotes;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "author")
 
     private UserBasicExternalDto author;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "assignee")
+
+    private UserBasicExternalDto assignee;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_repository_id")
@@ -164,6 +184,11 @@ public class MergeRequestExternalDto {
     private Integer userNotesCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "should_remove_source_branch")
+
+    private Boolean shouldRemoveSourceBranch;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "force_remove_source_branch")
 
     private Boolean forceRemoveSourceBranch;
@@ -242,6 +267,11 @@ public class MergeRequestExternalDto {
     @JsonProperty(value = "is_use_temp_branch")
 
     private Boolean isUseTempBranch;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "only_assignee_can_merge")
+
+    private Boolean onlyAssigneeCanMerge;
 
     public MergeRequestExternalDto withId(Integer id) {
         this.id = id;
@@ -430,6 +460,23 @@ public class MergeRequestExternalDto {
         this.isSourceBranchProtected = isSourceBranchProtected;
     }
 
+    public MergeRequestExternalDto withIsSourceBranchDefault(Boolean isSourceBranchDefault) {
+        this.isSourceBranchDefault = isSourceBranchDefault;
+        return this;
+    }
+
+    /**
+     * 源分支是否为默认分支
+     * @return isSourceBranchDefault
+     */
+    public Boolean getIsSourceBranchDefault() {
+        return isSourceBranchDefault;
+    }
+
+    public void setIsSourceBranchDefault(Boolean isSourceBranchDefault) {
+        this.isSourceBranchDefault = isSourceBranchDefault;
+    }
+
     public MergeRequestExternalDto withDevcloudSourceBranch(String devcloudSourceBranch) {
         this.devcloudSourceBranch = devcloudSourceBranch;
         return this;
@@ -445,6 +492,40 @@ public class MergeRequestExternalDto {
 
     public void setDevcloudSourceBranch(String devcloudSourceBranch) {
         this.devcloudSourceBranch = devcloudSourceBranch;
+    }
+
+    public MergeRequestExternalDto withUpvotes(Integer upvotes) {
+        this.upvotes = upvotes;
+        return this;
+    }
+
+    /**
+     * MR点赞数
+     * @return upvotes
+     */
+    public Integer getUpvotes() {
+        return upvotes;
+    }
+
+    public void setUpvotes(Integer upvotes) {
+        this.upvotes = upvotes;
+    }
+
+    public MergeRequestExternalDto withDownvotes(Integer downvotes) {
+        this.downvotes = downvotes;
+        return this;
+    }
+
+    /**
+     * MR倒赞数
+     * @return downvotes
+     */
+    public Integer getDownvotes() {
+        return downvotes;
+    }
+
+    public void setDownvotes(Integer downvotes) {
+        this.downvotes = downvotes;
     }
 
     public MergeRequestExternalDto withAuthor(UserBasicExternalDto author) {
@@ -471,6 +552,32 @@ public class MergeRequestExternalDto {
 
     public void setAuthor(UserBasicExternalDto author) {
         this.author = author;
+    }
+
+    public MergeRequestExternalDto withAssignee(UserBasicExternalDto assignee) {
+        this.assignee = assignee;
+        return this;
+    }
+
+    public MergeRequestExternalDto withAssignee(Consumer<UserBasicExternalDto> assigneeSetter) {
+        if (this.assignee == null) {
+            this.assignee = new UserBasicExternalDto();
+            assigneeSetter.accept(this.assignee);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get assignee
+     * @return assignee
+     */
+    public UserBasicExternalDto getAssignee() {
+        return assignee;
+    }
+
+    public void setAssignee(UserBasicExternalDto assignee) {
+        this.assignee = assignee;
     }
 
     public MergeRequestExternalDto withSourceRepositoryId(Integer sourceRepositoryId) {
@@ -803,6 +910,23 @@ public class MergeRequestExternalDto {
 
     public void setUserNotesCount(Integer userNotesCount) {
         this.userNotesCount = userNotesCount;
+    }
+
+    public MergeRequestExternalDto withShouldRemoveSourceBranch(Boolean shouldRemoveSourceBranch) {
+        this.shouldRemoveSourceBranch = shouldRemoveSourceBranch;
+        return this;
+    }
+
+    /**
+     * 是否需要删除源分支
+     * @return shouldRemoveSourceBranch
+     */
+    public Boolean getShouldRemoveSourceBranch() {
+        return shouldRemoveSourceBranch;
+    }
+
+    public void setShouldRemoveSourceBranch(Boolean shouldRemoveSourceBranch) {
+        this.shouldRemoveSourceBranch = shouldRemoveSourceBranch;
     }
 
     public MergeRequestExternalDto withForceRemoveSourceBranch(Boolean forceRemoveSourceBranch) {
@@ -1145,6 +1269,23 @@ public class MergeRequestExternalDto {
         this.isUseTempBranch = isUseTempBranch;
     }
 
+    public MergeRequestExternalDto withOnlyAssigneeCanMerge(Boolean onlyAssigneeCanMerge) {
+        this.onlyAssigneeCanMerge = onlyAssigneeCanMerge;
+        return this;
+    }
+
+    /**
+     * 只有合并人允许合入
+     * @return onlyAssigneeCanMerge
+     */
+    public Boolean getOnlyAssigneeCanMerge() {
+        return onlyAssigneeCanMerge;
+    }
+
+    public void setOnlyAssigneeCanMerge(Boolean onlyAssigneeCanMerge) {
+        this.onlyAssigneeCanMerge = onlyAssigneeCanMerge;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1161,8 +1302,10 @@ public class MergeRequestExternalDto {
             && Objects.equals(this.sourceBranch, that.sourceBranch)
             && Objects.equals(this.targetBranch, that.targetBranch)
             && Objects.equals(this.isSourceBranchProtected, that.isSourceBranchProtected)
+            && Objects.equals(this.isSourceBranchDefault, that.isSourceBranchDefault)
             && Objects.equals(this.devcloudSourceBranch, that.devcloudSourceBranch)
-            && Objects.equals(this.author, that.author)
+            && Objects.equals(this.upvotes, that.upvotes) && Objects.equals(this.downvotes, that.downvotes)
+            && Objects.equals(this.author, that.author) && Objects.equals(this.assignee, that.assignee)
             && Objects.equals(this.sourceRepositoryId, that.sourceRepositoryId)
             && Objects.equals(this.targetRepositoryId, that.targetRepositoryId)
             && Objects.equals(this.sourceProjectId, that.sourceProjectId)
@@ -1175,6 +1318,7 @@ public class MergeRequestExternalDto {
             && Objects.equals(this.subscribed, that.subscribed) && Objects.equals(this.mergedBy, that.mergedBy)
             && Objects.equals(this.mergedAt, that.mergedAt) && Objects.equals(this.closedBy, that.closedBy)
             && Objects.equals(this.closedAt, that.closedAt) && Objects.equals(this.userNotesCount, that.userNotesCount)
+            && Objects.equals(this.shouldRemoveSourceBranch, that.shouldRemoveSourceBranch)
             && Objects.equals(this.forceRemoveSourceBranch, that.forceRemoveSourceBranch)
             && Objects.equals(this.webUrl, that.webUrl) && Objects.equals(this.mergeRequestDiff, that.mergeRequestDiff)
             && Objects.equals(this.mergeRequestReviewersCount, that.mergeRequestReviewersCount)
@@ -1188,7 +1332,8 @@ public class MergeRequestExternalDto {
             && Objects.equals(this.moderationResult, that.moderationResult)
             && Objects.equals(this.moderationTime, that.moderationTime)
             && Objects.equals(this.moderationStatus, that.moderationStatus)
-            && Objects.equals(this.isUseTempBranch, that.isUseTempBranch);
+            && Objects.equals(this.isUseTempBranch, that.isUseTempBranch)
+            && Objects.equals(this.onlyAssigneeCanMerge, that.onlyAssigneeCanMerge);
     }
 
     @Override
@@ -1204,8 +1349,12 @@ public class MergeRequestExternalDto {
             sourceBranch,
             targetBranch,
             isSourceBranchProtected,
+            isSourceBranchDefault,
             devcloudSourceBranch,
+            upvotes,
+            downvotes,
             author,
+            assignee,
             sourceRepositoryId,
             targetRepositoryId,
             sourceProjectId,
@@ -1223,6 +1372,7 @@ public class MergeRequestExternalDto {
             closedBy,
             closedAt,
             userNotesCount,
+            shouldRemoveSourceBranch,
             forceRemoveSourceBranch,
             webUrl,
             mergeRequestDiff,
@@ -1238,7 +1388,8 @@ public class MergeRequestExternalDto {
             moderationResult,
             moderationTime,
             moderationStatus,
-            isUseTempBranch);
+            isUseTempBranch,
+            onlyAssigneeCanMerge);
     }
 
     @Override
@@ -1256,8 +1407,12 @@ public class MergeRequestExternalDto {
         sb.append("    sourceBranch: ").append(toIndentedString(sourceBranch)).append("\n");
         sb.append("    targetBranch: ").append(toIndentedString(targetBranch)).append("\n");
         sb.append("    isSourceBranchProtected: ").append(toIndentedString(isSourceBranchProtected)).append("\n");
+        sb.append("    isSourceBranchDefault: ").append(toIndentedString(isSourceBranchDefault)).append("\n");
         sb.append("    devcloudSourceBranch: ").append(toIndentedString(devcloudSourceBranch)).append("\n");
+        sb.append("    upvotes: ").append(toIndentedString(upvotes)).append("\n");
+        sb.append("    downvotes: ").append(toIndentedString(downvotes)).append("\n");
         sb.append("    author: ").append(toIndentedString(author)).append("\n");
+        sb.append("    assignee: ").append(toIndentedString(assignee)).append("\n");
         sb.append("    sourceRepositoryId: ").append(toIndentedString(sourceRepositoryId)).append("\n");
         sb.append("    targetRepositoryId: ").append(toIndentedString(targetRepositoryId)).append("\n");
         sb.append("    sourceProjectId: ").append(toIndentedString(sourceProjectId)).append("\n");
@@ -1275,6 +1430,7 @@ public class MergeRequestExternalDto {
         sb.append("    closedBy: ").append(toIndentedString(closedBy)).append("\n");
         sb.append("    closedAt: ").append(toIndentedString(closedAt)).append("\n");
         sb.append("    userNotesCount: ").append(toIndentedString(userNotesCount)).append("\n");
+        sb.append("    shouldRemoveSourceBranch: ").append(toIndentedString(shouldRemoveSourceBranch)).append("\n");
         sb.append("    forceRemoveSourceBranch: ").append(toIndentedString(forceRemoveSourceBranch)).append("\n");
         sb.append("    webUrl: ").append(toIndentedString(webUrl)).append("\n");
         sb.append("    mergeRequestDiff: ").append(toIndentedString(mergeRequestDiff)).append("\n");
@@ -1293,6 +1449,7 @@ public class MergeRequestExternalDto {
         sb.append("    moderationTime: ").append(toIndentedString(moderationTime)).append("\n");
         sb.append("    moderationStatus: ").append(toIndentedString(moderationStatus)).append("\n");
         sb.append("    isUseTempBranch: ").append(toIndentedString(isUseTempBranch)).append("\n");
+        sb.append("    onlyAssigneeCanMerge: ").append(toIndentedString(onlyAssigneeCanMerge)).append("\n");
         sb.append("}");
         return sb.toString();
     }

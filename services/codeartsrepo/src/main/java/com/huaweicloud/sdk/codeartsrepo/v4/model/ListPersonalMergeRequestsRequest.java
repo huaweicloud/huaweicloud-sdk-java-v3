@@ -305,12 +305,18 @@ public class ListPersonalMergeRequestsRequest {
          */
         public static final ViewEnum BASIC = new ViewEnum("basic");
 
+        /**
+         * Enum VIEW_FOR_LIST for value: "view_for_list"
+         */
+        public static final ViewEnum VIEW_FOR_LIST = new ViewEnum("view_for_list");
+
         private static final Map<String, ViewEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ViewEnum> createStaticFields() {
             Map<String, ViewEnum> map = new HashMap<>();
             map.put("simple", SIMPLE);
             map.put("basic", BASIC);
+            map.put("view_for_list", VIEW_FOR_LIST);
             return Collections.unmodifiableMap(map);
         }
 
@@ -484,21 +490,21 @@ public class ListPersonalMergeRequestsRequest {
     public static final class WipEnum {
 
         /**
-         * Enum TRUE for value: "true"
+         * Enum YES for value: "yes"
          */
-        public static final WipEnum TRUE = new WipEnum("true");
+        public static final WipEnum YES = new WipEnum("yes");
 
         /**
-         * Enum FALSE for value: "false"
+         * Enum NO for value: "no"
          */
-        public static final WipEnum FALSE = new WipEnum("false");
+        public static final WipEnum NO = new WipEnum("no");
 
         private static final Map<String, WipEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, WipEnum> createStaticFields() {
             Map<String, WipEnum> map = new HashMap<>();
-            map.put("true", TRUE);
-            map.put("false", FALSE);
+            map.put("yes", YES);
+            map.put("no", NO);
             return Collections.unmodifiableMap(map);
         }
 

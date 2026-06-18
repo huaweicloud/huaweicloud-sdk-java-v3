@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.iam.v5;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+import com.huaweicloud.sdk.iam.v5.model.AddClientIDToOIDCProviderV5Request;
+import com.huaweicloud.sdk.iam.v5.model.AddClientIDToOIDCProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.AddUserToGroupV5Request;
 import com.huaweicloud.sdk.iam.v5.model.AddUserToGroupV5Response;
 import com.huaweicloud.sdk.iam.v5.model.AttachAgencyPolicyV5Request;
@@ -21,10 +23,14 @@ import com.huaweicloud.sdk.iam.v5.model.CreateGroupV5Request;
 import com.huaweicloud.sdk.iam.v5.model.CreateGroupV5Response;
 import com.huaweicloud.sdk.iam.v5.model.CreateLoginProfileV5Request;
 import com.huaweicloud.sdk.iam.v5.model.CreateLoginProfileV5Response;
+import com.huaweicloud.sdk.iam.v5.model.CreateOIDCProviderV5Request;
+import com.huaweicloud.sdk.iam.v5.model.CreateOIDCProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.CreatePolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.CreatePolicyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.CreatePolicyVersionV5Request;
 import com.huaweicloud.sdk.iam.v5.model.CreatePolicyVersionV5Response;
+import com.huaweicloud.sdk.iam.v5.model.CreateSAMLProviderV5Request;
+import com.huaweicloud.sdk.iam.v5.model.CreateSAMLProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.CreateServiceLinkedAgencyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.CreateServiceLinkedAgencyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.CreateUserV5Request;
@@ -39,12 +45,16 @@ import com.huaweicloud.sdk.iam.v5.model.DeleteGroupV5Request;
 import com.huaweicloud.sdk.iam.v5.model.DeleteGroupV5Response;
 import com.huaweicloud.sdk.iam.v5.model.DeleteLoginProfileV5Request;
 import com.huaweicloud.sdk.iam.v5.model.DeleteLoginProfileV5Response;
+import com.huaweicloud.sdk.iam.v5.model.DeleteOIDCProviderV5Request;
+import com.huaweicloud.sdk.iam.v5.model.DeleteOIDCProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.DeletePolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.DeletePolicyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.DeletePolicyVersionV5Request;
 import com.huaweicloud.sdk.iam.v5.model.DeletePolicyVersionV5Response;
 import com.huaweicloud.sdk.iam.v5.model.DeleteResourceTagsV5Request;
 import com.huaweicloud.sdk.iam.v5.model.DeleteResourceTagsV5Response;
+import com.huaweicloud.sdk.iam.v5.model.DeleteSAMLProviderV5Request;
+import com.huaweicloud.sdk.iam.v5.model.DeleteSAMLProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.DeleteServiceLinkedAgencyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.DeleteServiceLinkedAgencyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.DeleteUserV5Request;
@@ -93,6 +103,8 @@ import com.huaweicloud.sdk.iam.v5.model.ListGroupsV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ListGroupsV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ListMfaDevicesV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ListMfaDevicesV5Response;
+import com.huaweicloud.sdk.iam.v5.model.ListOIDCProvidersV5Request;
+import com.huaweicloud.sdk.iam.v5.model.ListOIDCProvidersV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ListPoliciesV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ListPoliciesV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ListPolicyVersionsV5Request;
@@ -101,10 +113,14 @@ import com.huaweicloud.sdk.iam.v5.model.ListRegisteredServicesForAuthSchemaV5Req
 import com.huaweicloud.sdk.iam.v5.model.ListRegisteredServicesForAuthSchemaV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ListResourceTagsV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ListResourceTagsV5Response;
+import com.huaweicloud.sdk.iam.v5.model.ListSAMLProvidersV5Request;
+import com.huaweicloud.sdk.iam.v5.model.ListSAMLProvidersV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ListServicePrincipalsV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ListServicePrincipalsV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ListUsersV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ListUsersV5Response;
+import com.huaweicloud.sdk.iam.v5.model.RemoveClientIDFromOIDCProviderV5Request;
+import com.huaweicloud.sdk.iam.v5.model.RemoveClientIDFromOIDCProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.RemoveUserFromGroupV5Request;
 import com.huaweicloud.sdk.iam.v5.model.RemoveUserFromGroupV5Response;
 import com.huaweicloud.sdk.iam.v5.model.SetAsymmetricSignatureSwitchV5Request;
@@ -121,8 +137,12 @@ import com.huaweicloud.sdk.iam.v5.model.ShowLoginPolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ShowLoginPolicyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ShowLoginProfileV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ShowLoginProfileV5Response;
+import com.huaweicloud.sdk.iam.v5.model.ShowOIDCProviderV5Request;
+import com.huaweicloud.sdk.iam.v5.model.ShowOIDCProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ShowPasswordPolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ShowPasswordPolicyV5Response;
+import com.huaweicloud.sdk.iam.v5.model.ShowSAMLProviderV5Request;
+import com.huaweicloud.sdk.iam.v5.model.ShowSAMLProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ShowUserLastLoginV5Request;
 import com.huaweicloud.sdk.iam.v5.model.ShowUserLastLoginV5Response;
 import com.huaweicloud.sdk.iam.v5.model.ShowUserV5Request;
@@ -139,8 +159,14 @@ import com.huaweicloud.sdk.iam.v5.model.UpdateLoginPolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.UpdateLoginPolicyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.UpdateLoginProfileV5Request;
 import com.huaweicloud.sdk.iam.v5.model.UpdateLoginProfileV5Response;
+import com.huaweicloud.sdk.iam.v5.model.UpdateOIDCProviderThumbprintV5Request;
+import com.huaweicloud.sdk.iam.v5.model.UpdateOIDCProviderThumbprintV5Response;
+import com.huaweicloud.sdk.iam.v5.model.UpdateOIDCProviderV5Request;
+import com.huaweicloud.sdk.iam.v5.model.UpdateOIDCProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.UpdatePasswordPolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.UpdatePasswordPolicyV5Response;
+import com.huaweicloud.sdk.iam.v5.model.UpdateSAMLProviderV5Request;
+import com.huaweicloud.sdk.iam.v5.model.UpdateSAMLProviderV5Response;
 import com.huaweicloud.sdk.iam.v5.model.UpdateTrustPolicyV5Request;
 import com.huaweicloud.sdk.iam.v5.model.UpdateTrustPolicyV5Response;
 import com.huaweicloud.sdk.iam.v5.model.UpdateUserV5Request;
@@ -1017,6 +1043,272 @@ public class IamAsyncClient {
     }
 
     /**
+     * 向指定OIDC提供商添加客户端 ID
+     *
+     * 该接口可以用于向指定 IAM OIDC 提供商已注册的客户端 ID 列表中添加一个新的客户端 ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddClientIDToOIDCProviderV5Request 请求对象
+     * @return CompletableFuture<AddClientIDToOIDCProviderV5Response>
+     */
+    public CompletableFuture<AddClientIDToOIDCProviderV5Response> addClientIDToOIDCProviderV5Async(
+        AddClientIDToOIDCProviderV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.addClientIDToOIDCProviderV5);
+    }
+
+    /**
+     * 向指定OIDC提供商添加客户端 ID
+     *
+     * 该接口可以用于向指定 IAM OIDC 提供商已注册的客户端 ID 列表中添加一个新的客户端 ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddClientIDToOIDCProviderV5Request 请求对象
+     * @return AsyncInvoker<AddClientIDToOIDCProviderV5Request, AddClientIDToOIDCProviderV5Response>
+     */
+    public AsyncInvoker<AddClientIDToOIDCProviderV5Request, AddClientIDToOIDCProviderV5Response> addClientIDToOIDCProviderV5AsyncInvoker(
+        AddClientIDToOIDCProviderV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.addClientIDToOIDCProviderV5, hcClient);
+    }
+
+    /**
+     * 创建OIDC提供商
+     *
+     * 该接口可以用于创建一个支持 OpenID Connect (OIDC) 的身份提供商 (IdP)。
+     * 您通过此操作创建的 OIDC 提供商可用作信任委托的信任策略中的主体 (Principal)，用于在华为云和 OIDC 提供商之间建立信任关系。
+     * 您可以直接使用您的身份提供商去创建新的信任委托，要了解更多信息，请参阅 IAM 用户指南中的**身份提供商**章节。
+     * 
+     * 当您创建 IAM OIDC 提供商时，您需要指定以下内容：
+     * - 要信任的 OIDC 身份提供商的 URL。
+     * - 客户端 ID 列表（也称为受众 Audiences），用于识别允许使用该 OIDC 提供商进行身份验证的应用程序。
+     * - 附加到指定 IAM OIDC 提供商的标签列表。
+     * - OIDC 身份提供商使用的一个或多个服务器证书的指纹列表。
+     * 
+     * **注意：**
+     * IAM 使用我们的信任根证书颁发机构 (CAs) 库来验证 JSON Web Key Set (JWKS) 端点的 TLS 证书，从而确保与 OIDC 身份提供商 (IdPs) 的通信安全。如果您的 OIDC IdP 依赖于不是由这些受信任 CA 之一签名的证书，那么我们才会使用 IdP 配置中设置的指纹来确保通信安全。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOIDCProviderV5Request 请求对象
+     * @return CompletableFuture<CreateOIDCProviderV5Response>
+     */
+    public CompletableFuture<CreateOIDCProviderV5Response> createOIDCProviderV5Async(
+        CreateOIDCProviderV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.createOIDCProviderV5);
+    }
+
+    /**
+     * 创建OIDC提供商
+     *
+     * 该接口可以用于创建一个支持 OpenID Connect (OIDC) 的身份提供商 (IdP)。
+     * 您通过此操作创建的 OIDC 提供商可用作信任委托的信任策略中的主体 (Principal)，用于在华为云和 OIDC 提供商之间建立信任关系。
+     * 您可以直接使用您的身份提供商去创建新的信任委托，要了解更多信息，请参阅 IAM 用户指南中的**身份提供商**章节。
+     * 
+     * 当您创建 IAM OIDC 提供商时，您需要指定以下内容：
+     * - 要信任的 OIDC 身份提供商的 URL。
+     * - 客户端 ID 列表（也称为受众 Audiences），用于识别允许使用该 OIDC 提供商进行身份验证的应用程序。
+     * - 附加到指定 IAM OIDC 提供商的标签列表。
+     * - OIDC 身份提供商使用的一个或多个服务器证书的指纹列表。
+     * 
+     * **注意：**
+     * IAM 使用我们的信任根证书颁发机构 (CAs) 库来验证 JSON Web Key Set (JWKS) 端点的 TLS 证书，从而确保与 OIDC 身份提供商 (IdPs) 的通信安全。如果您的 OIDC IdP 依赖于不是由这些受信任 CA 之一签名的证书，那么我们才会使用 IdP 配置中设置的指纹来确保通信安全。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOIDCProviderV5Request 请求对象
+     * @return AsyncInvoker<CreateOIDCProviderV5Request, CreateOIDCProviderV5Response>
+     */
+    public AsyncInvoker<CreateOIDCProviderV5Request, CreateOIDCProviderV5Response> createOIDCProviderV5AsyncInvoker(
+        CreateOIDCProviderV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.createOIDCProviderV5, hcClient);
+    }
+
+    /**
+     * 删除指定OIDC提供商
+     *
+     * 该接口可以用于删除 IAM 中的一个 OpenID Connect (OIDC) 的身份提供商 (IdP)。IAM 在删除 OIDC 提供商时不会更新在信任策略中引用该提供商作为主体的任何信任委托，删除之后任何尝试切换代入引用已删除提供商的信任委托的操作都将失败。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOIDCProviderV5Request 请求对象
+     * @return CompletableFuture<DeleteOIDCProviderV5Response>
+     */
+    public CompletableFuture<DeleteOIDCProviderV5Response> deleteOIDCProviderV5Async(
+        DeleteOIDCProviderV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.deleteOIDCProviderV5);
+    }
+
+    /**
+     * 删除指定OIDC提供商
+     *
+     * 该接口可以用于删除 IAM 中的一个 OpenID Connect (OIDC) 的身份提供商 (IdP)。IAM 在删除 OIDC 提供商时不会更新在信任策略中引用该提供商作为主体的任何信任委托，删除之后任何尝试切换代入引用已删除提供商的信任委托的操作都将失败。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOIDCProviderV5Request 请求对象
+     * @return AsyncInvoker<DeleteOIDCProviderV5Request, DeleteOIDCProviderV5Response>
+     */
+    public AsyncInvoker<DeleteOIDCProviderV5Request, DeleteOIDCProviderV5Response> deleteOIDCProviderV5AsyncInvoker(
+        DeleteOIDCProviderV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.deleteOIDCProviderV5, hcClient);
+    }
+
+    /**
+     * 查询所有OIDC提供商
+     *
+     * 该接口可以用于查询所有 OpenID Connect (OIDC) 的身份提供商 (IdP) 列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOIDCProvidersV5Request 请求对象
+     * @return CompletableFuture<ListOIDCProvidersV5Response>
+     */
+    public CompletableFuture<ListOIDCProvidersV5Response> listOIDCProvidersV5Async(ListOIDCProvidersV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.listOIDCProvidersV5);
+    }
+
+    /**
+     * 查询所有OIDC提供商
+     *
+     * 该接口可以用于查询所有 OpenID Connect (OIDC) 的身份提供商 (IdP) 列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOIDCProvidersV5Request 请求对象
+     * @return AsyncInvoker<ListOIDCProvidersV5Request, ListOIDCProvidersV5Response>
+     */
+    public AsyncInvoker<ListOIDCProvidersV5Request, ListOIDCProvidersV5Response> listOIDCProvidersV5AsyncInvoker(
+        ListOIDCProvidersV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.listOIDCProvidersV5, hcClient);
+    }
+
+    /**
+     * 移除指定OIDC提供商中指定的客户端ID
+     *
+     * 该接口可以用于移除指定 IAM OIDC 提供商客户端 ID 列表中指定的客户端 ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RemoveClientIDFromOIDCProviderV5Request 请求对象
+     * @return CompletableFuture<RemoveClientIDFromOIDCProviderV5Response>
+     */
+    public CompletableFuture<RemoveClientIDFromOIDCProviderV5Response> removeClientIDFromOIDCProviderV5Async(
+        RemoveClientIDFromOIDCProviderV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.removeClientIDFromOIDCProviderV5);
+    }
+
+    /**
+     * 移除指定OIDC提供商中指定的客户端ID
+     *
+     * 该接口可以用于移除指定 IAM OIDC 提供商客户端 ID 列表中指定的客户端 ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RemoveClientIDFromOIDCProviderV5Request 请求对象
+     * @return AsyncInvoker<RemoveClientIDFromOIDCProviderV5Request, RemoveClientIDFromOIDCProviderV5Response>
+     */
+    public AsyncInvoker<RemoveClientIDFromOIDCProviderV5Request, RemoveClientIDFromOIDCProviderV5Response> removeClientIDFromOIDCProviderV5AsyncInvoker(
+        RemoveClientIDFromOIDCProviderV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.removeClientIDFromOIDCProviderV5, hcClient);
+    }
+
+    /**
+     * 查询指定OIDC提供商
+     *
+     * 该接口可以用于查询 OpenID Connect (OIDC) 的身份提供商 (IdP) 详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOIDCProviderV5Request 请求对象
+     * @return CompletableFuture<ShowOIDCProviderV5Response>
+     */
+    public CompletableFuture<ShowOIDCProviderV5Response> showOIDCProviderV5Async(ShowOIDCProviderV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.showOIDCProviderV5);
+    }
+
+    /**
+     * 查询指定OIDC提供商
+     *
+     * 该接口可以用于查询 OpenID Connect (OIDC) 的身份提供商 (IdP) 详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOIDCProviderV5Request 请求对象
+     * @return AsyncInvoker<ShowOIDCProviderV5Request, ShowOIDCProviderV5Response>
+     */
+    public AsyncInvoker<ShowOIDCProviderV5Request, ShowOIDCProviderV5Response> showOIDCProviderV5AsyncInvoker(
+        ShowOIDCProviderV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.showOIDCProviderV5, hcClient);
+    }
+
+    /**
+     * 替换OIDC提供商指纹列表
+     *
+     * 该接口可以用一个新的指纹列表替换与 OIDC 提供商关联的现有指纹列表。通常，您仅在身份提供商证书更改时才需要更新指纹，这种情况一般很少发生。但是，如果提供商的证书发生了变化，而您又没有更新指纹，那么任何尝试切换代入与该 OIDC 提供商相关的 信任委托都将失败。
+     * 
+     * **注意：**
+     * IAM 使用自己的信任根证书颁发机构 (CAs) 库来验证 JSON Web Key Set (JWKS) 端点的 TLS 证书，从而确保与 OIDC 身份提供商 (IdPs) 的通信安全。如果您的 OIDC IdP 依赖于不是由这些受信任 CA 之一签名的证书，那么我们才会使用 IdP 配置中设置的指纹来确保通信安全。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOIDCProviderThumbprintV5Request 请求对象
+     * @return CompletableFuture<UpdateOIDCProviderThumbprintV5Response>
+     */
+    public CompletableFuture<UpdateOIDCProviderThumbprintV5Response> updateOIDCProviderThumbprintV5Async(
+        UpdateOIDCProviderThumbprintV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.updateOIDCProviderThumbprintV5);
+    }
+
+    /**
+     * 替换OIDC提供商指纹列表
+     *
+     * 该接口可以用一个新的指纹列表替换与 OIDC 提供商关联的现有指纹列表。通常，您仅在身份提供商证书更改时才需要更新指纹，这种情况一般很少发生。但是，如果提供商的证书发生了变化，而您又没有更新指纹，那么任何尝试切换代入与该 OIDC 提供商相关的 信任委托都将失败。
+     * 
+     * **注意：**
+     * IAM 使用自己的信任根证书颁发机构 (CAs) 库来验证 JSON Web Key Set (JWKS) 端点的 TLS 证书，从而确保与 OIDC 身份提供商 (IdPs) 的通信安全。如果您的 OIDC IdP 依赖于不是由这些受信任 CA 之一签名的证书，那么我们才会使用 IdP 配置中设置的指纹来确保通信安全。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOIDCProviderThumbprintV5Request 请求对象
+     * @return AsyncInvoker<UpdateOIDCProviderThumbprintV5Request, UpdateOIDCProviderThumbprintV5Response>
+     */
+    public AsyncInvoker<UpdateOIDCProviderThumbprintV5Request, UpdateOIDCProviderThumbprintV5Response> updateOIDCProviderThumbprintV5AsyncInvoker(
+        UpdateOIDCProviderThumbprintV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.updateOIDCProviderThumbprintV5, hcClient);
+    }
+
+    /**
+     * 修改指定OIDC提供商描述
+     *
+     * 该接口可以用于修改 IAM 中的一个 OpenID Connect (OIDC) 的身份提供商 (IdP)的描述字段。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOIDCProviderV5Request 请求对象
+     * @return CompletableFuture<UpdateOIDCProviderV5Response>
+     */
+    public CompletableFuture<UpdateOIDCProviderV5Response> updateOIDCProviderV5Async(
+        UpdateOIDCProviderV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.updateOIDCProviderV5);
+    }
+
+    /**
+     * 修改指定OIDC提供商描述
+     *
+     * 该接口可以用于修改 IAM 中的一个 OpenID Connect (OIDC) 的身份提供商 (IdP)的描述字段。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOIDCProviderV5Request 请求对象
+     * @return AsyncInvoker<UpdateOIDCProviderV5Request, UpdateOIDCProviderV5Response>
+     */
+    public AsyncInvoker<UpdateOIDCProviderV5Request, UpdateOIDCProviderV5Response> updateOIDCProviderV5AsyncInvoker(
+        UpdateOIDCProviderV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.updateOIDCProviderV5, hcClient);
+    }
+
+    /**
      * 创建自定义身份策略
      *
      * 该接口可以用于创建一个默认版本为v1的新自定义身份策略。
@@ -1662,6 +1954,162 @@ public class IamAsyncClient {
     public AsyncInvoker<TagResourceV5Request, TagResourceV5Response> tagResourceV5AsyncInvoker(
         TagResourceV5Request request) {
         return new AsyncInvoker<>(request, IamMeta.tagResourceV5, hcClient);
+    }
+
+    /**
+     * 创建SAML提供商
+     *
+     * 该接口可以用于创建一个支持 SAML 2.0 的身份提供商 (IdP)。
+     * 
+     * 您通过此操作创建的 SAML 提供商可用作信任委托的信任策略中的主体 (Principal)，用于在华为云和 SAML 提供商之间建立信任关系。 该信任策略可以允许使用 SAML IdP 登录的联邦用户切换至该信任委托，您可以创建使用 Web 单点登录 (SSO) 到 华为云控制台的 IAM 信任委托，或者支持对华为云进行 API 访问的 IAM 信任委托。
+     * 
+     * 当您创建 SAML 提供商时，您需要上传从 IdP 获得的 SAML 元数据文档。该文档包含颁发者的名称、过期信息以及可用于验证 IdP 发送的 SAML 身份验证响应（断言）的密钥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSAMLProviderV5Request 请求对象
+     * @return CompletableFuture<CreateSAMLProviderV5Response>
+     */
+    public CompletableFuture<CreateSAMLProviderV5Response> createSAMLProviderV5Async(
+        CreateSAMLProviderV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.createSAMLProviderV5);
+    }
+
+    /**
+     * 创建SAML提供商
+     *
+     * 该接口可以用于创建一个支持 SAML 2.0 的身份提供商 (IdP)。
+     * 
+     * 您通过此操作创建的 SAML 提供商可用作信任委托的信任策略中的主体 (Principal)，用于在华为云和 SAML 提供商之间建立信任关系。 该信任策略可以允许使用 SAML IdP 登录的联邦用户切换至该信任委托，您可以创建使用 Web 单点登录 (SSO) 到 华为云控制台的 IAM 信任委托，或者支持对华为云进行 API 访问的 IAM 信任委托。
+     * 
+     * 当您创建 SAML 提供商时，您需要上传从 IdP 获得的 SAML 元数据文档。该文档包含颁发者的名称、过期信息以及可用于验证 IdP 发送的 SAML 身份验证响应（断言）的密钥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSAMLProviderV5Request 请求对象
+     * @return AsyncInvoker<CreateSAMLProviderV5Request, CreateSAMLProviderV5Response>
+     */
+    public AsyncInvoker<CreateSAMLProviderV5Request, CreateSAMLProviderV5Response> createSAMLProviderV5AsyncInvoker(
+        CreateSAMLProviderV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.createSAMLProviderV5, hcClient);
+    }
+
+    /**
+     * 删除指定SAML提供商
+     *
+     * 该接口可以用于删除 IAM 中的一个 SAML 2.0 的身份提供商 (IdP)。IAM 在删除 SAML 提供商时不会更新在信任策略中引用该提供商作为主体的任何信任委托，删除之后任何尝试切换代入引用已删除提供商的信任委托的操作都将失败。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSAMLProviderV5Request 请求对象
+     * @return CompletableFuture<DeleteSAMLProviderV5Response>
+     */
+    public CompletableFuture<DeleteSAMLProviderV5Response> deleteSAMLProviderV5Async(
+        DeleteSAMLProviderV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.deleteSAMLProviderV5);
+    }
+
+    /**
+     * 删除指定SAML提供商
+     *
+     * 该接口可以用于删除 IAM 中的一个 SAML 2.0 的身份提供商 (IdP)。IAM 在删除 SAML 提供商时不会更新在信任策略中引用该提供商作为主体的任何信任委托，删除之后任何尝试切换代入引用已删除提供商的信任委托的操作都将失败。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSAMLProviderV5Request 请求对象
+     * @return AsyncInvoker<DeleteSAMLProviderV5Request, DeleteSAMLProviderV5Response>
+     */
+    public AsyncInvoker<DeleteSAMLProviderV5Request, DeleteSAMLProviderV5Response> deleteSAMLProviderV5AsyncInvoker(
+        DeleteSAMLProviderV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.deleteSAMLProviderV5, hcClient);
+    }
+
+    /**
+     * 查询所有SAML提供商
+     *
+     * 该接口可以用于查询所有 SAML 2.0 的身份提供商 (IdP) 列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSAMLProvidersV5Request 请求对象
+     * @return CompletableFuture<ListSAMLProvidersV5Response>
+     */
+    public CompletableFuture<ListSAMLProvidersV5Response> listSAMLProvidersV5Async(ListSAMLProvidersV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.listSAMLProvidersV5);
+    }
+
+    /**
+     * 查询所有SAML提供商
+     *
+     * 该接口可以用于查询所有 SAML 2.0 的身份提供商 (IdP) 列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSAMLProvidersV5Request 请求对象
+     * @return AsyncInvoker<ListSAMLProvidersV5Request, ListSAMLProvidersV5Response>
+     */
+    public AsyncInvoker<ListSAMLProvidersV5Request, ListSAMLProvidersV5Response> listSAMLProvidersV5AsyncInvoker(
+        ListSAMLProvidersV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.listSAMLProvidersV5, hcClient);
+    }
+
+    /**
+     * 查询指定SAML提供商
+     *
+     * 该接口可以用于查询 SAML 2.0 的身份提供商 (IdP) 详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSAMLProviderV5Request 请求对象
+     * @return CompletableFuture<ShowSAMLProviderV5Response>
+     */
+    public CompletableFuture<ShowSAMLProviderV5Response> showSAMLProviderV5Async(ShowSAMLProviderV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.showSAMLProviderV5);
+    }
+
+    /**
+     * 查询指定SAML提供商
+     *
+     * 该接口可以用于查询 SAML 2.0 的身份提供商 (IdP) 详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSAMLProviderV5Request 请求对象
+     * @return AsyncInvoker<ShowSAMLProviderV5Request, ShowSAMLProviderV5Response>
+     */
+    public AsyncInvoker<ShowSAMLProviderV5Request, ShowSAMLProviderV5Response> showSAMLProviderV5AsyncInvoker(
+        ShowSAMLProviderV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.showSAMLProviderV5, hcClient);
+    }
+
+    /**
+     * 更新指定SAML提供商
+     *
+     * 该接口可以用于更新现有 SAML 提供商的元数据文档、SAML 加密设置以及私钥。要轮换私钥，请在单独的请求中先添加新的私钥，然后移除旧的私钥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSAMLProviderV5Request 请求对象
+     * @return CompletableFuture<UpdateSAMLProviderV5Response>
+     */
+    public CompletableFuture<UpdateSAMLProviderV5Response> updateSAMLProviderV5Async(
+        UpdateSAMLProviderV5Request request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.updateSAMLProviderV5);
+    }
+
+    /**
+     * 更新指定SAML提供商
+     *
+     * 该接口可以用于更新现有 SAML 提供商的元数据文档、SAML 加密设置以及私钥。要轮换私钥，请在单独的请求中先添加新的私钥，然后移除旧的私钥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSAMLProviderV5Request 请求对象
+     * @return AsyncInvoker<UpdateSAMLProviderV5Request, UpdateSAMLProviderV5Response>
+     */
+    public AsyncInvoker<UpdateSAMLProviderV5Request, UpdateSAMLProviderV5Response> updateSAMLProviderV5AsyncInvoker(
+        UpdateSAMLProviderV5Request request) {
+        return new AsyncInvoker<>(request, IamMeta.updateSAMLProviderV5, hcClient);
     }
 
     /**
