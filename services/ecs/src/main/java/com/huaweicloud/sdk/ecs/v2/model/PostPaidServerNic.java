@@ -43,6 +43,11 @@ public class PostPaidServerNic {
 
     private List<CreateServerNicAllowedAddressPairs> allowedAddressPairs = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "efi_enable")
+
+    private Boolean efiEnable;
+
     public PostPaidServerNic withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -171,6 +176,23 @@ public class PostPaidServerNic {
         this.allowedAddressPairs = allowedAddressPairs;
     }
 
+    public PostPaidServerNic withEfiEnable(Boolean efiEnable) {
+        this.efiEnable = efiEnable;
+        return this;
+    }
+
+    /**
+     * 使能网卡的vRoCE能力，只支持从网卡，主网卡不支持。
+     * @return efiEnable
+     */
+    public Boolean getEfiEnable() {
+        return efiEnable;
+    }
+
+    public void setEfiEnable(Boolean efiEnable) {
+        this.efiEnable = efiEnable;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -183,12 +205,13 @@ public class PostPaidServerNic {
         return Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.portId, that.portId)
             && Objects.equals(this.ipAddress, that.ipAddress) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
             && Objects.equals(this.ipv6Bandwidth, that.ipv6Bandwidth)
-            && Objects.equals(this.allowedAddressPairs, that.allowedAddressPairs);
+            && Objects.equals(this.allowedAddressPairs, that.allowedAddressPairs)
+            && Objects.equals(this.efiEnable, that.efiEnable);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subnetId, portId, ipAddress, ipv6Enable, ipv6Bandwidth, allowedAddressPairs);
+        return Objects.hash(subnetId, portId, ipAddress, ipv6Enable, ipv6Bandwidth, allowedAddressPairs, efiEnable);
     }
 
     @Override
@@ -201,6 +224,7 @@ public class PostPaidServerNic {
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("    ipv6Bandwidth: ").append(toIndentedString(ipv6Bandwidth)).append("\n");
         sb.append("    allowedAddressPairs: ").append(toIndentedString(allowedAddressPairs)).append("\n");
+        sb.append("    efiEnable: ").append(toIndentedString(efiEnable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

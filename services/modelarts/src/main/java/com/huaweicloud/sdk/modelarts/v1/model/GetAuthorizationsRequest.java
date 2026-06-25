@@ -16,7 +16,7 @@ import java.util.Objects;
 public class GetAuthorizationsRequest {
 
     /**
-     * **参数解释**：指定排序字段。 **约束限制**：不涉及。 **取值范围**：枚举类型，取值如下： - user_name：IAM用户名称。 - create_time：创建时间。  **默认取值**：user_name。
+     * **参数解释**：指定排序字段。 **约束限制**：不涉及。 **取值范围**：枚举类型，取值如下： - user_name：IAM用户名称。 - create_time：创建时间。 **默认取值**：user_name。
      */
     public static final class SortByEnum {
 
@@ -91,7 +91,7 @@ public class GetAuthorizationsRequest {
     private SortByEnum sortBy;
 
     /**
-     * **参数解释**：排序方式。 **约束限制**：不涉及。 **取值范围**：枚举类型，取值如下： - ASC：递增排序。 - DESC：递减排序。  **默认取值**：ASC。
+     * **参数解释**：排序方式。 **约束限制**：不涉及。 **取值范围**：枚举类型，取值如下： - ASC：递增排序。 - DESC：递减排序。 **默认取值**：ASC。
      */
     public static final class OrderEnum {
 
@@ -181,7 +181,7 @@ public class GetAuthorizationsRequest {
     }
 
     /**
-     * **参数解释**：指定排序字段。 **约束限制**：不涉及。 **取值范围**：枚举类型，取值如下： - user_name：IAM用户名称。 - create_time：创建时间。  **默认取值**：user_name。
+     * **参数解释**：指定排序字段。 **约束限制**：不涉及。 **取值范围**：枚举类型，取值如下： - user_name：IAM用户名称。 - create_time：创建时间。 **默认取值**：user_name。
      * @return sortBy
      */
     public SortByEnum getSortBy() {
@@ -198,7 +198,7 @@ public class GetAuthorizationsRequest {
     }
 
     /**
-     * **参数解释**：排序方式。 **约束限制**：不涉及。 **取值范围**：枚举类型，取值如下： - ASC：递增排序。 - DESC：递减排序。  **默认取值**：ASC。
+     * **参数解释**：排序方式。 **约束限制**：不涉及。 **取值范围**：枚举类型，取值如下： - ASC：递增排序。 - DESC：递减排序。 **默认取值**：ASC。
      * @return order
      */
     public OrderEnum getOrder() {

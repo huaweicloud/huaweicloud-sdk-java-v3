@@ -1795,7 +1795,7 @@ public class DcsMeta {
             f -> f.withMarshaller(ListClientsRequest::getInstanceId, ListClientsRequest::setInstanceId));
         builder.<String>withRequestField("node_id",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListClientsRequest::getNodeId, ListClientsRequest::setNodeId));
         builder.<Integer>withRequestField("offset",

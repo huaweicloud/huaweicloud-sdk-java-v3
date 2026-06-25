@@ -29,6 +29,11 @@ public class CcrulesListInfo {
     private Integer priority;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cc_priority")
+
+    private Integer ccPriority;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -271,7 +276,7 @@ public class CcrulesListInfo {
     }
 
     /**
-     * 执行该规则的优先级，值越小，优先级越高，值相同时，规则创建时间早，优先级越高。取值范围：0到65535。
+     * 执行该规则的优先级，值越小，优先级越高，值相同时，规则创建时间早，优先级越高。取值范围：1到100。 本字段仅在边缘安全场景生效
      * @return priority
      */
     public Integer getPriority() {
@@ -280,6 +285,23 @@ public class CcrulesListInfo {
 
     public void setPriority(Integer priority) {
         this.priority = priority;
+    }
+
+    public CcrulesListInfo withCcPriority(Integer ccPriority) {
+        this.ccPriority = ccPriority;
+        return this;
+    }
+
+    /**
+     * 执行该规则的优先级，值越小，优先级越高，值相同时，规则创建时间早，优先级越高。取值范围：0到65535。 本字段仅在非边缘安全场景生效
+     * @return ccPriority
+     */
+    public Integer getCcPriority() {
+        return ccPriority;
+    }
+
+    public void setCcPriority(Integer ccPriority) {
+        this.ccPriority = ccPriority;
     }
 
     public CcrulesListInfo withName(String name) {
@@ -734,14 +756,15 @@ public class CcrulesListInfo {
         }
         CcrulesListInfo that = (CcrulesListInfo) obj;
         return Objects.equals(this.policyname, that.policyname) && Objects.equals(this.priority, that.priority)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
-            && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.url, that.url)
-            && Objects.equals(this.prefix, that.prefix) && Objects.equals(this.mode, that.mode)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.conditions, that.conditions)
-            && Objects.equals(this.action, that.action) && Objects.equals(this.tagType, that.tagType)
-            && Objects.equals(this.tagIndex, that.tagIndex) && Objects.equals(this.tagCondition, that.tagCondition)
-            && Objects.equals(this.limitNum, that.limitNum) && Objects.equals(this.limitPeriod, that.limitPeriod)
-            && Objects.equals(this.unlockNum, that.unlockNum) && Objects.equals(this.lockTime, that.lockTime)
+            && Objects.equals(this.ccPriority, that.ccPriority) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.prefix, that.prefix)
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.conditions, that.conditions) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.tagType, that.tagType) && Objects.equals(this.tagIndex, that.tagIndex)
+            && Objects.equals(this.tagCondition, that.tagCondition) && Objects.equals(this.limitNum, that.limitNum)
+            && Objects.equals(this.limitPeriod, that.limitPeriod) && Objects.equals(this.unlockNum, that.unlockNum)
+            && Objects.equals(this.lockTime, that.lockTime)
             && Objects.equals(this.domainAggregation, that.domainAggregation)
             && Objects.equals(this.regionAggregation, that.regionAggregation)
             && Objects.equals(this.description, that.description) && Objects.equals(this.totalNum, that.totalNum)
@@ -753,6 +776,7 @@ public class CcrulesListInfo {
     public int hashCode() {
         return Objects.hash(policyname,
             priority,
+            ccPriority,
             name,
             id,
             policyid,
@@ -785,6 +809,7 @@ public class CcrulesListInfo {
         sb.append("class CcrulesListInfo {\n");
         sb.append("    policyname: ").append(toIndentedString(policyname)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+        sb.append("    ccPriority: ").append(toIndentedString(ccPriority)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");

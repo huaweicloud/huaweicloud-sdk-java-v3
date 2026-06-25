@@ -298,6 +298,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListHistoryWaitEventsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListHistoryWaitEventsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInspectionHistoriesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInspectionHistoriesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListInstanceBackupSummaryRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstanceBackupSummaryResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceDiagnosisRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceDiagnosisResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesRequest;
@@ -395,6 +397,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListSlowlogStatisticsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSlowlogStatisticsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSmallVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSmallVersionResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSparseBackupPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSparseBackupPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlLimitRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlStatisticsRequest;
@@ -579,6 +583,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowBackupDownloadLinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupDownloadLinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupPolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowBackupUsageRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowBackupUsageResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowBinlogClearPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowBinlogClearPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowConfigurationRequest;
@@ -743,6 +749,9 @@ import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlParameterValueResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateRdsInstanceAliasRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateReadWeightRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateReadWeightResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateSparseBackupPolicyReq;
+import com.huaweicloud.sdk.rds.v3.model.UpdateSparseBackupPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateSparseBackupPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateSqlLimitRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateSqlLimitRuleReqV3;
@@ -3059,6 +3068,75 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListInstanceBackupSummaryRequest, ListInstanceBackupSummaryResponse> listInstanceBackupSummary =
+        genForListInstanceBackupSummary();
+
+    private static HttpRequestDef<ListInstanceBackupSummaryRequest, ListInstanceBackupSummaryResponse> genForListInstanceBackupSummary() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceBackupSummaryRequest, ListInstanceBackupSummaryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInstanceBackupSummaryRequest.class,
+                    ListInstanceBackupSummaryResponse.class)
+                .withName("ListInstanceBackupSummary")
+                .withUri("/v3/{project_id}/instances/backups/summary")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceBackupSummaryRequest::getEngine,
+                ListInstanceBackupSummaryRequest::setEngine));
+        builder.<String>withRequestField("order_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceBackupSummaryRequest::getOrderField,
+                ListInstanceBackupSummaryRequest::setOrderField));
+        builder.<String>withRequestField("order_rule",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceBackupSummaryRequest::getOrderRule,
+                ListInstanceBackupSummaryRequest::setOrderRule));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceBackupSummaryRequest::getInstanceId,
+                ListInstanceBackupSummaryRequest::setInstanceId));
+        builder.<String>withRequestField("instance_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceBackupSummaryRequest::getInstanceName,
+                ListInstanceBackupSummaryRequest::setInstanceName));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceBackupSummaryRequest::getOffset,
+                ListInstanceBackupSummaryRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceBackupSummaryRequest::getLimit,
+                ListInstanceBackupSummaryRequest::setLimit));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceBackupSummaryRequest::getXLanguage,
+                ListInstanceBackupSummaryRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListInstanceDiagnosisRequest, ListInstanceDiagnosisResponse> listInstanceDiagnosis =
         genForListInstanceDiagnosis();
 
@@ -4534,6 +4612,36 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSparseBackupPolicyRequest, ListSparseBackupPolicyResponse> listSparseBackupPolicy =
+        genForListSparseBackupPolicy();
+
+    private static HttpRequestDef<ListSparseBackupPolicyRequest, ListSparseBackupPolicyResponse> genForListSparseBackupPolicy() {
+        // basic
+        HttpRequestDef.Builder<ListSparseBackupPolicyRequest, ListSparseBackupPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSparseBackupPolicyRequest.class, ListSparseBackupPolicyResponse.class)
+            .withName("ListSparseBackupPolicy")
+            .withUri("/v3/{project_id}/instances/{instance_id}/backups/sparse-policy")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSparseBackupPolicyRequest::getInstanceId,
+                ListSparseBackupPolicyRequest::setInstanceId));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSparseBackupPolicyResponse::getXRequestId,
+                ListSparseBackupPolicyResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSqlLimitRequest, ListSqlLimitResponse> listSqlLimit = genForListSqlLimit();
 
     private static HttpRequestDef<ListSqlLimitRequest, ListSqlLimitResponse> genForListSqlLimit() {
@@ -5929,6 +6037,34 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBackupPolicyRequest::getXLanguage, ShowBackupPolicyRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBackupUsageRequest, ShowBackupUsageResponse> showBackupUsage =
+        genForShowBackupUsage();
+
+    private static HttpRequestDef<ShowBackupUsageRequest, ShowBackupUsageResponse> genForShowBackupUsage() {
+        // basic
+        HttpRequestDef.Builder<ShowBackupUsageRequest, ShowBackupUsageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowBackupUsageRequest.class, ShowBackupUsageResponse.class)
+                .withName("ShowBackupUsage")
+                .withUri("/v3/{project_id}/backups/backup-usage")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackupUsageRequest::getEngine, ShowBackupUsageRequest::setEngine));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackupUsageRequest::getXLanguage, ShowBackupUsageRequest::setXLanguage));
 
         // response
 
@@ -7462,6 +7598,48 @@ public class RdsMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSparseBackupPolicyRequest, UpdateSparseBackupPolicyResponse> updateSparseBackupPolicy =
+        genForUpdateSparseBackupPolicy();
+
+    private static HttpRequestDef<UpdateSparseBackupPolicyRequest, UpdateSparseBackupPolicyResponse> genForUpdateSparseBackupPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateSparseBackupPolicyRequest, UpdateSparseBackupPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, UpdateSparseBackupPolicyRequest.class, UpdateSparseBackupPolicyResponse.class)
+                .withName("UpdateSparseBackupPolicy")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/sparse-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSparseBackupPolicyRequest::getInstanceId,
+                UpdateSparseBackupPolicyRequest::setInstanceId));
+        builder.<UpdateSparseBackupPolicyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateSparseBackupPolicyReq.class),
+            f -> f.withMarshaller(UpdateSparseBackupPolicyRequest::getBody, UpdateSparseBackupPolicyRequest::setBody));
+
+        // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(UpdateSparseBackupPolicyResponse::getBody,
+                UpdateSparseBackupPolicyResponse::setBody));
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateSparseBackupPolicyResponse::getXRequestId,
+                UpdateSparseBackupPolicyResponse::setXRequestId));
         return builder.build();
     }
 

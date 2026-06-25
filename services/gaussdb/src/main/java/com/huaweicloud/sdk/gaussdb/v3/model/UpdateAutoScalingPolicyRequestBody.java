@@ -42,6 +42,11 @@ public class UpdateAutoScalingPolicyRequestBody {
     private Boolean reduceEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reduce_threshold")
+
+    private Integer reduceThreshold;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_read_only_count")
 
     private Integer maxReadOnlyCount;
@@ -158,6 +163,25 @@ public class UpdateAutoScalingPolicyRequestBody {
         this.reduceEnabled = reduceEnabled;
     }
 
+    public UpdateAutoScalingPolicyRequestBody withReduceThreshold(Integer reduceThreshold) {
+        this.reduceThreshold = reduceThreshold;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  自动回缩的CPU平均使用率阈值（百分比数值）。  **约束限制**：  不涉及。  **取值范围**：  10-30。  **默认取值**：  不涉及。
+     * minimum: 10
+     * maximum: 30
+     * @return reduceThreshold
+     */
+    public Integer getReduceThreshold() {
+        return reduceThreshold;
+    }
+
+    public void setReduceThreshold(Integer reduceThreshold) {
+        this.reduceThreshold = reduceThreshold;
+    }
+
     public UpdateAutoScalingPolicyRequestBody withMaxReadOnlyCount(Integer maxReadOnlyCount) {
         this.maxReadOnlyCount = maxReadOnlyCount;
         return this;
@@ -232,6 +256,7 @@ public class UpdateAutoScalingPolicyRequestBody {
             && Objects.equals(this.silenceCycle, that.silenceCycle)
             && Objects.equals(this.enlargeThreshold, that.enlargeThreshold)
             && Objects.equals(this.maxFlavor, that.maxFlavor) && Objects.equals(this.reduceEnabled, that.reduceEnabled)
+            && Objects.equals(this.reduceThreshold, that.reduceThreshold)
             && Objects.equals(this.maxReadOnlyCount, that.maxReadOnlyCount)
             && Objects.equals(this.readOnlyWeight, that.readOnlyWeight)
             && Objects.equals(this.scalingStrategy, that.scalingStrategy);
@@ -245,6 +270,7 @@ public class UpdateAutoScalingPolicyRequestBody {
             enlargeThreshold,
             maxFlavor,
             reduceEnabled,
+            reduceThreshold,
             maxReadOnlyCount,
             readOnlyWeight,
             scalingStrategy);
@@ -260,6 +286,7 @@ public class UpdateAutoScalingPolicyRequestBody {
         sb.append("    enlargeThreshold: ").append(toIndentedString(enlargeThreshold)).append("\n");
         sb.append("    maxFlavor: ").append(toIndentedString(maxFlavor)).append("\n");
         sb.append("    reduceEnabled: ").append(toIndentedString(reduceEnabled)).append("\n");
+        sb.append("    reduceThreshold: ").append(toIndentedString(reduceThreshold)).append("\n");
         sb.append("    maxReadOnlyCount: ").append(toIndentedString(maxReadOnlyCount)).append("\n");
         sb.append("    readOnlyWeight: ").append(toIndentedString(readOnlyWeight)).append("\n");
         sb.append("    scalingStrategy: ").append(toIndentedString(scalingStrategy)).append("\n");

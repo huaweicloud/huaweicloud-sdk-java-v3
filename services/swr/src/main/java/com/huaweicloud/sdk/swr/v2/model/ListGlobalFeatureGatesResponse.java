@@ -26,6 +26,11 @@ public class ListGlobalFeatureGatesResponse extends SdkResponse {
 
     private Boolean cerAvailable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enableIntranetAccessSwitch")
+
+    private Boolean enableIntranetAccessSwitch;
+
     public ListGlobalFeatureGatesResponse withEnableUserDefObs(Boolean enableUserDefObs) {
         this.enableUserDefObs = enableUserDefObs;
         return this;
@@ -77,6 +82,23 @@ public class ListGlobalFeatureGatesResponse extends SdkResponse {
         this.cerAvailable = cerAvailable;
     }
 
+    public ListGlobalFeatureGatesResponse withEnableIntranetAccessSwitch(Boolean enableIntranetAccessSwitch) {
+        this.enableIntranetAccessSwitch = enableIntranetAccessSwitch;
+        return this;
+    }
+
+    /**
+     * 是否展示创建内网访问的开关按钮
+     * @return enableIntranetAccessSwitch
+     */
+    public Boolean getEnableIntranetAccessSwitch() {
+        return enableIntranetAccessSwitch;
+    }
+
+    public void setEnableIntranetAccessSwitch(Boolean enableIntranetAccessSwitch) {
+        this.enableIntranetAccessSwitch = enableIntranetAccessSwitch;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -88,12 +110,13 @@ public class ListGlobalFeatureGatesResponse extends SdkResponse {
         ListGlobalFeatureGatesResponse that = (ListGlobalFeatureGatesResponse) obj;
         return Objects.equals(this.enableUserDefObs, that.enableUserDefObs)
             && Objects.equals(this.enableEnterprise, that.enableEnterprise)
-            && Objects.equals(this.cerAvailable, that.cerAvailable);
+            && Objects.equals(this.cerAvailable, that.cerAvailable)
+            && Objects.equals(this.enableIntranetAccessSwitch, that.enableIntranetAccessSwitch);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enableUserDefObs, enableEnterprise, cerAvailable);
+        return Objects.hash(enableUserDefObs, enableEnterprise, cerAvailable, enableIntranetAccessSwitch);
     }
 
     @Override
@@ -103,6 +126,7 @@ public class ListGlobalFeatureGatesResponse extends SdkResponse {
         sb.append("    enableUserDefObs: ").append(toIndentedString(enableUserDefObs)).append("\n");
         sb.append("    enableEnterprise: ").append(toIndentedString(enableEnterprise)).append("\n");
         sb.append("    cerAvailable: ").append(toIndentedString(cerAvailable)).append("\n");
+        sb.append("    enableIntranetAccessSwitch: ").append(toIndentedString(enableIntranetAccessSwitch)).append("\n");
         sb.append("}");
         return sb.toString();
     }

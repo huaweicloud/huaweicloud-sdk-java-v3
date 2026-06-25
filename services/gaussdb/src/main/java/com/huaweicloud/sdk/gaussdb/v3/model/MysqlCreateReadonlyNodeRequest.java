@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -22,6 +27,81 @@ public class MysqlCreateReadonlyNodeRequest {
     @JsonProperty(value = "is_auto_pay")
 
     private String isAutoPay;
+
+    /**
+     * **参数解释**：     计费模式。  **约束限制**：  仅当实例为包年/包月实例时生效。  **取值范围**：  - prePaid：预付费，即包年/包月。 - postPaid：后付费，即按需付费。  **默认取值**：  prePaid。
+     */
+    public static final class ChargeModeEnum {
+
+        /**
+         * Enum PREPAID for value: "prePaid"
+         */
+        public static final ChargeModeEnum PREPAID = new ChargeModeEnum("prePaid");
+
+        /**
+         * Enum POSTPAID for value: "postPaid"
+         */
+        public static final ChargeModeEnum POSTPAID = new ChargeModeEnum("postPaid");
+
+        private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ChargeModeEnum> createStaticFields() {
+            Map<String, ChargeModeEnum> map = new HashMap<>();
+            map.put("prePaid", PREPAID);
+            map.put("postPaid", POSTPAID);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ChargeModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ChargeModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargeModeEnum(value));
+        }
+
+        public static ChargeModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ChargeModeEnum) {
+                return this.value.equals(((ChargeModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "charge_mode")
+
+    private ChargeModeEnum chargeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zones")
@@ -78,6 +158,23 @@ public class MysqlCreateReadonlyNodeRequest {
         this.isAutoPay = isAutoPay;
     }
 
+    public MysqlCreateReadonlyNodeRequest withChargeMode(ChargeModeEnum chargeMode) {
+        this.chargeMode = chargeMode;
+        return this;
+    }
+
+    /**
+     * **参数解释**：     计费模式。  **约束限制**：  仅当实例为包年/包月实例时生效。  **取值范围**：  - prePaid：预付费，即包年/包月。 - postPaid：后付费，即按需付费。  **默认取值**：  prePaid。
+     * @return chargeMode
+     */
+    public ChargeModeEnum getChargeMode() {
+        return chargeMode;
+    }
+
+    public void setChargeMode(ChargeModeEnum chargeMode) {
+        this.chargeMode = chargeMode;
+    }
+
     public MysqlCreateReadonlyNodeRequest withAvailabilityZones(List<String> availabilityZones) {
         this.availabilityZones = availabilityZones;
         return this;
@@ -121,12 +218,13 @@ public class MysqlCreateReadonlyNodeRequest {
         }
         MysqlCreateReadonlyNodeRequest that = (MysqlCreateReadonlyNodeRequest) obj;
         return Objects.equals(this.priorities, that.priorities) && Objects.equals(this.isAutoPay, that.isAutoPay)
+            && Objects.equals(this.chargeMode, that.chargeMode)
             && Objects.equals(this.availabilityZones, that.availabilityZones);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(priorities, isAutoPay, availabilityZones);
+        return Objects.hash(priorities, isAutoPay, chargeMode, availabilityZones);
     }
 
     @Override
@@ -135,6 +233,7 @@ public class MysqlCreateReadonlyNodeRequest {
         sb.append("class MysqlCreateReadonlyNodeRequest {\n");
         sb.append("    priorities: ").append(toIndentedString(priorities)).append("\n");
         sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
+        sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    availabilityZones: ").append(toIndentedString(availabilityZones)).append("\n");
         sb.append("}");
         return sb.toString();

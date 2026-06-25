@@ -13,6 +13,7 @@ import com.huaweicloud.sdk.vod.v1.model.CancelExtractAudioTaskRequest;
 import com.huaweicloud.sdk.vod.v1.model.CancelExtractAudioTaskResponse;
 import com.huaweicloud.sdk.vod.v1.model.CheckMd5DuplicationRequest;
 import com.huaweicloud.sdk.vod.v1.model.CheckMd5DuplicationResponse;
+import com.huaweicloud.sdk.vod.v1.model.ConfigCdnHttpsReq;
 import com.huaweicloud.sdk.vod.v1.model.ConfirmAssetUploadReq;
 import com.huaweicloud.sdk.vod.v1.model.ConfirmAssetUploadRequest;
 import com.huaweicloud.sdk.vod.v1.model.ConfirmAssetUploadResponse;
@@ -147,6 +148,8 @@ import com.huaweicloud.sdk.vod.v1.model.ShowAssetTempAuthorityRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowAssetTempAuthorityResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowCdnStatisticsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowCdnStatisticsResponse;
+import com.huaweicloud.sdk.vod.v1.model.ShowHttpsConfigRequest;
+import com.huaweicloud.sdk.vod.v1.model.ShowHttpsConfigResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowObjectMetaDataRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowObjectMetaDataResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowPreheatingAssetRequest;
@@ -184,6 +187,8 @@ import com.huaweicloud.sdk.vod.v1.model.UpdateCategoryReq;
 import com.huaweicloud.sdk.vod.v1.model.UpdateCoverByThumbnailReq;
 import com.huaweicloud.sdk.vod.v1.model.UpdateCoverByThumbnailRequest;
 import com.huaweicloud.sdk.vod.v1.model.UpdateCoverByThumbnailResponse;
+import com.huaweicloud.sdk.vod.v1.model.UpdateHttpsConfigRequest;
+import com.huaweicloud.sdk.vod.v1.model.UpdateHttpsConfigResponse;
 import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeReq;
 import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeRequest;
 import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeResponse;
@@ -2812,6 +2817,62 @@ public class VodMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadMetaDataByUrlReq.class),
             f -> f.withMarshaller(UploadMetaDataByUrlRequest::getBody, UploadMetaDataByUrlRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowHttpsConfigRequest, ShowHttpsConfigResponse> showHttpsConfig =
+        genForShowHttpsConfig();
+
+    private static HttpRequestDef<ShowHttpsConfigRequest, ShowHttpsConfigResponse> genForShowHttpsConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowHttpsConfigRequest, ShowHttpsConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowHttpsConfigRequest.class, ShowHttpsConfigResponse.class)
+                .withName("ShowHttpsConfig")
+                .withUri("/v1.0/{project_id}/asset/domain/https")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHttpsConfigRequest::getDomain, ShowHttpsConfigRequest::setDomain));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHttpsConfigRequest::getXSdkDate, ShowHttpsConfigRequest::setXSdkDate));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateHttpsConfigRequest, UpdateHttpsConfigResponse> updateHttpsConfig =
+        genForUpdateHttpsConfig();
+
+    private static HttpRequestDef<UpdateHttpsConfigRequest, UpdateHttpsConfigResponse> genForUpdateHttpsConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateHttpsConfigRequest, UpdateHttpsConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateHttpsConfigRequest.class, UpdateHttpsConfigResponse.class)
+                .withName("UpdateHttpsConfig")
+                .withUri("/v1.0/{project_id}/asset/domain/https")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateHttpsConfigRequest::getXSdkDate, UpdateHttpsConfigRequest::setXSdkDate));
+        builder.<ConfigCdnHttpsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ConfigCdnHttpsReq.class),
+            f -> f.withMarshaller(UpdateHttpsConfigRequest::getBody, UpdateHttpsConfigRequest::setBody));
 
         // response
 

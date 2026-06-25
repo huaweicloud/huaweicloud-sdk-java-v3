@@ -119,6 +119,8 @@ import com.huaweicloud.sdk.vod.v1.model.ShowAssetTempAuthorityRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowAssetTempAuthorityResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowCdnStatisticsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowCdnStatisticsResponse;
+import com.huaweicloud.sdk.vod.v1.model.ShowHttpsConfigRequest;
+import com.huaweicloud.sdk.vod.v1.model.ShowHttpsConfigResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowObjectMetaDataRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowObjectMetaDataResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowPreheatingAssetRequest;
@@ -149,6 +151,8 @@ import com.huaweicloud.sdk.vod.v1.model.UpdateBucketAuthorizedRequest;
 import com.huaweicloud.sdk.vod.v1.model.UpdateBucketAuthorizedResponse;
 import com.huaweicloud.sdk.vod.v1.model.UpdateCoverByThumbnailRequest;
 import com.huaweicloud.sdk.vod.v1.model.UpdateCoverByThumbnailResponse;
+import com.huaweicloud.sdk.vod.v1.model.UpdateHttpsConfigRequest;
+import com.huaweicloud.sdk.vod.v1.model.UpdateHttpsConfigResponse;
 import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeRequest;
 import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeResponse;
 import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeTypeRequest;
@@ -2524,6 +2528,64 @@ public class VodAsyncClient {
     public AsyncInvoker<UploadMetaDataByUrlRequest, UploadMetaDataByUrlResponse> uploadMetaDataByUrlAsyncInvoker(
         UploadMetaDataByUrlRequest request) {
         return new AsyncInvoker<>(request, VodMeta.uploadMetaDataByUrl, hcClient);
+    }
+
+    /**
+     * 查询https配置
+     *
+     * 查询证书配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHttpsConfigRequest 请求对象
+     * @return CompletableFuture<ShowHttpsConfigResponse>
+     */
+    public CompletableFuture<ShowHttpsConfigResponse> showHttpsConfigAsync(ShowHttpsConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, VodMeta.showHttpsConfig);
+    }
+
+    /**
+     * 查询https配置
+     *
+     * 查询证书配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowHttpsConfigRequest 请求对象
+     * @return AsyncInvoker<ShowHttpsConfigRequest, ShowHttpsConfigResponse>
+     */
+    public AsyncInvoker<ShowHttpsConfigRequest, ShowHttpsConfigResponse> showHttpsConfigAsyncInvoker(
+        ShowHttpsConfigRequest request) {
+        return new AsyncInvoker<>(request, VodMeta.showHttpsConfig, hcClient);
+    }
+
+    /**
+     * 配置https
+     *
+     * 点播提供给域名配置https证书的接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateHttpsConfigRequest 请求对象
+     * @return CompletableFuture<UpdateHttpsConfigResponse>
+     */
+    public CompletableFuture<UpdateHttpsConfigResponse> updateHttpsConfigAsync(UpdateHttpsConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, VodMeta.updateHttpsConfig);
+    }
+
+    /**
+     * 配置https
+     *
+     * 点播提供给域名配置https证书的接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateHttpsConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateHttpsConfigRequest, UpdateHttpsConfigResponse>
+     */
+    public AsyncInvoker<UpdateHttpsConfigRequest, UpdateHttpsConfigResponse> updateHttpsConfigAsyncInvoker(
+        UpdateHttpsConfigRequest request) {
+        return new AsyncInvoker<>(request, VodMeta.updateHttpsConfig, hcClient);
     }
 
     /**

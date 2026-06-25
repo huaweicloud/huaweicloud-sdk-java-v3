@@ -151,6 +151,7 @@ import com.huaweicloud.sdk.bss.v2.model.ListUsageTypesResponse;
 import com.huaweicloud.sdk.bss.v2.model.PayCustomerOrderV3Req;
 import com.huaweicloud.sdk.bss.v2.model.PayOrdersRequest;
 import com.huaweicloud.sdk.bss.v2.model.PayOrdersResponse;
+import com.huaweicloud.sdk.bss.v2.model.PeriodToOnDemandInstantlyReq;
 import com.huaweicloud.sdk.bss.v2.model.PeriodToOnDemandReq;
 import com.huaweicloud.sdk.bss.v2.model.QueryCouponQuotasReqExt;
 import com.huaweicloud.sdk.bss.v2.model.QueryCustomerOnDemandResourcesReq;
@@ -212,6 +213,8 @@ import com.huaweicloud.sdk.bss.v2.model.UpdateCustomerAccountAmountRequest;
 import com.huaweicloud.sdk.bss.v2.model.UpdateCustomerAccountAmountResponse;
 import com.huaweicloud.sdk.bss.v2.model.UpdateIndirectPartnerAccountRequest;
 import com.huaweicloud.sdk.bss.v2.model.UpdateIndirectPartnerAccountResponse;
+import com.huaweicloud.sdk.bss.v2.model.UpdatePeriodToOnDemandInstantlyRequest;
+import com.huaweicloud.sdk.bss.v2.model.UpdatePeriodToOnDemandInstantlyResponse;
 import com.huaweicloud.sdk.bss.v2.model.UpdatePeriodToOnDemandRequest;
 import com.huaweicloud.sdk.bss.v2.model.UpdatePeriodToOnDemandResponse;
 import com.huaweicloud.sdk.bss.v2.model.UpdateSubEnterpriseAmountRequest;
@@ -3714,6 +3717,33 @@ public class BssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PeriodToOnDemandReq.class),
             f -> f.withMarshaller(UpdatePeriodToOnDemandRequest::getBody, UpdatePeriodToOnDemandRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePeriodToOnDemandInstantlyRequest, UpdatePeriodToOnDemandInstantlyResponse> updatePeriodToOnDemandInstantly =
+        genForUpdatePeriodToOnDemandInstantly();
+
+    private static HttpRequestDef<UpdatePeriodToOnDemandInstantlyRequest, UpdatePeriodToOnDemandInstantlyResponse> genForUpdatePeriodToOnDemandInstantly() {
+        // basic
+        HttpRequestDef.Builder<UpdatePeriodToOnDemandInstantlyRequest, UpdatePeriodToOnDemandInstantlyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpdatePeriodToOnDemandInstantlyRequest.class,
+                    UpdatePeriodToOnDemandInstantlyResponse.class)
+                .withName("UpdatePeriodToOnDemandInstantly")
+                .withUri("/v2/orders/subscriptions/resources/to-on-demand/instantly")
+                .withContentType("application/json");
+
+        // requests
+        builder.<PeriodToOnDemandInstantlyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PeriodToOnDemandInstantlyReq.class),
+            f -> f.withMarshaller(UpdatePeriodToOnDemandInstantlyRequest::getBody,
+                UpdatePeriodToOnDemandInstantlyRequest::setBody));
 
         // response
 

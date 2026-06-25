@@ -253,7 +253,7 @@ public class DemandProductInfo {
     /**
      * 使用量度量单位，您可以调用查询度量单位列表接口获取。 例如按小时询价，使用量值为1，使用量单位为小时。
      * minimum: 0
-     * maximum: 100
+     * maximum: 9999
      * @return usageMeasureId
      */
     public Integer getUsageMeasureId() {

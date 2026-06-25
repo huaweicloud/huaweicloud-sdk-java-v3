@@ -54,7 +54,7 @@ public class Backups {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    private Long size;
+    private Double size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore")
@@ -276,7 +276,7 @@ public class Backups {
         this.type = type;
     }
 
-    public Backups withSize(Long size) {
+    public Backups withSize(Double size) {
         this.size = size;
         return this;
     }
@@ -285,11 +285,11 @@ public class Backups {
      * 备份大小（单位：MB）。
      * @return size
      */
-    public Long getSize() {
+    public Double getSize() {
         return size;
     }
 
-    public void setSize(Long size) {
+    public void setSize(Double size) {
         this.size = size;
     }
 

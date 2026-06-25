@@ -170,6 +170,8 @@ import com.huaweicloud.sdk.bss.v2.model.UpdateCustomerAccountAmountRequest;
 import com.huaweicloud.sdk.bss.v2.model.UpdateCustomerAccountAmountResponse;
 import com.huaweicloud.sdk.bss.v2.model.UpdateIndirectPartnerAccountRequest;
 import com.huaweicloud.sdk.bss.v2.model.UpdateIndirectPartnerAccountResponse;
+import com.huaweicloud.sdk.bss.v2.model.UpdatePeriodToOnDemandInstantlyRequest;
+import com.huaweicloud.sdk.bss.v2.model.UpdatePeriodToOnDemandInstantlyResponse;
 import com.huaweicloud.sdk.bss.v2.model.UpdatePeriodToOnDemandRequest;
 import com.huaweicloud.sdk.bss.v2.model.UpdatePeriodToOnDemandResponse;
 import com.huaweicloud.sdk.bss.v2.model.UpdateSubEnterpriseAmountRequest;
@@ -3134,6 +3136,36 @@ public class BssClient {
     public SyncInvoker<UpdatePeriodToOnDemandRequest, UpdatePeriodToOnDemandResponse> updatePeriodToOnDemandInvoker(
         UpdatePeriodToOnDemandRequest request) {
         return new SyncInvoker<>(request, BssMeta.updatePeriodToOnDemand, hcClient);
+    }
+
+    /**
+     * 设置包年/包月资源即时转按需
+     *
+     * 功能描述：客户在自建平台完成包年/包月资源即时转为按需资源计费
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePeriodToOnDemandInstantlyRequest 请求对象
+     * @return UpdatePeriodToOnDemandInstantlyResponse
+     */
+    public UpdatePeriodToOnDemandInstantlyResponse updatePeriodToOnDemandInstantly(
+        UpdatePeriodToOnDemandInstantlyRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.updatePeriodToOnDemandInstantly);
+    }
+
+    /**
+     * 设置包年/包月资源即时转按需
+     *
+     * 功能描述：客户在自建平台完成包年/包月资源即时转为按需资源计费
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePeriodToOnDemandInstantlyRequest 请求对象
+     * @return SyncInvoker<UpdatePeriodToOnDemandInstantlyRequest, UpdatePeriodToOnDemandInstantlyResponse>
+     */
+    public SyncInvoker<UpdatePeriodToOnDemandInstantlyRequest, UpdatePeriodToOnDemandInstantlyResponse> updatePeriodToOnDemandInstantlyInvoker(
+        UpdatePeriodToOnDemandInstantlyRequest request) {
+        return new SyncInvoker<>(request, BssMeta.updatePeriodToOnDemandInstantly, hcClient);
     }
 
     /**

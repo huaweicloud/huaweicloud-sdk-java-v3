@@ -139,6 +139,11 @@ public class StarRocksInstanceInfoInstances {
     private String createFailErrorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "users_sync_switch_on")
+
+    private Boolean usersSyncSwitchOn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "groups")
 
     private List<StarRocksInstanceInfoGroups> groups = null;
@@ -664,6 +669,23 @@ public class StarRocksInstanceInfoInstances {
         this.createFailErrorCode = createFailErrorCode;
     }
 
+    public StarRocksInstanceInfoInstances withUsersSyncSwitchOn(Boolean usersSyncSwitchOn) {
+        this.usersSyncSwitchOn = usersSyncSwitchOn;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  账号同步开关状态。  **取值范围**：  - true：开启。 - false：关闭。
+     * @return usersSyncSwitchOn
+     */
+    public Boolean getUsersSyncSwitchOn() {
+        return usersSyncSwitchOn;
+    }
+
+    public void setUsersSyncSwitchOn(Boolean usersSyncSwitchOn) {
+        this.usersSyncSwitchOn = usersSyncSwitchOn;
+    }
+
     public StarRocksInstanceInfoInstances withGroups(List<StarRocksInstanceInfoGroups> groups) {
         this.groups = groups;
         return this;
@@ -1022,6 +1044,7 @@ public class StarRocksInstanceInfoInstances {
             && Objects.equals(this.dbPort, that.dbPort) && Objects.equals(this.paramGroup, that.paramGroup)
             && Objects.equals(this.actions, that.actions)
             && Objects.equals(this.createFailErrorCode, that.createFailErrorCode)
+            && Objects.equals(this.usersSyncSwitchOn, that.usersSyncSwitchOn)
             && Objects.equals(this.groups, that.groups) && Objects.equals(this.opsWindow, that.opsWindow)
             && Objects.equals(this.tagsInfo, that.tagsInfo) && Objects.equals(this.timeZone, that.timeZone)
             && Objects.equals(this.backupUsedSpace, that.backupUsedSpace) && Objects.equals(this.azMode, that.azMode)
@@ -1065,6 +1088,7 @@ public class StarRocksInstanceInfoInstances {
             paramGroup,
             actions,
             createFailErrorCode,
+            usersSyncSwitchOn,
             groups,
             opsWindow,
             tagsInfo,
@@ -1113,6 +1137,7 @@ public class StarRocksInstanceInfoInstances {
         sb.append("    paramGroup: ").append(toIndentedString(paramGroup)).append("\n");
         sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
         sb.append("    createFailErrorCode: ").append(toIndentedString(createFailErrorCode)).append("\n");
+        sb.append("    usersSyncSwitchOn: ").append(toIndentedString(usersSyncSwitchOn)).append("\n");
         sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
         sb.append("    opsWindow: ").append(toIndentedString(opsWindow)).append("\n");
         sb.append("    tagsInfo: ").append(toIndentedString(tagsInfo)).append("\n");

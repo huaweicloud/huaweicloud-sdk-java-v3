@@ -73,7 +73,7 @@ public class OrderLineItemV3 {
     }
 
     /**
-     * 订单可用折扣的模式 。 0：折扣1：一口价2：满减
+     * 订单可用折扣的模式。 0：折扣 1：一口价 2：满减
      * @return discountMode
      */
     public Integer getDiscountMode() {

@@ -8,14 +8,14 @@ import java.util.Objects;
 /**
  * **参数解释**：节点配置模板元数据。
  */
-public class NodeconfigtemplateMeta {
+public class NodeconfigtemplateMetaV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
 
-    public NodeconfigtemplateMeta withName(String name) {
+    public NodeconfigtemplateMetaV2 withName(String name) {
         this.name = name;
         return this;
     }
@@ -40,7 +40,7 @@ public class NodeconfigtemplateMeta {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeconfigtemplateMeta that = (NodeconfigtemplateMeta) obj;
+        NodeconfigtemplateMetaV2 that = (NodeconfigtemplateMetaV2) obj;
         return Objects.equals(this.name, that.name);
     }
 
@@ -52,7 +52,7 @@ public class NodeconfigtemplateMeta {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class NodeconfigtemplateMeta {\n");
+        sb.append("class NodeconfigtemplateMetaV2 {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();

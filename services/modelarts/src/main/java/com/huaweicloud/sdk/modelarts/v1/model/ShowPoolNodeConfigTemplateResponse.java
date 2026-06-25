@@ -25,7 +25,7 @@ public class ShowPoolNodeConfigTemplateResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
 
-    private NodeconfigtemplateMeta metadata;
+    private NodeconfigtemplateMetaV2 metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec")
@@ -71,14 +71,14 @@ public class ShowPoolNodeConfigTemplateResponse extends SdkResponse {
         this.kind = kind;
     }
 
-    public ShowPoolNodeConfigTemplateResponse withMetadata(NodeconfigtemplateMeta metadata) {
+    public ShowPoolNodeConfigTemplateResponse withMetadata(NodeconfigtemplateMetaV2 metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public ShowPoolNodeConfigTemplateResponse withMetadata(Consumer<NodeconfigtemplateMeta> metadataSetter) {
+    public ShowPoolNodeConfigTemplateResponse withMetadata(Consumer<NodeconfigtemplateMetaV2> metadataSetter) {
         if (this.metadata == null) {
-            this.metadata = new NodeconfigtemplateMeta();
+            this.metadata = new NodeconfigtemplateMetaV2();
             metadataSetter.accept(this.metadata);
         }
 
@@ -89,11 +89,11 @@ public class ShowPoolNodeConfigTemplateResponse extends SdkResponse {
      * Get metadata
      * @return metadata
      */
-    public NodeconfigtemplateMeta getMetadata() {
+    public NodeconfigtemplateMetaV2 getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(NodeconfigtemplateMeta metadata) {
+    public void setMetadata(NodeconfigtemplateMetaV2 metadata) {
         this.metadata = metadata;
     }
 

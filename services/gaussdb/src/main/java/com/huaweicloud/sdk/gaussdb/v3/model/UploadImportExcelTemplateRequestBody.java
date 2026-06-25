@@ -109,6 +109,11 @@ public class UploadImportExcelTemplateRequestBody implements SdkFormDataBody {
 
     private String selectedDbs;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "database_scope")
+
+    private String databaseScope;
+
     /**
      * **参数解释**：  是否支持标配符。  **约束限制**：  不涉及。  **取值范围**：  - true: 支持标配符。 - false: 不支持标配符。  **默认取值**：  不涉及。
      */
@@ -252,6 +257,23 @@ public class UploadImportExcelTemplateRequestBody implements SdkFormDataBody {
         this.selectedDbs = selectedDbs;
     }
 
+    public UploadImportExcelTemplateRequestBody withDatabaseScope(String databaseScope) {
+        this.databaseScope = databaseScope;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  数据库同步范围。  **约束限制**：  必须选择实例级同步。  **取值范围**：  - true：所有库。 - false：部分库。  **默认取值**：  部分库。
+     * @return databaseScope
+     */
+    public String getDatabaseScope() {
+        return databaseScope;
+    }
+
+    public void setDatabaseScope(String databaseScope) {
+        this.databaseScope = databaseScope;
+    }
+
     public UploadImportExcelTemplateRequestBody withIsSupportRegexp(IsSupportRegexpEnum isSupportRegexp) {
         this.isSupportRegexp = isSupportRegexp;
         return this;
@@ -297,6 +319,9 @@ public class UploadImportExcelTemplateRequestBody implements SdkFormDataBody {
                     put("is_instance_level", new FormDataPart<>(isInstanceLevel));
                 }
                 put("selected_dbs", new FormDataPart<>(selectedDbs));
+                if (databaseScope != null) {
+                    put("database_scope", new FormDataPart<>(databaseScope));
+                }
                 if (isSupportRegexp != null) {
                     put("is_support_regexp", new FormDataPart<>(isSupportRegexp));
                 }
@@ -316,12 +341,13 @@ public class UploadImportExcelTemplateRequestBody implements SdkFormDataBody {
         return Objects.equals(this.templateType, that.templateType) && Objects.equals(this.file, that.file)
             && Objects.equals(this.isInstanceLevel, that.isInstanceLevel)
             && Objects.equals(this.selectedDbs, that.selectedDbs)
+            && Objects.equals(this.databaseScope, that.databaseScope)
             && Objects.equals(this.isSupportRegexp, that.isSupportRegexp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(templateType, file, isInstanceLevel, selectedDbs, isSupportRegexp);
+        return Objects.hash(templateType, file, isInstanceLevel, selectedDbs, databaseScope, isSupportRegexp);
     }
 
     @Override
@@ -332,6 +358,7 @@ public class UploadImportExcelTemplateRequestBody implements SdkFormDataBody {
         sb.append("    file: ").append(toIndentedString("[resource:will-not-print]")).append("\n");
         sb.append("    isInstanceLevel: ").append(toIndentedString(isInstanceLevel)).append("\n");
         sb.append("    selectedDbs: ").append(toIndentedString(selectedDbs)).append("\n");
+        sb.append("    databaseScope: ").append(toIndentedString(databaseScope)).append("\n");
         sb.append("    isSupportRegexp: ").append(toIndentedString(isSupportRegexp)).append("\n");
         sb.append("}");
         return sb.toString();

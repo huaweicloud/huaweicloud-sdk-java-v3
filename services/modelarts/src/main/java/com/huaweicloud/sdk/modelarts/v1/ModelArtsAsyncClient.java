@@ -5,10 +5,28 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.modelarts.v1.model.AcceptScheduledEventRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.AcceptScheduledEventResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchBindPoolNodesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchBindPoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchCreatePoolTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchCreatePoolTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolNodesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchLockPoolNodesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchLockPoolNodesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchMigratePoolNodesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchMigratePoolNodesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchRebootPoolNodesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchRebootPoolNodesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchResetPoolNodesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchResetPoolNodesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchResizePoolNodesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchResizePoolNodesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchUnlockPoolNodesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchUnlockPoolNodesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchUpdatePoolNodesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchUpdatePoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeAlgorithmRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeAlgorithmResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingExperimentRequest;
@@ -25,8 +43,16 @@ import com.huaweicloud.sdk.modelarts.v1.model.CreateAuthorizationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAuthorizationResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateModelArtsAgencyRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateModelArtsAgencyResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateNetworkRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateNetworkResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateNodePoolRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateNodePoolResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateOrderIdRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateOrderIdResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreatePoolPluginRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreatePoolPluginResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreatePoolRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreatePoolResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateSaveImageJobRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateSaveImageJobResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateTrainJobTagsRequest;
@@ -57,6 +83,12 @@ import com.huaweicloud.sdk.modelarts.v1.model.DeleteAlgorithmRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteAlgorithmResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteAuthorizationsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteAuthorizationsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteNetworkRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteNetworkResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteNodePoolRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteNodePoolResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeletePoolRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeletePoolResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteTrainJobTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteTrainJobTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteTrainingExperimentRequest;
@@ -79,8 +111,30 @@ import com.huaweicloud.sdk.modelarts.v1.model.ListAlgorithmsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListAlgorithmsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListEventCategoriesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListEventCategoriesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListEventsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListEventsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListExecutionLabelsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListExecutionLabelsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListJobsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListJobsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListNetworksRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListNetworksResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListNodePoolNodesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListNodePoolNodesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListNodePoolsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListNodePoolsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListPluginTemplatesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListPluginTemplatesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListPoolNodesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListPoolNodesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListPoolPluginsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListPoolPluginsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListPoolTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListPoolTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListPoolsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListPoolsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListResourceFlavorsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListResourceFlavorsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListScheduledEventsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListScheduledEventsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListTrainingExperimentsRequest;
@@ -99,10 +153,18 @@ import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowStepExecutionRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowStepExecutionResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkflowsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListWorkloadsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListWorkloadsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkspaceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.NotifyTrainingJobInformationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.NotifyTrainingJobInformationResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.PatchNetworkRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.PatchNetworkResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.PatchNodePoolRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.PatchNodePoolResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.PatchPoolRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.PatchPoolResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAlgorithmByUuidRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAlgorithmByUuidResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAuthmodeDetailRequest;
@@ -123,12 +185,34 @@ import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchYamlTemplatesInfoReq
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchYamlTemplatesInfoResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowNetworkAvailableIpRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowNetworkAvailableIpResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowNetworkRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowNetworkResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowNodeConfigTemplateRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowNodeConfigTemplateResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowNodePoolRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowNodePoolResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowObsUrlOfTrainingJobLogsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowObsUrlOfTrainingJobLogsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowOrderRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowOrderResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowOsConfigRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowOsConfigResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowOsQuotaRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowOsQuotaResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPluginTemplateRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPluginTemplateResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolMonitorRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolMonitorResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeConfigRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeConfigResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeConfigTemplateRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeConfigTemplateResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolRuntimeMetricsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolRuntimeMetricsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolStatisticsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolStatisticsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowSaveImageJobRequest;
@@ -169,6 +253,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowsOverviewRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowsOverviewResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowsTodolistRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkflowsTodolistResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkloadStatisticsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkloadStatisticsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkspaceQuotasRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkspaceQuotasResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkspaceRequest;
@@ -238,6 +324,35 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 批量为节点绑定逻辑子池
+     *
+     * 批量为节点绑定逻辑子池接口用于在物理专属池开启节点绑定功能时，对逻辑子池中的节点进行逻辑子池的换绑操作。该接口适用于以下场景：当需要重新分配资源、调整业务负载或优化资源使用效率时，用户可通过此接口将指定节点从当前逻辑子池迁移到另一个逻辑子池。使用该接口的前提条件是物理专属池已开启节点绑定功能，且目标逻辑子池已存在并具备足够的资源容量。绑定操作完成后，节点将从原逻辑子池解绑并绑定到目标逻辑子池，原逻辑子池的节点数减少，目标逻辑子池的节点数增加。若节点未绑定到任何逻辑子池、目标逻辑子池不存在或资源不足，或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchBindPoolNodesRequest 请求对象
+     * @return CompletableFuture<BatchBindPoolNodesResponse>
+     */
+    public CompletableFuture<BatchBindPoolNodesResponse> batchBindPoolNodesAsync(BatchBindPoolNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.batchBindPoolNodes);
+    }
+
+    /**
+     * 批量为节点绑定逻辑子池
+     *
+     * 批量为节点绑定逻辑子池接口用于在物理专属池开启节点绑定功能时，对逻辑子池中的节点进行逻辑子池的换绑操作。该接口适用于以下场景：当需要重新分配资源、调整业务负载或优化资源使用效率时，用户可通过此接口将指定节点从当前逻辑子池迁移到另一个逻辑子池。使用该接口的前提条件是物理专属池已开启节点绑定功能，且目标逻辑子池已存在并具备足够的资源容量。绑定操作完成后，节点将从原逻辑子池解绑并绑定到目标逻辑子池，原逻辑子池的节点数减少，目标逻辑子池的节点数增加。若节点未绑定到任何逻辑子池、目标逻辑子池不存在或资源不足，或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchBindPoolNodesRequest 请求对象
+     * @return AsyncInvoker<BatchBindPoolNodesRequest, BatchBindPoolNodesResponse>
+     */
+    public AsyncInvoker<BatchBindPoolNodesRequest, BatchBindPoolNodesResponse> batchBindPoolNodesAsyncInvoker(
+        BatchBindPoolNodesRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.batchBindPoolNodes, hcClient);
+    }
+
+    /**
      * 批量创建资源池标签
      *
      * 批量创建资源池标签接口用于为指定资源池添加或更新多个标签信息。该接口适用于以下场景：当需要对资源池进行统一分类管理（如成本归属、环境标识）、批量配置元数据（如项目归属、负责人信息）或更新已有标签值时，管理员可通过此接口一次性操作多个标签。使用该接口的前提条件是目标资源池必须已存在且处于可管理状态，调用者需具备资源池标签管理权限，且提交的标签数据需符合格式规范（如key非空、value长度限制）。操作完成后，系统将为资源池添加新标签或覆盖同名标签的值，且不会影响资源池的其他配置属性。若资源池不存在、用户权限不足、标签格式错误或系统服务异常，接口将返回对应的错误信息（如\&quot;404 Not Found\&quot;、\&quot;403 Forbidden\&quot;、\&quot;400 Bad Request\&quot;或\&quot;503 Service Unavailable\&quot;）。
@@ -267,6 +382,36 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 批量删除节点
+     *
+     * 批量删除节点接口用于批量删除指定资源池中的节点。该接口适用于以下场景：当需要清理资源池中的冗余节点、重新分配资源或移除故障节点时，用户可通过此接口批量删除指定的节点。使用该接口的前提条件是资源池已创建且处于可用状态，用户具有删除节点的权限，且资源池中至少保留一个节点。删除操作完成后，指定的节点将被永久移除，资源池中剩余的节点将继续提供服务。若资源池不存在、节点不存在、用户无权限操作或资源池中节点不足，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeletePoolNodesRequest 请求对象
+     * @return CompletableFuture<BatchDeletePoolNodesResponse>
+     */
+    public CompletableFuture<BatchDeletePoolNodesResponse> batchDeletePoolNodesAsync(
+        BatchDeletePoolNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.batchDeletePoolNodes);
+    }
+
+    /**
+     * 批量删除节点
+     *
+     * 批量删除节点接口用于批量删除指定资源池中的节点。该接口适用于以下场景：当需要清理资源池中的冗余节点、重新分配资源或移除故障节点时，用户可通过此接口批量删除指定的节点。使用该接口的前提条件是资源池已创建且处于可用状态，用户具有删除节点的权限，且资源池中至少保留一个节点。删除操作完成后，指定的节点将被永久移除，资源池中剩余的节点将继续提供服务。若资源池不存在、节点不存在、用户无权限操作或资源池中节点不足，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeletePoolNodesRequest 请求对象
+     * @return AsyncInvoker<BatchDeletePoolNodesRequest, BatchDeletePoolNodesResponse>
+     */
+    public AsyncInvoker<BatchDeletePoolNodesRequest, BatchDeletePoolNodesResponse> batchDeletePoolNodesAsyncInvoker(
+        BatchDeletePoolNodesRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.batchDeletePoolNodes, hcClient);
+    }
+
+    /**
      * 批量删除资源池标签
      *
      * 批量删除资源标签接口用于移除指定资源上的多个标签信息。该接口适用于以下场景：当需要清理冗余标签（如过期分类、无效元数据）、统一调整资源分类策略或因权限变更需批量移除标签时，管理员可通过此接口一次性删除多个标签。使用该接口的前提条件是目标资源必须已存在且处于可管理状态，调用者需具备资源标签管理权限，且待删除的标签必须已关联至该资源，系统标签管理服务需正常运行。操作完成后，指定标签将从资源中彻底移除，且不会影响资源的其他配置属性。若资源不存在、用户权限不足、标签未关联或系统服务异常，接口将返回对应的错误信息（如\&quot;404 Not Found\&quot;、\&quot;403 Forbidden\&quot;、\&quot;400 Bad Request\&quot;或\&quot;503 Service Unavailable\&quot;）。
@@ -293,6 +438,214 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<BatchDeletePoolTagsRequest, BatchDeletePoolTagsResponse> batchDeletePoolTagsAsyncInvoker(
         BatchDeletePoolTagsRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.batchDeletePoolTags, hcClient);
+    }
+
+    /**
+     * 批量对节点功能上锁
+     *
+     * 批量对节点功能上锁接口用于批量对指定节点的功能进行上锁操作，被上锁的功能在控制台将无法正常使用。该接口适用于以下场景：当需要临时禁用某些节点的功能以防止误操作、进行系统维护或测试时，用户可通过此接口批量对节点功能进行上锁。使用该接口的前提条件是节点功能已存在且用户具有管理员权限。上锁操作完成后，指定节点的功能将在控制台被禁用，无法进行相关操作。若节点功能不存在、用户无权限操作或请求参数无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchLockPoolNodesRequest 请求对象
+     * @return CompletableFuture<BatchLockPoolNodesResponse>
+     */
+    public CompletableFuture<BatchLockPoolNodesResponse> batchLockPoolNodesAsync(BatchLockPoolNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.batchLockPoolNodes);
+    }
+
+    /**
+     * 批量对节点功能上锁
+     *
+     * 批量对节点功能上锁接口用于批量对指定节点的功能进行上锁操作，被上锁的功能在控制台将无法正常使用。该接口适用于以下场景：当需要临时禁用某些节点的功能以防止误操作、进行系统维护或测试时，用户可通过此接口批量对节点功能进行上锁。使用该接口的前提条件是节点功能已存在且用户具有管理员权限。上锁操作完成后，指定节点的功能将在控制台被禁用，无法进行相关操作。若节点功能不存在、用户无权限操作或请求参数无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchLockPoolNodesRequest 请求对象
+     * @return AsyncInvoker<BatchLockPoolNodesRequest, BatchLockPoolNodesResponse>
+     */
+    public AsyncInvoker<BatchLockPoolNodesRequest, BatchLockPoolNodesResponse> batchLockPoolNodesAsyncInvoker(
+        BatchLockPoolNodesRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.batchLockPoolNodes, hcClient);
+    }
+
+    /**
+     * 批量迁移节点
+     *
+     * 批量迁移节点接口用于在资源池之间批量迁移节点，将节点从一个资源池迁移到另一个资源池。该接口适用于以下场景：当资源池的节点分布不均衡、需要进行集群维护或业务扩展时，用户可通过此接口将指定节点从一个资源池迁移到另一个资源池。使用该接口的前提条件是资源池中至少包含两个节点，且目标资源池具备足够的资源容量（如IP地址等）以接收迁移节点。若资源池只有一个节点、目标集群资源不足、节点状态不支持迁移或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchMigratePoolNodesRequest 请求对象
+     * @return CompletableFuture<BatchMigratePoolNodesResponse>
+     */
+    public CompletableFuture<BatchMigratePoolNodesResponse> batchMigratePoolNodesAsync(
+        BatchMigratePoolNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.batchMigratePoolNodes);
+    }
+
+    /**
+     * 批量迁移节点
+     *
+     * 批量迁移节点接口用于在资源池之间批量迁移节点，将节点从一个资源池迁移到另一个资源池。该接口适用于以下场景：当资源池的节点分布不均衡、需要进行集群维护或业务扩展时，用户可通过此接口将指定节点从一个资源池迁移到另一个资源池。使用该接口的前提条件是资源池中至少包含两个节点，且目标资源池具备足够的资源容量（如IP地址等）以接收迁移节点。若资源池只有一个节点、目标集群资源不足、节点状态不支持迁移或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchMigratePoolNodesRequest 请求对象
+     * @return AsyncInvoker<BatchMigratePoolNodesRequest, BatchMigratePoolNodesResponse>
+     */
+    public AsyncInvoker<BatchMigratePoolNodesRequest, BatchMigratePoolNodesResponse> batchMigratePoolNodesAsyncInvoker(
+        BatchMigratePoolNodesRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.batchMigratePoolNodes, hcClient);
+    }
+
+    /**
+     * 批量重启节点
+     *
+     * 批量重启节点接口用于批量重启指定资源池中的节点。该接口适用于以下场景：当需要对资源池中的节点进行系统更新、配置变更、故障恢复或维护操作时，用户可通过此接口批量重启指定的节点。使用该接口的前提条件是资源池已创建且处于可用状态，节点属于该资源池且处于运行状态，且用户具有重启节点的权限。重启操作完成后，指定的节点将被重新启动，资源池中的其他节点将继续正常运行。若资源池不存在、节点不在资源池中、节点未处于运行状态或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchRebootPoolNodesRequest 请求对象
+     * @return CompletableFuture<BatchRebootPoolNodesResponse>
+     */
+    public CompletableFuture<BatchRebootPoolNodesResponse> batchRebootPoolNodesAsync(
+        BatchRebootPoolNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.batchRebootPoolNodes);
+    }
+
+    /**
+     * 批量重启节点
+     *
+     * 批量重启节点接口用于批量重启指定资源池中的节点。该接口适用于以下场景：当需要对资源池中的节点进行系统更新、配置变更、故障恢复或维护操作时，用户可通过此接口批量重启指定的节点。使用该接口的前提条件是资源池已创建且处于可用状态，节点属于该资源池且处于运行状态，且用户具有重启节点的权限。重启操作完成后，指定的节点将被重新启动，资源池中的其他节点将继续正常运行。若资源池不存在、节点不在资源池中、节点未处于运行状态或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchRebootPoolNodesRequest 请求对象
+     * @return AsyncInvoker<BatchRebootPoolNodesRequest, BatchRebootPoolNodesResponse>
+     */
+    public AsyncInvoker<BatchRebootPoolNodesRequest, BatchRebootPoolNodesResponse> batchRebootPoolNodesAsyncInvoker(
+        BatchRebootPoolNodesRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.batchRebootPoolNodes, hcClient);
+    }
+
+    /**
+     * 重置节点
+     *
+     * 重置节点接口用于将指定节点恢复到初始状态，清除节点上的数据和配置。该接口适用于以下场景：当节点出现故障、配置错误、需要重新部署或进行系统恢复时，用户可通过此接口重置节点，使其恢复到出厂或初始状态。使用该接口的前提条件是节点已存在且用户具有管理员权限。重置操作完成后，节点上的所有数据和配置将被清除，节点将被重新启动并恢复到初始状态。若节点不存在、用户无权限操作或节点处于不可重置状态（如正在运行任务），接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchResetPoolNodesRequest 请求对象
+     * @return CompletableFuture<BatchResetPoolNodesResponse>
+     */
+    public CompletableFuture<BatchResetPoolNodesResponse> batchResetPoolNodesAsync(BatchResetPoolNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.batchResetPoolNodes);
+    }
+
+    /**
+     * 重置节点
+     *
+     * 重置节点接口用于将指定节点恢复到初始状态，清除节点上的数据和配置。该接口适用于以下场景：当节点出现故障、配置错误、需要重新部署或进行系统恢复时，用户可通过此接口重置节点，使其恢复到出厂或初始状态。使用该接口的前提条件是节点已存在且用户具有管理员权限。重置操作完成后，节点上的所有数据和配置将被清除，节点将被重新启动并恢复到初始状态。若节点不存在、用户无权限操作或节点处于不可重置状态（如正在运行任务），接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchResetPoolNodesRequest 请求对象
+     * @return AsyncInvoker<BatchResetPoolNodesRequest, BatchResetPoolNodesResponse>
+     */
+    public AsyncInvoker<BatchResetPoolNodesRequest, BatchResetPoolNodesResponse> batchResetPoolNodesAsyncInvoker(
+        BatchResetPoolNodesRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.batchResetPoolNodes, hcClient);
+    }
+
+    /**
+     * 节点规格变更
+     *
+     * 节点规格变更接口用于调整指定节点的规格（如步长），例如将节点从8节点超节点扩容到16节点超节点。该接口适用于以下场景：当需要根据业务需求调整节点的资源容量、优化资源利用率或进行系统升级时，用户可通过此接口变更节点的规格。使用该接口的前提条件是节点已创建且处于可变更状态，目标规格在支持范围内，且用户具有管理员权限。规格变更完成后，节点的资源容量将按新规格调整，相关服务和配置将重新加载以适应新的规格。若节点不存在、节点状态不允许变更、目标规格不支持或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchResizePoolNodesRequest 请求对象
+     * @return CompletableFuture<BatchResizePoolNodesResponse>
+     */
+    public CompletableFuture<BatchResizePoolNodesResponse> batchResizePoolNodesAsync(
+        BatchResizePoolNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.batchResizePoolNodes);
+    }
+
+    /**
+     * 节点规格变更
+     *
+     * 节点规格变更接口用于调整指定节点的规格（如步长），例如将节点从8节点超节点扩容到16节点超节点。该接口适用于以下场景：当需要根据业务需求调整节点的资源容量、优化资源利用率或进行系统升级时，用户可通过此接口变更节点的规格。使用该接口的前提条件是节点已创建且处于可变更状态，目标规格在支持范围内，且用户具有管理员权限。规格变更完成后，节点的资源容量将按新规格调整，相关服务和配置将重新加载以适应新的规格。若节点不存在、节点状态不允许变更、目标规格不支持或用户无权限操作，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchResizePoolNodesRequest 请求对象
+     * @return AsyncInvoker<BatchResizePoolNodesRequest, BatchResizePoolNodesResponse>
+     */
+    public AsyncInvoker<BatchResizePoolNodesRequest, BatchResizePoolNodesResponse> batchResizePoolNodesAsyncInvoker(
+        BatchResizePoolNodesRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.batchResizePoolNodes, hcClient);
+    }
+
+    /**
+     * 批量对节点功能解锁
+     *
+     * 批量对节点功能解锁接口用于批量解除指定节点功能的锁定状态，使被上锁的功能在控制台恢复正常可用状态。该接口适用于以下场景：当需要恢复被锁定的节点功能以正常使用、完成系统维护或测试后，用户可通过此接口批量对节点功能进行解锁。使用该接口的前提条件是节点功能已被上锁且用户具有管理员权限。解锁操作完成后，指定节点的功能将在控制台恢复正常，用户可以正常使用相关功能。若节点功能未被锁定、用户无权限操作或请求参数无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUnlockPoolNodesRequest 请求对象
+     * @return CompletableFuture<BatchUnlockPoolNodesResponse>
+     */
+    public CompletableFuture<BatchUnlockPoolNodesResponse> batchUnlockPoolNodesAsync(
+        BatchUnlockPoolNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.batchUnlockPoolNodes);
+    }
+
+    /**
+     * 批量对节点功能解锁
+     *
+     * 批量对节点功能解锁接口用于批量解除指定节点功能的锁定状态，使被上锁的功能在控制台恢复正常可用状态。该接口适用于以下场景：当需要恢复被锁定的节点功能以正常使用、完成系统维护或测试后，用户可通过此接口批量对节点功能进行解锁。使用该接口的前提条件是节点功能已被上锁且用户具有管理员权限。解锁操作完成后，指定节点的功能将在控制台恢复正常，用户可以正常使用相关功能。若节点功能未被锁定、用户无权限操作或请求参数无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUnlockPoolNodesRequest 请求对象
+     * @return AsyncInvoker<BatchUnlockPoolNodesRequest, BatchUnlockPoolNodesResponse>
+     */
+    public AsyncInvoker<BatchUnlockPoolNodesRequest, BatchUnlockPoolNodesResponse> batchUnlockPoolNodesAsyncInvoker(
+        BatchUnlockPoolNodesRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.batchUnlockPoolNodes, hcClient);
+    }
+
+    /**
+     * 批量更新节点
+     *
+     * 批量更新节点接口用于同时修改多个节点的配置或属性，支持批量操作时各节点独立执行更新流程。该接口适用于以下场景：当用户需统一升级节点软件版本、批量处理选中节点的资源标签、调整资源分配策略、应用安全补丁或同步配置变更时，可通过此接口批量更新目标节点，确保每个节点的更新过程互不影响。使用该接口的前提条件包括：目标节点已存在且用户具备管理员权限，节点需处于可操作状态（如非锁定或维护中），批量操作时需提供有效的节点列表及更新参数（如配置项、版本号等）作为输入。操作完成后，指定节点将应用新配置并更新状态为可用，原有配置将被覆盖。若节点不存在、用户权限不足、节点状态异常（如正在维护）、更新参数不合规或输入参数缺失，接口将返回对应错误信息（如404未找到节点、403权限拒绝、400参数校验失败等）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdatePoolNodesRequest 请求对象
+     * @return CompletableFuture<BatchUpdatePoolNodesResponse>
+     */
+    public CompletableFuture<BatchUpdatePoolNodesResponse> batchUpdatePoolNodesAsync(
+        BatchUpdatePoolNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.batchUpdatePoolNodes);
+    }
+
+    /**
+     * 批量更新节点
+     *
+     * 批量更新节点接口用于同时修改多个节点的配置或属性，支持批量操作时各节点独立执行更新流程。该接口适用于以下场景：当用户需统一升级节点软件版本、批量处理选中节点的资源标签、调整资源分配策略、应用安全补丁或同步配置变更时，可通过此接口批量更新目标节点，确保每个节点的更新过程互不影响。使用该接口的前提条件包括：目标节点已存在且用户具备管理员权限，节点需处于可操作状态（如非锁定或维护中），批量操作时需提供有效的节点列表及更新参数（如配置项、版本号等）作为输入。操作完成后，指定节点将应用新配置并更新状态为可用，原有配置将被覆盖。若节点不存在、用户权限不足、节点状态异常（如正在维护）、更新参数不合规或输入参数缺失，接口将返回对应错误信息（如404未找到节点、403权限拒绝、400参数校验失败等）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdatePoolNodesRequest 请求对象
+     * @return AsyncInvoker<BatchUpdatePoolNodesRequest, BatchUpdatePoolNodesResponse>
+     */
+    public AsyncInvoker<BatchUpdatePoolNodesRequest, BatchUpdatePoolNodesResponse> batchUpdatePoolNodesAsyncInvoker(
+        BatchUpdatePoolNodesRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.batchUpdatePoolNodes, hcClient);
     }
 
     /**
@@ -537,6 +890,64 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 创建网络资源
+     *
+     * 创建网络资源接口用于在系统中创建新的网络资源。该接口适用于以下场景：当需要为业务扩展、资源规划或网络架构调整时，用户可通过此接口创建新的网络资源，如虚拟网络、子网或路由等。使用该接口的前提条件是用户具有管理员权限，并且系统中具备足够的资源支持新网络资源的创建。创建操作完成后，新的网络资源将被成功添加到系统中，并可用于后续的业务配置。若用户无权限、资源不足或输入参数有误，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateNetworkRequest 请求对象
+     * @return CompletableFuture<CreateNetworkResponse>
+     */
+    public CompletableFuture<CreateNetworkResponse> createNetworkAsync(CreateNetworkRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createNetwork);
+    }
+
+    /**
+     * 创建网络资源
+     *
+     * 创建网络资源接口用于在系统中创建新的网络资源。该接口适用于以下场景：当需要为业务扩展、资源规划或网络架构调整时，用户可通过此接口创建新的网络资源，如虚拟网络、子网或路由等。使用该接口的前提条件是用户具有管理员权限，并且系统中具备足够的资源支持新网络资源的创建。创建操作完成后，新的网络资源将被成功添加到系统中，并可用于后续的业务配置。若用户无权限、资源不足或输入参数有误，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateNetworkRequest 请求对象
+     * @return AsyncInvoker<CreateNetworkRequest, CreateNetworkResponse>
+     */
+    public AsyncInvoker<CreateNetworkRequest, CreateNetworkResponse> createNetworkAsyncInvoker(
+        CreateNetworkRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createNetwork, hcClient);
+    }
+
+    /**
+     * 创建节点池
+     *
+     * 创建节点池接口用于创建新的节点池。该接口适用于以下场景：当需要扩展计算资源、优化资源分配或部署新的服务时，用户可通过此接口创建指定配置的节点池。使用该接口的前提条件是用户具有管理员权限且节点池的配置参数（如节点数量、规格、网络配置等）已正确设置。创建操作完成后，节点池将被成功创建并处于可用状态，相关节点信息将被记录。若用户无权限操作、配置参数错误或系统资源不足，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateNodePoolRequest 请求对象
+     * @return CompletableFuture<CreateNodePoolResponse>
+     */
+    public CompletableFuture<CreateNodePoolResponse> createNodePoolAsync(CreateNodePoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createNodePool);
+    }
+
+    /**
+     * 创建节点池
+     *
+     * 创建节点池接口用于创建新的节点池。该接口适用于以下场景：当需要扩展计算资源、优化资源分配或部署新的服务时，用户可通过此接口创建指定配置的节点池。使用该接口的前提条件是用户具有管理员权限且节点池的配置参数（如节点数量、规格、网络配置等）已正确设置。创建操作完成后，节点池将被成功创建并处于可用状态，相关节点信息将被记录。若用户无权限操作、配置参数错误或系统资源不足，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateNodePoolRequest 请求对象
+     * @return AsyncInvoker<CreateNodePoolRequest, CreateNodePoolResponse>
+     */
+    public AsyncInvoker<CreateNodePoolRequest, CreateNodePoolResponse> createNodePoolAsyncInvoker(
+        CreateNodePoolRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createNodePool, hcClient);
+    }
+
+    /**
      * 创建资源池的订单id
      *
      * 创建资源池订单ID接口用于生成资源池申请的订单标识。该接口适用于以下场景：当用户需要申请新资源池时（如业务扩展、资源不足或临时资源需求），可通过此接口提交按需转包周期订单的创建请求。使用该接口的前提条件是用户需具备资源申请权限，提交的资源池配置参数（如资源类型、容量、周期等）需符合系统校验规则，且当前仅支持按需转包周期订单类型。订单创建成功后，系统将生成唯一订单ID并触发后续资源分配流程，同时记录操作日志。若用户权限不足、配置参数缺失/冲突（如容量超出配额）、订单类型不支持或系统资源不足，接口将返回对应错误码及提示信息，且不会生成订单ID或占用资源。
@@ -563,6 +974,63 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<CreateOrderIdRequest, CreateOrderIdResponse> createOrderIdAsyncInvoker(
         CreateOrderIdRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.createOrderId, hcClient);
+    }
+
+    /**
+     * 创建资源池
+     *
+     * 创建资源池接口用于在系统中创建新的资源池。该接口适用于以下场景：当需要为新业务分配资源、优化资源管理或进行资源隔离时，用户可通过此接口创建新的资源池，用于管理计算、存储、网络等资源。使用该接口的前提条件是用户具有管理员权限，并且系统中具备足够的资源支持新资源池的创建。创建操作完成后，新的资源池将被成功添加到系统中，并处于可用状态，可支持后续的资源分配和管理。若用户无权限、系统资源不足或输入参数有误，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePoolRequest 请求对象
+     * @return CompletableFuture<CreatePoolResponse>
+     */
+    public CompletableFuture<CreatePoolResponse> createPoolAsync(CreatePoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createPool);
+    }
+
+    /**
+     * 创建资源池
+     *
+     * 创建资源池接口用于在系统中创建新的资源池。该接口适用于以下场景：当需要为新业务分配资源、优化资源管理或进行资源隔离时，用户可通过此接口创建新的资源池，用于管理计算、存储、网络等资源。使用该接口的前提条件是用户具有管理员权限，并且系统中具备足够的资源支持新资源池的创建。创建操作完成后，新的资源池将被成功添加到系统中，并处于可用状态，可支持后续的资源分配和管理。若用户无权限、系统资源不足或输入参数有误，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePoolRequest 请求对象
+     * @return AsyncInvoker<CreatePoolRequest, CreatePoolResponse>
+     */
+    public AsyncInvoker<CreatePoolRequest, CreatePoolResponse> createPoolAsyncInvoker(CreatePoolRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createPool, hcClient);
+    }
+
+    /**
+     * 创建插件
+     *
+     * 创建插件实例接口用于在系统中创建一个新的插件实例。该接口适用于以下场景：当需要扩展系统功能、部署新的插件、更新现有插件配置或测试插件时，用户可通过此接口创建指定插件的实例。使用该接口的前提条件是插件已存在且用户具有管理员权限或插件管理权限。创建操作完成后，插件实例将被成功创建并处于可用状态，相关配置信息将被记录。若插件不存在、用户无权限操作、配置参数错误或系统资源不足，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePoolPluginRequest 请求对象
+     * @return CompletableFuture<CreatePoolPluginResponse>
+     */
+    public CompletableFuture<CreatePoolPluginResponse> createPoolPluginAsync(CreatePoolPluginRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.createPoolPlugin);
+    }
+
+    /**
+     * 创建插件
+     *
+     * 创建插件实例接口用于在系统中创建一个新的插件实例。该接口适用于以下场景：当需要扩展系统功能、部署新的插件、更新现有插件配置或测试插件时，用户可通过此接口创建指定插件的实例。使用该接口的前提条件是插件已存在且用户具有管理员权限或插件管理权限。创建操作完成后，插件实例将被成功创建并处于可用状态，相关配置信息将被记录。若插件不存在、用户无权限操作、配置参数错误或系统资源不足，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePoolPluginRequest 请求对象
+     * @return AsyncInvoker<CreatePoolPluginRequest, CreatePoolPluginResponse>
+     */
+    public AsyncInvoker<CreatePoolPluginRequest, CreatePoolPluginResponse> createPoolPluginAsyncInvoker(
+        CreatePoolPluginRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.createPoolPlugin, hcClient);
     }
 
     /**
@@ -770,6 +1238,92 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<DeleteAuthorizationsRequest, DeleteAuthorizationsResponse> deleteAuthorizationsAsyncInvoker(
         DeleteAuthorizationsRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.deleteAuthorizations, hcClient);
+    }
+
+    /**
+     * 删除网络资源
+     *
+     * 删除网络资源接口用于移除指定的网络资源。该接口适用于以下场景：当网络资源不再需要、配置错误或需要清理资源时，用户可通过此接口删除指定的网络资源。使用该接口的前提条件是网络资源已存在且用户具有管理员权限。删除操作完成后，指定的网络资源将被永久移除，相关配置和关联关系也将被清理。若指定的网络资源不存在、用户无权限操作或资源被其他资源依赖，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteNetworkRequest 请求对象
+     * @return CompletableFuture<DeleteNetworkResponse>
+     */
+    public CompletableFuture<DeleteNetworkResponse> deleteNetworkAsync(DeleteNetworkRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deleteNetwork);
+    }
+
+    /**
+     * 删除网络资源
+     *
+     * 删除网络资源接口用于移除指定的网络资源。该接口适用于以下场景：当网络资源不再需要、配置错误或需要清理资源时，用户可通过此接口删除指定的网络资源。使用该接口的前提条件是网络资源已存在且用户具有管理员权限。删除操作完成后，指定的网络资源将被永久移除，相关配置和关联关系也将被清理。若指定的网络资源不存在、用户无权限操作或资源被其他资源依赖，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteNetworkRequest 请求对象
+     * @return AsyncInvoker<DeleteNetworkRequest, DeleteNetworkResponse>
+     */
+    public AsyncInvoker<DeleteNetworkRequest, DeleteNetworkResponse> deleteNetworkAsyncInvoker(
+        DeleteNetworkRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.deleteNetwork, hcClient);
+    }
+
+    /**
+     * 删除节点池
+     *
+     * 删除节点池接口用于移除已创建的节点池，包周期资源池不支持。该接口适用于以下场景：当节点池完成任务、配置错误或需要清理资源时，用户可通过此接口删除指定的节点池。使用该接口的前提条件是节点池已存在且用户具有管理员权限。删除操作完成后，节点池将被永久移除，相关资源和配置也将被清理。若节点池不存在、用户无权限操作或节点池处于不可删除状态（如包周期资源池或节点池正在使用中），接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteNodePoolRequest 请求对象
+     * @return CompletableFuture<DeleteNodePoolResponse>
+     */
+    public CompletableFuture<DeleteNodePoolResponse> deleteNodePoolAsync(DeleteNodePoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deleteNodePool);
+    }
+
+    /**
+     * 删除节点池
+     *
+     * 删除节点池接口用于移除已创建的节点池，包周期资源池不支持。该接口适用于以下场景：当节点池完成任务、配置错误或需要清理资源时，用户可通过此接口删除指定的节点池。使用该接口的前提条件是节点池已存在且用户具有管理员权限。删除操作完成后，节点池将被永久移除，相关资源和配置也将被清理。若节点池不存在、用户无权限操作或节点池处于不可删除状态（如包周期资源池或节点池正在使用中），接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteNodePoolRequest 请求对象
+     * @return AsyncInvoker<DeleteNodePoolRequest, DeleteNodePoolResponse>
+     */
+    public AsyncInvoker<DeleteNodePoolRequest, DeleteNodePoolResponse> deleteNodePoolAsyncInvoker(
+        DeleteNodePoolRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.deleteNodePool, hcClient);
+    }
+
+    /**
+     * 删除资源池
+     *
+     * 删除资源池接口用于移除指定的资源池。该接口适用于以下场景：当资源池不再需要、配置错误或需要清理资源时，用户可通过此接口删除指定的资源池。使用该接口的前提条件是资源池已存在且用户具有管理员权限。删除操作完成后，指定的资源池将被永久移除，相关资源和配置也将被清理。若资源池不存在、用户无权限操作或资源池被其他资源依赖，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePoolRequest 请求对象
+     * @return CompletableFuture<DeletePoolResponse>
+     */
+    public CompletableFuture<DeletePoolResponse> deletePoolAsync(DeletePoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.deletePool);
+    }
+
+    /**
+     * 删除资源池
+     *
+     * 删除资源池接口用于移除指定的资源池。该接口适用于以下场景：当资源池不再需要、配置错误或需要清理资源时，用户可通过此接口删除指定的资源池。使用该接口的前提条件是资源池已存在且用户具有管理员权限。删除操作完成后，指定的资源池将被永久移除，相关资源和配置也将被清理。若资源池不存在、用户无权限操作或资源池被其他资源依赖，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePoolRequest 请求对象
+     * @return AsyncInvoker<DeletePoolRequest, DeletePoolResponse>
+     */
+    public AsyncInvoker<DeletePoolRequest, DeletePoolResponse> deletePoolAsyncInvoker(DeletePoolRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.deletePool, hcClient);
     }
 
     /**
@@ -981,6 +1535,322 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 查询事件列表
+     *
+     * 查询事件列表接口用于获取系统中记录的事件信息。该接口适用于以下场景：当用户需要监控系统状态、排查问题或进行审计时，可通过此接口查询系统中发生的事件记录。使用该接口的前提条件是用户具有相应的权限，并且系统中已存在事件记录。查询操作完成后，接口将返回事件列表，包含事件ID、类型、时间、描述等信息。若用户无权限、事件记录不存在或查询参数有误，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEventsRequest 请求对象
+     * @return CompletableFuture<ListEventsResponse>
+     */
+    public CompletableFuture<ListEventsResponse> listEventsAsync(ListEventsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listEvents);
+    }
+
+    /**
+     * 查询事件列表
+     *
+     * 查询事件列表接口用于获取系统中记录的事件信息。该接口适用于以下场景：当用户需要监控系统状态、排查问题或进行审计时，可通过此接口查询系统中发生的事件记录。使用该接口的前提条件是用户具有相应的权限，并且系统中已存在事件记录。查询操作完成后，接口将返回事件列表，包含事件ID、类型、时间、描述等信息。若用户无权限、事件记录不存在或查询参数有误，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEventsRequest 请求对象
+     * @return AsyncInvoker<ListEventsRequest, ListEventsResponse>
+     */
+    public AsyncInvoker<ListEventsRequest, ListEventsResponse> listEventsAsyncInvoker(ListEventsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listEvents, hcClient);
+    }
+
+    /**
+     * 查询任务列表
+     *
+     * 查询任务列表接口用于获取当前用户下的任务列表。该接口适用于以下场景：当需要查看任务状态、管理任务进度或统计任务数量时，用户可通过此接口获取当前用户下所有任务的详细信息。使用该接口的前提条件是用户已登录系统且具有查看任务的权限。调用接口成功后，系统将返回当前用户下的任务列表，包括任务ID、名称、状态、创建时间等信息。若用户未登录、无权限访问或系统中未配置任务，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListJobsRequest 请求对象
+     * @return CompletableFuture<ListJobsResponse>
+     */
+    public CompletableFuture<ListJobsResponse> listJobsAsync(ListJobsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listJobs);
+    }
+
+    /**
+     * 查询任务列表
+     *
+     * 查询任务列表接口用于获取当前用户下的任务列表。该接口适用于以下场景：当需要查看任务状态、管理任务进度或统计任务数量时，用户可通过此接口获取当前用户下所有任务的详细信息。使用该接口的前提条件是用户已登录系统且具有查看任务的权限。调用接口成功后，系统将返回当前用户下的任务列表，包括任务ID、名称、状态、创建时间等信息。若用户未登录、无权限访问或系统中未配置任务，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListJobsRequest 请求对象
+     * @return AsyncInvoker<ListJobsRequest, ListJobsResponse>
+     */
+    public AsyncInvoker<ListJobsRequest, ListJobsResponse> listJobsAsyncInvoker(ListJobsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listJobs, hcClient);
+    }
+
+    /**
+     * 查询网络资源列表
+     *
+     * 查询网络资源列表接口用于获取系统中已创建的网络资源信息。该接口适用于以下场景：当用户需要监控网络状态、进行资源规划、排查网络问题或进行审计时，可通过此接口查询系统中现有的网络资源列表。使用该接口的前提条件是用户具有相应的权限，并且系统中已存在网络资源。查询操作完成后，接口将返回网络资源列表，包含资源ID、类型、状态、创建时间等详细信息。若用户无权限、系统中无网络资源或查询参数有误，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNetworksRequest 请求对象
+     * @return CompletableFuture<ListNetworksResponse>
+     */
+    public CompletableFuture<ListNetworksResponse> listNetworksAsync(ListNetworksRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listNetworks);
+    }
+
+    /**
+     * 查询网络资源列表
+     *
+     * 查询网络资源列表接口用于获取系统中已创建的网络资源信息。该接口适用于以下场景：当用户需要监控网络状态、进行资源规划、排查网络问题或进行审计时，可通过此接口查询系统中现有的网络资源列表。使用该接口的前提条件是用户具有相应的权限，并且系统中已存在网络资源。查询操作完成后，接口将返回网络资源列表，包含资源ID、类型、状态、创建时间等详细信息。若用户无权限、系统中无网络资源或查询参数有误，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNetworksRequest 请求对象
+     * @return AsyncInvoker<ListNetworksRequest, ListNetworksResponse>
+     */
+    public AsyncInvoker<ListNetworksRequest, ListNetworksResponse> listNetworksAsyncInvoker(
+        ListNetworksRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listNetworks, hcClient);
+    }
+
+    /**
+     * 查询节点池的节点列表
+     *
+     * 查询节点池的节点列表接口用于获取指定节点池中所有节点的详细信息。该接口适用于以下场景：当需要查看节点池的节点状态、资源使用情况或管理节点资源时，用户可通过此接口获取节点池中节点的详细信息。使用该接口的前提条件是节点池已存在且用户具有访问该节点池的权限。调用接口成功后，系统将返回节点池中所有节点的列表，包括节点ID、名称、状态、IP地址、资源使用情况等详细信息。若节点池不存在、用户无权限访问或节点池当前不可用，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNodePoolNodesRequest 请求对象
+     * @return CompletableFuture<ListNodePoolNodesResponse>
+     */
+    public CompletableFuture<ListNodePoolNodesResponse> listNodePoolNodesAsync(ListNodePoolNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listNodePoolNodes);
+    }
+
+    /**
+     * 查询节点池的节点列表
+     *
+     * 查询节点池的节点列表接口用于获取指定节点池中所有节点的详细信息。该接口适用于以下场景：当需要查看节点池的节点状态、资源使用情况或管理节点资源时，用户可通过此接口获取节点池中节点的详细信息。使用该接口的前提条件是节点池已存在且用户具有访问该节点池的权限。调用接口成功后，系统将返回节点池中所有节点的列表，包括节点ID、名称、状态、IP地址、资源使用情况等详细信息。若节点池不存在、用户无权限访问或节点池当前不可用，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNodePoolNodesRequest 请求对象
+     * @return AsyncInvoker<ListNodePoolNodesRequest, ListNodePoolNodesResponse>
+     */
+    public AsyncInvoker<ListNodePoolNodesRequest, ListNodePoolNodesResponse> listNodePoolNodesAsyncInvoker(
+        ListNodePoolNodesRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listNodePoolNodes, hcClient);
+    }
+
+    /**
+     * 查询节点池列表
+     *
+     * 查询节点池列表接口用于获取指定节点池的列表信息。该接口适用于以下场景：当需要查看节点池的配置、状态或管理节点池资源时，用户可通过此接口获取节点池的详细信息。使用该接口的前提条件是节点池已存在且用户具有管理员权限。调用接口成功后，系统将返回节点池的列表，包括节点池ID、名称、节点数量、状态等详细信息。若节点池不存在、用户无权限操作或节点池当前不可用，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNodePoolsRequest 请求对象
+     * @return CompletableFuture<ListNodePoolsResponse>
+     */
+    public CompletableFuture<ListNodePoolsResponse> listNodePoolsAsync(ListNodePoolsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listNodePools);
+    }
+
+    /**
+     * 查询节点池列表
+     *
+     * 查询节点池列表接口用于获取指定节点池的列表信息。该接口适用于以下场景：当需要查看节点池的配置、状态或管理节点池资源时，用户可通过此接口获取节点池的详细信息。使用该接口的前提条件是节点池已存在且用户具有管理员权限。调用接口成功后，系统将返回节点池的列表，包括节点池ID、名称、节点数量、状态等详细信息。若节点池不存在、用户无权限操作或节点池当前不可用，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNodePoolsRequest 请求对象
+     * @return AsyncInvoker<ListNodePoolsRequest, ListNodePoolsResponse>
+     */
+    public AsyncInvoker<ListNodePoolsRequest, ListNodePoolsResponse> listNodePoolsAsyncInvoker(
+        ListNodePoolsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listNodePools, hcClient);
+    }
+
+    /**
+     * 查询插件模板列表
+     *
+     * 查询插件模板列表接口用于获取插件模板的基本信息列表。该接口适用于以下场景：当需要浏览或管理插件模板时，用户可通过此接口查询所有可用的插件模板信息，以便选择或进一步操作。使用该接口的前提条件是用户具有访问插件模板的权限，且插件模板服务处于正常运行状态。查询操作完成后，用户将获得插件模板的列表信息，包括模板名称、类型、版本等，便于后续的插件开发或管理。若用户无权限访问、插件模板服务不可用或请求参数无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPluginTemplatesRequest 请求对象
+     * @return CompletableFuture<ListPluginTemplatesResponse>
+     */
+    public CompletableFuture<ListPluginTemplatesResponse> listPluginTemplatesAsync(ListPluginTemplatesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listPluginTemplates);
+    }
+
+    /**
+     * 查询插件模板列表
+     *
+     * 查询插件模板列表接口用于获取插件模板的基本信息列表。该接口适用于以下场景：当需要浏览或管理插件模板时，用户可通过此接口查询所有可用的插件模板信息，以便选择或进一步操作。使用该接口的前提条件是用户具有访问插件模板的权限，且插件模板服务处于正常运行状态。查询操作完成后，用户将获得插件模板的列表信息，包括模板名称、类型、版本等，便于后续的插件开发或管理。若用户无权限访问、插件模板服务不可用或请求参数无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPluginTemplatesRequest 请求对象
+     * @return AsyncInvoker<ListPluginTemplatesRequest, ListPluginTemplatesResponse>
+     */
+    public AsyncInvoker<ListPluginTemplatesRequest, ListPluginTemplatesResponse> listPluginTemplatesAsyncInvoker(
+        ListPluginTemplatesRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listPluginTemplates, hcClient);
+    }
+
+    /**
+     * 查询资源池节点列表
+     *
+     * 查询资源池节点列表接口用于获取指定资源池中的节点信息列表。该接口适用于以下场景：当需要了解资源池中节点的分布、状态或资源使用情况时，用户可通过此接口查询资源池中的节点列表，以便进行资源监控、分配或管理。使用该接口的前提条件是资源池已创建且处于可用状态，且用户具有访问资源池的权限。查询操作完成后，用户将获得资源池中节点的详细信息，包括节点ID、状态、资源使用情况等，便于后续的资源管理和优化。若资源池不存在、用户无权限访问或请求参数无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPoolNodesRequest 请求对象
+     * @return CompletableFuture<ListPoolNodesResponse>
+     */
+    public CompletableFuture<ListPoolNodesResponse> listPoolNodesAsync(ListPoolNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listPoolNodes);
+    }
+
+    /**
+     * 查询资源池节点列表
+     *
+     * 查询资源池节点列表接口用于获取指定资源池中的节点信息列表。该接口适用于以下场景：当需要了解资源池中节点的分布、状态或资源使用情况时，用户可通过此接口查询资源池中的节点列表，以便进行资源监控、分配或管理。使用该接口的前提条件是资源池已创建且处于可用状态，且用户具有访问资源池的权限。查询操作完成后，用户将获得资源池中节点的详细信息，包括节点ID、状态、资源使用情况等，便于后续的资源管理和优化。若资源池不存在、用户无权限访问或请求参数无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPoolNodesRequest 请求对象
+     * @return AsyncInvoker<ListPoolNodesRequest, ListPoolNodesResponse>
+     */
+    public AsyncInvoker<ListPoolNodesRequest, ListPoolNodesResponse> listPoolNodesAsyncInvoker(
+        ListPoolNodesRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listPoolNodes, hcClient);
+    }
+
+    /**
+     * 查询插件列表
+     *
+     * 查询插件实例列表接口用于获取系统中已部署的插件实例信息。该接口适用于以下场景：当用户需要查看系统中已部署的插件实例、监控插件运行状态、管理插件配置或进行故障排查时，可通过此接口获取插件实例的详细信息。使用该接口的前提条件是用户具有查询权限且系统中已部署至少一个插件实例。调用该接口后，系统将返回所有插件实例的列表，包括插件名称、类型、状态、版本及部署环境等信息。若用户无权限访问或系统中未部署任何插件实例，接口将返回相应的错误信息或空列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPoolPluginsRequest 请求对象
+     * @return CompletableFuture<ListPoolPluginsResponse>
+     */
+    public CompletableFuture<ListPoolPluginsResponse> listPoolPluginsAsync(ListPoolPluginsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listPoolPlugins);
+    }
+
+    /**
+     * 查询插件列表
+     *
+     * 查询插件实例列表接口用于获取系统中已部署的插件实例信息。该接口适用于以下场景：当用户需要查看系统中已部署的插件实例、监控插件运行状态、管理插件配置或进行故障排查时，可通过此接口获取插件实例的详细信息。使用该接口的前提条件是用户具有查询权限且系统中已部署至少一个插件实例。调用该接口后，系统将返回所有插件实例的列表，包括插件名称、类型、状态、版本及部署环境等信息。若用户无权限访问或系统中未部署任何插件实例，接口将返回相应的错误信息或空列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPoolPluginsRequest 请求对象
+     * @return AsyncInvoker<ListPoolPluginsRequest, ListPoolPluginsResponse>
+     */
+    public AsyncInvoker<ListPoolPluginsRequest, ListPoolPluginsResponse> listPoolPluginsAsyncInvoker(
+        ListPoolPluginsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listPoolPlugins, hcClient);
+    }
+
+    /**
+     * 查询资源池的所有标签
+     *
+     * 查询资源池所有标签接口用于获取用户当前项目下资源池的所有标签信息，默认查询所有工作空间，但无权限的工作空间不会返回标签数据。该接口适用于以下场景：当需要管理、分类或统计资源池的标签信息时，用户可通过此接口获取资源池的标签数据。使用该接口的前提条件是用户具有访问资源池的权限且资源池已存在。调用接口成功后，系统将返回用户当前项目下所有可访问工作空间的资源池标签信息。若用户无权限访问资源池、资源池不存在或项目未创建，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPoolTagsRequest 请求对象
+     * @return CompletableFuture<ListPoolTagsResponse>
+     */
+    public CompletableFuture<ListPoolTagsResponse> listPoolTagsAsync(ListPoolTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listPoolTags);
+    }
+
+    /**
+     * 查询资源池的所有标签
+     *
+     * 查询资源池所有标签接口用于获取用户当前项目下资源池的所有标签信息，默认查询所有工作空间，但无权限的工作空间不会返回标签数据。该接口适用于以下场景：当需要管理、分类或统计资源池的标签信息时，用户可通过此接口获取资源池的标签数据。使用该接口的前提条件是用户具有访问资源池的权限且资源池已存在。调用接口成功后，系统将返回用户当前项目下所有可访问工作空间的资源池标签信息。若用户无权限访问资源池、资源池不存在或项目未创建，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPoolTagsRequest 请求对象
+     * @return AsyncInvoker<ListPoolTagsRequest, ListPoolTagsResponse>
+     */
+    public AsyncInvoker<ListPoolTagsRequest, ListPoolTagsResponse> listPoolTagsAsyncInvoker(
+        ListPoolTagsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listPoolTags, hcClient);
+    }
+
+    /**
+     * 查询资源池列表
+     *
+     * 查询资源池列表接口用于获取系统中已创建的资源池信息。该接口适用于以下场景：当用户需要监控资源池状态、进行资源规划、管理资源分配或进行审计时，可通过此接口查询系统中现有的资源池列表。使用该接口的前提条件是用户具有相应的权限，并且系统中已存在资源池。查询操作完成后，接口将返回资源池列表，包含资源池ID、名称、类型、状态、资源配额等详细信息。若用户无权限、系统中无资源池或查询参数有误，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPoolsRequest 请求对象
+     * @return CompletableFuture<ListPoolsResponse>
+     */
+    public CompletableFuture<ListPoolsResponse> listPoolsAsync(ListPoolsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listPools);
+    }
+
+    /**
+     * 查询资源池列表
+     *
+     * 查询资源池列表接口用于获取系统中已创建的资源池信息。该接口适用于以下场景：当用户需要监控资源池状态、进行资源规划、管理资源分配或进行审计时，可通过此接口查询系统中现有的资源池列表。使用该接口的前提条件是用户具有相应的权限，并且系统中已存在资源池。查询操作完成后，接口将返回资源池列表，包含资源池ID、名称、类型、状态、资源配额等详细信息。若用户无权限、系统中无资源池或查询参数有误，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPoolsRequest 请求对象
+     * @return AsyncInvoker<ListPoolsRequest, ListPoolsResponse>
+     */
+    public AsyncInvoker<ListPoolsRequest, ListPoolsResponse> listPoolsAsyncInvoker(ListPoolsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listPools, hcClient);
+    }
+
+    /**
+     * 查询资源规格列表
+     *
+     * 查询资源规格列表接口用于获取可用的资源规格信息。该接口适用于以下场景：当需要查看或选择资源规格以创建资源池、分配资源或了解可用资源规格时，用户可通过此接口获取资源规格的详细信息。使用该接口的前提条件是用户具有相应的权限（如管理员权限或资源管理权限）。调用接口成功后，系统将返回资源规格的列表，包括规格ID、名称、CPU核数、内存大小、存储容量等详细信息。若用户无权限访问该接口或系统中未配置资源规格，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceFlavorsRequest 请求对象
+     * @return CompletableFuture<ListResourceFlavorsResponse>
+     */
+    public CompletableFuture<ListResourceFlavorsResponse> listResourceFlavorsAsync(ListResourceFlavorsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listResourceFlavors);
+    }
+
+    /**
+     * 查询资源规格列表
+     *
+     * 查询资源规格列表接口用于获取可用的资源规格信息。该接口适用于以下场景：当需要查看或选择资源规格以创建资源池、分配资源或了解可用资源规格时，用户可通过此接口获取资源规格的详细信息。使用该接口的前提条件是用户具有相应的权限（如管理员权限或资源管理权限）。调用接口成功后，系统将返回资源规格的列表，包括规格ID、名称、CPU核数、内存大小、存储容量等详细信息。若用户无权限访问该接口或系统中未配置资源规格，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceFlavorsRequest 请求对象
+     * @return AsyncInvoker<ListResourceFlavorsRequest, ListResourceFlavorsResponse>
+     */
+    public AsyncInvoker<ListResourceFlavorsRequest, ListResourceFlavorsResponse> listResourceFlavorsAsyncInvoker(
+        ListResourceFlavorsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listResourceFlavors, hcClient);
+    }
+
+    /**
      * 查询计划事件列表
      *
      * 查询计划事件列表信息。
@@ -1163,6 +2033,35 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 查询资源池作业列表
+     *
+     * 查询专属资源池作业列表接口用于获取指定专属资源池中的作业信息列表。该接口适用于以下场景：当需要监控专属资源池的资源使用情况、查看作业状态或管理资源分配时，用户可通过此接口获取专属资源池中作业的详细信息。使用该接口的前提条件是专属资源池已存在且用户具有相应的权限（如管理员权限或资源管理权限）。调用接口成功后，系统将返回专属资源池中作业的列表，包括作业ID、名称、状态、资源使用情况等详细信息。若专属资源池不存在、用户无权限操作或资源池当前不可用，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWorkloadsRequest 请求对象
+     * @return CompletableFuture<ListWorkloadsResponse>
+     */
+    public CompletableFuture<ListWorkloadsResponse> listWorkloadsAsync(ListWorkloadsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.listWorkloads);
+    }
+
+    /**
+     * 查询资源池作业列表
+     *
+     * 查询专属资源池作业列表接口用于获取指定专属资源池中的作业信息列表。该接口适用于以下场景：当需要监控专属资源池的资源使用情况、查看作业状态或管理资源分配时，用户可通过此接口获取专属资源池中作业的详细信息。使用该接口的前提条件是专属资源池已存在且用户具有相应的权限（如管理员权限或资源管理权限）。调用接口成功后，系统将返回专属资源池中作业的列表，包括作业ID、名称、状态、资源使用情况等详细信息。若专属资源池不存在、用户无权限操作或资源池当前不可用，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWorkloadsRequest 请求对象
+     * @return AsyncInvoker<ListWorkloadsRequest, ListWorkloadsResponse>
+     */
+    public AsyncInvoker<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsAsyncInvoker(
+        ListWorkloadsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.listWorkloads, hcClient);
+    }
+
+    /**
      * 查询工作空间列表
      *
      * 查询工作空间列表，响应消息体中包含详细信息。
@@ -1219,6 +2118,92 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<NotifyTrainingJobInformationRequest, NotifyTrainingJobInformationResponse> notifyTrainingJobInformationAsyncInvoker(
         NotifyTrainingJobInformationRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.notifyTrainingJobInformation, hcClient);
+    }
+
+    /**
+     * 更新网络资源
+     *
+     * 更新网络资源接口用于修改指定网络资源的配置信息。该接口适用于以下场景：当需要调整网络资源的属性、修复配置错误或优化资源设置时，用户可通过此接口更新指定网络资源的详细信息。使用该接口的前提条件是网络资源已存在且用户具有管理员权限。更新操作完成后，指定网络资源的配置信息将被成功修改，系统将反映最新的资源状态和属性。若指定的网络资源不存在、用户无权限操作或输入参数有误，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PatchNetworkRequest 请求对象
+     * @return CompletableFuture<PatchNetworkResponse>
+     */
+    public CompletableFuture<PatchNetworkResponse> patchNetworkAsync(PatchNetworkRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.patchNetwork);
+    }
+
+    /**
+     * 更新网络资源
+     *
+     * 更新网络资源接口用于修改指定网络资源的配置信息。该接口适用于以下场景：当需要调整网络资源的属性、修复配置错误或优化资源设置时，用户可通过此接口更新指定网络资源的详细信息。使用该接口的前提条件是网络资源已存在且用户具有管理员权限。更新操作完成后，指定网络资源的配置信息将被成功修改，系统将反映最新的资源状态和属性。若指定的网络资源不存在、用户无权限操作或输入参数有误，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PatchNetworkRequest 请求对象
+     * @return AsyncInvoker<PatchNetworkRequest, PatchNetworkResponse>
+     */
+    public AsyncInvoker<PatchNetworkRequest, PatchNetworkResponse> patchNetworkAsyncInvoker(
+        PatchNetworkRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.patchNetwork, hcClient);
+    }
+
+    /**
+     * 更新节点池
+     *
+     * 更新节点池接口用于修改指定节点池的配置信息。该接口适用于以下场景：当需要扩展节点池容量、调整节点规格、优化资源分配或修复节点池配置时，用户可通过此接口更新节点池的相关信息。使用该接口的前提条件是节点池已存在且用户具有管理员权限。更新操作完成后，节点池的配置将被更新，包括节点数量、规格、网络配置等参数。若节点池不存在、用户无权限操作或配置参数错误，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PatchNodePoolRequest 请求对象
+     * @return CompletableFuture<PatchNodePoolResponse>
+     */
+    public CompletableFuture<PatchNodePoolResponse> patchNodePoolAsync(PatchNodePoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.patchNodePool);
+    }
+
+    /**
+     * 更新节点池
+     *
+     * 更新节点池接口用于修改指定节点池的配置信息。该接口适用于以下场景：当需要扩展节点池容量、调整节点规格、优化资源分配或修复节点池配置时，用户可通过此接口更新节点池的相关信息。使用该接口的前提条件是节点池已存在且用户具有管理员权限。更新操作完成后，节点池的配置将被更新，包括节点数量、规格、网络配置等参数。若节点池不存在、用户无权限操作或配置参数错误，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PatchNodePoolRequest 请求对象
+     * @return AsyncInvoker<PatchNodePoolRequest, PatchNodePoolResponse>
+     */
+    public AsyncInvoker<PatchNodePoolRequest, PatchNodePoolResponse> patchNodePoolAsyncInvoker(
+        PatchNodePoolRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.patchNodePool, hcClient);
+    }
+
+    /**
+     * 更新资源池
+     *
+     * 更新资源池接口用于修改指定资源池的配置和容量。该接口适用于以下场景：当资源池需要扩展容量、调整配置或优化性能时，用户可通过此接口更新资源池的相关信息。使用该接口的前提条件是资源池已存在且用户具有管理员权限。更新操作完成后，资源池的配置和容量将被更新，相关资源和配置也将被调整。若资源池不存在、用户无权限操作或资源池处于不可更新状态，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PatchPoolRequest 请求对象
+     * @return CompletableFuture<PatchPoolResponse>
+     */
+    public CompletableFuture<PatchPoolResponse> patchPoolAsync(PatchPoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.patchPool);
+    }
+
+    /**
+     * 更新资源池
+     *
+     * 更新资源池接口用于修改指定资源池的配置和容量。该接口适用于以下场景：当资源池需要扩展容量、调整配置或优化性能时，用户可通过此接口更新资源池的相关信息。使用该接口的前提条件是资源池已存在且用户具有管理员权限。更新操作完成后，资源池的配置和容量将被更新，相关资源和配置也将被调整。若资源池不存在、用户无权限操作或资源池处于不可更新状态，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PatchPoolRequest 请求对象
+     * @return AsyncInvoker<PatchPoolRequest, PatchPoolResponse>
+     */
+    public AsyncInvoker<PatchPoolRequest, PatchPoolResponse> patchPoolAsyncInvoker(PatchPoolRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.patchPool, hcClient);
     }
 
     /**
@@ -1490,6 +2475,34 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 查询网络资源
+     *
+     * 查询网络资源接口用于获取指定网络资源的详情信息。该接口适用于以下场景：当用户需要查看特定网络资源的详细配置、状态或属性时，可通过此接口查询指定网络资源的详细信息。使用该接口的前提条件是用户具有相应的权限，并且指定的网络资源已存在于系统中。查询操作完成后，接口将返回指定网络资源的详细信息，包括资源ID、类型、状态、配置参数等。若指定的网络资源不存在、用户无权限操作或输入参数有误，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowNetworkRequest 请求对象
+     * @return CompletableFuture<ShowNetworkResponse>
+     */
+    public CompletableFuture<ShowNetworkResponse> showNetworkAsync(ShowNetworkRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showNetwork);
+    }
+
+    /**
+     * 查询网络资源
+     *
+     * 查询网络资源接口用于获取指定网络资源的详情信息。该接口适用于以下场景：当用户需要查看特定网络资源的详细配置、状态或属性时，可通过此接口查询指定网络资源的详细信息。使用该接口的前提条件是用户具有相应的权限，并且指定的网络资源已存在于系统中。查询操作完成后，接口将返回指定网络资源的详细信息，包括资源ID、类型、状态、配置参数等。若指定的网络资源不存在、用户无权限操作或输入参数有误，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowNetworkRequest 请求对象
+     * @return AsyncInvoker<ShowNetworkRequest, ShowNetworkResponse>
+     */
+    public AsyncInvoker<ShowNetworkRequest, ShowNetworkResponse> showNetworkAsyncInvoker(ShowNetworkRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showNetwork, hcClient);
+    }
+
+    /**
      * 查询网络可用的IP
      *
      * 查询网络可用的IP接口用于查找指定网络中未被占用的IP地址。该接口适用于以下场景：在网络规划、资源分配或故障排查时，用户需要快速获取可用的IP地址信息。使用该接口的前提条件是用户具有访问目标网络的权限，并且需要提供有效的网络范围（如子网掩码或IP段）。查询完成后，接口将返回指定网络中未被占用的IP地址列表，用户可以根据结果进行IP地址的分配或进一步操作。若网络不可达、权限不足或网络范围有误，接口将返回相应的错误信息。
@@ -1520,6 +2533,65 @@ public class ModelArtsAsyncClient {
     }
 
     /**
+     * 查询节点配置模板
+     *
+     * 查询节点配置模板接口用于获取指定节点配置模板的详细信息。该接口适用于以下场景：当用户需要查看节点配置模板的内容、管理节点配置或进行相关操作时，可通过此接口获取指定节点配置模板的详细信息。使用该接口的前提条件是节点配置模板已存在且用户具有相应的访问权限。调用该接口后，系统将返回指定节点配置模板的详细信息，包括模板名称、版本、配置参数及描述等。若节点配置模板不存在或用户无权限访问，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowNodeConfigTemplateRequest 请求对象
+     * @return CompletableFuture<ShowNodeConfigTemplateResponse>
+     */
+    public CompletableFuture<ShowNodeConfigTemplateResponse> showNodeConfigTemplateAsync(
+        ShowNodeConfigTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showNodeConfigTemplate);
+    }
+
+    /**
+     * 查询节点配置模板
+     *
+     * 查询节点配置模板接口用于获取指定节点配置模板的详细信息。该接口适用于以下场景：当用户需要查看节点配置模板的内容、管理节点配置或进行相关操作时，可通过此接口获取指定节点配置模板的详细信息。使用该接口的前提条件是节点配置模板已存在且用户具有相应的访问权限。调用该接口后，系统将返回指定节点配置模板的详细信息，包括模板名称、版本、配置参数及描述等。若节点配置模板不存在或用户无权限访问，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowNodeConfigTemplateRequest 请求对象
+     * @return AsyncInvoker<ShowNodeConfigTemplateRequest, ShowNodeConfigTemplateResponse>
+     */
+    public AsyncInvoker<ShowNodeConfigTemplateRequest, ShowNodeConfigTemplateResponse> showNodeConfigTemplateAsyncInvoker(
+        ShowNodeConfigTemplateRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showNodeConfigTemplate, hcClient);
+    }
+
+    /**
+     * 查询指定节点池详情
+     *
+     * 查询指定节点池详情接口用于获取指定节点池的详细信息。该接口适用于以下场景：当需要查看节点池的配置、状态、资源使用情况或管理节点池时，用户可通过此接口获取节点池的详细信息。使用该接口的前提条件是节点池已存在且用户具有访问该节点池的权限。调用接口成功后，系统将返回节点池的详细信息，包括节点池ID、名称、节点数量、状态、创建时间、配置参数等。若节点池不存在、用户无权限访问或节点池当前不可用，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowNodePoolRequest 请求对象
+     * @return CompletableFuture<ShowNodePoolResponse>
+     */
+    public CompletableFuture<ShowNodePoolResponse> showNodePoolAsync(ShowNodePoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showNodePool);
+    }
+
+    /**
+     * 查询指定节点池详情
+     *
+     * 查询指定节点池详情接口用于获取指定节点池的详细信息。该接口适用于以下场景：当需要查看节点池的配置、状态、资源使用情况或管理节点池时，用户可通过此接口获取节点池的详细信息。使用该接口的前提条件是节点池已存在且用户具有访问该节点池的权限。调用接口成功后，系统将返回节点池的详细信息，包括节点池ID、名称、节点数量、状态、创建时间、配置参数等。若节点池不存在、用户无权限访问或节点池当前不可用，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowNodePoolRequest 请求对象
+     * @return AsyncInvoker<ShowNodePoolRequest, ShowNodePoolResponse>
+     */
+    public AsyncInvoker<ShowNodePoolRequest, ShowNodePoolResponse> showNodePoolAsyncInvoker(
+        ShowNodePoolRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showNodePool, hcClient);
+    }
+
+    /**
      * 查询训练作业指定任务的日志（OBS链接）
      *
      * 查询训练作业指定任务的日志（OBS临时链接，有效期5分钟），可全量查看或直接下载。
@@ -1547,6 +2619,177 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<ShowObsUrlOfTrainingJobLogsRequest, ShowObsUrlOfTrainingJobLogsResponse> showObsUrlOfTrainingJobLogsAsyncInvoker(
         ShowObsUrlOfTrainingJobLogsRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.showObsUrlOfTrainingJobLogs, hcClient);
+    }
+
+    /**
+     * 查询订单详情
+     *
+     * 查询订单详情接口用于获取指定订单的详细信息。该接口适用于以下场景：当需要查看订单的状态、金额、商品信息或处理订单相关问题时，用户可通过此接口获取订单的详细数据。使用该接口的前提条件是订单已存在且用户具有访问该订单的权限。调用接口成功后，系统将返回订单的详细信息，包括订单号、商品列表、金额、支付状态、下单时间等。若订单不存在、用户无权限访问或订单信息未正确配置，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOrderRequest 请求对象
+     * @return CompletableFuture<ShowOrderResponse>
+     */
+    public CompletableFuture<ShowOrderResponse> showOrderAsync(ShowOrderRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showOrder);
+    }
+
+    /**
+     * 查询订单详情
+     *
+     * 查询订单详情接口用于获取指定订单的详细信息。该接口适用于以下场景：当需要查看订单的状态、金额、商品信息或处理订单相关问题时，用户可通过此接口获取订单的详细数据。使用该接口的前提条件是订单已存在且用户具有访问该订单的权限。调用接口成功后，系统将返回订单的详细信息，包括订单号、商品列表、金额、支付状态、下单时间等。若订单不存在、用户无权限访问或订单信息未正确配置，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOrderRequest 请求对象
+     * @return AsyncInvoker<ShowOrderRequest, ShowOrderResponse>
+     */
+    public AsyncInvoker<ShowOrderRequest, ShowOrderResponse> showOrderAsyncInvoker(ShowOrderRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showOrder, hcClient);
+    }
+
+    /**
+     * 查询OS的配置参数
+     *
+     * 查询OS的配置参数接口用于获取ModelArts OS服务的配置参数，如网络网段、用户资源配额等。该接口适用于以下场景：当需要了解当前ModelArts OS服务的网络配置、资源分配情况或进行系统管理时，用户可通过此接口查询相关的配置参数。使用该接口的前提条件是用户具有访问ModelArts OS服务的权限，且服务处于正常运行状态。查询操作完成后，用户将获得指定的配置参数信息，便于进行后续的资源规划或系统优化。若用户无权限访问、服务不可用或请求参数无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOsConfigRequest 请求对象
+     * @return CompletableFuture<ShowOsConfigResponse>
+     */
+    public CompletableFuture<ShowOsConfigResponse> showOsConfigAsync(ShowOsConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showOsConfig);
+    }
+
+    /**
+     * 查询OS的配置参数
+     *
+     * 查询OS的配置参数接口用于获取ModelArts OS服务的配置参数，如网络网段、用户资源配额等。该接口适用于以下场景：当需要了解当前ModelArts OS服务的网络配置、资源分配情况或进行系统管理时，用户可通过此接口查询相关的配置参数。使用该接口的前提条件是用户具有访问ModelArts OS服务的权限，且服务处于正常运行状态。查询操作完成后，用户将获得指定的配置参数信息，便于进行后续的资源规划或系统优化。若用户无权限访问、服务不可用或请求参数无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOsConfigRequest 请求对象
+     * @return AsyncInvoker<ShowOsConfigRequest, ShowOsConfigResponse>
+     */
+    public AsyncInvoker<ShowOsConfigRequest, ShowOsConfigResponse> showOsConfigAsyncInvoker(
+        ShowOsConfigRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showOsConfig, hcClient);
+    }
+
+    /**
+     * 查询OS的配额
+     *
+     * 查询OS配额接口用于获取ModelArts OS服务中部分资源的配额信息，如资源池配额、网络配额等。该接口适用于以下场景：当需要了解资源池或网络资源的使用限制、规划资源分配或监控资源使用情况时，用户可通过此接口获取相关配额信息。使用该接口的前提条件是ModelArts OS服务已部署且用户具有相应的权限（如管理员权限或资源管理权限）。调用接口成功后，系统将返回资源池配额、网络配额等详细信息，帮助用户更好地进行资源规划和管理。若用户无权限访问该接口、服务不可用或配额信息未配置，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOsQuotaRequest 请求对象
+     * @return CompletableFuture<ShowOsQuotaResponse>
+     */
+    public CompletableFuture<ShowOsQuotaResponse> showOsQuotaAsync(ShowOsQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showOsQuota);
+    }
+
+    /**
+     * 查询OS的配额
+     *
+     * 查询OS配额接口用于获取ModelArts OS服务中部分资源的配额信息，如资源池配额、网络配额等。该接口适用于以下场景：当需要了解资源池或网络资源的使用限制、规划资源分配或监控资源使用情况时，用户可通过此接口获取相关配额信息。使用该接口的前提条件是ModelArts OS服务已部署且用户具有相应的权限（如管理员权限或资源管理权限）。调用接口成功后，系统将返回资源池配额、网络配额等详细信息，帮助用户更好地进行资源规划和管理。若用户无权限访问该接口、服务不可用或配额信息未配置，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOsQuotaRequest 请求对象
+     * @return AsyncInvoker<ShowOsQuotaRequest, ShowOsQuotaResponse>
+     */
+    public AsyncInvoker<ShowOsQuotaRequest, ShowOsQuotaResponse> showOsQuotaAsyncInvoker(ShowOsQuotaRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showOsQuota, hcClient);
+    }
+
+    /**
+     * 查询插件模板
+     *
+     * 查询插件模板接口用于获取指定插件模板的详细信息。该接口适用于以下场景：当需要了解特定插件模板的配置、功能或使用方式时，用户可通过此接口查询插件模板的详细信息。使用该接口的前提条件是插件模板已存在且用户具有访问权限。查询操作完成后，用户将获得指定插件模板的详细信息，包括模板的配置参数、功能描述等，便于后续的插件开发或配置管理。若插件模板不存在或用户无权限访问，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPluginTemplateRequest 请求对象
+     * @return CompletableFuture<ShowPluginTemplateResponse>
+     */
+    public CompletableFuture<ShowPluginTemplateResponse> showPluginTemplateAsync(ShowPluginTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showPluginTemplate);
+    }
+
+    /**
+     * 查询插件模板
+     *
+     * 查询插件模板接口用于获取指定插件模板的详细信息。该接口适用于以下场景：当需要了解特定插件模板的配置、功能或使用方式时，用户可通过此接口查询插件模板的详细信息。使用该接口的前提条件是插件模板已存在且用户具有访问权限。查询操作完成后，用户将获得指定插件模板的详细信息，包括模板的配置参数、功能描述等，便于后续的插件开发或配置管理。若插件模板不存在或用户无权限访问，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPluginTemplateRequest 请求对象
+     * @return AsyncInvoker<ShowPluginTemplateRequest, ShowPluginTemplateResponse>
+     */
+    public AsyncInvoker<ShowPluginTemplateRequest, ShowPluginTemplateResponse> showPluginTemplateAsyncInvoker(
+        ShowPluginTemplateRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showPluginTemplate, hcClient);
+    }
+
+    /**
+     * 查询资源池
+     *
+     * 查询资源池信息接口用于获取指定资源池的详细信息。该接口适用于以下场景：当用户需要查看特定资源池的详细配置、状态、资源使用情况或进行资源管理时，可通过此接口查询指定资源池的详细信息。使用该接口的前提条件是用户具有相应的权限，并且指定的资源池已存在于系统中。查询操作完成后，接口将返回资源池的详细信息，包括资源池ID、名称、类型、状态、资源配额、利用率等。若指定的资源池不存在、用户无权限操作或输入参数有误，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPoolRequest 请求对象
+     * @return CompletableFuture<ShowPoolResponse>
+     */
+    public CompletableFuture<ShowPoolResponse> showPoolAsync(ShowPoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showPool);
+    }
+
+    /**
+     * 查询资源池
+     *
+     * 查询资源池信息接口用于获取指定资源池的详细信息。该接口适用于以下场景：当用户需要查看特定资源池的详细配置、状态、资源使用情况或进行资源管理时，可通过此接口查询指定资源池的详细信息。使用该接口的前提条件是用户具有相应的权限，并且指定的资源池已存在于系统中。查询操作完成后，接口将返回资源池的详细信息，包括资源池ID、名称、类型、状态、资源配额、利用率等。若指定的资源池不存在、用户无权限操作或输入参数有误，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPoolRequest 请求对象
+     * @return AsyncInvoker<ShowPoolRequest, ShowPoolResponse>
+     */
+    public AsyncInvoker<ShowPoolRequest, ShowPoolResponse> showPoolAsyncInvoker(ShowPoolRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showPool, hcClient);
+    }
+
+    /**
+     * 资源池监控
+     *
+     * 资源池监控接口用于获取指定资源池的实时或历史监控信息。该接口适用于以下场景：当需要实时查看资源池的资源使用情况、性能状态或历史数据时，用户可通过此接口获取资源池的监控数据。使用该接口的前提条件是资源池已存在且用户具有管理员权限。调用接口成功后，系统将返回资源池的监控信息，包括资源使用率、性能指标及历史趋势等数据。若资源池不存在、用户无权限操作或资源池当前不可用，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPoolMonitorRequest 请求对象
+     * @return CompletableFuture<ShowPoolMonitorResponse>
+     */
+    public CompletableFuture<ShowPoolMonitorResponse> showPoolMonitorAsync(ShowPoolMonitorRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showPoolMonitor);
+    }
+
+    /**
+     * 资源池监控
+     *
+     * 资源池监控接口用于获取指定资源池的实时或历史监控信息。该接口适用于以下场景：当需要实时查看资源池的资源使用情况、性能状态或历史数据时，用户可通过此接口获取资源池的监控数据。使用该接口的前提条件是资源池已存在且用户具有管理员权限。调用接口成功后，系统将返回资源池的监控信息，包括资源使用率、性能指标及历史趋势等数据。若资源池不存在、用户无权限操作或资源池当前不可用，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPoolMonitorRequest 请求对象
+     * @return AsyncInvoker<ShowPoolMonitorRequest, ShowPoolMonitorResponse>
+     */
+    public AsyncInvoker<ShowPoolMonitorRequest, ShowPoolMonitorResponse> showPoolMonitorAsyncInvoker(
+        ShowPoolMonitorRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showPoolMonitor, hcClient);
     }
 
     /**
@@ -1606,6 +2849,65 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<ShowPoolNodeConfigTemplateRequest, ShowPoolNodeConfigTemplateResponse> showPoolNodeConfigTemplateAsyncInvoker(
         ShowPoolNodeConfigTemplateRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.showPoolNodeConfigTemplate, hcClient);
+    }
+
+    /**
+     * 查询资源实时利用率
+     *
+     * 查询资源实时利用率接口用于获取当前项目下所有资源池的实时利用率信息。该接口适用于以下场景：当用户需要监控资源使用情况、进行资源优化、容量规划或故障排查时，可通过此接口查询资源池的实时利用率，包括CPU、内存、存储等资源的使用情况。使用该接口的前提条件是用户具有访问该项目的权限，并且资源池已存在且处于运行状态。查询操作完成后，接口将返回资源池的实时利用率数据，包含利用率百分比、资源类型、时间戳等详细信息。若用户无权限、资源池不存在或系统无法获取实时数据，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPoolRuntimeMetricsRequest 请求对象
+     * @return CompletableFuture<ShowPoolRuntimeMetricsResponse>
+     */
+    public CompletableFuture<ShowPoolRuntimeMetricsResponse> showPoolRuntimeMetricsAsync(
+        ShowPoolRuntimeMetricsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showPoolRuntimeMetrics);
+    }
+
+    /**
+     * 查询资源实时利用率
+     *
+     * 查询资源实时利用率接口用于获取当前项目下所有资源池的实时利用率信息。该接口适用于以下场景：当用户需要监控资源使用情况、进行资源优化、容量规划或故障排查时，可通过此接口查询资源池的实时利用率，包括CPU、内存、存储等资源的使用情况。使用该接口的前提条件是用户具有访问该项目的权限，并且资源池已存在且处于运行状态。查询操作完成后，接口将返回资源池的实时利用率数据，包含利用率百分比、资源类型、时间戳等详细信息。若用户无权限、资源池不存在或系统无法获取实时数据，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPoolRuntimeMetricsRequest 请求对象
+     * @return AsyncInvoker<ShowPoolRuntimeMetricsRequest, ShowPoolRuntimeMetricsResponse>
+     */
+    public AsyncInvoker<ShowPoolRuntimeMetricsRequest, ShowPoolRuntimeMetricsResponse> showPoolRuntimeMetricsAsyncInvoker(
+        ShowPoolRuntimeMetricsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showPoolRuntimeMetrics, hcClient);
+    }
+
+    /**
+     * 资源池统计
+     *
+     * 资源池统计接口用于获取指定资源池的统计信息。该接口适用于以下场景：当需要了解资源池的资源使用情况、分配情况或利用率时，用户可通过此接口获取资源池的统计数据。使用该接口的前提条件是资源池已存在且用户具有管理员权限。调用接口成功后，系统将返回资源池的统计信息，包括资源使用总量、已分配量、利用率及资源分配趋势等数据。若资源池不存在、用户无权限操作或资源池当前不可用，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPoolStatisticsRequest 请求对象
+     * @return CompletableFuture<ShowPoolStatisticsResponse>
+     */
+    public CompletableFuture<ShowPoolStatisticsResponse> showPoolStatisticsAsync(ShowPoolStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showPoolStatistics);
+    }
+
+    /**
+     * 资源池统计
+     *
+     * 资源池统计接口用于获取指定资源池的统计信息。该接口适用于以下场景：当需要了解资源池的资源使用情况、分配情况或利用率时，用户可通过此接口获取资源池的统计数据。使用该接口的前提条件是资源池已存在且用户具有管理员权限。调用接口成功后，系统将返回资源池的统计信息，包括资源使用总量、已分配量、利用率及资源分配趋势等数据。若资源池不存在、用户无权限操作或资源池当前不可用，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPoolStatisticsRequest 请求对象
+     * @return AsyncInvoker<ShowPoolStatisticsRequest, ShowPoolStatisticsResponse>
+     */
+    public AsyncInvoker<ShowPoolStatisticsRequest, ShowPoolStatisticsResponse> showPoolStatisticsAsyncInvoker(
+        ShowPoolStatisticsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showPoolStatistics, hcClient);
     }
 
     /**
@@ -1936,6 +3238,36 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<ShowTrainingQuotasRequest, ShowTrainingQuotasResponse> showTrainingQuotasAsyncInvoker(
         ShowTrainingQuotasRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.showTrainingQuotas, hcClient);
+    }
+
+    /**
+     * 查询专属资源池作业统计信息
+     *
+     * 查询专属资源池作业统计信息接口用于获取指定专属资源池中作业的统计信息。该接口适用于以下场景：当需要了解专属资源池中作业的整体运行情况、资源使用效率或作业状态分布时，用户可通过此接口获取统计信息。使用该接口的前提条件是专属资源池已存在且用户具有相应的权限（如管理员权限或资源管理权限）。调用接口成功后，系统将返回专属资源池中作业的统计信息，包括作业总数、运行中作业数、完成作业数、资源使用率等数据。若专属资源池不存在、用户无权限操作或资源池当前不可用，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkloadStatisticsRequest 请求对象
+     * @return CompletableFuture<ShowWorkloadStatisticsResponse>
+     */
+    public CompletableFuture<ShowWorkloadStatisticsResponse> showWorkloadStatisticsAsync(
+        ShowWorkloadStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showWorkloadStatistics);
+    }
+
+    /**
+     * 查询专属资源池作业统计信息
+     *
+     * 查询专属资源池作业统计信息接口用于获取指定专属资源池中作业的统计信息。该接口适用于以下场景：当需要了解专属资源池中作业的整体运行情况、资源使用效率或作业状态分布时，用户可通过此接口获取统计信息。使用该接口的前提条件是专属资源池已存在且用户具有相应的权限（如管理员权限或资源管理权限）。调用接口成功后，系统将返回专属资源池中作业的统计信息，包括作业总数、运行中作业数、完成作业数、资源使用率等数据。若专属资源池不存在、用户无权限操作或资源池当前不可用，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowWorkloadStatisticsRequest 请求对象
+     * @return AsyncInvoker<ShowWorkloadStatisticsRequest, ShowWorkloadStatisticsResponse>
+     */
+    public AsyncInvoker<ShowWorkloadStatisticsRequest, ShowWorkloadStatisticsResponse> showWorkloadStatisticsAsyncInvoker(
+        ShowWorkloadStatisticsRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showWorkloadStatistics, hcClient);
     }
 
     /**

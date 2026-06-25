@@ -58,6 +58,11 @@ public class ShowAutoScalingPolicyResponse extends SdkResponse {
     private Boolean reduceEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reduce_threshold")
+
+    private Integer reduceThreshold;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_flavor")
 
     private String minFlavor;
@@ -240,6 +245,25 @@ public class ShowAutoScalingPolicyResponse extends SdkResponse {
         this.reduceEnabled = reduceEnabled;
     }
 
+    public ShowAutoScalingPolicyResponse withReduceThreshold(Integer reduceThreshold) {
+        this.reduceThreshold = reduceThreshold;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  自动回缩的CPU平均使用率阈值（百分比数值）。  **取值范围**：  10-30。 
+     * minimum: 10
+     * maximum: 30
+     * @return reduceThreshold
+     */
+    public Integer getReduceThreshold() {
+        return reduceThreshold;
+    }
+
+    public void setReduceThreshold(Integer reduceThreshold) {
+        this.reduceThreshold = reduceThreshold;
+    }
+
     public ShowAutoScalingPolicyResponse withMinFlavor(String minFlavor) {
         this.minFlavor = minFlavor;
         return this;
@@ -366,6 +390,7 @@ public class ShowAutoScalingPolicyResponse extends SdkResponse {
             && Objects.equals(this.silenceCycle, that.silenceCycle)
             && Objects.equals(this.enlargeThreshold, that.enlargeThreshold)
             && Objects.equals(this.maxFlavor, that.maxFlavor) && Objects.equals(this.reduceEnabled, that.reduceEnabled)
+            && Objects.equals(this.reduceThreshold, that.reduceThreshold)
             && Objects.equals(this.minFlavor, that.minFlavor)
             && Objects.equals(this.silenceStartAt, that.silenceStartAt)
             && Objects.equals(this.scalingStrategy, that.scalingStrategy)
@@ -385,6 +410,7 @@ public class ShowAutoScalingPolicyResponse extends SdkResponse {
             enlargeThreshold,
             maxFlavor,
             reduceEnabled,
+            reduceThreshold,
             minFlavor,
             silenceStartAt,
             scalingStrategy,
@@ -406,6 +432,7 @@ public class ShowAutoScalingPolicyResponse extends SdkResponse {
         sb.append("    enlargeThreshold: ").append(toIndentedString(enlargeThreshold)).append("\n");
         sb.append("    maxFlavor: ").append(toIndentedString(maxFlavor)).append("\n");
         sb.append("    reduceEnabled: ").append(toIndentedString(reduceEnabled)).append("\n");
+        sb.append("    reduceThreshold: ").append(toIndentedString(reduceThreshold)).append("\n");
         sb.append("    minFlavor: ").append(toIndentedString(minFlavor)).append("\n");
         sb.append("    silenceStartAt: ").append(toIndentedString(silenceStartAt)).append("\n");
         sb.append("    scalingStrategy: ").append(toIndentedString(scalingStrategy)).append("\n");

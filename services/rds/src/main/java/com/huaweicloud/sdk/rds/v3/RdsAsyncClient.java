@@ -237,6 +237,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListHistoryWaitEventsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListHistoryWaitEventsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInspectionHistoriesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInspectionHistoriesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListInstanceBackupSummaryRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListInstanceBackupSummaryResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceDiagnosisRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceDiagnosisResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListInstanceParamHistoriesRequest;
@@ -331,6 +333,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListSlowlogStatisticsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSlowlogStatisticsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSmallVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSmallVersionResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListSparseBackupPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListSparseBackupPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlLimitRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListSqlStatisticsRequest;
@@ -465,6 +469,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowBackupDownloadLinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupDownloadLinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupPolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowBackupUsageRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowBackupUsageResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowBinlogClearPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowBinlogClearPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowConfigurationRequest;
@@ -605,6 +611,8 @@ import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlParameterValueRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdatePostgresqlParameterValueResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateReadWeightRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateReadWeightResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateSparseBackupPolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateSparseBackupPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateSqlLimitRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateStatisticsRequest;
@@ -2543,6 +2551,36 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 获取实例备份概览列表
+     *
+     * 获取实例备份概览列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceBackupSummaryRequest 请求对象
+     * @return CompletableFuture<ListInstanceBackupSummaryResponse>
+     */
+    public CompletableFuture<ListInstanceBackupSummaryResponse> listInstanceBackupSummaryAsync(
+        ListInstanceBackupSummaryRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listInstanceBackupSummary);
+    }
+
+    /**
+     * 获取实例备份概览列表
+     *
+     * 获取实例备份概览列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceBackupSummaryRequest 请求对象
+     * @return AsyncInvoker<ListInstanceBackupSummaryRequest, ListInstanceBackupSummaryResponse>
+     */
+    public AsyncInvoker<ListInstanceBackupSummaryRequest, ListInstanceBackupSummaryResponse> listInstanceBackupSummaryAsyncInvoker(
+        ListInstanceBackupSummaryRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listInstanceBackupSummary, hcClient);
+    }
+
+    /**
      * 获取诊断后的实例数量
      *
      * 获取诊断后的实例数量
@@ -3611,6 +3649,36 @@ public class RdsAsyncClient {
     public AsyncInvoker<ListSmallVersionRequest, ListSmallVersionResponse> listSmallVersionAsyncInvoker(
         ListSmallVersionRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.listSmallVersion, hcClient);
+    }
+
+    /**
+     * 查询稀疏备份策略
+     *
+     * 查询稀疏备份策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSparseBackupPolicyRequest 请求对象
+     * @return CompletableFuture<ListSparseBackupPolicyResponse>
+     */
+    public CompletableFuture<ListSparseBackupPolicyResponse> listSparseBackupPolicyAsync(
+        ListSparseBackupPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listSparseBackupPolicy);
+    }
+
+    /**
+     * 查询稀疏备份策略
+     *
+     * 查询稀疏备份策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSparseBackupPolicyRequest 请求对象
+     * @return AsyncInvoker<ListSparseBackupPolicyRequest, ListSparseBackupPolicyResponse>
+     */
+    public AsyncInvoker<ListSparseBackupPolicyRequest, ListSparseBackupPolicyResponse> listSparseBackupPolicyAsyncInvoker(
+        ListSparseBackupPolicyRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listSparseBackupPolicy, hcClient);
     }
 
     /**
@@ -4799,6 +4867,35 @@ public class RdsAsyncClient {
     public AsyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse> showBackupPolicyAsyncInvoker(
         ShowBackupPolicyRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.showBackupPolicy, hcClient);
+    }
+
+    /**
+     * 查询备份用量总览
+     *
+     * 查询备份用量总览
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBackupUsageRequest 请求对象
+     * @return CompletableFuture<ShowBackupUsageResponse>
+     */
+    public CompletableFuture<ShowBackupUsageResponse> showBackupUsageAsync(ShowBackupUsageRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showBackupUsage);
+    }
+
+    /**
+     * 查询备份用量总览
+     *
+     * 查询备份用量总览
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBackupUsageRequest 请求对象
+     * @return AsyncInvoker<ShowBackupUsageRequest, ShowBackupUsageResponse>
+     */
+    public AsyncInvoker<ShowBackupUsageRequest, ShowBackupUsageResponse> showBackupUsageAsyncInvoker(
+        ShowBackupUsageRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.showBackupUsage, hcClient);
     }
 
     /**
@@ -6207,6 +6304,36 @@ public class RdsAsyncClient {
      */
     public AsyncInvoker<UpdatePortRequest, UpdatePortResponse> updatePortAsyncInvoker(UpdatePortRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.updatePort, hcClient);
+    }
+
+    /**
+     * 修改实例稀疏备份策略
+     *
+     * 修改实例稀疏备份策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSparseBackupPolicyRequest 请求对象
+     * @return CompletableFuture<UpdateSparseBackupPolicyResponse>
+     */
+    public CompletableFuture<UpdateSparseBackupPolicyResponse> updateSparseBackupPolicyAsync(
+        UpdateSparseBackupPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.updateSparseBackupPolicy);
+    }
+
+    /**
+     * 修改实例稀疏备份策略
+     *
+     * 修改实例稀疏备份策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSparseBackupPolicyRequest 请求对象
+     * @return AsyncInvoker<UpdateSparseBackupPolicyRequest, UpdateSparseBackupPolicyResponse>
+     */
+    public AsyncInvoker<UpdateSparseBackupPolicyRequest, UpdateSparseBackupPolicyResponse> updateSparseBackupPolicyAsyncInvoker(
+        UpdateSparseBackupPolicyRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.updateSparseBackupPolicy, hcClient);
     }
 
     /**

@@ -43,6 +43,11 @@ public class BatchAddServerNicOption {
 
     private Ipv6Bandwidth ipv6Bandwidth;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "efi_enable")
+
+    private Boolean efiEnable;
+
     public BatchAddServerNicOption withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -170,6 +175,23 @@ public class BatchAddServerNicOption {
         this.ipv6Bandwidth = ipv6Bandwidth;
     }
 
+    public BatchAddServerNicOption withEfiEnable(Boolean efiEnable) {
+        this.efiEnable = efiEnable;
+        return this;
+    }
+
+    /**
+     * 使能网卡的vRoCE能力，只支持从网卡，主网卡不支持。
+     * @return efiEnable
+     */
+    public Boolean getEfiEnable() {
+        return efiEnable;
+    }
+
+    public void setEfiEnable(Boolean efiEnable) {
+        this.efiEnable = efiEnable;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -182,12 +204,12 @@ public class BatchAddServerNicOption {
         return Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.portId, that.portId)
             && Objects.equals(this.securityGroups, that.securityGroups)
             && Objects.equals(this.ipAddress, that.ipAddress) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
-            && Objects.equals(this.ipv6Bandwidth, that.ipv6Bandwidth);
+            && Objects.equals(this.ipv6Bandwidth, that.ipv6Bandwidth) && Objects.equals(this.efiEnable, that.efiEnable);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subnetId, portId, securityGroups, ipAddress, ipv6Enable, ipv6Bandwidth);
+        return Objects.hash(subnetId, portId, securityGroups, ipAddress, ipv6Enable, ipv6Bandwidth, efiEnable);
     }
 
     @Override
@@ -200,6 +222,7 @@ public class BatchAddServerNicOption {
         sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("    ipv6Bandwidth: ").append(toIndentedString(ipv6Bandwidth)).append("\n");
+        sb.append("    efiEnable: ").append(toIndentedString(efiEnable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

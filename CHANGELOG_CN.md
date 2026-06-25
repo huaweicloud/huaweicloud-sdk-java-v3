@@ -1,3 +1,216 @@
+# 3.1.202 2026-06-25
+
+### HuaweiCloud SDK BSS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`UpdatePeriodToOnDemandInstantly`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK ECS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **BatchAddServerNics**
+    - 请求参数变更
+      - `+ nics.efi_enable`
+  - **CreatePostPaidServers**
+    - 请求参数变更
+      - `+ server.nics.efi_enable`
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **CreateGaussMySqlReadonlyNode**
+    - 请求参数变更
+      - `+ charge_mode`
+  - **ListStarrocksInstanceInfo**
+    - 响应参数变更
+      - `+ instances.users_sync_switch_on`
+  - **ListImmediateJobs**
+    - 响应参数变更
+      - `+ action_names`
+      - `- jobs.action_names`
+  - **ShowAutoScalingPolicy**
+    - 响应参数变更
+      - `+ reduce_threshold`
+  - **UpdateAutoScalingPolicy**
+    - 请求参数变更
+      - `+ reduce_threshold`
+  - **UploadImportExcelTemplate**
+    - 请求参数变更
+      - `+ database_scope`
+  - **ShowGaussMySqlBackupList**
+    - 响应参数变更
+      - `* backups.size: int64 -> double`
+
+### HuaweiCloud SDK IAMAccessAnalyzer
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowFinding**
+    - 响应参数变更
+      - `+ finding.finding_details.unused_permission_details.actions.role_sources`
+      - `+ finding.finding_details.unused_permission_details.actions.identity_policy_sources`
+
+### HuaweiCloud SDK ModelArts
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持以下接口：
+    - `ListWorkloads`
+    - `ShowWorkloadStatistics`
+    - `ShowNodeConfigTemplate`
+    - `ShowOsQuota`
+    - `ListResourceFlavors`
+    - `ListPools`
+    - `CreatePool`
+    - `ShowPoolMonitor`
+    - `ShowPoolStatistics`
+    - `ShowPoolRuntimeMetrics`
+    - `ListNetworks`
+    - `CreateNetwork`
+    - `ListEvents`
+    - `ListPoolNodes`
+    - `BatchDeletePoolNodes`
+    - `BatchUpdatePoolNodes`
+    - `BatchLockPoolNodes`
+    - `BatchUnlockPoolNodes`
+    - `BatchRebootPoolNodes`
+    - `BatchResetPoolNodes`
+    - `BatchResizePoolNodes`
+    - `BatchMigratePoolNodes`
+    - `BatchBindPoolNodes`
+    - `ShowOsConfig`
+    - `ShowPluginTemplate`
+    - `ListPluginTemplates`
+    - `ListNodePools`
+    - `CreateNodePool`
+    - `ListNodePoolNodes`
+    - `ListPoolPlugins`
+    - `CreatePoolPlugin`
+    - `ShowOrder`
+    - `ListPoolTags`
+    - `ListJobs`
+    - `ShowPool`
+    - `DeletePool`
+    - `ShowNetwork`
+    - `DeleteNetwork`
+    - `ShowNodePool`
+    - `DeleteNodePool`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK RDS
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 支持接口`ShowBackupUsage`、`ListInstanceBackupSummary`、`ListSparseBackupPolicy`、`UpdateSparseBackupPolicy`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK SWR
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListGlobalFeatureGates**
+    - 响应参数变更
+      - `+ enableIntranetAccessSwitch`
+  - **ListInstanceReplicationPolicyExecSubTasks**
+    - 响应参数变更
+      - `* sub_tasks.job_id: int32 -> string`
+
+### HuaweiCloud SDK VOD
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`ShowHttpsConfig`、`UpdateHttpsConfig`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK WAF
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ShowCcRule**
+    - 响应参数变更
+      - `+ cc_priority`
+      - `+ priority`
+  - **UpdateCcRule**
+    - 请求参数变更
+      - `+ priority`
+      - `+ cc_priority`
+    - 响应参数变更
+      - `+ cc_priority`
+      - `+ priority`
+  - **DeleteCcRule**
+    - 响应参数变更
+      - `+ cc_priority`
+      - `+ priority`
+  - **BatchUpdateCcRules**
+    - 请求参数变更
+      - `+ priority`
+      - `+ cc_priority`
+  - **CreateCcRule**
+    - 请求参数变更
+      - `+ priority`
+      - `+ cc_priority`
+    - 响应参数变更
+      - `+ cc_priority`
+      - `+ priority`
+  - **ListCcRules**
+    - 响应参数变更
+      - `+ items.cc_priority`
+  - **BatchCreateCcRule**
+    - 请求参数变更
+      - `+ priority`
+      - `+ cc_priority`
+    - 响应参数变更
+      - `+ cc_priority`
+      - `+ priority`
+  - **ListCcPolicyRules**
+    - 响应参数变更
+      - `+ items.cc_priority`
+
 # 3.1.201 2026-06-18
 
 ### HuaweiCloud SDK CBH

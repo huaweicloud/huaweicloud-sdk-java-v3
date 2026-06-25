@@ -229,6 +229,16 @@ public class UpdateCcRuleResponse extends SdkResponse {
 
     private Integer producer;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "priority")
+
+    private Integer priority;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cc_priority")
+
+    private Integer ccPriority;
+
     public UpdateCcRuleResponse withName(String name) {
         this.name = name;
         return this;
@@ -637,6 +647,40 @@ public class UpdateCcRuleResponse extends SdkResponse {
         this.producer = producer;
     }
 
+    public UpdateCcRuleResponse withPriority(Integer priority) {
+        this.priority = priority;
+        return this;
+    }
+
+    /**
+     * 执行该规则的优先级，值越小，优先级越高，值相同时，规则创建时间早，优先级越高。取值范围：1到100。 本字段仅在边缘安全场景生效
+     * @return priority
+     */
+    public Integer getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
+    public UpdateCcRuleResponse withCcPriority(Integer ccPriority) {
+        this.ccPriority = ccPriority;
+        return this;
+    }
+
+    /**
+     * 执行该规则的优先级，值越小，优先级越高，值相同时，规则创建时间早，优先级越高。取值范围：0到65535。 本字段仅在非边缘安全场景生效
+     * @return ccPriority
+     */
+    public Integer getCcPriority() {
+        return ccPriority;
+    }
+
+    public void setCcPriority(Integer ccPriority) {
+        this.ccPriority = ccPriority;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -658,7 +702,8 @@ public class UpdateCcRuleResponse extends SdkResponse {
             && Objects.equals(this.regionAggregation, that.regionAggregation)
             && Objects.equals(this.description, that.description) && Objects.equals(this.totalNum, that.totalNum)
             && Objects.equals(this.unaggregation, that.unaggregation) && Objects.equals(this.agingTime, that.agingTime)
-            && Objects.equals(this.producer, that.producer);
+            && Objects.equals(this.producer, that.producer) && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.ccPriority, that.ccPriority);
     }
 
     @Override
@@ -684,7 +729,9 @@ public class UpdateCcRuleResponse extends SdkResponse {
             totalNum,
             unaggregation,
             agingTime,
-            producer);
+            producer,
+            priority,
+            ccPriority);
     }
 
     @Override
@@ -713,6 +760,8 @@ public class UpdateCcRuleResponse extends SdkResponse {
         sb.append("    unaggregation: ").append(toIndentedString(unaggregation)).append("\n");
         sb.append("    agingTime: ").append(toIndentedString(agingTime)).append("\n");
         sb.append("    producer: ").append(toIndentedString(producer)).append("\n");
+        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+        sb.append("    ccPriority: ").append(toIndentedString(ccPriority)).append("\n");
         sb.append("}");
         return sb.toString();
     }

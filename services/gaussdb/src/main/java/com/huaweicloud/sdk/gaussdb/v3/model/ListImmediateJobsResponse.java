@@ -24,6 +24,11 @@ public class ListImmediateJobsResponse extends SdkResponse {
 
     private Integer totalCount;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action_names")
+
+    private List<String> actionNames = null;
+
     public ListImmediateJobsResponse withJobs(List<TaskDetailInfo> jobs) {
         this.jobs = jobs;
         return this;
@@ -74,6 +79,39 @@ public class ListImmediateJobsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
+    public ListImmediateJobsResponse withActionNames(List<String> actionNames) {
+        this.actionNames = actionNames;
+        return this;
+    }
+
+    public ListImmediateJobsResponse addActionNamesItem(String actionNamesItem) {
+        if (this.actionNames == null) {
+            this.actionNames = new ArrayList<>();
+        }
+        this.actionNames.add(actionNamesItem);
+        return this;
+    }
+
+    public ListImmediateJobsResponse withActionNames(Consumer<List<String>> actionNamesSetter) {
+        if (this.actionNames == null) {
+            this.actionNames = new ArrayList<>();
+        }
+        actionNamesSetter.accept(this.actionNames);
+        return this;
+    }
+
+    /**
+     * **参数解释**：  支持筛选的任务名称。  **取值范围**：  不涉及。
+     * @return actionNames
+     */
+    public List<String> getActionNames() {
+        return actionNames;
+    }
+
+    public void setActionNames(List<String> actionNames) {
+        this.actionNames = actionNames;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,12 +121,13 @@ public class ListImmediateJobsResponse extends SdkResponse {
             return false;
         }
         ListImmediateJobsResponse that = (ListImmediateJobsResponse) obj;
-        return Objects.equals(this.jobs, that.jobs) && Objects.equals(this.totalCount, that.totalCount);
+        return Objects.equals(this.jobs, that.jobs) && Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.actionNames, that.actionNames);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobs, totalCount);
+        return Objects.hash(jobs, totalCount, actionNames);
     }
 
     @Override
@@ -97,6 +136,7 @@ public class ListImmediateJobsResponse extends SdkResponse {
         sb.append("class ListImmediateJobsResponse {\n");
         sb.append("    jobs: ").append(toIndentedString(jobs)).append("\n");
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+        sb.append("    actionNames: ").append(toIndentedString(actionNames)).append("\n");
         sb.append("}");
         return sb.toString();
     }
