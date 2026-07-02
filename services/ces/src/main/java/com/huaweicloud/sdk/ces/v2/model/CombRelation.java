@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * **参数解释** 组合匹配参数。 **约束限制** 不涉及。 
+ * **参数解释** [天翼云、移动云不支持该字段。](tag:ctc,cmcc)组合匹配参数。 **约束限制** 不涉及。 
  */
 public class CombRelation {
 

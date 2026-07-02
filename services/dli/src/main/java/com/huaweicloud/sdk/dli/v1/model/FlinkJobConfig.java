@@ -204,6 +204,11 @@ public class FlinkJobConfig {
     private String runtimeConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flink_log_config")
+
+    private String flinkLogConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "graph_editor_enabled")
 
     private Boolean graphEditorEnabled;
@@ -721,6 +726,23 @@ public class FlinkJobConfig {
         this.runtimeConfig = runtimeConfig;
     }
 
+    public FlinkJobConfig withFlinkLogConfig(String flinkLogConfig) {
+        this.flinkLogConfig = flinkLogConfig;
+        return this;
+    }
+
+    /**
+     * Flink作业日志级别配置（JSON格式）。 支持全局root_logger_level及类/包级别loggers_level_of_class精细化控制，可选值为：TRACE，DEBUG，INFO，WARN，ERROR。 例如：{\\\"root_logger_level\\\":\\\"INFO\\\",\\\"loggers_level_of_class\\\":{\\\"org.apache.flink\\\":\\\"WARN\\\",\\\"org.apache.kafka.clients.consumer.KafkaConsumer\\\":\\\"DEBUG\\\",\\\"com.mycompany.job.MainFunction\\\":\\\"TRACE\\\"}}
+     * @return flinkLogConfig
+     */
+    public String getFlinkLogConfig() {
+        return flinkLogConfig;
+    }
+
+    public void setFlinkLogConfig(String flinkLogConfig) {
+        this.flinkLogConfig = flinkLogConfig;
+    }
+
     public FlinkJobConfig withGraphEditorEnabled(Boolean graphEditorEnabled) {
         this.graphEditorEnabled = graphEditorEnabled;
         return this;
@@ -1013,6 +1035,7 @@ public class FlinkJobConfig {
             && Objects.equals(this.executionAgencyUrn, that.executionAgencyUrn)
             && Objects.equals(this.resumeCheckpoint, that.resumeCheckpoint)
             && Objects.equals(this.runtimeConfig, that.runtimeConfig)
+            && Objects.equals(this.flinkLogConfig, that.flinkLogConfig)
             && Objects.equals(this.graphEditorEnabled, that.graphEditorEnabled)
             && Objects.equals(this.graphEditorData, that.graphEditorData)
             && Objects.equals(this.resumeMaxNum, that.resumeMaxNum)
@@ -1052,6 +1075,7 @@ public class FlinkJobConfig {
             executionAgencyUrn,
             resumeCheckpoint,
             runtimeConfig,
+            flinkLogConfig,
             graphEditorEnabled,
             graphEditorData,
             resumeMaxNum,
@@ -1096,6 +1120,7 @@ public class FlinkJobConfig {
         sb.append("    executionAgencyUrn: ").append(toIndentedString(executionAgencyUrn)).append("\n");
         sb.append("    resumeCheckpoint: ").append(toIndentedString(resumeCheckpoint)).append("\n");
         sb.append("    runtimeConfig: ").append(toIndentedString(runtimeConfig)).append("\n");
+        sb.append("    flinkLogConfig: ").append(toIndentedString(flinkLogConfig)).append("\n");
         sb.append("    graphEditorEnabled: ").append(toIndentedString(graphEditorEnabled)).append("\n");
         sb.append("    graphEditorData: ").append(toIndentedString(graphEditorData)).append("\n");
         sb.append("    resumeMaxNum: ").append(toIndentedString(resumeMaxNum)).append("\n");

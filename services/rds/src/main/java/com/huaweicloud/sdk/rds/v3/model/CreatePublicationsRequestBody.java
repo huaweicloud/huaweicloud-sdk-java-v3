@@ -26,7 +26,7 @@ public class CreatePublicationsRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_create_snapshot_immediately")
 
-    private String isCreateSnapshotImmediately;
+    private Boolean isCreateSnapshotImmediately;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subscription_options")
@@ -36,7 +36,7 @@ public class CreatePublicationsRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_schedule")
 
-    private OperateUsedJobSchedule jobSchedule;
+    private OperateUsedJobScheduleCreate jobSchedule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_select_all_table")
@@ -87,7 +87,7 @@ public class CreatePublicationsRequestBody {
         this.publicationDatabase = publicationDatabase;
     }
 
-    public CreatePublicationsRequestBody withIsCreateSnapshotImmediately(String isCreateSnapshotImmediately) {
+    public CreatePublicationsRequestBody withIsCreateSnapshotImmediately(Boolean isCreateSnapshotImmediately) {
         this.isCreateSnapshotImmediately = isCreateSnapshotImmediately;
         return this;
     }
@@ -96,11 +96,11 @@ public class CreatePublicationsRequestBody {
      * 是否立即创建快照。
      * @return isCreateSnapshotImmediately
      */
-    public String getIsCreateSnapshotImmediately() {
+    public Boolean getIsCreateSnapshotImmediately() {
         return isCreateSnapshotImmediately;
     }
 
-    public void setIsCreateSnapshotImmediately(String isCreateSnapshotImmediately) {
+    public void setIsCreateSnapshotImmediately(Boolean isCreateSnapshotImmediately) {
         this.isCreateSnapshotImmediately = isCreateSnapshotImmediately;
     }
 
@@ -131,14 +131,14 @@ public class CreatePublicationsRequestBody {
         this.subscriptionOptions = subscriptionOptions;
     }
 
-    public CreatePublicationsRequestBody withJobSchedule(OperateUsedJobSchedule jobSchedule) {
+    public CreatePublicationsRequestBody withJobSchedule(OperateUsedJobScheduleCreate jobSchedule) {
         this.jobSchedule = jobSchedule;
         return this;
     }
 
-    public CreatePublicationsRequestBody withJobSchedule(Consumer<OperateUsedJobSchedule> jobScheduleSetter) {
+    public CreatePublicationsRequestBody withJobSchedule(Consumer<OperateUsedJobScheduleCreate> jobScheduleSetter) {
         if (this.jobSchedule == null) {
-            this.jobSchedule = new OperateUsedJobSchedule();
+            this.jobSchedule = new OperateUsedJobScheduleCreate();
             jobScheduleSetter.accept(this.jobSchedule);
         }
 
@@ -149,11 +149,11 @@ public class CreatePublicationsRequestBody {
      * Get jobSchedule
      * @return jobSchedule
      */
-    public OperateUsedJobSchedule getJobSchedule() {
+    public OperateUsedJobScheduleCreate getJobSchedule() {
         return jobSchedule;
     }
 
-    public void setJobSchedule(OperateUsedJobSchedule jobSchedule) {
+    public void setJobSchedule(OperateUsedJobScheduleCreate jobSchedule) {
         this.jobSchedule = jobSchedule;
     }
 

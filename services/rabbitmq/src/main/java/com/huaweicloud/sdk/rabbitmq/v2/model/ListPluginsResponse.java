@@ -15,9 +15,31 @@ import java.util.function.Consumer;
 public class ListPluginsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "plugins_modifying")
+
+    private Boolean pluginsModifying;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "plugins")
 
     private List<PluginEntity> plugins = null;
+
+    public ListPluginsResponse withPluginsModifying(Boolean pluginsModifying) {
+        this.pluginsModifying = pluginsModifying;
+        return this;
+    }
+
+    /**
+     * 插件是否在变更中。
+     * @return pluginsModifying
+     */
+    public Boolean getPluginsModifying() {
+        return pluginsModifying;
+    }
+
+    public void setPluginsModifying(Boolean pluginsModifying) {
+        this.pluginsModifying = pluginsModifying;
+    }
 
     public ListPluginsResponse withPlugins(List<PluginEntity> plugins) {
         this.plugins = plugins;
@@ -61,18 +83,20 @@ public class ListPluginsResponse extends SdkResponse {
             return false;
         }
         ListPluginsResponse that = (ListPluginsResponse) obj;
-        return Objects.equals(this.plugins, that.plugins);
+        return Objects.equals(this.pluginsModifying, that.pluginsModifying)
+            && Objects.equals(this.plugins, that.plugins);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(plugins);
+        return Objects.hash(pluginsModifying, plugins);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListPluginsResponse {\n");
+        sb.append("    pluginsModifying: ").append(toIndentedString(pluginsModifying)).append("\n");
         sb.append("    plugins: ").append(toIndentedString(plugins)).append("\n");
         sb.append("}");
         return sb.toString();

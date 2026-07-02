@@ -572,6 +572,16 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("namespace",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricsRequest::getNamespace, ListMetricsRequest::setNamespace));
+        builder.<String>withRequestField("metric_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMetricsRequest::getMetricName, ListMetricsRequest::setMetricName));
         builder.<String>withRequestField("dim.0",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -587,31 +597,26 @@ public class CesMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMetricsRequest::getDim2, ListMetricsRequest::setDim2));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListMetricsRequest::getLimit, ListMetricsRequest::setLimit));
-        builder.<String>withRequestField("metric_name",
+        builder.<String>withRequestField("dim.3",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMetricsRequest::getMetricName, ListMetricsRequest::setMetricName));
-        builder.<String>withRequestField("namespace",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListMetricsRequest::getNamespace, ListMetricsRequest::setNamespace));
-        builder.<ListMetricsRequest.OrderEnum>withRequestField("order",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListMetricsRequest.OrderEnum.class),
-            f -> f.withMarshaller(ListMetricsRequest::getOrder, ListMetricsRequest::setOrder));
+            f -> f.withMarshaller(ListMetricsRequest::getDim3, ListMetricsRequest::setDim3));
         builder.<String>withRequestField("start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMetricsRequest::getStart, ListMetricsRequest::setStart));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMetricsRequest::getLimit, ListMetricsRequest::setLimit));
+        builder.<ListMetricsRequest.OrderEnum>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListMetricsRequest.OrderEnum.class),
+            f -> f.withMarshaller(ListMetricsRequest::getOrder, ListMetricsRequest::setOrder));
 
         // response
 

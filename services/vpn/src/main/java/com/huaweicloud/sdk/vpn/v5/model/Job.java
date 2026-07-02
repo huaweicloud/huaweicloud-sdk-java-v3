@@ -139,6 +139,16 @@ public class Job {
          */
         public static final StatusEnum FAIL = new StatusEnum("fail");
 
+        /**
+         * Enum RUNNING for value: "running"
+         */
+        public static final StatusEnum RUNNING = new StatusEnum("running");
+
+        /**
+         * Enum INIT for value: "init"
+         */
+        public static final StatusEnum INIT = new StatusEnum("init");
+
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
@@ -149,6 +159,8 @@ public class Job {
             map.put("rolling_back", ROLLING_BACK);
             map.put("rollback_success", ROLLBACK_SUCCESS);
             map.put("fail", FAIL);
+            map.put("running", RUNNING);
+            map.put("init", INIT);
             return Collections.unmodifiableMap(map);
         }
 
@@ -207,6 +219,11 @@ public class Job {
     @JsonProperty(value = "created_at")
 
     private OffsetDateTime createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expected_time_seconds")
+
+    private Integer expectedTimeSeconds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "finished_at")
@@ -308,6 +325,23 @@ public class Job {
         this.createdAt = createdAt;
     }
 
+    public Job withExpectedTimeSeconds(Integer expectedTimeSeconds) {
+        this.expectedTimeSeconds = expectedTimeSeconds;
+        return this;
+    }
+
+    /**
+     * 预计剩余执行时间，单位：s
+     * @return expectedTimeSeconds
+     */
+    public Integer getExpectedTimeSeconds() {
+        return expectedTimeSeconds;
+    }
+
+    public void setExpectedTimeSeconds(Integer expectedTimeSeconds) {
+        this.expectedTimeSeconds = expectedTimeSeconds;
+    }
+
     public Job withFinishedAt(OffsetDateTime finishedAt) {
         this.finishedAt = finishedAt;
         return this;
@@ -386,13 +420,16 @@ public class Job {
         Job that = (Job) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.resourceId, that.resourceId)
             && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.finishedAt, that.finishedAt)
-            && Objects.equals(this.errorMessage, that.errorMessage) && Objects.equals(this.subJobs, that.subJobs);
+            && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.expectedTimeSeconds, that.expectedTimeSeconds)
+            && Objects.equals(this.finishedAt, that.finishedAt) && Objects.equals(this.errorMessage, that.errorMessage)
+            && Objects.equals(this.subJobs, that.subJobs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, resourceId, jobType, status, createdAt, finishedAt, errorMessage, subJobs);
+        return Objects
+            .hash(id, resourceId, jobType, status, createdAt, expectedTimeSeconds, finishedAt, errorMessage, subJobs);
     }
 
     @Override
@@ -404,6 +441,7 @@ public class Job {
         sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    expectedTimeSeconds: ").append(toIndentedString(expectedTimeSeconds)).append("\n");
         sb.append("    finishedAt: ").append(toIndentedString(finishedAt)).append("\n");
         sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
         sb.append("    subJobs: ").append(toIndentedString(subJobs)).append("\n");

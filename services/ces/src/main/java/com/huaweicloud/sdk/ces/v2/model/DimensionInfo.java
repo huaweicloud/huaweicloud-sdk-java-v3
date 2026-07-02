@@ -24,7 +24,7 @@ public class DimensionInfo {
     private String name;
 
     /**
-     * **参数解释**： 资源类型。 **约束限制** view参数取值为柱状图 条形图 环形柱状图 表格时，则filter_type参数不支持指定资源 **取值范围**： - all_instances: 全部资源 - specific_instances: 指定资源 **默认取值** 不涉及 
+     * **参数解释**： 资源类型。 **约束限制** 1、view参数取值为柱状图 条形图 环形柱状图 表格时，filter_type参数不支持指定资源类型 2、rollup_enable参数为空时，filter_type参数不支持资源分组类型 **取值范围**： - all_instances: 全部资源 - specific_instances: 指定资源 - resource_groups：资源分组 **默认取值** 不涉及 
      */
     public static final class FilterTypeEnum {
 
@@ -38,12 +38,18 @@ public class DimensionInfo {
          */
         public static final FilterTypeEnum SPECIFIC_INSTANCES = new FilterTypeEnum("specific_instances");
 
+        /**
+         * Enum RESOURCE_GROUPS for value: "resource_groups"
+         */
+        public static final FilterTypeEnum RESOURCE_GROUPS = new FilterTypeEnum("resource_groups");
+
         private static final Map<String, FilterTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, FilterTypeEnum> createStaticFields() {
             Map<String, FilterTypeEnum> map = new HashMap<>();
             map.put("all_instances", ALL_INSTANCES);
             map.put("specific_instances", SPECIFIC_INSTANCES);
+            map.put("resource_groups", RESOURCE_GROUPS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -109,7 +115,7 @@ public class DimensionInfo {
     }
 
     /**
-     * **参数解释**： 维度名称。 **约束限制** 不涉及 **取值范围**： 多维度用逗号分隔，各服务资源的维度名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。。必须以字母开头，只能包含0-9/a-z/A-Z/_/-，多维度用\",\"分隔，每个维度的最大长度为32。总长度为[1,131]个字符。目前最大支持4个维度。举例：单维度场景：instance_id；多维度场景：instance_id,disk **默认取值** 不涉及 
+     * **参数解释**： 维度名称。 **约束限制** 不涉及 **取值范围**： 多维度用逗号分隔，各服务资源的维度名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/zh-cn/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。必须以字母开头，只能包含0-9/a-z/A-Z/_/-，多维度用\",\"分隔，每个维度的最大长度为32。总长度为[1,131]个字符。目前最大支持4个维度。举例：单维度场景：instance_id；多维度场景：instance_id,disk **默认取值** 不涉及 
      * @return name
      */
     public String getName() {
@@ -126,7 +132,7 @@ public class DimensionInfo {
     }
 
     /**
-     * **参数解释**： 资源类型。 **约束限制** view参数取值为柱状图 条形图 环形柱状图 表格时，则filter_type参数不支持指定资源 **取值范围**： - all_instances: 全部资源 - specific_instances: 指定资源 **默认取值** 不涉及 
+     * **参数解释**： 资源类型。 **约束限制** 1、view参数取值为柱状图 条形图 环形柱状图 表格时，filter_type参数不支持指定资源类型 2、rollup_enable参数为空时，filter_type参数不支持资源分组类型 **取值范围**： - all_instances: 全部资源 - specific_instances: 指定资源 - resource_groups：资源分组 **默认取值** 不涉及 
      * @return filterType
      */
     public FilterTypeEnum getFilterType() {

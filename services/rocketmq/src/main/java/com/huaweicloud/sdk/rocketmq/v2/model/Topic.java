@@ -116,6 +116,11 @@ public class Topic {
     private PermissionEnum permission;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private Long createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "brokers")
 
     private List<TopicBrokers> brokers = null;
@@ -275,6 +280,23 @@ public class Topic {
         this.permission = permission;
     }
 
+    public Topic withCreatedAt(Long createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 创建时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return createdAt
+     */
+    public Long getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Long createdAt) {
+        this.createdAt = createdAt;
+    }
+
     public Topic withBrokers(List<TopicBrokers> brokers) {
         this.brokers = brokers;
         return this;
@@ -336,13 +358,13 @@ public class Topic {
         Topic that = (Topic) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.totalReadQueueNum, that.totalReadQueueNum)
             && Objects.equals(this.totalWriteQueueNum, that.totalWriteQueueNum)
-            && Objects.equals(this.permission, that.permission) && Objects.equals(this.brokers, that.brokers)
-            && Objects.equals(this.messageType, that.messageType);
+            && Objects.equals(this.permission, that.permission) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.brokers, that.brokers) && Objects.equals(this.messageType, that.messageType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, totalReadQueueNum, totalWriteQueueNum, permission, brokers, messageType);
+        return Objects.hash(name, totalReadQueueNum, totalWriteQueueNum, permission, createdAt, brokers, messageType);
     }
 
     @Override
@@ -353,6 +375,7 @@ public class Topic {
         sb.append("    totalReadQueueNum: ").append(toIndentedString(totalReadQueueNum)).append("\n");
         sb.append("    totalWriteQueueNum: ").append(toIndentedString(totalWriteQueueNum)).append("\n");
         sb.append("    permission: ").append(toIndentedString(permission)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    brokers: ").append(toIndentedString(brokers)).append("\n");
         sb.append("    messageType: ").append(toIndentedString(messageType)).append("\n");
         sb.append("}");

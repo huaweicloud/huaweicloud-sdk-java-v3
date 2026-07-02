@@ -28,12 +28,12 @@ public class CertsRecordsDatastore {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fileName")
 
-    private Boolean fileName;
+    private String fileName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updateAt")
 
-    private Boolean updateAt;
+    private String updateAt;
 
     public CertsRecordsDatastore withId(String id) {
         this.id = id;
@@ -86,7 +86,7 @@ public class CertsRecordsDatastore {
         this.fileLocation = fileLocation;
     }
 
-    public CertsRecordsDatastore withFileName(Boolean fileName) {
+    public CertsRecordsDatastore withFileName(String fileName) {
         this.fileName = fileName;
         return this;
     }
@@ -95,15 +95,15 @@ public class CertsRecordsDatastore {
      * 证书记录文件名称。
      * @return fileName
      */
-    public Boolean getFileName() {
+    public String getFileName() {
         return fileName;
     }
 
-    public void setFileName(Boolean fileName) {
+    public void setFileName(String fileName) {
         this.fileName = fileName;
     }
 
-    public CertsRecordsDatastore withUpdateAt(Boolean updateAt) {
+    public CertsRecordsDatastore withUpdateAt(String updateAt) {
         this.updateAt = updateAt;
         return this;
     }
@@ -112,11 +112,11 @@ public class CertsRecordsDatastore {
      * 证书记录更新时间。
      * @return updateAt
      */
-    public Boolean getUpdateAt() {
+    public String getUpdateAt() {
         return updateAt;
     }
 
-    public void setUpdateAt(Boolean updateAt) {
+    public void setUpdateAt(String updateAt) {
         this.updateAt = updateAt;
     }
 

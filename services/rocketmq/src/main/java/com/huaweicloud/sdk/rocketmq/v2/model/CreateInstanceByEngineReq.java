@@ -89,6 +89,16 @@ public class CreateInstanceByEngineReq {
     private Boolean ipv6Enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_broker_address")
+
+    private String ipv6BrokerAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_namesrv_address")
+
+    private String ipv6NamesrvAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "proxy_enable")
 
     private Boolean proxyEnable;
@@ -404,6 +414,40 @@ public class CreateInstanceByEngineReq {
         this.ipv6Enable = ipv6Enable;
     }
 
+    public CreateInstanceByEngineReq withIpv6BrokerAddress(String ipv6BrokerAddress) {
+        this.ipv6BrokerAddress = ipv6BrokerAddress;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 业务数据IPv6的地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return ipv6BrokerAddress
+     */
+    public String getIpv6BrokerAddress() {
+        return ipv6BrokerAddress;
+    }
+
+    public void setIpv6BrokerAddress(String ipv6BrokerAddress) {
+        this.ipv6BrokerAddress = ipv6BrokerAddress;
+    }
+
+    public CreateInstanceByEngineReq withIpv6NamesrvAddress(String ipv6NamesrvAddress) {
+        this.ipv6NamesrvAddress = ipv6NamesrvAddress;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 元数据IPv6的地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return ipv6NamesrvAddress
+     */
+    public String getIpv6NamesrvAddress() {
+        return ipv6NamesrvAddress;
+    }
+
+    public void setIpv6NamesrvAddress(String ipv6NamesrvAddress) {
+        this.ipv6NamesrvAddress = ipv6NamesrvAddress;
+    }
+
     public CreateInstanceByEngineReq withProxyEnable(Boolean proxyEnable) {
         this.proxyEnable = proxyEnable;
         return this;
@@ -585,6 +629,8 @@ public class CreateInstanceByEngineReq {
             && Objects.equals(this.storageSpecCode, that.storageSpecCode)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.enableAcl, that.enableAcl) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.ipv6BrokerAddress, that.ipv6BrokerAddress)
+            && Objects.equals(this.ipv6NamesrvAddress, that.ipv6NamesrvAddress)
             && Objects.equals(this.proxyEnable, that.proxyEnable)
             && Objects.equals(this.enablePublicip, that.enablePublicip)
             && Objects.equals(this.diskEncryptedEnable, that.diskEncryptedEnable)
@@ -611,6 +657,8 @@ public class CreateInstanceByEngineReq {
             enterpriseProjectId,
             enableAcl,
             ipv6Enable,
+            ipv6BrokerAddress,
+            ipv6NamesrvAddress,
             proxyEnable,
             enablePublicip,
             diskEncryptedEnable,
@@ -641,6 +689,8 @@ public class CreateInstanceByEngineReq {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    enableAcl: ").append(toIndentedString(enableAcl)).append("\n");
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
+        sb.append("    ipv6BrokerAddress: ").append(toIndentedString(ipv6BrokerAddress)).append("\n");
+        sb.append("    ipv6NamesrvAddress: ").append(toIndentedString(ipv6NamesrvAddress)).append("\n");
         sb.append("    proxyEnable: ").append(toIndentedString(proxyEnable)).append("\n");
         sb.append("    enablePublicip: ").append(toIndentedString(enablePublicip)).append("\n");
         sb.append("    diskEncryptedEnable: ").append(toIndentedString(diskEncryptedEnable)).append("\n");

@@ -9,20 +9,20 @@ import java.util.Objects;
 /**
  * Response Object
  */
-public class StopVpecpResponse extends SdkResponse {
+public class StartVpcepResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
     private String action;
 
-    public StopVpecpResponse withAction(String action) {
+    public StartVpcepResponse withAction(String action) {
         this.action = action;
         return this;
     }
 
     /**
-     * 操作行为。固定为：deleteVpcepservice，表示已关闭终端节点。
+     * 操作行为。固定为：createVpcepservice，表示已开启终端节点。
      * @return action
      */
     public String getAction() {
@@ -41,7 +41,7 @@ public class StopVpecpResponse extends SdkResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopVpecpResponse that = (StopVpecpResponse) obj;
+        StartVpcepResponse that = (StartVpcepResponse) obj;
         return Objects.equals(this.action, that.action);
     }
 
@@ -53,7 +53,7 @@ public class StopVpecpResponse extends SdkResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class StopVpecpResponse {\n");
+        sb.append("class StartVpcepResponse {\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("}");
         return sb.toString();

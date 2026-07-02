@@ -43,6 +43,81 @@ public class WidgetMetric {
 
     private ExtraInfo extraInfo;
 
+    /**
+     * **参数解释** 阈值线所在的Y轴位置 **约束限制** 不涉及                **取值范围** 枚举值： - left 左Y轴 - right 右Y轴 **默认取值** 不涉及 
+     */
+    public static final class YAxisPositionEnum {
+
+        /**
+         * Enum LEFT for value: "left"
+         */
+        public static final YAxisPositionEnum LEFT = new YAxisPositionEnum("left");
+
+        /**
+         * Enum RIGHT for value: "right"
+         */
+        public static final YAxisPositionEnum RIGHT = new YAxisPositionEnum("right");
+
+        private static final Map<String, YAxisPositionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, YAxisPositionEnum> createStaticFields() {
+            Map<String, YAxisPositionEnum> map = new HashMap<>();
+            map.put("left", LEFT);
+            map.put("right", RIGHT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        YAxisPositionEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static YAxisPositionEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new YAxisPositionEnum(value));
+        }
+
+        public static YAxisPositionEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof YAxisPositionEnum) {
+                return this.value.equals(((YAxisPositionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "y_axis_position")
+
+    private YAxisPositionEnum yAxisPosition;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rollup_enable")
 
@@ -169,7 +244,7 @@ public class WidgetMetric {
     }
 
     /**
-     * **参数解释** 查询服务的命名空间，各服务命名空间请参阅[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg) **约束限制** 不涉及 **取值范围** 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度必须在 3 到 32个字符之间。 **默认取值** 不涉及 
+     * **参数解释** 查询服务的命名空间，各服务命名空间请参阅[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/zh-cn/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg) **约束限制** 不涉及 **取值范围** 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度必须在 3 到 32个字符之间。 **默认取值** 不涉及 
      * @return namespace
      */
     public String getNamespace() {
@@ -282,6 +357,25 @@ public class WidgetMetric {
         this.extraInfo = extraInfo;
     }
 
+    public WidgetMetric withYAxisPosition(YAxisPositionEnum yAxisPosition) {
+        this.yAxisPosition = yAxisPosition;
+        return this;
+    }
+
+    /**
+     * **参数解释** 阈值线所在的Y轴位置 **约束限制** 不涉及                **取值范围** 枚举值： - left 左Y轴 - right 右Y轴 **默认取值** 不涉及 
+     * @return yAxisPosition
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "y_axis_position")
+    public YAxisPositionEnum getYAxisPosition() {
+        return yAxisPosition;
+    }
+
+    public void setYAxisPosition(YAxisPositionEnum yAxisPosition) {
+        this.yAxisPosition = yAxisPosition;
+    }
+
     public WidgetMetric withRollupEnable(Boolean rollupEnable) {
         this.rollupEnable = rollupEnable;
         return this;
@@ -373,7 +467,7 @@ public class WidgetMetric {
     }
 
     /**
-     * **参数解释** 维度名称，多维度用逗号分隔，各服务资源的维度名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。，必须以字母开头，只能包含0-9/a-z/A-Z/_/-，多维度用\",\"分隔，每个维度的最大长度为32。总长度为[1,131]个字符。目前最大支持4个维度。举例：单维度场景：instance_id；多维度场景：instance_id,disk **约束限制** 不涉及           **取值范围** 长度为[1,131]个字符 **默认取值** 不涉及 
+     * **参数解释** 维度名称，多维度用逗号分隔，各服务资源的维度名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/zh-cn/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。必须以字母开头，只能包含0-9/a-z/A-Z/_/-，多维度用\",\"分隔，每个维度的最大长度为32。总长度为[1,131]个字符。目前最大支持4个维度。举例：单维度场景：instance_id；多维度场景：instance_id,disk。 **约束限制** 不涉及           **取值范围** 长度为[1,131]个字符 **默认取值** 不涉及 
      * @return metricDimension
      */
     public String getMetricDimension() {
@@ -443,7 +537,7 @@ public class WidgetMetric {
     }
 
     /**
-     * **参数解释** 资源的监控指标名称，必须以字母开头，只能包含0-9/a-z/A-Z/_，字符长度最短为1，最大为64；如：弹性云服务器中的监控指标cpu_util，表示弹性服务器的CPU使用率；文档数据库中的指标mongo001_command_ps，表示command执行频率；各服务资源的指标名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。 **约束限制** 不涉及 **取值范围** 长度为[1,96]个字符 **默认取值** 不涉及 
+     * **参数解释** 资源的监控指标名称，必须以字母开头，只能包含0-9/a-z/A-Z/_，字符长度最短为1，最大为64；如：弹性云服务器中的监控指标cpu_util，表示弹性服务器的CPU使用率；文档数据库中的指标mongo001_command_ps，表示command执行频率；各服务资源的指标名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/zh-cn/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。 **约束限制** 不涉及 **取值范围** 长度为[1,96]个字符 **默认取值** 不涉及 
      * @return topnMetricName
      */
     public String getTopnMetricName() {
@@ -465,7 +559,8 @@ public class WidgetMetric {
         WidgetMetric that = (WidgetMetric) obj;
         return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.dimensions, that.dimensions)
             && Objects.equals(this.metricName, that.metricName) && Objects.equals(this.alias, that.alias)
-            && Objects.equals(this.extraInfo, that.extraInfo) && Objects.equals(this.rollupEnable, that.rollupEnable)
+            && Objects.equals(this.extraInfo, that.extraInfo) && Objects.equals(this.yAxisPosition, that.yAxisPosition)
+            && Objects.equals(this.rollupEnable, that.rollupEnable)
             && Objects.equals(this.rollupFilter, that.rollupFilter)
             && Objects.equals(this.rollupDimension, that.rollupDimension)
             && Objects.equals(this.lastWeekCompareEnable, that.lastWeekCompareEnable)
@@ -482,6 +577,7 @@ public class WidgetMetric {
             metricName,
             alias,
             extraInfo,
+            yAxisPosition,
             rollupEnable,
             rollupFilter,
             rollupDimension,
@@ -503,6 +599,7 @@ public class WidgetMetric {
         sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
         sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
         sb.append("    extraInfo: ").append(toIndentedString(extraInfo)).append("\n");
+        sb.append("    yAxisPosition: ").append(toIndentedString(yAxisPosition)).append("\n");
         sb.append("    rollupEnable: ").append(toIndentedString(rollupEnable)).append("\n");
         sb.append("    rollupFilter: ").append(toIndentedString(rollupFilter)).append("\n");
         sb.append("    rollupDimension: ").append(toIndentedString(rollupDimension)).append("\n");

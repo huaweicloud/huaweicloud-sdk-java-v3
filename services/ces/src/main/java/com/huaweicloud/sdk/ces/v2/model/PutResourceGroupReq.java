@@ -189,7 +189,7 @@ public class PutResourceGroupReq {
     }
 
     /**
-     * **参数解释** 实例名称匹配参数。 **约束限制** type为NAME时必传，不超过50个实例。 
+     * **参数解释** [天翼云、移动云不支持该字段。](tag:ctc,cmcc)实例名称匹配参数。 **约束限制** type为NAME时必传，不超过50个实例。 
      * @return instances
      */
     public List<Instance> getInstances() {
@@ -206,7 +206,7 @@ public class PutResourceGroupReq {
     }
 
     /**
-     * **参数解释** 资源层级为云产品时的云产品名称 **约束限制** 不涉及。 **取值范围** 一般由\"服务命名空间,服务首层维度名称\"组成，如\"SYS.ECS,instance_id\"。多个云产品则用“;”隔开，如\"SERVICE.BMS,instance_id;SYS.ECS,instance_id\"。不超过10240个字符。 **默认取值** 不涉及。
+     * **参数解释** [天翼云、移动云不支持该字段。](tag:ctc,cmcc)资源层级为云产品时的云产品名称 **约束限制** 不涉及。 **取值范围** 一般由\"服务命名空间,服务首层维度名称\"组成，如\"SYS.ECS,instance_id\"。多个云产品则用“;”隔开，如\"SERVICE.BMS,instance_id;SYS.ECS,instance_id\"。不超过10240个字符。 **默认取值** 不涉及。
      * @return productNames
      */
     public String getProductNames() {

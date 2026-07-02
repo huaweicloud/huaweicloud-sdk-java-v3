@@ -63,6 +63,11 @@ public class ConsumerGroup {
 
     private Boolean groupOnline;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "topic_subscription_count")
+
+    private Long topicSubscriptionCount;
+
     public ConsumerGroup withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -265,6 +270,23 @@ public class ConsumerGroup {
         this.groupOnline = groupOnline;
     }
 
+    public ConsumerGroup withTopicSubscriptionCount(Long topicSubscriptionCount) {
+        this.topicSubscriptionCount = topicSubscriptionCount;
+        return this;
+    }
+
+    /**
+     * **参数解释**： Topic订阅数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return topicSubscriptionCount
+     */
+    public Long getTopicSubscriptionCount() {
+        return topicSubscriptionCount;
+    }
+
+    public void setTopicSubscriptionCount(Long topicSubscriptionCount) {
+        this.topicSubscriptionCount = topicSubscriptionCount;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -279,7 +301,8 @@ public class ConsumerGroup {
             && Objects.equals(this.groupDesc, that.groupDesc) && Objects.equals(this.retryMaxTime, that.retryMaxTime)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.permissions, that.permissions)
             && Objects.equals(this.consumeOrderly, that.consumeOrderly)
-            && Objects.equals(this.groupOnline, that.groupOnline);
+            && Objects.equals(this.groupOnline, that.groupOnline)
+            && Objects.equals(this.topicSubscriptionCount, that.topicSubscriptionCount);
     }
 
     @Override
@@ -293,7 +316,8 @@ public class ConsumerGroup {
             createdAt,
             permissions,
             consumeOrderly,
-            groupOnline);
+            groupOnline,
+            topicSubscriptionCount);
     }
 
     @Override
@@ -310,6 +334,7 @@ public class ConsumerGroup {
         sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
         sb.append("    consumeOrderly: ").append(toIndentedString(consumeOrderly)).append("\n");
         sb.append("    groupOnline: ").append(toIndentedString(groupOnline)).append("\n");
+        sb.append("    topicSubscriptionCount: ").append(toIndentedString(topicSubscriptionCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

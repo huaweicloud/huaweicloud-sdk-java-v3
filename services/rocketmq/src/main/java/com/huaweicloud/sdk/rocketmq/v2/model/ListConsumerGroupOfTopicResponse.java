@@ -19,6 +19,11 @@ public class ListConsumerGroupOfTopicResponse extends SdkResponse {
 
     private List<String> groups = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total")
+
+    private Integer total;
+
     public ListConsumerGroupOfTopicResponse withGroups(List<String> groups) {
         this.groups = groups;
         return this;
@@ -52,6 +57,23 @@ public class ListConsumerGroupOfTopicResponse extends SdkResponse {
         this.groups = groups;
     }
 
+    public ListConsumerGroupOfTopicResponse withTotal(Integer total) {
+        this.total = total;
+        return this;
+    }
+
+    /**
+     * **参数解释**： Topic总数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return total
+     */
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +83,12 @@ public class ListConsumerGroupOfTopicResponse extends SdkResponse {
             return false;
         }
         ListConsumerGroupOfTopicResponse that = (ListConsumerGroupOfTopicResponse) obj;
-        return Objects.equals(this.groups, that.groups);
+        return Objects.equals(this.groups, that.groups) && Objects.equals(this.total, that.total);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groups);
+        return Objects.hash(groups, total);
     }
 
     @Override
@@ -74,6 +96,7 @@ public class ListConsumerGroupOfTopicResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListConsumerGroupOfTopicResponse {\n");
         sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("}");
         return sb.toString();
     }

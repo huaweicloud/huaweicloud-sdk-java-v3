@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 一条事件监控信息
+ * **参数解释** 事件监控信息 
  */
 public class EventInfo {
 
@@ -21,7 +21,7 @@ public class EventInfo {
     private String eventName;
 
     /**
-     * 枚举类型 EVENT.SYS或EVENT.CUSTOM，EVENT.SYS为系统事件，EVENT.CUSTOM为自定义事件
+     * **参数解释** 事件类型 **取值范围** 枚举值： - EVENT.SYS 系统事件 - EVENT.CUSTOM 自定义事件 
      */
     public static final class EventTypeEnum {
 
@@ -96,7 +96,7 @@ public class EventInfo {
     private EventTypeEnum eventType;
 
     /**
-     * 事件子类。 枚举类型：SUB_EVENT.OPS为运维事件，SUB_EVENT.PLAN为计划事件，SUB_EVENT.CUSTOM为自定义事件。 
+     * **参数解释** 事件子类型 **取值范围** 枚举值： - SUB_EVENT.OPS 运维事件 - SUB_EVENT.PLAN 计划事件 - SUB_EVENT.CUSTOM 自定义事件 
      */
     public static final class SubEventTypeEnum {
 
@@ -197,7 +197,7 @@ public class EventInfo {
     }
 
     /**
-     * 事件名称。
+     * **参数解释** 事件名称 **取值范围** 不涉及 
      * @return eventName
      */
     public String getEventName() {
@@ -214,7 +214,7 @@ public class EventInfo {
     }
 
     /**
-     * 枚举类型 EVENT.SYS或EVENT.CUSTOM，EVENT.SYS为系统事件，EVENT.CUSTOM为自定义事件
+     * **参数解释** 事件类型 **取值范围** 枚举值： - EVENT.SYS 系统事件 - EVENT.CUSTOM 自定义事件 
      * @return eventType
      */
     public EventTypeEnum getEventType() {
@@ -231,7 +231,7 @@ public class EventInfo {
     }
 
     /**
-     * 事件子类。 枚举类型：SUB_EVENT.OPS为运维事件，SUB_EVENT.PLAN为计划事件，SUB_EVENT.CUSTOM为自定义事件。 
+     * **参数解释** 事件子类型 **取值范围** 枚举值： - SUB_EVENT.OPS 运维事件 - SUB_EVENT.PLAN 计划事件 - SUB_EVENT.CUSTOM 自定义事件 
      * @return subEventType
      */
     public SubEventTypeEnum getSubEventType() {
@@ -248,7 +248,7 @@ public class EventInfo {
     }
 
     /**
-     * 选择查询的时间范围内，此事件发生的数量。
+     * **参数解释** 选择查询的时间范围内，此事件发生的数量 **取值范围** 不涉及 
      * minimum: 0
      * maximum: 999999
      * @return eventCount
@@ -267,7 +267,7 @@ public class EventInfo {
     }
 
     /**
-     * 此事件最近一次发生的时间。
+     * **参数解释** 此事件最近一次发生的时间 **取值范围** 不涉及 
      * minimum: 0
      * maximum: 9223372036854775807
      * @return latestOccurTime
@@ -286,7 +286,7 @@ public class EventInfo {
     }
 
     /**
-     * 事件来源，如果是系统事件则值为各服务的命名空间，各服务命名空间请参阅[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)。；如果是自定义事件，则为用户自定义上报定义。
+     * **参数解释** 事件来源，如果是系统事件则值为各服务的命名空间。 各服务命名空间请参阅[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/zh-cn/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)。如果是自定义事件，则为用户自定义上报定义。 **取值范围** 不涉及 
      * @return latestEventSource
      */
     public String getLatestEventSource() {

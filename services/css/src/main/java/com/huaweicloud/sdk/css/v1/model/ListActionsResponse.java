@@ -19,6 +19,11 @@ public class ListActionsResponse extends SdkResponse {
 
     private List<Actions> actions = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "totalSize")
+
+    private Integer totalSize;
+
     public ListActionsResponse withActions(List<Actions> actions) {
         this.actions = actions;
         return this;
@@ -52,6 +57,23 @@ public class ListActionsResponse extends SdkResponse {
         this.actions = actions;
     }
 
+    public ListActionsResponse withTotalSize(Integer totalSize) {
+        this.totalSize = totalSize;
+        return this;
+    }
+
+    /**
+     * 操作记录总条数。
+     * @return totalSize
+     */
+    public Integer getTotalSize() {
+        return totalSize;
+    }
+
+    public void setTotalSize(Integer totalSize) {
+        this.totalSize = totalSize;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +83,12 @@ public class ListActionsResponse extends SdkResponse {
             return false;
         }
         ListActionsResponse that = (ListActionsResponse) obj;
-        return Objects.equals(this.actions, that.actions);
+        return Objects.equals(this.actions, that.actions) && Objects.equals(this.totalSize, that.totalSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(actions);
+        return Objects.hash(actions, totalSize);
     }
 
     @Override
@@ -74,6 +96,7 @@ public class ListActionsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListActionsResponse {\n");
         sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
+        sb.append("    totalSize: ").append(toIndentedString(totalSize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

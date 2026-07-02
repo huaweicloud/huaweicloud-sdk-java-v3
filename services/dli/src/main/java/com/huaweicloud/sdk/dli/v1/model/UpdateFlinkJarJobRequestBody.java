@@ -154,6 +154,11 @@ public class UpdateFlinkJarJobRequestBody {
     private String runtimeConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flink_log_config")
+
+    private String flinkLogConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_type")
 
     private String jobType;
@@ -676,6 +681,23 @@ public class UpdateFlinkJarJobRequestBody {
         this.runtimeConfig = runtimeConfig;
     }
 
+    public UpdateFlinkJarJobRequestBody withFlinkLogConfig(String flinkLogConfig) {
+        this.flinkLogConfig = flinkLogConfig;
+        return this;
+    }
+
+    /**
+     * Flink作业日志级别配置（JSON格式）。 支持全局root_logger_level及类/包级别loggers_level_of_class精细化控制，可选值为：TRACE，DEBUG，INFO，WARN，ERROR。 例如：{\\\"root_logger_level\\\":\\\"INFO\\\",\\\"loggers_level_of_class\\\":{\\\"org.apache.flink\\\":\\\"WARN\\\",\\\"org.apache.kafka.clients.consumer.KafkaConsumer\\\":\\\"DEBUG\\\",\\\"com.mycompany.job.MainFunction\\\":\\\"TRACE\\\"}}
+     * @return flinkLogConfig
+     */
+    public String getFlinkLogConfig() {
+        return flinkLogConfig;
+    }
+
+    public void setFlinkLogConfig(String flinkLogConfig) {
+        this.flinkLogConfig = flinkLogConfig;
+    }
+
     public UpdateFlinkJarJobRequestBody withJobType(String jobType) {
         this.jobType = jobType;
         return this;
@@ -765,7 +787,8 @@ public class UpdateFlinkJarJobRequestBody {
             && Objects.equals(this.image, that.image) && Objects.equals(this.resumeCheckpoint, that.resumeCheckpoint)
             && Objects.equals(this.resumeMaxNum, that.resumeMaxNum)
             && Objects.equals(this.checkpointPath, that.checkpointPath)
-            && Objects.equals(this.runtimeConfig, that.runtimeConfig) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.runtimeConfig, that.runtimeConfig)
+            && Objects.equals(this.flinkLogConfig, that.flinkLogConfig) && Objects.equals(this.jobType, that.jobType)
             && Objects.equals(this.resourceConfig, that.resourceConfig)
             && Objects.equals(this.resourceConfigVersion, that.resourceConfigVersion);
     }
@@ -800,6 +823,7 @@ public class UpdateFlinkJarJobRequestBody {
             resumeMaxNum,
             checkpointPath,
             runtimeConfig,
+            flinkLogConfig,
             jobType,
             resourceConfig,
             resourceConfigVersion);
@@ -837,6 +861,7 @@ public class UpdateFlinkJarJobRequestBody {
         sb.append("    resumeMaxNum: ").append(toIndentedString(resumeMaxNum)).append("\n");
         sb.append("    checkpointPath: ").append(toIndentedString(checkpointPath)).append("\n");
         sb.append("    runtimeConfig: ").append(toIndentedString(runtimeConfig)).append("\n");
+        sb.append("    flinkLogConfig: ").append(toIndentedString(flinkLogConfig)).append("\n");
         sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
         sb.append("    resourceConfig: ").append(toIndentedString(resourceConfig)).append("\n");
         sb.append("    resourceConfigVersion: ").append(toIndentedString(resourceConfigVersion)).append("\n");

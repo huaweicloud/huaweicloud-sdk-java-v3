@@ -47,8 +47,6 @@ import com.huaweicloud.sdk.css.v1.model.DeleteClustersTagsRequest;
 import com.huaweicloud.sdk.css.v1.model.DeleteClustersTagsResponse;
 import com.huaweicloud.sdk.css.v1.model.DeleteConfRequest;
 import com.huaweicloud.sdk.css.v1.model.DeleteConfResponse;
-import com.huaweicloud.sdk.css.v1.model.DeleteConfigRequest;
-import com.huaweicloud.sdk.css.v1.model.DeleteConfigResponse;
 import com.huaweicloud.sdk.css.v1.model.DeleteIkThesaurusRequest;
 import com.huaweicloud.sdk.css.v1.model.DeleteIkThesaurusResponse;
 import com.huaweicloud.sdk.css.v1.model.DeleteSnapshotRequest;
@@ -157,8 +155,8 @@ import com.huaweicloud.sdk.css.v1.model.StartPublicWhitelistRequest;
 import com.huaweicloud.sdk.css.v1.model.StartPublicWhitelistResponse;
 import com.huaweicloud.sdk.css.v1.model.StartTargetClusterConnectivityTestRequest;
 import com.huaweicloud.sdk.css.v1.model.StartTargetClusterConnectivityTestResponse;
-import com.huaweicloud.sdk.css.v1.model.StartVpecpRequest;
-import com.huaweicloud.sdk.css.v1.model.StartVpecpResponse;
+import com.huaweicloud.sdk.css.v1.model.StartVpcepRequest;
+import com.huaweicloud.sdk.css.v1.model.StartVpcepResponse;
 import com.huaweicloud.sdk.css.v1.model.StopHotPipelineRequest;
 import com.huaweicloud.sdk.css.v1.model.StopHotPipelineResponse;
 import com.huaweicloud.sdk.css.v1.model.StopLogAutoBackupPolicyRequest;
@@ -173,8 +171,8 @@ import com.huaweicloud.sdk.css.v1.model.StopPublicWhitelistRequest;
 import com.huaweicloud.sdk.css.v1.model.StopPublicWhitelistResponse;
 import com.huaweicloud.sdk.css.v1.model.StopSnapshotRequest;
 import com.huaweicloud.sdk.css.v1.model.StopSnapshotResponse;
-import com.huaweicloud.sdk.css.v1.model.StopVpecpRequest;
-import com.huaweicloud.sdk.css.v1.model.StopVpecpResponse;
+import com.huaweicloud.sdk.css.v1.model.StopVpcepRequest;
+import com.huaweicloud.sdk.css.v1.model.StopVpcepResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateAiOpsSettingRequest;
 import com.huaweicloud.sdk.css.v1.model.UpdateAiOpsSettingResponse;
 import com.huaweicloud.sdk.css.v1.model.UpdateAlterKibanaRequest;
@@ -1989,11 +1987,11 @@ public class CssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request StartVpecpRequest 请求对象
-     * @return CompletableFuture<StartVpecpResponse>
+     * @param request StartVpcepRequest 请求对象
+     * @return CompletableFuture<StartVpcepResponse>
      */
-    public CompletableFuture<StartVpecpResponse> startVpecpAsync(StartVpecpRequest request) {
-        return hcClient.asyncInvokeHttp(request, CssMeta.startVpecp);
+    public CompletableFuture<StartVpcepResponse> startVpcepAsync(StartVpcepRequest request) {
+        return hcClient.asyncInvokeHttp(request, CssMeta.startVpcep);
     }
 
     /**
@@ -2003,11 +2001,11 @@ public class CssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request StartVpecpRequest 请求对象
-     * @return AsyncInvoker<StartVpecpRequest, StartVpecpResponse>
+     * @param request StartVpcepRequest 请求对象
+     * @return AsyncInvoker<StartVpcepRequest, StartVpcepResponse>
      */
-    public AsyncInvoker<StartVpecpRequest, StartVpecpResponse> startVpecpAsyncInvoker(StartVpecpRequest request) {
-        return new AsyncInvoker<>(request, CssMeta.startVpecp, hcClient);
+    public AsyncInvoker<StartVpcepRequest, StartVpcepResponse> startVpcepAsyncInvoker(StartVpcepRequest request) {
+        return new AsyncInvoker<>(request, CssMeta.startVpcep, hcClient);
     }
 
     /**
@@ -2133,11 +2131,11 @@ public class CssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request StopVpecpRequest 请求对象
-     * @return CompletableFuture<StopVpecpResponse>
+     * @param request StopVpcepRequest 请求对象
+     * @return CompletableFuture<StopVpcepResponse>
      */
-    public CompletableFuture<StopVpecpResponse> stopVpecpAsync(StopVpecpRequest request) {
-        return hcClient.asyncInvokeHttp(request, CssMeta.stopVpecp);
+    public CompletableFuture<StopVpcepResponse> stopVpcepAsync(StopVpcepRequest request) {
+        return hcClient.asyncInvokeHttp(request, CssMeta.stopVpcep);
     }
 
     /**
@@ -2147,11 +2145,11 @@ public class CssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request StopVpecpRequest 请求对象
-     * @return AsyncInvoker<StopVpecpRequest, StopVpecpResponse>
+     * @param request StopVpcepRequest 请求对象
+     * @return AsyncInvoker<StopVpcepRequest, StopVpcepResponse>
      */
-    public AsyncInvoker<StopVpecpRequest, StopVpecpResponse> stopVpecpAsyncInvoker(StopVpecpRequest request) {
-        return new AsyncInvoker<>(request, CssMeta.stopVpecp, hcClient);
+    public AsyncInvoker<StopVpcepRequest, StopVpcepResponse> stopVpcepAsyncInvoker(StopVpcepRequest request) {
+        return new AsyncInvoker<>(request, CssMeta.stopVpcep, hcClient);
     }
 
     /**
@@ -3099,35 +3097,6 @@ public class CssAsyncClient {
      */
     public AsyncInvoker<DeleteConfRequest, DeleteConfResponse> deleteConfAsyncInvoker(DeleteConfRequest request) {
         return new AsyncInvoker<>(request, CssMeta.deleteConf, hcClient);
-    }
-
-    /**
-     * 删除配置文件V2
-     *
-     * 删除配置文件。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteConfigRequest 请求对象
-     * @return CompletableFuture<DeleteConfigResponse>
-     */
-    public CompletableFuture<DeleteConfigResponse> deleteConfigAsync(DeleteConfigRequest request) {
-        return hcClient.asyncInvokeHttp(request, CssMeta.deleteConfig);
-    }
-
-    /**
-     * 删除配置文件V2
-     *
-     * 删除配置文件。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteConfigRequest 请求对象
-     * @return AsyncInvoker<DeleteConfigRequest, DeleteConfigResponse>
-     */
-    public AsyncInvoker<DeleteConfigRequest, DeleteConfigResponse> deleteConfigAsyncInvoker(
-        DeleteConfigRequest request) {
-        return new AsyncInvoker<>(request, CssMeta.deleteConfig, hcClient);
     }
 
     /**

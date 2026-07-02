@@ -149,6 +149,11 @@ public class CreateFlinkSqlJobRequestBody {
     private String runtimeConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flink_log_config")
+
+    private String flinkLogConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flink_version")
 
     private String flinkVersion;
@@ -659,6 +664,23 @@ public class CreateFlinkSqlJobRequestBody {
         this.runtimeConfig = runtimeConfig;
     }
 
+    public CreateFlinkSqlJobRequestBody withFlinkLogConfig(String flinkLogConfig) {
+        this.flinkLogConfig = flinkLogConfig;
+        return this;
+    }
+
+    /**
+     * Flink作业日志级别配置（JSON格式）。 支持全局root_logger_level及类/包级别loggers_level_of_class精细化控制，可选值为：TRACE，DEBUG，INFO，WARN，ERROR。 例如：{\\\"root_logger_level\\\":\\\"INFO\\\",\\\"loggers_level_of_class\\\":{\\\"org.apache.flink\\\":\\\"WARN\\\",\\\"org.apache.kafka.clients.consumer.KafkaConsumer\\\":\\\"DEBUG\\\",\\\"com.mycompany.job.MainFunction\\\":\\\"TRACE\\\"}}
+     * @return flinkLogConfig
+     */
+    public String getFlinkLogConfig() {
+        return flinkLogConfig;
+    }
+
+    public void setFlinkLogConfig(String flinkLogConfig) {
+        this.flinkLogConfig = flinkLogConfig;
+    }
+
     public CreateFlinkSqlJobRequestBody withFlinkVersion(String flinkVersion) {
         this.flinkVersion = flinkVersion;
         return this;
@@ -764,6 +786,7 @@ public class CreateFlinkSqlJobRequestBody {
             && Objects.equals(this.resumeCheckpoint, that.resumeCheckpoint)
             && Objects.equals(this.resumeMaxNum, that.resumeMaxNum)
             && Objects.equals(this.runtimeConfig, that.runtimeConfig)
+            && Objects.equals(this.flinkLogConfig, that.flinkLogConfig)
             && Objects.equals(this.flinkVersion, that.flinkVersion)
             && Objects.equals(this.executionAgencyUrn, that.executionAgencyUrn)
             && Objects.equals(this.resourceConfigVersion, that.resourceConfigVersion)
@@ -799,6 +822,7 @@ public class CreateFlinkSqlJobRequestBody {
             resumeCheckpoint,
             resumeMaxNum,
             runtimeConfig,
+            flinkLogConfig,
             flinkVersion,
             executionAgencyUrn,
             resourceConfigVersion,
@@ -836,6 +860,7 @@ public class CreateFlinkSqlJobRequestBody {
         sb.append("    resumeCheckpoint: ").append(toIndentedString(resumeCheckpoint)).append("\n");
         sb.append("    resumeMaxNum: ").append(toIndentedString(resumeMaxNum)).append("\n");
         sb.append("    runtimeConfig: ").append(toIndentedString(runtimeConfig)).append("\n");
+        sb.append("    flinkLogConfig: ").append(toIndentedString(flinkLogConfig)).append("\n");
         sb.append("    flinkVersion: ").append(toIndentedString(flinkVersion)).append("\n");
         sb.append("    executionAgencyUrn: ").append(toIndentedString(executionAgencyUrn)).append("\n");
         sb.append("    resourceConfigVersion: ").append(toIndentedString(resourceConfigVersion)).append("\n");

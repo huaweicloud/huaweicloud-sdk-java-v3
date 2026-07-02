@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * DashBoardInfo
@@ -46,9 +47,14 @@ public class DashBoardInfo {
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "widgets_num")
+    @JsonProperty(value = "widget_num")
 
-    private Integer widgetsNum;
+    private Integer widgetNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extend_info")
+
+    private ExtendInfoResp extendInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "namespace")
@@ -122,9 +128,7 @@ public class DashBoardInfo {
     }
 
     /**
-     * **参数解释** 每行展示视图数量 **取值范围** - 0:表示自定义坐标 - 1:代表每行1个视图 - 2:代表每行2个视图 - 3:代表每行3个视图 
-     * minimum: 0
-     * maximum: 3
+     * **参数解释** 每行展示视图数量 **取值范围** - 0:表示自定义坐标 - 1:代表每行1个视图 - 2:代表每行2个视图 - 3:代表每行3个视图 - 4:代表每行4个视图 
      * @return rowWidgetNum
      */
     public Integer getRowWidgetNum() {
@@ -188,8 +192,8 @@ public class DashBoardInfo {
         this.createTime = createTime;
     }
 
-    public DashBoardInfo withWidgetsNum(Integer widgetsNum) {
-        this.widgetsNum = widgetsNum;
+    public DashBoardInfo withWidgetNum(Integer widgetNum) {
+        this.widgetNum = widgetNum;
         return this;
     }
 
@@ -197,14 +201,40 @@ public class DashBoardInfo {
      * **参数解释** 看板下的视图总数 **取值范围** 最小值为0，最大值为50 
      * minimum: 0
      * maximum: 50
-     * @return widgetsNum
+     * @return widgetNum
      */
-    public Integer getWidgetsNum() {
-        return widgetsNum;
+    public Integer getWidgetNum() {
+        return widgetNum;
     }
 
-    public void setWidgetsNum(Integer widgetsNum) {
-        this.widgetsNum = widgetsNum;
+    public void setWidgetNum(Integer widgetNum) {
+        this.widgetNum = widgetNum;
+    }
+
+    public DashBoardInfo withExtendInfo(ExtendInfoResp extendInfo) {
+        this.extendInfo = extendInfo;
+        return this;
+    }
+
+    public DashBoardInfo withExtendInfo(Consumer<ExtendInfoResp> extendInfoSetter) {
+        if (this.extendInfo == null) {
+            this.extendInfo = new ExtendInfoResp();
+            extendInfoSetter.accept(this.extendInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get extendInfo
+     * @return extendInfo
+     */
+    public ExtendInfoResp getExtendInfo() {
+        return extendInfo;
+    }
+
+    public void setExtendInfo(ExtendInfoResp extendInfo) {
+        this.extendInfo = extendInfo;
     }
 
     public DashBoardInfo withNamespace(String namespace) {
@@ -213,7 +243,7 @@ public class DashBoardInfo {
     }
 
     /**
-     * **参数解释** 查询服务的命名空间，各服务命名空间请参阅[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg) **取值范围** 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度必须在 3 到 32个字符之间。 
+     * **参数解释** 查询服务的命名空间，各服务命名空间请参阅[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/zh-cn/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg) **取值范围** 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度必须在 3 到 32个字符之间。 
      * @return namespace
      */
     public String getNamespace() {
@@ -272,8 +302,8 @@ public class DashBoardInfo {
             && Objects.equals(this.enterpriseId, that.enterpriseId)
             && Objects.equals(this.rowWidgetNum, that.rowWidgetNum) && Objects.equals(this.isFavorite, that.isFavorite)
             && Objects.equals(this.creatorName, that.creatorName) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.widgetsNum, that.widgetsNum) && Objects.equals(this.namespace, that.namespace)
-            && Objects.equals(this.subProduct, that.subProduct)
+            && Objects.equals(this.widgetNum, that.widgetNum) && Objects.equals(this.extendInfo, that.extendInfo)
+            && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.subProduct, that.subProduct)
             && Objects.equals(this.dashboardTemplateId, that.dashboardTemplateId);
     }
 
@@ -286,7 +316,8 @@ public class DashBoardInfo {
             isFavorite,
             creatorName,
             createTime,
-            widgetsNum,
+            widgetNum,
+            extendInfo,
             namespace,
             subProduct,
             dashboardTemplateId);
@@ -303,7 +334,8 @@ public class DashBoardInfo {
         sb.append("    isFavorite: ").append(toIndentedString(isFavorite)).append("\n");
         sb.append("    creatorName: ").append(toIndentedString(creatorName)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    widgetsNum: ").append(toIndentedString(widgetsNum)).append("\n");
+        sb.append("    widgetNum: ").append(toIndentedString(widgetNum)).append("\n");
+        sb.append("    extendInfo: ").append(toIndentedString(extendInfo)).append("\n");
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
         sb.append("    subProduct: ").append(toIndentedString(subProduct)).append("\n");
         sb.append("    dashboardTemplateId: ").append(toIndentedString(dashboardTemplateId)).append("\n");

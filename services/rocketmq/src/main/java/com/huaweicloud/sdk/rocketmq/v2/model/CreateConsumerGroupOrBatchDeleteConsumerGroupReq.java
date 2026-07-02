@@ -14,9 +14,9 @@ import java.util.function.Consumer;
 public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "job_id")
+    @JsonProperty(value = "groups")
 
-    private String jobId;
+    private List<String> groups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -53,21 +53,37 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
 
     private String groupDesc;
 
-    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withJobId(String jobId) {
-        this.jobId = jobId;
+    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withGroups(List<String> groups) {
+        this.groups = groups;
+        return this;
+    }
+
+    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq addGroupsItem(String groupsItem) {
+        if (this.groups == null) {
+            this.groups = new ArrayList<>();
+        }
+        this.groups.add(groupsItem);
+        return this;
+    }
+
+    public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withGroups(Consumer<List<String>> groupsSetter) {
+        if (this.groups == null) {
+            this.groups = new ArrayList<>();
+        }
+        groupsSetter.accept(this.groups);
         return this;
     }
 
     /**
-     * **参数解释**： 待删除的消费组列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
-     * @return jobId
+     * **参数解释**： 需要删除的消费组名称列表。 **约束限制**： 当批量删除消费组时必填。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return groups
      */
-    public String getJobId() {
-        return jobId;
+    public List<String> getGroups() {
+        return groups;
     }
 
-    public void setJobId(String jobId) {
-        this.jobId = jobId;
+    public void setGroups(List<String> groups) {
+        this.groups = groups;
     }
 
     public CreateConsumerGroupOrBatchDeleteConsumerGroupReq withName(String name) {
@@ -214,7 +230,7 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
             return false;
         }
         CreateConsumerGroupOrBatchDeleteConsumerGroupReq that = (CreateConsumerGroupOrBatchDeleteConsumerGroupReq) obj;
-        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.name, that.name)
+        return Objects.equals(this.groups, that.groups) && Objects.equals(this.name, that.name)
             && Objects.equals(this.brokers, that.brokers) && Objects.equals(this.broadcast, that.broadcast)
             && Objects.equals(this.retryMaxTime, that.retryMaxTime) && Objects.equals(this.enabled, that.enabled)
             && Objects.equals(this.consumeOrderly, that.consumeOrderly)
@@ -223,14 +239,14 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, name, brokers, broadcast, retryMaxTime, enabled, consumeOrderly, groupDesc);
+        return Objects.hash(groups, name, brokers, broadcast, retryMaxTime, enabled, consumeOrderly, groupDesc);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {\n");
-        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    brokers: ").append(toIndentedString(brokers)).append("\n");
         sb.append("    broadcast: ").append(toIndentedString(broadcast)).append("\n");

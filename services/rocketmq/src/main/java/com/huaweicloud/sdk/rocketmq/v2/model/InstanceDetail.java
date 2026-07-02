@@ -214,6 +214,11 @@ public class InstanceDetail {
     private Boolean diskEncrypted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disk_encrypted_key")
+
+    private String diskEncryptedKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ces_version")
 
     private String cesVersion;
@@ -259,9 +264,19 @@ public class InstanceDetail {
     private String brokerAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_broker_address")
+
+    private String ipv6BrokerAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_namesrv_address")
 
     private String publicNamesrvAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_namesrv_address")
+
+    private String ipv6NamesrvAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_namesrv_domain_name")
@@ -1065,6 +1080,23 @@ public class InstanceDetail {
         this.diskEncrypted = diskEncrypted;
     }
 
+    public InstanceDetail withDiskEncryptedKey(String diskEncryptedKey) {
+        this.diskEncryptedKey = diskEncryptedKey;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 磁盘加密key，未开启磁盘加密时为空。 **取值范围**： 不涉及。
+     * @return diskEncryptedKey
+     */
+    public String getDiskEncryptedKey() {
+        return diskEncryptedKey;
+    }
+
+    public void setDiskEncryptedKey(String diskEncryptedKey) {
+        this.diskEncryptedKey = diskEncryptedKey;
+    }
+
     public InstanceDetail withCesVersion(String cesVersion) {
         this.cesVersion = cesVersion;
         return this;
@@ -1218,6 +1250,23 @@ public class InstanceDetail {
         this.brokerAddress = brokerAddress;
     }
 
+    public InstanceDetail withIpv6BrokerAddress(String ipv6BrokerAddress) {
+        this.ipv6BrokerAddress = ipv6BrokerAddress;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 业务数据IPv6的地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return ipv6BrokerAddress
+     */
+    public String getIpv6BrokerAddress() {
+        return ipv6BrokerAddress;
+    }
+
+    public void setIpv6BrokerAddress(String ipv6BrokerAddress) {
+        this.ipv6BrokerAddress = ipv6BrokerAddress;
+    }
+
     public InstanceDetail withPublicNamesrvAddress(String publicNamesrvAddress) {
         this.publicNamesrvAddress = publicNamesrvAddress;
         return this;
@@ -1233,6 +1282,23 @@ public class InstanceDetail {
 
     public void setPublicNamesrvAddress(String publicNamesrvAddress) {
         this.publicNamesrvAddress = publicNamesrvAddress;
+    }
+
+    public InstanceDetail withIpv6NamesrvAddress(String ipv6NamesrvAddress) {
+        this.ipv6NamesrvAddress = ipv6NamesrvAddress;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 元数据IPv6的地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return ipv6NamesrvAddress
+     */
+    public String getIpv6NamesrvAddress() {
+        return ipv6NamesrvAddress;
+    }
+
+    public void setIpv6NamesrvAddress(String ipv6NamesrvAddress) {
+        this.ipv6NamesrvAddress = ipv6NamesrvAddress;
     }
 
     public InstanceDetail withPublicNamesrvDomainName(String publicNamesrvDomainName) {
@@ -1595,6 +1661,7 @@ public class InstanceDetail {
             && Objects.equals(this.extendTimes, that.extendTimes) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
             && Objects.equals(this.supportFeatures, that.supportFeatures)
             && Objects.equals(this.diskEncrypted, that.diskEncrypted)
+            && Objects.equals(this.diskEncryptedKey, that.diskEncryptedKey)
             && Objects.equals(this.cesVersion, that.cesVersion) && Objects.equals(this.nodeNum, that.nodeNum)
             && Objects.equals(this.newSpecBillingEnable, that.newSpecBillingEnable)
             && Objects.equals(this.enableAcl, that.enableAcl) && Objects.equals(this.brokerNum, that.brokerNum)
@@ -1602,7 +1669,9 @@ public class InstanceDetail {
             && Objects.equals(this.namesrvAddress, that.namesrvAddress)
             && Objects.equals(this.namesrvDomainName, that.namesrvDomainName)
             && Objects.equals(this.brokerAddress, that.brokerAddress)
+            && Objects.equals(this.ipv6BrokerAddress, that.ipv6BrokerAddress)
             && Objects.equals(this.publicNamesrvAddress, that.publicNamesrvAddress)
+            && Objects.equals(this.ipv6NamesrvAddress, that.ipv6NamesrvAddress)
             && Objects.equals(this.publicNamesrvDomainName, that.publicNamesrvDomainName)
             && Objects.equals(this.publicBrokerAddress, that.publicBrokerAddress)
             && Objects.equals(this.grpcAddress, that.grpcAddress)
@@ -1663,6 +1732,7 @@ public class InstanceDetail {
             ipv6Enable,
             supportFeatures,
             diskEncrypted,
+            diskEncryptedKey,
             cesVersion,
             nodeNum,
             newSpecBillingEnable,
@@ -1672,7 +1742,9 @@ public class InstanceDetail {
             namesrvAddress,
             namesrvDomainName,
             brokerAddress,
+            ipv6BrokerAddress,
             publicNamesrvAddress,
+            ipv6NamesrvAddress,
             publicNamesrvDomainName,
             publicBrokerAddress,
             grpcAddress,
@@ -1737,6 +1809,7 @@ public class InstanceDetail {
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("    supportFeatures: ").append(toIndentedString(supportFeatures)).append("\n");
         sb.append("    diskEncrypted: ").append(toIndentedString(diskEncrypted)).append("\n");
+        sb.append("    diskEncryptedKey: ").append(toIndentedString(diskEncryptedKey)).append("\n");
         sb.append("    cesVersion: ").append(toIndentedString(cesVersion)).append("\n");
         sb.append("    nodeNum: ").append(toIndentedString(nodeNum)).append("\n");
         sb.append("    newSpecBillingEnable: ").append(toIndentedString(newSpecBillingEnable)).append("\n");
@@ -1746,7 +1819,9 @@ public class InstanceDetail {
         sb.append("    namesrvAddress: ").append(toIndentedString(namesrvAddress)).append("\n");
         sb.append("    namesrvDomainName: ").append(toIndentedString(namesrvDomainName)).append("\n");
         sb.append("    brokerAddress: ").append(toIndentedString(brokerAddress)).append("\n");
+        sb.append("    ipv6BrokerAddress: ").append(toIndentedString(ipv6BrokerAddress)).append("\n");
         sb.append("    publicNamesrvAddress: ").append(toIndentedString(publicNamesrvAddress)).append("\n");
+        sb.append("    ipv6NamesrvAddress: ").append(toIndentedString(ipv6NamesrvAddress)).append("\n");
         sb.append("    publicNamesrvDomainName: ").append(toIndentedString(publicNamesrvDomainName)).append("\n");
         sb.append("    publicBrokerAddress: ").append(toIndentedString(publicBrokerAddress)).append("\n");
         sb.append("    grpcAddress: ").append(toIndentedString(grpcAddress)).append("\n");

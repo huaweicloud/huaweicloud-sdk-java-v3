@@ -13,14 +13,14 @@ public class FlinkSuccessResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_success")
 
-    private Boolean isSuccess;
+    private String isSuccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message")
 
     private String message;
 
-    public FlinkSuccessResponse withIsSuccess(Boolean isSuccess) {
+    public FlinkSuccessResponse withIsSuccess(String isSuccess) {
         this.isSuccess = isSuccess;
         return this;
     }
@@ -29,11 +29,11 @@ public class FlinkSuccessResponse {
      * 执行请求是否成功。“true”表示请求执行成功。
      * @return isSuccess
      */
-    public Boolean getIsSuccess() {
+    public String getIsSuccess() {
         return isSuccess;
     }
 
-    public void setIsSuccess(Boolean isSuccess) {
+    public void setIsSuccess(String isSuccess) {
         this.isSuccess = isSuccess;
     }
 

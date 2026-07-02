@@ -16,6 +16,16 @@ import java.util.Objects;
 public class ListMetricsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "namespace")
+
+    private String namespace;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metric_name")
+
+    private String metricName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dim.0")
 
     private String dim0;
@@ -31,22 +41,22 @@ public class ListMetricsRequest {
     private String dim2;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dim.3")
+
+    private String dim3;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start")
+
+    private String start;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "metric_name")
-
-    private String metricName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "namespace")
-
-    private String namespace;
-
     /**
-     * 用于标识结果排序方法。  取值说明，默认为desc：  asc，升序 desc，降序
+     * **参数解释** 用于标识结果的排序方法 **约束限制** 不涉及 **取值范围** 枚举值： - asc 升序 - desc 降序 **默认取值** asc 
      */
     public static final class OrderEnum {
 
@@ -120,10 +130,39 @@ public class ListMetricsRequest {
 
     private OrderEnum order;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "start")
+    public ListMetricsRequest withNamespace(String namespace) {
+        this.namespace = namespace;
+        return this;
+    }
 
-    private String start;
+    /**
+     * **参数解释** 服务命名空间，样例：弹性云服务器的命名空间为SYS.ECS。 各服务命名空间请参阅[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/zh-cn/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)。 **约束限制** 不涉及 **取值范围** 格式为service.item，service和item以点号拼接组成。 service和item必须以字母（大写或小写）开头，后面可以跟零个或多个字母（大写或小写）、数字、下划线（_），长度为[3,32]个字符 **默认取值** 不涉及 
+     * @return namespace
+     */
+    public String getNamespace() {
+        return namespace;
+    }
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    public ListMetricsRequest withMetricName(String metricName) {
+        this.metricName = metricName;
+        return this;
+    }
+
+    /**
+     * **参数解释** 资源的监控指标名称，样例：弹性云服务器监控指标中的cpu_util。 各服务资源的指标名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/zh-cn/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。 **约束限制** 不涉及 **取值范围** 必须以字母（大写或小写）开头，后面可以跟零个或多个字母（大写或小写）、数字、下划线（_）、连字符 （-），长度为[1,96]个字符 **默认取值** 不涉及 
+     * @return metricName
+     */
+    public String getMetricName() {
+        return metricName;
+    }
+
+    public void setMetricName(String metricName) {
+        this.metricName = metricName;
+    }
 
     public ListMetricsRequest withDim0(String dim0) {
         this.dim0 = dim0;
@@ -131,7 +170,7 @@ public class ListMetricsRequest {
     }
 
     /**
-     * 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}=key,value，最大值为256。 例如：instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的维度名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。
+     * **参数解释** 指标的第一个维度，目前最多支持4个维度，维度格式为dim.{i}=key,value。样例：instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d 各服务资源的维度名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/zh-cn/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。 **约束限制** 不涉及 **取值范围** dim.0=key,value，由key、value以逗号拼接组成。 key必须以字母（大写或小写）开头，后面可以跟零个或多个字母（大写或小写）、数字、下划线（_）、连字符（-），长度为[1,32]个字符 value由多个字母（大写或小写）、数字、下划线（_）、连字符（-）、点（.）、斜杠（/）、井号（#）、英文左括号（(）、英文右括号（)）组合而成，首个字符可以包含星号（*），但不能以连字符（-）开头，长度为[1,256]个字符 **默认取值** 不涉及 
      * @return dim0
      */
     public String getDim0() {
@@ -148,7 +187,7 @@ public class ListMetricsRequest {
     }
 
     /**
-     * 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}=key,value，最大值为256。 例如：instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的维度名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。
+     * **参数解释** 指标的第二个维度，目前最多支持4个维度，维度格式为dim.{i}=key,value。样例：instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d 各服务资源的维度名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/zh-cn/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。 **约束限制** 不涉及 **取值范围** dim.1=key,value，由key、value以逗号拼接组成。 key必须以字母（大写或小写）开头，后面可以跟零个或多个字母（大写或小写）、数字、下划线（_）、连字符（-），长度为[1,32]个字符 value由多个字母（大写或小写）、数字、下划线（_）、连字符（-）、点（.）、斜杠（/）、井号（#）、英文左括号（(）、英文右括号（)）组合而成，首个字符可以包含星号（*），但不能以连字符（-）开头，长度为[1,256]个字符 **默认取值** 不涉及 
      * @return dim1
      */
     public String getDim1() {
@@ -165,7 +204,7 @@ public class ListMetricsRequest {
     }
 
     /**
-     * 指标的维度，目前最大支持3个维度，从0开始；维度格式为dim.{i}=key,value，最大值为256。 例如：instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d；各服务资源的维度名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。
+     * **参数解释** 指标的第三个维度，目前最多支持4个维度，维度格式为dim.{i}=key,value。样例：instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d 各服务资源的维度名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/zh-cn/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。 **约束限制** 不涉及 **取值范围** dim.2=key,value，由key、value以逗号拼接组成。 key必须以字母（大写或小写）开头，后面可以跟零个或多个字母（大写或小写）、数字、下划线（_）、连字符（-），长度为[1,32]个字符 value由多个字母（大写或小写）、数字、下划线（_）、连字符（-）、点（.）、斜杠（/）、井号（#）、英文左括号（(）、英文右括号（)）组合而成，首个字符可以包含星号（*），但不能以连字符（-）开头，长度为[1,256]个字符 **默认取值** 不涉及 
      * @return dim2
      */
     public String getDim2() {
@@ -176,13 +215,47 @@ public class ListMetricsRequest {
         this.dim2 = dim2;
     }
 
+    public ListMetricsRequest withDim3(String dim3) {
+        this.dim3 = dim3;
+        return this;
+    }
+
+    /**
+     * **参数解释** 指标的第四个维度，目前最多支持4个维度，维度格式为dim.{i}=key,value。样例：instance_id,6f3c6f91-4b24-4e1b-b7d1-a94ac1cb011d 各服务资源的维度名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/zh-cn/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。 **约束限制** 不涉及 **取值范围** dim.3=key,value，由key、value以逗号拼接组成。 key必须以字母（大写或小写）开头，后面可以跟零个或多个字母（大写或小写）、数字、下划线（_）、连字符（-），长度为[1,32]个字符 value由多个字母（大写或小写）、数字、下划线（_）、连字符（-）、点（.）、斜杠（/）、井号（#）、英文左括号（(）、英文右括号（)）组合而成，首个字符可以包含星号（*），但不能以连字符（-）开头，长度为[1,256]个字符 **默认取值** 不涉及 
+     * @return dim3
+     */
+    public String getDim3() {
+        return dim3;
+    }
+
+    public void setDim3(String dim3) {
+        this.dim3 = dim3;
+    }
+
+    public ListMetricsRequest withStart(String start) {
+        this.start = start;
+        return this;
+    }
+
+    /**
+     * **参数解释** 分页起始值，格式为：namespace.metric_name.key:value 例如：start=SYS.ECS.cpu_util.instance_id:d9112af5-6913-4f3b-bd0a-3f96711e004d **约束限制** 不涉及 **取值范围** 首次传空字符串，后续请求传递上一页返回值内的marker字段，作为下一页请求的分页起始值 **默认取值** 不涉及 
+     * @return start
+     */
+    public String getStart() {
+        return start;
+    }
+
+    public void setStart(String start) {
+        this.start = start;
+    }
+
     public ListMetricsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
     /**
-     * 取值范围(0,1000]，默认值为1000。  用于限制结果数据条数。
+     * **参数解释** 单次查询的条数限制 **约束限制** 不涉及 **取值范围** 条数限制为[1,1000] **默认取值** 1000 
      * minimum: 1
      * maximum: 1000
      * @return limit
@@ -195,47 +268,13 @@ public class ListMetricsRequest {
         this.limit = limit;
     }
 
-    public ListMetricsRequest withMetricName(String metricName) {
-        this.metricName = metricName;
-        return this;
-    }
-
-    /**
-     * 指标名称，例如弹性云服务器监控指标中的cpu_util；各服务资源的指标名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。
-     * @return metricName
-     */
-    public String getMetricName() {
-        return metricName;
-    }
-
-    public void setMetricName(String metricName) {
-        this.metricName = metricName;
-    }
-
-    public ListMetricsRequest withNamespace(String namespace) {
-        this.namespace = namespace;
-        return this;
-    }
-
-    /**
-     * 指标命名空间，格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_，总长度最短为3，最大为32；各服务命名空间请参阅[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)。
-     * @return namespace
-     */
-    public String getNamespace() {
-        return namespace;
-    }
-
-    public void setNamespace(String namespace) {
-        this.namespace = namespace;
-    }
-
     public ListMetricsRequest withOrder(OrderEnum order) {
         this.order = order;
         return this;
     }
 
     /**
-     * 用于标识结果排序方法。  取值说明，默认为desc：  asc，升序 desc，降序
+     * **参数解释** 用于标识结果的排序方法 **约束限制** 不涉及 **取值范围** 枚举值： - asc 升序 - desc 降序 **默认取值** asc 
      * @return order
      */
     public OrderEnum getOrder() {
@@ -244,23 +283,6 @@ public class ListMetricsRequest {
 
     public void setOrder(OrderEnum order) {
         this.order = order;
-    }
-
-    public ListMetricsRequest withStart(String start) {
-        this.start = start;
-        return this;
-    }
-
-    /**
-     * 分页起始值，格式为：namespace.metric_name.key:value 例如：start=SYS.ECS.cpu_util.instance_id:d9112af5-6913-4f3b-bd0a-3f96711e004d
-     * @return start
-     */
-    public String getStart() {
-        return start;
-    }
-
-    public void setStart(String start) {
-        this.start = start;
     }
 
     @Override
@@ -272,29 +294,31 @@ public class ListMetricsRequest {
             return false;
         }
         ListMetricsRequest that = (ListMetricsRequest) obj;
-        return Objects.equals(this.dim0, that.dim0) && Objects.equals(this.dim1, that.dim1)
-            && Objects.equals(this.dim2, that.dim2) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.metricName, that.metricName) && Objects.equals(this.namespace, that.namespace)
-            && Objects.equals(this.order, that.order) && Objects.equals(this.start, that.start);
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.metricName, that.metricName)
+            && Objects.equals(this.dim0, that.dim0) && Objects.equals(this.dim1, that.dim1)
+            && Objects.equals(this.dim2, that.dim2) && Objects.equals(this.dim3, that.dim3)
+            && Objects.equals(this.start, that.start) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.order, that.order);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dim0, dim1, dim2, limit, metricName, namespace, order, start);
+        return Objects.hash(namespace, metricName, dim0, dim1, dim2, dim3, start, limit, order);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListMetricsRequest {\n");
+        sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+        sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
         sb.append("    dim0: ").append(toIndentedString(dim0)).append("\n");
         sb.append("    dim1: ").append(toIndentedString(dim1)).append("\n");
         sb.append("    dim2: ").append(toIndentedString(dim2)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
-        sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
-        sb.append("    order: ").append(toIndentedString(order)).append("\n");
+        sb.append("    dim3: ").append(toIndentedString(dim3)).append("\n");
         sb.append("    start: ").append(toIndentedString(start)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    order: ").append(toIndentedString(order)).append("\n");
         sb.append("}");
         return sb.toString();
     }

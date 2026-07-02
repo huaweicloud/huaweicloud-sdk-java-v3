@@ -50,7 +50,7 @@ public class BatchUpdateNotificationMasksRequestBody {
     private List<ProductMetric> productMetrics = null;
 
     /**
-     * **参数解释**： 资源层级。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - product：资源层级为云产品 - dimension：资源层级为子维度 **默认取值**： 不涉及。 
+     * **参数解释**： [天翼云、移动云不支持该字段。](tag:ctc,cmcc)资源层级。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - product：资源层级为云产品 - dimension：资源层级为子维度 **默认取值**： 不涉及。 
      */
     public static final class ResourceLevelEnum {
 
@@ -315,7 +315,7 @@ public class BatchUpdateNotificationMasksRequestBody {
     }
 
     /**
-     * **参数解释**： 按云产品维度屏蔽时的指标信息 **约束限制**： 包含的指标数量为[0,50] 
+     * **参数解释**： [天翼云、移动云不支持该字段。](tag:ctc,cmcc)按云产品维度屏蔽时的指标信息 **约束限制**： 包含的指标数量为[0,50] 
      * @return productMetrics
      */
     public List<ProductMetric> getProductMetrics() {
@@ -332,7 +332,7 @@ public class BatchUpdateNotificationMasksRequestBody {
     }
 
     /**
-     * **参数解释**： 资源层级。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - product：资源层级为云产品 - dimension：资源层级为子维度 **默认取值**： 不涉及。 
+     * **参数解释**： [天翼云、移动云不支持该字段。](tag:ctc,cmcc)资源层级。 **约束限制**： 不涉及。 **取值范围**： 枚举值。 - product：资源层级为云产品 - dimension：资源层级为子维度 **默认取值**： 不涉及。 
      * @return resourceLevel
      */
     public ResourceLevelEnum getResourceLevel() {
@@ -349,7 +349,7 @@ public class BatchUpdateNotificationMasksRequestBody {
     }
 
     /**
-     * **参数解释**： 资源层级为云产品时的云产品名称 **约束限制**： 不涉及 **取值范围**： 长度为[0,128]个字符。 **默认取值**： 不涉及。 
+     * **参数解释**： [天翼云、移动云不支持该字段。](tag:ctc,cmcc)资源层级为云产品时的云产品名称 **约束限制**： 不涉及 **取值范围**： 长度为[0,128]个字符。 **默认取值**： 不涉及。 
      * @return productName
      */
     public String getProductName() {

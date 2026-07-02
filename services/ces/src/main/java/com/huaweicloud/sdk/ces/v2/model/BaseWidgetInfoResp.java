@@ -44,7 +44,7 @@ public class BaseWidgetInfoResp {
     private Boolean thresholdEnabled;
 
     /**
-     * **参数解释** 监控视图图表类型 **取值范围** - bar:条形图 - line:折线图 - bar_chart:柱状图 - table:表格 - circular_bar:环形柱状图 - area_chart:面积图 
+     * **参数解释** 监控视图图表类型 **取值范围** - bar:条形图 - line:折线图 - bar_chart:柱状图 - table:表格 - circular_bar:环形柱状图 - area_chart:面积图 - gauge:仪表盘 - stat:数字 
      */
     public static final class ViewEnum {
 
@@ -78,6 +78,16 @@ public class BaseWidgetInfoResp {
          */
         public static final ViewEnum AREA_CHART = new ViewEnum("area_chart");
 
+        /**
+         * Enum GAUGE for value: "gauge"
+         */
+        public static final ViewEnum GAUGE = new ViewEnum("gauge");
+
+        /**
+         * Enum STAT for value: "stat"
+         */
+        public static final ViewEnum STAT = new ViewEnum("stat");
+
         private static final Map<String, ViewEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ViewEnum> createStaticFields() {
@@ -88,6 +98,8 @@ public class BaseWidgetInfoResp {
             map.put("table", TABLE);
             map.put("circular_bar", CIRCULAR_BAR);
             map.put("area_chart", AREA_CHART);
+            map.put("gauge", GAUGE);
+            map.put("stat", STAT);
             return Collections.unmodifiableMap(map);
         }
 
@@ -341,7 +353,7 @@ public class BaseWidgetInfoResp {
     }
 
     /**
-     * **参数解释** 监控视图图表类型 **取值范围** - bar:条形图 - line:折线图 - bar_chart:柱状图 - table:表格 - circular_bar:环形柱状图 - area_chart:面积图 
+     * **参数解释** 监控视图图表类型 **取值范围** - bar:条形图 - line:折线图 - bar_chart:柱状图 - table:表格 - circular_bar:环形柱状图 - area_chart:面积图 - gauge:仪表盘 - stat:数字 
      * @return view
      */
     public ViewEnum getView() {

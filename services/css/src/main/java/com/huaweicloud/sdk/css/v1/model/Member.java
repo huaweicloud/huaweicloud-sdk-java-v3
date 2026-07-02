@@ -11,6 +11,11 @@ import java.util.Objects;
 public class Member {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -34,6 +39,23 @@ public class Member {
     @JsonProperty(value = "instance_id")
 
     private String instanceId;
+
+    public Member withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 健康检查ID。 **取值范围**： 不涉及
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public Member withName(String name) {
         this.name = name;
@@ -129,21 +151,22 @@ public class Member {
             return false;
         }
         Member that = (Member) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.address, that.address)
-            && Objects.equals(this.protocolPort, that.protocolPort)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.protocolPort, that.protocolPort)
             && Objects.equals(this.operatingStatus, that.operatingStatus)
             && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, address, protocolPort, operatingStatus, instanceId);
+        return Objects.hash(id, name, address, protocolPort, operatingStatus, instanceId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Member {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    address: ").append(toIndentedString(address)).append("\n");
         sb.append("    protocolPort: ").append(toIndentedString(protocolPort)).append("\n");

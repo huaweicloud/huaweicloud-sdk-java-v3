@@ -51,7 +51,7 @@ public class Datapoint {
     }
 
     /**
-     * 聚合周期内指标数据的最大值。
+     * **参数解释** 聚合周期内指标数据的最大值 **取值范围** 不涉及 
      * @return max
      */
     public Double getMax() {
@@ -68,7 +68,7 @@ public class Datapoint {
     }
 
     /**
-     * 聚合周期内指标数据的最小值。
+     * **参数解释** 聚合周期内指标数据的最小值 **取值范围** 不涉及 
      * @return min
      */
     public Double getMin() {
@@ -85,7 +85,7 @@ public class Datapoint {
     }
 
     /**
-     * 聚合周期内指标数据的平均值。
+     * **参数解释** 聚合周期内指标数据的平均值 **取值范围** 不涉及 
      * @return average
      */
     public Double getAverage() {
@@ -102,7 +102,7 @@ public class Datapoint {
     }
 
     /**
-     * 聚合周期内指标数据的求和值。
+     * **参数解释** 聚合周期内指标数据的求和值 **取值范围** 不涉及 
      * @return sum
      */
     public Double getSum() {
@@ -119,7 +119,7 @@ public class Datapoint {
     }
 
     /**
-     * 聚合周期内指标数据的方差。
+     * **参数解释** 聚合周期内指标数据的方差 **取值范围** 不涉及 
      * @return variance
      */
     public Double getVariance() {
@@ -136,7 +136,7 @@ public class Datapoint {
     }
 
     /**
-     * 指标采集时间，UNIX时间戳，单位毫秒。
+     * **参数解释** 指标采集时间，UNIX时间戳，单位毫秒 **取值范围** 不涉及 
      * @return timestamp
      */
     public Long getTimestamp() {
@@ -153,7 +153,7 @@ public class Datapoint {
     }
 
     /**
-     * 指标单位。
+     * **参数解释** 指标单位 **取值范围** 不涉及 
      * @return unit
      */
     public String getUnit() {

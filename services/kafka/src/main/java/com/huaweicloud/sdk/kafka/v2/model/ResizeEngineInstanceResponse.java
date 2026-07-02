@@ -1,35 +1,36 @@
-package com.huaweicloud.sdk.css.v1.model;
+package com.huaweicloud.sdk.kafka.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
 /**
- * Request Object
+ * Response Object
  */
-public class StopVpecpRequest {
+public class ResizeEngineInstanceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cluster_id")
+    @JsonProperty(value = "job_id")
 
-    private String clusterId;
+    private String jobId;
 
-    public StopVpecpRequest withClusterId(String clusterId) {
-        this.clusterId = clusterId;
+    public ResizeEngineInstanceResponse withJobId(String jobId) {
+        this.jobId = jobId;
         return this;
     }
 
     /**
-     * 指定待关闭终端节点的集群ID。
-     * @return clusterId
+     * 规格变更任务ID。 
+     * @return jobId
      */
-    public String getClusterId() {
-        return clusterId;
+    public String getJobId() {
+        return jobId;
     }
 
-    public void setClusterId(String clusterId) {
-        this.clusterId = clusterId;
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
     }
 
     @Override
@@ -40,20 +41,20 @@ public class StopVpecpRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopVpecpRequest that = (StopVpecpRequest) obj;
-        return Objects.equals(this.clusterId, that.clusterId);
+        ResizeEngineInstanceResponse that = (ResizeEngineInstanceResponse) obj;
+        return Objects.equals(this.jobId, that.jobId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId);
+        return Objects.hash(jobId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class StopVpecpRequest {\n");
-        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("class ResizeEngineInstanceResponse {\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

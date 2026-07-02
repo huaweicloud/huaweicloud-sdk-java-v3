@@ -22,7 +22,7 @@ public class ListMetricsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "meta_data")
 
-    private MetaData metaData;
+    private MetricListMetaDataResp metaData;
 
     public ListMetricsResponse withMetrics(List<MetricInfoList> metrics) {
         this.metrics = metrics;
@@ -46,7 +46,7 @@ public class ListMetricsResponse extends SdkResponse {
     }
 
     /**
-     * 指标信息列表
+     * **参数解释** 指标信息列表 
      * @return metrics
      */
     public List<MetricInfoList> getMetrics() {
@@ -57,14 +57,14 @@ public class ListMetricsResponse extends SdkResponse {
         this.metrics = metrics;
     }
 
-    public ListMetricsResponse withMetaData(MetaData metaData) {
+    public ListMetricsResponse withMetaData(MetricListMetaDataResp metaData) {
         this.metaData = metaData;
         return this;
     }
 
-    public ListMetricsResponse withMetaData(Consumer<MetaData> metaDataSetter) {
+    public ListMetricsResponse withMetaData(Consumer<MetricListMetaDataResp> metaDataSetter) {
         if (this.metaData == null) {
-            this.metaData = new MetaData();
+            this.metaData = new MetricListMetaDataResp();
             metaDataSetter.accept(this.metaData);
         }
 
@@ -75,11 +75,11 @@ public class ListMetricsResponse extends SdkResponse {
      * Get metaData
      * @return metaData
      */
-    public MetaData getMetaData() {
+    public MetricListMetaDataResp getMetaData() {
         return metaData;
     }
 
-    public void setMetaData(MetaData metaData) {
+    public void setMetaData(MetricListMetaDataResp metaData) {
         this.metaData = metaData;
     }
 

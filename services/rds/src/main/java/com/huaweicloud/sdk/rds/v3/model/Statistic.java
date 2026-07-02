@@ -43,7 +43,7 @@ public class Statistic {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "canUse")
 
-    private Double canUse;
+    private Boolean canUse;
 
     public Statistic withUserName(String userName) {
         this.userName = userName;
@@ -147,7 +147,7 @@ public class Statistic {
         this.rows = rows;
     }
 
-    public Statistic withCanUse(Double canUse) {
+    public Statistic withCanUse(Boolean canUse) {
         this.canUse = canUse;
         return this;
     }
@@ -156,11 +156,11 @@ public class Statistic {
      * 是否可以执行sql限流
      * @return canUse
      */
-    public Double getCanUse() {
+    public Boolean getCanUse() {
         return canUse;
     }
 
-    public void setCanUse(Double canUse) {
+    public void setCanUse(Boolean canUse) {
         this.canUse = canUse;
     }
 

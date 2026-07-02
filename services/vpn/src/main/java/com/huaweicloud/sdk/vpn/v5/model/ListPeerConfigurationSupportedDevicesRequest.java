@@ -1,13 +1,11 @@
-package com.huaweicloud.sdk.css.v1.model;
-
-import com.huaweicloud.sdk.core.SdkResponse;
+package com.huaweicloud.sdk.vpn.v5.model;
 
 import java.util.Objects;
 
 /**
- * Response Object
+ * Request Object
  */
-public class DeleteConfigResponse extends SdkResponse {
+public class ListPeerConfigurationSupportedDevicesRequest {
 
     @Override
     public boolean equals(java.lang.Object obj) {
@@ -28,7 +26,7 @@ public class DeleteConfigResponse extends SdkResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class DeleteConfigResponse {\n");
+        sb.append("class ListPeerConfigurationSupportedDevicesRequest {\n");
         sb.append("}");
         return sb.toString();
     }

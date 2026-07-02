@@ -27,7 +27,7 @@ public class ShowCesHierarchyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodes")
 
-    private List<ShowCesHierarchyRespNodes> nodes = null;
+    private List<ShowCeshierarchyRespNodes> nodes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topics")
@@ -110,12 +110,12 @@ public class ShowCesHierarchyResponse extends SdkResponse {
         this.instanceIds = instanceIds;
     }
 
-    public ShowCesHierarchyResponse withNodes(List<ShowCesHierarchyRespNodes> nodes) {
+    public ShowCesHierarchyResponse withNodes(List<ShowCeshierarchyRespNodes> nodes) {
         this.nodes = nodes;
         return this;
     }
 
-    public ShowCesHierarchyResponse addNodesItem(ShowCesHierarchyRespNodes nodesItem) {
+    public ShowCesHierarchyResponse addNodesItem(ShowCeshierarchyRespNodes nodesItem) {
         if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
@@ -123,7 +123,7 @@ public class ShowCesHierarchyResponse extends SdkResponse {
         return this;
     }
 
-    public ShowCesHierarchyResponse withNodes(Consumer<List<ShowCesHierarchyRespNodes>> nodesSetter) {
+    public ShowCesHierarchyResponse withNodes(Consumer<List<ShowCeshierarchyRespNodes>> nodesSetter) {
         if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
@@ -135,11 +135,11 @@ public class ShowCesHierarchyResponse extends SdkResponse {
      * **参数解释**： 节点信息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return nodes
      */
-    public List<ShowCesHierarchyRespNodes> getNodes() {
+    public List<ShowCeshierarchyRespNodes> getNodes() {
         return nodes;
     }
 
-    public void setNodes(List<ShowCesHierarchyRespNodes> nodes) {
+    public void setNodes(List<ShowCeshierarchyRespNodes> nodes) {
         this.nodes = nodes;
     }
 

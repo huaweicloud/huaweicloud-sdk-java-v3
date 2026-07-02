@@ -16,12 +16,12 @@ public class KafkaTopicQuota {
     private String topic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "producer_byte_rate")
+    @JsonProperty(value = "producer-byte-rate")
 
     private Integer producerByteRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "consumer_byte_rate")
+    @JsonProperty(value = "consumer-byte-rate")
 
     private Integer consumerByteRate;
 

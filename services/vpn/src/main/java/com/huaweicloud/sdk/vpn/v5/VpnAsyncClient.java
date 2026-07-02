@@ -67,12 +67,16 @@ import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnUserRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnUserResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ExportClientConfigRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ExportClientConfigResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ExportVpnConnectionPeerConfigurationRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ExportVpnConnectionPeerConfigurationResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ImportClientCaRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ImportClientCaResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListAvailabilityZonesRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListAvailabilityZonesResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListCgwsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListCgwsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ListConnectionIpsecSaRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ListConnectionIpsecSaResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListConnectionMonitorsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListConnectionMonitorsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListExtendedAvailabilityZonesRequest;
@@ -85,6 +89,8 @@ import com.huaweicloud.sdk.vpn.v5.model.ListP2cVgwsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListP2cVgwsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListP2cVpnGatewayJobsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListP2cVpnGatewayJobsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ListPeerConfigurationSupportedDevicesRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ListPeerConfigurationSupportedDevicesResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListResourcesByTagsRequest;
@@ -95,6 +101,8 @@ import com.huaweicloud.sdk.vpn.v5.model.ListVpnAccessPoliciesRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnAccessPoliciesResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnConnectionsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnConnectionsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ListVpnGatewayCertificatesRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ListVpnGatewayCertificatesResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnGatewayJobsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnGatewayJobsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnServersByProjectRequest;
@@ -1333,6 +1341,96 @@ public class VpnAsyncClient {
     }
 
     /**
+     * 导出VPN连接配置
+     *
+     * 根据连接ID、设备厂商、型号、版本，导出指定VPN连接对应的配置文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportVpnConnectionPeerConfigurationRequest 请求对象
+     * @return CompletableFuture<ExportVpnConnectionPeerConfigurationResponse>
+     */
+    public CompletableFuture<ExportVpnConnectionPeerConfigurationResponse> exportVpnConnectionPeerConfigurationAsync(
+        ExportVpnConnectionPeerConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpnMeta.exportVpnConnectionPeerConfiguration);
+    }
+
+    /**
+     * 导出VPN连接配置
+     *
+     * 根据连接ID、设备厂商、型号、版本，导出指定VPN连接对应的配置文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportVpnConnectionPeerConfigurationRequest 请求对象
+     * @return AsyncInvoker<ExportVpnConnectionPeerConfigurationRequest, ExportVpnConnectionPeerConfigurationResponse>
+     */
+    public AsyncInvoker<ExportVpnConnectionPeerConfigurationRequest, ExportVpnConnectionPeerConfigurationResponse> exportVpnConnectionPeerConfigurationAsyncInvoker(
+        ExportVpnConnectionPeerConfigurationRequest request) {
+        return new AsyncInvoker<>(request, VpnMeta.exportVpnConnectionPeerConfiguration, hcClient);
+    }
+
+    /**
+     * 查询VPN连接网段协商信息
+     *
+     * 根据连接ID，查询指定的VPN连接网段协商信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConnectionIpsecSaRequest 请求对象
+     * @return CompletableFuture<ListConnectionIpsecSaResponse>
+     */
+    public CompletableFuture<ListConnectionIpsecSaResponse> listConnectionIpsecSaAsync(
+        ListConnectionIpsecSaRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpnMeta.listConnectionIpsecSa);
+    }
+
+    /**
+     * 查询VPN连接网段协商信息
+     *
+     * 根据连接ID，查询指定的VPN连接网段协商信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConnectionIpsecSaRequest 请求对象
+     * @return AsyncInvoker<ListConnectionIpsecSaRequest, ListConnectionIpsecSaResponse>
+     */
+    public AsyncInvoker<ListConnectionIpsecSaRequest, ListConnectionIpsecSaResponse> listConnectionIpsecSaAsyncInvoker(
+        ListConnectionIpsecSaRequest request) {
+        return new AsyncInvoker<>(request, VpnMeta.listConnectionIpsecSa, hcClient);
+    }
+
+    /**
+     * 获取可导出VPN连接配置的设备
+     *
+     * 获取可导出VPN连接配置的设备厂商、型号、版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPeerConfigurationSupportedDevicesRequest 请求对象
+     * @return CompletableFuture<ListPeerConfigurationSupportedDevicesResponse>
+     */
+    public CompletableFuture<ListPeerConfigurationSupportedDevicesResponse> listPeerConfigurationSupportedDevicesAsync(
+        ListPeerConfigurationSupportedDevicesRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpnMeta.listPeerConfigurationSupportedDevices);
+    }
+
+    /**
+     * 获取可导出VPN连接配置的设备
+     *
+     * 获取可导出VPN连接配置的设备厂商、型号、版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPeerConfigurationSupportedDevicesRequest 请求对象
+     * @return AsyncInvoker<ListPeerConfigurationSupportedDevicesRequest, ListPeerConfigurationSupportedDevicesResponse>
+     */
+    public AsyncInvoker<ListPeerConfigurationSupportedDevicesRequest, ListPeerConfigurationSupportedDevicesResponse> listPeerConfigurationSupportedDevicesAsyncInvoker(
+        ListPeerConfigurationSupportedDevicesRequest request) {
+        return new AsyncInvoker<>(request, VpnMeta.listPeerConfigurationSupportedDevices, hcClient);
+    }
+
+    /**
      * 查询VPN连接列表
      *
      * 查询VPN连接列表
@@ -1941,6 +2039,36 @@ public class VpnAsyncClient {
     public AsyncInvoker<CreateVgwCertificateRequest, CreateVgwCertificateResponse> createVgwCertificateAsyncInvoker(
         CreateVgwCertificateRequest request) {
         return new AsyncInvoker<>(request, VpnMeta.createVgwCertificate, hcClient);
+    }
+
+    /**
+     * 查询租户下的的所有VPN网关证书
+     *
+     * 查询租户下的所有VPN网关证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVpnGatewayCertificatesRequest 请求对象
+     * @return CompletableFuture<ListVpnGatewayCertificatesResponse>
+     */
+    public CompletableFuture<ListVpnGatewayCertificatesResponse> listVpnGatewayCertificatesAsync(
+        ListVpnGatewayCertificatesRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpnMeta.listVpnGatewayCertificates);
+    }
+
+    /**
+     * 查询租户下的的所有VPN网关证书
+     *
+     * 查询租户下的所有VPN网关证书
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVpnGatewayCertificatesRequest 请求对象
+     * @return AsyncInvoker<ListVpnGatewayCertificatesRequest, ListVpnGatewayCertificatesResponse>
+     */
+    public AsyncInvoker<ListVpnGatewayCertificatesRequest, ListVpnGatewayCertificatesResponse> listVpnGatewayCertificatesAsyncInvoker(
+        ListVpnGatewayCertificatesRequest request) {
+        return new AsyncInvoker<>(request, VpnMeta.listVpnGatewayCertificates, hcClient);
     }
 
     /**

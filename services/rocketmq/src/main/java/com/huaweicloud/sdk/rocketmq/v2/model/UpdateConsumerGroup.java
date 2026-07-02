@@ -38,6 +38,16 @@ public class UpdateConsumerGroup {
 
     private Integer retryMaxTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "consume_orderly")
+
+    private Boolean consumeOrderly;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_desc")
+
+    private String groupDesc;
+
     public UpdateConsumerGroup withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -139,6 +149,40 @@ public class UpdateConsumerGroup {
         this.retryMaxTime = retryMaxTime;
     }
 
+    public UpdateConsumerGroup withConsumeOrderly(Boolean consumeOrderly) {
+        this.consumeOrderly = consumeOrderly;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否按顺序消费。 **约束限制**： 仅RocketMQ实例5.x版本需要填写此参数。[华为云Stack不支持此参数。](tag:hcs,hcs_oemout) **取值范围**： - true：顺序消费。 - false：不按顺序消费。 **默认取值**： 不涉及。
+     * @return consumeOrderly
+     */
+    public Boolean getConsumeOrderly() {
+        return consumeOrderly;
+    }
+
+    public void setConsumeOrderly(Boolean consumeOrderly) {
+        this.consumeOrderly = consumeOrderly;
+    }
+
+    public UpdateConsumerGroup withGroupDesc(String groupDesc) {
+        this.groupDesc = groupDesc;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 消费组描述。 **约束限制**： 不涉及。 **取值范围**： 0~200。 **默认取值**： 不涉及。
+     * @return groupDesc
+     */
+    public String getGroupDesc() {
+        return groupDesc;
+    }
+
+    public void setGroupDesc(String groupDesc) {
+        this.groupDesc = groupDesc;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -150,12 +194,14 @@ public class UpdateConsumerGroup {
         UpdateConsumerGroup that = (UpdateConsumerGroup) obj;
         return Objects.equals(this.enabled, that.enabled) && Objects.equals(this.broadcast, that.broadcast)
             && Objects.equals(this.brokers, that.brokers) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.retryMaxTime, that.retryMaxTime);
+            && Objects.equals(this.retryMaxTime, that.retryMaxTime)
+            && Objects.equals(this.consumeOrderly, that.consumeOrderly)
+            && Objects.equals(this.groupDesc, that.groupDesc);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enabled, broadcast, brokers, name, retryMaxTime);
+        return Objects.hash(enabled, broadcast, brokers, name, retryMaxTime, consumeOrderly, groupDesc);
     }
 
     @Override
@@ -167,6 +213,8 @@ public class UpdateConsumerGroup {
         sb.append("    brokers: ").append(toIndentedString(brokers)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    retryMaxTime: ").append(toIndentedString(retryMaxTime)).append("\n");
+        sb.append("    consumeOrderly: ").append(toIndentedString(consumeOrderly)).append("\n");
+        sb.append("    groupDesc: ").append(toIndentedString(groupDesc)).append("\n");
         sb.append("}");
         return sb.toString();
     }

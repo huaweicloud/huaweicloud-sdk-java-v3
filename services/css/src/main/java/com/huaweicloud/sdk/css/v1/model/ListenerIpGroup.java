@@ -11,6 +11,11 @@ import java.util.Objects;
 public class ListenerIpGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipgroup_id")
 
     private String ipgroupId;
@@ -19,6 +24,23 @@ public class ListenerIpGroup {
     @JsonProperty(value = "enable_ipgroup")
 
     private Boolean enableIpgroup;
+
+    public ListenerIpGroup withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 访问控制组的类型。 **取值范围**： - white:白名单，只允许指定IP访问。 - black:黑名单，不允许指定IP访问。
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public ListenerIpGroup withIpgroupId(String ipgroupId) {
         this.ipgroupId = ipgroupId;
@@ -63,18 +85,20 @@ public class ListenerIpGroup {
             return false;
         }
         ListenerIpGroup that = (ListenerIpGroup) obj;
-        return Objects.equals(this.ipgroupId, that.ipgroupId) && Objects.equals(this.enableIpgroup, that.enableIpgroup);
+        return Objects.equals(this.type, that.type) && Objects.equals(this.ipgroupId, that.ipgroupId)
+            && Objects.equals(this.enableIpgroup, that.enableIpgroup);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ipgroupId, enableIpgroup);
+        return Objects.hash(type, ipgroupId, enableIpgroup);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListenerIpGroup {\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    ipgroupId: ").append(toIndentedString(ipgroupId)).append("\n");
         sb.append("    enableIpgroup: ").append(toIndentedString(enableIpgroup)).append("\n");
         sb.append("}");

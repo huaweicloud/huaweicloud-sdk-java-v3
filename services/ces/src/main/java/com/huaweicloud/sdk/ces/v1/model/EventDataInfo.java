@@ -31,7 +31,7 @@ public class EventDataInfo {
     }
 
     /**
-     * 事件类型，例如instance_host_info。
+     * **参数解释**： 事件类型 **取值范围**： 不涉及 
      * @return type
      */
     public String getType() {
@@ -48,7 +48,7 @@ public class EventDataInfo {
     }
 
     /**
-     * 事件上报时间。
+     * **参数解释**： 上报时间，UNIX时间戳，单位毫秒 **取值范围**： 不涉及 
      * minimum: 1111111111111
      * maximum: 9999999999999
      * @return timestamp
@@ -67,7 +67,7 @@ public class EventDataInfo {
     }
 
     /**
-     * 主机配置信息。
+     * **参数解释**： 主机配置信息 **取值范围**： 不涉及 
      * @return value
      */
     public String getValue() {

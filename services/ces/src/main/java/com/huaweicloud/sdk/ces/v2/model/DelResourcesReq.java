@@ -78,7 +78,7 @@ public class DelResourcesReq {
     }
 
     /**
-     * **参数解释** 当资源添加方式为手动创建、资源层级为子维度时，删除资源分组中的资源只需传递删除的资源信息 **约束限制** 包含的资源个数为1到50个 
+     * **参数解释** [天翼云、移动云不支持该字段。](tag:ctc,cmcc)当资源添加方式为手动创建、资源层级为子维度时，删除资源分组中的资源只需传递删除的资源信息 **约束限制** 包含的资源个数为1到50个 
      * @return productResources
      */
     public List<ProductResource> getProductResources() {

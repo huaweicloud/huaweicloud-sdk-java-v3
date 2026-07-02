@@ -10,6 +10,10 @@ import com.huaweicloud.sdk.gaussdb.v3.model.AddDatabasePermissionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ApplyConfigurationRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.AuditLogDownloadLinkRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.BackupEncryptRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.BackupVaultLockRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.BatchChangeInstanceSpecificationRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.BatchChangeInstanceSpecificationRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.BatchChangeInstanceSpecificationResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.BatchDeleteBackupRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.BatchDeleteBackupRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.BatchDeleteBackupResponse;
@@ -42,6 +46,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.CheckDataBaseConfigResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckResourceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckResourceRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckResourceResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckScheduleTaskExistRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckScheduleTaskExistRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.CheckScheduleTaskExistResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckStarRocksResourceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckStarRocksResourceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CheckStarrocksParamsRequest;
@@ -54,6 +61,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ClickHouseDatabaseUserPSinfo;
 import com.huaweicloud.sdk.gaussdb.v3.model.ClickHouseDatabaseUserPWinfo;
 import com.huaweicloud.sdk.gaussdb.v3.model.ClickHouseResizeFlavorRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.CloseMysqlProxyRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.CollectRealtimeSessionRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CollectRealtimeSessionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CopyConfigurationsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CopyConfigurationsRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.CopyConfigurationsResponse;
@@ -63,6 +72,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.CopyInstanceConfigurationsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateAccessControlRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateAccessControlRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateAccessControlResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateBackupResourcePackageRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateBackupResourcePackageRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.CreateBackupResourcePackageResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateChDatabaseReplicationRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateChInstanceRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.CreateChLtsConfigRequestBody;
@@ -125,6 +137,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabasePermissionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabasePermissionRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabasePermissionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabaseUserRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDynamicServerlessPolicyRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDynamicServerlessPolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteGaussMySqlBackupRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteGaussMySqlBackupResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteGaussMySqlConfigurationRequest;
@@ -170,11 +184,18 @@ import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaurusDbNodeProcessesRequestBo
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaurusDbNodeProcessesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DescribeBackupEncryptStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DescribeBackupEncryptStatusResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DownloadDdlLogsRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DownloadDdlLogsRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.DownloadDdlLogsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DownloadImportExcelTemplateRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DownloadImportExcelTemplateResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DownloadRealtimeSessionRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DownloadRealtimeSessionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DownloadSlowLogFileRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DownloadSlowLogFileResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.EnlargeProxyRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ExecuteIntelligentKillSessionRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ExecuteIntelligentKillSessionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ExpandGaussMySqlInstanceVolumeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ExpandGaussMySqlInstanceVolumeResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ExpandGaussMySqlProxyRequest;
@@ -183,6 +204,7 @@ import com.huaweicloud.sdk.gaussdb.v3.model.GrantDatabasePermissionRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.HtapCreateLTSConfigRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.HtapDeleteLTSConfigRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.HtapErrorLogQueryRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.IntelligentKillSessionsReq;
 import com.huaweicloud.sdk.gaussdb.v3.model.InvokeGaussMySqlInstanceSwitchOverRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.InvokeGaussMySqlInstanceSwitchOverResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListAuditLogDownloadLinkRequest;
@@ -206,6 +228,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ListConfigurationsDifferencesRequest
 import com.huaweicloud.sdk.gaussdb.v3.model.ListConfigurationsDifferencesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListConfigurationsInstancesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListConfigurationsInstancesResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListDdlLogsRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListDdlLogsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListEnterpriseProjectsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListEnterpriseProjectsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlConfigurationsRequest;
@@ -242,6 +266,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ListInstanceNodeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListInstanceNodeResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListInstanceTagsResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListIntelligentKillSessionHistoryRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListIntelligentKillSessionHistoryResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListLtsErrorLogDetailsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListLtsErrorLogDetailsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListLtsSlowlogDetailsRequest;
@@ -278,6 +304,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ModifyAutoExpandPolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyAutoExpandPolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupEncryptStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupEncryptStatusResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupVaultLockRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupVaultLockResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBindEipRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyDataSyncConfigRequestV3;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyDataSyncRequest;
@@ -324,6 +352,7 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ProxyUpdateProxyNameRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ProxyUpgradeProxyVersionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.QueryDataBaseRequestV3;
 import com.huaweicloud.sdk.gaussdb.v3.model.QueryTableRequestV3;
+import com.huaweicloud.sdk.gaussdb.v3.model.RealtimeSessionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.RebootClickHouseInstanceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.RebootClickHouseInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.RenameInstanceNodeRequest;
@@ -365,6 +394,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.SetAuditLogPolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetAutoSqlLimitingReq;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetAutoSqlLimitingRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetAutoSqlLimitingResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.SetDdlLogPolicyRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.SetDdlLogPolicyRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.SetDdlLogPolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetGaussMySqlProxyWeightRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetGaussMySqlProxyWeightResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetGaussMySqlQuotasRequest;
@@ -391,8 +423,12 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoScalingPolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoSqlLimitingLogRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoSqlLimitingLogResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowBackupResourcePackageFlavorsRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowBackupResourcePackageFlavorsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowBackupRestoreTimeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowBackupRestoreTimeResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowBackupVaultLockRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowBackupVaultLockResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseDatabaseUserRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseDatabaseUserResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseLtsConfigRequest;
@@ -403,6 +439,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseSlowLogSensitiveStatus
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowClickHouseSlowLogSensitiveStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowDedicatedResourceInfoRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowDedicatedResourceInfoResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowDynamicServerlessPolicyRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowDynamicServerlessPolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowErrorLogDownloadLinkRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowErrorLogDownloadLinkResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowGaussMySqlBackupListRequest;
@@ -457,6 +495,10 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisAbnormalCoun
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisAbnormalCountOfInstancesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisInstanceInfosPerMetricRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisInstanceInfosPerMetricResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentKillSessionStatisticRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentKillSessionStatisticResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowLockWaitSessionRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowLockWaitSessionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowLtsConfigsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowLtsConfigsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowMultiTenantRequest;
@@ -469,6 +511,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowProxyIpgroupRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowProxyIpgroupResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowProxyVersionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowProxyVersionResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowRealtimeSessionTaskStatusRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowRealtimeSessionTaskStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRecyclePolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRecyclePolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreAvailableTablesRequest;
@@ -518,6 +562,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlConfigurationRequest
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlConfigurationResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlInstanceSslRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlInstanceSslResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxyAltRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxyAltRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxyAltResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxyEipRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxyEipRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxyEipResponse;
@@ -555,6 +602,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateClickHouseSlowLogSensitiveStat
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateConfigurationParameterRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateDatabaseCommentRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateDatabaseUserCommentRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateDynamicServerlessPolicyRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateDynamicServerlessPolicyRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateDynamicServerlessPolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateGaussMySqlBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateGaussMySqlBackupPolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateGaussMySqlConfigurationRequest;
@@ -680,6 +730,39 @@ public class GaussDBMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GrantDatabasePermissionRequestBody.class),
             f -> f.withMarshaller(AddDatabasePermissionRequest::getBody, AddDatabasePermissionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchChangeInstanceSpecificationRequest, BatchChangeInstanceSpecificationResponse> batchChangeInstanceSpecification =
+        genForBatchChangeInstanceSpecification();
+
+    private static HttpRequestDef<BatchChangeInstanceSpecificationRequest, BatchChangeInstanceSpecificationResponse> genForBatchChangeInstanceSpecification() {
+        // basic
+        HttpRequestDef.Builder<BatchChangeInstanceSpecificationRequest, BatchChangeInstanceSpecificationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchChangeInstanceSpecificationRequest.class,
+                    BatchChangeInstanceSpecificationResponse.class)
+                .withName("BatchChangeInstanceSpecification")
+                .withUri("/v3/{project_id}/instances/batch/flavor")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BatchChangeInstanceSpecificationRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchChangeInstanceSpecificationRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(BatchChangeInstanceSpecificationRequest::getXLanguage,
+                BatchChangeInstanceSpecificationRequest::setXLanguage));
+        builder.<BatchChangeInstanceSpecificationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchChangeInstanceSpecificationRequestBody.class),
+            f -> f.withMarshaller(BatchChangeInstanceSpecificationRequest::getBody,
+                BatchChangeInstanceSpecificationRequest::setBody));
 
         // response
 
@@ -949,6 +1032,81 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CheckScheduleTaskExistRequest, CheckScheduleTaskExistResponse> checkScheduleTaskExist =
+        genForCheckScheduleTaskExist();
+
+    private static HttpRequestDef<CheckScheduleTaskExistRequest, CheckScheduleTaskExistResponse> genForCheckScheduleTaskExist() {
+        // basic
+        HttpRequestDef.Builder<CheckScheduleTaskExistRequest, CheckScheduleTaskExistResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CheckScheduleTaskExistRequest.class, CheckScheduleTaskExistResponse.class)
+            .withName("CheckScheduleTaskExist")
+            .withUri("/v3/{project_id}/instances/{instance_id}/schedule-tasks/exist")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckScheduleTaskExistRequest::getInstanceId,
+                CheckScheduleTaskExistRequest::setInstanceId));
+        builder.<CheckScheduleTaskExistRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CheckScheduleTaskExistRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CheckScheduleTaskExistRequest::getXLanguage,
+                CheckScheduleTaskExistRequest::setXLanguage));
+        builder.<CheckScheduleTaskExistRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CheckScheduleTaskExistRequestBody.class),
+            f -> f.withMarshaller(CheckScheduleTaskExistRequest::getBody, CheckScheduleTaskExistRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CollectRealtimeSessionRequest, CollectRealtimeSessionResponse> collectRealtimeSession =
+        genForCollectRealtimeSession();
+
+    private static HttpRequestDef<CollectRealtimeSessionRequest, CollectRealtimeSessionResponse> genForCollectRealtimeSession() {
+        // basic
+        HttpRequestDef.Builder<CollectRealtimeSessionRequest, CollectRealtimeSessionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CollectRealtimeSessionRequest.class, CollectRealtimeSessionResponse.class)
+            .withName("CollectRealtimeSession")
+            .withUri("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/realtime-session")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectRealtimeSessionRequest::getInstanceId,
+                CollectRealtimeSessionRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectRealtimeSessionRequest::getNodeId, CollectRealtimeSessionRequest::setNodeId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectRealtimeSessionRequest::getXLanguage,
+                CollectRealtimeSessionRequest::setXLanguage));
+        builder.<RealtimeSessionRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RealtimeSessionRequest.class),
+            f -> f.withMarshaller(CollectRealtimeSessionRequest::getBody, CollectRealtimeSessionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CopyConfigurationsRequest, CopyConfigurationsResponse> copyConfigurations =
         genForCopyConfigurations();
 
@@ -1061,6 +1219,39 @@ public class GaussDBMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAccessControlRequestBody.class),
             f -> f.withMarshaller(CreateAccessControlRequest::getBody, CreateAccessControlRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateBackupResourcePackageRequest, CreateBackupResourcePackageResponse> createBackupResourcePackage =
+        genForCreateBackupResourcePackage();
+
+    private static HttpRequestDef<CreateBackupResourcePackageRequest, CreateBackupResourcePackageResponse> genForCreateBackupResourcePackage() {
+        // basic
+        HttpRequestDef.Builder<CreateBackupResourcePackageRequest, CreateBackupResourcePackageResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateBackupResourcePackageRequest.class,
+                    CreateBackupResourcePackageResponse.class)
+                .withName("CreateBackupResourcePackage")
+                .withUri("/v3/{project_id}/backups/resource-package")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateBackupResourcePackageRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateBackupResourcePackageRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CreateBackupResourcePackageRequest::getXLanguage,
+                CreateBackupResourcePackageRequest::setXLanguage));
+        builder.<CreateBackupResourcePackageRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateBackupResourcePackageRequestBody.class),
+            f -> f.withMarshaller(CreateBackupResourcePackageRequest::getBody,
+                CreateBackupResourcePackageRequest::setBody));
 
         // response
 
@@ -1504,6 +1695,39 @@ public class GaussDBMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteDatabasePermissionRequestBody.class),
             f -> f.withMarshaller(DeleteDatabasePermissionRequest::getBody, DeleteDatabasePermissionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDynamicServerlessPolicyRequest, DeleteDynamicServerlessPolicyResponse> deleteDynamicServerlessPolicy =
+        genForDeleteDynamicServerlessPolicy();
+
+    private static HttpRequestDef<DeleteDynamicServerlessPolicyRequest, DeleteDynamicServerlessPolicyResponse> genForDeleteDynamicServerlessPolicy() {
+        // basic
+        HttpRequestDef.Builder<DeleteDynamicServerlessPolicyRequest, DeleteDynamicServerlessPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteDynamicServerlessPolicyRequest.class,
+                    DeleteDynamicServerlessPolicyResponse.class)
+                .withName("DeleteDynamicServerlessPolicy")
+                .withUri("/v3/{project_id}/instances/{instance_id}/serverless/dynamic-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDynamicServerlessPolicyRequest::getInstanceId,
+                DeleteDynamicServerlessPolicyRequest::setInstanceId));
+        builder.<DeleteDynamicServerlessPolicyRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteDynamicServerlessPolicyRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(DeleteDynamicServerlessPolicyRequest::getXLanguage,
+                DeleteDynamicServerlessPolicyRequest::setXLanguage));
 
         // response
 
@@ -2002,6 +2226,81 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DownloadDdlLogsRequest, DownloadDdlLogsResponse> downloadDdlLogs =
+        genForDownloadDdlLogs();
+
+    private static HttpRequestDef<DownloadDdlLogsRequest, DownloadDdlLogsResponse> genForDownloadDdlLogs() {
+        // basic
+        HttpRequestDef.Builder<DownloadDdlLogsRequest, DownloadDdlLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DownloadDdlLogsRequest.class, DownloadDdlLogsResponse.class)
+                .withName("DownloadDdlLogs")
+                .withUri("/v3/{project_id}/instances/{instance_id}/ddl-log/download")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadDdlLogsRequest::getInstanceId, DownloadDdlLogsRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadDdlLogsRequest::getXLanguage, DownloadDdlLogsRequest::setXLanguage));
+        builder.<DownloadDdlLogsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DownloadDdlLogsRequestBody.class),
+            f -> f.withMarshaller(DownloadDdlLogsRequest::getBody, DownloadDdlLogsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadRealtimeSessionRequest, DownloadRealtimeSessionResponse> downloadRealtimeSession =
+        genForDownloadRealtimeSession();
+
+    private static HttpRequestDef<DownloadRealtimeSessionRequest, DownloadRealtimeSessionResponse> genForDownloadRealtimeSession() {
+        // basic
+        HttpRequestDef.Builder<DownloadRealtimeSessionRequest, DownloadRealtimeSessionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, DownloadRealtimeSessionRequest.class, DownloadRealtimeSessionResponse.class)
+            .withName("DownloadRealtimeSession")
+            .withUri("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/realtime-session-result")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadRealtimeSessionRequest::getInstanceId,
+                DownloadRealtimeSessionRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadRealtimeSessionRequest::getNodeId,
+                DownloadRealtimeSessionRequest::setNodeId));
+        builder.<String>withRequestField("request_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadRealtimeSessionRequest::getRequestId,
+                DownloadRealtimeSessionRequest::setRequestId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadRealtimeSessionRequest::getXLanguage,
+                DownloadRealtimeSessionRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DownloadSlowLogFileRequest, DownloadSlowLogFileResponse> downloadSlowLogFile =
         genForDownloadSlowLogFile();
 
@@ -2030,6 +2329,45 @@ public class GaussDBMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DownloadSlowLogFileRequest::getXLanguage, DownloadSlowLogFileRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteIntelligentKillSessionRequest, ExecuteIntelligentKillSessionResponse> executeIntelligentKillSession =
+        genForExecuteIntelligentKillSession();
+
+    private static HttpRequestDef<ExecuteIntelligentKillSessionRequest, ExecuteIntelligentKillSessionResponse> genForExecuteIntelligentKillSession() {
+        // basic
+        HttpRequestDef.Builder<ExecuteIntelligentKillSessionRequest, ExecuteIntelligentKillSessionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ExecuteIntelligentKillSessionRequest.class,
+                    ExecuteIntelligentKillSessionResponse.class)
+                .withName("ExecuteIntelligentKillSession")
+                .withUri("/v3/{project_id}/instances/{instance_id}/intelligent-kill-session")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteIntelligentKillSessionRequest::getInstanceId,
+                ExecuteIntelligentKillSessionRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteIntelligentKillSessionRequest::getXLanguage,
+                ExecuteIntelligentKillSessionRequest::setXLanguage));
+        builder.<IntelligentKillSessionsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IntelligentKillSessionsReq.class),
+            f -> f.withMarshaller(ExecuteIntelligentKillSessionRequest::getBody,
+                ExecuteIntelligentKillSessionRequest::setBody));
 
         // response
 
@@ -2330,6 +2668,58 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListConfigurationsInstancesRequest::getXLanguage,
                 ListConfigurationsInstancesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDdlLogsRequest, ListDdlLogsResponse> listDdlLogs = genForListDdlLogs();
+
+    private static HttpRequestDef<ListDdlLogsRequest, ListDdlLogsResponse> genForListDdlLogs() {
+        // basic
+        HttpRequestDef.Builder<ListDdlLogsRequest, ListDdlLogsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDdlLogsRequest.class, ListDdlLogsResponse.class)
+                .withName("ListDdlLogs")
+                .withUri("/v3/{project_id}/instances/{instance_id}/ddl-log")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDdlLogsRequest::getInstanceId, ListDdlLogsRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDdlLogsRequest::getNodeId, ListDdlLogsRequest::setNodeId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDdlLogsRequest::getOffset, ListDdlLogsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDdlLogsRequest::getLimit, ListDdlLogsRequest::setLimit));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDdlLogsRequest::getStartTime, ListDdlLogsRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDdlLogsRequest::getEndTime, ListDdlLogsRequest::setEndTime));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDdlLogsRequest::getXLanguage, ListDdlLogsRequest::setXLanguage));
 
         // response
 
@@ -2973,6 +3363,69 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListIntelligentKillSessionHistoryRequest, ListIntelligentKillSessionHistoryResponse> listIntelligentKillSessionHistory =
+        genForListIntelligentKillSessionHistory();
+
+    private static HttpRequestDef<ListIntelligentKillSessionHistoryRequest, ListIntelligentKillSessionHistoryResponse> genForListIntelligentKillSessionHistory() {
+        // basic
+        HttpRequestDef.Builder<ListIntelligentKillSessionHistoryRequest, ListIntelligentKillSessionHistoryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListIntelligentKillSessionHistoryRequest.class,
+                    ListIntelligentKillSessionHistoryResponse.class)
+                .withName("ListIntelligentKillSessionHistory")
+                .withUri("/v3/{project_id}/instances/{instance_id}/intelligent-kill-session/history")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIntelligentKillSessionHistoryRequest::getInstanceId,
+                ListIntelligentKillSessionHistoryRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIntelligentKillSessionHistoryRequest::getNodeId,
+                ListIntelligentKillSessionHistoryRequest::setNodeId));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListIntelligentKillSessionHistoryRequest::getStartTime,
+                ListIntelligentKillSessionHistoryRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListIntelligentKillSessionHistoryRequest::getEndTime,
+                ListIntelligentKillSessionHistoryRequest::setEndTime));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIntelligentKillSessionHistoryRequest::getLimit,
+                ListIntelligentKillSessionHistoryRequest::setLimit));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIntelligentKillSessionHistoryRequest::getOffset,
+                ListIntelligentKillSessionHistoryRequest::setOffset));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIntelligentKillSessionHistoryRequest::getXLanguage,
+                ListIntelligentKillSessionHistoryRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListLtsErrorLogDetailsRequest, ListLtsErrorLogDetailsResponse> listLtsErrorLogDetails =
         genForListLtsErrorLogDetails();
 
@@ -3370,6 +3823,41 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(BackupEncryptRequest.class),
             f -> f.withMarshaller(ModifyBackupEncryptStatusRequest::getBody,
                 ModifyBackupEncryptStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyBackupVaultLockRequest, ModifyBackupVaultLockResponse> modifyBackupVaultLock =
+        genForModifyBackupVaultLock();
+
+    private static HttpRequestDef<ModifyBackupVaultLockRequest, ModifyBackupVaultLockResponse> genForModifyBackupVaultLock() {
+        // basic
+        HttpRequestDef.Builder<ModifyBackupVaultLockRequest, ModifyBackupVaultLockResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, ModifyBackupVaultLockRequest.class, ModifyBackupVaultLockResponse.class)
+            .withName("ModifyBackupVaultLock")
+            .withUri("/v3/{project_id}/instances/{instance_id}/backups/vault-lock")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyBackupVaultLockRequest::getInstanceId,
+                ModifyBackupVaultLockRequest::setInstanceId));
+        builder.<ModifyBackupVaultLockRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ModifyBackupVaultLockRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ModifyBackupVaultLockRequest::getXLanguage,
+                ModifyBackupVaultLockRequest::setXLanguage));
+        builder.<BackupVaultLockRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BackupVaultLockRequest.class),
+            f -> f.withMarshaller(ModifyBackupVaultLockRequest::getBody, ModifyBackupVaultLockRequest::setBody));
 
         // response
 
@@ -3808,6 +4296,39 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetDdlLogPolicyRequest, SetDdlLogPolicyResponse> setDdlLogPolicy =
+        genForSetDdlLogPolicy();
+
+    private static HttpRequestDef<SetDdlLogPolicyRequest, SetDdlLogPolicyResponse> genForSetDdlLogPolicy() {
+        // basic
+        HttpRequestDef.Builder<SetDdlLogPolicyRequest, SetDdlLogPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetDdlLogPolicyRequest.class, SetDdlLogPolicyResponse.class)
+                .withName("SetDdlLogPolicy")
+                .withUri("/v3/{project_id}/instances/{instance_id}/ddl-log")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetDdlLogPolicyRequest::getInstanceId, SetDdlLogPolicyRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetDdlLogPolicyRequest::getXLanguage, SetDdlLogPolicyRequest::setXLanguage));
+        builder.<SetDdlLogPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetDdlLogPolicyRequestBody.class),
+            f -> f.withMarshaller(SetDdlLogPolicyRequest::getBody, SetDdlLogPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetGaussMySqlProxyWeightRequest, SetGaussMySqlProxyWeightResponse> setGaussMySqlProxyWeight =
         genForSetGaussMySqlProxyWeight();
 
@@ -4165,6 +4686,45 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowBackupResourcePackageFlavorsRequest, ShowBackupResourcePackageFlavorsResponse> showBackupResourcePackageFlavors =
+        genForShowBackupResourcePackageFlavors();
+
+    private static HttpRequestDef<ShowBackupResourcePackageFlavorsRequest, ShowBackupResourcePackageFlavorsResponse> genForShowBackupResourcePackageFlavors() {
+        // basic
+        HttpRequestDef.Builder<ShowBackupResourcePackageFlavorsRequest, ShowBackupResourcePackageFlavorsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowBackupResourcePackageFlavorsRequest.class,
+                    ShowBackupResourcePackageFlavorsResponse.class)
+                .withName("ShowBackupResourcePackageFlavors")
+                .withUri("/v3/{project_id}/backups/resource-package/flavors")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowBackupResourcePackageFlavorsRequest::getOffset,
+                ShowBackupResourcePackageFlavorsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowBackupResourcePackageFlavorsRequest::getLimit,
+                ShowBackupResourcePackageFlavorsRequest::setLimit));
+        builder.<ShowBackupResourcePackageFlavorsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowBackupResourcePackageFlavorsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowBackupResourcePackageFlavorsRequest::getXLanguage,
+                ShowBackupResourcePackageFlavorsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse> showBackupRestoreTime =
         genForShowBackupRestoreTime();
 
@@ -4211,6 +4771,35 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowBackupVaultLockRequest, ShowBackupVaultLockResponse> showBackupVaultLock =
+        genForShowBackupVaultLock();
+
+    private static HttpRequestDef<ShowBackupVaultLockRequest, ShowBackupVaultLockResponse> genForShowBackupVaultLock() {
+        // basic
+        HttpRequestDef.Builder<ShowBackupVaultLockRequest, ShowBackupVaultLockResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowBackupVaultLockRequest.class, ShowBackupVaultLockResponse.class)
+                .withName("ShowBackupVaultLock")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/vault-lock")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackupVaultLockRequest::getInstanceId,
+                ShowBackupVaultLockRequest::setInstanceId));
+        builder.<ShowBackupVaultLockRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowBackupVaultLockRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowBackupVaultLockRequest::getXLanguage, ShowBackupVaultLockRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDedicatedResourceInfoRequest, ShowDedicatedResourceInfoResponse> showDedicatedResourceInfo =
         genForShowDedicatedResourceInfo();
 
@@ -4238,6 +4827,39 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDedicatedResourceInfoRequest::getXLanguage,
                 ShowDedicatedResourceInfoRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDynamicServerlessPolicyRequest, ShowDynamicServerlessPolicyResponse> showDynamicServerlessPolicy =
+        genForShowDynamicServerlessPolicy();
+
+    private static HttpRequestDef<ShowDynamicServerlessPolicyRequest, ShowDynamicServerlessPolicyResponse> genForShowDynamicServerlessPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowDynamicServerlessPolicyRequest, ShowDynamicServerlessPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDynamicServerlessPolicyRequest.class,
+                    ShowDynamicServerlessPolicyResponse.class)
+                .withName("ShowDynamicServerlessPolicy")
+                .withUri("/v3/{project_id}/instances/{instance_id}/serverless/dynamic-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDynamicServerlessPolicyRequest::getInstanceId,
+                ShowDynamicServerlessPolicyRequest::setInstanceId));
+        builder.<ShowDynamicServerlessPolicyRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowDynamicServerlessPolicyRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowDynamicServerlessPolicyRequest::getXLanguage,
+                ShowDynamicServerlessPolicyRequest::setXLanguage));
 
         // response
 
@@ -5096,6 +5718,84 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowIntelligentKillSessionStatisticRequest, ShowIntelligentKillSessionStatisticResponse> showIntelligentKillSessionStatistic =
+        genForShowIntelligentKillSessionStatistic();
+
+    private static HttpRequestDef<ShowIntelligentKillSessionStatisticRequest, ShowIntelligentKillSessionStatisticResponse> genForShowIntelligentKillSessionStatistic() {
+        // basic
+        HttpRequestDef.Builder<ShowIntelligentKillSessionStatisticRequest, ShowIntelligentKillSessionStatisticResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowIntelligentKillSessionStatisticRequest.class,
+                    ShowIntelligentKillSessionStatisticResponse.class)
+                .withName("ShowIntelligentKillSessionStatistic")
+                .withUri("/v3/{project_id}/instances/{instance_id}/intelligent-kill-session/statistic")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIntelligentKillSessionStatisticRequest::getInstanceId,
+                ShowIntelligentKillSessionStatisticRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIntelligentKillSessionStatisticRequest::getNodeId,
+                ShowIntelligentKillSessionStatisticRequest::setNodeId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIntelligentKillSessionStatisticRequest::getXLanguage,
+                ShowIntelligentKillSessionStatisticRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLockWaitSessionRequest, ShowLockWaitSessionResponse> showLockWaitSession =
+        genForShowLockWaitSession();
+
+    private static HttpRequestDef<ShowLockWaitSessionRequest, ShowLockWaitSessionResponse> genForShowLockWaitSession() {
+        // basic
+        HttpRequestDef.Builder<ShowLockWaitSessionRequest, ShowLockWaitSessionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowLockWaitSessionRequest.class, ShowLockWaitSessionResponse.class)
+                .withName("ShowLockWaitSession")
+                .withUri("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/process/lock-wait")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLockWaitSessionRequest::getInstanceId,
+                ShowLockWaitSessionRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLockWaitSessionRequest::getNodeId, ShowLockWaitSessionRequest::setNodeId));
+        builder.<Long>withRequestField("pid",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowLockWaitSessionRequest::getPid, ShowLockWaitSessionRequest::setPid));
+        builder.<ShowLockWaitSessionRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowLockWaitSessionRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowLockWaitSessionRequest::getXLanguage, ShowLockWaitSessionRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowLtsConfigsRequest, ShowLtsConfigsResponse> showLtsConfigs =
         genForShowLtsConfigs();
 
@@ -5327,6 +6027,51 @@ public class GaussDBMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowProxyVersionRequest::getXLanguage, ShowProxyVersionRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRealtimeSessionTaskStatusRequest, ShowRealtimeSessionTaskStatusResponse> showRealtimeSessionTaskStatus =
+        genForShowRealtimeSessionTaskStatus();
+
+    private static HttpRequestDef<ShowRealtimeSessionTaskStatusRequest, ShowRealtimeSessionTaskStatusResponse> genForShowRealtimeSessionTaskStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowRealtimeSessionTaskStatusRequest, ShowRealtimeSessionTaskStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowRealtimeSessionTaskStatusRequest.class,
+                    ShowRealtimeSessionTaskStatusResponse.class)
+                .withName("ShowRealtimeSessionTaskStatus")
+                .withUri("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/realtime-session-task")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRealtimeSessionTaskStatusRequest::getInstanceId,
+                ShowRealtimeSessionTaskStatusRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRealtimeSessionTaskStatusRequest::getNodeId,
+                ShowRealtimeSessionTaskStatusRequest::setNodeId));
+        builder.<String>withRequestField("request_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRealtimeSessionTaskStatusRequest::getRequestId,
+                ShowRealtimeSessionTaskStatusRequest::setRequestId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRealtimeSessionTaskStatusRequest::getXLanguage,
+                ShowRealtimeSessionTaskStatusRequest::setXLanguage));
 
         // response
 
@@ -6000,6 +6745,48 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SwitchGaussMySqlProxyAltRequest, SwitchGaussMySqlProxyAltResponse> switchGaussMySqlProxyAlt =
+        genForSwitchGaussMySqlProxyAlt();
+
+    private static HttpRequestDef<SwitchGaussMySqlProxyAltRequest, SwitchGaussMySqlProxyAltResponse> genForSwitchGaussMySqlProxyAlt() {
+        // basic
+        HttpRequestDef.Builder<SwitchGaussMySqlProxyAltRequest, SwitchGaussMySqlProxyAltResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, SwitchGaussMySqlProxyAltRequest.class, SwitchGaussMySqlProxyAltResponse.class)
+                .withName("SwitchGaussMySqlProxyAlt")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/alt")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchGaussMySqlProxyAltRequest::getInstanceId,
+                SwitchGaussMySqlProxyAltRequest::setInstanceId));
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchGaussMySqlProxyAltRequest::getProxyId,
+                SwitchGaussMySqlProxyAltRequest::setProxyId));
+        builder.<SwitchGaussMySqlProxyAltRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SwitchGaussMySqlProxyAltRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(SwitchGaussMySqlProxyAltRequest::getXLanguage,
+                SwitchGaussMySqlProxyAltRequest::setXLanguage));
+        builder.<SwitchGaussMySqlProxyAltRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SwitchGaussMySqlProxyAltRequestBody.class),
+            f -> f.withMarshaller(SwitchGaussMySqlProxyAltRequest::getBody, SwitchGaussMySqlProxyAltRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SwitchGaussMySqlProxyEipRequest, SwitchGaussMySqlProxyEipResponse> switchGaussMySqlProxyEip =
         genForSwitchGaussMySqlProxyEip();
 
@@ -6185,6 +6972,45 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(UpdateBackupOffsitePolicyRequestBody.class),
             f -> f.withMarshaller(UpdateBackupOffsitePolicyRequest::getBody,
                 UpdateBackupOffsitePolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDynamicServerlessPolicyRequest, UpdateDynamicServerlessPolicyResponse> updateDynamicServerlessPolicy =
+        genForUpdateDynamicServerlessPolicy();
+
+    private static HttpRequestDef<UpdateDynamicServerlessPolicyRequest, UpdateDynamicServerlessPolicyResponse> genForUpdateDynamicServerlessPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateDynamicServerlessPolicyRequest, UpdateDynamicServerlessPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpdateDynamicServerlessPolicyRequest.class,
+                    UpdateDynamicServerlessPolicyResponse.class)
+                .withName("UpdateDynamicServerlessPolicy")
+                .withUri("/v3/{project_id}/instances/{instance_id}/serverless/dynamic-policy")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDynamicServerlessPolicyRequest::getInstanceId,
+                UpdateDynamicServerlessPolicyRequest::setInstanceId));
+        builder.<UpdateDynamicServerlessPolicyRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateDynamicServerlessPolicyRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(UpdateDynamicServerlessPolicyRequest::getXLanguage,
+                UpdateDynamicServerlessPolicyRequest::setXLanguage));
+        builder.<UpdateDynamicServerlessPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDynamicServerlessPolicyRequestBody.class),
+            f -> f.withMarshaller(UpdateDynamicServerlessPolicyRequest::getBody,
+                UpdateDynamicServerlessPolicyRequest::setBody));
 
         // response
 

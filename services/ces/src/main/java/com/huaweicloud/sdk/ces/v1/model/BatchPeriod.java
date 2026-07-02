@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 指标监控数据的聚合粒度，取值范围：1，300，1200，3600，14400，86400；1为监控资源的实时数据；300为聚合5分钟粒度数据，表示5分钟一个数据点；1200为聚合20分钟粒度数据，表示20分钟一个数据点；3600为聚合1小时粒度数据，表示1小时一个数据点；14400为聚合4小时粒度数据，表示4小时一个数据点；86400为聚合1天粒度数据，表示1天一个数据点；聚合解释可查看：“[聚合含义](https://support.huaweicloud.com/ces_faq/ces_faq_0009.html)”。 
+ * **参数解释** 监控数据的聚合粒度，聚合解释可查看：“[[聚合含义](https://support.huaweicloud.com/ces_faq/ces_faq_0009.html)](tag:hc)[[聚合含义](https://support.huaweicloud.com/intl/zh-cn/ces_faq/ces_faq_0009.html)](tag:hk)[[聚合含义](https://support.huaweicloud.com/eu/ces_faq/ces_faq_0009.html)](tag:hws_eu)[[聚合含义](https://docs.otc.t-systems.com/usermanual/ces/ces_faq_0009.html)](tag:dt,dt_test)[《云监控服务用户指南》中“什么是聚合？”章节](tag:ax,cmcc,ctc,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)”。 **约束限制** 不涉及 **取值范围** 枚举值： - 1 监控资源的实时数据 - 60 聚合1分钟粒度数据，表示1分钟一个数据点 - 300 聚合5分钟粒度数据，表示5分钟一个数据点 - 1200 聚合20分钟粒度数据，表示20分钟一个数据点 - 3600 聚合1小时粒度数据，表示1小时一个数据点 - 14400 聚合4小时粒度数据，表示4小时一个数据点 - 86400 聚合1天粒度数据，表示1天一个数据点 **默认取值** 不涉及 
  */
 public class BatchPeriod {
 

@@ -41,7 +41,7 @@ public class ShowEventDataResponse extends SdkResponse {
     }
 
     /**
-     * 配置信息列表。如果不存在对应的配置信息，则datapoints为空数组[]。
+     * **参数解释**： 配置信息列表 **取值范围**： 不涉及 
      * @return datapoints
      */
     public List<EventDataInfo> getDatapoints() {

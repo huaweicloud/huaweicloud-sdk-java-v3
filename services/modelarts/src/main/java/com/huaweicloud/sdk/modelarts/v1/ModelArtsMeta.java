@@ -2717,7 +2717,7 @@ public class ModelArtsMeta {
         HttpRequestDef.Builder<ShowNetworkAvailableIpRequest, ShowNetworkAvailableIpResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ShowNetworkAvailableIpRequest.class, ShowNetworkAvailableIpResponse.class)
             .withName("ShowNetworkAvailableIp")
-            .withUri("/v1/{project_id}/networks/{network_name}/network-ip-availabilities?network_id&#x3D;{network_id}")
+            .withUri("/v1/{project_id}/networks/{network_name}/network-ip-availabilities")
             .withContentType("application/json");
 
         // requests
@@ -2728,7 +2728,7 @@ public class ModelArtsMeta {
             f -> f.withMarshaller(ShowNetworkAvailableIpRequest::getNetworkName,
                 ShowNetworkAvailableIpRequest::setNetworkName));
         builder.<String>withRequestField("network_id",
-            LocationType.Path,
+            LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowNetworkAvailableIpRequest::getNetworkId,

@@ -56,6 +56,16 @@ public class ProductEntityProperties {
     private String maxTpsPerRcu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_tps_per_broker")
+
+    private String maxTpsPerBroker;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "step_length")
+
+    private String stepLength;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine_versions")
 
     private String engineVersions;
@@ -243,6 +253,40 @@ public class ProductEntityProperties {
         this.maxTpsPerRcu = maxTpsPerRcu;
     }
 
+    public ProductEntityProperties withMaxTpsPerBroker(String maxTpsPerBroker) {
+        this.maxTpsPerBroker = maxTpsPerBroker;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 单个broker最大TPS。 **约束限制**： 不涉及。
+     * @return maxTpsPerBroker
+     */
+    public String getMaxTpsPerBroker() {
+        return maxTpsPerBroker;
+    }
+
+    public void setMaxTpsPerBroker(String maxTpsPerBroker) {
+        this.maxTpsPerBroker = maxTpsPerBroker;
+    }
+
+    public ProductEntityProperties withStepLength(String stepLength) {
+        this.stepLength = stepLength;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 每次增加或减少的代理数量。 **约束限制**： 不涉及。
+     * @return stepLength
+     */
+    public String getStepLength() {
+        return stepLength;
+    }
+
+    public void setStepLength(String stepLength) {
+        this.stepLength = stepLength;
+    }
+
     public ProductEntityProperties withEngineVersions(String engineVersions) {
         this.engineVersions = engineVersions;
         return this;
@@ -377,6 +421,8 @@ public class ProductEntityProperties {
             && Objects.equals(this.maxStoragePerNode, that.maxStoragePerNode)
             && Objects.equals(this.productAlias, that.productAlias)
             && Objects.equals(this.maxTpsPerRcu, that.maxTpsPerRcu)
+            && Objects.equals(this.maxTpsPerBroker, that.maxTpsPerBroker)
+            && Objects.equals(this.stepLength, that.stepLength)
             && Objects.equals(this.engineVersions, that.engineVersions)
             && Objects.equals(this.minStorage, that.minStorage)
             && Objects.equals(this.minStoragePerNode, that.minStoragePerNode)
@@ -397,6 +443,8 @@ public class ProductEntityProperties {
             maxStoragePerNode,
             productAlias,
             maxTpsPerRcu,
+            maxTpsPerBroker,
+            stepLength,
             engineVersions,
             minStorage,
             minStoragePerNode,
@@ -419,6 +467,8 @@ public class ProductEntityProperties {
         sb.append("    maxStoragePerNode: ").append(toIndentedString(maxStoragePerNode)).append("\n");
         sb.append("    productAlias: ").append(toIndentedString(productAlias)).append("\n");
         sb.append("    maxTpsPerRcu: ").append(toIndentedString(maxTpsPerRcu)).append("\n");
+        sb.append("    maxTpsPerBroker: ").append(toIndentedString(maxTpsPerBroker)).append("\n");
+        sb.append("    stepLength: ").append(toIndentedString(stepLength)).append("\n");
         sb.append("    engineVersions: ").append(toIndentedString(engineVersions)).append("\n");
         sb.append("    minStorage: ").append(toIndentedString(minStorage)).append("\n");
         sb.append("    minStoragePerNode: ").append(toIndentedString(minStoragePerNode)).append("\n");

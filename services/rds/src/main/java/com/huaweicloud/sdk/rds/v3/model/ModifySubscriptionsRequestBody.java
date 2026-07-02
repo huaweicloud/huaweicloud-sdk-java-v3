@@ -21,7 +21,7 @@ public class ModifySubscriptionsRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_schedule")
 
-    private OperateUsedJobSchedule jobSchedule;
+    private OperateUsedJobScheduleModify jobSchedule;
 
     public ModifySubscriptionsRequestBody withSubscriptionIds(List<String> subscriptionIds) {
         this.subscriptionIds = subscriptionIds;
@@ -56,14 +56,14 @@ public class ModifySubscriptionsRequestBody {
         this.subscriptionIds = subscriptionIds;
     }
 
-    public ModifySubscriptionsRequestBody withJobSchedule(OperateUsedJobSchedule jobSchedule) {
+    public ModifySubscriptionsRequestBody withJobSchedule(OperateUsedJobScheduleModify jobSchedule) {
         this.jobSchedule = jobSchedule;
         return this;
     }
 
-    public ModifySubscriptionsRequestBody withJobSchedule(Consumer<OperateUsedJobSchedule> jobScheduleSetter) {
+    public ModifySubscriptionsRequestBody withJobSchedule(Consumer<OperateUsedJobScheduleModify> jobScheduleSetter) {
         if (this.jobSchedule == null) {
-            this.jobSchedule = new OperateUsedJobSchedule();
+            this.jobSchedule = new OperateUsedJobScheduleModify();
             jobScheduleSetter.accept(this.jobSchedule);
         }
 
@@ -74,11 +74,11 @@ public class ModifySubscriptionsRequestBody {
      * Get jobSchedule
      * @return jobSchedule
      */
-    public OperateUsedJobSchedule getJobSchedule() {
+    public OperateUsedJobScheduleModify getJobSchedule() {
         return jobSchedule;
     }
 
-    public void setJobSchedule(OperateUsedJobSchedule jobSchedule) {
+    public void setJobSchedule(OperateUsedJobScheduleModify jobSchedule) {
         this.jobSchedule = jobSchedule;
     }
 

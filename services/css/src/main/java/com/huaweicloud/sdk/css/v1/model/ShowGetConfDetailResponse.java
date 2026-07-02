@@ -42,6 +42,11 @@ public class ShowGetConfDetailResponse extends SdkResponse {
 
     private String desc;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sensitiveWordsShielding")
+
+    private Boolean sensitiveWordsShielding;
+
     public ShowGetConfDetailResponse withName(String name) {
         this.name = name;
         return this;
@@ -153,6 +158,23 @@ public class ShowGetConfDetailResponse extends SdkResponse {
         this.desc = desc;
     }
 
+    public ShowGetConfDetailResponse withSensitiveWordsShielding(Boolean sensitiveWordsShielding) {
+        this.sensitiveWordsShielding = sensitiveWordsShielding;
+        return this;
+    }
+
+    /**
+     * 是否隐藏敏感词
+     * @return sensitiveWordsShielding
+     */
+    public Boolean getSensitiveWordsShielding() {
+        return sensitiveWordsShielding;
+    }
+
+    public void setSensitiveWordsShielding(Boolean sensitiveWordsShielding) {
+        this.sensitiveWordsShielding = sensitiveWordsShielding;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -164,12 +186,13 @@ public class ShowGetConfDetailResponse extends SdkResponse {
         ShowGetConfDetailResponse that = (ShowGetConfDetailResponse) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
             && Objects.equals(this.confContent, that.confContent) && Objects.equals(this.setting, that.setting)
-            && Objects.equals(this.updateAt, that.updateAt) && Objects.equals(this.desc, that.desc);
+            && Objects.equals(this.updateAt, that.updateAt) && Objects.equals(this.desc, that.desc)
+            && Objects.equals(this.sensitiveWordsShielding, that.sensitiveWordsShielding);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, status, confContent, setting, updateAt, desc);
+        return Objects.hash(name, status, confContent, setting, updateAt, desc, sensitiveWordsShielding);
     }
 
     @Override
@@ -182,6 +205,7 @@ public class ShowGetConfDetailResponse extends SdkResponse {
         sb.append("    setting: ").append(toIndentedString(setting)).append("\n");
         sb.append("    updateAt: ").append(toIndentedString(updateAt)).append("\n");
         sb.append("    desc: ").append(toIndentedString(desc)).append("\n");
+        sb.append("    sensitiveWordsShielding: ").append(toIndentedString(sensitiveWordsShielding)).append("\n");
         sb.append("}");
         return sb.toString();
     }

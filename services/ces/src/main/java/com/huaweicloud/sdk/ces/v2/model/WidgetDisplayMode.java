@@ -21,9 +21,7 @@ public class WidgetDisplayMode {
     }
 
     /**
-     * **参数解释** 每行展示视图数量 **取值范围** - 0:表示自定义坐标 - 1:代表每行1个视图 - 2:代表每行2个视图 - 3:代表每行3个视图 
-     * minimum: 0
-     * maximum: 3
+     * **参数解释** 每行展示视图数量 **取值范围** - 0:表示自定义坐标 - 1:代表每行1个视图 - 2:代表每行2个视图 - 3:代表每行3个视图 - 4:代表每行4个视图 
      * @return rowWidgetNum
      */
     public Integer getRowWidgetNum() {

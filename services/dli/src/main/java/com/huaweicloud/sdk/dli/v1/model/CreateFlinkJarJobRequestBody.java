@@ -149,6 +149,11 @@ public class CreateFlinkJarJobRequestBody {
     private String runtimeConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flink_log_config")
+
+    private String flinkLogConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execution_agency_urn")
 
     private String executionAgencyUrn;
@@ -659,6 +664,23 @@ public class CreateFlinkJarJobRequestBody {
         this.runtimeConfig = runtimeConfig;
     }
 
+    public CreateFlinkJarJobRequestBody withFlinkLogConfig(String flinkLogConfig) {
+        this.flinkLogConfig = flinkLogConfig;
+        return this;
+    }
+
+    /**
+     * Flink作业日志级别配置（JSON格式）。 支持全局root_logger_level及类/包级别loggers_level_of_class精细化控制，可选值为：TRACE，DEBUG，INFO，WARN，ERROR。 例如：{\\\"root_logger_level\\\":\\\"INFO\\\",\\\"loggers_level_of_class\\\":{\\\"org.apache.flink\\\":\\\"WARN\\\",\\\"org.apache.kafka.clients.consumer.KafkaConsumer\\\":\\\"DEBUG\\\",\\\"com.mycompany.job.MainFunction\\\":\\\"TRACE\\\"}}
+     * @return flinkLogConfig
+     */
+    public String getFlinkLogConfig() {
+        return flinkLogConfig;
+    }
+
+    public void setFlinkLogConfig(String flinkLogConfig) {
+        this.flinkLogConfig = flinkLogConfig;
+    }
+
     public CreateFlinkJarJobRequestBody withExecutionAgencyUrn(String executionAgencyUrn) {
         this.executionAgencyUrn = executionAgencyUrn;
         return this;
@@ -782,6 +804,7 @@ public class CreateFlinkJarJobRequestBody {
             && Objects.equals(this.resumeMaxNum, that.resumeMaxNum)
             && Objects.equals(this.checkpointPath, that.checkpointPath)
             && Objects.equals(this.runtimeConfig, that.runtimeConfig)
+            && Objects.equals(this.flinkLogConfig, that.flinkLogConfig)
             && Objects.equals(this.executionAgencyUrn, that.executionAgencyUrn) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.resourceConfig, that.resourceConfig)
             && Objects.equals(this.resourceConfigVersion, that.resourceConfigVersion);
@@ -816,6 +839,7 @@ public class CreateFlinkJarJobRequestBody {
             resumeMaxNum,
             checkpointPath,
             runtimeConfig,
+            flinkLogConfig,
             executionAgencyUrn,
             tags,
             resourceConfig,
@@ -853,6 +877,7 @@ public class CreateFlinkJarJobRequestBody {
         sb.append("    resumeMaxNum: ").append(toIndentedString(resumeMaxNum)).append("\n");
         sb.append("    checkpointPath: ").append(toIndentedString(checkpointPath)).append("\n");
         sb.append("    runtimeConfig: ").append(toIndentedString(runtimeConfig)).append("\n");
+        sb.append("    flinkLogConfig: ").append(toIndentedString(flinkLogConfig)).append("\n");
         sb.append("    executionAgencyUrn: ").append(toIndentedString(executionAgencyUrn)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    resourceConfig: ").append(toIndentedString(resourceConfig)).append("\n");

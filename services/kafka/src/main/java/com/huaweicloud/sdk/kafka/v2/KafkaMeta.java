@@ -161,6 +161,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ResetUserPasswordReq;
 import com.huaweicloud.sdk.kafka.v2.model.ResetUserPasswrodRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResetUserPasswrodResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ResizeEngineInstanceReq;
+import com.huaweicloud.sdk.kafka.v2.model.ResizeEngineInstanceRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ResizeEngineInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ResizeKafkaInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResizeKafkaInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.RestartConnectorTaskRequest;
@@ -210,6 +212,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaClusterRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaClusterResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaInstanceExtendProductInfoRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaInstanceExtendProductInfoResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaLogTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaLogTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaProductCoresRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaProductCoresResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaProjectTagsRequest;
@@ -252,6 +256,11 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowVolumeExpandConfigRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowVolumeExpandConfigResponse;
 import com.huaweicloud.sdk.kafka.v2.model.SmartConnectTaskEntity;
 import com.huaweicloud.sdk.kafka.v2.model.SmartConnectValidateEntity;
+import com.huaweicloud.sdk.kafka.v2.model.StartKafkaLogTaskReq;
+import com.huaweicloud.sdk.kafka.v2.model.StartKafkaLogTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.StartKafkaLogTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.StopKafkaLogTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.StopKafkaLogTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.StopKafkaRebalanceLogTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.StopKafkaRebalanceLogTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceAutoCreateTopicReq;
@@ -2061,6 +2070,40 @@ public class KafkaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> resizeEngineInstance =
+        genForResizeEngineInstance();
+
+    private static HttpRequestDef<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> genForResizeEngineInstance() {
+        // basic
+        HttpRequestDef.Builder<ResizeEngineInstanceRequest, ResizeEngineInstanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ResizeEngineInstanceRequest.class, ResizeEngineInstanceResponse.class)
+            .withName("ResizeEngineInstance")
+            .withUri("/v2/{engine}/{project_id}/instances/{instance_id}/extend")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ResizeEngineInstanceRequest.EngineEnum>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResizeEngineInstanceRequest.EngineEnum.class),
+            f -> f.withMarshaller(ResizeEngineInstanceRequest::getEngine, ResizeEngineInstanceRequest::setEngine));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResizeEngineInstanceRequest::getInstanceId,
+                ResizeEngineInstanceRequest::setInstanceId));
+        builder.<ResizeEngineInstanceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResizeEngineInstanceReq.class),
+            f -> f.withMarshaller(ResizeEngineInstanceRequest::getBody, ResizeEngineInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ResizeKafkaInstanceRequest, ResizeKafkaInstanceResponse> resizeKafkaInstance =
         genForResizeKafkaInstance();
 
@@ -2632,6 +2675,34 @@ public class KafkaMeta {
             TypeCasts.uncheckedConversion(ShowKafkaInstanceExtendProductInfoRequest.TypeEnum.class),
             f -> f.withMarshaller(ShowKafkaInstanceExtendProductInfoRequest::getType,
                 ShowKafkaInstanceExtendProductInfoRequest::setType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowKafkaLogTaskRequest, ShowKafkaLogTaskResponse> showKafkaLogTask =
+        genForShowKafkaLogTask();
+
+    private static HttpRequestDef<ShowKafkaLogTaskRequest, ShowKafkaLogTaskResponse> genForShowKafkaLogTask() {
+        // basic
+        HttpRequestDef.Builder<ShowKafkaLogTaskRequest, ShowKafkaLogTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowKafkaLogTaskRequest.class, ShowKafkaLogTaskResponse.class)
+                .withName("ShowKafkaLogTask")
+                .withUri("/v2/{project_id}/kafka/instances/{instance_id}/logs/{log_type}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKafkaLogTaskRequest::getInstanceId, ShowKafkaLogTaskRequest::setInstanceId));
+        builder.<ShowKafkaLogTaskRequest.LogTypeEnum>withRequestField("log_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowKafkaLogTaskRequest.LogTypeEnum.class),
+            f -> f.withMarshaller(ShowKafkaLogTaskRequest::getLogType, ShowKafkaLogTaskRequest::setLogType));
 
         // response
 
@@ -3263,6 +3334,67 @@ public class KafkaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowVolumeExpandConfigRequest::getInstanceId,
                 ShowVolumeExpandConfigRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartKafkaLogTaskRequest, StartKafkaLogTaskResponse> startKafkaLogTask =
+        genForStartKafkaLogTask();
+
+    private static HttpRequestDef<StartKafkaLogTaskRequest, StartKafkaLogTaskResponse> genForStartKafkaLogTask() {
+        // basic
+        HttpRequestDef.Builder<StartKafkaLogTaskRequest, StartKafkaLogTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StartKafkaLogTaskRequest.class, StartKafkaLogTaskResponse.class)
+                .withName("StartKafkaLogTask")
+                .withUri("/v2/{project_id}/kafka/instances/{instance_id}/logs/{log_type}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartKafkaLogTaskRequest::getInstanceId, StartKafkaLogTaskRequest::setInstanceId));
+        builder.<StartKafkaLogTaskRequest.LogTypeEnum>withRequestField("log_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StartKafkaLogTaskRequest.LogTypeEnum.class),
+            f -> f.withMarshaller(StartKafkaLogTaskRequest::getLogType, StartKafkaLogTaskRequest::setLogType));
+        builder.<StartKafkaLogTaskReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StartKafkaLogTaskReq.class),
+            f -> f.withMarshaller(StartKafkaLogTaskRequest::getBody, StartKafkaLogTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopKafkaLogTaskRequest, StopKafkaLogTaskResponse> stopKafkaLogTask =
+        genForStopKafkaLogTask();
+
+    private static HttpRequestDef<StopKafkaLogTaskRequest, StopKafkaLogTaskResponse> genForStopKafkaLogTask() {
+        // basic
+        HttpRequestDef.Builder<StopKafkaLogTaskRequest, StopKafkaLogTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, StopKafkaLogTaskRequest.class, StopKafkaLogTaskResponse.class)
+                .withName("StopKafkaLogTask")
+                .withUri("/v2/{project_id}/kafka/instances/{instance_id}/logs/{log_type}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopKafkaLogTaskRequest::getInstanceId, StopKafkaLogTaskRequest::setInstanceId));
+        builder.<StopKafkaLogTaskRequest.LogTypeEnum>withRequestField("log_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StopKafkaLogTaskRequest.LogTypeEnum.class),
+            f -> f.withMarshaller(StopKafkaLogTaskRequest::getLogType, StopKafkaLogTaskRequest::setLogType));
 
         // response
 

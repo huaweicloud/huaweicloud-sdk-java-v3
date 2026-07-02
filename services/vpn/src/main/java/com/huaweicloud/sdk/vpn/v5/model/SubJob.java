@@ -41,6 +41,11 @@ public class SubJob {
          */
         public static final JobTypeEnum UPGRADE_WORKER_2 = new JobTypeEnum("upgrade_worker_2");
 
+        /**
+         * Enum MIGRATE_NETWORK_1 for value: "migrate_network_1"
+         */
+        public static final JobTypeEnum MIGRATE_NETWORK_1 = new JobTypeEnum("migrate_network_1");
+
         private static final Map<String, JobTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, JobTypeEnum> createStaticFields() {
@@ -48,6 +53,7 @@ public class SubJob {
             map.put("prepare_resource", PREPARE_RESOURCE);
             map.put("upgrade_worker_1", UPGRADE_WORKER_1);
             map.put("upgrade_worker_2", UPGRADE_WORKER_2);
+            map.put("migrate_network_1", MIGRATE_NETWORK_1);
             return Collections.unmodifiableMap(map);
         }
 
@@ -190,6 +196,11 @@ public class SubJob {
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expected_time_seconds")
+
+    private Integer expectedTimeSeconds;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
     private OffsetDateTime createdAt;
@@ -255,6 +266,23 @@ public class SubJob {
         this.status = status;
     }
 
+    public SubJob withExpectedTimeSeconds(Integer expectedTimeSeconds) {
+        this.expectedTimeSeconds = expectedTimeSeconds;
+        return this;
+    }
+
+    /**
+     * 预计剩余执行时间，单位：s
+     * @return expectedTimeSeconds
+     */
+    public Integer getExpectedTimeSeconds() {
+        return expectedTimeSeconds;
+    }
+
+    public void setExpectedTimeSeconds(Integer expectedTimeSeconds) {
+        this.expectedTimeSeconds = expectedTimeSeconds;
+    }
+
     public SubJob withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -316,13 +344,15 @@ public class SubJob {
         }
         SubJob that = (SubJob) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.jobType, that.jobType)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.finishedAt, that.finishedAt) && Objects.equals(this.errorMessage, that.errorMessage);
+            && Objects.equals(this.status, that.status)
+            && Objects.equals(this.expectedTimeSeconds, that.expectedTimeSeconds)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.finishedAt, that.finishedAt)
+            && Objects.equals(this.errorMessage, that.errorMessage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, jobType, status, createdAt, finishedAt, errorMessage);
+        return Objects.hash(id, jobType, status, expectedTimeSeconds, createdAt, finishedAt, errorMessage);
     }
 
     @Override
@@ -332,6 +362,7 @@ public class SubJob {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    expectedTimeSeconds: ").append(toIndentedString(expectedTimeSeconds)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    finishedAt: ").append(toIndentedString(finishedAt)).append("\n");
         sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");

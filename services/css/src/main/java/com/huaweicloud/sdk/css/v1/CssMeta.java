@@ -64,8 +64,6 @@ import com.huaweicloud.sdk.css.v1.model.DeleteClustersTagsResponse;
 import com.huaweicloud.sdk.css.v1.model.DeleteConfReq;
 import com.huaweicloud.sdk.css.v1.model.DeleteConfRequest;
 import com.huaweicloud.sdk.css.v1.model.DeleteConfResponse;
-import com.huaweicloud.sdk.css.v1.model.DeleteConfigRequest;
-import com.huaweicloud.sdk.css.v1.model.DeleteConfigResponse;
 import com.huaweicloud.sdk.css.v1.model.DeleteIkThesaurusRequest;
 import com.huaweicloud.sdk.css.v1.model.DeleteIkThesaurusResponse;
 import com.huaweicloud.sdk.css.v1.model.DeleteSnapshotRequest;
@@ -195,9 +193,9 @@ import com.huaweicloud.sdk.css.v1.model.StartPublicWhitelistResponse;
 import com.huaweicloud.sdk.css.v1.model.StartTargetClusterConnectivityTestReq;
 import com.huaweicloud.sdk.css.v1.model.StartTargetClusterConnectivityTestRequest;
 import com.huaweicloud.sdk.css.v1.model.StartTargetClusterConnectivityTestResponse;
+import com.huaweicloud.sdk.css.v1.model.StartVpcepRequest;
+import com.huaweicloud.sdk.css.v1.model.StartVpcepResponse;
 import com.huaweicloud.sdk.css.v1.model.StartVpecpReq;
-import com.huaweicloud.sdk.css.v1.model.StartVpecpRequest;
-import com.huaweicloud.sdk.css.v1.model.StartVpecpResponse;
 import com.huaweicloud.sdk.css.v1.model.StopHotPipelineRequest;
 import com.huaweicloud.sdk.css.v1.model.StopHotPipelineRequestBody;
 import com.huaweicloud.sdk.css.v1.model.StopHotPipelineResponse;
@@ -213,8 +211,8 @@ import com.huaweicloud.sdk.css.v1.model.StopPublicWhitelistRequest;
 import com.huaweicloud.sdk.css.v1.model.StopPublicWhitelistResponse;
 import com.huaweicloud.sdk.css.v1.model.StopSnapshotRequest;
 import com.huaweicloud.sdk.css.v1.model.StopSnapshotResponse;
-import com.huaweicloud.sdk.css.v1.model.StopVpecpRequest;
-import com.huaweicloud.sdk.css.v1.model.StopVpecpResponse;
+import com.huaweicloud.sdk.css.v1.model.StopVpcepRequest;
+import com.huaweicloud.sdk.css.v1.model.StopVpcepResponse;
 import com.huaweicloud.sdk.css.v1.model.TagReq;
 import com.huaweicloud.sdk.css.v1.model.UnBindPublicReq;
 import com.huaweicloud.sdk.css.v1.model.UpdateAiOpsSettingRequest;
@@ -1880,13 +1878,13 @@ public class CssMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<StartVpecpRequest, StartVpecpResponse> startVpecp = genForStartVpecp();
+    public static final HttpRequestDef<StartVpcepRequest, StartVpcepResponse> startVpcep = genForStartVpcep();
 
-    private static HttpRequestDef<StartVpecpRequest, StartVpecpResponse> genForStartVpecp() {
+    private static HttpRequestDef<StartVpcepRequest, StartVpcepResponse> genForStartVpcep() {
         // basic
-        HttpRequestDef.Builder<StartVpecpRequest, StartVpecpResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, StartVpecpRequest.class, StartVpecpResponse.class)
-                .withName("StartVpecp")
+        HttpRequestDef.Builder<StartVpcepRequest, StartVpcepResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StartVpcepRequest.class, StartVpcepResponse.class)
+                .withName("StartVpcep")
                 .withUri("/v1.0/{project_id}/clusters/{cluster_id}/vpcepservice/open")
                 .withContentType("application/json");
 
@@ -1895,12 +1893,12 @@ public class CssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StartVpecpRequest::getClusterId, StartVpecpRequest::setClusterId));
+            f -> f.withMarshaller(StartVpcepRequest::getClusterId, StartVpcepRequest::setClusterId));
         builder.<StartVpecpReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StartVpecpReq.class),
-            f -> f.withMarshaller(StartVpecpRequest::getBody, StartVpecpRequest::setBody));
+            f -> f.withMarshaller(StartVpcepRequest::getBody, StartVpcepRequest::setBody));
 
         // response
 
@@ -1998,13 +1996,13 @@ public class CssMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<StopVpecpRequest, StopVpecpResponse> stopVpecp = genForStopVpecp();
+    public static final HttpRequestDef<StopVpcepRequest, StopVpcepResponse> stopVpcep = genForStopVpcep();
 
-    private static HttpRequestDef<StopVpecpRequest, StopVpecpResponse> genForStopVpecp() {
+    private static HttpRequestDef<StopVpcepRequest, StopVpcepResponse> genForStopVpcep() {
         // basic
-        HttpRequestDef.Builder<StopVpecpRequest, StopVpecpResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, StopVpecpRequest.class, StopVpecpResponse.class)
-                .withName("StopVpecp")
+        HttpRequestDef.Builder<StopVpcepRequest, StopVpcepResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, StopVpcepRequest.class, StopVpcepResponse.class)
+                .withName("StopVpcep")
                 .withUri("/v1.0/{project_id}/clusters/{cluster_id}/vpcepservice/close")
                 .withContentType("application/json");
 
@@ -2013,7 +2011,7 @@ public class CssMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(StopVpecpRequest::getClusterId, StopVpecpRequest::setClusterId));
+            f -> f.withMarshaller(StopVpcepRequest::getClusterId, StopVpcepRequest::setClusterId));
 
         // response
 
@@ -2969,33 +2967,6 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteConfReq.class),
             f -> f.withMarshaller(DeleteConfRequest::getBody, DeleteConfRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteConfigRequest, DeleteConfigResponse> deleteConfig = genForDeleteConfig();
-
-    private static HttpRequestDef<DeleteConfigRequest, DeleteConfigResponse> genForDeleteConfig() {
-        // basic
-        HttpRequestDef.Builder<DeleteConfigRequest, DeleteConfigResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteConfigRequest.class, DeleteConfigResponse.class)
-                .withName("DeleteConfig")
-                .withUri("/v2.0/{project_id}/clusters/{cluster_id}/lgsconf/delete")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("cluster_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteConfigRequest::getClusterId, DeleteConfigRequest::setClusterId));
-        builder.<DeleteConfReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(DeleteConfReq.class),
-            f -> f.withMarshaller(DeleteConfigRequest::getBody, DeleteConfigRequest::setBody));
 
         // response
 

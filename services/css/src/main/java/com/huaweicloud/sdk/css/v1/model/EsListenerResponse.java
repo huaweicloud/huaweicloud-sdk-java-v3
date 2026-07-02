@@ -32,6 +32,16 @@ public class EsListenerResponse {
     private String protocolPort;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "default_tls_container_ref")
+
+    private String defaultTlsContainerRef;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "client_ca_tls_container_ref")
+
+    private String clientCaTlsContainerRef;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipgroup")
 
     private EsIpgroupResource ipgroup;
@@ -104,6 +114,40 @@ public class EsListenerResponse {
         this.protocolPort = protocolPort;
     }
 
+    public EsListenerResponse withDefaultTlsContainerRef(String defaultTlsContainerRef) {
+        this.defaultTlsContainerRef = defaultTlsContainerRef;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 监听器使用的服务器证书ID。 **取值范围**： 不涉及。
+     * @return defaultTlsContainerRef
+     */
+    public String getDefaultTlsContainerRef() {
+        return defaultTlsContainerRef;
+    }
+
+    public void setDefaultTlsContainerRef(String defaultTlsContainerRef) {
+        this.defaultTlsContainerRef = defaultTlsContainerRef;
+    }
+
+    public EsListenerResponse withClientCaTlsContainerRef(String clientCaTlsContainerRef) {
+        this.clientCaTlsContainerRef = clientCaTlsContainerRef;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 监听器使用的CA证书ID。 **取值范围**： 不涉及。
+     * @return clientCaTlsContainerRef
+     */
+    public String getClientCaTlsContainerRef() {
+        return clientCaTlsContainerRef;
+    }
+
+    public void setClientCaTlsContainerRef(String clientCaTlsContainerRef) {
+        this.clientCaTlsContainerRef = clientCaTlsContainerRef;
+    }
+
     public EsListenerResponse withIpgroup(EsIpgroupResource ipgroup) {
         this.ipgroup = ipgroup;
         return this;
@@ -141,12 +185,14 @@ public class EsListenerResponse {
         EsListenerResponse that = (EsListenerResponse) obj;
         return Objects.equals(this.protocol, that.protocol) && Objects.equals(this.id, that.id)
             && Objects.equals(this.name, that.name) && Objects.equals(this.protocolPort, that.protocolPort)
+            && Objects.equals(this.defaultTlsContainerRef, that.defaultTlsContainerRef)
+            && Objects.equals(this.clientCaTlsContainerRef, that.clientCaTlsContainerRef)
             && Objects.equals(this.ipgroup, that.ipgroup);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(protocol, id, name, protocolPort, ipgroup);
+        return Objects.hash(protocol, id, name, protocolPort, defaultTlsContainerRef, clientCaTlsContainerRef, ipgroup);
     }
 
     @Override
@@ -157,6 +203,8 @@ public class EsListenerResponse {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    protocolPort: ").append(toIndentedString(protocolPort)).append("\n");
+        sb.append("    defaultTlsContainerRef: ").append(toIndentedString(defaultTlsContainerRef)).append("\n");
+        sb.append("    clientCaTlsContainerRef: ").append(toIndentedString(clientCaTlsContainerRef)).append("\n");
         sb.append("    ipgroup: ").append(toIndentedString(ipgroup)).append("\n");
         sb.append("}");
         return sb.toString();

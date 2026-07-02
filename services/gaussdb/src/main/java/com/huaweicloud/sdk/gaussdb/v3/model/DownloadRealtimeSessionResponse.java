@@ -1,11 +1,13 @@
-package com.huaweicloud.sdk.ces.v1.model;
+package com.huaweicloud.sdk.gaussdb.v3.model;
+
+import com.huaweicloud.sdk.core.SdkStreamResponse;
 
 import java.util.Objects;
 
 /**
- * TimeStampSchema
+ * Response Object
  */
-public class TimeStampSchema {
+public class DownloadRealtimeSessionResponse extends SdkStreamResponse {
 
     @Override
     public boolean equals(java.lang.Object obj) {
@@ -26,7 +28,7 @@ public class TimeStampSchema {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class TimeStampSchema {\n");
+        sb.append("class DownloadRealtimeSessionResponse {\n");
         sb.append("}");
         return sb.toString();
     }

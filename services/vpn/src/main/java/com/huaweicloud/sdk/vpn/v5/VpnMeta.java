@@ -86,6 +86,9 @@ import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnUserResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ExportClientConfigRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ExportClientConfigRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.ExportClientConfigResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ExportPeerConfigurationRequestBody;
+import com.huaweicloud.sdk.vpn.v5.model.ExportVpnConnectionPeerConfigurationRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ExportVpnConnectionPeerConfigurationResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ImportClientCaCertificateRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.ImportClientCaRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ImportClientCaResponse;
@@ -93,6 +96,8 @@ import com.huaweicloud.sdk.vpn.v5.model.ListAvailabilityZonesRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListAvailabilityZonesResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListCgwsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListCgwsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ListConnectionIpsecSaRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ListConnectionIpsecSaResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListConnectionMonitorsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListConnectionMonitorsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListExtendedAvailabilityZonesRequest;
@@ -105,6 +110,8 @@ import com.huaweicloud.sdk.vpn.v5.model.ListP2cVgwsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListP2cVgwsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListP2cVpnGatewayJobsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListP2cVpnGatewayJobsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ListPeerConfigurationSupportedDevicesRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ListPeerConfigurationSupportedDevicesResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListResourcesByTagsRequest;
@@ -115,6 +122,8 @@ import com.huaweicloud.sdk.vpn.v5.model.ListVpnAccessPoliciesRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnAccessPoliciesResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnConnectionsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnConnectionsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ListVpnGatewayCertificatesRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ListVpnGatewayCertificatesResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnGatewayJobsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnGatewayJobsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnServersByProjectRequest;
@@ -843,6 +852,16 @@ public class VpnMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListP2cVpnGatewayJobsRequest::getResourceId,
                 ListP2cVpnGatewayJobsRequest::setResourceId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListP2cVpnGatewayJobsRequest::getLimit, ListP2cVpnGatewayJobsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListP2cVpnGatewayJobsRequest::getMarker, ListP2cVpnGatewayJobsRequest::setMarker));
 
         // response
 
@@ -1379,6 +1398,102 @@ public class VpnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExportVpnConnectionPeerConfigurationRequest, ExportVpnConnectionPeerConfigurationResponse> exportVpnConnectionPeerConfiguration =
+        genForExportVpnConnectionPeerConfiguration();
+
+    private static HttpRequestDef<ExportVpnConnectionPeerConfigurationRequest, ExportVpnConnectionPeerConfigurationResponse> genForExportVpnConnectionPeerConfiguration() {
+        // basic
+        HttpRequestDef.Builder<ExportVpnConnectionPeerConfigurationRequest, ExportVpnConnectionPeerConfigurationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ExportVpnConnectionPeerConfigurationRequest.class,
+                    ExportVpnConnectionPeerConfigurationResponse.class)
+                .withName("ExportVpnConnectionPeerConfiguration")
+                .withUri("/v5/{project_id}/vpn-connection/{vpn_connection_id}/peer-configuration/export")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vpn_connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportVpnConnectionPeerConfigurationRequest::getVpnConnectionId,
+                ExportVpnConnectionPeerConfigurationRequest::setVpnConnectionId));
+        builder.<ExportPeerConfigurationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExportPeerConfigurationRequestBody.class),
+            f -> f.withMarshaller(ExportVpnConnectionPeerConfigurationRequest::getBody,
+                ExportVpnConnectionPeerConfigurationRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("header-response-token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ExportVpnConnectionPeerConfigurationResponse::getHeaderResponseToken,
+                ExportVpnConnectionPeerConfigurationResponse::setHeaderResponseToken));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListConnectionIpsecSaRequest, ListConnectionIpsecSaResponse> listConnectionIpsecSa =
+        genForListConnectionIpsecSa();
+
+    private static HttpRequestDef<ListConnectionIpsecSaRequest, ListConnectionIpsecSaResponse> genForListConnectionIpsecSa() {
+        // basic
+        HttpRequestDef.Builder<ListConnectionIpsecSaRequest, ListConnectionIpsecSaResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListConnectionIpsecSaRequest.class, ListConnectionIpsecSaResponse.class)
+            .withName("ListConnectionIpsecSa")
+            .withUri("/v5/{project_id}/vpn-connection/{vpn_connection_id}/ipsec-sa")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vpn_connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectionIpsecSaRequest::getVpnConnectionId,
+                ListConnectionIpsecSaRequest::setVpnConnectionId));
+
+        // response
+
+        builder.<String>withResponseField("header-response-token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListConnectionIpsecSaResponse::getHeaderResponseToken,
+                ListConnectionIpsecSaResponse::setHeaderResponseToken));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPeerConfigurationSupportedDevicesRequest, ListPeerConfigurationSupportedDevicesResponse> listPeerConfigurationSupportedDevices =
+        genForListPeerConfigurationSupportedDevices();
+
+    private static HttpRequestDef<ListPeerConfigurationSupportedDevicesRequest, ListPeerConfigurationSupportedDevicesResponse> genForListPeerConfigurationSupportedDevices() {
+        // basic
+        HttpRequestDef.Builder<ListPeerConfigurationSupportedDevicesRequest, ListPeerConfigurationSupportedDevicesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListPeerConfigurationSupportedDevicesRequest.class,
+                    ListPeerConfigurationSupportedDevicesResponse.class)
+                .withName("ListPeerConfigurationSupportedDevices")
+                .withUri("/v5/{project_id}/peer-configuration/supported-devices")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        builder.<String>withResponseField("header-response-token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListPeerConfigurationSupportedDevicesResponse::getHeaderResponseToken,
+                ListPeerConfigurationSupportedDevicesResponse::setHeaderResponseToken));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListVpnConnectionsRequest, ListVpnConnectionsResponse> listVpnConnections =
         genForListVpnConnections();
 
@@ -1819,6 +1934,16 @@ public class VpnMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVpnGatewayJobsRequest::getResourceId, ListVpnGatewayJobsRequest::setResourceId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVpnGatewayJobsRequest::getLimit, ListVpnGatewayJobsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpnGatewayJobsRequest::getMarker, ListVpnGatewayJobsRequest::setMarker));
 
         // response
 
@@ -2029,6 +2154,45 @@ public class VpnMeta {
             String.class,
             f -> f.withMarshaller(CreateVgwCertificateResponse::getHeaderResponseToken,
                 CreateVgwCertificateResponse::setHeaderResponseToken));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListVpnGatewayCertificatesRequest, ListVpnGatewayCertificatesResponse> listVpnGatewayCertificates =
+        genForListVpnGatewayCertificates();
+
+    private static HttpRequestDef<ListVpnGatewayCertificatesRequest, ListVpnGatewayCertificatesResponse> genForListVpnGatewayCertificates() {
+        // basic
+        HttpRequestDef.Builder<ListVpnGatewayCertificatesRequest, ListVpnGatewayCertificatesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListVpnGatewayCertificatesRequest.class,
+                    ListVpnGatewayCertificatesResponse.class)
+                .withName("ListVpnGatewayCertificates")
+                .withUri("/v5/{project_id}/vpn-gateway-certificates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVpnGatewayCertificatesRequest::getLimit,
+                ListVpnGatewayCertificatesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpnGatewayCertificatesRequest::getMarker,
+                ListVpnGatewayCertificatesRequest::setMarker));
+        builder.<Integer>withRequestField("pre_expire_days",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVpnGatewayCertificatesRequest::getPreExpireDays,
+                ListVpnGatewayCertificatesRequest::setPreExpireDays));
+
+        // response
+
         return builder.build();
     }
 

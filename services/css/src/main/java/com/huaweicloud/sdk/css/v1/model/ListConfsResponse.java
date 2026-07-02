@@ -19,6 +19,11 @@ public class ListConfsResponse extends SdkResponse {
 
     private List<Confs> confs = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "totalSize")
+
+    private Integer totalSize;
+
     public ListConfsResponse withConfs(List<Confs> confs) {
         this.confs = confs;
         return this;
@@ -52,6 +57,23 @@ public class ListConfsResponse extends SdkResponse {
         this.confs = confs;
     }
 
+    public ListConfsResponse withTotalSize(Integer totalSize) {
+        this.totalSize = totalSize;
+        return this;
+    }
+
+    /**
+     * Get totalSize
+     * @return totalSize
+     */
+    public Integer getTotalSize() {
+        return totalSize;
+    }
+
+    public void setTotalSize(Integer totalSize) {
+        this.totalSize = totalSize;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +83,12 @@ public class ListConfsResponse extends SdkResponse {
             return false;
         }
         ListConfsResponse that = (ListConfsResponse) obj;
-        return Objects.equals(this.confs, that.confs);
+        return Objects.equals(this.confs, that.confs) && Objects.equals(this.totalSize, that.totalSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(confs);
+        return Objects.hash(confs, totalSize);
     }
 
     @Override
@@ -74,6 +96,7 @@ public class ListConfsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListConfsResponse {\n");
         sb.append("    confs: ").append(toIndentedString(confs)).append("\n");
+        sb.append("    totalSize: ").append(toIndentedString(totalSize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

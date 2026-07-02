@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.css.v1.model;
+package com.huaweicloud.sdk.gaussdb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,28 +9,28 @@ import java.util.Objects;
 /**
  * Response Object
  */
-public class StartVpecpResponse extends SdkResponse {
+public class DeleteDynamicServerlessPolicyResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "action")
+    @JsonProperty(value = "job_id")
 
-    private String action;
+    private String jobId;
 
-    public StartVpecpResponse withAction(String action) {
-        this.action = action;
+    public DeleteDynamicServerlessPolicyResponse withJobId(String jobId) {
+        this.jobId = jobId;
         return this;
     }
 
     /**
-     * 操作行为。固定为：createVpcepservice，表示已开启终端节点。
-     * @return action
+     * **参数解释**：  删除动态Serverless算力策略的任务ID。  **取值范围**：  不涉及。
+     * @return jobId
      */
-    public String getAction() {
-        return action;
+    public String getJobId() {
+        return jobId;
     }
 
-    public void setAction(String action) {
-        this.action = action;
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
     }
 
     @Override
@@ -41,20 +41,20 @@ public class StartVpecpResponse extends SdkResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartVpecpResponse that = (StartVpecpResponse) obj;
-        return Objects.equals(this.action, that.action);
+        DeleteDynamicServerlessPolicyResponse that = (DeleteDynamicServerlessPolicyResponse) obj;
+        return Objects.equals(this.jobId, that.jobId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(action);
+        return Objects.hash(jobId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class StartVpecpResponse {\n");
-        sb.append("    action: ").append(toIndentedString(action)).append("\n");
+        sb.append("class DeleteDynamicServerlessPolicyResponse {\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -24,6 +24,11 @@ public class RabbitMQExtendProductInfoEntity {
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "billing_code")
+
+    private String billingCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ecs_flavor_id")
 
     private String ecsFlavorId;
@@ -63,6 +68,11 @@ public class RabbitMQExtendProductInfoEntity {
 
     private List<RabbitMQProductSupportFeaturesEntity> supportFeatures = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "qingtian_incompatible")
+
+    private Boolean qingtianIncompatible;
+
     public RabbitMQExtendProductInfoEntity withType(String type) {
         this.type = type;
         return this;
@@ -95,6 +105,23 @@ public class RabbitMQExtendProductInfoEntity {
 
     public void setProductId(String productId) {
         this.productId = productId;
+    }
+
+    public RabbitMQExtendProductInfoEntity withBillingCode(String billingCode) {
+        this.billingCode = billingCode;
+        return this;
+    }
+
+    /**
+     * 账单计费类型。
+     * @return billingCode
+     */
+    public String getBillingCode() {
+        return billingCode;
+    }
+
+    public void setBillingCode(String billingCode) {
+        this.billingCode = billingCode;
     }
 
     public RabbitMQExtendProductInfoEntity withEcsFlavorId(String ecsFlavorId) {
@@ -342,6 +369,23 @@ public class RabbitMQExtendProductInfoEntity {
         this.supportFeatures = supportFeatures;
     }
 
+    public RabbitMQExtendProductInfoEntity withQingtianIncompatible(Boolean qingtianIncompatible) {
+        this.qingtianIncompatible = qingtianIncompatible;
+        return this;
+    }
+
+    /**
+     * 是否兼容擎天。
+     * @return qingtianIncompatible
+     */
+    public Boolean getQingtianIncompatible() {
+        return qingtianIncompatible;
+    }
+
+    public void setQingtianIncompatible(Boolean qingtianIncompatible) {
+        this.qingtianIncompatible = qingtianIncompatible;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -352,18 +396,20 @@ public class RabbitMQExtendProductInfoEntity {
         }
         RabbitMQExtendProductInfoEntity that = (RabbitMQExtendProductInfoEntity) obj;
         return Objects.equals(this.type, that.type) && Objects.equals(this.productId, that.productId)
-            && Objects.equals(this.ecsFlavorId, that.ecsFlavorId) && Objects.equals(this.archTypes, that.archTypes)
-            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.ios, that.ios)
-            && Objects.equals(this.properties, that.properties)
+            && Objects.equals(this.billingCode, that.billingCode) && Objects.equals(this.ecsFlavorId, that.ecsFlavorId)
+            && Objects.equals(this.archTypes, that.archTypes) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.ios, that.ios) && Objects.equals(this.properties, that.properties)
             && Objects.equals(this.availableZones, that.availableZones)
             && Objects.equals(this.unavailableZones, that.unavailableZones)
-            && Objects.equals(this.supportFeatures, that.supportFeatures);
+            && Objects.equals(this.supportFeatures, that.supportFeatures)
+            && Objects.equals(this.qingtianIncompatible, that.qingtianIncompatible);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(type,
             productId,
+            billingCode,
             ecsFlavorId,
             archTypes,
             chargingMode,
@@ -371,7 +417,8 @@ public class RabbitMQExtendProductInfoEntity {
             properties,
             availableZones,
             unavailableZones,
-            supportFeatures);
+            supportFeatures,
+            qingtianIncompatible);
     }
 
     @Override
@@ -380,6 +427,7 @@ public class RabbitMQExtendProductInfoEntity {
         sb.append("class RabbitMQExtendProductInfoEntity {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("    billingCode: ").append(toIndentedString(billingCode)).append("\n");
         sb.append("    ecsFlavorId: ").append(toIndentedString(ecsFlavorId)).append("\n");
         sb.append("    archTypes: ").append(toIndentedString(archTypes)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
@@ -388,6 +436,7 @@ public class RabbitMQExtendProductInfoEntity {
         sb.append("    availableZones: ").append(toIndentedString(availableZones)).append("\n");
         sb.append("    unavailableZones: ").append(toIndentedString(unavailableZones)).append("\n");
         sb.append("    supportFeatures: ").append(toIndentedString(supportFeatures)).append("\n");
+        sb.append("    qingtianIncompatible: ").append(toIndentedString(qingtianIncompatible)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 查询结果元数据信息，包括分页信息等。
+ * **参数解释**： 查询结果元数据信息，包括分页信息等 
  */
 public class MetaData {
 

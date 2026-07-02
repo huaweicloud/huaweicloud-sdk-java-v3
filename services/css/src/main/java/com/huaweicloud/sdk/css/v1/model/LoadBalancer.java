@@ -29,11 +29,6 @@ public class LoadBalancer {
     private String guaranteed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "billing_info")
-
-    private String billingInfo;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -122,23 +117,6 @@ public class LoadBalancer {
 
     public void setGuaranteed(String guaranteed) {
         this.guaranteed = guaranteed;
-    }
-
-    public LoadBalancer withBillingInfo(String billingInfo) {
-        this.billingInfo = billingInfo;
-        return this;
-    }
-
-    /**
-     * 资源账单信息。
-     * @return billingInfo
-     */
-    public String getBillingInfo() {
-        return billingInfo;
-    }
-
-    public void setBillingInfo(String billingInfo) {
-        this.billingInfo = billingInfo;
     }
 
     public LoadBalancer withDescription(String description) {
@@ -319,8 +297,8 @@ public class LoadBalancer {
         }
         LoadBalancer that = (LoadBalancer) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.guaranteed, that.guaranteed) && Objects.equals(this.billingInfo, that.billingInfo)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.guaranteed, that.guaranteed) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.vpcId, that.vpcId)
             && Objects.equals(this.provisioningStatus, that.provisioningStatus)
             && Objects.equals(this.listeners, that.listeners) && Objects.equals(this.vipAddress, that.vipAddress)
             && Objects.equals(this.vipPortId, that.vipPortId)
@@ -333,7 +311,6 @@ public class LoadBalancer {
         return Objects.hash(id,
             name,
             guaranteed,
-            billingInfo,
             description,
             vpcId,
             provisioningStatus,
@@ -351,7 +328,6 @@ public class LoadBalancer {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    guaranteed: ").append(toIndentedString(guaranteed)).append("\n");
-        sb.append("    billingInfo: ").append(toIndentedString(billingInfo)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    provisioningStatus: ").append(toIndentedString(provisioningStatus)).append("\n");

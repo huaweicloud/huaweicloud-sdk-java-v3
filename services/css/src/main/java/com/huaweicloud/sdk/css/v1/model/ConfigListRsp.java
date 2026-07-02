@@ -45,6 +45,11 @@ public class ConfigListRsp {
 
     private String failedMsg;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instType")
+
+    private String instType;
+
     public ConfigListRsp withId(String id) {
         this.id = id;
         return this;
@@ -164,6 +169,23 @@ public class ConfigListRsp {
         this.failedMsg = failedMsg;
     }
 
+    public ConfigListRsp withInstType(String instType) {
+        this.instType = instType;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 节点类型。 **取值范围**： 不涉及
+     * @return instType
+     */
+    public String getInstType() {
+        return instType;
+    }
+
+    public void setInstType(String instType) {
+        this.instType = instType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -177,12 +199,12 @@ public class ConfigListRsp {
             && Objects.equals(this.createAt, that.createAt) && Objects.equals(this.status, that.status)
             && Objects.equals(this.finishedAt, that.finishedAt)
             && Objects.equals(this.modifyDeleteReset, that.modifyDeleteReset)
-            && Objects.equals(this.failedMsg, that.failedMsg);
+            && Objects.equals(this.failedMsg, that.failedMsg) && Objects.equals(this.instType, that.instType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, clusterId, createAt, status, finishedAt, modifyDeleteReset, failedMsg);
+        return Objects.hash(id, clusterId, createAt, status, finishedAt, modifyDeleteReset, failedMsg, instType);
     }
 
     @Override
@@ -196,6 +218,7 @@ public class ConfigListRsp {
         sb.append("    finishedAt: ").append(toIndentedString(finishedAt)).append("\n");
         sb.append("    modifyDeleteReset: ").append(toIndentedString(modifyDeleteReset)).append("\n");
         sb.append("    failedMsg: ").append(toIndentedString(failedMsg)).append("\n");
+        sb.append("    instType: ").append(toIndentedString(instType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

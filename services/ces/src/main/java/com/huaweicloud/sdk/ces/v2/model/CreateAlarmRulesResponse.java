@@ -22,7 +22,7 @@ public class CreateAlarmRulesResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 告警规则id。如 al123232232341232132 **取值范围**： 以al开头，后跟22个数字或字母。长度为24个字符。 
+     * **参数解释**： 告警规则id。如 al16558829757444BVVxr999 **取值范围**： 以al开头，后跟22个数字或字母。长度为24个字符。 
      * @return alarmId
      */
     public String getAlarmId() {

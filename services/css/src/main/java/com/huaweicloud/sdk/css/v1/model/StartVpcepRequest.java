@@ -9,7 +9,7 @@ import java.util.function.Consumer;
 /**
  * Request Object
  */
-public class DeleteConfigRequest {
+public class StartVpcepRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
@@ -19,15 +19,15 @@ public class DeleteConfigRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private DeleteConfReq body;
+    private StartVpecpReq body;
 
-    public DeleteConfigRequest withClusterId(String clusterId) {
+    public StartVpcepRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
     }
 
     /**
-     * 指定删除配置文件的集群ID。
+     * 指定开启终端节点的集群ID。
      * @return clusterId
      */
     public String getClusterId() {
@@ -38,14 +38,14 @@ public class DeleteConfigRequest {
         this.clusterId = clusterId;
     }
 
-    public DeleteConfigRequest withBody(DeleteConfReq body) {
+    public StartVpcepRequest withBody(StartVpecpReq body) {
         this.body = body;
         return this;
     }
 
-    public DeleteConfigRequest withBody(Consumer<DeleteConfReq> bodySetter) {
+    public StartVpcepRequest withBody(Consumer<StartVpecpReq> bodySetter) {
         if (this.body == null) {
-            this.body = new DeleteConfReq();
+            this.body = new StartVpecpReq();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class DeleteConfigRequest {
      * Get body
      * @return body
      */
-    public DeleteConfReq getBody() {
+    public StartVpecpReq getBody() {
         return body;
     }
 
-    public void setBody(DeleteConfReq body) {
+    public void setBody(StartVpecpReq body) {
         this.body = body;
     }
 
@@ -72,7 +72,7 @@ public class DeleteConfigRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteConfigRequest that = (DeleteConfigRequest) obj;
+        StartVpcepRequest that = (StartVpcepRequest) obj;
         return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.body, that.body);
     }
 
@@ -84,7 +84,7 @@ public class DeleteConfigRequest {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class DeleteConfigRequest {\n");
+        sb.append("class StartVpcepRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

@@ -436,6 +436,16 @@ public class ShowInstanceResponse extends SdkResponse {
 
     private String storageType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disk_encrypted")
+
+    private Boolean diskEncrypted;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disk_encrypted_key")
+
+    private String diskEncryptedKey;
+
     public ShowInstanceResponse withAccessUser(String accessUser) {
         this.accessUser = accessUser;
         return this;
@@ -1401,6 +1411,40 @@ public class ShowInstanceResponse extends SdkResponse {
         this.storageType = storageType;
     }
 
+    public ShowInstanceResponse withDiskEncrypted(Boolean diskEncrypted) {
+        this.diskEncrypted = diskEncrypted;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否开启磁盘加密。 **取值范围**： - true：开启 - false：不开启
+     * @return diskEncrypted
+     */
+    public Boolean getDiskEncrypted() {
+        return diskEncrypted;
+    }
+
+    public void setDiskEncrypted(Boolean diskEncrypted) {
+        this.diskEncrypted = diskEncrypted;
+    }
+
+    public ShowInstanceResponse withDiskEncryptedKey(String diskEncryptedKey) {
+        this.diskEncryptedKey = diskEncryptedKey;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 磁盘加密key，未开启磁盘加密时为空。 **取值范围**： 不涉及。
+     * @return diskEncryptedKey
+     */
+    public String getDiskEncryptedKey() {
+        return diskEncryptedKey;
+    }
+
+    public void setDiskEncryptedKey(String diskEncryptedKey) {
+        this.diskEncryptedKey = diskEncryptedKey;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1451,7 +1495,9 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.ipv6Enable, that.ipv6Enable)
             && Objects.equals(this.ipv6ConnectAddresses, that.ipv6ConnectAddresses)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.serviceType, that.serviceType)
-            && Objects.equals(this.storageType, that.storageType);
+            && Objects.equals(this.storageType, that.storageType)
+            && Objects.equals(this.diskEncrypted, that.diskEncrypted)
+            && Objects.equals(this.diskEncryptedKey, that.diskEncryptedKey);
     }
 
     @Override
@@ -1508,7 +1554,9 @@ public class ShowInstanceResponse extends SdkResponse {
             ipv6ConnectAddresses,
             tags,
             serviceType,
-            storageType);
+            storageType,
+            diskEncrypted,
+            diskEncryptedKey);
     }
 
     @Override
@@ -1574,6 +1622,8 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    storageType: ").append(toIndentedString(storageType)).append("\n");
+        sb.append("    diskEncrypted: ").append(toIndentedString(diskEncrypted)).append("\n");
+        sb.append("    diskEncryptedKey: ").append(toIndentedString(diskEncryptedKey)).append("\n");
         sb.append("}");
         return sb.toString();
     }

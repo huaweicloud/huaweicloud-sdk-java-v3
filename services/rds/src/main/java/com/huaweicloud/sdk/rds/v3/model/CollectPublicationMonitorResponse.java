@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -41,11 +40,6 @@ public class CollectPublicationMonitorResponse extends SdkResponse {
     @JsonProperty(value = "replicated_transactions")
 
     private Integer replicatedTransactions;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "replication_rate_trans")
-
-    private BigDecimal replicationRateTrans;
 
     public CollectPublicationMonitorResponse withStatus(String status) {
         this.status = status;
@@ -149,23 +143,6 @@ public class CollectPublicationMonitorResponse extends SdkResponse {
         this.replicatedTransactions = replicatedTransactions;
     }
 
-    public CollectPublicationMonitorResponse withReplicationRateTrans(BigDecimal replicationRateTrans) {
-        this.replicationRateTrans = replicationRateTrans;
-        return this;
-    }
-
-    /**
-     * 平均每秒传送到分发数据库的事务数。
-     * @return replicationRateTrans
-     */
-    public BigDecimal getReplicationRateTrans() {
-        return replicationRateTrans;
-    }
-
-    public void setReplicationRateTrans(BigDecimal replicationRateTrans) {
-        this.replicationRateTrans = replicationRateTrans;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -179,19 +156,12 @@ public class CollectPublicationMonitorResponse extends SdkResponse {
             && Objects.equals(this.bestLatency, that.bestLatency)
             && Objects.equals(this.averageLatency, that.averageLatency)
             && Objects.equals(this.lastDistSync, that.lastDistSync)
-            && Objects.equals(this.replicatedTransactions, that.replicatedTransactions)
-            && Objects.equals(this.replicationRateTrans, that.replicationRateTrans);
+            && Objects.equals(this.replicatedTransactions, that.replicatedTransactions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status,
-            worstLatency,
-            bestLatency,
-            averageLatency,
-            lastDistSync,
-            replicatedTransactions,
-            replicationRateTrans);
+        return Objects.hash(status, worstLatency, bestLatency, averageLatency, lastDistSync, replicatedTransactions);
     }
 
     @Override
@@ -204,7 +174,6 @@ public class CollectPublicationMonitorResponse extends SdkResponse {
         sb.append("    averageLatency: ").append(toIndentedString(averageLatency)).append("\n");
         sb.append("    lastDistSync: ").append(toIndentedString(lastDistSync)).append("\n");
         sb.append("    replicatedTransactions: ").append(toIndentedString(replicatedTransactions)).append("\n");
-        sb.append("    replicationRateTrans: ").append(toIndentedString(replicationRateTrans)).append("\n");
         sb.append("}");
         return sb.toString();
     }

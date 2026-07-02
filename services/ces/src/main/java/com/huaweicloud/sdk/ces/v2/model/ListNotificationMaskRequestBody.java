@@ -24,11 +24,6 @@ public class ListNotificationMaskRequestBody {
     private ListRelationType relationType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "alarm_ids")
-
-    private List<String> alarmIds = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "relation_ids")
 
     private List<String> relationIds = null;
@@ -230,39 +225,6 @@ public class ListNotificationMaskRequestBody {
         this.relationType = relationType;
     }
 
-    public ListNotificationMaskRequestBody withAlarmIds(List<String> alarmIds) {
-        this.alarmIds = alarmIds;
-        return this;
-    }
-
-    public ListNotificationMaskRequestBody addAlarmIdsItem(String alarmIdsItem) {
-        if (this.alarmIds == null) {
-            this.alarmIds = new ArrayList<>();
-        }
-        this.alarmIds.add(alarmIdsItem);
-        return this;
-    }
-
-    public ListNotificationMaskRequestBody withAlarmIds(Consumer<List<String>> alarmIdsSetter) {
-        if (this.alarmIds == null) {
-            this.alarmIds = new ArrayList<>();
-        }
-        alarmIdsSetter.accept(this.alarmIds);
-        return this;
-    }
-
-    /**
-     * **参数解释**： 告警规则ID列表，用于查询对应的告警通知屏蔽。 **约束限制**： 当relation_type为ALARM_RULE、RESOURCE_POLICY_NOTIFICATION时，应通过alarm_ids查询。当relation_type为RESOURCE、EVENT.SYS时，不支持使用alarm_ids查询，此时alarm_ids为空或不选，表示查询所有的RESOURCE、EVENT.SYS类型的告警屏蔽。 **取值范围**： 包含的告警规则ID数量最多不超过100个，最少为0个。 **默认取值**： 不涉及 
-     * @return alarmIds
-     */
-    public List<String> getAlarmIds() {
-        return alarmIds;
-    }
-
-    public void setAlarmIds(List<String> alarmIds) {
-        this.alarmIds = alarmIds;
-    }
-
     public ListNotificationMaskRequestBody withRelationIds(List<String> relationIds) {
         this.relationIds = relationIds;
         return this;
@@ -285,7 +247,7 @@ public class ListNotificationMaskRequestBody {
     }
 
     /**
-     * （已废弃，不推荐使用）关联编号（目前是告警规则ID）
+     * **参数解释**： 关联编号（目前是告警规则ID）。 **约束限制**： 包含的关联编号数量最多不超过100个，最少为0个。 
      * @return relationIds
      */
     public List<String> getRelationIds() {
@@ -302,7 +264,7 @@ public class ListNotificationMaskRequestBody {
     }
 
     /**
-     * **参数解释**： 资源的监控指标名称，各服务资源的指标名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。 **约束限制**： 不涉及。 **取值范围**： 必须以字母开头，只能包含0-9/a-z/A-Z/_/-。字符长度最短为1，最大为96。如：弹性云服务器中的监控指标cpu_util，表示弹性服务器的CPU使用率；文档数据库中的指标mongo001_command_ps，表示command执行频率。         **默认取值**： 不涉及。 
+     * **参数解释**： 资源的监控指标名称，各服务资源的指标名称，请参阅具体云服务的文档。您可以直接从[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/zh-cn/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)页面导航至相应文档。 **约束限制**： 不涉及。 **取值范围**： 必须以字母开头，只能包含0-9/a-z/A-Z/_/-。字符长度最短为1，最大为96。如：弹性云服务器中的监控指标cpu_util，表示弹性服务器的CPU使用率；文档数据库中的指标mongo001_command_ps，表示command执行频率。         **默认取值**： 不涉及。 
      * @return metricName
      */
     public String getMetricName() {
@@ -404,7 +366,7 @@ public class ListNotificationMaskRequestBody {
     }
 
     /**
-     * **参数解释**： 查询服务的命名空间，各服务命名空间请参阅[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/en-us/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)。 **约束限制**： 不涉及。 **取值范围**： 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度必须在 3 到 32个字符之间。 **默认取值**： 不涉及。 
+     * **参数解释**： 查询服务的命名空间，各服务命名空间请参阅[[支持监控的服务列表](https://support.huaweicloud.com/api-ces/ces_03_0059.html)](tag:hc)[[支持监控的服务列表](https://support.huaweicloud.com/intl/zh-cn/api-ces/ces_03_0059.html)](tag:hk)[[支持监控的服务列表](https://support.huaweicloud.com/eu/en-us/api-ces/ces_03_0059.html)](tag:hws_eu)[[支持监控的服务列表](ces_03_0059.xml)](tag:ax,cmcc,ctc,dt,dt_test,hcso_dt,fcs,fcs_vm,mix,g42,hk_g42,hk_sbc,hk_tm,hk_vdf,hws_ocb,ocb,sbc,srg)。 **约束限制**： 不涉及。 **取值范围**： 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_。字符串的长度必须在 3 到 32个字符之间。 **默认取值**： 不涉及。 
      * @return namespace
      */
     public String getNamespace() {
@@ -457,7 +419,7 @@ public class ListNotificationMaskRequestBody {
             return false;
         }
         ListNotificationMaskRequestBody that = (ListNotificationMaskRequestBody) obj;
-        return Objects.equals(this.relationType, that.relationType) && Objects.equals(this.alarmIds, that.alarmIds)
+        return Objects.equals(this.relationType, that.relationType)
             && Objects.equals(this.relationIds, that.relationIds) && Objects.equals(this.metricName, that.metricName)
             && Objects.equals(this.resourceLevel, that.resourceLevel) && Objects.equals(this.maskId, that.maskId)
             && Objects.equals(this.maskName, that.maskName) && Objects.equals(this.maskStatus, that.maskStatus)
@@ -468,7 +430,6 @@ public class ListNotificationMaskRequestBody {
     @Override
     public int hashCode() {
         return Objects.hash(relationType,
-            alarmIds,
             relationIds,
             metricName,
             resourceLevel,
@@ -485,7 +446,6 @@ public class ListNotificationMaskRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListNotificationMaskRequestBody {\n");
         sb.append("    relationType: ").append(toIndentedString(relationType)).append("\n");
-        sb.append("    alarmIds: ").append(toIndentedString(alarmIds)).append("\n");
         sb.append("    relationIds: ").append(toIndentedString(relationIds)).append("\n");
         sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
         sb.append("    resourceLevel: ").append(toIndentedString(resourceLevel)).append("\n");

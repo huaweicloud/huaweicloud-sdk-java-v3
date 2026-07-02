@@ -46,7 +46,7 @@ public class ListAiOpsResponse extends SdkResponse {
     }
 
     /**
-     * Get aiopsList
+     * 智能运维任务列表及详情
      * @return aiopsList
      */
     public List<AiOps> getAiopsList() {
@@ -63,7 +63,7 @@ public class ListAiOpsResponse extends SdkResponse {
     }
 
     /**
-     * 参数解释： 集群风险检测任务总数。 取值范围： 不涉及
+     * **参数解释**： 集群智能诊断任务总数。 **取值范围**： 不涉及
      * @return totalSize
      */
     public Integer getTotalSize() {

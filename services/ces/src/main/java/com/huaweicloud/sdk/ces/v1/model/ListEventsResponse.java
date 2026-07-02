@@ -46,7 +46,7 @@ public class ListEventsResponse extends SdkResponse {
     }
 
     /**
-     * 一条或者多条事件数据。
+     * **参数解释** 一条或者多条事件数据 
      * @return events
      */
     public List<EventInfo> getEvents() {

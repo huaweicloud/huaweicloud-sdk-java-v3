@@ -1,35 +1,36 @@
-package com.huaweicloud.sdk.rocketmq.v2.model;
+package com.huaweicloud.sdk.css.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
 /**
- * ShowCesHierarchyRespNodes
+ * Response Object
  */
-public class ShowCesHierarchyRespNodes {
+public class StopVpcepResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
+    @JsonProperty(value = "action")
 
-    private String name;
+    private String action;
 
-    public ShowCesHierarchyRespNodes withName(String name) {
-        this.name = name;
+    public StopVpcepResponse withAction(String action) {
+        this.action = action;
         return this;
     }
 
     /**
-     * **参数解释**： 节点名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
-     * @return name
+     * 操作行为。固定为：deleteVpcepservice，表示已关闭终端节点。
+     * @return action
      */
-    public String getName() {
-        return name;
+    public String getAction() {
+        return action;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAction(String action) {
+        this.action = action;
     }
 
     @Override
@@ -40,20 +41,20 @@ public class ShowCesHierarchyRespNodes {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCesHierarchyRespNodes that = (ShowCesHierarchyRespNodes) obj;
-        return Objects.equals(this.name, that.name);
+        StopVpcepResponse that = (StopVpcepResponse) obj;
+        return Objects.equals(this.action, that.action);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(action);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ShowCesHierarchyRespNodes {\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("class StopVpcepResponse {\n");
+        sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -15,9 +15,75 @@ import java.util.function.Consumer;
 public class ShowRabbitMqTagsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total")
+
+    private Integer total;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "next_offset")
+
+    private Integer nextOffset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "previous_offset")
+
+    private Integer previousOffset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<TagEntity> tags = null;
+
+    public ShowRabbitMqTagsResponse withTotal(Integer total) {
+        this.total = total;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 查询结果总数。 **取值范围**： 不涉及。
+     * @return total
+     */
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+
+    public ShowRabbitMqTagsResponse withNextOffset(Integer nextOffset) {
+        this.nextOffset = nextOffset;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 下一个偏移量。 **取值范围**： 不涉及。
+     * @return nextOffset
+     */
+    public Integer getNextOffset() {
+        return nextOffset;
+    }
+
+    public void setNextOffset(Integer nextOffset) {
+        this.nextOffset = nextOffset;
+    }
+
+    public ShowRabbitMqTagsResponse withPreviousOffset(Integer previousOffset) {
+        this.previousOffset = previousOffset;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 前一个偏移量。 **取值范围**： 不涉及。
+     * @return previousOffset
+     */
+    public Integer getPreviousOffset() {
+        return previousOffset;
+    }
+
+    public void setPreviousOffset(Integer previousOffset) {
+        this.previousOffset = previousOffset;
+    }
 
     public ShowRabbitMqTagsResponse withTags(List<TagEntity> tags) {
         this.tags = tags;
@@ -61,18 +127,22 @@ public class ShowRabbitMqTagsResponse extends SdkResponse {
             return false;
         }
         ShowRabbitMqTagsResponse that = (ShowRabbitMqTagsResponse) obj;
-        return Objects.equals(this.tags, that.tags);
+        return Objects.equals(this.total, that.total) && Objects.equals(this.nextOffset, that.nextOffset)
+            && Objects.equals(this.previousOffset, that.previousOffset) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tags);
+        return Objects.hash(total, nextOffset, previousOffset, tags);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowRabbitMqTagsResponse {\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    nextOffset: ").append(toIndentedString(nextOffset)).append("\n");
+        sb.append("    previousOffset: ").append(toIndentedString(previousOffset)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();

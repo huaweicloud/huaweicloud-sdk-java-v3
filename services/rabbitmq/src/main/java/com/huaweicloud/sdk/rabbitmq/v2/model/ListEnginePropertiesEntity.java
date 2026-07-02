@@ -61,6 +61,11 @@ public class ListEnginePropertiesEntity {
     private String maxTpsPerBroker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "engine_versions")
+
+    private String engineVersions;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_alias")
 
     private String productAlias;
@@ -235,6 +240,23 @@ public class ListEnginePropertiesEntity {
         this.maxTpsPerBroker = maxTpsPerBroker;
     }
 
+    public ListEnginePropertiesEntity withEngineVersions(String engineVersions) {
+        this.engineVersions = engineVersions;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 消息引擎版本。 **取值范围**： 不涉及。
+     * @return engineVersions
+     */
+    public String getEngineVersions() {
+        return engineVersions;
+    }
+
+    public void setEngineVersions(String engineVersions) {
+        this.engineVersions = engineVersions;
+    }
+
     public ListEnginePropertiesEntity withProductAlias(String productAlias) {
         this.productAlias = productAlias;
         return this;
@@ -271,6 +293,7 @@ public class ListEnginePropertiesEntity {
             && Objects.equals(this.maxBandwidthPerBroker, that.maxBandwidthPerBroker)
             && Objects.equals(this.minStoragePerNode, that.minStoragePerNode)
             && Objects.equals(this.maxTpsPerBroker, that.maxTpsPerBroker)
+            && Objects.equals(this.engineVersions, that.engineVersions)
             && Objects.equals(this.productAlias, that.productAlias);
     }
 
@@ -286,6 +309,7 @@ public class ListEnginePropertiesEntity {
             maxBandwidthPerBroker,
             minStoragePerNode,
             maxTpsPerBroker,
+            engineVersions,
             productAlias);
     }
 
@@ -303,6 +327,7 @@ public class ListEnginePropertiesEntity {
         sb.append("    maxBandwidthPerBroker: ").append(toIndentedString(maxBandwidthPerBroker)).append("\n");
         sb.append("    minStoragePerNode: ").append(toIndentedString(minStoragePerNode)).append("\n");
         sb.append("    maxTpsPerBroker: ").append(toIndentedString(maxTpsPerBroker)).append("\n");
+        sb.append("    engineVersions: ").append(toIndentedString(engineVersions)).append("\n");
         sb.append("    productAlias: ").append(toIndentedString(productAlias)).append("\n");
         sb.append("}");
         return sb.toString();

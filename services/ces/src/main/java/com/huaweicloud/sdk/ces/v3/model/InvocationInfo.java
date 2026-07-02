@@ -119,7 +119,7 @@ public class InvocationInfo {
     private List<String> elasticIps = null;
 
     /**
-     * **参数解释**: 任务类型 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回滚 - RETRY：重试 
+     * **参数解释**: 任务类型 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回滚 - RETRY：重试 - SET_REMOTE_INSTALLER：设置远程安装主机 - REMOTE_INSTALL：执行远程安装 
      */
     public static final class InvocationTypeEnum {
 
@@ -143,6 +143,16 @@ public class InvocationInfo {
          */
         public static final InvocationTypeEnum RETRY = new InvocationTypeEnum("RETRY");
 
+        /**
+         * Enum SET_REMOTE_INSTALLER for value: "SET_REMOTE_INSTALLER"
+         */
+        public static final InvocationTypeEnum SET_REMOTE_INSTALLER = new InvocationTypeEnum("SET_REMOTE_INSTALLER");
+
+        /**
+         * Enum REMOTE_INSTALL for value: "REMOTE_INSTALL"
+         */
+        public static final InvocationTypeEnum REMOTE_INSTALL = new InvocationTypeEnum("REMOTE_INSTALL");
+
         private static final Map<String, InvocationTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, InvocationTypeEnum> createStaticFields() {
@@ -151,6 +161,8 @@ public class InvocationInfo {
             map.put("UPDATE", UPDATE);
             map.put("ROLLBACK", ROLLBACK);
             map.put("RETRY", RETRY);
+            map.put("SET_REMOTE_INSTALLER", SET_REMOTE_INSTALLER);
+            map.put("REMOTE_INSTALL", REMOTE_INSTALL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -544,7 +556,7 @@ public class InvocationInfo {
     }
 
     /**
-     * **参数解释**: 任务类型 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回滚 - RETRY：重试 
+     * **参数解释**: 任务类型 **取值范围**: - INSTALL：安装 - UPDATE：升级 - ROLLBACK：回滚 - RETRY：重试 - SET_REMOTE_INSTALLER：设置远程安装主机 - REMOTE_INSTALL：执行远程安装 
      * @return invocationType
      */
     public InvocationTypeEnum getInvocationType() {

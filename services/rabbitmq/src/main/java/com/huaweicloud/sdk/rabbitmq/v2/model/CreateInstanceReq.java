@@ -358,6 +358,21 @@ public class CreateInstanceReq {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disk_encrypted_enable")
+
+    private Boolean diskEncryptedEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disk_encrypted_key")
+
+    private String diskEncryptedKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "arch_type")
+
+    private String archType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<TagEntity> tags = null;
@@ -740,6 +755,57 @@ public class CreateInstanceReq {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public CreateInstanceReq withDiskEncryptedEnable(Boolean diskEncryptedEnable) {
+        this.diskEncryptedEnable = diskEncryptedEnable;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否开启磁盘加密。 **约束限制**： 不涉及。 **取值范围**： - true：开启。 - false：不开启。 **默认取值**： false。
+     * @return diskEncryptedEnable
+     */
+    public Boolean getDiskEncryptedEnable() {
+        return diskEncryptedEnable;
+    }
+
+    public void setDiskEncryptedEnable(Boolean diskEncryptedEnable) {
+        this.diskEncryptedEnable = diskEncryptedEnable;
+    }
+
+    public CreateInstanceReq withDiskEncryptedKey(String diskEncryptedKey) {
+        this.diskEncryptedKey = diskEncryptedKey;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 磁盘加密key，未开启磁盘加密时为空。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return diskEncryptedKey
+     */
+    public String getDiskEncryptedKey() {
+        return diskEncryptedKey;
+    }
+
+    public void setDiskEncryptedKey(String diskEncryptedKey) {
+        this.diskEncryptedKey = diskEncryptedKey;
+    }
+
+    public CreateInstanceReq withArchType(String archType) {
+        this.archType = archType;
+        return this;
+    }
+
+    /**
+     * **参数解释**： CPU架构。 **约束限制**： 不涉及。 **取值范围**： - X86：X86架构。 [- ARM：鲲鹏架构。](tag:hws_test,cmcc,ctc) **默认取值**： 不涉及。
+     * @return archType
+     */
+    public String getArchType() {
+        return archType;
+    }
+
+    public void setArchType(String archType) {
+        this.archType = archType;
+    }
+
     public CreateInstanceReq withTags(List<TagEntity> tags) {
         this.tags = tags;
         return this;
@@ -821,7 +887,10 @@ public class CreateInstanceReq {
             && Objects.equals(this.publicipId, that.publicipId) && Objects.equals(this.sslEnable, that.sslEnable)
             && Objects.equals(this.storageSpecCode, that.storageSpecCode)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.bssParam, that.bssParam);
+            && Objects.equals(this.diskEncryptedEnable, that.diskEncryptedEnable)
+            && Objects.equals(this.diskEncryptedKey, that.diskEncryptedKey)
+            && Objects.equals(this.archType, that.archType) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.bssParam, that.bssParam);
     }
 
     @Override
@@ -847,6 +916,9 @@ public class CreateInstanceReq {
             sslEnable,
             storageSpecCode,
             enterpriseProjectId,
+            diskEncryptedEnable,
+            diskEncryptedKey,
+            archType,
             tags,
             bssParam);
     }
@@ -876,6 +948,9 @@ public class CreateInstanceReq {
         sb.append("    sslEnable: ").append(toIndentedString(sslEnable)).append("\n");
         sb.append("    storageSpecCode: ").append(toIndentedString(storageSpecCode)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    diskEncryptedEnable: ").append(toIndentedString(diskEncryptedEnable)).append("\n");
+        sb.append("    diskEncryptedKey: ").append(toIndentedString(diskEncryptedKey)).append("\n");
+        sb.append("    archType: ").append(toIndentedString(archType)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    bssParam: ").append(toIndentedString(bssParam)).append("\n");
         sb.append("}");

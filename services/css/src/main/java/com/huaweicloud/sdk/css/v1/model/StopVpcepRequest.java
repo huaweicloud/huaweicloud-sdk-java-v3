@@ -4,30 +4,24 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class StartVpecpRequest {
+public class StopVpcepRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
 
     private String clusterId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
-
-    private StartVpecpReq body;
-
-    public StartVpecpRequest withClusterId(String clusterId) {
+    public StopVpcepRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
     }
 
     /**
-     * 指定开启终端节点的集群ID。
+     * 指定待关闭终端节点的集群ID。
      * @return clusterId
      */
     public String getClusterId() {
@@ -38,32 +32,6 @@ public class StartVpecpRequest {
         this.clusterId = clusterId;
     }
 
-    public StartVpecpRequest withBody(StartVpecpReq body) {
-        this.body = body;
-        return this;
-    }
-
-    public StartVpecpRequest withBody(Consumer<StartVpecpReq> bodySetter) {
-        if (this.body == null) {
-            this.body = new StartVpecpReq();
-            bodySetter.accept(this.body);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get body
-     * @return body
-     */
-    public StartVpecpReq getBody() {
-        return body;
-    }
-
-    public void setBody(StartVpecpReq body) {
-        this.body = body;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -72,21 +40,20 @@ public class StartVpecpRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartVpecpRequest that = (StartVpecpRequest) obj;
-        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.body, that.body);
+        StopVpcepRequest that = (StopVpcepRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, body);
+        return Objects.hash(clusterId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class StartVpecpRequest {\n");
+        sb.append("class StopVpcepRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

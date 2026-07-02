@@ -20,6 +20,21 @@ public class ListEngineProductsResponse extends SdkResponse {
     private String engine;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total")
+
+    private Integer total;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "next_offset")
+
+    private Integer nextOffset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "previous_offset")
+
+    private Integer previousOffset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "versions")
 
     private List<String> versions = null;
@@ -44,6 +59,57 @@ public class ListEngineProductsResponse extends SdkResponse {
 
     public void setEngine(String engine) {
         this.engine = engine;
+    }
+
+    public ListEngineProductsResponse withTotal(Integer total) {
+        this.total = total;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 查询结果总数。 **取值范围**： 不涉及。
+     * @return total
+     */
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+
+    public ListEngineProductsResponse withNextOffset(Integer nextOffset) {
+        this.nextOffset = nextOffset;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 下一个偏移量。 **取值范围**： 不涉及。
+     * @return nextOffset
+     */
+    public Integer getNextOffset() {
+        return nextOffset;
+    }
+
+    public void setNextOffset(Integer nextOffset) {
+        this.nextOffset = nextOffset;
+    }
+
+    public ListEngineProductsResponse withPreviousOffset(Integer previousOffset) {
+        this.previousOffset = previousOffset;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 前一个偏移量。 **取值范围**： 不涉及。
+     * @return previousOffset
+     */
+    public Integer getPreviousOffset() {
+        return previousOffset;
+    }
+
+    public void setPreviousOffset(Integer previousOffset) {
+        this.previousOffset = previousOffset;
     }
 
     public ListEngineProductsResponse withVersions(List<String> versions) {
@@ -121,13 +187,15 @@ public class ListEngineProductsResponse extends SdkResponse {
             return false;
         }
         ListEngineProductsResponse that = (ListEngineProductsResponse) obj;
-        return Objects.equals(this.engine, that.engine) && Objects.equals(this.versions, that.versions)
+        return Objects.equals(this.engine, that.engine) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.nextOffset, that.nextOffset)
+            && Objects.equals(this.previousOffset, that.previousOffset) && Objects.equals(this.versions, that.versions)
             && Objects.equals(this.products, that.products);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(engine, versions, products);
+        return Objects.hash(engine, total, nextOffset, previousOffset, versions, products);
     }
 
     @Override
@@ -135,6 +203,9 @@ public class ListEngineProductsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListEngineProductsResponse {\n");
         sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    nextOffset: ").append(toIndentedString(nextOffset)).append("\n");
+        sb.append("    previousOffset: ").append(toIndentedString(previousOffset)).append("\n");
         sb.append("    versions: ").append(toIndentedString(versions)).append("\n");
         sb.append("    products: ").append(toIndentedString(products)).append("\n");
         sb.append("}");

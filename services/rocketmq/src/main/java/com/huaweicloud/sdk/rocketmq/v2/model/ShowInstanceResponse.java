@@ -205,6 +205,16 @@ public class ShowInstanceResponse extends SdkResponse {
     private Boolean ipv6Enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_broker_address")
+
+    private String ipv6BrokerAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_namesrv_address")
+
+    private String ipv6NamesrvAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "support_features")
 
     private String supportFeatures;
@@ -1042,6 +1052,40 @@ public class ShowInstanceResponse extends SdkResponse {
         this.ipv6Enable = ipv6Enable;
     }
 
+    public ShowInstanceResponse withIpv6BrokerAddress(String ipv6BrokerAddress) {
+        this.ipv6BrokerAddress = ipv6BrokerAddress;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 业务数据IPv6的地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return ipv6BrokerAddress
+     */
+    public String getIpv6BrokerAddress() {
+        return ipv6BrokerAddress;
+    }
+
+    public void setIpv6BrokerAddress(String ipv6BrokerAddress) {
+        this.ipv6BrokerAddress = ipv6BrokerAddress;
+    }
+
+    public ShowInstanceResponse withIpv6NamesrvAddress(String ipv6NamesrvAddress) {
+        this.ipv6NamesrvAddress = ipv6NamesrvAddress;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 元数据IPv6的地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * @return ipv6NamesrvAddress
+     */
+    public String getIpv6NamesrvAddress() {
+        return ipv6NamesrvAddress;
+    }
+
+    public void setIpv6NamesrvAddress(String ipv6NamesrvAddress) {
+        this.ipv6NamesrvAddress = ipv6NamesrvAddress;
+    }
+
     public ShowInstanceResponse withSupportFeatures(String supportFeatures) {
         this.supportFeatures = supportFeatures;
         return this;
@@ -1638,6 +1682,8 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.storageSpecCode, that.storageSpecCode)
             && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.storageType, that.storageType)
             && Objects.equals(this.extendTimes, that.extendTimes) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.ipv6BrokerAddress, that.ipv6BrokerAddress)
+            && Objects.equals(this.ipv6NamesrvAddress, that.ipv6NamesrvAddress)
             && Objects.equals(this.supportFeatures, that.supportFeatures)
             && Objects.equals(this.diskEncrypted, that.diskEncrypted)
             && Objects.equals(this.cesVersion, that.cesVersion) && Objects.equals(this.nodeNum, that.nodeNum)
@@ -1707,6 +1753,8 @@ public class ShowInstanceResponse extends SdkResponse {
             storageType,
             extendTimes,
             ipv6Enable,
+            ipv6BrokerAddress,
+            ipv6NamesrvAddress,
             supportFeatures,
             diskEncrypted,
             cesVersion,
@@ -1783,6 +1831,8 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    storageType: ").append(toIndentedString(storageType)).append("\n");
         sb.append("    extendTimes: ").append(toIndentedString(extendTimes)).append("\n");
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
+        sb.append("    ipv6BrokerAddress: ").append(toIndentedString(ipv6BrokerAddress)).append("\n");
+        sb.append("    ipv6NamesrvAddress: ").append(toIndentedString(ipv6NamesrvAddress)).append("\n");
         sb.append("    supportFeatures: ").append(toIndentedString(supportFeatures)).append("\n");
         sb.append("    diskEncrypted: ").append(toIndentedString(diskEncrypted)).append("\n");
         sb.append("    cesVersion: ").append(toIndentedString(cesVersion)).append("\n");
