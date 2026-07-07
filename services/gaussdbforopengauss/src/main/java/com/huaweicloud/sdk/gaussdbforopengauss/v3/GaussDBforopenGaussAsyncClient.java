@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AuthorizeBackupDownloadR
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AuthorizeBackupDownloadResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchDeleteInstanceTagRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchDeleteInstanceTagResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchExecuteEventsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchExecuteEventsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchSetBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchSetBackupPolicyResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchShowUpgradeCandidateVersionsRequest;
@@ -195,6 +197,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEnterpriseProjectsRe
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEnterpriseProjectsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEpsQuotasRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEpsQuotasResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEventsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEventsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFeaturesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFeaturesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFlavorsDetailsRequest;
@@ -738,6 +742,35 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<BatchDeleteInstanceTagRequest, BatchDeleteInstanceTagResponse> batchDeleteInstanceTagAsyncInvoker(
         BatchDeleteInstanceTagRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.batchDeleteInstanceTag, hcClient);
+    }
+
+    /**
+     * 操作EG事件中心通知事件
+     *
+     * 操作EG事件中心通知事件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchExecuteEventsRequest 请求对象
+     * @return CompletableFuture<BatchExecuteEventsResponse>
+     */
+    public CompletableFuture<BatchExecuteEventsResponse> batchExecuteEventsAsync(BatchExecuteEventsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.batchExecuteEvents);
+    }
+
+    /**
+     * 操作EG事件中心通知事件
+     *
+     * 操作EG事件中心通知事件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchExecuteEventsRequest 请求对象
+     * @return AsyncInvoker<BatchExecuteEventsRequest, BatchExecuteEventsResponse>
+     */
+    public AsyncInvoker<BatchExecuteEventsRequest, BatchExecuteEventsResponse> batchExecuteEventsAsyncInvoker(
+        BatchExecuteEventsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.batchExecuteEvents, hcClient);
     }
 
     /**
@@ -2853,6 +2886,34 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<ListEpsQuotasRequest, ListEpsQuotasResponse> listEpsQuotasAsyncInvoker(
         ListEpsQuotasRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listEpsQuotas, hcClient);
+    }
+
+    /**
+     * 查询事件列表
+     *
+     * 查询事件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEventsRequest 请求对象
+     * @return CompletableFuture<ListEventsResponse>
+     */
+    public CompletableFuture<ListEventsResponse> listEventsAsync(ListEventsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listEvents);
+    }
+
+    /**
+     * 查询事件列表
+     *
+     * 查询事件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEventsRequest 请求对象
+     * @return AsyncInvoker<ListEventsRequest, ListEventsResponse>
+     */
+    public AsyncInvoker<ListEventsRequest, ListEventsResponse> listEventsAsyncInvoker(ListEventsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listEvents, hcClient);
     }
 
     /**

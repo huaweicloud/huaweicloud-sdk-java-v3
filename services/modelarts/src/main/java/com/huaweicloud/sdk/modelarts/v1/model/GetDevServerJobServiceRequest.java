@@ -6,30 +6,30 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * **参数解释**：数据实际输出到OBS。 **约束限制**：不涉及。
+ * Request Object
  */
-public class TaskAlgorithmRemote1Obs {
+public class GetDevServerJobServiceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "obs_url")
+    @JsonProperty(value = "id")
 
-    private String obsUrl;
+    private String id;
 
-    public TaskAlgorithmRemote1Obs withObsUrl(String obsUrl) {
-        this.obsUrl = obsUrl;
+    public GetDevServerJobServiceRequest withId(String id) {
+        this.id = id;
         return this;
     }
 
     /**
-     * **参数解释**：数据实际输出到OBS的路径。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
-     * @return obsUrl
+     * **参数解释**：部署服务的id。  **约束限制**：字母、数字和中划线。  **取值范围**：不涉及。  **默认取值**：不涉及。
+     * @return id
      */
-    public String getObsUrl() {
-        return obsUrl;
+    public String getId() {
+        return id;
     }
 
-    public void setObsUrl(String obsUrl) {
-        this.obsUrl = obsUrl;
+    public void setId(String id) {
+        this.id = id;
     }
 
     @Override
@@ -40,20 +40,20 @@ public class TaskAlgorithmRemote1Obs {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskAlgorithmRemote1Obs that = (TaskAlgorithmRemote1Obs) obj;
-        return Objects.equals(this.obsUrl, that.obsUrl);
+        GetDevServerJobServiceRequest that = (GetDevServerJobServiceRequest) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(obsUrl);
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class TaskAlgorithmRemote1Obs {\n");
-        sb.append("    obsUrl: ").append(toIndentedString(obsUrl)).append("\n");
+        sb.append("class GetDevServerJobServiceRequest {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

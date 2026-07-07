@@ -30,6 +30,11 @@ public class TaskAlgorithmJobConfigEngine {
 
     private String imageUrl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "run_user")
+
+    private String runUser;
+
     public TaskAlgorithmJobConfigEngine withEngineId(String engineId) {
         this.engineId = engineId;
         return this;
@@ -98,6 +103,23 @@ public class TaskAlgorithmJobConfigEngine {
         this.imageUrl = imageUrl;
     }
 
+    public TaskAlgorithmJobConfigEngine withRunUser(String runUser) {
+        this.runUser = runUser;
+        return this;
+    }
+
+    /**
+     * **参数解释**：容器镜像启动用户，默认为1000，仅自定义镜像场景下支持配置。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * @return runUser
+     */
+    public String getRunUser() {
+        return runUser;
+    }
+
+    public void setRunUser(String runUser) {
+        this.runUser = runUser;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +130,13 @@ public class TaskAlgorithmJobConfigEngine {
         }
         TaskAlgorithmJobConfigEngine that = (TaskAlgorithmJobConfigEngine) obj;
         return Objects.equals(this.engineId, that.engineId) && Objects.equals(this.engineName, that.engineName)
-            && Objects.equals(this.engineVersion, that.engineVersion) && Objects.equals(this.imageUrl, that.imageUrl);
+            && Objects.equals(this.engineVersion, that.engineVersion) && Objects.equals(this.imageUrl, that.imageUrl)
+            && Objects.equals(this.runUser, that.runUser);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(engineId, engineName, engineVersion, imageUrl);
+        return Objects.hash(engineId, engineName, engineVersion, imageUrl, runUser);
     }
 
     @Override
@@ -124,6 +147,7 @@ public class TaskAlgorithmJobConfigEngine {
         sb.append("    engineName: ").append(toIndentedString(engineName)).append("\n");
         sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
         sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
+        sb.append("    runUser: ").append(toIndentedString(runUser)).append("\n");
         sb.append("}");
         return sb.toString();
     }

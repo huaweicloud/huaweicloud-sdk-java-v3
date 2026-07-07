@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.gaussdb.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -17,7 +16,7 @@ public class ScheduledTaskV3 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private OffsetDateTime createTime;
+    private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore_type")
@@ -27,7 +26,7 @@ public class ScheduledTaskV3 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    private OffsetDateTime endTime;
+    private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
@@ -62,7 +61,7 @@ public class ScheduledTaskV3 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
-    private OffsetDateTime startTime;
+    private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_config")
@@ -89,7 +88,7 @@ public class ScheduledTaskV3 {
 
     private String taskStatus;
 
-    public ScheduledTaskV3 withCreateTime(OffsetDateTime createTime) {
+    public ScheduledTaskV3 withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -98,11 +97,11 @@ public class ScheduledTaskV3 {
      * **参数解释**：  任务创建时间。  **取值范围**： 不涉及。
      * @return createTime
      */
-    public OffsetDateTime getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(OffsetDateTime createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 
@@ -123,7 +122,7 @@ public class ScheduledTaskV3 {
         this.datastoreType = datastoreType;
     }
 
-    public ScheduledTaskV3 withEndTime(OffsetDateTime endTime) {
+    public ScheduledTaskV3 withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -132,11 +131,11 @@ public class ScheduledTaskV3 {
      * **参数解释**：  任务结束时间。  **取值范围**： 不涉及。
      * @return endTime
      */
-    public OffsetDateTime getEndTime() {
+    public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(OffsetDateTime endTime) {
+    public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
 
@@ -242,7 +241,7 @@ public class ScheduledTaskV3 {
         this.proxyName = proxyName;
     }
 
-    public ScheduledTaskV3 withStartTime(OffsetDateTime startTime) {
+    public ScheduledTaskV3 withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
@@ -251,11 +250,11 @@ public class ScheduledTaskV3 {
      * **参数解释**：  任务开始时间。  **取值范围**： 不涉及。
      * @return startTime
      */
-    public OffsetDateTime getStartTime() {
+    public Long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(OffsetDateTime startTime) {
+    public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
 

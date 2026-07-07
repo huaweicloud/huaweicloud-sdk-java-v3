@@ -3,7 +3,9 @@ package com.huaweicloud.sdk.modelarts.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -32,6 +34,11 @@ public class JobMetadata {
     @JsonProperty(value = "annotations")
 
     private Map<String, String> annotations = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "training_experiment_reference")
+
+    private List<TrainingExperimentRequest> trainingExperimentReference = null;
 
     public JobMetadata withName(String name) {
         this.name = name;
@@ -117,6 +124,40 @@ public class JobMetadata {
         this.annotations = annotations;
     }
 
+    public JobMetadata withTrainingExperimentReference(List<TrainingExperimentRequest> trainingExperimentReference) {
+        this.trainingExperimentReference = trainingExperimentReference;
+        return this;
+    }
+
+    public JobMetadata addTrainingExperimentReferenceItem(TrainingExperimentRequest trainingExperimentReferenceItem) {
+        if (this.trainingExperimentReference == null) {
+            this.trainingExperimentReference = new ArrayList<>();
+        }
+        this.trainingExperimentReference.add(trainingExperimentReferenceItem);
+        return this;
+    }
+
+    public JobMetadata withTrainingExperimentReference(
+        Consumer<List<TrainingExperimentRequest>> trainingExperimentReferenceSetter) {
+        if (this.trainingExperimentReference == null) {
+            this.trainingExperimentReference = new ArrayList<>();
+        }
+        trainingExperimentReferenceSetter.accept(this.trainingExperimentReference);
+        return this;
+    }
+
+    /**
+     * **参数解释**：训练实验参数。 **约束限制**：不涉及。
+     * @return trainingExperimentReference
+     */
+    public List<TrainingExperimentRequest> getTrainingExperimentReference() {
+        return trainingExperimentReference;
+    }
+
+    public void setTrainingExperimentReference(List<TrainingExperimentRequest> trainingExperimentReference) {
+        this.trainingExperimentReference = trainingExperimentReference;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -127,12 +168,13 @@ public class JobMetadata {
         }
         JobMetadata that = (JobMetadata) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.workspaceId, that.workspaceId)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.annotations, that.annotations);
+            && Objects.equals(this.description, that.description) && Objects.equals(this.annotations, that.annotations)
+            && Objects.equals(this.trainingExperimentReference, that.trainingExperimentReference);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, workspaceId, description, annotations);
+        return Objects.hash(name, workspaceId, description, annotations, trainingExperimentReference);
     }
 
     @Override
@@ -143,6 +185,9 @@ public class JobMetadata {
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
+        sb.append("    trainingExperimentReference: ")
+            .append(toIndentedString(trainingExperimentReference))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

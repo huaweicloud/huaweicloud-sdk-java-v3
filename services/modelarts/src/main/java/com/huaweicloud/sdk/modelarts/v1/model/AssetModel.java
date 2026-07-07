@@ -40,6 +40,16 @@ public class AssetModel {
 
     private String type;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "model_desc")
+
+    private String modelDesc;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "parent_asset_id")
+
+    private String parentAssetId;
+
     public AssetModel withName(String name) {
         this.name = name;
         return this;
@@ -142,6 +152,40 @@ public class AssetModel {
         this.type = type;
     }
 
+    public AssetModel withModelDesc(String modelDesc) {
+        this.modelDesc = modelDesc;
+        return this;
+    }
+
+    /**
+     * **参数解释**：模型资产描述。\\n**取值范围**：不涉及。
+     * @return modelDesc
+     */
+    public String getModelDesc() {
+        return modelDesc;
+    }
+
+    public void setModelDesc(String modelDesc) {
+        this.modelDesc = modelDesc;
+    }
+
+    public AssetModel withParentAssetId(String parentAssetId) {
+        this.parentAssetId = parentAssetId;
+        return this;
+    }
+
+    /**
+     * **参数解释**：父资产ID（可选），选择已有模型时传递。\\n**取值范围**：不涉及。
+     * @return parentAssetId
+     */
+    public String getParentAssetId() {
+        return parentAssetId;
+    }
+
+    public void setParentAssetId(String parentAssetId) {
+        this.parentAssetId = parentAssetId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -153,12 +197,13 @@ public class AssetModel {
         AssetModel that = (AssetModel) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.code, that.code)
             && Objects.equals(this.version, that.version) && Objects.equals(this.desc, that.desc)
-            && Objects.equals(this.series, that.series) && Objects.equals(this.type, that.type);
+            && Objects.equals(this.series, that.series) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.modelDesc, that.modelDesc) && Objects.equals(this.parentAssetId, that.parentAssetId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, code, version, desc, series, type);
+        return Objects.hash(name, code, version, desc, series, type, modelDesc, parentAssetId);
     }
 
     @Override
@@ -171,6 +216,8 @@ public class AssetModel {
         sb.append("    desc: ").append(toIndentedString(desc)).append("\n");
         sb.append("    series: ").append(toIndentedString(series)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    modelDesc: ").append(toIndentedString(modelDesc)).append("\n");
+        sb.append("    parentAssetId: ").append(toIndentedString(parentAssetId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

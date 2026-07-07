@@ -8,6 +8,11 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.modelarts.v1.model.AcceptScheduledEventRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.AcceptScheduledEventResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.Algorithm;
+import com.huaweicloud.sdk.modelarts.v1.model.AttachDevServerVolumeRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.AttachDevServerVolumeResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.AttachDynamicStorageRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.AttachDynamicStorageResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.AttachServerVolumeRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.AuthorizationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchBindPoolNodesReq;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchBindPoolNodesRequest;
@@ -18,6 +23,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolNodesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDevServersActionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDevServersActionResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchLockPoolNodesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchLockPoolNodesRequestBody;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchLockPoolNodesResponse;
@@ -36,8 +43,14 @@ import com.huaweicloud.sdk.modelarts.v1.model.BatchUnlockPoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchUpdatePoolNodesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchUpdatePoolNodesRequestBody;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchUpdatePoolNodesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BindDevServerPublicIPRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BindDevServerPublicIPResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeAlgorithmRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeAlgorithmResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ChangeDevServerOSRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ChangeDevServerOSResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ChangeHyperinstanceOSRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ChangeHyperinstanceOSResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingExperimentRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingExperimentRequestBody;
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingExperimentResponse;
@@ -52,6 +65,16 @@ import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryReq
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAuthorizationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAuthorizationResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateDevServerJobRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateDevServerJobResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateDevServerRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateDevServerResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateHyperClusterRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateHyperClusterResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateHyperinstanceTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateHyperinstanceTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateImageRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateImageResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateModelArtsAgencyRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateModelArtsAgencyResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateNetworkRequest;
@@ -59,6 +82,10 @@ import com.huaweicloud.sdk.modelarts.v1.model.CreateNetworkResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateNodePoolRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateNodePoolRequestBody;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateNodePoolResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateNotebookRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateNotebookResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateNotebookTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateNotebookTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateOrderIdRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateOrderIdResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateOrderRequestBody;
@@ -68,6 +95,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.CreatePoolPluginResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreatePoolRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreatePoolRequestBody;
 import com.huaweicloud.sdk.modelarts.v1.model.CreatePoolResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateRoceNetworkRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateRoceNetworkResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateSaveImageJobRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateSaveImageJobResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateTagRequest;
@@ -98,14 +127,32 @@ import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkflowSubscriptionsRespons
 import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkspaceReq;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateWorkspaceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DataVolumesReq;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteAlgorithmRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteAlgorithmResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteAuthorizationsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteAuthorizationsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteDevServerJobsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteDevServerJobsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteDevServerRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteDevServerResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperClusterRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperClusterResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperinstanceRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperinstanceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperinstanceTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperinstanceTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteImageRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteImageRequestBody;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteImageResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteNetworkRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteNetworkResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteNodePoolRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteNodePoolResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteNotebookRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteNotebookResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteNotebookTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteNotebookTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeletePoolRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeletePoolResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteTagRequest;
@@ -126,23 +173,88 @@ import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowSubscriptionRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkflowSubscriptionResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteWorkspaceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DetachDevServerVolumeRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DetachDevServerVolumeResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DetachDynamicStorageRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DetachDynamicStorageResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DevServerBatchRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DevServerJobCreateRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.EventUpdate;
 import com.huaweicloud.sdk.modelarts.v1.model.ExecutionAction;
 import com.huaweicloud.sdk.modelarts.v1.model.GetAuthorizationsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.GetAuthorizationsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.GetDevServerImageRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.GetDevServerImageResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.GetDevServerJobRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.GetDevServerJobResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.GetDevServerJobServiceRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.GetDevServerJobServiceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.GetDevServerJobTemplateRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.GetDevServerJobTemplateResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.GetDevServerOperationRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.GetDevServerOperationResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.GetHyperClusterRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.GetHyperClusterResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.GetHyperinstanceRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.GetHyperinstanceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.GetScaleEvaluationsDevServerRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.GetScaleEvaluationsDevServerResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.GetTopologiesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.GetTopologiesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.HyperClusterCreateRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.HyperinstanceClustersCapacityRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ImageCreateReq;
+import com.huaweicloud.sdk.modelarts.v1.model.ImageRegRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ImageSaveJob;
 import com.huaweicloud.sdk.modelarts.v1.model.Job;
 import com.huaweicloud.sdk.modelarts.v1.model.JobActionType;
 import com.huaweicloud.sdk.modelarts.v1.model.JobDescription;
 import com.huaweicloud.sdk.modelarts.v1.model.JobSearches;
+import com.huaweicloud.sdk.modelarts.v1.model.LeaseReq;
 import com.huaweicloud.sdk.modelarts.v1.model.ListAlgorithmsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListAlgorithmsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListAllDevServersRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListAllDevServersResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListAllHyperinstancesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListAllHyperinstancesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListAllNotebooksRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListAllNotebooksResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListAuthoringClustersRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListAuthoringClustersResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListDevServerFlavorsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListDevServerFlavorsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListDevServerImagesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListDevServerImagesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListDevServerJobTemplatesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListDevServerJobTemplatesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListDevServerJobsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListDevServerJobsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListDevServerPublicIPRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListDevServerPublicIPResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListDevServersRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListDevServersResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListDynamicStoragesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListDynamicStoragesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListEventCategoriesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListEventCategoriesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListEventsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListEventsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListExecutionLabelsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListExecutionLabelsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListFeaturesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListFeaturesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListFlavorsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListFlavorsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListHyperClusterRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListHyperClusterResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstanceClustersCapacityRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstanceClustersCapacityResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstancesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListHyperinstancesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListImageGroupRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListImageGroupResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListImageRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListImageResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListJobsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListJobsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListNetworksRequest;
@@ -151,6 +263,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.ListNodePoolNodesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListNodePoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListNodePoolsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListNodePoolsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListNotebooksRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListNotebooksResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListPluginTemplatesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListPluginTemplatesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListPoolNodesRequest;
@@ -190,6 +304,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.NetworkCreationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.NetworkUpdateRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.NodeBatchMigrationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.NodesDeletionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.NotebookCreateRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.NotebookUpdateRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.NotifyTrainingJobInformationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.NotifyTrainingJobInformationResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.PatchNetworkRequest;
@@ -200,8 +316,30 @@ import com.huaweicloud.sdk.modelarts.v1.model.PatchNodePoolResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.PatchPoolRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.PatchPoolResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.PoolUpdateRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.QueryHyperinstanceTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.QueryHyperinstanceTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.RebootDevServerRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.RebootDevServerResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.RegisterImageRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.RegisterImageResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ReinstallDevServerOSRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ReinstallDevServerOSResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.RenewLeaseRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.RenewLeaseResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ReportEventBody;
 import com.huaweicloud.sdk.modelarts.v1.model.ResetNodesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ScaleDownHyperinstanceRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ScaleDownHyperinstanceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ScaleUpHyperinstanceRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ScaleUpHyperinstanceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ServerBindPublicIPRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ServerCreateRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ServerHyperScaleUpRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ServerJobDeleteRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ServerOsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ServerRoceNetworkRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ServerScaleDownRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ServerStartRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAlgorithmByUuidRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAlgorithmByUuidResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAuthmodeDetailRequest;
@@ -220,6 +358,16 @@ import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchYamlTemplateContentR
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchYamlTemplateContentResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchYamlTemplatesInfoRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAutoSearchYamlTemplatesInfoResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowClusterRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowClusterResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowDevServerRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowDevServerResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowDynamicStorageRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowDynamicStorageResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowImageRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowImageResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowLeaseRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowLeaseResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowNetworkAvailableIpRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowNetworkAvailableIpResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowNetworkRequest;
@@ -228,6 +376,10 @@ import com.huaweicloud.sdk.modelarts.v1.model.ShowNodeConfigTemplateRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowNodeConfigTemplateResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowNodePoolRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowNodePoolResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowNotebookRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowNotebookResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowNotebookTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowNotebookTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowObsUrlOfTrainingJobLogsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowObsUrlOfTrainingJobLogsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowOrderRequest;
@@ -256,6 +408,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.ShowSaveImageJobRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowSaveImageJobResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowSearchAlgorithmsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowSearchAlgorithmsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowSwitchableFlavorsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowSwitchableFlavorsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainJobTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainJobTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowTrainingExperimentDetailsRequest;
@@ -296,14 +450,36 @@ import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkspaceQuotasRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkspaceQuotasResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowWorkspaceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.StartDevServerRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.StartDevServerResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.StartHyperinstanceRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.StartHyperinstanceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.StartNotebookRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.StartNotebookResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.StepExecutionAction;
+import com.huaweicloud.sdk.modelarts.v1.model.StopDevServerRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.StopDevServerResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.StopHyperinstanceRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.StopHyperinstanceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.StopNotebookRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.StopNotebookResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.StopTrainingJobRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.StopTrainingJobResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.Subscription;
+import com.huaweicloud.sdk.modelarts.v1.model.SyncDevServersRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.SyncDevServersResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.SyncImageRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.SyncImageResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.TagRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.TaskHistory;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateAuthModeRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateAuthModeRequestBody;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateAuthModeResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateDevServerRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateDevServerResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateNotebookRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateNotebookResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateServerRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkflowExecutionRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkflowExecutionResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkflowRequest;
@@ -372,6 +548,35 @@ public class ModelArtsMeta {
             String.class,
             f -> f.withMarshaller(AcceptScheduledEventResponse::getXRequestId,
                 AcceptScheduledEventResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AttachDynamicStorageRequest, AttachDynamicStorageResponse> attachDynamicStorage =
+        genForAttachDynamicStorage();
+
+    private static HttpRequestDef<AttachDynamicStorageRequest, AttachDynamicStorageResponse> genForAttachDynamicStorage() {
+        // basic
+        HttpRequestDef.Builder<AttachDynamicStorageRequest, AttachDynamicStorageResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AttachDynamicStorageRequest.class, AttachDynamicStorageResponse.class)
+            .withName("AttachDynamicStorage")
+            .withUri("/v1/{project_id}/notebooks/{instance_id}/storage")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AttachDynamicStorageRequest::getInstanceId,
+                AttachDynamicStorageRequest::setInstanceId));
+        builder.<DataVolumesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DataVolumesReq.class),
+            f -> f.withMarshaller(AttachDynamicStorageRequest::getBody, AttachDynamicStorageRequest::setBody));
+
+        // response
+
         return builder.build();
     }
 
@@ -1234,6 +1439,33 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteImageRequest, DeleteImageResponse> deleteImage = genForDeleteImage();
+
+    private static HttpRequestDef<DeleteImageRequest, DeleteImageResponse> genForDeleteImage() {
+        // basic
+        HttpRequestDef.Builder<DeleteImageRequest, DeleteImageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteImageRequest.class, DeleteImageResponse.class)
+                .withName("DeleteImage")
+                .withUri("/v1/{project_id}/images/{id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteImageRequest::getId, DeleteImageRequest::setId));
+        builder.<DeleteImageRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteImageRequestBody.class),
+            f -> f.withMarshaller(DeleteImageRequest::getBody, DeleteImageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteNetworkRequest, DeleteNetworkResponse> deleteNetwork =
         genForDeleteNetwork();
 
@@ -1420,6 +1652,36 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DetachDynamicStorageRequest, DetachDynamicStorageResponse> detachDynamicStorage =
+        genForDetachDynamicStorage();
+
+    private static HttpRequestDef<DetachDynamicStorageRequest, DetachDynamicStorageResponse> genForDetachDynamicStorage() {
+        // basic
+        HttpRequestDef.Builder<DetachDynamicStorageRequest, DetachDynamicStorageResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DetachDynamicStorageRequest.class, DetachDynamicStorageResponse.class)
+            .withName("DetachDynamicStorage")
+            .withUri("/v1/{project_id}/notebooks/{instance_id}/storage/{storage_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DetachDynamicStorageRequest::getInstanceId,
+                DetachDynamicStorageRequest::setInstanceId));
+        builder.<String>withRequestField("storage_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DetachDynamicStorageRequest::getStorageId,
+                DetachDynamicStorageRequest::setStorageId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<GetAuthorizationsRequest, GetAuthorizationsResponse> getAuthorizations =
         genForGetAuthorizations();
 
@@ -1511,6 +1773,30 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDynamicStoragesRequest, ListDynamicStoragesResponse> listDynamicStorages =
+        genForListDynamicStorages();
+
+    private static HttpRequestDef<ListDynamicStoragesRequest, ListDynamicStoragesResponse> genForListDynamicStorages() {
+        // basic
+        HttpRequestDef.Builder<ListDynamicStoragesRequest, ListDynamicStoragesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDynamicStoragesRequest.class, ListDynamicStoragesResponse.class)
+                .withName("ListDynamicStorages")
+                .withUri("/v1/{project_id}/notebooks/{instance_id}/storage")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDynamicStoragesRequest::getInstanceId,
+                ListDynamicStoragesRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListEventCategoriesRequest, ListEventCategoriesResponse> listEventCategories =
         genForListEventCategories();
 
@@ -1581,6 +1867,141 @@ public class ModelArtsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEventsRequest::getType, ListEventsRequest::setType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListImageRequest, ListImageResponse> listImage = genForListImage();
+
+    private static HttpRequestDef<ListImageRequest, ListImageResponse> genForListImage() {
+        // basic
+        HttpRequestDef.Builder<ListImageRequest, ListImageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListImageRequest.class, ListImageResponse.class)
+                .withName("ListImage")
+                .withUri("/v1/{project_id}/images")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImageRequest::getLimit, ListImageRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageRequest::getName, ListImageRequest::setName));
+        builder.<Boolean>withRequestField("name_fuzzy_match",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListImageRequest::getNameFuzzyMatch, ListImageRequest::setNameFuzzyMatch));
+        builder.<String>withRequestField("namespace",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageRequest::getNamespace, ListImageRequest::setNamespace));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImageRequest::getOffset, ListImageRequest::setOffset));
+        builder.<ListImageRequest.ServiceTypeEnum>withRequestField("service_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListImageRequest.ServiceTypeEnum.class),
+            f -> f.withMarshaller(ListImageRequest::getServiceType, ListImageRequest::setServiceType));
+        builder.<ListImageRequest.SortDirEnum>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListImageRequest.SortDirEnum.class),
+            f -> f.withMarshaller(ListImageRequest::getSortDir, ListImageRequest::setSortDir));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageRequest::getSortKey, ListImageRequest::setSortKey));
+        builder.<ListImageRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListImageRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListImageRequest::getType, ListImageRequest::setType));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageRequest::getWorkspaceId, ListImageRequest::setWorkspaceId));
+        builder.<String>withRequestField("show_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageRequest::getShowName, ListImageRequest::setShowName));
+        builder.<String>withRequestField("show_tag",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageRequest::getShowTag, ListImageRequest::setShowTag));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListImageGroupRequest, ListImageGroupResponse> listImageGroup =
+        genForListImageGroup();
+
+    private static HttpRequestDef<ListImageGroupRequest, ListImageGroupResponse> genForListImageGroup() {
+        // basic
+        HttpRequestDef.Builder<ListImageGroupRequest, ListImageGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListImageGroupRequest.class, ListImageGroupResponse.class)
+                .withName("ListImageGroup")
+                .withUri("/v1/{project_id}/images/group")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageGroupRequest::getName, ListImageGroupRequest::setName));
+        builder.<Boolean>withRequestField("name_fuzzy_match",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListImageGroupRequest::getNameFuzzyMatch, ListImageGroupRequest::setNameFuzzyMatch));
+        builder.<String>withRequestField("namespace",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageGroupRequest::getNamespace, ListImageGroupRequest::setNamespace));
+        builder.<ListImageGroupRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListImageGroupRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListImageGroupRequest::getType, ListImageGroupRequest::setType));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageGroupRequest::getWorkspaceId, ListImageGroupRequest::setWorkspaceId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImageGroupRequest::getLimit, ListImageGroupRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImageGroupRequest::getOffset, ListImageGroupRequest::setOffset));
+        builder.<String>withRequestField("swr_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageGroupRequest::getSwrInstanceId, ListImageGroupRequest::setSwrInstanceId));
 
         // response
 
@@ -2433,6 +2854,29 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RegisterImageRequest, RegisterImageResponse> registerImage =
+        genForRegisterImage();
+
+    private static HttpRequestDef<RegisterImageRequest, RegisterImageResponse> genForRegisterImage() {
+        // basic
+        HttpRequestDef.Builder<RegisterImageRequest, RegisterImageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RegisterImageRequest.class, RegisterImageResponse.class)
+                .withName("RegisterImage")
+                .withUri("/v1/{project_id}/images")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ImageRegRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImageRegRequest.class),
+            f -> f.withMarshaller(RegisterImageRequest::getBody, RegisterImageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAlgorithmByUuidRequest, ShowAlgorithmByUuidResponse> showAlgorithmByUuid =
         genForShowAlgorithmByUuid();
 
@@ -2681,6 +3125,56 @@ public class ModelArtsMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDynamicStorageRequest, ShowDynamicStorageResponse> showDynamicStorage =
+        genForShowDynamicStorage();
+
+    private static HttpRequestDef<ShowDynamicStorageRequest, ShowDynamicStorageResponse> genForShowDynamicStorage() {
+        // basic
+        HttpRequestDef.Builder<ShowDynamicStorageRequest, ShowDynamicStorageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDynamicStorageRequest.class, ShowDynamicStorageResponse.class)
+                .withName("ShowDynamicStorage")
+                .withUri("/v1/{project_id}/notebooks/{instance_id}/storage/{storage_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDynamicStorageRequest::getInstanceId, ShowDynamicStorageRequest::setInstanceId));
+        builder.<String>withRequestField("storage_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDynamicStorageRequest::getStorageId, ShowDynamicStorageRequest::setStorageId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowImageRequest, ShowImageResponse> showImage = genForShowImage();
+
+    private static HttpRequestDef<ShowImageRequest, ShowImageResponse> genForShowImage() {
+        // basic
+        HttpRequestDef.Builder<ShowImageRequest, ShowImageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowImageRequest.class, ShowImageResponse.class)
+                .withName("ShowImage")
+                .withUri("/v1/{project_id}/images/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowImageRequest::getId, ShowImageRequest::setId));
 
         // response
 
@@ -3457,6 +3951,28 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SyncImageRequest, SyncImageResponse> syncImage = genForSyncImage();
+
+    private static HttpRequestDef<SyncImageRequest, SyncImageResponse> genForSyncImage() {
+        // basic
+        HttpRequestDef.Builder<SyncImageRequest, SyncImageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SyncImageRequest.class, SyncImageResponse.class)
+                .withName("SyncImage")
+                .withUri("/v1/{project_id}/images/{image_id}/sync")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("image_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SyncImageRequest::getImageId, SyncImageRequest::setImageId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateAuthModeRequest, UpdateAuthModeResponse> updateAuthMode =
         genForUpdateAuthMode();
 
@@ -3560,6 +4076,2093 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ValidateAuthorizationRequestBody.class),
             f -> f.withMarshaller(ValidateAuthorizationRequest::getBody, ValidateAuthorizationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AttachDevServerVolumeRequest, AttachDevServerVolumeResponse> attachDevServerVolume =
+        genForAttachDevServerVolume();
+
+    private static HttpRequestDef<AttachDevServerVolumeRequest, AttachDevServerVolumeResponse> genForAttachDevServerVolume() {
+        // basic
+        HttpRequestDef.Builder<AttachDevServerVolumeRequest, AttachDevServerVolumeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AttachDevServerVolumeRequest.class, AttachDevServerVolumeResponse.class)
+            .withName("AttachDevServerVolume")
+            .withUri("/v1/{project_id}/dev-servers/{id}/attachvolume")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AttachDevServerVolumeRequest::getId, AttachDevServerVolumeRequest::setId));
+        builder.<AttachServerVolumeRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AttachServerVolumeRequest.class),
+            f -> f.withMarshaller(AttachDevServerVolumeRequest::getBody, AttachDevServerVolumeRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AttachDevServerVolumeResponse::getXRequestId,
+                AttachDevServerVolumeResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDevServersActionRequest, BatchDevServersActionResponse> batchDevServersAction =
+        genForBatchDevServersAction();
+
+    private static HttpRequestDef<BatchDevServersActionRequest, BatchDevServersActionResponse> genForBatchDevServersAction() {
+        // basic
+        HttpRequestDef.Builder<BatchDevServersActionRequest, BatchDevServersActionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDevServersActionRequest.class, BatchDevServersActionResponse.class)
+            .withName("BatchDevServersAction")
+            .withUri("/v1/{project_id}/dev-servers/action")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<DevServerBatchRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DevServerBatchRequest.class),
+            f -> f.withMarshaller(BatchDevServersActionRequest::getBody, BatchDevServersActionRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchDevServersActionResponse::getXRequestId,
+                BatchDevServersActionResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BindDevServerPublicIPRequest, BindDevServerPublicIPResponse> bindDevServerPublicIP =
+        genForBindDevServerPublicIP();
+
+    private static HttpRequestDef<BindDevServerPublicIPRequest, BindDevServerPublicIPResponse> genForBindDevServerPublicIP() {
+        // basic
+        HttpRequestDef.Builder<BindDevServerPublicIPRequest, BindDevServerPublicIPResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BindDevServerPublicIPRequest.class, BindDevServerPublicIPResponse.class)
+            .withName("BindDevServerPublicIP")
+            .withUri("/v1/{project_id}/dev-servers/{id}/publicips")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BindDevServerPublicIPRequest::getId, BindDevServerPublicIPRequest::setId));
+        builder.<ServerBindPublicIPRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ServerBindPublicIPRequest.class),
+            f -> f.withMarshaller(BindDevServerPublicIPRequest::getBody, BindDevServerPublicIPRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BindDevServerPublicIPResponse::getXRequestId,
+                BindDevServerPublicIPResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeDevServerOSRequest, ChangeDevServerOSResponse> changeDevServerOS =
+        genForChangeDevServerOS();
+
+    private static HttpRequestDef<ChangeDevServerOSRequest, ChangeDevServerOSResponse> genForChangeDevServerOS() {
+        // basic
+        HttpRequestDef.Builder<ChangeDevServerOSRequest, ChangeDevServerOSResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ChangeDevServerOSRequest.class, ChangeDevServerOSResponse.class)
+                .withName("ChangeDevServerOS")
+                .withUri("/v1/{project_id}/dev-servers/{id}/changeos")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeDevServerOSRequest::getId, ChangeDevServerOSRequest::setId));
+        builder.<ServerOsRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ServerOsRequest.class),
+            f -> f.withMarshaller(ChangeDevServerOSRequest::getBody, ChangeDevServerOSRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ChangeDevServerOSResponse::getXRequestId, ChangeDevServerOSResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeHyperinstanceOSRequest, ChangeHyperinstanceOSResponse> changeHyperinstanceOS =
+        genForChangeHyperinstanceOS();
+
+    private static HttpRequestDef<ChangeHyperinstanceOSRequest, ChangeHyperinstanceOSResponse> genForChangeHyperinstanceOS() {
+        // basic
+        HttpRequestDef.Builder<ChangeHyperinstanceOSRequest, ChangeHyperinstanceOSResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ChangeHyperinstanceOSRequest.class, ChangeHyperinstanceOSResponse.class)
+            .withName("ChangeHyperinstanceOS")
+            .withUri("/v1/{project_id}/dev-servers/hyperinstance/{id}/changeos")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeHyperinstanceOSRequest::getId, ChangeHyperinstanceOSRequest::setId));
+        builder.<ServerOsRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ServerOsRequest.class),
+            f -> f.withMarshaller(ChangeHyperinstanceOSRequest::getBody, ChangeHyperinstanceOSRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ChangeHyperinstanceOSResponse::getXRequestId,
+                ChangeHyperinstanceOSResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDevServerRequest, CreateDevServerResponse> createDevServer =
+        genForCreateDevServer();
+
+    private static HttpRequestDef<CreateDevServerRequest, CreateDevServerResponse> genForCreateDevServer() {
+        // basic
+        HttpRequestDef.Builder<CreateDevServerRequest, CreateDevServerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDevServerRequest.class, CreateDevServerResponse.class)
+                .withName("CreateDevServer")
+                .withUri("/v1/{project_id}/dev-servers")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ServerCreateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ServerCreateRequest.class),
+            f -> f.withMarshaller(CreateDevServerRequest::getBody, CreateDevServerRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDevServerJobRequest, CreateDevServerJobResponse> createDevServerJob =
+        genForCreateDevServerJob();
+
+    private static HttpRequestDef<CreateDevServerJobRequest, CreateDevServerJobResponse> genForCreateDevServerJob() {
+        // basic
+        HttpRequestDef.Builder<CreateDevServerJobRequest, CreateDevServerJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDevServerJobRequest.class, CreateDevServerJobResponse.class)
+                .withName("CreateDevServerJob")
+                .withUri("/v1/{project_id}/dev-servers/jobs")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<DevServerJobCreateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DevServerJobCreateRequest.class),
+            f -> f.withMarshaller(CreateDevServerJobRequest::getBody, CreateDevServerJobRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateHyperClusterRequest, CreateHyperClusterResponse> createHyperCluster =
+        genForCreateHyperCluster();
+
+    private static HttpRequestDef<CreateHyperClusterRequest, CreateHyperClusterResponse> genForCreateHyperCluster() {
+        // basic
+        HttpRequestDef.Builder<CreateHyperClusterRequest, CreateHyperClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateHyperClusterRequest.class, CreateHyperClusterResponse.class)
+                .withName("CreateHyperCluster")
+                .withUri("/v1/{project_id}/dev-servers/hyper-clusters")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<HyperClusterCreateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(HyperClusterCreateRequest.class),
+            f -> f.withMarshaller(CreateHyperClusterRequest::getBody, CreateHyperClusterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateHyperinstanceTagsRequest, CreateHyperinstanceTagsResponse> createHyperinstanceTags =
+        genForCreateHyperinstanceTags();
+
+    private static HttpRequestDef<CreateHyperinstanceTagsRequest, CreateHyperinstanceTagsResponse> genForCreateHyperinstanceTags() {
+        // basic
+        HttpRequestDef.Builder<CreateHyperinstanceTagsRequest, CreateHyperinstanceTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateHyperinstanceTagsRequest.class, CreateHyperinstanceTagsResponse.class)
+            .withName("CreateHyperinstanceTags")
+            .withUri("/v1/{project_id}/dev-servers/hyperinstance/{id}/tags/create")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateHyperinstanceTagsRequest::getId, CreateHyperinstanceTagsRequest::setId));
+        builder.<TagRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TagRequest.class),
+            f -> f.withMarshaller(CreateHyperinstanceTagsRequest::getBody, CreateHyperinstanceTagsRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateHyperinstanceTagsResponse::getXRequestId,
+                CreateHyperinstanceTagsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRoceNetworkRequest, CreateRoceNetworkResponse> createRoceNetwork =
+        genForCreateRoceNetwork();
+
+    private static HttpRequestDef<CreateRoceNetworkRequest, CreateRoceNetworkResponse> genForCreateRoceNetwork() {
+        // basic
+        HttpRequestDef.Builder<CreateRoceNetworkRequest, CreateRoceNetworkResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRoceNetworkRequest.class, CreateRoceNetworkResponse.class)
+                .withName("CreateRoceNetwork")
+                .withUri("/v1/{project_id}/dev-servers/networks")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ServerRoceNetworkRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ServerRoceNetworkRequest.class),
+            f -> f.withMarshaller(CreateRoceNetworkRequest::getBody, CreateRoceNetworkRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDevServerRequest, DeleteDevServerResponse> deleteDevServer =
+        genForDeleteDevServer();
+
+    private static HttpRequestDef<DeleteDevServerRequest, DeleteDevServerResponse> genForDeleteDevServer() {
+        // basic
+        HttpRequestDef.Builder<DeleteDevServerRequest, DeleteDevServerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDevServerRequest.class, DeleteDevServerResponse.class)
+                .withName("DeleteDevServer")
+                .withUri("/v1/{project_id}/dev-servers/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDevServerRequest::getId, DeleteDevServerRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDevServerJobsRequest, DeleteDevServerJobsResponse> deleteDevServerJobs =
+        genForDeleteDevServerJobs();
+
+    private static HttpRequestDef<DeleteDevServerJobsRequest, DeleteDevServerJobsResponse> genForDeleteDevServerJobs() {
+        // basic
+        HttpRequestDef.Builder<DeleteDevServerJobsRequest, DeleteDevServerJobsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteDevServerJobsRequest.class, DeleteDevServerJobsResponse.class)
+            .withName("DeleteDevServerJobs")
+            .withUri("/v1/{project_id}/dev-servers/jobs")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ServerJobDeleteRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ServerJobDeleteRequest.class),
+            f -> f.withMarshaller(DeleteDevServerJobsRequest::getBody, DeleteDevServerJobsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteHyperClusterRequest, DeleteHyperClusterResponse> deleteHyperCluster =
+        genForDeleteHyperCluster();
+
+    private static HttpRequestDef<DeleteHyperClusterRequest, DeleteHyperClusterResponse> genForDeleteHyperCluster() {
+        // basic
+        HttpRequestDef.Builder<DeleteHyperClusterRequest, DeleteHyperClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteHyperClusterRequest.class, DeleteHyperClusterResponse.class)
+                .withName("DeleteHyperCluster")
+                .withUri("/v1/{project_id}/dev-servers/hyper-clusters/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHyperClusterRequest::getId, DeleteHyperClusterRequest::setId));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHyperClusterRequest::getType, DeleteHyperClusterRequest::setType));
+
+        // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(DeleteHyperClusterResponse::getBody, DeleteHyperClusterResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteHyperinstanceRequest, DeleteHyperinstanceResponse> deleteHyperinstance =
+        genForDeleteHyperinstance();
+
+    private static HttpRequestDef<DeleteHyperinstanceRequest, DeleteHyperinstanceResponse> genForDeleteHyperinstance() {
+        // basic
+        HttpRequestDef.Builder<DeleteHyperinstanceRequest, DeleteHyperinstanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteHyperinstanceRequest.class, DeleteHyperinstanceResponse.class)
+            .withName("DeleteHyperinstance")
+            .withUri("/v1/{project_id}/dev-servers/hyperinstance/{id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHyperinstanceRequest::getId, DeleteHyperinstanceRequest::setId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteHyperinstanceResponse::getXRequestId,
+                DeleteHyperinstanceResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteHyperinstanceTagsRequest, DeleteHyperinstanceTagsResponse> deleteHyperinstanceTags =
+        genForDeleteHyperinstanceTags();
+
+    private static HttpRequestDef<DeleteHyperinstanceTagsRequest, DeleteHyperinstanceTagsResponse> genForDeleteHyperinstanceTags() {
+        // basic
+        HttpRequestDef.Builder<DeleteHyperinstanceTagsRequest, DeleteHyperinstanceTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DeleteHyperinstanceTagsRequest.class, DeleteHyperinstanceTagsResponse.class)
+            .withName("DeleteHyperinstanceTags")
+            .withUri("/v1/{project_id}/dev-servers/hyperinstance/{id}/tags/delete")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHyperinstanceTagsRequest::getId, DeleteHyperinstanceTagsRequest::setId));
+        builder.<TagRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TagRequest.class),
+            f -> f.withMarshaller(DeleteHyperinstanceTagsRequest::getBody, DeleteHyperinstanceTagsRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteHyperinstanceTagsResponse::getXRequestId,
+                DeleteHyperinstanceTagsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DetachDevServerVolumeRequest, DetachDevServerVolumeResponse> detachDevServerVolume =
+        genForDetachDevServerVolume();
+
+    private static HttpRequestDef<DetachDevServerVolumeRequest, DetachDevServerVolumeResponse> genForDetachDevServerVolume() {
+        // basic
+        HttpRequestDef.Builder<DetachDevServerVolumeRequest, DetachDevServerVolumeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DetachDevServerVolumeRequest.class, DetachDevServerVolumeResponse.class)
+            .withName("DetachDevServerVolume")
+            .withUri("/v1/{project_id}/dev-servers/{id}/detachvolume/{volume_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DetachDevServerVolumeRequest::getId, DetachDevServerVolumeRequest::setId));
+        builder.<String>withRequestField("volume_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DetachDevServerVolumeRequest::getVolumeId,
+                DetachDevServerVolumeRequest::setVolumeId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetDevServerImageRequest, GetDevServerImageResponse> getDevServerImage =
+        genForGetDevServerImage();
+
+    private static HttpRequestDef<GetDevServerImageRequest, GetDevServerImageResponse> genForGetDevServerImage() {
+        // basic
+        HttpRequestDef.Builder<GetDevServerImageRequest, GetDevServerImageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetDevServerImageRequest.class, GetDevServerImageResponse.class)
+                .withName("GetDevServerImage")
+                .withUri("/v1/{project_id}/dev-servers/images/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetDevServerImageRequest::getId, GetDevServerImageRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetDevServerJobRequest, GetDevServerJobResponse> getDevServerJob =
+        genForGetDevServerJob();
+
+    private static HttpRequestDef<GetDevServerJobRequest, GetDevServerJobResponse> genForGetDevServerJob() {
+        // basic
+        HttpRequestDef.Builder<GetDevServerJobRequest, GetDevServerJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetDevServerJobRequest.class, GetDevServerJobResponse.class)
+                .withName("GetDevServerJob")
+                .withUri("/v1/{project_id}/dev-servers/jobs/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetDevServerJobRequest::getId, GetDevServerJobRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetDevServerJobServiceRequest, GetDevServerJobServiceResponse> getDevServerJobService =
+        genForGetDevServerJobService();
+
+    private static HttpRequestDef<GetDevServerJobServiceRequest, GetDevServerJobServiceResponse> genForGetDevServerJobService() {
+        // basic
+        HttpRequestDef.Builder<GetDevServerJobServiceRequest, GetDevServerJobServiceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, GetDevServerJobServiceRequest.class, GetDevServerJobServiceResponse.class)
+            .withName("GetDevServerJobService")
+            .withUri("/v1/{project_id}/dev-servers/jobs/services/{id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetDevServerJobServiceRequest::getId, GetDevServerJobServiceRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetDevServerJobTemplateRequest, GetDevServerJobTemplateResponse> getDevServerJobTemplate =
+        genForGetDevServerJobTemplate();
+
+    private static HttpRequestDef<GetDevServerJobTemplateRequest, GetDevServerJobTemplateResponse> genForGetDevServerJobTemplate() {
+        // basic
+        HttpRequestDef.Builder<GetDevServerJobTemplateRequest, GetDevServerJobTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, GetDevServerJobTemplateRequest.class, GetDevServerJobTemplateResponse.class)
+            .withName("GetDevServerJobTemplate")
+            .withUri("/v1/{project_id}/dev-servers/jobs/templates/{id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetDevServerJobTemplateRequest::getId, GetDevServerJobTemplateRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetDevServerOperationRequest, GetDevServerOperationResponse> getDevServerOperation =
+        genForGetDevServerOperation();
+
+    private static HttpRequestDef<GetDevServerOperationRequest, GetDevServerOperationResponse> genForGetDevServerOperation() {
+        // basic
+        HttpRequestDef.Builder<GetDevServerOperationRequest, GetDevServerOperationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, GetDevServerOperationRequest.class, GetDevServerOperationResponse.class)
+            .withName("GetDevServerOperation")
+            .withUri("/v1/{project_id}/dev-servers/{id}/operation/{operation_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetDevServerOperationRequest::getId, GetDevServerOperationRequest::setId));
+        builder.<String>withRequestField("operation_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetDevServerOperationRequest::getOperationId,
+                GetDevServerOperationRequest::setOperationId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetHyperClusterRequest, GetHyperClusterResponse> getHyperCluster =
+        genForGetHyperCluster();
+
+    private static HttpRequestDef<GetHyperClusterRequest, GetHyperClusterResponse> genForGetHyperCluster() {
+        // basic
+        HttpRequestDef.Builder<GetHyperClusterRequest, GetHyperClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetHyperClusterRequest.class, GetHyperClusterResponse.class)
+                .withName("GetHyperCluster")
+                .withUri("/v1/{project_id}/dev-servers/hyper-clusters/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetHyperClusterRequest::getId, GetHyperClusterRequest::setId));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetHyperClusterRequest::getType, GetHyperClusterRequest::setType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetHyperinstanceRequest, GetHyperinstanceResponse> getHyperinstance =
+        genForGetHyperinstance();
+
+    private static HttpRequestDef<GetHyperinstanceRequest, GetHyperinstanceResponse> genForGetHyperinstance() {
+        // basic
+        HttpRequestDef.Builder<GetHyperinstanceRequest, GetHyperinstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetHyperinstanceRequest.class, GetHyperinstanceResponse.class)
+                .withName("GetHyperinstance")
+                .withUri("/v1/{project_id}/dev-servers/hyperinstance/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetHyperinstanceRequest::getId, GetHyperinstanceRequest::setId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetHyperinstanceResponse::getXRequestId, GetHyperinstanceResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetScaleEvaluationsDevServerRequest, GetScaleEvaluationsDevServerResponse> getScaleEvaluationsDevServer =
+        genForGetScaleEvaluationsDevServer();
+
+    private static HttpRequestDef<GetScaleEvaluationsDevServerRequest, GetScaleEvaluationsDevServerResponse> genForGetScaleEvaluationsDevServer() {
+        // basic
+        HttpRequestDef.Builder<GetScaleEvaluationsDevServerRequest, GetScaleEvaluationsDevServerResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    GetScaleEvaluationsDevServerRequest.class,
+                    GetScaleEvaluationsDevServerResponse.class)
+                .withName("GetScaleEvaluationsDevServer")
+                .withUri("/v1/{project_id}/dev-servers/hyperinstance/{id}/scale-evaluations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetScaleEvaluationsDevServerRequest::getId,
+                GetScaleEvaluationsDevServerRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetTopologiesRequest, GetTopologiesResponse> getTopologies =
+        genForGetTopologies();
+
+    private static HttpRequestDef<GetTopologiesRequest, GetTopologiesResponse> genForGetTopologies() {
+        // basic
+        HttpRequestDef.Builder<GetTopologiesRequest, GetTopologiesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetTopologiesRequest.class, GetTopologiesResponse.class)
+                .withName("GetTopologies")
+                .withUri("/v1/{project_id}/dev-servers/instance-physical-topologies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetTopologiesRequest::getId, GetTopologiesRequest::setId));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetTopologiesRequest::getResourceId, GetTopologiesRequest::setResourceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAllDevServersRequest, ListAllDevServersResponse> listAllDevServers =
+        genForListAllDevServers();
+
+    private static HttpRequestDef<ListAllDevServersRequest, ListAllDevServersResponse> genForListAllDevServers() {
+        // basic
+        HttpRequestDef.Builder<ListAllDevServersRequest, ListAllDevServersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAllDevServersRequest.class, ListAllDevServersResponse.class)
+                .withName("ListAllDevServers")
+                .withUri("/v1/{project_id}/dev-servers/all")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAllHyperinstancesRequest, ListAllHyperinstancesResponse> listAllHyperinstances =
+        genForListAllHyperinstances();
+
+    private static HttpRequestDef<ListAllHyperinstancesRequest, ListAllHyperinstancesResponse> genForListAllHyperinstances() {
+        // basic
+        HttpRequestDef.Builder<ListAllHyperinstancesRequest, ListAllHyperinstancesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAllHyperinstancesRequest.class, ListAllHyperinstancesResponse.class)
+            .withName("ListAllHyperinstances")
+            .withUri("/v1/{project_id}/dev-servers/hyperinstance/all")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDevServerFlavorsRequest, ListDevServerFlavorsResponse> listDevServerFlavors =
+        genForListDevServerFlavors();
+
+    private static HttpRequestDef<ListDevServerFlavorsRequest, ListDevServerFlavorsResponse> genForListDevServerFlavors() {
+        // basic
+        HttpRequestDef.Builder<ListDevServerFlavorsRequest, ListDevServerFlavorsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDevServerFlavorsRequest.class, ListDevServerFlavorsResponse.class)
+            .withName("ListDevServerFlavors")
+            .withUri("/v1/{project_id}/dev-servers/flavors")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDevServerFlavorsRequest::getServerType,
+                ListDevServerFlavorsRequest::setServerType));
+        builder.<String>withRequestField("arch",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDevServerFlavorsRequest::getArch, ListDevServerFlavorsRequest::setArch));
+        builder.<String>withRequestField("charging_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDevServerFlavorsRequest::getChargingMode,
+                ListDevServerFlavorsRequest::setChargingMode));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDevServerImagesRequest, ListDevServerImagesResponse> listDevServerImages =
+        genForListDevServerImages();
+
+    private static HttpRequestDef<ListDevServerImagesRequest, ListDevServerImagesResponse> genForListDevServerImages() {
+        // basic
+        HttpRequestDef.Builder<ListDevServerImagesRequest, ListDevServerImagesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDevServerImagesRequest.class, ListDevServerImagesResponse.class)
+                .withName("ListDevServerImages")
+                .withUri("/v1/{project_id}/dev-servers/images")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDevServerImagesRequest::getServerType,
+                ListDevServerImagesRequest::setServerType));
+        builder.<String>withRequestField("flavor_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDevServerImagesRequest::getFlavorName,
+                ListDevServerImagesRequest::setFlavorName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDevServerJobTemplatesRequest, ListDevServerJobTemplatesResponse> listDevServerJobTemplates =
+        genForListDevServerJobTemplates();
+
+    private static HttpRequestDef<ListDevServerJobTemplatesRequest, ListDevServerJobTemplatesResponse> genForListDevServerJobTemplates() {
+        // basic
+        HttpRequestDef.Builder<ListDevServerJobTemplatesRequest, ListDevServerJobTemplatesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListDevServerJobTemplatesRequest.class,
+                    ListDevServerJobTemplatesResponse.class)
+                .withName("ListDevServerJobTemplates")
+                .withUri("/v1/{project_id}/dev-servers/jobs/templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDevServerJobTemplatesRequest::getId, ListDevServerJobTemplatesRequest::setId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDevServerJobTemplatesRequest::getName,
+                ListDevServerJobTemplatesRequest::setName));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDevServerJobTemplatesRequest::getType,
+                ListDevServerJobTemplatesRequest::setType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDevServerJobsRequest, ListDevServerJobsResponse> listDevServerJobs =
+        genForListDevServerJobs();
+
+    private static HttpRequestDef<ListDevServerJobsRequest, ListDevServerJobsResponse> genForListDevServerJobs() {
+        // basic
+        HttpRequestDef.Builder<ListDevServerJobsRequest, ListDevServerJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDevServerJobsRequest.class, ListDevServerJobsResponse.class)
+                .withName("ListDevServerJobs")
+                .withUri("/v1/{project_id}/dev-servers/jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDevServerJobsRequest::getId, ListDevServerJobsRequest::setId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDevServerJobsRequest::getName, ListDevServerJobsRequest::setName));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDevServerJobsRequest::getType, ListDevServerJobsRequest::setType));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDevServerJobsRequest::getStatus, ListDevServerJobsRequest::setStatus));
+        builder.<Boolean>withRequestField("visible",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListDevServerJobsRequest::getVisible, ListDevServerJobsRequest::setVisible));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDevServerPublicIPRequest, ListDevServerPublicIPResponse> listDevServerPublicIP =
+        genForListDevServerPublicIP();
+
+    private static HttpRequestDef<ListDevServerPublicIPRequest, ListDevServerPublicIPResponse> genForListDevServerPublicIP() {
+        // basic
+        HttpRequestDef.Builder<ListDevServerPublicIPRequest, ListDevServerPublicIPResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDevServerPublicIPRequest.class, ListDevServerPublicIPResponse.class)
+            .withName("ListDevServerPublicIP")
+            .withUri("/v1/{project_id}/dev-servers/{id}/publicips")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDevServerPublicIPRequest::getId, ListDevServerPublicIPRequest::setId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListDevServerPublicIPResponse::getXRequestId,
+                ListDevServerPublicIPResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDevServersRequest, ListDevServersResponse> listDevServers =
+        genForListDevServers();
+
+    private static HttpRequestDef<ListDevServersRequest, ListDevServersResponse> genForListDevServers() {
+        // basic
+        HttpRequestDef.Builder<ListDevServersRequest, ListDevServersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDevServersRequest.class, ListDevServersResponse.class)
+                .withName("ListDevServers")
+                .withUri("/v1/{project_id}/dev-servers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("owner",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDevServersRequest::getOwner, ListDevServersRequest::setOwner));
+        builder.<ListDevServersRequest.SortDirEnum>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListDevServersRequest.SortDirEnum.class),
+            f -> f.withMarshaller(ListDevServersRequest::getSortDir, ListDevServersRequest::setSortDir));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDevServersRequest::getSortKey, ListDevServersRequest::setSortKey));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDevServersRequest::getLimit, ListDevServersRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDevServersRequest::getOffset, ListDevServersRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHyperClusterRequest, ListHyperClusterResponse> listHyperCluster =
+        genForListHyperCluster();
+
+    private static HttpRequestDef<ListHyperClusterRequest, ListHyperClusterResponse> genForListHyperCluster() {
+        // basic
+        HttpRequestDef.Builder<ListHyperClusterRequest, ListHyperClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListHyperClusterRequest.class, ListHyperClusterResponse.class)
+                .withName("ListHyperCluster")
+                .withUri("/v1/{project_id}/dev-servers/hyper-clusters")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHyperClusterRequest::getType, ListHyperClusterRequest::setType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHyperinstanceClustersCapacityRequest, ListHyperinstanceClustersCapacityResponse> listHyperinstanceClustersCapacity =
+        genForListHyperinstanceClustersCapacity();
+
+    private static HttpRequestDef<ListHyperinstanceClustersCapacityRequest, ListHyperinstanceClustersCapacityResponse> genForListHyperinstanceClustersCapacity() {
+        // basic
+        HttpRequestDef.Builder<ListHyperinstanceClustersCapacityRequest, ListHyperinstanceClustersCapacityResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListHyperinstanceClustersCapacityRequest.class,
+                    ListHyperinstanceClustersCapacityResponse.class)
+                .withName("ListHyperinstanceClustersCapacity")
+                .withUri("/v1/{project_id}/dev-servers/hyperinstance/cluster-capacity-evaluations")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<HyperinstanceClustersCapacityRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(HyperinstanceClustersCapacityRequest.class),
+            f -> f.withMarshaller(ListHyperinstanceClustersCapacityRequest::getBody,
+                ListHyperinstanceClustersCapacityRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHyperinstancesRequest, ListHyperinstancesResponse> listHyperinstances =
+        genForListHyperinstances();
+
+    private static HttpRequestDef<ListHyperinstancesRequest, ListHyperinstancesResponse> genForListHyperinstances() {
+        // basic
+        HttpRequestDef.Builder<ListHyperinstancesRequest, ListHyperinstancesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListHyperinstancesRequest.class, ListHyperinstancesResponse.class)
+                .withName("ListHyperinstances")
+                .withUri("/v1/{project_id}/dev-servers/hyperinstance")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListHyperinstancesRequest.SortDirEnum>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListHyperinstancesRequest.SortDirEnum.class),
+            f -> f.withMarshaller(ListHyperinstancesRequest::getSortDir, ListHyperinstancesRequest::setSortDir));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHyperinstancesRequest::getSortKey, ListHyperinstancesRequest::setSortKey));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHyperinstancesRequest::getLimit, ListHyperinstancesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHyperinstancesRequest::getOffset, ListHyperinstancesRequest::setOffset));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListHyperinstancesResponse::getXRequestId,
+                ListHyperinstancesResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<QueryHyperinstanceTagsRequest, QueryHyperinstanceTagsResponse> queryHyperinstanceTags =
+        genForQueryHyperinstanceTags();
+
+    private static HttpRequestDef<QueryHyperinstanceTagsRequest, QueryHyperinstanceTagsResponse> genForQueryHyperinstanceTags() {
+        // basic
+        HttpRequestDef.Builder<QueryHyperinstanceTagsRequest, QueryHyperinstanceTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, QueryHyperinstanceTagsRequest.class, QueryHyperinstanceTagsResponse.class)
+            .withName("QueryHyperinstanceTags")
+            .withUri("/v1/{project_id}/dev-servers/hyperinstance/{id}/tags")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(QueryHyperinstanceTagsRequest::getId, QueryHyperinstanceTagsRequest::setId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(QueryHyperinstanceTagsResponse::getXRequestId,
+                QueryHyperinstanceTagsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RebootDevServerRequest, RebootDevServerResponse> rebootDevServer =
+        genForRebootDevServer();
+
+    private static HttpRequestDef<RebootDevServerRequest, RebootDevServerResponse> genForRebootDevServer() {
+        // basic
+        HttpRequestDef.Builder<RebootDevServerRequest, RebootDevServerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, RebootDevServerRequest.class, RebootDevServerResponse.class)
+                .withName("RebootDevServer")
+                .withUri("/v1/{project_id}/dev-servers/{id}/reboot")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RebootDevServerRequest::getId, RebootDevServerRequest::setId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RebootDevServerResponse::getXRequestId, RebootDevServerResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ReinstallDevServerOSRequest, ReinstallDevServerOSResponse> reinstallDevServerOS =
+        genForReinstallDevServerOS();
+
+    private static HttpRequestDef<ReinstallDevServerOSRequest, ReinstallDevServerOSResponse> genForReinstallDevServerOS() {
+        // basic
+        HttpRequestDef.Builder<ReinstallDevServerOSRequest, ReinstallDevServerOSResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ReinstallDevServerOSRequest.class, ReinstallDevServerOSResponse.class)
+            .withName("ReinstallDevServerOS")
+            .withUri("/v1/{project_id}/dev-servers/{id}/reinstallos")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ReinstallDevServerOSRequest::getId, ReinstallDevServerOSRequest::setId));
+        builder.<ServerOsRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ServerOsRequest.class),
+            f -> f.withMarshaller(ReinstallDevServerOSRequest::getBody, ReinstallDevServerOSRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ReinstallDevServerOSResponse::getXRequestId,
+                ReinstallDevServerOSResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ScaleDownHyperinstanceRequest, ScaleDownHyperinstanceResponse> scaleDownHyperinstance =
+        genForScaleDownHyperinstance();
+
+    private static HttpRequestDef<ScaleDownHyperinstanceRequest, ScaleDownHyperinstanceResponse> genForScaleDownHyperinstance() {
+        // basic
+        HttpRequestDef.Builder<ScaleDownHyperinstanceRequest, ScaleDownHyperinstanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ScaleDownHyperinstanceRequest.class, ScaleDownHyperinstanceResponse.class)
+            .withName("ScaleDownHyperinstance")
+            .withUri("/v1/{project_id}/dev-servers/hyperinstance/{id}/live-scale-down")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ScaleDownHyperinstanceRequest::getId, ScaleDownHyperinstanceRequest::setId));
+        builder.<ServerScaleDownRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ServerScaleDownRequest.class),
+            f -> f.withMarshaller(ScaleDownHyperinstanceRequest::getBody, ScaleDownHyperinstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ScaleUpHyperinstanceRequest, ScaleUpHyperinstanceResponse> scaleUpHyperinstance =
+        genForScaleUpHyperinstance();
+
+    private static HttpRequestDef<ScaleUpHyperinstanceRequest, ScaleUpHyperinstanceResponse> genForScaleUpHyperinstance() {
+        // basic
+        HttpRequestDef.Builder<ScaleUpHyperinstanceRequest, ScaleUpHyperinstanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ScaleUpHyperinstanceRequest.class, ScaleUpHyperinstanceResponse.class)
+            .withName("ScaleUpHyperinstance")
+            .withUri("/v1/{project_id}/dev-servers/hyperinstance/{id}/live-scale-up")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ScaleUpHyperinstanceRequest::getId, ScaleUpHyperinstanceRequest::setId));
+        builder.<ServerHyperScaleUpRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ServerHyperScaleUpRequest.class),
+            f -> f.withMarshaller(ScaleUpHyperinstanceRequest::getBody, ScaleUpHyperinstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDevServerRequest, ShowDevServerResponse> showDevServer =
+        genForShowDevServer();
+
+    private static HttpRequestDef<ShowDevServerRequest, ShowDevServerResponse> genForShowDevServer() {
+        // basic
+        HttpRequestDef.Builder<ShowDevServerRequest, ShowDevServerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDevServerRequest.class, ShowDevServerResponse.class)
+                .withName("ShowDevServer")
+                .withUri("/v1/{project_id}/dev-servers/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDevServerRequest::getId, ShowDevServerRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartDevServerRequest, StartDevServerResponse> startDevServer =
+        genForStartDevServer();
+
+    private static HttpRequestDef<StartDevServerRequest, StartDevServerResponse> genForStartDevServer() {
+        // basic
+        HttpRequestDef.Builder<StartDevServerRequest, StartDevServerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, StartDevServerRequest.class, StartDevServerResponse.class)
+                .withName("StartDevServer")
+                .withUri("/v1/{project_id}/dev-servers/{id}/start")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartDevServerRequest::getId, StartDevServerRequest::setId));
+        builder.<ServerStartRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ServerStartRequest.class),
+            f -> f.withMarshaller(StartDevServerRequest::getBody, StartDevServerRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartHyperinstanceRequest, StartHyperinstanceResponse> startHyperinstance =
+        genForStartHyperinstance();
+
+    private static HttpRequestDef<StartHyperinstanceRequest, StartHyperinstanceResponse> genForStartHyperinstance() {
+        // basic
+        HttpRequestDef.Builder<StartHyperinstanceRequest, StartHyperinstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, StartHyperinstanceRequest.class, StartHyperinstanceResponse.class)
+                .withName("StartHyperinstance")
+                .withUri("/v1/{project_id}/dev-servers/hyperinstance/{id}/start")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartHyperinstanceRequest::getId, StartHyperinstanceRequest::setId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(StartHyperinstanceResponse::getXRequestId,
+                StartHyperinstanceResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopDevServerRequest, StopDevServerResponse> stopDevServer =
+        genForStopDevServer();
+
+    private static HttpRequestDef<StopDevServerRequest, StopDevServerResponse> genForStopDevServer() {
+        // basic
+        HttpRequestDef.Builder<StopDevServerRequest, StopDevServerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, StopDevServerRequest.class, StopDevServerResponse.class)
+                .withName("StopDevServer")
+                .withUri("/v1/{project_id}/dev-servers/{id}/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopDevServerRequest::getId, StopDevServerRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopHyperinstanceRequest, StopHyperinstanceResponse> stopHyperinstance =
+        genForStopHyperinstance();
+
+    private static HttpRequestDef<StopHyperinstanceRequest, StopHyperinstanceResponse> genForStopHyperinstance() {
+        // basic
+        HttpRequestDef.Builder<StopHyperinstanceRequest, StopHyperinstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, StopHyperinstanceRequest.class, StopHyperinstanceResponse.class)
+                .withName("StopHyperinstance")
+                .withUri("/v1/{project_id}/dev-servers/hyperinstance/{id}/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopHyperinstanceRequest::getId, StopHyperinstanceRequest::setId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(StopHyperinstanceResponse::getXRequestId, StopHyperinstanceResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SyncDevServersRequest, SyncDevServersResponse> syncDevServers =
+        genForSyncDevServers();
+
+    private static HttpRequestDef<SyncDevServersRequest, SyncDevServersResponse> genForSyncDevServers() {
+        // basic
+        HttpRequestDef.Builder<SyncDevServersRequest, SyncDevServersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SyncDevServersRequest.class, SyncDevServersResponse.class)
+                .withName("SyncDevServers")
+                .withUri("/v1/{project_id}/dev-servers/sync")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("owner",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SyncDevServersRequest::getOwner, SyncDevServersRequest::setOwner));
+        builder.<SyncDevServersRequest.SortDirEnum>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SyncDevServersRequest.SortDirEnum.class),
+            f -> f.withMarshaller(SyncDevServersRequest::getSortDir, SyncDevServersRequest::setSortDir));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SyncDevServersRequest::getSortKey, SyncDevServersRequest::setSortKey));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(SyncDevServersRequest::getOffset, SyncDevServersRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(SyncDevServersRequest::getLimit, SyncDevServersRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDevServerRequest, UpdateDevServerResponse> updateDevServer =
+        genForUpdateDevServer();
+
+    private static HttpRequestDef<UpdateDevServerRequest, UpdateDevServerResponse> genForUpdateDevServer() {
+        // basic
+        HttpRequestDef.Builder<UpdateDevServerRequest, UpdateDevServerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDevServerRequest.class, UpdateDevServerResponse.class)
+                .withName("UpdateDevServer")
+                .withUri("/v1/{project_id}/dev-servers/{id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDevServerRequest::getId, UpdateDevServerRequest::setId));
+        builder.<UpdateServerRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateServerRequest.class),
+            f -> f.withMarshaller(UpdateDevServerRequest::getBody, UpdateDevServerRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateImageRequest, CreateImageResponse> createImage = genForCreateImage();
+
+    private static HttpRequestDef<CreateImageRequest, CreateImageResponse> genForCreateImage() {
+        // basic
+        HttpRequestDef.Builder<CreateImageRequest, CreateImageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateImageRequest.class, CreateImageResponse.class)
+                .withName("CreateImage")
+                .withUri("/v1/{project_id}/notebooks/{id}/create-image")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateImageRequest::getId, CreateImageRequest::setId));
+        builder.<ImageCreateReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ImageCreateReq.class),
+            f -> f.withMarshaller(CreateImageRequest::getBody, CreateImageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateNotebookRequest, CreateNotebookResponse> createNotebook =
+        genForCreateNotebook();
+
+    private static HttpRequestDef<CreateNotebookRequest, CreateNotebookResponse> genForCreateNotebook() {
+        // basic
+        HttpRequestDef.Builder<CreateNotebookRequest, CreateNotebookResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateNotebookRequest.class, CreateNotebookResponse.class)
+                .withName("CreateNotebook")
+                .withUri("/v1/{project_id}/notebooks")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<NotebookCreateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(NotebookCreateRequest.class),
+            f -> f.withMarshaller(CreateNotebookRequest::getBody, CreateNotebookRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateNotebookTagsRequest, CreateNotebookTagsResponse> createNotebookTags =
+        genForCreateNotebookTags();
+
+    private static HttpRequestDef<CreateNotebookTagsRequest, CreateNotebookTagsResponse> genForCreateNotebookTags() {
+        // basic
+        HttpRequestDef.Builder<CreateNotebookTagsRequest, CreateNotebookTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateNotebookTagsRequest.class, CreateNotebookTagsResponse.class)
+                .withName("CreateNotebookTags")
+                .withUri("/v1/{project_id}/notebooks/{resource_id}/tags/create")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateNotebookTagsRequest::getResourceId, CreateNotebookTagsRequest::setResourceId));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateNotebookTagsRequest::getWorkspaceId,
+                CreateNotebookTagsRequest::setWorkspaceId));
+        builder.<CreateTmsTagsRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTmsTagsRequest.class),
+            f -> f.withMarshaller(CreateNotebookTagsRequest::getBody, CreateNotebookTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteNotebookRequest, DeleteNotebookResponse> deleteNotebook =
+        genForDeleteNotebook();
+
+    private static HttpRequestDef<DeleteNotebookRequest, DeleteNotebookResponse> genForDeleteNotebook() {
+        // basic
+        HttpRequestDef.Builder<DeleteNotebookRequest, DeleteNotebookResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteNotebookRequest.class, DeleteNotebookResponse.class)
+                .withName("DeleteNotebook")
+                .withUri("/v1/{project_id}/notebooks/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteNotebookRequest::getId, DeleteNotebookRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteNotebookTagsRequest, DeleteNotebookTagsResponse> deleteNotebookTags =
+        genForDeleteNotebookTags();
+
+    private static HttpRequestDef<DeleteNotebookTagsRequest, DeleteNotebookTagsResponse> genForDeleteNotebookTags() {
+        // basic
+        HttpRequestDef.Builder<DeleteNotebookTagsRequest, DeleteNotebookTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteNotebookTagsRequest.class, DeleteNotebookTagsResponse.class)
+                .withName("DeleteNotebookTags")
+                .withUri("/v1/{project_id}/notebooks/{resource_id}/tags/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteNotebookTagsRequest::getResourceId, DeleteNotebookTagsRequest::setResourceId));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteNotebookTagsRequest::getWorkspaceId,
+                DeleteNotebookTagsRequest::setWorkspaceId));
+        builder.<DeleteTmsTagsRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteTmsTagsRequest.class),
+            f -> f.withMarshaller(DeleteNotebookTagsRequest::getBody, DeleteNotebookTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAllNotebooksRequest, ListAllNotebooksResponse> listAllNotebooks =
+        genForListAllNotebooks();
+
+    private static HttpRequestDef<ListAllNotebooksRequest, ListAllNotebooksResponse> genForListAllNotebooks() {
+        // basic
+        HttpRequestDef.Builder<ListAllNotebooksRequest, ListAllNotebooksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAllNotebooksRequest.class, ListAllNotebooksResponse.class)
+                .withName("ListAllNotebooks")
+                .withUri("/v1/{project_id}/notebooks/all")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListAllNotebooksRequest.FeatureEnum>withRequestField("feature",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAllNotebooksRequest.FeatureEnum.class),
+            f -> f.withMarshaller(ListAllNotebooksRequest::getFeature, ListAllNotebooksRequest::setFeature));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAllNotebooksRequest::getLimit, ListAllNotebooksRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllNotebooksRequest::getName, ListAllNotebooksRequest::setName));
+        builder.<String>withRequestField("pool_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllNotebooksRequest::getPoolId, ListAllNotebooksRequest::setPoolId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAllNotebooksRequest::getOffset, ListAllNotebooksRequest::setOffset));
+        builder.<String>withRequestField("owner",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllNotebooksRequest::getOwner, ListAllNotebooksRequest::setOwner));
+        builder.<ListAllNotebooksRequest.SortDirEnum>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAllNotebooksRequest.SortDirEnum.class),
+            f -> f.withMarshaller(ListAllNotebooksRequest::getSortDir, ListAllNotebooksRequest::setSortDir));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllNotebooksRequest::getSortKey, ListAllNotebooksRequest::setSortKey));
+        builder.<ListAllNotebooksRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAllNotebooksRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListAllNotebooksRequest::getStatus, ListAllNotebooksRequest::setStatus));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllNotebooksRequest::getWorkspaceId, ListAllNotebooksRequest::setWorkspaceId));
+        builder.<String>withRequestField("flavor",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllNotebooksRequest::getFlavor, ListAllNotebooksRequest::setFlavor));
+        builder.<String>withRequestField("image_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllNotebooksRequest::getImageId, ListAllNotebooksRequest::setImageId));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllNotebooksRequest::getId, ListAllNotebooksRequest::setId));
+        builder.<String>withRequestField("billing",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllNotebooksRequest::getBilling, ListAllNotebooksRequest::setBilling));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAllNotebooksRequest::getTags, ListAllNotebooksRequest::setTags));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAuthoringClustersRequest, ListAuthoringClustersResponse> listAuthoringClusters =
+        genForListAuthoringClusters();
+
+    private static HttpRequestDef<ListAuthoringClustersRequest, ListAuthoringClustersResponse> genForListAuthoringClusters() {
+        // basic
+        HttpRequestDef.Builder<ListAuthoringClustersRequest, ListAuthoringClustersResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAuthoringClustersRequest.class, ListAuthoringClustersResponse.class)
+            .withName("ListAuthoringClusters")
+            .withUri("/v1/{project_id}/authoring/clusters")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuthoringClustersRequest::getType, ListAuthoringClustersRequest::setType));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuthoringClustersRequest::getWorkspaceId,
+                ListAuthoringClustersRequest::setWorkspaceId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAuthoringClustersRequest::getLimit, ListAuthoringClustersRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAuthoringClustersRequest::getOffset, ListAuthoringClustersRequest::setOffset));
+        builder.<String>withRequestField("scope",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuthoringClustersRequest::getScope, ListAuthoringClustersRequest::setScope));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFeaturesRequest, ListFeaturesResponse> listFeatures = genForListFeatures();
+
+    private static HttpRequestDef<ListFeaturesRequest, ListFeaturesResponse> genForListFeatures() {
+        // basic
+        HttpRequestDef.Builder<ListFeaturesRequest, ListFeaturesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFeaturesRequest.class, ListFeaturesResponse.class)
+                .withName("ListFeatures")
+                .withUri("/v1/{project_id}/authoring/features/{feature}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("feature",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFeaturesRequest::getFeature, ListFeaturesRequest::setFeature));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> listFlavors = genForListFlavors();
+
+    private static HttpRequestDef<ListFlavorsRequest, ListFlavorsResponse> genForListFlavors() {
+        // basic
+        HttpRequestDef.Builder<ListFlavorsRequest, ListFlavorsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFlavorsRequest.class, ListFlavorsResponse.class)
+                .withName("ListFlavors")
+                .withUri("/v1/{project_id}/notebooks/flavors")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListFlavorsRequest.CategoryEnum>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFlavorsRequest.CategoryEnum.class),
+            f -> f.withMarshaller(ListFlavorsRequest::getCategory, ListFlavorsRequest::setCategory));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlavorsRequest::getLimit, ListFlavorsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFlavorsRequest::getOffset, ListFlavorsRequest::setOffset));
+        builder.<ListFlavorsRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFlavorsRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListFlavorsRequest::getType, ListFlavorsRequest::setType));
+        builder.<ListFlavorsRequest.SortDirEnum>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFlavorsRequest.SortDirEnum.class),
+            f -> f.withMarshaller(ListFlavorsRequest::getSortDir, ListFlavorsRequest::setSortDir));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlavorsRequest::getSortKey, ListFlavorsRequest::setSortKey));
+        builder.<String>withRequestField("flavor_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlavorsRequest::getFlavorType, ListFlavorsRequest::setFlavorType));
+        builder.<String>withRequestField("feature",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlavorsRequest::getFeature, ListFlavorsRequest::setFeature));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNotebooksRequest, ListNotebooksResponse> listNotebooks =
+        genForListNotebooks();
+
+    private static HttpRequestDef<ListNotebooksRequest, ListNotebooksResponse> genForListNotebooks() {
+        // basic
+        HttpRequestDef.Builder<ListNotebooksRequest, ListNotebooksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListNotebooksRequest.class, ListNotebooksResponse.class)
+                .withName("ListNotebooks")
+                .withUri("/v1/{project_id}/notebooks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListNotebooksRequest.FeatureEnum>withRequestField("feature",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListNotebooksRequest.FeatureEnum.class),
+            f -> f.withMarshaller(ListNotebooksRequest::getFeature, ListNotebooksRequest::setFeature));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListNotebooksRequest::getLimit, ListNotebooksRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNotebooksRequest::getName, ListNotebooksRequest::setName));
+        builder.<String>withRequestField("pool_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNotebooksRequest::getPoolId, ListNotebooksRequest::setPoolId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListNotebooksRequest::getOffset, ListNotebooksRequest::setOffset));
+        builder.<String>withRequestField("owner",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNotebooksRequest::getOwner, ListNotebooksRequest::setOwner));
+        builder.<ListNotebooksRequest.SortDirEnum>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListNotebooksRequest.SortDirEnum.class),
+            f -> f.withMarshaller(ListNotebooksRequest::getSortDir, ListNotebooksRequest::setSortDir));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNotebooksRequest::getSortKey, ListNotebooksRequest::setSortKey));
+        builder.<ListNotebooksRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListNotebooksRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListNotebooksRequest::getStatus, ListNotebooksRequest::setStatus));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNotebooksRequest::getWorkspaceId, ListNotebooksRequest::setWorkspaceId));
+        builder.<String>withRequestField("flavor",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNotebooksRequest::getFlavor, ListNotebooksRequest::setFlavor));
+        builder.<String>withRequestField("image_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNotebooksRequest::getImageId, ListNotebooksRequest::setImageId));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNotebooksRequest::getId, ListNotebooksRequest::setId));
+        builder.<String>withRequestField("billing",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNotebooksRequest::getBilling, ListNotebooksRequest::setBilling));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNotebooksRequest::getTags, ListNotebooksRequest::setTags));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RenewLeaseRequest, RenewLeaseResponse> renewLease = genForRenewLease();
+
+    private static HttpRequestDef<RenewLeaseRequest, RenewLeaseResponse> genForRenewLease() {
+        // basic
+        HttpRequestDef.Builder<RenewLeaseRequest, RenewLeaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PATCH, RenewLeaseRequest.class, RenewLeaseResponse.class)
+                .withName("RenewLease")
+                .withUri("/v1/{project_id}/notebooks/{id}/lease")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RenewLeaseRequest::getId, RenewLeaseRequest::setId));
+        builder.<Long>withRequestField("duration",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(RenewLeaseRequest::getDuration, RenewLeaseRequest::setDuration));
+        builder.<LeaseReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(LeaseReq.class),
+            f -> f.withMarshaller(RenewLeaseRequest::getBody, RenewLeaseRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowClusterRequest, ShowClusterResponse> showCluster = genForShowCluster();
+
+    private static HttpRequestDef<ShowClusterRequest, ShowClusterResponse> genForShowCluster() {
+        // basic
+        HttpRequestDef.Builder<ShowClusterRequest, ShowClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowClusterRequest.class, ShowClusterResponse.class)
+                .withName("ShowCluster")
+                .withUri("/v1/{project_id}/authoring/clusters/{cluster_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterRequest::getClusterId, ShowClusterRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLeaseRequest, ShowLeaseResponse> showLease = genForShowLease();
+
+    private static HttpRequestDef<ShowLeaseRequest, ShowLeaseResponse> genForShowLease() {
+        // basic
+        HttpRequestDef.Builder<ShowLeaseRequest, ShowLeaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowLeaseRequest.class, ShowLeaseResponse.class)
+                .withName("ShowLease")
+                .withUri("/v1/{project_id}/notebooks/{id}/lease")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLeaseRequest::getId, ShowLeaseRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowNotebookRequest, ShowNotebookResponse> showNotebook = genForShowNotebook();
+
+    private static HttpRequestDef<ShowNotebookRequest, ShowNotebookResponse> genForShowNotebook() {
+        // basic
+        HttpRequestDef.Builder<ShowNotebookRequest, ShowNotebookResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowNotebookRequest.class, ShowNotebookResponse.class)
+                .withName("ShowNotebook")
+                .withUri("/v1/{project_id}/notebooks/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNotebookRequest::getId, ShowNotebookRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowNotebookTagsRequest, ShowNotebookTagsResponse> showNotebookTags =
+        genForShowNotebookTags();
+
+    private static HttpRequestDef<ShowNotebookTagsRequest, ShowNotebookTagsResponse> genForShowNotebookTags() {
+        // basic
+        HttpRequestDef.Builder<ShowNotebookTagsRequest, ShowNotebookTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowNotebookTagsRequest.class, ShowNotebookTagsResponse.class)
+                .withName("ShowNotebookTags")
+                .withUri("/v1/{project_id}/notebooks/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNotebookTagsRequest::getWorkspaceId, ShowNotebookTagsRequest::setWorkspaceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSwitchableFlavorsRequest, ShowSwitchableFlavorsResponse> showSwitchableFlavors =
+        genForShowSwitchableFlavors();
+
+    private static HttpRequestDef<ShowSwitchableFlavorsRequest, ShowSwitchableFlavorsResponse> genForShowSwitchableFlavors() {
+        // basic
+        HttpRequestDef.Builder<ShowSwitchableFlavorsRequest, ShowSwitchableFlavorsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowSwitchableFlavorsRequest.class, ShowSwitchableFlavorsResponse.class)
+            .withName("ShowSwitchableFlavors")
+            .withUri("/v1/{project_id}/notebooks/{id}/flavors")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSwitchableFlavorsRequest::getId, ShowSwitchableFlavorsRequest::setId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowSwitchableFlavorsRequest::getLimit, ShowSwitchableFlavorsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowSwitchableFlavorsRequest::getOffset, ShowSwitchableFlavorsRequest::setOffset));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSwitchableFlavorsRequest::getSortKey, ShowSwitchableFlavorsRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSwitchableFlavorsRequest::getSortDir, ShowSwitchableFlavorsRequest::setSortDir));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartNotebookRequest, StartNotebookResponse> startNotebook =
+        genForStartNotebook();
+
+    private static HttpRequestDef<StartNotebookRequest, StartNotebookResponse> genForStartNotebook() {
+        // basic
+        HttpRequestDef.Builder<StartNotebookRequest, StartNotebookResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StartNotebookRequest.class, StartNotebookResponse.class)
+                .withName("StartNotebook")
+                .withUri("/v1/{project_id}/notebooks/{id}/start")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartNotebookRequest::getId, StartNotebookRequest::setId));
+        builder.<Long>withRequestField("duration",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(StartNotebookRequest::getDuration, StartNotebookRequest::setDuration));
+        builder.<StartNotebookRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(StartNotebookRequest.TypeEnum.class),
+            f -> f.withMarshaller(StartNotebookRequest::getType, StartNotebookRequest::setType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopNotebookRequest, StopNotebookResponse> stopNotebook = genForStopNotebook();
+
+    private static HttpRequestDef<StopNotebookRequest, StopNotebookResponse> genForStopNotebook() {
+        // basic
+        HttpRequestDef.Builder<StopNotebookRequest, StopNotebookResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopNotebookRequest.class, StopNotebookResponse.class)
+                .withName("StopNotebook")
+                .withUri("/v1/{project_id}/notebooks/{id}/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopNotebookRequest::getId, StopNotebookRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateNotebookRequest, UpdateNotebookResponse> updateNotebook =
+        genForUpdateNotebook();
+
+    private static HttpRequestDef<UpdateNotebookRequest, UpdateNotebookResponse> genForUpdateNotebook() {
+        // basic
+        HttpRequestDef.Builder<UpdateNotebookRequest, UpdateNotebookResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateNotebookRequest.class, UpdateNotebookResponse.class)
+                .withName("UpdateNotebook")
+                .withUri("/v1/{project_id}/notebooks/{id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateNotebookRequest::getId, UpdateNotebookRequest::setId));
+        builder.<NotebookUpdateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(NotebookUpdateRequest.class),
+            f -> f.withMarshaller(UpdateNotebookRequest::getBody, UpdateNotebookRequest::setBody));
 
         // response
 

@@ -172,6 +172,9 @@ import com.huaweicloud.sdk.das.v3.model.LoginBuiltInAccountResponse;
 import com.huaweicloud.sdk.das.v3.model.LogoffBuiltInAccountRequest;
 import com.huaweicloud.sdk.das.v3.model.LogoffBuiltInAccountRequestBody;
 import com.huaweicloud.sdk.das.v3.model.LogoffBuiltInAccountResponse;
+import com.huaweicloud.sdk.das.v3.model.ParseDeadLockRequest;
+import com.huaweicloud.sdk.das.v3.model.ParseDeadLockRequestBody;
+import com.huaweicloud.sdk.das.v3.model.ParseDeadLockResponse;
 import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesReq;
 import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesResponse;
@@ -189,6 +192,11 @@ import com.huaweicloud.sdk.das.v3.model.SetLockBlockingSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.SetLockBlockingSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricRequest;
 import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowAnalysisSessionResultRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowAnalysisSessionResultResp;
+import com.huaweicloud.sdk.das.v3.model.ShowAnalysisSessionResultResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowAnalysisSessionStatusRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowAnalysisSessionStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowCredentialRequest;
@@ -197,6 +205,10 @@ import com.huaweicloud.sdk.das.v3.model.ShowDasRecommendSqlLimitRuleRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowDasRecommendSqlLimitRuleResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowDeadLockAnalysisResultRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowDeadLockAnalysisResultResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowDeadLockTopologyRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowDeadLockTopologyResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockListRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockListResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockSwitchRequest;
@@ -234,6 +246,9 @@ import com.huaweicloud.sdk.das.v3.model.ShowTransactionSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowTransactionSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowTuningRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowTuningResponse;
+import com.huaweicloud.sdk.das.v3.model.StartAnalysisSessionRequest;
+import com.huaweicloud.sdk.das.v3.model.StartAnalysisSessionRequestBody;
+import com.huaweicloud.sdk.das.v3.model.StartAnalysisSessionResponse;
 import com.huaweicloud.sdk.das.v3.model.SynchronizeInstancesReq;
 import com.huaweicloud.sdk.das.v3.model.SynchronizeInstancesRequest;
 import com.huaweicloud.sdk.das.v3.model.SynchronizeInstancesResponse;
@@ -3237,6 +3252,34 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ParseDeadLockRequest, ParseDeadLockResponse> parseDeadLock =
+        genForParseDeadLock();
+
+    private static HttpRequestDef<ParseDeadLockRequest, ParseDeadLockResponse> genForParseDeadLock() {
+        // basic
+        HttpRequestDef.Builder<ParseDeadLockRequest, ParseDeadLockResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ParseDeadLockRequest.class, ParseDeadLockResponse.class)
+                .withName("ParseDeadLock")
+                .withUri("/v3/{project_id}/instances/{instance_id}/dead-lock-analysis")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ParseDeadLockRequest::getInstanceId, ParseDeadLockRequest::setInstanceId));
+        builder.<ParseDeadLockRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ParseDeadLockRequestBody.class),
+            f -> f.withMarshaller(ParseDeadLockRequest::getBody, ParseDeadLockRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ParseSqlLimitRulesRequest, ParseSqlLimitRulesResponse> parseSqlLimitRules =
         genForParseSqlLimitRules();
 
@@ -3416,6 +3459,91 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAnalysisSessionResultRequest, ShowAnalysisSessionResultResponse> showAnalysisSessionResult =
+        genForShowAnalysisSessionResult();
+
+    private static HttpRequestDef<ShowAnalysisSessionResultRequest, ShowAnalysisSessionResultResponse> genForShowAnalysisSessionResult() {
+        // basic
+        HttpRequestDef.Builder<ShowAnalysisSessionResultRequest, ShowAnalysisSessionResultResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAnalysisSessionResultRequest.class,
+                    ShowAnalysisSessionResultResponse.class)
+                .withName("ShowAnalysisSessionResult")
+                .withUri("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/session-analysis-result")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAnalysisSessionResultRequest::getInstanceId,
+                ShowAnalysisSessionResultRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAnalysisSessionResultRequest::getNodeId,
+                ShowAnalysisSessionResultRequest::setNodeId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAnalysisSessionResultRequest::getJobId,
+                ShowAnalysisSessionResultRequest::setJobId));
+
+        // response
+        builder.<List<ShowAnalysisSessionResultResp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(ShowAnalysisSessionResultResponse::getBody, ShowAnalysisSessionResultResponse::setBody)
+                .withInnerContainerType(ShowAnalysisSessionResultResp.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAnalysisSessionStatusRequest, ShowAnalysisSessionStatusResponse> showAnalysisSessionStatus =
+        genForShowAnalysisSessionStatus();
+
+    private static HttpRequestDef<ShowAnalysisSessionStatusRequest, ShowAnalysisSessionStatusResponse> genForShowAnalysisSessionStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowAnalysisSessionStatusRequest, ShowAnalysisSessionStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAnalysisSessionStatusRequest.class,
+                    ShowAnalysisSessionStatusResponse.class)
+                .withName("ShowAnalysisSessionStatus")
+                .withUri("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/session-analysis-status")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAnalysisSessionStatusRequest::getInstanceId,
+                ShowAnalysisSessionStatusRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAnalysisSessionStatusRequest::getNodeId,
+                ShowAnalysisSessionStatusRequest::setNodeId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAnalysisSessionStatusRequest::getJobId,
+                ShowAnalysisSessionStatusRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowCredentialRequest, ShowCredentialResponse> showCredential =
         genForShowCredential();
 
@@ -3499,6 +3627,93 @@ public class DasMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowDbUserRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowDbUserRequest::getXLanguage, ShowDbUserRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDeadLockAnalysisResultRequest, ShowDeadLockAnalysisResultResponse> showDeadLockAnalysisResult =
+        genForShowDeadLockAnalysisResult();
+
+    private static HttpRequestDef<ShowDeadLockAnalysisResultRequest, ShowDeadLockAnalysisResultResponse> genForShowDeadLockAnalysisResult() {
+        // basic
+        HttpRequestDef.Builder<ShowDeadLockAnalysisResultRequest, ShowDeadLockAnalysisResultResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDeadLockAnalysisResultRequest.class,
+                    ShowDeadLockAnalysisResultResponse.class)
+                .withName("ShowDeadLockAnalysisResult")
+                .withUri("/v3/{project_id}/instances/{instance_id}/dead-lock-analysis")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeadLockAnalysisResultRequest::getInstanceId,
+                ShowDeadLockAnalysisResultRequest::setInstanceId));
+        builder.<String>withRequestField("dead_lock_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeadLockAnalysisResultRequest::getDeadLockId,
+                ShowDeadLockAnalysisResultRequest::setDeadLockId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeadLockAnalysisResultRequest::getJobId,
+                ShowDeadLockAnalysisResultRequest::setJobId));
+        builder.<String>withRequestField("transaction_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeadLockAnalysisResultRequest::getTransactionId,
+                ShowDeadLockAnalysisResultRequest::setTransactionId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowDeadLockAnalysisResultRequest::getOffset,
+                ShowDeadLockAnalysisResultRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowDeadLockAnalysisResultRequest::getLimit,
+                ShowDeadLockAnalysisResultRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDeadLockTopologyRequest, ShowDeadLockTopologyResponse> showDeadLockTopology =
+        genForShowDeadLockTopology();
+
+    private static HttpRequestDef<ShowDeadLockTopologyRequest, ShowDeadLockTopologyResponse> genForShowDeadLockTopology() {
+        // basic
+        HttpRequestDef.Builder<ShowDeadLockTopologyRequest, ShowDeadLockTopologyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDeadLockTopologyRequest.class, ShowDeadLockTopologyResponse.class)
+            .withName("ShowDeadLockTopology")
+            .withUri("/v3/{project_id}/connections/{connection_id}/dead-lock-topology")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeadLockTopologyRequest::getConnectionId,
+                ShowDeadLockTopologyRequest::setConnectionId));
+        builder.<String>withRequestField("dead_lock_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeadLockTopologyRequest::getDeadLockId,
+                ShowDeadLockTopologyRequest::setDeadLockId));
 
         // response
 
@@ -4140,6 +4355,40 @@ public class DasMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTuningRequest::getXLanguage, ShowTuningRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartAnalysisSessionRequest, StartAnalysisSessionResponse> startAnalysisSession =
+        genForStartAnalysisSession();
+
+    private static HttpRequestDef<StartAnalysisSessionRequest, StartAnalysisSessionResponse> genForStartAnalysisSession() {
+        // basic
+        HttpRequestDef.Builder<StartAnalysisSessionRequest, StartAnalysisSessionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, StartAnalysisSessionRequest.class, StartAnalysisSessionResponse.class)
+            .withName("StartAnalysisSession")
+            .withUri("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/session-analysis")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartAnalysisSessionRequest::getInstanceId,
+                StartAnalysisSessionRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartAnalysisSessionRequest::getNodeId, StartAnalysisSessionRequest::setNodeId));
+        builder.<StartAnalysisSessionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StartAnalysisSessionRequestBody.class),
+            f -> f.withMarshaller(StartAnalysisSessionRequest::getBody, StartAnalysisSessionRequest::setBody));
 
         // response
 

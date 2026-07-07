@@ -139,6 +139,8 @@ import com.huaweicloud.sdk.das.v3.model.LoginBuiltInAccountRequest;
 import com.huaweicloud.sdk.das.v3.model.LoginBuiltInAccountResponse;
 import com.huaweicloud.sdk.das.v3.model.LogoffBuiltInAccountRequest;
 import com.huaweicloud.sdk.das.v3.model.LogoffBuiltInAccountResponse;
+import com.huaweicloud.sdk.das.v3.model.ParseDeadLockRequest;
+import com.huaweicloud.sdk.das.v3.model.ParseDeadLockResponse;
 import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesResponse;
 import com.huaweicloud.sdk.das.v3.model.RegisterDbUserRequest;
@@ -151,6 +153,10 @@ import com.huaweicloud.sdk.das.v3.model.SetLockBlockingSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.SetLockBlockingSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricRequest;
 import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowAnalysisSessionResultRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowAnalysisSessionResultResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowAnalysisSessionStatusRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowAnalysisSessionStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowCredentialRequest;
@@ -159,6 +165,10 @@ import com.huaweicloud.sdk.das.v3.model.ShowDasRecommendSqlLimitRuleRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowDasRecommendSqlLimitRuleResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowDeadLockAnalysisResultRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowDeadLockAnalysisResultResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowDeadLockTopologyRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowDeadLockTopologyResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockListRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockListResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockSwitchRequest;
@@ -195,6 +205,8 @@ import com.huaweicloud.sdk.das.v3.model.ShowTransactionSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowTransactionSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowTuningRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowTuningResponse;
+import com.huaweicloud.sdk.das.v3.model.StartAnalysisSessionRequest;
+import com.huaweicloud.sdk.das.v3.model.StartAnalysisSessionResponse;
 import com.huaweicloud.sdk.das.v3.model.SynchronizeInstancesRequest;
 import com.huaweicloud.sdk.das.v3.model.SynchronizeInstancesResponse;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserRequest;
@@ -2303,6 +2315,35 @@ public class DasAsyncClient {
     }
 
     /**
+     * 一键分析死锁日志
+     *
+     * 一键分析死锁日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ParseDeadLockRequest 请求对象
+     * @return CompletableFuture<ParseDeadLockResponse>
+     */
+    public CompletableFuture<ParseDeadLockResponse> parseDeadLockAsync(ParseDeadLockRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.parseDeadLock);
+    }
+
+    /**
+     * 一键分析死锁日志
+     *
+     * 一键分析死锁日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ParseDeadLockRequest 请求对象
+     * @return AsyncInvoker<ParseDeadLockRequest, ParseDeadLockResponse>
+     */
+    public AsyncInvoker<ParseDeadLockRequest, ParseDeadLockResponse> parseDeadLockAsyncInvoker(
+        ParseDeadLockRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.parseDeadLock, hcClient);
+    }
+
+    /**
      * 根据原始SQL生成SQL限流关键字
      *
      * 根据原始SQL生成SQL限流关键字，目前支持MySQL、MariaDB、GaussDB(for MySQL)三种引擎。
@@ -2482,6 +2523,66 @@ public class DasAsyncClient {
     }
 
     /**
+     * 查询会话分析结果
+     *
+     * 查询会话分析结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAnalysisSessionResultRequest 请求对象
+     * @return CompletableFuture<ShowAnalysisSessionResultResponse>
+     */
+    public CompletableFuture<ShowAnalysisSessionResultResponse> showAnalysisSessionResultAsync(
+        ShowAnalysisSessionResultRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.showAnalysisSessionResult);
+    }
+
+    /**
+     * 查询会话分析结果
+     *
+     * 查询会话分析结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAnalysisSessionResultRequest 请求对象
+     * @return AsyncInvoker<ShowAnalysisSessionResultRequest, ShowAnalysisSessionResultResponse>
+     */
+    public AsyncInvoker<ShowAnalysisSessionResultRequest, ShowAnalysisSessionResultResponse> showAnalysisSessionResultAsyncInvoker(
+        ShowAnalysisSessionResultRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.showAnalysisSessionResult, hcClient);
+    }
+
+    /**
+     * 查询会话分析状态
+     *
+     * 查询会话分析状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAnalysisSessionStatusRequest 请求对象
+     * @return CompletableFuture<ShowAnalysisSessionStatusResponse>
+     */
+    public CompletableFuture<ShowAnalysisSessionStatusResponse> showAnalysisSessionStatusAsync(
+        ShowAnalysisSessionStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.showAnalysisSessionStatus);
+    }
+
+    /**
+     * 查询会话分析状态
+     *
+     * 查询会话分析状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAnalysisSessionStatusRequest 请求对象
+     * @return AsyncInvoker<ShowAnalysisSessionStatusRequest, ShowAnalysisSessionStatusResponse>
+     */
+    public AsyncInvoker<ShowAnalysisSessionStatusRequest, ShowAnalysisSessionStatusResponse> showAnalysisSessionStatusAsyncInvoker(
+        ShowAnalysisSessionStatusRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.showAnalysisSessionStatus, hcClient);
+    }
+
+    /**
      * 查询AK/SK
      *
      * 查询AK/SK。用于判断是否已保存AK/SK
@@ -2568,6 +2669,66 @@ public class DasAsyncClient {
      */
     public AsyncInvoker<ShowDbUserRequest, ShowDbUserResponse> showDbUserAsyncInvoker(ShowDbUserRequest request) {
         return new AsyncInvoker<>(request, DasMeta.showDbUser, hcClient);
+    }
+
+    /**
+     * 查询死锁日志分析结果
+     *
+     * 查询死锁日志分析结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDeadLockAnalysisResultRequest 请求对象
+     * @return CompletableFuture<ShowDeadLockAnalysisResultResponse>
+     */
+    public CompletableFuture<ShowDeadLockAnalysisResultResponse> showDeadLockAnalysisResultAsync(
+        ShowDeadLockAnalysisResultRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.showDeadLockAnalysisResult);
+    }
+
+    /**
+     * 查询死锁日志分析结果
+     *
+     * 查询死锁日志分析结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDeadLockAnalysisResultRequest 请求对象
+     * @return AsyncInvoker<ShowDeadLockAnalysisResultRequest, ShowDeadLockAnalysisResultResponse>
+     */
+    public AsyncInvoker<ShowDeadLockAnalysisResultRequest, ShowDeadLockAnalysisResultResponse> showDeadLockAnalysisResultAsyncInvoker(
+        ShowDeadLockAnalysisResultRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.showDeadLockAnalysisResult, hcClient);
+    }
+
+    /**
+     * 获取死锁拓扑图数据
+     *
+     * 获取死锁拓扑图数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDeadLockTopologyRequest 请求对象
+     * @return CompletableFuture<ShowDeadLockTopologyResponse>
+     */
+    public CompletableFuture<ShowDeadLockTopologyResponse> showDeadLockTopologyAsync(
+        ShowDeadLockTopologyRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.showDeadLockTopology);
+    }
+
+    /**
+     * 获取死锁拓扑图数据
+     *
+     * 获取死锁拓扑图数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDeadLockTopologyRequest 请求对象
+     * @return AsyncInvoker<ShowDeadLockTopologyRequest, ShowDeadLockTopologyResponse>
+     */
+    public AsyncInvoker<ShowDeadLockTopologyRequest, ShowDeadLockTopologyResponse> showDeadLockTopologyAsyncInvoker(
+        ShowDeadLockTopologyRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.showDeadLockTopology, hcClient);
     }
 
     /**
@@ -3115,6 +3276,36 @@ public class DasAsyncClient {
      */
     public AsyncInvoker<ShowTuningRequest, ShowTuningResponse> showTuningAsyncInvoker(ShowTuningRequest request) {
         return new AsyncInvoker<>(request, DasMeta.showTuning, hcClient);
+    }
+
+    /**
+     * 开始会话分析
+     *
+     * 开始会话分析
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartAnalysisSessionRequest 请求对象
+     * @return CompletableFuture<StartAnalysisSessionResponse>
+     */
+    public CompletableFuture<StartAnalysisSessionResponse> startAnalysisSessionAsync(
+        StartAnalysisSessionRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.startAnalysisSession);
+    }
+
+    /**
+     * 开始会话分析
+     *
+     * 开始会话分析
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartAnalysisSessionRequest 请求对象
+     * @return AsyncInvoker<StartAnalysisSessionRequest, StartAnalysisSessionResponse>
+     */
+    public AsyncInvoker<StartAnalysisSessionRequest, StartAnalysisSessionResponse> startAnalysisSessionAsyncInvoker(
+        StartAnalysisSessionRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.startAnalysisSession, hcClient);
     }
 
     /**

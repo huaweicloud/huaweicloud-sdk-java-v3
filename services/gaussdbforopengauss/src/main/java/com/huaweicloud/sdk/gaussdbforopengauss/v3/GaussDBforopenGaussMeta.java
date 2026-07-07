@@ -25,6 +25,9 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BaseOpsKeyViewRequestBod
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchDeleteInstanceTagRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchDeleteInstanceTagRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchDeleteInstanceTagResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchExecuteEventsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchExecuteEventsRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchExecuteEventsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchSetBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchSetBackupPolicyRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchSetBackupPolicyResponse;
@@ -242,6 +245,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEnterpriseProjectsRe
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEnterpriseProjectsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEpsQuotasRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEpsQuotasResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEventsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEventsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFeaturesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFeaturesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFlavorsDetailsRequest;
@@ -870,6 +875,34 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchDeleteInstanceTagRequestBody.class),
             f -> f.withMarshaller(BatchDeleteInstanceTagRequest::getBody, BatchDeleteInstanceTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchExecuteEventsRequest, BatchExecuteEventsResponse> batchExecuteEvents =
+        genForBatchExecuteEvents();
+
+    private static HttpRequestDef<BatchExecuteEventsRequest, BatchExecuteEventsResponse> genForBatchExecuteEvents() {
+        // basic
+        HttpRequestDef.Builder<BatchExecuteEventsRequest, BatchExecuteEventsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchExecuteEventsRequest.class, BatchExecuteEventsResponse.class)
+                .withName("BatchExecuteEvents")
+                .withUri("/v3/{project_id}/schedule-events")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BatchExecuteEventsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchExecuteEventsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(BatchExecuteEventsRequest::getXLanguage, BatchExecuteEventsRequest::setXLanguage));
+        builder.<BatchExecuteEventsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchExecuteEventsRequestBody.class),
+            f -> f.withMarshaller(BatchExecuteEventsRequest::getBody, BatchExecuteEventsRequest::setBody));
 
         // response
 
@@ -3498,6 +3531,73 @@ public class GaussDBforopenGaussMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListEventsRequest, ListEventsResponse> listEvents = genForListEvents();
+
+    private static HttpRequestDef<ListEventsRequest, ListEventsResponse> genForListEvents() {
+        // basic
+        HttpRequestDef.Builder<ListEventsRequest, ListEventsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEventsRequest.class, ListEventsResponse.class)
+                .withName("ListEvents")
+                .withUri("/v3/{project_id}/schedule-events")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventsRequest::getId, ListEventsRequest::setId));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventsRequest::getInstanceId, ListEventsRequest::setInstanceId));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventsRequest::getStatus, ListEventsRequest::setStatus));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventsRequest::getType, ListEventsRequest::setType));
+        builder.<String>withRequestField("level",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventsRequest::getLevel, ListEventsRequest::setLevel));
+        builder.<String>withRequestField("sort_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventsRequest::getSortField, ListEventsRequest::setSortField));
+        builder.<String>withRequestField("order",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEventsRequest::getOrder, ListEventsRequest::setOrder));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEventsRequest::getOffset, ListEventsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEventsRequest::getLimit, ListEventsRequest::setLimit));
+        builder.<ListEventsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListEventsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListEventsRequest::getXLanguage, ListEventsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListFeaturesRequest, ListFeaturesResponse> listFeatures = genForListFeatures();
 
     private static HttpRequestDef<ListFeaturesRequest, ListFeaturesResponse> genForListFeatures() {
@@ -4152,7 +4252,7 @@ public class GaussDBforopenGaussMeta {
             .builder(HttpMethod.POST, ListKeyViewExecuteNodeRequest.class, ListKeyViewExecuteNodeResponse.class)
             .withName("ListKeyViewExecuteNode")
             .withUri("/v3/{project_id}/instances/{instance_id}/key-view-execute-node")
-            .withContentType("application/json");
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
         builder.<String>withRequestField("instance_id",
@@ -4167,6 +4267,11 @@ public class GaussDBforopenGaussMeta {
             TypeCasts.uncheckedConversion(ListKeyViewExecuteNodeRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListKeyViewExecuteNodeRequest::getXLanguage,
                 ListKeyViewExecuteNodeRequest::setXLanguage));
+        builder.<Object>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Object.class),
+            f -> f.withMarshaller(ListKeyViewExecuteNodeRequest::getBody, ListKeyViewExecuteNodeRequest::setBody));
 
         // response
 

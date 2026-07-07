@@ -29,7 +29,7 @@ public class TaskAlgorithmOutputs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remote")
 
-    private TaskAlgorithmRemote1 remote;
+    private TaskAlgorithmRemote remote;
 
     public TaskAlgorithmOutputs withName(String name) {
         this.name = name;
@@ -82,14 +82,14 @@ public class TaskAlgorithmOutputs {
         this.localDir = localDir;
     }
 
-    public TaskAlgorithmOutputs withRemote(TaskAlgorithmRemote1 remote) {
+    public TaskAlgorithmOutputs withRemote(TaskAlgorithmRemote remote) {
         this.remote = remote;
         return this;
     }
 
-    public TaskAlgorithmOutputs withRemote(Consumer<TaskAlgorithmRemote1> remoteSetter) {
+    public TaskAlgorithmOutputs withRemote(Consumer<TaskAlgorithmRemote> remoteSetter) {
         if (this.remote == null) {
-            this.remote = new TaskAlgorithmRemote1();
+            this.remote = new TaskAlgorithmRemote();
             remoteSetter.accept(this.remote);
         }
 
@@ -100,11 +100,11 @@ public class TaskAlgorithmOutputs {
      * Get remote
      * @return remote
      */
-    public TaskAlgorithmRemote1 getRemote() {
+    public TaskAlgorithmRemote getRemote() {
         return remote;
     }
 
-    public void setRemote(TaskAlgorithmRemote1 remote) {
+    public void setRemote(TaskAlgorithmRemote remote) {
         this.remote = remote;
     }
 

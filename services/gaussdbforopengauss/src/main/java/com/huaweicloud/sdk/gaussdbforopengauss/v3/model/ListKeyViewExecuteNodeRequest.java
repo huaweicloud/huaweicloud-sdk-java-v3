@@ -95,6 +95,11 @@ public class ListKeyViewExecuteNodeRequest {
 
     private String instanceId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private Object body;
+
     public ListKeyViewExecuteNodeRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -131,6 +136,23 @@ public class ListKeyViewExecuteNodeRequest {
         this.instanceId = instanceId;
     }
 
+    public ListKeyViewExecuteNodeRequest withBody(Object body) {
+        this.body = body;
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public Object getBody() {
+        return body;
+    }
+
+    public void setBody(Object body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -140,12 +162,13 @@ public class ListKeyViewExecuteNodeRequest {
             return false;
         }
         ListKeyViewExecuteNodeRequest that = (ListKeyViewExecuteNodeRequest) obj;
-        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId);
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, instanceId);
+        return Objects.hash(xLanguage, instanceId, body);
     }
 
     @Override
@@ -154,6 +177,7 @@ public class ListKeyViewExecuteNodeRequest {
         sb.append("class ListKeyViewExecuteNodeRequest {\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

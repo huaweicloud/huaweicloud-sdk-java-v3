@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * **参数解释**：数据输入输出信息为OBS方式。 **约束限制**：不涉及。
+ * **参数解释**：数据实际输出到OBS。 **约束限制**：不涉及。
  */
 public class TaskAlgorithmRemoteObs {
 
@@ -21,7 +21,7 @@ public class TaskAlgorithmRemoteObs {
     }
 
     /**
-     * **参数解释**：训练作业需要的数据集OBS路径URL。如：“/usr/data/”。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * **参数解释**：数据实际输出到OBS的路径。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return obsUrl
      */
     public String getObsUrl() {

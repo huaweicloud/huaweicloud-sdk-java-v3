@@ -1,3 +1,179 @@
+# 3.1.204 2026-07-07
+
+### HuaweiCloud SDK DAS
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the following APIs:
+    - `StartAnalysisSession`
+    - `ShowAnalysisSessionStatus`
+    - `ShowAnalysisSessionResult`
+    - `ShowDeadLockTopology`
+    - `ShowDeadLockAnalysisResult`
+    - `ParseDeadLock`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **SwitchGaussMySqlProxyAlt**
+    - changes of request param
+      - `+ alt_for_readonly`
+  - **CheckScheduleTaskExist**
+    - changes of response param
+      - `* scheduled_tasks.create_time: date-time -> int64`
+      - `* scheduled_tasks.end_time: date-time -> int64`
+      - `* scheduled_tasks.start_time: date-time -> int64`
+  - **ShowBackupResourcePackageFlavors**
+    - changes of response param
+      - `+ flavors.spec_code`
+      - `- flavors.spce_code`
+  - **SetDdlLogPolicy**
+    - changes of response param
+      - `+ workflow_id`
+      - `- keey_days`
+      - `- total_count`
+      - `- switch_status`
+      - `- ddl_logs`
+  - **ListDdlLogs**
+    - changes of response param
+      - `+ keep_days`
+      - `- keey_days`
+
+### HuaweiCloud SDK GaussDBforopenGauss
+
+- _API Version_
+  - V3
+- _Features_
+  - Support the APIs `ListEvents`, `BatchExecuteEvents`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK ModelArts
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `ListDevServers`
+    - `CreateDevServer`
+    - `ShowDevServer`
+    - `UpdateDevServer`
+    - `DeleteDevServer`
+    - `SyncDevServers`
+    - `StartDevServer`
+    - `StopDevServer`
+    - `CreateHyperinstanceTags`
+    - `DeleteHyperinstanceTags`
+    - `QueryHyperinstanceTags`
+    - `ReinstallDevServerOS`
+    - `ChangeDevServerOS`
+    - `ChangeHyperinstanceOS`
+    - `ListHyperinstances`
+    - `GetHyperinstance`
+    - `DeleteHyperinstance`
+    - `RebootDevServer`
+    - `StartHyperinstance`
+    - `StopHyperinstance`
+    - `AttachDevServerVolume`
+    - `ListDevServerPublicIP`
+    - `BindDevServerPublicIP`
+    - `ListDevServerFlavors`
+    - `DetachDevServerVolume`
+    - `CreateRoceNetwork`
+    - `ListAllDevServers`
+    - `GetDevServerImage`
+    - `ListDevServerImages`
+    - `ListAllHyperinstances`
+    - `GetDevServerOperation`
+    - `GetScaleEvaluationsDevServer`
+    - `ScaleUpHyperinstance`
+    - `ScaleDownHyperinstance`
+    - `ListHyperinstanceClustersCapacity`
+    - `GetTopologies`
+    - `ListHyperCluster`
+    - `CreateHyperCluster`
+    - `GetHyperCluster`
+    - `DeleteHyperCluster`
+    - `BatchDevServersAction`
+    - `GetDevServerJob`
+    - `ListDevServerJobs`
+    - `CreateDevServerJob`
+    - `DeleteDevServerJobs`
+    - `ListDevServerJobTemplates`
+    - `GetDevServerJobTemplate`
+    - `GetDevServerJobService`
+    - `ListNotebooks`
+    - `CreateNotebook`
+    - `ListAllNotebooks`
+    - `ShowNotebook`
+    - `UpdateNotebook`
+    - `DeleteNotebook`
+    - `CreateImage`
+    - `ListFlavors`
+    - `ShowSwitchableFlavors`
+    - `StartNotebook`
+    - `StopNotebook`
+    - `ListAuthoringClusters`
+    - `ShowCluster`
+    - `ListFeatures`
+    - `ListDynamicStorages`
+    - `AttachDynamicStorage`
+    - `ShowDynamicStorage`
+    - `DetachDynamicStorage`
+    - `ListImage`
+    - `RegisterImage`
+    - `ListImageGroup`
+    - `ShowImage`
+    - `DeleteImage`
+    - `SyncImage`
+    - `CreateNotebookTags`
+    - `DeleteNotebookTags`
+    - `ShowNotebookTags`
+    - `ShowLease`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowTrainingJobDetails**
+    - changes of response param
+      - `+ metadata.training_experiment_reference`
+      - `+ spec.schedule_policy.required_affinity.job_level`
+      - `+ spec.schedule_policy.required_affinity.affinity_group_level`
+  - **StopTrainingJob**
+    - changes of response param
+      - `+ metadata.training_experiment_reference`
+      - `+ spec.schedule_policy.required_affinity.job_level`
+      - `+ spec.schedule_policy.required_affinity.affinity_group_level`
+  - **CreateTrainingJob**
+    - changes of request param
+      - `+ metadata.training_experiment_reference`
+      - `+ tasks.algorithm.inputs.remote.dataset`
+      - `* tasks.algorithm.inputs.remote: object -> object<InputDataInfo>`
+      - `+ tasks.algorithm.job_config.engine.run_user`
+      - `+ spec.asset_model.model_desc`
+      - `+ spec.asset_model.parent_asset_id`
+    - changes of response param
+      - `+ metadata.training_experiment_reference`
+      - `+ spec.schedule_policy.required_affinity.job_level`
+      - `+ spec.schedule_policy.required_affinity.affinity_group_level`
+  - **ListTrainingJobs**
+    - changes of response param
+      - `+ items.metadata.training_experiment_reference`
+      - `+ items.spec.schedule_policy.required_affinity.job_level`
+      - `+ items.spec.schedule_policy.required_affinity.affinity_group_level`
+
 # 3.1.203 2026-07-02
 
 ### HuaweiCloud SDK CES

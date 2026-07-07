@@ -25,9 +25,9 @@ public class ListDdlLogsResponse extends SdkResponse {
     private Integer totalCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "keey_days")
+    @JsonProperty(value = "keep_days")
 
-    private Integer keeyDays;
+    private Integer keepDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "switch_status")
@@ -84,21 +84,21 @@ public class ListDdlLogsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
-    public ListDdlLogsResponse withKeeyDays(Integer keeyDays) {
-        this.keeyDays = keeyDays;
+    public ListDdlLogsResponse withKeepDays(Integer keepDays) {
+        this.keepDays = keepDays;
         return this;
     }
 
     /**
      * **参数解释**：  日志保留天数。  **取值范围**：  不涉及。 
-     * @return keeyDays
+     * @return keepDays
      */
-    public Integer getKeeyDays() {
-        return keeyDays;
+    public Integer getKeepDays() {
+        return keepDays;
     }
 
-    public void setKeeyDays(Integer keeyDays) {
-        this.keeyDays = keeyDays;
+    public void setKeepDays(Integer keepDays) {
+        this.keepDays = keepDays;
     }
 
     public ListDdlLogsResponse withSwitchStatus(String switchStatus) {
@@ -128,12 +128,12 @@ public class ListDdlLogsResponse extends SdkResponse {
         }
         ListDdlLogsResponse that = (ListDdlLogsResponse) obj;
         return Objects.equals(this.ddlLogs, that.ddlLogs) && Objects.equals(this.totalCount, that.totalCount)
-            && Objects.equals(this.keeyDays, that.keeyDays) && Objects.equals(this.switchStatus, that.switchStatus);
+            && Objects.equals(this.keepDays, that.keepDays) && Objects.equals(this.switchStatus, that.switchStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ddlLogs, totalCount, keeyDays, switchStatus);
+        return Objects.hash(ddlLogs, totalCount, keepDays, switchStatus);
     }
 
     @Override
@@ -142,7 +142,7 @@ public class ListDdlLogsResponse extends SdkResponse {
         sb.append("class ListDdlLogsResponse {\n");
         sb.append("    ddlLogs: ").append(toIndentedString(ddlLogs)).append("\n");
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
-        sb.append("    keeyDays: ").append(toIndentedString(keeyDays)).append("\n");
+        sb.append("    keepDays: ").append(toIndentedString(keepDays)).append("\n");
         sb.append("    switchStatus: ").append(toIndentedString(switchStatus)).append("\n");
         sb.append("}");
         return sb.toString();

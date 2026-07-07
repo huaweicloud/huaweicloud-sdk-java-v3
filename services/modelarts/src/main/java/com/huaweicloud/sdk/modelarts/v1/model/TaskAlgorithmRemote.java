@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * **参数解释**：数据实际输入信息。 **约束限制**：枚举值：   - dataset：指定输入为数据集；   - obs：指定输入为OBS路径。
+ * **参数解释**：数据实际输出信息。 **约束限制**：不涉及。
  */
 public class TaskAlgorithmRemote {
 

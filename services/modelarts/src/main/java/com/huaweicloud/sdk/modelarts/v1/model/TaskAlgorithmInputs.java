@@ -29,7 +29,7 @@ public class TaskAlgorithmInputs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "remote")
 
-    private TaskAlgorithmRemote remote;
+    private InputDataInfo remote;
 
     public TaskAlgorithmInputs withName(String name) {
         this.name = name;
@@ -82,14 +82,14 @@ public class TaskAlgorithmInputs {
         this.localDir = localDir;
     }
 
-    public TaskAlgorithmInputs withRemote(TaskAlgorithmRemote remote) {
+    public TaskAlgorithmInputs withRemote(InputDataInfo remote) {
         this.remote = remote;
         return this;
     }
 
-    public TaskAlgorithmInputs withRemote(Consumer<TaskAlgorithmRemote> remoteSetter) {
+    public TaskAlgorithmInputs withRemote(Consumer<InputDataInfo> remoteSetter) {
         if (this.remote == null) {
-            this.remote = new TaskAlgorithmRemote();
+            this.remote = new InputDataInfo();
             remoteSetter.accept(this.remote);
         }
 
@@ -100,11 +100,11 @@ public class TaskAlgorithmInputs {
      * Get remote
      * @return remote
      */
-    public TaskAlgorithmRemote getRemote() {
+    public InputDataInfo getRemote() {
         return remote;
     }
 
-    public void setRemote(TaskAlgorithmRemote remote) {
+    public void setRemote(InputDataInfo remote) {
         this.remote = remote;
     }
 

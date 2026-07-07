@@ -11,30 +11,30 @@ import java.util.Objects;
 public class BackupResourcePackageFlavor {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "spce_code")
+    @JsonProperty(value = "spec_code")
 
-    private String spceCode;
+    private String specCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume")
 
     private String volume;
 
-    public BackupResourcePackageFlavor withSpceCode(String spceCode) {
-        this.spceCode = spceCode;
+    public BackupResourcePackageFlavor withSpecCode(String specCode) {
+        this.specCode = specCode;
         return this;
     }
 
     /**
      * **参数解释**：  备份资源包规格码。  **取值范围**：  不涉及。 
-     * @return spceCode
+     * @return specCode
      */
-    public String getSpceCode() {
-        return spceCode;
+    public String getSpecCode() {
+        return specCode;
     }
 
-    public void setSpceCode(String spceCode) {
-        this.spceCode = spceCode;
+    public void setSpecCode(String specCode) {
+        this.specCode = specCode;
     }
 
     public BackupResourcePackageFlavor withVolume(String volume) {
@@ -63,19 +63,19 @@ public class BackupResourcePackageFlavor {
             return false;
         }
         BackupResourcePackageFlavor that = (BackupResourcePackageFlavor) obj;
-        return Objects.equals(this.spceCode, that.spceCode) && Objects.equals(this.volume, that.volume);
+        return Objects.equals(this.specCode, that.specCode) && Objects.equals(this.volume, that.volume);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(spceCode, volume);
+        return Objects.hash(specCode, volume);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BackupResourcePackageFlavor {\n");
-        sb.append("    spceCode: ").append(toIndentedString(spceCode)).append("\n");
+        sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
         sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
         sb.append("}");
         return sb.toString();

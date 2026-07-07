@@ -4,42 +4,32 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
- * **参数解释**：数据实际输出信息。 **约束限制**：不涉及。
+ * Request Object
  */
-public class TaskAlgorithmRemote1 {
+public class SyncImageRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "obs")
+    @JsonProperty(value = "image_id")
 
-    private TaskAlgorithmRemote1Obs obs;
+    private String imageId;
 
-    public TaskAlgorithmRemote1 withObs(TaskAlgorithmRemote1Obs obs) {
-        this.obs = obs;
-        return this;
-    }
-
-    public TaskAlgorithmRemote1 withObs(Consumer<TaskAlgorithmRemote1Obs> obsSetter) {
-        if (this.obs == null) {
-            this.obs = new TaskAlgorithmRemote1Obs();
-            obsSetter.accept(this.obs);
-        }
-
+    public SyncImageRequest withImageId(String imageId) {
+        this.imageId = imageId;
         return this;
     }
 
     /**
-     * Get obs
-     * @return obs
+     * **参数解释**：镜像ID，ID格式为通用唯一识别码（Universally Unique Identifier，简称UUID）。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * @return imageId
      */
-    public TaskAlgorithmRemote1Obs getObs() {
-        return obs;
+    public String getImageId() {
+        return imageId;
     }
 
-    public void setObs(TaskAlgorithmRemote1Obs obs) {
-        this.obs = obs;
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
     }
 
     @Override
@@ -50,20 +40,20 @@ public class TaskAlgorithmRemote1 {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskAlgorithmRemote1 that = (TaskAlgorithmRemote1) obj;
-        return Objects.equals(this.obs, that.obs);
+        SyncImageRequest that = (SyncImageRequest) obj;
+        return Objects.equals(this.imageId, that.imageId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(obs);
+        return Objects.hash(imageId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class TaskAlgorithmRemote1 {\n");
-        sb.append("    obs: ").append(toIndentedString(obs)).append("\n");
+        sb.append("class SyncImageRequest {\n");
+        sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
