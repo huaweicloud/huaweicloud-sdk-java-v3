@@ -45,6 +45,11 @@ public class AntiTamperRuleResponseBody {
 
     private String url;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policyname")
+
+    private String policyname;
+
     public AntiTamperRuleResponseBody withId(String id) {
         this.id = id;
         return this;
@@ -164,6 +169,23 @@ public class AntiTamperRuleResponseBody {
         this.url = url;
     }
 
+    public AntiTamperRuleResponseBody withPolicyname(String policyname) {
+        this.policyname = policyname;
+        return this;
+    }
+
+    /**
+     * 策略名称
+     * @return policyname
+     */
+    public String getPolicyname() {
+        return policyname;
+    }
+
+    public void setPolicyname(String policyname) {
+        this.policyname = policyname;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -176,12 +198,12 @@ public class AntiTamperRuleResponseBody {
         return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
             && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.description, that.description)
             && Objects.equals(this.status, that.status) && Objects.equals(this.hostname, that.hostname)
-            && Objects.equals(this.url, that.url);
+            && Objects.equals(this.url, that.url) && Objects.equals(this.policyname, that.policyname);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, policyid, timestamp, description, status, hostname, url);
+        return Objects.hash(id, policyid, timestamp, description, status, hostname, url, policyname);
     }
 
     @Override
@@ -195,6 +217,7 @@ public class AntiTamperRuleResponseBody {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
+        sb.append("    policyname: ").append(toIndentedString(policyname)).append("\n");
         sb.append("}");
         return sb.toString();
     }

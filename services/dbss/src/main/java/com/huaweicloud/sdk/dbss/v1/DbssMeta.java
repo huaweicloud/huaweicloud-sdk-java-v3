@@ -13,6 +13,8 @@ import com.huaweicloud.sdk.dbss.v1.model.AddAuditDatabaseNewRequest;
 import com.huaweicloud.sdk.dbss.v1.model.AddAuditDatabaseNewResponse;
 import com.huaweicloud.sdk.dbss.v1.model.AddAuditDatabaseRequest;
 import com.huaweicloud.sdk.dbss.v1.model.AddAuditDatabaseResponse;
+import com.huaweicloud.sdk.dbss.v1.model.AddDatabaseSslKeyRequest;
+import com.huaweicloud.sdk.dbss.v1.model.AddDatabaseSslKeyResponse;
 import com.huaweicloud.sdk.dbss.v1.model.AddRdsDatabaseNewRequest;
 import com.huaweicloud.sdk.dbss.v1.model.AddRdsDatabaseNewResponse;
 import com.huaweicloud.sdk.dbss.v1.model.AddRdsDatabaseRequest;
@@ -164,6 +166,8 @@ import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstanceJobsNewRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstanceJobsNewResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstanceJobsRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstanceJobsResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstancesLastRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstancesLastResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstancesNewRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstancesNewResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstancesRequest;
@@ -206,6 +210,8 @@ import com.huaweicloud.sdk.dbss.v1.model.ListAvailabilityZoneInfosRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListAvailabilityZoneInfosResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListDbEncryptInstancesRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListDbEncryptInstancesResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListDomainAllResourceRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListDomainAllResourceResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListEcsSpecificationNewRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListEcsSpecificationNewResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListEcsSpecificationRequest;
@@ -314,10 +320,14 @@ import com.huaweicloud.sdk.dbss.v1.model.ShowAuditUpgradeStatusRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ShowAuditUpgradeStatusResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ShowBackupRiskBucketPathRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ShowBackupRiskBucketPathResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ShowDomainAllResourceCountRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ShowDomainAllResourceCountResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ShowInstanceMonitorInfoRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ShowInstanceMonitorInfoResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ShowInstanceQuotaRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ShowInstanceQuotaResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ShowLogRetentionCommonSettingsRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ShowLogRetentionCommonSettingsResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ShowSensitiveMaskSwitchRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ShowSensitiveMaskSwitchResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ShowSensitiveResultSwitchRequest;
@@ -389,11 +399,15 @@ import com.huaweicloud.sdk.dbss.v1.model.UpdateDbEncryptInstanceNameRequest;
 import com.huaweicloud.sdk.dbss.v1.model.UpdateDbEncryptInstanceNameResponse;
 import com.huaweicloud.sdk.dbss.v1.model.UpdateDbOmInstanceNameRequest;
 import com.huaweicloud.sdk.dbss.v1.model.UpdateDbOmInstanceNameResponse;
+import com.huaweicloud.sdk.dbss.v1.model.UpdateLogRetention;
+import com.huaweicloud.sdk.dbss.v1.model.UpdateLogRetentionCommonSettingsRequest;
+import com.huaweicloud.sdk.dbss.v1.model.UpdateLogRetentionCommonSettingsResponse;
 import com.huaweicloud.sdk.dbss.v1.model.UpdateSensitiveMaskRuleRequest;
 import com.huaweicloud.sdk.dbss.v1.model.UpdateSensitiveMaskRuleResponse;
 import com.huaweicloud.sdk.dbss.v1.model.UpdateWhitelistRequest;
 import com.huaweicloud.sdk.dbss.v1.model.UploadAuditDbConfigRequest;
 import com.huaweicloud.sdk.dbss.v1.model.UploadAuditDbConfigResponse;
+import com.huaweicloud.sdk.dbss.v1.model.UploadDatabaseSslFileRequest;
 import com.huaweicloud.sdk.dbss.v1.model.WhitelistBatchDeleteRequest;
 
 import java.util.List;
@@ -480,6 +494,39 @@ public class DbssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDatabaseRequest.class),
             f -> f.withMarshaller(AddAuditDatabaseNewRequest::getBody, AddAuditDatabaseNewRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddDatabaseSslKeyRequest, AddDatabaseSslKeyResponse> addDatabaseSslKey =
+        genForAddDatabaseSslKey();
+
+    private static HttpRequestDef<AddDatabaseSslKeyRequest, AddDatabaseSslKeyResponse> genForAddDatabaseSslKey() {
+        // basic
+        HttpRequestDef.Builder<AddDatabaseSslKeyRequest, AddDatabaseSslKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddDatabaseSslKeyRequest.class, AddDatabaseSslKeyResponse.class)
+                .withName("AddDatabaseSslKey")
+                .withUri("/v2/{project_id}/audit/{instance_id}/databases/{db_id}/sslkey")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddDatabaseSslKeyRequest::getInstanceId, AddDatabaseSslKeyRequest::setInstanceId));
+        builder.<String>withRequestField("db_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddDatabaseSslKeyRequest::getDbId, AddDatabaseSslKeyRequest::setDbId));
+        builder.<UploadDatabaseSslFileRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadDatabaseSslFileRequest.class),
+            f -> f.withMarshaller(AddDatabaseSslKeyRequest::getBody, AddDatabaseSslKeyRequest::setBody));
 
         // response
 
@@ -2014,6 +2061,34 @@ public class DbssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAuditInstancesLastRequest, ListAuditInstancesLastResponse> listAuditInstancesLast =
+        genForListAuditInstancesLast();
+
+    private static HttpRequestDef<ListAuditInstancesLastRequest, ListAuditInstancesLastResponse> genForListAuditInstancesLast() {
+        // basic
+        HttpRequestDef.Builder<ListAuditInstancesLastRequest, ListAuditInstancesLastResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAuditInstancesLastRequest.class, ListAuditInstancesLastResponse.class)
+            .withName("ListAuditInstancesLast")
+            .withUri("/v2/{project_id}/audit/instances")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuditInstancesLastRequest::getOffset, ListAuditInstancesLastRequest::setOffset));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuditInstancesLastRequest::getLimit, ListAuditInstancesLastRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAuditInstancesNewRequest, ListAuditInstancesNewResponse> listAuditInstancesNew =
         genForListAuditInstancesNew();
 
@@ -2565,6 +2640,52 @@ public class DbssMeta {
             .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDomainAllResourceRequest, ListDomainAllResourceResponse> listDomainAllResource =
+        genForListDomainAllResource();
+
+    private static HttpRequestDef<ListDomainAllResourceRequest, ListDomainAllResourceResponse> genForListDomainAllResource() {
+        // basic
+        HttpRequestDef.Builder<ListDomainAllResourceRequest, ListDomainAllResourceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDomainAllResourceRequest.class, ListDomainAllResourceResponse.class)
+            .withName("ListDomainAllResource")
+            .withUri("/v1/resource-manager/domains/{domain_id}/all-resources/{region_id}/{resource_type}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDomainAllResourceRequest::getDomainId,
+                ListDomainAllResourceRequest::setDomainId));
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDomainAllResourceRequest::getResourceType,
+                ListDomainAllResourceRequest::setResourceType));
+        builder.<String>withRequestField("region_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDomainAllResourceRequest::getRegionId,
+                ListDomainAllResourceRequest::setRegionId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDomainAllResourceRequest::getLimit, ListDomainAllResourceRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDomainAllResourceRequest::getMarker, ListDomainAllResourceRequest::setMarker));
 
         // response
 
@@ -3567,6 +3688,45 @@ public class DbssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDomainAllResourceCountRequest, ShowDomainAllResourceCountResponse> showDomainAllResourceCount =
+        genForShowDomainAllResourceCount();
+
+    private static HttpRequestDef<ShowDomainAllResourceCountRequest, ShowDomainAllResourceCountResponse> genForShowDomainAllResourceCount() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainAllResourceCountRequest, ShowDomainAllResourceCountResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDomainAllResourceCountRequest.class,
+                    ShowDomainAllResourceCountResponse.class)
+                .withName("ShowDomainAllResourceCount")
+                .withUri("/v1/resource-manager/domains/{domain_id}/all-resources/{region_id}/{resource_type}/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainAllResourceCountRequest::getDomainId,
+                ShowDomainAllResourceCountRequest::setDomainId));
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainAllResourceCountRequest::getResourceType,
+                ShowDomainAllResourceCountRequest::setResourceType));
+        builder.<String>withRequestField("region_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainAllResourceCountRequest::getRegionId,
+                ShowDomainAllResourceCountRequest::setRegionId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowInstanceMonitorInfoRequest, ShowInstanceMonitorInfoResponse> showInstanceMonitorInfo =
         genForShowInstanceMonitorInfo();
 
@@ -3608,6 +3768,33 @@ public class DbssMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLogRetentionCommonSettingsRequest, ShowLogRetentionCommonSettingsResponse> showLogRetentionCommonSettings =
+        genForShowLogRetentionCommonSettings();
+
+    private static HttpRequestDef<ShowLogRetentionCommonSettingsRequest, ShowLogRetentionCommonSettingsResponse> genForShowLogRetentionCommonSettings() {
+        // basic
+        HttpRequestDef.Builder<ShowLogRetentionCommonSettingsRequest, ShowLogRetentionCommonSettingsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowLogRetentionCommonSettingsRequest.class,
+                    ShowLogRetentionCommonSettingsResponse.class)
+                .withName("ShowLogRetentionCommonSettings")
+                .withUri("/v1/{project_id}/audit/{instance_id}/settings/common-settings")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLogRetentionCommonSettingsRequest::getInstanceId,
+                ShowLogRetentionCommonSettingsRequest::setInstanceId));
 
         // response
 
@@ -4384,6 +4571,39 @@ public class DbssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeNameRequest.class),
             f -> f.withMarshaller(UpdateDbOmInstanceNameRequest::getBody, UpdateDbOmInstanceNameRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateLogRetentionCommonSettingsRequest, UpdateLogRetentionCommonSettingsResponse> updateLogRetentionCommonSettings =
+        genForUpdateLogRetentionCommonSettings();
+
+    private static HttpRequestDef<UpdateLogRetentionCommonSettingsRequest, UpdateLogRetentionCommonSettingsResponse> genForUpdateLogRetentionCommonSettings() {
+        // basic
+        HttpRequestDef.Builder<UpdateLogRetentionCommonSettingsRequest, UpdateLogRetentionCommonSettingsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateLogRetentionCommonSettingsRequest.class,
+                    UpdateLogRetentionCommonSettingsResponse.class)
+                .withName("UpdateLogRetentionCommonSettings")
+                .withUri("/v1/{project_id}/audit/{instance_id}/settings/common-settings")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLogRetentionCommonSettingsRequest::getInstanceId,
+                UpdateLogRetentionCommonSettingsRequest::setInstanceId));
+        builder.<UpdateLogRetention>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateLogRetention.class),
+            f -> f.withMarshaller(UpdateLogRetentionCommonSettingsRequest::getBody,
+                UpdateLogRetentionCommonSettingsRequest::setBody));
 
         // response
 

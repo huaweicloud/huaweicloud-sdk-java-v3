@@ -31,6 +31,21 @@ public class DeleteAntitamperRuleResponse extends SdkResponse {
 
     private Long timestamp;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hostname")
+
+    private String hostname;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
     public DeleteAntitamperRuleResponse withId(String id) {
         this.id = id;
         return this;
@@ -99,6 +114,57 @@ public class DeleteAntitamperRuleResponse extends SdkResponse {
         this.timestamp = timestamp;
     }
 
+    public DeleteAntitamperRuleResponse withHostname(String hostname) {
+        this.hostname = hostname;
+        return this;
+    }
+
+    /**
+     * 防护域名
+     * @return hostname
+     */
+    public String getHostname() {
+        return hostname;
+    }
+
+    public void setHostname(String hostname) {
+        this.hostname = hostname;
+    }
+
+    public DeleteAntitamperRuleResponse withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 规则状态
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public DeleteAntitamperRuleResponse withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 规则描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -109,12 +175,14 @@ public class DeleteAntitamperRuleResponse extends SdkResponse {
         }
         DeleteAntitamperRuleResponse that = (DeleteAntitamperRuleResponse) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
-            && Objects.equals(this.url, that.url) && Objects.equals(this.timestamp, that.timestamp);
+            && Objects.equals(this.url, that.url) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.hostname, that.hostname) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, policyid, url, timestamp);
+        return Objects.hash(id, policyid, url, timestamp, hostname, status, description);
     }
 
     @Override
@@ -125,6 +193,9 @@ public class DeleteAntitamperRuleResponse extends SdkResponse {
         sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
+        sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

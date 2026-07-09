@@ -17,7 +17,7 @@ public class AlgorithmResponseMetadata {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private Integer id;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -62,7 +62,7 @@ public class AlgorithmResponseMetadata {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_valid")
 
-    private String isValid;
+    private Boolean isValid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "state")
@@ -99,20 +99,20 @@ public class AlgorithmResponseMetadata {
 
     private Long updateTime;
 
-    public AlgorithmResponseMetadata withId(Integer id) {
+    public AlgorithmResponseMetadata withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 算法uuid，创建算法时无需填写。
+     * **参数解释**：算法id，创建算法时无需填写。 **取值范围**：不涉及。
      * @return id
      */
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -252,20 +252,20 @@ public class AlgorithmResponseMetadata {
         this.apiVersion = apiVersion;
     }
 
-    public AlgorithmResponseMetadata withIsValid(String isValid) {
+    public AlgorithmResponseMetadata withIsValid(Boolean isValid) {
         this.isValid = isValid;
         return this;
     }
 
     /**
-     * 算法可用性。
+     * **参数解释**：算法可用性。 **取值范围**： - true：可用 - false：不可用
      * @return isValid
      */
-    public String getIsValid() {
+    public Boolean getIsValid() {
         return isValid;
     }
 
-    public void setIsValid(String isValid) {
+    public void setIsValid(Boolean isValid) {
         this.isValid = isValid;
     }
 

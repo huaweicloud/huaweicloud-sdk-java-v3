@@ -2387,6 +2387,7 @@ public class GaussDBClient {
      * @param request ListGaussMySqlInstanceDetailInfoRequest 请求对象
      * @return ListGaussMySqlInstanceDetailInfoResponse
      */
+    @Deprecated
     public ListGaussMySqlInstanceDetailInfoResponse listGaussMySqlInstanceDetailInfo(
         ListGaussMySqlInstanceDetailInfoRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.listGaussMySqlInstanceDetailInfo);
@@ -2402,6 +2403,7 @@ public class GaussDBClient {
      * @param request ListGaussMySqlInstanceDetailInfoRequest 请求对象
      * @return SyncInvoker<ListGaussMySqlInstanceDetailInfoRequest, ListGaussMySqlInstanceDetailInfoResponse>
      */
+    @Deprecated
     public SyncInvoker<ListGaussMySqlInstanceDetailInfoRequest, ListGaussMySqlInstanceDetailInfoResponse> listGaussMySqlInstanceDetailInfoInvoker(
         ListGaussMySqlInstanceDetailInfoRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.listGaussMySqlInstanceDetailInfo, hcClient);
@@ -2447,6 +2449,7 @@ public class GaussDBClient {
      * @param request ListGaussMySqlInstancesRequest 请求对象
      * @return ListGaussMySqlInstancesResponse
      */
+    @Deprecated
     public ListGaussMySqlInstancesResponse listGaussMySqlInstances(ListGaussMySqlInstancesRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.listGaussMySqlInstances);
     }
@@ -2461,6 +2464,7 @@ public class GaussDBClient {
      * @param request ListGaussMySqlInstancesRequest 请求对象
      * @return SyncInvoker<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse>
      */
+    @Deprecated
     public SyncInvoker<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse> listGaussMySqlInstancesInvoker(
         ListGaussMySqlInstancesRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.listGaussMySqlInstances, hcClient);
@@ -3990,6 +3994,7 @@ public class GaussDBClient {
      * @param request ShowGaussMySqlInstanceInfoRequest 请求对象
      * @return ShowGaussMySqlInstanceInfoResponse
      */
+    @Deprecated
     public ShowGaussMySqlInstanceInfoResponse showGaussMySqlInstanceInfo(ShowGaussMySqlInstanceInfoRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.showGaussMySqlInstanceInfo);
     }
@@ -4004,6 +4009,7 @@ public class GaussDBClient {
      * @param request ShowGaussMySqlInstanceInfoRequest 请求对象
      * @return SyncInvoker<ShowGaussMySqlInstanceInfoRequest, ShowGaussMySqlInstanceInfoResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowGaussMySqlInstanceInfoRequest, ShowGaussMySqlInstanceInfoResponse> showGaussMySqlInstanceInfoInvoker(
         ShowGaussMySqlInstanceInfoRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.showGaussMySqlInstanceInfo, hcClient);

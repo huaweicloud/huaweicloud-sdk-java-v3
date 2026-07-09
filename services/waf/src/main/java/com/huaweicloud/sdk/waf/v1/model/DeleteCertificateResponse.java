@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -25,24 +22,9 @@ public class DeleteCertificateResponse extends SdkResponse {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "content")
-
-    private String content;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "key")
-
-    private String key;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
 
     private Long expireTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "exp_status")
-
-    private Integer expStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
@@ -50,9 +32,9 @@ public class DeleteCertificateResponse extends SdkResponse {
     private Long timestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "bind_host")
+    @JsonProperty(value = "cert_type")
 
-    private List<BindHost> bindHost = null;
+    private String certType;
 
     public DeleteCertificateResponse withId(String id) {
         this.id = id;
@@ -88,40 +70,6 @@ public class DeleteCertificateResponse extends SdkResponse {
         this.name = name;
     }
 
-    public DeleteCertificateResponse withContent(String content) {
-        this.content = content;
-        return this;
-    }
-
-    /**
-     * 证书文件，PEM编码
-     * @return content
-     */
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public DeleteCertificateResponse withKey(String key) {
-        this.key = key;
-        return this;
-    }
-
-    /**
-     * 证书私钥，PEM编码
-     * @return key
-     */
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
-
     public DeleteCertificateResponse withExpireTime(Long expireTime) {
         this.expireTime = expireTime;
         return this;
@@ -137,23 +85,6 @@ public class DeleteCertificateResponse extends SdkResponse {
 
     public void setExpireTime(Long expireTime) {
         this.expireTime = expireTime;
-    }
-
-    public DeleteCertificateResponse withExpStatus(Integer expStatus) {
-        this.expStatus = expStatus;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 证书过期状态 **约束限制：** 不涉及 **取值范围：**  - 0:未过期  - 1:已过期  - 2:即将过期（证书将在一个月内过期）  **默认取值：** 不涉及
-     * @return expStatus
-     */
-    public Integer getExpStatus() {
-        return expStatus;
-    }
-
-    public void setExpStatus(Integer expStatus) {
-        this.expStatus = expStatus;
     }
 
     public DeleteCertificateResponse withTimestamp(Long timestamp) {
@@ -173,37 +104,21 @@ public class DeleteCertificateResponse extends SdkResponse {
         this.timestamp = timestamp;
     }
 
-    public DeleteCertificateResponse withBindHost(List<BindHost> bindHost) {
-        this.bindHost = bindHost;
-        return this;
-    }
-
-    public DeleteCertificateResponse addBindHostItem(BindHost bindHostItem) {
-        if (this.bindHost == null) {
-            this.bindHost = new ArrayList<>();
-        }
-        this.bindHost.add(bindHostItem);
-        return this;
-    }
-
-    public DeleteCertificateResponse withBindHost(Consumer<List<BindHost>> bindHostSetter) {
-        if (this.bindHost == null) {
-            this.bindHost = new ArrayList<>();
-        }
-        bindHostSetter.accept(this.bindHost);
+    public DeleteCertificateResponse withCertType(String certType) {
+        this.certType = certType;
         return this;
     }
 
     /**
-     * 证书关联的域名信息
-     * @return bindHost
+     * 证书类型
+     * @return certType
      */
-    public List<BindHost> getBindHost() {
-        return bindHost;
+    public String getCertType() {
+        return certType;
     }
 
-    public void setBindHost(List<BindHost> bindHost) {
-        this.bindHost = bindHost;
+    public void setCertType(String certType) {
+        this.certType = certType;
     }
 
     @Override
@@ -216,14 +131,13 @@ public class DeleteCertificateResponse extends SdkResponse {
         }
         DeleteCertificateResponse that = (DeleteCertificateResponse) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.content, that.content) && Objects.equals(this.key, that.key)
-            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.expStatus, that.expStatus)
-            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.bindHost, that.bindHost);
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.certType, that.certType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, content, key, expireTime, expStatus, timestamp, bindHost);
+        return Objects.hash(id, name, expireTime, timestamp, certType);
     }
 
     @Override
@@ -232,12 +146,9 @@ public class DeleteCertificateResponse extends SdkResponse {
         sb.append("class DeleteCertificateResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    content: ").append(toIndentedString(content)).append("\n");
-        sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
-        sb.append("    expStatus: ").append(toIndentedString(expStatus)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
-        sb.append("    bindHost: ").append(toIndentedString(bindHost)).append("\n");
+        sb.append("    certType: ").append(toIndentedString(certType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

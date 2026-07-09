@@ -56,7 +56,7 @@ public class UpdateAlertNoticeConfigRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nearly_expired_time")
 
-    private String nearlyExpiredTime;
+    private Long nearlyExpiredTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_all_enterprise_project")
@@ -215,7 +215,7 @@ public class UpdateAlertNoticeConfigRequestBody {
         this.noticeClass = noticeClass;
     }
 
-    public UpdateAlertNoticeConfigRequestBody withNearlyExpiredTime(String nearlyExpiredTime) {
+    public UpdateAlertNoticeConfigRequestBody withNearlyExpiredTime(Long nearlyExpiredTime) {
         this.nearlyExpiredTime = nearlyExpiredTime;
         return this;
     }
@@ -224,11 +224,11 @@ public class UpdateAlertNoticeConfigRequestBody {
      * 提前通知天数，通知类型为证书到期通知需要填写该参数
      * @return nearlyExpiredTime
      */
-    public String getNearlyExpiredTime() {
+    public Long getNearlyExpiredTime() {
         return nearlyExpiredTime;
     }
 
-    public void setNearlyExpiredTime(String nearlyExpiredTime) {
+    public void setNearlyExpiredTime(Long nearlyExpiredTime) {
         this.nearlyExpiredTime = nearlyExpiredTime;
     }
 

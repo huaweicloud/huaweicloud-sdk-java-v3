@@ -3,9 +3,7 @@ package com.huaweicloud.sdk.modelarts.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -53,7 +51,7 @@ public class JobMetadataResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "training_experiment_reference")
 
-    private List<TrainingExperimentResp> trainingExperimentReference = null;
+    private TrainingExperimentResp trainingExperimentReference;
 
     public JobMetadataResponse withId(String id) {
         this.id = id;
@@ -190,39 +188,30 @@ public class JobMetadataResponse {
         this.annotations = annotations;
     }
 
-    public JobMetadataResponse withTrainingExperimentReference(
-        List<TrainingExperimentResp> trainingExperimentReference) {
+    public JobMetadataResponse withTrainingExperimentReference(TrainingExperimentResp trainingExperimentReference) {
         this.trainingExperimentReference = trainingExperimentReference;
         return this;
     }
 
-    public JobMetadataResponse addTrainingExperimentReferenceItem(
-        TrainingExperimentResp trainingExperimentReferenceItem) {
-        if (this.trainingExperimentReference == null) {
-            this.trainingExperimentReference = new ArrayList<>();
-        }
-        this.trainingExperimentReference.add(trainingExperimentReferenceItem);
-        return this;
-    }
-
     public JobMetadataResponse withTrainingExperimentReference(
-        Consumer<List<TrainingExperimentResp>> trainingExperimentReferenceSetter) {
+        Consumer<TrainingExperimentResp> trainingExperimentReferenceSetter) {
         if (this.trainingExperimentReference == null) {
-            this.trainingExperimentReference = new ArrayList<>();
+            this.trainingExperimentReference = new TrainingExperimentResp();
+            trainingExperimentReferenceSetter.accept(this.trainingExperimentReference);
         }
-        trainingExperimentReferenceSetter.accept(this.trainingExperimentReference);
+
         return this;
     }
 
     /**
-     * **参数解释**：训练实验参数。
+     * Get trainingExperimentReference
      * @return trainingExperimentReference
      */
-    public List<TrainingExperimentResp> getTrainingExperimentReference() {
+    public TrainingExperimentResp getTrainingExperimentReference() {
         return trainingExperimentReference;
     }
 
-    public void setTrainingExperimentReference(List<TrainingExperimentResp> trainingExperimentReference) {
+    public void setTrainingExperimentReference(TrainingExperimentResp trainingExperimentReference) {
         this.trainingExperimentReference = trainingExperimentReference;
     }
 

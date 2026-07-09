@@ -15,46 +15,46 @@ import java.util.function.Consumer;
 public class ListAuditInstancesNewResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "servers")
+    @JsonProperty(value = "instances")
 
-    private List<AuditInstanceListBean> servers = null;
+    private List<ResponseAuditV2> instances = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
     private Integer total;
 
-    public ListAuditInstancesNewResponse withServers(List<AuditInstanceListBean> servers) {
-        this.servers = servers;
+    public ListAuditInstancesNewResponse withInstances(List<ResponseAuditV2> instances) {
+        this.instances = instances;
         return this;
     }
 
-    public ListAuditInstancesNewResponse addServersItem(AuditInstanceListBean serversItem) {
-        if (this.servers == null) {
-            this.servers = new ArrayList<>();
+    public ListAuditInstancesNewResponse addInstancesItem(ResponseAuditV2 instancesItem) {
+        if (this.instances == null) {
+            this.instances = new ArrayList<>();
         }
-        this.servers.add(serversItem);
+        this.instances.add(instancesItem);
         return this;
     }
 
-    public ListAuditInstancesNewResponse withServers(Consumer<List<AuditInstanceListBean>> serversSetter) {
-        if (this.servers == null) {
-            this.servers = new ArrayList<>();
+    public ListAuditInstancesNewResponse withInstances(Consumer<List<ResponseAuditV2>> instancesSetter) {
+        if (this.instances == null) {
+            this.instances = new ArrayList<>();
         }
-        serversSetter.accept(this.servers);
+        instancesSetter.accept(this.instances);
         return this;
     }
 
     /**
-     * 实例信息列表
-     * @return servers
+     * 实例列表
+     * @return instances
      */
-    public List<AuditInstanceListBean> getServers() {
-        return servers;
+    public List<ResponseAuditV2> getInstances() {
+        return instances;
     }
 
-    public void setServers(List<AuditInstanceListBean> servers) {
-        this.servers = servers;
+    public void setInstances(List<ResponseAuditV2> instances) {
+        this.instances = instances;
     }
 
     public ListAuditInstancesNewResponse withTotal(Integer total) {
@@ -63,7 +63,7 @@ public class ListAuditInstancesNewResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 总记录数
      * @return total
      */
     public Integer getTotal() {
@@ -83,19 +83,19 @@ public class ListAuditInstancesNewResponse extends SdkResponse {
             return false;
         }
         ListAuditInstancesNewResponse that = (ListAuditInstancesNewResponse) obj;
-        return Objects.equals(this.servers, that.servers) && Objects.equals(this.total, that.total);
+        return Objects.equals(this.instances, that.instances) && Objects.equals(this.total, that.total);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(servers, total);
+        return Objects.hash(instances, total);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAuditInstancesNewResponse {\n");
-        sb.append("    servers: ").append(toIndentedString(servers)).append("\n");
+        sb.append("    instances: ").append(toIndentedString(instances)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("}");
         return sb.toString();

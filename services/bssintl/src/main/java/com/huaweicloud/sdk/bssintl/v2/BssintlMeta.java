@@ -72,6 +72,8 @@ import com.huaweicloud.sdk.bssintl.v2.model.ListRateOnPeriodDetailResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListRenewRateOnPeriodReq;
 import com.huaweicloud.sdk.bssintl.v2.model.ListRenewRateOnPeriodRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListRenewRateOnPeriodResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.ListResourceSpecsRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.ListResourceSpecsResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListResourceTypesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListResourceTypesResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListServiceResourcesRequest;
@@ -105,6 +107,7 @@ import com.huaweicloud.sdk.bssintl.v2.model.RenewResourceConfigReq;
 import com.huaweicloud.sdk.bssintl.v2.model.RenewalResourcesReq;
 import com.huaweicloud.sdk.bssintl.v2.model.RenewalResourcesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.RenewalResourcesResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.ResourceSpecsQueryReq;
 import com.huaweicloud.sdk.bssintl.v2.model.SendVerificationCodeV2Req;
 import com.huaweicloud.sdk.bssintl.v2.model.SendVerificationMessageCodeRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.SendVerificationMessageCodeResponse;
@@ -1159,6 +1162,34 @@ public class BssintlMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListRenewRateOnPeriodReq.class),
             f -> f.withMarshaller(ListRenewRateOnPeriodRequest::getBody, ListRenewRateOnPeriodRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListResourceSpecsRequest, ListResourceSpecsResponse> listResourceSpecs =
+        genForListResourceSpecs();
+
+    private static HttpRequestDef<ListResourceSpecsRequest, ListResourceSpecsResponse> genForListResourceSpecs() {
+        // basic
+        HttpRequestDef.Builder<ListResourceSpecsRequest, ListResourceSpecsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListResourceSpecsRequest.class, ListResourceSpecsResponse.class)
+                .withName("ListResourceSpecs")
+                .withUri("/v2/products/resource-specs-query")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceSpecsRequest::getXLanguage, ListResourceSpecsRequest::setXLanguage));
+        builder.<ResourceSpecsQueryReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResourceSpecsQueryReq.class),
+            f -> f.withMarshaller(ListResourceSpecsRequest::getBody, ListResourceSpecsRequest::setBody));
 
         // response
 

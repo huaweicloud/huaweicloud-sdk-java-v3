@@ -26,7 +26,7 @@ public class PoolStatusScope {
     }
 
     /**
-     * 业务类型。可选值如下： - Train：训练任务 - Infer：推理任务 - Notebook：Notebook作业
+     * **参数解释**：资源池的业务类型。 **取值范围**：可选值如下： - Train：训练任务。 - Infer：推理任务。 - Notebook：Notebook作业。
      * @return scopeType
      */
     public String getScopeType() {
@@ -43,7 +43,7 @@ public class PoolStatusScope {
     }
 
     /**
-     * 业务状态。可选值如下： - Enabling：启动中 - Enabled：已启动 - Disabling：关闭中 - Disabled：已关闭
+     * **参数解释**：资源池业务类型状态。 **取值范围**：可选值如下： - Enabling：启动中。 - Enabled：已启动。 - Disabling：关闭中。 - Disabled：已关闭。
      * @return state
      */
     public String getState() {

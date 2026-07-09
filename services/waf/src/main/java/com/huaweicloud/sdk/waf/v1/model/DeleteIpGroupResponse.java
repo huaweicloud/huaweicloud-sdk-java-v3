@@ -46,6 +46,11 @@ public class DeleteIpGroupResponse extends SdkResponse {
 
     private List<RuleInfo> rules = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
     public DeleteIpGroupResponse withId(String id) {
         this.id = id;
         return this;
@@ -180,6 +185,23 @@ public class DeleteIpGroupResponse extends SdkResponse {
         this.rules = rules;
     }
 
+    public DeleteIpGroupResponse withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 描述
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -191,12 +213,13 @@ public class DeleteIpGroupResponse extends SdkResponse {
         DeleteIpGroupResponse that = (DeleteIpGroupResponse) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.ips, that.ips) && Objects.equals(this.ipRemarks, that.ipRemarks)
-            && Objects.equals(this.size, that.size) && Objects.equals(this.rules, that.rules);
+            && Objects.equals(this.size, that.size) && Objects.equals(this.rules, that.rules)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, ips, ipRemarks, size, rules);
+        return Objects.hash(id, name, ips, ipRemarks, size, rules, description);
     }
 
     @Override
@@ -209,6 +232,7 @@ public class DeleteIpGroupResponse extends SdkResponse {
         sb.append("    ipRemarks: ").append(toIndentedString(ipRemarks)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

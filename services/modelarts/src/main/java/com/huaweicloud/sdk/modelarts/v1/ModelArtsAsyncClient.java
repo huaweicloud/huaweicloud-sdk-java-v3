@@ -339,6 +339,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeConfigRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeConfigResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeConfigTemplateRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeConfigTemplateResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolRuntimeMetricsRequest;
@@ -3224,6 +3226,35 @@ public class ModelArtsAsyncClient {
     public AsyncInvoker<ShowPoolMonitorRequest, ShowPoolMonitorResponse> showPoolMonitorAsyncInvoker(
         ShowPoolMonitorRequest request) {
         return new AsyncInvoker<>(request, ModelArtsMeta.showPoolMonitor, hcClient);
+    }
+
+    /**
+     * 查询资源池单个节点详情
+     *
+     * 查询资源池中的单个节点接口用于获取指定资源池内单个节点的详细信息。该接口适用于以下场景：当用户需要了解节点资源分配、详细信息时，可通过此接口获取节点的类型、状态、配置参数及关联服务等信息。使用该接口的前提条件是目标资源池已存在且用户具备查看权限，同时需提供有效的资源池标识符作为输入参数。接口调用后，系统将返回资源池中单个节点数据；若资源池不存在、用户权限不足或输入参数无效，接口将返回对应的错误信息（如404未找到资源池或403权限拒绝）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPoolNodeRequest 请求对象
+     * @return CompletableFuture<ShowPoolNodeResponse>
+     */
+    public CompletableFuture<ShowPoolNodeResponse> showPoolNodeAsync(ShowPoolNodeRequest request) {
+        return hcClient.asyncInvokeHttp(request, ModelArtsMeta.showPoolNode);
+    }
+
+    /**
+     * 查询资源池单个节点详情
+     *
+     * 查询资源池中的单个节点接口用于获取指定资源池内单个节点的详细信息。该接口适用于以下场景：当用户需要了解节点资源分配、详细信息时，可通过此接口获取节点的类型、状态、配置参数及关联服务等信息。使用该接口的前提条件是目标资源池已存在且用户具备查看权限，同时需提供有效的资源池标识符作为输入参数。接口调用后，系统将返回资源池中单个节点数据；若资源池不存在、用户权限不足或输入参数无效，接口将返回对应的错误信息（如404未找到资源池或403权限拒绝）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPoolNodeRequest 请求对象
+     * @return AsyncInvoker<ShowPoolNodeRequest, ShowPoolNodeResponse>
+     */
+    public AsyncInvoker<ShowPoolNodeRequest, ShowPoolNodeResponse> showPoolNodeAsyncInvoker(
+        ShowPoolNodeRequest request) {
+        return new AsyncInvoker<>(request, ModelArtsMeta.showPoolNode, hcClient);
     }
 
     /**

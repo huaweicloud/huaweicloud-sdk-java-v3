@@ -34,7 +34,7 @@ public class PoolMonitorDataPoints {
     }
 
     /**
-     * 时间戳。
+     * **参数解释**：指标数据时间戳，以毫秒为单位。 **取值范围**：不涉及。
      * @return timestamp
      */
     public Integer getTimestamp() {
@@ -51,7 +51,7 @@ public class PoolMonitorDataPoints {
     }
 
     /**
-     * 时间序列单位。
+     * **参数解释**：指标数据单位。 **取值范围**：可选值如下： - Percent：百分比。 - Megabytes：兆字节。
      * @return unit
      */
     public String getUnit() {
@@ -84,7 +84,7 @@ public class PoolMonitorDataPoints {
     }
 
     /**
-     * 统计值列表。
+     * **参数解释**：指标数据值。
      * @return statistics
      */
     public List<PoolMonitorStatistics> getStatistics() {

@@ -60,13 +60,33 @@ public class PoolMetaAnnotations {
 
     private String osModelartsTmsTags;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os.modelarts.pool/scheduler.queue.strategy")
+
+    private String osModelartsPoolSchedulerQueueStrategy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os.modelarts.pool/subpools.count")
+
+    private String osModelartsPoolSubpoolsCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os.modelarts/tenant.domain.name")
+
+    private String osModelartsTenantDomainName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os.modelarts.pool/scope.external.dependency.train")
+
+    private String osModelartsPoolScopeExternalDependencyTrain;
+
     public PoolMetaAnnotations withOsModelartsDescription(String osModelartsDescription) {
         this.osModelartsDescription = osModelartsDescription;
         return this;
     }
 
     /**
-     * 资源池的描述信息。
+     * **参数解释**：资源池的描述信息。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return osModelartsDescription
      */
     public String getOsModelartsDescription() {
@@ -83,7 +103,7 @@ public class PoolMetaAnnotations {
     }
 
     /**
-     * 计费模式。可选值如下： - 0：按需计费 - 1：包周期计费
+     * **参数解释**：计费模式。 **约束限制**：不涉及。 **取值范围**：可选值如下： - 0：按需计费 - 1：包周期计费 **默认取值**：不涉及。
      * @return osModelartsBillingMode
      */
     public String getOsModelartsBillingMode() {
@@ -100,7 +120,7 @@ public class PoolMetaAnnotations {
     }
 
     /**
-     * 包周期订购周期，比如2。
+     * **参数解释**：包周期资源池的订购周期。 **约束限制**：和os.modelarts/period.type字段配合使用。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return osModelartsPeriodNum
      */
     public String getOsModelartsPeriodNum() {
@@ -117,7 +137,7 @@ public class PoolMetaAnnotations {
     }
 
     /**
-     * 包周期订购类型。可选值如下： - 2：月  - 3：年 - 4：小时
+     * **参数解释**：包周期资源池的订购类型。 **约束限制**：和os.modelarts/period.num字段配合使用。 **取值范围**：可选值如下： - 2：包月。 - 3：包年。 **默认取值**：不涉及。
      * @return osModelartsPeriodType
      */
     public String getOsModelartsPeriodType() {
@@ -134,7 +154,7 @@ public class PoolMetaAnnotations {
     }
 
     /**
-     * 是否自动续费.可选值如下： - 0：不自动续费，默认值 - 1：自动续费
+     * **参数解释**：包周期资源池的自动续费类型。 **约束限制**：不涉及。 **取值范围**：可选值如下： - 0：不自动续费。 - 1：自动续费。 **默认取值**：0。
      * @return osModelartsAutoRenew
      */
     public String getOsModelartsAutoRenew() {
@@ -151,7 +171,7 @@ public class PoolMetaAnnotations {
     }
 
     /**
-     * 用户在cbc选择的折扣信息。
+     * **参数解释**：包周期资源池购买时选择的折扣信息。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return osModelartsPromotionInfo
      */
     public String getOsModelartsPromotionInfo() {
@@ -168,7 +188,7 @@ public class PoolMetaAnnotations {
     }
 
     /**
-     * 订购订单支付完成后跳转的url地址。
+     * **参数解释**：购买包周期资源在订单支付完成后跳转地址。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return osModelartsServiceConsoleUrl
      */
     public String getOsModelartsServiceConsoleUrl() {
@@ -185,7 +205,7 @@ public class PoolMetaAnnotations {
     }
 
     /**
-     * 订单id，包周期资源池创建或者计费模式变更的时候该参数必需。
+     * **参数解释**：包周期资源池购买时传递的订单ID。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return osModelartsOrderId
      */
     public String getOsModelartsOrderId() {
@@ -202,7 +222,7 @@ public class PoolMetaAnnotations {
     }
 
     /**
-     * 每种规格对应的resourceId，主要和cbc交互使用。
+     * **参数解释**：包周期资源池中资源规格对应的资源ID。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return osModelartsFlavorResourceIds
      */
     public String getOsModelartsFlavorResourceIds() {
@@ -219,7 +239,7 @@ public class PoolMetaAnnotations {
     }
 
     /**
-     * 创建的时候由用户指定的TMS标签。
+     * **参数解释**：资源池上的资源标签。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return osModelartsTmsTags
      */
     public String getOsModelartsTmsTags() {
@@ -228,6 +248,75 @@ public class PoolMetaAnnotations {
 
     public void setOsModelartsTmsTags(String osModelartsTmsTags) {
         this.osModelartsTmsTags = osModelartsTmsTags;
+    }
+
+    public PoolMetaAnnotations withOsModelartsPoolSchedulerQueueStrategy(String osModelartsPoolSchedulerQueueStrategy) {
+        this.osModelartsPoolSchedulerQueueStrategy = osModelartsPoolSchedulerQueueStrategy;
+        return this;
+    }
+
+    /**
+     * **参数解释**：资源池调度队列的策略，用于定义任务调度的规则。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * @return osModelartsPoolSchedulerQueueStrategy
+     */
+    public String getOsModelartsPoolSchedulerQueueStrategy() {
+        return osModelartsPoolSchedulerQueueStrategy;
+    }
+
+    public void setOsModelartsPoolSchedulerQueueStrategy(String osModelartsPoolSchedulerQueueStrategy) {
+        this.osModelartsPoolSchedulerQueueStrategy = osModelartsPoolSchedulerQueueStrategy;
+    }
+
+    public PoolMetaAnnotations withOsModelartsPoolSubpoolsCount(String osModelartsPoolSubpoolsCount) {
+        this.osModelartsPoolSubpoolsCount = osModelartsPoolSubpoolsCount;
+        return this;
+    }
+
+    /**
+     * **参数解释**：资源池包含的逻辑子池的数量。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * @return osModelartsPoolSubpoolsCount
+     */
+    public String getOsModelartsPoolSubpoolsCount() {
+        return osModelartsPoolSubpoolsCount;
+    }
+
+    public void setOsModelartsPoolSubpoolsCount(String osModelartsPoolSubpoolsCount) {
+        this.osModelartsPoolSubpoolsCount = osModelartsPoolSubpoolsCount;
+    }
+
+    public PoolMetaAnnotations withOsModelartsTenantDomainName(String osModelartsTenantDomainName) {
+        this.osModelartsTenantDomainName = osModelartsTenantDomainName;
+        return this;
+    }
+
+    /**
+     * **参数解释**：资源池的租户账号 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * @return osModelartsTenantDomainName
+     */
+    public String getOsModelartsTenantDomainName() {
+        return osModelartsTenantDomainName;
+    }
+
+    public void setOsModelartsTenantDomainName(String osModelartsTenantDomainName) {
+        this.osModelartsTenantDomainName = osModelartsTenantDomainName;
+    }
+
+    public PoolMetaAnnotations withOsModelartsPoolScopeExternalDependencyTrain(
+        String osModelartsPoolScopeExternalDependencyTrain) {
+        this.osModelartsPoolScopeExternalDependencyTrain = osModelartsPoolScopeExternalDependencyTrain;
+        return this;
+    }
+
+    /**
+     * **参数解释**：训练外部依赖标识 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * @return osModelartsPoolScopeExternalDependencyTrain
+     */
+    public String getOsModelartsPoolScopeExternalDependencyTrain() {
+        return osModelartsPoolScopeExternalDependencyTrain;
+    }
+
+    public void setOsModelartsPoolScopeExternalDependencyTrain(String osModelartsPoolScopeExternalDependencyTrain) {
+        this.osModelartsPoolScopeExternalDependencyTrain = osModelartsPoolScopeExternalDependencyTrain;
     }
 
     @Override
@@ -248,7 +337,12 @@ public class PoolMetaAnnotations {
             && Objects.equals(this.osModelartsServiceConsoleUrl, that.osModelartsServiceConsoleUrl)
             && Objects.equals(this.osModelartsOrderId, that.osModelartsOrderId)
             && Objects.equals(this.osModelartsFlavorResourceIds, that.osModelartsFlavorResourceIds)
-            && Objects.equals(this.osModelartsTmsTags, that.osModelartsTmsTags);
+            && Objects.equals(this.osModelartsTmsTags, that.osModelartsTmsTags)
+            && Objects.equals(this.osModelartsPoolSchedulerQueueStrategy, that.osModelartsPoolSchedulerQueueStrategy)
+            && Objects.equals(this.osModelartsPoolSubpoolsCount, that.osModelartsPoolSubpoolsCount)
+            && Objects.equals(this.osModelartsTenantDomainName, that.osModelartsTenantDomainName)
+            && Objects.equals(this.osModelartsPoolScopeExternalDependencyTrain,
+                that.osModelartsPoolScopeExternalDependencyTrain);
     }
 
     @Override
@@ -262,7 +356,11 @@ public class PoolMetaAnnotations {
             osModelartsServiceConsoleUrl,
             osModelartsOrderId,
             osModelartsFlavorResourceIds,
-            osModelartsTmsTags);
+            osModelartsTmsTags,
+            osModelartsPoolSchedulerQueueStrategy,
+            osModelartsPoolSubpoolsCount,
+            osModelartsTenantDomainName,
+            osModelartsPoolScopeExternalDependencyTrain);
     }
 
     @Override
@@ -283,6 +381,18 @@ public class PoolMetaAnnotations {
             .append(toIndentedString(osModelartsFlavorResourceIds))
             .append("\n");
         sb.append("    osModelartsTmsTags: ").append(toIndentedString(osModelartsTmsTags)).append("\n");
+        sb.append("    osModelartsPoolSchedulerQueueStrategy: ")
+            .append(toIndentedString(osModelartsPoolSchedulerQueueStrategy))
+            .append("\n");
+        sb.append("    osModelartsPoolSubpoolsCount: ")
+            .append(toIndentedString(osModelartsPoolSubpoolsCount))
+            .append("\n");
+        sb.append("    osModelartsTenantDomainName: ")
+            .append(toIndentedString(osModelartsTenantDomainName))
+            .append("\n");
+        sb.append("    osModelartsPoolScopeExternalDependencyTrain: ")
+            .append(toIndentedString(osModelartsPoolScopeExternalDependencyTrain))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

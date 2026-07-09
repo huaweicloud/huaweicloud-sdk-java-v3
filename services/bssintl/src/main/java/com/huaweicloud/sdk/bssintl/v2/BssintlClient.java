@@ -60,6 +60,8 @@ import com.huaweicloud.sdk.bssintl.v2.model.ListRateOnPeriodDetailRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListRateOnPeriodDetailResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListRenewRateOnPeriodRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListRenewRateOnPeriodResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.ListResourceSpecsRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.ListResourceSpecsResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListResourceTypesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListResourceTypesResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListServiceResourcesRequest;
@@ -1000,6 +1002,35 @@ public class BssintlClient {
     public SyncInvoker<ListRenewRateOnPeriodRequest, ListRenewRateOnPeriodResponse> listRenewRateOnPeriodInvoker(
         ListRenewRateOnPeriodRequest request) {
         return new SyncInvoker<>(request, BssintlMeta.listRenewRateOnPeriod, hcClient);
+    }
+
+    /**
+     * 查询云服务类型资源规格
+     *
+     * 功能描述：根据云服务类型、资源类型、区域等条件查询资源规格列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceSpecsRequest 请求对象
+     * @return ListResourceSpecsResponse
+     */
+    public ListResourceSpecsResponse listResourceSpecs(ListResourceSpecsRequest request) {
+        return hcClient.syncInvokeHttp(request, BssintlMeta.listResourceSpecs);
+    }
+
+    /**
+     * 查询云服务类型资源规格
+     *
+     * 功能描述：根据云服务类型、资源类型、区域等条件查询资源规格列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceSpecsRequest 请求对象
+     * @return SyncInvoker<ListResourceSpecsRequest, ListResourceSpecsResponse>
+     */
+    public SyncInvoker<ListResourceSpecsRequest, ListResourceSpecsResponse> listResourceSpecsInvoker(
+        ListResourceSpecsRequest request) {
+        return new SyncInvoker<>(request, BssintlMeta.listResourceSpecs, hcClient);
     }
 
     /**

@@ -1,3 +1,361 @@
+# 3.1.205 2026-07-09
+
+### HuaweiCloud SDK BSS
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the APIs `ListResourceSpecs`, `ShowRealNameAuthQrCode`, `ShowRealNameAuthStatus`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK BSSINTL
+
+- _API Version_
+  - V2
+- _Features_
+  - Support the API `ListResourceSpecs`
+- _Bug Fix_
+  - None
+- _Change_
+  - None
+
+### HuaweiCloud SDK CBH
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListSwitchConfigInfo**
+    - changes of response param
+      - `+ version_info`
+      - `+ switch_info`
+      - `- properties`
+
+### HuaweiCloud SDK CSS
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the following APIs:
+    - `RestartCluster`
+    - `StartAutoSetting`
+    - `UpdateFlavor`
+    - `ListSmnTopics`
+    - `UpdateExtendCluster`
+    - `CreateCluster`
+
+### HuaweiCloud SDK DBSS
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `ListDomainAllResource`
+    - `ShowDomainAllResourceCount`
+    - `ListAuditInstancesLast`
+    - `AddDatabaseSslKey`
+    - `ShowLogRetentionCommonSettings`
+    - `UpdateLogRetentionCommonSettings`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListAuditInstancesNew**
+    - changes of response param
+      - `+ instances`
+      - `- servers`
+
+### HuaweiCloud SDK GaussDB
+
+- _API Version_
+  - V3
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the APIs `ListGaussMySqlInstances`, `ShowGaussMySqlInstanceInfo`, `ListGaussMySqlInstanceDetailInfo`
+
+### HuaweiCloud SDK ModelArts
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the API `ShowPoolNode`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListTrainingJobEvents**
+    - changes of response param
+      - `* total: string -> int32`
+      - `* limit: string -> int32`
+      - `* offset: string -> int32`
+  - **ShowPool**
+    - changes of response param
+      - `+ metadata.labels.os.modelarts/node.prefix`
+      - `+ metadata.labels.os.modelarts/tenant.project.id`
+      - `+ metadata.labels.os.modelarts/enterprise.project.id`
+      - `+ metadata.labels.os.modelarts.pool/biz`
+      - `+ metadata.labels.os.modelarts/create-from`
+      - `+ metadata.labels.os.modelarts/nobilling`
+      - `+ metadata.labels.os.modelarts/order.name`
+      - `+ metadata.labels.os.modelarts/region`
+      - `+ metadata.annotations.os.modelarts.pool/scheduler.queue.strategy`
+      - `+ metadata.annotations.os.modelarts.pool/subpools.count`
+      - `+ metadata.annotations.os.modelarts/tenant.domain.name`
+      - `+ metadata.annotations.os.modelarts.pool/scope.external.dependency.train`
+      - `+ spec.containernetwork`
+      - `+ spec.resources.maxCount`
+      - `+ spec.resources.extendParams`
+      - `+ spec.resources.os`
+      - `+ spec.resources.dataVolumes`
+      - `+ spec.resources.volumeGroupConfigs`
+      - `+ status.clusters`
+  - **DeletePool**
+    - changes of response param
+      - `+ metadata.labels.os.modelarts/node.prefix`
+      - `+ metadata.labels.os.modelarts/tenant.project.id`
+      - `+ metadata.labels.os.modelarts/enterprise.project.id`
+      - `+ metadata.labels.os.modelarts.pool/biz`
+      - `+ metadata.labels.os.modelarts/create-from`
+      - `+ metadata.labels.os.modelarts/nobilling`
+      - `+ metadata.labels.os.modelarts/order.name`
+      - `+ metadata.labels.os.modelarts/region`
+      - `+ metadata.annotations.os.modelarts.pool/scheduler.queue.strategy`
+      - `+ metadata.annotations.os.modelarts.pool/subpools.count`
+      - `+ metadata.annotations.os.modelarts/tenant.domain.name`
+      - `+ metadata.annotations.os.modelarts.pool/scope.external.dependency.train`
+      - `+ spec.containernetwork`
+      - `+ spec.resources.maxCount`
+      - `+ spec.resources.extendParams`
+      - `+ spec.resources.os`
+      - `+ spec.resources.dataVolumes`
+      - `+ spec.resources.volumeGroupConfigs`
+      - `+ status.clusters`
+  - **PatchPool**
+    - changes of response param
+      - `+ metadata.labels.os.modelarts/node.prefix`
+      - `+ metadata.labels.os.modelarts/tenant.project.id`
+      - `+ metadata.labels.os.modelarts/enterprise.project.id`
+      - `+ metadata.labels.os.modelarts.pool/biz`
+      - `+ metadata.labels.os.modelarts/create-from`
+      - `+ metadata.labels.os.modelarts/nobilling`
+      - `+ metadata.labels.os.modelarts/order.name`
+      - `+ metadata.labels.os.modelarts/region`
+      - `+ metadata.annotations.os.modelarts.pool/scheduler.queue.strategy`
+      - `+ metadata.annotations.os.modelarts.pool/subpools.count`
+      - `+ metadata.annotations.os.modelarts/tenant.domain.name`
+      - `+ metadata.annotations.os.modelarts.pool/scope.external.dependency.train`
+      - `+ spec.containernetwork`
+      - `+ spec.resources.maxCount`
+      - `+ spec.resources.extendParams`
+      - `+ spec.resources.os`
+      - `+ spec.resources.dataVolumes`
+      - `+ spec.resources.volumeGroupConfigs`
+      - `+ status.clusters`
+  - **CreatePool**
+    - changes of request param
+      - `+ spec.resources.os`
+    - changes of response param
+      - `+ metadata.labels.os.modelarts/node.prefix`
+      - `+ metadata.labels.os.modelarts/tenant.project.id`
+      - `+ metadata.labels.os.modelarts/enterprise.project.id`
+      - `+ metadata.labels.os.modelarts.pool/biz`
+      - `+ metadata.labels.os.modelarts/create-from`
+      - `+ metadata.labels.os.modelarts/nobilling`
+      - `+ metadata.labels.os.modelarts/order.name`
+      - `+ metadata.labels.os.modelarts/region`
+      - `+ metadata.annotations.os.modelarts.pool/scheduler.queue.strategy`
+      - `+ metadata.annotations.os.modelarts.pool/subpools.count`
+      - `+ metadata.annotations.os.modelarts/tenant.domain.name`
+      - `+ metadata.annotations.os.modelarts.pool/scope.external.dependency.train`
+      - `+ spec.containernetwork`
+      - `+ spec.resources.maxCount`
+      - `+ spec.resources.extendParams`
+      - `+ spec.resources.os`
+      - `+ spec.resources.dataVolumes`
+      - `+ spec.resources.volumeGroupConfigs`
+      - `+ status.clusters`
+  - **ListPools**
+    - changes of response param
+      - `+ items.metadata.labels.os.modelarts/node.prefix`
+      - `+ items.metadata.labels.os.modelarts/tenant.project.id`
+      - `+ items.metadata.labels.os.modelarts/enterprise.project.id`
+      - `+ items.metadata.labels.os.modelarts.pool/biz`
+      - `+ items.metadata.labels.os.modelarts/create-from`
+      - `+ items.metadata.labels.os.modelarts/nobilling`
+      - `+ items.metadata.labels.os.modelarts/order.name`
+      - `+ items.metadata.labels.os.modelarts/region`
+      - `+ items.metadata.annotations.os.modelarts.pool/scheduler.queue.strategy`
+      - `+ items.metadata.annotations.os.modelarts.pool/subpools.count`
+      - `+ items.metadata.annotations.os.modelarts/tenant.domain.name`
+      - `+ items.metadata.annotations.os.modelarts.pool/scope.external.dependency.train`
+      - `+ items.spec.containernetwork`
+      - `+ items.spec.resources.maxCount`
+      - `+ items.spec.resources.extendParams`
+      - `+ items.spec.resources.os`
+      - `+ items.spec.resources.dataVolumes`
+      - `+ items.spec.resources.volumeGroupConfigs`
+      - `+ items.status.clusters`
+  - **ListTrainingJobStages**
+    - changes of response param
+      - `* total_count: string -> int32`
+  - **ListAlgorithms**
+    - changes of response param
+      - `* items.metadata.id: int32 -> string`
+      - `* items.metadata.is_valid: string -> boolean`
+      - `* items.job_config.code_tree: list<object> -> object<CodeTreeNode>`
+  - **CreateAlgorithm**
+    - changes of response param
+      - `* metadata.id: int32 -> string`
+      - `* metadata.is_valid: string -> boolean`
+      - `* job_config.code_tree: list<object> -> object<CodeTreeNode>`
+  - **ShowAlgorithmByUuid**
+    - changes of response param
+      - `* metadata.id: int32 -> string`
+      - `* metadata.is_valid: string -> boolean`
+      - `* job_config.code_tree: list<object> -> object<CodeTreeNode>`
+  - **ChangeAlgorithm**
+    - changes of response param
+      - `* metadata.id: int32 -> string`
+      - `* metadata.is_valid: string -> boolean`
+      - `* job_config.code_tree: list<object> -> object<CodeTreeNode>`
+  - **ShowTrainingJobDetails**
+    - changes of response param
+      - `* metadata.training_experiment_reference: list<TrainingExperimentResp> -> object<TrainingExperimentResp>`
+  - **StopTrainingJob**
+    - changes of response param
+      - `* metadata.training_experiment_reference: list<TrainingExperimentResp> -> object<TrainingExperimentResp>`
+  - **CreateTrainingJob**
+    - changes of request param
+      - `* metadata.training_experiment_reference: list<TrainingExperimentRequest> -> object<TrainingExperimentRequest>`
+    - changes of response param
+      - `* metadata.training_experiment_reference: list<TrainingExperimentResp> -> object<TrainingExperimentResp>`
+  - **ListTrainingJobs**
+    - changes of response param
+      - `* items.metadata.training_experiment_reference: list<TrainingExperimentResp> -> object<TrainingExperimentResp>`
+
+### HuaweiCloud SDK WAF
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **DeleteGeoipRule**
+    - changes of response param
+      - `+ geoTagList`
+  - **DeleteAntitamperRule**
+    - changes of response param
+      - `+ hostname`
+      - `+ description`
+      - `+ status`
+  - **UpdateAlertNoticeConfig**
+    - changes of request param
+      - `* nearly_expired_time: string -> int64`
+    - changes of response param
+      - `* nearly_expired_time: string -> int64`
+  - **DeleteAlertNoticeConfig**
+    - changes of response param
+      - `* nearly_expired_time: string -> int64`
+  - **ShowWebProtectionRule**
+    - changes of response param
+      - `+ effective_time`
+      - `+ update_time`
+  - **CreateAlertNoticeConfig**
+    - changes of response param
+      - `* nearly_expired_time: string -> int64`
+  - **DeleteIgnoreRule**
+    - changes of response param
+      - `+ domain`
+      - `- domains`
+  - **ShowPolicy**
+    - changes of response param
+      - `+ options.precise`
+      - `+ options.followed_action`
+      - `+ options.anticrawler`
+  - **UpdatePolicyProtectHost**
+    - changes of response param
+      - `+ options.precise`
+      - `+ options.followed_action`
+      - `+ options.anticrawler`
+  - **DeletePolicy**
+    - changes of response param
+      - `+ options.precise`
+      - `+ options.followed_action`
+      - `+ options.anticrawler`
+  - **UpdatePolicy**
+    - changes of request param
+      - `+ options.precise`
+      - `+ options.followed_action`
+      - `+ options.anticrawler`
+    - changes of response param
+      - `+ options.precise`
+      - `+ options.followed_action`
+      - `+ options.anticrawler`
+  - **CreateGeoipRule**
+    - changes of response param
+      - `+ geoTagList`
+  - **ListAntitamperRule**
+    - changes of response param
+      - `+ items.policyname`
+  - **DeleteCertificate**
+    - changes of response param
+      - `+ cert_type`
+      - `- bind_host`
+      - `- exp_status`
+      - `- content`
+      - `- key`
+  - **DeleteIpGroup**
+    - changes of response param
+      - `+ description`
+  - **ListNoticeConfigs**
+    - changes of response param
+      - `* items.nearly_expired_time: string -> int64`
+  - **CreateCloudWafPostPaidResource**
+    - changes of request param
+      - `+ postpaid_name`
+      - `+ extend_params`
+  - **BatchCreateGeoIpRule**
+    - changes of response param
+      - `+ geoTagList`
+  - **ListAntiTamperPolicyRules**
+    - changes of response param
+      - `+ items.policyname`
+  - **CopyPolicyById**
+    - changes of response param
+      - `+ options.precise`
+      - `+ options.followed_action`
+      - `+ options.anticrawler`
+  - **DeleteHost**
+    - changes of response param
+      - `+ region`
+  - **CreatePolicy**
+    - changes of response param
+      - `+ options.precise`
+      - `+ options.followed_action`
+      - `+ options.anticrawler`
+  - **ListPolicy**
+    - changes of response param
+      - `+ items.options.precise`
+      - `+ items.options.followed_action`
+      - `+ items.options.anticrawler`
+  - **ListIpGroup**
+    - changes of response param
+      - `+ cloud_total`
+      - `- cloudTotal`
+
 # 3.1.204 2026-07-07
 
 ### HuaweiCloud SDK DAS

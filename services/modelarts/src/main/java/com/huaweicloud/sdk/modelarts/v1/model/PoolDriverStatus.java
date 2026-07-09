@@ -26,7 +26,7 @@ public class PoolDriverStatus {
     }
 
     /**
-     * 当前驱动版本。
+     * **参数解释**：资源池当前驱动版本。 **取值范围**：不涉及。
      * @return version
      */
     public String getVersion() {
@@ -43,7 +43,7 @@ public class PoolDriverStatus {
     }
 
     /**
-     * 当前驱动状态。可选值如下： - Creating：创建中 - Upgrading：升级中 - Running：运行中 - Abnormal：不正常
+     * **参数解释**：资源池当前驱动状态。 **取值范围**：可选值如下： - Creating：驱动安装中。 - Upgrading：驱动升级中。 - Running：驱动运行中。 - Abnormal：驱动异常。
      * @return state
      */
     public String getState() {

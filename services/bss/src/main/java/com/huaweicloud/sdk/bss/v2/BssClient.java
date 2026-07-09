@@ -106,6 +106,8 @@ import com.huaweicloud.sdk.bss.v2.model.ListRateOnPeriodDetailRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListRateOnPeriodDetailResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListRenewRateOnPeriodRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListRenewRateOnPeriodResponse;
+import com.huaweicloud.sdk.bss.v2.model.ListResourceSpecsRequest;
+import com.huaweicloud.sdk.bss.v2.model.ListResourceSpecsResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListResourceTypesRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListResourceTypesResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListResourceUsageRequest;
@@ -160,6 +162,10 @@ import com.huaweicloud.sdk.bss.v2.model.ShowCustomerOrderDetailsRequest;
 import com.huaweicloud.sdk.bss.v2.model.ShowCustomerOrderDetailsResponse;
 import com.huaweicloud.sdk.bss.v2.model.ShowMultiAccountTransferAmountRequest;
 import com.huaweicloud.sdk.bss.v2.model.ShowMultiAccountTransferAmountResponse;
+import com.huaweicloud.sdk.bss.v2.model.ShowRealNameAuthQrCodeRequest;
+import com.huaweicloud.sdk.bss.v2.model.ShowRealNameAuthQrCodeResponse;
+import com.huaweicloud.sdk.bss.v2.model.ShowRealNameAuthStatusRequest;
+import com.huaweicloud.sdk.bss.v2.model.ShowRealNameAuthStatusResponse;
 import com.huaweicloud.sdk.bss.v2.model.ShowRealnameAuthenticationReviewResultRequest;
 import com.huaweicloud.sdk.bss.v2.model.ShowRealnameAuthenticationReviewResultResponse;
 import com.huaweicloud.sdk.bss.v2.model.ShowRefundOrderDetailsRequest;
@@ -2010,6 +2016,35 @@ public class BssClient {
     }
 
     /**
+     * 查询云服务类型资源规格
+     *
+     * 功能描述：根据云服务类型、资源类型、区域等条件查询资源规格列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceSpecsRequest 请求对象
+     * @return ListResourceSpecsResponse
+     */
+    public ListResourceSpecsResponse listResourceSpecs(ListResourceSpecsRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.listResourceSpecs);
+    }
+
+    /**
+     * 查询云服务类型资源规格
+     *
+     * 功能描述：根据云服务类型、资源类型、区域等条件查询资源规格列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceSpecsRequest 请求对象
+     * @return SyncInvoker<ListResourceSpecsRequest, ListResourceSpecsResponse>
+     */
+    public SyncInvoker<ListResourceSpecsRequest, ListResourceSpecsResponse> listResourceSpecsInvoker(
+        ListResourceSpecsRequest request) {
+        return new SyncInvoker<>(request, BssMeta.listResourceSpecs, hcClient);
+    }
+
+    /**
      * 查询资源类型列表
      *
      * 伙伴在伙伴销售平台查询资源类型的列表。
@@ -2930,6 +2965,64 @@ public class BssClient {
     public SyncInvoker<ShowMultiAccountTransferAmountRequest, ShowMultiAccountTransferAmountResponse> showMultiAccountTransferAmountInvoker(
         ShowMultiAccountTransferAmountRequest request) {
         return new SyncInvoker<>(request, BssMeta.showMultiAccountTransferAmount, hcClient);
+    }
+
+    /**
+     * 获取人脸实名认证二维码
+     *
+     * 功能描述：客户在agent使用时获取人脸实名认证二维码地址，扫码完成实名认证
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRealNameAuthQrCodeRequest 请求对象
+     * @return ShowRealNameAuthQrCodeResponse
+     */
+    public ShowRealNameAuthQrCodeResponse showRealNameAuthQrCode(ShowRealNameAuthQrCodeRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.showRealNameAuthQrCode);
+    }
+
+    /**
+     * 获取人脸实名认证二维码
+     *
+     * 功能描述：客户在agent使用时获取人脸实名认证二维码地址，扫码完成实名认证
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRealNameAuthQrCodeRequest 请求对象
+     * @return SyncInvoker<ShowRealNameAuthQrCodeRequest, ShowRealNameAuthQrCodeResponse>
+     */
+    public SyncInvoker<ShowRealNameAuthQrCodeRequest, ShowRealNameAuthQrCodeResponse> showRealNameAuthQrCodeInvoker(
+        ShowRealNameAuthQrCodeRequest request) {
+        return new SyncInvoker<>(request, BssMeta.showRealNameAuthQrCode, hcClient);
+    }
+
+    /**
+     * 查询实名认证状态
+     *
+     * 功能描述：客户在agent使用时查询自己的实名认证状态和类型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRealNameAuthStatusRequest 请求对象
+     * @return ShowRealNameAuthStatusResponse
+     */
+    public ShowRealNameAuthStatusResponse showRealNameAuthStatus(ShowRealNameAuthStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, BssMeta.showRealNameAuthStatus);
+    }
+
+    /**
+     * 查询实名认证状态
+     *
+     * 功能描述：客户在agent使用时查询自己的实名认证状态和类型
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRealNameAuthStatusRequest 请求对象
+     * @return SyncInvoker<ShowRealNameAuthStatusRequest, ShowRealNameAuthStatusResponse>
+     */
+    public SyncInvoker<ShowRealNameAuthStatusRequest, ShowRealNameAuthStatusResponse> showRealNameAuthStatusInvoker(
+        ShowRealNameAuthStatusRequest request) {
+        return new SyncInvoker<>(request, BssMeta.showRealNameAuthStatus, hcClient);
     }
 
     /**

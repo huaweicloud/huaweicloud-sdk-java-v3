@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 资源池中不同状态的资源量。
+ * **参数解释**：资源池中不同状态的资源信息。
  */
 public class PoolStatusResources {
 

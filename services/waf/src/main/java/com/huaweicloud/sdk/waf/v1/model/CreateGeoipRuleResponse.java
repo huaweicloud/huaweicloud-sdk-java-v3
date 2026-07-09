@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -55,6 +58,11 @@ public class CreateGeoipRuleResponse extends SdkResponse {
     @JsonProperty(value = "timestamp")
 
     private Long timestamp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "geoTagList")
+
+    private List<String> geoTagList = null;
 
     public CreateGeoipRuleResponse withId(String id) {
         this.id = id;
@@ -209,6 +217,39 @@ public class CreateGeoipRuleResponse extends SdkResponse {
         this.timestamp = timestamp;
     }
 
+    public CreateGeoipRuleResponse withGeoTagList(List<String> geoTagList) {
+        this.geoTagList = geoTagList;
+        return this;
+    }
+
+    public CreateGeoipRuleResponse addGeoTagListItem(String geoTagListItem) {
+        if (this.geoTagList == null) {
+            this.geoTagList = new ArrayList<>();
+        }
+        this.geoTagList.add(geoTagListItem);
+        return this;
+    }
+
+    public CreateGeoipRuleResponse withGeoTagList(Consumer<List<String>> geoTagListSetter) {
+        if (this.geoTagList == null) {
+            this.geoTagList = new ArrayList<>();
+        }
+        geoTagListSetter.accept(this.geoTagList);
+        return this;
+    }
+
+    /**
+     * 地理位置
+     * @return geoTagList
+     */
+    public List<String> getGeoTagList() {
+        return geoTagList;
+    }
+
+    public void setGeoTagList(List<String> geoTagList) {
+        this.geoTagList = geoTagList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -222,12 +263,12 @@ public class CreateGeoipRuleResponse extends SdkResponse {
             && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.geoip, that.geoip)
             && Objects.equals(this.white, that.white) && Objects.equals(this.status, that.status)
             && Objects.equals(this.ipType, that.ipType) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.timestamp, that.timestamp);
+            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.geoTagList, that.geoTagList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, policyid, geoip, white, status, ipType, description, timestamp);
+        return Objects.hash(id, name, policyid, geoip, white, status, ipType, description, timestamp, geoTagList);
     }
 
     @Override
@@ -243,6 +284,7 @@ public class CreateGeoipRuleResponse extends SdkResponse {
         sb.append("    ipType: ").append(toIndentedString(ipType)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
+        sb.append("    geoTagList: ").append(toIndentedString(geoTagList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

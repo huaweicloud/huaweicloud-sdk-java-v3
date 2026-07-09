@@ -2418,6 +2418,7 @@ public class GaussDBAsyncClient {
      * @param request ListGaussMySqlInstanceDetailInfoRequest 请求对象
      * @return CompletableFuture<ListGaussMySqlInstanceDetailInfoResponse>
      */
+    @Deprecated
     public CompletableFuture<ListGaussMySqlInstanceDetailInfoResponse> listGaussMySqlInstanceDetailInfoAsync(
         ListGaussMySqlInstanceDetailInfoRequest request) {
         return hcClient.asyncInvokeHttp(request, GaussDBMeta.listGaussMySqlInstanceDetailInfo);
@@ -2433,6 +2434,7 @@ public class GaussDBAsyncClient {
      * @param request ListGaussMySqlInstanceDetailInfoRequest 请求对象
      * @return AsyncInvoker<ListGaussMySqlInstanceDetailInfoRequest, ListGaussMySqlInstanceDetailInfoResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListGaussMySqlInstanceDetailInfoRequest, ListGaussMySqlInstanceDetailInfoResponse> listGaussMySqlInstanceDetailInfoAsyncInvoker(
         ListGaussMySqlInstanceDetailInfoRequest request) {
         return new AsyncInvoker<>(request, GaussDBMeta.listGaussMySqlInstanceDetailInfo, hcClient);
@@ -2478,6 +2480,7 @@ public class GaussDBAsyncClient {
      * @param request ListGaussMySqlInstancesRequest 请求对象
      * @return CompletableFuture<ListGaussMySqlInstancesResponse>
      */
+    @Deprecated
     public CompletableFuture<ListGaussMySqlInstancesResponse> listGaussMySqlInstancesAsync(
         ListGaussMySqlInstancesRequest request) {
         return hcClient.asyncInvokeHttp(request, GaussDBMeta.listGaussMySqlInstances);
@@ -2493,6 +2496,7 @@ public class GaussDBAsyncClient {
      * @param request ListGaussMySqlInstancesRequest 请求对象
      * @return AsyncInvoker<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse> listGaussMySqlInstancesAsyncInvoker(
         ListGaussMySqlInstancesRequest request) {
         return new AsyncInvoker<>(request, GaussDBMeta.listGaussMySqlInstances, hcClient);
@@ -4050,6 +4054,7 @@ public class GaussDBAsyncClient {
      * @param request ShowGaussMySqlInstanceInfoRequest 请求对象
      * @return CompletableFuture<ShowGaussMySqlInstanceInfoResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowGaussMySqlInstanceInfoResponse> showGaussMySqlInstanceInfoAsync(
         ShowGaussMySqlInstanceInfoRequest request) {
         return hcClient.asyncInvokeHttp(request, GaussDBMeta.showGaussMySqlInstanceInfo);
@@ -4065,6 +4070,7 @@ public class GaussDBAsyncClient {
      * @param request ShowGaussMySqlInstanceInfoRequest 请求对象
      * @return AsyncInvoker<ShowGaussMySqlInstanceInfoRequest, ShowGaussMySqlInstanceInfoResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowGaussMySqlInstanceInfoRequest, ShowGaussMySqlInstanceInfoResponse> showGaussMySqlInstanceInfoAsyncInvoker(
         ShowGaussMySqlInstanceInfoRequest request) {
         return new AsyncInvoker<>(request, GaussDBMeta.showGaussMySqlInstanceInfo, hcClient);

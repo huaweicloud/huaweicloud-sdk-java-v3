@@ -61,6 +61,11 @@ public class PolicyOption {
     private Boolean custom;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "precise")
+
+    private Boolean precise;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "whiteblackip")
 
     private Boolean whiteblackip;
@@ -99,6 +104,16 @@ public class PolicyOption {
     @JsonProperty(value = "modulex_enabled")
 
     private Boolean modulexEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "followed_action")
+
+    private Boolean followedAction;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "anticrawler")
+
+    private Boolean anticrawler;
 
     public PolicyOption withWebattack(Boolean webattack) {
         this.webattack = webattack;
@@ -270,6 +285,23 @@ public class PolicyOption {
         this.custom = custom;
     }
 
+    public PolicyOption withPrecise(Boolean precise) {
+        this.precise = precise;
+        return this;
+    }
+
+    /**
+     * 精准防护（旧版）是否开启
+     * @return precise
+     */
+    public Boolean getPrecise() {
+        return precise;
+    }
+
+    public void setPrecise(Boolean precise) {
+        this.precise = precise;
+    }
+
     public PolicyOption withWhiteblackip(Boolean whiteblackip) {
         this.whiteblackip = whiteblackip;
         return this;
@@ -406,6 +438,40 @@ public class PolicyOption {
         this.modulexEnabled = modulexEnabled;
     }
 
+    public PolicyOption withFollowedAction(Boolean followedAction) {
+        this.followedAction = followedAction;
+        return this;
+    }
+
+    /**
+     * 攻击惩罚规则是否开启
+     * @return followedAction
+     */
+    public Boolean getFollowedAction() {
+        return followedAction;
+    }
+
+    public void setFollowedAction(Boolean followedAction) {
+        this.followedAction = followedAction;
+    }
+
+    public PolicyOption withAnticrawler(Boolean anticrawler) {
+        this.anticrawler = anticrawler;
+        return this;
+    }
+
+    /**
+     * 反爬虫规则是否开启
+     * @return anticrawler
+     */
+    public Boolean getAnticrawler() {
+        return anticrawler;
+    }
+
+    public void setAnticrawler(Boolean anticrawler) {
+        this.anticrawler = anticrawler;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -421,11 +487,13 @@ public class PolicyOption {
             && Objects.equals(this.crawlerScript, that.crawlerScript)
             && Objects.equals(this.crawlerOther, that.crawlerOther) && Objects.equals(this.webshell, that.webshell)
             && Objects.equals(this.cc, that.cc) && Objects.equals(this.custom, that.custom)
-            && Objects.equals(this.whiteblackip, that.whiteblackip) && Objects.equals(this.geoip, that.geoip)
-            && Objects.equals(this.ignore, that.ignore) && Objects.equals(this.privacy, that.privacy)
-            && Objects.equals(this.antitamper, that.antitamper) && Objects.equals(this.antileakage, that.antileakage)
-            && Objects.equals(this.botEnable, that.botEnable)
-            && Objects.equals(this.modulexEnabled, that.modulexEnabled);
+            && Objects.equals(this.precise, that.precise) && Objects.equals(this.whiteblackip, that.whiteblackip)
+            && Objects.equals(this.geoip, that.geoip) && Objects.equals(this.ignore, that.ignore)
+            && Objects.equals(this.privacy, that.privacy) && Objects.equals(this.antitamper, that.antitamper)
+            && Objects.equals(this.antileakage, that.antileakage) && Objects.equals(this.botEnable, that.botEnable)
+            && Objects.equals(this.modulexEnabled, that.modulexEnabled)
+            && Objects.equals(this.followedAction, that.followedAction)
+            && Objects.equals(this.anticrawler, that.anticrawler);
     }
 
     @Override
@@ -440,6 +508,7 @@ public class PolicyOption {
             webshell,
             cc,
             custom,
+            precise,
             whiteblackip,
             geoip,
             ignore,
@@ -447,7 +516,9 @@ public class PolicyOption {
             antitamper,
             antileakage,
             botEnable,
-            modulexEnabled);
+            modulexEnabled,
+            followedAction,
+            anticrawler);
     }
 
     @Override
@@ -464,6 +535,7 @@ public class PolicyOption {
         sb.append("    webshell: ").append(toIndentedString(webshell)).append("\n");
         sb.append("    cc: ").append(toIndentedString(cc)).append("\n");
         sb.append("    custom: ").append(toIndentedString(custom)).append("\n");
+        sb.append("    precise: ").append(toIndentedString(precise)).append("\n");
         sb.append("    whiteblackip: ").append(toIndentedString(whiteblackip)).append("\n");
         sb.append("    geoip: ").append(toIndentedString(geoip)).append("\n");
         sb.append("    ignore: ").append(toIndentedString(ignore)).append("\n");
@@ -472,6 +544,8 @@ public class PolicyOption {
         sb.append("    antileakage: ").append(toIndentedString(antileakage)).append("\n");
         sb.append("    botEnable: ").append(toIndentedString(botEnable)).append("\n");
         sb.append("    modulexEnabled: ").append(toIndentedString(modulexEnabled)).append("\n");
+        sb.append("    followedAction: ").append(toIndentedString(followedAction)).append("\n");
+        sb.append("    anticrawler: ").append(toIndentedString(anticrawler)).append("\n");
         sb.append("}");
         return sb.toString();
     }

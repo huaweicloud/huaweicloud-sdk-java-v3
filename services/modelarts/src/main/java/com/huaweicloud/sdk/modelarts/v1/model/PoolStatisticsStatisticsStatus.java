@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 不同状态下的资源池统计信息。
+ * **参数描述**： 不同状态下的资源池统计信息。
  */
 public class PoolStatisticsStatisticsStatus {
 
@@ -36,7 +36,7 @@ public class PoolStatisticsStatisticsStatus {
     }
 
     /**
-     * 正在创建中的资源池数量。
+     * **参数描述**： 正在创建中的资源池统计信息。 **取值范围**： 不涉及。
      * @return creating
      */
     public Integer getCreating() {
@@ -53,7 +53,7 @@ public class PoolStatisticsStatisticsStatus {
     }
 
     /**
-     * 创建成功的资源池数量。
+     * **参数描述**： 创建成功的资源池数量。 **取值范围**： 不涉及。
      * @return created
      */
     public Integer getCreated() {
@@ -70,7 +70,7 @@ public class PoolStatisticsStatisticsStatus {
     }
 
     /**
-     * 最近三天内创建失败的资源池数量，最大值为500。
+     * **参数描述**： 最近三天内创建失败的资源池数量，最大值为500。 **取值范围**： 不涉及。
      * @return failed
      */
     public Integer getFailed() {
@@ -87,7 +87,7 @@ public class PoolStatisticsStatisticsStatus {
     }
 
     /**
-     * 等待中的资源池数量，通常是未支付的包周期资源池。
+     * **参数描述**： 等待中的资源池数量，通常是未支付的包周期资源池。 **取值范围**： 不涉及。
      * @return pending
      */
     public Integer getPending() {

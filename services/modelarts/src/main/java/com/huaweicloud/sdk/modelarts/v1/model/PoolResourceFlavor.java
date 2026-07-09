@@ -31,13 +31,18 @@ public class PoolResourceFlavor {
 
     private PoolResourceFlavorExtendParams extendParams;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os")
+
+    private Os os;
+
     public PoolResourceFlavor withFlavor(String flavor) {
         this.flavor = flavor;
         return this;
     }
 
     /**
-     * 资源规格，比如：modelarts.vm.gpu.tnt004。
+     * **参数解释**：资源规格，比如：modelarts.vm.gpu.tnt004。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return flavor
      */
     public String getFlavor() {
@@ -54,7 +59,7 @@ public class PoolResourceFlavor {
     }
 
     /**
-     * 资源规格的保障资源量。
+     * **参数解释**：资源规格的保障资源量。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return count
      */
     public Integer getCount() {
@@ -71,7 +76,7 @@ public class PoolResourceFlavor {
     }
 
     /**
-     * 资源规格的弹性资源量。物理池中该值和count必须一致。
+     * **参数解释**：资源规格的弹性资源量。物理池中该值和count必须一致。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return maxCount
      */
     public Integer getMaxCount() {
@@ -108,6 +113,32 @@ public class PoolResourceFlavor {
         this.extendParams = extendParams;
     }
 
+    public PoolResourceFlavor withOs(Os os) {
+        this.os = os;
+        return this;
+    }
+
+    public PoolResourceFlavor withOs(Consumer<Os> osSetter) {
+        if (this.os == null) {
+            this.os = new Os();
+            osSetter.accept(this.os);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get os
+     * @return os
+     */
+    public Os getOs() {
+        return os;
+    }
+
+    public void setOs(Os os) {
+        this.os = os;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -118,12 +149,13 @@ public class PoolResourceFlavor {
         }
         PoolResourceFlavor that = (PoolResourceFlavor) obj;
         return Objects.equals(this.flavor, that.flavor) && Objects.equals(this.count, that.count)
-            && Objects.equals(this.maxCount, that.maxCount) && Objects.equals(this.extendParams, that.extendParams);
+            && Objects.equals(this.maxCount, that.maxCount) && Objects.equals(this.extendParams, that.extendParams)
+            && Objects.equals(this.os, that.os);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(flavor, count, maxCount, extendParams);
+        return Objects.hash(flavor, count, maxCount, extendParams, os);
     }
 
     @Override
@@ -134,6 +166,7 @@ public class PoolResourceFlavor {
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    maxCount: ").append(toIndentedString(maxCount)).append("\n");
         sb.append("    extendParams: ").append(toIndentedString(extendParams)).append("\n");
+        sb.append("    os: ").append(toIndentedString(os)).append("\n");
         sb.append("}");
         return sb.toString();
     }

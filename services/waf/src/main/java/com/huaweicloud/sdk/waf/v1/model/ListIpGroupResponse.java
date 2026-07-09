@@ -25,7 +25,7 @@ public class ListIpGroupResponse extends SdkResponse {
     private List<IpGroupBody> items = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cloudTotal")
+    @JsonProperty(value = "cloud_total")
 
     private Integer cloudTotal;
 

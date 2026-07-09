@@ -26,7 +26,7 @@ public class PoolMonitorMetricDimensions {
     }
 
     /**
-     * 指标维度名称。
+     * **参数解释**：指标维度名称。 **取值范围**：指标名称。可选值如下： - clusterId：集群ID。
      * @return name
      */
     public String getName() {
@@ -43,7 +43,7 @@ public class PoolMonitorMetricDimensions {
     }
 
     /**
-     * 指标维度取值。
+     * **参数解释**：指标维度取值。 **取值范围**：不涉及。
      * @return value
      */
     public String getValue() {

@@ -43,7 +43,7 @@ public class PatchPoolResponse extends SdkResponse {
     }
 
     /**
-     * API版本。可选值如下： - v2
+     * **参数解释**：资源的API版本。 **取值范围**：可选值如下： - v2：当前资源版本为v2。
      * @return apiVersion
      */
     public String getApiVersion() {
@@ -60,7 +60,7 @@ public class PatchPoolResponse extends SdkResponse {
     }
 
     /**
-     * 资源类型。可选值如下： - Pool：资源池
+     * **参数解释**：资源的类型。 **取值范围**：可选值如下： - Pool：资源池。
      * @return kind
      */
     public String getKind() {

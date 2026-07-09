@@ -55,7 +55,7 @@ public class PoolSpecUpdate {
     }
 
     /**
-     * 更新启用的作业类型。可选值如下： - Train：训练作业 - Infer：推理作业 - Notebook：Notebook作业
+     * **参数解释**：更新启用的作业类型。 **约束限制**：不涉及。 **取值范围**：可选值如下： - Train：训练作业 - Infer：推理作业 - Notebook：Notebook作业 **默认取值**：不涉及。
      * @return scope
      */
     public List<String> getScope() {
@@ -88,7 +88,7 @@ public class PoolSpecUpdate {
     }
 
     /**
-     * 更新的资源规格列表。
+     * **参数解释**：更新的资源规格列表。
      * @return resources
      */
     public List<PoolSpecUpdateResources> getResources() {
@@ -121,7 +121,7 @@ public class PoolSpecUpdate {
     }
 
     /**
-     * 资源池支持的作业规格信息列表。
+     * **参数解释**：资源池支持的作业规格信息列表。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return jobFlavors
      */
     public List<String> getJobFlavors() {

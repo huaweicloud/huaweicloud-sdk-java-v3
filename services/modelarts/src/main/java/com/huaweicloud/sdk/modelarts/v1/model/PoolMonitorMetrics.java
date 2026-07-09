@@ -71,7 +71,7 @@ public class PoolMonitorMetrics {
     }
 
     /**
-     * 重点指标。
+     * **参数解释**：监控指标数据。
      * @return dataPoints
      */
     public List<PoolMonitorDataPoints> getDataPoints() {

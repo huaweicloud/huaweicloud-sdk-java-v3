@@ -1,3 +1,361 @@
+# 3.1.205 2026-07-09
+
+### HuaweiCloud SDK BSS
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`ListResourceSpecs`、`ShowRealNameAuthQrCode`、`ShowRealNameAuthStatus`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK BSSINTL
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 支持接口`ListResourceSpecs`
+- _解决问题_
+  - 无
+- _特性变更_
+  - 无
+
+### HuaweiCloud SDK CBH
+
+- _接口版本_
+  - V2
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListSwitchConfigInfo**
+    - 响应参数变更
+      - `+ version_info`
+      - `+ switch_info`
+      - `- properties`
+
+### HuaweiCloud SDK CSS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 废弃以下接口：
+    - `RestartCluster`
+    - `StartAutoSetting`
+    - `UpdateFlavor`
+    - `ListSmnTopics`
+    - `UpdateExtendCluster`
+    - `CreateCluster`
+
+### HuaweiCloud SDK DBSS
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持以下接口：
+    - `ListDomainAllResource`
+    - `ShowDomainAllResourceCount`
+    - `ListAuditInstancesLast`
+    - `AddDatabaseSslKey`
+    - `ShowLogRetentionCommonSettings`
+    - `UpdateLogRetentionCommonSettings`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListAuditInstancesNew**
+    - 响应参数变更
+      - `+ instances`
+      - `- servers`
+
+### HuaweiCloud SDK GaussDB
+
+- _接口版本_
+  - V3
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - 废弃接口`ListGaussMySqlInstances`、`ShowGaussMySqlInstanceInfo`、`ListGaussMySqlInstanceDetailInfo`
+
+### HuaweiCloud SDK ModelArts
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 支持接口`ShowPoolNode`
+- _解决问题_
+  - 无
+- _特性变更_
+  - **ListTrainingJobEvents**
+    - 响应参数变更
+      - `* total: string -> int32`
+      - `* limit: string -> int32`
+      - `* offset: string -> int32`
+  - **ShowPool**
+    - 响应参数变更
+      - `+ metadata.labels.os.modelarts/node.prefix`
+      - `+ metadata.labels.os.modelarts/tenant.project.id`
+      - `+ metadata.labels.os.modelarts/enterprise.project.id`
+      - `+ metadata.labels.os.modelarts.pool/biz`
+      - `+ metadata.labels.os.modelarts/create-from`
+      - `+ metadata.labels.os.modelarts/nobilling`
+      - `+ metadata.labels.os.modelarts/order.name`
+      - `+ metadata.labels.os.modelarts/region`
+      - `+ metadata.annotations.os.modelarts.pool/scheduler.queue.strategy`
+      - `+ metadata.annotations.os.modelarts.pool/subpools.count`
+      - `+ metadata.annotations.os.modelarts/tenant.domain.name`
+      - `+ metadata.annotations.os.modelarts.pool/scope.external.dependency.train`
+      - `+ spec.containernetwork`
+      - `+ spec.resources.maxCount`
+      - `+ spec.resources.extendParams`
+      - `+ spec.resources.os`
+      - `+ spec.resources.dataVolumes`
+      - `+ spec.resources.volumeGroupConfigs`
+      - `+ status.clusters`
+  - **DeletePool**
+    - 响应参数变更
+      - `+ metadata.labels.os.modelarts/node.prefix`
+      - `+ metadata.labels.os.modelarts/tenant.project.id`
+      - `+ metadata.labels.os.modelarts/enterprise.project.id`
+      - `+ metadata.labels.os.modelarts.pool/biz`
+      - `+ metadata.labels.os.modelarts/create-from`
+      - `+ metadata.labels.os.modelarts/nobilling`
+      - `+ metadata.labels.os.modelarts/order.name`
+      - `+ metadata.labels.os.modelarts/region`
+      - `+ metadata.annotations.os.modelarts.pool/scheduler.queue.strategy`
+      - `+ metadata.annotations.os.modelarts.pool/subpools.count`
+      - `+ metadata.annotations.os.modelarts/tenant.domain.name`
+      - `+ metadata.annotations.os.modelarts.pool/scope.external.dependency.train`
+      - `+ spec.containernetwork`
+      - `+ spec.resources.maxCount`
+      - `+ spec.resources.extendParams`
+      - `+ spec.resources.os`
+      - `+ spec.resources.dataVolumes`
+      - `+ spec.resources.volumeGroupConfigs`
+      - `+ status.clusters`
+  - **PatchPool**
+    - 响应参数变更
+      - `+ metadata.labels.os.modelarts/node.prefix`
+      - `+ metadata.labels.os.modelarts/tenant.project.id`
+      - `+ metadata.labels.os.modelarts/enterprise.project.id`
+      - `+ metadata.labels.os.modelarts.pool/biz`
+      - `+ metadata.labels.os.modelarts/create-from`
+      - `+ metadata.labels.os.modelarts/nobilling`
+      - `+ metadata.labels.os.modelarts/order.name`
+      - `+ metadata.labels.os.modelarts/region`
+      - `+ metadata.annotations.os.modelarts.pool/scheduler.queue.strategy`
+      - `+ metadata.annotations.os.modelarts.pool/subpools.count`
+      - `+ metadata.annotations.os.modelarts/tenant.domain.name`
+      - `+ metadata.annotations.os.modelarts.pool/scope.external.dependency.train`
+      - `+ spec.containernetwork`
+      - `+ spec.resources.maxCount`
+      - `+ spec.resources.extendParams`
+      - `+ spec.resources.os`
+      - `+ spec.resources.dataVolumes`
+      - `+ spec.resources.volumeGroupConfigs`
+      - `+ status.clusters`
+  - **CreatePool**
+    - 请求参数变更
+      - `+ spec.resources.os`
+    - 响应参数变更
+      - `+ metadata.labels.os.modelarts/node.prefix`
+      - `+ metadata.labels.os.modelarts/tenant.project.id`
+      - `+ metadata.labels.os.modelarts/enterprise.project.id`
+      - `+ metadata.labels.os.modelarts.pool/biz`
+      - `+ metadata.labels.os.modelarts/create-from`
+      - `+ metadata.labels.os.modelarts/nobilling`
+      - `+ metadata.labels.os.modelarts/order.name`
+      - `+ metadata.labels.os.modelarts/region`
+      - `+ metadata.annotations.os.modelarts.pool/scheduler.queue.strategy`
+      - `+ metadata.annotations.os.modelarts.pool/subpools.count`
+      - `+ metadata.annotations.os.modelarts/tenant.domain.name`
+      - `+ metadata.annotations.os.modelarts.pool/scope.external.dependency.train`
+      - `+ spec.containernetwork`
+      - `+ spec.resources.maxCount`
+      - `+ spec.resources.extendParams`
+      - `+ spec.resources.os`
+      - `+ spec.resources.dataVolumes`
+      - `+ spec.resources.volumeGroupConfigs`
+      - `+ status.clusters`
+  - **ListPools**
+    - 响应参数变更
+      - `+ items.metadata.labels.os.modelarts/node.prefix`
+      - `+ items.metadata.labels.os.modelarts/tenant.project.id`
+      - `+ items.metadata.labels.os.modelarts/enterprise.project.id`
+      - `+ items.metadata.labels.os.modelarts.pool/biz`
+      - `+ items.metadata.labels.os.modelarts/create-from`
+      - `+ items.metadata.labels.os.modelarts/nobilling`
+      - `+ items.metadata.labels.os.modelarts/order.name`
+      - `+ items.metadata.labels.os.modelarts/region`
+      - `+ items.metadata.annotations.os.modelarts.pool/scheduler.queue.strategy`
+      - `+ items.metadata.annotations.os.modelarts.pool/subpools.count`
+      - `+ items.metadata.annotations.os.modelarts/tenant.domain.name`
+      - `+ items.metadata.annotations.os.modelarts.pool/scope.external.dependency.train`
+      - `+ items.spec.containernetwork`
+      - `+ items.spec.resources.maxCount`
+      - `+ items.spec.resources.extendParams`
+      - `+ items.spec.resources.os`
+      - `+ items.spec.resources.dataVolumes`
+      - `+ items.spec.resources.volumeGroupConfigs`
+      - `+ items.status.clusters`
+  - **ListTrainingJobStages**
+    - 响应参数变更
+      - `* total_count: string -> int32`
+  - **ListAlgorithms**
+    - 响应参数变更
+      - `* items.metadata.id: int32 -> string`
+      - `* items.metadata.is_valid: string -> boolean`
+      - `* items.job_config.code_tree: list<object> -> object<CodeTreeNode>`
+  - **CreateAlgorithm**
+    - 响应参数变更
+      - `* metadata.id: int32 -> string`
+      - `* metadata.is_valid: string -> boolean`
+      - `* job_config.code_tree: list<object> -> object<CodeTreeNode>`
+  - **ShowAlgorithmByUuid**
+    - 响应参数变更
+      - `* metadata.id: int32 -> string`
+      - `* metadata.is_valid: string -> boolean`
+      - `* job_config.code_tree: list<object> -> object<CodeTreeNode>`
+  - **ChangeAlgorithm**
+    - 响应参数变更
+      - `* metadata.id: int32 -> string`
+      - `* metadata.is_valid: string -> boolean`
+      - `* job_config.code_tree: list<object> -> object<CodeTreeNode>`
+  - **ShowTrainingJobDetails**
+    - 响应参数变更
+      - `* metadata.training_experiment_reference: list<TrainingExperimentResp> -> object<TrainingExperimentResp>`
+  - **StopTrainingJob**
+    - 响应参数变更
+      - `* metadata.training_experiment_reference: list<TrainingExperimentResp> -> object<TrainingExperimentResp>`
+  - **CreateTrainingJob**
+    - 请求参数变更
+      - `* metadata.training_experiment_reference: list<TrainingExperimentRequest> -> object<TrainingExperimentRequest>`
+    - 响应参数变更
+      - `* metadata.training_experiment_reference: list<TrainingExperimentResp> -> object<TrainingExperimentResp>`
+  - **ListTrainingJobs**
+    - 响应参数变更
+      - `* items.metadata.training_experiment_reference: list<TrainingExperimentResp> -> object<TrainingExperimentResp>`
+
+### HuaweiCloud SDK WAF
+
+- _接口版本_
+  - V1
+- _新增特性_
+  - 无
+- _解决问题_
+  - 无
+- _特性变更_
+  - **DeleteGeoipRule**
+    - 响应参数变更
+      - `+ geoTagList`
+  - **DeleteAntitamperRule**
+    - 响应参数变更
+      - `+ hostname`
+      - `+ description`
+      - `+ status`
+  - **UpdateAlertNoticeConfig**
+    - 请求参数变更
+      - `* nearly_expired_time: string -> int64`
+    - 响应参数变更
+      - `* nearly_expired_time: string -> int64`
+  - **DeleteAlertNoticeConfig**
+    - 响应参数变更
+      - `* nearly_expired_time: string -> int64`
+  - **ShowWebProtectionRule**
+    - 响应参数变更
+      - `+ effective_time`
+      - `+ update_time`
+  - **CreateAlertNoticeConfig**
+    - 响应参数变更
+      - `* nearly_expired_time: string -> int64`
+  - **DeleteIgnoreRule**
+    - 响应参数变更
+      - `+ domain`
+      - `- domains`
+  - **ShowPolicy**
+    - 响应参数变更
+      - `+ options.precise`
+      - `+ options.followed_action`
+      - `+ options.anticrawler`
+  - **UpdatePolicyProtectHost**
+    - 响应参数变更
+      - `+ options.precise`
+      - `+ options.followed_action`
+      - `+ options.anticrawler`
+  - **DeletePolicy**
+    - 响应参数变更
+      - `+ options.precise`
+      - `+ options.followed_action`
+      - `+ options.anticrawler`
+  - **UpdatePolicy**
+    - 请求参数变更
+      - `+ options.precise`
+      - `+ options.followed_action`
+      - `+ options.anticrawler`
+    - 响应参数变更
+      - `+ options.precise`
+      - `+ options.followed_action`
+      - `+ options.anticrawler`
+  - **CreateGeoipRule**
+    - 响应参数变更
+      - `+ geoTagList`
+  - **ListAntitamperRule**
+    - 响应参数变更
+      - `+ items.policyname`
+  - **DeleteCertificate**
+    - 响应参数变更
+      - `+ cert_type`
+      - `- bind_host`
+      - `- exp_status`
+      - `- content`
+      - `- key`
+  - **DeleteIpGroup**
+    - 响应参数变更
+      - `+ description`
+  - **ListNoticeConfigs**
+    - 响应参数变更
+      - `* items.nearly_expired_time: string -> int64`
+  - **CreateCloudWafPostPaidResource**
+    - 请求参数变更
+      - `+ postpaid_name`
+      - `+ extend_params`
+  - **BatchCreateGeoIpRule**
+    - 响应参数变更
+      - `+ geoTagList`
+  - **ListAntiTamperPolicyRules**
+    - 响应参数变更
+      - `+ items.policyname`
+  - **CopyPolicyById**
+    - 响应参数变更
+      - `+ options.precise`
+      - `+ options.followed_action`
+      - `+ options.anticrawler`
+  - **DeleteHost**
+    - 响应参数变更
+      - `+ region`
+  - **CreatePolicy**
+    - 响应参数变更
+      - `+ options.precise`
+      - `+ options.followed_action`
+      - `+ options.anticrawler`
+  - **ListPolicy**
+    - 响应参数变更
+      - `+ items.options.precise`
+      - `+ items.options.followed_action`
+      - `+ items.options.anticrawler`
+  - **ListIpGroup**
+    - 响应参数变更
+      - `+ cloud_total`
+      - `- cloudTotal`
+
 # 3.1.204 2026-07-07
 
 ### HuaweiCloud SDK DAS

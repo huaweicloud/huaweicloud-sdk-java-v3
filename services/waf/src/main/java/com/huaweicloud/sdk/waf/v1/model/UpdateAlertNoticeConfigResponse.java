@@ -67,7 +67,7 @@ public class UpdateAlertNoticeConfigResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nearly_expired_time")
 
-    private String nearlyExpiredTime;
+    private Long nearlyExpiredTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_all_enterprise_project")
@@ -270,7 +270,7 @@ public class UpdateAlertNoticeConfigResponse extends SdkResponse {
         this.noticeClass = noticeClass;
     }
 
-    public UpdateAlertNoticeConfigResponse withNearlyExpiredTime(String nearlyExpiredTime) {
+    public UpdateAlertNoticeConfigResponse withNearlyExpiredTime(Long nearlyExpiredTime) {
         this.nearlyExpiredTime = nearlyExpiredTime;
         return this;
     }
@@ -279,11 +279,11 @@ public class UpdateAlertNoticeConfigResponse extends SdkResponse {
      * 提前通知天数
      * @return nearlyExpiredTime
      */
-    public String getNearlyExpiredTime() {
+    public Long getNearlyExpiredTime() {
         return nearlyExpiredTime;
     }
 
-    public void setNearlyExpiredTime(String nearlyExpiredTime) {
+    public void setNearlyExpiredTime(Long nearlyExpiredTime) {
         this.nearlyExpiredTime = nearlyExpiredTime;
     }
 

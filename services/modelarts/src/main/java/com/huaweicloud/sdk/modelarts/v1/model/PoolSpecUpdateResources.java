@@ -34,7 +34,7 @@ public class PoolSpecUpdateResources {
     }
 
     /**
-     * 资源规格。
+     * **参数解释**：资源规格。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return flavor
      */
     public String getFlavor() {
@@ -51,7 +51,7 @@ public class PoolSpecUpdateResources {
     }
 
     /**
-     * 相应规格的资源数量。
+     * **参数解释**：相应规格的资源数量。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * minimum: 1
      * maximum: 2000
      * @return count
@@ -86,7 +86,7 @@ public class PoolSpecUpdateResources {
     }
 
     /**
-     * 更新的AZ列表。
+     * **参数解释**：更新的AZ列表。
      * @return azs
      */
     public List<PoolNodeAz> getAzs() {

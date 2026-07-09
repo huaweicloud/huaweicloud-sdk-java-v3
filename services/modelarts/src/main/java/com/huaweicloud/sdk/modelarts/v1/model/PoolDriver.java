@@ -31,7 +31,7 @@ public class PoolDriver {
     }
 
     /**
-     * GPU驱动版本，物理资源池中含有GPU规格时可填，例如：\"440.33\"。
+     * **参数解释**：资源池默认的GPU驱动版本。物理资源池中包含GPU规格时有效。 **取值范围**：不涉及。
      * @return gpuVersion
      */
     public String getGpuVersion() {
@@ -48,7 +48,7 @@ public class PoolDriver {
     }
 
     /**
-     * NPU驱动版本，物理资源池中含有ascend规格时可填，例如：\"C78\"。
+     * **参数解释**：资源池默认的NPU驱动版本。物理资源池中包含NPU规格时有效。 **取值范围**：不涉及。
      * @return npuVersion
      */
     public String getNpuVersion() {
@@ -65,7 +65,7 @@ public class PoolDriver {
     }
 
     /**
-     * 驱动升级策略。可选值如下： - force：强制升级，立即升级节点驱动，可能影响节点上正在运行的作业 - idle：安全升级，待节点上没有作业运行时进行驱动升级
+     * **参数解释**：资源池驱动升级策略。 **取值范围**：可选值如下： - force：强制升级，立即升级节点驱动，可能影响节点上正在运行的作业。 - idle：安全升级，待节点上没有作业运行时进行驱动升级。
      * @return updateStrategy
      */
     public String getUpdateStrategy() {

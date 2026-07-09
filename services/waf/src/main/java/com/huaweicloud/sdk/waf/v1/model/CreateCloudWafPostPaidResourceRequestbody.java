@@ -15,6 +15,16 @@ public class CreateCloudWafPostPaidResourceRequestbody {
 
     private String consoleArea;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "postpaid_name")
+
+    private String postpaidName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extend_params")
+
+    private Object extendParams;
+
     public CreateCloudWafPostPaidResourceRequestbody withConsoleArea(String consoleArea) {
         this.consoleArea = consoleArea;
         return this;
@@ -32,6 +42,40 @@ public class CreateCloudWafPostPaidResourceRequestbody {
         this.consoleArea = consoleArea;
     }
 
+    public CreateCloudWafPostPaidResourceRequestbody withPostpaidName(String postpaidName) {
+        this.postpaidName = postpaidName;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 按需功能名称 **取值范围：**  - CLOUD_WAF：按需云模式  - LARGE_MODEL_FIREWALL_AI_GUARD_DETECT: AI安全护栏
+     * @return postpaidName
+     */
+    public String getPostpaidName() {
+        return postpaidName;
+    }
+
+    public void setPostpaidName(String postpaidName) {
+        this.postpaidName = postpaidName;
+    }
+
+    public CreateCloudWafPostPaidResourceRequestbody withExtendParams(Object extendParams) {
+        this.extendParams = extendParams;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 扩展参数 **取值范围：** 不涉及
+     * @return extendParams
+     */
+    public Object getExtendParams() {
+        return extendParams;
+    }
+
+    public void setExtendParams(Object extendParams) {
+        this.extendParams = extendParams;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +85,14 @@ public class CreateCloudWafPostPaidResourceRequestbody {
             return false;
         }
         CreateCloudWafPostPaidResourceRequestbody that = (CreateCloudWafPostPaidResourceRequestbody) obj;
-        return Objects.equals(this.consoleArea, that.consoleArea);
+        return Objects.equals(this.consoleArea, that.consoleArea)
+            && Objects.equals(this.postpaidName, that.postpaidName)
+            && Objects.equals(this.extendParams, that.extendParams);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(consoleArea);
+        return Objects.hash(consoleArea, postpaidName, extendParams);
     }
 
     @Override
@@ -54,6 +100,8 @@ public class CreateCloudWafPostPaidResourceRequestbody {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateCloudWafPostPaidResourceRequestbody {\n");
         sb.append("    consoleArea: ").append(toIndentedString(consoleArea)).append("\n");
+        sb.append("    postpaidName: ").append(toIndentedString(postpaidName)).append("\n");
+        sb.append("    extendParams: ").append(toIndentedString(extendParams)).append("\n");
         sb.append("}");
         return sb.toString();
     }

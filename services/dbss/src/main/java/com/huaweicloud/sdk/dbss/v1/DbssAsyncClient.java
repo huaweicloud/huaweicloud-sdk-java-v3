@@ -11,6 +11,8 @@ import com.huaweicloud.sdk.dbss.v1.model.AddAuditDatabaseNewRequest;
 import com.huaweicloud.sdk.dbss.v1.model.AddAuditDatabaseNewResponse;
 import com.huaweicloud.sdk.dbss.v1.model.AddAuditDatabaseRequest;
 import com.huaweicloud.sdk.dbss.v1.model.AddAuditDatabaseResponse;
+import com.huaweicloud.sdk.dbss.v1.model.AddDatabaseSslKeyRequest;
+import com.huaweicloud.sdk.dbss.v1.model.AddDatabaseSslKeyResponse;
 import com.huaweicloud.sdk.dbss.v1.model.AddRdsDatabaseNewRequest;
 import com.huaweicloud.sdk.dbss.v1.model.AddRdsDatabaseNewResponse;
 import com.huaweicloud.sdk.dbss.v1.model.AddRdsDatabaseRequest;
@@ -137,6 +139,8 @@ import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstanceJobsNewRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstanceJobsNewResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstanceJobsRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstanceJobsResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstancesLastRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstancesLastResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstancesNewRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstancesNewResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstancesRequest;
@@ -179,6 +183,8 @@ import com.huaweicloud.sdk.dbss.v1.model.ListAvailabilityZoneInfosRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListAvailabilityZoneInfosResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListDbEncryptInstancesRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListDbEncryptInstancesResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListDomainAllResourceRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListDomainAllResourceResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListEcsSpecificationNewRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListEcsSpecificationNewResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListEcsSpecificationRequest;
@@ -265,10 +271,14 @@ import com.huaweicloud.sdk.dbss.v1.model.ShowAuditUpgradeStatusRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ShowAuditUpgradeStatusResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ShowBackupRiskBucketPathRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ShowBackupRiskBucketPathResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ShowDomainAllResourceCountRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ShowDomainAllResourceCountResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ShowInstanceMonitorInfoRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ShowInstanceMonitorInfoResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ShowInstanceQuotaRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ShowInstanceQuotaResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ShowLogRetentionCommonSettingsRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ShowLogRetentionCommonSettingsResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ShowSensitiveMaskSwitchRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ShowSensitiveMaskSwitchResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ShowSensitiveResultSwitchRequest;
@@ -333,6 +343,8 @@ import com.huaweicloud.sdk.dbss.v1.model.UpdateDbEncryptInstanceNameRequest;
 import com.huaweicloud.sdk.dbss.v1.model.UpdateDbEncryptInstanceNameResponse;
 import com.huaweicloud.sdk.dbss.v1.model.UpdateDbOmInstanceNameRequest;
 import com.huaweicloud.sdk.dbss.v1.model.UpdateDbOmInstanceNameResponse;
+import com.huaweicloud.sdk.dbss.v1.model.UpdateLogRetentionCommonSettingsRequest;
+import com.huaweicloud.sdk.dbss.v1.model.UpdateLogRetentionCommonSettingsResponse;
 import com.huaweicloud.sdk.dbss.v1.model.UpdateSensitiveMaskRuleRequest;
 import com.huaweicloud.sdk.dbss.v1.model.UpdateSensitiveMaskRuleResponse;
 import com.huaweicloud.sdk.dbss.v1.model.UploadAuditDbConfigRequest;
@@ -442,6 +454,35 @@ public class DbssAsyncClient {
     public AsyncInvoker<AddAuditDatabaseNewRequest, AddAuditDatabaseNewResponse> addAuditDatabaseNewAsyncInvoker(
         AddAuditDatabaseNewRequest request) {
         return new AsyncInvoker<>(request, DbssMeta.addAuditDatabaseNew, hcClient);
+    }
+
+    /**
+     * 上传/更新数据库私钥
+     *
+     * 上传/更新数据库私钥
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddDatabaseSslKeyRequest 请求对象
+     * @return CompletableFuture<AddDatabaseSslKeyResponse>
+     */
+    public CompletableFuture<AddDatabaseSslKeyResponse> addDatabaseSslKeyAsync(AddDatabaseSslKeyRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.addDatabaseSslKey);
+    }
+
+    /**
+     * 上传/更新数据库私钥
+     *
+     * 上传/更新数据库私钥
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddDatabaseSslKeyRequest 请求对象
+     * @return AsyncInvoker<AddDatabaseSslKeyRequest, AddDatabaseSslKeyResponse>
+     */
+    public AsyncInvoker<AddDatabaseSslKeyRequest, AddDatabaseSslKeyResponse> addDatabaseSslKeyAsyncInvoker(
+        AddDatabaseSslKeyRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.addDatabaseSslKey, hcClient);
     }
 
     /**
@@ -2042,6 +2083,36 @@ public class DbssAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
+     * @param request ListAuditInstancesLastRequest 请求对象
+     * @return CompletableFuture<ListAuditInstancesLastResponse>
+     */
+    public CompletableFuture<ListAuditInstancesLastResponse> listAuditInstancesLastAsync(
+        ListAuditInstancesLastRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.listAuditInstancesLast);
+    }
+
+    /**
+     * 查询审计实例列表
+     *
+     * 查询审计实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAuditInstancesLastRequest 请求对象
+     * @return AsyncInvoker<ListAuditInstancesLastRequest, ListAuditInstancesLastResponse>
+     */
+    public AsyncInvoker<ListAuditInstancesLastRequest, ListAuditInstancesLastResponse> listAuditInstancesLastAsyncInvoker(
+        ListAuditInstancesLastRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.listAuditInstancesLast, hcClient);
+    }
+
+    /**
+     * 查询审计实例列表[待下线]
+     *
+     * 查询审计实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
      * @param request ListAuditInstancesNewRequest 请求对象
      * @return CompletableFuture<ListAuditInstancesNewResponse>
      */
@@ -2051,7 +2122,7 @@ public class DbssAsyncClient {
     }
 
     /**
-     * 查询审计实例列表
+     * 查询审计实例列表[待下线]
      *
      * 查询审计实例列表
      * 
@@ -2609,6 +2680,36 @@ public class DbssAsyncClient {
     public AsyncInvoker<ListDbEncryptInstancesRequest, ListDbEncryptInstancesResponse> listDbEncryptInstancesAsyncInvoker(
         ListDbEncryptInstancesRequest request) {
         return new AsyncInvoker<>(request, DbssMeta.listDbEncryptInstances, hcClient);
+    }
+
+    /**
+     * 云脑链接器获取资源列表
+     *
+     * 云脑链接器获取资源列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainAllResourceRequest 请求对象
+     * @return CompletableFuture<ListDomainAllResourceResponse>
+     */
+    public CompletableFuture<ListDomainAllResourceResponse> listDomainAllResourceAsync(
+        ListDomainAllResourceRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.listDomainAllResource);
+    }
+
+    /**
+     * 云脑链接器获取资源列表
+     *
+     * 云脑链接器获取资源列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainAllResourceRequest 请求对象
+     * @return AsyncInvoker<ListDomainAllResourceRequest, ListDomainAllResourceResponse>
+     */
+    public AsyncInvoker<ListDomainAllResourceRequest, ListDomainAllResourceResponse> listDomainAllResourceAsyncInvoker(
+        ListDomainAllResourceRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.listDomainAllResource, hcClient);
     }
 
     /**
@@ -3721,6 +3822,36 @@ public class DbssAsyncClient {
     }
 
     /**
+     * 云脑链接器获取资源总量
+     *
+     * 云脑链接器获取资源总量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainAllResourceCountRequest 请求对象
+     * @return CompletableFuture<ShowDomainAllResourceCountResponse>
+     */
+    public CompletableFuture<ShowDomainAllResourceCountResponse> showDomainAllResourceCountAsync(
+        ShowDomainAllResourceCountRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.showDomainAllResourceCount);
+    }
+
+    /**
+     * 云脑链接器获取资源总量
+     *
+     * 云脑链接器获取资源总量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainAllResourceCountRequest 请求对象
+     * @return AsyncInvoker<ShowDomainAllResourceCountRequest, ShowDomainAllResourceCountResponse>
+     */
+    public AsyncInvoker<ShowDomainAllResourceCountRequest, ShowDomainAllResourceCountResponse> showDomainAllResourceCountAsyncInvoker(
+        ShowDomainAllResourceCountRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.showDomainAllResourceCount, hcClient);
+    }
+
+    /**
      * 获取实例监控数据
      *
      * 获取实例监控数据
@@ -3777,6 +3908,36 @@ public class DbssAsyncClient {
     public AsyncInvoker<ShowInstanceQuotaRequest, ShowInstanceQuotaResponse> showInstanceQuotaAsyncInvoker(
         ShowInstanceQuotaRequest request) {
         return new AsyncInvoker<>(request, DbssMeta.showInstanceQuota, hcClient);
+    }
+
+    /**
+     * 获取审计实例日志保存时间配置
+     *
+     * 获取审计实例日志保存时间配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLogRetentionCommonSettingsRequest 请求对象
+     * @return CompletableFuture<ShowLogRetentionCommonSettingsResponse>
+     */
+    public CompletableFuture<ShowLogRetentionCommonSettingsResponse> showLogRetentionCommonSettingsAsync(
+        ShowLogRetentionCommonSettingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.showLogRetentionCommonSettings);
+    }
+
+    /**
+     * 获取审计实例日志保存时间配置
+     *
+     * 获取审计实例日志保存时间配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLogRetentionCommonSettingsRequest 请求对象
+     * @return AsyncInvoker<ShowLogRetentionCommonSettingsRequest, ShowLogRetentionCommonSettingsResponse>
+     */
+    public AsyncInvoker<ShowLogRetentionCommonSettingsRequest, ShowLogRetentionCommonSettingsResponse> showLogRetentionCommonSettingsAsyncInvoker(
+        ShowLogRetentionCommonSettingsRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.showLogRetentionCommonSettings, hcClient);
     }
 
     /**
@@ -4647,6 +4808,36 @@ public class DbssAsyncClient {
     public AsyncInvoker<UpdateDbOmInstanceNameRequest, UpdateDbOmInstanceNameResponse> updateDbOmInstanceNameAsyncInvoker(
         UpdateDbOmInstanceNameRequest request) {
         return new AsyncInvoker<>(request, DbssMeta.updateDbOmInstanceName, hcClient);
+    }
+
+    /**
+     * 设置审计实例日志保存时间配置
+     *
+     * 设置审计实例日志保存时间配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateLogRetentionCommonSettingsRequest 请求对象
+     * @return CompletableFuture<UpdateLogRetentionCommonSettingsResponse>
+     */
+    public CompletableFuture<UpdateLogRetentionCommonSettingsResponse> updateLogRetentionCommonSettingsAsync(
+        UpdateLogRetentionCommonSettingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.updateLogRetentionCommonSettings);
+    }
+
+    /**
+     * 设置审计实例日志保存时间配置
+     *
+     * 设置审计实例日志保存时间配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateLogRetentionCommonSettingsRequest 请求对象
+     * @return AsyncInvoker<UpdateLogRetentionCommonSettingsRequest, UpdateLogRetentionCommonSettingsResponse>
+     */
+    public AsyncInvoker<UpdateLogRetentionCommonSettingsRequest, UpdateLogRetentionCommonSettingsResponse> updateLogRetentionCommonSettingsAsyncInvoker(
+        UpdateLogRetentionCommonSettingsRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.updateLogRetentionCommonSettings, hcClient);
     }
 
     /**

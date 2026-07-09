@@ -42,7 +42,7 @@ public class PoolMetadataDeletion {
     }
 
     /**
-     * 系统自动生成的pool名称，相当于poolId。
+     * **参数描述**： 系统自动生成的pool名称，相当于poolId。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -59,7 +59,7 @@ public class PoolMetadataDeletion {
     }
 
     /**
-     * 时间戳，例如\"2021-11-01T03:49:41Z\"。
+     * **参数描述**： 时间戳，例如\"2021-11-01T03:49:41Z\"。 **取值范围**： 不涉及。
      * @return creationTimestamp
      */
     public String getCreationTimestamp() {
@@ -76,7 +76,7 @@ public class PoolMetadataDeletion {
     }
 
     /**
-     * 时间戳，例如\"2021-11-01T03:49:41Z\"。
+     * **参数描述**： 时间戳，例如\"2021-11-01T03:49:41Z\"。 **取值范围**： 不涉及。
      * @return deletionTimestamp
      */
     public String getDeletionTimestamp() {

@@ -396,6 +396,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeConfigRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeConfigResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeConfigTemplateRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeConfigTemplateResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolNodeResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowPoolRuntimeMetricsRequest;
@@ -3466,6 +3468,33 @@ public class ModelArtsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPoolMonitorRequest::getPeriod, ShowPoolMonitorRequest::setPeriod));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPoolNodeRequest, ShowPoolNodeResponse> showPoolNode = genForShowPoolNode();
+
+    private static HttpRequestDef<ShowPoolNodeRequest, ShowPoolNodeResponse> genForShowPoolNode() {
+        // basic
+        HttpRequestDef.Builder<ShowPoolNodeRequest, ShowPoolNodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPoolNodeRequest.class, ShowPoolNodeResponse.class)
+                .withName("ShowPoolNode")
+                .withUri("/v2/{project_id}/pools/{pool_name}/nodes/{node_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPoolNodeRequest::getPoolName, ShowPoolNodeRequest::setPoolName));
+        builder.<String>withRequestField("node_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPoolNodeRequest::getNodeName, ShowPoolNodeRequest::setNodeName));
 
         // response
 

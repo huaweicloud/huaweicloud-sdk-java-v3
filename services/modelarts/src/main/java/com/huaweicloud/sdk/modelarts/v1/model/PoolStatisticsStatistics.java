@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 资源池统计信息。
+ * **参数描述**： 资源池统计信息。
  */
 public class PoolStatisticsStatistics {
 

@@ -162,6 +162,11 @@ public class DeleteHostResponse extends SdkResponse {
 
     private String webTag;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region")
+
+    private String region;
+
     public DeleteHostResponse withId(String id) {
         this.id = id;
         return this;
@@ -426,6 +431,23 @@ public class DeleteHostResponse extends SdkResponse {
         this.webTag = webTag;
     }
 
+    public DeleteHostResponse withRegion(String region) {
+        this.region = region;
+        return this;
+    }
+
+    /**
+     * 华为云区域ID，控制台创建的域名会携带此参数，api调用创建的域名此参数为空，可以通过华为云上地区和终端节点文档查询区域ID对应的中文名称
+     * @return region
+     */
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -443,7 +465,7 @@ public class DeleteHostResponse extends SdkResponse {
             && Objects.equals(this.protectStatus, that.protectStatus)
             && Objects.equals(this.accessStatus, that.accessStatus)
             && Objects.equals(this.exclusiveIp, that.exclusiveIp) && Objects.equals(this.paidType, that.paidType)
-            && Objects.equals(this.webTag, that.webTag);
+            && Objects.equals(this.webTag, that.webTag) && Objects.equals(this.region, that.region);
     }
 
     @Override
@@ -462,7 +484,8 @@ public class DeleteHostResponse extends SdkResponse {
             accessStatus,
             exclusiveIp,
             paidType,
-            webTag);
+            webTag,
+            region);
     }
 
     @Override
@@ -484,6 +507,7 @@ public class DeleteHostResponse extends SdkResponse {
         sb.append("    exclusiveIp: ").append(toIndentedString(exclusiveIp)).append("\n");
         sb.append("    paidType: ").append(toIndentedString(paidType)).append("\n");
         sb.append("    webTag: ").append(toIndentedString(webTag)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("}");
         return sb.toString();
     }

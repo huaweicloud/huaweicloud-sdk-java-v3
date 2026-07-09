@@ -54,7 +54,7 @@ public class ShowPoolStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * 统计的时间。
+     * **参数描述**： 统计的时间。 **取值范围**： 不涉及。
      * @return operationTime
      */
     public String getOperationTime() {

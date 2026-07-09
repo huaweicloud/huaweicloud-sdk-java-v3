@@ -17,17 +17,17 @@ public class ListTrainingJobEventsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
-    private String total;
+    private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    private String limit;
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    private String offset;
+    private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order")
@@ -49,54 +49,54 @@ public class ListTrainingJobEventsResponse extends SdkResponse {
 
     private List<Event> events = null;
 
-    public ListTrainingJobEventsResponse withTotal(String total) {
+    public ListTrainingJobEventsResponse withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
     /**
-     * 总条数。
+     * **参数解释**：总条数。 **取值范围**：不涉及。
      * @return total
      */
-    public String getTotal() {
+    public Integer getTotal() {
         return total;
     }
 
-    public void setTotal(String total) {
+    public void setTotal(Integer total) {
         this.total = total;
     }
 
-    public ListTrainingJobEventsResponse withLimit(String limit) {
+    public ListTrainingJobEventsResponse withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
     /**
-     * 最大显示条数。
+     * **参数解释**：最大显示条数。 **取值范围**：不涉及。
      * @return limit
      */
-    public String getLimit() {
+    public Integer getLimit() {
         return limit;
     }
 
-    public void setLimit(String limit) {
+    public void setLimit(Integer limit) {
         this.limit = limit;
     }
 
-    public ListTrainingJobEventsResponse withOffset(String offset) {
+    public ListTrainingJobEventsResponse withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
     /**
-     * 开始的条数。
+     * **参数解释**：开始的条数。 **取值范围**：不涉及。
      * @return offset
      */
-    public String getOffset() {
+    public Integer getOffset() {
         return offset;
     }
 
-    public void setOffset(String offset) {
+    public void setOffset(Integer offset) {
         this.offset = offset;
     }
 
@@ -106,7 +106,7 @@ public class ListTrainingJobEventsResponse extends SdkResponse {
     }
 
     /**
-     * 排序方式。
+     * **参数解释**：排序方式。 **取值范围**：不涉及。
      * @return order
      */
     public String getOrder() {
@@ -123,7 +123,7 @@ public class ListTrainingJobEventsResponse extends SdkResponse {
     }
 
     /**
-     * 事件的开始时间。
+     * **参数解释**：事件的开始时间。 **取值范围**：不涉及。
      * @return startTime
      */
     public String getStartTime() {
@@ -140,7 +140,7 @@ public class ListTrainingJobEventsResponse extends SdkResponse {
     }
 
     /**
-     * 事件的结束时间。
+     * **参数解释**：事件的结束时间。 **取值范围**：不涉及。
      * @return endTime
      */
     public String getEndTime() {
@@ -173,7 +173,7 @@ public class ListTrainingJobEventsResponse extends SdkResponse {
     }
 
     /**
-     * 事件列表
+     * **参数解释**：事件列表。
      * @return events
      */
     public List<Event> getEvents() {

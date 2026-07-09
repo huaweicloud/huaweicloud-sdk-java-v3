@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 资源池的注释信息。
+ * **参数解释**：资源池的注释信息。
  */
 public class PoolMetadataUpdateAnnotations {
 
@@ -26,7 +26,7 @@ public class PoolMetadataUpdateAnnotations {
     }
 
     /**
-     * 资源池描述信息，用于说明资源池用于某种指定场景。不能包含特殊字符!<>=&\"'。
+     * **参数解释**：资源池描述信息，用于说明资源池用于某种指定场景。不能包含特殊字符!<>=&\"'。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return osModelartsDescription
      */
     public String getOsModelartsDescription() {
@@ -43,7 +43,7 @@ public class PoolMetadataUpdateAnnotations {
     }
 
     /**
-     * 订单id，包周期创建和变更的时候需要传递该参数。
+     * **参数解释**：订单id，包周期创建和变更的时候需要传递该参数。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return osModelartsOrderId
      */
     public String getOsModelartsOrderId() {

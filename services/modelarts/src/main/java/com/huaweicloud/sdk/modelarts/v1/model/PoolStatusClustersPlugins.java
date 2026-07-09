@@ -6,27 +6,22 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * AlgorithmResponseJobConfigCodeTree
+ * **参数解释**：集群支持的插件名称。
  */
-public class AlgorithmResponseJobConfigCodeTree {
+public class PoolStatusClustersPlugins {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "children")
-
-    private Object children;
-
-    public AlgorithmResponseJobConfigCodeTree withName(String name) {
+    public PoolStatusClustersPlugins withName(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * 算法目录树当前层级目录名。
+     * **参数解释**：集群支持的插件名称。 **取值范围**：不涉及。
      * @return name
      */
     public String getName() {
@@ -37,23 +32,6 @@ public class AlgorithmResponseJobConfigCodeTree {
         this.name = name;
     }
 
-    public AlgorithmResponseJobConfigCodeTree withChildren(Object children) {
-        this.children = children;
-        return this;
-    }
-
-    /**
-     * 算法目录树当前层级目录下子文件和子目录。
-     * @return children
-     */
-    public Object getChildren() {
-        return children;
-    }
-
-    public void setChildren(Object children) {
-        this.children = children;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -62,21 +40,20 @@ public class AlgorithmResponseJobConfigCodeTree {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlgorithmResponseJobConfigCodeTree that = (AlgorithmResponseJobConfigCodeTree) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.children, that.children);
+        PoolStatusClustersPlugins that = (PoolStatusClustersPlugins) obj;
+        return Objects.equals(this.name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, children);
+        return Objects.hash(name);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class AlgorithmResponseJobConfigCodeTree {\n");
+        sb.append("class PoolStatusClustersPlugins {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    children: ").append(toIndentedString(children)).append("\n");
         sb.append("}");
         return sb.toString();
     }

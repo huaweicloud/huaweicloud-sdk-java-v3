@@ -70,9 +70,9 @@ public class DeleteIgnoreRuleResponse extends SdkResponse {
     private IgnoreAdvanced advanced;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "domains")
+    @JsonProperty(value = "domain")
 
-    private List<String> domains = null;
+    private List<String> domain = null;
 
     public DeleteIgnoreRuleResponse withId(String id) {
         this.id = id;
@@ -286,37 +286,37 @@ public class DeleteIgnoreRuleResponse extends SdkResponse {
         this.advanced = advanced;
     }
 
-    public DeleteIgnoreRuleResponse withDomains(List<String> domains) {
-        this.domains = domains;
+    public DeleteIgnoreRuleResponse withDomain(List<String> domain) {
+        this.domain = domain;
         return this;
     }
 
-    public DeleteIgnoreRuleResponse addDomainsItem(String domainsItem) {
-        if (this.domains == null) {
-            this.domains = new ArrayList<>();
+    public DeleteIgnoreRuleResponse addDomainItem(String domainItem) {
+        if (this.domain == null) {
+            this.domain = new ArrayList<>();
         }
-        this.domains.add(domainsItem);
+        this.domain.add(domainItem);
         return this;
     }
 
-    public DeleteIgnoreRuleResponse withDomains(Consumer<List<String>> domainsSetter) {
-        if (this.domains == null) {
-            this.domains = new ArrayList<>();
+    public DeleteIgnoreRuleResponse withDomain(Consumer<List<String>> domainSetter) {
+        if (this.domain == null) {
+            this.domain = new ArrayList<>();
         }
-        domainsSetter.accept(this.domains);
+        domainSetter.accept(this.domain);
         return this;
     }
 
     /**
      * 防护域名或防护网站
-     * @return domains
+     * @return domain
      */
-    public List<String> getDomains() {
-        return domains;
+    public List<String> getDomain() {
+        return domain;
     }
 
-    public void setDomains(List<String> domains) {
-        this.domains = domains;
+    public void setDomain(List<String> domain) {
+        this.domain = domain;
     }
 
     @Override
@@ -333,7 +333,7 @@ public class DeleteIgnoreRuleResponse extends SdkResponse {
             && Objects.equals(this.status, that.status) && Objects.equals(this.url, that.url)
             && Objects.equals(this.rule, that.rule) && Objects.equals(this.mode, that.mode)
             && Objects.equals(this.urlLogic, that.urlLogic) && Objects.equals(this.conditions, that.conditions)
-            && Objects.equals(this.advanced, that.advanced) && Objects.equals(this.domains, that.domains);
+            && Objects.equals(this.advanced, that.advanced) && Objects.equals(this.domain, that.domain);
     }
 
     @Override
@@ -349,7 +349,7 @@ public class DeleteIgnoreRuleResponse extends SdkResponse {
             urlLogic,
             conditions,
             advanced,
-            domains);
+            domain);
     }
 
     @Override
@@ -367,7 +367,7 @@ public class DeleteIgnoreRuleResponse extends SdkResponse {
         sb.append("    urlLogic: ").append(toIndentedString(urlLogic)).append("\n");
         sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
         sb.append("    advanced: ").append(toIndentedString(advanced)).append("\n");
-        sb.append("    domains: ").append(toIndentedString(domains)).append("\n");
+        sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("}");
         return sb.toString();
     }

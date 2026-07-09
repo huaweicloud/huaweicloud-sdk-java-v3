@@ -43,7 +43,7 @@ public class DeletePoolResponse extends SdkResponse {
     }
 
     /**
-     * API版本。可选值如下： - v2
+     * **参数描述**： API版本。 **取值范围**： 可选值如下： - v2
      * @return apiVersion
      */
     public String getApiVersion() {
@@ -60,7 +60,7 @@ public class DeletePoolResponse extends SdkResponse {
     }
 
     /**
-     * 资源类型。可选值如下： - Pool：资源池
+     * **参数描述**： 资源类型。 **取值范围**：可选值如下： - Pool：资源池
      * @return kind
      */
     public String getKind() {

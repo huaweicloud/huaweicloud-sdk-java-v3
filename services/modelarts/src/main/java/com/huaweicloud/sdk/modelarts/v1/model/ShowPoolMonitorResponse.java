@@ -41,7 +41,7 @@ public class ShowPoolMonitorResponse extends SdkResponse {
     }
 
     /**
-     * 指标对象列表。 取值范围 JSON数组大小不超过20。
+     * **参数解释**：资源池的监控指标数据。
      * @return metrics
      */
     public List<PoolMonitorMetrics> getMetrics() {

@@ -60,6 +60,8 @@ import com.huaweicloud.sdk.bssintl.v2.model.ListRateOnPeriodDetailRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListRateOnPeriodDetailResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListRenewRateOnPeriodRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListRenewRateOnPeriodResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.ListResourceSpecsRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.ListResourceSpecsResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListResourceTypesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListResourceTypesResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListServiceResourcesRequest;
@@ -1016,6 +1018,35 @@ public class BssintlAsyncClient {
     public AsyncInvoker<ListRenewRateOnPeriodRequest, ListRenewRateOnPeriodResponse> listRenewRateOnPeriodAsyncInvoker(
         ListRenewRateOnPeriodRequest request) {
         return new AsyncInvoker<>(request, BssintlMeta.listRenewRateOnPeriod, hcClient);
+    }
+
+    /**
+     * 查询云服务类型资源规格
+     *
+     * 功能描述：根据云服务类型、资源类型、区域等条件查询资源规格列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceSpecsRequest 请求对象
+     * @return CompletableFuture<ListResourceSpecsResponse>
+     */
+    public CompletableFuture<ListResourceSpecsResponse> listResourceSpecsAsync(ListResourceSpecsRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssintlMeta.listResourceSpecs);
+    }
+
+    /**
+     * 查询云服务类型资源规格
+     *
+     * 功能描述：根据云服务类型、资源类型、区域等条件查询资源规格列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceSpecsRequest 请求对象
+     * @return AsyncInvoker<ListResourceSpecsRequest, ListResourceSpecsResponse>
+     */
+    public AsyncInvoker<ListResourceSpecsRequest, ListResourceSpecsResponse> listResourceSpecsAsyncInvoker(
+        ListResourceSpecsRequest request) {
+        return new AsyncInvoker<>(request, BssintlMeta.listResourceSpecs, hcClient);
     }
 
     /**

@@ -521,6 +521,7 @@ public class CssAsyncClient {
      * @param request CreateClusterRequest 请求对象
      * @return CompletableFuture<CreateClusterResponse>
      */
+    @Deprecated
     public CompletableFuture<CreateClusterResponse> createClusterAsync(CreateClusterRequest request) {
         return hcClient.asyncInvokeHttp(request, CssMeta.createCluster);
     }
@@ -535,6 +536,7 @@ public class CssAsyncClient {
      * @param request CreateClusterRequest 请求对象
      * @return AsyncInvoker<CreateClusterRequest, CreateClusterResponse>
      */
+    @Deprecated
     public AsyncInvoker<CreateClusterRequest, CreateClusterResponse> createClusterAsyncInvoker(
         CreateClusterRequest request) {
         return new AsyncInvoker<>(request, CssMeta.createCluster, hcClient);
@@ -1177,7 +1179,7 @@ public class CssAsyncClient {
     }
 
     /**
-     * 获取智能运维告警可用的SMN主题
+     * 获取可用的SMN主题
      *
      * 该接口用于获取智能运维告警可用的SMN主题。
      * 
@@ -1186,12 +1188,13 @@ public class CssAsyncClient {
      * @param request ListSmnTopicsRequest 请求对象
      * @return CompletableFuture<ListSmnTopicsResponse>
      */
+    @Deprecated
     public CompletableFuture<ListSmnTopicsResponse> listSmnTopicsAsync(ListSmnTopicsRequest request) {
         return hcClient.asyncInvokeHttp(request, CssMeta.listSmnTopics);
     }
 
     /**
-     * 获取智能运维告警可用的SMN主题
+     * 获取可用的SMN主题
      *
      * 该接口用于获取智能运维告警可用的SMN主题。
      * 
@@ -1200,6 +1203,7 @@ public class CssAsyncClient {
      * @param request ListSmnTopicsRequest 请求对象
      * @return AsyncInvoker<ListSmnTopicsRequest, ListSmnTopicsResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListSmnTopicsRequest, ListSmnTopicsResponse> listSmnTopicsAsyncInvoker(
         ListSmnTopicsRequest request) {
         return new AsyncInvoker<>(request, CssMeta.listSmnTopics, hcClient);
@@ -1329,6 +1333,7 @@ public class CssAsyncClient {
      * @param request RestartClusterRequest 请求对象
      * @return CompletableFuture<RestartClusterResponse>
      */
+    @Deprecated
     public CompletableFuture<RestartClusterResponse> restartClusterAsync(RestartClusterRequest request) {
         return hcClient.asyncInvokeHttp(request, CssMeta.restartCluster);
     }
@@ -1343,6 +1348,7 @@ public class CssAsyncClient {
      * @param request RestartClusterRequest 请求对象
      * @return AsyncInvoker<RestartClusterRequest, RestartClusterResponse>
      */
+    @Deprecated
     public AsyncInvoker<RestartClusterRequest, RestartClusterResponse> restartClusterAsyncInvoker(
         RestartClusterRequest request) {
         return new AsyncInvoker<>(request, CssMeta.restartCluster, hcClient);
@@ -1816,7 +1822,7 @@ public class CssAsyncClient {
     }
 
     /**
-     * 自动设置集群快照的基础配置（不推荐使用）
+     * 自动设置集群快照的基础配置
      *
      * 该接口用于自动设置集群快照的基础配置，包括配置OBS桶和IAM委托。
      * 
@@ -1834,12 +1840,13 @@ public class CssAsyncClient {
      * @param request StartAutoSettingRequest 请求对象
      * @return CompletableFuture<StartAutoSettingResponse>
      */
+    @Deprecated
     public CompletableFuture<StartAutoSettingResponse> startAutoSettingAsync(StartAutoSettingRequest request) {
         return hcClient.asyncInvokeHttp(request, CssMeta.startAutoSetting);
     }
 
     /**
-     * 自动设置集群快照的基础配置（不推荐使用）
+     * 自动设置集群快照的基础配置
      *
      * 该接口用于自动设置集群快照的基础配置，包括配置OBS桶和IAM委托。
      * 
@@ -1857,6 +1864,7 @@ public class CssAsyncClient {
      * @param request StartAutoSettingRequest 请求对象
      * @return AsyncInvoker<StartAutoSettingRequest, StartAutoSettingResponse>
      */
+    @Deprecated
     public AsyncInvoker<StartAutoSettingRequest, StartAutoSettingResponse> startAutoSettingAsyncInvoker(
         StartAutoSettingRequest request) {
         return new AsyncInvoker<>(request, CssMeta.startAutoSetting, hcClient);
@@ -2311,6 +2319,7 @@ public class CssAsyncClient {
      * @param request UpdateExtendClusterRequest 请求对象
      * @return CompletableFuture<UpdateExtendClusterResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdateExtendClusterResponse> updateExtendClusterAsync(UpdateExtendClusterRequest request) {
         return hcClient.asyncInvokeHttp(request, CssMeta.updateExtendCluster);
     }
@@ -2327,6 +2336,7 @@ public class CssAsyncClient {
      * @param request UpdateExtendClusterRequest 请求对象
      * @return AsyncInvoker<UpdateExtendClusterRequest, UpdateExtendClusterResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdateExtendClusterRequest, UpdateExtendClusterResponse> updateExtendClusterAsyncInvoker(
         UpdateExtendClusterRequest request) {
         return new AsyncInvoker<>(request, CssMeta.updateExtendCluster, hcClient);
@@ -2372,6 +2382,7 @@ public class CssAsyncClient {
      * @param request UpdateFlavorRequest 请求对象
      * @return CompletableFuture<UpdateFlavorResponse>
      */
+    @Deprecated
     public CompletableFuture<UpdateFlavorResponse> updateFlavorAsync(UpdateFlavorRequest request) {
         return hcClient.asyncInvokeHttp(request, CssMeta.updateFlavor);
     }
@@ -2386,6 +2397,7 @@ public class CssAsyncClient {
      * @param request UpdateFlavorRequest 请求对象
      * @return AsyncInvoker<UpdateFlavorRequest, UpdateFlavorResponse>
      */
+    @Deprecated
     public AsyncInvoker<UpdateFlavorRequest, UpdateFlavorResponse> updateFlavorAsyncInvoker(
         UpdateFlavorRequest request) {
         return new AsyncInvoker<>(request, CssMeta.updateFlavor, hcClient);

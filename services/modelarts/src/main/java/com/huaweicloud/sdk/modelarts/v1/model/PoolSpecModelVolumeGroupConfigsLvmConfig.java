@@ -1,0 +1,72 @@
+package com.huaweicloud.sdk.modelarts.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/**
+ * **参数解释**：LVM配置管理。
+ */
+public class PoolSpecModelVolumeGroupConfigsLvmConfig {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lvType")
+
+    private String lvType;
+
+    public PoolSpecModelVolumeGroupConfigsLvmConfig withLvType(String lvType) {
+        this.lvType = lvType;
+        return this;
+    }
+
+    /**
+     * **参数解释**：LVM写入模式 **取值范围**：可选项如下： - linear：线性模式。 - striped：条带模式，使用多块磁盘组成条带模式，能够提升磁盘性能。
+     * @return lvType
+     */
+    public String getLvType() {
+        return lvType;
+    }
+
+    public void setLvType(String lvType) {
+        this.lvType = lvType;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        PoolSpecModelVolumeGroupConfigsLvmConfig that = (PoolSpecModelVolumeGroupConfigsLvmConfig) obj;
+        return Objects.equals(this.lvType, that.lvType);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(lvType);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class PoolSpecModelVolumeGroupConfigsLvmConfig {\n");
+        sb.append("    lvType: ").append(toIndentedString(lvType)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

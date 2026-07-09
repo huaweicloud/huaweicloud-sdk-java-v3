@@ -127,6 +127,16 @@ public class ShowWebProtectionRuleResponse extends SdkResponse {
 
     private Long createTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time")
+
+    private Long updateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "effective_time")
+
+    private Long effectiveTime;
+
     public ShowWebProtectionRuleResponse withId(String id) {
         this.id = id;
         return this;
@@ -246,6 +256,40 @@ public class ShowWebProtectionRuleResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
+    public ShowWebProtectionRuleResponse withUpdateTime(Long updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 规则更新时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return updateTime
+     */
+    public Long getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Long updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public ShowWebProtectionRuleResponse withEffectiveTime(Long effectiveTime) {
+        this.effectiveTime = effectiveTime;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 新增规则的生效时间 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * @return effectiveTime
+     */
+    public Long getEffectiveTime() {
+        return effectiveTime;
+    }
+
+    public void setEffectiveTime(Long effectiveTime) {
+        this.effectiveTime = effectiveTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -259,12 +303,22 @@ public class ShowWebProtectionRuleResponse extends SdkResponse {
             && Objects.equals(this.riskLevel, that.riskLevel)
             && Objects.equals(this.applicationType, that.applicationType)
             && Objects.equals(this.protectionType, that.protectionType)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.createTime, that.createTime);
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.effectiveTime, that.effectiveTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, cveNumber, riskLevel, applicationType, protectionType, description, createTime);
+        return Objects.hash(id,
+            cveNumber,
+            riskLevel,
+            applicationType,
+            protectionType,
+            description,
+            createTime,
+            updateTime,
+            effectiveTime);
     }
 
     @Override
@@ -278,6 +332,8 @@ public class ShowWebProtectionRuleResponse extends SdkResponse {
         sb.append("    protectionType: ").append(toIndentedString(protectionType)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    effectiveTime: ").append(toIndentedString(effectiveTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

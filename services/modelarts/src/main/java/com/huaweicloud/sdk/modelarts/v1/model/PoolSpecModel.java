@@ -29,6 +29,11 @@ public class PoolSpecModel {
     private List<PoolSpecModelResources> resources = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "containernetwork")
+
+    private PoolSpecModelContainernetwork containernetwork;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network")
 
     private PoolSpecModelNetwork network;
@@ -54,7 +59,7 @@ public class PoolSpecModel {
     }
 
     /**
-     * 资源池类型。可选值如下： - Dedicate：物理资源池，独立的网络，支持网络打通，定制驱动，定制作业类型。
+     * **参数解释**：资源池类型。 **约束限制**：不涉及。 **取值范围**：可选值如下： - Dedicate：物理资源池，独立的网络，支持网络打通，定制驱动，定制作业类型。 - Logical：逻辑资源池。没有独立的网络，不支持网络打通，资源池创建和扩缩容相较物理资源池更快。 **默认取值**：不涉及。
      * @return type
      */
     public String getType() {
@@ -87,7 +92,7 @@ public class PoolSpecModel {
     }
 
     /**
-     * 资源池支持的作业类型。至少选择一种，物理资源池支持全部选择。可选值如下： - Train：训练作业 - Infer：推理作业 - Notebook：Notebook作业
+     * **参数解释**：资源池支持的作业类型。
      * @return scope
      */
     public List<String> getScope() {
@@ -120,7 +125,7 @@ public class PoolSpecModel {
     }
 
     /**
-     * 资源池中的资源规格信列表，包括资源规格和相应规格的资源数量。
+     * **参数解释**：资源池中的资源规格信列表，包括资源规格和相应规格的资源数量。
      * @return resources
      */
     public List<PoolSpecModelResources> getResources() {
@@ -129,6 +134,32 @@ public class PoolSpecModel {
 
     public void setResources(List<PoolSpecModelResources> resources) {
         this.resources = resources;
+    }
+
+    public PoolSpecModel withContainernetwork(PoolSpecModelContainernetwork containernetwork) {
+        this.containernetwork = containernetwork;
+        return this;
+    }
+
+    public PoolSpecModel withContainernetwork(Consumer<PoolSpecModelContainernetwork> containernetworkSetter) {
+        if (this.containernetwork == null) {
+            this.containernetwork = new PoolSpecModelContainernetwork();
+            containernetworkSetter.accept(this.containernetwork);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get containernetwork
+     * @return containernetwork
+     */
+    public PoolSpecModelContainernetwork getContainernetwork() {
+        return containernetwork;
+    }
+
+    public void setContainernetwork(PoolSpecModelContainernetwork containernetwork) {
+        this.containernetwork = containernetwork;
     }
 
     public PoolSpecModel withNetwork(PoolSpecModelNetwork network) {
@@ -179,7 +210,7 @@ public class PoolSpecModel {
     }
 
     /**
-     * 资源池支持的作业规格信息列表，内容为作业规格名称。
+     * **参数解释**：资源池支持的作业规格列表。参数为作业规格名称。
      * @return jobFlavors
      */
     public List<String> getJobFlavors() {
@@ -222,7 +253,7 @@ public class PoolSpecModel {
     }
 
     /**
-     * 资源池的受限状态。可选值如下： - 0：代表不受限 - 1：转包周期受限 - 2：规格变更受限 - 4：服务受限 - 8：冻结 - 16：公安冻结（不可退订） 另外状态是可以叠加的，比如9代表转包周期受限+冻结状态。
+     * **参数解释**：资源池的受限状态。状态可以叠加，比如9代表转包周期受限和冻结状态。 **取值范围**：可选值如下： - 0：代表不受限 - 1：转包周期受限 - 2：规格变更受限 - 4：服务受限 - 8：冻结 - 16：公安冻结（不可退订）
      * @return controlMode
      */
     public Integer getControlMode() {
@@ -243,14 +274,15 @@ public class PoolSpecModel {
         }
         PoolSpecModel that = (PoolSpecModel) obj;
         return Objects.equals(this.type, that.type) && Objects.equals(this.scope, that.scope)
-            && Objects.equals(this.resources, that.resources) && Objects.equals(this.network, that.network)
-            && Objects.equals(this.jobFlavors, that.jobFlavors) && Objects.equals(this.driver, that.driver)
-            && Objects.equals(this.controlMode, that.controlMode);
+            && Objects.equals(this.resources, that.resources)
+            && Objects.equals(this.containernetwork, that.containernetwork)
+            && Objects.equals(this.network, that.network) && Objects.equals(this.jobFlavors, that.jobFlavors)
+            && Objects.equals(this.driver, that.driver) && Objects.equals(this.controlMode, that.controlMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, scope, resources, network, jobFlavors, driver, controlMode);
+        return Objects.hash(type, scope, resources, containernetwork, network, jobFlavors, driver, controlMode);
     }
 
     @Override
@@ -260,6 +292,7 @@ public class PoolSpecModel {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
+        sb.append("    containernetwork: ").append(toIndentedString(containernetwork)).append("\n");
         sb.append("    network: ").append(toIndentedString(network)).append("\n");
         sb.append("    jobFlavors: ").append(toIndentedString(jobFlavors)).append("\n");
         sb.append("    driver: ").append(toIndentedString(driver)).append("\n");

@@ -17,14 +17,14 @@ public class ListTrainingJobStagesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
-    private String totalCount;
+    private Integer totalCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "running_records")
 
     private List<StageRecord> runningRecords = null;
 
-    public ListTrainingJobStagesResponse withTotalCount(String totalCount) {
+    public ListTrainingJobStagesResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
@@ -33,11 +33,11 @@ public class ListTrainingJobStagesResponse extends SdkResponse {
      * **参数解释**：总条数。  **取值范围**：不涉及。
      * @return totalCount
      */
-    public String getTotalCount() {
+    public Integer getTotalCount() {
         return totalCount;
     }
 
-    public void setTotalCount(String totalCount) {
+    public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
 

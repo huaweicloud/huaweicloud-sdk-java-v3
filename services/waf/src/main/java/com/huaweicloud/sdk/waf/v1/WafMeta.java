@@ -1130,7 +1130,7 @@ public class WafMeta {
                 BatchUpdateGeoipRulesRequest::setEnterpriseProjectId));
         builder.<BatchUpdateGeoipRulesRequestBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchUpdateGeoipRulesRequestBody.class),
             f -> f.withMarshaller(BatchUpdateGeoipRulesRequest::getBody, BatchUpdateGeoipRulesRequest::setBody));
 

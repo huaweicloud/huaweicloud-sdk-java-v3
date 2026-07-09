@@ -51,7 +51,7 @@ public class AlgorithmResponseJobConfig {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "code_tree")
 
-    private List<AlgorithmResponseJobConfigCodeTree> codeTree = null;
+    private CodeTreeNode codeTree;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parameters_customization")
@@ -234,36 +234,29 @@ public class AlgorithmResponseJobConfig {
         this.engine = engine;
     }
 
-    public AlgorithmResponseJobConfig withCodeTree(List<AlgorithmResponseJobConfigCodeTree> codeTree) {
+    public AlgorithmResponseJobConfig withCodeTree(CodeTreeNode codeTree) {
         this.codeTree = codeTree;
         return this;
     }
 
-    public AlgorithmResponseJobConfig addCodeTreeItem(AlgorithmResponseJobConfigCodeTree codeTreeItem) {
+    public AlgorithmResponseJobConfig withCodeTree(Consumer<CodeTreeNode> codeTreeSetter) {
         if (this.codeTree == null) {
-            this.codeTree = new ArrayList<>();
+            this.codeTree = new CodeTreeNode();
+            codeTreeSetter.accept(this.codeTree);
         }
-        this.codeTree.add(codeTreeItem);
-        return this;
-    }
 
-    public AlgorithmResponseJobConfig withCodeTree(Consumer<List<AlgorithmResponseJobConfigCodeTree>> codeTreeSetter) {
-        if (this.codeTree == null) {
-            this.codeTree = new ArrayList<>();
-        }
-        codeTreeSetter.accept(this.codeTree);
         return this;
     }
 
     /**
-     * 算法的目录结构树。
+     * Get codeTree
      * @return codeTree
      */
-    public List<AlgorithmResponseJobConfigCodeTree> getCodeTree() {
+    public CodeTreeNode getCodeTree() {
         return codeTree;
     }
 
-    public void setCodeTree(List<AlgorithmResponseJobConfigCodeTree> codeTree) {
+    public void setCodeTree(CodeTreeNode codeTree) {
         this.codeTree = codeTree;
     }
 

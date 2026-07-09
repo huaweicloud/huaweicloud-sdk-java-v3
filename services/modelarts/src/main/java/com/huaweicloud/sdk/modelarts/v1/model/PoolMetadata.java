@@ -37,7 +37,7 @@ public class PoolMetadata {
     }
 
     /**
-     * 系统自动生成的pool名称，相当于pool ID。
+     * **参数解释**：资源池的ID。 **取值范围**：不涉及。
      * @return name
      */
     public String getName() {
@@ -54,7 +54,7 @@ public class PoolMetadata {
     }
 
     /**
-     * 时间戳，例如\"2021-11-01T03:49:41Z\"。
+     * **参数解释**：资源池的创建时间。例如\"2025-11-01T03:49:41Z\"。 **取值范围**：不涉及。
      * @return creationTimestamp
      */
     public String getCreationTimestamp() {

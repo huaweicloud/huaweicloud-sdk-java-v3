@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 资源池驱动信息。
+ * **参数解释**：资源池驱动状态信息。
  */
 public class PoolStatusDriver {
 

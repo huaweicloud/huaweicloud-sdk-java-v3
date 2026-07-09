@@ -48,13 +48,18 @@ public class PoolStatus {
 
     private String root;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "clusters")
+
+    private PoolStatusClusters clusters;
+
     public PoolStatus withPhase(String phase) {
         this.phase = phase;
         return this;
     }
 
     /**
-     * 资源池集群状态。可选值如下： - Creating：创建中 - Running：运行中 - Abnormal：资源池不正常 - Deleting：删除中 - Error：资源池错误
+     * **参数解释**：资源池的状态。 **取值范围**：可选值如下： - Creating：资源池在创建中。 - Running：资源池在运行中。 - Abnormal：资源池异常。 - Deleting：资源池在删除中。 - Error：资源池错误。
      * @return phase
      */
     public String getPhase() {
@@ -71,7 +76,7 @@ public class PoolStatus {
     }
 
     /**
-     * 资源池处于当前状态的提示信息。
+     * **参数解释**：资源池当前状态的提示信息。 **取值范围**：不涉及。
      * @return message
      */
     public String getMessage() {
@@ -130,7 +135,7 @@ public class PoolStatus {
     }
 
     /**
-     * 资源池业务状态信息。
+     * **参数解释**：资源池当前支持的业务类型的状态信息。
      * @return scope
      */
     public List<PoolStatusScope> getScope() {
@@ -173,7 +178,7 @@ public class PoolStatus {
     }
 
     /**
-     * 资源池父节点名称，物理池为空。
+     * **参数解释**：资源池所属父资源池的ID。物理池为空。 **取值范围**：不涉及。
      * @return parent
      */
     public String getParent() {
@@ -190,7 +195,7 @@ public class PoolStatus {
     }
 
     /**
-     * 资源池根节点名称，物理池为自己的名称。
+     * **参数解释**：资源池根资源池的ID。 **取值范围**：不涉及。
      * @return root
      */
     public String getRoot() {
@@ -199,6 +204,32 @@ public class PoolStatus {
 
     public void setRoot(String root) {
         this.root = root;
+    }
+
+    public PoolStatus withClusters(PoolStatusClusters clusters) {
+        this.clusters = clusters;
+        return this;
+    }
+
+    public PoolStatus withClusters(Consumer<PoolStatusClusters> clustersSetter) {
+        if (this.clusters == null) {
+            this.clusters = new PoolStatusClusters();
+            clustersSetter.accept(this.clusters);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get clusters
+     * @return clusters
+     */
+    public PoolStatusClusters getClusters() {
+        return clusters;
+    }
+
+    public void setClusters(PoolStatusClusters clusters) {
+        this.clusters = clusters;
     }
 
     @Override
@@ -213,12 +244,12 @@ public class PoolStatus {
         return Objects.equals(this.phase, that.phase) && Objects.equals(this.message, that.message)
             && Objects.equals(this.resources, that.resources) && Objects.equals(this.scope, that.scope)
             && Objects.equals(this.driver, that.driver) && Objects.equals(this.parent, that.parent)
-            && Objects.equals(this.root, that.root);
+            && Objects.equals(this.root, that.root) && Objects.equals(this.clusters, that.clusters);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(phase, message, resources, scope, driver, parent, root);
+        return Objects.hash(phase, message, resources, scope, driver, parent, root, clusters);
     }
 
     @Override
@@ -232,6 +263,7 @@ public class PoolStatus {
         sb.append("    driver: ").append(toIndentedString(driver)).append("\n");
         sb.append("    parent: ").append(toIndentedString(parent)).append("\n");
         sb.append("    root: ").append(toIndentedString(root)).append("\n");
+        sb.append("    clusters: ").append(toIndentedString(clusters)).append("\n");
         sb.append("}");
         return sb.toString();
     }

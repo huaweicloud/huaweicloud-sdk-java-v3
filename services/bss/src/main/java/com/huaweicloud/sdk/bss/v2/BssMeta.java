@@ -123,6 +123,8 @@ import com.huaweicloud.sdk.bss.v2.model.ListRateOnPeriodDetailResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListRenewRateOnPeriodReq;
 import com.huaweicloud.sdk.bss.v2.model.ListRenewRateOnPeriodRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListRenewRateOnPeriodResponse;
+import com.huaweicloud.sdk.bss.v2.model.ListResourceSpecsRequest;
+import com.huaweicloud.sdk.bss.v2.model.ListResourceSpecsResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListResourceTypesRequest;
 import com.huaweicloud.sdk.bss.v2.model.ListResourceTypesResponse;
 import com.huaweicloud.sdk.bss.v2.model.ListResourceUsageRequest;
@@ -182,6 +184,7 @@ import com.huaweicloud.sdk.bss.v2.model.RenewResourceConfigReq;
 import com.huaweicloud.sdk.bss.v2.model.RenewalResourcesReq;
 import com.huaweicloud.sdk.bss.v2.model.RenewalResourcesRequest;
 import com.huaweicloud.sdk.bss.v2.model.RenewalResourcesResponse;
+import com.huaweicloud.sdk.bss.v2.model.ResourceSpecsQueryReq;
 import com.huaweicloud.sdk.bss.v2.model.RetrieveEnterpriseMultiAccountCouponReq;
 import com.huaweicloud.sdk.bss.v2.model.RetrieveEnterpriseMultiAccountReq;
 import com.huaweicloud.sdk.bss.v2.model.SendSmVerificationCodeReq;
@@ -200,6 +203,10 @@ import com.huaweicloud.sdk.bss.v2.model.ShowCustomerOrderDetailsRequest;
 import com.huaweicloud.sdk.bss.v2.model.ShowCustomerOrderDetailsResponse;
 import com.huaweicloud.sdk.bss.v2.model.ShowMultiAccountTransferAmountRequest;
 import com.huaweicloud.sdk.bss.v2.model.ShowMultiAccountTransferAmountResponse;
+import com.huaweicloud.sdk.bss.v2.model.ShowRealNameAuthQrCodeRequest;
+import com.huaweicloud.sdk.bss.v2.model.ShowRealNameAuthQrCodeResponse;
+import com.huaweicloud.sdk.bss.v2.model.ShowRealNameAuthStatusRequest;
+import com.huaweicloud.sdk.bss.v2.model.ShowRealNameAuthStatusResponse;
 import com.huaweicloud.sdk.bss.v2.model.ShowRealnameAuthenticationReviewResultRequest;
 import com.huaweicloud.sdk.bss.v2.model.ShowRealnameAuthenticationReviewResultResponse;
 import com.huaweicloud.sdk.bss.v2.model.ShowRefundOrderDetailsRequest;
@@ -2497,6 +2504,34 @@ public class BssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListResourceSpecsRequest, ListResourceSpecsResponse> listResourceSpecs =
+        genForListResourceSpecs();
+
+    private static HttpRequestDef<ListResourceSpecsRequest, ListResourceSpecsResponse> genForListResourceSpecs() {
+        // basic
+        HttpRequestDef.Builder<ListResourceSpecsRequest, ListResourceSpecsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListResourceSpecsRequest.class, ListResourceSpecsResponse.class)
+                .withName("ListResourceSpecs")
+                .withUri("/v2/products/resource-specs-query")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceSpecsRequest::getXLanguage, ListResourceSpecsRequest::setXLanguage));
+        builder.<ResourceSpecsQueryReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResourceSpecsQueryReq.class),
+            f -> f.withMarshaller(ListResourceSpecsRequest::getBody, ListResourceSpecsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListResourceTypesRequest, ListResourceTypesResponse> listResourceTypes =
         genForListResourceTypes();
 
@@ -3554,6 +3589,42 @@ public class BssMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowMultiAccountTransferAmountRequest::getLimit,
                 ShowMultiAccountTransferAmountRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRealNameAuthQrCodeRequest, ShowRealNameAuthQrCodeResponse> showRealNameAuthQrCode =
+        genForShowRealNameAuthQrCode();
+
+    private static HttpRequestDef<ShowRealNameAuthQrCodeRequest, ShowRealNameAuthQrCodeResponse> genForShowRealNameAuthQrCode() {
+        // basic
+        HttpRequestDef.Builder<ShowRealNameAuthQrCodeRequest, ShowRealNameAuthQrCodeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowRealNameAuthQrCodeRequest.class, ShowRealNameAuthQrCodeResponse.class)
+            .withName("ShowRealNameAuthQrCode")
+            .withUri("/v2/customers/real-name-auth-qrcode")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRealNameAuthStatusRequest, ShowRealNameAuthStatusResponse> showRealNameAuthStatus =
+        genForShowRealNameAuthStatus();
+
+    private static HttpRequestDef<ShowRealNameAuthStatusRequest, ShowRealNameAuthStatusResponse> genForShowRealNameAuthStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowRealNameAuthStatusRequest, ShowRealNameAuthStatusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowRealNameAuthStatusRequest.class, ShowRealNameAuthStatusResponse.class)
+            .withName("ShowRealNameAuthStatus")
+            .withUri("/v2/customers/real-name-auth-status")
+            .withContentType("application/json");
+
+        // requests
 
         // response
 
