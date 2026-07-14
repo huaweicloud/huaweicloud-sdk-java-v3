@@ -132,7 +132,7 @@ public class ShowClusterEncryptInfoResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 加密方式。 **取值范围**： 不涉及。
+     * **参数解释**： 加密方式。 **取值范围**： generalCipher：scc国际加密算法 SMCompatible：scc国密算法 SMCompatibleL4：加密卡加密
      * @return cryptAlgorithm
      */
     public String getCryptAlgorithm() {

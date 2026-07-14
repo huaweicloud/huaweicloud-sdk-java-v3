@@ -21,7 +21,7 @@ public class GetDevServerJobServiceRequest {
     }
 
     /**
-     * **参数解释**：部署服务的id。  **约束限制**：字母、数字和中划线。  **取值范围**：不涉及。  **默认取值**：不涉及。
+     * **参数解释**：部署服务的id。 **约束限制**：字母、数字和中划线。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return id
      */
     public String getId() {

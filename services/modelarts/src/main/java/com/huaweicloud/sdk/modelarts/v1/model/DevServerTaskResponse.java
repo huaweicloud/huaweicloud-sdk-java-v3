@@ -59,7 +59,7 @@ public class DevServerTaskResponse {
     }
 
     /**
-     * **参数解释**：task的ID。  **取值范围**：不涉及。
+     * **参数解释**：task的ID。 **取值范围**：不涉及。
      * @return id
      */
     public String getId() {
@@ -76,7 +76,7 @@ public class DevServerTaskResponse {
     }
 
     /**
-     * **参数解释**：devserver机器ID。  **取值范围**：不涉及。
+     * **参数解释**：devserver机器ID。 **取值范围**：不涉及。
      * @return serverId
      */
     public String getServerId() {
@@ -93,7 +93,7 @@ public class DevServerTaskResponse {
     }
 
     /**
-     * **参数解释**：devserver机器名称。  **取值范围**：不涉及。
+     * **参数解释**：devserver机器名称。 **取值范围**：不涉及。
      * @return serverName
      */
     public String getServerName() {
@@ -110,7 +110,7 @@ public class DevServerTaskResponse {
     }
 
     /**
-     * **参数解释**：task状态。  **取值范围**：- PROCESSING  -SUCCESS  - FAILED  - SKIPPED
+     * **参数解释**：task状态。 **取值范围**：- PROCESSING  -SUCCESS  - FAILED  - SKIPPED
      * @return status
      */
     public String getStatus() {
@@ -160,7 +160,7 @@ public class DevServerTaskResponse {
     }
 
     /**
-     * **参数解释**：输出信息。  **取值范围**：不涉及。
+     * **参数解释**：输出信息。 **取值范围**：不涉及。
      * @return message
      */
     public String getMessage() {
@@ -177,7 +177,7 @@ public class DevServerTaskResponse {
     }
 
     /**
-     * **参数解释**：创建时间。  **取值范围**：不涉及。
+     * **参数解释**：创建时间。 **取值范围**：不涉及。
      * @return createAt
      */
     public String getCreateAt() {
@@ -194,7 +194,7 @@ public class DevServerTaskResponse {
     }
 
     /**
-     * **参数解释**：更新时间。  **取值范围**：不涉及。
+     * **参数解释**：更新时间。 **取值范围**：不涉及。
      * @return updateAt
      */
     public String getUpdateAt() {

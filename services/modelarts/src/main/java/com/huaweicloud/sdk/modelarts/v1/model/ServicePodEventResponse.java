@@ -1,0 +1,214 @@
+package com.huaweicloud.sdk.modelarts.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.time.OffsetDateTime;
+import java.util.Objects;
+
+/**
+ * ServicePodEventResponse
+ */
+public class ServicePodEventResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "count")
+
+    private Integer count;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "first_timestamp")
+
+    private OffsetDateTime firstTimestamp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_timestamp")
+
+    private OffsetDateTime lastTimestamp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "message")
+
+    private String message;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reason")
+
+    private String reason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reporting_component")
+
+    private String reportingComponent;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
+    public ServicePodEventResponse withCount(Integer count) {
+        this.count = count;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 事件发生次数。 **取值范围：** 不涉及。
+     * @return count
+     */
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    public ServicePodEventResponse withFirstTimestamp(OffsetDateTime firstTimestamp) {
+        this.firstTimestamp = firstTimestamp;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 首次发生时间。 **取值范围：** 不涉及。
+     * @return firstTimestamp
+     */
+    public OffsetDateTime getFirstTimestamp() {
+        return firstTimestamp;
+    }
+
+    public void setFirstTimestamp(OffsetDateTime firstTimestamp) {
+        this.firstTimestamp = firstTimestamp;
+    }
+
+    public ServicePodEventResponse withLastTimestamp(OffsetDateTime lastTimestamp) {
+        this.lastTimestamp = lastTimestamp;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 最近发生时间。 **取值范围：** 不涉及。
+     * @return lastTimestamp
+     */
+    public OffsetDateTime getLastTimestamp() {
+        return lastTimestamp;
+    }
+
+    public void setLastTimestamp(OffsetDateTime lastTimestamp) {
+        this.lastTimestamp = lastTimestamp;
+    }
+
+    public ServicePodEventResponse withMessage(String message) {
+        this.message = message;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 事件信息。 **取值范围：** 不涉及。
+     * @return message
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public ServicePodEventResponse withReason(String reason) {
+        this.reason = reason;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 事件名称。 **取值范围：** 不涉及。
+     * @return reason
+     */
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    public ServicePodEventResponse withReportingComponent(String reportingComponent) {
+        this.reportingComponent = reportingComponent;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 上报该事件的k8s组件名。 **取值范围：** 不涉及。
+     * @return reportingComponent
+     */
+    public String getReportingComponent() {
+        return reportingComponent;
+    }
+
+    public void setReportingComponent(String reportingComponent) {
+        this.reportingComponent = reportingComponent;
+    }
+
+    public ServicePodEventResponse withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 事件类型。 **取值范围：** Normal/Warning。
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        ServicePodEventResponse that = (ServicePodEventResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.firstTimestamp, that.firstTimestamp)
+            && Objects.equals(this.lastTimestamp, that.lastTimestamp) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.reason, that.reason)
+            && Objects.equals(this.reportingComponent, that.reportingComponent) && Objects.equals(this.type, that.type);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(count, firstTimestamp, lastTimestamp, message, reason, reportingComponent, type);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ServicePodEventResponse {\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    firstTimestamp: ").append(toIndentedString(firstTimestamp)).append("\n");
+        sb.append("    lastTimestamp: ").append(toIndentedString(lastTimestamp)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+        sb.append("    reportingComponent: ").append(toIndentedString(reportingComponent)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

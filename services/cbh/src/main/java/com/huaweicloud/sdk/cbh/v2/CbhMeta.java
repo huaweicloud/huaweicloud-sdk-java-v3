@@ -284,6 +284,16 @@ public class CbhMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListInstancesRequest::getInstanceId, ListInstancesRequest::setInstanceId));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getLimit, ListInstancesRequest::setLimit));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getOffset, ListInstancesRequest::setOffset));
 
         // response
 

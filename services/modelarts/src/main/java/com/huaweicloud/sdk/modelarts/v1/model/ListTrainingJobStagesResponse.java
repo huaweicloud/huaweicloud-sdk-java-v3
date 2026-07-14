@@ -30,7 +30,7 @@ public class ListTrainingJobStagesResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：总条数。  **取值范围**：不涉及。
+     * **参数解释**：总条数。 **取值范围**：不涉及。
      * @return totalCount
      */
     public Integer getTotalCount() {

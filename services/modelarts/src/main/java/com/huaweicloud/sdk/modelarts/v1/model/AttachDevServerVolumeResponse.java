@@ -37,7 +37,7 @@ public class AttachDevServerVolumeResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：操作ID。  **取值范围**：^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$。
+     * **参数解释**：操作ID。 **取值范围**：^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$。
      * @return operationId
      */
     public String getOperationId() {
@@ -54,7 +54,7 @@ public class AttachDevServerVolumeResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：操作状态。  **取值范围**： - pending 等待处理 - running 运行中 - success 成功 - failed 失败
+     * **参数解释**：操作状态。 **取值范围**： - pending 等待处理 - running 运行中 - success 成功 - failed 失败
      * @return operationStatus
      */
     public String getOperationStatus() {

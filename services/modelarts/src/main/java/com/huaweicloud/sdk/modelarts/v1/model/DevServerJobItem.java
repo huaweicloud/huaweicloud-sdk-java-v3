@@ -29,7 +29,7 @@ public class DevServerJobItem {
     }
 
     /**
-     * **参数解释**：细粒度任务类型。  **取值范围**：- COMMON   - DEVICE_LOG_COLLECT 等
+     * **参数解释**：细粒度任务类型。 **取值范围**：- COMMON   - DEVICE_LOG_COLLECT 等
      * @return type
      */
     public String getType() {

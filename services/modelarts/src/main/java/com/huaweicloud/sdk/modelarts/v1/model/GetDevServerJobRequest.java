@@ -21,7 +21,7 @@ public class GetDevServerJobRequest {
     }
 
     /**
-     * **参数解释**：Lite Server job id。  **约束限制**：必填。  **取值范围**：1 - 64字符。  **默认取值**：不涉及。
+     * **参数解释**：Lite Server job id。 **约束限制**：必填。 **取值范围**：1 - 64字符。 **默认取值**：不涉及。
      * @return id
      */
     public String getId() {

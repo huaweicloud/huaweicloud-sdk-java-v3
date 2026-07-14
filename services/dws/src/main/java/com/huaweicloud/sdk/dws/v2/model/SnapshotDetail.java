@@ -526,7 +526,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * **参数解释**： 备份介质。 **取值范围**： NBU、OBS。
+     * **参数解释**： 备份介质。 **取值范围**： NBU、OBS、obs。
      * @return backupDevice
      */
     public String getBackupDevice() {

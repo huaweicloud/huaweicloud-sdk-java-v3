@@ -124,7 +124,7 @@ public class ListTablesStatisticRequest {
     }
 
     /**
-     * **参数解释**： 排序字段，固定取值。 **约束限制**： 不涉及。 **取值范围**： table_size：表大小。 rate：表倾斜率或脏页率。 **默认取值**： 不涉及。
+     * **参数解释**： 排序字段，固定取值。 **约束限制**： 不涉及。 **取值范围**： 值为null或空字符串时表示按默认排序处理。 table_size：表大小。 rate：表倾斜率或脏页率。 **默认取值**： 不涉及。
      * @return orderBy
      */
     public String getOrderBy() {
@@ -158,7 +158,7 @@ public class ListTablesStatisticRequest {
     }
 
     /**
-     * **参数解释**： 查询条件，固定取值。 **约束限制**： 不涉及。 **取值范围**： db_name：数据库名称。 schema_name：schema名称。 table_name：表名。 table_owner：所属用户。 **默认取值**： 不涉及。
+     * **参数解释**： 查询条件，固定取值。 **约束限制**： 不涉及。 **取值范围**： 值为空字符串或null时表示不过滤。 db_name：数据库名称。 schema_name：schema名称。 table_name：表名。 table_owner：所属用户。 **默认取值**： 不涉及。
      * @return filter
      */
     public String getFilter() {

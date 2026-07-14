@@ -992,7 +992,7 @@ public class DwsAsyncClient {
     /**
      * 创建告警订阅
      *
-     * 创建告警订阅。
+     * 创建订阅告警。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1006,7 +1006,7 @@ public class DwsAsyncClient {
     /**
      * 创建告警订阅
      *
-     * 创建告警订阅。
+     * 创建订阅告警。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3593,9 +3593,9 @@ public class DwsAsyncClient {
     }
 
     /**
-     * 查询集群使用指标列表
+     * 查询集群使用的指标列表
      *
-     * 查询集群使用指标列表。
+     * 查询集群使用的指标列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3607,9 +3607,9 @@ public class DwsAsyncClient {
     }
 
     /**
-     * 查询集群使用指标列表
+     * 查询集群使用的指标列表
      *
-     * 查询集群使用指标列表。
+     * 查询集群使用的指标列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

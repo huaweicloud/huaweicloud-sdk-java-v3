@@ -17,14 +17,14 @@ public class ShowWorkflowScheduleListResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schedules")
 
-    private List<ListWorkflowScheduleResp> schedules = null;
+    private List<WorkflowScheduleResp> schedules = null;
 
-    public ShowWorkflowScheduleListResponse withSchedules(List<ListWorkflowScheduleResp> schedules) {
+    public ShowWorkflowScheduleListResponse withSchedules(List<WorkflowScheduleResp> schedules) {
         this.schedules = schedules;
         return this;
     }
 
-    public ShowWorkflowScheduleListResponse addSchedulesItem(ListWorkflowScheduleResp schedulesItem) {
+    public ShowWorkflowScheduleListResponse addSchedulesItem(WorkflowScheduleResp schedulesItem) {
         if (this.schedules == null) {
             this.schedules = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class ShowWorkflowScheduleListResponse extends SdkResponse {
         return this;
     }
 
-    public ShowWorkflowScheduleListResponse withSchedules(Consumer<List<ListWorkflowScheduleResp>> schedulesSetter) {
+    public ShowWorkflowScheduleListResponse withSchedules(Consumer<List<WorkflowScheduleResp>> schedulesSetter) {
         if (this.schedules == null) {
             this.schedules = new ArrayList<>();
         }
@@ -41,14 +41,14 @@ public class ShowWorkflowScheduleListResponse extends SdkResponse {
     }
 
     /**
-     * 工作流定时调度列表
+     * **参数解释**：工作流定时调度列表
      * @return schedules
      */
-    public List<ListWorkflowScheduleResp> getSchedules() {
+    public List<WorkflowScheduleResp> getSchedules() {
         return schedules;
     }
 
-    public void setSchedules(List<ListWorkflowScheduleResp> schedules) {
+    public void setSchedules(List<WorkflowScheduleResp> schedules) {
         this.schedules = schedules;
     }
 

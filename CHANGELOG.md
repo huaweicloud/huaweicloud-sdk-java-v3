@@ -1,3 +1,225 @@
+# 3.1.206 2026-07-14
+
+### HuaweiCloud SDK CBH
+
+- _API Version_
+  - V1
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - Deprecate the API `ListCbhInstance`
+
+### HuaweiCloud SDK CBH
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListInstances**
+    - changes of request param
+      - `+ limit`
+      - `+ offset`
+
+### HuaweiCloud SDK DWS
+
+- _API Version_
+  - V2
+- _Features_
+  - None
+- _Bug Fix_
+  - None
+- _Change_
+  - **ListSnapshots**
+    - changes of response param
+      - `- snapshots.backup_key: enum value [20160823_035923]`
+  - **ListLogicalClusters**
+    - changes of response param
+      - `+ logical_clusters.node_list`
+
+### HuaweiCloud SDK ModelArts
+
+- _API Version_
+  - V1
+- _Features_
+  - Support the following APIs:
+    - `GetHyperinstanceOperation`
+    - `UpdateImageGroup`
+    - `DeleteImageGroup`
+    - `StopInferService`
+    - `StartInferService`
+    - `ListInferServices`
+    - `CreateInferService`
+    - `ShowInferService`
+    - `UpdateInferService`
+    - `CreateInferServiceTag`
+    - `DeleteInferServiceTag`
+    - `ShowInferServiceTags`
+    - `ListInferServiceTags`
+    - `ListInferServicesByTags`
+    - `CountInferServicesByTags`
+    - `ListInferServiceEvents`
+    - `ShowInferServiceCluster`
+    - `BindInferApiKey`
+    - `DeleteInferApiKey`
+    - `UnbindInferApiKey`
+    - `ListInferApiKeys`
+    - `CreateInferApiKey`
+    - `BatchDeleteInferServices`
+    - `ListInferClusterFlavors`
+    - `CreateInferIntranetConnection`
+    - `UpdateInferIntranetConnection`
+    - `ListInferIntranetConnectionApplications`
+    - `ListInferIntranetConnectionReviews`
+    - `BatchDeleteInferIntranetConnections`
+    - `BatchBindInferApiKeys`
+    - `BatchUnbindInferApiKeys`
+    - `ModifyInferIntranetConnections`
+    - `StartInferDeployment`
+    - `StopInferDeployment`
+    - `SwitchInferDeploymentVersion`
+    - `CancelInferDeployment`
+    - `ListInferDeployments`
+    - `CreateInferDeployment`
+    - `ShowInferDeployment`
+    - `UpdateInferDeployment`
+    - `DeleteInferDeployment`
+    - `ListInferDeploymentVersions`
+    - `ShowInferDeploymentVersion`
+    - `DeleteInferDeploymentVersion`
+    - `ListInferDeploymentInstances`
+    - `ListInferDeploymentPods`
+    - `DeleteInferDeploymentInstance`
+    - `DeleteInferDeploymentPod`
+    - `ListInferDeploymentPodEvents`
+    - `ShowInferDeploymentHpa`
+    - `UpdateInferDeploymentHpa`
+    - `CreateInferDeploymentHpa`
+    - `DeleteInferDeploymentHpa`
+    - `ListInferDeploymentHpaEvents`
+    - `UpdateInferDeploymentScale`
+    - `ShowInferHra`
+    - `UpdateInferHra`
+    - `CreateInferHra`
+- _Bug Fix_
+  - None
+- _Change_
+  - **ShowImage**
+    - changes of response param
+      - `+ support_res_categories`
+      - `+ tags`
+  - **DeleteImage**
+    - changes of response param
+      - `+ support_res_categories`
+      - `+ tags`
+  - **SyncImage**
+    - changes of response param
+      - `+ support_res_categories`
+      - `+ tags`
+  - **CreateImage**
+    - changes of response param
+      - `+ support_res_categories`
+  - **RegisterImage**
+    - changes of request param
+      - `+ tags`
+    - changes of response param
+      - `+ support_res_categories`
+      - `+ tags`
+  - **ListImage**
+    - changes of response param
+      - `- status_message`
+      - `- resource_categories`
+      - `- visibility`
+      - `- origin`
+      - `- show_name`
+      - `- description`
+      - `- show_tag`
+      - `- type`
+      - `- workspace_id`
+      - `- swr_instance_id`
+      - `- service_type`
+      - `- swr_path`
+      - `- size`
+      - `- name`
+      - `- namespace`
+      - `- update_at`
+      - `- flavor_type`
+      - `- arch`
+      - `- dev_services`
+      - `- id`
+      - `- tag`
+      - `- create_at`
+      - `- status`
+      - `+ data.tags`
+  - **ListImageGroup**
+    - changes of response param
+      - `+ is_swr_enterprise`
+      - `+ swr_instance_id`
+      - `+ swr_instance_name`
+      - `+ read_me`
+      - `+ name`
+      - `+ namespace`
+      - `+ update_at`
+      - `+ description`
+      - `+ id`
+      - `+ create_at`
+      - `+ version_count`
+      - `+ icon_name`
+      - `+ data.id`
+  - **ShowWorkflowScheduleList**
+    - changes of response param
+      - `+ schedules`
+      - `+ schedules.type`
+      - `+ schedules.content`
+      - `+ schedules.action`
+      - `+ schedules.workflow_id`
+      - `+ schedules.user_id`
+      - `+ schedules.enable`
+      - `+ schedules.uuid`
+      - `+ schedules.policies`
+      - `+ schedules.created_at`
+      - `- schedules.schedules`
+      - `* schedules: list<ListWorkflowScheduleResp> -> list<WorkflowScheduleResp>`
+  - **CreateDevServer**
+    - changes of request param
+      - `+ network.allowed_address_pairs`
+  - **StartNotebook**
+    - changes of response param
+      - `+ support_res_categories`
+      - `+ image.support_res_categories`
+  - **StopNotebook**
+    - changes of response param
+      - `+ support_res_categories`
+      - `+ image.support_res_categories`
+  - **ListNotebooks**
+    - changes of response param
+      - `+ support_res_categories`
+      - `+ data.image.support_res_categories`
+  - **CreateNotebook**
+    - changes of response param
+      - `+ support_res_categories`
+      - `+ image.support_res_categories`
+  - **ListAllNotebooks**
+    - changes of response param
+      - `+ support_res_categories`
+      - `+ data.image.support_res_categories`
+  - **ShowNotebook**
+    - changes of response param
+      - `+ support_res_categories`
+      - `+ image.support_res_categories`
+  - **DeleteNotebook**
+    - changes of response param
+      - `+ support_res_categories`
+      - `+ image.support_res_categories`
+  - **UpdateNotebook**
+    - changes of response param
+      - `+ support_res_categories`
+      - `+ image.support_res_categories`
+
 # 3.1.205 2026-07-09
 
 ### HuaweiCloud SDK BSS

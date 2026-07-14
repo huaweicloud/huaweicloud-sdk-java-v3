@@ -78,6 +78,11 @@ public class LogicalClusterInfo {
 
     private String clusterType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_list")
+
+    private List<NodeVo> nodeList = null;
+
     public LogicalClusterInfo withLogicalClusterId(String logicalClusterId) {
         this.logicalClusterId = logicalClusterId;
         return this;
@@ -324,6 +329,39 @@ public class LogicalClusterInfo {
         this.clusterType = clusterType;
     }
 
+    public LogicalClusterInfo withNodeList(List<NodeVo> nodeList) {
+        this.nodeList = nodeList;
+        return this;
+    }
+
+    public LogicalClusterInfo addNodeListItem(NodeVo nodeListItem) {
+        if (this.nodeList == null) {
+            this.nodeList = new ArrayList<>();
+        }
+        this.nodeList.add(nodeListItem);
+        return this;
+    }
+
+    public LogicalClusterInfo withNodeList(Consumer<List<NodeVo>> nodeListSetter) {
+        if (this.nodeList == null) {
+            this.nodeList = new ArrayList<>();
+        }
+        nodeListSetter.accept(this.nodeList);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 逻辑集群包含的节点信息列表。 **取值范围**： 不涉及。
+     * @return nodeList
+     */
+    public List<NodeVo> getNodeList() {
+        return nodeList;
+    }
+
+    public void setNodeList(List<NodeVo> nodeList) {
+        this.nodeList = nodeList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -342,7 +380,7 @@ public class LogicalClusterInfo {
             && Objects.equals(this.deleteEnable, that.deleteEnable)
             && Objects.equals(this.addToElastic, that.addToElastic) && Objects.equals(this.mode, that.mode)
             && Objects.equals(this.waitingForKilling, that.waitingForKilling)
-            && Objects.equals(this.clusterType, that.clusterType);
+            && Objects.equals(this.clusterType, that.clusterType) && Objects.equals(this.nodeList, that.nodeList);
     }
 
     @Override
@@ -359,7 +397,8 @@ public class LogicalClusterInfo {
             addToElastic,
             mode,
             waitingForKilling,
-            clusterType);
+            clusterType,
+            nodeList);
     }
 
     @Override
@@ -379,6 +418,7 @@ public class LogicalClusterInfo {
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    waitingForKilling: ").append(toIndentedString(waitingForKilling)).append("\n");
         sb.append("    clusterType: ").append(toIndentedString(clusterType)).append("\n");
+        sb.append("    nodeList: ").append(toIndentedString(nodeList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

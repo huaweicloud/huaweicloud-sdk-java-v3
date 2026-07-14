@@ -80,7 +80,7 @@ public class GetDevServerJobResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：创建时间。  **取值范围**：不涉及。
+     * **参数解释**：创建时间。 **取值范围**：不涉及。
      * @return createAt
      */
     public String getCreateAt() {
@@ -97,7 +97,7 @@ public class GetDevServerJobResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：更新时间。  **取值范围**：不涉及。
+     * **参数解释**：更新时间。 **取值范围**：不涉及。
      * @return updateAt
      */
     public String getUpdateAt() {
@@ -114,7 +114,7 @@ public class GetDevServerJobResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：任务ID。  **取值范围**：不涉及。
+     * **参数解释**：任务ID。 **取值范围**：不涉及。
      * @return id
      */
     public String getId() {
@@ -131,7 +131,7 @@ public class GetDevServerJobResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：任务名称。  **取值范围**：不涉及。
+     * **参数解释**：任务名称。 **取值范围**：不涉及。
      * @return name
      */
     public String getName() {
@@ -148,7 +148,7 @@ public class GetDevServerJobResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：任务模板类型。  **取值范围**：- COMMON  -SERVICE_DEPLOY 等。
+     * **参数解释**：任务模板类型。 **取值范围**：- COMMON  -SERVICE_DEPLOY 等。
      * @return type
      */
     public String getType() {
@@ -165,7 +165,7 @@ public class GetDevServerJobResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：状态。  **取值范围**：- ACTIVE。
+     * **参数解释**：状态。 **取值范围**：- ACTIVE。
      * @return status
      */
     public String getStatus() {
@@ -248,7 +248,7 @@ public class GetDevServerJobResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：任务模板ID。  **取值范围**：不涉及。
+     * **参数解释**：任务模板ID。 **取值范围**：不涉及。
      * @return templateId
      */
     public String getTemplateId() {
@@ -265,7 +265,7 @@ public class GetDevServerJobResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：下发任务的用户信息。  **取值范围**：不涉及。
+     * **参数解释**：下发任务的用户信息。 **取值范围**：不涉及。
      * @return userName
      */
     public String getUserName() {
@@ -282,7 +282,7 @@ public class GetDevServerJobResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：task失败的节点数量。  **取值范围**：不涉及。
+     * **参数解释**：task失败的节点数量。 **取值范围**：不涉及。
      * @return abnormalCount
      */
     public Integer getAbnormalCount() {
@@ -299,7 +299,7 @@ public class GetDevServerJobResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：描述。  **取值范围**：不涉及。
+     * **参数解释**：描述。 **取值范围**：不涉及。
      * @return description
      */
     public String getDescription() {

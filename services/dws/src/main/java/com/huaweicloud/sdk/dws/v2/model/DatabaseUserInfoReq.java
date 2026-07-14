@@ -229,7 +229,7 @@ public class DatabaseUserInfoReq {
     }
 
     /**
-     * **参数解释**： 角色生效时间。格式：yyyy-MM-ddTHH:mm:ssZ。 **取值范围**： 不涉及。
+     * **参数解释**： 角色生效时间。格式：yyyy-MM-ddTHH:mm:ss。 **取值范围**： 不涉及。
      * @return validBegin
      */
     public String getValidBegin() {
@@ -246,7 +246,7 @@ public class DatabaseUserInfoReq {
     }
 
     /**
-     * **参数解释**： 角色过期时间。格式：yyyy-MM-ddTHH:mm:ssZ。 **取值范围**： 不涉及。
+     * **参数解释**： 角色过期时间。格式：yyyy-MM-ddTHH:mm:ss。 **取值范围**： 不涉及。
      * @return validUntil
      */
     public String getValidUntil() {

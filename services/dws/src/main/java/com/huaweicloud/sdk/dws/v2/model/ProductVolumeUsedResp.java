@@ -36,7 +36,7 @@ public class ProductVolumeUsedResp {
     }
 
     /**
-     * **参数解释**： 节点使用存储类型。 **取值范围**： HIGH：SAS盘； ULTRAHIGH：SSD云盘； COMMON：SATA盘； LOCAL_DISK：本地盘；
+     * **参数解释**： 节点使用存储类型。 **取值范围**： 不同接口中此字段返回格式可能有如下几种类型。 SAS、SSD、SATA、HIGH、ULTRAHIGH、COMMON、LOCAL_DISK
      * @return volumeType
      */
     public String getVolumeType() {

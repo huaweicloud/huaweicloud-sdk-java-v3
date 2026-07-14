@@ -119,7 +119,7 @@ public class ListMonitorIndicatorDataRequest {
     }
 
     /**
-     * **参数解释**： 指标名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 指标名称。查询性能监控指标接口返回值中的indicator_name。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return indicatorName
      */
     public String getIndicatorName() {
@@ -136,7 +136,7 @@ public class ListMonitorIndicatorDataRequest {
     }
 
     /**
-     * **参数解释**： 第一层级。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 第一层级。根据indicator_name传入不同参数，详见请求示例。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return dim0
      */
     public String getDim0() {
@@ -153,7 +153,7 @@ public class ListMonitorIndicatorDataRequest {
     }
 
     /**
-     * **参数解释**： 第二层级。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
+     * **参数解释**： 第二层级。根据indicator_name传入不同参数，详见请求示例。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return dim1
      */
     public String getDim1() {

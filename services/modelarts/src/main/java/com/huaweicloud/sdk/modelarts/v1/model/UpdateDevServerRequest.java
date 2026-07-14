@@ -27,7 +27,7 @@ public class UpdateDevServerRequest {
     }
 
     /**
-     * **参数解释**：DevServer ID。  **约束限制**：必填。  **取值范围**：1 - 64字符。  **默认取值**：不涉及。
+     * **参数解释**：DevServer ID。 **约束限制**：必填。 **取值范围**：1 - 64字符。 **默认取值**：不涉及。
      * @return id
      */
     public String getId() {

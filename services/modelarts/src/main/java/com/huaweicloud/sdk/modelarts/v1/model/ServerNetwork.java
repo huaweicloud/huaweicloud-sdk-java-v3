@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.modelarts.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -40,6 +42,11 @@ public class ServerNetwork {
     @JsonProperty(value = "hyper_cluster")
 
     private ServerNetworkHyperCluster hyperCluster;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allowed_address_pairs")
+
+    private List<AllowedAddressPairs> allowedAddressPairs = null;
 
     public ServerNetwork withIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
@@ -152,6 +159,39 @@ public class ServerNetwork {
         this.hyperCluster = hyperCluster;
     }
 
+    public ServerNetwork withAllowedAddressPairs(List<AllowedAddressPairs> allowedAddressPairs) {
+        this.allowedAddressPairs = allowedAddressPairs;
+        return this;
+    }
+
+    public ServerNetwork addAllowedAddressPairsItem(AllowedAddressPairs allowedAddressPairsItem) {
+        if (this.allowedAddressPairs == null) {
+            this.allowedAddressPairs = new ArrayList<>();
+        }
+        this.allowedAddressPairs.add(allowedAddressPairsItem);
+        return this;
+    }
+
+    public ServerNetwork withAllowedAddressPairs(Consumer<List<AllowedAddressPairs>> allowedAddressPairsSetter) {
+        if (this.allowedAddressPairs == null) {
+            this.allowedAddressPairs = new ArrayList<>();
+        }
+        allowedAddressPairsSetter.accept(this.allowedAddressPairs);
+        return this;
+    }
+
+    /**
+     * **参数解释：** IP/Mac对列表。 **约束限制：** - IP地址不允许为 “0.0.0.0/0”。 - 如果allowed_address_pairs配置地址池较大的CIDR（掩码小于24位），建议为该port配置一个单独的安全组。 - 如果allowed_address_pairs为“1.1.1.1/0”，表示关闭源目的地址检查开关。 - 如果是虚拟IP绑定云服务器，       则mac_address可为空或者填写被绑定云服务器网卡的Mac地址。       被绑定的云服务器网卡allowed_address_pairs的IP地址填“1.1.1.1/0”。 **取值范围：** 不涉及 **默认取值：** 不涉及\"
+     * @return allowedAddressPairs
+     */
+    public List<AllowedAddressPairs> getAllowedAddressPairs() {
+        return allowedAddressPairs;
+    }
+
+    public void setAllowedAddressPairs(List<AllowedAddressPairs> allowedAddressPairs) {
+        this.allowedAddressPairs = allowedAddressPairs;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -164,12 +204,13 @@ public class ServerNetwork {
         return Objects.equals(this.ipv6Enable, that.ipv6Enable) && Objects.equals(this.roceId, that.roceId)
             && Objects.equals(this.securityGroupId, that.securityGroupId)
             && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.vpcId, that.vpcId)
-            && Objects.equals(this.hyperCluster, that.hyperCluster);
+            && Objects.equals(this.hyperCluster, that.hyperCluster)
+            && Objects.equals(this.allowedAddressPairs, that.allowedAddressPairs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ipv6Enable, roceId, securityGroupId, subnetId, vpcId, hyperCluster);
+        return Objects.hash(ipv6Enable, roceId, securityGroupId, subnetId, vpcId, hyperCluster, allowedAddressPairs);
     }
 
     @Override
@@ -182,6 +223,7 @@ public class ServerNetwork {
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    hyperCluster: ").append(toIndentedString(hyperCluster)).append("\n");
+        sb.append("    allowedAddressPairs: ").append(toIndentedString(allowedAddressPairs)).append("\n");
         sb.append("}");
         return sb.toString();
     }

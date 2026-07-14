@@ -45,7 +45,7 @@ public class ListDevServerJobsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：当前页数。  **取值范围**：不涉及。
+     * **参数解释**：当前页数。 **取值范围**：不涉及。
      * @return current
      */
     public Integer getCurrent() {
@@ -95,7 +95,7 @@ public class ListDevServerJobsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：总页数。  **取值范围**：不涉及。
+     * **参数解释**：总页数。 **取值范围**：不涉及。
      * @return pages
      */
     public Integer getPages() {
@@ -112,7 +112,7 @@ public class ListDevServerJobsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：每一页的数量。  **取值范围**：不涉及。
+     * **参数解释**：每一页的数量。 **取值范围**：不涉及。
      * @return size
      */
     public Integer getSize() {
@@ -129,7 +129,7 @@ public class ListDevServerJobsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：总的记录数量。  **取值范围**：不涉及。
+     * **参数解释**：总的记录数量。 **取值范围**：不涉及。
      * @return total
      */
     public Long getTotal() {

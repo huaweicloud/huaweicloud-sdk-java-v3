@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * WorkflowScheduleResp
+ * 工作流调度信息。
  */
 public class WorkflowScheduleResp {
 
@@ -64,7 +64,7 @@ public class WorkflowScheduleResp {
     }
 
     /**
-     * 类型，仅支持time（时间）。
+     * **参数解释**：类型，仅支持time（时间）。 **取值范围**：不涉及。
      * @return type
      */
     public String getType() {
@@ -97,7 +97,7 @@ public class WorkflowScheduleResp {
     }
 
     /**
-     * 内容。
+     * **参数解释**：内容。
      * @return content
      */
     public Map<String, String> getContent() {
@@ -114,7 +114,7 @@ public class WorkflowScheduleResp {
     }
 
     /**
-     * 动作，仅支持run。
+     * **参数解释**：动作，仅支持run。 **取值范围**：不涉及。
      * @return action
      */
     public String getAction() {
@@ -131,7 +131,7 @@ public class WorkflowScheduleResp {
     }
 
     /**
-     * Workflow工作流ID。
+     * **参数解释**：Workflow工作流ID。 **取值范围**：不涉及。
      * @return workflowId
      */
     public String getWorkflowId() {
@@ -148,7 +148,7 @@ public class WorkflowScheduleResp {
     }
 
     /**
-     * 用户ID。
+     * **参数解释**：用户ID。 **取值范围**：不涉及。
      * @return userId
      */
     public String getUserId() {
@@ -165,7 +165,7 @@ public class WorkflowScheduleResp {
     }
 
     /**
-     * 定时调度信息，使能标记。
+     * **参数解释**：定时调度信息，使能标记。 **取值范围**： - true：生效 - false：不生效
      * @return enable
      */
     public Boolean getEnable() {
@@ -182,7 +182,7 @@ public class WorkflowScheduleResp {
     }
 
     /**
-     * ID标记。
+     * **参数解释**：ID标记。 **取值范围**：不涉及。
      * @return uuid
      */
     public String getUuid() {
@@ -225,7 +225,7 @@ public class WorkflowScheduleResp {
     }
 
     /**
-     * 创建时间。
+     * **参数解释**：创建时间。 **取值范围**：不涉及。
      * @return createdAt
      */
     public String getCreatedAt() {

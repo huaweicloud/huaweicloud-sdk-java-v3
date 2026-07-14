@@ -36,7 +36,7 @@ public class QuotasResource {
     }
 
     /**
-     * **参数解释**： 项目资源类型。 **取值范围**： - rds：节点类型 - cpu：cpu类型 - mem：内存类型 - diskNum：磁盘数量类型 - diskGB：磁盘大小类型
+     * **参数解释**： 项目资源类型。 **取值范围**： - instances：实例数类型 - core：核数类型 - ram：内存类型 - disk：磁盘数量类型 - disk_capacity：磁盘容量类型 - rds：节点类型 - cpu：cpu类型 - mem：内存类型 - diskNum：磁盘数量类型 - diskGB：磁盘大小类型
      * @return type
      */
     public String getType() {

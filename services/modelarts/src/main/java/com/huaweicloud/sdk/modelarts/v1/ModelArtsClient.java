@@ -9,10 +9,16 @@ import com.huaweicloud.sdk.modelarts.v1.model.AttachDevServerVolumeRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.AttachDevServerVolumeResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.AttachDynamicStorageRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.AttachDynamicStorageResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchBindInferApiKeysRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchBindInferApiKeysResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchBindPoolNodesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchBindPoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchCreatePoolTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchCreatePoolTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteInferIntranetConnectionsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteInferIntranetConnectionsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteInferServicesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteInferServicesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolNodesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolTagsRequest;
@@ -29,12 +35,18 @@ import com.huaweicloud.sdk.modelarts.v1.model.BatchResetPoolNodesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchResetPoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchResizePoolNodesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchResizePoolNodesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchUnbindInferApiKeysRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchUnbindInferApiKeysResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchUnlockPoolNodesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchUnlockPoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchUpdatePoolNodesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchUpdatePoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BindDevServerPublicIPRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BindDevServerPublicIPResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BindInferApiKeyRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BindInferApiKeyResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CancelInferDeploymentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CancelInferDeploymentResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeAlgorithmRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeAlgorithmResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeDevServerOSRequest;
@@ -47,6 +59,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingJobDescriptionReques
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingJobDescriptionResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CheckTrainingExperimentRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CheckTrainingExperimentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CountInferServicesByTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CountInferServicesByTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryRequest;
@@ -63,6 +77,20 @@ import com.huaweicloud.sdk.modelarts.v1.model.CreateHyperinstanceTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateHyperinstanceTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateImageRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateImageResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferApiKeyRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferApiKeyResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferDeploymentHpaRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferDeploymentHpaResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferDeploymentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferDeploymentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferHraRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferHraResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferIntranetConnectionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferIntranetConnectionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferServiceRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferServiceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferServiceTagRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferServiceTagResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateModelArtsAgencyRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateModelArtsAgencyResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateNetworkRequest;
@@ -121,8 +149,24 @@ import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperinstanceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperinstanceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperinstanceTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperinstanceTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteImageGroupRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteImageGroupResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteImageRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteImageResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferApiKeyRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferApiKeyResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferDeploymentHpaRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferDeploymentHpaResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferDeploymentInstanceRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferDeploymentInstanceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferDeploymentPodRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferDeploymentPodResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferDeploymentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferDeploymentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferDeploymentVersionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferDeploymentVersionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferServiceTagRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferServiceTagResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteNetworkRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteNetworkResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteNodePoolRequest;
@@ -167,6 +211,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.GetDevServerOperationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.GetDevServerOperationResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.GetHyperClusterRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.GetHyperClusterResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.GetHyperinstanceOperationRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.GetHyperinstanceOperationResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.GetHyperinstanceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.GetHyperinstanceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.GetScaleEvaluationsDevServerRequest;
@@ -217,6 +263,34 @@ import com.huaweicloud.sdk.modelarts.v1.model.ListImageGroupRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListImageGroupResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListImageRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListImageResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferApiKeysRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferApiKeysResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferClusterFlavorsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferClusterFlavorsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentHpaEventsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentHpaEventsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentInstancesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentInstancesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentPodEventsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentPodEventsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentPodsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentPodsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentVersionsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentVersionsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferIntranetConnectionApplicationsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferIntranetConnectionApplicationsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferIntranetConnectionReviewsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferIntranetConnectionReviewsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferServiceEventsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferServiceEventsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferServiceTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferServiceTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferServicesByTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferServicesByTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferServicesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferServicesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListJobsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListJobsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListNetworksRequest;
@@ -261,6 +335,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.ListWorkloadsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkloadsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkspaceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ModifyInferIntranetConnectionsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ModifyInferIntranetConnectionsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.NotifyTrainingJobInformationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.NotifyTrainingJobInformationResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.PatchNetworkRequest;
@@ -309,6 +385,20 @@ import com.huaweicloud.sdk.modelarts.v1.model.ShowDynamicStorageRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowDynamicStorageResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowImageRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowImageResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferDeploymentHpaRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferDeploymentHpaResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferDeploymentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferDeploymentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferDeploymentVersionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferDeploymentVersionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferHraRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferHraResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferServiceClusterRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferServiceClusterResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferServiceRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferServiceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferServiceTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferServiceTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowLeaseRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowLeaseResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowNetworkAvailableIpRequest;
@@ -399,24 +489,50 @@ import com.huaweicloud.sdk.modelarts.v1.model.StartDevServerRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.StartDevServerResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.StartHyperinstanceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.StartHyperinstanceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.StartInferDeploymentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.StartInferDeploymentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.StartInferServiceRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.StartInferServiceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.StartNotebookRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.StartNotebookResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.StopDevServerRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.StopDevServerResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.StopHyperinstanceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.StopHyperinstanceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.StopInferDeploymentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.StopInferDeploymentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.StopInferServiceRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.StopInferServiceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.StopNotebookRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.StopNotebookResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.StopTrainingJobRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.StopTrainingJobResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.SwitchInferDeploymentVersionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.SwitchInferDeploymentVersionResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.SyncDevServersRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.SyncDevServersResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.SyncImageRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.SyncImageResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UnbindInferApiKeyRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UnbindInferApiKeyResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateAuthModeRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateAuthModeResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateDevServerRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateDevServerResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateImageGroupRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateImageGroupResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferDeploymentHpaRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferDeploymentHpaResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferDeploymentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferDeploymentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferDeploymentScaleRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferDeploymentScaleResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferHraRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferHraResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferIntranetConnectionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferIntranetConnectionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferServiceRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferServiceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateNotebookRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateNotebookResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateWorkflowExecutionRequest;
@@ -516,6 +632,35 @@ public class ModelArtsClient {
     }
 
     /**
+     * 批量绑定应用密钥
+     *
+     * 本接口用于将生成的多个apikey与指定服务进行批量绑定，用于访问特定服务。调用此接口前，确保已成功创建服务实例，并获取到有效的apikey。绑定成功后，apikey将作为服务调用时的身份验证凭证，确保仅授权用户能够访问该服务。如果尝试绑定已失效或已绑定当前服务的apikey将返回相应的异常信息，提示用户检查apikey的有效性和绑定状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchBindInferApiKeysRequest 请求对象
+     * @return BatchBindInferApiKeysResponse
+     */
+    public BatchBindInferApiKeysResponse batchBindInferApiKeys(BatchBindInferApiKeysRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.batchBindInferApiKeys);
+    }
+
+    /**
+     * 批量绑定应用密钥
+     *
+     * 本接口用于将生成的多个apikey与指定服务进行批量绑定，用于访问特定服务。调用此接口前，确保已成功创建服务实例，并获取到有效的apikey。绑定成功后，apikey将作为服务调用时的身份验证凭证，确保仅授权用户能够访问该服务。如果尝试绑定已失效或已绑定当前服务的apikey将返回相应的异常信息，提示用户检查apikey的有效性和绑定状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchBindInferApiKeysRequest 请求对象
+     * @return SyncInvoker<BatchBindInferApiKeysRequest, BatchBindInferApiKeysResponse>
+     */
+    public SyncInvoker<BatchBindInferApiKeysRequest, BatchBindInferApiKeysResponse> batchBindInferApiKeysInvoker(
+        BatchBindInferApiKeysRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.batchBindInferApiKeys, hcClient);
+    }
+
+    /**
      * 批量为节点绑定逻辑子池
      *
      * 批量为节点绑定逻辑子池接口用于在物理专属池开启节点绑定功能时，对逻辑子池中的节点进行逻辑子池的换绑操作。该接口适用于以下场景：当需要重新分配资源、调整业务负载或优化资源使用效率时，用户可通过此接口将指定节点从当前逻辑子池迁移到另一个逻辑子池。使用该接口的前提条件是物理专属池已开启节点绑定功能，且目标逻辑子池已存在并具备足够的资源容量。绑定操作完成后，节点将从原逻辑子池解绑并绑定到目标逻辑子池，原逻辑子池的节点数减少，目标逻辑子池的节点数增加。若节点未绑定到任何逻辑子池、目标逻辑子池不存在或资源不足，或用户无权限操作，接口将返回相应的错误信息。
@@ -571,6 +716,65 @@ public class ModelArtsClient {
     public SyncInvoker<BatchCreatePoolTagsRequest, BatchCreatePoolTagsResponse> batchCreatePoolTagsInvoker(
         BatchCreatePoolTagsRequest request) {
         return new SyncInvoker<>(request, ModelArtsMeta.batchCreatePoolTags, hcClient);
+    }
+
+    /**
+     * 批量删除内网接入
+     *
+     * 本接口用于批量删除指定的内网接入点，适用于需要清理多个不再使用的内网接入点的场景。调用此接口前，确保已具备相应的删除权限，并提供一个有效的内网接入点ID列表。删除成功后，所指定的内网接入点将被彻底移除，不再对任何服务生效。如果提供的内网接入点ID列表中包含无效或已删除的ID，将返回相应的异常信息，提示用户检查ID的有效性。此外，如果调用时出现权限不足或其他系统异常，也将返回相应的异常信息，提示用户检查权限或联系技术支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteInferIntranetConnectionsRequest 请求对象
+     * @return BatchDeleteInferIntranetConnectionsResponse
+     */
+    public BatchDeleteInferIntranetConnectionsResponse batchDeleteInferIntranetConnections(
+        BatchDeleteInferIntranetConnectionsRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.batchDeleteInferIntranetConnections);
+    }
+
+    /**
+     * 批量删除内网接入
+     *
+     * 本接口用于批量删除指定的内网接入点，适用于需要清理多个不再使用的内网接入点的场景。调用此接口前，确保已具备相应的删除权限，并提供一个有效的内网接入点ID列表。删除成功后，所指定的内网接入点将被彻底移除，不再对任何服务生效。如果提供的内网接入点ID列表中包含无效或已删除的ID，将返回相应的异常信息，提示用户检查ID的有效性。此外，如果调用时出现权限不足或其他系统异常，也将返回相应的异常信息，提示用户检查权限或联系技术支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteInferIntranetConnectionsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteInferIntranetConnectionsRequest, BatchDeleteInferIntranetConnectionsResponse>
+     */
+    public SyncInvoker<BatchDeleteInferIntranetConnectionsRequest, BatchDeleteInferIntranetConnectionsResponse> batchDeleteInferIntranetConnectionsInvoker(
+        BatchDeleteInferIntranetConnectionsRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.batchDeleteInferIntranetConnections, hcClient);
+    }
+
+    /**
+     * 删除指定服务列表
+     *
+     * 删除指定服务列表功能允许用户批量删除多个服务，适用于需要清理资源、释放计算能力或管理多个服务的场景。使用此功能前，请确保您具备删除服务的权限，并提供有效的服务ID列表。成功执行后，指定的服务将被终止运行并释放相关资源。若服务ID无效、权限不足或服务状态不允许删除，将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteInferServicesRequest 请求对象
+     * @return BatchDeleteInferServicesResponse
+     */
+    public BatchDeleteInferServicesResponse batchDeleteInferServices(BatchDeleteInferServicesRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.batchDeleteInferServices);
+    }
+
+    /**
+     * 删除指定服务列表
+     *
+     * 删除指定服务列表功能允许用户批量删除多个服务，适用于需要清理资源、释放计算能力或管理多个服务的场景。使用此功能前，请确保您具备删除服务的权限，并提供有效的服务ID列表。成功执行后，指定的服务将被终止运行并释放相关资源。若服务ID无效、权限不足或服务状态不允许删除，将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteInferServicesRequest 请求对象
+     * @return SyncInvoker<BatchDeleteInferServicesRequest, BatchDeleteInferServicesResponse>
+     */
+    public SyncInvoker<BatchDeleteInferServicesRequest, BatchDeleteInferServicesResponse> batchDeleteInferServicesInvoker(
+        BatchDeleteInferServicesRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.batchDeleteInferServices, hcClient);
     }
 
     /**
@@ -777,6 +981,35 @@ public class ModelArtsClient {
     }
 
     /**
+     * 批量解绑应用密钥
+     *
+     * 本接口用于将已绑定的apikey从指定服务中批量解绑，适用于需要撤销多个apikey对特定服务的访问权限的场景。调用此接口前，确保已获取到需要解绑的多个apikey，并确认这些apikey当前绑定在指定服务上。解绑成功后，这些apikey将不再对指定服务生效，但仍可继续用于其他服务。如果尝试解绑不存在或未绑定到指定服务的apikey，将返回相应的异常信息，提示用户检查apikey的有效性和绑定状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUnbindInferApiKeysRequest 请求对象
+     * @return BatchUnbindInferApiKeysResponse
+     */
+    public BatchUnbindInferApiKeysResponse batchUnbindInferApiKeys(BatchUnbindInferApiKeysRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.batchUnbindInferApiKeys);
+    }
+
+    /**
+     * 批量解绑应用密钥
+     *
+     * 本接口用于将已绑定的apikey从指定服务中批量解绑，适用于需要撤销多个apikey对特定服务的访问权限的场景。调用此接口前，确保已获取到需要解绑的多个apikey，并确认这些apikey当前绑定在指定服务上。解绑成功后，这些apikey将不再对指定服务生效，但仍可继续用于其他服务。如果尝试解绑不存在或未绑定到指定服务的apikey，将返回相应的异常信息，提示用户检查apikey的有效性和绑定状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUnbindInferApiKeysRequest 请求对象
+     * @return SyncInvoker<BatchUnbindInferApiKeysRequest, BatchUnbindInferApiKeysResponse>
+     */
+    public SyncInvoker<BatchUnbindInferApiKeysRequest, BatchUnbindInferApiKeysResponse> batchUnbindInferApiKeysInvoker(
+        BatchUnbindInferApiKeysRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.batchUnbindInferApiKeys, hcClient);
+    }
+
+    /**
      * 批量对节点功能解锁
      *
      * 批量对节点功能解锁接口用于批量解除指定节点功能的锁定状态，使被上锁的功能在控制台恢复正常可用状态。该接口适用于以下场景：当需要恢复被锁定的节点功能以正常使用、完成系统维护或测试后，用户可通过此接口批量对节点功能进行解锁。使用该接口的前提条件是节点功能已被上锁且用户具有管理员权限。解锁操作完成后，指定节点的功能将在控制台恢复正常，用户可以正常使用相关功能。若节点功能未被锁定、用户无权限操作或请求参数无效，接口将返回相应的错误信息。
@@ -832,6 +1065,64 @@ public class ModelArtsClient {
     public SyncInvoker<BatchUpdatePoolNodesRequest, BatchUpdatePoolNodesResponse> batchUpdatePoolNodesInvoker(
         BatchUpdatePoolNodesRequest request) {
         return new SyncInvoker<>(request, ModelArtsMeta.batchUpdatePoolNodes, hcClient);
+    }
+
+    /**
+     * 绑定应用密钥
+     *
+     * 本接口用于将生成的apikey与指定服务进行绑定，适用于应用程序需要调用特定服务的场景。调用此接口前，确保已成功创建服务实例，并获取到有效的apikey。绑定成功后，apikey将作为服务调用时的身份验证凭证，确保仅授权用户能够访问该服务。如果尝试绑定已失效的apikey，将返回相应的异常信息，提示用户检查apikey的有效性和绑定状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindInferApiKeyRequest 请求对象
+     * @return BindInferApiKeyResponse
+     */
+    public BindInferApiKeyResponse bindInferApiKey(BindInferApiKeyRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.bindInferApiKey);
+    }
+
+    /**
+     * 绑定应用密钥
+     *
+     * 本接口用于将生成的apikey与指定服务进行绑定，适用于应用程序需要调用特定服务的场景。调用此接口前，确保已成功创建服务实例，并获取到有效的apikey。绑定成功后，apikey将作为服务调用时的身份验证凭证，确保仅授权用户能够访问该服务。如果尝试绑定已失效的apikey，将返回相应的异常信息，提示用户检查apikey的有效性和绑定状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindInferApiKeyRequest 请求对象
+     * @return SyncInvoker<BindInferApiKeyRequest, BindInferApiKeyResponse>
+     */
+    public SyncInvoker<BindInferApiKeyRequest, BindInferApiKeyResponse> bindInferApiKeyInvoker(
+        BindInferApiKeyRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.bindInferApiKey, hcClient);
+    }
+
+    /**
+     * 中断服务部署
+     *
+     * 中断服务部署接口用于中断处于“升级中”或“部署中”状态的部署，使其快速停止。该接口适用于以下场景：当部署出现严重故障需要立即修复、资源需要快速释放以部署更高优先级的部署，或在测试环境中需要快速迭代时，用户可通过此接口中断指定部署。使用该接口的前提条件是部署当前状态为“升级中”或“部署中”，且用户具有中断部署的权限。若部署为“部署中”状态，执行中断操作，部署状态将变成“停止”，相关资源将被释放，且终端操作将被记录；若部署为“升级中”状态，执行中断操作，部署状态将变成“运行中”。若部署当前状态不是“升级中”或“部署中”，若用户无权限操作，接口将返回相应的错误信息。若部署ID无效、版本号不存在或用户无权限，则返回400 Bad Request或403 Forbidden；
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelInferDeploymentRequest 请求对象
+     * @return CancelInferDeploymentResponse
+     */
+    public CancelInferDeploymentResponse cancelInferDeployment(CancelInferDeploymentRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.cancelInferDeployment);
+    }
+
+    /**
+     * 中断服务部署
+     *
+     * 中断服务部署接口用于中断处于“升级中”或“部署中”状态的部署，使其快速停止。该接口适用于以下场景：当部署出现严重故障需要立即修复、资源需要快速释放以部署更高优先级的部署，或在测试环境中需要快速迭代时，用户可通过此接口中断指定部署。使用该接口的前提条件是部署当前状态为“升级中”或“部署中”，且用户具有中断部署的权限。若部署为“部署中”状态，执行中断操作，部署状态将变成“停止”，相关资源将被释放，且终端操作将被记录；若部署为“升级中”状态，执行中断操作，部署状态将变成“运行中”。若部署当前状态不是“升级中”或“部署中”，若用户无权限操作，接口将返回相应的错误信息。若部署ID无效、版本号不存在或用户无权限，则返回400 Bad Request或403 Forbidden；
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelInferDeploymentRequest 请求对象
+     * @return SyncInvoker<CancelInferDeploymentRequest, CancelInferDeploymentResponse>
+     */
+    public SyncInvoker<CancelInferDeploymentRequest, CancelInferDeploymentResponse> cancelInferDeploymentInvoker(
+        CancelInferDeploymentRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.cancelInferDeployment, hcClient);
     }
 
     /**
@@ -954,6 +1245,35 @@ public class ModelArtsClient {
     }
 
     /**
+     * 通过标签查询资源数量
+     *
+     * 该接口适用于需要统计和获取符合特定标签或资源名称条件的资源数量的场景，例如在资源管理和监控中，用户可以通过指定标签或资源名称进行精确或模糊查询来统计资源数量。通过调用此接口，用户可以基于多个标签或资源名称进行查询，若不传标签则返回所有资源的总数。用户必须具有足够的权限，且目标资源需存在。查询成功后，返回符合条件的资源总数；若失败，返回具体的错误信息。常见异常包括权限验证错误、资源不存在错误和参数验证错误。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountInferServicesByTagsRequest 请求对象
+     * @return CountInferServicesByTagsResponse
+     */
+    public CountInferServicesByTagsResponse countInferServicesByTags(CountInferServicesByTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.countInferServicesByTags);
+    }
+
+    /**
+     * 通过标签查询资源数量
+     *
+     * 该接口适用于需要统计和获取符合特定标签或资源名称条件的资源数量的场景，例如在资源管理和监控中，用户可以通过指定标签或资源名称进行精确或模糊查询来统计资源数量。通过调用此接口，用户可以基于多个标签或资源名称进行查询，若不传标签则返回所有资源的总数。用户必须具有足够的权限，且目标资源需存在。查询成功后，返回符合条件的资源总数；若失败，返回具体的错误信息。常见异常包括权限验证错误、资源不存在错误和参数验证错误。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountInferServicesByTagsRequest 请求对象
+     * @return SyncInvoker<CountInferServicesByTagsRequest, CountInferServicesByTagsResponse>
+     */
+    public SyncInvoker<CountInferServicesByTagsRequest, CountInferServicesByTagsResponse> countInferServicesByTagsInvoker(
+        CountInferServicesByTagsRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.countInferServicesByTags, hcClient);
+    }
+
+    /**
      * 创建算法
      *
      * 创建一个算法。
@@ -1041,6 +1361,152 @@ public class ModelArtsClient {
     public SyncInvoker<CreateAuthorizationRequest, CreateAuthorizationResponse> createAuthorizationInvoker(
         CreateAuthorizationRequest request) {
         return new SyncInvoker<>(request, ModelArtsMeta.createAuthorization, hcClient);
+    }
+
+    /**
+     * 创建应用密钥
+     *
+     * 本接口用于在系统中创建一个新的API_KEY，适用于需要为用户或应用程序生成访问凭证的场景。调用此接口前，确保已具备相应的创建权限，并提供必要的参数，如用户ID或应用程序ID。创建成功后，系统将生成一个唯一的API_KEY，并返回该API_KEY的详细信息，包括API_KEY值、创建时间等。如果提供的参数无效或系统中已存在相同的API_KEY，将返回相应的异常信息，提示用户检查输入数据的有效性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInferApiKeyRequest 请求对象
+     * @return CreateInferApiKeyResponse
+     */
+    public CreateInferApiKeyResponse createInferApiKey(CreateInferApiKeyRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.createInferApiKey);
+    }
+
+    /**
+     * 创建应用密钥
+     *
+     * 本接口用于在系统中创建一个新的API_KEY，适用于需要为用户或应用程序生成访问凭证的场景。调用此接口前，确保已具备相应的创建权限，并提供必要的参数，如用户ID或应用程序ID。创建成功后，系统将生成一个唯一的API_KEY，并返回该API_KEY的详细信息，包括API_KEY值、创建时间等。如果提供的参数无效或系统中已存在相同的API_KEY，将返回相应的异常信息，提示用户检查输入数据的有效性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInferApiKeyRequest 请求对象
+     * @return SyncInvoker<CreateInferApiKeyRequest, CreateInferApiKeyResponse>
+     */
+    public SyncInvoker<CreateInferApiKeyRequest, CreateInferApiKeyResponse> createInferApiKeyInvoker(
+        CreateInferApiKeyRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.createInferApiKey, hcClient);
+    }
+
+    /**
+     * 添加部署
+     *
+     * 将模型部署为在线服务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInferDeploymentRequest 请求对象
+     * @return CreateInferDeploymentResponse
+     */
+    public CreateInferDeploymentResponse createInferDeployment(CreateInferDeploymentRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.createInferDeployment);
+    }
+
+    /**
+     * 添加部署
+     *
+     * 将模型部署为在线服务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInferDeploymentRequest 请求对象
+     * @return SyncInvoker<CreateInferDeploymentRequest, CreateInferDeploymentResponse>
+     */
+    public SyncInvoker<CreateInferDeploymentRequest, CreateInferDeploymentResponse> createInferDeploymentInvoker(
+        CreateInferDeploymentRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.createInferDeployment, hcClient);
+    }
+
+    /**
+     * 创建内网接入
+     *
+     * 本接口用于在指定Region中创建内网接入点，适用于需要为应用程序或服务配置内网连接的场景。调用此接口前，确保已具备相应的创建权限，并提供必要的参数，如Region ID、内网接入点名称和网络配置信息。创建成功后，系统将生成一个内网接入点，并返回该接入点的详细信息，包括接入点ID、创建时间、状态等。如果提供的参数无效或内网接入配置冲突，将返回相应的异常信息，提示用户检查输入数据的有效性和配置冲突情况。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInferIntranetConnectionRequest 请求对象
+     * @return CreateInferIntranetConnectionResponse
+     */
+    public CreateInferIntranetConnectionResponse createInferIntranetConnection(
+        CreateInferIntranetConnectionRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.createInferIntranetConnection);
+    }
+
+    /**
+     * 创建内网接入
+     *
+     * 本接口用于在指定Region中创建内网接入点，适用于需要为应用程序或服务配置内网连接的场景。调用此接口前，确保已具备相应的创建权限，并提供必要的参数，如Region ID、内网接入点名称和网络配置信息。创建成功后，系统将生成一个内网接入点，并返回该接入点的详细信息，包括接入点ID、创建时间、状态等。如果提供的参数无效或内网接入配置冲突，将返回相应的异常信息，提示用户检查输入数据的有效性和配置冲突情况。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInferIntranetConnectionRequest 请求对象
+     * @return SyncInvoker<CreateInferIntranetConnectionRequest, CreateInferIntranetConnectionResponse>
+     */
+    public SyncInvoker<CreateInferIntranetConnectionRequest, CreateInferIntranetConnectionResponse> createInferIntranetConnectionInvoker(
+        CreateInferIntranetConnectionRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.createInferIntranetConnection, hcClient);
+    }
+
+    /**
+     * 创建服务
+     *
+     * 将模型部署为在线服务，适用于用户在开发或运维过程中需要将训练好的模型部署为在线服务，以便通过API或HTTP接口提供预测或处理能力的场景。调用此接口前，用户必须具有创建服务的权限，并提供合法的模型镜像路径和完整的服务配置信息（如服务名称、模型镜像路径、资源配置、升级配置等）。调用成功后，系统将成功创建并部署服务，服务状态变为“部署中”，并生成服务的唯一ID返回给用户。服务的详细信息（如状态、创建时间、更新时间等）也会记录在系统中。如果用户没有创建服务的权限，或提供的模型镜像路径不合法，或服务配置信息不完整，调用将返回相应的错误信息。如果系统在部署过程中遇到资源不足或其他内部错误，也将返回错误信息并记录日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInferServiceRequest 请求对象
+     * @return CreateInferServiceResponse
+     */
+    public CreateInferServiceResponse createInferService(CreateInferServiceRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.createInferService);
+    }
+
+    /**
+     * 创建服务
+     *
+     * 将模型部署为在线服务，适用于用户在开发或运维过程中需要将训练好的模型部署为在线服务，以便通过API或HTTP接口提供预测或处理能力的场景。调用此接口前，用户必须具有创建服务的权限，并提供合法的模型镜像路径和完整的服务配置信息（如服务名称、模型镜像路径、资源配置、升级配置等）。调用成功后，系统将成功创建并部署服务，服务状态变为“部署中”，并生成服务的唯一ID返回给用户。服务的详细信息（如状态、创建时间、更新时间等）也会记录在系统中。如果用户没有创建服务的权限，或提供的模型镜像路径不合法，或服务配置信息不完整，调用将返回相应的错误信息。如果系统在部署过程中遇到资源不足或其他内部错误，也将返回错误信息并记录日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInferServiceRequest 请求对象
+     * @return SyncInvoker<CreateInferServiceRequest, CreateInferServiceResponse>
+     */
+    public SyncInvoker<CreateInferServiceRequest, CreateInferServiceResponse> createInferServiceInvoker(
+        CreateInferServiceRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.createInferService, hcClient);
+    }
+
+    /**
+     * 添加标签
+     *
+     * 该接口适用于需要为资源（如模型、数据集、服务等）添加元数据标签的场景，例如在资源管理或分类中，用户可以通过添加标签来标注资源的用途、状态或其他属性。通过调用此接口，用户可以批量添加标签，如果标签key已存在，则更新其value。用户必须具有足够的权限，且目标资源需存在。添加成功后，资源将包含新的标签信息；若失败，返回具体的错误信息。常见异常包括权限验证错误、资源不存在错误和参数验证错误。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInferServiceTagRequest 请求对象
+     * @return CreateInferServiceTagResponse
+     */
+    public CreateInferServiceTagResponse createInferServiceTag(CreateInferServiceTagRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.createInferServiceTag);
+    }
+
+    /**
+     * 添加标签
+     *
+     * 该接口适用于需要为资源（如模型、数据集、服务等）添加元数据标签的场景，例如在资源管理或分类中，用户可以通过添加标签来标注资源的用途、状态或其他属性。通过调用此接口，用户可以批量添加标签，如果标签key已存在，则更新其value。用户必须具有足够的权限，且目标资源需存在。添加成功后，资源将包含新的标签信息；若失败，返回具体的错误信息。常见异常包括权限验证错误、资源不存在错误和参数验证错误。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInferServiceTagRequest 请求对象
+     * @return SyncInvoker<CreateInferServiceTagRequest, CreateInferServiceTagResponse>
+     */
+    public SyncInvoker<CreateInferServiceTagRequest, CreateInferServiceTagResponse> createInferServiceTagInvoker(
+        CreateInferServiceTagRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.createInferServiceTag, hcClient);
     }
 
     /**
@@ -1448,6 +1914,217 @@ public class ModelArtsClient {
     }
 
     /**
+     * 删除镜像组
+     *
+     * 删除镜像组接口用于删除镜像组内所有的版本对象，对于个人私有镜像可以通过参数一并删除SWR镜像内容。该接口适用于以下场景：当镜像不再需要、配置错误或需要清理资源时，用户可通过此接口删除指定的镜像组对象内所有版本。使用该接口的前提条件是镜像组已存在且用户具有删除权限。删除操作完成后，镜像组内所有版本对象将被永久移除，相关资源和配置也将被清理。若镜像组不存在、用户无权限操作或镜像正在被使用，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteImageGroupRequest 请求对象
+     * @return DeleteImageGroupResponse
+     */
+    public DeleteImageGroupResponse deleteImageGroup(DeleteImageGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.deleteImageGroup);
+    }
+
+    /**
+     * 删除镜像组
+     *
+     * 删除镜像组接口用于删除镜像组内所有的版本对象，对于个人私有镜像可以通过参数一并删除SWR镜像内容。该接口适用于以下场景：当镜像不再需要、配置错误或需要清理资源时，用户可通过此接口删除指定的镜像组对象内所有版本。使用该接口的前提条件是镜像组已存在且用户具有删除权限。删除操作完成后，镜像组内所有版本对象将被永久移除，相关资源和配置也将被清理。若镜像组不存在、用户无权限操作或镜像正在被使用，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteImageGroupRequest 请求对象
+     * @return SyncInvoker<DeleteImageGroupRequest, DeleteImageGroupResponse>
+     */
+    public SyncInvoker<DeleteImageGroupRequest, DeleteImageGroupResponse> deleteImageGroupInvoker(
+        DeleteImageGroupRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.deleteImageGroup, hcClient);
+    }
+
+    /**
+     * 删除应用密钥
+     *
+     * 本接口用于删除指定的apikey，适用于管理员需要撤销对某个应用程序或用户的访问权限的场景。调用此接口前，确保已获取到需要删除的apikey，并确认apikey未在其他服务中使用。删除成功后，该apikey将无法再用于访问任何相关服务。如果尝试删除不存在或已删除的apikey，将返回相应的异常信息，提示用户检查apikey的有效性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInferApiKeyRequest 请求对象
+     * @return DeleteInferApiKeyResponse
+     */
+    public DeleteInferApiKeyResponse deleteInferApiKey(DeleteInferApiKeyRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.deleteInferApiKey);
+    }
+
+    /**
+     * 删除应用密钥
+     *
+     * 本接口用于删除指定的apikey，适用于管理员需要撤销对某个应用程序或用户的访问权限的场景。调用此接口前，确保已获取到需要删除的apikey，并确认apikey未在其他服务中使用。删除成功后，该apikey将无法再用于访问任何相关服务。如果尝试删除不存在或已删除的apikey，将返回相应的异常信息，提示用户检查apikey的有效性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInferApiKeyRequest 请求对象
+     * @return SyncInvoker<DeleteInferApiKeyRequest, DeleteInferApiKeyResponse>
+     */
+    public SyncInvoker<DeleteInferApiKeyRequest, DeleteInferApiKeyResponse> deleteInferApiKeyInvoker(
+        DeleteInferApiKeyRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.deleteInferApiKey, hcClient);
+    }
+
+    /**
+     * 删除服务部署
+     *
+     * 该接口适用于删除服务的某个部署。若服务ID、部署ID无效、版本号不存在或用户无权限，则返回400 Bad Request或403 Forbidden
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInferDeploymentRequest 请求对象
+     * @return DeleteInferDeploymentResponse
+     */
+    public DeleteInferDeploymentResponse deleteInferDeployment(DeleteInferDeploymentRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.deleteInferDeployment);
+    }
+
+    /**
+     * 删除服务部署
+     *
+     * 该接口适用于删除服务的某个部署。若服务ID、部署ID无效、版本号不存在或用户无权限，则返回400 Bad Request或403 Forbidden
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInferDeploymentRequest 请求对象
+     * @return SyncInvoker<DeleteInferDeploymentRequest, DeleteInferDeploymentResponse>
+     */
+    public SyncInvoker<DeleteInferDeploymentRequest, DeleteInferDeploymentResponse> deleteInferDeploymentInvoker(
+        DeleteInferDeploymentRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.deleteInferDeployment, hcClient);
+    }
+
+    /**
+     * 删除服务部署的实例
+     *
+     * 本接口用于删除指定的单个部署的实例，适用于需要清理或释放不再使用的部署实例资源的场景。调用此接口前，确保已具备相应的删除权限，并提供有效的服务实例ID、部署ID。删除成功后，指定的服务部署实例将被彻底移除，不再对任何请求生效。如果提供的服务实例ID、部署ID无效、服务实例已删除或权限不足，将返回相应的异常信息，提示用户检查输入数据的有效性和权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInferDeploymentInstanceRequest 请求对象
+     * @return DeleteInferDeploymentInstanceResponse
+     */
+    public DeleteInferDeploymentInstanceResponse deleteInferDeploymentInstance(
+        DeleteInferDeploymentInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.deleteInferDeploymentInstance);
+    }
+
+    /**
+     * 删除服务部署的实例
+     *
+     * 本接口用于删除指定的单个部署的实例，适用于需要清理或释放不再使用的部署实例资源的场景。调用此接口前，确保已具备相应的删除权限，并提供有效的服务实例ID、部署ID。删除成功后，指定的服务部署实例将被彻底移除，不再对任何请求生效。如果提供的服务实例ID、部署ID无效、服务实例已删除或权限不足，将返回相应的异常信息，提示用户检查输入数据的有效性和权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInferDeploymentInstanceRequest 请求对象
+     * @return SyncInvoker<DeleteInferDeploymentInstanceRequest, DeleteInferDeploymentInstanceResponse>
+     */
+    public SyncInvoker<DeleteInferDeploymentInstanceRequest, DeleteInferDeploymentInstanceResponse> deleteInferDeploymentInstanceInvoker(
+        DeleteInferDeploymentInstanceRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.deleteInferDeploymentInstance, hcClient);
+    }
+
+    /**
+     * 删除Pod
+     *
+     * 本接口用于删除指定的单个Pod，适用于需要清理或释放不再使用的Pod资源的场景。调用此接口前，确保已具备相应的删除权限，并提供有效的Pod ID。删除成功后，指定的Pod将被彻底移除，不再对任何服务请求生效。如果提供的Pod ID无效、Pod已删除或权限不足，将返回相应的异常信息，提示用户检查输入数据的有效性和权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInferDeploymentPodRequest 请求对象
+     * @return DeleteInferDeploymentPodResponse
+     */
+    public DeleteInferDeploymentPodResponse deleteInferDeploymentPod(DeleteInferDeploymentPodRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.deleteInferDeploymentPod);
+    }
+
+    /**
+     * 删除Pod
+     *
+     * 本接口用于删除指定的单个Pod，适用于需要清理或释放不再使用的Pod资源的场景。调用此接口前，确保已具备相应的删除权限，并提供有效的Pod ID。删除成功后，指定的Pod将被彻底移除，不再对任何服务请求生效。如果提供的Pod ID无效、Pod已删除或权限不足，将返回相应的异常信息，提示用户检查输入数据的有效性和权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInferDeploymentPodRequest 请求对象
+     * @return SyncInvoker<DeleteInferDeploymentPodRequest, DeleteInferDeploymentPodResponse>
+     */
+    public SyncInvoker<DeleteInferDeploymentPodRequest, DeleteInferDeploymentPodResponse> deleteInferDeploymentPodInvoker(
+        DeleteInferDeploymentPodRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.deleteInferDeploymentPod, hcClient);
+    }
+
+    /**
+     * 删除在线服务部署版本
+     *
+     * 此接口用于删除指定服务部署的某个在线版本，适用于需要清理不再使用的版本或优化资源管理的场景。
+     * 请求需包含有效的服务ID、部署ID及版本号。用户必须具有对目标服务部署的管理权限，并且该版本当前未处于活跃状态。
+     * 删除成功后，指定版本将从在线服务部署中移除，相关资源将被释放。
+     * 若服务ID、部署ID无效、版本号不存在或用户无权限，则返回400 Bad Request或403 Forbidden；若版本处于活跃状态或有其他依赖，则返回400 Bad Request。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInferDeploymentVersionRequest 请求对象
+     * @return DeleteInferDeploymentVersionResponse
+     */
+    public DeleteInferDeploymentVersionResponse deleteInferDeploymentVersion(
+        DeleteInferDeploymentVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.deleteInferDeploymentVersion);
+    }
+
+    /**
+     * 删除在线服务部署版本
+     *
+     * 此接口用于删除指定服务部署的某个在线版本，适用于需要清理不再使用的版本或优化资源管理的场景。
+     * 请求需包含有效的服务ID、部署ID及版本号。用户必须具有对目标服务部署的管理权限，并且该版本当前未处于活跃状态。
+     * 删除成功后，指定版本将从在线服务部署中移除，相关资源将被释放。
+     * 若服务ID、部署ID无效、版本号不存在或用户无权限，则返回400 Bad Request或403 Forbidden；若版本处于活跃状态或有其他依赖，则返回400 Bad Request。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInferDeploymentVersionRequest 请求对象
+     * @return SyncInvoker<DeleteInferDeploymentVersionRequest, DeleteInferDeploymentVersionResponse>
+     */
+    public SyncInvoker<DeleteInferDeploymentVersionRequest, DeleteInferDeploymentVersionResponse> deleteInferDeploymentVersionInvoker(
+        DeleteInferDeploymentVersionRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.deleteInferDeploymentVersion, hcClient);
+    }
+
+    /**
+     * 删除资源标签
+     *
+     * 该接口适用于需要从资源（如模型、数据集、服务等）中移除特定标签的场景，例如在资源管理或分类中，用户可以通过删除标签来调整或清理资源的元数据。通过调用此接口，用户可以批量删除指定的标签。用户必须具有足够的权限，且目标资源需存在。删除成功后，资源将不再包含指定的标签信息；若失败，返回具体的错误信息。常见异常包括权限验证错误、资源不存在错误和参数验证错误。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInferServiceTagRequest 请求对象
+     * @return DeleteInferServiceTagResponse
+     */
+    public DeleteInferServiceTagResponse deleteInferServiceTag(DeleteInferServiceTagRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.deleteInferServiceTag);
+    }
+
+    /**
+     * 删除资源标签
+     *
+     * 该接口适用于需要从资源（如模型、数据集、服务等）中移除特定标签的场景，例如在资源管理或分类中，用户可以通过删除标签来调整或清理资源的元数据。通过调用此接口，用户可以批量删除指定的标签。用户必须具有足够的权限，且目标资源需存在。删除成功后，资源将不再包含指定的标签信息；若失败，返回具体的错误信息。常见异常包括权限验证错误、资源不存在错误和参数验证错误。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInferServiceTagRequest 请求对象
+     * @return SyncInvoker<DeleteInferServiceTagRequest, DeleteInferServiceTagResponse>
+     */
+    public SyncInvoker<DeleteInferServiceTagRequest, DeleteInferServiceTagResponse> deleteInferServiceTagInvoker(
+        DeleteInferServiceTagRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.deleteInferServiceTag, hcClient);
+    }
+
+    /**
      * 删除网络资源
      *
      * 删除网络资源接口用于移除指定的网络资源。该接口适用于以下场景：当网络资源不再需要、配置错误或需要清理资源时，用户可通过此接口删除指定的网络资源。使用该接口的前提条件是网络资源已存在且用户具有管理员权限。删除操作完成后，指定的网络资源将被永久移除，相关配置和关联关系也将被清理。若指定的网络资源不存在、用户无权限操作或资源被其他资源依赖，接口将返回相应的错误信息。
@@ -1713,6 +2390,35 @@ public class ModelArtsClient {
     }
 
     /**
+     * 查询超节点Operation详情
+     *
+     * 查询Operation详情接口用于获取指定Operation的详细信息。该接口适用于以下场景：当用户需要了解某个Operation的具体执行情况和状态，以便进行故障排查或操作审计时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询Operation详情的权限，且指定的Operation已存在。查询操作完成后，接口将返回指定Operation的详细信息，包括Operation ID、操作类型、执行状态、开始时间、结束时间、操作结果等。若用户无权限操作、指定的Operation不存在或Operation ID无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetHyperinstanceOperationRequest 请求对象
+     * @return GetHyperinstanceOperationResponse
+     */
+    public GetHyperinstanceOperationResponse getHyperinstanceOperation(GetHyperinstanceOperationRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.getHyperinstanceOperation);
+    }
+
+    /**
+     * 查询超节点Operation详情
+     *
+     * 查询Operation详情接口用于获取指定Operation的详细信息。该接口适用于以下场景：当用户需要了解某个Operation的具体执行情况和状态，以便进行故障排查或操作审计时，可以通过此接口获取相关信息。使用该接口的前提条件是用户已登录并具有查询Operation详情的权限，且指定的Operation已存在。查询操作完成后，接口将返回指定Operation的详细信息，包括Operation ID、操作类型、执行状态、开始时间、结束时间、操作结果等。若用户无权限操作、指定的Operation不存在或Operation ID无效，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetHyperinstanceOperationRequest 请求对象
+     * @return SyncInvoker<GetHyperinstanceOperationRequest, GetHyperinstanceOperationResponse>
+     */
+    public SyncInvoker<GetHyperinstanceOperationRequest, GetHyperinstanceOperationResponse> getHyperinstanceOperationInvoker(
+        GetHyperinstanceOperationRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.getHyperinstanceOperation, hcClient);
+    }
+
+    /**
      * 查询算法列表
      *
      * 查询算法列表。
@@ -1886,6 +2592,387 @@ public class ModelArtsClient {
     public SyncInvoker<ListImageGroupRequest, ListImageGroupResponse> listImageGroupInvoker(
         ListImageGroupRequest request) {
         return new SyncInvoker<>(request, ModelArtsMeta.listImageGroup, hcClient);
+    }
+
+    /**
+     * 查询应用密钥
+     *
+     * 本接口用于查询当前系统中的apikey列表，适用于管理员或用户需要查看和管理apikey的场景。调用此接口前，确保已具备相应的查询权限。返回的列表将包含每个apikey的基本信息，如apikey值、创建时间、绑定的服务等。如果当前系统中没有apikey，将返回空列表或相应的异常信息，提示用户检查查询条件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferApiKeysRequest 请求对象
+     * @return ListInferApiKeysResponse
+     */
+    public ListInferApiKeysResponse listInferApiKeys(ListInferApiKeysRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.listInferApiKeys);
+    }
+
+    /**
+     * 查询应用密钥
+     *
+     * 本接口用于查询当前系统中的apikey列表，适用于管理员或用户需要查看和管理apikey的场景。调用此接口前，确保已具备相应的查询权限。返回的列表将包含每个apikey的基本信息，如apikey值、创建时间、绑定的服务等。如果当前系统中没有apikey，将返回空列表或相应的异常信息，提示用户检查查询条件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferApiKeysRequest 请求对象
+     * @return SyncInvoker<ListInferApiKeysRequest, ListInferApiKeysResponse>
+     */
+    public SyncInvoker<ListInferApiKeysRequest, ListInferApiKeysResponse> listInferApiKeysInvoker(
+        ListInferApiKeysRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.listInferApiKeys, hcClient);
+    }
+
+    /**
+     * 查询支持可切换规格列表
+     *
+     * 该接口允许用户查询当前资源实例支持的可切换规格列表，适用于需要调整实例资源配置的场景。使用该接口前，用户需确保已登录并拥有查询权限。执行成功后，用户将获得一个包含各种可切换规格的详细列表，包括规格ID、名称、资源配额等信息，可用于后续的实例规格变更操作。如果用户没有相应的查询权限或资源实例ID无效，接口将返回错误信息，如401 Unauthorized或404 Not Found。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferClusterFlavorsRequest 请求对象
+     * @return ListInferClusterFlavorsResponse
+     */
+    public ListInferClusterFlavorsResponse listInferClusterFlavors(ListInferClusterFlavorsRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.listInferClusterFlavors);
+    }
+
+    /**
+     * 查询支持可切换规格列表
+     *
+     * 该接口允许用户查询当前资源实例支持的可切换规格列表，适用于需要调整实例资源配置的场景。使用该接口前，用户需确保已登录并拥有查询权限。执行成功后，用户将获得一个包含各种可切换规格的详细列表，包括规格ID、名称、资源配额等信息，可用于后续的实例规格变更操作。如果用户没有相应的查询权限或资源实例ID无效，接口将返回错误信息，如401 Unauthorized或404 Not Found。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferClusterFlavorsRequest 请求对象
+     * @return SyncInvoker<ListInferClusterFlavorsRequest, ListInferClusterFlavorsResponse>
+     */
+    public SyncInvoker<ListInferClusterFlavorsRequest, ListInferClusterFlavorsResponse> listInferClusterFlavorsInvoker(
+        ListInferClusterFlavorsRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.listInferClusterFlavors, hcClient);
+    }
+
+    /**
+     * 查询服务部署实例列表
+     *
+     * 本接口用于查询当前[租户](tag:hws,hws_hk,fcs,fcs_super)[资源空间](tag:hcs,hcs_sm)的服务部署实例列表，并支持根据服务部署实例的状态进行筛选，包括运行中和已删除状态，同时支持分页和关键词筛选。适用于需要管理和监控服务实例状态的场景。调用此接口前，确保已具备相应的查询权限，并提供可选的筛选条件和分页参数。返回的列表将包含每个服务部署实例的基本信息，如部署名字、最新更新时间、状态等。如果当前租户没有符合条件的服务实例或提供的参数无效，将返回空列表或相应的异常信息，提示用户检查输入数据的有效性和权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferDeploymentInstancesRequest 请求对象
+     * @return ListInferDeploymentInstancesResponse
+     */
+    public ListInferDeploymentInstancesResponse listInferDeploymentInstances(
+        ListInferDeploymentInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.listInferDeploymentInstances);
+    }
+
+    /**
+     * 查询服务部署实例列表
+     *
+     * 本接口用于查询当前[租户](tag:hws,hws_hk,fcs,fcs_super)[资源空间](tag:hcs,hcs_sm)的服务部署实例列表，并支持根据服务部署实例的状态进行筛选，包括运行中和已删除状态，同时支持分页和关键词筛选。适用于需要管理和监控服务实例状态的场景。调用此接口前，确保已具备相应的查询权限，并提供可选的筛选条件和分页参数。返回的列表将包含每个服务部署实例的基本信息，如部署名字、最新更新时间、状态等。如果当前租户没有符合条件的服务实例或提供的参数无效，将返回空列表或相应的异常信息，提示用户检查输入数据的有效性和权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferDeploymentInstancesRequest 请求对象
+     * @return SyncInvoker<ListInferDeploymentInstancesRequest, ListInferDeploymentInstancesResponse>
+     */
+    public SyncInvoker<ListInferDeploymentInstancesRequest, ListInferDeploymentInstancesResponse> listInferDeploymentInstancesInvoker(
+        ListInferDeploymentInstancesRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.listInferDeploymentInstances, hcClient);
+    }
+
+    /**
+     * 查询Pod事件
+     *
+     * 本接口用于查询指定Pod的Kubernetes事件，适用于需要监控和排查Pod运行状态的场景。调用此接口前，确保已具备相应的查询权限，并提供有效的Pod ID。返回的事件列表将包含每个事件的详细信息，如事件类型、发生次数、事件名称、事件信息、发生时间等。如果提供的Pod ID无效、Pod不存在或权限不足，将返回相应的异常信息，提示用户检查输入数据的有效性和权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferDeploymentPodEventsRequest 请求对象
+     * @return ListInferDeploymentPodEventsResponse
+     */
+    public ListInferDeploymentPodEventsResponse listInferDeploymentPodEvents(
+        ListInferDeploymentPodEventsRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.listInferDeploymentPodEvents);
+    }
+
+    /**
+     * 查询Pod事件
+     *
+     * 本接口用于查询指定Pod的Kubernetes事件，适用于需要监控和排查Pod运行状态的场景。调用此接口前，确保已具备相应的查询权限，并提供有效的Pod ID。返回的事件列表将包含每个事件的详细信息，如事件类型、发生次数、事件名称、事件信息、发生时间等。如果提供的Pod ID无效、Pod不存在或权限不足，将返回相应的异常信息，提示用户检查输入数据的有效性和权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferDeploymentPodEventsRequest 请求对象
+     * @return SyncInvoker<ListInferDeploymentPodEventsRequest, ListInferDeploymentPodEventsResponse>
+     */
+    public SyncInvoker<ListInferDeploymentPodEventsRequest, ListInferDeploymentPodEventsResponse> listInferDeploymentPodEventsInvoker(
+        ListInferDeploymentPodEventsRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.listInferDeploymentPodEvents, hcClient);
+    }
+
+    /**
+     * 查询服务部署的pod的列表
+     *
+     * 本接口用于查询指定服务部署的pod列表，并支持选择是否只获取当前运行中的pod。适用于需要管理和监控服务部署pod状态的场景。调用此接口前，确保已具备相应的查询权限，并提供有效的服务ID、部署ID和可选的筛选参数pod status（如是否只获取当前运行中的pod）。返回的列表将包含每个pod的基本信息，如pod名称、pod所在node的IP、pod所在node名字、pod角色、状态、最近更新时间等。如果指定的服务ID无效或当前服务没有pod，将返回空列表或相应的异常信息，提示用户检查输入数据的有效性和权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferDeploymentPodsRequest 请求对象
+     * @return ListInferDeploymentPodsResponse
+     */
+    public ListInferDeploymentPodsResponse listInferDeploymentPods(ListInferDeploymentPodsRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.listInferDeploymentPods);
+    }
+
+    /**
+     * 查询服务部署的pod的列表
+     *
+     * 本接口用于查询指定服务部署的pod列表，并支持选择是否只获取当前运行中的pod。适用于需要管理和监控服务部署pod状态的场景。调用此接口前，确保已具备相应的查询权限，并提供有效的服务ID、部署ID和可选的筛选参数pod status（如是否只获取当前运行中的pod）。返回的列表将包含每个pod的基本信息，如pod名称、pod所在node的IP、pod所在node名字、pod角色、状态、最近更新时间等。如果指定的服务ID无效或当前服务没有pod，将返回空列表或相应的异常信息，提示用户检查输入数据的有效性和权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferDeploymentPodsRequest 请求对象
+     * @return SyncInvoker<ListInferDeploymentPodsRequest, ListInferDeploymentPodsResponse>
+     */
+    public SyncInvoker<ListInferDeploymentPodsRequest, ListInferDeploymentPodsResponse> listInferDeploymentPodsInvoker(
+        ListInferDeploymentPodsRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.listInferDeploymentPods, hcClient);
+    }
+
+    /**
+     * 查询在线服务部署版本列表
+     *
+     * 此接口用于获取指定服务部署的版本列表，适用于需要了解当前服务部署可用版本的场景，例如进行版本选择或确认当前版本信息。请求需包含有效的服务ID、部署ID，也可通过排序参数对列表进行排序。用户必须具有对目标服务部署的查看权限。请求成功后，返回该服务部署的所有在线版本信息，包括版本号、发布时间和状态。若服务ID/部署ID无效或用户无权限，则返回400 Bad Request或403 Forbidden；若服务部署无在线版本，则返回空列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferDeploymentVersionsRequest 请求对象
+     * @return ListInferDeploymentVersionsResponse
+     */
+    public ListInferDeploymentVersionsResponse listInferDeploymentVersions(ListInferDeploymentVersionsRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.listInferDeploymentVersions);
+    }
+
+    /**
+     * 查询在线服务部署版本列表
+     *
+     * 此接口用于获取指定服务部署的版本列表，适用于需要了解当前服务部署可用版本的场景，例如进行版本选择或确认当前版本信息。请求需包含有效的服务ID、部署ID，也可通过排序参数对列表进行排序。用户必须具有对目标服务部署的查看权限。请求成功后，返回该服务部署的所有在线版本信息，包括版本号、发布时间和状态。若服务ID/部署ID无效或用户无权限，则返回400 Bad Request或403 Forbidden；若服务部署无在线版本，则返回空列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferDeploymentVersionsRequest 请求对象
+     * @return SyncInvoker<ListInferDeploymentVersionsRequest, ListInferDeploymentVersionsResponse>
+     */
+    public SyncInvoker<ListInferDeploymentVersionsRequest, ListInferDeploymentVersionsResponse> listInferDeploymentVersionsInvoker(
+        ListInferDeploymentVersionsRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.listInferDeploymentVersions, hcClient);
+    }
+
+    /**
+     * 查询服务部署列表
+     *
+     * 支持分页和筛选，适用于用户在管理控制台或通过API需要查看特定条件下（如服务状态、名称等）的部署列表的情况。调用此接口前，用户必须具有查询部署列表的权限，并提供合法的分页参数（如页码、每页条数）和筛选条件（如部署状态、名称等）。调用成功后，系统将返回符合筛选条件的部署列表，包含指定页码的数据，并返回总页数和总记录数。如果用户没有查询部署列表的权限，或提供的分页参数和筛选条件不合法，调用将返回相应的错误信息。如果系统在查询过程中遇到内部错误，也将返回错误信息并记录日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferDeploymentsRequest 请求对象
+     * @return ListInferDeploymentsResponse
+     */
+    public ListInferDeploymentsResponse listInferDeployments(ListInferDeploymentsRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.listInferDeployments);
+    }
+
+    /**
+     * 查询服务部署列表
+     *
+     * 支持分页和筛选，适用于用户在管理控制台或通过API需要查看特定条件下（如服务状态、名称等）的部署列表的情况。调用此接口前，用户必须具有查询部署列表的权限，并提供合法的分页参数（如页码、每页条数）和筛选条件（如部署状态、名称等）。调用成功后，系统将返回符合筛选条件的部署列表，包含指定页码的数据，并返回总页数和总记录数。如果用户没有查询部署列表的权限，或提供的分页参数和筛选条件不合法，调用将返回相应的错误信息。如果系统在查询过程中遇到内部错误，也将返回错误信息并记录日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferDeploymentsRequest 请求对象
+     * @return SyncInvoker<ListInferDeploymentsRequest, ListInferDeploymentsResponse>
+     */
+    public SyncInvoker<ListInferDeploymentsRequest, ListInferDeploymentsResponse> listInferDeploymentsInvoker(
+        ListInferDeploymentsRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.listInferDeployments, hcClient);
+    }
+
+    /**
+     * 查询当前的内网接入申请列表
+     *
+     * 本接口用于查询当前所有的内网接入申请记录，适用于需要管理和监控内网接入申请状态的场景。调用此接口前，确保已具备相应的查询权限。返回的列表将包含每个内网接入申请的基本信息，如申请ID、创建时间、状态、Region ID等。如果当前租户没有内网接入申请记录，将返回空列表。如果调用时出现权限不足或其他系统异常，将返回相应的异常信息，提示用户检查权限或联系技术支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferIntranetConnectionApplicationsRequest 请求对象
+     * @return ListInferIntranetConnectionApplicationsResponse
+     */
+    public ListInferIntranetConnectionApplicationsResponse listInferIntranetConnectionApplications(
+        ListInferIntranetConnectionApplicationsRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.listInferIntranetConnectionApplications);
+    }
+
+    /**
+     * 查询当前的内网接入申请列表
+     *
+     * 本接口用于查询当前所有的内网接入申请记录，适用于需要管理和监控内网接入申请状态的场景。调用此接口前，确保已具备相应的查询权限。返回的列表将包含每个内网接入申请的基本信息，如申请ID、创建时间、状态、Region ID等。如果当前租户没有内网接入申请记录，将返回空列表。如果调用时出现权限不足或其他系统异常，将返回相应的异常信息，提示用户检查权限或联系技术支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferIntranetConnectionApplicationsRequest 请求对象
+     * @return SyncInvoker<ListInferIntranetConnectionApplicationsRequest, ListInferIntranetConnectionApplicationsResponse>
+     */
+    public SyncInvoker<ListInferIntranetConnectionApplicationsRequest, ListInferIntranetConnectionApplicationsResponse> listInferIntranetConnectionApplicationsInvoker(
+        ListInferIntranetConnectionApplicationsRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.listInferIntranetConnectionApplications, hcClient);
+    }
+
+    /**
+     * 查询当前的内网接入审批列表
+     *
+     * 本接口用于查询当前所有的内网接入审批记录，适用于需要管理和监控内网接入审批状态的场景。调用此接口前，确保已具备相应的查询权限。返回的列表将包含每个内网接入审批的基本信息，如审批ID、申请时间、状态（如待审批、已批准、已拒绝）、申请者信息、Region ID等。如果当前租户没有内网接入审批记录，将返回空列表。如果调用时出现权限不足或其他系统异常，将返回相应的异常信息，提示用户检查权限或联系技术支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferIntranetConnectionReviewsRequest 请求对象
+     * @return ListInferIntranetConnectionReviewsResponse
+     */
+    public ListInferIntranetConnectionReviewsResponse listInferIntranetConnectionReviews(
+        ListInferIntranetConnectionReviewsRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.listInferIntranetConnectionReviews);
+    }
+
+    /**
+     * 查询当前的内网接入审批列表
+     *
+     * 本接口用于查询当前所有的内网接入审批记录，适用于需要管理和监控内网接入审批状态的场景。调用此接口前，确保已具备相应的查询权限。返回的列表将包含每个内网接入审批的基本信息，如审批ID、申请时间、状态（如待审批、已批准、已拒绝）、申请者信息、Region ID等。如果当前租户没有内网接入审批记录，将返回空列表。如果调用时出现权限不足或其他系统异常，将返回相应的异常信息，提示用户检查权限或联系技术支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferIntranetConnectionReviewsRequest 请求对象
+     * @return SyncInvoker<ListInferIntranetConnectionReviewsRequest, ListInferIntranetConnectionReviewsResponse>
+     */
+    public SyncInvoker<ListInferIntranetConnectionReviewsRequest, ListInferIntranetConnectionReviewsResponse> listInferIntranetConnectionReviewsInvoker(
+        ListInferIntranetConnectionReviewsRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.listInferIntranetConnectionReviews, hcClient);
+    }
+
+    /**
+     * 获取在线服务事件列表
+     *
+     * 该接口适用于需要监控和管理在线服务事件的场景，例如用户或运维人员需要定期检查服务的日志事件，以及时发现和处理问题。通过调用此接口，用户可以获取当前在线服务的所有事件记录，包括事件类型、事件信息、时间、发生次数等信息。用户必须具有查询服务事件列表的权限，才能成功访问该接口。获取成功后，返回事件列表；若失败，返回具体的错误信息。常见异常包括权限验证错误、服务状态错误和参数验证错误。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferServiceEventsRequest 请求对象
+     * @return ListInferServiceEventsResponse
+     */
+    public ListInferServiceEventsResponse listInferServiceEvents(ListInferServiceEventsRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.listInferServiceEvents);
+    }
+
+    /**
+     * 获取在线服务事件列表
+     *
+     * 该接口适用于需要监控和管理在线服务事件的场景，例如用户或运维人员需要定期检查服务的日志事件，以及时发现和处理问题。通过调用此接口，用户可以获取当前在线服务的所有事件记录，包括事件类型、事件信息、时间、发生次数等信息。用户必须具有查询服务事件列表的权限，才能成功访问该接口。获取成功后，返回事件列表；若失败，返回具体的错误信息。常见异常包括权限验证错误、服务状态错误和参数验证错误。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferServiceEventsRequest 请求对象
+     * @return SyncInvoker<ListInferServiceEventsRequest, ListInferServiceEventsResponse>
+     */
+    public SyncInvoker<ListInferServiceEventsRequest, ListInferServiceEventsResponse> listInferServiceEventsInvoker(
+        ListInferServiceEventsRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.listInferServiceEvents, hcClient);
+    }
+
+    /**
+     * 查询某一类资源下的标签
+     *
+     * 该接口适用于需要获取用户当前项目中某一类资源（如指定的Service）的标签信息的场景，例如在资源管理和监控中，用户可以通过查询标签来了解各类资源的分类和属性。通过调用此接口，用户可以获取指定Service在所有工作空间中的标签列表，但无权限的工作空间标签数据将被过滤不返回。用户必须具有足够的权限，且目标资源需存在。查询成功后，返回指定Service的标签列表；若失败，返回具体的错误信息。常见异常包括权限验证错误、资源不存在错误和参数验证错误。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferServiceTagsRequest 请求对象
+     * @return ListInferServiceTagsResponse
+     */
+    public ListInferServiceTagsResponse listInferServiceTags(ListInferServiceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.listInferServiceTags);
+    }
+
+    /**
+     * 查询某一类资源下的标签
+     *
+     * 该接口适用于需要获取用户当前项目中某一类资源（如指定的Service）的标签信息的场景，例如在资源管理和监控中，用户可以通过查询标签来了解各类资源的分类和属性。通过调用此接口，用户可以获取指定Service在所有工作空间中的标签列表，但无权限的工作空间标签数据将被过滤不返回。用户必须具有足够的权限，且目标资源需存在。查询成功后，返回指定Service的标签列表；若失败，返回具体的错误信息。常见异常包括权限验证错误、资源不存在错误和参数验证错误。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferServiceTagsRequest 请求对象
+     * @return SyncInvoker<ListInferServiceTagsRequest, ListInferServiceTagsResponse>
+     */
+    public SyncInvoker<ListInferServiceTagsRequest, ListInferServiceTagsResponse> listInferServiceTagsInvoker(
+        ListInferServiceTagsRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.listInferServiceTags, hcClient);
+    }
+
+    /**
+     * 查询服务列表
+     *
+     * 支持分页和筛选
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferServicesRequest 请求对象
+     * @return ListInferServicesResponse
+     */
+    public ListInferServicesResponse listInferServices(ListInferServicesRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.listInferServices);
+    }
+
+    /**
+     * 查询服务列表
+     *
+     * 支持分页和筛选
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferServicesRequest 请求对象
+     * @return SyncInvoker<ListInferServicesRequest, ListInferServicesResponse>
+     */
+    public SyncInvoker<ListInferServicesRequest, ListInferServicesResponse> listInferServicesInvoker(
+        ListInferServicesRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.listInferServices, hcClient);
+    }
+
+    /**
+     * 通过标签反查资源列表
+     *
+     * 该接口适用于需要根据标签或资源名称查找相关资源的场景，例如在资源管理和搜索中，用户可以通过指定标签或进行模糊查询来查找符合特定条件的资源。通过调用此接口，用户可以基于多个标签或资源名称进行精确或模糊查询，若不传标签则返回所有资源。用户必须具有足够的权限，且目标资源需存在。查询成功后，返回符合条件的资源列表；若失败，返回具体的错误信息。常见异常包括权限验证错误、资源不存在错误和参数验证错误。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferServicesByTagsRequest 请求对象
+     * @return ListInferServicesByTagsResponse
+     */
+    public ListInferServicesByTagsResponse listInferServicesByTags(ListInferServicesByTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.listInferServicesByTags);
+    }
+
+    /**
+     * 通过标签反查资源列表
+     *
+     * 该接口适用于需要根据标签或资源名称查找相关资源的场景，例如在资源管理和搜索中，用户可以通过指定标签或进行模糊查询来查找符合特定条件的资源。通过调用此接口，用户可以基于多个标签或资源名称进行精确或模糊查询，若不传标签则返回所有资源。用户必须具有足够的权限，且目标资源需存在。查询成功后，返回符合条件的资源列表；若失败，返回具体的错误信息。常见异常包括权限验证错误、资源不存在错误和参数验证错误。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferServicesByTagsRequest 请求对象
+     * @return SyncInvoker<ListInferServicesByTagsRequest, ListInferServicesByTagsResponse>
+     */
+    public SyncInvoker<ListInferServicesByTagsRequest, ListInferServicesByTagsResponse> listInferServicesByTagsInvoker(
+        ListInferServicesByTagsRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.listInferServicesByTags, hcClient);
     }
 
     /**
@@ -2407,6 +3494,36 @@ public class ModelArtsClient {
     }
 
     /**
+     * 修改添加自定义URL申请
+     *
+     * 本接口用于修改添加内网自定义URL请求，适用于需要同时更新或者添加多个内网接入点的场景。调用此接口前，确保调用者具备相应的更新权限，提供需要更新的参数，如IP地址、VPC ID、子网ID等。指定的内网接入点将添加新的配置，新的配置将对相关服务生效。如果提供的内网接入点ID列表中包含无效或不存在的ID，接口将返回相应的异常信息，提示用户检查ID的有效性，如果提供的更新参数不符合格式要求（如IP地址格式不正确），接口将返回相应的异常信息，提示用户检查参数的有效性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyInferIntranetConnectionsRequest 请求对象
+     * @return ModifyInferIntranetConnectionsResponse
+     */
+    public ModifyInferIntranetConnectionsResponse modifyInferIntranetConnections(
+        ModifyInferIntranetConnectionsRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.modifyInferIntranetConnections);
+    }
+
+    /**
+     * 修改添加自定义URL申请
+     *
+     * 本接口用于修改添加内网自定义URL请求，适用于需要同时更新或者添加多个内网接入点的场景。调用此接口前，确保调用者具备相应的更新权限，提供需要更新的参数，如IP地址、VPC ID、子网ID等。指定的内网接入点将添加新的配置，新的配置将对相关服务生效。如果提供的内网接入点ID列表中包含无效或不存在的ID，接口将返回相应的异常信息，提示用户检查ID的有效性，如果提供的更新参数不符合格式要求（如IP地址格式不正确），接口将返回相应的异常信息，提示用户检查参数的有效性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyInferIntranetConnectionsRequest 请求对象
+     * @return SyncInvoker<ModifyInferIntranetConnectionsRequest, ModifyInferIntranetConnectionsResponse>
+     */
+    public SyncInvoker<ModifyInferIntranetConnectionsRequest, ModifyInferIntranetConnectionsResponse> modifyInferIntranetConnectionsInvoker(
+        ModifyInferIntranetConnectionsRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.modifyInferIntranetConnections, hcClient);
+    }
+
+    /**
      * 训练作业事件上报接口
      *
      * 训练事件上报给业务面
@@ -2873,6 +3990,151 @@ public class ModelArtsClient {
      */
     public SyncInvoker<ShowImageRequest, ShowImageResponse> showImageInvoker(ShowImageRequest request) {
         return new SyncInvoker<>(request, ModelArtsMeta.showImage, hcClient);
+    }
+
+    /**
+     * 查询服务部署详情
+     *
+     * 通过服务ID、部署ID查询对应的部署详情，调用者可以通过有效的服务ID、部署ID获取部署的名称、状态、服务实例、配置参数等详细信息。调用者需具有足够的权限，且输入的服务ID、部署ID必须有效。查询成功时返回部署详细信息，查询失败时返回特定的错误码和错误信息。若服务ID或者部署ID无效、版本号不存在或用户无权限，则返回400 Bad Request或403 Forbidden；
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInferDeploymentRequest 请求对象
+     * @return ShowInferDeploymentResponse
+     */
+    public ShowInferDeploymentResponse showInferDeployment(ShowInferDeploymentRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.showInferDeployment);
+    }
+
+    /**
+     * 查询服务部署详情
+     *
+     * 通过服务ID、部署ID查询对应的部署详情，调用者可以通过有效的服务ID、部署ID获取部署的名称、状态、服务实例、配置参数等详细信息。调用者需具有足够的权限，且输入的服务ID、部署ID必须有效。查询成功时返回部署详细信息，查询失败时返回特定的错误码和错误信息。若服务ID或者部署ID无效、版本号不存在或用户无权限，则返回400 Bad Request或403 Forbidden；
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInferDeploymentRequest 请求对象
+     * @return SyncInvoker<ShowInferDeploymentRequest, ShowInferDeploymentResponse>
+     */
+    public SyncInvoker<ShowInferDeploymentRequest, ShowInferDeploymentResponse> showInferDeploymentInvoker(
+        ShowInferDeploymentRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.showInferDeployment, hcClient);
+    }
+
+    /**
+     * 查询在线服务部署版本详情
+     *
+     * 此接口用于获取指定服务部署版本的详细信息，适用于需要查看特定版本的详细配置和状态的场景，例如确认版本的功能、性能参数或发布历史。请求需包含有效的服务ID、部署ID及版本号。用户必须具有对目标服务部署的查看权限。请求成功后，返回该版本的详细信息，包括版本号、发布时间、配置参数和状态。若服务ID、部署ID无效、版本号不存在或用户无权限，则返回400 Bad Request或403 Forbidden；若服务部署无该版本信息，则返回404 Not Found。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInferDeploymentVersionRequest 请求对象
+     * @return ShowInferDeploymentVersionResponse
+     */
+    public ShowInferDeploymentVersionResponse showInferDeploymentVersion(ShowInferDeploymentVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.showInferDeploymentVersion);
+    }
+
+    /**
+     * 查询在线服务部署版本详情
+     *
+     * 此接口用于获取指定服务部署版本的详细信息，适用于需要查看特定版本的详细配置和状态的场景，例如确认版本的功能、性能参数或发布历史。请求需包含有效的服务ID、部署ID及版本号。用户必须具有对目标服务部署的查看权限。请求成功后，返回该版本的详细信息，包括版本号、发布时间、配置参数和状态。若服务ID、部署ID无效、版本号不存在或用户无权限，则返回400 Bad Request或403 Forbidden；若服务部署无该版本信息，则返回404 Not Found。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInferDeploymentVersionRequest 请求对象
+     * @return SyncInvoker<ShowInferDeploymentVersionRequest, ShowInferDeploymentVersionResponse>
+     */
+    public SyncInvoker<ShowInferDeploymentVersionRequest, ShowInferDeploymentVersionResponse> showInferDeploymentVersionInvoker(
+        ShowInferDeploymentVersionRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.showInferDeploymentVersion, hcClient);
+    }
+
+    /**
+     * 查询服务详情
+     *
+     * 通过服务ID查询对应的服务详情，调用者可以通过有效的服务ID获取服务的名称、状态、服务实例、配置参数等详细信息。调用者需具有足够的权限，且输入的服务ID必须有效。查询成功时返回服务详细信息，查询失败时返回特定的错误码和错误信息。若服务ID无效、版本号不存在或用户无权限，则返回400 Bad Request或403 Forbidden。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInferServiceRequest 请求对象
+     * @return ShowInferServiceResponse
+     */
+    public ShowInferServiceResponse showInferService(ShowInferServiceRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.showInferService);
+    }
+
+    /**
+     * 查询服务详情
+     *
+     * 通过服务ID查询对应的服务详情，调用者可以通过有效的服务ID获取服务的名称、状态、服务实例、配置参数等详细信息。调用者需具有足够的权限，且输入的服务ID必须有效。查询成功时返回服务详细信息，查询失败时返回特定的错误码和错误信息。若服务ID无效、版本号不存在或用户无权限，则返回400 Bad Request或403 Forbidden。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInferServiceRequest 请求对象
+     * @return SyncInvoker<ShowInferServiceRequest, ShowInferServiceResponse>
+     */
+    public SyncInvoker<ShowInferServiceRequest, ShowInferServiceResponse> showInferServiceInvoker(
+        ShowInferServiceRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.showInferService, hcClient);
+    }
+
+    /**
+     * 查询纳管资源池详情
+     *
+     * 该接口允许用户通过指定资源池的ID来查询纳管资源池的详细信息，包括实例ID、名称、Flavor规格、实例状态和实例可访问的URL。此功能适用于需要监控或管理云资源的用户，使用该接口前，用户需确保已拥有访问权限及正确的资源池ID。执行成功后，用户将获得所需的实例详情，可用于进一步的资源管理和配置。如果资源池ID无效或用户没有相应的访问权限，接口将返回错误信息，如404 Not Found或401 Unauthorized。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInferServiceClusterRequest 请求对象
+     * @return ShowInferServiceClusterResponse
+     */
+    public ShowInferServiceClusterResponse showInferServiceCluster(ShowInferServiceClusterRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.showInferServiceCluster);
+    }
+
+    /**
+     * 查询纳管资源池详情
+     *
+     * 该接口允许用户通过指定资源池的ID来查询纳管资源池的详细信息，包括实例ID、名称、Flavor规格、实例状态和实例可访问的URL。此功能适用于需要监控或管理云资源的用户，使用该接口前，用户需确保已拥有访问权限及正确的资源池ID。执行成功后，用户将获得所需的实例详情，可用于进一步的资源管理和配置。如果资源池ID无效或用户没有相应的访问权限，接口将返回错误信息，如404 Not Found或401 Unauthorized。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInferServiceClusterRequest 请求对象
+     * @return SyncInvoker<ShowInferServiceClusterRequest, ShowInferServiceClusterResponse>
+     */
+    public SyncInvoker<ShowInferServiceClusterRequest, ShowInferServiceClusterResponse> showInferServiceClusterInvoker(
+        ShowInferServiceClusterRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.showInferServiceCluster, hcClient);
+    }
+
+    /**
+     * 查询资源标签
+     *
+     * 该接口适用于需要获取资源（如模型、数据集、服务等）的标签信息的场景，例如在资源管理或分类中，用户可以通过查询标签来了解资源的用途、状态或其他属性。通过调用此接口，用户可以通过资源ID获取指定资源的所有标签列表。用户必须具有足够的权限，且目标资源需存在。查询成功后，返回资源的标签列表；若失败，返回具体的错误信息。常见异常包括权限验证错误、资源不存在错误和参数验证错误。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInferServiceTagsRequest 请求对象
+     * @return ShowInferServiceTagsResponse
+     */
+    public ShowInferServiceTagsResponse showInferServiceTags(ShowInferServiceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.showInferServiceTags);
+    }
+
+    /**
+     * 查询资源标签
+     *
+     * 该接口适用于需要获取资源（如模型、数据集、服务等）的标签信息的场景，例如在资源管理或分类中，用户可以通过查询标签来了解资源的用途、状态或其他属性。通过调用此接口，用户可以通过资源ID获取指定资源的所有标签列表。用户必须具有足够的权限，且目标资源需存在。查询成功后，返回资源的标签列表；若失败，返回具体的错误信息。常见异常包括权限验证错误、资源不存在错误和参数验证错误。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInferServiceTagsRequest 请求对象
+     * @return SyncInvoker<ShowInferServiceTagsRequest, ShowInferServiceTagsResponse>
+     */
+    public SyncInvoker<ShowInferServiceTagsRequest, ShowInferServiceTagsResponse> showInferServiceTagsInvoker(
+        ShowInferServiceTagsRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.showInferServiceTags, hcClient);
     }
 
     /**
@@ -3742,6 +5004,122 @@ public class ModelArtsClient {
     }
 
     /**
+     * 启动服务部署
+     *
+     * 使部署从“停止”或“失败”状态进入“部署中”状态，适用于用户需要重新启动已停止或启动失败的部署的情况。调用此接口前，部署状态必须为“停止”或“失败”，且用户需具有启动部署的权限。调用成功后，部署状态将变为“部署中”，系统将开始执行部署流程，包括资源准备、配置加载等。如果部署当前状态不是“停止”或“失败”，或用户没有启动部署的权限，调用将返回错误。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartInferDeploymentRequest 请求对象
+     * @return StartInferDeploymentResponse
+     */
+    public StartInferDeploymentResponse startInferDeployment(StartInferDeploymentRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.startInferDeployment);
+    }
+
+    /**
+     * 启动服务部署
+     *
+     * 使部署从“停止”或“失败”状态进入“部署中”状态，适用于用户需要重新启动已停止或启动失败的部署的情况。调用此接口前，部署状态必须为“停止”或“失败”，且用户需具有启动部署的权限。调用成功后，部署状态将变为“部署中”，系统将开始执行部署流程，包括资源准备、配置加载等。如果部署当前状态不是“停止”或“失败”，或用户没有启动部署的权限，调用将返回错误。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartInferDeploymentRequest 请求对象
+     * @return SyncInvoker<StartInferDeploymentRequest, StartInferDeploymentResponse>
+     */
+    public SyncInvoker<StartInferDeploymentRequest, StartInferDeploymentResponse> startInferDeploymentInvoker(
+        StartInferDeploymentRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.startInferDeployment, hcClient);
+    }
+
+    /**
+     * 启动服务
+     *
+     * 使服务从\&quot;停止\&quot;或\&quot;失败\&quot;状态进入\&quot;部署中\&quot;状态，适用于用户需要重新启动已停止或启动失败的服务的情况。调用此接口前，服务状态必须为\&quot;停止\&quot;或\&quot;失败\&quot;，且用户需具有启动服务的权限。调用成功后，服务状态将变为\&quot;部署中\&quot;，系统将开始执行部署流程，包括资源准备、配置加载等。如果服务当前状态不是\&quot;停止\&quot;或\&quot;失败\&quot;，或用户没有启动服务的权限，调用将返回错误。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartInferServiceRequest 请求对象
+     * @return StartInferServiceResponse
+     */
+    public StartInferServiceResponse startInferService(StartInferServiceRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.startInferService);
+    }
+
+    /**
+     * 启动服务
+     *
+     * 使服务从\&quot;停止\&quot;或\&quot;失败\&quot;状态进入\&quot;部署中\&quot;状态，适用于用户需要重新启动已停止或启动失败的服务的情况。调用此接口前，服务状态必须为\&quot;停止\&quot;或\&quot;失败\&quot;，且用户需具有启动服务的权限。调用成功后，服务状态将变为\&quot;部署中\&quot;，系统将开始执行部署流程，包括资源准备、配置加载等。如果服务当前状态不是\&quot;停止\&quot;或\&quot;失败\&quot;，或用户没有启动服务的权限，调用将返回错误。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartInferServiceRequest 请求对象
+     * @return SyncInvoker<StartInferServiceRequest, StartInferServiceResponse>
+     */
+    public SyncInvoker<StartInferServiceRequest, StartInferServiceResponse> startInferServiceInvoker(
+        StartInferServiceRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.startInferService, hcClient);
+    }
+
+    /**
+     * 停止在线服务部署
+     *
+     * 停止在线部署功能允许用户在特定状态下主动终止正在运行或处于其他可操作状态的部署实例。该功能适用于需要维护、升级或检测到异常的服务场景，支持在服务处于\&quot;运行中\&quot;、\&quot;部署中\&quot;、\&quot;失败\&quot;或\&quot;告警\&quot;状态时执行停止操作。使用此功能前，请确保部署实例处于可停止状态，并具备相应的API调用权限。成功执行后，部署将进入停止状态，释放相关资源并停止处理新的请求。若部署不在允许停止的状态、调用权限不足或系统内部出现错误，将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopInferDeploymentRequest 请求对象
+     * @return StopInferDeploymentResponse
+     */
+    public StopInferDeploymentResponse stopInferDeployment(StopInferDeploymentRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.stopInferDeployment);
+    }
+
+    /**
+     * 停止在线服务部署
+     *
+     * 停止在线部署功能允许用户在特定状态下主动终止正在运行或处于其他可操作状态的部署实例。该功能适用于需要维护、升级或检测到异常的服务场景，支持在服务处于\&quot;运行中\&quot;、\&quot;部署中\&quot;、\&quot;失败\&quot;或\&quot;告警\&quot;状态时执行停止操作。使用此功能前，请确保部署实例处于可停止状态，并具备相应的API调用权限。成功执行后，部署将进入停止状态，释放相关资源并停止处理新的请求。若部署不在允许停止的状态、调用权限不足或系统内部出现错误，将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopInferDeploymentRequest 请求对象
+     * @return SyncInvoker<StopInferDeploymentRequest, StopInferDeploymentResponse>
+     */
+    public SyncInvoker<StopInferDeploymentRequest, StopInferDeploymentResponse> stopInferDeploymentInvoker(
+        StopInferDeploymentRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.stopInferDeployment, hcClient);
+    }
+
+    /**
+     * 停止服务
+     *
+     * 使服务从\&quot;运行中\&quot;状态进入\&quot;停止中\&quot;最终变为\&quot;停止\&quot;状态，适用于用户需要停止正在运行的服务以节省资源成本的场景。用户需具有停止服务的权限。调用成功后，服务状态将变为\&quot;停止中\&quot;，系统将开始执行停止流程，包括释放资源、保存状态等。如果用户没有停止服务的权限，调用将返回错误。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopInferServiceRequest 请求对象
+     * @return StopInferServiceResponse
+     */
+    public StopInferServiceResponse stopInferService(StopInferServiceRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.stopInferService);
+    }
+
+    /**
+     * 停止服务
+     *
+     * 使服务从\&quot;运行中\&quot;状态进入\&quot;停止中\&quot;最终变为\&quot;停止\&quot;状态，适用于用户需要停止正在运行的服务以节省资源成本的场景。用户需具有停止服务的权限。调用成功后，服务状态将变为\&quot;停止中\&quot;，系统将开始执行停止流程，包括释放资源、保存状态等。如果用户没有停止服务的权限，调用将返回错误。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopInferServiceRequest 请求对象
+     * @return SyncInvoker<StopInferServiceRequest, StopInferServiceResponse>
+     */
+    public SyncInvoker<StopInferServiceRequest, StopInferServiceResponse> stopInferServiceInvoker(
+        StopInferServiceRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.stopInferService, hcClient);
+    }
+
+    /**
      * 终止训练作业
      *
      * 终止训练作业，只可终止创建中、等待中、运行中的作业。
@@ -3768,6 +5146,36 @@ public class ModelArtsClient {
     public SyncInvoker<StopTrainingJobRequest, StopTrainingJobResponse> stopTrainingJobInvoker(
         StopTrainingJobRequest request) {
         return new SyncInvoker<>(request, ModelArtsMeta.stopTrainingJob, hcClient);
+    }
+
+    /**
+     * 切换部署到指定版本
+     *
+     * 此接口用于将部署切换到指定版本，适用于需要在不同版本间进行切换以测试或回滚的场景。请求需包含有效的服务ID、部署ID及目标版本号，版本号必须是已发布的有效版本。用户必须具有对目标服务部署的管理权限，并且部署处于运行状态。切换成功后，部署将立即使用新的版本。若服务ID无效、部署ID无效、版本号不存在或用户无权限，则返回400 Bad Request或403 Forbidden；若部署状态不允许切换，则返回400 Bad Request。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchInferDeploymentVersionRequest 请求对象
+     * @return SwitchInferDeploymentVersionResponse
+     */
+    public SwitchInferDeploymentVersionResponse switchInferDeploymentVersion(
+        SwitchInferDeploymentVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.switchInferDeploymentVersion);
+    }
+
+    /**
+     * 切换部署到指定版本
+     *
+     * 此接口用于将部署切换到指定版本，适用于需要在不同版本间进行切换以测试或回滚的场景。请求需包含有效的服务ID、部署ID及目标版本号，版本号必须是已发布的有效版本。用户必须具有对目标服务部署的管理权限，并且部署处于运行状态。切换成功后，部署将立即使用新的版本。若服务ID无效、部署ID无效、版本号不存在或用户无权限，则返回400 Bad Request或403 Forbidden；若部署状态不允许切换，则返回400 Bad Request。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchInferDeploymentVersionRequest 请求对象
+     * @return SyncInvoker<SwitchInferDeploymentVersionRequest, SwitchInferDeploymentVersionResponse>
+     */
+    public SyncInvoker<SwitchInferDeploymentVersionRequest, SwitchInferDeploymentVersionResponse> switchInferDeploymentVersionInvoker(
+        SwitchInferDeploymentVersionRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.switchInferDeploymentVersion, hcClient);
     }
 
     /**
@@ -3799,6 +5207,35 @@ public class ModelArtsClient {
     }
 
     /**
+     * 解绑应用密钥
+     *
+     * 本接口用于将已绑定的apikey从指定服务中解绑，适用于需要撤销某个apikey对特定服务的访问权限的场景。调用此接口前，确保已获取到需要解绑的apikey，并确认该apikey当前绑定在指定服务上。解绑成功后，该apikey将不再对指定服务生效，但仍可继续用于其他服务。如果尝试解绑不存在或未绑定到指定服务的apikey，将返回相应的异常信息，提示用户检查apikey的有效性和绑定状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnbindInferApiKeyRequest 请求对象
+     * @return UnbindInferApiKeyResponse
+     */
+    public UnbindInferApiKeyResponse unbindInferApiKey(UnbindInferApiKeyRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.unbindInferApiKey);
+    }
+
+    /**
+     * 解绑应用密钥
+     *
+     * 本接口用于将已绑定的apikey从指定服务中解绑，适用于需要撤销某个apikey对特定服务的访问权限的场景。调用此接口前，确保已获取到需要解绑的apikey，并确认该apikey当前绑定在指定服务上。解绑成功后，该apikey将不再对指定服务生效，但仍可继续用于其他服务。如果尝试解绑不存在或未绑定到指定服务的apikey，将返回相应的异常信息，提示用户检查apikey的有效性和绑定状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnbindInferApiKeyRequest 请求对象
+     * @return SyncInvoker<UnbindInferApiKeyRequest, UnbindInferApiKeyResponse>
+     */
+    public SyncInvoker<UnbindInferApiKeyRequest, UnbindInferApiKeyResponse> unbindInferApiKeyInvoker(
+        UnbindInferApiKeyRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.unbindInferApiKey, hcClient);
+    }
+
+    /**
      * 更新授权模式
      *
      * 更新授权模式接口用于修改指定资源或功能的授权方式和权限配置信息。该接口适用于以下场景：当系统管理员需要调整资源的访问权限、开发者需要更新授权策略以适应新的业务需求，或安全审计人员需要修改授权配置以符合新的安全规范时，可通过此接口更新授权模式的详细信息。使用该接口的前提条件是用户具有更新权限且目标资源或功能的授权模式已存在。调用成功后，接口将更新目标资源的授权模式，并返回更新后的授权模式信息。若用户无权限访问该接口，或目标资源的授权模式不存在，接口将返回相应的错误信息。
@@ -3825,6 +5262,152 @@ public class ModelArtsClient {
     public SyncInvoker<UpdateAuthModeRequest, UpdateAuthModeResponse> updateAuthModeInvoker(
         UpdateAuthModeRequest request) {
         return new SyncInvoker<>(request, ModelArtsMeta.updateAuthMode, hcClient);
+    }
+
+    /**
+     * 更新镜像组
+     *
+     * 更新镜像组接口用于更新镜像组的标签及说明信息。该接口适用于以下场景：当镜像说明需要修改，或者镜像的标签需要修改时，用户可通过此接口修改。使用该接口的前提条件是镜像组已存在且用户具有更新权限。更新操作完成后，镜像组对应的配置文件会。若镜像组不存在、用户无权限操作或镜像正在被使用，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateImageGroupRequest 请求对象
+     * @return UpdateImageGroupResponse
+     */
+    public UpdateImageGroupResponse updateImageGroup(UpdateImageGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.updateImageGroup);
+    }
+
+    /**
+     * 更新镜像组
+     *
+     * 更新镜像组接口用于更新镜像组的标签及说明信息。该接口适用于以下场景：当镜像说明需要修改，或者镜像的标签需要修改时，用户可通过此接口修改。使用该接口的前提条件是镜像组已存在且用户具有更新权限。更新操作完成后，镜像组对应的配置文件会。若镜像组不存在、用户无权限操作或镜像正在被使用，接口将返回相应的错误信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateImageGroupRequest 请求对象
+     * @return SyncInvoker<UpdateImageGroupRequest, UpdateImageGroupResponse>
+     */
+    public SyncInvoker<UpdateImageGroupRequest, UpdateImageGroupResponse> updateImageGroupInvoker(
+        UpdateImageGroupRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.updateImageGroup, hcClient);
+    }
+
+    /**
+     * 更新服务部署配置
+     *
+     * 该接口适用于需要动态调整模型服务部署配置的场景
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInferDeploymentRequest 请求对象
+     * @return UpdateInferDeploymentResponse
+     */
+    public UpdateInferDeploymentResponse updateInferDeployment(UpdateInferDeploymentRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.updateInferDeployment);
+    }
+
+    /**
+     * 更新服务部署配置
+     *
+     * 该接口适用于需要动态调整模型服务部署配置的场景
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInferDeploymentRequest 请求对象
+     * @return SyncInvoker<UpdateInferDeploymentRequest, UpdateInferDeploymentResponse>
+     */
+    public SyncInvoker<UpdateInferDeploymentRequest, UpdateInferDeploymentResponse> updateInferDeploymentInvoker(
+        UpdateInferDeploymentRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.updateInferDeployment, hcClient);
+    }
+
+    /**
+     * 手动服务扩缩容
+     *
+     * 该接口适用于模型服务实例扩缩容。通过调用此接口，用户可以在原有服务的情况下，对服务进行扩缩容，且不会增加新的版本；包括权限验证错误、服务状态错误和参数验证错误。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInferDeploymentScaleRequest 请求对象
+     * @return UpdateInferDeploymentScaleResponse
+     */
+    public UpdateInferDeploymentScaleResponse updateInferDeploymentScale(UpdateInferDeploymentScaleRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.updateInferDeploymentScale);
+    }
+
+    /**
+     * 手动服务扩缩容
+     *
+     * 该接口适用于模型服务实例扩缩容。通过调用此接口，用户可以在原有服务的情况下，对服务进行扩缩容，且不会增加新的版本；包括权限验证错误、服务状态错误和参数验证错误。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInferDeploymentScaleRequest 请求对象
+     * @return SyncInvoker<UpdateInferDeploymentScaleRequest, UpdateInferDeploymentScaleResponse>
+     */
+    public SyncInvoker<UpdateInferDeploymentScaleRequest, UpdateInferDeploymentScaleResponse> updateInferDeploymentScaleInvoker(
+        UpdateInferDeploymentScaleRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.updateInferDeploymentScale, hcClient);
+    }
+
+    /**
+     * 变更内网申请
+     *
+     * 本接口用于对当前租户的内网接入申请进行状态变更操作，支持通过（APPROVE）、拒绝（REJECT）、取消（CANCEL）和重试（RETRY）等操作。适用于需要管理内网接入申请审批流程的场景。调用此接口前，确保已具备相应的变更权限，并提供有效的内网申请ID和所需的操作类型。变更成功后，内网申请的状态将更新为指定的操作结果，并记录相关日志。如果提供的内网申请ID无效、操作类型不支持或权限不足，将返回相应的异常信息，提示用户检查输入数据的有效性和权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInferIntranetConnectionRequest 请求对象
+     * @return UpdateInferIntranetConnectionResponse
+     */
+    public UpdateInferIntranetConnectionResponse updateInferIntranetConnection(
+        UpdateInferIntranetConnectionRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.updateInferIntranetConnection);
+    }
+
+    /**
+     * 变更内网申请
+     *
+     * 本接口用于对当前租户的内网接入申请进行状态变更操作，支持通过（APPROVE）、拒绝（REJECT）、取消（CANCEL）和重试（RETRY）等操作。适用于需要管理内网接入申请审批流程的场景。调用此接口前，确保已具备相应的变更权限，并提供有效的内网申请ID和所需的操作类型。变更成功后，内网申请的状态将更新为指定的操作结果，并记录相关日志。如果提供的内网申请ID无效、操作类型不支持或权限不足，将返回相应的异常信息，提示用户检查输入数据的有效性和权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInferIntranetConnectionRequest 请求对象
+     * @return SyncInvoker<UpdateInferIntranetConnectionRequest, UpdateInferIntranetConnectionResponse>
+     */
+    public SyncInvoker<UpdateInferIntranetConnectionRequest, UpdateInferIntranetConnectionResponse> updateInferIntranetConnectionInvoker(
+        UpdateInferIntranetConnectionRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.updateInferIntranetConnection, hcClient);
+    }
+
+    /**
+     * 更新服务配置
+     *
+     * 该接口适用于需要动态调整模型服务配置的场景，对模型的性能参数、资源池配置、服务调用配置等进行更新升级。通过调用此接口，用户可以在原有服务的情况下，升级成一个新的服务版本。调用此接口前，服务状态必须为“停止”、“失败”或“运行中”，且用户需具有修改服务的权限。更新成功后，新配置立即生效；若失败，服务保持原有配置并返回错误信息。常见异常包括参数验证错误、权限验证错误和服务状态错误。若服务ID无效、版本号不存在或用户无权限，则返回400 Bad Request或403 Forbidden；若服务状态不允许切换，则返回400 Bad Request。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInferServiceRequest 请求对象
+     * @return UpdateInferServiceResponse
+     */
+    public UpdateInferServiceResponse updateInferService(UpdateInferServiceRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.updateInferService);
+    }
+
+    /**
+     * 更新服务配置
+     *
+     * 该接口适用于需要动态调整模型服务配置的场景，对模型的性能参数、资源池配置、服务调用配置等进行更新升级。通过调用此接口，用户可以在原有服务的情况下，升级成一个新的服务版本。调用此接口前，服务状态必须为“停止”、“失败”或“运行中”，且用户需具有修改服务的权限。更新成功后，新配置立即生效；若失败，服务保持原有配置并返回错误信息。常见异常包括参数验证错误、权限验证错误和服务状态错误。若服务ID无效、版本号不存在或用户无权限，则返回400 Bad Request或403 Forbidden；若服务状态不允许切换，则返回400 Bad Request。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInferServiceRequest 请求对象
+     * @return SyncInvoker<UpdateInferServiceRequest, UpdateInferServiceResponse>
+     */
+    public SyncInvoker<UpdateInferServiceRequest, UpdateInferServiceResponse> updateInferServiceInvoker(
+        UpdateInferServiceRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.updateInferService, hcClient);
     }
 
     /**
@@ -3912,6 +5495,238 @@ public class ModelArtsClient {
     public SyncInvoker<ValidateAuthorizationRequest, ValidateAuthorizationResponse> validateAuthorizationInvoker(
         ValidateAuthorizationRequest request) {
         return new SyncInvoker<>(request, ModelArtsMeta.validateAuthorization, hcClient);
+    }
+
+    /**
+     * 创建自动扩缩容策略
+     *
+     * 本接口用于在已部署的服务上创建定时扩缩容策略，适用于需要根据业务负载或特定时间自动调整服务实例个数的场景。调用此接口前，确保服务已成功部署并获取了有效的服务ID，并提供详细的扩缩容策略参数，如扩缩容时间、实例个数范围、条件触发器等。创建成功后，系统将根据设定的策略自动调整服务实例个数，确保服务在指定时间内的性能和可用性。如果提供的服务ID无效、参数配置错误或系统资源不足，将返回相应的异常信息，提示用户检查输入数据的有效性或联系技术支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInferDeploymentHpaRequest 请求对象
+     * @return CreateInferDeploymentHpaResponse
+     */
+    public CreateInferDeploymentHpaResponse createInferDeploymentHpa(CreateInferDeploymentHpaRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.createInferDeploymentHpa);
+    }
+
+    /**
+     * 创建自动扩缩容策略
+     *
+     * 本接口用于在已部署的服务上创建定时扩缩容策略，适用于需要根据业务负载或特定时间自动调整服务实例个数的场景。调用此接口前，确保服务已成功部署并获取了有效的服务ID，并提供详细的扩缩容策略参数，如扩缩容时间、实例个数范围、条件触发器等。创建成功后，系统将根据设定的策略自动调整服务实例个数，确保服务在指定时间内的性能和可用性。如果提供的服务ID无效、参数配置错误或系统资源不足，将返回相应的异常信息，提示用户检查输入数据的有效性或联系技术支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInferDeploymentHpaRequest 请求对象
+     * @return SyncInvoker<CreateInferDeploymentHpaRequest, CreateInferDeploymentHpaResponse>
+     */
+    public SyncInvoker<CreateInferDeploymentHpaRequest, CreateInferDeploymentHpaResponse> createInferDeploymentHpaInvoker(
+        CreateInferDeploymentHpaRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.createInferDeploymentHpa, hcClient);
+    }
+
+    /**
+     * 删除自动扩缩容策略
+     *
+     * 本接口用于在已部署的服务上删除定时扩缩容策略，适用于需要根据业务负载或特定时间自动删除服务的场景。调用此接口前，确保服务已成功部署并获取了有效的服务ID，部署ID。如果提供的服务ID无效、参数配置错误或系统资源不足，将返回相应的异常信息，提示用户检查输入数据的有效性或联系技术支持。暂时为非开放接口，后端清理服务下的自动扩缩容策略规则使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInferDeploymentHpaRequest 请求对象
+     * @return DeleteInferDeploymentHpaResponse
+     */
+    public DeleteInferDeploymentHpaResponse deleteInferDeploymentHpa(DeleteInferDeploymentHpaRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.deleteInferDeploymentHpa);
+    }
+
+    /**
+     * 删除自动扩缩容策略
+     *
+     * 本接口用于在已部署的服务上删除定时扩缩容策略，适用于需要根据业务负载或特定时间自动删除服务的场景。调用此接口前，确保服务已成功部署并获取了有效的服务ID，部署ID。如果提供的服务ID无效、参数配置错误或系统资源不足，将返回相应的异常信息，提示用户检查输入数据的有效性或联系技术支持。暂时为非开放接口，后端清理服务下的自动扩缩容策略规则使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInferDeploymentHpaRequest 请求对象
+     * @return SyncInvoker<DeleteInferDeploymentHpaRequest, DeleteInferDeploymentHpaResponse>
+     */
+    public SyncInvoker<DeleteInferDeploymentHpaRequest, DeleteInferDeploymentHpaResponse> deleteInferDeploymentHpaInvoker(
+        DeleteInferDeploymentHpaRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.deleteInferDeploymentHpa, hcClient);
+    }
+
+    /**
+     * 查看自动扩缩容策略事件
+     *
+     * 本接口用于在已部署的服务上查看自动扩缩容策略事件，适用于查看自动扩缩容策略变动历史记录。调用此接口前，确保获取了有效的用户项目ID，服务ID，部署ID。调用成功后，会返回策略事件ID，事件状态，规则执行信息，扩缩容前实例数，扩缩容后实例数，预设目标实例数，执行记录时间。如果提供的服务ID无效、参数配置错误或系统资源不足，将返回相应的异常信息，提示用户检查输入数据的有效性或联系技术支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferDeploymentHpaEventsRequest 请求对象
+     * @return ListInferDeploymentHpaEventsResponse
+     */
+    public ListInferDeploymentHpaEventsResponse listInferDeploymentHpaEvents(
+        ListInferDeploymentHpaEventsRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.listInferDeploymentHpaEvents);
+    }
+
+    /**
+     * 查看自动扩缩容策略事件
+     *
+     * 本接口用于在已部署的服务上查看自动扩缩容策略事件，适用于查看自动扩缩容策略变动历史记录。调用此接口前，确保获取了有效的用户项目ID，服务ID，部署ID。调用成功后，会返回策略事件ID，事件状态，规则执行信息，扩缩容前实例数，扩缩容后实例数，预设目标实例数，执行记录时间。如果提供的服务ID无效、参数配置错误或系统资源不足，将返回相应的异常信息，提示用户检查输入数据的有效性或联系技术支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInferDeploymentHpaEventsRequest 请求对象
+     * @return SyncInvoker<ListInferDeploymentHpaEventsRequest, ListInferDeploymentHpaEventsResponse>
+     */
+    public SyncInvoker<ListInferDeploymentHpaEventsRequest, ListInferDeploymentHpaEventsResponse> listInferDeploymentHpaEventsInvoker(
+        ListInferDeploymentHpaEventsRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.listInferDeploymentHpaEvents, hcClient);
+    }
+
+    /**
+     * 查看自动扩缩容策略
+     *
+     * 本接口用于在已部署的服务上查看自动扩缩容策略。调用此接口前，确保服务已成功部署并获取了有效的服务ID。查询成功后，返回服务对应的策略信息，如规则ID，规则名称，扩缩容类型，扩缩容状态，扩缩容cron表达式，目标实例数等。如果提供的服务ID无效、参数配置错误或系统资源不足，将返回相应的异常信息，提示用户检查输入数据的有效性或联系技术支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInferDeploymentHpaRequest 请求对象
+     * @return ShowInferDeploymentHpaResponse
+     */
+    public ShowInferDeploymentHpaResponse showInferDeploymentHpa(ShowInferDeploymentHpaRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.showInferDeploymentHpa);
+    }
+
+    /**
+     * 查看自动扩缩容策略
+     *
+     * 本接口用于在已部署的服务上查看自动扩缩容策略。调用此接口前，确保服务已成功部署并获取了有效的服务ID。查询成功后，返回服务对应的策略信息，如规则ID，规则名称，扩缩容类型，扩缩容状态，扩缩容cron表达式，目标实例数等。如果提供的服务ID无效、参数配置错误或系统资源不足，将返回相应的异常信息，提示用户检查输入数据的有效性或联系技术支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInferDeploymentHpaRequest 请求对象
+     * @return SyncInvoker<ShowInferDeploymentHpaRequest, ShowInferDeploymentHpaResponse>
+     */
+    public SyncInvoker<ShowInferDeploymentHpaRequest, ShowInferDeploymentHpaResponse> showInferDeploymentHpaInvoker(
+        ShowInferDeploymentHpaRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.showInferDeploymentHpa, hcClient);
+    }
+
+    /**
+     * 修改自动扩缩容策略
+     *
+     * 本接口用于在已部署的服务上修改定时扩缩容策略，适用于需要根据业务负载或特定时间自动调整服务实例个数的场景。调用此接口前，确保服务已成功部署并获取了有效的服务ID，部署ID，并提供详细的扩缩容策略参数，如扩缩容时间、实例个数范围、条件触发器等。修改成功后，系统将根据设定的策略自动调整服务实例个数，确保服务在指定时间内的性能和可用性。如果提供的服务ID无效、参数配置错误或系统资源不足，将返回相应的异常信息，提示用户检查输入数据的有效性或联系技术支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInferDeploymentHpaRequest 请求对象
+     * @return UpdateInferDeploymentHpaResponse
+     */
+    public UpdateInferDeploymentHpaResponse updateInferDeploymentHpa(UpdateInferDeploymentHpaRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.updateInferDeploymentHpa);
+    }
+
+    /**
+     * 修改自动扩缩容策略
+     *
+     * 本接口用于在已部署的服务上修改定时扩缩容策略，适用于需要根据业务负载或特定时间自动调整服务实例个数的场景。调用此接口前，确保服务已成功部署并获取了有效的服务ID，部署ID，并提供详细的扩缩容策略参数，如扩缩容时间、实例个数范围、条件触发器等。修改成功后，系统将根据设定的策略自动调整服务实例个数，确保服务在指定时间内的性能和可用性。如果提供的服务ID无效、参数配置错误或系统资源不足，将返回相应的异常信息，提示用户检查输入数据的有效性或联系技术支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInferDeploymentHpaRequest 请求对象
+     * @return SyncInvoker<UpdateInferDeploymentHpaRequest, UpdateInferDeploymentHpaResponse>
+     */
+    public SyncInvoker<UpdateInferDeploymentHpaRequest, UpdateInferDeploymentHpaResponse> updateInferDeploymentHpaInvoker(
+        UpdateInferDeploymentHpaRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.updateInferDeploymentHpa, hcClient);
+    }
+
+    /**
+     * 创建HRA策略
+     *
+     * 本接口用于在已部署且支持HRA策略的服务上创建HRA策略，适用于需要根据业务负载或特定时间自动调整服务实例个数的场景。调用此接口前，确保服务已成功部署并获取了有效的服务ID，并提供详细的hra策略参数，如hra时间、实例个数范围、条件触发器等。创建成功后，系统将根据设定的策略自动调整服务实例个数，确保服务在指定时间内的性能和可用性。如果提供的服务ID无效、参数配置错误或系统资源不足，将返回相应的异常信息，提示用户检查输入数据的有效性或联系技术支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInferHraRequest 请求对象
+     * @return CreateInferHraResponse
+     */
+    public CreateInferHraResponse createInferHra(CreateInferHraRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.createInferHra);
+    }
+
+    /**
+     * 创建HRA策略
+     *
+     * 本接口用于在已部署且支持HRA策略的服务上创建HRA策略，适用于需要根据业务负载或特定时间自动调整服务实例个数的场景。调用此接口前，确保服务已成功部署并获取了有效的服务ID，并提供详细的hra策略参数，如hra时间、实例个数范围、条件触发器等。创建成功后，系统将根据设定的策略自动调整服务实例个数，确保服务在指定时间内的性能和可用性。如果提供的服务ID无效、参数配置错误或系统资源不足，将返回相应的异常信息，提示用户检查输入数据的有效性或联系技术支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInferHraRequest 请求对象
+     * @return SyncInvoker<CreateInferHraRequest, CreateInferHraResponse>
+     */
+    public SyncInvoker<CreateInferHraRequest, CreateInferHraResponse> createInferHraInvoker(
+        CreateInferHraRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.createInferHra, hcClient);
+    }
+
+    /**
+     * 获取推理单元配比检测信息
+     *
+     * 本接口用于在已部署的服务上查看推理单元配比检测信息。调用此接口前，确保服务已成功部署并获取了有效的服务ID。查询成功后，返回服务对应的策略信息，如规则ID，规则名称，策略状态，HRA结果状态等。如果提供的服务ID无效、参数配置错误或系统资源不足，将返回相应的异常信息，提示用户检查输入数据的有效性或联系技术支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInferHraRequest 请求对象
+     * @return ShowInferHraResponse
+     */
+    public ShowInferHraResponse showInferHra(ShowInferHraRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.showInferHra);
+    }
+
+    /**
+     * 获取推理单元配比检测信息
+     *
+     * 本接口用于在已部署的服务上查看推理单元配比检测信息。调用此接口前，确保服务已成功部署并获取了有效的服务ID。查询成功后，返回服务对应的策略信息，如规则ID，规则名称，策略状态，HRA结果状态等。如果提供的服务ID无效、参数配置错误或系统资源不足，将返回相应的异常信息，提示用户检查输入数据的有效性或联系技术支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInferHraRequest 请求对象
+     * @return SyncInvoker<ShowInferHraRequest, ShowInferHraResponse>
+     */
+    public SyncInvoker<ShowInferHraRequest, ShowInferHraResponse> showInferHraInvoker(ShowInferHraRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.showInferHra, hcClient);
+    }
+
+    /**
+     * 修改指定部署的HRA策略配置
+     *
+     * 本接口用于在已创建HRA策略的服务上修改指定部署的HRA策略配置，适用于需要根据业务负载或特定时间自动调整服务实例个数的场景。调用此接口前，确保服务已成功部署并获取了有效的服务ID，部署ID，并提供详细的hra策略参数，如HRA规则列表、HRA结果状态、策略状态等。修改成功后，系统将根据设定的策略自动调整服务实例个数，确保服务在指定时间内的性能和可用性。如果提供的服务ID无效、参数配置错误或系统资源不足，将返回相应的异常信息，提示用户检查输入数据的有效性或联系技术支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInferHraRequest 请求对象
+     * @return UpdateInferHraResponse
+     */
+    public UpdateInferHraResponse updateInferHra(UpdateInferHraRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.updateInferHra);
+    }
+
+    /**
+     * 修改指定部署的HRA策略配置
+     *
+     * 本接口用于在已创建HRA策略的服务上修改指定部署的HRA策略配置，适用于需要根据业务负载或特定时间自动调整服务实例个数的场景。调用此接口前，确保服务已成功部署并获取了有效的服务ID，部署ID，并提供详细的hra策略参数，如HRA规则列表、HRA结果状态、策略状态等。修改成功后，系统将根据设定的策略自动调整服务实例个数，确保服务在指定时间内的性能和可用性。如果提供的服务ID无效、参数配置错误或系统资源不足，将返回相应的异常信息，提示用户检查输入数据的有效性或联系技术支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInferHraRequest 请求对象
+     * @return SyncInvoker<UpdateInferHraRequest, UpdateInferHraResponse>
+     */
+    public SyncInvoker<UpdateInferHraRequest, UpdateInferHraResponse> updateInferHraInvoker(
+        UpdateInferHraRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.updateInferHra, hcClient);
     }
 
     /**
@@ -6521,7 +8336,8 @@ public class ModelArtsClient {
     /**
      * 查询工作流定时调度列表
      *
-     * 获取指定工作流的定时调度信息。
+     * 查询工作流定时调度列表接口用于获取指定项目下所有工作流的定时调度信息。
+     * 该接口适用于以下场景：当用户需要查看项目中所有工作流的定时调度配置，以便进行任务管理和调度优化时，可以通过此接口获取定时调度列表。使用该接口的前提条件是用户已登录并具有查看工作流定时调度的权限。响应消息体中包含每个工作流的定时调度信息，如调度ID、调度时间、状态等。若用户无权限或项目下无工作流定时调度，接口将返回相应的错误信息或空列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6535,7 +8351,8 @@ public class ModelArtsClient {
     /**
      * 查询工作流定时调度列表
      *
-     * 获取指定工作流的定时调度信息。
+     * 查询工作流定时调度列表接口用于获取指定项目下所有工作流的定时调度信息。
+     * 该接口适用于以下场景：当用户需要查看项目中所有工作流的定时调度配置，以便进行任务管理和调度优化时，可以通过此接口获取定时调度列表。使用该接口的前提条件是用户已登录并具有查看工作流定时调度的权限。响应消息体中包含每个工作流的定时调度信息，如调度ID、调度时间、状态等。若用户无权限或项目下无工作流定时调度，接口将返回相应的错误信息或空列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

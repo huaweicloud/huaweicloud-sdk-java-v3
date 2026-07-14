@@ -308,7 +308,7 @@ public class ScheduledEvent {
     private StateEnum state;
 
     /**
-     * **参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点  - lite-cluster lite池  - standard 标准池
+     * **参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点 - lite-cluster lite池 - standard 标准池
      */
     public static final class InstanceTypeEnum {
 
@@ -529,7 +529,7 @@ public class ScheduledEvent {
     }
 
     /**
-     * **参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点  - lite-cluster lite池  - standard 标准池
+     * **参数解释**：节点类型归属。 **取值范围**可选择值如下： - devserver：lite-server节点 - lite-cluster lite池 - standard 标准池
      * @return instanceType
      */
     public InstanceTypeEnum getInstanceType() {

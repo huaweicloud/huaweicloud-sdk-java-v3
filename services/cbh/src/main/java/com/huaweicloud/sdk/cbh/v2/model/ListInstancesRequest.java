@@ -15,6 +15,16 @@ public class ListInstancesRequest {
 
     private Long instanceId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private String limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private String offset;
+
     public ListInstancesRequest withInstanceId(Long instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -34,6 +44,40 @@ public class ListInstancesRequest {
         this.instanceId = instanceId;
     }
 
+    public ListInstancesRequest withLimit(String limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 查询返回的记录数量上限，默认值 1000，即一次最多返回 1000 条实例记录。最小值为1，最大值为1000。
+     * @return limit
+     */
+    public String getLimit() {
+        return limit;
+    }
+
+    public void setLimit(String limit) {
+        this.limit = limit;
+    }
+
+    public ListInstancesRequest withOffset(String offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 查询的起始偏移量（索引位置），默认值 0，即从第 0 条记录开始查。最小值为0。
+     * @return offset
+     */
+    public String getOffset() {
+        return offset;
+    }
+
+    public void setOffset(String offset) {
+        this.offset = offset;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -43,12 +87,13 @@ public class ListInstancesRequest {
             return false;
         }
         ListInstancesRequest that = (ListInstancesRequest) obj;
-        return Objects.equals(this.instanceId, that.instanceId);
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId);
+        return Objects.hash(instanceId, limit, offset);
     }
 
     @Override
@@ -56,6 +101,8 @@ public class ListInstancesRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListInstancesRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

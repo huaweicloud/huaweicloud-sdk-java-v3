@@ -216,6 +216,7 @@ public class CbhClient {
      * @param request ListCbhInstanceRequest 请求对象
      * @return ListCbhInstanceResponse
      */
+    @Deprecated
     public ListCbhInstanceResponse listCbhInstance(ListCbhInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, CbhMeta.listCbhInstance);
     }
@@ -230,6 +231,7 @@ public class CbhClient {
      * @param request ListCbhInstanceRequest 请求对象
      * @return SyncInvoker<ListCbhInstanceRequest, ListCbhInstanceResponse>
      */
+    @Deprecated
     public SyncInvoker<ListCbhInstanceRequest, ListCbhInstanceResponse> listCbhInstanceInvoker(
         ListCbhInstanceRequest request) {
         return new SyncInvoker<>(request, CbhMeta.listCbhInstance, hcClient);

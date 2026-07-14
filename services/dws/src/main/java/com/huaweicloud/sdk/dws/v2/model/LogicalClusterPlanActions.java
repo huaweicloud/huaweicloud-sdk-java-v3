@@ -120,7 +120,7 @@ public class LogicalClusterPlanActions {
     }
 
     /**
-     * **参数解释**： 周期信息。Cron表达式：如\"0 0 0 ? * 3\"。 **取值范围**： 不涉及。
+     * **参数解释**： 周期信息。Cron表达式：如\"0 0 0 ? * 3\"，或Unix毫秒时间戳。 **取值范围**： 不涉及。
      * @return strategy
      */
     public String getStrategy() {

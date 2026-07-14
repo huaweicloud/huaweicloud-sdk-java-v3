@@ -14,11 +14,18 @@ import com.huaweicloud.sdk.modelarts.v1.model.AttachDynamicStorageRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.AttachDynamicStorageResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.AttachServerVolumeRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.AuthorizationRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchBindApiKeyRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchBindInferApiKeysRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchBindInferApiKeysResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchBindPoolNodesReq;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchBindPoolNodesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchBindPoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchCreatePoolTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchCreatePoolTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteInferIntranetConnectionsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteInferIntranetConnectionsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteInferServicesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchDeleteInferServicesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolNodesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchDeletePoolTagsRequest;
@@ -38,6 +45,9 @@ import com.huaweicloud.sdk.modelarts.v1.model.BatchResetPoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchResizePoolNodesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchResizePoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchResizeRequestBody;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchUnBindApiKeyRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchUnbindInferApiKeysRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BatchUnbindInferApiKeysResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchUnlockPoolNodesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchUnlockPoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchUpdatePoolNodesRequest;
@@ -45,6 +55,10 @@ import com.huaweicloud.sdk.modelarts.v1.model.BatchUpdatePoolNodesRequestBody;
 import com.huaweicloud.sdk.modelarts.v1.model.BatchUpdatePoolNodesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.BindDevServerPublicIPRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.BindDevServerPublicIPResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.BindInferApiKeyRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.BindInferApiKeyResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CancelInferDeploymentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CancelInferDeploymentResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeAlgorithmRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeAlgorithmResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeDevServerOSRequest;
@@ -58,23 +72,42 @@ import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingJobDescriptionReques
 import com.huaweicloud.sdk.modelarts.v1.model.ChangeTrainingJobDescriptionResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CheckTrainingExperimentRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CheckTrainingExperimentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CountInferServicesByTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CountInferServicesByTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryBody;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAlgorithmVersionToGalleryResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateApiKeyReq;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAuthorizationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateAuthorizationResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateDevServerJobRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateDevServerJobResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateDevServerRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateDevServerResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateHpaRequestBody;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateHraRequestBody;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateHyperClusterRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateHyperClusterResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateHyperinstanceTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateHyperinstanceTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateImageRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateImageResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferApiKeyRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferApiKeyResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferDeploymentHpaRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferDeploymentHpaResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferDeploymentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferDeploymentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferHraRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferHraResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferIntranetConnectionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferIntranetConnectionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferServiceRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferServiceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferServiceTagRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferServiceTagResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateModelArtsAgencyRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateModelArtsAgencyResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateNetworkRequest;
@@ -142,9 +175,27 @@ import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperinstanceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperinstanceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperinstanceTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteHyperinstanceTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteImageGroupRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteImageGroupRequestBody;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteImageGroupResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteImageRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteImageRequestBody;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteImageResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferApiKeyRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferApiKeyResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferDeploymentHpaRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferDeploymentHpaResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferDeploymentInstanceRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferDeploymentInstanceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferDeploymentPodRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferDeploymentPodResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferDeploymentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferDeploymentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferDeploymentVersionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferDeploymentVersionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferServiceTagRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferServiceTagResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteInferTmsTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteNetworkRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteNetworkResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteNodePoolRequest;
@@ -155,6 +206,7 @@ import com.huaweicloud.sdk.modelarts.v1.model.DeleteNotebookTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteNotebookTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.DeletePoolRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeletePoolResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.DeleteServicesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteTagRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteTmsTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.DeleteTrainJobTagsRequest;
@@ -195,17 +247,24 @@ import com.huaweicloud.sdk.modelarts.v1.model.GetDevServerOperationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.GetDevServerOperationResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.GetHyperClusterRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.GetHyperClusterResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.GetHyperinstanceOperationRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.GetHyperinstanceOperationResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.GetHyperinstanceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.GetHyperinstanceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.GetScaleEvaluationsDevServerRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.GetScaleEvaluationsDevServerResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.GetTopologiesRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.GetTopologiesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.GroupConfig;
+import com.huaweicloud.sdk.modelarts.v1.model.GroupConfigUpdateRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.HyperClusterCreateRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.HyperinstanceClustersCapacityRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ImageCreateReq;
 import com.huaweicloud.sdk.modelarts.v1.model.ImageRegRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ImageSaveJob;
+import com.huaweicloud.sdk.modelarts.v1.model.IntranetConnectionDeleteRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.IntranetConnectionModifyRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.IntranetConnectionRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.Job;
 import com.huaweicloud.sdk.modelarts.v1.model.JobActionType;
 import com.huaweicloud.sdk.modelarts.v1.model.JobDescription;
@@ -255,6 +314,34 @@ import com.huaweicloud.sdk.modelarts.v1.model.ListImageGroupRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListImageGroupResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListImageRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListImageResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferApiKeysRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferApiKeysResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferClusterFlavorsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferClusterFlavorsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentHpaEventsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentHpaEventsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentInstancesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentInstancesResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentPodEventsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentPodEventsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentPodsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentPodsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentVersionsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentVersionsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferDeploymentsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferIntranetConnectionApplicationsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferIntranetConnectionApplicationsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferIntranetConnectionReviewsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferIntranetConnectionReviewsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferServiceEventsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferServiceEventsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferServiceTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferServiceTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferServicesByTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferServicesByTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferServicesRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ListInferServicesResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListJobsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListJobsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListNetworksRequest;
@@ -300,6 +387,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.ListWorkloadsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkspaceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ListWorkspaceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ModelArtsAgencyRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ModifyInferIntranetConnectionsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ModifyInferIntranetConnectionsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.NetworkCreationRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.NetworkUpdateRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.NodeBatchMigrationRequest;
@@ -318,6 +407,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.PatchPoolResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.PoolUpdateRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.QueryHyperinstanceTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.QueryHyperinstanceTagsResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.QueryTmsResourceCountRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.QueryTmsResourceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.RebootDevServerRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.RebootDevServerResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.RegisterImageRequest;
@@ -340,6 +431,9 @@ import com.huaweicloud.sdk.modelarts.v1.model.ServerOsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ServerRoceNetworkRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ServerScaleDownRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ServerStartRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ServiceCreateRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ServicePodEventResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ServiceUpdateRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAlgorithmByUuidRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAlgorithmByUuidResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowAuthmodeDetailRequest;
@@ -366,6 +460,20 @@ import com.huaweicloud.sdk.modelarts.v1.model.ShowDynamicStorageRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowDynamicStorageResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowImageRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowImageResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferDeploymentHpaRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferDeploymentHpaResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferDeploymentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferDeploymentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferDeploymentVersionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferDeploymentVersionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferHraRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferHraResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferServiceClusterRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferServiceClusterResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferServiceRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferServiceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferServiceTagsRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.ShowInferServiceTagsResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowLeaseRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowLeaseResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.ShowNetworkAvailableIpRequest;
@@ -456,6 +564,10 @@ import com.huaweicloud.sdk.modelarts.v1.model.StartDevServerRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.StartDevServerResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.StartHyperinstanceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.StartHyperinstanceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.StartInferDeploymentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.StartInferDeploymentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.StartInferServiceRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.StartInferServiceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.StartNotebookRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.StartNotebookResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.StepExecutionAction;
@@ -463,22 +575,50 @@ import com.huaweicloud.sdk.modelarts.v1.model.StopDevServerRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.StopDevServerResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.StopHyperinstanceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.StopHyperinstanceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.StopInferDeploymentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.StopInferDeploymentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.StopInferServiceRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.StopInferServiceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.StopNotebookRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.StopNotebookResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.StopTrainingJobRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.StopTrainingJobResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.Subscription;
+import com.huaweicloud.sdk.modelarts.v1.model.SwitchInferDeploymentVersionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.SwitchInferDeploymentVersionRequestBody;
+import com.huaweicloud.sdk.modelarts.v1.model.SwitchInferDeploymentVersionResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.SyncDevServersRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.SyncDevServersResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.SyncImageRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.SyncImageResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.TagRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.TaskHistory;
+import com.huaweicloud.sdk.modelarts.v1.model.UnbindInferApiKeyRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UnbindInferApiKeyResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateAuthModeRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateAuthModeRequestBody;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateAuthModeResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateDevServerRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateDevServerResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateHpaRequestBody;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateHraRequestBody;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateImageGroupRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateImageGroupRequestBody;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateImageGroupResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferDeploymentHpaRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferDeploymentHpaResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferDeploymentRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferDeploymentResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferDeploymentScale;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferDeploymentScaleRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferDeploymentScaleResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferHraRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferHraResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferIntranetConnectionRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferIntranetConnectionResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferServiceRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateInferServiceResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.UpdateIntranetConnectionRequestBody;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateNotebookRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateNotebookResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.UpdateServerRequest;
@@ -582,6 +722,35 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchBindInferApiKeysRequest, BatchBindInferApiKeysResponse> batchBindInferApiKeys =
+        genForBatchBindInferApiKeys();
+
+    private static HttpRequestDef<BatchBindInferApiKeysRequest, BatchBindInferApiKeysResponse> genForBatchBindInferApiKeys() {
+        // basic
+        HttpRequestDef.Builder<BatchBindInferApiKeysRequest, BatchBindInferApiKeysResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchBindInferApiKeysRequest.class, BatchBindInferApiKeysResponse.class)
+            .withName("BatchBindInferApiKeys")
+            .withUri("/v2/{project_id}/services/{service_id}/api-keys/batch-bind")
+            .withContentType("application/x-www-form-urlencoded");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchBindInferApiKeysRequest::getServiceId,
+                BatchBindInferApiKeysRequest::setServiceId));
+        builder.<BatchBindApiKeyRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchBindApiKeyRequest.class),
+            f -> f.withMarshaller(BatchBindInferApiKeysRequest::getBody, BatchBindInferApiKeysRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchBindPoolNodesRequest, BatchBindPoolNodesResponse> batchBindPoolNodes =
         genForBatchBindPoolNodes();
 
@@ -637,6 +806,57 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTagRequest.class),
             f -> f.withMarshaller(BatchCreatePoolTagsRequest::getBody, BatchCreatePoolTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteInferIntranetConnectionsRequest, BatchDeleteInferIntranetConnectionsResponse> batchDeleteInferIntranetConnections =
+        genForBatchDeleteInferIntranetConnections();
+
+    private static HttpRequestDef<BatchDeleteInferIntranetConnectionsRequest, BatchDeleteInferIntranetConnectionsResponse> genForBatchDeleteInferIntranetConnections() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteInferIntranetConnectionsRequest, BatchDeleteInferIntranetConnectionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteInferIntranetConnectionsRequest.class,
+                    BatchDeleteInferIntranetConnectionsResponse.class)
+                .withName("BatchDeleteInferIntranetConnections")
+                .withUri("/v2/{project_id}/intranet-connection/delete")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<IntranetConnectionDeleteRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IntranetConnectionDeleteRequest.class),
+            f -> f.withMarshaller(BatchDeleteInferIntranetConnectionsRequest::getBody,
+                BatchDeleteInferIntranetConnectionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteInferServicesRequest, BatchDeleteInferServicesResponse> batchDeleteInferServices =
+        genForBatchDeleteInferServices();
+
+    private static HttpRequestDef<BatchDeleteInferServicesRequest, BatchDeleteInferServicesResponse> genForBatchDeleteInferServices() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteInferServicesRequest, BatchDeleteInferServicesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, BatchDeleteInferServicesRequest.class, BatchDeleteInferServicesResponse.class)
+                .withName("BatchDeleteInferServices")
+                .withUri("/v2/{project_id}/services/delete")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<DeleteServicesRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteServicesRequest.class),
+            f -> f.withMarshaller(BatchDeleteInferServicesRequest::getBody, BatchDeleteInferServicesRequest::setBody));
 
         // response
 
@@ -845,6 +1065,35 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchUnbindInferApiKeysRequest, BatchUnbindInferApiKeysResponse> batchUnbindInferApiKeys =
+        genForBatchUnbindInferApiKeys();
+
+    private static HttpRequestDef<BatchUnbindInferApiKeysRequest, BatchUnbindInferApiKeysResponse> genForBatchUnbindInferApiKeys() {
+        // basic
+        HttpRequestDef.Builder<BatchUnbindInferApiKeysRequest, BatchUnbindInferApiKeysResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchUnbindInferApiKeysRequest.class, BatchUnbindInferApiKeysResponse.class)
+            .withName("BatchUnbindInferApiKeys")
+            .withUri("/v2/{project_id}/services/{service_id}/api-keys/batch-unbind")
+            .withContentType("application/x-www-form-urlencoded");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUnbindInferApiKeysRequest::getServiceId,
+                BatchUnbindInferApiKeysRequest::setServiceId));
+        builder.<BatchUnBindApiKeyRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUnBindApiKeyRequest.class),
+            f -> f.withMarshaller(BatchUnbindInferApiKeysRequest::getBody, BatchUnbindInferApiKeysRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchUnlockPoolNodesRequest, BatchUnlockPoolNodesResponse> batchUnlockPoolNodes =
         genForBatchUnlockPoolNodes();
 
@@ -895,6 +1144,64 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchUpdatePoolNodesRequestBody.class),
             f -> f.withMarshaller(BatchUpdatePoolNodesRequest::getBody, BatchUpdatePoolNodesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BindInferApiKeyRequest, BindInferApiKeyResponse> bindInferApiKey =
+        genForBindInferApiKey();
+
+    private static HttpRequestDef<BindInferApiKeyRequest, BindInferApiKeyResponse> genForBindInferApiKey() {
+        // basic
+        HttpRequestDef.Builder<BindInferApiKeyRequest, BindInferApiKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BindInferApiKeyRequest.class, BindInferApiKeyResponse.class)
+                .withName("BindInferApiKey")
+                .withUri("/v2/{project_id}/services/{service_id}/api-keys/{key_id}/bind")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BindInferApiKeyRequest::getServiceId, BindInferApiKeyRequest::setServiceId));
+        builder.<String>withRequestField("key_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BindInferApiKeyRequest::getKeyId, BindInferApiKeyRequest::setKeyId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CancelInferDeploymentRequest, CancelInferDeploymentResponse> cancelInferDeployment =
+        genForCancelInferDeployment();
+
+    private static HttpRequestDef<CancelInferDeploymentRequest, CancelInferDeploymentResponse> genForCancelInferDeployment() {
+        // basic
+        HttpRequestDef.Builder<CancelInferDeploymentRequest, CancelInferDeploymentResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CancelInferDeploymentRequest.class, CancelInferDeploymentResponse.class)
+            .withName("CancelInferDeployment")
+            .withUri("/v2/{project_id}/services/{service_id}/deployments/{deployment_id}/interrupt")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelInferDeploymentRequest::getServiceId,
+                CancelInferDeploymentRequest::setServiceId));
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelInferDeploymentRequest::getDeploymentId,
+                CancelInferDeploymentRequest::setDeploymentId));
 
         // response
 
@@ -1022,6 +1329,36 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CountInferServicesByTagsRequest, CountInferServicesByTagsResponse> countInferServicesByTags =
+        genForCountInferServicesByTags();
+
+    private static HttpRequestDef<CountInferServicesByTagsRequest, CountInferServicesByTagsResponse> genForCountInferServicesByTags() {
+        // basic
+        HttpRequestDef.Builder<CountInferServicesByTagsRequest, CountInferServicesByTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CountInferServicesByTagsRequest.class, CountInferServicesByTagsResponse.class)
+                .withName("CountInferServicesByTags")
+                .withUri("/v2/{project_id}/modelarts-service-v2/resource-instances/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountInferServicesByTagsRequest::getWorkspaceId,
+                CountInferServicesByTagsRequest::setWorkspaceId));
+        builder.<QueryTmsResourceCountRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QueryTmsResourceCountRequest.class),
+            f -> f.withMarshaller(CountInferServicesByTagsRequest::getBody, CountInferServicesByTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateAlgorithmRequest, CreateAlgorithmResponse> createAlgorithm =
         genForCreateAlgorithm();
 
@@ -1089,6 +1426,144 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AuthorizationRequest.class),
             f -> f.withMarshaller(CreateAuthorizationRequest::getBody, CreateAuthorizationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateInferApiKeyRequest, CreateInferApiKeyResponse> createInferApiKey =
+        genForCreateInferApiKey();
+
+    private static HttpRequestDef<CreateInferApiKeyRequest, CreateInferApiKeyResponse> genForCreateInferApiKey() {
+        // basic
+        HttpRequestDef.Builder<CreateInferApiKeyRequest, CreateInferApiKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateInferApiKeyRequest.class, CreateInferApiKeyResponse.class)
+                .withName("CreateInferApiKey")
+                .withUri("/v2/{project_id}/services/api-keys")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateApiKeyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateApiKeyReq.class),
+            f -> f.withMarshaller(CreateInferApiKeyRequest::getBody, CreateInferApiKeyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateInferDeploymentRequest, CreateInferDeploymentResponse> createInferDeployment =
+        genForCreateInferDeployment();
+
+    private static HttpRequestDef<CreateInferDeploymentRequest, CreateInferDeploymentResponse> genForCreateInferDeployment() {
+        // basic
+        HttpRequestDef.Builder<CreateInferDeploymentRequest, CreateInferDeploymentResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateInferDeploymentRequest.class, CreateInferDeploymentResponse.class)
+            .withName("CreateInferDeployment")
+            .withUri("/v2/{project_id}/services/{service_id}/deployments")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInferDeploymentRequest::getServiceId,
+                CreateInferDeploymentRequest::setServiceId));
+        builder.<GroupConfig>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(GroupConfig.class),
+            f -> f.withMarshaller(CreateInferDeploymentRequest::getBody, CreateInferDeploymentRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateInferIntranetConnectionRequest, CreateInferIntranetConnectionResponse> createInferIntranetConnection =
+        genForCreateInferIntranetConnection();
+
+    private static HttpRequestDef<CreateInferIntranetConnectionRequest, CreateInferIntranetConnectionResponse> genForCreateInferIntranetConnection() {
+        // basic
+        HttpRequestDef.Builder<CreateInferIntranetConnectionRequest, CreateInferIntranetConnectionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateInferIntranetConnectionRequest.class,
+                    CreateInferIntranetConnectionResponse.class)
+                .withName("CreateInferIntranetConnection")
+                .withUri("/v2/{project_id}/intranet-connection")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<IntranetConnectionRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IntranetConnectionRequest.class),
+            f -> f.withMarshaller(CreateInferIntranetConnectionRequest::getBody,
+                CreateInferIntranetConnectionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateInferServiceRequest, CreateInferServiceResponse> createInferService =
+        genForCreateInferService();
+
+    private static HttpRequestDef<CreateInferServiceRequest, CreateInferServiceResponse> genForCreateInferService() {
+        // basic
+        HttpRequestDef.Builder<CreateInferServiceRequest, CreateInferServiceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateInferServiceRequest.class, CreateInferServiceResponse.class)
+                .withName("CreateInferService")
+                .withUri("/v2/{project_id}/services")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("X-Auth-Token-Provider",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInferServiceRequest::getXAuthTokenProvider,
+                CreateInferServiceRequest::setXAuthTokenProvider));
+        builder.<ServiceCreateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ServiceCreateRequest.class),
+            f -> f.withMarshaller(CreateInferServiceRequest::getBody, CreateInferServiceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateInferServiceTagRequest, CreateInferServiceTagResponse> createInferServiceTag =
+        genForCreateInferServiceTag();
+
+    private static HttpRequestDef<CreateInferServiceTagRequest, CreateInferServiceTagResponse> genForCreateInferServiceTag() {
+        // basic
+        HttpRequestDef.Builder<CreateInferServiceTagRequest, CreateInferServiceTagResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateInferServiceTagRequest.class, CreateInferServiceTagResponse.class)
+            .withName("CreateInferServiceTag")
+            .withUri("/v2/{project_id}/modelarts-service-v2/{resource_id}/tags/create")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInferServiceTagRequest::getResourceId,
+                CreateInferServiceTagRequest::setResourceId));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInferServiceTagRequest::getWorkspaceId,
+                CreateInferServiceTagRequest::setWorkspaceId));
 
         // response
 
@@ -1468,6 +1943,262 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteImageGroupRequest, DeleteImageGroupResponse> deleteImageGroup =
+        genForDeleteImageGroup();
+
+    private static HttpRequestDef<DeleteImageGroupRequest, DeleteImageGroupResponse> genForDeleteImageGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteImageGroupRequest, DeleteImageGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteImageGroupRequest.class, DeleteImageGroupResponse.class)
+                .withName("DeleteImageGroup")
+                .withUri("/v1/{project_id}/images/group/{id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteImageGroupRequest::getId, DeleteImageGroupRequest::setId));
+        builder.<DeleteImageGroupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteImageGroupRequestBody.class),
+            f -> f.withMarshaller(DeleteImageGroupRequest::getBody, DeleteImageGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteInferApiKeyRequest, DeleteInferApiKeyResponse> deleteInferApiKey =
+        genForDeleteInferApiKey();
+
+    private static HttpRequestDef<DeleteInferApiKeyRequest, DeleteInferApiKeyResponse> genForDeleteInferApiKey() {
+        // basic
+        HttpRequestDef.Builder<DeleteInferApiKeyRequest, DeleteInferApiKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteInferApiKeyRequest.class, DeleteInferApiKeyResponse.class)
+                .withName("DeleteInferApiKey")
+                .withUri("/v2/{project_id}/services/api-keys/{key_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("key_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInferApiKeyRequest::getKeyId, DeleteInferApiKeyRequest::setKeyId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteInferDeploymentRequest, DeleteInferDeploymentResponse> deleteInferDeployment =
+        genForDeleteInferDeployment();
+
+    private static HttpRequestDef<DeleteInferDeploymentRequest, DeleteInferDeploymentResponse> genForDeleteInferDeployment() {
+        // basic
+        HttpRequestDef.Builder<DeleteInferDeploymentRequest, DeleteInferDeploymentResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteInferDeploymentRequest.class, DeleteInferDeploymentResponse.class)
+            .withName("DeleteInferDeployment")
+            .withUri("/v2/{project_id}/services/{service_id}/deployments/{deployment_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInferDeploymentRequest::getServiceId,
+                DeleteInferDeploymentRequest::setServiceId));
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInferDeploymentRequest::getDeploymentId,
+                DeleteInferDeploymentRequest::setDeploymentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteInferDeploymentInstanceRequest, DeleteInferDeploymentInstanceResponse> deleteInferDeploymentInstance =
+        genForDeleteInferDeploymentInstance();
+
+    private static HttpRequestDef<DeleteInferDeploymentInstanceRequest, DeleteInferDeploymentInstanceResponse> genForDeleteInferDeploymentInstance() {
+        // basic
+        HttpRequestDef.Builder<DeleteInferDeploymentInstanceRequest, DeleteInferDeploymentInstanceResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteInferDeploymentInstanceRequest.class,
+                    DeleteInferDeploymentInstanceResponse.class)
+                .withName("DeleteInferDeploymentInstance")
+                .withUri("/v2/{project_id}/services/{id}/deployments/{deployment_name}/instances/{name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInferDeploymentInstanceRequest::getId,
+                DeleteInferDeploymentInstanceRequest::setId));
+        builder.<String>withRequestField("deployment_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInferDeploymentInstanceRequest::getDeploymentName,
+                DeleteInferDeploymentInstanceRequest::setDeploymentName));
+        builder.<String>withRequestField("name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInferDeploymentInstanceRequest::getName,
+                DeleteInferDeploymentInstanceRequest::setName));
+        builder.<Boolean>withRequestField("force",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(DeleteInferDeploymentInstanceRequest::getForce,
+                DeleteInferDeploymentInstanceRequest::setForce));
+        builder.<String>withRequestField("operation",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInferDeploymentInstanceRequest::getOperation,
+                DeleteInferDeploymentInstanceRequest::setOperation));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteInferDeploymentPodRequest, DeleteInferDeploymentPodResponse> deleteInferDeploymentPod =
+        genForDeleteInferDeploymentPod();
+
+    private static HttpRequestDef<DeleteInferDeploymentPodRequest, DeleteInferDeploymentPodResponse> genForDeleteInferDeploymentPod() {
+        // basic
+        HttpRequestDef.Builder<DeleteInferDeploymentPodRequest, DeleteInferDeploymentPodResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteInferDeploymentPodRequest.class,
+                    DeleteInferDeploymentPodResponse.class)
+                .withName("DeleteInferDeploymentPod")
+                .withUri(
+                    "/v2/{project_id}/services/{id}/deployments/{deployment_name}/instances/{instance_name}/pods/{name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInferDeploymentPodRequest::getId, DeleteInferDeploymentPodRequest::setId));
+        builder.<String>withRequestField("deployment_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInferDeploymentPodRequest::getDeploymentName,
+                DeleteInferDeploymentPodRequest::setDeploymentName));
+        builder.<String>withRequestField("instance_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInferDeploymentPodRequest::getInstanceName,
+                DeleteInferDeploymentPodRequest::setInstanceName));
+        builder.<String>withRequestField("name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInferDeploymentPodRequest::getName, DeleteInferDeploymentPodRequest::setName));
+        builder.<Boolean>withRequestField("force",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(DeleteInferDeploymentPodRequest::getForce,
+                DeleteInferDeploymentPodRequest::setForce));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteInferDeploymentVersionRequest, DeleteInferDeploymentVersionResponse> deleteInferDeploymentVersion =
+        genForDeleteInferDeploymentVersion();
+
+    private static HttpRequestDef<DeleteInferDeploymentVersionRequest, DeleteInferDeploymentVersionResponse> genForDeleteInferDeploymentVersion() {
+        // basic
+        HttpRequestDef.Builder<DeleteInferDeploymentVersionRequest, DeleteInferDeploymentVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteInferDeploymentVersionRequest.class,
+                    DeleteInferDeploymentVersionResponse.class)
+                .withName("DeleteInferDeploymentVersion")
+                .withUri("/v2/{project_id}/services/{service_id}/deployments/{deployment_id}/versions/{version}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInferDeploymentVersionRequest::getServiceId,
+                DeleteInferDeploymentVersionRequest::setServiceId));
+        builder.<String>withRequestField("version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInferDeploymentVersionRequest::getVersion,
+                DeleteInferDeploymentVersionRequest::setVersion));
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInferDeploymentVersionRequest::getDeploymentId,
+                DeleteInferDeploymentVersionRequest::setDeploymentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteInferServiceTagRequest, DeleteInferServiceTagResponse> deleteInferServiceTag =
+        genForDeleteInferServiceTag();
+
+    private static HttpRequestDef<DeleteInferServiceTagRequest, DeleteInferServiceTagResponse> genForDeleteInferServiceTag() {
+        // basic
+        HttpRequestDef.Builder<DeleteInferServiceTagRequest, DeleteInferServiceTagResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteInferServiceTagRequest.class, DeleteInferServiceTagResponse.class)
+            .withName("DeleteInferServiceTag")
+            .withUri("/v2/{project_id}/modelarts-service-v2/{resource_id}/tags/delete")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInferServiceTagRequest::getResourceId,
+                DeleteInferServiceTagRequest::setResourceId));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInferServiceTagRequest::getWorkspaceId,
+                DeleteInferServiceTagRequest::setWorkspaceId));
+        builder.<DeleteInferTmsTagsRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteInferTmsTagsRequest.class),
+            f -> f.withMarshaller(DeleteInferServiceTagRequest::getBody, DeleteInferServiceTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteNetworkRequest, DeleteNetworkResponse> deleteNetwork =
         genForDeleteNetwork();
 
@@ -1716,6 +2447,38 @@ public class ModelArtsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(GetAuthorizationsRequest::getOffset, GetAuthorizationsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetHyperinstanceOperationRequest, GetHyperinstanceOperationResponse> getHyperinstanceOperation =
+        genForGetHyperinstanceOperation();
+
+    private static HttpRequestDef<GetHyperinstanceOperationRequest, GetHyperinstanceOperationResponse> genForGetHyperinstanceOperation() {
+        // basic
+        HttpRequestDef.Builder<GetHyperinstanceOperationRequest, GetHyperinstanceOperationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    GetHyperinstanceOperationRequest.class,
+                    GetHyperinstanceOperationResponse.class)
+                .withName("GetHyperinstanceOperation")
+                .withUri("/v1/{project_id}/dev-servers/hyperinstance/{id}/operation/{operation_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetHyperinstanceOperationRequest::getId, GetHyperinstanceOperationRequest::setId));
+        builder.<String>withRequestField("operation_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetHyperinstanceOperationRequest::getOperationId,
+                GetHyperinstanceOperationRequest::setOperationId));
 
         // response
 
@@ -2004,6 +2767,814 @@ public class ModelArtsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImageGroupRequest::getSwrInstanceId, ListImageGroupRequest::setSwrInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInferApiKeysRequest, ListInferApiKeysResponse> listInferApiKeys =
+        genForListInferApiKeys();
+
+    private static HttpRequestDef<ListInferApiKeysRequest, ListInferApiKeysResponse> genForListInferApiKeys() {
+        // basic
+        HttpRequestDef.Builder<ListInferApiKeysRequest, ListInferApiKeysResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListInferApiKeysRequest.class, ListInferApiKeysResponse.class)
+                .withName("ListInferApiKeys")
+                .withUri("/v2/{project_id}/services/api-keys")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("scope",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferApiKeysRequest::getScope, ListInferApiKeysRequest::setScope));
+        builder.<String>withRequestField("service_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferApiKeysRequest::getServiceId, ListInferApiKeysRequest::setServiceId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferApiKeysRequest::getName, ListInferApiKeysRequest::setName));
+        builder.<String>withRequestField("service_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferApiKeysRequest::getServiceName, ListInferApiKeysRequest::setServiceName));
+        builder.<String>withRequestField("key_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferApiKeysRequest::getKeyId, ListInferApiKeysRequest::setKeyId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferApiKeysRequest::getLimit, ListInferApiKeysRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferApiKeysRequest::getOffset, ListInferApiKeysRequest::setOffset));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferApiKeysRequest::getWorkspaceId, ListInferApiKeysRequest::setWorkspaceId));
+        builder.<Boolean>withRequestField("with_user_scope",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListInferApiKeysRequest::getWithUserScope,
+                ListInferApiKeysRequest::setWithUserScope));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInferClusterFlavorsRequest, ListInferClusterFlavorsResponse> listInferClusterFlavors =
+        genForListInferClusterFlavors();
+
+    private static HttpRequestDef<ListInferClusterFlavorsRequest, ListInferClusterFlavorsResponse> genForListInferClusterFlavors() {
+        // basic
+        HttpRequestDef.Builder<ListInferClusterFlavorsRequest, ListInferClusterFlavorsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListInferClusterFlavorsRequest.class, ListInferClusterFlavorsResponse.class)
+            .withName("ListInferClusterFlavors")
+            .withUri("/v2/{project_id}/services/flavors")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("flavor_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferClusterFlavorsRequest::getFlavorType,
+                ListInferClusterFlavorsRequest::setFlavorType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferClusterFlavorsRequest::getLimit, ListInferClusterFlavorsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferClusterFlavorsRequest::getOffset,
+                ListInferClusterFlavorsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInferDeploymentInstancesRequest, ListInferDeploymentInstancesResponse> listInferDeploymentInstances =
+        genForListInferDeploymentInstances();
+
+    private static HttpRequestDef<ListInferDeploymentInstancesRequest, ListInferDeploymentInstancesResponse> genForListInferDeploymentInstances() {
+        // basic
+        HttpRequestDef.Builder<ListInferDeploymentInstancesRequest, ListInferDeploymentInstancesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInferDeploymentInstancesRequest.class,
+                    ListInferDeploymentInstancesResponse.class)
+                .withName("ListInferDeploymentInstances")
+                .withUri("/v2/{project_id}/services/{id}/deployments/{name}/instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentInstancesRequest::getId,
+                ListInferDeploymentInstancesRequest::setId));
+        builder.<String>withRequestField("name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentInstancesRequest::getName,
+                ListInferDeploymentInstancesRequest::setName));
+        builder.<List<String>>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListInferDeploymentInstancesRequest::getStatus,
+                ListInferDeploymentInstancesRequest::setStatus));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferDeploymentInstancesRequest::getLimit,
+                ListInferDeploymentInstancesRequest::setLimit));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentInstancesRequest::getOffset,
+                ListInferDeploymentInstancesRequest::setOffset));
+        builder.<String>withRequestField("pod_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentInstancesRequest::getPodName,
+                ListInferDeploymentInstancesRequest::setPodName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInferDeploymentPodEventsRequest, ListInferDeploymentPodEventsResponse> listInferDeploymentPodEvents =
+        genForListInferDeploymentPodEvents();
+
+    private static HttpRequestDef<ListInferDeploymentPodEventsRequest, ListInferDeploymentPodEventsResponse> genForListInferDeploymentPodEvents() {
+        // basic
+        HttpRequestDef.Builder<ListInferDeploymentPodEventsRequest, ListInferDeploymentPodEventsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInferDeploymentPodEventsRequest.class,
+                    ListInferDeploymentPodEventsResponse.class)
+                .withName("ListInferDeploymentPodEvents")
+                .withUri(
+                    "/v2/{project_id}/services/{id}/deployments/{deployment_name}/instances/{instance_name}/pods/{name}/events")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentPodEventsRequest::getId,
+                ListInferDeploymentPodEventsRequest::setId));
+        builder.<String>withRequestField("deployment_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentPodEventsRequest::getDeploymentName,
+                ListInferDeploymentPodEventsRequest::setDeploymentName));
+        builder.<String>withRequestField("instance_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentPodEventsRequest::getInstanceName,
+                ListInferDeploymentPodEventsRequest::setInstanceName));
+        builder.<String>withRequestField("name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentPodEventsRequest::getName,
+                ListInferDeploymentPodEventsRequest::setName));
+
+        // response
+        builder.<List<ServicePodEventResponse>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(ListInferDeploymentPodEventsResponse::getBody,
+                    ListInferDeploymentPodEventsResponse::setBody)
+                .withInnerContainerType(ServicePodEventResponse.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInferDeploymentPodsRequest, ListInferDeploymentPodsResponse> listInferDeploymentPods =
+        genForListInferDeploymentPods();
+
+    private static HttpRequestDef<ListInferDeploymentPodsRequest, ListInferDeploymentPodsResponse> genForListInferDeploymentPods() {
+        // basic
+        HttpRequestDef.Builder<ListInferDeploymentPodsRequest, ListInferDeploymentPodsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListInferDeploymentPodsRequest.class, ListInferDeploymentPodsResponse.class)
+            .withName("ListInferDeploymentPods")
+            .withUri("/v2/{project_id}/services/{id}/deployments/{deployment_name}/instances/{name}/pods")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentPodsRequest::getId, ListInferDeploymentPodsRequest::setId));
+        builder.<String>withRequestField("deployment_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentPodsRequest::getDeploymentName,
+                ListInferDeploymentPodsRequest::setDeploymentName));
+        builder.<String>withRequestField("name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentPodsRequest::getName, ListInferDeploymentPodsRequest::setName));
+        builder.<List<String>>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListInferDeploymentPodsRequest::getStatus,
+                ListInferDeploymentPodsRequest::setStatus));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferDeploymentPodsRequest::getLimit, ListInferDeploymentPodsRequest::setLimit));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentPodsRequest::getOffset,
+                ListInferDeploymentPodsRequest::setOffset));
+        builder.<String>withRequestField("pod_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentPodsRequest::getPodName,
+                ListInferDeploymentPodsRequest::setPodName));
+        builder.<String>withRequestField("pod_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentPodsRequest::getPodId, ListInferDeploymentPodsRequest::setPodId));
+        builder.<String>withRequestField("pod_node_ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentPodsRequest::getPodNodeIp,
+                ListInferDeploymentPodsRequest::setPodNodeIp));
+        builder.<String>withRequestField("pod_node_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentPodsRequest::getPodNodeName,
+                ListInferDeploymentPodsRequest::setPodNodeName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInferDeploymentVersionsRequest, ListInferDeploymentVersionsResponse> listInferDeploymentVersions =
+        genForListInferDeploymentVersions();
+
+    private static HttpRequestDef<ListInferDeploymentVersionsRequest, ListInferDeploymentVersionsResponse> genForListInferDeploymentVersions() {
+        // basic
+        HttpRequestDef.Builder<ListInferDeploymentVersionsRequest, ListInferDeploymentVersionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInferDeploymentVersionsRequest.class,
+                    ListInferDeploymentVersionsResponse.class)
+                .withName("ListInferDeploymentVersions")
+                .withUri("/v2/{project_id}/services/{service_id}/deployments/{deployment_id}/versions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentVersionsRequest::getServiceId,
+                ListInferDeploymentVersionsRequest::setServiceId));
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentVersionsRequest::getDeploymentId,
+                ListInferDeploymentVersionsRequest::setDeploymentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInferDeploymentsRequest, ListInferDeploymentsResponse> listInferDeployments =
+        genForListInferDeployments();
+
+    private static HttpRequestDef<ListInferDeploymentsRequest, ListInferDeploymentsResponse> genForListInferDeployments() {
+        // basic
+        HttpRequestDef.Builder<ListInferDeploymentsRequest, ListInferDeploymentsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListInferDeploymentsRequest.class, ListInferDeploymentsResponse.class)
+            .withName("ListInferDeployments")
+            .withUri("/v2/{project_id}/services/{service_id}/deployments")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentsRequest::getServiceId,
+                ListInferDeploymentsRequest::setServiceId));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentsRequest::getSortKey, ListInferDeploymentsRequest::setSortKey));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentsRequest::getStatus, ListInferDeploymentsRequest::setStatus));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentsRequest::getSortDir, ListInferDeploymentsRequest::setSortDir));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferDeploymentsRequest::getLimit, ListInferDeploymentsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferDeploymentsRequest::getOffset, ListInferDeploymentsRequest::setOffset));
+        builder.<Integer>withRequestField("delete_after",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferDeploymentsRequest::getDeleteAfter,
+                ListInferDeploymentsRequest::setDeleteAfter));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInferIntranetConnectionApplicationsRequest, ListInferIntranetConnectionApplicationsResponse> listInferIntranetConnectionApplications =
+        genForListInferIntranetConnectionApplications();
+
+    private static HttpRequestDef<ListInferIntranetConnectionApplicationsRequest, ListInferIntranetConnectionApplicationsResponse> genForListInferIntranetConnectionApplications() {
+        // basic
+        HttpRequestDef.Builder<ListInferIntranetConnectionApplicationsRequest, ListInferIntranetConnectionApplicationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInferIntranetConnectionApplicationsRequest.class,
+                    ListInferIntranetConnectionApplicationsResponse.class)
+                .withName("ListInferIntranetConnectionApplications")
+                .withUri("/v2/{project_id}/intranet-connection/requests")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("scene",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionApplicationsRequest::getScene,
+                ListInferIntranetConnectionApplicationsRequest::setScene));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionApplicationsRequest::getStatus,
+                ListInferIntranetConnectionApplicationsRequest::setStatus));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionApplicationsRequest::getId,
+                ListInferIntranetConnectionApplicationsRequest::setId));
+        builder.<String>withRequestField("service_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionApplicationsRequest::getServiceId,
+                ListInferIntranetConnectionApplicationsRequest::setServiceId));
+        builder.<String>withRequestField("service_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionApplicationsRequest::getServiceName,
+                ListInferIntranetConnectionApplicationsRequest::setServiceName));
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionApplicationsRequest::getVpcId,
+                ListInferIntranetConnectionApplicationsRequest::setVpcId));
+        builder.<String>withRequestField("vpc_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionApplicationsRequest::getVpcName,
+                ListInferIntranetConnectionApplicationsRequest::setVpcName));
+        builder.<String>withRequestField("pool_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionApplicationsRequest::getPoolId,
+                ListInferIntranetConnectionApplicationsRequest::setPoolId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionApplicationsRequest::getOffset,
+                ListInferIntranetConnectionApplicationsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionApplicationsRequest::getLimit,
+                ListInferIntranetConnectionApplicationsRequest::setLimit));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionApplicationsRequest::getWorkspaceId,
+                ListInferIntranetConnectionApplicationsRequest::setWorkspaceId));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionApplicationsRequest::getSortDir,
+                ListInferIntranetConnectionApplicationsRequest::setSortDir));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionApplicationsRequest::getSortKey,
+                ListInferIntranetConnectionApplicationsRequest::setSortKey));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInferIntranetConnectionReviewsRequest, ListInferIntranetConnectionReviewsResponse> listInferIntranetConnectionReviews =
+        genForListInferIntranetConnectionReviews();
+
+    private static HttpRequestDef<ListInferIntranetConnectionReviewsRequest, ListInferIntranetConnectionReviewsResponse> genForListInferIntranetConnectionReviews() {
+        // basic
+        HttpRequestDef.Builder<ListInferIntranetConnectionReviewsRequest, ListInferIntranetConnectionReviewsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInferIntranetConnectionReviewsRequest.class,
+                    ListInferIntranetConnectionReviewsResponse.class)
+                .withName("ListInferIntranetConnectionReviews")
+                .withUri("/v2/{project_id}/intranet-connection/reviews")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("scene",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionReviewsRequest::getScene,
+                ListInferIntranetConnectionReviewsRequest::setScene));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionReviewsRequest::getId,
+                ListInferIntranetConnectionReviewsRequest::setId));
+        builder.<String>withRequestField("applicant_domain_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionReviewsRequest::getApplicantDomainId,
+                ListInferIntranetConnectionReviewsRequest::setApplicantDomainId));
+        builder.<String>withRequestField("service_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionReviewsRequest::getServiceId,
+                ListInferIntranetConnectionReviewsRequest::setServiceId));
+        builder.<String>withRequestField("applicant_user_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionReviewsRequest::getApplicantUserName,
+                ListInferIntranetConnectionReviewsRequest::setApplicantUserName));
+        builder.<String>withRequestField("service_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionReviewsRequest::getServiceName,
+                ListInferIntranetConnectionReviewsRequest::setServiceName));
+        builder.<String>withRequestField("vpc_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionReviewsRequest::getVpcName,
+                ListInferIntranetConnectionReviewsRequest::setVpcName));
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionReviewsRequest::getVpcId,
+                ListInferIntranetConnectionReviewsRequest::setVpcId));
+        builder.<String>withRequestField("pool_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionReviewsRequest::getPoolId,
+                ListInferIntranetConnectionReviewsRequest::setPoolId));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionReviewsRequest::getSortKey,
+                ListInferIntranetConnectionReviewsRequest::setSortKey));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionReviewsRequest::getLimit,
+                ListInferIntranetConnectionReviewsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionReviewsRequest::getOffset,
+                ListInferIntranetConnectionReviewsRequest::setOffset));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionReviewsRequest::getStatus,
+                ListInferIntranetConnectionReviewsRequest::setStatus));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferIntranetConnectionReviewsRequest::getType,
+                ListInferIntranetConnectionReviewsRequest::setType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInferServiceEventsRequest, ListInferServiceEventsResponse> listInferServiceEvents =
+        genForListInferServiceEvents();
+
+    private static HttpRequestDef<ListInferServiceEventsRequest, ListInferServiceEventsResponse> genForListInferServiceEvents() {
+        // basic
+        HttpRequestDef.Builder<ListInferServiceEventsRequest, ListInferServiceEventsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListInferServiceEventsRequest.class, ListInferServiceEventsResponse.class)
+            .withName("ListInferServiceEvents")
+            .withUri("/v2/{project_id}/services/{service_id}/events")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferServiceEventsRequest::getServiceId,
+                ListInferServiceEventsRequest::setServiceId));
+        builder.<String>withRequestField("event_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferServiceEventsRequest::getEventType,
+                ListInferServiceEventsRequest::setEventType));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListInferServiceEventsRequest::getStartTime,
+                ListInferServiceEventsRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListInferServiceEventsRequest::getEndTime,
+                ListInferServiceEventsRequest::setEndTime));
+        builder.<String>withRequestField("event_info_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferServiceEventsRequest::getEventInfoKey,
+                ListInferServiceEventsRequest::setEventInfoKey));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferServiceEventsRequest::getLimit, ListInferServiceEventsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferServiceEventsRequest::getOffset, ListInferServiceEventsRequest::setOffset));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferServiceEventsRequest::getSortKey,
+                ListInferServiceEventsRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferServiceEventsRequest::getSortDir,
+                ListInferServiceEventsRequest::setSortDir));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInferServiceTagsRequest, ListInferServiceTagsResponse> listInferServiceTags =
+        genForListInferServiceTags();
+
+    private static HttpRequestDef<ListInferServiceTagsRequest, ListInferServiceTagsResponse> genForListInferServiceTags() {
+        // basic
+        HttpRequestDef.Builder<ListInferServiceTagsRequest, ListInferServiceTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListInferServiceTagsRequest.class, ListInferServiceTagsResponse.class)
+            .withName("ListInferServiceTags")
+            .withUri("/v2/{project_id}/modelarts-service-v2/tags")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferServiceTagsRequest::getWorkspaceId,
+                ListInferServiceTagsRequest::setWorkspaceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInferServicesRequest, ListInferServicesResponse> listInferServices =
+        genForListInferServices();
+
+    private static HttpRequestDef<ListInferServicesRequest, ListInferServicesResponse> genForListInferServices() {
+        // basic
+        HttpRequestDef.Builder<ListInferServicesRequest, ListInferServicesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListInferServicesRequest.class, ListInferServicesResponse.class)
+                .withName("ListInferServices")
+                .withUri("/v2/{project_id}/services")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferServicesRequest::getId, ListInferServicesRequest::setId));
+        builder.<String>withRequestField("pool_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferServicesRequest::getPoolId, ListInferServicesRequest::setPoolId));
+        builder.<String>withRequestField("pool_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferServicesRequest::getPoolName, ListInferServicesRequest::setPoolName));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferServicesRequest::getSortKey, ListInferServicesRequest::setSortKey));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferServicesRequest::getStatus, ListInferServicesRequest::setStatus));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferServicesRequest::getName, ListInferServicesRequest::setName));
+        builder.<String>withRequestField("auth_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferServicesRequest::getAuthType, ListInferServicesRequest::setAuthType));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferServicesRequest::getType, ListInferServicesRequest::setType));
+        builder.<String>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferServicesRequest::getDescription, ListInferServicesRequest::setDescription));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferServicesRequest::getWorkspaceId, ListInferServicesRequest::setWorkspaceId));
+        builder.<String>withRequestField("user_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferServicesRequest::getUserName, ListInferServicesRequest::setUserName));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferServicesRequest::getTags, ListInferServicesRequest::setTags));
+        builder.<String>withRequestField("asset_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferServicesRequest::getAssetId, ListInferServicesRequest::setAssetId));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferServicesRequest::getSortDir, ListInferServicesRequest::setSortDir));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferServicesRequest::getLimit, ListInferServicesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferServicesRequest::getOffset, ListInferServicesRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInferServicesByTagsRequest, ListInferServicesByTagsResponse> listInferServicesByTags =
+        genForListInferServicesByTags();
+
+    private static HttpRequestDef<ListInferServicesByTagsRequest, ListInferServicesByTagsResponse> genForListInferServicesByTags() {
+        // basic
+        HttpRequestDef.Builder<ListInferServicesByTagsRequest, ListInferServicesByTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListInferServicesByTagsRequest.class, ListInferServicesByTagsResponse.class)
+            .withName("ListInferServicesByTags")
+            .withUri("/v2/{project_id}/modelarts-service-v2/resource-instances/filter")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferServicesByTagsRequest::getLimit, ListInferServicesByTagsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferServicesByTagsRequest::getOffset,
+                ListInferServicesByTagsRequest::setOffset));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferServicesByTagsRequest::getWorkspaceId,
+                ListInferServicesByTagsRequest::setWorkspaceId));
+        builder.<QueryTmsResourceRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QueryTmsResourceRequest.class),
+            f -> f.withMarshaller(ListInferServicesByTagsRequest::getBody, ListInferServicesByTagsRequest::setBody));
 
         // response
 
@@ -2719,6 +4290,39 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ModifyInferIntranetConnectionsRequest, ModifyInferIntranetConnectionsResponse> modifyInferIntranetConnections =
+        genForModifyInferIntranetConnections();
+
+    private static HttpRequestDef<ModifyInferIntranetConnectionsRequest, ModifyInferIntranetConnectionsResponse> genForModifyInferIntranetConnections() {
+        // basic
+        HttpRequestDef.Builder<ModifyInferIntranetConnectionsRequest, ModifyInferIntranetConnectionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ModifyInferIntranetConnectionsRequest.class,
+                    ModifyInferIntranetConnectionsResponse.class)
+                .withName("ModifyInferIntranetConnections")
+                .withUri("/v2/{project_id}/intranet-connection/{id}/modify")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyInferIntranetConnectionsRequest::getId,
+                ModifyInferIntranetConnectionsRequest::setId));
+        builder.<IntranetConnectionModifyRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IntranetConnectionModifyRequest.class),
+            f -> f.withMarshaller(ModifyInferIntranetConnectionsRequest::getBody,
+                ModifyInferIntranetConnectionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<NotifyTrainingJobInformationRequest, NotifyTrainingJobInformationResponse> notifyTrainingJobInformation =
         genForNotifyTrainingJobInformation();
 
@@ -3177,6 +4781,156 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowImageRequest::getId, ShowImageRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInferDeploymentRequest, ShowInferDeploymentResponse> showInferDeployment =
+        genForShowInferDeployment();
+
+    private static HttpRequestDef<ShowInferDeploymentRequest, ShowInferDeploymentResponse> genForShowInferDeployment() {
+        // basic
+        HttpRequestDef.Builder<ShowInferDeploymentRequest, ShowInferDeploymentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowInferDeploymentRequest.class, ShowInferDeploymentResponse.class)
+                .withName("ShowInferDeployment")
+                .withUri("/v2/{project_id}/services/{service_id}/deployments/{deployment_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInferDeploymentRequest::getServiceId, ShowInferDeploymentRequest::setServiceId));
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInferDeploymentRequest::getDeploymentId,
+                ShowInferDeploymentRequest::setDeploymentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInferDeploymentVersionRequest, ShowInferDeploymentVersionResponse> showInferDeploymentVersion =
+        genForShowInferDeploymentVersion();
+
+    private static HttpRequestDef<ShowInferDeploymentVersionRequest, ShowInferDeploymentVersionResponse> genForShowInferDeploymentVersion() {
+        // basic
+        HttpRequestDef.Builder<ShowInferDeploymentVersionRequest, ShowInferDeploymentVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowInferDeploymentVersionRequest.class,
+                    ShowInferDeploymentVersionResponse.class)
+                .withName("ShowInferDeploymentVersion")
+                .withUri("/v2/{project_id}/services/{service_id}/deployments/{deployment_id}/versions/{version}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInferDeploymentVersionRequest::getServiceId,
+                ShowInferDeploymentVersionRequest::setServiceId));
+        builder.<String>withRequestField("version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInferDeploymentVersionRequest::getVersion,
+                ShowInferDeploymentVersionRequest::setVersion));
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInferDeploymentVersionRequest::getDeploymentId,
+                ShowInferDeploymentVersionRequest::setDeploymentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInferServiceRequest, ShowInferServiceResponse> showInferService =
+        genForShowInferService();
+
+    private static HttpRequestDef<ShowInferServiceRequest, ShowInferServiceResponse> genForShowInferService() {
+        // basic
+        HttpRequestDef.Builder<ShowInferServiceRequest, ShowInferServiceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowInferServiceRequest.class, ShowInferServiceResponse.class)
+                .withName("ShowInferService")
+                .withUri("/v2/{project_id}/services/{service_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInferServiceRequest::getServiceId, ShowInferServiceRequest::setServiceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInferServiceClusterRequest, ShowInferServiceClusterResponse> showInferServiceCluster =
+        genForShowInferServiceCluster();
+
+    private static HttpRequestDef<ShowInferServiceClusterRequest, ShowInferServiceClusterResponse> genForShowInferServiceCluster() {
+        // basic
+        HttpRequestDef.Builder<ShowInferServiceClusterRequest, ShowInferServiceClusterResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowInferServiceClusterRequest.class, ShowInferServiceClusterResponse.class)
+            .withName("ShowInferServiceCluster")
+            .withUri("/v2/{project_id}/services/clusters/{id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInferServiceClusterRequest::getId, ShowInferServiceClusterRequest::setId));
+        builder.<String>withRequestField("X-User-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInferServiceClusterRequest::getXUserToken,
+                ShowInferServiceClusterRequest::setXUserToken));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInferServiceTagsRequest, ShowInferServiceTagsResponse> showInferServiceTags =
+        genForShowInferServiceTags();
+
+    private static HttpRequestDef<ShowInferServiceTagsRequest, ShowInferServiceTagsResponse> genForShowInferServiceTags() {
+        // basic
+        HttpRequestDef.Builder<ShowInferServiceTagsRequest, ShowInferServiceTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowInferServiceTagsRequest.class, ShowInferServiceTagsResponse.class)
+            .withName("ShowInferServiceTags")
+            .withUri("/v2/{project_id}/modelarts-service-v2/{resource_id}/tags")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInferServiceTagsRequest::getResourceId,
+                ShowInferServiceTagsRequest::setResourceId));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInferServiceTagsRequest::getWorkspaceId,
+                ShowInferServiceTagsRequest::setWorkspaceId));
 
         // response
 
@@ -3952,6 +5706,111 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<StartInferDeploymentRequest, StartInferDeploymentResponse> startInferDeployment =
+        genForStartInferDeployment();
+
+    private static HttpRequestDef<StartInferDeploymentRequest, StartInferDeploymentResponse> genForStartInferDeployment() {
+        // basic
+        HttpRequestDef.Builder<StartInferDeploymentRequest, StartInferDeploymentResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, StartInferDeploymentRequest.class, StartInferDeploymentResponse.class)
+            .withName("StartInferDeployment")
+            .withUri("/v2/{project_id}/services/{service_id}/deployments/{deployment_id}/start")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartInferDeploymentRequest::getServiceId,
+                StartInferDeploymentRequest::setServiceId));
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartInferDeploymentRequest::getDeploymentId,
+                StartInferDeploymentRequest::setDeploymentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartInferServiceRequest, StartInferServiceResponse> startInferService =
+        genForStartInferService();
+
+    private static HttpRequestDef<StartInferServiceRequest, StartInferServiceResponse> genForStartInferService() {
+        // basic
+        HttpRequestDef.Builder<StartInferServiceRequest, StartInferServiceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StartInferServiceRequest.class, StartInferServiceResponse.class)
+                .withName("StartInferService")
+                .withUri("/v2/{project_id}/services/{service_id}/start")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartInferServiceRequest::getServiceId, StartInferServiceRequest::setServiceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopInferDeploymentRequest, StopInferDeploymentResponse> stopInferDeployment =
+        genForStopInferDeployment();
+
+    private static HttpRequestDef<StopInferDeploymentRequest, StopInferDeploymentResponse> genForStopInferDeployment() {
+        // basic
+        HttpRequestDef.Builder<StopInferDeploymentRequest, StopInferDeploymentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopInferDeploymentRequest.class, StopInferDeploymentResponse.class)
+                .withName("StopInferDeployment")
+                .withUri("/v2/{project_id}/services/{service_id}/deployments/{deployment_id}/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopInferDeploymentRequest::getServiceId, StopInferDeploymentRequest::setServiceId));
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopInferDeploymentRequest::getDeploymentId,
+                StopInferDeploymentRequest::setDeploymentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopInferServiceRequest, StopInferServiceResponse> stopInferService =
+        genForStopInferService();
+
+    private static HttpRequestDef<StopInferServiceRequest, StopInferServiceResponse> genForStopInferService() {
+        // basic
+        HttpRequestDef.Builder<StopInferServiceRequest, StopInferServiceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopInferServiceRequest.class, StopInferServiceResponse.class)
+                .withName("StopInferService")
+                .withUri("/v2/{project_id}/services/{service_id}/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopInferServiceRequest::getServiceId, StopInferServiceRequest::setServiceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<StopTrainingJobRequest, StopTrainingJobResponse> stopTrainingJob =
         genForStopTrainingJob();
 
@@ -3980,6 +5839,51 @@ public class ModelArtsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SwitchInferDeploymentVersionRequest, SwitchInferDeploymentVersionResponse> switchInferDeploymentVersion =
+        genForSwitchInferDeploymentVersion();
+
+    private static HttpRequestDef<SwitchInferDeploymentVersionRequest, SwitchInferDeploymentVersionResponse> genForSwitchInferDeploymentVersion() {
+        // basic
+        HttpRequestDef.Builder<SwitchInferDeploymentVersionRequest, SwitchInferDeploymentVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    SwitchInferDeploymentVersionRequest.class,
+                    SwitchInferDeploymentVersionResponse.class)
+                .withName("SwitchInferDeploymentVersion")
+                .withUri("/v2/{project_id}/services/{service_id}/deployments/{deployment_id}/versions/{version}/switch")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchInferDeploymentVersionRequest::getServiceId,
+                SwitchInferDeploymentVersionRequest::setServiceId));
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchInferDeploymentVersionRequest::getDeploymentId,
+                SwitchInferDeploymentVersionRequest::setDeploymentId));
+        builder.<String>withRequestField("version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchInferDeploymentVersionRequest::getVersion,
+                SwitchInferDeploymentVersionRequest::setVersion));
+        builder.<SwitchInferDeploymentVersionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SwitchInferDeploymentVersionRequestBody.class),
+            f -> f.withMarshaller(SwitchInferDeploymentVersionRequest::getBody,
+                SwitchInferDeploymentVersionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SyncImageRequest, SyncImageResponse> syncImage = genForSyncImage();
 
     private static HttpRequestDef<SyncImageRequest, SyncImageResponse> genForSyncImage() {
@@ -3996,6 +5900,34 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SyncImageRequest::getImageId, SyncImageRequest::setImageId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UnbindInferApiKeyRequest, UnbindInferApiKeyResponse> unbindInferApiKey =
+        genForUnbindInferApiKey();
+
+    private static HttpRequestDef<UnbindInferApiKeyRequest, UnbindInferApiKeyResponse> genForUnbindInferApiKey() {
+        // basic
+        HttpRequestDef.Builder<UnbindInferApiKeyRequest, UnbindInferApiKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UnbindInferApiKeyRequest.class, UnbindInferApiKeyResponse.class)
+                .withName("UnbindInferApiKey")
+                .withUri("/v2/{project_id}/services/{service_id}/api-keys/{key_id}/unbind")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnbindInferApiKeyRequest::getServiceId, UnbindInferApiKeyRequest::setServiceId));
+        builder.<String>withRequestField("key_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnbindInferApiKeyRequest::getKeyId, UnbindInferApiKeyRequest::setKeyId));
 
         // response
 
@@ -4019,6 +5951,169 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAuthModeRequestBody.class),
             f -> f.withMarshaller(UpdateAuthModeRequest::getBody, UpdateAuthModeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateImageGroupRequest, UpdateImageGroupResponse> updateImageGroup =
+        genForUpdateImageGroup();
+
+    private static HttpRequestDef<UpdateImageGroupRequest, UpdateImageGroupResponse> genForUpdateImageGroup() {
+        // basic
+        HttpRequestDef.Builder<UpdateImageGroupRequest, UpdateImageGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateImageGroupRequest.class, UpdateImageGroupResponse.class)
+                .withName("UpdateImageGroup")
+                .withUri("/v1/{project_id}/images/group/{id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateImageGroupRequest::getId, UpdateImageGroupRequest::setId));
+        builder.<UpdateImageGroupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateImageGroupRequestBody.class),
+            f -> f.withMarshaller(UpdateImageGroupRequest::getBody, UpdateImageGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInferDeploymentRequest, UpdateInferDeploymentResponse> updateInferDeployment =
+        genForUpdateInferDeployment();
+
+    private static HttpRequestDef<UpdateInferDeploymentRequest, UpdateInferDeploymentResponse> genForUpdateInferDeployment() {
+        // basic
+        HttpRequestDef.Builder<UpdateInferDeploymentRequest, UpdateInferDeploymentResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateInferDeploymentRequest.class, UpdateInferDeploymentResponse.class)
+            .withName("UpdateInferDeployment")
+            .withUri("/v2/{project_id}/services/{service_id}/deployments/{deployment_id}")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInferDeploymentRequest::getServiceId,
+                UpdateInferDeploymentRequest::setServiceId));
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInferDeploymentRequest::getDeploymentId,
+                UpdateInferDeploymentRequest::setDeploymentId));
+        builder.<GroupConfigUpdateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(GroupConfigUpdateRequest.class),
+            f -> f.withMarshaller(UpdateInferDeploymentRequest::getBody, UpdateInferDeploymentRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInferDeploymentScaleRequest, UpdateInferDeploymentScaleResponse> updateInferDeploymentScale =
+        genForUpdateInferDeploymentScale();
+
+    private static HttpRequestDef<UpdateInferDeploymentScaleRequest, UpdateInferDeploymentScaleResponse> genForUpdateInferDeploymentScale() {
+        // basic
+        HttpRequestDef.Builder<UpdateInferDeploymentScaleRequest, UpdateInferDeploymentScaleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateInferDeploymentScaleRequest.class,
+                    UpdateInferDeploymentScaleResponse.class)
+                .withName("UpdateInferDeploymentScale")
+                .withUri("/v2/{project_id}/services/{service_id}/deployments/{deployment_name}/scale")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInferDeploymentScaleRequest::getServiceId,
+                UpdateInferDeploymentScaleRequest::setServiceId));
+        builder.<String>withRequestField("deployment_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInferDeploymentScaleRequest::getDeploymentName,
+                UpdateInferDeploymentScaleRequest::setDeploymentName));
+        builder.<UpdateInferDeploymentScale>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateInferDeploymentScale.class),
+            f -> f.withMarshaller(UpdateInferDeploymentScaleRequest::getBody,
+                UpdateInferDeploymentScaleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInferIntranetConnectionRequest, UpdateInferIntranetConnectionResponse> updateInferIntranetConnection =
+        genForUpdateInferIntranetConnection();
+
+    private static HttpRequestDef<UpdateInferIntranetConnectionRequest, UpdateInferIntranetConnectionResponse> genForUpdateInferIntranetConnection() {
+        // basic
+        HttpRequestDef.Builder<UpdateInferIntranetConnectionRequest, UpdateInferIntranetConnectionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateInferIntranetConnectionRequest.class,
+                    UpdateInferIntranetConnectionResponse.class)
+                .withName("UpdateInferIntranetConnection")
+                .withUri("/v2/{project_id}/intranet-connection/{id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInferIntranetConnectionRequest::getId,
+                UpdateInferIntranetConnectionRequest::setId));
+        builder.<UpdateIntranetConnectionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateIntranetConnectionRequestBody.class),
+            f -> f.withMarshaller(UpdateInferIntranetConnectionRequest::getBody,
+                UpdateInferIntranetConnectionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInferServiceRequest, UpdateInferServiceResponse> updateInferService =
+        genForUpdateInferService();
+
+    private static HttpRequestDef<UpdateInferServiceRequest, UpdateInferServiceResponse> genForUpdateInferService() {
+        // basic
+        HttpRequestDef.Builder<UpdateInferServiceRequest, UpdateInferServiceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateInferServiceRequest.class, UpdateInferServiceResponse.class)
+                .withName("UpdateInferService")
+                .withUri("/v2/{project_id}/services/{service_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInferServiceRequest::getServiceId, UpdateInferServiceRequest::setServiceId));
+        builder.<ServiceUpdateRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ServiceUpdateRequest.class),
+            f -> f.withMarshaller(UpdateInferServiceRequest::getBody, UpdateInferServiceRequest::setBody));
 
         // response
 
@@ -4105,6 +6200,291 @@ public class ModelArtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ValidateAuthorizationRequestBody.class),
             f -> f.withMarshaller(ValidateAuthorizationRequest::getBody, ValidateAuthorizationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateInferDeploymentHpaRequest, CreateInferDeploymentHpaResponse> createInferDeploymentHpa =
+        genForCreateInferDeploymentHpa();
+
+    private static HttpRequestDef<CreateInferDeploymentHpaRequest, CreateInferDeploymentHpaResponse> genForCreateInferDeploymentHpa() {
+        // basic
+        HttpRequestDef.Builder<CreateInferDeploymentHpaRequest, CreateInferDeploymentHpaResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateInferDeploymentHpaRequest.class, CreateInferDeploymentHpaResponse.class)
+                .withName("CreateInferDeploymentHpa")
+                .withUri("/v2/{project_id}/services/{service_id}/deployments/{deployment_id}/hpa")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInferDeploymentHpaRequest::getServiceId,
+                CreateInferDeploymentHpaRequest::setServiceId));
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInferDeploymentHpaRequest::getDeploymentId,
+                CreateInferDeploymentHpaRequest::setDeploymentId));
+        builder.<CreateHpaRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateHpaRequestBody.class),
+            f -> f.withMarshaller(CreateInferDeploymentHpaRequest::getBody, CreateInferDeploymentHpaRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteInferDeploymentHpaRequest, DeleteInferDeploymentHpaResponse> deleteInferDeploymentHpa =
+        genForDeleteInferDeploymentHpa();
+
+    private static HttpRequestDef<DeleteInferDeploymentHpaRequest, DeleteInferDeploymentHpaResponse> genForDeleteInferDeploymentHpa() {
+        // basic
+        HttpRequestDef.Builder<DeleteInferDeploymentHpaRequest, DeleteInferDeploymentHpaResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteInferDeploymentHpaRequest.class,
+                    DeleteInferDeploymentHpaResponse.class)
+                .withName("DeleteInferDeploymentHpa")
+                .withUri("/v2/{project_id}/services/{service_id}/deployments/{deployment_id}/hpa")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInferDeploymentHpaRequest::getServiceId,
+                DeleteInferDeploymentHpaRequest::setServiceId));
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInferDeploymentHpaRequest::getDeploymentId,
+                DeleteInferDeploymentHpaRequest::setDeploymentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInferDeploymentHpaEventsRequest, ListInferDeploymentHpaEventsResponse> listInferDeploymentHpaEvents =
+        genForListInferDeploymentHpaEvents();
+
+    private static HttpRequestDef<ListInferDeploymentHpaEventsRequest, ListInferDeploymentHpaEventsResponse> genForListInferDeploymentHpaEvents() {
+        // basic
+        HttpRequestDef.Builder<ListInferDeploymentHpaEventsRequest, ListInferDeploymentHpaEventsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInferDeploymentHpaEventsRequest.class,
+                    ListInferDeploymentHpaEventsResponse.class)
+                .withName("ListInferDeploymentHpaEvents")
+                .withUri("/v2/{project_id}/services/{service_id}/deployments/{deployment_id}/hpa/events")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentHpaEventsRequest::getServiceId,
+                ListInferDeploymentHpaEventsRequest::setServiceId));
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentHpaEventsRequest::getDeploymentId,
+                ListInferDeploymentHpaEventsRequest::setDeploymentId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferDeploymentHpaEventsRequest::getLimit,
+                ListInferDeploymentHpaEventsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferDeploymentHpaEventsRequest::getOffset,
+                ListInferDeploymentHpaEventsRequest::setOffset));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentHpaEventsRequest::getSortKey,
+                ListInferDeploymentHpaEventsRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentHpaEventsRequest::getSortDir,
+                ListInferDeploymentHpaEventsRequest::setSortDir));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInferDeploymentHpaRequest, ShowInferDeploymentHpaResponse> showInferDeploymentHpa =
+        genForShowInferDeploymentHpa();
+
+    private static HttpRequestDef<ShowInferDeploymentHpaRequest, ShowInferDeploymentHpaResponse> genForShowInferDeploymentHpa() {
+        // basic
+        HttpRequestDef.Builder<ShowInferDeploymentHpaRequest, ShowInferDeploymentHpaResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowInferDeploymentHpaRequest.class, ShowInferDeploymentHpaResponse.class)
+            .withName("ShowInferDeploymentHpa")
+            .withUri("/v2/{project_id}/services/{service_id}/deployments/{deployment_id}/hpa")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInferDeploymentHpaRequest::getServiceId,
+                ShowInferDeploymentHpaRequest::setServiceId));
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInferDeploymentHpaRequest::getDeploymentId,
+                ShowInferDeploymentHpaRequest::setDeploymentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInferDeploymentHpaRequest, UpdateInferDeploymentHpaResponse> updateInferDeploymentHpa =
+        genForUpdateInferDeploymentHpa();
+
+    private static HttpRequestDef<UpdateInferDeploymentHpaRequest, UpdateInferDeploymentHpaResponse> genForUpdateInferDeploymentHpa() {
+        // basic
+        HttpRequestDef.Builder<UpdateInferDeploymentHpaRequest, UpdateInferDeploymentHpaResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateInferDeploymentHpaRequest.class, UpdateInferDeploymentHpaResponse.class)
+                .withName("UpdateInferDeploymentHpa")
+                .withUri("/v2/{project_id}/services/{service_id}/deployments/{deployment_id}/hpa")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInferDeploymentHpaRequest::getServiceId,
+                UpdateInferDeploymentHpaRequest::setServiceId));
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInferDeploymentHpaRequest::getDeploymentId,
+                UpdateInferDeploymentHpaRequest::setDeploymentId));
+        builder.<UpdateHpaRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateHpaRequestBody.class),
+            f -> f.withMarshaller(UpdateInferDeploymentHpaRequest::getBody, UpdateInferDeploymentHpaRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateInferHraRequest, CreateInferHraResponse> createInferHra =
+        genForCreateInferHra();
+
+    private static HttpRequestDef<CreateInferHraRequest, CreateInferHraResponse> genForCreateInferHra() {
+        // basic
+        HttpRequestDef.Builder<CreateInferHraRequest, CreateInferHraResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateInferHraRequest.class, CreateInferHraResponse.class)
+                .withName("CreateInferHra")
+                .withUri("/v2/{project_id}/services/{service_id}/deployments/{deployment_id}/hra")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInferHraRequest::getServiceId, CreateInferHraRequest::setServiceId));
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInferHraRequest::getDeploymentId, CreateInferHraRequest::setDeploymentId));
+        builder.<CreateHraRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateHraRequestBody.class),
+            f -> f.withMarshaller(CreateInferHraRequest::getBody, CreateInferHraRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInferHraRequest, ShowInferHraResponse> showInferHra = genForShowInferHra();
+
+    private static HttpRequestDef<ShowInferHraRequest, ShowInferHraResponse> genForShowInferHra() {
+        // basic
+        HttpRequestDef.Builder<ShowInferHraRequest, ShowInferHraResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowInferHraRequest.class, ShowInferHraResponse.class)
+                .withName("ShowInferHra")
+                .withUri("/v2/{project_id}/services/{service_id}/deployments/{deployment_id}/hra")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInferHraRequest::getServiceId, ShowInferHraRequest::setServiceId));
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInferHraRequest::getDeploymentId, ShowInferHraRequest::setDeploymentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInferHraRequest, UpdateInferHraResponse> updateInferHra =
+        genForUpdateInferHra();
+
+    private static HttpRequestDef<UpdateInferHraRequest, UpdateInferHraResponse> genForUpdateInferHra() {
+        // basic
+        HttpRequestDef.Builder<UpdateInferHraRequest, UpdateInferHraResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateInferHraRequest.class, UpdateInferHraResponse.class)
+                .withName("UpdateInferHra")
+                .withUri("/v2/{project_id}/services/{service_id}/deployments/{deployment_id}/hra")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInferHraRequest::getServiceId, UpdateInferHraRequest::setServiceId));
+        builder.<String>withRequestField("deployment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInferHraRequest::getDeploymentId, UpdateInferHraRequest::setDeploymentId));
+        builder.<UpdateHraRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateHraRequestBody.class),
+            f -> f.withMarshaller(UpdateInferHraRequest::getBody, UpdateInferHraRequest::setBody));
 
         // response
 

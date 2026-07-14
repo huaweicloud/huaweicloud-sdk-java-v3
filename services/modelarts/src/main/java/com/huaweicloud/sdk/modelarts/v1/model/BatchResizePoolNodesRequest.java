@@ -27,7 +27,7 @@ public class BatchResizePoolNodesRequest {
     }
 
     /**
-     * **参数解释**：资源池ID。取值资源池详情的metadata.name字段。  **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * **参数解释**：资源池ID。取值资源池详情的metadata.name字段。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return poolName
      */
     public String getPoolName() {

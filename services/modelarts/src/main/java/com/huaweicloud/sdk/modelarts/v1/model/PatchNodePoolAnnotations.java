@@ -85,7 +85,7 @@ public class PatchNodePoolAnnotations {
     }
 
     /**
-     * **参数解释**：包周期订购类型。当计费模式为包周期时该参数必传。 **取值范围**：可选值如下： - 2：月  - 3：年
+     * **参数解释**：包周期订购类型。当计费模式为包周期时该参数必传。 **取值范围**：可选值如下： - 2：月 - 3：年
      * @return osModelartsPeriodType
      */
     public String getOsModelartsPeriodType() {

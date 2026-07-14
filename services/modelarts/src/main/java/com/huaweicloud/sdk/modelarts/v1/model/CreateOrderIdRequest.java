@@ -37,7 +37,7 @@ public class CreateOrderIdRequest {
     }
 
     /**
-     * **参数解释**：资源池ID。 **约束限制**：不涉及。  **取值范围**：不涉及。 **默认取值**：不涉及。
+     * **参数解释**：资源池ID。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return name
      */
     public String getName() {
@@ -54,7 +54,7 @@ public class CreateOrderIdRequest {
     }
 
     /**
-     * **参数解释**：订单操作类型。 **约束限制**：不涉及。  **取值范围**：可选值如下： - toPeriod：按需转包周期，默认值 **默认取值**：不涉及。
+     * **参数解释**：订单操作类型。 **约束限制**：不涉及。 **取值范围**：可选值如下： - toPeriod：按需转包周期，默认值 **默认取值**：不涉及。
      * @return actionType
      */
     public String getActionType() {
@@ -71,7 +71,7 @@ public class CreateOrderIdRequest {
     }
 
     /**
-     * **参数解释**：工作空间ID，默认是0。 **约束限制**：不涉及。  **取值范围**：不涉及。 **默认取值**：不涉及。
+     * **参数解释**：工作空间ID，默认是0。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return workspaceId
      */
     public String getWorkspaceId() {

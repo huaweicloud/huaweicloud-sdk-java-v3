@@ -50,7 +50,7 @@ public class DeleteHyperinstanceResponse extends SdkResponse {
     private String orderId;
 
     /**
-     * **参数解释**：超节点实例状态。 **约束限制**：不涉及。  **取值范围**： - PROVISIONING：超节点的创建请求已被接受，但是仍在创建过程中； - ACTIVE：超节点处于活动状态，其资源可被使用； - ERROR：超节点创建失败； - REIMAGING：超节点切换操作系统中； - TERMINATING：资源释放中； - TERMINATED：超节点资源已经被释放，其资源不再可用。 **默认取值**：不涉及。
+     * **参数解释**：超节点实例状态。 **约束限制**：不涉及。 **取值范围**： - PROVISIONING：超节点的创建请求已被接受，但是仍在创建过程中； - ACTIVE：超节点处于活动状态，其资源可被使用； - ERROR：超节点创建失败； - REIMAGING：超节点切换操作系统中； - TERMINATING：资源释放中； - TERMINATED：超节点资源已经被释放，其资源不再可用。 **默认取值**：不涉及。
      */
     public static final class StatusEnum {
 
@@ -169,7 +169,7 @@ public class DeleteHyperinstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：创建时间。 **约束限制**：不涉及。  **取值范围**：不涉及。  **默认取值**：不涉及。
+     * **参数解释**：创建时间。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * minimum: 2147483647
      * maximum: 4102376399000
      * @return createAt
@@ -188,7 +188,7 @@ public class DeleteHyperinstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：超节点集群网络ID。 **约束限制**：不涉及。  **取值范围**：^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$。 **默认取值**：不涉及。
+     * **参数解释**：超节点集群网络ID。 **约束限制**：不涉及。 **取值范围**：^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$。 **默认取值**：不涉及。
      * @return hpsClusterId
      */
     public String getHpsClusterId() {
@@ -205,7 +205,7 @@ public class DeleteHyperinstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：超节点ID。 **约束限制**：不涉及。  **取值范围**：^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$。 **默认取值**：不涉及。
+     * **参数解释**：超节点ID。 **约束限制**：不涉及。 **取值范围**：^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$。 **默认取值**：不涉及。
      * @return hpsId
      */
     public String getHpsId() {
@@ -222,7 +222,7 @@ public class DeleteHyperinstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：Lite Server超节点ID。 **约束限制**：不涉及。  **取值范围**：^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$。 **默认取值**：不涉及。
+     * **参数解释**：Lite Server超节点ID。 **约束限制**：不涉及。 **取值范围**：^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$。 **默认取值**：不涉及。
      * @return id
      */
     public String getId() {
@@ -239,7 +239,7 @@ public class DeleteHyperinstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：实例名称。  **约束限制**：不涉及。  **取值范围**：^[-_.a-zA-Z0-9]{1,64}$。 **默认取值**：不涉及。
+     * **参数解释**：实例名称。 **约束限制**：不涉及。 **取值范围**：^[-_.a-zA-Z0-9]{1,64}$。 **默认取值**：不涉及。
      * @return name
      */
     public String getName() {
@@ -256,7 +256,7 @@ public class DeleteHyperinstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：订单ID。  **约束限制**：不涉及。  **取值范围**：^[a-zA-Z0-9]{1,64}$。 **默认取值**：不涉及。
+     * **参数解释**：订单ID。 **约束限制**：不涉及。 **取值范围**：^[a-zA-Z0-9]{1,64}$。 **默认取值**：不涉及。
      * @return orderId
      */
     public String getOrderId() {
@@ -273,7 +273,7 @@ public class DeleteHyperinstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：超节点实例状态。 **约束限制**：不涉及。  **取值范围**： - PROVISIONING：超节点的创建请求已被接受，但是仍在创建过程中； - ACTIVE：超节点处于活动状态，其资源可被使用； - ERROR：超节点创建失败； - REIMAGING：超节点切换操作系统中； - TERMINATING：资源释放中； - TERMINATED：超节点资源已经被释放，其资源不再可用。 **默认取值**：不涉及。
+     * **参数解释**：超节点实例状态。 **约束限制**：不涉及。 **取值范围**： - PROVISIONING：超节点的创建请求已被接受，但是仍在创建过程中； - ACTIVE：超节点处于活动状态，其资源可被使用； - ERROR：超节点创建失败； - REIMAGING：超节点切换操作系统中； - TERMINATING：资源释放中； - TERMINATED：超节点资源已经被释放，其资源不再可用。 **默认取值**：不涉及。
      * @return status
      */
     public StatusEnum getStatus() {
@@ -306,7 +306,7 @@ public class DeleteHyperinstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：超节点子节点实例列表。 **约束限制**：不涉及。  **取值范围**：不涉及。  **默认取值**：不涉及。
+     * **参数解释**：超节点子节点实例列表。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return servers
      */
     public List<ServerResponse> getServers() {
@@ -323,7 +323,7 @@ public class DeleteHyperinstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：创建时间。 **约束限制**：不涉及。  **取值范围**：不涉及。  **默认取值**：不涉及。
+     * **参数解释**：创建时间。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * minimum: 2147483647
      * maximum: 4102376399000
      * @return updateAt

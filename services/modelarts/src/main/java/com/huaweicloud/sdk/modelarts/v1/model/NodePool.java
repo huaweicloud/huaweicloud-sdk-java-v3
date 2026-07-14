@@ -59,7 +59,7 @@ public class NodePool {
     }
 
     /**
-     * **参数解释**：节点池类型。  **取值范围**： 可选值如下： - NodePool：节点池
+     * **参数解释**：节点池类型。 **取值范围**： 可选值如下： - NodePool：节点池
      * @return kind
      */
     public String getKind() {

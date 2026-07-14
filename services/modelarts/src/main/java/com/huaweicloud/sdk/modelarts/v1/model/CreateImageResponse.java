@@ -552,6 +552,87 @@ public class CreateImageResponse extends SdkResponse {
 
     private String statusMessage;
 
+    /**
+     * Gets or Sets supportResCategories
+     */
+    public static final class SupportResCategoriesEnum {
+
+        /**
+         * Enum ASCEND for value: "ASCEND"
+         */
+        public static final SupportResCategoriesEnum ASCEND = new SupportResCategoriesEnum("ASCEND");
+
+        /**
+         * Enum CPU for value: "CPU"
+         */
+        public static final SupportResCategoriesEnum CPU = new SupportResCategoriesEnum("CPU");
+
+        /**
+         * Enum GPU for value: "GPU"
+         */
+        public static final SupportResCategoriesEnum GPU = new SupportResCategoriesEnum("GPU");
+
+        private static final Map<String, SupportResCategoriesEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SupportResCategoriesEnum> createStaticFields() {
+            Map<String, SupportResCategoriesEnum> map = new HashMap<>();
+            map.put("ASCEND", ASCEND);
+            map.put("CPU", CPU);
+            map.put("GPU", GPU);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SupportResCategoriesEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SupportResCategoriesEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SupportResCategoriesEnum(value));
+        }
+
+        public static SupportResCategoriesEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SupportResCategoriesEnum) {
+                return this.value.equals(((SupportResCategoriesEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_res_categories")
+
+    private List<SupportResCategoriesEnum> supportResCategories = null;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "swr_path")
 
@@ -739,14 +820,14 @@ public class CreateImageResponse extends SdkResponse {
     private String swrInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "show_tag")
-
-    private String showTag;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "show_name")
 
     private String showName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "show_tag")
+
+    private String showTag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -1006,6 +1087,40 @@ public class CreateImageResponse extends SdkResponse {
         this.statusMessage = statusMessage;
     }
 
+    public CreateImageResponse withSupportResCategories(List<SupportResCategoriesEnum> supportResCategories) {
+        this.supportResCategories = supportResCategories;
+        return this;
+    }
+
+    public CreateImageResponse addSupportResCategoriesItem(SupportResCategoriesEnum supportResCategoriesItem) {
+        if (this.supportResCategories == null) {
+            this.supportResCategories = new ArrayList<>();
+        }
+        this.supportResCategories.add(supportResCategoriesItem);
+        return this;
+    }
+
+    public CreateImageResponse withSupportResCategories(
+        Consumer<List<SupportResCategoriesEnum>> supportResCategoriesSetter) {
+        if (this.supportResCategories == null) {
+            this.supportResCategories = new ArrayList<>();
+        }
+        supportResCategoriesSetter.accept(this.supportResCategories);
+        return this;
+    }
+
+    /**
+     * **参数解释**：镜像支持的规格。 枚举类型，取值如下： - CPU - GPU - [ASCEND](tag:hc,hk,fcs_super)
+     * @return supportResCategories
+     */
+    public List<SupportResCategoriesEnum> getSupportResCategories() {
+        return supportResCategories;
+    }
+
+    public void setSupportResCategories(List<SupportResCategoriesEnum> supportResCategories) {
+        this.supportResCategories = supportResCategories;
+    }
+
     public CreateImageResponse withSwrPath(String swrPath) {
         this.swrPath = swrPath;
         return this;
@@ -1131,7 +1246,7 @@ public class CreateImageResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：企业版SWR仓库ID。 **取值范围**：不涉及。
+     * 参数解释：SWR企业仓库ID。未使用SWR企业仓时该字段为null。 约束限制：不涉及。 取值范围：128位UUID。 默认取值：null。
      * @return swrInstanceId
      */
     public String getSwrInstanceId() {
@@ -1142,30 +1257,13 @@ public class CreateImageResponse extends SdkResponse {
         this.swrInstanceId = swrInstanceId;
     }
 
-    public CreateImageResponse withShowTag(String showTag) {
-        this.showTag = showTag;
-        return this;
-    }
-
-    /**
-     * **参数解释**：镜像展示Tag。 **取值范围**：不涉及。
-     * @return showTag
-     */
-    public String getShowTag() {
-        return showTag;
-    }
-
-    public void setShowTag(String showTag) {
-        this.showTag = showTag;
-    }
-
     public CreateImageResponse withShowName(String showName) {
         this.showName = showName;
         return this;
     }
 
     /**
-     * **参数解释**：镜像展示name。 **取值范围**：不涉及。
+     * **参数解释**：镜像展示名称，仅预置镜像具备该字段。
      * @return showName
      */
     public String getShowName() {
@@ -1174,6 +1272,23 @@ public class CreateImageResponse extends SdkResponse {
 
     public void setShowName(String showName) {
         this.showName = showName;
+    }
+
+    public CreateImageResponse withShowTag(String showTag) {
+        this.showTag = showTag;
+        return this;
+    }
+
+    /**
+     * **参数解释**：镜像展示版本号，仅预置镜像具备该字段。
+     * @return showTag
+     */
+    public String getShowTag() {
+        return showTag;
+    }
+
+    public void setShowTag(String showTag) {
+        this.showTag = showTag;
     }
 
     public CreateImageResponse withTags(List<TmsTagResponse> tags) {
@@ -1225,12 +1340,13 @@ public class CreateImageResponse extends SdkResponse {
             && Objects.equals(this.resourceCategories, that.resourceCategories)
             && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.size, that.size)
             && Objects.equals(this.status, that.status) && Objects.equals(this.statusMessage, that.statusMessage)
+            && Objects.equals(this.supportResCategories, that.supportResCategories)
             && Objects.equals(this.swrPath, that.swrPath) && Objects.equals(this.tag, that.tag)
             && Objects.equals(this.type, that.type) && Objects.equals(this.updateAt, that.updateAt)
             && Objects.equals(this.visibility, that.visibility) && Objects.equals(this.workspaceId, that.workspaceId)
             && Objects.equals(this.flavorType, that.flavorType)
-            && Objects.equals(this.swrInstanceId, that.swrInstanceId) && Objects.equals(this.showTag, that.showTag)
-            && Objects.equals(this.showName, that.showName) && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.swrInstanceId, that.swrInstanceId) && Objects.equals(this.showName, that.showName)
+            && Objects.equals(this.showTag, that.showTag) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -1248,6 +1364,7 @@ public class CreateImageResponse extends SdkResponse {
             size,
             status,
             statusMessage,
+            supportResCategories,
             swrPath,
             tag,
             type,
@@ -1256,8 +1373,8 @@ public class CreateImageResponse extends SdkResponse {
             workspaceId,
             flavorType,
             swrInstanceId,
-            showTag,
             showName,
+            showTag,
             tags);
     }
 
@@ -1278,6 +1395,7 @@ public class CreateImageResponse extends SdkResponse {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    statusMessage: ").append(toIndentedString(statusMessage)).append("\n");
+        sb.append("    supportResCategories: ").append(toIndentedString(supportResCategories)).append("\n");
         sb.append("    swrPath: ").append(toIndentedString(swrPath)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
@@ -1286,8 +1404,8 @@ public class CreateImageResponse extends SdkResponse {
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("    flavorType: ").append(toIndentedString(flavorType)).append("\n");
         sb.append("    swrInstanceId: ").append(toIndentedString(swrInstanceId)).append("\n");
-        sb.append("    showTag: ").append(toIndentedString(showTag)).append("\n");
         sb.append("    showName: ").append(toIndentedString(showName)).append("\n");
+        sb.append("    showTag: ").append(toIndentedString(showTag)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();

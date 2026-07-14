@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * WorkflowSchedulePoliciesResp
+ * 工作流调度策略。
  */
 public class WorkflowSchedulePoliciesResp {
 
@@ -26,7 +26,7 @@ public class WorkflowSchedulePoliciesResp {
     }
 
     /**
-     * 定时调度策略中的标记，失败时触发。
+     * **参数解释**：定时调度策略中的标记，失败时触发。 **取值范围**：不涉及。
      * @return onFailure
      */
     public String getOnFailure() {
@@ -43,7 +43,7 @@ public class WorkflowSchedulePoliciesResp {
     }
 
     /**
-     * 定时调度策略中的标记，running时触发。
+     * **参数解释**：定时调度策略中的标记，running时触发。 **取值范围**：不涉及。
      * @return onRunning
      */
     public String getOnRunning() {

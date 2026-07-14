@@ -49,7 +49,7 @@ public class DevServerJobCreateRequest {
     }
 
     /**
-     * **参数解释**：任务名称。  **约束限制**：^[-_.a-zA-Z0-9]{1,64}$。 **取值范围**：不涉及。  **默认取值**：不涉及。
+     * **参数解释**：任务名称。 **约束限制**：^[-_.a-zA-Z0-9]{1,64}$。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return name
      */
     public String getName() {
@@ -66,7 +66,7 @@ public class DevServerJobCreateRequest {
     }
 
     /**
-     * **参数解释**：任务描述。  **约束限制**：^[-_.a-zA-Z0-9]{1,64}$。 **取值范围**：不涉及。  **默认取值**：不涉及。
+     * **参数解释**：任务描述。 **约束限制**：^[-_.a-zA-Z0-9]{1,64}$。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return description
      */
     public String getDescription() {
@@ -99,7 +99,7 @@ public class DevServerJobCreateRequest {
     }
 
     /**
-     * **参数解释**：DevServer实例id列表。   **取值范围**：不涉及。
+     * **参数解释**：DevServer实例id列表。 **取值范围**：不涉及。
      * @return serverIds
      */
     public List<String> getServerIds() {
@@ -116,7 +116,7 @@ public class DevServerJobCreateRequest {
     }
 
     /**
-     * **参数解释**：任务模板类型。  **约束限制**：^[-_.a-zA-Z0-9]{1,64}$。 **取值范围**：-COMMON  -SERVICE_DEPLOY 等。  **默认取值**：不涉及。
+     * **参数解释**：任务模板类型。 **约束限制**：^[-_.a-zA-Z0-9]{1,64}$。 **取值范围**：-COMMON  -SERVICE_DEPLOY 等。 **默认取值**：不涉及。
      * @return type
      */
     public String getType() {
@@ -133,7 +133,7 @@ public class DevServerJobCreateRequest {
     }
 
     /**
-     * **参数解释**：任务失败后是否重启。  **约束限制**：不涉及。 **取值范围**：- true   -false。  **默认取值**：false。
+     * **参数解释**：任务失败后是否重启。 **约束限制**：不涉及。 **取值范围**：- true   -false。 **默认取值**：false。
      * @return isReboot
      */
     public Boolean getIsReboot() {
@@ -166,7 +166,7 @@ public class DevServerJobCreateRequest {
     }
 
     /**
-     * **参数解释**：任务实例列表。   **取值范围**：不涉及。
+     * **参数解释**：任务实例列表。 **取值范围**：不涉及。
      * @return items
      */
     public List<DevServerJobItem> getItems() {

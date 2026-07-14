@@ -21,7 +21,7 @@ public class CloudServer {
     private String id;
 
     /**
-     * **参数解释**：Lite Server服务器类型。  **取值范围**： - BMS：裸金属服务器 - ECS：弹性云服务器 - HPS：超节点服务器
+     * **参数解释**：Lite Server服务器类型。 **取值范围**： - BMS：裸金属服务器 - ECS：弹性云服务器 - HPS：超节点服务器
      */
     public static final class TypeEnum {
 
@@ -134,7 +134,7 @@ public class CloudServer {
     }
 
     /**
-     * **参数解释**：Lite Server服务器类型。  **取值范围**： - BMS：裸金属服务器 - ECS：弹性云服务器 - HPS：超节点服务器
+     * **参数解释**：Lite Server服务器类型。 **取值范围**： - BMS：裸金属服务器 - ECS：弹性云服务器 - HPS：超节点服务器
      * @return type
      */
     public TypeEnum getType() {

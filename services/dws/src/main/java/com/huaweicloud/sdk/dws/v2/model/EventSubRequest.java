@@ -139,7 +139,7 @@ public class EventSubRequest {
     }
 
     /**
-     * **参数解释**： 事件级别。 **取值范围**： 支持normal、warning。
+     * **参数解释**： 事件级别。 **取值范围**： 支持normal、warning，可同时包含多值。
      * @return severity
      */
     public String getSeverity() {

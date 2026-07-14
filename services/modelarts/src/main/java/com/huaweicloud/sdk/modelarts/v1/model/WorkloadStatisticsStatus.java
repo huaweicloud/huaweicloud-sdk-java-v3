@@ -197,7 +197,7 @@ public class WorkloadStatisticsStatus {
     }
 
     /**
-     * **参数描述**：运行失败的作业个数。  **取值范围**： 不涉及。
+     * **参数描述**：运行失败的作业个数。 **取值范围**： 不涉及。
      * @return failed
      */
     public Integer getFailed() {

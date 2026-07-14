@@ -166,7 +166,7 @@ public class ClusterMetric {
     }
 
     /**
-     * **参数解释**： 创建时间。 **取值范围**： 不涉及。
+     * **参数解释**： 创建时间。 **取值范围**： 毫秒时间戳格式的字符串。
      * @return createTime
      */
     public String getCreateTime() {

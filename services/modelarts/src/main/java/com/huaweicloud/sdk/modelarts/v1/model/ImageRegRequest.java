@@ -543,6 +543,11 @@ public class ImageRegRequest {
     private String flavorType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<String> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "swr_instance_id")
 
     private String swrInstanceId;
@@ -754,6 +759,39 @@ public class ImageRegRequest {
         this.flavorType = flavorType;
     }
 
+    public ImageRegRequest withTags(List<String> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public ImageRegRequest addTagsItem(String tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ImageRegRequest withTags(Consumer<List<String>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * **参数解释**：该镜像所属镜像组对应的标签。 **约束限制**：最大支持20个标签。 **取值范围**：key值最大支持长度128，value值最大支持255。 **默认取值**：不涉及。
+     * @return tags
+     */
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
     public ImageRegRequest withSwrInstanceId(String swrInstanceId) {
         this.swrInstanceId = swrInstanceId;
         return this;
@@ -802,7 +840,8 @@ public class ImageRegRequest {
             && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.services, that.services)
             && Objects.equals(this.swrPath, that.swrPath) && Objects.equals(this.visibility, that.visibility)
             && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.flavorType, that.flavorType)
-            && Objects.equals(this.swrInstanceId, that.swrInstanceId) && Objects.equals(this.readMe, that.readMe);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.swrInstanceId, that.swrInstanceId)
+            && Objects.equals(this.readMe, that.readMe);
     }
 
     @Override
@@ -817,6 +856,7 @@ public class ImageRegRequest {
             visibility,
             workspaceId,
             flavorType,
+            tags,
             swrInstanceId,
             readMe);
     }
@@ -835,6 +875,7 @@ public class ImageRegRequest {
         sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("    flavorType: ").append(toIndentedString(flavorType)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    swrInstanceId: ").append(toIndentedString(swrInstanceId)).append("\n");
         sb.append("    readMe: ").append(toIndentedString(readMe)).append("\n");
         sb.append("}");

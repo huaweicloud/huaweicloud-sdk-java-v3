@@ -41,7 +41,7 @@ public class ListDevServerJobsRequest {
     }
 
     /**
-     * **参数解释**：Lite Server job id。  **约束限制**：无。  **取值范围**：1 - 64字符。  **默认取值**：不涉及。
+     * **参数解释**：Lite Server job id。 **约束限制**：无。 **取值范围**：1 - 64字符。 **默认取值**：不涉及。
      * @return id
      */
     public String getId() {
@@ -58,7 +58,7 @@ public class ListDevServerJobsRequest {
     }
 
     /**
-     * **参数解释**：Lite Server job的name。  **约束限制**：无。  **取值范围**：不涉及。  **默认取值**：不涉及。
+     * **参数解释**：Lite Server job的name。 **约束限制**：无。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return name
      */
     public String getName() {
@@ -75,7 +75,7 @@ public class ListDevServerJobsRequest {
     }
 
     /**
-     * **参数解释**：Lite Server job的类型。  **约束限制**：无。  **取值范围**：不涉及。  **默认取值**：不涉及。
+     * **参数解释**：Lite Server job的类型。 **约束限制**：无。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return type
      */
     public String getType() {
@@ -92,7 +92,7 @@ public class ListDevServerJobsRequest {
     }
 
     /**
-     * **参数解释**：Lite Server job的状态。  **约束限制**：无。  **取值范围**：不涉及。  **默认取值**：不涉及。
+     * **参数解释**：Lite Server job的状态。 **约束限制**：无。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return status
      */
     public String getStatus() {
@@ -109,7 +109,7 @@ public class ListDevServerJobsRequest {
     }
 
     /**
-     * **参数解释**：是否可见。  **约束限制**：bool。  **取值范围**：不涉及。  **默认取值**：不涉及。
+     * **参数解释**：是否可见。 **约束限制**：bool。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return visible
      */
     public Boolean getVisible() {

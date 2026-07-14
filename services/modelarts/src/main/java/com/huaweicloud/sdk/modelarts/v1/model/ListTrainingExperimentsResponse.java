@@ -55,7 +55,7 @@ public class ListTrainingExperimentsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：查询到所有训练实验总数。  **取值范围**：不涉及。
+     * **参数解释**：查询到所有训练实验总数。 **取值范围**：不涉及。
      * @return total
      */
     public Integer getTotal() {
@@ -72,7 +72,7 @@ public class ListTrainingExperimentsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：查询到所有符合查询条件的训练实验总数。  **取值范围**：不涉及。
+     * **参数解释**：查询到所有符合查询条件的训练实验总数。 **取值范围**：不涉及。
      * @return count
      */
     public Integer getCount() {
@@ -89,7 +89,7 @@ public class ListTrainingExperimentsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：查询到所有训练实验限制个数。  **取值范围**：不涉及。
+     * **参数解释**：查询到所有训练实验限制个数。 **取值范围**：不涉及。
      * @return limit
      */
     public Integer getLimit() {
@@ -123,7 +123,7 @@ public class ListTrainingExperimentsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：查询到所有训练实验排序依赖字段。  **取值范围**：不涉及。
+     * **参数解释**：查询到所有训练实验排序依赖字段。 **取值范围**：不涉及。
      * @return sortBy
      */
     public String getSortBy() {

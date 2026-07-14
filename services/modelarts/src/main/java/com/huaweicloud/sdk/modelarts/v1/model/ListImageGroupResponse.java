@@ -39,6 +39,11 @@ public class ListImageGroupResponse extends SdkResponse {
 
     private Long total;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_swr_enterprise")
+
+    private Boolean isSwrEnterprise;
+
     public ListImageGroupResponse withCurrent(Integer current) {
         this.current = current;
         return this;
@@ -140,6 +145,23 @@ public class ListImageGroupResponse extends SdkResponse {
         this.total = total;
     }
 
+    public ListImageGroupResponse withIsSwrEnterprise(Boolean isSwrEnterprise) {
+        this.isSwrEnterprise = isSwrEnterprise;
+        return this;
+    }
+
+    /**
+     * **参数解释**：当前账号是否存在swr企业版镜像。 **约束限制**：true或false。 **取值范围**：布尔类型 **默认取值**：false。
+     * @return isSwrEnterprise
+     */
+    public Boolean getIsSwrEnterprise() {
+        return isSwrEnterprise;
+    }
+
+    public void setIsSwrEnterprise(Boolean isSwrEnterprise) {
+        this.isSwrEnterprise = isSwrEnterprise;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -151,12 +173,12 @@ public class ListImageGroupResponse extends SdkResponse {
         ListImageGroupResponse that = (ListImageGroupResponse) obj;
         return Objects.equals(this.current, that.current) && Objects.equals(this.data, that.data)
             && Objects.equals(this.pages, that.pages) && Objects.equals(this.size, that.size)
-            && Objects.equals(this.total, that.total);
+            && Objects.equals(this.total, that.total) && Objects.equals(this.isSwrEnterprise, that.isSwrEnterprise);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(current, data, pages, size, total);
+        return Objects.hash(current, data, pages, size, total, isSwrEnterprise);
     }
 
     @Override
@@ -168,6 +190,7 @@ public class ListImageGroupResponse extends SdkResponse {
         sb.append("    pages: ").append(toIndentedString(pages)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    isSwrEnterprise: ").append(toIndentedString(isSwrEnterprise)).append("\n");
         sb.append("}");
         return sb.toString();
     }

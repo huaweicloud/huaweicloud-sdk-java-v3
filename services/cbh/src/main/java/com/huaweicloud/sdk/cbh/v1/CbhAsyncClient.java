@@ -220,6 +220,7 @@ public class CbhAsyncClient {
      * @param request ListCbhInstanceRequest 请求对象
      * @return CompletableFuture<ListCbhInstanceResponse>
      */
+    @Deprecated
     public CompletableFuture<ListCbhInstanceResponse> listCbhInstanceAsync(ListCbhInstanceRequest request) {
         return hcClient.asyncInvokeHttp(request, CbhMeta.listCbhInstance);
     }
@@ -234,6 +235,7 @@ public class CbhAsyncClient {
      * @param request ListCbhInstanceRequest 请求对象
      * @return AsyncInvoker<ListCbhInstanceRequest, ListCbhInstanceResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListCbhInstanceRequest, ListCbhInstanceResponse> listCbhInstanceAsyncInvoker(
         ListCbhInstanceRequest request) {
         return new AsyncInvoker<>(request, CbhMeta.listCbhInstance, hcClient);

@@ -101,74 +101,10 @@ public class Snapshots {
 
     private String progress;
 
-    /**
-     * **参数解释**： 备份产生的Key。 **取值范围**： 不涉及。
-     */
-    public static final class BackupKeyEnum {
-
-        /**
-         * Enum _20160823_035923 for value: "20160823_035923"
-         */
-        public static final BackupKeyEnum _20160823_035923 = new BackupKeyEnum("20160823_035923");
-
-        private static final Map<String, BackupKeyEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, BackupKeyEnum> createStaticFields() {
-            Map<String, BackupKeyEnum> map = new HashMap<>();
-            map.put("20160823_035923", _20160823_035923);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        BackupKeyEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static BackupKeyEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BackupKeyEnum(value));
-        }
-
-        public static BackupKeyEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof BackupKeyEnum) {
-                return this.value.equals(((BackupKeyEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_key")
 
-    private BackupKeyEnum backupKey;
+    private String backupKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prior_backup_key")
@@ -614,7 +550,7 @@ public class Snapshots {
         this.progress = progress;
     }
 
-    public Snapshots withBackupKey(BackupKeyEnum backupKey) {
+    public Snapshots withBackupKey(String backupKey) {
         this.backupKey = backupKey;
         return this;
     }
@@ -623,11 +559,11 @@ public class Snapshots {
      * **参数解释**： 备份产生的Key。 **取值范围**： 不涉及。
      * @return backupKey
      */
-    public BackupKeyEnum getBackupKey() {
+    public String getBackupKey() {
         return backupKey;
     }
 
-    public void setBackupKey(BackupKeyEnum backupKey) {
+    public void setBackupKey(String backupKey) {
         this.backupKey = backupKey;
     }
 

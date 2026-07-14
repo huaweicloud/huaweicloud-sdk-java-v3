@@ -51,6 +51,11 @@ public class ImageGroup {
     private String iconName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "swr_instance_name")
 
     private String swrInstanceName;
@@ -196,6 +201,23 @@ public class ImageGroup {
         this.iconName = iconName;
     }
 
+    public ImageGroup withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * **参数解释**：镜像id。 **取值范围**：不涉及。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public ImageGroup withSwrInstanceName(String swrInstanceName) {
         this.swrInstanceName = swrInstanceName;
         return this;
@@ -243,7 +265,7 @@ public class ImageGroup {
             && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.updateAt, that.updateAt)
             && Objects.equals(this.versionCount, that.versionCount)
             && Objects.equals(this.description, that.description) && Objects.equals(this.readMe, that.readMe)
-            && Objects.equals(this.iconName, that.iconName)
+            && Objects.equals(this.iconName, that.iconName) && Objects.equals(this.id, that.id)
             && Objects.equals(this.swrInstanceName, that.swrInstanceName)
             && Objects.equals(this.swrInstanceId, that.swrInstanceId);
     }
@@ -258,6 +280,7 @@ public class ImageGroup {
             description,
             readMe,
             iconName,
+            id,
             swrInstanceName,
             swrInstanceId);
     }
@@ -274,6 +297,7 @@ public class ImageGroup {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    readMe: ").append(toIndentedString(readMe)).append("\n");
         sb.append("    iconName: ").append(toIndentedString(iconName)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    swrInstanceName: ").append(toIndentedString(swrInstanceName)).append("\n");
         sb.append("    swrInstanceId: ").append(toIndentedString(swrInstanceId)).append("\n");
         sb.append("}");

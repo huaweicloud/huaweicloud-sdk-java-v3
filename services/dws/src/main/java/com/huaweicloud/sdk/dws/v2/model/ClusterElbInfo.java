@@ -212,7 +212,7 @@ public class ClusterElbInfo {
     }
 
     /**
-     * **参数解释**： 弹性负载均衡的管理状态。 **取值范围**： ACTIVE：使用中 PENDING_CREATE：创建中 ERROR：表示当前策略与同一监听器下的其他策略存在相同的规格配置。
+     * **参数解释**： 弹性负载均衡的管理状态。 **取值范围**： true：使用中 false：未使用
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -229,7 +229,7 @@ public class ClusterElbInfo {
     }
 
     /**
-     * **参数解释**： 带宽信息。 **取值范围**： 大于等于0的正整数。
+     * **参数解释**： 带宽信息。 **取值范围**： 大于等于0的非负整数。
      * @return bandwidth
      */
     public Integer getBandwidth() {

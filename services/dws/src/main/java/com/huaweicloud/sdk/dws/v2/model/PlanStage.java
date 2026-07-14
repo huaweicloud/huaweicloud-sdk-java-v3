@@ -149,7 +149,7 @@ public class PlanStage {
     }
 
     /**
-     * **参数解释**： 计划开始时间。 **取值范围**： 不涉及。
+     * **参数解释**： 计划开始时间。 **取值范围**： 仅时间部分，如00:00:00。
      * @return startTime
      */
     public String getStartTime() {
@@ -166,7 +166,7 @@ public class PlanStage {
     }
 
     /**
-     * **参数解释**： 计划结束时间。 **取值范围**： 不涉及。
+     * **参数解释**： 计划结束时间。 **取值范围**： 仅时间部分，如00:00:00。
      * @return endTime
      */
     public String getEndTime() {

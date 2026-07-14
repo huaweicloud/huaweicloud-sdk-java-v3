@@ -45,7 +45,7 @@ public class ListAllHyperinstancesResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：当前页数。 **约束限制**：不涉及。  **取值范围**：不涉及。  **默认取值**：不涉及。
+     * **参数解释**：当前页数。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * minimum: 1
      * maximum: 2097152
      * @return current
@@ -80,7 +80,7 @@ public class ListAllHyperinstancesResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：Lite Server超节点实例列表。 **约束限制**：不涉及。  **取值范围**：不涉及。  **默认取值**：不涉及。
+     * **参数解释**：Lite Server超节点实例列表。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return data
      */
     public List<ServerHyperinstanceResponse> getData() {
@@ -97,7 +97,7 @@ public class ListAllHyperinstancesResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：总的页数。 **约束限制**：不涉及。  **取值范围**：不涉及。  **默认取值**：不涉及。
+     * **参数解释**：总的页数。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * minimum: 1
      * maximum: 2097152
      * @return pages
@@ -116,7 +116,7 @@ public class ListAllHyperinstancesResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：每一页的数量。 **约束限制**：不涉及。  **取值范围**：不涉及。  **默认取值**：不涉及。
+     * **参数解释**：每一页的数量。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * minimum: 1
      * maximum: 1024
      * @return size
@@ -135,7 +135,7 @@ public class ListAllHyperinstancesResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：总的记录数量。 **约束限制**：不涉及。  **取值范围**：不涉及。  **默认取值**：不涉及。
+     * **参数解释**：总的记录数量。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * minimum: 1
      * maximum: 2147483647
      * @return total

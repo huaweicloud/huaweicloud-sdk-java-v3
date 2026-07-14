@@ -31,7 +31,7 @@ public class ListDevServerJobTemplatesRequest {
     }
 
     /**
-     * **参数解释**：DevServerJob的模板id。  **约束限制**：1 - 64字符，字母、数字和中划线。  **取值范围**：不涉及。  **默认取值**：不涉及。
+     * **参数解释**：DevServerJob的模板id。 **约束限制**：1 - 64字符，字母、数字和中划线。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return id
      */
     public String getId() {
@@ -48,7 +48,7 @@ public class ListDevServerJobTemplatesRequest {
     }
 
     /**
-     * **参数解释**：DevServerJob的模板name。  **约束限制**：字母、数字和中划线。  **取值范围**：不涉及。  **默认取值**：不涉及。
+     * **参数解释**：DevServerJob的模板name。 **约束限制**：字母、数字和中划线。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return name
      */
     public String getName() {
@@ -65,7 +65,7 @@ public class ListDevServerJobTemplatesRequest {
     }
 
     /**
-     * **参数解释**：DevServerJob的模板类型。  **约束限制**：字母、数字和中划线。  **取值范围**：不涉及。  **默认取值**：不涉及。
+     * **参数解释**：DevServerJob的模板类型。 **约束限制**：字母、数字和中划线。 **取值范围**：不涉及。 **默认取值**：不涉及。
      * @return type
      */
     public String getType() {

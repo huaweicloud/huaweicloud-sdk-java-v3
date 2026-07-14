@@ -738,14 +738,19 @@ public class ImageResponse {
     private String swrInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "show_name")
+
+    private String showName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "show_tag")
 
     private String showTag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "show_name")
+    @JsonProperty(value = "tags")
 
-    private String showName;
+    private List<TmsTagResponse> tags = null;
 
     public ImageResponse withArch(ArchEnum arch) {
         this.arch = arch;
@@ -1125,7 +1130,7 @@ public class ImageResponse {
     }
 
     /**
-     * **参数解释**：企业版SWR仓库ID。 **取值范围**：不涉及。
+     * **参数解释**：SWR企业仓库ID。未使用SWR企业仓时该字段为null。 **约束限制**：不涉及。 **取值范围**：128位UUID。 **默认取值**：null。
      * @return swrInstanceId
      */
     public String getSwrInstanceId() {
@@ -1136,13 +1141,30 @@ public class ImageResponse {
         this.swrInstanceId = swrInstanceId;
     }
 
+    public ImageResponse withShowName(String showName) {
+        this.showName = showName;
+        return this;
+    }
+
+    /**
+     * **参数解释**：镜像展示名称，仅预置镜像具备该字段。
+     * @return showName
+     */
+    public String getShowName() {
+        return showName;
+    }
+
+    public void setShowName(String showName) {
+        this.showName = showName;
+    }
+
     public ImageResponse withShowTag(String showTag) {
         this.showTag = showTag;
         return this;
     }
 
     /**
-     * **参数解释**：镜像展示Tag。 **取值范围**：不涉及。
+     * **参数解释**：镜像展示版本号，仅预置镜像具备该字段。
      * @return showTag
      */
     public String getShowTag() {
@@ -1153,21 +1175,37 @@ public class ImageResponse {
         this.showTag = showTag;
     }
 
-    public ImageResponse withShowName(String showName) {
-        this.showName = showName;
+    public ImageResponse withTags(List<TmsTagResponse> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public ImageResponse addTagsItem(TmsTagResponse tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ImageResponse withTags(Consumer<List<TmsTagResponse>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
         return this;
     }
 
     /**
-     * **参数解释**：镜像展示name。 **取值范围**：不涉及。
-     * @return showName
+     * **参数解释**：镜像标签。
+     * @return tags
      */
-    public String getShowName() {
-        return showName;
+    public List<TmsTagResponse> getTags() {
+        return tags;
     }
 
-    public void setShowName(String showName) {
-        this.showName = showName;
+    public void setTags(List<TmsTagResponse> tags) {
+        this.tags = tags;
     }
 
     @Override
@@ -1190,8 +1228,8 @@ public class ImageResponse {
             && Objects.equals(this.type, that.type) && Objects.equals(this.updateAt, that.updateAt)
             && Objects.equals(this.visibility, that.visibility) && Objects.equals(this.workspaceId, that.workspaceId)
             && Objects.equals(this.flavorType, that.flavorType)
-            && Objects.equals(this.swrInstanceId, that.swrInstanceId) && Objects.equals(this.showTag, that.showTag)
-            && Objects.equals(this.showName, that.showName);
+            && Objects.equals(this.swrInstanceId, that.swrInstanceId) && Objects.equals(this.showName, that.showName)
+            && Objects.equals(this.showTag, that.showTag) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -1217,8 +1255,9 @@ public class ImageResponse {
             workspaceId,
             flavorType,
             swrInstanceId,
+            showName,
             showTag,
-            showName);
+            tags);
     }
 
     @Override
@@ -1246,8 +1285,9 @@ public class ImageResponse {
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("    flavorType: ").append(toIndentedString(flavorType)).append("\n");
         sb.append("    swrInstanceId: ").append(toIndentedString(swrInstanceId)).append("\n");
-        sb.append("    showTag: ").append(toIndentedString(showTag)).append("\n");
         sb.append("    showName: ").append(toIndentedString(showName)).append("\n");
+        sb.append("    showTag: ").append(toIndentedString(showTag)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }
