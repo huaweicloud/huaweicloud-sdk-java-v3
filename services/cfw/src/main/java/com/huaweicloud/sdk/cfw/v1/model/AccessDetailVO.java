@@ -14,6 +14,16 @@ import java.util.function.Consumer;
 public class AccessDetailVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "all_session_count")
+
+    private Long allSessionCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "session_count")
+
+    private Long sessionCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dst_ip_count")
 
     private Long dstIpCount;
@@ -62,6 +72,40 @@ public class AccessDetailVO {
     @JsonProperty(value = "src_ip_count")
 
     private Long srcIpCount;
+
+    public AccessDetailVO withAllSessionCount(Long allSessionCount) {
+        this.allSessionCount = allSessionCount;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 所有会话数 **取值范围**： 不涉及
+     * @return allSessionCount
+     */
+    public Long getAllSessionCount() {
+        return allSessionCount;
+    }
+
+    public void setAllSessionCount(Long allSessionCount) {
+        this.allSessionCount = allSessionCount;
+    }
+
+    public AccessDetailVO withSessionCount(Long sessionCount) {
+        this.sessionCount = sessionCount;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 会话数 **取值范围**： 不涉及
+     * @return sessionCount
+     */
+    public Long getSessionCount() {
+        return sessionCount;
+    }
+
+    public void setSessionCount(Long sessionCount) {
+        this.sessionCount = sessionCount;
+    }
 
     public AccessDetailVO withDstIpCount(Long dstIpCount) {
         this.dstIpCount = dstIpCount;
@@ -258,8 +302,10 @@ public class AccessDetailVO {
             return false;
         }
         AccessDetailVO that = (AccessDetailVO) obj;
-        return Objects.equals(this.dstIpCount, that.dstIpCount) && Objects.equals(this.dstPortCount, that.dstPortCount)
-            && Objects.equals(this.hitCount, that.hitCount) && Objects.equals(this.protocolCount, that.protocolCount)
+        return Objects.equals(this.allSessionCount, that.allSessionCount)
+            && Objects.equals(this.sessionCount, that.sessionCount) && Objects.equals(this.dstIpCount, that.dstIpCount)
+            && Objects.equals(this.dstPortCount, that.dstPortCount) && Objects.equals(this.hitCount, that.hitCount)
+            && Objects.equals(this.protocolCount, that.protocolCount)
             && Objects.equals(this.recentEndTime, that.recentEndTime)
             && Objects.equals(this.recentStartTime, that.recentStartTime)
             && Objects.equals(this.recordTotal, that.recordTotal) && Objects.equals(this.records, that.records)
@@ -268,7 +314,9 @@ public class AccessDetailVO {
 
     @Override
     public int hashCode() {
-        return Objects.hash(dstIpCount,
+        return Objects.hash(allSessionCount,
+            sessionCount,
+            dstIpCount,
             dstPortCount,
             hitCount,
             protocolCount,
@@ -284,6 +332,8 @@ public class AccessDetailVO {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AccessDetailVO {\n");
+        sb.append("    allSessionCount: ").append(toIndentedString(allSessionCount)).append("\n");
+        sb.append("    sessionCount: ").append(toIndentedString(sessionCount)).append("\n");
         sb.append("    dstIpCount: ").append(toIndentedString(dstIpCount)).append("\n");
         sb.append("    dstPortCount: ").append(toIndentedString(dstPortCount)).append("\n");
         sb.append("    hitCount: ").append(toIndentedString(hitCount)).append("\n");

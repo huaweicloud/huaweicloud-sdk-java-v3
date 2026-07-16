@@ -15,14 +15,31 @@ import java.util.function.Consumer;
 public class ShowAlarmConfigResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data")
+
+    private Object data;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_configs")
 
     private List<AlarmConfig> alarmConfigs = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "data")
+    public ShowAlarmConfigResponse withData(Object data) {
+        this.data = data;
+        return this;
+    }
 
-    private Object data;
+    /**
+     * Get data
+     * @return data
+     */
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
 
     public ShowAlarmConfigResponse withAlarmConfigs(List<AlarmConfig> alarmConfigs) {
         this.alarmConfigs = alarmConfigs;
@@ -57,23 +74,6 @@ public class ShowAlarmConfigResponse extends SdkResponse {
         this.alarmConfigs = alarmConfigs;
     }
 
-    public ShowAlarmConfigResponse withData(Object data) {
-        this.data = data;
-        return this;
-    }
-
-    /**
-     * Get data
-     * @return data
-     */
-    public Object getData() {
-        return data;
-    }
-
-    public void setData(Object data) {
-        this.data = data;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,20 +83,20 @@ public class ShowAlarmConfigResponse extends SdkResponse {
             return false;
         }
         ShowAlarmConfigResponse that = (ShowAlarmConfigResponse) obj;
-        return Objects.equals(this.alarmConfigs, that.alarmConfigs) && Objects.equals(this.data, that.data);
+        return Objects.equals(this.data, that.data) && Objects.equals(this.alarmConfigs, that.alarmConfigs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(alarmConfigs, data);
+        return Objects.hash(data, alarmConfigs);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowAlarmConfigResponse {\n");
-        sb.append("    alarmConfigs: ").append(toIndentedString(alarmConfigs)).append("\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
+        sb.append("    alarmConfigs: ").append(toIndentedString(alarmConfigs)).append("\n");
         sb.append("}");
         return sb.toString();
     }

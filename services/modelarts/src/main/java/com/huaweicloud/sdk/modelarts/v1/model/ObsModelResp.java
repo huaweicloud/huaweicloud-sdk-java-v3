@@ -11,30 +11,30 @@ import java.util.Objects;
 public class ObsModelResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "obs_url")
+    @JsonProperty(value = "obs_path")
 
-    private String obsUrl;
+    private String obsPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "local_path")
 
     private String localPath;
 
-    public ObsModelResp withObsUrl(String obsUrl) {
-        this.obsUrl = obsUrl;
+    public ObsModelResp withObsPath(String obsPath) {
+        this.obsPath = obsPath;
         return this;
     }
 
     /**
      * **参数解释**：自定义训练作业产物保存的OBS地址，如：“obs://example/path”。 **取值范围**：不涉及。
-     * @return obsUrl
+     * @return obsPath
      */
-    public String getObsUrl() {
-        return obsUrl;
+    public String getObsPath() {
+        return obsPath;
     }
 
-    public void setObsUrl(String obsUrl) {
-        this.obsUrl = obsUrl;
+    public void setObsPath(String obsPath) {
+        this.obsPath = obsPath;
     }
 
     public ObsModelResp withLocalPath(String localPath) {
@@ -63,19 +63,19 @@ public class ObsModelResp {
             return false;
         }
         ObsModelResp that = (ObsModelResp) obj;
-        return Objects.equals(this.obsUrl, that.obsUrl) && Objects.equals(this.localPath, that.localPath);
+        return Objects.equals(this.obsPath, that.obsPath) && Objects.equals(this.localPath, that.localPath);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(obsUrl, localPath);
+        return Objects.hash(obsPath, localPath);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ObsModelResp {\n");
-        sb.append("    obsUrl: ").append(toIndentedString(obsUrl)).append("\n");
+        sb.append("    obsPath: ").append(toIndentedString(obsPath)).append("\n");
         sb.append("    localPath: ").append(toIndentedString(localPath)).append("\n");
         sb.append("}");
         return sb.toString();

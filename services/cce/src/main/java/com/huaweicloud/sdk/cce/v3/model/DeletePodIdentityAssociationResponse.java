@@ -1,11 +1,13 @@
-package com.huaweicloud.sdk.cfw.v1.model;
+package com.huaweicloud.sdk.cce.v3.model;
+
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
 /**
- * Mapstringstring
+ * Response Object
  */
-public class Mapstringstring {
+public class DeletePodIdentityAssociationResponse extends SdkResponse {
 
     @Override
     public boolean equals(java.lang.Object obj) {
@@ -26,7 +28,7 @@ public class Mapstringstring {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Mapstringstring {\n");
+        sb.append("class DeletePodIdentityAssociationResponse {\n");
         sb.append("}");
         return sb.toString();
     }

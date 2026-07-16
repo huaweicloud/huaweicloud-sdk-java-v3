@@ -180,7 +180,7 @@ public class UnitConfigResponse {
     }
 
     /**
-     * **参数解释：** 实例单元角色。 **取值范围：** - common：表示其他角色。
+     * **参数解释：** 实例单元角色。 **取值范围：** - COMMON：表示其他角色。
      * @return role
      */
     public String getRole() {

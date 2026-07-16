@@ -14,16 +14,16 @@ public class OutputModel {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obs")
 
-    private ObsModelResp obs;
+    private ObsModel obs;
 
-    public OutputModel withObs(ObsModelResp obs) {
+    public OutputModel withObs(ObsModel obs) {
         this.obs = obs;
         return this;
     }
 
-    public OutputModel withObs(Consumer<ObsModelResp> obsSetter) {
+    public OutputModel withObs(Consumer<ObsModel> obsSetter) {
         if (this.obs == null) {
-            this.obs = new ObsModelResp();
+            this.obs = new ObsModel();
             obsSetter.accept(this.obs);
         }
 
@@ -34,11 +34,11 @@ public class OutputModel {
      * Get obs
      * @return obs
      */
-    public ObsModelResp getObs() {
+    public ObsModel getObs() {
         return obs;
     }
 
-    public void setObs(ObsModelResp obs) {
+    public void setObs(ObsModel obs) {
         this.obs = obs;
     }
 

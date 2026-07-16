@@ -53,7 +53,7 @@ public class ImageInfoResponse {
     }
 
     /**
-     * **参数解释：** 镜像类别，标识镜像来源。 **取值范围：** - swr：软件仓库服务。
+     * **参数解释：** 镜像类别，标识镜像来源。 **取值范围：** - SWR：软件仓库服务。
      * @return source
      */
     public String getSource() {

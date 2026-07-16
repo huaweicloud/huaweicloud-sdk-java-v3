@@ -19,26 +19,26 @@ import java.util.function.Consumer;
 public class NotebookFlavor {
 
     /**
-     * **参数解释**：架构类型。 **取值范围**：枚举类型，取值如下： - X86_64 - AARCH64
+     * **参数解释**：架构类型。 **取值范围**：枚举类型，取值如下： - x86_64 - aarch64
      */
     public static final class ArchEnum {
 
         /**
-         * Enum AARCH64 for value: "AARCH64"
+         * Enum X86_64 for value: "x86_64"
          */
-        public static final ArchEnum AARCH64 = new ArchEnum("AARCH64");
+        public static final ArchEnum X86_64 = new ArchEnum("x86_64");
 
         /**
-         * Enum X86_64 for value: "X86_64"
+         * Enum AARCH64 for value: "aarch64"
          */
-        public static final ArchEnum X86_64 = new ArchEnum("X86_64");
+        public static final ArchEnum AARCH64 = new ArchEnum("aarch64");
 
         private static final Map<String, ArchEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ArchEnum> createStaticFields() {
             Map<String, ArchEnum> map = new HashMap<>();
-            map.put("AARCH64", AARCH64);
-            map.put("X86_64", X86_64);
+            map.put("x86_64", X86_64);
+            map.put("aarch64", AARCH64);
             return Collections.unmodifiableMap(map);
         }
 
@@ -413,7 +413,7 @@ public class NotebookFlavor {
     }
 
     /**
-     * **参数解释**：架构类型。 **取值范围**：枚举类型，取值如下： - X86_64 - AARCH64
+     * **参数解释**：架构类型。 **取值范围**：枚举类型，取值如下： - x86_64 - aarch64
      * @return arch
      */
     public ArchEnum getArch() {

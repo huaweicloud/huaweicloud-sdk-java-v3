@@ -26,14 +26,14 @@ public class WorkloadResourceRequirement {
     private String nvidiaComGpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "huawei.com/ascend-snt3")
+    @JsonProperty(value = "huawei.com/ascend-310")
 
-    private String huaweiComAscendSnt3;
+    private String huaweiComAscend310;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "huawei.com/ascend-snt9")
+    @JsonProperty(value = "huawei.com/ascend-1980")
 
-    private String huaweiComAscendSnt9;
+    private String huaweiComAscend1980;
 
     public WorkloadResourceRequirement withCpu(String cpu) {
         this.cpu = cpu;
@@ -86,38 +86,38 @@ public class WorkloadResourceRequirement {
         this.nvidiaComGpu = nvidiaComGpu;
     }
 
-    public WorkloadResourceRequirement withHuaweiComAscendSnt3(String huaweiComAscendSnt3) {
-        this.huaweiComAscendSnt3 = huaweiComAscendSnt3;
+    public WorkloadResourceRequirement withHuaweiComAscend310(String huaweiComAscend310) {
+        this.huaweiComAscend310 = huaweiComAscend310;
         return this;
     }
 
     /**
      * **参数解释**：作业的运行使用的snt3类型NPU资源量。 **取值范围**：不涉及
-     * @return huaweiComAscendSnt3
+     * @return huaweiComAscend310
      */
-    public String getHuaweiComAscendSnt3() {
-        return huaweiComAscendSnt3;
+    public String getHuaweiComAscend310() {
+        return huaweiComAscend310;
     }
 
-    public void setHuaweiComAscendSnt3(String huaweiComAscendSnt3) {
-        this.huaweiComAscendSnt3 = huaweiComAscendSnt3;
+    public void setHuaweiComAscend310(String huaweiComAscend310) {
+        this.huaweiComAscend310 = huaweiComAscend310;
     }
 
-    public WorkloadResourceRequirement withHuaweiComAscendSnt9(String huaweiComAscendSnt9) {
-        this.huaweiComAscendSnt9 = huaweiComAscendSnt9;
+    public WorkloadResourceRequirement withHuaweiComAscend1980(String huaweiComAscend1980) {
+        this.huaweiComAscend1980 = huaweiComAscend1980;
         return this;
     }
 
     /**
      * **参数解释**：作业的运行使用的snt9类型NPU资源量。 **取值范围**：不涉及。
-     * @return huaweiComAscendSnt9
+     * @return huaweiComAscend1980
      */
-    public String getHuaweiComAscendSnt9() {
-        return huaweiComAscendSnt9;
+    public String getHuaweiComAscend1980() {
+        return huaweiComAscend1980;
     }
 
-    public void setHuaweiComAscendSnt9(String huaweiComAscendSnt9) {
-        this.huaweiComAscendSnt9 = huaweiComAscendSnt9;
+    public void setHuaweiComAscend1980(String huaweiComAscend1980) {
+        this.huaweiComAscend1980 = huaweiComAscend1980;
     }
 
     @Override
@@ -131,13 +131,13 @@ public class WorkloadResourceRequirement {
         WorkloadResourceRequirement that = (WorkloadResourceRequirement) obj;
         return Objects.equals(this.cpu, that.cpu) && Objects.equals(this.memory, that.memory)
             && Objects.equals(this.nvidiaComGpu, that.nvidiaComGpu)
-            && Objects.equals(this.huaweiComAscendSnt3, that.huaweiComAscendSnt3)
-            && Objects.equals(this.huaweiComAscendSnt9, that.huaweiComAscendSnt9);
+            && Objects.equals(this.huaweiComAscend310, that.huaweiComAscend310)
+            && Objects.equals(this.huaweiComAscend1980, that.huaweiComAscend1980);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cpu, memory, nvidiaComGpu, huaweiComAscendSnt3, huaweiComAscendSnt9);
+        return Objects.hash(cpu, memory, nvidiaComGpu, huaweiComAscend310, huaweiComAscend1980);
     }
 
     @Override
@@ -147,8 +147,8 @@ public class WorkloadResourceRequirement {
         sb.append("    cpu: ").append(toIndentedString(cpu)).append("\n");
         sb.append("    memory: ").append(toIndentedString(memory)).append("\n");
         sb.append("    nvidiaComGpu: ").append(toIndentedString(nvidiaComGpu)).append("\n");
-        sb.append("    huaweiComAscendSnt3: ").append(toIndentedString(huaweiComAscendSnt3)).append("\n");
-        sb.append("    huaweiComAscendSnt9: ").append(toIndentedString(huaweiComAscendSnt9)).append("\n");
+        sb.append("    huaweiComAscend310: ").append(toIndentedString(huaweiComAscend310)).append("\n");
+        sb.append("    huaweiComAscend1980: ").append(toIndentedString(huaweiComAscend1980)).append("\n");
         sb.append("}");
         return sb.toString();
     }

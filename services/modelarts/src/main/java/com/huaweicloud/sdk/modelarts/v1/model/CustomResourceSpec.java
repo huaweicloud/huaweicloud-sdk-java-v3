@@ -109,7 +109,7 @@ public class CustomResourceSpec {
     }
 
     /**
-     * **参数解释：** 架构类型。 **约束限制：** 不涉及。 **取值范围：** 枚举值：x86\\arm64。 **默认取值：** 不涉及。
+     * **参数解释：** 架构类型。 **约束限制：** 不涉及。 **取值范围：** 枚举值：x86 | arm64。 **默认取值：** 不涉及。
      * @return arch
      */
     public String getArch() {

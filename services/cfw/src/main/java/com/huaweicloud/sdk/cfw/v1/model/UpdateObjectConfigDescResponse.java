@@ -14,9 +14,9 @@ public class UpdateObjectConfigDescResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private Object data;
+    private String data;
 
-    public UpdateObjectConfigDescResponse withData(Object data) {
+    public UpdateObjectConfigDescResponse withData(String data) {
         this.data = data;
         return this;
     }
@@ -25,11 +25,11 @@ public class UpdateObjectConfigDescResponse extends SdkResponse {
      * 成员id
      * @return data
      */
-    public Object getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(String data) {
         this.data = data;
     }
 

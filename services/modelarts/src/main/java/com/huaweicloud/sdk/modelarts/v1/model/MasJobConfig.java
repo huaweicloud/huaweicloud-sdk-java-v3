@@ -125,9 +125,9 @@ public class MasJobConfig {
     }
 
     /**
-     * 作业训练输出路径
+     * 训练作业进度
      * minimum: 0
-     * maximum: 2147483647
+     * maximum: 1
      * @return trainProcess
      */
     public Double getTrainProcess() {

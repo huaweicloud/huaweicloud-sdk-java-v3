@@ -20,6 +20,11 @@ public class MultiAccountRespData {
 
     private String name;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trust_service_status")
+
+    private Integer trustServiceStatus;
+
     public MultiAccountRespData withId(String id) {
         this.id = id;
         return this;
@@ -54,6 +59,23 @@ public class MultiAccountRespData {
         this.name = name;
     }
 
+    public MultiAccountRespData withTrustServiceStatus(Integer trustServiceStatus) {
+        this.trustServiceStatus = trustServiceStatus;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 云防火墙可信服务状态 **取值范围**： 1 已开启
+     * @return trustServiceStatus
+     */
+    public Integer getTrustServiceStatus() {
+        return trustServiceStatus;
+    }
+
+    public void setTrustServiceStatus(Integer trustServiceStatus) {
+        this.trustServiceStatus = trustServiceStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class MultiAccountRespData {
             return false;
         }
         MultiAccountRespData that = (MultiAccountRespData) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.trustServiceStatus, that.trustServiceStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name);
+        return Objects.hash(id, name, trustServiceStatus);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class MultiAccountRespData {
         sb.append("class MultiAccountRespData {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    trustServiceStatus: ").append(toIndentedString(trustServiceStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -34,6 +34,11 @@ public class UpdateNodePoolStatus {
     private Integer deletingNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "activeNode")
+
+    private Integer activeNode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configurationSyncedNodeCount")
 
     private Integer configurationSyncedNodeCount;
@@ -192,6 +197,23 @@ public class UpdateNodePoolStatus {
         this.deletingNode = deletingNode;
     }
 
+    public UpdateNodePoolStatus withActiveNode(Integer activeNode) {
+        this.activeNode = activeNode;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 当前节点池中就绪的节点数量。 **取值范围**： 不涉及
+     * @return activeNode
+     */
+    public Integer getActiveNode() {
+        return activeNode;
+    }
+
+    public void setActiveNode(Integer activeNode) {
+        this.activeNode = activeNode;
+    }
+
     public UpdateNodePoolStatus withConfigurationSyncedNodeCount(Integer configurationSyncedNodeCount) {
         this.configurationSyncedNodeCount = configurationSyncedNodeCount;
         return this;
@@ -303,7 +325,7 @@ public class UpdateNodePoolStatus {
         UpdateNodePoolStatus that = (UpdateNodePoolStatus) obj;
         return Objects.equals(this.currentNode, that.currentNode)
             && Objects.equals(this.creatingNode, that.creatingNode)
-            && Objects.equals(this.deletingNode, that.deletingNode)
+            && Objects.equals(this.deletingNode, that.deletingNode) && Objects.equals(this.activeNode, that.activeNode)
             && Objects.equals(this.configurationSyncedNodeCount, that.configurationSyncedNodeCount)
             && Objects.equals(this.phase, that.phase) && Objects.equals(this.conditions, that.conditions)
             && Objects.equals(this.scaleGroupStatuses, that.scaleGroupStatuses);
@@ -314,6 +336,7 @@ public class UpdateNodePoolStatus {
         return Objects.hash(currentNode,
             creatingNode,
             deletingNode,
+            activeNode,
             configurationSyncedNodeCount,
             phase,
             conditions,
@@ -327,6 +350,7 @@ public class UpdateNodePoolStatus {
         sb.append("    currentNode: ").append(toIndentedString(currentNode)).append("\n");
         sb.append("    creatingNode: ").append(toIndentedString(creatingNode)).append("\n");
         sb.append("    deletingNode: ").append(toIndentedString(deletingNode)).append("\n");
+        sb.append("    activeNode: ").append(toIndentedString(activeNode)).append("\n");
         sb.append("    configurationSyncedNodeCount: ")
             .append(toIndentedString(configurationSyncedNodeCount))
             .append("\n");

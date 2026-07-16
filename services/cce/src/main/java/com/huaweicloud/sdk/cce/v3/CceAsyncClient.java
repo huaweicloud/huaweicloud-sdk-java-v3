@@ -4,8 +4,12 @@ import com.huaweicloud.sdk.cce.v3.model.AddNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.AddNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.AddNodesToNodePoolRequest;
 import com.huaweicloud.sdk.cce.v3.model.AddNodesToNodePoolResponse;
+import com.huaweicloud.sdk.cce.v3.model.AssumeAgencyForPodIdentityRequest;
+import com.huaweicloud.sdk.cce.v3.model.AssumeAgencyForPodIdentityResponse;
 import com.huaweicloud.sdk.cce.v3.model.AwakeClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.AwakeClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.BatchChangeNodeToPeriodRequest;
+import com.huaweicloud.sdk.cce.v3.model.BatchChangeNodeToPeriodResponse;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateAddonPrecheckRequest;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateAddonPrecheckResponse;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateAutopilotClusterTagsRequest;
@@ -56,6 +60,8 @@ import com.huaweicloud.sdk.cce.v3.model.CreateNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreatePartitionRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreatePartitionResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreatePodIdentityAssociationRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreatePodIdentityAssociationResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreatePostCheckRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreatePostCheckResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreatePreCheckRequest;
@@ -90,6 +96,8 @@ import com.huaweicloud.sdk.cce.v3.model.DeleteNodePoolRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.DeletePodIdentityAssociationRequest;
+import com.huaweicloud.sdk.cce.v3.model.DeletePodIdentityAssociationResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteReleaseRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteReleaseResponse;
 import com.huaweicloud.sdk.cce.v3.model.DownloadAutopilotChartRequest;
@@ -170,6 +178,8 @@ import com.huaweicloud.sdk.cce.v3.model.ListNodesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListNodesResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListPartitionsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListPartitionsResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListPodIdentityAssociationsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListPodIdentityAssociationsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListPreCheckTasksRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListPreCheckTasksResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListReleasesRequest;
@@ -202,6 +212,10 @@ import com.huaweicloud.sdk.cce.v3.model.RollbackAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.RollbackAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.RollbackAutopilotAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.RollbackAutopilotAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.RotateClusterCredentialsRequest;
+import com.huaweicloud.sdk.cce.v3.model.RotateClusterCredentialsResponse;
+import com.huaweicloud.sdk.cce.v3.model.RotateNodeCertRequest;
+import com.huaweicloud.sdk.cce.v3.model.RotateNodeCertResponse;
 import com.huaweicloud.sdk.cce.v3.model.ScaleNodePoolRequest;
 import com.huaweicloud.sdk.cce.v3.model.ScaleNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAddonInstanceRequest;
@@ -270,6 +284,8 @@ import com.huaweicloud.sdk.cce.v3.model.ShowNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowPartitionRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowPartitionResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowPodIdentityAssociationRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowPodIdentityAssociationResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowPreCheckRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowPreCheckResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowQuotasRequest;
@@ -328,6 +344,8 @@ import com.huaweicloud.sdk.cce.v3.model.UpdateNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdatePartitionRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdatePartitionResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdatePodIdentityAssociationRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdatePodIdentityAssociationResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateReleaseRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateReleaseResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpgradeAutopilotClusterRequest;
@@ -433,6 +451,36 @@ public class CceAsyncClient {
     }
 
     /**
+     * 获取pod-identity关联相关委托凭据
+     *
+     * 该API用于通过ServiceAccount token来assume获取ServiceAccount所关联的pod-identity关联中绑定的IAM委托凭据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AssumeAgencyForPodIdentityRequest 请求对象
+     * @return CompletableFuture<AssumeAgencyForPodIdentityResponse>
+     */
+    public CompletableFuture<AssumeAgencyForPodIdentityResponse> assumeAgencyForPodIdentityAsync(
+        AssumeAgencyForPodIdentityRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.assumeAgencyForPodIdentity);
+    }
+
+    /**
+     * 获取pod-identity关联相关委托凭据
+     *
+     * 该API用于通过ServiceAccount token来assume获取ServiceAccount所关联的pod-identity关联中绑定的IAM委托凭据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AssumeAgencyForPodIdentityRequest 请求对象
+     * @return AsyncInvoker<AssumeAgencyForPodIdentityRequest, AssumeAgencyForPodIdentityResponse>
+     */
+    public AsyncInvoker<AssumeAgencyForPodIdentityRequest, AssumeAgencyForPodIdentityResponse> assumeAgencyForPodIdentityAsyncInvoker(
+        AssumeAgencyForPodIdentityRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.assumeAgencyForPodIdentity, hcClient);
+    }
+
+    /**
      * 集群唤醒
      *
      * 集群唤醒用于唤醒已休眠的集群，唤醒后，将继续收取控制节点资源费用。
@@ -459,6 +507,44 @@ public class CceAsyncClient {
     public AsyncInvoker<AwakeClusterRequest, AwakeClusterResponse> awakeClusterAsyncInvoker(
         AwakeClusterRequest request) {
         return new AsyncInvoker<>(request, CceMeta.awakeCluster, hcClient);
+    }
+
+    /**
+     * 按需节点转包年/包月
+     *
+     * 该API用于将节点从按需计费模式转成包周期计费模式。
+     * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     * &gt;按需节点池中的节点转成包年/包月时，需要将集群升级到v1.19.16-r40、v1.21.11-r0、v1.23.9-r0、v1.25.4-r0以及其他更高版本的集群。
+     * &gt;当按需节点池中的节点转成包年/包月后，该节点不支持弹性缩容。
+     * &gt;按需计费节点绑定的资源（弹性公网IP）可能不支持同步变更计费模式，详情请参见[弹性云服务器ECS按需转包年/包月说明](https://support.huaweicloud.com/price-ecs/ecs_billing_5002.html)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchChangeNodeToPeriodRequest 请求对象
+     * @return CompletableFuture<BatchChangeNodeToPeriodResponse>
+     */
+    public CompletableFuture<BatchChangeNodeToPeriodResponse> batchChangeNodeToPeriodAsync(
+        BatchChangeNodeToPeriodRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.batchChangeNodeToPeriod);
+    }
+
+    /**
+     * 按需节点转包年/包月
+     *
+     * 该API用于将节点从按需计费模式转成包周期计费模式。
+     * &gt;集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     * &gt;按需节点池中的节点转成包年/包月时，需要将集群升级到v1.19.16-r40、v1.21.11-r0、v1.23.9-r0、v1.25.4-r0以及其他更高版本的集群。
+     * &gt;当按需节点池中的节点转成包年/包月后，该节点不支持弹性缩容。
+     * &gt;按需计费节点绑定的资源（弹性公网IP）可能不支持同步变更计费模式，详情请参见[弹性云服务器ECS按需转包年/包月说明](https://support.huaweicloud.com/price-ecs/ecs_billing_5002.html)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchChangeNodeToPeriodRequest 请求对象
+     * @return AsyncInvoker<BatchChangeNodeToPeriodRequest, BatchChangeNodeToPeriodResponse>
+     */
+    public AsyncInvoker<BatchChangeNodeToPeriodRequest, BatchChangeNodeToPeriodResponse> batchChangeNodeToPeriodAsyncInvoker(
+        BatchChangeNodeToPeriodRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.batchChangeNodeToPeriod, hcClient);
     }
 
     /**
@@ -916,6 +1002,36 @@ public class CceAsyncClient {
     }
 
     /**
+     * 创建pod-identity关联
+     *
+     * 该API用于创建pod-identity关联，将容器集群serviceaccount与IAM委托绑定。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePodIdentityAssociationRequest 请求对象
+     * @return CompletableFuture<CreatePodIdentityAssociationResponse>
+     */
+    public CompletableFuture<CreatePodIdentityAssociationResponse> createPodIdentityAssociationAsync(
+        CreatePodIdentityAssociationRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.createPodIdentityAssociation);
+    }
+
+    /**
+     * 创建pod-identity关联
+     *
+     * 该API用于创建pod-identity关联，将容器集群serviceaccount与IAM委托绑定。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePodIdentityAssociationRequest 请求对象
+     * @return AsyncInvoker<CreatePodIdentityAssociationRequest, CreatePodIdentityAssociationResponse>
+     */
+    public AsyncInvoker<CreatePodIdentityAssociationRequest, CreatePodIdentityAssociationResponse> createPodIdentityAssociationAsyncInvoker(
+        CreatePodIdentityAssociationRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.createPodIdentityAssociation, hcClient);
+    }
+
+    /**
      * 集群升级后确认
      *
      * 集群升级后确认，该接口建议配合Console使用，主要用于升级步骤完成后，客户确认集群状态和业务正常后做反馈。
@@ -1242,6 +1358,36 @@ public class CceAsyncClient {
     public AsyncInvoker<DeleteNodePoolRequest, DeleteNodePoolResponse> deleteNodePoolAsyncInvoker(
         DeleteNodePoolRequest request) {
         return new AsyncInvoker<>(request, CceMeta.deleteNodePool, hcClient);
+    }
+
+    /**
+     * 删除pod-identity关联
+     *
+     * 该API用于删除指定的pod-identity关联。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePodIdentityAssociationRequest 请求对象
+     * @return CompletableFuture<DeletePodIdentityAssociationResponse>
+     */
+    public CompletableFuture<DeletePodIdentityAssociationResponse> deletePodIdentityAssociationAsync(
+        DeletePodIdentityAssociationRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.deletePodIdentityAssociation);
+    }
+
+    /**
+     * 删除pod-identity关联
+     *
+     * 该API用于删除指定的pod-identity关联。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePodIdentityAssociationRequest 请求对象
+     * @return AsyncInvoker<DeletePodIdentityAssociationRequest, DeletePodIdentityAssociationResponse>
+     */
+    public AsyncInvoker<DeletePodIdentityAssociationRequest, DeletePodIdentityAssociationResponse> deletePodIdentityAssociationAsyncInvoker(
+        DeletePodIdentityAssociationRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.deletePodIdentityAssociation, hcClient);
     }
 
     /**
@@ -1981,6 +2127,36 @@ public class CceAsyncClient {
     }
 
     /**
+     * 查询指定集群的pod-identity关联
+     *
+     * 该API用于获取集群下所有pod-identity关联。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPodIdentityAssociationsRequest 请求对象
+     * @return CompletableFuture<ListPodIdentityAssociationsResponse>
+     */
+    public CompletableFuture<ListPodIdentityAssociationsResponse> listPodIdentityAssociationsAsync(
+        ListPodIdentityAssociationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.listPodIdentityAssociations);
+    }
+
+    /**
+     * 查询指定集群的pod-identity关联
+     *
+     * 该API用于获取集群下所有pod-identity关联。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPodIdentityAssociationsRequest 请求对象
+     * @return AsyncInvoker<ListPodIdentityAssociationsRequest, ListPodIdentityAssociationsResponse>
+     */
+    public AsyncInvoker<ListPodIdentityAssociationsRequest, ListPodIdentityAssociationsResponse> listPodIdentityAssociationsAsyncInvoker(
+        ListPodIdentityAssociationsRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.listPodIdentityAssociations, hcClient);
+    }
+
+    /**
      * 获取集群升级前检查任务详情列表
      *
      * 获取集群升级前检查任务详情列表
@@ -2418,6 +2594,73 @@ public class CceAsyncClient {
     public AsyncInvoker<RollbackAddonInstanceRequest, RollbackAddonInstanceResponse> rollbackAddonInstanceAsyncInvoker(
         RollbackAddonInstanceRequest request) {
         return new AsyncInvoker<>(request, CceMeta.rollbackAddonInstance, hcClient);
+    }
+
+    /**
+     * 轮转用户的集群证书
+     *
+     * 该API用于轮转指定集群的证书
+     * 
+     * &gt; 只支持1.19及以上集群版本
+     * &gt; 操作完成后，用户集群组件的证书有效期会续期5年。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RotateClusterCredentialsRequest 请求对象
+     * @return CompletableFuture<RotateClusterCredentialsResponse>
+     */
+    public CompletableFuture<RotateClusterCredentialsResponse> rotateClusterCredentialsAsync(
+        RotateClusterCredentialsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.rotateClusterCredentials);
+    }
+
+    /**
+     * 轮转用户的集群证书
+     *
+     * 该API用于轮转指定集群的证书
+     * 
+     * &gt; 只支持1.19及以上集群版本
+     * &gt; 操作完成后，用户集群组件的证书有效期会续期5年。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RotateClusterCredentialsRequest 请求对象
+     * @return AsyncInvoker<RotateClusterCredentialsRequest, RotateClusterCredentialsResponse>
+     */
+    public AsyncInvoker<RotateClusterCredentialsRequest, RotateClusterCredentialsResponse> rotateClusterCredentialsAsyncInvoker(
+        RotateClusterCredentialsRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.rotateClusterCredentials, hcClient);
+    }
+
+    /**
+     * 轮转节点证书
+     *
+     * 该API用于在指定集群下轮转节点证书。作为集群证书轮转操作的补偿机制：当通过配套的集群证书轮转接口执行轮转时，若部分节点证书轮转失败，可通过调用本接口进行重试。
+     * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RotateNodeCertRequest 请求对象
+     * @return CompletableFuture<RotateNodeCertResponse>
+     */
+    public CompletableFuture<RotateNodeCertResponse> rotateNodeCertAsync(RotateNodeCertRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.rotateNodeCert);
+    }
+
+    /**
+     * 轮转节点证书
+     *
+     * 该API用于在指定集群下轮转节点证书。作为集群证书轮转操作的补偿机制：当通过配套的集群证书轮转接口执行轮转时，若部分节点证书轮转失败，可通过调用本接口进行重试。
+     * &gt; 集群管理的URL格式为：https://Endpoint/uri。其中uri为资源路径，也即API访问的路径。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RotateNodeCertRequest 请求对象
+     * @return AsyncInvoker<RotateNodeCertRequest, RotateNodeCertResponse>
+     */
+    public AsyncInvoker<RotateNodeCertRequest, RotateNodeCertResponse> rotateNodeCertAsyncInvoker(
+        RotateNodeCertRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.rotateNodeCert, hcClient);
     }
 
     /**
@@ -2933,6 +3176,36 @@ public class CceAsyncClient {
     public AsyncInvoker<ShowPartitionRequest, ShowPartitionResponse> showPartitionAsyncInvoker(
         ShowPartitionRequest request) {
         return new AsyncInvoker<>(request, CceMeta.showPartition, hcClient);
+    }
+
+    /**
+     * 查询指定pod-identity关联
+     *
+     * 该API用于查询指定pod-identity关联详情信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPodIdentityAssociationRequest 请求对象
+     * @return CompletableFuture<ShowPodIdentityAssociationResponse>
+     */
+    public CompletableFuture<ShowPodIdentityAssociationResponse> showPodIdentityAssociationAsync(
+        ShowPodIdentityAssociationRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.showPodIdentityAssociation);
+    }
+
+    /**
+     * 查询指定pod-identity关联
+     *
+     * 该API用于查询指定pod-identity关联详情信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPodIdentityAssociationRequest 请求对象
+     * @return AsyncInvoker<ShowPodIdentityAssociationRequest, ShowPodIdentityAssociationResponse>
+     */
+    public AsyncInvoker<ShowPodIdentityAssociationRequest, ShowPodIdentityAssociationResponse> showPodIdentityAssociationAsyncInvoker(
+        ShowPodIdentityAssociationRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.showPodIdentityAssociation, hcClient);
     }
 
     /**
@@ -3566,6 +3839,36 @@ public class CceAsyncClient {
     public AsyncInvoker<UpdatePartitionRequest, UpdatePartitionResponse> updatePartitionAsyncInvoker(
         UpdatePartitionRequest request) {
         return new AsyncInvoker<>(request, CceMeta.updatePartition, hcClient);
+    }
+
+    /**
+     * 更新pod-identity关联
+     *
+     * 该API用于更新指定pod-identity关联所绑定的IAM委托信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePodIdentityAssociationRequest 请求对象
+     * @return CompletableFuture<UpdatePodIdentityAssociationResponse>
+     */
+    public CompletableFuture<UpdatePodIdentityAssociationResponse> updatePodIdentityAssociationAsync(
+        UpdatePodIdentityAssociationRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.updatePodIdentityAssociation);
+    }
+
+    /**
+     * 更新pod-identity关联
+     *
+     * 该API用于更新指定pod-identity关联所绑定的IAM委托信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePodIdentityAssociationRequest 请求对象
+     * @return AsyncInvoker<UpdatePodIdentityAssociationRequest, UpdatePodIdentityAssociationResponse>
+     */
+    public AsyncInvoker<UpdatePodIdentityAssociationRequest, UpdatePodIdentityAssociationResponse> updatePodIdentityAssociationAsyncInvoker(
+        UpdatePodIdentityAssociationRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.updatePodIdentityAssociation, hcClient);
     }
 
     /**

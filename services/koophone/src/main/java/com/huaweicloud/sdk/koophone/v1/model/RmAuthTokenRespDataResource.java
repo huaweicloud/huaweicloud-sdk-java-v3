@@ -31,6 +31,11 @@ public class RmAuthTokenRespDataResource {
 
     private String kpId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_ip_synchronize_list")
+
+    private String appIpSynchronizeList;
+
     public RmAuthTokenRespDataResource withSdk(RmAuthTokenRespDataResourceSdk sdk) {
         this.sdk = sdk;
         return this;
@@ -117,6 +122,23 @@ public class RmAuthTokenRespDataResource {
         this.kpId = kpId;
     }
 
+    public RmAuthTokenRespDataResource withAppIpSynchronizeList(String appIpSynchronizeList) {
+        this.appIpSynchronizeList = appIpSynchronizeList;
+        return this;
+    }
+
+    /**
+     * 指定应用
+     * @return appIpSynchronizeList
+     */
+    public String getAppIpSynchronizeList() {
+        return appIpSynchronizeList;
+    }
+
+    public void setAppIpSynchronizeList(String appIpSynchronizeList) {
+        this.appIpSynchronizeList = appIpSynchronizeList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -127,12 +149,13 @@ public class RmAuthTokenRespDataResource {
         }
         RmAuthTokenRespDataResource that = (RmAuthTokenRespDataResource) obj;
         return Objects.equals(this.sdk, that.sdk) && Objects.equals(this.rtc, that.rtc)
-            && Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.kpId, that.kpId);
+            && Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.kpId, that.kpId)
+            && Objects.equals(this.appIpSynchronizeList, that.appIpSynchronizeList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sdk, rtc, deviceId, kpId);
+        return Objects.hash(sdk, rtc, deviceId, kpId, appIpSynchronizeList);
     }
 
     @Override
@@ -143,6 +166,7 @@ public class RmAuthTokenRespDataResource {
         sb.append("    rtc: ").append(toIndentedString(rtc)).append("\n");
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
         sb.append("    kpId: ").append(toIndentedString(kpId)).append("\n");
+        sb.append("    appIpSynchronizeList: ").append(toIndentedString(appIpSynchronizeList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

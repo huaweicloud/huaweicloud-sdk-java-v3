@@ -66,7 +66,7 @@ public class HraRuleUpdateRequest {
     }
 
     /**
-     * **参数解释：** 操作类型。 **取值范围：** - UPDATE：修改HRA策略规则。 - DELETE：删除HRA容策略规则。 **约束限制：** 不涉及。 **默认取值：** 不涉及。
+     * **参数解释：** 操作类型。 **取值范围：** - UPDATE：修改HRA策略规则。 - DELETE：删除HRA策略规则。 **约束限制：** 不涉及。 **默认取值：** 不涉及。
      * @return operate
      */
     public String getOperate() {

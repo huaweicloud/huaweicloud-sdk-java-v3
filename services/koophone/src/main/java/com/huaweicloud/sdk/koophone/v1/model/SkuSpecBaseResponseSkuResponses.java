@@ -57,6 +57,11 @@ public class SkuSpecBaseResponseSkuResponses {
     private String maxResolution;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resourceSize")
+
+    private String resourceSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "poolInfo")
 
     private SkuSpecBaseResponsePoolInfo poolInfo;
@@ -214,6 +219,23 @@ public class SkuSpecBaseResponseSkuResponses {
         this.maxResolution = maxResolution;
     }
 
+    public SkuSpecBaseResponseSkuResponses withResourceSize(String resourceSize) {
+        this.resourceSize = resourceSize;
+        return this;
+    }
+
+    /**
+     * 规格步长
+     * @return resourceSize
+     */
+    public String getResourceSize() {
+        return resourceSize;
+    }
+
+    public void setResourceSize(String resourceSize) {
+        this.resourceSize = resourceSize;
+    }
+
     public SkuSpecBaseResponseSkuResponses withPoolInfo(SkuSpecBaseResponsePoolInfo poolInfo) {
         this.poolInfo = poolInfo;
         return this;
@@ -253,13 +275,23 @@ public class SkuSpecBaseResponseSkuResponses {
             && Objects.equals(this.name, that.name) && Objects.equals(this.calcSpec, that.calcSpec)
             && Objects.equals(this.storageSpec, that.storageSpec) && Objects.equals(this.specDesc, that.specDesc)
             && Objects.equals(this.bandSize, that.bandSize) && Objects.equals(this.chargeMode, that.chargeMode)
-            && Objects.equals(this.maxResolution, that.maxResolution) && Objects.equals(this.poolInfo, that.poolInfo);
+            && Objects.equals(this.maxResolution, that.maxResolution)
+            && Objects.equals(this.resourceSize, that.resourceSize) && Objects.equals(this.poolInfo, that.poolInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(type, cbcSkuId, name, calcSpec, storageSpec, specDesc, bandSize, chargeMode, maxResolution, poolInfo);
+        return Objects.hash(type,
+            cbcSkuId,
+            name,
+            calcSpec,
+            storageSpec,
+            specDesc,
+            bandSize,
+            chargeMode,
+            maxResolution,
+            resourceSize,
+            poolInfo);
     }
 
     @Override
@@ -275,6 +307,7 @@ public class SkuSpecBaseResponseSkuResponses {
         sb.append("    bandSize: ").append(toIndentedString(bandSize)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    maxResolution: ").append(toIndentedString(maxResolution)).append("\n");
+        sb.append("    resourceSize: ").append(toIndentedString(resourceSize)).append("\n");
         sb.append("    poolInfo: ").append(toIndentedString(poolInfo)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -307,7 +307,7 @@ public class NodeExtendParam {
     }
 
     /**
-     * 云服务器规格的分类。响应中会返回此字段。
+     * **参数解释**： 云服务器规格的分类。响应中会返回此字段。 **约束限制**： 不涉及 **取值范围**： 请参考ECS API参考手册中“查询规格详情和规格扩展信息列表”接口的ecs:performancetype参数说明，以了解云服务器的规格类型。   [链接请参见[查询规格详情和规格扩展信息列表](https://support.huaweicloud.com/api-ecs/zh-cn_topic_0020212656.html)](tag:hws)   [链接请参见[查询规格详情和规格扩展信息列表](https://support.huaweicloud.com/intl/zh-cn/api-ecs/zh-cn_topic_0020212656.html)](tag:hws_hk) **默认取值**： 不涉及
      * @return ecsPerformancetype
      */
     public String getEcsPerformancetype() {
@@ -358,7 +358,7 @@ public class NodeExtendParam {
     }
 
     /**
-     * 节点最大允许创建的实例数(Pod)，该数量包含系统默认实例，取值范围为16~256。  该设置的目的为防止节点因管理过多实例而负载过重，请根据您的业务需要进行设置。  节点可以创建多少个Pod，受多个参数影响，具体请参见[节点最多可以创建多少Pod](maxPods.xml)。 
+     * 节点最大允许创建的实例数(Pod)，该数量包含系统默认实例，通用取值范围为16~256，节点运行时子类别为安全运行时v2(kuasar-vmm)场景取值范围为16~1024。  该设置的目的为防止节点因管理过多实例而负载过重，请根据您的业务需要进行设置。  节点可以创建多少个Pod，受多个参数影响，具体请参见[节点最多可以创建多少Pod](maxPods.xml)。 
      * @return maxPods
      */
     public Integer getMaxPods() {

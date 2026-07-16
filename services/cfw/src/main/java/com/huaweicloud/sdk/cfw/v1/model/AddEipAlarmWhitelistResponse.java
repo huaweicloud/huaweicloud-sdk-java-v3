@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -14,22 +15,31 @@ public class AddEipAlarmWhitelistResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private Object data;
+    private AddEipAlarmWhitelistRespData data;
 
-    public AddEipAlarmWhitelistResponse withData(Object data) {
+    public AddEipAlarmWhitelistResponse withData(AddEipAlarmWhitelistRespData data) {
         this.data = data;
         return this;
     }
 
+    public AddEipAlarmWhitelistResponse withData(Consumer<AddEipAlarmWhitelistRespData> dataSetter) {
+        if (this.data == null) {
+            this.data = new AddEipAlarmWhitelistRespData();
+            dataSetter.accept(this.data);
+        }
+
+        return this;
+    }
+
     /**
-     * **参数解释**： 添加EIP告警白名单响应data **取值范围**： 不涉及
+     * Get data
      * @return data
      */
-    public Object getData() {
+    public AddEipAlarmWhitelistRespData getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(AddEipAlarmWhitelistRespData data) {
         this.data = data;
     }
 

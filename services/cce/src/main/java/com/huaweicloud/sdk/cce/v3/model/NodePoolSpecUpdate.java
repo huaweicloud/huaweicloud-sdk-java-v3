@@ -39,6 +39,11 @@ public class NodePoolSpecUpdate {
     private NodeManagement nodeManagementUpdate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "customSecurityGroups")
+
+    private List<String> customSecurityGroups = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "taintPolicyOnExistingNodes")
 
     private String taintPolicyOnExistingNodes;
@@ -170,6 +175,39 @@ public class NodePoolSpecUpdate {
         this.nodeManagementUpdate = nodeManagementUpdate;
     }
 
+    public NodePoolSpecUpdate withCustomSecurityGroups(List<String> customSecurityGroups) {
+        this.customSecurityGroups = customSecurityGroups;
+        return this;
+    }
+
+    public NodePoolSpecUpdate addCustomSecurityGroupsItem(String customSecurityGroupsItem) {
+        if (this.customSecurityGroups == null) {
+            this.customSecurityGroups = new ArrayList<>();
+        }
+        this.customSecurityGroups.add(customSecurityGroupsItem);
+        return this;
+    }
+
+    public NodePoolSpecUpdate withCustomSecurityGroups(Consumer<List<String>> customSecurityGroupsSetter) {
+        if (this.customSecurityGroups == null) {
+            this.customSecurityGroups = new ArrayList<>();
+        }
+        customSecurityGroupsSetter.accept(this.customSecurityGroups);
+        return this;
+    }
+
+    /**
+     * 节点池自定义安全组相关配置。支持节点池新扩容节点绑定指定的安全组。  - 未指定安全组ID，新建节点将添加Node节点默认安全组。  - 指定有效安全组ID，新建节点将使用指定安全组。  - 指定安全组，应避免对CCE运行依赖的端口规则进行修改。[详细设置请参考[集群安全组规则配置](https://support.huaweicloud.com/cce_faq/cce_faq_00265.html)。](tag:hws)[详细设置请参考[集群安全组规则配置](https://support.huaweicloud.com/intl/zh-cn/cce_faq/cce_faq_00265.html)。](tag:hws_hk) 
+     * @return customSecurityGroups
+     */
+    public List<String> getCustomSecurityGroups() {
+        return customSecurityGroups;
+    }
+
+    public void setCustomSecurityGroups(List<String> customSecurityGroups) {
+        this.customSecurityGroups = customSecurityGroups;
+    }
+
     public NodePoolSpecUpdate withTaintPolicyOnExistingNodes(String taintPolicyOnExistingNodes) {
         this.taintPolicyOnExistingNodes = taintPolicyOnExistingNodes;
         return this;
@@ -268,6 +306,7 @@ public class NodePoolSpecUpdate {
             && Objects.equals(this.ignoreInitialNodeCount, that.ignoreInitialNodeCount)
             && Objects.equals(this.autoscaling, that.autoscaling)
             && Objects.equals(this.nodeManagementUpdate, that.nodeManagementUpdate)
+            && Objects.equals(this.customSecurityGroups, that.customSecurityGroups)
             && Objects.equals(this.taintPolicyOnExistingNodes, that.taintPolicyOnExistingNodes)
             && Objects.equals(this.labelPolicyOnExistingNodes, that.labelPolicyOnExistingNodes)
             && Objects.equals(this.userTagsPolicyOnExistingNodes, that.userTagsPolicyOnExistingNodes)
@@ -281,6 +320,7 @@ public class NodePoolSpecUpdate {
             ignoreInitialNodeCount,
             autoscaling,
             nodeManagementUpdate,
+            customSecurityGroups,
             taintPolicyOnExistingNodes,
             labelPolicyOnExistingNodes,
             userTagsPolicyOnExistingNodes,
@@ -296,6 +336,7 @@ public class NodePoolSpecUpdate {
         sb.append("    ignoreInitialNodeCount: ").append(toIndentedString(ignoreInitialNodeCount)).append("\n");
         sb.append("    autoscaling: ").append(toIndentedString(autoscaling)).append("\n");
         sb.append("    nodeManagementUpdate: ").append(toIndentedString(nodeManagementUpdate)).append("\n");
+        sb.append("    customSecurityGroups: ").append(toIndentedString(customSecurityGroups)).append("\n");
         sb.append("    taintPolicyOnExistingNodes: ").append(toIndentedString(taintPolicyOnExistingNodes)).append("\n");
         sb.append("    labelPolicyOnExistingNodes: ").append(toIndentedString(labelPolicyOnExistingNodes)).append("\n");
         sb.append("    userTagsPolicyOnExistingNodes: ")

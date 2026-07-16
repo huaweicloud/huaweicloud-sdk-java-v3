@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -18,38 +15,31 @@ public class BatchDeleteDomainSetResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private Map<String, List<Mapstringstring>> data = null;
+    private DeleteDomainSetResponseDatas data;
 
-    public BatchDeleteDomainSetResponse withData(Map<String, List<Mapstringstring>> data) {
+    public BatchDeleteDomainSetResponse withData(DeleteDomainSetResponseDatas data) {
         this.data = data;
         return this;
     }
 
-    public BatchDeleteDomainSetResponse putDataItem(String key, List<Mapstringstring> dataItem) {
+    public BatchDeleteDomainSetResponse withData(Consumer<DeleteDomainSetResponseDatas> dataSetter) {
         if (this.data == null) {
-            this.data = new HashMap<>();
+            this.data = new DeleteDomainSetResponseDatas();
+            dataSetter.accept(this.data);
         }
-        this.data.put(key, dataItem);
-        return this;
-    }
 
-    public BatchDeleteDomainSetResponse withData(Consumer<Map<String, List<Mapstringstring>>> dataSetter) {
-        if (this.data == null) {
-            this.data = new HashMap<>();
-        }
-        dataSetter.accept(this.data);
         return this;
     }
 
     /**
-     * **参数解释**： 批量删除域名组响应信息 **取值范围**： 不涉及 
+     * Get data
      * @return data
      */
-    public Map<String, List<Mapstringstring>> getData() {
+    public DeleteDomainSetResponseDatas getData() {
         return data;
     }
 
-    public void setData(Map<String, List<Mapstringstring>> data) {
+    public void setData(DeleteDomainSetResponseDatas data) {
         this.data = data;
     }
 

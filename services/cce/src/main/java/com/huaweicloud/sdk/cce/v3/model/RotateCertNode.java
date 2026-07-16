@@ -1,45 +1,36 @@
-package com.huaweicloud.sdk.koophone.v1.model;
+package com.huaweicloud.sdk.cce.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
+import java.util.UUID;
 
 /**
- * app安装结果
+ * 轮转节点证书参数。
  */
-public class RmInstallAppResp {
+public class RotateCertNode {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "data")
+    @JsonProperty(value = "nodeID")
 
-    private TaskDataResult data;
+    private UUID nodeID;
 
-    public RmInstallAppResp withData(TaskDataResult data) {
-        this.data = data;
-        return this;
-    }
-
-    public RmInstallAppResp withData(Consumer<TaskDataResult> dataSetter) {
-        if (this.data == null) {
-            this.data = new TaskDataResult();
-            dataSetter.accept(this.data);
-        }
-
+    public RotateCertNode withNodeID(UUID nodeID) {
+        this.nodeID = nodeID;
         return this;
     }
 
     /**
-     * Get data
-     * @return data
+     * **参数解释**： 节点ID，获取方式请参见[如何获取接口URI中参数](cce_02_0271.xml)。 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * @return nodeID
      */
-    public TaskDataResult getData() {
-        return data;
+    public UUID getNodeID() {
+        return nodeID;
     }
 
-    public void setData(TaskDataResult data) {
-        this.data = data;
+    public void setNodeID(UUID nodeID) {
+        this.nodeID = nodeID;
     }
 
     @Override
@@ -50,20 +41,20 @@ public class RmInstallAppResp {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RmInstallAppResp that = (RmInstallAppResp) obj;
-        return Objects.equals(this.data, that.data);
+        RotateCertNode that = (RotateCertNode) obj;
+        return Objects.equals(this.nodeID, that.nodeID);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(data);
+        return Objects.hash(nodeID);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class RmInstallAppResp {\n");
-        sb.append("    data: ").append(toIndentedString(data)).append("\n");
+        sb.append("class RotateCertNode {\n");
+        sb.append("    nodeID: ").append(toIndentedString(nodeID)).append("\n");
         sb.append("}");
         return sb.toString();
     }

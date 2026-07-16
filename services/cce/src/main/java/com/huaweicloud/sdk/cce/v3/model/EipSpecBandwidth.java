@@ -21,7 +21,7 @@ public class EipSpecBandwidth {
     private Integer size;
 
     /**
-     * **参数解释**： 带宽大小 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * **参数解释**： 带宽类型 **约束限制**： 不涉及 **取值范围**： - PER：独享带宽，支持对单个EIP进行限速，且该EIP仅能被一个云资源（弹性云服务器、NAT网关、弹性负载均衡等）使用 - WHOLE：共享带宽，支持对多个EIP集中限速，支持添加多个按需计费的EIP  **默认取值**： 不涉及 
      */
     public static final class SharetypeEnum {
 
@@ -118,7 +118,7 @@ public class EipSpecBandwidth {
     }
 
     /**
-     * **参数解释**： 带宽大小 **约束限制**： 不涉及 **取值范围**： 不涉及 **默认取值**： 不涉及 
+     * **参数解释**： 带宽类型 **约束限制**： 不涉及 **取值范围**： - PER：独享带宽，支持对单个EIP进行限速，且该EIP仅能被一个云资源（弹性云服务器、NAT网关、弹性负载均衡等）使用 - WHOLE：共享带宽，支持对多个EIP集中限速，支持添加多个按需计费的EIP  **默认取值**： 不涉及 
      * @return sharetype
      */
     public SharetypeEnum getSharetype() {

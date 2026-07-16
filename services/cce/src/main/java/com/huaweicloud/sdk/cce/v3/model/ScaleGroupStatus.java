@@ -142,6 +142,11 @@ public class ScaleGroupStatus {
     private Integer unpaidScaleNodeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "activeNodeCount")
+
+    private Integer activeNodeCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "existingNodeCount")
 
     private ScaleGroupStatusExistingNodeCount existingNodeCount;
@@ -280,6 +285,23 @@ public class ScaleGroupStatus {
         this.unpaidScaleNodeCount = unpaidScaleNodeCount;
     }
 
+    public ScaleGroupStatus withActiveNodeCount(Integer activeNodeCount) {
+        this.activeNodeCount = activeNodeCount;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 伸缩组就绪节点个数 **取值范围**： 不涉及
+     * @return activeNodeCount
+     */
+    public Integer getActiveNodeCount() {
+        return activeNodeCount;
+    }
+
+    public void setActiveNodeCount(Integer activeNodeCount) {
+        this.activeNodeCount = activeNodeCount;
+    }
+
     public ScaleGroupStatus withExistingNodeCount(ScaleGroupStatusExistingNodeCount existingNodeCount) {
         this.existingNodeCount = existingNodeCount;
         return this;
@@ -396,6 +418,7 @@ public class ScaleGroupStatus {
             && Objects.equals(this.updateTimestamp, that.updateTimestamp) && Objects.equals(this.phase, that.phase)
             && Objects.equals(this.desiredNodeCount, that.desiredNodeCount)
             && Objects.equals(this.unpaidScaleNodeCount, that.unpaidScaleNodeCount)
+            && Objects.equals(this.activeNodeCount, that.activeNodeCount)
             && Objects.equals(this.existingNodeCount, that.existingNodeCount)
             && Objects.equals(this.upcomingNodeCount, that.upcomingNodeCount)
             && Objects.equals(this.scaleDownDisabledNodeCount, that.scaleDownDisabledNodeCount)
@@ -411,6 +434,7 @@ public class ScaleGroupStatus {
             phase,
             desiredNodeCount,
             unpaidScaleNodeCount,
+            activeNodeCount,
             existingNodeCount,
             upcomingNodeCount,
             scaleDownDisabledNodeCount,
@@ -428,6 +452,7 @@ public class ScaleGroupStatus {
         sb.append("    phase: ").append(toIndentedString(phase)).append("\n");
         sb.append("    desiredNodeCount: ").append(toIndentedString(desiredNodeCount)).append("\n");
         sb.append("    unpaidScaleNodeCount: ").append(toIndentedString(unpaidScaleNodeCount)).append("\n");
+        sb.append("    activeNodeCount: ").append(toIndentedString(activeNodeCount)).append("\n");
         sb.append("    existingNodeCount: ").append(toIndentedString(existingNodeCount)).append("\n");
         sb.append("    upcomingNodeCount: ").append(toIndentedString(upcomingNodeCount)).append("\n");
         sb.append("    scaleDownDisabledNodeCount: ").append(toIndentedString(scaleDownDisabledNodeCount)).append("\n");

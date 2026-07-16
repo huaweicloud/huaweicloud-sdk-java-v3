@@ -194,7 +194,7 @@ public class ServiceInvoke {
     }
 
     /**
-     * **参数解释：** 智能路由策略（861版本该字段在高级配置中）。 **约束限制：** 不涉及。 **取值范围：** - ROUND_ROBIN：轮询。 - ORIGIN_IP_HASH：源IP哈希。 - MIN_CONN：最小连接数。 - MIN_FIRST_TOKEN_TIME：最小首token时延。 - COMPOSITE： 综合负载。 - SLO_BASED：SLO优先级。 **默认取值：** 不涉及。
+     * **参数解释：** 智能路由策略。 **约束限制：** 不涉及。 **取值范围：** - ROUND_ROBIN：轮询。 - ORIGIN_IP_HASH：源IP哈希。 - MIN_CONN：最小连接数。 - MIN_FIRST_TOKEN_TIME：最小首token时延。 - COMPOSITE： 综合负载。 - SLO_BASED：SLO优先级。 **默认取值：** 不涉及。
      * @return strategy
      */
     public String getStrategy() {

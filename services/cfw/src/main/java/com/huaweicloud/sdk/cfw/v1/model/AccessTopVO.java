@@ -14,6 +14,11 @@ import java.util.function.Consumer;
 public class AccessTopVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "all_hit_rule_list")
+
+    private List<AccessTopMemberVO> allHitRuleList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deny_count")
 
     private Long denyCount;
@@ -102,6 +107,39 @@ public class AccessTopVO {
     @JsonProperty(value = "top_deny_rule_list")
 
     private List<AccessTopMemberVO> topDenyRuleList = null;
+
+    public AccessTopVO withAllHitRuleList(List<AccessTopMemberVO> allHitRuleList) {
+        this.allHitRuleList = allHitRuleList;
+        return this;
+    }
+
+    public AccessTopVO addAllHitRuleListItem(AccessTopMemberVO allHitRuleListItem) {
+        if (this.allHitRuleList == null) {
+            this.allHitRuleList = new ArrayList<>();
+        }
+        this.allHitRuleList.add(allHitRuleListItem);
+        return this;
+    }
+
+    public AccessTopVO withAllHitRuleList(Consumer<List<AccessTopMemberVO>> allHitRuleListSetter) {
+        if (this.allHitRuleList == null) {
+            this.allHitRuleList = new ArrayList<>();
+        }
+        allHitRuleListSetter.accept(this.allHitRuleList);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 所有命中规则列表 **取值范围**： 不涉及
+     * @return allHitRuleList
+     */
+    public List<AccessTopMemberVO> getAllHitRuleList() {
+        return allHitRuleList;
+    }
+
+    public void setAllHitRuleList(List<AccessTopMemberVO> allHitRuleList) {
+        this.allHitRuleList = allHitRuleList;
+    }
 
     public AccessTopVO withDenyCount(Long denyCount) {
         this.denyCount = denyCount;
@@ -594,7 +632,8 @@ public class AccessTopVO {
             return false;
         }
         AccessTopVO that = (AccessTopVO) obj;
-        return Objects.equals(this.denyCount, that.denyCount)
+        return Objects.equals(this.allHitRuleList, that.allHitRuleList)
+            && Objects.equals(this.denyCount, that.denyCount)
             && Objects.equals(this.denyTopOneAclId, that.denyTopOneAclId)
             && Objects.equals(this.denyTopOneAclName, that.denyTopOneAclName)
             && Objects.equals(this.hitCount, that.hitCount)
@@ -615,7 +654,8 @@ public class AccessTopVO {
 
     @Override
     public int hashCode() {
-        return Objects.hash(denyCount,
+        return Objects.hash(allHitRuleList,
+            denyCount,
             denyTopOneAclId,
             denyTopOneAclName,
             hitCount,
@@ -639,6 +679,7 @@ public class AccessTopVO {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AccessTopVO {\n");
+        sb.append("    allHitRuleList: ").append(toIndentedString(allHitRuleList)).append("\n");
         sb.append("    denyCount: ").append(toIndentedString(denyCount)).append("\n");
         sb.append("    denyTopOneAclId: ").append(toIndentedString(denyTopOneAclId)).append("\n");
         sb.append("    denyTopOneAclName: ").append(toIndentedString(denyTopOneAclName)).append("\n");

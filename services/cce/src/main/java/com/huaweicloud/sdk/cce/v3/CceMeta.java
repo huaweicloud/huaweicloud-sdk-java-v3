@@ -9,10 +9,16 @@ import com.huaweicloud.sdk.cce.v3.model.AddNodesToNodePoolRequest;
 import com.huaweicloud.sdk.cce.v3.model.AddNodesToNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.AddonCheckRequest;
 import com.huaweicloud.sdk.cce.v3.model.AddonInstanceRollbackRequest;
+import com.huaweicloud.sdk.cce.v3.model.AssumeAgencyForPodIdentityRequest;
+import com.huaweicloud.sdk.cce.v3.model.AssumeAgencyForPodIdentityRequestBody;
+import com.huaweicloud.sdk.cce.v3.model.AssumeAgencyForPodIdentityResponse;
 import com.huaweicloud.sdk.cce.v3.model.AutopilotCluster;
 import com.huaweicloud.sdk.cce.v3.model.AutopilotClusterInformation;
 import com.huaweicloud.sdk.cce.v3.model.AwakeClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.AwakeClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.BatchChangeNodeToPeriodReqBody;
+import com.huaweicloud.sdk.cce.v3.model.BatchChangeNodeToPeriodRequest;
+import com.huaweicloud.sdk.cce.v3.model.BatchChangeNodeToPeriodResponse;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateAddonPrecheckRequest;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateAddonPrecheckResponse;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateAutopilotClusterTagsRequest;
@@ -73,6 +79,8 @@ import com.huaweicloud.sdk.cce.v3.model.CreateNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreatePartitionRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreatePartitionResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreatePodIdentityAssociationRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreatePodIdentityAssociationResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreatePostCheckRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreatePostCheckResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreatePreCheckRequest;
@@ -110,6 +118,8 @@ import com.huaweicloud.sdk.cce.v3.model.DeleteNodePoolRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.DeletePodIdentityAssociationRequest;
+import com.huaweicloud.sdk.cce.v3.model.DeletePodIdentityAssociationResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteReleaseRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteReleaseResponse;
 import com.huaweicloud.sdk.cce.v3.model.DownloadAutopilotChartRequest;
@@ -193,6 +203,8 @@ import com.huaweicloud.sdk.cce.v3.model.ListNodesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListNodesResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListPartitionsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListPartitionsResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListPodIdentityAssociationsRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListPodIdentityAssociationsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListPreCheckTasksRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListPreCheckTasksResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListReleasesRequest;
@@ -220,6 +232,9 @@ import com.huaweicloud.sdk.cce.v3.model.PartitionReqBody;
 import com.huaweicloud.sdk.cce.v3.model.PauseUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.PauseUpgradeClusterTaskResponse;
 import com.huaweicloud.sdk.cce.v3.model.PersistentVolumeClaim;
+import com.huaweicloud.sdk.cce.v3.model.PodIdentityAssociation;
+import com.huaweicloud.sdk.cce.v3.model.PodIdentityAssociationResp;
+import com.huaweicloud.sdk.cce.v3.model.PodIdentityAssociationUpdate;
 import com.huaweicloud.sdk.cce.v3.model.PostcheckClusterRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.PrecheckClusterRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.ReleaseResp;
@@ -242,6 +257,12 @@ import com.huaweicloud.sdk.cce.v3.model.RollbackAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.RollbackAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.RollbackAutopilotAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.RollbackAutopilotAddonInstanceResponse;
+import com.huaweicloud.sdk.cce.v3.model.RotateCertNodeList;
+import com.huaweicloud.sdk.cce.v3.model.RotateClusterCredentialsRequest;
+import com.huaweicloud.sdk.cce.v3.model.RotateClusterCredentialsResponse;
+import com.huaweicloud.sdk.cce.v3.model.RotateCredentialsRequestBody;
+import com.huaweicloud.sdk.cce.v3.model.RotateNodeCertRequest;
+import com.huaweicloud.sdk.cce.v3.model.RotateNodeCertResponse;
 import com.huaweicloud.sdk.cce.v3.model.ScaleNodePoolRequest;
 import com.huaweicloud.sdk.cce.v3.model.ScaleNodePoolRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.ScaleNodePoolResponse;
@@ -311,6 +332,8 @@ import com.huaweicloud.sdk.cce.v3.model.ShowNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowPartitionRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowPartitionResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowPodIdentityAssociationRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowPodIdentityAssociationResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowPreCheckRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowPreCheckResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowQuotasRequest;
@@ -375,6 +398,8 @@ import com.huaweicloud.sdk.cce.v3.model.UpdateNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdatePartitionRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdatePartitionResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdatePodIdentityAssociationRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdatePodIdentityAssociationResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateReleaseReqBody;
 import com.huaweicloud.sdk.cce.v3.model.UpdateReleaseRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateReleaseResponse;
@@ -470,6 +495,39 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AssumeAgencyForPodIdentityRequest, AssumeAgencyForPodIdentityResponse> assumeAgencyForPodIdentity =
+        genForAssumeAgencyForPodIdentity();
+
+    private static HttpRequestDef<AssumeAgencyForPodIdentityRequest, AssumeAgencyForPodIdentityResponse> genForAssumeAgencyForPodIdentity() {
+        // basic
+        HttpRequestDef.Builder<AssumeAgencyForPodIdentityRequest, AssumeAgencyForPodIdentityResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AssumeAgencyForPodIdentityRequest.class,
+                    AssumeAgencyForPodIdentityResponse.class)
+                .withName("AssumeAgencyForPodIdentity")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/assume-agency-for-pod-identity")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssumeAgencyForPodIdentityRequest::getClusterId,
+                AssumeAgencyForPodIdentityRequest::setClusterId));
+        builder.<AssumeAgencyForPodIdentityRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssumeAgencyForPodIdentityRequestBody.class),
+            f -> f.withMarshaller(AssumeAgencyForPodIdentityRequest::getBody,
+                AssumeAgencyForPodIdentityRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AwakeClusterRequest, AwakeClusterResponse> awakeCluster = genForAwakeCluster();
 
     private static HttpRequestDef<AwakeClusterRequest, AwakeClusterResponse> genForAwakeCluster() {
@@ -486,6 +544,35 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AwakeClusterRequest::getClusterId, AwakeClusterRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchChangeNodeToPeriodRequest, BatchChangeNodeToPeriodResponse> batchChangeNodeToPeriod =
+        genForBatchChangeNodeToPeriod();
+
+    private static HttpRequestDef<BatchChangeNodeToPeriodRequest, BatchChangeNodeToPeriodResponse> genForBatchChangeNodeToPeriod() {
+        // basic
+        HttpRequestDef.Builder<BatchChangeNodeToPeriodRequest, BatchChangeNodeToPeriodResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchChangeNodeToPeriodRequest.class, BatchChangeNodeToPeriodResponse.class)
+            .withName("BatchChangeNodeToPeriod")
+            .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/toperiod")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchChangeNodeToPeriodRequest::getClusterId,
+                BatchChangeNodeToPeriodRequest::setClusterId));
+        builder.<BatchChangeNodeToPeriodReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchChangeNodeToPeriodReqBody.class),
+            f -> f.withMarshaller(BatchChangeNodeToPeriodRequest::getBody, BatchChangeNodeToPeriodRequest::setBody));
 
         // response
 
@@ -897,6 +984,39 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreatePodIdentityAssociationRequest, CreatePodIdentityAssociationResponse> createPodIdentityAssociation =
+        genForCreatePodIdentityAssociation();
+
+    private static HttpRequestDef<CreatePodIdentityAssociationRequest, CreatePodIdentityAssociationResponse> genForCreatePodIdentityAssociation() {
+        // basic
+        HttpRequestDef.Builder<CreatePodIdentityAssociationRequest, CreatePodIdentityAssociationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreatePodIdentityAssociationRequest.class,
+                    CreatePodIdentityAssociationResponse.class)
+                .withName("CreatePodIdentityAssociation")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/pod-identity-associations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePodIdentityAssociationRequest::getClusterId,
+                CreatePodIdentityAssociationRequest::setClusterId));
+        builder.<PodIdentityAssociation>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PodIdentityAssociation.class),
+            f -> f.withMarshaller(CreatePodIdentityAssociationRequest::getBody,
+                CreatePodIdentityAssociationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreatePostCheckRequest, CreatePostCheckResponse> createPostCheck =
         genForCreatePostCheck();
 
@@ -1269,6 +1389,40 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteNodePoolRequest::getNodepoolId, DeleteNodePoolRequest::setNodepoolId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePodIdentityAssociationRequest, DeletePodIdentityAssociationResponse> deletePodIdentityAssociation =
+        genForDeletePodIdentityAssociation();
+
+    private static HttpRequestDef<DeletePodIdentityAssociationRequest, DeletePodIdentityAssociationResponse> genForDeletePodIdentityAssociation() {
+        // basic
+        HttpRequestDef.Builder<DeletePodIdentityAssociationRequest, DeletePodIdentityAssociationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeletePodIdentityAssociationRequest.class,
+                    DeletePodIdentityAssociationResponse.class)
+                .withName("DeletePodIdentityAssociation")
+                .withUri(
+                    "/api/v3/projects/{project_id}/clusters/{cluster_id}/pod-identity-associations/{association_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePodIdentityAssociationRequest::getClusterId,
+                DeletePodIdentityAssociationRequest::setClusterId));
+        builder.<String>withRequestField("association_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePodIdentityAssociationRequest::getAssociationId,
+                DeletePodIdentityAssociationRequest::setAssociationId));
 
         // response
 
@@ -1889,6 +2043,16 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListNodesRequest::getClusterId, ListNodesRequest::setClusterId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListNodesRequest::getLimit, ListNodesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNodesRequest::getMarker, ListNodesRequest::setMarker));
 
         // response
 
@@ -1914,6 +2078,41 @@ public class CceMeta {
             f -> f.withMarshaller(ListPartitionsRequest::getClusterId, ListPartitionsRequest::setClusterId));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPodIdentityAssociationsRequest, ListPodIdentityAssociationsResponse> listPodIdentityAssociations =
+        genForListPodIdentityAssociations();
+
+    private static HttpRequestDef<ListPodIdentityAssociationsRequest, ListPodIdentityAssociationsResponse> genForListPodIdentityAssociations() {
+        // basic
+        HttpRequestDef.Builder<ListPodIdentityAssociationsRequest, ListPodIdentityAssociationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListPodIdentityAssociationsRequest.class,
+                    ListPodIdentityAssociationsResponse.class)
+                .withName("ListPodIdentityAssociations")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/pod-identity-associations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPodIdentityAssociationsRequest::getClusterId,
+                ListPodIdentityAssociationsRequest::setClusterId));
+
+        // response
+        builder.<List<PodIdentityAssociationResp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(ListPodIdentityAssociationsResponse::getBody,
+                    ListPodIdentityAssociationsResponse::setBody)
+                .withInnerContainerType(PodIdentityAssociationResp.class));
 
         return builder.build();
     }
@@ -2311,6 +2510,64 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddonInstanceRollbackRequest.class),
             f -> f.withMarshaller(RollbackAddonInstanceRequest::getBody, RollbackAddonInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RotateClusterCredentialsRequest, RotateClusterCredentialsResponse> rotateClusterCredentials =
+        genForRotateClusterCredentials();
+
+    private static HttpRequestDef<RotateClusterCredentialsRequest, RotateClusterCredentialsResponse> genForRotateClusterCredentials() {
+        // basic
+        HttpRequestDef.Builder<RotateClusterCredentialsRequest, RotateClusterCredentialsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, RotateClusterCredentialsRequest.class, RotateClusterCredentialsResponse.class)
+                .withName("RotateClusterCredentials")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/rotatecredentials")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RotateClusterCredentialsRequest::getClusterId,
+                RotateClusterCredentialsRequest::setClusterId));
+        builder.<RotateCredentialsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RotateCredentialsRequestBody.class),
+            f -> f.withMarshaller(RotateClusterCredentialsRequest::getBody, RotateClusterCredentialsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RotateNodeCertRequest, RotateNodeCertResponse> rotateNodeCert =
+        genForRotateNodeCert();
+
+    private static HttpRequestDef<RotateNodeCertRequest, RotateNodeCertResponse> genForRotateNodeCert() {
+        // basic
+        HttpRequestDef.Builder<RotateNodeCertRequest, RotateNodeCertResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RotateNodeCertRequest.class, RotateNodeCertResponse.class)
+                .withName("RotateNodeCert")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/rotate-cert")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RotateNodeCertRequest::getClusterId, RotateNodeCertRequest::setClusterId));
+        builder.<RotateCertNodeList>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RotateCertNodeList.class),
+            f -> f.withMarshaller(RotateNodeCertRequest::getBody, RotateNodeCertRequest::setBody));
 
         // response
 
@@ -2805,6 +3062,40 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPartitionRequest::getPartitionName, ShowPartitionRequest::setPartitionName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPodIdentityAssociationRequest, ShowPodIdentityAssociationResponse> showPodIdentityAssociation =
+        genForShowPodIdentityAssociation();
+
+    private static HttpRequestDef<ShowPodIdentityAssociationRequest, ShowPodIdentityAssociationResponse> genForShowPodIdentityAssociation() {
+        // basic
+        HttpRequestDef.Builder<ShowPodIdentityAssociationRequest, ShowPodIdentityAssociationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowPodIdentityAssociationRequest.class,
+                    ShowPodIdentityAssociationResponse.class)
+                .withName("ShowPodIdentityAssociation")
+                .withUri(
+                    "/api/v3/projects/{project_id}/clusters/{cluster_id}/pod-identity-associations/{association_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPodIdentityAssociationRequest::getClusterId,
+                ShowPodIdentityAssociationRequest::setClusterId));
+        builder.<String>withRequestField("association_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPodIdentityAssociationRequest::getAssociationId,
+                ShowPodIdentityAssociationRequest::setAssociationId));
 
         // response
 
@@ -3428,6 +3719,46 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PartitionReqBody.class),
             f -> f.withMarshaller(UpdatePartitionRequest::getBody, UpdatePartitionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePodIdentityAssociationRequest, UpdatePodIdentityAssociationResponse> updatePodIdentityAssociation =
+        genForUpdatePodIdentityAssociation();
+
+    private static HttpRequestDef<UpdatePodIdentityAssociationRequest, UpdatePodIdentityAssociationResponse> genForUpdatePodIdentityAssociation() {
+        // basic
+        HttpRequestDef.Builder<UpdatePodIdentityAssociationRequest, UpdatePodIdentityAssociationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdatePodIdentityAssociationRequest.class,
+                    UpdatePodIdentityAssociationResponse.class)
+                .withName("UpdatePodIdentityAssociation")
+                .withUri(
+                    "/api/v3/projects/{project_id}/clusters/{cluster_id}/pod-identity-associations/{association_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePodIdentityAssociationRequest::getClusterId,
+                UpdatePodIdentityAssociationRequest::setClusterId));
+        builder.<String>withRequestField("association_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePodIdentityAssociationRequest::getAssociationId,
+                UpdatePodIdentityAssociationRequest::setAssociationId));
+        builder.<PodIdentityAssociationUpdate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PodIdentityAssociationUpdate.class),
+            f -> f.withMarshaller(UpdatePodIdentityAssociationRequest::getBody,
+                UpdatePodIdentityAssociationRequest::setBody));
 
         // response
 
@@ -4133,6 +4464,12 @@ public class CceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAutopilotReleaseRequest::getClusterId,
                 DeleteAutopilotReleaseRequest::setClusterId));
+        builder.<String>withRequestField("show_resources",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAutopilotReleaseRequest::getShowResources,
+                DeleteAutopilotReleaseRequest::setShowResources));
 
         // response
         builder.<String>withResponseField("body",
@@ -4905,6 +5242,12 @@ public class CceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAutopilotReleaseRequest::getClusterId,
                 ShowAutopilotReleaseRequest::setClusterId));
+        builder.<String>withRequestField("show_resources",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotReleaseRequest::getShowResources,
+                ShowAutopilotReleaseRequest::setShowResources));
 
         // response
 
@@ -5231,6 +5574,12 @@ public class CceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateAutopilotReleaseRequest::getClusterId,
                 UpdateAutopilotReleaseRequest::setClusterId));
+        builder.<String>withRequestField("show_resources",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAutopilotReleaseRequest::getShowResources,
+                UpdateAutopilotReleaseRequest::setShowResources));
         builder.<UpdateReleaseReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

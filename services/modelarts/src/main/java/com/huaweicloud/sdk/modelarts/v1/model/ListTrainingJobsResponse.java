@@ -60,11 +60,6 @@ public class ListTrainingJobsResponse extends SdkResponse {
     private String aiProject;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "unified_jobs")
-
-    private Boolean unifiedJobs;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "train_type")
 
     private String trainType;
@@ -227,23 +222,6 @@ public class ListTrainingJobsResponse extends SdkResponse {
         this.aiProject = aiProject;
     }
 
-    public ListTrainingJobsResponse withUnifiedJobs(Boolean unifiedJobs) {
-        this.unifiedJobs = unifiedJobs;
-        return this;
-    }
-
-    /**
-     * **参数解释**：是否开启自定义作业和精调作业联合查询。 **取值范围**：     - true：开启自定义作业和精调作业联合查询     - false: 非必须，不开启自定义作业和精调作业联合查询
-     * @return unifiedJobs
-     */
-    public Boolean getUnifiedJobs() {
-        return unifiedJobs;
-    }
-
-    public void setUnifiedJobs(Boolean unifiedJobs) {
-        this.unifiedJobs = unifiedJobs;
-    }
-
     public ListTrainingJobsResponse withTrainType(String trainType) {
         this.trainType = trainType;
         return this;
@@ -307,24 +285,14 @@ public class ListTrainingJobsResponse extends SdkResponse {
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.sortBy, that.sortBy) && Objects.equals(this.order, that.order)
             && Objects.equals(this.groupBy, that.groupBy) && Objects.equals(this.workspaceId, that.workspaceId)
-            && Objects.equals(this.aiProject, that.aiProject) && Objects.equals(this.unifiedJobs, that.unifiedJobs)
-            && Objects.equals(this.trainType, that.trainType) && Objects.equals(this.items, that.items);
+            && Objects.equals(this.aiProject, that.aiProject) && Objects.equals(this.trainType, that.trainType)
+            && Objects.equals(this.items, that.items);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total,
-            count,
-            limit,
-            offset,
-            sortBy,
-            order,
-            groupBy,
-            workspaceId,
-            aiProject,
-            unifiedJobs,
-            trainType,
-            items);
+        return Objects
+            .hash(total, count, limit, offset, sortBy, order, groupBy, workspaceId, aiProject, trainType, items);
     }
 
     @Override
@@ -340,7 +308,6 @@ public class ListTrainingJobsResponse extends SdkResponse {
         sb.append("    groupBy: ").append(toIndentedString(groupBy)).append("\n");
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("    aiProject: ").append(toIndentedString(aiProject)).append("\n");
-        sb.append("    unifiedJobs: ").append(toIndentedString(unifiedJobs)).append("\n");
         sb.append("    trainType: ").append(toIndentedString(trainType)).append("\n");
         sb.append("    items: ").append(toIndentedString(items)).append("\n");
         sb.append("}");

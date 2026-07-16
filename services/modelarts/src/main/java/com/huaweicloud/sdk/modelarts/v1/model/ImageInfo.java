@@ -53,7 +53,7 @@ public class ImageInfo {
     }
 
     /**
-     * **参数解释：** 镜像类别，标识镜像来源。 **约束限制：** 不涉及。 **取值范围：** - swr：软件仓库服务。 - [image：[通用镜像]。](tag:hws,hws_hk) **默认取值：** 不涉及。
+     * **参数解释：** 镜像类别，标识镜像来源。 **约束限制：** 不涉及。 **取值范围：** - SWR：软件仓库服务。 - [IMAGE：[通用镜像]。](tag:hws,hws_hk) **默认取值：** 不涉及。
      * @return source
      */
     public String getSource() {

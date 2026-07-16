@@ -25,7 +25,7 @@ public class InstallAppResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private RmInstallAppResp data;
+    private TaskDataResult data;
 
     public InstallAppResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
@@ -61,14 +61,14 @@ public class InstallAppResponse extends SdkResponse {
         this.errorMsg = errorMsg;
     }
 
-    public InstallAppResponse withData(RmInstallAppResp data) {
+    public InstallAppResponse withData(TaskDataResult data) {
         this.data = data;
         return this;
     }
 
-    public InstallAppResponse withData(Consumer<RmInstallAppResp> dataSetter) {
+    public InstallAppResponse withData(Consumer<TaskDataResult> dataSetter) {
         if (this.data == null) {
-            this.data = new RmInstallAppResp();
+            this.data = new TaskDataResult();
             dataSetter.accept(this.data);
         }
 
@@ -79,11 +79,11 @@ public class InstallAppResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public RmInstallAppResp getData() {
+    public TaskDataResult getData() {
         return data;
     }
 
-    public void setData(RmInstallAppResp data) {
+    public void setData(TaskDataResult data) {
         this.data = data;
     }
 

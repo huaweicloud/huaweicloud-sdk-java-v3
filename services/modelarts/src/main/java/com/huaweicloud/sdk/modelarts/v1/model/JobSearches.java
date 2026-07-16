@@ -44,11 +44,6 @@ public class JobSearches {
     private String workspaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "unified_jobs")
-
-    private Boolean unifiedJobs;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "train_type")
 
     private String trainType;
@@ -160,23 +155,6 @@ public class JobSearches {
         this.workspaceId = workspaceId;
     }
 
-    public JobSearches withUnifiedJobs(Boolean unifiedJobs) {
-        this.unifiedJobs = unifiedJobs;
-        return this;
-    }
-
-    /**
-     * **参数解释**：是否开启自定义作业和精调作业联合查询。 **约束限制**：不涉及。 **取值范围**：   - true：开启自定义作业和精调作业联合查询   - false: 非必须，不开启自定义作业和精调作业联合查询 **默认取值**：默认为“false”。
-     * @return unifiedJobs
-     */
-    public Boolean getUnifiedJobs() {
-        return unifiedJobs;
-    }
-
-    public void setUnifiedJobs(Boolean unifiedJobs) {
-        this.unifiedJobs = unifiedJobs;
-    }
-
     public JobSearches withTrainType(String trainType) {
         this.trainType = trainType;
         return this;
@@ -239,13 +217,12 @@ public class JobSearches {
         return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.sortBy, that.sortBy) && Objects.equals(this.order, that.order)
             && Objects.equals(this.groupBy, that.groupBy) && Objects.equals(this.workspaceId, that.workspaceId)
-            && Objects.equals(this.unifiedJobs, that.unifiedJobs) && Objects.equals(this.trainType, that.trainType)
-            && Objects.equals(this.filters, that.filters);
+            && Objects.equals(this.trainType, that.trainType) && Objects.equals(this.filters, that.filters);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, sortBy, order, groupBy, workspaceId, unifiedJobs, trainType, filters);
+        return Objects.hash(offset, limit, sortBy, order, groupBy, workspaceId, trainType, filters);
     }
 
     @Override
@@ -258,7 +235,6 @@ public class JobSearches {
         sb.append("    order: ").append(toIndentedString(order)).append("\n");
         sb.append("    groupBy: ").append(toIndentedString(groupBy)).append("\n");
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
-        sb.append("    unifiedJobs: ").append(toIndentedString(unifiedJobs)).append("\n");
         sb.append("    trainType: ").append(toIndentedString(trainType)).append("\n");
         sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
         sb.append("}");

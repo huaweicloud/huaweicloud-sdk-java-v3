@@ -107,7 +107,7 @@ public class ReleaseReqBodyParams {
     }
 
     /**
-     * 是否替换同名实例
+     * 模板实例更新时是否保留values，该字段仅在更新指定模板实例时生效
      * @return replace
      */
     public Boolean getReplace() {
@@ -124,7 +124,7 @@ public class ReleaseReqBodyParams {
     }
 
     /**
-     * 是否重建实例
+     * 模板实例更新时是否重建实例，该字段仅在更新指定模板实例时生效
      * @return recreate
      */
     public Boolean getRecreate() {
@@ -141,7 +141,7 @@ public class ReleaseReqBodyParams {
     }
 
     /**
-     * 更新时是否重置values
+     * 模板实例更新时是否重置values，该字段仅在更新指定模板实例时生效
      * @return resetValues
      */
     public Boolean getResetValues() {

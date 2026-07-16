@@ -40,11 +40,6 @@ public class ListDomainsRequest {
 
     private String domainName;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "object_Id")
-
-    private String objectId;
-
     public ListDomainsRequest withDomainSetId(String domainSetId) {
         this.domainSetId = domainSetId;
         return this;
@@ -147,23 +142,6 @@ public class ListDomainsRequest {
         this.domainName = domainName;
     }
 
-    public ListDomainsRequest withObjectId(String objectId) {
-        this.objectId = objectId;
-        return this;
-    }
-
-    /**
-     * **参数解释**： 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得 **约束限制**： type为0时，object_id为互联网边界防护对象ID，type为1时，object_id为VPC边界防护对象ID。此处仅取type为1的防护对象id，可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得。 **取值范围**： 不涉及 **默认取值**： 不涉及
-     * @return objectId
-     */
-    public String getObjectId() {
-        return objectId;
-    }
-
-    public void setObjectId(String objectId) {
-        this.objectId = objectId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -176,13 +154,12 @@ public class ListDomainsRequest {
         return Objects.equals(this.domainSetId, that.domainSetId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.domainName, that.domainName)
-            && Objects.equals(this.objectId, that.objectId);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.domainName, that.domainName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domainSetId, enterpriseProjectId, fwInstanceId, limit, offset, domainName, objectId);
+        return Objects.hash(domainSetId, enterpriseProjectId, fwInstanceId, limit, offset, domainName);
     }
 
     @Override
@@ -195,7 +172,6 @@ public class ListDomainsRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
-        sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

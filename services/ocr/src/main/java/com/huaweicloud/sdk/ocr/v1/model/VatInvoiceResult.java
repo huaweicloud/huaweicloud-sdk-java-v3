@@ -194,6 +194,16 @@ public class VatInvoiceResult {
     private String city;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_pages")
+
+    private String totalPages;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "current_page")
+
+    private String currentPage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
 
     private Object confidence;
@@ -948,6 +958,40 @@ public class VatInvoiceResult {
         this.city = city;
     }
 
+    public VatInvoiceResult withTotalPages(String totalPages) {
+        this.totalPages = totalPages;
+        return this;
+    }
+
+    /**
+     * 总页码。 
+     * @return totalPages
+     */
+    public String getTotalPages() {
+        return totalPages;
+    }
+
+    public void setTotalPages(String totalPages) {
+        this.totalPages = totalPages;
+    }
+
+    public VatInvoiceResult withCurrentPage(String currentPage) {
+        this.currentPage = currentPage;
+        return this;
+    }
+
+    /**
+     * 当前页码。 
+     * @return currentPage
+     */
+    public String getCurrentPage() {
+        return currentPage;
+    }
+
+    public void setCurrentPage(String currentPage) {
+        this.currentPage = currentPage;
+    }
+
     public VatInvoiceResult withConfidence(Object confidence) {
         this.confidence = confidence;
         return this;
@@ -1333,7 +1377,8 @@ public class VatInvoiceResult {
             && Objects.equals(this.receiver, that.receiver) && Objects.equals(this.reviewer, that.reviewer)
             && Objects.equals(this.issuer, that.issuer) && Objects.equals(this.sellerSeal, that.sellerSeal)
             && Objects.equals(this.itemList, that.itemList) && Objects.equals(this.province, that.province)
-            && Objects.equals(this.city, that.city) && Objects.equals(this.confidence, that.confidence)
+            && Objects.equals(this.city, that.city) && Objects.equals(this.totalPages, that.totalPages)
+            && Objects.equals(this.currentPage, that.currentPage) && Objects.equals(this.confidence, that.confidence)
             && Objects.equals(this.textLocation, that.textLocation)
             && Objects.equals(this.belongBuyerName, that.belongBuyerName)
             && Objects.equals(this.belongSellerName, that.belongSellerName)
@@ -1392,6 +1437,8 @@ public class VatInvoiceResult {
             itemList,
             province,
             city,
+            totalPages,
+            currentPage,
             confidence,
             textLocation,
             belongBuyerName,
@@ -1453,6 +1500,8 @@ public class VatInvoiceResult {
         sb.append("    itemList: ").append(toIndentedString(itemList)).append("\n");
         sb.append("    province: ").append(toIndentedString(province)).append("\n");
         sb.append("    city: ").append(toIndentedString(city)).append("\n");
+        sb.append("    totalPages: ").append(toIndentedString(totalPages)).append("\n");
+        sb.append("    currentPage: ").append(toIndentedString(currentPage)).append("\n");
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
         sb.append("    textLocation: ").append(toIndentedString(textLocation)).append("\n");
         sb.append("    belongBuyerName: ").append(toIndentedString(belongBuyerName)).append("\n");

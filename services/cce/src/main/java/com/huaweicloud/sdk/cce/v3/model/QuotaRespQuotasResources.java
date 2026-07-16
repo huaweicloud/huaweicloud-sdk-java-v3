@@ -31,7 +31,7 @@ public class QuotaRespQuotasResources {
     }
 
     /**
-     * 类型
+     * **参数解释**： 类型 **取值范围**： - Charts：配额类型为模板 
      * @return type
      */
     public String getType() {

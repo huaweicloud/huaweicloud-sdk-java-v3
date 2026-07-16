@@ -28,12 +28,12 @@ public class IpRegionResponseBodyData {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_type")
 
-    private String regionType;
+    private Integer regionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "superior_region_id")
 
-    private Integer superiorRegionId;
+    private String superiorRegionId;
 
     public IpRegionResponseBodyData withRegionId(String regionId) {
         this.regionId = regionId;
@@ -86,7 +86,7 @@ public class IpRegionResponseBodyData {
         this.descriptionEn = descriptionEn;
     }
 
-    public IpRegionResponseBodyData withRegionType(String regionType) {
+    public IpRegionResponseBodyData withRegionType(Integer regionType) {
         this.regionType = regionType;
         return this;
     }
@@ -95,15 +95,15 @@ public class IpRegionResponseBodyData {
      * **参数解释**： 区域类型 **取值范围**： - 0：国家 - 1：省份 - 2：大洲 
      * @return regionType
      */
-    public String getRegionType() {
+    public Integer getRegionType() {
         return regionType;
     }
 
-    public void setRegionType(String regionType) {
+    public void setRegionType(Integer regionType) {
         this.regionType = regionType;
     }
 
-    public IpRegionResponseBodyData withSuperiorRegionId(Integer superiorRegionId) {
+    public IpRegionResponseBodyData withSuperiorRegionId(String superiorRegionId) {
         this.superiorRegionId = superiorRegionId;
         return this;
     }
@@ -112,11 +112,11 @@ public class IpRegionResponseBodyData {
      * **参数解释**： 上级区域ID **取值范围**： 不涉及 
      * @return superiorRegionId
      */
-    public Integer getSuperiorRegionId() {
+    public String getSuperiorRegionId() {
         return superiorRegionId;
     }
 
-    public void setSuperiorRegionId(Integer superiorRegionId) {
+    public void setSuperiorRegionId(String superiorRegionId) {
         this.superiorRegionId = superiorRegionId;
     }
 

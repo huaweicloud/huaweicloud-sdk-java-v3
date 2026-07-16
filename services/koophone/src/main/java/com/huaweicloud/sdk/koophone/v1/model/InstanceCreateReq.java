@@ -202,21 +202,6 @@ public class InstanceCreateReq {
     private NetworkEnum network;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "customImageType")
-
-    private Integer customImageType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "customImageId")
-
-    private Integer customImageId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "specPoolId")
-
-    private String specPoolId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nodeGroupId")
 
     private String nodeGroupId;
@@ -384,65 +369,13 @@ public class InstanceCreateReq {
         this.network = network;
     }
 
-    public InstanceCreateReq withCustomImageType(Integer customImageType) {
-        this.customImageType = customImageType;
-        return this;
-    }
-
-    /**
-     * 镜像类型 0：系统镜像，1：自定义镜像，2:私有镜像
-     * maximum: 2
-     * @return customImageType
-     */
-    public Integer getCustomImageType() {
-        return customImageType;
-    }
-
-    public void setCustomImageType(Integer customImageType) {
-        this.customImageType = customImageType;
-    }
-
-    public InstanceCreateReq withCustomImageId(Integer customImageId) {
-        this.customImageId = customImageId;
-        return this;
-    }
-
-    /**
-     * 镜像id
-     * @return customImageId
-     */
-    public Integer getCustomImageId() {
-        return customImageId;
-    }
-
-    public void setCustomImageId(Integer customImageId) {
-        this.customImageId = customImageId;
-    }
-
-    public InstanceCreateReq withSpecPoolId(String specPoolId) {
-        this.specPoolId = specPoolId;
-        return this;
-    }
-
-    /**
-     * 规格池id
-     * @return specPoolId
-     */
-    public String getSpecPoolId() {
-        return specPoolId;
-    }
-
-    public void setSpecPoolId(String specPoolId) {
-        this.specPoolId = specPoolId;
-    }
-
     public InstanceCreateReq withNodeGroupId(String nodeGroupId) {
         this.nodeGroupId = nodeGroupId;
         return this;
     }
 
     /**
-     * 节点组id
+     * 节点组id（节点组订购必填）
      * @return nodeGroupId
      */
     public String getNodeGroupId() {
@@ -467,9 +400,7 @@ public class InstanceCreateReq {
             && Objects.equals(this.instanceNamePrefix, that.instanceNamePrefix)
             && Objects.equals(this.bandSize, that.bandSize) && Objects.equals(this.count, that.count)
             && Objects.equals(this.chargeParam, that.chargeParam) && Objects.equals(this.network, that.network)
-            && Objects.equals(this.customImageType, that.customImageType)
-            && Objects.equals(this.customImageId, that.customImageId)
-            && Objects.equals(this.specPoolId, that.specPoolId) && Objects.equals(this.nodeGroupId, that.nodeGroupId);
+            && Objects.equals(this.nodeGroupId, that.nodeGroupId);
     }
 
     @Override
@@ -483,9 +414,6 @@ public class InstanceCreateReq {
             count,
             chargeParam,
             network,
-            customImageType,
-            customImageId,
-            specPoolId,
             nodeGroupId);
     }
 
@@ -502,9 +430,6 @@ public class InstanceCreateReq {
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    chargeParam: ").append(toIndentedString(chargeParam)).append("\n");
         sb.append("    network: ").append(toIndentedString(network)).append("\n");
-        sb.append("    customImageType: ").append(toIndentedString(customImageType)).append("\n");
-        sb.append("    customImageId: ").append(toIndentedString(customImageId)).append("\n");
-        sb.append("    specPoolId: ").append(toIndentedString(specPoolId)).append("\n");
         sb.append("    nodeGroupId: ").append(toIndentedString(nodeGroupId)).append("\n");
         sb.append("}");
         return sb.toString();

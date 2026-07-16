@@ -186,7 +186,7 @@ public class NodePoolCondition {
     }
 
     /**
-     * Condition当前状态，取值如下 - \"True\" - \"False\" 
+     * **参数解释**： Condition当前状态。 **约束限制**： 不涉及 **取值范围**： - \"True\"：满足当前状态 - \"False\"：不满足当前状态  **默认取值**： 不涉及
      * @return status
      */
     public String getStatus() {

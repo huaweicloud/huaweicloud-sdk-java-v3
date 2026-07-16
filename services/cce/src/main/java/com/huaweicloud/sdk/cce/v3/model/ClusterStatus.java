@@ -68,6 +68,11 @@ public class ClusterStatus {
 
     private Object deleteStatus;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "conditions")
+
+    private List<ClusterCondition> conditions = null;
+
     public ClusterStatus withPhase(String phase) {
         this.phase = phase;
         return this;
@@ -271,6 +276,39 @@ public class ClusterStatus {
         this.deleteStatus = deleteStatus;
     }
 
+    public ClusterStatus withConditions(List<ClusterCondition> conditions) {
+        this.conditions = conditions;
+        return this;
+    }
+
+    public ClusterStatus addConditionsItem(ClusterCondition conditionsItem) {
+        if (this.conditions == null) {
+            this.conditions = new ArrayList<>();
+        }
+        this.conditions.add(conditionsItem);
+        return this;
+    }
+
+    public ClusterStatus withConditions(Consumer<List<ClusterCondition>> conditionsSetter) {
+        if (this.conditions == null) {
+            this.conditions = new ArrayList<>();
+        }
+        conditionsSetter.accept(this.conditions);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 集群当前详细状态列表，详情参见Condition类型定义。 **约束限制**： 不涉及
+     * @return conditions
+     */
+    public List<ClusterCondition> getConditions() {
+        return conditions;
+    }
+
+    public void setConditions(List<ClusterCondition> conditions) {
+        this.conditions = conditions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -286,7 +324,7 @@ public class ClusterStatus {
             && Objects.equals(this.lockScene, that.lockScene) && Objects.equals(this.lockSource, that.lockSource)
             && Objects.equals(this.lockSourceId, that.lockSourceId)
             && Objects.equals(this.deleteOption, that.deleteOption)
-            && Objects.equals(this.deleteStatus, that.deleteStatus);
+            && Objects.equals(this.deleteStatus, that.deleteStatus) && Objects.equals(this.conditions, that.conditions);
     }
 
     @Override
@@ -301,7 +339,8 @@ public class ClusterStatus {
             lockSource,
             lockSourceId,
             deleteOption,
-            deleteStatus);
+            deleteStatus,
+            conditions);
     }
 
     @Override
@@ -319,6 +358,7 @@ public class ClusterStatus {
         sb.append("    lockSourceId: ").append(toIndentedString(lockSourceId)).append("\n");
         sb.append("    deleteOption: ").append(toIndentedString(deleteOption)).append("\n");
         sb.append("    deleteStatus: ").append(toIndentedString(deleteStatus)).append("\n");
+        sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

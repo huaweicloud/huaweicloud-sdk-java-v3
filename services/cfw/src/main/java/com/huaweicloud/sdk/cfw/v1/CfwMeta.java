@@ -2914,11 +2914,6 @@ public class CfwMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDomainsRequest::getDomainName, ListDomainsRequest::setDomainName));
-        builder.<String>withRequestField("object_Id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListDomainsRequest::getObjectId, ListDomainsRequest::setObjectId));
 
         // response
 

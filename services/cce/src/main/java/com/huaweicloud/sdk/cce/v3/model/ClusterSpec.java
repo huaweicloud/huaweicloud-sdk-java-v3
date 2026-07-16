@@ -259,9 +259,14 @@ public class ClusterSpec {
     private List<ResourceTag> clusterTags = null;
 
     /**
-     * 服务转发模式，支持以下两种实现：  - iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。 - ipvs：主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。  > 默认使用iptables转发模式。 
+     * 服务转发模式，支持以下三种实现：  - nftables：仅1.35集群及以上版本支持。替代iptables的新一代转发模式，规则管理高效、性能更优，原生支持IPv6，适配各类Service规模与集群场景，兼顾高并发短链接与大规模集群需求。 - iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。 - ipvs：主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。  > 1.35及以上版本默认使用nftables转发模式，1.35以下版本默认使用iptables转发模式。 
      */
     public static final class KubeProxyModeEnum {
+
+        /**
+         * Enum NFTABLES for value: "nftables"
+         */
+        public static final KubeProxyModeEnum NFTABLES = new KubeProxyModeEnum("nftables");
 
         /**
          * Enum IPTABLES for value: "iptables"
@@ -277,6 +282,7 @@ public class ClusterSpec {
 
         private static Map<String, KubeProxyModeEnum> createStaticFields() {
             Map<String, KubeProxyModeEnum> map = new HashMap<>();
+            map.put("nftables", NFTABLES);
             map.put("iptables", IPTABLES);
             map.put("ipvs", IPVS);
             return Collections.unmodifiableMap(map);
@@ -378,6 +384,11 @@ public class ClusterSpec {
 
     private EncryptionConfig encryptionConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "certificateAuthority")
+
+    private CertificateAuthority certificateAuthority;
+
     public ClusterSpec withCategory(CategoryEnum category) {
         this.category = category;
         return this;
@@ -435,7 +446,7 @@ public class ClusterSpec {
     }
 
     /**
-     * **参数解释：** 集群规格，当集群为v1.15及以上版本时支持创建后变更，详情请参见[变更集群规格](ResizeCluster.xml)。请按实际业务需求进行选择 **约束限制：** 不涉及 **取值范围：** - cce.s1.small: 小规模单控制节点CCE集群（最大50节点） - cce.s1.medium: 中等规模单控制节点CCE集群（最大200节点） - cce.s1.large: 大规模单控制节点CCE集群（最大1000节点） - cce.s2.small: 小规模三控制节点CCE集群（最大50节点） - cce.s2.medium: 中等规模三控制节点CCE集群（最大200节点） - cce.s2.large: 大规模三控制节点CCE集群（最大1000节点） - cce.s2.xlarge: 超大规模三控制节点CCE集群（最大2000节点） [- cce.s3.small: 小规模五控制节点CCE集群（最大50节点）](tag:hcs,hcs_sm) [- cce.s3.medium: 中等规模五控制节点CCE集群（最大200节点）](tag:hcs,hcs_sm) [- cce.s3.large: 大规模五控制节点CCE集群（最大1000节点）](tag:hcs,hcs_sm) [- cce.s3.xlarge: 超大规模五控制节点CCE集群（最大2000节点）](tag:hcs,hcs_sm)  [专属云特殊规格如下：](tag:hws,hws_hk,hcs,hcs_sm) [- cce.dec.s1.small: 小规模单控制节点的专属云CCE集群（最大50节点）](tag:hws,hws_hk) [- cce.dec.s1.medium: 中等规模单控制节点的专属云CCE集群（最大200节点）](tag:hws,hws_hk) [- cce.dec.s1.large: 大规模单控制节点的专属云CCE集群（最大1000节点）](tag:hws,hws_hk) [- cce.dec.s1.xlarge: 超大规模单控制节点的专属云CCE集群（最大2000节点）](tag:hws,hws_hk) [- cce.dec.s2.small: 小规模三控制节点的专属云CCE集群（最大50节点）](tag:hws,hws_hk) [- cce.dec.s2.medium: 中等规模三控制节点的专属云CCE集群（最大200节点）](tag:hws,hws_hk) [- cce.dec.s2.large: 大规模三控制节点的专属云CCE集群（最大1000节点）](tag:hws,hws_hk) [- cce.dec.s2.xlarge: 超大规模三控制节点的专属云CCE集群（最大2000节点）](tag:hws,hws_hk) [- cce.dec.s3.small: 小规模五控制节点的专属云CCE集群（最大50节点）](tag:hcs,hcs_sm) [- cce.dec.s3.medium: 中等规模五控制节点的专属云CCE集群（最大200节点）](tag:hcs,hcs_sm) [- cce.dec.s3.large: 大规模五控制节点的专属云CCE集群（最大1000节点）](tag:hcs,hcs_sm) [- cce.dec.s3.xlarge: 超大规模五控制节点的专属云CCE集群（最大2000节点）](tag:hcs,hcs_sm)  **默认取值：** 不涉及  >    关于规格参数中的字段说明如下： >    - s1：单控制节点的集群，控制节点数为1。单控制节点故障后，集群将不可用，但已运行工作负载不受影响。 >    - s2：三控制节点的集群，即高可用集群，控制节点数为3。当某个控制节点故障时，集群仍然可用。 [>   - s3：五控制节点的集群，即超高可用集群，控制节点数为5。当某2个控制节点故障时，集群仍然可用。](tag:hcs,hcs_sm) [>   - dec：表示专属云的CCE集群规格。例如cce.dec.s1.small表示小规模单控制节点的专属云CCE集群（最大50节点）。](tag:hws,hws_hk) >    - small：表示集群支持管理的最大节点规模为50节点。 >    - medium：表示集群支持管理的最大节点规模为200节点。 >    - large：表示集群支持管理的最大节点规模为1000节点。 >    - xlarge：表示集群支持管理的最大节点规模为2000节点。 
+     * **参数解释：** 集群规格，当集群为v1.15及以上版本时支持创建后变更，详情请参见[变更集群规格](ResizeCluster.xml)。请按实际业务需求进行选择 **约束限制：** 不涉及 **取值范围：** - cce.s1.small: 小规模单控制节点CCE集群（最大50节点） - cce.s1.medium: 中等规模单控制节点CCE集群（最大200节点） - cce.s1.large: 大规模单控制节点CCE集群（最大1000节点） - cce.s2.small: 小规模三控制节点CCE集群（最大50节点） - cce.s2.medium: 中等规模三控制节点CCE集群（最大200节点） - cce.s2.large: 大规模三控制节点CCE集群（最大1000节点） - cce.s2.xlarge: 超大规模三控制节点CCE集群（最大2000节点） [- cce.s3.small: 小规模五控制节点CCE集群（最大50节点）](tag:hcs,hcs_sm) [- cce.s3.medium: 中等规模五控制节点CCE集群（最大200节点）](tag:hcs,hcs_sm) [- cce.s3.large: 大规模五控制节点CCE集群（最大1000节点）](tag:hcs,hcs_sm) [- cce.s3.xlarge: 超大规模五控制节点CCE集群（最大2000节点）](tag:hcs,hcs_sm)  [专属云特殊规格如下：](tag:hws,hws_hk,hcs,hcs_sm) [- cce.dec.s1.small: 小规模单控制节点的专属云CCE集群（最大50节点）](tag:hws,hws_hk) [- cce.dec.s1.medium: 中等规模单控制节点的专属云CCE集群（最大200节点）](tag:hws,hws_hk) [- cce.dec.s1.large: 大规模单控制节点的专属云CCE集群（最大1000节点）](tag:hws,hws_hk) [- cce.dec.s1.xlarge: 超大规模单控制节点的专属云CCE集群（最大2000节点）](tag:hws,hws_hk) [- cce.dec.s2.small: 小规模三控制节点的专属云CCE集群（最大50节点）](tag:hws,hws_hk) [- cce.dec.s2.medium: 中等规模三控制节点的专属云CCE集群（最大200节点）](tag:hws,hws_hk) [- cce.dec.s2.large: 大规模三控制节点的专属云CCE集群（最大1000节点）](tag:hws,hws_hk) [- cce.dec.s2.xlarge: 超大规模三控制节点的专属云CCE集群（最大2000节点）](tag:hws,hws_hk) [- cce.dec.s3.small: 小规模五控制节点的专属云CCE集群（最大50节点）](tag:hcs,hcs_sm) [- cce.dec.s3.medium: 中等规模五控制节点的专属云CCE集群（最大200节点）](tag:hcs,hcs_sm) [- cce.dec.s3.large: 大规模五控制节点的专属云CCE集群（最大1000节点）](tag:hcs,hcs_sm) [- cce.dec.s3.xlarge: 超大规模五控制节点的专属云CCE集群（最大2000节点）](tag:hcs,hcs_sm)  **默认取值：** cce.s1.small [专属云场景默认为cce.dec.s1.small](tag:hws,hws_hk,hcs,hcs_sm)  >    关于规格参数中的字段说明如下： >    - s1：单控制节点的集群，控制节点数为1。单控制节点故障后，集群将不可用，但已运行工作负载不受影响。 >    - s2：三控制节点的集群，即高可用集群，控制节点数为3。当某个控制节点故障时，集群仍然可用。 [>   - s3：五控制节点的集群，即超高可用集群，控制节点数为5。当某2个控制节点故障时，集群仍然可用。](tag:hcs,hcs_sm) [>   - dec：表示专属云的CCE集群规格。例如cce.dec.s1.small表示小规模单控制节点的专属云CCE集群（最大50节点）。](tag:hws,hws_hk) >    - small：表示集群支持管理的最大节点规模为50节点。 >    - medium：表示集群支持管理的最大节点规模为200节点。 >    - large：表示集群支持管理的最大节点规模为1000节点。 >    - xlarge：表示集群支持管理的最大节点规模为2000节点。 
      * @return flavor
      */
     public String getFlavor() {
@@ -826,7 +837,7 @@ public class ClusterSpec {
     }
 
     /**
-     * 服务转发模式，支持以下两种实现：  - iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。 - ipvs：主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。  > 默认使用iptables转发模式。 
+     * 服务转发模式，支持以下三种实现：  - nftables：仅1.35集群及以上版本支持。替代iptables的新一代转发模式，规则管理高效、性能更优，原生支持IPv6，适配各类Service规模与集群场景，兼顾高并发短链接与大规模集群需求。 - iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。 - ipvs：主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。  > 1.35及以上版本默认使用nftables转发模式，1.35以下版本默认使用iptables转发模式。 
      * @return kubeProxyMode
      */
     public KubeProxyModeEnum getKubeProxyMode() {
@@ -1033,6 +1044,32 @@ public class ClusterSpec {
         this.encryptionConfig = encryptionConfig;
     }
 
+    public ClusterSpec withCertificateAuthority(CertificateAuthority certificateAuthority) {
+        this.certificateAuthority = certificateAuthority;
+        return this;
+    }
+
+    public ClusterSpec withCertificateAuthority(Consumer<CertificateAuthority> certificateAuthoritySetter) {
+        if (this.certificateAuthority == null) {
+            this.certificateAuthority = new CertificateAuthority();
+            certificateAuthoritySetter.accept(this.certificateAuthority);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get certificateAuthority
+     * @return certificateAuthority
+     */
+    public CertificateAuthority getCertificateAuthority() {
+        return certificateAuthority;
+    }
+
+    public void setCertificateAuthority(CertificateAuthority certificateAuthority) {
+        this.certificateAuthority = certificateAuthority;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1064,7 +1101,8 @@ public class ClusterSpec {
             && Objects.equals(this.deletionProtection, that.deletionProtection)
             && Objects.equals(this.configurationsOverride, that.configurationsOverride)
             && Objects.equals(this.clusterOps, that.clusterOps)
-            && Objects.equals(this.encryptionConfig, that.encryptionConfig);
+            && Objects.equals(this.encryptionConfig, that.encryptionConfig)
+            && Objects.equals(this.certificateAuthority, that.certificateAuthority);
     }
 
     @Override
@@ -1098,7 +1136,8 @@ public class ClusterSpec {
             deletionProtection,
             configurationsOverride,
             clusterOps,
-            encryptionConfig);
+            encryptionConfig,
+            certificateAuthority);
     }
 
     @Override
@@ -1137,6 +1176,7 @@ public class ClusterSpec {
         sb.append("    configurationsOverride: ").append(toIndentedString(configurationsOverride)).append("\n");
         sb.append("    clusterOps: ").append(toIndentedString(clusterOps)).append("\n");
         sb.append("    encryptionConfig: ").append(toIndentedString(encryptionConfig)).append("\n");
+        sb.append("    certificateAuthority: ").append(toIndentedString(certificateAuthority)).append("\n");
         sb.append("}");
         return sb.toString();
     }

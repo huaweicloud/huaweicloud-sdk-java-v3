@@ -48,12 +48,12 @@ public class BlackWhiteListResponseDataRecords {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_date")
 
-    private String createdDate;
+    private Integer createdDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modified_date")
 
-    private String modifiedDate;
+    private Integer modifiedDate;
 
     public BlackWhiteListResponseDataRecords withListId(String listId) {
         this.listId = listId;
@@ -174,7 +174,7 @@ public class BlackWhiteListResponseDataRecords {
         this.description = description;
     }
 
-    public BlackWhiteListResponseDataRecords withCreatedDate(String createdDate) {
+    public BlackWhiteListResponseDataRecords withCreatedDate(Integer createdDate) {
         this.createdDate = createdDate;
         return this;
     }
@@ -183,15 +183,15 @@ public class BlackWhiteListResponseDataRecords {
      * |- **参数解释**： 黑白名单创建时间。 **取值范围**： 不涉及 
      * @return createdDate
      */
-    public String getCreatedDate() {
+    public Integer getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(String createdDate) {
+    public void setCreatedDate(Integer createdDate) {
         this.createdDate = createdDate;
     }
 
-    public BlackWhiteListResponseDataRecords withModifiedDate(String modifiedDate) {
+    public BlackWhiteListResponseDataRecords withModifiedDate(Integer modifiedDate) {
         this.modifiedDate = modifiedDate;
         return this;
     }
@@ -200,11 +200,11 @@ public class BlackWhiteListResponseDataRecords {
      * |- **参数解释**： 黑白名单修改时间。 **取值范围**： 不涉及 
      * @return modifiedDate
      */
-    public String getModifiedDate() {
+    public Integer getModifiedDate() {
         return modifiedDate;
     }
 
-    public void setModifiedDate(String modifiedDate) {
+    public void setModifiedDate(Integer modifiedDate) {
         this.modifiedDate = modifiedDate;
     }
 

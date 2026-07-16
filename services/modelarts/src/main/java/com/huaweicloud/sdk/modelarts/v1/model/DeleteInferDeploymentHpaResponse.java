@@ -25,11 +25,6 @@ public class DeleteInferDeploymentHpaResponse extends SdkResponse {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
-
-    private String type;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_resource_id")
 
     private String targetResourceId;
@@ -96,23 +91,6 @@ public class DeleteInferDeploymentHpaResponse extends SdkResponse {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public DeleteInferDeploymentHpaResponse withType(String type) {
-        this.type = type;
-        return this;
-    }
-
-    /**
-     * **参数解释：** 自动扩缩容类型。 **取值范围：** - CRON_HPA：定时扩缩容策略 - METRIC_HPA：指标扩缩容策略
-     * @return type
-     */
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public DeleteInferDeploymentHpaResponse withTargetResourceId(String targetResourceId) {
@@ -264,7 +242,7 @@ public class DeleteInferDeploymentHpaResponse extends SdkResponse {
         }
         DeleteInferDeploymentHpaResponse that = (DeleteInferDeploymentHpaResponse) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.targetResourceId, that.targetResourceId)
+            && Objects.equals(this.targetResourceId, that.targetResourceId)
             && Objects.equals(this.targetResourceType, that.targetResourceType)
             && Objects.equals(this.minReplicas, that.minReplicas) && Objects.equals(this.maxReplicas, that.maxReplicas)
             && Objects.equals(this.status, that.status) && Objects.equals(this.workspaceId, that.workspaceId)
@@ -275,7 +253,6 @@ public class DeleteInferDeploymentHpaResponse extends SdkResponse {
     public int hashCode() {
         return Objects.hash(id,
             name,
-            type,
             targetResourceId,
             targetResourceType,
             minReplicas,
@@ -291,7 +268,6 @@ public class DeleteInferDeploymentHpaResponse extends SdkResponse {
         sb.append("class DeleteInferDeploymentHpaResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    targetResourceId: ").append(toIndentedString(targetResourceId)).append("\n");
         sb.append("    targetResourceType: ").append(toIndentedString(targetResourceType)).append("\n");
         sb.append("    minReplicas: ").append(toIndentedString(minReplicas)).append("\n");

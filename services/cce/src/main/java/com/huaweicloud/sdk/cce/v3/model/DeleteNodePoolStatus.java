@@ -34,6 +34,11 @@ public class DeleteNodePoolStatus {
     private Integer deletingNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "activeNode")
+
+    private Integer activeNode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configurationSyncedNodeCount")
 
     private Integer configurationSyncedNodeCount;
@@ -197,6 +202,23 @@ public class DeleteNodePoolStatus {
         this.deletingNode = deletingNode;
     }
 
+    public DeleteNodePoolStatus withActiveNode(Integer activeNode) {
+        this.activeNode = activeNode;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 当前节点池中就绪的节点数量。 **取值范围**： 不涉及
+     * @return activeNode
+     */
+    public Integer getActiveNode() {
+        return activeNode;
+    }
+
+    public void setActiveNode(Integer activeNode) {
+        this.activeNode = activeNode;
+    }
+
     public DeleteNodePoolStatus withConfigurationSyncedNodeCount(Integer configurationSyncedNodeCount) {
         this.configurationSyncedNodeCount = configurationSyncedNodeCount;
         return this;
@@ -325,7 +347,7 @@ public class DeleteNodePoolStatus {
         DeleteNodePoolStatus that = (DeleteNodePoolStatus) obj;
         return Objects.equals(this.currentNode, that.currentNode)
             && Objects.equals(this.creatingNode, that.creatingNode)
-            && Objects.equals(this.deletingNode, that.deletingNode)
+            && Objects.equals(this.deletingNode, that.deletingNode) && Objects.equals(this.activeNode, that.activeNode)
             && Objects.equals(this.configurationSyncedNodeCount, that.configurationSyncedNodeCount)
             && Objects.equals(this.phase, that.phase) && Objects.equals(this.jobId, that.jobId)
             && Objects.equals(this.conditions, that.conditions)
@@ -337,6 +359,7 @@ public class DeleteNodePoolStatus {
         return Objects.hash(currentNode,
             creatingNode,
             deletingNode,
+            activeNode,
             configurationSyncedNodeCount,
             phase,
             jobId,
@@ -351,6 +374,7 @@ public class DeleteNodePoolStatus {
         sb.append("    currentNode: ").append(toIndentedString(currentNode)).append("\n");
         sb.append("    creatingNode: ").append(toIndentedString(creatingNode)).append("\n");
         sb.append("    deletingNode: ").append(toIndentedString(deletingNode)).append("\n");
+        sb.append("    activeNode: ").append(toIndentedString(activeNode)).append("\n");
         sb.append("    configurationSyncedNodeCount: ")
             .append(toIndentedString(configurationSyncedNodeCount))
             .append("\n");

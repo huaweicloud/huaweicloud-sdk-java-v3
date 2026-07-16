@@ -99,6 +99,11 @@ public class TransportationLicenseResult {
     private String adjustedImage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_temporary_certificate")
+
+    private Boolean isTemporaryCertificate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
 
     private Object confidence;
@@ -408,6 +413,23 @@ public class TransportationLicenseResult {
         this.adjustedImage = adjustedImage;
     }
 
+    public TransportationLicenseResult withIsTemporaryCertificate(Boolean isTemporaryCertificate) {
+        this.isTemporaryCertificate = isTemporaryCertificate;
+        return this;
+    }
+
+    /**
+     * 是否是待理证，取值范围包括： - true：是待理证 - false：非待理证 
+     * @return isTemporaryCertificate
+     */
+    public Boolean getIsTemporaryCertificate() {
+        return isTemporaryCertificate;
+    }
+
+    public void setIsTemporaryCertificate(Boolean isTemporaryCertificate) {
+        this.isTemporaryCertificate = isTemporaryCertificate;
+    }
+
     public TransportationLicenseResult withConfidence(Object confidence) {
         this.confidence = confidence;
         return this;
@@ -449,6 +471,7 @@ public class TransportationLicenseResult {
             && Objects.equals(this.assessedTechnicalLevel, that.assessedTechnicalLevel)
             && Objects.equals(this.imageLocation, that.imageLocation)
             && Objects.equals(this.adjustedImage, that.adjustedImage)
+            && Objects.equals(this.isTemporaryCertificate, that.isTemporaryCertificate)
             && Objects.equals(this.confidence, that.confidence);
     }
 
@@ -471,6 +494,7 @@ public class TransportationLicenseResult {
             assessedTechnicalLevel,
             imageLocation,
             adjustedImage,
+            isTemporaryCertificate,
             confidence);
     }
 
@@ -495,6 +519,7 @@ public class TransportationLicenseResult {
         sb.append("    assessedTechnicalLevel: ").append(toIndentedString(assessedTechnicalLevel)).append("\n");
         sb.append("    imageLocation: ").append(toIndentedString(imageLocation)).append("\n");
         sb.append("    adjustedImage: ").append(toIndentedString(adjustedImage)).append("\n");
+        sb.append("    isTemporaryCertificate: ").append(toIndentedString(isTemporaryCertificate)).append("\n");
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
         sb.append("}");
         return sb.toString();

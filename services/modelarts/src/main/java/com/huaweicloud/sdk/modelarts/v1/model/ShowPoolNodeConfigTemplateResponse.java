@@ -13,9 +13,9 @@ import java.util.function.Consumer;
 public class ShowPoolNodeConfigTemplateResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "apiversion")
+    @JsonProperty(value = "apiVersion")
 
-    private String apiversion;
+    private String apiVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kind")
@@ -37,21 +37,21 @@ public class ShowPoolNodeConfigTemplateResponse extends SdkResponse {
 
     private String xRequestId;
 
-    public ShowPoolNodeConfigTemplateResponse withApiversion(String apiversion) {
-        this.apiversion = apiversion;
+    public ShowPoolNodeConfigTemplateResponse withApiVersion(String apiVersion) {
+        this.apiVersion = apiVersion;
         return this;
     }
 
     /**
      * **参数解释**：API版本。 **取值范围**：固定为v2。
-     * @return apiversion
+     * @return apiVersion
      */
-    public String getApiversion() {
-        return apiversion;
+    public String getApiVersion() {
+        return apiVersion;
     }
 
-    public void setApiversion(String apiversion) {
-        this.apiversion = apiversion;
+    public void setApiVersion(String apiVersion) {
+        this.apiVersion = apiVersion;
     }
 
     public ShowPoolNodeConfigTemplateResponse withKind(String kind) {
@@ -151,21 +151,21 @@ public class ShowPoolNodeConfigTemplateResponse extends SdkResponse {
             return false;
         }
         ShowPoolNodeConfigTemplateResponse that = (ShowPoolNodeConfigTemplateResponse) obj;
-        return Objects.equals(this.apiversion, that.apiversion) && Objects.equals(this.kind, that.kind)
+        return Objects.equals(this.apiVersion, that.apiVersion) && Objects.equals(this.kind, that.kind)
             && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(apiversion, kind, metadata, spec, xRequestId);
+        return Objects.hash(apiVersion, kind, metadata, spec, xRequestId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowPoolNodeConfigTemplateResponse {\n");
-        sb.append("    apiversion: ").append(toIndentedString(apiversion)).append("\n");
+        sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
         sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
