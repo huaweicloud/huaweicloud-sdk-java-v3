@@ -72,6 +72,11 @@ public class TenantViewDTO {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nameEn")
+
+    private String nameEn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rdmDeleteFlag")
 
     private Integer rdmDeleteFlag;
@@ -102,7 +107,7 @@ public class TenantViewDTO {
     }
 
     /**
-     * **参数解释：**  类名。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  租户对象的类名。  **取值范围：**  不涉及。
      * @return className
      */
     public String getClassName() {
@@ -119,7 +124,7 @@ public class TenantViewDTO {
     }
 
     /**
-     * **参数解释：**  租户编码。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  租户编码，用于多租户场景下的租户唯一标识。  **取值范围：**  不涉及。
      * @return code
      */
     public String getCode() {
@@ -136,7 +141,7 @@ public class TenantViewDTO {
     }
 
     /**
-     * **参数解释：**  创建时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  租户对象的创建时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。
      * @return createTime
      */
     public String getCreateTime() {
@@ -153,7 +158,7 @@ public class TenantViewDTO {
     }
 
     /**
-     * **参数解释：**  创建者。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  租户对象的创建者账号。  **取值范围：**  不涉及。
      * @return creator
      */
     public String getCreator() {
@@ -170,7 +175,7 @@ public class TenantViewDTO {
     }
 
     /**
-     * **参数解释：**  租户使用的数据源名称。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  租户使用的数据源名称，用于多租户数据隔离。  **取值范围：**  不涉及。
      * @return dataSource
      */
     public String getDataSource() {
@@ -187,7 +192,7 @@ public class TenantViewDTO {
     }
 
     /**
-     * **参数解释：**  描述信息。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  租户描述信息。  **取值范围：**  不涉及。
      * @return description
      */
     public String getDescription() {
@@ -204,7 +209,7 @@ public class TenantViewDTO {
     }
 
     /**
-     * **参数解释：**  失效标识。   **取值范围：**  - true：失效。  - false：未失效。  **默认取值：**  false。 
+     * **参数解释：**  租户失效标识，用于标识租户是否已失效。   **取值范围：**  - true：失效。  - false：未失效（默认）。
      * @return disableFlag
      */
     public Boolean getDisableFlag() {
@@ -221,7 +226,7 @@ public class TenantViewDTO {
     }
 
     /**
-     * **参数解释：**  唯一标识。   **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
+     * **参数解释：**  租户的唯一标识。   **取值范围：**  -9223372036854775808到9223372036854775807的整数。
      * @return id
      */
     public String getId() {
@@ -238,7 +243,7 @@ public class TenantViewDTO {
     }
 
     /**
-     * **参数解释：**  KIA密级。   **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  租户KIA密级。   **取值范围：**  不涉及。
      * @return kiaguid
      */
     public String getKiaguid() {
@@ -255,7 +260,7 @@ public class TenantViewDTO {
     }
 
     /**
-     * **参数解释：**  最后更新时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  租户的最后更新时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -272,7 +277,7 @@ public class TenantViewDTO {
     }
 
     /**
-     * **参数解释：**  修改人。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  租户的更新者账号。  **取值范围：**  不涉及。
      * @return modifier
      */
     public String getModifier() {
@@ -289,7 +294,7 @@ public class TenantViewDTO {
     }
 
     /**
-     * **参数解释：**  中文名称。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  租户中文名称。  **取值范围：**  不涉及。
      * @return name
      */
     public String getName() {
@@ -300,13 +305,30 @@ public class TenantViewDTO {
         this.name = name;
     }
 
+    public TenantViewDTO withNameEn(String nameEn) {
+        this.nameEn = nameEn;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  租户英文名称。  **取值范围：**  不涉及。
+     * @return nameEn
+     */
+    public String getNameEn() {
+        return nameEn;
+    }
+
+    public void setNameEn(String nameEn) {
+        this.nameEn = nameEn;
+    }
+
     public TenantViewDTO withRdmDeleteFlag(Integer rdmDeleteFlag) {
         this.rdmDeleteFlag = rdmDeleteFlag;
         return this;
     }
 
     /**
-     * **参数解释：**  软删除标识。  **取值范围：**  - 0：表示未删除。 - 1：表示已删除。  **默认取值：**  0。 
+     * **参数解释：**  软删除标识。  **取值范围：**  - 0：表示未删除。 - 1：表示已删除。
      * @return rdmDeleteFlag
      */
     public Integer getRdmDeleteFlag() {
@@ -323,7 +345,7 @@ public class TenantViewDTO {
     }
 
     /**
-     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  租户扩展类型。  **取值范围：**  不涉及。
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -340,7 +362,7 @@ public class TenantViewDTO {
     }
 
     /**
-     * **参数解释：**  系统版本。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  租户对象的系统版本号。  **取值范围：**  不涉及。
      * @return rdmVersion
      */
     public Integer getRdmVersion() {
@@ -357,7 +379,7 @@ public class TenantViewDTO {
     }
 
     /**
-     * **参数解释：**  安全密级。  **取值范围：**  - INTERNAL：内部公开。 - SECRET：秘密。 - CONFIDENTIAL：机密。 - TOP_SECRET：绝密。  **默认取值：**  不涉及。 
+     * **参数解释：**  租户安全密级，用于标识租户信息的安全等级。  **取值范围：**  - internal：内部公开。 - secret：秘密。 - confidential：机密。 - top_secret：绝密。
      * @return securityLevel
      */
     public String getSecurityLevel() {
@@ -409,7 +431,7 @@ public class TenantViewDTO {
             && Objects.equals(this.disableFlag, that.disableFlag) && Objects.equals(this.id, that.id)
             && Objects.equals(this.kiaguid, that.kiaguid) && Objects.equals(this.lastUpdateTime, that.lastUpdateTime)
             && Objects.equals(this.modifier, that.modifier) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.rdmDeleteFlag, that.rdmDeleteFlag)
+            && Objects.equals(this.nameEn, that.nameEn) && Objects.equals(this.rdmDeleteFlag, that.rdmDeleteFlag)
             && Objects.equals(this.rdmExtensionType, that.rdmExtensionType)
             && Objects.equals(this.rdmVersion, that.rdmVersion)
             && Objects.equals(this.securityLevel, that.securityLevel) && Objects.equals(this.tenant, that.tenant);
@@ -429,6 +451,7 @@ public class TenantViewDTO {
             lastUpdateTime,
             modifier,
             name,
+            nameEn,
             rdmDeleteFlag,
             rdmExtensionType,
             rdmVersion,
@@ -452,6 +475,7 @@ public class TenantViewDTO {
         sb.append("    lastUpdateTime: ").append(toIndentedString(lastUpdateTime)).append("\n");
         sb.append("    modifier: ").append(toIndentedString(modifier)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    nameEn: ").append(toIndentedString(nameEn)).append("\n");
         sb.append("    rdmDeleteFlag: ").append(toIndentedString(rdmDeleteFlag)).append("\n");
         sb.append("    rdmExtensionType: ").append(toIndentedString(rdmExtensionType)).append("\n");
         sb.append("    rdmVersion: ").append(toIndentedString(rdmVersion)).append("\n");

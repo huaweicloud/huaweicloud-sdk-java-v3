@@ -82,7 +82,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * **参数解释：**  类名。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  类名。  **取值范围：**  不涉及。 
      * @return className
      */
     public String getClassName() {
@@ -99,7 +99,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * **参数解释：**  创建时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  创建时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。 
      * @return createTime
      */
     public String getCreateTime() {
@@ -116,7 +116,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * **参数解释：**  创建者。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  创建者账号。  **取值范围：**  不涉及。 
      * @return creator
      */
     public String getCreator() {
@@ -133,7 +133,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * **参数解释：**  唯一标识。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
+     * **参数解释：**  扩展属性唯一标识。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。 
      * @return id
      */
     public String getId() {
@@ -150,7 +150,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * **参数解释：**  最后更新时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  最后更新时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。 
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -167,7 +167,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * **参数解释：**  修改人。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  更新者账号。  **取值范围：**  不涉及。 
      * @return modifier
      */
     public String getModifier() {
@@ -184,7 +184,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * **参数解释：**  中文名称。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  扩展属性中文名称。  **取值范围：**  不涉及。 
      * @return name
      */
     public String getName() {
@@ -201,7 +201,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * **参数解释：**  软删除标识。  **取值范围：**  - 0：表示未删除。 - 1：表示已删除。  **默认取值：**  0。 
+     * **参数解释：**  软删除标识。  **取值范围：**  - 0：表示未删除（默认）。 - 1：表示已删除。 
      * @return rdmDeleteFlag
      */
     public Integer getRdmDeleteFlag() {
@@ -218,7 +218,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。 
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -235,7 +235,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * **参数解释：**  系统版本。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  系统版本号。  **取值范围：**  不涉及。 
      * @return rdmVersion
      */
     public Integer getRdmVersion() {
@@ -278,7 +278,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * **参数解释：**  扩展属性类型。  **约束限制：**  不涉及。  **取值范围：**  - STRING：文本 - TEXT：长文本 - INTEGER：整型 - LONG：长整型 - DECIMAL：浮点型 - DECIMAL_WITH_PRECISION：浮点型（自定义精度） - FILE：文件 - BOOLEAN：布尔值 - DATE：日期 - ENUM：枚举 - CATEGORY：分类 - URL：URL - REFERENCE_OBJECT：参考对象  **默认取值：**  不涉及。 
+     * **参数解释：**  扩展属性类型。  **约束限制：**  不涉及。  **取值范围：**  - STRING：文本 - TEXT：长文本 - INTEGER：整型 - LONG：长整型 - DECIMAL：浮点型 - DECIMAL_WITH_PRECISION：浮点型（自定义精度） - FILE：文件 - BOOLEAN：布尔值 - DATE：日期 - ENUM：枚举 - CATEGORY：分类 - URL：URL - REFERENCE_OBJECT：参考对象 
      * @return type
      */
     public String getType() {
@@ -295,7 +295,7 @@ public class EXAValueViewDTO {
     }
 
     /**
-     * **参数解释：**  值。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  扩展属性值。  **取值范围：**  不涉及。 
      * @return value
      */
     public Object getValue() {

@@ -11,6 +11,11 @@ import java.util.Objects;
 public class CompareVersionVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "basicVersion")
 
     private String basicVersion;
@@ -20,10 +25,22 @@ public class CompareVersionVO {
 
     private String correlationVersion;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
+    public CompareVersionVO withId(String id) {
+        this.id = id;
+        return this;
+    }
 
-    private String id;
+    /**
+     * **参数解释：**  数据实例ID，用于指定待对比版本的数据实例。 获取方法请参见[分页查询实例 - ShowFindUsingPost](https://support.huaweicloud.com/api-idme/ShowFindUsingPost.html)。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public CompareVersionVO withBasicVersion(String basicVersion) {
         this.basicVersion = basicVersion;
@@ -31,7 +48,7 @@ public class CompareVersionVO {
     }
 
     /**
-     * **参数解释：**  基础版本号。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  基础版本号，作为对比的基准版本。对应系统版本号（rdmVersion）。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return basicVersion
      */
     public String getBasicVersion() {
@@ -48,7 +65,7 @@ public class CompareVersionVO {
     }
 
     /**
-     * **参数解释：**  对比版本号。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  对比版本号，与基础版本进行对比的目标版本。对应系统版本号（rdmVersion）。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return correlationVersion
      */
     public String getCorrelationVersion() {
@@ -57,23 +74,6 @@ public class CompareVersionVO {
 
     public void setCorrelationVersion(String correlationVersion) {
         this.correlationVersion = correlationVersion;
-    }
-
-    public CompareVersionVO withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    /**
-     * **参数解释：**  实例ID。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     @Override
@@ -85,22 +85,22 @@ public class CompareVersionVO {
             return false;
         }
         CompareVersionVO that = (CompareVersionVO) obj;
-        return Objects.equals(this.basicVersion, that.basicVersion)
-            && Objects.equals(this.correlationVersion, that.correlationVersion) && Objects.equals(this.id, that.id);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.basicVersion, that.basicVersion)
+            && Objects.equals(this.correlationVersion, that.correlationVersion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(basicVersion, correlationVersion, id);
+        return Objects.hash(id, basicVersion, correlationVersion);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CompareVersionVO {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    basicVersion: ").append(toIndentedString(basicVersion)).append("\n");
         sb.append("    correlationVersion: ").append(toIndentedString(correlationVersion)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

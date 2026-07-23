@@ -16,14 +16,14 @@ public class VersionModelVersionUpdateDTO {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "iteration")
-
-    private Integer iteration;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
     private String version;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iteration")
+
+    private Integer iteration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "modifier")
@@ -36,7 +36,7 @@ public class VersionModelVersionUpdateDTO {
     }
 
     /**
-     * **参数解释：**  唯一标识。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
+     * **参数解释：**  待升级实例的系统唯一标识。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。
      * @return id
      */
     public String getId() {
@@ -47,30 +47,13 @@ public class VersionModelVersionUpdateDTO {
         this.id = id;
     }
 
-    public VersionModelVersionUpdateDTO withIteration(Integer iteration) {
-        this.iteration = iteration;
-        return this;
-    }
-
-    /**
-     * **参数解释：**  迭代版本。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
-     * @return iteration
-     */
-    public Integer getIteration() {
-        return iteration;
-    }
-
-    public void setIteration(Integer iteration) {
-        this.iteration = iteration;
-    }
-
     public VersionModelVersionUpdateDTO withVersion(String version) {
         this.version = version;
         return this;
     }
 
     /**
-     * **参数解释：**  版本号。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  目标修订版本号（小版本）。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return version
      */
     public String getVersion() {
@@ -81,13 +64,30 @@ public class VersionModelVersionUpdateDTO {
         this.version = version;
     }
 
+    public VersionModelVersionUpdateDTO withIteration(Integer iteration) {
+        this.iteration = iteration;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  目标迭代版本号（大版本）。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * @return iteration
+     */
+    public Integer getIteration() {
+        return iteration;
+    }
+
+    public void setIteration(Integer iteration) {
+        this.iteration = iteration;
+    }
+
     public VersionModelVersionUpdateDTO withModifier(String modifier) {
         this.modifier = modifier;
         return this;
     }
 
     /**
-     * **参数解释：**  修改人。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  执行升级操作的更新者账号。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return modifier
      */
     public String getModifier() {
@@ -107,13 +107,13 @@ public class VersionModelVersionUpdateDTO {
             return false;
         }
         VersionModelVersionUpdateDTO that = (VersionModelVersionUpdateDTO) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.iteration, that.iteration)
-            && Objects.equals(this.version, that.version) && Objects.equals(this.modifier, that.modifier);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.iteration, that.iteration) && Objects.equals(this.modifier, that.modifier);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, iteration, version, modifier);
+        return Objects.hash(id, version, iteration, modifier);
     }
 
     @Override
@@ -121,8 +121,8 @@ public class VersionModelVersionUpdateDTO {
         StringBuilder sb = new StringBuilder();
         sb.append("class VersionModelVersionUpdateDTO {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    iteration: ").append(toIndentedString(iteration)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    iteration: ").append(toIndentedString(iteration)).append("\n");
         sb.append("    modifier: ").append(toIndentedString(modifier)).append("\n");
         sb.append("}");
         return sb.toString();

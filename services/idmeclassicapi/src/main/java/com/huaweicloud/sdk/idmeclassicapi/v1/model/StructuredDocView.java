@@ -97,9 +97,9 @@ public class StructuredDocView {
     private String parentDocumentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_id")
+    @JsonProperty(value = "instance")
 
-    private String instanceId;
+    private ObjectReferenceViewDTO instance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model_name")
@@ -122,7 +122,7 @@ public class StructuredDocView {
     }
 
     /**
-     * **参数解释：**  创建者。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  创建者账号，标识创建该文档的用户。  **取值范围：**  不涉及。
      * @return creator
      */
     public String getCreator() {
@@ -139,7 +139,7 @@ public class StructuredDocView {
     }
 
     /**
-     * **参数解释：**  创建时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  创建时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。
      * @return createTime
      */
     public String getCreateTime() {
@@ -156,7 +156,7 @@ public class StructuredDocView {
     }
 
     /**
-     * **参数解释：**  最后更新时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  最后更新时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -173,7 +173,7 @@ public class StructuredDocView {
     }
 
     /**
-     * **参数解释：**  系统版本。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  系统版本号，用于数据版本控制。  **取值范围：**  不涉及。
      * @return rdmVersion
      */
     public Integer getRdmVersion() {
@@ -190,7 +190,7 @@ public class StructuredDocView {
     }
 
     /**
-     * **参数解释：**  软删除标识，参数值为0或1。  **取值范围：**  - 0：表示未删除。 - 1：表示已删除。  **默认取值：**  不涉及。
+     * **参数解释：**  软删除标识。  **取值范围：**  - 0：表示未删除。 - 1：表示已删除。
      * @return rdmDeleteFlag
      */
     public Integer getRdmDeleteFlag() {
@@ -207,7 +207,7 @@ public class StructuredDocView {
     }
 
     /**
-     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  扩展类型，标识对象的扩展类别。  **取值范围：**  不涉及。
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -250,7 +250,7 @@ public class StructuredDocView {
     }
 
     /**
-     * **参数解释：**  类名。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  类名，标识对象的Java类名称。  **取值范围：**  不涉及。
      * @return className
      */
     public String getClassName() {
@@ -267,7 +267,7 @@ public class StructuredDocView {
     }
 
     /**
-     * **参数解释：**  类名。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  类名，标识对象的类类型。  **取值范围：**  不涉及。
      * @return clazz
      */
     public String getClazz() {
@@ -284,7 +284,7 @@ public class StructuredDocView {
     }
 
     /**
-     * **参数解释：**  唯一标识。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。
+     * **参数解释：**  唯一标识，系统生成的文档主键ID。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。
      * @return id
      */
     public String getId() {
@@ -301,7 +301,7 @@ public class StructuredDocView {
     }
 
     /**
-     * **参数解释：**  kooPage文档ID。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  KooPage文档ID，系统生成的KooPage文档唯一标识。  **取值范围：**  不涉及。
      * @return documentId
      */
     public String getDocumentId() {
@@ -318,7 +318,7 @@ public class StructuredDocView {
     }
 
     /**
-     * **参数解释：**  文档标题。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  文档标题。  **取值范围：**  不涉及。
      * @return title
      */
     public String getTitle() {
@@ -335,7 +335,7 @@ public class StructuredDocView {
     }
 
     /**
-     * **参数解释：**  文档类型。  **取值范围：**  - directory：目录。 - pageDocument：Page文档。 - boardDocument：Board文档。 - mindDocument：Mind文档。 - drawDocument：Draw文档。  **默认取值：**  不涉及。
+     * **参数解释：**  文档类型。  **取值范围：**  - directory：目录。 - pageDocument：Page文档。 - boardDocument：Board文档。 - mindDocument：Mind文档。 - drawDocument：Draw文档。
      * @return type
      */
     public String getType() {
@@ -352,7 +352,7 @@ public class StructuredDocView {
     }
 
     /**
-     * **参数解释：**  模板ID。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  模板ID。  **取值范围：**  不涉及。
      * @return templateId
      */
     public String getTemplateId() {
@@ -369,7 +369,7 @@ public class StructuredDocView {
     }
 
     /**
-     * **参数解释：**  团队ID。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  团队ID。  **取值范围：**  不涉及。
      * @return organizationId
      */
     public String getOrganizationId() {
@@ -386,7 +386,7 @@ public class StructuredDocView {
     }
 
     /**
-     * **参数解释：**  知识库ID。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  知识库ID。  **取值范围：**  不涉及。
      * @return wikiId
      */
     public String getWikiId() {
@@ -403,7 +403,7 @@ public class StructuredDocView {
     }
 
     /**
-     * **参数解释：**  父文档ID。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  父文档ID。  **取值范围：**  不涉及。
      * @return parentDocumentId
      */
     public String getParentDocumentId() {
@@ -414,21 +414,30 @@ public class StructuredDocView {
         this.parentDocumentId = parentDocumentId;
     }
 
-    public StructuredDocView withInstanceId(String instanceId) {
-        this.instanceId = instanceId;
+    public StructuredDocView withInstance(ObjectReferenceViewDTO instance) {
+        this.instance = instance;
+        return this;
+    }
+
+    public StructuredDocView withInstance(Consumer<ObjectReferenceViewDTO> instanceSetter) {
+        if (this.instance == null) {
+            this.instance = new ObjectReferenceViewDTO();
+            instanceSetter.accept(this.instance);
+        }
+
         return this;
     }
 
     /**
-     * **参数解释：**  实例ID。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
-     * @return instanceId
+     * Get instance
+     * @return instance
      */
-    public String getInstanceId() {
-        return instanceId;
+    public ObjectReferenceViewDTO getInstance() {
+        return instance;
     }
 
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
+    public void setInstance(ObjectReferenceViewDTO instance) {
+        this.instance = instance;
     }
 
     public StructuredDocView withModelName(String modelName) {
@@ -437,7 +446,7 @@ public class StructuredDocView {
     }
 
     /**
-     * **参数解释：**  模型名称。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  模型名称，标识文档关联的数据模型名称。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return modelName
      */
     public String getModelName() {
@@ -454,7 +463,7 @@ public class StructuredDocView {
     }
 
     /**
-     * **参数解释：**  创建者ID。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  创建者ID，标识创建该文档的用户ID。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return createUserId
      */
     public String getCreateUserId() {
@@ -471,7 +480,7 @@ public class StructuredDocView {
     }
 
     /**
-     * **参数解释：**  修改人。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  更新者账号，标识最后更新该文档的用户。  **取值范围：**  不涉及。
      * @return modifier
      */
     public String getModifier() {
@@ -502,7 +511,7 @@ public class StructuredDocView {
             && Objects.equals(this.templateId, that.templateId)
             && Objects.equals(this.organizationId, that.organizationId) && Objects.equals(this.wikiId, that.wikiId)
             && Objects.equals(this.parentDocumentId, that.parentDocumentId)
-            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.modelName, that.modelName)
+            && Objects.equals(this.instance, that.instance) && Objects.equals(this.modelName, that.modelName)
             && Objects.equals(this.createUserId, that.createUserId) && Objects.equals(this.modifier, that.modifier);
     }
 
@@ -525,7 +534,7 @@ public class StructuredDocView {
             organizationId,
             wikiId,
             parentDocumentId,
-            instanceId,
+            instance,
             modelName,
             createUserId,
             modifier);
@@ -552,7 +561,7 @@ public class StructuredDocView {
         sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
         sb.append("    wikiId: ").append(toIndentedString(wikiId)).append("\n");
         sb.append("    parentDocumentId: ").append(toIndentedString(parentDocumentId)).append("\n");
-        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    instance: ").append(toIndentedString(instance)).append("\n");
         sb.append("    modelName: ").append(toIndentedString(modelName)).append("\n");
         sb.append("    createUserId: ").append(toIndentedString(createUserId)).append("\n");
         sb.append("    modifier: ").append(toIndentedString(modifier)).append("\n");

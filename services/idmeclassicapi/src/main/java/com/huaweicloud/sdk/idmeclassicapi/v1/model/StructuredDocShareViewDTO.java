@@ -64,7 +64,7 @@ public class StructuredDocShareViewDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "structuredDoc")
 
-    private StructuredDocView structuredDoc;
+    private StructuredDocViewDTO structuredDoc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shareUserName")
@@ -97,7 +97,7 @@ public class StructuredDocShareViewDTO {
     }
 
     /**
-     * **参数解释**：  唯一标识。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
+     * **参数解释：**  分享权限记录的唯一标识，可用于批量删除分享权限接口定位目标记录。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return id
      */
     public String getId() {
@@ -114,7 +114,7 @@ public class StructuredDocShareViewDTO {
     }
 
     /**
-     * **参数解释：**  创建者。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  创建者账号，标识创建该分享记录的用户。  **取值范围：**  不涉及。
      * @return creator
      */
     public String getCreator() {
@@ -131,7 +131,7 @@ public class StructuredDocShareViewDTO {
     }
 
     /**
-     * **参数解释：**  修改人。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  更新者账号，标识最后更新该分享记录的用户。  **取值范围：**  不涉及。
      * @return modifier
      */
     public String getModifier() {
@@ -148,7 +148,7 @@ public class StructuredDocShareViewDTO {
     }
 
     /**
-     * **参数解释：**  创建时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  创建时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。
      * @return createTime
      */
     public String getCreateTime() {
@@ -165,7 +165,7 @@ public class StructuredDocShareViewDTO {
     }
 
     /**
-     * **参数解释：**  最后更新时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  最后更新时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -182,7 +182,7 @@ public class StructuredDocShareViewDTO {
     }
 
     /**
-     * **参数解释：**  系统版本。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  系统版本号，用于数据版本控制。  **取值范围：**  不涉及。
      * @return rdmVersion
      */
     public Integer getRdmVersion() {
@@ -199,7 +199,7 @@ public class StructuredDocShareViewDTO {
     }
 
     /**
-     * **参数解释：**  软删除标识。  **取值范围：**  - 0：表示未删除。 - 1：表示已删除。  **默认取值：**  0。
+     * **参数解释：**  软删除标识。  **取值范围：**  - 0：表示未删除。 - 1：表示已删除。
      * @return rdmDeleteFlag
      */
     public Integer getRdmDeleteFlag() {
@@ -216,7 +216,7 @@ public class StructuredDocShareViewDTO {
     }
 
     /**
-     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  扩展类型，标识对象的扩展类别。  **取值范围：**  不涉及。
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -259,7 +259,7 @@ public class StructuredDocShareViewDTO {
     }
 
     /**
-     * **参数解释：**  类名。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  类名，标识对象的Java类名称。  **取值范围：**  不涉及。
      * @return className
      */
     public String getClassName() {
@@ -270,14 +270,14 @@ public class StructuredDocShareViewDTO {
         this.className = className;
     }
 
-    public StructuredDocShareViewDTO withStructuredDoc(StructuredDocView structuredDoc) {
+    public StructuredDocShareViewDTO withStructuredDoc(StructuredDocViewDTO structuredDoc) {
         this.structuredDoc = structuredDoc;
         return this;
     }
 
-    public StructuredDocShareViewDTO withStructuredDoc(Consumer<StructuredDocView> structuredDocSetter) {
+    public StructuredDocShareViewDTO withStructuredDoc(Consumer<StructuredDocViewDTO> structuredDocSetter) {
         if (this.structuredDoc == null) {
-            this.structuredDoc = new StructuredDocView();
+            this.structuredDoc = new StructuredDocViewDTO();
             structuredDocSetter.accept(this.structuredDoc);
         }
 
@@ -288,11 +288,11 @@ public class StructuredDocShareViewDTO {
      * Get structuredDoc
      * @return structuredDoc
      */
-    public StructuredDocView getStructuredDoc() {
+    public StructuredDocViewDTO getStructuredDoc() {
         return structuredDoc;
     }
 
-    public void setStructuredDoc(StructuredDocView structuredDoc) {
+    public void setStructuredDoc(StructuredDocViewDTO structuredDoc) {
         this.structuredDoc = structuredDoc;
     }
 
@@ -302,7 +302,7 @@ public class StructuredDocShareViewDTO {
     }
 
     /**
-     * **参数解释**：  分享用户名。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
+     * **参数解释：**  分享用户名，标识执行分享操作的用户名称。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return shareUserName
      */
     public String getShareUserName() {
@@ -319,7 +319,7 @@ public class StructuredDocShareViewDTO {
     }
 
     /**
-     * **参数解释**：  被分享用户名。  **约束限制**：  不涉及。  **取值范围**：  all：表示所有人。  **默认取值**：  不涉及。
+     * **参数解释：**  被分享用户名，标识接收文档分享的用户名称。  **约束限制：**  不涉及。  **取值范围：**  - all：表示分享给所有人。 - 其他值：指定具体用户的名称。  **默认取值：**  不涉及。
      * @return sharedUserName
      */
     public String getSharedUserName() {
@@ -336,7 +336,7 @@ public class StructuredDocShareViewDTO {
     }
 
     /**
-     * **参数解释**：  被分享用户UserId。  **约束限制**：  不涉及。  **取值范围**：  all：表示所有人。  **默认取值**：  不涉及。
+     * **参数解释：**  被分享用户ID，标识接收文档分享的用户ID。  **约束限制：**  不涉及。  **取值范围：**  - all：表示分享给所有人。 - 其他值：指定具体用户的ID。  **默认取值：**  不涉及。
      * @return sharedUserId
      */
     public String getSharedUserId() {
@@ -353,7 +353,7 @@ public class StructuredDocShareViewDTO {
     }
 
     /**
-     * **参数解释**：  认证类型。  **约束限制**：  不涉及。  **取值范围**：  - read：只读。 - write：读写。  **默认取值**：  不涉及。
+     * **参数解释：**  认证类型，标识被分享用户对文档的访问权限级别。  **约束限制：**  不涉及。  **取值范围：**  - read：只读权限，被分享用户仅可查看文档内容。 - write：读写权限，被分享用户可查看和编辑文档内容。  **默认取值：**  不涉及。
      * @return authType
      */
     public String getAuthType() {
@@ -370,7 +370,7 @@ public class StructuredDocShareViewDTO {
     }
 
     /**
-     * **参数解释**：  被分享用户UserId。  **约束限制**：  不涉及。  **取值范围**：  all：表示所有人。  **默认取值**：  不涉及。
+     * **参数解释：**  分享用户ID，标识执行分享操作的用户ID。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return shareUserId
      */
     public String getShareUserId() {

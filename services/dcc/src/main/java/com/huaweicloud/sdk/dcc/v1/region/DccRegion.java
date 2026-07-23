@@ -40,6 +40,8 @@ public class DccRegion {
     public static final Region AP_SOUTHEAST_3 =
         new Region("ap-southeast-3", "https://dcc.ap-southeast-3.myhuaweicloud.com");
 
+    public static final Region CN_EAST_4 = new Region("cn-east-4", "https://dcc.cn-east-4.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("DCC");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -57,6 +59,7 @@ public class DccRegion {
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
         map.put("ap-southeast-2", AP_SOUTHEAST_2);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
+        map.put("cn-east-4", CN_EAST_4);
         return Collections.unmodifiableMap(map);
     }
 

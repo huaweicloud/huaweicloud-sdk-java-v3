@@ -57,7 +57,7 @@ public class MasterObjectQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  类名。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  类名。  **取值范围：**  不涉及。 
      * @return className
      */
     public String getClassName() {
@@ -74,7 +74,7 @@ public class MasterObjectQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  创建时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  创建时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。 
      * @return createTime
      */
     public String getCreateTime() {
@@ -91,7 +91,7 @@ public class MasterObjectQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  创建者。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  创建者账号。  **取值范围：**  不涉及。 
      * @return creator
      */
     public String getCreator() {
@@ -108,7 +108,7 @@ public class MasterObjectQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  唯一标识。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
+     * **参数解释：**  唯一标识。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。 
      * @return id
      */
     public String getId() {
@@ -125,7 +125,7 @@ public class MasterObjectQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  最后更新时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  最后更新时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。 
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -142,7 +142,7 @@ public class MasterObjectQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  修改人。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  更新者账号。  **取值范围：**  不涉及。 
      * @return modifier
      */
     public String getModifier() {
@@ -159,7 +159,7 @@ public class MasterObjectQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。 
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {

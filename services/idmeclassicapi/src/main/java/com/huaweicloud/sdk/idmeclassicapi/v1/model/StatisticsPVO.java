@@ -11,31 +11,14 @@ import java.util.Objects;
 public class StatisticsPVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "endTime")
-
-    private String endTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "startTime")
 
     private String startTime;
 
-    public StatisticsPVO withEndTime(String endTime) {
-        this.endTime = endTime;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "endTime")
 
-    /**
-     * **参数解释：**  结束时间。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
-     * @return endTime
-     */
-    public String getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
-    }
+    private String endTime;
 
     public StatisticsPVO withStartTime(String startTime) {
         this.startTime = startTime;
@@ -43,7 +26,7 @@ public class StatisticsPVO {
     }
 
     /**
-     * **参数解释：**  开始时间。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  统计区间的开始时间，用于指定统计时间区间的起始点。  **约束限制：**  不能为空，且必须早于或等于endTime。  **取值范围：**  UTC标准时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **默认取值：**  不涉及。
      * @return startTime
      */
     public String getStartTime() {
@@ -52,6 +35,23 @@ public class StatisticsPVO {
 
     public void setStartTime(String startTime) {
         this.startTime = startTime;
+    }
+
+    public StatisticsPVO withEndTime(String endTime) {
+        this.endTime = endTime;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  统计区间的结束时间，用于指定统计时间区间的结束点。  **约束限制：**  不能为空，且必须晚于或等于startTime。  **取值范围：**  UTC标准时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **默认取值：**  不涉及。
+     * @return endTime
+     */
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 
     @Override
@@ -63,20 +63,20 @@ public class StatisticsPVO {
             return false;
         }
         StatisticsPVO that = (StatisticsPVO) obj;
-        return Objects.equals(this.endTime, that.endTime) && Objects.equals(this.startTime, that.startTime);
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(endTime, startTime);
+        return Objects.hash(startTime, endTime);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class StatisticsPVO {\n");
-        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

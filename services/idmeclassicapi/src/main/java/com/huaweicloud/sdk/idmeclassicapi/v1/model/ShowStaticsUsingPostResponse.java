@@ -29,13 +29,18 @@ public class ShowStaticsUsingPostResponse extends SdkResponse {
 
     private List<String> errors = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pageInfo")
+
+    private PageInfoViewDTO pageInfo;
+
     public ShowStaticsUsingPostResponse withResult(String result) {
         this.result = result;
         return this;
     }
 
     /**
-     * **参数解释：**  请求结果。  **取值范围：**  - SUCCESS：请求成功。 - FAIL：请求失败。  **默认取值：**  不涉及。 
+     * **参数解释：**  请求结果。  **取值范围：**  - SUCCESS：请求成功。 - FAIL：请求失败。 
      * @return result
      */
     public String getResult() {
@@ -68,7 +73,7 @@ public class ShowStaticsUsingPostResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：**  请求数据。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  请求数据。  **取值范围：**  不涉及。
      * @return data
      */
     public List<Object> getData() {
@@ -101,7 +106,7 @@ public class ShowStaticsUsingPostResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：**  异常信息。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  异常信息，当请求失败时返回具体的错误描述。  **取值范围：**  不涉及。 
      * @return errors
      */
     public List<String> getErrors() {
@@ -110,6 +115,32 @@ public class ShowStaticsUsingPostResponse extends SdkResponse {
 
     public void setErrors(List<String> errors) {
         this.errors = errors;
+    }
+
+    public ShowStaticsUsingPostResponse withPageInfo(PageInfoViewDTO pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ShowStaticsUsingPostResponse withPageInfo(Consumer<PageInfoViewDTO> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfoViewDTO();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfoViewDTO getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfoViewDTO pageInfo) {
+        this.pageInfo = pageInfo;
     }
 
     @Override
@@ -122,12 +153,12 @@ public class ShowStaticsUsingPostResponse extends SdkResponse {
         }
         ShowStaticsUsingPostResponse that = (ShowStaticsUsingPostResponse) obj;
         return Objects.equals(this.result, that.result) && Objects.equals(this.data, that.data)
-            && Objects.equals(this.errors, that.errors);
+            && Objects.equals(this.errors, that.errors) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(result, data, errors);
+        return Objects.hash(result, data, errors, pageInfo);
     }
 
     @Override
@@ -137,6 +168,7 @@ public class ShowStaticsUsingPostResponse extends SdkResponse {
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

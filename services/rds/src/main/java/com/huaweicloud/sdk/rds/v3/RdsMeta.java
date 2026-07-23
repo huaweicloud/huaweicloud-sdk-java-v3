@@ -106,6 +106,9 @@ import com.huaweicloud.sdk.rds.v3.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateIntelligentKillSessionRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateIntelligentKillSessionResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateJobScheduleRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateJobScheduleRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.CreateJobScheduleResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateManualBackupRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateManualBackupRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.CreateManualBackupResponse;
@@ -170,6 +173,8 @@ import com.huaweicloud.sdk.rds.v3.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteJobRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteJobResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteJobScheduleRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteJobScheduleResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteLogConfigResponseBody;
 import com.huaweicloud.sdk.rds.v3.model.DeleteLogLtsConfigsRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteLogLtsConfigsResponse;
@@ -319,6 +324,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListJobInfoDetailRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListJobInfoDetailResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListJobInfoRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListJobInfoResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListJobSchedulesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListJobSchedulesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListLogLtsConfigsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListLogLtsConfigsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListMajorVersionFeatureRequest;
@@ -438,6 +445,9 @@ import com.huaweicloud.sdk.rds.v3.model.ModifyDbAgentJobRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyDbAgentJobRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ModifyDbAgentJobResponse;
 import com.huaweicloud.sdk.rds.v3.model.ModifyDnsNameRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.ModifyJobScheduleRequest;
+import com.huaweicloud.sdk.rds.v3.model.ModifyJobScheduleRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.ModifyJobScheduleResponse;
 import com.huaweicloud.sdk.rds.v3.model.ModifyMySqlProxyRouteModeRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyParamRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyPostgresqlHbaConfRequest;
@@ -10490,6 +10500,29 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateJobScheduleRequest, CreateJobScheduleResponse> createJobSchedule =
+        genForCreateJobSchedule();
+
+    private static HttpRequestDef<CreateJobScheduleRequest, CreateJobScheduleResponse> genForCreateJobSchedule() {
+        // basic
+        HttpRequestDef.Builder<CreateJobScheduleRequest, CreateJobScheduleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateJobScheduleRequest.class, CreateJobScheduleResponse.class)
+                .withName("CreateJobSchedule")
+                .withUri("/v3/{project_id}/db-job/schedules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateJobScheduleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateJobScheduleRequestBody.class),
+            f -> f.withMarshaller(CreateJobScheduleRequest::getBody, CreateJobScheduleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreatePublicationRequest, CreatePublicationResponse> createPublication =
         genForCreatePublication();
 
@@ -10643,6 +10676,29 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDistributionRequest::getXLanguage, DeleteDistributionRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteJobScheduleRequest, DeleteJobScheduleResponse> deleteJobSchedule =
+        genForDeleteJobSchedule();
+
+    private static HttpRequestDef<DeleteJobScheduleRequest, DeleteJobScheduleResponse> genForDeleteJobSchedule() {
+        // basic
+        HttpRequestDef.Builder<DeleteJobScheduleRequest, DeleteJobScheduleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteJobScheduleRequest.class, DeleteJobScheduleResponse.class)
+                .withName("DeleteJobSchedule")
+                .withUri("/v3/{project_id}/db-job/schedules/{schedule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("schedule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteJobScheduleRequest::getScheduleId, DeleteJobScheduleRequest::setScheduleId));
 
         // response
 
@@ -11161,6 +11217,44 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDistributorInstancesRequest::getXLanguage,
                 ListDistributorInstancesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListJobSchedulesRequest, ListJobSchedulesResponse> listJobSchedules =
+        genForListJobSchedules();
+
+    private static HttpRequestDef<ListJobSchedulesRequest, ListJobSchedulesResponse> genForListJobSchedules() {
+        // basic
+        HttpRequestDef.Builder<ListJobSchedulesRequest, ListJobSchedulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListJobSchedulesRequest.class, ListJobSchedulesResponse.class)
+                .withName("ListJobSchedules")
+                .withUri("/v3/{project_id}/db-job/schedules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("schedule_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobSchedulesRequest::getScheduleType, ListJobSchedulesRequest::setScheduleType));
+        builder.<String>withRequestField("schedule_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobSchedulesRequest::getScheduleId, ListJobSchedulesRequest::setScheduleId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobSchedulesRequest::getOffset, ListJobSchedulesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobSchedulesRequest::getLimit, ListJobSchedulesRequest::setLimit));
 
         // response
 
@@ -11730,6 +11824,34 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyDbAgentJobRequestBody.class),
             f -> f.withMarshaller(ModifyDbAgentJobRequest::getBody, ModifyDbAgentJobRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyJobScheduleRequest, ModifyJobScheduleResponse> modifyJobSchedule =
+        genForModifyJobSchedule();
+
+    private static HttpRequestDef<ModifyJobScheduleRequest, ModifyJobScheduleResponse> genForModifyJobSchedule() {
+        // basic
+        HttpRequestDef.Builder<ModifyJobScheduleRequest, ModifyJobScheduleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyJobScheduleRequest.class, ModifyJobScheduleResponse.class)
+                .withName("ModifyJobSchedule")
+                .withUri("/v3/{project_id}/db-job/schedules/{schedule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("schedule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyJobScheduleRequest::getScheduleId, ModifyJobScheduleRequest::setScheduleId));
+        builder.<ModifyJobScheduleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyJobScheduleRequestBody.class),
+            f -> f.withMarshaller(ModifyJobScheduleRequest::getBody, ModifyJobScheduleRequest::setBody));
 
         // response
 

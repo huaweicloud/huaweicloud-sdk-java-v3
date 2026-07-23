@@ -269,6 +269,21 @@ public class MonthlyBillRes {
 
     private BigDecimal periodNum;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_spot")
+
+    private String isSpot;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "promotion_type")
+
+    private String promotionType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "payment_type")
+
+    private String paymentType;
+
     public MonthlyBillRes withCycle(String cycle) {
         this.cycle = cycle;
         return this;
@@ -1161,6 +1176,57 @@ public class MonthlyBillRes {
         this.periodNum = periodNum;
     }
 
+    public MonthlyBillRes withIsSpot(String isSpot) {
+        this.isSpot = isSpot;
+        return this;
+    }
+
+    /**
+     * 是否竞价实例。该参数非必填，Y：是；N：否；--：不涉及（例如：包周期和预留实例不涉及此特性展示为\"--\"）。 说明：statistic_type=3有效，statistic_type=1或者2该字段保留。
+     * @return isSpot
+     */
+    public String getIsSpot() {
+        return isSpot;
+    }
+
+    public void setIsSpot(String isSpot) {
+        this.isSpot = isSpot;
+    }
+
+    public MonthlyBillRes withPromotionType(String promotionType) {
+        this.promotionType = promotionType;
+        return this;
+    }
+
+    /**
+     * 优惠类型。该参数非必填，优惠类型。不含折扣返回null或空串，多种折扣，逗号拼接，举例：300,500。 说明：statistic_type=3有效，statistic_type=1或者2该字段保留。
+     * @return promotionType
+     */
+    public String getPromotionType() {
+        return promotionType;
+    }
+
+    public void setPromotionType(String promotionType) {
+        this.promotionType = promotionType;
+    }
+
+    public MonthlyBillRes withPaymentType(String paymentType) {
+        this.paymentType = paymentType;
+        return this;
+    }
+
+    /**
+     * 付款方式。该参数非必填，付款方式，节省计划和预留实例有值；枚举值：ALL_UPFRONT：全预付；PARTIAL_UPFRONT：部分预付；NO_UPFRONT：零预付。 说明：statistic_type=3有效，statistic_type=1或者2该字段保留。
+     * @return paymentType
+     */
+    public String getPaymentType() {
+        return paymentType;
+    }
+
+    public void setPaymentType(String paymentType) {
+        this.paymentType = paymentType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1208,7 +1274,9 @@ public class MonthlyBillRes {
             && Objects.equals(this.effectiveTime, that.effectiveTime)
             && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.consumeTime, that.consumeTime)
             && Objects.equals(this.beId, that.beId) && Objects.equals(this.extendParams, that.extendParams)
-            && Objects.equals(this.accountName, that.accountName) && Objects.equals(this.periodNum, that.periodNum);
+            && Objects.equals(this.accountName, that.accountName) && Objects.equals(this.periodNum, that.periodNum)
+            && Objects.equals(this.isSpot, that.isSpot) && Objects.equals(this.promotionType, that.promotionType)
+            && Objects.equals(this.paymentType, that.paymentType);
     }
 
     @Override
@@ -1263,7 +1331,10 @@ public class MonthlyBillRes {
             beId,
             extendParams,
             accountName,
-            periodNum);
+            periodNum,
+            isSpot,
+            promotionType,
+            paymentType);
     }
 
     @Override
@@ -1321,6 +1392,9 @@ public class MonthlyBillRes {
         sb.append("    extendParams: ").append(toIndentedString(extendParams)).append("\n");
         sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
         sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
+        sb.append("    isSpot: ").append(toIndentedString(isSpot)).append("\n");
+        sb.append("    promotionType: ").append(toIndentedString(promotionType)).append("\n");
+        sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

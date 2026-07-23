@@ -14,14 +14,31 @@ import java.util.function.Consumer;
 public class RDMParamVOListLifecycleManagedModelUpdateLifecycleStateDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "applicationId")
+
+    private String applicationId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "params")
 
     private List<LifecycleManagedModelUpdateLifecycleStateDTO> params = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "applicationId")
+    public RDMParamVOListLifecycleManagedModelUpdateLifecycleStateDTO withApplicationId(String applicationId) {
+        this.applicationId = applicationId;
+        return this;
+    }
 
-    private String applicationId;
+    /**
+     * **参数解释：**  应用ID，用于指定实例所属的应用。 当URL路径中已能明确应用上下文时，此参数可不传。 获取方法请参见[获取租户下的应用清单 - ListApps](https://support.huaweicloud.com/api-idme/ListApps.html)。  **约束限制：**  不涉及。  **取值范围：**  由英文字母和数字组成，且长度固定为1-32个字符。  **默认取值：**  不涉及。
+     * @return applicationId
+     */
+    public String getApplicationId() {
+        return applicationId;
+    }
+
+    public void setApplicationId(String applicationId) {
+        this.applicationId = applicationId;
+    }
 
     public RDMParamVOListLifecycleManagedModelUpdateLifecycleStateDTO withParams(
         List<LifecycleManagedModelUpdateLifecycleStateDTO> params) {
@@ -48,7 +65,7 @@ public class RDMParamVOListLifecycleManagedModelUpdateLifecycleStateDTO {
     }
 
     /**
-     * **参数解释：**  迭代版本。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  请求参数对象数组，每个元素包含一个待修改生命周期状态的数据实例信息。支持批量操作。  **约束限制：**  单次请求不超过1000条。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return params
      */
     public List<LifecycleManagedModelUpdateLifecycleStateDTO> getParams() {
@@ -57,23 +74,6 @@ public class RDMParamVOListLifecycleManagedModelUpdateLifecycleStateDTO {
 
     public void setParams(List<LifecycleManagedModelUpdateLifecycleStateDTO> params) {
         this.params = params;
-    }
-
-    public RDMParamVOListLifecycleManagedModelUpdateLifecycleStateDTO withApplicationId(String applicationId) {
-        this.applicationId = applicationId;
-        return this;
-    }
-
-    /**
-     * **参数解释**：  应用ID。  **约束限制**：  不涉及。  **取值范围**：  由英文字母和数字组成，且长度为32个字符。  **默认取值**：  不涉及。
-     * @return applicationId
-     */
-    public String getApplicationId() {
-        return applicationId;
-    }
-
-    public void setApplicationId(String applicationId) {
-        this.applicationId = applicationId;
     }
 
     @Override
@@ -86,20 +86,20 @@ public class RDMParamVOListLifecycleManagedModelUpdateLifecycleStateDTO {
         }
         RDMParamVOListLifecycleManagedModelUpdateLifecycleStateDTO that =
             (RDMParamVOListLifecycleManagedModelUpdateLifecycleStateDTO) obj;
-        return Objects.equals(this.params, that.params) && Objects.equals(this.applicationId, that.applicationId);
+        return Objects.equals(this.applicationId, that.applicationId) && Objects.equals(this.params, that.params);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(params, applicationId);
+        return Objects.hash(applicationId, params);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RDMParamVOListLifecycleManagedModelUpdateLifecycleStateDTO {\n");
-        sb.append("    params: ").append(toIndentedString(params)).append("\n");
         sb.append("    applicationId: ").append(toIndentedString(applicationId)).append("\n");
+        sb.append("    params: ").append(toIndentedString(params)).append("\n");
         sb.append("}");
         return sb.toString();
     }

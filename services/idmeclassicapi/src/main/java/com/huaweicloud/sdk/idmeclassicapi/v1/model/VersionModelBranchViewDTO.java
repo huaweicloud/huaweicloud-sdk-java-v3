@@ -72,7 +72,7 @@ public class VersionModelBranchViewDTO {
     }
 
     /**
-     * **参数解释：**  类名。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  类名。  **取值范围：**  不涉及。 
      * @return className
      */
     public String getClassName() {
@@ -89,7 +89,7 @@ public class VersionModelBranchViewDTO {
     }
 
     /**
-     * **参数解释：**  创建时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  创建时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。 
      * @return createTime
      */
     public String getCreateTime() {
@@ -106,7 +106,7 @@ public class VersionModelBranchViewDTO {
     }
 
     /**
-     * **参数解释：**  创建者。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  创建者账号。  **取值范围：**  不涉及。 
      * @return creator
      */
     public String getCreator() {
@@ -123,7 +123,7 @@ public class VersionModelBranchViewDTO {
     }
 
     /**
-     * **参数解释：**  唯一标识。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
+     * **参数解释：**  唯一标识。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。 
      * @return id
      */
     public String getId() {
@@ -140,7 +140,7 @@ public class VersionModelBranchViewDTO {
     }
 
     /**
-     * **参数解释：**  最后更新时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  最后更新时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。 
      * @return lastUpdateTime
      */
     public Object getLastUpdateTime() {
@@ -157,7 +157,7 @@ public class VersionModelBranchViewDTO {
     }
 
     /**
-     * **参数解释：**  修改人。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  更新者账号。  **取值范围：**  不涉及。 
      * @return modifier
      */
     public String getModifier() {
@@ -174,7 +174,7 @@ public class VersionModelBranchViewDTO {
     }
 
     /**
-     * **参数解释：**  软删除标识。  **取值范围：**  - 0：表示未删除。 - 1：表示已删除。  **默认取值：**  0。 
+     * **参数解释：**  软删除标识。  **取值范围：**  - 0：表示未删除。 - 1：表示已删除。 
      * @return rdmDeleteFlag
      */
     public Integer getRdmDeleteFlag() {
@@ -191,7 +191,7 @@ public class VersionModelBranchViewDTO {
     }
 
     /**
-     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。 
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -208,7 +208,7 @@ public class VersionModelBranchViewDTO {
     }
 
     /**
-     * **参数解释：**  系统版本。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  系统版本。  **取值范围：**  不涉及。 
      * @return rdmVersion
      */
     public Integer getRdmVersion() {
@@ -251,7 +251,7 @@ public class VersionModelBranchViewDTO {
     }
 
     /**
-     * **参数解释：**  版本号。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  版本号。  **取值范围：**  不涉及。 
      * @return version
      */
     public String getVersion() {

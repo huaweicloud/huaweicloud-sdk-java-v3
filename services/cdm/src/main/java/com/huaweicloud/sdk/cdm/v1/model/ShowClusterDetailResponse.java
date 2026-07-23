@@ -189,6 +189,16 @@ public class ShowClusterDetailResponse extends SdkResponse {
 
     private String status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "eps_id")
+
+    private String epsId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<ClusterTag> tags = null;
+
     public ShowClusterDetailResponse withPublicEndpoint(String publicEndpoint) {
         this.publicEndpoint = publicEndpoint;
         return this;
@@ -898,6 +908,56 @@ public class ShowClusterDetailResponse extends SdkResponse {
         this.status = status;
     }
 
+    public ShowClusterDetailResponse withEpsId(String epsId) {
+        this.epsId = epsId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID
+     * @return epsId
+     */
+    public String getEpsId() {
+        return epsId;
+    }
+
+    public void setEpsId(String epsId) {
+        this.epsId = epsId;
+    }
+
+    public ShowClusterDetailResponse withTags(List<ClusterTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public ShowClusterDetailResponse addTagsItem(ClusterTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ShowClusterDetailResponse withTags(Consumer<List<ClusterTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签列表
+     * @return tags
+     */
+    public List<ClusterTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ClusterTag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -931,7 +991,8 @@ public class ShowClusterDetailResponse extends SdkResponse {
             && Objects.equals(this.actionProgress, that.actionProgress) && Objects.equals(this.name, that.name)
             && Objects.equals(this.id, that.id) && Objects.equals(this.isFrozen, that.isFrozen)
             && Objects.equals(this.actions, that.actions) && Objects.equals(this.updated, that.updated)
-            && Objects.equals(this.status, that.status);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.epsId, that.epsId)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -970,7 +1031,9 @@ public class ShowClusterDetailResponse extends SdkResponse {
             isFrozen,
             actions,
             updated,
-            status);
+            status,
+            epsId,
+            tags);
     }
 
     @Override
@@ -1012,6 +1075,8 @@ public class ShowClusterDetailResponse extends SdkResponse {
         sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    epsId: ").append(toIndentedString(epsId)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

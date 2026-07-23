@@ -21,7 +21,7 @@ public class PersistableModelSaveAllDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "creator")
 
-    private Long creator;
+    private String creator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -64,7 +64,7 @@ public class PersistableModelSaveAllDTO {
     }
 
     /**
-     * **参数解释：**  创建时间。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  创建时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。 例如：2025-12-04T03:50:40.599+0000。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return createTime
      */
     public String getCreateTime() {
@@ -75,20 +75,20 @@ public class PersistableModelSaveAllDTO {
         this.createTime = createTime;
     }
 
-    public PersistableModelSaveAllDTO withCreator(Long creator) {
+    public PersistableModelSaveAllDTO withCreator(String creator) {
         this.creator = creator;
         return this;
     }
 
     /**
-     * **参数解释：**  创建者。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  创建者账号。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return creator
      */
-    public Long getCreator() {
+    public String getCreator() {
         return creator;
     }
 
-    public void setCreator(Long creator) {
+    public void setCreator(String creator) {
         this.creator = creator;
     }
 
@@ -98,7 +98,7 @@ public class PersistableModelSaveAllDTO {
     }
 
     /**
-     * **参数解释：**  唯一标识。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
+     * **参数解释：**  数据实例的唯一标识。如指定id，系统将根据id进行匹配；如未指定id，系统将根据uniqueKey进行匹配。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
      * @return id
      */
     public String getId() {
@@ -115,7 +115,7 @@ public class PersistableModelSaveAllDTO {
     }
 
     /**
-     * **参数解释：**  最后更新时间。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  最后更新时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。 例如：2025-12-04T03:50:40.599+0000。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -132,7 +132,7 @@ public class PersistableModelSaveAllDTO {
     }
 
     /**
-     * **参数解释：**  更新者。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  更新者账号，用于记录执行更新操作的用户。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return modifier
      */
     public String getModifier() {
@@ -165,7 +165,7 @@ public class PersistableModelSaveAllDTO {
     }
 
     /**
-     * **参数解释：**  将自定义属性（包括基本属性、扩展属性和分类属性）设置为空值，其长度不能超过1000个字符。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  需要置空的自定义属性列表，包括基本属性、扩展属性和分类属性。  **约束限制：**  属性名称长度不能超过1000个字符。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return needSetNullAttrs
      */
     public List<String> getNeedSetNullAttrs() {
@@ -182,7 +182,7 @@ public class PersistableModelSaveAllDTO {
     }
 
     /**
-     * **参数解释：**  扩展类型。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  扩展类型，用于指定数据模型的具体扩展类型。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -225,7 +225,7 @@ public class PersistableModelSaveAllDTO {
     }
 
     /**
-     * **参数解释：**  示例模型的唯一键属性。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  数据模型的唯一键属性，用于业务层面的唯一标识。当id未指定时，系统将根据此属性进行匹配；如果实例不存在则自动创建。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return uniqueKey
      */
     public String getUniqueKey() {

@@ -36,7 +36,7 @@ public class WorkingState {
     }
 
     /**
-     * **参数解释：**  别名。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  工作状态别名，用于系统内部的状态标。  **取值范围：**  不涉及。
      * @return alias
      */
     public String getAlias() {
@@ -53,7 +53,7 @@ public class WorkingState {
     }
 
     /**
-     * **参数解释：**  中文名称。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  工作状态中文名称。  **取值范围：**  不涉及。
      * @return cnName
      */
     public String getCnName() {
@@ -70,7 +70,7 @@ public class WorkingState {
     }
 
     /**
-     * **参数解释：**  编码。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  工作状态编码。  **取值范围：**  不涉及。
      * @return code
      */
     public String getCode() {
@@ -87,7 +87,7 @@ public class WorkingState {
     }
 
     /**
-     * **参数解释：**  英文名称。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  工作状态英文名称。  **取值范围：**  不涉及。
      * @return enName
      */
     public String getEnName() {

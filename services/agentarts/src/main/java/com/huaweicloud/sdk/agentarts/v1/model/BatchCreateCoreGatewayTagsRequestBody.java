@@ -1,0 +1,91 @@
+package com.huaweicloud.sdk.agentarts.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * BatchCreateCoreGatewayTagsRequestBody
+ */
+public class BatchCreateCoreGatewayTagsRequestBody {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<CoreGatewaysTagForPostTMS> tags = null;
+
+    public BatchCreateCoreGatewayTagsRequestBody withTags(List<CoreGatewaysTagForPostTMS> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public BatchCreateCoreGatewayTagsRequestBody addTagsItem(CoreGatewaysTagForPostTMS tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public BatchCreateCoreGatewayTagsRequestBody withTags(Consumer<List<CoreGatewaysTagForPostTMS>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 标签键值对列表。 **约束限制：** 数组内key不能重复。 **取值范围：** 数组长度0-20。 **默认取值：** 不涉及。 
+     * @return tags
+     */
+    public List<CoreGatewaysTagForPostTMS> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<CoreGatewaysTagForPostTMS> tags) {
+        this.tags = tags;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        BatchCreateCoreGatewayTagsRequestBody that = (BatchCreateCoreGatewayTagsRequestBody) obj;
+        return Objects.equals(this.tags, that.tags);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(tags);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class BatchCreateCoreGatewayTagsRequestBody {\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

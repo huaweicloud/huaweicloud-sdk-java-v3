@@ -14,14 +14,31 @@ import java.util.function.Consumer;
 public class RDMParamVOListMultiViewModelVersionViewCreateDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "applicationId")
+
+    private String applicationId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "params")
 
     private List<MultiViewModelVersionViewCreateDTO> params = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "applicationId")
+    public RDMParamVOListMultiViewModelVersionViewCreateDTO withApplicationId(String applicationId) {
+        this.applicationId = applicationId;
+        return this;
+    }
 
-    private String applicationId;
+    /**
+     * **参数解释：**  应用ID，用于指定实例所属的应用。 当URL路径中已能明确应用上下文时，此参数可不传。 获取方法请参见[获取租户下的应用清单 - ListApps](https://support.huaweicloud.com/api-idme/ListApps.html)。  **约束限制：**  不涉及。  **取值范围：**  - 于2023年06月01日之前创建的应用：由英文字母和数字组成，长度为1-36个字符。 - 于2023年06月01日之后创建的应用：由英文字母和数字组成，且长度为32个字符。  **默认取值：**  不涉及。
+     * @return applicationId
+     */
+    public String getApplicationId() {
+        return applicationId;
+    }
+
+    public void setApplicationId(String applicationId) {
+        this.applicationId = applicationId;
+    }
 
     public RDMParamVOListMultiViewModelVersionViewCreateDTO withParams(
         List<MultiViewModelVersionViewCreateDTO> params) {
@@ -48,7 +65,7 @@ public class RDMParamVOListMultiViewModelVersionViewCreateDTO {
     }
 
     /**
-     * **参数解释：**  请求参数对象。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  请求参数对象数组，每个元素包含一个待创建多维视图的版本ID、引用对象及关系复制类型等信息。支持批量操作。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return params
      */
     public List<MultiViewModelVersionViewCreateDTO> getParams() {
@@ -57,23 +74,6 @@ public class RDMParamVOListMultiViewModelVersionViewCreateDTO {
 
     public void setParams(List<MultiViewModelVersionViewCreateDTO> params) {
         this.params = params;
-    }
-
-    public RDMParamVOListMultiViewModelVersionViewCreateDTO withApplicationId(String applicationId) {
-        this.applicationId = applicationId;
-        return this;
-    }
-
-    /**
-     * **参数解释**：  应用ID。  **约束限制**：  不涉及。  **取值范围**：  由英文字母和数字组成，且长度为32个字符。  **默认取值**：  不涉及。
-     * @return applicationId
-     */
-    public String getApplicationId() {
-        return applicationId;
-    }
-
-    public void setApplicationId(String applicationId) {
-        this.applicationId = applicationId;
     }
 
     @Override
@@ -85,20 +85,20 @@ public class RDMParamVOListMultiViewModelVersionViewCreateDTO {
             return false;
         }
         RDMParamVOListMultiViewModelVersionViewCreateDTO that = (RDMParamVOListMultiViewModelVersionViewCreateDTO) obj;
-        return Objects.equals(this.params, that.params) && Objects.equals(this.applicationId, that.applicationId);
+        return Objects.equals(this.applicationId, that.applicationId) && Objects.equals(this.params, that.params);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(params, applicationId);
+        return Objects.hash(applicationId, params);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RDMParamVOListMultiViewModelVersionViewCreateDTO {\n");
-        sb.append("    params: ").append(toIndentedString(params)).append("\n");
         sb.append("    applicationId: ").append(toIndentedString(applicationId)).append("\n");
+        sb.append("    params: ").append(toIndentedString(params)).append("\n");
         sb.append("}");
         return sb.toString();
     }

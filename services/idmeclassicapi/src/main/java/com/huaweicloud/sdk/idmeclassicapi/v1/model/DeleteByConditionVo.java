@@ -53,7 +53,7 @@ public class DeleteByConditionVo {
     }
 
     /**
-     * **参数解释：**  修改人。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  更新者账号，用于记录执行删除操作的用户。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return modifier
      */
     public String getModifier() {

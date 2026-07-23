@@ -77,7 +77,7 @@ public class ListQueryUsingPostRequest {
     }
 
     /**
-     * **参数解释：**  当前页。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  1。 
+     * **参数解释：**  当前页码，从1开始计数。当路径参数curPagePath未指定时生效。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  1。 
      * @return curPage
      */
     public Integer getCurPage() {
@@ -94,7 +94,7 @@ public class ListQueryUsingPostRequest {
     }
 
     /**
-     * **参数解释：**  结束索引。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  0。 
+     * **参数解释：**  结束索引，用于指定查询结果的结束位置。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  0。 
      * @return endIndex
      */
     public Integer getEndIndex() {
@@ -111,7 +111,7 @@ public class ListQueryUsingPostRequest {
     }
 
     /**
-     * **参数解释：**  最大分页数。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  1000。 
+     * **参数解释：**  最大分页数，用于限制返回的最大页数。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  1000。 
      * @return maxPageSize
      */
     public Integer getMaxPageSize() {
@@ -128,7 +128,7 @@ public class ListQueryUsingPostRequest {
     }
 
     /**
-     * **参数解释：**  每页大小。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  1000。 
+     * **参数解释：**  分页大小，即每页返回的实例数量。当路径参数pageSizePath未指定时生效。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  1000。 
      * @return pageSize
      */
     public Integer getPageSize() {
@@ -145,7 +145,7 @@ public class ListQueryUsingPostRequest {
     }
 
     /**
-     * **参数解释：**  起始索引。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  0。 
+     * **参数解释：**  起始索引，用于指定查询结果的起始位置。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  0。 
      * @return startIndex
      */
     public Integer getStartIndex() {
@@ -162,7 +162,7 @@ public class ListQueryUsingPostRequest {
     }
 
     /**
-     * **参数解释：**  总页数。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  0。 
+     * **参数解释：**  总页数，用于指定查询的总页数。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  0。 
      * @return totalPages
      */
     public Integer getTotalPages() {
@@ -179,7 +179,7 @@ public class ListQueryUsingPostRequest {
     }
 
     /**
-     * **参数解释：**  总行数。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  0。 
+     * **参数解释：**  总行数，用于指定查询的总行数。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  0。 
      * @return totalRows
      */
     public Integer getTotalRows() {
@@ -196,7 +196,7 @@ public class ListQueryUsingPostRequest {
     }
 
     /**
-     * **参数解释：**  分页大小（路径参数）。  **约束限制：**  不涉及。  **取值范围：**  1-1000。  **默认取值：**  不涉及。 
+     * **参数解释：**  分页大小，即每页返回的实例数量。  **约束限制：**  不涉及。  **取值范围：**  1-1000。  **默认取值：**  不涉及。 
      * @return pageSizePath
      */
     public Integer getPageSizePath() {
@@ -213,7 +213,7 @@ public class ListQueryUsingPostRequest {
     }
 
     /**
-     * **参数解释：**  当前页数（路径参数）。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  1。 
+     * **参数解释：**  当前页数，从1开始计数。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  1。 
      * @return curPagePath
      */
     public Integer getCurPagePath() {
@@ -230,7 +230,7 @@ public class ListQueryUsingPostRequest {
     }
 
     /**
-     * **参数解释：**  应用唯一标识。  **约束限制：**  不涉及。  **取值范围：**  由英文字母和数字组成，且长度为32个字符。  **默认取值：**  不涉及。 
+     * **参数解释：**  应用的唯一标识。  - 于2023年06月01日之前创建的应用，其唯一标识为该应用的名称。 - 于2023年06月01日之后创建的应用，其唯一标识为该应用的ID。 获取方法请参见[获取运行服务清单 - ListEnvs](https://support.huaweicloud.com/api-idme/ListApps.html)。  **约束限制：**  不涉及。  **取值范围：**  - 于2023年06月01日之前创建的应用：由英文字母和数字组成，长度为1-36个字符。 - 于2023年06月01日之后创建的应用：由英文字母和数字组成，且长度为32个字符。  **默认取值：**  不涉及。 
      * @return identifier
      */
     public String getIdentifier() {
@@ -247,7 +247,7 @@ public class ListQueryUsingPostRequest {
     }
 
     /**
-     * **参数解释：**  数据模型的英文名称。  **约束限制：**  不涉及。  **取值范围：**  大写字母开头，只能包含字母、数字、“_”，且长度为[1-60]个字符。  **默认取值：**  不涉及。
+     * **参数解释：**  数据模型的英文名称。  **约束限制：**  不涉及。  **取值范围：**  以大写字母开头，只能包含字母、数字、“_”，且长度为1-60个字符。  **默认取值：**  不涉及。
      * @return modelName
      */
     public String getModelName() {

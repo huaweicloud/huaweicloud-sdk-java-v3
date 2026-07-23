@@ -12,14 +12,31 @@ import java.util.function.Consumer;
 public class RDMParamVOPersistableModelSaveAsDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "applicationId")
+
+    private String applicationId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "params")
 
     private PersistableModelSaveAsDTO params;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "applicationId")
+    public RDMParamVOPersistableModelSaveAsDTO withApplicationId(String applicationId) {
+        this.applicationId = applicationId;
+        return this;
+    }
 
-    private String applicationId;
+    /**
+     * **参数解释：**  应用ID，用于指定实例所属的应用。 当URL路径中已能明确应用上下文时，此参数可不传。 获取方法请参见[获取租户下的应用清单 - ListApps](https://support.huaweicloud.com/api-idme/ListApps.html)。  **约束限制：**  不涉及。  **取值范围：**  由英文字母和数字组成，且长度固定为32个字符。  **默认取值：**  不涉及。
+     * @return applicationId
+     */
+    public String getApplicationId() {
+        return applicationId;
+    }
+
+    public void setApplicationId(String applicationId) {
+        this.applicationId = applicationId;
+    }
 
     public RDMParamVOPersistableModelSaveAsDTO withParams(PersistableModelSaveAsDTO params) {
         this.params = params;
@@ -47,23 +64,6 @@ public class RDMParamVOPersistableModelSaveAsDTO {
         this.params = params;
     }
 
-    public RDMParamVOPersistableModelSaveAsDTO withApplicationId(String applicationId) {
-        this.applicationId = applicationId;
-        return this;
-    }
-
-    /**
-     * **参数解释**：  应用ID。  **约束限制**：  不涉及。  **取值范围**：  由英文字母和数字组成，且长度为32个字符。  **默认取值**：  不涉及。
-     * @return applicationId
-     */
-    public String getApplicationId() {
-        return applicationId;
-    }
-
-    public void setApplicationId(String applicationId) {
-        this.applicationId = applicationId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -73,20 +73,20 @@ public class RDMParamVOPersistableModelSaveAsDTO {
             return false;
         }
         RDMParamVOPersistableModelSaveAsDTO that = (RDMParamVOPersistableModelSaveAsDTO) obj;
-        return Objects.equals(this.params, that.params) && Objects.equals(this.applicationId, that.applicationId);
+        return Objects.equals(this.applicationId, that.applicationId) && Objects.equals(this.params, that.params);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(params, applicationId);
+        return Objects.hash(applicationId, params);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class RDMParamVOPersistableModelSaveAsDTO {\n");
-        sb.append("    params: ").append(toIndentedString(params)).append("\n");
         sb.append("    applicationId: ").append(toIndentedString(applicationId)).append("\n");
+        sb.append("    params: ").append(toIndentedString(params)).append("\n");
         sb.append("}");
         return sb.toString();
     }

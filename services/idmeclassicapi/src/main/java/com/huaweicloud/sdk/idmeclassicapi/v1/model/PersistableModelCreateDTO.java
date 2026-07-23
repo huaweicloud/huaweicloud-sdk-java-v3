@@ -57,7 +57,7 @@ public class PersistableModelCreateDTO {
     }
 
     /**
-     * **参数解释：**  创建时间。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  创建时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。 例如：2025-12-04T03:50:40.599+0000。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return createTime
      */
     public String getCreateTime() {
@@ -74,7 +74,7 @@ public class PersistableModelCreateDTO {
     }
 
     /**
-     * **参数解释：**  创建者。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  创建者账号。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return creator
      */
     public String getCreator() {
@@ -91,7 +91,7 @@ public class PersistableModelCreateDTO {
     }
 
     /**
-     * **参数解释：**  唯一标识。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
+     * **参数解释：**  数据实例的唯一标识。 如不填写，系统将自动生成。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。
      * @return id
      */
     public String getId() {
@@ -108,7 +108,7 @@ public class PersistableModelCreateDTO {
     }
 
     /**
-     * **参数解释：**  最后更新时间。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  最后更新时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。 例如：2025-12-04T03:50:40.599+0000。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -125,7 +125,7 @@ public class PersistableModelCreateDTO {
     }
 
     /**
-     * **参数解释：**  修改人。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  更新者账号。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return modifier
      */
     public String getModifier() {
@@ -142,7 +142,7 @@ public class PersistableModelCreateDTO {
     }
 
     /**
-     * **参数解释：**  扩展类型。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  扩展类型，用于指定数据模型的具体扩展类型。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -185,7 +185,7 @@ public class PersistableModelCreateDTO {
     }
 
     /**
-     * **参数解释：**  示例模型的唯一键属性。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  数据模型的唯一键属性，用于业务层面的唯一标识。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return uniqueKey
      */
     public String getUniqueKey() {

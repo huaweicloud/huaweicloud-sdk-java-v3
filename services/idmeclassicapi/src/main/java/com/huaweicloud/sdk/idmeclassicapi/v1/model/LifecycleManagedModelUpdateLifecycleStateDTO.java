@@ -32,7 +32,7 @@ public class LifecycleManagedModelUpdateLifecycleStateDTO {
     }
 
     /**
-     * **参数解释：**  数据实例ID。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
+     * **参数解释：**  数据实例ID，用于指定待修改生命周期状态的数据实例。 获取方法请参见[分页查询实例 - ShowFindUsingPost](https://support.huaweicloud.com/api-idme/ShowFindUsingPost.html)。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。
      * @return id
      */
     public String getId() {
@@ -76,7 +76,7 @@ public class LifecycleManagedModelUpdateLifecycleStateDTO {
     }
 
     /**
-     * **参数解释：**  修改人。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  更新者账号，用于记录执行设置生命周期状态操作的用户标识。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return modifier
      */
     public String getModifier() {

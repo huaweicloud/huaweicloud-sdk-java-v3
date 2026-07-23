@@ -154,7 +154,7 @@ public class MultiViewModelCreateDTO {
     }
 
     /**
-     * 检出时间。
+     * 检出时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。
      * @return checkOutTime
      */
     public String getCheckOutTime() {
@@ -188,7 +188,7 @@ public class MultiViewModelCreateDTO {
     }
 
     /**
-     * 创建时间。
+     * 创建时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。
      * @return createTime
      */
     public String getCreateTime() {
@@ -273,7 +273,7 @@ public class MultiViewModelCreateDTO {
     }
 
     /**
-     * 最后更新时间。
+     * 最后更新时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -316,7 +316,7 @@ public class MultiViewModelCreateDTO {
     }
 
     /**
-     * 修改人。
+     * 更新者。
      * @return modifier
      */
     public String getModifier() {
@@ -367,7 +367,7 @@ public class MultiViewModelCreateDTO {
     }
 
     /**
-     * 安全密级。 - INTERNAL：内部公开。 - SECRET：秘密。 - CONFIDENTIAL：机密。 - TOP_SECRET：绝密。
+     * 安全密级。 - internal：内部公开。 - secret：秘密。 - confidential：机密。 - top_secret：绝密。
      * @return securityLevel
      */
     public String getSecurityLevel() {

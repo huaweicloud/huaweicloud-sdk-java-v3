@@ -59,7 +59,7 @@ public class PersistableModelUpdateDTO {
     }
 
     /**
-     * **参数解释：**  创建时间。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  创建时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。 例如：2025-12-04T03:50:40.599+0000。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return createTime
      */
     public String getCreateTime() {
@@ -76,7 +76,7 @@ public class PersistableModelUpdateDTO {
     }
 
     /**
-     * **参数解释：**  创建者。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  创建者账号。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return creator
      */
     public String getCreator() {
@@ -93,7 +93,7 @@ public class PersistableModelUpdateDTO {
     }
 
     /**
-     * **参数解释：**  唯一标识。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
+     * **参数解释：**  数据实例的唯一标识，用于指定待更新的实例。 获取方法请参见[分页查询实例 - ShowFindUsingPost](https://support.huaweicloud.com/api-idme/ShowFindUsingPost.html)。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
      * @return id
      */
     public String getId() {
@@ -110,7 +110,7 @@ public class PersistableModelUpdateDTO {
     }
 
     /**
-     * **参数解释：**  最后更新时间。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  最后更新时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。 例如：2025-12-04T03:50:40.599+0000。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -127,7 +127,7 @@ public class PersistableModelUpdateDTO {
     }
 
     /**
-     * **参数解释：**  更新者。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  更新者账号，用于记录执行更新操作的用户。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return modifier
      */
     public String getModifier() {
@@ -160,7 +160,7 @@ public class PersistableModelUpdateDTO {
     }
 
     /**
-     * **参数解释：**  将自定义属性（包括基本属性、扩展属性和分类属性）设置为空值，其长度不能超过1000个字符。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  需要置空的自定义属性列表，包括基本属性、扩展属性和分类属性。  **约束限制：**  不涉及。  **取值范围：**  属性名称长度不能超过1000个字符。  **默认取值：**  不涉及。 
      * @return needSetNullAttrs
      */
     public List<String> getNeedSetNullAttrs() {
@@ -177,7 +177,7 @@ public class PersistableModelUpdateDTO {
     }
 
     /**
-     * **参数解释：**  扩展类型。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  扩展类型，用于指定数据模型的具体扩展类型。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -194,7 +194,7 @@ public class PersistableModelUpdateDTO {
     }
 
     /**
-     * **参数解释：**  示例模型的唯一键属性。  **约束限制：**  实例值不能重复。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  数据模型的唯一键属性，用于业务层面的唯一标识。  **约束限制：**  实例值不能重复。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return uniqueKey
      */
     public String getUniqueKey() {

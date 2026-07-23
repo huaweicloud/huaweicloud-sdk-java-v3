@@ -16,7 +16,7 @@ public class QueryRequestSelectedVo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "characterSet")
 
-    private CharacterSetEnum characterSet;
+    private String characterSet;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conditions")
@@ -88,29 +88,20 @@ public class QueryRequestSelectedVo {
 
     private Boolean isTransformResBody;
 
-    public QueryRequestSelectedVo withCharacterSet(CharacterSetEnum characterSet) {
+    public QueryRequestSelectedVo withCharacterSet(String characterSet) {
         this.characterSet = characterSet;
         return this;
     }
 
-    public QueryRequestSelectedVo withCharacterSet(Consumer<CharacterSetEnum> characterSetSetter) {
-        if (this.characterSet == null) {
-            this.characterSet = new CharacterSetEnum();
-            characterSetSetter.accept(this.characterSet);
-        }
-
-        return this;
-    }
-
     /**
-     * Get characterSet
+     * **参数解释：**  编码类型。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  UTF8。
      * @return characterSet
      */
-    public CharacterSetEnum getCharacterSet() {
+    public String getCharacterSet() {
         return characterSet;
     }
 
-    public void setCharacterSet(CharacterSetEnum characterSet) {
+    public void setCharacterSet(String characterSet) {
         this.characterSet = characterSet;
     }
 

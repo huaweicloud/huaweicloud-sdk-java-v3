@@ -11,31 +11,14 @@ import java.util.Objects;
 public class ObjectReferenceParamDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "clazz")
-
-    private String clazz;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private String id;
 
-    public ObjectReferenceParamDTO withClazz(String clazz) {
-        this.clazz = clazz;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "clazz")
 
-    /**
-     * **参数解释：**  类名。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
-     * @return clazz
-     */
-    public String getClazz() {
-        return clazz;
-    }
-
-    public void setClazz(String clazz) {
-        this.clazz = clazz;
-    }
+    private String clazz;
 
     public ObjectReferenceParamDTO withId(String id) {
         this.id = id;
@@ -43,7 +26,7 @@ public class ObjectReferenceParamDTO {
     }
 
     /**
-     * **参数解释：**  数据实例ID。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
+     * **参数解释：**  数据实例ID，用于唯一标识引用的数据实例。 获取方法请参见[分页查询实例 - ShowFindUsingPost](https://support.huaweicloud.com/api-idme/ShowFindUsingPost.html)。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。
      * @return id
      */
     public String getId() {
@@ -52,6 +35,23 @@ public class ObjectReferenceParamDTO {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public ObjectReferenceParamDTO withClazz(String clazz) {
+        this.clazz = clazz;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  类名，用于指定引用对象的类类型。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * @return clazz
+     */
+    public String getClazz() {
+        return clazz;
+    }
+
+    public void setClazz(String clazz) {
+        this.clazz = clazz;
     }
 
     @Override
@@ -63,20 +63,20 @@ public class ObjectReferenceParamDTO {
             return false;
         }
         ObjectReferenceParamDTO that = (ObjectReferenceParamDTO) obj;
-        return Objects.equals(this.clazz, that.clazz) && Objects.equals(this.id, that.id);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.clazz, that.clazz);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clazz, id);
+        return Objects.hash(id, clazz);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ObjectReferenceParamDTO {\n");
-        sb.append("    clazz: ").append(toIndentedString(clazz)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    clazz: ").append(toIndentedString(clazz)).append("\n");
         sb.append("}");
         return sb.toString();
     }

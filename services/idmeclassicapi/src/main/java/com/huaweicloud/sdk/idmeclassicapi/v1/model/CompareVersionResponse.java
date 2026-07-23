@@ -22,7 +22,7 @@ public class CompareVersionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private List<CompareVersionRespVo> data = null;
+    private List<Object> data = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "errors")
@@ -35,7 +35,7 @@ public class CompareVersionResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：**  请求结果。  **取值范围：**  - SUCCESS：请求成功。 - FAIL：请求失败。  **默认取值：**  不涉及。 
+     * **参数解释：**  请求结果。  **取值范围：**  - SUCCESS：请求成功。 - FAIL：请求失败。 
      * @return result
      */
     public String getResult() {
@@ -46,12 +46,12 @@ public class CompareVersionResponse extends SdkResponse {
         this.result = result;
     }
 
-    public CompareVersionResponse withData(List<CompareVersionRespVo> data) {
+    public CompareVersionResponse withData(List<Object> data) {
         this.data = data;
         return this;
     }
 
-    public CompareVersionResponse addDataItem(CompareVersionRespVo dataItem) {
+    public CompareVersionResponse addDataItem(Object dataItem) {
         if (this.data == null) {
             this.data = new ArrayList<>();
         }
@@ -59,7 +59,7 @@ public class CompareVersionResponse extends SdkResponse {
         return this;
     }
 
-    public CompareVersionResponse withData(Consumer<List<CompareVersionRespVo>> dataSetter) {
+    public CompareVersionResponse withData(Consumer<List<Object>> dataSetter) {
         if (this.data == null) {
             this.data = new ArrayList<>();
         }
@@ -68,14 +68,14 @@ public class CompareVersionResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：**  请求数据。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  版本对比数据。data[0]为基础版本对象，data[1]为当前版本对象和基础版本对象的差异数据。  **取值范围：**  不涉及。
      * @return data
      */
-    public List<CompareVersionRespVo> getData() {
+    public List<Object> getData() {
         return data;
     }
 
-    public void setData(List<CompareVersionRespVo> data) {
+    public void setData(List<Object> data) {
         this.data = data;
     }
 
@@ -101,7 +101,7 @@ public class CompareVersionResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：**  异常信息。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  异常信息，当请求失败时返回具体的错误描述。  **取值范围：**  不涉及。 
      * @return errors
      */
     public List<String> getErrors() {

@@ -26,7 +26,7 @@ public class GetTokenDto {
     }
 
     /**
-     * **参数解释**：  认证类型。  **约束限制**：  不涉及。  **取值范围**：  - read：只读。 - write：读写。  **默认取值**：  不涉及。
+     * **参数解释：**  认证类型，指定获取Token的权限级别。  **约束限制：**  不涉及。  **取值范围：**  - read：只读权限，获取的Token仅支持查看文档内容。 - write：读写权限，获取的Token支持编辑和保存文档。  **默认取值：**  不涉及。
      * @return authType
      */
     public String getAuthType() {
@@ -43,7 +43,7 @@ public class GetTokenDto {
     }
 
     /**
-     * **参数解释**：  文档ID。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
+     * **参数解释：**  文档ID，用于指定需要获取Token的目标文档。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return docId
      */
     public String getDocId() {

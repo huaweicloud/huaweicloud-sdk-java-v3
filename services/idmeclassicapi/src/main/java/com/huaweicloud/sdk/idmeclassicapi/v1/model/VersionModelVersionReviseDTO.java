@@ -14,24 +14,9 @@ import java.util.function.Consumer;
 public class VersionModelVersionReviseDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "creator")
-
-    private String creator;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "customLinkSet")
-
-    private List<String> customLinkSet = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "masterId")
 
     private String masterId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "modifier")
-
-    private String modifier;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workCopyType")
@@ -39,25 +24,57 @@ public class VersionModelVersionReviseDTO {
     private String workCopyType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "customLinkSet")
+
+    private List<String> customLinkSet = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "workingCopy")
 
     private Boolean workingCopy;
 
-    public VersionModelVersionReviseDTO withCreator(String creator) {
-        this.creator = creator;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "creator")
+
+    private String creator;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "modifier")
+
+    private String modifier;
+
+    public VersionModelVersionReviseDTO withMasterId(String masterId) {
+        this.masterId = masterId;
         return this;
     }
 
     /**
-     * **参数解释：**  创建人。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
-     * @return creator
+     * **参数解释：**  主对象ID，用于定位需要修订的M-V模型实例所属的主对象。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。
+     * @return masterId
      */
-    public String getCreator() {
-        return creator;
+    public String getMasterId() {
+        return masterId;
     }
 
-    public void setCreator(String creator) {
-        this.creator = creator;
+    public void setMasterId(String masterId) {
+        this.masterId = masterId;
+    }
+
+    public VersionModelVersionReviseDTO withWorkCopyType(String workCopyType) {
+        this.workCopyType = workCopyType;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  关系的复制类型，控制修订后的新版本是否继承原实例的关系实例。不同取值对应不同的关系继承策略，适用于不同的业务场景。  **约束限制：**  不涉及。  **取值范围：**  - BOTH：若存在关系实例引用此数据实例作为源端实例或目标端实例，修订后的数据实例将继承这些关系实例。 - SOURCE：若存在关系实例引用此数据实例作为源端实例，修订后的数据实例将继承这些关系实例。 - TARGET：若存在关系实例引用此数据实例作为目标端实例，修订后的数据实例将继承这些关系实例。 - NONE：修订后的数据实例将不继承任何关系实例。 - CUSTOM：若指定的关系实体集合对应的关系实例引用此数据实例作为源端实例或目标端实例，修订后的数据实例将继承这些关系实例。  **默认取值：**  不涉及。
+     * @return workCopyType
+     */
+    public String getWorkCopyType() {
+        return workCopyType;
+    }
+
+    public void setWorkCopyType(String workCopyType) {
+        this.workCopyType = workCopyType;
     }
 
     public VersionModelVersionReviseDTO withCustomLinkSet(List<String> customLinkSet) {
@@ -82,7 +99,7 @@ public class VersionModelVersionReviseDTO {
     }
 
     /**
-     * **参数解释：**  关系实体名称集合，与workCopyType的值CUSTOM配合使用。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  关系实体名称集合，与workCopyType的值CUSTOM配合使用。 指定需要继承的关系实体名称列表，仅继承这些关系实体对应的关系实例。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return customLinkSet
      */
     public List<String> getCustomLinkSet() {
@@ -93,64 +110,13 @@ public class VersionModelVersionReviseDTO {
         this.customLinkSet = customLinkSet;
     }
 
-    public VersionModelVersionReviseDTO withMasterId(String masterId) {
-        this.masterId = masterId;
-        return this;
-    }
-
-    /**
-     * **参数解释：**  主对象ID。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
-     * @return masterId
-     */
-    public String getMasterId() {
-        return masterId;
-    }
-
-    public void setMasterId(String masterId) {
-        this.masterId = masterId;
-    }
-
-    public VersionModelVersionReviseDTO withModifier(String modifier) {
-        this.modifier = modifier;
-        return this;
-    }
-
-    /**
-     * **参数解释：**  更新者。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
-     * @return modifier
-     */
-    public String getModifier() {
-        return modifier;
-    }
-
-    public void setModifier(String modifier) {
-        this.modifier = modifier;
-    }
-
-    public VersionModelVersionReviseDTO withWorkCopyType(String workCopyType) {
-        this.workCopyType = workCopyType;
-        return this;
-    }
-
-    /**
-     * **参数解释：**  关系的复制类型。  **约束限制：**  不涉及。  **取值范围：**  - BOTH：若存在关系实例引用此数据实例作为源端实例或目标端实例，修订后的数据实例将继承这些关系实例。 - SOURCE：若存在关系实例引用此数据实例作为源端实例，修订后的数据实例将继承这些关系实例。 - TARGET：若存在关系实例引用此数据实例作为目标端实例，修订后的数据实例将继承这些关系实例。 - NONE：修订后的数据实例将不继承任何关系实例。 - CUSTOM：若指定的关系实体集合对应的关系实例引用此数据实例作为源端实例或目标端实例，修订后的数据实例将继承这些关系实例。  **默认取值：**  不涉及。 
-     * @return workCopyType
-     */
-    public String getWorkCopyType() {
-        return workCopyType;
-    }
-
-    public void setWorkCopyType(String workCopyType) {
-        this.workCopyType = workCopyType;
-    }
-
     public VersionModelVersionReviseDTO withWorkingCopy(Boolean workingCopy) {
         this.workingCopy = workingCopy;
         return this;
     }
 
     /**
-     * **参数解释：**  是否已检出。  **约束限制：**  不涉及。  **取值范围：**  - true：已检出。 - false：未检出。  **默认取值：**  false。 
+     * **参数解释：**  修订后是否自动检出。若设置为true，修订后的新版本将自动处于已检出状态（生成工作副本），可直接进行编辑；若设置为false（默认），修订后的新版本处于已检入状态。  **约束限制：**  不涉及。  **取值范围：**  - true：修订后自动检出。 - false：修订后不自动检出。  **默认取值：**  false。
      * @return workingCopy
      */
     public Boolean getWorkingCopy() {
@@ -159,6 +125,40 @@ public class VersionModelVersionReviseDTO {
 
     public void setWorkingCopy(Boolean workingCopy) {
         this.workingCopy = workingCopy;
+    }
+
+    public VersionModelVersionReviseDTO withCreator(String creator) {
+        this.creator = creator;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  创建者账号，记录本次生成的新版本的创建者信息。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * @return creator
+     */
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
+
+    public VersionModelVersionReviseDTO withModifier(String modifier) {
+        this.modifier = modifier;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  更新者账号，记录本次修订操作的操作人信息。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * @return modifier
+     */
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier;
     }
 
     @Override
@@ -170,27 +170,27 @@ public class VersionModelVersionReviseDTO {
             return false;
         }
         VersionModelVersionReviseDTO that = (VersionModelVersionReviseDTO) obj;
-        return Objects.equals(this.creator, that.creator) && Objects.equals(this.customLinkSet, that.customLinkSet)
-            && Objects.equals(this.masterId, that.masterId) && Objects.equals(this.modifier, that.modifier)
-            && Objects.equals(this.workCopyType, that.workCopyType)
-            && Objects.equals(this.workingCopy, that.workingCopy);
+        return Objects.equals(this.masterId, that.masterId) && Objects.equals(this.workCopyType, that.workCopyType)
+            && Objects.equals(this.customLinkSet, that.customLinkSet)
+            && Objects.equals(this.workingCopy, that.workingCopy) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.modifier, that.modifier);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(creator, customLinkSet, masterId, modifier, workCopyType, workingCopy);
+        return Objects.hash(masterId, workCopyType, customLinkSet, workingCopy, creator, modifier);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class VersionModelVersionReviseDTO {\n");
-        sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
-        sb.append("    customLinkSet: ").append(toIndentedString(customLinkSet)).append("\n");
         sb.append("    masterId: ").append(toIndentedString(masterId)).append("\n");
-        sb.append("    modifier: ").append(toIndentedString(modifier)).append("\n");
         sb.append("    workCopyType: ").append(toIndentedString(workCopyType)).append("\n");
+        sb.append("    customLinkSet: ").append(toIndentedString(customLinkSet)).append("\n");
         sb.append("    workingCopy: ").append(toIndentedString(workingCopy)).append("\n");
+        sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
+        sb.append("    modifier: ").append(toIndentedString(modifier)).append("\n");
         sb.append("}");
         return sb.toString();
     }

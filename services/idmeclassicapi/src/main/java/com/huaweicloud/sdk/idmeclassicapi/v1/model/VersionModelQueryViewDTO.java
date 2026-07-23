@@ -158,7 +158,7 @@ public class VersionModelQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  检出时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  检出时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。 
      * @return checkOutTime
      */
     public String getCheckOutTime() {
@@ -175,7 +175,7 @@ public class VersionModelQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  检出人。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  检出人。  **取值范围：**  不涉及。 
      * @return checkOutUserName
      */
     public String getCheckOutUserName() {
@@ -192,7 +192,7 @@ public class VersionModelQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  类名。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  类名。  **取值范围：**  不涉及。 
      * @return className
      */
     public String getClassName() {
@@ -209,7 +209,7 @@ public class VersionModelQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  创建时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  创建时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。 
      * @return createTime
      */
     public String getCreateTime() {
@@ -226,7 +226,7 @@ public class VersionModelQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  创建者。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  创建者账号。  **取值范围：**  不涉及。 
      * @return creator
      */
     public String getCreator() {
@@ -243,7 +243,7 @@ public class VersionModelQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  描述信息。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  描述信息。  **取值范围：**  不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -260,7 +260,7 @@ public class VersionModelQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  唯一标识。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
+     * **参数解释：**  唯一标识。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。 
      * @return id
      */
     public String getId() {
@@ -277,7 +277,7 @@ public class VersionModelQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  迭代版本。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  迭代版本。  **取值范围：**  不涉及。 
      * @return iteration
      */
     public Integer getIteration() {
@@ -294,7 +294,7 @@ public class VersionModelQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  最后更新时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  最后更新时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。 
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -311,7 +311,7 @@ public class VersionModelQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  是否为最新版本。  **取值范围：**  - true：是最新版本。 - false：不是最新版本。  **默认取值：**  false。 
+     * **参数解释：**  是否为最新版本。  **取值范围：**  - true：是最新版本。 - false：不是最新版本。 
      * @return latest
      */
     public Boolean getLatest() {
@@ -328,7 +328,7 @@ public class VersionModelQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  是否为最新迭代版本。  **取值范围：**  - true：是最新迭代版本。 - false：不是最新迭代版本。  **默认取值：**  false。 
+     * **参数解释：**  是否为最新迭代版本。  **取值范围：**  - true：是最新迭代版本。 - false：不是最新迭代版本。 
      * @return latestIteration
      */
     public Boolean getLatestIteration() {
@@ -345,7 +345,7 @@ public class VersionModelQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  是否为最新修订版本。  **取值范围：**  - true：是最新修订版本。 - false：不是最新修订版本。  **默认取值：**  false。 
+     * **参数解释：**  是否为最新修订版本。  **取值范围：**  - true：是最新修订版本。 - false：不是最新修订版本。 
      * @return latestVersion
      */
     public Boolean getLatestVersion() {
@@ -388,7 +388,7 @@ public class VersionModelQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  修改人。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  更新者账号。  **取值范围：**  不涉及。 
      * @return modifier
      */
     public String getModifier() {
@@ -405,7 +405,7 @@ public class VersionModelQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  中文名称。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  中文名称。  **取值范围：**  不涉及。 
      * @return name
      */
     public String getName() {
@@ -422,7 +422,7 @@ public class VersionModelQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  前序版本实例ID。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  前序版本实例ID。  **取值范围：**  不涉及。 
      * @return preVersionId
      */
     public String getPreVersionId() {
@@ -439,7 +439,7 @@ public class VersionModelQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。 
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -482,7 +482,7 @@ public class VersionModelQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  版本号。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  版本号。  **取值范围：**  不涉及。 
      * @return version
      */
     public String getVersion() {
@@ -499,7 +499,7 @@ public class VersionModelQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  业务版本内码。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  业务版本内码。  **取值范围：**  不涉及。 
      * @return versionCode
      */
     public Integer getVersionCode() {
@@ -516,7 +516,7 @@ public class VersionModelQueryViewDTO {
     }
 
     /**
-     * **参数解释：**  是否已检出。  **取值范围：**  - true：已检出。 - false：未检出。  **默认取值：**  不涉及。 
+     * **参数解释：**  是否已检出。  **取值范围：**  - true：已检出。 - false：未检出。 
      * @return workingCopy
      */
     public Boolean getWorkingCopy() {

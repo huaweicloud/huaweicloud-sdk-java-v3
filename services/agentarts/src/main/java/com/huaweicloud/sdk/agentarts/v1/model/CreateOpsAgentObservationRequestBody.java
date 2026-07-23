@@ -1,0 +1,696 @@
+package com.huaweicloud.sdk.agentarts.v1.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
+/**
+ * CreateOpsAgentObservationRequestBody
+ */
+public class CreateOpsAgentObservationRequestBody {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_id")
+
+    private String resourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_name")
+
+    private String resourceName;
+
+    /**
+     * 智能体类型,agent单智能体,multiagent,workflow工作流
+     */
+    public static final class ResourceTypeEnum {
+
+        /**
+         * Enum AGENT for value: "agent"
+         */
+        public static final ResourceTypeEnum AGENT = new ResourceTypeEnum("agent");
+
+        /**
+         * Enum WORKFLOW for value: "workflow"
+         */
+        public static final ResourceTypeEnum WORKFLOW = new ResourceTypeEnum("workflow");
+
+        /**
+         * Enum MULTIAGENTS for value: "multiagents"
+         */
+        public static final ResourceTypeEnum MULTIAGENTS = new ResourceTypeEnum("multiagents");
+
+        private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ResourceTypeEnum> createStaticFields() {
+            Map<String, ResourceTypeEnum> map = new HashMap<>();
+            map.put("agent", AGENT);
+            map.put("workflow", WORKFLOW);
+            map.put("multiagents", MULTIAGENTS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ResourceTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ResourceTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
+        }
+
+        public static ResourceTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ResourceTypeEnum) {
+                return this.value.equals(((ResourceTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_type")
+
+    private ResourceTypeEnum resourceType;
+
+    /**
+     * 状态,published发布,draft草稿
+     */
+    public static final class StatusEnum {
+
+        /**
+         * Enum PUBLISHED for value: "published"
+         */
+        public static final StatusEnum PUBLISHED = new StatusEnum("published");
+
+        /**
+         * Enum DRAFT for value: "draft"
+         */
+        public static final StatusEnum DRAFT = new StatusEnum("draft");
+
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("published", PUBLISHED);
+            map.put("draft", DRAFT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
+        }
+
+        public static StatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private StatusEnum status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_by")
+
+    private String createBy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private Integer createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_by")
+
+    private String updateBy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "updated_time")
+
+    private Integer updatedTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private String version;
+
+    /**
+     * studio, agentrun, api 三种类型，默认为studio
+     */
+    public static final class SourceEnum {
+
+        /**
+         * Enum STUDIO for value: "studio"
+         */
+        public static final SourceEnum STUDIO = new SourceEnum("studio");
+
+        /**
+         * Enum AGENTRUN for value: "agentrun"
+         */
+        public static final SourceEnum AGENTRUN = new SourceEnum("agentrun");
+
+        /**
+         * Enum API for value: "api"
+         */
+        public static final SourceEnum API = new SourceEnum("api");
+
+        private static final Map<String, SourceEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SourceEnum> createStaticFields() {
+            Map<String, SourceEnum> map = new HashMap<>();
+            map.put("studio", STUDIO);
+            map.put("agentrun", AGENTRUN);
+            map.put("api", API);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SourceEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SourceEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SourceEnum(value));
+        }
+
+        public static SourceEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SourceEnum) {
+                return this.value.equals(((SourceEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source")
+
+    private SourceEnum source;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "apm_app_id")
+
+    private String apmAppId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "aom_prom_id")
+
+    private String aomPromId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "apm_app_token")
+
+    private String apmAppToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "aom_access_code")
+
+    private String aomAccessCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lts_group_id")
+
+    private String ltsGroupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lts_stream_id")
+
+    private String ltsStreamId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lts_label_name")
+
+    private String ltsLabelName;
+
+    public CreateOpsAgentObservationRequestBody withResourceId(String resourceId) {
+        this.resourceId = resourceId;
+        return this;
+    }
+
+    /**
+     * 资源id
+     * @return resourceId
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+    }
+
+    public CreateOpsAgentObservationRequestBody withResourceName(String resourceName) {
+        this.resourceName = resourceName;
+        return this;
+    }
+
+    /**
+     * 资源名称
+     * @return resourceName
+     */
+    public String getResourceName() {
+        return resourceName;
+    }
+
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName;
+    }
+
+    public CreateOpsAgentObservationRequestBody withResourceType(ResourceTypeEnum resourceType) {
+        this.resourceType = resourceType;
+        return this;
+    }
+
+    /**
+     * 智能体类型,agent单智能体,multiagent,workflow工作流
+     * @return resourceType
+     */
+    public ResourceTypeEnum getResourceType() {
+        return resourceType;
+    }
+
+    public void setResourceType(ResourceTypeEnum resourceType) {
+        this.resourceType = resourceType;
+    }
+
+    public CreateOpsAgentObservationRequestBody withStatus(StatusEnum status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 状态,published发布,draft草稿
+     * @return status
+     */
+    public StatusEnum getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusEnum status) {
+        this.status = status;
+    }
+
+    public CreateOpsAgentObservationRequestBody withCreateBy(String createBy) {
+        this.createBy = createBy;
+        return this;
+    }
+
+    /**
+     * 创建人
+     * @return createBy
+     */
+    public String getCreateBy() {
+        return createBy;
+    }
+
+    public void setCreateBy(String createBy) {
+        this.createBy = createBy;
+    }
+
+    public CreateOpsAgentObservationRequestBody withCreateTime(Integer createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    /**
+     * 创建时间
+     * minimum: 0
+     * maximum: 4110338427000
+     * @return createTime
+     */
+    public Integer getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Integer createTime) {
+        this.createTime = createTime;
+    }
+
+    public CreateOpsAgentObservationRequestBody withUpdateBy(String updateBy) {
+        this.updateBy = updateBy;
+        return this;
+    }
+
+    /**
+     * 更新人
+     * @return updateBy
+     */
+    public String getUpdateBy() {
+        return updateBy;
+    }
+
+    public void setUpdateBy(String updateBy) {
+        this.updateBy = updateBy;
+    }
+
+    public CreateOpsAgentObservationRequestBody withUpdatedTime(Integer updatedTime) {
+        this.updatedTime = updatedTime;
+        return this;
+    }
+
+    /**
+     * 更新时间
+     * minimum: 0
+     * maximum: 4110338427000
+     * @return updatedTime
+     */
+    public Integer getUpdatedTime() {
+        return updatedTime;
+    }
+
+    public void setUpdatedTime(Integer updatedTime) {
+        this.updatedTime = updatedTime;
+    }
+
+    public CreateOpsAgentObservationRequestBody withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * 版本
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public CreateOpsAgentObservationRequestBody withSource(SourceEnum source) {
+        this.source = source;
+        return this;
+    }
+
+    /**
+     * studio, agentrun, api 三种类型，默认为studio
+     * @return source
+     */
+    public SourceEnum getSource() {
+        return source;
+    }
+
+    public void setSource(SourceEnum source) {
+        this.source = source;
+    }
+
+    public CreateOpsAgentObservationRequestBody withApmAppId(String apmAppId) {
+        this.apmAppId = apmAppId;
+        return this;
+    }
+
+    /**
+     * apm的app_id，非必填
+     * @return apmAppId
+     */
+    public String getApmAppId() {
+        return apmAppId;
+    }
+
+    public void setApmAppId(String apmAppId) {
+        this.apmAppId = apmAppId;
+    }
+
+    public CreateOpsAgentObservationRequestBody withAomPromId(String aomPromId) {
+        this.aomPromId = aomPromId;
+        return this;
+    }
+
+    /**
+     * aom的app_id，非必填
+     * @return aomPromId
+     */
+    public String getAomPromId() {
+        return aomPromId;
+    }
+
+    public void setAomPromId(String aomPromId) {
+        this.aomPromId = aomPromId;
+    }
+
+    public CreateOpsAgentObservationRequestBody withApmAppToken(String apmAppToken) {
+        this.apmAppToken = apmAppToken;
+        return this;
+    }
+
+    /**
+     * apm token，加密存储，非必填
+     * @return apmAppToken
+     */
+    public String getApmAppToken() {
+        return apmAppToken;
+    }
+
+    public void setApmAppToken(String apmAppToken) {
+        this.apmAppToken = apmAppToken;
+    }
+
+    public CreateOpsAgentObservationRequestBody withAomAccessCode(String aomAccessCode) {
+        this.aomAccessCode = aomAccessCode;
+        return this;
+    }
+
+    /**
+     * aom access_code，加密存储，非必填
+     * @return aomAccessCode
+     */
+    public String getAomAccessCode() {
+        return aomAccessCode;
+    }
+
+    public void setAomAccessCode(String aomAccessCode) {
+        this.aomAccessCode = aomAccessCode;
+    }
+
+    public CreateOpsAgentObservationRequestBody withLtsGroupId(String ltsGroupId) {
+        this.ltsGroupId = ltsGroupId;
+        return this;
+    }
+
+    /**
+     * lts_group_id，非必填
+     * @return ltsGroupId
+     */
+    public String getLtsGroupId() {
+        return ltsGroupId;
+    }
+
+    public void setLtsGroupId(String ltsGroupId) {
+        this.ltsGroupId = ltsGroupId;
+    }
+
+    public CreateOpsAgentObservationRequestBody withLtsStreamId(String ltsStreamId) {
+        this.ltsStreamId = ltsStreamId;
+        return this;
+    }
+
+    /**
+     * lts_stream_id，非必填
+     * @return ltsStreamId
+     */
+    public String getLtsStreamId() {
+        return ltsStreamId;
+    }
+
+    public void setLtsStreamId(String ltsStreamId) {
+        this.ltsStreamId = ltsStreamId;
+    }
+
+    public CreateOpsAgentObservationRequestBody withLtsLabelName(String ltsLabelName) {
+        this.ltsLabelName = ltsLabelName;
+        return this;
+    }
+
+    /**
+     * 用于过滤lts日志标签的，key是 __labels__.task_name，对于需要查询日志上报的应用，必填，studio发布的应用必填，否则无法查询到应用日志
+     * @return ltsLabelName
+     */
+    public String getLtsLabelName() {
+        return ltsLabelName;
+    }
+
+    public void setLtsLabelName(String ltsLabelName) {
+        this.ltsLabelName = ltsLabelName;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        CreateOpsAgentObservationRequestBody that = (CreateOpsAgentObservationRequestBody) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateBy, that.updateBy) && Objects.equals(this.updatedTime, that.updatedTime)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.apmAppId, that.apmAppId) && Objects.equals(this.aomPromId, that.aomPromId)
+            && Objects.equals(this.apmAppToken, that.apmAppToken)
+            && Objects.equals(this.aomAccessCode, that.aomAccessCode)
+            && Objects.equals(this.ltsGroupId, that.ltsGroupId) && Objects.equals(this.ltsStreamId, that.ltsStreamId)
+            && Objects.equals(this.ltsLabelName, that.ltsLabelName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(resourceId,
+            resourceName,
+            resourceType,
+            status,
+            createBy,
+            createTime,
+            updateBy,
+            updatedTime,
+            version,
+            source,
+            apmAppId,
+            aomPromId,
+            apmAppToken,
+            aomAccessCode,
+            ltsGroupId,
+            ltsStreamId,
+            ltsLabelName);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class CreateOpsAgentObservationRequestBody {\n");
+        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
+        sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
+        sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    createBy: ").append(toIndentedString(createBy)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    updateBy: ").append(toIndentedString(updateBy)).append("\n");
+        sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    source: ").append(toIndentedString(source)).append("\n");
+        sb.append("    apmAppId: ").append(toIndentedString(apmAppId)).append("\n");
+        sb.append("    aomPromId: ").append(toIndentedString(aomPromId)).append("\n");
+        sb.append("    apmAppToken: ").append(toIndentedString(apmAppToken)).append("\n");
+        sb.append("    aomAccessCode: ").append(toIndentedString(aomAccessCode)).append("\n");
+        sb.append("    ltsGroupId: ").append(toIndentedString(ltsGroupId)).append("\n");
+        sb.append("    ltsStreamId: ").append(toIndentedString(ltsStreamId)).append("\n");
+        sb.append("    ltsLabelName: ").append(toIndentedString(ltsLabelName)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

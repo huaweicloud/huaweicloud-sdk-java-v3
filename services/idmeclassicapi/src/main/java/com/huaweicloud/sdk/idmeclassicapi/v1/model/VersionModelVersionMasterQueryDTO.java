@@ -11,16 +11,6 @@ import java.util.Objects;
 public class VersionModelVersionMasterQueryDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "decrypt")
-
-    private Boolean decrypt;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "iteration")
-
-    private Integer iteration;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "masterId")
 
     private String masterId;
@@ -30,39 +20,15 @@ public class VersionModelVersionMasterQueryDTO {
 
     private String version;
 
-    public VersionModelVersionMasterQueryDTO withDecrypt(Boolean decrypt) {
-        this.decrypt = decrypt;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iteration")
 
-    /**
-     * **参数解释：**  是否加密。  **取值范围：**  - true：加密。 - false：不加密。  **默认取值：**  false。 
-     * @return decrypt
-     */
-    public Boolean getDecrypt() {
-        return decrypt;
-    }
+    private Integer iteration;
 
-    public void setDecrypt(Boolean decrypt) {
-        this.decrypt = decrypt;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "decrypt")
 
-    public VersionModelVersionMasterQueryDTO withIteration(Integer iteration) {
-        this.iteration = iteration;
-        return this;
-    }
-
-    /**
-     * **参数解释：**  迭代版本。如果此参数为空，则返回M-V模型实例的最新版本信息。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
-     * @return iteration
-     */
-    public Integer getIteration() {
-        return iteration;
-    }
-
-    public void setIteration(Integer iteration) {
-        this.iteration = iteration;
-    }
+    private Boolean decrypt;
 
     public VersionModelVersionMasterQueryDTO withMasterId(String masterId) {
         this.masterId = masterId;
@@ -70,7 +36,7 @@ public class VersionModelVersionMasterQueryDTO {
     }
 
     /**
-     * **参数解释：**  主对象ID。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  主对象ID，用于定位M-V模型实例所属的主对象。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return masterId
      */
     public String getMasterId() {
@@ -87,7 +53,7 @@ public class VersionModelVersionMasterQueryDTO {
     }
 
     /**
-     * **参数解释：**  版本号。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  版本号，用于指定查询的版本标识。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return version
      */
     public String getVersion() {
@@ -96,6 +62,40 @@ public class VersionModelVersionMasterQueryDTO {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public VersionModelVersionMasterQueryDTO withIteration(Integer iteration) {
+        this.iteration = iteration;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  迭代版本号，用于精确定位某一版本下的特定迭代。如果此参数为空，则返回M-V模型实例的最新版本信息。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * @return iteration
+     */
+    public Integer getIteration() {
+        return iteration;
+    }
+
+    public void setIteration(Integer iteration) {
+        this.iteration = iteration;
+    }
+
+    public VersionModelVersionMasterQueryDTO withDecrypt(Boolean decrypt) {
+        this.decrypt = decrypt;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  是否对返回数据进行解密。当数据实体配置了加密属性时，可通过此参数控制是否返回明文数据。  **约束限制：**  不涉及。  **取值范围：**  - true：加密。 - false：不加密。  **默认取值：**  false。
+     * @return decrypt
+     */
+    public Boolean getDecrypt() {
+        return decrypt;
+    }
+
+    public void setDecrypt(Boolean decrypt) {
+        this.decrypt = decrypt;
     }
 
     @Override
@@ -107,23 +107,23 @@ public class VersionModelVersionMasterQueryDTO {
             return false;
         }
         VersionModelVersionMasterQueryDTO that = (VersionModelVersionMasterQueryDTO) obj;
-        return Objects.equals(this.decrypt, that.decrypt) && Objects.equals(this.iteration, that.iteration)
-            && Objects.equals(this.masterId, that.masterId) && Objects.equals(this.version, that.version);
+        return Objects.equals(this.masterId, that.masterId) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.iteration, that.iteration) && Objects.equals(this.decrypt, that.decrypt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(decrypt, iteration, masterId, version);
+        return Objects.hash(masterId, version, iteration, decrypt);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class VersionModelVersionMasterQueryDTO {\n");
-        sb.append("    decrypt: ").append(toIndentedString(decrypt)).append("\n");
-        sb.append("    iteration: ").append(toIndentedString(iteration)).append("\n");
         sb.append("    masterId: ").append(toIndentedString(masterId)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    iteration: ").append(toIndentedString(iteration)).append("\n");
+        sb.append("    decrypt: ").append(toIndentedString(decrypt)).append("\n");
         sb.append("}");
         return sb.toString();
     }

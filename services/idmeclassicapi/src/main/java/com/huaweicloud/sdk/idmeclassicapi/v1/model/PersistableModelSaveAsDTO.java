@@ -84,7 +84,7 @@ public class PersistableModelSaveAsDTO {
     }
 
     /**
-     * **参数解释：**  唯一标识。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
+     * **参数解释：**  新实例的唯一标识。如不填写，系统将自动生成。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
      * @return id
      */
     public String getId() {
@@ -101,7 +101,7 @@ public class PersistableModelSaveAsDTO {
     }
 
     /**
-     * **参数解释：**  修改者。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  修改者名称，用于记录执行另存操作的用户。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return modifier
      */
     public String getModifier() {
@@ -118,7 +118,7 @@ public class PersistableModelSaveAsDTO {
     }
 
     /**
-     * **参数解释：**  最后更新时间。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  最后更新时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。 例如：2025-12-04T03:50:40.599+0000。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -135,7 +135,7 @@ public class PersistableModelSaveAsDTO {
     }
 
     /**
-     * **参数解释：**  创建者。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  创建者账号。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return creator
      */
     public String getCreator() {
@@ -152,7 +152,7 @@ public class PersistableModelSaveAsDTO {
     }
 
     /**
-     * **参数解释：**  创建时间。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  创建时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。 例如：2025-12-04T03:50:40.599+0000。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return createTime
      */
     public String getCreateTime() {
@@ -169,7 +169,7 @@ public class PersistableModelSaveAsDTO {
     }
 
     /**
-     * **参数解释：**  扩展类型。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  扩展类型，用于指定数据模型的具体扩展类型。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -212,7 +212,7 @@ public class PersistableModelSaveAsDTO {
     }
 
     /**
-     * **参数解释：**  源模型编号。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  源模型的编号，用于指定数据来源模型。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return sourceEntityNumber
      */
     public String getSourceEntityNumber() {
@@ -229,7 +229,7 @@ public class PersistableModelSaveAsDTO {
     }
 
     /**
-     * **参数解释：**  源实例的唯一标识（单实例为ID，版本实例为versionId）。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  源实例的唯一标识。对于单实例，使用实例的id；对于版本实例，使用versionId。 获取方法请参见[分页查询实例 - ShowFindUsingPost](https://support.huaweicloud.com/api-idme/ShowFindUsingPost.html)。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return sourceInstanceId
      */
     public String getSourceInstanceId() {
@@ -262,7 +262,7 @@ public class PersistableModelSaveAsDTO {
     }
 
     /**
-     * **参数解释：**  将自定义属性（包括基本属性、扩展属性和分类属性）设置为空值，其长度不能超过1000个字符。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  需要从源实例中置空的自定义属性列表，包括基本属性、扩展属性和分类属性。这些属性在新实例中将设置为空值。  **约束限制：**  属性名称长度不能超过1000个字符。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return needSetNullAttrs
      */
     public List<String> getNeedSetNullAttrs() {
@@ -279,7 +279,7 @@ public class PersistableModelSaveAsDTO {
     }
 
     /**
-     * **参数解释：**  要保存的属性。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  需要覆盖的属性值对象。可指定源实例中某些属性的新值，未指定的属性保持与源实例一致。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return entityToSave
      */
     public Object getEntityToSave() {
@@ -296,7 +296,7 @@ public class PersistableModelSaveAsDTO {
     }
 
     /**
-     * **参数解释：**  要保存的结果。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  需要返回的属性对象，用于控制响应中返回的字段信息。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return entityToReturn
      */
     public Object getEntityToReturn() {
@@ -313,7 +313,7 @@ public class PersistableModelSaveAsDTO {
     }
 
     /**
-     * **参数解释：**  唯一键约束属性。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  数据模型的唯一键属性，用于业务层面的唯一标识。若指定，新实例将使用此值作为唯一键。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return uniqueKey
      */
     public String getUniqueKey() {

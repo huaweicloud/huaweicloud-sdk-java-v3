@@ -52,7 +52,7 @@ public class VersionModelBranchCreateDTO {
     }
 
     /**
-     * 创建时间。
+     * 创建时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。
      * @return createTime
      */
     public String getCreateTime() {
@@ -103,7 +103,7 @@ public class VersionModelBranchCreateDTO {
     }
 
     /**
-     * 最后更新时间。
+     * 最后更新时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -120,7 +120,7 @@ public class VersionModelBranchCreateDTO {
     }
 
     /**
-     * 修改人。
+     * 更新者。
      * @return modifier
      */
     public String getModifier() {

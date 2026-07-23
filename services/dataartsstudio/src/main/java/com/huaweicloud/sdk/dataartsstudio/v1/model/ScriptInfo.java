@@ -207,6 +207,11 @@ public class ScriptInfo {
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "modify_time")
+
+    private Long modifyTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
     private Integer version;
@@ -398,6 +403,23 @@ public class ScriptInfo {
         this.owner = owner;
     }
 
+    public ScriptInfo withModifyTime(Long modifyTime) {
+        this.modifyTime = modifyTime;
+        return this;
+    }
+
+    /**
+     * 脚本最后修改时间。
+     * @return modifyTime
+     */
+    public Long getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Long modifyTime) {
+        this.modifyTime = modifyTime;
+    }
+
     public ScriptInfo withVersion(Integer version) {
         this.version = version;
         return this;
@@ -431,7 +453,7 @@ public class ScriptInfo {
             && Objects.equals(this.queueName, that.queueName)
             && Objects.equals(this._configuration, that._configuration)
             && Objects.equals(this.description, that.description) && Objects.equals(this.owner, that.owner)
-            && Objects.equals(this.version, that.version);
+            && Objects.equals(this.modifyTime, that.modifyTime) && Objects.equals(this.version, that.version);
     }
 
     @Override
@@ -447,6 +469,7 @@ public class ScriptInfo {
             _configuration,
             description,
             owner,
+            modifyTime,
             version);
     }
 
@@ -465,6 +488,7 @@ public class ScriptInfo {
         sb.append("    _configuration: ").append(toIndentedString(_configuration)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
+        sb.append("    modifyTime: ").append(toIndentedString(modifyTime)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();

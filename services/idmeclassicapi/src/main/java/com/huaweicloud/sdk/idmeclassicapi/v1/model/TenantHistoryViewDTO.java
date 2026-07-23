@@ -107,7 +107,7 @@ public class TenantHistoryViewDTO {
     }
 
     /**
-     * **参数解释：**  类名。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  类名。  **取值范围：**  不涉及。 
      * @return className
      */
     public String getClassName() {
@@ -124,7 +124,7 @@ public class TenantHistoryViewDTO {
     }
 
     /**
-     * **参数解释：**  租户编码。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  租户编码。  **取值范围：**  不涉及。 
      * @return code
      */
     public String getCode() {
@@ -141,7 +141,7 @@ public class TenantHistoryViewDTO {
     }
 
     /**
-     * **参数解释：**  创建时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  创建时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。 
      * @return createTime
      */
     public String getCreateTime() {
@@ -158,7 +158,7 @@ public class TenantHistoryViewDTO {
     }
 
     /**
-     * **参数解释：**  创建者。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  创建者账号。  **取值范围：**  不涉及。 
      * @return creator
      */
     public String getCreator() {
@@ -175,7 +175,7 @@ public class TenantHistoryViewDTO {
     }
 
     /**
-     * **参数解释：**  租户使用的数据源名称。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  租户使用的数据源名称。  **取值范围：**  不涉及。 
      * @return dataSource
      */
     public String getDataSource() {
@@ -192,7 +192,7 @@ public class TenantHistoryViewDTO {
     }
 
     /**
-     * **参数解释：**  描述信息。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  描述信息。  **取值范围：**  不涉及。 
      * @return description
      */
     public String getDescription() {
@@ -209,7 +209,7 @@ public class TenantHistoryViewDTO {
     }
 
     /**
-     * **参数解释：**  失效标识。  **取值范围：**  - true：失效。  - false：未失效。  **默认取值：**  不涉及。 
+     * **参数解释：**  失效标识。  **取值范围：**  - true：失效。  - false：未失效。 
      * @return disableFlag
      */
     public Boolean getDisableFlag() {
@@ -226,7 +226,7 @@ public class TenantHistoryViewDTO {
     }
 
     /**
-     * **参数解释：**  唯一标识。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
+     * **参数解释：**  唯一标识。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。 
      * @return id
      */
     public String getId() {
@@ -243,7 +243,7 @@ public class TenantHistoryViewDTO {
     }
 
     /**
-     * **参数解释：**  KIA密级。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  KIA密级。  **取值范围：**  不涉及。 
      * @return kiaguid
      */
     public String getKiaguid() {
@@ -260,7 +260,7 @@ public class TenantHistoryViewDTO {
     }
 
     /**
-     * **参数解释：**  最后更新时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  最后更新时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。 
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -277,7 +277,7 @@ public class TenantHistoryViewDTO {
     }
 
     /**
-     * **参数解释：**  更新者。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  更新者账号。  **取值范围：**  不涉及。 
      * @return modifier
      */
     public String getModifier() {
@@ -294,7 +294,7 @@ public class TenantHistoryViewDTO {
     }
 
     /**
-     * **参数解释：**  中文名称。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  中文名称。  **取值范围：**  不涉及。 
      * @return name
      */
     public String getName() {
@@ -311,7 +311,7 @@ public class TenantHistoryViewDTO {
     }
 
     /**
-     * **参数解释：**  软删除标识，参数值为0或1。  **取值范围：**  - 0：表示未删除。 - 1：表示已删除。  **默认取值：**  0。 
+     * **参数解释：**  软删除标识。  **取值范围：**  - 0：表示未删除。 - 1：表示已删除。 
      * @return rdmDeleteFlag
      */
     public Integer getRdmDeleteFlag() {
@@ -328,7 +328,7 @@ public class TenantHistoryViewDTO {
     }
 
     /**
-     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。 
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -345,7 +345,7 @@ public class TenantHistoryViewDTO {
     }
 
     /**
-     * **参数解释：**  操作类型。  **取值范围：**  - CREATE：创建操作。  - UPDATE：更新操作。 - LOGICALDELETE：软删除操作。 - DELETE：删除操作。 - CASCADE：级联操作。  **默认取值：**  不涉及。 
+     * **参数解释：**  操作类型。  **取值范围：**  - CREATE：创建操作。  - UPDATE：更新操作。 - LOGICALDELETE：软删除操作。 - DELETE：删除操作。 - CASCADE：级联操作。 
      * @return rdmOperationType
      */
     public String getRdmOperationType() {
@@ -362,7 +362,7 @@ public class TenantHistoryViewDTO {
     }
 
     /**
-     * **参数解释：**  系统版本。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  系统版本。  **取值范围：**  不涉及。 
      * @return rdmVersion
      */
     public Integer getRdmVersion() {
@@ -379,7 +379,7 @@ public class TenantHistoryViewDTO {
     }
 
     /**
-     * **参数解释：**  安全密级。  **取值范围：**  - INTERNAL：内部公开。 - SECRET：秘密。 - CONFIDENTIAL：机密。 - TOP_SECRET：绝密。  **默认取值：**  不涉及。 
+     * **参数解释：**  安全密级。  **取值范围：**  - internal：内部公开。 - secret：秘密。 - confidential：机密。 - top_secret：绝密。 
      * @return securityLevel
      */
     public String getSecurityLevel() {

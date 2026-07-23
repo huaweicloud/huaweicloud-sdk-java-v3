@@ -16,6 +16,11 @@ public class StatisticsRVO {
     private Integer createCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "updateCount")
+
+    private Integer updateCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deleteCount")
 
     private Integer deleteCount;
@@ -25,18 +30,13 @@ public class StatisticsRVO {
 
     private Integer logicalDeleteCount;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "updateCount")
-
-    private Integer updateCount;
-
     public StatisticsRVO withCreateCount(Integer createCount) {
         this.createCount = createCount;
         return this;
     }
 
     /**
-     * **参数解释：**  新增统计记录数。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  新增实例统计记录数，表示在指定时间区间内创建的实例数量。  **取值范围：**  不涉及。
      * @return createCount
      */
     public Integer getCreateCount() {
@@ -47,13 +47,30 @@ public class StatisticsRVO {
         this.createCount = createCount;
     }
 
+    public StatisticsRVO withUpdateCount(Integer updateCount) {
+        this.updateCount = updateCount;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  更新实例统计记录数，表示在指定时间区间内更新的实例数量。  **取值范围：**  不涉及。
+     * @return updateCount
+     */
+    public Integer getUpdateCount() {
+        return updateCount;
+    }
+
+    public void setUpdateCount(Integer updateCount) {
+        this.updateCount = updateCount;
+    }
+
     public StatisticsRVO withDeleteCount(Integer deleteCount) {
         this.deleteCount = deleteCount;
         return this;
     }
 
     /**
-     * **参数解释：**  删除统计记录数。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  删除实例统计记录数，表示在指定时间区间内物理删除的实例数量。  **取值范围：**  不涉及。
      * @return deleteCount
      */
     public Integer getDeleteCount() {
@@ -70,7 +87,7 @@ public class StatisticsRVO {
     }
 
     /**
-     * **参数解释：**  软删除统计记录数。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  软删除实例统计记录数，表示在指定时间区间内软删除的实例数量。  **取值范围：**  不涉及。
      * @return logicalDeleteCount
      */
     public Integer getLogicalDeleteCount() {
@@ -79,23 +96,6 @@ public class StatisticsRVO {
 
     public void setLogicalDeleteCount(Integer logicalDeleteCount) {
         this.logicalDeleteCount = logicalDeleteCount;
-    }
-
-    public StatisticsRVO withUpdateCount(Integer updateCount) {
-        this.updateCount = updateCount;
-        return this;
-    }
-
-    /**
-     * **参数解释：**  更新统计记录数。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
-     * @return updateCount
-     */
-    public Integer getUpdateCount() {
-        return updateCount;
-    }
-
-    public void setUpdateCount(Integer updateCount) {
-        this.updateCount = updateCount;
     }
 
     @Override
@@ -107,14 +107,14 @@ public class StatisticsRVO {
             return false;
         }
         StatisticsRVO that = (StatisticsRVO) obj;
-        return Objects.equals(this.createCount, that.createCount) && Objects.equals(this.deleteCount, that.deleteCount)
-            && Objects.equals(this.logicalDeleteCount, that.logicalDeleteCount)
-            && Objects.equals(this.updateCount, that.updateCount);
+        return Objects.equals(this.createCount, that.createCount) && Objects.equals(this.updateCount, that.updateCount)
+            && Objects.equals(this.deleteCount, that.deleteCount)
+            && Objects.equals(this.logicalDeleteCount, that.logicalDeleteCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(createCount, deleteCount, logicalDeleteCount, updateCount);
+        return Objects.hash(createCount, updateCount, deleteCount, logicalDeleteCount);
     }
 
     @Override
@@ -122,9 +122,9 @@ public class StatisticsRVO {
         StringBuilder sb = new StringBuilder();
         sb.append("class StatisticsRVO {\n");
         sb.append("    createCount: ").append(toIndentedString(createCount)).append("\n");
+        sb.append("    updateCount: ").append(toIndentedString(updateCount)).append("\n");
         sb.append("    deleteCount: ").append(toIndentedString(deleteCount)).append("\n");
         sb.append("    logicalDeleteCount: ").append(toIndentedString(logicalDeleteCount)).append("\n");
-        sb.append("    updateCount: ").append(toIndentedString(updateCount)).append("\n");
         sb.append("}");
         return sb.toString();
     }

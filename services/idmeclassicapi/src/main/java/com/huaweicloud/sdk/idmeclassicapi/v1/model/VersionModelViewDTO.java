@@ -178,7 +178,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  检出时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  检出时间，使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。若实例未检出，返回null。  **取值范围：**  不涉及。
      * @return checkOutTime
      */
     public String getCheckOutTime() {
@@ -195,7 +195,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  检出人。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  检出人名称。若实例未检出，返回null。  **取值范围：**  不涉及。
      * @return checkOutUserName
      */
     public String getCheckOutUserName() {
@@ -212,7 +212,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  类名。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  版本实例的类名。  **取值范围：**  不涉及。
      * @return className
      */
     public String getClassName() {
@@ -229,7 +229,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  创建时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  版本实例的创建时间，使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。
      * @return createTime
      */
     public String getCreateTime() {
@@ -246,7 +246,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  创建者。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  版本实例的创建者账号。  **取值范围：**  不涉及。
      * @return creator
      */
     public String getCreator() {
@@ -263,7 +263,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  描述信息。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  版本实例的描述信息，如工艺变更说明、设备规格备注等。  **取值范围：**  不涉及。
      * @return description
      */
     public String getDescription() {
@@ -280,7 +280,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  唯一标识。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
+     * **参数解释：**  版本实例的唯一标识。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。
      * @return id
      */
     public String getId() {
@@ -297,7 +297,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  迭代版本。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  版本实例的迭代版本号，用于标识同一版本下的迭代次数。  **取值范围：**  不涉及。
      * @return iteration
      */
     public Integer getIteration() {
@@ -314,7 +314,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  KIA密级。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  KIA密级，用于数据资产的安全标识。  **取值范围：**  不涉及。
      * @return kiaguid
      */
     public String getKiaguid() {
@@ -331,7 +331,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  最后更新时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  版本实例的最后更新时间，使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -348,7 +348,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  是否为最新版本。  **取值范围：**  - true：是最新版本。 - false：不是最新版本。  **默认取值：**  false。 
+     * **参数解释：**  是否为最新版本。  **取值范围：**  - true：是最新版本。 - false：不是最新版本。
      * @return latest
      */
     public Boolean getLatest() {
@@ -365,7 +365,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  是否为最新迭代版本。  **取值范围：**  - true：是最新迭代版本。 - false：不是最新迭代版本。  **默认取值：**  不涉及。 
+     * **参数解释：**  是否为最新迭代版本。同一版本号下可能存在多次迭代，此字段标识是否为最后一次迭代。  **取值范围：**  - true：是最新迭代版本。 - false：不是最新迭代版本。
      * @return latestIteration
      */
     public Boolean getLatestIteration() {
@@ -382,7 +382,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  是否为最新修订版本。  **取值范围：**  - true：是最新修订版本。 - false：不是最新修订版本。  **默认取值：**  不涉及。 
+     * **参数解释：**  是否为最新修订版本。  **取值范围：**  - true：是最新修订版本。 - false：不是最新修订版本。
      * @return latestVersion
      */
     public Boolean getLatestVersion() {
@@ -425,7 +425,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  修改人。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  版本实例的更新者账号。  **取值范围：**  不涉及。
      * @return modifier
      */
     public String getModifier() {
@@ -442,7 +442,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  中文名称。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  版本实例的中文名称。  **取值范围：**  不涉及。
      * @return name
      */
     public String getName() {
@@ -459,7 +459,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  前序版本实例ID。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  前序版本实例ID，用于追溯版本变更历史。  **取值范围：**  不涉及。
      * @return preVersionId
      */
     public String getPreVersionId() {
@@ -476,7 +476,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  软删除标识。  **取值范围：**  - 0：表示未删除。 - 1：表示已删除。  **默认取值：**  0。 
+     * **参数解释：**  软删除标识，用于M-V模型实例的逻辑删除管理。  **取值范围：**  - 0：表示未删除。 - 1：表示已删除。
      * @return rdmDeleteFlag
      */
     public Integer getRdmDeleteFlag() {
@@ -493,7 +493,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  扩展类型，用于区分不同业务域的M-V模型实例。  **取值范围：**  不涉及。
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -510,7 +510,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  系统版本。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  系统版本号，用于数据版本控制与并发冲突检测。每次更新后自动递增。  **取值范围：**  不涉及。
      * @return rdmVersion
      */
     public Integer getRdmVersion() {
@@ -527,7 +527,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  安全密级。  **取值范围：**  - INTERNAL：内部公开。 - SECRET：秘密。 - CONFIDENTIAL：机密。 - TOP_SECRET：绝密。  **默认取值：**  不涉及。 
+     * **参数解释：**  安全密级，标识当前版本实例的访问控制级别。  **取值范围：**  - internal：内部公开。 - secret：秘密。 - confidential：机密。 - top_secret：绝密。
      * @return securityLevel
      */
     public String getSecurityLevel() {
@@ -570,7 +570,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  版本号。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  版本号。  **取值范围：**  不涉及。
      * @return version
      */
     public String getVersion() {
@@ -587,7 +587,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  业务版本内码。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  业务版本内码，用于系统内部的版本排序与比较。  **取值范围：**  不涉及。
      * @return versionCode
      */
     public Integer getVersionCode() {
@@ -604,7 +604,7 @@ public class VersionModelViewDTO {
     }
 
     /**
-     * **参数解释：**  是否已检出。  **取值范围：**  - true：已检出。 - false：未检出。  **默认取值：**  false。 
+     * **参数解释：**  是否已检出。本接口要求实例必须处于未检出状态（workingCopy=false）方可更新。  **取值范围：**  - true：已检出（当前被某用户锁定编辑中）。 - false：未检出（处于检入状态，可被管理员更新）。
      * @return workingCopy
      */
     public Boolean getWorkingCopy() {

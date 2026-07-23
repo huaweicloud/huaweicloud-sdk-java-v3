@@ -43,7 +43,7 @@ public class PersistableModelUniqueKeyDTO {
     }
 
     /**
-     * **参数解释：**  示例模型的唯一键约束属性值。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  数据模型的唯一键约束属性值。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return uniqueKey
      */
     public String getUniqueKey() {

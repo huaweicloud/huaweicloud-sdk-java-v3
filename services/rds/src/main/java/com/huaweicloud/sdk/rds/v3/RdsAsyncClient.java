@@ -83,6 +83,8 @@ import com.huaweicloud.sdk.rds.v3.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateIntelligentKillSessionRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateIntelligentKillSessionResponse;
+import com.huaweicloud.sdk.rds.v3.model.CreateJobScheduleRequest;
+import com.huaweicloud.sdk.rds.v3.model.CreateJobScheduleResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateManualBackupRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateManualBackupResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreatePostgresqlDatabaseRequest;
@@ -127,6 +129,8 @@ import com.huaweicloud.sdk.rds.v3.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteJobRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteJobResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteJobScheduleRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteJobScheduleResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteLogLtsConfigsRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteLogLtsConfigsResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteManualBackupRequest;
@@ -257,6 +261,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListJobInfoDetailRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListJobInfoDetailResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListJobInfoRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListJobInfoResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListJobSchedulesRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListJobSchedulesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListLogLtsConfigsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListLogLtsConfigsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListMajorVersionFeatureRequest;
@@ -369,6 +375,8 @@ import com.huaweicloud.sdk.rds.v3.model.ModifyCollationRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyCollationResponse;
 import com.huaweicloud.sdk.rds.v3.model.ModifyDbAgentJobRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyDbAgentJobResponse;
+import com.huaweicloud.sdk.rds.v3.model.ModifyJobScheduleRequest;
+import com.huaweicloud.sdk.rds.v3.model.ModifyJobScheduleResponse;
 import com.huaweicloud.sdk.rds.v3.model.ModifyPostgresqlHbaConfRequest;
 import com.huaweicloud.sdk.rds.v3.model.ModifyPostgresqlHbaConfResponse;
 import com.huaweicloud.sdk.rds.v3.model.ModifyPublicationRequest;
@@ -8769,6 +8777,35 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 创建数据库定时任务策略
+     *
+     * 创建数据库定时任务策略。每个类型最多只能创建100个自定义策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateJobScheduleRequest 请求对象
+     * @return CompletableFuture<CreateJobScheduleResponse>
+     */
+    public CompletableFuture<CreateJobScheduleResponse> createJobScheduleAsync(CreateJobScheduleRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.createJobSchedule);
+    }
+
+    /**
+     * 创建数据库定时任务策略
+     *
+     * 创建数据库定时任务策略。每个类型最多只能创建100个自定义策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateJobScheduleRequest 请求对象
+     * @return AsyncInvoker<CreateJobScheduleRequest, CreateJobScheduleResponse>
+     */
+    public AsyncInvoker<CreateJobScheduleRequest, CreateJobScheduleResponse> createJobScheduleAsyncInvoker(
+        CreateJobScheduleRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.createJobSchedule, hcClient);
+    }
+
+    /**
      * 创建发布
      *
      * 创建发布
@@ -8913,6 +8950,35 @@ public class RdsAsyncClient {
     public AsyncInvoker<DeleteDistributionRequest, DeleteDistributionResponse> deleteDistributionAsyncInvoker(
         DeleteDistributionRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.deleteDistribution, hcClient);
+    }
+
+    /**
+     * 删除数据库定时任务策略
+     *
+     * 删除数据库定时任务策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteJobScheduleRequest 请求对象
+     * @return CompletableFuture<DeleteJobScheduleResponse>
+     */
+    public CompletableFuture<DeleteJobScheduleResponse> deleteJobScheduleAsync(DeleteJobScheduleRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.deleteJobSchedule);
+    }
+
+    /**
+     * 删除数据库定时任务策略
+     *
+     * 删除数据库定时任务策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteJobScheduleRequest 请求对象
+     * @return AsyncInvoker<DeleteJobScheduleRequest, DeleteJobScheduleResponse>
+     */
+    public AsyncInvoker<DeleteJobScheduleRequest, DeleteJobScheduleResponse> deleteJobScheduleAsyncInvoker(
+        DeleteJobScheduleRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.deleteJobSchedule, hcClient);
     }
 
     /**
@@ -9302,6 +9368,35 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 查询数据库定时任务策略
+     *
+     * 查询数据库定时任务策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListJobSchedulesRequest 请求对象
+     * @return CompletableFuture<ListJobSchedulesResponse>
+     */
+    public CompletableFuture<ListJobSchedulesResponse> listJobSchedulesAsync(ListJobSchedulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listJobSchedules);
+    }
+
+    /**
+     * 查询数据库定时任务策略
+     *
+     * 查询数据库定时任务策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListJobSchedulesRequest 请求对象
+     * @return AsyncInvoker<ListJobSchedulesRequest, ListJobSchedulesResponse>
+     */
+    public AsyncInvoker<ListJobSchedulesRequest, ListJobSchedulesResponse> listJobSchedulesAsyncInvoker(
+        ListJobSchedulesRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listJobSchedules, hcClient);
+    }
+
+    /**
      * 查询云市场引擎商品列表
      *
      * 查询云市场引擎商品列表。
@@ -9683,6 +9778,35 @@ public class RdsAsyncClient {
     public AsyncInvoker<ModifyDbAgentJobRequest, ModifyDbAgentJobResponse> modifyDbAgentJobAsyncInvoker(
         ModifyDbAgentJobRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.modifyDbAgentJob, hcClient);
+    }
+
+    /**
+     * 修改数据库定时任务策略
+     *
+     * 修改数据库定时任务策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyJobScheduleRequest 请求对象
+     * @return CompletableFuture<ModifyJobScheduleResponse>
+     */
+    public CompletableFuture<ModifyJobScheduleResponse> modifyJobScheduleAsync(ModifyJobScheduleRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.modifyJobSchedule);
+    }
+
+    /**
+     * 修改数据库定时任务策略
+     *
+     * 修改数据库定时任务策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyJobScheduleRequest 请求对象
+     * @return AsyncInvoker<ModifyJobScheduleRequest, ModifyJobScheduleResponse>
+     */
+    public AsyncInvoker<ModifyJobScheduleRequest, ModifyJobScheduleResponse> modifyJobScheduleAsyncInvoker(
+        ModifyJobScheduleRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.modifyJobSchedule, hcClient);
     }
 
     /**

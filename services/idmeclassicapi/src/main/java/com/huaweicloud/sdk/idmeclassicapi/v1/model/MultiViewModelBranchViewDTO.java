@@ -12,6 +12,11 @@ import java.util.function.Consumer;
 public class MultiViewModelBranchViewDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "className")
 
     private String className;
@@ -25,11 +30,6 @@ public class MultiViewModelBranchViewDTO {
     @JsonProperty(value = "creator")
 
     private String creator;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
-
-    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lastUpdateTime")
@@ -66,13 +66,30 @@ public class MultiViewModelBranchViewDTO {
 
     private String version;
 
+    public MultiViewModelBranchViewDTO withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  唯一标识。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public MultiViewModelBranchViewDTO withClassName(String className) {
         this.className = className;
         return this;
     }
 
     /**
-     * **参数解释：**  类名。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  类名。  **取值范围：**  不涉及。
      * @return className
      */
     public String getClassName() {
@@ -89,7 +106,7 @@ public class MultiViewModelBranchViewDTO {
     }
 
     /**
-     * **参数解释：**  创建时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  创建时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。
      * @return createTime
      */
     public String getCreateTime() {
@@ -106,7 +123,7 @@ public class MultiViewModelBranchViewDTO {
     }
 
     /**
-     * **参数解释：**  创建者。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  创建者账号。  **取值范围：**  不涉及。
      * @return creator
      */
     public String getCreator() {
@@ -117,30 +134,13 @@ public class MultiViewModelBranchViewDTO {
         this.creator = creator;
     }
 
-    public MultiViewModelBranchViewDTO withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    /**
-     * **参数解释：**  唯一标识。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public MultiViewModelBranchViewDTO withLastUpdateTime(String lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
         return this;
     }
 
     /**
-     * **参数解释：**  最后更新时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  最后更新时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -157,7 +157,7 @@ public class MultiViewModelBranchViewDTO {
     }
 
     /**
-     * **参数解释：**  修改人。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  更新者账号。  **取值范围：**  不涉及。
      * @return modifier
      */
     public String getModifier() {
@@ -174,7 +174,7 @@ public class MultiViewModelBranchViewDTO {
     }
 
     /**
-     * **参数解释：**  软删除标识，参数值为0或1。  **取值范围：**  - 0：表示未删除。 - 1：表示已删除。  **默认取值：**  不涉及。 
+     * **参数解释：**  软删除标识。  **取值范围：**  - 0：表示未删除。 - 1：表示已删除。
      * @return rdmDeleteFlag
      */
     public Integer getRdmDeleteFlag() {
@@ -191,7 +191,7 @@ public class MultiViewModelBranchViewDTO {
     }
 
     /**
-     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -208,7 +208,7 @@ public class MultiViewModelBranchViewDTO {
     }
 
     /**
-     * **参数解释：**  系统版本。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  系统版本。  **取值范围：**  不涉及。
      * @return rdmVersion
      */
     public Integer getRdmVersion() {
@@ -251,7 +251,7 @@ public class MultiViewModelBranchViewDTO {
     }
 
     /**
-     * **参数解释：**  版本号。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  版本号。  **取值范围：**  不涉及。
      * @return version
      */
     public String getVersion() {
@@ -271,8 +271,8 @@ public class MultiViewModelBranchViewDTO {
             return false;
         }
         MultiViewModelBranchViewDTO that = (MultiViewModelBranchViewDTO) obj;
-        return Objects.equals(this.className, that.className) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.creator, that.creator) && Objects.equals(this.id, that.id)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.className, that.className)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.creator, that.creator)
             && Objects.equals(this.lastUpdateTime, that.lastUpdateTime) && Objects.equals(this.modifier, that.modifier)
             && Objects.equals(this.rdmDeleteFlag, that.rdmDeleteFlag)
             && Objects.equals(this.rdmExtensionType, that.rdmExtensionType)
@@ -282,10 +282,10 @@ public class MultiViewModelBranchViewDTO {
 
     @Override
     public int hashCode() {
-        return Objects.hash(className,
+        return Objects.hash(id,
+            className,
             createTime,
             creator,
-            id,
             lastUpdateTime,
             modifier,
             rdmDeleteFlag,
@@ -299,10 +299,10 @@ public class MultiViewModelBranchViewDTO {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MultiViewModelBranchViewDTO {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    className: ").append(toIndentedString(className)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    lastUpdateTime: ").append(toIndentedString(lastUpdateTime)).append("\n");
         sb.append("    modifier: ").append(toIndentedString(modifier)).append("\n");
         sb.append("    rdmDeleteFlag: ").append(toIndentedString(rdmDeleteFlag)).append("\n");

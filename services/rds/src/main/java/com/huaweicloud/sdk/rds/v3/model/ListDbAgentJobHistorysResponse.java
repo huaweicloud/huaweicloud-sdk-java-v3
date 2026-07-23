@@ -15,46 +15,46 @@ import java.util.function.Consumer;
 public class ListDbAgentJobHistorysResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "historys")
+    @JsonProperty(value = "histories")
 
-    private List<ListDbAgentJobHistorysResult> historys = null;
+    private List<ListDbAgentJobHistorysResult> histories = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
     private Integer totalCount;
 
-    public ListDbAgentJobHistorysResponse withHistorys(List<ListDbAgentJobHistorysResult> historys) {
-        this.historys = historys;
+    public ListDbAgentJobHistorysResponse withHistories(List<ListDbAgentJobHistorysResult> histories) {
+        this.histories = histories;
         return this;
     }
 
-    public ListDbAgentJobHistorysResponse addHistorysItem(ListDbAgentJobHistorysResult historysItem) {
-        if (this.historys == null) {
-            this.historys = new ArrayList<>();
+    public ListDbAgentJobHistorysResponse addHistoriesItem(ListDbAgentJobHistorysResult historiesItem) {
+        if (this.histories == null) {
+            this.histories = new ArrayList<>();
         }
-        this.historys.add(historysItem);
+        this.histories.add(historiesItem);
         return this;
     }
 
-    public ListDbAgentJobHistorysResponse withHistorys(Consumer<List<ListDbAgentJobHistorysResult>> historysSetter) {
-        if (this.historys == null) {
-            this.historys = new ArrayList<>();
+    public ListDbAgentJobHistorysResponse withHistories(Consumer<List<ListDbAgentJobHistorysResult>> historiesSetter) {
+        if (this.histories == null) {
+            this.histories = new ArrayList<>();
         }
-        historysSetter.accept(this.historys);
+        historiesSetter.accept(this.histories);
         return this;
     }
 
     /**
      * 执行历史列表。
-     * @return historys
+     * @return histories
      */
-    public List<ListDbAgentJobHistorysResult> getHistorys() {
-        return historys;
+    public List<ListDbAgentJobHistorysResult> getHistories() {
+        return histories;
     }
 
-    public void setHistorys(List<ListDbAgentJobHistorysResult> historys) {
-        this.historys = historys;
+    public void setHistories(List<ListDbAgentJobHistorysResult> histories) {
+        this.histories = histories;
     }
 
     public ListDbAgentJobHistorysResponse withTotalCount(Integer totalCount) {
@@ -83,19 +83,19 @@ public class ListDbAgentJobHistorysResponse extends SdkResponse {
             return false;
         }
         ListDbAgentJobHistorysResponse that = (ListDbAgentJobHistorysResponse) obj;
-        return Objects.equals(this.historys, that.historys) && Objects.equals(this.totalCount, that.totalCount);
+        return Objects.equals(this.histories, that.histories) && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(historys, totalCount);
+        return Objects.hash(histories, totalCount);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListDbAgentJobHistorysResponse {\n");
-        sb.append("    historys: ").append(toIndentedString(historys)).append("\n");
+        sb.append("    histories: ").append(toIndentedString(histories)).append("\n");
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("}");
         return sb.toString();

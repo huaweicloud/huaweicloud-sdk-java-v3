@@ -92,7 +92,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * **参数解释：**  唯一标识。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
+     * **参数解释：**  唯一标识，系统生成的子节点主键ID。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。
      * @return id
      */
     public String getId() {
@@ -109,7 +109,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * **参数解释：**  创建人。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  创建者账号，标识创建该子节点的用户。  **取值范围：**  不涉及。
      * @return creator
      */
     public String getCreator() {
@@ -126,7 +126,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * **参数解释：**  修改人。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  更新者账号，标识最后更新该子节点的用户。  **取值范围：**  不涉及。
      * @return modifier
      */
     public String getModifier() {
@@ -143,7 +143,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * **参数解释：**  创建时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  创建时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。
      * @return createTime
      */
     public String getCreateTime() {
@@ -160,7 +160,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * **参数解释：**  最新更新时间。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  最新更新时间。使用UTC+0时间格式，格式为yyyy-MM-ddTHH:mm:ss.SSSZ。  **取值范围：**  不涉及。
      * @return lastUpdateTime
      */
     public String getLastUpdateTime() {
@@ -177,7 +177,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * **参数解释：**  系统版本。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  系统版本号，用于数据版本控制。  **取值范围：**  不涉及。
      * @return rdmVersion
      */
     public Integer getRdmVersion() {
@@ -194,7 +194,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * **参数解释：**  软删除标识，参数值为0或1。  **取值范围：**  - 0：表示未删除。 - 1：表示已删除。  **默认取值：**  0。 
+     * **参数解释：**  软删除标识。  **取值范围：**  - 0：表示未删除。 - 1：表示已删除。
      * @return rdmDeleteFlag
      */
     public Integer getRdmDeleteFlag() {
@@ -211,7 +211,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * **参数解释：**  扩展类型。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  扩展类型，标识对象的扩展类别。  **取值范围：**  不涉及。
      * @return rdmExtensionType
      */
     public String getRdmExtensionType() {
@@ -254,7 +254,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * **参数解释：**  类名。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  类名，标识对象的Java类名称。  **取值范围：**  不涉及。
      * @return className
      */
     public String getClassName() {
@@ -323,7 +323,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * **参数解释：**  是否为叶子节点。  **取值范围：**  - true：是叶子节点。 - false：不是叶子节点。  **默认取值：**  不涉及。 
+     * **参数解释：**  是否为叶子节点，标识该节点是否拥有子节点。  **取值范围：**  - true：是叶子节点（无子节点）。 - false：不是叶子节点（有子节点）。  **默认取值：**  不涉及。
      * @return leafFlag
      */
     public Boolean getLeafFlag() {
@@ -340,7 +340,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * **参数解释：**  用于存储当前节点全路径。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  用于存储当前节点全路径，格式为从根节点到当前节点的ID路径，以“/”分隔。 例如：根节点ID/父节点ID/当前节点ID/。  **取值范围：**  不涉及。
      * @return fullPath
      */
     public String getFullPath() {
@@ -357,7 +357,7 @@ public class TreeableModelViewDTO {
     }
 
     /**
-     * **参数解释：**  用于存储当前节点原始全路径。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  用于存储当前节点原始全路径，格式与fullPath一致，记录节点在树形结构中的原始层级位置。  **取值范围：**  不涉及。
      * @return rawFullPath
      */
     public String getRawFullPath() {

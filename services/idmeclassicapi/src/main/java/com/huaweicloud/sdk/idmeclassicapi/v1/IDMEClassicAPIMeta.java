@@ -168,7 +168,7 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListVersionModelVer
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListVersionModelVersionUndoCheckOutDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListVersionModelVersionUpdateAndCheckinDTOVersionModel;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListVersionModelVersionUpdateDTO;
-import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOMongPageRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOMongoPageRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOMultiViewModelDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOMultiViewModelMasterIdModifierDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOMultiViewModelVersionViewCreateDTO;
@@ -547,18 +547,18 @@ public class IDMEClassicAPIMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("modelName",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateShareDocsRequest::getModelName,
-                BatchCreateShareDocsRequest::setModelName));
         builder.<String>withRequestField("identifier",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchCreateShareDocsRequest::getIdentifier,
                 BatchCreateShareDocsRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateShareDocsRequest::getModelName,
+                BatchCreateShareDocsRequest::setModelName));
         builder.<RDMParamVOListShareDocsParamDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -684,18 +684,18 @@ public class IDMEClassicAPIMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("modelName",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteLatestVersionRequest::getModelName,
-                BatchDeleteLatestVersionRequest::setModelName));
         builder.<String>withRequestField("identifier",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchDeleteLatestVersionRequest::getIdentifier,
                 BatchDeleteLatestVersionRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteLatestVersionRequest::getModelName,
+                BatchDeleteLatestVersionRequest::setModelName));
         builder.<RDMParamVOVersionModelMasterIdsModifierDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -758,18 +758,18 @@ public class IDMEClassicAPIMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("modelName",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteLogicalLatestVersionRequest::getModelName,
-                BatchDeleteLogicalLatestVersionRequest::setModelName));
         builder.<String>withRequestField("identifier",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchDeleteLogicalLatestVersionRequest::getIdentifier,
                 BatchDeleteLogicalLatestVersionRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteLogicalLatestVersionRequest::getModelName,
+                BatchDeleteLogicalLatestVersionRequest::setModelName));
         builder.<RDMParamVOVersionModelMasterIdsModifierDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -833,18 +833,18 @@ public class IDMEClassicAPIMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("modelName",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteShareDocsRequest::getModelName,
-                BatchDeleteShareDocsRequest::setModelName));
         builder.<String>withRequestField("identifier",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchDeleteShareDocsRequest::getIdentifier,
                 BatchDeleteShareDocsRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteShareDocsRequest::getModelName,
+                BatchDeleteShareDocsRequest::setModelName));
         builder.<RDMParamVODeleteDocParamDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -871,18 +871,18 @@ public class IDMEClassicAPIMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("modelName",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteStructuredDocumentRequest::getModelName,
-                BatchDeleteStructuredDocumentRequest::setModelName));
         builder.<String>withRequestField("identifier",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchDeleteStructuredDocumentRequest::getIdentifier,
                 BatchDeleteStructuredDocumentRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteStructuredDocumentRequest::getModelName,
+                BatchDeleteStructuredDocumentRequest::setModelName));
         builder.<RDMParamVOBatchDeleteDocRequestDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1148,17 +1148,17 @@ public class IDMEClassicAPIMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("modelName",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchUpdateDocumentRequest::getModelName, BatchUpdateDocumentRequest::setModelName));
         builder.<String>withRequestField("identifier",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchUpdateDocumentRequest::getIdentifier,
                 BatchUpdateDocumentRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateDocumentRequest::getModelName, BatchUpdateDocumentRequest::setModelName));
         builder.<RDMParamVOListBatchUpdateStructuredDocDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1547,16 +1547,16 @@ public class IDMEClassicAPIMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("modelName",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateDocumentRequest::getModelName, CreateDocumentRequest::setModelName));
         builder.<String>withRequestField("identifier",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateDocumentRequest::getIdentifier, CreateDocumentRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDocumentRequest::getModelName, CreateDocumentRequest::setModelName));
         builder.<RDMParamVOStructuredDocInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -2332,16 +2332,6 @@ public class IDMEClassicAPIMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<Integer>withRequestField("pageSizePath",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGetChildListRequest::getPageSizePath, ListGetChildListRequest::setPageSizePath));
-        builder.<Integer>withRequestField("curPagePath",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListGetChildListRequest::getCurPagePath, ListGetChildListRequest::setCurPagePath));
         builder.<String>withRequestField("identifier",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2352,6 +2342,16 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListGetChildListRequest::getModelName, ListGetChildListRequest::setModelName));
+        builder.<Integer>withRequestField("pageSizePath",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGetChildListRequest::getPageSizePath, ListGetChildListRequest::setPageSizePath));
+        builder.<Integer>withRequestField("curPagePath",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGetChildListRequest::getCurPagePath, ListGetChildListRequest::setCurPagePath));
         builder.<Integer>withRequestField("curPage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2466,10 +2466,10 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListHistoryDataRequest::getTotalRows, ListHistoryDataRequest::setTotalRows));
-        builder.<RDMParamVOMongPageRequest>withRequestField("body",
+        builder.<RDMParamVOMongoPageRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(RDMParamVOMongPageRequest.class),
+            TypeCasts.uncheckedConversion(RDMParamVOMongoPageRequest.class),
             f -> f.withMarshaller(ListHistoryDataRequest::getBody, ListHistoryDataRequest::setBody));
 
         // response
@@ -2489,16 +2489,16 @@ public class IDMEClassicAPIMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("modelName",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQueryDocumentsRequest::getModelName, ListQueryDocumentsRequest::setModelName));
         builder.<String>withRequestField("identifier",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListQueryDocumentsRequest::getIdentifier, ListQueryDocumentsRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueryDocumentsRequest::getModelName, ListQueryDocumentsRequest::setModelName));
         builder.<RDMParamVOQueryDocParamDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -2613,18 +2613,6 @@ public class IDMEClassicAPIMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<Integer>withRequestField("pageSizePath",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQueryRelationshipRequest::getPageSizePath,
-                ListQueryRelationshipRequest::setPageSizePath));
-        builder.<Integer>withRequestField("curPagePath",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListQueryRelationshipRequest::getCurPagePath,
-                ListQueryRelationshipRequest::setCurPagePath));
         builder.<String>withRequestField("identifier",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -2637,6 +2625,18 @@ public class IDMEClassicAPIMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListQueryRelationshipRequest::getModelName,
                 ListQueryRelationshipRequest::setModelName));
+        builder.<Integer>withRequestField("pageSizePath",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryRelationshipRequest::getPageSizePath,
+                ListQueryRelationshipRequest::setPageSizePath));
+        builder.<Integer>withRequestField("curPagePath",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListQueryRelationshipRequest::getCurPagePath,
+                ListQueryRelationshipRequest::setCurPagePath));
         builder.<Integer>withRequestField("curPage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2701,16 +2701,16 @@ public class IDMEClassicAPIMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("modelName",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListQueryShareDocsRequest::getModelName, ListQueryShareDocsRequest::setModelName));
         builder.<String>withRequestField("identifier",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListQueryShareDocsRequest::getIdentifier, ListQueryShareDocsRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueryShareDocsRequest::getModelName, ListQueryShareDocsRequest::setModelName));
         builder.<RDMParamVOQueryShareDocs>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -3088,16 +3088,16 @@ public class IDMEClassicAPIMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("modelName",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RemoveFromCategoryRequest::getModelName, RemoveFromCategoryRequest::setModelName));
         builder.<String>withRequestField("identifier",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RemoveFromCategoryRequest::getIdentifier, RemoveFromCategoryRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveFromCategoryRequest::getModelName, RemoveFromCategoryRequest::setModelName));
         builder.<RDMParamVOCategoryDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -3932,16 +3932,16 @@ public class IDMEClassicAPIMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("modelName",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateDocumentRequest::getModelName, UpdateDocumentRequest::setModelName));
         builder.<String>withRequestField("identifier",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateDocumentRequest::getIdentifier, UpdateDocumentRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDocumentRequest::getModelName, UpdateDocumentRequest::setModelName));
         builder.<RDMParamVOUpdateDocRequestDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,

@@ -11,16 +11,6 @@ import java.util.Objects;
 public class GenericLinkTypeModifierDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "latestOnly")
-
-    private Boolean latestOnly;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "modifier")
-
-    private String modifier;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sourceId")
 
     private String sourceId;
@@ -30,39 +20,15 @@ public class GenericLinkTypeModifierDTO {
 
     private String targetType;
 
-    public GenericLinkTypeModifierDTO withLatestOnly(Boolean latestOnly) {
-        this.latestOnly = latestOnly;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "latestOnly")
 
-    /**
-     * **参数解释：**  是否返回源模型数据实例关联的最新版本目标模型数据实例。此参数仅对源/目标模型为M-V模型实体有效。  **约束限制：**  不涉及。  **取值范围：**  - true：返回源模型数据实例关联的最新版本的目标模型数据实例。 - false：返回源模型数据实例关联的所有版本的目标模型数据实例。  **默认取值：**  false。 
-     * @return latestOnly
-     */
-    public Boolean getLatestOnly() {
-        return latestOnly;
-    }
+    private Boolean latestOnly;
 
-    public void setLatestOnly(Boolean latestOnly) {
-        this.latestOnly = latestOnly;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "modifier")
 
-    public GenericLinkTypeModifierDTO withModifier(String modifier) {
-        this.modifier = modifier;
-        return this;
-    }
-
-    /**
-     * **参数解释：**  修改人。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
-     * @return modifier
-     */
-    public String getModifier() {
-        return modifier;
-    }
-
-    public void setModifier(String modifier) {
-        this.modifier = modifier;
-    }
+    private String modifier;
 
     public GenericLinkTypeModifierDTO withSourceId(String sourceId) {
         this.sourceId = sourceId;
@@ -70,7 +36,7 @@ public class GenericLinkTypeModifierDTO {
     }
 
     /**
-     * **参数解释：**  源模型数据实例的ID。  **约束限制：**  不涉及。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。 
+     * **参数解释：**  源模型数据实例的ID，用于指定删除哪个源实例与目标模型的关联关系。  **约束限制：**  如不传入，将删除该源模型下所有实例与目标模型的关联关系，请谨慎使用。  **取值范围：**  -9223372036854775808到9223372036854775807的整数。  **默认取值：**  不涉及。
      * @return sourceId
      */
     public String getSourceId() {
@@ -87,7 +53,7 @@ public class GenericLinkTypeModifierDTO {
     }
 
     /**
-     * **参数解释：**  目标模型的英文名称。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  目标模型的英文名称，用于指定删除源实例与哪个目标模型的关联关系。  **约束限制：**  如不传入，将删除源实例与所有目标模型的关联关系，请谨慎使用。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return targetType
      */
     public String getTargetType() {
@@ -96,6 +62,40 @@ public class GenericLinkTypeModifierDTO {
 
     public void setTargetType(String targetType) {
         this.targetType = targetType;
+    }
+
+    public GenericLinkTypeModifierDTO withLatestOnly(Boolean latestOnly) {
+        this.latestOnly = latestOnly;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  是否仅删除源实例关联的最新版本目标模型数据实例的关系。此参数仅当源模型或目标模型为M-V（Master-View）模型实体时生效。  **约束限制：**  仅对M-V模型实体有效。  **取值范围：**  - true：仅删除源实例关联的最新版本目标模型数据实例的关系。 - false：删除源实例关联的所有版本目标模型数据实例的关系。  **默认取值：**  false。
+     * @return latestOnly
+     */
+    public Boolean getLatestOnly() {
+        return latestOnly;
+    }
+
+    public void setLatestOnly(Boolean latestOnly) {
+        this.latestOnly = latestOnly;
+    }
+
+    public GenericLinkTypeModifierDTO withModifier(String modifier) {
+        this.modifier = modifier;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  更新者账号，用于记录删除操作执行者信息。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * @return modifier
+     */
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier;
     }
 
     @Override
@@ -107,23 +107,23 @@ public class GenericLinkTypeModifierDTO {
             return false;
         }
         GenericLinkTypeModifierDTO that = (GenericLinkTypeModifierDTO) obj;
-        return Objects.equals(this.latestOnly, that.latestOnly) && Objects.equals(this.modifier, that.modifier)
-            && Objects.equals(this.sourceId, that.sourceId) && Objects.equals(this.targetType, that.targetType);
+        return Objects.equals(this.sourceId, that.sourceId) && Objects.equals(this.targetType, that.targetType)
+            && Objects.equals(this.latestOnly, that.latestOnly) && Objects.equals(this.modifier, that.modifier);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(latestOnly, modifier, sourceId, targetType);
+        return Objects.hash(sourceId, targetType, latestOnly, modifier);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class GenericLinkTypeModifierDTO {\n");
-        sb.append("    latestOnly: ").append(toIndentedString(latestOnly)).append("\n");
-        sb.append("    modifier: ").append(toIndentedString(modifier)).append("\n");
         sb.append("    sourceId: ").append(toIndentedString(sourceId)).append("\n");
         sb.append("    targetType: ").append(toIndentedString(targetType)).append("\n");
+        sb.append("    latestOnly: ").append(toIndentedString(latestOnly)).append("\n");
+        sb.append("    modifier: ").append(toIndentedString(modifier)).append("\n");
         sb.append("}");
         return sb.toString();
     }

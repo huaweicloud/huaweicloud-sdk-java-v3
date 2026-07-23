@@ -16,7 +16,7 @@ public class QueryRequestVo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "characterSet")
 
-    private CharacterSetEnum characterSet;
+    private String characterSet;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conditions")
@@ -78,29 +78,20 @@ public class QueryRequestVo {
 
     private List<SortInfoVo> sorts = null;
 
-    public QueryRequestVo withCharacterSet(CharacterSetEnum characterSet) {
+    public QueryRequestVo withCharacterSet(String characterSet) {
         this.characterSet = characterSet;
         return this;
     }
 
-    public QueryRequestVo withCharacterSet(Consumer<CharacterSetEnum> characterSetSetter) {
-        if (this.characterSet == null) {
-            this.characterSet = new CharacterSetEnum();
-            characterSetSetter.accept(this.characterSet);
-        }
-
-        return this;
-    }
-
     /**
-     * Get characterSet
+     * **参数解释：**  编码类型，用于指定查询的字符编码。  **约束限制：**  不涉及。  **取值范围：**  - ASCII：ASCII - BINARY：BINARY - GB2312：GB2312 - GBK：GBK - UTF8：UTF8 - UTF16：UTF16 - UTF32：UTF32 - UTF8MB4：UTF8MB4  **默认取值：**  UTF8。
      * @return characterSet
      */
-    public CharacterSetEnum getCharacterSet() {
+    public String getCharacterSet() {
         return characterSet;
     }
 
-    public void setCharacterSet(CharacterSetEnum characterSet) {
+    public void setCharacterSet(String characterSet) {
         this.characterSet = characterSet;
     }
 
@@ -126,7 +117,7 @@ public class QueryRequestVo {
     }
 
     /**
-     * **参数解释：**  查询条件。  此参数已废弃，不建议继续使用，建议使用替代参数filter。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  查询条件组。  此参数已废弃，不建议继续使用，建议使用替代参数filter。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return conditions
      */
     public List<QueryCondition> getConditions() {
@@ -143,7 +134,7 @@ public class QueryRequestVo {
     }
 
     /**
-     * **参数解释：**  是否加密。  **约束限制：**  不涉及。  **取值范围：**  - true：加密。 - false：不加密。  **默认取值：**  不涉及。
+     * **参数解释：**  是否对查询结果进行加密。  **约束限制：**  不涉及。  **取值范围：**  - true：加密。 - false：不加密。  **默认取值：**  不涉及。
      * @return decrypt
      */
     public Boolean getDecrypt() {
@@ -160,7 +151,7 @@ public class QueryRequestVo {
     }
 
     /**
-     * **参数解释：**  实体类型。  **约束限制：**  不涉及。  **取值范围：**  - ENTITY：数据实体。 - RRELATION：关系实体。  **默认取值：**  不涉及。
+     * **参数解释：**  实体类型，用于指定查询的目标实体类型。  **约束限制：**  不涉及。  **取值范围：**  - ENTITY：数据实体。 - RRELATION：关系实体。  **默认取值：**  不涉及。
      * @return entityType
      */
     public String getEntityType() {
@@ -270,7 +261,7 @@ public class QueryRequestVo {
     }
 
     /**
-     * **参数解释：**  按某个字段进行排序。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  排序字段，按某个指定字段对查询结果进行排序。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return orderBy
      */
     public String getOrderBy() {
@@ -304,7 +295,7 @@ public class QueryRequestVo {
     }
 
     /**
-     * **参数解释：**  多租查询参数。  **约束限制：**  不涉及。  **取值范围：**  - EXCLUDE_PUBLIC_DATA：不包括公共数据。 - INCLUDE_PUBLIC_DATA：包括公共数据。 - ONLY_NEED_PUBLIC_DATA：只有公共数据。  **默认取值：**  不涉及。
+     * **参数解释：**  多租查询参数，用于控制是否包含公共租户数据。  **约束限制：**  不涉及。  **取值范围：**  - EXCLUDE_PUBLIC_DATA：不包括公共数据。 - INCLUDE_PUBLIC_DATA：包括公共数据。 - ONLY_NEED_PUBLIC_DATA：只有公共数据。  **默认取值：**  不涉及。
      * @return publicData
      */
     public String getPublicData() {
@@ -354,7 +345,7 @@ public class QueryRequestVo {
     }
 
     /**
-     * **参数解释：**  排序。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * **参数解释：**  多字段排序配置。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return sorts
      */
     public List<SortInfoVo> getSorts() {
