@@ -35,6 +35,11 @@ public class JobEngineResp {
 
     private Boolean installSysPackages;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_repo_id")
+
+    private String imageRepoId;
+
     public JobEngineResp withEngineId(String engineId) {
         this.engineId = engineId;
         return this;
@@ -120,6 +125,23 @@ public class JobEngineResp {
         this.installSysPackages = installSysPackages;
     }
 
+    public JobEngineResp withImageRepoId(String imageRepoId) {
+        this.imageRepoId = imageRepoId;
+        return this;
+    }
+
+    /**
+     * **参数解释**：SWR企业仓实例ID，使用企业仓镜像时需传入。 **取值范围**：不涉及。
+     * @return imageRepoId
+     */
+    public String getImageRepoId() {
+        return imageRepoId;
+    }
+
+    public void setImageRepoId(String imageRepoId) {
+        this.imageRepoId = imageRepoId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +153,13 @@ public class JobEngineResp {
         JobEngineResp that = (JobEngineResp) obj;
         return Objects.equals(this.engineId, that.engineId) && Objects.equals(this.engineName, that.engineName)
             && Objects.equals(this.engineVersion, that.engineVersion) && Objects.equals(this.imageUrl, that.imageUrl)
-            && Objects.equals(this.installSysPackages, that.installSysPackages);
+            && Objects.equals(this.installSysPackages, that.installSysPackages)
+            && Objects.equals(this.imageRepoId, that.imageRepoId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(engineId, engineName, engineVersion, imageUrl, installSysPackages);
+        return Objects.hash(engineId, engineName, engineVersion, imageUrl, installSysPackages, imageRepoId);
     }
 
     @Override
@@ -148,6 +171,7 @@ public class JobEngineResp {
         sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
         sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
         sb.append("    installSysPackages: ").append(toIndentedString(installSysPackages)).append("\n");
+        sb.append("    imageRepoId: ").append(toIndentedString(imageRepoId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

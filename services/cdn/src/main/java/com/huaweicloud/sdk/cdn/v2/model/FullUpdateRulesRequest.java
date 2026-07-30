@@ -16,14 +16,14 @@ public class FullUpdateRulesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rules")
 
-    private List<CreateRuleRequest> rules = null;
+    private List<FullUpdateRuleRequest> rules = null;
 
-    public FullUpdateRulesRequest withRules(List<CreateRuleRequest> rules) {
+    public FullUpdateRulesRequest withRules(List<FullUpdateRuleRequest> rules) {
         this.rules = rules;
         return this;
     }
 
-    public FullUpdateRulesRequest addRulesItem(CreateRuleRequest rulesItem) {
+    public FullUpdateRulesRequest addRulesItem(FullUpdateRuleRequest rulesItem) {
         if (this.rules == null) {
             this.rules = new ArrayList<>();
         }
@@ -31,7 +31,7 @@ public class FullUpdateRulesRequest {
         return this;
     }
 
-    public FullUpdateRulesRequest withRules(Consumer<List<CreateRuleRequest>> rulesSetter) {
+    public FullUpdateRulesRequest withRules(Consumer<List<FullUpdateRuleRequest>> rulesSetter) {
         if (this.rules == null) {
             this.rules = new ArrayList<>();
         }
@@ -43,11 +43,11 @@ public class FullUpdateRulesRequest {
      * **参数解释：** 规则配置内容，可以配置多个规则 **约束限制：** 不涉及
      * @return rules
      */
-    public List<CreateRuleRequest> getRules() {
+    public List<FullUpdateRuleRequest> getRules() {
         return rules;
     }
 
-    public void setRules(List<CreateRuleRequest> rules) {
+    public void setRules(List<FullUpdateRuleRequest> rules) {
         this.rules = rules;
     }
 

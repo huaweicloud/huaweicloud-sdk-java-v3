@@ -81,7 +81,7 @@ public class FlexibleOriginsEngine {
     }
 
     /**
-     * **参数解释：** 源站类型 **约束限制：** 不涉及 **取值范围：** - ipaddr: 源站IP - domain: 源站域名 - obs_bucket: OBS桶域名 - third_bucket: 第三方桶域名 **默认取值：** 不涉及
+     * **参数解释：** 源站类型 **约束限制：** 不涉及 **取值范围：** - ipaddr: 源站IP - domain: 源站域名 - obs_bucket: OBS桶域名 - third_bucket: 第三方桶域名  **默认取值：** 不涉及
      * @return sourcesType
      */
     public String getSourcesType() {
@@ -115,7 +115,7 @@ public class FlexibleOriginsEngine {
     }
 
     /**
-     * **参数解释：** OBS桶类型 **约束限制：** 源站类型是“OBS桶域名”时需要传该参数 **取值范围：** - private: 私有桶 - public: 公有桶 **默认取值：** public: 公有桶
+     * **参数解释：** OBS桶类型 **约束限制：** 源站类型是“OBS桶域名”时需要传该参数 **取值范围：** - private: 私有桶 - public: 公有桶  **默认取值：** public: 公有桶
      * @return obsBucketType
      */
     public String getObsBucketType() {
@@ -217,7 +217,7 @@ public class FlexibleOriginsEngine {
     }
 
     /**
-     * **参数解释：** 指定CDN回源时的请求协议 **约束限制：** 不涉及 **取值范围：** - follow: 协议跟随 - http: http协议 - https: https协议 **默认取值：** http: http协议
+     * **参数解释：** 指定CDN回源时的请求协议 **约束限制：** 不涉及 **取值范围：** - follow: 协议跟随 - http: http协议 - https: https协议  **默认取值：** http: http协议
      * @return originProtocol
      */
     public String getOriginProtocol() {

@@ -45,6 +45,8 @@ import com.huaweicloud.sdk.lakeformation.v1.model.CreateCatalogRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateCatalogResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateDatabaseRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateDatabaseResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.CreateDatasetRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.CreateDatasetResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateFunctionRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateFunctionResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateLakeFormationInstanceRequest;
@@ -67,6 +69,8 @@ import com.huaweicloud.sdk.lakeformation.v1.model.DeleteConstraintRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.DeleteConstraintResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.DeleteDatabaseRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.DeleteDatabaseResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.DeleteDatasetRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.DeleteDatasetResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.DeleteFunctionRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.DeleteFunctionResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.DeleteLakeFormationInstanceRequest;
@@ -95,6 +99,8 @@ import com.huaweicloud.sdk.lakeformation.v1.model.ListDatabaseNamesRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListDatabaseNamesResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListDatabasesRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListDatabasesResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListDatasetsRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListDatasetsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListFunctionNamesRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListFunctionNamesResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListFunctionsRequest;
@@ -171,6 +177,8 @@ import com.huaweicloud.sdk.lakeformation.v1.model.ShowCredentialRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowCredentialResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowDatabaseRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowDatabaseResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowDatasetRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowDatasetResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowFunctionRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowFunctionResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowLakeFormationInstanceRequest;
@@ -187,6 +195,8 @@ import com.huaweicloud.sdk.lakeformation.v1.model.UpdateCatalogRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateCatalogResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateDatabaseRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateDatabaseResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdateDatasetRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdateDatasetResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateFunctionRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateFunctionResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateLakeFormationInstanceDefaultRequest;
@@ -1100,6 +1110,150 @@ public class LakeFormationAsyncClient {
     public AsyncInvoker<UpdateDatabaseRequest, UpdateDatabaseResponse> updateDatabaseAsyncInvoker(
         UpdateDatabaseRequest request) {
         return new AsyncInvoker<>(request, LakeFormationMeta.updateDatabase, hcClient);
+    }
+
+    /**
+     * 创建数据集
+     *
+     * 创建数据集
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDatasetRequest 请求对象
+     * @return CompletableFuture<CreateDatasetResponse>
+     */
+    public CompletableFuture<CreateDatasetResponse> createDatasetAsync(CreateDatasetRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.createDataset);
+    }
+
+    /**
+     * 创建数据集
+     *
+     * 创建数据集
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDatasetRequest 请求对象
+     * @return AsyncInvoker<CreateDatasetRequest, CreateDatasetResponse>
+     */
+    public AsyncInvoker<CreateDatasetRequest, CreateDatasetResponse> createDatasetAsyncInvoker(
+        CreateDatasetRequest request) {
+        return new AsyncInvoker<>(request, LakeFormationMeta.createDataset, hcClient);
+    }
+
+    /**
+     * 删除数据集
+     *
+     * 删除数据集
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDatasetRequest 请求对象
+     * @return CompletableFuture<DeleteDatasetResponse>
+     */
+    public CompletableFuture<DeleteDatasetResponse> deleteDatasetAsync(DeleteDatasetRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.deleteDataset);
+    }
+
+    /**
+     * 删除数据集
+     *
+     * 删除数据集
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDatasetRequest 请求对象
+     * @return AsyncInvoker<DeleteDatasetRequest, DeleteDatasetResponse>
+     */
+    public AsyncInvoker<DeleteDatasetRequest, DeleteDatasetResponse> deleteDatasetAsyncInvoker(
+        DeleteDatasetRequest request) {
+        return new AsyncInvoker<>(request, LakeFormationMeta.deleteDataset, hcClient);
+    }
+
+    /**
+     * 查询数据集列表
+     *
+     * 分页查询数据集列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDatasetsRequest 请求对象
+     * @return CompletableFuture<ListDatasetsResponse>
+     */
+    public CompletableFuture<ListDatasetsResponse> listDatasetsAsync(ListDatasetsRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.listDatasets);
+    }
+
+    /**
+     * 查询数据集列表
+     *
+     * 分页查询数据集列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDatasetsRequest 请求对象
+     * @return AsyncInvoker<ListDatasetsRequest, ListDatasetsResponse>
+     */
+    public AsyncInvoker<ListDatasetsRequest, ListDatasetsResponse> listDatasetsAsyncInvoker(
+        ListDatasetsRequest request) {
+        return new AsyncInvoker<>(request, LakeFormationMeta.listDatasets, hcClient);
+    }
+
+    /**
+     * 获取数据集信息详情
+     *
+     * 按名称获取数据集信息详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDatasetRequest 请求对象
+     * @return CompletableFuture<ShowDatasetResponse>
+     */
+    public CompletableFuture<ShowDatasetResponse> showDatasetAsync(ShowDatasetRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.showDataset);
+    }
+
+    /**
+     * 获取数据集信息详情
+     *
+     * 按名称获取数据集信息详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDatasetRequest 请求对象
+     * @return AsyncInvoker<ShowDatasetRequest, ShowDatasetResponse>
+     */
+    public AsyncInvoker<ShowDatasetRequest, ShowDatasetResponse> showDatasetAsyncInvoker(ShowDatasetRequest request) {
+        return new AsyncInvoker<>(request, LakeFormationMeta.showDataset, hcClient);
+    }
+
+    /**
+     * 修改数据集属性
+     *
+     * 修改数据集属性
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDatasetRequest 请求对象
+     * @return CompletableFuture<UpdateDatasetResponse>
+     */
+    public CompletableFuture<UpdateDatasetResponse> updateDatasetAsync(UpdateDatasetRequest request) {
+        return hcClient.asyncInvokeHttp(request, LakeFormationMeta.updateDataset);
+    }
+
+    /**
+     * 修改数据集属性
+     *
+     * 修改数据集属性
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDatasetRequest 请求对象
+     * @return AsyncInvoker<UpdateDatasetRequest, UpdateDatasetResponse>
+     */
+    public AsyncInvoker<UpdateDatasetRequest, UpdateDatasetResponse> updateDatasetAsyncInvoker(
+        UpdateDatasetRequest request) {
+        return new AsyncInvoker<>(request, LakeFormationMeta.updateDataset, hcClient);
     }
 
     /**

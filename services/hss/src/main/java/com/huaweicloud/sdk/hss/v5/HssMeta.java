@@ -110,6 +110,9 @@ import com.huaweicloud.sdk.hss.v5.model.BatchUpdateHostResourceRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.BatchUpdateHostResourceResponse;
 import com.huaweicloud.sdk.hss.v5.model.BatchUpgradeAgentDaemonsetRequest;
 import com.huaweicloud.sdk.hss.v5.model.BatchUpgradeAgentDaemonsetResponse;
+import com.huaweicloud.sdk.hss.v5.model.BindAgentPolicyRequest;
+import com.huaweicloud.sdk.hss.v5.model.BindAgentPolicyRequestInfo;
+import com.huaweicloud.sdk.hss.v5.model.BindAgentPolicyResponse;
 import com.huaweicloud.sdk.hss.v5.model.CCEClusterIdListRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.CCEClusterInfoListRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.CancelHostsQuotaRequest;
@@ -201,6 +204,9 @@ import com.huaweicloud.sdk.hss.v5.model.ChangeVulWhiteListRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.ChangeVulWhiteListResponse;
 import com.huaweicloud.sdk.hss.v5.model.CheckRuleIdListRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.CloseProtectionInfoRequestInfo;
+import com.huaweicloud.sdk.hss.v5.model.CopyAiPolicyGroupRequest;
+import com.huaweicloud.sdk.hss.v5.model.CopyAiPolicyGroupRequestInfo;
+import com.huaweicloud.sdk.hss.v5.model.CopyAiPolicyGroupResponse;
 import com.huaweicloud.sdk.hss.v5.model.CopyBaselinePolicyGroupRequest;
 import com.huaweicloud.sdk.hss.v5.model.CopyBaselinePolicyGroupRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.CopyBaselinePolicyGroupResponse;
@@ -268,6 +274,9 @@ import com.huaweicloud.sdk.hss.v5.model.DeleteAccountRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.DeleteAccountResponse;
 import com.huaweicloud.sdk.hss.v5.model.DeleteAgentDaemonsetRequest;
 import com.huaweicloud.sdk.hss.v5.model.DeleteAgentDaemonsetResponse;
+import com.huaweicloud.sdk.hss.v5.model.DeleteAiPolicyGroupsRequest;
+import com.huaweicloud.sdk.hss.v5.model.DeleteAiPolicyGroupsRequestInfo;
+import com.huaweicloud.sdk.hss.v5.model.DeleteAiPolicyGroupsResponse;
 import com.huaweicloud.sdk.hss.v5.model.DeleteAntivirusPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.DeleteAntivirusPolicyRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.DeleteAntivirusPolicyResponse;
@@ -396,8 +405,16 @@ import com.huaweicloud.sdk.hss.v5.model.ListAiComponentDetailRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListAiComponentDetailResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAiComponentStatisticsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListAiComponentStatisticsResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListAiPoliciesRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListAiPoliciesResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListAiPolicyDetailRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListAiPolicyDetailResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListAiPolicyGroupsRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListAiPolicyGroupsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAlarmConfigRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListAlarmConfigResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListAlarmWhiteListHostDetailRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListAlarmWhiteListHostDetailResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAlarmWhiteListRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListAlarmWhiteListResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAllRiskConfigCheckRulesRequest;
@@ -938,6 +955,12 @@ import com.huaweicloud.sdk.hss.v5.model.RestoreDuplicationInfoResponse;
 import com.huaweicloud.sdk.hss.v5.model.RestoreDuplicationRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.RestoreVulHostBackupRequest;
 import com.huaweicloud.sdk.hss.v5.model.RestoreVulHostBackupResponse;
+import com.huaweicloud.sdk.hss.v5.model.ResumePauseAiPoliciesRequest;
+import com.huaweicloud.sdk.hss.v5.model.ResumePauseAiPoliciesRequestInfo;
+import com.huaweicloud.sdk.hss.v5.model.ResumePauseAiPoliciesResponse;
+import com.huaweicloud.sdk.hss.v5.model.ResumePauseAiPolicyGroupsRequest;
+import com.huaweicloud.sdk.hss.v5.model.ResumePauseAiPolicyGroupsRequestInfo;
+import com.huaweicloud.sdk.hss.v5.model.ResumePauseAiPolicyGroupsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ResumePauseCustomRuleConfigRequest;
 import com.huaweicloud.sdk.hss.v5.model.ResumePauseCustomRuleConfigResponse;
 import com.huaweicloud.sdk.hss.v5.model.ResumePauseCustomRuleIdsRequestInfo;
@@ -1277,9 +1300,15 @@ import com.huaweicloud.sdk.hss.v5.model.UninstallAgentsRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.UninstallAgentsResponse;
 import com.huaweicloud.sdk.hss.v5.model.UpdateAgentDaemonsetRequest;
 import com.huaweicloud.sdk.hss.v5.model.UpdateAgentDaemonsetResponse;
+import com.huaweicloud.sdk.hss.v5.model.UpdateAiPolicyDetailRequest;
+import com.huaweicloud.sdk.hss.v5.model.UpdateAiPolicyDetailRequestInfo;
+import com.huaweicloud.sdk.hss.v5.model.UpdateAiPolicyDetailResponse;
 import com.huaweicloud.sdk.hss.v5.model.UpdateAlarmConfigRequest;
 import com.huaweicloud.sdk.hss.v5.model.UpdateAlarmConfigRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.UpdateAlarmConfigResponse;
+import com.huaweicloud.sdk.hss.v5.model.UpdateAlarmWhiteListHostRequest;
+import com.huaweicloud.sdk.hss.v5.model.UpdateAlarmWhiteListHostResponse;
+import com.huaweicloud.sdk.hss.v5.model.UpdateAlarmWhiteListRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.UpdateBackupHostInfoRequest;
 import com.huaweicloud.sdk.hss.v5.model.UpdateBackupHostInfoResponse;
 import com.huaweicloud.sdk.hss.v5.model.UpdateBackupHostRequestInfo;
@@ -10200,6 +10229,248 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BindAgentPolicyRequest, BindAgentPolicyResponse> bindAgentPolicy =
+        genForBindAgentPolicy();
+
+    private static HttpRequestDef<BindAgentPolicyRequest, BindAgentPolicyResponse> genForBindAgentPolicy() {
+        // basic
+        HttpRequestDef.Builder<BindAgentPolicyRequest, BindAgentPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BindAgentPolicyRequest.class, BindAgentPolicyResponse.class)
+                .withName("BindAgentPolicy")
+                .withUri("/v5/{project_id}/ai/agent/policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BindAgentPolicyRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BindAgentPolicyRequestInfo.class),
+            f -> f.withMarshaller(BindAgentPolicyRequest::getBody, BindAgentPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CopyAiPolicyGroupRequest, CopyAiPolicyGroupResponse> copyAiPolicyGroup =
+        genForCopyAiPolicyGroup();
+
+    private static HttpRequestDef<CopyAiPolicyGroupRequest, CopyAiPolicyGroupResponse> genForCopyAiPolicyGroup() {
+        // basic
+        HttpRequestDef.Builder<CopyAiPolicyGroupRequest, CopyAiPolicyGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CopyAiPolicyGroupRequest.class, CopyAiPolicyGroupResponse.class)
+                .withName("CopyAiPolicyGroup")
+                .withUri("/v5/{project_id}/ai/policy/groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CopyAiPolicyGroupRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CopyAiPolicyGroupRequestInfo.class),
+            f -> f.withMarshaller(CopyAiPolicyGroupRequest::getBody, CopyAiPolicyGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAiPolicyGroupsRequest, DeleteAiPolicyGroupsResponse> deleteAiPolicyGroups =
+        genForDeleteAiPolicyGroups();
+
+    private static HttpRequestDef<DeleteAiPolicyGroupsRequest, DeleteAiPolicyGroupsResponse> genForDeleteAiPolicyGroups() {
+        // basic
+        HttpRequestDef.Builder<DeleteAiPolicyGroupsRequest, DeleteAiPolicyGroupsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteAiPolicyGroupsRequest.class, DeleteAiPolicyGroupsResponse.class)
+            .withName("DeleteAiPolicyGroups")
+            .withUri("/v5/{project_id}/ai/policy/groups")
+            .withContentType("application/json");
+
+        // requests
+        builder.<DeleteAiPolicyGroupsRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteAiPolicyGroupsRequestInfo.class),
+            f -> f.withMarshaller(DeleteAiPolicyGroupsRequest::getBody, DeleteAiPolicyGroupsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAiPoliciesRequest, ListAiPoliciesResponse> listAiPolicies =
+        genForListAiPolicies();
+
+    private static HttpRequestDef<ListAiPoliciesRequest, ListAiPoliciesResponse> genForListAiPolicies() {
+        // basic
+        HttpRequestDef.Builder<ListAiPoliciesRequest, ListAiPoliciesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAiPoliciesRequest.class, ListAiPoliciesResponse.class)
+                .withName("ListAiPolicies")
+                .withUri("/v5/{project_id}/ai/policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_group_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiPoliciesRequest::getPolicyGroupId, ListAiPoliciesRequest::setPolicyGroupId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAiPolicyDetailRequest, ListAiPolicyDetailResponse> listAiPolicyDetail =
+        genForListAiPolicyDetail();
+
+    private static HttpRequestDef<ListAiPolicyDetailRequest, ListAiPolicyDetailResponse> genForListAiPolicyDetail() {
+        // basic
+        HttpRequestDef.Builder<ListAiPolicyDetailRequest, ListAiPolicyDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAiPolicyDetailRequest.class, ListAiPolicyDetailResponse.class)
+                .withName("ListAiPolicyDetail")
+                .withUri("/v5/{project_id}/ai/policy/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiPolicyDetailRequest::getPolicyId, ListAiPolicyDetailRequest::setPolicyId));
+        builder.<String>withRequestField("policy_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiPolicyDetailRequest::getPolicyName, ListAiPolicyDetailRequest::setPolicyName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAiPolicyGroupsRequest, ListAiPolicyGroupsResponse> listAiPolicyGroups =
+        genForListAiPolicyGroups();
+
+    private static HttpRequestDef<ListAiPolicyGroupsRequest, ListAiPolicyGroupsResponse> genForListAiPolicyGroups() {
+        // basic
+        HttpRequestDef.Builder<ListAiPolicyGroupsRequest, ListAiPolicyGroupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAiPolicyGroupsRequest.class, ListAiPolicyGroupsResponse.class)
+                .withName("ListAiPolicyGroups")
+                .withUri("/v5/{project_id}/ai/policy/groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiPolicyGroupsRequest::getGroupId, ListAiPolicyGroupsRequest::setGroupId));
+        builder.<String>withRequestField("group_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiPolicyGroupsRequest::getGroupName, ListAiPolicyGroupsRequest::setGroupName));
+        builder.<String>withRequestField("protection_object",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAiPolicyGroupsRequest::getProtectionObject,
+                ListAiPolicyGroupsRequest::setProtectionObject));
+        builder.<Integer>withRequestField("object_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAiPolicyGroupsRequest::getObjectType, ListAiPolicyGroupsRequest::setObjectType));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAiPolicyGroupsRequest::getOffset, ListAiPolicyGroupsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAiPolicyGroupsRequest::getLimit, ListAiPolicyGroupsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResumePauseAiPoliciesRequest, ResumePauseAiPoliciesResponse> resumePauseAiPolicies =
+        genForResumePauseAiPolicies();
+
+    private static HttpRequestDef<ResumePauseAiPoliciesRequest, ResumePauseAiPoliciesResponse> genForResumePauseAiPolicies() {
+        // basic
+        HttpRequestDef.Builder<ResumePauseAiPoliciesRequest, ResumePauseAiPoliciesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ResumePauseAiPoliciesRequest.class, ResumePauseAiPoliciesResponse.class)
+            .withName("ResumePauseAiPolicies")
+            .withUri("/v5/{project_id}/ai/policy/operate")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ResumePauseAiPoliciesRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResumePauseAiPoliciesRequestInfo.class),
+            f -> f.withMarshaller(ResumePauseAiPoliciesRequest::getBody, ResumePauseAiPoliciesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResumePauseAiPolicyGroupsRequest, ResumePauseAiPolicyGroupsResponse> resumePauseAiPolicyGroups =
+        genForResumePauseAiPolicyGroups();
+
+    private static HttpRequestDef<ResumePauseAiPolicyGroupsRequest, ResumePauseAiPolicyGroupsResponse> genForResumePauseAiPolicyGroups() {
+        // basic
+        HttpRequestDef.Builder<ResumePauseAiPolicyGroupsRequest, ResumePauseAiPolicyGroupsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ResumePauseAiPolicyGroupsRequest.class,
+                    ResumePauseAiPolicyGroupsResponse.class)
+                .withName("ResumePauseAiPolicyGroups")
+                .withUri("/v5/{project_id}/ai/policy/groups/operate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ResumePauseAiPolicyGroupsRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResumePauseAiPolicyGroupsRequestInfo.class),
+            f -> f.withMarshaller(ResumePauseAiPolicyGroupsRequest::getBody,
+                ResumePauseAiPolicyGroupsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAiPolicyDetailRequest, UpdateAiPolicyDetailResponse> updateAiPolicyDetail =
+        genForUpdateAiPolicyDetail();
+
+    private static HttpRequestDef<UpdateAiPolicyDetailRequest, UpdateAiPolicyDetailResponse> genForUpdateAiPolicyDetail() {
+        // basic
+        HttpRequestDef.Builder<UpdateAiPolicyDetailRequest, UpdateAiPolicyDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateAiPolicyDetailRequest.class, UpdateAiPolicyDetailResponse.class)
+            .withName("UpdateAiPolicyDetail")
+            .withUri("/v5/{project_id}/ai/policy/detail")
+            .withContentType("application/json");
+
+        // requests
+        builder.<UpdateAiPolicyDetailRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAiPolicyDetailRequestInfo.class),
+            f -> f.withMarshaller(UpdateAiPolicyDetailRequest::getBody, UpdateAiPolicyDetailRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ChangeAntivirusPayPerScanStatusRequest, ChangeAntivirusPayPerScanStatusResponse> changeAntivirusPayPerScanStatus =
         genForChangeAntivirusPayPerScanStatus();
 
@@ -15358,6 +15629,81 @@ public class HssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateCustomRuleConfigRequestInfo.class),
             f -> f.withMarshaller(UpdateCustomRuleConfigRequest::getBody, UpdateCustomRuleConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAlarmWhiteListHostDetailRequest, ListAlarmWhiteListHostDetailResponse> listAlarmWhiteListHostDetail =
+        genForListAlarmWhiteListHostDetail();
+
+    private static HttpRequestDef<ListAlarmWhiteListHostDetailRequest, ListAlarmWhiteListHostDetailResponse> genForListAlarmWhiteListHostDetail() {
+        // basic
+        HttpRequestDef.Builder<ListAlarmWhiteListHostDetailRequest, ListAlarmWhiteListHostDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAlarmWhiteListHostDetailRequest.class,
+                    ListAlarmWhiteListHostDetailResponse.class)
+                .withName("ListAlarmWhiteListHostDetail")
+                .withUri("/v5/{project_id}/event/white-list/rule/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmWhiteListHostDetailRequest::getEnterpriseProjectId,
+                ListAlarmWhiteListHostDetailRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmWhiteListHostDetailRequest::getRuleId,
+                ListAlarmWhiteListHostDetailRequest::setRuleId));
+        builder.<String>withRequestField("region",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmWhiteListHostDetailRequest::getRegion,
+                ListAlarmWhiteListHostDetailRequest::setRegion));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAlarmWhiteListHostRequest, UpdateAlarmWhiteListHostResponse> updateAlarmWhiteListHost =
+        genForUpdateAlarmWhiteListHost();
+
+    private static HttpRequestDef<UpdateAlarmWhiteListHostRequest, UpdateAlarmWhiteListHostResponse> genForUpdateAlarmWhiteListHost() {
+        // basic
+        HttpRequestDef.Builder<UpdateAlarmWhiteListHostRequest, UpdateAlarmWhiteListHostResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateAlarmWhiteListHostRequest.class, UpdateAlarmWhiteListHostResponse.class)
+                .withName("UpdateAlarmWhiteListHost")
+                .withUri("/v5/{project_id}/event/white-list/alarm")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAlarmWhiteListHostRequest::getEnterpriseProjectId,
+                UpdateAlarmWhiteListHostRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("region",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAlarmWhiteListHostRequest::getRegion,
+                UpdateAlarmWhiteListHostRequest::setRegion));
+        builder.<UpdateAlarmWhiteListRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAlarmWhiteListRequestInfo.class),
+            f -> f.withMarshaller(UpdateAlarmWhiteListHostRequest::getBody, UpdateAlarmWhiteListHostRequest::setBody));
 
         // response
 
@@ -22701,18 +23047,18 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAntivirusHandleHistoryRequest::getUserName,
                 ListAntivirusHandleHistoryRequest::setUserName));
-        builder.<Integer>withRequestField("event_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAntivirusHandleHistoryRequest::getEventType,
-                ListAntivirusHandleHistoryRequest::setEventType));
         builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAntivirusHandleHistoryRequest::getSortDir,
                 ListAntivirusHandleHistoryRequest::setSortDir));
+        builder.<Integer>withRequestField("event_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAntivirusHandleHistoryRequest::getEventType,
+                ListAntivirusHandleHistoryRequest::setEventType));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

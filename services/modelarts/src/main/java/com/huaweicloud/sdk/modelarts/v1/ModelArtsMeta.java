@@ -731,7 +731,7 @@ public class ModelArtsMeta {
             .builder(HttpMethod.POST, BatchBindInferApiKeysRequest.class, BatchBindInferApiKeysResponse.class)
             .withName("BatchBindInferApiKeys")
             .withUri("/v2/{project_id}/services/{service_id}/api-keys/batch-bind")
-            .withContentType("application/x-www-form-urlencoded");
+            .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("service_id",
@@ -1074,7 +1074,7 @@ public class ModelArtsMeta {
             .builder(HttpMethod.POST, BatchUnbindInferApiKeysRequest.class, BatchUnbindInferApiKeysResponse.class)
             .withName("BatchUnbindInferApiKeys")
             .withUri("/v2/{project_id}/services/{service_id}/api-keys/batch-unbind")
-            .withContentType("application/x-www-form-urlencoded");
+            .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("service_id",

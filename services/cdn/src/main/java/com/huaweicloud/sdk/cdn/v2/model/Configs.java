@@ -203,6 +203,11 @@ public class Configs {
 
     private HttpsTlsVersion httpsTlsVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flow_limit_strategy")
+
+    private List<FlowLimitStrategy> flowLimitStrategy = null;
+
     public Configs withBusinessType(String businessType) {
         this.businessType = businessType;
         return this;
@@ -1194,6 +1199,39 @@ public class Configs {
         this.httpsTlsVersion = httpsTlsVersion;
     }
 
+    public Configs withFlowLimitStrategy(List<FlowLimitStrategy> flowLimitStrategy) {
+        this.flowLimitStrategy = flowLimitStrategy;
+        return this;
+    }
+
+    public Configs addFlowLimitStrategyItem(FlowLimitStrategy flowLimitStrategyItem) {
+        if (this.flowLimitStrategy == null) {
+            this.flowLimitStrategy = new ArrayList<>();
+        }
+        this.flowLimitStrategy.add(flowLimitStrategyItem);
+        return this;
+    }
+
+    public Configs withFlowLimitStrategy(Consumer<List<FlowLimitStrategy>> flowLimitStrategySetter) {
+        if (this.flowLimitStrategy == null) {
+            this.flowLimitStrategy = new ArrayList<>();
+        }
+        flowLimitStrategySetter.accept(this.flowLimitStrategy);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 设置用量封顶阈值，当实际用量大于阈值时停用域名，有效预防流量盗刷或恶意攻击带来的高额账单。  > 由于监控数据存在时延，域名将在用量达到阈值后的10分钟左右被停用  **约束限制：** 不涉及
+     * @return flowLimitStrategy
+     */
+    public List<FlowLimitStrategy> getFlowLimitStrategy() {
+        return flowLimitStrategy;
+    }
+
+    public void setFlowLimitStrategy(List<FlowLimitStrategy> flowLimitStrategy) {
+        this.flowLimitStrategy = flowLimitStrategy;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1232,7 +1270,8 @@ public class Configs {
             && Objects.equals(this.browserCacheRules, that.browserCacheRules)
             && Objects.equals(this.accessAreaFilter, that.accessAreaFilter)
             && Objects.equals(this.clientCert, that.clientCert)
-            && Objects.equals(this.httpsTlsVersion, that.httpsTlsVersion);
+            && Objects.equals(this.httpsTlsVersion, that.httpsTlsVersion)
+            && Objects.equals(this.flowLimitStrategy, that.flowLimitStrategy);
     }
 
     @Override
@@ -1274,7 +1313,8 @@ public class Configs {
             browserCacheRules,
             accessAreaFilter,
             clientCert,
-            httpsTlsVersion);
+            httpsTlsVersion,
+            flowLimitStrategy);
     }
 
     @Override
@@ -1319,6 +1359,7 @@ public class Configs {
         sb.append("    accessAreaFilter: ").append(toIndentedString(accessAreaFilter)).append("\n");
         sb.append("    clientCert: ").append(toIndentedString(clientCert)).append("\n");
         sb.append("    httpsTlsVersion: ").append(toIndentedString(httpsTlsVersion)).append("\n");
+        sb.append("    flowLimitStrategy: ").append(toIndentedString(flowLimitStrategy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

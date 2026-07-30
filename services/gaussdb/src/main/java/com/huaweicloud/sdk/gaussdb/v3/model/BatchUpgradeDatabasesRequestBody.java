@@ -21,7 +21,7 @@ public class BatchUpgradeDatabasesRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delay")
 
-    private String delay;
+    private Boolean delay;
 
     public BatchUpgradeDatabasesRequestBody withDatabasesInstanceInfos(
         List<UpgradeDatabasesSingleInstance> databasesInstanceInfos) {
@@ -59,7 +59,7 @@ public class BatchUpgradeDatabasesRequestBody {
         this.databasesInstanceInfos = databasesInstanceInfos;
     }
 
-    public BatchUpgradeDatabasesRequestBody withDelay(String delay) {
+    public BatchUpgradeDatabasesRequestBody withDelay(Boolean delay) {
         this.delay = delay;
         return this;
     }
@@ -68,11 +68,11 @@ public class BatchUpgradeDatabasesRequestBody {
      * 是否延迟升级。
      * @return delay
      */
-    public String getDelay() {
+    public Boolean getDelay() {
         return delay;
     }
 
-    public void setDelay(String delay) {
+    public void setDelay(Boolean delay) {
         this.delay = delay;
     }
 

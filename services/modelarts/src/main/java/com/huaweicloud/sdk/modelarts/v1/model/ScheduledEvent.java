@@ -434,9 +434,19 @@ public class ScheduledEvent {
     private String probeMsg;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "jobProgress")
+
+    private String jobProgress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "redeployType")
 
     private List<String> redeployType = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "underLyingInstanceId")
+
+    private String underLyingInstanceId;
 
     public ScheduledEvent withId(String id) {
         this.id = id;
@@ -693,6 +703,23 @@ public class ScheduledEvent {
         this.probeMsg = probeMsg;
     }
 
+    public ScheduledEvent withJobProgress(String jobProgress) {
+        this.jobProgress = jobProgress;
+        return this;
+    }
+
+    /**
+     * **参数解释**：计划事件执行的实时进度信息，系统自动生成。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * @return jobProgress
+     */
+    public String getJobProgress() {
+        return jobProgress;
+    }
+
+    public void setJobProgress(String jobProgress) {
+        this.jobProgress = jobProgress;
+    }
+
     public ScheduledEvent withRedeployType(List<String> redeployType) {
         this.redeployType = redeployType;
         return this;
@@ -726,6 +753,23 @@ public class ScheduledEvent {
         this.redeployType = redeployType;
     }
 
+    public ScheduledEvent withUnderLyingInstanceId(String underLyingInstanceId) {
+        this.underLyingInstanceId = underLyingInstanceId;
+        return this;
+    }
+
+    /**
+     * **参数解释**：snt9b23 场景对应ECS服务器ID。计算服务系统自动生成的实例ID，长度小于63。  **取值范围**：snt9b23 涉及, snt9b 不涉及。
+     * @return underLyingInstanceId
+     */
+    public String getUnderLyingInstanceId() {
+        return underLyingInstanceId;
+    }
+
+    public void setUnderLyingInstanceId(String underLyingInstanceId) {
+        this.underLyingInstanceId = underLyingInstanceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -743,7 +787,9 @@ public class ScheduledEvent {
             && Objects.equals(this.poolDisplayName, that.poolDisplayName)
             && Objects.equals(this.publishTime, that.publishTime) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.finishTime, that.finishTime) && Objects.equals(this.notBefore, that.notBefore)
-            && Objects.equals(this.probeMsg, that.probeMsg) && Objects.equals(this.redeployType, that.redeployType);
+            && Objects.equals(this.probeMsg, that.probeMsg) && Objects.equals(this.jobProgress, that.jobProgress)
+            && Objects.equals(this.redeployType, that.redeployType)
+            && Objects.equals(this.underLyingInstanceId, that.underLyingInstanceId);
     }
 
     @Override
@@ -763,7 +809,9 @@ public class ScheduledEvent {
             finishTime,
             notBefore,
             probeMsg,
-            redeployType);
+            jobProgress,
+            redeployType,
+            underLyingInstanceId);
     }
 
     @Override
@@ -785,7 +833,9 @@ public class ScheduledEvent {
         sb.append("    finishTime: ").append(toIndentedString(finishTime)).append("\n");
         sb.append("    notBefore: ").append(toIndentedString(notBefore)).append("\n");
         sb.append("    probeMsg: ").append(toIndentedString(probeMsg)).append("\n");
+        sb.append("    jobProgress: ").append(toIndentedString(jobProgress)).append("\n");
         sb.append("    redeployType: ").append(toIndentedString(redeployType)).append("\n");
+        sb.append("    underLyingInstanceId: ").append(toIndentedString(underLyingInstanceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

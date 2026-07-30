@@ -80,7 +80,7 @@ public class AlarmWhiteListRequestInfo {
     }
 
     /**
-     * **参数解释**: 事件白名单SHA256 **约束限制**: 不涉及 **取值范围**: 字符长度0-512位 **默认取值**: 不涉及
+     * **参数解释**: 事件白名单SHA256 **约束限制**: 不涉及 **取值范围**: 字符长度0-64位 **默认取值**: 不涉及
      * @return hash
      */
     public String getHash() {

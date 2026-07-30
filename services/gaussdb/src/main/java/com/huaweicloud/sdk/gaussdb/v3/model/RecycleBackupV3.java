@@ -38,12 +38,12 @@ public class RecycleBackupV3 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_time")
 
-    private String beginTime;
+    private Long beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    private String endTime;
+    private Long endTime;
 
     public RecycleBackupV3 withBackupLevel(String backupLevel) {
         this.backupLevel = backupLevel;
@@ -130,7 +130,7 @@ public class RecycleBackupV3 {
         this.status = status;
     }
 
-    public RecycleBackupV3 withBeginTime(String beginTime) {
+    public RecycleBackupV3 withBeginTime(Long beginTime) {
         this.beginTime = beginTime;
         return this;
     }
@@ -139,15 +139,15 @@ public class RecycleBackupV3 {
      * 备份开始时间。
      * @return beginTime
      */
-    public String getBeginTime() {
+    public Long getBeginTime() {
         return beginTime;
     }
 
-    public void setBeginTime(String beginTime) {
+    public void setBeginTime(Long beginTime) {
         this.beginTime = beginTime;
     }
 
-    public RecycleBackupV3 withEndTime(String endTime) {
+    public RecycleBackupV3 withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -156,11 +156,11 @@ public class RecycleBackupV3 {
      * 备份结束时间。
      * @return endTime
      */
-    public String getEndTime() {
+    public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(String endTime) {
+    public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
 

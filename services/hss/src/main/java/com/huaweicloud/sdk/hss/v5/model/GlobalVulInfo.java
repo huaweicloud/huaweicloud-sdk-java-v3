@@ -34,6 +34,11 @@ public class GlobalVulInfo {
     private String decription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "solution")
 
     private String solution;
@@ -115,7 +120,7 @@ public class GlobalVulInfo {
     }
 
     /**
-     * **参数解释** 漏洞描述 **取值范围** 字符长度0-65535位 
+     * **参数解释** 漏洞描述（已废弃，请使用description） **取值范围** 字符长度0-65535位 
      * @return decription
      */
     public String getDecription() {
@@ -124,6 +129,23 @@ public class GlobalVulInfo {
 
     public void setDecription(String decription) {
         this.decription = decription;
+    }
+
+    public GlobalVulInfo withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * **参数解释** 漏洞描述 **取值范围** 字符长度0-65535位 
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public GlobalVulInfo withSolution(String solution) {
@@ -242,15 +264,24 @@ public class GlobalVulInfo {
         GlobalVulInfo that = (GlobalVulInfo) obj;
         return Objects.equals(this.vulName, that.vulName) && Objects.equals(this.vulId, that.vulId)
             && Objects.equals(this.repairNecessity, that.repairNecessity)
-            && Objects.equals(this.decription, that.decription) && Objects.equals(this.solution, that.solution)
-            && Objects.equals(this.url, that.url) && Objects.equals(this.historyNumber, that.historyNumber)
+            && Objects.equals(this.decription, that.decription) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.solution, that.solution) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.historyNumber, that.historyNumber)
             && Objects.equals(this.undealNumber, that.undealNumber) && Objects.equals(this.dataList, that.dataList);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(vulName, vulId, repairNecessity, decription, solution, url, historyNumber, undealNumber, dataList);
+        return Objects.hash(vulName,
+            vulId,
+            repairNecessity,
+            decription,
+            description,
+            solution,
+            url,
+            historyNumber,
+            undealNumber,
+            dataList);
     }
 
     @Override
@@ -261,6 +292,7 @@ public class GlobalVulInfo {
         sb.append("    vulId: ").append(toIndentedString(vulId)).append("\n");
         sb.append("    repairNecessity: ").append(toIndentedString(repairNecessity)).append("\n");
         sb.append("    decription: ").append(toIndentedString(decription)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    solution: ").append(toIndentedString(solution)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    historyNumber: ").append(toIndentedString(historyNumber)).append("\n");

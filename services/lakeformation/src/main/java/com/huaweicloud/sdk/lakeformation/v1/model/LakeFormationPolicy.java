@@ -305,6 +305,26 @@ public class LakeFormationPolicy {
         public static final PermissionsEnum LIST_MODEL = new PermissionsEnum("LIST_MODEL");
 
         /**
+         * Enum CREATE_DATASET for value: "CREATE_DATASET"
+         */
+        public static final PermissionsEnum CREATE_DATASET = new PermissionsEnum("CREATE_DATASET");
+
+        /**
+         * Enum LIST_DATASET for value: "LIST_DATASET"
+         */
+        public static final PermissionsEnum LIST_DATASET = new PermissionsEnum("LIST_DATASET");
+
+        /**
+         * Enum READ_DATASET for value: "READ_DATASET"
+         */
+        public static final PermissionsEnum READ_DATASET = new PermissionsEnum("READ_DATASET");
+
+        /**
+         * Enum WRITE_DATASET for value: "WRITE_DATASET"
+         */
+        public static final PermissionsEnum WRITE_DATASET = new PermissionsEnum("WRITE_DATASET");
+
+        /**
          * Enum INSERT for value: "INSERT"
          */
         public static final PermissionsEnum INSERT = new PermissionsEnum("INSERT");
@@ -357,6 +377,10 @@ public class LakeFormationPolicy {
             map.put("LIST_FUNC", LIST_FUNC);
             map.put("REGISTER_MODEL", REGISTER_MODEL);
             map.put("LIST_MODEL", LIST_MODEL);
+            map.put("CREATE_DATASET", CREATE_DATASET);
+            map.put("LIST_DATASET", LIST_DATASET);
+            map.put("READ_DATASET", READ_DATASET);
+            map.put("WRITE_DATASET", WRITE_DATASET);
             map.put("INSERT", INSERT);
             map.put("UPDATE", UPDATE);
             map.put("DELETE", DELETE);
@@ -494,6 +518,26 @@ public class LakeFormationPolicy {
         public static final GrantAblePermissionsEnum LIST_MODEL = new GrantAblePermissionsEnum("LIST_MODEL");
 
         /**
+         * Enum CREATE_DATASET for value: "CREATE_DATASET"
+         */
+        public static final GrantAblePermissionsEnum CREATE_DATASET = new GrantAblePermissionsEnum("CREATE_DATASET");
+
+        /**
+         * Enum LIST_DATASET for value: "LIST_DATASET"
+         */
+        public static final GrantAblePermissionsEnum LIST_DATASET = new GrantAblePermissionsEnum("LIST_DATASET");
+
+        /**
+         * Enum READ_DATASET for value: "READ_DATASET"
+         */
+        public static final GrantAblePermissionsEnum READ_DATASET = new GrantAblePermissionsEnum("READ_DATASET");
+
+        /**
+         * Enum WRITE_DATASET for value: "WRITE_DATASET"
+         */
+        public static final GrantAblePermissionsEnum WRITE_DATASET = new GrantAblePermissionsEnum("WRITE_DATASET");
+
+        /**
          * Enum INSERT for value: "INSERT"
          */
         public static final GrantAblePermissionsEnum INSERT = new GrantAblePermissionsEnum("INSERT");
@@ -546,6 +590,10 @@ public class LakeFormationPolicy {
             map.put("LIST_FUNC", LIST_FUNC);
             map.put("REGISTER_MODEL", REGISTER_MODEL);
             map.put("LIST_MODEL", LIST_MODEL);
+            map.put("CREATE_DATASET", CREATE_DATASET);
+            map.put("LIST_DATASET", LIST_DATASET);
+            map.put("READ_DATASET", READ_DATASET);
+            map.put("WRITE_DATASET", WRITE_DATASET);
             map.put("INSERT", INSERT);
             map.put("UPDATE", UPDATE);
             map.put("DELETE", DELETE);

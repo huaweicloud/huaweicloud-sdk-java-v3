@@ -132,7 +132,7 @@ public class AddVulWhiteListRequestBody {
     }
 
     /**
-     * **参数解释**: 主机ID列表，当rule_type为specific_host时，该字段必填 **约束限制**: 不涉及 **取值范围**: 最小值1，最大值2000 **默认取值**: 不涉及 
+     * **参数解释**: 主机ID列表，当rule_type为specific_host时，该字段必填 **约束限制**: 不涉及 **取值范围**: 最小值1，最大值1000 **默认取值**: 不涉及 
      * @return hostIds
      */
     public List<String> getHostIds() {

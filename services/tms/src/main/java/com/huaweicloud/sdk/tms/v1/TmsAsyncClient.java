@@ -3,16 +3,26 @@ package com.huaweicloud.sdk.tms.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+import com.huaweicloud.sdk.tms.v1.model.ChangeAssociatedResourceOpenStatusRequest;
+import com.huaweicloud.sdk.tms.v1.model.ChangeAssociatedResourceOpenStatusResponse;
+import com.huaweicloud.sdk.tms.v1.model.CreateAssociatedResourceRulesRequest;
+import com.huaweicloud.sdk.tms.v1.model.CreateAssociatedResourceRulesResponse;
 import com.huaweicloud.sdk.tms.v1.model.CreatePredefineTagsRequest;
 import com.huaweicloud.sdk.tms.v1.model.CreatePredefineTagsResponse;
 import com.huaweicloud.sdk.tms.v1.model.CreateResourceTagRequest;
 import com.huaweicloud.sdk.tms.v1.model.CreateResourceTagResponse;
+import com.huaweicloud.sdk.tms.v1.model.DeleteAssociatedResourceRuleRequest;
+import com.huaweicloud.sdk.tms.v1.model.DeleteAssociatedResourceRuleResponse;
 import com.huaweicloud.sdk.tms.v1.model.DeletePredefineTagsRequest;
 import com.huaweicloud.sdk.tms.v1.model.DeletePredefineTagsResponse;
 import com.huaweicloud.sdk.tms.v1.model.DeleteResourceTagRequest;
 import com.huaweicloud.sdk.tms.v1.model.DeleteResourceTagResponse;
 import com.huaweicloud.sdk.tms.v1.model.ListApiVersionsRequest;
 import com.huaweicloud.sdk.tms.v1.model.ListApiVersionsResponse;
+import com.huaweicloud.sdk.tms.v1.model.ListAssociatedResourceRulesRequest;
+import com.huaweicloud.sdk.tms.v1.model.ListAssociatedResourceRulesResponse;
+import com.huaweicloud.sdk.tms.v1.model.ListAssociatedResourceSettingsRequest;
+import com.huaweicloud.sdk.tms.v1.model.ListAssociatedResourceSettingsResponse;
 import com.huaweicloud.sdk.tms.v1.model.ListPredefineTagsRequest;
 import com.huaweicloud.sdk.tms.v1.model.ListPredefineTagsResponse;
 import com.huaweicloud.sdk.tms.v1.model.ListProvidersRequest;
@@ -27,10 +37,14 @@ import com.huaweicloud.sdk.tms.v1.model.ListTagsRequest;
 import com.huaweicloud.sdk.tms.v1.model.ListTagsResponse;
 import com.huaweicloud.sdk.tms.v1.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.tms.v1.model.ShowApiVersionResponse;
+import com.huaweicloud.sdk.tms.v1.model.ShowAssociatedResourceOpenStatusRequest;
+import com.huaweicloud.sdk.tms.v1.model.ShowAssociatedResourceOpenStatusResponse;
 import com.huaweicloud.sdk.tms.v1.model.ShowResourceTagRequest;
 import com.huaweicloud.sdk.tms.v1.model.ShowResourceTagResponse;
 import com.huaweicloud.sdk.tms.v1.model.ShowTagQuotaRequest;
 import com.huaweicloud.sdk.tms.v1.model.ShowTagQuotaResponse;
+import com.huaweicloud.sdk.tms.v1.model.UpdateAssociatedResourceRulesRequest;
+import com.huaweicloud.sdk.tms.v1.model.UpdateAssociatedResourceRulesResponse;
 import com.huaweicloud.sdk.tms.v1.model.UpdatePredefineTagsRequest;
 import com.huaweicloud.sdk.tms.v1.model.UpdatePredefineTagsResponse;
 
@@ -47,6 +61,66 @@ public class TmsAsyncClient {
     public static ClientBuilder<TmsAsyncClient> newBuilder() {
         ClientBuilder<TmsAsyncClient> clientBuilder = new ClientBuilder<>(TmsAsyncClient::new, "GlobalCredentials");
         return clientBuilder;
+    }
+
+    /**
+     * 开通或关闭关联资源标签继承能力
+     *
+     * 开通或关闭关联资源标签继承能力
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeAssociatedResourceOpenStatusRequest 请求对象
+     * @return CompletableFuture<ChangeAssociatedResourceOpenStatusResponse>
+     */
+    public CompletableFuture<ChangeAssociatedResourceOpenStatusResponse> changeAssociatedResourceOpenStatusAsync(
+        ChangeAssociatedResourceOpenStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, TmsMeta.changeAssociatedResourceOpenStatus);
+    }
+
+    /**
+     * 开通或关闭关联资源标签继承能力
+     *
+     * 开通或关闭关联资源标签继承能力
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeAssociatedResourceOpenStatusRequest 请求对象
+     * @return AsyncInvoker<ChangeAssociatedResourceOpenStatusRequest, ChangeAssociatedResourceOpenStatusResponse>
+     */
+    public AsyncInvoker<ChangeAssociatedResourceOpenStatusRequest, ChangeAssociatedResourceOpenStatusResponse> changeAssociatedResourceOpenStatusAsyncInvoker(
+        ChangeAssociatedResourceOpenStatusRequest request) {
+        return new AsyncInvoker<>(request, TmsMeta.changeAssociatedResourceOpenStatus, hcClient);
+    }
+
+    /**
+     * 批量启用规则
+     *
+     * 按照规则和region来批量启用规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAssociatedResourceRulesRequest 请求对象
+     * @return CompletableFuture<CreateAssociatedResourceRulesResponse>
+     */
+    public CompletableFuture<CreateAssociatedResourceRulesResponse> createAssociatedResourceRulesAsync(
+        CreateAssociatedResourceRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, TmsMeta.createAssociatedResourceRules);
+    }
+
+    /**
+     * 批量启用规则
+     *
+     * 按照规则和region来批量启用规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAssociatedResourceRulesRequest 请求对象
+     * @return AsyncInvoker<CreateAssociatedResourceRulesRequest, CreateAssociatedResourceRulesResponse>
+     */
+    public AsyncInvoker<CreateAssociatedResourceRulesRequest, CreateAssociatedResourceRulesResponse> createAssociatedResourceRulesAsyncInvoker(
+        CreateAssociatedResourceRulesRequest request) {
+        return new AsyncInvoker<>(request, TmsMeta.createAssociatedResourceRules, hcClient);
     }
 
     /**
@@ -105,6 +179,36 @@ public class TmsAsyncClient {
     public AsyncInvoker<CreateResourceTagRequest, CreateResourceTagResponse> createResourceTagAsyncInvoker(
         CreateResourceTagRequest request) {
         return new AsyncInvoker<>(request, TmsMeta.createResourceTag, hcClient);
+    }
+
+    /**
+     * 关闭规则
+     *
+     * 通过指定setting_name和region_id来关闭指定的规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAssociatedResourceRuleRequest 请求对象
+     * @return CompletableFuture<DeleteAssociatedResourceRuleResponse>
+     */
+    public CompletableFuture<DeleteAssociatedResourceRuleResponse> deleteAssociatedResourceRuleAsync(
+        DeleteAssociatedResourceRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, TmsMeta.deleteAssociatedResourceRule);
+    }
+
+    /**
+     * 关闭规则
+     *
+     * 通过指定setting_name和region_id来关闭指定的规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAssociatedResourceRuleRequest 请求对象
+     * @return AsyncInvoker<DeleteAssociatedResourceRuleRequest, DeleteAssociatedResourceRuleResponse>
+     */
+    public AsyncInvoker<DeleteAssociatedResourceRuleRequest, DeleteAssociatedResourceRuleResponse> deleteAssociatedResourceRuleAsyncInvoker(
+        DeleteAssociatedResourceRuleRequest request) {
+        return new AsyncInvoker<>(request, TmsMeta.deleteAssociatedResourceRule, hcClient);
     }
 
     /**
@@ -192,6 +296,66 @@ public class TmsAsyncClient {
     public AsyncInvoker<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersionsAsyncInvoker(
         ListApiVersionsRequest request) {
         return new AsyncInvoker<>(request, TmsMeta.listApiVersions, hcClient);
+    }
+
+    /**
+     * 查询当前规则列表
+     *
+     * 查询当前规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAssociatedResourceRulesRequest 请求对象
+     * @return CompletableFuture<ListAssociatedResourceRulesResponse>
+     */
+    public CompletableFuture<ListAssociatedResourceRulesResponse> listAssociatedResourceRulesAsync(
+        ListAssociatedResourceRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, TmsMeta.listAssociatedResourceRules);
+    }
+
+    /**
+     * 查询当前规则列表
+     *
+     * 查询当前规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAssociatedResourceRulesRequest 请求对象
+     * @return AsyncInvoker<ListAssociatedResourceRulesRequest, ListAssociatedResourceRulesResponse>
+     */
+    public AsyncInvoker<ListAssociatedResourceRulesRequest, ListAssociatedResourceRulesResponse> listAssociatedResourceRulesAsyncInvoker(
+        ListAssociatedResourceRulesRequest request) {
+        return new AsyncInvoker<>(request, TmsMeta.listAssociatedResourceRules, hcClient);
+    }
+
+    /**
+     * 查询当前规则的配置列表
+     *
+     * 查询当前规则的配置列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAssociatedResourceSettingsRequest 请求对象
+     * @return CompletableFuture<ListAssociatedResourceSettingsResponse>
+     */
+    public CompletableFuture<ListAssociatedResourceSettingsResponse> listAssociatedResourceSettingsAsync(
+        ListAssociatedResourceSettingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, TmsMeta.listAssociatedResourceSettings);
+    }
+
+    /**
+     * 查询当前规则的配置列表
+     *
+     * 查询当前规则的配置列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAssociatedResourceSettingsRequest 请求对象
+     * @return AsyncInvoker<ListAssociatedResourceSettingsRequest, ListAssociatedResourceSettingsResponse>
+     */
+    public AsyncInvoker<ListAssociatedResourceSettingsRequest, ListAssociatedResourceSettingsResponse> listAssociatedResourceSettingsAsyncInvoker(
+        ListAssociatedResourceSettingsRequest request) {
+        return new AsyncInvoker<>(request, TmsMeta.listAssociatedResourceSettings, hcClient);
     }
 
     /**
@@ -396,6 +560,36 @@ public class TmsAsyncClient {
     }
 
     /**
+     * 查询当前用户的关联资源标签继承能力的开通状态
+     *
+     * 查询当前用户的关联资源标签继承能力的开通状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAssociatedResourceOpenStatusRequest 请求对象
+     * @return CompletableFuture<ShowAssociatedResourceOpenStatusResponse>
+     */
+    public CompletableFuture<ShowAssociatedResourceOpenStatusResponse> showAssociatedResourceOpenStatusAsync(
+        ShowAssociatedResourceOpenStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, TmsMeta.showAssociatedResourceOpenStatus);
+    }
+
+    /**
+     * 查询当前用户的关联资源标签继承能力的开通状态
+     *
+     * 查询当前用户的关联资源标签继承能力的开通状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAssociatedResourceOpenStatusRequest 请求对象
+     * @return AsyncInvoker<ShowAssociatedResourceOpenStatusRequest, ShowAssociatedResourceOpenStatusResponse>
+     */
+    public AsyncInvoker<ShowAssociatedResourceOpenStatusRequest, ShowAssociatedResourceOpenStatusResponse> showAssociatedResourceOpenStatusAsyncInvoker(
+        ShowAssociatedResourceOpenStatusRequest request) {
+        return new AsyncInvoker<>(request, TmsMeta.showAssociatedResourceOpenStatus, hcClient);
+    }
+
+    /**
      * 查询资源标签
      *
      * 查询单个资源上的标签。
@@ -451,6 +645,36 @@ public class TmsAsyncClient {
     public AsyncInvoker<ShowTagQuotaRequest, ShowTagQuotaResponse> showTagQuotaAsyncInvoker(
         ShowTagQuotaRequest request) {
         return new AsyncInvoker<>(request, TmsMeta.showTagQuota, hcClient);
+    }
+
+    /**
+     * 更新规则
+     *
+     * 更新规则。规则更新的信息会覆盖原有内容
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAssociatedResourceRulesRequest 请求对象
+     * @return CompletableFuture<UpdateAssociatedResourceRulesResponse>
+     */
+    public CompletableFuture<UpdateAssociatedResourceRulesResponse> updateAssociatedResourceRulesAsync(
+        UpdateAssociatedResourceRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, TmsMeta.updateAssociatedResourceRules);
+    }
+
+    /**
+     * 更新规则
+     *
+     * 更新规则。规则更新的信息会覆盖原有内容
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAssociatedResourceRulesRequest 请求对象
+     * @return AsyncInvoker<UpdateAssociatedResourceRulesRequest, UpdateAssociatedResourceRulesResponse>
+     */
+    public AsyncInvoker<UpdateAssociatedResourceRulesRequest, UpdateAssociatedResourceRulesResponse> updateAssociatedResourceRulesAsyncInvoker(
+        UpdateAssociatedResourceRulesRequest request) {
+        return new AsyncInvoker<>(request, TmsMeta.updateAssociatedResourceRules, hcClient);
     }
 
     /**

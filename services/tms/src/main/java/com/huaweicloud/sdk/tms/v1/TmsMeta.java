@@ -5,16 +5,26 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.tms.v1.model.ChangeAssociatedResourceOpenStatusRequest;
+import com.huaweicloud.sdk.tms.v1.model.ChangeAssociatedResourceOpenStatusResponse;
+import com.huaweicloud.sdk.tms.v1.model.CreateAssociatedResourceRulesRequest;
+import com.huaweicloud.sdk.tms.v1.model.CreateAssociatedResourceRulesResponse;
 import com.huaweicloud.sdk.tms.v1.model.CreatePredefineTagsRequest;
 import com.huaweicloud.sdk.tms.v1.model.CreatePredefineTagsResponse;
 import com.huaweicloud.sdk.tms.v1.model.CreateResourceTagRequest;
 import com.huaweicloud.sdk.tms.v1.model.CreateResourceTagResponse;
+import com.huaweicloud.sdk.tms.v1.model.DeleteAssociatedResourceRuleRequest;
+import com.huaweicloud.sdk.tms.v1.model.DeleteAssociatedResourceRuleResponse;
 import com.huaweicloud.sdk.tms.v1.model.DeletePredefineTagsRequest;
 import com.huaweicloud.sdk.tms.v1.model.DeletePredefineTagsResponse;
 import com.huaweicloud.sdk.tms.v1.model.DeleteResourceTagRequest;
 import com.huaweicloud.sdk.tms.v1.model.DeleteResourceTagResponse;
 import com.huaweicloud.sdk.tms.v1.model.ListApiVersionsRequest;
 import com.huaweicloud.sdk.tms.v1.model.ListApiVersionsResponse;
+import com.huaweicloud.sdk.tms.v1.model.ListAssociatedResourceRulesRequest;
+import com.huaweicloud.sdk.tms.v1.model.ListAssociatedResourceRulesResponse;
+import com.huaweicloud.sdk.tms.v1.model.ListAssociatedResourceSettingsRequest;
+import com.huaweicloud.sdk.tms.v1.model.ListAssociatedResourceSettingsResponse;
 import com.huaweicloud.sdk.tms.v1.model.ListPredefineTagsRequest;
 import com.huaweicloud.sdk.tms.v1.model.ListPredefineTagsResponse;
 import com.huaweicloud.sdk.tms.v1.model.ListProvidersRequest;
@@ -28,22 +38,85 @@ import com.huaweicloud.sdk.tms.v1.model.ListTagValuesResponse;
 import com.huaweicloud.sdk.tms.v1.model.ListTagsRequest;
 import com.huaweicloud.sdk.tms.v1.model.ListTagsResponse;
 import com.huaweicloud.sdk.tms.v1.model.ModifyPrefineTag;
+import com.huaweicloud.sdk.tms.v1.model.ReqAssociatedResourceOpenStatus;
+import com.huaweicloud.sdk.tms.v1.model.ReqCreateAssociatedResourceRules;
 import com.huaweicloud.sdk.tms.v1.model.ReqCreatePredefineTag;
 import com.huaweicloud.sdk.tms.v1.model.ReqCreateTag;
 import com.huaweicloud.sdk.tms.v1.model.ReqDeletePredefineTag;
 import com.huaweicloud.sdk.tms.v1.model.ReqDeleteTag;
+import com.huaweicloud.sdk.tms.v1.model.ReqUpdateAssociatedResourceRules;
 import com.huaweicloud.sdk.tms.v1.model.ResqTagResource;
 import com.huaweicloud.sdk.tms.v1.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.tms.v1.model.ShowApiVersionResponse;
+import com.huaweicloud.sdk.tms.v1.model.ShowAssociatedResourceOpenStatusRequest;
+import com.huaweicloud.sdk.tms.v1.model.ShowAssociatedResourceOpenStatusResponse;
 import com.huaweicloud.sdk.tms.v1.model.ShowResourceTagRequest;
 import com.huaweicloud.sdk.tms.v1.model.ShowResourceTagResponse;
 import com.huaweicloud.sdk.tms.v1.model.ShowTagQuotaRequest;
 import com.huaweicloud.sdk.tms.v1.model.ShowTagQuotaResponse;
+import com.huaweicloud.sdk.tms.v1.model.UpdateAssociatedResourceRulesRequest;
+import com.huaweicloud.sdk.tms.v1.model.UpdateAssociatedResourceRulesResponse;
 import com.huaweicloud.sdk.tms.v1.model.UpdatePredefineTagsRequest;
 import com.huaweicloud.sdk.tms.v1.model.UpdatePredefineTagsResponse;
 
+import java.util.List;
+
 @SuppressWarnings("unchecked")
 public class TmsMeta {
+
+    public static final HttpRequestDef<ChangeAssociatedResourceOpenStatusRequest, ChangeAssociatedResourceOpenStatusResponse> changeAssociatedResourceOpenStatus =
+        genForChangeAssociatedResourceOpenStatus();
+
+    private static HttpRequestDef<ChangeAssociatedResourceOpenStatusRequest, ChangeAssociatedResourceOpenStatusResponse> genForChangeAssociatedResourceOpenStatus() {
+        // basic
+        HttpRequestDef.Builder<ChangeAssociatedResourceOpenStatusRequest, ChangeAssociatedResourceOpenStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ChangeAssociatedResourceOpenStatusRequest.class,
+                    ChangeAssociatedResourceOpenStatusResponse.class)
+                .withName("ChangeAssociatedResourceOpenStatus")
+                .withUri("/v2/tms/associated-resources/status")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ReqAssociatedResourceOpenStatus>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ReqAssociatedResourceOpenStatus.class),
+            f -> f.withMarshaller(ChangeAssociatedResourceOpenStatusRequest::getBody,
+                ChangeAssociatedResourceOpenStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAssociatedResourceRulesRequest, CreateAssociatedResourceRulesResponse> createAssociatedResourceRules =
+        genForCreateAssociatedResourceRules();
+
+    private static HttpRequestDef<CreateAssociatedResourceRulesRequest, CreateAssociatedResourceRulesResponse> genForCreateAssociatedResourceRules() {
+        // basic
+        HttpRequestDef.Builder<CreateAssociatedResourceRulesRequest, CreateAssociatedResourceRulesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateAssociatedResourceRulesRequest.class,
+                    CreateAssociatedResourceRulesResponse.class)
+                .withName("CreateAssociatedResourceRules")
+                .withUri("/v2/tms/associated-resources/rules/batch-create")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ReqCreateAssociatedResourceRules>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ReqCreateAssociatedResourceRules.class),
+            f -> f.withMarshaller(CreateAssociatedResourceRulesRequest::getBody,
+                CreateAssociatedResourceRulesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<CreatePredefineTagsRequest, CreatePredefineTagsResponse> createPredefineTags =
         genForCreatePredefineTags();
@@ -85,6 +158,39 @@ public class TmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReqCreateTag.class),
             f -> f.withMarshaller(CreateResourceTagRequest::getBody, CreateResourceTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAssociatedResourceRuleRequest, DeleteAssociatedResourceRuleResponse> deleteAssociatedResourceRule =
+        genForDeleteAssociatedResourceRule();
+
+    private static HttpRequestDef<DeleteAssociatedResourceRuleRequest, DeleteAssociatedResourceRuleResponse> genForDeleteAssociatedResourceRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteAssociatedResourceRuleRequest, DeleteAssociatedResourceRuleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteAssociatedResourceRuleRequest.class,
+                    DeleteAssociatedResourceRuleResponse.class)
+                .withName("DeleteAssociatedResourceRule")
+                .withUri("/v2/tms/associated-resources/rules/{setting_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("setting_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAssociatedResourceRuleRequest::getSettingName,
+                DeleteAssociatedResourceRuleRequest::setSettingName));
+        builder.<List<String>>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(DeleteAssociatedResourceRuleRequest::getRegionId,
+                DeleteAssociatedResourceRuleRequest::setRegionId));
 
         // response
 
@@ -149,6 +255,90 @@ public class TmsMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAssociatedResourceRulesRequest, ListAssociatedResourceRulesResponse> listAssociatedResourceRules =
+        genForListAssociatedResourceRules();
+
+    private static HttpRequestDef<ListAssociatedResourceRulesRequest, ListAssociatedResourceRulesResponse> genForListAssociatedResourceRules() {
+        // basic
+        HttpRequestDef.Builder<ListAssociatedResourceRulesRequest, ListAssociatedResourceRulesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAssociatedResourceRulesRequest.class,
+                    ListAssociatedResourceRulesResponse.class)
+                .withName("ListAssociatedResourceRules")
+                .withUri("/v2/tms/associated-resources/rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAssociatedResourceRulesRequest::getLimit,
+                ListAssociatedResourceRulesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssociatedResourceRulesRequest::getMarker,
+                ListAssociatedResourceRulesRequest::setMarker));
+        builder.<String>withRequestField("setting_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssociatedResourceRulesRequest::getSettingName,
+                ListAssociatedResourceRulesRequest::setSettingName));
+        builder.<String>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssociatedResourceRulesRequest::getRegionId,
+                ListAssociatedResourceRulesRequest::setRegionId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAssociatedResourceSettingsRequest, ListAssociatedResourceSettingsResponse> listAssociatedResourceSettings =
+        genForListAssociatedResourceSettings();
+
+    private static HttpRequestDef<ListAssociatedResourceSettingsRequest, ListAssociatedResourceSettingsResponse> genForListAssociatedResourceSettings() {
+        // basic
+        HttpRequestDef.Builder<ListAssociatedResourceSettingsRequest, ListAssociatedResourceSettingsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAssociatedResourceSettingsRequest.class,
+                    ListAssociatedResourceSettingsResponse.class)
+                .withName("ListAssociatedResourceSettings")
+                .withUri("/v2/tms/associated-resources/settings")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAssociatedResourceSettingsRequest::getLimit,
+                ListAssociatedResourceSettingsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssociatedResourceSettingsRequest::getMarker,
+                ListAssociatedResourceSettingsRequest::setMarker));
+        builder.<String>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssociatedResourceSettingsRequest::getRegionId,
+                ListAssociatedResourceSettingsRequest::setRegionId));
 
         // response
 
@@ -388,6 +578,27 @@ public class TmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAssociatedResourceOpenStatusRequest, ShowAssociatedResourceOpenStatusResponse> showAssociatedResourceOpenStatus =
+        genForShowAssociatedResourceOpenStatus();
+
+    private static HttpRequestDef<ShowAssociatedResourceOpenStatusRequest, ShowAssociatedResourceOpenStatusResponse> genForShowAssociatedResourceOpenStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowAssociatedResourceOpenStatusRequest, ShowAssociatedResourceOpenStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAssociatedResourceOpenStatusRequest.class,
+                    ShowAssociatedResourceOpenStatusResponse.class)
+                .withName("ShowAssociatedResourceOpenStatus")
+                .withUri("/v2/tms/associated-resources/status")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowResourceTagRequest, ShowResourceTagResponse> showResourceTag =
         genForShowResourceTag();
 
@@ -432,6 +643,33 @@ public class TmsMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAssociatedResourceRulesRequest, UpdateAssociatedResourceRulesResponse> updateAssociatedResourceRules =
+        genForUpdateAssociatedResourceRules();
+
+    private static HttpRequestDef<UpdateAssociatedResourceRulesRequest, UpdateAssociatedResourceRulesResponse> genForUpdateAssociatedResourceRules() {
+        // basic
+        HttpRequestDef.Builder<UpdateAssociatedResourceRulesRequest, UpdateAssociatedResourceRulesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateAssociatedResourceRulesRequest.class,
+                    UpdateAssociatedResourceRulesResponse.class)
+                .withName("UpdateAssociatedResourceRules")
+                .withUri("/v2/tms/associated-resources/rules/batch-update")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ReqUpdateAssociatedResourceRules>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ReqUpdateAssociatedResourceRules.class),
+            f -> f.withMarshaller(UpdateAssociatedResourceRulesRequest::getBody,
+                UpdateAssociatedResourceRulesRequest::setBody));
 
         // response
 

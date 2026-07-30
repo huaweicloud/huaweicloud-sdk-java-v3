@@ -13,12 +13,12 @@ public class UpdateServerlessComputeAbilityPolicy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_vcpus")
 
-    private Integer minVcpus;
+    private String minVcpus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_vcpus")
 
-    private Integer maxVcpus;
+    private String maxVcpus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "need_update_nodes_compute_ability")
@@ -40,7 +40,7 @@ public class UpdateServerlessComputeAbilityPolicy {
 
     private Integer minReadonlyNodeCount;
 
-    public UpdateServerlessComputeAbilityPolicy withMinVcpus(Integer minVcpus) {
+    public UpdateServerlessComputeAbilityPolicy withMinVcpus(String minVcpus) {
         this.minVcpus = minVcpus;
         return this;
     }
@@ -49,15 +49,15 @@ public class UpdateServerlessComputeAbilityPolicy {
      * **参数解释**：  单节点VCPUs伸缩下限。  **约束限制**：  不涉及。  **取值范围**：  取值范围可根据[查询数据库规格](https://support.huaweicloud.com/api-taurusdb/ShowGaussMySqlFlavors.html)接口获取。  **默认取值**：  不涉及。
      * @return minVcpus
      */
-    public Integer getMinVcpus() {
+    public String getMinVcpus() {
         return minVcpus;
     }
 
-    public void setMinVcpus(Integer minVcpus) {
+    public void setMinVcpus(String minVcpus) {
         this.minVcpus = minVcpus;
     }
 
-    public UpdateServerlessComputeAbilityPolicy withMaxVcpus(Integer maxVcpus) {
+    public UpdateServerlessComputeAbilityPolicy withMaxVcpus(String maxVcpus) {
         this.maxVcpus = maxVcpus;
         return this;
     }
@@ -66,11 +66,11 @@ public class UpdateServerlessComputeAbilityPolicy {
      * **参数解释**：  单节点VCPUs伸缩上限。  **约束限制**：  不涉及。  **取值范围**：  ≥4。取值范围可根据[查询数据库规格](https://support.huaweicloud.com/api-taurusdb/ShowGaussMySqlFlavors.html)接口获取。  **默认取值**：  不涉及。
      * @return maxVcpus
      */
-    public Integer getMaxVcpus() {
+    public String getMaxVcpus() {
         return maxVcpus;
     }
 
-    public void setMaxVcpus(Integer maxVcpus) {
+    public void setMaxVcpus(String maxVcpus) {
         this.maxVcpus = maxVcpus;
     }
 

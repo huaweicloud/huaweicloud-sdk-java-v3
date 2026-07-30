@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * EventUpdate
@@ -14,6 +15,11 @@ public class EventUpdate {
     @JsonProperty(value = "notBefore")
 
     private String notBefore;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "redeployConfig")
+
+    private RedeployConfig redeployConfig;
 
     public EventUpdate withNotBefore(String notBefore) {
         this.notBefore = notBefore;
@@ -32,6 +38,32 @@ public class EventUpdate {
         this.notBefore = notBefore;
     }
 
+    public EventUpdate withRedeployConfig(RedeployConfig redeployConfig) {
+        this.redeployConfig = redeployConfig;
+        return this;
+    }
+
+    public EventUpdate withRedeployConfig(Consumer<RedeployConfig> redeployConfigSetter) {
+        if (this.redeployConfig == null) {
+            this.redeployConfig = new RedeployConfig();
+            redeployConfigSetter.accept(this.redeployConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get redeployConfig
+     * @return redeployConfig
+     */
+    public RedeployConfig getRedeployConfig() {
+        return redeployConfig;
+    }
+
+    public void setRedeployConfig(RedeployConfig redeployConfig) {
+        this.redeployConfig = redeployConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +73,13 @@ public class EventUpdate {
             return false;
         }
         EventUpdate that = (EventUpdate) obj;
-        return Objects.equals(this.notBefore, that.notBefore);
+        return Objects.equals(this.notBefore, that.notBefore)
+            && Objects.equals(this.redeployConfig, that.redeployConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(notBefore);
+        return Objects.hash(notBefore, redeployConfig);
     }
 
     @Override
@@ -54,6 +87,7 @@ public class EventUpdate {
         StringBuilder sb = new StringBuilder();
         sb.append("class EventUpdate {\n");
         sb.append("    notBefore: ").append(toIndentedString(notBefore)).append("\n");
+        sb.append("    redeployConfig: ").append(toIndentedString(redeployConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

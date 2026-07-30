@@ -13,14 +13,14 @@ public class UpgradeSrKernelVersionRequestV3 {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "delay")
 
-    private String delay;
+    private Boolean delay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_skip_validate")
 
-    private String isSkipValidate;
+    private Boolean isSkipValidate;
 
-    public UpgradeSrKernelVersionRequestV3 withDelay(String delay) {
+    public UpgradeSrKernelVersionRequestV3 withDelay(Boolean delay) {
         this.delay = delay;
         return this;
     }
@@ -29,15 +29,15 @@ public class UpgradeSrKernelVersionRequestV3 {
      * **参数解释**： 是否延时升级。  **约束限制**： 不涉及  **取值范围**： - true - false  **默认取值**： false。
      * @return delay
      */
-    public String getDelay() {
+    public Boolean getDelay() {
         return delay;
     }
 
-    public void setDelay(String delay) {
+    public void setDelay(Boolean delay) {
         this.delay = delay;
     }
 
-    public UpgradeSrKernelVersionRequestV3 withIsSkipValidate(String isSkipValidate) {
+    public UpgradeSrKernelVersionRequestV3 withIsSkipValidate(Boolean isSkipValidate) {
         this.isSkipValidate = isSkipValidate;
         return this;
     }
@@ -46,11 +46,11 @@ public class UpgradeSrKernelVersionRequestV3 {
      * **参数解释**： 是否跳过升级校验。  **约束限制**： 不涉及  **取值范围**： - true - false  **默认取值**： false。
      * @return isSkipValidate
      */
-    public String getIsSkipValidate() {
+    public Boolean getIsSkipValidate() {
         return isSkipValidate;
     }
 
-    public void setIsSkipValidate(String isSkipValidate) {
+    public void setIsSkipValidate(Boolean isSkipValidate) {
         this.isSkipValidate = isSkipValidate;
     }
 

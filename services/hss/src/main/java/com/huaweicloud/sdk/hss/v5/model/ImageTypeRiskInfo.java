@@ -21,6 +21,11 @@ public class ImageTypeRiskInfo {
     private Integer registriy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "registry")
+
+    private Integer registry;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cicd")
 
     private Integer cicd;
@@ -50,7 +55,7 @@ public class ImageTypeRiskInfo {
     }
 
     /**
-     * 仓库镜像
+     * 仓库镜像（已废弃，请使用registry）
      * minimum: 0
      * maximum: 65535
      * @return registriy
@@ -61,6 +66,25 @@ public class ImageTypeRiskInfo {
 
     public void setRegistriy(Integer registriy) {
         this.registriy = registriy;
+    }
+
+    public ImageTypeRiskInfo withRegistry(Integer registry) {
+        this.registry = registry;
+        return this;
+    }
+
+    /**
+     * 仓库镜像
+     * minimum: 0
+     * maximum: 65535
+     * @return registry
+     */
+    public Integer getRegistry() {
+        return registry;
+    }
+
+    public void setRegistry(Integer registry) {
+        this.registry = registry;
     }
 
     public ImageTypeRiskInfo withCicd(Integer cicd) {
@@ -92,12 +116,12 @@ public class ImageTypeRiskInfo {
         }
         ImageTypeRiskInfo that = (ImageTypeRiskInfo) obj;
         return Objects.equals(this.local, that.local) && Objects.equals(this.registriy, that.registriy)
-            && Objects.equals(this.cicd, that.cicd);
+            && Objects.equals(this.registry, that.registry) && Objects.equals(this.cicd, that.cicd);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(local, registriy, cicd);
+        return Objects.hash(local, registriy, registry, cicd);
     }
 
     @Override
@@ -106,6 +130,7 @@ public class ImageTypeRiskInfo {
         sb.append("class ImageTypeRiskInfo {\n");
         sb.append("    local: ").append(toIndentedString(local)).append("\n");
         sb.append("    registriy: ").append(toIndentedString(registriy)).append("\n");
+        sb.append("    registry: ").append(toIndentedString(registry)).append("\n");
         sb.append("    cicd: ").append(toIndentedString(cicd)).append("\n");
         sb.append("}");
         return sb.toString();

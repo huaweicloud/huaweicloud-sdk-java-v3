@@ -111,7 +111,7 @@ public class ListAlgorithmsResponse extends SdkResponse {
     }
 
     /**
-     * 查询到当前用户名下的所有算法查询偏移量。
+     * 查询作业的页数，最小为0。例如设置为0，则表示从第一页开始查询。
      * @return offset
      */
     public Integer getOffset() {

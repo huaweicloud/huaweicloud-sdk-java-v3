@@ -84,14 +84,14 @@ public class ListAntivirusHandleHistoryRequest {
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "event_type")
-
-    private Integer eventType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_dir")
 
     private String sortDir;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "event_type")
+
+    private Integer eventType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_key")
@@ -356,6 +356,23 @@ public class ListAntivirusHandleHistoryRequest {
         this.userName = userName;
     }
 
+    public ListAntivirusHandleHistoryRequest withSortDir(String sortDir) {
+        this.sortDir = sortDir;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 排序的顺序 **约束限制**: 不涉及 **取值范围**:   - asc：正序   - desc：倒序  **默认取值**: 正序排序 
+     * @return sortDir
+     */
+    public String getSortDir() {
+        return sortDir;
+    }
+
+    public void setSortDir(String sortDir) {
+        this.sortDir = sortDir;
+    }
+
     public ListAntivirusHandleHistoryRequest withEventType(Integer eventType) {
         this.eventType = eventType;
         return this;
@@ -373,23 +390,6 @@ public class ListAntivirusHandleHistoryRequest {
 
     public void setEventType(Integer eventType) {
         this.eventType = eventType;
-    }
-
-    public ListAntivirusHandleHistoryRequest withSortDir(String sortDir) {
-        this.sortDir = sortDir;
-        return this;
-    }
-
-    /**
-     * **参数解释**: 排序的顺序 **约束限制**: 不涉及 **取值范围**:   - asc：正序   - desc：倒序  **默认取值**: 正序排序 
-     * @return sortDir
-     */
-    public String getSortDir() {
-        return sortDir;
-    }
-
-    public void setSortDir(String sortDir) {
-        this.sortDir = sortDir;
     }
 
     public ListAntivirusHandleHistoryRequest withSortKey(String sortKey) {
@@ -426,7 +426,7 @@ public class ListAntivirusHandleHistoryRequest {
             && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.privateIp, that.privateIp)
             && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.assetValue, that.assetValue)
             && Objects.equals(this.handleMethod, that.handleMethod) && Objects.equals(this.userName, that.userName)
-            && Objects.equals(this.eventType, that.eventType) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.eventType, that.eventType)
             && Objects.equals(this.sortKey, that.sortKey);
     }
 
@@ -446,8 +446,8 @@ public class ListAntivirusHandleHistoryRequest {
             assetValue,
             handleMethod,
             userName,
-            eventType,
             sortDir,
+            eventType,
             sortKey);
     }
 
@@ -469,8 +469,8 @@ public class ListAntivirusHandleHistoryRequest {
         sb.append("    assetValue: ").append(toIndentedString(assetValue)).append("\n");
         sb.append("    handleMethod: ").append(toIndentedString(handleMethod)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
-        sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
+        sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("}");
         return sb.toString();

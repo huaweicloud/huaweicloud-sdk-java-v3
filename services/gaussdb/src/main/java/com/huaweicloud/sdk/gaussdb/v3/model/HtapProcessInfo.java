@@ -43,7 +43,7 @@ public class HtapProcessInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
 
-    private String duration;
+    private Double duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command")
@@ -152,7 +152,7 @@ public class HtapProcessInfo {
         this.sqlStatement = sqlStatement;
     }
 
-    public HtapProcessInfo withDuration(String duration) {
+    public HtapProcessInfo withDuration(Double duration) {
         this.duration = duration;
         return this;
     }
@@ -161,11 +161,11 @@ public class HtapProcessInfo {
      * **参数解释**：  会话持续时间，单位是秒。  **取值范围**：  不涉及。
      * @return duration
      */
-    public String getDuration() {
+    public Double getDuration() {
         return duration;
     }
 
-    public void setDuration(String duration) {
+    public void setDuration(Double duration) {
         this.duration = duration;
     }
 

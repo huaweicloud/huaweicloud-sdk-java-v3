@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class ResourceInput {
 
     /**
-     * 元数据资源类型,CATALOG,DATABASE,TABLE,FUNC,MODEL,COLUMN,URI
+     * 元数据资源类型,CATALOG,DATABASE,TABLE,FUNC,MODEL,COLUMN,URI,DATASET
      */
     public static final class ResourceTypeEnum {
 
@@ -58,6 +58,11 @@ public class ResourceInput {
          */
         public static final ResourceTypeEnum URI = new ResourceTypeEnum("URI");
 
+        /**
+         * Enum DATASET for value: "DATASET"
+         */
+        public static final ResourceTypeEnum DATASET = new ResourceTypeEnum("DATASET");
+
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ResourceTypeEnum> createStaticFields() {
@@ -69,6 +74,7 @@ public class ResourceInput {
             map.put("MODEL", MODEL);
             map.put("COLUMN", COLUMN);
             map.put("URI", URI);
+            map.put("DATASET", DATASET);
             return Collections.unmodifiableMap(map);
         }
 
@@ -158,13 +164,18 @@ public class ResourceInput {
 
     private List<String> columns = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dataset")
+
+    private String dataset;
+
     public ResourceInput withResourceType(ResourceTypeEnum resourceType) {
         this.resourceType = resourceType;
         return this;
     }
 
     /**
-     * 元数据资源类型,CATALOG,DATABASE,TABLE,FUNC,MODEL,COLUMN,URI
+     * 元数据资源类型,CATALOG,DATABASE,TABLE,FUNC,MODEL,COLUMN,URI,DATASET
      * @return resourceType
      */
     public ResourceTypeEnum getResourceType() {
@@ -310,6 +321,23 @@ public class ResourceInput {
         this.columns = columns;
     }
 
+    public ResourceInput withDataset(String dataset) {
+        this.dataset = dataset;
+        return this;
+    }
+
+    /**
+     * 数据集名称。
+     * @return dataset
+     */
+    public String getDataset() {
+        return dataset;
+    }
+
+    public void setDataset(String dataset) {
+        this.dataset = dataset;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -322,12 +350,13 @@ public class ResourceInput {
         return Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.catalog, that.catalog)
             && Objects.equals(this.database, that.database) && Objects.equals(this.function, that.function)
             && Objects.equals(this.table, that.table) && Objects.equals(this.column, that.column)
-            && Objects.equals(this.uri, that.uri) && Objects.equals(this.columns, that.columns);
+            && Objects.equals(this.uri, that.uri) && Objects.equals(this.columns, that.columns)
+            && Objects.equals(this.dataset, that.dataset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceType, catalog, database, function, table, column, uri, columns);
+        return Objects.hash(resourceType, catalog, database, function, table, column, uri, columns, dataset);
     }
 
     @Override
@@ -342,6 +371,7 @@ public class ResourceInput {
         sb.append("    column: ").append(toIndentedString(column)).append("\n");
         sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
         sb.append("    columns: ").append(toIndentedString(columns)).append("\n");
+        sb.append("    dataset: ").append(toIndentedString(dataset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

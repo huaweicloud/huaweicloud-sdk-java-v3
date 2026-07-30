@@ -151,7 +151,7 @@ public class ListTrainingExperimentsRequest {
     }
 
     /**
-     * 数据条目偏移量。
+     * **参数解释**：分页列表的起始页。 **约束限制**：最小为0。例如设置为0，则表示从第一页开始查询。 **取值范围**：不涉及。 **默认取值**：默认为0。
      * minimum: 0
      * @return offset
      */

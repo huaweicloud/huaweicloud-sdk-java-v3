@@ -327,7 +327,7 @@ public class ProtectionServeInfo {
     }
 
     /**
-     * 防护状态 |- agent防护状态，包含如下2种。 - 0 ：关闭。 - 1 ：开启。
+     * 防护状态 |- agent防护状态，包含如下2种。 - closed ：关闭。 - opened ：开启。
      * @return protectStatus
      */
     public String getProtectStatus() {

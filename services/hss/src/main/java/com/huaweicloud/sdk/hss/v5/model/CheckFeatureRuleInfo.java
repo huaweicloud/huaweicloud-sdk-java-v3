@@ -126,7 +126,7 @@ public class CheckFeatureRuleInfo {
     }
 
     /**
-     * 防护动作，包含如下 -1 检测   -2 检测并阻断/拦截
+     * **参数解释**: 防护动作 **约束限制**: 不涉及 **取值范围**: - 1：检测 - 2: 检测并阻断/拦截     **默认取值**: 不涉及 
      * minimum: 0
      * maximum: 2097152
      * @return protectiveAction
@@ -145,7 +145,7 @@ public class CheckFeatureRuleInfo {
     }
 
     /**
-     * 可选防护动作，包含如下 -1 检测   -2 检测并阻断/拦截   -3 都可以
+     * **参数解释**: 可选防护动作 **约束限制**: 不涉及 **取值范围**: - 1：检测 - 2: 检测并阻断/拦截 - 3: 都可以       **默认取值**: 不涉及 
      * minimum: 0
      * maximum: 2097152
      * @return optionalProtectiveAction

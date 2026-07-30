@@ -28,7 +28,7 @@ public class HtapLTSConfigResponseLtsConfigs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enabled")
 
-    private String enabled;
+    private Boolean enabled;
 
     public HtapLTSConfigResponseLtsConfigs withLogType(String logType) {
         this.logType = logType;
@@ -81,7 +81,7 @@ public class HtapLTSConfigResponseLtsConfigs {
         this.ltsStreamId = ltsStreamId;
     }
 
-    public HtapLTSConfigResponseLtsConfigs withEnabled(String enabled) {
+    public HtapLTSConfigResponseLtsConfigs withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
     }
@@ -90,11 +90,11 @@ public class HtapLTSConfigResponseLtsConfigs {
      * **参数解释**： LTS配置开关状态。  **取值范围**：  不涉及。
      * @return enabled
      */
-    public String getEnabled() {
+    public Boolean getEnabled() {
         return enabled;
     }
 
-    public void setEnabled(String enabled) {
+    public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
 

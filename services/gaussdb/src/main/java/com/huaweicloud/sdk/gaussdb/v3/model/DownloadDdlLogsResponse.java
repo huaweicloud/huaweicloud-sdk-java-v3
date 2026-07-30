@@ -15,41 +15,41 @@ import java.util.function.Consumer;
 public class DownloadDdlLogsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "list")
+    @JsonProperty(value = "download_files")
 
-    private List<DownLoadFileInfoItem> list = null;
+    private List<DownLoadFileInfoItem> downloadFiles = null;
 
-    public DownloadDdlLogsResponse withList(List<DownLoadFileInfoItem> list) {
-        this.list = list;
+    public DownloadDdlLogsResponse withDownloadFiles(List<DownLoadFileInfoItem> downloadFiles) {
+        this.downloadFiles = downloadFiles;
         return this;
     }
 
-    public DownloadDdlLogsResponse addListItem(DownLoadFileInfoItem listItem) {
-        if (this.list == null) {
-            this.list = new ArrayList<>();
+    public DownloadDdlLogsResponse addDownloadFilesItem(DownLoadFileInfoItem downloadFilesItem) {
+        if (this.downloadFiles == null) {
+            this.downloadFiles = new ArrayList<>();
         }
-        this.list.add(listItem);
+        this.downloadFiles.add(downloadFilesItem);
         return this;
     }
 
-    public DownloadDdlLogsResponse withList(Consumer<List<DownLoadFileInfoItem>> listSetter) {
-        if (this.list == null) {
-            this.list = new ArrayList<>();
+    public DownloadDdlLogsResponse withDownloadFiles(Consumer<List<DownLoadFileInfoItem>> downloadFilesSetter) {
+        if (this.downloadFiles == null) {
+            this.downloadFiles = new ArrayList<>();
         }
-        listSetter.accept(this.list);
+        downloadFilesSetter.accept(this.downloadFiles);
         return this;
     }
 
     /**
      * **参数解释**：  每个日志文件的下载链接详情。  **取值范围**：  不涉及。 
-     * @return list
+     * @return downloadFiles
      */
-    public List<DownLoadFileInfoItem> getList() {
-        return list;
+    public List<DownLoadFileInfoItem> getDownloadFiles() {
+        return downloadFiles;
     }
 
-    public void setList(List<DownLoadFileInfoItem> list) {
-        this.list = list;
+    public void setDownloadFiles(List<DownLoadFileInfoItem> downloadFiles) {
+        this.downloadFiles = downloadFiles;
     }
 
     @Override
@@ -61,19 +61,19 @@ public class DownloadDdlLogsResponse extends SdkResponse {
             return false;
         }
         DownloadDdlLogsResponse that = (DownloadDdlLogsResponse) obj;
-        return Objects.equals(this.list, that.list);
+        return Objects.equals(this.downloadFiles, that.downloadFiles);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(list);
+        return Objects.hash(downloadFiles);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DownloadDdlLogsResponse {\n");
-        sb.append("    list: ").append(toIndentedString(list)).append("\n");
+        sb.append("    downloadFiles: ").append(toIndentedString(downloadFiles)).append("\n");
         sb.append("}");
         return sb.toString();
     }

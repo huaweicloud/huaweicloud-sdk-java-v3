@@ -320,7 +320,7 @@ public class VulUrgentResponseInfoDataList {
     }
 
     /**
-     * **参数解释**: 修复优先级 **取值范围**: - Critical：紧急。 - High：高。 - Medium：中。 - Low：低。 
+     * **参数解释**: 主机的资产重要性 **取值范围**: - important：重要资产 - common：一般资产 - test：测试资产 
      * @return assetValue
      */
     public String getAssetValue() {

@@ -17,14 +17,14 @@ public class ListParamsTemplateApplyHistoryResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
-    private String totalCount;
+    private Integer totalCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "histories")
 
     private List<TemplateApplyHistory> histories = null;
 
-    public ListParamsTemplateApplyHistoryResponse withTotalCount(String totalCount) {
+    public ListParamsTemplateApplyHistoryResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
@@ -33,11 +33,11 @@ public class ListParamsTemplateApplyHistoryResponse extends SdkResponse {
      * 应用记录数量。
      * @return totalCount
      */
-    public String getTotalCount() {
+    public Integer getTotalCount() {
         return totalCount;
     }
 
-    public void setTotalCount(String totalCount) {
+    public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
 

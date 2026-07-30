@@ -23,17 +23,17 @@ public class FlowLimitStrategy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit_value")
 
-    private String limitValue;
+    private Long limitValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_percent_threshold")
 
-    private String alarmPercentThreshold;
+    private Integer alarmPercentThreshold;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ban_time")
 
-    private String banTime;
+    private Long banTime;
 
     public FlowLimitStrategy withStrategyType(String strategyType) {
         this.strategyType = strategyType;
@@ -41,7 +41,7 @@ public class FlowLimitStrategy {
     }
 
     /**
-     * **参数解释：**  用量统计类型 **约束限制：** 不涉及 **取值范围：** - instant: 瞬时用量 - hour: 累计用量（小时） - day: 累计用量（天） **默认取值：** 不涉及
+     * **参数解释：**  用量统计类型 **约束限制：** 不涉及 **取值范围：** - instant: 瞬时用量 - hour: 累计用量（小时） - day: 累计用量（天）  **默认取值：** 不涉及
      * @return strategyType
      */
     public String getStrategyType() {
@@ -58,7 +58,7 @@ public class FlowLimitStrategy {
     }
 
     /**
-     * **参数解释：**  用量封顶类型 **约束限制：** 不涉及 **取值范围：** - bandwidth: 带宽封顶，单位: bit/s - traffic: 流量封顶，单位: bit **默认取值：** 不涉及
+     * **参数解释：**  用量封顶类型 **约束限制：** 不涉及 **取值范围：** - bandwidth: 带宽封顶，单位: bit/s - traffic: 流量封顶，单位: byte  **默认取值：** 不涉及
      * @return itemType
      */
     public String getItemType() {
@@ -69,7 +69,7 @@ public class FlowLimitStrategy {
         this.itemType = itemType;
     }
 
-    public FlowLimitStrategy withLimitValue(String limitValue) {
+    public FlowLimitStrategy withLimitValue(Long limitValue) {
         this.limitValue = limitValue;
         return this;
     }
@@ -78,45 +78,45 @@ public class FlowLimitStrategy {
      * **参数解释：** 用量封顶阈值，域名用量达到该阈值后，将会停用域名 **约束限制：** 不涉及 **取值范围：** 必须为正整数 **默认取值：** 不涉及
      * @return limitValue
      */
-    public String getLimitValue() {
+    public Long getLimitValue() {
         return limitValue;
     }
 
-    public void setLimitValue(String limitValue) {
+    public void setLimitValue(Long limitValue) {
         this.limitValue = limitValue;
     }
 
-    public FlowLimitStrategy withAlarmPercentThreshold(String alarmPercentThreshold) {
+    public FlowLimitStrategy withAlarmPercentThreshold(Integer alarmPercentThreshold) {
         this.alarmPercentThreshold = alarmPercentThreshold;
         return this;
     }
 
     /**
-     * **参数解释：** 用量告警阈值，域名用量达到该阈值后，将会发送告警 **约束限制：** 不涉及 **取值范围：** 1-90 **默认取值：** 不涉及
+     * **参数解释：** 用量告警阈值，域名用量达到该阈值后，将会发送告警 **约束限制：** 不涉及 **取值范围：** 10-90 **默认取值：** 不涉及
      * @return alarmPercentThreshold
      */
-    public String getAlarmPercentThreshold() {
+    public Integer getAlarmPercentThreshold() {
         return alarmPercentThreshold;
     }
 
-    public void setAlarmPercentThreshold(String alarmPercentThreshold) {
+    public void setAlarmPercentThreshold(Integer alarmPercentThreshold) {
         this.alarmPercentThreshold = alarmPercentThreshold;
     }
 
-    public FlowLimitStrategy withBanTime(String banTime) {
+    public FlowLimitStrategy withBanTime(Long banTime) {
         this.banTime = banTime;
         return this;
     }
 
     /**
-     * **参数解释：** 域名封禁周期 **约束限制：** ban_time设置为0时，表示不自动解封，需要客户手动解封域名 **取值范围：** - 0: 不自动解封 - 60: 60分钟，即1个小时 - 720: 720分钟，即12个小时 - 1440: 1440分钟，即24个小时 - 4320: 4320分钟，即3天 **默认取值：** 不涉及
+     * **参数解释：** 域名封禁周期 **约束限制：** ban_time设置为0时，表示不自动解封，需要客户手动解封域名 **取值范围：** - 0: 不自动解封 - 60: 60分钟，即1个小时 - 720: 720分钟，即12个小时 - 1440: 1440分钟，即24个小时 - 4320: 4320分钟，即3天  **默认取值：** 0
      * @return banTime
      */
-    public String getBanTime() {
+    public Long getBanTime() {
         return banTime;
     }
 
-    public void setBanTime(String banTime) {
+    public void setBanTime(Long banTime) {
         this.banTime = banTime;
     }
 

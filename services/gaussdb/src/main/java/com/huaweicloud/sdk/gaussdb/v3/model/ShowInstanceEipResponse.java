@@ -69,7 +69,7 @@ public class ShowInstanceEipResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_size")
 
-    private String bandwidthSize;
+    private Integer bandwidthSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_share_type")
@@ -268,7 +268,7 @@ public class ShowInstanceEipResponse extends SdkResponse {
         this.bandwidthName = bandwidthName;
     }
 
-    public ShowInstanceEipResponse withBandwidthSize(String bandwidthSize) {
+    public ShowInstanceEipResponse withBandwidthSize(Integer bandwidthSize) {
         this.bandwidthSize = bandwidthSize;
         return this;
     }
@@ -277,11 +277,11 @@ public class ShowInstanceEipResponse extends SdkResponse {
      * 带宽大小。
      * @return bandwidthSize
      */
-    public String getBandwidthSize() {
+    public Integer getBandwidthSize() {
         return bandwidthSize;
     }
 
-    public void setBandwidthSize(String bandwidthSize) {
+    public void setBandwidthSize(Integer bandwidthSize) {
         this.bandwidthSize = bandwidthSize;
     }
 

@@ -8,10 +8,12 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.lakeformation.v1.model.AccessClientRequestBody;
 import com.huaweicloud.sdk.lakeformation.v1.model.AccessPolicyInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.AccessRequestInfo;
+import com.huaweicloud.sdk.lakeformation.v1.model.AddDatasetInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.AddPartitionInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.AddPartitionsRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.AddPartitionsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.AgencyRequestBody;
+import com.huaweicloud.sdk.lakeformation.v1.model.AlterDatasetInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.AlterPartitionsInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.AlterRoleInput;
 import com.huaweicloud.sdk.lakeformation.v1.model.AlterTableInput;
@@ -61,6 +63,8 @@ import com.huaweicloud.sdk.lakeformation.v1.model.CreateCatalogRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateCatalogResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateDatabaseRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateDatabaseResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.CreateDatasetRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.CreateDatasetResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateFunctionRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateFunctionResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.CreateInstanceRequestBody;
@@ -86,6 +90,8 @@ import com.huaweicloud.sdk.lakeformation.v1.model.DeleteConstraintRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.DeleteConstraintResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.DeleteDatabaseRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.DeleteDatabaseResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.DeleteDatasetRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.DeleteDatasetResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.DeleteFunctionRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.DeleteFunctionResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.DeleteLakeFormationInstanceRequest;
@@ -121,6 +127,8 @@ import com.huaweicloud.sdk.lakeformation.v1.model.ListDatabaseNamesRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListDatabaseNamesResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListDatabasesRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListDatabasesResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListDatasetsRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ListDatasetsResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListFunctionNamesRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListFunctionNamesResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ListFunctionsRequest;
@@ -205,6 +213,8 @@ import com.huaweicloud.sdk.lakeformation.v1.model.ShowCredentialRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowCredentialResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowDatabaseRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowDatabaseResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowDatasetRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.ShowDatasetResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowFunctionRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowFunctionResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.ShowLakeFormationInstanceRequest;
@@ -226,6 +236,8 @@ import com.huaweicloud.sdk.lakeformation.v1.model.UpdateCatalogRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateCatalogResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateDatabaseRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateDatabaseResponse;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdateDatasetRequest;
+import com.huaweicloud.sdk.lakeformation.v1.model.UpdateDatasetResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateFunctionRequest;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateFunctionResponse;
 import com.huaweicloud.sdk.lakeformation.v1.model.UpdateLakeFormationInstance;
@@ -1256,6 +1268,234 @@ public class LakeFormationMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DatabaseInput.class),
             f -> f.withMarshaller(UpdateDatabaseRequest::getBody, UpdateDatabaseRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDatasetRequest, CreateDatasetResponse> createDataset =
+        genForCreateDataset();
+
+    private static HttpRequestDef<CreateDatasetRequest, CreateDatasetResponse> genForCreateDataset() {
+        // basic
+        HttpRequestDef.Builder<CreateDatasetRequest, CreateDatasetResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateDatasetRequest.class, CreateDatasetResponse.class)
+            .withName("CreateDataset")
+            .withUri(
+                "/v1/{project_id}/instances/{instance_id}/catalogs/{catalog_name}/databases/{database_name}/datasets")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDatasetRequest::getInstanceId, CreateDatasetRequest::setInstanceId));
+        builder.<String>withRequestField("catalog_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDatasetRequest::getCatalogName, CreateDatasetRequest::setCatalogName));
+        builder.<String>withRequestField("database_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDatasetRequest::getDatabaseName, CreateDatasetRequest::setDatabaseName));
+        builder.<AddDatasetInput>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddDatasetInput.class),
+            f -> f.withMarshaller(CreateDatasetRequest::getBody, CreateDatasetRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDatasetRequest, DeleteDatasetResponse> deleteDataset =
+        genForDeleteDataset();
+
+    private static HttpRequestDef<DeleteDatasetRequest, DeleteDatasetResponse> genForDeleteDataset() {
+        // basic
+        HttpRequestDef.Builder<DeleteDatasetRequest, DeleteDatasetResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteDatasetRequest.class, DeleteDatasetResponse.class)
+            .withName("DeleteDataset")
+            .withUri(
+                "/v1/{project_id}/instances/{instance_id}/catalogs/{catalog_name}/databases/{database_name}/datasets/{dataset_name}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDatasetRequest::getInstanceId, DeleteDatasetRequest::setInstanceId));
+        builder.<String>withRequestField("catalog_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDatasetRequest::getCatalogName, DeleteDatasetRequest::setCatalogName));
+        builder.<String>withRequestField("dataset_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDatasetRequest::getDatasetName, DeleteDatasetRequest::setDatasetName));
+        builder.<String>withRequestField("database_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDatasetRequest::getDatabaseName, DeleteDatasetRequest::setDatabaseName));
+        builder.<Boolean>withRequestField("delete_data",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(DeleteDatasetRequest::getDeleteData, DeleteDatasetRequest::setDeleteData));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDatasetResponse::getBody, DeleteDatasetResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDatasetsRequest, ListDatasetsResponse> listDatasets = genForListDatasets();
+
+    private static HttpRequestDef<ListDatasetsRequest, ListDatasetsResponse> genForListDatasets() {
+        // basic
+        HttpRequestDef.Builder<ListDatasetsRequest, ListDatasetsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDatasetsRequest.class, ListDatasetsResponse.class)
+            .withName("ListDatasets")
+            .withUri(
+                "/v1/{project_id}/instances/{instance_id}/catalogs/{catalog_name}/databases/{database_name}/datasets")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasetsRequest::getInstanceId, ListDatasetsRequest::setInstanceId));
+        builder.<String>withRequestField("catalog_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasetsRequest::getCatalogName, ListDatasetsRequest::setCatalogName));
+        builder.<String>withRequestField("database_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasetsRequest::getDatabaseName, ListDatasetsRequest::setDatabaseName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDatasetsRequest::getLimit, ListDatasetsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasetsRequest::getMarker, ListDatasetsRequest::setMarker));
+        builder.<Boolean>withRequestField("reverse_page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListDatasetsRequest::getReversePage, ListDatasetsRequest::setReversePage));
+        builder.<String>withRequestField("name_partern",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasetsRequest::getNamePartern, ListDatasetsRequest::setNamePartern));
+        builder.<String>withRequestField("format",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatasetsRequest::getFormat, ListDatasetsRequest::setFormat));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDatasetRequest, ShowDatasetResponse> showDataset = genForShowDataset();
+
+    private static HttpRequestDef<ShowDatasetRequest, ShowDatasetResponse> genForShowDataset() {
+        // basic
+        HttpRequestDef.Builder<ShowDatasetRequest, ShowDatasetResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDatasetRequest.class, ShowDatasetResponse.class)
+            .withName("ShowDataset")
+            .withUri(
+                "/v1/{project_id}/instances/{instance_id}/catalogs/{catalog_name}/databases/{database_name}/datasets/{dataset_name}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDatasetRequest::getInstanceId, ShowDatasetRequest::setInstanceId));
+        builder.<String>withRequestField("catalog_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDatasetRequest::getCatalogName, ShowDatasetRequest::setCatalogName));
+        builder.<String>withRequestField("dataset_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDatasetRequest::getDatasetName, ShowDatasetRequest::setDatasetName));
+        builder.<String>withRequestField("database_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDatasetRequest::getDatabaseName, ShowDatasetRequest::setDatabaseName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDatasetRequest, UpdateDatasetResponse> updateDataset =
+        genForUpdateDataset();
+
+    private static HttpRequestDef<UpdateDatasetRequest, UpdateDatasetResponse> genForUpdateDataset() {
+        // basic
+        HttpRequestDef.Builder<UpdateDatasetRequest, UpdateDatasetResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateDatasetRequest.class, UpdateDatasetResponse.class)
+            .withName("UpdateDataset")
+            .withUri(
+                "/v1/{project_id}/instances/{instance_id}/catalogs/{catalog_name}/databases/{database_name}/datasets/{dataset_name}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDatasetRequest::getInstanceId, UpdateDatasetRequest::setInstanceId));
+        builder.<String>withRequestField("catalog_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDatasetRequest::getCatalogName, UpdateDatasetRequest::setCatalogName));
+        builder.<String>withRequestField("dataset_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDatasetRequest::getDatasetName, UpdateDatasetRequest::setDatasetName));
+        builder.<String>withRequestField("database_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDatasetRequest::getDatabaseName, UpdateDatasetRequest::setDatabaseName));
+        builder.<AlterDatasetInput>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AlterDatasetInput.class),
+            f -> f.withMarshaller(UpdateDatasetRequest::getBody, UpdateDatasetRequest::setBody));
 
         // response
 

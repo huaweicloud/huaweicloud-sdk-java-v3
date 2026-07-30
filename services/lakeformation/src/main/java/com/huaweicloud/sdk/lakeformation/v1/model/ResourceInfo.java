@@ -68,6 +68,11 @@ public class ResourceInfo {
          */
         public static final TypeEnum URI = new TypeEnum("URI");
 
+        /**
+         * Enum DATASET for value: "DATASET"
+         */
+        public static final TypeEnum DATASET = new TypeEnum("DATASET");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -79,6 +84,7 @@ public class ResourceInfo {
             map.put("FUNC", FUNC);
             map.put("MODEL", MODEL);
             map.put("URI", URI);
+            map.put("DATASET", DATASET);
             return Collections.unmodifiableMap(map);
         }
 

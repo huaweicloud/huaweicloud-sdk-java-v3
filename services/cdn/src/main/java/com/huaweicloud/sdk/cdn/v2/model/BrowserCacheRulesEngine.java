@@ -31,7 +31,7 @@ public class BrowserCacheRulesEngine {
     }
 
     /**
-     * **参数解释：** 缓存生效类型 **约束限制：** 不涉及 **取值范围：** - follow_origin: 遵循源站的缓存策略，即Cache-Control头部的设置 - ttl: 浏览器缓存遵循当前规则设置的过期时间 - never: 浏览器不缓存资源 **默认取值：** 不涉及
+     * **参数解释：** 缓存生效类型 **约束限制：** 不涉及 **取值范围：** - follow_origin: 遵循源站的缓存策略，即Cache-Control头部的设置 - ttl: 浏览器缓存遵循当前规则设置的过期时间 - never: 浏览器不缓存资源  **默认取值：** 不涉及
      * @return cacheType
      */
     public String getCacheType() {
@@ -65,7 +65,7 @@ public class BrowserCacheRulesEngine {
     }
 
     /**
-     * **参数解释：** 缓存过期时间单位 **约束限制：** 当缓存生效类型为ttl时必填 **取值范围：** - s：秒 - m：分种 - h：小时 - d：天 **默认取值：** 不涉及
+     * **参数解释：** 缓存过期时间单位 **约束限制：** 当缓存生效类型为ttl时必填 **取值范围：** - s：秒 - m：分种 - h：小时 - d：天  **默认取值：** 不涉及
      * @return ttlUnit
      */
     public String getTtlUnit() {

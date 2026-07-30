@@ -17,14 +17,14 @@ public class ShowAutoScalingHistoryResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
-    private String totalCount;
+    private Integer totalCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "records")
 
     private List<AutoScalingRecordInfo> records = null;
 
-    public ShowAutoScalingHistoryResponse withTotalCount(String totalCount) {
+    public ShowAutoScalingHistoryResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
@@ -33,11 +33,11 @@ public class ShowAutoScalingHistoryResponse extends SdkResponse {
      * 记录总数。
      * @return totalCount
      */
-    public String getTotalCount() {
+    public Integer getTotalCount() {
         return totalCount;
     }
 
-    public void setTotalCount(String totalCount) {
+    public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
 

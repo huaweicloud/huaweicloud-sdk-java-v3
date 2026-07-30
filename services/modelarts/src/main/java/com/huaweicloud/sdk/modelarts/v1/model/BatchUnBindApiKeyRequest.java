@@ -2,20 +2,16 @@ package com.huaweicloud.sdk.modelarts.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.huaweicloud.sdk.core.http.FormDataPart;
-import com.huaweicloud.sdk.core.http.SdkFormDataBody;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
  * BatchUnBindApiKeyRequest
  */
-public class BatchUnBindApiKeyRequest implements SdkFormDataBody {
+public class BatchUnBindApiKeyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_ids")
@@ -53,17 +49,6 @@ public class BatchUnBindApiKeyRequest implements SdkFormDataBody {
 
     public void setKeyIds(List<BatchUnBindApiKeyRequestKeyIds> keyIds) {
         this.keyIds = keyIds;
-    }
-
-    @Override
-    public Map<String, FormDataPart<?>> buildFormData() {
-        return new LinkedHashMap<String, FormDataPart<?>>() {
-
-            private static final long serialVersionUID = 1L;
-            {
-                put("key_ids", new FormDataPart<>(keyIds));
-            }
-        };
     }
 
     @Override

@@ -24,11 +24,6 @@ public class ShowInstanceDatabasesForHtapResponse extends SdkResponse {
 
     private Integer totalCount;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "timestamp")
-
-    private Integer timestamp;
-
     public ShowInstanceDatabasesForHtapResponse withDatabases(List<String> databases) {
         this.databases = databases;
         return this;
@@ -81,25 +76,6 @@ public class ShowInstanceDatabasesForHtapResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
-    public ShowInstanceDatabasesForHtapResponse withTimestamp(Integer timestamp) {
-        this.timestamp = timestamp;
-        return this;
-    }
-
-    /**
-     * 查询时间戳。
-     * minimum: 0
-     * maximum: 2147483647
-     * @return timestamp
-     */
-    public Integer getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Integer timestamp) {
-        this.timestamp = timestamp;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -109,13 +85,12 @@ public class ShowInstanceDatabasesForHtapResponse extends SdkResponse {
             return false;
         }
         ShowInstanceDatabasesForHtapResponse that = (ShowInstanceDatabasesForHtapResponse) obj;
-        return Objects.equals(this.databases, that.databases) && Objects.equals(this.totalCount, that.totalCount)
-            && Objects.equals(this.timestamp, that.timestamp);
+        return Objects.equals(this.databases, that.databases) && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(databases, totalCount, timestamp);
+        return Objects.hash(databases, totalCount);
     }
 
     @Override
@@ -124,7 +99,6 @@ public class ShowInstanceDatabasesForHtapResponse extends SdkResponse {
         sb.append("class ShowInstanceDatabasesForHtapResponse {\n");
         sb.append("    databases: ").append(toIndentedString(databases)).append("\n");
         sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
-        sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

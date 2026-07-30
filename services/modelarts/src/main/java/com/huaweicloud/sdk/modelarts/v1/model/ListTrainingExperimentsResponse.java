@@ -106,7 +106,7 @@ public class ListTrainingExperimentsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**：查询到所有训练实验查询偏移量。  **取值范围**：不涉及。
+     * **参数解释**：查询作业的页数，最小为0。例如设置为0，则表示从第一页开始查询。  **取值范围**：不涉及。
      * @return offset
      */
     public Integer getOffset() {

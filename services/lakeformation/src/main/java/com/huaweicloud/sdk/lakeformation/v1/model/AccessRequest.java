@@ -29,7 +29,7 @@ public class AccessRequest {
     private List<Principal> principal = null;
 
     /**
-     * 权限信息,ALL,CREATE,ALTER,DROP,DESCRIBE,EXEC,CREATE_DATABASE,LIST_DATABASE,CREATE_TABLE,LIST_TABLE,CREATE_FUNC,LIST_FUNC,REGISTER_MODEL,LIST_MODEL,INSERT,UPDATE,DELETE,SELECT,READ,WRITE,OPERATE,USE
+     * 权限信息,ALL,CREATE,ALTER,DROP,DESCRIBE,EXEC,CREATE_DATABASE,LIST_DATABASE,CREATE_TABLE,LIST_TABLE,CREATE_FUNC,LIST_FUNC,REGISTER_MODEL,LIST_MODEL,CREATE_DATASET,LIST_DATASET,READ_DATASET,WRITE_DATASET,INSERT,UPDATE,DELETE,SELECT,READ,WRITE,OPERATE,USE
      */
     public static final class ActionEnum {
 
@@ -104,6 +104,26 @@ public class AccessRequest {
         public static final ActionEnum LIST_MODEL = new ActionEnum("LIST_MODEL");
 
         /**
+         * Enum CREATE_DATASET for value: "CREATE_DATASET"
+         */
+        public static final ActionEnum CREATE_DATASET = new ActionEnum("CREATE_DATASET");
+
+        /**
+         * Enum LIST_DATASET for value: "LIST_DATASET"
+         */
+        public static final ActionEnum LIST_DATASET = new ActionEnum("LIST_DATASET");
+
+        /**
+         * Enum READ_DATASET for value: "READ_DATASET"
+         */
+        public static final ActionEnum READ_DATASET = new ActionEnum("READ_DATASET");
+
+        /**
+         * Enum WRITE_DATASET for value: "WRITE_DATASET"
+         */
+        public static final ActionEnum WRITE_DATASET = new ActionEnum("WRITE_DATASET");
+
+        /**
          * Enum INSERT for value: "INSERT"
          */
         public static final ActionEnum INSERT = new ActionEnum("INSERT");
@@ -161,6 +181,10 @@ public class AccessRequest {
             map.put("LIST_FUNC", LIST_FUNC);
             map.put("REGISTER_MODEL", REGISTER_MODEL);
             map.put("LIST_MODEL", LIST_MODEL);
+            map.put("CREATE_DATASET", CREATE_DATASET);
+            map.put("LIST_DATASET", LIST_DATASET);
+            map.put("READ_DATASET", READ_DATASET);
+            map.put("WRITE_DATASET", WRITE_DATASET);
             map.put("INSERT", INSERT);
             map.put("UPDATE", UPDATE);
             map.put("DELETE", DELETE);
@@ -288,7 +312,7 @@ public class AccessRequest {
     }
 
     /**
-     * 权限信息,ALL,CREATE,ALTER,DROP,DESCRIBE,EXEC,CREATE_DATABASE,LIST_DATABASE,CREATE_TABLE,LIST_TABLE,CREATE_FUNC,LIST_FUNC,REGISTER_MODEL,LIST_MODEL,INSERT,UPDATE,DELETE,SELECT,READ,WRITE,OPERATE,USE
+     * 权限信息,ALL,CREATE,ALTER,DROP,DESCRIBE,EXEC,CREATE_DATABASE,LIST_DATABASE,CREATE_TABLE,LIST_TABLE,CREATE_FUNC,LIST_FUNC,REGISTER_MODEL,LIST_MODEL,CREATE_DATASET,LIST_DATASET,READ_DATASET,WRITE_DATASET,INSERT,UPDATE,DELETE,SELECT,READ,WRITE,OPERATE,USE
      * @return action
      */
     public ActionEnum getAction() {

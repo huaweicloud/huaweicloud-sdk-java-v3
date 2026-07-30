@@ -14,9 +14,9 @@ public class SyncStarRocksUsersResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "success")
 
-    private String success;
+    private Boolean success;
 
-    public SyncStarRocksUsersResponse withSuccess(String success) {
+    public SyncStarRocksUsersResponse withSuccess(Boolean success) {
         this.success = success;
         return this;
     }
@@ -25,11 +25,11 @@ public class SyncStarRocksUsersResponse extends SdkResponse {
      * 开启行列分流是否成功。
      * @return success
      */
-    public String getSuccess() {
+    public Boolean getSuccess() {
         return success;
     }
 
-    public void setSuccess(String success) {
+    public void setSuccess(Boolean success) {
         this.success = success;
     }
 

@@ -46,6 +46,11 @@ public class NodeLabels {
     private String osModelartsNodeBatchCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os.modelarts.node/spod.id")
+
+    private String osModelartsNodeSpodId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os.modelarts/resource.id")
 
     private String osModelartsResourceId;
@@ -207,6 +212,23 @@ public class NodeLabels {
 
     public void setOsModelartsNodeBatchCount(String osModelartsNodeBatchCount) {
         this.osModelartsNodeBatchCount = osModelartsNodeBatchCount;
+    }
+
+    public NodeLabels withOsModelartsNodeSpodId(String osModelartsNodeSpodId) {
+        this.osModelartsNodeSpodId = osModelartsNodeSpodId;
+        return this;
+    }
+
+    /**
+     * **参数解释**：HPS超节点ID。该值相同的节点，A5代表在同一框内，A3代表在同一个超节点内。 **取值范围**：不涉及。
+     * @return osModelartsNodeSpodId
+     */
+    public String getOsModelartsNodeSpodId() {
+        return osModelartsNodeSpodId;
+    }
+
+    public void setOsModelartsNodeSpodId(String osModelartsNodeSpodId) {
+        this.osModelartsNodeSpodId = osModelartsNodeSpodId;
     }
 
     public NodeLabels withOsModelartsResourceId(String osModelartsResourceId) {
@@ -380,6 +402,7 @@ public class NodeLabels {
             && Objects.equals(this.osModelartsNodeBatchName, that.osModelartsNodeBatchName)
             && Objects.equals(this.osModelartsNodeBatchType, that.osModelartsNodeBatchType)
             && Objects.equals(this.osModelartsNodeBatchCount, that.osModelartsNodeBatchCount)
+            && Objects.equals(this.osModelartsNodeSpodId, that.osModelartsNodeSpodId)
             && Objects.equals(this.osModelartsResourceId, that.osModelartsResourceId)
             && Objects.equals(this.osModelartsTenantDomainId, that.osModelartsTenantDomainId)
             && Objects.equals(this.osModelartsTenantProjectId, that.osModelartsTenantProjectId)
@@ -401,6 +424,7 @@ public class NodeLabels {
             osModelartsNodeBatchName,
             osModelartsNodeBatchType,
             osModelartsNodeBatchCount,
+            osModelartsNodeSpodId,
             osModelartsResourceId,
             osModelartsTenantDomainId,
             osModelartsTenantProjectId,
@@ -425,6 +449,7 @@ public class NodeLabels {
         sb.append("    osModelartsNodeBatchName: ").append(toIndentedString(osModelartsNodeBatchName)).append("\n");
         sb.append("    osModelartsNodeBatchType: ").append(toIndentedString(osModelartsNodeBatchType)).append("\n");
         sb.append("    osModelartsNodeBatchCount: ").append(toIndentedString(osModelartsNodeBatchCount)).append("\n");
+        sb.append("    osModelartsNodeSpodId: ").append(toIndentedString(osModelartsNodeSpodId)).append("\n");
         sb.append("    osModelartsResourceId: ").append(toIndentedString(osModelartsResourceId)).append("\n");
         sb.append("    osModelartsTenantDomainId: ").append(toIndentedString(osModelartsTenantDomainId)).append("\n");
         sb.append("    osModelartsTenantProjectId: ").append(toIndentedString(osModelartsTenantProjectId)).append("\n");

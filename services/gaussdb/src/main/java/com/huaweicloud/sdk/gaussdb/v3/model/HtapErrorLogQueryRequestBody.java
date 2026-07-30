@@ -33,7 +33,7 @@ public class HtapErrorLogQueryRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
-    private Integer limit;
+    private String limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "line_num")
@@ -108,22 +108,20 @@ public class HtapErrorLogQueryRequestBody {
         this.level = level;
     }
 
-    public HtapErrorLogQueryRequestBody withLimit(Integer limit) {
+    public HtapErrorLogQueryRequestBody withLimit(String limit) {
         this.limit = limit;
         return this;
     }
 
     /**
      * **参数解释**： 查询记录数。  **约束限制**：  不涉及。  **取值范围**： 0-100。  **默认取值**： 不涉及。
-     * minimum: 0
-     * maximum: 100
      * @return limit
      */
-    public Integer getLimit() {
+    public String getLimit() {
         return limit;
     }
 
-    public void setLimit(Integer limit) {
+    public void setLimit(String limit) {
         this.limit = limit;
     }
 

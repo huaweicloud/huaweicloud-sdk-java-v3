@@ -28,6 +28,11 @@ public class DatabaseInfo {
 
     private List<FunctionInfo> functions = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "datasets")
+
+    private List<DatasetInfo> datasets = null;
+
     public DatabaseInfo withName(String name) {
         this.name = name;
         return this;
@@ -111,6 +116,39 @@ public class DatabaseInfo {
         this.functions = functions;
     }
 
+    public DatabaseInfo withDatasets(List<DatasetInfo> datasets) {
+        this.datasets = datasets;
+        return this;
+    }
+
+    public DatabaseInfo addDatasetsItem(DatasetInfo datasetsItem) {
+        if (this.datasets == null) {
+            this.datasets = new ArrayList<>();
+        }
+        this.datasets.add(datasetsItem);
+        return this;
+    }
+
+    public DatabaseInfo withDatasets(Consumer<List<DatasetInfo>> datasetsSetter) {
+        if (this.datasets == null) {
+            this.datasets = new ArrayList<>();
+        }
+        datasetsSetter.accept(this.datasets);
+        return this;
+    }
+
+    /**
+     * **参数解释:** 子数据集信息 **约束限制:** 数组元素个数为0~10 **取值范围:** 数组元素个数为0~10 **默认取值:** 不涉及 
+     * @return datasets
+     */
+    public List<DatasetInfo> getDatasets() {
+        return datasets;
+    }
+
+    public void setDatasets(List<DatasetInfo> datasets) {
+        this.datasets = datasets;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -121,12 +159,12 @@ public class DatabaseInfo {
         }
         DatabaseInfo that = (DatabaseInfo) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.tables, that.tables)
-            && Objects.equals(this.functions, that.functions);
+            && Objects.equals(this.functions, that.functions) && Objects.equals(this.datasets, that.datasets);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, tables, functions);
+        return Objects.hash(name, tables, functions, datasets);
     }
 
     @Override
@@ -136,6 +174,7 @@ public class DatabaseInfo {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tables: ").append(toIndentedString(tables)).append("\n");
         sb.append("    functions: ").append(toIndentedString(functions)).append("\n");
+        sb.append("    datasets: ").append(toIndentedString(datasets)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -75,6 +75,8 @@ import com.huaweicloud.sdk.hss.v5.model.BatchUpdateHostResourceRequest;
 import com.huaweicloud.sdk.hss.v5.model.BatchUpdateHostResourceResponse;
 import com.huaweicloud.sdk.hss.v5.model.BatchUpgradeAgentDaemonsetRequest;
 import com.huaweicloud.sdk.hss.v5.model.BatchUpgradeAgentDaemonsetResponse;
+import com.huaweicloud.sdk.hss.v5.model.BindAgentPolicyRequest;
+import com.huaweicloud.sdk.hss.v5.model.BindAgentPolicyResponse;
 import com.huaweicloud.sdk.hss.v5.model.CancelHostsQuotaRequest;
 import com.huaweicloud.sdk.hss.v5.model.CancelHostsQuotaResponse;
 import com.huaweicloud.sdk.hss.v5.model.ChangeAgentAutoUpgradeStatusRequest;
@@ -137,6 +139,8 @@ import com.huaweicloud.sdk.hss.v5.model.ChangeVulStatusRequest;
 import com.huaweicloud.sdk.hss.v5.model.ChangeVulStatusResponse;
 import com.huaweicloud.sdk.hss.v5.model.ChangeVulWhiteListRequest;
 import com.huaweicloud.sdk.hss.v5.model.ChangeVulWhiteListResponse;
+import com.huaweicloud.sdk.hss.v5.model.CopyAiPolicyGroupRequest;
+import com.huaweicloud.sdk.hss.v5.model.CopyAiPolicyGroupResponse;
 import com.huaweicloud.sdk.hss.v5.model.CopyBaselinePolicyGroupRequest;
 import com.huaweicloud.sdk.hss.v5.model.CopyBaselinePolicyGroupResponse;
 import com.huaweicloud.sdk.hss.v5.model.CreateAgentDaemonsetRequest;
@@ -185,6 +189,8 @@ import com.huaweicloud.sdk.hss.v5.model.DeleteAccountRequest;
 import com.huaweicloud.sdk.hss.v5.model.DeleteAccountResponse;
 import com.huaweicloud.sdk.hss.v5.model.DeleteAgentDaemonsetRequest;
 import com.huaweicloud.sdk.hss.v5.model.DeleteAgentDaemonsetResponse;
+import com.huaweicloud.sdk.hss.v5.model.DeleteAiPolicyGroupsRequest;
+import com.huaweicloud.sdk.hss.v5.model.DeleteAiPolicyGroupsResponse;
 import com.huaweicloud.sdk.hss.v5.model.DeleteAntivirusPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.DeleteAntivirusPolicyResponse;
 import com.huaweicloud.sdk.hss.v5.model.DeleteAppWhitelistPolicyHostRequest;
@@ -285,8 +291,16 @@ import com.huaweicloud.sdk.hss.v5.model.ListAiComponentDetailRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListAiComponentDetailResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAiComponentStatisticsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListAiComponentStatisticsResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListAiPoliciesRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListAiPoliciesResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListAiPolicyDetailRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListAiPolicyDetailResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListAiPolicyGroupsRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListAiPolicyGroupsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAlarmConfigRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListAlarmConfigResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListAlarmWhiteListHostDetailRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListAlarmWhiteListHostDetailResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAlarmWhiteListRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListAlarmWhiteListResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAllRiskConfigCheckRulesRequest;
@@ -795,6 +809,10 @@ import com.huaweicloud.sdk.hss.v5.model.RestoreDuplicationInfoRequest;
 import com.huaweicloud.sdk.hss.v5.model.RestoreDuplicationInfoResponse;
 import com.huaweicloud.sdk.hss.v5.model.RestoreVulHostBackupRequest;
 import com.huaweicloud.sdk.hss.v5.model.RestoreVulHostBackupResponse;
+import com.huaweicloud.sdk.hss.v5.model.ResumePauseAiPoliciesRequest;
+import com.huaweicloud.sdk.hss.v5.model.ResumePauseAiPoliciesResponse;
+import com.huaweicloud.sdk.hss.v5.model.ResumePauseAiPolicyGroupsRequest;
+import com.huaweicloud.sdk.hss.v5.model.ResumePauseAiPolicyGroupsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ResumePauseCustomRuleConfigRequest;
 import com.huaweicloud.sdk.hss.v5.model.ResumePauseCustomRuleConfigResponse;
 import com.huaweicloud.sdk.hss.v5.model.RetryTaskRequest;
@@ -1107,8 +1125,12 @@ import com.huaweicloud.sdk.hss.v5.model.UninstallAgentsRequest;
 import com.huaweicloud.sdk.hss.v5.model.UninstallAgentsResponse;
 import com.huaweicloud.sdk.hss.v5.model.UpdateAgentDaemonsetRequest;
 import com.huaweicloud.sdk.hss.v5.model.UpdateAgentDaemonsetResponse;
+import com.huaweicloud.sdk.hss.v5.model.UpdateAiPolicyDetailRequest;
+import com.huaweicloud.sdk.hss.v5.model.UpdateAiPolicyDetailResponse;
 import com.huaweicloud.sdk.hss.v5.model.UpdateAlarmConfigRequest;
 import com.huaweicloud.sdk.hss.v5.model.UpdateAlarmConfigResponse;
+import com.huaweicloud.sdk.hss.v5.model.UpdateAlarmWhiteListHostRequest;
+import com.huaweicloud.sdk.hss.v5.model.UpdateAlarmWhiteListHostResponse;
 import com.huaweicloud.sdk.hss.v5.model.UpdateBackupHostInfoRequest;
 import com.huaweicloud.sdk.hss.v5.model.UpdateBackupHostInfoResponse;
 import com.huaweicloud.sdk.hss.v5.model.UpdateBackupPolicyInfoRequest;
@@ -6859,6 +6881,271 @@ public class HssAsyncClient {
     }
 
     /**
+     * Agent绑定策略ID，当前仅西南-贵阳一支持
+     *
+     * Agent绑定策略ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindAgentPolicyRequest 请求对象
+     * @return CompletableFuture<BindAgentPolicyResponse>
+     */
+    public CompletableFuture<BindAgentPolicyResponse> bindAgentPolicyAsync(BindAgentPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.bindAgentPolicy);
+    }
+
+    /**
+     * Agent绑定策略ID，当前仅西南-贵阳一支持
+     *
+     * Agent绑定策略ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindAgentPolicyRequest 请求对象
+     * @return AsyncInvoker<BindAgentPolicyRequest, BindAgentPolicyResponse>
+     */
+    public AsyncInvoker<BindAgentPolicyRequest, BindAgentPolicyResponse> bindAgentPolicyAsyncInvoker(
+        BindAgentPolicyRequest request) {
+        return new AsyncInvoker<>(request, HssMeta.bindAgentPolicy, hcClient);
+    }
+
+    /**
+     * 复制策略组，当前仅西南-贵阳一支持
+     *
+     * 复制策略组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CopyAiPolicyGroupRequest 请求对象
+     * @return CompletableFuture<CopyAiPolicyGroupResponse>
+     */
+    public CompletableFuture<CopyAiPolicyGroupResponse> copyAiPolicyGroupAsync(CopyAiPolicyGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.copyAiPolicyGroup);
+    }
+
+    /**
+     * 复制策略组，当前仅西南-贵阳一支持
+     *
+     * 复制策略组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CopyAiPolicyGroupRequest 请求对象
+     * @return AsyncInvoker<CopyAiPolicyGroupRequest, CopyAiPolicyGroupResponse>
+     */
+    public AsyncInvoker<CopyAiPolicyGroupRequest, CopyAiPolicyGroupResponse> copyAiPolicyGroupAsyncInvoker(
+        CopyAiPolicyGroupRequest request) {
+        return new AsyncInvoker<>(request, HssMeta.copyAiPolicyGroup, hcClient);
+    }
+
+    /**
+     * 删除策略组，当前仅西南-贵阳一支持
+     *
+     * 删除策略组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAiPolicyGroupsRequest 请求对象
+     * @return CompletableFuture<DeleteAiPolicyGroupsResponse>
+     */
+    public CompletableFuture<DeleteAiPolicyGroupsResponse> deleteAiPolicyGroupsAsync(
+        DeleteAiPolicyGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.deleteAiPolicyGroups);
+    }
+
+    /**
+     * 删除策略组，当前仅西南-贵阳一支持
+     *
+     * 删除策略组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAiPolicyGroupsRequest 请求对象
+     * @return AsyncInvoker<DeleteAiPolicyGroupsRequest, DeleteAiPolicyGroupsResponse>
+     */
+    public AsyncInvoker<DeleteAiPolicyGroupsRequest, DeleteAiPolicyGroupsResponse> deleteAiPolicyGroupsAsyncInvoker(
+        DeleteAiPolicyGroupsRequest request) {
+        return new AsyncInvoker<>(request, HssMeta.deleteAiPolicyGroups, hcClient);
+    }
+
+    /**
+     * 查询策略列表，当前仅西南-贵阳一支持
+     *
+     * 查询策略列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAiPoliciesRequest 请求对象
+     * @return CompletableFuture<ListAiPoliciesResponse>
+     */
+    public CompletableFuture<ListAiPoliciesResponse> listAiPoliciesAsync(ListAiPoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.listAiPolicies);
+    }
+
+    /**
+     * 查询策略列表，当前仅西南-贵阳一支持
+     *
+     * 查询策略列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAiPoliciesRequest 请求对象
+     * @return AsyncInvoker<ListAiPoliciesRequest, ListAiPoliciesResponse>
+     */
+    public AsyncInvoker<ListAiPoliciesRequest, ListAiPoliciesResponse> listAiPoliciesAsyncInvoker(
+        ListAiPoliciesRequest request) {
+        return new AsyncInvoker<>(request, HssMeta.listAiPolicies, hcClient);
+    }
+
+    /**
+     * 查询策略详情，当前仅西南-贵阳一支持
+     *
+     * 查询策略详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAiPolicyDetailRequest 请求对象
+     * @return CompletableFuture<ListAiPolicyDetailResponse>
+     */
+    public CompletableFuture<ListAiPolicyDetailResponse> listAiPolicyDetailAsync(ListAiPolicyDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.listAiPolicyDetail);
+    }
+
+    /**
+     * 查询策略详情，当前仅西南-贵阳一支持
+     *
+     * 查询策略详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAiPolicyDetailRequest 请求对象
+     * @return AsyncInvoker<ListAiPolicyDetailRequest, ListAiPolicyDetailResponse>
+     */
+    public AsyncInvoker<ListAiPolicyDetailRequest, ListAiPolicyDetailResponse> listAiPolicyDetailAsyncInvoker(
+        ListAiPolicyDetailRequest request) {
+        return new AsyncInvoker<>(request, HssMeta.listAiPolicyDetail, hcClient);
+    }
+
+    /**
+     * 查询策略组列表，当前仅西南-贵阳一支持
+     *
+     * 查询策略组列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAiPolicyGroupsRequest 请求对象
+     * @return CompletableFuture<ListAiPolicyGroupsResponse>
+     */
+    public CompletableFuture<ListAiPolicyGroupsResponse> listAiPolicyGroupsAsync(ListAiPolicyGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.listAiPolicyGroups);
+    }
+
+    /**
+     * 查询策略组列表，当前仅西南-贵阳一支持
+     *
+     * 查询策略组列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAiPolicyGroupsRequest 请求对象
+     * @return AsyncInvoker<ListAiPolicyGroupsRequest, ListAiPolicyGroupsResponse>
+     */
+    public AsyncInvoker<ListAiPolicyGroupsRequest, ListAiPolicyGroupsResponse> listAiPolicyGroupsAsyncInvoker(
+        ListAiPolicyGroupsRequest request) {
+        return new AsyncInvoker<>(request, HssMeta.listAiPolicyGroups, hcClient);
+    }
+
+    /**
+     * 启用、停用策略，当前仅西南-贵阳一支持
+     *
+     * 启用、停用策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResumePauseAiPoliciesRequest 请求对象
+     * @return CompletableFuture<ResumePauseAiPoliciesResponse>
+     */
+    public CompletableFuture<ResumePauseAiPoliciesResponse> resumePauseAiPoliciesAsync(
+        ResumePauseAiPoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.resumePauseAiPolicies);
+    }
+
+    /**
+     * 启用、停用策略，当前仅西南-贵阳一支持
+     *
+     * 启用、停用策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResumePauseAiPoliciesRequest 请求对象
+     * @return AsyncInvoker<ResumePauseAiPoliciesRequest, ResumePauseAiPoliciesResponse>
+     */
+    public AsyncInvoker<ResumePauseAiPoliciesRequest, ResumePauseAiPoliciesResponse> resumePauseAiPoliciesAsyncInvoker(
+        ResumePauseAiPoliciesRequest request) {
+        return new AsyncInvoker<>(request, HssMeta.resumePauseAiPolicies, hcClient);
+    }
+
+    /**
+     * 启用、停用策略组，当前仅西南-贵阳一支持
+     *
+     * 启用、停用策略组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResumePauseAiPolicyGroupsRequest 请求对象
+     * @return CompletableFuture<ResumePauseAiPolicyGroupsResponse>
+     */
+    public CompletableFuture<ResumePauseAiPolicyGroupsResponse> resumePauseAiPolicyGroupsAsync(
+        ResumePauseAiPolicyGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.resumePauseAiPolicyGroups);
+    }
+
+    /**
+     * 启用、停用策略组，当前仅西南-贵阳一支持
+     *
+     * 启用、停用策略组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResumePauseAiPolicyGroupsRequest 请求对象
+     * @return AsyncInvoker<ResumePauseAiPolicyGroupsRequest, ResumePauseAiPolicyGroupsResponse>
+     */
+    public AsyncInvoker<ResumePauseAiPolicyGroupsRequest, ResumePauseAiPolicyGroupsResponse> resumePauseAiPolicyGroupsAsyncInvoker(
+        ResumePauseAiPolicyGroupsRequest request) {
+        return new AsyncInvoker<>(request, HssMeta.resumePauseAiPolicyGroups, hcClient);
+    }
+
+    /**
+     * 修改策略详情，当前仅西南-贵阳一支持
+     *
+     * 修改策略详情，该接口非常复杂，不建议通过API调用，推荐使用华为云console页面修改。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAiPolicyDetailRequest 请求对象
+     * @return CompletableFuture<UpdateAiPolicyDetailResponse>
+     */
+    public CompletableFuture<UpdateAiPolicyDetailResponse> updateAiPolicyDetailAsync(
+        UpdateAiPolicyDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.updateAiPolicyDetail);
+    }
+
+    /**
+     * 修改策略详情，当前仅西南-贵阳一支持
+     *
+     * 修改策略详情，该接口非常复杂，不建议通过API调用，推荐使用华为云console页面修改。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAiPolicyDetailRequest 请求对象
+     * @return AsyncInvoker<UpdateAiPolicyDetailRequest, UpdateAiPolicyDetailResponse>
+     */
+    public AsyncInvoker<UpdateAiPolicyDetailRequest, UpdateAiPolicyDetailResponse> updateAiPolicyDetailAsyncInvoker(
+        UpdateAiPolicyDetailRequest request) {
+        return new AsyncInvoker<>(request, HssMeta.updateAiPolicyDetail, hcClient);
+    }
+
+    /**
      * 修改“病毒查杀按次计费”开关状态
      *
      * 修改“病毒查杀按次计费”开关状态。
@@ -10369,6 +10656,66 @@ public class HssAsyncClient {
     public AsyncInvoker<UpdateCustomRuleConfigRequest, UpdateCustomRuleConfigResponse> updateCustomRuleConfigAsyncInvoker(
         UpdateCustomRuleConfigRequest request) {
         return new AsyncInvoker<>(request, HssMeta.updateCustomRuleConfig, hcClient);
+    }
+
+    /**
+     * 查询告警白名单生详情
+     *
+     * 查询告警白名单生详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlarmWhiteListHostDetailRequest 请求对象
+     * @return CompletableFuture<ListAlarmWhiteListHostDetailResponse>
+     */
+    public CompletableFuture<ListAlarmWhiteListHostDetailResponse> listAlarmWhiteListHostDetailAsync(
+        ListAlarmWhiteListHostDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.listAlarmWhiteListHostDetail);
+    }
+
+    /**
+     * 查询告警白名单生详情
+     *
+     * 查询告警白名单生详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlarmWhiteListHostDetailRequest 请求对象
+     * @return AsyncInvoker<ListAlarmWhiteListHostDetailRequest, ListAlarmWhiteListHostDetailResponse>
+     */
+    public AsyncInvoker<ListAlarmWhiteListHostDetailRequest, ListAlarmWhiteListHostDetailResponse> listAlarmWhiteListHostDetailAsyncInvoker(
+        ListAlarmWhiteListHostDetailRequest request) {
+        return new AsyncInvoker<>(request, HssMeta.listAlarmWhiteListHostDetail, hcClient);
+    }
+
+    /**
+     * 编辑告警白名单生效主机
+     *
+     * 编辑告警白名单主机相关信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAlarmWhiteListHostRequest 请求对象
+     * @return CompletableFuture<UpdateAlarmWhiteListHostResponse>
+     */
+    public CompletableFuture<UpdateAlarmWhiteListHostResponse> updateAlarmWhiteListHostAsync(
+        UpdateAlarmWhiteListHostRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.updateAlarmWhiteListHost);
+    }
+
+    /**
+     * 编辑告警白名单生效主机
+     *
+     * 编辑告警白名单主机相关信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAlarmWhiteListHostRequest 请求对象
+     * @return AsyncInvoker<UpdateAlarmWhiteListHostRequest, UpdateAlarmWhiteListHostResponse>
+     */
+    public AsyncInvoker<UpdateAlarmWhiteListHostRequest, UpdateAlarmWhiteListHostResponse> updateAlarmWhiteListHostAsyncInvoker(
+        UpdateAlarmWhiteListHostRequest request) {
+        return new AsyncInvoker<>(request, HssMeta.updateAlarmWhiteListHost, hcClient);
     }
 
     /**

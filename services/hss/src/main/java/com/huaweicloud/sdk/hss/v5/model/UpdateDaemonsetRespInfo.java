@@ -16,6 +16,11 @@ public class UpdateDaemonsetRespInfo {
     private String failedReson;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "failed_reason")
+
+    private String failedReason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cluster_id")
 
     private String clusterId;
@@ -26,7 +31,7 @@ public class UpdateDaemonsetRespInfo {
     }
 
     /**
-     * 失败原因
+     * 失败原因（已废弃，请使用failed_reason）
      * @return failedReson
      */
     public String getFailedReson() {
@@ -35,6 +40,23 @@ public class UpdateDaemonsetRespInfo {
 
     public void setFailedReson(String failedReson) {
         this.failedReson = failedReson;
+    }
+
+    public UpdateDaemonsetRespInfo withFailedReason(String failedReason) {
+        this.failedReason = failedReason;
+        return this;
+    }
+
+    /**
+     * 失败原因
+     * @return failedReason
+     */
+    public String getFailedReason() {
+        return failedReason;
+    }
+
+    public void setFailedReason(String failedReason) {
+        this.failedReason = failedReason;
     }
 
     public UpdateDaemonsetRespInfo withClusterId(String clusterId) {
@@ -63,12 +85,13 @@ public class UpdateDaemonsetRespInfo {
             return false;
         }
         UpdateDaemonsetRespInfo that = (UpdateDaemonsetRespInfo) obj;
-        return Objects.equals(this.failedReson, that.failedReson) && Objects.equals(this.clusterId, that.clusterId);
+        return Objects.equals(this.failedReson, that.failedReson)
+            && Objects.equals(this.failedReason, that.failedReason) && Objects.equals(this.clusterId, that.clusterId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(failedReson, clusterId);
+        return Objects.hash(failedReson, failedReason, clusterId);
     }
 
     @Override
@@ -76,6 +99,7 @@ public class UpdateDaemonsetRespInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateDaemonsetRespInfo {\n");
         sb.append("    failedReson: ").append(toIndentedString(failedReson)).append("\n");
+        sb.append("    failedReason: ").append(toIndentedString(failedReason)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("}");
         return sb.toString();

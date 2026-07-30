@@ -21,6 +21,11 @@ public class ParameterConfigurationInfo {
     private String datastoreName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "configuration_id")
+
+    private String configurationId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
 
     private String created;
@@ -62,6 +67,23 @@ public class ParameterConfigurationInfo {
 
     public void setDatastoreName(String datastoreName) {
         this.datastoreName = datastoreName;
+    }
+
+    public ParameterConfigurationInfo withConfigurationId(String configurationId) {
+        this.configurationId = configurationId;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  参数组ID。  **取值范围**：  只能由英文字母、数字组成，前面为UUID，后缀为pr07，长度为36个字符。
+     * @return configurationId
+     */
+    public String getConfigurationId() {
+        return configurationId;
+    }
+
+    public void setConfigurationId(String configurationId) {
+        this.configurationId = configurationId;
     }
 
     public ParameterConfigurationInfo withCreated(String created) {
@@ -108,13 +130,14 @@ public class ParameterConfigurationInfo {
         }
         ParameterConfigurationInfo that = (ParameterConfigurationInfo) obj;
         return Objects.equals(this.datastoreVersionName, that.datastoreVersionName)
-            && Objects.equals(this.datastoreName, that.datastoreName) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.datastoreName, that.datastoreName)
+            && Objects.equals(this.configurationId, that.configurationId) && Objects.equals(this.created, that.created)
             && Objects.equals(this.updated, that.updated);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(datastoreVersionName, datastoreName, created, updated);
+        return Objects.hash(datastoreVersionName, datastoreName, configurationId, created, updated);
     }
 
     @Override
@@ -123,6 +146,7 @@ public class ParameterConfigurationInfo {
         sb.append("class ParameterConfigurationInfo {\n");
         sb.append("    datastoreVersionName: ").append(toIndentedString(datastoreVersionName)).append("\n");
         sb.append("    datastoreName: ").append(toIndentedString(datastoreName)).append("\n");
+        sb.append("    configurationId: ").append(toIndentedString(configurationId)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
         sb.append("}");

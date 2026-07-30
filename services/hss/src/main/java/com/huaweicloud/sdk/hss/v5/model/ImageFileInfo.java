@@ -65,9 +65,9 @@ public class ImageFileInfo {
     }
 
     /**
-     * **参数解释**: 文件大小 **取值范围**: 最小值0，最大值65535 
+     * **参数解释**: 文件大小 **取值范围**: 最小值0，最大值2147483547 
      * minimum: 0
-     * maximum: 65535
+     * maximum: 2147483547
      * @return size
      */
     public Integer getSize() {

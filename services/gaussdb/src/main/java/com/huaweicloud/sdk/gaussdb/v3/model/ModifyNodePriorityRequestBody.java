@@ -13,9 +13,9 @@ public class ModifyNodePriorityRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "priority")
 
-    private String priority;
+    private Integer priority;
 
-    public ModifyNodePriorityRequestBody withPriority(String priority) {
+    public ModifyNodePriorityRequestBody withPriority(Integer priority) {
         this.priority = priority;
         return this;
     }
@@ -24,11 +24,11 @@ public class ModifyNodePriorityRequestBody {
      * 故障倒换优先级。  故障倒换优先级的取值范围为1~16以及-1。取正数时数字越小，优先级越大，即故障倒换时，主节点会优先倒换到优先级高的只读节点上，优先级相同的只读节点选为主节点的概率相同。取-1时表示节点不参与故障倒换，当单可用区实例超过两个只读节点，或者多可用区实例修改后的可用区多于1个时可以设置成-1。 
      * @return priority
      */
-    public String getPriority() {
+    public Integer getPriority() {
         return priority;
     }
 
-    public void setPriority(String priority) {
+    public void setPriority(Integer priority) {
         this.priority = priority;
     }
 
