@@ -154,6 +154,9 @@ import com.huaweicloud.sdk.waf.v1.model.CreateIpReputationRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreatePolicyRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreatePolicyRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.CreatePolicyResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreatePoolRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreatePoolRequestBody;
+import com.huaweicloud.sdk.waf.v1.model.CreatePoolResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreatePremiumHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreatePremiumHostRequestBody;
 import com.huaweicloud.sdk.waf.v1.model.CreatePremiumHostResponse;
@@ -209,6 +212,8 @@ import com.huaweicloud.sdk.waf.v1.model.DeleteIpReputationRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteIpReputationRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeletePolicyRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeletePolicyResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeletePoolRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeletePoolResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeletePremiumHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeletePremiumHostResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeletePrivacyRuleRequest;
@@ -380,6 +385,8 @@ import com.huaweicloud.sdk.waf.v1.model.ShowPolicyGeoipMapRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowPolicyGeoipMapResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowPolicyRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowPolicyResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowPoolRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowPoolResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowPremiumHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowPremiumHostResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowPrivacyRuleRequest;
@@ -2124,6 +2131,34 @@ public class WafMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreatePoolRequest, CreatePoolResponse> createPool = genForCreatePool();
+
+    private static HttpRequestDef<CreatePoolRequest, CreatePoolResponse> genForCreatePool() {
+        // basic
+        HttpRequestDef.Builder<CreatePoolRequest, CreatePoolResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePoolRequest.class, CreatePoolResponse.class)
+                .withName("CreatePool")
+                .withUri("/v1/{project_id}/premium-waf/pool")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePoolRequest::getEnterpriseProjectId,
+                CreatePoolRequest::setEnterpriseProjectId));
+        builder.<CreatePoolRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePoolRequestBody.class),
+            f -> f.withMarshaller(CreatePoolRequest::getBody, CreatePoolRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreatePremiumHostRequest, CreatePremiumHostResponse> createPremiumHost =
         genForCreatePremiumHost();
 
@@ -2843,6 +2878,34 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeletePolicyRequest::getEnterpriseProjectId,
                 DeletePolicyRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePoolRequest, DeletePoolResponse> deletePool = genForDeletePool();
+
+    private static HttpRequestDef<DeletePoolRequest, DeletePoolResponse> genForDeletePool() {
+        // basic
+        HttpRequestDef.Builder<DeletePoolRequest, DeletePoolResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePoolRequest.class, DeletePoolResponse.class)
+                .withName("DeletePool")
+                .withUri("/v1/{project_id}/premium-waf/pool/{pool_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePoolRequest::getPoolId, DeletePoolRequest::setPoolId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePoolRequest::getEnterpriseProjectId,
+                DeletePoolRequest::setEnterpriseProjectId));
 
         // response
 
@@ -6379,6 +6442,33 @@ public class WafMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowPolicyGeoipMapRequest.LangEnum.class),
             f -> f.withMarshaller(ShowPolicyGeoipMapRequest::getLang, ShowPolicyGeoipMapRequest::setLang));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPoolRequest, ShowPoolResponse> showPool = genForShowPool();
+
+    private static HttpRequestDef<ShowPoolRequest, ShowPoolResponse> genForShowPool() {
+        // basic
+        HttpRequestDef.Builder<ShowPoolRequest, ShowPoolResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPoolRequest.class, ShowPoolResponse.class)
+                .withName("ShowPool")
+                .withUri("/v1/{project_id}/premium-waf/pool/{pool_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPoolRequest::getPoolId, ShowPoolRequest::setPoolId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPoolRequest::getEnterpriseProjectId, ShowPoolRequest::setEnterpriseProjectId));
 
         // response
 

@@ -204,6 +204,10 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ListScattersUsingRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListScattersUsingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListSubTaskCaseOverstockUsingRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListSubTaskCaseOverstockUsingResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListSubTasksByPostUsingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListSubTasksByPostUsingResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListSubTestCaseByConditionsUsingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListSubTestCaseByConditionsUsingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskAssignCasesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskAssignCasesResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskResultsDetailRequest;
@@ -385,6 +389,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserAccessInfoResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserExecuteTestCaseInfoRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserExecuteTestCaseInfoRequestBody;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserExecuteTestCaseInfoResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.SubTaskCaseQuery;
+import com.huaweicloud.sdk.cloudtest.v1.model.SubTaskQueryByPageParams;
 import com.huaweicloud.sdk.cloudtest.v1.model.TasksQueryInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.TestCaseCommentInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.TestCaseInfo;
@@ -2393,6 +2399,68 @@ public class CloudtestMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSubTaskCaseOverstockUsingRequest::getPageSize,
                 ListSubTaskCaseOverstockUsingRequest::setPageSize));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSubTasksByPostUsingRequest, ListSubTasksByPostUsingResponse> listSubTasksByPostUsing =
+        genForListSubTasksByPostUsing();
+
+    private static HttpRequestDef<ListSubTasksByPostUsingRequest, ListSubTasksByPostUsingResponse> genForListSubTasksByPostUsing() {
+        // basic
+        HttpRequestDef.Builder<ListSubTasksByPostUsingRequest, ListSubTasksByPostUsingResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListSubTasksByPostUsingRequest.class, ListSubTasksByPostUsingResponse.class)
+            .withName("ListSubTasksByPostUsing")
+            .withUri("/v1/projects/{service_id}/testsuite/results")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubTasksByPostUsingRequest::getServiceId,
+                ListSubTasksByPostUsingRequest::setServiceId));
+        builder.<SubTaskQueryByPageParams>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SubTaskQueryByPageParams.class),
+            f -> f.withMarshaller(ListSubTasksByPostUsingRequest::getBody, ListSubTasksByPostUsingRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSubTestCaseByConditionsUsingRequest, ListSubTestCaseByConditionsUsingResponse> listSubTestCaseByConditionsUsing =
+        genForListSubTestCaseByConditionsUsing();
+
+    private static HttpRequestDef<ListSubTestCaseByConditionsUsingRequest, ListSubTestCaseByConditionsUsingResponse> genForListSubTestCaseByConditionsUsing() {
+        // basic
+        HttpRequestDef.Builder<ListSubTestCaseByConditionsUsingRequest, ListSubTestCaseByConditionsUsingResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListSubTestCaseByConditionsUsingRequest.class,
+                    ListSubTestCaseByConditionsUsingResponse.class)
+                .withName("ListSubTestCaseByConditionsUsing")
+                .withUri("/v1/projects/{service_id}/testsuite/results/cases")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubTestCaseByConditionsUsingRequest::getServiceId,
+                ListSubTestCaseByConditionsUsingRequest::setServiceId));
+        builder.<SubTaskCaseQuery>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SubTaskCaseQuery.class),
+            f -> f.withMarshaller(ListSubTestCaseByConditionsUsingRequest::getBody,
+                ListSubTestCaseByConditionsUsingRequest::setBody));
 
         // response
 

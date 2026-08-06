@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * HealthReportAnalysisResult
+ * 分析结果项
  */
 public class HealthReportAnalysisResult {
 
@@ -39,7 +39,7 @@ public class HealthReportAnalysisResult {
     }
 
     /**
-     * 风险点编码。
+     * 风险点编码
      * @return riskCode
      */
     public String getRiskCode() {
@@ -56,7 +56,7 @@ public class HealthReportAnalysisResult {
     }
 
     /**
-     * 风险点级别。
+     * 风险点级别
      * @return riskLevel
      */
     public String getRiskLevel() {
@@ -73,7 +73,7 @@ public class HealthReportAnalysisResult {
     }
 
     /**
-     * 风险点内容。
+     * 风险点内容
      * @return riskContent
      */
     public String getRiskContent() {
@@ -106,7 +106,7 @@ public class HealthReportAnalysisResult {
     }
 
     /**
-     * 可能原因列表。
+     * 可能原因列表
      * @return reasons
      */
     public List<HealthReportRiskReason> getReasons() {

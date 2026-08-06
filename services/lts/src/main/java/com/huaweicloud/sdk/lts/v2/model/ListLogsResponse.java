@@ -30,6 +30,11 @@ public class ListLogsResponse extends SdkResponse {
     private Boolean isQueryComplete;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scrollId")
+
+    private String scrollId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "analysisLogs")
 
     private List<Object> analysisLogs = null;
@@ -101,6 +106,23 @@ public class ListLogsResponse extends SdkResponse {
         this.isQueryComplete = isQueryComplete;
     }
 
+    public ListLogsResponse withScrollId(String scrollId) {
+        this.scrollId = scrollId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 分页查询时，若返回结果中包含该字段，下一次请求体需要增加scroll_Id参数参与分页查询。 **取值范围：** 不涉及。
+     * @return scrollId
+     */
+    public String getScrollId() {
+        return scrollId;
+    }
+
+    public void setScrollId(String scrollId) {
+        this.scrollId = scrollId;
+    }
+
     public ListLogsResponse withAnalysisLogs(List<Object> analysisLogs) {
         this.analysisLogs = analysisLogs;
         return this;
@@ -145,12 +167,12 @@ public class ListLogsResponse extends SdkResponse {
         ListLogsResponse that = (ListLogsResponse) obj;
         return Objects.equals(this.count, that.count) && Objects.equals(this.logs, that.logs)
             && Objects.equals(this.isQueryComplete, that.isQueryComplete)
-            && Objects.equals(this.analysisLogs, that.analysisLogs);
+            && Objects.equals(this.scrollId, that.scrollId) && Objects.equals(this.analysisLogs, that.analysisLogs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, logs, isQueryComplete, analysisLogs);
+        return Objects.hash(count, logs, isQueryComplete, scrollId, analysisLogs);
     }
 
     @Override
@@ -160,6 +182,7 @@ public class ListLogsResponse extends SdkResponse {
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    logs: ").append(toIndentedString(logs)).append("\n");
         sb.append("    isQueryComplete: ").append(toIndentedString(isQueryComplete)).append("\n");
+        sb.append("    scrollId: ").append(toIndentedString(scrollId)).append("\n");
         sb.append("    analysisLogs: ").append(toIndentedString(analysisLogs)).append("\n");
         sb.append("}");
         return sb.toString();

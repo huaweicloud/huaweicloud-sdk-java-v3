@@ -17,9 +17,15 @@ import com.huaweicloud.sdk.kms.v2.model.CancelKeyDeletionRequest;
 import com.huaweicloud.sdk.kms.v2.model.CancelKeyDeletionResponse;
 import com.huaweicloud.sdk.kms.v2.model.CancelSelfGrantRequest;
 import com.huaweicloud.sdk.kms.v2.model.CancelSelfGrantResponse;
+import com.huaweicloud.sdk.kms.v2.model.CreateAccessPointRequest;
+import com.huaweicloud.sdk.kms.v2.model.CreateAccessPointRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.CreateAccessPointResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateAliasRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateAliasRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.CreateAliasResponse;
+import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyCapsuleRequest;
+import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyCapsuleRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyCapsuleResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyResponse;
@@ -31,6 +37,9 @@ import com.huaweicloud.sdk.kms.v2.model.CreateEcDatakeyPairResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateGrantRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateGrantRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.CreateGrantResponse;
+import com.huaweicloud.sdk.kms.v2.model.CreateKeyPolicyRequest;
+import com.huaweicloud.sdk.kms.v2.model.CreateKeyPolicyRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.CreateKeyPolicyResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateKeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateKeyRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.CreateKeyResponse;
@@ -53,14 +62,21 @@ import com.huaweicloud.sdk.kms.v2.model.CreateRsaDatakeyPairResponse;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDataRequest;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDataRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDataResponse;
+import com.huaweicloud.sdk.kms.v2.model.DecryptDatakeyCapsuleRequest;
+import com.huaweicloud.sdk.kms.v2.model.DecryptDatakeyCapsuleRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.DecryptDatakeyCapsuleResponse;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDatakeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDatakeyRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDatakeyResponse;
+import com.huaweicloud.sdk.kms.v2.model.DeleteAccessPointRequest;
+import com.huaweicloud.sdk.kms.v2.model.DeleteAccessPointResponse;
 import com.huaweicloud.sdk.kms.v2.model.DeleteAliasRequest;
 import com.huaweicloud.sdk.kms.v2.model.DeleteAliasRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.DeleteAliasResponse;
 import com.huaweicloud.sdk.kms.v2.model.DeleteImportedKeyMaterialRequest;
 import com.huaweicloud.sdk.kms.v2.model.DeleteImportedKeyMaterialResponse;
+import com.huaweicloud.sdk.kms.v2.model.DeleteKeyPolicyRequest;
+import com.huaweicloud.sdk.kms.v2.model.DeleteKeyPolicyResponse;
 import com.huaweicloud.sdk.kms.v2.model.DeleteKeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.DeleteKeyResponse;
 import com.huaweicloud.sdk.kms.v2.model.DeleteKeyStoreRequest;
@@ -70,12 +86,18 @@ import com.huaweicloud.sdk.kms.v2.model.DeleteTagResponse;
 import com.huaweicloud.sdk.kms.v2.model.DeriveSharedSecretRequest;
 import com.huaweicloud.sdk.kms.v2.model.DeriveSharedSecretRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.DeriveSharedSecretResponse;
+import com.huaweicloud.sdk.kms.v2.model.DisableAccessPointRequest;
+import com.huaweicloud.sdk.kms.v2.model.DisableAccessPointResponse;
 import com.huaweicloud.sdk.kms.v2.model.DisableKeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.DisableKeyResponse;
 import com.huaweicloud.sdk.kms.v2.model.DisableKeyRotationRequest;
 import com.huaweicloud.sdk.kms.v2.model.DisableKeyRotationResponse;
 import com.huaweicloud.sdk.kms.v2.model.DisableKeyStoreRequest;
 import com.huaweicloud.sdk.kms.v2.model.DisableKeyStoreResponse;
+import com.huaweicloud.sdk.kms.v2.model.DownloadAccessPointPrivateKeyRequest;
+import com.huaweicloud.sdk.kms.v2.model.DownloadAccessPointPrivateKeyResponse;
+import com.huaweicloud.sdk.kms.v2.model.EnableAccessPointRequest;
+import com.huaweicloud.sdk.kms.v2.model.EnableAccessPointResponse;
 import com.huaweicloud.sdk.kms.v2.model.EnableKeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.EnableKeyResponse;
 import com.huaweicloud.sdk.kms.v2.model.EnableKeyRotationRequest;
@@ -96,6 +118,8 @@ import com.huaweicloud.sdk.kms.v2.model.GetParametersForImportRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.ImportKeyMaterialRequest;
 import com.huaweicloud.sdk.kms.v2.model.ImportKeyMaterialRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.ImportKeyMaterialResponse;
+import com.huaweicloud.sdk.kms.v2.model.ListAccessPointRequest;
+import com.huaweicloud.sdk.kms.v2.model.ListAccessPointResponse;
 import com.huaweicloud.sdk.kms.v2.model.ListAliasResponseBody;
 import com.huaweicloud.sdk.kms.v2.model.ListAliasesRequest;
 import com.huaweicloud.sdk.kms.v2.model.ListAliasesResponse;
@@ -104,6 +128,8 @@ import com.huaweicloud.sdk.kms.v2.model.ListGrantsRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.ListGrantsResponse;
 import com.huaweicloud.sdk.kms.v2.model.ListKeyDetailRequest;
 import com.huaweicloud.sdk.kms.v2.model.ListKeyDetailResponse;
+import com.huaweicloud.sdk.kms.v2.model.ListKeyPolicyRequest;
+import com.huaweicloud.sdk.kms.v2.model.ListKeyPolicyResponse;
 import com.huaweicloud.sdk.kms.v2.model.ListKeyStoresRequest;
 import com.huaweicloud.sdk.kms.v2.model.ListKeyStoresResponse;
 import com.huaweicloud.sdk.kms.v2.model.ListKeysRequest;
@@ -127,7 +153,12 @@ import com.huaweicloud.sdk.kms.v2.model.ReplicateKeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.ReplicateKeyRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.ReplicateKeyResponse;
 import com.huaweicloud.sdk.kms.v2.model.RevokeGrantRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.RotateOnDemandRequest;
+import com.huaweicloud.sdk.kms.v2.model.RotateOnDemandRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.RotateOnDemandResponse;
 import com.huaweicloud.sdk.kms.v2.model.ScheduleKeyDeletionRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.ShowKeyPolicyRequest;
+import com.huaweicloud.sdk.kms.v2.model.ShowKeyPolicyResponse;
 import com.huaweicloud.sdk.kms.v2.model.ShowKeyRotationStatusRequest;
 import com.huaweicloud.sdk.kms.v2.model.ShowKeyRotationStatusResponse;
 import com.huaweicloud.sdk.kms.v2.model.ShowKeyStoreRequest;
@@ -153,6 +184,9 @@ import com.huaweicloud.sdk.kms.v2.model.UpdateKeyAliasResponse;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyDescriptionRequest;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyDescriptionRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyDescriptionResponse;
+import com.huaweicloud.sdk.kms.v2.model.UpdateKeyPolicyRequest;
+import com.huaweicloud.sdk.kms.v2.model.UpdateKeyPolicyRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.UpdateKeyPolicyResponse;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyRotationIntervalRequest;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyRotationIntervalRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyRotationIntervalResponse;
@@ -290,6 +324,29 @@ public class KmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateAccessPointRequest, CreateAccessPointResponse> createAccessPoint =
+        genForCreateAccessPoint();
+
+    private static HttpRequestDef<CreateAccessPointRequest, CreateAccessPointResponse> genForCreateAccessPoint() {
+        // basic
+        HttpRequestDef.Builder<CreateAccessPointRequest, CreateAccessPointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAccessPointRequest.class, CreateAccessPointResponse.class)
+                .withName("CreateAccessPoint")
+                .withUri("/v1.0/{project_id}/kms/access-points")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateAccessPointRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAccessPointRequestBody.class),
+            f -> f.withMarshaller(CreateAccessPointRequest::getBody, CreateAccessPointRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateAliasRequest, CreateAliasResponse> createAlias = genForCreateAlias();
 
     private static HttpRequestDef<CreateAliasRequest, CreateAliasResponse> genForCreateAlias() {
@@ -329,6 +386,29 @@ public class KmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDatakeyRequestBody.class),
             f -> f.withMarshaller(CreateDatakeyRequest::getBody, CreateDatakeyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDatakeyCapsuleRequest, CreateDatakeyCapsuleResponse> createDatakeyCapsule =
+        genForCreateDatakeyCapsule();
+
+    private static HttpRequestDef<CreateDatakeyCapsuleRequest, CreateDatakeyCapsuleResponse> genForCreateDatakeyCapsule() {
+        // basic
+        HttpRequestDef.Builder<CreateDatakeyCapsuleRequest, CreateDatakeyCapsuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateDatakeyCapsuleRequest.class, CreateDatakeyCapsuleResponse.class)
+            .withName("CreateDatakeyCapsule")
+            .withUri("/v1.0/{project_id}/kms/datakey-capsule/create")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateDatakeyCapsuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDatakeyCapsuleRequestBody.class),
+            f -> f.withMarshaller(CreateDatakeyCapsuleRequest::getBody, CreateDatakeyCapsuleRequest::setBody));
 
         // response
 
@@ -423,6 +503,29 @@ public class KmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateKeyRequestBody.class),
             f -> f.withMarshaller(CreateKeyRequest::getBody, CreateKeyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateKeyPolicyRequest, CreateKeyPolicyResponse> createKeyPolicy =
+        genForCreateKeyPolicy();
+
+    private static HttpRequestDef<CreateKeyPolicyRequest, CreateKeyPolicyResponse> genForCreateKeyPolicy() {
+        // basic
+        HttpRequestDef.Builder<CreateKeyPolicyRequest, CreateKeyPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateKeyPolicyRequest.class, CreateKeyPolicyResponse.class)
+                .withName("CreateKeyPolicy")
+                .withUri("/v1.0/{project_id}/kms/key-policies")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateKeyPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateKeyPolicyRequestBody.class),
+            f -> f.withMarshaller(CreateKeyPolicyRequest::getBody, CreateKeyPolicyRequest::setBody));
 
         // response
 
@@ -618,6 +721,53 @@ public class KmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DecryptDatakeyCapsuleRequest, DecryptDatakeyCapsuleResponse> decryptDatakeyCapsule =
+        genForDecryptDatakeyCapsule();
+
+    private static HttpRequestDef<DecryptDatakeyCapsuleRequest, DecryptDatakeyCapsuleResponse> genForDecryptDatakeyCapsule() {
+        // basic
+        HttpRequestDef.Builder<DecryptDatakeyCapsuleRequest, DecryptDatakeyCapsuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DecryptDatakeyCapsuleRequest.class, DecryptDatakeyCapsuleResponse.class)
+            .withName("DecryptDatakeyCapsule")
+            .withUri("/v1.0/{project_id}/kms/datakey-capsule/decrypt")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<DecryptDatakeyCapsuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DecryptDatakeyCapsuleRequestBody.class),
+            f -> f.withMarshaller(DecryptDatakeyCapsuleRequest::getBody, DecryptDatakeyCapsuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAccessPointRequest, DeleteAccessPointResponse> deleteAccessPoint =
+        genForDeleteAccessPoint();
+
+    private static HttpRequestDef<DeleteAccessPointRequest, DeleteAccessPointResponse> genForDeleteAccessPoint() {
+        // basic
+        HttpRequestDef.Builder<DeleteAccessPointRequest, DeleteAccessPointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAccessPointRequest.class, DeleteAccessPointResponse.class)
+                .withName("DeleteAccessPoint")
+                .withUri("/v1.0/{project_id}/kms/access-points/{access_point_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("access_point_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAccessPointRequest::getAccessPointId,
+                DeleteAccessPointRequest::setAccessPointId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteAliasRequest, DeleteAliasResponse> deleteAlias = genForDeleteAlias();
 
     private static HttpRequestDef<DeleteAliasRequest, DeleteAliasResponse> genForDeleteAlias() {
@@ -683,6 +833,29 @@ public class KmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ScheduleKeyDeletionRequestBody.class),
             f -> f.withMarshaller(DeleteKeyRequest::getBody, DeleteKeyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteKeyPolicyRequest, DeleteKeyPolicyResponse> deleteKeyPolicy =
+        genForDeleteKeyPolicy();
+
+    private static HttpRequestDef<DeleteKeyPolicyRequest, DeleteKeyPolicyResponse> genForDeleteKeyPolicy() {
+        // basic
+        HttpRequestDef.Builder<DeleteKeyPolicyRequest, DeleteKeyPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteKeyPolicyRequest.class, DeleteKeyPolicyResponse.class)
+                .withName("DeleteKeyPolicy")
+                .withUri("/v1.0/{project_id}/kms/key-policies/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteKeyPolicyRequest::getPolicyId, DeleteKeyPolicyRequest::setPolicyId));
 
         // response
 
@@ -762,6 +935,30 @@ public class KmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DisableAccessPointRequest, DisableAccessPointResponse> disableAccessPoint =
+        genForDisableAccessPoint();
+
+    private static HttpRequestDef<DisableAccessPointRequest, DisableAccessPointResponse> genForDisableAccessPoint() {
+        // basic
+        HttpRequestDef.Builder<DisableAccessPointRequest, DisableAccessPointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DisableAccessPointRequest.class, DisableAccessPointResponse.class)
+                .withName("DisableAccessPoint")
+                .withUri("/v1.0/{project_id}/kms/access-points/{access_point_id}/disable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("access_point_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisableAccessPointRequest::getAccessPointId,
+                DisableAccessPointRequest::setAccessPointId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DisableKeyRequest, DisableKeyResponse> disableKey = genForDisableKey();
 
     private static HttpRequestDef<DisableKeyRequest, DisableKeyResponse> genForDisableKey() {
@@ -824,6 +1021,57 @@ public class KmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DisableKeyStoreRequest::getKeystoreId, DisableKeyStoreRequest::setKeystoreId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadAccessPointPrivateKeyRequest, DownloadAccessPointPrivateKeyResponse> downloadAccessPointPrivateKey =
+        genForDownloadAccessPointPrivateKey();
+
+    private static HttpRequestDef<DownloadAccessPointPrivateKeyRequest, DownloadAccessPointPrivateKeyResponse> genForDownloadAccessPointPrivateKey() {
+        // basic
+        HttpRequestDef.Builder<DownloadAccessPointPrivateKeyRequest, DownloadAccessPointPrivateKeyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DownloadAccessPointPrivateKeyRequest.class,
+                    DownloadAccessPointPrivateKeyResponse.class)
+                .withName("DownloadAccessPointPrivateKey")
+                .withUri("/v1.0/{project_id}/kms/access-points/{access_point_id}/get-privatekey")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("access_point_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadAccessPointPrivateKeyRequest::getAccessPointId,
+                DownloadAccessPointPrivateKeyRequest::setAccessPointId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<EnableAccessPointRequest, EnableAccessPointResponse> enableAccessPoint =
+        genForEnableAccessPoint();
+
+    private static HttpRequestDef<EnableAccessPointRequest, EnableAccessPointResponse> genForEnableAccessPoint() {
+        // basic
+        HttpRequestDef.Builder<EnableAccessPointRequest, EnableAccessPointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, EnableAccessPointRequest.class, EnableAccessPointResponse.class)
+                .withName("EnableAccessPoint")
+                .withUri("/v1.0/{project_id}/kms/access-points/{access_point_id}/enable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("access_point_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableAccessPointRequest::getAccessPointId,
+                EnableAccessPointRequest::setAccessPointId));
 
         // response
 
@@ -988,6 +1236,39 @@ public class KmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAccessPointRequest, ListAccessPointResponse> listAccessPoint =
+        genForListAccessPoint();
+
+    private static HttpRequestDef<ListAccessPointRequest, ListAccessPointResponse> genForListAccessPoint() {
+        // basic
+        HttpRequestDef.Builder<ListAccessPointRequest, ListAccessPointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAccessPointRequest.class, ListAccessPointResponse.class)
+                .withName("ListAccessPoint")
+                .withUri("/v1.0/{project_id}/kms/access-points")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("keyspace_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAccessPointRequest::getKeyspaceId, ListAccessPointRequest::setKeyspaceId));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAccessPointRequest::getLimit, ListAccessPointRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAccessPointRequest::getMarker, ListAccessPointRequest::setMarker));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAliasesRequest, ListAliasesResponse> listAliases = genForListAliases();
 
     private static HttpRequestDef<ListAliasesRequest, ListAliasesResponse> genForListAliases() {
@@ -1065,6 +1346,39 @@ public class KmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OperateKeyRequestBody.class),
             f -> f.withMarshaller(ListKeyDetailRequest::getBody, ListKeyDetailRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListKeyPolicyRequest, ListKeyPolicyResponse> listKeyPolicy =
+        genForListKeyPolicy();
+
+    private static HttpRequestDef<ListKeyPolicyRequest, ListKeyPolicyResponse> genForListKeyPolicy() {
+        // basic
+        HttpRequestDef.Builder<ListKeyPolicyRequest, ListKeyPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListKeyPolicyRequest.class, ListKeyPolicyResponse.class)
+                .withName("ListKeyPolicy")
+                .withUri("/v1.0/{project_id}/kms/key-policies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("keyspace_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListKeyPolicyRequest::getKeyspaceId, ListKeyPolicyRequest::setKeyspaceId));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListKeyPolicyRequest::getLimit, ListKeyPolicyRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListKeyPolicyRequest::getMarker, ListKeyPolicyRequest::setMarker));
 
         // response
 
@@ -1267,6 +1581,52 @@ public class KmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RotateOnDemandRequest, RotateOnDemandResponse> rotateOnDemand =
+        genForRotateOnDemand();
+
+    private static HttpRequestDef<RotateOnDemandRequest, RotateOnDemandResponse> genForRotateOnDemand() {
+        // basic
+        HttpRequestDef.Builder<RotateOnDemandRequest, RotateOnDemandResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RotateOnDemandRequest.class, RotateOnDemandResponse.class)
+                .withName("RotateOnDemand")
+                .withUri("/v1.0/{project_id}/kms/rotate-on-demand")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<RotateOnDemandRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RotateOnDemandRequestBody.class),
+            f -> f.withMarshaller(RotateOnDemandRequest::getBody, RotateOnDemandRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowKeyPolicyRequest, ShowKeyPolicyResponse> showKeyPolicy =
+        genForShowKeyPolicy();
+
+    private static HttpRequestDef<ShowKeyPolicyRequest, ShowKeyPolicyResponse> genForShowKeyPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowKeyPolicyRequest, ShowKeyPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowKeyPolicyRequest.class, ShowKeyPolicyResponse.class)
+                .withName("ShowKeyPolicy")
+                .withUri("/v1.0/{project_id}/kms/key-policies/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKeyPolicyRequest::getPolicyId, ShowKeyPolicyRequest::setPolicyId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowKeyRotationStatusRequest, ShowKeyRotationStatusResponse> showKeyRotationStatus =
         genForShowKeyRotationStatus();
 
@@ -1455,6 +1815,34 @@ public class KmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateKeyDescriptionRequestBody.class),
             f -> f.withMarshaller(UpdateKeyDescriptionRequest::getBody, UpdateKeyDescriptionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateKeyPolicyRequest, UpdateKeyPolicyResponse> updateKeyPolicy =
+        genForUpdateKeyPolicy();
+
+    private static HttpRequestDef<UpdateKeyPolicyRequest, UpdateKeyPolicyResponse> genForUpdateKeyPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateKeyPolicyRequest, UpdateKeyPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateKeyPolicyRequest.class, UpdateKeyPolicyResponse.class)
+                .withName("UpdateKeyPolicy")
+                .withUri("/v1.0/{project_id}/kms/key-policies/{policy_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateKeyPolicyRequest::getPolicyId, UpdateKeyPolicyRequest::setPolicyId));
+        builder.<UpdateKeyPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateKeyPolicyRequestBody.class),
+            f -> f.withMarshaller(UpdateKeyPolicyRequest::getBody, UpdateKeyPolicyRequest::setBody));
 
         // response
 

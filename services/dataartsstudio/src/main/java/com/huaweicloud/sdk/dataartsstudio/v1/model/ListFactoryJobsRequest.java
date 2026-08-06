@@ -111,9 +111,54 @@ public class ListFactoryJobsRequest {
     private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_id")
+
+    private String jobId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "need_alarms")
+
+    private Boolean needAlarms;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private String tags;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "match_all_tags")
+
+    private Boolean matchAllTags;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connection_name")
+
+    private String connectionName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source_type")
+
+    private String sourceType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source_name")
+
+    private String sourceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sink_type")
+
+    private String sinkType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sink_name")
+
+    private String sinkName;
 
     public ListFactoryJobsRequest withWorkspace(String workspace) {
         this.workspace = workspace;
@@ -200,13 +245,64 @@ public class ListFactoryJobsRequest {
         this.jobName = jobName;
     }
 
+    public ListFactoryJobsRequest withJobId(String jobId) {
+        this.jobId = jobId;
+        return this;
+    }
+
+    /**
+     * 作业ID，支持多个ID逗号分隔查询，最多50个ID，总长度不超过1000字符。 每个ID必须为纯数字。
+     * @return jobId
+     */
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
+    public ListFactoryJobsRequest withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 作业状态，支持多个状态逗号分隔查询。 批处理作业状态：  - SCHEDULING: 调度中  - STOPPED: 停止  - PAUSED: 暂停 实时作业状态：  - STARTING: 启动中  - NORMAL: 正常  - EXCEPTION: 异常  - STOPPING: 停止中  - STOPPED: 停止  - PAUSE: 暂停  - ABNORMAL: 异常
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public ListFactoryJobsRequest withNeedAlarms(Boolean needAlarms) {
+        this.needAlarms = needAlarms;
+        return this;
+    }
+
+    /**
+     * 是否返回作业告警信息，默认为false。
+     * @return needAlarms
+     */
+    public Boolean getNeedAlarms() {
+        return needAlarms;
+    }
+
+    public void setNeedAlarms(Boolean needAlarms) {
+        this.needAlarms = needAlarms;
+    }
+
     public ListFactoryJobsRequest withTags(String tags) {
         this.tags = tags;
         return this;
     }
 
     /**
-     * 作业标签
+     * 作业标签，多个标签逗号分隔。
      * @return tags
      */
     public String getTags() {
@@ -215,6 +311,108 @@ public class ListFactoryJobsRequest {
 
     public void setTags(String tags) {
         this.tags = tags;
+    }
+
+    public ListFactoryJobsRequest withMatchAllTags(Boolean matchAllTags) {
+        this.matchAllTags = matchAllTags;
+        return this;
+    }
+
+    /**
+     * 标签匹配模式：  - false: 任一标签匹配即返回（OR模式）  - true: 所有标签都匹配才返回（AND模式）
+     * @return matchAllTags
+     */
+    public Boolean getMatchAllTags() {
+        return matchAllTags;
+    }
+
+    public void setMatchAllTags(Boolean matchAllTags) {
+        this.matchAllTags = matchAllTags;
+    }
+
+    public ListFactoryJobsRequest withConnectionName(String connectionName) {
+        this.connectionName = connectionName;
+        return this;
+    }
+
+    /**
+     * 数据连接名称，按数据连接筛选作业。
+     * @return connectionName
+     */
+    public String getConnectionName() {
+        return connectionName;
+    }
+
+    public void setConnectionName(String connectionName) {
+        this.connectionName = connectionName;
+    }
+
+    public ListFactoryJobsRequest withSourceType(String sourceType) {
+        this.sourceType = sourceType;
+        return this;
+    }
+
+    /**
+     * 源端数据连接类型，按源端数据类型筛选作业。
+     * @return sourceType
+     */
+    public String getSourceType() {
+        return sourceType;
+    }
+
+    public void setSourceType(String sourceType) {
+        this.sourceType = sourceType;
+    }
+
+    public ListFactoryJobsRequest withSourceName(String sourceName) {
+        this.sourceName = sourceName;
+        return this;
+    }
+
+    /**
+     * 源端数据连接名称，按源端数据名称筛选作业。
+     * @return sourceName
+     */
+    public String getSourceName() {
+        return sourceName;
+    }
+
+    public void setSourceName(String sourceName) {
+        this.sourceName = sourceName;
+    }
+
+    public ListFactoryJobsRequest withSinkType(String sinkType) {
+        this.sinkType = sinkType;
+        return this;
+    }
+
+    /**
+     * 目的端数据连接类型，按目的端数据类型筛选作业。
+     * @return sinkType
+     */
+    public String getSinkType() {
+        return sinkType;
+    }
+
+    public void setSinkType(String sinkType) {
+        this.sinkType = sinkType;
+    }
+
+    public ListFactoryJobsRequest withSinkName(String sinkName) {
+        this.sinkName = sinkName;
+        return this;
+    }
+
+    /**
+     * 目的端数据连接名称，按目的端数据名称筛选作业。
+     * @return sinkName
+     */
+    public String getSinkName() {
+        return sinkName;
+    }
+
+    public void setSinkName(String sinkName) {
+        this.sinkName = sinkName;
     }
 
     @Override
@@ -228,12 +426,31 @@ public class ListFactoryJobsRequest {
         ListFactoryJobsRequest that = (ListFactoryJobsRequest) obj;
         return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.jobType, that.jobType)
-            && Objects.equals(this.jobName, that.jobName) && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.jobName, that.jobName) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.needAlarms, that.needAlarms)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.matchAllTags, that.matchAllTags)
+            && Objects.equals(this.connectionName, that.connectionName)
+            && Objects.equals(this.sourceType, that.sourceType) && Objects.equals(this.sourceName, that.sourceName)
+            && Objects.equals(this.sinkType, that.sinkType) && Objects.equals(this.sinkName, that.sinkName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace, limit, offset, jobType, jobName, tags);
+        return Objects.hash(workspace,
+            limit,
+            offset,
+            jobType,
+            jobName,
+            jobId,
+            status,
+            needAlarms,
+            tags,
+            matchAllTags,
+            connectionName,
+            sourceType,
+            sourceName,
+            sinkType,
+            sinkName);
     }
 
     @Override
@@ -245,7 +462,16 @@ public class ListFactoryJobsRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
         sb.append("    jobName: ").append(toIndentedString(jobName)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    needAlarms: ").append(toIndentedString(needAlarms)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    matchAllTags: ").append(toIndentedString(matchAllTags)).append("\n");
+        sb.append("    connectionName: ").append(toIndentedString(connectionName)).append("\n");
+        sb.append("    sourceType: ").append(toIndentedString(sourceType)).append("\n");
+        sb.append("    sourceName: ").append(toIndentedString(sourceName)).append("\n");
+        sb.append("    sinkType: ").append(toIndentedString(sinkType)).append("\n");
+        sb.append("    sinkName: ").append(toIndentedString(sinkName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -17,7 +17,13 @@ import com.huaweicloud.sdk.das.v3.model.AddInstanceGroupResponse;
 import com.huaweicloud.sdk.das.v3.model.AddInstanceToGroupRequest;
 import com.huaweicloud.sdk.das.v3.model.AddInstanceToGroupRequestBody;
 import com.huaweicloud.sdk.das.v3.model.AddInstanceToGroupResponse;
+import com.huaweicloud.sdk.das.v3.model.AddSqlLimitingRecordNewRequest;
+import com.huaweicloud.sdk.das.v3.model.AddSqlLimitingRecordNewRequestBody;
+import com.huaweicloud.sdk.das.v3.model.AddSqlLimitingRecordNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ApiSetMetricCodeThresholdReq;
+import com.huaweicloud.sdk.das.v3.model.BatchDeleteConnectionNewRequest;
+import com.huaweicloud.sdk.das.v3.model.BatchDeleteConnectionNewRequestBody;
+import com.huaweicloud.sdk.das.v3.model.BatchDeleteConnectionNewResponse;
 import com.huaweicloud.sdk.das.v3.model.BatchSendEmailRequest;
 import com.huaweicloud.sdk.das.v3.model.BatchSendEmailRequestBody;
 import com.huaweicloud.sdk.das.v3.model.BatchSendEmailResponse;
@@ -27,6 +33,9 @@ import com.huaweicloud.sdk.das.v3.model.BatchSubscribeReportResponse;
 import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsRequest;
 import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsRequestBody;
 import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsResponse;
+import com.huaweicloud.sdk.das.v3.model.CancelShareNewRequest;
+import com.huaweicloud.sdk.das.v3.model.CancelShareNewRequestBody;
+import com.huaweicloud.sdk.das.v3.model.CancelShareNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeChargeModeBody;
 import com.huaweicloud.sdk.das.v3.model.ChangeChargeModeRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeChargeModeResponse;
@@ -115,6 +124,8 @@ import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesResponse;
 import com.huaweicloud.sdk.das.v3.model.ListConnectionsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListConnectionsResponse;
+import com.huaweicloud.sdk.das.v3.model.ListDbNamesRequest;
+import com.huaweicloud.sdk.das.v3.model.ListDbNamesResponse;
 import com.huaweicloud.sdk.das.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.das.v3.model.ListDbUsersResponse;
 import com.huaweicloud.sdk.das.v3.model.ListEmailRecordRequest;
@@ -199,39 +210,65 @@ import com.huaweicloud.sdk.das.v3.model.ShowAnalysisSessionStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowAnalysisSessionStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowClouddbaGetSearchPathFlagNewRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowClouddbaGetSearchPathFlagNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowCredentialRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowCredentialResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowDasCloudDbaPriceRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowDasCloudDbaPriceResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowDasRecommendSqlLimitRuleRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowDasRecommendSqlLimitRuleResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowDeadLockAnalysisResultRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowDeadLockAnalysisResultResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowDeadLockSwitchNewRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowDeadLockSwitchNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowDeadLockTopologyRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowDeadLockTopologyResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowExportTaskInfoRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowExportTaskInfoResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockListRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockListResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockSwitchNewRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockSwitchNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowFullDeadLockSwitchResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowGlobalPrivacyNewRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowGlobalPrivacyNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowHealthReportSettingsRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowHealthReportSettingsResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowHistoryTransactionExportTaskInfoRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowHistoryTransactionExportTaskInfoResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowHistoryTransactionSwitchNewRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowHistoryTransactionSwitchNewResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowIndexUsageSwitchNewRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowIndexUsageSwitchNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowKillProcessTaskSwitchRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowKillProcessTaskSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowLatestDeadLockSnapshotRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowLatestDeadLockSnapshotResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowLatestInstanceHealthReportRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowLatestInstanceHealthReportResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowLockBlockingStatisticsRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowLockBlockingStatisticsResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowLockBlockingSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowLockBlockingSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowLockBlockingTrendRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowLockBlockingTrendResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowLongHistoryTransactionSwitchNewRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowLongHistoryTransactionSwitchNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowMetricNamesSupportRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowMetricNamesSupportResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowNameListRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowNameListResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowRecommendSqlLimitRuleRequestBody;
+import com.huaweicloud.sdk.das.v3.model.ShowSlowLogSwitchNewRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowSlowLogSwitchNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlExecutionPlanRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlExecutionPlanResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlExplainRequest;
@@ -240,15 +277,23 @@ import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitJobInfoRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitJobInfoResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitSwitchStatusResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitingSwitchNewRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowSqlLimitingSwitchNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlSwitchStatusResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowSupportedEnginesRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowSupportedEnginesResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowTransactionSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowTransactionSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowTuningRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowTuningResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowWhetherUseCloudDbaRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowWhetherUseCloudDbaResponse;
 import com.huaweicloud.sdk.das.v3.model.StartAnalysisSessionRequest;
 import com.huaweicloud.sdk.das.v3.model.StartAnalysisSessionRequestBody;
 import com.huaweicloud.sdk.das.v3.model.StartAnalysisSessionResponse;
+import com.huaweicloud.sdk.das.v3.model.SwitchFullsqlSwitchRequest;
+import com.huaweicloud.sdk.das.v3.model.SwitchFullsqlSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.SynchronizeInstancesReq;
 import com.huaweicloud.sdk.das.v3.model.SynchronizeInstancesRequest;
 import com.huaweicloud.sdk.das.v3.model.SynchronizeInstancesResponse;
@@ -269,6 +314,7 @@ import com.huaweicloud.sdk.das.v3.model.UpdateSqlLimitRulesBody;
 import com.huaweicloud.sdk.das.v3.model.UpdateSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.UpdateSqlLimitRulesResponse;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @SuppressWarnings("unchecked")
@@ -570,6 +616,61 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AddSqlLimitingRecordNewRequest, AddSqlLimitingRecordNewResponse> addSqlLimitingRecordNew =
+        genForAddSqlLimitingRecordNew();
+
+    private static HttpRequestDef<AddSqlLimitingRecordNewRequest, AddSqlLimitingRecordNewResponse> genForAddSqlLimitingRecordNew() {
+        // basic
+        HttpRequestDef.Builder<AddSqlLimitingRecordNewRequest, AddSqlLimitingRecordNewResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AddSqlLimitingRecordNewRequest.class, AddSqlLimitingRecordNewResponse.class)
+            .withName("AddSqlLimitingRecordNew")
+            .withUri("/v3/{project_id}/instances/{instance_id}/sql-limiting/add-sql-limiting-record")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddSqlLimitingRecordNewRequest::getInstanceId,
+                AddSqlLimitingRecordNewRequest::setInstanceId));
+        builder.<AddSqlLimitingRecordNewRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddSqlLimitingRecordNewRequestBody.class),
+            f -> f.withMarshaller(AddSqlLimitingRecordNewRequest::getBody, AddSqlLimitingRecordNewRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteConnectionNewRequest, BatchDeleteConnectionNewResponse> batchDeleteConnectionNew =
+        genForBatchDeleteConnectionNew();
+
+    private static HttpRequestDef<BatchDeleteConnectionNewRequest, BatchDeleteConnectionNewResponse> genForBatchDeleteConnectionNew() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteConnectionNewRequest, BatchDeleteConnectionNewResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    BatchDeleteConnectionNewRequest.class,
+                    BatchDeleteConnectionNewResponse.class)
+                .withName("BatchDeleteConnectionNew")
+                .withUri("/v3/{project_id}/batch-delete-connections")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteConnectionNewRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteConnectionNewRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteConnectionNewRequest::getBody, BatchDeleteConnectionNewRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchSendEmailRequest, BatchSendEmailResponse> batchSendEmail =
         genForBatchSendEmail();
 
@@ -610,6 +711,29 @@ public class DasMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchSubscribeReportRequestBody.class),
             f -> f.withMarshaller(BatchSubscribeReportRequest::getBody, BatchSubscribeReportRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CancelShareNewRequest, CancelShareNewResponse> cancelShareNew =
+        genForCancelShareNew();
+
+    private static HttpRequestDef<CancelShareNewRequest, CancelShareNewResponse> genForCancelShareNew() {
+        // basic
+        HttpRequestDef.Builder<CancelShareNewRequest, CancelShareNewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CancelShareNewRequest.class, CancelShareNewResponse.class)
+                .withName("CancelShareNew")
+                .withUri("/v3.1/{project_id}/connections/cancel-share")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CancelShareNewRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CancelShareNewRequestBody.class),
+            f -> f.withMarshaller(CancelShareNewRequest::getBody, CancelShareNewRequest::setBody));
 
         // response
 
@@ -1955,6 +2079,33 @@ public class DasMeta {
             TypeCasts.uncheckedConversion(ListCloudDbaInstancesRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListCloudDbaInstancesRequest::getXLanguage,
                 ListCloudDbaInstancesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDbNamesRequest, ListDbNamesResponse> listDbNames = genForListDbNames();
+
+    private static HttpRequestDef<ListDbNamesRequest, ListDbNamesResponse> genForListDbNames() {
+        // basic
+        HttpRequestDef.Builder<ListDbNamesRequest, ListDbNamesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDbNamesRequest.class, ListDbNamesResponse.class)
+                .withName("ListDbNames")
+                .withUri("/v3/{project_id}/instances/{instance_id}/databases/get-name-list")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDbNamesRequest::getInstanceId, ListDbNamesRequest::setInstanceId));
+        builder.<String>withRequestField("engine_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDbNamesRequest::getEngineType, ListDbNamesRequest::setEngineType));
 
         // response
 
@@ -3544,6 +3695,33 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowClouddbaGetSearchPathFlagNewRequest, ShowClouddbaGetSearchPathFlagNewResponse> showClouddbaGetSearchPathFlagNew =
+        genForShowClouddbaGetSearchPathFlagNew();
+
+    private static HttpRequestDef<ShowClouddbaGetSearchPathFlagNewRequest, ShowClouddbaGetSearchPathFlagNewResponse> genForShowClouddbaGetSearchPathFlagNew() {
+        // basic
+        HttpRequestDef.Builder<ShowClouddbaGetSearchPathFlagNewRequest, ShowClouddbaGetSearchPathFlagNewResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowClouddbaGetSearchPathFlagNewRequest.class,
+                    ShowClouddbaGetSearchPathFlagNewResponse.class)
+                .withName("ShowClouddbaGetSearchPathFlagNew")
+                .withUri("/v3/{project_id}/connections/{connection_id}/clouddba-get-search-path-flag")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClouddbaGetSearchPathFlagNewRequest::getConnectionId,
+                ShowClouddbaGetSearchPathFlagNewRequest::setConnectionId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowCredentialRequest, ShowCredentialResponse> showCredential =
         genForShowCredential();
 
@@ -3554,6 +3732,24 @@ public class DasMeta {
                 .withName("ShowCredential")
                 .withUri("/v3/{project_id}/batch-inspection/get-credential")
                 .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDasCloudDbaPriceRequest, ShowDasCloudDbaPriceResponse> showDasCloudDbaPrice =
+        genForShowDasCloudDbaPrice();
+
+    private static HttpRequestDef<ShowDasCloudDbaPriceRequest, ShowDasCloudDbaPriceResponse> genForShowDasCloudDbaPrice() {
+        // basic
+        HttpRequestDef.Builder<ShowDasCloudDbaPriceRequest, ShowDasCloudDbaPriceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDasCloudDbaPriceRequest.class, ShowDasCloudDbaPriceResponse.class)
+            .withName("ShowDasCloudDbaPrice")
+            .withUri("/v3/{project_id}/clouddba/inquiry-price")
+            .withContentType("application/json");
 
         // requests
 
@@ -3690,6 +3886,36 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDeadLockSwitchNewRequest, ShowDeadLockSwitchNewResponse> showDeadLockSwitchNew =
+        genForShowDeadLockSwitchNew();
+
+    private static HttpRequestDef<ShowDeadLockSwitchNewRequest, ShowDeadLockSwitchNewResponse> genForShowDeadLockSwitchNew() {
+        // basic
+        HttpRequestDef.Builder<ShowDeadLockSwitchNewRequest, ShowDeadLockSwitchNewResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDeadLockSwitchNewRequest.class, ShowDeadLockSwitchNewResponse.class)
+            .withName("ShowDeadLockSwitchNew")
+            .withUri("/v3/{project_id}/dead-lock/switch")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeadLockSwitchNewRequest::getEngineType,
+                ShowDeadLockSwitchNewRequest::setEngineType));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDeadLockSwitchNewRequest::getInstanceId,
+                ShowDeadLockSwitchNewRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDeadLockTopologyRequest, ShowDeadLockTopologyResponse> showDeadLockTopology =
         genForShowDeadLockTopology();
 
@@ -3714,6 +3940,29 @@ public class DasMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDeadLockTopologyRequest::getDeadLockId,
                 ShowDeadLockTopologyRequest::setDeadLockId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowExportTaskInfoRequest, ShowExportTaskInfoResponse> showExportTaskInfo =
+        genForShowExportTaskInfo();
+
+    private static HttpRequestDef<ShowExportTaskInfoRequest, ShowExportTaskInfoResponse> genForShowExportTaskInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowExportTaskInfoRequest, ShowExportTaskInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowExportTaskInfoRequest.class, ShowExportTaskInfoResponse.class)
+                .withName("ShowExportTaskInfo")
+                .withUri("/v3/{project_id}/fullsql/get-export-task-info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BigDecimal>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BigDecimal.class),
+            f -> f.withMarshaller(ShowExportTaskInfoRequest::getTaskId, ShowExportTaskInfoRequest::setTaskId));
 
         // response
 
@@ -3800,6 +4049,51 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowFullDeadLockSwitchNewRequest, ShowFullDeadLockSwitchNewResponse> showFullDeadLockSwitchNew =
+        genForShowFullDeadLockSwitchNew();
+
+    private static HttpRequestDef<ShowFullDeadLockSwitchNewRequest, ShowFullDeadLockSwitchNewResponse> genForShowFullDeadLockSwitchNew() {
+        // basic
+        HttpRequestDef.Builder<ShowFullDeadLockSwitchNewRequest, ShowFullDeadLockSwitchNewResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowFullDeadLockSwitchNewRequest.class,
+                    ShowFullDeadLockSwitchNewResponse.class)
+                .withName("ShowFullDeadLockSwitchNew")
+                .withUri("/v3/{project_id}/instances/{instance_id}/get-full-dead-lock-switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFullDeadLockSwitchNewRequest::getInstanceId,
+                ShowFullDeadLockSwitchNewRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowGlobalPrivacyNewRequest, ShowGlobalPrivacyNewResponse> showGlobalPrivacyNew =
+        genForShowGlobalPrivacyNew();
+
+    private static HttpRequestDef<ShowGlobalPrivacyNewRequest, ShowGlobalPrivacyNewResponse> genForShowGlobalPrivacyNew() {
+        // basic
+        HttpRequestDef.Builder<ShowGlobalPrivacyNewRequest, ShowGlobalPrivacyNewResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowGlobalPrivacyNewRequest.class, ShowGlobalPrivacyNewResponse.class)
+            .withName("ShowGlobalPrivacyNew")
+            .withUri("/v3/{project_id}/policy/get-global-privacy")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowHealthReportSettingsRequest, ShowHealthReportSettingsResponse> showHealthReportSettings =
         genForShowHealthReportSettings();
 
@@ -3864,6 +4158,57 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowHistoryTransactionSwitchNewRequest, ShowHistoryTransactionSwitchNewResponse> showHistoryTransactionSwitchNew =
+        genForShowHistoryTransactionSwitchNew();
+
+    private static HttpRequestDef<ShowHistoryTransactionSwitchNewRequest, ShowHistoryTransactionSwitchNewResponse> genForShowHistoryTransactionSwitchNew() {
+        // basic
+        HttpRequestDef.Builder<ShowHistoryTransactionSwitchNewRequest, ShowHistoryTransactionSwitchNewResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowHistoryTransactionSwitchNewRequest.class,
+                    ShowHistoryTransactionSwitchNewResponse.class)
+                .withName("ShowHistoryTransactionSwitchNew")
+                .withUri("/v3/{project_id}/transaction/{instance_id}/get-history-transaction-switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHistoryTransactionSwitchNewRequest::getInstanceId,
+                ShowHistoryTransactionSwitchNewRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowIndexUsageSwitchNewRequest, ShowIndexUsageSwitchNewResponse> showIndexUsageSwitchNew =
+        genForShowIndexUsageSwitchNew();
+
+    private static HttpRequestDef<ShowIndexUsageSwitchNewRequest, ShowIndexUsageSwitchNewResponse> genForShowIndexUsageSwitchNew() {
+        // basic
+        HttpRequestDef.Builder<ShowIndexUsageSwitchNewRequest, ShowIndexUsageSwitchNewResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowIndexUsageSwitchNewRequest.class, ShowIndexUsageSwitchNewResponse.class)
+            .withName("ShowIndexUsageSwitchNew")
+            .withUri("/v3/{project_id}/instances/{instance_id}/index-usage/get-index-usage-switch")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIndexUsageSwitchNewRequest::getInstanceId,
+                ShowIndexUsageSwitchNewRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowInstanceHealthReportRequest, ShowInstanceHealthReportResponse> showInstanceHealthReport =
         genForShowInstanceHealthReport();
 
@@ -3895,6 +4240,33 @@ public class DasMeta {
             TypeCasts.uncheckedConversion(ShowInstanceHealthReportRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowInstanceHealthReportRequest::getXLanguage,
                 ShowInstanceHealthReportRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowKillProcessTaskSwitchRequest, ShowKillProcessTaskSwitchResponse> showKillProcessTaskSwitch =
+        genForShowKillProcessTaskSwitch();
+
+    private static HttpRequestDef<ShowKillProcessTaskSwitchRequest, ShowKillProcessTaskSwitchResponse> genForShowKillProcessTaskSwitch() {
+        // basic
+        HttpRequestDef.Builder<ShowKillProcessTaskSwitchRequest, ShowKillProcessTaskSwitchResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowKillProcessTaskSwitchRequest.class,
+                    ShowKillProcessTaskSwitchResponse.class)
+                .withName("ShowKillProcessTaskSwitch")
+                .withUri("/v3/{project_id}/instances/{instance_id}/auto-flow/get-kill-process-task-switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKillProcessTaskSwitchRequest::getInstanceId,
+                ShowKillProcessTaskSwitchRequest::setInstanceId));
 
         // response
 
@@ -3933,6 +4305,33 @@ public class DasMeta {
             TypeCasts.uncheckedConversion(ShowLatestDeadLockSnapshotRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowLatestDeadLockSnapshotRequest::getXLanguage,
                 ShowLatestDeadLockSnapshotRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLatestInstanceHealthReportRequest, ShowLatestInstanceHealthReportResponse> showLatestInstanceHealthReport =
+        genForShowLatestInstanceHealthReport();
+
+    private static HttpRequestDef<ShowLatestInstanceHealthReportRequest, ShowLatestInstanceHealthReportResponse> genForShowLatestInstanceHealthReport() {
+        // basic
+        HttpRequestDef.Builder<ShowLatestInstanceHealthReportRequest, ShowLatestInstanceHealthReportResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowLatestInstanceHealthReportRequest.class,
+                    ShowLatestInstanceHealthReportResponse.class)
+                .withName("ShowLatestInstanceHealthReport")
+                .withUri("/v3/{project_id}/health-report/{instance_id}/get-latest-instance-health-report")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLatestInstanceHealthReportRequest::getInstanceId,
+                ShowLatestInstanceHealthReportRequest::setInstanceId));
 
         // response
 
@@ -4055,6 +4454,33 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowLongHistoryTransactionSwitchNewRequest, ShowLongHistoryTransactionSwitchNewResponse> showLongHistoryTransactionSwitchNew =
+        genForShowLongHistoryTransactionSwitchNew();
+
+    private static HttpRequestDef<ShowLongHistoryTransactionSwitchNewRequest, ShowLongHistoryTransactionSwitchNewResponse> genForShowLongHistoryTransactionSwitchNew() {
+        // basic
+        HttpRequestDef.Builder<ShowLongHistoryTransactionSwitchNewRequest, ShowLongHistoryTransactionSwitchNewResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowLongHistoryTransactionSwitchNewRequest.class,
+                    ShowLongHistoryTransactionSwitchNewResponse.class)
+                .withName("ShowLongHistoryTransactionSwitchNew")
+                .withUri("/v3/{project_id}/transaction/{instance_id}/get-long-history-transaction-switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLongHistoryTransactionSwitchNewRequest::getInstanceId,
+                ShowLongHistoryTransactionSwitchNewRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowMetricNamesSupportRequest, ShowMetricNamesSupportResponse> showMetricNamesSupport =
         genForShowMetricNamesSupport();
 
@@ -4079,6 +4505,38 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowNameListRequest, ShowNameListResponse> showNameList = genForShowNameList();
+
+    private static HttpRequestDef<ShowNameListRequest, ShowNameListResponse> genForShowNameList() {
+        // basic
+        HttpRequestDef.Builder<ShowNameListRequest, ShowNameListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowNameListRequest.class, ShowNameListResponse.class)
+                .withName("ShowNameList")
+                .withUri("/v3/{project_id}/connections/{connection_id}/databases/get-name-list")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNameListRequest::getConnectionId, ShowNameListRequest::setConnectionId));
+        builder.<String>withRequestField("node_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNameListRequest::getNodeType, ShowNameListRequest::setNodeType));
+        builder.<String>withRequestField("node_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNameListRequest::getNodeId, ShowNameListRequest::setNodeId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForShowQuotas();
 
     private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForShowQuotas() {
@@ -4095,6 +4553,36 @@ public class DasMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowQuotasRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowQuotasRequest::getXLanguage, ShowQuotasRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSlowLogSwitchNewRequest, ShowSlowLogSwitchNewResponse> showSlowLogSwitchNew =
+        genForShowSlowLogSwitchNew();
+
+    private static HttpRequestDef<ShowSlowLogSwitchNewRequest, ShowSlowLogSwitchNewResponse> genForShowSlowLogSwitchNew() {
+        // basic
+        HttpRequestDef.Builder<ShowSlowLogSwitchNewRequest, ShowSlowLogSwitchNewResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowSlowLogSwitchNewRequest.class, ShowSlowLogSwitchNewResponse.class)
+            .withName("ShowSlowLogSwitchNew")
+            .withUri("/v3/{project_id}/instances/{instance_id}/slow-log/get-slow-log-switch")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSlowLogSwitchNewRequest::getInstanceId,
+                ShowSlowLogSwitchNewRequest::setInstanceId));
+        builder.<String>withRequestField("engine_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSlowLogSwitchNewRequest::getEngineType,
+                ShowSlowLogSwitchNewRequest::setEngineType));
 
         // response
 
@@ -4250,6 +4738,37 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowSqlLimitingSwitchNewRequest, ShowSqlLimitingSwitchNewResponse> showSqlLimitingSwitchNew =
+        genForShowSqlLimitingSwitchNew();
+
+    private static HttpRequestDef<ShowSqlLimitingSwitchNewRequest, ShowSqlLimitingSwitchNewResponse> genForShowSqlLimitingSwitchNew() {
+        // basic
+        HttpRequestDef.Builder<ShowSqlLimitingSwitchNewRequest, ShowSqlLimitingSwitchNewResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowSqlLimitingSwitchNewRequest.class, ShowSqlLimitingSwitchNewResponse.class)
+                .withName("ShowSqlLimitingSwitchNew")
+                .withUri("/v3/{project_id}/instances/{instance_id}/sql-limiting/get-sql-limiting-switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlLimitingSwitchNewRequest::getInstanceId,
+                ShowSqlLimitingSwitchNewRequest::setInstanceId));
+        builder.<String>withRequestField("engine_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlLimitingSwitchNewRequest::getEngineType,
+                ShowSqlLimitingSwitchNewRequest::setEngineType));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSqlSwitchStatusRequest, ShowSqlSwitchStatusResponse> showSqlSwitchStatus =
         genForShowSqlSwitchStatus();
 
@@ -4284,6 +4803,24 @@ public class DasMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowSqlSwitchStatusRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowSqlSwitchStatusRequest::getXLanguage, ShowSqlSwitchStatusRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSupportedEnginesRequest, ShowSupportedEnginesResponse> showSupportedEngines =
+        genForShowSupportedEngines();
+
+    private static HttpRequestDef<ShowSupportedEnginesRequest, ShowSupportedEnginesResponse> genForShowSupportedEngines() {
+        // basic
+        HttpRequestDef.Builder<ShowSupportedEnginesRequest, ShowSupportedEnginesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowSupportedEnginesRequest.class, ShowSupportedEnginesResponse.class)
+            .withName("ShowSupportedEngines")
+            .withUri("/v3/{project_id}/engine/supported")
+            .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -4361,6 +4898,36 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowWhetherUseCloudDbaRequest, ShowWhetherUseCloudDbaResponse> showWhetherUseCloudDba =
+        genForShowWhetherUseCloudDba();
+
+    private static HttpRequestDef<ShowWhetherUseCloudDbaRequest, ShowWhetherUseCloudDbaResponse> genForShowWhetherUseCloudDba() {
+        // basic
+        HttpRequestDef.Builder<ShowWhetherUseCloudDbaRequest, ShowWhetherUseCloudDbaResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowWhetherUseCloudDbaRequest.class, ShowWhetherUseCloudDbaResponse.class)
+            .withName("ShowWhetherUseCloudDba")
+            .withUri("/v3/{project_id}/can-use-cloud-dba")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWhetherUseCloudDbaRequest::getInstanceId,
+                ShowWhetherUseCloudDbaRequest::setInstanceId));
+        builder.<String>withRequestField("engine_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowWhetherUseCloudDbaRequest::getEngineType,
+                ShowWhetherUseCloudDbaRequest::setEngineType));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<StartAnalysisSessionRequest, StartAnalysisSessionResponse> startAnalysisSession =
         genForStartAnalysisSession();
 
@@ -4389,6 +4956,36 @@ public class DasMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(StartAnalysisSessionRequestBody.class),
             f -> f.withMarshaller(StartAnalysisSessionRequest::getBody, StartAnalysisSessionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchFullsqlSwitchRequest, SwitchFullsqlSwitchResponse> switchFullsqlSwitch =
+        genForSwitchFullsqlSwitch();
+
+    private static HttpRequestDef<SwitchFullsqlSwitchRequest, SwitchFullsqlSwitchResponse> genForSwitchFullsqlSwitch() {
+        // basic
+        HttpRequestDef.Builder<SwitchFullsqlSwitchRequest, SwitchFullsqlSwitchResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SwitchFullsqlSwitchRequest.class, SwitchFullsqlSwitchResponse.class)
+                .withName("SwitchFullsqlSwitch")
+                .withUri("/v3/{project_id}/fullsql/switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchFullsqlSwitchRequest::getEngineType,
+                SwitchFullsqlSwitchRequest::setEngineType));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchFullsqlSwitchRequest::getInstanceId,
+                SwitchFullsqlSwitchRequest::setInstanceId));
 
         // response
 

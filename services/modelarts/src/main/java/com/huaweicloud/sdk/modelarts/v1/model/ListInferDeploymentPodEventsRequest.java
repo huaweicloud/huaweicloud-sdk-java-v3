@@ -30,6 +30,16 @@ public class ListInferDeploymentPodEventsRequest {
 
     private String name;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_time")
+
+    private String startTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "end_time")
+
+    private String endTime;
+
     public ListInferDeploymentPodEventsRequest withId(String id) {
         this.id = id;
         return this;
@@ -98,6 +108,40 @@ public class ListInferDeploymentPodEventsRequest {
         this.name = name;
     }
 
+    public ListInferDeploymentPodEventsRequest withStartTime(String startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 查询开始时间，Unix时间戳（毫秒）。 **约束限制：** 需要与end_time同时传入或同时为空。不能早于end_time。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @return startTime
+     */
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public ListInferDeploymentPodEventsRequest withEndTime(String endTime) {
+        this.endTime = endTime;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 查询结束时间，Unix时间戳（毫秒）。 **约束限制：** 需要与start_time同时传入或同时为空。不能早于start_time。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @return endTime
+     */
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +152,13 @@ public class ListInferDeploymentPodEventsRequest {
         }
         ListInferDeploymentPodEventsRequest that = (ListInferDeploymentPodEventsRequest) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.deploymentName, that.deploymentName)
-            && Objects.equals(this.instanceName, that.instanceName) && Objects.equals(this.name, that.name);
+            && Objects.equals(this.instanceName, that.instanceName) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, deploymentName, instanceName, name);
+        return Objects.hash(id, deploymentName, instanceName, name, startTime, endTime);
     }
 
     @Override
@@ -124,6 +169,8 @@ public class ListInferDeploymentPodEventsRequest {
         sb.append("    deploymentName: ").append(toIndentedString(deploymentName)).append("\n");
         sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

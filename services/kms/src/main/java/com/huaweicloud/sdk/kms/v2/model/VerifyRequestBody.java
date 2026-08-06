@@ -31,7 +31,7 @@ public class VerifyRequestBody {
     private String signature;
 
     /**
-     * 签名算法，枚举如下：  - RSASSA_PSS_SHA_256  - RSASSA_PSS_SHA_384  - RSASSA_PSS_SHA_512  - RSASSA_PKCS1_V1_5_SHA_256  - RSASSA_PKCS1_V1_5_SHA_384  - RSASSA_PKCS1_V1_5_SHA_512  - ECDSA_SHA_256  - ECDSA_SHA_384  - ECDSA_SHA_512  - SM2DSA_SM3
+     * 签名算法，枚举如下：  - RSASSA_PSS_SHA_256  - RSASSA_PSS_SHA_384  - RSASSA_PSS_SHA_512  - RSASSA_PKCS1_V1_5_SHA_256  - RSASSA_PKCS1_V1_5_SHA_384  - RSASSA_PKCS1_V1_5_SHA_512  - ECDSA_SHA_256  - ECDSA_SHA_384  - ECDSA_SHA_512  - SM2DSA_SM3  - ED25519_SHA_512  - ED25519_PH_SHA_512
      */
     public static final class SigningAlgorithmEnum {
 
@@ -88,6 +88,16 @@ public class VerifyRequestBody {
          */
         public static final SigningAlgorithmEnum SM2DSA_SM3 = new SigningAlgorithmEnum("SM2DSA_SM3");
 
+        /**
+         * Enum ED25519_SHA_512 for value: "ED25519_SHA_512"
+         */
+        public static final SigningAlgorithmEnum ED25519_SHA_512 = new SigningAlgorithmEnum("ED25519_SHA_512");
+
+        /**
+         * Enum ED25519_PH_SHA_512 for value: "ED25519_PH_SHA_512"
+         */
+        public static final SigningAlgorithmEnum ED25519_PH_SHA_512 = new SigningAlgorithmEnum("ED25519_PH_SHA_512");
+
         private static final Map<String, SigningAlgorithmEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SigningAlgorithmEnum> createStaticFields() {
@@ -102,6 +112,8 @@ public class VerifyRequestBody {
             map.put("ECDSA_SHA_384", ECDSA_SHA_384);
             map.put("ECDSA_SHA_512", ECDSA_SHA_512);
             map.put("SM2DSA_SM3", SM2DSA_SM3);
+            map.put("ED25519_SHA_512", ED25519_SHA_512);
+            map.put("ED25519_PH_SHA_512", ED25519_PH_SHA_512);
             return Collections.unmodifiableMap(map);
         }
 
@@ -293,7 +305,7 @@ public class VerifyRequestBody {
     }
 
     /**
-     * 签名算法，枚举如下：  - RSASSA_PSS_SHA_256  - RSASSA_PSS_SHA_384  - RSASSA_PSS_SHA_512  - RSASSA_PKCS1_V1_5_SHA_256  - RSASSA_PKCS1_V1_5_SHA_384  - RSASSA_PKCS1_V1_5_SHA_512  - ECDSA_SHA_256  - ECDSA_SHA_384  - ECDSA_SHA_512  - SM2DSA_SM3
+     * 签名算法，枚举如下：  - RSASSA_PSS_SHA_256  - RSASSA_PSS_SHA_384  - RSASSA_PSS_SHA_512  - RSASSA_PKCS1_V1_5_SHA_256  - RSASSA_PKCS1_V1_5_SHA_384  - RSASSA_PKCS1_V1_5_SHA_512  - ECDSA_SHA_256  - ECDSA_SHA_384  - ECDSA_SHA_512  - SM2DSA_SM3  - ED25519_SHA_512  - ED25519_PH_SHA_512
      * @return signingAlgorithm
      */
     public SigningAlgorithmEnum getSigningAlgorithm() {

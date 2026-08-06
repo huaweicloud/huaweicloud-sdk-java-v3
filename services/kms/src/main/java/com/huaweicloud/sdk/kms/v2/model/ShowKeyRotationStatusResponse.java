@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -30,6 +33,11 @@ public class ShowKeyRotationStatusResponse extends SdkResponse {
     @JsonProperty(value = "number_of_rotations")
 
     private Integer numberOfRotations;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key_materials")
+
+    private List<GetkeyRotationStatusResponseBodyKeyMaterials> keyMaterials = null;
 
     public ShowKeyRotationStatusResponse withKeyRotationEnabled(Boolean keyRotationEnabled) {
         this.keyRotationEnabled = keyRotationEnabled;
@@ -103,6 +111,42 @@ public class ShowKeyRotationStatusResponse extends SdkResponse {
         this.numberOfRotations = numberOfRotations;
     }
 
+    public ShowKeyRotationStatusResponse withKeyMaterials(
+        List<GetkeyRotationStatusResponseBodyKeyMaterials> keyMaterials) {
+        this.keyMaterials = keyMaterials;
+        return this;
+    }
+
+    public ShowKeyRotationStatusResponse addKeyMaterialsItem(
+        GetkeyRotationStatusResponseBodyKeyMaterials keyMaterialsItem) {
+        if (this.keyMaterials == null) {
+            this.keyMaterials = new ArrayList<>();
+        }
+        this.keyMaterials.add(keyMaterialsItem);
+        return this;
+    }
+
+    public ShowKeyRotationStatusResponse withKeyMaterials(
+        Consumer<List<GetkeyRotationStatusResponseBodyKeyMaterials>> keyMaterialsSetter) {
+        if (this.keyMaterials == null) {
+            this.keyMaterials = new ArrayList<>();
+        }
+        keyMaterialsSetter.accept(this.keyMaterials);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 密钥下的密钥材料信息 **取值范围：** 不涉及
+     * @return keyMaterials
+     */
+    public List<GetkeyRotationStatusResponseBodyKeyMaterials> getKeyMaterials() {
+        return keyMaterials;
+    }
+
+    public void setKeyMaterials(List<GetkeyRotationStatusResponseBodyKeyMaterials> keyMaterials) {
+        this.keyMaterials = keyMaterials;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -115,12 +159,13 @@ public class ShowKeyRotationStatusResponse extends SdkResponse {
         return Objects.equals(this.keyRotationEnabled, that.keyRotationEnabled)
             && Objects.equals(this.rotationInterval, that.rotationInterval)
             && Objects.equals(this.lastRotationTime, that.lastRotationTime)
-            && Objects.equals(this.numberOfRotations, that.numberOfRotations);
+            && Objects.equals(this.numberOfRotations, that.numberOfRotations)
+            && Objects.equals(this.keyMaterials, that.keyMaterials);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(keyRotationEnabled, rotationInterval, lastRotationTime, numberOfRotations);
+        return Objects.hash(keyRotationEnabled, rotationInterval, lastRotationTime, numberOfRotations, keyMaterials);
     }
 
     @Override
@@ -131,6 +176,7 @@ public class ShowKeyRotationStatusResponse extends SdkResponse {
         sb.append("    rotationInterval: ").append(toIndentedString(rotationInterval)).append("\n");
         sb.append("    lastRotationTime: ").append(toIndentedString(lastRotationTime)).append("\n");
         sb.append("    numberOfRotations: ").append(toIndentedString(numberOfRotations)).append("\n");
+        sb.append("    keyMaterials: ").append(toIndentedString(keyMaterials)).append("\n");
         sb.append("}");
         return sb.toString();
     }

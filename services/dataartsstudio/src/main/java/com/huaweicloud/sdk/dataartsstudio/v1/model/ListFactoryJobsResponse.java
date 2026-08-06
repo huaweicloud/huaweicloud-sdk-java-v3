@@ -22,7 +22,7 @@ public class ListFactoryJobsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobs")
 
-    private List<JobResp> jobs = null;
+    private List<JobResultV2> jobs = null;
 
     public ListFactoryJobsResponse withTotal(Integer total) {
         this.total = total;
@@ -30,7 +30,7 @@ public class ListFactoryJobsResponse extends SdkResponse {
     }
 
     /**
-     * 作业数量
+     * 作业总数。
      * @return total
      */
     public Integer getTotal() {
@@ -41,12 +41,12 @@ public class ListFactoryJobsResponse extends SdkResponse {
         this.total = total;
     }
 
-    public ListFactoryJobsResponse withJobs(List<JobResp> jobs) {
+    public ListFactoryJobsResponse withJobs(List<JobResultV2> jobs) {
         this.jobs = jobs;
         return this;
     }
 
-    public ListFactoryJobsResponse addJobsItem(JobResp jobsItem) {
+    public ListFactoryJobsResponse addJobsItem(JobResultV2 jobsItem) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class ListFactoryJobsResponse extends SdkResponse {
         return this;
     }
 
-    public ListFactoryJobsResponse withJobs(Consumer<List<JobResp>> jobsSetter) {
+    public ListFactoryJobsResponse withJobs(Consumer<List<JobResultV2>> jobsSetter) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -63,14 +63,14 @@ public class ListFactoryJobsResponse extends SdkResponse {
     }
 
     /**
-     * 作业列表
+     * 作业列表。
      * @return jobs
      */
-    public List<JobResp> getJobs() {
+    public List<JobResultV2> getJobs() {
         return jobs;
     }
 
-    public void setJobs(List<JobResp> jobs) {
+    public void setJobs(List<JobResultV2> jobs) {
         this.jobs = jobs;
     }
 

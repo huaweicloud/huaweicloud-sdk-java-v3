@@ -109,6 +109,8 @@ import com.huaweicloud.sdk.waf.v1.model.CreateIpReputationRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreateIpReputationRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreatePolicyRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreatePolicyResponse;
+import com.huaweicloud.sdk.waf.v1.model.CreatePoolRequest;
+import com.huaweicloud.sdk.waf.v1.model.CreatePoolResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreatePremiumHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.CreatePremiumHostResponse;
 import com.huaweicloud.sdk.waf.v1.model.CreatePrepaidCloudWafRequest;
@@ -157,6 +159,8 @@ import com.huaweicloud.sdk.waf.v1.model.DeleteIpReputationRuleRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeleteIpReputationRuleResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeletePolicyRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeletePolicyResponse;
+import com.huaweicloud.sdk.waf.v1.model.DeletePoolRequest;
+import com.huaweicloud.sdk.waf.v1.model.DeletePoolResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeletePremiumHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.DeletePremiumHostResponse;
 import com.huaweicloud.sdk.waf.v1.model.DeletePrivacyRuleRequest;
@@ -323,6 +327,8 @@ import com.huaweicloud.sdk.waf.v1.model.ShowPolicyGeoipMapRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowPolicyGeoipMapResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowPolicyRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowPolicyResponse;
+import com.huaweicloud.sdk.waf.v1.model.ShowPoolRequest;
+import com.huaweicloud.sdk.waf.v1.model.ShowPoolResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowPremiumHostRequest;
 import com.huaweicloud.sdk.waf.v1.model.ShowPremiumHostResponse;
 import com.huaweicloud.sdk.waf.v1.model.ShowPrivacyRuleRequest;
@@ -1969,6 +1975,34 @@ public class WafAsyncClient {
     }
 
     /**
+     * 创建实例组
+     *
+     * 创建实例组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePoolRequest 请求对象
+     * @return CompletableFuture<CreatePoolResponse>
+     */
+    public CompletableFuture<CreatePoolResponse> createPoolAsync(CreatePoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.createPool);
+    }
+
+    /**
+     * 创建实例组
+     *
+     * 创建实例组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePoolRequest 请求对象
+     * @return AsyncInvoker<CreatePoolRequest, CreatePoolResponse>
+     */
+    public AsyncInvoker<CreatePoolRequest, CreatePoolResponse> createPoolAsyncInvoker(CreatePoolRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.createPool, hcClient);
+    }
+
+    /**
      * 创建独享模式域名或者创建云模式ELB接入模式域名
      *
      * 创建独享模式域名或者创建云模式ELB接入模式域名
@@ -2642,6 +2676,34 @@ public class WafAsyncClient {
     public AsyncInvoker<DeletePolicyRequest, DeletePolicyResponse> deletePolicyAsyncInvoker(
         DeletePolicyRequest request) {
         return new AsyncInvoker<>(request, WafMeta.deletePolicy, hcClient);
+    }
+
+    /**
+     * 删除实例组
+     *
+     * 删除实例组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePoolRequest 请求对象
+     * @return CompletableFuture<DeletePoolResponse>
+     */
+    public CompletableFuture<DeletePoolResponse> deletePoolAsync(DeletePoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.deletePool);
+    }
+
+    /**
+     * 删除实例组
+     *
+     * 删除实例组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePoolRequest 请求对象
+     * @return AsyncInvoker<DeletePoolRequest, DeletePoolResponse>
+     */
+    public AsyncInvoker<DeletePoolRequest, DeletePoolResponse> deletePoolAsyncInvoker(DeletePoolRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.deletePool, hcClient);
     }
 
     /**
@@ -5033,6 +5095,34 @@ public class WafAsyncClient {
     public AsyncInvoker<ShowPolicyGeoipMapRequest, ShowPolicyGeoipMapResponse> showPolicyGeoipMapAsyncInvoker(
         ShowPolicyGeoipMapRequest request) {
         return new AsyncInvoker<>(request, WafMeta.showPolicyGeoipMap, hcClient);
+    }
+
+    /**
+     * 查询实例组详情
+     *
+     * 查询实例组详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPoolRequest 请求对象
+     * @return CompletableFuture<ShowPoolResponse>
+     */
+    public CompletableFuture<ShowPoolResponse> showPoolAsync(ShowPoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, WafMeta.showPool);
+    }
+
+    /**
+     * 查询实例组详情
+     *
+     * 查询实例组详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPoolRequest 请求对象
+     * @return AsyncInvoker<ShowPoolRequest, ShowPoolResponse>
+     */
+    public AsyncInvoker<ShowPoolRequest, ShowPoolResponse> showPoolAsyncInvoker(ShowPoolRequest request) {
+        return new AsyncInvoker<>(request, WafMeta.showPool, hcClient);
     }
 
     /**

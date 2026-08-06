@@ -69,7 +69,7 @@ public class PremiumWafPoolResponse {
     }
 
     /**
-     * 实例组id
+     * **参数解释：** 实例组ID，用于唯一标识一个实例组。 **取值范围：** 不涉及
      * @return id
      */
     public String getId() {
@@ -86,7 +86,7 @@ public class PremiumWafPoolResponse {
     }
 
     /**
-     * 实例组名称
+     * **参数解释：** 实例组名称。 **取值范围：** 不涉及
      * @return name
      */
     public String getName() {
@@ -103,7 +103,7 @@ public class PremiumWafPoolResponse {
     }
 
     /**
-     * 实例组所在region
+     * **参数解释：** 实例组所在的区域（Region）。 **取值范围：** 不涉及
      * @return region
      */
     public String getRegion() {
@@ -120,7 +120,7 @@ public class PremiumWafPoolResponse {
     }
 
     /**
-     * 实例组类型
+     * **参数解释：** 实例组类型。 **取值范围：** - elb：基础elb类型 - elb-v2：elb-v2类型 - elb-shadow：saas化elb类型 - standard-container：反向代理独享引擎组（云内，承载租户专用） - standard-cloud：反向代理独享引擎组（云内） - standard：反向代理独享引擎组（云外） - detector-cloud：旁路检测独享引擎组（云内） - detector：旁路检测独享引擎组（云外）
      * @return type
      */
     public String getType() {
@@ -137,7 +137,7 @@ public class PremiumWafPoolResponse {
     }
 
     /**
-     * 实例组关联的vpc_id
+     * **参数解释：** 实例组关联的虚拟私有云ID。 **取值范围：** 不涉及
      * @return vpcId
      */
     public String getVpcId() {
@@ -154,7 +154,7 @@ public class PremiumWafPoolResponse {
     }
 
     /**
-     * 实例组描述
+     * **参数解释：** 实例组的描述信息。 **取值范围：** 不涉及
      * @return description
      */
     public String getDescription() {
@@ -187,7 +187,7 @@ public class PremiumWafPoolResponse {
     }
 
     /**
-     * 实例组关联的防护域名
+     * **参数解释：** 实例组关联的防护域名列表。 **取值范围：** 不涉及
      * @return hosts
      */
     public List<IdNameEntry> getHosts() {
@@ -220,7 +220,7 @@ public class PremiumWafPoolResponse {
     }
 
     /**
-     * 实例组关联的引擎实例
+     * **参数解释：** 实例组关联的引擎实例列表。 **取值范围：** 不涉及
      * @return instances
      */
     public List<IdNameEntry> getInstances() {
@@ -237,7 +237,7 @@ public class PremiumWafPoolResponse {
     }
 
     /**
-     * 实例组关联的企业计划id
+     * **参数解释：** 实例组关联的企业项目ID。 **取值范围：** - 0：代表default企业项目 - 其他为企业项目ID，长度为36个字符
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -254,7 +254,7 @@ public class PremiumWafPoolResponse {
     }
 
     /**
-     * 实例组创建时间
+     * **参数解释：** 实例组创建时间。Unix时间戳格式，单位为毫秒（ms）。 **取值范围：** 不涉及
      * @return createTime
      */
     public Long getCreateTime() {

@@ -21,7 +21,7 @@ public class CreateKeyRequestBody {
     private String keyAlias;
 
     /**
-     * 密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SECP256K1 - SM2
+     * 密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SECP256K1 - SM2 - ED25519 - HMAC_256 - HMAC_384 - HMAC_512 - HMAC_SM3
      */
     public static final class KeySpecEnum {
 
@@ -70,6 +70,31 @@ public class CreateKeyRequestBody {
          */
         public static final KeySpecEnum SM2 = new KeySpecEnum("SM2");
 
+        /**
+         * Enum ED25519 for value: "ED25519"
+         */
+        public static final KeySpecEnum ED25519 = new KeySpecEnum("ED25519");
+
+        /**
+         * Enum HMAC_256 for value: "HMAC_256"
+         */
+        public static final KeySpecEnum HMAC_256 = new KeySpecEnum("HMAC_256");
+
+        /**
+         * Enum HMAC_384 for value: "HMAC_384"
+         */
+        public static final KeySpecEnum HMAC_384 = new KeySpecEnum("HMAC_384");
+
+        /**
+         * Enum HMAC_512 for value: "HMAC_512"
+         */
+        public static final KeySpecEnum HMAC_512 = new KeySpecEnum("HMAC_512");
+
+        /**
+         * Enum HMAC_SM3 for value: "HMAC_SM3"
+         */
+        public static final KeySpecEnum HMAC_SM3 = new KeySpecEnum("HMAC_SM3");
+
         private static final Map<String, KeySpecEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, KeySpecEnum> createStaticFields() {
@@ -83,6 +108,11 @@ public class CreateKeyRequestBody {
             map.put("EC_P384", EC_P384);
             map.put("SECP256K1", SECP256K1);
             map.put("SM2", SM2);
+            map.put("ED25519", ED25519);
+            map.put("HMAC_256", HMAC_256);
+            map.put("HMAC_384", HMAC_384);
+            map.put("HMAC_512", HMAC_512);
+            map.put("HMAC_SM3", HMAC_SM3);
             return Collections.unmodifiableMap(map);
         }
 
@@ -335,7 +365,7 @@ public class CreateKeyRequestBody {
     }
 
     /**
-     * 密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SECP256K1 - SM2
+     * 密钥生成算法，默认为“AES_256”，枚举如下： - AES_256 - SM4 - RSA_2048 - RSA_3072 - RSA_4096 - EC_P256 - EC_P384 - SECP256K1 - SM2 - ED25519 - HMAC_256 - HMAC_384 - HMAC_512 - HMAC_SM3
      * @return keySpec
      */
     public KeySpecEnum getKeySpec() {

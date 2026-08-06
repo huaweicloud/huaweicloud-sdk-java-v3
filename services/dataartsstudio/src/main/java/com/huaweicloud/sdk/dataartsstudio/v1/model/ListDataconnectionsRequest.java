@@ -35,6 +35,11 @@ public class ListDataconnectionsRequest {
 
     private String offset;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip")
+
+    private String ip;
+
     public ListDataconnectionsRequest withWorkspace(String workspace) {
         this.workspace = workspace;
         return this;
@@ -120,6 +125,23 @@ public class ListDataconnectionsRequest {
         this.offset = offset;
     }
 
+    public ListDataconnectionsRequest withIp(String ip) {
+        this.ip = ip;
+        return this;
+    }
+
+    /**
+     * 数据连接中数据库的ip，支持模糊搜索
+     * @return ip
+     */
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +153,12 @@ public class ListDataconnectionsRequest {
         ListDataconnectionsRequest that = (ListDataconnectionsRequest) obj;
         return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.name, that.name)
             && Objects.equals(this.type, that.type) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.ip, that.ip);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace, name, type, limit, offset);
+        return Objects.hash(workspace, name, type, limit, offset, ip);
     }
 
     @Override
@@ -148,6 +170,7 @@ public class ListDataconnectionsRequest {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("}");
         return sb.toString();
     }

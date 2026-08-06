@@ -35,13 +35,23 @@ public class LtslogInfo {
 
     private String accessUrl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "report_interval")
+
+    private Integer reportInterval;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_report_size")
+
+    private Integer maxReportSize;
+
     public LtslogInfo withStatus(String status) {
         this.status = status;
         return this;
     }
 
     /**
-     * **参数解释**： 配置状态。 **取值范围**： - OPEN：开启。 - CLOSE：关闭。
+     * **参数解释**： 配置状态。 **取值范围**： - OPEN：开启。 - CLOSE：关闭。 - ARCHIVED：历史日志流，不再上报但仍保留LTS访问入口。
      * @return status
      */
     public String getStatus() {
@@ -120,6 +130,40 @@ public class LtslogInfo {
         this.accessUrl = accessUrl;
     }
 
+    public LtslogInfo withReportInterval(Integer reportInterval) {
+        this.reportInterval = reportInterval;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 日志上报频率，单位秒。 **约束限制**： 仅 status=OPEN 的日志流返回此字段，ARCHIVED 状态不返回。 **取值范围**： 5~60。
+     * @return reportInterval
+     */
+    public Integer getReportInterval() {
+        return reportInterval;
+    }
+
+    public void setReportInterval(Integer reportInterval) {
+        this.reportInterval = reportInterval;
+    }
+
+    public LtslogInfo withMaxReportSize(Integer maxReportSize) {
+        this.maxReportSize = maxReportSize;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 单次上报大小，单位字节。 **约束限制**： 仅 status=OPEN 的日志流返回此字段，ARCHIVED 状态不返回。 **取值范围**： 51200~1048576。
+     * @return maxReportSize
+     */
+    public Integer getMaxReportSize() {
+        return maxReportSize;
+    }
+
+    public void setMaxReportSize(Integer maxReportSize) {
+        this.maxReportSize = maxReportSize;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +175,14 @@ public class LtslogInfo {
         LtslogInfo that = (LtslogInfo) obj;
         return Objects.equals(this.status, that.status) && Objects.equals(this.id, that.id)
             && Objects.equals(this.logType, that.logType) && Objects.equals(this.logDesc, that.logDesc)
-            && Objects.equals(this.accessUrl, that.accessUrl);
+            && Objects.equals(this.accessUrl, that.accessUrl)
+            && Objects.equals(this.reportInterval, that.reportInterval)
+            && Objects.equals(this.maxReportSize, that.maxReportSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, id, logType, logDesc, accessUrl);
+        return Objects.hash(status, id, logType, logDesc, accessUrl, reportInterval, maxReportSize);
     }
 
     @Override
@@ -148,6 +194,8 @@ public class LtslogInfo {
         sb.append("    logType: ").append(toIndentedString(logType)).append("\n");
         sb.append("    logDesc: ").append(toIndentedString(logDesc)).append("\n");
         sb.append("    accessUrl: ").append(toIndentedString(accessUrl)).append("\n");
+        sb.append("    reportInterval: ").append(toIndentedString(reportInterval)).append("\n");
+        sb.append("    maxReportSize: ").append(toIndentedString(maxReportSize)).append("\n");
         sb.append("}");
         return sb.toString();
     }

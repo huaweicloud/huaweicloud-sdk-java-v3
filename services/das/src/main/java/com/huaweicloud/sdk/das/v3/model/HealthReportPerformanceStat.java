@@ -19,6 +19,11 @@ public class HealthReportPerformanceStat {
     private List<HealthReportSingleValueStat> peakStats = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_values")
+
+    private List<HealthReportSingleValueStat> lastValues = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ratio_stats")
 
     private List<HealthReportRatioStat> ratioStats = null;
@@ -64,6 +69,39 @@ public class HealthReportPerformanceStat {
 
     public void setPeakStats(List<HealthReportSingleValueStat> peakStats) {
         this.peakStats = peakStats;
+    }
+
+    public HealthReportPerformanceStat withLastValues(List<HealthReportSingleValueStat> lastValues) {
+        this.lastValues = lastValues;
+        return this;
+    }
+
+    public HealthReportPerformanceStat addLastValuesItem(HealthReportSingleValueStat lastValuesItem) {
+        if (this.lastValues == null) {
+            this.lastValues = new ArrayList<>();
+        }
+        this.lastValues.add(lastValuesItem);
+        return this;
+    }
+
+    public HealthReportPerformanceStat withLastValues(Consumer<List<HealthReportSingleValueStat>> lastValuesSetter) {
+        if (this.lastValues == null) {
+            this.lastValues = new ArrayList<>();
+        }
+        lastValuesSetter.accept(this.lastValues);
+        return this;
+    }
+
+    /**
+     * 最新统计信息列表。
+     * @return lastValues
+     */
+    public List<HealthReportSingleValueStat> getLastValues() {
+        return lastValues;
+    }
+
+    public void setLastValues(List<HealthReportSingleValueStat> lastValues) {
+        this.lastValues = lastValues;
     }
 
     public HealthReportPerformanceStat withRatioStats(List<HealthReportRatioStat> ratioStats) {
@@ -142,14 +180,15 @@ public class HealthReportPerformanceStat {
             return false;
         }
         HealthReportPerformanceStat that = (HealthReportPerformanceStat) obj;
-        return Objects.equals(this.peakStats, that.peakStats) && Objects.equals(this.ratioStats, that.ratioStats)
+        return Objects.equals(this.peakStats, that.peakStats) && Objects.equals(this.lastValues, that.lastValues)
+            && Objects.equals(this.ratioStats, that.ratioStats)
             && Objects.equals(this.analyzeSuccess, that.analyzeSuccess)
             && Objects.equals(this.errorMessage, that.errorMessage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(peakStats, ratioStats, analyzeSuccess, errorMessage);
+        return Objects.hash(peakStats, lastValues, ratioStats, analyzeSuccess, errorMessage);
     }
 
     @Override
@@ -157,6 +196,7 @@ public class HealthReportPerformanceStat {
         StringBuilder sb = new StringBuilder();
         sb.append("class HealthReportPerformanceStat {\n");
         sb.append("    peakStats: ").append(toIndentedString(peakStats)).append("\n");
+        sb.append("    lastValues: ").append(toIndentedString(lastValues)).append("\n");
         sb.append("    ratioStats: ").append(toIndentedString(ratioStats)).append("\n");
         sb.append("    analyzeSuccess: ").append(toIndentedString(analyzeSuccess)).append("\n");
         sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");

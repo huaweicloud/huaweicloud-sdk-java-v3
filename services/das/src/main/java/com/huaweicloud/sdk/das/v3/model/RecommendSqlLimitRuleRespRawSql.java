@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.das.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -13,7 +14,7 @@ public class RecommendSqlLimitRuleRespRawSql {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "session_id")
 
-    private String sessionId;
+    private BigDecimal sessionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host")
@@ -31,11 +32,21 @@ public class RecommendSqlLimitRuleRespRawSql {
     private String db;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user")
+
+    private String user;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sql_type")
+
+    private String sqlType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
     private Long time;
 
-    public RecommendSqlLimitRuleRespRawSql withSessionId(String sessionId) {
+    public RecommendSqlLimitRuleRespRawSql withSessionId(BigDecimal sessionId) {
         this.sessionId = sessionId;
         return this;
     }
@@ -44,11 +55,11 @@ public class RecommendSqlLimitRuleRespRawSql {
      * 会话id
      * @return sessionId
      */
-    public String getSessionId() {
+    public BigDecimal getSessionId() {
         return sessionId;
     }
 
-    public void setSessionId(String sessionId) {
+    public void setSessionId(BigDecimal sessionId) {
         this.sessionId = sessionId;
     }
 
@@ -103,6 +114,40 @@ public class RecommendSqlLimitRuleRespRawSql {
         this.db = db;
     }
 
+    public RecommendSqlLimitRuleRespRawSql withUser(String user) {
+        this.user = user;
+        return this;
+    }
+
+    /**
+     * 会话用户名
+     * @return user
+     */
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public RecommendSqlLimitRuleRespRawSql withSqlType(String sqlType) {
+        this.sqlType = sqlType;
+        return this;
+    }
+
+    /**
+     * SQL类型
+     * @return sqlType
+     */
+    public String getSqlType() {
+        return sqlType;
+    }
+
+    public void setSqlType(String sqlType) {
+        this.sqlType = sqlType;
+    }
+
     public RecommendSqlLimitRuleRespRawSql withTime(Long time) {
         this.time = time;
         return this;
@@ -131,12 +176,13 @@ public class RecommendSqlLimitRuleRespRawSql {
         RecommendSqlLimitRuleRespRawSql that = (RecommendSqlLimitRuleRespRawSql) obj;
         return Objects.equals(this.sessionId, that.sessionId) && Objects.equals(this.host, that.host)
             && Objects.equals(this.sql, that.sql) && Objects.equals(this.db, that.db)
+            && Objects.equals(this.user, that.user) && Objects.equals(this.sqlType, that.sqlType)
             && Objects.equals(this.time, that.time);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sessionId, host, sql, db, time);
+        return Objects.hash(sessionId, host, sql, db, user, sqlType, time);
     }
 
     @Override
@@ -147,6 +193,8 @@ public class RecommendSqlLimitRuleRespRawSql {
         sb.append("    host: ").append(toIndentedString(host)).append("\n");
         sb.append("    sql: ").append(toIndentedString(sql)).append("\n");
         sb.append("    db: ").append(toIndentedString(db)).append("\n");
+        sb.append("    user: ").append(toIndentedString(user)).append("\n");
+        sb.append("    sqlType: ").append(toIndentedString(sqlType)).append("\n");
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("}");
         return sb.toString();

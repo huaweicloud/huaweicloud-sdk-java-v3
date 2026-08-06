@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * HealthReportRiskSuggestion
+ * 建议优化操作
  */
 public class HealthReportRiskSuggestion {
 
@@ -26,7 +26,7 @@ public class HealthReportRiskSuggestion {
     }
 
     /**
-     * 建议优化措施编码。
+     * 建议优化措施编码
      * @return suggestionCode
      */
     public String getSuggestionCode() {
@@ -43,7 +43,7 @@ public class HealthReportRiskSuggestion {
     }
 
     /**
-     * 建议优化措施。
+     * 建议优化措施
      * @return suggestionContent
      */
     public String getSuggestionContent() {

@@ -13,8 +13,12 @@ import com.huaweicloud.sdk.kms.v2.model.CancelKeyDeletionRequest;
 import com.huaweicloud.sdk.kms.v2.model.CancelKeyDeletionResponse;
 import com.huaweicloud.sdk.kms.v2.model.CancelSelfGrantRequest;
 import com.huaweicloud.sdk.kms.v2.model.CancelSelfGrantResponse;
+import com.huaweicloud.sdk.kms.v2.model.CreateAccessPointRequest;
+import com.huaweicloud.sdk.kms.v2.model.CreateAccessPointResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateAliasRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateAliasResponse;
+import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyCapsuleRequest;
+import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyCapsuleResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyWithoutPlaintextRequest;
@@ -23,6 +27,8 @@ import com.huaweicloud.sdk.kms.v2.model.CreateEcDatakeyPairRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateEcDatakeyPairResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateGrantRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateGrantResponse;
+import com.huaweicloud.sdk.kms.v2.model.CreateKeyPolicyRequest;
+import com.huaweicloud.sdk.kms.v2.model.CreateKeyPolicyResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateKeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateKeyResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateKeyStoreRequest;
@@ -39,12 +45,18 @@ import com.huaweicloud.sdk.kms.v2.model.CreateRsaDatakeyPairRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateRsaDatakeyPairResponse;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDataRequest;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDataResponse;
+import com.huaweicloud.sdk.kms.v2.model.DecryptDatakeyCapsuleRequest;
+import com.huaweicloud.sdk.kms.v2.model.DecryptDatakeyCapsuleResponse;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDatakeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDatakeyResponse;
+import com.huaweicloud.sdk.kms.v2.model.DeleteAccessPointRequest;
+import com.huaweicloud.sdk.kms.v2.model.DeleteAccessPointResponse;
 import com.huaweicloud.sdk.kms.v2.model.DeleteAliasRequest;
 import com.huaweicloud.sdk.kms.v2.model.DeleteAliasResponse;
 import com.huaweicloud.sdk.kms.v2.model.DeleteImportedKeyMaterialRequest;
 import com.huaweicloud.sdk.kms.v2.model.DeleteImportedKeyMaterialResponse;
+import com.huaweicloud.sdk.kms.v2.model.DeleteKeyPolicyRequest;
+import com.huaweicloud.sdk.kms.v2.model.DeleteKeyPolicyResponse;
 import com.huaweicloud.sdk.kms.v2.model.DeleteKeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.DeleteKeyResponse;
 import com.huaweicloud.sdk.kms.v2.model.DeleteKeyStoreRequest;
@@ -53,12 +65,18 @@ import com.huaweicloud.sdk.kms.v2.model.DeleteTagRequest;
 import com.huaweicloud.sdk.kms.v2.model.DeleteTagResponse;
 import com.huaweicloud.sdk.kms.v2.model.DeriveSharedSecretRequest;
 import com.huaweicloud.sdk.kms.v2.model.DeriveSharedSecretResponse;
+import com.huaweicloud.sdk.kms.v2.model.DisableAccessPointRequest;
+import com.huaweicloud.sdk.kms.v2.model.DisableAccessPointResponse;
 import com.huaweicloud.sdk.kms.v2.model.DisableKeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.DisableKeyResponse;
 import com.huaweicloud.sdk.kms.v2.model.DisableKeyRotationRequest;
 import com.huaweicloud.sdk.kms.v2.model.DisableKeyRotationResponse;
 import com.huaweicloud.sdk.kms.v2.model.DisableKeyStoreRequest;
 import com.huaweicloud.sdk.kms.v2.model.DisableKeyStoreResponse;
+import com.huaweicloud.sdk.kms.v2.model.DownloadAccessPointPrivateKeyRequest;
+import com.huaweicloud.sdk.kms.v2.model.DownloadAccessPointPrivateKeyResponse;
+import com.huaweicloud.sdk.kms.v2.model.EnableAccessPointRequest;
+import com.huaweicloud.sdk.kms.v2.model.EnableAccessPointResponse;
 import com.huaweicloud.sdk.kms.v2.model.EnableKeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.EnableKeyResponse;
 import com.huaweicloud.sdk.kms.v2.model.EnableKeyRotationRequest;
@@ -73,12 +91,16 @@ import com.huaweicloud.sdk.kms.v2.model.GenerateMacRequest;
 import com.huaweicloud.sdk.kms.v2.model.GenerateMacResponse;
 import com.huaweicloud.sdk.kms.v2.model.ImportKeyMaterialRequest;
 import com.huaweicloud.sdk.kms.v2.model.ImportKeyMaterialResponse;
+import com.huaweicloud.sdk.kms.v2.model.ListAccessPointRequest;
+import com.huaweicloud.sdk.kms.v2.model.ListAccessPointResponse;
 import com.huaweicloud.sdk.kms.v2.model.ListAliasesRequest;
 import com.huaweicloud.sdk.kms.v2.model.ListAliasesResponse;
 import com.huaweicloud.sdk.kms.v2.model.ListGrantsRequest;
 import com.huaweicloud.sdk.kms.v2.model.ListGrantsResponse;
 import com.huaweicloud.sdk.kms.v2.model.ListKeyDetailRequest;
 import com.huaweicloud.sdk.kms.v2.model.ListKeyDetailResponse;
+import com.huaweicloud.sdk.kms.v2.model.ListKeyPolicyRequest;
+import com.huaweicloud.sdk.kms.v2.model.ListKeyPolicyResponse;
 import com.huaweicloud.sdk.kms.v2.model.ListKeyStoresRequest;
 import com.huaweicloud.sdk.kms.v2.model.ListKeyStoresResponse;
 import com.huaweicloud.sdk.kms.v2.model.ListKeysRequest;
@@ -95,6 +117,10 @@ import com.huaweicloud.sdk.kms.v2.model.ReEncryptRequest;
 import com.huaweicloud.sdk.kms.v2.model.ReEncryptResponse;
 import com.huaweicloud.sdk.kms.v2.model.ReplicateKeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.ReplicateKeyResponse;
+import com.huaweicloud.sdk.kms.v2.model.RotateOnDemandRequest;
+import com.huaweicloud.sdk.kms.v2.model.RotateOnDemandResponse;
+import com.huaweicloud.sdk.kms.v2.model.ShowKeyPolicyRequest;
+import com.huaweicloud.sdk.kms.v2.model.ShowKeyPolicyResponse;
 import com.huaweicloud.sdk.kms.v2.model.ShowKeyRotationStatusRequest;
 import com.huaweicloud.sdk.kms.v2.model.ShowKeyRotationStatusResponse;
 import com.huaweicloud.sdk.kms.v2.model.ShowKeyStoreRequest;
@@ -117,6 +143,8 @@ import com.huaweicloud.sdk.kms.v2.model.UpdateKeyAliasRequest;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyAliasResponse;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyDescriptionRequest;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyDescriptionResponse;
+import com.huaweicloud.sdk.kms.v2.model.UpdateKeyPolicyRequest;
+import com.huaweicloud.sdk.kms.v2.model.UpdateKeyPolicyResponse;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyRotationIntervalRequest;
 import com.huaweicloud.sdk.kms.v2.model.UpdateKeyRotationIntervalResponse;
 import com.huaweicloud.sdk.kms.v2.model.UpdatePrimaryRegionRequest;
@@ -306,6 +334,35 @@ public class KmsClient {
     }
 
     /**
+     * 创建接入点
+     *
+     * 用于创建接入点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAccessPointRequest 请求对象
+     * @return CreateAccessPointResponse
+     */
+    public CreateAccessPointResponse createAccessPoint(CreateAccessPointRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.createAccessPoint);
+    }
+
+    /**
+     * 创建接入点
+     *
+     * 用于创建接入点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAccessPointRequest 请求对象
+     * @return SyncInvoker<CreateAccessPointRequest, CreateAccessPointResponse>
+     */
+    public SyncInvoker<CreateAccessPointRequest, CreateAccessPointResponse> createAccessPointInvoker(
+        CreateAccessPointRequest request) {
+        return new SyncInvoker<>(request, KmsMeta.createAccessPoint, hcClient);
+    }
+
+    /**
      * 
      *
      * 
@@ -357,6 +414,35 @@ public class KmsClient {
      */
     public SyncInvoker<CreateDatakeyRequest, CreateDatakeyResponse> createDatakeyInvoker(CreateDatakeyRequest request) {
         return new SyncInvoker<>(request, KmsMeta.createDatakey, hcClient);
+    }
+
+    /**
+     * 创建密钥胶囊
+     *
+     * 创建密钥胶囊
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDatakeyCapsuleRequest 请求对象
+     * @return CreateDatakeyCapsuleResponse
+     */
+    public CreateDatakeyCapsuleResponse createDatakeyCapsule(CreateDatakeyCapsuleRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.createDatakeyCapsule);
+    }
+
+    /**
+     * 创建密钥胶囊
+     *
+     * 创建密钥胶囊
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDatakeyCapsuleRequest 请求对象
+     * @return SyncInvoker<CreateDatakeyCapsuleRequest, CreateDatakeyCapsuleResponse>
+     */
+    public SyncInvoker<CreateDatakeyCapsuleRequest, CreateDatakeyCapsuleResponse> createDatakeyCapsuleInvoker(
+        CreateDatakeyCapsuleRequest request) {
+        return new SyncInvoker<>(request, KmsMeta.createDatakeyCapsule, hcClient);
     }
 
     /**
@@ -480,6 +566,35 @@ public class KmsClient {
      */
     public SyncInvoker<CreateKeyRequest, CreateKeyResponse> createKeyInvoker(CreateKeyRequest request) {
         return new SyncInvoker<>(request, KmsMeta.createKey, hcClient);
+    }
+
+    /**
+     * 创建密钥策略
+     *
+     * 创建密钥策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateKeyPolicyRequest 请求对象
+     * @return CreateKeyPolicyResponse
+     */
+    public CreateKeyPolicyResponse createKeyPolicy(CreateKeyPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.createKeyPolicy);
+    }
+
+    /**
+     * 创建密钥策略
+     *
+     * 创建密钥策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateKeyPolicyRequest 请求对象
+     * @return SyncInvoker<CreateKeyPolicyRequest, CreateKeyPolicyResponse>
+     */
+    public SyncInvoker<CreateKeyPolicyRequest, CreateKeyPolicyResponse> createKeyPolicyInvoker(
+        CreateKeyPolicyRequest request) {
+        return new SyncInvoker<>(request, KmsMeta.createKeyPolicy, hcClient);
     }
 
     /**
@@ -715,6 +830,64 @@ public class KmsClient {
     }
 
     /**
+     * 解密密钥胶囊
+     *
+     * 解密密钥胶囊
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DecryptDatakeyCapsuleRequest 请求对象
+     * @return DecryptDatakeyCapsuleResponse
+     */
+    public DecryptDatakeyCapsuleResponse decryptDatakeyCapsule(DecryptDatakeyCapsuleRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.decryptDatakeyCapsule);
+    }
+
+    /**
+     * 解密密钥胶囊
+     *
+     * 解密密钥胶囊
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DecryptDatakeyCapsuleRequest 请求对象
+     * @return SyncInvoker<DecryptDatakeyCapsuleRequest, DecryptDatakeyCapsuleResponse>
+     */
+    public SyncInvoker<DecryptDatakeyCapsuleRequest, DecryptDatakeyCapsuleResponse> decryptDatakeyCapsuleInvoker(
+        DecryptDatakeyCapsuleRequest request) {
+        return new SyncInvoker<>(request, KmsMeta.decryptDatakeyCapsule, hcClient);
+    }
+
+    /**
+     * 删除接入点
+     *
+     * 删除接入点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAccessPointRequest 请求对象
+     * @return DeleteAccessPointResponse
+     */
+    public DeleteAccessPointResponse deleteAccessPoint(DeleteAccessPointRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.deleteAccessPoint);
+    }
+
+    /**
+     * 删除接入点
+     *
+     * 删除接入点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAccessPointRequest 请求对象
+     * @return SyncInvoker<DeleteAccessPointRequest, DeleteAccessPointResponse>
+     */
+    public SyncInvoker<DeleteAccessPointRequest, DeleteAccessPointResponse> deleteAccessPointInvoker(
+        DeleteAccessPointRequest request) {
+        return new SyncInvoker<>(request, KmsMeta.deleteAccessPoint, hcClient);
+    }
+
+    /**
      * 
      *
      * 删除别名
@@ -797,6 +970,35 @@ public class KmsClient {
      */
     public SyncInvoker<DeleteKeyRequest, DeleteKeyResponse> deleteKeyInvoker(DeleteKeyRequest request) {
         return new SyncInvoker<>(request, KmsMeta.deleteKey, hcClient);
+    }
+
+    /**
+     * 删除密钥策略
+     *
+     * 删除密钥策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteKeyPolicyRequest 请求对象
+     * @return DeleteKeyPolicyResponse
+     */
+    public DeleteKeyPolicyResponse deleteKeyPolicy(DeleteKeyPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.deleteKeyPolicy);
+    }
+
+    /**
+     * 删除密钥策略
+     *
+     * 删除密钥策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteKeyPolicyRequest 请求对象
+     * @return SyncInvoker<DeleteKeyPolicyRequest, DeleteKeyPolicyResponse>
+     */
+    public SyncInvoker<DeleteKeyPolicyRequest, DeleteKeyPolicyResponse> deleteKeyPolicyInvoker(
+        DeleteKeyPolicyRequest request) {
+        return new SyncInvoker<>(request, KmsMeta.deleteKeyPolicy, hcClient);
     }
 
     /**
@@ -886,6 +1088,35 @@ public class KmsClient {
     }
 
     /**
+     * 禁用接入点
+     *
+     * 禁用接入点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisableAccessPointRequest 请求对象
+     * @return DisableAccessPointResponse
+     */
+    public DisableAccessPointResponse disableAccessPoint(DisableAccessPointRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.disableAccessPoint);
+    }
+
+    /**
+     * 禁用接入点
+     *
+     * 禁用接入点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisableAccessPointRequest 请求对象
+     * @return SyncInvoker<DisableAccessPointRequest, DisableAccessPointResponse>
+     */
+    public SyncInvoker<DisableAccessPointRequest, DisableAccessPointResponse> disableAccessPointInvoker(
+        DisableAccessPointRequest request) {
+        return new SyncInvoker<>(request, KmsMeta.disableAccessPoint, hcClient);
+    }
+
+    /**
      * 禁用密钥
      *
      * - 功能介绍：禁用密钥，密钥禁用后不可以使用。
@@ -971,6 +1202,65 @@ public class KmsClient {
     public SyncInvoker<DisableKeyStoreRequest, DisableKeyStoreResponse> disableKeyStoreInvoker(
         DisableKeyStoreRequest request) {
         return new SyncInvoker<>(request, KmsMeta.disableKeyStore, hcClient);
+    }
+
+    /**
+     * 下载通用接入点私钥
+     *
+     * 用于下载通用接入点私钥
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadAccessPointPrivateKeyRequest 请求对象
+     * @return DownloadAccessPointPrivateKeyResponse
+     */
+    public DownloadAccessPointPrivateKeyResponse downloadAccessPointPrivateKey(
+        DownloadAccessPointPrivateKeyRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.downloadAccessPointPrivateKey);
+    }
+
+    /**
+     * 下载通用接入点私钥
+     *
+     * 用于下载通用接入点私钥
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadAccessPointPrivateKeyRequest 请求对象
+     * @return SyncInvoker<DownloadAccessPointPrivateKeyRequest, DownloadAccessPointPrivateKeyResponse>
+     */
+    public SyncInvoker<DownloadAccessPointPrivateKeyRequest, DownloadAccessPointPrivateKeyResponse> downloadAccessPointPrivateKeyInvoker(
+        DownloadAccessPointPrivateKeyRequest request) {
+        return new SyncInvoker<>(request, KmsMeta.downloadAccessPointPrivateKey, hcClient);
+    }
+
+    /**
+     * 启用接入点
+     *
+     * 启用接入点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableAccessPointRequest 请求对象
+     * @return EnableAccessPointResponse
+     */
+    public EnableAccessPointResponse enableAccessPoint(EnableAccessPointRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.enableAccessPoint);
+    }
+
+    /**
+     * 启用接入点
+     *
+     * 启用接入点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableAccessPointRequest 请求对象
+     * @return SyncInvoker<EnableAccessPointRequest, EnableAccessPointResponse>
+     */
+    public SyncInvoker<EnableAccessPointRequest, EnableAccessPointResponse> enableAccessPointInvoker(
+        EnableAccessPointRequest request) {
+        return new SyncInvoker<>(request, KmsMeta.enableAccessPoint, hcClient);
     }
 
     /**
@@ -1182,6 +1472,35 @@ public class KmsClient {
     }
 
     /**
+     * 查询接入点列表
+     *
+     * 用于查询接入点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAccessPointRequest 请求对象
+     * @return ListAccessPointResponse
+     */
+    public ListAccessPointResponse listAccessPoint(ListAccessPointRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.listAccessPoint);
+    }
+
+    /**
+     * 查询接入点列表
+     *
+     * 用于查询接入点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAccessPointRequest 请求对象
+     * @return SyncInvoker<ListAccessPointRequest, ListAccessPointResponse>
+     */
+    public SyncInvoker<ListAccessPointRequest, ListAccessPointResponse> listAccessPointInvoker(
+        ListAccessPointRequest request) {
+        return new SyncInvoker<>(request, KmsMeta.listAccessPoint, hcClient);
+    }
+
+    /**
      * 
      *
      * 查询一个密钥关联的所有别名
@@ -1263,6 +1582,34 @@ public class KmsClient {
      */
     public SyncInvoker<ListKeyDetailRequest, ListKeyDetailResponse> listKeyDetailInvoker(ListKeyDetailRequest request) {
         return new SyncInvoker<>(request, KmsMeta.listKeyDetail, hcClient);
+    }
+
+    /**
+     * 查询密钥策略列表
+     *
+     * 查询密钥策略列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListKeyPolicyRequest 请求对象
+     * @return ListKeyPolicyResponse
+     */
+    public ListKeyPolicyResponse listKeyPolicy(ListKeyPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.listKeyPolicy);
+    }
+
+    /**
+     * 查询密钥策略列表
+     *
+     * 查询密钥策略列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListKeyPolicyRequest 请求对象
+     * @return SyncInvoker<ListKeyPolicyRequest, ListKeyPolicyResponse>
+     */
+    public SyncInvoker<ListKeyPolicyRequest, ListKeyPolicyResponse> listKeyPolicyInvoker(ListKeyPolicyRequest request) {
+        return new SyncInvoker<>(request, KmsMeta.listKeyPolicy, hcClient);
     }
 
     /**
@@ -1493,6 +1840,63 @@ public class KmsClient {
      */
     public SyncInvoker<ReplicateKeyRequest, ReplicateKeyResponse> replicateKeyInvoker(ReplicateKeyRequest request) {
         return new SyncInvoker<>(request, KmsMeta.replicateKey, hcClient);
+    }
+
+    /**
+     * 按需轮转密钥
+     *
+     * 用于外部密钥的密钥材料，需要用户提前导入密钥材料后才能执行轮转
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RotateOnDemandRequest 请求对象
+     * @return RotateOnDemandResponse
+     */
+    public RotateOnDemandResponse rotateOnDemand(RotateOnDemandRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.rotateOnDemand);
+    }
+
+    /**
+     * 按需轮转密钥
+     *
+     * 用于外部密钥的密钥材料，需要用户提前导入密钥材料后才能执行轮转
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RotateOnDemandRequest 请求对象
+     * @return SyncInvoker<RotateOnDemandRequest, RotateOnDemandResponse>
+     */
+    public SyncInvoker<RotateOnDemandRequest, RotateOnDemandResponse> rotateOnDemandInvoker(
+        RotateOnDemandRequest request) {
+        return new SyncInvoker<>(request, KmsMeta.rotateOnDemand, hcClient);
+    }
+
+    /**
+     * 查询密钥策略
+     *
+     * 查询密钥策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKeyPolicyRequest 请求对象
+     * @return ShowKeyPolicyResponse
+     */
+    public ShowKeyPolicyResponse showKeyPolicy(ShowKeyPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.showKeyPolicy);
+    }
+
+    /**
+     * 查询密钥策略
+     *
+     * 查询密钥策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKeyPolicyRequest 请求对象
+     * @return SyncInvoker<ShowKeyPolicyRequest, ShowKeyPolicyResponse>
+     */
+    public SyncInvoker<ShowKeyPolicyRequest, ShowKeyPolicyResponse> showKeyPolicyInvoker(ShowKeyPolicyRequest request) {
+        return new SyncInvoker<>(request, KmsMeta.showKeyPolicy, hcClient);
     }
 
     /**
@@ -1762,6 +2166,35 @@ public class KmsClient {
     public SyncInvoker<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResponse> updateKeyDescriptionInvoker(
         UpdateKeyDescriptionRequest request) {
         return new SyncInvoker<>(request, KmsMeta.updateKeyDescription, hcClient);
+    }
+
+    /**
+     * 更新密钥策略
+     *
+     * 更新密钥策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateKeyPolicyRequest 请求对象
+     * @return UpdateKeyPolicyResponse
+     */
+    public UpdateKeyPolicyResponse updateKeyPolicy(UpdateKeyPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.updateKeyPolicy);
+    }
+
+    /**
+     * 更新密钥策略
+     *
+     * 更新密钥策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateKeyPolicyRequest 请求对象
+     * @return SyncInvoker<UpdateKeyPolicyRequest, UpdateKeyPolicyResponse>
+     */
+    public SyncInvoker<UpdateKeyPolicyRequest, UpdateKeyPolicyResponse> updateKeyPolicyInvoker(
+        UpdateKeyPolicyRequest request) {
+        return new SyncInvoker<>(request, KmsMeta.updateKeyPolicy, hcClient);
     }
 
     /**

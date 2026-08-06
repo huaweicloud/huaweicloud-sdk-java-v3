@@ -24,6 +24,11 @@ public class HealthReportDiskStat {
     private List<HealthReportRatioStat> ratioStats = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_stat")
+
+    private List<HealthReportSingleValueStat> lastStat = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "analyze_success")
 
     private Boolean analyzeSuccess;
@@ -99,6 +104,39 @@ public class HealthReportDiskStat {
         this.ratioStats = ratioStats;
     }
 
+    public HealthReportDiskStat withLastStat(List<HealthReportSingleValueStat> lastStat) {
+        this.lastStat = lastStat;
+        return this;
+    }
+
+    public HealthReportDiskStat addLastStatItem(HealthReportSingleValueStat lastStatItem) {
+        if (this.lastStat == null) {
+            this.lastStat = new ArrayList<>();
+        }
+        this.lastStat.add(lastStatItem);
+        return this;
+    }
+
+    public HealthReportDiskStat withLastStat(Consumer<List<HealthReportSingleValueStat>> lastStatSetter) {
+        if (this.lastStat == null) {
+            this.lastStat = new ArrayList<>();
+        }
+        lastStatSetter.accept(this.lastStat);
+        return this;
+    }
+
+    /**
+     * 最新统计信息列表。
+     * @return lastStat
+     */
+    public List<HealthReportSingleValueStat> getLastStat() {
+        return lastStat;
+    }
+
+    public void setLastStat(List<HealthReportSingleValueStat> lastStat) {
+        this.lastStat = lastStat;
+    }
+
     public HealthReportDiskStat withAnalyzeSuccess(Boolean analyzeSuccess) {
         this.analyzeSuccess = analyzeSuccess;
         return this;
@@ -143,13 +181,13 @@ public class HealthReportDiskStat {
         }
         HealthReportDiskStat that = (HealthReportDiskStat) obj;
         return Objects.equals(this.peakStats, that.peakStats) && Objects.equals(this.ratioStats, that.ratioStats)
-            && Objects.equals(this.analyzeSuccess, that.analyzeSuccess)
+            && Objects.equals(this.lastStat, that.lastStat) && Objects.equals(this.analyzeSuccess, that.analyzeSuccess)
             && Objects.equals(this.errorMessage, that.errorMessage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(peakStats, ratioStats, analyzeSuccess, errorMessage);
+        return Objects.hash(peakStats, ratioStats, lastStat, analyzeSuccess, errorMessage);
     }
 
     @Override
@@ -158,6 +196,7 @@ public class HealthReportDiskStat {
         sb.append("class HealthReportDiskStat {\n");
         sb.append("    peakStats: ").append(toIndentedString(peakStats)).append("\n");
         sb.append("    ratioStats: ").append(toIndentedString(ratioStats)).append("\n");
+        sb.append("    lastStat: ").append(toIndentedString(lastStat)).append("\n");
         sb.append("    analyzeSuccess: ").append(toIndentedString(analyzeSuccess)).append("\n");
         sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
         sb.append("}");

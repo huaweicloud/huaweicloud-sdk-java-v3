@@ -475,6 +475,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelRelationsReques
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelRelationsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTaskTableReferenceDetailRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTaskTableReferenceDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspaceRolesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspaceRolesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspacesForUserRequest;
@@ -6031,7 +6033,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 查询作业列表
      *
-     * 查询作业列表清单
+     * 查询作业列表清单，支持按作业类型、名称、ID、状态、标签、数据连接等条件筛选。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6045,7 +6047,7 @@ public class DataArtsStudioAsyncClient {
     /**
      * 查询作业列表
      *
-     * 查询作业列表清单
+     * 查询作业列表清单，支持按作业类型、名称、ID、状态、标签、数据连接等条件筛选。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -7421,6 +7423,36 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<ListTableModelsRequest, ListTableModelsResponse> listTableModelsAsyncInvoker(
         ListTableModelsRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.listTableModels, hcClient);
+    }
+
+    /**
+     * 查询单表的作业表引用详情
+     *
+     * 根据表名查询该表被哪些作业引用的详细信息，支持按输入输出类型、工作空间等条件筛选。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTaskTableReferenceDetailRequest 请求对象
+     * @return CompletableFuture<ListTaskTableReferenceDetailResponse>
+     */
+    public CompletableFuture<ListTaskTableReferenceDetailResponse> listTaskTableReferenceDetailAsync(
+        ListTaskTableReferenceDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.listTaskTableReferenceDetail);
+    }
+
+    /**
+     * 查询单表的作业表引用详情
+     *
+     * 根据表名查询该表被哪些作业引用的详细信息，支持按输入输出类型、工作空间等条件筛选。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTaskTableReferenceDetailRequest 请求对象
+     * @return AsyncInvoker<ListTaskTableReferenceDetailRequest, ListTaskTableReferenceDetailResponse>
+     */
+    public AsyncInvoker<ListTaskTableReferenceDetailRequest, ListTaskTableReferenceDetailResponse> listTaskTableReferenceDetailAsyncInvoker(
+        ListTaskTableReferenceDetailRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.listTaskTableReferenceDetail, hcClient);
     }
 
     /**

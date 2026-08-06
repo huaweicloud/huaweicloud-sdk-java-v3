@@ -156,6 +156,10 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ListScattersUsingRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListScattersUsingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListSubTaskCaseOverstockUsingRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListSubTaskCaseOverstockUsingResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListSubTasksByPostUsingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListSubTasksByPostUsingResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListSubTestCaseByConditionsUsingRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListSubTestCaseByConditionsUsingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskAssignCasesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskAssignCasesResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskResultsDetailRequest;
@@ -2127,6 +2131,65 @@ public class CloudtestClient {
     public SyncInvoker<ListSubTaskCaseOverstockUsingRequest, ListSubTaskCaseOverstockUsingResponse> listSubTaskCaseOverstockUsingInvoker(
         ListSubTaskCaseOverstockUsingRequest request) {
         return new SyncInvoker<>(request, CloudtestMeta.listSubTaskCaseOverstockUsing, hcClient);
+    }
+
+    /**
+     * 根据条件查询子任务集合
+     *
+     * 根据条件查询子任务集合
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubTasksByPostUsingRequest 请求对象
+     * @return ListSubTasksByPostUsingResponse
+     */
+    public ListSubTasksByPostUsingResponse listSubTasksByPostUsing(ListSubTasksByPostUsingRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.listSubTasksByPostUsing);
+    }
+
+    /**
+     * 根据条件查询子任务集合
+     *
+     * 根据条件查询子任务集合
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubTasksByPostUsingRequest 请求对象
+     * @return SyncInvoker<ListSubTasksByPostUsingRequest, ListSubTasksByPostUsingResponse>
+     */
+    public SyncInvoker<ListSubTasksByPostUsingRequest, ListSubTasksByPostUsingResponse> listSubTasksByPostUsingInvoker(
+        ListSubTasksByPostUsingRequest request) {
+        return new SyncInvoker<>(request, CloudtestMeta.listSubTasksByPostUsing, hcClient);
+    }
+
+    /**
+     * 批量查询子任务用例
+     *
+     * 批量查询子任务用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubTestCaseByConditionsUsingRequest 请求对象
+     * @return ListSubTestCaseByConditionsUsingResponse
+     */
+    public ListSubTestCaseByConditionsUsingResponse listSubTestCaseByConditionsUsing(
+        ListSubTestCaseByConditionsUsingRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.listSubTestCaseByConditionsUsing);
+    }
+
+    /**
+     * 批量查询子任务用例
+     *
+     * 批量查询子任务用例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubTestCaseByConditionsUsingRequest 请求对象
+     * @return SyncInvoker<ListSubTestCaseByConditionsUsingRequest, ListSubTestCaseByConditionsUsingResponse>
+     */
+    public SyncInvoker<ListSubTestCaseByConditionsUsingRequest, ListSubTestCaseByConditionsUsingResponse> listSubTestCaseByConditionsUsingInvoker(
+        ListSubTestCaseByConditionsUsingRequest request) {
+        return new SyncInvoker<>(request, CloudtestMeta.listSubTestCaseByConditionsUsing, hcClient);
     }
 
     /**

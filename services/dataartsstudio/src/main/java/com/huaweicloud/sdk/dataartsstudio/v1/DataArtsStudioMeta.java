@@ -572,6 +572,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelRelationsReques
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelRelationsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTaskTableReferenceDetailRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTaskTableReferenceDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspaceRolesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspaceRolesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspacesForUserRequest;
@@ -7175,6 +7177,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDataconnectionsRequest::getOffset, ListDataconnectionsRequest::setOffset));
+        builder.<String>withRequestField("ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDataconnectionsRequest::getIp, ListDataconnectionsRequest::setIp));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -7977,11 +7984,57 @@ public class DataArtsStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFactoryJobsRequest::getJobName, ListFactoryJobsRequest::setJobName));
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryJobsRequest::getJobId, ListFactoryJobsRequest::setJobId));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryJobsRequest::getStatus, ListFactoryJobsRequest::setStatus));
+        builder.<Boolean>withRequestField("need_alarms",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListFactoryJobsRequest::getNeedAlarms, ListFactoryJobsRequest::setNeedAlarms));
         builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFactoryJobsRequest::getTags, ListFactoryJobsRequest::setTags));
+        builder.<Boolean>withRequestField("match_all_tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListFactoryJobsRequest::getMatchAllTags, ListFactoryJobsRequest::setMatchAllTags));
+        builder.<String>withRequestField("connection_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryJobsRequest::getConnectionName,
+                ListFactoryJobsRequest::setConnectionName));
+        builder.<String>withRequestField("source_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryJobsRequest::getSourceType, ListFactoryJobsRequest::setSourceType));
+        builder.<String>withRequestField("source_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryJobsRequest::getSourceName, ListFactoryJobsRequest::setSourceName));
+        builder.<String>withRequestField("sink_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryJobsRequest::getSinkType, ListFactoryJobsRequest::setSinkType));
+        builder.<String>withRequestField("sink_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryJobsRequest::getSinkName, ListFactoryJobsRequest::setSinkName));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -10829,6 +10882,99 @@ public class DataArtsStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTableModelsRequest::getXProjectId, ListTableModelsRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTaskTableReferenceDetailRequest, ListTaskTableReferenceDetailResponse> listTaskTableReferenceDetail =
+        genForListTaskTableReferenceDetail();
+
+    private static HttpRequestDef<ListTaskTableReferenceDetailRequest, ListTaskTableReferenceDetailResponse> genForListTaskTableReferenceDetail() {
+        // basic
+        HttpRequestDef.Builder<ListTaskTableReferenceDetailRequest, ListTaskTableReferenceDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListTaskTableReferenceDetailRequest.class,
+                    ListTaskTableReferenceDetailResponse.class)
+                .withName("ListTaskTableReferenceDetail")
+                .withUri("/v2/{project_id}/factory/task-table-references")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("table_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskTableReferenceDetailRequest::getTableName,
+                ListTaskTableReferenceDetailRequest::setTableName));
+        builder.<String>withRequestField("db_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskTableReferenceDetailRequest::getDbType,
+                ListTaskTableReferenceDetailRequest::setDbType));
+        builder.<String>withRequestField("data_base_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskTableReferenceDetailRequest::getDataBaseName,
+                ListTaskTableReferenceDetailRequest::setDataBaseName));
+        builder.<String>withRequestField("cluster_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskTableReferenceDetailRequest::getClusterName,
+                ListTaskTableReferenceDetailRequest::setClusterName));
+        builder.<ListTaskTableReferenceDetailRequest.IoTypeEnum>withRequestField("io_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTaskTableReferenceDetailRequest.IoTypeEnum.class),
+            f -> f.withMarshaller(ListTaskTableReferenceDetailRequest::getIoType,
+                ListTaskTableReferenceDetailRequest::setIoType));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTaskTableReferenceDetailRequest::getOffset,
+                ListTaskTableReferenceDetailRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTaskTableReferenceDetailRequest::getLimit,
+                ListTaskTableReferenceDetailRequest::setLimit));
+        builder.<String>withRequestField("workspace_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskTableReferenceDetailRequest::getWorkspaceName,
+                ListTaskTableReferenceDetailRequest::setWorkspaceName));
+        builder.<String>withRequestField("owner",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskTableReferenceDetailRequest::getOwner,
+                ListTaskTableReferenceDetailRequest::setOwner));
+        builder.<String>withRequestField("execute_user",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskTableReferenceDetailRequest::getExecuteUser,
+                ListTaskTableReferenceDetailRequest::setExecuteUser));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskTableReferenceDetailRequest::getWorkspace,
+                ListTaskTableReferenceDetailRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskTableReferenceDetailRequest::getXProjectId,
+                ListTaskTableReferenceDetailRequest::setXProjectId));
 
         // response
 

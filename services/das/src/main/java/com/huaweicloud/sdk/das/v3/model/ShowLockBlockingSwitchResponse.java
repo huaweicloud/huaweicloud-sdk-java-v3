@@ -12,6 +12,11 @@ import java.util.Objects;
 public class ShowLockBlockingSwitchResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "success")
+
+    private Boolean success;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "switch_on")
 
     private Boolean switchOn;
@@ -22,6 +27,16 @@ public class ShowLockBlockingSwitchResponse extends SdkResponse {
     private Long retentionHours;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "retry")
+
+    private Boolean retry;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_msg")
+
+    private String errorMsg;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "can_open")
 
     private Boolean canOpen;
@@ -30,6 +45,23 @@ public class ShowLockBlockingSwitchResponse extends SdkResponse {
     @JsonProperty(value = "cant_open_msg")
 
     private String cantOpenMsg;
+
+    public ShowLockBlockingSwitchResponse withSuccess(Boolean success) {
+        this.success = success;
+        return this;
+    }
+
+    /**
+     * 是否成功
+     * @return success
+     */
+    public Boolean getSuccess() {
+        return success;
+    }
+
+    public void setSuccess(Boolean success) {
+        this.success = success;
+    }
 
     public ShowLockBlockingSwitchResponse withSwitchOn(Boolean switchOn) {
         this.switchOn = switchOn;
@@ -65,6 +97,40 @@ public class ShowLockBlockingSwitchResponse extends SdkResponse {
 
     public void setRetentionHours(Long retentionHours) {
         this.retentionHours = retentionHours;
+    }
+
+    public ShowLockBlockingSwitchResponse withRetry(Boolean retry) {
+        this.retry = retry;
+        return this;
+    }
+
+    /**
+     * 是否需要重试
+     * @return retry
+     */
+    public Boolean getRetry() {
+        return retry;
+    }
+
+    public void setRetry(Boolean retry) {
+        this.retry = retry;
+    }
+
+    public ShowLockBlockingSwitchResponse withErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+        return this;
+    }
+
+    /**
+     * 错误信息
+     * @return errorMsg
+     */
+    public String getErrorMsg() {
+        return errorMsg;
+    }
+
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
     }
 
     public ShowLockBlockingSwitchResponse withCanOpen(Boolean canOpen) {
@@ -110,21 +176,26 @@ public class ShowLockBlockingSwitchResponse extends SdkResponse {
             return false;
         }
         ShowLockBlockingSwitchResponse that = (ShowLockBlockingSwitchResponse) obj;
-        return Objects.equals(this.switchOn, that.switchOn) && Objects.equals(this.retentionHours, that.retentionHours)
-            && Objects.equals(this.canOpen, that.canOpen) && Objects.equals(this.cantOpenMsg, that.cantOpenMsg);
+        return Objects.equals(this.success, that.success) && Objects.equals(this.switchOn, that.switchOn)
+            && Objects.equals(this.retentionHours, that.retentionHours) && Objects.equals(this.retry, that.retry)
+            && Objects.equals(this.errorMsg, that.errorMsg) && Objects.equals(this.canOpen, that.canOpen)
+            && Objects.equals(this.cantOpenMsg, that.cantOpenMsg);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(switchOn, retentionHours, canOpen, cantOpenMsg);
+        return Objects.hash(success, switchOn, retentionHours, retry, errorMsg, canOpen, cantOpenMsg);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowLockBlockingSwitchResponse {\n");
+        sb.append("    success: ").append(toIndentedString(success)).append("\n");
         sb.append("    switchOn: ").append(toIndentedString(switchOn)).append("\n");
         sb.append("    retentionHours: ").append(toIndentedString(retentionHours)).append("\n");
+        sb.append("    retry: ").append(toIndentedString(retry)).append("\n");
+        sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
         sb.append("    canOpen: ").append(toIndentedString(canOpen)).append("\n");
         sb.append("    cantOpenMsg: ").append(toIndentedString(cantOpenMsg)).append("\n");
         sb.append("}");

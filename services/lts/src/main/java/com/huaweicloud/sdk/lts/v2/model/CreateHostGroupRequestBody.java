@@ -108,6 +108,16 @@ public class CreateHostGroupRequestBody {
 
     private List<HostGroupTag> hostGroupTag = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_access_type")
+
+    private String agentAccessType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "labels")
+
+    private List<String> labels = null;
+
     public CreateHostGroupRequestBody withHostGroupName(String hostGroupName) {
         this.hostGroupName = hostGroupName;
         return this;
@@ -208,6 +218,56 @@ public class CreateHostGroupRequestBody {
         this.hostGroupTag = hostGroupTag;
     }
 
+    public CreateHostGroupRequestBody withAgentAccessType(String agentAccessType) {
+        this.agentAccessType = agentAccessType;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 主机组类型。支持两种主机组类型，分别为IP类型和LABEL类型。 **约束限制：** 不涉及 **取值范围：** - IP - LABEL **默认取值：** IP。
+     * @return agentAccessType
+     */
+    public String getAgentAccessType() {
+        return agentAccessType;
+    }
+
+    public void setAgentAccessType(String agentAccessType) {
+        this.agentAccessType = agentAccessType;
+    }
+
+    public CreateHostGroupRequestBody withLabels(List<String> labels) {
+        this.labels = labels;
+        return this;
+    }
+
+    public CreateHostGroupRequestBody addLabelsItem(String labelsItem) {
+        if (this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
+        this.labels.add(labelsItem);
+        return this;
+    }
+
+    public CreateHostGroupRequestBody withLabels(Consumer<List<String>> labelsSetter) {
+        if (this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
+        labelsSetter.accept(this.labels);
+        return this;
+    }
+
+    /**
+     * **参数解释：** 自定义标识。主机组类型为LABEL类型，该字段必填。 **约束限制：** 不涉及。 **默认取值：** 不涉及。
+     * @return labels
+     */
+    public List<String> getLabels() {
+        return labels;
+    }
+
+    public void setLabels(List<String> labels) {
+        this.labels = labels;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -219,12 +279,13 @@ public class CreateHostGroupRequestBody {
         CreateHostGroupRequestBody that = (CreateHostGroupRequestBody) obj;
         return Objects.equals(this.hostGroupName, that.hostGroupName)
             && Objects.equals(this.hostGroupType, that.hostGroupType)
-            && Objects.equals(this.hostIdList, that.hostIdList) && Objects.equals(this.hostGroupTag, that.hostGroupTag);
+            && Objects.equals(this.hostIdList, that.hostIdList) && Objects.equals(this.hostGroupTag, that.hostGroupTag)
+            && Objects.equals(this.agentAccessType, that.agentAccessType) && Objects.equals(this.labels, that.labels);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hostGroupName, hostGroupType, hostIdList, hostGroupTag);
+        return Objects.hash(hostGroupName, hostGroupType, hostIdList, hostGroupTag, agentAccessType, labels);
     }
 
     @Override
@@ -235,6 +296,8 @@ public class CreateHostGroupRequestBody {
         sb.append("    hostGroupType: ").append(toIndentedString(hostGroupType)).append("\n");
         sb.append("    hostIdList: ").append(toIndentedString(hostIdList)).append("\n");
         sb.append("    hostGroupTag: ").append(toIndentedString(hostGroupTag)).append("\n");
+        sb.append("    agentAccessType: ").append(toIndentedString(agentAccessType)).append("\n");
+        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
         sb.append("}");
         return sb.toString();
     }

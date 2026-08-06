@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * HealthReportInstanceInfo
+ * 实例信息
  */
 public class HealthReportInstanceInfo {
 

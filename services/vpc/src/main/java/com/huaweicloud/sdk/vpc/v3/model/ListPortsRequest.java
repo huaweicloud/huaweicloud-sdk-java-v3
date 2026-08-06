@@ -98,6 +98,16 @@ public class ListPortsRequest {
 
     private String instanceType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
     public ListPortsRequest withId(List<String> id) {
         this.id = id;
         return this;
@@ -579,6 +589,40 @@ public class ListPortsRequest {
         this.instanceType = instanceType;
     }
 
+    public ListPortsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 每页返回的个数。 **取值范围**： 0-2000。
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListPortsRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 分页查询起始的资源ID，为空时查询第一页。 **取值范围**： 带“-”的标准UUID格式。
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -598,7 +642,8 @@ public class ListPortsRequest {
             && Objects.equals(this.privateIps, that.privateIps)
             && Objects.equals(this.securityGroups, that.securityGroups) && Objects.equals(this.vpcId, that.vpcId)
             && Objects.equals(this.allowedAddressPairs, that.allowedAddressPairs)
-            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceType, that.instanceType);
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceType, that.instanceType)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker);
     }
 
     @Override
@@ -619,7 +664,9 @@ public class ListPortsRequest {
             vpcId,
             allowedAddressPairs,
             instanceId,
-            instanceType);
+            instanceType,
+            limit,
+            marker);
     }
 
     @Override
@@ -643,6 +690,8 @@ public class ListPortsRequest {
         sb.append("    allowedAddressPairs: ").append(toIndentedString(allowedAddressPairs)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("}");
         return sb.toString();
     }

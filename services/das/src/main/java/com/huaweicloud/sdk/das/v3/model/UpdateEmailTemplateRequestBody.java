@@ -68,6 +68,11 @@ public class UpdateEmailTemplateRequestBody {
 
     private String timeZone;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_uri")
+
+    private String serviceUri;
+
     public UpdateEmailTemplateRequestBody withTemplateId(Integer templateId) {
         this.templateId = templateId;
         return this;
@@ -289,6 +294,23 @@ public class UpdateEmailTemplateRequestBody {
         this.timeZone = timeZone;
     }
 
+    public UpdateEmailTemplateRequestBody withServiceUri(String serviceUri) {
+        this.serviceUri = serviceUri;
+        return this;
+    }
+
+    /**
+     * 服务地址
+     * @return serviceUri
+     */
+    public String getServiceUri() {
+        return serviceUri;
+    }
+
+    public void setServiceUri(String serviceUri) {
+        this.serviceUri = serviceUri;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -303,7 +325,7 @@ public class UpdateEmailTemplateRequestBody {
             && Objects.equals(this.email, that.email) && Objects.equals(this.topic, that.topic)
             && Objects.equals(this.topicUrn, that.topicUrn) && Objects.equals(this.obsBucketName, that.obsBucketName)
             && Objects.equals(this.inspectionTime, that.inspectionTime) && Objects.equals(this.sendTime, that.sendTime)
-            && Objects.equals(this.timeZone, that.timeZone);
+            && Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.serviceUri, that.serviceUri);
     }
 
     @Override
@@ -318,7 +340,8 @@ public class UpdateEmailTemplateRequestBody {
             obsBucketName,
             inspectionTime,
             sendTime,
-            timeZone);
+            timeZone,
+            serviceUri);
     }
 
     @Override
@@ -336,6 +359,7 @@ public class UpdateEmailTemplateRequestBody {
         sb.append("    inspectionTime: ").append(toIndentedString(inspectionTime)).append("\n");
         sb.append("    sendTime: ").append(toIndentedString(sendTime)).append("\n");
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
+        sb.append("    serviceUri: ").append(toIndentedString(serviceUri)).append("\n");
         sb.append("}");
         return sb.toString();
     }

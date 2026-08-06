@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * HealthReportRiskReason
+ * 风险可能原因
  */
 public class HealthReportRiskReason {
 
@@ -34,7 +34,7 @@ public class HealthReportRiskReason {
     }
 
     /**
-     * 可能原因编码。
+     * 可能原因编码
      * @return reasonCode
      */
     public String getReasonCode() {
@@ -51,7 +51,7 @@ public class HealthReportRiskReason {
     }
 
     /**
-     * 可能原因内容。
+     * 可能原因内容
      * @return reasonContent
      */
     public String getReasonContent() {
@@ -84,7 +84,7 @@ public class HealthReportRiskReason {
     }
 
     /**
-     * 建议优化措施列表。
+     * 建议优化措施列表
      * @return suggestions
      */
     public List<HealthReportRiskSuggestion> getSuggestions() {

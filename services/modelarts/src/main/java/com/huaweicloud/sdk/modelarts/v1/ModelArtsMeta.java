@@ -2969,6 +2969,18 @@ public class ModelArtsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInferDeploymentPodEventsRequest::getName,
                 ListInferDeploymentPodEventsRequest::setName));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentPodEventsRequest::getStartTime,
+                ListInferDeploymentPodEventsRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentPodEventsRequest::getEndTime,
+                ListInferDeploymentPodEventsRequest::setEndTime));
 
         // response
         builder.<List<ServicePodEventResponse>>withResponseField("body",
@@ -3084,6 +3096,24 @@ public class ModelArtsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInferDeploymentVersionsRequest::getDeploymentId,
                 ListInferDeploymentVersionsRequest::setDeploymentId));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferDeploymentVersionsRequest::getSortKey,
+                ListInferDeploymentVersionsRequest::setSortKey));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferDeploymentVersionsRequest::getLimit,
+                ListInferDeploymentVersionsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInferDeploymentVersionsRequest::getOffset,
+                ListInferDeploymentVersionsRequest::setOffset));
 
         // response
 

@@ -30,7 +30,7 @@ public class ListInstancePoolsResponse extends SdkResponse {
     }
 
     /**
-     * 实例组总数
+     * **参数解释：** 符合条件的实例组总数。 **取值范围：** 不涉及
      * @return total
      */
     public Long getTotal() {
@@ -63,7 +63,7 @@ public class ListInstancePoolsResponse extends SdkResponse {
     }
 
     /**
-     * 实例组列表
+     * **参数解释：** 实例组列表，详细字段说明请参见PremiumWafPoolResponse object。 **取值范围：** 不涉及
      * @return items
      */
     public List<PremiumWafPoolResponse> getItems() {

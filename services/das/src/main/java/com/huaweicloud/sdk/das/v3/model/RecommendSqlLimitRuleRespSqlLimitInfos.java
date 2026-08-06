@@ -22,12 +22,22 @@ public class RecommendSqlLimitRuleRespSqlLimitInfos {
     private Double averageTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "keyword")
+
+    private String keyword;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "recommend_type")
+
+    private String recommendType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "count")
 
     private Double count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "maxTime")
+    @JsonProperty(value = "max_time")
 
     private Long maxTime;
 
@@ -77,6 +87,40 @@ public class RecommendSqlLimitRuleRespSqlLimitInfos {
 
     public void setAverageTime(Double averageTime) {
         this.averageTime = averageTime;
+    }
+
+    public RecommendSqlLimitRuleRespSqlLimitInfos withKeyword(String keyword) {
+        this.keyword = keyword;
+        return this;
+    }
+
+    /**
+     * 限流关键字
+     * @return keyword
+     */
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+
+    public RecommendSqlLimitRuleRespSqlLimitInfos withRecommendType(String recommendType) {
+        this.recommendType = recommendType;
+        return this;
+    }
+
+    /**
+     * 推荐类型
+     * @return recommendType
+     */
+    public String getRecommendType() {
+        return recommendType;
+    }
+
+    public void setRecommendType(String recommendType) {
+        this.recommendType = recommendType;
     }
 
     public RecommendSqlLimitRuleRespSqlLimitInfos withCount(Double count) {
@@ -140,13 +184,14 @@ public class RecommendSqlLimitRuleRespSqlLimitInfos {
         }
         RecommendSqlLimitRuleRespSqlLimitInfos that = (RecommendSqlLimitRuleRespSqlLimitInfos) obj;
         return Objects.equals(this.rawSql, that.rawSql) && Objects.equals(this.averageTime, that.averageTime)
+            && Objects.equals(this.keyword, that.keyword) && Objects.equals(this.recommendType, that.recommendType)
             && Objects.equals(this.count, that.count) && Objects.equals(this.maxTime, that.maxTime)
             && Objects.equals(this.exeTime, that.exeTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(rawSql, averageTime, count, maxTime, exeTime);
+        return Objects.hash(rawSql, averageTime, keyword, recommendType, count, maxTime, exeTime);
     }
 
     @Override
@@ -155,6 +200,8 @@ public class RecommendSqlLimitRuleRespSqlLimitInfos {
         sb.append("class RecommendSqlLimitRuleRespSqlLimitInfos {\n");
         sb.append("    rawSql: ").append(toIndentedString(rawSql)).append("\n");
         sb.append("    averageTime: ").append(toIndentedString(averageTime)).append("\n");
+        sb.append("    keyword: ").append(toIndentedString(keyword)).append("\n");
+        sb.append("    recommendType: ").append(toIndentedString(recommendType)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    maxTime: ").append(toIndentedString(maxTime)).append("\n");
         sb.append("    exeTime: ").append(toIndentedString(exeTime)).append("\n");
