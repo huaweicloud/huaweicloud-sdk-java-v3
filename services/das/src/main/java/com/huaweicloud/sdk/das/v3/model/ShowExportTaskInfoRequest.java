@@ -23,8 +23,6 @@ public class ShowExportTaskInfoRequest {
 
     /**
      * 任务ID
-     * minimum: 0
-     * maximum: 0
      * @return taskId
      */
     public BigDecimal getTaskId() {

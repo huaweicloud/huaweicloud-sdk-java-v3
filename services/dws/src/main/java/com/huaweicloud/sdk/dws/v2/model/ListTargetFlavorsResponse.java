@@ -24,6 +24,11 @@ public class ListTargetFlavorsResponse extends SdkResponse {
 
     private List<FlavorInfoResponse> flavors = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "change_mode")
+
+    private String changeMode;
+
     public ListTargetFlavorsResponse withCount(Integer count) {
         this.count = count;
         return this;
@@ -74,6 +79,23 @@ public class ListTargetFlavorsResponse extends SdkResponse {
         this.flavors = flavors;
     }
 
+    public ListTargetFlavorsResponse withChangeMode(String changeMode) {
+        this.changeMode = changeMode;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 规格变更模式。 **取值范围**： online：在线模式； offline：离线模式； all：在线模式、离线模式都支持。
+     * @return changeMode
+     */
+    public String getChangeMode() {
+        return changeMode;
+    }
+
+    public void setChangeMode(String changeMode) {
+        this.changeMode = changeMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,12 +105,13 @@ public class ListTargetFlavorsResponse extends SdkResponse {
             return false;
         }
         ListTargetFlavorsResponse that = (ListTargetFlavorsResponse) obj;
-        return Objects.equals(this.count, that.count) && Objects.equals(this.flavors, that.flavors);
+        return Objects.equals(this.count, that.count) && Objects.equals(this.flavors, that.flavors)
+            && Objects.equals(this.changeMode, that.changeMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, flavors);
+        return Objects.hash(count, flavors, changeMode);
     }
 
     @Override
@@ -97,6 +120,7 @@ public class ListTargetFlavorsResponse extends SdkResponse {
         sb.append("class ListTargetFlavorsResponse {\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    flavors: ").append(toIndentedString(flavors)).append("\n");
+        sb.append("    changeMode: ").append(toIndentedString(changeMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

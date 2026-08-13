@@ -27,6 +27,8 @@ import com.huaweicloud.sdk.das.v3.model.ChangeChargeModeRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeChargeModeResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeFullDeadLockSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeFullDeadLockSwitchResponse;
+import com.huaweicloud.sdk.das.v3.model.ChangePaymentModeNewRequest;
+import com.huaweicloud.sdk.das.v3.model.ChangePaymentModeNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchRequest;
@@ -723,9 +725,9 @@ public class DasAsyncClient {
     }
 
     /**
-     * 设置付费模式
+     * 设置实例付费/免费模式
      *
-     * 设置付费实例
+     * 设置实例付费/免费模式
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -737,9 +739,9 @@ public class DasAsyncClient {
     }
 
     /**
-     * 设置付费模式
+     * 设置实例付费/免费模式
      *
-     * 设置付费实例
+     * 设置实例付费/免费模式
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -779,6 +781,36 @@ public class DasAsyncClient {
     public AsyncInvoker<ChangeFullDeadLockSwitchRequest, ChangeFullDeadLockSwitchResponse> changeFullDeadLockSwitchAsyncInvoker(
         ChangeFullDeadLockSwitchRequest request) {
         return new AsyncInvoker<>(request, DasMeta.changeFullDeadLockSwitch, hcClient);
+    }
+
+    /**
+     * 设置实例付费/免费模式
+     *
+     * 设置实例付费/免费模式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangePaymentModeNewRequest 请求对象
+     * @return CompletableFuture<ChangePaymentModeNewResponse>
+     */
+    public CompletableFuture<ChangePaymentModeNewResponse> changePaymentModeNewAsync(
+        ChangePaymentModeNewRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.changePaymentModeNew);
+    }
+
+    /**
+     * 设置实例付费/免费模式
+     *
+     * 设置实例付费/免费模式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangePaymentModeNewRequest 请求对象
+     * @return AsyncInvoker<ChangePaymentModeNewRequest, ChangePaymentModeNewResponse>
+     */
+    public AsyncInvoker<ChangePaymentModeNewRequest, ChangePaymentModeNewResponse> changePaymentModeNewAsyncInvoker(
+        ChangePaymentModeNewRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.changePaymentModeNew, hcClient);
     }
 
     /**

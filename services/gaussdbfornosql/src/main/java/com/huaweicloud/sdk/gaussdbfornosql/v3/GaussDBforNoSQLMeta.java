@@ -334,6 +334,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.StopBackupResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchIpGroupRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchIpGroupRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchIpGroupResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchOverDisasterRecoveryRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchOverDisasterRecoveryResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchOverRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchOverResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSecondLevelMonitoringRequest;
@@ -4525,6 +4527,33 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SwitchOverRequest::getInstanceId, SwitchOverRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchOverDisasterRecoveryRequest, SwitchOverDisasterRecoveryResponse> switchOverDisasterRecovery =
+        genForSwitchOverDisasterRecovery();
+
+    private static HttpRequestDef<SwitchOverDisasterRecoveryRequest, SwitchOverDisasterRecoveryResponse> genForSwitchOverDisasterRecovery() {
+        // basic
+        HttpRequestDef.Builder<SwitchOverDisasterRecoveryRequest, SwitchOverDisasterRecoveryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    SwitchOverDisasterRecoveryRequest.class,
+                    SwitchOverDisasterRecoveryResponse.class)
+                .withName("SwitchOverDisasterRecovery")
+                .withUri("/v3/{project_id}/instances/{instance_id}/disaster-recovery/switchover")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchOverDisasterRecoveryRequest::getInstanceId,
+                SwitchOverDisasterRecoveryRequest::setInstanceId));
 
         // response
 

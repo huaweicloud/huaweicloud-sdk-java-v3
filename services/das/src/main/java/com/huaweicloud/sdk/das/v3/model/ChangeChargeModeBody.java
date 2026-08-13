@@ -23,6 +23,11 @@ public class ChangeChargeModeBody {
 
     private String datastoreType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "payment_mode")
+
+    private Boolean paymentMode;
+
     public ChangeChargeModeBody withInstanceIdList(List<String> instanceIdList) {
         this.instanceIdList = instanceIdList;
         return this;
@@ -73,6 +78,23 @@ public class ChangeChargeModeBody {
         this.datastoreType = datastoreType;
     }
 
+    public ChangeChargeModeBody withPaymentMode(Boolean paymentMode) {
+        this.paymentMode = paymentMode;
+        return this;
+    }
+
+    /**
+     * true: 设置为付费, false: 设置为免费
+     * @return paymentMode
+     */
+    public Boolean getPaymentMode() {
+        return paymentMode;
+    }
+
+    public void setPaymentMode(Boolean paymentMode) {
+        this.paymentMode = paymentMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,12 +105,13 @@ public class ChangeChargeModeBody {
         }
         ChangeChargeModeBody that = (ChangeChargeModeBody) obj;
         return Objects.equals(this.instanceIdList, that.instanceIdList)
-            && Objects.equals(this.datastoreType, that.datastoreType);
+            && Objects.equals(this.datastoreType, that.datastoreType)
+            && Objects.equals(this.paymentMode, that.paymentMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceIdList, datastoreType);
+        return Objects.hash(instanceIdList, datastoreType, paymentMode);
     }
 
     @Override
@@ -97,6 +120,7 @@ public class ChangeChargeModeBody {
         sb.append("class ChangeChargeModeBody {\n");
         sb.append("    instanceIdList: ").append(toIndentedString(instanceIdList)).append("\n");
         sb.append("    datastoreType: ").append(toIndentedString(datastoreType)).append("\n");
+        sb.append("    paymentMode: ").append(toIndentedString(paymentMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

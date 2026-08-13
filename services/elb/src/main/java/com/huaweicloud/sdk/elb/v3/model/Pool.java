@@ -119,7 +119,7 @@ public class Pool {
     private String type;
 
     /**
-     * **参数解释**：修改保护状态,。  **取值范围**： - nonProtection: 不保护。 - consoleProtection: 控制台修改保护。
+     * **参数解释**：修改保护状态。  **取值范围**： - nonProtection: 不保护。 - consoleProtection: 控制台修改保护。
      */
     public static final class ProtectionStatusEnum {
 
@@ -649,7 +649,7 @@ public class Pool {
     }
 
     /**
-     * **参数解释**：修改保护状态,。  **取值范围**： - nonProtection: 不保护。 - consoleProtection: 控制台修改保护。
+     * **参数解释**：修改保护状态。  **取值范围**： - nonProtection: 不保护。 - consoleProtection: 控制台修改保护。
      * @return protectionStatus
      */
     public ProtectionStatusEnum getProtectionStatus() {

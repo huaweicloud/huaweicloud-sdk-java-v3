@@ -20,6 +20,11 @@ public class SpecResizeRequest {
 
     private Boolean forceBackup;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "change_mode")
+
+    private String changeMode;
+
     public SpecResizeRequest withTargetFlavorId(String targetFlavorId) {
         this.targetFlavorId = targetFlavorId;
         return this;
@@ -54,6 +59,23 @@ public class SpecResizeRequest {
         this.forceBackup = forceBackup;
     }
 
+    public SpecResizeRequest withChangeMode(String changeMode) {
+        this.changeMode = changeMode;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 规格变更模式。 **约束限制**： 不涉及。 **取值范围**： online：在线模式； offline：离线模式； **默认取值**： offline
+     * @return changeMode
+     */
+    public String getChangeMode() {
+        return changeMode;
+    }
+
+    public void setChangeMode(String changeMode) {
+        this.changeMode = changeMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +86,12 @@ public class SpecResizeRequest {
         }
         SpecResizeRequest that = (SpecResizeRequest) obj;
         return Objects.equals(this.targetFlavorId, that.targetFlavorId)
-            && Objects.equals(this.forceBackup, that.forceBackup);
+            && Objects.equals(this.forceBackup, that.forceBackup) && Objects.equals(this.changeMode, that.changeMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(targetFlavorId, forceBackup);
+        return Objects.hash(targetFlavorId, forceBackup, changeMode);
     }
 
     @Override
@@ -78,6 +100,7 @@ public class SpecResizeRequest {
         sb.append("class SpecResizeRequest {\n");
         sb.append("    targetFlavorId: ").append(toIndentedString(targetFlavorId)).append("\n");
         sb.append("    forceBackup: ").append(toIndentedString(forceBackup)).append("\n");
+        sb.append("    changeMode: ").append(toIndentedString(changeMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -494,6 +494,7 @@ public class EpsClient {
      * @param request ShowResourceBindEnterpriseProjectRequest 请求对象
      * @return ShowResourceBindEnterpriseProjectResponse
      */
+    @Deprecated
     public ShowResourceBindEnterpriseProjectResponse showResourceBindEnterpriseProject(
         ShowResourceBindEnterpriseProjectRequest request) {
         return hcClient.syncInvokeHttp(request, EpsMeta.showResourceBindEnterpriseProject);
@@ -509,6 +510,7 @@ public class EpsClient {
      * @param request ShowResourceBindEnterpriseProjectRequest 请求对象
      * @return SyncInvoker<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse> showResourceBindEnterpriseProjectInvoker(
         ShowResourceBindEnterpriseProjectRequest request) {
         return new SyncInvoker<>(request, EpsMeta.showResourceBindEnterpriseProject, hcClient);

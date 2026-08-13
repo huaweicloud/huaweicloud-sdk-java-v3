@@ -424,6 +424,11 @@ public class MetaData {
     private CodecEnum codec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "audio_codec")
+
+    private String audioCodec;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
 
     private Long duration;
@@ -505,6 +510,23 @@ public class MetaData {
 
     public void setCodec(CodecEnum codec) {
         this.codec = codec;
+    }
+
+    public MetaData withAudioCodec(String audioCodec) {
+        this.audioCodec = audioCodec;
+        return this;
+    }
+
+    /**
+     * 音频编码格式。 须知：仅在2025/01/01之后创建的媒资元数据/转码产物包含该参数。
+     * @return audioCodec
+     */
+    public String getAudioCodec() {
+        return audioCodec;
+    }
+
+    public void setAudioCodec(String audioCodec) {
+        this.audioCodec = audioCodec;
     }
 
     public MetaData withDuration(Long duration) {
@@ -687,17 +709,19 @@ public class MetaData {
         }
         MetaData that = (MetaData) obj;
         return Objects.equals(this.packType, that.packType) && Objects.equals(this.codec, that.codec)
-            && Objects.equals(this.duration, that.duration) && Objects.equals(this.durationMs, that.durationMs)
-            && Objects.equals(this.videoSize, that.videoSize) && Objects.equals(this.width, that.width)
-            && Objects.equals(this.hight, that.hight) && Objects.equals(this.height, that.height)
-            && Objects.equals(this.bitRate, that.bitRate) && Objects.equals(this.frameRate, that.frameRate)
-            && Objects.equals(this.quality, that.quality) && Objects.equals(this.audioChannels, that.audioChannels);
+            && Objects.equals(this.audioCodec, that.audioCodec) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.durationMs, that.durationMs) && Objects.equals(this.videoSize, that.videoSize)
+            && Objects.equals(this.width, that.width) && Objects.equals(this.hight, that.hight)
+            && Objects.equals(this.height, that.height) && Objects.equals(this.bitRate, that.bitRate)
+            && Objects.equals(this.frameRate, that.frameRate) && Objects.equals(this.quality, that.quality)
+            && Objects.equals(this.audioChannels, that.audioChannels);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(packType,
             codec,
+            audioCodec,
             duration,
             durationMs,
             videoSize,
@@ -716,6 +740,7 @@ public class MetaData {
         sb.append("class MetaData {\n");
         sb.append("    packType: ").append(toIndentedString(packType)).append("\n");
         sb.append("    codec: ").append(toIndentedString(codec)).append("\n");
+        sb.append("    audioCodec: ").append(toIndentedString(audioCodec)).append("\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
         sb.append("    durationMs: ").append(toIndentedString(durationMs)).append("\n");
         sb.append("    videoSize: ").append(toIndentedString(videoSize)).append("\n");

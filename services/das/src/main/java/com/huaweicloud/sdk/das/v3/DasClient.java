@@ -27,6 +27,8 @@ import com.huaweicloud.sdk.das.v3.model.ChangeChargeModeRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeChargeModeResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeFullDeadLockSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeFullDeadLockSwitchResponse;
+import com.huaweicloud.sdk.das.v3.model.ChangePaymentModeNewRequest;
+import com.huaweicloud.sdk.das.v3.model.ChangePaymentModeNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchRequest;
@@ -715,9 +717,9 @@ public class DasClient {
     }
 
     /**
-     * 设置付费模式
+     * 设置实例付费/免费模式
      *
-     * 设置付费实例
+     * 设置实例付费/免费模式
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -729,9 +731,9 @@ public class DasClient {
     }
 
     /**
-     * 设置付费模式
+     * 设置实例付费/免费模式
      *
-     * 设置付费实例
+     * 设置实例付费/免费模式
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -770,6 +772,35 @@ public class DasClient {
     public SyncInvoker<ChangeFullDeadLockSwitchRequest, ChangeFullDeadLockSwitchResponse> changeFullDeadLockSwitchInvoker(
         ChangeFullDeadLockSwitchRequest request) {
         return new SyncInvoker<>(request, DasMeta.changeFullDeadLockSwitch, hcClient);
+    }
+
+    /**
+     * 设置实例付费/免费模式
+     *
+     * 设置实例付费/免费模式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangePaymentModeNewRequest 请求对象
+     * @return ChangePaymentModeNewResponse
+     */
+    public ChangePaymentModeNewResponse changePaymentModeNew(ChangePaymentModeNewRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.changePaymentModeNew);
+    }
+
+    /**
+     * 设置实例付费/免费模式
+     *
+     * 设置实例付费/免费模式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangePaymentModeNewRequest 请求对象
+     * @return SyncInvoker<ChangePaymentModeNewRequest, ChangePaymentModeNewResponse>
+     */
+    public SyncInvoker<ChangePaymentModeNewRequest, ChangePaymentModeNewResponse> changePaymentModeNewInvoker(
+        ChangePaymentModeNewRequest request) {
+        return new SyncInvoker<>(request, DasMeta.changePaymentModeNew, hcClient);
     }
 
     /**

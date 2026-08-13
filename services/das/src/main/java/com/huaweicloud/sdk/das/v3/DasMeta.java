@@ -42,6 +42,9 @@ import com.huaweicloud.sdk.das.v3.model.ChangeChargeModeResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeFullDeadLockSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeFullDeadLockSwitchRequestBody;
 import com.huaweicloud.sdk.das.v3.model.ChangeFullDeadLockSwitchResponse;
+import com.huaweicloud.sdk.das.v3.model.ChangePaymentModeForConsoleBody;
+import com.huaweicloud.sdk.das.v3.model.ChangePaymentModeNewRequest;
+import com.huaweicloud.sdk.das.v3.model.ChangePaymentModeNewResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusBody;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusResponse;
@@ -798,6 +801,29 @@ public class DasMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeFullDeadLockSwitchRequestBody.class),
             f -> f.withMarshaller(ChangeFullDeadLockSwitchRequest::getBody, ChangeFullDeadLockSwitchRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangePaymentModeNewRequest, ChangePaymentModeNewResponse> changePaymentModeNew =
+        genForChangePaymentModeNew();
+
+    private static HttpRequestDef<ChangePaymentModeNewRequest, ChangePaymentModeNewResponse> genForChangePaymentModeNew() {
+        // basic
+        HttpRequestDef.Builder<ChangePaymentModeNewRequest, ChangePaymentModeNewResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ChangePaymentModeNewRequest.class, ChangePaymentModeNewResponse.class)
+            .withName("ChangePaymentModeNew")
+            .withUri("/v3/{project_id}/clouddba/change-payment-mode")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ChangePaymentModeForConsoleBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangePaymentModeForConsoleBody.class),
+            f -> f.withMarshaller(ChangePaymentModeNewRequest::getBody, ChangePaymentModeNewRequest::setBody));
 
         // response
 
@@ -4968,7 +4994,7 @@ public class DasMeta {
     private static HttpRequestDef<SwitchFullsqlSwitchRequest, SwitchFullsqlSwitchResponse> genForSwitchFullsqlSwitch() {
         // basic
         HttpRequestDef.Builder<SwitchFullsqlSwitchRequest, SwitchFullsqlSwitchResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, SwitchFullsqlSwitchRequest.class, SwitchFullsqlSwitchResponse.class)
+            HttpRequestDef.builder(HttpMethod.GET, SwitchFullsqlSwitchRequest.class, SwitchFullsqlSwitchResponse.class)
                 .withName("SwitchFullsqlSwitch")
                 .withUri("/v3/{project_id}/fullsql/switch")
                 .withContentType("application/json");

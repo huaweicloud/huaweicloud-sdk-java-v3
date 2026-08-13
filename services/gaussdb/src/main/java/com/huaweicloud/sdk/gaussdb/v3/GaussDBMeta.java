@@ -2705,15 +2705,15 @@ public class GaussDBMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDdlLogsRequest::getLimit, ListDdlLogsRequest::setLimit));
-        builder.<String>withRequestField("start_time",
+        builder.<Long>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListDdlLogsRequest::getStartTime, ListDdlLogsRequest::setStartTime));
-        builder.<String>withRequestField("end_time",
+        builder.<Long>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListDdlLogsRequest::getEndTime, ListDdlLogsRequest::setEndTime));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,

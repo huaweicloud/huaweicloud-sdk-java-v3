@@ -21,6 +21,11 @@ public class CreateOpenTableFormatInput {
 
     private CreateLanceTableInput createLanceTableInput;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_paimon_table_input")
+
+    private CreatePaimonTableInput createPaimonTableInput;
+
     public CreateOpenTableFormatInput withCreateIcebergTableInput(CreateIcebergTableInput createIcebergTableInput) {
         this.createIcebergTableInput = createIcebergTableInput;
         return this;
@@ -75,6 +80,33 @@ public class CreateOpenTableFormatInput {
         this.createLanceTableInput = createLanceTableInput;
     }
 
+    public CreateOpenTableFormatInput withCreatePaimonTableInput(CreatePaimonTableInput createPaimonTableInput) {
+        this.createPaimonTableInput = createPaimonTableInput;
+        return this;
+    }
+
+    public CreateOpenTableFormatInput withCreatePaimonTableInput(
+        Consumer<CreatePaimonTableInput> createPaimonTableInputSetter) {
+        if (this.createPaimonTableInput == null) {
+            this.createPaimonTableInput = new CreatePaimonTableInput();
+            createPaimonTableInputSetter.accept(this.createPaimonTableInput);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get createPaimonTableInput
+     * @return createPaimonTableInput
+     */
+    public CreatePaimonTableInput getCreatePaimonTableInput() {
+        return createPaimonTableInput;
+    }
+
+    public void setCreatePaimonTableInput(CreatePaimonTableInput createPaimonTableInput) {
+        this.createPaimonTableInput = createPaimonTableInput;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -85,12 +117,13 @@ public class CreateOpenTableFormatInput {
         }
         CreateOpenTableFormatInput that = (CreateOpenTableFormatInput) obj;
         return Objects.equals(this.createIcebergTableInput, that.createIcebergTableInput)
-            && Objects.equals(this.createLanceTableInput, that.createLanceTableInput);
+            && Objects.equals(this.createLanceTableInput, that.createLanceTableInput)
+            && Objects.equals(this.createPaimonTableInput, that.createPaimonTableInput);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(createIcebergTableInput, createLanceTableInput);
+        return Objects.hash(createIcebergTableInput, createLanceTableInput, createPaimonTableInput);
     }
 
     @Override
@@ -99,6 +132,7 @@ public class CreateOpenTableFormatInput {
         sb.append("class CreateOpenTableFormatInput {\n");
         sb.append("    createIcebergTableInput: ").append(toIndentedString(createIcebergTableInput)).append("\n");
         sb.append("    createLanceTableInput: ").append(toIndentedString(createLanceTableInput)).append("\n");
+        sb.append("    createPaimonTableInput: ").append(toIndentedString(createPaimonTableInput)).append("\n");
         sb.append("}");
         return sb.toString();
     }

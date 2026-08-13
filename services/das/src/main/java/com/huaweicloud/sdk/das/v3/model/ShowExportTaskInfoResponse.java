@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -15,7 +14,7 @@ public class ShowExportTaskInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_at")
 
-    private BigDecimal createAt;
+    private Long createAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "download_url")
@@ -25,12 +24,12 @@ public class ShowExportTaskInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    private BigDecimal endTime;
+    private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "export_line_num")
 
-    private BigDecimal exportLineNum;
+    private Long exportLineNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
@@ -40,24 +39,24 @@ public class ShowExportTaskInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_record_time")
 
-    private BigDecimal lastRecordTime;
+    private Long lastRecordTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
-    private BigDecimal startTime;
+    private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
 
-    private BigDecimal taskId;
+    private Long taskId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_status")
 
     private Integer taskStatus;
 
-    public ShowExportTaskInfoResponse withCreateAt(BigDecimal createAt) {
+    public ShowExportTaskInfoResponse withCreateAt(Long createAt) {
         this.createAt = createAt;
         return this;
     }
@@ -66,11 +65,11 @@ public class ShowExportTaskInfoResponse extends SdkResponse {
      * 创建时间
      * @return createAt
      */
-    public BigDecimal getCreateAt() {
+    public Long getCreateAt() {
         return createAt;
     }
 
-    public void setCreateAt(BigDecimal createAt) {
+    public void setCreateAt(Long createAt) {
         this.createAt = createAt;
     }
 
@@ -91,7 +90,7 @@ public class ShowExportTaskInfoResponse extends SdkResponse {
         this.downloadUrl = downloadUrl;
     }
 
-    public ShowExportTaskInfoResponse withEndTime(BigDecimal endTime) {
+    public ShowExportTaskInfoResponse withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -100,15 +99,15 @@ public class ShowExportTaskInfoResponse extends SdkResponse {
      * 结束时间
      * @return endTime
      */
-    public BigDecimal getEndTime() {
+    public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(BigDecimal endTime) {
+    public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
 
-    public ShowExportTaskInfoResponse withExportLineNum(BigDecimal exportLineNum) {
+    public ShowExportTaskInfoResponse withExportLineNum(Long exportLineNum) {
         this.exportLineNum = exportLineNum;
         return this;
     }
@@ -117,11 +116,11 @@ public class ShowExportTaskInfoResponse extends SdkResponse {
      * 导出条数
      * @return exportLineNum
      */
-    public BigDecimal getExportLineNum() {
+    public Long getExportLineNum() {
         return exportLineNum;
     }
 
-    public void setExportLineNum(BigDecimal exportLineNum) {
+    public void setExportLineNum(Long exportLineNum) {
         this.exportLineNum = exportLineNum;
     }
 
@@ -142,7 +141,7 @@ public class ShowExportTaskInfoResponse extends SdkResponse {
         this.instanceId = instanceId;
     }
 
-    public ShowExportTaskInfoResponse withLastRecordTime(BigDecimal lastRecordTime) {
+    public ShowExportTaskInfoResponse withLastRecordTime(Long lastRecordTime) {
         this.lastRecordTime = lastRecordTime;
         return this;
     }
@@ -151,15 +150,15 @@ public class ShowExportTaskInfoResponse extends SdkResponse {
      * 最新SQL执行时间
      * @return lastRecordTime
      */
-    public BigDecimal getLastRecordTime() {
+    public Long getLastRecordTime() {
         return lastRecordTime;
     }
 
-    public void setLastRecordTime(BigDecimal lastRecordTime) {
+    public void setLastRecordTime(Long lastRecordTime) {
         this.lastRecordTime = lastRecordTime;
     }
 
-    public ShowExportTaskInfoResponse withStartTime(BigDecimal startTime) {
+    public ShowExportTaskInfoResponse withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
@@ -168,15 +167,15 @@ public class ShowExportTaskInfoResponse extends SdkResponse {
      * 开始时间
      * @return startTime
      */
-    public BigDecimal getStartTime() {
+    public Long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(BigDecimal startTime) {
+    public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
 
-    public ShowExportTaskInfoResponse withTaskId(BigDecimal taskId) {
+    public ShowExportTaskInfoResponse withTaskId(Long taskId) {
         this.taskId = taskId;
         return this;
     }
@@ -185,11 +184,11 @@ public class ShowExportTaskInfoResponse extends SdkResponse {
      * 任务ID
      * @return taskId
      */
-    public BigDecimal getTaskId() {
+    public Long getTaskId() {
         return taskId;
     }
 
-    public void setTaskId(BigDecimal taskId) {
+    public void setTaskId(Long taskId) {
         this.taskId = taskId;
     }
 

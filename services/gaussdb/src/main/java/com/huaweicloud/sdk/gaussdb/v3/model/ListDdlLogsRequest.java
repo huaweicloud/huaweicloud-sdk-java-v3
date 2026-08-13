@@ -38,12 +38,12 @@ public class ListDdlLogsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
-    private String startTime;
+    private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    private String endTime;
+    private Long endTime;
 
     public ListDdlLogsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
@@ -132,37 +132,37 @@ public class ListDdlLogsRequest {
         this.limit = limit;
     }
 
-    public ListDdlLogsRequest withStartTime(String startTime) {
+    public ListDdlLogsRequest withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
 
     /**
-     * **参数解释**：  开始日期。格式为\"yyyy-mm-ddThh:mm:ssZ\"。  其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。 
+     * **参数解释**：  查询开始时间。格式为UNIX时间戳，单位是毫秒，时区为UTC标准时区。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。 
      * @return startTime
      */
-    public String getStartTime() {
+    public Long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(String startTime) {
+    public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
 
-    public ListDdlLogsRequest withEndTime(String endTime) {
+    public ListDdlLogsRequest withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
 
     /**
-     * **参数解释**：  结束时间，格式为\"yyyy-mm-ddThh:mm:ssZ\"。  其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。只能查询当前时间前一个月内的慢日志。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。 
+     * **参数解释**：  查询结束时间。格式为UNIX时间戳，单位是毫秒，时区为UTC标准时区。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。 
      * @return endTime
      */
-    public String getEndTime() {
+    public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(String endTime) {
+    public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
 

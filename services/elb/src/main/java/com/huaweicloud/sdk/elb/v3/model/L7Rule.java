@@ -178,7 +178,7 @@ public class L7Rule {
     }
 
     /**
-     * **参数解释**：转发规则的管理状。  **取值范围**：固定为true。  不支持该字段，请勿使用。
+     * **参数解释**：转发规则的管理状态。  **取值范围**：固定为true。  不支持该字段，请勿使用。
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {

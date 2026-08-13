@@ -1848,6 +1848,32 @@ public class ElbMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListDomainIPsRequest::getPageReverse, ListDomainIPsRequest::setPageReverse));
+        builder.<List<String>>withRequestField("ip_address",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListDomainIPsRequest::getIpAddress, ListDomainIPsRequest::setIpAddress));
+        builder.<Boolean>withRequestField("enable",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListDomainIPsRequest::getEnable, ListDomainIPsRequest::setEnable));
+        builder.<List<String>>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListDomainIPsRequest::getType, ListDomainIPsRequest::setType));
+        builder.<List<String>>withRequestField("domain_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListDomainIPsRequest::getDomainName, ListDomainIPsRequest::setDomainName));
+        builder.<List<String>>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListDomainIPsRequest::getEnterpriseProjectId,
+                ListDomainIPsRequest::setEnterpriseProjectId));
 
         // response
 

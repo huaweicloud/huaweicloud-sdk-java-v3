@@ -506,6 +506,7 @@ public class EpsAsyncClient {
      * @param request ShowResourceBindEnterpriseProjectRequest 请求对象
      * @return CompletableFuture<ShowResourceBindEnterpriseProjectResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowResourceBindEnterpriseProjectResponse> showResourceBindEnterpriseProjectAsync(
         ShowResourceBindEnterpriseProjectRequest request) {
         return hcClient.asyncInvokeHttp(request, EpsMeta.showResourceBindEnterpriseProject);
@@ -521,6 +522,7 @@ public class EpsAsyncClient {
      * @param request ShowResourceBindEnterpriseProjectRequest 请求对象
      * @return AsyncInvoker<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowResourceBindEnterpriseProjectRequest, ShowResourceBindEnterpriseProjectResponse> showResourceBindEnterpriseProjectAsyncInvoker(
         ShowResourceBindEnterpriseProjectRequest request) {
         return new AsyncInvoker<>(request, EpsMeta.showResourceBindEnterpriseProject, hcClient);

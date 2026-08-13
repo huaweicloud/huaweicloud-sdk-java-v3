@@ -269,6 +269,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.StopBackupRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.StopBackupResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchIpGroupRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchIpGroupResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchOverDisasterRecoveryRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchOverDisasterRecoveryResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchOverRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchOverResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSecondLevelMonitoringRequest;
@@ -4207,6 +4209,36 @@ public class GaussDBforNoSQLAsyncClient {
      */
     public AsyncInvoker<SwitchOverRequest, SwitchOverResponse> switchOverAsyncInvoker(SwitchOverRequest request) {
         return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.switchOver, hcClient);
+    }
+
+    /**
+     * 容灾实例倒换
+     *
+     * 容灾实例倒换。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchOverDisasterRecoveryRequest 请求对象
+     * @return CompletableFuture<SwitchOverDisasterRecoveryResponse>
+     */
+    public CompletableFuture<SwitchOverDisasterRecoveryResponse> switchOverDisasterRecoveryAsync(
+        SwitchOverDisasterRecoveryRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.switchOverDisasterRecovery);
+    }
+
+    /**
+     * 容灾实例倒换
+     *
+     * 容灾实例倒换。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchOverDisasterRecoveryRequest 请求对象
+     * @return AsyncInvoker<SwitchOverDisasterRecoveryRequest, SwitchOverDisasterRecoveryResponse>
+     */
+    public AsyncInvoker<SwitchOverDisasterRecoveryRequest, SwitchOverDisasterRecoveryResponse> switchOverDisasterRecoveryAsyncInvoker(
+        SwitchOverDisasterRecoveryRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.switchOverDisasterRecovery, hcClient);
     }
 
     /**

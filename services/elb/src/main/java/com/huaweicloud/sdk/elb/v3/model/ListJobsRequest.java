@@ -131,7 +131,7 @@ public class ListJobsRequest {
     }
 
     /**
-     * **参数解释**：任务类型。  **约束限制**：不涉及  **取值范围**： - cloneLoadbalancer：复制负载均衡器任务。 - cloneListener：复制监听器任务。 - batchCreateV2Loadbalancer：批量创建共享型负载均衡器任务。 - batchCreateV3Loadbalancer：批量创建独享型负载均衡器任务。 - batchDeleteLoadbalancer：批量删除负载均衡器任务。 - batchDeleteListener：批量删除监听器任务。  **默认取值**：不涉及
+     * **参数解释**：任务类型。  **约束限制**：不涉及  **取值范围**： - UPGRADE：升级独享型实例任务 - UPGRADE_INIT：升级独享型实例初始化任务，仅在子任务中出现。 - UPGRADE_TRAFFIC_SWITCH：升级独享型实例切流任务，仅在子任务中出现。 - UPGRADE_COMPLETE：升级独享型实例切流完成后处理任务，仅在子任务中出现。 - cloneLoadbalancer：复制负载均衡器任务。 - cloneListener：复制监听器任务。 - batchCreateV2Loadbalancer：批量创建共享型负载均衡器任务。 - batchCreateV3Loadbalancer：批量创建独享型负载均衡器任务。 - batchDeleteLoadbalancer：批量删除负载均衡器任务。 - batchDeleteListener：批量删除监听器任务。  **默认取值**：不涉及
      * @return jobType
      */
     public String getJobType() {

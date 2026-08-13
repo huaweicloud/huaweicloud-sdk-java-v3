@@ -162,7 +162,7 @@ public class ShowTableResponse extends SdkResponse {
     private StorageDescriptor storageDescriptor;
 
     /**
-     * 表格式,支持HIVE,ICEBERG,LANCE
+     * 表格式,支持HIVE,ICEBERG,LANCE,PAIMON
      */
     public static final class TableFormatEnum {
 
@@ -181,6 +181,11 @@ public class ShowTableResponse extends SdkResponse {
          */
         public static final TableFormatEnum LANCE = new TableFormatEnum("LANCE");
 
+        /**
+         * Enum PAIMON for value: "PAIMON"
+         */
+        public static final TableFormatEnum PAIMON = new TableFormatEnum("PAIMON");
+
         private static final Map<String, TableFormatEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TableFormatEnum> createStaticFields() {
@@ -188,6 +193,7 @@ public class ShowTableResponse extends SdkResponse {
             map.put("HIVE", HIVE);
             map.put("ICEBERG", ICEBERG);
             map.put("LANCE", LANCE);
+            map.put("PAIMON", PAIMON);
             return Collections.unmodifiableMap(map);
         }
 
@@ -612,7 +618,7 @@ public class ShowTableResponse extends SdkResponse {
     }
 
     /**
-     * 表格式,支持HIVE,ICEBERG,LANCE
+     * 表格式,支持HIVE,ICEBERG,LANCE,PAIMON
      * @return tableFormat
      */
     public TableFormatEnum getTableFormat() {
