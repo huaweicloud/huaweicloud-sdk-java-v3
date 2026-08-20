@@ -1,0 +1,95 @@
+package com.huaweicloud.sdk.aidatalakejobserver.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Objects;
+
+/**
+ * **参数解释**：类日志级别配置，用于为指定类设置特定的日志级别。 
+ */
+public class ShowSparkClassLoggerLevelResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "logger_name")
+
+    private String loggerName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "logger_level")
+
+    private LogLevel loggerLevel;
+
+    public ShowSparkClassLoggerLevelResponse withLoggerName(String loggerName) {
+        this.loggerName = loggerName;
+        return this;
+    }
+
+    /**
+     * **参数解释**：输出日志类的名称，用于指定需要配置日志级别的类。 **取值范围**：完整的类路径格式，例如：com.aaa.bbb.ccc。长度为1~512个字符。 
+     * @return loggerName
+     */
+    public String getLoggerName() {
+        return loggerName;
+    }
+
+    public void setLoggerName(String loggerName) {
+        this.loggerName = loggerName;
+    }
+
+    public ShowSparkClassLoggerLevelResponse withLoggerLevel(LogLevel loggerLevel) {
+        this.loggerLevel = loggerLevel;
+        return this;
+    }
+
+    /**
+     * Get loggerLevel
+     * @return loggerLevel
+     */
+    public LogLevel getLoggerLevel() {
+        return loggerLevel;
+    }
+
+    public void setLoggerLevel(LogLevel loggerLevel) {
+        this.loggerLevel = loggerLevel;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        ShowSparkClassLoggerLevelResponse that = (ShowSparkClassLoggerLevelResponse) obj;
+        return Objects.equals(this.loggerName, that.loggerName) && Objects.equals(this.loggerLevel, that.loggerLevel);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(loggerName, loggerLevel);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ShowSparkClassLoggerLevelResponse {\n");
+        sb.append("    loggerName: ").append(toIndentedString(loggerName)).append("\n");
+        sb.append("    loggerLevel: ").append(toIndentedString(loggerLevel)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

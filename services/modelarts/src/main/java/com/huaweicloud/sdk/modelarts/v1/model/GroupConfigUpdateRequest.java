@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * **参数解释：** 服务实例组配置，当推理方式为BATCH/EDGE时仅支持配置一个模型；当推理方式为REAL_TIME时，可根据业务需要配置多个服务实例并分配权重。 **约束限制：** 不涉及
+ * **参数解释：** 服务实例组配置，当推理方式为BATCH/EDGE时仅支持配置一个模型；当推理方式为REAL_TIME时，可根据业务需要配置多个服务实例并分配权重。  **约束限制：** 不涉及
  */
 public class GroupConfigUpdateRequest {
 
@@ -141,7 +141,7 @@ public class GroupConfigUpdateRequest {
     }
 
     /**
-     * **参数解释：** 部署名称。 **约束限制：** 必填参数，不填不保留原有值。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * **参数解释：** 部署名称。 **约束限制：** 不填保留原有值。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return name
      */
     public String getName() {
@@ -175,7 +175,7 @@ public class GroupConfigUpdateRequest {
     }
 
     /**
-     * **参数解释：** 框架类型。 **约束限制：** 不填则为默认值。 **取值范围：** - COMMON：普通在线服务 - VLLM：VLLM框架 - MINDIE：MINDIE框架 **默认取值：** COMMON
+     * **参数解释：** 框架类型。 **约束限制：** 不填保留原有值。 **取值范围：** - COMMON：普通在线服务 - VLLM：VLLM框架 - MINDIE：MINDIE框架 **默认取值：** 不涉及。
      * @return framework
      */
     public String getFramework() {
@@ -192,7 +192,7 @@ public class GroupConfigUpdateRequest {
     }
 
     /**
-     * **参数解释：** 部署场景下，服务实例数量。 **约束限制：** 不填则为默认值。 **取值范围：** [1, 128]。 **默认取值：** 1
+     * **参数解释：** 部署场景下，服务实例数量。 **约束限制：** 不填保留原有值。 **取值范围：** [1, 128]。 **默认取值：** 不涉及。
      * @return count
      */
     public Integer getCount() {
@@ -226,7 +226,7 @@ public class GroupConfigUpdateRequest {
     }
 
     /**
-     * **参数解释：** 系统日志转储开关。 **约束限制：** 不填则为默认值。 **取值范围：** 不涉及 **默认取值：** false
+     * **参数解释：** 系统日志转储开关。 **约束限制：** 不填保留原有值。 **取值范围：** 不涉及 **默认取值：** 不涉及。
      * @return systemLogDumpEnable
      */
     public Boolean getSystemLogDumpEnable() {
@@ -259,7 +259,7 @@ public class GroupConfigUpdateRequest {
     }
 
     /**
-     * **参数解释：** 实例单元配置。 **约束限制：** - 单机推理时，个数只会为1；如果是分布式推理时，根据不同框架，实例单元配置可灵活配置。 - 必填字段。 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 实例单元配置。 **约束限制：** - 单机推理时，个数只会为1；如果是分布式推理时，根据不同框架，实例单元配置可灵活配置。 - 不填保留原有值，填了全量覆盖原有值。 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return unitConfigs
      */
     public List<UnitConfig> getUnitConfigs() {
@@ -344,7 +344,7 @@ public class GroupConfigUpdateRequest {
     }
 
     /**
-     * **参数解释：** 高可用开关，开启后不同实例的pod将尽量均匀分布到不同的节点上。 **约束限制：** 不填则为默认值 **取值范围：** 不涉及 **默认取值：** true
+     * **参数解释：** 高可用开关，开启后不同实例的pod将尽量均匀分布到不同的节点上。 **约束限制：** 不填保留原有值 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return highAvailSwitch
      */
     public Boolean getHighAvailSwitch() {
@@ -361,7 +361,7 @@ public class GroupConfigUpdateRequest {
     }
 
     /**
-     * **参数解释：** 部署备注。 **约束限制：** 不填则将部署描述清空。 **取值范围：** 长度不可以超过512，不能包含大于号，小于号。 **默认取值：** 默认为空。
+     * **参数解释：** 部署备注。 **约束限制：** 不填保留原有值。 **取值范围：** 长度不可以超过512，不能包含大于号，小于号。 **默认取值：** 默认为空。
      * @return description
      */
     public String getDescription() {
@@ -507,7 +507,7 @@ public class GroupConfigUpdateRequest {
     }
 
     /**
-     * **参数解释：** 调度策略。 **约束限制：** 不涉及。 **取值范围：** - HIGH_AVAILABILITY：高可用调度 - HIGH_UTILIZATION：紧凑调度 - HIGH_PERFORMANCE：高性能调度 **默认取值：** HIGH_AVAILABILITY。
+     * **参数解释：** 调度策略。 **约束限制：** 不填保留原有值。 **取值范围：** - HIGH_AVAILABILITY：高可用调度 - HIGH_UTILIZATION：紧凑调度 - HIGH_PERFORMANCE：高性能调度 **默认取值：** HIGH_AVAILABILITY。
      * @return scheduleStrategy
      */
     public String getScheduleStrategy() {

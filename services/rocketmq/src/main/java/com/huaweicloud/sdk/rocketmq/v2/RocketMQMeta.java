@@ -123,6 +123,8 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceForRocketMqRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.RestartInstanceRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.RestartInstanceResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.RestoreRecycleInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.RestoreRecycleInstanceResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendDlqMessageForRocketMqRequest;
@@ -860,11 +862,11 @@ public class RocketMQMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBackgroundTasksRequest::getInstanceId,
                 ListBackgroundTasksRequest::setInstanceId));
-        builder.<Integer>withRequestField("offset",
+        builder.<Integer>withRequestField("start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBackgroundTasksRequest::getOffset, ListBackgroundTasksRequest::setOffset));
+            f -> f.withMarshaller(ListBackgroundTasksRequest::getStart, ListBackgroundTasksRequest::setStart));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1849,6 +1851,34 @@ public class RocketMQMeta {
             TypeCasts.uncheckedConversion(ResizeEngineInstanceReq.class),
             f -> f.withMarshaller(ResizeInstanceForRocketMqRequest::getBody,
                 ResizeInstanceForRocketMqRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RestartInstanceRequest, RestartInstanceResponse> restartInstance =
+        genForRestartInstance();
+
+    private static HttpRequestDef<RestartInstanceRequest, RestartInstanceResponse> genForRestartInstance() {
+        // basic
+        HttpRequestDef.Builder<RestartInstanceRequest, RestartInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RestartInstanceRequest.class, RestartInstanceResponse.class)
+                .withName("RestartInstance")
+                .withUri("/v2/{project_id}/{engine}/instances/{instance_id}/restart")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("engine",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestartInstanceRequest::getEngine, RestartInstanceRequest::setEngine));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestartInstanceRequest::getInstanceId, RestartInstanceRequest::setInstanceId));
 
         // response
 

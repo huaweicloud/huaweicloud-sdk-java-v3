@@ -17,7 +17,7 @@ public class ShowKafkaRebalanceLogResponse extends SdkResponse {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instanceId")
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
@@ -27,29 +27,39 @@ public class ShowKafkaRebalanceLogResponse extends SdkResponse {
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "logStreamId")
+    @JsonProperty(value = "log_stream_id")
 
     private String logStreamId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "logGroupId")
+    @JsonProperty(value = "log_group_id")
 
     private String logGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dashboardId")
+    @JsonProperty(value = "dashboard_id")
 
     private String dashboardId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "createAt")
+    @JsonProperty(value = "log_type")
 
-    private String createAt;
+    private String logType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "updateAt")
+    @JsonProperty(value = "log_file_name")
 
-    private String updateAt;
+    private String logFileName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private Long createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "updated_at")
+
+    private Long updatedAt;
 
     public ShowKafkaRebalanceLogResponse withId(String id) {
         this.id = id;
@@ -57,7 +67,7 @@ public class ShowKafkaRebalanceLogResponse extends SdkResponse {
     }
 
     /**
-     * 日志ID。
+     * **参数解释**： 日志ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -74,7 +84,7 @@ public class ShowKafkaRebalanceLogResponse extends SdkResponse {
     }
 
     /**
-     * 实例ID。
+     * **参数解释**： 实例ID。 **取值范围**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -91,7 +101,7 @@ public class ShowKafkaRebalanceLogResponse extends SdkResponse {
     }
 
     /**
-     * 状态。
+     * **参数解释**： 重平衡日志状态。 **取值范围**： - OPEN：已开启重平衡日志。 - CLOSE：已关闭重平衡日志。 - OPENING：重平衡日志开启中。 - CLOSING：重平衡日志关闭中。
      * @return status
      */
     public String getStatus() {
@@ -108,7 +118,7 @@ public class ShowKafkaRebalanceLogResponse extends SdkResponse {
     }
 
     /**
-     * 日志流ID。
+     * **参数解释**： 日志流ID。 **取值范围**： 不涉及。
      * @return logStreamId
      */
     public String getLogStreamId() {
@@ -125,7 +135,7 @@ public class ShowKafkaRebalanceLogResponse extends SdkResponse {
     }
 
     /**
-     * 日志组ID。
+     * **参数解释**： 日志组ID。 **取值范围**： 不涉及。
      * @return logGroupId
      */
     public String getLogGroupId() {
@@ -142,7 +152,7 @@ public class ShowKafkaRebalanceLogResponse extends SdkResponse {
     }
 
     /**
-     * 看板ID。
+     * **参数解释**： 看板ID。 **取值范围**： 不涉及。
      * @return dashboardId
      */
     public String getDashboardId() {
@@ -153,38 +163,72 @@ public class ShowKafkaRebalanceLogResponse extends SdkResponse {
         this.dashboardId = dashboardId;
     }
 
-    public ShowKafkaRebalanceLogResponse withCreateAt(String createAt) {
-        this.createAt = createAt;
+    public ShowKafkaRebalanceLogResponse withLogType(String logType) {
+        this.logType = logType;
         return this;
     }
 
     /**
-     * 创建时间。
-     * @return createAt
+     * **参数解释**： 日志类型。 **取值范围**： 不涉及。
+     * @return logType
      */
-    public String getCreateAt() {
-        return createAt;
+    public String getLogType() {
+        return logType;
     }
 
-    public void setCreateAt(String createAt) {
-        this.createAt = createAt;
+    public void setLogType(String logType) {
+        this.logType = logType;
     }
 
-    public ShowKafkaRebalanceLogResponse withUpdateAt(String updateAt) {
-        this.updateAt = updateAt;
+    public ShowKafkaRebalanceLogResponse withLogFileName(String logFileName) {
+        this.logFileName = logFileName;
         return this;
     }
 
     /**
-     * 更新时间。
-     * @return updateAt
+     * **参数解释**： 日志文件名称。 **取值范围**： 不涉及。
+     * @return logFileName
      */
-    public String getUpdateAt() {
-        return updateAt;
+    public String getLogFileName() {
+        return logFileName;
     }
 
-    public void setUpdateAt(String updateAt) {
-        this.updateAt = updateAt;
+    public void setLogFileName(String logFileName) {
+        this.logFileName = logFileName;
+    }
+
+    public ShowKafkaRebalanceLogResponse withCreatedAt(Long createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 创建时间。 **取值范围**： 不涉及。
+     * @return createdAt
+     */
+    public Long getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Long createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public ShowKafkaRebalanceLogResponse withUpdatedAt(Long updatedAt) {
+        this.updatedAt = updatedAt;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 更新时间。 **取值范围**： 不涉及。
+     * @return updatedAt
+     */
+    public Long getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Long updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
@@ -199,12 +243,22 @@ public class ShowKafkaRebalanceLogResponse extends SdkResponse {
         return Objects.equals(this.id, that.id) && Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.status, that.status) && Objects.equals(this.logStreamId, that.logStreamId)
             && Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.dashboardId, that.dashboardId)
-            && Objects.equals(this.createAt, that.createAt) && Objects.equals(this.updateAt, that.updateAt);
+            && Objects.equals(this.logType, that.logType) && Objects.equals(this.logFileName, that.logFileName)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, instanceId, status, logStreamId, logGroupId, dashboardId, createAt, updateAt);
+        return Objects.hash(id,
+            instanceId,
+            status,
+            logStreamId,
+            logGroupId,
+            dashboardId,
+            logType,
+            logFileName,
+            createdAt,
+            updatedAt);
     }
 
     @Override
@@ -217,8 +271,10 @@ public class ShowKafkaRebalanceLogResponse extends SdkResponse {
         sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
         sb.append("    dashboardId: ").append(toIndentedString(dashboardId)).append("\n");
-        sb.append("    createAt: ").append(toIndentedString(createAt)).append("\n");
-        sb.append("    updateAt: ").append(toIndentedString(updateAt)).append("\n");
+        sb.append("    logType: ").append(toIndentedString(logType)).append("\n");
+        sb.append("    logFileName: ").append(toIndentedString(logFileName)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("}");
         return sb.toString();
     }

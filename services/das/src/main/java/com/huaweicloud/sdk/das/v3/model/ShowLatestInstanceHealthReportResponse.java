@@ -73,6 +73,11 @@ public class ShowLatestInstanceHealthReportResponse extends SdkResponse {
 
     private HealthReportInspectionStat inspectionStat;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_message")
+
+    private String errorMessage;
+
     public ShowLatestInstanceHealthReportResponse withSuccess(Boolean success) {
         this.success = success;
         return this;
@@ -353,6 +358,23 @@ public class ShowLatestInstanceHealthReportResponse extends SdkResponse {
         this.inspectionStat = inspectionStat;
     }
 
+    public ShowLatestInstanceHealthReportResponse withErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+        return this;
+    }
+
+    /**
+     * 错误信息
+     * @return errorMessage
+     */
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -369,7 +391,8 @@ public class ShowLatestInstanceHealthReportResponse extends SdkResponse {
             && Objects.equals(this.performanceStat, that.performanceStat)
             && Objects.equals(this.diskStat, that.diskStat) && Objects.equals(this.tableSpaceStat, that.tableSpaceStat)
             && Objects.equals(this.slowLogStat, that.slowLogStat) && Objects.equals(this.fullSqlStat, that.fullSqlStat)
-            && Objects.equals(this.inspectionStat, that.inspectionStat);
+            && Objects.equals(this.inspectionStat, that.inspectionStat)
+            && Objects.equals(this.errorMessage, that.errorMessage);
     }
 
     @Override
@@ -385,7 +408,8 @@ public class ShowLatestInstanceHealthReportResponse extends SdkResponse {
             tableSpaceStat,
             slowLogStat,
             fullSqlStat,
-            inspectionStat);
+            inspectionStat,
+            errorMessage);
     }
 
     @Override
@@ -404,6 +428,7 @@ public class ShowLatestInstanceHealthReportResponse extends SdkResponse {
         sb.append("    slowLogStat: ").append(toIndentedString(slowLogStat)).append("\n");
         sb.append("    fullSqlStat: ").append(toIndentedString(fullSqlStat)).append("\n");
         sb.append("    inspectionStat: ").append(toIndentedString(inspectionStat)).append("\n");
+        sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

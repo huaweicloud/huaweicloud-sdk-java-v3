@@ -48,7 +48,7 @@ public class ScheduleTaskDetail {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_content")
 
-    private Object taskContent;
+    private String taskContent;
 
     public ScheduleTaskDetail withTaskId(String taskId) {
         this.taskId = taskId;
@@ -169,7 +169,7 @@ public class ScheduleTaskDetail {
         this.instanceName = instanceName;
     }
 
-    public ScheduleTaskDetail withTaskContent(Object taskContent) {
+    public ScheduleTaskDetail withTaskContent(String taskContent) {
         this.taskContent = taskContent;
         return this;
     }
@@ -178,11 +178,11 @@ public class ScheduleTaskDetail {
      * 任务信息。
      * @return taskContent
      */
-    public Object getTaskContent() {
+    public String getTaskContent() {
         return taskContent;
     }
 
-    public void setTaskContent(Object taskContent) {
+    public void setTaskContent(String taskContent) {
         this.taskContent = taskContent;
     }
 

@@ -30,7 +30,7 @@ public class ListParameterGroupTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * 参数模板数量。
+     * **参数解释**: 参数模板总记录数。 **取值范围**: [0, 2147483647]，取决于实际查询大小。
      * @return count
      */
     public Integer getCount() {
@@ -64,7 +64,7 @@ public class ListParameterGroupTemplatesResponse extends SdkResponse {
     }
 
     /**
-     * 参数模板列表。
+     * **参数解释**: 参数模板信息，具体参数请参考ConfigurationsResult。
      * @return configurations
      */
     public List<ConfigurationsResult> getConfigurations() {

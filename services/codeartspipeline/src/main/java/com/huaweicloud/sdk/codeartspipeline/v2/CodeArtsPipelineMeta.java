@@ -11,8 +11,6 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchMovePipelineToGroupReq
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchMovePipelineToGroupResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesLatestStatusRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesLatestStatusResponse;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesStatusRequest;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesStatusResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BusinessTypePluginsQueryDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateBasicPluginResponse;
@@ -56,6 +54,9 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteRuleRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteRuleResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.EndpointProxyParam;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.InvokeEndpointProxyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.InvokeEndpointProxyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListActionsPipelineRunsByRunIdsRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListActionsPipelineRunsByRunIdsResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListActionsPipelineRunsRequest;
@@ -66,6 +67,10 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ListBasePluginsNewPostReque
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListBasePluginsNewPostResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListBasePluginsRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListBasePluginsResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListEndpointsDetailsRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListEndpointsDetailsResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListModulesDetailRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListModulesDetailResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPLuginVersionRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPLuginVersionResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineQuery;
@@ -101,7 +106,6 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ListTemplatesResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.LogQuery;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineByTemplateDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineDTO;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineExecuteStates;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineGroupBindDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineGroupCreateDTO;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.PipelineGroupUpdateDTO;
@@ -346,37 +350,6 @@ public class CodeArtsPipelineMeta {
                 .withMarshaller(BatchShowPipelinesLatestStatusResponse::getBody,
                     BatchShowPipelinesLatestStatusResponse::setBody)
                 .withInnerContainerType(PipelineLatestRun.class));
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<BatchShowPipelinesStatusRequest, BatchShowPipelinesStatusResponse> batchShowPipelinesStatus =
-        genForBatchShowPipelinesStatus();
-
-    private static HttpRequestDef<BatchShowPipelinesStatusRequest, BatchShowPipelinesStatusResponse> genForBatchShowPipelinesStatus() {
-        // basic
-        HttpRequestDef.Builder<BatchShowPipelinesStatusRequest, BatchShowPipelinesStatusResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET, BatchShowPipelinesStatusRequest.class, BatchShowPipelinesStatusResponse.class)
-                .withName("BatchShowPipelinesStatus")
-                .withUri("/v3/pipelines/status")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("pipeline_ids",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchShowPipelinesStatusRequest::getPipelineIds,
-                BatchShowPipelinesStatusRequest::setPipelineIds));
-
-        // response
-        builder.<List<PipelineExecuteStates>>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchShowPipelinesStatusResponse::getBody, BatchShowPipelinesStatusResponse::setBody)
-                .withInnerContainerType(PipelineExecuteStates.class));
 
         return builder.build();
     }
@@ -1084,6 +1057,109 @@ public class CodeArtsPipelineMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BusinessTypePluginsQueryDTO.class),
             f -> f.withMarshaller(ListBasePluginsNewPostRequest::getBody, ListBasePluginsNewPostRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEndpointsDetailsRequest, ListEndpointsDetailsResponse> listEndpointsDetails =
+        genForListEndpointsDetails();
+
+    private static HttpRequestDef<ListEndpointsDetailsRequest, ListEndpointsDetailsResponse> genForListEndpointsDetails() {
+        // basic
+        HttpRequestDef.Builder<ListEndpointsDetailsRequest, ListEndpointsDetailsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListEndpointsDetailsRequest.class, ListEndpointsDetailsResponse.class)
+            .withName("ListEndpointsDetails")
+            .withUri("/v1/serviceconnection/endpoints")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_uuid",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointsDetailsRequest::getProjectUuid,
+                ListEndpointsDetailsRequest::setProjectUuid));
+        builder.<String>withRequestField("region_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointsDetailsRequest::getRegionName,
+                ListEndpointsDetailsRequest::setRegionName));
+        builder.<String>withRequestField("module_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointsDetailsRequest::getModuleId, ListEndpointsDetailsRequest::setModuleId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEndpointsDetailsRequest::getOffset, ListEndpointsDetailsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEndpointsDetailsRequest::getLimit, ListEndpointsDetailsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListModulesDetailRequest, ListModulesDetailResponse> listModulesDetail =
+        genForListModulesDetail();
+
+    private static HttpRequestDef<ListModulesDetailRequest, ListModulesDetailResponse> genForListModulesDetail() {
+        // basic
+        HttpRequestDef.Builder<ListModulesDetailRequest, ListModulesDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListModulesDetailRequest.class, ListModulesDetailResponse.class)
+                .withName("ListModulesDetail")
+                .withUri("/v2/extensions/modules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_uuid",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListModulesDetailRequest::getProjectUuid, ListModulesDetailRequest::setProjectUuid));
+        builder.<String>withRequestField("region_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListModulesDetailRequest::getRegionName, ListModulesDetailRequest::setRegionName));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListModulesDetailRequest::getName, ListModulesDetailRequest::setName));
+        builder.<String>withRequestField("productLine",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListModulesDetailRequest::getProductLine, ListModulesDetailRequest::setProductLine));
+        builder.<List<String>>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListModulesDetailRequest::getTags, ListModulesDetailRequest::setTags));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListModulesDetailRequest::getOffset, ListModulesDetailRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListModulesDetailRequest::getLimit, ListModulesDetailRequest::setLimit));
+        builder.<List<String>>withRequestField("locations",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListModulesDetailRequest::getLocations, ListModulesDetailRequest::setLocations));
 
         // response
 
@@ -3009,6 +3085,29 @@ public class CodeArtsPipelineMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(UploadPublisherIconResponse::getBody, UploadPublisherIconResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<InvokeEndpointProxyRequest, InvokeEndpointProxyResponse> invokeEndpointProxy =
+        genForInvokeEndpointProxy();
+
+    private static HttpRequestDef<InvokeEndpointProxyRequest, InvokeEndpointProxyResponse> genForInvokeEndpointProxy() {
+        // basic
+        HttpRequestDef.Builder<InvokeEndpointProxyRequest, InvokeEndpointProxyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, InvokeEndpointProxyRequest.class, InvokeEndpointProxyResponse.class)
+                .withName("InvokeEndpointProxy")
+                .withUri("/v1/serviceconnection/endpointproxy")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<EndpointProxyParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(EndpointProxyParam.class),
+            f -> f.withMarshaller(InvokeEndpointProxyRequest::getBody, InvokeEndpointProxyRequest::setBody));
+
+        // response
 
         return builder.build();
     }

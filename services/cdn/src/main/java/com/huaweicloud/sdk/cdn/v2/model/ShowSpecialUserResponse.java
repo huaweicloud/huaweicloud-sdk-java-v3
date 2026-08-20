@@ -97,7 +97,7 @@ public class ShowSpecialUserResponse extends SdkResponse {
     }
 
     /**
-     * 1表示用户可以查询总请求时长枚举，0表示用户不可以查询总请求时长枚举
+     * **参数解释：** 租户是否可以查询总请求时长 **约束限制：** 不涉及 **取值范围：** - 1：表示租户可以查询总请求时长 - 0：表示租户不可以查询总请求时长 **默认取值：** 不涉及
      * @return status
      */
     public Long getStatus() {
@@ -114,7 +114,7 @@ public class ShowSpecialUserResponse extends SdkResponse {
     }
 
     /**
-     * 进制
+     * **参数解释：** 进制 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return metric
      */
     public Long getMetric() {
@@ -131,7 +131,7 @@ public class ShowSpecialUserResponse extends SdkResponse {
     }
 
     /**
-     * 流量进制
+     * **参数解释：** 流量进制 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return fluxMetric
      */
     public Long getFluxMetric() {
@@ -148,7 +148,7 @@ public class ShowSpecialUserResponse extends SdkResponse {
     }
 
     /**
-     * 1表示用户可以，0表示用户不可以。是否是开放国家及地区界面用户
+     * **参数解释：** 租户是否是开放国家及地区界面 **约束限制：** 不涉及 **取值范围：** - 1：表示租户开放国家及地区界面 - 0：表示租户不用开放国家及地区界面 **默认取值：** 不涉及
      * @return cy
      */
     public Long getCy() {
@@ -165,7 +165,7 @@ public class ShowSpecialUserResponse extends SdkResponse {
     }
 
     /**
-     * 1表示用户可以查询ipv6流量,https流量，0表示用户不可以
+     * **参数解释：** 租户是否可以查询ipv6流量、https流量 **约束限制：** 不涉及 **取值范围：** - 1：表示租户可以查询ipv6流量、https流量 - 0：表示租户不可以查询ipv6流量、https流量 **默认取值：** 不涉及
      * @return h6
      */
     public Long getH6() {
@@ -182,7 +182,7 @@ public class ShowSpecialUserResponse extends SdkResponse {
     }
 
     /**
-     * 1表示用户可以查询具体的状态码详情，0表示用户不可以
+     * **参数解释：** 租户是否可以查询具体的状态码详情 **约束限制：** 不涉及 **取值范围：** - 1：表示租户可以查询具体的状态码详情 - 0：表示租户不可以查询具体的状态码详情 **默认取值：** 不涉及
      * @return c
      */
     public Long getC() {
@@ -199,7 +199,7 @@ public class ShowSpecialUserResponse extends SdkResponse {
     }
 
     /**
-     * 1表示用户查询 top url 时要返回http状态码，0表示用户不返回
+     * **参数解释：** 查询查询top url时是否返回http状态码 **约束限制：** 不涉及 **取值范围：** - 1：表示租户查询top url时返回http状态码 - 0：表示租户查询top url时不返回http状态码 **默认取值：** 不涉及
      * @return sc
      */
     public Long getSc() {
@@ -216,7 +216,7 @@ public class ShowSpecialUserResponse extends SdkResponse {
     }
 
     /**
-     * 1表示该用户可以查询回源状态码，0表示不可以
+     * **参数解释：** 租户是否可以查询回源状态码 **约束限制：** 不涉及 **取值范围：** - 1：表示租户可以查询回源状态码 - 0：表示租户不可以查询回源状态码 **默认取值：** 不涉及
      * @return bhc
      */
     public Long getBhc() {
@@ -233,7 +233,7 @@ public class ShowSpecialUserResponse extends SdkResponse {
     }
 
     /**
-     * 1表示该用户可以查询protocol和IPVersion，0表示用户不可以
+     * **参数解释：** 租户是否可以查询protocol和IPVersion **约束限制：** 不涉及 **取值范围：** - 1：表示租户可以查询protocol和IPVersion - 0：表示租户不可以查询protocol和IPVersion **默认取值：** 不涉及
      * @return pi
      */
     public Long getPi() {
@@ -250,7 +250,7 @@ public class ShowSpecialUserResponse extends SdkResponse {
     }
 
     /**
-     * 1表示该用户可以查询租户界面5分钟粒度数据导出白名单，0表示用户不可以
+     * **参数解释：** 租户是否可以导出5分钟粒度数据 **约束限制：** 不涉及 **取值范围：** - 1：表示租户可以导出5分钟粒度数据 - 0：表示租户不可以导出5分钟粒度数据 **默认取值：** 不涉及
      * @return exp5
      */
     public Long getExp5() {
@@ -267,7 +267,7 @@ public class ShowSpecialUserResponse extends SdkResponse {
     }
 
     /**
-     * 1表示该用户可以查询1分钟粒度统计数据，0表示用户不可以
+     * **参数解释：** 租户是否可以查询1分钟粒度数据 **约束限制：** 不涉及 **取值范围：** - 1：表示租户可以查询1分钟粒度数据 - 0：表示租户不可以查询1分钟粒度数据 **默认取值：** 不涉及
      * @return m1
      */
     public Long getM1() {
@@ -284,7 +284,7 @@ public class ShowSpecialUserResponse extends SdkResponse {
     }
 
     /**
-     * 1表示该用户可以查询1个月5分钟粒度统计数据，0表示用户不可以
+     * **参数解释：** 租户是否可以查询1个月5分钟粒度统计数据 **约束限制：** 不涉及 **取值范围：** - 1：表示租户可以查询1个月5分钟粒度统计数据 - 0：表示租户不可以查询1个月5分钟粒度统计数据 **默认取值：** 不涉及
      * @return isMonthM5
      */
     public Long getIsMonthM5() {
@@ -301,7 +301,7 @@ public class ShowSpecialUserResponse extends SdkResponse {
     }
 
     /**
-     * 1表示该用户可以在租户界面指定下载链接可用范围，0表示用户不可以
+     * **参数解释：** 租户是否可以在租户界面指定下载链接可用范围 **约束限制：** 不涉及 **取值范围：** - 1：表示租户可以在租户界面指定下载链接可用范围 - 0：表示租户不可以在租户界面指定下载链接可用范围 **默认取值：** 不涉及
      * @return expAgy
      */
     public Long getExpAgy() {
@@ -318,7 +318,7 @@ public class ShowSpecialUserResponse extends SdkResponse {
     }
 
     /**
-     * 1表示该用户可以是否上报到国际站CES，0表示用户不可以
+     * **参数解释：** 租户是否可以上报到国际站CES **约束限制：** 不涉及 **取值范围：** - 1：表示租户可以上报到国际站CES - 0：表示租户不可以上报到国际站CES **默认取值：** 不涉及
      * @return cesReportSite
      */
     public Long getCesReportSite() {
@@ -335,7 +335,7 @@ public class ShowSpecialUserResponse extends SdkResponse {
     }
 
     /**
-     * 1表示该用户按上浮系数展示数据，0表示用户不可以
+     * **参数解释：** 租户是否按上浮系数展示数据 **约束限制：** 不涉及 **取值范围：** - 1：表示租户按上浮系数展示数据 - 0：表示租户不按上浮系数展示数据 **默认取值：** 不涉及
      * @return _float
      */
     public Long getFloat() {
@@ -352,7 +352,7 @@ public class ShowSpecialUserResponse extends SdkResponse {
     }
 
     /**
-     * 1表示该用户允许查询入网带宽，0表示用户不可以
+     * **参数解释：** 租户是否允许查询入网带宽 **约束限制：** 不涉及 **取值范围：** - 1：表示租户允许查询入网带宽 - 0：表示租户不可以查询入网带宽 **默认取值：** 不涉及
      * @return isShowUpBw
      */
     public Long getIsShowUpBw() {

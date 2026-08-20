@@ -67,7 +67,7 @@ public class BatchExecuteEventsRequestBody {
     }
 
     /**
-     * **参数解释**: 事件操作类型。 **约束限制**: 不涉及。 **取值范围**: - cancel：取消事件 - execute：立即执行 - reservation：预约执行时间窗口 **默认取值**: 不涉及。
+     * **参数解释**: 事件操作类型。 **约束限制**: 不涉及。 **取值范围**: - cancel：取消事件 - execute：立即执行 - reservation：预约执行时间窗口  **默认取值**: 不涉及。
      * @return operationType
      */
     public String getOperationType() {

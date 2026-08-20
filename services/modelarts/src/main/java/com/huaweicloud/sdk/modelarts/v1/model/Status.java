@@ -53,6 +53,16 @@ public class Status {
 
     private List<RunningRecord> runningRecords = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "retention_time")
+
+    private Integer retentionTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_ips")
+
+    private List<TaskIP> taskIps = null;
+
     public Status withPhase(String phase) {
         this.phase = phase;
         return this;
@@ -253,6 +263,56 @@ public class Status {
         this.runningRecords = runningRecords;
     }
 
+    public Status withRetentionTime(Integer retentionTime) {
+        this.retentionTime = retentionTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**：作业已经保留时长。  **约束限制**：仅当创建训练作业时，设置了`reserved_time`时返回。  **取值范围**：不涉及。    **默认取值**：不涉及。
+     * @return retentionTime
+     */
+    public Integer getRetentionTime() {
+        return retentionTime;
+    }
+
+    public void setRetentionTime(Integer retentionTime) {
+        this.retentionTime = retentionTime;
+    }
+
+    public Status withTaskIps(List<TaskIP> taskIps) {
+        this.taskIps = taskIps;
+        return this;
+    }
+
+    public Status addTaskIpsItem(TaskIP taskIpsItem) {
+        if (this.taskIps == null) {
+            this.taskIps = new ArrayList<>();
+        }
+        this.taskIps.add(taskIpsItem);
+        return this;
+    }
+
+    public Status withTaskIps(Consumer<List<TaskIP>> taskIpsSetter) {
+        if (this.taskIps == null) {
+            this.taskIps = new ArrayList<>();
+        }
+        taskIpsSetter.accept(this.taskIps);
+        return this;
+    }
+
+    /**
+     * **参数解释**：训练作业各 Task 的 IP 信息。 **约束限制**：仅当查询请求携带 `host_ips` 时返回；且仅返回与筛选 IP 匹配的记录。 **取值范围**：不涉及。 **默认取值**：不传 `host_ips` 时不返回。
+     * @return taskIps
+     */
+    public List<TaskIP> getTaskIps() {
+        return taskIps;
+    }
+
+    public void setTaskIps(List<TaskIP> taskIps) {
+        this.taskIps = taskIps;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -266,13 +326,22 @@ public class Status {
             && Objects.equals(this.duration, that.duration)
             && Objects.equals(this.nodeCountMetrics, that.nodeCountMetrics) && Objects.equals(this.tasks, that.tasks)
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.taskStatuses, that.taskStatuses)
-            && Objects.equals(this.runningRecords, that.runningRecords);
+            && Objects.equals(this.runningRecords, that.runningRecords)
+            && Objects.equals(this.retentionTime, that.retentionTime) && Objects.equals(this.taskIps, that.taskIps);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(phase, secondaryPhase, duration, nodeCountMetrics, tasks, startTime, taskStatuses, runningRecords);
+        return Objects.hash(phase,
+            secondaryPhase,
+            duration,
+            nodeCountMetrics,
+            tasks,
+            startTime,
+            taskStatuses,
+            runningRecords,
+            retentionTime,
+            taskIps);
     }
 
     @Override
@@ -287,6 +356,8 @@ public class Status {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    taskStatuses: ").append(toIndentedString(taskStatuses)).append("\n");
         sb.append("    runningRecords: ").append(toIndentedString(runningRecords)).append("\n");
+        sb.append("    retentionTime: ").append(toIndentedString(retentionTime)).append("\n");
+        sb.append("    taskIps: ").append(toIndentedString(taskIps)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -133,7 +133,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * 价格度量单位标识。 1：元
+     * 价格度量单位标识。 1：美元
      * @return measureId
      */
     public Integer getMeasureId() {
@@ -219,7 +219,7 @@ public class OptionalDiscountRatingResult {
     }
 
     /**
-     * 产品询价结果，具体参见表5。
+     * 产品询价结果，具体参见PeriodProductRatingResult。
      * @return productRatingResults
      */
     public List<PeriodProductRatingResult> getProductRatingResults() {

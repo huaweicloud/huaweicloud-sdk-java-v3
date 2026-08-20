@@ -26,7 +26,7 @@ public class RenewInquiryResultInfo {
     }
 
     /**
-     * |参数名称：资源ID。| |参数约束及描述：资源ID。|
+     * 资源ID。请求携带“include_relative_resources”字段，会返回关联资源的主资源ID和续订金额
      * @return resourceId
      */
     public String getResourceId() {
@@ -43,7 +43,7 @@ public class RenewInquiryResultInfo {
     }
 
     /**
-     * |参数名称：主资源（包含从资源）续订金额。单位为元| |参数约束及描述：主资源（包含从资源）续订金额。单位为元|
+     * 主资源（包含从资源）续订金额。单位为元
      * @return amount
      */
     public String getAmount() {

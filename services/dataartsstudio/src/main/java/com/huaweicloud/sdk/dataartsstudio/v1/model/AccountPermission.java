@@ -376,6 +376,87 @@ public class AccountPermission {
 
     private String rowLevelSecurityDesc;
 
+    /**
+     * 续期工单状态，可选值： * ORDER_WAITING_APPROVE  工单待审批 * NO_ORDER  无工单 * ORDER_REJECT  工单已拒绝
+     */
+    public static final class RenewalStatusEnum {
+
+        /**
+         * Enum ORDER_WAITING_APPROVE for value: "ORDER_WAITING_APPROVE"
+         */
+        public static final RenewalStatusEnum ORDER_WAITING_APPROVE = new RenewalStatusEnum("ORDER_WAITING_APPROVE");
+
+        /**
+         * Enum NO_ORDER for value: "NO_ORDER"
+         */
+        public static final RenewalStatusEnum NO_ORDER = new RenewalStatusEnum("NO_ORDER");
+
+        /**
+         * Enum ORDER_REJECT for value: "ORDER_REJECT"
+         */
+        public static final RenewalStatusEnum ORDER_REJECT = new RenewalStatusEnum("ORDER_REJECT");
+
+        private static final Map<String, RenewalStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RenewalStatusEnum> createStaticFields() {
+            Map<String, RenewalStatusEnum> map = new HashMap<>();
+            map.put("ORDER_WAITING_APPROVE", ORDER_WAITING_APPROVE);
+            map.put("NO_ORDER", NO_ORDER);
+            map.put("ORDER_REJECT", ORDER_REJECT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        RenewalStatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static RenewalStatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RenewalStatusEnum(value));
+        }
+
+        public static RenewalStatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof RenewalStatusEnum) {
+                return this.value.equals(((RenewalStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "renewal_status")
+
+    private RenewalStatusEnum renewalStatus;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schema_name")
 
@@ -684,6 +765,23 @@ public class AccountPermission {
         this.rowLevelSecurityDesc = rowLevelSecurityDesc;
     }
 
+    public AccountPermission withRenewalStatus(RenewalStatusEnum renewalStatus) {
+        this.renewalStatus = renewalStatus;
+        return this;
+    }
+
+    /**
+     * 续期工单状态，可选值： * ORDER_WAITING_APPROVE  工单待审批 * NO_ORDER  无工单 * ORDER_REJECT  工单已拒绝
+     * @return renewalStatus
+     */
+    public RenewalStatusEnum getRenewalStatus() {
+        return renewalStatus;
+    }
+
+    public void setRenewalStatus(RenewalStatusEnum renewalStatus) {
+        this.renewalStatus = renewalStatus;
+    }
+
     public AccountPermission withSchemaName(String schemaName) {
         this.schemaName = schemaName;
         return this;
@@ -756,6 +854,7 @@ public class AccountPermission {
             && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.rowLevelSecurity, that.rowLevelSecurity)
             && Objects.equals(this.rowLevelSecurityDesc, that.rowLevelSecurityDesc)
+            && Objects.equals(this.renewalStatus, that.renewalStatus)
             && Objects.equals(this.schemaName, that.schemaName) && Objects.equals(this.tableName, that.tableName)
             && Objects.equals(this.workspaceId, that.workspaceId);
     }
@@ -779,6 +878,7 @@ public class AccountPermission {
             projectId,
             rowLevelSecurity,
             rowLevelSecurityDesc,
+            renewalStatus,
             schemaName,
             tableName,
             workspaceId);
@@ -805,6 +905,7 @@ public class AccountPermission {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    rowLevelSecurity: ").append(toIndentedString(rowLevelSecurity)).append("\n");
         sb.append("    rowLevelSecurityDesc: ").append(toIndentedString(rowLevelSecurityDesc)).append("\n");
+        sb.append("    renewalStatus: ").append(toIndentedString(renewalStatus)).append("\n");
         sb.append("    schemaName: ").append(toIndentedString(schemaName)).append("\n");
         sb.append("    tableName: ").append(toIndentedString(tableName)).append("\n");
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");

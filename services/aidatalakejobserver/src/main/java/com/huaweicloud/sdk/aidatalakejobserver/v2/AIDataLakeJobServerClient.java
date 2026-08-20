@@ -2,6 +2,10 @@ package com.huaweicloud.sdk.aidatalakejobserver.v2;
 
 import com.huaweicloud.sdk.aidatalakejobserver.v2.model.CancelAuraSqlStatementRequest;
 import com.huaweicloud.sdk.aidatalakejobserver.v2.model.CancelAuraSqlStatementResponse;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.CancelSparkJobRequest;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.CancelSparkJobResponse;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.CancelSparkSqlRequest;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.CancelSparkSqlResponse;
 import com.huaweicloud.sdk.aidatalakejobserver.v2.model.CloseAuraSqlSessionRequest;
 import com.huaweicloud.sdk.aidatalakejobserver.v2.model.CloseAuraSqlSessionResponse;
 import com.huaweicloud.sdk.aidatalakejobserver.v2.model.CreateAuraSqlSessionRequest;
@@ -14,6 +18,18 @@ import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ListAuraSqlSessionsReque
 import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ListAuraSqlSessionsResponse;
 import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ListAuraStatementRecordsRequest;
 import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ListAuraStatementRecordsResponse;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ListSparkJobsRequest;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ListSparkJobsResponse;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ListSparkSqlsRequest;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ListSparkSqlsResponse;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.PreviewSparkSqlResultRequest;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.PreviewSparkSqlResultResponse;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.RestartSparkSqlClusterRequest;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.RestartSparkSqlClusterResponse;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.RunSparkJobRequest;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.RunSparkJobResponse;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.RunSparkSqlRequest;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.RunSparkSqlResponse;
 import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ShowAuraSqlSessionRequest;
 import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ShowAuraSqlSessionResponse;
 import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ShowAuraSqlStatementResultRequest;
@@ -22,6 +38,16 @@ import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ShowAuraStatementOperato
 import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ShowAuraStatementOperatorMetricsResponse;
 import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ShowAuraStatementQueryMetricsRequest;
 import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ShowAuraStatementQueryMetricsResponse;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ShowSparkJobRequest;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ShowSparkJobResponse;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ShowSparkJobStateRequest;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ShowSparkJobStateResponse;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ShowSparkOperatorStateRequest;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ShowSparkOperatorStateResponse;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ShowSparkSqlRequest;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ShowSparkSqlResponse;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ShowSparkSqlStateRequest;
+import com.huaweicloud.sdk.aidatalakejobserver.v2.model.ShowSparkSqlStateResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -393,6 +419,377 @@ public class AIDataLakeJobServerClient {
     public SyncInvoker<ShowAuraStatementQueryMetricsRequest, ShowAuraStatementQueryMetricsResponse> showAuraStatementQueryMetricsInvoker(
         ShowAuraStatementQueryMetricsRequest request) {
         return new SyncInvoker<>(request, AIDataLakeJobServerMeta.showAuraStatementQueryMetrics, hcClient);
+    }
+
+    /**
+     * 取消Spark作业执行
+     *
+     * 取消正在执行的Spark作业，此接口为同步接口。调用成功后，作业将被终止执行，直接返回取消结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelSparkJobRequest 请求对象
+     * @return CancelSparkJobResponse
+     */
+    public CancelSparkJobResponse cancelSparkJob(CancelSparkJobRequest request) {
+        return hcClient.syncInvokeHttp(request, AIDataLakeJobServerMeta.cancelSparkJob);
+    }
+
+    /**
+     * 取消Spark作业执行
+     *
+     * 取消正在执行的Spark作业，此接口为同步接口。调用成功后，作业将被终止执行，直接返回取消结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelSparkJobRequest 请求对象
+     * @return SyncInvoker<CancelSparkJobRequest, CancelSparkJobResponse>
+     */
+    public SyncInvoker<CancelSparkJobRequest, CancelSparkJobResponse> cancelSparkJobInvoker(
+        CancelSparkJobRequest request) {
+        return new SyncInvoker<>(request, AIDataLakeJobServerMeta.cancelSparkJob, hcClient);
+    }
+
+    /**
+     * 查询Spark作业列表
+     *
+     * 查询工作空间下Spark作业列表，此接口为同步接口。支持按作业ID、作业名称、作业状态、作业类型、创建时间等条件过滤查询，支持分页查询，调用成功后直接返回作业列表数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSparkJobsRequest 请求对象
+     * @return ListSparkJobsResponse
+     */
+    public ListSparkJobsResponse listSparkJobs(ListSparkJobsRequest request) {
+        return hcClient.syncInvokeHttp(request, AIDataLakeJobServerMeta.listSparkJobs);
+    }
+
+    /**
+     * 查询Spark作业列表
+     *
+     * 查询工作空间下Spark作业列表，此接口为同步接口。支持按作业ID、作业名称、作业状态、作业类型、创建时间等条件过滤查询，支持分页查询，调用成功后直接返回作业列表数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSparkJobsRequest 请求对象
+     * @return SyncInvoker<ListSparkJobsRequest, ListSparkJobsResponse>
+     */
+    public SyncInvoker<ListSparkJobsRequest, ListSparkJobsResponse> listSparkJobsInvoker(ListSparkJobsRequest request) {
+        return new SyncInvoker<>(request, AIDataLakeJobServerMeta.listSparkJobs, hcClient);
+    }
+
+    /**
+     * 启动Spark作业
+     *
+     * 启动Spark作业，此接口为异步接口。支持Spark Jar作业、Python作业和SQL Script作业。调用该接口后，作业将提交到队列等待执行，返回作业ID后需通过查询作业状态接口确认作业是否成功启动。查询作业状态请参见[查询Spark作业的状态](ShowSparkJobState.xml)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RunSparkJobRequest 请求对象
+     * @return RunSparkJobResponse
+     */
+    public RunSparkJobResponse runSparkJob(RunSparkJobRequest request) {
+        return hcClient.syncInvokeHttp(request, AIDataLakeJobServerMeta.runSparkJob);
+    }
+
+    /**
+     * 启动Spark作业
+     *
+     * 启动Spark作业，此接口为异步接口。支持Spark Jar作业、Python作业和SQL Script作业。调用该接口后，作业将提交到队列等待执行，返回作业ID后需通过查询作业状态接口确认作业是否成功启动。查询作业状态请参见[查询Spark作业的状态](ShowSparkJobState.xml)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RunSparkJobRequest 请求对象
+     * @return SyncInvoker<RunSparkJobRequest, RunSparkJobResponse>
+     */
+    public SyncInvoker<RunSparkJobRequest, RunSparkJobResponse> runSparkJobInvoker(RunSparkJobRequest request) {
+        return new SyncInvoker<>(request, AIDataLakeJobServerMeta.runSparkJob, hcClient);
+    }
+
+    /**
+     * 查看Spark作业详情
+     *
+     * 查看指定Spark作业的详细信息，此接口为同步接口。包括作业ID、作业名称、作业状态、作业配置、资源配置、镜像配置等完整信息，调用成功后直接返回作业详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSparkJobRequest 请求对象
+     * @return ShowSparkJobResponse
+     */
+    public ShowSparkJobResponse showSparkJob(ShowSparkJobRequest request) {
+        return hcClient.syncInvokeHttp(request, AIDataLakeJobServerMeta.showSparkJob);
+    }
+
+    /**
+     * 查看Spark作业详情
+     *
+     * 查看指定Spark作业的详细信息，此接口为同步接口。包括作业ID、作业名称、作业状态、作业配置、资源配置、镜像配置等完整信息，调用成功后直接返回作业详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSparkJobRequest 请求对象
+     * @return SyncInvoker<ShowSparkJobRequest, ShowSparkJobResponse>
+     */
+    public SyncInvoker<ShowSparkJobRequest, ShowSparkJobResponse> showSparkJobInvoker(ShowSparkJobRequest request) {
+        return new SyncInvoker<>(request, AIDataLakeJobServerMeta.showSparkJob, hcClient);
+    }
+
+    /**
+     * 查询Spark作业的状态
+     *
+     * 查询Spark作业的状态，此接口为同步接口。可通过作业ID查询Spark作业的当前执行状态，包括排队中、运行中、已成功、已失败等状态，调用后立即返回作业当前状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSparkJobStateRequest 请求对象
+     * @return ShowSparkJobStateResponse
+     */
+    public ShowSparkJobStateResponse showSparkJobState(ShowSparkJobStateRequest request) {
+        return hcClient.syncInvokeHttp(request, AIDataLakeJobServerMeta.showSparkJobState);
+    }
+
+    /**
+     * 查询Spark作业的状态
+     *
+     * 查询Spark作业的状态，此接口为同步接口。可通过作业ID查询Spark作业的当前执行状态，包括排队中、运行中、已成功、已失败等状态，调用后立即返回作业当前状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSparkJobStateRequest 请求对象
+     * @return SyncInvoker<ShowSparkJobStateRequest, ShowSparkJobStateResponse>
+     */
+    public SyncInvoker<ShowSparkJobStateRequest, ShowSparkJobStateResponse> showSparkJobStateInvoker(
+        ShowSparkJobStateRequest request) {
+        return new SyncInvoker<>(request, AIDataLakeJobServerMeta.showSparkJobState, hcClient);
+    }
+
+    /**
+     * 查询Spark异步操作状态
+     *
+     * 查询Spark异步操作的执行状态，用于获取异步操作（如重启集群等）的当前状态和执行结果。该接口为同步接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSparkOperatorStateRequest 请求对象
+     * @return ShowSparkOperatorStateResponse
+     */
+    public ShowSparkOperatorStateResponse showSparkOperatorState(ShowSparkOperatorStateRequest request) {
+        return hcClient.syncInvokeHttp(request, AIDataLakeJobServerMeta.showSparkOperatorState);
+    }
+
+    /**
+     * 查询Spark异步操作状态
+     *
+     * 查询Spark异步操作的执行状态，用于获取异步操作（如重启集群等）的当前状态和执行结果。该接口为同步接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSparkOperatorStateRequest 请求对象
+     * @return SyncInvoker<ShowSparkOperatorStateRequest, ShowSparkOperatorStateResponse>
+     */
+    public SyncInvoker<ShowSparkOperatorStateRequest, ShowSparkOperatorStateResponse> showSparkOperatorStateInvoker(
+        ShowSparkOperatorStateRequest request) {
+        return new SyncInvoker<>(request, AIDataLakeJobServerMeta.showSparkOperatorState, hcClient);
+    }
+
+    /**
+     * 取消SparkSql作业执行
+     *
+     * 取消正在运行或排队中的SparkSql作业，此接口为同步接口。只能取消处于QUEUED或RUNNING状态的作业，调用成功后直接返回取消结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelSparkSqlRequest 请求对象
+     * @return CancelSparkSqlResponse
+     */
+    public CancelSparkSqlResponse cancelSparkSql(CancelSparkSqlRequest request) {
+        return hcClient.syncInvokeHttp(request, AIDataLakeJobServerMeta.cancelSparkSql);
+    }
+
+    /**
+     * 取消SparkSql作业执行
+     *
+     * 取消正在运行或排队中的SparkSql作业，此接口为同步接口。只能取消处于QUEUED或RUNNING状态的作业，调用成功后直接返回取消结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelSparkSqlRequest 请求对象
+     * @return SyncInvoker<CancelSparkSqlRequest, CancelSparkSqlResponse>
+     */
+    public SyncInvoker<CancelSparkSqlRequest, CancelSparkSqlResponse> cancelSparkSqlInvoker(
+        CancelSparkSqlRequest request) {
+        return new SyncInvoker<>(request, AIDataLakeJobServerMeta.cancelSparkSql, hcClient);
+    }
+
+    /**
+     * 查询SparkSql作业列表
+     *
+     * 查询工作空间下SparkSql作业列表，此接口为同步接口。支持按作业状态、创建时间、SQL片段等条件进行过滤查询，调用成功后直接返回作业列表数据。可通过[查看SparkSql作业详情](ShowSparkSql.xml)接口查看作业详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSparkSqlsRequest 请求对象
+     * @return ListSparkSqlsResponse
+     */
+    public ListSparkSqlsResponse listSparkSqls(ListSparkSqlsRequest request) {
+        return hcClient.syncInvokeHttp(request, AIDataLakeJobServerMeta.listSparkSqls);
+    }
+
+    /**
+     * 查询SparkSql作业列表
+     *
+     * 查询工作空间下SparkSql作业列表，此接口为同步接口。支持按作业状态、创建时间、SQL片段等条件进行过滤查询，调用成功后直接返回作业列表数据。可通过[查看SparkSql作业详情](ShowSparkSql.xml)接口查看作业详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSparkSqlsRequest 请求对象
+     * @return SyncInvoker<ListSparkSqlsRequest, ListSparkSqlsResponse>
+     */
+    public SyncInvoker<ListSparkSqlsRequest, ListSparkSqlsResponse> listSparkSqlsInvoker(ListSparkSqlsRequest request) {
+        return new SyncInvoker<>(request, AIDataLakeJobServerMeta.listSparkSqls, hcClient);
+    }
+
+    /**
+     * 预览SparkSql作业查询结果
+     *
+     * 预览SparkSql作业的查询结果，此接口为同步接口。仅适用于执行成功的DQL类型作业，可查看作业返回的数据内容，调用成功后直接返回查询结果数据。可通过[查看SparkSql作业详情](ShowSparkSql.xml)接口查看作业详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PreviewSparkSqlResultRequest 请求对象
+     * @return PreviewSparkSqlResultResponse
+     */
+    public PreviewSparkSqlResultResponse previewSparkSqlResult(PreviewSparkSqlResultRequest request) {
+        return hcClient.syncInvokeHttp(request, AIDataLakeJobServerMeta.previewSparkSqlResult);
+    }
+
+    /**
+     * 预览SparkSql作业查询结果
+     *
+     * 预览SparkSql作业的查询结果，此接口为同步接口。仅适用于执行成功的DQL类型作业，可查看作业返回的数据内容，调用成功后直接返回查询结果数据。可通过[查看SparkSql作业详情](ShowSparkSql.xml)接口查看作业详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PreviewSparkSqlResultRequest 请求对象
+     * @return SyncInvoker<PreviewSparkSqlResultRequest, PreviewSparkSqlResultResponse>
+     */
+    public SyncInvoker<PreviewSparkSqlResultRequest, PreviewSparkSqlResultResponse> previewSparkSqlResultInvoker(
+        PreviewSparkSqlResultRequest request) {
+        return new SyncInvoker<>(request, AIDataLakeJobServerMeta.previewSparkSqlResult, hcClient);
+    }
+
+    /**
+     * 重启SparkSql集群
+     *
+     * 重启SparkSql集群，该接口为异步接口，接口调用成功后会返回操作ID（operation_id），您可以通过查询Spark异步操作状态接口查询操作执行结果，详情请参见[查询Spark异步操作状态](ShowSparkOperatorState.xml)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestartSparkSqlClusterRequest 请求对象
+     * @return RestartSparkSqlClusterResponse
+     */
+    public RestartSparkSqlClusterResponse restartSparkSqlCluster(RestartSparkSqlClusterRequest request) {
+        return hcClient.syncInvokeHttp(request, AIDataLakeJobServerMeta.restartSparkSqlCluster);
+    }
+
+    /**
+     * 重启SparkSql集群
+     *
+     * 重启SparkSql集群，该接口为异步接口，接口调用成功后会返回操作ID（operation_id），您可以通过查询Spark异步操作状态接口查询操作执行结果，详情请参见[查询Spark异步操作状态](ShowSparkOperatorState.xml)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestartSparkSqlClusterRequest 请求对象
+     * @return SyncInvoker<RestartSparkSqlClusterRequest, RestartSparkSqlClusterResponse>
+     */
+    public SyncInvoker<RestartSparkSqlClusterRequest, RestartSparkSqlClusterResponse> restartSparkSqlClusterInvoker(
+        RestartSparkSqlClusterRequest request) {
+        return new SyncInvoker<>(request, AIDataLakeJobServerMeta.restartSparkSqlCluster, hcClient);
+    }
+
+    /**
+     * 执行SparkSql作业
+     *
+     * 执行SparkSql作业，此接口为异步接口。接口调用成功后会返回作业ID（statement_id）,您可以通过查询作业状态接口查询作业执行结果，详情请参见[查询SparkSql作业的状态](ShowSparkSqlState.xml)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RunSparkSqlRequest 请求对象
+     * @return RunSparkSqlResponse
+     */
+    public RunSparkSqlResponse runSparkSql(RunSparkSqlRequest request) {
+        return hcClient.syncInvokeHttp(request, AIDataLakeJobServerMeta.runSparkSql);
+    }
+
+    /**
+     * 执行SparkSql作业
+     *
+     * 执行SparkSql作业，此接口为异步接口。接口调用成功后会返回作业ID（statement_id）,您可以通过查询作业状态接口查询作业执行结果，详情请参见[查询SparkSql作业的状态](ShowSparkSqlState.xml)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RunSparkSqlRequest 请求对象
+     * @return SyncInvoker<RunSparkSqlRequest, RunSparkSqlResponse>
+     */
+    public SyncInvoker<RunSparkSqlRequest, RunSparkSqlResponse> runSparkSqlInvoker(RunSparkSqlRequest request) {
+        return new SyncInvoker<>(request, AIDataLakeJobServerMeta.runSparkSql, hcClient);
+    }
+
+    /**
+     * 查看SparkSql作业详情
+     *
+     * 查看SparkSql作业的详细信息，此接口为同步接口。包括作业状态、SQL内容、执行参数等，调用成功后直接返回作业详细信息。可通过[执行SparkSql作业](RunSparkSql.xml)接口创建作业，通过[查询SparkSql作业列表](ListSparkSqls.xml)接口查询作业列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSparkSqlRequest 请求对象
+     * @return ShowSparkSqlResponse
+     */
+    public ShowSparkSqlResponse showSparkSql(ShowSparkSqlRequest request) {
+        return hcClient.syncInvokeHttp(request, AIDataLakeJobServerMeta.showSparkSql);
+    }
+
+    /**
+     * 查看SparkSql作业详情
+     *
+     * 查看SparkSql作业的详细信息，此接口为同步接口。包括作业状态、SQL内容、执行参数等，调用成功后直接返回作业详细信息。可通过[执行SparkSql作业](RunSparkSql.xml)接口创建作业，通过[查询SparkSql作业列表](ListSparkSqls.xml)接口查询作业列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSparkSqlRequest 请求对象
+     * @return SyncInvoker<ShowSparkSqlRequest, ShowSparkSqlResponse>
+     */
+    public SyncInvoker<ShowSparkSqlRequest, ShowSparkSqlResponse> showSparkSqlInvoker(ShowSparkSqlRequest request) {
+        return new SyncInvoker<>(request, AIDataLakeJobServerMeta.showSparkSql, hcClient);
+    }
+
+    /**
+     * 查询SparkSql作业的状态
+     *
+     * 查询SparkSql作业的状态，此接口为同步接口。可通过查询SparkSql作业列表接口获取statement_id，调用成功后直接返回作业当前状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSparkSqlStateRequest 请求对象
+     * @return ShowSparkSqlStateResponse
+     */
+    public ShowSparkSqlStateResponse showSparkSqlState(ShowSparkSqlStateRequest request) {
+        return hcClient.syncInvokeHttp(request, AIDataLakeJobServerMeta.showSparkSqlState);
+    }
+
+    /**
+     * 查询SparkSql作业的状态
+     *
+     * 查询SparkSql作业的状态，此接口为同步接口。可通过查询SparkSql作业列表接口获取statement_id，调用成功后直接返回作业当前状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSparkSqlStateRequest 请求对象
+     * @return SyncInvoker<ShowSparkSqlStateRequest, ShowSparkSqlStateResponse>
+     */
+    public SyncInvoker<ShowSparkSqlStateRequest, ShowSparkSqlStateResponse> showSparkSqlStateInvoker(
+        ShowSparkSqlStateRequest request) {
+        return new SyncInvoker<>(request, AIDataLakeJobServerMeta.showSparkSqlState, hcClient);
     }
 
 }

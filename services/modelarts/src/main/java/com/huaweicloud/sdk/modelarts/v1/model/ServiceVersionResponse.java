@@ -64,6 +64,11 @@ public class ServiceVersionResponse {
     private String ltsEventStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lts_file_status")
+
+    private String ltsFileStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_configs")
 
     private List<LogConfigResponse> logConfigs = null;
@@ -249,7 +254,7 @@ public class ServiceVersionResponse {
     }
 
     /**
-     * **参数解释：** 部署对接lts状态。 **取值范围：** - ON：开启。 - OFF：关闭。
+     * **参数解释：** 服务容器标准输出对接lts开关状态。 **取值范围：** - ON：开启。 - OFF：关闭。
      * @return ltsStatus
      */
     public String getLtsStatus() {
@@ -266,7 +271,7 @@ public class ServiceVersionResponse {
     }
 
     /**
-     * **参数解释：** 部署对接lts k8s事件状态。 **取值范围：** - ON：开启。 - OFF：关闭。
+     * **参数解释：** 服务对接lts k8s事件开关状态。 **取值范围：** - ON：开启。 - OFF：关闭。
      * @return ltsEventStatus
      */
     public String getLtsEventStatus() {
@@ -275,6 +280,23 @@ public class ServiceVersionResponse {
 
     public void setLtsEventStatus(String ltsEventStatus) {
         this.ltsEventStatus = ltsEventStatus;
+    }
+
+    public ServiceVersionResponse withLtsFileStatus(String ltsFileStatus) {
+        this.ltsFileStatus = ltsFileStatus;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 服务容器日志文件对接lts开关状态。 **取值范围：** - ON：开启。 - OFF：关闭。
+     * @return ltsFileStatus
+     */
+    public String getLtsFileStatus() {
+        return ltsFileStatus;
+    }
+
+    public void setLtsFileStatus(String ltsFileStatus) {
+        this.ltsFileStatus = ltsFileStatus;
     }
 
     public ServiceVersionResponse withLogConfigs(List<LogConfigResponse> logConfigs) {
@@ -343,6 +365,7 @@ public class ServiceVersionResponse {
             && Objects.equals(this.instanceGroups, that.instanceGroups)
             && Objects.equals(this.ltsStrategy, that.ltsStrategy) && Objects.equals(this.ltsStatus, that.ltsStatus)
             && Objects.equals(this.ltsEventStatus, that.ltsEventStatus)
+            && Objects.equals(this.ltsFileStatus, that.ltsFileStatus)
             && Objects.equals(this.logConfigs, that.logConfigs)
             && Objects.equals(this.deployTimeoutMinutes, that.deployTimeoutMinutes);
     }
@@ -359,6 +382,7 @@ public class ServiceVersionResponse {
             ltsStrategy,
             ltsStatus,
             ltsEventStatus,
+            ltsFileStatus,
             logConfigs,
             deployTimeoutMinutes);
     }
@@ -377,6 +401,7 @@ public class ServiceVersionResponse {
         sb.append("    ltsStrategy: ").append(toIndentedString(ltsStrategy)).append("\n");
         sb.append("    ltsStatus: ").append(toIndentedString(ltsStatus)).append("\n");
         sb.append("    ltsEventStatus: ").append(toIndentedString(ltsEventStatus)).append("\n");
+        sb.append("    ltsFileStatus: ").append(toIndentedString(ltsFileStatus)).append("\n");
         sb.append("    logConfigs: ").append(toIndentedString(logConfigs)).append("\n");
         sb.append("    deployTimeoutMinutes: ").append(toIndentedString(deployTimeoutMinutes)).append("\n");
         sb.append("}");

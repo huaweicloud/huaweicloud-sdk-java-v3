@@ -891,7 +891,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： 资源规格标识。 **取值范围**： [- dms.instance.kafka.cluster.c3.mini：Kafka实例的基准带宽为100MByte/秒。 - dms.instance.kafka.cluster.c3.small.2：Kafka实例的基准带宽为300MByte/秒。 - dms.instance.kafka.cluster.c3.middle.2：Kafka实例的基准带宽为600MByte/秒。 - dms.instance.kafka.cluster.c3.high.2：Kafka实例的基准带宽为1200MByte/秒。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,ax) [不涉及。](tag:hcs)
+     * **参数解释**： 资源规格标识。 **取值范围**： 不涉及。
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {
@@ -1806,7 +1806,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释**： connector节点数量。 **取值范围**： 2-16。
+     * **参数解释**： connector节点数量。 **取值范围**： 0-16。
      * @return connectorNodeNum
      */
     public Integer getConnectorNodeNum() {

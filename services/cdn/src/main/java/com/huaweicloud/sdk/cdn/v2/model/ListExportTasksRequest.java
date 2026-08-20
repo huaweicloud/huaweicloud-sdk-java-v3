@@ -36,7 +36,7 @@ public class ListExportTasksRequest {
     }
 
     /**
-     * - 每页显示的条目数量, 默认为10
+     * **参数解释：** 每页显示的条目数量 **约束限制：** 不涉及 **取值范围：** 0-100 **默认取值：** 10
      * minimum: 0
      * maximum: 100
      * @return limit
@@ -55,7 +55,7 @@ public class ListExportTasksRequest {
     }
 
     /**
-     * 偏移量，表示从此偏移量开始查询， offset大于等于0，默认为0
+     * **参数解释：** 偏移量 > 表示从此偏移量开始查询  **约束限制：** 不涉及 **取值范围：** offset大于等于0 **默认取值：** 0
      * @return offset
      */
     public Integer getOffset() {
@@ -72,7 +72,7 @@ public class ListExportTasksRequest {
     }
 
     /**
-     * 任务id
+     * **参数解释：** 任务id **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return taskId
      */
     public String getTaskId() {
@@ -89,7 +89,7 @@ public class ListExportTasksRequest {
     }
 
     /**
-     * 任务名称
+     * **参数解释：** 任务名称 **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return taskName
      */
     public String getTaskName() {

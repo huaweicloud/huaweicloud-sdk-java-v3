@@ -41,7 +41,7 @@ public class ListCdnDomainTopPathResponse extends SdkResponse {
     }
 
     /**
-     * 详情数据对象。
+     * **参数解释：** 数据详情 **取值范围：** 不涉及
      * @return topPathSummary
      */
     public List<TopPathSummary> getTopPathSummary() {

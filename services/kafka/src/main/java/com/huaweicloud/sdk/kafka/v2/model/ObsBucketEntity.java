@@ -171,7 +171,7 @@ public class ObsBucketEntity {
     }
 
     /**
-     * **参数解释**： 桶的创建时间。 **取值范围**： 长度为24的字符串。
+     * **参数解释**： 桶的创建时间。 **取值范围**： 不涉及。
      * @return creationDate
      */
     public Long getCreationDate() {

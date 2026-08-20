@@ -6,8 +6,6 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchMovePipelineToGroupReq
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchMovePipelineToGroupResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesLatestStatusRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesLatestStatusResponse;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesStatusRequest;
-import com.huaweicloud.sdk.codeartspipeline.v2.model.BatchShowPipelinesStatusResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateBasicPluginRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreateBasicPluginResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.CreatePipelineByTemplateIdRequest;
@@ -48,6 +46,8 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteRuleRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteRuleResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteStrategyRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.DeleteStrategyResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.InvokeEndpointProxyRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.InvokeEndpointProxyResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListActionsPipelineRunsByRunIdsRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListActionsPipelineRunsByRunIdsResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListActionsPipelineRunsRequest;
@@ -58,6 +58,10 @@ import com.huaweicloud.sdk.codeartspipeline.v2.model.ListBasePluginsNewPostReque
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListBasePluginsNewPostResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListBasePluginsRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListBasePluginsResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListEndpointsDetailsRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListEndpointsDetailsResponse;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListModulesDetailRequest;
+import com.huaweicloud.sdk.codeartspipeline.v2.model.ListModulesDetailResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPLuginVersionRequest;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPLuginVersionResponse;
 import com.huaweicloud.sdk.codeartspipeline.v2.model.ListPipelineRunsRequest;
@@ -277,35 +281,6 @@ public class CodeArtsPipelineClient {
     public SyncInvoker<BatchShowPipelinesLatestStatusRequest, BatchShowPipelinesLatestStatusResponse> batchShowPipelinesLatestStatusInvoker(
         BatchShowPipelinesLatestStatusRequest request) {
         return new SyncInvoker<>(request, CodeArtsPipelineMeta.batchShowPipelinesLatestStatus, hcClient);
-    }
-
-    /**
-     * 批量获取流水线状态
-     *
-     * 批量获取流水线状态和阶段信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchShowPipelinesStatusRequest 请求对象
-     * @return BatchShowPipelinesStatusResponse
-     */
-    public BatchShowPipelinesStatusResponse batchShowPipelinesStatus(BatchShowPipelinesStatusRequest request) {
-        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.batchShowPipelinesStatus);
-    }
-
-    /**
-     * 批量获取流水线状态
-     *
-     * 批量获取流水线状态和阶段信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchShowPipelinesStatusRequest 请求对象
-     * @return SyncInvoker<BatchShowPipelinesStatusRequest, BatchShowPipelinesStatusResponse>
-     */
-    public SyncInvoker<BatchShowPipelinesStatusRequest, BatchShowPipelinesStatusResponse> batchShowPipelinesStatusInvoker(
-        BatchShowPipelinesStatusRequest request) {
-        return new SyncInvoker<>(request, CodeArtsPipelineMeta.batchShowPipelinesStatus, hcClient);
     }
 
     /**
@@ -942,6 +917,64 @@ public class CodeArtsPipelineClient {
     public SyncInvoker<ListBasePluginsNewPostRequest, ListBasePluginsNewPostResponse> listBasePluginsNewPostInvoker(
         ListBasePluginsNewPostRequest request) {
         return new SyncInvoker<>(request, CodeArtsPipelineMeta.listBasePluginsNewPost, hcClient);
+    }
+
+    /**
+     * 查询扩展点列表
+     *
+     * 查询扩展点列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEndpointsDetailsRequest 请求对象
+     * @return ListEndpointsDetailsResponse
+     */
+    public ListEndpointsDetailsResponse listEndpointsDetails(ListEndpointsDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.listEndpointsDetails);
+    }
+
+    /**
+     * 查询扩展点列表
+     *
+     * 查询扩展点列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEndpointsDetailsRequest 请求对象
+     * @return SyncInvoker<ListEndpointsDetailsRequest, ListEndpointsDetailsResponse>
+     */
+    public SyncInvoker<ListEndpointsDetailsRequest, ListEndpointsDetailsResponse> listEndpointsDetailsInvoker(
+        ListEndpointsDetailsRequest request) {
+        return new SyncInvoker<>(request, CodeArtsPipelineMeta.listEndpointsDetails, hcClient);
+    }
+
+    /**
+     * 查询插件列表
+     *
+     * 查询插件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListModulesDetailRequest 请求对象
+     * @return ListModulesDetailResponse
+     */
+    public ListModulesDetailResponse listModulesDetail(ListModulesDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.listModulesDetail);
+    }
+
+    /**
+     * 查询插件列表
+     *
+     * 查询插件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListModulesDetailRequest 请求对象
+     * @return SyncInvoker<ListModulesDetailRequest, ListModulesDetailResponse>
+     */
+    public SyncInvoker<ListModulesDetailRequest, ListModulesDetailResponse> listModulesDetailInvoker(
+        ListModulesDetailRequest request) {
+        return new SyncInvoker<>(request, CodeArtsPipelineMeta.listModulesDetail, hcClient);
     }
 
     /**
@@ -2525,6 +2558,35 @@ public class CodeArtsPipelineClient {
     public SyncInvoker<UploadPublisherIconRequest, UploadPublisherIconResponse> uploadPublisherIconInvoker(
         UploadPublisherIconRequest request) {
         return new SyncInvoker<>(request, CodeArtsPipelineMeta.uploadPublisherIcon, hcClient);
+    }
+
+    /**
+     * 代理调用外部服务接口
+     *
+     * 代理调用外部服务接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InvokeEndpointProxyRequest 请求对象
+     * @return InvokeEndpointProxyResponse
+     */
+    public InvokeEndpointProxyResponse invokeEndpointProxy(InvokeEndpointProxyRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsPipelineMeta.invokeEndpointProxy);
+    }
+
+    /**
+     * 代理调用外部服务接口
+     *
+     * 代理调用外部服务接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InvokeEndpointProxyRequest 请求对象
+     * @return SyncInvoker<InvokeEndpointProxyRequest, InvokeEndpointProxyResponse>
+     */
+    public SyncInvoker<InvokeEndpointProxyRequest, InvokeEndpointProxyResponse> invokeEndpointProxyInvoker(
+        InvokeEndpointProxyRequest request) {
+        return new SyncInvoker<>(request, CodeArtsPipelineMeta.invokeEndpointProxy, hcClient);
     }
 
     /**

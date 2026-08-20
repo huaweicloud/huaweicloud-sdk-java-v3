@@ -1,7 +1,5 @@
 package com.huaweicloud.sdk.das.v3.model;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
@@ -11,28 +9,6 @@ import java.util.Objects;
  */
 public class BatchDeleteConnectionNewResponse extends SdkResponse {
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status")
-
-    private Boolean status;
-
-    public BatchDeleteConnectionNewResponse withStatus(Boolean status) {
-        this.status = status;
-        return this;
-    }
-
-    /**
-     * 操作是否成功
-     * @return status
-     */
-    public Boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(Boolean status) {
-        this.status = status;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,33 +17,20 @@ public class BatchDeleteConnectionNewResponse extends SdkResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteConnectionNewResponse that = (BatchDeleteConnectionNewResponse) obj;
-        return Objects.equals(this.status, that.status);
+        return true;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status);
+        return Objects.hash();
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchDeleteConnectionNewResponse {\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
-    }
-
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
-    private String toIndentedString(java.lang.Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n    ");
     }
 
 }

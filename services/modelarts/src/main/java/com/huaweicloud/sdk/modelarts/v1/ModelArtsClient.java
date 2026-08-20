@@ -91,6 +91,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.CreateInferServiceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateInferServiceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateInferServiceTagRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateInferServiceTagResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferTempApiKeyRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferTempApiKeyResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateModelArtsAgencyRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateModelArtsAgencyResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateNetworkRequest;
@@ -1507,6 +1509,53 @@ public class ModelArtsClient {
     public SyncInvoker<CreateInferServiceTagRequest, CreateInferServiceTagResponse> createInferServiceTagInvoker(
         CreateInferServiceTagRequest request) {
         return new SyncInvoker<>(request, ModelArtsMeta.createInferServiceTag, hcClient);
+    }
+
+    /**
+     * 创建临时应用密钥
+     *
+     * 本接口用于在系统中创建一个新的临时API_KEY，适用于需要为用户或应用程序生成临时访问凭证的场景。调用此接口前，确保已具备相应的创建权限，并提供必要的参数，如用户ID或应用程序ID。创建成功后，系统将生成一个唯一的API_KEY，并返回该API_KEY的详细信息，包括临时API_KEY值、创建时间等。如果提供的参数无效，将返回相应的异常信息，提示用户检查输入数据的有效性。
+     * 临时API KEY使用方法：
+     * **预测接口**加上两个header：
+     * X-Api-Key-Type&#x3D;temp
+     * Authorization&#x3D;临时API KEY
+     * **取值范围：**
+     * - normal：普通API KEY
+     * - temp：临时API KEY
+     * **默认取值：**
+     * normal。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInferTempApiKeyRequest 请求对象
+     * @return CreateInferTempApiKeyResponse
+     */
+    public CreateInferTempApiKeyResponse createInferTempApiKey(CreateInferTempApiKeyRequest request) {
+        return hcClient.syncInvokeHttp(request, ModelArtsMeta.createInferTempApiKey);
+    }
+
+    /**
+     * 创建临时应用密钥
+     *
+     * 本接口用于在系统中创建一个新的临时API_KEY，适用于需要为用户或应用程序生成临时访问凭证的场景。调用此接口前，确保已具备相应的创建权限，并提供必要的参数，如用户ID或应用程序ID。创建成功后，系统将生成一个唯一的API_KEY，并返回该API_KEY的详细信息，包括临时API_KEY值、创建时间等。如果提供的参数无效，将返回相应的异常信息，提示用户检查输入数据的有效性。
+     * 临时API KEY使用方法：
+     * **预测接口**加上两个header：
+     * X-Api-Key-Type&#x3D;temp
+     * Authorization&#x3D;临时API KEY
+     * **取值范围：**
+     * - normal：普通API KEY
+     * - temp：临时API KEY
+     * **默认取值：**
+     * normal。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInferTempApiKeyRequest 请求对象
+     * @return SyncInvoker<CreateInferTempApiKeyRequest, CreateInferTempApiKeyResponse>
+     */
+    public SyncInvoker<CreateInferTempApiKeyRequest, CreateInferTempApiKeyResponse> createInferTempApiKeyInvoker(
+        CreateInferTempApiKeyRequest request) {
+        return new SyncInvoker<>(request, ModelArtsMeta.createInferTempApiKey, hcClient);
     }
 
     /**

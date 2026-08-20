@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.das.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -22,12 +21,12 @@ public class HealthReportTableSpaceQuerySpaceTopResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "collect_timestamp")
 
-    private BigDecimal collectTimestamp;
+    private Long collectTimestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
-    private BigDecimal totalCount;
+    private Long totalCount;
 
     public HealthReportTableSpaceQuerySpaceTopResp withTopDataList(List<HealthReportTableSpaceTopDataDto> topDataList) {
         this.topDataList = topDataList;
@@ -64,7 +63,7 @@ public class HealthReportTableSpaceQuerySpaceTopResp {
         this.topDataList = topDataList;
     }
 
-    public HealthReportTableSpaceQuerySpaceTopResp withCollectTimestamp(BigDecimal collectTimestamp) {
+    public HealthReportTableSpaceQuerySpaceTopResp withCollectTimestamp(Long collectTimestamp) {
         this.collectTimestamp = collectTimestamp;
         return this;
     }
@@ -73,15 +72,15 @@ public class HealthReportTableSpaceQuerySpaceTopResp {
      * 采集时间
      * @return collectTimestamp
      */
-    public BigDecimal getCollectTimestamp() {
+    public Long getCollectTimestamp() {
         return collectTimestamp;
     }
 
-    public void setCollectTimestamp(BigDecimal collectTimestamp) {
+    public void setCollectTimestamp(Long collectTimestamp) {
         this.collectTimestamp = collectTimestamp;
     }
 
-    public HealthReportTableSpaceQuerySpaceTopResp withTotalCount(BigDecimal totalCount) {
+    public HealthReportTableSpaceQuerySpaceTopResp withTotalCount(Long totalCount) {
         this.totalCount = totalCount;
         return this;
     }
@@ -90,11 +89,11 @@ public class HealthReportTableSpaceQuerySpaceTopResp {
      * 总大小。
      * @return totalCount
      */
-    public BigDecimal getTotalCount() {
+    public Long getTotalCount() {
         return totalCount;
     }
 
-    public void setTotalCount(BigDecimal totalCount) {
+    public void setTotalCount(Long totalCount) {
         this.totalCount = totalCount;
     }
 

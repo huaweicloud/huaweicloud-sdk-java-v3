@@ -42,7 +42,7 @@ public class ShowChargeModesResponse extends SdkResponse {
     }
 
     /**
-     * 计费模式查询结果
+     * **参数解释：** 计费模式查询结果 **取值范围：** 不涉及
      * @return result
      */
     public List<Map<String, Object>> getResult() {

@@ -33,11 +33,6 @@ public class ShowCeshierarchyRespDimensions {
 
     private List<String> dimRouter = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "children")
-
-    private List<ShowCeshierarchyRespChildren> children = null;
-
     public ShowCeshierarchyRespDimensions withName(String name) {
         this.name = name;
         return this;
@@ -154,39 +149,6 @@ public class ShowCeshierarchyRespDimensions {
         this.dimRouter = dimRouter;
     }
 
-    public ShowCeshierarchyRespDimensions withChildren(List<ShowCeshierarchyRespChildren> children) {
-        this.children = children;
-        return this;
-    }
-
-    public ShowCeshierarchyRespDimensions addChildrenItem(ShowCeshierarchyRespChildren childrenItem) {
-        if (this.children == null) {
-            this.children = new ArrayList<>();
-        }
-        this.children.add(childrenItem);
-        return this;
-    }
-
-    public ShowCeshierarchyRespDimensions withChildren(Consumer<List<ShowCeshierarchyRespChildren>> childrenSetter) {
-        if (this.children == null) {
-            this.children = new ArrayList<>();
-        }
-        childrenSetter.accept(this.children);
-        return this;
-    }
-
-    /**
-     * **参数解释**： 子维度列表。
-     * @return children
-     */
-    public List<ShowCeshierarchyRespChildren> getChildren() {
-        return children;
-    }
-
-    public void setChildren(List<ShowCeshierarchyRespChildren> children) {
-        this.children = children;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -197,13 +159,12 @@ public class ShowCeshierarchyRespDimensions {
         }
         ShowCeshierarchyRespDimensions that = (ShowCeshierarchyRespDimensions) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.metrics, that.metrics)
-            && Objects.equals(this.keyName, that.keyName) && Objects.equals(this.dimRouter, that.dimRouter)
-            && Objects.equals(this.children, that.children);
+            && Objects.equals(this.keyName, that.keyName) && Objects.equals(this.dimRouter, that.dimRouter);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, metrics, keyName, dimRouter, children);
+        return Objects.hash(name, metrics, keyName, dimRouter);
     }
 
     @Override
@@ -214,7 +175,6 @@ public class ShowCeshierarchyRespDimensions {
         sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");
         sb.append("    keyName: ").append(toIndentedString(keyName)).append("\n");
         sb.append("    dimRouter: ").append(toIndentedString(dimRouter)).append("\n");
-        sb.append("    children: ").append(toIndentedString(children)).append("\n");
         sb.append("}");
         return sb.toString();
     }

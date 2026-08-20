@@ -220,6 +220,7 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaProjectTagsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaProjectTagsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaRebalanceLogRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaRebalanceLogResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaScalePreCheckInfoEntity;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaScalePreCheckInfoRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaScalePreCheckInfoResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTagsRequest;
@@ -1187,11 +1188,11 @@ public class KafkaMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBackgroundTasksRequest::getInstanceId,
                 ListBackgroundTasksRequest::setInstanceId));
-        builder.<Integer>withRequestField("offset",
+        builder.<Integer>withRequestField("start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBackgroundTasksRequest::getOffset, ListBackgroundTasksRequest::setOffset));
+            f -> f.withMarshaller(ListBackgroundTasksRequest::getStart, ListBackgroundTasksRequest::setStart));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2810,6 +2811,14 @@ public class KafkaMeta {
                 ShowKafkaScalePreCheckInfoRequest::setInstanceId));
 
         // response
+        builder.<List<ShowKafkaScalePreCheckInfoEntity>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(ShowKafkaScalePreCheckInfoResponse::getBody,
+                    ShowKafkaScalePreCheckInfoResponse::setBody)
+                .withInnerContainerType(ShowKafkaScalePreCheckInfoEntity.class));
 
         return builder.build();
     }
@@ -3858,11 +3867,6 @@ public class KafkaMeta {
             f -> f.withMarshaller(UpgradeInstanceRequest::getBody, UpgradeInstanceRequest::setBody));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpgradeInstanceResponse::getBody, UpgradeInstanceResponse::setBody));
 
         return builder.build();
     }

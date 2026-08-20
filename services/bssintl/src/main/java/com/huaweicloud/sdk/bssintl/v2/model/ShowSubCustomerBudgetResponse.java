@@ -38,7 +38,7 @@ public class ShowSubCustomerBudgetResponse extends SdkResponse {
     private String currency;
 
     /**
-     * |参数名称：预算模式| |参数的约束及描述：MONTHLY 月度预算 PACKAGE 一次性预算|
+     * 预算模式。 MONTHLY：月度预算 PACKAGE：一次性预算
      */
     public static final class BudgetTypeEnum {
 
@@ -186,7 +186,7 @@ public class ShowSubCustomerBudgetResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：预算模式| |参数的约束及描述：MONTHLY 月度预算 PACKAGE 一次性预算|
+     * 预算模式。 MONTHLY：月度预算 PACKAGE：一次性预算
      * @return budgetType
      */
     public BudgetTypeEnum getBudgetType() {

@@ -251,6 +251,21 @@ public class SubCustomerMonthlyBillDetail {
 
     private BigDecimal periodNum;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_type")
+
+    private Integer orderType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "payment_type")
+
+    private String paymentType;
+
     public SubCustomerMonthlyBillDetail withBillCycle(String billCycle) {
         this.billCycle = billCycle;
         return this;
@@ -410,7 +425,7 @@ public class SubCustomerMonthlyBillDetail {
     }
 
     /**
-     * 订单ID或交易ID，扣费维度的唯一标识。 账单类型为1，2，3，4，8时为订单ID。其它场景下为交易ID。非月末扣费：应收ID月末扣费：账单ID
+     * 订单ID或交易ID，扣费维度的唯一标识。 账单类型为1，2，3，4，8和103时为订单ID。其它场景下为交易ID。非月末扣费：应收ID月末扣费：账单ID
      * @return tradeId
      */
     public String getTradeId() {
@@ -1067,6 +1082,57 @@ public class SubCustomerMonthlyBillDetail {
         this.periodNum = periodNum;
     }
 
+    public SubCustomerMonthlyBillDetail withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目标识（企业项目ID），该参数非必填，最大长度：64
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public SubCustomerMonthlyBillDetail withOrderType(Integer orderType) {
+        this.orderType = orderType;
+        return this;
+    }
+
+    /**
+     * 订单类型，该参数非必填，1：开通 2：续订 3：变更 4：退订 10：包年/包月转按需 11：按需转包年/包月 13：试用 14：转商用 15：费用调整
+     * @return orderType
+     */
+    public Integer getOrderType() {
+        return orderType;
+    }
+
+    public void setOrderType(Integer orderType) {
+        this.orderType = orderType;
+    }
+
+    public SubCustomerMonthlyBillDetail withPaymentType(String paymentType) {
+        this.paymentType = paymentType;
+        return this;
+    }
+
+    /**
+     * 付款方式，节省计划和预留实例有值。枚举值：ALL_UPFRONT：全预付；PARTIAL_UPFRONT：部分预付；NO_UPFRONT：零预付
+     * @return paymentType
+     */
+    public String getPaymentType() {
+        return paymentType;
+    }
+
+    public void setPaymentType(String paymentType) {
+        this.paymentType = paymentType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1114,7 +1180,9 @@ public class SubCustomerMonthlyBillDetail {
             && Objects.equals(this.subResourceTypeName, that.subResourceTypeName)
             && Objects.equals(this.subResourceId, that.subResourceId)
             && Objects.equals(this.subResourceName, that.subResourceName)
-            && Objects.equals(this.periodNum, that.periodNum);
+            && Objects.equals(this.periodNum, that.periodNum)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.orderType, that.orderType) && Objects.equals(this.paymentType, that.paymentType);
     }
 
     @Override
@@ -1166,7 +1234,10 @@ public class SubCustomerMonthlyBillDetail {
             subResourceTypeName,
             subResourceId,
             subResourceName,
-            periodNum);
+            periodNum,
+            enterpriseProjectId,
+            orderType,
+            paymentType);
     }
 
     @Override
@@ -1221,6 +1292,9 @@ public class SubCustomerMonthlyBillDetail {
         sb.append("    subResourceId: ").append(toIndentedString(subResourceId)).append("\n");
         sb.append("    subResourceName: ").append(toIndentedString(subResourceName)).append("\n");
         sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    orderType: ").append(toIndentedString(orderType)).append("\n");
+        sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

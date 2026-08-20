@@ -15,6 +15,11 @@ import java.util.function.Consumer;
 public class ShowInstanceParamGroupDetailResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore_version")
 
     private String datastoreVersion;
@@ -39,13 +44,30 @@ public class ShowInstanceParamGroupDetailResponse extends SdkResponse {
 
     private List<ConfigurationParameterResult> configurationParameters = null;
 
+    public ShowInstanceParamGroupDetailResponse withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 实例对应参数组ID。 **取值范围**: 不涉及。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public ShowInstanceParamGroupDetailResponse withDatastoreVersion(String datastoreVersion) {
         this.datastoreVersion = datastoreVersion;
         return this;
     }
 
     /**
-     * 引擎版本。
+     * **参数解释**: 引擎版本。 **取值范围**: 不涉及。
      * @return datastoreVersion
      */
     public String getDatastoreVersion() {
@@ -62,7 +84,7 @@ public class ShowInstanceParamGroupDetailResponse extends SdkResponse {
     }
 
     /**
-     * 引擎名称。
+     * **参数解释**: 引擎名称。 **取值范围**: 不涉及。
      * @return datastoreName
      */
     public String getDatastoreName() {
@@ -79,7 +101,7 @@ public class ShowInstanceParamGroupDetailResponse extends SdkResponse {
     }
 
     /**
-     * 创建时间，格式为\"yyyy-MM-dd HH:mm:ss\"。
+     * **参数解释**: 创建时间，格式为\"yyyy-MM-dd HH:mm:ss\"。 **取值范围**: 不涉及。
      * @return created
      */
     public String getCreated() {
@@ -96,7 +118,7 @@ public class ShowInstanceParamGroupDetailResponse extends SdkResponse {
     }
 
     /**
-     * 更新时间，格式为\"yyyy-MM-ddHH:mm:ss\"。
+     * **参数解释**: 更新时间，格式为\"yyyy-MM-dd HH:mm:ss\"。 **取值范围**: 不涉及。
      * @return updated
      */
     public String getUpdated() {
@@ -132,7 +154,7 @@ public class ShowInstanceParamGroupDetailResponse extends SdkResponse {
     }
 
     /**
-     * 参数对象，用户基于默认参数模板自定义的参数配置。
+     * **参数解释**: 参数对象，用户基于默认参数模板自定义的参数配置，具体请参考ConfigurationParameterResult。
      * @return configurationParameters
      */
     public List<ConfigurationParameterResult> getConfigurationParameters() {
@@ -152,7 +174,7 @@ public class ShowInstanceParamGroupDetailResponse extends SdkResponse {
             return false;
         }
         ShowInstanceParamGroupDetailResponse that = (ShowInstanceParamGroupDetailResponse) obj;
-        return Objects.equals(this.datastoreVersion, that.datastoreVersion)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.datastoreVersion, that.datastoreVersion)
             && Objects.equals(this.datastoreName, that.datastoreName) && Objects.equals(this.created, that.created)
             && Objects.equals(this.updated, that.updated)
             && Objects.equals(this.configurationParameters, that.configurationParameters);
@@ -160,13 +182,14 @@ public class ShowInstanceParamGroupDetailResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(datastoreVersion, datastoreName, created, updated, configurationParameters);
+        return Objects.hash(id, datastoreVersion, datastoreName, created, updated, configurationParameters);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowInstanceParamGroupDetailResponse {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    datastoreVersion: ").append(toIndentedString(datastoreVersion)).append("\n");
         sb.append("    datastoreName: ").append(toIndentedString(datastoreName)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");

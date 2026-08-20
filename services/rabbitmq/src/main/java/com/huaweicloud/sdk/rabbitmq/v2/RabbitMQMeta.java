@@ -415,11 +415,11 @@ public class RabbitMQMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBackgroundTasksRequest::getInstanceId,
                 ListBackgroundTasksRequest::setInstanceId));
-        builder.<Integer>withRequestField("offset",
+        builder.<Integer>withRequestField("start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListBackgroundTasksRequest::getOffset, ListBackgroundTasksRequest::setOffset));
+            f -> f.withMarshaller(ListBackgroundTasksRequest::getStart, ListBackgroundTasksRequest::setStart));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

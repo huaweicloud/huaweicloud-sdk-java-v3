@@ -927,7 +927,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * **参数解释**： RabbitMQ实例绑定的弹性IP地址。  如果未开启公网访问功能，该字段值为null。 **取值范围**： - true：开启 - false：未开启
+     * **参数解释**： RabbitMQ实例绑定的弹性IP地址。  如果未开启公网访问功能，该字段值为null。 **取值范围**： 不涉及。
      * @return publicipAddress
      */
     public String getPublicipAddress() {

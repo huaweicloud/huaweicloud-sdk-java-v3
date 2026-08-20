@@ -41,7 +41,7 @@ public class TopUrlSummary {
     }
 
     /**
-     * URL名称。
+     * **参数解释：** URL名称 **取值范围：** 不涉及
      * @return url
      */
     public String getUrl() {
@@ -58,7 +58,7 @@ public class TopUrlSummary {
     }
 
     /**
-     * 对应查询类型的值。（流量单位：Byte）
+     * **参数解释：** 对应查询类型的值 **取值范围：** 若值为流量，流量单位：Byte
      * @return value
      */
     public Long getValue() {
@@ -75,7 +75,7 @@ public class TopUrlSummary {
     }
 
     /**
-     * 查询起始时间戳。
+     * **参数解释：** 查询起始时间戳 **取值范围：** 不涉及
      * @return startTime
      */
     public Long getStartTime() {
@@ -92,7 +92,7 @@ public class TopUrlSummary {
     }
 
     /**
-     * 查询结束时间戳
+     * **参数解释：** 查询结束时间戳 **取值范围：** 不涉及
      * @return endTime
      */
     public Long getEndTime() {
@@ -109,7 +109,7 @@ public class TopUrlSummary {
     }
 
     /**
-     * 参数类型支持：flux(流量)，req_num(请求总数)。
+     * **参数解释：** 统计指标类型 **取值范围：** - flux：流量 - req_num：请求总数
      * @return statType
      */
     public String getStatType() {

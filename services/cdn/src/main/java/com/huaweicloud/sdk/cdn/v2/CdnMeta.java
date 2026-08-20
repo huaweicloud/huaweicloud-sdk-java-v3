@@ -1276,12 +1276,6 @@ public class CdnMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCdnDomainTopRefersRequest::getEnterpriseProjectId,
                 ListCdnDomainTopRefersRequest::setEnterpriseProjectId));
-        builder.<Boolean>withRequestField("include_ratio",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListCdnDomainTopRefersRequest::getIncludeRatio,
-                ListCdnDomainTopRefersRequest::setIncludeRatio));
 
         // response
 
@@ -1529,12 +1523,12 @@ public class CdnMeta {
             f -> f.withMarshaller(ListExportTasksRequest::getOffset, ListExportTasksRequest::setOffset));
         builder.<String>withRequestField("task_id",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListExportTasksRequest::getTaskId, ListExportTasksRequest::setTaskId));
         builder.<String>withRequestField("task_name",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListExportTasksRequest::getTaskName, ListExportTasksRequest::setTaskName));
 

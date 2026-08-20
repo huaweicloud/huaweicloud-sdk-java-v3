@@ -88,7 +88,7 @@ public class PeriodProductOfficialRatingResult {
     }
 
     /**
-     * 价格度量单位标识。 1：元
+     * 价格度量单位标识。 1：美元
      * @return measureId
      */
     public Integer getMeasureId() {

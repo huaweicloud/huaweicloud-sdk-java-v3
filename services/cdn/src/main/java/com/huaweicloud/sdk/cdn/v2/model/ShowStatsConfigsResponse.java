@@ -30,7 +30,7 @@ public class ShowStatsConfigsResponse extends SdkResponse {
     }
 
     /**
-     * 统计配置数量
+     * **参数解释：** 统计配置数量 **取值范围：** 不涉及
      * minimum: 0
      * maximum: 9
      * @return total

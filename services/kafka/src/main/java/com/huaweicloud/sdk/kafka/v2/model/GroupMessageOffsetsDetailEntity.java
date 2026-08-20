@@ -13,12 +13,12 @@ public class GroupMessageOffsetsDetailEntity {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "partition")
 
-    private String partition;
+    private Integer partition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "message_current_offset")
 
-    private String messageCurrentOffset;
+    private Integer messageCurrentOffset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "topic")
@@ -55,7 +55,7 @@ public class GroupMessageOffsetsDetailEntity {
 
     private String clientId;
 
-    public GroupMessageOffsetsDetailEntity withPartition(String partition) {
+    public GroupMessageOffsetsDetailEntity withPartition(Integer partition) {
         this.partition = partition;
         return this;
     }
@@ -64,15 +64,15 @@ public class GroupMessageOffsetsDetailEntity {
      * 分区
      * @return partition
      */
-    public String getPartition() {
+    public Integer getPartition() {
         return partition;
     }
 
-    public void setPartition(String partition) {
+    public void setPartition(Integer partition) {
         this.partition = partition;
     }
 
-    public GroupMessageOffsetsDetailEntity withMessageCurrentOffset(String messageCurrentOffset) {
+    public GroupMessageOffsetsDetailEntity withMessageCurrentOffset(Integer messageCurrentOffset) {
         this.messageCurrentOffset = messageCurrentOffset;
         return this;
     }
@@ -81,11 +81,11 @@ public class GroupMessageOffsetsDetailEntity {
      * 消息当前位点
      * @return messageCurrentOffset
      */
-    public String getMessageCurrentOffset() {
+    public Integer getMessageCurrentOffset() {
         return messageCurrentOffset;
     }
 
-    public void setMessageCurrentOffset(String messageCurrentOffset) {
+    public void setMessageCurrentOffset(Integer messageCurrentOffset) {
         this.messageCurrentOffset = messageCurrentOffset;
     }
 

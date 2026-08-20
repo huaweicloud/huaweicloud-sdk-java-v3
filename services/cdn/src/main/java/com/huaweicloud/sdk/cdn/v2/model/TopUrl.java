@@ -31,7 +31,7 @@ public class TopUrl {
     }
 
     /**
-     * 配置开关
+     * **参数解释：** 配置开关 **约束限制：** 不涉及 **取值范围：** - true：打开 - false：关闭 **默认取值：** 不涉及
      * @return enable
      */
     public Boolean getEnable() {
@@ -48,7 +48,7 @@ public class TopUrl {
     }
 
     /**
-     * 热点统计配置指标的上报数量。如top_url 100、top_url 1000
+     * **参数解释：** 热点统计配置指标的上报数量 > 如top_url 100、top_url 1000  **约束限制：** 不涉及 **取值范围：** 0-2000 **默认取值：** 不涉及
      * minimum: 0
      * maximum: 2000
      * @return limit
@@ -67,7 +67,7 @@ public class TopUrl {
     }
 
     /**
-     * 热点统计类指标是否支持按状态码上报
+     * **参数解释：** 热点统计类指标是否支持按状态码上报 **约束限制：** 不涉及 **取值范围：** - true：热点统计类指标支持按状态码上报 - false：热点统计类指标不支持按状态码上报 **默认取值：** 不涉及
      * @return sortByCode
      */
     public Boolean getSortByCode() {

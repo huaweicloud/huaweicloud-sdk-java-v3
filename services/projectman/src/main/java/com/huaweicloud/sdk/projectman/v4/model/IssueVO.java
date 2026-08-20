@@ -303,7 +303,7 @@ public class IssueVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "activate_times")
 
-    private Integer activateTimes;
+    private String activateTimes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "baseline")
@@ -473,7 +473,7 @@ public class IssueVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "regression_failure_number")
 
-    private Integer regressionFailureNumber;
+    private String regressionFailureNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "related_network_security")
@@ -508,7 +508,7 @@ public class IssueVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "test_failures_times")
 
-    private Integer testFailuresTimes;
+    private String testFailuresTimes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "test_owner")
@@ -1726,7 +1726,7 @@ public class IssueVO {
         this.childIssues = childIssues;
     }
 
-    public IssueVO withActivateTimes(Integer activateTimes) {
+    public IssueVO withActivateTimes(String activateTimes) {
         this.activateTimes = activateTimes;
         return this;
     }
@@ -1735,11 +1735,11 @@ public class IssueVO {
      * **参数解释：**  激活次数。Bug激活时自动赋值。 **取值范围：**  不涉及。
      * @return activateTimes
      */
-    public Integer getActivateTimes() {
+    public String getActivateTimes() {
         return activateTimes;
     }
 
-    public void setActivateTimes(Integer activateTimes) {
+    public void setActivateTimes(String activateTimes) {
         this.activateTimes = activateTimes;
     }
 
@@ -2394,7 +2394,7 @@ public class IssueVO {
         this.reasonAnalysis = reasonAnalysis;
     }
 
-    public IssueVO withRegressionFailureNumber(Integer regressionFailureNumber) {
+    public IssueVO withRegressionFailureNumber(String regressionFailureNumber) {
         this.regressionFailureNumber = regressionFailureNumber;
         return this;
     }
@@ -2403,11 +2403,11 @@ public class IssueVO {
      * **参数解释：**  回归不通过次数。缺陷测试不通过时自动赋值。 **取值范围：**  不涉及。
      * @return regressionFailureNumber
      */
-    public Integer getRegressionFailureNumber() {
+    public String getRegressionFailureNumber() {
         return regressionFailureNumber;
     }
 
-    public void setRegressionFailureNumber(Integer regressionFailureNumber) {
+    public void setRegressionFailureNumber(String regressionFailureNumber) {
         this.regressionFailureNumber = regressionFailureNumber;
     }
 
@@ -2531,7 +2531,7 @@ public class IssueVO {
         this.sysNoRepairReason = sysNoRepairReason;
     }
 
-    public IssueVO withTestFailuresTimes(Integer testFailuresTimes) {
+    public IssueVO withTestFailuresTimes(String testFailuresTimes) {
         this.testFailuresTimes = testFailuresTimes;
         return this;
     }
@@ -2540,11 +2540,11 @@ public class IssueVO {
      * **参数解释：**  测试不通过次数。 **取值范围：**  不涉及。
      * @return testFailuresTimes
      */
-    public Integer getTestFailuresTimes() {
+    public String getTestFailuresTimes() {
         return testFailuresTimes;
     }
 
-    public void setTestFailuresTimes(Integer testFailuresTimes) {
+    public void setTestFailuresTimes(String testFailuresTimes) {
         this.testFailuresTimes = testFailuresTimes;
     }
 

@@ -12,25 +12,47 @@ import java.util.Objects;
 public class UpgradeInstanceResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "job_id")
 
-    private String body;
+    private String jobId;
 
-    public UpgradeInstanceResponse withBody(String body) {
-        this.body = body;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "schedule_id")
+
+    private String scheduleId;
+
+    public UpgradeInstanceResponse withJobId(String jobId) {
+        this.jobId = jobId;
         return this;
     }
 
     /**
-     * 提交升级任务id
-     * @return body
+     * **参数解释**： 实例升级任务ID。 **取值范围**： 不涉及。
+     * @return jobId
      */
-    public String getBody() {
-        return body;
+    public String getJobId() {
+        return jobId;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
+    public UpgradeInstanceResponse withScheduleId(String scheduleId) {
+        this.scheduleId = scheduleId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 实例升级调度任务ID。 **取值范围**： 不涉及。
+     * @return scheduleId
+     */
+    public String getScheduleId() {
+        return scheduleId;
+    }
+
+    public void setScheduleId(String scheduleId) {
+        this.scheduleId = scheduleId;
     }
 
     @Override
@@ -42,19 +64,20 @@ public class UpgradeInstanceResponse extends SdkResponse {
             return false;
         }
         UpgradeInstanceResponse that = (UpgradeInstanceResponse) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.scheduleId, that.scheduleId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(jobId, scheduleId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpgradeInstanceResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    scheduleId: ").append(toIndentedString(scheduleId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

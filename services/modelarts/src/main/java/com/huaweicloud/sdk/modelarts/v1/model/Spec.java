@@ -34,6 +34,11 @@ public class Spec {
     private AutoStop autoStop;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "retention")
+
+    private RetentionPolicy retention;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schedule_policy")
 
     private SchedulePolicy schedulePolicy;
@@ -67,6 +72,11 @@ public class Spec {
     @JsonProperty(value = "asset_id")
 
     private String assetId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reserved_time")
+
+    private ReserveTime reservedTime;
 
     public Spec withResource(SpecResource resource) {
         this.resource = resource;
@@ -177,6 +187,32 @@ public class Spec {
 
     public void setAutoStop(AutoStop autoStop) {
         this.autoStop = autoStop;
+    }
+
+    public Spec withRetention(RetentionPolicy retention) {
+        this.retention = retention;
+        return this;
+    }
+
+    public Spec withRetention(Consumer<RetentionPolicy> retentionSetter) {
+        if (this.retention == null) {
+            this.retention = new RetentionPolicy();
+            retentionSetter.accept(this.retention);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get retention
+     * @return retention
+     */
+    public RetentionPolicy getRetention() {
+        return retention;
+    }
+
+    public void setRetention(RetentionPolicy retention) {
+        this.retention = retention;
     }
 
     public Spec withSchedulePolicy(SchedulePolicy schedulePolicy) {
@@ -359,6 +395,32 @@ public class Spec {
         this.assetId = assetId;
     }
 
+    public Spec withReservedTime(ReserveTime reservedTime) {
+        this.reservedTime = reservedTime;
+        return this;
+    }
+
+    public Spec withReservedTime(Consumer<ReserveTime> reservedTimeSetter) {
+        if (this.reservedTime == null) {
+            this.reservedTime = new ReserveTime();
+            reservedTimeSetter.accept(this.reservedTime);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get reservedTime
+     * @return reservedTime
+     */
+    public ReserveTime getReservedTime() {
+        return reservedTime;
+    }
+
+    public void setReservedTime(ReserveTime reservedTime) {
+        this.reservedTime = reservedTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -370,12 +432,13 @@ public class Spec {
         Spec that = (Spec) obj;
         return Objects.equals(this.resource, that.resource) && Objects.equals(this.volumes, that.volumes)
             && Objects.equals(this.logExportPath, that.logExportPath) && Objects.equals(this.autoStop, that.autoStop)
+            && Objects.equals(this.retention, that.retention)
             && Objects.equals(this.schedulePolicy, that.schedulePolicy)
             && Objects.equals(this.logExportConfig, that.logExportConfig)
             && Objects.equals(this.notification, that.notification)
             && Objects.equals(this.customMetrics, that.customMetrics)
             && Objects.equals(this.outputModel, that.outputModel) && Objects.equals(this.assetModel, that.assetModel)
-            && Objects.equals(this.assetId, that.assetId);
+            && Objects.equals(this.assetId, that.assetId) && Objects.equals(this.reservedTime, that.reservedTime);
     }
 
     @Override
@@ -384,13 +447,15 @@ public class Spec {
             volumes,
             logExportPath,
             autoStop,
+            retention,
             schedulePolicy,
             logExportConfig,
             notification,
             customMetrics,
             outputModel,
             assetModel,
-            assetId);
+            assetId,
+            reservedTime);
     }
 
     @Override
@@ -401,6 +466,7 @@ public class Spec {
         sb.append("    volumes: ").append(toIndentedString(volumes)).append("\n");
         sb.append("    logExportPath: ").append(toIndentedString(logExportPath)).append("\n");
         sb.append("    autoStop: ").append(toIndentedString(autoStop)).append("\n");
+        sb.append("    retention: ").append(toIndentedString(retention)).append("\n");
         sb.append("    schedulePolicy: ").append(toIndentedString(schedulePolicy)).append("\n");
         sb.append("    logExportConfig: ").append(toIndentedString(logExportConfig)).append("\n");
         sb.append("    notification: ").append(toIndentedString(notification)).append("\n");
@@ -408,6 +474,7 @@ public class Spec {
         sb.append("    outputModel: ").append(toIndentedString(outputModel)).append("\n");
         sb.append("    assetModel: ").append(toIndentedString(assetModel)).append("\n");
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
+        sb.append("    reservedTime: ").append(toIndentedString(reservedTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

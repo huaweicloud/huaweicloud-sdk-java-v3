@@ -31,7 +31,7 @@ public class FailResourceInfo {
     }
 
     /**
-     * |参数名称：错误码| |参数约束及描述：错误码|
+     * 状态码。
      * @return errorCode
      */
     public String getErrorCode() {
@@ -48,7 +48,7 @@ public class FailResourceInfo {
     }
 
     /**
-     * |参数名称：错误描述| |参数约束及描述：错误描述|
+     * 错误描述信息。
      * @return errorMsg
      */
     public String getErrorMsg() {
@@ -65,7 +65,7 @@ public class FailResourceInfo {
     }
 
     /**
-     * |参数名称：资源ID| |参数约束及描述：资源ID|
+     * 资源ID。
      * @return resourceId
      */
     public String getResourceId() {

@@ -31,7 +31,7 @@ public class OfficialWebsiteRatingResultV2 {
     }
 
     /**
-     * |参数名称：官网价格。单位为元| |参数约束及描述：官网价格。单位为元|
+     * 官网价格。单位为元
      * @return officialWebsiteAmount
      */
     public String getOfficialWebsiteAmount() {
@@ -48,7 +48,7 @@ public class OfficialWebsiteRatingResultV2 {
     }
 
     /**
-     * |参数名称：分期金额的官网价。单位为元| |参数约束及描述：分期金额的官网价。单位为元|
+     * 分期金额的官网价。单位为元
      * @return installmentOfficialWebsiteAmount
      */
     public String getInstallmentOfficialWebsiteAmount() {
@@ -65,7 +65,7 @@ public class OfficialWebsiteRatingResultV2 {
     }
 
     /**
-     * |参数名称：分期付款的周期类型。2：月| |参数的约束及描述：分期付款的周期类型。2：月|
+     * 分期付款的周期类型。2：月
      * @return installmentPeriodType
      */
     public Integer getInstallmentPeriodType() {

@@ -16,6 +16,11 @@ public class RunPipelineResponse extends SdkResponse {
 
     private String pipelineRunId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_msg")
+
+    private String errorMsg;
+
     public RunPipelineResponse withPipelineRunId(String pipelineRunId) {
         this.pipelineRunId = pipelineRunId;
         return this;
@@ -33,6 +38,23 @@ public class RunPipelineResponse extends SdkResponse {
         this.pipelineRunId = pipelineRunId;
     }
 
+    public RunPipelineResponse withErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 流水线运行失败详情。 **取值范围**： 不涉及。 
+     * @return errorMsg
+     */
+    public String getErrorMsg() {
+        return errorMsg;
+    }
+
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -42,12 +64,12 @@ public class RunPipelineResponse extends SdkResponse {
             return false;
         }
         RunPipelineResponse that = (RunPipelineResponse) obj;
-        return Objects.equals(this.pipelineRunId, that.pipelineRunId);
+        return Objects.equals(this.pipelineRunId, that.pipelineRunId) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pipelineRunId);
+        return Objects.hash(pipelineRunId, errorMsg);
     }
 
     @Override
@@ -55,6 +77,7 @@ public class RunPipelineResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class RunPipelineResponse {\n");
         sb.append("    pipelineRunId: ").append(toIndentedString(pipelineRunId)).append("\n");
+        sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
         sb.append("}");
         return sb.toString();
     }

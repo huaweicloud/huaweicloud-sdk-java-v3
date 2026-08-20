@@ -170,7 +170,7 @@ public class ListRestorableInstancesDetailsRequest {
     }
 
     /**
-     * **参数解释**: 查备份恢复的粒度。 **约束限制**: 不涉及。 **取值范围**:   - INSTANCE   - DATABASE_TABLE   - DATABASE **默认取值**: INSTANCE
+     * **参数解释**: 查备份恢复的粒度。 **约束限制**: 不涉及。 **取值范围**:   - INSTANCE   - DATABASE_TABLE   - DATABASE  **默认取值**: INSTANCE
      * @return backupRestoreType
      */
     public String getBackupRestoreType() {
@@ -187,7 +187,7 @@ public class ListRestorableInstancesDetailsRequest {
     }
 
     /**
-     * **参数解释**: 源实例的备份类型。 **约束限制**: 不涉及。 **取值范围**:   - INSTANCE   - DATABASE_TABLE **默认取值**: INSTANCE
+     * **参数解释**: 源实例的备份类型。 **约束限制**: 不涉及。 **取值范围**:   - INSTANCE   - DATABASE_TABLE  **默认取值**: INSTANCE
      * @return sourceBackupSchema
      */
     public String getSourceBackupSchema() {

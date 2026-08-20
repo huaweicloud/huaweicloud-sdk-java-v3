@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * **参数解释：** 服务调用时的相关配置。
+ * **参数解释：**  服务调用时的相关配置。
  */
 public class ServiceInvokeResponse {
 
@@ -85,6 +85,11 @@ public class ServiceInvokeResponse {
     @JsonProperty(value = "fuse_configs")
 
     private FuseConfig fuseConfigs;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elb_connection")
+
+    private ElbConnectionResponse elbConnection;
 
     public ServiceInvokeResponse withPort(Integer port) {
         this.port = port;
@@ -350,6 +355,32 @@ public class ServiceInvokeResponse {
         this.fuseConfigs = fuseConfigs;
     }
 
+    public ServiceInvokeResponse withElbConnection(ElbConnectionResponse elbConnection) {
+        this.elbConnection = elbConnection;
+        return this;
+    }
+
+    public ServiceInvokeResponse withElbConnection(Consumer<ElbConnectionResponse> elbConnectionSetter) {
+        if (this.elbConnection == null) {
+            this.elbConnection = new ElbConnectionResponse();
+            elbConnectionSetter.accept(this.elbConnection);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get elbConnection
+     * @return elbConnection
+     */
+    public ElbConnectionResponse getElbConnection() {
+        return elbConnection;
+    }
+
+    public void setElbConnection(ElbConnectionResponse elbConnection) {
+        this.elbConnection = elbConnection;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -371,7 +402,8 @@ public class ServiceInvokeResponse {
             && Objects.equals(this.requestRetryEnable, that.requestRetryEnable)
             && Objects.equals(this.requestRetryCntMax, that.requestRetryCntMax)
             && Objects.equals(this.requestRetryIntervalMs, that.requestRetryIntervalMs)
-            && Objects.equals(this.fuseConfigs, that.fuseConfigs);
+            && Objects.equals(this.fuseConfigs, that.fuseConfigs)
+            && Objects.equals(this.elbConnection, that.elbConnection);
     }
 
     @Override
@@ -390,7 +422,8 @@ public class ServiceInvokeResponse {
             requestRetryEnable,
             requestRetryCntMax,
             requestRetryIntervalMs,
-            fuseConfigs);
+            fuseConfigs,
+            elbConnection);
     }
 
     @Override
@@ -412,6 +445,7 @@ public class ServiceInvokeResponse {
         sb.append("    requestRetryCntMax: ").append(toIndentedString(requestRetryCntMax)).append("\n");
         sb.append("    requestRetryIntervalMs: ").append(toIndentedString(requestRetryIntervalMs)).append("\n");
         sb.append("    fuseConfigs: ").append(toIndentedString(fuseConfigs)).append("\n");
+        sb.append("    elbConnection: ").append(toIndentedString(elbConnection)).append("\n");
         sb.append("}");
         return sb.toString();
     }

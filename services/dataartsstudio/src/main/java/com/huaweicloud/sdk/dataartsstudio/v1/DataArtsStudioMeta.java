@@ -539,6 +539,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDynamicMaskingPol
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDynamicMaskingPoliciesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberPermissionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberPermissionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberPermissionsByUserIdRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberPermissionsByUserIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberSyncTasksRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberSyncTasksResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberTablePermissionRequest;
@@ -9852,6 +9854,117 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSecurityMemberPermissionRequest::getWorkspace,
                 ListSecurityMemberPermissionRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecurityMemberPermissionsByUserIdRequest, ListSecurityMemberPermissionsByUserIdResponse> listSecurityMemberPermissionsByUserId =
+        genForListSecurityMemberPermissionsByUserId();
+
+    private static HttpRequestDef<ListSecurityMemberPermissionsByUserIdRequest, ListSecurityMemberPermissionsByUserIdResponse> genForListSecurityMemberPermissionsByUserId() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityMemberPermissionsByUserIdRequest, ListSecurityMemberPermissionsByUserIdResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecurityMemberPermissionsByUserIdRequest.class,
+                    ListSecurityMemberPermissionsByUserIdResponse.class)
+                .withName("ListSecurityMemberPermissionsByUserId")
+                .withUri("/v1/{project_id}/security/member-permission/query/{user_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionsByUserIdRequest::getUserId,
+                ListSecurityMemberPermissionsByUserIdRequest::setUserId));
+        builder.<String>withRequestField("user_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionsByUserIdRequest::getUserName,
+                ListSecurityMemberPermissionsByUserIdRequest::setUserName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionsByUserIdRequest::getLimit,
+                ListSecurityMemberPermissionsByUserIdRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionsByUserIdRequest::getOffset,
+                ListSecurityMemberPermissionsByUserIdRequest::setOffset));
+        builder.<ListSecurityMemberPermissionsByUserIdRequest.DatasourceTypeEnum>withRequestField("datasource_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityMemberPermissionsByUserIdRequest.DatasourceTypeEnum.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionsByUserIdRequest::getDatasourceType,
+                ListSecurityMemberPermissionsByUserIdRequest::setDatasourceType));
+        builder.<String>withRequestField("database_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionsByUserIdRequest::getDatabaseName,
+                ListSecurityMemberPermissionsByUserIdRequest::setDatabaseName));
+        builder.<String>withRequestField("schema_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionsByUserIdRequest::getSchemaName,
+                ListSecurityMemberPermissionsByUserIdRequest::setSchemaName));
+        builder.<String>withRequestField("table_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionsByUserIdRequest::getTableName,
+                ListSecurityMemberPermissionsByUserIdRequest::setTableName));
+        builder.<ListSecurityMemberPermissionsByUserIdRequest.AccountTypeEnum>withRequestField("account_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityMemberPermissionsByUserIdRequest.AccountTypeEnum.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionsByUserIdRequest::getAccountType,
+                ListSecurityMemberPermissionsByUserIdRequest::setAccountType));
+        builder.<ListSecurityMemberPermissionsByUserIdRequest.ExpireStatusEnum>withRequestField("expire_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityMemberPermissionsByUserIdRequest.ExpireStatusEnum.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionsByUserIdRequest::getExpireStatus,
+                ListSecurityMemberPermissionsByUserIdRequest::setExpireStatus));
+        builder.<Long>withRequestField("start_expire_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionsByUserIdRequest::getStartExpireTime,
+                ListSecurityMemberPermissionsByUserIdRequest::setStartExpireTime));
+        builder.<Long>withRequestField("end_expire_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionsByUserIdRequest::getEndExpireTime,
+                ListSecurityMemberPermissionsByUserIdRequest::setEndExpireTime));
+        builder.<ListSecurityMemberPermissionsByUserIdRequest.OrderByEnum>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityMemberPermissionsByUserIdRequest.OrderByEnum.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionsByUserIdRequest::getOrderBy,
+                ListSecurityMemberPermissionsByUserIdRequest::setOrderBy));
+        builder.<Boolean>withRequestField("order_by_asc",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionsByUserIdRequest::getOrderByAsc,
+                ListSecurityMemberPermissionsByUserIdRequest::setOrderByAsc));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionsByUserIdRequest::getWorkspace,
+                ListSecurityMemberPermissionsByUserIdRequest::setWorkspace));
 
         // response
 

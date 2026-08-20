@@ -31,7 +31,7 @@ public class UpdateInstanceCrossVpcIpRespResults {
     }
 
     /**
-     * advertised.listeners IP/域名。
+     * **参数解释**： advertised.listeners IP/域名。 **取值范围**： 不涉及。
      * @return advertisedIp
      */
     public String getAdvertisedIp() {
@@ -48,7 +48,7 @@ public class UpdateInstanceCrossVpcIpRespResults {
     }
 
     /**
-     * 修改broker跨VPC访问的状态。
+     * **参数解释**： 修改broker跨VPC访问的状态。 **取值范围**： - true：修改broker跨VPC访问成功。 - false：修改broker跨VPC访问失败。
      * @return success
      */
     public Boolean getSuccess() {
@@ -65,7 +65,7 @@ public class UpdateInstanceCrossVpcIpRespResults {
     }
 
     /**
-     * listeners IP。
+     * **参数解释**： listeners IP。 **取值范围**： 不涉及。
      * @return ip
      */
     public String getIp() {

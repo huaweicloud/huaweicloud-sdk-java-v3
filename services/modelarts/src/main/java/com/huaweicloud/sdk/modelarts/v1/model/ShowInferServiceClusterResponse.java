@@ -255,7 +255,87 @@ public class ShowInferServiceClusterResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavors")
 
-    private List<InferFlavor> flavors = null;
+    private List<NotebookFlavor> flavors = null;
+
+    /**
+     * **参数解释：** 资源池类型。 **取值范围：** - LOGICAL ：逻辑池。 - PHYSICAL ：物理池。
+     */
+    public static final class PoolTypeEnum {
+
+        /**
+         * Enum LOGICAL for value: "LOGICAL"
+         */
+        public static final PoolTypeEnum LOGICAL = new PoolTypeEnum("LOGICAL");
+
+        /**
+         * Enum PHYSICAL for value: "PHYSICAL"
+         */
+        public static final PoolTypeEnum PHYSICAL = new PoolTypeEnum("PHYSICAL");
+
+        private static final Map<String, PoolTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PoolTypeEnum> createStaticFields() {
+            Map<String, PoolTypeEnum> map = new HashMap<>();
+            map.put("LOGICAL", LOGICAL);
+            map.put("PHYSICAL", PHYSICAL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        PoolTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PoolTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PoolTypeEnum(value));
+        }
+
+        public static PoolTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PoolTypeEnum) {
+                return this.value.equals(((PoolTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pool_type")
+
+    private PoolTypeEnum poolType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "physical_pool_id")
+
+    private String physicalPoolId;
 
     public ShowInferServiceClusterResponse withWorkspaceId(String workspaceId) {
         this.workspaceId = workspaceId;
@@ -426,12 +506,12 @@ public class ShowInferServiceClusterResponse extends SdkResponse {
         this.updateAt = updateAt;
     }
 
-    public ShowInferServiceClusterResponse withFlavors(List<InferFlavor> flavors) {
+    public ShowInferServiceClusterResponse withFlavors(List<NotebookFlavor> flavors) {
         this.flavors = flavors;
         return this;
     }
 
-    public ShowInferServiceClusterResponse addFlavorsItem(InferFlavor flavorsItem) {
+    public ShowInferServiceClusterResponse addFlavorsItem(NotebookFlavor flavorsItem) {
         if (this.flavors == null) {
             this.flavors = new ArrayList<>();
         }
@@ -439,7 +519,7 @@ public class ShowInferServiceClusterResponse extends SdkResponse {
         return this;
     }
 
-    public ShowInferServiceClusterResponse withFlavors(Consumer<List<InferFlavor>> flavorsSetter) {
+    public ShowInferServiceClusterResponse withFlavors(Consumer<List<NotebookFlavor>> flavorsSetter) {
         if (this.flavors == null) {
             this.flavors = new ArrayList<>();
         }
@@ -451,12 +531,46 @@ public class ShowInferServiceClusterResponse extends SdkResponse {
      * **参数解释：** 当前专属池支持的规格。
      * @return flavors
      */
-    public List<InferFlavor> getFlavors() {
+    public List<NotebookFlavor> getFlavors() {
         return flavors;
     }
 
-    public void setFlavors(List<InferFlavor> flavors) {
+    public void setFlavors(List<NotebookFlavor> flavors) {
         this.flavors = flavors;
+    }
+
+    public ShowInferServiceClusterResponse withPoolType(PoolTypeEnum poolType) {
+        this.poolType = poolType;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 资源池类型。 **取值范围：** - LOGICAL ：逻辑池。 - PHYSICAL ：物理池。
+     * @return poolType
+     */
+    public PoolTypeEnum getPoolType() {
+        return poolType;
+    }
+
+    public void setPoolType(PoolTypeEnum poolType) {
+        this.poolType = poolType;
+    }
+
+    public ShowInferServiceClusterResponse withPhysicalPoolId(String physicalPoolId) {
+        this.physicalPoolId = physicalPoolId;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 物理资源池ID，逻辑子池对应的父池ID。 **取值范围：** 不涉及。
+     * @return physicalPoolId
+     */
+    public String getPhysicalPoolId() {
+        return physicalPoolId;
+    }
+
+    public void setPhysicalPoolId(String physicalPoolId) {
+        this.physicalPoolId = physicalPoolId;
     }
 
     @Override
@@ -473,7 +587,8 @@ public class ShowInferServiceClusterResponse extends SdkResponse {
             && Objects.equals(this.poolId, that.poolId) && Objects.equals(this.type, that.type)
             && Objects.equals(this.resourceCategories, that.resourceCategories)
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.createAt, that.createAt)
-            && Objects.equals(this.updateAt, that.updateAt) && Objects.equals(this.flavors, that.flavors);
+            && Objects.equals(this.updateAt, that.updateAt) && Objects.equals(this.flavors, that.flavors)
+            && Objects.equals(this.poolType, that.poolType) && Objects.equals(this.physicalPoolId, that.physicalPoolId);
     }
 
     @Override
@@ -487,7 +602,9 @@ public class ShowInferServiceClusterResponse extends SdkResponse {
             projectId,
             createAt,
             updateAt,
-            flavors);
+            flavors,
+            poolType,
+            physicalPoolId);
     }
 
     @Override
@@ -504,6 +621,8 @@ public class ShowInferServiceClusterResponse extends SdkResponse {
         sb.append("    createAt: ").append(toIndentedString(createAt)).append("\n");
         sb.append("    updateAt: ").append(toIndentedString(updateAt)).append("\n");
         sb.append("    flavors: ").append(toIndentedString(flavors)).append("\n");
+        sb.append("    poolType: ").append(toIndentedString(poolType)).append("\n");
+        sb.append("    physicalPoolId: ").append(toIndentedString(physicalPoolId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

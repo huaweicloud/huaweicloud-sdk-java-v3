@@ -6,9 +6,24 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * UserVO
+ * 用户信息详情
  */
 public class UserVO {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_id")
+
+    private String userId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_num_id")
+
+    private Integer userNumId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_name")
+
+    private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
@@ -26,19 +41,72 @@ public class UserVO {
     private String nickName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "user_id")
+    @JsonProperty(value = "role_id")
 
-    private String userId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "user_name")
-
-    private String userName;
+    private String roleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "user_num_id")
+    @JsonProperty(value = "role_name")
 
-    private Integer userNumId;
+    private String roleName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "role_code")
+
+    private String roleCode;
+
+    public UserVO withUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+
+    /**
+     * 用户ID。
+     * @return userId
+     */
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public UserVO withUserNumId(Integer userNumId) {
+        this.userNumId = userNumId;
+        return this;
+    }
+
+    /**
+     * 用户短ID。
+     * minimum: 0
+     * maximum: 99999999
+     * @return userNumId
+     */
+    public Integer getUserNumId() {
+        return userNumId;
+    }
+
+    public void setUserNumId(Integer userNumId) {
+        this.userNumId = userNumId;
+    }
+
+    public UserVO withUserName(String userName) {
+        this.userName = userName;
+        return this;
+    }
+
+    /**
+     * 用户名称。
+     * @return userName
+     */
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
     public UserVO withDomainId(String domainId) {
         this.domainId = domainId;
@@ -46,7 +114,7 @@ public class UserVO {
     }
 
     /**
-     * 用户的租户ID
+     * 用户所属域ID。
      * @return domainId
      */
     public String getDomainId() {
@@ -63,7 +131,7 @@ public class UserVO {
     }
 
     /**
-     * 用户的租户名称
+     * 租户名称。
      * @return domainName
      */
     public String getDomainName() {
@@ -80,7 +148,7 @@ public class UserVO {
     }
 
     /**
-     * 用户的昵称
+     * 用户昵称。
      * @return nickName
      */
     public String getNickName() {
@@ -91,55 +159,55 @@ public class UserVO {
         this.nickName = nickName;
     }
 
-    public UserVO withUserId(String userId) {
-        this.userId = userId;
+    public UserVO withRoleId(String roleId) {
+        this.roleId = roleId;
         return this;
     }
 
     /**
-     * 用户Iam id
-     * @return userId
+     * 角色ID，用户在项目中具有多个角色时用英文逗号分隔。
+     * @return roleId
      */
-    public String getUserId() {
-        return userId;
+    public String getRoleId() {
+        return roleId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setRoleId(String roleId) {
+        this.roleId = roleId;
     }
 
-    public UserVO withUserName(String userName) {
-        this.userName = userName;
+    public UserVO withRoleName(String roleName) {
+        this.roleName = roleName;
         return this;
     }
 
     /**
-     * 用户名
-     * @return userName
+     * 用户角色名称，多个角色用英文逗号分隔。
+     * @return roleName
      */
-    public String getUserName() {
-        return userName;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
-    public UserVO withUserNumId(Integer userNumId) {
-        this.userNumId = userNumId;
+    public UserVO withRoleCode(String roleCode) {
+        this.roleCode = roleCode;
         return this;
     }
 
     /**
-     * 用户索引id
-     * @return userNumId
+     * 用户角色编码，多个角色用英文逗号分隔。
+     * @return roleCode
      */
-    public Integer getUserNumId() {
-        return userNumId;
+    public String getRoleCode() {
+        return roleCode;
     }
 
-    public void setUserNumId(Integer userNumId) {
-        this.userNumId = userNumId;
+    public void setRoleCode(String roleCode) {
+        this.roleCode = roleCode;
     }
 
     @Override
@@ -151,26 +219,31 @@ public class UserVO {
             return false;
         }
         UserVO that = (UserVO) obj;
-        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.domainName, that.domainName)
-            && Objects.equals(this.nickName, that.nickName) && Objects.equals(this.userId, that.userId)
-            && Objects.equals(this.userName, that.userName) && Objects.equals(this.userNumId, that.userNumId);
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.userNumId, that.userNumId)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.nickName, that.nickName)
+            && Objects.equals(this.roleId, that.roleId) && Objects.equals(this.roleName, that.roleName)
+            && Objects.equals(this.roleCode, that.roleCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domainId, domainName, nickName, userId, userName, userNumId);
+        return Objects.hash(userId, userNumId, userName, domainId, domainName, nickName, roleId, roleName, roleCode);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UserVO {\n");
+        sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+        sb.append("    userNumId: ").append(toIndentedString(userNumId)).append("\n");
+        sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    nickName: ").append(toIndentedString(nickName)).append("\n");
-        sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-        sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
-        sb.append("    userNumId: ").append(toIndentedString(userNumId)).append("\n");
+        sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
+        sb.append("    roleName: ").append(toIndentedString(roleName)).append("\n");
+        sb.append("    roleCode: ").append(toIndentedString(roleCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

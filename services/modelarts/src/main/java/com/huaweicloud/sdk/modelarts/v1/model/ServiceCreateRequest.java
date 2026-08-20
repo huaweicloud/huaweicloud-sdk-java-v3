@@ -46,7 +46,7 @@ public class ServiceCreateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime_config")
 
-    private RuntimeConfig runtimeConfig;
+    private RuntimeConfigCreateRequest runtimeConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "upgrade_config")
@@ -61,7 +61,7 @@ public class ServiceCreateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_configs")
 
-    private List<LtsConfig> logConfigs = null;
+    private List<LtsConfiguration> logConfigs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -216,14 +216,14 @@ public class ServiceCreateRequest {
         this.groupConfigs = groupConfigs;
     }
 
-    public ServiceCreateRequest withRuntimeConfig(RuntimeConfig runtimeConfig) {
+    public ServiceCreateRequest withRuntimeConfig(RuntimeConfigCreateRequest runtimeConfig) {
         this.runtimeConfig = runtimeConfig;
         return this;
     }
 
-    public ServiceCreateRequest withRuntimeConfig(Consumer<RuntimeConfig> runtimeConfigSetter) {
+    public ServiceCreateRequest withRuntimeConfig(Consumer<RuntimeConfigCreateRequest> runtimeConfigSetter) {
         if (this.runtimeConfig == null) {
-            this.runtimeConfig = new RuntimeConfig();
+            this.runtimeConfig = new RuntimeConfigCreateRequest();
             runtimeConfigSetter.accept(this.runtimeConfig);
         }
 
@@ -234,11 +234,11 @@ public class ServiceCreateRequest {
      * Get runtimeConfig
      * @return runtimeConfig
      */
-    public RuntimeConfig getRuntimeConfig() {
+    public RuntimeConfigCreateRequest getRuntimeConfig() {
         return runtimeConfig;
     }
 
-    public void setRuntimeConfig(RuntimeConfig runtimeConfig) {
+    public void setRuntimeConfig(RuntimeConfigCreateRequest runtimeConfig) {
         this.runtimeConfig = runtimeConfig;
     }
 
@@ -285,12 +285,12 @@ public class ServiceCreateRequest {
         this.ltsStrategy = ltsStrategy;
     }
 
-    public ServiceCreateRequest withLogConfigs(List<LtsConfig> logConfigs) {
+    public ServiceCreateRequest withLogConfigs(List<LtsConfiguration> logConfigs) {
         this.logConfigs = logConfigs;
         return this;
     }
 
-    public ServiceCreateRequest addLogConfigsItem(LtsConfig logConfigsItem) {
+    public ServiceCreateRequest addLogConfigsItem(LtsConfiguration logConfigsItem) {
         if (this.logConfigs == null) {
             this.logConfigs = new ArrayList<>();
         }
@@ -298,7 +298,7 @@ public class ServiceCreateRequest {
         return this;
     }
 
-    public ServiceCreateRequest withLogConfigs(Consumer<List<LtsConfig>> logConfigsSetter) {
+    public ServiceCreateRequest withLogConfigs(Consumer<List<LtsConfiguration>> logConfigsSetter) {
         if (this.logConfigs == null) {
             this.logConfigs = new ArrayList<>();
         }
@@ -307,14 +307,14 @@ public class ServiceCreateRequest {
     }
 
     /**
-     * **参数解释：** 日志配置。 **约束限制：** 当开启LTS日志的时候，STDOUT类型为必填。 数量上限为2个。
+     * **参数解释：** 服务日志配置。 **约束限制：** 数量上限为[3](tag:hws,hws_hk,fcs,fcs_super)[2](tag:hcs,hcs_sm)个，且每种类型只可配置一个。
      * @return logConfigs
      */
-    public List<LtsConfig> getLogConfigs() {
+    public List<LtsConfiguration> getLogConfigs() {
         return logConfigs;
     }
 
-    public void setLogConfigs(List<LtsConfig> logConfigs) {
+    public void setLogConfigs(List<LtsConfiguration> logConfigs) {
         this.logConfigs = logConfigs;
     }
 
@@ -390,7 +390,7 @@ public class ServiceCreateRequest {
     }
 
     /**
-     * **参数解释：** 定时停止配置。 **约束限制：** 最多支持一个定时任务。
+     * **参数解释：**  定时停止配置。 **约束限制：**  最多支持一个定时任务。
      * @return schedule
      */
     public List<ScheduleConfig> getSchedule() {

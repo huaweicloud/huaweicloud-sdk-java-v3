@@ -15,6 +15,11 @@ import java.util.function.Consumer;
 public class ShowDomainStatsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_by")
+
+    private String groupBy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
     private Long startTime;
@@ -44,13 +49,30 @@ public class ShowDomainStatsResponse extends SdkResponse {
 
     private Map<String, Object> result = null;
 
+    public ShowDomainStatsResponse withGroupBy(String groupBy) {
+        this.groupBy = groupBy;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 数据分组方式 **取值范围：** domain：按域名分组 **默认取值：** 不分组
+     * @return groupBy
+     */
+    public String getGroupBy() {
+        return groupBy;
+    }
+
+    public void setGroupBy(String groupBy) {
+        this.groupBy = groupBy;
+    }
+
     public ShowDomainStatsResponse withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
 
     /**
-     * 查询起始时间戳。
+     * **参数解释：** 查询起始时间戳 **取值范围：** 不涉及
      * @return startTime
      */
     public Long getStartTime() {
@@ -67,7 +89,7 @@ public class ShowDomainStatsResponse extends SdkResponse {
     }
 
     /**
-     * 查询结束时间戳
+     * **参数解释：** 查询结束时间戳 **取值范围：** 不涉及
      * @return endTime
      */
     public Long getEndTime() {
@@ -84,7 +106,7 @@ public class ShowDomainStatsResponse extends SdkResponse {
     }
 
     /**
-     * 参数类型支持：flux(流量)，req_num(请求总数)。
+     * **参数解释：** 统计指标类型 **取值范围：** - flux：流量 - req_num：请求总数
      * @return statType
      */
     public String getStatType() {
@@ -101,7 +123,7 @@ public class ShowDomainStatsResponse extends SdkResponse {
     }
 
     /**
-     * **参数解释：** 规则行为 **约束限制：** 不涉及
+     * **参数解释：** 查询数据类型 **取值范围：** - summary：汇总数据 - detail：明细数据
      * @return action
      */
     public String getAction() {
@@ -118,7 +140,7 @@ public class ShowDomainStatsResponse extends SdkResponse {
     }
 
     /**
-     * 查询时间间隔，单位：秒
+     * **参数解释：** 查询时间粒度 **取值范围：** - 300：采样时间间隔为5分钟，单位：秒 - 3600：采样时间间隔为1小时，单位：秒 - 86400：采样时间间隔为1天，单位：秒 **默认取值：** 默认取对应时间跨度的最小间隔 > 时间跨度小于等于7天，最小时间间隔为300；时间跨度大于7天，最小时间间隔为3600
      * @return interval
      */
     public Long getInterval() {
@@ -151,7 +173,7 @@ public class ShowDomainStatsResponse extends SdkResponse {
     }
 
     /**
-     * 按指定的分组方式组织的数据
+     * **参数解释：** 按指定的分组方式组织的数据 **取值范围：** 不涉及
      * @return result
      */
     public Map<String, Object> getResult() {
@@ -171,20 +193,22 @@ public class ShowDomainStatsResponse extends SdkResponse {
             return false;
         }
         ShowDomainStatsResponse that = (ShowDomainStatsResponse) obj;
-        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.statType, that.statType) && Objects.equals(this.action, that.action)
-            && Objects.equals(this.interval, that.interval) && Objects.equals(this.result, that.result);
+        return Objects.equals(this.groupBy, that.groupBy) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.statType, that.statType)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.interval, that.interval)
+            && Objects.equals(this.result, that.result);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(startTime, endTime, statType, action, interval, result);
+        return Objects.hash(groupBy, startTime, endTime, statType, action, interval, result);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowDomainStatsResponse {\n");
+        sb.append("    groupBy: ").append(toIndentedString(groupBy)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    statType: ").append(toIndentedString(statType)).append("\n");

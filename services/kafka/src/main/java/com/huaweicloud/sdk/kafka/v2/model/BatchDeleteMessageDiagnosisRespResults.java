@@ -11,30 +11,30 @@ import java.util.Objects;
 public class BatchDeleteMessageDiagnosisRespResults {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "result")
+    @JsonProperty(value = "success")
 
-    private Boolean result;
+    private Boolean success;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private String id;
 
-    public BatchDeleteMessageDiagnosisRespResults withResult(Boolean result) {
-        this.result = result;
+    public BatchDeleteMessageDiagnosisRespResults withSuccess(Boolean success) {
+        this.success = success;
         return this;
     }
 
     /**
      * 报告删除结果
-     * @return result
+     * @return success
      */
-    public Boolean getResult() {
-        return result;
+    public Boolean getSuccess() {
+        return success;
     }
 
-    public void setResult(Boolean result) {
-        this.result = result;
+    public void setSuccess(Boolean success) {
+        this.success = success;
     }
 
     public BatchDeleteMessageDiagnosisRespResults withId(String id) {
@@ -63,19 +63,19 @@ public class BatchDeleteMessageDiagnosisRespResults {
             return false;
         }
         BatchDeleteMessageDiagnosisRespResults that = (BatchDeleteMessageDiagnosisRespResults) obj;
-        return Objects.equals(this.result, that.result) && Objects.equals(this.id, that.id);
+        return Objects.equals(this.success, that.success) && Objects.equals(this.id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(result, id);
+        return Objects.hash(success, id);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchDeleteMessageDiagnosisRespResults {\n");
-        sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    success: ").append(toIndentedString(success)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -26,7 +26,7 @@ public class TopReferSummary {
     }
 
     /**
-     * referer值。
+     * **参数解释：** referer值 **取值范围：** 不涉及
      * @return refer
      */
     public String getRefer() {
@@ -43,7 +43,7 @@ public class TopReferSummary {
     }
 
     /**
-     * 对应查询类型的值。（流量单位：Byte）
+     * **参数解释：** 对应查询类型的值 **取值范围：** 若值为流量，流量单位：Byte
      * @return value
      */
     public Long getValue() {

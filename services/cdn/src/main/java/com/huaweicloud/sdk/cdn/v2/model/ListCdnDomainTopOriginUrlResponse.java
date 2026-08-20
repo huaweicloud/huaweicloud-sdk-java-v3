@@ -42,7 +42,7 @@ public class ListCdnDomainTopOriginUrlResponse extends SdkResponse {
     }
 
     /**
-     * 详情数据对象。
+     * **参数解释：** 数据详情 **取值范围：** 不涉及
      * @return topOriginUrlSummary
      */
     public List<TopOriginUrlSummary> getTopOriginUrlSummary() {

@@ -27,7 +27,7 @@ public class UpdateSubscriptionTaskRequest {
     }
 
     /**
-     * 订阅任务id
+     * **参数解释：** 订阅任务id **约束限制：** 不涉及 **取值范围：** 不涉及 **默认取值：** 不涉及
      * minimum: 0
      * maximum: 999999999
      * @return id

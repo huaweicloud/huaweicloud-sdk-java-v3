@@ -443,6 +443,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDynamicMaskingPol
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDynamicMaskingPoliciesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberPermissionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberPermissionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberPermissionsByUserIdRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberPermissionsByUserIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberSyncTasksRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberSyncTasksResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberTablePermissionRequest;
@@ -6945,6 +6947,40 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<ListSecurityMemberPermissionRequest, ListSecurityMemberPermissionResponse> listSecurityMemberPermissionAsyncInvoker(
         ListSecurityMemberPermissionRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.listSecurityMemberPermission, hcClient);
+    }
+
+    /**
+     * 查询指定用户权限清单
+     *
+     * 查询指定用户权限清单。
+     * 
+     * 权限要求：dayu_admin / te_admin / 数据安全管理员可查询任意用户；普通用户仅可查询自身权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityMemberPermissionsByUserIdRequest 请求对象
+     * @return CompletableFuture<ListSecurityMemberPermissionsByUserIdResponse>
+     */
+    public CompletableFuture<ListSecurityMemberPermissionsByUserIdResponse> listSecurityMemberPermissionsByUserIdAsync(
+        ListSecurityMemberPermissionsByUserIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.listSecurityMemberPermissionsByUserId);
+    }
+
+    /**
+     * 查询指定用户权限清单
+     *
+     * 查询指定用户权限清单。
+     * 
+     * 权限要求：dayu_admin / te_admin / 数据安全管理员可查询任意用户；普通用户仅可查询自身权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecurityMemberPermissionsByUserIdRequest 请求对象
+     * @return AsyncInvoker<ListSecurityMemberPermissionsByUserIdRequest, ListSecurityMemberPermissionsByUserIdResponse>
+     */
+    public AsyncInvoker<ListSecurityMemberPermissionsByUserIdRequest, ListSecurityMemberPermissionsByUserIdResponse> listSecurityMemberPermissionsByUserIdAsyncInvoker(
+        ListSecurityMemberPermissionsByUserIdRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.listSecurityMemberPermissionsByUserId, hcClient);
     }
 
     /**

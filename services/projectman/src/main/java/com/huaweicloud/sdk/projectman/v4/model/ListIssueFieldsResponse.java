@@ -22,7 +22,7 @@ public class ListIssueFieldsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    private List<FieldVO> result = null;
+    private List<FieldLongDateVO> result = null;
 
     public ListIssueFieldsResponse withPage(PageVO page) {
         this.page = page;
@@ -50,12 +50,12 @@ public class ListIssueFieldsResponse extends SdkResponse {
         this.page = page;
     }
 
-    public ListIssueFieldsResponse withResult(List<FieldVO> result) {
+    public ListIssueFieldsResponse withResult(List<FieldLongDateVO> result) {
         this.result = result;
         return this;
     }
 
-    public ListIssueFieldsResponse addResultItem(FieldVO resultItem) {
+    public ListIssueFieldsResponse addResultItem(FieldLongDateVO resultItem) {
         if (this.result == null) {
             this.result = new ArrayList<>();
         }
@@ -63,7 +63,7 @@ public class ListIssueFieldsResponse extends SdkResponse {
         return this;
     }
 
-    public ListIssueFieldsResponse withResult(Consumer<List<FieldVO>> resultSetter) {
+    public ListIssueFieldsResponse withResult(Consumer<List<FieldLongDateVO>> resultSetter) {
         if (this.result == null) {
             this.result = new ArrayList<>();
         }
@@ -75,11 +75,11 @@ public class ListIssueFieldsResponse extends SdkResponse {
      * 返回数据
      * @return result
      */
-    public List<FieldVO> getResult() {
+    public List<FieldLongDateVO> getResult() {
         return result;
     }
 
-    public void setResult(List<FieldVO> result) {
+    public void setResult(List<FieldLongDateVO> result) {
         this.result = result;
     }
 

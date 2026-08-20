@@ -30,7 +30,7 @@ public class ListSubscriptionTasksResponse extends SdkResponse {
     }
 
     /**
-     * 订阅任务总数
+     * **参数解释：** 订阅任务总数 **取值范围：** 不涉及
      * minimum: 0
      * maximum: 999999999
      * @return total

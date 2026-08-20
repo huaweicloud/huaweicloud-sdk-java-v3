@@ -105,7 +105,7 @@ public class CreateConnectorReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_cnt")
 
-    private String nodeCnt;
+    private Integer nodeCnt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "spec_code")
@@ -129,7 +129,7 @@ public class CreateConnectorReq {
         this.specification = specification;
     }
 
-    public CreateConnectorReq withNodeCnt(String nodeCnt) {
+    public CreateConnectorReq withNodeCnt(Integer nodeCnt) {
         this.nodeCnt = nodeCnt;
         return this;
     }
@@ -138,11 +138,11 @@ public class CreateConnectorReq {
      * Smart Connect节点数量。不能小于2个。 如果不填，默认是2个。 
      * @return nodeCnt
      */
-    public String getNodeCnt() {
+    public Integer getNodeCnt() {
         return nodeCnt;
     }
 
-    public void setNodeCnt(String nodeCnt) {
+    public void setNodeCnt(Integer nodeCnt) {
         this.nodeCnt = nodeCnt;
     }
 

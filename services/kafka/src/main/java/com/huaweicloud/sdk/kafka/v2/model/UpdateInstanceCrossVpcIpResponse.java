@@ -30,7 +30,7 @@ public class UpdateInstanceCrossVpcIpResponse extends SdkResponse {
     }
 
     /**
-     * 修改跨VPC访问结果。
+     * **参数解释**： 修改跨VPC访问结果。 **取值范围**： - true：修改跨VPC访问成功。 - false：修改跨VPC访问失败。
      * @return success
      */
     public Boolean getSuccess() {
@@ -64,7 +64,7 @@ public class UpdateInstanceCrossVpcIpResponse extends SdkResponse {
     }
 
     /**
-     * 修改broker跨VPC访问的结果列表。
+     * **参数解释**： 修改broker跨VPC访问的结果列表。
      * @return results
      */
     public List<UpdateInstanceCrossVpcIpRespResults> getResults() {

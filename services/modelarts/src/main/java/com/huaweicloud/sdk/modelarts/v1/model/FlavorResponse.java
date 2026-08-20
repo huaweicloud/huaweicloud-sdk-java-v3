@@ -29,6 +29,16 @@ public class FlavorResponse {
     private String flavorName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_engines")
+
+    private String supportEngines;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_groups")
+
+    private String supportGroups;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_num")
 
     private Integer maxNum;
@@ -102,6 +112,40 @@ public class FlavorResponse {
 
     public void setFlavorName(String flavorName) {
         this.flavorName = flavorName;
+    }
+
+    public FlavorResponse withSupportEngines(String supportEngines) {
+        this.supportEngines = supportEngines;
+        return this;
+    }
+
+    /**
+     * **参数解释**：该规格支持的训练引擎列表（JSON 数组字符串格式）。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：不涉及。
+     * @return supportEngines
+     */
+    public String getSupportEngines() {
+        return supportEngines;
+    }
+
+    public void setSupportEngines(String supportEngines) {
+        this.supportEngines = supportEngines;
+    }
+
+    public FlavorResponse withSupportGroups(String supportGroups) {
+        this.supportGroups = supportGroups;
+        return this;
+    }
+
+    /**
+     * **参数解释**：该规格支持的用户组列表。若为空则默认为 `public`。 **约束限制**：不涉及。 **取值范围**：不涉及。 **默认取值**：`public`
+     * @return supportGroups
+     */
+    public String getSupportGroups() {
+        return supportGroups;
+    }
+
+    public void setSupportGroups(String supportGroups) {
+        this.supportGroups = supportGroups;
     }
 
     public FlavorResponse withMaxNum(Integer maxNum) {
@@ -233,14 +277,25 @@ public class FlavorResponse {
         }
         FlavorResponse that = (FlavorResponse) obj;
         return Objects.equals(this.poolId, that.poolId) && Objects.equals(this.flavorId, that.flavorId)
-            && Objects.equals(this.flavorName, that.flavorName) && Objects.equals(this.maxNum, that.maxNum)
+            && Objects.equals(this.flavorName, that.flavorName)
+            && Objects.equals(this.supportEngines, that.supportEngines)
+            && Objects.equals(this.supportGroups, that.supportGroups) && Objects.equals(this.maxNum, that.maxNum)
             && Objects.equals(this.flavorType, that.flavorType) && Objects.equals(this.billing, that.billing)
             && Objects.equals(this.flavorInfo, that.flavorInfo) && Objects.equals(this.attributes, that.attributes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(poolId, flavorId, flavorName, maxNum, flavorType, billing, flavorInfo, attributes);
+        return Objects.hash(poolId,
+            flavorId,
+            flavorName,
+            supportEngines,
+            supportGroups,
+            maxNum,
+            flavorType,
+            billing,
+            flavorInfo,
+            attributes);
     }
 
     @Override
@@ -250,6 +305,8 @@ public class FlavorResponse {
         sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
         sb.append("    flavorId: ").append(toIndentedString(flavorId)).append("\n");
         sb.append("    flavorName: ").append(toIndentedString(flavorName)).append("\n");
+        sb.append("    supportEngines: ").append(toIndentedString(supportEngines)).append("\n");
+        sb.append("    supportGroups: ").append(toIndentedString(supportGroups)).append("\n");
         sb.append("    maxNum: ").append(toIndentedString(maxNum)).append("\n");
         sb.append("    flavorType: ").append(toIndentedString(flavorType)).append("\n");
         sb.append("    billing: ").append(toIndentedString(billing)).append("\n");

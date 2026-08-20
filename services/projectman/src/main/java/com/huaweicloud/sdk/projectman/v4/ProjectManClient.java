@@ -9,24 +9,40 @@ import com.huaweicloud.sdk.projectman.v4.model.AddIssueWorkHoursRequest;
 import com.huaweicloud.sdk.projectman.v4.model.AddIssueWorkHoursResponse;
 import com.huaweicloud.sdk.projectman.v4.model.AddMemberV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.AddMemberV4Response;
+import com.huaweicloud.sdk.projectman.v4.model.AssociateIpdThirdPartyRequest;
+import com.huaweicloud.sdk.projectman.v4.model.AssociateIpdThirdPartyResponse;
+import com.huaweicloud.sdk.projectman.v4.model.AssociateIssuesRequest;
+import com.huaweicloud.sdk.projectman.v4.model.AssociateIssuesResponse;
 import com.huaweicloud.sdk.projectman.v4.model.BatchAddMembersV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.BatchAddMembersV4Response;
+import com.huaweicloud.sdk.projectman.v4.model.BatchBaselineIpdIssuesRequest;
+import com.huaweicloud.sdk.projectman.v4.model.BatchBaselineIpdIssuesResponse;
+import com.huaweicloud.sdk.projectman.v4.model.BatchCreateIssueSnapitemsRequest;
+import com.huaweicloud.sdk.projectman.v4.model.BatchCreateIssueSnapitemsResponse;
 import com.huaweicloud.sdk.projectman.v4.model.BatchDeleteIssuesV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.BatchDeleteIssuesV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.BatchDeleteIterationsV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.BatchDeleteIterationsV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.BatchDeleteMembersV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.BatchDeleteMembersV4Response;
+import com.huaweicloud.sdk.projectman.v4.model.BatchDeleteSnapshotsRequest;
+import com.huaweicloud.sdk.projectman.v4.model.BatchDeleteSnapshotsResponse;
 import com.huaweicloud.sdk.projectman.v4.model.BatchListAssociatedIssuesRequest;
 import com.huaweicloud.sdk.projectman.v4.model.BatchListAssociatedIssuesResponse;
 import com.huaweicloud.sdk.projectman.v4.model.BatchUpdateChildNickNamesRequest;
 import com.huaweicloud.sdk.projectman.v4.model.BatchUpdateChildNickNamesResponse;
+import com.huaweicloud.sdk.projectman.v4.model.BatchUpdateSnapshotDeletableFlagRequest;
+import com.huaweicloud.sdk.projectman.v4.model.BatchUpdateSnapshotDeletableFlagResponse;
 import com.huaweicloud.sdk.projectman.v4.model.CancelProjectDomainRequest;
 import com.huaweicloud.sdk.projectman.v4.model.CancelProjectDomainResponse;
 import com.huaweicloud.sdk.projectman.v4.model.CheckProjectNameV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.CheckProjectNameV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.CreateCustomfieldsRequest;
 import com.huaweicloud.sdk.projectman.v4.model.CreateCustomfieldsResponse;
+import com.huaweicloud.sdk.projectman.v4.model.CreateIpdLabelRequest;
+import com.huaweicloud.sdk.projectman.v4.model.CreateIpdLabelResponse;
+import com.huaweicloud.sdk.projectman.v4.model.CreateIpdProcessInstanceRequest;
+import com.huaweicloud.sdk.projectman.v4.model.CreateIpdProcessInstanceResponse;
 import com.huaweicloud.sdk.projectman.v4.model.CreateIpdProjectIssueAttachmentRequest;
 import com.huaweicloud.sdk.projectman.v4.model.CreateIpdProjectIssueAttachmentResponse;
 import com.huaweicloud.sdk.projectman.v4.model.CreateIpdProjectIssueRequest;
@@ -43,12 +59,18 @@ import com.huaweicloud.sdk.projectman.v4.model.CreateProjectV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.CreateProjectV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.CreateScrumPlanToProjectRequest;
 import com.huaweicloud.sdk.projectman.v4.model.CreateScrumPlanToProjectResponse;
+import com.huaweicloud.sdk.projectman.v4.model.CreateSprintSnapshotsRequest;
+import com.huaweicloud.sdk.projectman.v4.model.CreateSprintSnapshotsResponse;
 import com.huaweicloud.sdk.projectman.v4.model.CreateSystemIssueV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.CreateSystemIssueV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.DeleteAttachmentRequest;
 import com.huaweicloud.sdk.projectman.v4.model.DeleteAttachmentResponse;
 import com.huaweicloud.sdk.projectman.v4.model.DeleteIpdImageInIssueRequest;
 import com.huaweicloud.sdk.projectman.v4.model.DeleteIpdImageInIssueResponse;
+import com.huaweicloud.sdk.projectman.v4.model.DeleteIpdLabelRequest;
+import com.huaweicloud.sdk.projectman.v4.model.DeleteIpdLabelResponse;
+import com.huaweicloud.sdk.projectman.v4.model.DeleteIpdThirdPartyRequest;
+import com.huaweicloud.sdk.projectman.v4.model.DeleteIpdThirdPartyResponse;
 import com.huaweicloud.sdk.projectman.v4.model.DeleteIssueV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.DeleteIssueV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.DeleteIterationV4Request;
@@ -77,10 +99,16 @@ import com.huaweicloud.sdk.projectman.v4.model.ListChildIssuesV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.ListChildIssuesV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.ListDomainNotAddedProjectsV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.ListDomainNotAddedProjectsV4Response;
+import com.huaweicloud.sdk.projectman.v4.model.ListIpdLabelsRequest;
+import com.huaweicloud.sdk.projectman.v4.model.ListIpdLabelsResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ListIpdProjectIssuesRequest;
 import com.huaweicloud.sdk.projectman.v4.model.ListIpdProjectIssuesResponse;
+import com.huaweicloud.sdk.projectman.v4.model.ListIpdReviewFormsByIssueIdRequest;
+import com.huaweicloud.sdk.projectman.v4.model.ListIpdReviewFormsByIssueIdResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ListIssueAssociatedCommitsRequest;
 import com.huaweicloud.sdk.projectman.v4.model.ListIssueAssociatedCommitsResponse;
+import com.huaweicloud.sdk.projectman.v4.model.ListIssueBySnapIdsRequest;
+import com.huaweicloud.sdk.projectman.v4.model.ListIssueBySnapIdsResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ListIssueCommentsV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.ListIssueCommentsV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.ListIssueCustomFieldsRequest;
@@ -89,6 +117,8 @@ import com.huaweicloud.sdk.projectman.v4.model.ListIssueFieldsRequest;
 import com.huaweicloud.sdk.projectman.v4.model.ListIssueFieldsResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ListIssueRecordsV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.ListIssueRecordsV4Response;
+import com.huaweicloud.sdk.projectman.v4.model.ListIssueSprintSnapshotsRequest;
+import com.huaweicloud.sdk.projectman.v4.model.ListIssueSprintSnapshotsResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ListIssueStatuesRequest;
 import com.huaweicloud.sdk.projectman.v4.model.ListIssueStatuesResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ListIssuesSfV4Request;
@@ -129,6 +159,10 @@ import com.huaweicloud.sdk.projectman.v4.model.ListWorkitemStatusRecordsV4Reques
 import com.huaweicloud.sdk.projectman.v4.model.ListWorkitemStatusRecordsV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.ListWorkitemsRequest;
 import com.huaweicloud.sdk.projectman.v4.model.ListWorkitemsResponse;
+import com.huaweicloud.sdk.projectman.v4.model.PutIpdChangeReviewFormV2Request;
+import com.huaweicloud.sdk.projectman.v4.model.PutIpdChangeReviewFormV2Response;
+import com.huaweicloud.sdk.projectman.v4.model.QueryIssueAssociatedItemRequest;
+import com.huaweicloud.sdk.projectman.v4.model.QueryIssueAssociatedItemResponse;
 import com.huaweicloud.sdk.projectman.v4.model.RemoveProjectRequest;
 import com.huaweicloud.sdk.projectman.v4.model.RemoveProjectResponse;
 import com.huaweicloud.sdk.projectman.v4.model.SearchIssuesRequest;
@@ -145,6 +179,10 @@ import com.huaweicloud.sdk.projectman.v4.model.ShowCurUserRoleRequest;
 import com.huaweicloud.sdk.projectman.v4.model.ShowCurUserRoleResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ShowIpdAttachmentByWorkItemIdRequest;
 import com.huaweicloud.sdk.projectman.v4.model.ShowIpdAttachmentByWorkItemIdResponse;
+import com.huaweicloud.sdk.projectman.v4.model.ShowIpdFieldsV2Request;
+import com.huaweicloud.sdk.projectman.v4.model.ShowIpdFieldsV2Response;
+import com.huaweicloud.sdk.projectman.v4.model.ShowIpdThirdPartyAssociatedRequest;
+import com.huaweicloud.sdk.projectman.v4.model.ShowIpdThirdPartyAssociatedResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ShowIssueCompletionRateRequest;
 import com.huaweicloud.sdk.projectman.v4.model.ShowIssueCompletionRateResponse;
 import com.huaweicloud.sdk.projectman.v4.model.ShowIssueConfigFieldsRequest;
@@ -173,6 +211,10 @@ import com.huaweicloud.sdk.projectman.v4.model.ShowWorkflowTemplateRequest;
 import com.huaweicloud.sdk.projectman.v4.model.ShowWorkflowTemplateResponse;
 import com.huaweicloud.sdk.projectman.v4.model.TransferWorkItemFlowRequest;
 import com.huaweicloud.sdk.projectman.v4.model.TransferWorkItemFlowResponse;
+import com.huaweicloud.sdk.projectman.v4.model.UpdateIpdLabelRequest;
+import com.huaweicloud.sdk.projectman.v4.model.UpdateIpdLabelResponse;
+import com.huaweicloud.sdk.projectman.v4.model.UpdateIpdThirdPartyRequest;
+import com.huaweicloud.sdk.projectman.v4.model.UpdateIpdThirdPartyResponse;
 import com.huaweicloud.sdk.projectman.v4.model.UpdateIssueV4Request;
 import com.huaweicloud.sdk.projectman.v4.model.UpdateIssueV4Response;
 import com.huaweicloud.sdk.projectman.v4.model.UpdateIterationV4Request;
@@ -1019,6 +1061,239 @@ public class ProjectManClient {
     }
 
     /**
+     * 新建并关联外部链接
+     *
+     * 需要给IPD项目下的工作项关联外部链接时，可调用此接口，用户可以通过项目ID和工作项ID，传入需要绑定的外部链接的名称和地址，给该工作项关联外部链接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AssociateIpdThirdPartyRequest 请求对象
+     * @return AssociateIpdThirdPartyResponse
+     */
+    public AssociateIpdThirdPartyResponse associateIpdThirdParty(AssociateIpdThirdPartyRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.associateIpdThirdParty);
+    }
+
+    /**
+     * 新建并关联外部链接
+     *
+     * 需要给IPD项目下的工作项关联外部链接时，可调用此接口，用户可以通过项目ID和工作项ID，传入需要绑定的外部链接的名称和地址，给该工作项关联外部链接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AssociateIpdThirdPartyRequest 请求对象
+     * @return SyncInvoker<AssociateIpdThirdPartyRequest, AssociateIpdThirdPartyResponse>
+     */
+    public SyncInvoker<AssociateIpdThirdPartyRequest, AssociateIpdThirdPartyResponse> associateIpdThirdPartyInvoker(
+        AssociateIpdThirdPartyRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.associateIpdThirdParty, hcClient);
+    }
+
+    /**
+     * 工作项关联/取消关联
+     *
+     * 支持动态关联或取消工作项间的父子层级及其他关联关系，用户可以根据不同的参数明确是关联或者取消，也可以根据参数明确关联的类型，比如关联父、子工作项或者关联其他工作项。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AssociateIssuesRequest 请求对象
+     * @return AssociateIssuesResponse
+     */
+    public AssociateIssuesResponse associateIssues(AssociateIssuesRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.associateIssues);
+    }
+
+    /**
+     * 工作项关联/取消关联
+     *
+     * 支持动态关联或取消工作项间的父子层级及其他关联关系，用户可以根据不同的参数明确是关联或者取消，也可以根据参数明确关联的类型，比如关联父、子工作项或者关联其他工作项。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AssociateIssuesRequest 请求对象
+     * @return SyncInvoker<AssociateIssuesRequest, AssociateIssuesResponse>
+     */
+    public SyncInvoker<AssociateIssuesRequest, AssociateIssuesResponse> associateIssuesInvoker(
+        AssociateIssuesRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.associateIssues, hcClient);
+    }
+
+    /**
+     * 批量基线工作项
+     *
+     * 需要批量基线IPD项目下的工作项时，可调用此接口。用户可以根据待基线的工作项ID数组对工作项进行批量基线。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchBaselineIpdIssuesRequest 请求对象
+     * @return BatchBaselineIpdIssuesResponse
+     */
+    public BatchBaselineIpdIssuesResponse batchBaselineIpdIssues(BatchBaselineIpdIssuesRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.batchBaselineIpdIssues);
+    }
+
+    /**
+     * 批量基线工作项
+     *
+     * 需要批量基线IPD项目下的工作项时，可调用此接口。用户可以根据待基线的工作项ID数组对工作项进行批量基线。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchBaselineIpdIssuesRequest 请求对象
+     * @return SyncInvoker<BatchBaselineIpdIssuesRequest, BatchBaselineIpdIssuesResponse>
+     */
+    public SyncInvoker<BatchBaselineIpdIssuesRequest, BatchBaselineIpdIssuesResponse> batchBaselineIpdIssuesInvoker(
+        BatchBaselineIpdIssuesRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.batchBaselineIpdIssues, hcClient);
+    }
+
+    /**
+     * 批量创建工作项快照
+     *
+     * 为IPD工作项批量创建快照时，可调用此接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateIssueSnapitemsRequest 请求对象
+     * @return BatchCreateIssueSnapitemsResponse
+     */
+    public BatchCreateIssueSnapitemsResponse batchCreateIssueSnapitems(BatchCreateIssueSnapitemsRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.batchCreateIssueSnapitems);
+    }
+
+    /**
+     * 批量创建工作项快照
+     *
+     * 为IPD工作项批量创建快照时，可调用此接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateIssueSnapitemsRequest 请求对象
+     * @return SyncInvoker<BatchCreateIssueSnapitemsRequest, BatchCreateIssueSnapitemsResponse>
+     */
+    public SyncInvoker<BatchCreateIssueSnapitemsRequest, BatchCreateIssueSnapitemsResponse> batchCreateIssueSnapitemsInvoker(
+        BatchCreateIssueSnapitemsRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.batchCreateIssueSnapitems, hcClient);
+    }
+
+    /**
+     * 批量删除快照
+     *
+     * 根据传入的快照ID列表批量删除快照。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSnapshotsRequest 请求对象
+     * @return BatchDeleteSnapshotsResponse
+     */
+    public BatchDeleteSnapshotsResponse batchDeleteSnapshots(BatchDeleteSnapshotsRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.batchDeleteSnapshots);
+    }
+
+    /**
+     * 批量删除快照
+     *
+     * 根据传入的快照ID列表批量删除快照。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSnapshotsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteSnapshotsRequest, BatchDeleteSnapshotsResponse>
+     */
+    public SyncInvoker<BatchDeleteSnapshotsRequest, BatchDeleteSnapshotsResponse> batchDeleteSnapshotsInvoker(
+        BatchDeleteSnapshotsRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.batchDeleteSnapshots, hcClient);
+    }
+
+    /**
+     * 批量更新快照可删除标识
+     *
+     * 批量更新快照的可删除标识状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateSnapshotDeletableFlagRequest 请求对象
+     * @return BatchUpdateSnapshotDeletableFlagResponse
+     */
+    public BatchUpdateSnapshotDeletableFlagResponse batchUpdateSnapshotDeletableFlag(
+        BatchUpdateSnapshotDeletableFlagRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.batchUpdateSnapshotDeletableFlag);
+    }
+
+    /**
+     * 批量更新快照可删除标识
+     *
+     * 批量更新快照的可删除标识状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateSnapshotDeletableFlagRequest 请求对象
+     * @return SyncInvoker<BatchUpdateSnapshotDeletableFlagRequest, BatchUpdateSnapshotDeletableFlagResponse>
+     */
+    public SyncInvoker<BatchUpdateSnapshotDeletableFlagRequest, BatchUpdateSnapshotDeletableFlagResponse> batchUpdateSnapshotDeletableFlagInvoker(
+        BatchUpdateSnapshotDeletableFlagRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.batchUpdateSnapshotDeletableFlag, hcClient);
+    }
+
+    /**
+     * 创建标签
+     *
+     * 创建标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateIpdLabelRequest 请求对象
+     * @return CreateIpdLabelResponse
+     */
+    public CreateIpdLabelResponse createIpdLabel(CreateIpdLabelRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.createIpdLabel);
+    }
+
+    /**
+     * 创建标签
+     *
+     * 创建标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateIpdLabelRequest 请求对象
+     * @return SyncInvoker<CreateIpdLabelRequest, CreateIpdLabelResponse>
+     */
+    public SyncInvoker<CreateIpdLabelRequest, CreateIpdLabelResponse> createIpdLabelInvoker(
+        CreateIpdLabelRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.createIpdLabel, hcClient);
+    }
+
+    /**
+     * 创建变更评审单（BR/GR）
+     *
+     * 创建变更评审单，适用于基线评审（BR）和通用评审（GR）单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateIpdProcessInstanceRequest 请求对象
+     * @return CreateIpdProcessInstanceResponse
+     */
+    public CreateIpdProcessInstanceResponse createIpdProcessInstance(CreateIpdProcessInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.createIpdProcessInstance);
+    }
+
+    /**
+     * 创建变更评审单（BR/GR）
+     *
+     * 创建变更评审单，适用于基线评审（BR）和通用评审（GR）单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateIpdProcessInstanceRequest 请求对象
+     * @return SyncInvoker<CreateIpdProcessInstanceRequest, CreateIpdProcessInstanceResponse>
+     */
+    public SyncInvoker<CreateIpdProcessInstanceRequest, CreateIpdProcessInstanceResponse> createIpdProcessInstanceInvoker(
+        CreateIpdProcessInstanceRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.createIpdProcessInstance, hcClient);
+    }
+
+    /**
      * 创建工作项
      *
      * 创建IPD项目的工作项
@@ -1078,6 +1353,35 @@ public class ProjectManClient {
     }
 
     /**
+     * 创建计划管理快照
+     *
+     * 为指定的发布/迭代及其中的工作项创建一个快照。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSprintSnapshotsRequest 请求对象
+     * @return CreateSprintSnapshotsResponse
+     */
+    public CreateSprintSnapshotsResponse createSprintSnapshots(CreateSprintSnapshotsRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.createSprintSnapshots);
+    }
+
+    /**
+     * 创建计划管理快照
+     *
+     * 为指定的发布/迭代及其中的工作项创建一个快照。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSprintSnapshotsRequest 请求对象
+     * @return SyncInvoker<CreateSprintSnapshotsRequest, CreateSprintSnapshotsResponse>
+     */
+    public SyncInvoker<CreateSprintSnapshotsRequest, CreateSprintSnapshotsResponse> createSprintSnapshotsInvoker(
+        CreateSprintSnapshotsRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.createSprintSnapshots, hcClient);
+    }
+
+    /**
      * 删除工作项描述中的图片
      *
      * 删除工作项描述中的图片
@@ -1104,6 +1408,64 @@ public class ProjectManClient {
     public SyncInvoker<DeleteIpdImageInIssueRequest, DeleteIpdImageInIssueResponse> deleteIpdImageInIssueInvoker(
         DeleteIpdImageInIssueRequest request) {
         return new SyncInvoker<>(request, ProjectManMeta.deleteIpdImageInIssue, hcClient);
+    }
+
+    /**
+     * 删除标签
+     *
+     * 删除标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteIpdLabelRequest 请求对象
+     * @return DeleteIpdLabelResponse
+     */
+    public DeleteIpdLabelResponse deleteIpdLabel(DeleteIpdLabelRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.deleteIpdLabel);
+    }
+
+    /**
+     * 删除标签
+     *
+     * 删除标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteIpdLabelRequest 请求对象
+     * @return SyncInvoker<DeleteIpdLabelRequest, DeleteIpdLabelResponse>
+     */
+    public SyncInvoker<DeleteIpdLabelRequest, DeleteIpdLabelResponse> deleteIpdLabelInvoker(
+        DeleteIpdLabelRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.deleteIpdLabel, hcClient);
+    }
+
+    /**
+     * 删除外部链接
+     *
+     * 需要删除IPD项目下的工作项对应的外部链接时，可调用此接口，用户可以通过项目ID和工作项ID确定工作项，传入需要删除的外部链接唯一标识ID，此ID可以通过查询外部链接获得，删除该工作项的某条外部链接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteIpdThirdPartyRequest 请求对象
+     * @return DeleteIpdThirdPartyResponse
+     */
+    public DeleteIpdThirdPartyResponse deleteIpdThirdParty(DeleteIpdThirdPartyRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.deleteIpdThirdParty);
+    }
+
+    /**
+     * 删除外部链接
+     *
+     * 需要删除IPD项目下的工作项对应的外部链接时，可调用此接口，用户可以通过项目ID和工作项ID确定工作项，传入需要删除的外部链接唯一标识ID，此ID可以通过查询外部链接获得，删除该工作项的某条外部链接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteIpdThirdPartyRequest 请求对象
+     * @return SyncInvoker<DeleteIpdThirdPartyRequest, DeleteIpdThirdPartyResponse>
+     */
+    public SyncInvoker<DeleteIpdThirdPartyRequest, DeleteIpdThirdPartyResponse> deleteIpdThirdPartyInvoker(
+        DeleteIpdThirdPartyRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.deleteIpdThirdParty, hcClient);
     }
 
     /**
@@ -1136,6 +1498,34 @@ public class ProjectManClient {
     }
 
     /**
+     * 查询标签列表
+     *
+     * 查询标签列表，不分页，支持按标题搜索。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIpdLabelsRequest 请求对象
+     * @return ListIpdLabelsResponse
+     */
+    public ListIpdLabelsResponse listIpdLabels(ListIpdLabelsRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listIpdLabels);
+    }
+
+    /**
+     * 查询标签列表
+     *
+     * 查询标签列表，不分页，支持按标题搜索。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIpdLabelsRequest 请求对象
+     * @return SyncInvoker<ListIpdLabelsRequest, ListIpdLabelsResponse>
+     */
+    public SyncInvoker<ListIpdLabelsRequest, ListIpdLabelsResponse> listIpdLabelsInvoker(ListIpdLabelsRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.listIpdLabels, hcClient);
+    }
+
+    /**
      * 查询项目工作项列表
      *
      * 查询Ipd项目的工作项列表
@@ -1162,6 +1552,64 @@ public class ProjectManClient {
     public SyncInvoker<ListIpdProjectIssuesRequest, ListIpdProjectIssuesResponse> listIpdProjectIssuesInvoker(
         ListIpdProjectIssuesRequest request) {
         return new SyncInvoker<>(request, ProjectManMeta.listIpdProjectIssues, hcClient);
+    }
+
+    /**
+     * 根据工作项ID查询关联的评审单列表
+     *
+     * 根据工作项ID查询关联的评审单列表。支持查询的评审单类型包括：变更评审、通用评审、基线评审。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIpdReviewFormsByIssueIdRequest 请求对象
+     * @return ListIpdReviewFormsByIssueIdResponse
+     */
+    public ListIpdReviewFormsByIssueIdResponse listIpdReviewFormsByIssueId(ListIpdReviewFormsByIssueIdRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listIpdReviewFormsByIssueId);
+    }
+
+    /**
+     * 根据工作项ID查询关联的评审单列表
+     *
+     * 根据工作项ID查询关联的评审单列表。支持查询的评审单类型包括：变更评审、通用评审、基线评审。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIpdReviewFormsByIssueIdRequest 请求对象
+     * @return SyncInvoker<ListIpdReviewFormsByIssueIdRequest, ListIpdReviewFormsByIssueIdResponse>
+     */
+    public SyncInvoker<ListIpdReviewFormsByIssueIdRequest, ListIpdReviewFormsByIssueIdResponse> listIpdReviewFormsByIssueIdInvoker(
+        ListIpdReviewFormsByIssueIdRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.listIpdReviewFormsByIssueId, hcClient);
+    }
+
+    /**
+     * 根据快照ID查询工作项信息
+     *
+     * 根据快照ID查询该快照的工作项信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIssueBySnapIdsRequest 请求对象
+     * @return ListIssueBySnapIdsResponse
+     */
+    public ListIssueBySnapIdsResponse listIssueBySnapIds(ListIssueBySnapIdsRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listIssueBySnapIds);
+    }
+
+    /**
+     * 根据快照ID查询工作项信息
+     *
+     * 根据快照ID查询该快照的工作项信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIssueBySnapIdsRequest 请求对象
+     * @return SyncInvoker<ListIssueBySnapIdsRequest, ListIssueBySnapIdsResponse>
+     */
+    public SyncInvoker<ListIssueBySnapIdsRequest, ListIssueBySnapIdsResponse> listIssueBySnapIdsInvoker(
+        ListIssueBySnapIdsRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.listIssueBySnapIds, hcClient);
     }
 
     /**
@@ -1194,6 +1642,35 @@ public class ProjectManClient {
     }
 
     /**
+     * 查询工作项计划管理快照列表
+     *
+     * 根据工作项ID查询工作项快照列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIssueSprintSnapshotsRequest 请求对象
+     * @return ListIssueSprintSnapshotsResponse
+     */
+    public ListIssueSprintSnapshotsResponse listIssueSprintSnapshots(ListIssueSprintSnapshotsRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.listIssueSprintSnapshots);
+    }
+
+    /**
+     * 查询工作项计划管理快照列表
+     *
+     * 根据工作项ID查询工作项快照列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIssueSprintSnapshotsRequest 请求对象
+     * @return SyncInvoker<ListIssueSprintSnapshotsRequest, ListIssueSprintSnapshotsResponse>
+     */
+    public SyncInvoker<ListIssueSprintSnapshotsRequest, ListIssueSprintSnapshotsResponse> listIssueSprintSnapshotsInvoker(
+        ListIssueSprintSnapshotsRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.listIssueSprintSnapshots, hcClient);
+    }
+
+    /**
      * 查询工作项状态
      *
      * 根据工作项查询工作项下的状态信息
@@ -1220,6 +1697,122 @@ public class ProjectManClient {
     public SyncInvoker<ListIssueStatuesRequest, ListIssueStatuesResponse> listIssueStatuesInvoker(
         ListIssueStatuesRequest request) {
         return new SyncInvoker<>(request, ProjectManMeta.listIssueStatues, hcClient);
+    }
+
+    /**
+     * 更新IPD变更评审单
+     *
+     * 更新变更评审单，传参方式与portal页面一致。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PutIpdChangeReviewFormV2Request 请求对象
+     * @return PutIpdChangeReviewFormV2Response
+     */
+    public PutIpdChangeReviewFormV2Response putIpdChangeReviewFormV2(PutIpdChangeReviewFormV2Request request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.putIpdChangeReviewFormV2);
+    }
+
+    /**
+     * 更新IPD变更评审单
+     *
+     * 更新变更评审单，传参方式与portal页面一致。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request PutIpdChangeReviewFormV2Request 请求对象
+     * @return SyncInvoker<PutIpdChangeReviewFormV2Request, PutIpdChangeReviewFormV2Response>
+     */
+    public SyncInvoker<PutIpdChangeReviewFormV2Request, PutIpdChangeReviewFormV2Response> putIpdChangeReviewFormV2Invoker(
+        PutIpdChangeReviewFormV2Request request) {
+        return new SyncInvoker<>(request, ProjectManMeta.putIpdChangeReviewFormV2, hcClient);
+    }
+
+    /**
+     * 查询工作项关联项
+     *
+     * 根据项目ID和工作项ID，查询该工作项的所有关联关系（包括父子关系、协同上下游、普通关联等），支持分页查询、关系字段过滤和跨项目关联查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request QueryIssueAssociatedItemRequest 请求对象
+     * @return QueryIssueAssociatedItemResponse
+     */
+    public QueryIssueAssociatedItemResponse queryIssueAssociatedItem(QueryIssueAssociatedItemRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.queryIssueAssociatedItem);
+    }
+
+    /**
+     * 查询工作项关联项
+     *
+     * 根据项目ID和工作项ID，查询该工作项的所有关联关系（包括父子关系、协同上下游、普通关联等），支持分页查询、关系字段过滤和跨项目关联查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request QueryIssueAssociatedItemRequest 请求对象
+     * @return SyncInvoker<QueryIssueAssociatedItemRequest, QueryIssueAssociatedItemResponse>
+     */
+    public SyncInvoker<QueryIssueAssociatedItemRequest, QueryIssueAssociatedItemResponse> queryIssueAssociatedItemInvoker(
+        QueryIssueAssociatedItemRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.queryIssueAssociatedItem, hcClient);
+    }
+
+    /**
+     * 查询工作项实例字段列表
+     *
+     * 查询创建工作项实例时可用的字段配置信息，包含系统字段和项目自定义字段。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIpdFieldsV2Request 请求对象
+     * @return ShowIpdFieldsV2Response
+     */
+    public ShowIpdFieldsV2Response showIpdFieldsV2(ShowIpdFieldsV2Request request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.showIpdFieldsV2);
+    }
+
+    /**
+     * 查询工作项实例字段列表
+     *
+     * 查询创建工作项实例时可用的字段配置信息，包含系统字段和项目自定义字段。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIpdFieldsV2Request 请求对象
+     * @return SyncInvoker<ShowIpdFieldsV2Request, ShowIpdFieldsV2Response>
+     */
+    public SyncInvoker<ShowIpdFieldsV2Request, ShowIpdFieldsV2Response> showIpdFieldsV2Invoker(
+        ShowIpdFieldsV2Request request) {
+        return new SyncInvoker<>(request, ProjectManMeta.showIpdFieldsV2, hcClient);
+    }
+
+    /**
+     * 查询外部链接
+     *
+     * 需要获取IPD项目下工作项对应的外部链接列表时，可调用此接口，用户可以通过项目ID和工作项ID查询该工作项关联的所有外部链接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIpdThirdPartyAssociatedRequest 请求对象
+     * @return ShowIpdThirdPartyAssociatedResponse
+     */
+    public ShowIpdThirdPartyAssociatedResponse showIpdThirdPartyAssociated(ShowIpdThirdPartyAssociatedRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.showIpdThirdPartyAssociated);
+    }
+
+    /**
+     * 查询外部链接
+     *
+     * 需要获取IPD项目下工作项对应的外部链接列表时，可调用此接口，用户可以通过项目ID和工作项ID查询该工作项关联的所有外部链接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIpdThirdPartyAssociatedRequest 请求对象
+     * @return SyncInvoker<ShowIpdThirdPartyAssociatedRequest, ShowIpdThirdPartyAssociatedResponse>
+     */
+    public SyncInvoker<ShowIpdThirdPartyAssociatedRequest, ShowIpdThirdPartyAssociatedResponse> showIpdThirdPartyAssociatedInvoker(
+        ShowIpdThirdPartyAssociatedRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.showIpdThirdPartyAssociated, hcClient);
     }
 
     /**
@@ -1336,6 +1929,64 @@ public class ProjectManClient {
     public SyncInvoker<TransferWorkItemFlowRequest, TransferWorkItemFlowResponse> transferWorkItemFlowInvoker(
         TransferWorkItemFlowRequest request) {
         return new SyncInvoker<>(request, ProjectManMeta.transferWorkItemFlow, hcClient);
+    }
+
+    /**
+     * 更新标签
+     *
+     * 更新标签，支持更新标题和颜色。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateIpdLabelRequest 请求对象
+     * @return UpdateIpdLabelResponse
+     */
+    public UpdateIpdLabelResponse updateIpdLabel(UpdateIpdLabelRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.updateIpdLabel);
+    }
+
+    /**
+     * 更新标签
+     *
+     * 更新标签，支持更新标题和颜色。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateIpdLabelRequest 请求对象
+     * @return SyncInvoker<UpdateIpdLabelRequest, UpdateIpdLabelResponse>
+     */
+    public SyncInvoker<UpdateIpdLabelRequest, UpdateIpdLabelResponse> updateIpdLabelInvoker(
+        UpdateIpdLabelRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.updateIpdLabel, hcClient);
+    }
+
+    /**
+     * 修改外部链接
+     *
+     * 需要修改IPD项目下的工作项对应的外部链接时，可调用此接口，用户可以通过项目ID和工作项ID确定工作项，传入需要修改的外部链接唯一标识ID，此ID可以通过查询外部链接接口获得，以及修改后的名称和地址，修改该工作项的某条外部链接的名称和地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateIpdThirdPartyRequest 请求对象
+     * @return UpdateIpdThirdPartyResponse
+     */
+    public UpdateIpdThirdPartyResponse updateIpdThirdParty(UpdateIpdThirdPartyRequest request) {
+        return hcClient.syncInvokeHttp(request, ProjectManMeta.updateIpdThirdParty);
+    }
+
+    /**
+     * 修改外部链接
+     *
+     * 需要修改IPD项目下的工作项对应的外部链接时，可调用此接口，用户可以通过项目ID和工作项ID确定工作项，传入需要修改的外部链接唯一标识ID，此ID可以通过查询外部链接接口获得，以及修改后的名称和地址，修改该工作项的某条外部链接的名称和地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateIpdThirdPartyRequest 请求对象
+     * @return SyncInvoker<UpdateIpdThirdPartyRequest, UpdateIpdThirdPartyResponse>
+     */
+    public SyncInvoker<UpdateIpdThirdPartyRequest, UpdateIpdThirdPartyResponse> updateIpdThirdPartyInvoker(
+        UpdateIpdThirdPartyRequest request) {
+        return new SyncInvoker<>(request, ProjectManMeta.updateIpdThirdParty, hcClient);
     }
 
     /**

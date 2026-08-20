@@ -49,6 +49,16 @@ public class JobSearches {
     private String trainType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<ListTagFilter> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_ips")
+
+    private List<String> hostIps = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filters")
 
     private List<Filter> filters = null;
@@ -172,6 +182,72 @@ public class JobSearches {
         this.trainType = trainType;
     }
 
+    public JobSearches withTags(List<ListTagFilter> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public JobSearches addTagsItem(ListTagFilter tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public JobSearches withTags(Consumer<List<ListTagFilter>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * **参数解释**：按 TMS 标签筛选训练作业列表。 **约束限制**：   - 最多 10 个标签条件；   - 同一 `key` 不可重复；   - 同一 `key` 下 `values` 不可重复；   - 传入本参数时须同时满足 `filters` 中 `create_time` 条件：未传则默认最近 31 天，时间跨度不得超过 31 天。 **匹配规则**：   - 同一 `key` 下多个 `values` 为 **OR**；   - 不同 `key` 之间为 **AND**；   - `values` 为空或仅含空字符串时，按 **仅匹配该 key**（不限 value）处理。 **取值范围**：不涉及。 **默认取值**：不传则不按标签筛选。
+     * @return tags
+     */
+    public List<ListTagFilter> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ListTagFilter> tags) {
+        this.tags = tags;
+    }
+
+    public JobSearches withHostIps(List<String> hostIps) {
+        this.hostIps = hostIps;
+        return this;
+    }
+
+    public JobSearches addHostIpsItem(String hostIpsItem) {
+        if (this.hostIps == null) {
+            this.hostIps = new ArrayList<>();
+        }
+        this.hostIps.add(hostIpsItem);
+        return this;
+    }
+
+    public JobSearches withHostIps(Consumer<List<String>> hostIpsSetter) {
+        if (this.hostIps == null) {
+            this.hostIps = new ArrayList<>();
+        }
+        hostIpsSetter.accept(this.hostIps);
+        return this;
+    }
+
+    /**
+     * **参数解释**：按训练实例所在节点宿主机 IP 筛选训练作业列表。 **约束限制**：   - 最多 10 个 IP；   - 每个元素须为合法 IPv4/IPv6 地址；   - 传入本参数时须同时满足 `filters` 中 `create_time` 条件：未传则默认最近 31 天，时间跨度不得超过 31 天。 **匹配规则**：   - 多个 IP 之间为 **OR**（命中任一 IP 即匹配） **取值范围**：不涉及。 **默认取值**：不传则不按 IP 筛选。
+     * @return hostIps
+     */
+    public List<String> getHostIps() {
+        return hostIps;
+    }
+
+    public void setHostIps(List<String> hostIps) {
+        this.hostIps = hostIps;
+    }
+
     public JobSearches withFilters(List<Filter> filters) {
         this.filters = filters;
         return this;
@@ -217,12 +293,13 @@ public class JobSearches {
         return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.sortBy, that.sortBy) && Objects.equals(this.order, that.order)
             && Objects.equals(this.groupBy, that.groupBy) && Objects.equals(this.workspaceId, that.workspaceId)
-            && Objects.equals(this.trainType, that.trainType) && Objects.equals(this.filters, that.filters);
+            && Objects.equals(this.trainType, that.trainType) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.hostIps, that.hostIps) && Objects.equals(this.filters, that.filters);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, sortBy, order, groupBy, workspaceId, trainType, filters);
+        return Objects.hash(offset, limit, sortBy, order, groupBy, workspaceId, trainType, tags, hostIps, filters);
     }
 
     @Override
@@ -236,6 +313,8 @@ public class JobSearches {
         sb.append("    groupBy: ").append(toIndentedString(groupBy)).append("\n");
         sb.append("    workspaceId: ").append(toIndentedString(workspaceId)).append("\n");
         sb.append("    trainType: ").append(toIndentedString(trainType)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    hostIps: ").append(toIndentedString(hostIps)).append("\n");
         sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
         sb.append("}");
         return sb.toString();

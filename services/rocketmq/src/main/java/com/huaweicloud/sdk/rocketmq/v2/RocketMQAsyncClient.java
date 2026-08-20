@@ -101,6 +101,8 @@ import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceForRocketMqRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceForRocketMqResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.ResizeInstanceResponse;
+import com.huaweicloud.sdk.rocketmq.v2.model.RestartInstanceRequest;
+import com.huaweicloud.sdk.rocketmq.v2.model.RestartInstanceResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.RestoreRecycleInstanceRequest;
 import com.huaweicloud.sdk.rocketmq.v2.model.RestoreRecycleInstanceResponse;
 import com.huaweicloud.sdk.rocketmq.v2.model.SendDlqMessageForRocketMqRequest;
@@ -1530,6 +1532,35 @@ public class RocketMQAsyncClient {
     public AsyncInvoker<ResizeInstanceForRocketMqRequest, ResizeInstanceForRocketMqResponse> resizeInstanceForRocketMqAsyncInvoker(
         ResizeInstanceForRocketMqRequest request) {
         return new AsyncInvoker<>(request, RocketMQMeta.resizeInstanceForRocketMq, hcClient);
+    }
+
+    /**
+     * 重启指定实例
+     *
+     * 重启指定实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestartInstanceRequest 请求对象
+     * @return CompletableFuture<RestartInstanceResponse>
+     */
+    public CompletableFuture<RestartInstanceResponse> restartInstanceAsync(RestartInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, RocketMQMeta.restartInstance);
+    }
+
+    /**
+     * 重启指定实例
+     *
+     * 重启指定实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestartInstanceRequest 请求对象
+     * @return AsyncInvoker<RestartInstanceRequest, RestartInstanceResponse>
+     */
+    public AsyncInvoker<RestartInstanceRequest, RestartInstanceResponse> restartInstanceAsyncInvoker(
+        RestartInstanceRequest request) {
+        return new AsyncInvoker<>(request, RocketMQMeta.restartInstance, hcClient);
     }
 
     /**

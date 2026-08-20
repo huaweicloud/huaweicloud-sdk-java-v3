@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * **参数解释：** 服务日志配置信息。
+ * **参数解释：**  服务日志配置信息。
  */
 public class LogConfigResponse {
 
@@ -35,13 +35,18 @@ public class LogConfigResponse {
 
     private String deploymentId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "failure_reason")
+
+    private String failureReason;
+
     public LogConfigResponse withType(String type) {
         this.type = type;
         return this;
     }
 
     /**
-     * **参数解释：** 日志输出类型。 **取值范围：** - STDOUT：日志输出到控制台或终端。 - EVENT：k8s事件。
+     * **参数解释：** 日志输出类型。 **取值范围：** - STDOUT：日志输出到控制台或终端。 - EVENT：k8s事件。 - FILE：容器日志文件
      * @return type
      */
     public String getType() {
@@ -58,7 +63,7 @@ public class LogConfigResponse {
     }
 
     /**
-     * **参数解释：** 日志服务状态。 **取值范围：** - ON：开启。 - OFF：关闭。
+     * **参数解释：** 日志服务状态。 **取值范围：** - ON：开启。 - OFF：关闭。 - FAILED：开启失败。
      * @return status
      */
     public String getStatus() {
@@ -75,7 +80,7 @@ public class LogConfigResponse {
     }
 
     /**
-     * **参数解释：** 日志组ID，用户选择自己已有的日志组，不填时，会自动创建。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * **参数解释：** 日志组ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return logGroupId
      */
     public String getLogGroupId() {
@@ -92,7 +97,7 @@ public class LogConfigResponse {
     }
 
     /**
-     * **参数解释：** 日志流id，用户选择自己已有的日志组。不填时，会自动创建。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * **参数解释：** 日志流id。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return logStreamId
      */
     public String getLogStreamId() {
@@ -109,7 +114,7 @@ public class LogConfigResponse {
     }
 
     /**
-     * **参数解释：** 日志流对应的部署ID。当日志策略为default或pool时有值。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * **参数解释：** 日志流对应的部署ID。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return deploymentId
      */
     public String getDeploymentId() {
@@ -118,6 +123,23 @@ public class LogConfigResponse {
 
     public void setDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
+    }
+
+    public LogConfigResponse withFailureReason(String failureReason) {
+        this.failureReason = failureReason;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 失败原因，部署开启LTS对接失败的原因。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @return failureReason
+     */
+    public String getFailureReason() {
+        return failureReason;
+    }
+
+    public void setFailureReason(String failureReason) {
+        this.failureReason = failureReason;
     }
 
     @Override
@@ -131,12 +153,13 @@ public class LogConfigResponse {
         LogConfigResponse that = (LogConfigResponse) obj;
         return Objects.equals(this.type, that.type) && Objects.equals(this.status, that.status)
             && Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logStreamId, that.logStreamId)
-            && Objects.equals(this.deploymentId, that.deploymentId);
+            && Objects.equals(this.deploymentId, that.deploymentId)
+            && Objects.equals(this.failureReason, that.failureReason);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, status, logGroupId, logStreamId, deploymentId);
+        return Objects.hash(type, status, logGroupId, logStreamId, deploymentId, failureReason);
     }
 
     @Override
@@ -148,6 +171,7 @@ public class LogConfigResponse {
         sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
         sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("    deploymentId: ").append(toIndentedString(deploymentId)).append("\n");
+        sb.append("    failureReason: ").append(toIndentedString(failureReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

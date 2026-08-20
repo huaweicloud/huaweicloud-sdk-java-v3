@@ -108,6 +108,8 @@ import com.huaweicloud.sdk.modelarts.v1.model.CreateInferServiceRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateInferServiceResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateInferServiceTagRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateInferServiceTagResponse;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferTempApiKeyRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateInferTempApiKeyResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateModelArtsAgencyRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateModelArtsAgencyResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateNetworkRequest;
@@ -133,6 +135,7 @@ import com.huaweicloud.sdk.modelarts.v1.model.CreateRoceNetworkResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateSaveImageJobRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateSaveImageJobResponse;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateTagRequest;
+import com.huaweicloud.sdk.modelarts.v1.model.CreateTempApiKeyReq;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateTmsTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateTrainJobTagsRequest;
 import com.huaweicloud.sdk.modelarts.v1.model.CreateTrainJobTagsResponse;
@@ -1564,6 +1567,29 @@ public class ModelArtsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateInferServiceTagRequest::getWorkspaceId,
                 CreateInferServiceTagRequest::setWorkspaceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateInferTempApiKeyRequest, CreateInferTempApiKeyResponse> createInferTempApiKey =
+        genForCreateInferTempApiKey();
+
+    private static HttpRequestDef<CreateInferTempApiKeyRequest, CreateInferTempApiKeyResponse> genForCreateInferTempApiKey() {
+        // basic
+        HttpRequestDef.Builder<CreateInferTempApiKeyRequest, CreateInferTempApiKeyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateInferTempApiKeyRequest.class, CreateInferTempApiKeyResponse.class)
+            .withName("CreateInferTempApiKey")
+            .withUri("/v2/{project_id}/services/api-keys/temp")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateTempApiKeyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateTempApiKeyReq.class),
+            f -> f.withMarshaller(CreateInferTempApiKeyRequest::getBody, CreateInferTempApiKeyRequest::setBody));
 
         // response
 
@@ -3550,6 +3576,11 @@ public class ModelArtsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInferServicesRequest::getAssetId, ListInferServicesRequest::setAssetId));
+        builder.<String>withRequestField("node_ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInferServicesRequest::getNodeIp, ListInferServicesRequest::setNodeIp));
         builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

@@ -99,6 +99,10 @@ import com.huaweicloud.sdk.das.v3.model.DeleteProcessResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteSqlLimitRulesBody;
 import com.huaweicloud.sdk.das.v3.model.DeleteSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteSqlLimitRulesResponse;
+import com.huaweicloud.sdk.das.v3.model.ExecuteExportTaskRequest;
+import com.huaweicloud.sdk.das.v3.model.ExecuteExportTaskResponse;
+import com.huaweicloud.sdk.das.v3.model.ExecuteImportTaskRequest;
+import com.huaweicloud.sdk.das.v3.model.ExecuteImportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportFullSqlDetailsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportFullSqlDetailsResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportSlowQueryLogsRequest;
@@ -411,6 +415,74 @@ public class DasMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateShareConnectionsRequestBody.class),
             f -> f.withMarshaller(CreateShareConnectionsRequest::getBody, CreateShareConnectionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteExportTaskRequest, ExecuteExportTaskResponse> executeExportTask =
+        genForExecuteExportTask();
+
+    private static HttpRequestDef<ExecuteExportTaskRequest, ExecuteExportTaskResponse> genForExecuteExportTask() {
+        // basic
+        HttpRequestDef.Builder<ExecuteExportTaskRequest, ExecuteExportTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExecuteExportTaskRequest.class, ExecuteExportTaskResponse.class)
+                .withName("ExecuteExportTask")
+                .withUri("/v3/{project_id}/connections/{connection_id}/export-tasks/{job_id}/execute")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteExportTaskRequest::getConnectionId,
+                ExecuteExportTaskRequest::setConnectionId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteExportTaskRequest::getJobId, ExecuteExportTaskRequest::setJobId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteExportTaskRequest::getXLanguage, ExecuteExportTaskRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteImportTaskRequest, ExecuteImportTaskResponse> executeImportTask =
+        genForExecuteImportTask();
+
+    private static HttpRequestDef<ExecuteImportTaskRequest, ExecuteImportTaskResponse> genForExecuteImportTask() {
+        // basic
+        HttpRequestDef.Builder<ExecuteImportTaskRequest, ExecuteImportTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExecuteImportTaskRequest.class, ExecuteImportTaskResponse.class)
+                .withName("ExecuteImportTask")
+                .withUri("/v3/{project_id}/connections/{connection_id}/import-tasks/{job_id}/execute")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteImportTaskRequest::getConnectionId,
+                ExecuteImportTaskRequest::setConnectionId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteImportTaskRequest::getJobId, ExecuteImportTaskRequest::setJobId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteImportTaskRequest::getXLanguage, ExecuteImportTaskRequest::setXLanguage));
 
         // response
 

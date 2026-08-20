@@ -47,7 +47,7 @@ public class SetChargeModesResponse extends SdkResponse {
     }
 
     /**
-     * 账号的计费模式
+     * **参数解释：** 账号的计费模式 **取值范围：** - flux：流量 - bw：带宽
      * @return chargeMode
      */
     public String getChargeMode() {
@@ -64,7 +64,7 @@ public class SetChargeModesResponse extends SdkResponse {
     }
 
     /**
-     * 加速类型
+     * **参数解释：** 加速类型 **取值范围：** base：基础加速
      * @return productType
      */
     public String getProductType() {
@@ -81,7 +81,7 @@ public class SetChargeModesResponse extends SdkResponse {
     }
 
     /**
-     * 该模式生效时间
+     * **参数解释：** 该模式生效时间 **取值范围：** 不涉及
      * @return effectiveTime
      */
     public Long getEffectiveTime() {
@@ -98,7 +98,7 @@ public class SetChargeModesResponse extends SdkResponse {
     }
 
     /**
-     * 创建时间
+     * **参数解释：** 创建时间 **取值范围：** 不涉及
      * @return createTime
      */
     public Long getCreateTime() {
@@ -115,7 +115,7 @@ public class SetChargeModesResponse extends SdkResponse {
     }
 
     /**
-     * 该模式的区域
+     * **参数解释：** 该模式的区域 **取值范围：** mainland_china：中国大陆
      * @return serviceArea
      */
     public String getServiceArea() {
@@ -132,7 +132,7 @@ public class SetChargeModesResponse extends SdkResponse {
     }
 
     /**
-     * 状态,首次开通状态为active,之后修改为upcoming
+     * **参数解释：** 状态 > 首次开通状态为active（已生效）,之后修改为upcoming（待生效）  **取值范围：** - active：已生效 - upcoming：待生效
      * @return status
      */
     public String getStatus() {

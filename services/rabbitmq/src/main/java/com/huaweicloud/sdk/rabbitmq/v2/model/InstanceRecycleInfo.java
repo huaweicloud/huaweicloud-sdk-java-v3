@@ -33,7 +33,7 @@ public class InstanceRecycleInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "in_recycle_time")
 
-    private String inRecycleTime;
+    private Long inRecycleTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "save_time")
@@ -43,7 +43,7 @@ public class InstanceRecycleInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "auto_delete_time")
 
-    private String autoDeleteTime;
+    private Long autoDeleteTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cost_per_hour")
@@ -128,7 +128,7 @@ public class InstanceRecycleInfo {
         this.engine = engine;
     }
 
-    public InstanceRecycleInfo withInRecycleTime(String inRecycleTime) {
+    public InstanceRecycleInfo withInRecycleTime(Long inRecycleTime) {
         this.inRecycleTime = inRecycleTime;
         return this;
     }
@@ -137,11 +137,11 @@ public class InstanceRecycleInfo {
      * **参数解释**： 回收时间。  **取值范围**： 不涉及。
      * @return inRecycleTime
      */
-    public String getInRecycleTime() {
+    public Long getInRecycleTime() {
         return inRecycleTime;
     }
 
-    public void setInRecycleTime(String inRecycleTime) {
+    public void setInRecycleTime(Long inRecycleTime) {
         this.inRecycleTime = inRecycleTime;
     }
 
@@ -162,7 +162,7 @@ public class InstanceRecycleInfo {
         this.saveTime = saveTime;
     }
 
-    public InstanceRecycleInfo withAutoDeleteTime(String autoDeleteTime) {
+    public InstanceRecycleInfo withAutoDeleteTime(Long autoDeleteTime) {
         this.autoDeleteTime = autoDeleteTime;
         return this;
     }
@@ -171,11 +171,11 @@ public class InstanceRecycleInfo {
      * **参数解释**： 自动删除时间。  **取值范围**： 不涉及。
      * @return autoDeleteTime
      */
-    public String getAutoDeleteTime() {
+    public Long getAutoDeleteTime() {
         return autoDeleteTime;
     }
 
-    public void setAutoDeleteTime(String autoDeleteTime) {
+    public void setAutoDeleteTime(Long autoDeleteTime) {
         this.autoDeleteTime = autoDeleteTime;
     }
 

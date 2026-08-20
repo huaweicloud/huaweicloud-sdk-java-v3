@@ -45,12 +45,12 @@ public class ShowInstanceHealthReportResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "performance_stat")
 
-    private HealthReportPerformanceStat performanceStat;
+    private HealthReportPerformanceStatInfo performanceStat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disk_stat")
 
-    private HealthReportDiskStat diskStat;
+    private HealthReportDiskStatInfo diskStat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "table_space_stat")
@@ -197,15 +197,15 @@ public class ShowInstanceHealthReportResponse extends SdkResponse {
         this.instanceInfo = instanceInfo;
     }
 
-    public ShowInstanceHealthReportResponse withPerformanceStat(HealthReportPerformanceStat performanceStat) {
+    public ShowInstanceHealthReportResponse withPerformanceStat(HealthReportPerformanceStatInfo performanceStat) {
         this.performanceStat = performanceStat;
         return this;
     }
 
     public ShowInstanceHealthReportResponse withPerformanceStat(
-        Consumer<HealthReportPerformanceStat> performanceStatSetter) {
+        Consumer<HealthReportPerformanceStatInfo> performanceStatSetter) {
         if (this.performanceStat == null) {
-            this.performanceStat = new HealthReportPerformanceStat();
+            this.performanceStat = new HealthReportPerformanceStatInfo();
             performanceStatSetter.accept(this.performanceStat);
         }
 
@@ -216,22 +216,22 @@ public class ShowInstanceHealthReportResponse extends SdkResponse {
      * Get performanceStat
      * @return performanceStat
      */
-    public HealthReportPerformanceStat getPerformanceStat() {
+    public HealthReportPerformanceStatInfo getPerformanceStat() {
         return performanceStat;
     }
 
-    public void setPerformanceStat(HealthReportPerformanceStat performanceStat) {
+    public void setPerformanceStat(HealthReportPerformanceStatInfo performanceStat) {
         this.performanceStat = performanceStat;
     }
 
-    public ShowInstanceHealthReportResponse withDiskStat(HealthReportDiskStat diskStat) {
+    public ShowInstanceHealthReportResponse withDiskStat(HealthReportDiskStatInfo diskStat) {
         this.diskStat = diskStat;
         return this;
     }
 
-    public ShowInstanceHealthReportResponse withDiskStat(Consumer<HealthReportDiskStat> diskStatSetter) {
+    public ShowInstanceHealthReportResponse withDiskStat(Consumer<HealthReportDiskStatInfo> diskStatSetter) {
         if (this.diskStat == null) {
-            this.diskStat = new HealthReportDiskStat();
+            this.diskStat = new HealthReportDiskStatInfo();
             diskStatSetter.accept(this.diskStat);
         }
 
@@ -242,11 +242,11 @@ public class ShowInstanceHealthReportResponse extends SdkResponse {
      * Get diskStat
      * @return diskStat
      */
-    public HealthReportDiskStat getDiskStat() {
+    public HealthReportDiskStatInfo getDiskStat() {
         return diskStat;
     }
 
-    public void setDiskStat(HealthReportDiskStat diskStat) {
+    public void setDiskStat(HealthReportDiskStatInfo diskStat) {
         this.diskStat = diskStat;
     }
 

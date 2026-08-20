@@ -52,7 +52,7 @@ public class OfficialWebsiteRatingResult {
     }
 
     /**
-     * 价格度量单位标识。 1：元
+     * 价格度量单位标识。 1：美元
      * @return measureId
      */
     public Integer getMeasureId() {
@@ -88,7 +88,7 @@ public class OfficialWebsiteRatingResult {
     }
 
     /**
-     * 产品询价结果，具体参见表5。
+     * 产品询价结果，具体参见PeriodProductOfficialRatingResult。
      * @return productRatingResults
      */
     public List<PeriodProductOfficialRatingResult> getProductRatingResults() {

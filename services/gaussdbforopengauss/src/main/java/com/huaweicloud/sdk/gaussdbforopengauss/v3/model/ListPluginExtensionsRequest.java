@@ -9,7 +9,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -97,9 +96,14 @@ public class ListPluginExtensionsRequest {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "db_name")
 
-    private ListPluginExtensionsRequestBody body;
+    private String dbName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "plugin_name")
+
+    private String pluginName;
 
     public ListPluginExtensionsRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
@@ -137,30 +141,38 @@ public class ListPluginExtensionsRequest {
         this.instanceId = instanceId;
     }
 
-    public ListPluginExtensionsRequest withBody(ListPluginExtensionsRequestBody body) {
-        this.body = body;
-        return this;
-    }
-
-    public ListPluginExtensionsRequest withBody(Consumer<ListPluginExtensionsRequestBody> bodySetter) {
-        if (this.body == null) {
-            this.body = new ListPluginExtensionsRequestBody();
-            bodySetter.accept(this.body);
-        }
-
+    public ListPluginExtensionsRequest withDbName(String dbName) {
+        this.dbName = dbName;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * **参数解释**: 数据库名称。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
+     * @return dbName
      */
-    public ListPluginExtensionsRequestBody getBody() {
-        return body;
+    public String getDbName() {
+        return dbName;
     }
 
-    public void setBody(ListPluginExtensionsRequestBody body) {
-        this.body = body;
+    public void setDbName(String dbName) {
+        this.dbName = dbName;
+    }
+
+    public ListPluginExtensionsRequest withPluginName(String pluginName) {
+        this.pluginName = pluginName;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 插件名称。 **约束限制**: 不涉及。 **取值范围**: 不涉及。 **默认取值**: 不涉及。
+     * @return pluginName
+     */
+    public String getPluginName() {
+        return pluginName;
+    }
+
+    public void setPluginName(String pluginName) {
+        this.pluginName = pluginName;
     }
 
     @Override
@@ -173,12 +185,12 @@ public class ListPluginExtensionsRequest {
         }
         ListPluginExtensionsRequest that = (ListPluginExtensionsRequest) obj;
         return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
-            && Objects.equals(this.body, that.body);
+            && Objects.equals(this.dbName, that.dbName) && Objects.equals(this.pluginName, that.pluginName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, instanceId, body);
+        return Objects.hash(xLanguage, instanceId, dbName, pluginName);
     }
 
     @Override
@@ -187,7 +199,8 @@ public class ListPluginExtensionsRequest {
         sb.append("class ListPluginExtensionsRequest {\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    dbName: ").append(toIndentedString(dbName)).append("\n");
+        sb.append("    pluginName: ").append(toIndentedString(pluginName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

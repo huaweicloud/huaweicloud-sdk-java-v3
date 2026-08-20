@@ -45,7 +45,7 @@ public class ListRenewRateOnPeriodResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：币种。CNY：人民币。USD：美元。| |参数约束及描述：币种。CNY：人民币。USD：美元。|
+     * 币种。USD：美元。值为空代表美元。
      * @return currency
      */
     public String getCurrency() {
@@ -79,7 +79,7 @@ public class ListRenewRateOnPeriodResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：主资源（包含从资源）询价结果| |参数约束以及描述：主资源（包含从资源）询价结果|
+     * 主资源（包含从资源）询价结果。具体请参见表RenewInquiryResultInfo。
      * @return renewInquiryResults
      */
     public List<RenewInquiryResultInfo> getRenewInquiryResults() {
@@ -143,7 +143,7 @@ public class ListRenewRateOnPeriodResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：存在可选折扣优惠时返回折扣优惠维度询价结果，每个折扣优惠一组询价结果| |参数约束以及描述：存在可选折扣优惠时返回折扣优惠维度询价结果，每个折扣优惠一组询价结果|
+     * 存在可选折扣优惠时返回折扣优惠维度询价结果，每个折扣优惠一组询价结果，具体参见表OptionalDiscountRatingResultV2。
      * @return optionalDiscountRatingResults
      */
     public List<OptionalDiscountRatingResultV2> getOptionalDiscountRatingResults() {
@@ -177,7 +177,7 @@ public class ListRenewRateOnPeriodResponse extends SdkResponse {
     }
 
     /**
-     * |参数名称：失败的资源信息列表| |参数约束以及描述：失败的资源信息列表|
+     * 失败的资源信息列表。具体请参见表FailResourceInfo。
      * @return failResourceInfos
      */
     public List<FailResourceInfo> getFailResourceInfos() {

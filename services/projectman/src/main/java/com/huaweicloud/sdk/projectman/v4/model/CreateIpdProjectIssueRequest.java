@@ -19,7 +19,7 @@ public class CreateIpdProjectIssueRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateIpdProjectIssueRequestBody body;
+    private CreateIpdProjectIssueParam body;
 
     public CreateIpdProjectIssueRequest withProjectId(String projectId) {
         this.projectId = projectId;
@@ -38,14 +38,14 @@ public class CreateIpdProjectIssueRequest {
         this.projectId = projectId;
     }
 
-    public CreateIpdProjectIssueRequest withBody(CreateIpdProjectIssueRequestBody body) {
+    public CreateIpdProjectIssueRequest withBody(CreateIpdProjectIssueParam body) {
         this.body = body;
         return this;
     }
 
-    public CreateIpdProjectIssueRequest withBody(Consumer<CreateIpdProjectIssueRequestBody> bodySetter) {
+    public CreateIpdProjectIssueRequest withBody(Consumer<CreateIpdProjectIssueParam> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateIpdProjectIssueRequestBody();
+            this.body = new CreateIpdProjectIssueParam();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class CreateIpdProjectIssueRequest {
      * Get body
      * @return body
      */
-    public CreateIpdProjectIssueRequestBody getBody() {
+    public CreateIpdProjectIssueParam getBody() {
         return body;
     }
 
-    public void setBody(CreateIpdProjectIssueRequestBody body) {
+    public void setBody(CreateIpdProjectIssueParam body) {
         this.body = body;
     }
 

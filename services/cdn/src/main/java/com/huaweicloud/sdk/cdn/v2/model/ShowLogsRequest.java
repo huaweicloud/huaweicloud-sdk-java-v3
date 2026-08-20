@@ -46,7 +46,7 @@ public class ShowLogsRequest {
     }
 
     /**
-     * 只支持单个域名，如：www.test1.com。
+     * **参数解释：** 域名 **约束限制：** 只支持单个域名，如：www.test1.com **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return domainName
      */
     public String getDomainName() {
@@ -63,7 +63,7 @@ public class ShowLogsRequest {
     }
 
     /**
-     * 查询开始时间，时间格式为整点毫秒时间戳，此参数传空值时默认为当天0点。
+     * **参数解释：** 查询开始时间 **约束限制：** 不涉及 **取值范围：** 时间格式为整点毫秒时间戳 **默认取值：** 当天0点
      * @return startTime
      */
     public Long getStartTime() {
@@ -80,7 +80,7 @@ public class ShowLogsRequest {
     }
 
     /**
-     * 查询结束时间（不包含结束时间），时间格式为整点毫秒时间戳，与开始时间的最大跨度为30天，此参数传空值时默认为开始时间加1天。
+     * **参数解释：** 查询结束时间 **约束限制：** 不涉及 **取值范围：** - 不包含结束时间 - 与开始时间的最大跨度为30天 - 时间格式为整点毫秒时间戳 **默认取值：** 开始时间加1天
      * @return endTime
      */
     public Long getEndTime() {
@@ -97,7 +97,7 @@ public class ShowLogsRequest {
     }
 
     /**
-     * 单页最大数量，取值范围为1-10000，默认值：10。
+     * **参数解释：** 查询时单页数量 **约束限制：** 不涉及 **取值范围：** 1-10000 **默认取值：** 10
      * minimum: 1
      * maximum: 10000
      * @return pageSize
@@ -116,7 +116,7 @@ public class ShowLogsRequest {
     }
 
     /**
-     * 当前查询第几页，取值范围为1-65535，默认值：1。
+     * **参数解释：** 当前查询第几页 **约束限制：** 不涉及 **取值范围：** 1-65535 **默认取值：** 1
      * minimum: 1
      * maximum: 65535
      * @return pageNumber
@@ -135,7 +135,7 @@ public class ShowLogsRequest {
     }
 
     /**
-     * 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，\"all\"表示所有项目。注意：当使用子帐号调用接口时，该参数必传。  您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id。
+     * **参数解释：** 企业项目id > 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id  **约束限制：** - 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目 - 当使用子账号调用接口时，该参数必传 **取值范围：** all表示所有项目 **默认取值：** 不涉及
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

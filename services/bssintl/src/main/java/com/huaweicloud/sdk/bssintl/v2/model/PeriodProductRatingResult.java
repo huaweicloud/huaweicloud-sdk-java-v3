@@ -133,8 +133,6 @@ public class PeriodProductRatingResult {
 
     /**
      * 价格度量单位标识。 1：元
-     * minimum: 1
-     * maximum: 2147483647
      * @return measureId
      */
     public Integer getMeasureId() {

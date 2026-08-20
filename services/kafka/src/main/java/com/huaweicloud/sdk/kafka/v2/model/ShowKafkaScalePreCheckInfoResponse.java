@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -12,91 +15,41 @@ import java.util.Objects;
 public class ShowKafkaScalePreCheckInfoResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
+    @JsonProperty(value = "body")
 
-    private String name;
+    private List<ShowKafkaScalePreCheckInfoEntity> body = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "success")
+    public ShowKafkaScalePreCheckInfoResponse withBody(List<ShowKafkaScalePreCheckInfoEntity> body) {
+        this.body = body;
+        return this;
+    }
 
-    private Boolean success;
+    public ShowKafkaScalePreCheckInfoResponse addBodyItem(ShowKafkaScalePreCheckInfoEntity bodyItem) {
+        if (this.body == null) {
+            this.body = new ArrayList<>();
+        }
+        this.body.add(bodyItem);
+        return this;
+    }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "reason")
-
-    private String reason;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "risk")
-
-    private String risk;
-
-    public ShowKafkaScalePreCheckInfoResponse withName(String name) {
-        this.name = name;
+    public ShowKafkaScalePreCheckInfoResponse withBody(Consumer<List<ShowKafkaScalePreCheckInfoEntity>> bodySetter) {
+        if (this.body == null) {
+            this.body = new ArrayList<>();
+        }
+        bodySetter.accept(this.body);
         return this;
     }
 
     /**
-     * **参数解释**： 检查项名称。  **取值范围**： 不涉及。
-     * @return name
+     * **参数解释**： 扩容前置检查信息。
+     * @return body
      */
-    public String getName() {
-        return name;
+    public List<ShowKafkaScalePreCheckInfoEntity> getBody() {
+        return body;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public ShowKafkaScalePreCheckInfoResponse withSuccess(Boolean success) {
-        this.success = success;
-        return this;
-    }
-
-    /**
-     * **参数解释**： 检查项状态。 **取值范围**： - true：正常。 - false：异常。
-     * @return success
-     */
-    public Boolean getSuccess() {
-        return success;
-    }
-
-    public void setSuccess(Boolean success) {
-        this.success = success;
-    }
-
-    public ShowKafkaScalePreCheckInfoResponse withReason(String reason) {
-        this.reason = reason;
-        return this;
-    }
-
-    /**
-     * **参数解释**： 失败原因。    **取值范围**： 不涉及。
-     * @return reason
-     */
-    public String getReason() {
-        return reason;
-    }
-
-    public void setReason(String reason) {
-        this.reason = reason;
-    }
-
-    public ShowKafkaScalePreCheckInfoResponse withRisk(String risk) {
-        this.risk = risk;
-        return this;
-    }
-
-    /**
-     * **参数解释**： 风险等级。   **取值范围**： - low：低风险。 - medium：中风险。 - high：高风险。
-     * @return risk
-     */
-    public String getRisk() {
-        return risk;
-    }
-
-    public void setRisk(String risk) {
-        this.risk = risk;
+    public void setBody(List<ShowKafkaScalePreCheckInfoEntity> body) {
+        this.body = body;
     }
 
     @Override
@@ -108,23 +61,19 @@ public class ShowKafkaScalePreCheckInfoResponse extends SdkResponse {
             return false;
         }
         ShowKafkaScalePreCheckInfoResponse that = (ShowKafkaScalePreCheckInfoResponse) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.success, that.success)
-            && Objects.equals(this.reason, that.reason) && Objects.equals(this.risk, that.risk);
+        return Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, success, reason, risk);
+        return Objects.hash(body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowKafkaScalePreCheckInfoResponse {\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    success: ").append(toIndentedString(success)).append("\n");
-        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-        sb.append("    risk: ").append(toIndentedString(risk)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

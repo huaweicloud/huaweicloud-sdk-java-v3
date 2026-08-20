@@ -82,7 +82,7 @@ public class ListRateOnPeriodDetailResponse extends SdkResponse {
     }
 
     /**
-     * 存在可选折扣优惠时返回折扣优惠维度询价结果，每个折扣优惠一组询价结果，具体参见表4。
+     * 存在可选折扣优惠时返回折扣优惠维度询价结果，每个折扣优惠一组询价结果，具体参见OptionalDiscountRatingResult。
      * @return optionalDiscountRatingResults
      */
     public List<OptionalDiscountRatingResult> getOptionalDiscountRatingResults() {

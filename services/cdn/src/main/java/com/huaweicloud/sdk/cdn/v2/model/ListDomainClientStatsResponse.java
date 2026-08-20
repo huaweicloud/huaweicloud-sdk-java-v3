@@ -31,7 +31,7 @@ public class ListDomainClientStatsResponse extends SdkResponse {
     }
 
     /**
-     * 区域
+     * **参数解释：** 服务范围 **取值范围：** - mainland_china：中国大陆 - outside_mainland_china：中国大陆境外
      * @return serviceArea
      */
     public String getServiceArea() {
@@ -64,7 +64,7 @@ public class ListDomainClientStatsResponse extends SdkResponse {
     }
 
     /**
-     * 按域名维每天客户端访问详情统计
+     * **参数解释：** 按域名维每天客户端访问详情统计 **取值范围：** 不涉及
      * @return result
      */
     public List<Map<String, Object>> getResult() {

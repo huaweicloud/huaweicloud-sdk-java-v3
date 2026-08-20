@@ -35,6 +35,11 @@ public class Queue {
 
     private Long lastMessageTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "client_id")
+
+    private String clientId;
+
     public Queue withId(Integer id) {
         this.id = id;
         return this;
@@ -120,6 +125,23 @@ public class Queue {
         this.lastMessageTime = lastMessageTime;
     }
 
+    public Queue withClientId(String clientId) {
+        this.clientId = clientId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 客户端ID。 **取值范围**： 不涉及。
+     * @return clientId
+     */
+    public String getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -132,12 +154,13 @@ public class Queue {
         return Objects.equals(this.id, that.id) && Objects.equals(this.lag, that.lag)
             && Objects.equals(this.brokerOffset, that.brokerOffset)
             && Objects.equals(this.consumerOffset, that.consumerOffset)
-            && Objects.equals(this.lastMessageTime, that.lastMessageTime);
+            && Objects.equals(this.lastMessageTime, that.lastMessageTime)
+            && Objects.equals(this.clientId, that.clientId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, lag, brokerOffset, consumerOffset, lastMessageTime);
+        return Objects.hash(id, lag, brokerOffset, consumerOffset, lastMessageTime, clientId);
     }
 
     @Override
@@ -149,6 +172,7 @@ public class Queue {
         sb.append("    brokerOffset: ").append(toIndentedString(brokerOffset)).append("\n");
         sb.append("    consumerOffset: ").append(toIndentedString(consumerOffset)).append("\n");
         sb.append("    lastMessageTime: ").append(toIndentedString(lastMessageTime)).append("\n");
+        sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

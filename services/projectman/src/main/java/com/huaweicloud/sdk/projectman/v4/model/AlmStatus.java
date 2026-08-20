@@ -100,13 +100,18 @@ public class AlmStatus {
 
     private String modifiedBy;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "linkage_node_fields")
+
+    private Boolean linkageNodeFields;
+
     public AlmStatus withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * **参数解释：**  状态Id。 **取值范围：**  不涉及。
+     * 状态ID。
      * @return id
      */
     public String getId() {
@@ -123,7 +128,7 @@ public class AlmStatus {
     }
 
     /**
-     * **参数解释：**  工作项的状态属性。 **取值范围：**  - START - IN_PROGRESS - END
+     * 工作项的状态属性。
      * @return belonging
      */
     public String getBelonging() {
@@ -140,7 +145,7 @@ public class AlmStatus {
     }
 
     /**
-     * **参数解释：**  状态所属的项目空间id。 **取值范围：**  不涉及。
+     * 状态所属的项目空间ID。
      * @return spaceId
      */
     public String getSpaceId() {
@@ -157,7 +162,7 @@ public class AlmStatus {
     }
 
     /**
-     * **参数解释：**  状态名称。 **取值范围：**  不涉及。
+     * 状态名称。
      * @return name
      */
     public String getName() {
@@ -174,7 +179,7 @@ public class AlmStatus {
     }
 
     /**
-     * **参数解释：**  状态code值。 **取值范围：**  不涉及。
+     * 状态code值。
      * @return code
      */
     public String getCode() {
@@ -191,7 +196,7 @@ public class AlmStatus {
     }
 
     /**
-     * **参数解释：**  状态定义级别，1,2,3为系统级，4为租户自定义，5为项目自定义。 **取值范围：**  不涉及。
+     * 状态定义级别，1,2,3为系统级，4为租户自定义，5为项目自定义。
      * @return definitionType
      */
     public String getDefinitionType() {
@@ -208,7 +213,7 @@ public class AlmStatus {
     }
 
     /**
-     * **参数解释：**  状态归属定义级别，1,2,3为系统级，4为租户自定义，5为项目自定义。区别于definition_type。如果为系统级和租户自定义级，在项目中会复制一份元数据，归属于项目空间。 **取值范围：**  不涉及。
+     * 状态归属定义级别，1,2,3为系统级，4为租户自定义，5为项目自定义。区别于definition_type。如果为系统级和租户自定义级，在项目中会复制一份元数据，归属于项目空间。
      * @return belongDefinitionType
      */
     public Integer getBelongDefinitionType() {
@@ -225,7 +230,7 @@ public class AlmStatus {
     }
 
     /**
-     * **参数解释：**  状态名称，和name值相同。 **取值范围：**  不涉及。
+     * 状态名称，和name值相同。
      * @return displayValue
      */
     public String getDisplayValue() {
@@ -242,7 +247,7 @@ public class AlmStatus {
     }
 
     /**
-     * **参数解释：**  位置顺序。 **取值范围：**  不涉及。
+     * 位置顺序。
      * @return position
      */
     public Integer getPosition() {
@@ -259,7 +264,7 @@ public class AlmStatus {
     }
 
     /**
-     * **参数解释：**  是否显示。 **取值范围：**  不涉及。
+     * 是否显示。
      * @return displayable
      */
     public Integer getDisplayable() {
@@ -276,7 +281,7 @@ public class AlmStatus {
     }
 
     /**
-     * **参数解释：**  是否可编辑。 **取值范围：**  不涉及。
+     * 是否可编辑。
      * @return editable
      */
     public Integer getEditable() {
@@ -293,7 +298,7 @@ public class AlmStatus {
     }
 
     /**
-     * **参数解释：**  是否可删除。 **取值范围：**  不涉及。
+     * 是否可删除。
      * @return deletable
      */
     public Integer getDeletable() {
@@ -310,7 +315,7 @@ public class AlmStatus {
     }
 
     /**
-     * **参数解释：**  是否可变，即是否为固定值。 **取值范围：**  不涉及。
+     * 是否可变，即是否为固定值。
      * @return mutable
      */
     public Integer getMutable() {
@@ -327,7 +332,7 @@ public class AlmStatus {
     }
 
     /**
-     * **参数解释：**  标题的拼音首字母。 **取值范围：**  不涉及。
+     * 标题的拼音首字母。
      * @return titlePy
      */
     public String getTitlePy() {
@@ -344,7 +349,7 @@ public class AlmStatus {
     }
 
     /**
-     * **参数解释：**  创建人用户Id。 **取值范围：**  不涉及。
+     * 创建人用户ID。
      * @return createdBy
      */
     public String getCreatedBy() {
@@ -361,7 +366,7 @@ public class AlmStatus {
     }
 
     /**
-     * **参数解释：**  创建时间。Unix时间戳，精度为毫秒。 **取值范围：**  不涉及。
+     * 创建时间。Unix时间戳，精度为毫秒。
      * @return createdDate
      */
     public Long getCreatedDate() {
@@ -378,7 +383,7 @@ public class AlmStatus {
     }
 
     /**
-     * **参数解释：**  最近修改时间。Unix时间戳，精度为毫秒。 **取值范围：**  不涉及。
+     * 最近修改时间。Unix时间戳，精度为毫秒。
      * @return modifiedDate
      */
     public Long getModifiedDate() {
@@ -395,7 +400,7 @@ public class AlmStatus {
     }
 
     /**
-     * **参数解释：**  最近修改人用户Id。 **取值范围：**    不涉及。
+     * 最近修改人用户ID。
      * @return modifiedBy
      */
     public String getModifiedBy() {
@@ -404,6 +409,23 @@ public class AlmStatus {
 
     public void setModifiedBy(String modifiedBy) {
         this.modifiedBy = modifiedBy;
+    }
+
+    public AlmStatus withLinkageNodeFields(Boolean linkageNodeFields) {
+        this.linkageNodeFields = linkageNodeFields;
+        return this;
+    }
+
+    /**
+     * 工作流配置中用于标识是否新增“节点责任人/节点结束时间”。
+     * @return linkageNodeFields
+     */
+    public Boolean getLinkageNodeFields() {
+        return linkageNodeFields;
+    }
+
+    public void setLinkageNodeFields(Boolean linkageNodeFields) {
+        this.linkageNodeFields = linkageNodeFields;
     }
 
     @Override
@@ -424,7 +446,8 @@ public class AlmStatus {
             && Objects.equals(this.deletable, that.deletable) && Objects.equals(this.mutable, that.mutable)
             && Objects.equals(this.titlePy, that.titlePy) && Objects.equals(this.createdBy, that.createdBy)
             && Objects.equals(this.createdDate, that.createdDate)
-            && Objects.equals(this.modifiedDate, that.modifiedDate) && Objects.equals(this.modifiedBy, that.modifiedBy);
+            && Objects.equals(this.modifiedDate, that.modifiedDate) && Objects.equals(this.modifiedBy, that.modifiedBy)
+            && Objects.equals(this.linkageNodeFields, that.linkageNodeFields);
     }
 
     @Override
@@ -446,7 +469,8 @@ public class AlmStatus {
             createdBy,
             createdDate,
             modifiedDate,
-            modifiedBy);
+            modifiedBy,
+            linkageNodeFields);
     }
 
     @Override
@@ -471,6 +495,7 @@ public class AlmStatus {
         sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
         sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
         sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
+        sb.append("    linkageNodeFields: ").append(toIndentedString(linkageNodeFields)).append("\n");
         sb.append("}");
         return sb.toString();
     }

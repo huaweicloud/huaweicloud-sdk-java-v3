@@ -40,18 +40,13 @@ public class ListCdnDomainTopRefersRequest {
 
     private String enterpriseProjectId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "include_ratio")
-
-    private Boolean includeRatio;
-
     public ListCdnDomainTopRefersRequest withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
 
     /**
-     * 查询起始时间戳，需与结束时间戳同时指定，左闭右开，设置方式如下： - interval为300时，start_time设置为整5分钟时刻点，如：1631240100000(对应2021-09-10 10:15:00) - interval为3600时，start_time设置为整小时时刻点，如：1631239200000(对应2021-09-10 10:00:00) - interval为86400时，start_time设置为东8区零点时刻点，如：1631203200000(对应2021-09-10 00:00:00)
+     * **参数解释：** 查询起始时间戳 **约束限制：** 该参数只能传0点毫秒时间戳 **取值范围：** 不涉及 **默认取值：** 不涉及
      * minimum: 0
      * maximum: 4102416000000
      * @return startTime
@@ -70,7 +65,7 @@ public class ListCdnDomainTopRefersRequest {
     }
 
     /**
-     * 查询结束时间戳，需与开始时间戳同时指定，左闭右开，设置方式如下： - interval为300时，end_time设置为整5分钟时刻点，如：1631243700000(对应2021-09-10 11:15:00) - interval为3600时，end_time设置为整小时时刻点，如：1631325600000(对应2021-09-11 10:00:00) - interval为86400时，end_time设置为东8区零点时刻点，如：1631376000000(对应2021-09-12 00:00:00)
+     * **参数解释：** 查询结束时间戳 **约束限制：** 该参数只能传0点毫秒时间戳 **取值范围：** 不涉及 **默认取值：** 不涉及
      * minimum: 0
      * maximum: 4102416000000
      * @return endTime
@@ -89,7 +84,7 @@ public class ListCdnDomainTopRefersRequest {
     }
 
     /**
-     * 域名列表，多个域名以逗号（半角）分隔，如：www.test1.com,www.test2.com all表示查询名下全部域名。如果域名在查询时间段内无数据，结果将不返回该域名的信息。
+     * **参数解释：** 域名列表 > 如果域名在查询时间段内无数据，结果将不返回该域名的信息  **约束限制：** 仅支持查询已经在CDN创建成功的域名 **取值范围：** - all表示查询名下全部域名 - 多个域名以逗号（半角）分隔，如：www.test1.com,www.test2.com **默认取值：** 不涉及
      * @return domainName
      */
     public String getDomainName() {
@@ -106,7 +101,7 @@ public class ListCdnDomainTopRefersRequest {
     }
 
     /**
-     * - 统计指标类型 - 目前只支持flux（流量），req_num（请求数）
+     * **参数解释：** 统计指标类型 **约束限制：** 不涉及 **取值范围：** - flux：流量 - req_num：请求数 **默认取值：** 不涉及
      * @return statType
      */
     public String getStatType() {
@@ -123,7 +118,7 @@ public class ListCdnDomainTopRefersRequest {
     }
 
     /**
-     * 服务区域：mainland_china(大陆)，outside_mainland_china(海外)，默认为global(全球)
+     * **参数解释：** 服务范围 **约束限制：** 不涉及 **取值范围：** - mainland_china：中国大陆 - outside_mainland_china：中国大陆境外 - global：全球 **默认取值：** global：全球
      * @return serviceArea
      */
     public String getServiceArea() {
@@ -140,7 +135,7 @@ public class ListCdnDomainTopRefersRequest {
     }
 
     /**
-     * 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目，\"all\"表示所有项目。注意：当使用子账号调用接口时，该参数必传。
+     * **参数解释：** 企业项目id > 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id  **约束限制：** - 当用户开启企业项目功能时，该参数生效，表示查询资源所属项目 - 当使用子账号调用接口时，该参数必传 **取值范围：** all表示所有项目 **默认取值：** 不涉及
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -149,23 +144,6 @@ public class ListCdnDomainTopRefersRequest {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
-    }
-
-    public ListCdnDomainTopRefersRequest withIncludeRatio(Boolean includeRatio) {
-        this.includeRatio = includeRatio;
-        return this;
-    }
-
-    /**
-     * 是否包含百分比数据，默认false
-     * @return includeRatio
-     */
-    public Boolean getIncludeRatio() {
-        return includeRatio;
-    }
-
-    public void setIncludeRatio(Boolean includeRatio) {
-        this.includeRatio = includeRatio;
     }
 
     @Override
@@ -180,13 +158,12 @@ public class ListCdnDomainTopRefersRequest {
         return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
             && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.statType, that.statType)
             && Objects.equals(this.serviceArea, that.serviceArea)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.includeRatio, that.includeRatio);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(startTime, endTime, domainName, statType, serviceArea, enterpriseProjectId, includeRatio);
+        return Objects.hash(startTime, endTime, domainName, statType, serviceArea, enterpriseProjectId);
     }
 
     @Override
@@ -199,7 +176,6 @@ public class ListCdnDomainTopRefersRequest {
         sb.append("    statType: ").append(toIndentedString(statType)).append("\n");
         sb.append("    serviceArea: ").append(toIndentedString(serviceArea)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    includeRatio: ").append(toIndentedString(includeRatio)).append("\n");
         sb.append("}");
         return sb.toString();
     }

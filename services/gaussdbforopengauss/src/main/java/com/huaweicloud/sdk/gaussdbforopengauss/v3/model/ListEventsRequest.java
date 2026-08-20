@@ -194,7 +194,7 @@ public class ListEventsRequest {
     }
 
     /**
-     * **参数解释**: 事件状态。 **约束限制**: 不涉及。 **取值范围**: - WAITING：等待中 - INQUIRING：待授权 - SCHEDULED：待执行 - EXECUTING：执行中 - COMPLETED：已完成 - FAILED：失败 - CANCELED：已取消 **默认取值**: 不涉及。
+     * **参数解释**: 事件状态。 **约束限制**: 不涉及。 **取值范围**: - WAITING：等待中 - INQUIRING：待授权 - SCHEDULED：待执行 - EXECUTING：执行中 - COMPLETED：已完成 - FAILED：失败 - CANCELED：已取消  **默认取值**: 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -211,7 +211,7 @@ public class ListEventsRequest {
     }
 
     /**
-     * **参数解释**: 事件类型。 **约束限制**: 不涉及。 **取值范围**: - RESTAT_NODE：重启实例节点 **默认取值**: 不涉及。
+     * **参数解释**: 事件类型。 **约束限制**: 不涉及。 **取值范围**: - RESTAT_NODE：重启实例节点  **默认取值**: 不涉及。
      * @return type
      */
     public String getType() {
@@ -228,7 +228,7 @@ public class ListEventsRequest {
     }
 
     /**
-     * **参数解释**: 事件级别。 **约束限制**: 不涉及。 **取值范围**: - CRITICAL：紧急 - MAJOR：重要 - MINOR：一般 - INFO：提示 **默认取值**: 不涉及。
+     * **参数解释**: 事件级别。 **约束限制**: 不涉及。 **取值范围**: - CRITICAL：紧急 - MAJOR：重要 - MINOR：一般 - INFO：提示  **默认取值**: 不涉及。
      * @return level
      */
     public String getLevel() {
@@ -245,7 +245,7 @@ public class ListEventsRequest {
     }
 
     /**
-     * **参数解释**: 排序字段。 **约束限制**: 不涉及。 **取值范围**: - planned_execution_time：计划执行时间 - created_time：创建时间 - latest_execution_time：最晚执行时间 **默认取值**: 不涉及。
+     * **参数解释**: 排序字段。 **约束限制**: 不涉及。 **取值范围**: - planned_execution_time：计划执行时间 - created_time：创建时间 - latest_execution_time：最晚执行时间  **默认取值**: 不涉及。
      * @return sortField
      */
     public String getSortField() {
@@ -262,7 +262,7 @@ public class ListEventsRequest {
     }
 
     /**
-     * **参数解释**: 排序顺序。 **约束限制**: 不涉及。 **取值范围**: - DESC：降序 - ASC：升序 **默认取值**: DESC。
+     * **参数解释**: 排序顺序。 **约束限制**: 不涉及。 **取值范围**: - DESC：降序 - ASC：升序  **默认取值**: DESC。
      * @return order
      */
     public String getOrder() {

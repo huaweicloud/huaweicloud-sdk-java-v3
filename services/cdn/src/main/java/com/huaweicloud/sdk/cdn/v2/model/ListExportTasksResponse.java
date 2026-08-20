@@ -30,7 +30,7 @@ public class ListExportTasksResponse extends SdkResponse {
     }
 
     /**
-     * 导出任务总数
+     * **参数解释：** 导出任务总数 **取值范围：** 不涉及
      * minimum: 0
      * maximum: 999999999
      * @return total

@@ -76,6 +76,11 @@ public class ListInferServicesRequest {
     private String assetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_ip")
+
+    private String nodeIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_dir")
 
     private String sortDir;
@@ -311,6 +316,23 @@ public class ListInferServicesRequest {
         this.assetId = assetId;
     }
 
+    public ListInferServicesRequest withNodeIp(String nodeIp) {
+        this.nodeIp = nodeIp;
+        return this;
+    }
+
+    /**
+     * **参数解释：** 节点IP地址，按节点IP地址查询该节点IP下POD对应的服务，默认不过滤。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * @return nodeIp
+     */
+    public String getNodeIp() {
+        return nodeIp;
+    }
+
+    public void setNodeIp(String nodeIp) {
+        this.nodeIp = nodeIp;
+    }
+
     public ListInferServicesRequest withSortDir(String sortDir) {
         this.sortDir = sortDir;
         return this;
@@ -379,8 +401,9 @@ public class ListInferServicesRequest {
             && Objects.equals(this.authType, that.authType) && Objects.equals(this.type, that.type)
             && Objects.equals(this.description, that.description) && Objects.equals(this.workspaceId, that.workspaceId)
             && Objects.equals(this.userName, that.userName) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.assetId, that.assetId) && Objects.equals(this.sortDir, that.sortDir)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.assetId, that.assetId) && Objects.equals(this.nodeIp, that.nodeIp)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
@@ -398,6 +421,7 @@ public class ListInferServicesRequest {
             userName,
             tags,
             assetId,
+            nodeIp,
             sortDir,
             limit,
             offset);
@@ -420,6 +444,7 @@ public class ListInferServicesRequest {
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
+        sb.append("    nodeIp: ").append(toIndentedString(nodeIp)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

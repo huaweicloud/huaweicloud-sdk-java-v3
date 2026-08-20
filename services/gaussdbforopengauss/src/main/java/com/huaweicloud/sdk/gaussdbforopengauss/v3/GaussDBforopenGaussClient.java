@@ -31,6 +31,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CancelScheduleTaskReques
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CancelScheduleTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ChangeDemand2PeriodRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ChangeDemand2PeriodResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ChangeDeploymentSolutionRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ChangeDeploymentSolutionResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CollectAspRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CollectAspResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CollectWdrSnapshotRequest;
@@ -315,6 +317,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListUpgradePathsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListUpgradePathsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListWaitEventRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListWaitEventResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListWdrSnapshotAvailableGroupsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListWdrSnapshotAvailableGroupsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListWdrSnapshotsCollectResultsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListWdrSnapshotsCollectResultsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyAutoEnlargePolicyRequest;
@@ -345,6 +349,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreHbaInfoRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreHbaInfoResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreInstanceResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreNodeRolesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreNodeRolesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResumePluginExtensionsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResumePluginExtensionsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RunInstanceActionRequest;
@@ -407,6 +413,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceParamGroupDe
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceParamGroupDetailResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceParamGroupRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceParamGroupResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceQuotasRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceQuotasResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceSnapshotRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceSnapshotResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstancesStatisticsRequest;
@@ -910,6 +918,35 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<ChangeDemand2PeriodRequest, ChangeDemand2PeriodResponse> changeDemand2PeriodInvoker(
         ChangeDemand2PeriodRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.changeDemand2Period, hcClient);
+    }
+
+    /**
+     * 形态变更
+     *
+     * 形态变更，用于变更实例的部署形态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeDeploymentSolutionRequest 请求对象
+     * @return ChangeDeploymentSolutionResponse
+     */
+    public ChangeDeploymentSolutionResponse changeDeploymentSolution(ChangeDeploymentSolutionRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.changeDeploymentSolution);
+    }
+
+    /**
+     * 形态变更
+     *
+     * 形态变更，用于变更实例的部署形态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeDeploymentSolutionRequest 请求对象
+     * @return SyncInvoker<ChangeDeploymentSolutionRequest, ChangeDeploymentSolutionResponse>
+     */
+    public SyncInvoker<ChangeDeploymentSolutionRequest, ChangeDeploymentSolutionResponse> changeDeploymentSolutionInvoker(
+        ChangeDeploymentSolutionRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.changeDeploymentSolution, hcClient);
     }
 
     /**
@@ -2171,34 +2208,6 @@ public class GaussDBforopenGaussClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListBackupsRequest 请求对象
-     * @return ListBackupsResponse
-     */
-    public ListBackupsResponse listBackups(ListBackupsRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listBackups);
-    }
-
-    /**
-     * 查询备份列表
-     *
-     * 获取备份列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListBackupsRequest 请求对象
-     * @return SyncInvoker<ListBackupsRequest, ListBackupsResponse>
-     */
-    public SyncInvoker<ListBackupsRequest, ListBackupsResponse> listBackupsInvoker(ListBackupsRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listBackups, hcClient);
-    }
-
-    /**
-     * 查询备份列表
-     *
-     * 获取备份列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
      * @param request ListBackupsDetailsRequest 请求对象
      * @return ListBackupsDetailsResponse
      */
@@ -2306,35 +2315,6 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<ListComponentInfosRequest, ListComponentInfosResponse> listComponentInfosInvoker(
         ListComponentInfosRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listComponentInfos, hcClient);
-    }
-
-    /**
-     * 获取参数模板列表
-     *
-     * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListConfigurationsRequest 请求对象
-     * @return ListConfigurationsResponse
-     */
-    public ListConfigurationsResponse listConfigurations(ListConfigurationsRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listConfigurations);
-    }
-
-    /**
-     * 获取参数模板列表
-     *
-     * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListConfigurationsRequest 请求对象
-     * @return SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>
-     */
-    public SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurationsInvoker(
-        ListConfigurationsRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listConfigurations, hcClient);
     }
 
     /**
@@ -2626,35 +2606,6 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
-     * 查询数据库引擎的版本
-     *
-     * 查询指定数据库引擎对应的版本信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDatastoresRequest 请求对象
-     * @return ListDatastoresResponse
-     */
-    public ListDatastoresResponse listDatastores(ListDatastoresRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listDatastores);
-    }
-
-    /**
-     * 查询数据库引擎的版本
-     *
-     * 查询指定数据库引擎对应的版本信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDatastoresRequest 请求对象
-     * @return SyncInvoker<ListDatastoresRequest, ListDatastoresResponse>
-     */
-    public SyncInvoker<ListDatastoresRequest, ListDatastoresResponse> listDatastoresInvoker(
-        ListDatastoresRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listDatastores, hcClient);
-    }
-
-    /**
      * 查询引擎列表
      *
      * 查询引擎列表。
@@ -2681,62 +2632,6 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<ListDatastoresDetailsRequest, ListDatastoresDetailsResponse> listDatastoresDetailsInvoker(
         ListDatastoresDetailsRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listDatastoresDetails, hcClient);
-    }
-
-    /**
-     * 查询备份列表
-     *
-     * 获取备份列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDbBackupsRequest 请求对象
-     * @return ListDbBackupsResponse
-     */
-    public ListDbBackupsResponse listDbBackups(ListDbBackupsRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listDbBackups);
-    }
-
-    /**
-     * 查询备份列表
-     *
-     * 获取备份列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDbBackupsRequest 请求对象
-     * @return SyncInvoker<ListDbBackupsRequest, ListDbBackupsResponse>
-     */
-    public SyncInvoker<ListDbBackupsRequest, ListDbBackupsResponse> listDbBackupsInvoker(ListDbBackupsRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listDbBackups, hcClient);
-    }
-
-    /**
-     * 查询数据库规格
-     *
-     * 查询数据库的规格信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDbFlavorsRequest 请求对象
-     * @return ListDbFlavorsResponse
-     */
-    public ListDbFlavorsResponse listDbFlavors(ListDbFlavorsRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listDbFlavors);
-    }
-
-    /**
-     * 查询数据库规格
-     *
-     * 查询数据库的规格信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListDbFlavorsRequest 请求对象
-     * @return SyncInvoker<ListDbFlavorsRequest, ListDbFlavorsResponse>
-     */
-    public SyncInvoker<ListDbFlavorsRequest, ListDbFlavorsResponse> listDbFlavorsInvoker(ListDbFlavorsRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listDbFlavors, hcClient);
     }
 
     /**
@@ -2916,34 +2811,6 @@ public class GaussDBforopenGaussClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListFlavorsRequest 请求对象
-     * @return ListFlavorsResponse
-     */
-    public ListFlavorsResponse listFlavors(ListFlavorsRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listFlavors);
-    }
-
-    /**
-     * 查询数据库规格
-     *
-     * 查询数据库的规格信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListFlavorsRequest 请求对象
-     * @return SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
-     */
-    public SyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsInvoker(ListFlavorsRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listFlavors, hcClient);
-    }
-
-    /**
-     * 查询数据库规格
-     *
-     * 查询数据库的规格信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
      * @param request ListFlavorsDetailsRequest 请求对象
      * @return ListFlavorsDetailsResponse
      */
@@ -2964,35 +2831,6 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<ListFlavorsDetailsRequest, ListFlavorsDetailsResponse> listFlavorsDetailsInvoker(
         ListFlavorsDetailsRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listFlavorsDetails, hcClient);
-    }
-
-    /**
-     * 查询引擎列表
-     *
-     * 查询引擎列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListGaussDbDatastoresRequest 请求对象
-     * @return ListGaussDbDatastoresResponse
-     */
-    public ListGaussDbDatastoresResponse listGaussDbDatastores(ListGaussDbDatastoresRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listGaussDbDatastores);
-    }
-
-    /**
-     * 查询引擎列表
-     *
-     * 查询引擎列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListGaussDbDatastoresRequest 请求对象
-     * @return SyncInvoker<ListGaussDbDatastoresRequest, ListGaussDbDatastoresResponse>
-     */
-    public SyncInvoker<ListGaussDbDatastoresRequest, ListGaussDbDatastoresResponse> listGaussDbDatastoresInvoker(
-        ListGaussDbDatastoresRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listGaussDbDatastores, hcClient);
     }
 
     /**
@@ -3082,35 +2920,6 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
-     * 查询数据库实例列表/查询实例详情
-     *
-     * 查询数据库实例列表/查询实例详情
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListInstanceDetailsRequest 请求对象
-     * @return ListInstanceDetailsResponse
-     */
-    public ListInstanceDetailsResponse listInstanceDetails(ListInstanceDetailsRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listInstanceDetails);
-    }
-
-    /**
-     * 查询数据库实例列表/查询实例详情
-     *
-     * 查询数据库实例列表/查询实例详情
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListInstanceDetailsRequest 请求对象
-     * @return SyncInvoker<ListInstanceDetailsRequest, ListInstanceDetailsResponse>
-     */
-    public SyncInvoker<ListInstanceDetailsRequest, ListInstanceDetailsResponse> listInstanceDetailsInvoker(
-        ListInstanceDetailsRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listInstanceDetails, hcClient);
-    }
-
-    /**
      * 查看实例引擎版本分布
      *
      * 查看实例引擎版本分布
@@ -3195,63 +3004,6 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTagsInvoker(
         ListInstanceTagsRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listInstanceTags, hcClient);
-    }
-
-    /**
-     * 查询数据库实例列表/查询实例详情
-     *
-     * 查询数据库实例列表/查询实例详情
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListInstancesRequest 请求对象
-     * @return ListInstancesResponse
-     */
-    public ListInstancesResponse listInstances(ListInstancesRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listInstances);
-    }
-
-    /**
-     * 查询数据库实例列表/查询实例详情
-     *
-     * 查询数据库实例列表/查询实例详情
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListInstancesRequest 请求对象
-     * @return SyncInvoker<ListInstancesRequest, ListInstancesResponse>
-     */
-    public SyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesInvoker(ListInstancesRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listInstances, hcClient);
-    }
-
-    /**
-     * 查询数据库实例列表/查询实例详情
-     *
-     * 查询数据库实例列表/查询实例详情
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListInstancesDetailsRequest 请求对象
-     * @return ListInstancesDetailsResponse
-     */
-    public ListInstancesDetailsResponse listInstancesDetails(ListInstancesDetailsRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listInstancesDetails);
-    }
-
-    /**
-     * 查询数据库实例列表/查询实例详情
-     *
-     * 查询数据库实例列表/查询实例详情
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListInstancesDetailsRequest 请求对象
-     * @return SyncInvoker<ListInstancesDetailsRequest, ListInstancesDetailsResponse>
-     */
-    public SyncInvoker<ListInstancesDetailsRequest, ListInstancesDetailsResponse> listInstancesDetailsInvoker(
-        ListInstancesDetailsRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listInstancesDetails, hcClient);
     }
 
     /**
@@ -3367,35 +3119,6 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<ListMetricDatasRequest, ListMetricDatasResponse> listMetricDatasInvoker(
         ListMetricDatasRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listMetricDatas, hcClient);
-    }
-
-    /**
-     * 获取参数模板列表
-     *
-     * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListParamGroupTemplatesRequest 请求对象
-     * @return ListParamGroupTemplatesResponse
-     */
-    public ListParamGroupTemplatesResponse listParamGroupTemplates(ListParamGroupTemplatesRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listParamGroupTemplates);
-    }
-
-    /**
-     * 获取参数模板列表
-     *
-     * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListParamGroupTemplatesRequest 请求对象
-     * @return SyncInvoker<ListParamGroupTemplatesRequest, ListParamGroupTemplatesResponse>
-     */
-    public SyncInvoker<ListParamGroupTemplatesRequest, ListParamGroupTemplatesResponse> listParamGroupTemplatesInvoker(
-        ListParamGroupTemplatesRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listParamGroupTemplates, hcClient);
     }
 
     /**
@@ -3608,35 +3331,6 @@ public class GaussDBforopenGaussClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListRecycleInstancesRequest 请求对象
-     * @return ListRecycleInstancesResponse
-     */
-    public ListRecycleInstancesResponse listRecycleInstances(ListRecycleInstancesRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listRecycleInstances);
-    }
-
-    /**
-     * 查询回收站所有引擎实例列表。
-     *
-     * 查询回收站所有引擎实例列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListRecycleInstancesRequest 请求对象
-     * @return SyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse>
-     */
-    public SyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse> listRecycleInstancesInvoker(
-        ListRecycleInstancesRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listRecycleInstances, hcClient);
-    }
-
-    /**
-     * 查询回收站所有引擎实例列表。
-     *
-     * 查询回收站所有引擎实例列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
      * @param request ListRecycleInstancesDetailsRequest 请求对象
      * @return ListRecycleInstancesDetailsResponse
      */
@@ -3657,35 +3351,6 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<ListRecycleInstancesDetailsRequest, ListRecycleInstancesDetailsResponse> listRecycleInstancesDetailsInvoker(
         ListRecycleInstancesDetailsRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listRecycleInstancesDetails, hcClient);
-    }
-
-    /**
-     * 查询可用于备份恢复的实例列表
-     *
-     * 查询可用于备份恢复的实例列表，实例信息要符合备份条件。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListRestorableInstancesRequest 请求对象
-     * @return ListRestorableInstancesResponse
-     */
-    public ListRestorableInstancesResponse listRestorableInstances(ListRestorableInstancesRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listRestorableInstances);
-    }
-
-    /**
-     * 查询可用于备份恢复的实例列表
-     *
-     * 查询可用于备份恢复的实例列表，实例信息要符合备份条件。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListRestorableInstancesRequest 请求对象
-     * @return SyncInvoker<ListRestorableInstancesRequest, ListRestorableInstancesResponse>
-     */
-    public SyncInvoker<ListRestorableInstancesRequest, ListRestorableInstancesResponse> listRestorableInstancesInvoker(
-        ListRestorableInstancesRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listRestorableInstances, hcClient);
     }
 
     /**
@@ -4617,6 +4282,35 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
+     * 实例主备状态重置
+     *
+     * 将数据库实例恢复为初始配置的主备状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreNodeRolesRequest 请求对象
+     * @return RestoreNodeRolesResponse
+     */
+    public RestoreNodeRolesResponse restoreNodeRoles(RestoreNodeRolesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.restoreNodeRoles);
+    }
+
+    /**
+     * 实例主备状态重置
+     *
+     * 将数据库实例恢复为初始配置的主备状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreNodeRolesRequest 请求对象
+     * @return SyncInvoker<RestoreNodeRolesRequest, RestoreNodeRolesResponse>
+     */
+    public SyncInvoker<RestoreNodeRolesRequest, RestoreNodeRolesResponse> restoreNodeRolesInvoker(
+        RestoreNodeRolesRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.restoreNodeRoles, hcClient);
+    }
+
+    /**
      * 配置插件拓展能力
      *
      * 配置插件拓展能力
@@ -4731,35 +4425,6 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<SearchAutoEnlargePolicyRequest, SearchAutoEnlargePolicyResponse> searchAutoEnlargePolicyInvoker(
         SearchAutoEnlargePolicyRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.searchAutoEnlargePolicy, hcClient);
-    }
-
-    /**
-     * 设置自动备份策略。
-     *
-     * 设置自动备份策略。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SetBackupPolicyRequest 请求对象
-     * @return SetBackupPolicyResponse
-     */
-    public SetBackupPolicyResponse setBackupPolicy(SetBackupPolicyRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.setBackupPolicy);
-    }
-
-    /**
-     * 设置自动备份策略。
-     *
-     * 设置自动备份策略。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SetBackupPolicyRequest 请求对象
-     * @return SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse>
-     */
-    public SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse> setBackupPolicyInvoker(
-        SetBackupPolicyRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.setBackupPolicy, hcClient);
     }
 
     /**
@@ -5024,36 +4689,6 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
-     * 查询批量实例可升级的版本和升级类型。
-     *
-     * 查询批量实例可升级的版本和升级类型。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowBatchUpgradeCandidateVersionsRequest 请求对象
-     * @return ShowBatchUpgradeCandidateVersionsResponse
-     */
-    public ShowBatchUpgradeCandidateVersionsResponse showBatchUpgradeCandidateVersions(
-        ShowBatchUpgradeCandidateVersionsRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showBatchUpgradeCandidateVersions);
-    }
-
-    /**
-     * 查询批量实例可升级的版本和升级类型。
-     *
-     * 查询批量实例可升级的版本和升级类型。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowBatchUpgradeCandidateVersionsRequest 请求对象
-     * @return SyncInvoker<ShowBatchUpgradeCandidateVersionsRequest, ShowBatchUpgradeCandidateVersionsResponse>
-     */
-    public SyncInvoker<ShowBatchUpgradeCandidateVersionsRequest, ShowBatchUpgradeCandidateVersionsResponse> showBatchUpgradeCandidateVersionsInvoker(
-        ShowBatchUpgradeCandidateVersionsRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showBatchUpgradeCandidateVersions, hcClient);
-    }
-
-    /**
      * 查询备份配置
      *
      * 查询备份管理配置接口。
@@ -5080,35 +4715,6 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<ShowConfigurationRequest, ShowConfigurationResponse> showConfigurationInvoker(
         ShowConfigurationRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showConfiguration, hcClient);
-    }
-
-    /**
-     * 查询参数模板详情
-     *
-     * 根据参数模板ID获取指定参数模板详情。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowConfigurationDetailRequest 请求对象
-     * @return ShowConfigurationDetailResponse
-     */
-    public ShowConfigurationDetailResponse showConfigurationDetail(ShowConfigurationDetailRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showConfigurationDetail);
-    }
-
-    /**
-     * 查询参数模板详情
-     *
-     * 根据参数模板ID获取指定参数模板详情。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowConfigurationDetailRequest 请求对象
-     * @return SyncInvoker<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse>
-     */
-    public SyncInvoker<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse> showConfigurationDetailInvoker(
-        ShowConfigurationDetailRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showConfigurationDetail, hcClient);
     }
 
     /**
@@ -5288,35 +4894,6 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
-     * 获取指定实例的参数模板
-     *
-     * 获取指定实例的参数模板。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowInstanceConfigurationRequest 请求对象
-     * @return ShowInstanceConfigurationResponse
-     */
-    public ShowInstanceConfigurationResponse showInstanceConfiguration(ShowInstanceConfigurationRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showInstanceConfiguration);
-    }
-
-    /**
-     * 获取指定实例的参数模板
-     *
-     * 获取指定实例的参数模板。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowInstanceConfigurationRequest 请求对象
-     * @return SyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse>
-     */
-    public SyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> showInstanceConfigurationInvoker(
-        ShowInstanceConfigurationRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showInstanceConfiguration, hcClient);
-    }
-
-    /**
      * 查询实例存储空间使用信息
      *
      * 查询指定实例的存储使用空间和最大空间。
@@ -5381,35 +4958,6 @@ public class GaussDBforopenGaussClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowInstanceParamGroupRequest 请求对象
-     * @return ShowInstanceParamGroupResponse
-     */
-    public ShowInstanceParamGroupResponse showInstanceParamGroup(ShowInstanceParamGroupRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showInstanceParamGroup);
-    }
-
-    /**
-     * 获取指定实例的参数模板
-     *
-     * 获取指定实例的参数模板。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowInstanceParamGroupRequest 请求对象
-     * @return SyncInvoker<ShowInstanceParamGroupRequest, ShowInstanceParamGroupResponse>
-     */
-    public SyncInvoker<ShowInstanceParamGroupRequest, ShowInstanceParamGroupResponse> showInstanceParamGroupInvoker(
-        ShowInstanceParamGroupRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showInstanceParamGroup, hcClient);
-    }
-
-    /**
-     * 获取指定实例的参数模板
-     *
-     * 获取指定实例的参数模板。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
      * @param request ShowInstanceParamGroupDetailRequest 请求对象
      * @return ShowInstanceParamGroupDetailResponse
      */
@@ -5434,32 +4982,32 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
-     * 根据时间点或者备份文件查询原实例信息
+     * 控制台获取配额信息
      *
-     * 根据时间点或者备份文件查询原实例信息。
+     * Console获取配额信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowInstanceSnapshotRequest 请求对象
-     * @return ShowInstanceSnapshotResponse
+     * @param request ShowInstanceQuotasRequest 请求对象
+     * @return ShowInstanceQuotasResponse
      */
-    public ShowInstanceSnapshotResponse showInstanceSnapshot(ShowInstanceSnapshotRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showInstanceSnapshot);
+    public ShowInstanceQuotasResponse showInstanceQuotas(ShowInstanceQuotasRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showInstanceQuotas);
     }
 
     /**
-     * 根据时间点或者备份文件查询原实例信息
+     * 控制台获取配额信息
      *
-     * 根据时间点或者备份文件查询原实例信息。
+     * Console获取配额信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowInstanceSnapshotRequest 请求对象
-     * @return SyncInvoker<ShowInstanceSnapshotRequest, ShowInstanceSnapshotResponse>
+     * @param request ShowInstanceQuotasRequest 请求对象
+     * @return SyncInvoker<ShowInstanceQuotasRequest, ShowInstanceQuotasResponse>
      */
-    public SyncInvoker<ShowInstanceSnapshotRequest, ShowInstanceSnapshotResponse> showInstanceSnapshotInvoker(
-        ShowInstanceSnapshotRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showInstanceSnapshot, hcClient);
+    public SyncInvoker<ShowInstanceQuotasRequest, ShowInstanceQuotasResponse> showInstanceQuotasInvoker(
+        ShowInstanceQuotasRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showInstanceQuotas, hcClient);
     }
 
     /**
@@ -5893,36 +5441,6 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<ShowSslCertDownloadLinkRequest, ShowSslCertDownloadLinkResponse> showSslCertDownloadLinkInvoker(
         ShowSslCertDownloadLinkRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showSslCertDownloadLink, hcClient);
-    }
-
-    /**
-     * 查询实例可升级版本
-     *
-     * 查询实例可升级版本。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowUpgradeCandidateVersionsRequest 请求对象
-     * @return ShowUpgradeCandidateVersionsResponse
-     */
-    public ShowUpgradeCandidateVersionsResponse showUpgradeCandidateVersions(
-        ShowUpgradeCandidateVersionsRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showUpgradeCandidateVersions);
-    }
-
-    /**
-     * 查询实例可升级版本
-     *
-     * 查询实例可升级版本。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowUpgradeCandidateVersionsRequest 请求对象
-     * @return SyncInvoker<ShowUpgradeCandidateVersionsRequest, ShowUpgradeCandidateVersionsResponse>
-     */
-    public SyncInvoker<ShowUpgradeCandidateVersionsRequest, ShowUpgradeCandidateVersionsResponse> showUpgradeCandidateVersionsInvoker(
-        ShowUpgradeCandidateVersionsRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showUpgradeCandidateVersions, hcClient);
     }
 
     /**
@@ -6558,93 +6076,6 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
-     * 实例内核版本升级
-     *
-     * GaussDB实例版本升级。包括灰度升级，就地升级，热补丁升级等三种升级方式。 
-     * 
-     * - 就地升级：
-     * 
-     *   就地升级需要停止业务进行，会一次性升级集群中所有节点。就地升级需要暂停业务30分钟来升级。 
-     * 
-     * - 灰度升级： 
-     * 
-     *   每个主DN或者CN组件升级就有一次10秒业务中断。升级过程均是先管理面，再数据面，由备到主的升级方式。灰度升级支持升级自动提交和升级待观察两种操作方式。
-     * 
-     *   - 升级自动提交：所有节点进程一起升级，在升级过程中有大概10秒的业务中断，不阻塞其他业务操作。 
-     * 
-     *   - 升级待观察：升级待观察，将数据库升级过程细分为升级，提交两个阶段。
-     * 
-     *     - 升级阶段可以根据部署方式细分为按分片或者按AZ的滚动升级。
-     * 
-     *       - 分布式实例：根据分片数滚动升级。
-     *       - 集中式实例：根据AZ数进行滚动升级。 
-     * 
-     *     - 提交阶段可以对升级完成后的实例进行业务测试，根据需要可以选择提交升级或者升级回退。
-     * 
-     *       - 提交升级：提交升级。在升级完成，进入提交阶段时。业务测试正常后提交升级，完成本次升级流程。
-     * 
-     *       - 升级回退：升级回退，在升级完成，进入提交阶段时。可以根据需要回退本次升级，回退到升级前的版本。
-     * 
-     * - 热补丁升级
-     * 
-     *   - 升级自动提交：热补丁自动升级并提交，中间无业务中断。
-     * 
-     *   - 升级回退：热补丁回退，无业务中断时间。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateInstanceVersionsRequest 请求对象
-     * @return UpdateInstanceVersionsResponse
-     */
-    public UpdateInstanceVersionsResponse updateInstanceVersions(UpdateInstanceVersionsRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.updateInstanceVersions);
-    }
-
-    /**
-     * 实例内核版本升级
-     *
-     * GaussDB实例版本升级。包括灰度升级，就地升级，热补丁升级等三种升级方式。 
-     * 
-     * - 就地升级：
-     * 
-     *   就地升级需要停止业务进行，会一次性升级集群中所有节点。就地升级需要暂停业务30分钟来升级。 
-     * 
-     * - 灰度升级： 
-     * 
-     *   每个主DN或者CN组件升级就有一次10秒业务中断。升级过程均是先管理面，再数据面，由备到主的升级方式。灰度升级支持升级自动提交和升级待观察两种操作方式。
-     * 
-     *   - 升级自动提交：所有节点进程一起升级，在升级过程中有大概10秒的业务中断，不阻塞其他业务操作。 
-     * 
-     *   - 升级待观察：升级待观察，将数据库升级过程细分为升级，提交两个阶段。
-     * 
-     *     - 升级阶段可以根据部署方式细分为按分片或者按AZ的滚动升级。
-     * 
-     *       - 分布式实例：根据分片数滚动升级。
-     *       - 集中式实例：根据AZ数进行滚动升级。 
-     * 
-     *     - 提交阶段可以对升级完成后的实例进行业务测试，根据需要可以选择提交升级或者升级回退。
-     * 
-     *       - 提交升级：提交升级。在升级完成，进入提交阶段时。业务测试正常后提交升级，完成本次升级流程。
-     * 
-     *       - 升级回退：升级回退，在升级完成，进入提交阶段时。可以根据需要回退本次升级，回退到升级前的版本。
-     * 
-     * - 热补丁升级
-     * 
-     *   - 升级自动提交：热补丁自动升级并提交，中间无业务中断。
-     * 
-     *   - 升级回退：热补丁回退，无业务中断时间。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateInstanceVersionsRequest 请求对象
-     * @return SyncInvoker<UpdateInstanceVersionsRequest, UpdateInstanceVersionsResponse>
-     */
-    public SyncInvoker<UpdateInstanceVersionsRequest, UpdateInstanceVersionsResponse> updateInstanceVersionsInvoker(
-        UpdateInstanceVersionsRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.updateInstanceVersions, hcClient);
-    }
-
-    /**
      * 更新/关闭M兼容端口服务
      *
      * 更新指定实例的M兼容端口服务配置。
@@ -6870,6 +6301,7 @@ public class GaussDBforopenGaussClient {
      * @param request CreateDbInstanceRequest 请求对象
      * @return CreateDbInstanceResponse
      */
+    @Deprecated
     public CreateDbInstanceResponse createDbInstance(CreateDbInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.createDbInstance);
     }
@@ -6884,6 +6316,7 @@ public class GaussDBforopenGaussClient {
      * @param request CreateDbInstanceRequest 请求对象
      * @return SyncInvoker<CreateDbInstanceRequest, CreateDbInstanceResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateDbInstanceRequest, CreateDbInstanceResponse> createDbInstanceInvoker(
         CreateDbInstanceRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.createDbInstance, hcClient);
@@ -6899,6 +6332,7 @@ public class GaussDBforopenGaussClient {
      * @param request CreateInstanceRequest 请求对象
      * @return CreateInstanceResponse
      */
+    @Deprecated
     public CreateInstanceResponse createInstance(CreateInstanceRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.createInstance);
     }
@@ -6913,9 +6347,500 @@ public class GaussDBforopenGaussClient {
      * @param request CreateInstanceRequest 请求对象
      * @return SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
      */
+    @Deprecated
     public SyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceInvoker(
         CreateInstanceRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.createInstance, hcClient);
+    }
+
+    /**
+     * 创建限流任务
+     *
+     * 根据具体范围和类型，进行限流任务的创建
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateLimitTaskRequest 请求对象
+     * @return CreateLimitTaskResponse
+     */
+    @Deprecated
+    public CreateLimitTaskResponse createLimitTask(CreateLimitTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.createLimitTask);
+    }
+
+    /**
+     * 创建限流任务
+     *
+     * 根据具体范围和类型，进行限流任务的创建
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateLimitTaskRequest 请求对象
+     * @return SyncInvoker<CreateLimitTaskRequest, CreateLimitTaskResponse>
+     */
+    @Deprecated
+    public SyncInvoker<CreateLimitTaskRequest, CreateLimitTaskResponse> createLimitTaskInvoker(
+        CreateLimitTaskRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.createLimitTask, hcClient);
+    }
+
+    /**
+     * 删除限流任务
+     *
+     * 根据task_id进行限流任务的删除
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteLimitTaskRequest 请求对象
+     * @return DeleteLimitTaskResponse
+     */
+    @Deprecated
+    public DeleteLimitTaskResponse deleteLimitTask(DeleteLimitTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.deleteLimitTask);
+    }
+
+    /**
+     * 删除限流任务
+     *
+     * 根据task_id进行限流任务的删除
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteLimitTaskRequest 请求对象
+     * @return SyncInvoker<DeleteLimitTaskRequest, DeleteLimitTaskResponse>
+     */
+    @Deprecated
+    public SyncInvoker<DeleteLimitTaskRequest, DeleteLimitTaskResponse> deleteLimitTaskInvoker(
+        DeleteLimitTaskRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.deleteLimitTask, hcClient);
+    }
+
+    /**
+     * 查询备份列表
+     *
+     * 获取备份列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBackupsRequest 请求对象
+     * @return ListBackupsResponse
+     */
+    @Deprecated
+    public ListBackupsResponse listBackups(ListBackupsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listBackups);
+    }
+
+    /**
+     * 查询备份列表
+     *
+     * 获取备份列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBackupsRequest 请求对象
+     * @return SyncInvoker<ListBackupsRequest, ListBackupsResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ListBackupsRequest, ListBackupsResponse> listBackupsInvoker(ListBackupsRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listBackups, hcClient);
+    }
+
+    /**
+     * 获取参数模板列表
+     *
+     * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConfigurationsRequest 请求对象
+     * @return ListConfigurationsResponse
+     */
+    @Deprecated
+    public ListConfigurationsResponse listConfigurations(ListConfigurationsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listConfigurations);
+    }
+
+    /**
+     * 获取参数模板列表
+     *
+     * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConfigurationsRequest 请求对象
+     * @return SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurationsInvoker(
+        ListConfigurationsRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listConfigurations, hcClient);
+    }
+
+    /**
+     * 查询数据库引擎的版本
+     *
+     * 查询指定数据库引擎对应的版本信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDatastoresRequest 请求对象
+     * @return ListDatastoresResponse
+     */
+    @Deprecated
+    public ListDatastoresResponse listDatastores(ListDatastoresRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listDatastores);
+    }
+
+    /**
+     * 查询数据库引擎的版本
+     *
+     * 查询指定数据库引擎对应的版本信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDatastoresRequest 请求对象
+     * @return SyncInvoker<ListDatastoresRequest, ListDatastoresResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ListDatastoresRequest, ListDatastoresResponse> listDatastoresInvoker(
+        ListDatastoresRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listDatastores, hcClient);
+    }
+
+    /**
+     * 查询备份列表
+     *
+     * 获取备份列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDbBackupsRequest 请求对象
+     * @return ListDbBackupsResponse
+     */
+    @Deprecated
+    public ListDbBackupsResponse listDbBackups(ListDbBackupsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listDbBackups);
+    }
+
+    /**
+     * 查询备份列表
+     *
+     * 获取备份列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDbBackupsRequest 请求对象
+     * @return SyncInvoker<ListDbBackupsRequest, ListDbBackupsResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ListDbBackupsRequest, ListDbBackupsResponse> listDbBackupsInvoker(ListDbBackupsRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listDbBackups, hcClient);
+    }
+
+    /**
+     * 查询数据库规格
+     *
+     * 查询数据库的规格信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDbFlavorsRequest 请求对象
+     * @return ListDbFlavorsResponse
+     */
+    @Deprecated
+    public ListDbFlavorsResponse listDbFlavors(ListDbFlavorsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listDbFlavors);
+    }
+
+    /**
+     * 查询数据库规格
+     *
+     * 查询数据库的规格信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDbFlavorsRequest 请求对象
+     * @return SyncInvoker<ListDbFlavorsRequest, ListDbFlavorsResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ListDbFlavorsRequest, ListDbFlavorsResponse> listDbFlavorsInvoker(ListDbFlavorsRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listDbFlavors, hcClient);
+    }
+
+    /**
+     * 查询数据库规格
+     *
+     * 查询数据库的规格信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFlavorsRequest 请求对象
+     * @return ListFlavorsResponse
+     */
+    @Deprecated
+    public ListFlavorsResponse listFlavors(ListFlavorsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listFlavors);
+    }
+
+    /**
+     * 查询数据库规格
+     *
+     * 查询数据库的规格信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFlavorsRequest 请求对象
+     * @return SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsInvoker(ListFlavorsRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listFlavors, hcClient);
+    }
+
+    /**
+     * 查询引擎列表
+     *
+     * 查询引擎列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGaussDbDatastoresRequest 请求对象
+     * @return ListGaussDbDatastoresResponse
+     */
+    @Deprecated
+    public ListGaussDbDatastoresResponse listGaussDbDatastores(ListGaussDbDatastoresRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listGaussDbDatastores);
+    }
+
+    /**
+     * 查询引擎列表
+     *
+     * 查询引擎列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGaussDbDatastoresRequest 请求对象
+     * @return SyncInvoker<ListGaussDbDatastoresRequest, ListGaussDbDatastoresResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ListGaussDbDatastoresRequest, ListGaussDbDatastoresResponse> listGaussDbDatastoresInvoker(
+        ListGaussDbDatastoresRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listGaussDbDatastores, hcClient);
+    }
+
+    /**
+     * 查询数据库实例列表/查询实例详情
+     *
+     * 查询数据库实例列表/查询实例详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceDetailsRequest 请求对象
+     * @return ListInstanceDetailsResponse
+     */
+    @Deprecated
+    public ListInstanceDetailsResponse listInstanceDetails(ListInstanceDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listInstanceDetails);
+    }
+
+    /**
+     * 查询数据库实例列表/查询实例详情
+     *
+     * 查询数据库实例列表/查询实例详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceDetailsRequest 请求对象
+     * @return SyncInvoker<ListInstanceDetailsRequest, ListInstanceDetailsResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ListInstanceDetailsRequest, ListInstanceDetailsResponse> listInstanceDetailsInvoker(
+        ListInstanceDetailsRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listInstanceDetails, hcClient);
+    }
+
+    /**
+     * 查询数据库实例列表/查询实例详情
+     *
+     * 查询数据库实例列表/查询实例详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesRequest 请求对象
+     * @return ListInstancesResponse
+     */
+    @Deprecated
+    public ListInstancesResponse listInstances(ListInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listInstances);
+    }
+
+    /**
+     * 查询数据库实例列表/查询实例详情
+     *
+     * 查询数据库实例列表/查询实例详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesRequest 请求对象
+     * @return SyncInvoker<ListInstancesRequest, ListInstancesResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesInvoker(ListInstancesRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listInstances, hcClient);
+    }
+
+    /**
+     * 查询数据库实例列表/查询实例详情
+     *
+     * 查询数据库实例列表/查询实例详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesDetailsRequest 请求对象
+     * @return ListInstancesDetailsResponse
+     */
+    @Deprecated
+    public ListInstancesDetailsResponse listInstancesDetails(ListInstancesDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listInstancesDetails);
+    }
+
+    /**
+     * 查询数据库实例列表/查询实例详情
+     *
+     * 查询数据库实例列表/查询实例详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesDetailsRequest 请求对象
+     * @return SyncInvoker<ListInstancesDetailsRequest, ListInstancesDetailsResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ListInstancesDetailsRequest, ListInstancesDetailsResponse> listInstancesDetailsInvoker(
+        ListInstancesDetailsRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listInstancesDetails, hcClient);
+    }
+
+    /**
+     * 根据指定条件查询限流任务列表
+     *
+     * 根据指定条件查询限流任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLimitTaskRequest 请求对象
+     * @return ListLimitTaskResponse
+     */
+    @Deprecated
+    public ListLimitTaskResponse listLimitTask(ListLimitTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listLimitTask);
+    }
+
+    /**
+     * 根据指定条件查询限流任务列表
+     *
+     * 根据指定条件查询限流任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLimitTaskRequest 请求对象
+     * @return SyncInvoker<ListLimitTaskRequest, ListLimitTaskResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ListLimitTaskRequest, ListLimitTaskResponse> listLimitTaskInvoker(ListLimitTaskRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listLimitTask, hcClient);
+    }
+
+    /**
+     * 获取参数模板列表
+     *
+     * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListParamGroupTemplatesRequest 请求对象
+     * @return ListParamGroupTemplatesResponse
+     */
+    @Deprecated
+    public ListParamGroupTemplatesResponse listParamGroupTemplates(ListParamGroupTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listParamGroupTemplates);
+    }
+
+    /**
+     * 获取参数模板列表
+     *
+     * 获取参数模板列表，包括所有数据库的默认参数模板和用户创建的参数模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListParamGroupTemplatesRequest 请求对象
+     * @return SyncInvoker<ListParamGroupTemplatesRequest, ListParamGroupTemplatesResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ListParamGroupTemplatesRequest, ListParamGroupTemplatesResponse> listParamGroupTemplatesInvoker(
+        ListParamGroupTemplatesRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listParamGroupTemplates, hcClient);
+    }
+
+    /**
+     * 查询回收站所有引擎实例列表。
+     *
+     * 查询回收站所有引擎实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRecycleInstancesRequest 请求对象
+     * @return ListRecycleInstancesResponse
+     */
+    @Deprecated
+    public ListRecycleInstancesResponse listRecycleInstances(ListRecycleInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listRecycleInstances);
+    }
+
+    /**
+     * 查询回收站所有引擎实例列表。
+     *
+     * 查询回收站所有引擎实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRecycleInstancesRequest 请求对象
+     * @return SyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse> listRecycleInstancesInvoker(
+        ListRecycleInstancesRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listRecycleInstances, hcClient);
+    }
+
+    /**
+     * 查询可用于备份恢复的实例列表
+     *
+     * 查询可用于备份恢复的实例列表，实例信息要符合备份条件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRestorableInstancesRequest 请求对象
+     * @return ListRestorableInstancesResponse
+     */
+    @Deprecated
+    public ListRestorableInstancesResponse listRestorableInstances(ListRestorableInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listRestorableInstances);
+    }
+
+    /**
+     * 查询可用于备份恢复的实例列表
+     *
+     * 查询可用于备份恢复的实例列表，实例信息要符合备份条件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRestorableInstancesRequest 请求对象
+     * @return SyncInvoker<ListRestorableInstancesRequest, ListRestorableInstancesResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ListRestorableInstancesRequest, ListRestorableInstancesResponse> listRestorableInstancesInvoker(
+        ListRestorableInstancesRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listRestorableInstances, hcClient);
     }
 
     /**
@@ -6928,6 +6853,7 @@ public class GaussDBforopenGaussClient {
      * @param request ResizeInstanceFlavorRequest 请求对象
      * @return ResizeInstanceFlavorResponse
      */
+    @Deprecated
     public ResizeInstanceFlavorResponse resizeInstanceFlavor(ResizeInstanceFlavorRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.resizeInstanceFlavor);
     }
@@ -6942,9 +6868,379 @@ public class GaussDBforopenGaussClient {
      * @param request ResizeInstanceFlavorRequest 请求对象
      * @return SyncInvoker<ResizeInstanceFlavorRequest, ResizeInstanceFlavorResponse>
      */
+    @Deprecated
     public SyncInvoker<ResizeInstanceFlavorRequest, ResizeInstanceFlavorResponse> resizeInstanceFlavorInvoker(
         ResizeInstanceFlavorRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.resizeInstanceFlavor, hcClient);
+    }
+
+    /**
+     * 设置自动备份策略。
+     *
+     * 设置自动备份策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetBackupPolicyRequest 请求对象
+     * @return SetBackupPolicyResponse
+     */
+    @Deprecated
+    public SetBackupPolicyResponse setBackupPolicy(SetBackupPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.setBackupPolicy);
+    }
+
+    /**
+     * 设置自动备份策略。
+     *
+     * 设置自动备份策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetBackupPolicyRequest 请求对象
+     * @return SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse>
+     */
+    @Deprecated
+    public SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse> setBackupPolicyInvoker(
+        SetBackupPolicyRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.setBackupPolicy, hcClient);
+    }
+
+    /**
+     * 查询批量实例可升级的版本和升级类型。
+     *
+     * 查询批量实例可升级的版本和升级类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBatchUpgradeCandidateVersionsRequest 请求对象
+     * @return ShowBatchUpgradeCandidateVersionsResponse
+     */
+    @Deprecated
+    public ShowBatchUpgradeCandidateVersionsResponse showBatchUpgradeCandidateVersions(
+        ShowBatchUpgradeCandidateVersionsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showBatchUpgradeCandidateVersions);
+    }
+
+    /**
+     * 查询批量实例可升级的版本和升级类型。
+     *
+     * 查询批量实例可升级的版本和升级类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBatchUpgradeCandidateVersionsRequest 请求对象
+     * @return SyncInvoker<ShowBatchUpgradeCandidateVersionsRequest, ShowBatchUpgradeCandidateVersionsResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ShowBatchUpgradeCandidateVersionsRequest, ShowBatchUpgradeCandidateVersionsResponse> showBatchUpgradeCandidateVersionsInvoker(
+        ShowBatchUpgradeCandidateVersionsRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showBatchUpgradeCandidateVersions, hcClient);
+    }
+
+    /**
+     * 查询参数模板详情
+     *
+     * 根据参数模板ID获取指定参数模板详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowConfigurationDetailRequest 请求对象
+     * @return ShowConfigurationDetailResponse
+     */
+    @Deprecated
+    public ShowConfigurationDetailResponse showConfigurationDetail(ShowConfigurationDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showConfigurationDetail);
+    }
+
+    /**
+     * 查询参数模板详情
+     *
+     * 根据参数模板ID获取指定参数模板详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowConfigurationDetailRequest 请求对象
+     * @return SyncInvoker<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse> showConfigurationDetailInvoker(
+        ShowConfigurationDetailRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showConfigurationDetail, hcClient);
+    }
+
+    /**
+     * 获取指定实例的参数模板
+     *
+     * 获取指定实例的参数模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceConfigurationRequest 请求对象
+     * @return ShowInstanceConfigurationResponse
+     */
+    @Deprecated
+    public ShowInstanceConfigurationResponse showInstanceConfiguration(ShowInstanceConfigurationRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showInstanceConfiguration);
+    }
+
+    /**
+     * 获取指定实例的参数模板
+     *
+     * 获取指定实例的参数模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceConfigurationRequest 请求对象
+     * @return SyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> showInstanceConfigurationInvoker(
+        ShowInstanceConfigurationRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showInstanceConfiguration, hcClient);
+    }
+
+    /**
+     * 获取指定实例的参数模板
+     *
+     * 获取指定实例的参数模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceParamGroupRequest 请求对象
+     * @return ShowInstanceParamGroupResponse
+     */
+    @Deprecated
+    public ShowInstanceParamGroupResponse showInstanceParamGroup(ShowInstanceParamGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showInstanceParamGroup);
+    }
+
+    /**
+     * 获取指定实例的参数模板
+     *
+     * 获取指定实例的参数模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceParamGroupRequest 请求对象
+     * @return SyncInvoker<ShowInstanceParamGroupRequest, ShowInstanceParamGroupResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ShowInstanceParamGroupRequest, ShowInstanceParamGroupResponse> showInstanceParamGroupInvoker(
+        ShowInstanceParamGroupRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showInstanceParamGroup, hcClient);
+    }
+
+    /**
+     * 根据时间点或者备份文件查询原实例信息
+     *
+     * 根据时间点或者备份文件查询原实例信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceSnapshotRequest 请求对象
+     * @return ShowInstanceSnapshotResponse
+     */
+    @Deprecated
+    public ShowInstanceSnapshotResponse showInstanceSnapshot(ShowInstanceSnapshotRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showInstanceSnapshot);
+    }
+
+    /**
+     * 根据时间点或者备份文件查询原实例信息
+     *
+     * 根据时间点或者备份文件查询原实例信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceSnapshotRequest 请求对象
+     * @return SyncInvoker<ShowInstanceSnapshotRequest, ShowInstanceSnapshotResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ShowInstanceSnapshotRequest, ShowInstanceSnapshotResponse> showInstanceSnapshotInvoker(
+        ShowInstanceSnapshotRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showInstanceSnapshot, hcClient);
+    }
+
+    /**
+     * 查询限流任务详情
+     *
+     * 查询限流任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLimitTaskRequest 请求对象
+     * @return ShowLimitTaskResponse
+     */
+    @Deprecated
+    public ShowLimitTaskResponse showLimitTask(ShowLimitTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showLimitTask);
+    }
+
+    /**
+     * 查询限流任务详情
+     *
+     * 查询限流任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLimitTaskRequest 请求对象
+     * @return SyncInvoker<ShowLimitTaskRequest, ShowLimitTaskResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ShowLimitTaskRequest, ShowLimitTaskResponse> showLimitTaskInvoker(ShowLimitTaskRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showLimitTask, hcClient);
+    }
+
+    /**
+     * 查询实例可升级版本
+     *
+     * 查询实例可升级版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowUpgradeCandidateVersionsRequest 请求对象
+     * @return ShowUpgradeCandidateVersionsResponse
+     */
+    @Deprecated
+    public ShowUpgradeCandidateVersionsResponse showUpgradeCandidateVersions(
+        ShowUpgradeCandidateVersionsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showUpgradeCandidateVersions);
+    }
+
+    /**
+     * 查询实例可升级版本
+     *
+     * 查询实例可升级版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowUpgradeCandidateVersionsRequest 请求对象
+     * @return SyncInvoker<ShowUpgradeCandidateVersionsRequest, ShowUpgradeCandidateVersionsResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ShowUpgradeCandidateVersionsRequest, ShowUpgradeCandidateVersionsResponse> showUpgradeCandidateVersionsInvoker(
+        ShowUpgradeCandidateVersionsRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showUpgradeCandidateVersions, hcClient);
+    }
+
+    /**
+     * 实例内核版本升级
+     *
+     * GaussDB实例版本升级。包括灰度升级，就地升级，热补丁升级等三种升级方式。 
+     * 
+     * - 就地升级：
+     * 
+     *   就地升级需要停止业务进行，会一次性升级集群中所有节点。就地升级需要暂停业务30分钟来升级。 
+     * 
+     * - 灰度升级： 
+     * 
+     *   每个主DN或者CN组件升级就有一次10秒业务中断。升级过程均是先管理面，再数据面，由备到主的升级方式。灰度升级支持升级自动提交和升级待观察两种操作方式。
+     * 
+     *   - 升级自动提交：所有节点进程一起升级，在升级过程中有大概10秒的业务中断，不阻塞其他业务操作。 
+     * 
+     *   - 升级待观察：升级待观察，将数据库升级过程细分为升级，提交两个阶段。
+     * 
+     *     - 升级阶段可以根据部署方式细分为按分片或者按AZ的滚动升级。
+     * 
+     *       - 分布式实例：根据分片数滚动升级。
+     *       - 集中式实例：根据AZ数进行滚动升级。 
+     * 
+     *     - 提交阶段可以对升级完成后的实例进行业务测试，根据需要可以选择提交升级或者升级回退。
+     * 
+     *       - 提交升级：提交升级。在升级完成，进入提交阶段时。业务测试正常后提交升级，完成本次升级流程。
+     * 
+     *       - 升级回退：升级回退，在升级完成，进入提交阶段时。可以根据需要回退本次升级，回退到升级前的版本。
+     * 
+     * - 热补丁升级
+     * 
+     *   - 升级自动提交：热补丁自动升级并提交，中间无业务中断。
+     * 
+     *   - 升级回退：热补丁回退，无业务中断时间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInstanceVersionsRequest 请求对象
+     * @return UpdateInstanceVersionsResponse
+     */
+    @Deprecated
+    public UpdateInstanceVersionsResponse updateInstanceVersions(UpdateInstanceVersionsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.updateInstanceVersions);
+    }
+
+    /**
+     * 实例内核版本升级
+     *
+     * GaussDB实例版本升级。包括灰度升级，就地升级，热补丁升级等三种升级方式。 
+     * 
+     * - 就地升级：
+     * 
+     *   就地升级需要停止业务进行，会一次性升级集群中所有节点。就地升级需要暂停业务30分钟来升级。 
+     * 
+     * - 灰度升级： 
+     * 
+     *   每个主DN或者CN组件升级就有一次10秒业务中断。升级过程均是先管理面，再数据面，由备到主的升级方式。灰度升级支持升级自动提交和升级待观察两种操作方式。
+     * 
+     *   - 升级自动提交：所有节点进程一起升级，在升级过程中有大概10秒的业务中断，不阻塞其他业务操作。 
+     * 
+     *   - 升级待观察：升级待观察，将数据库升级过程细分为升级，提交两个阶段。
+     * 
+     *     - 升级阶段可以根据部署方式细分为按分片或者按AZ的滚动升级。
+     * 
+     *       - 分布式实例：根据分片数滚动升级。
+     *       - 集中式实例：根据AZ数进行滚动升级。 
+     * 
+     *     - 提交阶段可以对升级完成后的实例进行业务测试，根据需要可以选择提交升级或者升级回退。
+     * 
+     *       - 提交升级：提交升级。在升级完成，进入提交阶段时。业务测试正常后提交升级，完成本次升级流程。
+     * 
+     *       - 升级回退：升级回退，在升级完成，进入提交阶段时。可以根据需要回退本次升级，回退到升级前的版本。
+     * 
+     * - 热补丁升级
+     * 
+     *   - 升级自动提交：热补丁自动升级并提交，中间无业务中断。
+     * 
+     *   - 升级回退：热补丁回退，无业务中断时间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInstanceVersionsRequest 请求对象
+     * @return SyncInvoker<UpdateInstanceVersionsRequest, UpdateInstanceVersionsResponse>
+     */
+    @Deprecated
+    public SyncInvoker<UpdateInstanceVersionsRequest, UpdateInstanceVersionsResponse> updateInstanceVersionsInvoker(
+        UpdateInstanceVersionsRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.updateInstanceVersions, hcClient);
+    }
+
+    /**
+     * 修改限流任务
+     *
+     * 根据新的条件进行限流任务的更新
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateLimitTaskRequest 请求对象
+     * @return UpdateLimitTaskResponse
+     */
+    @Deprecated
+    public UpdateLimitTaskResponse updateLimitTask(UpdateLimitTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.updateLimitTask);
+    }
+
+    /**
+     * 修改限流任务
+     *
+     * 根据新的条件进行限流任务的更新
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateLimitTaskRequest 请求对象
+     * @return SyncInvoker<UpdateLimitTaskRequest, UpdateLimitTaskResponse>
+     */
+    @Deprecated
+    public SyncInvoker<UpdateLimitTaskRequest, UpdateLimitTaskResponse> updateLimitTaskInvoker(
+        UpdateLimitTaskRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.updateLimitTask, hcClient);
     }
 
     /**
@@ -7147,35 +7443,6 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
-     * 创建限流任务
-     *
-     * 根据具体范围和类型，进行限流任务的创建
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateLimitTaskRequest 请求对象
-     * @return CreateLimitTaskResponse
-     */
-    public CreateLimitTaskResponse createLimitTask(CreateLimitTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.createLimitTask);
-    }
-
-    /**
-     * 创建限流任务
-     *
-     * 根据具体范围和类型，进行限流任务的创建
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateLimitTaskRequest 请求对象
-     * @return SyncInvoker<CreateLimitTaskRequest, CreateLimitTaskResponse>
-     */
-    public SyncInvoker<CreateLimitTaskRequest, CreateLimitTaskResponse> createLimitTaskInvoker(
-        CreateLimitTaskRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.createLimitTask, hcClient);
-    }
-
-    /**
      * 创建SQL限流任务
      *
      * 根据具体范围和类型，进行限流任务的创建。
@@ -7202,35 +7469,6 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<CreateSqlLimitTaskRequest, CreateSqlLimitTaskResponse> createSqlLimitTaskInvoker(
         CreateSqlLimitTaskRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.createSqlLimitTask, hcClient);
-    }
-
-    /**
-     * 删除限流任务
-     *
-     * 根据task_id进行限流任务的删除
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteLimitTaskRequest 请求对象
-     * @return DeleteLimitTaskResponse
-     */
-    public DeleteLimitTaskResponse deleteLimitTask(DeleteLimitTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.deleteLimitTask);
-    }
-
-    /**
-     * 删除限流任务
-     *
-     * 根据task_id进行限流任务的删除
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteLimitTaskRequest 请求对象
-     * @return SyncInvoker<DeleteLimitTaskRequest, DeleteLimitTaskResponse>
-     */
-    public SyncInvoker<DeleteLimitTaskRequest, DeleteLimitTaskResponse> deleteLimitTaskInvoker(
-        DeleteLimitTaskRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.deleteLimitTask, hcClient);
     }
 
     /**
@@ -7435,34 +7673,6 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<ListFullSqlSwitchesRequest, ListFullSqlSwitchesResponse> listFullSqlSwitchesInvoker(
         ListFullSqlSwitchesRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listFullSqlSwitches, hcClient);
-    }
-
-    /**
-     * 根据指定条件查询限流任务列表
-     *
-     * 根据指定条件查询限流任务列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListLimitTaskRequest 请求对象
-     * @return ListLimitTaskResponse
-     */
-    public ListLimitTaskResponse listLimitTask(ListLimitTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listLimitTask);
-    }
-
-    /**
-     * 根据指定条件查询限流任务列表
-     *
-     * 根据指定条件查询限流任务列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListLimitTaskRequest 请求对象
-     * @return SyncInvoker<ListLimitTaskRequest, ListLimitTaskResponse>
-     */
-    public SyncInvoker<ListLimitTaskRequest, ListLimitTaskResponse> listLimitTaskInvoker(ListLimitTaskRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listLimitTask, hcClient);
     }
 
     /**
@@ -7724,34 +7934,6 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
-     * 查询限流任务详情
-     *
-     * 查询限流任务详情
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowLimitTaskRequest 请求对象
-     * @return ShowLimitTaskResponse
-     */
-    public ShowLimitTaskResponse showLimitTask(ShowLimitTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showLimitTask);
-    }
-
-    /**
-     * 查询限流任务详情
-     *
-     * 查询限流任务详情
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowLimitTaskRequest 请求对象
-     * @return SyncInvoker<ShowLimitTaskRequest, ShowLimitTaskResponse>
-     */
-    public SyncInvoker<ShowLimitTaskRequest, ShowLimitTaskResponse> showLimitTaskInvoker(ShowLimitTaskRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showLimitTask, hcClient);
-    }
-
-    /**
      * 查询SQL限流任务详情
      *
      * 查询SQL限流任务详情。
@@ -7862,35 +8044,6 @@ public class GaussDBforopenGaussClient {
      */
     public SyncInvoker<SyncLimitDataRequest, SyncLimitDataResponse> syncLimitDataInvoker(SyncLimitDataRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.syncLimitData, hcClient);
-    }
-
-    /**
-     * 修改限流任务
-     *
-     * 根据新的条件进行限流任务的更新
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateLimitTaskRequest 请求对象
-     * @return UpdateLimitTaskResponse
-     */
-    public UpdateLimitTaskResponse updateLimitTask(UpdateLimitTaskRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.updateLimitTask);
-    }
-
-    /**
-     * 修改限流任务
-     *
-     * 根据新的条件进行限流任务的更新
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateLimitTaskRequest 请求对象
-     * @return SyncInvoker<UpdateLimitTaskRequest, UpdateLimitTaskResponse>
-     */
-    public SyncInvoker<UpdateLimitTaskRequest, UpdateLimitTaskResponse> updateLimitTaskInvoker(
-        UpdateLimitTaskRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.updateLimitTask, hcClient);
     }
 
     /**
@@ -8063,6 +8216,36 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<CreateWdrSnapshotRequest, CreateWdrSnapshotResponse> createWdrSnapshotInvoker(
         CreateWdrSnapshotRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.createWdrSnapshot, hcClient);
+    }
+
+    /**
+     * 查询实例WDR可用快照分组列表
+     *
+     * 查询实例WDR可用快照分组列表，剔除发生内核重置（节点重启、主备倒换、性能指标进行RESET操作、DROP DATABASE）的时间区间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWdrSnapshotAvailableGroupsRequest 请求对象
+     * @return ListWdrSnapshotAvailableGroupsResponse
+     */
+    public ListWdrSnapshotAvailableGroupsResponse listWdrSnapshotAvailableGroups(
+        ListWdrSnapshotAvailableGroupsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listWdrSnapshotAvailableGroups);
+    }
+
+    /**
+     * 查询实例WDR可用快照分组列表
+     *
+     * 查询实例WDR可用快照分组列表，剔除发生内核重置（节点重启、主备倒换、性能指标进行RESET操作、DROP DATABASE）的时间区间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWdrSnapshotAvailableGroupsRequest 请求对象
+     * @return SyncInvoker<ListWdrSnapshotAvailableGroupsRequest, ListWdrSnapshotAvailableGroupsResponse>
+     */
+    public SyncInvoker<ListWdrSnapshotAvailableGroupsRequest, ListWdrSnapshotAvailableGroupsResponse> listWdrSnapshotAvailableGroupsInvoker(
+        ListWdrSnapshotAvailableGroupsRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listWdrSnapshotAvailableGroups, hcClient);
     }
 
     /**

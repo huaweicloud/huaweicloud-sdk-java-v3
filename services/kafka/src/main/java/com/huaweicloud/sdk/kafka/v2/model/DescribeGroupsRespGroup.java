@@ -46,7 +46,7 @@ public class DescribeGroupsRespGroup {
     }
 
     /**
-     * **参数解释**： 消费组状态。 **取值范围**： - Dead：消费组内没有任何成员，且没有任何元数据。 - Empty：消费组内没有任何成员，存在元数据。 - PreparingRebalance：准备开启rebalance。 - CompletingRebalance：所有成员加入group。 - Stable：消费组内成员可正常消费。
+     * **参数解释**： 消费组状态。 **取值范围**： - DEAD：消费组内没有任何成员，且没有任何元数据。 - EMPTY：消费组内没有任何成员，存在元数据。 - PREPARING_REBALANCE：准备开启rebalance。 - COMPLETING_REBALANCE：所有成员加入group。 - STABLE：消费组内成员可正常消费。
      * @return state
      */
     public String getState() {

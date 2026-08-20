@@ -17,14 +17,14 @@ public class ListScheduledTasksResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_count")
 
-    private String jobCount;
+    private Integer jobCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobs")
 
     private List<ScheduledTaskEntity> jobs = null;
 
-    public ListScheduledTasksResponse withJobCount(String jobCount) {
+    public ListScheduledTasksResponse withJobCount(Integer jobCount) {
         this.jobCount = jobCount;
         return this;
     }
@@ -33,11 +33,11 @@ public class ListScheduledTasksResponse extends SdkResponse {
      * **参数解释**： 任务总数。 **取值范围**： 不涉及。
      * @return jobCount
      */
-    public String getJobCount() {
+    public Integer getJobCount() {
         return jobCount;
     }
 
-    public void setJobCount(String jobCount) {
+    public void setJobCount(Integer jobCount) {
         this.jobCount = jobCount;
     }
 

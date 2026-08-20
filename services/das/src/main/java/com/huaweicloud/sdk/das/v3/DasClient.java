@@ -67,6 +67,10 @@ import com.huaweicloud.sdk.das.v3.model.DeleteProcessRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteProcessResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteSqlLimitRulesResponse;
+import com.huaweicloud.sdk.das.v3.model.ExecuteExportTaskRequest;
+import com.huaweicloud.sdk.das.v3.model.ExecuteExportTaskResponse;
+import com.huaweicloud.sdk.das.v3.model.ExecuteImportTaskRequest;
+import com.huaweicloud.sdk.das.v3.model.ExecuteImportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportFullSqlDetailsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportFullSqlDetailsResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportSlowQueryLogsRequest;
@@ -366,6 +370,68 @@ public class DasClient {
     public SyncInvoker<CreateShareConnectionsRequest, CreateShareConnectionsResponse> createShareConnectionsInvoker(
         CreateShareConnectionsRequest request) {
         return new SyncInvoker<>(request, DasMeta.createShareConnections, hcClient);
+    }
+
+    /**
+     * 立即执行导出任务
+     *
+     * 立即执行导出任务，
+     * 用于用户立即执行导出任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteExportTaskRequest 请求对象
+     * @return ExecuteExportTaskResponse
+     */
+    public ExecuteExportTaskResponse executeExportTask(ExecuteExportTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.executeExportTask);
+    }
+
+    /**
+     * 立即执行导出任务
+     *
+     * 立即执行导出任务，
+     * 用于用户立即执行导出任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteExportTaskRequest 请求对象
+     * @return SyncInvoker<ExecuteExportTaskRequest, ExecuteExportTaskResponse>
+     */
+    public SyncInvoker<ExecuteExportTaskRequest, ExecuteExportTaskResponse> executeExportTaskInvoker(
+        ExecuteExportTaskRequest request) {
+        return new SyncInvoker<>(request, DasMeta.executeExportTask, hcClient);
+    }
+
+    /**
+     * 立即执行导入任务
+     *
+     * 立即执行导入任务，
+     * 用于用户立即执行导入任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteImportTaskRequest 请求对象
+     * @return ExecuteImportTaskResponse
+     */
+    public ExecuteImportTaskResponse executeImportTask(ExecuteImportTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.executeImportTask);
+    }
+
+    /**
+     * 立即执行导入任务
+     *
+     * 立即执行导入任务，
+     * 用于用户立即执行导入任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteImportTaskRequest 请求对象
+     * @return SyncInvoker<ExecuteImportTaskRequest, ExecuteImportTaskResponse>
+     */
+    public SyncInvoker<ExecuteImportTaskRequest, ExecuteImportTaskResponse> executeImportTaskInvoker(
+        ExecuteImportTaskRequest request) {
+        return new SyncInvoker<>(request, DasMeta.executeImportTask, hcClient);
     }
 
     /**

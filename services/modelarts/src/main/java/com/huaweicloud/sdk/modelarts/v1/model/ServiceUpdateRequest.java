@@ -46,7 +46,7 @@ public class ServiceUpdateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime_config")
 
-    private RuntimeConfig runtimeConfig;
+    private RuntimeConfigUpdateRequest runtimeConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "upgrade_config")
@@ -61,7 +61,7 @@ public class ServiceUpdateRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "log_configs")
 
-    private List<LtsConfig> logConfigs = null;
+    private List<LtsConfiguration> logConfigs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -94,7 +94,7 @@ public class ServiceUpdateRequest {
     }
 
     /**
-     * **参数解释：** 服务ID **约束限制：** 不涉及。 **取值范围：** 不涉及
+     * **参数解释：** 服务ID **约束限制：** 不填保留原有值。 **取值范围：** 不涉及
      * @return id
      */
     public String getId() {
@@ -111,7 +111,7 @@ public class ServiceUpdateRequest {
     }
 
     /**
-     * **参数解释：** 服务名称。 **约束限制：** 不涉及。 **取值范围：** 支持1-128个字符，可以包含字母、汉字、数字、连字符和下划线。 **默认取值：** 不涉及。
+     * **参数解释：** 服务名称。 **约束限制：** 不填保留原有值。 **取值范围：** 支持1-128个字符，可以包含字母、汉字、数字、连字符和下划线。 **默认取值：** 不涉及。
      * @return name
      */
     public String getName() {
@@ -128,7 +128,7 @@ public class ServiceUpdateRequest {
     }
 
     /**
-     * **参数解释：** 服务部署超时时间，integer类型，取值在1~300（860版本该参数做保留兼容）。 **约束限制：** 不涉及。 **取值范围：** [0, 300]。 **默认取值：** 不涉及。
+     * **参数解释：** 服务部署超时时间，integer类型，取值在1~300。 **约束限制：** 不填保留原有值。 **取值范围：** [0, 300]。 **默认取值：** 不涉及。
      * @return deployTimeoutMinutes
      */
     public Integer getDeployTimeoutMinutes() {
@@ -145,7 +145,7 @@ public class ServiceUpdateRequest {
     }
 
     /**
-     * **参数解释：** 必填，填了之后，数据库中如果存在相同版本号，将会报错（仅修改描述的场景除外）。 **约束限制：** 不涉及。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * **参数解释：** 服务版本，数据库中如果存在相同版本号，将会报错（仅修改描述的场景除外）。 **约束限制：** 不填保留原有值。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return version
      */
     public String getVersion() {
@@ -162,7 +162,7 @@ public class ServiceUpdateRequest {
     }
 
     /**
-     * **参数解释：** 非必填，仅更新描述的场景直接修改对应version的数据库字段，不新增版本号。 **约束限制：** 不涉及。 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 非必填，仅更新描述的场景直接修改对应version的数据库字段，不新增版本号。 **约束限制：** 不填保留原有值。 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return description
      */
     public String getDescription() {
@@ -195,7 +195,7 @@ public class ServiceUpdateRequest {
     }
 
     /**
-     * **参数解释：** 仅修改服务时不需传，兼容部署分离之前版本。 **约束限制：** group_configs的最大元素数量为1。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
+     * **参数解释：** 仅修改服务时不需传，兼容部署分离之前版本。 **约束限制：** 不填保留原有值，group_configs的最大元素数量为1。 **取值范围：** 不涉及。 **默认取值：** 不涉及。
      * @return groupConfigs
      */
     public List<GroupConfig> getGroupConfigs() {
@@ -206,14 +206,14 @@ public class ServiceUpdateRequest {
         this.groupConfigs = groupConfigs;
     }
 
-    public ServiceUpdateRequest withRuntimeConfig(RuntimeConfig runtimeConfig) {
+    public ServiceUpdateRequest withRuntimeConfig(RuntimeConfigUpdateRequest runtimeConfig) {
         this.runtimeConfig = runtimeConfig;
         return this;
     }
 
-    public ServiceUpdateRequest withRuntimeConfig(Consumer<RuntimeConfig> runtimeConfigSetter) {
+    public ServiceUpdateRequest withRuntimeConfig(Consumer<RuntimeConfigUpdateRequest> runtimeConfigSetter) {
         if (this.runtimeConfig == null) {
-            this.runtimeConfig = new RuntimeConfig();
+            this.runtimeConfig = new RuntimeConfigUpdateRequest();
             runtimeConfigSetter.accept(this.runtimeConfig);
         }
 
@@ -224,11 +224,11 @@ public class ServiceUpdateRequest {
      * Get runtimeConfig
      * @return runtimeConfig
      */
-    public RuntimeConfig getRuntimeConfig() {
+    public RuntimeConfigUpdateRequest getRuntimeConfig() {
         return runtimeConfig;
     }
 
-    public void setRuntimeConfig(RuntimeConfig runtimeConfig) {
+    public void setRuntimeConfig(RuntimeConfigUpdateRequest runtimeConfig) {
         this.runtimeConfig = runtimeConfig;
     }
 
@@ -264,7 +264,7 @@ public class ServiceUpdateRequest {
     }
 
     /**
-     * **参数解释：** 日志策略。 **约束限制：** 不涉及。 **取值范围：** - POOL：使用资源池日志插件配置的日志流。 - AUTO_CREATE：自动创建日志流。 - DEFAULT: 由系统决定日志策略 **默认取值：** AUTO_CREATE：自动创建日志流。
+     * **参数解释：** 日志策略。 **约束限制：** 不填保留原有值。 **取值范围：** - POOL：使用资源池日志插件配置的日志流。 - AUTO_CREATE：自动创建日志流。 - DEFAULT: 由系统决定日志策略 **默认取值：** 不涉及。
      * @return ltsStrategy
      */
     public String getLtsStrategy() {
@@ -275,12 +275,12 @@ public class ServiceUpdateRequest {
         this.ltsStrategy = ltsStrategy;
     }
 
-    public ServiceUpdateRequest withLogConfigs(List<LtsConfig> logConfigs) {
+    public ServiceUpdateRequest withLogConfigs(List<LtsConfiguration> logConfigs) {
         this.logConfigs = logConfigs;
         return this;
     }
 
-    public ServiceUpdateRequest addLogConfigsItem(LtsConfig logConfigsItem) {
+    public ServiceUpdateRequest addLogConfigsItem(LtsConfiguration logConfigsItem) {
         if (this.logConfigs == null) {
             this.logConfigs = new ArrayList<>();
         }
@@ -288,7 +288,7 @@ public class ServiceUpdateRequest {
         return this;
     }
 
-    public ServiceUpdateRequest withLogConfigs(Consumer<List<LtsConfig>> logConfigsSetter) {
+    public ServiceUpdateRequest withLogConfigs(Consumer<List<LtsConfiguration>> logConfigsSetter) {
         if (this.logConfigs == null) {
             this.logConfigs = new ArrayList<>();
         }
@@ -297,14 +297,14 @@ public class ServiceUpdateRequest {
     }
 
     /**
-     * **参数解释：** 日志配置，当开启LTS日志的时候，STDOUT类型为必填。 **约束限制：** 当开启LTS日志的时候，STDOUT类型为必填。 数量上限为2个。
+     * **参数解释：** 服务日志配置。 **约束限制：** 1.不填保留原有值 2.数量上限为[3](tag:hws,hws_hk,fcs,fcs_super)[2](tag:hcs,hcs_sm)个，且每种类型只可配置一个。
      * @return logConfigs
      */
-    public List<LtsConfig> getLogConfigs() {
+    public List<LtsConfiguration> getLogConfigs() {
         return logConfigs;
     }
 
-    public void setLogConfigs(List<LtsConfig> logConfigs) {
+    public void setLogConfigs(List<LtsConfiguration> logConfigs) {
         this.logConfigs = logConfigs;
     }
 
@@ -314,7 +314,7 @@ public class ServiceUpdateRequest {
     }
 
     /**
-     * **参数解释：** 服务标签,上限20个 **约束限制：** 不涉及。 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 服务标签,上限20个 **约束限制：** 不填保留原有值。 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return tags
      */
     public String getTags() {
@@ -331,7 +331,7 @@ public class ServiceUpdateRequest {
     }
 
     /**
-     * **参数解释：** 工作空间id，默认是“0” **约束限制：** 不涉及。 **取值范围：** 不涉及 **默认取值：** 不涉及
+     * **参数解释：** 工作空间id，默认是“0” **约束限制：** 不填保留原有值。 **取值范围：** 不涉及 **默认取值：** 不涉及
      * @return workspaceId
      */
     public String getWorkspaceId() {
@@ -364,7 +364,7 @@ public class ServiceUpdateRequest {
     }
 
     /**
-     * **参数解释：** 定时停止配置。 **约束限制：** 仅当body中另一个参数description为空时，此参数才生效。
+     * **参数解释：**  定时停止配置。 **约束限制：** 1.不填保留原有值。 2.仅当body中另一个参数description为空时，此参数才生效。
      * @return schedule
      */
     public List<ScheduleConfig> getSchedule() {
@@ -381,7 +381,7 @@ public class ServiceUpdateRequest {
     }
 
     /**
-     * **参数解释：** 该参数值由英文逗号隔开的协议、端口号、地址组成，其中地址长度不超过255 ，且需要与镜像给定的协议、地址、端口一致，否则指标无法上报。
+     * **参数解释：** 该参数值由英文逗号隔开的协议、端口号、地址组成，其中地址长度不超过255 ，且需要与镜像给定的协议、地址、端口一致，否则指标无法上报。 **约束限制：** 不填保留原有值。
      * @return customMetricsPath
      */
     public String getCustomMetricsPath() {
@@ -398,7 +398,7 @@ public class ServiceUpdateRequest {
     }
 
     /**
-     * **参数解释：** 模型类型。 **取值范围：** - TEXT_GENERATION：文本生成 - IMAGE_UNDERSTANDING：图像理解 - VIDEO_GENERATION：视频生成 - IMAGE_GENERATION：图像生成 - RERANK：重排序 - VECTOR_MODEL：向量模型 - EMBEDDING：Embedding嵌入
+     * **参数解释：** 模型类型。 **约束限制：** 不填保留原有值。 **取值范围：** - TEXT_GENERATION：文本生成 - IMAGE_UNDERSTANDING：图像理解 - VIDEO_GENERATION：视频生成 - IMAGE_GENERATION：图像生成 - RERANK：重排序 - VECTOR_MODEL：向量模型 - EMBEDDING：Embedding嵌入
      * @return taskType
      */
     public String getTaskType() {

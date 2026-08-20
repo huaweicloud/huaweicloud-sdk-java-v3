@@ -18,7 +18,7 @@ public class ResetConsumeOffsetReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "timestamp")
 
-    private String timestamp;
+    private Long timestamp;
 
     public ResetConsumeOffsetReq withTopic(String topic) {
         this.topic = topic;
@@ -37,7 +37,7 @@ public class ResetConsumeOffsetReq {
         this.topic = topic;
     }
 
-    public ResetConsumeOffsetReq withTimestamp(String timestamp) {
+    public ResetConsumeOffsetReq withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
@@ -46,11 +46,11 @@ public class ResetConsumeOffsetReq {
      * **参数解释**： 重置的时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return timestamp
      */
-    public String getTimestamp() {
+    public Long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(String timestamp) {
+    public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
 

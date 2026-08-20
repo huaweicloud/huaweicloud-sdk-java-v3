@@ -26,7 +26,7 @@ public class TopPathSummary {
     }
 
     /**
-     * top100 path访问路径
+     * **参数解释：** top100 path访问路径 **取值范围：** 不涉及
      * @return path
      */
     public String getPath() {
@@ -43,7 +43,7 @@ public class TopPathSummary {
     }
 
     /**
-     * top100path访问次数
+     * **参数解释：** top100 path访问次数 **取值范围：** 不涉及
      * @return value
      */
     public Long getValue() {
